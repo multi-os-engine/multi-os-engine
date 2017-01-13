@@ -20,6 +20,8 @@ import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.file.ConfigurableFileCollection;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
@@ -35,8 +37,6 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -50,7 +50,7 @@ import java.util.regex.Pattern;
 
 public class ProGuard extends AbstractBaseTask {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ProGuard.class);
+    private static final Logger LOG = Logging.getLogger(ProGuard.class);
 
     private static final String CONVENTION_PROGUARD_JAR = "proGuardJar";
     private static final String CONVENTION_BASE_CFG_FILE = "baseCfgFile";

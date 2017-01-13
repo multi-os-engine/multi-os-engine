@@ -17,6 +17,8 @@ limitations under the License.
 package org.moe.gradle;
 
 import org.gradle.api.Project;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
@@ -26,6 +28,8 @@ import javax.inject.Inject;
 import java.io.File;
 
 public class MoeSDKPlugin extends AbstractMoePlugin {
+
+    private static final Logger LOG = Logging.getLogger(MoeSDKPlugin.class);
 
     @NotNull
     private MoeSDKExtension extension;
@@ -53,7 +57,7 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
             task.setDescription("Prints some properties of the MOE SDK.");
             task.getActions().add(t -> {
                 final File platformJar = extension.getPlatformJar();
-                System.out.println("\n" +
+                LOG.quiet("\n" +
                         "moe.sdk.home=" + getSDK().getRoot() + "\n" +
                         "moe.sdk.coreJar=" + getSDK().getCoreJar() + "\n" +
                         "moe.sdk.platformJar=" + (platformJar == null ? "" : platformJar) + "\n" +

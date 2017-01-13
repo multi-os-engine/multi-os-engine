@@ -18,12 +18,16 @@ package org.moe.gradle.remote;
 
 import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.GradleException;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.utils.Require;
+import org.moe.gradle.utils.StreamToLogForwarder;
 import org.moe.gradle.utils.TermColor;
-import static org.moe.gradle.utils.TermColor.*;
 
 import java.io.PrintStream;
+
+import static org.moe.gradle.utils.TermColor.*;
 
 abstract class AbstractServerTask {
 
@@ -40,8 +44,9 @@ abstract class AbstractServerTask {
 
     protected AbstractServerTask(@NotNull Server server) {
         this.server = Require.nonNull(server);
-        outlog = new PrintStream(System.out);
-        errlog = new PrintStream(System.err);
+        final Logger logger = Logging.getLogger(getClass());
+        outlog = new PrintStream(new StreamToLogForwarder(logger, false));
+        errlog = new PrintStream(new StreamToLogForwarder(logger, true));
     }
 
     public boolean isQuiet() {
@@ -63,8 +68,8 @@ abstract class AbstractServerTask {
         } catch (ServerChannelException e) {
             if (!quiet) {
                 printTaskMarker(errlog, ST_REMOTE_TASK_ERROR, " REMOTE TASK FAILED - " + getTaskName());
-                errlog.println(ST_REMOTE_TASK_ERROR_DESC + e.getOutput() + FM_RES_ALL);
-                errlog.println();
+                errlog.println(ST_REMOTE_TASK_ERROR_DESC + e.getOutput() + FM_RES_ALL + "\n");
+                errlog.flush();
             }
             throw new GradleException(e.getMessage(), e);
 
@@ -84,12 +89,9 @@ abstract class AbstractServerTask {
     protected abstract void main() throws Exception;
 
     private int printTaskMarker(PrintStream stream, TermColor color, String message) {
-        stream.println("");
         final String sep = StringUtils.rightPad("", message.length() + 1, "=");
-        stream.println(color.toString() + sep);
-        stream.println(message);
-        stream.println(sep + FM_RES_ALL);
-        stream.println("");
+        stream.println("\n" + color.toString() + sep+ "\n" + message + "\n" + sep + FM_RES_ALL + "\n");
+        stream.flush();
         return sep.length();
     }
 
@@ -99,5 +101,6 @@ abstract class AbstractServerTask {
         stream.println(color.toString() +
                 StringUtils.rightPad("", size_2, "<") + message +
                 StringUtils.rightPad("", size - size_2, ">") + FM_RES_ALL);
+        stream.flush();
     }
 }

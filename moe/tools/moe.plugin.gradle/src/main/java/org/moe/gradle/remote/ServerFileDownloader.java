@@ -19,11 +19,11 @@ package org.moe.gradle.remote;
 import com.jcraft.jsch.ChannelExec;
 import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.GradleException;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TermColor;
-import static org.moe.gradle.utils.TermColor.*;
-import static org.moe.gradle.remote.ServerFileDownloader.Type.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,7 +31,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import static org.moe.gradle.remote.ServerFileDownloader.Type.*;
+
 class ServerFileDownloader extends AbstractServerSCPTask {
+
+    private static final Logger LOG = Logging.getLogger(ServerFileDownloader.class);
 
     @NotNull
     private final String name;
@@ -267,14 +271,14 @@ class ServerFileDownloader extends AbstractServerSCPTask {
         final boolean w = (usermode & 0x2) > 0;
         final boolean x = (usermode & 0x1) > 0;
         if (file.canRead() != r && !file.setReadable(r)) {
-            System.err.println("Failed to set '" + file + "' readable");
+            LOG.warn("Failed to set '" + file + "' readable");
         }
         if (file.canWrite() != w && !file.setWritable(w)) {
-            System.err.println("Failed to set '" + file + "' writable");
+            LOG.warn("Failed to set '" + file + "' writable");
         }
         if (file.canExecute() != x && !file.setExecutable(x)) {
             if (!Os.isFamily(Os.FAMILY_WINDOWS) || x) {
-                System.err.println("Failed to set '" + file + "' executable");
+                LOG.warn("Failed to set '" + file + "' executable");
             }
         }
     }

@@ -25,7 +25,6 @@ import org.moe.gradle.remote.file.FileEntry;
 import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.remote.file.Walker;
 import org.moe.gradle.utils.Require;
-import static org.moe.gradle.utils.TermColor.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,6 +33,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import static org.moe.gradle.utils.TermColor.*;
 
 class ServerFileUploader extends AbstractServerSCPTask {
 

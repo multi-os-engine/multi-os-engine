@@ -16,13 +16,14 @@ limitations under the License.
 
 package org.moe.gradle.tasks;
 
-import org.apache.commons.io.IOUtils;
 import org.gradle.api.Action;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Rule;
 import org.gradle.api.Task;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.TaskAction;
@@ -42,7 +43,6 @@ import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -59,6 +59,8 @@ public abstract class AbstractBaseTask extends DefaultTask {
     private static final String CONVENTION_REMOTE_BUILD_HELPER = "remoteBuildHelper";
 
     private Object logFile;
+
+    private final Logger logger = Logging.getLogger(getClass());
 
     @OutputFile
     @NotNull
@@ -199,15 +201,12 @@ public abstract class AbstractBaseTask extends DefaultTask {
             spec.execute(execSpec);
         });
         if (result.getExitValue() != 0 && shouldLogOnExecFail() && getLogFile() != null) {
-            System.err.print("\n" +
+            logger.error("\n" +
                     "###########\n" +
                     "# ERROR LOG\n" +
                     "###########\n\n");
-            try {
-                IOUtils.copy(new FileInputStream(getLogFile()), System.err);
-            } catch (IOException e) {
-                throw new GradleException("Failed to open input stream to " + getLogFile(), e);
-            }
+            logger.error(FileUtils.read(getLogFile()));
+            logger.error("\n");
         }
         if (result.getExitValue() != 0) {
             throw new GradleException("Task failed, you can find the log file here: " + getLogFile().getAbsolutePath());
@@ -236,15 +235,12 @@ public abstract class AbstractBaseTask extends DefaultTask {
             execSpec.setStandardOutput(ostream);
         });
         if (result.getExitValue() != 0 && shouldLogOnExecFail() && getLogFile() != null) {
-            System.err.print("\n" +
+            logger.error("\n" +
                     "###########\n" +
                     "# ERROR LOG\n" +
                     "###########\n\n");
-            try {
-                IOUtils.copy(new FileInputStream(getLogFile()), System.err);
-            } catch (IOException e) {
-                throw new GradleException("Failed to open input stream to " + getLogFile(), e);
-            }
+            logger.error(FileUtils.read(getLogFile()));
+            logger.error("\n");
         }
         if (result.getExitValue() != 0) {
             throw new GradleException("Task failed, you can find the log file here: " + getLogFile().getAbsolutePath());

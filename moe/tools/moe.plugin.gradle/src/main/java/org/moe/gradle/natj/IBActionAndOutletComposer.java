@@ -18,14 +18,14 @@ package org.moe.gradle.natj;
 
 import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.GradleException;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.moe.gradle.natj.NatJResolver.ResolvedClass;
 import org.moe.gradle.options.UIActionsAndOutletsOptions;
 import org.moe.gradle.utils.TaskUtils;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Type;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +45,7 @@ import static org.objectweb.asm.Opcodes.ASM5;
  */
 public class IBActionAndOutletComposer {
 
-    private static final Logger LOG = LoggerFactory.getLogger(IBActionAndOutletComposer.class);
+    private static final Logger LOG = Logging.getLogger(IBActionAndOutletComposer.class);
 
     private final NatJResolver<ClassVisitor> resolver = new NatJResolver<>();
 

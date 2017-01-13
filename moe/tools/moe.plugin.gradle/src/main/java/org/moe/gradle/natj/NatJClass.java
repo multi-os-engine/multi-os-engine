@@ -26,7 +26,7 @@ import org.objectweb.asm.ClassVisitor;
 import java.util.Arrays;
 import java.util.function.Consumer;
 
-import static org.objectweb.asm.Opcodes.*;
+import static org.objectweb.asm.Opcodes.ACC_INTERFACE;
 
 /**
  * Class representing a Java class.

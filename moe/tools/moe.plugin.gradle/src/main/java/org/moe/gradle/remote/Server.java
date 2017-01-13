@@ -25,6 +25,8 @@ import org.gradle.BuildResult;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.NotNull;
@@ -50,6 +52,8 @@ import java.util.stream.Collectors;
 import static org.moe.gradle.MoePlugin.MOE;
 
 public class Server {
+
+    private static final Logger LOG = Logging.getLogger(Server.class);
 
     private static final String MOE_REMOTEBUILD_DISABLE = "moe.remotebuild.disable";
     private static final String SDK_ROOT_MARK = "REMOTE_MOE_SDK_ROOT___1234567890";
@@ -113,7 +117,7 @@ public class Server {
                 try {
                     lockRemoteKeychain();
                 } catch (Throwable e) {
-                    e.printStackTrace(System.err);
+                    LOG.error("Failed to lock remote keychain", e);
                 }
                 try {
                     if (buildDir != null) {
@@ -123,7 +127,7 @@ public class Server {
                         runner.run();
                     }
                 } catch (Throwable e) {
-                    e.printStackTrace(System.err);
+                    LOG.error("Failed to cleanup on remote server", e);
                 }
                 disconnect();
             }
@@ -275,7 +279,7 @@ public class Server {
             throw new GradleException("Failed to initialize connection with server");
         }
         userHome = baos.toString().trim();
-        System.out.println("MOE Remote Build - REMOTE_HOME=" + getUserHome());
+        LOG.quiet("MOE Remote Build - REMOTE_HOME=" + getUserHome());
     }
 
     private void setupBuildDir() {
@@ -314,7 +318,7 @@ public class Server {
         } catch (URISyntaxException e) {
             throw new GradleException(e.getMessage(), e);
         }
-        System.out.println("MOE Remote Build - REMOTE_BUILD_DIR=" + buildDir.getPath());
+        LOG.quiet("MOE Remote Build - REMOTE_BUILD_DIR=" + buildDir.getPath());
     }
 
     private void disconnect() {

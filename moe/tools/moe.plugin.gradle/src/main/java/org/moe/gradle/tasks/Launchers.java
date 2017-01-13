@@ -26,6 +26,8 @@ import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.JavaExec;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.SourceSetContainer;
@@ -42,9 +44,8 @@ import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.JUnitTestCollector;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
+import org.moe.gradle.utils.StreamToLogForwarder;
 import org.moe.gradle.utils.TaskUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -62,7 +63,8 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 public class Launchers {
-    private static final Logger LOG = LoggerFactory.getLogger(Launchers.class);
+
+    private static final Logger LOG = Logging.getLogger(Launchers.class);
 
     private static final String MOE_LAUNCHER_DEVICE_UDID_PROPERTY = "moe.launcher.devices";
     private static final String MOE_LAUNCHER_SIMULATOR_UDID_PROPERTY = "moe.launcher.simulators";
@@ -628,7 +630,7 @@ public class Launchers {
                 exec.setStandardOutput(baos);
                 exec.setErrorOutput(new NullOutputStream());
 
-            }).getActions().add(task -> System.out.print("\n" + baos.toString().trim() + "\n"));
+            }).getActions().add(task -> LOG.quiet("\n" + baos.toString().trim() + "\n"));
         }
 
         { // List available simulators
@@ -639,14 +641,14 @@ public class Launchers {
                 final SimCtl simctl = new SimCtl();
 
                 if (Os.isFamily(Os.FAMILY_MAC) && TaskUtils.checkExec(project, "which", "xcrun")) {
-                    System.out.println("Initializing");
+                    LOG.info("Initializing");
                     simctl.initialize(plugin);
                 }
 
                 final String list = simctl.devices.stream()
                         .map(d -> "- " + d)
                         .collect(Collectors.joining("\n"));
-                System.out.print("\nAvailable Simulators:\n" + list.trim() + "\n");
+                LOG.quiet("\nAvailable Simulators:\n" + list.trim() + "\n");
             });
         }
 
@@ -865,8 +867,8 @@ public class Launchers {
                         exec.setStandardOutput(writer);
                         exec.setErrorOutput(writer);
                     } else {
-                        exec.setStandardOutput(System.out);
-                        exec.setErrorOutput(System.err);
+                        exec.setStandardOutput(new StreamToLogForwarder(LOG, false));
+                        exec.setErrorOutput(new StreamToLogForwarder(LOG, true));
                     }
                 });
 
@@ -921,8 +923,8 @@ public class Launchers {
                         exec.setStandardOutput(writer);
                         exec.setErrorOutput(writer);
                     } else {
-                        exec.setStandardOutput(System.out);
-                        exec.setErrorOutput(System.err);
+                        exec.setStandardOutput(new StreamToLogForwarder(LOG, false));
+                        exec.setErrorOutput(new StreamToLogForwarder(LOG, true));
                     }
                 });
 

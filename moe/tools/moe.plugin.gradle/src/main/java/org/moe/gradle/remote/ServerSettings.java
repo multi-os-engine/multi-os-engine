@@ -23,14 +23,15 @@ import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UserInfo;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
+import org.moe.common.utils.CloseableUtil;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TermColor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Console;
@@ -54,7 +55,7 @@ import static org.moe.gradle.utils.TermColor.*;
 
 class ServerSettings {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ServerSettings.class);
+    private static final Logger LOG = Logging.getLogger(ServerSettings.class);
 
     private static final String MOE_REMOTEBUILD_PROPERTIES = "moe.remotebuild.properties";
     private static final String MOE_REMOTEBUILD_PROPERTIES_IGNORE_PROPERTY = "moe.remotebuild.properties.ignore";
@@ -425,7 +426,7 @@ class ServerSettings {
                 if (console != null) {
                     console.printf("%1s%2s", SCR_SAVE, SCR_CLR);
                 } else {
-                    System.out.printf("%1s%2s", SCR_SAVE, SCR_CLR);
+                    LOG.quiet("%1s%2s", SCR_SAVE, SCR_CLR);
                 }
                 try {
                     runnable.accept(stop);
@@ -433,7 +434,7 @@ class ServerSettings {
                     if (console != null) {
                         console.printf("%1s", SCR_RESTORE);
                     } else {
-                        System.out.printf("%1s", SCR_RESTORE);
+                        LOG.quiet("%1s", SCR_RESTORE);
                     }
                 }
             }
@@ -591,8 +592,8 @@ class ServerSettings {
             console.printf("Testing remote server connection:%n");
             console.printf("Connecting... (timeout: 30s)%n");
         } else {
-            System.out.printf("Testing remote server connection:%n");
-            System.out.printf("Connecting... (timeout: 30s)%n");
+            LOG.quiet("Testing remote server connection:%n");
+            LOG.quiet("Connecting... (timeout: 30s)%n");
         }
         final Session session;
         try {
@@ -647,8 +648,8 @@ class ServerSettings {
             console.printf("%1sConnection successful%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
             console.printf("Testing keychain access%n");
         } else {
-            System.out.printf("%1sConnection successful%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
-            System.out.printf("Testing keychain access%n");
+            LOG.quiet("%1sConnection successful%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
+            LOG.quiet("Testing keychain access%n");
         }
 
         try {
@@ -687,19 +688,14 @@ class ServerSettings {
             }
 
             final String output = baos.toString();
-
-            try {
-                baos.close();
-            } catch (IOException ex) {
-                ex.printStackTrace(System.err);
-            }
+            CloseableUtil.tryClose(baos, LOG, "Failed to close stream");
 
             channel.disconnect();
             if (channel.getExitStatus() == 0) {
                 if (console != null) {
                     console.printf("%1sKeychain unlocked successfully%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
                 } else {
-                    System.out.printf("%1sKeychain unlocked successfully%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
+                    LOG.quiet("%1sKeychain unlocked successfully%2s%n", FG_SET_CYAN, FG_SET_DEFAULT);
                 }
                 session.disconnect();
                 return true;
@@ -717,7 +713,7 @@ class ServerSettings {
         if (console != null) {
             console.printf("%n");
         } else {
-            System.out.printf("%n");
+            LOG.quiet("%n");
         }
     }
 
@@ -726,7 +722,7 @@ class ServerSettings {
         if (console != null) {
             console.printf("%1sError:%2s %3s%n", FG_SET_RED, FG_SET_DEFAULT, msg);
         } else {
-            System.out.printf("%1sError:%2s %3s%n", FG_SET_RED, FG_SET_DEFAULT, msg);
+            LOG.error("%1sError:%2s %3s%n", FG_SET_RED, FG_SET_DEFAULT, msg);
         }
     }
 
@@ -735,7 +731,7 @@ class ServerSettings {
         if (console != null) {
             console.printf("%1sWarning:%2s %3s%n", FG_SET_YELLOW, FG_SET_DEFAULT, msg);
         } else {
-            System.out.printf("%1sWarning:%2s %3s%n", FG_SET_YELLOW, FG_SET_DEFAULT, msg);
+            LOG.warn("%1sWarning:%2s %3s%n", FG_SET_YELLOW, FG_SET_DEFAULT, msg);
         }
     }
 

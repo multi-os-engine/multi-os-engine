@@ -19,15 +19,19 @@ package org.moe.gradle.remote;
 import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSchException;
 import org.gradle.api.GradleException;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
+import org.moe.common.utils.CloseableUtil;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TermColor;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
 class ServerCommandRunner extends AbstractServerTask {
+
+    private static final Logger LOG = Logging.getLogger(ServerCommandRunner.class);
 
     @NotNull
     private final String name;
@@ -88,12 +92,7 @@ class ServerCommandRunner extends AbstractServerTask {
         }
 
         output = baos.toString();
-
-        try {
-            baos.close();
-        } catch (IOException ex) {
-            ex.printStackTrace(System.err);
-        }
+        CloseableUtil.tryClose(baos, LOG, "Failed to close stream");
 
         channel.disconnect();
         if (channel.getExitStatus() != 0) {

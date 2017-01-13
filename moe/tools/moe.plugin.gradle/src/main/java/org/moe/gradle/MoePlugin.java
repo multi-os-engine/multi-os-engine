@@ -22,6 +22,8 @@ import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;
@@ -66,6 +68,8 @@ import static java.util.Collections.singletonList;
 import static org.moe.gradle.MoePlugin.TaskParams.*;
 
 public class MoePlugin extends AbstractMoePlugin {
+
+    private static final Logger LOG = Logging.getLogger(MoePlugin.class);
 
     @NotNull
     private MoeExtension extension;
@@ -164,7 +168,7 @@ public class MoePlugin extends AbstractMoePlugin {
             task.setDescription("Prints some properties of the MOE SDK.");
             task.getActions().add(t -> {
                 final File platformJar = extension.getPlatformJar();
-                System.out.println("\n" +
+                LOG.quiet("\n" +
                         "moe.sdk.home=" + getSDK().getRoot() + "\n" +
                         "moe.sdk.coreJar=" + getSDK().getCoreJar() + "\n" +
                         "moe.sdk.platformJar=" + (platformJar == null ? "" : platformJar) + "\n" +
@@ -190,7 +194,7 @@ public class MoePlugin extends AbstractMoePlugin {
                 Optional.ofNullable(extension.xcode.getTestScheme()).ifPresent(
                         o -> b.append("moe.xcode.testScheme=").append(o).append("\n"));
                 b.append("\n");
-                System.out.println(b.toString());
+                LOG.quiet(b.toString());
             });
         });
 

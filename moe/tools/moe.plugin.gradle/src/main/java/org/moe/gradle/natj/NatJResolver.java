@@ -16,11 +16,11 @@ limitations under the License.
 
 package org.moe.gradle.natj;
 
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.moe.gradle.natj.IBActionAndOutletComposer.ClassVisitor;
 import org.moe.gradle.utils.Require;
 import org.objectweb.asm.Type;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,7 +35,7 @@ import java.util.function.BiConsumer;
  */
 public class NatJResolver<T extends NatJClass<ClassVisitor>> {
 
-    private static final Logger LOG = LoggerFactory.getLogger(NatJResolver.class);
+    private static final Logger LOG = Logging.getLogger(NatJResolver.class);
 
     final Map<String, ResolvedClass> classes = new HashMap<>();
     final List<String> issues = new ArrayList<>();

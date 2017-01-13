@@ -16,11 +16,11 @@ limitations under the License.
 
 package org.moe.gradle.options;
 
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.Nullable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class SigningOptions {
-    private static final Logger LOG = LoggerFactory.getLogger(SigningOptions.class);
+    private static final Logger LOG = Logging.getLogger(SigningOptions.class);
 
     @Nullable
     private String defaultDevelopmentTeam;

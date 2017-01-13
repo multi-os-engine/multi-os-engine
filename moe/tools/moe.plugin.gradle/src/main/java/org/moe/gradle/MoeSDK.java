@@ -23,14 +23,14 @@ import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.artifacts.ExternalDependency;
 import org.gradle.api.artifacts.UnknownConfigurationException;
 import org.gradle.api.artifacts.repositories.ArtifactRepository;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.plugins.ExtraPropertiesExtension;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,7 +43,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class MoeSDK {
-    private static final Logger LOG = LoggerFactory.getLogger(MoeSDK.class);
+    private static final Logger LOG = Logging.getLogger(MoeSDK.class);
 
     private static final String MOE_SDK_CONFIGURATION_NAME = "moeMavenSDK";
     private static final String MOE_LOCAL_SDK_PROPERTY = "moe.sdk.localbuild";
@@ -176,7 +176,7 @@ public class MoeSDK {
         }
 
         // Prepare temp dir by removing old tmp directory and re-creating it
-        System.out.println("Installing MOE SDK, this may take a few minutes...");
+        LOG.quiet("Installing MOE SDK, this may take a few minutes...");
 
         // Extract zip into the temp directory
         project.copy(spec -> {
