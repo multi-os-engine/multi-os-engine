@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14799BBAFFE78023D781B58B /* application.jar in Resources */ = {isa = PBXBuildFile; fileRef = 279D9EE1B91DDB114861EAA9 /* application.jar */; };
 		3CD05FA7A8EAED8AD78510B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39EA42054516C464D8301683 /* LaunchScreen.xib */; };
-		563A590278E428CDA47AA377 /* MOE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70AE979D4CACC8A96961A2D /* MOE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		589444991E2A5E8300347693 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 589444981E2A5E8300347693 /* main.cpp */; };
 		58AC08321D9BD47400E40FAA /* C+Functions+Invocation.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC081B1D9BD44500E40FAA /* C+Functions+Invocation.c */; };
 		58AC08331D9BD47400E40FAA /* C+Functions+LongInvocation.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC081D1D9BD44500E40FAA /* C+Functions+LongInvocation.c */; };
 		58AC08341D9BD47400E40FAA /* C+Functions+Primitives.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC081F1D9BD44500E40FAA /* C+Functions+Primitives.c */; };
@@ -50,16 +49,9 @@
 		58AC08AD1D9BF85000E40FAA /* UnmanagedNativeBlockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08961D9BF85000E40FAA /* UnmanagedNativeBlockManager.m */; };
 		58AC08AE1D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AC08981D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m */; };
 		58AC08B01D9BF8F400E40FAA /* objctests in Resources */ = {isa = PBXBuildFile; fileRef = 58AC08AF1D9BF8F400E40FAA /* objctests */; };
-		5F827CE6673AD73BD07242CA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B09EEB74B580C320B7AE423 /* main.cpp */; };
-		66F8227279FEFAE26E27F6A4 /* classlist.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6C54B1F414860663FA811FF /* classlist.txt */; };
-		6A1F2F685821DAA79EF164CF /* preregister.txt in Resources */ = {isa = PBXBuildFile; fileRef = A9750BB173040A9CA2391A56 /* preregister.txt */; };
-		6F1D355C5088E137E301892D /* MOE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70AE979D4CACC8A96961A2D /* MOE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A7680274F67904473AB479AB /* application.jar in Resources */ = {isa = PBXBuildFile; fileRef = 7686422F0FFF83351D5CBB75 /* application.jar */; };
+		58E0AE961E2A56F6007DA965 /* CustomBindingClassName.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E0AE951E2A56F6007DA965 /* CustomBindingClassName.m */; };
 		CD44DE0BEB3911890DB13F64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B09EEB74B580C320B7AE423 /* main.cpp */; };
 		CE6FCE78FA099DB4A3BB80E6 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45F3E6C7231EC9B664C12A3 /* MainUI.storyboard */; };
-		D09D73CAB61E7D62501CA082 /* MOE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AE979D4CACC8A96961A2D /* MOE.framework */; };
-		D60362C58C39B5C85C4EF5F7 /* MOE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AE979D4CACC8A96961A2D /* MOE.framework */; };
-		F776280134EA1FBE9DB3C47E /* preregister.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CCA4A9CC7DE4F2DD0639FFD /* preregister.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,7 +61,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				563A590278E428CDA47AA377 /* MOE.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +71,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6F1D355C5088E137E301892D /* MOE.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,11 +78,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1235924AA75839150B4FC510 /* Info-Test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Test.plist"; path = "NatJTestRunner-Test/Info-Test.plist"; sourceTree = SOURCE_ROOT; };
+		1235924AA75839150B4FC510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "NatJTestRunner-Test/Info.plist"; sourceTree = SOURCE_ROOT; };
 		1B09EEB74B580C320B7AE423 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		1CCA4A9CC7DE4F2DD0639FFD /* preregister.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = preregister.txt; path = ../build/moe/test/preregister.txt; sourceTree = SOURCE_ROOT; };
-		279D9EE1B91DDB114861EAA9 /* application.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = application.jar; path = ../build/moe/main/application.jar; sourceTree = SOURCE_ROOT; };
 		39EA42054516C464D8301683 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../src/main/resources/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		589444981E2A5E8300347693 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		58AC081B1D9BD44500E40FAA /* C+Functions+Invocation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Functions+Invocation.c"; path = "../../../../natj-ctests/src/test/native/C+Functions+Invocation.c"; sourceTree = "<group>"; };
 		58AC081C1D9BD44500E40FAA /* C+Functions+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Functions+Invocation.h"; path = "../../../../natj-ctests/src/test/native/C+Functions+Invocation.h"; sourceTree = "<group>"; };
 		58AC081D1D9BD44500E40FAA /* C+Functions+LongInvocation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Functions+LongInvocation.c"; path = "../../../../natj-ctests/src/test/native/C+Functions+LongInvocation.c"; sourceTree = "<group>"; };
@@ -188,15 +177,11 @@
 		58AC08971D9BF85000E40FAA /* UnmanagedProtocolProxyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnmanagedProtocolProxyManager.h; path = "../../../../natj-objctests/src/test/native/UnmanagedProtocolProxyManager.h"; sourceTree = "<group>"; };
 		58AC08981D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnmanagedProtocolProxyManager.m; path = "../../../../natj-objctests/src/test/native/UnmanagedProtocolProxyManager.m"; sourceTree = "<group>"; };
 		58AC08AF1D9BF8F400E40FAA /* objctests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = objctests; path = ../../build/external_resources/objctests; sourceTree = "<group>"; };
-		7686422F0FFF83351D5CBB75 /* application.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; name = application.jar; path = ../build/moe/test/application.jar; sourceTree = SOURCE_ROOT; };
+		58E0AE941E2A56F6007DA965 /* CustomBindingClassName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBindingClassName.h; path = "../../../../natj-objctests/src/test/native/CustomBindingClassName.h"; sourceTree = "<group>"; };
+		58E0AE951E2A56F6007DA965 /* CustomBindingClassName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBindingClassName.m; path = "../../../../natj-objctests/src/test/native/CustomBindingClassName.m"; sourceTree = "<group>"; };
 		A3C58F51F62EAE6B48FC7C84 /* NatJTestRunner-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NatJTestRunner-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5AB9AE9729CD4517E3C5491 /* NatJTestRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatJTestRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6C54B1F414860663FA811FF /* classlist.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = classlist.txt; path = ../build/moe/test/classlist.txt; sourceTree = SOURCE_ROOT; };
-		A9750BB173040A9CA2391A56 /* preregister.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = preregister.txt; path = ../build/moe/main/preregister.txt; sourceTree = SOURCE_ROOT; };
 		B45F3E6C7231EC9B664C12A3 /* MainUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MainUI.storyboard; path = ../src/main/resources/MainUI.storyboard; sourceTree = SOURCE_ROOT; };
-		ED252F24B41EADAB79CC4EA7 /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
-		F70AE979D4CACC8A96961A2D /* MOE.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOE.framework; sourceTree = MOE_FRAMEWORK_PATH; };
-		F9AEBC3AEC71EF745362303B /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
 		FD40C8DF97112AB4BF5D3C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = NatJTestRunner/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -205,7 +190,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D09D73CAB61E7D62501CA082 /* MOE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +197,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D60362C58C39B5C85C4EF5F7 /* MOE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +320,8 @@
 				58AC086E1D9BF85000E40FAA /* ClusterClass.h */,
 				58AC086F1D9BF85000E40FAA /* ClusterClass.m */,
 				58AC08701D9BF85000E40FAA /* Common_Defines.h */,
+				58E0AE941E2A56F6007DA965 /* CustomBindingClassName.h */,
+				58E0AE951E2A56F6007DA965 /* CustomBindingClassName.m */,
 				58AC08711D9BF85000E40FAA /* CustomClassA.h */,
 				58AC08721D9BF85000E40FAA /* CustomClassA.m */,
 				58AC08731D9BF85000E40FAA /* InstrumentedParent.h */,
@@ -385,12 +370,6 @@
 			isa = PBXGroup;
 			children = (
 				1B09EEB74B580C320B7AE423 /* main.cpp */,
-				ED252F24B41EADAB79CC4EA7 /* build.xcconfig */,
-				FD40C8DF97112AB4BF5D3C97 /* Info.plist */,
-				A9750BB173040A9CA2391A56 /* preregister.txt */,
-				279D9EE1B91DDB114861EAA9 /* application.jar */,
-				39EA42054516C464D8301683 /* LaunchScreen.xib */,
-				B45F3E6C7231EC9B664C12A3 /* MainUI.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -407,6 +386,7 @@
 		B7A3A315F342AC9A22367F38 /* NatJTestRunner-Test */ = {
 			isa = PBXGroup;
 			children = (
+				1235924AA75839150B4FC510 /* Info.plist */,
 				E12E17AD932D578718277682 /* Supporting Files */,
 				58AC081A1D9BD43000E40FAA /* ctests */,
 				58AC08401D9BED9000E40FAA /* cxxtests */,
@@ -420,7 +400,6 @@
 		D7C82D1258C2C7F1F8331286 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F70AE979D4CACC8A96961A2D /* MOE.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -428,11 +407,7 @@
 		E12E17AD932D578718277682 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F9AEBC3AEC71EF745362303B /* build.xcconfig */,
-				1235924AA75839150B4FC510 /* Info-Test.plist */,
-				1CCA4A9CC7DE4F2DD0639FFD /* preregister.txt */,
-				7686422F0FFF83351D5CBB75 /* application.jar */,
-				A6C54B1F414860663FA811FF /* classlist.txt */,
+				589444981E2A5E8300347693 /* main.cpp */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -440,6 +415,9 @@
 		EBD7838AE40B3829CBF1347F /* NatJTestRunner */ = {
 			isa = PBXGroup;
 			children = (
+				FD40C8DF97112AB4BF5D3C97 /* Info.plist */,
+				39EA42054516C464D8301683 /* LaunchScreen.xib */,
+				B45F3E6C7231EC9B664C12A3 /* MainUI.storyboard */,
 				5A043F6BFD1DFCA4F5C571C8 /* Supporting Files */,
 			);
 			path = NatJTestRunner;
@@ -488,6 +466,7 @@
 		2327917862693CF2C608A6EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "My Company";
 			};
 			buildConfigurationList = 4E72E22E763BE07A1741A3DB /* Build configuration list for PBXProject "NatJTestRunner" */;
@@ -514,8 +493,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A1F2F685821DAA79EF164CF /* preregister.txt in Resources */,
-				14799BBAFFE78023D781B58B /* application.jar in Resources */,
 				3CD05FA7A8EAED8AD78510B4 /* LaunchScreen.xib in Resources */,
 				CE6FCE78FA099DB4A3BB80E6 /* MainUI.storyboard in Resources */,
 			);
@@ -526,10 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58AC083F1D9BE08700E40FAA /* ctests in Resources */,
-				F776280134EA1FBE9DB3C47E /* preregister.txt in Resources */,
-				A7680274F67904473AB479AB /* application.jar in Resources */,
 				58AC08B01D9BF8F400E40FAA /* objctests in Resources */,
-				66F8227279FEFAE26E27F6A4 /* classlist.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +522,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "\n# Check directories set by xcconfigs\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\nif [ ! -d \"$MOE_PROJECT_BUILD_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\ncd \"$MOE_PROJECT_DIR/\"\n\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\njava -version\n\n########################\n# Find Gradle\n########################\nfunction findGradle {\n\tCD=\"$PWD\"\n\twhile [ \"$CD\" != \"\" ]; do\n\t\techo \"Looking for gradlew in $CD\"\n\t\tif [ -x \"$CD/gradlew\" ]; then\n\t\t\tGRADLE_EXEC=$CD/gradlew\n\t\t\treturn 0\n\t\tfi\n\t\tCD=\"${CD%/*}\"\n\tdone\n\n\techo \"Checking with 'which'\"\n\tGRADLE_EXEC=$(which 'gradle')\n\n\tif [ \"$GRADLE_EXEC\" = \"\" ]; then\n\t\techo \"Failed to locate 'gradle' executable!\"\n\t\texit 1\n\tfi\n}\n########################\n# Execute Gradle build\n########################\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n\n    export MOE_BUILD_SOURCE_SET=test\n    \"$GRADLE_EXEC\" --daemon moeXcodeInternal\nfi\n";
+			shellScript = "set -e\n\nexport MOE_BUILD_SOURCE_SET=\"test\"\n\n# Check project directory\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\ncd \"$MOE_PROJECT_DIR\"\n\n# Export JAVA_HOME\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\n\n# Utility function for finding the Gradle implementation\nfunction findGradle {\n    CD=\"$PWD\"\n    while [ \"$CD\" != \"\" ]; do\n        echo \"Looking for gradlew in $CD\"\n        if [ -x \"$CD/gradlew\" ]; then\n            GRADLE_EXEC=$CD/gradlew\n            return 0\n        fi\n        CD=\"${CD%/*}\"\n    done\n\n    echo \"Checking with 'which'\"\n    GRADLE_EXEC=$(which 'gradle')\n\n    if [ \"$GRADLE_EXEC\" = \"\" ]; then\n        echo \"Failed to locate 'gradle' executable!\"\n        exit 1\n    fi\n}\n\n# Build project with Gradle\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n    \"$GRADLE_EXEC\" --no-daemon moeXcodeInternal -s\nfi\n\n# Check output directory\nif [ ! -d \"${MOE_PROJECT_BUILD_DIR}\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\n# Copy some resources\nmkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/application.jar\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/preregister.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [ \"${MOE_BUILD_SOURCE_SET}\" == \"test\" ]; then\n    cp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/classlist.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nfi\n\n# Copy android CA certificates on demand\nif [ \"${MOE_COPY_ANDROID_CACERTS}\" == \"YES\" ]; then\n    rm -rf \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    mkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    unzip \"${MOE_SDK_PATH}/sdk/moe-core-certificates.zip\" -d \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\nfi\n\n# Copy and sign MOE framework\nrsync -av --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \\\n    \"${MOE_FRAMEWORK_PATH}/MOE.framework\" \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\nif [ -n \"${EXPANDED_CODE_SIGN_IDENTITY}\" -a \"${CODE_SIGNING_REQUIRED}\" != \"NO\" -a \"${CODE_SIGNING_ALLOWED}\" != \"NO\" ]; then\n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $OTHER_CODE_SIGN_FLAGS \\\n        --preserve-metadata=identifier,entitlements \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework\"\nfi\n";
 		};
 		BC6A2D2E322EF078FFD9217D /* Compile Sources (MOE) */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -562,7 +536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "\n# Check directories set by xcconfigs\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\nif [ ! -d \"$MOE_PROJECT_BUILD_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\ncd \"$MOE_PROJECT_DIR/\"\n\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\njava -version\n\n########################\n# Find Gradle\n########################\nfunction findGradle {\n\tCD=\"$PWD\"\n\twhile [ \"$CD\" != \"\" ]; do\n\t\techo \"Looking for gradlew in $CD\"\n\t\tif [ -x \"$CD/gradlew\" ]; then\n\t\t\tGRADLE_EXEC=$CD/gradlew\n\t\t\treturn 0\n\t\tfi\n\t\tCD=\"${CD%/*}\"\n\tdone\n\n\techo \"Checking with 'which'\"\n\tGRADLE_EXEC=$(which 'gradle')\n\n\tif [ \"$GRADLE_EXEC\" = \"\" ]; then\n\t\techo \"Failed to locate 'gradle' executable!\"\n\t\texit 1\n\tfi\n}\n########################\n# Execute Gradle build\n########################\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n\n    \"$GRADLE_EXEC\" --daemon moeXcodeInternal\nfi\n";
+			shellScript = "set -e\n\nexport MOE_BUILD_SOURCE_SET=\"main\"\n\n# Check project directory\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\ncd \"$MOE_PROJECT_DIR\"\n\n# Export JAVA_HOME\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\n\n# Utility function for finding the Gradle implementation\nfunction findGradle {\n    CD=\"$PWD\"\n    while [ \"$CD\" != \"\" ]; do\n        echo \"Looking for gradlew in $CD\"\n        if [ -x \"$CD/gradlew\" ]; then\n            GRADLE_EXEC=$CD/gradlew\n            return 0\n        fi\n        CD=\"${CD%/*}\"\n    done\n\n    echo \"Checking with 'which'\"\n    GRADLE_EXEC=$(which 'gradle')\n\n    if [ \"$GRADLE_EXEC\" = \"\" ]; then\n        echo \"Failed to locate 'gradle' executable!\"\n        exit 1\n    fi\n}\n\n# Build project with Gradle\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n    \"$GRADLE_EXEC\" --no-daemon moeXcodeInternal -s\nfi\n\n# Check output directory\nif [ ! -d \"${MOE_PROJECT_BUILD_DIR}\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\n# Copy some resources\nmkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/application.jar\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/preregister.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [ \"${MOE_BUILD_SOURCE_SET}\" == \"test\" ]; then\n    cp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/classlist.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nfi\n\n# Copy android CA certificates on demand\nif [ \"${MOE_COPY_ANDROID_CACERTS}\" == \"YES\" ]; then\n    rm -rf \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    mkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    unzip \"${MOE_SDK_PATH}/sdk/moe-core-certificates.zip\" -d \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\nfi\n\n# Copy and sign MOE framework\nrsync -av --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \\\n    \"${MOE_FRAMEWORK_PATH}/MOE.framework\" \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\nif [ -n \"${EXPANDED_CODE_SIGN_IDENTITY}\" -a \"${CODE_SIGNING_REQUIRED}\" != \"NO\" -a \"${CODE_SIGNING_ALLOWED}\" != \"NO\" ]; then\n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $OTHER_CODE_SIGN_FLAGS \\\n        --preserve-metadata=identifier,entitlements \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -599,7 +573,6 @@
 				58AC08AC1D9BF85000E40FAA /* UnmanagedBinding.m in Sources */,
 				58AC08A51D9BF85000E40FAA /* ObjC+Methods+Variadic.m in Sources */,
 				58AC08641D9BED9E00E40FAA /* Functions.cpp in Sources */,
-				5F827CE6673AD73BD07242CA /* main.cpp in Sources */,
 				58AC086A1D9BEE8D00E40FAA /* natj_cxx_stub.cpp in Sources */,
 				58AC08361D9BD47400E40FAA /* C+Functions+Variadic.c in Sources */,
 				58AC08331D9BD47400E40FAA /* C+Functions+LongInvocation.c in Sources */,
@@ -611,12 +584,14 @@
 				58AC089B1D9BF85000E40FAA /* CustomClassA.m in Sources */,
 				58AC08A21D9BF85000E40FAA /* ObjC+Methods+Primitives.m in Sources */,
 				58AC08381D9BD47400E40FAA /* NativeDataSource.c in Sources */,
+				58E0AE961E2A56F6007DA965 /* CustomBindingClassName.m in Sources */,
 				58AC089F1D9BF85000E40FAA /* NSStringInstrumentor.m in Sources */,
 				58AC08321D9BD47400E40FAA /* C+Functions+Invocation.c in Sources */,
 				58AC089E1D9BF85000E40FAA /* NativeDataSource.m in Sources */,
 				58AC08A91D9BF85000E40FAA /* ObjCUtility.m in Sources */,
 				58AC08A81D9BF85000E40FAA /* ObjCForceCasting.m in Sources */,
 				58AC08631D9BED9E00E40FAA /* Fields.cpp in Sources */,
+				589444991E2A5E8300347693 /* main.cpp in Sources */,
 				58AC08341D9BD47400E40FAA /* C+Functions+Primitives.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,14 +601,28 @@
 /* Begin XCBuildConfiguration section */
 		06292E6D77D3A48AA0F34756 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED252F24B41EADAB79CC4EA7 /* build.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEAD_CODE_STRIPPING = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = NatJTestRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/../";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = moe.NatJTestRunner;
 				PRODUCT_NAME = NatJTestRunner;
 				STRIP_STYLE = "non-global";
 			};
@@ -641,11 +630,11 @@
 		};
 		12AD41BF2E1A0933855764C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9AEBC3AEC71EF745362303B /* build.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				DEAD_CODE_STRIPPING = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -655,9 +644,23 @@
 					"\"$(SRCROOT)/../../../src/main/native/natj\"",
 					"\"$(MOE_FRAMEWORK_PATH)/MOE.framework/Headers\"",
 				);
-				INFOPLIST_FILE = "NatJTestRunner-Test/Info-Test.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NatJTestRunner-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/../";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = moe.NatJTestRunner;
 				PRODUCT_NAME = "NatJTestRunner-Test";
 				STRIP_STYLE = "non-global";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../natj-cxxtests/src/test/native\"";
@@ -677,8 +680,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -690,6 +695,7 @@
 					"${MOE_FRAMEWORK_PATH}",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -708,14 +714,28 @@
 		};
 		40EF57E88272223A2EDA859E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED252F24B41EADAB79CC4EA7 /* build.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEAD_CODE_STRIPPING = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = NatJTestRunner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/../";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = moe.NatJTestRunner;
 				PRODUCT_NAME = NatJTestRunner;
 				STRIP_STYLE = "non-global";
 			};
@@ -723,11 +743,11 @@
 		};
 		A1BD56A261145952E2E0DCBC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9AEBC3AEC71EF745362303B /* build.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				DEAD_CODE_STRIPPING = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -737,9 +757,23 @@
 					"\"$(SRCROOT)/../../../src/main/native/natj\"",
 					"\"$(MOE_FRAMEWORK_PATH)/MOE.framework/Headers\"",
 				);
-				INFOPLIST_FILE = "NatJTestRunner-Test/Info-Test.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NatJTestRunner-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/../";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = moe.NatJTestRunner;
 				PRODUCT_NAME = "NatJTestRunner-Test";
 				STRIP_STYLE = "non-global";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../natj-cxxtests/src/test/native\"";
@@ -759,19 +793,23 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"${MOE_FRAMEWORK_PATH}",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -787,6 +825,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SYMROOT = "$(SRCROOT)/../build/moe/xcodebuild/sym";
 				TARGETED_DEVICE_FAMILY = "1,2";

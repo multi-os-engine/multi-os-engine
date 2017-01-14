@@ -185,6 +185,8 @@
 		58CE14FE1C6CF9F5001967D5 /* natj_cxx_stub.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58CE14FD1C6CF9F5001967D5 /* natj_cxx_stub.cpp */; };
 		58D2BABF1CCF90CA00E62209 /* ObjCForceCasting.h in Headers */ = {isa = PBXBuildFile; fileRef = 58D2BABD1CCF90CA00E62209 /* ObjCForceCasting.h */; };
 		58D2BAC01CCF90CA00E62209 /* ObjCForceCasting.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D2BABE1CCF90CA00E62209 /* ObjCForceCasting.m */; };
+		58E0AE921E2A5623007DA965 /* CustomBindingClassName.h in Headers */ = {isa = PBXBuildFile; fileRef = 58E0AE901E2A5623007DA965 /* CustomBindingClassName.h */; };
+		58E0AE931E2A5623007DA965 /* CustomBindingClassName.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E0AE911E2A5623007DA965 /* CustomBindingClassName.m */; };
 		8B754D341CF74BE80088C102 /* ProtocolFactoryClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B754D321CF74BE80088C102 /* ProtocolFactoryClass.h */; };
 		8B754D351CF74BE80088C102 /* ProtocolFactoryClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B754D331CF74BE80088C102 /* ProtocolFactoryClass.m */; };
 		8B8F887F1CFDE4E8009D0B34 /* UnmanagedBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B8F887D1CFDE4E8009D0B34 /* UnmanagedBinding.h */; };
@@ -411,6 +413,8 @@
 		58CE14FD1C6CF9F5001967D5 /* natj_cxx_stub.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = natj_cxx_stub.cpp; path = "../natj-cxxtests/build/native-gen/natj_cxx_stub.cpp"; sourceTree = "<group>"; };
 		58D2BABD1CCF90CA00E62209 /* ObjCForceCasting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjCForceCasting.h; path = "../natj-objctests/src/test/native/ObjCForceCasting.h"; sourceTree = "<group>"; };
 		58D2BABE1CCF90CA00E62209 /* ObjCForceCasting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjCForceCasting.m; path = "../natj-objctests/src/test/native/ObjCForceCasting.m"; sourceTree = "<group>"; };
+		58E0AE901E2A5623007DA965 /* CustomBindingClassName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBindingClassName.h; path = "../natj-objctests/src/test/native/CustomBindingClassName.h"; sourceTree = "<group>"; };
+		58E0AE911E2A5623007DA965 /* CustomBindingClassName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBindingClassName.m; path = "../natj-objctests/src/test/native/CustomBindingClassName.m"; sourceTree = "<group>"; };
 		8B754D321CF74BE80088C102 /* ProtocolFactoryClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProtocolFactoryClass.h; path = "../natj-objctests/src/test/native/ProtocolFactoryClass.h"; sourceTree = "<group>"; };
 		8B754D331CF74BE80088C102 /* ProtocolFactoryClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProtocolFactoryClass.m; path = "../natj-objctests/src/test/native/ProtocolFactoryClass.m"; sourceTree = "<group>"; };
 		8B8F887D1CFDE4E8009D0B34 /* UnmanagedBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnmanagedBinding.h; path = "../natj-objctests/src/test/native/UnmanagedBinding.h"; sourceTree = "<group>"; };
@@ -861,6 +865,8 @@
 				58A7EA811CC026060091E246 /* ClusterClass.h */,
 				58A7EA821CC026060091E246 /* ClusterClass.m */,
 				58A7EAC51CC041080091E246 /* Common_Defines.h */,
+				58E0AE901E2A5623007DA965 /* CustomBindingClassName.h */,
+				58E0AE911E2A5623007DA965 /* CustomBindingClassName.m */,
 				58A7EA831CC026060091E246 /* CustomClassA.h */,
 				58A7EA841CC026060091E246 /* CustomClassA.m */,
 				58A7EA851CC026060091E246 /* InstrumentedParent.h */,
@@ -1037,6 +1043,7 @@
 				58A7EAB11CC026060091E246 /* ObjC+Methods+Struct.h in Headers */,
 				58A7EAB91CC026060091E246 /* ObjCUtility.h in Headers */,
 				8BAB27641CF481720076626D /* MappingClass.h in Headers */,
+				58E0AE921E2A5623007DA965 /* CustomBindingClassName.h in Headers */,
 				58A7EAB71CC026060091E246 /* ObjCBlocks.h in Headers */,
 				58A7EA9F1CC026060091E246 /* ClusterClass.h in Headers */,
 				8B8F88831CFDE6D2009D0B34 /* UnmanagedProtocolProxyManager.h in Headers */,
@@ -1278,6 +1285,7 @@
 				58A7EAA01CC026060091E246 /* ClusterClass.m in Sources */,
 				58D2BAC01CCF90CA00E62209 /* ObjCForceCasting.m in Sources */,
 				8B754D351CF74BE80088C102 /* ProtocolFactoryClass.m in Sources */,
+				58E0AE931E2A5623007DA965 /* CustomBindingClassName.m in Sources */,
 				58A7EAB21CC026060091E246 /* ObjC+Methods+Struct.m in Sources */,
 				58A7EAB61CC026060091E246 /* ObjCBlocks_Nested.m in Sources */,
 				58A7EAA81CC026060091E246 /* NSStringInstrumentor.m in Sources */,

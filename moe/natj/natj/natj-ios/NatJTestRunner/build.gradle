@@ -3,14 +3,13 @@
 /************************/
 
 buildscript {
-    // Add central and local Maven repos
     repositories {
         jcenter()
         mavenLocal()
     }
     dependencies {
-        // MOE plugin
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
+        // Multi-OS Engine plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.3.+'
     }
 }
 
@@ -59,13 +58,11 @@ test { exclude '**' }
 
 // Setup MOE
 moe {
-    xcode.mainTarget = 'NatJTestRunner'
-    xcode.testTarget = 'NatJTestRunner-Test'
-    xcode.packageName = 'moe.moe.natjtestrunner'
-    xcode.launchScreenFilePath = 'src/main/resources/LaunchScreen.xib'
-    xcode.bundleID = 'moe.NatJTestRunner'
-    xcode.generateProject = false
-    xcode.xcodeProjectDirPath = 'xcode'
+    xcode {
+        project 'xcode/NatJTestRunner.xcodeproj'
+        mainTarget 'NatJTestRunner'
+        testTarget 'NatJTestRunner-Test'
+    }
 }
 
 // Set dependencies

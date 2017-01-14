@@ -49,10 +49,12 @@ public class NatJTest {
 
     static {
         // TODO: this is a workaround for compile issues produced by the need of static linking STL on Windows
-        if (!System.getProperty("os.name").startsWith("Windows")) {
-            System.loadLibrary("natj");
+        if (System.getProperty("moe.platform.name") == null) {
+            if (!System.getProperty("os.name").startsWith("Windows")) {
+                System.loadLibrary("natj");
+            }
+            System.loadLibrary("TestClassesCxx");
         }
-        System.loadLibrary("TestClassesCxx");
         MY_CLASS = newMyClass();
     }
 
