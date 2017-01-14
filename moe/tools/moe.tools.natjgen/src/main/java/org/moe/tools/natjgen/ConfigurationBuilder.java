@@ -132,6 +132,8 @@ public class ConfigurationBuilder {
                 .build());
         // @formatter:on
         unitRules.add(getDisabledObjCRule("objc-class-method", "class"));
+        unitRules.add(getDisabledObjCRule("objc-class-method", "initialize"));
+        unitRules.add(getDisabledObjCRule("objc-class-method", "load"));
         unitRules.add(getDisabledObjCRule("objc-instance-method", "retain"));
         unitRules.add(getDisabledObjCRule("objc-instance-method", "release"));
         unitRules.add(getDisabledObjCRule("objc-instance-method", "autorelease"));
