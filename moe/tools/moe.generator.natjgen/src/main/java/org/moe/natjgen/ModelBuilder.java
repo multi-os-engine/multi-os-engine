@@ -39,6 +39,7 @@ import org.moe.natjgen.Configuration.Unit;
 import java.util.ArrayList;
 
 import static org.clang.c.clang.clang_Cursor_getObjCPropertyAttributes;
+import static org.clang.c.clang.clang_Cursor_getObjCRuntimeName;
 import static org.clang.c.clang.clang_getFileName;
 
 class ModelBuilder extends AbstractModelEditor {
@@ -78,7 +79,7 @@ class ModelBuilder extends AbstractModelEditor {
 
         // Create manager
         final ObjCClassManager manager = new ObjCClassManager(indexer, unit.getFQName(), unit.getOriginalName(),
-                supername);
+                supername, clang_Cursor_getObjCRuntimeName(declCursor).toString());
         manager.setExternalUnit(unit.handlingExternal());
         manager.setLibraryName(unit.getFramework());
         manager.setDeprecated(ClangUtil.isDeprecated(declCursor));
@@ -191,18 +192,20 @@ class ModelBuilder extends AbstractModelEditor {
         }
 
         // Check availability
-        if (!ClangUtil.isAvailable(decl.cursor())) {
+        final CXCursor declCursor = decl.cursor();
+        if (!ClangUtil.isAvailable(declCursor)) {
             if (!unit.handlingExternal()) {
-                statLog().log(Statistics.UNAVAILABLE, Statistics.OBJC_PROTOCOL, decl.cursor().toString());
+                statLog().log(Statistics.UNAVAILABLE, Statistics.OBJC_PROTOCOL, declCursor.toString());
             }
             return;
         }
 
         // Create manager
-        final ObjCProtocolManager manager = new ObjCProtocolManager(indexer, unit.getFQName(), unit.getOriginalName());
+        final ObjCProtocolManager manager = new ObjCProtocolManager(indexer, unit.getFQName(), unit.getOriginalName(),
+                clang_Cursor_getObjCRuntimeName(declCursor).toString());
         manager.setExternalUnit(unit.handlingExternal());
         manager.setLibraryName(unit.getFramework());
-        manager.setDeprecated(ClangUtil.isDeprecated(decl.cursor()));
+        manager.setDeprecated(ClangUtil.isDeprecated(declCursor));
 
         // Add protocols
         final CXIdxObjCProtocolRefListInfo info = decl.getObjCProtocolRefListInfo();

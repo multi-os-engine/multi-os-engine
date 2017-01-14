@@ -182,6 +182,12 @@ public class ObjCClassManager extends AbstractUnitManager {
         return originalName;
     }
 
+    protected final String runtimeName;
+
+    public String getRuntimeName() {
+        return runtimeName;
+    }
+
     protected String libraryName;
 
     public final void setLibraryName(String libraryName) {
@@ -233,7 +239,7 @@ public class ObjCClassManager extends AbstractUnitManager {
      * @param superName   super class's name
      * @param cClassName  objc class name
      */
-    public ObjCClassManager(Indexer indexer, String name_fq, String originalName, String superName) {
+    public ObjCClassManager(Indexer indexer, String name_fq, String originalName, String superName, String runtimeName) {
         super(indexer, name_fq);
 
         // Check values
@@ -244,6 +250,7 @@ public class ObjCClassManager extends AbstractUnitManager {
         // Set value
         this.superName = superName;
         this.originalName = originalName;
+        this.runtimeName = runtimeName;
     }
 
     @Override
@@ -876,9 +883,18 @@ public class ObjCClassManager extends AbstractUnitManager {
                 modifiers.setPublic();
                 if (isHybridClass) {
                     modifiers.setRegisterOnStartup();
-                    modifiers.setObjCClassName(originalName);
+                    if (runtimeName != null && runtimeName.length() > 0 &&
+                            !originalName.equals(runtimeName)) {
+                        modifiers.setObjCClassName(originalName);
+                    } else {
+                        modifiers.setObjCClassName(runtimeName);
+                    }
                 } else {
                     modifiers.setObjCClassBinding();
+                    if (runtimeName != null && runtimeName.length() > 0 &&
+                            !runtimeName.equals(getUnitName())) {
+                        modifiers.setObjCClassName(runtimeName);
+                    }
                 }
                 modifiers.setRuntime(addImport(Constants.ObjCRuntimeFQ));
                 if (libraryName != null) {

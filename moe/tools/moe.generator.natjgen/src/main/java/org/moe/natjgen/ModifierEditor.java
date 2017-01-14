@@ -130,6 +130,7 @@ public class ModifierEditor extends EditContext {
     private Annotation aObjCClassBinding;
     private Annotation aObjCClassName;
     private Annotation aObjCProtocolName;
+    private Annotation aObjCProtocolSourceName;
     private Annotation aProtocolClassMethod;
     private Annotation aSelector;
     private Annotation aXIB;
@@ -172,6 +173,9 @@ public class ModifierEditor extends EditContext {
     };
     private static final String ObjCProtocolName[] = new String[] { Constants.ObjCProtocolNameAnnotation,
             Constants.ObjCProtocolNameAnnotationFQ
+    };
+    private static final String ObjCProtocolSourceName[] = new String[] { Constants.ObjCProtocolSourceNameAnnotation,
+            Constants.ObjCProtocolSourceNameAnnotationFQ
     };
     private static final String ProtocolClassMethod[] = new String[] { Constants.ProtocolClassMethodAnnotation,
             Constants.ProtocolClassMethodAnnotationFQ
@@ -326,6 +330,9 @@ public class ModifierEditor extends EditContext {
                 } else if (type_name.equals(Constants.ObjCProtocolNameAnnotation) || type_name
                         .equals(Constants.ObjCProtocolNameAnnotationFQ)) {
                     aObjCProtocolName = (Annotation)it;
+                } else if (type_name.equals(Constants.ObjCProtocolSourceNameAnnotation) || type_name
+                        .equals(Constants.ObjCProtocolSourceNameAnnotationFQ)) {
+                    aObjCProtocolSourceName = (Annotation)it;
                 } else if (type_name.equals(Constants.ProtocolClassMethodAnnotation) || type_name
                         .equals(Constants.ProtocolClassMethodAnnotationFQ)) {
                     aProtocolClassMethod = (Annotation)it;
@@ -708,6 +715,14 @@ public class ModifierEditor extends EditContext {
         }
         aObjCProtocolName = newSingleMember(aObjCProtocolName, ObjCProtocolName);
         setSMAStringValue(aObjCProtocolName, value);
+    }
+
+    public void setObjCProtocolSourceName(String value) throws GeneratorException {
+        if (value == null) {
+            throw new IllegalArgumentException();
+        }
+        aObjCProtocolSourceName = newSingleMember(aObjCProtocolSourceName, ObjCProtocolSourceName);
+        setSMAStringValue(aObjCProtocolSourceName, value);
     }
 
     public void setProtocolClassMethod(String value) throws GeneratorException {

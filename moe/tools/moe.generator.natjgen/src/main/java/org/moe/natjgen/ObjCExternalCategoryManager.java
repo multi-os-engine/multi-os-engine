@@ -40,7 +40,7 @@ public final class ObjCExternalCategoryManager extends ObjCClassManager {
      * @param superName   super class's name
      */
     public ObjCExternalCategoryManager(Indexer indexer, String name_fq, ObjCClassManager categoryClassManager) {
-        super(indexer, name_fq + "Ext", categoryClassManager.originalName, null);
+        super(indexer, name_fq + "Ext", categoryClassManager.originalName, null, null);
 
         // Set value
         this.categoryClassManager = categoryClassManager;

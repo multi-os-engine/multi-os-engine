@@ -37,8 +37,8 @@ public class ObjCProtocolManager extends ObjCClassManager {
      * @param packageName package name
      * @param unitName    protocol name
      */
-    public ObjCProtocolManager(Indexer indexer, String name_fq, String originalName) {
-        super(indexer, name_fq, originalName, null);
+    public ObjCProtocolManager(Indexer indexer, String name_fq, String originalName, String runtimeName) {
+        super(indexer, name_fq, originalName, null, runtimeName);
     }
 
     /**
@@ -106,7 +106,12 @@ public class ObjCProtocolManager extends ObjCClassManager {
 
                 ModifierEditor modifiers = editor.getModifiers();
                 modifiers.setPublic();
-                modifiers.setObjCProtocolName(originalName);
+                if (runtimeName != null && runtimeName.length() > 0 && !originalName.equals(runtimeName)) {
+                    modifiers.setObjCProtocolName(runtimeName);
+                    modifiers.setObjCProtocolSourceName(originalName);
+                } else {
+                    modifiers.setObjCProtocolName(originalName);
+                }
                 modifiers.setRuntime(addImport(Constants.ObjCRuntimeFQ));
                 if (libraryName != null) {
                     modifiers.setLibrary(libraryName);

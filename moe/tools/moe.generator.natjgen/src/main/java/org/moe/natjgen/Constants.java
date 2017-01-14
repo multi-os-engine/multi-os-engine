@@ -225,6 +225,7 @@ public final class Constants {
     public static final String ObjCClassBindingAnnotation = "ObjCClassBinding";
     public static final String ObjCClassNameAnnotation = "ObjCClassName";
     public static final String ObjCProtocolNameAnnotation = "ObjCProtocolName";
+    public static final String ObjCProtocolSourceNameAnnotation = "ObjCProtocolSourceName";
     public static final String ProtocolClassMethodAnnotation = "ProtocolClassMethod";
     public static final String SelectorAnnotation = "Selector";
     public static final String XIBAnnotation = "XIB";
@@ -247,6 +248,8 @@ public final class Constants {
     public static final String ObjCClassBindingAnnotationFQ = ObjCAnnotationPackage + "." + ObjCClassBindingAnnotation;
     public static final String ObjCClassNameAnnotationFQ = ObjCAnnotationPackage + "." + ObjCClassNameAnnotation;
     public static final String ObjCProtocolNameAnnotationFQ = ObjCAnnotationPackage + "." + ObjCProtocolNameAnnotation;
+    public static final String ObjCProtocolSourceNameAnnotationFQ =
+            ObjCAnnotationPackage + "." + ObjCProtocolSourceNameAnnotation;
     public static final String ProtocolClassMethodAnnotationFQ =
             ObjCAnnotationPackage + "." + ProtocolClassMethodAnnotation;
     public static final String SelectorAnnotationFQ = ObjCAnnotationPackage + "." + SelectorAnnotation;
