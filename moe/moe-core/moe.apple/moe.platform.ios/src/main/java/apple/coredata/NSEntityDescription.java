@@ -117,10 +117,6 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("insertNewObjectForEntityForName:inManagedObjectContext:")
     public static native NSManagedObject insertNewObjectForEntityForNameInManagedObjectContext(String entityName,
             NSManagedObjectContext context);
@@ -145,10 +141,6 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

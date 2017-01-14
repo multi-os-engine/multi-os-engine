@@ -111,10 +111,6 @@ public class SKLabelNode extends SKNode {
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -142,10 +138,6 @@ public class SKLabelNode extends SKNode {
     @Generated
     @Selector("labelNodeWithText:")
     public static native SKLabelNode labelNodeWithText(String text);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

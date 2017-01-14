@@ -123,10 +123,6 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -150,10 +146,6 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Generated
     @Selector("kilograms")
     public static native NSUnitMass kilograms();
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("metricTons")

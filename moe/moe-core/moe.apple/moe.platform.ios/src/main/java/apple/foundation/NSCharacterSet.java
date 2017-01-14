@@ -170,10 +170,6 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public static native NSCharacterSet illegalCharacterSet();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -197,10 +193,6 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Generated
     @Selector("letterCharacterSet")
     public static native NSCharacterSet letterCharacterSet();
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("lowercaseLetterCharacterSet")

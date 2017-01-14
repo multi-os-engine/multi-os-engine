@@ -119,10 +119,6 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -154,10 +150,6 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Generated
     @Selector("layerWithSessionWithNoConnection:")
     public static native AVCaptureVideoPreviewLayer layerWithSessionWithNoConnection(AVCaptureSession session);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("needsDisplayForKey:")

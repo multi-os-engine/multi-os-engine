@@ -123,10 +123,6 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSIndexPath indexPathWithIndexesLength(ConstNUIntPtr indexes, @NUInt long length);
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -146,10 +142,6 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

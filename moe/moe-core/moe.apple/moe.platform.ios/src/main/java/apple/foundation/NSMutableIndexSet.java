@@ -115,10 +115,6 @@ public class NSMutableIndexSet extends NSIndexSet {
     public static native NSMutableIndexSet indexSetWithIndexesInRange(@ByValue NSRange range);
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -138,10 +134,6 @@ public class NSMutableIndexSet extends NSIndexSet {
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

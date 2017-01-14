@@ -108,10 +108,6 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -131,10 +127,6 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

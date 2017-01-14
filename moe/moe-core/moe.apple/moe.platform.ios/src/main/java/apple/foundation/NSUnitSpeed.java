@@ -107,10 +107,6 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -138,10 +134,6 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
     @Generated
     @Selector("knots")
     public static native NSUnitSpeed knots();
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("metersPerSecond")

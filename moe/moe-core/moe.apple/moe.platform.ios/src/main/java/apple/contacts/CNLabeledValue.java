@@ -107,10 +107,6 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -135,10 +131,6 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Selector("labeledValueWithLabel:value:")
     public static native <_ValueType> CNLabeledValue<?> labeledValueWithLabelValue(String label,
             @Mapped(ObjCObjectMapper.class) Object value);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("localizedStringForLabel:")

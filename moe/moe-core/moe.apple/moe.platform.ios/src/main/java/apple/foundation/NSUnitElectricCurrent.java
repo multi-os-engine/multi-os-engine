@@ -111,10 +111,6 @@ public class NSUnitElectricCurrent extends NSDimension implements NSSecureCoding
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -138,10 +134,6 @@ public class NSUnitElectricCurrent extends NSDimension implements NSSecureCoding
     @Generated
     @Selector("kiloamperes")
     public static native NSUnitElectricCurrent kiloamperes();
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("megaamperes")

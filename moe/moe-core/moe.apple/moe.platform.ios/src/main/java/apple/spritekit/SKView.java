@@ -209,10 +209,6 @@ public class SKView extends UIView {
     public static native double inheritedAnimationDuration();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -236,10 +232,6 @@ public class SKView extends UIView {
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

@@ -113,10 +113,6 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public static native String identifierForKeyKeySpace(@Mapped(ObjCObjectMapper.class) Object key, String keySpace);
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -145,10 +141,6 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @Generated
     @Selector("keySpaceForIdentifier:")
     public static native String keySpaceForIdentifier(String identifier);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("metadataItem")

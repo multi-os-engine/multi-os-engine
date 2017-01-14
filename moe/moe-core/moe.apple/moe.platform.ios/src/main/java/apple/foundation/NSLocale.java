@@ -148,10 +148,6 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -176,10 +172,6 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("lineDirectionForLanguage:")
     @NUInt
     public static native long lineDirectionForLanguage(String isoLangCode);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("localeIdentifierFromComponents:")

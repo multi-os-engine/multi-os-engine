@@ -124,10 +124,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -151,10 +147,6 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Selector("linearGravityField")
     public static native SCNPhysicsField linearGravityField();
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("magneticField")

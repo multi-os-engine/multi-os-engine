@@ -116,10 +116,6 @@ public class NSInputStream extends NSStream {
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("inputStreamWithData:")
     public static native NSInputStream inputStreamWithData(NSData data);
 
@@ -151,10 +147,6 @@ public class NSInputStream extends NSStream {
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

@@ -44,6 +44,52 @@
         },
         {
           "condition": "type-match",
+          "value": "objc-class-method"
+        },
+        {
+          "condition": "name-match",
+          "value": "initialize"
+        }
+      ],
+      "actions": [
+        {
+          "action": "handling-mode",
+          "value": "disabled"
+        }
+      ]
+    },
+    {
+      "final": false,
+      "conditions": [
+        {
+          "condition": "path-prefix",
+          "value": "${SDK}"
+        },
+        {
+          "condition": "type-match",
+          "value": "objc-class-method"
+        },
+        {
+          "condition": "name-match",
+          "value": "load"
+        }
+      ],
+      "actions": [
+        {
+          "action": "handling-mode",
+          "value": "disabled"
+        }
+      ]
+    },
+    {
+      "final": false,
+      "conditions": [
+        {
+          "condition": "path-prefix",
+          "value": "${SDK}"
+        },
+        {
+          "condition": "type-match",
           "value": "objc-instance-method"
         },
         {

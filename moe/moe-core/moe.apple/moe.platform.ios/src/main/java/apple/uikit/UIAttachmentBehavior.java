@@ -117,10 +117,6 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -147,10 +143,6 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     public static native Object limitAttachmentWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

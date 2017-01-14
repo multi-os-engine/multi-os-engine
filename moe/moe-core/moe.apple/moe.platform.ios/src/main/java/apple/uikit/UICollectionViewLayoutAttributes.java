@@ -114,10 +114,6 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -151,10 +147,6 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("layoutAttributesForSupplementaryViewOfKind:withIndexPath:")
     public static native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindWithIndexPath(
             String elementKind, NSIndexPath indexPath);
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Owned

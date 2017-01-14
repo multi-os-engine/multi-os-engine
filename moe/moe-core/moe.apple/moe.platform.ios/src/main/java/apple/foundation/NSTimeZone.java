@@ -107,10 +107,6 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     public static native long hash_static();
 
     @Generated
-    @Selector("initialize")
-    public static native void initialize();
-
-    @Generated
     @Selector("instanceMethodForSelector:")
     @FunctionPtr(name = "call_instanceMethodForSelector_ret")
     public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
@@ -134,10 +130,6 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("knownTimeZoneNames")
     public static native NSArray<String> knownTimeZoneNames();
-
-    @Generated
-    @Selector("load")
-    public static native void load_objc_static();
 
     @Generated
     @Selector("localTimeZone")
