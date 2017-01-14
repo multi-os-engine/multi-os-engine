@@ -837,6 +837,11 @@ public final class clang {
 
     @Generated
     @CFunction
+    @ByValue
+    public static native CXString clang_Cursor_getObjCRuntimeName(@ByValue CXCursor C);
+
+    @Generated
+    @CFunction
     public static native int clang_Cursor_getObjCDeclQualifiers(@ByValue CXCursor C);
 
     @Generated
