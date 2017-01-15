@@ -64,6 +64,11 @@ public class NatJClass<T extends NatJClass> {
     @Nullable private String objcProtocolName;
 
     /**
+     * Optional value of the @ObjCProtocolSourceName annotation.
+     */
+    @Nullable private String objcProtocolSourceName;
+
+    /**
      * Optional binding of the @Library annotation.
      */
     @Nullable private String library;
@@ -120,6 +125,15 @@ public class NatJClass<T extends NatJClass> {
     @Nullable
     public String getObjcProtocolName() {
         return objcProtocolName;
+    }
+
+    public boolean hasObjcProtocolSourceName() {
+        return objcProtocolSourceName != null;
+    }
+
+    @Nullable
+    public String getObjcProtocolSourceName() {
+        return objcProtocolSourceName;
     }
 
     @Nullable
@@ -198,6 +212,22 @@ public class NatJClass<T extends NatJClass> {
                         public void visitEnd() {
                             if (objcProtocolName == null) {
                                 throw new GradleException("Found ObjCProtocolName annotation without a value");
+                            }
+                        }
+                    };
+                } else if ("Lorg/moe/natj/objc/ann/ObjCProtocolSourceName;".equals(desc)) {
+                    return new AnnotationVisitor(api) {
+                        @Override
+                        public void visit(String name, Object value) {
+                            if ("value".equals(name)) {
+                                objcProtocolSourceName = (String)value;
+                            }
+                        }
+
+                        @Override
+                        public void visitEnd() {
+                            if (objcProtocolSourceName == null) {
+                                throw new GradleException("Found ObjCProtocolSourceName annotation without a value");
                             }
                         }
                     };

@@ -69,7 +69,12 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
             // Check non-classes
             if (!resolvedClass.getClazz().isClass()) {
                 if (resolvedClass.getClazz().hasObjcProtocolName()) {
-                    resolvedClass.setBindingType("id<" + resolvedClass.getClazz().getObjcProtocolName() + ">");
+                    if (resolvedClass.getClazz().hasObjcProtocolSourceName()) {
+                        resolvedClass
+                                .setBindingType("id<" + resolvedClass.getClazz().getObjcProtocolSourceName() + ">");
+                    } else {
+                        resolvedClass.setBindingType("id<" + resolvedClass.getClazz().getObjcProtocolName() + ">");
+                    }
                 } else {
                     resolvedClass.setBindingType("id");
                 }
@@ -220,11 +225,11 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
             if (superClass == null) {
                 return null;
             }
-            if (superClass._clazz.hasObjcClassName()) {
-                return superClass._clazz.getObjcClassName();
-            }
             if (superClass._clazz.hasObjcClassBinding()) {
                 return superClass._clazz.getObjcClassBinding();
+            }
+            if (superClass._clazz.hasObjcClassName()) {
+                return superClass._clazz.getObjcClassName();
             }
             return null;
         }

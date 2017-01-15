@@ -77,7 +77,7 @@ public class IBActionAndOutletComposer {
         headBuilder.append("#if TARGET_INTERFACE_BUILDER\n\n");
         resolver.resolve((k, resolvedClass) -> {
             final ClassVisitor v = resolvedClass.getClazz();
-            if (!v.hasObjcClassName() || !resolvedClass.isValidObjCType()) {
+            if (!v.hasObjcClassName() || !resolvedClass.isValidObjCType() || v.hasObjcClassBinding()) {
                 return;
             }
             final String prettyName = resolvedClass.getPrettyName();
@@ -114,7 +114,11 @@ public class IBActionAndOutletComposer {
                     }
                     NatJClass _v = superItfRc.getClazz();
                     if (_v != null && _v.hasObjcProtocolName()) {
-                        itfs.add(_v.getObjcProtocolName());
+                        if (_v.hasObjcProtocolSourceName()) {
+                            itfs.add(_v.getObjcProtocolSourceName());
+                        } else {
+                            itfs.add(_v.getObjcProtocolName());
+                        }
                     }
                 }
 
