@@ -31,7 +31,7 @@ class Main protected constructor(peer: Pointer) : NSObject(peer), UIApplicationD
     companion object {
 
         @JvmStatic fun main(args: Array<String>) {
-            UIKit.UIApplicationMain(0, null, null, Main::class.java!!.getName())
+            UIKit.UIApplicationMain(0, null, null, Main::class.java.getName())
         }
 
         @Selector("alloc")
