@@ -17,7 +17,6 @@ limitations under the License.
 includeFlat 'moe.binding.clang'
 includeFlat 'moe.binding.libimobiledevice'
 includeFlat 'moe.document.pbxproj'
-includeFlat 'moe.document.xib'
 includeFlat 'moe.generator.natjgen'
 includeFlat 'moe.generator.project'
 includeFlat 'moe.ios.device.launcher'
