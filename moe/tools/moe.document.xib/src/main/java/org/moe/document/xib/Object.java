@@ -28,7 +28,7 @@ public class Object {
 	public static final String PLACEHOLDER_NODE_NAME = "placeholder";
 
 	// Doesn't have customClass attribute
-	public static final String AUTORESIZING_MAKS_NODE_NAME = "autoresizingMask";
+	public static final String AUTORESIZING_MASK_NODE_NAME = "autoresizingMask";
 	public static final String FONT_DESCRIPTION_NODE_NAME = "fontDescription";
 	public static final String COLOR_NODE_NAME = "color";
 	public static final String RECT_NODE_NAME = "rect";

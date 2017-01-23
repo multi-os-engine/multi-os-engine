@@ -159,7 +159,7 @@ public class XIBParser {
 
 	private static void collectCustomClasses(Node n, XIB xib) {
 		String type = n.getNodeName();
-		if (Object.AUTORESIZING_MAKS_NODE_NAME.equals(type)) {
+		if (Object.AUTORESIZING_MASK_NODE_NAME.equals(type)) {
 			return; // Skip
 		} else if (Object.FONT_DESCRIPTION_NODE_NAME.equals(type)) {
 			return; // Skip
