@@ -10,7 +10,6 @@
 	<classpathentry exported="true" kind="lib" path="lib/moe.tools.common.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/moe.tools.natjgen.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/moe.document.pbxproj.jar"/>
-	<classpathentry exported="true" kind="lib" path="lib/moe.document.xib.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/moe.plugin.common.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/dd-plist-1.16.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
