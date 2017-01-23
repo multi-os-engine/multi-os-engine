@@ -62,7 +62,6 @@ intellij {
 dependencies {
     compile project(':moe.tools.common')
     compile project(':moe.document.pbxproj')
-    compile project(':moe.document.xib')
     compile project(':moe.generator.project')
     compile project(':moe.tools.natjgen')
     compile project(':moe.plugin.common')
