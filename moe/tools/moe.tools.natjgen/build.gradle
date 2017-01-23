@@ -24,7 +24,6 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '2.5'
     compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
     compile project(':moe.tools.common')
-    compile project(':moe.document.xib')
     compile project(':moe.document.pbxproj')
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
