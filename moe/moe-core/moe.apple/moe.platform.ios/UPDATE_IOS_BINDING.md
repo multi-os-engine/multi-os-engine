@@ -33,6 +33,7 @@
 	```
 
 * After the generator completed successfully, open the project in IDEA
+* Import the `Eclipse Adjusted NatJGen.xml` code style into IDEA and select it as scheme
 * In the Project navigator, select `moe.apple > moe.platform.ios > src > main > java > apple`
 * Right-click and select `Reformat code`
 	* Check `Include subdirectories`
@@ -43,7 +44,9 @@
 	* Do not commit `moe.apple/moe.platform.ios/typeconfig.out.ngtconf` it is only generated so `moe.apple/moe.platform.ios/typeconfig.ngtconf` can be updated
 	* **DO NOT SKIP THIS STEP** if you plan to update moe-core
 * Run the license_updater.py script from the moe.apple directory to append license headers to new files
-* Also check generated native source files
+* Also check generated native source files against the native files found in `moe.apple/moe.core.native/moe.sdk/src/inline`
+	* License headers will not be present in the new files
+	* Some includes/imports were fixed manually, make sure the the native files compile on all platforms
 
 ### Custom Modifications List
 
