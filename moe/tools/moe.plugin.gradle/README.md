@@ -14,6 +14,7 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [Code Signing](#code-signing)
   * [Resource Packaging](#resource-packaging)
   * [Java Processes](#java-processes)
+  * [UI Actions and Outlets](#ui-actions-and-outlets)
 * [Tasks](#tasks)
   * [ProGuard Task](#proguard-task)
   * [Retrolambda Task](#retrolambda-task)
@@ -22,6 +23,7 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [StartupProvider Task](#startupprovider-task)
   * [ResourcePackager Task](#resourcepackager-task)
   * [TestClassesProvider Task](#testclassesprovider-task)
+  * [GenerateUIObjCInterfaces Task](#generateuiobjcinterfaces-task)
   * [XcodeProvider Task](#xcodeprovider-task)
   * [XcodeInternal Task](#xcodeinternal-task)
   * [XcodeBuild Task](#xcodebuild-task)
@@ -437,7 +439,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ---
 
-GenerateUIObjCInterfaces Task
+### GenerateUIObjCInterfaces Task
 
 Task name: `moeGenerateUIObjCInterfaces`
 
