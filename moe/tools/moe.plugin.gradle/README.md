@@ -4,6 +4,7 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
 
 ## Table of Contents
 
+* [Other Documents](#other-documents)
 * [Basics](#basics)
   * [Plugins](#plugins)
   * [SDK](#sdk)
@@ -33,6 +34,11 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [TestRemote Task](#testremote-task)
   * [RemoteServerSetup Task](#remoteserversetup-task)
 * [Remote Server Settings](#remote-server-settings)
+
+## Other Documents
+
+- [Multi-OS Engine Project Layout](doc/Multi-OS-Engine-Project-Layout.md)
+- [Upgrading to Multi-OS Engine 1.3](doc/Upgrading-to-Multi-OS-Engine-1.3.md)
 
 ## Basics
 
