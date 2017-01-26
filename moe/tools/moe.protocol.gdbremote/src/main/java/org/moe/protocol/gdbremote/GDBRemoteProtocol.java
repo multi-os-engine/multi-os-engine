@@ -161,11 +161,12 @@ public final class GDBRemoteProtocol {
 			int arg_idx = 0;
 			String last_arg = args[args.length - 1];
 			for (String arg : args) {
-				pos.writeInteger(arg.length() * 2);
+				final byte[] bytes = arg.getBytes("UTF-8");
+				pos.writeInteger(bytes.length * 2);
 				pos.write(',');
 				pos.writeInteger(arg_idx++);
 				pos.write(',');
-				pos.writeHexASCII(arg);
+				pos.writeHex(bytes);
 				if (arg != last_arg) {
 					pos.write(',');
 				}
@@ -345,7 +346,7 @@ public final class GDBRemoteProtocol {
 
 		pos.writeHexASCII(variable);
 		pos.writeHexASCII("=");
-		pos.writeHexASCII(value);
+		pos.writeHexUTF8(value);
 		if (!pos.send()) {
 			return false;
 		}

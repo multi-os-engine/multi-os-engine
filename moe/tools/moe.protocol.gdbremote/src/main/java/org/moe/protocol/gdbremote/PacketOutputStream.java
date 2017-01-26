@@ -99,6 +99,17 @@ final class PacketOutputStream extends OutputStream {
 	}
 
 	/**
+	 * Write an UTF-8 string in two-digit hex encoded format to the stream.
+	 *
+	 * @param string
+	 *            string to write
+	 * @throws IOException
+	 */
+	void writeHexUTF8(String string) throws IOException {
+		writeHex(string.getBytes("UTF-8"));
+	}
+
+	/**
 	 * Write a byte array in two-digit hex encoded format to the stream.
 	 *
 	 * @param bytes
