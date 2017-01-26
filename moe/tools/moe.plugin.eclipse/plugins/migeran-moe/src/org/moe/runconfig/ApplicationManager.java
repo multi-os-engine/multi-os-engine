@@ -288,7 +288,6 @@ public class ApplicationManager {
 			throw new CoreException(MessageFactory.getError("GradleExec error", e));
 		}
 
-		Process process = null;
 		StringBuffer errorBuffer = new StringBuffer();
 		
 		if (runner != null) {
@@ -311,22 +310,12 @@ public class ApplicationManager {
 		}
 
 		try {
-			process = runner.execute();
-			while (process.isAlive()) {
-				LOG.debug("Wait to build...");
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					LOG.error("InterruptedException", e);
-				}
-			}
-			int result = process.waitFor();
-
+			int result = runner.run(null);
 			if (result != 0) {
 				throw new CoreException(MessageFactory.getError("Gradle build error", new Exception(errorBuffer.toString())));
 			}
 			LOG.debug("Build result: " + result);
-		} catch (IOException | InterruptedException e) {
+		} catch (IOException e) {
 			throw new CoreException(MessageFactory.getError("Gradle launch error", e));
 		}
 	}

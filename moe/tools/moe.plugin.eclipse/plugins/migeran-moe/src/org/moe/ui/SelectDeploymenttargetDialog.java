@@ -26,8 +26,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.moe.common.ios.Device;
 import org.moe.common.ios.DeviceInfo;
 import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.SimCtl;
 import org.moe.runconfig.ApplicationManager;
-import org.moe.utils.SimCtl;
+import org.moe.utils.MessageFactory;
 import org.moe.utils.logger.LoggerFactory;
 
 public class SelectDeploymenttargetDialog extends Dialog {
@@ -97,12 +98,20 @@ public class SelectDeploymenttargetDialog extends Dialog {
 		});
 
 		if (OsUtils.isMac()) {
-			for (SimCtl.Device device : SimCtl.getDevices()) {
+			List<SimCtl.Device> devices;
+			try {
+				devices = SimCtl.getDevices();
+			} catch (Throwable t) {
+				MessageFactory.showErrorDialog("Failed to populate simulators list", t);
+				devices = new ArrayList<SimCtl.Device>();
+			}
+			for (SimCtl.Device device : devices) {
 				simulatorsCombo.add(device.name + " (" + device.runtime + ")");
 				simulatorIds.add(device.udid);
 			}
-
-			simulatorsCombo.select(0);
+			if (simulatorsCombo.getItemCount() > 0) {
+				simulatorsCombo.select(0);
+			}
 		}
 		
 		deviceButton = new Button(runOnGroup, SWT.RADIO);
