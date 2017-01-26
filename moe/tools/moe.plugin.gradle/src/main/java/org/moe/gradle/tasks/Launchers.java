@@ -34,6 +34,7 @@ import org.gradle.api.tasks.SourceSetContainer;
 import org.gradle.api.tasks.TaskContainer;
 import org.gradle.process.ExecSpec;
 import org.gradle.process.JavaExecSpec;
+import org.moe.common.utils.SimCtl;
 import org.moe.gradle.AbstractMoePlugin;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
@@ -522,72 +523,6 @@ public class Launchers {
         }
     }
 
-    private static class SimCtl {
-        private static class Device {
-            @NotNull
-            final String name;
-            @NotNull
-            final String udid;
-            @NotNull
-            final String runtime;
-
-            Device(@NotNull String name, @NotNull String udid, @NotNull String runtime) {
-                this.name = Require.nonNull(name);
-                this.udid = Require.nonNull(udid);
-                this.runtime = Require.nonNull(runtime);
-            }
-
-            @Override
-            public String toString() {
-                return udid + " - " + runtime + " - " + name;
-            }
-        }
-
-        final List<Device> devices = new ArrayList<>();
-
-        private void initialize(@NotNull MoePlugin plugin) {
-            Require.nonNull(plugin);
-            final Project project = plugin.getProject();
-
-            final String json = TaskUtils.quickExec(project, "xcrun", "simctl", "list", "-j", "runtimes", "devices");
-            final JsonObject root = new JsonParser().parse(json).getAsJsonObject();
-            final Map<String, String> runtimesNI = new HashMap<>();
-            final Map<String, String> runtimesIN = new HashMap<>();
-            final String platformDisplayName = plugin.getExtension().getPlatformType().displayName.toLowerCase();
-            StreamSupport.stream(root.getAsJsonArray("runtimes").spliterator(), false)
-                    .map(JsonElement::getAsJsonObject)
-                    .filter(x -> x.get("availability").getAsString().equals("(available)"))
-                    .filter(x -> {
-                        final String identifier = x.get("identifier").getAsString();
-                        final String lastcomp = identifier.substring(identifier.lastIndexOf('.') + 1);
-                        return lastcomp.toLowerCase().startsWith(platformDisplayName);
-                    })
-                    .forEach(x -> {
-                        final String name = x.get("name").getAsString();
-                        final String identifier = x.get("identifier").getAsString();
-                        runtimesNI.put(name, identifier);
-                        runtimesIN.put(identifier, name);
-                    });
-
-            root.getAsJsonObject("devices").entrySet().stream()
-                    .filter(e -> runtimesIN.containsKey(e.getKey()) || runtimesNI.containsKey(e.getKey()))
-                    .flatMap(e -> StreamSupport.stream(e.getValue().getAsJsonArray().spliterator(), false)
-                            .map(x -> new ImmutablePair<>(e.getKey(), x.getAsJsonObject())))
-                    .filter(x -> x.getRight().get("availability").getAsString().equals("(available)"))
-                    .forEach(x -> {
-                        final String key = x.getLeft();
-                        final String runtime;
-                        if (runtimesIN.containsKey(key)) {
-                            runtime = runtimesIN.get(key);
-                        } else {
-                            runtime = key;
-                        }
-                        final JsonObject value = x.getRight();
-                        devices.add(new Device(value.get("name").getAsString(), value.get("udid").getAsString(), runtime));
-                    });
-        }
-    }
-
     public static void addTasks(@NotNull MoePlugin plugin) {
         Require.nonNull(plugin);
 
@@ -638,16 +573,21 @@ public class Launchers {
                 exec.setGroup(AbstractMoePlugin.MOE);
                 exec.setDescription("Lists all simulators.");
             }).getActions().add(task -> {
-                final SimCtl simctl = new SimCtl();
 
+                final String list;
                 if (Os.isFamily(Os.FAMILY_MAC) && TaskUtils.checkExec(project, "which", "xcrun")) {
                     LOG.info("Initializing");
-                    simctl.initialize(plugin);
+                    try {
+                        list = SimCtl.getDevices().stream()
+                                .map(d -> "- " + d)
+                                .collect(Collectors.joining("\n"));
+                    } catch (Throwable t) {
+                        throw new GradleException("Failed to get list of simulators", t);
+                    }
+                } else {
+                    list = "";
                 }
 
-                final String list = simctl.devices.stream()
-                        .map(d -> "- " + d)
-                        .collect(Collectors.joining("\n"));
                 LOG.quiet("\nAvailable Simulators:\n" + list.trim() + "\n");
             });
         }
