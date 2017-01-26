@@ -76,7 +76,7 @@ public class MOEProgramRunner extends GenericProgramRunner {
     @Override
     protected RunContentDescriptor doExecute(@NotNull RunProfileState state, @NotNull ExecutionEnvironment environment) throws ExecutionException {
         MOERunConfiguration runConfig = (MOERunConfiguration)environment.getRunProfile();
-        if (runConfig.isCancaled()) {
+        if (runConfig.isCanceled()) {
             return null;
         }
         if(isDebugExecutor(environment.getExecutor())) {

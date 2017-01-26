@@ -28,7 +28,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.messages.MessageBusConnection;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.compiler.MOECompileTask;
-import org.moe.idea.utils.*;
+import org.moe.idea.utils.FileEditorListener;
+import org.moe.idea.utils.ModuleObserver;
 import org.moe.idea.utils.logger.LoggerFactory;
 
 public class MOEProjectComponent extends AbstractProjectComponent {

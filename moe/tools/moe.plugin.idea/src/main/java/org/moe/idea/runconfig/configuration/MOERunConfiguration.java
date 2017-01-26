@@ -27,14 +27,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.JDOMExternalizerUtil;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.util.execution.ParametersListUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.SimCtl.Device;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.utils.JDOMHelper;
-import org.moe.idea.utils.SimCtl;
+import org.moe.idea.utils.RunTargetUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,7 +53,7 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
     private String environmentVariables = "";
     private String programArgs = "";
     private boolean openDeploymentTargetDialog;
-    private boolean cancaled;
+    private boolean canceled;
 
     public MOERunConfiguration(final Project project, final ConfigurationFactory factory) {
         super(project, factory);
@@ -69,12 +68,10 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
 
         configuration.moduleName(module.getName());
 
-        if(OsUtils.isMac()) {
-            for (SimCtl.Device device : SimCtl.getDevices()) {
-                configuration.runOnSimulator(true);
-                configuration.simulatorDeviceName(device.udid);
-                break;
-            }
+        final Device defaultSimulator = RunTargetUtil.getDefaultSimulatorQuiet();
+        if (defaultSimulator != null) {
+            configuration.runOnSimulator(true);
+            configuration.simulatorDeviceName(defaultSimulator.udid);
         }
         return settings;
     }
@@ -284,11 +281,11 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         return openDeploymentTargetDialog;
     }
 
-    public boolean isCancaled() {
-        return cancaled;
+    public boolean isCanceled() {
+        return canceled;
     }
 
-    public void setCancaled(boolean cancaled) {
-        this.cancaled = cancaled;
+    public void setCanceled(boolean canceled) {
+        this.canceled = canceled;
     }
 }

@@ -59,7 +59,12 @@ import org.moe.idea.utils.ModuleUtils;
 
 import javax.swing.event.HyperlinkEvent;
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Properties;
 
 import static org.jetbrains.idea.maven.execution.MavenRunConfigurationType.createRunnerAndConfigurationSettings;
 import static org.moe.idea.utils.ModuleUtils.findPomXml;

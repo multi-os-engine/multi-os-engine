@@ -16,7 +16,14 @@ limitations under the License.
 
 package org.moe.xcode;
 
-import org.moe.document.pbxproj.*;
+import org.moe.document.pbxproj.PBXBuildFile;
+import org.moe.document.pbxproj.PBXBuildPhase;
+import org.moe.document.pbxproj.PBXFileReference;
+import org.moe.document.pbxproj.PBXGroup;
+import org.moe.document.pbxproj.PBXObjectRef;
+import org.moe.document.pbxproj.PBXResourcesBuildPhase;
+import org.moe.document.pbxproj.PBXSourcesBuildPhase;
+import org.moe.document.pbxproj.ProjectFile;
 
 import java.io.File;
 import java.util.List;

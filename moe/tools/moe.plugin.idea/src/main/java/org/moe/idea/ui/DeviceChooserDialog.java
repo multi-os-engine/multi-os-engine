@@ -16,20 +16,20 @@
 
 package org.moe.idea.ui;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.Nullable;
 import org.moe.common.ios.Device;
 import org.moe.common.ios.DeviceInfo;
 import org.moe.common.utils.OsUtils;
-import org.moe.idea.compiler.MOECompileTask;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationEditor;
 import org.moe.idea.utils.ModuleUtils;
-import org.moe.idea.utils.SimCtl;
+import org.moe.idea.utils.RunTargetUtil;
+import org.moe.idea.utils.RunTargetUtil.SimulatorComboItem;
 import org.moe.idea.utils.logger.LoggerFactory;
 import res.MOEText;
 
@@ -132,7 +132,7 @@ public class DeviceChooserDialog extends DialogWrapper {
         configuration.runOnSimulator(simulatorRadio.isSelected());
         if (simulatorCombo.getSelectedItem() != null) {
             configuration.simulatorDeviceName(simulatorCombo.getSelectedItem().toString());
-            configuration.simulatorUdid(((MOERunConfigurationEditor.SimulatorComboItem)simulatorCombo.getSelectedItem()).udid());
+            configuration.simulatorUdid(((SimulatorComboItem)simulatorCombo.getSelectedItem()).udid());
         }
 
         if (deviceCombo.getSelectedItem() != null) {
@@ -148,20 +148,16 @@ public class DeviceChooserDialog extends DialogWrapper {
     }
 
     private void populateSimulators(String selectedUdid) {
-        if(!OsUtils.isMac()) {
-            return;
-        }
-        simulatorCombo.removeAllItems();
-
-        for (SimCtl.Device device : SimCtl.getDevices()) {
-            simulatorCombo.addItem(new MOERunConfigurationEditor.SimulatorComboItem(device));
-            if(selectedUdid != null && selectedUdid.equals(device.udid)) {
-                simulatorCombo.setSelectedIndex(simulatorCombo.getItemCount() - 1);
-            }
-        }
-
-        if (simulatorCombo.getItemCount() == 0) {
-            simulatorCombo.setModel(new DefaultComboBoxModel(new String[]{MOEText.get("No.Simulator.Device.Available")}));
+        try {
+            RunTargetUtil.populateSimulatorCombo(simulatorCombo, selectedUdid);
+        } catch (Throwable t) {
+            LOG.warn("Failed to populate simulators list", t);
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    Messages.showErrorDialog("Failed to populate list of simulators", "Internal Error");
+                }
+            });
         }
     }
 

@@ -20,7 +20,8 @@ import com.intellij.execution.ExecutionBundle;
 import com.intellij.execution.configuration.BrowseModuleValueActionListener;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.ide.util.PackageChooserDialog;
-import com.intellij.openapi.externalSystem.importing.ImportSpecBuilder;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
@@ -40,12 +41,11 @@ import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.NotNull;
 import org.moe.common.configuration.ConfigurationValidationException;
 import org.moe.common.configuration.RemoteSettings;
-import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase;
-import org.moe.common.exec.GradleExec;
 import org.moe.common.ios.Device;
 import org.moe.common.ios.DeviceInfo;
 import org.moe.common.utils.OsUtils;
+import org.moe.common.utils.SimCtl;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.runconfig.configuration.test.MOETestClassBrowser;
@@ -54,19 +54,23 @@ import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.InputValidationHelper;
 import org.moe.idea.utils.ModuleUtils;
-import org.moe.idea.utils.SimCtl;
+import org.moe.idea.utils.RunTargetUtil;
+import org.moe.idea.utils.RunTargetUtil.SimulatorComboItem;
+import org.moe.idea.utils.logger.LoggerFactory;
 import res.MOEIcons;
 import res.MOEText;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
 import java.util.Properties;
 
 public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguration> {
+
+    private static final Logger LOG = LoggerFactory.getLogger(MOERunConfigurationEditor.class);
+
     private static final int DEFAULT_REMOTE_BUILD_PORT = 22;
     private static final int DEFAULT_REMOTE_BUILD_TIMEOUT = 3600;
     private static final String DEFAULT_REMOTE_BUILD_REPOSITORY = "jcenter()";
@@ -117,7 +121,6 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         anchor = UIUtil.mergeComponentsWithAnchor(argumentsPanel);
     }
 
-
     @Override
     protected void resetEditorFrom(MOERunConfiguration configuration) {
         if(!OsUtils.isMac()) {
@@ -138,7 +141,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
 
         if (simulatorCombo.getSelectedItem() != null) {
             configuration.simulatorDeviceName(simulatorCombo.getSelectedItem().toString());
-            configuration.simulatorUdid(((MOERunConfigurationEditor.SimulatorComboItem)simulatorCombo.getSelectedItem()).udid());
+            configuration.simulatorUdid(((SimulatorComboItem)simulatorCombo.getSelectedItem()).udid());
         }
 
         if (deviceCombo.getSelectedItem() != null) {
@@ -254,14 +257,11 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         configurationCombo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String sdk = configurationCombo.getSelectedItem().toString();
-                populateSimulators(sdk, "");
+                populateSimulators(null);
             }
         });
 
-        if (configurationCombo.getSelectedItem() != null) {
-            populateSimulators(configurationCombo.getSelectedItem().toString(), configuration.simulatorUdid());
-        }
+        populateSimulators(configuration.simulatorUdid());
 
         if(OsUtils.isMac()) {
             simulatorRadio.setSelected(configuration.runOnSimulator());
@@ -327,21 +327,17 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         openSelectDeploymentTargetCheckBox.setSelected(configuration.getOpenDeploymentTargetDialog());
     }
 
-    private void populateSimulators(String sdk, String selectedUdid) {
-        if(!OsUtils.isMac()) {
-            return;
-        }
-        simulatorCombo.removeAllItems();
-
-        for (SimCtl.Device device : SimCtl.getDevices()) {
-            simulatorCombo.addItem(new MOERunConfigurationEditor.SimulatorComboItem(device));
-            if(selectedUdid != null && selectedUdid.equals(device.udid)) {
-                simulatorCombo.setSelectedIndex(simulatorCombo.getItemCount() - 1);
-            }
-        }
-
-        if (simulatorCombo.getItemCount() == 0) {
-            simulatorCombo.setModel(new DefaultComboBoxModel(new String[]{MOEText.get("No.Simulator.Device.Available")}));
+    private void populateSimulators(String selectedUdid) {
+        try {
+            RunTargetUtil.populateSimulatorCombo(simulatorCombo, selectedUdid);
+        } catch (Throwable t) {
+            LOG.warn("Failed to populate simulators list", t);
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    Messages.showErrorDialog("Failed to populate list of simulators", "Internal Error");
+                }
+            });
         }
     }
 
@@ -384,22 +380,6 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
 
     private void showMessage(String message) {
         Messages.showMessageDialog(message, MOEText.get("Configuration.Editor"), MOEIcons.MOELogo);
-    }
-
-    public static class SimulatorComboItem {
-        private SimCtl.Device device;
-
-        public SimulatorComboItem(SimCtl.Device device) {
-            this.device = device;
-        }
-
-        public String toString() {
-            return device.name + " (" + device.runtime + ")";
-        }
-
-        public String udid() {
-            return device.udid;
-        }
     }
 
     private void populateJUnitTest(MOERunConfiguration configuration) {

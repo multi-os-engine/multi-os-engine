@@ -24,21 +24,15 @@ import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessOutputTypes;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileTask;
 import com.intellij.openapi.compiler.CompilerMessageCategory;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Key;
 import com.intellij.util.ui.UIUtil;
-import org.jetbrains.idea.maven.execution.SoutMavenConsole;
-import org.jetbrains.idea.maven.project.MavenConsole;
-import org.jetbrains.idea.maven.project.MavenConsoleImpl;
-import org.jetbrains.idea.maven.project.MavenProjectsManager;
 import org.moe.idea.maven.MOEMavenTask;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.ui.DeviceChooserDialog;
@@ -65,7 +59,7 @@ public class MOECompileTask implements CompileTask {
         final MOERunConfiguration runConfig = (MOERunConfiguration) c;
         isOpenDialog = runConfig.getOpenDeploymentTargetDialog();
         canceled = false;
-        runConfig.setCancaled(canceled);
+        runConfig.setCanceled(canceled);
 
         final MOEToolWindow toolWindow = MOEToolWindow.getInstance(runConfig.getProject());
         UIUtil.invokeAndWaitIfNeeded(new Runnable() {
@@ -77,7 +71,7 @@ public class MOECompileTask implements CompileTask {
                     dialog.show();
                     if (dialog.getExitCode() != DialogWrapper.OK_EXIT_CODE) {
                         canceled = true;
-                        runConfig.setCancaled(canceled);
+                        runConfig.setCanceled(canceled);
                     }
                     isOpenDialog = false;
                 }
@@ -97,7 +91,7 @@ public class MOECompileTask implements CompileTask {
             progress.setText("Building MOE application");
 
             if (canceled) {
-                toolWindow.balloon(MessageType.INFO, "BUILD CANCELLED");
+                toolWindow.balloon(MessageType.INFO, "BUILD CANCELED");
                 return true;
             }
 
@@ -124,11 +118,11 @@ public class MOECompileTask implements CompileTask {
 
                 // Show on failure
                 if (compileThread.returnCode != 0) {
-                    if (!compileThread.cancelled) {
+                    if (!compileThread.canceled) {
                         toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
                         context.addMessage(CompilerMessageCategory.ERROR, "Multi-OS Engine module build failed", null, -1, -1, toolWindow.getNavigatable());
                     } else {
-                        toolWindow.balloon(MessageType.INFO, "BUILD CANCELLED");
+                        toolWindow.balloon(MessageType.INFO, "BUILD CANCELED");
                     }
                     return false;
                 }
@@ -159,7 +153,7 @@ public class MOECompileTask implements CompileTask {
         private int returnCode = -1;
         private OSProcessHandler handler;
         private Throwable throwable;
-        private boolean cancelled;
+        private boolean canceled;
 
         private CompileThread(MOERunConfiguration runConfig, CompileContext compileContext) {
             if (runConfig == null) {
@@ -212,7 +206,7 @@ public class MOECompileTask implements CompileTask {
 
         @Override
         public void interrupt() {
-            cancelled = true;
+            canceled = true;
             if (handler != null) {
                 handler.destroyProcess();
                 int timeout = 2000;

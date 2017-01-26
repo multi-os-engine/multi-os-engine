@@ -16,8 +16,8 @@ limitations under the License.
 
 package org.moe.template;
 
-import org.moe.idea.utils.logger.LoggerFactory;
 import com.intellij.openapi.diagnostic.Logger;
+import org.moe.idea.utils.logger.LoggerFactory;
 
 
 public class MOEClassTemplate {

@@ -16,14 +16,12 @@
  */
 package org.moe.idea.runconfig.configuration;
 
-import com.intellij.execution.CommonProgramRunConfigurationParameters;
 import com.intellij.execution.configuration.EnvironmentVariablesComponent;
 import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.VerticalFlowLayout;
 import com.intellij.ui.PanelWithAnchor;
 import com.intellij.ui.RawCommandLineEditor;
 import com.intellij.ui.TextAccessor;
-import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

@@ -25,8 +25,6 @@ import org.moe.idea.builder.MOEModuleProperties;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import static org.moe.generator.project.MOEProjectComposer.Field.*;
 

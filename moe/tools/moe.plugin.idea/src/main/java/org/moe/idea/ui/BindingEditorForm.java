@@ -25,7 +25,10 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.binding.GeneratorRunner;
 import org.moe.idea.utils.logger.LoggerFactory;
-import org.moe.tools.natjgen.*;
+import org.moe.tools.natjgen.AbstractBinding;
+import org.moe.tools.natjgen.Bindings;
+import org.moe.tools.natjgen.ConfigurationBuilder;
+import org.moe.tools.natjgen.ValidationException;
 
 import javax.swing.*;
 import java.io.File;
