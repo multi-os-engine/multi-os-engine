@@ -16,24 +16,27 @@ limitations under the License.
 
 package org.moe.idea.runconfig.configuration;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.intellij.execution.RunManager;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.JDOMExternalizerUtil;
 import com.intellij.openapi.util.WriteExternalException;
-import com.intellij.util.execution.ParametersListUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.moe.common.utils.SimCtl.Device;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.utils.JDOMHelper;
 import org.moe.idea.utils.RunTargetUtil;
+import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,6 +44,9 @@ import java.util.List;
 import java.util.Map;
 
 public class MOERunConfiguration extends MOERunConfigurationBase {
+
+    private static final Logger LOG = LoggerFactory.getLogger(MOERunConfiguration.class);
+
     private String simulatorUdid;
     private boolean runOnSimulator = true;
     private boolean runJUnitTests = false;
@@ -59,12 +65,14 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         super(project, factory);
     }
 
-    public static RunnerAndConfigurationSettings createRunConfiguration(Project project, Module module) throws Exception {
+    public static RunnerAndConfigurationSettings createRunConfiguration(Project project, Module module)
+            throws Exception {
         RunManager runManager = RunManager.getInstance(project);
 
-        RunnerAndConfigurationSettings settings = runManager.createRunConfiguration(module.getName(), MOERunConfigurationType.getInstance().getConfigurationFactories()[0]);
+        RunnerAndConfigurationSettings settings = runManager.createRunConfiguration(module.getName(),
+                MOERunConfigurationType.getInstance().getConfigurationFactories()[0]);
 
-        MOERunConfiguration configuration = (MOERunConfiguration) settings.getConfiguration();
+        MOERunConfiguration configuration = (MOERunConfiguration)settings.getConfiguration();
 
         configuration.moduleName(module.getName());
 
@@ -113,7 +121,8 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         JDOMExternalizerUtil.writeField(element, "vmArguments", vmArgs);
         JDOMExternalizerUtil.writeField(element, "environmentVariables", environmentVariables);
         JDOMExternalizerUtil.writeField(element, "programArguments", programArgs);
-        JDOMExternalizerUtil.writeField(element, "openDeploymentTargetDialog", Boolean.toString(openDeploymentTargetDialog));
+        JDOMExternalizerUtil
+                .writeField(element, "openDeploymentTargetDialog", Boolean.toString(openDeploymentTargetDialog));
     }
 
     public String simulatorUdid() {
@@ -175,13 +184,13 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
     public void runOnSimulator(boolean runOnSimulator) {
         if (runOnSimulator) {
             architecture = "i386";
-        }
-        else {
+        } else {
             architecture = "armv7,arm64";
         }
 
         this.runOnSimulator = runOnSimulator;
     }
+
     @Override
     public void checkConfiguration() throws RuntimeConfigurationException {
         super.checkConfiguration();
@@ -202,75 +211,82 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
         return actionType;
     }
 
+    @SuppressWarnings("unchecked")
     public List<String> getVMArguments() {
-        return getArgumentList(getVMArgumentsString(), " ");
+        try {
+            final List list = new Gson().fromJson(getVMArgumentsJSONString(), List.class);
+            if (list != null) {
+                return list;
+            }
+            return new ArrayList<String>();
+        } catch (JsonSyntaxException ex) {
+            LOG.warn("Failed to read getVMArgumentsJSONString(), resetting", ex);
+            setVMArgumentsJSONString("[]");
+            return new ArrayList<String>();
+        }
     }
 
-    public List<String> getEnvironmentVariables() {
-        return getArgumentList(getEnvironmentVariablesString(), ";");
+    @SuppressWarnings("unchecked")
+    public Map<String, String> getEnvironmentVariables() {
+        try {
+            final Map map = new Gson().fromJson(getEnvironmentVariablesJSONString(), Map.class);
+            if (map != null) {
+                return map;
+            }
+            return new HashMap<String, String>();
+        } catch (JsonSyntaxException ex) {
+            LOG.warn("Failed to read getEnvironmentVariablesJSONString(), resetting", ex);
+            setEnvironmentVariablesJSONString("{}");
+            return new HashMap<String, String>();
+        }
     }
 
+    @SuppressWarnings("unchecked")
     public List<String> getProgramArguments() {
-        return getArgumentList(getProgramArgumentsString(), " ");
+        try {
+            final List list = new Gson().fromJson(getProgramArgumentsJSONString(), List.class);
+            if (list != null) {
+                return list;
+            }
+            return new ArrayList<String>();
+        } catch (JsonSyntaxException ex) {
+            LOG.warn("Failed to read getProgramArgumentsJSONString(), resetting", ex);
+            setProgramArgumentsJSONString("[]");
+            return new ArrayList<String>();
+        }
     }
 
-    public void setVMArguments(String vmargs) {
+    public void setVMArgumentsJSONString(String vmargs) {
         this.vmArgs = vmargs;
     }
 
-    public void setEnvironmentVariables(String environmentVariables) {
+    public void setEnvironmentVariablesJSONString(String environmentVariables) {
         this.environmentVariables = environmentVariables;
     }
 
-    public void setProgramArguments(String programArgs) {
+    public void setProgramArgumentsJSONString(String programArgs) {
         this.programArgs = programArgs;
     }
 
-    public String getProgramArgumentsString() {
+    public String getProgramArgumentsJSONString() {
+        if (programArgs == null) {
+            programArgs = "[]";
+        }
         return programArgs;
     }
 
-    public String getVMArgumentsString() {
+    public String getVMArgumentsJSONString() {
+        if (vmArgs == null) {
+            vmArgs = "[]";
+        }
         return vmArgs;
     }
 
-    public String getEnvironmentVariablesString() {
+    public String getEnvironmentVariablesJSONString() {
+        if (environmentVariables == null) {
+            environmentVariables = "{}";
+        }
         return environmentVariables;
-    }
-
-    private List<String> getArgumentList(String argumentString, String regex) {
-        List<String> arguments = new ArrayList<String>();
-
-        if (argumentString == null || argumentString.isEmpty()) {
-            return arguments;
-        }
-
-        String[] args = null;
-        if (regex.equals(";")) {
-            args = argumentString.split(regex);
-        } else {
-            arguments = ParametersListUtil.DEFAULT_LINE_PARSER.fun(argumentString);
-        }
-
-        if (args != null) {
-            for (String s : args) {
-                arguments.add(s);
-            }
-        }
-
-        return arguments;
-    }
-
-    public Map<String,String> getEnvironmentVariablesMap() {
-        Map<String,String> variables = new HashMap<String,String>();
-
-        for (String envVar : getArgumentList(getEnvironmentVariablesString(), ";")) {
-            final int idx = envVar.indexOf('=');
-            if (idx > -1) {
-                variables.put(envVar.substring(0, idx), idx < envVar.length() - 1 ? envVar.substring(idx + 1) : "");
-            }
-        }
-        return variables;
     }
 
     public void setOpenDeploymentTargetDialog(boolean openDeploymentTargetDialog) {

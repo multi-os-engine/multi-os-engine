@@ -29,6 +29,7 @@ import org.moe.idea.utils.ModuleUtils;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 public class MOEGradleRunner {
@@ -115,12 +116,10 @@ public class MOEGradleRunner {
             }
         }
 
-        List<String> environmentVariables = runConfig.getEnvironmentVariables();
+        Map<String, String> environmentVariables = runConfig.getEnvironmentVariables();
         if (environmentVariables != null) {
-            for (String arg : environmentVariables) {
-                if (arg != null && !arg.isEmpty()) {
-                    options.push("env:" + arg);
-                }
+            for (Map.Entry<String, String> arg : environmentVariables.entrySet()) {
+                options.push("env:" + arg.getKey() + "=" + arg.getValue());
             }
         }
 
@@ -178,7 +177,7 @@ public class MOEGradleRunner {
         private final StringBuilder builder = new StringBuilder();
 
         OptionsBuilder push(String value) {
-            builder.append(",").append(value.replaceAll(",", "\\,"));
+            builder.append(",").append(value.replaceAll(",", "\\\\,"));
             return this;
         }
 

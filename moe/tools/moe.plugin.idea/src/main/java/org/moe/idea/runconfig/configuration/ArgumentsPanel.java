@@ -16,17 +16,20 @@
  */
 package org.moe.idea.runconfig.configuration;
 
+import com.google.gson.Gson;
 import com.intellij.execution.configuration.EnvironmentVariablesComponent;
 import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.VerticalFlowLayout;
 import com.intellij.ui.PanelWithAnchor;
 import com.intellij.ui.RawCommandLineEditor;
-import com.intellij.ui.TextAccessor;
-import org.jetbrains.annotations.NotNull;
+import com.intellij.util.execution.ParametersListUtil;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class ArgumentsPanel extends JPanel implements PanelWithAnchor {
     private LabeledComponent<RawCommandLineEditor> myProgramParametersComponent;
@@ -42,7 +45,7 @@ public class ArgumentsPanel extends JPanel implements PanelWithAnchor {
         super();
 
         setLayout(new VerticalFlowLayout(VerticalFlowLayout.MIDDLE, 0, 5, true, true));
-        if(init) {
+        if (init) {
             init();
         }
 
@@ -68,8 +71,7 @@ public class ArgumentsPanel extends JPanel implements PanelWithAnchor {
     }
 
     protected void initComponents() {
-        myVMParametersComponent = LabeledComponent.create(new RawCommandLineEditor(),
-                "VM options:");
+        myVMParametersComponent = LabeledComponent.create(new RawCommandLineEditor(), "VM options:");
         copyDialogCaption(myVMParametersComponent);
         myVMParametersComponent.setLabelLocation(BorderLayout.CENTER);
         myProgramParametersComponent = LabeledComponent.create(new RawCommandLineEditor(), "Program arguments:");
@@ -108,19 +110,34 @@ public class ArgumentsPanel extends JPanel implements PanelWithAnchor {
     }
 
     public void applyEditorTo(MOERunConfiguration configuration) {
-        configuration.setProgramArguments(fromTextField(myProgramParametersComponent.getComponent()));
-        configuration.setVMArguments(fromTextField(myVMParametersComponent.getComponent()));
-        configuration.setEnvironmentVariables(fromTextField(myEnvVariablesComponent.getComponent()));
+        final Gson gson = new Gson();
+
+        final String argsString = myProgramParametersComponent.getComponent().getText();
+        final java.util.List<String> args = ParametersListUtil.parse(argsString, false);
+        configuration.setProgramArgumentsJSONString(gson.toJson(args, List.class));
+
+        final String vmargsString = myVMParametersComponent.getComponent().getText();
+        final java.util.List<String> vmargs = ParametersListUtil.parse(vmargsString, false);
+        configuration.setVMArgumentsJSONString(gson.toJson(vmargs, List.class));
+
+        configuration.setEnvironmentVariablesJSONString(gson.toJson(myEnvVariablesComponent.getEnvs(), Map.class));
     }
 
     public void resetEditorFrom(MOERunConfiguration configuration) {
-        myProgramParametersComponent.getComponent().setText(configuration.getProgramArgumentsString());
-        myVMParametersComponent.getComponent().setText(configuration.getVMArgumentsString());
-        myEnvVariablesComponent.setEnvs(configuration.getEnvironmentVariablesMap());
+        myProgramParametersComponent.getComponent().setText(getQuotedString(configuration.getProgramArguments()));
+        myVMParametersComponent.getComponent().setText(getQuotedString(configuration.getVMArguments()));
+        myEnvVariablesComponent.setEnvs(configuration.getEnvironmentVariables());
     }
 
-    @Nullable
-    protected String fromTextField(@NotNull TextAccessor textAccessor) {
-        return textAccessor.getText();
+    private String getQuotedString(List<String> args) {
+        final ArrayList<String> copy = new ArrayList<String>();
+        for (String arg : args) {
+            if (arg.contains(" ")) {
+                copy.add("\"" + arg + "\"");
+            } else {
+                copy.add(arg);
+            }
+        }
+        return ParametersListUtil.DEFAULT_LINE_JOINER.fun(copy);
     }
 }
