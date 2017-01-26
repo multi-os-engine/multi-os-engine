@@ -53,7 +53,7 @@ public class ExecRunner extends ExecRunnerBase {
         }
     }
 
-    public Process execute() throws IOException {
+    private Process execute() throws IOException {
         Process process = builder.start();
 
         if (listener != null) {

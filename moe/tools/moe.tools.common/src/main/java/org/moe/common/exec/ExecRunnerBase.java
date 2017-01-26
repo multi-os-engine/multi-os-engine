@@ -98,8 +98,8 @@ public abstract class ExecRunnerBase {
                 while ((line = reader.readLine()) != null) {
                     notifyListener(line);
                 }
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
 

@@ -18,33 +18,36 @@ package org.moe.common.exec;
 
 import junit.framework.TestCase;
 
+import java.io.IOException;
+
 public class ExecRunnerTest extends TestCase {
 
     public void testCanAddArguments() {
         String argument = "-help";
 
         SimpleExec exec = SimpleExec.getExec("javac");
-
         exec.getArguments().add(argument);
 
         assertFalse(exec.getArguments().isEmpty());
-
         assertEquals(exec.getArguments().get(0), argument);
     }
 
-    public void testCanRun() {
+    public void testCanRun() throws IOException, InterruptedException {
         SimpleExec exec = SimpleExec.getExec("javac");
-
         exec.getArguments().add("-help");
 
-        String output = "";
-        try {
-            output = ExecOutputCollector.collect(exec);
-        } catch (Exception e) {
-            System.err.println(e);
-            assertTrue(false);
-        }
+        String output = ExecOutputCollector.collect(exec);
+    }
 
-//        assertTrue(output.indexOf("Usage") == 0);
+    public void testHeavyLoad() throws IOException, InterruptedException {
+        SimpleExec exec = SimpleExec.getExec("xcrun");
+        exec.getArguments().add("simctl");
+        exec.getArguments().add("list");
+        exec.getArguments().add("-j");
+
+        for (int i = 0; i < 100; ++i) {
+            String output = ExecOutputCollector.collect(exec);
+            assertTrue(output.endsWith("\n}\n"));
+        }
     }
 }

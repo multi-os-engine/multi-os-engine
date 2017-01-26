@@ -82,8 +82,7 @@ public class RemoteSettings {
 		}
 
 		try {
-			Process process = runner.execute();
-			int result = process.waitFor();
+			int result = runner.run(null);
 
 			if (result != 0) {
 				return "Test fail, result code: " + result;
