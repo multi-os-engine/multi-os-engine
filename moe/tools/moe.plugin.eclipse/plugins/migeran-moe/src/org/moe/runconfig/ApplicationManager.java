@@ -446,7 +446,7 @@ public class ApplicationManager {
 		private final StringBuilder builder = new StringBuilder();
 
 		OptionsBuilder push(String value) {
-			builder.append(",").append(value.replaceAll(",", "\\,"));
+			builder.append(",").append(value.replaceAll(",", "\\\\,"));
 			return this;
 		}
 
