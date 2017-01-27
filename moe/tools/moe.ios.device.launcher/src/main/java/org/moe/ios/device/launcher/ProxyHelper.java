@@ -87,7 +87,7 @@ public class ProxyHelper {
                             break;
                         }
                     }
-                    err = idevice_connect(device, port.getShortRemotePort(), conn_ptr);
+                    err = idevice_connect(device, (char)(port.getShortRemotePort() & 0xFFFF), conn_ptr);
                 }
                 while (!Thread.currentThread().isInterrupted() &&
                         err != idevice_error_t.IDEVICE_E_SUCCESS &&
