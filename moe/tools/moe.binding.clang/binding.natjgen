@@ -1,7 +1,7 @@
 {
   "platform": "OS X",
   "package-base": "org.undefined",
-  "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk",
+  "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
   "header-search-paths": [
     "${PROJECT}/../../../external/llvm/tools/clang/include"
   ],
