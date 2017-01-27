@@ -32,6 +32,8 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
 
+import java.io.File;
+
 import static org.clang.c.clang.*;
 
 public final class ClangUtil {
@@ -51,7 +53,12 @@ public final class ClangUtil {
      * @return file path
      */
     public static String getFilePath(CXIdxDeclInfo decl) {
-        return getFilePath(decl.cursor());
+        final String filePath = getFilePath(decl.cursor());
+        try {
+            return new File(filePath).getCanonicalPath();
+        } catch (Throwable t) {
+            return filePath;
+        }
     }
 
     /**
