@@ -53,6 +53,10 @@ def buildNativeTarget(xcodeproject, configuration, sdk, target) {
                     args '-sdk', sdk
                     args '-configuration', configuration
 
+                    if (rootProject.hasProperty("moe.use.addresssanitizer")) {
+                        args '-enableAddressSanitizer', 'YES'
+                    }
+
                     /*
                      * Uncomment to enable build with address sanitizer, Xcode 7+ required
                      */

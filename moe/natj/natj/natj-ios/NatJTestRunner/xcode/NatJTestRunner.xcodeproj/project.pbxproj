@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CD05FA7A8EAED8AD78510B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39EA42054516C464D8301683 /* LaunchScreen.xib */; };
+		583DAD191E3B63BB00E96F47 /* CustomClassNonExistInherited.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DAD181E3B63BB00E96F47 /* CustomClassNonExistInherited.m */; };
 		589444991E2A5E8300347693 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 589444981E2A5E8300347693 /* main.cpp */; };
 		58AC08321D9BD47400E40FAA /* C+Functions+Invocation.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC081B1D9BD44500E40FAA /* C+Functions+Invocation.c */; };
 		58AC08331D9BD47400E40FAA /* C+Functions+LongInvocation.c in Sources */ = {isa = PBXBuildFile; fileRef = 58AC081D1D9BD44500E40FAA /* C+Functions+LongInvocation.c */; };
@@ -81,6 +82,8 @@
 		1235924AA75839150B4FC510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "NatJTestRunner-Test/Info.plist"; sourceTree = SOURCE_ROOT; };
 		1B09EEB74B580C320B7AE423 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		39EA42054516C464D8301683 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../src/main/resources/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		583DAD171E3B63BB00E96F47 /* CustomClassNonExistInherited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomClassNonExistInherited.h; path = "../../../../natj-objctests/src/test/native/CustomClassNonExistInherited.h"; sourceTree = "<group>"; };
+		583DAD181E3B63BB00E96F47 /* CustomClassNonExistInherited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomClassNonExistInherited.m; path = "../../../../natj-objctests/src/test/native/CustomClassNonExistInherited.m"; sourceTree = "<group>"; };
 		589444981E2A5E8300347693 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		58AC081B1D9BD44500E40FAA /* C+Functions+Invocation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "C+Functions+Invocation.c"; path = "../../../../natj-ctests/src/test/native/C+Functions+Invocation.c"; sourceTree = "<group>"; };
 		58AC081C1D9BD44500E40FAA /* C+Functions+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "C+Functions+Invocation.h"; path = "../../../../natj-ctests/src/test/native/C+Functions+Invocation.h"; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 				58E0AE951E2A56F6007DA965 /* CustomBindingClassName.m */,
 				58AC08711D9BF85000E40FAA /* CustomClassA.h */,
 				58AC08721D9BF85000E40FAA /* CustomClassA.m */,
+				583DAD171E3B63BB00E96F47 /* CustomClassNonExistInherited.h */,
+				583DAD181E3B63BB00E96F47 /* CustomClassNonExistInherited.m */,
 				58AC08731D9BF85000E40FAA /* InstrumentedParent.h */,
 				58AC08741D9BF85000E40FAA /* InstrumentedParent.m */,
 				58AC08751D9BF85000E40FAA /* MappingClass.h */,
@@ -580,6 +585,7 @@
 				58AC08681D9BED9E00E40FAA /* Primitives.cpp in Sources */,
 				58AC08AE1D9BF85000E40FAA /* UnmanagedProtocolProxyManager.m in Sources */,
 				58AC08A11D9BF85000E40FAA /* ObjC+Methods+ObjectPtr.m in Sources */,
+				583DAD191E3B63BB00E96F47 /* CustomClassNonExistInherited.m in Sources */,
 				58AC08AD1D9BF85000E40FAA /* UnmanagedNativeBlockManager.m in Sources */,
 				58AC089B1D9BF85000E40FAA /* CustomClassA.m in Sources */,
 				58AC08A21D9BF85000E40FAA /* ObjC+Methods+Primitives.m in Sources */,

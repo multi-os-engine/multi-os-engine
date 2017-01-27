@@ -34,6 +34,11 @@ tasks.withType(Test) {
 
     systemProperty 'java.library.path', file("../natj-mac/build/xcode/${nativeConfiguration}")
     testLogging.showStandardStreams = true
+    if (rootProject.hasProperty("moe.use.addresssanitizer")) {
+        environment['DYLD_INSERT_LIBRARIES'] = '/Applications/Xcode.app/Contents/Developer/Toolchains/' +
+                'XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib'
+        environment['ASAN_OPTIONS'] = 'handle_segv=0:allow_user_segv_handler=1'
+    }
 }
 
 task ansibleTestWinPrepare(type: Tar) {

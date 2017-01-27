@@ -1473,14 +1473,14 @@ Class registerObjCClass(JNIEnv* env, jclass type, bool isProxy, jstring baseClas
             break;
           }
 
-          env->ReleaseStringUTFChars(classJName, classCName);
-          env->DeleteLocalRef(classJName);
-
           if (first_candidate) {
             first_candidate = false;
             LOGW << "Binding class refers to class " << classCName
                  << ", but it can not be found. Fallback to indirect super class.";
           }
+
+          env->ReleaseStringUTFChars(classJName, classCName);
+          env->DeleteLocalRef(classJName);
         } else {
           break;
         }

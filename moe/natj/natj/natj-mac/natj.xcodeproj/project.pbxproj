@@ -142,6 +142,8 @@
 		582249F81CB54BEB00757811 /* NativeDataSource.c in Sources */ = {isa = PBXBuildFile; fileRef = 582249CA1CB54BEB00757811 /* NativeDataSource.c */; };
 		58224A0D1CB54BEB00757811 /* Structs.h in Headers */ = {isa = PBXBuildFile; fileRef = 582249DF1CB54BEB00757811 /* Structs.h */; };
 		58271A9F1C7C593E003E7D62 /* DynamicTypes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 58271A9D1C7C593E003E7D62 /* DynamicTypes.hpp */; };
+		583DAD151E3B5F2000E96F47 /* CustomClassNonExistInherited.h in Headers */ = {isa = PBXBuildFile; fileRef = 583DAD131E3B5F2000E96F47 /* CustomClassNonExistInherited.h */; };
+		583DAD161E3B5F2000E96F47 /* CustomClassNonExistInherited.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DAD141E3B5F2000E96F47 /* CustomClassNonExistInherited.m */; };
 		58407C6E1C8EC28100EF8B81 /* Inheritance.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 58407C6D1C8EC27E00EF8B81 /* Inheritance.hpp */; };
 		584EDEE51C87389B00713BBC /* BaseTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 584EDEE41C87389B00713BBC /* BaseTypes.cpp */; };
 		588971BA1C8B3D7300D617EA /* VectorCounter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 588971B91C8B3D7300D617EA /* VectorCounter.hpp */; };
@@ -370,6 +372,8 @@
 		582249DF1CB54BEB00757811 /* Structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Structs.h; path = "../natj-ctests/src/test/native/Structs.h"; sourceTree = "<group>"; };
 		58271A9D1C7C593E003E7D62 /* DynamicTypes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DynamicTypes.hpp; sourceTree = "<group>"; };
 		582C2C311C90854C00A9E1F3 /* SizeofTest.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SizeofTest.hpp; sourceTree = "<group>"; };
+		583DAD131E3B5F2000E96F47 /* CustomClassNonExistInherited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomClassNonExistInherited.h; path = "../natj-objctests/src/test/native/CustomClassNonExistInherited.h"; sourceTree = "<group>"; };
+		583DAD141E3B5F2000E96F47 /* CustomClassNonExistInherited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomClassNonExistInherited.m; path = "../natj-objctests/src/test/native/CustomClassNonExistInherited.m"; sourceTree = "<group>"; };
 		58407C6D1C8EC27E00EF8B81 /* Inheritance.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Inheritance.hpp; sourceTree = "<group>"; };
 		584EDEE41C87389B00713BBC /* BaseTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseTypes.cpp; path = "../natj-cxxtests/src/test/native/BaseTypes.cpp"; sourceTree = "<group>"; };
 		588971B91C8B3D7300D617EA /* VectorCounter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VectorCounter.hpp; sourceTree = "<group>"; };
@@ -869,6 +873,8 @@
 				58E0AE911E2A5623007DA965 /* CustomBindingClassName.m */,
 				58A7EA831CC026060091E246 /* CustomClassA.h */,
 				58A7EA841CC026060091E246 /* CustomClassA.m */,
+				583DAD131E3B5F2000E96F47 /* CustomClassNonExistInherited.h */,
+				583DAD141E3B5F2000E96F47 /* CustomClassNonExistInherited.m */,
 				58A7EA851CC026060091E246 /* InstrumentedParent.h */,
 				58A7EA861CC026060091E246 /* InstrumentedParent.m */,
 				8BAB27621CF481720076626D /* MappingClass.h */,
@@ -1041,6 +1047,7 @@
 				58A7EAA51CC026060091E246 /* NativeDataSource.h in Headers */,
 				58A7EAB31CC026060091E246 /* ObjC+Methods+Variadic.h in Headers */,
 				58A7EAB11CC026060091E246 /* ObjC+Methods+Struct.h in Headers */,
+				583DAD151E3B5F2000E96F47 /* CustomClassNonExistInherited.h in Headers */,
 				58A7EAB91CC026060091E246 /* ObjCUtility.h in Headers */,
 				8BAB27641CF481720076626D /* MappingClass.h in Headers */,
 				58E0AE921E2A5623007DA965 /* CustomBindingClassName.h in Headers */,
@@ -1294,6 +1301,7 @@
 				58A7EAAA1CC026060091E246 /* ObjC+Methods+Exception.m in Sources */,
 				58A7EAA41CC026060091E246 /* InstrumentedParent.m in Sources */,
 				58A7EAB81CC026060091E246 /* ObjCBlocks.m in Sources */,
+				583DAD161E3B5F2000E96F47 /* CustomClassNonExistInherited.m in Sources */,
 				58A7EAA21CC026060091E246 /* CustomClassA.m in Sources */,
 				58A7EAAC1CC026060091E246 /* ObjC+Methods+ObjectPtr.m in Sources */,
 				8B8F88881CFDE74B009D0B34 /* UnmanagedNativeBlockManager.m in Sources */,
