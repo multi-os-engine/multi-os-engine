@@ -578,14 +578,17 @@ public class Type {
         }
 
         // Expand unexposed types
+        CXType canonical = type;
         while (typeKind == CXTypeKind.Unexposed) {
-            CXType canonical = type.getCanonicalType();
-            if (clang.clang_equalTypes(type, canonical) != 0) {
+            final CXType newCanonical = canonical.getCanonicalType();
+            if (clang.clang_equalTypes(newCanonical, canonical) != 0) {
                 break;
             }
-            type = canonical;
-            typeKind = type.kind();
+            canonical = newCanonical;
+            typeKind = canonical.kind();
         }
+        CXType nonCanonical = type;
+        type = canonical;
 
         switch (typeKind) {
         // Objective-C specials
@@ -820,7 +823,7 @@ public class Type {
         // Block
         case CXTypeKind.BlockPointer: {
             kind = ObjCBlock;
-            CXType pointee = type.getPointeeType();
+            CXType pointee = nonCanonical.getPointeeType();
             int arg_count = pointee.getNumArgTypes();
             callbackDescriptor = new CallbackDescriptor(ObjCBlock, new Type(pointee.getResultType(), memModel),
                     arg_count);
@@ -835,12 +838,12 @@ public class Type {
         // FunctionProto
         case CXTypeKind.FunctionProto: {
             kind = FunctionProto;
-            int arg_count = type.getNumArgTypes();
-            callbackDescriptor = new CallbackDescriptor(FunctionProto, new Type(type.getResultType(), memModel),
+            int arg_count = nonCanonical.getNumArgTypes();
+            callbackDescriptor = new CallbackDescriptor(FunctionProto, new Type(nonCanonical.getResultType(), memModel),
                     arg_count);
             callbackDescriptor.setVariadic(type.isFunctionTypeVariadic() != 0);
             for (int idx = 0; idx < arg_count; ++idx) {
-                Type arg = new Type(type.getArgType(idx), memModel);
+                Type arg = new Type(nonCanonical.getArgType(idx), memModel);
                 callbackDescriptor.arguments.add(new CallbackArgument("arg" + idx, arg));
             }
         }
