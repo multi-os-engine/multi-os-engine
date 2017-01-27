@@ -20,25 +20,18 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class heartbeat_error_t {
-	@Generated
-	private heartbeat_error_t() {
-	}
+    @Generated public static final int HEARTBEAT_E_SUCCESS = 0x00000000;
+    @Generated public static final int HEARTBEAT_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int HEARTBEAT_E_PLIST_ERROR = 0xFFFFFFFE;
+    @Generated public static final int HEARTBEAT_E_MUX_ERROR = 0xFFFFFFFD;
+    @Generated public static final int HEARTBEAT_E_SSL_ERROR = 0xFFFFFFFC;
+    @Generated public static final int HEARTBEAT_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
-	@Generated
-	public static final int HEARTBEAT_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int HEARTBEAT_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int HEARTBEAT_E_PLIST_ERROR = 0xFFFFFFFE;
-	@Generated
-	public static final int HEARTBEAT_E_MUX_ERROR = 0xFFFFFFFD;
-	@Generated
-	public static final int HEARTBEAT_E_SSL_ERROR = 0xFFFFFFFC;
-	@Generated
-	public static final int HEARTBEAT_E_UNKNOWN_ERROR = 0xFFFFFF00;
+    @Generated
+    private heartbeat_error_t() {
+    }
 }

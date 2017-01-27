@@ -20,7 +20,6 @@
 
 package org.libimobiledevice.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -31,41 +30,42 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 @Structure()
 public final class lockdownd_service_descriptor extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public lockdownd_service_descriptor() {
-		super(lockdownd_service_descriptor.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected lockdownd_service_descriptor(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public lockdownd_service_descriptor() {
+        super(lockdownd_service_descriptor.class);
+    }
 
-	@Generated
-	public lockdownd_service_descriptor(short port, byte ssl_enabled) {
-		super(lockdownd_service_descriptor.class);
-		setPort(port);
-		setSsl_enabled(ssl_enabled);
-	}
+    @Generated
+    protected lockdownd_service_descriptor(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native short port();
+    @Generated
+    public lockdownd_service_descriptor(short port, byte ssl_enabled) {
+        super(lockdownd_service_descriptor.class);
+        setPort(port);
+        setSsl_enabled(ssl_enabled);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setPort(short value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native short port();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native byte ssl_enabled();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setPort(short value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setSsl_enabled(byte value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native byte ssl_enabled();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setSsl_enabled(byte value);
 }

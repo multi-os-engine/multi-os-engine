@@ -20,23 +20,17 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class sbservices_error_t {
-	@Generated
-	private sbservices_error_t() {
-	}
+    @Generated public static final int SBSERVICES_E_SUCCESS = 0x00000000;
+    @Generated public static final int SBSERVICES_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int SBSERVICES_E_PLIST_ERROR = 0xFFFFFFFE;
+    @Generated public static final int SBSERVICES_E_CONN_FAILED = 0xFFFFFFFD;
+    @Generated public static final int SBSERVICES_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
-	@Generated
-	public static final int SBSERVICES_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int SBSERVICES_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int SBSERVICES_E_PLIST_ERROR = 0xFFFFFFFE;
-	@Generated
-	public static final int SBSERVICES_E_CONN_FAILED = 0xFFFFFFFD;
-	@Generated
-	public static final int SBSERVICES_E_UNKNOWN_ERROR = 0xFFFFFF00;
+    @Generated
+    private sbservices_error_t() {
+    }
 }

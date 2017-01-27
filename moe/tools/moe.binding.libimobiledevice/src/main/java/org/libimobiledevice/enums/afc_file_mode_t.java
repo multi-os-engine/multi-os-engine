@@ -20,25 +20,18 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class afc_file_mode_t {
-	@Generated
-	private afc_file_mode_t() {
-	}
+    @Generated public static final int AFC_FOPEN_RDONLY = 0x00000001;
+    @Generated public static final int AFC_FOPEN_RW = 0x00000002;
+    @Generated public static final int AFC_FOPEN_WRONLY = 0x00000003;
+    @Generated public static final int AFC_FOPEN_WR = 0x00000004;
+    @Generated public static final int AFC_FOPEN_APPEND = 0x00000005;
+    @Generated public static final int AFC_FOPEN_RDAPPEND = 0x00000006;
 
-	@Generated
-	public static final int AFC_FOPEN_RDONLY = 0x00000001;
-	@Generated
-	public static final int AFC_FOPEN_RW = 0x00000002;
-	@Generated
-	public static final int AFC_FOPEN_WRONLY = 0x00000003;
-	@Generated
-	public static final int AFC_FOPEN_WR = 0x00000004;
-	@Generated
-	public static final int AFC_FOPEN_APPEND = 0x00000005;
-	@Generated
-	public static final int AFC_FOPEN_RDAPPEND = 0x00000006;
+    @Generated
+    private afc_file_mode_t() {
+    }
 }

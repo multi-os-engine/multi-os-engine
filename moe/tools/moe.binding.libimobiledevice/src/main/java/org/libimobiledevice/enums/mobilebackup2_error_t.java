@@ -20,29 +20,20 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class mobilebackup2_error_t {
-	@Generated
-	private mobilebackup2_error_t() {
-	}
+    @Generated public static final int MOBILEBACKUP2_E_SUCCESS = 0x00000000;
+    @Generated public static final int MOBILEBACKUP2_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int MOBILEBACKUP2_E_PLIST_ERROR = 0xFFFFFFFE;
+    @Generated public static final int MOBILEBACKUP2_E_MUX_ERROR = 0xFFFFFFFD;
+    @Generated public static final int MOBILEBACKUP2_E_BAD_VERSION = 0xFFFFFFFC;
+    @Generated public static final int MOBILEBACKUP2_E_REPLY_NOT_OK = 0xFFFFFFFB;
+    @Generated public static final int MOBILEBACKUP2_E_NO_COMMON_VERSION = 0xFFFFFFFA;
+    @Generated public static final int MOBILEBACKUP2_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
-	@Generated
-	public static final int MOBILEBACKUP2_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int MOBILEBACKUP2_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int MOBILEBACKUP2_E_PLIST_ERROR = 0xFFFFFFFE;
-	@Generated
-	public static final int MOBILEBACKUP2_E_MUX_ERROR = 0xFFFFFFFD;
-	@Generated
-	public static final int MOBILEBACKUP2_E_BAD_VERSION = 0xFFFFFFFC;
-	@Generated
-	public static final int MOBILEBACKUP2_E_REPLY_NOT_OK = 0xFFFFFFFB;
-	@Generated
-	public static final int MOBILEBACKUP2_E_NO_COMMON_VERSION = 0xFFFFFFFA;
-	@Generated
-	public static final int MOBILEBACKUP2_E_UNKNOWN_ERROR = 0xFFFFFF00;
+    @Generated
+    private mobilebackup2_error_t() {
+    }
 }

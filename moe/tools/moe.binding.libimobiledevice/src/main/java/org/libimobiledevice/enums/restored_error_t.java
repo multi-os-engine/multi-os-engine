@@ -20,33 +20,22 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class restored_error_t {
-	@Generated
-	private restored_error_t() {
-	}
+    @Generated public static final int RESTORE_E_SUCCESS = 0x00000000;
+    @Generated public static final int RESTORE_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int RESTORE_E_INVALID_CONF = 0xFFFFFFFE;
+    @Generated public static final int RESTORE_E_PLIST_ERROR = 0xFFFFFFFD;
+    @Generated public static final int RESTORE_E_DICT_ERROR = 0xFFFFFFFC;
+    @Generated public static final int RESTORE_E_NOT_ENOUGH_DATA = 0xFFFFFFFB;
+    @Generated public static final int RESTORE_E_MUX_ERROR = 0xFFFFFFFA;
+    @Generated public static final int RESTORE_E_START_RESTORE_FAILED = 0xFFFFFFF9;
+    @Generated public static final int RESTORE_E_DEVICE_ERROR = 0xFFFFFFF8;
+    @Generated public static final int RESTORE_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
-	@Generated
-	public static final int RESTORE_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int RESTORE_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int RESTORE_E_INVALID_CONF = 0xFFFFFFFE;
-	@Generated
-	public static final int RESTORE_E_PLIST_ERROR = 0xFFFFFFFD;
-	@Generated
-	public static final int RESTORE_E_DICT_ERROR = 0xFFFFFFFC;
-	@Generated
-	public static final int RESTORE_E_NOT_ENOUGH_DATA = 0xFFFFFFFB;
-	@Generated
-	public static final int RESTORE_E_MUX_ERROR = 0xFFFFFFFA;
-	@Generated
-	public static final int RESTORE_E_START_RESTORE_FAILED = 0xFFFFFFF9;
-	@Generated
-	public static final int RESTORE_E_DEVICE_ERROR = 0xFFFFFFF8;
-	@Generated
-	public static final int RESTORE_E_UNKNOWN_ERROR = 0xFFFFFF00;
+    @Generated
+    private restored_error_t() {
+    }
 }

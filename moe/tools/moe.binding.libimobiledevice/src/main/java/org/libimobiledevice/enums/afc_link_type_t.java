@@ -20,17 +20,14 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class afc_link_type_t {
-	@Generated
-	private afc_link_type_t() {
-	}
+    @Generated public static final int AFC_HARDLINK = 0x00000001;
+    @Generated public static final int AFC_SYMLINK = 0x00000002;
 
-	@Generated
-	public static final int AFC_HARDLINK = 0x00000001;
-	@Generated
-	public static final int AFC_SYMLINK = 0x00000002;
+    @Generated
+    private afc_link_type_t() {
+    }
 }

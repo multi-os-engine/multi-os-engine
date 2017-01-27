@@ -20,35 +20,23 @@
 
 package org.libplist.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class plist_type {
-	@Generated
-	private plist_type() {
-	}
+    @Generated public static final int PLIST_BOOLEAN = 0x00000000;
+    @Generated public static final int PLIST_UINT = 0x00000001;
+    @Generated public static final int PLIST_REAL = 0x00000002;
+    @Generated public static final int PLIST_STRING = 0x00000003;
+    @Generated public static final int PLIST_ARRAY = 0x00000004;
+    @Generated public static final int PLIST_DICT = 0x00000005;
+    @Generated public static final int PLIST_DATE = 0x00000006;
+    @Generated public static final int PLIST_DATA = 0x00000007;
+    @Generated public static final int PLIST_KEY = 0x00000008;
+    @Generated public static final int PLIST_UID = 0x00000009;
+    @Generated public static final int PLIST_NONE = 0x0000000A;
 
-	@Generated
-	public static final int PLIST_BOOLEAN = 0x00000000;
-	@Generated
-	public static final int PLIST_UINT = 0x00000001;
-	@Generated
-	public static final int PLIST_REAL = 0x00000002;
-	@Generated
-	public static final int PLIST_STRING = 0x00000003;
-	@Generated
-	public static final int PLIST_ARRAY = 0x00000004;
-	@Generated
-	public static final int PLIST_DICT = 0x00000005;
-	@Generated
-	public static final int PLIST_DATE = 0x00000006;
-	@Generated
-	public static final int PLIST_DATA = 0x00000007;
-	@Generated
-	public static final int PLIST_KEY = 0x00000008;
-	@Generated
-	public static final int PLIST_UID = 0x00000009;
-	@Generated
-	public static final int PLIST_NONE = 0x0000000A;
+    @Generated
+    private plist_type() {
+    }
 }

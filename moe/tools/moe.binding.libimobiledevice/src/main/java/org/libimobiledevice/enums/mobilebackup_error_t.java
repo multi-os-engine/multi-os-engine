@@ -20,27 +20,19 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class mobilebackup_error_t {
-	@Generated
-	private mobilebackup_error_t() {
-	}
+    @Generated public static final int MOBILEBACKUP_E_SUCCESS = 0x00000000;
+    @Generated public static final int MOBILEBACKUP_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int MOBILEBACKUP_E_PLIST_ERROR = 0xFFFFFFFE;
+    @Generated public static final int MOBILEBACKUP_E_MUX_ERROR = 0xFFFFFFFD;
+    @Generated public static final int MOBILEBACKUP_E_BAD_VERSION = 0xFFFFFFFC;
+    @Generated public static final int MOBILEBACKUP_E_REPLY_NOT_OK = 0xFFFFFFFB;
+    @Generated public static final int MOBILEBACKUP_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
-	@Generated
-	public static final int MOBILEBACKUP_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int MOBILEBACKUP_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int MOBILEBACKUP_E_PLIST_ERROR = 0xFFFFFFFE;
-	@Generated
-	public static final int MOBILEBACKUP_E_MUX_ERROR = 0xFFFFFFFD;
-	@Generated
-	public static final int MOBILEBACKUP_E_BAD_VERSION = 0xFFFFFFFC;
-	@Generated
-	public static final int MOBILEBACKUP_E_REPLY_NOT_OK = 0xFFFFFFFB;
-	@Generated
-	public static final int MOBILEBACKUP_E_UNKNOWN_ERROR = 0xFFFFFF00;
+    @Generated
+    private mobilebackup_error_t() {
+    }
 }

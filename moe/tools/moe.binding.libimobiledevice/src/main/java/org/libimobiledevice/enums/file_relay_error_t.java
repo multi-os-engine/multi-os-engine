@@ -20,29 +20,20 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class file_relay_error_t {
-	@Generated
-	private file_relay_error_t() {
-	}
+    @Generated public static final int FILE_RELAY_E_SUCCESS = 0x00000000;
+    @Generated public static final int FILE_RELAY_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int FILE_RELAY_E_PLIST_ERROR = 0xFFFFFFFE;
+    @Generated public static final int FILE_RELAY_E_MUX_ERROR = 0xFFFFFFFD;
+    @Generated public static final int FILE_RELAY_E_INVALID_SOURCE = 0xFFFFFFFC;
+    @Generated public static final int FILE_RELAY_E_STAGING_EMPTY = 0xFFFFFFFB;
+    @Generated public static final int FILE_RELAY_E_PERMISSION_DENIED = 0xFFFFFFFA;
+    @Generated public static final int FILE_RELAY_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
-	@Generated
-	public static final int FILE_RELAY_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int FILE_RELAY_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int FILE_RELAY_E_PLIST_ERROR = 0xFFFFFFFE;
-	@Generated
-	public static final int FILE_RELAY_E_MUX_ERROR = 0xFFFFFFFD;
-	@Generated
-	public static final int FILE_RELAY_E_INVALID_SOURCE = 0xFFFFFFFC;
-	@Generated
-	public static final int FILE_RELAY_E_STAGING_EMPTY = 0xFFFFFFFB;
-	@Generated
-	public static final int FILE_RELAY_E_PERMISSION_DENIED = 0xFFFFFFFA;
-	@Generated
-	public static final int FILE_RELAY_E_UNKNOWN_ERROR = 0xFFFFFF00;
+    @Generated
+    private file_relay_error_t() {
+    }
 }

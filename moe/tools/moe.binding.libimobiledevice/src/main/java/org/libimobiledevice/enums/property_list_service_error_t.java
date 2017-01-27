@@ -20,27 +20,19 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class property_list_service_error_t {
-	@Generated
-	private property_list_service_error_t() {
-	}
+    @Generated public static final int PROPERTY_LIST_SERVICE_E_SUCCESS = 0x00000000;
+    @Generated public static final int PROPERTY_LIST_SERVICE_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int PROPERTY_LIST_SERVICE_E_PLIST_ERROR = 0xFFFFFFFE;
+    @Generated public static final int PROPERTY_LIST_SERVICE_E_MUX_ERROR = 0xFFFFFFFD;
+    @Generated public static final int PROPERTY_LIST_SERVICE_E_SSL_ERROR = 0xFFFFFFFC;
+    @Generated public static final int PROPERTY_LIST_SERVICE_E_RECEIVE_TIMEOUT = 0xFFFFFFFB;
+    @Generated public static final int PROPERTY_LIST_SERVICE_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
-	@Generated
-	public static final int PROPERTY_LIST_SERVICE_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int PROPERTY_LIST_SERVICE_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int PROPERTY_LIST_SERVICE_E_PLIST_ERROR = 0xFFFFFFFE;
-	@Generated
-	public static final int PROPERTY_LIST_SERVICE_E_MUX_ERROR = 0xFFFFFFFD;
-	@Generated
-	public static final int PROPERTY_LIST_SERVICE_E_SSL_ERROR = 0xFFFFFFFC;
-	@Generated
-	public static final int PROPERTY_LIST_SERVICE_E_RECEIVE_TIMEOUT = 0xFFFFFFFB;
-	@Generated
-	public static final int PROPERTY_LIST_SERVICE_E_UNKNOWN_ERROR = 0xFFFFFF00;
+    @Generated
+    private property_list_service_error_t() {
+    }
 }

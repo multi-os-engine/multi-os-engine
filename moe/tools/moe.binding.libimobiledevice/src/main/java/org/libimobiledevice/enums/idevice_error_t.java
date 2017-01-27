@@ -20,27 +20,19 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class idevice_error_t {
-	@Generated
-	private idevice_error_t() {
-	}
+    @Generated public static final int IDEVICE_E_SUCCESS = 0x00000000;
+    @Generated public static final int IDEVICE_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int IDEVICE_E_UNKNOWN_ERROR = 0xFFFFFFFE;
+    @Generated public static final int IDEVICE_E_NO_DEVICE = 0xFFFFFFFD;
+    @Generated public static final int IDEVICE_E_NOT_ENOUGH_DATA = 0xFFFFFFFC;
+    @Generated public static final int IDEVICE_E_BAD_HEADER = 0xFFFFFFFB;
+    @Generated public static final int IDEVICE_E_SSL_ERROR = 0xFFFFFFFA;
 
-	@Generated
-	public static final int IDEVICE_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int IDEVICE_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int IDEVICE_E_UNKNOWN_ERROR = 0xFFFFFFFE;
-	@Generated
-	public static final int IDEVICE_E_NO_DEVICE = 0xFFFFFFFD;
-	@Generated
-	public static final int IDEVICE_E_NOT_ENOUGH_DATA = 0xFFFFFFFC;
-	@Generated
-	public static final int IDEVICE_E_BAD_HEADER = 0xFFFFFFFB;
-	@Generated
-	public static final int IDEVICE_E_SSL_ERROR = 0xFFFFFFFA;
+    @Generated
+    private idevice_error_t() {
+    }
 }

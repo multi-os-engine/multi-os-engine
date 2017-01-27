@@ -20,7 +20,6 @@
 
 package org.libplist.opaque;
 
-
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.OpaquePtr;
 import org.moe.natj.general.Pointer;
@@ -31,11 +30,11 @@ import org.moe.natj.general.ptr.impl.OpaquePtrImpl;
 @Generated
 @Runtime(CRuntime.class)
 public interface plist_t extends OpaquePtr {
-	@Generated
-	static class Impl extends OpaquePtrImpl implements plist_t {
-		@Generated
-		protected Impl(Pointer peer) {
-			super(peer);
-		}
-	}
+    @Generated
+    static class Impl extends OpaquePtrImpl implements plist_t {
+        @Generated
+        protected Impl(Pointer peer) {
+            super(peer);
+        }
+    }
 }

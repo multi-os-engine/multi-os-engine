@@ -20,19 +20,15 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class afc_lock_op_t {
-	@Generated
-	private afc_lock_op_t() {
-	}
+    @Generated public static final int AFC_LOCK_SH = 0x00000005;
+    @Generated public static final int AFC_LOCK_EX = 0x00000006;
+    @Generated public static final int AFC_LOCK_UN = 0x0000000C;
 
-	@Generated
-	public static final int AFC_LOCK_SH = 0x00000005;
-	@Generated
-	public static final int AFC_LOCK_EX = 0x00000006;
-	@Generated
-	public static final int AFC_LOCK_UN = 0x0000000C;
+    @Generated
+    private afc_lock_op_t() {
+    }
 }

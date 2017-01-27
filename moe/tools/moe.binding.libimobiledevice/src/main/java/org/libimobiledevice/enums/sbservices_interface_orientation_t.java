@@ -20,23 +20,17 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class sbservices_interface_orientation_t {
-	@Generated
-	private sbservices_interface_orientation_t() {
-	}
+    @Generated public static final int SBSERVICES_INTERFACE_ORIENTATION_UNKNOWN = 0x00000000;
+    @Generated public static final int SBSERVICES_INTERFACE_ORIENTATION_PORTRAIT = 0x00000001;
+    @Generated public static final int SBSERVICES_INTERFACE_ORIENTATION_PORTRAIT_UPSIDE_DOWN = 0x00000002;
+    @Generated public static final int SBSERVICES_INTERFACE_ORIENTATION_LANDSCAPE_RIGHT = 0x00000003;
+    @Generated public static final int SBSERVICES_INTERFACE_ORIENTATION_LANDSCAPE_LEFT = 0x00000004;
 
-	@Generated
-	public static final int SBSERVICES_INTERFACE_ORIENTATION_UNKNOWN = 0x00000000;
-	@Generated
-	public static final int SBSERVICES_INTERFACE_ORIENTATION_PORTRAIT = 0x00000001;
-	@Generated
-	public static final int SBSERVICES_INTERFACE_ORIENTATION_PORTRAIT_UPSIDE_DOWN = 0x00000002;
-	@Generated
-	public static final int SBSERVICES_INTERFACE_ORIENTATION_LANDSCAPE_RIGHT = 0x00000003;
-	@Generated
-	public static final int SBSERVICES_INTERFACE_ORIENTATION_LANDSCAPE_LEFT = 0x00000004;
+    @Generated
+    private sbservices_interface_orientation_t() {
+    }
 }

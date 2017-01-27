@@ -20,7 +20,6 @@
 
 package org.libimobiledevice.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -32,58 +31,59 @@ import org.moe.natj.general.ptr.BytePtr;
 @Generated
 @Structure()
 public final class lockdownd_pair_record extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public lockdownd_pair_record() {
-		super(lockdownd_pair_record.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected lockdownd_pair_record(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public lockdownd_pair_record() {
+        super(lockdownd_pair_record.class);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native BytePtr device_certificate();
+    @Generated
+    protected lockdownd_pair_record(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setDevice_certificate(BytePtr value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native BytePtr device_certificate();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native BytePtr host_certificate();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setDevice_certificate(BytePtr value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setHost_certificate(BytePtr value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native BytePtr host_certificate();
 
-	@Generated
-	@StructureField(order = 2, isGetter = true)
-	public native BytePtr root_certificate();
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setHost_certificate(BytePtr value);
 
-	@Generated
-	@StructureField(order = 2, isGetter = false)
-	public native void setRoot_certificate(BytePtr value);
+    @Generated
+    @StructureField(order = 2, isGetter = true)
+    public native BytePtr root_certificate();
 
-	@Generated
-	@StructureField(order = 3, isGetter = true)
-	public native BytePtr host_id();
+    @Generated
+    @StructureField(order = 2, isGetter = false)
+    public native void setRoot_certificate(BytePtr value);
 
-	@Generated
-	@StructureField(order = 3, isGetter = false)
-	public native void setHost_id(BytePtr value);
+    @Generated
+    @StructureField(order = 3, isGetter = true)
+    public native BytePtr host_id();
 
-	@Generated
-	@StructureField(order = 4, isGetter = true)
-	public native BytePtr system_buid();
+    @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setHost_id(BytePtr value);
 
-	@Generated
-	@StructureField(order = 4, isGetter = false)
-	public native void setSystem_buid(BytePtr value);
+    @Generated
+    @StructureField(order = 4, isGetter = true)
+    public native BytePtr system_buid();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setSystem_buid(BytePtr value);
 }

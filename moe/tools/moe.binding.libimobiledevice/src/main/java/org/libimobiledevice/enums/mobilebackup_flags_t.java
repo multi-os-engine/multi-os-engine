@@ -20,19 +20,15 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class mobilebackup_flags_t {
-	@Generated
-	private mobilebackup_flags_t() {
-	}
+    @Generated public static final int MB_RESTORE_NOTIFY_SPRINGBOARD = 0x00000001;
+    @Generated public static final int MB_RESTORE_PRESERVE_SETTINGS = 0x00000002;
+    @Generated public static final int MB_RESTORE_PRESERVE_CAMERA_ROLL = 0x00000004;
 
-	@Generated
-	public static final int MB_RESTORE_NOTIFY_SPRINGBOARD = 0x00000001;
-	@Generated
-	public static final int MB_RESTORE_PRESERVE_SETTINGS = 0x00000002;
-	@Generated
-	public static final int MB_RESTORE_PRESERVE_CAMERA_ROLL = 0x00000004;
+    @Generated
+    private mobilebackup_flags_t() {
+    }
 }

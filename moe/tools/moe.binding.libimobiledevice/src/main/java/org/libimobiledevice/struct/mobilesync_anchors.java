@@ -20,7 +20,6 @@
 
 package org.libimobiledevice.struct;
 
-
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -32,41 +31,42 @@ import org.moe.natj.general.ptr.BytePtr;
 @Generated
 @Structure()
 public final class mobilesync_anchors extends StructObject {
-	static {
-		NatJ.register();
-	}
-	private static long __natjCache;
+    private static long __natjCache;
 
-	@Generated
-	public mobilesync_anchors() {
-		super(mobilesync_anchors.class);
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected mobilesync_anchors(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    public mobilesync_anchors() {
+        super(mobilesync_anchors.class);
+    }
 
-	@Generated
-	public mobilesync_anchors(BytePtr device_anchor, BytePtr computer_anchor) {
-		super(mobilesync_anchors.class);
-		setDevice_anchor(device_anchor);
-		setComputer_anchor(computer_anchor);
-	}
+    @Generated
+    protected mobilesync_anchors(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = true)
-	public native BytePtr device_anchor();
+    @Generated
+    public mobilesync_anchors(BytePtr device_anchor, BytePtr computer_anchor) {
+        super(mobilesync_anchors.class);
+        setDevice_anchor(device_anchor);
+        setComputer_anchor(computer_anchor);
+    }
 
-	@Generated
-	@StructureField(order = 0, isGetter = false)
-	public native void setDevice_anchor(BytePtr value);
+    @Generated
+    @StructureField(order = 0, isGetter = true)
+    public native BytePtr device_anchor();
 
-	@Generated
-	@StructureField(order = 1, isGetter = true)
-	public native BytePtr computer_anchor();
+    @Generated
+    @StructureField(order = 0, isGetter = false)
+    public native void setDevice_anchor(BytePtr value);
 
-	@Generated
-	@StructureField(order = 1, isGetter = false)
-	public native void setComputer_anchor(BytePtr value);
+    @Generated
+    @StructureField(order = 1, isGetter = true)
+    public native BytePtr computer_anchor();
+
+    @Generated
+    @StructureField(order = 1, isGetter = false)
+    public native void setComputer_anchor(BytePtr value);
 }

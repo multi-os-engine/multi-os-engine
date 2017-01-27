@@ -20,25 +20,18 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class diagnostics_relay_error_t {
-	@Generated
-	private diagnostics_relay_error_t() {
-	}
+    @Generated public static final int DIAGNOSTICS_RELAY_E_SUCCESS = 0x00000000;
+    @Generated public static final int DIAGNOSTICS_RELAY_E_INVALID_ARG = 0xFFFFFFFF;
+    @Generated public static final int DIAGNOSTICS_RELAY_E_PLIST_ERROR = 0xFFFFFFFE;
+    @Generated public static final int DIAGNOSTICS_RELAY_E_MUX_ERROR = 0xFFFFFFFD;
+    @Generated public static final int DIAGNOSTICS_RELAY_E_UNKNOWN_REQUEST = 0xFFFFFFFC;
+    @Generated public static final int DIAGNOSTICS_RELAY_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
-	@Generated
-	public static final int DIAGNOSTICS_RELAY_E_SUCCESS = 0x00000000;
-	@Generated
-	public static final int DIAGNOSTICS_RELAY_E_INVALID_ARG = 0xFFFFFFFF;
-	@Generated
-	public static final int DIAGNOSTICS_RELAY_E_PLIST_ERROR = 0xFFFFFFFE;
-	@Generated
-	public static final int DIAGNOSTICS_RELAY_E_MUX_ERROR = 0xFFFFFFFD;
-	@Generated
-	public static final int DIAGNOSTICS_RELAY_E_UNKNOWN_REQUEST = 0xFFFFFFFC;
-	@Generated
-	public static final int DIAGNOSTICS_RELAY_E_UNKNOWN_ERROR = 0xFFFFFF00;
+    @Generated
+    private diagnostics_relay_error_t() {
+    }
 }

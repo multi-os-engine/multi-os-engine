@@ -20,19 +20,15 @@
 
 package org.libimobiledevice.enums;
 
-
 import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class mobilesync_sync_type_t {
-	@Generated
-	private mobilesync_sync_type_t() {
-	}
+    @Generated public static final int MOBILESYNC_SYNC_TYPE_FAST = 0x00000000;
+    @Generated public static final int MOBILESYNC_SYNC_TYPE_SLOW = 0x00000001;
+    @Generated public static final int MOBILESYNC_SYNC_TYPE_RESET = 0x00000002;
 
-	@Generated
-	public static final int MOBILESYNC_SYNC_TYPE_FAST = 0x00000000;
-	@Generated
-	public static final int MOBILESYNC_SYNC_TYPE_SLOW = 0x00000001;
-	@Generated
-	public static final int MOBILESYNC_SYNC_TYPE_RESET = 0x00000002;
+    @Generated
+    private mobilesync_sync_type_t() {
+    }
 }
