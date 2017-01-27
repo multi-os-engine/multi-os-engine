@@ -103,7 +103,7 @@ public class Main {
             TEST_send_Arguments = true;
 
     		// Get success
-    		while (p.query_LaunchSuccess() != 0) {
+    		while (p.query_LaunchSuccess() != null) {
     			sleep(1);
     		}
     		System.out.println("Launch success");

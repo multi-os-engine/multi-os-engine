@@ -128,6 +128,26 @@ public final class GDBRemoteProtocol {
 	}
 
 	/**
+	 * Get response where possible responds are <code>OK</code> and
+	 * <code>EMSG</code>, where <code>MSG</code> is an error message.
+	 * <code>OK</code> response returns <code>null</code>, <code>EMSG</code>
+	 * response returns the error message, otherwise <code>"Unknown error"</code>
+	 * is returned.
+	 *
+	 * @return error code
+	 * @throws IOException
+	 */
+	private String _get_OK_EMSG_Response() throws IOException {
+		String resp = comm.nextResponse();
+		if ("OK".equals(resp)) {
+			return null;
+		} else if (resp != null && resp.startsWith("E")) {
+			return resp.substring(1);
+		}
+		return "Unknown error";
+	}
+
+	/**
 	 * Get response where possible responds are <code>OK</code> and "".
 	 * <code>true</code> is returned if the response is <code>OK</code>.
 	 *
@@ -400,14 +420,14 @@ public final class GDBRemoteProtocol {
 	 * @return error code, <code>0</code> on success
 	 * @throws IOException
 	 */
-	public int query_LaunchSuccess() throws IOException {
+	public String query_LaunchSuccess() throws IOException {
 		// Send packet
 		if (!comm.sendASCIIPacket("qLaunchSuccess")) {
-			return -1;
+			return "Unknown error";
 		}
 
 		// Process response
-		return _get_OK_ENN_Response();
+		return _get_OK_EMSG_Response();
 	}
 
 	/**
