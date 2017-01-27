@@ -29,6 +29,8 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static org.clang.c.clang.clang_equalCursors;
+
 public class Type {
 
     /**
@@ -786,7 +788,17 @@ public class Type {
             CXType pointeeType = type.getPointeeType();
             innerType = new Type(pointeeType, memModel);
             if (innerType.getKind() == Struct) {
-                if (pointeeType.getTypeDeclaration().getCursorDefinition().kind() == CXCursorKind.InvalidFile) {
+                CXCursor pointeeTypeTDecl = pointeeType.getTypeDeclaration().getCursorDefinition();
+                while (pointeeTypeTDecl.kind() == CXCursorKind.TypedefDecl) {
+                    CXCursor cursor = pointeeTypeTDecl.getTypedefDeclUnderlyingType()
+                            .getTypeDeclaration().getCursorDefinition();
+                    if (cursor != null && clang_equalCursors(cursor, pointeeTypeTDecl) == 0) {
+                        pointeeTypeTDecl = cursor;
+                    } else {
+                        break;
+                    }
+                }
+                if (pointeeTypeTDecl.kind() == CXCursorKind.InvalidFile) {
                     final String elemN;
                     if (typeDefType != null && (elemN = typeDefType.getTypeDeclaration().toString()) != null
                             && elemN.length() > 0) {
