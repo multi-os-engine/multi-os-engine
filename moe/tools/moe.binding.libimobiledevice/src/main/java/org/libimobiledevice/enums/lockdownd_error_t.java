@@ -61,6 +61,10 @@ public final class lockdownd_error_t {
     @Generated public static final int LOCKDOWN_E_MISSING_ACTIVATION_RECORD = 0xFFFFFFDF;
     @Generated public static final int LOCKDOWN_E_SERVICE_PROHIBITED = 0xFFFFFFDE;
     @Generated public static final int LOCKDOWN_E_ESCROW_LOCKED = 0xFFFFFFDD;
+    @Generated public static final int LOCKDOWN_E_PAIRING_PROHIBITED_OVER_THIS_CONNECTION = 0xFFFFFFDC;
+    @Generated public static final int LOCKDOWN_E_FMIP_PROTECTED = 0xFFFFFFDB;
+    @Generated public static final int LOCKDOWN_E_MC_PROTECTED = 0xFFFFFFDA;
+    @Generated public static final int LOCKDOWN_E_MC_CHALLENGE_REQUIRED = 0xFFFFFFD9;
 
     @Generated
     private lockdownd_error_t() {

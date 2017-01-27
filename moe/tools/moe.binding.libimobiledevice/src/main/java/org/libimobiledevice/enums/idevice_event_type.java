@@ -24,8 +24,8 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class idevice_event_type {
-    @Generated public static final int IDEVICE_DEVICE_ADD = 0x00000001;
-    @Generated public static final int IDEVICE_DEVICE_REMOVE = 0x00000002;
+    @Generated public static final int ADD = 0x00000001;
+    @Generated public static final int REMOVE = 0x00000002;
 
     @Generated
     private idevice_event_type() {

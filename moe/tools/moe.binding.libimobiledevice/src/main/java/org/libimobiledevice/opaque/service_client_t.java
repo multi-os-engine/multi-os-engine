@@ -31,7 +31,7 @@ import org.moe.natj.general.ptr.impl.OpaquePtrImpl;
 @Runtime(CRuntime.class)
 public interface service_client_t extends OpaquePtr {
     @Generated
-    static class Impl extends OpaquePtrImpl implements service_client_t {
+    class Impl extends OpaquePtrImpl implements service_client_t {
         @Generated
         protected Impl(Pointer peer) {
             super(peer);

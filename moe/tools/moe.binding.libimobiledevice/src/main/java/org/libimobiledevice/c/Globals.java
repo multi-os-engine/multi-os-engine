@@ -57,6 +57,7 @@ import org.moe.natj.c.map.CStringArrayMapper;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ann.UncertainReturn;
@@ -119,7 +120,7 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int idevice_connect(idevice_t device, short port, Ptr<idevice_connection_t> connection);
+    public static native int idevice_connect(idevice_t device, char port, Ptr<idevice_connection_t> connection);
 
     @Generated
     @CFunction
@@ -285,14 +286,12 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int afc_client_new(idevice_t device,
-            @UncertainArgument("Options: reference, array Fallback: reference") lockdownd_service_descriptor service,
+    public static native int afc_client_new(idevice_t device, lockdownd_service_descriptor service,
             Ptr<afc_client_t> client);
 
     @Generated
     @CFunction
-    public static native int afc_client_start_service(idevice_t device, Ptr<afc_client_t> client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
+    public static native int afc_client_start_service(idevice_t device, Ptr<afc_client_t> client, String label);
 
     @Generated
     @CFunction
@@ -304,21 +303,17 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int afc_read_directory(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path,
+    public static native int afc_read_directory(afc_client_t client, String path,
             Ptr<Ptr<BytePtr>> directory_information);
 
     @Generated
     @CFunction
-    public static native int afc_get_file_info(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String filename,
+    public static native int afc_get_file_info(afc_client_t client, String filename,
             Ptr<Ptr<BytePtr>> file_information);
 
     @Generated
     @CFunction
-    public static native int afc_file_open(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String filename,
-            int file_mode, LongPtr handle);
+    public static native int afc_file_open(afc_client_t client, String filename, int file_mode, LongPtr handle);
 
     @Generated
     @CFunction
@@ -352,47 +347,35 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int afc_remove_path(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path);
+    public static native int afc_remove_path(afc_client_t client, String path);
 
     @Generated
     @CFunction
-    public static native int afc_rename_path(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String from,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String to);
+    public static native int afc_rename_path(afc_client_t client, String from, String to);
 
     @Generated
     @CFunction
-    public static native int afc_make_directory(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path);
+    public static native int afc_make_directory(afc_client_t client, String path);
 
     @Generated
     @CFunction
-    public static native int afc_truncate(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path,
-            long newsize);
+    public static native int afc_truncate(afc_client_t client, String path, long newsize);
 
     @Generated
     @CFunction
-    public static native int afc_make_link(afc_client_t client, int linktype,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String target,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String linkname);
+    public static native int afc_make_link(afc_client_t client, int linktype, String target, String linkname);
 
     @Generated
     @CFunction
-    public static native int afc_set_file_time(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path, long mtime);
+    public static native int afc_set_file_time(afc_client_t client, String path, long mtime);
 
     @Generated
     @CFunction
-    public static native int afc_remove_path_and_contents(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path);
+    public static native int afc_remove_path_and_contents(afc_client_t client, String path);
 
     @Generated
     @CFunction
-    public static native int afc_get_device_info_key(afc_client_t client,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            Ptr<BytePtr> value);
+    public static native int afc_get_device_info_key(afc_client_t client, String key, Ptr<BytePtr> value);
 
     @Generated
     @CFunction
@@ -762,7 +745,7 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String image_type,
             long image_size,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String signature,
-            short signature_size,
+            char signature_size,
             @FunctionPtr(name = "call_mobile_image_mounter_upload_image") Function_mobile_image_mounter_upload_image upload_cb,
             VoidPtr userdata);
 
@@ -771,7 +754,7 @@ public final class Globals {
     public static native int mobile_image_mounter_mount_image(mobile_image_mounter_client_t client,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String image_path,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String signature,
-            short signature_size,
+            char signature_size,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String image_type,
             Ptr<plist_t> result);
 
@@ -1338,92 +1321,98 @@ public final class Globals {
     @CFunction
     public static native void mobilesync_actions_add(plist_t actions, Object... varargs);
 
+    @Generated
+    @CFunction
+    public static native int idevice_connection_get_fd(idevice_connection_t connection, IntPtr fd);
+
+    @Generated
+    @CFunction
+    public static native int lockdownd_pair_with_options(lockdownd_client_t client,
+            @UncertainArgument("Options: reference, array Fallback: reference") lockdownd_pair_record pair_record,
+            plist_t options, Ptr<plist_t> response);
+
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_idevice_event_subscribe {
+    public interface Function_idevice_event_subscribe {
         @Generated
-        public void call_idevice_event_subscribe(
-                @UncertainArgument("Options: reference, array Fallback: reference") idevice_event_t arg0, VoidPtr arg1);
+        void call_idevice_event_subscribe(idevice_event_t arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_instproxy_install {
+    public interface Function_instproxy_install {
         @Generated
-        public void call_instproxy_install(plist_t arg0, plist_t arg1, VoidPtr arg2);
+        void call_instproxy_install(plist_t arg0, plist_t arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_instproxy_upgrade {
+    public interface Function_instproxy_upgrade {
         @Generated
-        public void call_instproxy_upgrade(plist_t arg0, plist_t arg1, VoidPtr arg2);
+        void call_instproxy_upgrade(plist_t arg0, plist_t arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_instproxy_uninstall {
+    public interface Function_instproxy_uninstall {
         @Generated
-        public void call_instproxy_uninstall(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_instproxy_uninstall(plist_t arg0, plist_t arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_instproxy_archive {
+    public interface Function_instproxy_archive {
         @Generated
-        public void call_instproxy_archive(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_instproxy_archive(plist_t arg0, plist_t arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_instproxy_restore {
+    public interface Function_instproxy_restore {
         @Generated
-        public void call_instproxy_restore(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_instproxy_restore(plist_t arg0, plist_t arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_instproxy_remove_archive {
+    public interface Function_instproxy_remove_archive {
         @Generated
-        public void call_instproxy_remove_archive(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_instproxy_remove_archive(plist_t arg0, plist_t arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_mobile_image_mounter_upload_image {
+    public interface Function_mobile_image_mounter_upload_image {
         @Generated
-        public long call_mobile_image_mounter_upload_image(VoidPtr arg0, long arg1, VoidPtr arg2);
+        long call_mobile_image_mounter_upload_image(VoidPtr arg0, long arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_np_set_notify_callback {
+    public interface Function_np_set_notify_callback {
         @Generated
-        public void call_np_set_notify_callback(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
-                VoidPtr arg1);
+        void call_np_set_notify_callback(String arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_service_client_factory_start_service {
+    public interface Function_service_client_factory_start_service {
         @Generated
-        public int call_service_client_factory_start_service(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") lockdownd_service_descriptor arg1,
-                Ptr<VoidPtr> arg2);
+        int call_service_client_factory_start_service(idevice_t arg0, lockdownd_service_descriptor arg1,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_syslog_relay_start_capture {
+    public interface Function_syslog_relay_start_capture {
         @Generated
-        public void call_syslog_relay_start_capture(byte arg0, VoidPtr arg1);
+        void call_syslog_relay_start_capture(byte arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
-    static public interface Function_instproxy_browse_with_callback {
+    public interface Function_instproxy_browse_with_callback {
         @Generated
-        public void call_instproxy_browse_with_callback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_instproxy_browse_with_callback(plist_t arg0, plist_t arg1, VoidPtr arg2);
     }
 }

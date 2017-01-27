@@ -1,5 +1,66 @@
 [
   {
+    "c-callback": [
+      {
+        "Globals:Function_idevice_event_subscribe": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ],
+                    "use": "reference"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Globals:Function_np_set_notify_callback": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ],
+                    "use": "java.string"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Globals:Function_service_client_factory_start_service": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ],
+                    "use": "reference"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "c-function": [
       {
         "afc_client_new": [
@@ -11,7 +72,8 @@
                     "options": [
                       "reference",
                       "array"
-                    ]
+                    ],
+                    "use": "reference"
                   }
                 }
               }
@@ -29,7 +91,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -47,7 +110,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -84,7 +148,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -102,7 +167,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -120,7 +186,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -138,7 +205,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               },
@@ -148,7 +216,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -166,7 +235,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -184,7 +254,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -202,7 +273,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -220,7 +292,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               },
@@ -230,7 +303,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -248,7 +322,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -266,7 +341,8 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
-                    ]
+                    ],
+                    "use": "java.string"
                   }
                 }
               }
@@ -693,6 +769,24 @@
         ]
       },
       {
+        "idevice_get_device_list_with_connection": [
+          {
+            "location": [
+              {
+                "3": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "idevice_new": [
           {
             "location": [
@@ -723,6 +817,16 @@
                     ]
                   }
                 }
+              },
+              {
+                "3": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
               }
             ]
           }
@@ -738,6 +842,24 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_check_capabilities_match": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string.array",
+                      "c.const-byte-ptr-ptr"
                     ]
                   }
                 }
@@ -838,6 +960,24 @@
                     "options": [
                       "java.string",
                       "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "instproxy_lookup": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "java.string.array",
+                      "c.const-byte-ptr-ptr"
                     ]
                   }
                 }
@@ -1002,6 +1142,24 @@
       },
       {
         "lockdownd_pair": [
+          {
+            "location": [
+              {
+                "1": {
+                  "match": {
+                    "options": [
+                      "reference",
+                      "array"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "lockdownd_pair_with_options": [
           {
             "location": [
               {
@@ -1922,6 +2080,24 @@
         ]
       },
       {
+        "plist_from_memory": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "plist_from_xml": [
           {
             "location": [
@@ -1933,6 +2109,24 @@
                       "c.const-byte-ptr"
                     ],
                     "use": "c.const-byte-ptr"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "plist_is_binary": [
+          {
+            "location": [
+              {
+                "0": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
                   }
                 }
               }
@@ -2353,6 +2547,38 @@
             "location": [
               {
                 "2": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "c-struct": [
+      {
+        "idevice_event_t": [
+          {
+            "field": [
+              {
+                "conn_subtype": {
+                  "match": {
+                    "options": [
+                      "java.string",
+                      "c.const-byte-ptr"
+                    ]
+                  }
+                }
+              },
+              {
+                "udid": {
                   "match": {
                     "options": [
                       "java.string",

@@ -31,7 +31,7 @@ import org.moe.natj.general.ptr.impl.OpaquePtrImpl;
 @Runtime(CRuntime.class)
 public interface plist_dict_iter extends OpaquePtr {
     @Generated
-    static class Impl extends OpaquePtrImpl implements plist_dict_iter {
+    class Impl extends OpaquePtrImpl implements plist_dict_iter {
         @Generated
         protected Impl(Pointer peer) {
             super(peer);

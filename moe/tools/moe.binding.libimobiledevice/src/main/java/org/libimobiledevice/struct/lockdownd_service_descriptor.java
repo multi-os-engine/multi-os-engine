@@ -47,7 +47,7 @@ public final class lockdownd_service_descriptor extends StructObject {
     }
 
     @Generated
-    public lockdownd_service_descriptor(short port, byte ssl_enabled) {
+    public lockdownd_service_descriptor(char port, byte ssl_enabled) {
         super(lockdownd_service_descriptor.class);
         setPort(port);
         setSsl_enabled(ssl_enabled);
@@ -55,11 +55,11 @@ public final class lockdownd_service_descriptor extends StructObject {
 
     @Generated
     @StructureField(order = 0, isGetter = true)
-    public native short port();
+    public native char port();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setPort(short value);
+    public native void setPort(char value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)

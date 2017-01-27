@@ -258,14 +258,26 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native plist_t plist_access_pathv(plist_t plist, int length, int v);
-
-    @Generated
-    @CFunction
     public static native byte plist_compare_node_value(plist_t node_l, plist_t node_r);
 
     @Generated
     @Variadic()
     @CFunction
     public static native plist_t plist_access_path(plist_t plist, int length, Object... varargs);
+
+    @Generated
+    @CFunction
+    public static native void plist_cleanup();
+
+    @Generated
+    @CFunction
+    public static native void plist_from_memory(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String plist_data,
+            int length, Ptr<plist_t> plist);
+
+    @Generated
+    @CFunction
+    public static native int plist_is_binary(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String plist_data,
+            int length);
 }
