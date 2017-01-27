@@ -165,8 +165,20 @@ public class LaunchHelper implements IStopReplyListener {
                 Configuration.INSTALL_MODE_UPGRADE_ONLY.equals(config.getInstallMode())) {
             return;
         }
-        LaunchHelper runHelper = new LaunchHelper(device, appPath, config);
-        runHelper.launch();
+        try {
+            boolean isFirstTry = true;
+            while (true) {
+                LaunchHelper runHelper = new LaunchHelper(device, appPath, config);
+                if (runHelper.launch(isFirstTry)) {
+                    isFirstTry = false;
+                    Thread.sleep(500);
+                } else {
+                    break;
+                }
+            }
+        } catch (InterruptedException e) {
+            LOG.debug("Sleep interrupted", e);
+        }
     }
 
     /**
@@ -190,10 +202,14 @@ public class LaunchHelper implements IStopReplyListener {
     /**
      * Launch the application on the device.
      *
+     * @param isFirstTry tells whether or not this is the fist attempt to launch
+     * @return Returns whether or not to retry the launching.
      * @throws DeviceException If an error occurred
      */
-    private void launch() throws DeviceException {
-        Main.PRINT_CONTROL("Launching:");
+    private boolean launch(boolean isFirstTry) throws DeviceException {
+        if (isFirstTry) {
+            Main.PRINT_CONTROL("Launching:");
+        }
 
         // Get supported archs
         List<String> cpuTypes = null;
@@ -314,7 +330,7 @@ public class LaunchHelper implements IStopReplyListener {
                     proxy.waitFor();
                     proxy.stop();
                 }
-                return;
+                return false;
             }
         }
 
@@ -363,7 +379,14 @@ public class LaunchHelper implements IStopReplyListener {
                 protocol.send_Arguments(_args.toArray(args_arr));
 
                 // Check launch success
-                if (protocol.query_LaunchSuccess() != 0) {
+                String query_launchSuccess = protocol.query_LaunchSuccess();
+                if ("Locked".equals(query_launchSuccess)) {
+                    if (isFirstTry) {
+                        LOG.info("Please unlock your device");
+                    }
+                    return true;
+                }
+                if (query_launchSuccess != null) {
                     if(config.getDebugserverPort()!=null){
                         protocol.close();
                         try{
@@ -389,7 +412,7 @@ public class LaunchHelper implements IStopReplyListener {
                             proxy.stop();
                         }
                     }
-                    throw new DeviceException("Failed to launch application on device");
+                    throw new DeviceException("Failed to launch application on device: " + query_launchSuccess);
                 }
 
                 if(config.getDebugserverPort()!=null){
@@ -505,6 +528,7 @@ public class LaunchHelper implements IStopReplyListener {
             dscisLock.unlock();
             dscosLock.unlock();
         }
+        return false;
     }
 
     @Override
