@@ -34,31 +34,85 @@ public class Configuration extends AbstractConfiguration {
     /*
      Configuration property names.
      */
+    /**
+     * Property name: Device UDID.
+     */
     public static final String DEVICE_UDID_PROPERTY_NAME = "Device UDID";
+    /**
+     * Property name: Application Path.
+     */
     public static final String APPLICATION_PATH_PROPERTY_NAME = "Application Path";
+    /**
+     * Property name: List Devices.
+     */
     public static final String LIST_DEVICES_PROPERTY_NAME = "List Devices";
+    /**
+     * Property name: Wait for Device.
+     */
     public static final String WAIT_FOR_DEVICE_PROPERTY_NAME = "Wait for Device";
+    /**
+     * Property name: Add Launch Argument.
+     */
     public static final String ADD_LAUNCH_ARG_PROPERTY_NAME = "Add Launch Argument";
+    /**
+     * Property name: Add Env Variable.
+     */
     public static final String ADD_ENV_VAR_PROPERTY_NAME = "Add Env Variable";
+    /**
+     * Property name: Add Proxy Port.
+     */
     public static final String ADD_PROXY_PORT_PROPERTY_NAME = "Add Proxy Port";
+    /**
+     * Property name: JDWP Port.
+     */
     public static final String JDWP_PORT_PROPERTY_NAME = "JDWP Port";
+    /**
+     * Property name: debugserver Port.
+     */
     public static final String NATIVE_DEBUG_PORT_PROPERTY_NAME = "debugserver Port";
+    /**
+     * Property name: Install Mode.
+     */
     public static final String INSTALL_MODE_PROPERTY_NAME = "Install Mode";
+    /**
+     * Property name: STD Out.
+     */
     public static final String STD_OUT_PROPERTY_NAME = "STD Out";
+    /**
+     * Property name: STD Out File.
+     */
     public static final String STD_OUT_FILE_PROPERTY_NAME = "STD Out File";
 
     /*
     Installation modes.
      */
+    /**
+     * Install mode: runonly.
+     */
     public static final String INSTALL_MODE_RUN_ONLY = "runonly";
+    /**
+     * Install mode: installonly.
+     */
     public static final String INSTALL_MODE_INSTALL_ONLY = "installonly";
+    /**
+     * Install mode: upgradeonly.
+     */
     public static final String INSTALL_MODE_UPGRADE_ONLY = "upgradeonly";
+    /**
+     * Install mode: install.
+     */
     public static final String INSTALL_MODE_INSTALL = "install";
+    /**
+     * Install mode: upgrade.
+     */
     public static final String INSTALL_MODE_UPGRADE = "upgrade";
     /**
      * Installation mode.
      */
     private String installMode = INSTALL_MODE_UPGRADE;
+    /**
+     * All installation modes.
+     */
     public static final String[] INSTALL_MODES = new String[] { INSTALL_MODE_RUN_ONLY, INSTALL_MODE_INSTALL,
             INSTALL_MODE_UPGRADE, INSTALL_MODE_INSTALL_ONLY, INSTALL_MODE_UPGRADE_ONLY
     };

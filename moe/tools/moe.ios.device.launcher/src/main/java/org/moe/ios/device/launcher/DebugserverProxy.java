@@ -76,10 +76,22 @@ public class DebugserverProxy {
      */
     private boolean hasShutdownHookRegistered;
 
+    /**
+     * Quit flag.
+     */
     private volatile boolean quit = false;
 
+    /**
+     * Debugserver client.
+     */
     private debugserver_client_t debugserver;
 
+    /**
+     * Creates a new DebugserverProxy instance.
+     *
+     * @param localPort   Local port
+     * @param debugserver Debugserver client
+     */
     private DebugserverProxy(int localPort, debugserver_client_t debugserver) {
         this.debugserver = debugserver;
         if (localPort < 0 || localPort > 0xFFFF) {
@@ -149,6 +161,9 @@ public class DebugserverProxy {
                 }
             }
 
+            /**
+             * Accepts a connection.
+             */
             private void accept() {
                 if (Thread.currentThread().isInterrupted()) {
                     quit = true;
@@ -171,6 +186,9 @@ public class DebugserverProxy {
                 }
             }
 
+            /**
+             * Starts up the proxy.
+             */
             private void startup() {
                 if (Thread.currentThread().isInterrupted()) {
                     quit = true;
@@ -207,13 +225,30 @@ public class DebugserverProxy {
                 }
             }
 
+            /**
+             * Creates client to server worker thread.
+             * @param name Name
+             * @param is Input stream to send
+             * @return Created thread
+             */
             private Thread createClientToServerThread(final String name, final InputStream is) {
                 return new Thread(new Runnable() {
-                    // Buffer
+                    /**
+                     * Buffer size.
+                     */
                     final int bufferSize = 1024 * 1024;
+                    /**
+                     * Native buffer.
+                     */
                     final BytePtr buffer = PtrFactory.newByteArray(bufferSize);
+                    /**
+                     * Java buffer.
+                     */
                     final byte[] bufIn = new byte[bufferSize];
 
+                    /**
+                     * Error.
+                     */
                     int err = debugserver_error_t.DEBUGSERVER_E_SUCCESS;
 
                     @Override
@@ -262,12 +297,30 @@ public class DebugserverProxy {
                 });
             }
 
+            /**
+             * Creates server to client worker thread.
+             * @param name Name
+             * @param os Output stream to receive into
+             * @return Created thread
+             */
             private Thread createServerToClientThread(final String name, final OutputStream os) {
                 return new Thread(new Runnable() {
-                    // Buffer
+                    /**
+                     * Buffer size.
+                     */
                     final int bufferSize = 1024 * 1024;
+                    /**
+                     * Native buffer.
+                     */
                     final BytePtr buffer = PtrFactory.newByteArray(bufferSize);
-                    final byte bufOut[] = new byte[bufferSize];
+                    /**
+                     * Java buffer.
+                     */
+                    final byte[] bufOut = new byte[bufferSize];
+
+                    /**
+                     * Error.
+                     */
                     int err = debugserver_error_t.DEBUGSERVER_E_SUCCESS;
 
                     @Override
@@ -308,6 +361,9 @@ public class DebugserverProxy {
                 });
             }
 
+            /**
+             * Stops the proxy.
+             */
             public synchronized void stop() {
                 System.out.println(localPort + ": Stopping proxy");
                 quit = true;
@@ -327,6 +383,12 @@ public class DebugserverProxy {
         proxyThread.start();
     }
 
+    /**
+     * Tries to close a closeable.
+     *
+     * @param closeable   Closeable to close
+     * @param failMessage Failure message
+     */
     private void tryClose(Closeable closeable, String failMessage) {
         if (closeable != null) {
             CloseableUtil.tryClose(closeable, null, localPort + ": " + failMessage);

@@ -47,6 +47,12 @@ public class ProxyHelper {
      */
     private static final Logger LOG = LoggerFactory.getLogger(ProxyHelper.class);
 
+    /**
+     * Starts the proxy server.
+     *
+     * @param device        Device to connect to
+     * @param configuration Configuration
+     */
     public static void launch(idevice_t device, Configuration configuration) {
         if (configuration.getJdwpPort() == null && configuration.getProxyPorts().size() == 0) {
             return;

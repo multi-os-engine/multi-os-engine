@@ -142,6 +142,7 @@ public class LaunchHelper implements IStopReplyListener {
      * @param device  device
      * @param appPath application path on device
      * @param config  configuration
+     * @throws DeviceException if a device error occurs
      */
     private LaunchHelper(idevice_t device, String appPath, Configuration config) throws DeviceException {
         this.device = device;

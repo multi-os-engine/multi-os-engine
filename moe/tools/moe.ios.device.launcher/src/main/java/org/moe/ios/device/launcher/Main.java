@@ -36,6 +36,11 @@ public class Main {
      */
     private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
+    /**
+     * Loads native libraries.
+     *
+     * @throws IOException if an I/O error occures
+     */
     private static void loadNativeLibraries() throws IOException {
         String current = new java.io.File(".").getCanonicalPath();
 
@@ -69,6 +74,12 @@ public class Main {
         this.config = config;
     }
 
+    /**
+     * Main.
+     *
+     * @param args Program arguments
+     * @throws IOException if an I/O error occurs
+     */
     public static void main(String[] args) throws IOException {
         // Read configuration
         Configuration config = ConfigurationAppender.read(args);

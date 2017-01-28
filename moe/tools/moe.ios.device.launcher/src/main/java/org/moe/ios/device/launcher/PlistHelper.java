@@ -41,6 +41,9 @@ import static org.libplist.c.Globals.*;
  */
 public class PlistHelper {
 
+    /**
+     * Creates a new PlistHelper instance.
+     */
     private PlistHelper() {
 
     }
