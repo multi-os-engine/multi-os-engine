@@ -54,9 +54,9 @@ public abstract class PBXBuildPhase extends PBXObject {
         }
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public String getBuildActionMask() {
         return getStringValue(BUILD_ACTION_MASK_KEY);

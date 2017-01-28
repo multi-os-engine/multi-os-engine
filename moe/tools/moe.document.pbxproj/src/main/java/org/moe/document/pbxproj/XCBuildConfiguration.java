@@ -53,9 +53,9 @@ public final class XCBuildConfiguration extends PBXObject {
         removeReferenceFromReferenceValue(BASE_CONFIGURATION_REFERENCE_KEY, ref);
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public Dictionary<Value, NextStep> getBuildSettingsOrNull() {
         return getDictionaryValueOrNull(BUILD_SETTINGS_KEY);

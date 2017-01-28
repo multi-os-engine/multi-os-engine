@@ -60,9 +60,9 @@ public final class PBXGroup extends PBXObject {
         removeReferenceFromReferenceArray(CHILDREN_KEY, ref);
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public Array<PBXObjectRef<? extends PBXObject>> getChildrenOrNull() {
         return getArrayValueOrNull(CHILDREN_KEY);

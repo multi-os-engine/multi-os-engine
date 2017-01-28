@@ -79,9 +79,9 @@ public final class PBXNativeTarget extends PBXObject {
         removeReferenceFromReferenceValue(PRODUCT_REFERENCE_KEY, ref);
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public PBXObjectRef<XCConfigurationList> getBuildConfigurationList() {
         return getPBXObjectRefValue(BUILD_CONFIGURATION_LIST_KEY);

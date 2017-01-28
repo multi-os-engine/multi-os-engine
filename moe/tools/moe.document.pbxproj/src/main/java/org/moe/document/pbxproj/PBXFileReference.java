@@ -69,9 +69,9 @@ public final class PBXFileReference extends PBXObject {
         return true;
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public String getExplicitFileType() {
         return getStringValue(EXPLICIT_FILE_TYPE_KEY);

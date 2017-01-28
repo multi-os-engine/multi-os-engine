@@ -71,9 +71,9 @@ public class Root extends PBXObject {
         }
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public String getArchiveVersion() {
         return getStringValue(ARCHIVE_VERSION_KEY);
@@ -161,9 +161,9 @@ public class Root extends PBXObject {
         return result;
     }
 
-    /**
+    /*
      * Helper classes
-     **/
+     */
 
     public static class RootObjects extends Dictionary<PBXObjectRef<? extends PBXObject>, PBXObject> {
 

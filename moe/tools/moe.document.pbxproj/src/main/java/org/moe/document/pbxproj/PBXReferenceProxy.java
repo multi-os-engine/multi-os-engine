@@ -54,9 +54,9 @@ public class PBXReferenceProxy extends PBXObject {
         removeReferenceFromReferenceValue(REMOTE_REF_KEY, ref);
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public String getFileType() {
         return getStringValue(FILE_TYPE_KEY);

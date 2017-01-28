@@ -136,9 +136,9 @@ public abstract class PBXObject extends Dictionary<Value, NextStep> {
         }
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public String getIsa() {
         return getStringValue(ISA_KEY);

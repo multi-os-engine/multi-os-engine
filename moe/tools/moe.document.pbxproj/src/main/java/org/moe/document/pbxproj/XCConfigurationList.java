@@ -71,9 +71,9 @@ public final class XCConfigurationList extends PBXObject {
         removeReferenceFromReferenceArray(BUILD_CONFIGURATIONS_KEY, ref);
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public Array<PBXObjectRef<XCBuildConfiguration>> getBuildConfigurationsOrNull() {
         return getArrayValueOrNull(BUILD_CONFIGURATIONS_KEY);

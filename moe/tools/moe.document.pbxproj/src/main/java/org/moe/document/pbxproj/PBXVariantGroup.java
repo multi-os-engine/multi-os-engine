@@ -54,9 +54,9 @@ public final class PBXVariantGroup extends PBXObject {
         removeReferenceFromReferenceArray(CHILDREN_KEY, ref);
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public Array<PBXObjectRef<PBXFileReference>> getChildrenOrNull() {
         return getArrayValueOrNull(CHILDREN_KEY);

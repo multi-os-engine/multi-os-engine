@@ -55,9 +55,9 @@ public class PBXTargetDependency extends PBXObject {
         removeReferenceFromReferenceValue(TARGET_KEY, ref);
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public String getName() {
         return getStringValue(NAME_KEY);

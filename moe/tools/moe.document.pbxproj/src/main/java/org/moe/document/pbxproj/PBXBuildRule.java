@@ -50,9 +50,9 @@ public class PBXBuildRule extends PBXObject {
     public void removeReference(PBXObjectRef<? extends PBXObject> ref) {
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public String getCompilerSpec() {
         return getStringValue(COMPILER_SPEC_KEY);

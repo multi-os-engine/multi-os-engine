@@ -54,9 +54,9 @@ public class PBXContainerItemProxy extends PBXObject {
         removeReferenceFromReferenceValue(CONTAINER_PORTAL_KEY, ref);
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public PBXObjectRef<PBXObject> getContainerPortal() {
         return getPBXObjectRefValue(CONTAINER_PORTAL_KEY);

@@ -112,9 +112,9 @@ public final class PBXProject extends PBXObject {
         return projectName;
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public Dictionary<Value, Value> getAttributesOrNull() {
         return getDictionaryValueOrNull(ATTRIBUTES_KEY);
@@ -212,9 +212,9 @@ public final class PBXProject extends PBXObject {
         return getOrCreateArrayValue(TARGETS_KEY);
     }
 
-    /**
+    /*
      * Helper classes
-     **/
+     */
 
     public static class ProjectReference extends PBXObject {
 
@@ -248,9 +248,9 @@ public final class PBXProject extends PBXObject {
             }
         }
 
-        /**
+        /*
          * Fields
-         **/
+         */
 
         public PBXObjectRef<PBXGroup> getProductGroup() {
             return getPBXObjectRefValue(PRODUCT_GROUP_KEY);

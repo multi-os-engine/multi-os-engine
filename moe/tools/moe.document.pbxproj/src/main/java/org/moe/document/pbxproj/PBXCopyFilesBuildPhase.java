@@ -45,9 +45,9 @@ public class PBXCopyFilesBuildPhase extends PBXBuildPhase {
         return "CopyFiles";
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public String getDstPath() {
         return getStringValue(DST_PATH_KEY);

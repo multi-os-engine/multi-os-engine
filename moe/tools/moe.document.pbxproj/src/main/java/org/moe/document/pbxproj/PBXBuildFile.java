@@ -64,9 +64,9 @@ public final class PBXBuildFile extends PBXObject {
         return true;
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public PBXObjectRef<? extends PBXObject> getFileRef() {
         return getPBXObjectRefValue(FILE_REF);

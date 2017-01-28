@@ -44,9 +44,9 @@ public final class PBXShellScriptBuildPhase extends PBXBuildPhase {
         return getName() == null ? "ShellScript" : getName();
     }
 
-    /**
+    /*
      * Fields
-     **/
+     */
 
     public Array<Value> getInputPathsOrNull() {
         return getArrayValueOrNull(INPUT_PATHS_KEY);
