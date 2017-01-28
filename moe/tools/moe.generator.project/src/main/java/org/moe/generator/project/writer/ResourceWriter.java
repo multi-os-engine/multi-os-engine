@@ -87,6 +87,8 @@ public class ResourceWriter {
 
     /**
      * Write to file and close.
+     *
+     * @param file File to write into
      */
     public void writeAndClose(File file) {
         final ContentWriter w = new ContentWriter(file);
@@ -116,7 +118,9 @@ public class ResourceWriter {
     }
 
     /**
-     * Write to file and close.
+     * Replace placeholders and get string.
+     *
+     * @return String from inputStream with replaced placeholders
      */
     public String replaceAndGet() {
         final StringBuilder builder = new StringBuilder();
@@ -145,6 +149,12 @@ public class ResourceWriter {
         return builder.toString();
     }
 
+    /**
+     * Checks the line for region directives.
+     * @param line Line to check
+     * @param regionStack Region stack
+     * @return True iff region directive was found
+     */
     private boolean checkRegion(String line, Stack<String> regionStack) {
         // Push
         if (line.startsWith("//<<---REGION:")) {

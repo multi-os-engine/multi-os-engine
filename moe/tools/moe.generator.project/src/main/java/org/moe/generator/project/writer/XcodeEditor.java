@@ -36,31 +36,72 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/**
+ * Xcode editor for generic Xcode project changes. This class is used for updating an Xcode project.
+ */
 public class XcodeEditor extends AbstractXcodeEditor {
 
+    /**
+     * Xcode project file.
+     */
     protected final ProjectFile projectFile;
+    /**
+     * Xcode project.
+     */
     protected final PBXProject project;
 
+    /**
+     * Creates a new XcodeEditor instance.
+     * @param stream Stream to read Xcode project from
+     * @throws ProjectException if an error occurs
+     */
     public XcodeEditor(InputStream stream) throws ProjectException {
         projectFile = new ProjectFile(stream);
         project = projectFile.getRoot().getRootObject().getReferenced();
     }
 
+    /**
+     * Creates a new XcodeEditor instance.
+     * @param file File to read Xcode project from
+     * @throws ProjectException if an error occurs
+     */
     public XcodeEditor(File file) throws ProjectException {
         projectFile = new ProjectFile(file);
         project = projectFile.getRoot().getRootObject().getReferenced();
     }
 
+    /**
+     * Returns the Xcode project file.
+     * @return Xcode project file
+     */
     public ProjectFile getProjectFile() {
         return projectFile;
     }
 
+    /**
+     * Settings for configuring the XcodeEditor.
+     */
     public static class Settings {
+        /**
+         * Main target name.
+         */
         public String mainTarget;
+        /**
+         * Test target name.
+         */
         public String testTarget;
+        /**
+         * MOE project path.
+         */
         public File moeProject;
+        /**
+         * Xcode project path.
+         */
         public File xcodeProject;
 
+        /**
+         * Validates the fields.
+         */
         public void validate() {
             if (mainTarget == null) {
                 throw new NullPointerException("mainTarget is null");
@@ -74,6 +115,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
         }
     }
 
+    @Override
     public void update(Settings settings) throws IOException {
         settings.validate();
 
@@ -106,6 +148,13 @@ public class XcodeEditor extends AbstractXcodeEditor {
         }
     }
 
+    /**
+     * Configures the specified target.
+     * @param target Target to configure
+     * @param settings Settings
+     * @param isTest Is test target flag
+     * @throws IOException if an I/O error occurs
+     */
     private void configureTarget(PBXNativeTarget target, Settings settings, boolean isTest) throws IOException {
         final String sourceSet;
         if (isTest) {
@@ -173,10 +222,21 @@ public class XcodeEditor extends AbstractXcodeEditor {
         cleanupBuildSettings(target);
     }
 
+    /**
+     * Returns the target for the specified name.
+     * @param targetName Target to look for
+     * @return Target or null
+     */
     protected PBXNativeTarget getTarget(final String targetName) {
         return getTarget(targetName, false);
     }
 
+    /**
+     * Returns the target for the specified name.
+     * @param targetName Target to look for
+     * @param nullFail Flag for failing on not found targets
+     * @return Target or null
+     */
     protected PBXNativeTarget getTarget(final String targetName, boolean nullFail) {
         final PBXObjectRef<PBXNativeTarget> objectRef = project.getOrCreateTargets()
                 .find(new Predicate<PBXObjectRef<PBXNativeTarget>>() {
@@ -194,6 +254,11 @@ public class XcodeEditor extends AbstractXcodeEditor {
         return objectRef.getReferenced();
     }
 
+    /**
+     * Returns the group for the specified name.
+     * @param groupName Group to look for
+     * @return Group
+     */
     protected PBXGroup getGroup(final String groupName) {
         final PBXObjectRef<? extends PBXObject> objectRef = project.getMainGroup().getReferenced().getOrCreateChildren()
                 .find(new Predicate<PBXObjectRef<? extends PBXObject>>() {

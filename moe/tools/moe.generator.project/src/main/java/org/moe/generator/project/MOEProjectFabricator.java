@@ -34,13 +34,29 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+/**
+ * This class creates the project based on a configured composer.
+ */
 public class MOEProjectFabricator {
 
+    /**
+     * Empty source file name.
+     */
     private static final String SOURCE_FILE_NAME = "";
 
+    /**
+     * Project composer.
+     */
     private final MOEProjectComposer composer;
+    /**
+     * Root directory for template project.
+     */
     private final String templateRootPath;
 
+    /**
+     * Creates a new MOEProjectFabricator instance.
+     * @param composer Project composer
+     */
     public MOEProjectFabricator(MOEProjectComposer composer) {
         if (composer == null) {
             throw new NullPointerException();
@@ -49,13 +65,25 @@ public class MOEProjectFabricator {
         templateRootPath = "templates/" + composer.getTemplate().id + "/";
     }
 
+    /**
+     * Creates the project.
+     * @throws IOException if an I/O error occurs
+     * @throws ProjectException if an error occurs during Xcode project configuration
+     */
     public void fabricate() throws IOException, ProjectException {
         prepareGradleProject();
         reifyTemplate();
     }
 
+    /**
+     * Target directory root.
+     */
     private File rootDir;
 
+    /**
+     * Prepares the Gradle portion of the template.
+     * @throws IOException if an I/O error occurs
+     */
     private void prepareGradleProject() throws IOException {
         // Prepare directories
         rootDir = composer.getTargetDirectory();
@@ -74,6 +102,11 @@ public class MOEProjectFabricator {
         copy("git/.gitignore.in", rootDir, ".gitignore");
     }
 
+    /**
+     * Instantiates the template.
+     * @throws IOException if an I/O error occurs
+     * @throws ProjectException if an error occurs during Xcode project configuration
+     */
     private void reifyTemplate() throws IOException, ProjectException {
         final String resource = "/org/moe/generator/project/" + templateRootPath + "template.json";
         final InputStream stream = XcodeEditor.class.getResourceAsStream(resource);
@@ -100,6 +133,11 @@ public class MOEProjectFabricator {
         }
     }
 
+    /**
+     * Copies files from the template to the target directory.
+     * @param taskObject Task
+     * @throws IOException if an I/O error occurs
+     */
     private void templateCopy(JsonObject taskObject) throws IOException {
         if (!templateCondition(taskObject)) {
             return;
@@ -121,6 +159,11 @@ public class MOEProjectFabricator {
         }
     }
 
+    /**
+     * Copies files from the template to the target's source directory.
+     * @param taskObject Task
+     * @throws IOException if an I/O error occurs
+     */
     private void templateCopyPackageSource(JsonObject taskObject) throws IOException {
         if (!templateCondition(taskObject)) {
             return;
@@ -147,6 +190,12 @@ public class MOEProjectFabricator {
         }
     }
 
+    /**
+     * Creates the Xcode project for the template.
+     * @param taskObject Task
+     * @throws IOException if an I/O error occurs
+     * @throws ProjectException if an error occurs during Xcode project configuration
+     */
     private void templateXcodeproj(JsonObject taskObject) throws ProjectException, IOException {
         if (!templateCondition(taskObject)) {
             return;
@@ -183,6 +232,11 @@ public class MOEProjectFabricator {
         }
     }
 
+    /**
+     * Checks a template condition.
+     * @param taskObject Task
+     * @return True iff the condition is true
+     */
     private boolean templateCondition(JsonObject taskObject) {
         final JsonElement element = taskObject.get("condition");
         if (element == null) {
@@ -200,6 +254,12 @@ public class MOEProjectFabricator {
      * Utils
      */
 
+    /**
+     * Creates a directory.
+     * @param file Directory to create
+     * @return The directory
+     * @throws IOException if an I/O error occurs
+     */
     private static File createDirectory(File file) throws IOException {
         if (file == null) {
             throw new NullPointerException();
@@ -210,6 +270,12 @@ public class MOEProjectFabricator {
         return file;
     }
 
+    /**
+     * Creates a directory relative to the rootDir.
+     * @param subpaths Subdirectory names
+     * @return Created directory
+     * @throws IOException if an I/O error occurs
+     */
     private File createDirectory(String... subpaths) throws IOException {
         File file = rootDir;
         for (String subpath : subpaths) {
@@ -218,6 +284,14 @@ public class MOEProjectFabricator {
         return createDirectory(file);
     }
 
+    /**
+     * Writes a string resource the specified file and replaces placeholders.
+     * @param resource String resource
+     * @param rootDir Root directory
+     * @param subdirs Subdirectories and file
+     * @return Created file
+     * @throws IOException if an I/O error occurs
+     */
     private File write(String resource, File rootDir, String... subdirs) throws IOException {
         if (resource == null) {
             throw new NullPointerException();
@@ -273,6 +347,14 @@ public class MOEProjectFabricator {
         return outputFile;
     }
 
+    /**
+     * Copies a string resource into the specified file.
+     * @param resource String resource
+     * @param rootDir Root directory
+     * @param subdirs Subdirectories and file
+     * @return Created file
+     * @throws IOException if an I/O error occurs
+     */
     private File copy(String resource, File rootDir, String... subdirs) throws IOException {
         if (resource == null) {
             throw new NullPointerException();

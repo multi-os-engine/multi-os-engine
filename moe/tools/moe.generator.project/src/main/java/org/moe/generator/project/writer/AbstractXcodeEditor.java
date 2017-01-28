@@ -42,10 +42,26 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/**
+ * Base class for Xcode editors.
+ */
 public abstract class AbstractXcodeEditor {
 
+    /**
+     * Updates an Xcode project with the specified settings.
+     * @param settings Settings to update with
+     * @throws IOException if an I/O error occurs
+     */
     public abstract void update(Settings settings) throws IOException;
 
+    /**
+     * Creates a new PBXFileReference reference.
+     * @param file Project file
+     * @param name File name
+     * @param filePath File path
+     * @param sourceTree Source tree
+     * @return New PBXFileReference reference
+     */
     protected static PBXObjectRef<PBXFileReference> createFileReference(ProjectFile file, String name, String filePath,
             String sourceTree) {
         final PBXFileReference fileReference = new PBXFileReference();
@@ -62,6 +78,12 @@ public abstract class AbstractXcodeEditor {
         return reference;
     }
 
+    /**
+     * Creates a new PBXBuildFile reference.
+     * @param file  Project file
+     * @param fileReference PBXFileReference reference
+     * @return New PBXBuildFile reference
+     */
     protected static PBXObjectRef<PBXBuildFile> createBuildFile(ProjectFile file,
             PBXObjectRef<PBXFileReference> fileReference) {
         final PBXBuildFile buildFile = new PBXBuildFile();
@@ -71,6 +93,12 @@ public abstract class AbstractXcodeEditor {
         return reference;
     }
 
+    /**
+     * Gets or creates a new PBXSourcesBuildPhase.
+     * @param file Project file
+     * @param target Native target to search in/add the phase to
+     * @return A PBXSourcesBuildPhase
+     */
     protected PBXSourcesBuildPhase getOrCreateSourcesBuildPhase(ProjectFile file, PBXNativeTarget target) {
         for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
             if (!(ref.getReferenced().getClass().equals(PBXSourcesBuildPhase.class))) {
@@ -88,6 +116,12 @@ public abstract class AbstractXcodeEditor {
         return phase;
     }
 
+    /**
+     * Gets or creates a new MOE specific PBXShellScriptBuildPhase.
+     * @param file Project file
+     * @param target Native target to search in/add the phase to
+     * @return MOE specific PBXShellScriptBuildPhase
+     */
     protected PBXShellScriptBuildPhase getOrCreateMOECompileBuildPhase(ProjectFile file, PBXNativeTarget target) {
         for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
             if (!(ref.getReferenced().getClass().equals(PBXShellScriptBuildPhase.class))) {
@@ -112,7 +146,12 @@ public abstract class AbstractXcodeEditor {
         return phase;
     }
 
-    protected PBXFrameworksBuildPhase getFrameworksBuildPhaseOrNull(ProjectFile file, PBXNativeTarget target) {
+    /**
+     * Gets the first PBXFrameworksBuildPhase from the specified target.
+     * @param target Native target to search in
+     * @return PBXFrameworksBuildPhase or <code>null</code>
+     */
+    protected PBXFrameworksBuildPhase getFrameworksBuildPhaseOrNull(PBXNativeTarget target) {
         for (PBXObjectRef<PBXBuildPhase> ref : target.getOrCreateBuildPhases()) {
             if (!(ref.getReferenced().getClass().equals(PBXFrameworksBuildPhase.class))) {
                 continue;
@@ -122,6 +161,10 @@ public abstract class AbstractXcodeEditor {
         return null;
     }
 
+    /**
+     * Clean op build settings in the specified target.
+     * @param target Target to clean up the build settings in
+     */
     public static void cleanupBuildSettings(PBXNativeTarget target) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
@@ -131,6 +174,13 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
+    /**
+     * Gets or creates a subgroup in the specified group.
+     * @param file Project file
+     * @param group Parent group
+     * @param name Child group name
+     * @return The child group
+     */
     protected PBXGroup getOrCreateSubGroup(ProjectFile file, PBXGroup group, String name) {
         for (PBXObjectRef<? extends PBXObject> ref : group.getOrCreateChildren()) {
             final PBXObject object = ref.getReferenced();
@@ -151,6 +201,10 @@ public abstract class AbstractXcodeEditor {
         return child;
     }
 
+    /**
+     * Removes all build settings with 'MOE_' prefix from the specified target.
+     * @param target Target to remove the build settings from
+     */
     protected void removeMOEPrefixKeys(PBXNativeTarget target) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
@@ -167,10 +221,21 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
+    /**
+     * Creates a map for Debug and Release configurations with the same value.
+     * @param value Value for both configurations
+     * @return Configuration map object
+     */
     public static Map<String, String> getDebugReleaseMap(String value) {
         return getDebugReleaseMap(value, value);
     }
 
+    /**
+     * Creates a map for separate Debug and Release configuration values.
+     * @param debugValue Debug value
+     * @param releaseValue Release value
+     * @return Configuration map object
+     */
     public static Map<String, String> getDebugReleaseMap(String debugValue, String releaseValue) {
         if (debugValue == null) {
             throw new NullPointerException();
@@ -184,6 +249,13 @@ public abstract class AbstractXcodeEditor {
         return map;
     }
 
+    /**
+     * Returns the value for the specified build setting.
+     * @param target Target to get build settings from
+     * @param key Build settings key
+     * @param defaultValue Default value for key
+     * @return Value map for key or default value
+     */
     public static Map<String, String> getBuildSetting(PBXNativeTarget target, String key,
             Map<String, String> defaultValue) {
         final Map<String, String> map = new HashMap<String, String>();
@@ -211,6 +283,12 @@ public abstract class AbstractXcodeEditor {
         return map;
     }
 
+    /**
+     * Sets the value for the specified build setting.
+     * @param target Target to get build settings from
+     * @param key Build settings key
+     * @param value Value for key
+     */
     public static void setBuildSetting(PBXNativeTarget target, String key, String value) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
@@ -228,7 +306,12 @@ public abstract class AbstractXcodeEditor {
             buildSettings.put(key, newValue);
         }
     }
-
+    /**
+     * Sets the value for the specified build setting.
+     * @param target Target to get build settings from
+     * @param key Build settings key
+     * @param values Configuration specific values for key
+     */
     public static void setBuildSetting(PBXNativeTarget target, String key, Map<String, String> values) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
@@ -250,6 +333,12 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
+    /**
+     * Appends the specified value to the build setting.
+     * @param target Target to get build settings from
+     * @param key Build settings key
+     * @param value Value for key
+     */
     public static void appendBuildSetting(PBXNativeTarget target, String key, String value) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
                 .getOrCreateBuildConfigurations()) {
@@ -277,6 +366,13 @@ public abstract class AbstractXcodeEditor {
         }
     }
 
+    /**
+     * Returns the relative path of the specified path compared to the base path.
+     * @param base Base path
+     * @param path Other path
+     * @return Relative path
+     * @throws IOException if an error occurs
+     */
     public static String getRelativePath(File base, File path) throws IOException {
         String a = base.toURI().getPath();
         String b = path.toURI().getPath();
@@ -286,7 +382,6 @@ public abstract class AbstractXcodeEditor {
         for (; n < basePaths.length && n < otherPaths.length; n++) {
             if (!basePaths[n].equals(otherPaths[n])) break;
         }
-        System.out.println("Common length: " + n);
         StringBuilder tmp = new StringBuilder("../");
         for (int m = n; m < basePaths.length - 1; m++)
             tmp.append("../");

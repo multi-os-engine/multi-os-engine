@@ -31,19 +31,44 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Xcode editor for Xcode template project changes.
+ */
 public class XcodeTemplateEditor extends XcodeEditor {
 
+    /**
+     * Creates a new XcodeEditor instance.
+     * @param stream Stream to read Xcode project from
+     * @throws ProjectException if an error occurs
+     */
     public XcodeTemplateEditor(InputStream stream) throws ProjectException {
         super(stream);
     }
 
+    /**
+     * Creates a new XcodeEditor instance.
+     * @param file File to read Xcode project from
+     * @throws ProjectException if an error occurs
+     */
     public XcodeTemplateEditor(File file) throws ProjectException {
         super(file);
     }
 
+    /**
+     * Xcode project template settings.
+     */
     public static class Settings extends XcodeEditor.Settings {
+        /**
+         * Project name.
+         */
         public String projectName;
+        /**
+         * Organization name.
+         */
         public String organizationName;
+        /**
+         * Bundle ID.
+         */
         public String bundleID;
 
         @Override
@@ -54,6 +79,11 @@ public class XcodeTemplateEditor extends XcodeEditor {
         }
     }
 
+    /**
+     * Updates an Xcode project with the specified settings.
+     * @param settings Settings to update with
+     * @throws IOException if an I/O error occurs
+     */
     public void update(Settings settings) throws IOException {
         settings.validate();
 
@@ -65,6 +95,14 @@ public class XcodeTemplateEditor extends XcodeEditor {
         super.update(settings);
     }
 
+    /**
+     * Configures the specified target.
+     * @param settings Settings
+     * @param target Target to configure
+     * @param group Target's group
+     * @param isTest Is test target flag
+     * @throws IOException if an I/O error occurs
+     */
     private void configureTarget(Settings settings, PBXNativeTarget target, PBXGroup group, boolean isTest)
             throws IOException {
         final String suffix;

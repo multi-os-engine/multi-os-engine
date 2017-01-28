@@ -79,7 +79,7 @@ class ContentWriter {
     }
 
     /**
-     * Finish the writing
+     * Finish the writing.
      */
     void close() {
         try {
