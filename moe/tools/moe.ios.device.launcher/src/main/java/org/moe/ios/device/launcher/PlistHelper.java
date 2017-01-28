@@ -16,9 +16,11 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
+import org.apache.commons.io.IOUtils;
 import org.libplist.enums.plist_type;
 import org.libplist.opaque.plist_dict_iter;
 import org.libplist.opaque.plist_t;
+import org.moe.common.utils.CloseableUtil;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.DoublePtr;
 import org.moe.natj.general.ptr.IntPtr;
@@ -27,9 +29,8 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -218,7 +219,12 @@ public class PlistHelper {
 
         byte[] bytes;
         try {
-            bytes = Files.readAllBytes(Paths.get(file.getAbsolutePath()));
+            final FileInputStream fis = new FileInputStream(file);
+            try {
+                bytes = IOUtils.toByteArray(fis);
+            } finally {
+                CloseableUtil.tryClose(fis, null, null);
+            }
         } catch (IOException e) {
             return null;
         }
