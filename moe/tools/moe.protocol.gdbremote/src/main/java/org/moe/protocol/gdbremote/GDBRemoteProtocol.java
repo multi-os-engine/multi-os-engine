@@ -22,6 +22,9 @@ import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * GDB remote protocol.
+ */
 public final class GDBRemoteProtocol {
 
 	/**
@@ -81,7 +84,7 @@ public final class GDBRemoteProtocol {
 	 *            input stream
 	 * @param os
 	 *            output stream
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public GDBRemoteProtocol(InputStream is, OutputStream os) throws IOException {
 		comm = new Communication(is, os);
@@ -115,7 +118,7 @@ public final class GDBRemoteProtocol {
 	 * response returns the error code, otherwise <code>-1</code> is returned.
 	 *
 	 * @return error code
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	private int _get_OK_ENN_Response() throws IOException {
 		String resp = comm.nextResponse();
@@ -135,7 +138,7 @@ public final class GDBRemoteProtocol {
 	 * is returned.
 	 *
 	 * @return error code
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	private String _get_OK_EMSG_Response() throws IOException {
 		String resp = comm.nextResponse();
@@ -152,7 +155,7 @@ public final class GDBRemoteProtocol {
 	 * <code>true</code> is returned if the response is <code>OK</code>.
 	 *
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	private boolean _get_OK_NOTSUPPORTED_Response() throws IOException {
 		String resp = comm.nextResponse();
@@ -170,7 +173,7 @@ public final class GDBRemoteProtocol {
 	 * @param args
 	 *            arguments in the packet
 	 * @return error code, <code>0</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public int send_Arguments(String... args) throws IOException {
 		// Send packet
@@ -204,7 +207,7 @@ public final class GDBRemoteProtocol {
 	 * Send a vCont? packet to the server.
 	 *
 	 * @return respond or null if failed or not supported
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public List<String> send_vCont_Q() throws IOException {
 		// Send packet
@@ -230,7 +233,7 @@ public final class GDBRemoteProtocol {
 	 * @param thread_id
 	 *            thread ID to execute on
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public boolean send_vCont(byte action, int thread_id) throws IOException {
 		// Send packet
@@ -248,7 +251,7 @@ public final class GDBRemoteProtocol {
 	 * @param pid
 	 *            process ID to attach to
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public boolean send_vAttach(int pid) throws IOException {
 		// Send packet
@@ -266,7 +269,7 @@ public final class GDBRemoteProtocol {
 	 * @param thread_id
 	 *            thread ID to execute on
 	 * @return error code, <code>0</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public int send_H(byte action, int thread_id) throws IOException {
 		// Send packet
@@ -286,7 +289,7 @@ public final class GDBRemoteProtocol {
 	 * Send a Continue packet to the server.
 	 *
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public boolean send_c() throws IOException {
 		// Send packet
@@ -297,7 +300,7 @@ public final class GDBRemoteProtocol {
 	 * Send a Kill packet to the server.
 	 *
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public boolean send_k() throws IOException {
 		// Send packet
@@ -308,7 +311,7 @@ public final class GDBRemoteProtocol {
 	 * Send an Interrupt (ctrl+C) packet to the server.
 	 *
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public boolean send_ctrl_C() throws IOException {
 		// Send packet
@@ -319,7 +322,7 @@ public final class GDBRemoteProtocol {
 	 * Send a Detach packet to the server.
 	 *
 	 * @return <code>0</code> on success, otherwise error code
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public int send_D() throws IOException {
 		// Send packet
@@ -335,7 +338,7 @@ public final class GDBRemoteProtocol {
 	 * Send a QStartNoAckMode packet to the server.
 	 *
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public boolean set_StartNoAckMode() throws IOException {
 		// Send packet
@@ -357,7 +360,7 @@ public final class GDBRemoteProtocol {
 	 * @param value
 	 *            variable value
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public boolean set_EnvironmentHexEncoded(String variable, String value) throws IOException {
 		// Send packet
@@ -381,7 +384,7 @@ public final class GDBRemoteProtocol {
 	 * @param arch
 	 *            architecture name
 	 * @return error code, 0 on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public int set_LaunchArch(String arch) throws IOException {
 		// Send packet
@@ -401,7 +404,7 @@ public final class GDBRemoteProtocol {
 	 * Send a HostInfo query to the server.
 	 *
 	 * @return map containing host info or null on failure
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public Map<String, String> query_HostInfo() throws IOException {
 		// Send packet
@@ -418,7 +421,7 @@ public final class GDBRemoteProtocol {
 	 * Send a LaunchSuccess query to the server.
 	 *
 	 * @return error code, <code>0</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public String query_LaunchSuccess() throws IOException {
 		// Send packet
@@ -434,7 +437,7 @@ public final class GDBRemoteProtocol {
 	 * Send a ProcessInfo query to the server.
 	 *
 	 * @return map containing process info or null on failure
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public Map<String, String> query_ProcessInfo() throws IOException {
 		// Send packet
@@ -453,7 +456,7 @@ public final class GDBRemoteProtocol {
 	 * @param register_id
 	 *            register ID
 	 * @return map containing register info or null on failure
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	public Map<String, String> query_RegisterInfo(int register_id)
 			throws IOException {

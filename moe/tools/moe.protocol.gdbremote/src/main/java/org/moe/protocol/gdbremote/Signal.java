@@ -16,6 +16,9 @@ limitations under the License.
 
 package org.moe.protocol.gdbremote;
 
+/**
+ * Signals.
+ */
 public final class Signal {
 
 	/**

@@ -20,6 +20,9 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * Packet writing output stream.
+ */
 final class PacketOutputStream extends OutputStream {
 
 	/**
@@ -44,7 +47,7 @@ final class PacketOutputStream extends OutputStream {
 	 *            related communication
 	 * @param target
 	 *            target output stream
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	PacketOutputStream(Communication comm, DataOutputStream target)
 			throws IOException {
@@ -70,7 +73,7 @@ final class PacketOutputStream extends OutputStream {
 	 *
 	 * @param number
 	 *            number to write
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	void writeInteger(int number) throws IOException {
 		writeASCII(Integer.toString(number));
@@ -81,7 +84,7 @@ final class PacketOutputStream extends OutputStream {
 	 *
 	 * @param string
 	 *            string to write
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	void writeASCII(String string) throws IOException {
 		write(string.getBytes("ASCII"));
@@ -92,7 +95,7 @@ final class PacketOutputStream extends OutputStream {
 	 *
 	 * @param string
 	 *            string to write
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	void writeHexASCII(String string) throws IOException {
 		writeHex(string.getBytes("ASCII"));
@@ -103,7 +106,7 @@ final class PacketOutputStream extends OutputStream {
 	 *
 	 * @param string
 	 *            string to write
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	void writeHexUTF8(String string) throws IOException {
 		writeHex(string.getBytes("UTF-8"));
@@ -114,7 +117,7 @@ final class PacketOutputStream extends OutputStream {
 	 *
 	 * @param bytes
 	 *            byte array to write
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	void writeHex(byte[] bytes) throws IOException {
 		int count = bytes.length;
@@ -129,7 +132,7 @@ final class PacketOutputStream extends OutputStream {
 	 *
 	 * @param b
 	 *            byte to write
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	void writeHexByte(int b) throws IOException {
 		writeHexHalfByte((b & 0xF0) >> 4);
@@ -142,7 +145,7 @@ final class PacketOutputStream extends OutputStream {
 	 *
 	 * @param half
 	 *            half-byte to write
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	private void writeHexHalfByte(int half) throws IOException {
 		if (half < 10) {
@@ -158,7 +161,7 @@ final class PacketOutputStream extends OutputStream {
 	 *
 	 * @param number
 	 *            number to write
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	void writeHexInteger(int number) throws IOException {
 		int part;
@@ -190,7 +193,7 @@ final class PacketOutputStream extends OutputStream {
 	 * Add the calculated hash to the end of the packet and flush the target
 	 * stream.
 	 *
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	private final void _close() throws IOException {
 		this.target.write('#');
@@ -203,7 +206,7 @@ final class PacketOutputStream extends OutputStream {
 	 * Send the packet and get acknowledgment.
 	 *
 	 * @return <code>true</code> on success
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	boolean send() throws IOException {
 		_close();

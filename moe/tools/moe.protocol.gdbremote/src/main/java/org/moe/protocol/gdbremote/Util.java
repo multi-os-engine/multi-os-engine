@@ -18,6 +18,9 @@ package org.moe.protocol.gdbremote;
 
 import java.util.*;
 
+/**
+ * Container utilities.
+ */
 class Util {
 
 	/**

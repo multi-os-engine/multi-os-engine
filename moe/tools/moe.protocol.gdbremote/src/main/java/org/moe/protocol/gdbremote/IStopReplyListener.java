@@ -18,6 +18,9 @@ package org.moe.protocol.gdbremote;
 
 import java.util.Map;
 
+/**
+ * Stop Reply Listener interface.
+ */
 public interface IStopReplyListener {
 
 	/**

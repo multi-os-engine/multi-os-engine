@@ -21,6 +21,9 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * Communication base class. This class handles base communication with the remote server.
+ */
 final class Communication {
 
 	/**
@@ -75,7 +78,7 @@ final class Communication {
 	 *            input stream
 	 * @param os
 	 *            output stream
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	Communication(InputStream is, OutputStream os) throws IOException {
 		if (is == null || os == null) {
@@ -314,11 +317,11 @@ final class Communication {
 	}
 
 	/**
-	 * Sends an acknowledgment if in ackMode
+	 * Sends an acknowledgment if in ackMode.
 	 *
 	 * @param ack
 	 *            <code>true</code> will send "+" otherwise "-" will be sent
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	private void _send_acknowledgment(boolean ack) throws IOException {
 		if (!isInNoAckMode()) {
@@ -336,7 +339,7 @@ final class Communication {
 	 * Create a new {@link PacketOutputStream}.
 	 *
 	 * @return new {@link PacketOutputStream}
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	PacketOutputStream newPacket() throws IOException {
 		return new PacketOutputStream(this, dos);
@@ -347,7 +350,7 @@ final class Communication {
 	 *
 	 * @return <code>true</code> if acknowledged or in noAckMode, otherwise
 	 *         false
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	boolean getAck() throws IOException {
 		if (isInNoAckMode()) {
@@ -393,7 +396,7 @@ final class Communication {
 	 * @param string
 	 *            message of the packet
 	 * @return acknowledgment result
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	boolean sendASCIIPacket(String string) throws IOException {
 		// Send packet
@@ -406,7 +409,7 @@ final class Communication {
 	 * Wait for and get the next response packet.
 	 *
 	 * @return next packet in the queue
-	 * @throws IOException
+	 * @throws IOException if an I/O error occurs
 	 */
 	String nextResponse() throws IOException {
 		while (responsePacketQueue.size() == 0) {
