@@ -22,12 +22,26 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+/**
+ * Base class for Java executables.
+ */
 public abstract class AbstractJarExec extends AbstractExec {
 
+	/**
+	 * VM arguments.
+	 */
 	private final ArrayList<String> vmArguments = new ArrayList<String>();
 
+	/**
+	 * Jar file.
+	 */
 	private final File jar;
 
+	/**
+	 * Creates a new AbstractJarExec instance.
+	 * @param jar Jar file
+	 * @param workingDir Working directory
+	 */
 	protected AbstractJarExec(File jar, File workingDir) {
 		super(getDefaultJavaExec(), workingDir);
 		if (jar == null) {
@@ -36,10 +50,18 @@ public abstract class AbstractJarExec extends AbstractExec {
 		this.jar = jar;
 	}
 
+	/**
+	 * Returns the VM arguments list.
+	 * @return VM arguments list
+	 */
 	public ArrayList<String> getVmArguments() {
 		return vmArguments;
 	}
 
+	/**
+	 * Returns the default Java executable's name.
+	 * @return default Java executable's name
+	 */
 	public static String getDefaultJavaExec() {
 		return "java";
 	}
@@ -57,6 +79,13 @@ public abstract class AbstractJarExec extends AbstractExec {
 		super.applyArguments(cmds);
 	}
 
+	/**
+	 * Copies an resource to an external temp file.
+	 * @param inFilePath Resource path
+	 * @param outFileName Output temp file name
+	 * @return Output file
+	 * @throws IOException if an I/O error occurs
+	 */
 	protected static File copyToTmpFromResource(String inFilePath,
 			String outFileName) throws IOException {
 		File of = File.createTempFile(outFileName, ".jar");

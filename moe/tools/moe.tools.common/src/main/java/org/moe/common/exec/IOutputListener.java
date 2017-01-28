@@ -16,8 +16,15 @@ limitations under the License.
 
 package org.moe.common.exec;
 
+/**
+ * Output listener interface.
+ */
 public interface IOutputListener {
-	
+
+	/**
+	 * An output has been received.
+	 * @param line Output line
+	 */
 	void output(String line);
 
 }

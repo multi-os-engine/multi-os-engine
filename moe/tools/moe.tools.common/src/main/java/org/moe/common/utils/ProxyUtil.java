@@ -170,6 +170,9 @@ public class ProxyUtil {
                 }
             }
 
+            /**
+             * Accept a connection.
+             */
             private void accept() {
                 if (Thread.currentThread().isInterrupted()) {
                     return;
@@ -196,6 +199,9 @@ public class ProxyUtil {
                 tryClose(socketOutput, "Closing socket output stream");
             }
 
+            /**
+             * Startup the proxy server.
+             */
             private void startup() {
                 if (Thread.currentThread().isInterrupted()) {
                     return;
@@ -225,11 +231,23 @@ public class ProxyUtil {
                 tryClose(remoteOutput, "Closing remote output failed");
             }
 
+            /**
+             * Create a stream forwarding thread.
+             * @param name Thread name
+             * @param is Input
+             * @param os Output
+             * @return Thread
+             */
             private Thread createForwardingThread(final String name, final InputStream is, final OutputStream os) {
                 return new Thread(new Runnable() {
 
-                    // Buffer
+                    /**
+                     * Buffer size.
+                     */
                     final int bufferSize = 16384;
+                    /**
+                     * Buffer.
+                     */
                     final byte[] buffer = new byte[bufferSize];
 
                     @Override
@@ -261,6 +279,11 @@ public class ProxyUtil {
         proxyThread.start();
     }
 
+    /**
+     * Try to close the specified Closeable.
+     * @param closeable Closeable to close
+     * @param failMessage Failure message
+     */
     private void tryClose(Closeable closeable, String failMessage) {
         if (closeable != null) {
             CloseableUtil.tryClose(closeable, LOG, localPort + ": " + failMessage);

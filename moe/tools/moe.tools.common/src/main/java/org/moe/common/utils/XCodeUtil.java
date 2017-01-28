@@ -23,19 +23,45 @@ import org.moe.common.exec.SimpleExec;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Utility class for Xcode.
+ */
 public class XCodeUtil {
 
+	/**
+	 * Configurations.
+	 * // TODO: remove
+	 */
 	public static class Configuration {
+		/**
+		 * Platform: iOS.
+		 */
 		public final static String PLATFORM_IOS = "iOS";
+		/**
+		 * Platform: macOS.
+		 */
 		public final static String PLATFORM_OSX = "OS X";
 	}
 
+	/**
+	 * Platform: iOS.
+	 */
 	public static final String PLATFORM_IOS = Configuration.PLATFORM_IOS;
+	/**
+	 * Platform: macOS.
+	 */
 	public static final String PLATFORM_OSX = Configuration.PLATFORM_OSX;
 
+	/**
+	 * Creates a new XCodeUtil instance.
+	 */
 	private XCodeUtil() {
 	}
 
+	/**
+	 * Return the Xcode developer path.
+	 * @return Developer path or null on error.
+	 */
 	public static String getDeveloperPath() {
 		SimpleExec exec = SimpleExec.getXcodeSelect();
 		exec.getArguments().add("-p");
@@ -54,6 +80,10 @@ public class XCodeUtil {
 		return out;
 	}
 
+	/**
+	 * Returns the path to Xcode.
+	 * @return Path to Xcode
+	 */
 	public static String getXcodePath() {
 		final String suffix = "/Contents/Developer";
 
@@ -77,6 +107,11 @@ public class XCodeUtil {
 		return path;
 	}
 
+	/**
+	 * Opens the specified file with Xcode.
+	 * @param file File to open
+	 * @throws IOException if an I/O error occurs
+	 */
 	public static void openWithXcode(String file) throws IOException {
 		if (file == null) {
 			throw new NullPointerException();
@@ -93,6 +128,11 @@ public class XCodeUtil {
 		exec.getRunner().run(null);
 	}
 
+	/**
+	 * Returns the path to the Xcode platform SDKs.
+	 * @param platform Platform
+	 * @return Path to platform SDKs
+	 */
 	public static String getPlatformSDKsPath(String platform) {
 		if (platform.equalsIgnoreCase(PLATFORM_IOS)) {
 			String dev = getDeveloperPath();
@@ -115,6 +155,10 @@ public class XCodeUtil {
 		}
 	}
 
+	/**
+	 * Returns the path to Xcode's DocSets.
+	 * @return Path to Xcode's DocSets
+	 */
 	public static String getDocsetPath() {
 		String dev = getDeveloperPath();
 

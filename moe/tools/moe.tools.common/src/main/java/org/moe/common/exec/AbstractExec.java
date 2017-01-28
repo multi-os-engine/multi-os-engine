@@ -22,39 +22,82 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Base class for executables.
+ */
 public abstract class AbstractExec {
 
+	/**
+	 * Exec name.
+	 */
 	private String name = null;
 
+	/**
+	 * Return code.
+	 */
     private int returnCode;
 
+	/**
+	 * Arguments.
+	 */
 	private final ArrayList<String> arguments = new ArrayList<String>();
 
+	/**
+	 * Working directory.
+	 */
 	protected File workingDir = null;
 
+	/**
+	 * Creates a new AbstractExec instance.
+	 */
 	public AbstractExec() {
 		// Do nothing
 	}
 
+	/**
+	 * Creates a new AbstractExec instance.
+	 * @param name Exec name
+	 * @param workingDir Working directory
+	 */
 	public AbstractExec(String name, File workingDir) {
 		this.name = name;
 		this.workingDir = workingDir;
 	}
 
+	/**
+	 * Returns the arguments.
+	 * @return Arguments list
+	 */
 	public ArrayList<String> getArguments() {
 		return arguments;
 	}
 
+	/**
+	 * Sets the return code.
+	 * @param returnCode Return code
+	 */
     public void setReturnCode(int returnCode) {
         this.returnCode = returnCode;
     }
 
-    public int getReturnCode() {
+	/**
+	 * Returns the return code.
+	 * @return Return code
+	 */
+	public int getReturnCode() {
         return returnCode;
     }
 
+	/**
+	 * Looks up the executable.
+	 * @return Exec path
+	 */
 	abstract protected String lookupExec();
 
+	/**
+	 * Returns the executable's path.
+	 * @return executable's path
+	 */
 	public String getExecPath() {
 		if (name != null) {
 			return name;
@@ -62,6 +105,11 @@ public abstract class AbstractExec {
 		return lookupExec();
 	}
 
+	/**
+	 * Returns an ExecRunner for this exec configuration.
+	 * @return ExecRunner
+	 * @throws IOException if an I/O error occurs
+	 */
 	public ExecRunner getRunner() throws IOException {
 		ArrayList<String> cmds = new ArrayList<String>(
 				getArguments().size() + 1);
@@ -85,6 +133,10 @@ public abstract class AbstractExec {
 		return new ExecRunner(builder);
 	}
 
+	/**
+	 * Appends all arguments from the specified list.
+	 * @param cmds Arguments list
+	 */
 	protected void applyArguments(ArrayList<String> cmds) {
 		cmds.addAll(getArguments());
 	}

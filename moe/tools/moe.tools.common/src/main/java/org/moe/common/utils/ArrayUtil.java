@@ -25,6 +25,9 @@ import java.util.List;
  */
 public final class ArrayUtil {
 
+    /**
+     * Creates a new ArrayUtil instance.
+     */
     private ArrayUtil() {
     }
 

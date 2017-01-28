@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.moe.common.configuration;
 
-import org.moe.common.configuration.ConfigurationValidationException;
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase;
 import org.moe.common.exec.GradleExec;
@@ -25,25 +24,83 @@ import org.moe.common.utils.InputValidationHelper;
 import java.io.*;
 import java.util.*;
 
+/**
+ * Utility class for working with remote build settings.
+ */
 public class RemoteSettings {
 
+	/**
+	 * Key: host.
+	 */
 	public static final String HOST_KEY = "host";
+	/**
+	 * Key: port.
+	 */
 	public static final String PORT_KEY = "port";
+	/**
+	 * Key: user.
+	 */
 	public static final String USER_KEY = "user";
+	/**
+	 * Key: knownhosts.
+	 */
 	public static final String KNOWHOSTS_KEY = "knownhosts";
+	/**
+	 * Key: identity.
+	 */
 	public static final String IDENTITY_KEY = "identity";
+	/**
+	 * Key: keychain.name.
+	 */
 	public static final String KEYCHAIN_NAME_KEY = "keychain.name";
+	/**
+	 * Key: keychain.pass.
+	 */
 	public static final String KEYCHAIN_PASS_KEY = "keychain.pass";
+	/**
+	 * Key: keychain.locktimeout.
+	 */
 	public static final String KEYCHAIN_LOCKTIMEOUT_KEY = "keychain.locktimeout";
+	/**
+	 * Key: gradle.repositories.
+	 */
 	public static final String GRADLE_REPOSITORIES_KEY = "gradle.repositories";
+
+	/**
+	 * Property: host.
+	 */
 	public static final String HOST_PROPERTY = "moe.remotebuild.host=";
+	/**
+	 * Property: port.
+	 */
 	public static final String PORT_PROPERTY = "moe.remotebuild.port=";
+	/**
+	 * Property: user.
+	 */
 	public static final String USER_PROPERTY = "moe.remotebuild.user=";
+	/**
+	 * Property: knownhosts.
+	 */
 	public static final String KNOWHOSTS_PROPERTY = "moe.remotebuild.knownhosts=";
+	/**
+	 * Property: identity.
+	 */
 	public static final String IDENTITY_PROPERTY = "moe.remotebuild.identity=";
+	/**
+	 * Property: keychain.name.
+	 */
 	public static final String KEYCHAIN_NAME_PROPERTY = "moe.remotebuild.keychain.name=";
+	/**
+	 * Property: keychain.pass.
+	 */
 	public static final String KEYCHAIN_PASS_PROPERTY = "moe.remotebuild.keychain.pass=";
+	/**
+	 * Property: keychain.locktimeout.
+	 */
 	public static final String KEYCHAIN_LOCKTIMEOUT_PROPERTY = "moe.remotebuild.keychain.locktimeout=";
+	/**
+	 * Property: gradle.repositories.
+	 */
 	public static final String GRADLE_REPOSITORIES_PROPERTY = "moe.remotebuild.gradle.repositories=";
 
     /**
@@ -219,46 +276,32 @@ public class RemoteSettings {
      * @param properties Properties object
      * @throws IOException If save failed.
      */
-	public static void saveProperties(String saveFolder, Properties properties) throws IOException {
-        StringBuilder comment = new StringBuilder();
-        comment.append(" Supported keys and values:");
-        comment.append("\n");
-        comment.append("   host: address of the remote build server");
-        comment.append("\n");
-        comment.append("   port: port for ssh, defaults to 22");
-        comment.append("\n");
-        comment.append("   user: user on the remote build server");
-        comment.append("\n");
-        comment.append("   knownhosts: path to known_hosts file");
-        comment.append("\n");
-        comment.append("   identity: path to private key");
-        comment.append("\n");
-        comment.append("   keychain.name: name of keychain to unlock, defaults to 'moeremotebuild.keychain'");
-        comment.append("\n");
-        comment.append("   keychain.pass: password for keychain, defaults to ''");
-        comment.append("\n");
-        comment.append("   keychain.locktimeout: keychain lock timeout in seconds, defaults to 3600");
-        comment.append("\n");
-        comment.append("   gradle.repositories: repositories to be used when setting up the MOE SDK on the remote server, defaults to 'jcenter()'");
-        comment.append("\n");
-        comment.append("\n");
-        comment.append("The identity and knownhosts keys accept special parameters to access");
-        comment.append("\n");
-        comment.append("   environmental variables ($env$KEY), system properties ($sys$KEY)");
-        comment.append("\n");
-        comment.append("   and project properties ($proj$KEY).");
-        comment.append("\n");
-        comment.append("   Example: knownhosts=$sys$user.home/.ssh/known_hosts");
-        comment.append("\n");
-
-
+    public static void saveProperties(String saveFolder, Properties properties) throws IOException {
+        // @formatter:off
+        String comment = ""
+                + " Supported keys and values:" + "\n"
+                + "   host: address of the remote build server" + "\n"
+                + "   port: port for ssh, defaults to 22" + "\n"
+                + "   user: user on the remote build server" + "\n"
+                + "   knownhosts: path to known_hosts file" + "\n"
+                + "   identity: path to private key" + "\n"
+                + "   keychain.name: name of keychain to unlock, defaults to 'moeremotebuild.keychain'" + "\n"
+                + "   keychain.pass: password for keychain, defaults to ''" + "\n"
+                + "   keychain.locktimeout: keychain lock timeout in seconds, defaults to 3600" + "\n"
+                + "   gradle.repositories: repositories to be used when setting up the MOE SDK on the remote server, defaults to 'jcenter()'" + "\n"
+                + "\n"
+                + "The identity and knownhosts keys accept special parameters to access" + "\n"
+                + "   environmental variables ($env$KEY), system properties ($sys$KEY)" + "\n"
+                + "   and project properties ($proj$KEY)." + "\n"
+                + "   Example: knownhosts=$sys$user.home/.ssh/known_hosts" + "\n";
+        // @formatter:on
         File propertiesFile = new File(saveFolder, "moe.remotebuild.properties");
         if (propertiesFile.exists()) {
             propertiesFile.delete();
         }
 
         OutputStream out = new FileOutputStream(propertiesFile);
-        properties.store(out, comment.toString());
+        properties.store(out, comment);
     }
 
     /**

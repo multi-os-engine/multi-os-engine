@@ -21,8 +21,14 @@ import org.moe.common.utils.OsUtils;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Gradle exec.
+ */
 public class GradleExec extends AbstractExec {
 
+	/**
+	 * Gradlew name.
+	 */
     static private String gradlew;
 
     static {
@@ -33,8 +39,15 @@ public class GradleExec extends AbstractExec {
 		}
     }
 
+	/**
+	 * Project file.
+	 */
 	private final File project;
 
+	/**
+	 * Creates a new GradleExec instance.
+	 * @param project Project file
+	 */
 	public GradleExec(File project) {
 		if (project == null) {
 			throw new NullPointerException();
@@ -42,6 +55,12 @@ public class GradleExec extends AbstractExec {
 		this.project = project;
 	}
 
+	/**
+	 * Creates a new GradleExec instance.
+	 * @param project Project file
+	 * @param name Exec name
+	 * @param workingDir Working directory
+	 */
 	public GradleExec(File project, String name, File workingDir) {
         super(name, workingDir);
 		if (project == null) {
@@ -68,6 +87,10 @@ public class GradleExec extends AbstractExec {
 		throw new RuntimeException("Failed to locate 'gradle' executable!");
 	}
 
+	/**
+	 * Looks up default Gradle installation.
+	 * @return Gradle path
+	 */
 	private String getGradleFromWhich() {
 		SimpleExec whichExec = SimpleExec.getWhich("gradle");
 		String out;
@@ -83,6 +106,11 @@ public class GradleExec extends AbstractExec {
 		return out.length() == 0 ? null : out;
 	}
 
+	/**
+	 * Checks for existence of Gradle wrapper.
+	 * @param path Gradle wrapper
+	 * @return Gradle wrapper file or null if it doesn't exist
+	 */
 	private File getGradleW(File path) {
 		path = new File(path, gradlew);
 		if (path.exists() && path.isFile()) {

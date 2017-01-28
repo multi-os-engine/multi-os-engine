@@ -16,8 +16,15 @@ limitations under the License.
 
 package org.moe.common.exec;
 
+/**
+ * Kill listener interface.
+ */
 public interface IKillListener {
 
+	/**
+	 * Return whether or not the target should be killed.
+	 * @return True iff the target should be killed
+	 */
 	boolean needsKill();
 	
 }

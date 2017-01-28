@@ -31,10 +31,25 @@ import java.util.HashMap;
  */
 public abstract class AbstractConfigurationAppender {
 
+    /**
+     * Configuration.
+     */
     private final AbstractConfiguration configuration;
+    /**
+     * Options.
+     */
     private final ArrayList<Option> options = new ArrayList<Option>();
+    /**
+     * Option-help map.
+     */
     private final HashMap<String, String> optionHelps = new HashMap<String, String>();
+    /**
+     * Option-example map.
+     */
     private final HashMap<String, String> optionExamples = new HashMap<String, String>();
+    /**
+     * Flag indicating that setup method has been executed.
+     */
     private boolean hasRunSetup = false;
 
     /**

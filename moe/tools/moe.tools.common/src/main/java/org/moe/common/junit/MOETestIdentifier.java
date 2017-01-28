@@ -21,8 +21,17 @@ package org.moe.common.junit;
  */
 public class MOETestIdentifier {
 
+    /**
+     * Test class name.
+     */
     private final String mClassName;
+    /**
+     * Test name.
+     */
     private final String mTestName;
+    /**
+     * Is ignored flag.
+     */
     private boolean ignored;
 
     /**
@@ -94,10 +103,18 @@ public class MOETestIdentifier {
         return String.format("%s#%s", getClassName(), getTestName());
     }
 
+    /**
+     * Sets the is ignored flag.
+     * @param b Is ignored flag
+     */
     public void setIgnored(boolean b) {
         this.ignored = b;
     }
 
+    /**
+     * Returns the is ignored flag.
+     * @return Is ignored flag
+     */
     public boolean isIgnored() {
         return ignored;
     }

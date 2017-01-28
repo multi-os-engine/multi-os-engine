@@ -18,19 +18,41 @@ package org.moe.common.ios;
 
 import java.io.Serializable;
 
+/**
+ * iOS device info.
+ */
 public class DeviceInfo implements Serializable {
+    /**
+     * Device name.
+     */
     private String name;
+    /**
+     * Device UDID.
+     */
     private String udid;
 
+    /**
+     * Creates a new DeviceInfo instance.
+     * @param name Device name
+     * @param udid Device UDID
+     */
     public DeviceInfo(String name, String udid) {
         this.name = name;
         this.udid = udid;
     }
 
+    /**
+     * Returns the device's name.
+     * @return Device's name
+     */
     public String name() {
         return name;
     }
 
+    /**
+     * Returns the device's UDID.
+     * @return Device's UDID
+     */
     public String udid() {
         return udid;
     }

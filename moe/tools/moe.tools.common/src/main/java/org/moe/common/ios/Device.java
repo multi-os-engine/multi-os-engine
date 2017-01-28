@@ -26,8 +26,17 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Utility for listing connected iOS devices.
+ */
 public class Device {
 
+    /**
+     * Returns the list of connected iOS devices.
+     * @param projectFile Project file
+     * @return List of connected iOS devices.
+     * @throws IOException if an I/O error occurs
+     */
     public static List<DeviceInfo> getDevices(File projectFile) throws IOException {
         List<DeviceInfo> result = new ArrayList<DeviceInfo>();
 
@@ -60,6 +69,11 @@ public class Device {
         return result;
     }
 
+    /**
+     * Parses the line for device info.
+     * @param line Line to parse
+     * @return DeviceInfo or null
+     */
     private static DeviceInfo parseDeviceInfo(String line) {
         DeviceInfo device = null;
 

@@ -24,17 +24,44 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Utility class for Xcode and Android SDKs.
+ */
+
 public class NativeSDKUtil {
 
+    /**
+     * Logger.
+     */
     private static final Logger LOG = LoggerFactory.getLogger(NativeSDKUtil.class);
 
+    /**
+     * Platform: iOS.
+     */
     public final static String PLATFORM_IOS = "iOS";
+    /**
+     * Platform: macOS.
+     */
     public final static String PLATFORM_OSX = "OS X";
+    /**
+     * Platform: tvOS.
+     */
     public final static String PLATFORM_TVOS = "tvOS";
+    /**
+     * Platform: NDK.
+     */
     public final static String PLATFORM_NDK = "NDK";
 
+    /**
+     * Creates a new NativeSDKUtil instance.
+     */
     private NativeSDKUtil() {
     }
+
+    /**
+     * Returns the Xcode developer path.
+     * @return Developer path or null on error.
+     */
 
     public static File getXcodeDeveloperPath() {
         SimpleExec xcodeSelect = SimpleExec.getXcodeSelect();
@@ -53,6 +80,11 @@ public class NativeSDKUtil {
         return f.exists() ? f : null;
     }
 
+    /**
+     * Returns the path to the Xcode SDK platform.
+     * @param sdk SDK
+     * @return Path to SDK platform
+     */
     public static File getXcodePlatformPath(String sdk) {
         SimpleExec xcodeSelect = SimpleExec.getExec("xcrun");
         xcodeSelect.getArguments().add("--sdk");
@@ -72,6 +104,11 @@ public class NativeSDKUtil {
         return f.exists() ? f : null;
     }
 
+    /**
+     * Returns the path to the Xcode SDKs.
+     * @param sdk SDK
+     * @return Path to SDKs
+     */
     public static File getXcodePlatformSDKsPath(String sdk) {
         File path = getXcodePlatformPath(sdk);
         if (path != null) {
@@ -83,6 +120,10 @@ public class NativeSDKUtil {
         return null;
     }
 
+    /**
+     * Returns the path to Xcode.
+     * @return Path to Xcode
+     */
     public static File getXcodePath() {
         File path = getXcodeDeveloperPath();
         if (path == null) {
@@ -104,6 +145,11 @@ public class NativeSDKUtil {
         return path;
     }
 
+    /**
+     * Opens the specified file with Xcode.
+     * @param file File to open
+     * @throws IOException if an I/O error occurs
+     */
     public static void openWithXcode(String file) throws IOException {
         if (file == null) {
             throw new NullPointerException();
@@ -119,6 +165,11 @@ public class NativeSDKUtil {
         }
     }
 
+    /**
+     * Returns the path to the platform's SDKs.
+     * @param platform Platform
+     * @return Path to platform's SDKs
+     */
     public static File getPlatformSDKsPath(String platform) {
         if (platform.equalsIgnoreCase(PLATFORM_IOS)) {
             return getXcodePlatformSDKsPath("iphoneos");
@@ -155,6 +206,10 @@ public class NativeSDKUtil {
         }
     }
 
+    /**
+     * Returns the path to Xcode's DocSets.
+     * @return Path to Xcode's DocSets
+     */
     public static File getDocsetPath() {
         File dev = getXcodeDeveloperPath();
         if (dev == null) {

@@ -19,17 +19,38 @@ package org.moe.common.exec;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * This class collects the standard output of an exec object.
+ */
 public class ExecOutputCollector {
 
+    /**
+     * Creates a new ExecOutputCollector instance.
+     */
 	private ExecOutputCollector() {
 
 	}
 
+    /**
+     * Collects the standard output of the specified exec object.
+     * @param exec Exec to run
+     * @return Standard output
+     * @throws IOException if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
     public static String collect(AbstractExec exec) throws IOException,
             InterruptedException {
         return collect(exec, null);
     }
 
+    /**
+     * Collects the standard output of the specified exec object.
+     * @param exec Exec to run
+     * @param env Environment to run the exec in
+     * @return Standard output
+     * @throws IOException if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
     public static String collect(AbstractExec exec, Map<String, String> env) throws IOException,
             InterruptedException {
         ExecRunner runner = exec.getRunner();
@@ -37,11 +58,26 @@ public class ExecOutputCollector {
         return output;
     }
 
+    /**
+     * Collects the standard output of the specified ExecRunner.
+     * @param runner ExecRunner to run
+     * @return Standard output
+     * @throws IOException if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
     public static String collect(ExecRunner runner) throws IOException,
             InterruptedException {
         return collect(runner, null);
     }
 
+    /**
+     * Collects the standard output of the specified ExecRunner.
+     * @param runner ExecRunner to run
+     * @param env Environment to run the exec in
+     * @return Standard output
+     * @throws IOException if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
 	public static String collect(ExecRunner runner, Map<String, String> env) throws IOException,
 			InterruptedException {
 

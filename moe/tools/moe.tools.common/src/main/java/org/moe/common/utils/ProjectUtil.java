@@ -22,19 +22,54 @@ import org.moe.common.exec.GradleExec;
 import java.io.File;
 import java.util.Properties;
 
+/**
+ * Utility class for retrieving info from Gradle.
+ */
 public class ProjectUtil {
-
+    /**
+     * moeXcodeProperties task name.
+     */
     public static final String XCODE_PROPERTIES_TASK = "moeXcodeProperties";
+    /**
+     * moeSDKProperties task name.
+     */
     public static final String SDK_PROPERTIES_TASK = "moeSDKProperties";
 
+    /**
+     * Key: moe.xcode.project.
+     */
     public static final String XCODE_PROJECT_KEY = "moe.xcode.project";
+    /**
+     * Key: moe.xcode.workspace.
+     */
     public static final String XCODE_WORKSPACE_KEY = "moe.xcode.workspace";
+    /**
+     * Key: moe.xcode.mainTarget.
+     */
     public static final String XCODE_MAIN_TARGET_KEY = "moe.xcode.mainTarget";
+    /**
+     * Key: moe.xcode.testTarget.
+     */
     public static final String XCODE_TEST_TARGET_KEY = "moe.xcode.testTarget";
+    /**
+     * Key: moe.xcode.mainScheme.
+     */
     public static final String XCODE_MAIN_SCHEME_KEY = "moe.xcode.mainScheme";
+    /**
+     * Key: moe.xcode.testScheme.
+     */
     public static final String XCODE_TEST_SCHEME_KEY = "moe.xcode.testScheme";
+    /**
+     * Key: moe.sdk.home.
+     */
     public static final String SDK_PATH_KEY = "moe.sdk.home";
 
+    /**
+     * Returns the properties returned by the specified task.
+     * @param projectFile Project file
+     * @param taskName Task to run
+     * @return Parsed properties
+     */
     public static Properties retrievePropertiesFromGradle(File projectFile, String taskName) {
         GradleExec exec = new GradleExec(projectFile, null, projectFile);
         exec.getArguments().add(taskName);

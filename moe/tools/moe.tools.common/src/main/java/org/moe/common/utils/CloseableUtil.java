@@ -25,6 +25,9 @@ import java.io.IOException;
  * Utility class for Closeable objects.
  */
 public class CloseableUtil {
+    /**
+     * Creates a new CloseableUtil instance.
+     */
     private CloseableUtil() {
     }
 
@@ -41,7 +44,9 @@ public class CloseableUtil {
                 closeable.close();
             } catch (IOException e) {
                 if (logger == null) {
-                    System.err.println(failureMessage);
+                    if (failureMessage != null) {
+                        System.err.println(failureMessage);
+                    }
                 } else {
                     logger.error(failureMessage);
                     logger.debug(failureMessage, e);

@@ -25,15 +25,37 @@ import org.moe.common.exec.SimpleExec;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * Utility class for Xcode simctl command-line tool.
+ */
 public class SimCtl {
 
+    /**
+     * Creates a new SimCtl instance.
+     */
     private SimCtl() {
     }
 
+    /**
+     * Simple pair class.
+     * @param <L> Left type
+     * @param <R> Right type
+     */
     private static class Pair<L, R> {
+        /**
+         * Left object.
+         */
         final L left;
+        /**
+         * Right object.
+         */
         final R right;
 
+        /**
+         * Creates a new Pair instance.
+         * @param left Left object
+         * @param right Right object
+         */
         Pair(final L left, final R right) {
             super();
             this.left = left;
@@ -41,11 +63,29 @@ public class SimCtl {
         }
     }
 
+    /**
+     * Simulator device.
+     */
     public static class Device {
+        /**
+         * Simulator's name.
+         */
         public final String name;
+        /**
+         * Simulator's UDID.
+         */
         public final String udid;
+        /**
+         * Simulator's runtime.
+         */
         public final String runtime;
 
+        /**
+         * Creates a new Device instance.
+         * @param name Name
+         * @param udid UDID
+         * @param runtime Runtime
+         */
         Device(String name, String udid, String runtime) {
             this.name = name;
             this.udid = udid;
@@ -58,6 +98,12 @@ public class SimCtl {
         }
     }
 
+    /**
+     * Returns the list of available simulators.
+     * @return List of available simulators
+     * @throws IOException if an I/O error occurs
+     * @throws InterruptedException if the operation was interrupted
+     */
     public static List<Device> getDevices() throws IOException, InterruptedException {
         SimpleExec exec = SimpleExec.getExec("xcrun");
         exec.getArguments().addAll(Arrays.asList("simctl", "list", "-j", "runtimes", "devices"));

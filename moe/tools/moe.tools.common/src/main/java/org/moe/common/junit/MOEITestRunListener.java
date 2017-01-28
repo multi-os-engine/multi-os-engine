@@ -115,5 +115,9 @@ public interface MOEITestRunListener {
      */
     void testRunEnded(long elapsedTime, Map<String, String> runMetrics);
 
+    /**
+     * Reports a test definition.
+     * @param test Test identifier
+     */
     void testDefined(MOETestIdentifier test);
 }

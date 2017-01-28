@@ -20,10 +20,24 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * NatJGen exec.
+ */
 public class BindingExec extends AbstractExec {
 
+    /**
+     * Is test run flag.
+     */
     private boolean test;
 
+    /**
+     * Creates a BindingExec executable.
+     * @param projectFile Project file
+     * @param sdkPath SDK path
+     * @param confFile Configuration file
+     * @param test Is test run flag
+     * @throws IOException if an I/O error occurs
+     */
     public BindingExec(File projectFile, String sdkPath, File confFile, boolean test) throws IOException {
         super(null, new File(sdkPath + File.separator + "tools"));
         this.test = test;

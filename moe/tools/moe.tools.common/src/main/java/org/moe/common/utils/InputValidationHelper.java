@@ -16,7 +16,15 @@ limitations under the License.
 
 package org.moe.common.utils;
 
+/**
+ * Utility class for validation.
+ */
 public class InputValidationHelper {
+    /**
+     * Validates that a string is an integer.
+     * @param value String to check
+     * @return True iff the string is an integer
+     */
     public static boolean isInteger(String value) {
         if(value == null || value.isEmpty()) {
             return false;
