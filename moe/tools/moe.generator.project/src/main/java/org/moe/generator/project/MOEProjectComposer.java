@@ -73,6 +73,7 @@ public class MOEProjectComposer implements Cloneable {
 
         /**
          * Creates a new Field instance.
+         *
          * @param description Field description
          */
         Field(String description) {
@@ -143,7 +144,9 @@ public class MOEProjectComposer implements Cloneable {
          * Single view application Kotlin project template.
          */
         IOS_KOTLIN_SINGLE_VIEW(Platform.IOS, Language.KOTLIN, "Single View Application", ID.SINGE_VIEW),
+        // @formatter:off
         ;
+        // @formatter:on
 
         /**
          * Platform.
@@ -167,10 +170,11 @@ public class MOEProjectComposer implements Cloneable {
 
         /**
          * Creates a new Template instance.
-         * @param group Platform
-         * @param language Programming language
+         *
+         * @param group       Platform
+         * @param language    Programming language
          * @param description Template description
-         * @param id Template ID
+         * @param id          Template ID
          */
         Template(String group, String language, String description, String id) {
             this.group = group;
@@ -229,6 +233,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Returns the directory where the project should be placed.
+     *
      * @return Directory where the project should be placed
      */
     public File getTargetDirectory() {
@@ -237,6 +242,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Sets the directory where the project should be placed.
+     *
      * @param targetDirectory Directory where the project should be placed
      * @return This instance
      */
@@ -247,6 +253,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Returns the name of the project.
+     *
      * @return Name of the project
      */
     public String getProjectName() {
@@ -255,6 +262,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Sets the name of the project.
+     *
      * @param projectName Name of the project
      * @return This instance
      */
@@ -265,6 +273,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Returns the name of the organization.
+     *
      * @return Name of the organization
      */
     public String getOrganizationName() {
@@ -273,6 +282,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Sets the name of the organization.
+     *
      * @param organizationName Name of the organization
      * @return This instance
      */
@@ -283,6 +293,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Returns the reverse DNS identifier of the organization.
+     *
      * @return Reverse DNS identifier of the organization
      */
     public String getOrganizationID() {
@@ -291,6 +302,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Sets the reverse DNS identifier of the organization.
+     *
      * @param organizationID Reverse DNS identifier of the organization
      * @return This instance
      */
@@ -301,6 +313,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Returns the Java package.
+     *
      * @return Java package
      */
     public String getPackageName() {
@@ -309,6 +322,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Sets the Java package.
+     *
      * @param packageName Java package
      * @return This instance
      */
@@ -319,6 +333,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Returns the is subproject flag.
+     *
      * @return Is subproject flag
      */
     public boolean isSubproject() {
@@ -327,6 +342,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Sets the is subproject flag.
+     *
      * @param subproject Is subproject flag
      * @return This instance
      */
@@ -337,6 +353,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Returns the Multi-OS Engine version.
+     *
      * @return Multi-OS Engine version
      */
     public String getMoeVersion() {
@@ -345,6 +362,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Sets the Multi-OS Engine version.
+     *
      * @param moeVersion Multi-OS Engine version
      * @return This instance
      */
@@ -355,6 +373,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Returns the template.
+     *
      * @return Template
      */
     public Template getTemplate() {
@@ -363,6 +382,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Sets the template.
+     *
      * @param template Template
      * @return This instance
      */
@@ -373,6 +393,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Composes the bundle ID from the organization ID and project name.
+     *
      * @return Bundle ID
      */
     public String getBundleID() {
@@ -381,6 +402,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Validates the values in the specified fields.
+     *
      * @param fields Fields to validate
      * @throws MOEProjectComposerValidationException if validation fails
      */
@@ -425,6 +447,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Creates the project.
+     *
      * @throws MOEProjectComposerException if validation or creation fails
      */
     public void compose() throws MOEProjectComposerException {
@@ -444,6 +467,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Validates that the specified value is not null.
+     *
      * @param field Owner field
      * @param value Value to validate
      * @throws MOEProjectComposerValidationException if requirement fails
@@ -456,6 +480,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Validates that the specified value is not empty.
+     *
      * @param field Owner field
      * @param value Value to validate
      * @throws MOEProjectComposerValidationException if requirement fails
@@ -469,6 +494,7 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Validates that the specified value is a valid java package string.
+     *
      * @param field Owner field
      * @param value Value to validate
      * @throws MOEProjectComposerValidationException if requirement fails
@@ -482,7 +508,8 @@ public class MOEProjectComposer implements Cloneable {
 
     /**
      * Validates that the specified value is a valid version number string.
-     * @param field Owner field
+     *
+     * @param field   Owner field
      * @param version Value to validate
      * @throws MOEProjectComposerValidationException if requirement fails
      */
@@ -556,7 +583,8 @@ public class MOEProjectComposer implements Cloneable {
 
         /**
          * Creates a new MOEProjectComposerValidationException instance.
-         * @param field Failed field
+         *
+         * @param field   Failed field
          * @param message Error message
          */
         public MOEProjectComposerValidationException(Field field, String message) {
@@ -566,6 +594,7 @@ public class MOEProjectComposer implements Cloneable {
 
         /**
          * Returns the failed field.
+         *
          * @return Failed field
          */
         public Field getField() {
@@ -579,6 +608,7 @@ public class MOEProjectComposer implements Cloneable {
     public static class MOEProjectComposerException extends Exception {
         /**
          * Creates a new MOEProjectComposerException instance.
+         *
          * @param message Error message
          */
         public MOEProjectComposerException(String message) {
@@ -587,6 +617,7 @@ public class MOEProjectComposer implements Cloneable {
 
         /**
          * Creates a new MOEProjectComposerException instance.
+         *
          * @param message Error message
          * @param cause   Cause
          */

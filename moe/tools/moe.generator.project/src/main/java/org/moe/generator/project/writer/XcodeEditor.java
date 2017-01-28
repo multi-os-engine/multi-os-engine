@@ -52,6 +52,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
     /**
      * Creates a new XcodeEditor instance.
+     *
      * @param stream Stream to read Xcode project from
      * @throws ProjectException if an error occurs
      */
@@ -62,6 +63,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
     /**
      * Creates a new XcodeEditor instance.
+     *
      * @param file File to read Xcode project from
      * @throws ProjectException if an error occurs
      */
@@ -72,6 +74,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
     /**
      * Returns the Xcode project file.
+     *
      * @return Xcode project file
      */
     public ProjectFile getProjectFile() {
@@ -150,9 +153,10 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
     /**
      * Configures the specified target.
-     * @param target Target to configure
+     *
+     * @param target   Target to configure
      * @param settings Settings
-     * @param isTest Is test target flag
+     * @param isTest   Is test target flag
      * @throws IOException if an I/O error occurs
      */
     private void configureTarget(PBXNativeTarget target, Settings settings, boolean isTest) throws IOException {
@@ -224,6 +228,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
     /**
      * Returns the target for the specified name.
+     *
      * @param targetName Target to look for
      * @return Target or null
      */
@@ -233,8 +238,9 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
     /**
      * Returns the target for the specified name.
+     *
      * @param targetName Target to look for
-     * @param nullFail Flag for failing on not found targets
+     * @param nullFail   Flag for failing on not found targets
      * @return Target or null
      */
     protected PBXNativeTarget getTarget(final String targetName, boolean nullFail) {
@@ -256,6 +262,7 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
     /**
      * Returns the group for the specified name.
+     *
      * @param groupName Group to look for
      * @return Group
      */

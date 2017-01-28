@@ -38,6 +38,7 @@ public class XcodeTemplateEditor extends XcodeEditor {
 
     /**
      * Creates a new XcodeEditor instance.
+     *
      * @param stream Stream to read Xcode project from
      * @throws ProjectException if an error occurs
      */
@@ -47,6 +48,7 @@ public class XcodeTemplateEditor extends XcodeEditor {
 
     /**
      * Creates a new XcodeEditor instance.
+     *
      * @param file File to read Xcode project from
      * @throws ProjectException if an error occurs
      */
@@ -81,6 +83,7 @@ public class XcodeTemplateEditor extends XcodeEditor {
 
     /**
      * Updates an Xcode project with the specified settings.
+     *
      * @param settings Settings to update with
      * @throws IOException if an I/O error occurs
      */
@@ -97,10 +100,11 @@ public class XcodeTemplateEditor extends XcodeEditor {
 
     /**
      * Configures the specified target.
+     *
      * @param settings Settings
-     * @param target Target to configure
-     * @param group Target's group
-     * @param isTest Is test target flag
+     * @param target   Target to configure
+     * @param group    Target's group
+     * @param isTest   Is test target flag
      * @throws IOException if an I/O error occurs
      */
     private void configureTarget(Settings settings, PBXNativeTarget target, PBXGroup group, boolean isTest)

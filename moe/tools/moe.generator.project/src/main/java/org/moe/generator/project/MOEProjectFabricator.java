@@ -55,6 +55,7 @@ public class MOEProjectFabricator {
 
     /**
      * Creates a new MOEProjectFabricator instance.
+     *
      * @param composer Project composer
      */
     public MOEProjectFabricator(MOEProjectComposer composer) {
@@ -67,7 +68,8 @@ public class MOEProjectFabricator {
 
     /**
      * Creates the project.
-     * @throws IOException if an I/O error occurs
+     *
+     * @throws IOException      if an I/O error occurs
      * @throws ProjectException if an error occurs during Xcode project configuration
      */
     public void fabricate() throws IOException, ProjectException {
@@ -82,6 +84,7 @@ public class MOEProjectFabricator {
 
     /**
      * Prepares the Gradle portion of the template.
+     *
      * @throws IOException if an I/O error occurs
      */
     private void prepareGradleProject() throws IOException {
@@ -104,7 +107,8 @@ public class MOEProjectFabricator {
 
     /**
      * Instantiates the template.
-     * @throws IOException if an I/O error occurs
+     *
+     * @throws IOException      if an I/O error occurs
      * @throws ProjectException if an error occurs during Xcode project configuration
      */
     private void reifyTemplate() throws IOException, ProjectException {
@@ -135,6 +139,7 @@ public class MOEProjectFabricator {
 
     /**
      * Copies files from the template to the target directory.
+     *
      * @param taskObject Task
      * @throws IOException if an I/O error occurs
      */
@@ -161,6 +166,7 @@ public class MOEProjectFabricator {
 
     /**
      * Copies files from the template to the target's source directory.
+     *
      * @param taskObject Task
      * @throws IOException if an I/O error occurs
      */
@@ -192,8 +198,9 @@ public class MOEProjectFabricator {
 
     /**
      * Creates the Xcode project for the template.
+     *
      * @param taskObject Task
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      * @throws ProjectException if an error occurs during Xcode project configuration
      */
     private void templateXcodeproj(JsonObject taskObject) throws ProjectException, IOException {
@@ -234,6 +241,7 @@ public class MOEProjectFabricator {
 
     /**
      * Checks a template condition.
+     *
      * @param taskObject Task
      * @return True iff the condition is true
      */
@@ -256,6 +264,7 @@ public class MOEProjectFabricator {
 
     /**
      * Creates a directory.
+     *
      * @param file Directory to create
      * @return The directory
      * @throws IOException if an I/O error occurs
@@ -272,6 +281,7 @@ public class MOEProjectFabricator {
 
     /**
      * Creates a directory relative to the rootDir.
+     *
      * @param subpaths Subdirectory names
      * @return Created directory
      * @throws IOException if an I/O error occurs
@@ -286,9 +296,10 @@ public class MOEProjectFabricator {
 
     /**
      * Writes a string resource the specified file and replaces placeholders.
+     *
      * @param resource String resource
-     * @param rootDir Root directory
-     * @param subdirs Subdirectories and file
+     * @param rootDir  Root directory
+     * @param subdirs  Subdirectories and file
      * @return Created file
      * @throws IOException if an I/O error occurs
      */
@@ -349,9 +360,10 @@ public class MOEProjectFabricator {
 
     /**
      * Copies a string resource into the specified file.
+     *
      * @param resource String resource
-     * @param rootDir Root directory
-     * @param subdirs Subdirectories and file
+     * @param rootDir  Root directory
+     * @param subdirs  Subdirectories and file
      * @return Created file
      * @throws IOException if an I/O error occurs
      */

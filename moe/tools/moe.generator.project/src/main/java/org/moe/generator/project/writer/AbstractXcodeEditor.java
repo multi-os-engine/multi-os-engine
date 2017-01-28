@@ -49,6 +49,7 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Updates an Xcode project with the specified settings.
+     *
      * @param settings Settings to update with
      * @throws IOException if an I/O error occurs
      */
@@ -56,9 +57,10 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Creates a new PBXFileReference reference.
-     * @param file Project file
-     * @param name File name
-     * @param filePath File path
+     *
+     * @param file       Project file
+     * @param name       File name
+     * @param filePath   File path
      * @param sourceTree Source tree
      * @return New PBXFileReference reference
      */
@@ -80,7 +82,8 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Creates a new PBXBuildFile reference.
-     * @param file  Project file
+     *
+     * @param file          Project file
      * @param fileReference PBXFileReference reference
      * @return New PBXBuildFile reference
      */
@@ -95,7 +98,8 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Gets or creates a new PBXSourcesBuildPhase.
-     * @param file Project file
+     *
+     * @param file   Project file
      * @param target Native target to search in/add the phase to
      * @return A PBXSourcesBuildPhase
      */
@@ -118,7 +122,8 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Gets or creates a new MOE specific PBXShellScriptBuildPhase.
-     * @param file Project file
+     *
+     * @param file   Project file
      * @param target Native target to search in/add the phase to
      * @return MOE specific PBXShellScriptBuildPhase
      */
@@ -148,6 +153,7 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Gets the first PBXFrameworksBuildPhase from the specified target.
+     *
      * @param target Native target to search in
      * @return PBXFrameworksBuildPhase or <code>null</code>
      */
@@ -163,6 +169,7 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Clean op build settings in the specified target.
+     *
      * @param target Target to clean up the build settings in
      */
     public static void cleanupBuildSettings(PBXNativeTarget target) {
@@ -176,9 +183,10 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Gets or creates a subgroup in the specified group.
-     * @param file Project file
+     *
+     * @param file  Project file
      * @param group Parent group
-     * @param name Child group name
+     * @param name  Child group name
      * @return The child group
      */
     protected PBXGroup getOrCreateSubGroup(ProjectFile file, PBXGroup group, String name) {
@@ -203,6 +211,7 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Removes all build settings with 'MOE_' prefix from the specified target.
+     *
      * @param target Target to remove the build settings from
      */
     protected void removeMOEPrefixKeys(PBXNativeTarget target) {
@@ -223,6 +232,7 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Creates a map for Debug and Release configurations with the same value.
+     *
      * @param value Value for both configurations
      * @return Configuration map object
      */
@@ -232,7 +242,8 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Creates a map for separate Debug and Release configuration values.
-     * @param debugValue Debug value
+     *
+     * @param debugValue   Debug value
      * @param releaseValue Release value
      * @return Configuration map object
      */
@@ -251,8 +262,9 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Returns the value for the specified build setting.
-     * @param target Target to get build settings from
-     * @param key Build settings key
+     *
+     * @param target       Target to get build settings from
+     * @param key          Build settings key
      * @param defaultValue Default value for key
      * @return Value map for key or default value
      */
@@ -285,9 +297,10 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Sets the value for the specified build setting.
+     *
      * @param target Target to get build settings from
-     * @param key Build settings key
-     * @param value Value for key
+     * @param key    Build settings key
+     * @param value  Value for key
      */
     public static void setBuildSetting(PBXNativeTarget target, String key, String value) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
@@ -306,10 +319,12 @@ public abstract class AbstractXcodeEditor {
             buildSettings.put(key, newValue);
         }
     }
+
     /**
      * Sets the value for the specified build setting.
+     *
      * @param target Target to get build settings from
-     * @param key Build settings key
+     * @param key    Build settings key
      * @param values Configuration specific values for key
      */
     public static void setBuildSetting(PBXNativeTarget target, String key, Map<String, String> values) {
@@ -335,9 +350,10 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Appends the specified value to the build setting.
+     *
      * @param target Target to get build settings from
-     * @param key Build settings key
-     * @param value Value for key
+     * @param key    Build settings key
+     * @param value  Value for key
      */
     public static void appendBuildSetting(PBXNativeTarget target, String key, String value) {
         for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
@@ -368,6 +384,7 @@ public abstract class AbstractXcodeEditor {
 
     /**
      * Returns the relative path of the specified path compared to the base path.
+     *
      * @param base Base path
      * @param path Other path
      * @return Relative path

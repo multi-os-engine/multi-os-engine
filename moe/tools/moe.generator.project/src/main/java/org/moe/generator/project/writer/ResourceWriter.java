@@ -151,7 +151,8 @@ public class ResourceWriter {
 
     /**
      * Checks the line for region directives.
-     * @param line Line to check
+     *
+     * @param line        Line to check
      * @param regionStack Region stack
      * @return True iff region directive was found
      */
