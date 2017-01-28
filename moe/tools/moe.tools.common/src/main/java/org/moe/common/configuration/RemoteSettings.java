@@ -100,7 +100,7 @@ public class RemoteSettings {
      *
      * @param prefix String object
      * @param properties Properties object
-     * @param args List<String> object
+     * @param args List object
      */
 	public static void getArguments(String prefix, Properties properties, List<String> args) {
 		args.add(prefix + HOST_PROPERTY + properties.getProperty(HOST_KEY));

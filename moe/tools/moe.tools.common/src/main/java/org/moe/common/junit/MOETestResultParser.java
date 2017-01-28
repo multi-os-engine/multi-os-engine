@@ -31,7 +31,9 @@ public class MOETestResultParser {
 	
 	public static final String TEST_RUN_DEFINE = "%TESTD  ";
 	
-	/** unfinished message line, stored for next packet */
+	/**
+	 * Unfinished message line, stored for next packet.
+	 */
     private String mUnfinishedLine = null;
 
     private final ArrayList<String> mArray = new ArrayList<String>();

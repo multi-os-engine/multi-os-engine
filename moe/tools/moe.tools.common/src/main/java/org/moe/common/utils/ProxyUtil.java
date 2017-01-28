@@ -36,7 +36,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ProxyUtil {
 
     /**
-     * Logger
+     * Logger.
      */
     private static final Logger LOG = LoggerFactory.getLogger(ProxyUtil.class);
 
@@ -268,7 +268,7 @@ public class ProxyUtil {
     }
 
     /**
-     * Stops the
+     * Stops the proxy.
      */
     public synchronized void stop() {
         LOG.debug(localPort + ": Stopping proxy");

@@ -96,7 +96,7 @@ public abstract class AbstractConfigurationAppender {
     }
 
     /**
-     * Runs the appender for the specified strings
+     * Runs the appender for the specified strings.
      *
      * @param options option strings
      */
@@ -151,7 +151,7 @@ public abstract class AbstractConfigurationAppender {
     }
 
     /**
-     * Does a lazy linebreak for the specified string
+     * Does a lazy linebreak for the specified string.
      *
      * @param value string to linebreak
      * @param width line width

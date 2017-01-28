@@ -42,6 +42,8 @@ public class MOETestIdentifier {
 
     /**
      * Returns the fully qualified class name of the test.
+     *
+     * @return Fully qualified class name of the test
      */
     public String getClassName() {
         return mClassName;
@@ -49,6 +51,8 @@ public class MOETestIdentifier {
 
     /**
      * Returns the name of the test.
+     *
+     * @return Name of the test
      */
     public String getTestName() {
         return mTestName;

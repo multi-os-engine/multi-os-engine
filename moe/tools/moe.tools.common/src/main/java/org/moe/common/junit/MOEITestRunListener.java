@@ -20,9 +20,9 @@ import java.util.Map;
 
 /**
  * Receives event notifications during instrumentation test runs.
- * <p/>
+ * <p>
  * Patterned after org.junit.runner.notification.RunListener
- * <p/>
+ * <p>
  * The sequence of calls will be:
  * <ul>
  * <li> testRunStarted
@@ -55,7 +55,7 @@ public interface MOEITestRunListener {
 
     /**
      * Reports the failure of a individual test case.
-     * <p/>
+     * <p>
      * Will be called between testStarted and testEnded.
      *
      * @param test identifies the test
@@ -65,7 +65,7 @@ public interface MOEITestRunListener {
 
     /**
      * Called when an atomic test flags that it assumes a condition that is
-     * false
+     * false.
      *
      * @param test identifies the test
      * @param trace stack trace of failure
@@ -82,7 +82,7 @@ public interface MOEITestRunListener {
 
     /**
      * Reports the execution end of an individual test case.
-     * <p/>
+     * <p>
      * If {@link #testFailed} was not invoked, this test passed.  Also returns any key/value
      * metrics which may have been emitted during the test case's execution.
      *
@@ -100,7 +100,7 @@ public interface MOEITestRunListener {
 
     /**
      * Reports test run stopped before completion due to a user request.
-     * <p/>
+     * <p>
      * TODO: currently unused, consider removing
      *
      * @param elapsedTime device reported elapsed time, in milliseconds

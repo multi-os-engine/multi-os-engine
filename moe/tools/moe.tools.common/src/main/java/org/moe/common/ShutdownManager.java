@@ -26,7 +26,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 public final class ShutdownManager implements Runnable {
     /**
-     * Logger
+     * Logger.
      */
     private static final Logger LOG = LoggerFactory.getLogger(ShutdownManager.class);
 
@@ -48,7 +48,7 @@ public final class ShutdownManager implements Runnable {
     private final ConcurrentLinkedQueue<Runnable> postRunnables = new ConcurrentLinkedQueue<Runnable>();
 
     /**
-     * Registers a Runnable to run at shutdown
+     * Registers a Runnable to run at shutdown.
      *
      * @param runnable runnable
      */
@@ -57,7 +57,7 @@ public final class ShutdownManager implements Runnable {
     }
 
     /**
-     * Registers a Runnable to run after running shutdown hooks
+     * Registers a Runnable to run after running shutdown hooks.
      *
      * @param runnable runnable
      */

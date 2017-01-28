@@ -117,7 +117,7 @@ public class NativeUtil {
     }
 
     /**
-     * Retrieves an arch spec for the specified OS name and OS arch
+     * Retrieves an arch spec for the specified OS name and OS arch.
      *
      * @param osName OS name
      * @param osArch OS arch
@@ -170,7 +170,7 @@ public class NativeUtil {
     }
 
     /**
-     * Returns the unified system name
+     * Returns the unified system name.
      *
      * @return the unified system name
      */
@@ -186,7 +186,7 @@ public class NativeUtil {
     }
 
     /**
-     * Returns the unified architecture
+     * Returns the unified architecture.
      *
      * @return the unified architecture
      */
@@ -269,7 +269,7 @@ public class NativeUtil {
      *
      * @param natives natives to copy
      * @param temp    temp dir to copy to
-     * @throws IOException
+     * @throws IOException if an error occurs
      */
     private static void copyToTemp(List<NativeLib> natives, File temp)
             throws IOException {
@@ -284,8 +284,7 @@ public class NativeUtil {
      * @param input native to copy
      * @param temp  temp dir to copy to
      * @return copy
-     * @throws IOException
-     * @throws FileNotFoundException
+     * @throws IOException if an error occurs
      */
     private static File copyToTemp(NativeLib input, File temp) throws IOException {
         String inFilePath = input.getInternalPath();
