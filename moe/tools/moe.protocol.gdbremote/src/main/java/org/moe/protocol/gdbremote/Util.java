@@ -16,58 +16,54 @@ limitations under the License.
 
 package org.moe.protocol.gdbremote;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Container utilities.
  */
 class Util {
 
-	/**
-	 * Construct a map from a string.
-	 *
-	 * @param string
-	 *            string containing the map
-	 * @param entryDelim
-	 *            entry delimiter string
-	 * @param kvDelim
-	 *            key-value delimiter string
-	 * @return constructed map
-	 */
-	static Map<String, String> converToMap(String string, String entryDelim,
-			String kvDelim) {
-		String entry_d = "\\Q" + entryDelim + "\\E";
-		String entries[] = string.split(entry_d);
-		HashMap<String, String> map = new HashMap<String, String>(
-				entries.length);
-		for (String entry : entries) {
-			if (entry.length() == 0) {
-				continue;
-			}
-			int idx = entry.indexOf(kvDelim);
-			if (idx < 0) {
-				map.put(entry, null);
-			} else {
-				map.put(entry.substring(0, idx),
-						entry.substring(idx + kvDelim.length()));
-			}
-		}
-		return map;
-	}
+    /**
+     * Construct a map from a string.
+     *
+     * @param string     string containing the map
+     * @param entryDelim entry delimiter string
+     * @param kvDelim    key-value delimiter string
+     * @return constructed map
+     */
+    static Map<String, String> converToMap(String string, String entryDelim, String kvDelim) {
+        String entry_d = "\\Q" + entryDelim + "\\E";
+        String entries[] = string.split(entry_d);
+        HashMap<String, String> map = new HashMap<String, String>(entries.length);
+        for (String entry : entries) {
+            if (entry.length() == 0) {
+                continue;
+            }
+            int idx = entry.indexOf(kvDelim);
+            if (idx < 0) {
+                map.put(entry, null);
+            } else {
+                map.put(entry.substring(0, idx), entry.substring(idx + kvDelim.length()));
+            }
+        }
+        return map;
+    }
 
-	/**
-	 * Construct a list from a string.
-	 *
-	 * @param string
-	 *            string containing the list
-	 * @param delim
-	 *            element delimiter string
-	 * @return constructed list
-	 */
-	static List<String> convertToList(String string, String delim) {
-		String elem_d = "\\Q" + delim + "\\E";
-		String elems[] = string.split(elem_d);
-		return new ArrayList<String>(Arrays.asList(elems));
-	}
+    /**
+     * Construct a list from a string.
+     *
+     * @param string string containing the list
+     * @param delim  element delimiter string
+     * @return constructed list
+     */
+    static List<String> convertToList(String string, String delim) {
+        String elem_d = "\\Q" + delim + "\\E";
+        String elems[] = string.split(elem_d);
+        return new ArrayList<String>(Arrays.asList(elems));
+    }
 
 }
