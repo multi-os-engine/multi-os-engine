@@ -96,6 +96,10 @@ public final class clang {
      * which is a workaround for a conflict between LLVM and JVM exception handling which
      * causes a JVM crash. If this is not set then llvm::CrashRecoveryContext can cause a
      * crash from which we cannot recover.
+     *
+     * @param excludeDeclarationsFromPCH Exclude declarations from PCH
+     * @param displayDiagnostics Display diagnostics
+     * @return Index
      */
     public static VoidPtr clang_createIndex(int excludeDeclarationsFromPCH, int displayDiagnostics) {
         /* THIS IS A VERY IMPORTANT FIX! DO NOT REMOVE! */
