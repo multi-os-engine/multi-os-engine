@@ -21,45 +21,44 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
 @SuppressWarnings("restriction")
 public class MOETestResultParser {
-	
-	private MOEITestRunListener listener;
-	
-	public static final String TEST_IGNORED = "%IGNORED";
-	
-	public static final String TEST_RUN_DEFINE = "%TESTD  ";
-	
-	/**
-	 * Unfinished message line, stored for next packet.
-	 */
+
+    private MOEITestRunListener listener;
+
+    public static final String TEST_IGNORED = "%IGNORED";
+
+    public static final String TEST_RUN_DEFINE = "%TESTD  ";
+
+    /**
+     * Unfinished message line, stored for next packet.
+     */
     private String mUnfinishedLine = null;
 
     private final ArrayList<String> mArray = new ArrayList<String>();
-    
+
     private boolean mTrimLines = true;
-    
+
     StringBuffer errorBuffer;
-    
+
     MOETestIdentifier failTest = null;
-	
-	public MOETestResultParser(MOEITestRunListener l) {
-		this.listener = l;
-		this.errorBuffer = new StringBuffer();
-		this.failTest = null;
-	}
 
-	public void addOutput(byte[] buffer, int i, int read) {
-		try {
-			addOutput(new String(buffer, 0, read, "UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			addOutput(new String(buffer, 0, read));
-		}
-		
-	}
+    public MOETestResultParser(MOEITestRunListener l) {
+        this.listener = l;
+        this.errorBuffer = new StringBuffer();
+        this.failTest = null;
+    }
 
-	public final void addOutput(String s) {
+    public void addOutput(byte[] buffer, int i, int read) {
+        try {
+            addOutput(new String(buffer, 0, read, "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            addOutput(new String(buffer, 0, read));
+        }
+
+    }
+
+    public final void addOutput(String s) {
         if (isCancelled() == false) {
 
             // ok we've got a string
@@ -107,103 +106,103 @@ public class MOETestResultParser {
         }
     }
 
-	private boolean isCancelled() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
-	public void processNewLines(String[] lines) {
-		
+    private boolean isCancelled() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    public void processNewLines(String[] lines) {
+
         for (String line : lines) {
             parse(normalizeLine(line));
         }
     }
 
-	private void parse(String line) {
-		
-		if (line.startsWith(MessageIds.TEST_RUN_START)) {
-			String num = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
-			int testCount = Integer.valueOf(num);
-			listener.testRunStarted("", testCount);
-			
-		} else if (line.startsWith(MessageIds.TEST_START)) {
-			String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
-			String testClass = test.substring(0, test.indexOf("-"));
-			String testMethod = test.substring(test.indexOf("-") + 1, test.length());
-			listener.testStarted(new MOETestIdentifier(testClass, testMethod));
-			
-		} else if (line.startsWith(MessageIds.TEST_END)) {
-			if (failTest != null) {
-				listener.testFailed(failTest, errorBuffer.toString());
-				this.errorBuffer = new StringBuffer();
-				this.failTest = null;
-			}
-			String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
-			String testClass = test.substring(0, test.indexOf("-"));
-			String testMethod = test.substring(test.indexOf("-") + 1, test.length());
+    private void parse(String line) {
+
+        if (line.startsWith(MessageIds.TEST_RUN_START)) {
+            String num = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
+            int testCount = Integer.valueOf(num);
+            listener.testRunStarted("", testCount);
+
+        } else if (line.startsWith(MessageIds.TEST_START)) {
+            String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
+            String testClass = test.substring(0, test.indexOf("-"));
+            String testMethod = test.substring(test.indexOf("-") + 1, test.length());
+            listener.testStarted(new MOETestIdentifier(testClass, testMethod));
+
+        } else if (line.startsWith(MessageIds.TEST_END)) {
+            if (failTest != null) {
+                listener.testFailed(failTest, errorBuffer.toString());
+                this.errorBuffer = new StringBuffer();
+                this.failTest = null;
+            }
+            String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
+            String testClass = test.substring(0, test.indexOf("-"));
+            String testMethod = test.substring(test.indexOf("-") + 1, test.length());
             Map<String, String> runMetrics = new HashMap<String, String>();
-			listener.testEnded(new MOETestIdentifier(testClass, testMethod), runMetrics);
-			
-		} else if (line.startsWith(MessageIds.TEST_FAILED)) {
-			String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
-			String testMethod = test.substring(0, test.indexOf("("));
-			String testClass = test.substring(test.indexOf("(") + 1, test.indexOf(")"));
-			String errorMsg = test.substring(test.indexOf(":") + 1, test.length());
-			errorBuffer.append(errorMsg);
-			failTest = new MOETestIdentifier(testClass, testMethod);
-		
-		} else if (line.startsWith(MessageIds.TEST_RUN_END)) {
-			if (failTest != null) {
-				listener.testFailed(failTest, errorBuffer.toString());
-				this.errorBuffer = new StringBuffer();
-				this.failTest = null;
-			}
-			String time = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
+            listener.testEnded(new MOETestIdentifier(testClass, testMethod), runMetrics);
+
+        } else if (line.startsWith(MessageIds.TEST_FAILED)) {
+            String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
+            String testMethod = test.substring(0, test.indexOf("("));
+            String testClass = test.substring(test.indexOf("(") + 1, test.indexOf(")"));
+            String errorMsg = test.substring(test.indexOf(":") + 1, test.length());
+            errorBuffer.append(errorMsg);
+            failTest = new MOETestIdentifier(testClass, testMethod);
+
+        } else if (line.startsWith(MessageIds.TEST_RUN_END)) {
+            if (failTest != null) {
+                listener.testFailed(failTest, errorBuffer.toString());
+                this.errorBuffer = new StringBuffer();
+                this.failTest = null;
+            }
+            String time = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
             Map<String, String> runMetrics = new HashMap<String, String>();
             listener.testRunEnded(Integer.valueOf(time), runMetrics);
-			
-		} else if (line.startsWith(TEST_IGNORED)) {
-			String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
-			String testClass = test.substring(0, test.indexOf("-"));
-			String testMethod = test.substring(test.indexOf("-") + 1, test.length());
-			MOETestIdentifier ignoredTest = new MOETestIdentifier(testClass, testMethod);
-			ignoredTest.setIgnored(true);
-            listener.testStarted(ignoredTest);
-			listener.testIgnored(ignoredTest);
-			
-		} else if (line.startsWith(TEST_RUN_DEFINE)) {
-			String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
-			String testClass = test.substring(0, test.indexOf("-"));
-			String testMethod = test.substring(test.indexOf("-") + 1, test.length());
-			listener.testDefined(new MOETestIdentifier(testClass, testMethod));
-			
-		} else {
-			if (failTest != null) {
-				errorBuffer.append("\n");
-				errorBuffer.append(line);
-			}
-		}
-	}
 
-	private String normalizeLine(String s) {
-		int index = 0;
-		if ((index = s.indexOf(MessageIds.TEST_RUN_START)) > 0) {
-			s = s.substring(index, s.length());
-		} else if ((index = s.indexOf(MessageIds.TEST_START)) > 0) {
-			s = s.substring(index, s.length());
-		} else if ((index = s.indexOf(MessageIds.TEST_END)) > 0) {
-			s = s.substring(index, s.length());
-		} else if ((index = s.indexOf(MessageIds.TEST_FAILED)) > 0) {
-			s = s.substring(index, s.length());
-		} else if ((index = s.indexOf(MessageIds.TEST_RUN_END)) > 0) {
-			s = s.substring(index, s.length());
-		} else if ((index = s.indexOf(MessageIds.TEST_IGNORED)) > 0) {
-			s = s.substring(index, s.length());
-		} else if ((index = s.indexOf(TEST_RUN_DEFINE)) > 0) {
-			s = s.substring(index, s.length());
-		}
-		return s;
-	}
+        } else if (line.startsWith(TEST_IGNORED)) {
+            String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
+            String testClass = test.substring(0, test.indexOf("-"));
+            String testMethod = test.substring(test.indexOf("-") + 1, test.length());
+            MOETestIdentifier ignoredTest = new MOETestIdentifier(testClass, testMethod);
+            ignoredTest.setIgnored(true);
+            listener.testStarted(ignoredTest);
+            listener.testIgnored(ignoredTest);
+
+        } else if (line.startsWith(TEST_RUN_DEFINE)) {
+            String test = line.substring(MessageIds.MSG_HEADER_LENGTH + 1, line.length());
+            String testClass = test.substring(0, test.indexOf("-"));
+            String testMethod = test.substring(test.indexOf("-") + 1, test.length());
+            listener.testDefined(new MOETestIdentifier(testClass, testMethod));
+
+        } else {
+            if (failTest != null) {
+                errorBuffer.append("\n");
+                errorBuffer.append(line);
+            }
+        }
+    }
+
+    private String normalizeLine(String s) {
+        int index = 0;
+        if ((index = s.indexOf(MessageIds.TEST_RUN_START)) > 0) {
+            s = s.substring(index, s.length());
+        } else if ((index = s.indexOf(MessageIds.TEST_START)) > 0) {
+            s = s.substring(index, s.length());
+        } else if ((index = s.indexOf(MessageIds.TEST_END)) > 0) {
+            s = s.substring(index, s.length());
+        } else if ((index = s.indexOf(MessageIds.TEST_FAILED)) > 0) {
+            s = s.substring(index, s.length());
+        } else if ((index = s.indexOf(MessageIds.TEST_RUN_END)) > 0) {
+            s = s.substring(index, s.length());
+        } else if ((index = s.indexOf(MessageIds.TEST_IGNORED)) > 0) {
+            s = s.substring(index, s.length());
+        } else if ((index = s.indexOf(TEST_RUN_DEFINE)) > 0) {
+            s = s.substring(index, s.length());
+        }
+        return s;
+    }
 
     public class MessageIds {
 
@@ -225,5 +224,5 @@ public class MOETestResultParser {
 
         public static final String TEST_RUN_END = "%RUNTIME";
     }
-	
+
 }

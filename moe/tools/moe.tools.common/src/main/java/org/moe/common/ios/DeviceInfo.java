@@ -33,6 +33,7 @@ public class DeviceInfo implements Serializable {
 
     /**
      * Creates a new DeviceInfo instance.
+     *
      * @param name Device name
      * @param udid Device UDID
      */
@@ -43,6 +44,7 @@ public class DeviceInfo implements Serializable {
 
     /**
      * Returns the device's name.
+     *
      * @return Device's name
      */
     public String name() {
@@ -51,6 +53,7 @@ public class DeviceInfo implements Serializable {
 
     /**
      * Returns the device's UDID.
+     *
      * @return Device's UDID
      */
     public String udid() {

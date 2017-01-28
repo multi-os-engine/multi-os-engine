@@ -32,10 +32,11 @@ public class BindingExec extends AbstractExec {
 
     /**
      * Creates a BindingExec executable.
+     *
      * @param projectFile Project file
-     * @param sdkPath SDK path
-     * @param confFile Configuration file
-     * @param test Is test run flag
+     * @param sdkPath     SDK path
+     * @param confFile    Configuration file
+     * @param test        Is test run flag
      * @throws IOException if an I/O error occurs
      */
     public BindingExec(File projectFile, String sdkPath, File confFile, boolean test) throws IOException {

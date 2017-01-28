@@ -49,7 +49,7 @@ public class Port {
         if (string.matches("[\\d]+")) {
             int port = Integer.parseInt(string);
             if (port >= 0 && port <= 65535) {
-                return new Port((short) (port & 0xFFFF));
+                return new Port((short)(port & 0xFFFF));
             }
         }
 
@@ -84,13 +84,13 @@ public class Port {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Port port1 = (Port) o;
+        Port port1 = (Port)o;
 
         return port == port1.port;
     }
 
     @Override
     public int hashCode() {
-        return (int) port;
+        return (int)port;
     }
 }

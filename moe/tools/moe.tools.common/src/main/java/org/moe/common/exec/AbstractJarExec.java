@@ -27,86 +27,89 @@ import java.util.ArrayList;
  */
 public abstract class AbstractJarExec extends AbstractExec {
 
-	/**
-	 * VM arguments.
-	 */
-	private final ArrayList<String> vmArguments = new ArrayList<String>();
+    /**
+     * VM arguments.
+     */
+    private final ArrayList<String> vmArguments = new ArrayList<String>();
 
-	/**
-	 * Jar file.
-	 */
-	private final File jar;
+    /**
+     * Jar file.
+     */
+    private final File jar;
 
-	/**
-	 * Creates a new AbstractJarExec instance.
-	 * @param jar Jar file
-	 * @param workingDir Working directory
-	 */
-	protected AbstractJarExec(File jar, File workingDir) {
-		super(getDefaultJavaExec(), workingDir);
-		if (jar == null) {
-			throw new NullPointerException();
-		}
-		this.jar = jar;
-	}
+    /**
+     * Creates a new AbstractJarExec instance.
+     *
+     * @param jar        Jar file
+     * @param workingDir Working directory
+     */
+    protected AbstractJarExec(File jar, File workingDir) {
+        super(getDefaultJavaExec(), workingDir);
+        if (jar == null) {
+            throw new NullPointerException();
+        }
+        this.jar = jar;
+    }
 
-	/**
-	 * Returns the VM arguments list.
-	 * @return VM arguments list
-	 */
-	public ArrayList<String> getVmArguments() {
-		return vmArguments;
-	}
+    /**
+     * Returns the VM arguments list.
+     *
+     * @return VM arguments list
+     */
+    public ArrayList<String> getVmArguments() {
+        return vmArguments;
+    }
 
-	/**
-	 * Returns the default Java executable's name.
-	 * @return default Java executable's name
-	 */
-	public static String getDefaultJavaExec() {
-		return "java";
-	}
-	
-	@Override
-	protected String lookupExec() {
-		return null;
-	}
+    /**
+     * Returns the default Java executable's name.
+     *
+     * @return default Java executable's name
+     */
+    public static String getDefaultJavaExec() {
+        return "java";
+    }
 
-	@Override
-	protected void applyArguments(ArrayList<String> cmds) {
-		cmds.addAll(vmArguments);
-		cmds.add("-jar");
-		cmds.add(jar.getAbsolutePath());
-		super.applyArguments(cmds);
-	}
+    @Override
+    protected String lookupExec() {
+        return null;
+    }
 
-	/**
-	 * Copies an resource to an external temp file.
-	 * @param inFilePath Resource path
-	 * @param outFileName Output temp file name
-	 * @return Output file
-	 * @throws IOException if an I/O error occurs
-	 */
-	protected static File copyToTmpFromResource(String inFilePath,
-			String outFileName) throws IOException {
-		File of = File.createTempFile(outFileName, ".jar");
-		of.delete();
-		of.createNewFile();
-		of.deleteOnExit();
-		InputStream is = AbstractJarExec.class.getResourceAsStream(inFilePath);
-		try {
-			FileOutputStream fos = new FileOutputStream(of);
-			try {
-				byte buffer[] = new byte[64 * 1024];
-				int read;
-				while ((read = is.read(buffer)) != -1) {
-					fos.write(buffer, 0, read);
-				}
-			}finally {
-				fos.close();
-			}
-		}finally {
-			is.close();
-		}
-		return of;
-	}
+    @Override
+    protected void applyArguments(ArrayList<String> cmds) {
+        cmds.addAll(vmArguments);
+        cmds.add("-jar");
+        cmds.add(jar.getAbsolutePath());
+        super.applyArguments(cmds);
+    }
+
+    /**
+     * Copies an resource to an external temp file.
+     *
+     * @param inFilePath  Resource path
+     * @param outFileName Output temp file name
+     * @return Output file
+     * @throws IOException if an I/O error occurs
+     */
+    protected static File copyToTmpFromResource(String inFilePath, String outFileName) throws IOException {
+        File of = File.createTempFile(outFileName, ".jar");
+        of.delete();
+        of.createNewFile();
+        of.deleteOnExit();
+        InputStream is = AbstractJarExec.class.getResourceAsStream(inFilePath);
+        try {
+            FileOutputStream fos = new FileOutputStream(of);
+            try {
+                byte buffer[] = new byte[64 * 1024];
+                int read;
+                while ((read = is.read(buffer)) != -1) {
+                    fos.write(buffer, 0, read);
+                }
+            } finally {
+                fos.close();
+            }
+        } finally {
+            is.close();
+        }
+        return of;
+    }
 }

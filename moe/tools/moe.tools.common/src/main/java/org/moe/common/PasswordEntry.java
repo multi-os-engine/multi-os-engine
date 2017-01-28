@@ -47,7 +47,7 @@ public class PasswordEntry implements Serializable {
         try {
             Field field = String.class.getDeclaredField(fieldName);
             field.setAccessible(true);
-            char[] chars = (char[]) field.get(target);
+            char[] chars = (char[])field.get(target);
             Arrays.fill(chars, value);
         } catch (NoSuchFieldException e1) {
             throw new Exception("Failed to get field with name: " + fieldName + "\n" + e1.getMessage());
@@ -107,7 +107,7 @@ public class PasswordEntry implements Serializable {
         byte[] resultBytes = new byte[byteBuffer.remaining()];
         byteBuffer.get(resultBytes);
 
-        Arrays.fill(byteBuffer.array(), (byte) 0);
+        Arrays.fill(byteBuffer.array(), (byte)0);
 
         return resultBytes;
     }

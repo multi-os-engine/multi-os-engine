@@ -30,6 +30,7 @@ public class ExecRunner extends ExecRunnerBase {
 
     /**
      * Created a new ExecRunner instance.
+     *
      * @param builder Process builder
      */
     ExecRunner(ProcessBuilder builder) {
@@ -41,6 +42,7 @@ public class ExecRunner extends ExecRunnerBase {
 
     /**
      * Returns the ProcessBuilder.
+     *
      * @return ProcessBuilder
      */
     public ProcessBuilder getBuilder() {
@@ -69,6 +71,7 @@ public class ExecRunner extends ExecRunnerBase {
 
     /**
      * Startes the process and stream listeners.
+     *
      * @return Process instance
      * @throws IOException if an I/O error occurs
      */
@@ -85,6 +88,7 @@ public class ExecRunner extends ExecRunnerBase {
 
     /**
      * Composes the command line from the builder.
+     *
      * @return Command line string
      */
     public String commandLine() {

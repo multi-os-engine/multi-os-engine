@@ -55,14 +55,14 @@ public class ProxyPort {
         if (string.matches("[\\d]+")) {
             int port = Integer.parseInt(string);
             if (port >= 0 && port <= 65535) {
-                return new ProxyPort((short) (port & 0xFFFF), (short) (port & 0xFFFF));
+                return new ProxyPort((short)(port & 0xFFFF), (short)(port & 0xFFFF));
             }
         } else if (string.matches("[\\d]+:[\\d]+")) {
             int spl = string.indexOf(':');
             int local = Integer.parseInt(string.substring(0, spl));
             int remote = Integer.parseInt(string.substring(spl + 1));
             if (local >= 0 && local <= 65535 && remote >= 0 && remote <= 65535) {
-                return new ProxyPort((short) (local & 0xFFFF), (short) (remote & 0xFFFF));
+                return new ProxyPort((short)(local & 0xFFFF), (short)(remote & 0xFFFF));
             }
         }
 
@@ -115,15 +115,15 @@ public class ProxyPort {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ProxyPort proxyPort = (ProxyPort) o;
+        ProxyPort proxyPort = (ProxyPort)o;
 
         return localPort == proxyPort.localPort && remotePort == proxyPort.remotePort;
     }
 
     @Override
     public int hashCode() {
-        int result = (int) localPort;
-        result = 31 * result + (int) remotePort;
+        int result = (int)localPort;
+        result = 31 * result + (int)remotePort;
         return result;
     }
 }

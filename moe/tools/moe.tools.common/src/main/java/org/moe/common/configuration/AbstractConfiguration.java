@@ -214,12 +214,14 @@ public abstract class AbstractConfiguration {
      * @param <T>      type of the array's element
      * @throws ConfigurationValidationException if the assertion fails
      */
-    protected final <T> void assertValueIsOneOf(String property, T value, T[] array) throws ConfigurationValidationException {
+    protected final <T> void assertValueIsOneOf(String property, T value, T[] array)
+            throws ConfigurationValidationException {
         if (value == null) {
             return;
         }
         if (!ArrayUtil.contains(array, value)) {
-            throw new ConfigurationValidationException(property, PROPERTY_VALUE_INVALID + " (" + ArrayUtil.join(array, ", ") + ")");
+            throw new ConfigurationValidationException(property,
+                    PROPERTY_VALUE_INVALID + " (" + ArrayUtil.join(array, ", ") + ")");
         }
     }
 }

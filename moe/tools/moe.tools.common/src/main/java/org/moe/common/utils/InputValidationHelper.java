@@ -22,19 +22,19 @@ package org.moe.common.utils;
 public class InputValidationHelper {
     /**
      * Validates that a string is an integer.
+     *
      * @param value String to check
      * @return True iff the string is an integer
      */
     public static boolean isInteger(String value) {
-        if(value == null || value.isEmpty()) {
+        if (value == null || value.isEmpty()) {
             return false;
         }
 
         try {
             Integer.parseInt(value);
             return true;
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             return false;
         }
     }

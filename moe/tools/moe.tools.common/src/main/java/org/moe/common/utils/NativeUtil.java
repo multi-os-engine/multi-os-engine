@@ -19,7 +19,10 @@ package org.moe.common.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +50,7 @@ public class NativeUtil {
     /**
      * Constant array for x86_64 arch synonyms.
      */
-    private static final String[] OS_ARCH_X86_64_SYNS = new String[]{OS_ARCH_X86_64, "amd64"};
+    private static final String[] OS_ARCH_X86_64_SYNS = new String[] { OS_ARCH_X86_64, "amd64" };
     /**
      * Logger.
      */
@@ -97,7 +100,8 @@ public class NativeUtil {
      * @param nativeLibs          native library resource paths
      * @param preloadedNativeLibs pre-loadable native library resource paths
      */
-    public static synchronized void register(String osName, String osArch, NativeLib[] nativeLibs, NativeLib[] preloadedNativeLibs) {
+    public static synchronized void register(String osName, String osArch, NativeLib[] nativeLibs,
+            NativeLib[] preloadedNativeLibs) {
         if (isInitialized()) {
             throw new IllegalStateException("already initialized");
         }
@@ -129,7 +133,7 @@ public class NativeUtil {
                 return lib;
             }
         }
-        return new ArchSpecLibs(new String[]{osName}, new String[]{osArch});
+        return new ArchSpecLibs(new String[] { osName }, new String[] { osArch });
     }
 
     /**
@@ -142,13 +146,11 @@ public class NativeUtil {
             try {
                 temporaryDirectory = File.createTempFile("temp", ".moe");
                 if (!temporaryDirectory.delete()) {
-                    LOG.error("Failed to remove temp file "
-                            + temporaryDirectory.getAbsolutePath());
+                    LOG.error("Failed to remove temp file " + temporaryDirectory.getAbsolutePath());
                     return null;
                 }
                 if (!temporaryDirectory.mkdir()) {
-                    LOG.error("Failed to create temp dir "
-                            + temporaryDirectory.getAbsolutePath());
+                    LOG.error("Failed to create temp dir " + temporaryDirectory.getAbsolutePath());
                     return null;
                 }
                 temporaryDirectory.deleteOnExit();
@@ -159,8 +161,7 @@ public class NativeUtil {
 
             String path_value = System.getProperty("java.library.path");
             if (path_value == null || path_value.length() == 0) {
-                System.setProperty("java.library.path",
-                        temporaryDirectory.getAbsolutePath());
+                System.setProperty("java.library.path", temporaryDirectory.getAbsolutePath());
             } else {
                 System.setProperty("java.library.path",
                         temporaryDirectory.getAbsolutePath() + File.pathSeparator + path_value);
@@ -177,8 +178,7 @@ public class NativeUtil {
     public static String getUnifiedSystemName() {
         String os_name = System.getProperty("os.name");
 
-        if (!OS_NAME_WINDOWS.equals(os_name) &&
-            os_name.toLowerCase().contains(OS_NAME_WINDOWS.toLowerCase())) {
+        if (!OS_NAME_WINDOWS.equals(os_name) && os_name.toLowerCase().contains(OS_NAME_WINDOWS.toLowerCase())) {
             os_name = OS_NAME_WINDOWS;
         }
 
@@ -218,8 +218,7 @@ public class NativeUtil {
             natives_preload = spec.preloadedNativeLibs;
 
             if (natives.size() == 0 && natives_preload.size() == 0) {
-                LOG.error("This OS/architecture is not supported! (" + os_name
-                        + "/" + os_arch + ")");
+                LOG.error("This OS/architecture is not supported! (" + os_name + "/" + os_arch + ")");
                 return false;
             }
 
@@ -271,8 +270,7 @@ public class NativeUtil {
      * @param temp    temp dir to copy to
      * @throws IOException if an error occurs
      */
-    private static void copyToTemp(List<NativeLib> natives, File temp)
-            throws IOException {
+    private static void copyToTemp(List<NativeLib> natives, File temp) throws IOException {
         for (NativeLib lib : natives) {
             copyToTemp(lib, temp);
         }
@@ -356,8 +354,8 @@ public class NativeUtil {
          * @return true if matches
          */
         private boolean matches(String osName, String osArch) {
-            return ArrayUtil.containsCaseInsensitive(osNames, osName) &&
-                    ArrayUtil.containsCaseInsensitive(osArchitectures, osArch);
+            return ArrayUtil.containsCaseInsensitive(osNames, osName) && ArrayUtil
+                    .containsCaseInsensitive(osArchitectures, osArch);
         }
     }
 

@@ -125,7 +125,8 @@ public class ProxyUtil {
      * @param remoteInput  output stream to remote's input
      * @return runnable for interrupt
      */
-    public static ProxyUtil create(final int localPort, final InputStream remoteOutput, final OutputStream remoteInput) {
+    public static ProxyUtil create(final int localPort, final InputStream remoteOutput,
+            final OutputStream remoteInput) {
         ProxyUtil proxy = new ProxyUtil(localPort, remoteOutput, remoteInput);
         proxy.start();
         return proxy;
@@ -281,7 +282,8 @@ public class ProxyUtil {
 
     /**
      * Try to close the specified Closeable.
-     * @param closeable Closeable to close
+     *
+     * @param closeable   Closeable to close
      * @param failMessage Failure message
      */
     private void tryClose(Closeable closeable, String failMessage) {

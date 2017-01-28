@@ -16,7 +16,11 @@ limitations under the License.
 
 package org.moe.common.macho;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,8 +115,7 @@ public class MachoFile {
      * @return List of supported CPU types.
      * @throws IOException If any errors occurs
      */
-    public static List<String> getRecognizedCPUTypes(File file)
-            throws IOException {
+    public static List<String> getRecognizedCPUTypes(File file) throws IOException {
         if (file == null || !file.exists()) {
             throw new IllegalArgumentException("bad file");
         }
@@ -126,8 +129,7 @@ public class MachoFile {
      * @return List of supported CPU types.
      * @throws IOException If any errors occurs
      */
-    public static List<String> getRecognizedCPUTypes(InputStream stream)
-            throws IOException {
+    public static List<String> getRecognizedCPUTypes(InputStream stream) throws IOException {
         MachoFile machoFile = new MachoFile(stream);
         return new ArrayList<String>(machoFile.cpuTypes);
     }
@@ -191,17 +193,17 @@ public class MachoFile {
      */
     public static String getCPUName(int cpuType) {
         switch (cpuType) {
-            case CPU_TYPE_ARM:
-                return CPU_NAME_ARM;
-            case CPU_TYPE_ARM64:
-                return CPU_NAME_ARM64;
-            case CPU_TYPE_I386:
-                return CPU_NAME_I386;
-            case CPU_TYPE_X86_64:
-                return CPU_NAME_X86_64;
+        case CPU_TYPE_ARM:
+            return CPU_NAME_ARM;
+        case CPU_TYPE_ARM64:
+            return CPU_NAME_ARM64;
+        case CPU_TYPE_I386:
+            return CPU_NAME_I386;
+        case CPU_TYPE_X86_64:
+            return CPU_NAME_X86_64;
 
-            default:
-                return null;
+        default:
+            return null;
         }
     }
 

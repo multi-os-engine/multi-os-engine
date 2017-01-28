@@ -150,8 +150,7 @@ public abstract class AbstractConfigurationAppender {
             ArrayList<String> args = new ArrayList<String>();
             args.add(option.optionName);
             for (Option option2 : options) {
-                if (option.propertyName.equals(option2.propertyName) &&
-                        !args.contains(option2.optionName)) {
+                if (option.propertyName.equals(option2.propertyName) && !args.contains(option2.optionName)) {
                     args.add(option2.optionName);
                 }
             }

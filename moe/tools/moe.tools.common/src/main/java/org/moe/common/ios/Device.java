@@ -33,6 +33,7 @@ public class Device {
 
     /**
      * Returns the list of connected iOS devices.
+     *
      * @param projectFile Project file
      * @return List of connected iOS devices.
      * @throws IOException if an I/O error occurs
@@ -58,10 +59,10 @@ public class Device {
 
         String[] lines = output.split("\n");
 
-        for (String line: lines) {
+        for (String line : lines) {
             DeviceInfo device = parseDeviceInfo(line);
 
-            if(device != null) {
+            if (device != null) {
                 result.add(device);
             }
         }
@@ -71,6 +72,7 @@ public class Device {
 
     /**
      * Parses the line for device info.
+     *
      * @param line Line to parse
      * @return DeviceInfo or null
      */

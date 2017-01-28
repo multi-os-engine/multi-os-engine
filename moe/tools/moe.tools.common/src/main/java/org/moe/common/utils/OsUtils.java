@@ -25,6 +25,7 @@ public class OsUtils {
 
     /**
      * Returns the 'os.name' System property.
+     *
      * @return 'os.name' System property
      */
     public static String getOsName() {
@@ -33,6 +34,7 @@ public class OsUtils {
 
     /**
      * Tells whether or not the host is Windows or not.
+     *
      * @return True iff the host is Windows
      */
     public static boolean isWindows() {
@@ -41,6 +43,7 @@ public class OsUtils {
 
     /**
      * Tells whether or not the host is Mac or not.
+     *
      * @return True iff the host is Mac
      */
     public static boolean isMac() {
@@ -49,6 +52,7 @@ public class OsUtils {
 
     /**
      * Returns the name and version of the host OS.
+     *
      * @return name and version of the host OS
      */
     public static String osNameAndVersion() {

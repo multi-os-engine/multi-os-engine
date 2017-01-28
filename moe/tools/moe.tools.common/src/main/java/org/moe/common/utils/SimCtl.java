@@ -23,7 +23,11 @@ import org.moe.common.exec.ExecOutputCollector;
 import org.moe.common.exec.SimpleExec;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Utility class for Xcode simctl command-line tool.
@@ -38,6 +42,7 @@ public class SimCtl {
 
     /**
      * Simple pair class.
+     *
      * @param <L> Left type
      * @param <R> Right type
      */
@@ -53,7 +58,8 @@ public class SimCtl {
 
         /**
          * Creates a new Pair instance.
-         * @param left Left object
+         *
+         * @param left  Left object
          * @param right Right object
          */
         Pair(final L left, final R right) {
@@ -82,8 +88,9 @@ public class SimCtl {
 
         /**
          * Creates a new Device instance.
-         * @param name Name
-         * @param udid UDID
+         *
+         * @param name    Name
+         * @param udid    UDID
          * @param runtime Runtime
          */
         Device(String name, String udid, String runtime) {
@@ -100,8 +107,9 @@ public class SimCtl {
 
     /**
      * Returns the list of available simulators.
+     *
      * @return List of available simulators
-     * @throws IOException if an I/O error occurs
+     * @throws IOException          if an I/O error occurs
      * @throws InterruptedException if the operation was interrupted
      */
     public static List<Device> getDevices() throws IOException, InterruptedException {

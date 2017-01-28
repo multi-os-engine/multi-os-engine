@@ -21,10 +21,11 @@ package org.moe.common.exec;
  */
 public interface IKillListener {
 
-	/**
-	 * Return whether or not the target should be killed.
-	 * @return True iff the target should be killed
-	 */
-	boolean needsKill();
-	
+    /**
+     * Return whether or not the target should be killed.
+     *
+     * @return True iff the target should be killed
+     */
+    boolean needsKill();
+
 }

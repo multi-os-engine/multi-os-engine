@@ -62,11 +62,14 @@ public abstract class ExecRunnerBase {
     public interface ExecRunnerListener {
         /**
          * Line was received on stdout.
+         *
          * @param line Line
          */
         void stdout(String line);
+
         /**
          * Line was received on stderr.
+         *
          * @param line Line
          */
         void stderr(String line);
@@ -74,6 +77,7 @@ public abstract class ExecRunnerBase {
 
     /**
      * Returns the Stdout/stderr listener.
+     *
      * @return Stdout/stderr listener
      */
     public ExecRunnerListener getListener() {
@@ -82,6 +86,7 @@ public abstract class ExecRunnerBase {
 
     /**
      * Sets the Stdout/stderr listener.
+     *
      * @param listener Stdout/stderr listener
      */
     public synchronized void setListener(ExecRunnerListener listener) {
@@ -90,6 +95,7 @@ public abstract class ExecRunnerBase {
 
     /**
      * Runs the executable with the specified kill listener.
+     *
      * @param killListener Kill listener
      * @return Return code
      * @throws IOException if an I/O error occurs
@@ -98,6 +104,7 @@ public abstract class ExecRunnerBase {
 
     /**
      * Returns the was killed flag.
+     *
      * @return Was killed flag
      */
     public boolean wasKilled() {
@@ -106,6 +113,7 @@ public abstract class ExecRunnerBase {
 
     /**
      * Returns the process' return code.
+     *
      * @return Return code
      */
     public int returnCode() {
@@ -118,7 +126,8 @@ public abstract class ExecRunnerBase {
     protected class StdoutStreamListener extends OutputStreamListener {
         /**
          * Creates a new StdoutStreamListener instance.
-         * @param stream Stream to read from
+         *
+         * @param stream   Stream to read from
          * @param listener Output listener
          */
         public StdoutStreamListener(InputStream stream, ExecRunnerListener listener) {
@@ -137,7 +146,8 @@ public abstract class ExecRunnerBase {
     protected class StderrStreamListener extends OutputStreamListener {
         /**
          * Creates a new StderrStreamListener instance.
-         * @param stream Stream to read from
+         *
+         * @param stream   Stream to read from
          * @param listener Output listener
          */
         public StderrStreamListener(InputStream stream, ExecRunner.ExecRunnerListener listener) {
@@ -169,7 +179,8 @@ public abstract class ExecRunnerBase {
 
         /**
          * Creates a new OutputStreamListener instance.
-         * @param stream Stream to read from
+         *
+         * @param stream   Stream to read from
          * @param listener Output listener
          */
         public OutputStreamListener(InputStream stream, ExecRunner.ExecRunnerListener listener) {
@@ -197,12 +208,14 @@ public abstract class ExecRunnerBase {
 
         /**
          * Notifies the listener of a new line.
+         *
          * @param line Line
          */
         abstract protected void notifyListener(String line);
 
         /**
          * Waits for the thread.
+         *
          * @throws InterruptedException if the operation was interrupted
          */
         public void waitFor() throws InterruptedException {
@@ -233,7 +246,8 @@ public abstract class ExecRunnerBase {
 
         /**
          * Creates a new KillChecker instance.
-         * @param process Process to kill
+         *
+         * @param process  Process to kill
          * @param listener Kill listener
          */
         public KillChecker(Process process, IKillListener listener) {

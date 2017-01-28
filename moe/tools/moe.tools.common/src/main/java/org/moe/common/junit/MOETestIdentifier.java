@@ -38,12 +38,11 @@ public class MOETestIdentifier {
      * Creates a test identifier.
      *
      * @param className fully qualified class name of the test. Cannot be null.
-     * @param testName name of the test. Cannot be null.
+     * @param testName  name of the test. Cannot be null.
      */
     public MOETestIdentifier(String className, String testName) {
         if (className == null || testName == null) {
-            throw new IllegalArgumentException("className and testName must " +
-                    "be non-null");
+            throw new IllegalArgumentException("className and testName must " + "be non-null");
         }
         mClassName = className;
         mTestName = testName;
@@ -78,23 +77,16 @@ public class MOETestIdentifier {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        MOETestIdentifier other = (MOETestIdentifier) obj;
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
+        MOETestIdentifier other = (MOETestIdentifier)obj;
         if (mClassName == null) {
-            if (other.mClassName != null)
-                return false;
-        } else if (!mClassName.equals(other.mClassName))
-            return false;
+            if (other.mClassName != null) return false;
+        } else if (!mClassName.equals(other.mClassName)) return false;
         if (mTestName == null) {
-            if (other.mTestName != null)
-                return false;
-        } else if (!mTestName.equals(other.mTestName))
-            return false;
+            if (other.mTestName != null) return false;
+        } else if (!mTestName.equals(other.mTestName)) return false;
         return true;
     }
 
@@ -105,6 +97,7 @@ public class MOETestIdentifier {
 
     /**
      * Sets the is ignored flag.
+     *
      * @param b Is ignored flag
      */
     public void setIgnored(boolean b) {
@@ -113,6 +106,7 @@ public class MOETestIdentifier {
 
     /**
      * Returns the is ignored flag.
+     *
      * @return Is ignored flag
      */
     public boolean isIgnored() {

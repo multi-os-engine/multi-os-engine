@@ -22,11 +22,11 @@ package org.moe.common.configuration;
 public final class ConfigurationValidationException extends Exception {
 
     /**
-	 * Serial Version UID.
-	 */
-	private static final long serialVersionUID = 1L;
+     * Serial Version UID.
+     */
+    private static final long serialVersionUID = 1L;
 
-	/**
+    /**
      * Property that failed.
      */
     private final String propertyName;

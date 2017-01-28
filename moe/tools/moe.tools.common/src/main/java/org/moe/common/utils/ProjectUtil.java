@@ -66,8 +66,9 @@ public class ProjectUtil {
 
     /**
      * Returns the properties returned by the specified task.
+     *
      * @param projectFile Project file
-     * @param taskName Task to run
+     * @param taskName    Task to run
      * @return Parsed properties
      */
     public static Properties retrievePropertiesFromGradle(File projectFile, String taskName) {

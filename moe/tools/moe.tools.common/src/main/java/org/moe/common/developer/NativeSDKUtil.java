@@ -60,6 +60,7 @@ public class NativeSDKUtil {
 
     /**
      * Returns the Xcode developer path.
+     *
      * @return Developer path or null on error.
      */
 
@@ -82,6 +83,7 @@ public class NativeSDKUtil {
 
     /**
      * Returns the path to the Xcode SDK platform.
+     *
      * @param sdk SDK
      * @return Path to SDK platform
      */
@@ -106,6 +108,7 @@ public class NativeSDKUtil {
 
     /**
      * Returns the path to the Xcode SDKs.
+     *
      * @param sdk SDK
      * @return Path to SDKs
      */
@@ -122,6 +125,7 @@ public class NativeSDKUtil {
 
     /**
      * Returns the path to Xcode.
+     *
      * @return Path to Xcode
      */
     public static File getXcodePath() {
@@ -147,6 +151,7 @@ public class NativeSDKUtil {
 
     /**
      * Opens the specified file with Xcode.
+     *
      * @param file File to open
      * @throws IOException if an I/O error occurs
      */
@@ -167,6 +172,7 @@ public class NativeSDKUtil {
 
     /**
      * Returns the path to the platform's SDKs.
+     *
      * @param platform Platform
      * @return Path to platform's SDKs
      */
@@ -208,6 +214,7 @@ public class NativeSDKUtil {
 
     /**
      * Returns the path to Xcode's DocSets.
+     *
      * @return Path to Xcode's DocSets
      */
     public static File getDocsetPath() {

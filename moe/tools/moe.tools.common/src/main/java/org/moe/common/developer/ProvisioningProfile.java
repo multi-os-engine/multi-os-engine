@@ -16,7 +16,11 @@ limitations under the License.
 
 package org.moe.common.developer;
 
-import com.dd.plist.*;
+import com.dd.plist.NSArray;
+import com.dd.plist.NSDate;
+import com.dd.plist.NSDictionary;
+import com.dd.plist.NSNumber;
+import com.dd.plist.PropertyListParser;
 import org.moe.common.exec.ExecOutputCollector;
 import org.moe.common.exec.SimpleExec;
 
@@ -108,7 +112,7 @@ public class ProvisioningProfile implements Serializable {
             ByteArrayInputStream inputStream = new ByteArrayInputStream(bytes);
 
             try {
-                rootDict = (NSDictionary) PropertyListParser.parse(inputStream);
+                rootDict = (NSDictionary)PropertyListParser.parse(inputStream);
             } catch (Exception e) {
                 continue;
             }
@@ -125,16 +129,17 @@ public class ProvisioningProfile implements Serializable {
                 profile.appIdName = null;
             }
 
-            profile.appIdPrefix = ((NSArray) rootDict.objectForKey("ApplicationIdentifierPrefix")).objectAtIndex(0).toString();
+            profile.appIdPrefix = ((NSArray)rootDict.objectForKey("ApplicationIdentifierPrefix")).objectAtIndex(0)
+                    .toString();
 
-            profile.creationDate = ((NSDate) rootDict.objectForKey("CreationDate")).getDate();
-            profile.expirationDate = ((NSDate) rootDict.objectForKey("ExpirationDate")).getDate();
+            profile.creationDate = ((NSDate)rootDict.objectForKey("CreationDate")).getDate();
+            profile.expirationDate = ((NSDate)rootDict.objectForKey("ExpirationDate")).getDate();
 
-            entitlements = (NSDictionary) rootDict.objectForKey("Entitlements");
+            entitlements = (NSDictionary)rootDict.objectForKey("Entitlements");
 
-            boolean taskAllow = ((NSNumber) entitlements.objectForKey("get-task-allow")).boolValue();
+            boolean taskAllow = ((NSNumber)entitlements.objectForKey("get-task-allow")).boolValue();
 
-            profile.provisionedDevices = (NSArray) rootDict.objectForKey("ProvisionedDevices");
+            profile.provisionedDevices = (NSArray)rootDict.objectForKey("ProvisionedDevices");
 
             if (taskAllow) {
                 profile.type = Type.Development;
@@ -168,9 +173,10 @@ public class ProvisioningProfile implements Serializable {
         ByteArrayInputStream inputStream = null;
         try {
             inputStream = new ByteArrayInputStream(bytes);
-            rootDict = (NSDictionary) PropertyListParser.parse(inputStream);
+            rootDict = (NSDictionary)PropertyListParser.parse(inputStream);
         } catch (Exception e) {
-            throw new Exception("Failed to parse provisioning profile: " + file.getAbsolutePath() + "\n" + e.getMessage(), e);
+            throw new Exception(
+                    "Failed to parse provisioning profile: " + file.getAbsolutePath() + "\n" + e.getMessage(), e);
         } finally {
             if (inputStream != null) {
                 try {

@@ -21,10 +21,11 @@ package org.moe.common.exec;
  */
 public interface IOutputListener {
 
-	/**
-	 * An output has been received.
-	 * @param line Output line
-	 */
-	void output(String line);
+    /**
+     * An output has been received.
+     *
+     * @param line Output line
+     */
+    void output(String line);
 
 }
