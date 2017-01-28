@@ -34,7 +34,7 @@ public class FrameworkBinding extends AbstractBinding {
      */
     public static final String ERR_FRAMEWORK_PATH_IS_NOT_SET = "framework path is not set";
     /**
-     * Validation error: framework path is incorrect, path must point to a <name>.framework directory.
+     * Validation error: framework path is incorrect, path must point to a &lt;name&gt;.framework directory.
      */
     public static final String ERR_FRAMEWORK_PATH_IS_NOT_FRAMEWORK_DIRECTORY =
             "framework path is incorrect, path must " + "point to a <name>.framework directory";
