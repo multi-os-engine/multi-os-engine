@@ -57,7 +57,7 @@ class DeviceHelper {
      */
     public static final String CONN_SUB_TYPE_USB = "USB";
     /**
-     * Logger
+     * Logger.
      */
     private static final Logger LOG = LoggerFactory.getLogger(DeviceHelper.class);
     /**

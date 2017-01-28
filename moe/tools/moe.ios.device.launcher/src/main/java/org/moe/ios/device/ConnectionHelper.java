@@ -24,7 +24,7 @@ import org.libimobiledevice.opaque.idevice_connection_t;
 import static org.libimobiledevice.c.Globals.*;
 
 /**
- * This class provides helper methods for connection creation & management.
+ * This class provides helper methods for connection creation &amp; management.
  */
 public class ConnectionHelper {
 
@@ -39,6 +39,7 @@ public class ConnectionHelper {
      * Creates a new ConnectionInputStream for a debugserver_client_t object.
      *
      * @param client debugserver_client_t object
+     * @param usageLock Connection lock
      * @return new ConnectionInputStream instance
      */
     public static ConnectionInputStream<debugserver_client_t> getInputStream(debugserver_client_t client, final ConnectionLock usageLock) {
@@ -64,6 +65,7 @@ public class ConnectionHelper {
      * Creates a new ConnectionOutputStream for a debugserver_client_t object.
      *
      * @param client debugserver_client_t object
+     * @param usageLock Connection lock
      * @return new ConnectionOutputStream instance
      */
     public static ConnectionOutputStream<debugserver_client_t> getOutputStream(debugserver_client_t client, final ConnectionLock usageLock) {
@@ -89,6 +91,7 @@ public class ConnectionHelper {
      * Creates a new ConnectionInputStream for a idevice_connection_t object.
      *
      * @param connection idevice_connection_t object
+     * @param usageLock Connection lock
      * @return new ConnectionInputStream instance
      */
     public static ConnectionInputStream<idevice_connection_t> getInputStream(idevice_connection_t connection, final ConnectionLock usageLock) {
@@ -114,6 +117,7 @@ public class ConnectionHelper {
      * Creates a new ConnectionOutputStream for a idevice_connection_t object.
      *
      * @param connection idevice_connection_t object
+     * @param usageLock Connection lock
      * @return new ConnectionOutputStream instance
      */
     public static ConnectionOutputStream<idevice_connection_t> getOutputStream(idevice_connection_t connection, final ConnectionLock usageLock) {

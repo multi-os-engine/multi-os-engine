@@ -335,7 +335,7 @@ public class DebugserverProxy{
     }
 
     /**
-     * Stops the
+     * Stops the proxy.
      */
     public synchronized void stop() {
         quit = true;

@@ -153,12 +153,12 @@ public class LaunchHelper implements IStopReplyListener {
     }
 
     /**
-     * Launch an application on the specified device
+     * Launch an application on the specified device.
      *
      * @param device  device
      * @param appPath application path on device
      * @param config  configuration
-     * @throws DeviceException
+     * @throws DeviceException if a device error occurs
      */
     public static void launch(idevice_t device, String appPath, Configuration config) throws DeviceException {
         if (Configuration.INSTALL_MODE_INSTALL_ONLY.equals(config.getInstallMode()) ||

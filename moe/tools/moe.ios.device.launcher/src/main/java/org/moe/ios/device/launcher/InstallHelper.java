@@ -107,12 +107,12 @@ final class InstallHelper {
     }
 
     /**
-     * Installs an application on the specified device and install mode
+     * Installs an application on the specified device and install mode.
      *
      * @param device device
      * @param config configuration
      * @return path to the application on the device
-     * @throws DeviceException in installation fails
+     * @throws DeviceException if installation fails
      */
     public static String uploadAndInstall(idevice_t device, Configuration config) throws DeviceException {
         InstallHelper installHelper = new InstallHelper(device, config);
@@ -123,7 +123,7 @@ final class InstallHelper {
      * Starts the installation process.
      *
      * @return path to the application on the device
-     * @throws DeviceException
+     * @throws DeviceException if a device error occurs
      */
     private String run() throws DeviceException {
         LOG.debug("Starting installation");
@@ -219,7 +219,7 @@ final class InstallHelper {
      * Prepares the staging directory for the app.
      *
      * @param afc afc client
-     * @throws DeviceException
+     * @throws DeviceException if a device error occurs
      */
     private void createPkgPath(afc_client_t afc)
             throws DeviceException {
@@ -289,7 +289,7 @@ final class InstallHelper {
      * @param afc    afc client
      * @param source source path
      * @param target target path
-     * @throws DeviceException
+     * @throws DeviceException if a device error occurs
      */
     private void uploadDirectory(afc_client_t afc, String source, String target) throws DeviceException {
         int err = afc_make_directory(afc, target);
@@ -321,7 +321,7 @@ final class InstallHelper {
      * @param afc    afc client
      * @param source source path
      * @param target target path
-     * @throws DeviceException
+     * @throws DeviceException if a device error occurs
      */
     @SuppressWarnings("resource")
     private void uploadFile(afc_client_t afc, String source,
