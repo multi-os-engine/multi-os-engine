@@ -25,11 +25,25 @@ import org.moe.document.pbxproj.PBXObjectRef;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility class for easily accessing some Xcode target properties.
+ */
 public class XcodeTarget {
 
+    /**
+     * Target reference.
+     */
     public final PBXObjectRef<PBXNativeTarget> ref;
+    /**
+     * Target.
+     */
     public final PBXNativeTarget raw;
 
+    /**
+     * Creates a new XcodeTarget instance from the specified target reference.
+     *
+     * @param ref Target reference
+     */
     public XcodeTarget(PBXObjectRef<PBXNativeTarget> ref) {
         if (ref == null) {
             throw new NullPointerException();
@@ -41,6 +55,11 @@ public class XcodeTarget {
         this.raw = ref.getReferenced();
     }
 
+    /**
+     * Returns a list of frameworks.
+     *
+     * @return List of frameworks
+     */
     public List<PBXBuildFile> locateFrameworks() {
         final List<PBXBuildFile> frameworks = new ArrayList<PBXBuildFile>();
         for (PBXObjectRef<PBXBuildPhase> buildPhaseRef : raw.getOrCreateBuildPhases()) {

@@ -31,12 +31,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Utility class for easily accessing some Xcode workspace properties.
+ */
 public class XcodeWorkspace {
 
+    /**
+     * File reference class.
+     */
     public static final class FileRef {
+        /**
+         * Reference type.
+         */
         public final String type;
+        /**
+         * Reference value.
+         */
         public final String value;
 
+        /**
+         * Creates a new FileRef instance from the specified string.
+         *
+         * @param input Reference string
+         */
         public FileRef(String input) {
             if (input == null) {
                 throw new NullPointerException();
@@ -50,9 +67,21 @@ public class XcodeWorkspace {
         }
     }
 
+    /**
+     * List of locations.
+     */
     private final List<FileRef> locations = new ArrayList<FileRef>();
+    /**
+     * Workspace file.
+     */
     private final File workspaceRoot;
 
+    /**
+     * Creates a new XcodeWorkspace instance from the specified file.
+     *
+     * @param file File to read from
+     * @throws IOException if an error occurs
+     */
     public XcodeWorkspace(File file) throws IOException {
         if (file == null) {
             throw new NullPointerException();
@@ -88,14 +117,30 @@ public class XcodeWorkspace {
         }
     }
 
+    /**
+     * Returns the list of locations.
+     *
+     * @return List of locations
+     */
     public List<FileRef> getLocations() {
         return Collections.unmodifiableList(locations);
     }
 
+    /**
+     * Returns the workspace file.
+     *
+     * @return Workspace file
+     */
     public File getWorkspaceRoot() {
         return workspaceRoot;
     }
 
+    /**
+     * Opens all projects referenced by this workspace.
+     *
+     * @return List of newly opened projects.
+     * @throws ProjectException if an error occurs
+     */
     public List<XcodeProject> openProjects() throws ProjectException {
         final List<XcodeProject> projects = new ArrayList<XcodeProject>();
         for (FileRef location : locations) {

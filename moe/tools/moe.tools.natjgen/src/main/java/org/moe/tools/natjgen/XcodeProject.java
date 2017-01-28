@@ -31,15 +31,36 @@ import java.util.List;
 
 import static org.moe.tools.natjgen.util.Compute.compute;
 
+/**
+ * Utility class for easily accessing some Xcode project properties.
+ */
 public class XcodeProject {
 
+    /**
+     * Project file.
+     */
     public final ProjectFile projectFile;
 
+    /**
+     * Root object reference.
+     */
     public final PBXObjectRef<PBXProject> ref;
+    /**
+     * Root object.
+     */
     public final PBXProject raw;
 
+    /**
+     * List of targets.
+     */
     public final List<XcodeTarget> targets;
 
+    /**
+     * Creates a new XcodeProject instance from the specified file.
+     *
+     * @param file File to read from.
+     * @throws ProjectException if and error occurs.
+     */
     public XcodeProject(File file) throws ProjectException {
         projectFile = new ProjectFile(file);
         ref = projectFile.getRoot().getRootObject();

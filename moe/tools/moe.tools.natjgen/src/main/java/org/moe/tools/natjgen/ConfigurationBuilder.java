@@ -16,7 +16,11 @@ limitations under the License.
 
 package org.moe.tools.natjgen;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import org.moe.common.developer.NativeSDKUtil;
 import org.moe.tools.natjgen.AbstractBinding.FrameworkBindingVisitor;
 import org.moe.tools.natjgen.AbstractBinding.HeaderBindingVisitor;
@@ -24,10 +28,21 @@ import org.moe.tools.natjgen.AbstractBinding.HeaderBindingVisitor;
 import java.io.File;
 import java.util.List;
 
+/**
+ * This class constructs a NatJGen configuration from the specified Bindings object.
+ */
 public class ConfigurationBuilder {
 
+    /**
+     * Bindings instance.
+     */
     private final Bindings bindings;
 
+    /**
+     * Creates a new {@link ConfigurationBuilder} instance.
+     *
+     * @param bindings Bindings instance
+     */
     public ConfigurationBuilder(Bindings bindings) {
         if (bindings == null) {
             throw new NullPointerException();
@@ -35,19 +50,48 @@ public class ConfigurationBuilder {
         this.bindings = bindings;
     }
 
+    /**
+     * Returns the Bindings instance.
+     *
+     * @return Bindings instance
+     */
     public Bindings getBindings() {
         return bindings;
     }
 
+    /**
+     * Utility class for building UnitRules.
+     */
     private static class UnitRuleBuilder {
+        /**
+         * Is final flag.
+         */
         private final boolean isFinal;
+        /**
+         * List of conditions.
+         */
         private final JsonArray conditions = new JsonArray();
+        /**
+         * List of actions.
+         */
         private final JsonArray actions = new JsonArray();
 
+        /**
+         * Creates a new UnitRuleBuilder instance.
+         *
+         * @param isFinal Is final flag
+         */
         public UnitRuleBuilder(boolean isFinal) {
             this.isFinal = isFinal;
         }
 
+        /**
+         * Adds a condition to this UnitRule.
+         *
+         * @param condition Condition
+         * @param value     Value
+         * @return This UnitRuleBuilder
+         */
         public UnitRuleBuilder addCondition(String condition, String value) {
             if (condition == null) {
                 throw new NullPointerException();
@@ -64,6 +108,13 @@ public class ConfigurationBuilder {
             return this;
         }
 
+        /**
+         * Adds an action to this UnitRule.
+         *
+         * @param action Action
+         * @param value  Value
+         * @return This UnitRuleBuilder
+         */
         public UnitRuleBuilder addAction(String action, String value) {
             if (action == null) {
                 throw new NullPointerException();
@@ -80,6 +131,11 @@ public class ConfigurationBuilder {
             return this;
         }
 
+        /**
+         * Creates a JsonObject for the configured UnitRule.
+         *
+         * @return JsonObject representing the configured UnitRule
+         */
         public JsonObject build() {
             final JsonObject obj = new JsonObject();
             obj.addProperty("final", isFinal);
@@ -89,6 +145,12 @@ public class ConfigurationBuilder {
         }
     }
 
+    /**
+     * Creates a JSON string containing the NatJGen configuration.
+     *
+     * @return JSON string containing the NatJGen configuration
+     * @throws ValidationException if an error occurs
+     */
     public String build() throws ValidationException {
         if (bindings.getOutputDirectory() == null) {
             throw new ValidationException("output directory is not set");
@@ -144,7 +206,8 @@ public class ConfigurationBuilder {
             @Override
             public void visit(FrameworkBinding binding) {
                 String objcClassGenerationMode = binding.getObjcClassGenerationMode();
-                final boolean isBinding = objcClassGenerationMode == null || objcClassGenerationMode.equals(Bindings.BINDING);
+                final boolean isBinding =
+                        objcClassGenerationMode == null || objcClassGenerationMode.equals(Bindings.BINDING);
                 // @formatter:off
                 final UnitRuleBuilder ruleBuilder = new UnitRuleBuilder(true)
                         .addCondition("framework-match", binding.getFrameworkName())
@@ -162,7 +225,8 @@ public class ConfigurationBuilder {
             @Override
             public void visit(HeaderBinding binding) {
                 String objcClassGenerationMode = binding.getObjcClassGenerationMode();
-                final boolean isBinding = objcClassGenerationMode == null || objcClassGenerationMode.equals(Bindings.BINDING);
+                final boolean isBinding =
+                        objcClassGenerationMode == null || objcClassGenerationMode.equals(Bindings.BINDING);
                 // @formatter:off
                 final UnitRuleBuilder ruleBuilder = new UnitRuleBuilder(true)
                         .addCondition("path-prefix", projectRelativePath(binding.getHeaderPath()))
@@ -212,16 +276,34 @@ public class ConfigurationBuilder {
         return gson.toJson(cfg);
     }
 
+    /**
+     * Copy paths safely from a list to a JsonArray.
+     *
+     * @param source Input list
+     * @param target Output array
+     */
     private void copyPaths(List<String> source, JsonArray target) {
         for (String path : source) {
             copyPath(path, target);
         }
     }
 
+    /**
+     * Copy a path safely to a JsonArray.
+     *
+     * @param path   Input path
+     * @param target Output array
+     */
     private void copyPath(String path, JsonArray target) {
         target.add(projectRelativePath(path));
     }
 
+    /**
+     * Convert the specified path to a project relative path if necessary.
+     *
+     * @param path Path to convert
+     * @return Converted path or if path was absolute, then the original path
+     */
     private String projectRelativePath(String path) {
         if (path.startsWith("/")) {
             return path;
@@ -230,6 +312,13 @@ public class ConfigurationBuilder {
         }
     }
 
+    /**
+     * Utility method for creating a disabling rule.
+     *
+     * @param type Type to match
+     * @param name Name to match
+     * @return JsonObject representing the UnitRule
+     */
     private JsonElement getDisabledObjCRule(String type, String name) {
         if (type == null) {
             throw new NullPointerException();

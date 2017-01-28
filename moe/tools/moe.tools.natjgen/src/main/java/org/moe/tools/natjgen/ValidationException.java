@@ -16,7 +16,15 @@ limitations under the License.
 
 package org.moe.tools.natjgen;
 
+/**
+ * This exception class represents a validation failure.
+ */
 public class ValidationException extends Exception {
+    /**
+     * Creates a new ValidationException instance.
+     *
+     * @param message Failure message
+     */
     public ValidationException(String message) {
         super(message);
     }

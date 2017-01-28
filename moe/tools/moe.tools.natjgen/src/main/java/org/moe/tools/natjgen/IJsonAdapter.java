@@ -18,8 +18,21 @@ package org.moe.tools.natjgen;
 
 import com.google.gson.JsonObject;
 
+/**
+ * JSON adapter interface.
+ */
 public interface IJsonAdapter {
+    /**
+     * Returns a JsonObject representing this object.
+     *
+     * @return JsonObject representing this object
+     */
     JsonObject getJsonObject();
 
+    /**
+     * Sets this object to represent the specified JsonObject.
+     *
+     * @param json The JsonObject this object should be equal to
+     */
     void setJsonObject(JsonObject json);
 }

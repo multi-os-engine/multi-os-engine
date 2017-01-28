@@ -23,11 +23,31 @@ import com.google.gson.JsonPrimitive;
 
 import java.util.List;
 
+/**
+ * Base class for binding implementations.
+ */
 public abstract class AbstractBinding implements IJsonAdapter {
+
+    /**
+     * Name of the binding.
+     */
     private String name;
+
+    /**
+     * Type of the binding.
+     */
     private final String type;
+
+    /**
+     * Objective-C class generation mode.
+     */
     private String objcClassGenerationMode;
 
+    /**
+     * Creates a new abstract binding.
+     *
+     * @param type Type of the binding
+     */
     public AbstractBinding(String type) {
         if (type == null) {
             throw new NullPointerException();
@@ -35,48 +55,111 @@ public abstract class AbstractBinding implements IJsonAdapter {
         this.type = type;
     }
 
+    /**
+     * Returns the type of this binding.
+     *
+     * @return Binding type
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     * Returns the name of this binding.
+     *
+     * @return Binding name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets the name of this binding.
+     *
+     * @param name Binding name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Returns the Objective-C class generation mode.
+     *
+     * @return Objective-C class generation mode
+     */
     public String getObjcClassGenerationMode() {
         return objcClassGenerationMode;
     }
 
+    /**
+     * Sets the Objective-C class generation mode.
+     *
+     * @param mode Objective-C class generation mode
+     */
     public void setObjcClassGenerationMode(String mode) {
         this.objcClassGenerationMode = mode;
     }
 
+    /**
+     * Validates this binding.
+     *
+     * @throws ValidationException if validation fails
+     */
     public abstract void validate() throws ValidationException;
 
+    /**
+     * Checks condition and throws an exception if conditions is false.
+     *
+     * @param condition Condition
+     * @param error     Error message for exception
+     * @throws ValidationException if condition is false
+     */
     protected void validate(boolean condition, String error) throws ValidationException {
         if (!condition) {
             throw new ValidationException(error);
         }
     }
 
+    /**
+     * FrameworkBinding visitor interface.
+     */
     public interface FrameworkBindingVisitor {
+        /**
+         * Visits the specified FrameworkBinding.
+         *
+         * @param binding Binding to visit
+         */
         void visit(FrameworkBinding binding);
     }
 
+    /**
+     * Visits this binding with the specified visitor iff this binding is a FrameworkBinding.
+     *
+     * @param visitor Visitor to visit with
+     */
     public void visit(FrameworkBindingVisitor visitor) {
         if (this instanceof FrameworkBinding) {
             visitor.visit((FrameworkBinding)this);
         }
     }
 
+    /**
+     * HeaderBinding visitor interface.
+     */
     public interface HeaderBindingVisitor {
+        /**
+         * Visits the specified HeaderBinding.
+         *
+         * @param binding Binding to visit
+         */
         void visit(HeaderBinding binding);
     }
 
+    /**
+     * Visits this binding with the specified visitor iff this binding is a HeaderBinding.
+     *
+     * @param visitor Visitor to visit with
+     */
     public void visit(HeaderBindingVisitor visitor) {
         if (this instanceof HeaderBinding) {
             visitor.visit((HeaderBinding)this);
@@ -121,6 +204,12 @@ public abstract class AbstractBinding implements IJsonAdapter {
         }
     }
 
+    /**
+     * Reads a String filled JsonArray and adds the values to the specified list.
+     *
+     * @param array  Input array
+     * @param target Output list
+     */
     protected void readJsonStringArray(JsonArray array, List<String> target) {
         target.clear();
         if (array == null) {

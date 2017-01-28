@@ -16,6 +16,9 @@ limitations under the License.
 
 package org.moe.tools.natjgen;
 
+/**
+ * Main class, mostly used for testing.
+ */
 public class Main {
 
     public static Bindings getGooglePlayGamesSample() {

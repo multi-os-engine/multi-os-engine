@@ -16,11 +16,32 @@ limitations under the License.
 
 package org.moe.tools.natjgen.util;
 
+/**
+ * Utility class for calculating values.
+ */
 public class Compute {
+
+    /**
+     * Computer interface.
+     *
+     * @param <T> Result type of the computation
+     */
     public interface Computer<T> {
+        /**
+         * Compute method.
+         *
+         * @return Computed value
+         */
         T compute();
     }
 
+    /**
+     * Compute method. This method uses a Computer to compute a value.
+     *
+     * @param computer Computer
+     * @param <T>      Result type of the computation
+     * @return Computed value
+     */
     public static <T> T compute(Computer<T> computer) {
         return computer.compute();
     }

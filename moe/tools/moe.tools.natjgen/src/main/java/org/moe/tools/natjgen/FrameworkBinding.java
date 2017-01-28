@@ -20,45 +20,112 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import org.moe.tools.natjgen.util.JavaUtil;
 
+/**
+ * This class is specialized on Framework configuration.
+ */
 public class FrameworkBinding extends AbstractBinding {
+    /**
+     * Binding type.
+     */
     public static final String TYPE = "framework";
+
+    /**
+     * Validation error: framework path is not set.
+     */
     public static final String ERR_FRAMEWORK_PATH_IS_NOT_SET = "framework path is not set";
+    /**
+     * Validation error: framework path is incorrect, path must point to a <name>.framework directory.
+     */
     public static final String ERR_FRAMEWORK_PATH_IS_NOT_FRAMEWORK_DIRECTORY =
             "framework path is incorrect, path must " + "point to a <name>.framework directory";
+    /**
+     * Validation error: framework path is incorrect, path must use Unix file separators (/).
+     */
     public static final String ERR_FRAMEWORK_PATH_MUST_USE_UNIX_FILE_SEPARATORS =
             "framework path is incorrect, path " + "must use Unix file separators (/)";
+    /**
+     * Validation error: package base is not set.
+     */
     public static final String ERR_PACKAGE_BASE_IS_NOT_SET = "package base is not set";
+    /**
+     * Validation error: package base is not a valid Java package.
+     */
     public static final String ERR_PACKAGE_BASE_IS_NOT_A_VALID_JAVA_PACKAGE = "package base is not a valid Java package";
+    /**
+     * Validation error: import code is not set.
+     */
     public static final String ERR_IMPORT_CODE_IS_NOT_SET = "import code is not set";
 
+    /**
+     * Path to the framework.
+     */
     private String frameworkPath;
+    /**
+     * Package base for the framework.
+     */
     private String packageBase;
+    /**
+     * Objective-C/C code for importing the framework.
+     */
     private String importCode;
 
+    /**
+     * Creates a new FrameworkBinding instance.
+     */
     public FrameworkBinding() {
         super(TYPE);
     }
 
+    /**
+     * Returns the path to the framework.
+     *
+     * @return Path to the framework
+     */
     public String getFrameworkPath() {
         return frameworkPath;
     }
 
+    /**
+     * Sets the path to the framework.
+     *
+     * @param frameworkPath Path to the framework
+     */
     public void setFrameworkPath(String frameworkPath) {
         this.frameworkPath = frameworkPath;
     }
 
+    /**
+     * Returns the package base for the framework.
+     *
+     * @return Package base for the framework
+     */
     public String getPackageBase() {
         return packageBase;
     }
 
+    /**
+     * Sets the package base for the framework.
+     *
+     * @param packageBase Package base for the framework
+     */
     public void setPackageBase(String packageBase) {
         this.packageBase = packageBase;
     }
 
+    /**
+     * Returns the Objective-C/C code for importing the framework.
+     *
+     * @return Objective-C/C code for importing the framework
+     */
     public String getImportCode() {
         return importCode;
     }
 
+    /**
+     * Sets the Objective-C/C code for importing the framework.
+     *
+     * @param importCode Objective-C/C code for importing the framework
+     */
     public void setImportCode(String importCode) {
         this.importCode = importCode;
     }
@@ -76,6 +143,11 @@ public class FrameworkBinding extends AbstractBinding {
         validate(importCode.length() > 0, ERR_IMPORT_CODE_IS_NOT_SET);
     }
 
+    /**
+     * Returns the name of the framework.
+     *
+     * @return Name of the framework
+     */
     public String getFrameworkName() {
         String framework = this.frameworkPath;
         int lastIndexOf = framework.lastIndexOf('/');
@@ -89,6 +161,11 @@ public class FrameworkBinding extends AbstractBinding {
         return framework;
     }
 
+    /**
+     * Returns the parent path of the framework.
+     *
+     * @return Parent path of the framework
+     */
     public String getFrameworkParentPath() {
         String framework = this.frameworkPath;
         int lastIndexOf = framework.lastIndexOf('/');

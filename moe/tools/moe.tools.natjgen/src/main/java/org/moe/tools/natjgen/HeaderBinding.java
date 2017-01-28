@@ -24,69 +24,179 @@ import org.moe.tools.natjgen.util.JavaUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is specialized on configuring bindings for custom headers.
+ */
 public class HeaderBinding extends AbstractBinding {
+    /**
+     * Binding type.
+     */
     public static final String TYPE = "header";
+
+    /**
+     * Validation error: header path is not set.
+     */
     public static final String ERR_HEADER_PATH_IS_NOT_SET = "header path is not set";
+    /**
+     * Validation error: header path is incorrect, path must use Unix file separators (/).
+     */
     public static final String ERR_HEADER_PATH_MUST_USE_UNIX_FILE_SEPARATORS = "header path is incorrect, path must use Unix file separators (/)";
+    /**
+     * Validation error: package base is not set.
+     */
     public static final String ERR_PACKAGE_BASE_IS_NOT_SET = "package base is not set";
+    /**
+     * Validation error: package base is not a valid Java package.
+     */
     public static final String ERR_PACKAGE_BASE_IS_NOT_A_VALID_JAVA_PACKAGE = "package base is not a valid Java package";
+    /**
+     * Validation error: import code is not set.
+     */
     public static final String ERR_IMPORT_CODE_IS_NOT_SET = "import code is not set";
+    /**
+     * Validation error: path value must not be null.
+     */
     public static final String ERR_PATH_VALUE_MUST_NOT_BE_NULL = "path value must not be null";
+    /**
+     * Validation error: path is incorrect, path must use Unix file separators (/).
+     */
     public static final String ERR_PATH_MUST_USE_UNIX_FILE_SEPARATORS = "path is incorrect, path must use Unix file separators (/)";
+    /**
+     * Validation error: explicit library is invalid, value is set but length is 0.
+     */
     public static final String ERR_EXPLICIT_LIBRARY_IS_SET_BUT_EMPTY = "explicit library is invalid, value is set but length is 0";
 
+    /**
+     * Path to the Objective-C/C header.
+     */
     private String headerPath;
+    /**
+     * Paths to search for system includes.
+     */
     private final List<String> headerSearchPaths = new ArrayList<String>();
+    /**
+     * Paths to search for user includes.
+     */
     private final List<String> userHeaderSearchPaths = new ArrayList<String>();
+    /**
+     * Paths to search for framework includes.
+     */
     private final List<String> frameworkSearchPaths = new ArrayList<String>();
+    /**
+     * Package base for the framework.
+     */
     private String packageBase;
+    /**
+     * Objective-C/C code for importing the framework.
+     */
     private String importCode;
+    /**
+     * Custom library to use when creating bindings.
+     */
     private String explicitLibrary;
 
+    /**
+     * Creates a new HeaderBinding instance.
+     */
     public HeaderBinding() {
         super(TYPE);
     }
 
+    /**
+     * Returns the path to the Objective-C/C header.
+     *
+     * @return Path to the Objective-C/C header
+     */
     public String getHeaderPath() {
         return headerPath;
     }
 
+    /**
+     * Sets the path to the Objective-C/C header.
+     *
+     * @param headerPath Path to the Objective-C/C header
+     */
     public void setHeaderPath(String headerPath) {
         this.headerPath = headerPath;
     }
 
+    /**
+     * Returns the paths to search for system includes.
+     *
+     * @return Paths to search for system includes
+     */
     public List<String> getHeaderSearchPaths() {
         return headerSearchPaths;
     }
 
+    /**
+     * Returns the paths to search for user includes.
+     *
+     * @return Paths to search for user includes
+     */
     public List<String> getUserHeaderSearchPaths() {
         return userHeaderSearchPaths;
     }
 
+    /**
+     * Returns the paths to search for framework includes.
+     *
+     * @return Paths to search for framework includes
+     */
     public List<String> getFrameworkSearchPaths() {
         return frameworkSearchPaths;
     }
 
+    /**
+     * Returns the package base for the framework.
+     *
+     * @return Package base for the framework
+     */
     public String getPackageBase() {
         return packageBase;
     }
 
+    /**
+     * Sets the package base for the framework.
+     *
+     * @param packageBase Package base for the framework
+     */
     public void setPackageBase(String packageBase) {
         this.packageBase = packageBase;
     }
 
+    /**
+     * Returns the Objective-C/C code for importing the framework.
+     *
+     * @return Objective-C/C code for importing the framework
+     */
     public String getImportCode() {
         return importCode;
     }
 
+    /**
+     * Sets the Objective-C/C code for importing the framework.
+     *
+     * @param importCode Objective-C/C code for importing the framework
+     */
     public void setImportCode(String importCode) {
         this.importCode = importCode;
     }
 
+    /**
+     * Returns the custom library to use when creating bindings.
+     *
+     * @return Custom library to use when creating bindings
+     */
     public String getExplicitLibrary() {
         return explicitLibrary;
     }
 
+    /**
+     * Sets the custom library to use when creating bindings.
+     *
+     * @param explicitLibrary Custom library to use when creating bindings
+     */
     public void setExplicitLibrary(String explicitLibrary) {
         this.explicitLibrary = explicitLibrary;
     }

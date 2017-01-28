@@ -21,6 +21,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Utility class for JLS.
+ */
 public class JavaUtil {
     /*
     TODO: Duplicated code from moe.generator.project
@@ -57,8 +60,8 @@ public class JavaUtil {
         }
         final String[] components = value.split("\\.");
         for (String component : components) {
-            if (component.length() == 0) return false;
             final int length = component.length();
+            if (length == 0) return false;
             for (int offset = 0; offset < length; ) {
                 final int codepoint = component.codePointAt(offset);
                 if (offset == 0) {

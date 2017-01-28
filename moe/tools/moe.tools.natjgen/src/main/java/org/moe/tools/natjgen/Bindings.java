@@ -31,61 +31,150 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Main type used for defining binding configurations.
+ */
 public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
+    /**
+     * iOS platform name.
+     */
     public final static String PLATFORM_IOS = NativeSDKUtil.PLATFORM_IOS;
+    /**
+     * macOS platform name.
+     */
     public final static String PLATFORM_OSX = NativeSDKUtil.PLATFORM_OSX;
 
+    /**
+     * Objective-C class generation mode - binding.
+     */
     public final static String BINDING = "Binding";
+    /**
+     * Objective-C class generation mode - hybrid.
+     */
     public final static String HYBRID = "Hybrid";
 
+    /**
+     * Name of the platform to create bindings for.
+     */
     private String platform;
+    /**
+     * Ordered list of bindings.
+     */
     private final List<AbstractBinding> bindings = new ArrayList<AbstractBinding>();
+    /**
+     * Output directory for bindings.
+     */
     private String outputDirectory;
 
+    /**
+     * Returns the target platform's name.
+     *
+     * @return Target platform's name
+     */
     public String getPlatform() {
         return platform;
     }
 
+    /**
+     * Sets the target platform.
+     *
+     * @param platform Target platform's name
+     */
     public void setPlatform(String platform) {
         this.platform = platform;
     }
 
+    /**
+     * Returns the number of bindings.
+     *
+     * @return Number of bindings
+     */
     public int size() {
         return bindings.size();
     }
 
+    /**
+     * Returns true iff the number of bindings is zero.
+     *
+     * @return <tt>true</tt> iff the number of bindings is zero
+     */
     public boolean isEmpty() {
         return bindings.isEmpty();
     }
 
+    /**
+     * Returns an iterator for the bindings.
+     *
+     * @return Iterator for the bindings
+     */
     public Iterator<AbstractBinding> iterator() {
         return bindings.iterator();
     }
 
+    /**
+     * Adds the specified binding to the end of the bindings list.
+     *
+     * @param abstractBinding Binding to add
+     * @return <tt>true</tt> (as specified by {@link java.util.Collection#add})
+     */
     public boolean add(AbstractBinding abstractBinding) {
         return bindings.add(abstractBinding);
     }
 
+    /**
+     * Removes the first occurrence of the specified element from the bindings list.
+     *
+     * @param o Binding to remove
+     * @return <tt>true</tt> if the bindings list contained the specified element
+     */
     public boolean remove(Object o) {
         return bindings.remove(o);
     }
 
+    /**
+     * Returns the element at the specified position in the bindings list.
+     *
+     * @param index Index of the element to return
+     * @return The element at the specified position in the bindings list
+     */
     public AbstractBinding get(int index) {
         return bindings.get(index);
     }
 
+    /**
+     * Inserts the specified binding at the specified position in the bindings list.
+     *
+     * @param index   Index at which the specified element is to be inserted
+     * @param element Binding to be inserted
+     */
     public void add(int index, AbstractBinding element) {
         bindings.add(index, element);
     }
 
+    /**
+     * Removes the binding at the specified position in the bindings list.
+     *
+     * @param index the index of the element to be removed
+     * @return The binding previously at the specified position
+     */
     public AbstractBinding remove(int index) {
         return bindings.remove(index);
     }
 
+    /**
+     * Returns the output directory of the bindings.
+     *
+     * @return Output directory of the bindings
+     */
     public String getOutputDirectory() {
         return outputDirectory;
     }
 
+    /**
+     * Sets the output directory of the bindings.
+     *
+     * @param outputDirectory output directory
+     */
     public void setOutputDirectory(String outputDirectory) {
         this.outputDirectory = outputDirectory;
     }
@@ -144,6 +233,12 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         }
     }
 
+    /**
+     * Saves this Bindings object as JSON in the specified file.
+     *
+     * @param target File to save into
+     * @throws IOException if an error occurs
+     */
     public void save(File target) throws IOException {
         if (target == null) {
             throw new NullPointerException();
@@ -156,6 +251,12 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         }
     }
 
+    /**
+     * Loads this Bindings object from the specified file.
+     *
+     * @param source File to load from
+     * @throws IOException if an error occurs
+     */
     public void load(File source) throws IOException {
         if (source == null) {
             throw new NullPointerException();
