@@ -16,6 +16,9 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
+import org.libimobiledevice.enums.idevice_error_t;
+import org.libimobiledevice.opaque.idevice_connection_t;
+import org.libimobiledevice.opaque.idevice_t;
 import org.moe.common.ProxyPort;
 import org.moe.common.ShutdownManager;
 import org.moe.common.utils.ProxyUtil;
@@ -25,9 +28,6 @@ import org.moe.ios.device.ConnectionLock;
 import org.moe.ios.device.ConnectionOutputStream;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import org.libimobiledevice.enums.idevice_error_t;
-import org.libimobiledevice.opaque.idevice_connection_t;
-import org.libimobiledevice.opaque.idevice_t;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,10 +88,8 @@ public class ProxyHelper {
                         }
                     }
                     err = idevice_connect(device, (char)(port.getShortRemotePort() & 0xFFFF), conn_ptr);
-                }
-                while (!Thread.currentThread().isInterrupted() &&
-                        err != idevice_error_t.IDEVICE_E_SUCCESS &&
-                        !isInShutdown.get());
+                } while (!Thread.currentThread().isInterrupted() && err != idevice_error_t.IDEVICE_E_SUCCESS
+                        && !isInShutdown.get());
                 final idevice_connection_t conn = conn_ptr.get();
 
                 // Let go if interrupted

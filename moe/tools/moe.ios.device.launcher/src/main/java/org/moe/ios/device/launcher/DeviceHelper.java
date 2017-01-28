@@ -16,13 +16,13 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
+import org.libimobiledevice.enums.idevice_error_t;
+import org.libimobiledevice.opaque.idevice_t;
 import org.moe.common.ShutdownManager;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import org.libimobiledevice.enums.idevice_error_t;
-import org.libimobiledevice.opaque.idevice_t;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -92,7 +92,7 @@ class DeviceHelper {
         Set<String> devices = new HashSet<String>();
 
         IntPtr countRef = PtrFactory.newIntReference();
-        Ptr<Ptr<BytePtr>> listRef = (Ptr<Ptr<BytePtr>>) PtrFactory.newPointerPtr(Byte.class, 3, 1, true, false);
+        Ptr<Ptr<BytePtr>> listRef = (Ptr<Ptr<BytePtr>>)PtrFactory.newPointerPtr(Byte.class, 3, 1, true, false);
         idevice_get_device_list_with_connection(listRef, countRef, CONN_TYPE_USBMUXD, CONN_SUB_TYPE_USB);
 
         int count = countRef.get();

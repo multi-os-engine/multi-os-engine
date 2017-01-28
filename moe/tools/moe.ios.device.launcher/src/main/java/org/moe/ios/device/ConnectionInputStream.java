@@ -16,10 +16,10 @@ limitations under the License.
 
 package org.moe.ios.device;
 
+import org.libimobiledevice.enums.idevice_error_t;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import org.libimobiledevice.enums.idevice_error_t;
 
 import java.io.IOException;
 import java.io.InputStream;

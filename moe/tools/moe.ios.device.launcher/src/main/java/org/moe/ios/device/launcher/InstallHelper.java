@@ -16,9 +16,6 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
-import org.moe.common.utils.CloseableUtil;
-import org.moe.natj.general.ptr.*;
-import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.libimobiledevice.enums.afc_error_t;
 import org.libimobiledevice.enums.afc_file_mode_t;
 import org.libimobiledevice.enums.instproxy_error_t;
@@ -26,10 +23,22 @@ import org.libimobiledevice.opaque.afc_client_t;
 import org.libimobiledevice.opaque.idevice_t;
 import org.libimobiledevice.opaque.instproxy_client_t;
 import org.libplist.opaque.plist_t;
+import org.moe.common.utils.CloseableUtil;
+import org.moe.natj.general.ptr.BytePtr;
+import org.moe.natj.general.ptr.IntPtr;
+import org.moe.natj.general.ptr.LongPtr;
+import org.moe.natj.general.ptr.Ptr;
+import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -98,7 +107,8 @@ final class InstallHelper {
      * @param config configuration
      */
     private InstallHelper(idevice_t device, Configuration config) {
-        if (device == null || config == null || config.getApplicationPath() == null || config.getInstallMode() == null) {
+        if (device == null || config == null || config.getApplicationPath() == null
+                || config.getInstallMode() == null) {
             throw new NullPointerException();
         }
         this.device = device;
@@ -158,15 +168,16 @@ final class InstallHelper {
                 if (plist == null) {
                     throw new NullPointerException();
                 }
-                bundleid = (String) plist.get("CFBundleIdentifier");
+                bundleid = (String)plist.get("CFBundleIdentifier");
             } catch (Exception ex) {
                 throw new DeviceException("Failed to get bundle ID: " + ex.getMessage());
             }
 
-            Ptr<BytePtr> pathRef = (Ptr<BytePtr>) PtrFactory.newPointerPtr(Byte.class, 2, 1, true, false);
+            Ptr<BytePtr> pathRef = (Ptr<BytePtr>)PtrFactory.newPointerPtr(Byte.class, 2, 1, true, false);
             int err = instproxy_client_get_path_for_bundle_identifier(ip, bundleid, pathRef);
             if (err != instproxy_error_t.INSTPROXY_E_SUCCESS) {
-                throw new DeviceException("Failed to get application path", "instproxy_client_get_path_for_bundle_identifier", err);
+                throw new DeviceException("Failed to get application path",
+                        "instproxy_client_get_path_for_bundle_identifier", err);
             }
 
             return pathRef.get().toUTF8String();
@@ -221,13 +232,11 @@ final class InstallHelper {
      * @param afc afc client
      * @throws DeviceException if a device error occurs
      */
-    private void createPkgPath(afc_client_t afc)
-            throws DeviceException {
+    private void createPkgPath(afc_client_t afc) throws DeviceException {
         LOG.debug("Preparing staging directory");
 
         // Check staging directory existence
-        Ptr<Ptr<BytePtr>> infolist_ref = (Ptr<Ptr<BytePtr>>) PtrFactory
-                .newPointerPtr(Byte.class, 3, 1, true, false);
+        Ptr<Ptr<BytePtr>> infolist_ref = (Ptr<Ptr<BytePtr>>)PtrFactory.newPointerPtr(Byte.class, 3, 1, true, false);
         int err = afc_get_file_info(afc, PKG_PATH, infolist_ref);
 
         // Free results
@@ -305,11 +314,9 @@ final class InstallHelper {
                 File elem = new File(local, content);
 
                 if (elem.isDirectory()) {
-                    uploadDirectory(afc, elem.getAbsolutePath(), target
-                            + "/" + elem.getName());
+                    uploadDirectory(afc, elem.getAbsolutePath(), target + "/" + elem.getName());
                 } else {
-                    uploadFile(afc, elem.getAbsolutePath(), target + "/"
-                            + elem.getName());
+                    uploadFile(afc, elem.getAbsolutePath(), target + "/" + elem.getName());
                 }
             }
         }
@@ -324,8 +331,7 @@ final class InstallHelper {
      * @throws DeviceException if a device error occurs
      */
     @SuppressWarnings("resource")
-    private void uploadFile(afc_client_t afc, String source,
-                            String target) throws DeviceException {
+    private void uploadFile(afc_client_t afc, String source, String target) throws DeviceException {
         // Create a 1MB buffer for the files
         final int bufferSize = 1024 * 1024;
 
@@ -335,16 +341,14 @@ final class InstallHelper {
         try {
             fis = new FileInputStream(local);
         } catch (FileNotFoundException e) {
-            throw new DeviceException("failed to open file for upload "
-                    + source);
+            throw new DeviceException("failed to open file for upload " + source);
         }
 
         try {
             final InputStream is = new BufferedInputStream(fis, bufferSize);
             // Get handle for target file
             LongPtr handle_ref = PtrFactory.newLongReference();
-            int err = afc_file_open(afc, target,
-                                    afc_file_mode_t.AFC_FOPEN_WRONLY, handle_ref);
+            int err = afc_file_open(afc, target, afc_file_mode_t.AFC_FOPEN_WRONLY, handle_ref);
             if (err != afc_error_t.AFC_E_SUCCESS) {
                 // Clean up
                 CloseableUtil.tryClose(is, LOG, "Failed to close input stream for " + source);
@@ -355,26 +359,24 @@ final class InstallHelper {
                 // Create buffers
                 byte jbuffer[] = new byte[bufferSize];
                 BytePtr nbuffer = PtrFactory.newByteArray(bufferSize);
-                
+
                 // Helper
                 IntPtr bytesWritten = PtrFactory.newIntReference();
-                
+
                 // Transmit data
                 int read;
                 while ((read = is.read(jbuffer)) != -1) {
                     nbuffer.copyFrom(jbuffer);
-                    
+
                     // Write file to target
-                    err = afc_file_write(afc, targetFileHandle, nbuffer,
-                                         read, bytesWritten);
+                    err = afc_file_write(afc, targetFileHandle, nbuffer, read, bytesWritten);
                     if (err != afc_error_t.AFC_E_SUCCESS) {
                         throw new DeviceException("Failed to write file on device", "afc_file_write", err);
                     }
                     if (read != bytesWritten.getValue()) {
                         throw new DeviceException(
-                                                  "file writing to device failed, wrote "
-                                                  + bytesWritten.getValue()
-                                                  + " bytes instead of " + read);
+                                "file writing to device failed, wrote " + bytesWritten.getValue() + " bytes instead of "
+                                        + read);
                     }
                 }
             } catch (Exception e) {
@@ -382,17 +384,16 @@ final class InstallHelper {
             } finally {
                 // Clean up
                 CloseableUtil.tryClose(is, LOG, "Failed to close input stream for " + source);
-                    afc_file_close(afc, targetFileHandle);
+                afc_file_close(afc, targetFileHandle);
             }
-            
+
             numberOfFilesUploaded++;
-            updateProgress(FILE_UPLOAD, local.getName(),
-                           numberOfFilesUploaded * 100 / numberOfFilesToUpload);
+            updateProgress(FILE_UPLOAD, local.getName(), numberOfFilesUploaded * 100 / numberOfFilesToUpload);
         } finally {
             try {
                 fis.close();
             } catch (IOException ignore) {
-                
+
             }
         }
     }
@@ -409,33 +410,29 @@ final class InstallHelper {
         instproxy_client_option_add(options, "PackageType", "Developer");
 
         try {
-            if (Configuration.INSTALL_MODE_INSTALL.equals(installMode) ||
-                    Configuration.INSTALL_MODE_INSTALL_ONLY.equals(installMode)) {
+            if (Configuration.INSTALL_MODE_INSTALL.equals(installMode) || Configuration.INSTALL_MODE_INSTALL_ONLY
+                    .equals(installMode)) {
                 Function_instproxy_install cb = new Function_instproxy_install() {
 
                     @Override
-                    public void call_instproxy_install(plist_t operation,
-                                                       plist_t status, VoidPtr userdata) {
+                    public void call_instproxy_install(plist_t operation, plist_t status, VoidPtr userdata) {
 
                         HashMap<String, Object> operationDict = PlistHelper.getDict(operation);
-                        String operationCommand = operationDict == null ? null : (String) operationDict.get("Command");
-                        updateStatus(operationCommand,
-                                PlistHelper.getDict(status));
+                        String operationCommand = operationDict == null ? null : (String)operationDict.get("Command");
+                        updateStatus(operationCommand, PlistHelper.getDict(status));
                     }
                 };
                 instproxy_install(ip, target, options, cb, null);
-            } else if (Configuration.INSTALL_MODE_UPGRADE.equals(installMode) ||
-                    Configuration.INSTALL_MODE_UPGRADE_ONLY.equals(installMode)) {
+            } else if (Configuration.INSTALL_MODE_UPGRADE.equals(installMode) || Configuration.INSTALL_MODE_UPGRADE_ONLY
+                    .equals(installMode)) {
                 Function_instproxy_upgrade cb = new Function_instproxy_upgrade() {
 
                     @Override
-                    public void call_instproxy_upgrade(plist_t operation,
-                                                       plist_t status, VoidPtr userdata) {
+                    public void call_instproxy_upgrade(plist_t operation, plist_t status, VoidPtr userdata) {
 
                         HashMap<String, Object> operationDict = PlistHelper.getDict(operation);
-                        String operationCommand = operationDict == null ? null : (String) operationDict.get("Command");
-                        updateStatus(operationCommand,
-                                PlistHelper.getDict(status));
+                        String operationCommand = operationDict == null ? null : (String)operationDict.get("Command");
+                        updateStatus(operationCommand, PlistHelper.getDict(status));
                     }
                 };
                 instproxy_upgrade(ip, target, options, cb, null);
@@ -466,8 +463,7 @@ final class InstallHelper {
      * @param operation operation
      * @param dict      remote info
      */
-    private void updateStatus(String operation,
-                              HashMap<String, Object> dict) {
+    private void updateStatus(String operation, HashMap<String, Object> dict) {
 
         if (dict == null || operation == null) {
             updateProgress(operation == null ? "" : operation, "Unknown error", -1);
@@ -476,12 +472,11 @@ final class InstallHelper {
             signalInstallationEnded();
         } else {
 
-            String status = (String) dict.get("Status");
+            String status = (String)dict.get("Status");
             if (status == null) {
-                String error = (String) dict.get("Error");
-                Long code = (Long) dict.get("ErrorDetail");
-                updateProgress(operation, error == null ? "Unknown error" : error
-                        + "(" + code + ")", -1);
+                String error = (String)dict.get("Error");
+                Long code = (Long)dict.get("ErrorDetail");
+                updateProgress(operation, error == null ? "Unknown error" : error + "(" + code + ")", -1);
 
                 // Signal due to failure
                 signalInstallationEnded();
@@ -492,7 +487,7 @@ final class InstallHelper {
                 // Signal due to completion
                 signalInstallationEnded();
             } else {
-                Long percentComplete = (Long) dict.get("PercentComplete");
+                Long percentComplete = (Long)dict.get("PercentComplete");
                 percentComplete = percentComplete == null ? 0 : percentComplete;
                 updateProgress(operation, status, percentComplete.intValue());
             }

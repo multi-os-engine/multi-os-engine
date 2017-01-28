@@ -16,10 +16,9 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
-import org.moe.natj.general.ann.UncertainArgument;
-import org.moe.natj.general.ptr.VoidPtr;
 import org.libimobiledevice.c.Globals;
 import org.libimobiledevice.struct.idevice_event_t;
+import org.moe.natj.general.ptr.VoidPtr;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -67,10 +66,11 @@ public class USBDeviceWatcher {
     private USBDeviceWatcher() {
         idevice_event_subscribe(new Globals.Function_idevice_event_subscribe() {
             @Override
-            public void call_idevice_event_subscribe(@UncertainArgument("Options: reference, array Fallback: reference") idevice_event_t event, VoidPtr context) {
-                LOG.debug("Event: " + event.event() + ", conn_type: " + event.conn_type() + ", conn_subtype: " + event.conn_subtype());
-                if (event.conn_type() != DeviceHelper.CONN_TYPE_USBMUXD ||
-                        !DeviceHelper.CONN_SUB_TYPE_USB.equals(event.conn_subtype())) {
+            public void call_idevice_event_subscribe(idevice_event_t event, VoidPtr context) {
+                LOG.debug("Event: " + event.event() + ", conn_type: " + event.conn_type() + ", conn_subtype: " + event
+                        .conn_subtype());
+                if (event.conn_type() != DeviceHelper.CONN_TYPE_USBMUXD || !DeviceHelper.CONN_SUB_TYPE_USB
+                        .equals(event.conn_subtype())) {
                     return;
                 }
                 // Initializing listeners is always a priority

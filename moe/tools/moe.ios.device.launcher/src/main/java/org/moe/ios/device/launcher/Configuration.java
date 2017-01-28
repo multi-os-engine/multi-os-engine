@@ -59,8 +59,8 @@ public class Configuration extends AbstractConfiguration {
      * Installation mode.
      */
     private String installMode = INSTALL_MODE_UPGRADE;
-    public static final String[] INSTALL_MODES = new String[]{
-            INSTALL_MODE_RUN_ONLY, INSTALL_MODE_INSTALL, INSTALL_MODE_UPGRADE, INSTALL_MODE_INSTALL_ONLY, INSTALL_MODE_UPGRADE_ONLY
+    public static final String[] INSTALL_MODES = new String[] { INSTALL_MODE_RUN_ONLY, INSTALL_MODE_INSTALL,
+            INSTALL_MODE_UPGRADE, INSTALL_MODE_INSTALL_ONLY, INSTALL_MODE_UPGRADE_ONLY
     };
     /**
      * Launch arguments.
@@ -105,7 +105,7 @@ public class Configuration extends AbstractConfiguration {
     /**
      * Proxy port for debugserver.
      */
-    private ProxyPort debugserverPort=null;
+    private ProxyPort debugserverPort = null;
 
     /**
      * Creates a new Configuration instance.
@@ -391,17 +391,17 @@ public class Configuration extends AbstractConfiguration {
     @Override
     public void setProperty(String key, Object value) {
         if (DEVICE_UDID_PROPERTY_NAME.equals(key)) {
-            setDeviceUDID((String) value);
+            setDeviceUDID((String)value);
         } else if (APPLICATION_PATH_PROPERTY_NAME.equals(key)) {
-            setApplicationPath((File) value);
+            setApplicationPath((File)value);
         } else if (LIST_DEVICES_PROPERTY_NAME.equals(key)) {
-            setListDevices((Boolean) value);
+            setListDevices((Boolean)value);
         } else if (WAIT_FOR_DEVICE_PROPERTY_NAME.equals(key)) {
-            setWaitForDevice((Boolean) value);
+            setWaitForDevice((Boolean)value);
         } else if (ADD_LAUNCH_ARG_PROPERTY_NAME.equals(key)) {
-            addLaunchArg((String) value);
+            addLaunchArg((String)value);
         } else if (ADD_ENV_VAR_PROPERTY_NAME.equals(key)) {
-            String kv = (String) value;
+            String kv = (String)value;
             int idx = kv.indexOf('=');
             if (idx == -1) {
                 addEnvVar(kv, "");
@@ -409,17 +409,17 @@ public class Configuration extends AbstractConfiguration {
                 addEnvVar(kv.substring(0, idx), kv.substring(idx + 1));
             }
         } else if (ADD_PROXY_PORT_PROPERTY_NAME.equals(key)) {
-            addProxyPort((ProxyPort) value);
+            addProxyPort((ProxyPort)value);
         } else if (JDWP_PORT_PROPERTY_NAME.equals(key)) {
-            setJdwpPort((ProxyPort) value);
+            setJdwpPort((ProxyPort)value);
         } else if (NATIVE_DEBUG_PORT_PROPERTY_NAME.equals(key)) {
-            setDebugserverPort((ProxyPort) value);
+            setDebugserverPort((ProxyPort)value);
         } else if (INSTALL_MODE_PROPERTY_NAME.equals(key)) {
-            setInstallMode((String) value);
+            setInstallMode((String)value);
         } else if (STD_OUT_PROPERTY_NAME.equals(key)) {
-            setStdOutPort((Port) value);
+            setStdOutPort((Port)value);
         } else if (STD_OUT_FILE_PROPERTY_NAME.equals(key)) {
-            setStdOutFile((File) value);
+            setStdOutFile((File)value);
         } else {
             super.setProperty(key, value);
         }
@@ -458,20 +458,21 @@ public class Configuration extends AbstractConfiguration {
 
     @Override
     public String[] getAllPropertyNames() {
-        return ArrayUtil.concatenate(super.getAllPropertyNames(),
-                new String[]{
-                        DEVICE_UDID_PROPERTY_NAME,
-                        APPLICATION_PATH_PROPERTY_NAME,
-                        LIST_DEVICES_PROPERTY_NAME,
-                        WAIT_FOR_DEVICE_PROPERTY_NAME,
-                        ADD_LAUNCH_ARG_PROPERTY_NAME,
-                        ADD_ENV_VAR_PROPERTY_NAME,
-                        ADD_PROXY_PORT_PROPERTY_NAME,
-                        JDWP_PORT_PROPERTY_NAME,
-                        NATIVE_DEBUG_PORT_PROPERTY_NAME,
-                        INSTALL_MODE_PROPERTY_NAME,
-                        STD_OUT_PROPERTY_NAME,
-                        STD_OUT_FILE_PROPERTY_NAME,
-                });
+        return ArrayUtil.concatenate(super.getAllPropertyNames(), new String[] {
+                // @formatter:off
+                DEVICE_UDID_PROPERTY_NAME,
+                APPLICATION_PATH_PROPERTY_NAME,
+                LIST_DEVICES_PROPERTY_NAME,
+                WAIT_FOR_DEVICE_PROPERTY_NAME,
+                ADD_LAUNCH_ARG_PROPERTY_NAME,
+                ADD_ENV_VAR_PROPERTY_NAME,
+                ADD_PROXY_PORT_PROPERTY_NAME,
+                JDWP_PORT_PROPERTY_NAME,
+                NATIVE_DEBUG_PORT_PROPERTY_NAME,
+                INSTALL_MODE_PROPERTY_NAME,
+                STD_OUT_PROPERTY_NAME,
+                STD_OUT_FILE_PROPERTY_NAME,
+                // @formatter:on
+        });
     }
 }

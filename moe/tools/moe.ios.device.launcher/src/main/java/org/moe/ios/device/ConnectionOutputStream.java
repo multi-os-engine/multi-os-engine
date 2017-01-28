@@ -16,10 +16,10 @@ limitations under the License.
 
 package org.moe.ios.device;
 
+import org.libimobiledevice.enums.idevice_error_t;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-import org.libimobiledevice.enums.idevice_error_t;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -71,7 +71,7 @@ public abstract class ConnectionOutputStream<T> extends OutputStream {
 
     @Override
     public void write(int b) throws IOException {
-        write(new byte[]{(byte) (b & 0xFF)}, 0, 1);
+        write(new byte[] { (byte)(b & 0xFF) }, 0, 1);
     }
 
     @Override
@@ -130,8 +130,8 @@ public abstract class ConnectionOutputStream<T> extends OutputStream {
                 }
 
                 // Not closed -> real failure
-                throw new IOException("idevice_connection_send failed, sent "
-                        + sent_bytes.getValue() + " bytes instead of " + len);
+                throw new IOException(
+                        "idevice_connection_send failed, sent " + sent_bytes.getValue() + " bytes instead of " + len);
             }
         }
     }

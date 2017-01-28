@@ -16,11 +16,15 @@ limitations under the License.
 
 package org.moe.ios.device.launcher;
 
-import org.moe.natj.general.ptr.*;
-import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.libplist.enums.plist_type;
 import org.libplist.opaque.plist_dict_iter;
 import org.libplist.opaque.plist_t;
+import org.moe.natj.general.ptr.BytePtr;
+import org.moe.natj.general.ptr.DoublePtr;
+import org.moe.natj.general.ptr.IntPtr;
+import org.moe.natj.general.ptr.LongPtr;
+import org.moe.natj.general.ptr.Ptr;
+import org.moe.natj.general.ptr.impl.PtrFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,67 +56,62 @@ public class PlistHelper {
             return null;
         }
         switch (plist_get_node_type(node)) {
-            case plist_type.PLIST_STRING: {
-                @SuppressWarnings("unchecked")
-                Ptr<BytePtr> ptr = (Ptr<BytePtr>) PtrFactory.newPointerPtr(
-                        Byte.class, 2, 1, true, false);
-                plist_get_string_val(node, ptr);
-                return ptr.get().toUTF8String();
-            }
+        case plist_type.PLIST_STRING: {
+            @SuppressWarnings("unchecked") Ptr<BytePtr> ptr = (Ptr<BytePtr>)PtrFactory
+                    .newPointerPtr(Byte.class, 2, 1, true, false);
+            plist_get_string_val(node, ptr);
+            return ptr.get().toUTF8String();
+        }
 
-            case plist_type.PLIST_ARRAY: {
-                return getArray(node);
-            }
+        case plist_type.PLIST_ARRAY: {
+            return getArray(node);
+        }
 
-            case plist_type.PLIST_DICT: {
-                return getDict(node);
-            }
+        case plist_type.PLIST_DICT: {
+            return getDict(node);
+        }
 
-            case plist_type.PLIST_BOOLEAN: {
-                BytePtr ptr = PtrFactory.newByteReference();
-                plist_get_bool_val(node, ptr);
-                return ptr.get() > 0 ? Boolean.TRUE : Boolean.FALSE;
-            }
+        case plist_type.PLIST_BOOLEAN: {
+            BytePtr ptr = PtrFactory.newByteReference();
+            plist_get_bool_val(node, ptr);
+            return ptr.get() > 0 ? Boolean.TRUE : Boolean.FALSE;
+        }
 
-            case plist_type.PLIST_UINT: {
-                LongPtr ptr = PtrFactory.newLongReference();
-                plist_get_uint_val(node, ptr);
-                return ptr.get();
-            }
+        case plist_type.PLIST_UINT: {
+            LongPtr ptr = PtrFactory.newLongReference();
+            plist_get_uint_val(node, ptr);
+            return ptr.get();
+        }
 
-            case plist_type.PLIST_REAL: {
-                DoublePtr ptr = PtrFactory.newDoubleReference();
-                plist_get_real_val(node, ptr);
-                return ptr.get();
-            }
+        case plist_type.PLIST_REAL: {
+            DoublePtr ptr = PtrFactory.newDoubleReference();
+            plist_get_real_val(node, ptr);
+            return ptr.get();
+        }
 
-            case plist_type.PLIST_DATE: {
-                IntPtr sec = PtrFactory.newIntReference();
-                IntPtr usec = PtrFactory.newIntReference();
-                plist_get_date_val(node, sec, usec);
-                return new Date((long) sec.getValue() * 1000L
-                        + (long) usec.getValue() / 1000L);
-            }
+        case plist_type.PLIST_DATE: {
+            IntPtr sec = PtrFactory.newIntReference();
+            IntPtr usec = PtrFactory.newIntReference();
+            plist_get_date_val(node, sec, usec);
+            return new Date((long)sec.getValue() * 1000L + (long)usec.getValue() / 1000L);
+        }
 
-            case plist_type.PLIST_DATA: {
-                @SuppressWarnings("unchecked")
-                Ptr<BytePtr> val = (Ptr<BytePtr>) PtrFactory.newPointerPtr(
-                        Byte.class, 2, 1, true, false);
-                LongPtr length = PtrFactory.newLongReference();
-                plist_get_data_val(node, val, length);
-                return length.getValue() == 0 ? new byte[0] : val.get()
-                        .toByteArray((int) length.getValue());
-            }
-            case plist_type.PLIST_KEY: {
-                @SuppressWarnings("unchecked")
-                Ptr<BytePtr> ptr = (Ptr<BytePtr>) PtrFactory.newPointerPtr(
-                        Byte.class, 2, 1, true, false);
-                plist_get_key_val(node, ptr);
-                return ptr.get().toUTF8String();
-            }
+        case plist_type.PLIST_DATA: {
+            @SuppressWarnings("unchecked") Ptr<BytePtr> val = (Ptr<BytePtr>)PtrFactory
+                    .newPointerPtr(Byte.class, 2, 1, true, false);
+            LongPtr length = PtrFactory.newLongReference();
+            plist_get_data_val(node, val, length);
+            return length.getValue() == 0 ? new byte[0] : val.get().toByteArray((int)length.getValue());
+        }
+        case plist_type.PLIST_KEY: {
+            @SuppressWarnings("unchecked") Ptr<BytePtr> ptr = (Ptr<BytePtr>)PtrFactory
+                    .newPointerPtr(Byte.class, 2, 1, true, false);
+            plist_get_key_val(node, ptr);
+            return ptr.get().toUTF8String();
+        }
 
-            default:
-                return null;
+        default:
+            return null;
         }
     }
 
@@ -150,17 +149,15 @@ public class PlistHelper {
             return null;
         }
 
-        HashMap<String, Object> map = new HashMap<String, Object>(
-                plist_dict_get_size(node));
+        HashMap<String, Object> map = new HashMap<String, Object>(plist_dict_get_size(node));
 
         // Get iterator
         Ptr<plist_dict_iter> iter_ptr = PtrFactory.newOpaquePtrReference(plist_dict_iter.class);
         plist_dict_new_iter(node, iter_ptr);
 
         // Create pointers for 'next' items
-        @SuppressWarnings("unchecked")
-        Ptr<BytePtr> key_ = (Ptr<BytePtr>) PtrFactory.newPointerPtr(Byte.class,
-                2, 1, true, false);
+        @SuppressWarnings("unchecked") Ptr<BytePtr> key_ = (Ptr<BytePtr>)PtrFactory
+                .newPointerPtr(Byte.class, 2, 1, true, false);
         Ptr<plist_t> val_ = PtrFactory.newOpaquePtrReference(plist_t.class);
 
         // Iterate
@@ -190,9 +187,8 @@ public class PlistHelper {
         plist_dict_new_iter(node, iter_ptr);
 
         // Create pointers for 'next' items
-        @SuppressWarnings("unchecked")
-        Ptr<BytePtr> key_ = (Ptr<BytePtr>) PtrFactory.newPointerPtr(Byte.class,
-                2, 1, true, false);
+        @SuppressWarnings("unchecked") Ptr<BytePtr> key_ = (Ptr<BytePtr>)PtrFactory
+                .newPointerPtr(Byte.class, 2, 1, true, false);
         Ptr<plist_t> val_ = PtrFactory.newOpaquePtrReference(plist_t.class);
 
         // Iterate
