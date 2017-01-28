@@ -254,6 +254,7 @@ public class NatJClass<T extends NatJClass> {
             }
 
             @Override
+            @SuppressWarnings("unchecked")
             public void visitEnd() {
                 if (consumer != null) {
                     consumer.accept((T)NatJClass.this);
