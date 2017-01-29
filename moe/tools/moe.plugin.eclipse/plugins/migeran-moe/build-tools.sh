@@ -11,7 +11,8 @@ cd ../../../master
     :moe.tools.common:build \
     :moe.generator.project:build \
     :moe.document.pbxproj:build \
-    :moe.plugin.common:build
+    :moe.plugin.common:build \
+    -x test
 
 cd "$CURRENT_DIR"
 cp ../../../moe.tools.natjgen/build/libs/*.jar lib/
