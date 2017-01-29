@@ -20,6 +20,9 @@ import groovy.lang.Closure;
 import org.gradle.api.Task;
 import org.moe.gradle.utils.Require;
 
+/**
+ * Closure helper class for working with Gradle's rule closures.
+ */
 public abstract class RuleClosure extends Closure<Task> {
 
     protected RuleClosure(Object owner) {

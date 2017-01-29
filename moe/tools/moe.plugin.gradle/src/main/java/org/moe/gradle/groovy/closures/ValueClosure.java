@@ -20,6 +20,9 @@ import groovy.lang.Closure;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.utils.Require;
 
+/**
+ * Closure helper class for working with Gradle's task convention closures.
+ */
 public abstract class ValueClosure<V> extends Closure<V> {
 
     protected ValueClosure(@NotNull Object owner) {

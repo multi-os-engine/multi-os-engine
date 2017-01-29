@@ -20,6 +20,10 @@ import groovy.lang.Closure;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.utils.Require;
 
+/**
+ * Configuration closure helper class for working with Groovy closures.
+ * @param <T> Type to configure
+ */
 public abstract class ConfigurationClosure<T> extends Closure<Void> {
 
     protected ConfigurationClosure(@NotNull Object owner) {

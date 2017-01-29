@@ -19,6 +19,9 @@ package org.moe.gradle.anns;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
+/**
+ * This annotation marks methods and fields as ignored when analyzing unused methods.
+ */
 @Target({ElementType.METHOD, ElementType.FIELD})
 public @interface IgnoreUnused {
 }

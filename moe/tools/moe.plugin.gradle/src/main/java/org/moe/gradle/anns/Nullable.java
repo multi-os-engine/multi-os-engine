@@ -19,6 +19,10 @@ package org.moe.gradle.anns;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
+/**
+ * This annotation marks a declaration as nullable, meaning that post-initialization the null and non-null values are
+ * both valid.
+ */
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
 public @interface Nullable {
 }

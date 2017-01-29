@@ -19,6 +19,9 @@ package org.moe.gradle.anns;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
+/**
+ * This annotation marks a declaration as non-null, meaning that post-initialization the null value is illegal.
+ */
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
 public @interface NotNull {
 }

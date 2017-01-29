@@ -20,6 +20,9 @@ import org.gradle.api.Task;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.utils.Require;
 
+/**
+ * Closure helper class for working with Gradle's task creation closures.
+ */
 public abstract class TaskClosure<T extends Task> extends ConfigurationClosure<T> {
 
     protected TaskClosure(@NotNull Object owner) {
