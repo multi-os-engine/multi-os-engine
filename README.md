@@ -55,7 +55,7 @@ Install brew from [brew.sh](http://brew.sh), then you can install MOE's dependen
 
 ```sh
 brew tap homebrew/versions
-brew install autogen autoconf automake libtool pkg-config wget gcc5 cloog cmake jasmin gpg ant maven
+brew install autogen autoconf automake libtool pkg-config wget gcc@5 cloog cmake jasmin gpg ant maven
 
 cd <repo>/moe/moe-core
 brew install file://`pwd`/dependencies/premake5.rb
