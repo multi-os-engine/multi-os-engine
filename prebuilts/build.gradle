@@ -56,7 +56,7 @@ task mingw(type: Script) {
     def BREW_MPFR = checkDir '/usr/local/opt/mpfr'
     def BREW_MPC = checkDir '/usr/local/opt/libmpc'
     def BREW_CLOOG = checkDir '/usr/local/opt/cloog'
-    def BREW_ISL = checkDir '/usr/local/opt/isl014'
+    def BREW_ISL = checkDir '/usr/local/opt/isl@0.14'
 
     progress "Downloading $binutils_version"
     workDir 'mingw'
