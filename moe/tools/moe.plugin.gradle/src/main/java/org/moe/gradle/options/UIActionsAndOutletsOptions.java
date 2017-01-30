@@ -26,6 +26,9 @@ import java.util.List;
 
 public class UIActionsAndOutletsOptions {
 
+    /**
+     * List of regex strings for which classes to include in the generation.
+     */
     @NotNull private List<String> includes = new ArrayList<>();
 
     @NotNull
@@ -42,6 +45,9 @@ public class UIActionsAndOutletsOptions {
         includes.add(Require.nonNull(regex));
     }
 
+    /**
+     * List of strings to append to the generated code.
+     */
     @NotNull private List<String> additionalCodes = new ArrayList<>();
 
     @NotNull
@@ -58,6 +64,9 @@ public class UIActionsAndOutletsOptions {
         additionalCodes.add(Require.nonNull(regex));
     }
 
+    /**
+     * List of '@import'-s to exclude from generation.
+     */
     @NotNull private List<String> excludeLibraries = new ArrayList<>();
 
     @NotNull

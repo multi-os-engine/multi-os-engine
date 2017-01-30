@@ -154,6 +154,13 @@ public class NatJClass<T extends NatJClass> {
         return isClass;
     }
 
+    /**
+     * Returns a ClassVisitor used to initialize this object.
+     *
+     * @param api ASM API version
+     * @param consumer Consumer to invoke post-initialization.
+     * @return ClassVisitor instance
+     */
     public ClassVisitor getInitializingVisitor(int api, Consumer<T> consumer) {
         return new ClassVisitor(api) {
             @Override

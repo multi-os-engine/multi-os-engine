@@ -30,6 +30,9 @@ import java.util.Properties;
 public class SigningOptions {
     private static final Logger LOG = Logging.getLogger(SigningOptions.class);
 
+    /**
+     * Default development team ID. This will be used if 'developmentTeam' was not explicitly set.
+     */
     @Nullable
     private String defaultDevelopmentTeam;
 
@@ -46,6 +49,9 @@ public class SigningOptions {
         }
     }
 
+    /**
+     * Path to the provisioning profile.
+     */
     @Nullable
     private String provisioningProfile;
 
@@ -59,6 +65,9 @@ public class SigningOptions {
         this.provisioningProfile = provisioningProfile;
     }
 
+    /**
+     * Name of the provisioning profile (Xcode 8).
+     */
     @Nullable
     private String provisioningProfileSpecifier;
 
@@ -72,6 +81,9 @@ public class SigningOptions {
         this.provisioningProfileSpecifier = provisioningProfileSpecifier;
     }
 
+    /**
+     * Name of the signing identity.
+     */
     @Nullable
     private String signingIdentity;
 
@@ -85,6 +97,9 @@ public class SigningOptions {
         this.signingIdentity = signingIdentity;
     }
 
+    /**
+     * Development team ID.
+     */
     @Nullable
     private String developmentTeam;
 

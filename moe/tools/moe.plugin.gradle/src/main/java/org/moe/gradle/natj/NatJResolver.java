@@ -40,12 +40,22 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
     final Map<String, ResolvedClass> classes = new HashMap<>();
     final List<String> issues = new ArrayList<>();
 
+    /**
+     * Adds a class to this resolver.
+     *
+     * @param clazz Class to add
+     */
     public void add(T clazz) {
         Require.nonNull(clazz);
         LOG.debug("adding class " + clazz.getName());
         classes.put(clazz.getName(), new ResolvedClass(clazz));
     }
 
+    /**
+     * Resolves class hierarchy and types then calls the specified action on each class.
+     *
+     * @param action Action to call
+     */
     public void resolve(BiConsumer<String, ResolvedClass> action) {
         Require.nonNull(action);
 
@@ -128,11 +138,25 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
         classes.forEach(action);
     }
 
+    /**
+     * Adds a skipping issue to the issues list.
+     *
+     * @param clazz Skipped class
+     * @param reason Skipping reason
+     */
     private void issueSkip(String clazz, String reason) {
         String msg = "Skipping " + Type.getObjectType(clazz).getClassName() + ": " + reason;
         issues.add(msg);
     }
 
+    /**
+     * Creates an ordered list based on class hierarchy.
+     *
+     * @param clazz Class name to add order for
+     * @param resolved Class to add order for
+     * @param order Ordered list
+     * @param ordered Set of objects already in the ordered list
+     */
     private void createOrder(String clazz, ResolvedClass resolved, List<String> order, Set<String> ordered) {
         Require.nonNull(clazz);
         if (resolved == null) {
@@ -159,6 +183,9 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
         return classes.get(k);
     }
 
+    /**
+     * Class representation with resolution information.
+     */
     public class ResolvedClass {
         public final T _clazz;
         /**

@@ -162,6 +162,13 @@ public class NatJMethod {
         return isVariadic;
     }
 
+    /**
+     * Returns a MethodVisitor used to initialize this object.
+     *
+     * @param api ASM API version
+     * @param consumer Consumer to invoke post-initialization.
+     * @return MethodVisitor instance
+     */
     public MethodVisitor getInitializingVisitor(int api, Consumer<NatJMethod> consumer) {
         return new MethodVisitor(api) {
             @Override

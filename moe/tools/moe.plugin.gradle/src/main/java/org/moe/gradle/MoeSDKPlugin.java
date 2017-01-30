@@ -27,6 +27,9 @@ import org.moe.gradle.utils.Require;
 import javax.inject.Inject;
 import java.io.File;
 
+/**
+ * MOE's 'moe-sdk' plugin.
+ */
 public class MoeSDKPlugin extends AbstractMoePlugin {
 
     private static final Logger LOG = Logging.getLogger(MoeSDKPlugin.class);

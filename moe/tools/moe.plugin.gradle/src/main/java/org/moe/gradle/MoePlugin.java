@@ -67,6 +67,9 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.moe.gradle.MoePlugin.TaskParams.*;
 
+/**
+ * MOE's 'moe-gradle' plugin.
+ */
 public class MoePlugin extends AbstractMoePlugin {
 
     private static final Logger LOG = Logging.getLogger(MoePlugin.class);

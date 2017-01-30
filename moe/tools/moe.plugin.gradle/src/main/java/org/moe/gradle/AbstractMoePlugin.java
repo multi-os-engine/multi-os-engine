@@ -28,11 +28,23 @@ import org.moe.gradle.utils.Require;
 
 import javax.inject.Inject;
 
+/**
+ * Base class of MOE plugins.
+ */
 public abstract class AbstractMoePlugin implements Plugin<Project> {
 
+    /**
+     * MOE group.
+     */
     public static final String MOE = "moe";
 
+    /**
+     * Required major version of Gradle.
+     */
     private static final int GRADLE_MIN_VERSION_MAJOR = 2;
+    /**
+     * Required minor version of Gradle.
+     */
     private static final int GRADLE_MIN_VERSION_MINOR = 5;
 
     @NotNull
@@ -73,11 +85,21 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         sdk = MoeSDK.setup(this);
     }
 
+    /**
+     * Returns the minimum required Gradle version.
+     *
+     * @return Minimum required Gradle version
+     */
     @IgnoreUnused
     public final String getRequiredGradleVersion() {
         return GRADLE_MIN_VERSION_MAJOR + "." + GRADLE_MIN_VERSION_MINOR;
     }
 
+    /**
+     * Checks whether the host Gradle complies with MOE's version requirements.
+     *
+     * @param project Project to check
+     */
     private void checkGradleVersion(Project project) {
         final String version = project.getGradle().getGradleVersion();
         final String[] components = version.split("\\.");

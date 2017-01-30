@@ -21,6 +21,9 @@ import org.moe.gradle.anns.Nullable;
 
 public class XcodeOptions {
 
+    /**
+     * Xcode project file.
+     */
     @Nullable
     private Object project;
 
@@ -33,6 +36,9 @@ public class XcodeOptions {
         this.project = project;
     }
 
+    /**
+     * Xcode workspace file.
+     */
     @Nullable
     private Object workspace;
 
@@ -45,6 +51,9 @@ public class XcodeOptions {
         this.workspace = workspace;
     }
 
+    /**
+     * Name of the main target in the Xcode project.
+     */
     @Nullable
     private String mainTarget;
 
@@ -58,6 +67,9 @@ public class XcodeOptions {
         this.mainTarget = mainTarget;
     }
 
+    /**
+     * Name of the test target in the Xcode project.
+     */
     @Nullable
     private String testTarget;
 
@@ -71,6 +83,9 @@ public class XcodeOptions {
         this.testTarget = testTarget;
     }
 
+    /**
+     * Name of the main target's scheme.
+     */
     @Nullable
     private String mainScheme;
 
@@ -84,6 +99,9 @@ public class XcodeOptions {
         this.mainScheme = mainScheme;
     }
 
+    /**
+     * Name of the test target's scheme.
+     */
     @Nullable
     private String testScheme;
 
