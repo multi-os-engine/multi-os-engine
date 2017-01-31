@@ -136,6 +136,7 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         }
         try {
             ProjectFile file = new ProjectFile(getXcodeProjectFile());
+            final String before = file.toString();
             final Root fileRoot = file.getRoot();
             final PBXProject rootObject = fileRoot.getRootObject().getReferenced();
             final PBXGroup mainGroup = rootObject.getMainGroup().getReferenced();
@@ -224,9 +225,12 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
                 sourcesBP.getReferenced().getOrCreateFiles().add(buildRef);
             }
 
-            file.save();
+            final String after = file.toString();
+            if (!after.equals(before)) {
+                file.save();
+            }
         } catch (Throwable e) {
-            throw new GradleException("Filed to update Xcode project", e);
+            throw new GradleException("Failed to update Xcode project", e);
         }
     }
 
