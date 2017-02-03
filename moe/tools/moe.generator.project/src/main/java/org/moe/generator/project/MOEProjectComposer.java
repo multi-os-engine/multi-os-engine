@@ -16,6 +16,8 @@ limitations under the License.
 
 package org.moe.generator.project;
 
+import org.moe.common.utils.JavaUtil;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.Collections;
@@ -501,7 +503,7 @@ public class MOEProjectComposer implements Cloneable {
      */
     private static void requireJavaPackage(Field field, String value) throws MOEProjectComposerValidationException {
         requireNotEmpty(field, value);
-        if (!isValidJavaPackage(value)) {
+        if (!JavaUtil.isValidJavaPackage(value)) {
             throw new MOEProjectComposerValidationException(field, "is not a valid Java package name");
         }
     }
@@ -519,53 +521,6 @@ public class MOEProjectComposer implements Cloneable {
         if (!version.matches("[\\d]+\\.[\\d]+\\.([\\d]+|\\+)")) {
             throw new MOEProjectComposerValidationException(field, "is not a valid version number");
         }
-    }
-
-    /**
-     * Set of Java keywords (https://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-Keyword), boolean
-     * literals and the null literal.
-     */
-    private static final Set<String> KEYWORDS_BOOLLITERALS_NULLLITERAL;
-
-    static {
-        KEYWORDS_BOOLLITERALS_NULLLITERAL = Collections.unmodifiableSet(new HashSet<String>(
-                Arrays.asList("abstract", "continue", "for", "new", "switch", "assert", "default", "if", "package",
-                        "synchronized", "boolean", "do", "goto", "private", "this", "break", "double", "implements",
-                        "protected", "throw", "byte", "else", "import", "public", "throws", "case", "enum",
-                        "instanceof", "return", "transient", "catch", "extends", "int", "short", "try", "char", "final",
-                        "interface", "static", "void", "class", "finally", "long", "strictfp", "volatile", "const",
-                        "float", "native", "super", "while", "true", "false", "null")));
-    }
-
-    /**
-     * Tells whether or not the specified String is a valid Java package name or not.
-     *
-     * @param value String to validate
-     * @return true iff specified string is a valid package name
-     */
-    private static boolean isValidJavaPackage(String value) {
-        // Spec:
-        // https://docs.oracle.com/javase/specs/jls/se8/html/jls-6.html#jls-PackageName
-        // https://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-IdentifierChars
-        if (value == null) {
-            throw new NullPointerException();
-        }
-        final String[] components = value.split("\\.");
-        for (String component : components) {
-            if (component.length() == 0) return false;
-            final int length = component.length();
-            for (int offset = 0; offset < length; ) {
-                final int codepoint = component.codePointAt(offset);
-                if (offset == 0) {
-                    if (!Character.isJavaIdentifierStart(codepoint)) return false;
-                } else {
-                    if (!Character.isJavaIdentifierPart(codepoint)) return false;
-                }
-                offset += Character.charCount(codepoint);
-            }
-            if (KEYWORDS_BOOLLITERALS_NULLLITERAL.contains(component)) return false;
-        }
-        return true;
     }
 
     /*
