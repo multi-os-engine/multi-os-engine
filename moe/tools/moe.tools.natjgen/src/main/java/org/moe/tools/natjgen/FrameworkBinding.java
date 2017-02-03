@@ -18,7 +18,7 @@ package org.moe.tools.natjgen;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
-import org.moe.tools.natjgen.util.JavaUtil;
+import org.moe.common.utils.JavaUtil;
 
 /**
  * This class is specialized on Framework configuration.

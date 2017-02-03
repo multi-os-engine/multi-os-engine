@@ -19,7 +19,7 @@ package org.moe.tools.natjgen;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
-import org.moe.tools.natjgen.util.JavaUtil;
+import org.moe.common.utils.JavaUtil;
 
 import java.util.ArrayList;
 import java.util.List;
