@@ -27,12 +27,11 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.Nullable;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class NatJGen extends AbstractBaseTask {
-
-    private static final Logger LOG = Logging.getLogger(Launchers.class);
 
     private static final String CONVENTION_CONFIGURATION = "config";
     private static final String CONVENTION_NATJGEN_JAR = "natjgen-jar";
@@ -52,18 +51,15 @@ public class NatJGen extends AbstractBaseTask {
         this.config = config;
     }
 
-    @Nullable
-    private String natjgen;
+    private File natjgen;
 
     @Input
-    @Optional
-    @Nullable
-    public String getNatJGenJar() {
+    public File getNatJGenJar() {
         return nullableGetOrConvention(natjgen, CONVENTION_NATJGEN_JAR);
     }
 
     @IgnoreUnused
-    public void setNatJGenJar(@Nullable String natjgen) {
+    public void setNatJGenJar(File natjgen) {
         this.natjgen = natjgen;
     }
 
@@ -76,13 +72,11 @@ public class NatJGen extends AbstractBaseTask {
             throw new GradleException("Missing binding configuration settings");
         }
 
-
-
         final ByteArrayOutputStream baos = new ByteArrayOutputStream();
         javaexec(spec -> {
             spec.setMain("-jar");
             spec.setWorkingDir(getMoeExtension().getSDK().getToolsDir().getAbsolutePath());
-            spec.args(getNatJGenJar());
+            spec.args(getNatJGenJar().getAbsolutePath());
             spec.args(getProject().getProjectDir().getParent());
             spec.args(getProject().getName());
             spec.args(biningConfiguration);
@@ -101,13 +95,9 @@ public class NatJGen extends AbstractBaseTask {
 
         setDescription("Generate binding");
 
-        addConvention(CONVENTION_CONFIGURATION, () ->
-                ext.natjgen.getConfig()
-        );
+        addConvention(CONVENTION_CONFIGURATION, () -> ext.natjgen.getConfig());
 
-        addConvention(CONVENTION_NATJGEN_JAR, () ->
-                ext.getSdk().getNatJGenJar().getAbsolutePath()
-        );
+        addConvention(CONVENTION_NATJGEN_JAR, () -> ext.getSdk().getNatJGenJar());
 
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "NatJGen.log"));
     }
