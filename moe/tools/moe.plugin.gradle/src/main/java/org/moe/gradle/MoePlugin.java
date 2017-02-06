@@ -32,20 +32,7 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.groovy.closures.RuleClosure;
 import org.moe.gradle.remote.Server;
-import org.moe.gradle.tasks.AbstractBaseTask;
-import org.moe.gradle.tasks.Dex;
-import org.moe.gradle.tasks.Dex2Oat;
-import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
-import org.moe.gradle.tasks.IpaBuild;
-import org.moe.gradle.tasks.Launchers;
-import org.moe.gradle.tasks.ProGuard;
-import org.moe.gradle.tasks.ResourcePackager;
-import org.moe.gradle.tasks.Retrolambda;
-import org.moe.gradle.tasks.StartupProvider;
-import org.moe.gradle.tasks.TestClassesProvider;
-import org.moe.gradle.tasks.XcodeBuild;
-import org.moe.gradle.tasks.XcodeInternal;
-import org.moe.gradle.tasks.XcodeProvider;
+import org.moe.gradle.tasks.*;
 import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Mode;
@@ -164,6 +151,8 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(IpaBuild.class, "Creates .ipa files.",
                 emptyList());
         addRule(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
+                emptyList());
+        addRule(NatJGen.class, "Generate binding",
                 emptyList());
 
         project.getTasks().create("moeSDKProperties", task -> {

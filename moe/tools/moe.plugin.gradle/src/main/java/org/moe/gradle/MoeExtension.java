@@ -23,12 +23,7 @@ import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.options.JavaProcessOptions;
-import org.moe.gradle.options.PackagingOptions;
-import org.moe.gradle.options.ResourceOptions;
-import org.moe.gradle.options.SigningOptions;
-import org.moe.gradle.options.UIActionsAndOutletsOptions;
-import org.moe.gradle.options.XcodeOptions;
+import org.moe.gradle.options.*;
 import org.moe.gradle.utils.Require;
 
 import java.io.File;
@@ -71,6 +66,9 @@ public class MoeExtension {
     public final UIActionsAndOutletsOptions actionsAndOutlets;
 
     @NotNull
+    public final NatjgenOptions natjgen;
+
+    @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
     private int proguardLevel = PROGUARD_LEVEL_APP;
@@ -85,6 +83,7 @@ public class MoeExtension {
         this.signing = instantiator.newInstance(SigningOptions.class);
         this.javaProcess = instantiator.newInstance(JavaProcessOptions.class);
         this.actionsAndOutlets = instantiator.newInstance(UIActionsAndOutletsOptions.class);
+        this.natjgen = instantiator.newInstance(NatjgenOptions.class);
     }
 
     void setup() {
@@ -140,6 +139,11 @@ public class MoeExtension {
     @IgnoreUnused
     public void actionsAndOutlets(Action<UIActionsAndOutletsOptions> action) {
         Require.nonNull(action).execute(actionsAndOutlets);
+    }
+
+    @IgnoreUnused
+    public void natjgen(Action<NatjgenOptions> action) {
+        Require.nonNull(action).execute(natjgen);
     }
 
     @NotNull

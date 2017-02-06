@@ -35,6 +35,7 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [ConfigRemote Task](#configremote-task)
   * [TestRemote Task](#testremote-task)
   * [RemoteServerSetup Task](#remoteserversetup-task)
+  * [NatJGen Task](#natjgen-task)
 * [Remote Server Settings](#remote-server-settings)
 
 ## Other Documents
@@ -644,3 +645,13 @@ Example: `knownhosts=$sys$user.home/.ssh/known_hosts`
 All of these properties can be overridden from command-line with `-Pmoe.remotebuild.<setting>=<value>`.
 The `moe.remotebuild.properties` file can be completely ignored by passing the `-Pmoe.remotebuild.properties.ignore`
 parameter.
+
+---
+
+### NatJGen Task
+
+Task name: `moeNatJGen`
+
+This task run NatJ binding generator with configuration. Allowed configurations: *.natjgen and *.nbc
+
+- natjgen.config 'sample.natjgen'
