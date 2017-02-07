@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
-import org.gradle.api.logging.Logger;
-import org.gradle.api.logging.Logging;
+import org.gradle.api.Task;
+import org.gradle.api.specs.Spec;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Optional;
 import org.moe.gradle.MoeExtension;
@@ -38,6 +38,15 @@ public class NatJGen extends AbstractBaseTask {
 
     @Nullable
     private String config;
+
+    public NatJGen() {
+        getOutputs().upToDateWhen(new Spec<Task>() {
+            @Override
+            public boolean isSatisfiedBy(Task task) {
+                return false;
+            }
+        });
+    }
 
     @Input
     @Optional
