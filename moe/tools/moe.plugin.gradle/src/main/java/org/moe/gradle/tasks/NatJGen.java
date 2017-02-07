@@ -26,10 +26,11 @@ import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.Nullable;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NatJGen extends AbstractBaseTask {
 
@@ -75,21 +76,30 @@ public class NatJGen extends AbstractBaseTask {
     @Override
     protected void run() {
 
-        String biningConfiguration = getConfig();
+        String bindingConfiguration = getConfig();
 
-        if (biningConfiguration == null || biningConfiguration.isEmpty()) {
+        String propertyConf = System.getProperty("moe.binding.conf");
+
+        final String configuration = propertyConf == null ? bindingConfiguration : propertyConf;
+
+        boolean isTest = Boolean.valueOf(System.getProperty("moe.natjgen.testrun"));
+
+        if (configuration == null || configuration.isEmpty()) {
             throw new GradleException("Missing binding configuration settings");
         }
 
-        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
         javaexec(spec -> {
             spec.setMain("-jar");
             spec.setWorkingDir(getMoeExtension().getSDK().getToolsDir().getAbsolutePath());
             spec.args(getNatJGenJar().getAbsolutePath());
             spec.args(getProject().getProjectDir().getParent());
             spec.args(getProject().getName());
-            spec.args(biningConfiguration);
-            spec.setStandardOutput(baos);
+            spec.args(configuration);
+            if (isTest) {
+                List<String> args = new ArrayList<String>();
+                args.add("-Dmoe.natjgen.testrun=true");
+                spec.setJvmArgs(args);
+            }
         });
     }
 

@@ -57,6 +57,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
 
     protected static final String CONVENTION_LOG_FILE = "logFile";
     private static final String CONVENTION_REMOTE_BUILD_HELPER = "remoteBuildHelper";
+    private static final String MOE_RAW_BINDING_OUTPUT_OPTION = "raw-binding-output";
 
     private Object logFile;
 
@@ -231,8 +232,11 @@ public abstract class AbstractBaseTask extends DefaultTask {
             } catch (FileNotFoundException e) {
                 throw new GradleException("Failed to open output stream to " + getLogFile(), e);
             }
-            execSpec.setErrorOutput(ostream);
-            execSpec.setStandardOutput(ostream);
+
+            if (System.getProperty(MOE_RAW_BINDING_OUTPUT_OPTION) == null) {
+                execSpec.setErrorOutput(ostream);
+                execSpec.setStandardOutput(ostream);
+            }
         });
         if (result.getExitValue() != 0 && shouldLogOnExecFail() && getLogFile() != null) {
             logger.error("\n" +
