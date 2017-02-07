@@ -23,10 +23,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.util.ui.UIUtil;
-import org.moe.common.exec.BindingExec;
-import org.moe.common.exec.ExecRunner;
-import org.moe.common.exec.ExecRunnerBase;
-import org.moe.common.exec.IKillListener;
+import org.moe.common.exec.*;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.ui.MOEToolWindow;
@@ -34,6 +31,8 @@ import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GeneratorRunner {
 
@@ -43,7 +42,6 @@ public class GeneratorRunner {
     private Module module;
     private File coonfigurationFile;
     private boolean test;
-    private String sdkPath;
 
     public GeneratorRunner(Module module) {
         this.module = module;
@@ -52,12 +50,6 @@ public class GeneratorRunner {
     public void generateBinding(File confFile, boolean test) {
         this.coonfigurationFile = confFile;
         this.test = test;
-
-        sdkPath = MOESdkPlugin.getSdkRootPath(module);
-
-        if (sdkPath == null) {
-            showErrorMessage("Unable find moe sdk");
-        }
 
         run();
     }
@@ -106,8 +98,18 @@ public class GeneratorRunner {
 
                 progress.setFraction(0.2);
 
-                BindingExec bindingExec = new BindingExec(moduleFile, sdkPath, coonfigurationFile, test);
-                ExecRunner runner = bindingExec.getRunner();
+                GradleExec exec = new GradleExec(moduleFile);
+
+                exec.getArguments().add("moeNatJGen");
+                exec.getArguments().add("-Draw-binding-output");
+                exec.getArguments().add("-Dmoe.binding.conf=" + coonfigurationFile.getPath());
+                if (test) {
+                    exec.getArguments().add("-Dmoe.natjgen.testrun=true");
+                }
+
+
+                ExecRunner runner = exec.getRunner();
+                runner.getBuilder().directory(moduleFile);
                 runner.setListener(new ExecRunnerBase.ExecRunnerListener() {
 
                     @Override

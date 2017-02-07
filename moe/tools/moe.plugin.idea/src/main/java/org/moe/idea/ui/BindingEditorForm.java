@@ -127,13 +127,10 @@ public class BindingEditorForm {
 
     public void generate(AbstractBinding binding, boolean test) {
         save();
-        File temp = null;
         try {
-            temp = File.createTempFile(configurationFile.getParent(), configurationFile.getName() + ".natjgen");
-            temp.deleteOnExit();
-            generateNatjGenFile(binding, temp);
+            validateBinding(binding);
             GeneratorRunner testGeneratorRunner = new GeneratorRunner(module);
-            testGeneratorRunner.generateBinding(temp, test);
+            testGeneratorRunner.generateBinding(configurationFile, test);
         } catch (Exception e) {
             Messages.showErrorDialog(e.getMessage(), "Generate Binding Error");
         }
@@ -147,7 +144,7 @@ public class BindingEditorForm {
         generate(binding, true);
     }
 
-    private void generateNatjGenFile(AbstractBinding binding, File target) throws FileNotFoundException, ValidationException {
+    private void validateBinding(AbstractBinding binding) throws FileNotFoundException, ValidationException {
         ConfigurationBuilder builder = null;
         if (binding == null) {
             builder = new ConfigurationBuilder(bindings);
@@ -158,12 +155,7 @@ public class BindingEditorForm {
             testBindings.add(binding);
             builder = new ConfigurationBuilder(testBindings);
         }
-        final PrintWriter writer = new PrintWriter(target);
-        try {
-            writer.write(builder.build());
-        } finally {
-            writer.close();
-        }
+        builder.build();
     }
 
     public String getModulePath() {
