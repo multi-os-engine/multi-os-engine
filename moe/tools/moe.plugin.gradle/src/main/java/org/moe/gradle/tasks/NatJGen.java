@@ -21,16 +21,19 @@ import org.gradle.api.Task;
 import org.gradle.api.specs.Spec;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Optional;
-import org.moe.gradle.MoeExtension;
-import org.moe.gradle.MoePlugin;
+import org.moe.gradle.AbstractMoeExtension;
 import org.moe.gradle.anns.IgnoreUnused;
+import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.utils.Require;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.moe.gradle.AbstractMoePlugin.MOE;
 
 public class NatJGen extends AbstractBaseTask {
 
@@ -76,7 +79,7 @@ public class NatJGen extends AbstractBaseTask {
     @Override
     protected void run() {
 
-        String bindingConfiguration = getConfig();
+        String bindingConfiguration = getExtension().natjgen.getConfig();
 
         String propertyConf = System.getProperty("moe.binding.conf");
 
@@ -88,9 +91,11 @@ public class NatJGen extends AbstractBaseTask {
             throw new GradleException("Missing binding configuration settings");
         }
 
+        final AbstractMoeExtension ext = getExtension();
+
         javaexec(spec -> {
             spec.setMain("-jar");
-            spec.setWorkingDir(getMoeExtension().getSDK().getToolsDir().getAbsolutePath());
+            spec.setWorkingDir(ext.getSDK().getToolsDir().getAbsolutePath());
             spec.args(getNatJGenJar().getAbsolutePath());
             spec.args(getProject().getProjectDir().getParent());
             spec.args(getProject().getName());
@@ -107,17 +112,21 @@ public class NatJGen extends AbstractBaseTask {
 
         setSupportsRemoteBuild(false);
 
-        final MoeExtension ext = getMoeExtension();
+        final AbstractMoeExtension ext = getExtension();
 
         // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE);
+        final Path out = Paths.get(MOE);
 
         setDescription("Generate binding");
 
-        addConvention(CONVENTION_CONFIGURATION, () -> ext.natjgen.getConfig());
+        //addConvention(CONVENTION_CONFIGURATION, () -> ext.natjgen.getConfig());
 
         addConvention(CONVENTION_NATJGEN_JAR, () -> ext.getSdk().getNatJGenJar());
 
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "NatJGen.log"));
+    }
+
+    public @NotNull AbstractMoeExtension getExtension() {
+        return Require.nonNull((AbstractMoeExtension) getProject().getExtensions().findByName(MOE));
     }
 }

@@ -16,38 +16,24 @@ limitations under the License.
 
 package org.moe.gradle;
 
+import org.gradle.api.Action;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.options.JavaProcessOptions;
+import org.moe.gradle.options.NatjgenOptions;
 import org.moe.gradle.utils.Require;
 
 import java.io.File;
 
-public class MoeSDKExtension {
-
-    @NotNull
-    public final MoeSDKPlugin plugin;
+public class MoeSDKExtension extends AbstractMoeExtension {
 
     @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
     public MoeSDKExtension(@NotNull MoeSDKPlugin plugin, @NotNull Instantiator instantiator) {
-        this.plugin = Require.nonNull(plugin);
-        Require.nonNull(instantiator);
-    }
-
-    @NotNull
-    @IgnoreUnused
-    // Add this variant of the method so we can access it from Gradle as 'sdk'
-    public MoeSDK getSdk() {
-        return plugin.getSDK();
-    }
-
-    @NotNull
-    @IgnoreUnused
-    public MoeSDK getSDK() {
-        return plugin.getSDK();
+        super(plugin, instantiator);
     }
 
     @NotNull
@@ -71,4 +57,5 @@ public class MoeSDKExtension {
     public File getPlatformJar() {
         return plugin.getSDK().getPlatformJar(platform);
     }
+
 }

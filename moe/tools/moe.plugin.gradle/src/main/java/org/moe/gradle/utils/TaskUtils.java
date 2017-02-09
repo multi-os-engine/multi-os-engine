@@ -27,6 +27,7 @@ import org.gradle.api.tasks.SourceSet;
 import org.gradle.process.ExecResult;
 import org.gradle.process.ExecSpec;
 import org.gradle.process.JavaExecSpec;
+import org.moe.gradle.AbstractMoePlugin;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
@@ -57,7 +58,7 @@ public class TaskUtils {
         }
     }
 
-    public static SourceSet getSourceSet(@NotNull MoePlugin plugin, @NotNull String sourceSetName) {
+    public static SourceSet getSourceSet(@NotNull AbstractMoePlugin plugin, @NotNull String sourceSetName) {
         Require.nonNull(plugin);
         Require.nonNull(sourceSetName);
 

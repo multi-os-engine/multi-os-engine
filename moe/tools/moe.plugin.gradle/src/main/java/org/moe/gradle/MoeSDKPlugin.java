@@ -16,16 +16,30 @@ limitations under the License.
 
 package org.moe.gradle;
 
+import groovy.lang.GroovyObject;
+import org.apache.commons.lang3.text.WordUtils;
 import org.gradle.api.Project;
+import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
+import org.gradle.api.plugins.JavaPluginConvention;
+import org.gradle.api.tasks.SourceSet;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
-import org.moe.gradle.utils.Require;
+import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.groovy.closures.RuleClosure;
+import org.moe.gradle.tasks.AbstractBaseTask;
+import org.moe.gradle.tasks.NatJGen;
+import org.moe.gradle.utils.*;
 
 import javax.inject.Inject;
 import java.io.File;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+
+import static java.util.Collections.emptyList;
 
 /**
  * MOE's 'moe-sdk' plugin.
@@ -55,6 +69,10 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
         // Create plugin extension
         extension = project.getExtensions().create(MOE, MoeSDKExtension.class, this, instantiator);
 
+        // Get Java convention
+        javaConvention = (JavaPluginConvention) project.getConvention().getPlugins().get("java");
+        Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
+
         project.getTasks().create("moeSDKProperties", task -> {
             task.setGroup(MOE);
             task.setDescription("Prints some properties of the MOE SDK.");
@@ -68,5 +86,14 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
                         "\n");
             });
         });
+
+        addRule(NatJGen.class, "Generate binding",
+                emptyList(), MoeSDKPlugin.this);
     }
+
+    @Override
+    protected void checkRemoteServer(AbstractBaseTask task) {
+
+    }
+
 }

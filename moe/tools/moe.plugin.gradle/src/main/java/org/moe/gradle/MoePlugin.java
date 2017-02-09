@@ -52,7 +52,7 @@ import java.util.stream.Collectors;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
-import static org.moe.gradle.MoePlugin.TaskParams.*;
+import static org.moe.gradle.AbstractMoePlugin.TaskParams.*;
 
 /**
  * MOE's 'moe-gradle' plugin.
@@ -67,14 +67,6 @@ public class MoePlugin extends AbstractMoePlugin {
     @NotNull
     public MoeExtension getExtension() {
         return Require.nonNull(extension, "The plugin's 'extension' property was null");
-    }
-
-    @NotNull
-    private JavaPluginConvention javaConvention;
-
-    @NotNull
-    public JavaPluginConvention getJavaConvention() {
-        return Require.nonNull(javaConvention, "The plugin's 'javaConvention' property was null");
     }
 
     @Nullable
@@ -130,30 +122,30 @@ public class MoePlugin extends AbstractMoePlugin {
 
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
-                singletonList(SOURCE_SET));
+                singletonList(SOURCE_SET), MoePlugin.this);
         addRule(Retrolambda.class, "Creates a Retrolambda-d jar.",
-                singletonList(SOURCE_SET));
+                singletonList(SOURCE_SET), MoePlugin.this);
         addRule(Dex.class, "Creates a Dexed jar.",
-                singletonList(SOURCE_SET));
+                singletonList(SOURCE_SET), MoePlugin.this);
         addRule(Dex2Oat.class, "Creates art and oat files.",
-                asList(SOURCE_SET, MODE, ARCH_FAMILY));
+                asList(SOURCE_SET, MODE, ARCH_FAMILY), MoePlugin.this);
         ResourcePackager.addRule(this);
         addRule(TestClassesProvider.class, "Creates the classlist.txt file.",
-                singletonList(SOURCE_SET));
+                singletonList(SOURCE_SET), MoePlugin.this);
         addRule(StartupProvider.class, "Creates the preregister.txt file.",
-                singletonList(SOURCE_SET));
+                singletonList(SOURCE_SET), MoePlugin.this);
         addRule(XcodeProvider.class, "Collects the required dependencies.",
-                asList(SOURCE_SET, MODE, ARCH, PLATFORM));
+                asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         addRule(XcodeInternal.class, "Creates all files for Xcode.",
-                emptyList());
+                emptyList(), MoePlugin.this);
         addRule(XcodeBuild.class, "Creates .app files.",
-                asList(SOURCE_SET, MODE, PLATFORM));
+                asList(SOURCE_SET, MODE, PLATFORM), MoePlugin.this);
         addRule(IpaBuild.class, "Creates .ipa files.",
-                emptyList());
+                emptyList(), MoePlugin.this);
         addRule(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
-                emptyList());
+                emptyList(), MoePlugin.this);
         addRule(NatJGen.class, "Generate binding",
-                emptyList());
+                emptyList(), MoePlugin.this);
 
         project.getTasks().create("moeSDKProperties", task -> {
             task.setGroup(MOE);
@@ -223,105 +215,10 @@ public class MoePlugin extends AbstractMoePlugin {
         }
     }
 
-    protected enum TaskParams {
-        SOURCE_SET, MODE, ARCH, ARCH_FAMILY, PLATFORM;
-
-        public Object getValue(MoePlugin plugin, String value) {
-            switch (this) {
-                case SOURCE_SET:
-                    return TaskUtils.getSourceSet(plugin, value);
-                case MODE:
-                    return Mode.getForName(value);
-                case ARCH:
-                    return Arch.getForName(value);
-                case ARCH_FAMILY:
-                    return Arch.validateArchFamily(value);
-                case PLATFORM:
-                    return MoePlatform.getForPlatformName(value);
-            }
-            throw new IllegalStateException();
+    @Override
+    protected void checkRemoteServer(AbstractBaseTask task) {
+        if (getRemoteServer() != null && task.getRemoteExecutionStatusSet()) {
+            task.dependsOn(getRemoteServer().getMoeRemoteServerSetupTask());
         }
-
-        public String getName() {
-            switch (this) {
-                case SOURCE_SET:
-                    return "SourceSet";
-                case MODE:
-                    return "Mode";
-                case ARCH:
-                    return "Architecture";
-                case ARCH_FAMILY:
-                    return "ArchitectureFamily";
-                case PLATFORM:
-                    return "Platform";
-            }
-            throw new IllegalStateException();
-        }
-
-        public static String getNameForValue(Object value) {
-            return WordUtils.capitalize(getNameForValueInternal(value));
-        }
-
-        public static String getNameForValueInternal(Object value) {
-            Require.nonNull(value);
-
-            if (value instanceof SourceSet) {
-                return ((SourceSet) value).getName();
-            } else if (value instanceof Mode) {
-                return ((Mode) value).name;
-            } else if (value instanceof Arch) {
-                return ((Arch) value).name;
-            } else if (value instanceof String) {
-                return Arch.validateArchFamily((String) value);
-            } else if (value instanceof MoePlatform) {
-                return ((MoePlatform) value).platformName;
-            } else
-                throw new IllegalStateException();
-        }
-    }
-
-    private <T extends AbstractBaseTask> void addRule(Class<T> taskClass, String description, List<TaskParams> params) {
-        // Prepare constants
-        final String TASK_NAME = taskClass.getSimpleName();
-        final String ELEMENTS_DESC = params.stream().map(p -> "<" + p.getName() + ">").collect(Collectors.joining());
-        final String PATTERN = MOE + ELEMENTS_DESC + TASK_NAME;
-
-        // Add rule
-        getProject().getTasks().addRule("Pattern: " + PATTERN + ": " + description, new RuleClosure(getProject()) {
-            @Override
-            public @Nullable Task doCall(@NotNull String taskName) {
-                Require.nonNull(taskName);
-
-                // Check for prefix, suffix and get elements in-between
-                List<String> elements = StringUtils.getElemsInRule(taskName, MOE, TASK_NAME);
-
-                // Prefix or suffix failed
-                if (elements == null) {
-                    return null;
-                }
-
-                // Check number of elements
-                TaskUtils.assertSize(elements, params.size(), ELEMENTS_DESC);
-
-                // Check element values & configure task on success
-                final AtomicInteger pIndex = new AtomicInteger();
-                final Object[] objects = params.stream().map(p -> p.getValue(MoePlugin.this, elements.get(pIndex.getAndIncrement()))).collect(Collectors.toList()).toArray();
-
-                // Create task
-                final T task = getProject().getTasks().create(taskName, taskClass);
-
-                // Set group
-                task.setGroup(MOE);
-
-                // Call setup method
-                ((GroovyObject) task).invokeMethod("setupMoeTask", objects);
-
-                if (getRemoteServer() != null && task.getRemoteExecutionStatusSet()) {
-                    task.dependsOn(getRemoteServer().getMoeRemoteServerSetupTask());
-                }
-
-                return task;
-            }
-        });
     }
 }
