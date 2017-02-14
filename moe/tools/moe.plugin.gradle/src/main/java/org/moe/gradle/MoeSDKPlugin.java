@@ -16,28 +16,23 @@ limitations under the License.
 
 package org.moe.gradle;
 
-import groovy.lang.GroovyObject;
-import org.apache.commons.lang3.text.WordUtils;
+import org.gradle.api.GradleException;
 import org.gradle.api.Project;
-import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
+import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
-import org.gradle.api.tasks.SourceSet;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
-import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.groovy.closures.RuleClosure;
 import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.tasks.NatJGen;
-import org.moe.gradle.utils.*;
+import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Require;
 
 import javax.inject.Inject;
 import java.io.File;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
+import java.net.MalformedURLException;
 
 import static java.util.Collections.emptyList;
 
@@ -72,6 +67,26 @@ public class MoeSDKPlugin extends AbstractMoePlugin {
         // Get Java convention
         javaConvention = (JavaPluginConvention) project.getConvention().getPlugins().get("java");
         Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
+
+        // Install core, ios and junit jars as dependencies
+        project.getRepositories().ivy(ivy -> {
+            ivy.setName("multi-os-engine-implicit-repo");
+            try {
+                ivy.setUrl(getSDK().getSDKDir().toURI().toURL());
+            } catch (MalformedURLException e) {
+                throw new GradleException("Failed to add Multi-OS Engine repo", e);
+            }
+            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
+        });
+
+        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
+                FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
+        if (extension.getPlatformJar() != null) {
+            project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
+                    FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion));
+        }
+        project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
+                FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
 
         project.getTasks().create("moeSDKProperties", task -> {
             task.setGroup(MOE);
