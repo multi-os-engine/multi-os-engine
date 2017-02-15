@@ -266,6 +266,19 @@ public class ConfigurationBuilder {
         cfg.addProperty("base-sdk", platformSDKsAbsolutePath);
         cfg.addProperty("source", sourceFile.toString());
         cfg.addProperty("output", bindings.getOutputDirectory());
+
+        String inlineOutput = bindings.getInlineFunctionBindingOutput();
+        if (inlineOutput != null && !inlineOutput.isEmpty()) {
+            cfg.addProperty("inline-function-binding-output", projectRelativePath(inlineOutput));
+        }
+        String typeConfInput = bindings.getTypeConfigInput();
+        if (typeConfInput != null && !typeConfInput.isEmpty()) {
+            cfg.addProperty("type-config-input", projectRelativePath(typeConfInput));
+        }
+        String typeConfOutput = bindings.getTypeConfigOutput();
+        if (typeConfOutput != null && !typeConfOutput.isEmpty()) {
+            cfg.addProperty("type-config-output", projectRelativePath(typeConfOutput));
+        }
         cfg.add("header-search-paths", headerSearchPaths);
         cfg.add("user-header-search-paths", userHeaderSearchPaths);
         cfg.add("framework-search-paths", frameworkSearchPaths);

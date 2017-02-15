@@ -48,6 +48,7 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
      * Objective-C class generation mode - binding.
      */
     public final static String BINDING = "Binding";
+
     /**
      * Objective-C class generation mode - hybrid.
      */
@@ -57,14 +58,31 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
      * Name of the platform to create bindings for.
      */
     private String platform;
+
     /**
      * Ordered list of bindings.
      */
     private final List<AbstractBinding> bindings = new ArrayList<AbstractBinding>();
+
     /**
      * Output directory for bindings.
      */
     private String outputDirectory;
+
+    /**
+     * Inline function output directory for bindings.
+     */
+    private String inlineFunctionBindingOutput;
+
+    /**
+     * Type configuration output directory for bindings.
+     */
+    private String typeConfigOutput;
+
+    /**
+     * Type configuration input directory for bindings.
+     */
+    private String typeConfigInput;
 
     /**
      * Returns the target platform's name.
@@ -179,6 +197,61 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         this.outputDirectory = outputDirectory;
     }
 
+    /**
+     * Returns the inline function output directory of the bindings.
+     *
+     * @return Output directory of the bindings
+     */
+    public String getInlineFunctionBindingOutput() {
+        return inlineFunctionBindingOutput;
+    }
+
+    /**
+     * Sets the inline function output directory of the bindings.
+     *
+     * @param inlineFunctionBindingOutput output directory
+     */
+    public void setInlineFunctionBindingOutput(String inlineFunctionBindingOutput) {
+        this.inlineFunctionBindingOutput = inlineFunctionBindingOutput;
+    }
+
+    /**
+     * Returns the type configuration output directory of the bindings.
+     *
+     * @return Output directory of the bindings
+     */
+    public String getTypeConfigOutput() {
+        return typeConfigOutput;
+    }
+
+    /**
+     * Sets the type configuration output directory of the bindings.
+     *
+     * @param typeConfigOutput output directory
+     */
+    public void setTypeConfigOutput(String typeConfigOutput) {
+        this.typeConfigOutput = typeConfigOutput;
+    }
+
+    /**
+     * Returns the type input directory of the bindings.
+     *
+     * @return Output directory of the bindings
+     */
+    public String getTypeConfigInput() {
+        return typeConfigInput;
+    }
+
+    /**
+     * Sets the type configuration input directory of the bindings.
+     *
+     * @param typeConfigInput input directory
+     */
+    public void setTypeConfigInput(String typeConfigInput) {
+        this.typeConfigInput = typeConfigInput;
+    }
+
+
     @Override
     public JsonObject getJsonObject() {
         JsonObject obj = new JsonObject();
@@ -188,6 +261,19 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         if (platform != null) {
             obj.addProperty("platform", platform);
         }
+
+        if (inlineFunctionBindingOutput != null) {
+            obj.addProperty("inline-function-binding-output", inlineFunctionBindingOutput);
+        }
+
+        if (typeConfigInput != null) {
+            obj.addProperty("type-config-input", typeConfigInput);
+        }
+
+        if (typeConfigOutput != null) {
+            obj.addProperty("type-config-output", typeConfigOutput);
+        }
+
         JsonArray binds = new JsonArray();
         for (AbstractBinding binding : bindings) {
             binds.add(binding.getJsonObject());
@@ -208,6 +294,25 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         final JsonPrimitive jsonPlatform = json.getAsJsonPrimitive("platform");
         if (jsonPlatform != null) {
             setPlatform(jsonPlatform.getAsString());
+        }
+
+        setTypeConfigInput(null);
+        final JsonPrimitive jsonTypeConfigInput = json.getAsJsonPrimitive("type-config-input");
+        if (jsonTypeConfigInput != null) {
+            setTypeConfigInput(jsonTypeConfigInput.getAsString());
+        }
+
+        setTypeConfigOutput(null);
+        final JsonPrimitive jsonTypeConfigOutput = json.getAsJsonPrimitive("type-config-output");
+        if (jsonTypeConfigOutput != null) {
+            setTypeConfigOutput(jsonTypeConfigOutput.getAsString());
+        }
+
+        setInlineFunctionBindingOutput(null);
+        final JsonPrimitive jsonInlineFunctionBindingOutput =
+                json.getAsJsonPrimitive("inline-function-binding-output");
+        if (jsonInlineFunctionBindingOutput != null) {
+            setInlineFunctionBindingOutput(jsonInlineFunctionBindingOutput.getAsString());
         }
 
         bindings.clear();
