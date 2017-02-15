@@ -119,7 +119,7 @@ public class NatJGen extends AbstractBaseTask {
 
         setDescription("Generate binding");
 
-        //addConvention(CONVENTION_CONFIGURATION, () -> ext.natjgen.getConfig());
+        addConvention(CONVENTION_CONFIGURATION, () -> ext.natjgen.getConfig());
 
         addConvention(CONVENTION_NATJGEN_JAR, () -> ext.getSdk().getNatJGenJar());
 
