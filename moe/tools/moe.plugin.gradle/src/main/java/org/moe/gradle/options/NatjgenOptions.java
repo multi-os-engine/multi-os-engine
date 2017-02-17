@@ -36,4 +36,20 @@ public class NatjgenOptions {
     public void setConfig(@Nullable String config) {
         this.config = config;
     }
+
+    /**
+     * Name of the binding log output file.
+     */
+    @Nullable
+    private String logFile;
+
+    @Nullable
+    public String getLogFile() {
+        return logFile;
+    }
+
+    @IgnoreUnused
+    public void setLogFile(@Nullable String logFile) {
+        this.logFile = logFile;
+    }
 }

@@ -18,6 +18,8 @@ package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.Task;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.specs.Spec;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Optional;
@@ -39,9 +41,13 @@ public class NatJGen extends AbstractBaseTask {
 
     private static final String CONVENTION_CONFIGURATION = "config";
     private static final String CONVENTION_NATJGEN_JAR = "natjgen-jar";
+    private static final String CONVENTION_NATJGEN_LOG_OUTPUT = "natjgen-output";
 
     @Nullable
     private String config;
+
+    @Nullable
+    private String natjgenOutput;
 
     public NatJGen() {
         getOutputs().upToDateWhen(new Spec<Task>() {
@@ -76,10 +82,22 @@ public class NatJGen extends AbstractBaseTask {
         this.natjgen = natjgen;
     }
 
+    @Input
+    @Optional
+    @Nullable
+    public String getNatjgenOutput() {
+        return nullableGetOrConvention(config, CONVENTION_NATJGEN_LOG_OUTPUT);
+    }
+
+    @IgnoreUnused
+    public void setNatjgenOutput(@Nullable String output) {
+        this.natjgenOutput = output;
+    }
+
     @Override
     protected void run() {
 
-        String bindingConfiguration = getExtension().natjgen.getConfig();
+        String bindingConfiguration = getConfig();
 
         String propertyConf = System.getProperty("moe.binding.conf");
 
@@ -91,6 +109,8 @@ public class NatJGen extends AbstractBaseTask {
             throw new GradleException("Missing binding configuration settings");
         }
 
+        String natjLogOutput = getNatjgenOutput();
+
         final AbstractMoeExtension ext = getExtension();
 
         javaexec(spec -> {
@@ -100,11 +120,18 @@ public class NatJGen extends AbstractBaseTask {
             spec.args(getProject().getProjectDir().getParent());
             spec.args(getProject().getName());
             spec.args(configuration);
+            List<String> args = new ArrayList<String>();
             if (isTest) {
-                List<String> args = new ArrayList<String>();
                 args.add("-Dmoe.natjgen.testrun=true");
-                spec.setJvmArgs(args);
             }
+            if (natjLogOutput != null && !natjLogOutput.isEmpty()) {
+                args.add("-Dmoe.natjgen.log.output=" + natjLogOutput);
+            }
+            //forward property
+            if (System.getProperty("moe.keep.natjgen") != null) {
+                args.add("-Dmoe.keep.natjgen=true");
+            }
+            spec.setJvmArgs(args);
         });
     }
 
@@ -122,6 +149,8 @@ public class NatJGen extends AbstractBaseTask {
         addConvention(CONVENTION_CONFIGURATION, () -> ext.natjgen.getConfig());
 
         addConvention(CONVENTION_NATJGEN_JAR, () -> ext.getSdk().getNatJGenJar());
+
+        addConvention(CONVENTION_NATJGEN_LOG_OUTPUT, () -> ext.natjgen.getLogFile());
 
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "NatJGen.log"));
     }
