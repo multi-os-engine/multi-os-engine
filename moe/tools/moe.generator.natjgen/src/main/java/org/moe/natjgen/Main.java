@@ -27,10 +27,12 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Main {
 
-    private static final String NATJ_BINDING_CONFIGURATION_EXTENSION = ".nbc";
+    public static final String NATJ_BINDING_CONFIGURATION_EXTENSION = ".nbc";
+    public static final String KEEP_NATJGEN = "moe.keep.natjgen";
 
     /**
      * Logger for this class
@@ -122,7 +124,27 @@ public class Main {
         Bindings bindings = new Bindings();
         bindings.load(conf);
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder(bindings);
-        return configurationBuilder.build();
+        String content = configurationBuilder.build();
+        final boolean isKeep = "true".equalsIgnoreCase(System.getProperty(KEEP_NATJGEN, "false"));
+        if (isKeep) {
+            File temp = new File(conf.getParent(), conf.getName() + ".natjgen");
+            if (temp.exists()) {
+                temp.delete();
+            }
+
+            PrintWriter writer = null;
+
+            try {
+                temp.createNewFile();
+                writer = new PrintWriter(temp);
+                writer.write(content);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                writer.close();
+            }
+        }
+        return content;
     }
 
 }

@@ -233,6 +233,15 @@ public class Indexer {
         this.configuration = configuration;
         configuration.setVariable(Configuration.PROJECT_VARIABLE, project.getLocation().toOSString());
 
+        String logOutput = System.getProperty("moe.natjgen.log.output");
+        if (logOutput != null && !logOutput.isEmpty()) {
+            if (logOutput.startsWith("/")) {
+                configuration.setLoggingPath(logOutput);
+            } else {
+                configuration.setLoggingPath("${PROJECT}/" + logOutput);
+            }
+        }
+
         ArrayList<ValidationEntry> problems = configuration.validate();
         if (problems != null && ValidationEntry.containsErrors(problems)) {
             throw new CoreException(ValidationEntry.createMultiStatus(problems, true));
