@@ -130,7 +130,7 @@ public class BindingEditorForm {
         try {
             validateBinding(binding);
             GeneratorRunner testGeneratorRunner = new GeneratorRunner(module);
-            testGeneratorRunner.generateBinding(configurationFile, test);
+            testGeneratorRunner.generateBinding(configurationFile, test, bindingsListPanel.isKeepGeneratedNatjgen());
         } catch (Exception e) {
             Messages.showErrorDialog(e.getMessage(), "Generate Binding Error");
         }
@@ -155,6 +155,7 @@ public class BindingEditorForm {
             testBindings.add(binding);
             builder = new ConfigurationBuilder(testBindings);
         }
+
         builder.build();
     }
 

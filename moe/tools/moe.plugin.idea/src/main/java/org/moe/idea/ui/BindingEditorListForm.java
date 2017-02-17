@@ -45,6 +45,10 @@ public class BindingEditorListForm extends JPanel {
     private JTextField outputDirectoryTextField;
     private JComboBox platformComboBox;
     private JButton actionsButton;
+    private JTextField inlineFunctionOutputTextField;
+    private JTextField typeConfInputTextField;
+    private JTextField typeConfOutputTextField;
+    private JCheckBox keepGenratedNatjgenFileCheckBox;
 
     private BindingEditorForm editorForm;
     private FrameworkBindingEditorForm frameworkBindingEditorForm;
@@ -179,6 +183,36 @@ public class BindingEditorListForm extends JPanel {
                 popup.show(e.getComponent(), e.getX(), e.getY());
             }
         });
+
+        inlineFunctionOutputTextField.getDocument().addDocumentListener(new DocumentAdapter() {
+
+            protected void textChanged(DocumentEvent e) {
+                if (inited) {
+                    editorForm.getBindings().setInlineFunctionBindingOutput(inlineFunctionOutputTextField.getText().trim());
+                    save();
+                }
+            }
+        });
+
+        typeConfInputTextField.getDocument().addDocumentListener(new DocumentAdapter() {
+
+            protected void textChanged(DocumentEvent e) {
+                if (inited) {
+                    editorForm.getBindings().setTypeConfigInput(typeConfInputTextField.getText().trim());
+                    save();
+                }
+            }
+        });
+
+        typeConfOutputTextField.getDocument().addDocumentListener(new DocumentAdapter() {
+
+            protected void textChanged(DocumentEvent e) {
+                if (inited) {
+                    editorForm.getBindings().setTypeConfigOutput(typeConfOutputTextField.getText().trim());
+                    save();
+                }
+            }
+        });
     }
 
     public void init() {
@@ -210,6 +244,10 @@ public class BindingEditorListForm extends JPanel {
             save();
         }
         platformComboBox.setSelectedItem(platform);
+
+        inlineFunctionOutputTextField.setText(bindings.getInlineFunctionBindingOutput());
+        typeConfInputTextField.setText(bindings.getTypeConfigInput());
+        typeConfOutputTextField.setText(bindings.getTypeConfigOutput());
 
         inited = true;
     }
@@ -282,5 +320,9 @@ public class BindingEditorListForm extends JPanel {
 
     public String getModulePath() {
         return editorForm.getModulePath();
+    }
+
+    public boolean isKeepGeneratedNatjgen() {
+        return keepGenratedNatjgenFileCheckBox.isSelected();
     }
 }

@@ -42,14 +42,16 @@ public class GeneratorRunner {
     private Module module;
     private File coonfigurationFile;
     private boolean test;
+    private boolean keep;
 
     public GeneratorRunner(Module module) {
         this.module = module;
     }
 
-    public void generateBinding(File confFile, boolean test) {
+    public void generateBinding(File confFile, boolean test, boolean keep) {
         this.coonfigurationFile = confFile;
         this.test = test;
+        this.keep = keep;
 
         run();
     }
@@ -106,7 +108,9 @@ public class GeneratorRunner {
                 if (test) {
                     exec.getArguments().add("-Dmoe.natjgen.testrun=true");
                 }
-
+                if (keep) {
+                    exec.getArguments().add("-Dmoe.keep.natjgen");
+                }
 
                 ExecRunner runner = exec.getRunner();
                 runner.getBuilder().directory(moduleFile);
