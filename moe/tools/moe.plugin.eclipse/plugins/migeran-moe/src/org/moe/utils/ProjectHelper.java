@@ -28,6 +28,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2e.core.internal.MavenPluginActivator;
 import org.eclipse.m2e.core.internal.launch.AbstractMavenRuntime;
 import org.eclipse.m2e.core.internal.launch.MavenRuntimeManagerImpl;
+import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
@@ -88,7 +90,7 @@ public class ProjectHelper {
 		}
 
 		if (sdkPath == null || sdkPath.isEmpty()) {
-			MessageFactory.showErrorDialog("Error",
+			MessageFactory.showErrorDialog(
 					"Path to MOE SDK unset or invalid.\n\nIf not specified set MOE_HOME system environment variable.");
 		}
 
@@ -105,6 +107,20 @@ public class ProjectHelper {
 
 	public static IProject getProject(String name) {
 		return ResourcesPlugin.getWorkspace().getRoot().getProject(name);
+	}
+	
+	public static String selectDir(Shell shell, String title, IProject project) {
+		DirectoryDialog directoryDialog = new DirectoryDialog(shell);
+		directoryDialog.setText(title);
+		String selected = directoryDialog.open();
+		if (selected != null) {
+			String projectPath = project.getLocation().toOSString();
+            if (selected.startsWith(projectPath)) {
+            	selected = selected.substring(projectPath.length() + 1, selected.length());
+            }
+			return selected;
+		}
+		return null;
 	}
 
 }

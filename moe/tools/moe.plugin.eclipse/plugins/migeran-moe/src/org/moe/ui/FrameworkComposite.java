@@ -17,7 +17,6 @@
 package org.moe.ui;
 
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -27,6 +26,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.moe.tools.natjgen.Bindings;
 import org.moe.tools.natjgen.FrameworkBinding;
+import org.moe.utils.ProjectHelper;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 
@@ -249,9 +249,7 @@ public class FrameworkComposite extends Composite {
 	}
 	
 	private void showChooserDialog() {
-		DirectoryDialog directoryDialog = new DirectoryDialog(getShell());
-		directoryDialog.setText("Select Framework.");
-		String selected = directoryDialog.open();
+		String selected = ProjectHelper.selectDir(getShell(), "Select Framework.", editorForm.getProject());
 		if (selected != null) {
 			frameworkPathText.setText(selected);
 		}

@@ -52,10 +52,9 @@ import org.eclipse.swt.graphics.Rectangle;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.events.SelectionAdapter;
 
 public class BindingEditorForm extends FormPage {
 	
@@ -82,6 +81,10 @@ public class BindingEditorForm extends FormPage {
 	protected boolean dirty = false;
 	private boolean inited = false;
 	private IProject project;
+	private Text inlineFunctionOutputTextField;
+	private Text typeConfInputTextField;
+	private Text typeConfOutputTextField;
+	private Button keepGenratedNatjgenFileCheckBox;
 
 	/**
 	 * Create the form page.
@@ -125,67 +128,104 @@ public class BindingEditorForm extends FormPage {
 		managedForm.getForm().getBody().setLayout(null);
 		
 		list = new List(managedForm.getForm().getBody(), SWT.BORDER);
-		list.setBounds(10, 58, 229, 393);
+		list.setBounds(10, 176, 229, 275);
 		managedForm.getToolkit().adapt(list, true, true);
 		
 		Label lblNewLabel = new Label(managedForm.getForm().getBody(), SWT.NONE);
-		lblNewLabel.setBounds(10, 10, 102, 14);
+		lblNewLabel.setBounds(10, 12, 102, 14);
 		managedForm.getToolkit().adapt(lblNewLabel, true, true);
 		lblNewLabel.setText("Output directory:");
 		
 		outputText = new Text(managedForm.getForm().getBody(), SWT.BORDER);
-		outputText.setBounds(118, 7, 121, 19);
+		outputText.setBounds(196, 7, 190, 19);
 		managedForm.getToolkit().adapt(outputText, true, true);
 		
 		platformCombo = new Combo(managedForm.getForm().getBody(), SWT.READ_ONLY);
-		platformCombo.setBounds(118, 30, 121, 22);
+		platformCombo.setBounds(196, 32, 190, 22);
 		managedForm.getToolkit().adapt(platformCombo);
 		managedForm.getToolkit().paintBordersFor(platformCombo);
 		
 		Label lblNewLabel_1 = new Label(managedForm.getForm().getBody(), SWT.NONE);
-		lblNewLabel_1.setBounds(10, 30, 59, 14);
+		lblNewLabel_1.setBounds(10, 37, 59, 14);
 		managedForm.getToolkit().adapt(lblNewLabel_1, true, true);
 		lblNewLabel_1.setText("Platform:");
 		
 		newBindingButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		newBindingButton.setBounds(245, 58, 141, 28);
+		newBindingButton.setBounds(245, 180, 141, 28);
 		managedForm.getToolkit().adapt(newBindingButton, true, true);
 		newBindingButton.setText("+");
 		
 		removeBindingButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		removeBindingButton.setBounds(245, 92, 141, 28);
+		removeBindingButton.setBounds(245, 210, 141, 28);
 		managedForm.getToolkit().adapt(removeBindingButton, true, true);
 		removeBindingButton.setText("-");
 		
 		upButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		upButton.setBounds(245, 126, 141, 28);
+		upButton.setBounds(245, 240, 141, 28);
 		managedForm.getToolkit().adapt(upButton, true, true);
 		upButton.setText("Up");
 		
 		downButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		downButton.setBounds(245, 160, 141, 28);
+		downButton.setBounds(245, 270, 141, 28);
 		managedForm.getToolkit().adapt(downButton, true, true);
 		downButton.setText("Down");
 		
 		generateBindingsButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		generateBindingsButton.setBounds(245, 423, 141, 28);
+		generateBindingsButton.setBounds(245, 420, 141, 28);
 		managedForm.getToolkit().adapt(generateBindingsButton, true, true);
 		generateBindingsButton.setText("Generate Bindings");
 		
 		testAllButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		testAllButton.setBounds(245, 389, 141, 28);
+		testAllButton.setBounds(245, 390, 141, 28);
 		managedForm.getToolkit().adapt(testAllButton, true, true);
 		testAllButton.setText("Test All");
 		
 		testSelectedButton = new Button(managedForm.getForm().getBody(), SWT.NONE);
-		testSelectedButton.setBounds(245, 352, 141, 28);
+		testSelectedButton.setBounds(245, 360, 141, 28);
 		managedForm.getToolkit().adapt(testSelectedButton, true, true);
 		testSelectedButton.setText("Test Selected");
 		
 		editorGroup = new Group(managedForm.getForm().getBody(), SWT.NONE);
-		editorGroup.setBounds(392, 48, 504, 535);
+		editorGroup.setBounds(392, 32, 504, 551);
 		managedForm.getToolkit().adapt(editorGroup);
 		managedForm.getToolkit().paintBordersFor(editorGroup);
+		
+		Label lblNewLabel_2 = new Label(managedForm.getForm().getBody(), SWT.NONE);
+		lblNewLabel_2.setBounds(10, 65, 180, 14);
+		managedForm.getToolkit().adapt(lblNewLabel_2, true, true);
+		lblNewLabel_2.setText("Inline function output:");
+		
+		inlineFunctionOutputTextField = new Text(managedForm.getForm().getBody(), SWT.BORDER);
+		inlineFunctionOutputTextField.setBounds(196, 60, 190, 19);
+		managedForm.getToolkit().adapt(inlineFunctionOutputTextField, true, true);
+		
+		typeConfInputTextField = new Text(managedForm.getForm().getBody(), SWT.BORDER);
+		typeConfInputTextField.setBounds(196, 90, 190, 19);
+		managedForm.getToolkit().adapt(typeConfInputTextField, true, true);
+		
+		typeConfOutputTextField = new Text(managedForm.getForm().getBody(), SWT.BORDER);
+		typeConfOutputTextField.setBounds(196, 120, 190, 19);
+		managedForm.getToolkit().adapt(typeConfOutputTextField, true, true);
+		
+		Label lblNewLabel_3 = new Label(managedForm.getForm().getBody(), SWT.NONE);
+		lblNewLabel_3.setBounds(10, 95, 119, 14);
+		managedForm.getToolkit().adapt(lblNewLabel_3, true, true);
+		lblNewLabel_3.setText("Type conf input:");
+		
+		Label lblNewLabel_4 = new Label(managedForm.getForm().getBody(), SWT.NONE);
+		lblNewLabel_4.setBounds(10, 125, 119, 14);
+		managedForm.getToolkit().adapt(lblNewLabel_4, true, true);
+		lblNewLabel_4.setText("Type conf output:");
+		
+		keepGenratedNatjgenFileCheckBox = new Button(managedForm.getForm().getBody(), SWT.CHECK);
+		keepGenratedNatjgenFileCheckBox.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
+		keepGenratedNatjgenFileCheckBox.setBounds(10, 150, 190, 18);
+		managedForm.getToolkit().adapt(keepGenratedNatjgenFileCheckBox, true, true);
+		keepGenratedNatjgenFileCheckBox.setText("Keep generated natjgen file");
 		
 		setDefaultValuesAndListeners();
 		init();
@@ -383,6 +423,39 @@ public class BindingEditorForm extends FormPage {
 				
 			}
 		});
+		
+		inlineFunctionOutputTextField.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent arg0) {
+				if (inited) {
+					bindings.setInlineFunctionBindingOutput(inlineFunctionOutputTextField.getText().trim());
+					documentChanged();
+				}
+			}
+		});
+		
+		typeConfInputTextField.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent arg0) {
+				if (inited) {
+					bindings.setTypeConfigInput(typeConfInputTextField.getText().trim());
+					documentChanged();
+				}
+			}
+		});
+		
+		typeConfOutputTextField.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent arg0) {
+				if (inited) {
+					bindings.setTypeConfigOutput(typeConfOutputTextField.getText().trim());
+					documentChanged();
+				}
+			}
+		});
 	}
 	
 	public void init() {
@@ -407,6 +480,16 @@ public class BindingEditorForm extends FormPage {
 		platform = platform == null || platform.isEmpty() ? Bindings.PLATFORM_IOS : platform;
 		bindings.setPlatform(platform);
 		platformCombo.select(getSelectedPlatformIndex(platform));
+		
+		String inlineOutput = bindings.getInlineFunctionBindingOutput();
+		inlineOutput = inlineOutput == null ? "" : inlineOutput;
+		inlineFunctionOutputTextField.setText(inlineOutput);
+		String configInput = bindings.getTypeConfigInput();
+		configInput = configInput == null ? "" : configInput;
+        typeConfInputTextField.setText(configInput);
+        String configOutput = bindings.getTypeConfigOutput();
+        configOutput = configOutput == null ? "" : configOutput;
+        typeConfOutputTextField.setText(configOutput);
 		
 		inited = true;
 	}
@@ -537,19 +620,16 @@ public class BindingEditorForm extends FormPage {
 	
 	public void generate(AbstractBinding binding, boolean test) {
 		doSave(null);
-        File temp = null;
         try {
-            temp = File.createTempFile(configurationFile.getParent(), configurationFile.getName() + ".natjgen");
-            temp.deleteOnExit();
-            generateNatjGenFile(binding, temp);
+        	validateBinding(binding);
             GeneratorRunner testGeneratorRunner = new GeneratorRunner(project);
-            testGeneratorRunner.generateBinding(temp, test);
+            testGeneratorRunner.generateBinding(configurationFile, test, keepGenratedNatjgenFileCheckBox.getSelection());
         } catch (Exception e) {
         	MessageFactory.showErrorDialog("Binding error", e);
         }
     }
 	
-	private void generateNatjGenFile(AbstractBinding binding, File target) throws FileNotFoundException, ValidationException {
+	private void validateBinding(AbstractBinding binding) throws FileNotFoundException, ValidationException {
         ConfigurationBuilder builder = null;
         if (binding == null) {
             builder = new ConfigurationBuilder(bindings);
@@ -560,11 +640,10 @@ public class BindingEditorForm extends FormPage {
             testBindings.add(binding);
             builder = new ConfigurationBuilder(testBindings);
         }
-        final PrintWriter writer = new PrintWriter(target);
-        try {
-            writer.write(builder.build());
-        } finally {
-            writer.close();
-        }
+        builder.build();
     }
+	
+	public IProject getProject() {
+		return project;
+	}
 }

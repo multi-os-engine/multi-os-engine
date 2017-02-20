@@ -17,8 +17,6 @@
 package org.moe.bindings;
 
 import java.io.File;
-import java.util.Properties;
-
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -29,11 +27,10 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
-import org.moe.common.exec.BindingExec;
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.IKillListener;
 import org.moe.common.exec.ExecRunnerBase.ExecRunnerListener;
-import org.moe.common.utils.ProjectUtil;
+import org.moe.common.exec.GradleExec;
 import org.moe.runconfig.MOEProjectBuildConsole;
 import org.moe.utils.MessageFactory;
 
@@ -44,16 +41,17 @@ public class GeneratorRunner {
 	private IProject project;
 	private File configurationFile;
     private boolean test;
-    private String sdkPath;
+    private boolean keep;
     String title;
 
 	public GeneratorRunner(IProject project) {
 		this.project = project;
 	}
 	
-	public void generateBinding(File confFile, boolean test) {
+	public void generateBinding(File confFile, boolean test, boolean keep) {
         this.configurationFile = confFile;
         this.test = test;
+        this.keep = keep;
         title = test ? "Test Binding" : "Generate Binding";
         run();
     }
@@ -74,17 +72,27 @@ public class GeneratorRunner {
 	    			
 	    			File projectFile = project.getLocation().toFile();
 	    			
-	    	        final Properties properties = ProjectUtil
-	    	                .retrievePropertiesFromGradle(projectFile, ProjectUtil.SDK_PROPERTIES_TASK);
-
-	    	        sdkPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
-	    			
 	    			monitor.worked(2);
 	    			
 	    			StringBuilder errorBuilder = new StringBuilder();
 	    			
-	    			BindingExec bindingExec = new BindingExec(new File(projectFile.getParent(), project.getName()), sdkPath, configurationFile, test);
-	    			ExecRunner runner = bindingExec.getRunner();
+	    			File workspace = new File(projectFile.getParent(), project.getName());
+	    			
+	    			GradleExec exec = new GradleExec(workspace);
+
+	                exec.getArguments().add("moeNatJGen");
+	                exec.getArguments().add("-Draw-binding-output");
+	                exec.getArguments().add("-Dmoe.binding.conf=" + configurationFile.getPath());
+	                if (test) {
+	                    exec.getArguments().add("-Dmoe.natjgen.testrun=true");
+	                }
+	                if (keep) {
+	                    exec.getArguments().add("-Dmoe.keep.natjgen");
+	                }
+
+	                ExecRunner runner = exec.getRunner();
+	                runner.getBuilder().directory(workspace);
+	                
 	    			runner.setListener(new ExecRunnerListener() {
 						
 						@Override

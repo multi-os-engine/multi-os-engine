@@ -17,7 +17,6 @@
 package org.moe.ui;
 
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
@@ -26,6 +25,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.moe.tools.natjgen.Bindings;
 import org.moe.tools.natjgen.HeaderBinding;
+import org.moe.utils.ProjectHelper;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.swt.widgets.Button;
@@ -424,9 +424,7 @@ public class HeaderComposite extends Composite {
 	}
 	
 	private void showChooserDialog(List list) {
-		DirectoryDialog directoryDialog = new DirectoryDialog(getShell());
-		directoryDialog.setText("Select Search Path.");
-		String selected = directoryDialog.open();
+		String selected = ProjectHelper.selectDir(getShell(), "Select Search Path.", editorForm.getProject());
 		if (selected != null) {
 			if (list == headerSearchPathsList) {
 				headerSearchPathsList.add(selected);
