@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
+import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.DocumentAdapter;
 import org.moe.tools.natjgen.AbstractBinding;
@@ -318,8 +319,8 @@ public class BindingEditorListForm extends JPanel {
         bindingsList.setSelectedIndex(idx);
     }
 
-    public String getModulePath() {
-        return editorForm.getModulePath();
+    public Module getModule() {
+        return editorForm.getModule();
     }
 
     public boolean isKeepGeneratedNatjgen() {

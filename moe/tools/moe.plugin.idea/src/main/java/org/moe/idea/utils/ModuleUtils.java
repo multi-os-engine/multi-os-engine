@@ -20,6 +20,8 @@ import com.intellij.openapi.application.AccessToken;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ReadAction;
 import com.intellij.openapi.application.WriteAction;
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.DumbService;
@@ -196,5 +198,19 @@ public class ModuleUtils {
             DumbService.getInstance(project).runWhenSmart(DisposeAwareRunnable.create(r, project));
         }
 
+    }
+
+    public static String selectDir(Module module) {
+        FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, false, false, false, false);
+        VirtualFile root = FileChooser.chooseFile(descriptor, module.getProject(), null);
+        if (root != null) {
+            String modulePath = getModulePath(module);
+            String headerPath = root.getCanonicalPath();
+            if (headerPath.startsWith(modulePath)) {
+                headerPath = headerPath.substring(modulePath.length() + 1, headerPath.length());
+            }
+            return headerPath;
+        }
+        return null;
     }
 }

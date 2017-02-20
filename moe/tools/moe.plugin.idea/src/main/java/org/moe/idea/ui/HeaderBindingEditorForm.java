@@ -16,10 +16,8 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
-import com.intellij.openapi.fileChooser.FileChooser;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
+import org.moe.idea.utils.ModuleUtils;
 import org.moe.tools.natjgen.Bindings;
 import org.moe.tools.natjgen.HeaderBinding;
 
@@ -104,7 +102,10 @@ public class HeaderBindingEditorForm extends JPanel {
         browsePathButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openDirChooser();
+                String dir = ModuleUtils.selectDir(listForm.getModule());
+                if (dir != null) {
+                    headerPathTextField.setText(dir);
+                }
             }
         });
 
@@ -116,8 +117,7 @@ public class HeaderBindingEditorForm extends JPanel {
                         headerBinding.setObjcClassGenerationMode(Bindings.BINDING);
                         save();
                     }
-                }
-                else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                } else if (e.getStateChange() == ItemEvent.DESELECTED) {
                     if (inited) {
                         headerBinding.setObjcClassGenerationMode(Bindings.HYBRID);
                         save();
@@ -165,16 +165,7 @@ public class HeaderBindingEditorForm extends JPanel {
         listForm.save();
     }
 
-    private void openDirChooser() {
-        FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, false, false, false, false);
-        VirtualFile root = FileChooser.chooseFile(descriptor, null, null);
-        if (root != null) {
-            String modulePath = listForm.getModulePath();
-            String headerPath = root.getCanonicalPath();
-            if (headerPath.startsWith(modulePath)) {
-                headerPath = headerPath.substring(modulePath.length() + 1, headerPath.length());
-            }
-            headerPathTextField.setText(headerPath);
-        }
+    public BindingEditorListForm getListForm() {
+        return listForm;
     }
 }

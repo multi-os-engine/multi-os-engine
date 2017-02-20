@@ -18,12 +18,12 @@ package org.moe.idea.ui;
 
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.binding.GeneratorRunner;
+import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 import org.moe.tools.natjgen.AbstractBinding;
 import org.moe.tools.natjgen.Bindings;
@@ -34,7 +34,6 @@ import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class BindingEditorForm {
 
@@ -53,12 +52,12 @@ public class BindingEditorForm {
 
     private String modulePath;
 
-    private  Bindings bindings;
+    private Bindings bindings;
 
     public BindingEditorForm(Project project, VirtualFile virtualFile) {
         this.project = project;
         this.module = MOESdkPlugin.findModuleForFile(project, virtualFile);
-        this.modulePath = ModuleUtil.getModuleDirPath(module);
+        this.modulePath = ModuleUtils.getModulePath(module);
         this.configurationFile = new File(virtualFile.getCanonicalPath());
         this.bindings = new Bindings();
         loadBindings();
@@ -122,7 +121,7 @@ public class BindingEditorForm {
     }
 
     public void generate() {
-        generate(null,false);
+        generate(null, false);
     }
 
     public void generate(AbstractBinding binding, boolean test) {
@@ -159,7 +158,7 @@ public class BindingEditorForm {
         builder.build();
     }
 
-    public String getModulePath() {
-        return modulePath;
+    public Module getModule() {
+        return module;
     }
 }

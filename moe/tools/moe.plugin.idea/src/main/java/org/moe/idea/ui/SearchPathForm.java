@@ -16,9 +16,7 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
-import com.intellij.openapi.fileChooser.FileChooser;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.openapi.vfs.VirtualFile;
+import org.moe.idea.utils.ModuleUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -44,7 +42,12 @@ public class SearchPathForm extends JPanel {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openDirChooser();
+                String dir = ModuleUtils.selectDir(bindingEditorForm.getListForm().getModule());
+                if (dir != null) {
+                    searchPaths.add(dir);
+                    save();
+                    loadList();
+                }
             }
         });
 
@@ -68,16 +71,6 @@ public class SearchPathForm extends JPanel {
 
     public void setBindingEditorForm(HeaderBindingEditorForm form) {
         this.bindingEditorForm = form;
-    }
-
-    private void openDirChooser() {
-        FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, false, false, false, false);
-        VirtualFile root = FileChooser.chooseFile(descriptor, null, null);
-        if (root != null) {
-            searchPaths.add(root.getCanonicalPath());
-            save();
-            loadList();
-        }
     }
 
     private void loadList() {

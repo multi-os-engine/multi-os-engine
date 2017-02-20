@@ -16,10 +16,8 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
-import com.intellij.openapi.fileChooser.FileChooser;
-import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
+import org.moe.idea.utils.ModuleUtils;
 import org.moe.tools.natjgen.Bindings;
 import org.moe.tools.natjgen.FrameworkBinding;
 
@@ -30,7 +28,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class FrameworkBindingEditorForm extends JPanel{
+public class FrameworkBindingEditorForm extends JPanel {
     private JPanel content;
     private JTextField nameTextField;
     private JLabel nameLabel;
@@ -89,7 +87,10 @@ public class FrameworkBindingEditorForm extends JPanel{
         selectFrameworkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openDirChooser();
+                String dir = ModuleUtils.selectDir(listForm.getModule());
+                if (dir != null) {
+                    frameworkTextField.setText(dir);
+                }
             }
         });
 
@@ -101,8 +102,7 @@ public class FrameworkBindingEditorForm extends JPanel{
                         frameworkBinding.setObjcClassGenerationMode(Bindings.BINDING);
                         save();
                     }
-                }
-                else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                } else if (e.getStateChange() == ItemEvent.DESELECTED) {
                     if (inited) {
                         frameworkBinding.setObjcClassGenerationMode(Bindings.HYBRID);
                         save();
@@ -145,16 +145,4 @@ public class FrameworkBindingEditorForm extends JPanel{
         listForm.save();
     }
 
-    private void openDirChooser() {
-        FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, false, false, false, false);
-        VirtualFile root = FileChooser.chooseFile(descriptor, null, null);
-        if (root != null) {
-            String modulePath = listForm.getModulePath();
-            String frameworkPath = root.getCanonicalPath();
-            if (frameworkPath.startsWith(modulePath)) {
-                frameworkPath = frameworkPath.substring(modulePath.length() + 1, frameworkPath.length());
-            }
-            frameworkTextField.setText(frameworkPath);
-        }
-    }
 }
