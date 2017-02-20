@@ -58,9 +58,7 @@ public class BindingExec extends AbstractExec {
         applyArguments(cmds);
         ProcessBuilder builder = new ProcessBuilder(cmds);
         builder.directory(workingDir);
-        /*if (test) {
-            builder.environment().put("moe.natjgen.testrun", "true");
-        }*/
+
         return new ExecRunner(builder);
     }
 
