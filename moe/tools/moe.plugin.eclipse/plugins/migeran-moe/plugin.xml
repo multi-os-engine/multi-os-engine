@@ -279,61 +279,73 @@
         <wizard
                 class="org.moe.wizards.MasterDetailProjectWizard"
                 id="org.moe.wizards.MasterDetailProjectWizard"
-                name="Master-Detail Application"
+                name="Java Master-Detail Application"
                 category="moe.project.Category"
                 icon="icons/moe_small.png"
                 project="true"
                 finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
             <description>
-                This template provides a starting point for a master-detail application. It provides a user interface configured with a navigation controller to display a list of items and also a split view on iPad.
+                Master-Detail application Java project template.
             </description>
         </wizard>
-        <!-- <wizard
-                class="org.moe.wizards.PageBasedProjectWizard"
-                id="org.moe.wizards.PageBasedProjectWizard"
-                name="Page-Based Application"
-                category="moe.project.Category"
-                icon="icons/moe_small.png"
-                project="true"
-                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
-            <description>
-                This template provides a starting point for a page-based application that uses a page view controller.
-            </description>
-        </wizard> -->
         <wizard
                 class="org.moe.wizards.SingleViewProjectWizard"
                 id="org.moe.wizards.SingleViewProjectWizard"
-                name="Single View Application"
+                name="Java Single View Application"
                 category="moe.project.Category"
                 icon="icons/moe_small.png"
                 project="true"
                 finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
             <description>
-                This template provides a starting point for an application that uses a single view. It provides a view controller to manage the view, and a storyboard or nib file that contains the view.
+                Single view application Java project template.
             </description>
         </wizard>
-        <!-- <wizard
-                class="org.moe.wizards.TabbedProjectWizard"
-                id="org.moe.wizards.TabbedProjectWizard"
-                name="Tabbed Application"
-                category="moe.project.Category"
-                icon="icons/moe_small.png"
-                project="true"
-                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
-            <description>
-                This template provides a starting point for an application that uses a tab bar. It provides a user interface configured with a tab bar controller, and view controllers for the tab bar items.
-            </description>
-        </wizard> -->
         <wizard
                 class="org.moe.wizards.GameProjectWizard"
                 id="org.moe.wizards.GameProjectWizard"
-                name="Game"
+                name="Java OpenGL ES Game"
                 category="moe.project.Category"
                 icon="icons/moe_small.png"
                 project="true"
                 finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
             <description>
-                This template provides a starting point for games.
+                OpenGL ES Game Java project template.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.KotlinMasterDetailProjectWizard"
+                id="org.moe.wizards.KotlinMasterDetailProjectWizard"
+                name="Kotlin Master-Detail Application"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Master-Detail application Kotlin project template.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.KotlinSingleViewProjectWizard"
+                id="org.moe.wizards.KotlinSingleViewProjectWizard"
+                name="Kotlin Single View Application"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                Single view application Kotlin project template.
+            </description>
+        </wizard>
+        <wizard
+                class="org.moe.wizards.KotlinGameProjectWizard"
+                id="org.moe.wizards.KotlinGameProjectWizard"
+                name="Kotlin OpenGL ES Game"
+                category="moe.project.Category"
+                icon="icons/moe_small.png"
+                project="true"
+                finalPerspective="org.eclipse.jdt.ui.JavaPerspective">
+            <description>
+                OpenGL ES Game Kotlin project template.
             </description>
         </wizard>
     </extension>
