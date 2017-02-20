@@ -205,11 +205,11 @@ public class ModuleUtils {
         VirtualFile root = FileChooser.chooseFile(descriptor, module.getProject(), null);
         if (root != null) {
             String modulePath = getModulePath(module);
-            String headerPath = root.getCanonicalPath();
-            if (headerPath.startsWith(modulePath)) {
-                headerPath = headerPath.substring(modulePath.length() + 1, headerPath.length());
+            String dirPath = root.getCanonicalPath();
+            if (dirPath.startsWith(modulePath)) {
+                dirPath = dirPath.substring(modulePath.length() + 1, dirPath.length());
             }
-            return headerPath;
+            return dirPath;
         }
         return null;
     }
