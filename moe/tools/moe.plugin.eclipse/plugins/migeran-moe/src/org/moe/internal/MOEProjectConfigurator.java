@@ -24,7 +24,9 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.apache.maven.plugin.MojoExecution;
+import org.eclipse.core.resources.ICommand;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -78,6 +80,7 @@ public class MOEProjectConfigurator extends AbstractSourcesGenerationProjectConf
 		if (project.hasNature(MOEProjectNature.NATURE_ID)) {
 			LOG.debug("Found nature " + MOEProjectNature.NATURE_ID + " on project " + project.getName());
 			setSdk(project, classpath);
+			checkBuildCommands(project);
 		}
 	}
 
@@ -145,6 +148,23 @@ public class MOEProjectConfigurator extends AbstractSourcesGenerationProjectConf
 			}
 		}
 		return false;
+	}
+	
+	private void checkBuildCommands(IProject project) throws CoreException {
+		IProjectDescription description = project.getDescription();
+		ICommand[] commands = description.getBuildSpec();
+		for (int i = 0; i < commands.length; ++i) {
+			System.out.println("BUILDER NAME: " + commands[i].getBuilderName());
+			if (commands[i].getBuilderName().equals("org.eclipse.m2e.core.maven2Builder")) {
+				ICommand[] newCommands = new ICommand[commands.length - 1];
+				System.arraycopy(commands, 0, newCommands, 0, i);
+				System.arraycopy(commands, i + 1, newCommands, i,
+						commands.length - i - 1);
+				description.setBuildSpec(newCommands);
+				project.setDescription(description, null);
+				break;
+			}
+		}
 	}
 	
 }
