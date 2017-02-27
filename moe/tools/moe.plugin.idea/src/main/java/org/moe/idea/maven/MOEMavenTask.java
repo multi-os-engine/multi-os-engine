@@ -52,19 +52,12 @@ import org.jetbrains.idea.maven.tasks.TasksBundle;
 import org.jetbrains.idea.maven.utils.MavenLog;
 import org.jetbrains.idea.maven.utils.MavenSettings;
 import org.jetbrains.idea.maven.utils.MavenUtil;
-import org.moe.common.configuration.RemoteSettings;
 import org.moe.idea.MOEGlobalSettings;
-import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.utils.ModuleUtils;
 
 import javax.swing.event.HyperlinkEvent;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 import static org.jetbrains.idea.maven.execution.MavenRunConfigurationType.createRunnerAndConfigurationSettings;
 import static org.moe.idea.utils.ModuleUtils.findPomXml;
@@ -77,22 +70,25 @@ public class MOEMavenTask {
     public static final String REMOTEBUILD_ENABLED = "moe.remotebuild=";
     public static final String SIMULATOR_UDID = "moe.simulator.udid=";
 
-    private MOERunConfiguration moeRunConfig;
-    private Module module;
-    private boolean finished = false;
+    protected Module module;
+    protected boolean finished = false;
+    protected String goal;
 
-    public MOEMavenTask(MOERunConfiguration moeRunConfig) {
+    public MOEMavenTask(Module module) {
         super();
-        this.moeRunConfig = moeRunConfig;
-        this.module = moeRunConfig.module();
+        this.module = module;
     }
 
     public String getWorkPath() {
-        return ModuleUtils.getModulePath(moeRunConfig.module());
+        return ModuleUtils.getModulePath(module);
     }
 
     public String getGoal() {
-        return "moe:xcodebuild";
+        return goal;
+    }
+
+    public void setGoal(String goal) {
+        this.goal = goal;
     }
 
     public boolean runTask() {
@@ -121,13 +117,9 @@ public class MOEMavenTask {
 
         StringBuilder goalBuilder = new StringBuilder();
 
-        if (moeRunConfig.runJUnitTests()) {
-            goalBuilder.append("moe:testxcodebuild");
-        } else {
-            goalBuilder.append("moe:xcodebuild");
-        }
+        setGoalTarget(goalBuilder);
 
-        addBuildArguments(goalBuilder);
+        addArguments(goalBuilder);
 
         MavenRunnerParameters parameters =
                 new MavenRunnerParameters(true, workDirectory, Arrays.asList(ParametersList.parse(goalBuilder.toString())), Collections.<String>emptyList());
@@ -147,10 +139,12 @@ public class MOEMavenTask {
         return executeTask(module.getProject(), getMavenProject(), environment, goalBuilder.toString());
     }
 
-    private void addBuildArguments(StringBuilder goalBuilder) {
-        List<String> args = new ArrayList<String>();
+    protected void setGoalTarget(StringBuilder goalBuilder) {
+        goalBuilder.append(getGoal());
+    }
 
-        args.add("-Dmoe.install.ontarget=true");
+    protected void addArguments(StringBuilder goalBuilder) {
+        List<String> args = new ArrayList<String>();
 
         MOEGlobalSettings globalSettings = MOEGlobalSettings.getInstance();
         String logLevel = globalSettings.getGradleLoggingLevel();
@@ -163,35 +157,9 @@ public class MOEMavenTask {
             args.add("-D" + GRADLE_STACKTRACE_LEVEL_PROPERTY + stacktraceLevel);
         }
 
-        args.add("-D" + CONFIGURATION_MAVEN + moeRunConfig.configuration());
-
-        boolean isRemoteBuildEnabled = moeRunConfig.isRemoteBuildEnabled();
-
-        if (isRemoteBuildEnabled) {
-            addRemoteMavenBuildArguments(args);
-        }
-
-        if (moeRunConfig.runOnSimulator()) {
-            args.add("-D" + SIMULATOR_UDID + moeRunConfig.simulatorUdid());
-        }
-
         for (String arg : args) {
             goalBuilder.append(" " + arg);
         }
-    }
-
-    private void addRemoteMavenBuildArguments(List<String> args) {
-        args.add("-D" + REMOTEBUILD_ENABLED + "true");
-        addRemoteArguments("-D", args);
-    }
-
-    private void addRemoteArguments(String prefix, List<String> args) {
-        args.add("-Pmoe.remotebuild.properties.ignore");
-        Properties properties = RemoteSettings.getProperties(moeRunConfig.getRemoteHost(), Integer.toString(moeRunConfig.getRemotePort()),
-                moeRunConfig.getRemoteUser(), moeRunConfig.getRemoteKnownhosts(), moeRunConfig.getRemoteIdentity(),
-                moeRunConfig.getRemoteKeychainName(), moeRunConfig.getRemoteKeychainPass(),
-                Integer.toString(moeRunConfig.getRemoteKeychainLocktimeout()), moeRunConfig.getRemoteGradleRepositories());
-        RemoteSettings.getArguments("-D", properties, args);
     }
 
     public boolean executeTask(final Project project,
@@ -226,8 +194,7 @@ public class MOEMavenTask {
                                         null,
                                         TasksBundle.message("maven.tasks.executing"),
                                         indicator);
-                            }
-                            finally {
+                            } finally {
                                 targetDone.up();
                             }
                         }
@@ -244,8 +211,7 @@ public class MOEMavenTask {
                     }.queue();
                 }
             }, ModalityState.NON_MODAL);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             MavenLog.LOG.error(e);
             return false;
         }

@@ -33,7 +33,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Key;
 import com.intellij.util.ui.UIUtil;
-import org.moe.idea.maven.MOEMavenTask;
+import org.moe.idea.maven.MOEMavenBuildTask;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.ui.DeviceChooserDialog;
 import org.moe.idea.ui.MOEToolWindow;
@@ -127,7 +127,7 @@ public class MOECompileTask implements CompileTask {
                     return false;
                 }
             } else {
-                MOEMavenTask mavenTask = new MOEMavenTask(runConfig);
+                MOEMavenBuildTask mavenTask = new MOEMavenBuildTask(runConfig);
                 boolean result = mavenTask.runTask();
                 if (!result) {
                     toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
