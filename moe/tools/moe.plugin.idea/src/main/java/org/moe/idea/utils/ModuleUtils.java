@@ -120,7 +120,7 @@ public class ModuleUtils {
         return getModulePath(findModuleByName(project, moduleName));
     }
 
-    private static void runInDispatchedThread(@NotNull Runnable runnable) {
+    public static void runInDispatchedThread(@NotNull Runnable runnable) {
         ApplicationManager.getApplication().invokeLater(runnable);
     }
 

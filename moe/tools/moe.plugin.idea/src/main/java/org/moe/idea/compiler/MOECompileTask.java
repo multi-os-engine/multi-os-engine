@@ -127,7 +127,7 @@ public class MOECompileTask implements CompileTask {
                     return false;
                 }
             } else {
-                MOEMavenBuildTask mavenTask = new MOEMavenBuildTask(runConfig);
+                MOEMavenBuildTask mavenTask = new MOEMavenBuildTask(runConfig, "Building " + runConfig.moduleName(), true);
                 boolean result = mavenTask.runTask();
                 if (!result) {
                     toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");

@@ -45,6 +45,8 @@
 
       <fileEditorProvider implementation="org.moe.idea.editors.XcodeProjectEditorProvider"/>
       <fileEditorProvider implementation="org.moe.idea.editors.BindingEditorProvider"/>
+
+      <projectService serviceImplementation="org.moe.idea.maven.MOEMavenRunner"/>
   </extensions>
 
     <project-components>

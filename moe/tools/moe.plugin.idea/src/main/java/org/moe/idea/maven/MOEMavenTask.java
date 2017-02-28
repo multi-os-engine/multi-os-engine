@@ -73,10 +73,13 @@ public class MOEMavenTask {
     protected Module module;
     protected boolean finished = false;
     protected String goal;
+    protected boolean startInBackground;
+    protected String title;
 
-    public MOEMavenTask(Module module) {
-        super();
+    public MOEMavenTask(Module module, String title, boolean startInBackground) {
         this.module = module;
+        this.title = title;
+        this.startInBackground = startInBackground;
     }
 
     public String getWorkPath() {
@@ -164,7 +167,7 @@ public class MOEMavenTask {
 
     public boolean executeTask(final Project project,
                                final MavenProject mavenProject,
-                               ExecutionEnvironment env,
+                               final ExecutionEnvironment env,
                                final String goal) {
         final Semaphore targetDone = new Semaphore();
         final boolean[] result = new boolean[]{true};
@@ -176,10 +179,10 @@ public class MOEMavenTask {
                     if (project == null || project.isDisposed() || mavenProject == null) return;
 
                     final MavenExplicitProfiles explicitProfiles = MavenProjectsManager.getInstance(project).getExplicitProfiles();
-                    final MavenRunner mavenRunner = MavenRunner.getInstance(project);
+                    final MOEMavenRunner mavenRunner = MOEMavenRunner.getInstance(project);
 
                     targetDone.down();
-                    new Task.Backgroundable(project, TasksBundle.message("maven.tasks.executing"), true) {
+                    new Task.Backgroundable(project, title, true) {
                         public void run(@NotNull ProgressIndicator indicator) {
                             try {
                                 MavenRunnerParameters params = new MavenRunnerParameters(
@@ -192,7 +195,7 @@ public class MOEMavenTask {
                                 result[0] = mavenRunner.runBatch(Collections.singletonList(params),
                                         null,
                                         null,
-                                        TasksBundle.message("maven.tasks.executing"),
+                                        title,
                                         indicator);
                             } finally {
                                 targetDone.up();
@@ -201,12 +204,12 @@ public class MOEMavenTask {
 
                         @Override
                         public boolean shouldStartInBackground() {
-                            return MavenRunner.getInstance(project).getSettings().isRunMavenInBackground();
+                            return startInBackground;
                         }
 
                         @Override
                         public void processSentToBackground() {
-                            MavenRunner.getInstance(project).getSettings().setRunMavenInBackground(true);
+                            MOEMavenRunner.getInstance(project).getSettings().setRunMavenInBackground(true);
                         }
                     }.queue();
                 }

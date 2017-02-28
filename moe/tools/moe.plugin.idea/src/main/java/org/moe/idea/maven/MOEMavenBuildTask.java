@@ -30,8 +30,8 @@ public class MOEMavenBuildTask extends MOEMavenTask {
 
     private MOERunConfiguration moeRunConfig;
 
-    public MOEMavenBuildTask(MOERunConfiguration moeRunConfig) {
-        super(moeRunConfig.module());
+    public MOEMavenBuildTask(MOERunConfiguration moeRunConfig, String title, boolean startInBackground) {
+        super(moeRunConfig.module(), title, startInBackground);
         this.moeRunConfig = moeRunConfig;
     }
 
