@@ -2553,28 +2553,28 @@ public final class CoreMedia {
     @Generated
     public interface Function_CMSampleBufferCreate {
         @Generated
-        int call_CMSampleBufferCreate(VoidPtr arg0, VoidPtr arg1);
+        int call_CMSampleBufferCreate(CMSampleBufferRef arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CMAudioSampleBufferCreateWithPacketDescriptions {
         @Generated
-        int call_CMAudioSampleBufferCreateWithPacketDescriptions(VoidPtr arg0, VoidPtr arg1);
+        int call_CMAudioSampleBufferCreateWithPacketDescriptions(CMSampleBufferRef arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CMSampleBufferCreateForImageBuffer {
         @Generated
-        int call_CMSampleBufferCreateForImageBuffer(VoidPtr arg0, VoidPtr arg1);
+        int call_CMSampleBufferCreateForImageBuffer(CMSampleBufferRef arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CMSampleBufferSetInvalidateCallback {
         @Generated
-        void call_CMSampleBufferSetInvalidateCallback(VoidPtr arg0, long arg1);
+        void call_CMSampleBufferSetInvalidateCallback(CMSampleBufferRef arg0, long arg1);
     }
 
     @Runtime(CRuntime.class)
@@ -2588,7 +2588,7 @@ public final class CoreMedia {
     @Generated
     public interface Function_CMSampleBufferCallForEachSample {
         @Generated
-        int call_CMSampleBufferCallForEachSample(VoidPtr arg0, @NInt long arg1, VoidPtr arg2);
+        int call_CMSampleBufferCallForEachSample(CMSampleBufferRef arg0, @NInt long arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
@@ -2609,14 +2609,14 @@ public final class CoreMedia {
     @Generated
     public interface Function_CMBufferQueueInstallTrigger {
         @Generated
-        void call_CMBufferQueueInstallTrigger(VoidPtr arg0, VoidPtr arg1);
+        void call_CMBufferQueueInstallTrigger(VoidPtr arg0, CMBufferQueueTriggerToken arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CMBufferQueueInstallTriggerWithIntegerThreshold {
         @Generated
-        void call_CMBufferQueueInstallTriggerWithIntegerThreshold(VoidPtr arg0, VoidPtr arg1);
+        void call_CMBufferQueueInstallTriggerWithIntegerThreshold(VoidPtr arg0, CMBufferQueueTriggerToken arg1);
     }
 
     @Runtime(CRuntime.class)
@@ -2630,6 +2630,6 @@ public final class CoreMedia {
     @Generated
     public interface Function_CMBufferQueueSetValidationCallback {
         @Generated
-        int call_CMBufferQueueSetValidationCallback(VoidPtr arg0, ConstVoidPtr arg1, VoidPtr arg2);
+        int call_CMBufferQueueSetValidationCallback(CMBufferQueueRef arg0, ConstVoidPtr arg1, VoidPtr arg2);
     }
 }

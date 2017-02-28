@@ -16,6 +16,8 @@ limitations under the License.
 
 package apple.corefoundation.struct;
 
+import apple.corefoundation.opaque.CFAllocatorRef;
+import apple.corefoundation.opaque.CFStringRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -27,7 +29,6 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
-import org.moe.natj.general.ptr.VoidPtr;
 
 @Generated
 @Structure()
@@ -97,21 +98,21 @@ public final class CFDictionaryValueCallBacks extends StructObject {
     @Generated
     public interface Function_retain {
         @Generated
-        ConstVoidPtr call_retain(VoidPtr arg0, ConstVoidPtr arg1);
+        ConstVoidPtr call_retain(CFAllocatorRef arg0, ConstVoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_release {
         @Generated
-        void call_release(VoidPtr arg0, ConstVoidPtr arg1);
+        void call_release(CFAllocatorRef arg0, ConstVoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_copyDescription {
         @Generated
-        VoidPtr call_copyDescription(ConstVoidPtr arg0);
+        CFStringRef call_copyDescription(ConstVoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)

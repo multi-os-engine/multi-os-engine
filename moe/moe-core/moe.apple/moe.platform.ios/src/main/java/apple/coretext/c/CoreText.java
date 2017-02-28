@@ -1341,8 +1341,8 @@ public final class CoreText {
     public interface Function_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback {
         @Generated
         @NInt
-        long call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback(VoidPtr arg0, VoidPtr arg1,
-                VoidPtr arg2);
+        long call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback(CTFontDescriptorRef arg0,
+                CTFontDescriptorRef arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)

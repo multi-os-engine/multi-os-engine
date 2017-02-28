@@ -5047,4 +5047,819 @@ public final class Globals {
         @Generated
         int call_qsort_r(VoidPtr arg0, ConstVoidPtr arg1, ConstVoidPtr arg2);
     }
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vsha1h_u32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vabdd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vabds_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vabsd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vaddd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vaddd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcaged_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcages_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcagtd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcagts_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcaled_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcales_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcaltd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcalts_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vceqs_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqzd_u64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqzd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vceqzd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vceqzs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcged_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcged_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcged_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcges_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgezd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgezd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcgezs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcgts_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtzd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcgtzd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcgtzs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcled_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcled_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcled_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcles_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vclezd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vclezd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vclezs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vclts_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltzd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcltzd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcltzs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vcvts_f32_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vcvts_f32_u32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vcvtd_f64_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vcvtd_f64_u64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvts_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtd_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvts_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtd_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtas_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtad_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtas_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtad_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtms_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtmd_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtms_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtmd_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtns_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtnd_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtns_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtnd_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtps_s32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtpd_s64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vcvtps_u32_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vcvtpd_u64_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vcvtxd_f32_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vmulxd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vmulxs_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vnegd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqabsb_s8(byte __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqabss_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqabsd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqabsh_s16(short __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqaddb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqadds_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqaddd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqaddh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqaddb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqadds_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqaddd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqaddh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqdmlals_s32(long __p0, int __p1, int __p2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqdmlalh_s16(int __p0, short __p1, short __p2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqdmlsls_s32(long __p0, int __p1, int __p2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqdmlslh_s16(int __p0, short __p1, short __p2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqdmulhs_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqdmulhh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqdmulls_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqdmullh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqmovns_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqmovnd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqmovnh_s16(short __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqmovns_u32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqmovnd_u64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqmovnh_u16(char __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqmovuns_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqmovund_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqmovunh_s16(short __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqnegb_s8(byte __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqnegs_s32(int __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqnegd_s64(long __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqnegh_s16(short __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqrdmulhs_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqrdmulhh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqrshlb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqrshls_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqrshld_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqrshlh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqrshlb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqrshls_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqrshld_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqrshlh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqshlb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqshls_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqshld_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqshlh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqshlb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqshls_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqshld_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqshlh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqsubb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqsubs_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqsubd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vqsubh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vqsubb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vqsubs_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vqsubd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vqsubh_s16(short __p0, short __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrecped_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrecpes_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrecpsd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrecpss_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrecpxd_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrecpxs_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vrshld_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vrshld_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrsqrted_f64(double __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrsqrtes_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native double vrsqrtsd_f64(double __p0, double __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float vrsqrtss_f32(float __p0, float __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vshld_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vshld_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vsqaddb_u8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vsqadds_u32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vsqaddd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native char vsqaddh_u16(char __p0, char __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vsubd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vsubd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vtstd_u64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vtstd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte vuqaddb_s8(byte __p0, byte __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int vuqadds_s32(int __p0, int __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native long vuqaddd_s64(long __p0, long __p1);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native short vuqaddh_s16(short __p0, short __p1);
 }

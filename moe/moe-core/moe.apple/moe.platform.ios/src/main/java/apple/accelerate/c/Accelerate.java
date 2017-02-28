@@ -16753,6 +16753,6 @@ public final class Accelerate {
     @Generated
     public interface Function_vImageCVImageFormat_SetUserData {
         @Generated
-        void call_vImageCVImageFormat_SetUserData(VoidPtr arg0, VoidPtr arg1);
+        void call_vImageCVImageFormat_SetUserData(vImageCVImageFormatRef arg0, VoidPtr arg1);
     }
 }

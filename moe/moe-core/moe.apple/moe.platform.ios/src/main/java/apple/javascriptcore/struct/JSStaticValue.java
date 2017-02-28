@@ -16,6 +16,10 @@ limitations under the License.
 
 package apple.javascriptcore.struct;
 
+import apple.javascriptcore.opaque.JSContextRef;
+import apple.javascriptcore.opaque.JSObjectRef;
+import apple.javascriptcore.opaque.JSStringRef;
+import apple.javascriptcore.opaque.JSValueRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -27,7 +31,6 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
-import org.moe.natj.general.ptr.VoidPtr;
 
 @Generated
 @Structure()
@@ -96,15 +99,15 @@ public final class JSStaticValue extends StructObject {
     @Generated
     public interface Function_getProperty {
         @Generated
-        VoidPtr call_getProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+        JSValueRef call_getProperty(JSContextRef arg0, JSObjectRef arg1, JSStringRef arg2,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_setProperty {
         @Generated
-        boolean call_setProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, VoidPtr arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+        boolean call_setProperty(JSContextRef arg0, JSObjectRef arg1, JSStringRef arg2, JSValueRef arg3,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg4);
     }
 }

@@ -17,6 +17,11 @@ limitations under the License.
 package apple.javascriptcore.struct;
 
 import apple.javascriptcore.opaque.JSClassRef;
+import apple.javascriptcore.opaque.JSContextRef;
+import apple.javascriptcore.opaque.JSObjectRef;
+import apple.javascriptcore.opaque.JSPropertyNameAccumulatorRef;
+import apple.javascriptcore.opaque.JSStringRef;
+import apple.javascriptcore.opaque.JSValueRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -30,7 +35,6 @@ import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.Ptr;
-import org.moe.natj.general.ptr.VoidPtr;
 
 @Generated
 @Structure()
@@ -206,85 +210,85 @@ public final class JSClassDefinition extends StructObject {
     @Generated
     public interface Function_initialize {
         @Generated
-        void call_initialize(VoidPtr arg0, VoidPtr arg1);
+        void call_initialize(JSContextRef arg0, JSObjectRef arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function__finalize {
         @Generated
-        void call__finalize(VoidPtr arg0);
+        void call__finalize(JSObjectRef arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_hasProperty {
         @Generated
-        boolean call_hasProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        boolean call_hasProperty(JSContextRef arg0, JSObjectRef arg1, JSStringRef arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_getProperty {
         @Generated
-        VoidPtr call_getProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+        JSValueRef call_getProperty(JSContextRef arg0, JSObjectRef arg1, JSStringRef arg2,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_setProperty {
         @Generated
-        boolean call_setProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, VoidPtr arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+        boolean call_setProperty(JSContextRef arg0, JSObjectRef arg1, JSStringRef arg2, JSValueRef arg3,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_deleteProperty {
         @Generated
-        boolean call_deleteProperty(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+        boolean call_deleteProperty(JSContextRef arg0, JSObjectRef arg1, JSStringRef arg2,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_getPropertyNames {
         @Generated
-        void call_getPropertyNames(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_getPropertyNames(JSContextRef arg0, JSObjectRef arg1, JSPropertyNameAccumulatorRef arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_callAsFunction {
         @Generated
-        VoidPtr call_callAsFunction(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
+        JSValueRef call_callAsFunction(JSContextRef arg0, JSObjectRef arg1, JSObjectRef arg2, @NUInt long arg3,
+                @ReferenceInfo(type = JSValueRef.class) ConstPtr<JSValueRef> arg4,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg5);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_callAsConstructor {
         @Generated
-        VoidPtr call_callAsConstructor(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+        JSObjectRef call_callAsConstructor(JSContextRef arg0, JSObjectRef arg1, @NUInt long arg2,
+                @ReferenceInfo(type = JSValueRef.class) ConstPtr<JSValueRef> arg3,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_hasInstance {
         @Generated
-        boolean call_hasInstance(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+        boolean call_hasInstance(JSContextRef arg0, JSObjectRef arg1, JSValueRef arg2,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_convertToType {
         @Generated
-        VoidPtr call_convertToType(VoidPtr arg0, VoidPtr arg1, int arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg3);
+        JSValueRef call_convertToType(JSContextRef arg0, JSObjectRef arg1, int arg2,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg3);
     }
 }

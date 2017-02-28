@@ -1477,14 +1477,15 @@ public final class AudioToolbox {
     @Generated
     public interface Function_AudioUnitAddPropertyListener {
         @Generated
-        void call_AudioUnitAddPropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, int arg4);
+        void call_AudioUnitAddPropertyListener(VoidPtr arg0, AudioComponentInstance arg1, int arg2, int arg3, int arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioUnitRemovePropertyListenerWithUserData {
         @Generated
-        void call_AudioUnitRemovePropertyListenerWithUserData(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, int arg4);
+        void call_AudioUnitRemovePropertyListenerWithUserData(VoidPtr arg0, AudioComponentInstance arg1, int arg2,
+                int arg3, int arg4);
     }
 
     @Runtime(CRuntime.class)
@@ -1527,7 +1528,7 @@ public final class AudioToolbox {
     @Generated
     public interface Function_AudioConverterFillComplexBuffer {
         @Generated
-        int call_AudioConverterFillComplexBuffer(VoidPtr arg0, IntPtr arg1,
+        int call_AudioConverterFillComplexBuffer(AudioConverterRef arg0, IntPtr arg1,
                 @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg2,
                 @ReferenceInfo(type = AudioStreamPacketDescription.class, depth = 2) Ptr<Ptr<AudioStreamPacketDescription>> arg3,
                 VoidPtr arg4);
@@ -1593,7 +1594,7 @@ public final class AudioToolbox {
     @Generated
     public interface Function_AudioFileStreamOpen_1 {
         @Generated
-        void call_AudioFileStreamOpen_1(VoidPtr arg0, VoidPtr arg1, int arg2, IntPtr arg3);
+        void call_AudioFileStreamOpen_1(VoidPtr arg0, AudioFileStreamID arg1, int arg2, IntPtr arg3);
     }
 
     @Runtime(CRuntime.class)
@@ -1608,14 +1609,15 @@ public final class AudioToolbox {
     @Generated
     public interface Function_AudioQueueNewOutput {
         @Generated
-        void call_AudioQueueNewOutput(VoidPtr arg0, VoidPtr arg1, AudioQueueBuffer arg2);
+        void call_AudioQueueNewOutput(VoidPtr arg0, AudioQueueRef arg1, AudioQueueBuffer arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioQueueNewInput {
         @Generated
-        void call_AudioQueueNewInput(VoidPtr arg0, VoidPtr arg1, AudioQueueBuffer arg2, AudioTimeStamp arg3, int arg4,
+        void call_AudioQueueNewInput(VoidPtr arg0, AudioQueueRef arg1, AudioQueueBuffer arg2, AudioTimeStamp arg3,
+                int arg4,
                 @ReferenceInfo(type = AudioStreamPacketDescription.class) ConstPtr<AudioStreamPacketDescription> arg5);
     }
 
@@ -1641,21 +1643,21 @@ public final class AudioToolbox {
     @Generated
     public interface Function_AudioQueueAddPropertyListener {
         @Generated
-        void call_AudioQueueAddPropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2);
+        void call_AudioQueueAddPropertyListener(VoidPtr arg0, AudioQueueRef arg1, int arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioQueueRemovePropertyListener {
         @Generated
-        void call_AudioQueueRemovePropertyListener(VoidPtr arg0, VoidPtr arg1, int arg2);
+        void call_AudioQueueRemovePropertyListener(VoidPtr arg0, AudioQueueRef arg1, int arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_AudioQueueProcessingTapNew {
         @Generated
-        void call_AudioQueueProcessingTapNew(VoidPtr arg0, VoidPtr arg1, int arg2,
+        void call_AudioQueueProcessingTapNew(VoidPtr arg0, AudioQueueProcessingTapRef arg1, int arg2,
                 @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg3, IntPtr arg4,
                 IntPtr arg5, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg6);
     }
@@ -1706,7 +1708,7 @@ public final class AudioToolbox {
     @Generated
     public interface Function_MusicSequenceSetUserCallback {
         @Generated
-        void call_MusicSequenceSetUserCallback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, double arg3,
+        void call_MusicSequenceSetUserCallback(VoidPtr arg0, MusicSequence arg1, MusicTrack arg2, double arg3,
                 @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData arg4,
                 double arg5, double arg6);
     }

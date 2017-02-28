@@ -16,6 +16,9 @@ limitations under the License.
 
 package apple.javascriptcore.struct;
 
+import apple.javascriptcore.opaque.JSContextRef;
+import apple.javascriptcore.opaque.JSObjectRef;
+import apple.javascriptcore.opaque.JSValueRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -29,7 +32,6 @@ import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.Ptr;
-import org.moe.natj.general.ptr.VoidPtr;
 
 @Generated
 @Structure()
@@ -88,8 +90,8 @@ public final class JSStaticFunction extends StructObject {
     @Generated
     public interface Function_callAsFunction {
         @Generated
-        VoidPtr call_callAsFunction(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
+        JSValueRef call_callAsFunction(JSContextRef arg0, JSObjectRef arg1, JSObjectRef arg2, @NUInt long arg3,
+                @ReferenceInfo(type = JSValueRef.class) ConstPtr<JSValueRef> arg4,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg5);
     }
 }

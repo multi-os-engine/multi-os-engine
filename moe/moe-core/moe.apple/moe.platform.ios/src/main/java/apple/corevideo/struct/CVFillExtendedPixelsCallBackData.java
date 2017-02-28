@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.corevideo.struct;
 
+import apple.corevideo.opaque.CVBufferRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -86,6 +87,6 @@ public final class CVFillExtendedPixelsCallBackData extends StructObject {
     @Generated
     public interface Function_fillCallBack {
         @Generated
-        byte call_fillCallBack(VoidPtr arg0, VoidPtr arg1);
+        byte call_fillCallBack(CVBufferRef arg0, VoidPtr arg1);
     }
 }

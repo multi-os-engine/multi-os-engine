@@ -798,13 +798,13 @@ public final class AddressBook {
     @Generated
     public interface Function_ABAddressBookRegisterExternalChangeCallback {
         @Generated
-        void call_ABAddressBookRegisterExternalChangeCallback(ConstVoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_ABAddressBookRegisterExternalChangeCallback(ConstVoidPtr arg0, CFDictionaryRef arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_ABAddressBookUnregisterExternalChangeCallback {
         @Generated
-        void call_ABAddressBookUnregisterExternalChangeCallback(ConstVoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_ABAddressBookUnregisterExternalChangeCallback(ConstVoidPtr arg0, CFDictionaryRef arg1, VoidPtr arg2);
     }
 }

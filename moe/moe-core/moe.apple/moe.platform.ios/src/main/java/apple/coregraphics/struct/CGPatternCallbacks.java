@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.coregraphics.struct;
 
+import apple.coregraphics.opaque.CGContextRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -85,7 +86,7 @@ public final class CGPatternCallbacks extends StructObject {
     @Generated
     public interface Function_drawPattern {
         @Generated
-        void call_drawPattern(VoidPtr arg0, VoidPtr arg1);
+        void call_drawPattern(VoidPtr arg0, CGContextRef arg1);
     }
 
     @Runtime(CRuntime.class)

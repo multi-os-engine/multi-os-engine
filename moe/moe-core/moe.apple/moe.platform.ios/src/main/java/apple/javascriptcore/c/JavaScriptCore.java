@@ -536,18 +536,18 @@ public final class JavaScriptCore {
     @Generated
     public interface Function_JSObjectMakeFunctionWithCallback {
         @Generated
-        VoidPtr call_JSObjectMakeFunctionWithCallback(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, @NUInt long arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg4,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg5);
+        JSValueRef call_JSObjectMakeFunctionWithCallback(JSContextRef arg0, JSObjectRef arg1, JSObjectRef arg2,
+                @NUInt long arg3, @ReferenceInfo(type = JSValueRef.class) ConstPtr<JSValueRef> arg4,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg5);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_JSObjectMakeConstructor {
         @Generated
-        VoidPtr call_JSObjectMakeConstructor(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2,
-                @ReferenceInfo(type = Void.class, depth = 2) ConstPtr<VoidPtr> arg3,
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg4);
+        JSObjectRef call_JSObjectMakeConstructor(JSContextRef arg0, JSObjectRef arg1, @NUInt long arg2,
+                @ReferenceInfo(type = JSValueRef.class) ConstPtr<JSValueRef> arg3,
+                @ReferenceInfo(type = JSValueRef.class) Ptr<JSValueRef> arg4);
     }
 
     @Runtime(CRuntime.class)

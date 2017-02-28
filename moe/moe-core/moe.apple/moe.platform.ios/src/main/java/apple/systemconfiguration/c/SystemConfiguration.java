@@ -153,6 +153,6 @@ public final class SystemConfiguration {
     @Generated
     public interface Function_SCNetworkReachabilitySetCallback {
         @Generated
-        void call_SCNetworkReachabilitySetCallback(VoidPtr arg0, int arg1, VoidPtr arg2);
+        void call_SCNetworkReachabilitySetCallback(SCNetworkReachabilityRef arg0, int arg1, VoidPtr arg2);
     }
 }

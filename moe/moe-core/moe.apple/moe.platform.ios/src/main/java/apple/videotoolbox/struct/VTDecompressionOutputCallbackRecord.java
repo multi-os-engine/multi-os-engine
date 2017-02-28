@@ -17,6 +17,7 @@ limitations under the License.
 package apple.videotoolbox.struct;
 
 import apple.coremedia.struct.CMTime;
+import apple.corevideo.opaque.CVBufferRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -79,7 +80,7 @@ public final class VTDecompressionOutputCallbackRecord extends StructObject {
     @Generated
     public interface Function_decompressionOutputCallback {
         @Generated
-        void call_decompressionOutputCallback(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, VoidPtr arg4,
+        void call_decompressionOutputCallback(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, CVBufferRef arg4,
                 @ByValue CMTime arg5, @ByValue CMTime arg6);
     }
 }

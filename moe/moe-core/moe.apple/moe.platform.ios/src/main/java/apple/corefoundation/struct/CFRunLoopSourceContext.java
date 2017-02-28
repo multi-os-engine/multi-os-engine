@@ -16,6 +16,8 @@ limitations under the License.
 
 package apple.corefoundation.struct;
 
+import apple.corefoundation.opaque.CFRunLoopRef;
+import apple.corefoundation.opaque.CFStringRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -156,7 +158,7 @@ public final class CFRunLoopSourceContext extends StructObject {
     @Generated
     public interface Function_copyDescription {
         @Generated
-        VoidPtr call_copyDescription(ConstVoidPtr arg0);
+        CFStringRef call_copyDescription(ConstVoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
@@ -178,14 +180,14 @@ public final class CFRunLoopSourceContext extends StructObject {
     @Generated
     public interface Function_schedule {
         @Generated
-        void call_schedule(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_schedule(VoidPtr arg0, CFRunLoopRef arg1, CFStringRef arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_cancel {
         @Generated
-        void call_cancel(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_cancel(VoidPtr arg0, CFRunLoopRef arg1, CFStringRef arg2);
     }
 
     @Runtime(CRuntime.class)

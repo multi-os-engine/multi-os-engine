@@ -1056,6 +1056,6 @@ public final class GSS {
         @Generated
         void call_gss_iter_creds_f(VoidPtr arg0,
                 @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct arg1,
-                VoidPtr arg2);
+                gss_cred_id_t arg2);
     }
 }

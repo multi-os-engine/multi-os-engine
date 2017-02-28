@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.corefoundation.struct;
 
+import apple.corefoundation.opaque.CFStringRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -110,6 +111,6 @@ public final class CFRunLoopObserverContext extends StructObject {
     @Generated
     public interface Function_copyDescription {
         @Generated
-        VoidPtr call_copyDescription(ConstVoidPtr arg0);
+        CFStringRef call_copyDescription(ConstVoidPtr arg0);
     }
 }

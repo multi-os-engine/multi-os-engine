@@ -5142,8 +5142,8 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFNotificationCenterAddObserver {
         @Generated
-        void call_CFNotificationCenterAddObserver(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2, ConstVoidPtr arg3,
-                VoidPtr arg4);
+        void call_CFNotificationCenterAddObserver(CFNotificationCenterRef arg0, VoidPtr arg1, CFStringRef arg2,
+                ConstVoidPtr arg3, CFDictionaryRef arg4);
     }
 
     @Runtime(CRuntime.class)
@@ -5171,7 +5171,7 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFRunLoopObserverCreate {
         @Generated
-        void call_CFRunLoopObserverCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
+        void call_CFRunLoopObserverCreate(CFRunLoopObserverRef arg0, @NUInt long arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
@@ -5185,7 +5185,7 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFRunLoopTimerCreate {
         @Generated
-        void call_CFRunLoopTimerCreate(VoidPtr arg0, VoidPtr arg1);
+        void call_CFRunLoopTimerCreate(CFRunLoopTimerRef arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
@@ -5199,14 +5199,14 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFSocketCreate {
         @Generated
-        void call_CFSocketCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3, VoidPtr arg4);
+        void call_CFSocketCreate(CFSocketRef arg0, @NUInt long arg1, CFDataRef arg2, ConstVoidPtr arg3, VoidPtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFSocketCreateWithNative {
         @Generated
-        void call_CFSocketCreateWithNative(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3,
+        void call_CFSocketCreateWithNative(CFSocketRef arg0, @NUInt long arg1, CFDataRef arg2, ConstVoidPtr arg3,
                 VoidPtr arg4);
     }
 
@@ -5214,15 +5214,15 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFSocketCreateWithSocketSignature {
         @Generated
-        void call_CFSocketCreateWithSocketSignature(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2, ConstVoidPtr arg3,
-                VoidPtr arg4);
+        void call_CFSocketCreateWithSocketSignature(CFSocketRef arg0, @NUInt long arg1, CFDataRef arg2,
+                ConstVoidPtr arg3, VoidPtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFSocketCreateConnectedToSocketSignature {
         @Generated
-        void call_CFSocketCreateConnectedToSocketSignature(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2,
+        void call_CFSocketCreateConnectedToSocketSignature(CFSocketRef arg0, @NUInt long arg1, CFDataRef arg2,
                 ConstVoidPtr arg3, VoidPtr arg4);
     }
 
@@ -5230,14 +5230,14 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFReadStreamSetClient {
         @Generated
-        void call_CFReadStreamSetClient(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
+        void call_CFReadStreamSetClient(CFReadStreamRef arg0, @NUInt long arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFWriteStreamSetClient {
         @Generated
-        void call_CFWriteStreamSetClient(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
+        void call_CFWriteStreamSetClient(CFWriteStreamRef arg0, @NUInt long arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
@@ -5266,28 +5266,28 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFMessagePortCreateLocal {
         @Generated
-        VoidPtr call_CFMessagePortCreateLocal(VoidPtr arg0, int arg1, VoidPtr arg2, VoidPtr arg3);
+        CFDataRef call_CFMessagePortCreateLocal(CFMessagePortRef arg0, int arg1, CFDataRef arg2, VoidPtr arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFMessagePortGetInvalidationCallBack_ret {
         @Generated
-        void call_CFMessagePortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
+        void call_CFMessagePortGetInvalidationCallBack_ret(CFMessagePortRef arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFMessagePortSetInvalidationCallBack {
         @Generated
-        void call_CFMessagePortSetInvalidationCallBack(VoidPtr arg0, VoidPtr arg1);
+        void call_CFMessagePortSetInvalidationCallBack(CFMessagePortRef arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFPlugInRegisterFactoryFunction {
         @Generated
-        VoidPtr call_CFPlugInRegisterFactoryFunction(VoidPtr arg0, VoidPtr arg1);
+        VoidPtr call_CFPlugInRegisterFactoryFunction(CFAllocatorRef arg0, CFUUIDRef arg1);
     }
 
     @Runtime(CRuntime.class)
@@ -5301,7 +5301,7 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFPlugInInstanceCreateWithInstanceDataSize_4 {
         @Generated
-        byte call_CFPlugInInstanceCreateWithInstanceDataSize_4(VoidPtr arg0, VoidPtr arg1,
+        byte call_CFPlugInInstanceCreateWithInstanceDataSize_4(CFPlugInInstanceRef arg0, CFStringRef arg1,
                 @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
     }
 
@@ -5309,34 +5309,34 @@ public final class CoreFoundation {
     @Generated
     public interface Function_CFMachPortCreate {
         @Generated
-        void call_CFMachPortCreate(VoidPtr arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
+        void call_CFMachPortCreate(CFMachPortRef arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFMachPortCreateWithPort {
         @Generated
-        void call_CFMachPortCreateWithPort(VoidPtr arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
+        void call_CFMachPortCreateWithPort(CFMachPortRef arg0, VoidPtr arg1, @NInt long arg2, VoidPtr arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFMachPortGetInvalidationCallBack_ret {
         @Generated
-        void call_CFMachPortGetInvalidationCallBack_ret(VoidPtr arg0, VoidPtr arg1);
+        void call_CFMachPortGetInvalidationCallBack_ret(CFMachPortRef arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFMachPortSetInvalidationCallBack {
         @Generated
-        void call_CFMachPortSetInvalidationCallBack(VoidPtr arg0, VoidPtr arg1);
+        void call_CFMachPortSetInvalidationCallBack(CFMachPortRef arg0, VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFFileDescriptorCreate {
         @Generated
-        void call_CFFileDescriptorCreate(VoidPtr arg0, @NUInt long arg1, VoidPtr arg2);
+        void call_CFFileDescriptorCreate(CFFileDescriptorRef arg0, @NUInt long arg1, VoidPtr arg2);
     }
 }

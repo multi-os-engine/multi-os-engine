@@ -857,7 +857,7 @@ public final class VideoToolbox {
     @Generated
     public interface Function_VTCompressionSessionCreate {
         @Generated
-        void call_VTCompressionSessionCreate(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, VoidPtr arg4);
+        void call_VTCompressionSessionCreate(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, CMSampleBufferRef arg4);
     }
 
     @Runtime(CRuntime.class)
@@ -879,7 +879,7 @@ public final class VideoToolbox {
     @Generated
     public interface Function_VTFrameSiloCallFunctionForEachSampleBuffer {
         @Generated
-        int call_VTFrameSiloCallFunctionForEachSampleBuffer(VoidPtr arg0, VoidPtr arg1);
+        int call_VTFrameSiloCallFunctionForEachSampleBuffer(VoidPtr arg0, CMSampleBufferRef arg1);
     }
 
     @Runtime(CRuntime.class)

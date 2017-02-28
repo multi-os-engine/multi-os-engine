@@ -2341,7 +2341,7 @@ public final class CoreGraphics {
         @Generated
         void call_CGPDFDictionaryApplyFunction(
                 @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0,
-                VoidPtr arg1, VoidPtr arg2);
+                CGPDFObjectRef arg1, VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
@@ -2355,6 +2355,6 @@ public final class CoreGraphics {
     @Generated
     public interface Function_CGPDFOperatorTableSetCallback {
         @Generated
-        void call_CGPDFOperatorTableSetCallback(VoidPtr arg0, VoidPtr arg1);
+        void call_CGPDFOperatorTableSetCallback(CGPDFScannerRef arg0, VoidPtr arg1);
     }
 }

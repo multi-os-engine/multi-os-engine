@@ -18,6 +18,7 @@ package apple.mediatoolbox.struct;
 
 import apple.coreaudio.struct.AudioBufferList;
 import apple.coreaudio.struct.AudioStreamBasicDescription;
+import apple.mediatoolbox.opaque.MTAudioProcessingTapRef;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -119,21 +120,22 @@ public final class MTAudioProcessingTapCallbacks extends StructObject {
     @Generated
     public interface Function_init {
         @Generated
-        void call_init(VoidPtr arg0, VoidPtr arg1, @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
+        void call_init(MTAudioProcessingTapRef arg0, VoidPtr arg1,
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function__finalize {
         @Generated
-        void call__finalize(VoidPtr arg0);
+        void call__finalize(MTAudioProcessingTapRef arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_prepare {
         @Generated
-        void call_prepare(VoidPtr arg0, @NInt long arg1,
+        void call_prepare(MTAudioProcessingTapRef arg0, @NInt long arg1,
                 @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription arg2);
     }
 
@@ -141,14 +143,14 @@ public final class MTAudioProcessingTapCallbacks extends StructObject {
     @Generated
     public interface Function_unprepare {
         @Generated
-        void call_unprepare(VoidPtr arg0);
+        void call_unprepare(MTAudioProcessingTapRef arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_process {
         @Generated
-        void call_process(VoidPtr arg0, @NInt long arg1, int arg2,
+        void call_process(MTAudioProcessingTapRef arg0, @NInt long arg1, int arg2,
                 @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg3, NIntPtr arg4,
                 IntPtr arg5);
     }

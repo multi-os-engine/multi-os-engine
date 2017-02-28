@@ -1035,7 +1035,7 @@ public final class CFNetwork {
     @Generated
     public interface Function_CFHostSetClient {
         @Generated
-        void call_CFHostSetClient(VoidPtr arg0, int arg1,
+        void call_CFHostSetClient(CFHostRef arg0, int arg1,
                 @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg2, VoidPtr arg3);
     }
 
@@ -1043,7 +1043,7 @@ public final class CFNetwork {
     @Generated
     public interface Function_CFNetServiceSetClient {
         @Generated
-        void call_CFNetServiceSetClient(VoidPtr arg0,
+        void call_CFNetServiceSetClient(CFNetServiceRef arg0,
                 @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg1, VoidPtr arg2);
     }
 
@@ -1051,7 +1051,7 @@ public final class CFNetwork {
     @Generated
     public interface Function_CFNetServiceMonitorCreate {
         @Generated
-        void call_CFNetServiceMonitorCreate(VoidPtr arg0, VoidPtr arg1, int arg2, VoidPtr arg3,
+        void call_CFNetServiceMonitorCreate(CFNetServiceMonitorRef arg0, CFNetServiceRef arg1, int arg2, CFDataRef arg3,
                 @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg4, VoidPtr arg5);
     }
 
@@ -1059,7 +1059,7 @@ public final class CFNetwork {
     @Generated
     public interface Function_CFNetServiceBrowserCreate {
         @Generated
-        void call_CFNetServiceBrowserCreate(VoidPtr arg0, @NUInt long arg1, ConstVoidPtr arg2,
+        void call_CFNetServiceBrowserCreate(CFNetServiceBrowserRef arg0, @NUInt long arg1, ConstVoidPtr arg2,
                 @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg3, VoidPtr arg4);
     }
 
@@ -1067,13 +1067,13 @@ public final class CFNetwork {
     @Generated
     public interface Function_CFNetworkExecuteProxyAutoConfigurationScript {
         @Generated
-        void call_CFNetworkExecuteProxyAutoConfigurationScript(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_CFNetworkExecuteProxyAutoConfigurationScript(VoidPtr arg0, CFArrayRef arg1, CFErrorRef arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFNetworkExecuteProxyAutoConfigurationURL {
         @Generated
-        void call_CFNetworkExecuteProxyAutoConfigurationURL(VoidPtr arg0, VoidPtr arg1, VoidPtr arg2);
+        void call_CFNetworkExecuteProxyAutoConfigurationURL(VoidPtr arg0, CFArrayRef arg1, CFErrorRef arg2);
     }
 }
