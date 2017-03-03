@@ -607,22 +607,33 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         File f = new File(ModuleUtils.getModulePath(module));
         final MOEToolWindow toolWindow =  MOEToolWindow.getInstance(module.getProject());
         toolWindow.show();
+        final StringBuffer runError = new StringBuffer();
         String errorMessage = RemoteSettings.test(f, properties,
                 new ExecRunnerBase.ExecRunnerListener() {
                     @Override
                     public void stdout(String s) {
                         toolWindow.printMessage(s + "\n", ConsoleViewContentType.NORMAL_OUTPUT);
+                        if (s.toLowerCase().contains("error")) {
+                            runError.append(s);
+                        }
                     }
 
                     @Override
                     public void stderr(String s) {
                         toolWindow.printMessage(s + "\n", ConsoleViewContentType.ERROR_OUTPUT);
+                        runError.append(s);
                     }
                 });
 
-        if (errorMessage == null) {
+        String runErrorText = runError.toString();
+        if (errorMessage == null && (runErrorText == null || runErrorText.isEmpty())) {
             showMessage("Test successful");
         } else {
+            if (errorMessage == null) {
+                errorMessage = runErrorText;
+            } else {
+                errorMessage += " " + runErrorText;
+            }
             showMessage(errorMessage);
         }
     }
