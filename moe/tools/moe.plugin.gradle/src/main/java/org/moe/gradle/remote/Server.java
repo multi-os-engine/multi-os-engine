@@ -76,6 +76,14 @@ public class Server {
     }
 
     @Nullable
+    private String userName;
+
+    @NotNull
+    public String getUserName() {
+        return Require.nonNull(userName);
+    }
+
+    @Nullable
     private URI buildDir;
 
     @NotNull
@@ -106,6 +114,8 @@ public class Server {
         this.session = Require.nonNull(session);
         this.plugin = Require.nonNull(plugin);
         this.settings = Require.nonNull(settings);
+
+        this.userName = session.getUserName();
 
         final Project project = plugin.getProject();
         project.getGradle().buildFinished(new ConfigurationClosure<BuildResult>(project) {

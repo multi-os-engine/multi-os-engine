@@ -33,6 +33,7 @@ import org.moe.document.pbxproj.PBXObjectRef;
 import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.XCBuildConfiguration;
 import org.moe.document.pbxproj.XCConfigurationList;
+import org.moe.document.pbxproj.nextstep.Array;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.Value;
 import org.moe.gradle.MoeExtension;
@@ -51,6 +52,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -363,6 +367,9 @@ public class XcodeBuild extends AbstractBaseTask {
         }
 
         String scheme = getScheme();
+        if (scheme != null) {
+            generateSchemeIfNeeded();
+        }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
         if (remoteServer != null) {
@@ -430,26 +437,6 @@ public class XcodeBuild extends AbstractBaseTask {
                 throw new GradleException("Unsupported configuration", e);
             }
 
-            if (scheme != null) {
-                Path xcodeProjectFileRel;
-                String projectFile = null;
-                try {
-                    xcodeProjectFileRel = getInnerProjectRelativePath(getXcodeProjectFile());
-                    projectFile = remoteServer.getRemotePath(xcodeProjectFileRel);
-                } catch (IOException e) {
-                    throw new GradleException("Unsupported configuration", e);
-                }
-                List<String> args = new ArrayList<>();
-                args.add("-project");
-                args.add(projectFile);
-                String schemeList = remoteServer.exec("scheme list", "xcrun --find xcodebuild && " + "xcrun xcodebuild -list " + args.stream().collect(Collectors.joining(" ")));
-                if (needRegenerateSchema(schemeList.toString())) {
-                    LOG.quiet("REGENERATE SCHEMA");
-                    remoteServer.exec("regenerate schema", "/Users/rolandvigh/Migeran-repo/moe/tools/moe.plugin.gradle/src/main/resources/org/moe/gradle/share_schemes.rb " +
-                            projectFile);
-                }
-            }
-
             remoteServer.exec("xcodebuild", "xcrun --find xcodebuild && " +
                     "xcrun xcodebuild " + calculateArgs().stream().collect(Collectors.joining(" ")));
 
@@ -482,27 +469,6 @@ public class XcodeBuild extends AbstractBaseTask {
 
         } else {
             linkSDK();
-
-            if (scheme != null) {
-                final ByteArrayOutputStream listOut = new ByteArrayOutputStream();
-                exec(spec -> {
-                    spec.setExecutable("xcrun");
-                    spec.args("xcodebuild", "-list");
-                    List<String> args = new ArrayList<>();
-                    args.add("-project");
-                    args.add(getXcodeProjectFile().getAbsolutePath());
-                    spec.args(args);
-                    spec.setStandardOutput(listOut);
-                });
-
-                if (needRegenerateSchema(listOut.toString())) {
-                    LOG.quiet("REGENERATE SCHEMA");
-                    exec(spec -> {
-                        spec.setExecutable("/Users/rolandvigh/Migeran-repo/moe/tools/moe.plugin.gradle/src/main/resources/org/moe/gradle/share_schemes.rb");
-                        spec.args(getXcodeProjectFile().getAbsolutePath());
-                    });
-                }
-            }
 
             exec(spec -> {
                 // Set executable
@@ -826,10 +792,74 @@ public class XcodeBuild extends AbstractBaseTask {
         return false;
     }
 
-    private boolean needRegenerateSchema(String content) {
-        if (content.toLowerCase().contains("This project contains no schemes".toLowerCase())) {
-            return true;
+    private void generateSchemeIfNeeded() {
+        try {
+            Server remoteServer = getMoePlugin().getRemoteServer();
+            String user = remoteServer == null ? System.getProperty("user.name") : remoteServer.getUserName();
+
+            File schemeDir = Paths.get(
+                    getXcodeProjectFile().getAbsolutePath(), "xcuserdata",
+                    user + ".xcuserdatad", "xcschemes").toFile();
+
+            if (!schemeDir.exists()) {
+                schemeDir.mkdirs();
+            }
+
+            LOG.quiet("Generate schemes");
+
+            String template;
+            {
+                StringBuilder builder = new StringBuilder();
+                InputStream stream = getClass().getResourceAsStream("scheme-template.txt");
+                byte buff[] = new byte[1024];
+                int len;
+                while ((len = stream.read(buff)) > 0) {
+                    builder.append(new String(buff, 0, len, StandardCharsets.UTF_8));
+                }
+                template = builder.toString();
+            }
+
+            ProjectFile proj = new ProjectFile(getXcodeProjectFile());
+
+            Array<PBXObjectRef<PBXNativeTarget>> targets = proj.getRoot().getRootObject().getReferenced().getTargetsOrNull();
+            for (PBXObjectRef<PBXNativeTarget> targetRef : targets) {
+                PBXNativeTarget target = targetRef.getReferenced();
+
+                File schemeFile = Paths.get(schemeDir.getAbsolutePath(), target.getName() + ".xcscheme").toFile();
+                if (schemeFile.exists()) {
+                    continue;
+                }
+
+                String targetTemplate = "" + template;
+
+                {
+                    String localPath = new File(getXcodeProjectFile(), proj.getRoot().getRootObject().getReferenced().getProjectDirPath()).toURI()
+                            .relativize(getXcodeProjectFile().toURI()).getPath();
+                    if (localPath.isEmpty()) {
+                        localPath = getXcodeProjectFile().getName();
+                    }
+                    targetTemplate = targetTemplate.replace("%%LOCAL_PATH%%", localPath);
+                }
+
+                {
+                    String product = target.getProductReference().getReferenced().getPath();
+                    targetTemplate = targetTemplate.replace("%%PRODUCT%%", product);
+                }
+
+                {
+                    targetTemplate = targetTemplate.replace("%%TARGET_NAME%%", target.getName());
+                }
+
+                {
+                    targetTemplate = targetTemplate.replace("%%TARGET_ID%%", targetRef.value);
+                }
+
+                PrintWriter writer = new PrintWriter(schemeFile);
+                writer.print(targetTemplate);
+                writer.close();
+            }
+        } catch (Throwable t) {
+            throw new GradleException("Could not generate scheme", t);
         }
-        return false;
     }
 }
