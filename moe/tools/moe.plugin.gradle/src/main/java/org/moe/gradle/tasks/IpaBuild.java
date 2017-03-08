@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
+import org.gradle.api.logging.LogLevel;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.Input;
@@ -24,6 +25,9 @@ import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
+import org.moe.document.pbxproj.*;
+import org.moe.document.pbxproj.nextstep.NextStep;
+import org.moe.document.pbxproj.nextstep.Value;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
@@ -43,6 +47,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class IpaBuild extends AbstractBaseTask {
 
@@ -57,6 +62,7 @@ public class IpaBuild extends AbstractBaseTask {
     private static final String CONVENTION_PROVISIONING_PROFILE_NAME = "provisioningProfileName";
     private static final String CONVENTION_CONFIGURATION = "configuration";
     private static final String CONVENTION_OUTPUT_ARCHIVE = "outputArchive";
+    private static final String CONVENTION_DEVELOPMENT_TEAM = "developmentTeam";
 
     @Nullable
     private Object inputApp;
@@ -207,9 +213,29 @@ public class IpaBuild extends AbstractBaseTask {
         this.outputArchive = outputArchive;
     }
 
+    @Nullable
+    private String developmentTeam;
+
+    @Input
+    @Optional
+    @Nullable
+    public String getDevelopmentTeam() {
+        return nullableGetOrConvention(developmentTeam, CONVENTION_DEVELOPMENT_TEAM);
+    }
+
+    @IgnoreUnused
+    public void setDevelopmentTeam(@Nullable String developmentTeam) {
+        this.developmentTeam = developmentTeam;
+    }
+
     @Override
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
+
+        if (getScheme() == null) {
+            throw new GradleException("Using Xcode workspaces requires schemes! Please set the "
+                    + "moe.xcode." + "main" + "Scheme property");
+        }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
         final File inputApp = Require.nonNull(getInputApp());
@@ -238,9 +264,13 @@ public class IpaBuild extends AbstractBaseTask {
             // NOTE: do not re-upload the files, incremental builds are disabled for remotely executed tasks, the
             // files are guarantied to be there. Also, enabling this would possibly break the signed files.
             // remoteServer.upload("application files", list);
+            remoteServer.exec("remove previous ipa", "rm -rf " + remoteIpa);
 
-            remoteServer.exec("PackageApplication", "" +
-                    "xcrun -sdk iphoneos PackageApplication -v '" + remoteApp + "' -o '" + remoteIpa + "'");
+            remoteServer.exec("archive", "xcrun xcodebuild " +
+                    calculateArchiveArgs().stream().collect(Collectors.joining(" ")));
+
+            remoteServer.exec("export archive", "xcrun xcodebuild " +
+                    calculateExportArchiveArgs().stream().collect(Collectors.joining(" ")));
 
             remoteServer.downloadFile("ipa file", remoteIpa, getOutputIpa().getParentFile());
 
@@ -324,6 +354,15 @@ public class IpaBuild extends AbstractBaseTask {
         addConvention(CONVENTION_OUTPUT_ARCHIVE, () -> {
             return resolvePathInBuildDir("archive");
         });
+        addConvention(CONVENTION_DEVELOPMENT_TEAM, () -> {
+            if (!ext.signing.usesDefaultDevelopmentTeam()) {
+                return ext.signing.getDevelopmentTeam();
+            } else if (!xcodeprojDevelopmentTeamIsSet()) {
+                return ext.signing.getDevelopmentTeam();
+            } else {
+                return null;
+            }
+        });
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "IpaBuild.log"));
     }
 
@@ -342,10 +381,12 @@ public class IpaBuild extends AbstractBaseTask {
 
         final String _xcodeProjectFile;
         final String _xcodeWorkspaceFile;
+        final String _archiveFile;
 
         if (remoteServer != null) {
             final Path xcodeProjectFileRel;
             final Path xcodeWorkspaceFileRel;
+            final Path archiveFileRel;
             try {
                 xcodeProjectFileRel = getInnerProjectRelativePath(getXcodeProjectFile());
                 if (getXcodeWorkspaceFile() != null) {
@@ -353,6 +394,7 @@ public class IpaBuild extends AbstractBaseTask {
                 } else {
                     xcodeWorkspaceFileRel = null;
                 }
+                archiveFileRel = getInnerProjectRelativePath(getOutputArchive());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
@@ -362,6 +404,8 @@ public class IpaBuild extends AbstractBaseTask {
             } else {
                 _xcodeWorkspaceFile = null;
             }
+            _archiveFile = remoteServer.getRemotePath(archiveFileRel);
+
 
         } else {
             _xcodeProjectFile = getXcodeProjectFile().getAbsolutePath();
@@ -370,6 +414,7 @@ public class IpaBuild extends AbstractBaseTask {
             } else {
                 _xcodeWorkspaceFile = null;
             }
+            _archiveFile = getOutputArchive().getAbsolutePath();
         }
 
         if (_xcodeWorkspaceFile != null) {
@@ -392,28 +437,97 @@ public class IpaBuild extends AbstractBaseTask {
             }
         }
 
+        args.add("DEVELOPMENT_TEAM=" + getDevelopmentTeam());
+
         args.add("-configuration");
         args.add(getConfiguration());
 
         args.add("-archivePath");
-        args.add(getOutputArchive().getAbsolutePath());
+        args.add(_archiveFile);
         return args;
     }
 
     private List<String> calculateExportArchiveArgs() {
         final List<String> args = new ArrayList<>();
+        final Server remoteServer = getMoePlugin().getRemoteServer();
+
+        final String _archiveFile;
+        final String _ipaFile;
+
+        if (remoteServer != null) {
+            final Path archiveFileRel;
+            final Path ipaFileRel;
+            try {
+                ipaFileRel = getInnerProjectRelativePath(getOutputIpa());
+                archiveFileRel = getInnerProjectRelativePath(resolvePathInBuildDir("archive.xcarchive"));
+            } catch (IOException e) {
+                throw new GradleException("Unsupported configuration", e);
+            }
+            _ipaFile = remoteServer.getRemotePath(ipaFileRel);
+            _archiveFile = remoteServer.getRemotePath(archiveFileRel);
+        } else {
+            _ipaFile = getOutputIpa().getAbsolutePath();
+            _archiveFile = resolvePathInBuildDir("archive.xcarchive").getAbsolutePath();
+        }
 
         args.add("-exportArchive");
         args.add("-exportFormat");
         args.add("IPA");
 
         args.add("-archivePath");
-        args.add(resolvePathInBuildDir("archive.xcarchive").getAbsolutePath());
+        args.add(_archiveFile);
         args.add("-exportPath");
-        args.add(getOutputIpa().getAbsolutePath());
+        args.add(_ipaFile);
         args.add("-exportProvisioningProfile");
         args.add(getProvisioningProfileName());
 
         return args;
+    }
+
+    private boolean xcodeprojDevelopmentTeamIsSet() {
+        try {
+            // Open Xcode project
+            final File xcodeproj = Require.nonNull(getXcodeProjectFile());
+            final ProjectFile project = new ProjectFile(xcodeproj);
+            final String target = Require.nonNull(getTarget());
+
+            // Search for target with name
+            final java.util.Optional<Map.Entry<PBXObjectRef<? extends PBXObject>, PBXObject>> optional = project.getRoot()
+                    .getObjects().entrySet().stream()
+                    .filter(field -> field.getValue() instanceof PBXNativeTarget && ((PBXNativeTarget)field.getKey()
+                            .getReferenced()).getName().equals(target)).findFirst();
+            Require.TRUE(optional.isPresent(),
+                    "Target with name '" + target + "' doesn't exist in Xcode project at " + xcodeproj
+                            .getAbsolutePath());
+            PBXNativeTarget nTarget = (PBXNativeTarget)optional.get().getValue();
+
+            // Search for build configuration with name
+            XCConfigurationList xcConfigurationList = nTarget.getBuildConfigurationList().getReferenced();
+            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
+                XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
+                if (xcBuildConfiguration.getName().equals(Mode.RELEASE.getXcodeCompatibleName())) {
+                    final NextStep developmentTeam = xcBuildConfiguration.getOrCreateBuildSettings().get("DEVELOPMENT_TEAM");
+                    if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
+                        return true;
+                    }
+                }
+            }
+
+            xcConfigurationList = project.getRoot().getRootObject().getReferenced().getBuildConfigurationList()
+                    .getReferenced();
+            for (PBXObjectRef<XCBuildConfiguration> ref : xcConfigurationList.getOrCreateBuildConfigurations()) {
+                XCBuildConfiguration xcBuildConfiguration = ref.getReferenced();
+                if (xcBuildConfiguration.getName().equals(Mode.RELEASE.getXcodeCompatibleName())) {
+                    final NextStep developmentTeam = xcBuildConfiguration.getOrCreateBuildSettings().get("DEVELOPMENT_TEAM");
+                    if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
+                        return true;
+                    }
+                }
+            }
+        } catch (Throwable t) {
+            getProject().getLogger().log(LogLevel.ERROR, "Failed to read Xcode project file", t);
+            return false;
+        }
+        return false;
     }
 }
