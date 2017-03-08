@@ -368,7 +368,7 @@ public class XcodeBuild extends AbstractBaseTask {
 
         String scheme = getScheme();
         if (scheme != null) {
-            generateSchemeIfNeeded();
+            generateSchemeIfNeeded(scheme);
         }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
@@ -792,7 +792,7 @@ public class XcodeBuild extends AbstractBaseTask {
         return false;
     }
 
-    private void generateSchemeIfNeeded() {
+    private void generateSchemeIfNeeded(String scheme) {
         try {
             Server remoteServer = getMoePlugin().getRemoteServer();
             String user = remoteServer == null ? System.getProperty("user.name") : remoteServer.getUserName();
@@ -800,6 +800,11 @@ public class XcodeBuild extends AbstractBaseTask {
             File schemeDir = Paths.get(
                     getXcodeProjectFile().getAbsolutePath(), "xcuserdata",
                     user + ".xcuserdatad", "xcschemes").toFile();
+
+            File schemeFile = Paths.get(schemeDir.getAbsolutePath(), scheme + ".xcscheme").toFile();
+            if (schemeFile.exists()) {
+                return;
+            }
 
             if (!schemeDir.exists()) {
                 schemeDir.mkdirs();
@@ -822,42 +827,49 @@ public class XcodeBuild extends AbstractBaseTask {
             ProjectFile proj = new ProjectFile(getXcodeProjectFile());
 
             Array<PBXObjectRef<PBXNativeTarget>> targets = proj.getRoot().getRootObject().getReferenced().getTargetsOrNull();
+            PBXNativeTarget target = null;
+            String targetId = null;
             for (PBXObjectRef<PBXNativeTarget> targetRef : targets) {
-                PBXNativeTarget target = targetRef.getReferenced();
+                PBXNativeTarget targetCandidate = targetRef.getReferenced();
 
-                File schemeFile = Paths.get(schemeDir.getAbsolutePath(), target.getName() + ".xcscheme").toFile();
-                if (schemeFile.exists()) {
-                    continue;
+                if (targetCandidate.getName().equals(scheme)) {
+                    target = targetCandidate;
+                    targetId = targetRef.value;
+                    break;
                 }
-
-                String targetTemplate = "" + template;
-
-                {
-                    String localPath = new File(getXcodeProjectFile(), proj.getRoot().getRootObject().getReferenced().getProjectDirPath()).toURI()
-                            .relativize(getXcodeProjectFile().toURI()).getPath();
-                    if (localPath.isEmpty()) {
-                        localPath = getXcodeProjectFile().getName();
-                    }
-                    targetTemplate = targetTemplate.replace("%%LOCAL_PATH%%", localPath);
-                }
-
-                {
-                    String product = target.getProductReference().getReferenced().getPath();
-                    targetTemplate = targetTemplate.replace("%%PRODUCT%%", product);
-                }
-
-                {
-                    targetTemplate = targetTemplate.replace("%%TARGET_NAME%%", target.getName());
-                }
-
-                {
-                    targetTemplate = targetTemplate.replace("%%TARGET_ID%%", targetRef.value);
-                }
-
-                PrintWriter writer = new PrintWriter(schemeFile);
-                writer.print(targetTemplate);
-                writer.close();
             }
+            if (target == null) {
+                throw new GradleException("No target exists with the name of " + scheme);
+            }
+
+            String targetTemplate = "" + template;
+
+            {
+                String localPath = new File(getXcodeProjectFile(), proj.getRoot().getRootObject().getReferenced().getProjectDirPath()).toURI()
+                        .relativize(getXcodeProjectFile().toURI()).getPath();
+                if (localPath.isEmpty()) {
+                    localPath = getXcodeProjectFile().getName();
+                }
+                targetTemplate = targetTemplate.replace("%%LOCAL_PATH%%", localPath);
+            }
+
+            {
+                String product = target.getProductReference().getReferenced().getPath();
+                targetTemplate = targetTemplate.replace("%%PRODUCT%%", product);
+            }
+
+            {
+                targetTemplate = targetTemplate.replace("%%TARGET_NAME%%", target.getName());
+            }
+
+            {
+                targetTemplate = targetTemplate.replace("%%TARGET_ID%%", targetId);
+            }
+
+            PrintWriter writer = new PrintWriter(schemeFile);
+            writer.print(targetTemplate);
+            writer.close();
+
         } catch (Throwable t) {
             throw new GradleException("Could not generate scheme", t);
         }
