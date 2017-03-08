@@ -18,6 +18,8 @@ package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.logging.LogLevel;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.Optional;
@@ -66,6 +68,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class XcodeBuild extends AbstractBaseTask {
+
+    private static final Logger LOG = Logging.getLogger(XcodeBuild.class);
 
     private static final String CONVENTION_TARGET = "target";
     private static final String CONVENTION_SCHEME = "scheme";
@@ -358,6 +362,8 @@ public class XcodeBuild extends AbstractBaseTask {
                     + "moe.xcode." + set + "Scheme property");
         }
 
+        String scheme = getScheme();
+
         final Server remoteServer = getMoePlugin().getRemoteServer();
         if (remoteServer != null) {
             remoteServer.unlockRemoteKeychain();
@@ -369,6 +375,7 @@ public class XcodeBuild extends AbstractBaseTask {
             final Set<File> excludes = new HashSet<>();
 
             // Exclude some special paths
+            excludes.add(new File(getProject().getProjectDir(), "moe.remotebuild.properties"));
             excludes.add(new File(getProject().getBuildDir(), "tmp"));
             excludes.add(new File(getProject().getRootDir(), ".gradle"));
             excludes.add(new File(getProject().getRootDir(), ".idea"));
@@ -423,6 +430,26 @@ public class XcodeBuild extends AbstractBaseTask {
                 throw new GradleException("Unsupported configuration", e);
             }
 
+            if (scheme != null) {
+                Path xcodeProjectFileRel;
+                String projectFile = null;
+                try {
+                    xcodeProjectFileRel = getInnerProjectRelativePath(getXcodeProjectFile());
+                    projectFile = remoteServer.getRemotePath(xcodeProjectFileRel);
+                } catch (IOException e) {
+                    throw new GradleException("Unsupported configuration", e);
+                }
+                List<String> args = new ArrayList<>();
+                args.add("-project");
+                args.add(projectFile);
+                String schemeList = remoteServer.exec("scheme list", "xcrun --find xcodebuild && " + "xcrun xcodebuild -list " + args.stream().collect(Collectors.joining(" ")));
+                if (needRegenerateSchema(schemeList.toString())) {
+                    LOG.quiet("REGENERATE SCHEMA");
+                    remoteServer.exec("regenerate schema", "/Users/rolandvigh/Migeran-repo/moe/tools/moe.plugin.gradle/src/main/resources/org/moe/gradle/share_schemes.rb " +
+                            projectFile);
+                }
+            }
+
             remoteServer.exec("xcodebuild", "xcrun --find xcodebuild && " +
                     "xcrun xcodebuild " + calculateArgs().stream().collect(Collectors.joining(" ")));
 
@@ -455,6 +482,27 @@ public class XcodeBuild extends AbstractBaseTask {
 
         } else {
             linkSDK();
+
+            if (scheme != null) {
+                final ByteArrayOutputStream listOut = new ByteArrayOutputStream();
+                exec(spec -> {
+                    spec.setExecutable("xcrun");
+                    spec.args("xcodebuild", "-list");
+                    List<String> args = new ArrayList<>();
+                    args.add("-project");
+                    args.add(getXcodeProjectFile().getAbsolutePath());
+                    spec.args(args);
+                    spec.setStandardOutput(listOut);
+                });
+
+                if (needRegenerateSchema(listOut.toString())) {
+                    LOG.quiet("REGENERATE SCHEMA");
+                    exec(spec -> {
+                        spec.setExecutable("/Users/rolandvigh/Migeran-repo/moe/tools/moe.plugin.gradle/src/main/resources/org/moe/gradle/share_schemes.rb");
+                        spec.args(getXcodeProjectFile().getAbsolutePath());
+                    });
+                }
+            }
 
             exec(spec -> {
                 // Set executable
@@ -774,6 +822,13 @@ public class XcodeBuild extends AbstractBaseTask {
         } catch (Throwable t) {
             getProject().getLogger().log(LogLevel.ERROR, "Failed to read Xcode project file", t);
             return false;
+        }
+        return false;
+    }
+
+    private boolean needRegenerateSchema(String content) {
+        if (content.toLowerCase().contains("This project contains no schemes".toLowerCase())) {
+            return true;
         }
         return false;
     }
