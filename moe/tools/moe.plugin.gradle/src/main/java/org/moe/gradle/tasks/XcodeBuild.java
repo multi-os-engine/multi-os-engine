@@ -16,6 +16,10 @@ limitations under the License.
 
 package org.moe.gradle.tasks;
 
+import com.dd.plist.NSDictionary;
+import com.dd.plist.NSNumber;
+import com.dd.plist.NSObject;
+import com.dd.plist.PropertyListParser;
 import org.gradle.api.GradleException;
 import org.gradle.api.logging.LogLevel;
 import org.gradle.api.logging.Logger;
@@ -801,31 +805,13 @@ public class XcodeBuild extends AbstractBaseTask {
                     getXcodeProjectFile().getAbsolutePath(), "xcuserdata",
                     user + ".xcuserdatad", "xcschemes").toFile();
 
-            File schemeFile = Paths.get(schemeDir.getAbsolutePath(), scheme + ".xcscheme").toFile();
-            if (schemeFile.exists()) {
-                return;
-            }
-
             if (!schemeDir.exists()) {
                 schemeDir.mkdirs();
             }
 
-            LOG.quiet("Generate schemes");
-
-            String template;
-            {
-                StringBuilder builder = new StringBuilder();
-                InputStream stream = getClass().getResourceAsStream("scheme-template.txt");
-                byte buff[] = new byte[1024];
-                int len;
-                while ((len = stream.read(buff)) > 0) {
-                    builder.append(new String(buff, 0, len, StandardCharsets.UTF_8));
-                }
-                template = builder.toString();
-            }
-
             ProjectFile proj = new ProjectFile(getXcodeProjectFile());
 
+            // Look for a target with the same name
             Array<PBXObjectRef<PBXNativeTarget>> targets = proj.getRoot().getRootObject().getReferenced().getTargetsOrNull();
             PBXNativeTarget target = null;
             String targetId = null;
@@ -842,34 +828,116 @@ public class XcodeBuild extends AbstractBaseTask {
                 throw new GradleException("No target exists with the name of " + scheme);
             }
 
-            String targetTemplate = "" + template;
+            // Generate xcscheme file
+            File schemeFile = Paths.get(schemeDir.getAbsolutePath(), scheme + ".xcscheme").toFile();
+            if (!schemeFile.exists()) {
+                LOG.quiet("Generate scheme for " + scheme);
 
-            {
-                String localPath = new File(getXcodeProjectFile(), proj.getRoot().getRootObject().getReferenced().getProjectDirPath()).toURI()
-                        .relativize(getXcodeProjectFile().toURI()).getPath();
-                if (localPath.isEmpty()) {
-                    localPath = getXcodeProjectFile().getName();
+                String template;
+                {
+                    StringBuilder builder = new StringBuilder();
+                    InputStream stream = getClass().getResourceAsStream("scheme-template.txt");
+                    byte buff[] = new byte[1024];
+                    int len;
+                    while ((len = stream.read(buff)) > 0) {
+                        builder.append(new String(buff, 0, len, StandardCharsets.UTF_8));
+                    }
+                    template = builder.toString();
                 }
-                targetTemplate = targetTemplate.replace("%%LOCAL_PATH%%", localPath);
+
+                String targetTemplate = "" + template;
+
+                {
+                    String localPath = new File(getXcodeProjectFile(), proj.getRoot().getRootObject().getReferenced().getProjectDirPath()).toURI()
+                            .relativize(getXcodeProjectFile().toURI()).getPath();
+                    if (localPath.isEmpty()) {
+                        localPath = getXcodeProjectFile().getName();
+                    }
+                    targetTemplate = targetTemplate.replace("%%LOCAL_PATH%%", localPath);
+                }
+
+                {
+                    String product = target.getProductReference().getReferenced().getPath();
+                    targetTemplate = targetTemplate.replace("%%PRODUCT%%", product);
+                }
+
+                {
+                    targetTemplate = targetTemplate.replace("%%TARGET_NAME%%", target.getName());
+                }
+
+                {
+                    targetTemplate = targetTemplate.replace("%%TARGET_ID%%", targetId);
+                }
+
+                PrintWriter writer = new PrintWriter(schemeFile);
+                writer.print(targetTemplate);
+                writer.close();
             }
 
-            {
-                String product = target.getProductReference().getReferenced().getPath();
-                targetTemplate = targetTemplate.replace("%%PRODUCT%%", product);
+            // Register xcscheme in management
+            File schemeManagementFile = Paths.get(schemeDir.getAbsolutePath(), "xcschememanagement.plist").toFile();
+            if (schemeManagementFile.exists()) {
+                LOG.quiet("Generate scheme management for " + scheme);
+
+                boolean modified = false;
+                NSDictionary rootDict = (NSDictionary)PropertyListParser.parse(schemeManagementFile);
+
+                NSDictionary schemeUserStateDict = (NSDictionary)rootDict.objectForKey("SchemeUserState");
+                NSDictionary schemeDict = (NSDictionary)schemeUserStateDict.objectForKey(target.getName() + ".xcscheme");
+                if (schemeDict == null) {
+                    int i = 0;
+
+                    for (Map.Entry<String, NSObject> s : schemeUserStateDict.getHashMap().entrySet()) {
+                        int v = ((NSNumber)((NSDictionary)s.getValue()).get("orderHint")).intValue();
+                        if (v >= i) {
+                            i = v + 1;
+                        }
+                    }
+
+                    schemeDict = new NSDictionary();
+                    schemeDict.put("orderHint", i);
+
+                    schemeUserStateDict.put(target.getName() + ".xcscheme", schemeDict);
+
+                    modified = true;
+                }
+
+                NSDictionary suppressBuildableAutocreationDict = (NSDictionary)rootDict.objectForKey("SuppressBuildableAutocreation");
+                NSDictionary targetDict = (NSDictionary)suppressBuildableAutocreationDict.get(targetId);
+                if (targetDict == null) {
+                    targetDict = new NSDictionary();
+                    targetDict.put("primary", true);
+
+                    suppressBuildableAutocreationDict.put(targetId, targetDict);
+
+                    modified = true;
+                }
+
+                if (modified) {
+                    PropertyListParser.saveAsXML(rootDict, schemeManagementFile);
+                }
+            } else {
+                LOG.quiet("Extend scheme management for " + scheme);
+
+                NSDictionary rootDict = new NSDictionary();
+
+                NSDictionary schemeUserStateDict = new NSDictionary();//
+                rootDict.put("SchemeUserState", schemeUserStateDict);
+
+                NSDictionary schemeDict = new NSDictionary();
+                schemeUserStateDict.put(target.getName() + ".xcscheme", schemeDict);
+
+                schemeDict.put("orderHint", 0);
+
+                NSDictionary suppressBuildableAutocreationDict = new NSDictionary();
+                rootDict.put("SuppressBuildableAutocreation", suppressBuildableAutocreationDict);
+
+                NSDictionary targetDict = new NSDictionary();
+                suppressBuildableAutocreationDict.put(targetId, targetDict);
+                targetDict.put("primary", true);
+
+                PropertyListParser.saveAsXML(rootDict, schemeManagementFile);
             }
-
-            {
-                targetTemplate = targetTemplate.replace("%%TARGET_NAME%%", target.getName());
-            }
-
-            {
-                targetTemplate = targetTemplate.replace("%%TARGET_ID%%", targetId);
-            }
-
-            PrintWriter writer = new PrintWriter(schemeFile);
-            writer.print(targetTemplate);
-            writer.close();
-
         } catch (Throwable t) {
             throw new GradleException("Could not generate scheme", t);
         }
