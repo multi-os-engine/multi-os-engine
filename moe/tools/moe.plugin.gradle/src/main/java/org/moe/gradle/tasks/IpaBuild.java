@@ -43,10 +43,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class IpaBuild extends AbstractBaseTask {
@@ -63,6 +60,7 @@ public class IpaBuild extends AbstractBaseTask {
     private static final String CONVENTION_CONFIGURATION = "configuration";
     private static final String CONVENTION_OUTPUT_ARCHIVE = "outputArchive";
     private static final String CONVENTION_DEVELOPMENT_TEAM = "developmentTeam";
+    private static final String CONVENTION_ADDITIONAL_PARAMETERS = "additionalParameters";
 
     @Nullable
     private Object inputApp;
@@ -228,6 +226,20 @@ public class IpaBuild extends AbstractBaseTask {
         this.developmentTeam = developmentTeam;
     }
 
+    @Nullable
+    private List<String> additionalParameters;
+
+    @Input
+    @NotNull
+    public List<String> getAdditionalParameters() {
+        return getOrConvention(additionalParameters, CONVENTION_ADDITIONAL_PARAMETERS);
+    }
+
+    @IgnoreUnused
+    public void setAdditionalParameters(@NotNull List<String> additionalParameters) {
+        this.additionalParameters = additionalParameters == null ? null : new ArrayList<>(additionalParameters);
+    }
+
     @Override
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
@@ -363,6 +375,8 @@ public class IpaBuild extends AbstractBaseTask {
                 return null;
             }
         });
+        addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
+                new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "IpaBuild.log"));
     }
 
@@ -436,6 +450,8 @@ public class IpaBuild extends AbstractBaseTask {
                 args.add(getTarget());
             }
         }
+
+        args.addAll(getAdditionalParameters());
 
         args.add("DEVELOPMENT_TEAM=" + getDevelopmentTeam());
 
