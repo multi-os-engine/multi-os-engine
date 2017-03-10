@@ -20,7 +20,9 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
+import org.gradle.api.artifacts.Dependency;
 import org.gradle.api.artifacts.ExternalDependency;
+import org.gradle.api.artifacts.ResolvedArtifact;
 import org.gradle.api.artifacts.UnknownConfigurationException;
 import org.gradle.api.artifacts.repositories.ArtifactRepository;
 import org.gradle.api.logging.Logger;
@@ -38,13 +40,14 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashSet;
-import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.BiFunction;
 
 public class MoeSDK {
     private static final Logger LOG = Logging.getLogger(MoeSDK.class);
 
+    private static final String MOE_GRADLE_ARTIFACT_ID = "moe-gradle";
     private static final String MOE_SDK_CONFIGURATION_NAME = "moeMavenSDK";
     private static final String MOE_LOCAL_SDK_PROPERTY = "moe.sdk.localbuild";
     private static final String MOE_LOCAL_SDK_ENV = "MOE_SDK_LOCALBUILD";
@@ -79,29 +82,48 @@ public class MoeSDK {
 
     public static MoeSDK setup(@NotNull AbstractMoePlugin plugin) {
         Require.nonNull(plugin);
-
-        final String pluginVersion;
-        final String sdkVersion;
-        {
-            // Get SDK version from moe.properties
-            final Properties props = new Properties();
-            try {
-                props.load(MoeSDK.class.getResourceAsStream("moe.properties"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            pluginVersion = props.getProperty("MOE-Plugin-Version");
-            sdkVersion = props.getProperty("MOE-SDK-Version");
-        }
-        if (pluginVersion == null || pluginVersion.length() == 0) {
-            throw new GradleException("MOE plugin version is undefined");
-        }
-        if (sdkVersion == null || sdkVersion.length() == 0) {
-            throw new GradleException("MOE SDK version is undefined");
-        }
-
-        final MoeSDK sdk = new MoeSDK(pluginVersion, sdkVersion);
         final Project project = plugin.getProject();
+
+        Configuration classpathConfiguration =
+                project.getBuildscript().getConfigurations().getByName("classpath");
+        Require.nonNull(classpathConfiguration, "Couldn't find the classpath configuration in the buildscript.");
+
+        // Check if explicit SDK version is defined.
+        String sdkVersion = getMoeSDKVersion(project);
+        if (sdkVersion == null) {
+            // There's no explicit SDK version, so retrieve and use
+            // the unresolved version of the moe-gradle plugin.
+            Dependency d = classpathConfiguration.getDependencies()
+                    .stream()
+                    .filter(p -> MOE_GRADLE_ARTIFACT_ID.equals(p.getName()))
+                    .findAny()
+                    .orElse(null);
+            Require.nonNull(d, "Couldn't find the moe-gradle plugin in the classpath configuration.");
+            Require.nonNull(d.getVersion(), "Couldn't determine the version of moe-gradle plugin.");
+            LOG.info("Unresolved moe-gradle version: {}", d.getVersion());
+            sdkVersion = resolveSDKVersion(project, d.getVersion());
+        } else {
+            // Using explicit SDK version, it may be a dynamic version, so
+            // it must be resolved before usage.
+            LOG.info("Using explicit moe-sdk version: {}", sdkVersion);
+            sdkVersion = resolveSDKVersion(project, sdkVersion);
+        }
+        LOG.info("Resolved moe-sdk version: {}", sdkVersion);
+        final boolean isSnapshotSDKVersion = sdkVersion.endsWith("-SNAPSHOT");
+
+        // Retrieve and resolve the moe-gradle plugin version.
+        ResolvedArtifact artifact = classpathConfiguration.getResolvedConfiguration().getResolvedArtifacts()
+                .stream()
+                .filter(p -> MOE_GRADLE_ARTIFACT_ID.equals(p.getName()))
+                .findAny()
+                .orElse(null);
+        Require.nonNull(artifact, "Couldn't find the moe-gradle artifact.");
+        final String pluginVersion = artifact.getModuleVersion().getId().getVersion();
+        Require.nonNull(pluginVersion, "Couldn't resolve the version of the moe-gradle artifact.");
+        LOG.info("Resolved moe-gradle version: {}", pluginVersion);
+
+        // Construct the SDK.
+        final MoeSDK sdk = new MoeSDK(pluginVersion, sdkVersion);
 
         // Check for overriding property
         if (project.hasProperty(MOE_LOCAL_SDK_PROPERTY)) {
@@ -125,6 +147,7 @@ public class MoeSDK {
             return sdk;
         }
 
+        // Check if moe.sdk.localbuild file exists.
         if (plugin.getProject().file("moe.sdk.localbuild").exists()) {
             LOG.info("Using custom local MOE SDK (file)");
             final Path path = Paths.get(FileUtils.read(plugin.getProject().file("moe.sdk.localbuild")).trim());
@@ -141,27 +164,23 @@ public class MoeSDK {
             throw new GradleException("Failed to create directory at " + USER_MOE_HOME);
         }
 
-        // Check for pre-installed SDK
-        final String optionalSnapshotSuffix;
-        if (moeUseSnapshot(project)) {
-            optionalSnapshotSuffix = "-SNAPSHOT";
-        } else {
-            optionalSnapshotSuffix = "";
-        }
-        final Path SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion + optionalSnapshotSuffix);
-        if (SDK_PATH.toFile().exists() && optionalSnapshotSuffix.length() == 0) {
+        // If the required SDK version is already downloaded and not a snapshot (because snapshot versions
+        // can't be reused due to it's version can't be checked), use it and return.
+        final Path SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion);
+        if (SDK_PATH.toFile().exists() && !isSnapshotSDKVersion) {
+            LOG.quiet("Using already downloaded SDK: {}", SDK_PATH.toFile().getAbsolutePath());
             sdk.validateSDK(SDK_PATH, false);
             sdk.bakeSDKPaths(SDK_PATH);
             return sdk;
         }
 
-        // Get or create configuration
-        final File file = sdk.downloadSDK(project, sdkVersion + optionalSnapshotSuffix);
+        // Download the SDK from the repositories.
+        final File file = sdk.downloadSDK(project, sdkVersion);
 
-        // Calculate MD5 on SDK
+        // Calculate MD5 on the SDK.
         final AtomicReference<String> sdkCalculatedMD5Ref = new AtomicReference<>();
         final boolean sdkUpToDate = checkComponentUpToDate(file, SDK_PATH.resolve("sdk.md5").toFile(), sdkCalculatedMD5Ref);
-        if (SDK_PATH.toFile().exists() && optionalSnapshotSuffix.length() > 0) {
+        if (SDK_PATH.toFile().exists() && isSnapshotSDKVersion) {
             if (sdkUpToDate) {
                 sdk.validateSDK(SDK_PATH, false);
                 sdk.bakeSDKPaths(SDK_PATH);
@@ -169,6 +188,7 @@ public class MoeSDK {
             } else {
                 try {
                     FileUtils.deleteFileOrFolder(SDK_PATH);
+                    LOG.info("Deleted existing SDK: {}", SDK_PATH.toFile().getAbsolutePath());
                 } catch (IOException e) {
                     throw new GradleException("Failed to remote directory at " + SDK_PATH.toFile().getAbsolutePath(), e);
                 }
@@ -176,7 +196,7 @@ public class MoeSDK {
         }
 
         // Prepare temp dir by removing old tmp directory and re-creating it
-        LOG.quiet("Installing MOE SDK, this may take a few minutes...");
+        LOG.quiet("Installing MOE SDK ({}), this may take a few minutes...", sdkVersion);
 
         // Extract zip into the temp directory
         project.copy(spec -> {
@@ -186,24 +206,26 @@ public class MoeSDK {
 
         // Validate files
         sdk.validateSDK(SDK_PATH, false);
-
         sdk.bakeSDKPaths(SDK_PATH);
         return sdk;
     }
 
-    private static boolean moeUseSnapshot(@NotNull Project project) {
+    private static String getMoeSDKVersion(@NotNull Project project) {
         final ExtraPropertiesExtension extraProperties = project.getExtensions().getExtraProperties();
-        if (!extraProperties.has("moeUseSnapshot")) {
-            return false;
+        if (!extraProperties.has("moeSDKVersion")) {
+            return null;
         }
-        final Object moeUseSnapshot = extraProperties.get("moeUseSnapshot");
-        if (moeUseSnapshot == null) {
-            throw new GradleException("'moeUseSnapshot' property cannot be null");
+        final Object moeSDKVersion = extraProperties.get("moeSDKVersion");
+        if (moeSDKVersion == null) {
+            throw new GradleException("'moeSDKVersion' property cannot be null");
         }
-        if (!(moeUseSnapshot instanceof Boolean)) {
-            throw new GradleException("'moeUseSnapshot' property must be a boolean");
+        if (!(moeSDKVersion instanceof String)) {
+            throw new GradleException("'moeSDKVersion' property must be a string");
         }
-        return (Boolean)moeUseSnapshot;
+        if ("".equals((String) moeSDKVersion)) {
+            throw new GradleException("'moeSDKVersion' property must not be an empty string");
+        }
+        return (String)moeSDKVersion;
     }
 
     private static boolean checkComponentUpToDate(File input, File md5file, AtomicReference<String> out) {
@@ -222,27 +244,27 @@ public class MoeSDK {
         return cachedMD5.length() != 0 && cachedMD5.trim().equalsIgnoreCase(calculatedMD5);
     }
 
-    @NotNull
-    private File downloadSDK(@NotNull Project project, String version) {
+    private static <T> T createSDKArtifact(@NotNull Project project, String version, BiFunction<Configuration, ExternalDependency, T> consumer) {
         Require.nonNull(project);
         Require.nonNull(version);
-
         final String desc = MOE_GROUP_ID + ":" + MOE_SDK_ARTIFACT_ID + ":" + version + "@zip";
-        LOG.info("Downloading dependency " + desc);
 
         // Get or create configuration
         Configuration configuration;
+        ExternalDependency dependency;
         try {
             configuration = project.getConfigurations().getByName(MOE_SDK_CONFIGURATION_NAME);
+            Require.EQ(configuration.getDependencies().size(), 1,
+                    "Unexpected number of dependencies in moeSDK configuration.");
+            dependency = (ExternalDependency)configuration.getDependencies().iterator().next();
         } catch (UnknownConfigurationException ex) {
             configuration = project.getConfigurations().create(MOE_SDK_CONFIGURATION_NAME);
+            // Create an external dependency
+            dependency = (ExternalDependency)project.getDependencies().create(desc);
+            configuration.getDependencies().add(dependency);
         }
 
-        // Create an external dependency
-        final ExternalDependency dependency = (ExternalDependency)project.getDependencies().create(desc);
-        configuration.getDependencies().add(dependency);
-
-        // Add repositories from buildscript to be able to download the SDK
+        // Add repositories from the buildscript to be able to download the SDK
         Set<ArtifactRepository> addedRepositories = new HashSet<>();
         project.getBuildscript().getRepositories().forEach(repository -> {
             if (!project.getRepositories().contains(repository)) {
@@ -254,14 +276,39 @@ public class MoeSDK {
             repo.setUrl("https://dl.bintray.com/multi-os-engine/maven/");
         });
 
-        // Retrieve files
-        final Set<File> files;
         try {
-            files = configuration.files(dependency);
+            return consumer.apply(configuration, dependency);
         } finally {
             // Remove added repositories
             project.getRepositories().removeAll(addedRepositories);
         }
+    }
+
+    private static String resolveSDKVersion(@NotNull Project project, String version) {
+        return createSDKArtifact(project, version, (config, dep) -> {
+            ResolvedArtifact artifact = config.getResolvedConfiguration().getResolvedArtifacts()
+                    .stream()
+                    .filter(p -> MOE_SDK_ARTIFACT_ID.equals(p.getName()))
+                    .findAny()
+                    .orElse(null);
+            Require.nonNull(artifact, "Couldn't find the " + MOE_SDK_ARTIFACT_ID + " artifact.");
+            final String sdkVersion = artifact.getModuleVersion().getId().getVersion();
+            Require.nonNull(sdkVersion, "Couldn't resolve the version of the " + MOE_SDK_ARTIFACT_ID + " artifact.");
+            return sdkVersion;
+        });
+    }
+
+    @NotNull
+    private File downloadSDK(@NotNull Project project, String version) {
+        Require.nonNull(project);
+        Require.nonNull(version);
+
+        final String desc = MOE_GROUP_ID + ":" + MOE_SDK_ARTIFACT_ID + ":" + version + "@zip";
+        LOG.info("Downloading dependency " + desc);
+
+        final Set<File> files = createSDKArtifact(project, version, (config, dep) -> {
+            return config.files(dep);
+        });
 
         // Return the SDK
         return Require.sizeEQ(files, 1, "Unexpected number of files in MOE SDK").iterator().next();
