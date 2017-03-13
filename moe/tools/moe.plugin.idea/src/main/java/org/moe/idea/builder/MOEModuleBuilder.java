@@ -263,6 +263,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         .setOrganizationID(moduleProperties.getCompanyIdentifier())
         .setPackageName(packageName)
         .setTemplate(template.getType())
+        .setSubproject(!isNewProject)
         .compose();
     }
 
