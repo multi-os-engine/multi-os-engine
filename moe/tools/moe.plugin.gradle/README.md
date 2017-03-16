@@ -9,6 +9,7 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [Plugins](#plugins)
   * [SDK](#sdk)
 * [Configuration](#configuration)
+  * [SDK](#sdk)
   * [ProGuard](#proguard)
   * [Xcode Project](#xcode-project)
   * [Code Signing](#code-signing)
@@ -146,6 +147,18 @@ The SDK's structure must be as follows, otherwise the validation will fail:
 
 ## Configuration
 
+### SDK
+
+You may configure a custom SDK version as follows in the build.gradle file:
+
+```groovy
+buildscript {
+    project.getExtensions().getExtraProperties().set("moeSDKVersion", 1.3.+)
+
+    ...
+}
+```
+
 ### ProGuard
 
 ProGuard has three supported levels of trimming: `app` (default), `platform`, `all`
@@ -216,6 +229,9 @@ moe {
 
         // String, name of the signing identity
         signingIdentity
+
+        // String, provisioning profile name.
+        provisioningProfileName
     }
 }
 ```
@@ -519,6 +535,8 @@ Task name: `moeIpaBuild`
 
 This task creates an ipa from the app.
 
+**Note:** Setting the Provisioning Profile name in the [code signing options](#code-signing) is required!
+
 #### Task Properties
 
 - `inputApp`: path to the app to create the ipa from.
@@ -652,6 +670,14 @@ parameter.
 
 Task name: `moeNatJGen`
 
-This task run NatJ binding generator with configuration. Allowed configurations: *.natjgen and *.nbc
+This task runs the NatJ binding generator with specified configuration. Allowed configuration formats: *.natjgen and *.nbc
+The following settings are available for configuring the binding generator:
 
-- natjgen.config 'sample.natjgen'
+```groovy
+moe {
+    natjgen {
+        config 'sample.natjgen'
+        logFile 'binding/logs/natjgen-${DATETIME}.html'
+     }
+}
+```
