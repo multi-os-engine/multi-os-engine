@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashSet;
+import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BiFunction;
@@ -93,9 +94,36 @@ public class MoeSDK {
         if (sdkVersion == null) {
             // There's no explicit SDK version, so retrieve and use
             // the unresolved version of the moe-gradle plugin.
+            {
+                // Get SDK version from moe.properties
+                final Properties props = new Properties();
+                try {
+                    props.load(MoeSDK.class.getResourceAsStream("moe.properties"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                sdkVersion = props.getProperty("MOE-SDK-Version");
+            }
+            if (sdkVersion == null || sdkVersion.length() == 0) {
+                throw new GradleException("MOE SDK version is undefined");
+            }
+
+            LOG.info("Unresolved moe-gradle version: {}", sdkVersion);
+            sdkVersion = resolveSDKVersion(project, sdkVersion);
+        } else {
+            // Using explicit SDK version, it may be a dynamic version, so
+            // it must be resolved before usage.
+            LOG.info("Using explicit moe-sdk version: {}", sdkVersion);
+            sdkVersion = resolveSDKVersion(project, sdkVersion);
+        }
+        LOG.info("Resolved moe-sdk version: {}", sdkVersion);
+        final boolean isSnapshotSDKVersion = sdkVersion.endsWith("-SNAPSHOT");
+
+        // Retrieve and resolve the moe-gradle plugin version.
+        ResolvedArtifact artifact;
+        {
             Project classpathProject = project;
-            Dependency d;
-            while ((d = classpathConfiguration.getDependencies()
+            while ((artifact = classpathConfiguration.getResolvedConfiguration().getResolvedArtifacts()
                     .stream()
                     .filter(p -> MOE_GRADLE_ARTIFACT_ID.equals(p.getName()))
                     .findAny()
@@ -107,25 +135,7 @@ public class MoeSDK {
                 classpathConfiguration = classpathProject.getBuildscript().getConfigurations().getByName("classpath");
                 Require.nonNull(classpathConfiguration, "Couldn't find the classpath configuration in the buildscript.");
             }
-            Require.nonNull(d, "Couldn't find the moe-gradle plugin in the classpath configuration.");
-            Require.nonNull(d.getVersion(), "Couldn't determine the version of moe-gradle plugin.");
-            LOG.info("Unresolved moe-gradle version: {}", d.getVersion());
-            sdkVersion = resolveSDKVersion(project, d.getVersion());
-        } else {
-            // Using explicit SDK version, it may be a dynamic version, so
-            // it must be resolved before usage.
-            LOG.info("Using explicit moe-sdk version: {}", sdkVersion);
-            sdkVersion = resolveSDKVersion(project, sdkVersion);
         }
-        LOG.info("Resolved moe-sdk version: {}", sdkVersion);
-        final boolean isSnapshotSDKVersion = sdkVersion.endsWith("-SNAPSHOT");
-
-        // Retrieve and resolve the moe-gradle plugin version.
-        ResolvedArtifact artifact = classpathConfiguration.getResolvedConfiguration().getResolvedArtifacts()
-                .stream()
-                .filter(p -> MOE_GRADLE_ARTIFACT_ID.equals(p.getName()))
-                .findAny()
-                .orElse(null);
         Require.nonNull(artifact, "Couldn't find the moe-gradle artifact.");
         final String pluginVersion = artifact.getModuleVersion().getId().getVersion();
         Require.nonNull(pluginVersion, "Couldn't resolve the version of the moe-gradle artifact.");
