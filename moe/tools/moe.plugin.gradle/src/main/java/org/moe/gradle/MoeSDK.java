@@ -93,11 +93,20 @@ public class MoeSDK {
         if (sdkVersion == null) {
             // There's no explicit SDK version, so retrieve and use
             // the unresolved version of the moe-gradle plugin.
-            Dependency d = classpathConfiguration.getDependencies()
+            Project classpathProject = project;
+            Dependency d;
+            while ((d = classpathConfiguration.getDependencies()
                     .stream()
                     .filter(p -> MOE_GRADLE_ARTIFACT_ID.equals(p.getName()))
                     .findAny()
-                    .orElse(null);
+                    .orElse(null)) == null) {
+                classpathProject = classpathProject.getParent();
+                if (classpathProject == null) {
+                    break;
+                }
+                classpathConfiguration = classpathProject.getBuildscript().getConfigurations().getByName("classpath");
+                Require.nonNull(classpathConfiguration, "Couldn't find the classpath configuration in the buildscript.");
+            }
             Require.nonNull(d, "Couldn't find the moe-gradle plugin in the classpath configuration.");
             Require.nonNull(d.getVersion(), "Couldn't determine the version of moe-gradle plugin.");
             LOG.info("Unresolved moe-gradle version: {}", d.getVersion());
