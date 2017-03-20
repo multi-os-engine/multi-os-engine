@@ -108,16 +108,12 @@ public class MoeSDK {
                 throw new GradleException("MOE SDK version is undefined");
             }
 
-            LOG.info("Unresolved moe-gradle version: {}", sdkVersion);
-            sdkVersion = resolveSDKVersion(project, sdkVersion);
+            LOG.info("Using implicit moe-gradle version: {}", sdkVersion);
         } else {
             // Using explicit SDK version, it may be a dynamic version, so
             // it must be resolved before usage.
             LOG.info("Using explicit moe-sdk version: {}", sdkVersion);
-            sdkVersion = resolveSDKVersion(project, sdkVersion);
         }
-        LOG.info("Resolved moe-sdk version: {}", sdkVersion);
-        final boolean isSnapshotSDKVersion = sdkVersion.endsWith("-SNAPSHOT");
 
         // Retrieve and resolve the moe-gradle plugin version.
         ResolvedArtifact artifact;
@@ -175,6 +171,10 @@ public class MoeSDK {
             return sdk;
         }
 
+        // We need a resolved SDK version which is required as a part of the SDK path.
+        sdkVersion = resolveSDKVersion(project, sdkVersion);
+        LOG.info("Resolved moe-sdk version: {}", sdkVersion);
+
         // Use configuration
         LOG.info("Using Maven-based MOE SDK");
 
@@ -185,6 +185,7 @@ public class MoeSDK {
 
         // If the required SDK version is already downloaded and not a snapshot (because snapshot versions
         // can't be reused due to it's version can't be checked), use it and return.
+        final boolean isSnapshotSDKVersion = sdkVersion.endsWith("-SNAPSHOT");
         final Path SDK_PATH = USER_MOE_HOME.resolve("moe-sdk-" + sdkVersion);
         if (SDK_PATH.toFile().exists() && !isSnapshotSDKVersion) {
             LOG.quiet("Using already downloaded SDK: {}", SDK_PATH.toFile().getAbsolutePath());
