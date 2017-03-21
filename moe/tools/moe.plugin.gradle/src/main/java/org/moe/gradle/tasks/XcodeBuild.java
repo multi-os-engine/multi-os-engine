@@ -805,6 +805,16 @@ public class XcodeBuild extends AbstractBaseTask {
                     getXcodeProjectFile().getAbsolutePath(), "xcuserdata",
                     user + ".xcuserdatad", "xcschemes").toFile();
 
+            File shareSchemeDir = Paths.get(
+                    getXcodeProjectFile().getAbsolutePath(), "xcshareddata",
+                    "xcschemes").toFile();
+
+            File shareSchemeFile = Paths.get(shareSchemeDir.getAbsolutePath(), scheme + ".xcscheme").toFile();
+
+            if (shareSchemeFile.exists()) {
+                return;
+            }
+
             if (!schemeDir.exists()) {
                 schemeDir.mkdirs();
             }
