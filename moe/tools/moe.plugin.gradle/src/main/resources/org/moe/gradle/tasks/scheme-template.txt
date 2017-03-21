@@ -16,7 +16,7 @@
                BuildableIdentifier = 'primary'
                BlueprintIdentifier = '%%TARGET_ID%%'
                BlueprintName = '%%TARGET_NAME%%'
-               ReferencedContainer = 'container:%%LOCAL_PATH%%'
+               ReferencedContainer = 'container:%%LOCAL_PATH%%'>
                BuildableName = '%%PRODUCT%%'>
             </BuildableReference>
          </BuildActionEntry>
@@ -27,6 +27,17 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
+      <Testables>
+      </Testables>
+      <MacroExpansion>
+       <BuildableReference
+          BuildableIdentifier = "primary"
+          BlueprintIdentifier = '%%TARGET_ID%%'
+          BuildableName = '%%PRODUCT%%'
+          BlueprintName = '%%TARGET_NAME%%'
+          ReferencedContainer = 'container:%%LOCAL_PATH%%'>
+       </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -40,6 +51,16 @@
       debugServiceExtension = "internal"
       buildConfiguration = "Debug"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+           runnableDebuggingMode = "0">
+           <BuildableReference
+              BuildableIdentifier = "primary"
+              BlueprintIdentifier = '%%TARGET_ID%%'
+              BuildableName = '%%PRODUCT%%'
+              BlueprintName = '%%TARGET_NAME%%'
+              ReferencedContainer = 'container:%%LOCAL_PATH%%'>
+           </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -49,6 +70,16 @@
       debugDocumentVersioning = "YES"
       buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <BuildableProductRunnable
+        unnableDebuggingMode = "0">
+        <BuildableReference
+          BuildableIdentifier = "primary"
+          BlueprintIdentifier = '%%TARGET_ID%%'
+          BuildableName = '%%PRODUCT%%'
+          BlueprintName = '%%TARGET_NAME%%'
+          ReferencedContainer = 'container:%%LOCAL_PATH%%'>
+       </BuildableReference>
+    </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
