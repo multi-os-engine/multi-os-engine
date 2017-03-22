@@ -92,8 +92,8 @@ public class MoeSDK {
         // Check if explicit SDK version is defined.
         String sdkVersion = getMoeSDKVersion(project);
         if (sdkVersion == null) {
-            // There's no explicit SDK version, so retrieve and use
-            // the unresolved version of the moe-gradle plugin.
+            // There's no explicit SDK version, retrieving version
+            // from moe.properties.
             {
                 // Get SDK version from moe.properties
                 final Properties props = new Properties();
@@ -108,10 +108,8 @@ public class MoeSDK {
                 throw new GradleException("MOE SDK version is undefined");
             }
 
-            LOG.info("Using implicit moe-gradle version: {}", sdkVersion);
+            LOG.info("Using implicit moe-sdk version: {}", sdkVersion);
         } else {
-            // Using explicit SDK version, it may be a dynamic version, so
-            // it must be resolved before usage.
             LOG.info("Using explicit moe-sdk version: {}", sdkVersion);
         }
 
@@ -137,17 +135,16 @@ public class MoeSDK {
         Require.nonNull(pluginVersion, "Couldn't resolve the version of the moe-gradle artifact.");
         LOG.info("Resolved moe-gradle version: {}", pluginVersion);
 
-        // Construct the SDK.
-        final MoeSDK sdk = new MoeSDK(pluginVersion, sdkVersion);
-
         // Check for overriding property
         if (project.hasProperty(MOE_LOCAL_SDK_PROPERTY)) {
-            LOG.info("Using custom local MOE SDK");
             final Object property = project.property(MOE_LOCAL_SDK_PROPERTY);
             if (!(property instanceof String)) {
                 throw new GradleException("Value of " + MOE_LOCAL_SDK_PROPERTY + " property is not a String");
             }
             final Path path = Paths.get((String)property);
+            LOG.quiet("Using custom local MOE SDK: {}", path.toFile().getAbsolutePath());
+            // Construct the SDK.
+            final MoeSDK sdk = new MoeSDK(pluginVersion, sdkVersion);
             sdk.validateSDK(path, true);
             sdk.bakeSDKPaths(path);
             return sdk;
@@ -155,8 +152,10 @@ public class MoeSDK {
 
         // Check for overriding environment variable
         if (System.getenv(MOE_LOCAL_SDK_ENV) != null) {
-            LOG.info("Using custom local MOE SDK (env)");
             final Path path = Paths.get(System.getenv(MOE_LOCAL_SDK_ENV));
+            LOG.quiet("Using custom local MOE SDK (env): {}", path.toFile().getAbsolutePath());
+            // Construct the SDK.
+            final MoeSDK sdk = new MoeSDK(pluginVersion, sdkVersion);
             sdk.validateSDK(path, true);
             sdk.bakeSDKPaths(path);
             return sdk;
@@ -164,19 +163,24 @@ public class MoeSDK {
 
         // Check if moe.sdk.localbuild file exists.
         if (plugin.getProject().file("moe.sdk.localbuild").exists()) {
-            LOG.info("Using custom local MOE SDK (file)");
             final Path path = Paths.get(FileUtils.read(plugin.getProject().file("moe.sdk.localbuild")).trim());
+            LOG.quiet("Using custom local MOE SDK (file): {}", path.toFile().getAbsolutePath());
+            // Construct the SDK.
+            final MoeSDK sdk = new MoeSDK(pluginVersion, sdkVersion);
             sdk.validateSDK(path, true);
             sdk.bakeSDKPaths(path);
             return sdk;
         }
 
+        // Use configuration
+        LOG.info("Using Maven-based MOE SDK");
+
         // We need a resolved SDK version which is required as a part of the SDK path.
         sdkVersion = resolveSDKVersion(project, sdkVersion);
         LOG.info("Resolved moe-sdk version: {}", sdkVersion);
 
-        // Use configuration
-        LOG.info("Using Maven-based MOE SDK");
+        // Construct the SDK.
+        final MoeSDK sdk = new MoeSDK(pluginVersion, sdkVersion);
 
         // Prepare USER_MOE_HOME
         if (!USER_MOE_HOME.toFile().exists() && !USER_MOE_HOME.toFile().mkdir()) {
