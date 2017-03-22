@@ -1584,6 +1584,7 @@ Class registerObjCClass(JNIEnv* env, jclass type, bool isProxy, jstring baseClas
     // Add main methods
     if (!isHybridClass(superClass)) {
       class_addMethod(objcMetaClass, @selector(alloc), (IMP)alloc_objc, "@@:");
+      class_addMethod(objcMetaClass, @selector(allocWithZone:), (IMP)alloc_objc_zone, "@@:^{_NSZone=}");
       class_addMethod(objcClass, @selector(retain), (IMP)retain_common, "@@:");
       class_addMethod(objcClass, @selector(retainWeakReference),
                       (IMP)retainWeakReference_common, "c@:");
@@ -1648,6 +1649,7 @@ Class registerObjCClass(JNIEnv* env, jclass type, bool isProxy, jstring baseClas
     } else {
       if (isBindingClass(superClass)) {
         class_addMethod(newMetaClass, @selector(alloc), (IMP)alloc_objc, "@@:");
+        class_addMethod(objcMetaClass, @selector(allocWithZone:), (IMP)alloc_objc_zone, "@@:^{_NSZone=}");
         class_addMethod(newClass, @selector(retain), (IMP)retain_common, "@@:");
         class_addMethod(newClass, @selector(retainWeakReference),
                         (IMP)retainWeakReference_common, "c@:");

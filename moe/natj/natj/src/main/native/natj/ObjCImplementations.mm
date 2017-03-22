@@ -133,6 +133,11 @@ id alloc_objc(id obj, SEL sel) {
   return o;
 }
 
+id alloc_objc_zone(id obj, SEL sel, __unused _NSZone* zone) {
+  // It is safe to ignore the zone argument as it is ignorad by the Objective-C runtime, as well.
+  return alloc_objc(obj, sel);
+}
+
 id alloc_java(id obj, SEL sel) {
   id o = class_createInstance(obj, sizeof(id));
   @autoreleasepool {

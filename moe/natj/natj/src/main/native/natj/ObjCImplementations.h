@@ -41,6 +41,15 @@ id init_java(id, SEL, JNIEnv*, jobject);
 id alloc_objc(id, SEL);
 
 /**
+ * Alloc implementation of inherited and hybrid objects
+ *
+ * It is only for compatibility reasons and forwards to the implementation without the zone.
+ *
+ * Creates the inherited or hybrid object
+ */
+id alloc_objc_zone(id, SEL, _NSZone*);
+
+/**
  * Alloc implementation of proxy objects
  *
  * Creates the proxy object.
