@@ -535,7 +535,7 @@ Task name: `moeIpaBuild`
 
 This task creates an ipa from the app.
 
-**Note:** Setting the Provisioning Profile name in the [code signing options](#code-signing) is required!
+**Note:** Settings the Scheme, Developer Team, Provisioning Profile name in the [code signing options](#code-signing) is required!
 
 #### Task Properties
 
