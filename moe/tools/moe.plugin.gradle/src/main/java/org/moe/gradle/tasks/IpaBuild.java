@@ -41,6 +41,9 @@ import org.moe.gradle.utils.TaskUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -56,11 +59,14 @@ public class IpaBuild extends AbstractBaseTask {
     private static final String CONVENTION_SCHEME = "scheme";
     private static final String CONVENTION_XCODE_PROJECT_FILE = "xcodeProjectFile";
     private static final String CONVENTION_XCODE_WORKSPACE_FILE = "xcodeWorkspaceFile";
-    private static final String CONVENTION_PROVISIONING_PROFILE_NAME = "provisioningProfileName";
+    private static final String CONVENTION_EXPORT_METHOD = "exportMethod";
     private static final String CONVENTION_CONFIGURATION = "configuration";
     private static final String CONVENTION_OUTPUT_ARCHIVE = "outputArchive";
     private static final String CONVENTION_DEVELOPMENT_TEAM = "developmentTeam";
     private static final String CONVENTION_ADDITIONAL_PARAMETERS = "additionalParameters";
+    private static final String CONVENTION_EXPORT_INFO_PLIST = "exportInfoPlist";
+    private static final String CONVENTION_EXPORT_UPLOAD_SYMBOLS = "exportUploadSymbols";
+    private static final String CONVENTION_EXPORT_UPLOAD_BITCODE = "exportUploadBitcode";
 
     @Nullable
     private Object inputApp;
@@ -169,18 +175,18 @@ public class IpaBuild extends AbstractBaseTask {
     }
 
     @Nullable
-    private String provisioningProfileName;
+    private String exportMethod;
 
     @Input
     @Optional
     @Nullable
-    public String getProvisioningProfileName() {
-        return nullableGetOrConvention(provisioningProfileName, CONVENTION_PROVISIONING_PROFILE_NAME);
+    public String getExportMethod() {
+        return nullableGetOrConvention(exportMethod, CONVENTION_EXPORT_METHOD);
     }
 
     @IgnoreUnused
-    public void setProvisioningProfileName(@Nullable String provisioningProfileName) {
-        this.provisioningProfileName = provisioningProfileName;
+    public void setExportMethod(@Nullable String exportMethod) {
+        this.exportMethod = exportMethod;
     }
 
     @Nullable
@@ -240,34 +246,81 @@ public class IpaBuild extends AbstractBaseTask {
         this.additionalParameters = additionalParameters == null ? null : new ArrayList<>(additionalParameters);
     }
 
+    @Nullable
+    private Object exportOptionsPlist;
+
+    @OutputFile
+    @NotNull
+    public File getExportOptionsPlist() {
+        return getProject().file(getOrConvention(exportOptionsPlist, CONVENTION_EXPORT_INFO_PLIST));
+    }
+
+    @IgnoreUnused
+    public void setExportOptionsPlist(@Nullable Object exportOptionsPlist) {
+        this.exportOptionsPlist = exportOptionsPlist;
+    }
+
+    @NotNull
+    private boolean uploadSymbols;
+
+    @Input
+    @NotNull
+    public boolean getUploadSymbols() {
+        return getOrConvention(uploadSymbols, CONVENTION_EXPORT_UPLOAD_SYMBOLS);
+    }
+
+    @IgnoreUnused
+    public void setUploadSymbols(@Nullable boolean uploadSymbols) {
+        this.uploadSymbols = uploadSymbols;
+    }
+
+    @NotNull
+    private boolean uploadBitcode;
+
+    @Input
+    @NotNull
+    public boolean getUploadBitcode() {
+        return getOrConvention(uploadBitcode, CONVENTION_EXPORT_UPLOAD_BITCODE);
+    }
+
+    @IgnoreUnused
+    public void setUploadBitcode(@Nullable boolean uploadBitcode) {
+        this.uploadBitcode = uploadBitcode;
+    }
+
     @Override
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
 
-        if (getScheme() == null) {
-            throw new GradleException("Using Xcode workspaces requires schemes! Please set the "
-                    + "moe.xcode." + "main" + "Scheme property");
+        if (getExportMethod() == null) {
+            throw new GradleException("IPA build requires export method! Please set the "
+                    + "moe.export." + "method" + " property");
         }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
         final File inputApp = Require.nonNull(getInputApp());
 
-        String profileName = getProvisioningProfileName();
+        String exportMethod = getExportMethod();
 
-        if (profileName == null || profileName.isEmpty()) {
-            throw new GradleException("Provisioning profile name is not specified!");
+        if (exportMethod == null || exportMethod.isEmpty()) {
+            throw new GradleException("Export archive method name is not specified!");
         }
 
-        removePreviousIpa();
+        clean();
+
+        generateExportOptionsPlist();
 
         if (remoteServer != null) {
             final Path ipaRel;
+            final Path exportOptionsRel;
             try {
                 ipaRel = getInnerProjectRelativePath(getOutputIpa());
+                exportOptionsRel = getInnerProjectRelativePath(getExportOptionsPlist());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
             final String remoteIpa = remoteServer.getRemotePath(ipaRel);
+            final String remoteExportOptions = remoteServer.getRemotePath(exportOptionsRel);
 
             // Upload project
             final FileList list = new FileList(getProject().getProjectDir(), remoteServer.getBuildDir());
@@ -277,6 +330,8 @@ public class IpaBuild extends AbstractBaseTask {
             // files are guarantied to be there. Also, enabling this would possibly break the signed files.
             // remoteServer.upload("application files", list);
             remoteServer.exec("remove previous ipa", "rm -rf " + remoteIpa);
+
+            remoteServer.exec("remove previous export options", "rm -rf " + remoteExportOptions);
 
             remoteServer.exec("archive", "xcrun xcodebuild " +
                     calculateArchiveArgs().stream().collect(Collectors.joining(" ")));
@@ -361,7 +416,9 @@ public class IpaBuild extends AbstractBaseTask {
             }
             return resolvePathRelativeToRoot(getProject().file(workspace));
         });
-        addConvention(CONVENTION_PROVISIONING_PROFILE_NAME, ext.signing::getProvisioningProfileName);
+        addConvention(CONVENTION_EXPORT_METHOD, ext.export::getMethod);
+        setUploadBitcode(ext.export.getUploadBitcode());
+        setUploadSymbols(ext.export.getUploadSymbols());
         addConvention(CONVENTION_CONFIGURATION, Mode.RELEASE::getXcodeCompatibleName);
         addConvention(CONVENTION_OUTPUT_ARCHIVE, () -> {
             return resolvePathInBuildDir("archive");
@@ -378,12 +435,18 @@ public class IpaBuild extends AbstractBaseTask {
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "IpaBuild.log"));
+        addConvention(CONVENTION_EXPORT_INFO_PLIST, () -> resolvePathInBuildDir(out, "export_options.plist"));
     }
 
-    private void removePreviousIpa() {
-        File libswiftRemoteMirror = getOutputIpa();
-        if (libswiftRemoteMirror.exists()) {
-            libswiftRemoteMirror.delete();
+    private void clean() {
+        File ipa = getOutputIpa();
+        if (ipa.exists()) {
+            ipa.delete();
+        }
+
+        File exportOption = getExportOptionsPlist();
+        if (exportOption.exists()) {
+            exportOption.delete();
         }
     }
 
@@ -469,33 +532,35 @@ public class IpaBuild extends AbstractBaseTask {
 
         final String _archiveFile;
         final String _ipaFile;
+        final String _optionsPlistFile;
 
         if (remoteServer != null) {
             final Path archiveFileRel;
             final Path ipaFileRel;
+            final Path optionsPlistFileRel;
             try {
                 ipaFileRel = getInnerProjectRelativePath(getOutputIpa());
                 archiveFileRel = getInnerProjectRelativePath(resolvePathInBuildDir("archive.xcarchive"));
+                optionsPlistFileRel = getInnerProjectRelativePath(getExportOptionsPlist());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
             _ipaFile = remoteServer.getRemotePath(ipaFileRel);
             _archiveFile = remoteServer.getRemotePath(archiveFileRel);
+            _optionsPlistFile = remoteServer.getRemotePath(optionsPlistFileRel);
         } else {
             _ipaFile = getOutputIpa().getAbsolutePath();
             _archiveFile = resolvePathInBuildDir("archive.xcarchive").getAbsolutePath();
+            _optionsPlistFile = getExportOptionsPlist().getAbsolutePath();
         }
 
         args.add("-exportArchive");
-        args.add("-exportFormat");
-        args.add("IPA");
-
         args.add("-archivePath");
         args.add(_archiveFile);
         args.add("-exportPath");
         args.add(_ipaFile);
-        args.add("-exportProvisioningProfile");
-        args.add(getProvisioningProfileName());
+        args.add("-exportOptionsPlist");
+        args.add(_optionsPlistFile);
 
         return args;
     }
@@ -545,5 +610,58 @@ public class IpaBuild extends AbstractBaseTask {
             return false;
         }
         return false;
+    }
+
+    private void generateExportOptionsPlist() {
+
+        // Generate options file
+        File exportOptionsPlist = getExportOptionsPlist();
+
+        LOG.quiet("Generate export_options.plist");
+
+        try {
+
+            String template;
+            {
+                StringBuilder builder = new StringBuilder();
+                InputStream stream = getClass().getResourceAsStream("export_options_template.txt");
+                byte buff[] = new byte[1024];
+                int len;
+                while ((len = stream.read(buff)) > 0) {
+                    builder.append(new String(buff, 0, len, StandardCharsets.UTF_8));
+                }
+                template = builder.toString();
+            }
+
+            String targetTemplate = "" + template;
+
+            {
+                String method = getExportMethod();
+                targetTemplate = targetTemplate.replace("%%METHOD_NAME%%", method);
+            }
+
+            {
+                String teamID = getDevelopmentTeam();
+                targetTemplate = targetTemplate.replace("%%TEAM_ID%%", teamID);
+            }
+
+            {
+                boolean uploadSymbols = getUploadSymbols();
+                targetTemplate = targetTemplate.replace("%%UPLOAD_SYMBOLS_VALUE%%", String.valueOf(uploadSymbols));
+            }
+
+            {
+                boolean uploadBitcode = getUploadBitcode();
+                targetTemplate = targetTemplate.replace("%%UPLOAD_BITCODE_VALUE%%", String.valueOf(uploadBitcode));
+            }
+
+            PrintWriter writer = new PrintWriter(exportOptionsPlist);
+            writer.print(targetTemplate);
+            writer.close();
+
+        } catch (Throwable t) {
+            throw new GradleException("Could not generate scheme", t);
+        }
+
     }
 }

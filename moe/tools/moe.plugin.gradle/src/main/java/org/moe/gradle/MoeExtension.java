@@ -60,6 +60,9 @@ public class MoeExtension extends AbstractMoeExtension {
     public final UIActionsAndOutletsOptions actionsAndOutlets;
 
     @NotNull
+    public final ExportOptions export;
+
+    @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
     private int proguardLevel = PROGUARD_LEVEL_APP;
@@ -72,6 +75,7 @@ public class MoeExtension extends AbstractMoeExtension {
         this.xcode = instantiator.newInstance(XcodeOptions.class);
         this.signing = instantiator.newInstance(SigningOptions.class);
         this.actionsAndOutlets = instantiator.newInstance(UIActionsAndOutletsOptions.class);
+        this.export = instantiator.newInstance(ExportOptions.class);
     }
 
     void setup() {
@@ -122,6 +126,11 @@ public class MoeExtension extends AbstractMoeExtension {
     @IgnoreUnused
     public void actionsAndOutlets(Action<UIActionsAndOutletsOptions> action) {
         Require.nonNull(action).execute(actionsAndOutlets);
+    }
+
+    @IgnoreUnused
+    public void export(Action<ExportOptions> action) {
+        Require.nonNull(action).execute(export);
     }
 
     @NotNull

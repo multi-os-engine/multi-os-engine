@@ -117,18 +117,4 @@ public class SigningOptions {
         this.developmentTeam = developmentTeam;
     }
 
-    /**
-     * Name of the provisioning profile.
-     */
-    @Nullable
-    private String provisioningProfileName;
-
-    public String getProvisioningProfileName() {
-        return provisioningProfileName;
-    }
-
-    @IgnoreUnused
-    public void setProvisioningProfileName(@Nullable String provisioningProfileName) {
-        this.provisioningProfileName = provisioningProfileName;
-    }
 }
