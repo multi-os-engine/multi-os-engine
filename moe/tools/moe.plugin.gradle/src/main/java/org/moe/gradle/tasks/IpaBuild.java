@@ -302,7 +302,7 @@ public class IpaBuild extends AbstractBaseTask {
                     + "moe.export." + "method" + " property");
         }
 
-        if (getExportMethod() == null) {
+        if (getDevelopmentTeam() == null) {
             throw new GradleException("IPA build requires signing developmentTeam! Please set the "
                     + "moe.signing." + "developmentTeam" + " property");
         }
