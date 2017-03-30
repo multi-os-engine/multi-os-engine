@@ -527,6 +527,11 @@ public class IpaBuild extends AbstractBaseTask {
 
         args.addAll(getAdditionalParameters());
 
+        args.add("DEVELOPMENT_TEAM=" + getDevelopmentTeam());
+
+        args.add("-configuration");
+        args.add(getConfiguration());
+
         args.add("-archivePath");
         args.add(_archiveFile);
         return args;
