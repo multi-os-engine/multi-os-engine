@@ -322,26 +322,22 @@ public class IpaBuild extends AbstractBaseTask {
 
         if (remoteServer != null) {
             final Path ipaRel;
-            final Path exportOptionsRel;
             try {
                 ipaRel = getInnerProjectRelativePath(getOutputIpa());
-                exportOptionsRel = getInnerProjectRelativePath(getExportOptionsPlist());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
             final String remoteIpa = remoteServer.getRemotePath(ipaRel);
-            final String remoteExportOptions = remoteServer.getRemotePath(exportOptionsRel);
 
-            // Upload project
+            // Upload ipa export options
             final FileList list = new FileList(getProject().getProjectDir(), remoteServer.getBuildDir());
-            final String remoteApp = list.add(inputApp);
+            list.add(getExportOptionsPlist());
 
-            // NOTE: do not re-upload the files, incremental builds are disabled for remotely executed tasks, the
-            // files are guarantied to be there. Also, enabling this would possibly break the signed files.
-            // remoteServer.upload("application files", list);
+            remoteServer.upload("Upload export options", list);
+
             remoteServer.exec("remove previous ipa", "rm -rf " + remoteIpa);
 
-            remoteServer.exec("remove previous export options", "rm -rf " + remoteExportOptions);
+            //remoteServer.exec("remove previous export options", "rm -rf " + remoteExportOptions);
 
             remoteServer.exec("archive", "xcrun xcodebuild " +
                     calculateArchiveArgs().stream().collect(Collectors.joining(" ")));
