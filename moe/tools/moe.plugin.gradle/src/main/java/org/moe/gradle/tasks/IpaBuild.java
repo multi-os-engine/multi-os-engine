@@ -292,9 +292,19 @@ public class IpaBuild extends AbstractBaseTask {
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
 
+        if (getScheme() == null) {
+            throw new GradleException("IPA build requires schemes! Please set the "
+                    + "moe.xcode." + "main" + "Scheme property");
+        }
+
         if (getExportMethod() == null) {
             throw new GradleException("IPA build requires export method! Please set the "
                     + "moe.export." + "method" + " property");
+        }
+
+        if (getExportMethod() == null) {
+            throw new GradleException("IPA build requires signing developmentTeam! Please set the "
+                    + "moe.signing." + "developmentTeam" + " property");
         }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
@@ -416,20 +426,21 @@ public class IpaBuild extends AbstractBaseTask {
             }
             return resolvePathRelativeToRoot(getProject().file(workspace));
         });
-        addConvention(CONVENTION_EXPORT_METHOD, ext.export::getMethod);
-        setUploadBitcode(ext.export.getUploadBitcode());
-        setUploadSymbols(ext.export.getUploadSymbols());
+        addConvention(CONVENTION_EXPORT_METHOD, ext.ipaExport::getMethod);
+        setUploadBitcode(ext.ipaExport.getUploadBitcode());
+        setUploadSymbols(ext.ipaExport.getUploadSymbols());
         addConvention(CONVENTION_CONFIGURATION, Mode.RELEASE::getXcodeCompatibleName);
         addConvention(CONVENTION_OUTPUT_ARCHIVE, () -> {
             return resolvePathInBuildDir("archive");
         });
         addConvention(CONVENTION_DEVELOPMENT_TEAM, () -> {
+            String xcodeprojDevelopmentTeam = getXcodeprojDevelopmentTeam();
             if (!ext.signing.usesDefaultDevelopmentTeam()) {
                 return ext.signing.getDevelopmentTeam();
-            } else if (!xcodeprojDevelopmentTeamIsSet()) {
+            } else if (ext.signing.getDevelopmentTeam() != null) {
                 return ext.signing.getDevelopmentTeam();
             } else {
-                return null;
+                return xcodeprojDevelopmentTeam;
             }
         });
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
@@ -516,11 +527,6 @@ public class IpaBuild extends AbstractBaseTask {
 
         args.addAll(getAdditionalParameters());
 
-        args.add("DEVELOPMENT_TEAM=" + getDevelopmentTeam());
-
-        args.add("-configuration");
-        args.add(getConfiguration());
-
         args.add("-archivePath");
         args.add(_archiveFile);
         return args;
@@ -539,7 +545,7 @@ public class IpaBuild extends AbstractBaseTask {
             final Path ipaFileRel;
             final Path optionsPlistFileRel;
             try {
-                ipaFileRel = getInnerProjectRelativePath(getOutputIpa());
+                ipaFileRel = getInnerProjectRelativePath(getOutputIpa().getParentFile());
                 archiveFileRel = getInnerProjectRelativePath(resolvePathInBuildDir("archive.xcarchive"));
                 optionsPlistFileRel = getInnerProjectRelativePath(getExportOptionsPlist());
             } catch (IOException e) {
@@ -549,7 +555,7 @@ public class IpaBuild extends AbstractBaseTask {
             _archiveFile = remoteServer.getRemotePath(archiveFileRel);
             _optionsPlistFile = remoteServer.getRemotePath(optionsPlistFileRel);
         } else {
-            _ipaFile = getOutputIpa().getAbsolutePath();
+            _ipaFile = getOutputIpa().getParent();
             _archiveFile = resolvePathInBuildDir("archive.xcarchive").getAbsolutePath();
             _optionsPlistFile = getExportOptionsPlist().getAbsolutePath();
         }
@@ -565,7 +571,7 @@ public class IpaBuild extends AbstractBaseTask {
         return args;
     }
 
-    private boolean xcodeprojDevelopmentTeamIsSet() {
+    private String getXcodeprojDevelopmentTeam() {
         try {
             // Open Xcode project
             final File xcodeproj = Require.nonNull(getXcodeProjectFile());
@@ -589,7 +595,7 @@ public class IpaBuild extends AbstractBaseTask {
                 if (xcBuildConfiguration.getName().equals(Mode.RELEASE.getXcodeCompatibleName())) {
                     final NextStep developmentTeam = xcBuildConfiguration.getOrCreateBuildSettings().get("DEVELOPMENT_TEAM");
                     if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
-                        return true;
+                        return ((Value) developmentTeam).value;
                     }
                 }
             }
@@ -601,15 +607,15 @@ public class IpaBuild extends AbstractBaseTask {
                 if (xcBuildConfiguration.getName().equals(Mode.RELEASE.getXcodeCompatibleName())) {
                     final NextStep developmentTeam = xcBuildConfiguration.getOrCreateBuildSettings().get("DEVELOPMENT_TEAM");
                     if (developmentTeam != null && ((Value)developmentTeam).value.length() != 0) {
-                        return true;
+                        return ((Value) developmentTeam).value;
                     }
                 }
             }
         } catch (Throwable t) {
             getProject().getLogger().log(LogLevel.ERROR, "Failed to read Xcode project file", t);
-            return false;
+            return null;
         }
-        return false;
+        return null;
     }
 
     private void generateExportOptionsPlist() {
@@ -660,7 +666,7 @@ public class IpaBuild extends AbstractBaseTask {
             writer.close();
 
         } catch (Throwable t) {
-            throw new GradleException("Could not generate scheme", t);
+            throw new GradleException("Could not generate export_options.plist", t);
         }
 
     }

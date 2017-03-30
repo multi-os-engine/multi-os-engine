@@ -3,7 +3,7 @@ package org.moe.gradle.options;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.Nullable;
 
-public class ExportOptions {
+public class IpaExportOptions {
 
     /**
      * (String) The method of distribution, which can be set as any of the following:

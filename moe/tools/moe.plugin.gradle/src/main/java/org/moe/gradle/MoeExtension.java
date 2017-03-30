@@ -60,7 +60,7 @@ public class MoeExtension extends AbstractMoeExtension {
     public final UIActionsAndOutletsOptions actionsAndOutlets;
 
     @NotNull
-    public final ExportOptions export;
+    public final IpaExportOptions ipaExport;
 
     @NotNull
     private MoePlatform platform = MoePlatform.IOS;
@@ -75,7 +75,7 @@ public class MoeExtension extends AbstractMoeExtension {
         this.xcode = instantiator.newInstance(XcodeOptions.class);
         this.signing = instantiator.newInstance(SigningOptions.class);
         this.actionsAndOutlets = instantiator.newInstance(UIActionsAndOutletsOptions.class);
-        this.export = instantiator.newInstance(ExportOptions.class);
+        this.ipaExport = instantiator.newInstance(IpaExportOptions.class);
     }
 
     void setup() {
@@ -129,8 +129,8 @@ public class MoeExtension extends AbstractMoeExtension {
     }
 
     @IgnoreUnused
-    public void export(Action<ExportOptions> action) {
-        Require.nonNull(action).execute(export);
+    public void ipaExport(Action<IpaExportOptions> action) {
+        Require.nonNull(action).execute(ipaExport);
     }
 
     @NotNull

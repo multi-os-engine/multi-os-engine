@@ -532,7 +532,25 @@ Task name: `moeIpaBuild`
 
 This task creates an ipa from the app.
 
-**Note:** Settings the Scheme, Developer Team in the [code signing options](#code-signing) is required!
+**Note:** Settings the Ipa export method, Scheme, Developer Team in the [code signing options](#code-signing) is required!
+
+Ipa export can be configured by the following options:
+
+```groovy
+moe {
+    ipaExport {
+        // Required! (String) The method of distribution, which can be set as any of the following:
+        // app-store, enterprise, ad-hoc, development
+        method
+
+        // (Boolean) Option to include symbols in the generated ipa file. Default is true.
+        uploadSymbols
+
+        // (Boolean) Option to include Bitcode. Default is true.
+        uploadBitcode
+    }
+}
+```
 
 #### Task Properties
 
