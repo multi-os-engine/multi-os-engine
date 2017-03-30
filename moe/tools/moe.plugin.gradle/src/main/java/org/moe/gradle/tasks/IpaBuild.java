@@ -294,17 +294,17 @@ public class IpaBuild extends AbstractBaseTask {
 
         if (getScheme() == null) {
             throw new GradleException("IPA build requires schemes! Please set the "
-                    + "moe.xcode." + "main" + "Scheme property");
+                    + "moe.xcode.mainScheme property");
         }
 
         if (getExportMethod() == null) {
             throw new GradleException("IPA build requires export method! Please set the "
-                    + "moe.export." + "method" + " property");
+                    + "moe.export.method property");
         }
 
         if (getDevelopmentTeam() == null) {
             throw new GradleException("IPA build requires signing developmentTeam! Please set the "
-                    + "moe.signing." + "developmentTeam" + " property");
+                    + "moe.signing.developmentTeam property");
         }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
