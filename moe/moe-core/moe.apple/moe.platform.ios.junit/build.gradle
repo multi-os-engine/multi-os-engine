@@ -14,7 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+
+import org.gradle.internal.jvm.Jvm
+
 apply plugin: 'java'
+
+static def JvmVersionMeets(version) {
+    def currentJvm = Jvm.current()
+    return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
+}
 
 targetCompatibility = "1.7"
 sourceCompatibility = "1.7"
@@ -33,7 +41,31 @@ dependencies {
     compile project(':moe.apple:moe.platform.ios')
 }
 
+tasks.javadoc {
+    if (JvmVersionMeets(8)) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+    }
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    baseName 'moe-ios-junit'
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+task sourceJar(type: Jar) {
+    baseName 'moe-ios-junit'
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
 jar {
+    baseName 'moe-ios-junit'
     from { configurations.included.collect { it.isDirectory() ? it : zipTree(it) } }
     exclude 'META-INF/*.SF'
+}
+
+artifacts {
+    archives javadocJar
+    archives sourceJar
 }
