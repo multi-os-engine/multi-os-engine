@@ -170,23 +170,14 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.moe_core_jar) {
                 rename rootProject.external.moe_core.out.moe_core_jar.name, 'moe-core.jar'
             }
-            from files(processDexCore.dexOutput) {
-                rename processDexCore.dexOutput.name, processDexCore.dexOutput.name
-            }
             from files(rootProject.external.moe_core.out.moe_core_sources_jar) {
                 rename rootProject.external.moe_core.out.moe_core_sources_jar.name, 'moe-core-sources.jar'
             }
-            from files(rootProject.external.moe_core.out.moe_core_certificates_zip) {
-                rename rootProject.external.moe_core.out.moe_core_certificates_zip.name, 'moe-core-certificates.zip'
+            from files(rootProject.external.moe_core.out.moe_core_javadoc_jar) {
+                rename rootProject.external.moe_core.out.moe_core_javadoc_jar.name, 'moe-core-javadoc.jar'
             }
             from files(rootProject.external.moe_core.out.moe_ios_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_jar.name, 'moe-ios.jar'
-            }
-            from files(processJarRetroiOS.archivePath) {
-                rename processJarRetroiOS.archivePath.name, processJarRetroiOS.archivePath.name
-            }
-            from files(processDexRetroiOS.dexOutput) {
-                rename processDexRetroiOS.dexOutput.name, processDexRetroiOS.dexOutput.name
             }
             from files(rootProject.external.moe_core.out.moe_ios_sources_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_sources_jar.name, 'moe-ios-sources.jar'
@@ -197,8 +188,26 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.moe_ios_junit_jar) {
                 rename rootProject.external.moe_core.out.moe_ios_junit_jar.name, 'moe-ios-junit.jar'
             }
+            from files(rootProject.external.moe_core.out.moe_ios_junit_sources_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_junit_sources_jar.name, 'moe-ios-junit-sources.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar.name, 'moe-ios-junit-javadoc.jar'
+            }
+            from files(processDexCore.dexOutput) {
+                rename processDexCore.dexOutput.name, processDexCore.dexOutput.name
+            }
+            from files(processJarRetroiOS.archivePath) {
+                rename processJarRetroiOS.archivePath.name, processJarRetroiOS.archivePath.name
+            }
+            from files(processDexRetroiOS.dexOutput) {
+                rename processDexRetroiOS.dexOutput.name, processDexRetroiOS.dexOutput.name
+            }
             from files(processDexiOSJUnit.dexOutput) {
                 rename processDexiOSJUnit.dexOutput.name, processDexiOSJUnit.dexOutput.name
+            }
+            from files(rootProject.external.moe_core.out.moe_core_certificates_zip) {
+                rename rootProject.external.moe_core.out.moe_core_certificates_zip.name, 'moe-core-certificates.zip'
             }
         }
         into('sdk/iphoneos/MOE.framework') {
