@@ -27,6 +27,8 @@ import org.gradle.api.logging.Logging;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.plugins.JavaPluginConvention;
 import org.gradle.api.tasks.SourceSet;
+import org.gradle.api.tasks.compile.CompileOptions;
+import org.gradle.api.tasks.compile.JavaCompile;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
@@ -100,6 +102,14 @@ public class MoePlugin extends AbstractMoePlugin {
         javaConvention = (JavaPluginConvention) project.getConvention().getPlugins().get("java");
         Require.nonNull(javaConvention, "The 'java' Gradle plugin must be applied before the '" + MOE + "' plugin");
 
+        // Add moe-core.jar to the bootclasspath
+        Arrays.asList("compileJava", "compileTestJava").forEach(name -> {
+            Task task = project.getTasks().getByName(name);
+            CompileOptions compileOptions = ((JavaCompile) task).getOptions();
+            compileOptions.setBootClasspath(getSDK().getCoreJar().getAbsolutePath());
+            compileOptions.setFork(true);
+        });
+
         // Install core, ios and junit jars as dependencies
         project.getRepositories().ivy(ivy -> {
             ivy.setName("multi-os-engine-implicit-repo");
@@ -113,6 +123,7 @@ public class MoePlugin extends AbstractMoePlugin {
 
         project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
                 FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
+
         if (extension.getPlatformJar() != null) {
             project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
                     FileUtils.getNameAsArtifact(getExtension().getPlatformJar(), getSDK().sdkVersion));
