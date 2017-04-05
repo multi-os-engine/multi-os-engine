@@ -532,22 +532,62 @@ Task name: `moeIpaBuild`
 
 This task creates an ipa from the app.
 
-**Note:** Settings the Ipa export method, Scheme, Developer Team in the [code signing options](#code-signing) is required!
+**Note:** Settings the Ipa export Scheme, Developer Team in the [code signing options](#code-signing) is required!
 
 Ipa export can be configured by the following options:
 
 ```groovy
 moe {
     ipaExport {
-        // Required! (String) The method of distribution, which can be set as any of the following:
-        // app-store, enterprise, ad-hoc, development
+
+        // (String) Path to the export options plist. If this defined, all other settings ignored
+        plistFile
+
+        // (Boolean) For non-App Store exports, should Xcode re-compile the app from bitcode? Defaults to false.
+        compileBitcode
+
+        // (Boolean) For non-App Store exports, if the app uses On Demand Resources and this is true,
+        // asset packs are embedded in the app bundle so that the app can be tested without a server to host asset
+        // packs. Defaults to true unless onDemandResourcesAssetPacksBaseURL is specified.
+        embedOnDemandResourcesAssetPacksInBundle
+
+        // (String) For non-App Store exports, if the app is using CloudKit, this configures the
+        // "com.apple.developer.icloud-container-environment" entitlement. Available options: Development and Production.
+        // Defaults to Development.
+        iCloudContainerEnvironment
+
+        // For non-App Store exports, users can download your app over the web by opening your distribution manifest
+        // file in a web browser. To generate a distribution manifest, the value of this key should be a dictionary with
+        // three sub-keys:
+
+        appURL
+
+        displayImageURL
+
+        fullSizeImageURL
+
+        // (String) Describes how Xcode should export the archive. Available options: app-store, ad-hoc, package,
+        // enterprise, development, and developer-id. The list of options varies based on the type of archive. Defaults
+        // to development.
         method
 
-        // (Boolean) Option to include symbols in the generated ipa file. Default is true.
+        // (String) For non-App Store exports, if the app uses On Demand Resources and
+        // embedOnDemandResourcesAssetPacksInBundle isn't YES, this should be a base URL specifying where asset packs
+        // are going to be hosted. This configures the app to download asset packs from the specified URL.
+        onDemandResourcesAssetPacksBaseURL
+
+        // (String) For non-App Store exports, should Xcode thin the package for one or more device variants? Available
+        // options: <none> (Xcode produces a non-thinned universal app), <thin-for-all-variants> (Xcode produces a
+        // universal app and all available thinned variants), or a model identifier for a specific device
+        // (e.g. "iPhone7,1"). Defaults to <none>.
+        thinning
+
+        // (Boolean) For App Store exports, should the package include bitcode? Defaults to false.
+        uploadBitcode
+
+        // (Boolean) For App Store exports, should the package include symbols? Defaults to true.
         uploadSymbols
 
-        // (Boolean) Option to include Bitcode. Default is true.
-        uploadBitcode
     }
 }
 ```
