@@ -40,7 +40,6 @@ task prebuild_macos(type: Script, dependsOn: prebuild_macos_static) {
             '-force_load', 'lib/libimobiledevice.a',
             '../../../openssl/build/macos/lib/libcrypto.a',
             '../../../openssl/build/macos/lib/libssl.a',
-            '../../../libxml2/build/macos/lib/libxml2.a',
             '-lz', '-liconv', '-llzma'
 }
 prebuild.dependsOn prebuild_macos
@@ -69,7 +68,6 @@ task prebuild_windows(type: Script, dependsOn: prebuild_windows_static) {
             '../../../../libplist/build/windows/x86_64-w64-mingw32/lib/libplist.a',
             '../../../../openssl/build/windows/x86_64-w64-mingw32/lib/libssl.a',
             '../../../../openssl/build/windows/x86_64-w64-mingw32/lib/libcrypto.a',
-            '../../../../libxml2/build/windows/x86_64-w64-mingw32/lib/libxml2.a',
             '-lole32', '-lws2_32', '-lgdi32'
 }
 prebuild.dependsOn prebuild_windows

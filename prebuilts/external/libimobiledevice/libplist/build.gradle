@@ -29,7 +29,6 @@ task prebuild_macos(type: Prebuild) {
         }
     }
 }
-prebuild_macos.dependsOn ':external/libimobiledevice/libxml2:prebuild_macos'
 prebuild.dependsOn prebuild_macos
 
 task prebuild_windows(type: Prebuild) {
@@ -45,7 +44,6 @@ task prebuild_windows(type: Prebuild) {
     }
 }
 prebuild_windows.dependsOn ':mingwPresence'
-prebuild_windows.dependsOn ':external/libimobiledevice/libxml2:prebuild_windows'
 prebuild.dependsOn prebuild_windows
 
 task clean {
