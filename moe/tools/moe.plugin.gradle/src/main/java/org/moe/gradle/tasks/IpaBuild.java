@@ -35,6 +35,7 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.remote.file.FileList;
+import org.moe.gradle.utils.ExportOptionsPlistManager;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TaskUtils;
@@ -67,6 +68,16 @@ public class IpaBuild extends AbstractBaseTask {
     private static final String CONVENTION_EXPORT_INFO_PLIST = "exportInfoPlist";
     private static final String CONVENTION_EXPORT_UPLOAD_SYMBOLS = "exportUploadSymbols";
     private static final String CONVENTION_EXPORT_UPLOAD_BITCODE = "exportUploadBitcode";
+    private static final String CONVENTION_EXPORT_COMPILE_BITCODE = "exportCompileBitcode";
+    private static final String CONVENTION_EXPORT_ICLOUD = "iCloudContainerEnvironment";
+    private static final String CONVENTION_EXPORT_DEMAND_RESOURCES_BASE_URL = "onDemandResourcesAssetPacksBaseURL";
+    private static final String CONVENTION_EXPORT_DEMAND_RESOURCES_IN_BUNDLE = "embedOnDemandResourcesAssetPacksInBundle";
+    private static final String CONVENTION_THINNING = "thinning";
+    private static final String CONVENTION_APP_URL = "appURL";
+    private static final String CONVENTION_DISPLAY_IMAGE_URL = "displayImageURL";
+    private static final String CONVENTION_FULL_SIZE_IMAGE_URL = "fullSizeImageURL";
+    private static final String CONVENTION_USER_PLIST_FILE = "userPlistFile";
+    private static final String CONVENTION_USER_EXPORT_PLIST = "userExportPlist";
 
     @Nullable
     private Object inputApp;
@@ -261,17 +272,17 @@ public class IpaBuild extends AbstractBaseTask {
     }
 
     @NotNull
-    private boolean uploadSymbols;
+    private boolean userExportPlist;
 
     @Input
     @NotNull
-    public boolean getUploadSymbols() {
-        return getOrConvention(uploadSymbols, CONVENTION_EXPORT_UPLOAD_SYMBOLS);
+    public boolean isUserExportPlist() {
+        return getOrConvention(userExportPlist, CONVENTION_USER_PLIST_FILE);
     }
 
     @IgnoreUnused
-    public void setUploadSymbols(@Nullable boolean uploadSymbols) {
-        this.uploadSymbols = uploadSymbols;
+    public void setUserExportPlist(@Nullable boolean userExportPlist) {
+        this.userExportPlist = userExportPlist;
     }
 
     @NotNull
@@ -288,6 +299,154 @@ public class IpaBuild extends AbstractBaseTask {
         this.uploadBitcode = uploadBitcode;
     }
 
+    @NotNull
+    private boolean compileBitCode;
+
+    @Input
+    @NotNull
+    public boolean getCompileBitcode() {
+        return getOrConvention(compileBitCode, CONVENTION_EXPORT_COMPILE_BITCODE);
+    }
+
+    @IgnoreUnused
+    public void setCompileBitCode(@Nullable boolean compileBitCode) {
+        this.compileBitCode = compileBitCode;
+    }
+
+    @NotNull
+    private boolean embedOnDemandResourcesAssetPacksInBundle;
+
+    @Input
+    @NotNull
+    public boolean getEmbedOnDemandResourcesAssetPacksInBundle() {
+        return nullableGetOrConvention(embedOnDemandResourcesAssetPacksInBundle, CONVENTION_EXPORT_DEMAND_RESOURCES_IN_BUNDLE);
+    }
+
+    @IgnoreUnused
+    public void setEmbedOnDemandResourcesAssetPacksInBundle(boolean embedOnDemandResourcesAssetPacksInBundle) {
+        this.embedOnDemandResourcesAssetPacksInBundle = embedOnDemandResourcesAssetPacksInBundle;
+    }
+
+    @Input
+    @Optional
+    @Nullable
+    public String iCloudContainerEnvironment;
+
+    @Nullable
+    public String getICloudContainerEnvironment() {
+        return nullableGetOrConvention(iCloudContainerEnvironment, CONVENTION_EXPORT_ICLOUD);
+    }
+
+    @IgnoreUnused
+    public void setICloudContainerEnvironment(String iCloudContainerEnvironment) {
+        this.iCloudContainerEnvironment = iCloudContainerEnvironment;
+    }
+
+    @Input
+    @Optional
+    @Nullable
+    public String onDemandResourcesAssetPacksBaseURL;
+
+    @Input
+    @Optional
+    @Nullable
+    public String getOnDemandResourcesAssetPacksBaseURL() {
+        return nullableGetOrConvention(onDemandResourcesAssetPacksBaseURL, CONVENTION_EXPORT_DEMAND_RESOURCES_BASE_URL);
+    }
+
+    @IgnoreUnused
+    public void setOnDemandResourcesAssetPacksBaseURL(String onDemandResourcesAssetPacksBaseURL) {
+        this.onDemandResourcesAssetPacksBaseURL = onDemandResourcesAssetPacksBaseURL;
+    }
+
+    @Input
+    @Optional
+    @Nullable
+    public String thinning;
+
+    @Nullable
+    public String getThinning() {
+        return nullableGetOrConvention(thinning, CONVENTION_THINNING);
+    }
+
+    @IgnoreUnused
+    public void setThinning(String thinning) {
+        this.thinning = thinning;
+    }
+
+    @Input
+    @Optional
+    @Nullable
+    public String appURL;
+
+    public String getAppURL() {
+        return nullableGetOrConvention(appURL, CONVENTION_APP_URL);
+    }
+
+    @IgnoreUnused
+    public void setAppURL(String appURL) {
+        this.appURL = appURL;
+    }
+
+    @Input
+    @Optional
+    @Nullable
+    public String displayImageURL;
+
+    @Nullable
+    public String getDisplayImageURL() {
+        return nullableGetOrConvention(displayImageURL, CONVENTION_DISPLAY_IMAGE_URL);
+    }
+
+    @IgnoreUnused
+    public void setDisplayImageURL(String displayImageURL) {
+        this.displayImageURL = displayImageURL;
+    }
+
+    @Input
+    @Optional
+    @Nullable
+    public String fullSizeImageURL;
+
+    @Nullable
+    public String getFullSizeImageURL() {
+        return nullableGetOrConvention(fullSizeImageURL, CONVENTION_FULL_SIZE_IMAGE_URL);
+    }
+
+    @IgnoreUnused
+    public void setFullSizeImageURL(String fullSizeImageURL) {
+        this.fullSizeImageURL = fullSizeImageURL;
+    }
+
+    @Input
+    @Optional
+    @Nullable
+    public String plistFile;
+
+    @Nullable
+    public String getPlistFile() {
+        return nullableGetOrConvention(plistFile, CONVENTION_USER_PLIST_FILE);
+    }
+
+    @IgnoreUnused
+    public void setPlistFile(String plistFile) {
+        this.plistFile = plistFile;
+    }
+
+    @NotNull
+    private boolean uploadSymbols;
+
+    @Input
+    @NotNull
+    public boolean getUploadSymbols() {
+        return getOrConvention(uploadSymbols, CONVENTION_EXPORT_UPLOAD_SYMBOLS);
+    }
+
+    @IgnoreUnused
+    public void setUploadSymbols(@Nullable boolean uploadSymbols) {
+        this.uploadSymbols = uploadSymbols;
+    }
+
     @Override
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
@@ -295,11 +454,6 @@ public class IpaBuild extends AbstractBaseTask {
         if (getScheme() == null) {
             throw new GradleException("IPA build requires schemes! Please set the "
                     + "moe.xcode.mainScheme property");
-        }
-
-        if (getExportMethod() == null) {
-            throw new GradleException("IPA build requires export method! Please set the "
-                    + "moe.export.method property");
         }
 
         if (getDevelopmentTeam() == null) {
@@ -310,38 +464,27 @@ public class IpaBuild extends AbstractBaseTask {
         final Server remoteServer = getMoePlugin().getRemoteServer();
         final File inputApp = Require.nonNull(getInputApp());
 
-        String exportMethod = getExportMethod();
-
-        if (exportMethod == null || exportMethod.isEmpty()) {
-            throw new GradleException("Export archive method name is not specified!");
+        if (!isUserExportPlist()) {
+            generateExportOptionsPlist();
+            LOG.warn("Ipa export option plist is defined, ignore all other settings");
         }
-
-        clean();
-
-        generateExportOptionsPlist();
 
         if (remoteServer != null) {
             final Path ipaRel;
-            final Path exportOptionsRel;
             try {
                 ipaRel = getInnerProjectRelativePath(getOutputIpa());
-                exportOptionsRel = getInnerProjectRelativePath(getExportOptionsPlist());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
             final String remoteIpa = remoteServer.getRemotePath(ipaRel);
-            final String remoteExportOptions = remoteServer.getRemotePath(exportOptionsRel);
 
-            // Upload project
+            // Upload ipa export options
             final FileList list = new FileList(getProject().getProjectDir(), remoteServer.getBuildDir());
-            final String remoteApp = list.add(inputApp);
+            list.add(getExportOptionsPlist());
 
-            // NOTE: do not re-upload the files, incremental builds are disabled for remotely executed tasks, the
-            // files are guarantied to be there. Also, enabling this would possibly break the signed files.
-            // remoteServer.upload("application files", list);
+            remoteServer.upload("Upload export options", list);
+
             remoteServer.exec("remove previous ipa", "rm -rf " + remoteIpa);
-
-            remoteServer.exec("remove previous export options", "rm -rf " + remoteExportOptions);
 
             remoteServer.exec("archive", "xcrun xcodebuild " +
                     calculateArchiveArgs().stream().collect(Collectors.joining(" ")));
@@ -426,9 +569,28 @@ public class IpaBuild extends AbstractBaseTask {
             }
             return resolvePathRelativeToRoot(getProject().file(workspace));
         });
+
         addConvention(CONVENTION_EXPORT_METHOD, ext.ipaExport::getMethod);
         setUploadBitcode(ext.ipaExport.getUploadBitcode());
         setUploadSymbols(ext.ipaExport.getUploadSymbols());
+        setCompileBitCode(ext.ipaExport.getCompileBitcode());
+        setEmbedOnDemandResourcesAssetPacksInBundle(ext.ipaExport.getEmbedOnDemandResourcesAssetPacksInBundle());
+        addConvention(CONVENTION_EXPORT_ICLOUD, ext.ipaExport::getICloudContainerEnvironment);
+        addConvention(CONVENTION_EXPORT_DEMAND_RESOURCES_BASE_URL, ext.ipaExport::getOnDemandResourcesAssetPacksBaseURL);
+        addConvention(CONVENTION_EXPORT_DEMAND_RESOURCES_IN_BUNDLE, ext.ipaExport::getEmbedOnDemandResourcesAssetPacksInBundle);
+        addConvention(CONVENTION_THINNING, ext.ipaExport::getThinning);
+        addConvention(CONVENTION_APP_URL, ext.ipaExport::getAppURL);
+        addConvention(CONVENTION_DISPLAY_IMAGE_URL, ext.ipaExport::getDisplayImageURL);
+        addConvention(CONVENTION_FULL_SIZE_IMAGE_URL, ext.ipaExport::getFullSizeImageURL);
+        addConvention(CONVENTION_USER_PLIST_FILE, ext.ipaExport::getPlistFile);
+        if (!ext.ipaExport.isUserDefinedExportPlist()) {
+            setUserExportPlist(false);
+            addConvention(CONVENTION_EXPORT_INFO_PLIST, () -> resolvePathInBuildDir(out, "export_options.plist"));
+        } else {
+            setUserExportPlist(true);
+            addConvention(CONVENTION_EXPORT_INFO_PLIST, () -> resolvePathInProjectDir(ext.ipaExport.getPlistFile()));
+        }
+
         addConvention(CONVENTION_CONFIGURATION, Mode.RELEASE::getXcodeCompatibleName);
         addConvention(CONVENTION_OUTPUT_ARCHIVE, () -> {
             return resolvePathInBuildDir("archive");
@@ -446,19 +608,6 @@ public class IpaBuild extends AbstractBaseTask {
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "IpaBuild.log"));
-        addConvention(CONVENTION_EXPORT_INFO_PLIST, () -> resolvePathInBuildDir(out, "export_options.plist"));
-    }
-
-    private void clean() {
-        File ipa = getOutputIpa();
-        if (ipa.exists()) {
-            ipa.delete();
-        }
-
-        File exportOption = getExportOptionsPlist();
-        if (exportOption.exists()) {
-            exportOption.delete();
-        }
     }
 
     private List<String> calculateArchiveArgs() {
@@ -631,44 +780,58 @@ public class IpaBuild extends AbstractBaseTask {
         LOG.quiet("Generate export_options.plist");
 
         try {
-
-            String template;
-            {
-                StringBuilder builder = new StringBuilder();
-                InputStream stream = getClass().getResourceAsStream("export_options_template.txt");
-                byte buff[] = new byte[1024];
-                int len;
-                while ((len = stream.read(buff)) > 0) {
-                    builder.append(new String(buff, 0, len, StandardCharsets.UTF_8));
+            if (!exportOptionsPlist.exists()) {
+                String template;
+                {
+                    StringBuilder builder = new StringBuilder();
+                    InputStream stream = getClass().getResourceAsStream("export_options_template.txt");
+                    byte buff[] = new byte[1024];
+                    int len;
+                    while ((len = stream.read(buff)) > 0) {
+                        builder.append(new String(buff, 0, len, StandardCharsets.UTF_8));
+                    }
+                    template = builder.toString();
                 }
-                template = builder.toString();
+
+                PrintWriter writer = new PrintWriter(exportOptionsPlist);
+                writer.print(template);
+                writer.close();
             }
 
-            String targetTemplate = "" + template;
+            ExportOptionsPlistManager manager = new ExportOptionsPlistManager(exportOptionsPlist);
+            manager.clean();
 
-            {
-                String method = getExportMethod();
-                targetTemplate = targetTemplate.replace("%%METHOD_NAME%%", method);
+            String method = getExportMethod();
+            if (method != null && !method.isEmpty()) {
+                manager.setMethod(method);
+            }
+            manager.setTeamId(getDevelopmentTeam());
+            manager.setCompileBitcode(getCompileBitcode());
+            manager.setUploadBitcode(getUploadBitcode());
+            manager.setUploadSymbols(getUploadSymbols());
+            manager.setEmbedOnDemandResourcesAssetPacksInBundle(getEmbedOnDemandResourcesAssetPacksInBundle());
+            String iCloudContainerEnvironment = getICloudContainerEnvironment();
+            if (iCloudContainerEnvironment != null && !iCloudContainerEnvironment.isEmpty()) {
+                manager.setICloudContainerEnvironment(iCloudContainerEnvironment);
+            }
+            String thinning = getThinning();
+            if (thinning != null && !thinning.isEmpty()) {
+                manager.setThinning(thinning);
+            }
+            String appUrl = getAppURL();
+            if (appUrl != null && !appUrl.isEmpty()) {
+                manager.setAppURL(appUrl);
+            }
+            String displayImageURL = getDisplayImageURL();
+            if (displayImageURL != null && !displayImageURL.isEmpty()) {
+                manager.setDisplayImageURL(displayImageURL);
+            }
+            String fullSizeImageURL = getFullSizeImageURL();
+            if (fullSizeImageURL != null && !fullSizeImageURL.isEmpty()) {
+                manager.setFullSizeImageURL(fullSizeImageURL);
             }
 
-            {
-                String teamID = getDevelopmentTeam();
-                targetTemplate = targetTemplate.replace("%%TEAM_ID%%", teamID);
-            }
-
-            {
-                boolean uploadSymbols = getUploadSymbols();
-                targetTemplate = targetTemplate.replace("%%UPLOAD_SYMBOLS_VALUE%%", String.valueOf(uploadSymbols));
-            }
-
-            {
-                boolean uploadBitcode = getUploadBitcode();
-                targetTemplate = targetTemplate.replace("%%UPLOAD_BITCODE_VALUE%%", String.valueOf(uploadBitcode));
-            }
-
-            PrintWriter writer = new PrintWriter(exportOptionsPlist);
-            writer.print(targetTemplate);
-            writer.close();
+            manager.save();
 
         } catch (Throwable t) {
             throw new GradleException("Could not generate export_options.plist", t);
