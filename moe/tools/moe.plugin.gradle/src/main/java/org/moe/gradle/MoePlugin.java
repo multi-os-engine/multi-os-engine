@@ -112,11 +112,20 @@ public class MoePlugin extends AbstractMoePlugin {
 
         // Install core, ios and junit jars as dependencies
         project.getRepositories().ivy(ivy -> {
-            ivy.setName("multi-os-engine-implicit-repo");
+            ivy.setName("multi-os-engine-implicit-sdk-repo");
             try {
                 ivy.setUrl(getSDK().getSDKDir().toURI().toURL());
             } catch (MalformedURLException e) {
-                throw new GradleException("Failed to add Multi-OS Engine repo", e);
+                throw new GradleException("Failed to add Multi-OS Engine SDK repo", e);
+            }
+            ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
+        });
+        project.getRepositories().ivy(ivy -> {
+            ivy.setName("multi-os-engine-implicit-tools-repo");
+            try {
+                ivy.setUrl(getSDK().getToolsDir().toURI().toURL());
+            } catch (MalformedURLException e) {
+                throw new GradleException("Failed to add Multi-OS Engine Tools repo", e);
             }
             ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
         });
@@ -130,6 +139,13 @@ public class MoePlugin extends AbstractMoePlugin {
         }
         project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
                 FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
+
+        // Install java 8 support jars to fix lambda compilation
+        project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
+                FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
+
+        project.getDependencies().add(JavaPlugin.TEST_COMPILE_CONFIGURATION_NAME,
+                FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));        
 
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
