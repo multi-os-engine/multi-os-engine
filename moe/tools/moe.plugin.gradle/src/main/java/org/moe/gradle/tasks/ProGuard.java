@@ -346,6 +346,9 @@ public class ProGuard extends AbstractBaseTask {
                     throw new IllegalStateException();
             }
 
+            // Java 8 Support jar should always be included in the library jars
+            jars.remove(sdk.getJava8SupportJar());
+
             return jars;
         });
         addConvention(CONVENTION_LIBRARY_JARS, () -> {
