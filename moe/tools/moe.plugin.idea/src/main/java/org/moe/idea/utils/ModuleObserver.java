@@ -26,6 +26,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.DumbAwareRunnable;
 import com.intellij.openapi.project.ModuleListener;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.DependencyScope;
 import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
@@ -42,6 +43,7 @@ import org.jetbrains.annotations.NotNull;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationType;
+import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.io.File;
@@ -72,10 +74,26 @@ public class ModuleObserver implements ModuleListener {
                 public void run() {
                     if (MOESdkPlugin.isValidMoeModule(module)) {
                         checkRunConfiguration(project, module);
+                        checkMoeSDK(module);
                     }
                 }
             });
         }
+    }
+
+    private void checkMoeSDK(@NotNull Module module) {
+        final ModuleRootManager manager = ModuleRootManager.getInstance(module);
+        final ModifiableRootModel rootModel = manager.getModifiableModel();
+        ApplicationManager.getApplication().runWriteAction(new DumbAwareRunnable() {
+            @Override
+            public void run() {
+                Sdk sdk = MOESdkType.getMOESdk(rootModel.getModule());
+                if (sdk != null) {
+                    rootModel.setSdk(sdk);
+                    rootModel.commit();
+                }
+            }
+        });
     }
 
     @Override

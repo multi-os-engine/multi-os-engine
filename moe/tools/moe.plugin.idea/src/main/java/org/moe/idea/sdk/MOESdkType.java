@@ -152,18 +152,6 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
         LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
 
-        for(File file : MOESdkPlugin.getSdkJavaLibraries(sdkRootPath)) {
-            VirtualFile virtualFile = localFileSystem.findFileByIoFile(file);
-            sdkModificator.addRoot(virtualFile, OrderRootType.CLASSES);
-        }
-
-        for (File file : MOESdkPlugin.getSdkJavaDocs(sdkRootPath)) {
-            if (file.exists()) {
-                VirtualFile virtualFile = localFileSystem.findFileByIoFile(file);
-                sdkModificator.addRoot(virtualFile, JavadocOrderRootType.getInstance());
-            }
-        }
-
         sdkModificator.setVersionString(jdk.getVersionString());
         sdkModificator.setHomePath(sdkRootPath);
         sdkModificator.commitChanges();
