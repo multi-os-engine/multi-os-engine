@@ -33,6 +33,8 @@ class GameViewController protected constructor(peer: Pointer) : GLKViewControlle
     @Selector("init")
     override external fun init(): GameViewController
 
+    @JvmField val FLOAT_BYTES = 4
+
     // Uniform index.
     internal enum class Uniforms {
         UNIFORM_MODELVIEWPROJECTION_MATRIX,
@@ -175,7 +177,7 @@ class GameViewController protected constructor(peer: Pointer) : GLKViewControlle
         glGenBuffers(1, target)
         vertexBuffer = target.value
         glBindBuffer(ARRAY_BUFFER, vertexBuffer)
-        glBufferData(ARRAY_BUFFER, (gCubeVertexData.size * java.lang.Float.BYTES).toLong(), PtrFactory.newFloatArray(gCubeVertexData), STATIC_DRAW)
+        glBufferData(ARRAY_BUFFER, (gCubeVertexData.size * FLOAT_BYTES).toLong(), PtrFactory.newFloatArray(gCubeVertexData), STATIC_DRAW)
 
         glEnableVertexAttribArray(GLKVertexAttrib.Position)
         glVertexAttribPointer(GLKVertexAttrib.Position, 3, FLOAT, FALSE.toByte(), 24, PtrFactory
