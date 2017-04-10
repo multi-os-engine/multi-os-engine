@@ -37,7 +37,7 @@ ext {
 ext {
     external.natj = [:]
     external.natj.root = file('../natj/natj').absolutePath
-    external.natj.jar = file("${external.natj.root}/build/libs/natj-1.1.1.jar")
+    external.natj.jar = file("${external.natj.root}/build/libs/natj-1.1.2.jar")
     external.natj.sources = file("${external.natj.root}/src/main/java")
     external.natj.jnipath = file("${external.natj.root}/natj-mac/build/xcode/Release")
 }
