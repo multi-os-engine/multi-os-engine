@@ -482,6 +482,13 @@ public class ObjCObjectMapper implements Mapper {
 
         // Handle null pointers as null
         if (peer == 0) {
+            // Cleanup for init methods
+            Object target = ObjCRuntime.getInitTargetOnCurrentThread();
+            if (target != null && !info.arg && target instanceof NativeObject) {
+                Pointer pointer = ((NativeObject)target).getPeer();
+                pointer.setPeer(0);
+            }
+
             return null;
         }
 
