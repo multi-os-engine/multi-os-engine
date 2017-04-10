@@ -95,6 +95,8 @@ public class GameViewController extends GLKViewController {
 
     private static final boolean DEBUG = false;
 
+    private static final int FLOAT_BYTES = 4;
+
     @Owned
     @Selector("alloc")
     public static native GameViewController alloc();
@@ -251,7 +253,7 @@ public class GameViewController extends GLKViewController {
         glGenBuffers(1, target);
         vertexBuffer = target.getValue();
         glBindBuffer(ARRAY_BUFFER, vertexBuffer);
-        glBufferData(ARRAY_BUFFER, gCubeVertexData.length * Float.BYTES, PtrFactory.newFloatArray
+        glBufferData(ARRAY_BUFFER, gCubeVertexData.length * FLOAT_BYTES, PtrFactory.newFloatArray
                 (gCubeVertexData), STATIC_DRAW);
 
         glEnableVertexAttribArray(GLKVertexAttrib.Position);
