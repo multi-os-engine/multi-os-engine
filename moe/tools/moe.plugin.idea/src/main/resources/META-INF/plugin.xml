@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.moe</id>
   <name>Multi-OS Engine Plugin</name>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
 
   <vendor url="https://multi-os-engine.org">Multi-OS Engine</vendor>
 
