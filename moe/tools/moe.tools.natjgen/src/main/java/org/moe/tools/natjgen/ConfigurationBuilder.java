@@ -186,13 +186,6 @@ public class ConfigurationBuilder {
         }
 
         // Add default unit rules
-        // @formatter:off
-        unitRules.add(new UnitRuleBuilder(true)
-                .addCondition("path-prefix", "${SDK}")
-                .addAction("replace-package-base", "apple")
-                .addAction("handling-mode", "external")
-                .build());
-        // @formatter:on
         unitRules.add(getDisabledObjCRule("objc-class-method", "class"));
         unitRules.add(getDisabledObjCRule("objc-class-method", "initialize"));
         unitRules.add(getDisabledObjCRule("objc-class-method", "load"));
@@ -200,6 +193,14 @@ public class ConfigurationBuilder {
         unitRules.add(getDisabledObjCRule("objc-instance-method", "release"));
         unitRules.add(getDisabledObjCRule("objc-instance-method", "autorelease"));
         unitRules.add(getDisabledObjCRule("objc-instance-method", "dealloc"));
+
+        // @formatter:off
+        unitRules.add(new UnitRuleBuilder(true)
+                .addCondition("path-prefix", "${SDK}")
+                .addAction("replace-package-base", "apple")
+                .addAction("handling-mode", "external")
+                .build());
+        // @formatter:on
 
         // Setup bindings
         final FrameworkBindingVisitor frameworkBindingVisitor = new FrameworkBindingVisitor() {
@@ -340,7 +341,7 @@ public class ConfigurationBuilder {
             throw new NullPointerException();
         }
         // @formatter:off
-        return new UnitRuleBuilder(false)
+        return new UnitRuleBuilder(true)
                 .addCondition("type-match", type)
                 .addCondition("name-match", name)
                 .addAction("handling-mode", "disabled")
