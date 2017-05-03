@@ -72,9 +72,11 @@ dependencies {
 
     compileOnly project(':moe.tools.common')
     compileOnly project(':moe.document.pbxproj')
+    compileOnly project(':moe.generator.project')
 
     included project(':moe.tools.common')
     included project(':moe.document.pbxproj')
+    included project(':moe.generator.project')
 }
 
 tasks.test.dependsOn ':moe-sdk:devsdk'

@@ -173,6 +173,8 @@ public class MoePlugin extends AbstractMoePlugin {
                 emptyList(), MoePlugin.this);
         addRule(NatJGen.class, "Generate binding",
                 emptyList(), MoePlugin.this);
+        addRule(UpdateXcodeSettings.class, "Updates Xcode project settings",
+                emptyList(), MoePlugin.this);
 
         project.getTasks().create("moeSDKProperties", task -> {
             task.setGroup(MOE);
