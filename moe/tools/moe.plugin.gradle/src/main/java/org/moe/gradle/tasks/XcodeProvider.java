@@ -19,16 +19,20 @@ package org.moe.gradle.tasks;
 import org.gradle.api.GradleException;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.SourceSet;
+import org.moe.document.pbxproj.ProjectException;
+import org.moe.generator.project.writer.XcodeEditor;
 import org.moe.gradle.MoePlatform;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.options.XcodeOptions;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -94,6 +98,20 @@ public class XcodeProvider extends AbstractBaseTask {
                     "ln -s '" + remoteOat + "' '" + remoteOatLink + "'");
 
         } else {
+            XcodeOptions xcode = getMoeExtension().xcode;
+            File xcodeFile = new File((String) xcode.getProject());
+            try {
+                XcodeEditor xcodeEditor = new XcodeEditor(xcodeFile);
+                if (!xcodeEditor.isUpToDate()) {
+                    throw new GradleException("Xcode project is not up to date, update it with task " +
+                            MoePlugin.getTaskName(UpdateXcodeSettings.class));
+                }
+            } catch (ProjectException e) {
+                throw new GradleException("Could not open Xcode project to check if it is up to date", e);
+            } catch (IOException e) {
+                throw new GradleException("Could not determine if the Xcode project is up to date", e);
+            }
+
             final Path artLink = getArtLink();
             try {
                 Files.deleteIfExists(artLink);

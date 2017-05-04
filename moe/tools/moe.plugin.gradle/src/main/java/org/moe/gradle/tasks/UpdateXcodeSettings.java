@@ -32,11 +32,26 @@ import java.nio.file.Paths;
 
 public class UpdateXcodeSettings extends AbstractBaseTask {
 
+    private XcodeEditor xcodeEditor;
+
     public UpdateXcodeSettings() {
+        XcodeOptions xcode = getMoeExtension().xcode;
+        File xcodeFile = new File((String) xcode.getProject());
+
+        try {
+            xcodeEditor = new XcodeEditor(xcodeFile);
+        } catch (ProjectException e) {
+            throw new GradleException("Could not open Xcode project for updating settings", e);
+        }
+
         getOutputs().upToDateWhen(new Spec<Task>() {
             @Override
             public boolean isSatisfiedBy(Task task) {
-                return false;
+                try {
+                    return xcodeEditor.isUpToDate();
+                } catch (IOException e) {
+                    throw new GradleException("Could not determine if the Xcode project up to date", e);
+                }
             }
         });
     }
@@ -47,12 +62,6 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
 
         File xcodeFile = new File((String) xcode.getProject());
 
-        final XcodeEditor xcodeEditor;
-        try {
-            xcodeEditor = new XcodeEditor(xcodeFile);
-        } catch (ProjectException e) {
-            throw new GradleException("Could not open Xcode project for updating settings", e);
-        }
         XcodeEditor.Settings settings = new Settings();
         settings.mainTarget = xcode.getMainTarget();
         settings.testTarget = xcode.getTestTarget();
