@@ -106,6 +106,7 @@ public class MOEGenerateActionsAndOutletsAction extends AnAction {
                 private void runInternal() throws IOException, ExecutionException {
 
                     final GeneralCommandLine commandLine = MOEGradleRunner.construct(module, "moeGenerateUIObjCInterfaces");
+
                     final OSProcessHandler handler = new OSProcessHandler(commandLine);
                     handler.setShouldDestroyProcessRecursively(true);
 
