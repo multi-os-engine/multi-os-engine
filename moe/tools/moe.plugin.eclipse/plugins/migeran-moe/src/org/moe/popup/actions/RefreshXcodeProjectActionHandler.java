@@ -1,26 +1,31 @@
 package org.moe.popup.actions;
 
 import java.io.File;
-import java.util.Properties;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.moe.common.utils.ProjectUtil;
-import org.moe.generator.project.writer.XcodeEditor;
-import org.moe.generator.project.writer.XcodeEditor.Settings;
+import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
+import org.moe.common.exec.ExecRunner;
+import org.moe.common.exec.ExecRunnerBase.ExecRunnerListener;
+import org.moe.common.exec.GradleExec;
+import org.moe.common.exec.IKillListener;
+import org.moe.maven.ExecuteMOEPomAction;
+import org.moe.runconfig.MOEProjectBuildConsole;
 import org.moe.utils.MessageFactory;
 import org.moe.utils.ProjectHelper;
 
 public class RefreshXcodeProjectActionHandler extends AbstractHandler {
-	
+
 	private static final String ID = "org.moe.popup.actions.RefreshXcodeProjectActionHandler";
 
 	@Override
@@ -29,7 +34,7 @@ public class RefreshXcodeProjectActionHandler extends AbstractHandler {
 		if (project == null) {
 			return MessageFactory.showErrorDialog("There are no selected projects");
 		}
-		
+
 		try {
 			refreshXcodeProject(project);
 			return null;
@@ -39,61 +44,81 @@ public class RefreshXcodeProjectActionHandler extends AbstractHandler {
 	}
 
 	private void refreshXcodeProject(IProject project) throws InterruptedException {
-		Job job = new Job("Injecting/Refreshing Xcode Settings") {
+		try {
+			if (project.hasNature("org.eclipse.m2e.core.maven2Nature")) {
+				ExecuteMOEPomAction goalAction = new ExecuteMOEPomAction();
+				goalAction.runGoal(project, "moe:updateXcodeSettings");
 
-			@Override
-			protected IStatus run(IProgressMonitor m) {
-				
-				final IProgressMonitor monitor = m == null ? new NullProgressMonitor() : m;
+				// Refresh project
+				project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 
-				try {
-	    			
-	    			monitor.beginTask("Injecting/Refreshing Xcode Settings", 4);
-	    			
-					final File projectFile = project.getLocation().toFile();
-					
-					monitor.worked(1);
+			} else {
+				Job job = new Job("Injecting/Refreshing Xcode Settings") {
 
-					final Properties properties = ProjectUtil
-	                        .retrievePropertiesFromGradle(projectFile, ProjectUtil.XCODE_PROPERTIES_TASK);
-					
-					monitor.worked(1);
+					@Override
+					protected IStatus run(IProgressMonitor m) {
 
-	                final String xcodeProjectPath = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
-	                final String mainTarget = properties.getProperty(ProjectUtil.XCODE_MAIN_TARGET_KEY);
-	                final String testTarget = properties.getProperty(ProjectUtil.XCODE_TEST_TARGET_KEY);
-	                File xcodeFile = new File(xcodeProjectPath);
-	                if (!xcodeFile.exists()) {
-	                    throw new RuntimeException("Xcode project does not exist at " + xcodeProjectPath);
-	                }
+						final IProgressMonitor monitor = m == null ? new NullProgressMonitor() : m;
 
-	                final XcodeEditor xcodeEditor = new XcodeEditor(xcodeFile);
-	                XcodeEditor.Settings settings = new Settings();
-	                settings.mainTarget = (mainTarget == null || mainTarget.length() == 0) ? null : mainTarget;
-	                settings.testTarget = (testTarget == null || testTarget.length() == 0) ? null : testTarget;
-	                settings.moeProject = projectFile;
-	                settings.xcodeProject = xcodeFile;
-	                xcodeEditor.update(settings);
-	                
-	                monitor.worked(1);
+						try {
+							MessageConsole console = MOEProjectBuildConsole.getLaunchConsole();
+							console.clearConsole();
+							final MessageConsoleStream consoleStream = console.newMessageStream();
 
-	                xcodeEditor.getProjectFile().save();
-					
-					monitor.done();
+							monitor.beginTask("Injecting/Refreshing Xcode Settings", 4);
 
-					// Refresh project
-					project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
-				} catch (Exception e) {
-					return new Status(Status.ERROR, ID, "Unable to refresh Xcode project", e);
-				}
+							final File f = project.getLocation().toFile();
 
-				return Status.OK_STATUS;
+							monitor.worked(1);
+
+							GradleExec exec = new GradleExec(f);
+
+							exec.getArguments().add("moeUpdateXcodeSettings");
+							ExecRunner runner = exec.getRunner();
+							runner.getBuilder().directory(f);
+
+							runner.setListener(new ExecRunnerListener() {
+
+								@Override
+								public void stdout(String line) {
+									consoleStream.println(line);
+								}
+
+								@Override
+								public void stderr(String line) {
+									consoleStream.println(line);
+								}
+							});
+
+							monitor.worked(1);
+
+							runner.run(new IKillListener() {
+
+								@Override
+								public boolean needsKill() {
+									return false;
+								}
+							});
+
+							monitor.done();
+
+							// Refresh project
+							project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+						} catch (Exception e) {
+							return new Status(Status.ERROR, ID, "Unable to refresh Xcode project", e);
+						}
+
+						return Status.OK_STATUS;
+					}
+				};
+				job.setPriority(Job.SHORT);
+				job.setRule(project);
+				job.join();
+				job.schedule();
 			}
-		};
-		job.setPriority(Job.SHORT);
-		job.setRule(project);
-		job.join();
-		job.schedule();
-	
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
