@@ -35,6 +35,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Properties;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Xcode editor for generic Xcode project changes. This class is used for updating an Xcode project.
@@ -49,6 +51,16 @@ public class XcodeEditor extends AbstractXcodeEditor {
      * Xcode project.
      */
     protected final PBXProject project;
+
+    /**
+     * This is the name of the build setting that stores the version of the Xcode project.
+     */
+    private final String MOE_VERSION = "MOE_VERSION";
+
+    /**
+     * Field storing whether the Xcode project is up to date.
+     */
+    private AtomicBoolean isUpToDate;
 
     /**
      * Creates a new XcodeEditor instance.
@@ -79,6 +91,38 @@ public class XcodeEditor extends AbstractXcodeEditor {
      */
     public ProjectFile getProjectFile() {
         return projectFile;
+    }
+
+    /**
+     * Returns whether the project is up to date.
+     *
+     * @return Whether the Xcode project is up to date.
+     * @throws IOException if an I/O error occurs
+     */
+    public boolean isUpToDate() throws IOException {
+        if (isUpToDate != null) {
+            return isUpToDate.get();
+        }
+
+        isUpToDate = new AtomicBoolean();
+
+        String expectedVersion = getExpectedVersion();
+
+        Map<String, String> versionSettings = getBuildSetting(project, MOE_VERSION, null);
+        if (versionSettings.size() !=
+                project.getBuildConfigurationList().getReferenced().getOrCreateBuildConfigurations().size()) {
+            isUpToDate.set(false);
+        } else {
+            isUpToDate.set(true);
+            for (String version : versionSettings.values()) {
+                if (!expectedVersion.equals(version)) {
+                    isUpToDate.set(false);
+                    break;
+                }
+            }
+        }
+
+        return isUpToDate.get();
     }
 
     /**
@@ -122,6 +166,8 @@ public class XcodeEditor extends AbstractXcodeEditor {
     public void update(Settings settings) throws IOException {
         settings.validate();
 
+        configureProject();
+
         configureTarget(getTarget(settings.mainTarget), settings, false);
         final PBXNativeTarget testTarget = getTarget(settings.testTarget, true);
         if (testTarget != null) {
@@ -149,6 +195,40 @@ public class XcodeEditor extends AbstractXcodeEditor {
         for (PBXObjectRef<?> ref : toRemove) {
             projectFile.getRoot().getObjects().remove(ref);
         }
+    }
+
+    /**
+     * Retrieves the expected Xcode settings version.
+     *
+     * @return The expected Xcode settings version.
+     * @throws IOException if an I/O error occurs
+     */
+    private String getExpectedVersion() throws IOException {
+        final Properties props = new Properties();
+        props.load(getClass().getResourceAsStream("/org/moe/generator/project/moe.properties"));
+        return props.getProperty("MOE-Xcode-Version");
+    }
+
+    /**
+     * Makes the Xcode project up to date by setting the version.
+     */
+    private void setAsUpToDate() throws IOException {
+        String expectedVersion = getExpectedVersion();
+        setBuildSetting(project, MOE_VERSION, expectedVersion);
+        if (isUpToDate == null) {
+            isUpToDate = new AtomicBoolean();
+        }
+        isUpToDate.set(true);
+    }
+
+    /**
+     * Configures the project.
+     *
+     * @throws IOException if an I/O error occurs
+     */
+    private void configureProject() throws IOException {
+        setAsUpToDate();
+        cleanupBuildSettings(project);
     }
 
     /**

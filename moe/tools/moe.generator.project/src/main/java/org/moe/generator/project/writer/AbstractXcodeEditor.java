@@ -24,10 +24,12 @@ import org.moe.document.pbxproj.PBXGroup;
 import org.moe.document.pbxproj.PBXNativeTarget;
 import org.moe.document.pbxproj.PBXObject;
 import org.moe.document.pbxproj.PBXObjectRef;
+import org.moe.document.pbxproj.PBXProject;
 import org.moe.document.pbxproj.PBXShellScriptBuildPhase;
 import org.moe.document.pbxproj.PBXSourcesBuildPhase;
 import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.XCBuildConfiguration;
+import org.moe.document.pbxproj.XCConfigurationList;
 import org.moe.document.pbxproj.nextstep.Array;
 import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
@@ -173,8 +175,25 @@ public abstract class AbstractXcodeEditor {
      * @param target Target to clean up the build settings in
      */
     public static void cleanupBuildSettings(PBXNativeTarget target) {
-        for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
-                .getOrCreateBuildConfigurations()) {
+        cleanupBuildSettings(target.getBuildConfigurationList().getReferenced());
+    }
+
+    /**
+     * Clean op build settings in the project.
+     *
+     * @param project Project to clean up the build settings in
+     */
+    public static void cleanupBuildSettings(PBXProject project) {
+        cleanupBuildSettings(project.getBuildConfigurationList().getReferenced());
+    }
+
+    /**
+     * Clean op build settings in the specified configuration list.
+     *
+     * @param configuretionList Configuration list to clean up the build settings in
+     */
+    private static void cleanupBuildSettings(XCConfigurationList configuretionList) {
+        for (PBXObjectRef<XCBuildConfiguration> ref : configuretionList.getOrCreateBuildConfigurations()) {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();
             final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
             buildSettings.sortByKeys();
@@ -261,7 +280,7 @@ public abstract class AbstractXcodeEditor {
     }
 
     /**
-     * Returns the value for the specified build setting.
+     * Returns the value from a target for the specified build setting.
      *
      * @param target       Target to get build settings from
      * @param key          Build settings key
@@ -270,9 +289,34 @@ public abstract class AbstractXcodeEditor {
      */
     public static Map<String, String> getBuildSetting(PBXNativeTarget target, String key,
             Map<String, String> defaultValue) {
+        return getBuildSetting(target.getBuildConfigurationList().getReferenced(), key, defaultValue);
+    }
+
+    /**
+     * Returns the value from a project for the specified build setting.
+     *
+     * @param project      Target to get build settings from
+     * @param key          Build settings key
+     * @param defaultValue Default value for key
+     * @return Value map for key or default value
+     */
+    public static Map<String, String> getBuildSetting(PBXProject project, String key,
+            Map<String, String> defaultValue) {
+        return getBuildSetting(project.getBuildConfigurationList().getReferenced(), key, defaultValue);
+    }
+
+    /**
+     * Returns the value from a configuration list for the specified build setting.
+     *
+     * @param configurationList Configuration list to get build settings from
+     * @param key               Build settings key
+     * @param defaultValue      Default value for key
+     * @return Value map for key or default value
+     */
+    private static Map<String, String> getBuildSetting(XCConfigurationList configurationList, String key,
+            Map<String, String> defaultValue) {
         final Map<String, String> map = new HashMap<String, String>();
-        for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
-                .getOrCreateBuildConfigurations()) {
+        for (PBXObjectRef<XCBuildConfiguration> ref : configurationList.getOrCreateBuildConfigurations()) {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();
             final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
             for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
@@ -287,9 +331,11 @@ public abstract class AbstractXcodeEditor {
                 }
             }
         }
-        for (Entry<String, String> entry : defaultValue.entrySet()) {
-            if (!map.containsKey(entry.getKey())) {
-                map.put(entry.getKey(), entry.getValue());
+        if (defaultValue != null) {
+            for (Entry<String, String> entry : defaultValue.entrySet()) {
+                if (!map.containsKey(entry.getKey())) {
+                    map.put(entry.getKey(), entry.getValue());
+                }
             }
         }
         return map;
@@ -303,8 +349,29 @@ public abstract class AbstractXcodeEditor {
      * @param value  Value for key
      */
     public static void setBuildSetting(PBXNativeTarget target, String key, String value) {
-        for (PBXObjectRef<XCBuildConfiguration> ref : target.getBuildConfigurationList().getReferenced()
-                .getOrCreateBuildConfigurations()) {
+        setBuildSetting(target.getBuildConfigurationList().getReferenced(), key, value);
+    }
+
+    /**
+     * Sets the value for the specified build setting.
+     *
+     * @param project Project to get build settings from
+     * @param key     Build settings key
+     * @param value   Value for key
+     */
+    public static void setBuildSetting(PBXProject project, String key, String value) {
+        setBuildSetting(project.getBuildConfigurationList().getReferenced(), key, value);
+    }
+
+    /**
+     * Sets the value for the specified build setting.
+     *
+     * @param configurationList Project to get build settings from
+     * @param key               Build settings key
+     * @param value             Value for key
+     */
+    private static void setBuildSetting(XCConfigurationList configurationList, String key, String value) {
+        for (PBXObjectRef<XCBuildConfiguration> ref : configurationList.getOrCreateBuildConfigurations()) {
             final XCBuildConfiguration buildConfiguration = ref.getReferenced();
             final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
             for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
