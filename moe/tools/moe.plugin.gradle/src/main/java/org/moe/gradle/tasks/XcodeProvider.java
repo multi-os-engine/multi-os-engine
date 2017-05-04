@@ -99,7 +99,7 @@ public class XcodeProvider extends AbstractBaseTask {
 
         } else {
             XcodeOptions xcode = getMoeExtension().xcode;
-            File xcodeFile = new File((String) xcode.getProject());
+            File xcodeFile = getProject().file(xcode.getProject());
             try {
                 XcodeEditor xcodeEditor = new XcodeEditor(xcodeFile);
                 if (!xcodeEditor.isUpToDate()) {
