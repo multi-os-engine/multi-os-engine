@@ -37,6 +37,7 @@ The MOE Gradle plugin adds support to building MOE based applications via Gradle
   * [TestRemote Task](#testremote-task)
   * [RemoteServerSetup Task](#remoteserversetup-task)
   * [NatJGen Task](#natjgen-task)
+  * [UpdateXcodeSettings Task](#updatexcodesettings-task)
 * [Remote Server Settings](#remote-server-settings)
 
 ## Other Documents
@@ -478,7 +479,8 @@ Task name: `moe<sourceset><mode><arch><plat>XcodeProvider`
 - Values for `plat`: Iphoneos, Iphonesimulator
 
 This task is responsible for collecting all of the files which are needed by Xcode so it can compile the application
-package. This task depends on most of the tasks described above.
+package. This task depends on most of the tasks described above. Also, this task will throw an error if the Xcode
+project is not yet updated.
 
 ---
 
@@ -736,3 +738,12 @@ moe {
      }
 }
 ```
+
+---
+
+### UpdateXcodeSettings Task
+
+Task name: `moeUpdateXcodeSettings`
+
+This task adjusts Xcode project settings for the current Moe version. This should be ran after you change the Moe version
+in Gradle.
