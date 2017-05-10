@@ -64,7 +64,7 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
     protected void run() {
         XcodeOptions xcode = getMoeExtension().xcode;
 
-        File xcodeFile = new File((String) xcode.getProject());
+        File xcodeFile = getProject().file(xcode.getProject());
 
         XcodeEditor.Settings settings = new Settings();
         settings.mainTarget = xcode.getMainTarget();
