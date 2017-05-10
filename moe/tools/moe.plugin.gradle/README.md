@@ -746,4 +746,4 @@ moe {
 Task name: `moeUpdateXcodeSettings`
 
 This task adjusts Xcode project settings for the current Moe version. This should be ran after you change the Moe version
-in Gradle.
+in Gradle. Use `-Pmoe.forced.update` to force updating of Xcode project even if it is already determinable as up to date.

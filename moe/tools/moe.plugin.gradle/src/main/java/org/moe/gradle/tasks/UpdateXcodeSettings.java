@@ -48,7 +48,11 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
             @Override
             public boolean isSatisfiedBy(Task task) {
                 try {
-                    return xcodeEditor.isUpToDate();
+                    if (getProject().hasProperty("moe.forced.update")) {
+                        return false;
+                    } else {
+                        return xcodeEditor.isUpToDate();
+                    }
                 } catch (IOException e) {
                     throw new GradleException("Could not determine if the Xcode project up to date", e);
                 }
