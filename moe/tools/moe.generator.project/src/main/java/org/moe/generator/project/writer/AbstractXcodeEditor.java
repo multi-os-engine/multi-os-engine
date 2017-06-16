@@ -341,6 +341,86 @@ public abstract class AbstractXcodeEditor {
         return map;
     }
 
+    public static void checkFrameWorkSearchPaths(PBXNativeTarget target) {
+        XCConfigurationList configurationList = target.getBuildConfigurationList().getReferenced();
+        for (PBXObjectRef<XCBuildConfiguration> ref : configurationList.getOrCreateBuildConfigurations()) {
+            final XCBuildConfiguration buildConfiguration = ref.getReferenced();
+            final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
+
+            Array frameworkSearchPats = null;
+            Value inherited = new Value("$(inherited)");
+            Value moeFrameworkPath = new Value("${MOE_FRAMEWORK_PATH}");
+
+            for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
+                    .hasNext(); ) {
+                final Entry<Value, NextStep> entry = iterator.next();
+                Value existingKey = entry.getKey();
+                if (existingKey.value.equals("FRAMEWORK_SEARCH_PATHS")) {
+                    final NextStep value = entry.getValue();
+                    if (!(value instanceof Array)) {
+                        frameworkSearchPats = new Array();
+                        frameworkSearchPats.add(value);
+                        buildSettings.remove(existingKey);
+                        buildSettings.put(existingKey, frameworkSearchPats);
+                    } else {
+                        frameworkSearchPats = (Array) value;
+                    }
+                }
+            }
+
+            if (frameworkSearchPats == null) {
+                frameworkSearchPats = new Array();
+                buildSettings.put(new Value("FRAMEWORK_SEARCH_PATHS"), frameworkSearchPats);
+            }
+            if (!frameworkSearchPats.contains(inherited)) {
+                frameworkSearchPats.add(inherited);
+            }
+            if (!frameworkSearchPats.contains(moeFrameworkPath)) {
+                frameworkSearchPats.add(moeFrameworkPath);
+            }
+        }
+    }
+
+    public static void checkOtherLDFlags(PBXNativeTarget target) {
+        XCConfigurationList configurationList = target.getBuildConfigurationList().getReferenced();
+        for (PBXObjectRef<XCBuildConfiguration> ref : configurationList.getOrCreateBuildConfigurations()) {
+            final XCBuildConfiguration buildConfiguration = ref.getReferenced();
+            final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
+
+            Value inherited = new Value("$(inherited)");
+            Value moeOtherLDFlags = new Value("${MOE_OTHER_LDFLAGS}");
+            Array otherLDFlags = null;
+
+            for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
+                    .hasNext(); ) {
+                final Entry<Value, NextStep> entry = iterator.next();
+                Value existingKey = entry.getKey();
+                if (existingKey.value.equals("OTHER_LDFLAGS")) {
+                    final NextStep value = entry.getValue();
+
+                    if (!(value instanceof Array)) {
+                        otherLDFlags = new Array();
+                        otherLDFlags.add(value);
+                        buildSettings.remove(existingKey);
+                        buildSettings.put(existingKey, otherLDFlags);
+                    } else {
+                        otherLDFlags = (Array) value;
+                    }
+                }
+            }
+            if (otherLDFlags == null) {
+                otherLDFlags = new Array();
+                buildSettings.put(new Value("OTHER_LDFLAGS"), otherLDFlags);
+            }
+            if (!otherLDFlags.contains(inherited)) {
+                otherLDFlags.add(inherited);
+            }
+            if (!otherLDFlags.contains(moeOtherLDFlags)) {
+                otherLDFlags.add(moeOtherLDFlags);
+            }
+        }
+    }
+
     /**
      * Sets the value for the specified build setting.
      *
@@ -460,6 +540,11 @@ public abstract class AbstractXcodeEditor {
     public static String getRelativePath(File base, File path) throws IOException {
         String a = base.toURI().getPath();
         String b = path.toURI().getPath();
+
+        if (a.equals(b)) {
+            return "";
+        }
+
         String[] basePaths = a.split("/");
         String[] otherPaths = b.split("/");
         int n = 0;

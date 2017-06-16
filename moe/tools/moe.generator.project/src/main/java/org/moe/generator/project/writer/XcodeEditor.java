@@ -303,6 +303,12 @@ public class XcodeEditor extends AbstractXcodeEditor {
         buildScriptResourceWriter.setPlaceholder("MOE_TARGET_SOURCESET_NAME", sourceSet);
         moeCompileBuildPhase.setShellScript(buildScriptResourceWriter.replaceAndGet());
 
+        //Check FRAMEWORK_SEARCH_PATHS
+        checkFrameWorkSearchPaths(target);
+
+        //Check OTHER_LDFLAGS
+        checkOtherLDFlags(target);
+
         cleanupBuildSettings(target);
     }
 
