@@ -771,7 +771,11 @@ public class Launchers {
                 }
 
                 // Get app path
-                final File appPath = new File(settings.get("BUILT_PRODUCTS_DIR"), settings.get("FULL_PRODUCT_NAME"));
+                String productName = settings.get("FULL_PRODUCT_NAME");
+                if (settings.get("FULL_PRODUCT_NAME").endsWith("Tests.xctest")) {
+                    productName = productName.replace("Tests.xctest", ".app");
+                }
+                final File appPath = new File(settings.get("BUILT_PRODUCTS_DIR"), productName);
 
                 final JUnitTestCollector testCollector;
                 if (test && !options.rawTestOutput && options.launch) {
@@ -833,7 +837,11 @@ public class Launchers {
                 }
 
                 // Get app path
-                final File appPath = new File(settings.get("BUILT_PRODUCTS_DIR"), settings.get("FULL_PRODUCT_NAME"));
+                String productName = settings.get("FULL_PRODUCT_NAME");
+                if (settings.get("FULL_PRODUCT_NAME").endsWith("Tests.xctest")) {
+                    productName = productName.replace("Tests.xctest", ".app");
+                }
+                final File appPath = new File(settings.get("BUILT_PRODUCTS_DIR"), productName);
 
                 final JUnitTestCollector testCollector;
                 if (test && !options.rawTestOutput) {
