@@ -341,6 +341,44 @@ public abstract class AbstractXcodeEditor {
         return map;
     }
 
+    /**
+     * Returns the value from a project for the specified build setting.
+     *
+     * @param project      Target to get build settings from
+     * @param key          Build settings key
+     * @return String value
+     */
+    public static String getBuildSettingValue(PBXProject project, String key) {
+        return getBuildSettingValue(project.getBuildConfigurationList().getReferenced(), key);
+    }
+
+    /**
+     * Returns the value from a configuration list for the specified build setting.
+     *
+     * @param configurationList Configuration list to get build settings from
+     * @param key               Build settings key
+     * @return String value
+     */
+    private static String getBuildSettingValue(XCConfigurationList configurationList, String key) {
+        final Map<String, String> map = new HashMap<String, String>();
+        for (PBXObjectRef<XCBuildConfiguration> ref : configurationList.getOrCreateBuildConfigurations()) {
+            final XCBuildConfiguration buildConfiguration = ref.getReferenced();
+            final Dictionary<Value, NextStep> buildSettings = buildConfiguration.getOrCreateBuildSettings();
+            for (Iterator<Entry<Value, NextStep>> iterator = buildSettings.entrySet().iterator(); iterator
+                    .hasNext(); ) {
+                final Entry<Value, NextStep> entry = iterator.next();
+                Value existingKey = entry.getKey();
+                if (existingKey.value.equals(key)) {
+                    final NextStep value = entry.getValue();
+                    if (value instanceof Value) {
+                        return ((Value)value).value;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     public static void checkFrameWorkSearchPaths(PBXNativeTarget target) {
         XCConfigurationList configurationList = target.getBuildConfigurationList().getReferenced();
         for (PBXObjectRef<XCBuildConfiguration> ref : configurationList.getOrCreateBuildConfigurations()) {

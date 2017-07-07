@@ -93,6 +93,10 @@ public class XcodeEditor extends AbstractXcodeEditor {
         return projectFile;
     }
 
+    public String getActVersion() {
+        return getBuildSettingValue(project, MOE_VERSION);
+    }
+
     /**
      * Returns whether the project is up to date.
      *
