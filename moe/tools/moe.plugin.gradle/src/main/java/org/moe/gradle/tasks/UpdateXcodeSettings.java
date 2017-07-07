@@ -18,6 +18,8 @@ package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.Task;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.specs.Spec;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.generator.project.writer.XcodeEditor;
@@ -31,6 +33,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class UpdateXcodeSettings extends AbstractBaseTask {
+
+    private static final Logger LOG = Logging.getLogger(UpdateXcodeSettings.class);
 
     private XcodeEditor xcodeEditor;
 
@@ -48,6 +52,10 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
             @Override
             public boolean isSatisfiedBy(Task task) {
                 try {
+                    String actVersion = xcodeEditor.getActVersion();
+                    if (actVersion == null || actVersion.isEmpty()) {
+                        return false;
+                    }
                     if (getProject().hasProperty("moe.forced.update")) {
                         return false;
                     } else {
