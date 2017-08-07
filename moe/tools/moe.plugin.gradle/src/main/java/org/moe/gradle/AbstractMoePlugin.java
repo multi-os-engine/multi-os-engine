@@ -61,7 +61,7 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
     /**
      * Optional revision version of Gradle.
      */
-    private static final Integer GRADLE_MIN_REVISION = 1;
+    private static final Integer GRADLE_MIN_REVISION = 0;
 
     @NotNull
     protected final Instantiator instantiator;
@@ -121,7 +121,7 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         final String[] components = versionString.split("\\.");
         final int major = Integer.parseInt(components[0 /* Major */]);
 
-        Integer revision = null;
+        Integer revision = 0;
 
         String minorString = components[1 /* Minor */];
         String suffix = null;
