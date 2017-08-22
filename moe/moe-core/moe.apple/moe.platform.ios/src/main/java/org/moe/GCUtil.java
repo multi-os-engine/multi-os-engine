@@ -4,6 +4,8 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.general.NatJ;
+import org.moe.natj.objc.ObjCRuntime;
 
 import java.lang.ref.WeakReference;
 
@@ -14,7 +16,12 @@ import apple.uikit.c.UIKit;
 /**
  * This is a utility class which helps with common GC related issues.
  */
+@org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 public class GCUtil extends NSObject {
+
+	static {
+        NatJ.register();
+    }
 
 	/**
 	 * Registers the utility to act on willResignActive and didReceiveMemoryWarning notifications.
@@ -40,9 +47,12 @@ public class GCUtil extends NSObject {
 	}
 
 	@Owned
+	@Selector("alloc")
 	public static native GCUtil alloc();
 
 	@Override
+	@Owned
+    @Selector("init")
 	public GCUtil init() {
 		GCUtil self = (GCUtil) super.init();
 		if (self != null) {
