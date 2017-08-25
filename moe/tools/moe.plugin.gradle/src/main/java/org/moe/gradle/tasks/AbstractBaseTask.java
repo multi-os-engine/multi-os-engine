@@ -295,7 +295,8 @@ public abstract class AbstractBaseTask extends DefaultTask {
 
     protected Path getProjectRelativePath(@NotNull File file) {
         Require.nonNull(file);
-        return getProject().getProjectDir().toPath().relativize(file.toPath());
+        File projectDir = getProject().getParent() != null ? getProject().getParent().getProjectDir() : getProject().getProjectDir();
+        return projectDir.toPath().relativize(file.toPath());
     }
 
     protected Path getInnerProjectRelativePath(@NotNull File file) throws IOException {

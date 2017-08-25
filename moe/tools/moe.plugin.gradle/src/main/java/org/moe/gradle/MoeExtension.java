@@ -63,6 +63,9 @@ public class MoeExtension extends AbstractMoeExtension {
     public final IpaExportOptions ipaExport;
 
     @NotNull
+    public final RemoteBuildOptions remoteBuildOptions;
+
+    @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
     private int proguardLevel = PROGUARD_LEVEL_APP;
@@ -76,6 +79,7 @@ public class MoeExtension extends AbstractMoeExtension {
         this.signing = instantiator.newInstance(SigningOptions.class);
         this.actionsAndOutlets = instantiator.newInstance(UIActionsAndOutletsOptions.class);
         this.ipaExport = instantiator.newInstance(IpaExportOptions.class);
+        this.remoteBuildOptions = instantiator.newInstance(RemoteBuildOptions.class);
     }
 
     void setup() {
@@ -131,6 +135,11 @@ public class MoeExtension extends AbstractMoeExtension {
     @IgnoreUnused
     public void ipaExport(Action<IpaExportOptions> action) {
         Require.nonNull(action).execute(ipaExport);
+    }
+
+    @IgnoreUnused
+    public void remoteBuild(Action<RemoteBuildOptions> action) {
+        Require.nonNull(action).execute(remoteBuildOptions);
     }
 
     @NotNull

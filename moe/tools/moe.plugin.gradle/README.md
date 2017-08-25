@@ -526,6 +526,18 @@ This task invokes `xcodebuild` and creates the application.
 - `xcodeBuildRoot`: `xcodebuild` root output directory.
 - `xcodeBuildSettingsFile`: path to the output Xcode build settings file.
 
+### Remote Build Properties
+
+- `remoteBuild` resources directories
+
+```groovy
+moe {
+    remoteBuild {
+        resources = [ file("../android/assets") ]
+     }
+}
+```
+
 ---
 
 ### IpaBuild Task

@@ -58,6 +58,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -376,11 +378,15 @@ public class XcodeBuild extends AbstractBaseTask {
         }
 
         final Server remoteServer = getMoePlugin().getRemoteServer();
+
+        final MoeExtension ext = getMoePlugin().getExtension();
+
         if (remoteServer != null) {
             remoteServer.unlockRemoteKeychain();
 
             // Upload project
-            final FileList list = new FileList(getProject().getProjectDir(), remoteServer.getBuildDir());
+            File projectDir = getProject().getParent() != null ? getProject().getParent().getProjectDir() : getProject().getProjectDir();
+            final FileList list = new FileList(projectDir, remoteServer.getBuildDir());
 
             // Collect files we don't want to upload
             final Set<File> excludes = new HashSet<>();
@@ -432,6 +438,12 @@ public class XcodeBuild extends AbstractBaseTask {
             list.add(getProject().getProjectDir(), excludes);
             remoteServer.upload("project files", list);
 
+            List<File> resources = ext.remoteBuildOptions.getResources();
+
+            if (resources != null && !resources.isEmpty()) {
+                uploadResources(remoteServer, projectDir, resources);
+            }
+
             linkSDK();
 
             final Path configurationBuildDirRel;
@@ -448,7 +460,9 @@ public class XcodeBuild extends AbstractBaseTask {
                     "xcrun xcodebuild -showBuildSettings " + calculateArgs().stream().collect(Collectors.joining(" ")));
             Map<String, String> xcodeBuildSettingsRemote = processXcodeBuildSettings(xcodeBuildSettingsRaw);
             Map<String, String> xcodeBuildSettings = new HashMap<>(xcodeBuildSettingsRemote);
-            final String buildDir = remoteServer.getBuildDir().getPath();
+            boolean isSingle = getProject().getParent() == null;
+            String suffix = isSingle ? "" : "/" + getProject().getName();
+            final String buildDir = remoteServer.getBuildDir().getPath() + suffix;
             for (Map.Entry<String, String> entry : xcodeBuildSettings.entrySet()) {
                 final String value = entry.getValue();
                 if (!value.contains(buildDir)) {
@@ -951,5 +965,15 @@ public class XcodeBuild extends AbstractBaseTask {
         } catch (Throwable t) {
             throw new GradleException("Could not generate scheme", t);
         }
+    }
+
+    private void uploadResources(Server remoteServer, File projectDir, List<File> resources) {
+        final FileList resourceList = new FileList(projectDir, remoteServer.getBuildDir());
+
+        for (File f : resources) {
+            resourceList.add(f, null);
+        }
+
+        remoteServer.upload("Resources files", resourceList);
     }
 }
