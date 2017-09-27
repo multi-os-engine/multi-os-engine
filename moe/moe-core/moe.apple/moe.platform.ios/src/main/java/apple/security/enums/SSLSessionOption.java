@@ -33,4 +33,6 @@ public final class SSLSessionOption {
     @Generated
     private SSLSessionOption() {
     }
+
+    @Generated public static final int EnableSessionTickets = 0x00000009;
 }

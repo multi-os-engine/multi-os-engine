@@ -203,4 +203,14 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("categoryWithIdentifier:actions:intentIdentifiers:hiddenPreviewsBodyPlaceholder:options:")
+    public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersHiddenPreviewsBodyPlaceholderOptions(
+            String identifier, NSArray<? extends UNNotificationAction> actions, NSArray<String> intentIdentifiers,
+            String hiddenPreviewsBodyPlaceholder, @NUInt long options);
+
+    @Generated
+    @Selector("hiddenPreviewsBodyPlaceholder")
+    public native String hiddenPreviewsBodyPlaceholder();
 }

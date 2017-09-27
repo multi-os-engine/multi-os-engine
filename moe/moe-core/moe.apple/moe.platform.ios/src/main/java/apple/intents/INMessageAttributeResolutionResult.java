@@ -178,4 +178,14 @@ public class INMessageAttributeResolutionResult extends INIntentResolutionResult
     @Generated
     @Selector("init")
     public native INMessageAttributeResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithMessageAttributeToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithMessageAttributeToConfirm(@NInt long messageAttributeToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedMessageAttribute:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedMessageAttribute(@NInt long resolvedMessageAttribute);
 }

@@ -224,4 +224,8 @@ public class MTLArgument extends NSObject {
     @Selector("type")
     @NUInt
     public native long type();
+
+    @Generated
+    @Selector("bufferPointerType")
+    public native MTLPointerType bufferPointerType();
 }

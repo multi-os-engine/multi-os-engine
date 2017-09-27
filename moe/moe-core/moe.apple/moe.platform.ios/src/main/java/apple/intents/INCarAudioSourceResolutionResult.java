@@ -178,4 +178,14 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("init")
     public native INCarAudioSourceResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithCarAudioSourceToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithCarAudioSourceToConfirm(@NInt long carAudioSourceToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedCarAudioSource:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedCarAudioSource(@NInt long resolvedCarAudioSource);
 }

@@ -35,4 +35,9 @@ public final class RPRecordingErrorCode {
     @Generated
     private RPRecordingErrorCode() {
     }
+
+    @Generated @NInt public static final long Entitlements = 0xFFFFFFFFFFFFE94EL;
+    @Generated @NInt public static final long ActivePhoneCall = 0xFFFFFFFFFFFFE94DL;
+    @Generated @NInt public static final long FailedToSave = 0xFFFFFFFFFFFFE94CL;
+    @Generated @NInt public static final long CarPlay = 0xFFFFFFFFFFFFE94BL;
 }

@@ -487,4 +487,21 @@ public class AVPlayerItem extends NSObject implements NSCopying {
         @Generated
         void call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler(boolean arg0);
     }
+
+    @Generated
+    @Selector("preferredMaximumResolution")
+    @ByValue
+    public native CGSize preferredMaximumResolution();
+
+    @Generated
+    @Selector("setPreferredMaximumResolution:")
+    public native void setPreferredMaximumResolution(@ByValue CGSize value);
+
+    @Generated
+    @Selector("setVideoApertureMode:")
+    public native void setVideoApertureMode(String value);
+
+    @Generated
+    @Selector("videoApertureMode")
+    public native String videoApertureMode();
 }

@@ -253,4 +253,12 @@ public class AVMutableVideoComposition extends AVVideoComposition {
         @Generated
         void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest arg0);
     }
+
+    @Generated
+    @Selector("setSourceTrackIDForFrameTiming:")
+    public native void setSourceTrackIDForFrameTiming(int value);
+
+    @Generated
+    @Selector("sourceTrackIDForFrameTiming")
+    public native int sourceTrackIDForFrameTiming();
 }

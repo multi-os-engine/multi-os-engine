@@ -51,4 +51,9 @@ public final class SafariServices {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SSReadingListErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SFAuthenticationErrorDomain();
 }

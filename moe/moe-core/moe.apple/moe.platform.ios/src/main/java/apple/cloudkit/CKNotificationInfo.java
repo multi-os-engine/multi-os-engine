@@ -261,4 +261,68 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("collapseIDKey")
+    public native String collapseIDKey();
+
+    @Generated
+    @Selector("setCollapseIDKey:")
+    public native void setCollapseIDKey(String value);
+
+    @Generated
+    @Selector("setShouldSendMutableContent:")
+    public native void setShouldSendMutableContent(boolean value);
+
+    @Generated
+    @Selector("setSubtitle:")
+    public native void setSubtitle(String value);
+
+    @Generated
+    @Selector("setSubtitleLocalizationArgs:")
+    public native void setSubtitleLocalizationArgs(NSArray<String> value);
+
+    @Generated
+    @Selector("setSubtitleLocalizationKey:")
+    public native void setSubtitleLocalizationKey(String value);
+
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    @Generated
+    @Selector("setTitleLocalizationArgs:")
+    public native void setTitleLocalizationArgs(NSArray<String> value);
+
+    @Generated
+    @Selector("setTitleLocalizationKey:")
+    public native void setTitleLocalizationKey(String value);
+
+    @Generated
+    @Selector("shouldSendMutableContent")
+    public native boolean shouldSendMutableContent();
+
+    @Generated
+    @Selector("subtitle")
+    public native String subtitle();
+
+    @Generated
+    @Selector("subtitleLocalizationArgs")
+    public native NSArray<String> subtitleLocalizationArgs();
+
+    @Generated
+    @Selector("subtitleLocalizationKey")
+    public native String subtitleLocalizationKey();
+
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    @Generated
+    @Selector("titleLocalizationArgs")
+    public native NSArray<String> titleLocalizationArgs();
+
+    @Generated
+    @Selector("titleLocalizationKey")
+    public native String titleLocalizationKey();
 }

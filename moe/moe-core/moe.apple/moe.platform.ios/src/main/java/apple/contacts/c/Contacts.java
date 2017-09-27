@@ -536,4 +536,24 @@ public final class Contacts {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNErrorUserInfoKeyPathsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNPostalAddressSubLocalityKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNPostalAddressSubAdministrativeAreaKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNLabelContactRelationSon();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNLabelContactRelationDaughter();
 }

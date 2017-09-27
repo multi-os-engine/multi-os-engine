@@ -194,4 +194,16 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     @Generated
     @Selector("setLensStabilizationEnabled:")
     public native void setLensStabilizationEnabled(boolean value);
+
+    @Generated
+    @Selector("photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:")
+    public static native AVCapturePhotoBracketSettings photoBracketSettingsWithRawPixelFormatTypeRawFileTypeProcessedFormatProcessedFileTypeBracketedSettings(
+            int rawPixelFormatType, String rawFileType, NSDictionary<String, ?> processedFormat,
+            String processedFileType, NSArray<? extends AVCaptureBracketedStillImageSettings> bracketedSettings);
+
+    @Generated
+    @Selector("photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:")
+    public static native AVCapturePhotoBracketSettings photoSettingsWithRawPixelFormatTypeRawFileTypeProcessedFormatProcessedFileType(
+            int rawPixelFormatType, String rawFileType, NSDictionary<String, ?> processedFormat,
+            String processedFileType);
 }

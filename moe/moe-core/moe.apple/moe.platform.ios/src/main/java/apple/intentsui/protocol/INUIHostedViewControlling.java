@@ -17,13 +17,16 @@ limitations under the License.
 package apple.intentsui.protocol;
 
 import apple.coregraphics.struct.CGSize;
+import apple.foundation.NSSet;
 import apple.intents.INInteraction;
+import apple.intents.INParameter;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
@@ -33,15 +36,36 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INUIHostedViewControlling")
 public interface INUIHostedViewControlling {
+    @IsOptional
     @Generated
     @Selector("configureWithInteraction:context:completion:")
-    void configureWithInteractionContextCompletion(INInteraction interaction, @NUInt long context,
-            @ObjCBlock(name = "call_configureWithInteractionContextCompletion") Block_configureWithInteractionContextCompletion completion);
+    default void configureWithInteractionContextCompletion(INInteraction interaction, @NUInt long context,
+            @ObjCBlock(name = "call_configureWithInteractionContextCompletion") Block_configureWithInteractionContextCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_configureWithInteractionContextCompletion {
         @Generated
         void call_configureWithInteractionContextCompletion(@ByValue CGSize arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("configureViewForParameters:ofInteraction:interactiveBehavior:context:completion:")
+    default void configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion(
+            NSSet<? extends INParameter> parameters, INInteraction interaction, @NUInt long interactiveBehavior,
+            @NUInt long context,
+            @ObjCBlock(name = "call_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion") Block_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion {
+        @Generated
+        void call_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion(boolean arg0,
+                NSSet<? extends INParameter> arg1, @ByValue CGSize arg2);
     }
 }

@@ -169,7 +169,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -323,4 +323,25 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("wrapT")
     @NInt
     public native long wrapT();
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("setTextureComponents:")
+    public native void setTextureComponents(@NInt long value);
+
+    @Generated
+    @Selector("textureComponents")
+    @NInt
+    public native long textureComponents();
 }

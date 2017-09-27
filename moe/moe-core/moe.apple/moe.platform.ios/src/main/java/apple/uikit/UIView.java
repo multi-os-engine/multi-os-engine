@@ -36,7 +36,9 @@ import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UICoordinateSpace;
 import apple.uikit.protocol.UIDynamicItem;
 import apple.uikit.protocol.UIFocusItem;
+import apple.uikit.protocol.UIInteraction;
 import apple.uikit.protocol.UITraitEnvironment;
+import apple.uikit.struct.NSDirectionalEdgeInsets;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -1282,4 +1284,58 @@ public class UIView extends UIResponder
         @Generated
         void call_transitionWithViewDurationOptionsAnimationsCompletion_4(boolean arg0);
     }
+
+    @Generated
+    @Selector("accessibilityIgnoresInvertColors")
+    public native boolean accessibilityIgnoresInvertColors();
+
+    @Generated
+    @Selector("addInteraction:")
+    public native void addInteraction(@Mapped(ObjCObjectMapper.class) UIInteraction interaction);
+
+    @Generated
+    @Selector("directionalLayoutMargins")
+    @ByValue
+    public native NSDirectionalEdgeInsets directionalLayoutMargins();
+
+    @Generated
+    @Selector("insetsLayoutMarginsFromSafeArea")
+    public native boolean insetsLayoutMarginsFromSafeArea();
+
+    @Generated
+    @Selector("interactions")
+    public native NSArray<?> interactions();
+
+    @Generated
+    @Selector("removeInteraction:")
+    public native void removeInteraction(@Mapped(ObjCObjectMapper.class) UIInteraction interaction);
+
+    @Generated
+    @Selector("safeAreaInsets")
+    @ByValue
+    public native UIEdgeInsets safeAreaInsets();
+
+    @Generated
+    @Selector("safeAreaInsetsDidChange")
+    public native void safeAreaInsetsDidChange();
+
+    @Generated
+    @Selector("safeAreaLayoutGuide")
+    public native UILayoutGuide safeAreaLayoutGuide();
+
+    @Generated
+    @Selector("setAccessibilityIgnoresInvertColors:")
+    public native void setAccessibilityIgnoresInvertColors(boolean value);
+
+    @Generated
+    @Selector("setDirectionalLayoutMargins:")
+    public native void setDirectionalLayoutMargins(@ByValue NSDirectionalEdgeInsets value);
+
+    @Generated
+    @Selector("setInsetsLayoutMarginsFromSafeArea:")
+    public native void setInsetsLayoutMarginsFromSafeArea(boolean value);
+
+    @Generated
+    @Selector("setInteractions:")
+    public native void setInteractions(NSArray<?> value);
 }

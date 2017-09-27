@@ -17,6 +17,7 @@ limitations under the License.
 package apple.avfoundation.protocol;
 
 import apple.avfoundation.AVCaptureBracketedStillImageSettings;
+import apple.avfoundation.AVCapturePhoto;
 import apple.avfoundation.AVCapturePhotoOutput;
 import apple.avfoundation.AVCaptureResolvedPhotoSettings;
 import apple.coremedia.opaque.CMSampleBufferRef;
@@ -40,7 +41,7 @@ public interface AVCapturePhotoCaptureDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didCapturePhotoForResolvedSettings:")
-    default void captureOutputDidCapturePhotoForResolvedSettings(AVCapturePhotoOutput captureOutput,
+    default void captureOutputDidCapturePhotoForResolvedSettings(AVCapturePhotoOutput output,
             AVCaptureResolvedPhotoSettings resolvedSettings) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,7 +49,7 @@ public interface AVCapturePhotoCaptureDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didFinishCaptureForResolvedSettings:error:")
-    default void captureOutputDidFinishCaptureForResolvedSettingsError(AVCapturePhotoOutput captureOutput,
+    default void captureOutputDidFinishCaptureForResolvedSettingsError(AVCapturePhotoOutput output,
             AVCaptureResolvedPhotoSettings resolvedSettings, NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -57,7 +58,7 @@ public interface AVCapturePhotoCaptureDelegate {
     @IsOptional
     @Selector("captureOutput:didFinishProcessingLivePhotoToMovieFileAtURL:duration:photoDisplayTime:resolvedSettings:error:")
     default void captureOutputDidFinishProcessingLivePhotoToMovieFileAtURLDurationPhotoDisplayTimeResolvedSettingsError(
-            AVCapturePhotoOutput captureOutput, NSURL outputFileURL, @ByValue CMTime duration,
+            AVCapturePhotoOutput output, NSURL outputFileURL, @ByValue CMTime duration,
             @ByValue CMTime photoDisplayTime, AVCaptureResolvedPhotoSettings resolvedSettings, NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -66,7 +67,7 @@ public interface AVCapturePhotoCaptureDelegate {
     @IsOptional
     @Selector("captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:")
     default void captureOutputDidFinishProcessingPhotoSampleBufferPreviewPhotoSampleBufferResolvedSettingsBracketSettingsError(
-            AVCapturePhotoOutput captureOutput, CMSampleBufferRef photoSampleBuffer,
+            AVCapturePhotoOutput output, CMSampleBufferRef photoSampleBuffer,
             CMSampleBufferRef previewPhotoSampleBuffer, AVCaptureResolvedPhotoSettings resolvedSettings,
             AVCaptureBracketedStillImageSettings bracketSettings, NSError error) {
         throw new java.lang.UnsupportedOperationException();
@@ -76,9 +77,9 @@ public interface AVCapturePhotoCaptureDelegate {
     @IsOptional
     @Selector("captureOutput:didFinishProcessingRawPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:")
     default void captureOutputDidFinishProcessingRawPhotoSampleBufferPreviewPhotoSampleBufferResolvedSettingsBracketSettingsError(
-            AVCapturePhotoOutput captureOutput, CMSampleBufferRef rawSampleBuffer,
-            CMSampleBufferRef previewPhotoSampleBuffer, AVCaptureResolvedPhotoSettings resolvedSettings,
-            AVCaptureBracketedStillImageSettings bracketSettings, NSError error) {
+            AVCapturePhotoOutput output, CMSampleBufferRef rawSampleBuffer, CMSampleBufferRef previewPhotoSampleBuffer,
+            AVCaptureResolvedPhotoSettings resolvedSettings, AVCaptureBracketedStillImageSettings bracketSettings,
+            NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,14 +87,14 @@ public interface AVCapturePhotoCaptureDelegate {
     @IsOptional
     @Selector("captureOutput:didFinishRecordingLivePhotoMovieForEventualFileAtURL:resolvedSettings:")
     default void captureOutputDidFinishRecordingLivePhotoMovieForEventualFileAtURLResolvedSettings(
-            AVCapturePhotoOutput captureOutput, NSURL outputFileURL, AVCaptureResolvedPhotoSettings resolvedSettings) {
+            AVCapturePhotoOutput output, NSURL outputFileURL, AVCaptureResolvedPhotoSettings resolvedSettings) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("captureOutput:willBeginCaptureForResolvedSettings:")
-    default void captureOutputWillBeginCaptureForResolvedSettings(AVCapturePhotoOutput captureOutput,
+    default void captureOutputWillBeginCaptureForResolvedSettings(AVCapturePhotoOutput output,
             AVCaptureResolvedPhotoSettings resolvedSettings) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -101,8 +102,16 @@ public interface AVCapturePhotoCaptureDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:willCapturePhotoForResolvedSettings:")
-    default void captureOutputWillCapturePhotoForResolvedSettings(AVCapturePhotoOutput captureOutput,
+    default void captureOutputWillCapturePhotoForResolvedSettings(AVCapturePhotoOutput output,
             AVCaptureResolvedPhotoSettings resolvedSettings) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("captureOutput:didFinishProcessingPhoto:error:")
+    default void captureOutputDidFinishProcessingPhotoError(AVCapturePhotoOutput output, AVCapturePhoto photo,
+            NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

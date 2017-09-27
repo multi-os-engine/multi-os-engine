@@ -17,11 +17,15 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSItemProviderReading;
+import apple.foundation.protocol.NSItemProviderWriting;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -186,7 +190,7 @@ public class NSItemProvider extends NSObject implements NSCopying {
 
     @Generated
     @Selector("registeredTypeIdentifiers")
-    public native NSArray<?> registeredTypeIdentifiers();
+    public native NSArray<String> registeredTypeIdentifiers();
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -203,4 +207,110 @@ public class NSItemProvider extends NSObject implements NSCopying {
         void call_loadPreviewImageWithOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
                 NSError arg1);
     }
+
+    @Generated
+    @Selector("canLoadObjectOfClass:")
+    public native boolean canLoadObjectOfClass(@Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
+
+    @Generated
+    @Selector("hasRepresentationConformingToTypeIdentifier:fileOptions:")
+    public native boolean hasRepresentationConformingToTypeIdentifierFileOptions(String typeIdentifier,
+            @NInt long fileOptions);
+
+    @Generated
+    @Selector("initWithObject:")
+    public native NSItemProvider initWithObject(@Mapped(ObjCObjectMapper.class) NSItemProviderWriting object);
+
+    @Generated
+    @Selector("loadDataRepresentationForTypeIdentifier:completionHandler:")
+    public native NSProgress loadDataRepresentationForTypeIdentifierCompletionHandler(String typeIdentifier,
+            @ObjCBlock(name = "call_loadDataRepresentationForTypeIdentifierCompletionHandler") Block_loadDataRepresentationForTypeIdentifierCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadDataRepresentationForTypeIdentifierCompletionHandler {
+        @Generated
+        void call_loadDataRepresentationForTypeIdentifierCompletionHandler(NSData arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("loadFileRepresentationForTypeIdentifier:completionHandler:")
+    public native NSProgress loadFileRepresentationForTypeIdentifierCompletionHandler(String typeIdentifier,
+            @ObjCBlock(name = "call_loadFileRepresentationForTypeIdentifierCompletionHandler") Block_loadFileRepresentationForTypeIdentifierCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadFileRepresentationForTypeIdentifierCompletionHandler {
+        @Generated
+        void call_loadFileRepresentationForTypeIdentifierCompletionHandler(NSURL arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("loadInPlaceFileRepresentationForTypeIdentifier:completionHandler:")
+    public native NSProgress loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler(String typeIdentifier,
+            @ObjCBlock(name = "call_loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler") Block_loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler {
+        @Generated
+        void call_loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler(NSURL arg0, boolean arg1,
+                NSError arg2);
+    }
+
+    @Generated
+    @Selector("loadObjectOfClass:completionHandler:")
+    public native NSProgress loadObjectOfClassCompletionHandler(
+            @Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass,
+            @ObjCBlock(name = "call_loadObjectOfClassCompletionHandler") Block_loadObjectOfClassCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadObjectOfClassCompletionHandler {
+        @Generated
+        void call_loadObjectOfClassCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("preferredPresentationSize")
+    @ByValue
+    public native CGSize preferredPresentationSize();
+
+    @Generated
+    @Selector("preferredPresentationStyle")
+    @NInt
+    public native long preferredPresentationStyle();
+
+    @Generated
+    @Selector("registerObject:visibility:")
+    public native void registerObjectVisibility(@Mapped(ObjCObjectMapper.class) NSItemProviderWriting object,
+            @NInt long visibility);
+
+    @Generated
+    @Selector("registeredTypeIdentifiersWithFileOptions:")
+    public native NSArray<String> registeredTypeIdentifiersWithFileOptions(@NInt long fileOptions);
+
+    @Generated
+    @Selector("setPreferredPresentationSize:")
+    public native void setPreferredPresentationSize(@ByValue CGSize value);
+
+    @Generated
+    @Selector("setPreferredPresentationStyle:")
+    public native void setPreferredPresentationStyle(@NInt long value);
+
+    @Generated
+    @Selector("setSuggestedName:")
+    public native void setSuggestedName(String value);
+
+    @Generated
+    @Selector("setTeamData:")
+    public native void setTeamData(NSData value);
+
+    @Generated
+    @Selector("suggestedName")
+    public native String suggestedName();
+
+    @Generated
+    @Selector("teamData")
+    public native NSData teamData();
 }

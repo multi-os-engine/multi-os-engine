@@ -328,4 +328,21 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Generated
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
+
+    @Generated
+    @Selector("largeContentSizeImage")
+    public native UIImage largeContentSizeImage();
+
+    @Generated
+    @Selector("largeContentSizeImageInsets")
+    @ByValue
+    public native UIEdgeInsets largeContentSizeImageInsets();
+
+    @Generated
+    @Selector("setLargeContentSizeImage:")
+    public native void setLargeContentSizeImage(UIImage value);
+
+    @Generated
+    @Selector("setLargeContentSizeImageInsets:")
+    public native void setLargeContentSizeImageInsets(@ByValue UIEdgeInsets value);
 }

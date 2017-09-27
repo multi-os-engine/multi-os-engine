@@ -31,6 +31,7 @@ import apple.accelerate.opaque.vImageCVImageFormatRef;
 import apple.accelerate.opaque.vImageConstCVImageFormatRef;
 import apple.accelerate.opaque.vImageConverterRef;
 import apple.accelerate.opaque.vImage_MultidimensionalTable;
+import apple.accelerate.struct.BNNSActivation;
 import apple.accelerate.struct.BNNSConvolutionLayerParameters;
 import apple.accelerate.struct.BNNSFilterParameters;
 import apple.accelerate.struct.BNNSFullyConnectedLayerParameters;
@@ -16755,4 +16756,12 @@ public final class Accelerate {
         @Generated
         void call_vImageCVImageFormat_SetUserData(vImageCVImageFormatRef arg0, VoidPtr arg1);
     }
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateVectorActivationLayer(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor in_desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor out_desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSActivation activation,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 }

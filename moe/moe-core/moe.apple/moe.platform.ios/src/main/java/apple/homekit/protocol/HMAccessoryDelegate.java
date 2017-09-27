@@ -17,6 +17,7 @@ limitations under the License.
 package apple.homekit.protocol;
 
 import apple.homekit.HMAccessory;
+import apple.homekit.HMAccessoryProfile;
 import apple.homekit.HMCharacteristic;
 import apple.homekit.HMService;
 import org.moe.natj.general.ann.Generated;
@@ -72,6 +73,27 @@ public interface HMAccessoryDelegate {
     @IsOptional
     @Selector("accessoryDidUpdateServices:")
     default void accessoryDidUpdateServices(HMAccessory accessory) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("accessory:didAddProfile:")
+    default void accessoryDidAddProfile(HMAccessory accessory, HMAccessoryProfile profile) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("accessory:didRemoveProfile:")
+    default void accessoryDidRemoveProfile(HMAccessory accessory, HMAccessoryProfile profile) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("accessory:didUpdateFirmwareVersion:")
+    default void accessoryDidUpdateFirmwareVersion(HMAccessory accessory, String firmwareVersion) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

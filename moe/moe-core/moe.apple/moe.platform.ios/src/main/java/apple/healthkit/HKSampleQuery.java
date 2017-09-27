@@ -283,4 +283,9 @@ public class HKSampleQuery extends HKQuery {
         void call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler(HKSampleQuery arg0,
                 NSArray<? extends HKSample> arg1, NSError arg2);
     }
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
+            HKQuantity totalFlightsClimbed);
 }

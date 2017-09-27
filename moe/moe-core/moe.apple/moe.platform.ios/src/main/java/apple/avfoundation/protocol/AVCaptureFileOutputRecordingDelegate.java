@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.avfoundation.protocol;
 
+import apple.avfoundation.AVCaptureConnection;
 import apple.avfoundation.AVCaptureFileOutput;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
@@ -35,14 +36,14 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVCaptureFileOutputRecordingDelegate {
     @Generated
     @Selector("captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:")
-    void captureOutputDidFinishRecordingToOutputFileAtURLFromConnectionsError(AVCaptureFileOutput captureOutput,
-            NSURL outputFileURL, NSArray<?> connections, NSError error);
+    void captureOutputDidFinishRecordingToOutputFileAtURLFromConnectionsError(AVCaptureFileOutput output,
+            NSURL outputFileURL, NSArray<? extends AVCaptureConnection> connections, NSError error);
 
     @Generated
     @IsOptional
     @Selector("captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:")
-    default void captureOutputDidStartRecordingToOutputFileAtURLFromConnections(AVCaptureFileOutput captureOutput,
-            NSURL fileURL, NSArray<?> connections) {
+    default void captureOutputDidStartRecordingToOutputFileAtURLFromConnections(AVCaptureFileOutput output,
+            NSURL fileURL, NSArray<? extends AVCaptureConnection> connections) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

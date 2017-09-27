@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.foundation.NSAttributedString;
 import apple.uikit.UIScrollView;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -34,6 +35,13 @@ public interface UIScrollViewAccessibilityDelegate extends UIScrollViewDelegate 
     @IsOptional
     @Selector("accessibilityScrollStatusForScrollView:")
     default String accessibilityScrollStatusForScrollView(UIScrollView scrollView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("accessibilityAttributedScrollStatusForScrollView:")
+    default NSAttributedString accessibilityAttributedScrollStatusForScrollView(UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -175,4 +175,28 @@ public class CXCallController extends NSObject {
         @Generated
         void call_requestTransactionCompletion(NSError arg0);
     }
+
+    @Generated
+    @Selector("requestTransactionWithAction:completion:")
+    public native void requestTransactionWithActionCompletion(CXAction action,
+            @ObjCBlock(name = "call_requestTransactionWithActionCompletion") Block_requestTransactionWithActionCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestTransactionWithActionCompletion {
+        @Generated
+        void call_requestTransactionWithActionCompletion(NSError arg0);
+    }
+
+    @Generated
+    @Selector("requestTransactionWithActions:completion:")
+    public native void requestTransactionWithActionsCompletion(NSArray<? extends CXAction> actions,
+            @ObjCBlock(name = "call_requestTransactionWithActionsCompletion") Block_requestTransactionWithActionsCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestTransactionWithActionsCompletion {
+        @Generated
+        void call_requestTransactionWithActionsCompletion(NSError arg0);
+    }
 }

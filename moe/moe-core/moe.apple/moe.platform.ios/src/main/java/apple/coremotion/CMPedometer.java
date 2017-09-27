@@ -224,4 +224,9 @@ public class CMPedometer extends NSObject {
         @Generated
         void call_startPedometerUpdatesFromDateWithHandler(CMPedometerData arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("authorizationStatus")
+    @NInt
+    public static native long authorizationStatus();
 }

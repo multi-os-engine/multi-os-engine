@@ -20,6 +20,8 @@ import apple.foundation.NSArray;
 import apple.intents.INPersonResolutionResult;
 import apple.intents.INSendMessageIntent;
 import apple.intents.INSendMessageIntentResponse;
+import apple.intents.INSendMessageRecipientResolutionResult;
+import apple.intents.INSpeakableStringResolutionResult;
 import apple.intents.INStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -105,5 +107,36 @@ public interface INSendMessageIntentHandling {
     public interface Block_resolveRecipientsForSendMessageWithCompletion {
         @Generated
         void call_resolveRecipientsForSendMessageWithCompletion(NSArray<? extends INPersonResolutionResult> arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveRecipientsForSendMessage:completion:")
+    default void resolveRecipientsForSendMessageCompletion(INSendMessageIntent intent,
+            @ObjCBlock(name = "call_resolveRecipientsForSendMessageCompletion") Block_resolveRecipientsForSendMessageCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveRecipientsForSendMessageCompletion {
+        @Generated
+        void call_resolveRecipientsForSendMessageCompletion(
+                NSArray<? extends INSendMessageRecipientResolutionResult> arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveSpeakableGroupNameForSendMessage:withCompletion:")
+    default void resolveSpeakableGroupNameForSendMessageWithCompletion(INSendMessageIntent intent,
+            @ObjCBlock(name = "call_resolveSpeakableGroupNameForSendMessageWithCompletion") Block_resolveSpeakableGroupNameForSendMessageWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveSpeakableGroupNameForSendMessageWithCompletion {
+        @Generated
+        void call_resolveSpeakableGroupNameForSendMessageWithCompletion(INSpeakableStringResolutionResult arg0);
     }
 }

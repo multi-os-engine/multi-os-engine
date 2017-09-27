@@ -16,9 +16,12 @@ limitations under the License.
 
 package apple.metal.protocol;
 
+import apple.metal.struct.MTLSize;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -38,4 +41,23 @@ public interface MTLRenderPipelineState {
     @Generated
     @Selector("label")
     String label();
+
+    @Generated
+    @Selector("imageblockMemoryLengthForDimensions:")
+    @NUInt
+    long imageblockMemoryLengthForDimensions(@ByValue MTLSize imageblockDimensions);
+
+    @Generated
+    @Selector("imageblockSampleLength")
+    @NUInt
+    long imageblockSampleLength();
+
+    @Generated
+    @Selector("maxTotalThreadsPerThreadgroup")
+    @NUInt
+    long maxTotalThreadsPerThreadgroup();
+
+    @Generated
+    @Selector("threadgroupSizeMatchesTileSize")
+    boolean threadgroupSizeMatchesTileSize();
 }

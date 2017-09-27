@@ -469,4 +469,23 @@ public class NSFileManager extends NSObject {
         @Generated
         boolean call_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler(NSURL arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("getFileProviderServicesForItemAtURL:completionHandler:")
+    public native void getFileProviderServicesForItemAtURLCompletionHandler(NSURL url,
+            @ObjCBlock(name = "call_getFileProviderServicesForItemAtURLCompletionHandler") Block_getFileProviderServicesForItemAtURLCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getFileProviderServicesForItemAtURLCompletionHandler {
+        @Generated
+        void call_getFileProviderServicesForItemAtURLCompletionHandler(
+                NSDictionary<String, ? extends NSFileProviderService> arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("trashItemAtURL:resultingItemURL:error:")
+    public native boolean trashItemAtURLResultingItemURLError(NSURL url,
+            @ReferenceInfo(type = NSURL.class) Ptr<NSURL> outResultingURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

@@ -33,4 +33,6 @@ public final class SKErrorCode {
     @Generated
     private SKErrorCode() {
     }
+
+    @Generated @NInt public static final long CloudServiceRevoked = 0x0000000000000008L;
 }

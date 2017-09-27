@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import apple.uikit.protocol.UITabBarDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -52,7 +53,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITabBar extends UIView {
+public class UITabBar extends UIView implements UISpringLoadedInteractionSupporting {
     static {
         NatJ.register();
     }
@@ -570,4 +571,12 @@ public class UITabBar extends UIView {
     @Generated
     @Selector("unselectedItemTintColor")
     public native UIColor unselectedItemTintColor();
+
+    @Generated
+    @Selector("isSpringLoaded")
+    public native boolean isSpringLoaded();
+
+    @Generated
+    @Selector("setSpringLoaded:")
+    public native void setSpringLoaded(boolean value);
 }

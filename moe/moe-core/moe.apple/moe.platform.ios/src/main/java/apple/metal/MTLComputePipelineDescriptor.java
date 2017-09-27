@@ -198,4 +198,8 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Generated
     @Selector("threadGroupSizeIsMultipleOfThreadExecutionWidth")
     public native boolean threadGroupSizeIsMultipleOfThreadExecutionWidth();
+
+    @Generated
+    @Selector("buffers")
+    public native MTLPipelineBufferDescriptorArray buffers();
 }

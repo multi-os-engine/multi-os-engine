@@ -682,4 +682,43 @@ public class UIScrollView extends UIView implements NSCoding {
     @Generated
     @Selector("zoomToRect:animated:")
     public native void zoomToRectAnimated(@ByValue CGRect rect, boolean animated);
+
+    @Generated
+    @Selector("adjustedContentInset")
+    @ByValue
+    public native UIEdgeInsets adjustedContentInset();
+
+    @Generated
+    @Selector("adjustedContentInsetDidChange")
+    public native void adjustedContentInsetDidChange();
+
+    @Generated
+    @Selector("contentInsetAdjustmentBehavior")
+    @NInt
+    public native long contentInsetAdjustmentBehavior();
+
+    @Generated
+    @Selector("contentLayoutGuide")
+    public native UILayoutGuide contentLayoutGuide();
+
+    @Generated
+    @Selector("directionalPressGestureRecognizer")
+    public native UIGestureRecognizer directionalPressGestureRecognizer();
+
+    @Generated
+    @Selector("frameLayoutGuide")
+    public native UILayoutGuide frameLayoutGuide();
+
+    @Generated
+    @Selector("indexDisplayMode")
+    @NInt
+    public native long indexDisplayMode();
+
+    @Generated
+    @Selector("setContentInsetAdjustmentBehavior:")
+    public native void setContentInsetAdjustmentBehavior(@NInt long value);
+
+    @Generated
+    @Selector("setIndexDisplayMode:")
+    public native void setIndexDisplayMode(@NInt long value);
 }

@@ -21,9 +21,10 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSJSONWritingOptions {
-    @Generated @NUInt public static final long NSJSONWritingPrettyPrinted = 0x0000000000000001L;
-
     @Generated
     private NSJSONWritingOptions() {
     }
+
+    @Generated @NUInt public static final long PrettyPrinted = 0x0000000000000001L;
+    @Generated @NUInt public static final long SortedKeys = 0x0000000000000002L;
 }

@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
@@ -39,13 +40,32 @@ public interface PKPushRegistryDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @IsOptional
     @Generated
     @Selector("pushRegistry:didReceiveIncomingPushWithPayload:forType:")
-    void pushRegistryDidReceiveIncomingPushWithPayloadForType(PKPushRegistry registry, PKPushPayload payload,
-            String type);
+    default void pushRegistryDidReceiveIncomingPushWithPayloadForType(PKPushRegistry registry, PKPushPayload payload,
+            String type) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Generated
     @Selector("pushRegistry:didUpdatePushCredentials:forType:")
-    void pushRegistryDidUpdatePushCredentialsForType(PKPushRegistry registry, PKPushCredentials credentials,
+    void pushRegistryDidUpdatePushCredentialsForType(PKPushRegistry registry, PKPushCredentials pushCredentials,
             String type);
+
+    @Generated
+    @IsOptional
+    @Selector("pushRegistry:didReceiveIncomingPushWithPayload:forType:withCompletionHandler:")
+    default void pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler(PKPushRegistry registry,
+            PKPushPayload payload, String type,
+            @ObjCBlock(name = "call_pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler") Block_pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler {
+        @Generated
+        void call_pushRegistryDidReceiveIncomingPushWithPayloadForTypeWithCompletionHandler();
+    }
 }

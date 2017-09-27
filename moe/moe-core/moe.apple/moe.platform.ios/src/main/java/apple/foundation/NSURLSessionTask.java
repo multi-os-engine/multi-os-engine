@@ -18,6 +18,7 @@ package apple.foundation;
 
 import apple.NSObject;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSProgressReporting;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSURLSessionTask extends NSObject implements NSCopying {
+public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressReporting {
     static {
         NatJ.register();
     }
@@ -227,4 +228,32 @@ public class NSURLSessionTask extends NSObject implements NSCopying {
     @Selector("taskIdentifier")
     @NUInt
     public native long taskIdentifier();
+
+    @Generated
+    @Selector("countOfBytesClientExpectsToReceive")
+    public native long countOfBytesClientExpectsToReceive();
+
+    @Generated
+    @Selector("countOfBytesClientExpectsToSend")
+    public native long countOfBytesClientExpectsToSend();
+
+    @Generated
+    @Selector("earliestBeginDate")
+    public native NSDate earliestBeginDate();
+
+    @Generated
+    @Selector("progress")
+    public native NSProgress progress();
+
+    @Generated
+    @Selector("setCountOfBytesClientExpectsToReceive:")
+    public native void setCountOfBytesClientExpectsToReceive(long value);
+
+    @Generated
+    @Selector("setCountOfBytesClientExpectsToSend:")
+    public native void setCountOfBytesClientExpectsToSend(long value);
+
+    @Generated
+    @Selector("setEarliestBeginDate:")
+    public native void setEarliestBeginDate(NSDate value);
 }

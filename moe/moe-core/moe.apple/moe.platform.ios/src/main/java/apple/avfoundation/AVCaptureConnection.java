@@ -99,7 +99,8 @@ public class AVCaptureConnection extends NSObject {
 
     @Generated
     @Selector("connectionWithInputPorts:output:")
-    public static native AVCaptureConnection connectionWithInputPortsOutput(NSArray<?> ports, AVCaptureOutput output);
+    public static native AVCaptureConnection connectionWithInputPortsOutput(NSArray<? extends AVCaptureInputPort> ports,
+            AVCaptureOutput output);
 
     @Generated
     @Selector("debugDescription")
@@ -169,7 +170,7 @@ public class AVCaptureConnection extends NSObject {
 
     @Generated
     @Selector("audioChannels")
-    public native NSArray<?> audioChannels();
+    public native NSArray<? extends AVCaptureAudioChannel> audioChannels();
 
     @Generated
     @Selector("automaticallyAdjustsVideoMirroring")
@@ -191,11 +192,12 @@ public class AVCaptureConnection extends NSObject {
 
     @Generated
     @Selector("initWithInputPorts:output:")
-    public native AVCaptureConnection initWithInputPortsOutput(NSArray<?> ports, AVCaptureOutput output);
+    public native AVCaptureConnection initWithInputPortsOutput(NSArray<? extends AVCaptureInputPort> ports,
+            AVCaptureOutput output);
 
     @Generated
     @Selector("inputPorts")
-    public native NSArray<?> inputPorts();
+    public native NSArray<? extends AVCaptureInputPort> inputPorts();
 
     @Generated
     @Selector("isActive")
@@ -314,4 +316,16 @@ public class AVCaptureConnection extends NSObject {
     @Selector("videoScaleAndCropFactor")
     @NFloat
     public native double videoScaleAndCropFactor();
+
+    @Generated
+    @Selector("isCameraIntrinsicMatrixDeliveryEnabled")
+    public native boolean isCameraIntrinsicMatrixDeliveryEnabled();
+
+    @Generated
+    @Selector("isCameraIntrinsicMatrixDeliverySupported")
+    public native boolean isCameraIntrinsicMatrixDeliverySupported();
+
+    @Generated
+    @Selector("setCameraIntrinsicMatrixDeliveryEnabled:")
+    public native void setCameraIntrinsicMatrixDeliveryEnabled(boolean value);
 }

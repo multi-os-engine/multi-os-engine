@@ -128,11 +128,11 @@ public class AVCaptureDevice extends NSObject {
 
     @Generated
     @Selector("devices")
-    public static native NSArray<?> devices();
+    public static native NSArray<? extends AVCaptureDevice> devices();
 
     @Generated
     @Selector("devicesWithMediaType:")
-    public static native NSArray<?> devicesWithMediaType(String mediaType);
+    public static native NSArray<? extends AVCaptureDevice> devicesWithMediaType(String mediaType);
 
     @Generated
     @Selector("hash")
@@ -299,7 +299,7 @@ public class AVCaptureDevice extends NSObject {
 
     @Generated
     @Selector("formats")
-    public native NSArray<?> formats();
+    public native NSArray<? extends AVCaptureDeviceFormat> formats();
 
     @Generated
     @Selector("grayWorldDeviceWhiteBalanceGains")
@@ -632,4 +632,27 @@ public class AVCaptureDevice extends NSObject {
         @Generated
         void call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler(@ByValue CMTime arg0);
     }
+
+    @Generated
+    @Selector("activeDepthDataFormat")
+    public native AVCaptureDeviceFormat activeDepthDataFormat();
+
+    @Generated
+    @Selector("dualCameraSwitchOverVideoZoomFactor")
+    @NFloat
+    public native double dualCameraSwitchOverVideoZoomFactor();
+
+    @Generated
+    @Selector("maxAvailableVideoZoomFactor")
+    @NFloat
+    public native double maxAvailableVideoZoomFactor();
+
+    @Generated
+    @Selector("minAvailableVideoZoomFactor")
+    @NFloat
+    public native double minAvailableVideoZoomFactor();
+
+    @Generated
+    @Selector("setActiveDepthDataFormat:")
+    public native void setActiveDepthDataFormat(AVCaptureDeviceFormat value);
 }

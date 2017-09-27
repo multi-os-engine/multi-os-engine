@@ -297,4 +297,9 @@ public class HKActivitySummaryQuery extends HKQuery {
         void call_updateHandler_ret(HKActivitySummaryQuery arg0, NSArray<? extends HKActivitySummary> arg1,
                 NSError arg2);
     }
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
+            HKQuantity totalFlightsClimbed);
 }

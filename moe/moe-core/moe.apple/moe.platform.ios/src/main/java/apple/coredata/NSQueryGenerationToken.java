@@ -18,9 +18,11 @@ package apple.coredata;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -37,6 +39,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -44,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSQueryGenerationToken extends NSObject implements NSCopying {
+public class NSQueryGenerationToken extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -164,4 +167,22 @@ public class NSQueryGenerationToken extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native NSQueryGenerationToken init();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native NSQueryGenerationToken initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

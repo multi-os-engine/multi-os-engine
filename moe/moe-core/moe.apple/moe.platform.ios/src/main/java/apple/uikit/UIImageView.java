@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAccessibilityContentSizeCategoryImageAdjusting;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -51,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIImageView extends UIView {
+public class UIImageView extends UIView implements UIAccessibilityContentSizeCategoryImageAdjusting {
     static {
         NatJ.register();
     }
@@ -487,4 +488,12 @@ public class UIImageView extends UIView {
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
+
+    @Generated
+    @Selector("adjustsImageSizeForAccessibilityContentSizeCategory")
+    public native boolean adjustsImageSizeForAccessibilityContentSizeCategory();
+
+    @Generated
+    @Selector("setAdjustsImageSizeForAccessibilityContentSizeCategory:")
+    public native void setAdjustsImageSizeForAccessibilityContentSizeCategory(boolean value);
 }

@@ -23,6 +23,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.webkit.protocol.WKURLSchemeHandler;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -305,4 +306,14 @@ public class WKWebViewConfiguration extends NSObject implements NSCoding, NSCopy
     @Generated
     @Selector("websiteDataStore")
     public native WKWebsiteDataStore websiteDataStore();
+
+    @Generated
+    @Selector("setURLSchemeHandler:forURLScheme:")
+    public native void setURLSchemeHandlerForURLScheme(
+            @Mapped(ObjCObjectMapper.class) WKURLSchemeHandler urlSchemeHandler, String urlScheme);
+
+    @Generated
+    @Selector("urlSchemeHandlerForURLScheme:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native WKURLSchemeHandler urlSchemeHandlerForURLScheme(String urlScheme);
 }

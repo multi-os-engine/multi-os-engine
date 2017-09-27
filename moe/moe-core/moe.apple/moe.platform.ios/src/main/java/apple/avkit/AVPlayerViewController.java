@@ -277,4 +277,20 @@ public class AVPlayerViewController extends UIViewController {
         @Generated
         void call_playPrerollAdWithCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("entersFullScreenWhenPlaybackBegins")
+    public native boolean entersFullScreenWhenPlaybackBegins();
+
+    @Generated
+    @Selector("exitsFullScreenWhenPlaybackEnds")
+    public native boolean exitsFullScreenWhenPlaybackEnds();
+
+    @Generated
+    @Selector("setEntersFullScreenWhenPlaybackBegins:")
+    public native void setEntersFullScreenWhenPlaybackBegins(boolean value);
+
+    @Generated
+    @Selector("setExitsFullScreenWhenPlaybackEnds:")
+    public native void setExitsFullScreenWhenPlaybackEnds(boolean value);
 }

@@ -40,6 +40,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -174,7 +175,7 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
 
     @Generated
     @Selector("drawableProperties")
-    public native NSDictionary<?, ?> drawableProperties();
+    public native NSDictionary<String, ?> drawableProperties();
 
     @Generated
     @Selector("init")
@@ -194,9 +195,19 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
 
     @Generated
     @Selector("setDrawableProperties:")
-    public native void setDrawableProperties(NSDictionary<?, ?> value);
+    public native void setDrawableProperties(NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setPresentsWithTransaction:")
     public native void setPresentsWithTransaction(boolean value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

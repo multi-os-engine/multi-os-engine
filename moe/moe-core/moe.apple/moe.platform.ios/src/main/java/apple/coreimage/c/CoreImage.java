@@ -903,4 +903,90 @@ public final class CoreImage {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCIActiveKeys();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatRGBA16();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatL8();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatL16();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatLh();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatLf();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatLA8();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatLA16();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatLAh();
+
+    @Generated
+    @CVariable()
+    public static native int kCIFormatLAf();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageNearestSampling();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageApplyOrientationProperty();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageAuxiliaryDepth();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageAuxiliaryDisparity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationAVDepthData();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationDepthImage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationDisparityImage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputDepthImageKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputDisparityImageKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputMoireAmountKey();
 }

@@ -35,4 +35,6 @@ public final class MDLTextureChannelEncoding {
     @Generated
     private MDLTextureChannelEncoding() {
     }
+
+    @Generated @NInt public static final long Float16SR = 0x0000000000000302L;
 }

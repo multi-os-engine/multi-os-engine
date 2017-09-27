@@ -32,7 +32,6 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.NUIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -112,7 +111,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSMutableArray<?> arrayWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -682,4 +681,14 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
         }
 
     }
+
+    @Generated
+    @Selector("arrayWithContentsOfURL:error:")
+    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithContentsOfURL:error:")
+    public native NSArray<_ObjectType> initWithContentsOfURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

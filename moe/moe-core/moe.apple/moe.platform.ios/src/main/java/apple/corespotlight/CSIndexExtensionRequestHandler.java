@@ -19,9 +19,12 @@ package apple.corespotlight;
 import apple.NSObject;
 import apple.corespotlight.protocol.CSSearchableIndexDelegate;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
+import apple.foundation.NSError;
 import apple.foundation.NSExtensionContext;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.foundation.protocol.NSExtensionRequestHandling;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -33,7 +36,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -185,4 +190,17 @@ public class CSIndexExtensionRequestHandler extends NSObject
     @IsOptional
     @Selector("searchableIndexDidThrottle:")
     public native void searchableIndexDidThrottle(CSSearchableIndex searchableIndex);
+
+    @Generated
+    @IsOptional
+    @Selector("dataForSearchableIndex:itemIdentifier:typeIdentifier:error:")
+    public native NSData dataForSearchableIndexItemIdentifierTypeIdentifierError(CSSearchableIndex searchableIndex,
+            String itemIdentifier, String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @IsOptional
+    @Selector("fileURLForSearchableIndex:itemIdentifier:typeIdentifier:inPlace:error:")
+    public native NSURL fileURLForSearchableIndexItemIdentifierTypeIdentifierInPlaceError(
+            CSSearchableIndex searchableIndex, String itemIdentifier, String typeIdentifier, boolean inPlace,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

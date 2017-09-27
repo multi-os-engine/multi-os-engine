@@ -17,9 +17,11 @@ limitations under the License.
 package apple.corelocation;
 
 import apple.NSObject;
+import apple.contacts.CNPostalAddress;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
+import apple.foundation.NSLocale;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -211,5 +213,58 @@ public class CLGeocoder extends NSObject {
     public interface Block_reverseGeocodeLocationCompletionHandler {
         @Generated
         void call_reverseGeocodeLocationCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("geocodeAddressString:inRegion:preferredLocale:completionHandler:")
+    public native void geocodeAddressStringInRegionPreferredLocaleCompletionHandler(String addressString,
+            CLRegion region, NSLocale locale,
+            @ObjCBlock(name = "call_geocodeAddressStringInRegionPreferredLocaleCompletionHandler") Block_geocodeAddressStringInRegionPreferredLocaleCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_geocodeAddressStringInRegionPreferredLocaleCompletionHandler {
+        @Generated
+        void call_geocodeAddressStringInRegionPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> arg0,
+                NSError arg1);
+    }
+
+    @Generated
+    @Selector("geocodePostalAddress:completionHandler:")
+    public native void geocodePostalAddressCompletionHandler(CNPostalAddress postalAddress,
+            @ObjCBlock(name = "call_geocodePostalAddressCompletionHandler") Block_geocodePostalAddressCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_geocodePostalAddressCompletionHandler {
+        @Generated
+        void call_geocodePostalAddressCompletionHandler(NSArray<? extends CLPlacemark> arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("geocodePostalAddress:preferredLocale:completionHandler:")
+    public native void geocodePostalAddressPreferredLocaleCompletionHandler(CNPostalAddress postalAddress,
+            NSLocale locale,
+            @ObjCBlock(name = "call_geocodePostalAddressPreferredLocaleCompletionHandler") Block_geocodePostalAddressPreferredLocaleCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_geocodePostalAddressPreferredLocaleCompletionHandler {
+        @Generated
+        void call_geocodePostalAddressPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> arg0,
+                NSError arg1);
+    }
+
+    @Generated
+    @Selector("reverseGeocodeLocation:preferredLocale:completionHandler:")
+    public native void reverseGeocodeLocationPreferredLocaleCompletionHandler(CLLocation location, NSLocale locale,
+            @ObjCBlock(name = "call_reverseGeocodeLocationPreferredLocaleCompletionHandler") Block_reverseGeocodeLocationPreferredLocaleCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_reverseGeocodeLocationPreferredLocaleCompletionHandler {
+        @Generated
+        void call_reverseGeocodeLocationPreferredLocaleCompletionHandler(NSArray<? extends CLPlacemark> arg0,
+                NSError arg1);
     }
 }

@@ -19,6 +19,7 @@ package apple.uikit.protocol;
 import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
 import apple.uikit.UIFocusAnimationCoordinator;
+import apple.uikit.UISwipeActionsConfiguration;
 import apple.uikit.UITableView;
 import apple.uikit.UITableViewCell;
 import apple.uikit.UITableViewFocusUpdateContext;
@@ -323,6 +324,30 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:willSelectRowAtIndexPath:")
     default NSIndexPath tableViewWillSelectRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:leadingSwipeActionsConfigurationForRowAtIndexPath:")
+    default UISwipeActionsConfiguration tableViewLeadingSwipeActionsConfigurationForRowAtIndexPath(
+            UITableView tableView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:shouldSpringLoadRowAtIndexPath:withContext:")
+    default boolean tableViewShouldSpringLoadRowAtIndexPathWithContext(UITableView tableView, NSIndexPath indexPath,
+            @Mapped(ObjCObjectMapper.class) Object context) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:trailingSwipeActionsConfigurationForRowAtIndexPath:")
+    default UISwipeActionsConfiguration tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(
+            UITableView tableView, NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

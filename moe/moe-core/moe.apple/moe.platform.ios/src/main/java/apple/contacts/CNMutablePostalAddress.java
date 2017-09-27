@@ -221,4 +221,20 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("setSubAdministrativeArea:")
+    public native void setSubAdministrativeArea(String value);
+
+    @Generated
+    @Selector("setSubLocality:")
+    public native void setSubLocality(String value);
+
+    @Generated
+    @Selector("subAdministrativeArea")
+    public native String subAdministrativeArea();
+
+    @Generated
+    @Selector("subLocality")
+    public native String subLocality();
 }

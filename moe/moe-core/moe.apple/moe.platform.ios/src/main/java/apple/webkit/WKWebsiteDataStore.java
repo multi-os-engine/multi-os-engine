@@ -218,4 +218,8 @@ public class WKWebsiteDataStore extends NSObject implements NSCoding {
         @Generated
         void call_removeDataOfTypesModifiedSinceCompletionHandler();
     }
+
+    @Generated
+    @Selector("httpCookieStore")
+    public native WKHTTPCookieStore httpCookieStore();
 }

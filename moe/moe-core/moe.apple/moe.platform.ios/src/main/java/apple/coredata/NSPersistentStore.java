@@ -237,4 +237,8 @@ public class NSPersistentStore extends NSObject {
     @Generated
     @Selector("willRemoveFromPersistentStoreCoordinator:")
     public native void willRemoveFromPersistentStoreCoordinator(NSPersistentStoreCoordinator coordinator);
+
+    @Generated
+    @Selector("coreSpotlightExporter")
+    public native NSCoreDataCoreSpotlightDelegate coreSpotlightExporter();
 }

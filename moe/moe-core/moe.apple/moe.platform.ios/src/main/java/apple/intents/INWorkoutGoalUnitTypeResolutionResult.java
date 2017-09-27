@@ -178,4 +178,15 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
     @Generated
     @Selector("init")
     public native INWorkoutGoalUnitTypeResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithWorkoutGoalUnitTypeToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithWorkoutGoalUnitTypeToConfirm(
+            @NInt long workoutGoalUnitTypeToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedWorkoutGoalUnitType:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedWorkoutGoalUnitType(@NInt long resolvedWorkoutGoalUnitType);
 }

@@ -18,10 +18,10 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLCommandBuffer;
-import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLTexture;
 import apple.metal.struct.MTLRegion;
 import apple.metal.struct.MTLSize;
@@ -48,6 +48,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -197,7 +198,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSBinaryImageKernel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSBinaryImageKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("primaryEdgeMode")
@@ -265,5 +266,30 @@ public class MPSBinaryImageKernel extends MPSKernel {
         @MappedReturn(ObjCObjectMapper.class)
         Object call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator(MPSKernel arg0,
                 @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
+    }
+
+    @Generated
+    @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:")
+    public native void encodeToCommandBufferPrimaryImageSecondaryImageDestinationImage(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage primaryImage,
+            MPSImage secondaryImage, MPSImage destinationImage);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSBinaryImageKernel initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoder:device:")
+    public native MPSBinaryImageKernel initWithCoderDevice(NSCoder aDecoder,
+            @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
     }
 }

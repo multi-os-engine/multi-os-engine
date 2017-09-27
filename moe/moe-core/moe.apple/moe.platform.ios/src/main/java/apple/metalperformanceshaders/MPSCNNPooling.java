@@ -18,6 +18,7 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLDevice;
@@ -37,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -157,7 +159,7 @@ public class MPSCNNPooling extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNPooling initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSCNNPooling initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -171,22 +173,20 @@ public class MPSCNNPooling extends MPSCNNKernel {
             @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
 
     @Generated
-    @Selector("kernelHeight")
-    @NUInt
-    public native long kernelHeight();
+    @Selector("initWithCoder:")
+    public native MPSCNNPooling initWithCoder(NSCoder aDecoder);
 
     @Generated
-    @Selector("kernelWidth")
-    @NUInt
-    public native long kernelWidth();
+    @Selector("initWithCoder:device:")
+    public native MPSCNNPooling initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
-    @Selector("strideInPixelsX")
-    @NUInt
-    public native long strideInPixelsX();
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
 
     @Generated
-    @Selector("strideInPixelsY")
-    @NUInt
-    public native long strideInPixelsY();
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

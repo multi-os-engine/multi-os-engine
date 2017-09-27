@@ -272,4 +272,12 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Selector("tAddressMode")
     @NUInt
     public native long tAddressMode();
+
+    @Generated
+    @Selector("setSupportArgumentBuffers:")
+    public native void setSupportArgumentBuffers(boolean value);
+
+    @Generated
+    @Selector("supportArgumentBuffers")
+    public native boolean supportArgumentBuffers();
 }

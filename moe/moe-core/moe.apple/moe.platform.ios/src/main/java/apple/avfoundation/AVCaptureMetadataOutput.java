@@ -155,7 +155,7 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("availableMetadataObjectTypes")
-    public native NSArray<?> availableMetadataObjectTypes();
+    public native NSArray<String> availableMetadataObjectTypes();
 
     @Generated
     @Selector("init")
@@ -163,7 +163,7 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("metadataObjectTypes")
-    public native NSArray<?> metadataObjectTypes();
+    public native NSArray<String> metadataObjectTypes();
 
     @Generated
     @Selector("metadataObjectsCallbackQueue")
@@ -181,7 +181,7 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("setMetadataObjectTypes:")
-    public native void setMetadataObjectTypes(NSArray<?> value);
+    public native void setMetadataObjectTypes(NSArray<String> value);
 
     @Generated
     @Selector("setMetadataObjectsDelegate:queue:")

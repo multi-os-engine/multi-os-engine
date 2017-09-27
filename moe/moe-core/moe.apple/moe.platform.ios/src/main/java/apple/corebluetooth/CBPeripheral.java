@@ -242,4 +242,12 @@ public class CBPeripheral extends CBPeer {
     @Generated
     @Selector("writeValue:forDescriptor:")
     public native void writeValueForDescriptor(NSData data, CBDescriptor descriptor);
+
+    @Generated
+    @Selector("canSendWriteWithoutResponse")
+    public native boolean canSendWriteWithoutResponse();
+
+    @Generated
+    @Selector("openL2CAPChannel:")
+    public native void openL2CAPChannel(char PSM);
 }

@@ -556,4 +556,20 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Generated
     @Selector("topItem")
     public native UINavigationItem topItem();
+
+    @Generated
+    @Selector("largeTitleTextAttributes")
+    public native NSDictionary<String, ?> largeTitleTextAttributes();
+
+    @Generated
+    @Selector("prefersLargeTitles")
+    public native boolean prefersLargeTitles();
+
+    @Generated
+    @Selector("setLargeTitleTextAttributes:")
+    public native void setLargeTitleTextAttributes(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("setPrefersLargeTitles:")
+    public native void setPrefersLargeTitles(boolean value);
 }

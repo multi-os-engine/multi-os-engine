@@ -161,4 +161,49 @@ public interface UITextInputTraits {
     default String textContentType() {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartDashesType:")
+    default void setSmartDashesType(@NInt long value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartInsertDeleteType:")
+    default void setSmartInsertDeleteType(@NInt long value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartQuotesType:")
+    default void setSmartQuotesType(@NInt long value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("smartDashesType")
+    @NInt
+    default long smartDashesType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("smartInsertDeleteType")
+    @NInt
+    default long smartInsertDeleteType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("smartQuotesType")
+    @NInt
+    default long smartQuotesType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

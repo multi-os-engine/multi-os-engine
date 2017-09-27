@@ -18,6 +18,7 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLCommandBuffer;
@@ -40,6 +41,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -166,7 +168,7 @@ public class MPSMatrixMultiplication extends MPSKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixMultiplication initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSMatrixMultiplication initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:transposeLeft:transposeRight:resultRows:resultColumns:interiorColumns:alpha:beta:")
@@ -200,4 +202,47 @@ public class MPSMatrixMultiplication extends MPSKernel {
     @Generated
     @Selector("setRightMatrixOrigin:")
     public native void setRightMatrixOrigin(@ByValue MTLOrigin value);
+
+    @Generated
+    @Selector("batchSize")
+    @NUInt
+    public native long batchSize();
+
+    @Generated
+    @Selector("batchStart")
+    @NUInt
+    public native long batchStart();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSMatrixMultiplication initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoder:device:")
+    public native MPSMatrixMultiplication initWithCoderDevice(NSCoder aDecoder,
+            @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("initWithDevice:resultRows:resultColumns:interiorColumns:")
+    public native MPSMatrixMultiplication initWithDeviceResultRowsResultColumnsInteriorColumns(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long resultRows, @NUInt long resultColumns,
+            @NUInt long interiorColumns);
+
+    @Generated
+    @Selector("setBatchSize:")
+    public native void setBatchSize(@NUInt long value);
+
+    @Generated
+    @Selector("setBatchStart:")
+    public native void setBatchStart(@NUInt long value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

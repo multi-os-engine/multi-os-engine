@@ -22,6 +22,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import apple.uikit.struct.UIOffset;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -50,7 +51,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIBarButtonItem extends UIBarItem implements NSCoding {
+public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoadedInteractionSupporting {
     static {
         NatJ.register();
     }
@@ -417,4 +418,12 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding {
     @Selector("width")
     @NFloat
     public native double width();
+
+    @Generated
+    @Selector("isSpringLoaded")
+    public native boolean isSpringLoaded();
+
+    @Generated
+    @Selector("setSpringLoaded:")
+    public native void setSpringLoaded(boolean value);
 }

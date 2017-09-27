@@ -32,4 +32,10 @@ public final class SCNDebugOptions {
     @Generated
     private SCNDebugOptions() {
     }
+
+    @Generated @NUInt public static final long RenderAsWireframe = 0x0000000000000040L;
+    @Generated @NUInt public static final long ShowSkeletons = 0x0000000000000080L;
+    @Generated @NUInt public static final long ShowCreases = 0x0000000000000100L;
+    @Generated @NUInt public static final long ShowConstraints = 0x0000000000000200L;
+    @Generated @NUInt public static final long ShowCameras = 0x0000000000000400L;
 }

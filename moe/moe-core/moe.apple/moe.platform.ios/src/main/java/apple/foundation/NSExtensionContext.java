@@ -241,4 +241,13 @@ public class NSExtensionContext extends NSObject {
         @Generated
         void call_openURLCompletionHandler(boolean arg0);
     }
+
+    @Generated
+    @Selector("completeRequestWithBroadcastURL:setupInfo:")
+    public native void completeRequestWithBroadcastURLSetupInfo(NSURL broadcastURL,
+            NSDictionary<String, ? extends NSObject> setupInfo);
+
+    @Generated
+    @Selector("interfaceParametersDescription")
+    public native String interfaceParametersDescription();
 }

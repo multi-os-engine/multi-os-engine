@@ -198,4 +198,8 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
     @Generated
     @Selector("userRecordID")
     public native CKRecordID userRecordID();
+
+    @Generated
+    @Selector("contactIdentifiers")
+    public native NSArray<String> contactIdentifiers();
 }

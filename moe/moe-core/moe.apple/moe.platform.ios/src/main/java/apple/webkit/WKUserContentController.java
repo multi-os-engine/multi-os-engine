@@ -185,4 +185,16 @@ public class WKUserContentController extends NSObject implements NSCoding {
     @Generated
     @Selector("userScripts")
     public native NSArray<? extends WKUserScript> userScripts();
+
+    @Generated
+    @Selector("addContentRuleList:")
+    public native void addContentRuleList(WKContentRuleList contentRuleList);
+
+    @Generated
+    @Selector("removeAllContentRuleLists")
+    public native void removeAllContentRuleLists();
+
+    @Generated
+    @Selector("removeContentRuleList:")
+    public native void removeContentRuleList(WKContentRuleList contentRuleList);
 }

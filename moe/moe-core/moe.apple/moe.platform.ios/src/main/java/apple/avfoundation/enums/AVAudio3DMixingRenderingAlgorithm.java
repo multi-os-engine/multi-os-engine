@@ -30,4 +30,6 @@ public final class AVAudio3DMixingRenderingAlgorithm {
     @Generated
     private AVAudio3DMixingRenderingAlgorithm() {
     }
+
+    @Generated @NInt public static final long HRTFHQ = 0x0000000000000006L;
 }

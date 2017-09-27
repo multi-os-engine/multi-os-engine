@@ -156,5 +156,5 @@ public class AVCaptureInput extends NSObject {
 
     @Generated
     @Selector("ports")
-    public native NSArray<?> ports();
+    public native NSArray<? extends AVCaptureInputPort> ports();
 }

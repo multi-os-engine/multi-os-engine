@@ -198,4 +198,24 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
         @Generated
         void call_completeRequestWithCompletionHandler(boolean arg0);
     }
+
+    @Generated
+    @Selector("isIncremental")
+    public native boolean isIncremental();
+
+    @Generated
+    @Selector("removeAllBlockingEntries")
+    public native void removeAllBlockingEntries();
+
+    @Generated
+    @Selector("removeAllIdentificationEntries")
+    public native void removeAllIdentificationEntries();
+
+    @Generated
+    @Selector("removeBlockingEntryWithPhoneNumber:")
+    public native void removeBlockingEntryWithPhoneNumber(long phoneNumber);
+
+    @Generated
+    @Selector("removeIdentificationEntryWithPhoneNumber:")
+    public native void removeIdentificationEntryWithPhoneNumber(long phoneNumber);
 }

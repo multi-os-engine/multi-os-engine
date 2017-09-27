@@ -30,4 +30,6 @@ public final class INMessageAttribute {
     @Generated
     private INMessageAttribute() {
     }
+
+    @Generated @NInt public static final long Played = 0x0000000000000005L;
 }

@@ -262,4 +262,8 @@ public class MDLMaterialProperty extends NSObject implements MDLNamed, NSCopying
     @Selector("type")
     @NUInt
     public native long type();
+
+    @Generated
+    @Selector("setType:")
+    public native void setType(@NUInt long value);
 }

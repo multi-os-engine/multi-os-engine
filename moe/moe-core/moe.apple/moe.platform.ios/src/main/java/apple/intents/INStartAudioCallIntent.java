@@ -177,4 +177,14 @@ public class INStartAudioCallIntent extends INIntent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("destinationType")
+    @NInt
+    public native long destinationType();
+
+    @Generated
+    @Selector("initWithDestinationType:contacts:")
+    public native INStartAudioCallIntent initWithDestinationTypeContacts(@NInt long destinationType,
+            NSArray<? extends INPerson> contacts);
 }

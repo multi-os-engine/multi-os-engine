@@ -18,9 +18,12 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
+import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -32,11 +35,13 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -44,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSCNNConvolutionDescriptor extends NSObject implements NSCopying {
+public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -238,4 +243,72 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSCopying {
     @Selector("strideInPixelsY")
     @NUInt
     public native long strideInPixelsY();
+
+    @Generated
+    @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannels(
+            @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
+            @NUInt long outputFeatureChannels);
+
+    @Generated
+    @Selector("dilationRateX")
+    @NUInt
+    public native long dilationRateX();
+
+    @Generated
+    @Selector("dilationRateY")
+    @NUInt
+    public native long dilationRateY();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSCNNConvolutionDescriptor initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("neuronParameterA")
+    public native float neuronParameterA();
+
+    @Generated
+    @Selector("neuronParameterB")
+    public native float neuronParameterB();
+
+    @Generated
+    @Selector("neuronType")
+    public native int neuronType();
+
+    @Generated
+    @Selector("setBatchNormalizationParametersForInferenceWithMean:variance:gamma:beta:epsilon:")
+    public native void setBatchNormalizationParametersForInferenceWithMeanVarianceGammaBetaEpsilon(ConstFloatPtr mean,
+            ConstFloatPtr variance, ConstFloatPtr gamma, ConstFloatPtr beta, float epsilon);
+
+    @Generated
+    @Selector("setDilationRateX:")
+    public native void setDilationRateX(@NUInt long value);
+
+    @Generated
+    @Selector("setDilationRateY:")
+    public native void setDilationRateY(@NUInt long value);
+
+    @Generated
+    @Selector("setNeuronToPReLUWithParametersA:")
+    public native void setNeuronToPReLUWithParametersA(NSData A);
+
+    @Generated
+    @Selector("setNeuronType:parameterA:parameterB:")
+    public native void setNeuronTypeParameterAParameterB(int neuronType, float parameterA, float parameterB);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

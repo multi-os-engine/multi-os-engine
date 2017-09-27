@@ -359,4 +359,12 @@ public class AVAssetWriterInput extends NSObject {
         @Generated
         void call_respondToEachPassDescriptionOnQueueUsingBlock();
     }
+
+    @Generated
+    @Selector("mediaDataLocation")
+    public native String mediaDataLocation();
+
+    @Generated
+    @Selector("setMediaDataLocation:")
+    public native void setMediaDataLocation(String value);
 }

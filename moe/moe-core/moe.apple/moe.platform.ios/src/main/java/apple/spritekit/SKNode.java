@@ -21,6 +21,7 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableDictionary;
 import apple.foundation.NSSet;
@@ -528,4 +529,29 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusI
         @Generated
         void call_runActionCompletion();
     }
+
+    @Generated
+    @Selector("attributeValues")
+    public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
+
+    @Generated
+    @Selector("focusBehavior")
+    @NInt
+    public native long focusBehavior();
+
+    @Generated
+    @Selector("setAttributeValues:")
+    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+
+    @Generated
+    @Selector("setFocusBehavior:")
+    public native void setFocusBehavior(@NInt long value);
+
+    @Generated
+    @Selector("setValue:forAttributeNamed:")
+    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+
+    @Generated
+    @Selector("valueForAttributeNamed:")
+    public native SKAttributeValue valueForAttributeNamed(String key);
 }

@@ -340,4 +340,8 @@ public class MPMediaItem extends MPMediaEntity {
     @Generated
     @Selector("userGrouping")
     public native String userGrouping();
+
+    @Generated
+    @Selector("playbackStoreID")
+    public native String playbackStoreID();
 }

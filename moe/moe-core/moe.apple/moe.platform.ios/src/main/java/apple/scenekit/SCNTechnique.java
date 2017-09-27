@@ -173,7 +173,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -260,4 +260,16 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
         @Generated
         void call_handleBindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
     }
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 }

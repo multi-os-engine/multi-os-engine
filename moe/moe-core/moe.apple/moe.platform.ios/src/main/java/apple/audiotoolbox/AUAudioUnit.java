@@ -22,13 +22,16 @@ import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.avfoundation.AVAudioFormat;
 import apple.coreaudio.struct.AudioBufferList;
 import apple.coreaudio.struct.AudioTimeStamp;
+import apple.coreaudiokit.AUAudioUnitViewConfiguration;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.c.map.CStringMapper;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
@@ -41,6 +44,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.DoublePtr;
 import org.moe.natj.general.ptr.IntPtr;
@@ -544,4 +548,64 @@ public class AUAudioUnit extends NSObject {
         @Generated
         boolean call_transportStateBlock_ret(NUIntPtr arg0, DoublePtr arg1, DoublePtr arg2, DoublePtr arg3);
     }
+
+    @Generated
+    @Selector("MIDIOutputBufferSizeHint")
+    @NInt
+    public native long MIDIOutputBufferSizeHint();
+
+    @Generated
+    @Selector("MIDIOutputEventBlock")
+    @ObjCBlock(name = "call_MIDIOutputEventBlock_ret")
+    public native Block_MIDIOutputEventBlock_ret MIDIOutputEventBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_MIDIOutputEventBlock_ret {
+        @Generated
+        int call_MIDIOutputEventBlock_ret(long arg0, byte arg1, @NInt long arg2,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg3);
+    }
+
+    @Generated
+    @Selector("MIDIOutputNames")
+    public native NSArray<String> MIDIOutputNames();
+
+    @Generated
+    @Selector("audioUnitShortName")
+    public native String audioUnitShortName();
+
+    @Generated
+    @Selector("isRunning")
+    public native boolean isRunning();
+
+    @Generated
+    @Selector("providesUserInterface")
+    public native boolean providesUserInterface();
+
+    @Generated
+    @Selector("selectViewConfiguration:")
+    public native void selectViewConfiguration(AUAudioUnitViewConfiguration viewConfiguration);
+
+    @Generated
+    @Selector("setMIDIOutputBufferSizeHint:")
+    public native void setMIDIOutputBufferSizeHint(@NInt long value);
+
+    @Generated
+    @Selector("setMIDIOutputEventBlock:")
+    public native void setMIDIOutputEventBlock(
+            @ObjCBlock(name = "call_setMIDIOutputEventBlock") Block_setMIDIOutputEventBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setMIDIOutputEventBlock {
+        @Generated
+        int call_setMIDIOutputEventBlock(long arg0, byte arg1, @NInt long arg2,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg3);
+    }
+
+    @Generated
+    @Selector("supportedViewConfigurations:")
+    public native NSIndexSet supportedViewConfigurations(
+            NSArray<? extends AUAudioUnitViewConfiguration> availableViewConfigurations);
 }

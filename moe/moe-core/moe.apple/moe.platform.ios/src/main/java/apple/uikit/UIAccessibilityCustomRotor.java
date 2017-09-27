@@ -18,6 +18,7 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSAttributedString;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -198,4 +199,43 @@ public class UIAccessibilityCustomRotor extends NSObject {
         @Generated
         UIAccessibilityCustomRotorItemResult call_setItemSearchBlock(UIAccessibilityCustomRotorSearchPredicate arg0);
     }
+
+    @Generated
+    @Selector("attributedName")
+    public native NSAttributedString attributedName();
+
+    @Generated
+    @Selector("initWithAttributedName:itemSearchBlock:")
+    public native UIAccessibilityCustomRotor initWithAttributedNameItemSearchBlock(NSAttributedString attributedName,
+            @ObjCBlock(name = "call_initWithAttributedNameItemSearchBlock") Block_initWithAttributedNameItemSearchBlock itemSearchBlock);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithAttributedNameItemSearchBlock {
+        @Generated
+        UIAccessibilityCustomRotorItemResult call_initWithAttributedNameItemSearchBlock(
+                UIAccessibilityCustomRotorSearchPredicate arg0);
+    }
+
+    @Generated
+    @Selector("initWithSystemType:itemSearchBlock:")
+    public native UIAccessibilityCustomRotor initWithSystemTypeItemSearchBlock(@NInt long type,
+            @ObjCBlock(name = "call_initWithSystemTypeItemSearchBlock") Block_initWithSystemTypeItemSearchBlock itemSearchBlock);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithSystemTypeItemSearchBlock {
+        @Generated
+        UIAccessibilityCustomRotorItemResult call_initWithSystemTypeItemSearchBlock(
+                UIAccessibilityCustomRotorSearchPredicate arg0);
+    }
+
+    @Generated
+    @Selector("setAttributedName:")
+    public native void setAttributedName(NSAttributedString value);
+
+    @Generated
+    @Selector("systemRotorType")
+    @NInt
+    public native long systemRotorType();
 }

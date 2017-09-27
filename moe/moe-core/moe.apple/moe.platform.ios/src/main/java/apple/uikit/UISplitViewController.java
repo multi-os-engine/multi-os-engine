@@ -277,4 +277,13 @@ public class UISplitViewController extends UIViewController {
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();
+
+    @Generated
+    @Selector("primaryEdge")
+    @NInt
+    public native long primaryEdge();
+
+    @Generated
+    @Selector("setPrimaryEdge:")
+    public native void setPrimaryEdge(@NInt long value);
 }

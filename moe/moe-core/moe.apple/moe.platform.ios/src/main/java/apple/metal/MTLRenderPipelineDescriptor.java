@@ -316,4 +316,21 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("vertexFunction")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLFunction vertexFunction();
+
+    @Generated
+    @Selector("fragmentBuffers")
+    public native MTLPipelineBufferDescriptorArray fragmentBuffers();
+
+    @Generated
+    @Selector("rasterSampleCount")
+    @NUInt
+    public native long rasterSampleCount();
+
+    @Generated
+    @Selector("setRasterSampleCount:")
+    public native void setRasterSampleCount(@NUInt long value);
+
+    @Generated
+    @Selector("vertexBuffers")
+    public native MTLPipelineBufferDescriptorArray vertexBuffers();
 }

@@ -273,4 +273,9 @@ public class HKStatisticsQuery extends HKQuery {
         void call_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler(HKStatisticsQuery arg0,
                 HKStatistics arg1, NSError arg2);
     }
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
+            HKQuantity totalFlightsClimbed);
 }

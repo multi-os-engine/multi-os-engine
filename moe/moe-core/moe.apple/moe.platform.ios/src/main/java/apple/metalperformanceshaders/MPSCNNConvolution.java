@@ -18,9 +18,12 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLDevice;
+import apple.metalperformanceshaders.protocol.MPSCNNConvolutionDataSource;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -31,13 +34,16 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstFloatPtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -163,7 +169,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNConvolution initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSCNNConvolution initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:")
@@ -177,16 +183,6 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native long inputFeatureChannels();
 
     @Generated
-    @Selector("kernelHeight")
-    @NUInt
-    public native long kernelHeight();
-
-    @Generated
-    @Selector("kernelWidth")
-    @NUInt
-    public native long kernelWidth();
-
-    @Generated
     @Selector("neuron")
     public native MPSCNNNeuron neuron();
 
@@ -196,12 +192,65 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native long outputFeatureChannels();
 
     @Generated
-    @Selector("strideInPixelsX")
+    @Selector("channelMultiplier")
     @NUInt
-    public native long strideInPixelsX();
+    public native long channelMultiplier();
 
     @Generated
-    @Selector("strideInPixelsY")
+    @Selector("dilationRateX")
     @NUInt
-    public native long strideInPixelsY();
+    public native long dilationRateX();
+
+    @Generated
+    @Selector("dilationRateY")
+    @NUInt
+    public native long dilationRateY();
+
+    @Generated
+    @Selector("encodeToCommandBuffer:sourceImage:destinationImage:state:")
+    public native void encodeToCommandBufferSourceImageDestinationImageState(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            MPSImage destinationImage,
+            @ReferenceInfo(type = MPSCNNConvolutionState.class) Ptr<MPSCNNConvolutionState> outState);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSCNNConvolution initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoder:device:")
+    public native MPSCNNConvolution initWithCoderDevice(NSCoder aDecoder,
+            @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("initWithDevice:weights:")
+    public native MPSCNNConvolution initWithDeviceWeights(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+
+    @Generated
+    @Selector("neuronParameterA")
+    public native float neuronParameterA();
+
+    @Generated
+    @Selector("neuronParameterB")
+    public native float neuronParameterB();
+
+    @Generated
+    @Selector("neuronType")
+    public native int neuronType();
+
+    @Generated
+    @Selector("subPixelScaleFactor")
+    @NUInt
+    public native long subPixelScaleFactor();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

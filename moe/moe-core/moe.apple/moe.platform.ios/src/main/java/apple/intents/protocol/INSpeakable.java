@@ -16,10 +16,12 @@ limitations under the License.
 
 package apple.intents.protocol;
 
+import apple.foundation.NSArray;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
@@ -28,9 +30,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INSpeakable")
 public interface INSpeakable {
+    @IsOptional
     @Generated
     @Selector("identifier")
-    String identifier();
+    default String identifier() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Generated
     @Selector("pronunciationHint")
@@ -39,4 +44,12 @@ public interface INSpeakable {
     @Generated
     @Selector("spokenPhrase")
     String spokenPhrase();
+
+    @Generated
+    @Selector("alternativeSpeakableMatches")
+    NSArray<?> alternativeSpeakableMatches();
+
+    @Generated
+    @Selector("vocabularyIdentifier")
+    String vocabularyIdentifier();
 }

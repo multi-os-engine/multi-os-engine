@@ -261,4 +261,8 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
+
+    @Generated
+    @Selector("postalAddress")
+    public native CNPostalAddress postalAddress();
 }

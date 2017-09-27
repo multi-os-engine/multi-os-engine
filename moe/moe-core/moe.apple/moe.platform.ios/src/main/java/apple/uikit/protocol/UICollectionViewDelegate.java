@@ -203,4 +203,12 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     default NSIndexPath indexPathForPreferredFocusedViewInCollectionView(UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
+    default boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
+            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

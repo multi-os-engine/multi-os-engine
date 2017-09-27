@@ -252,4 +252,20 @@ public class HMAccessory extends NSObject {
         @Generated
         void call_updateNameCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("firmwareVersion")
+    public native String firmwareVersion();
+
+    @Generated
+    @Selector("manufacturer")
+    public native String manufacturer();
+
+    @Generated
+    @Selector("model")
+    public native String model();
+
+    @Generated
+    @Selector("profiles")
+    public native NSArray<? extends HMAccessoryProfile> profiles();
 }

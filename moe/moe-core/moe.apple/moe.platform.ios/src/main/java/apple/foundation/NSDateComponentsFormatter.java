@@ -269,4 +269,12 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Selector("zeroFormattingBehavior")
     @NUInt
     public native long zeroFormattingBehavior();
+
+    @Generated
+    @Selector("referenceDate")
+    public native NSDate referenceDate();
+
+    @Generated
+    @Selector("setReferenceDate:")
+    public native void setReferenceDate(NSDate value);
 }

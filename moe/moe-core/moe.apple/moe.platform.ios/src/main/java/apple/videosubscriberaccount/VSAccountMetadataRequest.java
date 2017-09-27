@@ -233,4 +233,12 @@ public class VSAccountMetadataRequest extends NSObject {
     @Generated
     @Selector("verificationToken")
     public native String verificationToken();
+
+    @Generated
+    @Selector("featuredAccountProviderIdentifiers")
+    public native NSArray<String> featuredAccountProviderIdentifiers();
+
+    @Generated
+    @Selector("setFeaturedAccountProviderIdentifiers:")
+    public native void setFeaturedAccountProviderIdentifiers(NSArray<String> value);
 }

@@ -213,4 +213,28 @@ public class CKNotification extends NSObject {
     @Generated
     @Selector("subscriptionID")
     public native String subscriptionID();
+
+    @Generated
+    @Selector("subtitle")
+    public native String subtitle();
+
+    @Generated
+    @Selector("subtitleLocalizationArgs")
+    public native NSArray<String> subtitleLocalizationArgs();
+
+    @Generated
+    @Selector("subtitleLocalizationKey")
+    public native String subtitleLocalizationKey();
+
+    @Generated
+    @Selector("title")
+    public native String title();
+
+    @Generated
+    @Selector("titleLocalizationArgs")
+    public native NSArray<String> titleLocalizationArgs();
+
+    @Generated
+    @Selector("titleLocalizationKey")
+    public native String titleLocalizationKey();
 }

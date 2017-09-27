@@ -209,4 +209,9 @@ public class PHContentEditingInput extends NSObject {
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();
+
+    @Generated
+    @Selector("playbackStyle")
+    @NInt
+    public native long playbackStyle();
 }

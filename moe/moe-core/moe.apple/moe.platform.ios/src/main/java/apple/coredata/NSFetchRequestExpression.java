@@ -106,7 +106,7 @@ public class NSFetchRequestExpression extends NSExpression {
 
     @Generated
     @Selector("expressionForAggregate:")
-    public static native NSExpression expressionForAggregate(NSArray<?> subexpressions);
+    public static native NSExpression expressionForAggregate(NSArray<? extends NSExpression> subexpressions);
 
     @Generated
     @Selector("expressionForAnyKey")
@@ -160,7 +160,7 @@ public class NSFetchRequestExpression extends NSExpression {
     @Generated
     @Selector("expressionForSubquery:usingIteratorVariable:predicate:")
     public static native NSExpression expressionForSubqueryUsingIteratorVariablePredicate(NSExpression expression,
-            String variable, @Mapped(ObjCObjectMapper.class) Object predicate);
+            String variable, NSPredicate predicate);
 
     @Generated
     @Selector("expressionForUnionSet:with:")

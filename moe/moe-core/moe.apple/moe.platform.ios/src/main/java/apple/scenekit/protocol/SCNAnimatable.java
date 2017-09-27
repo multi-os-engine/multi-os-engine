@@ -18,13 +18,16 @@ package apple.scenekit.protocol;
 
 import apple.foundation.NSArray;
 import apple.quartzcore.CAAnimation;
+import apple.scenekit.SCNAnimationPlayer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("SceneKit")
@@ -33,7 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNAnimatable {
     @Generated
     @Selector("addAnimation:forKey:")
-    void addAnimationForKey(CAAnimation animation, String key);
+    void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -70,4 +73,16 @@ public interface SCNAnimatable {
     @Generated
     @Selector("setSpeed:forAnimationKey:")
     void setSpeedForAnimationKey(@NFloat double speed, String key);
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 }

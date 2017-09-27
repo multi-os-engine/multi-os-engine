@@ -97,4 +97,16 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated public static final int kCVPixelFormatType_ARGB2101010LEPacked = 0x6C313072;
+    @Generated public static final int kCVPixelFormatType_DisparityFloat16 = 0x68646973;
+    @Generated public static final int kCVPixelFormatType_DisparityFloat32 = 0x66646973;
+    @Generated public static final int kCVPixelFormatType_DepthFloat16 = 0x68646570;
+    @Generated public static final int kCVPixelFormatType_DepthFloat32 = 0x66646570;
+    @Generated public static final int kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange = 0x78343230;
+    @Generated public static final int kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange = 0x78343232;
+    @Generated public static final int kCVPixelFormatType_444YpCbCr10BiPlanarVideoRange = 0x78343434;
+    @Generated public static final int kCVPixelFormatType_420YpCbCr10BiPlanarFullRange = 0x78663230;
+    @Generated public static final int kCVPixelFormatType_422YpCbCr10BiPlanarFullRange = 0x78663232;
+    @Generated public static final int kCVPixelFormatType_444YpCbCr10BiPlanarFullRange = 0x78663434;
 }

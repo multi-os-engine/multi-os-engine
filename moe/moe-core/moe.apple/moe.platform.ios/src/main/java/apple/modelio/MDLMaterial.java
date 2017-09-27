@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSFastEnumeration;
+import apple.modelio.protocol.MDLAssetResolver;
 import apple.modelio.protocol.MDLNamed;
 import apple.scenekit.SCNMaterial;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -239,4 +240,12 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Generated
     @Selector("setProperty:")
     public native void setProperty(MDLMaterialProperty property);
+
+    @Generated
+    @Selector("loadTexturesUsingResolver:")
+    public native void loadTexturesUsingResolver(@Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+
+    @Generated
+    @Selector("resolveTexturesWithResolver:")
+    public native void resolveTexturesWithResolver(@Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

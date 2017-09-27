@@ -19,8 +19,10 @@ package apple.storekit.protocol;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.storekit.SKDownload;
+import apple.storekit.SKPayment;
 import apple.storekit.SKPaymentQueue;
 import apple.storekit.SKPaymentTransaction;
+import apple.storekit.SKProduct;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
@@ -64,6 +66,14 @@ public interface SKPaymentTransactionObserver {
     @IsOptional
     @Selector("paymentQueueRestoreCompletedTransactionsFinished:")
     default void paymentQueueRestoreCompletedTransactionsFinished(SKPaymentQueue queue) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentQueue:shouldAddStorePayment:forProduct:")
+    default boolean paymentQueueShouldAddStorePaymentForProduct(SKPaymentQueue queue, SKPayment payment,
+            SKProduct product) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

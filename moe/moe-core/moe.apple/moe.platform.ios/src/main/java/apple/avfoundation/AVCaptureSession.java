@@ -209,7 +209,7 @@ public class AVCaptureSession extends NSObject {
 
     @Generated
     @Selector("inputs")
-    public native NSArray<?> inputs();
+    public native NSArray<? extends AVCaptureInput> inputs();
 
     @Generated
     @Selector("isInterrupted")
@@ -225,7 +225,7 @@ public class AVCaptureSession extends NSObject {
 
     @Generated
     @Selector("outputs")
-    public native NSArray<?> outputs();
+    public native NSArray<? extends AVCaptureOutput> outputs();
 
     @Generated
     @Selector("removeConnection:")

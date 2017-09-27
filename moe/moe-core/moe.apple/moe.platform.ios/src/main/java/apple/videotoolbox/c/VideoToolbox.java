@@ -888,4 +888,42 @@ public final class VideoToolbox {
         @Generated
         int call_VTFrameSiloCallBlockForEachSampleBuffer(CMSampleBufferRef arg0);
     }
+
+    @Generated
+    @CFunction
+    public static native byte VTIsHardwareDecodeSupported(int codecType);
+
+    @Generated
+    @CFunction
+    public static native int VTCopySupportedPropertyDictionaryForEncoder(int width, int height, int codecType,
+            CFDictionaryRef encoderSpecification, Ptr<CFStringRef> outEncoderID,
+            Ptr<CFDictionaryRef> outSupportedProperties);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTProfileLevel_HEVC_Main_AutoLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTProfileLevel_HEVC_Main10_AutoLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_BaseLayerFrameRate();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_MasteringDisplayColorVolume();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_ContentLightLevelInfo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_EncoderID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTDecompressionProperty_TemporalLevelLimit();
 }

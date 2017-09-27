@@ -184,4 +184,9 @@ public class SCNPhysicsContact extends NSObject {
     @Selector("penetrationDistance")
     @NFloat
     public native double penetrationDistance();
+
+    @Generated
+    @Selector("sweepTestFraction")
+    @NFloat
+    public native double sweepTestFraction();
 }

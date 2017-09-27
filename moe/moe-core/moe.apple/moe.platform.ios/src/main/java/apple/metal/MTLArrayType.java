@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTLArrayType extends NSObject {
+public class MTLArrayType extends MTLType {
     static {
         NatJ.register();
     }
@@ -176,4 +176,17 @@ public class MTLArrayType extends NSObject {
     @Selector("stride")
     @NUInt
     public native long stride();
+
+    @Generated
+    @Selector("argumentIndexStride")
+    @NUInt
+    public native long argumentIndexStride();
+
+    @Generated
+    @Selector("elementPointerType")
+    public native MTLPointerType elementPointerType();
+
+    @Generated
+    @Selector("elementTextureReferenceType")
+    public native MTLTextureReferenceType elementTextureReferenceType();
 }

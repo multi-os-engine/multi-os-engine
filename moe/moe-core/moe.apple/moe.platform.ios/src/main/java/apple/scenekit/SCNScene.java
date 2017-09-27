@@ -25,6 +25,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.gameplaykit.protocol.GKSceneRootNodeType;
 import apple.modelio.MDLAsset;
 import apple.scenekit.protocol.SCNSceneExportDelegate;
 import apple.scenekit.struct.SCNMatrix4;
@@ -58,7 +59,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SCNScene extends NSObject implements NSSecureCoding {
+public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNodeType {
     static {
         NatJ.register();
     }

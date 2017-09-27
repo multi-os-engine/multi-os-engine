@@ -173,4 +173,8 @@ public class WKFrameInfo extends NSObject implements NSCopying {
     @Generated
     @Selector("securityOrigin")
     public native WKSecurityOrigin securityOrigin();
+
+    @Generated
+    @Selector("webView")
+    public native WKWebView webView();
 }

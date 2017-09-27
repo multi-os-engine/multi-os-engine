@@ -203,22 +203,12 @@ public class CKOperation extends NSOperation {
     public native void setTimeoutIntervalForResource(double value);
 
     @Generated
-    @Deprecated
-    @Selector("setUsesBackgroundSession:")
-    public native void setUsesBackgroundSession(boolean value);
-
-    @Generated
     @Selector("timeoutIntervalForRequest")
     public native double timeoutIntervalForRequest();
 
     @Generated
     @Selector("timeoutIntervalForResource")
     public native double timeoutIntervalForResource();
-
-    @Generated
-    @Deprecated
-    @Selector("usesBackgroundSession")
-    public native boolean usesBackgroundSession();
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -233,4 +223,20 @@ public class CKOperation extends NSOperation {
         @Generated
         void call_setLongLivedOperationWasPersistedBlock();
     }
+
+    @Generated
+    @Selector("configuration")
+    public native CKOperationConfiguration configuration();
+
+    @Generated
+    @Selector("group")
+    public native CKOperationGroup group();
+
+    @Generated
+    @Selector("setConfiguration:")
+    public native void setConfiguration(CKOperationConfiguration value);
+
+    @Generated
+    @Selector("setGroup:")
+    public native void setGroup(CKOperationGroup value);
 }

@@ -160,7 +160,7 @@ public class ADClient extends NSObject {
 
     @Generated
     @Selector("addClientToSegments:replaceExisting:")
-    public native void addClientToSegmentsReplaceExisting(NSArray<?> segmentIdentifiers, boolean replaceExisting);
+    public native void addClientToSegmentsReplaceExisting(NSArray<String> segmentIdentifiers, boolean replaceExisting);
 
     @Generated
     @Deprecated
@@ -201,6 +201,6 @@ public class ADClient extends NSObject {
     @Generated
     public interface Block_requestAttributionDetailsWithBlock {
         @Generated
-        void call_requestAttributionDetailsWithBlock(NSDictionary<?, ?> arg0, NSError arg1);
+        void call_requestAttributionDetailsWithBlock(NSDictionary<String, ? extends NSObject> arg0, NSError arg1);
     }
 }

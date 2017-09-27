@@ -35,7 +35,7 @@ public interface AVCaptureAudioDataOutputSampleBufferDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputSampleBuffer:fromConnection:")
-    default void captureOutputDidOutputSampleBufferFromConnection(AVCaptureOutput captureOutput,
+    default void captureOutputDidOutputSampleBufferFromConnection(AVCaptureOutput output,
             CMSampleBufferRef sampleBuffer, AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }

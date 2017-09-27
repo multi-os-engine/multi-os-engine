@@ -22,12 +22,13 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.quartzcore.protocol.CAAction;
 import apple.quartzcore.protocol.CAAnimationDelegate;
 import apple.quartzcore.protocol.CAMediaTiming;
 import apple.scenekit.SCNAnimationEvent;
+import apple.scenekit.protocol.SCNAnimation;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -45,6 +46,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -52,7 +54,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMediaTiming, CAAction {
+public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, CAMediaTiming, CAAction, SCNAnimation {
     static {
         NatJ.register();
     }
@@ -317,4 +319,18 @@ public class CAAnimation extends NSObject implements NSCoding, NSCopying, CAMedi
     @Generated
     @Selector("usesSceneTimeBase")
     public native boolean usesSceneTimeBase();
+
+    @Generated
+    @Selector("animationWithSCNAnimation:")
+    public static native CAAnimation animationWithSCNAnimation(apple.scenekit.SCNAnimation animation);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

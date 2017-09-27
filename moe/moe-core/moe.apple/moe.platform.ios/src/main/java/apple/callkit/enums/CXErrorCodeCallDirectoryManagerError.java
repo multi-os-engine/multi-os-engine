@@ -32,4 +32,7 @@ public final class CXErrorCodeCallDirectoryManagerError {
     @Generated
     private CXErrorCodeCallDirectoryManagerError() {
     }
+
+    @Generated @NInt public static final long CurrentlyLoading = 0x0000000000000007L;
+    @Generated @NInt public static final long UnexpectedIncrementalRemoval = 0x0000000000000008L;
 }

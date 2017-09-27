@@ -37,4 +37,6 @@ public final class INSendPaymentIntentResponseCode {
     @Generated
     private INSendPaymentIntentResponseCode() {
     }
+
+    @Generated @NInt public static final long FailureNotEligible = 0x000000000000000CL;
 }

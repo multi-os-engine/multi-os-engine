@@ -234,4 +234,15 @@ public class HKWorkout extends HKSample {
     @Generated
     @Selector("workoutEvents")
     public native NSArray<? extends HKWorkoutEvent> workoutEvents();
+
+    @Generated
+    @Selector("totalFlightsClimbed")
+    public native HKQuantity totalFlightsClimbed();
+
+    @Generated
+    @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:totalFlightsClimbed:device:metadata:")
+    public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceTotalFlightsClimbedDeviceMetadata(
+            @NUInt long workoutActivityType, NSDate startDate, NSDate endDate,
+            NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
+            HKQuantity totalFlightsClimbed, HKDevice device, NSDictionary<String, ?> metadata);
 }

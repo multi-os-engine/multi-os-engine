@@ -85,6 +85,7 @@ import org.moe.natj.general.ptr.NFloatPtr;
 import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 @Generated
 @Library("CoreGraphics")
@@ -2357,4 +2358,78 @@ public final class CoreGraphics {
         @Generated
         void call_CGPDFOperatorTableSetCallback(CGPDFScannerRef arg0, VoidPtr arg1);
     }
+
+    @Generated
+    @CFunction
+    public static native VoidPtr CGDataProviderGetInfo(CGDataProviderRef provider);
+
+    @Generated
+    @CFunction
+    public static native CGColorSpaceRef CGColorSpaceCreateWithICCData(ConstVoidPtr data);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef CGColorSpaceGetName(CGColorSpaceRef space);
+
+    @Generated
+    @CFunction
+    public static native void CGPathApplyWithBlock(CGPathRef path,
+            @ObjCBlock(name = "call_CGPathApplyWithBlock") Block_CGPathApplyWithBlock block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGPathApplyWithBlock {
+        @Generated
+        void call_CGPathApplyWithBlock(
+                @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native CFDictionaryRef CGPDFDocumentGetOutline(CGPDFDocumentRef document);
+
+    @Generated
+    @CFunction
+    public static native int CGPDFDocumentGetAccessPermissions(CGPDFDocumentRef document);
+
+    @Generated
+    @CFunction
+    public static native void CGContextResetClip(CGContextRef c);
+
+    @Generated
+    @CFunction
+    public static native CGColorConversionInfoRef CGColorConversionInfoCreateFromListWithArguments(
+            CFDictionaryRef options, CGColorSpaceRef arg2, int arg3, int arg4, BytePtr arg5);
+
+    @Generated
+    @CFunction
+    public static native void CGPDFContextSetOutline(CGContextRef context, CFDictionaryRef outline);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceGenericLab();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFOutlineTitle();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFOutlineChildren();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFOutlineDestination();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFOutlineDestinationRect();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorConversionTRCSize();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFContextAccessPermissions();
 }

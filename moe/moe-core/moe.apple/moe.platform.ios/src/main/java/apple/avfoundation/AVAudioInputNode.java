@@ -19,6 +19,7 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.avfoundation.protocol.AVAudioMixing;
 import apple.avfoundation.struct.AVAudio3DPoint;
+import apple.coreaudio.struct.AudioBufferList;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -34,10 +35,12 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -226,4 +229,17 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Selector("setManualRenderingInputPCMFormat:inputBlock:")
+    public native boolean setManualRenderingInputPCMFormatInputBlock(AVAudioFormat format,
+            @ObjCBlock(name = "call_setManualRenderingInputPCMFormatInputBlock") Block_setManualRenderingInputPCMFormatInputBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setManualRenderingInputPCMFormatInputBlock {
+        @Generated
+        @UncertainReturn("Options: reference, array Fallback: reference")
+        AudioBufferList call_setManualRenderingInputPCMFormatInputBlock(int arg0);
+    }
 }

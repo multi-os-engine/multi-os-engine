@@ -244,4 +244,8 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("isPending")
+    public native boolean isPending();
 }

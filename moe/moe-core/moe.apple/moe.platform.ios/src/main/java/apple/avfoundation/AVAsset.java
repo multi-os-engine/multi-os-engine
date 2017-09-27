@@ -337,4 +337,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("unusedTrackID")
     public native int unusedTrackID();
+
+    @Generated
+    @Selector("allMediaSelections")
+    public native NSArray<? extends AVMediaSelection> allMediaSelections();
 }

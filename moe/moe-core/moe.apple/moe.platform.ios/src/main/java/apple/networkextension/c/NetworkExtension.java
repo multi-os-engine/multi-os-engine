@@ -96,4 +96,14 @@ public final class NetworkExtension {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NEVPNConnectionStartOptionPassword();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEDNSProxyErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEDNSProxyConfigurationDidChangeNotification();
 }

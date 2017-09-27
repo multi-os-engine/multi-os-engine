@@ -36,4 +36,6 @@ public final class INRequestPaymentIntentResponseCode {
     @Generated
     private INRequestPaymentIntentResponseCode() {
     }
+
+    @Generated @NInt public static final long FailureNotEligible = 0x000000000000000BL;
 }

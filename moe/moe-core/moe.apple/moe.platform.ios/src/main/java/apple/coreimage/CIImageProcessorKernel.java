@@ -190,4 +190,8 @@ public class CIImageProcessorKernel extends NSObject {
     @Generated
     @Selector("init")
     public native CIImageProcessorKernel init();
+
+    @Generated
+    @Selector("outputIsOpaque")
+    public static native boolean outputIsOpaque();
 }

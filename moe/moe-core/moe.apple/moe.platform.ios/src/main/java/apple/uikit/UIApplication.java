@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -516,4 +517,24 @@ public class UIApplication extends UIResponder {
         @Generated
         void call_setKeepAliveTimeoutHandler();
     }
+
+    @Generated
+    @Selector("alternateIconName")
+    public native String alternateIconName();
+
+    @Generated
+    @Selector("setAlternateIconName:completionHandler:")
+    public native void setAlternateIconNameCompletionHandler(String alternateIconName,
+            @ObjCBlock(name = "call_setAlternateIconNameCompletionHandler") Block_setAlternateIconNameCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAlternateIconNameCompletionHandler {
+        @Generated
+        void call_setAlternateIconNameCompletionHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("supportsAlternateIcons")
+    public native boolean supportsAlternateIcons();
 }

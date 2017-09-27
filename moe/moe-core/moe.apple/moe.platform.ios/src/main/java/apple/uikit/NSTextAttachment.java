@@ -27,6 +27,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.protocol.NSTextAttachmentContainer;
+import apple.uikit.protocol.UIAccessibilityContentSizeCategoryImageAdjusting;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -51,7 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSTextAttachment extends NSObject implements NSTextAttachmentContainer, NSCoding {
+public class NSTextAttachment extends NSObject
+        implements NSTextAttachmentContainer, NSCoding, UIAccessibilityContentSizeCategoryImageAdjusting {
     static {
         NatJ.register();
     }
@@ -225,4 +227,12 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentContai
     @Generated
     @Selector("setImage:")
     public native void setImage(UIImage value);
+
+    @Generated
+    @Selector("adjustsImageSizeForAccessibilityContentSizeCategory")
+    public native boolean adjustsImageSizeForAccessibilityContentSizeCategory();
+
+    @Generated
+    @Selector("setAdjustsImageSizeForAccessibilityContentSizeCategory:")
+    public native void setAdjustsImageSizeForAccessibilityContentSizeCategory(boolean value);
 }

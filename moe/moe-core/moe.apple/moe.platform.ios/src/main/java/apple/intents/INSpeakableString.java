@@ -36,6 +36,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -151,6 +152,7 @@ public class INSpeakableString extends NSObject implements INSpeakable {
     @NInt
     public static native long version_static();
 
+    @IsOptional
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -175,4 +177,17 @@ public class INSpeakableString extends NSObject implements INSpeakable {
     @Generated
     @Selector("spokenPhrase")
     public native String spokenPhrase();
+
+    @Generated
+    @Selector("alternativeSpeakableMatches")
+    public native NSArray<?> alternativeSpeakableMatches();
+
+    @Generated
+    @Selector("initWithVocabularyIdentifier:spokenPhrase:pronunciationHint:")
+    public native INSpeakableString initWithVocabularyIdentifierSpokenPhrasePronunciationHint(
+            String vocabularyIdentifier, String spokenPhrase, String pronunciationHint);
+
+    @Generated
+    @Selector("vocabularyIdentifier")
+    public native String vocabularyIdentifier();
 }

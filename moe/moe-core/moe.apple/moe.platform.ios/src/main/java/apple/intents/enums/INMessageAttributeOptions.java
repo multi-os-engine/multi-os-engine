@@ -29,4 +29,6 @@ public final class INMessageAttributeOptions {
     @Generated
     private INMessageAttributeOptions() {
     }
+
+    @Generated @NUInt public static final long Played = 0x0000000000000010L;
 }

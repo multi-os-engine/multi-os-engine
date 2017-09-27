@@ -1766,4 +1766,78 @@ public final class ImageIO {
         @Generated
         boolean call_CGImageMetadataEnumerateTagsUsingBlock(CFStringRef arg0, CGImageMetadataTagRef arg1);
     }
+
+    @Generated
+    @CFunction
+    public static native CFDictionaryRef CGImageSourceCopyAuxiliaryDataInfoAtIndex(CGImageSourceRef isrc,
+            @NUInt long index, CFStringRef auxiliaryImageDataType);
+
+    @Generated
+    @CFunction
+    public static native void CGImageDestinationAddAuxiliaryDataInfo(CGImageDestinationRef idst,
+            CFStringRef auxiliaryImageDataType, CFDictionaryRef auxiliaryDataInfoDictionary);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyFileContentsDictionary();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataTypeDepth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataTypeDisparity();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataInfoData();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataInfoDataDescription();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataInfoMetadata();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyImageCount();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyWidth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyHeight();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyBytesPerRow();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyNamedColorSpace();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyPixelFormat();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyImages();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyThumbnailImages();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyAuxiliaryData();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyAuxiliaryDataType();
 }

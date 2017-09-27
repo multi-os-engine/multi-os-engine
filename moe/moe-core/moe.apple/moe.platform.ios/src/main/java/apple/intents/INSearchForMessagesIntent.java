@@ -239,4 +239,20 @@ public class INSearchForMessagesIntent extends INIntent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:speakableGroupNames:")
+    public native INSearchForMessagesIntent initWithRecipientsSendersSearchTermsAttributesDateTimeRangeIdentifiersNotificationIdentifiersSpeakableGroupNames(
+            NSArray<? extends INPerson> recipients, NSArray<? extends INPerson> senders, NSArray<String> searchTerms,
+            @NUInt long attributes, INDateComponentsRange dateTimeRange, NSArray<String> identifiers,
+            NSArray<String> notificationIdentifiers, NSArray<? extends INSpeakableString> speakableGroupNames);
+
+    @Generated
+    @Selector("speakableGroupNames")
+    public native NSArray<? extends INSpeakableString> speakableGroupNames();
+
+    @Generated
+    @Selector("speakableGroupNamesOperator")
+    @NInt
+    public native long speakableGroupNamesOperator();
 }

@@ -115,4 +115,49 @@ public final class StoreKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStoreProductParameterAdvertisingPartnerToken();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStorefrontCountryCodeDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupOptionsAffiliateTokenKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupOptionsCampaignTokenKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupOptionsMessageIdentifierKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupMessageIdentifierJoin();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupMessageIdentifierConnect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupMessageIdentifierAddMusic();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKCloudServiceSetupMessageIdentifierPlayMusic();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterProductIdentifier();
 }

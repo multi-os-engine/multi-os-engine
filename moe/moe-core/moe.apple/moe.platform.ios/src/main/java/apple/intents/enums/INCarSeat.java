@@ -37,4 +37,6 @@ public final class INCarSeat {
     @Generated
     private INCarSeat() {
     }
+
+    @Generated @NInt public static final long All = 0x000000000000000CL;
 }

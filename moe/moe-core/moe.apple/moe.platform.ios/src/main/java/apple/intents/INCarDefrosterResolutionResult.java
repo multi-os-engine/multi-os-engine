@@ -178,4 +178,14 @@ public class INCarDefrosterResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("init")
     public native INCarDefrosterResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithCarDefrosterToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithCarDefrosterToConfirm(@NInt long carDefrosterToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedCarDefroster:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedCarDefroster(@NInt long resolvedCarDefroster);
 }

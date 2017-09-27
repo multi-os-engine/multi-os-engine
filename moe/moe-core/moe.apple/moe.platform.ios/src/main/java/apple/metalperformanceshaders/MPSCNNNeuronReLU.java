@@ -18,6 +18,7 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLDevice;
@@ -37,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -161,9 +163,27 @@ public class MPSCNNNeuronReLU extends MPSCNNNeuron {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNNeuronReLU initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSCNNNeuronReLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:a:")
     public native MPSCNNNeuronReLU initWithDeviceA(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSCNNNeuronReLU initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoder:device:")
+    public native MPSCNNNeuronReLU initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

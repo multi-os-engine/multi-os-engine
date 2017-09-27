@@ -31,4 +31,10 @@ public final class BNNSActivationFunction {
     @Generated
     private BNNSActivationFunction() {
     }
+
+    @Generated public static final int BNNSActivationFunctionLinear = 0x00000007;
+    @Generated public static final int BNNSActivationFunctionClamp = 0x00000008;
+    @Generated public static final int BNNSActivationFunctionIntegerLinearSaturate = 0x00000009;
+    @Generated public static final int BNNSActivationFunctionIntegerLinearSaturatePerChannel = 0x0000000A;
+    @Generated public static final int BNNSActivationFunctionSoftmax = 0x0000000B;
 }

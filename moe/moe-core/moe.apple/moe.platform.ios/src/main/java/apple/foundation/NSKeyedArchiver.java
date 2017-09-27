@@ -177,39 +177,39 @@ public class NSKeyedArchiver extends NSCoder {
 
     @Generated
     @Selector("encodeBool:forKey:")
-    public native void encodeBoolForKey(boolean boolv, String key);
+    public native void encodeBoolForKey(boolean value, String key);
 
     @Generated
     @Selector("encodeBytes:length:forKey:")
-    public native void encodeBytesLengthForKey(ConstBytePtr bytesp, @NUInt long lenv, String key);
+    public native void encodeBytesLengthForKey(ConstBytePtr bytes, @NUInt long length, String key);
 
     @Generated
     @Selector("encodeConditionalObject:forKey:")
-    public native void encodeConditionalObjectForKey(@Mapped(ObjCObjectMapper.class) Object objv, String key);
+    public native void encodeConditionalObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
 
     @Generated
     @Selector("encodeDouble:forKey:")
-    public native void encodeDoubleForKey(double realv, String key);
+    public native void encodeDoubleForKey(double value, String key);
 
     @Generated
     @Selector("encodeFloat:forKey:")
-    public native void encodeFloatForKey(float realv, String key);
+    public native void encodeFloatForKey(float value, String key);
 
     @Generated
     @Selector("encodeInt32:forKey:")
-    public native void encodeInt32ForKey(int intv, String key);
+    public native void encodeInt32ForKey(int value, String key);
 
     @Generated
     @Selector("encodeInt64:forKey:")
-    public native void encodeInt64ForKey(long intv, String key);
+    public native void encodeInt64ForKey(long value, String key);
 
     @Generated
     @Selector("encodeInt:forKey:")
-    public native void encodeIntForKey(int intv, String key);
+    public native void encodeIntForKey(int value, String key);
 
     @Generated
     @Selector("encodeObject:forKey:")
-    public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object objv, String key);
+    public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
 
     @Generated
     @Selector("encodedData")

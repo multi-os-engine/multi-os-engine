@@ -240,4 +240,22 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("completedWithOutstandingFeedbackType:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object completedWithOutstandingFeedbackType(@NUInt long feedbackType);
+
+    @Generated
+    @Selector("defaultTippingOptions")
+    public native NSSet<? extends INCurrencyAmount> defaultTippingOptions();
+
+    @Generated
+    @Selector("feedbackType")
+    @NUInt
+    public native long feedbackType();
+
+    @Generated
+    @Selector("setDefaultTippingOptions:")
+    public native void setDefaultTippingOptions(NSSet<? extends INCurrencyAmount> value);
 }

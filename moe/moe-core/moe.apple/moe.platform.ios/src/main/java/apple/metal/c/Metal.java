@@ -19,6 +19,7 @@ package apple.metal.c;
 import apple.metal.struct.MTLClearColor;
 import apple.metal.struct.MTLOrigin;
 import apple.metal.struct.MTLRegion;
+import apple.metal.struct.MTLSamplePosition;
 import apple.metal.struct.MTLSize;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
@@ -96,10 +97,11 @@ public final class Metal {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String MTLRenderPipelineErrorDomain();
+    public static native String MTLCommandBufferErrorDomain();
 
     @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String MTLCommandBufferErrorDomain();
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLSamplePosition MTLSamplePositionMake(float x, float y);
 }

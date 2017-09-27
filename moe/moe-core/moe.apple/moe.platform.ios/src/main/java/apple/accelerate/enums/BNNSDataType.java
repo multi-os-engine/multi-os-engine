@@ -33,4 +33,9 @@ public final class BNNSDataType {
     @Generated
     private BNNSDataType() {
     }
+
+    @Generated public static final int BNNSDataTypeUIntBit = 0x00040000;
+    @Generated public static final int BNNSDataTypeUInt8 = 0x00040008;
+    @Generated public static final int BNNSDataTypeUInt16 = 0x00040010;
+    @Generated public static final int BNNSDataTypeUInt32 = 0x00040020;
 }

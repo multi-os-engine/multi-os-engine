@@ -35,15 +35,15 @@ public interface AVCaptureVideoDataOutputSampleBufferDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didDropSampleBuffer:fromConnection:")
-    default void captureOutputDidDropSampleBufferFromConnection(AVCaptureOutput captureOutput,
-            CMSampleBufferRef sampleBuffer, AVCaptureConnection connection) {
+    default void captureOutputDidDropSampleBufferFromConnection(AVCaptureOutput output, CMSampleBufferRef sampleBuffer,
+            AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputSampleBuffer:fromConnection:")
-    default void captureOutputDidOutputSampleBufferFromConnection(AVCaptureOutput captureOutput,
+    default void captureOutputDidOutputSampleBufferFromConnection(AVCaptureOutput output,
             CMSampleBufferRef sampleBuffer, AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }

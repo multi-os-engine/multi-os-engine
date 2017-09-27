@@ -175,4 +175,17 @@ public class MTLStructMember extends NSObject {
     @Generated
     @Selector("structType")
     public native MTLStructType structType();
+
+    @Generated
+    @Selector("argumentIndex")
+    @NUInt
+    public native long argumentIndex();
+
+    @Generated
+    @Selector("pointerType")
+    public native MTLPointerType pointerType();
+
+    @Generated
+    @Selector("textureReferenceType")
+    public native MTLTextureReferenceType textureReferenceType();
 }

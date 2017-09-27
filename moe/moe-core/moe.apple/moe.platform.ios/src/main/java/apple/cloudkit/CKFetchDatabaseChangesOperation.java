@@ -281,4 +281,28 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
         @Generated
         void call_setRecordZoneWithIDWasDeletedBlock(CKRecordZoneID arg0);
     }
+
+    @Generated
+    @Selector("recordZoneWithIDWasPurgedBlock")
+    @ObjCBlock(name = "call_recordZoneWithIDWasPurgedBlock_ret")
+    public native Block_recordZoneWithIDWasPurgedBlock_ret recordZoneWithIDWasPurgedBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_recordZoneWithIDWasPurgedBlock_ret {
+        @Generated
+        void call_recordZoneWithIDWasPurgedBlock_ret(CKRecordZoneID arg0);
+    }
+
+    @Generated
+    @Selector("setRecordZoneWithIDWasPurgedBlock:")
+    public native void setRecordZoneWithIDWasPurgedBlock(
+            @ObjCBlock(name = "call_setRecordZoneWithIDWasPurgedBlock") Block_setRecordZoneWithIDWasPurgedBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setRecordZoneWithIDWasPurgedBlock {
+        @Generated
+        void call_setRecordZoneWithIDWasPurgedBlock(CKRecordZoneID arg0);
+    }
 }

@@ -67,4 +67,15 @@ public final class MTLVertexFormat {
     @Generated
     private MTLVertexFormat() {
     }
+
+    @Generated @NUInt public static final long UChar4Normalized_BGRA = 0x000000000000002AL;
+    @Generated @NUInt public static final long UChar = 0x000000000000002DL;
+    @Generated @NUInt public static final long Char = 0x000000000000002EL;
+    @Generated @NUInt public static final long UCharNormalized = 0x000000000000002FL;
+    @Generated @NUInt public static final long CharNormalized = 0x0000000000000030L;
+    @Generated @NUInt public static final long UShort = 0x0000000000000031L;
+    @Generated @NUInt public static final long Short = 0x0000000000000032L;
+    @Generated @NUInt public static final long UShortNormalized = 0x0000000000000033L;
+    @Generated @NUInt public static final long ShortNormalized = 0x0000000000000034L;
+    @Generated @NUInt public static final long Half = 0x0000000000000035L;
 }

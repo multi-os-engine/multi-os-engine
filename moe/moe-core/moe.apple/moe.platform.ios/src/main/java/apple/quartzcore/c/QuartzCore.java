@@ -321,46 +321,6 @@ public final class QuartzCore {
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String kCAEmitterBehaviorWave();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCAEmitterBehaviorDrag();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCAEmitterBehaviorAlignToMotion();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCAEmitterBehaviorValueOverLife();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCAEmitterBehaviorColorOverLife();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCAEmitterBehaviorLight();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCAEmitterBehaviorAttractor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String kCAEmitterBehaviorSimpleAttractor();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
     public static native String kCAEmitterLayerPoint();
 
     @Generated

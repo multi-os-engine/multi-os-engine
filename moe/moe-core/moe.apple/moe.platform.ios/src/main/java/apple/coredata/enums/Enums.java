@@ -69,4 +69,7 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated @NInt public static final long NSValidationInvalidURIError = 0x000000000000069AL;
+    @Generated @NInt public static final long NSPersistentHistoryTokenExpiredError = 0x0000000000020C9DL;
 }

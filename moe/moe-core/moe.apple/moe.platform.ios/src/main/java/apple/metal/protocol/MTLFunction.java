@@ -18,6 +18,7 @@ package apple.metal.protocol;
 
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
+import apple.metal.MTLArgument;
 import apple.metal.MTLAttribute;
 import apple.metal.MTLFunctionConstant;
 import apple.metal.MTLVertexAttribute;
@@ -26,7 +27,9 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
@@ -80,4 +83,15 @@ public interface MTLFunction {
     @Generated
     @Selector("vertexAttributes")
     NSArray<? extends MTLVertexAttribute> vertexAttributes();
+
+    @Generated
+    @Selector("newArgumentEncoderWithBufferIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newArgumentEncoderWithBufferIndex(@NUInt long bufferIndex);
+
+    @Generated
+    @Selector("newArgumentEncoderWithBufferIndex:reflection:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newArgumentEncoderWithBufferIndexReflection(@NUInt long bufferIndex,
+            @ReferenceInfo(type = MTLArgument.class) Ptr<MTLArgument> reflection);
 }

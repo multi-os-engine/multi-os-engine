@@ -197,4 +197,14 @@ public class INRequestRideIntent extends INIntent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithPickupLocation:dropOffLocation:rideOptionName:partySize:paymentMethod:scheduledPickupTime:")
+    public native INRequestRideIntent initWithPickupLocationDropOffLocationRideOptionNamePartySizePaymentMethodScheduledPickupTime(
+            CLPlacemark pickupLocation, CLPlacemark dropOffLocation, INSpeakableString rideOptionName,
+            NSNumber partySize, INPaymentMethod paymentMethod, INDateComponentsRange scheduledPickupTime);
+
+    @Generated
+    @Selector("scheduledPickupTime")
+    public native INDateComponentsRange scheduledPickupTime();
 }

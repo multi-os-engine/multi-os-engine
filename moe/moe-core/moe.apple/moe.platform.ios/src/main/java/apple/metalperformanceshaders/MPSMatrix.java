@@ -189,4 +189,14 @@ public class MPSMatrix extends NSObject {
     @Selector("rows")
     @NUInt
     public native long rows();
+
+    @Generated
+    @Selector("matrices")
+    @NUInt
+    public native long matrices();
+
+    @Generated
+    @Selector("matrixBytes")
+    @NUInt
+    public native long matrixBytes();
 }

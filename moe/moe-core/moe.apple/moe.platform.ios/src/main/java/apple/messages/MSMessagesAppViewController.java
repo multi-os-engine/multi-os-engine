@@ -17,15 +17,18 @@ limitations under the License.
 package apple.messages;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.messages.protocol.MSMessagesAppTranscriptPresentation;
 import apple.uikit.UIViewController;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -46,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MSMessagesAppViewController extends UIViewController {
+public class MSMessagesAppViewController extends UIViewController implements MSMessagesAppTranscriptPresentation {
     static {
         NatJ.register();
     }
@@ -237,4 +240,9 @@ public class MSMessagesAppViewController extends UIViewController {
     @Generated
     @Selector("willTransitionToPresentationStyle:")
     public native void willTransitionToPresentationStyle(@NUInt long presentationStyle);
+
+    @Generated
+    @Selector("contentSizeThatFits:")
+    @ByValue
+    public native CGSize contentSizeThatFits(@ByValue CGSize size);
 }

@@ -124,4 +124,19 @@ public interface INSearchForPhotosIntentHandling {
         void call_resolvePeopleInPhotoForSearchForPhotosWithCompletion(
                 NSArray<? extends INPersonResolutionResult> arg0);
     }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveSearchTermsForSearchForPhotos:withCompletion:")
+    default void resolveSearchTermsForSearchForPhotosWithCompletion(INSearchForPhotosIntent intent,
+            @ObjCBlock(name = "call_resolveSearchTermsForSearchForPhotosWithCompletion") Block_resolveSearchTermsForSearchForPhotosWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveSearchTermsForSearchForPhotosWithCompletion {
+        @Generated
+        void call_resolveSearchTermsForSearchForPhotosWithCompletion(NSArray<? extends INStringResolutionResult> arg0);
+    }
 }

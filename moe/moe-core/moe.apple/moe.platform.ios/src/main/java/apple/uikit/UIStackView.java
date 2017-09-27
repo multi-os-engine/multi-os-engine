@@ -474,4 +474,13 @@ public class UIStackView extends UIView {
     @Selector("spacing")
     @NFloat
     public native double spacing();
+
+    @Generated
+    @Selector("customSpacingAfterView:")
+    @NFloat
+    public native double customSpacingAfterView(UIView arrangedSubview);
+
+    @Generated
+    @Selector("setCustomSpacing:afterView:")
+    public native void setCustomSpacingAfterView(@NFloat double spacing, UIView arrangedSubview);
 }

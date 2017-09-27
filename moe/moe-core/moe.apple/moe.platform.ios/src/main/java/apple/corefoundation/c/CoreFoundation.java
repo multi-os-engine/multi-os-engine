@@ -5339,4 +5339,24 @@ public final class CoreFoundation {
         @Generated
         void call_CFFileDescriptorCreate(CFFileDescriptorRef arg0, @NUInt long arg1, VoidPtr arg2);
     }
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFErrorLocalizedFailureKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeAvailableCapacityForImportantUsageKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeAvailableCapacityForOpportunisticUsageKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeSupportsImmutableFilesKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeSupportsAccessPermissionsKey();
 }

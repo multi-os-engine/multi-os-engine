@@ -30,4 +30,9 @@ public final class WKErrorCode {
     @Generated
     private WKErrorCode() {
     }
+
+    @Generated @NInt public static final long ContentRuleListStoreCompileFailed = 0x0000000000000006L;
+    @Generated @NInt public static final long ContentRuleListStoreLookUpFailed = 0x0000000000000007L;
+    @Generated @NInt public static final long ContentRuleListStoreRemoveFailed = 0x0000000000000008L;
+    @Generated @NInt public static final long ContentRuleListStoreVersionMismatch = 0x0000000000000009L;
 }

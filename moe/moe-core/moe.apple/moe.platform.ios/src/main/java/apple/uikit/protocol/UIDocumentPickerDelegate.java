@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.foundation.NSArray;
 import apple.foundation.NSURL;
 import apple.uikit.UIDocumentPickerViewController;
 import org.moe.natj.general.ann.Generated;
@@ -31,14 +32,25 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDocumentPickerDelegate")
 public interface UIDocumentPickerDelegate {
+    @IsOptional
     @Generated
     @Selector("documentPicker:didPickDocumentAtURL:")
-    void documentPickerDidPickDocumentAtURL(UIDocumentPickerViewController controller, NSURL url);
+    default void documentPickerDidPickDocumentAtURL(UIDocumentPickerViewController controller, NSURL url) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Generated
     @IsOptional
     @Selector("documentPickerWasCancelled:")
     default void documentPickerWasCancelled(UIDocumentPickerViewController controller) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("documentPicker:didPickDocumentsAtURLs:")
+    default void documentPickerDidPickDocumentsAtURLs(UIDocumentPickerViewController controller,
+            NSArray<? extends NSURL> urls) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

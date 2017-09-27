@@ -55,4 +55,19 @@ public interface SFSafariViewControllerDelegate {
     default void safariViewControllerDidFinish(SFSafariViewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("safariViewController:excludedActivityTypesForURL:title:")
+    default NSArray<String> safariViewControllerExcludedActivityTypesForURLTitle(SFSafariViewController controller,
+            NSURL URL, String title) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("safariViewController:initialLoadDidRedirectToURL:")
+    default void safariViewControllerInitialLoadDidRedirectToURL(SFSafariViewController controller, NSURL URL) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

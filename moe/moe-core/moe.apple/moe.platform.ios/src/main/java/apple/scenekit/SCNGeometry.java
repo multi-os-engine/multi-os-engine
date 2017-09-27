@@ -185,7 +185,7 @@ public class SCNGeometry extends NSObject
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -384,4 +384,32 @@ public class SCNGeometry extends NSObject
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("setTessellator:")
+    public native void setTessellator(SCNGeometryTessellator value);
+
+    @Generated
+    @Selector("setWantsAdaptiveSubdivision:")
+    public native void setWantsAdaptiveSubdivision(boolean value);
+
+    @Generated
+    @Selector("tessellator")
+    public native SCNGeometryTessellator tessellator();
+
+    @Generated
+    @Selector("wantsAdaptiveSubdivision")
+    public native boolean wantsAdaptiveSubdivision();
 }

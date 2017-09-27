@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.scenekit.SCNAnimation;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -37,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -165,11 +167,6 @@ public class CATransition extends CAAnimation {
     public native float endProgress();
 
     @Generated
-    @Selector("filter")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object filter();
-
-    @Generated
     @Selector("init")
     public native CATransition init();
 
@@ -180,10 +177,6 @@ public class CATransition extends CAAnimation {
     @Generated
     @Selector("setEndProgress:")
     public native void setEndProgress(float value);
-
-    @Generated
-    @Selector("setFilter:")
-    public native void setFilter(@Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setStartProgress:")
@@ -208,4 +201,18 @@ public class CATransition extends CAAnimation {
     @Generated
     @Selector("type")
     public native String type();
+
+    @Generated
+    @Selector("animationWithSCNAnimation:")
+    public static native CAAnimation animationWithSCNAnimation(SCNAnimation animation);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

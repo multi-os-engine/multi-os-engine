@@ -191,4 +191,10 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @Generated
     @Selector("init")
     public native AVAssetDownloadURLSession init();
+
+    @Generated
+    @Selector("aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:")
+    public native AVAggregateAssetDownloadTask aggregateAssetDownloadTaskWithURLAssetMediaSelectionsAssetTitleAssetArtworkDataOptions(
+            AVURLAsset URLAsset, NSArray<? extends AVMediaSelection> mediaSelections, String title, NSData artworkData,
+            NSDictionary<String, ?> options);
 }

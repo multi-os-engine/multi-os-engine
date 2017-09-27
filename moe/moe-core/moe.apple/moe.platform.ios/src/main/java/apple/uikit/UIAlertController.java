@@ -22,6 +22,7 @@ import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIAlertController extends UIViewController {
+public class UIAlertController extends UIViewController implements UISpringLoadedInteractionSupporting {
     static {
         NatJ.register();
     }
@@ -234,4 +235,12 @@ public class UIAlertController extends UIViewController {
         @Generated
         void call_addTextFieldWithConfigurationHandler(UITextField arg0);
     }
+
+    @Generated
+    @Selector("isSpringLoaded")
+    public native boolean isSpringLoaded();
+
+    @Generated
+    @Selector("setSpringLoaded:")
+    public native void setSpringLoaded(boolean value);
 }

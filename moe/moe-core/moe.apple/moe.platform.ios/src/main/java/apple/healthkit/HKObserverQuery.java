@@ -257,4 +257,9 @@ public class HKObserverQuery extends HKQuery {
     @Generated
     @Selector("init")
     public native HKObserverQuery init();
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
+            HKQuantity totalFlightsClimbed);
 }

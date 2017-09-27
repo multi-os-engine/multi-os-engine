@@ -179,4 +179,12 @@ public class INSendMessageIntentResponse extends INIntentResponse {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("sentMessage")
+    public native INMessage sentMessage();
+
+    @Generated
+    @Selector("setSentMessage:")
+    public native void setSentMessage(INMessage value);
 }

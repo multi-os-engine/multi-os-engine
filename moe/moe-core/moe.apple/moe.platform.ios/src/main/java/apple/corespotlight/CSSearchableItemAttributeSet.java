@@ -1606,4 +1606,60 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("whiteBalance")
     public native NSNumber whiteBalance();
+
+    @Generated
+    @Selector("isUserCreated")
+    public native NSNumber isUserCreated();
+
+    @Generated
+    @Selector("isUserCurated")
+    public native NSNumber isUserCurated();
+
+    @Generated
+    @Selector("isUserOwned")
+    public native NSNumber isUserOwned();
+
+    @Generated
+    @Selector("providerDataTypeIdentifiers")
+    public native NSArray<String> providerDataTypeIdentifiers();
+
+    @Generated
+    @Selector("providerFileTypeIdentifiers")
+    public native NSArray<String> providerFileTypeIdentifiers();
+
+    @Generated
+    @Selector("providerInPlaceFileTypeIdentifiers")
+    public native NSArray<String> providerInPlaceFileTypeIdentifiers();
+
+    @Generated
+    @Selector("rankingHint")
+    public native NSNumber rankingHint();
+
+    @Generated
+    @Selector("setProviderDataTypeIdentifiers:")
+    public native void setProviderDataTypeIdentifiers(NSArray<String> value);
+
+    @Generated
+    @Selector("setProviderFileTypeIdentifiers:")
+    public native void setProviderFileTypeIdentifiers(NSArray<String> value);
+
+    @Generated
+    @Selector("setProviderInPlaceFileTypeIdentifiers:")
+    public native void setProviderInPlaceFileTypeIdentifiers(NSArray<String> value);
+
+    @Generated
+    @Selector("setRankingHint:")
+    public native void setRankingHint(NSNumber value);
+
+    @Generated
+    @Selector("setUserCreated:")
+    public native void setUserCreated(NSNumber value);
+
+    @Generated
+    @Selector("setUserCurated:")
+    public native void setUserCurated(NSNumber value);
+
+    @Generated
+    @Selector("setUserOwned:")
+    public native void setUserOwned(NSNumber value);
 }

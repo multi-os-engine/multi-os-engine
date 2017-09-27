@@ -30,4 +30,6 @@ public final class INPaymentStatus {
     @Generated
     private INPaymentStatus() {
     }
+
+    @Generated @NInt public static final long Unpaid = 0x0000000000000005L;
 }

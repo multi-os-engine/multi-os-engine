@@ -36,7 +36,6 @@ import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
-import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
@@ -143,8 +142,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsForKeysCount(
-            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) ConstPtr<ObjCObject> keys, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
@@ -1095,4 +1094,18 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
         }
     }
+
+    @Generated
+    @Selector("dictionaryWithContentsOfURL:error:")
+    public static native <_KeyType, _ObjectType> NSDictionary<String, _ObjectType> dictionaryWithContentsOfURLError(
+            NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithContentsOfURL:error:")
+    public native NSDictionary<String, _ObjectType> initWithContentsOfURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("writeToURL:error:")
+    public native boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

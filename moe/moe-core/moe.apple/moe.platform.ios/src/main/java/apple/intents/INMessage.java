@@ -207,4 +207,29 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("conversationIdentifier")
+    public native String conversationIdentifier();
+
+    @Generated
+    @Selector("groupName")
+    public native INSpeakableString groupName();
+
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameMessageType(
+            String identifier, String conversationIdentifier, String content, NSDate dateSent, INPerson sender,
+            NSArray<? extends INPerson> recipients, INSpeakableString groupName, @NInt long messageType);
+
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:messageType:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsMessageType(
+            String identifier, String conversationIdentifier, String content, NSDate dateSent, INPerson sender,
+            NSArray<? extends INPerson> recipients, @NInt long messageType);
+
+    @Generated
+    @Selector("messageType")
+    @NInt
+    public native long messageType();
 }

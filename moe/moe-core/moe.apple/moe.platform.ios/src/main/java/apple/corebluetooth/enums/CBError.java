@@ -37,4 +37,6 @@ public final class CBError {
     @Generated
     private CBError() {
     }
+
+    @Generated @NInt public static final long UnkownDevice = 0x000000000000000CL;
 }

@@ -481,4 +481,9 @@ public class HMHome extends NSObject {
         @Generated
         void call_updateNameCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("homeHubState")
+    @NUInt
+    public native long homeHubState();
 }

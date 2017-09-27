@@ -175,4 +175,13 @@ public class MDLObjectContainer extends NSObject implements MDLObjectContainerCo
     @Generated
     @Selector("removeObject:")
     public native void removeObject(MDLObject object);
+
+    @Generated
+    @Selector("count")
+    @NUInt
+    public native long count();
+
+    @Generated
+    @Selector("objectAtIndexedSubscript:")
+    public native MDLObject objectAtIndexedSubscript(@NUInt long index);
 }

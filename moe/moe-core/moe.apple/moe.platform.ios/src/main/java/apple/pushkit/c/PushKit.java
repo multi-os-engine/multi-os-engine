@@ -46,4 +46,9 @@ public final class PushKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPushTypeComplication();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPushTypeFileProvider();
 }

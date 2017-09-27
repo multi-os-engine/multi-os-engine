@@ -170,4 +170,9 @@ public class CMSensorRecorder extends NSObject {
     @Generated
     @Selector("recordAccelerometerForDuration:")
     public native void recordAccelerometerForDuration(double duration);
+
+    @Generated
+    @Selector("authorizationStatus")
+    @NInt
+    public static native long authorizationStatus();
 }

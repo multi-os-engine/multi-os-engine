@@ -18,9 +18,14 @@ package apple.corespotlight.protocol;
 
 import apple.corespotlight.CSSearchableIndex;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
+import apple.foundation.NSError;
+import apple.foundation.NSURL;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
@@ -69,5 +74,22 @@ public interface CSSearchableIndexDelegate {
     public interface Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler {
         @Generated
         void call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("dataForSearchableIndex:itemIdentifier:typeIdentifier:error:")
+    default NSData dataForSearchableIndexItemIdentifierTypeIdentifierError(CSSearchableIndex searchableIndex,
+            String itemIdentifier, String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("fileURLForSearchableIndex:itemIdentifier:typeIdentifier:inPlace:error:")
+    default NSURL fileURLForSearchableIndexItemIdentifierTypeIdentifierInPlaceError(CSSearchableIndex searchableIndex,
+            String itemIdentifier, String typeIdentifier, boolean inPlace,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

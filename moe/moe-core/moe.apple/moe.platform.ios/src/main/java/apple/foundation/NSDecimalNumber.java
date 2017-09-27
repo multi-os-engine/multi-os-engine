@@ -33,6 +33,7 @@ import apple.quartzcore.struct.CATransform3D;
 import apple.scenekit.struct.SCNMatrix4;
 import apple.scenekit.struct.SCNVector3;
 import apple.scenekit.struct.SCNVector4;
+import apple.uikit.struct.NSDirectionalEdgeInsets;
 import apple.uikit.struct.UIEdgeInsets;
 import apple.uikit.struct.UIOffset;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -527,4 +528,8 @@ public class NSDecimalNumber extends NSNumber {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("valueWithDirectionalEdgeInsets:")
+    public static native NSValue valueWithDirectionalEdgeInsets(@ByValue NSDirectionalEdgeInsets insets);
 }

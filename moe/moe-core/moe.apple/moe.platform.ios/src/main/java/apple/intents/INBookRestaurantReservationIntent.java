@@ -234,4 +234,11 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithRestaurant:bookingDateComponents:partySize:bookingIdentifier:guest:selectedOffer:guestProvidedSpecialRequestText:")
+    public native INBookRestaurantReservationIntent initWithRestaurantBookingDateComponentsPartySizeBookingIdentifierGuestSelectedOfferGuestProvidedSpecialRequestText(
+            INRestaurant restaurant, NSDateComponents bookingDateComponents, @NUInt long partySize,
+            String bookingIdentifier, INRestaurantGuest guest, INRestaurantOffer selectedOffer,
+            String guestProvidedSpecialRequestText);
 }

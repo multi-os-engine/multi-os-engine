@@ -40,4 +40,9 @@ public final class MTLBlendFactor {
     @Generated
     private MTLBlendFactor() {
     }
+
+    @Generated @NUInt public static final long Source1Color = 0x000000000000000FL;
+    @Generated @NUInt public static final long OneMinusSource1Color = 0x0000000000000010L;
+    @Generated @NUInt public static final long Source1Alpha = 0x0000000000000011L;
+    @Generated @NUInt public static final long OneMinusSource1Alpha = 0x0000000000000012L;
 }

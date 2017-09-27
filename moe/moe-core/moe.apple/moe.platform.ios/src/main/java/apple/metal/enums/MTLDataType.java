@@ -82,4 +82,24 @@ public final class MTLDataType {
     @Generated
     private MTLDataType() {
     }
+
+    @Generated @NUInt public static final long Texture = 0x000000000000003AL;
+    @Generated @NUInt public static final long Sampler = 0x000000000000003BL;
+    @Generated @NUInt public static final long Pointer = 0x000000000000003CL;
+    @Generated @NUInt public static final long R8Unorm = 0x000000000000003EL;
+    @Generated @NUInt public static final long R8Snorm = 0x000000000000003FL;
+    @Generated @NUInt public static final long R16Unorm = 0x0000000000000040L;
+    @Generated @NUInt public static final long R16Snorm = 0x0000000000000041L;
+    @Generated @NUInt public static final long RG8Unorm = 0x0000000000000042L;
+    @Generated @NUInt public static final long RG8Snorm = 0x0000000000000043L;
+    @Generated @NUInt public static final long RG16Unorm = 0x0000000000000044L;
+    @Generated @NUInt public static final long RG16Snorm = 0x0000000000000045L;
+    @Generated @NUInt public static final long RGBA8Unorm = 0x0000000000000046L;
+    @Generated @NUInt public static final long RGBA8Unorm_sRGB = 0x0000000000000047L;
+    @Generated @NUInt public static final long RGBA8Snorm = 0x0000000000000048L;
+    @Generated @NUInt public static final long RGBA16Unorm = 0x0000000000000049L;
+    @Generated @NUInt public static final long RGBA16Snorm = 0x000000000000004AL;
+    @Generated @NUInt public static final long RGB10A2Unorm = 0x000000000000004BL;
+    @Generated @NUInt public static final long RG11B10Float = 0x000000000000004CL;
+    @Generated @NUInt public static final long RGB9E5Float = 0x000000000000004DL;
 }

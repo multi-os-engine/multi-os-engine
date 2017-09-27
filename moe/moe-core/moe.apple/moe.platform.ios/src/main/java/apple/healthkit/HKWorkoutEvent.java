@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -205,4 +206,13 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Selector("dateInterval")
+    public native NSDateInterval dateInterval();
+
+    @Generated
+    @Selector("workoutEventWithType:dateInterval:metadata:")
+    public static native HKWorkoutEvent workoutEventWithTypeDateIntervalMetadata(@NInt long type,
+            NSDateInterval dateInterval, NSDictionary<String, ?> metadata);
 }

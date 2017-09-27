@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.foundation.NSAttributedString;
 import apple.uikit.UIPickerView;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -42,6 +43,22 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
     @IsOptional
     @Selector("pickerView:accessibilityLabelForComponent:")
     default String pickerViewAccessibilityLabelForComponent(UIPickerView pickerView, @NInt long component) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("pickerView:accessibilityAttributedHintForComponent:")
+    default NSAttributedString pickerViewAccessibilityAttributedHintForComponent(UIPickerView pickerView,
+            @NInt long component) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("pickerView:accessibilityAttributedLabelForComponent:")
+    default NSAttributedString pickerViewAccessibilityAttributedLabelForComponent(UIPickerView pickerView,
+            @NInt long component) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -19,6 +19,8 @@ package apple.coreimage;
 import apple.NSObject;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -32,7 +34,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -167,4 +171,14 @@ public class CIColorKernel extends CIKernel {
     @Generated
     @Selector("init")
     public native CIColorKernel init();
+
+    @Generated
+    @Selector("kernelWithFunctionName:fromMetalLibraryData:error:")
+    public static native CIColorKernel kernelWithFunctionNameFromMetalLibraryDataError(String name, NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("kernelWithFunctionName:fromMetalLibraryData:outputPixelFormat:error:")
+    public static native CIColorKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(String name,
+            NSData data, int format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

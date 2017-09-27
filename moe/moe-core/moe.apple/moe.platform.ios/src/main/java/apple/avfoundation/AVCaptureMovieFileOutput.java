@@ -155,7 +155,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
 
     @Generated
     @Selector("availableVideoCodecTypes")
-    public native NSArray<?> availableVideoCodecTypes();
+    public native NSArray<String> availableVideoCodecTypes();
 
     @Generated
     @Selector("init")
@@ -163,7 +163,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
 
     @Generated
     @Selector("metadata")
-    public native NSArray<?> metadata();
+    public native NSArray<? extends AVMetadataItem> metadata();
 
     @Generated
     @Selector("movieFragmentInterval")
@@ -172,7 +172,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
 
     @Generated
     @Selector("outputSettingsForConnection:")
-    public native NSDictionary<?, ?> outputSettingsForConnection(AVCaptureConnection connection);
+    public native NSDictionary<String, ?> outputSettingsForConnection(AVCaptureConnection connection);
 
     @Generated
     @Selector("recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:")
@@ -181,7 +181,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
 
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSArray<?> value);
+    public native void setMetadata(NSArray<? extends AVMetadataItem> value);
 
     @Generated
     @Selector("setMovieFragmentInterval:")
@@ -189,7 +189,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
 
     @Generated
     @Selector("setOutputSettings:forConnection:")
-    public native void setOutputSettingsForConnection(NSDictionary<?, ?> outputSettings,
+    public native void setOutputSettingsForConnection(NSDictionary<String, ?> outputSettings,
             AVCaptureConnection connection);
 
     @Generated

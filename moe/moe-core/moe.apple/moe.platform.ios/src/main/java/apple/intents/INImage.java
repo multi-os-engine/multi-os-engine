@@ -44,6 +44,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -212,4 +213,20 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("fetchUIImageWithCompletion:")
+    public native void fetchUIImageWithCompletion(
+            @ObjCBlock(name = "call_fetchUIImageWithCompletion") Block_fetchUIImageWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchUIImageWithCompletion {
+        @Generated
+        void call_fetchUIImageWithCompletion(UIImage arg0);
+    }
+
+    @Generated
+    @Selector("imageWithURL:width:height:")
+    public static native INImage imageWithURLWidthHeight(NSURL URL, double width, double height);
 }

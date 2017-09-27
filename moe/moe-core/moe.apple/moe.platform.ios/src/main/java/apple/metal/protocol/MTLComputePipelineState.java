@@ -16,6 +16,8 @@ limitations under the License.
 
 package apple.metal.protocol;
 
+import apple.metal.struct.MTLSize;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -45,4 +47,18 @@ public interface MTLComputePipelineState {
     @Selector("threadExecutionWidth")
     @NUInt
     long threadExecutionWidth();
+
+    @Generated
+    @Selector("imageblockMemoryLengthForDimensions:")
+    @NUInt
+    long imageblockMemoryLengthForDimensions(@ByValue MTLSize imageblockDimensions);
+
+    @Generated
+    @Selector("label")
+    String label();
+
+    @Generated
+    @Selector("staticThreadgroupMemoryLength")
+    @NUInt
+    long staticThreadgroupMemoryLength();
 }

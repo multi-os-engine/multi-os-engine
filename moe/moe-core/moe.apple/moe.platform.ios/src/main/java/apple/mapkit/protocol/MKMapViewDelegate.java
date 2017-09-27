@@ -19,6 +19,7 @@ package apple.mapkit.protocol;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.mapkit.MKAnnotationView;
+import apple.mapkit.MKClusterAnnotation;
 import apple.mapkit.MKMapView;
 import apple.mapkit.MKOverlayRenderer;
 import apple.mapkit.MKOverlayView;
@@ -198,6 +199,14 @@ public interface MKMapViewDelegate {
     @IsOptional
     @Selector("mapViewWillStartRenderingMap:")
     default void mapViewWillStartRenderingMap(MKMapView mapView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("mapView:clusterAnnotationForMemberAnnotations:")
+    default MKClusterAnnotation mapViewClusterAnnotationForMemberAnnotations(MKMapView mapView,
+            NSArray<?> memberAnnotations) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

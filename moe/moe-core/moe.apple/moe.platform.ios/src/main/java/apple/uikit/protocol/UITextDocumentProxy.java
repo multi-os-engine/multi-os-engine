@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.foundation.NSUUID;
 import apple.uikit.UITextInputMode;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -45,4 +46,12 @@ public interface UITextDocumentProxy extends UIKeyInput {
     @Generated
     @Selector("documentInputMode")
     UITextInputMode documentInputMode();
+
+    @Generated
+    @Selector("documentIdentifier")
+    NSUUID documentIdentifier();
+
+    @Generated
+    @Selector("selectedText")
+    String selectedText();
 }

@@ -276,4 +276,56 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
         @Generated
         void call_setPreparedPhotoSettingsArrayCompletionHandler(boolean arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("availableLivePhotoVideoCodecTypes")
+    public native NSArray<String> availableLivePhotoVideoCodecTypes();
+
+    @Generated
+    @Selector("availablePhotoFileTypes")
+    public native NSArray<String> availablePhotoFileTypes();
+
+    @Generated
+    @Selector("availableRawPhotoFileTypes")
+    public native NSArray<String> availableRawPhotoFileTypes();
+
+    @Generated
+    @Selector("isCameraCalibrationDataDeliverySupported")
+    public native boolean isCameraCalibrationDataDeliverySupported();
+
+    @Generated
+    @Selector("isDepthDataDeliveryEnabled")
+    public native boolean isDepthDataDeliveryEnabled();
+
+    @Generated
+    @Selector("isDepthDataDeliverySupported")
+    public native boolean isDepthDataDeliverySupported();
+
+    @Generated
+    @Selector("isDualCameraDualPhotoDeliveryEnabled")
+    public native boolean isDualCameraDualPhotoDeliveryEnabled();
+
+    @Generated
+    @Selector("isDualCameraDualPhotoDeliverySupported")
+    public native boolean isDualCameraDualPhotoDeliverySupported();
+
+    @Generated
+    @Selector("setDepthDataDeliveryEnabled:")
+    public native void setDepthDataDeliveryEnabled(boolean value);
+
+    @Generated
+    @Selector("setDualCameraDualPhotoDeliveryEnabled:")
+    public native void setDualCameraDualPhotoDeliveryEnabled(boolean value);
+
+    @Generated
+    @Selector("supportedPhotoCodecTypesForFileType:")
+    public native NSArray<String> supportedPhotoCodecTypesForFileType(String fileType);
+
+    @Generated
+    @Selector("supportedPhotoPixelFormatTypesForFileType:")
+    public native NSArray<? extends NSNumber> supportedPhotoPixelFormatTypesForFileType(String fileType);
+
+    @Generated
+    @Selector("supportedRawPhotoPixelFormatTypesForFileType:")
+    public native NSArray<? extends NSNumber> supportedRawPhotoPixelFormatTypesForFileType(String fileType);
 }

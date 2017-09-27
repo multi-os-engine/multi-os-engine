@@ -131,4 +131,32 @@ public interface MTLCommandBuffer {
         @Generated
         void call_addScheduledHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
     }
+
+    @Generated
+    @Selector("GPUEndTime")
+    double GPUEndTime();
+
+    @Generated
+    @Selector("GPUStartTime")
+    double GPUStartTime();
+
+    @Generated
+    @Selector("kernelEndTime")
+    double kernelEndTime();
+
+    @Generated
+    @Selector("kernelStartTime")
+    double kernelStartTime();
+
+    @Generated
+    @Selector("popDebugGroup")
+    void popDebugGroup();
+
+    @Generated
+    @Selector("presentDrawable:afterMinimumDuration:")
+    void presentDrawableAfterMinimumDuration(@Mapped(ObjCObjectMapper.class) Object drawable, double duration);
+
+    @Generated
+    @Selector("pushDebugGroup:")
+    void pushDebugGroup(String string);
 }

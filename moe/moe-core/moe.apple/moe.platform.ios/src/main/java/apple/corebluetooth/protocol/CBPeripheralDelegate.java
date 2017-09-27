@@ -18,6 +18,7 @@ package apple.corebluetooth.protocol;
 
 import apple.corebluetooth.CBCharacteristic;
 import apple.corebluetooth.CBDescriptor;
+import apple.corebluetooth.CBL2CAPChannel;
 import apple.corebluetooth.CBPeripheral;
 import apple.corebluetooth.CBService;
 import apple.foundation.NSArray;
@@ -134,6 +135,20 @@ public interface CBPeripheralDelegate {
     @Deprecated
     @Selector("peripheralDidUpdateRSSI:error:")
     default void peripheralDidUpdateRSSIError(CBPeripheral peripheral, NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("peripheral:didOpenL2CAPChannel:error:")
+    default void peripheralDidOpenL2CAPChannelError(CBPeripheral peripheral, CBL2CAPChannel channel, NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("peripheralIsReadyToSendWriteWithoutResponse:")
+    default void peripheralIsReadyToSendWriteWithoutResponse(CBPeripheral peripheral) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

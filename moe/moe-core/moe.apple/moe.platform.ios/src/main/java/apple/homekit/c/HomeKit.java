@@ -1076,4 +1076,29 @@ public final class HomeKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMSignificantEventSunset();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeLabel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeLabelNamespace();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeLabelIndex();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeColorTemperature();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMPresenceKeyPath();
 }

@@ -76,7 +76,7 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("actionNamed:duration:")
-    public static native SKAction actionNamedDuration(String name, double sec);
+    public static native SKAction actionNamedDuration(String name, double duration);
 
     @Generated
     @Selector("actionNamed:fromURL:")
@@ -84,7 +84,7 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("actionNamed:fromURL:duration:")
-    public static native SKAction actionNamedFromURLDuration(String name, NSURL url, double sec);
+    public static native SKAction actionNamedFromURLDuration(String name, NSURL url, double duration);
 
     @Generated
     @Owned
@@ -127,29 +127,29 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("applyAngularImpulse:duration:")
-    public static native SKAction applyAngularImpulseDuration(@NFloat double impulse, double sec);
+    public static native SKAction applyAngularImpulseDuration(@NFloat double impulse, double duration);
 
     @Generated
     @Selector("applyForce:atPoint:duration:")
     public static native SKAction applyForceAtPointDuration(@ByValue CGVector force, @ByValue CGPoint point,
-            double sec);
+            double duration);
 
     @Generated
     @Selector("applyForce:duration:")
-    public static native SKAction applyForceDuration(@ByValue CGVector force, double sec);
+    public static native SKAction applyForceDuration(@ByValue CGVector force, double duration);
 
     @Generated
     @Selector("applyImpulse:atPoint:duration:")
     public static native SKAction applyImpulseAtPointDuration(@ByValue CGVector impulse, @ByValue CGPoint point,
-            double sec);
+            double duration);
 
     @Generated
     @Selector("applyImpulse:duration:")
-    public static native SKAction applyImpulseDuration(@ByValue CGVector impulse, double sec);
+    public static native SKAction applyImpulseDuration(@ByValue CGVector impulse, double duration);
 
     @Generated
     @Selector("applyTorque:duration:")
-    public static native SKAction applyTorqueDuration(@NFloat double torque, double sec);
+    public static native SKAction applyTorqueDuration(@NFloat double torque, double duration);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -232,7 +232,7 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("colorizeWithColor:colorBlendFactor:duration:")
     public static native SKAction colorizeWithColorColorBlendFactorDuration(UIColor color,
-            @NFloat double colorBlendFactor, double sec);
+            @NFloat double colorBlendFactor, double duration);
 
     @Generated
     @Selector("colorizeWithColorBlendFactor:duration:")
@@ -240,7 +240,7 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("customActionWithDuration:actionBlock:")
-    public static native SKAction customActionWithDurationActionBlock(double seconds,
+    public static native SKAction customActionWithDurationActionBlock(double duration,
             @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
 
     @Generated
@@ -253,32 +253,32 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("fadeAlphaBy:duration:")
-    public static native SKAction fadeAlphaByDuration(@NFloat double factor, double sec);
+    public static native SKAction fadeAlphaByDuration(@NFloat double factor, double duration);
 
     @Generated
     @Selector("fadeAlphaTo:duration:")
-    public static native SKAction fadeAlphaToDuration(@NFloat double alpha, double sec);
+    public static native SKAction fadeAlphaToDuration(@NFloat double alpha, double duration);
 
     @Generated
     @Selector("fadeInWithDuration:")
-    public static native SKAction fadeInWithDuration(double sec);
+    public static native SKAction fadeInWithDuration(double duration);
 
     @Generated
     @Selector("fadeOutWithDuration:")
-    public static native SKAction fadeOutWithDuration(double sec);
+    public static native SKAction fadeOutWithDuration(double duration);
 
     @Generated
     @Selector("falloffBy:duration:")
-    public static native SKAction falloffByDuration(float falloff, double sec);
+    public static native SKAction falloffByDuration(float falloff, double duration);
 
     @Generated
     @Selector("falloffTo:duration:")
-    public static native SKAction falloffToDuration(float falloff, double sec);
+    public static native SKAction falloffToDuration(float falloff, double duration);
 
     @Generated
     @Selector("followPath:asOffset:orientToPath:duration:")
     public static native SKAction followPathAsOffsetOrientToPathDuration(CGPathRef path, boolean offset, boolean orient,
-            double sec);
+            double duration);
 
     @Generated
     @Selector("followPath:asOffset:orientToPath:speed:")
@@ -287,7 +287,7 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("followPath:duration:")
-    public static native SKAction followPathDuration(CGPathRef path, double sec);
+    public static native SKAction followPathDuration(CGPathRef path, double duration);
 
     @Generated
     @Selector("followPath:speed:")
@@ -329,23 +329,23 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("moveBy:duration:")
-    public static native SKAction moveByDuration(@ByValue CGVector delta, double sec);
+    public static native SKAction moveByDuration(@ByValue CGVector delta, double duration);
 
     @Generated
     @Selector("moveByX:y:duration:")
-    public static native SKAction moveByXYDuration(@NFloat double deltaX, @NFloat double deltaY, double sec);
+    public static native SKAction moveByXYDuration(@NFloat double deltaX, @NFloat double deltaY, double duration);
 
     @Generated
     @Selector("moveTo:duration:")
-    public static native SKAction moveToDuration(@ByValue CGPoint location, double sec);
+    public static native SKAction moveToDuration(@ByValue CGPoint location, double duration);
 
     @Generated
     @Selector("moveToX:duration:")
-    public static native SKAction moveToXDuration(@NFloat double x, double sec);
+    public static native SKAction moveToXDuration(@NFloat double x, double duration);
 
     @Generated
     @Selector("moveToY:duration:")
-    public static native SKAction moveToYDuration(@NFloat double y, double sec);
+    public static native SKAction moveToYDuration(@NFloat double y, double duration);
 
     @Generated
     @Owned
@@ -371,7 +371,7 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("reachTo:rootNode:duration:")
-    public static native SKAction reachToRootNodeDuration(@ByValue CGPoint position, SKNode root, double sec);
+    public static native SKAction reachToRootNodeDuration(@ByValue CGPoint position, SKNode root, double duration);
 
     @Generated
     @Selector("reachTo:rootNode:velocity:")
@@ -426,15 +426,15 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("rotateByAngle:duration:")
-    public static native SKAction rotateByAngleDuration(@NFloat double radians, double sec);
+    public static native SKAction rotateByAngleDuration(@NFloat double radians, double duration);
 
     @Generated
     @Selector("rotateToAngle:duration:")
-    public static native SKAction rotateToAngleDuration(@NFloat double radians, double sec);
+    public static native SKAction rotateToAngleDuration(@NFloat double radians, double duration);
 
     @Generated
     @Selector("rotateToAngle:duration:shortestUnitArc:")
-    public static native SKAction rotateToAngleDurationShortestUnitArc(@NFloat double radians, double sec,
+    public static native SKAction rotateToAngleDurationShortestUnitArc(@NFloat double radians, double duration,
             boolean shortestUnitArc);
 
     @Generated
@@ -452,31 +452,31 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("scaleBy:duration:")
-    public static native SKAction scaleByDuration(@NFloat double scale, double sec);
+    public static native SKAction scaleByDuration(@NFloat double scale, double duration);
 
     @Generated
     @Selector("scaleTo:duration:")
-    public static native SKAction scaleToDuration(@NFloat double scale, double sec);
+    public static native SKAction scaleToDuration(@NFloat double scale, double duration);
 
     @Generated
     @Selector("scaleToSize:duration:")
-    public static native SKAction scaleToSizeDuration(@ByValue CGSize size, double sec);
+    public static native SKAction scaleToSizeDuration(@ByValue CGSize size, double duration);
 
     @Generated
     @Selector("scaleXBy:y:duration:")
-    public static native SKAction scaleXByYDuration(@NFloat double xScale, @NFloat double yScale, double sec);
+    public static native SKAction scaleXByYDuration(@NFloat double xScale, @NFloat double yScale, double duration);
 
     @Generated
     @Selector("scaleXTo:duration:")
-    public static native SKAction scaleXToDuration(@NFloat double scale, double sec);
+    public static native SKAction scaleXToDuration(@NFloat double scale, double duration);
 
     @Generated
     @Selector("scaleXTo:y:duration:")
-    public static native SKAction scaleXToYDuration(@NFloat double xScale, @NFloat double yScale, double sec);
+    public static native SKAction scaleXToYDuration(@NFloat double xScale, @NFloat double yScale, double duration);
 
     @Generated
     @Selector("scaleYTo:duration:")
-    public static native SKAction scaleYToDuration(@NFloat double scale, double sec);
+    public static native SKAction scaleYToDuration(@NFloat double scale, double duration);
 
     @Generated
     @Selector("sequence:")
@@ -504,11 +504,11 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("speedBy:duration:")
-    public static native SKAction speedByDuration(@NFloat double speed, double sec);
+    public static native SKAction speedByDuration(@NFloat double speed, double duration);
 
     @Generated
     @Selector("speedTo:duration:")
-    public static native SKAction speedToDuration(@NFloat double speed, double sec);
+    public static native SKAction speedToDuration(@NFloat double speed, double duration);
 
     @Generated
     @Selector("stereoPanBy:duration:")
@@ -524,11 +524,11 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("strengthBy:duration:")
-    public static native SKAction strengthByDuration(float strength, double sec);
+    public static native SKAction strengthByDuration(float strength, double duration);
 
     @Generated
     @Selector("strengthTo:duration:")
-    public static native SKAction strengthToDuration(float strength, double sec);
+    public static native SKAction strengthToDuration(float strength, double duration);
 
     @Generated
     @Selector("superclass")
@@ -545,11 +545,11 @@ public class SKAction extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("waitForDuration:")
-    public static native SKAction waitForDuration(double sec);
+    public static native SKAction waitForDuration(double duration);
 
     @Generated
     @Selector("waitForDuration:withRange:")
-    public static native SKAction waitForDurationWithRange(double sec, double durationRange);
+    public static native SKAction waitForDurationWithRange(double duration, double durationRange);
 
     @Generated
     @Selector("warpTo:duration:")

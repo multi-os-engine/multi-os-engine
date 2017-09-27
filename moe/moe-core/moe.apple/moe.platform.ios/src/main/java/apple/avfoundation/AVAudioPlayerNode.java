@@ -309,4 +309,56 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
         @Generated
         void call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionHandler();
     }
+
+    @Generated
+    @Selector("scheduleBuffer:atTime:options:completionCallbackType:completionHandler:")
+    public native void scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler(AVAudioPCMBuffer buffer,
+            AVAudioTime when, @NUInt long options, @NInt long callbackType,
+            @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler {
+        @Generated
+        void call_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler(@NInt long arg0);
+    }
+
+    @Generated
+    @Selector("scheduleBuffer:completionCallbackType:completionHandler:")
+    public native void scheduleBufferCompletionCallbackTypeCompletionHandler(AVAudioPCMBuffer buffer,
+            @NInt long callbackType,
+            @ObjCBlock(name = "call_scheduleBufferCompletionCallbackTypeCompletionHandler") Block_scheduleBufferCompletionCallbackTypeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_scheduleBufferCompletionCallbackTypeCompletionHandler {
+        @Generated
+        void call_scheduleBufferCompletionCallbackTypeCompletionHandler(@NInt long arg0);
+    }
+
+    @Generated
+    @Selector("scheduleFile:atTime:completionCallbackType:completionHandler:")
+    public native void scheduleFileAtTimeCompletionCallbackTypeCompletionHandler(AVAudioFile file, AVAudioTime when,
+            @NInt long callbackType,
+            @ObjCBlock(name = "call_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler") Block_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler {
+        @Generated
+        void call_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler(@NInt long arg0);
+    }
+
+    @Generated
+    @Selector("scheduleSegment:startingFrame:frameCount:atTime:completionCallbackType:completionHandler:")
+    public native void scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler(
+            AVAudioFile file, long startFrame, int numberFrames, AVAudioTime when, @NInt long callbackType,
+            @ObjCBlock(name = "call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler") Block_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler {
+        @Generated
+        void call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler(@NInt long arg0);
+    }
 }

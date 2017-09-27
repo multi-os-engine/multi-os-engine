@@ -185,4 +185,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("intentDescription")
+    public native String intentDescription();
 }

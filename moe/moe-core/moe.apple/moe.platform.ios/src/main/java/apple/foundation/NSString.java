@@ -23,6 +23,8 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSItemProviderReading;
+import apple.foundation.protocol.NSItemProviderWriting;
 import apple.foundation.protocol.NSMutableCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
@@ -58,6 +60,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
@@ -69,7 +72,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class NSString extends NSObject
-        implements NSCopying, NSMutableCopying, NSSecureCoding, CKRecordValue, CNKeyDescriptor {
+        implements NSCopying, NSMutableCopying, NSSecureCoding, NSItemProviderReading, NSItemProviderWriting,
+        CKRecordValue, CNKeyDescriptor {
     static {
         NatJ.register();
     }
@@ -467,7 +471,7 @@ public class NSString extends NSObject
     @Generated
     @Selector("enumerateLinguisticTagsInRange:scheme:options:orthography:usingBlock:")
     public native void enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock(@ByValue NSRange range,
-            String tagScheme, @NUInt long opts, NSOrthography orthography,
+            String scheme, @NUInt long options, NSOrthography orthography,
             @ObjCBlock(name = "call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock") Block_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock block);
 
     @Generated
@@ -697,7 +701,7 @@ public class NSString extends NSObject
     @Generated
     @Selector("linguisticTagsInRange:scheme:options:orthography:tokenRanges:")
     public native NSArray<String> linguisticTagsInRangeSchemeOptionsOrthographyTokenRanges(@ByValue NSRange range,
-            String tagScheme, @NUInt long opts, NSOrthography orthography,
+            String scheme, @NUInt long options, NSOrthography orthography,
             @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> tokenRanges);
 
     @Generated
@@ -1052,4 +1056,68 @@ public class NSString extends NSObject
         void call_enumerateSubstringsInRangeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, @ByValue NSRange arg2,
                 BoolPtr arg3);
     }
+
+    @Generated
+    @IsOptional
+    @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
+    @NInt
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+
+    @Generated
+    @IsOptional
+    @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
+    @NInt
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+        return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
+    @NInt
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+
+    @Generated
+    @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
+            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("objectWithItemProviderData:typeIdentifier:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+        return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
+    }
+
+    @Generated
+    @Selector("readableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> readableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
+    public NSArray<String> _readableTypeIdentifiersForItemProvider() {
+        return readableTypeIdentifiersForItemProvider();
+    }
+
+    @Generated
+    @Selector("writableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
+
+    @Generated
+    @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
+    public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
+        return writableTypeIdentifiersForItemProvider_static();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("writableTypeIdentifiersForItemProvider")
+    public native NSArray<String> writableTypeIdentifiersForItemProvider();
 }

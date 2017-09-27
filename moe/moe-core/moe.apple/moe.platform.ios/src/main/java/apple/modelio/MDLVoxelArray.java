@@ -188,11 +188,6 @@ public class MDLVoxelArray extends MDLObject {
     public native MDLVoxelArray init();
 
     @Generated
-    @Selector("initWithAsset:divisions:interiorShells:exteriorShells:patchRadius:")
-    public native MDLVoxelArray initWithAssetDivisionsInteriorShellsExteriorShellsPatchRadius(MDLAsset asset,
-            int divisions, int interiorShells, int exteriorShells, float patchRadius);
-
-    @Generated
     @Selector("initWithAsset:divisions:patchRadius:")
     public native MDLVoxelArray initWithAssetDivisionsPatchRadius(MDLAsset asset, int divisions, float patchRadius);
 

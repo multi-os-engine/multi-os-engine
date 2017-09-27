@@ -285,4 +285,13 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Generated
     @Selector("wantsSoftwareDimming")
     public native boolean wantsSoftwareDimming();
+
+    @Generated
+    @Selector("isCaptured")
+    public native boolean isCaptured();
+
+    @Generated
+    @Selector("maximumFramesPerSecond")
+    @NInt
+    public native long maximumFramesPerSecond();
 }

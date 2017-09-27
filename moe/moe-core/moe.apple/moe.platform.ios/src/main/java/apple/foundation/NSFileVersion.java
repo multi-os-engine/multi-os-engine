@@ -238,4 +238,8 @@ public class NSFileVersion extends NSObject {
         @Generated
         void call_getNonlocalVersionsOfItemAtURLCompletionHandler(NSArray<? extends NSFileVersion> arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("originatorNameComponents")
+    public native NSPersonNameComponents originatorNameComponents();
 }

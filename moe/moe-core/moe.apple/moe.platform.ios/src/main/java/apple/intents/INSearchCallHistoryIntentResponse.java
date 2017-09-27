@@ -180,4 +180,12 @@ public class INSearchCallHistoryIntentResponse extends INIntentResponse {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("callRecords")
+    public native NSArray<? extends INCallRecord> callRecords();
+
+    @Generated
+    @Selector("setCallRecords:")
+    public native void setCallRecords(NSArray<? extends INCallRecord> value);
 }

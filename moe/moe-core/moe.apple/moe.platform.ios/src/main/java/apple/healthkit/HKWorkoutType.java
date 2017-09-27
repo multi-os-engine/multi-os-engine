@@ -197,4 +197,8 @@ public class HKWorkoutType extends HKSampleType {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("seriesTypeForIdentifier:")
+    public static native HKSeriesType seriesTypeForIdentifier(String identifier);
 }

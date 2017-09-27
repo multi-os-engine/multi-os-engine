@@ -233,4 +233,8 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
         @Generated
         void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest arg0);
     }
+
+    @Generated
+    @Selector("sourceTrackIDForFrameTiming")
+    public native int sourceTrackIDForFrameTiming();
 }

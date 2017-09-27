@@ -18,6 +18,7 @@ package apple.spritekit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -276,4 +277,43 @@ public class SKLabelNode extends SKNode {
     @Selector("verticalAlignmentMode")
     @NInt
     public native long verticalAlignmentMode();
+
+    @Generated
+    @Selector("attributedText")
+    public native NSAttributedString attributedText();
+
+    @Generated
+    @Selector("labelNodeWithAttributedText:")
+    public static native SKLabelNode labelNodeWithAttributedText(NSAttributedString attributedText);
+
+    @Generated
+    @Selector("lineBreakMode")
+    @NInt
+    public native long lineBreakMode();
+
+    @Generated
+    @Selector("numberOfLines")
+    @NInt
+    public native long numberOfLines();
+
+    @Generated
+    @Selector("preferredMaxLayoutWidth")
+    @NFloat
+    public native double preferredMaxLayoutWidth();
+
+    @Generated
+    @Selector("setAttributedText:")
+    public native void setAttributedText(NSAttributedString value);
+
+    @Generated
+    @Selector("setLineBreakMode:")
+    public native void setLineBreakMode(@NInt long value);
+
+    @Generated
+    @Selector("setNumberOfLines:")
+    public native void setNumberOfLines(@NInt long value);
+
+    @Generated
+    @Selector("setPreferredMaxLayoutWidth:")
+    public native void setPreferredMaxLayoutWidth(@NFloat double value);
 }

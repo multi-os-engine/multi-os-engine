@@ -334,4 +334,20 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
         @Generated
         void call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4(@NInt long arg0);
     }
+
+    @Generated
+    @Selector("pausesOnCompletion")
+    public native boolean pausesOnCompletion();
+
+    @Generated
+    @Selector("scrubsLinearly")
+    public native boolean scrubsLinearly();
+
+    @Generated
+    @Selector("setPausesOnCompletion:")
+    public native void setPausesOnCompletion(boolean value);
+
+    @Generated
+    @Selector("setScrubsLinearly:")
+    public native void setScrubsLinearly(boolean value);
 }

@@ -19,6 +19,7 @@ package apple.healthkit;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSUUID;
@@ -179,4 +180,8 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("metadata")
+    public native NSDictionary<String, ?> metadata();
 }

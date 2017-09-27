@@ -579,4 +579,24 @@ public final class MediaPlayer {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPLanguageOptionCharacteristicVoiceOverTranslation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMediaItemPropertyPlaybackStoreID();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMusicPlayerControllerQueueDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoPropertyServiceIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPNowPlayingInfoPropertyAssetURL();
 }

@@ -22,6 +22,7 @@ import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -160,11 +161,11 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("availableVideoCVPixelFormatTypes")
-    public native NSArray<?> availableVideoCVPixelFormatTypes();
+    public native NSArray<? extends NSNumber> availableVideoCVPixelFormatTypes();
 
     @Generated
     @Selector("availableVideoCodecTypes")
-    public native NSArray<?> availableVideoCodecTypes();
+    public native NSArray<String> availableVideoCodecTypes();
 
     @Generated
     @Selector("init")
@@ -178,7 +179,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("recommendedVideoSettingsForAssetWriterWithOutputFileType:")
-    public native NSDictionary<?, ?> recommendedVideoSettingsForAssetWriterWithOutputFileType(String outputFileType);
+    public native NSDictionary<String, ?> recommendedVideoSettingsForAssetWriterWithOutputFileType(
+            String outputFileType);
 
     @Generated
     @Selector("sampleBufferCallbackQueue")
@@ -206,9 +208,18 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("setVideoSettings:")
-    public native void setVideoSettings(NSDictionary<?, ?> value);
+    public native void setVideoSettings(NSDictionary<String, ?> value);
 
     @Generated
     @Selector("videoSettings")
-    public native NSDictionary<?, ?> videoSettings();
+    public native NSDictionary<String, ?> videoSettings();
+
+    @Generated
+    @Selector("availableVideoCodecTypesForAssetWriterWithOutputFileType:")
+    public native NSArray<String> availableVideoCodecTypesForAssetWriterWithOutputFileType(String outputFileType);
+
+    @Generated
+    @Selector("recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:")
+    public native NSDictionary<?, ?> recommendedVideoSettingsForVideoCodecTypeAssetWriterOutputFileType(
+            String videoCodecType, String outputFileType);
 }

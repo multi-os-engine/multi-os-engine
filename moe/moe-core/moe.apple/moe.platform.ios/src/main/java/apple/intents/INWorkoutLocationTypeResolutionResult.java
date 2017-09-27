@@ -178,4 +178,15 @@ public class INWorkoutLocationTypeResolutionResult extends INIntentResolutionRes
     @Generated
     @Selector("init")
     public native INWorkoutLocationTypeResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithWorkoutLocationTypeToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithWorkoutLocationTypeToConfirm(
+            @NInt long workoutLocationTypeToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedWorkoutLocationType:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedWorkoutLocationType(@NInt long resolvedWorkoutLocationType);
 }

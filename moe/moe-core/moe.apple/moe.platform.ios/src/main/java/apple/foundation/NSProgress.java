@@ -196,7 +196,8 @@ public class NSProgress extends NSObject {
 
     @Generated
     @Selector("initWithParent:userInfo:")
-    public native NSProgress initWithParentUserInfo(NSProgress parentProgressOrNil, NSDictionary<?, ?> userInfoOrNil);
+    public native NSProgress initWithParentUserInfo(NSProgress parentProgressOrNil,
+            NSDictionary<String, ?> userInfoOrNil);
 
     @Generated
     @Selector("isCancellable")
@@ -346,4 +347,68 @@ public class NSProgress extends NSObject {
         @Generated
         void call_setResumingHandler();
     }
+
+    @Generated
+    @Selector("estimatedTimeRemaining")
+    public native NSNumber estimatedTimeRemaining();
+
+    @Generated
+    @Selector("fileCompletedCount")
+    public native NSNumber fileCompletedCount();
+
+    @Generated
+    @Selector("fileOperationKind")
+    public native String fileOperationKind();
+
+    @Generated
+    @Selector("fileTotalCount")
+    public native NSNumber fileTotalCount();
+
+    @Generated
+    @Selector("fileURL")
+    public native NSURL fileURL();
+
+    @Generated
+    @Selector("isFinished")
+    public native boolean isFinished();
+
+    @Generated
+    @Selector("performAsCurrentWithPendingUnitCount:usingBlock:")
+    public native void performAsCurrentWithPendingUnitCountUsingBlock(long unitCount,
+            @ObjCBlock(name = "call_performAsCurrentWithPendingUnitCountUsingBlock") Block_performAsCurrentWithPendingUnitCountUsingBlock work);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performAsCurrentWithPendingUnitCountUsingBlock {
+        @Generated
+        void call_performAsCurrentWithPendingUnitCountUsingBlock();
+    }
+
+    @Generated
+    @Selector("setEstimatedTimeRemaining:")
+    public native void setEstimatedTimeRemaining(NSNumber value);
+
+    @Generated
+    @Selector("setFileCompletedCount:")
+    public native void setFileCompletedCount(NSNumber value);
+
+    @Generated
+    @Selector("setFileOperationKind:")
+    public native void setFileOperationKind(String value);
+
+    @Generated
+    @Selector("setFileTotalCount:")
+    public native void setFileTotalCount(NSNumber value);
+
+    @Generated
+    @Selector("setFileURL:")
+    public native void setFileURL(NSURL value);
+
+    @Generated
+    @Selector("setThroughput:")
+    public native void setThroughput(NSNumber value);
+
+    @Generated
+    @Selector("throughput")
+    public native NSNumber throughput();
 }

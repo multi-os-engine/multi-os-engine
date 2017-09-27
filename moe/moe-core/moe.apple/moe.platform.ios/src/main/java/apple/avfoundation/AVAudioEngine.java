@@ -18,6 +18,7 @@ package apple.avfoundation;
 
 import apple.NSObject;
 import apple.audiotoolbox.opaque.MusicSequence;
+import apple.coreaudio.struct.AudioBufferList;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -34,11 +35,14 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainArgument;
+import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -248,4 +252,62 @@ public class AVAudioEngine extends NSObject {
     @Generated
     @Selector("stop")
     public native void stop();
+
+    @Generated
+    @Selector("disableManualRenderingMode")
+    public native void disableManualRenderingMode();
+
+    @Generated
+    @Selector("enableManualRenderingMode:format:maximumFrameCount:error:")
+    public native boolean enableManualRenderingModeFormatMaximumFrameCountError(@NInt long mode,
+            AVAudioFormat pcmFormat, int maximumFrameCount, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("isAutoShutdownEnabled")
+    public native boolean isAutoShutdownEnabled();
+
+    @Generated
+    @Selector("isInManualRenderingMode")
+    public native boolean isInManualRenderingMode();
+
+    @Generated
+    @Selector("manualRenderingBlock")
+    @ObjCBlock(name = "call_manualRenderingBlock_ret")
+    public native Block_manualRenderingBlock_ret manualRenderingBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_manualRenderingBlock_ret {
+        @Generated
+        @NInt
+        long call_manualRenderingBlock_ret(int arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg1, IntPtr arg2);
+    }
+
+    @Generated
+    @Selector("manualRenderingFormat")
+    public native AVAudioFormat manualRenderingFormat();
+
+    @Generated
+    @Selector("manualRenderingMaximumFrameCount")
+    public native int manualRenderingMaximumFrameCount();
+
+    @Generated
+    @Selector("manualRenderingMode")
+    @NInt
+    public native long manualRenderingMode();
+
+    @Generated
+    @Selector("manualRenderingSampleTime")
+    public native long manualRenderingSampleTime();
+
+    @Generated
+    @Selector("renderOffline:toBuffer:error:")
+    @NInt
+    public native long renderOfflineToBufferError(int numberOfFrames, AVAudioPCMBuffer buffer,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("setAutoShutdownEnabled:")
+    public native void setAutoShutdownEnabled(boolean value);
 }

@@ -258,4 +258,13 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Generated
     @Selector("setSectionInset:")
     public native void setSectionInset(@ByValue UIEdgeInsets value);
+
+    @Generated
+    @Selector("sectionInsetReference")
+    @NInt
+    public native long sectionInsetReference();
+
+    @Generated
+    @Selector("setSectionInsetReference:")
+    public native void setSectionInsetReference(@NInt long value);
 }

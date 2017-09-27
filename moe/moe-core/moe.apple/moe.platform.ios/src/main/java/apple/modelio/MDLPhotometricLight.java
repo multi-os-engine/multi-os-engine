@@ -196,4 +196,8 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @Selector("sphericalHarmonicsLevel")
     @NUInt
     public native long sphericalHarmonicsLevel();
+
+    @Generated
+    @Selector("generateTexture:")
+    public native MDLTexture generateTexture(@NUInt long textureSize);
 }

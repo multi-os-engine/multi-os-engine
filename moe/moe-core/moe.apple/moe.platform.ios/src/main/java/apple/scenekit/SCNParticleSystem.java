@@ -186,7 +186,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("addModifierForProperties:atStage:withBlock:")
@@ -807,4 +807,43 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
         void call_handleEventForPropertiesWithBlock(@ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0,
                 NUIntPtr arg1, IntPtr arg2, @NInt long arg3);
     }
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("orientationDirection")
+    @ByValue
+    public native SCNVector3 orientationDirection();
+
+    @Generated
+    @Selector("particleIntensity")
+    @NFloat
+    public native double particleIntensity();
+
+    @Generated
+    @Selector("particleIntensityVariation")
+    @NFloat
+    public native double particleIntensityVariation();
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("setOrientationDirection:")
+    public native void setOrientationDirection(@ByValue SCNVector3 value);
+
+    @Generated
+    @Selector("setParticleIntensity:")
+    public native void setParticleIntensity(@NFloat double value);
+
+    @Generated
+    @Selector("setParticleIntensityVariation:")
+    public native void setParticleIntensityVariation(@NFloat double value);
 }

@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -204,7 +205,7 @@ public class NSLinguisticTagger extends NSObject {
 
     @Generated
     @Selector("tagAtIndex:scheme:tokenRange:sentenceRange:")
-    public native String tagAtIndexSchemeTokenRangeSentenceRange(@NUInt long charIndex, String tagScheme,
+    public native String tagAtIndexSchemeTokenRangeSentenceRange(@NUInt long charIndex, String scheme,
             NSRange tokenRange, NSRange sentenceRange);
 
     @Generated
@@ -223,4 +224,71 @@ public class NSLinguisticTagger extends NSObject {
         void call_enumerateTagsInRangeSchemeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, @ByValue NSRange arg2,
                 BoolPtr arg3);
     }
+
+    @Generated
+    @Selector("availableTagSchemesForUnit:language:")
+    public static native NSArray<String> availableTagSchemesForUnitLanguage(@NInt long unit, String language);
+
+    @Generated
+    @Selector("dominantLanguage")
+    public native String dominantLanguage();
+
+    @Generated
+    @Selector("dominantLanguageForString:")
+    public static native String dominantLanguageForString(String string);
+
+    @Generated
+    @Selector("enumerateTagsForString:range:unit:scheme:options:orthography:usingBlock:")
+    public static native void enumerateTagsForStringRangeUnitSchemeOptionsOrthographyUsingBlock(String string,
+            @ByValue NSRange range, @NInt long unit, String scheme, @NUInt long options, NSOrthography orthography,
+            @ObjCBlock(name = "call_enumerateTagsForStringRangeUnitSchemeOptionsOrthographyUsingBlock") Block_enumerateTagsForStringRangeUnitSchemeOptionsOrthographyUsingBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateTagsForStringRangeUnitSchemeOptionsOrthographyUsingBlock {
+        @Generated
+        void call_enumerateTagsForStringRangeUnitSchemeOptionsOrthographyUsingBlock(String arg0, @ByValue NSRange arg1,
+                BoolPtr arg2);
+    }
+
+    @Generated
+    @Selector("enumerateTagsInRange:unit:scheme:options:usingBlock:")
+    public native void enumerateTagsInRangeUnitSchemeOptionsUsingBlock(@ByValue NSRange range, @NInt long unit,
+            String scheme, @NUInt long options,
+            @ObjCBlock(name = "call_enumerateTagsInRangeUnitSchemeOptionsUsingBlock") Block_enumerateTagsInRangeUnitSchemeOptionsUsingBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateTagsInRangeUnitSchemeOptionsUsingBlock {
+        @Generated
+        void call_enumerateTagsInRangeUnitSchemeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, BoolPtr arg2);
+    }
+
+    @Generated
+    @Selector("tagAtIndex:unit:scheme:tokenRange:")
+    public native String tagAtIndexUnitSchemeTokenRange(@NUInt long charIndex, @NInt long unit, String scheme,
+            @UncertainArgument("Options: reference, array Fallback: reference") NSRange tokenRange);
+
+    @Generated
+    @Selector("tagForString:atIndex:unit:scheme:orthography:tokenRange:")
+    public static native String tagForStringAtIndexUnitSchemeOrthographyTokenRange(String string, @NUInt long charIndex,
+            @NInt long unit, String scheme, NSOrthography orthography,
+            @UncertainArgument("Options: reference, array Fallback: reference") NSRange tokenRange);
+
+    @Generated
+    @Selector("tagsForString:range:unit:scheme:options:orthography:tokenRanges:")
+    public static native NSArray<String> tagsForStringRangeUnitSchemeOptionsOrthographyTokenRanges(String string,
+            @ByValue NSRange range, @NInt long unit, String scheme, @NUInt long options, NSOrthography orthography,
+            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> tokenRanges);
+
+    @Generated
+    @Selector("tagsInRange:unit:scheme:options:tokenRanges:")
+    public native NSArray<String> tagsInRangeUnitSchemeOptionsTokenRanges(@ByValue NSRange range, @NInt long unit,
+            String scheme, @NUInt long options,
+            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> tokenRanges);
+
+    @Generated
+    @Selector("tokenRangeAtIndex:unit:")
+    @ByValue
+    public native NSRange tokenRangeAtIndexUnit(@NUInt long charIndex, @NInt long unit);
 }

@@ -221,4 +221,9 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("showPreviewsSetting")
+    @NInt
+    public native long showPreviewsSetting();
 }

@@ -3163,4 +3163,129 @@ public final class Foundation {
         @Generated
         void call_NSSetUncaughtExceptionHandler(NSException arg0);
     }
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSDebugDescriptionErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSLocalizedFailureErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLVolumeSupportsImmutableFilesKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLVolumeSupportsAccessPermissionsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLVolumeAvailableCapacityForImportantUsageKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLVolumeAvailableCapacityForOpportunisticUsageKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousItemIsSharedKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousSharedItemCurrentUserRoleKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousSharedItemCurrentUserPermissionsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousSharedItemOwnerNameComponentsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousSharedItemMostRecentEditorNameComponentsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousSharedItemRoleOwner();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousSharedItemRoleParticipant();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousSharedItemPermissionsReadOnly();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLUbiquitousSharedItemPermissionsReadWrite();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSProcessInfoThermalStateDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousItemIsSharedKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousSharedItemCurrentUserRoleKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousSharedItemCurrentUserPermissionsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousSharedItemOwnerNameComponentsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousSharedItemMostRecentEditorNameComponentsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousSharedItemRoleOwner();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousSharedItemRoleParticipant();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousSharedItemPermissionsReadOnly();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMetadataUbiquitousSharedItemPermissionsReadWrite();
 }

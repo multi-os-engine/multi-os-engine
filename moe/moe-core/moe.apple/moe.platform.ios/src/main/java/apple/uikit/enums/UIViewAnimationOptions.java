@@ -47,4 +47,8 @@ public final class UIViewAnimationOptions {
     @Generated
     private UIViewAnimationOptions() {
     }
+
+    @Generated @NUInt public static final long PreferredFramesPerSecondDefault = 0x0000000000000000L;
+    @Generated @NUInt public static final long PreferredFramesPerSecond60 = 0x0000000003000000L;
+    @Generated @NUInt public static final long PreferredFramesPerSecond30 = 0x0000000007000000L;
 }

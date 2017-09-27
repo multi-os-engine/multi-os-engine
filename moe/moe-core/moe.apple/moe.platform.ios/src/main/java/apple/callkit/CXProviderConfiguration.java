@@ -220,4 +220,12 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("supportsVideo")
     public native boolean supportsVideo();
+
+    @Generated
+    @Selector("includesCallsInRecents")
+    public native boolean includesCallsInRecents();
+
+    @Generated
+    @Selector("setIncludesCallsInRecents:")
+    public native void setIncludesCallsInRecents(boolean value);
 }

@@ -158,7 +158,7 @@ public class AVCaptureOutput extends NSObject {
 
     @Generated
     @Selector("connections")
-    public native NSArray<?> connections();
+    public native NSArray<? extends AVCaptureConnection> connections();
 
     @Generated
     @Selector("init")

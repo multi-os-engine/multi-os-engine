@@ -47,4 +47,16 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setStencilStoreAction:")
     void setStencilStoreAction(@NUInt long storeAction);
+
+    @Generated
+    @Selector("setColorStoreActionOptions:atIndex:")
+    void setColorStoreActionOptionsAtIndex(@NUInt long storeActionOptions, @NUInt long colorAttachmentIndex);
+
+    @Generated
+    @Selector("setDepthStoreActionOptions:")
+    void setDepthStoreActionOptions(@NUInt long storeActionOptions);
+
+    @Generated
+    @Selector("setStencilStoreActionOptions:")
+    void setStencilStoreActionOptions(@NUInt long storeActionOptions);
 }

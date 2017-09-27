@@ -21,6 +21,7 @@ import apple.foundation.protocol.NSFastEnumeration;
 import apple.modelio.MDLObject;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -42,4 +43,13 @@ public interface MDLObjectContainerComponent extends MDLComponent, NSFastEnumera
     @Generated
     @Selector("removeObject:")
     void removeObject(MDLObject object);
+
+    @Generated
+    @Selector("count")
+    @NUInt
+    long count();
+
+    @Generated
+    @Selector("objectAtIndexedSubscript:")
+    MDLObject objectAtIndexedSubscript(@NUInt long index);
 }

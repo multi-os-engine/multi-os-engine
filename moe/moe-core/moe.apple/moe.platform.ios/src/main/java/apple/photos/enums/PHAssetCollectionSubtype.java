@@ -48,4 +48,8 @@ public final class PHAssetCollectionSubtype {
     @Generated
     private PHAssetCollectionSubtype() {
     }
+
+    @Generated @NInt public static final long SmartAlbumLivePhotos = 0x00000000000000D5L;
+    @Generated @NInt public static final long SmartAlbumAnimated = 0x00000000000000D6L;
+    @Generated @NInt public static final long SmartAlbumLongExposures = 0x00000000000000D7L;
 }

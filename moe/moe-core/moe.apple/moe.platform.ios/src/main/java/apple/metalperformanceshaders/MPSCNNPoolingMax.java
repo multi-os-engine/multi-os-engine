@@ -18,6 +18,7 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLDevice;
@@ -37,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -157,7 +159,7 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNPoolingMax initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSCNNPoolingMax initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -169,4 +171,22 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
     public native MPSCNNPoolingMax initWithDeviceKernelWidthKernelHeightStrideInPixelsXStrideInPixelsY(
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight,
             @NUInt long strideInPixelsX, @NUInt long strideInPixelsY);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSCNNPoolingMax initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoder:device:")
+    public native MPSCNNPoolingMax initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

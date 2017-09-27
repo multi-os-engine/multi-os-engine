@@ -32,4 +32,7 @@ public final class INStartAudioCallIntentResponseCode {
     @Generated
     private INStartAudioCallIntentResponseCode() {
     }
+
+    @Generated @NInt public static final long FailureContactNotSupportedByApp = 0x0000000000000007L;
+    @Generated @NInt public static final long FailureNoValidNumber = 0x0000000000000008L;
 }

@@ -259,4 +259,22 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @Generated
     @Selector("useConfigurationAttributeInternalIPSubnet")
     public native boolean useConfigurationAttributeInternalIPSubnet();
+
+    @Generated
+    @Selector("maximumTLSVersion")
+    @NInt
+    public native long maximumTLSVersion();
+
+    @Generated
+    @Selector("minimumTLSVersion")
+    @NInt
+    public native long minimumTLSVersion();
+
+    @Generated
+    @Selector("setMaximumTLSVersion:")
+    public native void setMaximumTLSVersion(@NInt long value);
+
+    @Generated
+    @Selector("setMinimumTLSVersion:")
+    public native void setMinimumTLSVersion(@NInt long value);
 }

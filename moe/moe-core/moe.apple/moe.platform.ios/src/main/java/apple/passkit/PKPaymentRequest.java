@@ -19,6 +19,7 @@ package apple.passkit;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -287,4 +288,48 @@ public class PKPaymentRequest extends NSObject {
     @Generated
     @Selector("supportedNetworks")
     public native NSArray<String> supportedNetworks();
+
+    @Generated
+    @Selector("paymentBillingAddressInvalidErrorWithKey:localizedDescription:")
+    public static native NSError paymentBillingAddressInvalidErrorWithKeyLocalizedDescription(String postalAddressKey,
+            String localizedDescription);
+
+    @Generated
+    @Selector("paymentContactInvalidErrorWithContactField:localizedDescription:")
+    public static native NSError paymentContactInvalidErrorWithContactFieldLocalizedDescription(String field,
+            String localizedDescription);
+
+    @Generated
+    @Selector("paymentShippingAddressInvalidErrorWithKey:localizedDescription:")
+    public static native NSError paymentShippingAddressInvalidErrorWithKeyLocalizedDescription(String postalAddressKey,
+            String localizedDescription);
+
+    @Generated
+    @Selector("paymentShippingAddressUnserviceableErrorWithLocalizedDescription:")
+    public static native NSError paymentShippingAddressUnserviceableErrorWithLocalizedDescription(
+            String localizedDescription);
+
+    @Generated
+    @Selector("requiredBillingContactFields")
+    public native NSSet<String> requiredBillingContactFields();
+
+    @Generated
+    @Selector("requiredShippingContactFields")
+    public native NSSet<String> requiredShippingContactFields();
+
+    @Generated
+    @Selector("setRequiredBillingContactFields:")
+    public native void setRequiredBillingContactFields(NSSet<String> value);
+
+    @Generated
+    @Selector("setRequiredShippingContactFields:")
+    public native void setRequiredShippingContactFields(NSSet<String> value);
+
+    @Generated
+    @Selector("setSupportedCountries:")
+    public native void setSupportedCountries(NSSet<String> value);
+
+    @Generated
+    @Selector("supportedCountries")
+    public native NSSet<String> supportedCountries();
 }

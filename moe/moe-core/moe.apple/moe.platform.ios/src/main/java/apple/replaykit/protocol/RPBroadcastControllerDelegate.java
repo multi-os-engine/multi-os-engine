@@ -19,6 +19,7 @@ package apple.replaykit.protocol;
 import apple.NSObject;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
+import apple.foundation.NSURL;
 import apple.replaykit.RPBroadcastController;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -45,6 +46,14 @@ public interface RPBroadcastControllerDelegate {
     @Selector("broadcastController:didUpdateServiceInfo:")
     default void broadcastControllerDidUpdateServiceInfo(RPBroadcastController broadcastController,
             NSDictionary<String, ? extends NSObject> serviceInfo) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("broadcastController:didUpdateBroadcastURL:")
+    default void broadcastControllerDidUpdateBroadcastURL(RPBroadcastController broadcastController,
+            NSURL broadcastURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

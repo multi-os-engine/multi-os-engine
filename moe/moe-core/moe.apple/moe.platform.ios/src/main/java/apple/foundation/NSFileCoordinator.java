@@ -258,4 +258,8 @@ public class NSFileCoordinator extends NSObject {
         @Generated
         void call_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL arg0, NSURL arg1);
     }
+
+    @Generated
+    @Selector("itemAtURL:didChangeUbiquityAttributes:")
+    public native void itemAtURLDidChangeUbiquityAttributes(NSURL url, NSSet<String> attributes);
 }

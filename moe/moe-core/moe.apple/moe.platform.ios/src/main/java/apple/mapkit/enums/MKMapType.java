@@ -30,4 +30,6 @@ public final class MKMapType {
     @Generated
     private MKMapType() {
     }
+
+    @Generated @NUInt public static final long MutedStandard = 0x0000000000000005L;
 }

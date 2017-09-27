@@ -311,4 +311,16 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
         @Generated
         void call_prepareToPlayWithCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("appendQueueDescriptor:")
+    public native void appendQueueDescriptor(MPMusicPlayerQueueDescriptor descriptor);
+
+    @Generated
+    @Selector("applicationQueuePlayer")
+    public static native MPMusicPlayerApplicationController applicationQueuePlayer();
+
+    @Generated
+    @Selector("prependQueueDescriptor:")
+    public native void prependQueueDescriptor(MPMusicPlayerQueueDescriptor descriptor);
 }

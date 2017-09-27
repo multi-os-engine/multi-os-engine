@@ -314,4 +314,9 @@ public class HKAnchoredObjectQuery extends HKQuery {
         void call_updateHandler_ret(HKAnchoredObjectQuery arg0, NSArray<? extends HKSample> arg1,
                 NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3, NSError arg4);
     }
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
+            HKQuantity totalFlightsClimbed);
 }

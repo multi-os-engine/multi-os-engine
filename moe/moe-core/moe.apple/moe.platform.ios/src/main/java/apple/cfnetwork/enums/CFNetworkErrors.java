@@ -107,4 +107,6 @@ public final class CFNetworkErrors {
     @Generated
     private CFNetworkErrors() {
     }
+
+    @Generated public static final int CFURLErrorFileOutsideSafeArea = 0xFFFFFBB0;
 }

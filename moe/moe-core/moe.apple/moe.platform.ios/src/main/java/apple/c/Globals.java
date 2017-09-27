@@ -30,6 +30,8 @@ import apple.struct.__float2;
 import apple.struct._opaque_pthread_t;
 import apple.struct.accessx_descriptor;
 import apple.struct.audit_token_t;
+import apple.struct.auditinfo;
+import apple.struct.auditinfo_addr;
 import apple.struct.cmsghdr;
 import apple.struct.div_t;
 import apple.struct.fd_set;
@@ -167,10 +169,6 @@ public final class Globals {
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public static native String object_getClassName(@Mapped(ObjCObjectMapper.class) Object obj);
-
-    @Generated
-    @CFunction
-    public static native VoidPtr object_getIndexedIvars(@Mapped(ObjCObjectMapper.class) Object obj);
 
     @Generated
     @CFunction
@@ -747,6 +745,7 @@ public final class Globals {
     @CFunction
     public static native int profil(BytePtr arg1, @NUInt long arg2, @NUInt long arg3, int arg4);
 
+    @Deprecated
     @Generated
     @CFunction
     public static native int pthread_setugid_np(int arg1, int arg2);
@@ -3176,12 +3175,6 @@ public final class Globals {
     public static native long strtoull(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __str,
             Ptr<BytePtr> __endptr, int __base);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native int system(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
 
     @Generated
     @CFunction
@@ -5862,4 +5855,148 @@ public final class Globals {
     @Inline
     @CFunction
     public static native short vuqaddh_s16(short __p0, short __p1);
+
+    @Generated
+    @CFunction
+    public static native int setattrlistat(int arg1,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
+            VoidPtr arg3, VoidPtr arg4, @NUInt long arg5, int arg6);
+
+    @Generated
+    @CFunction
+    public static native BytePtr mkdtempat_np(int dfd, BytePtr path);
+
+    @Generated
+    @CFunction
+    public static native int mkstempsat_np(int dfd, BytePtr path, int slen);
+
+    @Generated
+    @CFunction
+    public static native int mkostempsat_np(int dfd, BytePtr path, int slen, int oflags);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public static native FILE fmemopen(VoidPtr __buf, @NUInt long __size,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __mode);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public static native FILE open_memstream(Ptr<BytePtr> __bufp, NUIntPtr __sizep);
+
+    @Generated
+    @CFunction
+    public static native int audit(ConstVoidPtr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int auditon(int arg1, VoidPtr arg2, int arg3);
+
+    @Generated
+    @CFunction
+    public static native int auditctl(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
+
+    @Generated
+    @CFunction
+    public static native int getauid(IntPtr arg1);
+
+    @Generated
+    @CFunction
+    public static native int setauid(ConstIntPtr arg1);
+
+    @Generated
+    @CFunction
+    public static native int getaudit_addr(
+            @UncertainArgument("Options: reference, array Fallback: reference") auditinfo_addr arg1, int arg2);
+
+    @Generated
+    @CFunction
+    public static native int setaudit_addr(
+            @UncertainArgument("Options: reference, array Fallback: reference") auditinfo_addr arg1, int arg2);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native int getaudit(
+            @UncertainArgument("Options: reference, array Fallback: reference") auditinfo arg1);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native int setaudit(
+            @UncertainArgument("Options: reference, array Fallback: reference") auditinfo arg1);
+
+    @Generated
+    @CFunction
+    public static native int audit_session_self();
+
+    @Generated
+    @CFunction
+    public static native int audit_session_join(int port);
+
+    @Generated
+    @CFunction
+    public static native int audit_session_port(int asid, IntPtr portname);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_muladd(float x, float y, float z);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_sign(float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_mix(float x, float y, float t);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_precise_recip(float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_fast_recip(float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_recip(float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_precise_rsqrt(float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_fast_rsqrt(float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_rsqrt(float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_fract(float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_step(float edge, float x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native float simd_smoothstep(float edge0, float edge1, float x);
 }

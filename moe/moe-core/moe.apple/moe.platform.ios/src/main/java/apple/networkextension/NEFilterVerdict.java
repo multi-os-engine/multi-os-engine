@@ -181,4 +181,12 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("setShouldReport:")
+    public native void setShouldReport(boolean value);
+
+    @Generated
+    @Selector("shouldReport")
+    public native boolean shouldReport();
 }

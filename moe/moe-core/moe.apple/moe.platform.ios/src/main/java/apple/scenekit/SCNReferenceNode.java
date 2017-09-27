@@ -23,9 +23,11 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.modelio.MDLObject;
+import apple.scenekit.struct.SCNVector3;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -220,4 +222,19 @@ public class SCNReferenceNode extends SCNNode {
     @Generated
     @Selector("unload")
     public native void unload();
+
+    @Generated
+    @Selector("localFront")
+    @ByValue
+    public static native SCNVector3 localFront();
+
+    @Generated
+    @Selector("localRight")
+    @ByValue
+    public static native SCNVector3 localRight();
+
+    @Generated
+    @Selector("localUp")
+    @ByValue
+    public static native SCNVector3 localUp();
 }

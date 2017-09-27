@@ -116,4 +116,29 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("waitForFence:")
     void waitForFence(@Mapped(ObjCObjectMapper.class) Object fence);
+
+    @Generated
+    @Selector("dispatchThreads:threadsPerThreadgroup:")
+    void dispatchThreadsThreadsPerThreadgroup(@ByValue MTLSize threadsPerGrid, @ByValue MTLSize threadsPerThreadgroup);
+
+    @Generated
+    @Selector("setImageblockWidth:height:")
+    void setImageblockWidthHeight(@NUInt long width, @NUInt long height);
+
+    @Generated
+    @Selector("useHeap:")
+    void useHeap(@Mapped(ObjCObjectMapper.class) Object heap);
+
+    @Generated
+    @Selector("useHeaps:count:")
+    void useHeapsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
+
+    @Generated
+    @Selector("useResource:usage:")
+    void useResourceUsage(@Mapped(ObjCObjectMapper.class) Object resource, @NUInt long usage);
+
+    @Generated
+    @Selector("useResources:count:usage:")
+    void useResourcesCountUsage(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources, @NUInt long count,
+            @NUInt long usage);
 }

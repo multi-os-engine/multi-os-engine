@@ -247,4 +247,16 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Generated
     @Selector("writeToURL:type:")
     public native boolean writeToURLType(NSURL nsurl, CFStringRef type);
+
+    @Generated
+    @Selector("imageFromTextureAtLevel:")
+    public native CGImageRef imageFromTextureAtLevel(@NUInt long level);
+
+    @Generated
+    @Selector("writeToURL:level:")
+    public native boolean writeToURLLevel(NSURL URL, @NUInt long level);
+
+    @Generated
+    @Selector("writeToURL:type:level:")
+    public native boolean writeToURLTypeLevel(NSURL nsurl, CFStringRef type, @NUInt long level);
 }

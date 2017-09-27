@@ -27,4 +27,8 @@ public final class SCNTransparencyMode {
     @Generated
     private SCNTransparencyMode() {
     }
+
+    @Generated @NInt public static final long SingleLayer = 0x0000000000000002L;
+    @Generated @NInt public static final long DualLayer = 0x0000000000000003L;
+    @Generated @NInt public static final long Default = 0x0000000000000000L;
 }

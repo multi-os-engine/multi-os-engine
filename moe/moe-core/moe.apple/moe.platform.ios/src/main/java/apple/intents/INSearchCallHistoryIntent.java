@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -192,4 +193,19 @@ public class INSearchCallHistoryIntent extends INIntent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("callTypes")
+    @NUInt
+    public native long callTypes();
+
+    @Generated
+    @Selector("initWithDateCreated:recipient:callCapabilities:callTypes:unseen:")
+    public native INSearchCallHistoryIntent initWithDateCreatedRecipientCallCapabilitiesCallTypesUnseen(
+            INDateComponentsRange dateCreated, INPerson recipient, @NUInt long callCapabilities, @NUInt long callTypes,
+            NSNumber unseen);
+
+    @Generated
+    @Selector("unseen")
+    public native NSNumber unseen();
 }

@@ -25,6 +25,7 @@ import apple.coregraphics.struct.CGVector;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeMapping;
 import apple.coremedia.struct.CMTimeRange;
+import apple.uikit.struct.NSDirectionalEdgeInsets;
 import apple.uikit.struct.UIEdgeInsets;
 import apple.uikit.struct.UIOffset;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -42,6 +43,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.NUIntPtr;
@@ -342,7 +344,7 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("encodeBool:forKey:")
-    public native void encodeBoolForKey(boolean boolv, String key);
+    public native void encodeBoolForKey(boolean value, String key);
 
     @Generated
     @Selector("encodeBycopyObject:")
@@ -358,7 +360,7 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("encodeBytes:length:forKey:")
-    public native void encodeBytesLengthForKey(ConstBytePtr bytesp, @NUInt long lenv, String key);
+    public native void encodeBytesLengthForKey(ConstBytePtr bytes, @NUInt long length, String key);
 
     @Generated
     @Selector("encodeCGAffineTransform:forKey:")
@@ -398,7 +400,7 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("encodeConditionalObject:forKey:")
-    public native void encodeConditionalObjectForKey(@Mapped(ObjCObjectMapper.class) Object objv, String key);
+    public native void encodeConditionalObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
 
     @Generated
     @Selector("encodeDataObject:")
@@ -406,27 +408,27 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("encodeDouble:forKey:")
-    public native void encodeDoubleForKey(double realv, String key);
+    public native void encodeDoubleForKey(double value, String key);
 
     @Generated
     @Selector("encodeFloat:forKey:")
-    public native void encodeFloatForKey(float realv, String key);
+    public native void encodeFloatForKey(float value, String key);
 
     @Generated
     @Selector("encodeInt32:forKey:")
-    public native void encodeInt32ForKey(int intv, String key);
+    public native void encodeInt32ForKey(int value, String key);
 
     @Generated
     @Selector("encodeInt64:forKey:")
-    public native void encodeInt64ForKey(long intv, String key);
+    public native void encodeInt64ForKey(long value, String key);
 
     @Generated
     @Selector("encodeInt:forKey:")
-    public native void encodeIntForKey(int intv, String key);
+    public native void encodeIntForKey(int value, String key);
 
     @Generated
     @Selector("encodeInteger:forKey:")
-    public native void encodeIntegerForKey(@NInt long intv, String key);
+    public native void encodeIntegerForKey(@NInt long value, String key);
 
     @Generated
     @Selector("encodeObject:")
@@ -434,7 +436,7 @@ public class NSCoder extends NSObject {
 
     @Generated
     @Selector("encodeObject:forKey:")
-    public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object objv, String key);
+    public native void encodeObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);
 
     @Generated
     @Selector("encodeRootObject:")
@@ -481,4 +483,19 @@ public class NSCoder extends NSObject {
     @Selector("versionForClassName:")
     @NInt
     public native long versionForClassName(String className);
+
+    @Generated
+    @Selector("decodeDirectionalEdgeInsetsForKey:")
+    @ByValue
+    public native NSDirectionalEdgeInsets decodeDirectionalEdgeInsetsForKey(String key);
+
+    @Generated
+    @Selector("decodeValueOfObjCType:at:size:")
+    public native void decodeValueOfObjCTypeAtSize(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String type,
+            VoidPtr data, @NUInt long size);
+
+    @Generated
+    @Selector("encodeDirectionalEdgeInsets:forKey:")
+    public native void encodeDirectionalEdgeInsetsForKey(@ByValue NSDirectionalEdgeInsets insets, String key);
 }

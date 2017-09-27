@@ -28,4 +28,6 @@ public final class INCarDefroster {
     @Generated
     private INCarDefroster() {
     }
+
+    @Generated @NInt public static final long All = 0x0000000000000003L;
 }

@@ -20,7 +20,6 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.quartzcore.CAAnimation;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -166,7 +165,7 @@ public class SCNAnimationEvent extends NSObject {
     @Generated
     public interface Block_animationEventWithKeyTimeBlock {
         @Generated
-        void call_animationEventWithKeyTimeBlock(CAAnimation arg0, @Mapped(ObjCObjectMapper.class) Object arg1,
-                boolean arg2);
+        void call_animationEventWithKeyTimeBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
     }
 }

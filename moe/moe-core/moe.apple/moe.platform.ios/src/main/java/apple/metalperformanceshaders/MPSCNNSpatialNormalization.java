@@ -18,6 +18,7 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLDevice;
@@ -37,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -169,7 +171,7 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNSpatialNormalization initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSCNNSpatialNormalization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -197,4 +199,23 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSCNNSpatialNormalization initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoder:device:")
+    public native MPSCNNSpatialNormalization initWithCoderDevice(NSCoder aDecoder,
+            @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

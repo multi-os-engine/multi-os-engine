@@ -31,4 +31,7 @@ public final class INSearchCallHistoryIntentResponseCode {
     @Generated
     private INSearchCallHistoryIntentResponseCode() {
     }
+
+    @Generated @NInt public static final long InProgress = 0x0000000000000006L;
+    @Generated @NInt public static final long Success = 0x0000000000000007L;
 }

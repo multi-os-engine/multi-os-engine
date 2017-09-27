@@ -50,4 +50,6 @@ public final class NSSearchPathDirectory {
     @Generated
     private NSSearchPathDirectory() {
     }
+
+    @Generated @NUInt public static final long TrashDirectory = 0x0000000000000066L;
 }

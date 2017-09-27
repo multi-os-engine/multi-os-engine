@@ -349,4 +349,21 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("videoQuality")
     @NInt
     public native long videoQuality();
+
+    @Generated
+    @Selector("imageExportPreset")
+    @NInt
+    public native long imageExportPreset();
+
+    @Generated
+    @Selector("setImageExportPreset:")
+    public native void setImageExportPreset(@NInt long value);
+
+    @Generated
+    @Selector("setVideoExportPreset:")
+    public native void setVideoExportPreset(String value);
+
+    @Generated
+    @Selector("videoExportPreset")
+    public native String videoExportPreset();
 }

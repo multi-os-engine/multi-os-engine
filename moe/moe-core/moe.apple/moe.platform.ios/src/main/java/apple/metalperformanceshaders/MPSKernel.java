@@ -18,9 +18,11 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.metal.protocol.MTLDevice;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -38,6 +40,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -45,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSKernel extends NSObject implements NSCopying {
+public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -175,7 +178,7 @@ public class MPSKernel extends NSObject implements NSCopying {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSKernel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("label")
@@ -193,4 +196,26 @@ public class MPSKernel extends NSObject implements NSCopying {
     @Generated
     @Selector("setOptions:")
     public native void setOptions(@NUInt long value);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSKernel initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoder:device:")
+    public native MPSKernel initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

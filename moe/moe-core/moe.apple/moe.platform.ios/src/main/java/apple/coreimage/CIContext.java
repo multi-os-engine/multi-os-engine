@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.opaque.CGImageRef;
+import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
@@ -291,6 +292,55 @@ public class CIContext extends NSObject {
     @Generated
     @Selector("writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:")
     public native boolean writeTIFFRepresentationOfImageToURLFormatColorSpaceOptionsError(CIImage image, NSURL url,
+            int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+
+    @Generated
+    @Selector("HEIFRepresentationOfImage:format:colorSpace:options:")
+    public native NSData HEIFRepresentationOfImageFormatColorSpaceOptions(CIImage image, int format,
+            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("PNGRepresentationOfImage:format:colorSpace:options:")
+    public native NSData PNGRepresentationOfImageFormatColorSpaceOptions(CIImage image, int format,
+            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("prepareRender:fromRect:toDestination:atPoint:error:")
+    public native boolean prepareRenderFromRectToDestinationAtPointError(CIImage image, @ByValue CGRect fromRect,
+            CIRenderDestination destination, @ByValue CGPoint atPoint,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("render:toIOSurface:bounds:colorSpace:")
+    public native void renderToIOSurfaceBoundsColorSpace(CIImage image, IOSurfaceRef surface, @ByValue CGRect bounds,
+            CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("startTaskToClear:error:")
+    public native CIRenderTask startTaskToClearError(CIRenderDestination destination,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("startTaskToRender:fromRect:toDestination:atPoint:error:")
+    public native CIRenderTask startTaskToRenderFromRectToDestinationAtPointError(CIImage image,
+            @ByValue CGRect fromRect, CIRenderDestination destination, @ByValue CGPoint atPoint,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("startTaskToRender:toDestination:error:")
+    public native CIRenderTask startTaskToRenderToDestinationError(CIImage image, CIRenderDestination destination,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:")
+    public native boolean writeHEIFRepresentationOfImageToURLFormatColorSpaceOptionsError(CIImage image, NSURL url,
+            int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+
+    @Generated
+    @Selector("writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:")
+    public native boolean writePNGRepresentationOfImageToURLFormatColorSpaceOptionsError(CIImage image, NSURL url,
             int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 }

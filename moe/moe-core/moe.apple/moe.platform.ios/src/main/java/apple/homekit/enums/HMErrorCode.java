@@ -115,4 +115,8 @@ public final class HMErrorCode {
     @Generated
     private HMErrorCode() {
     }
+
+    @Generated @NInt public static final long NoHomeHub = 0x000000000000005BL;
+    @Generated @NInt public static final long NoCompatibleHomeHub = 0x000000000000005CL;
+    @Generated @NInt public static final long IncompatibleHomeHub = 0x000000000000005CL;
 }

@@ -58,4 +58,6 @@ public final class CKErrorCode {
     @Generated
     private CKErrorCode() {
     }
+
+    @Generated @NInt public static final long ServerResponseLost = 0x0000000000000022L;
 }

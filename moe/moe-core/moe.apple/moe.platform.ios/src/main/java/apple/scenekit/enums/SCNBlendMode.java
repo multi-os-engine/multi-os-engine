@@ -31,4 +31,6 @@ public final class SCNBlendMode {
     @Generated
     private SCNBlendMode() {
     }
+
+    @Generated @NInt public static final long Max = 0x0000000000000006L;
 }

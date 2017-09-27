@@ -84,4 +84,9 @@ public interface MTLHeap {
     @Selector("usedSize")
     @NUInt
     long usedSize();
+
+    @Generated
+    @Selector("currentAllocatedSize")
+    @NUInt
+    long currentAllocatedSize();
 }

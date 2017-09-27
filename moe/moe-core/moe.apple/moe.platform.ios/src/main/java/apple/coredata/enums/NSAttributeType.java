@@ -21,21 +21,23 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSAttributeType {
-    @Generated @NUInt public static final long UndefinedAttributeType = 0x0000000000000000L;
-    @Generated @NUInt public static final long Integer16AttributeType = 0x0000000000000064L;
-    @Generated @NUInt public static final long Integer32AttributeType = 0x00000000000000C8L;
-    @Generated @NUInt public static final long Integer64AttributeType = 0x000000000000012CL;
-    @Generated @NUInt public static final long DecimalAttributeType = 0x0000000000000190L;
-    @Generated @NUInt public static final long DoubleAttributeType = 0x00000000000001F4L;
-    @Generated @NUInt public static final long FloatAttributeType = 0x0000000000000258L;
-    @Generated @NUInt public static final long StringAttributeType = 0x00000000000002BCL;
-    @Generated @NUInt public static final long BooleanAttributeType = 0x0000000000000320L;
-    @Generated @NUInt public static final long DateAttributeType = 0x0000000000000384L;
-    @Generated @NUInt public static final long BinaryDataAttributeType = 0x00000000000003E8L;
-    @Generated @NUInt public static final long TransformableAttributeType = 0x0000000000000708L;
-    @Generated @NUInt public static final long ObjectIDAttributeType = 0x00000000000007D0L;
-
     @Generated
     private NSAttributeType() {
     }
+
+    @Generated @NUInt public static final long NSUndefinedAttributeType = 0x0000000000000000L;
+    @Generated @NUInt public static final long NSInteger16AttributeType = 0x0000000000000064L;
+    @Generated @NUInt public static final long NSInteger32AttributeType = 0x00000000000000C8L;
+    @Generated @NUInt public static final long NSInteger64AttributeType = 0x000000000000012CL;
+    @Generated @NUInt public static final long NSDecimalAttributeType = 0x0000000000000190L;
+    @Generated @NUInt public static final long NSDoubleAttributeType = 0x00000000000001F4L;
+    @Generated @NUInt public static final long NSFloatAttributeType = 0x0000000000000258L;
+    @Generated @NUInt public static final long NSStringAttributeType = 0x00000000000002BCL;
+    @Generated @NUInt public static final long NSBooleanAttributeType = 0x0000000000000320L;
+    @Generated @NUInt public static final long NSDateAttributeType = 0x0000000000000384L;
+    @Generated @NUInt public static final long NSBinaryDataAttributeType = 0x00000000000003E8L;
+    @Generated @NUInt public static final long NSUUIDAttributeType = 0x000000000000044CL;
+    @Generated @NUInt public static final long NSURIAttributeType = 0x00000000000004B0L;
+    @Generated @NUInt public static final long NSTransformableAttributeType = 0x0000000000000708L;
+    @Generated @NUInt public static final long NSObjectIDAttributeType = 0x00000000000007D0L;
 }

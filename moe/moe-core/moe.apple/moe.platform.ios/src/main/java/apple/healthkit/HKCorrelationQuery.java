@@ -282,4 +282,9 @@ public class HKCorrelationQuery extends HKQuery {
         void call_initWithTypePredicateSamplePredicatesCompletion(HKCorrelationQuery arg0,
                 NSArray<? extends HKCorrelation> arg1, NSError arg2);
     }
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
+            HKQuantity totalFlightsClimbed);
 }

@@ -784,4 +784,16 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Selector("willTransitionToState:")
     public native void willTransitionToState(@NUInt long state);
+
+    @Generated
+    @Selector("dragStateDidChange:")
+    public native void dragStateDidChange(@NInt long dragState);
+
+    @Generated
+    @Selector("setUserInteractionEnabledWhileDragging:")
+    public native void setUserInteractionEnabledWhileDragging(boolean value);
+
+    @Generated
+    @Selector("userInteractionEnabledWhileDragging")
+    public native boolean userInteractionEnabledWhileDragging();
 }

@@ -84,4 +84,11 @@ public final class AVError {
     @Generated
     private AVError() {
     }
+
+    @Generated @NInt public static final long ContentIsUnavailable = 0xFFFFFFFFFFFFD1A9L;
+    @Generated @NInt public static final long FormatUnsupported = 0xFFFFFFFFFFFFD1A8L;
+    @Generated @NInt public static final long MalformedDepth = 0xFFFFFFFFFFFFD1A7L;
+    @Generated @NInt public static final long ContentNotUpdated = 0xFFFFFFFFFFFFD1A6L;
+    @Generated @NInt public static final long NoLongerPlayable = 0xFFFFFFFFFFFFD1A5L;
+    @Generated @NInt public static final long NoCompatibleAlternatesForExternalDisplay = 0xFFFFFFFFFFFFD1A4L;
 }

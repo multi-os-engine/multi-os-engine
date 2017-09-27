@@ -27,8 +27,12 @@ import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIDataSourceTranslating;
+import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import apple.uikit.protocol.UITableViewDataSource;
 import apple.uikit.protocol.UITableViewDataSourcePrefetching;
+import apple.uikit.protocol.UITableViewDragDelegate;
+import apple.uikit.protocol.UITableViewDropDelegate;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -58,7 +62,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITableView extends UIScrollView implements NSCoding {
+public class UITableView extends UIScrollView
+        implements NSCoding, UIDataSourceTranslating, UISpringLoadedInteractionSupporting {
     static {
         NatJ.register();
     }
@@ -859,4 +864,134 @@ public class UITableView extends UIScrollView implements NSCoding {
     @Generated
     @Selector("visibleCells")
     public native NSArray<? extends UITableViewCell> visibleCells();
+
+    @Generated
+    @Selector("dataSourceIndexPathForPresentationIndexPath:")
+    public native NSIndexPath dataSourceIndexPathForPresentationIndexPath(NSIndexPath presentationIndexPath);
+
+    @Generated
+    @Selector("dataSourceSectionIndexForPresentationSectionIndex:")
+    @NInt
+    public native long dataSourceSectionIndexForPresentationSectionIndex(@NInt long presentationSectionIndex);
+
+    @Generated
+    @Selector("dragDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UITableViewDragDelegate dragDelegate();
+
+    @Generated
+    @Selector("dragInteractionEnabled")
+    public native boolean dragInteractionEnabled();
+
+    @Generated
+    @Selector("dropDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UITableViewDropDelegate dropDelegate();
+
+    @Generated
+    @Selector("hasActiveDrag")
+    public native boolean hasActiveDrag();
+
+    @Generated
+    @Selector("hasActiveDrop")
+    public native boolean hasActiveDrop();
+
+    @Generated
+    @Selector("hasUncommittedUpdates")
+    public native boolean hasUncommittedUpdates();
+
+    @Generated
+    @Selector("insetsContentViewsToSafeArea")
+    public native boolean insetsContentViewsToSafeArea();
+
+    @Generated
+    @Selector("isSpringLoaded")
+    public native boolean isSpringLoaded();
+
+    @Generated
+    @Selector("performBatchUpdates:completion:")
+    public native void performBatchUpdatesCompletion(
+            @ObjCBlock(name = "call_performBatchUpdatesCompletion_0") Block_performBatchUpdatesCompletion_0 updates,
+            @ObjCBlock(name = "call_performBatchUpdatesCompletion_1") Block_performBatchUpdatesCompletion_1 completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performBatchUpdatesCompletion_0 {
+        @Generated
+        void call_performBatchUpdatesCompletion_0();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performBatchUpdatesCompletion_1 {
+        @Generated
+        void call_performBatchUpdatesCompletion_1(boolean arg0);
+    }
+
+    @Generated
+    @Selector("performUsingPresentationValues:")
+    public native void performUsingPresentationValues(
+            @ObjCBlock(name = "call_performUsingPresentationValues") UIDataSourceTranslating.Block_performUsingPresentationValues actionsToTranslate);
+
+    @Generated
+    @Selector("presentationIndexPathForDataSourceIndexPath:")
+    public native NSIndexPath presentationIndexPathForDataSourceIndexPath(NSIndexPath dataSourceIndexPath);
+
+    @Generated
+    @Selector("presentationSectionIndexForDataSourceSectionIndex:")
+    @NInt
+    public native long presentationSectionIndexForDataSourceSectionIndex(@NInt long dataSourceSectionIndex);
+
+    @Generated
+    @Selector("separatorInsetReference")
+    @NInt
+    public native long separatorInsetReference();
+
+    @Generated
+    @Selector("setDragDelegate:")
+    public native void setDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDragDelegate value);
+
+    @Generated
+    public void setDragDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDragDelegate value) {
+        Object __old = dragDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDragDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setDragInteractionEnabled:")
+    public native void setDragInteractionEnabled(boolean value);
+
+    @Generated
+    @Selector("setDropDelegate:")
+    public native void setDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDropDelegate value);
+
+    @Generated
+    public void setDropDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDropDelegate value) {
+        Object __old = dropDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDropDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setInsetsContentViewsToSafeArea:")
+    public native void setInsetsContentViewsToSafeArea(boolean value);
+
+    @Generated
+    @Selector("setSeparatorInsetReference:")
+    public native void setSeparatorInsetReference(@NInt long value);
+
+    @Generated
+    @Selector("setSpringLoaded:")
+    public native void setSpringLoaded(boolean value);
 }

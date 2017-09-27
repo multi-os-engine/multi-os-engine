@@ -285,4 +285,27 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated public static final int kAudioChannelLabel_HOA_ACN = 0x000001F4;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_0 = 0x00020000;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_1 = 0x00020001;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_2 = 0x00020002;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_3 = 0x00020003;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_4 = 0x00020004;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_5 = 0x00020005;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_6 = 0x00020006;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_7 = 0x00020007;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_8 = 0x00020008;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_9 = 0x00020009;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_10 = 0x0002000A;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_11 = 0x0002000B;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_12 = 0x0002000C;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_13 = 0x0002000D;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_14 = 0x0002000E;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_15 = 0x0002000F;
+    @Generated public static final int kAudioChannelLabel_HOA_ACN_65024 = 0x0002FE00;
+    @Generated public static final int kAudioChannelLayoutTag_HOA_ACN_SN3D = 0x00BE0000;
+    @Generated public static final int kAudioChannelLayoutTag_HOA_ACN_N3D = 0x00BF0000;
+    @Generated public static final int kAudioFormatFLAC = 0x666C6163;
+    @Generated public static final int kAudioFormatOpus = 0x6F707573;
 }

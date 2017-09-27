@@ -68,4 +68,11 @@ public interface SCNSceneRendererDelegate {
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("renderer:didApplyConstraintsAtTime:")
+    default void rendererDidApplyConstraintsAtTime(@Mapped(ObjCObjectMapper.class) Object renderer, double time) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

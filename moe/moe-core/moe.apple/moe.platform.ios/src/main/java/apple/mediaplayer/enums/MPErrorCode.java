@@ -32,4 +32,6 @@ public final class MPErrorCode {
     @Generated
     private MPErrorCode() {
     }
+
+    @Generated @NInt public static final long RequestTimedOut = 0x0000000000000007L;
 }

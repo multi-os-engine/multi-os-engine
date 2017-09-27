@@ -102,7 +102,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("expressionForAggregate:")
-    public static native NSExpression expressionForAggregate(NSArray<?> subexpressions);
+    public static native NSExpression expressionForAggregate(NSArray<? extends NSExpression> subexpressions);
 
     @Generated
     @Selector("expressionForAnyKey")
@@ -151,7 +151,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("expressionForSubquery:usingIteratorVariable:predicate:")
     public static native NSExpression expressionForSubqueryUsingIteratorVariablePredicate(NSExpression expression,
-            String variable, @Mapped(ObjCObjectMapper.class) Object predicate);
+            String variable, NSPredicate predicate);
 
     @Generated
     @Selector("expressionForUnionSet:with:")
@@ -334,8 +334,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public interface Block_expressionBlock_ret {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_expressionBlock_ret(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
-                NSMutableDictionary<?, ?> arg2);
+        Object call_expressionBlock_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSArray<? extends NSExpression> arg1, NSMutableDictionary<?, ?> arg2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -343,7 +343,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public interface Block_expressionForBlockArguments {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object arg0, NSArray<?> arg1,
-                NSMutableDictionary<?, ?> arg2);
+        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSArray<? extends NSExpression> arg1, NSMutableDictionary<?, ?> arg2);
     }
 }

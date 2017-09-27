@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSExpression;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
@@ -309,4 +310,20 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Generated
     @Selector("versionHashModifier")
     public native String versionHashModifier();
+
+    @Generated
+    @Selector("coreSpotlightDisplayNameExpression")
+    public native NSExpression coreSpotlightDisplayNameExpression();
+
+    @Generated
+    @Selector("indexes")
+    public native NSArray<? extends NSFetchIndexDescription> indexes();
+
+    @Generated
+    @Selector("setCoreSpotlightDisplayNameExpression:")
+    public native void setCoreSpotlightDisplayNameExpression(NSExpression value);
+
+    @Generated
+    @Selector("setIndexes:")
+    public native void setIndexes(NSArray<? extends NSFetchIndexDescription> value);
 }

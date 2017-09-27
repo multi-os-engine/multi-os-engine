@@ -267,4 +267,29 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Generated
     @Selector("titleView")
     public native UIView titleView();
+
+    @Generated
+    @Selector("hidesSearchBarWhenScrolling")
+    public native boolean hidesSearchBarWhenScrolling();
+
+    @Generated
+    @Selector("largeTitleDisplayMode")
+    @NInt
+    public native long largeTitleDisplayMode();
+
+    @Generated
+    @Selector("searchController")
+    public native UISearchController searchController();
+
+    @Generated
+    @Selector("setHidesSearchBarWhenScrolling:")
+    public native void setHidesSearchBarWhenScrolling(boolean value);
+
+    @Generated
+    @Selector("setLargeTitleDisplayMode:")
+    public native void setLargeTitleDisplayMode(@NInt long value);
+
+    @Generated
+    @Selector("setSearchController:")
+    public native void setSearchController(UISearchController value);
 }

@@ -17,7 +17,9 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.coreimage.CIBarcodeDescriptor;
 import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -152,7 +154,7 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
 
     @Generated
     @Selector("corners")
-    public native NSArray<?> corners();
+    public native NSArray<? extends NSDictionary<?, ?>> corners();
 
     @Generated
     @Selector("init")
@@ -161,4 +163,8 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     @Generated
     @Selector("stringValue")
     public native String stringValue();
+
+    @Generated
+    @Selector("descriptor")
+    public native CIBarcodeDescriptor descriptor();
 }

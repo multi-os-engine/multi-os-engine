@@ -1712,4 +1712,13 @@ public final class AudioToolbox {
                 @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData arg4,
                 double arg5, double arg6);
     }
+
+    @Generated
+    @CFunction
+    public static native int AudioUnitExtensionSetComponentList(CFStringRef extensionIdentifier,
+            CFArrayRef audioComponentInfo);
+
+    @Generated
+    @CFunction
+    public static native CFArrayRef AudioUnitExtensionCopyComponentList(CFStringRef extensionIdentifier);
 }

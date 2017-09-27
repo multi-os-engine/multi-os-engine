@@ -767,4 +767,13 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("visibleMapRect")
     @ByValue
     public native MKMapRect visibleMapRect();
+
+    @Generated
+    @Selector("dequeueReusableAnnotationViewWithIdentifier:forAnnotation:")
+    public native MKAnnotationView dequeueReusableAnnotationViewWithIdentifierForAnnotation(String identifier,
+            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
+
+    @Generated
+    @Selector("registerClass:forAnnotationViewWithReuseIdentifier:")
+    public native void registerClassForAnnotationViewWithReuseIdentifier(Class viewClass, String identifier);
 }

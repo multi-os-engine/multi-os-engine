@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.intents.protocol;
 
+import apple.intents.INDateComponentsRangeResolutionResult;
 import apple.intents.INIntegerResolutionResult;
 import apple.intents.INPlacemarkResolutionResult;
 import apple.intents.INRequestRideIntent;
@@ -120,5 +121,20 @@ public interface INRequestRideIntentHandling {
     public interface Block_resolveRideOptionNameForRequestRideWithCompletion {
         @Generated
         void call_resolveRideOptionNameForRequestRideWithCompletion(INSpeakableStringResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveScheduledPickupTimeForRequestRide:withCompletion:")
+    default void resolveScheduledPickupTimeForRequestRideWithCompletion(INRequestRideIntent intent,
+            @ObjCBlock(name = "call_resolveScheduledPickupTimeForRequestRideWithCompletion") Block_resolveScheduledPickupTimeForRequestRideWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveScheduledPickupTimeForRequestRideWithCompletion {
+        @Generated
+        void call_resolveScheduledPickupTimeForRequestRideWithCompletion(INDateComponentsRangeResolutionResult arg0);
     }
 }

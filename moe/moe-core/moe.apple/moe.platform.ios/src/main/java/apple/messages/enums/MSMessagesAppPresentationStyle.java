@@ -27,4 +27,6 @@ public final class MSMessagesAppPresentationStyle {
     @Generated
     private MSMessagesAppPresentationStyle() {
     }
+
+    @Generated @NUInt public static final long Transcript = 0x0000000000000002L;
 }

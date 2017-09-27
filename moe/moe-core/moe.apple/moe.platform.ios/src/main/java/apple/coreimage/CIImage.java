@@ -17,8 +17,10 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
+import apple.avfoundation.AVDepthData;
 import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.opaque.CGImageRef;
+import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.coregraphics.struct.CGAffineTransform;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
@@ -435,4 +437,45 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("url")
     public native NSURL url();
+
+    @Generated
+    @Selector("depthData")
+    public native AVDepthData depthData();
+
+    @Generated
+    @Selector("imageByApplyingCGOrientation:")
+    public native CIImage imageByApplyingCGOrientation(int orientation);
+
+    @Generated
+    @Selector("imageByApplyingFilter:")
+    public native CIImage imageByApplyingFilter(String filterName);
+
+    @Generated
+    @Selector("imageBySamplingLinear")
+    public native CIImage imageBySamplingLinear();
+
+    @Generated
+    @Selector("imageBySamplingNearest")
+    public native CIImage imageBySamplingNearest();
+
+    @Generated
+    @Selector("imageTransformForCGOrientation:")
+    @ByValue
+    public native CGAffineTransform imageTransformForCGOrientation(int orientation);
+
+    @Generated
+    @Selector("imageWithIOSurface:")
+    public static native CIImage imageWithIOSurface(IOSurfaceRef surface);
+
+    @Generated
+    @Selector("imageWithIOSurface:options:")
+    public static native CIImage imageWithIOSurfaceOptions(IOSurfaceRef surface, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithIOSurface:")
+    public native CIImage initWithIOSurface(IOSurfaceRef surface);
+
+    @Generated
+    @Selector("initWithIOSurface:options:")
+    public native CIImage initWithIOSurfaceOptions(IOSurfaceRef surface, NSDictionary<String, ?> options);
 }

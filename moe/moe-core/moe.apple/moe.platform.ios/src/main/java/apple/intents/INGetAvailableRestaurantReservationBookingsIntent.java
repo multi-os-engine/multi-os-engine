@@ -228,4 +228,10 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithRestaurant:partySize:preferredBookingDateComponents:maximumNumberOfResults:earliestBookingDateForResults:latestBookingDateForResults:")
+    public native INGetAvailableRestaurantReservationBookingsIntent initWithRestaurantPartySizePreferredBookingDateComponentsMaximumNumberOfResultsEarliestBookingDateForResultsLatestBookingDateForResults(
+            INRestaurant restaurant, @NUInt long partySize, NSDateComponents preferredBookingDateComponents,
+            NSNumber maximumNumberOfResults, NSDate earliestBookingDateForResults, NSDate latestBookingDateForResults);
 }

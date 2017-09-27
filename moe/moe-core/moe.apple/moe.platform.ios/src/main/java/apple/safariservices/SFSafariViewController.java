@@ -224,4 +224,22 @@ public class SFSafariViewController extends UIViewController {
     @Generated
     @Selector("setPreferredControlTintColor:")
     public native void setPreferredControlTintColor(UIColor value);
+
+    @Generated
+    @Selector("configuration")
+    public native SFSafariViewControllerConfiguration configuration();
+
+    @Generated
+    @Selector("dismissButtonStyle")
+    @NInt
+    public native long dismissButtonStyle();
+
+    @Generated
+    @Selector("initWithURL:configuration:")
+    public native SFSafariViewController initWithURLConfiguration(NSURL URL,
+            SFSafariViewControllerConfiguration configuration);
+
+    @Generated
+    @Selector("setDismissButtonStyle:")
+    public native void setDismissButtonStyle(@NInt long value);
 }

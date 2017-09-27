@@ -679,4 +679,9 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
     public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
+
+    @Generated
+    @IsOptional
+    @Selector("scrollViewDidChangeAdjustedContentInset:")
+    public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
 }

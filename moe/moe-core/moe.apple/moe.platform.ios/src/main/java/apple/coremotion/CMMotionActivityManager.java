@@ -191,4 +191,9 @@ public class CMMotionActivityManager extends NSObject {
         @Generated
         void call_startActivityUpdatesToQueueWithHandler(CMMotionActivity arg0);
     }
+
+    @Generated
+    @Selector("authorizationStatus")
+    @NInt
+    public static native long authorizationStatus();
 }

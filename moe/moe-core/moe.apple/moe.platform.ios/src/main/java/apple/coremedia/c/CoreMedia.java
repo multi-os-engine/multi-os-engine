@@ -2632,4 +2632,83 @@ public final class CoreMedia {
         @Generated
         int call_CMBufferQueueSetValidationCallback(CMBufferQueueRef arg0, ConstVoidPtr arg1, VoidPtr arg2);
     }
+
+    @Generated
+    @CFunction
+    public static native int CMVideoFormatDescriptionCreateFromHEVCParameterSets(CFAllocatorRef allocator,
+            @NUInt long parameterSetCount,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] parameterSetPointers,
+            ConstNUIntPtr parameterSetSizes, int NALUnitHeaderLength, CFDictionaryRef extensions,
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
+
+    @Generated
+    @CFunction
+    public static native int CMVideoFormatDescriptionGetHEVCParameterSetAtIndex(CMFormatDescriptionRef videoDesc,
+            @NUInt long parameterSetIndex,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] parameterSetPointerOut,
+            NUIntPtr parameterSetSizeOut, NUIntPtr parameterSetCountOut, IntPtr NALUnitHeaderLengthOut);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_SMPTE_ST_2084_PQ();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_ITU_R_2100_HLG();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_MasteringDisplayColorVolume();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_ContentLightLevelInfo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleAttachmentKey_HEVCTemporalLevelInfo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMHEVCTemporalLevelInfoKey_TemporalLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMHEVCTemporalLevelInfoKey_ProfileSpace();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMHEVCTemporalLevelInfoKey_TierFlag();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMHEVCTemporalLevelInfoKey_ProfileIndex();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMHEVCTemporalLevelInfoKey_ProfileCompatibilityFlags();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMHEVCTemporalLevelInfoKey_ConstraintIndicatorFlags();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMHEVCTemporalLevelInfoKey_LevelIndex();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleAttachmentKey_HEVCTemporalSubLayerAccess();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleAttachmentKey_HEVCStepwiseTemporalSubLayerAccess();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleAttachmentKey_HEVCSyncSampleNALUnitType();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix();
 }

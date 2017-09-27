@@ -19,8 +19,10 @@ package apple.uikit;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
+import apple.foundation.NSDate;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSIndexSet;
+import apple.foundation.NSItemProvider;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -337,4 +339,25 @@ public class UIPasteboard extends NSObject {
     @Generated
     @Selector("valuesForPasteboardType:inItemSet:")
     public native NSArray<?> valuesForPasteboardTypeInItemSet(String pasteboardType, NSIndexSet itemSet);
+
+    @Generated
+    @Selector("itemProviders")
+    public native NSArray<? extends NSItemProvider> itemProviders();
+
+    @Generated
+    @Selector("setItemProviders:")
+    public native void setItemProviders(NSArray<? extends NSItemProvider> value);
+
+    @Generated
+    @Selector("setItemProviders:localOnly:expirationDate:")
+    public native void setItemProvidersLocalOnlyExpirationDate(NSArray<? extends NSItemProvider> itemProviders,
+            boolean localOnly, NSDate expirationDate);
+
+    @Generated
+    @Selector("setObjects:")
+    public native void setObjects(NSArray<?> objects);
+
+    @Generated
+    @Selector("setObjects:localOnly:expirationDate:")
+    public native void setObjectsLocalOnlyExpirationDate(NSArray<?> objects, boolean localOnly, NSDate expirationDate);
 }

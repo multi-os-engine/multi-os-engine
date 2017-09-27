@@ -583,4 +583,8 @@ public class WKWebView extends UIView {
         @Generated
         void call_evaluateJavaScriptCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("handlesURLScheme:")
+    public static native boolean handlesURLScheme(String urlScheme);
 }

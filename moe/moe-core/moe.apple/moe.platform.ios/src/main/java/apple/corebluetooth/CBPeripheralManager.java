@@ -230,4 +230,12 @@ public class CBPeripheralManager extends CBManager {
     @Selector("updateValue:forCharacteristic:onSubscribedCentrals:")
     public native boolean updateValueForCharacteristicOnSubscribedCentrals(NSData value,
             CBMutableCharacteristic characteristic, NSArray<? extends CBCentral> centrals);
+
+    @Generated
+    @Selector("publishL2CAPChannelWithEncryption:")
+    public native void publishL2CAPChannelWithEncryption(boolean encryptionRequired);
+
+    @Generated
+    @Selector("unpublishL2CAPChannel:")
+    public native void unpublishL2CAPChannel(char PSM);
 }

@@ -30,4 +30,6 @@ public final class AUSpatializationAlgorithm {
     @Generated
     private AUSpatializationAlgorithm() {
     }
+
+    @Generated public static final int HRTFHQ = 0x00000006;
 }

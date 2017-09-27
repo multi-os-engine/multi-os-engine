@@ -30,4 +30,6 @@ public final class MPSKernelOptions {
     @Generated
     private MPSKernelOptions() {
     }
+
+    @Generated @NUInt public static final long Verbose = 0x0000000000000010L;
 }

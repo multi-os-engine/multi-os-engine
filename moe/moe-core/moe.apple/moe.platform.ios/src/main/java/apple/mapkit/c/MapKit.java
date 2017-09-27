@@ -322,4 +322,23 @@ public final class MapKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKMapItemTypeIdentifier();
+
+    @Generated public static final float MKFeatureDisplayPriorityRequired = (float)0x447A0000;
+    @Generated public static final float MKFeatureDisplayPriorityDefaultHigh = (float)0x443B8000;
+    @Generated public static final float MKFeatureDisplayPriorityDefaultLow = (float)0x437A0000;
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKMapViewDefaultAnnotationViewReuseIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKMapViewDefaultClusterAnnotationViewReuseIdentifier();
 }

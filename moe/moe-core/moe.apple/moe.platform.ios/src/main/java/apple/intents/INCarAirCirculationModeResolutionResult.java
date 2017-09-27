@@ -178,4 +178,15 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
     @Generated
     @Selector("init")
     public native INCarAirCirculationModeResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithCarAirCirculationModeToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithCarAirCirculationModeToConfirm(
+            @NInt long carAirCirculationModeToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedCarAirCirculationMode:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedCarAirCirculationMode(@NInt long resolvedCarAirCirculationMode);
 }

@@ -17,6 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.avfoundation.protocol.AVQueuedSampleBufferRendering;
 import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.coremedia.opaque.CMTimebaseRef;
 import apple.foundation.NSArray;
@@ -43,6 +44,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -50,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class AVSampleBufferDisplayLayer extends CALayer {
+public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampleBufferRendering {
     static {
         NatJ.register();
     }
@@ -214,7 +216,7 @@ public class AVSampleBufferDisplayLayer extends CALayer {
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
     public native void requestMediaDataWhenReadyOnQueueUsingBlock(NSObject queue,
-            @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
+            @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") AVQueuedSampleBufferRendering.Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     @Generated
     @Selector("setControlTimebase:")
@@ -237,10 +239,17 @@ public class AVSampleBufferDisplayLayer extends CALayer {
     @Selector("videoGravity")
     public native String videoGravity();
 
-    @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_requestMediaDataWhenReadyOnQueueUsingBlock {
-        @Generated
-        void call_requestMediaDataWhenReadyOnQueueUsingBlock();
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("timebase")
+    public native CMTimebaseRef timebase();
 }

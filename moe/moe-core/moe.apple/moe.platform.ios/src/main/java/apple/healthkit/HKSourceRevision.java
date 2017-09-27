@@ -23,9 +23,11 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.foundation.struct.NSOperatingSystemVersion;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -188,4 +190,18 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Selector("version")
     public native String version();
+
+    @Generated
+    @Selector("initWithSource:version:productType:operatingSystemVersion:")
+    public native HKSourceRevision initWithSourceVersionProductTypeOperatingSystemVersion(HKSource source,
+            String version, String productType, @ByValue NSOperatingSystemVersion operatingSystemVersion);
+
+    @Generated
+    @Selector("operatingSystemVersion")
+    @ByValue
+    public native NSOperatingSystemVersion operatingSystemVersion();
+
+    @Generated
+    @Selector("productType")
+    public native String productType();
 }

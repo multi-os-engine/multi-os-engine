@@ -174,4 +174,44 @@ public class UIFocusAnimationCoordinator extends NSObject {
         @Generated
         void call_addCoordinatedAnimationsCompletion_1();
     }
+
+    @Generated
+    @Selector("addCoordinatedFocusingAnimations:completion:")
+    public native void addCoordinatedFocusingAnimationsCompletion(
+            @ObjCBlock(name = "call_addCoordinatedFocusingAnimationsCompletion_0") Block_addCoordinatedFocusingAnimationsCompletion_0 animations,
+            @ObjCBlock(name = "call_addCoordinatedFocusingAnimationsCompletion_1") Block_addCoordinatedFocusingAnimationsCompletion_1 completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addCoordinatedFocusingAnimationsCompletion_0 {
+        @Generated
+        void call_addCoordinatedFocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addCoordinatedFocusingAnimationsCompletion_1 {
+        @Generated
+        void call_addCoordinatedFocusingAnimationsCompletion_1();
+    }
+
+    @Generated
+    @Selector("addCoordinatedUnfocusingAnimations:completion:")
+    public native void addCoordinatedUnfocusingAnimationsCompletion(
+            @ObjCBlock(name = "call_addCoordinatedUnfocusingAnimationsCompletion_0") Block_addCoordinatedUnfocusingAnimationsCompletion_0 animations,
+            @ObjCBlock(name = "call_addCoordinatedUnfocusingAnimationsCompletion_1") Block_addCoordinatedUnfocusingAnimationsCompletion_1 completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addCoordinatedUnfocusingAnimationsCompletion_0 {
+        @Generated
+        void call_addCoordinatedUnfocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addCoordinatedUnfocusingAnimationsCompletion_1 {
+        @Generated
+        void call_addCoordinatedUnfocusingAnimationsCompletion_1();
+    }
 }

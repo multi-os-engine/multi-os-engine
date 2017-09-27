@@ -178,4 +178,15 @@ public class INRelativeReferenceResolutionResult extends INIntentResolutionResul
     @Generated
     @Selector("init")
     public native INRelativeReferenceResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithRelativeReferenceToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithRelativeReferenceToConfirm(
+            @NInt long relativeReferenceToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedRelativeReference:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedRelativeReference(@NInt long resolvedRelativeReference);
 }

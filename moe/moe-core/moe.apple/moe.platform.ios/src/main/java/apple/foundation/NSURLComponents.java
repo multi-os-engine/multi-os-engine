@@ -347,4 +347,12 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Generated
     @Selector("user")
     public native String user();
+
+    @Generated
+    @Selector("percentEncodedQueryItems")
+    public native NSArray<? extends NSURLQueryItem> percentEncodedQueryItems();
+
+    @Generated
+    @Selector("setPercentEncodedQueryItems:")
+    public native void setPercentEncodedQueryItems(NSArray<? extends NSURLQueryItem> value);
 }

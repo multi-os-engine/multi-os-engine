@@ -445,4 +445,14 @@ public class AVAudioSession extends NSObject {
         @Generated
         void call_requestRecordPermission(boolean arg0);
     }
+
+    @Generated
+    @Selector("routeSharingPolicy")
+    @NUInt
+    public native long routeSharingPolicy();
+
+    @Generated
+    @Selector("setCategory:mode:routeSharingPolicy:options:error:")
+    public native boolean setCategoryModeRouteSharingPolicyOptionsError(String category, String mode,
+            @NUInt long policy, @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

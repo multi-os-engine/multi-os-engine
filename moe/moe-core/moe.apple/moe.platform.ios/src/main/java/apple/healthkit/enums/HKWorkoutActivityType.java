@@ -97,4 +97,8 @@ public final class HKWorkoutActivityType {
     @Generated
     private HKWorkoutActivityType() {
     }
+
+    @Generated @NUInt public static final long TaiChi = 0x0000000000000048L;
+    @Generated @NUInt public static final long MixedCardio = 0x0000000000000049L;
+    @Generated @NUInt public static final long HandCycling = 0x000000000000004AL;
 }

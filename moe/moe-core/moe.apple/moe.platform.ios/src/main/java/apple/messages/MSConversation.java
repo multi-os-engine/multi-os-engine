@@ -217,4 +217,52 @@ public class MSConversation extends NSObject {
         @Generated
         void call_insertTextCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("sendAttachment:withAlternateFilename:completionHandler:")
+    public native void sendAttachmentWithAlternateFilenameCompletionHandler(NSURL URL, String filename,
+            @ObjCBlock(name = "call_sendAttachmentWithAlternateFilenameCompletionHandler") Block_sendAttachmentWithAlternateFilenameCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendAttachmentWithAlternateFilenameCompletionHandler {
+        @Generated
+        void call_sendAttachmentWithAlternateFilenameCompletionHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("sendMessage:completionHandler:")
+    public native void sendMessageCompletionHandler(MSMessage message,
+            @ObjCBlock(name = "call_sendMessageCompletionHandler") Block_sendMessageCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendMessageCompletionHandler {
+        @Generated
+        void call_sendMessageCompletionHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("sendSticker:completionHandler:")
+    public native void sendStickerCompletionHandler(MSSticker sticker,
+            @ObjCBlock(name = "call_sendStickerCompletionHandler") Block_sendStickerCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendStickerCompletionHandler {
+        @Generated
+        void call_sendStickerCompletionHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("sendText:completionHandler:")
+    public native void sendTextCompletionHandler(String text,
+            @ObjCBlock(name = "call_sendTextCompletionHandler") Block_sendTextCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendTextCompletionHandler {
+        @Generated
+        void call_sendTextCompletionHandler(NSError arg0);
+    }
 }

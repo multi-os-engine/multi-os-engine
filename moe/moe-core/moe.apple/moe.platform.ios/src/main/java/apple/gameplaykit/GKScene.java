@@ -209,4 +209,9 @@ public class GKScene extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("setRootNode:")
     public native void setRootNode(@Mapped(ObjCObjectMapper.class) GKSceneRootNodeType value);
+
+    @Generated
+    @Selector("sceneWithFileNamed:rootNode:")
+    public static native GKScene sceneWithFileNamedRootNode(String filename,
+            @Mapped(ObjCObjectMapper.class) GKSceneRootNodeType rootNode);
 }

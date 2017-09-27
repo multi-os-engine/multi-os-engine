@@ -195,4 +195,18 @@ public class INSendMessageIntent extends INIntent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("conversationIdentifier")
+    public native String conversationIdentifier();
+
+    @Generated
+    @Selector("initWithRecipients:content:speakableGroupName:conversationIdentifier:serviceName:sender:")
+    public native INSendMessageIntent initWithRecipientsContentSpeakableGroupNameConversationIdentifierServiceNameSender(
+            NSArray<? extends INPerson> recipients, String content, INSpeakableString speakableGroupName,
+            String conversationIdentifier, String serviceName, INPerson sender);
+
+    @Generated
+    @Selector("speakableGroupName")
+    public native INSpeakableString speakableGroupName();
 }

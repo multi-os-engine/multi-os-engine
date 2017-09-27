@@ -46,4 +46,12 @@ public interface RPScreenRecorderDelegate {
     default void screenRecorderDidChangeAvailability(RPScreenRecorder screenRecorder) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("screenRecorder:didStopRecordingWithPreviewViewController:error:")
+    default void screenRecorderDidStopRecordingWithPreviewViewControllerError(RPScreenRecorder screenRecorder,
+            RPPreviewViewController previewViewController, NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

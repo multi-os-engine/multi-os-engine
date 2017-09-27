@@ -178,4 +178,14 @@ public class INRadioTypeResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("init")
     public native INRadioTypeResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithRadioTypeToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithRadioTypeToConfirm(@NInt long radioTypeToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedRadioType:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedRadioType(@NInt long resolvedRadioType);
 }

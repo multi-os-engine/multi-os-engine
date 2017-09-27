@@ -446,4 +446,26 @@ public class UICollectionViewController extends UIViewController
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
     public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:indexPathForIndexTitle:atIndex:")
+    public native NSIndexPath collectionViewIndexPathForIndexTitleAtIndex(UICollectionView collectionView, String title,
+            @NInt long index);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
+    public native boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
+            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context);
+
+    @Generated
+    @IsOptional
+    @Selector("indexTitlesForCollectionView:")
+    public native NSArray<String> indexTitlesForCollectionView(UICollectionView collectionView);
+
+    @Generated
+    @IsOptional
+    @Selector("scrollViewDidChangeAdjustedContentInset:")
+    public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
 }

@@ -71,4 +71,9 @@ public interface MTLResource {
     @Selector("storageMode")
     @NUInt
     long storageMode();
+
+    @Generated
+    @Selector("allocatedSize")
+    @NUInt
+    long allocatedSize();
 }

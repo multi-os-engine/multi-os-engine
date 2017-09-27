@@ -446,4 +446,19 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("unitString")
     public native String unitString();
+
+    @Generated
+    @Selector("internationalUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object internationalUnit();
+
+    @Generated
+    @Selector("largeCalorieUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object largeCalorieUnit();
+
+    @Generated
+    @Selector("smallCalorieUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object smallCalorieUnit();
 }

@@ -34,7 +34,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
-import org.moe.natj.general.ptr.Ptr;
+import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -136,12 +136,13 @@ public class MKGeodesicPolyline extends MKPolyline {
     @Generated
     @Selector("polylineWithCoordinates:count:")
     public static native MKGeodesicPolyline polylineWithCoordinatesCount(
-            @ReferenceInfo(type = CLLocationCoordinate2D.class) Ptr<CLLocationCoordinate2D> coords, @NUInt long count);
+            @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
+            @NUInt long count);
 
     @Generated
     @Selector("polylineWithPoints:count:")
     public static native MKGeodesicPolyline polylineWithPointsCount(
-            @ReferenceInfo(type = MKMapPoint.class) Ptr<MKMapPoint> points, @NUInt long count);
+            @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count);
 
     @Generated
     @Selector("resolveClassMethod:")

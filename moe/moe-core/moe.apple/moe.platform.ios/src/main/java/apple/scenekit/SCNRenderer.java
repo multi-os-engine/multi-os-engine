@@ -412,4 +412,14 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("updateProbes:atTime:")
     public native void updateProbesAtTime(NSArray<? extends SCNNode> lightProbes, double time);
+
+    @Generated
+    @Selector("renderWithViewport:commandBuffer:passDescriptor:")
+    public native void renderWithViewportCommandBufferPassDescriptor(@ByValue CGRect viewport,
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            MTLRenderPassDescriptor renderPassDescriptor);
+
+    @Generated
+    @Selector("updateAtTime:")
+    public native void updateAtTime(double time);
 }

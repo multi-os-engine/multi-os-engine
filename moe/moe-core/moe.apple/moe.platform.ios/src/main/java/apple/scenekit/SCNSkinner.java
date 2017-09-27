@@ -214,7 +214,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("setSkeleton:")
-    public native void setSkeleton(SCNNode value);
+    public native void setSkeleton_unsafe(SCNNode value);
 
     @Generated
     @Selector("skeleton")
@@ -224,5 +224,17 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
+    }
+
+    @Generated
+    public void setSkeleton(SCNNode value) {
+        Object __old = skeleton();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setSkeleton_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
     }
 }

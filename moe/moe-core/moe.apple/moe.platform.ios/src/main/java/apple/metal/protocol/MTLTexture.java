@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.metal.protocol;
 
+import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.foundation.struct.NSRange;
 import apple.metal.struct.MTLRegion;
 import org.moe.natj.general.ann.ByValue;
@@ -150,4 +151,13 @@ public interface MTLTexture extends MTLResource {
     @Selector("width")
     @NUInt
     long width();
+
+    @Generated
+    @Selector("iosurface")
+    IOSurfaceRef iosurface();
+
+    @Generated
+    @Selector("iosurfacePlane")
+    @NUInt
+    long iosurfacePlane();
 }

@@ -18,8 +18,10 @@ package apple.intents.protocol;
 
 import apple.intents.INCurrencyAmountResolutionResult;
 import apple.intents.INPersonResolutionResult;
+import apple.intents.INRequestPaymentCurrencyAmountResolutionResult;
 import apple.intents.INRequestPaymentIntent;
 import apple.intents.INRequestPaymentIntentResponse;
+import apple.intents.INRequestPaymentPayerResolutionResult;
 import apple.intents.INStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -105,5 +107,35 @@ public interface INRequestPaymentIntentHandling {
     public interface Block_resolvePayerForRequestPaymentWithCompletion {
         @Generated
         void call_resolvePayerForRequestPaymentWithCompletion(INPersonResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveCurrencyAmountForRequestPayment:completion:")
+    default void resolveCurrencyAmountForRequestPaymentCompletion(INRequestPaymentIntent intent,
+            @ObjCBlock(name = "call_resolveCurrencyAmountForRequestPaymentCompletion") Block_resolveCurrencyAmountForRequestPaymentCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveCurrencyAmountForRequestPaymentCompletion {
+        @Generated
+        void call_resolveCurrencyAmountForRequestPaymentCompletion(INRequestPaymentCurrencyAmountResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolvePayerForRequestPayment:completion:")
+    default void resolvePayerForRequestPaymentCompletion(INRequestPaymentIntent intent,
+            @ObjCBlock(name = "call_resolvePayerForRequestPaymentCompletion") Block_resolvePayerForRequestPaymentCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolvePayerForRequestPaymentCompletion {
+        @Generated
+        void call_resolvePayerForRequestPaymentCompletion(INRequestPaymentPayerResolutionResult arg0);
     }
 }

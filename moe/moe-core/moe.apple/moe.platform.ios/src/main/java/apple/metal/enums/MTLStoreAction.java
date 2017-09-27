@@ -30,4 +30,6 @@ public final class MTLStoreAction {
     @Generated
     private MTLStoreAction() {
     }
+
+    @Generated @NUInt public static final long CustomSampleDepthStore = 0x0000000000000005L;
 }

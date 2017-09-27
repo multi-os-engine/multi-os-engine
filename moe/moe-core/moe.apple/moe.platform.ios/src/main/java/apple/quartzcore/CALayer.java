@@ -29,7 +29,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.quartzcore.protocol.CAAction;
 import apple.quartzcore.protocol.CALayerDelegate;
 import apple.quartzcore.protocol.CAMediaTiming;
@@ -52,6 +52,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -59,7 +60,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
+public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     static {
         NatJ.register();
     }
@@ -856,4 +857,23 @@ public class CALayer extends NSObject implements NSCoding, CAMediaTiming {
     @Selector("zPosition")
     @NFloat
     public native double zPosition();
+
+    @Generated
+    @Selector("maskedCorners")
+    @NUInt
+    public native long maskedCorners();
+
+    @Generated
+    @Selector("setMaskedCorners:")
+    public native void setMaskedCorners(@NUInt long value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

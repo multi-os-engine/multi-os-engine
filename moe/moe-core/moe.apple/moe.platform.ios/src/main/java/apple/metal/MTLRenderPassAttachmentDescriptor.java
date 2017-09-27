@@ -251,4 +251,13 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
     @Selector("texture")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture texture();
+
+    @Generated
+    @Selector("setStoreActionOptions:")
+    public native void setStoreActionOptions(@NUInt long value);
+
+    @Generated
+    @Selector("storeActionOptions")
+    @NUInt
+    public native long storeActionOptions();
 }

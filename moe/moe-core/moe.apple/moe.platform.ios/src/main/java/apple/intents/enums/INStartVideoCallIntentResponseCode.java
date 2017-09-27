@@ -32,4 +32,7 @@ public final class INStartVideoCallIntentResponseCode {
     @Generated
     private INStartVideoCallIntentResponseCode() {
     }
+
+    @Generated @NInt public static final long FailureContactNotSupportedByApp = 0x0000000000000007L;
+    @Generated @NInt public static final long FailureInvalidNumber = 0x0000000000000008L;
 }

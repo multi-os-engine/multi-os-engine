@@ -19,6 +19,7 @@ package apple.corebluetooth.protocol;
 import apple.corebluetooth.CBATTRequest;
 import apple.corebluetooth.CBCentral;
 import apple.corebluetooth.CBCharacteristic;
+import apple.corebluetooth.CBL2CAPChannel;
 import apple.corebluetooth.CBPeripheralManager;
 import apple.corebluetooth.CBService;
 import apple.foundation.NSArray;
@@ -97,6 +98,29 @@ public interface CBPeripheralManagerDelegate {
     @IsOptional
     @Selector("peripheralManagerIsReadyToUpdateSubscribers:")
     default void peripheralManagerIsReadyToUpdateSubscribers(CBPeripheralManager peripheral) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("peripheralManager:didOpenL2CAPChannel:error:")
+    default void peripheralManagerDidOpenL2CAPChannelError(CBPeripheralManager peripheral, CBL2CAPChannel channel,
+            NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("peripheralManager:didPublishL2CAPChannel:error:")
+    default void peripheralManagerDidPublishL2CAPChannelError(CBPeripheralManager peripheral, char PSM, NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("peripheralManager:didUnpublishL2CAPChannel:error:")
+    default void peripheralManagerDidUnpublishL2CAPChannelError(CBPeripheralManager peripheral, char PSM,
+            NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

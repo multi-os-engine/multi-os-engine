@@ -24,11 +24,15 @@ import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSItemProvider;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.struct.NSRange;
 import apple.uikit.protocol.UIContentSizeCategoryAdjusting;
+import apple.uikit.protocol.UITextDraggable;
+import apple.uikit.protocol.UITextDroppable;
 import apple.uikit.protocol.UITextInput;
+import apple.uikit.protocol.UITextPasteConfigurationSupporting;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -59,7 +63,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITextView extends UIScrollView implements UITextInput, UIContentSizeCategoryAdjusting {
+public class UITextView extends UIScrollView
+        implements UITextInput, UIContentSizeCategoryAdjusting, UITextDraggable, UITextDroppable,
+        UITextPasteConfigurationSupporting {
     static {
         NatJ.register();
     }
@@ -922,4 +928,143 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @IsOptional
     @Selector("updateFloatingCursorAtPoint:")
     public native void updateFloatingCursorAtPoint(@ByValue CGPoint point);
+
+    @Generated
+    @IsOptional
+    @Selector("canPasteItemProviders:")
+    public native boolean canPasteItemProviders(NSArray<? extends NSItemProvider> itemProviders);
+
+    @Generated
+    @Selector("isTextDragActive")
+    public native boolean isTextDragActive();
+
+    @Generated
+    @Selector("isTextDropActive")
+    public native boolean isTextDropActive();
+
+    @Generated
+    @Selector("pasteConfiguration")
+    public native UIPasteConfiguration pasteConfiguration();
+
+    @Generated
+    @Selector("pasteDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object pasteDelegate();
+
+    @Generated
+    @IsOptional
+    @Selector("pasteItemProviders:")
+    public native void pasteItemProviders(NSArray<? extends NSItemProvider> itemProviders);
+
+    @Generated
+    @Selector("setPasteConfiguration:")
+    public native void setPasteConfiguration(UIPasteConfiguration value);
+
+    @Generated
+    @Selector("setPasteDelegate:")
+    public native void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    public void setPasteDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+        Object __old = pasteDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setPasteDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartDashesType:")
+    public native void setSmartDashesType(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartInsertDeleteType:")
+    public native void setSmartInsertDeleteType(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartQuotesType:")
+    public native void setSmartQuotesType(@NInt long value);
+
+    @Generated
+    @Selector("setTextDragDelegate:")
+    public native void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    public void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+        Object __old = textDragDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setTextDragDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setTextDragOptions:")
+    public native void setTextDragOptions(@NInt long value);
+
+    @Generated
+    @Selector("setTextDropDelegate:")
+    public native void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    public void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+        Object __old = textDropDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setTextDropDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("smartDashesType")
+    @NInt
+    public native long smartDashesType();
+
+    @Generated
+    @IsOptional
+    @Selector("smartInsertDeleteType")
+    @NInt
+    public native long smartInsertDeleteType();
+
+    @Generated
+    @IsOptional
+    @Selector("smartQuotesType")
+    @NInt
+    public native long smartQuotesType();
+
+    @Generated
+    @Selector("textDragDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object textDragDelegate();
+
+    @Generated
+    @Selector("textDragInteraction")
+    public native UIDragInteraction textDragInteraction();
+
+    @Generated
+    @Selector("textDragOptions")
+    @NInt
+    public native long textDragOptions();
+
+    @Generated
+    @Selector("textDropDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object textDropDelegate();
+
+    @Generated
+    @Selector("textDropInteraction")
+    public native UIDropInteraction textDropInteraction();
 }

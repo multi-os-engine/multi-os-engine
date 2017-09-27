@@ -264,4 +264,12 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Generated
     @Selector("upperAtmosphereScattering")
     public native float upperAtmosphereScattering();
+
+    @Generated
+    @Selector("setSunAzimuth:")
+    public native void setSunAzimuth(float value);
+
+    @Generated
+    @Selector("sunAzimuth")
+    public native float sunAzimuth();
 }

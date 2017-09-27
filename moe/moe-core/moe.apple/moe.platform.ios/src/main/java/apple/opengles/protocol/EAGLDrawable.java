@@ -31,9 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface EAGLDrawable {
     @Generated
     @Selector("drawableProperties")
-    NSDictionary<?, ?> drawableProperties();
+    NSDictionary<String, ?> drawableProperties();
 
     @Generated
     @Selector("setDrawableProperties:")
-    void setDrawableProperties(NSDictionary<?, ?> value);
+    void setDrawableProperties(NSDictionary<String, ?> value);
 }

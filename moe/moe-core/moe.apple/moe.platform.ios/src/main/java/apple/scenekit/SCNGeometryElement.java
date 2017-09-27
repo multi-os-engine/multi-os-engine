@@ -23,14 +23,17 @@ import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.foundation.struct.NSRange;
 import apple.modelio.MDLSubmesh;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -204,4 +207,40 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("maximumPointScreenSpaceRadius")
+    @NFloat
+    public native double maximumPointScreenSpaceRadius();
+
+    @Generated
+    @Selector("minimumPointScreenSpaceRadius")
+    @NFloat
+    public native double minimumPointScreenSpaceRadius();
+
+    @Generated
+    @Selector("pointSize")
+    @NFloat
+    public native double pointSize();
+
+    @Generated
+    @Selector("primitiveRange")
+    @ByValue
+    public native NSRange primitiveRange();
+
+    @Generated
+    @Selector("setMaximumPointScreenSpaceRadius:")
+    public native void setMaximumPointScreenSpaceRadius(@NFloat double value);
+
+    @Generated
+    @Selector("setMinimumPointScreenSpaceRadius:")
+    public native void setMinimumPointScreenSpaceRadius(@NFloat double value);
+
+    @Generated
+    @Selector("setPointSize:")
+    public native void setPointSize(@NFloat double value);
+
+    @Generated
+    @Selector("setPrimitiveRange:")
+    public native void setPrimitiveRange(@ByValue NSRange value);
 }

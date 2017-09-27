@@ -359,4 +359,24 @@ public final class CoreData {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMigrationEntityPolicyKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSCoreDataCoreSpotlightExporter();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentHistoryTrackingKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSBinaryStoreSecureDecodingClasses();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSBinaryStoreInsecureDecodingCompatibilityOption();
 }

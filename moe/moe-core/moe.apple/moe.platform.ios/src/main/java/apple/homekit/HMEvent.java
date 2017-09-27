@@ -158,4 +158,8 @@ public class HMEvent extends NSObject {
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
+
+    @Generated
+    @Selector("isSupportedForHome:")
+    public static native boolean isSupportedForHome(HMHome home);
 }

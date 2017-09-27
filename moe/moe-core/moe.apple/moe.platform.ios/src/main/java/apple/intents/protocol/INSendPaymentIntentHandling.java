@@ -18,8 +18,10 @@ package apple.intents.protocol;
 
 import apple.intents.INCurrencyAmountResolutionResult;
 import apple.intents.INPersonResolutionResult;
+import apple.intents.INSendPaymentCurrencyAmountResolutionResult;
 import apple.intents.INSendPaymentIntent;
 import apple.intents.INSendPaymentIntentResponse;
+import apple.intents.INSendPaymentPayeeResolutionResult;
 import apple.intents.INStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -105,5 +107,35 @@ public interface INSendPaymentIntentHandling {
     public interface Block_resolvePayeeForSendPaymentWithCompletion {
         @Generated
         void call_resolvePayeeForSendPaymentWithCompletion(INPersonResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveCurrencyAmountForSendPayment:completion:")
+    default void resolveCurrencyAmountForSendPaymentCompletion(INSendPaymentIntent intent,
+            @ObjCBlock(name = "call_resolveCurrencyAmountForSendPaymentCompletion") Block_resolveCurrencyAmountForSendPaymentCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveCurrencyAmountForSendPaymentCompletion {
+        @Generated
+        void call_resolveCurrencyAmountForSendPaymentCompletion(INSendPaymentCurrencyAmountResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolvePayeeForSendPayment:completion:")
+    default void resolvePayeeForSendPaymentCompletion(INSendPaymentIntent intent,
+            @ObjCBlock(name = "call_resolvePayeeForSendPaymentCompletion") Block_resolvePayeeForSendPaymentCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolvePayeeForSendPaymentCompletion {
+        @Generated
+        void call_resolvePayeeForSendPaymentCompletion(INSendPaymentPayeeResolutionResult arg0);
     }
 }

@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -153,4 +154,23 @@ public class NSLayoutXAxisAnchor extends NSLayoutAnchor<NSLayoutXAxisAnchor> {
     @Generated
     @Selector("init")
     public native NSLayoutXAxisAnchor init();
+
+    @Generated
+    @Selector("anchorWithOffsetToAnchor:")
+    public native NSLayoutDimension anchorWithOffsetToAnchor(NSLayoutXAxisAnchor otherAnchor);
+
+    @Generated
+    @Selector("constraintEqualToSystemSpacingAfterAnchor:multiplier:")
+    public native NSLayoutConstraint constraintEqualToSystemSpacingAfterAnchorMultiplier(NSLayoutXAxisAnchor anchor,
+            @NFloat double multiplier);
+
+    @Generated
+    @Selector("constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:multiplier:")
+    public native NSLayoutConstraint constraintGreaterThanOrEqualToSystemSpacingAfterAnchorMultiplier(
+            NSLayoutXAxisAnchor anchor, @NFloat double multiplier);
+
+    @Generated
+    @Selector("constraintLessThanOrEqualToSystemSpacingAfterAnchor:multiplier:")
+    public native NSLayoutConstraint constraintLessThanOrEqualToSystemSpacingAfterAnchorMultiplier(
+            NSLayoutXAxisAnchor anchor, @NFloat double multiplier);
 }

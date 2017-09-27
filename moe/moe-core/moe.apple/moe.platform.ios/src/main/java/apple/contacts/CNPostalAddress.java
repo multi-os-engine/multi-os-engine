@@ -215,4 +215,12 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("subAdministrativeArea")
+    public native String subAdministrativeArea();
+
+    @Generated
+    @Selector("subLocality")
+    public native String subLocality();
 }

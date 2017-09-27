@@ -20,8 +20,10 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -201,4 +203,12 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("exportToURL:error:")
+    public native boolean exportToURLError(NSURL url, NSError error);
+
+    @Generated
+    @Selector("initWithURL:error:")
+    public native GKDecisionTree initWithURLError(NSURL url, NSError error);
 }

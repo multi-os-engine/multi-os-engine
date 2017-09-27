@@ -17,6 +17,7 @@ limitations under the License.
 package apple.replaykit;
 
 import apple.NSObject;
+import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -257,5 +258,46 @@ public class RPScreenRecorder extends NSObject {
     public interface Block_stopRecordingWithHandler {
         @Generated
         void call_stopRecordingWithHandler(RPPreviewViewController arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("cameraPosition")
+    @NInt
+    public native long cameraPosition();
+
+    @Generated
+    @Selector("setCameraPosition:")
+    public native void setCameraPosition(@NInt long value);
+
+    @Generated
+    @Selector("startCaptureWithHandler:completionHandler:")
+    public native void startCaptureWithHandlerCompletionHandler(
+            @ObjCBlock(name = "call_startCaptureWithHandlerCompletionHandler_0") Block_startCaptureWithHandlerCompletionHandler_0 captureHandler,
+            @ObjCBlock(name = "call_startCaptureWithHandlerCompletionHandler_1") Block_startCaptureWithHandlerCompletionHandler_1 completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startCaptureWithHandlerCompletionHandler_0 {
+        @Generated
+        void call_startCaptureWithHandlerCompletionHandler_0(CMSampleBufferRef arg0, @NInt long arg1, NSError arg2);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startCaptureWithHandlerCompletionHandler_1 {
+        @Generated
+        void call_startCaptureWithHandlerCompletionHandler_1(NSError arg0);
+    }
+
+    @Generated
+    @Selector("stopCaptureWithHandler:")
+    public native void stopCaptureWithHandler(
+            @ObjCBlock(name = "call_stopCaptureWithHandler") Block_stopCaptureWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stopCaptureWithHandler {
+        @Generated
+        void call_stopCaptureWithHandler(NSError arg0);
     }
 }

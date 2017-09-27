@@ -432,14 +432,6 @@ public class UITableViewHeaderFooterView extends UIView {
     public native void setBackgroundView(UIView value);
 
     @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
-    @Generated
     @Selector("textLabel")
     public native UILabel textLabel();
-
-    @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
 }

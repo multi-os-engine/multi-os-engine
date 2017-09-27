@@ -22,6 +22,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ptr.ConstIntPtr;
 
 @Generated
 @Structure()
@@ -40,14 +41,6 @@ public final class BNNSActivation extends StructObject {
     @Generated
     protected BNNSActivation(Pointer peer) {
         super(peer);
-    }
-
-    @Generated
-    public BNNSActivation(int function, float alpha, float beta) {
-        super(BNNSActivation.class);
-        setFunction(function);
-        setAlpha(alpha);
-        setBeta(beta);
     }
 
     @Generated
@@ -73,4 +66,52 @@ public final class BNNSActivation extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setBeta(float value);
+
+    @Generated
+    @StructureField(order = 3, isGetter = true)
+    public native int iscale();
+
+    @Generated
+    @StructureField(order = 3, isGetter = false)
+    public native void setIscale(int value);
+
+    @Generated
+    @StructureField(order = 4, isGetter = true)
+    public native int ioffset();
+
+    @Generated
+    @StructureField(order = 4, isGetter = false)
+    public native void setIoffset(int value);
+
+    @Generated
+    @StructureField(order = 5, isGetter = true)
+    public native int ishift();
+
+    @Generated
+    @StructureField(order = 5, isGetter = false)
+    public native void setIshift(int value);
+
+    @Generated
+    @StructureField(order = 6, isGetter = true)
+    public native ConstIntPtr iscale_per_channel();
+
+    @Generated
+    @StructureField(order = 6, isGetter = false)
+    public native void setIscale_per_channel(ConstIntPtr value);
+
+    @Generated
+    @StructureField(order = 7, isGetter = true)
+    public native ConstIntPtr ioffset_per_channel();
+
+    @Generated
+    @StructureField(order = 7, isGetter = false)
+    public native void setIoffset_per_channel(ConstIntPtr value);
+
+    @Generated
+    @StructureField(order = 8, isGetter = true)
+    public native ConstIntPtr ishift_per_channel();
+
+    @Generated
+    @StructureField(order = 8, isGetter = false)
+    public native void setIshift_per_channel(ConstIntPtr value);
 }

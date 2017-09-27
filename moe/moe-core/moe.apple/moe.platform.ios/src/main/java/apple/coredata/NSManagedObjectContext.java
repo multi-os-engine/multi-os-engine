@@ -437,4 +437,12 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
         @Generated
         void call_performBlockAndWait();
     }
+
+    @Generated
+    @Selector("setTransactionAuthor:")
+    public native void setTransactionAuthor(String value);
+
+    @Generated
+    @Selector("transactionAuthor")
+    public native String transactionAuthor();
 }

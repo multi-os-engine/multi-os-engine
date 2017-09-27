@@ -20,8 +20,11 @@ import apple.NSObject;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,6 +42,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +50,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CIQRCodeFeature extends CIFeature {
+public class CIQRCodeFeature extends CIFeature implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -185,4 +189,32 @@ public class CIQRCodeFeature extends CIFeature {
     @Selector("topRight")
     @ByValue
     public native CGPoint topRight();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder aCoder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CIQRCodeFeature initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
+    @Selector("symbolDescriptor")
+    public native CIQRCodeDescriptor symbolDescriptor();
 }

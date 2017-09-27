@@ -56,4 +56,9 @@ public final class Social {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SLServiceTypeTencentWeibo();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SLServiceTypeLinkedIn();
 }

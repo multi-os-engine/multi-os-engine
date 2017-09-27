@@ -18,6 +18,7 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSAttributedString;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -195,4 +196,17 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object target();
+
+    @Generated
+    @Selector("attributedName")
+    public native NSAttributedString attributedName();
+
+    @Generated
+    @Selector("initWithAttributedName:target:selector:")
+    public native UIAccessibilityCustomAction initWithAttributedNameTargetSelector(NSAttributedString attributedName,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL selector);
+
+    @Generated
+    @Selector("setAttributedName:")
+    public native void setAttributedName(NSAttributedString value);
 }

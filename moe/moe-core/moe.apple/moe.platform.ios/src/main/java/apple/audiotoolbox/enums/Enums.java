@@ -900,4 +900,11 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated public static final int kAudioUnitProperty_MIDIOutputCallbackInfo = 0x0000002F;
+    @Generated public static final int kAudioUnitProperty_MIDIOutputCallback = 0x00000030;
+    @Generated public static final int kAudioUnitErr_MIDIOutputBufferFull = 0xFFFEFB3F;
+    @Generated public static final int kAudioUnitErr_ExtensionNotFound = 0xFFFEFB48;
+    @Generated public static final int kAudioFileRF64Type = 0x52463634;
+    @Generated public static final int kAudioFileFLACType = 0x666C6163;
 }

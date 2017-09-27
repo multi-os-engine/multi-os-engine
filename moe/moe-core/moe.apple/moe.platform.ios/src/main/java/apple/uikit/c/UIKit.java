@@ -30,6 +30,7 @@ import apple.foundation.NSURL;
 import apple.uikit.UIBezierPath;
 import apple.uikit.UIImage;
 import apple.uikit.UIView;
+import apple.uikit.struct.NSDirectionalEdgeInsets;
 import apple.uikit.struct.UIEdgeInsets;
 import apple.uikit.struct.UIFloatRange;
 import apple.uikit.struct.UIOffset;
@@ -2138,4 +2139,151 @@ public final class UIKit {
         @Generated
         void call_UIAccessibilityRequestGuidedAccessSession(boolean arg0);
     }
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native NSDirectionalEdgeInsets NSDirectionalEdgeInsetsMake(@NFloat double top, @NFloat double leading,
+            @NFloat double bottom, @NFloat double trailing);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native boolean NSDirectionalEdgeInsetsEqualToDirectionalEdgeInsets(
+            @ByValue NSDirectionalEdgeInsets insets1, @ByValue NSDirectionalEdgeInsets insets2);
+
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSStringFromDirectionalEdgeInsets(@ByValue NSDirectionalEdgeInsets insets);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native NSDirectionalEdgeInsets NSDirectionalEdgeInsetsFromString(
+            @Mapped(ObjCStringMapper.class) String string);
+
+    @Generated
+    @CFunction
+    public static native boolean UIContentSizeCategoryIsAccessibilityCategory(
+            @Mapped(ObjCStringMapper.class) String category);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long UIContentSizeCategoryCompareToCategory(@Mapped(ObjCStringMapper.class) String lhs,
+            @Mapped(ObjCStringMapper.class) String rhs);
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontTextStyleLargeTitle();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSDirectionalEdgeInsets NSDirectionalEdgeInsetsZero();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFocusDidUpdateNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFocusMovementDidFailNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFocusUpdateContextKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFocusUpdateAnimationCoordinatorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeUsername();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypePassword();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilitySpeechAttributeQueueAnnouncement();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilitySpeechAttributeIPANotation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextAttributeHeadingLevel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextAttributeCustom();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityVoiceOverStatusDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityTypeMarkupAsPDF();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIImagePickerControllerPHAsset();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIImagePickerControllerImageURL();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIScreenCapturedDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSDocumentTypeDocumentOption();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSDefaultAttributesDocumentOption();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSCharacterEncodingDocumentOption();
+
+    @Generated @NFloat public static final double UIStackViewSpacingUseDefault = org.moe.natj.general.NatJ.is64Bit() ?
+            0x47EFFFFFE0000000L :
+            (float)0x7F7FFFFF;
+    @Generated @NFloat public static final double UIStackViewSpacingUseSystem = org.moe.natj.general.NatJ.is64Bit() ?
+            0x3810000000000000L :
+            (float)0x00800000;
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIDocumentBrowserErrorDomain();
 }

@@ -184,4 +184,13 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
+
+    @Generated
+    @Selector("formatForTraitCollection:")
+    public static native UIGraphicsImageRendererFormat formatForTraitCollection(UITraitCollection traitCollection);
+
+    @Generated
+    @Selector("preferredFormat")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object preferredFormat();
 }

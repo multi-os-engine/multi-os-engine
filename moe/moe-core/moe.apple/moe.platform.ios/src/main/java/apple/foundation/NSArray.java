@@ -40,7 +40,6 @@ import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
-import org.moe.natj.general.ptr.ConstPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
@@ -116,7 +115,7 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     @Selector("arrayWithObjects:count:")
     public static native <_ObjectType> NSArray<?> arrayWithObjectsCount(
-            @ReferenceInfo(type = ObjCObject.class) ConstPtr<_ObjectType> objects, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects, @NUInt long cnt);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -937,4 +936,18 @@ public class NSArray<_ObjectType> extends NSObject
         }
 
     }
+
+    @Generated
+    @Selector("arrayWithContentsOfURL:error:")
+    public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithContentsOfURL:error:")
+    public native NSArray<_ObjectType> initWithContentsOfURLError(NSURL url,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("writeToURL:error:")
+    public native boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

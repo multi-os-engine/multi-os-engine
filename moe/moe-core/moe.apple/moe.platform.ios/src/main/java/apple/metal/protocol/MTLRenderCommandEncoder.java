@@ -18,6 +18,7 @@ package apple.metal.protocol;
 
 import apple.foundation.struct.NSRange;
 import apple.metal.struct.MTLScissorRect;
+import apple.metal.struct.MTLSize;
 import apple.metal.struct.MTLViewport;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -139,7 +140,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setFragmentBuffers:offsets:withRange:")
     void setFragmentBuffersOffsetsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
-            ConstNUIntPtr offset, @ByValue NSRange range);
+            ConstNUIntPtr offsets, @ByValue NSRange range);
 
     @Generated
     @Selector("setFragmentBytes:length:atIndex:")
@@ -273,4 +274,102 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("waitForFence:beforeStages:")
     void waitForFenceBeforeStages(@Mapped(ObjCObjectMapper.class) Object fence, @NUInt long stages);
+
+    @Generated
+    @Selector("dispatchThreadsPerTile:")
+    void dispatchThreadsPerTile(@ByValue MTLSize threadsPerTile);
+
+    @Generated
+    @Selector("setColorStoreActionOptions:atIndex:")
+    void setColorStoreActionOptionsAtIndex(@NUInt long storeActionOptions, @NUInt long colorAttachmentIndex);
+
+    @Generated
+    @Selector("setDepthClipMode:")
+    void setDepthClipMode(@NUInt long depthClipMode);
+
+    @Generated
+    @Selector("setDepthStoreActionOptions:")
+    void setDepthStoreActionOptions(@NUInt long storeActionOptions);
+
+    @Generated
+    @Selector("setStencilStoreActionOptions:")
+    void setStencilStoreActionOptions(@NUInt long storeActionOptions);
+
+    @Generated
+    @Selector("setThreadgroupMemoryLength:offset:atIndex:")
+    void setThreadgroupMemoryLengthOffsetAtIndex(@NUInt long length, @NUInt long offset, @NUInt long index);
+
+    @Generated
+    @Selector("setTileBuffer:offset:atIndex:")
+    void setTileBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) Object buffer, @NUInt long offset,
+            @NUInt long index);
+
+    @Generated
+    @Selector("setTileBufferOffset:atIndex:")
+    void setTileBufferOffsetAtIndex(@NUInt long offset, @NUInt long index);
+
+    @Generated
+    @Selector("setTileBuffers:offsets:withRange:")
+    void setTileBuffersOffsetsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+            ConstNUIntPtr offsets, @ByValue NSRange range);
+
+    @Generated
+    @Selector("setTileBytes:length:atIndex:")
+    void setTileBytesLengthAtIndex(ConstVoidPtr bytes, @NUInt long length, @NUInt long index);
+
+    @Generated
+    @Selector("setTileSamplerState:atIndex:")
+    void setTileSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler, @NUInt long index);
+
+    @Generated
+    @Selector("setTileSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
+    void setTileSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler,
+            float lodMinClamp, float lodMaxClamp, @NUInt long index);
+
+    @Generated
+    @Selector("setTileSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
+    void setTileSamplerStatesLodMinClampsLodMaxClampsWithRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
+            ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
+
+    @Generated
+    @Selector("setTileSamplerStates:withRange:")
+    void setTileSamplerStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @ByValue NSRange range);
+
+    @Generated
+    @Selector("setTileTexture:atIndex:")
+    void setTileTextureAtIndex(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long index);
+
+    @Generated
+    @Selector("setTileTextures:withRange:")
+    void setTileTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+            @ByValue NSRange range);
+
+    @Generated
+    @Selector("tileHeight")
+    @NUInt
+    long tileHeight();
+
+    @Generated
+    @Selector("tileWidth")
+    @NUInt
+    long tileWidth();
+
+    @Generated
+    @Selector("useHeap:")
+    void useHeap(@Mapped(ObjCObjectMapper.class) Object heap);
+
+    @Generated
+    @Selector("useHeaps:count:")
+    void useHeapsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
+
+    @Generated
+    @Selector("useResource:usage:")
+    void useResourceUsage(@Mapped(ObjCObjectMapper.class) Object resource, @NUInt long usage);
+
+    @Generated
+    @Selector("useResources:count:usage:")
+    void useResourcesCountUsage(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources, @NUInt long count,
+            @NUInt long usage);
 }

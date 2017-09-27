@@ -297,4 +297,12 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Generated
     @Selector("waypoints")
     public native NSArray<? extends CLPlacemark> waypoints();
+
+    @Generated
+    @Selector("scheduledPickupTime")
+    public native INDateComponentsRange scheduledPickupTime();
+
+    @Generated
+    @Selector("setScheduledPickupTime:")
+    public native void setScheduledPickupTime(INDateComponentsRange value);
 }

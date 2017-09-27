@@ -35,4 +35,9 @@ public final class LAError {
     @Generated
     private LAError() {
     }
+
+    @Generated @NInt public static final long BiometryNotAvailable = 0xFFFFFFFFFFFFFFFAL;
+    @Generated @NInt public static final long BiometryNotEnrolled = 0xFFFFFFFFFFFFFFF9L;
+    @Generated @NInt public static final long BiometryLockout = 0xFFFFFFFFFFFFFFF8L;
+    @Generated @NInt public static final long NotInteractive = 0xFFFFFFFFFFFFFC14L;
 }

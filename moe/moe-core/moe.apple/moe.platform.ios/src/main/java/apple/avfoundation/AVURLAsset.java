@@ -17,6 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.avfoundation.protocol.AVContentKeyRecipient;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
@@ -45,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class AVURLAsset extends AVAsset {
+public class AVURLAsset extends AVAsset implements AVContentKeyRecipient {
     static {
         NatJ.register();
     }
@@ -195,4 +196,8 @@ public class AVURLAsset extends AVAsset {
     @Generated
     @Selector("resourceLoader")
     public native AVAssetResourceLoader resourceLoader();
+
+    @Generated
+    @Selector("mayRequireContentKeysForMediaDataProcessing")
+    public native boolean mayRequireContentKeysForMediaDataProcessing();
 }

@@ -20,7 +20,11 @@ import apple.foundation.NSArray;
 import apple.passkit.PKContact;
 import apple.passkit.PKPayment;
 import apple.passkit.PKPaymentAuthorizationController;
+import apple.passkit.PKPaymentAuthorizationResult;
 import apple.passkit.PKPaymentMethod;
+import apple.passkit.PKPaymentRequestPaymentMethodUpdate;
+import apple.passkit.PKPaymentRequestShippingContactUpdate;
+import apple.passkit.PKPaymentRequestShippingMethodUpdate;
 import apple.passkit.PKPaymentSummaryItem;
 import apple.passkit.PKShippingMethod;
 import org.moe.natj.general.ann.Generated;
@@ -38,11 +42,14 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKPaymentAuthorizationControllerDelegate")
 public interface PKPaymentAuthorizationControllerDelegate {
+    @IsOptional
     @Generated
     @Selector("paymentAuthorizationController:didAuthorizePayment:completion:")
-    void paymentAuthorizationControllerDidAuthorizePaymentCompletion(PKPaymentAuthorizationController controller,
-            PKPayment payment,
-            @ObjCBlock(name = "call_paymentAuthorizationControllerDidAuthorizePaymentCompletion") Block_paymentAuthorizationControllerDidAuthorizePaymentCompletion completion);
+    default void paymentAuthorizationControllerDidAuthorizePaymentCompletion(
+            PKPaymentAuthorizationController controller, PKPayment payment,
+            @ObjCBlock(name = "call_paymentAuthorizationControllerDidAuthorizePaymentCompletion") Block_paymentAuthorizationControllerDidAuthorizePaymentCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Generated
     @IsOptional
@@ -111,5 +118,71 @@ public interface PKPaymentAuthorizationControllerDelegate {
         @Generated
         void call_paymentAuthorizationControllerDidSelectShippingMethodCompletion(@NInt long arg0,
                 NSArray<? extends PKPaymentSummaryItem> arg1);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationController:didAuthorizePayment:handler:")
+    default void paymentAuthorizationControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationController controller,
+            PKPayment payment,
+            @ObjCBlock(name = "call_paymentAuthorizationControllerDidAuthorizePaymentHandler") Block_paymentAuthorizationControllerDidAuthorizePaymentHandler completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationControllerDidAuthorizePaymentHandler {
+        @Generated
+        void call_paymentAuthorizationControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationController:didSelectPaymentMethod:handler:")
+    default void paymentAuthorizationControllerDidSelectPaymentMethodHandler(
+            PKPaymentAuthorizationController controller, PKPaymentMethod paymentMethod,
+            @ObjCBlock(name = "call_paymentAuthorizationControllerDidSelectPaymentMethodHandler") Block_paymentAuthorizationControllerDidSelectPaymentMethodHandler completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationControllerDidSelectPaymentMethodHandler {
+        @Generated
+        void call_paymentAuthorizationControllerDidSelectPaymentMethodHandler(PKPaymentRequestPaymentMethodUpdate arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationController:didSelectShippingContact:handler:")
+    default void paymentAuthorizationControllerDidSelectShippingContactHandler(
+            PKPaymentAuthorizationController controller, PKContact contact,
+            @ObjCBlock(name = "call_paymentAuthorizationControllerDidSelectShippingContactHandler") Block_paymentAuthorizationControllerDidSelectShippingContactHandler completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationControllerDidSelectShippingContactHandler {
+        @Generated
+        void call_paymentAuthorizationControllerDidSelectShippingContactHandler(
+                PKPaymentRequestShippingContactUpdate arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationController:didSelectShippingMethod:handler:")
+    default void paymentAuthorizationControllerDidSelectShippingMethodHandler(
+            PKPaymentAuthorizationController controller, PKShippingMethod shippingMethod,
+            @ObjCBlock(name = "call_paymentAuthorizationControllerDidSelectShippingMethodHandler") Block_paymentAuthorizationControllerDidSelectShippingMethodHandler completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationControllerDidSelectShippingMethodHandler {
+        @Generated
+        void call_paymentAuthorizationControllerDidSelectShippingMethodHandler(
+                PKPaymentRequestShippingMethodUpdate arg0);
     }
 }

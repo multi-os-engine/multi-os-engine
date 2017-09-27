@@ -23,6 +23,7 @@ import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -165,11 +166,11 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("availableImageDataCVPixelFormatTypes")
-    public native NSArray<?> availableImageDataCVPixelFormatTypes();
+    public native NSArray<? extends NSNumber> availableImageDataCVPixelFormatTypes();
 
     @Generated
     @Selector("availableImageDataCodecTypes")
-    public native NSArray<?> availableImageDataCodecTypes();
+    public native NSArray<String> availableImageDataCodecTypes();
 
     @Generated
     @Selector("captureStillImageAsynchronouslyFromConnection:completionHandler:")
@@ -179,7 +180,7 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Generated
     @Selector("captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:")
     public native void captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler(
-            AVCaptureConnection connection, NSArray<?> settings,
+            AVCaptureConnection connection, NSArray<? extends AVCaptureBracketedStillImageSettings> settings,
             @ObjCBlock(name = "call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler") Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler handler);
 
     @Generated
@@ -225,12 +226,12 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("outputSettings")
-    public native NSDictionary<?, ?> outputSettings();
+    public native NSDictionary<String, ?> outputSettings();
 
     @Generated
     @Selector("prepareToCaptureStillImageBracketFromConnection:withSettingsArray:completionHandler:")
     public native void prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(
-            AVCaptureConnection connection, NSArray<?> settings,
+            AVCaptureConnection connection, NSArray<? extends AVCaptureBracketedStillImageSettings> settings,
             @ObjCBlock(name = "call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler") Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler handler);
 
     @Generated
@@ -239,7 +240,7 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("setOutputSettings:")
-    public native void setOutputSettings(NSDictionary<?, ?> value);
+    public native void setOutputSettings(NSDictionary<String, ?> value);
 
     @Runtime(ObjCRuntime.class)
     @Generated

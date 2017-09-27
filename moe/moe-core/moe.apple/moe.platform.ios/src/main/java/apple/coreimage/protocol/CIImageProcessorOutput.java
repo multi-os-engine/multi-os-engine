@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.coreimage.protocol;
 
+import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.coregraphics.struct.CGRect;
 import apple.corevideo.opaque.CVBufferRef;
 import org.moe.natj.general.ann.ByValue;
@@ -66,4 +67,8 @@ public interface CIImageProcessorOutput {
     @Selector("region")
     @ByValue
     CGRect region();
+
+    @Generated
+    @Selector("surface")
+    IOSurfaceRef surface();
 }

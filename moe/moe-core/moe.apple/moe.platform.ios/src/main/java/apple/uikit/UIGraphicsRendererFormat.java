@@ -172,4 +172,9 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native UIGraphicsRendererFormat init();
+
+    @Generated
+    @Selector("preferredFormat")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object preferredFormat();
 }

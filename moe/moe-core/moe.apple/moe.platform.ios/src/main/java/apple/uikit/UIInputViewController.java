@@ -239,4 +239,12 @@ public class UIInputViewController extends UIViewController implements UITextInp
         @Generated
         void call_requestSupplementaryLexiconWithCompletion(UILexicon arg0);
     }
+
+    @Generated
+    @Selector("hasFullAccess")
+    public native boolean hasFullAccess();
+
+    @Generated
+    @Selector("needsInputModeSwitchKey")
+    public native boolean needsInputModeSwitchKey();
 }

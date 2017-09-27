@@ -17,6 +17,7 @@ limitations under the License.
 package apple.intents.protocol;
 
 import apple.foundation.NSArray;
+import apple.intents.INCallDestinationTypeResolutionResult;
 import apple.intents.INPersonResolutionResult;
 import apple.intents.INStartAudioCallIntent;
 import apple.intents.INStartAudioCallIntentResponse;
@@ -74,5 +75,20 @@ public interface INStartAudioCallIntentHandling {
     public interface Block_resolveContactsForStartAudioCallWithCompletion {
         @Generated
         void call_resolveContactsForStartAudioCallWithCompletion(NSArray<? extends INPersonResolutionResult> arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveDestinationTypeForStartAudioCall:withCompletion:")
+    default void resolveDestinationTypeForStartAudioCallWithCompletion(INStartAudioCallIntent intent,
+            @ObjCBlock(name = "call_resolveDestinationTypeForStartAudioCallWithCompletion") Block_resolveDestinationTypeForStartAudioCallWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveDestinationTypeForStartAudioCallWithCompletion {
+        @Generated
+        void call_resolveDestinationTypeForStartAudioCallWithCompletion(INCallDestinationTypeResolutionResult arg0);
     }
 }

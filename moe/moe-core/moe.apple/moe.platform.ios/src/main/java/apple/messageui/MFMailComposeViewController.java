@@ -238,4 +238,8 @@ public class MFMailComposeViewController extends UINavigationController {
     @Generated
     @Selector("setToRecipients:")
     public native void setToRecipients(NSArray<String> toRecipients);
+
+    @Generated
+    @Selector("setPreferredSendingEmailAddress:")
+    public native void setPreferredSendingEmailAddress(String emailAddress);
 }

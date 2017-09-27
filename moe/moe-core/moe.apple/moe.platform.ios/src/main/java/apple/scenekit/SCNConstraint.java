@@ -163,7 +163,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -233,4 +233,32 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    @Generated
+    @Selector("isIncremental")
+    public native boolean isIncremental();
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    @Generated
+    @Selector("setIncremental:")
+    public native void setIncremental(boolean value);
 }

@@ -38,4 +38,8 @@ public final class CNErrorCode {
     @Generated
     private CNErrorCode() {
     }
+
+    @Generated @NInt public static final long ClientIdentifierInvalid = 0x0000000000000258L;
+    @Generated @NInt public static final long ClientIdentifierDoesNotExist = 0x0000000000000259L;
+    @Generated @NInt public static final long VCardMalformed = 0x00000000000002BCL;
 }

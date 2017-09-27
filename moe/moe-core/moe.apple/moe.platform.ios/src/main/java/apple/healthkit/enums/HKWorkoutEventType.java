@@ -31,4 +31,7 @@ public final class HKWorkoutEventType {
     @Generated
     private HKWorkoutEventType() {
     }
+
+    @Generated @NInt public static final long Segment = 0x0000000000000007L;
+    @Generated @NInt public static final long PauseOrResumeRequest = 0x0000000000000008L;
 }

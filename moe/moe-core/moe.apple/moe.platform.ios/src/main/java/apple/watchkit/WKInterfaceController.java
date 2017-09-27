@@ -331,4 +331,12 @@ public class WKInterfaceController extends NSObject {
         @Generated
         void call_presentTextInputControllerWithSuggestionsForLanguageAllowedInputModeCompletion_2(NSArray<?> arg0);
     }
+
+    @Generated
+    @Selector("beginGlanceUpdates")
+    public native void beginGlanceUpdates();
+
+    @Generated
+    @Selector("endGlanceUpdates")
+    public native void endGlanceUpdates();
 }

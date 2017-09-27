@@ -22,6 +22,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.metal.protocol.MTLBuffer;
+import apple.metal.struct.MTLSamplePosition;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -33,6 +34,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -194,4 +196,89 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("visibilityResultBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLBuffer visibilityResultBuffer();
+
+    @Generated
+    @Selector("defaultRasterSampleCount")
+    @NUInt
+    public native long defaultRasterSampleCount();
+
+    @Generated
+    @Selector("defaultSampleCount")
+    @NUInt
+    public native long defaultSampleCount();
+
+    @Generated
+    @Selector("getSamplePositions:count:")
+    @NUInt
+    public native long getSamplePositionsCount(
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
+            @NUInt long count);
+
+    @Generated
+    @Selector("imageblockSampleLength")
+    @NUInt
+    public native long imageblockSampleLength();
+
+    @Generated
+    @Selector("renderTargetHeight")
+    @NUInt
+    public native long renderTargetHeight();
+
+    @Generated
+    @Selector("renderTargetWidth")
+    @NUInt
+    public native long renderTargetWidth();
+
+    @Generated
+    @Selector("setDefaultRasterSampleCount:")
+    public native void setDefaultRasterSampleCount(@NUInt long value);
+
+    @Generated
+    @Selector("setDefaultSampleCount:")
+    public native void setDefaultSampleCount(@NUInt long value);
+
+    @Generated
+    @Selector("setImageblockSampleLength:")
+    public native void setImageblockSampleLength(@NUInt long value);
+
+    @Generated
+    @Selector("setRenderTargetHeight:")
+    public native void setRenderTargetHeight(@NUInt long value);
+
+    @Generated
+    @Selector("setRenderTargetWidth:")
+    public native void setRenderTargetWidth(@NUInt long value);
+
+    @Generated
+    @Selector("setSamplePositions:count:")
+    public native void setSamplePositionsCount(
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
+            @NUInt long count);
+
+    @Generated
+    @Selector("setThreadgroupMemoryLength:")
+    public native void setThreadgroupMemoryLength(@NUInt long value);
+
+    @Generated
+    @Selector("setTileHeight:")
+    public native void setTileHeight(@NUInt long value);
+
+    @Generated
+    @Selector("setTileWidth:")
+    public native void setTileWidth(@NUInt long value);
+
+    @Generated
+    @Selector("threadgroupMemoryLength")
+    @NUInt
+    public native long threadgroupMemoryLength();
+
+    @Generated
+    @Selector("tileHeight")
+    @NUInt
+    public native long tileHeight();
+
+    @Generated
+    @Selector("tileWidth")
+    @NUInt
+    public native long tileWidth();
 }

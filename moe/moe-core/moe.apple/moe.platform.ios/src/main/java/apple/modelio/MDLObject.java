@@ -256,4 +256,8 @@ public class MDLObject extends NSObject implements MDLNamed {
         @Generated
         void call_enumerateChildObjectsOfClassRootUsingBlockStopPointer(MDLObject arg0, BoolPtr arg1);
     }
+
+    @Generated
+    @Selector("components")
+    public native NSArray<?> components();
 }

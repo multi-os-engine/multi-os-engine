@@ -197,4 +197,8 @@ public class CMDeviceMotion extends CMLogItem {
     @Selector("userAcceleration")
     @ByValue
     public native CMAcceleration userAcceleration();
+
+    @Generated
+    @Selector("heading")
+    public native double heading();
 }

@@ -215,4 +215,9 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("defaultOrthographyForLanguage:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultOrthographyForLanguage(String language);
 }

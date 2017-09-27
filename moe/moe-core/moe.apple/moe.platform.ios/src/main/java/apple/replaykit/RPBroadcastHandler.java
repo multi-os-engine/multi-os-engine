@@ -22,6 +22,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSExtensionContext;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.foundation.protocol.NSExtensionRequestHandling;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -164,4 +165,8 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
     @Generated
     @Selector("updateServiceInfo:")
     public native void updateServiceInfo(NSDictionary<String, ? extends NSObject> serviceInfo);
+
+    @Generated
+    @Selector("updateBroadcastURL:")
+    public native void updateBroadcastURL(NSURL broadcastURL);
 }

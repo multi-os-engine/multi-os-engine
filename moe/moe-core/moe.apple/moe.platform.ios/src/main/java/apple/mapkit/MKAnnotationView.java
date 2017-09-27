@@ -536,4 +536,37 @@ public class MKAnnotationView extends UIView {
     @Generated
     @Selector("setSelected:animated:")
     public native void setSelectedAnimated(boolean selected, boolean animated);
+
+    @Generated
+    @Selector("clusterAnnotationView")
+    public native MKAnnotationView clusterAnnotationView();
+
+    @Generated
+    @Selector("clusteringIdentifier")
+    public native String clusteringIdentifier();
+
+    @Generated
+    @Selector("collisionMode")
+    @NInt
+    public native long collisionMode();
+
+    @Generated
+    @Selector("displayPriority")
+    public native float displayPriority();
+
+    @Generated
+    @Selector("prepareForDisplay")
+    public native void prepareForDisplay();
+
+    @Generated
+    @Selector("setClusteringIdentifier:")
+    public native void setClusteringIdentifier(String value);
+
+    @Generated
+    @Selector("setCollisionMode:")
+    public native void setCollisionMode(@NInt long value);
+
+    @Generated
+    @Selector("setDisplayPriority:")
+    public native void setDisplayPriority(float value);
 }

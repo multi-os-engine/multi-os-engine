@@ -438,4 +438,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Generated
     @Selector("setSelectedBackgroundView:")
     public native void setSelectedBackgroundView(UIView value);
+
+    @Generated
+    @Selector("dragStateDidChange:")
+    public native void dragStateDidChange(@NInt long dragState);
 }

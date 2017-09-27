@@ -236,4 +236,99 @@ public class HMEventTrigger extends HMTrigger {
         @Generated
         void call_updatePredicateCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("endEvents")
+    public native NSArray<? extends HMEvent> endEvents();
+
+    @Generated
+    @Selector("executeOnce")
+    public native boolean executeOnce();
+
+    @Generated
+    @Selector("initWithName:events:endEvents:recurrences:predicate:")
+    public native HMEventTrigger initWithNameEventsEndEventsRecurrencesPredicate(String name,
+            NSArray<? extends HMEvent> events, NSArray<? extends HMEvent> endEvents,
+            NSArray<? extends NSDateComponents> recurrences, NSPredicate predicate);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringAfterSignificantEvent:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringAfterSignificantEvent(
+            HMSignificantTimeEvent significantEvent);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringBeforeSignificantEvent(
+            HMSignificantTimeEvent significantEvent);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringBetweenDateWithComponents:secondDateWithComponents:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringBetweenDateWithComponentsSecondDateWithComponents(
+            NSDateComponents firstDateComponents, NSDateComponents secondDateWithComponents);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerOccurringBetweenSignificantEvent:secondSignificantEvent:")
+    public static native NSPredicate predicateForEvaluatingTriggerOccurringBetweenSignificantEventSecondSignificantEvent(
+            HMSignificantTimeEvent firstSignificantEvent, HMSignificantTimeEvent secondSignificantEvent);
+
+    @Generated
+    @Selector("predicateForEvaluatingTriggerWithPresence:")
+    public static native NSPredicate predicateForEvaluatingTriggerWithPresence(HMPresenceEvent presenceEvent);
+
+    @Generated
+    @Selector("recurrences")
+    public native NSArray<? extends NSDateComponents> recurrences();
+
+    @Generated
+    @Selector("triggerActivationState")
+    @NUInt
+    public native long triggerActivationState();
+
+    @Generated
+    @Selector("updateEndEvents:completionHandler:")
+    public native void updateEndEventsCompletionHandler(NSArray<? extends HMEvent> endEvents,
+            @ObjCBlock(name = "call_updateEndEventsCompletionHandler") Block_updateEndEventsCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateEndEventsCompletionHandler {
+        @Generated
+        void call_updateEndEventsCompletionHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("updateEvents:completionHandler:")
+    public native void updateEventsCompletionHandler(NSArray<? extends HMEvent> events,
+            @ObjCBlock(name = "call_updateEventsCompletionHandler") Block_updateEventsCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateEventsCompletionHandler {
+        @Generated
+        void call_updateEventsCompletionHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("updateExecuteOnce:completionHandler:")
+    public native void updateExecuteOnceCompletionHandler(boolean executeOnce,
+            @ObjCBlock(name = "call_updateExecuteOnceCompletionHandler") Block_updateExecuteOnceCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateExecuteOnceCompletionHandler {
+        @Generated
+        void call_updateExecuteOnceCompletionHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("updateRecurrences:completionHandler:")
+    public native void updateRecurrencesCompletionHandler(NSArray<? extends NSDateComponents> recurrences,
+            @ObjCBlock(name = "call_updateRecurrencesCompletionHandler") Block_updateRecurrencesCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateRecurrencesCompletionHandler {
+        @Generated
+        void call_updateRecurrencesCompletionHandler(NSError arg0);
+    }
 }

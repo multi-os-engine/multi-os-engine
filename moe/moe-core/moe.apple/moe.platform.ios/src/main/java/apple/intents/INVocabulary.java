@@ -167,4 +167,8 @@ public class INVocabulary extends NSObject {
     @Generated
     @Selector("setVocabularyStrings:ofType:")
     public native void setVocabularyStringsOfType(NSOrderedSet<String> vocabulary, @NInt long type);
+
+    @Generated
+    @Selector("setVocabulary:ofType:")
+    public native void setVocabularyOfType(NSOrderedSet<?> vocabulary, @NInt long type);
 }

@@ -277,4 +277,9 @@ public class PHAsset extends PHObject {
         void call_requestContentEditingInputWithOptionsCompletionHandler(PHContentEditingInput arg0,
                 NSDictionary<?, ?> arg1);
     }
+
+    @Generated
+    @Selector("playbackStyle")
+    @NInt
+    public native long playbackStyle();
 }

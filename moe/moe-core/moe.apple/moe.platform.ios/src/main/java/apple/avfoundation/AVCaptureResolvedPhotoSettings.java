@@ -191,4 +191,14 @@ public class AVCaptureResolvedPhotoSettings extends NSObject {
     @Generated
     @Selector("uniqueID")
     public native long uniqueID();
+
+    @Generated
+    @Selector("embeddedThumbnailDimensions")
+    @ByValue
+    public native CMVideoDimensions embeddedThumbnailDimensions();
+
+    @Generated
+    @Selector("expectedPhotoCount")
+    @NUInt
+    public native long expectedPhotoCount();
 }

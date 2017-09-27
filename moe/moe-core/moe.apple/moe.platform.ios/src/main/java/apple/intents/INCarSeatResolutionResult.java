@@ -178,4 +178,14 @@ public class INCarSeatResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("init")
     public native INCarSeatResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithCarSeatToConfirm:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithCarSeatToConfirm(@NInt long carSeatToConfirm);
+
+    @Generated
+    @Selector("successWithResolvedCarSeat:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object successWithResolvedCarSeat(@NInt long resolvedCarSeat);
 }

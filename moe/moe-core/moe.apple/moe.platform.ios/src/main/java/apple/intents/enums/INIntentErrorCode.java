@@ -36,4 +36,7 @@ public final class INIntentErrorCode {
     @Generated
     private INIntentErrorCode() {
     }
+
+    @Generated @NInt public static final long ExtensionLaunchingTimeout = 0x0000000000001388L;
+    @Generated @NInt public static final long ExtensionBringUpFailed = 0x0000000000001389L;
 }

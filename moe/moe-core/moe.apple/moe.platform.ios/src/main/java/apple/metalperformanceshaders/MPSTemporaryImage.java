@@ -24,6 +24,7 @@ import apple.metal.MTLTextureDescriptor;
 import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLTexture;
+import apple.metalperformanceshaders.protocol.MPSImageAllocator;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -192,4 +193,9 @@ public class MPSTemporaryImage extends MPSImage {
     @Generated
     @Selector("setReadCount:")
     public native void setReadCount(@NUInt long value);
+
+    @Generated
+    @Selector("defaultAllocator")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native MPSImageAllocator defaultAllocator();
 }

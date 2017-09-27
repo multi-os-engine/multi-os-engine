@@ -26,6 +26,8 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAccessibilityContentSizeCategoryImageAdjusting;
+import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -55,7 +57,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIButton extends UIControl implements NSCoding {
+public class UIButton extends UIControl
+        implements NSCoding, UISpringLoadedInteractionSupporting, UIAccessibilityContentSizeCategoryImageAdjusting {
     static {
         NatJ.register();
     }
@@ -618,4 +621,20 @@ public class UIButton extends UIControl implements NSCoding {
     @Selector("titleShadowOffset")
     @ByValue
     public native CGSize titleShadowOffset();
+
+    @Generated
+    @Selector("adjustsImageSizeForAccessibilityContentSizeCategory")
+    public native boolean adjustsImageSizeForAccessibilityContentSizeCategory();
+
+    @Generated
+    @Selector("isSpringLoaded")
+    public native boolean isSpringLoaded();
+
+    @Generated
+    @Selector("setAdjustsImageSizeForAccessibilityContentSizeCategory:")
+    public native void setAdjustsImageSizeForAccessibilityContentSizeCategory(boolean value);
+
+    @Generated
+    @Selector("setSpringLoaded:")
+    public native void setSpringLoaded(boolean value);
 }

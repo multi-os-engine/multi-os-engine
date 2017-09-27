@@ -26,4 +26,17 @@ public final class MPSDataType {
     @Generated
     private MPSDataType() {
     }
+
+    @Generated public static final int Invalid = 0x00000000;
+    @Generated public static final int Float16 = 0x10000010;
+    @Generated public static final int SignedBit = 0x20000000;
+    @Generated public static final int IntBit = 0x20000000;
+    @Generated public static final int Int8 = 0x20000008;
+    @Generated public static final int Int16 = 0x20000010;
+    @Generated public static final int UInt8 = 0x00000008;
+    @Generated public static final int UInt16 = 0x00000010;
+    @Generated public static final int UInt32 = 0x00000020;
+    @Generated public static final int NormalizedBit = 0x40000000;
+    @Generated public static final int Unorm1 = 0x40000001;
+    @Generated public static final int Unorm8 = 0x40000008;
 }

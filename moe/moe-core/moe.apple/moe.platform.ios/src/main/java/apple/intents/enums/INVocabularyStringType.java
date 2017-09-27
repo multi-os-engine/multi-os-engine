@@ -31,4 +31,10 @@ public final class INVocabularyStringType {
     @Generated
     private INVocabularyStringType() {
     }
+
+    @Generated @NInt public static final long CarName = 0x000000000000012DL;
+    @Generated @NInt public static final long PaymentsOrganizationName = 0x0000000000000190L;
+    @Generated @NInt public static final long PaymentsAccountNickname = 0x0000000000000191L;
+    @Generated @NInt public static final long NotebookItemTitle = 0x00000000000001F4L;
+    @Generated @NInt public static final long NotebookItemGroupName = 0x00000000000001F5L;
 }

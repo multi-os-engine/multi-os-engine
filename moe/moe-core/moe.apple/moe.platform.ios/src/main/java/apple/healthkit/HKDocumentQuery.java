@@ -288,4 +288,9 @@ public class HKDocumentQuery extends HKQuery {
         void call_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler(
                 HKDocumentQuery arg0, NSArray<? extends HKDocumentSample> arg1, boolean arg2, NSError arg3);
     }
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
+            HKQuantity totalFlightsClimbed);
 }

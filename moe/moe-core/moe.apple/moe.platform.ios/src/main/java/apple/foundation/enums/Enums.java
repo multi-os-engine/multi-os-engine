@@ -206,4 +206,7 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated @NInt public static final long NSURLErrorFileOutsideSafeArea = 0xFFFFFFFFFFFFFBB0L;
+    @Generated @NInt public static final long NSCoderInvalidValueError = 0x0000000000001302L;
 }

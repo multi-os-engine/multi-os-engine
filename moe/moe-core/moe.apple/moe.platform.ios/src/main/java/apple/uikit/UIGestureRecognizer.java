@@ -274,4 +274,12 @@ public class UIGestureRecognizer extends NSObject {
     @Generated
     @Selector("view")
     public native UIView view();
+
+    @Generated
+    @Selector("name")
+    public native String name();
+
+    @Generated
+    @Selector("setName:")
+    public native void setName(String value);
 }

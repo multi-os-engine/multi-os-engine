@@ -21,6 +21,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSMutableCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -45,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent {
+public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements NSCopying, NSMutableCopying {
     static {
         NatJ.register();
     }
@@ -181,4 +183,19 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent {
         @Generated
         void call_updateTriggerValueCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("isSupportedForHome:")
+    public static native boolean isSupportedForHome(HMHome home);
+
+    @Generated
+    @Selector("mutableCopyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object mutableCopyWithZone(VoidPtr zone);
 }

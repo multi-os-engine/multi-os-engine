@@ -17,6 +17,7 @@ limitations under the License.
 package apple.intents;
 
 import apple.NSObject;
+import apple.eventkit.EKRecurrenceRule;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDateComponents;
@@ -195,4 +196,21 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("EKRecurrenceRule")
+    public native EKRecurrenceRule EKRecurrenceRule();
+
+    @Generated
+    @Selector("initWithEKRecurrenceRule:")
+    public native INDateComponentsRange initWithEKRecurrenceRule(EKRecurrenceRule recurrenceRule);
+
+    @Generated
+    @Selector("initWithStartDateComponents:endDateComponents:recurrenceRule:")
+    public native INDateComponentsRange initWithStartDateComponentsEndDateComponentsRecurrenceRule(
+            NSDateComponents startDateComponents, NSDateComponents endDateComponents, INRecurrenceRule recurrenceRule);
+
+    @Generated
+    @Selector("recurrenceRule")
+    public native INRecurrenceRule recurrenceRule();
 }

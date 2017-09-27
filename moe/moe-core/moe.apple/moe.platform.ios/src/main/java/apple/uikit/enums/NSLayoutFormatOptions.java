@@ -41,4 +41,8 @@ public final class NSLayoutFormatOptions {
     @Generated
     private NSLayoutFormatOptions() {
     }
+
+    @Generated @NUInt public static final long SpacingEdgeToEdge = 0x0000000000000000L;
+    @Generated @NUInt public static final long SpacingBaselineToBaseline = 0x0000000000080000L;
+    @Generated @NUInt public static final long SpacingMask = 0x0000000000080000L;
 }

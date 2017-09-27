@@ -40,6 +40,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -190,6 +191,7 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Selector("handle")
     public native String handle();
 
+    @IsOptional
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -264,4 +266,20 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("alternativeSpeakableMatches")
+    public native NSArray<?> alternativeSpeakableMatches();
+
+    @Generated
+    @Selector("isMe")
+    public native boolean isMe();
+
+    @Generated
+    @Selector("siriMatches")
+    public native NSArray<? extends INPerson> siriMatches();
+
+    @Generated
+    @Selector("vocabularyIdentifier")
+    public native String vocabularyIdentifier();
 }

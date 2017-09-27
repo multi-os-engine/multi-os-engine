@@ -198,4 +198,30 @@ public class MPSMatrixDescriptor extends NSObject {
     @Generated
     @Selector("setRows:")
     public native void setRows(@NUInt long value);
+
+    @Generated
+    @Selector("matrices")
+    @NUInt
+    public native long matrices();
+
+    @Generated
+    @Selector("matrixBytes")
+    @NUInt
+    public native long matrixBytes();
+
+    @Generated
+    @Selector("matrixDescriptorWithRows:columns:matrices:rowBytes:matrixBytes:dataType:")
+    public static native MPSMatrixDescriptor matrixDescriptorWithRowsColumnsMatricesRowBytesMatrixBytesDataType(
+            @NUInt long rows, @NUInt long columns, @NUInt long matrices, @NUInt long rowBytes, @NUInt long matrixBytes,
+            int dataType);
+
+    @Generated
+    @Selector("matrixDescriptorWithRows:columns:rowBytes:dataType:")
+    public static native MPSMatrixDescriptor matrixDescriptorWithRowsColumnsRowBytesDataType(@NUInt long rows,
+            @NUInt long columns, @NUInt long rowBytes, int dataType);
+
+    @Generated
+    @Selector("rowBytesForColumns:dataType:")
+    @NUInt
+    public static native long rowBytesForColumnsDataType(@NUInt long columns, int dataType);
 }

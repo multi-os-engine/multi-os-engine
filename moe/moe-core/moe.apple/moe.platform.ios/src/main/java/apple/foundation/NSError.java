@@ -100,7 +100,8 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("errorWithDomain:code:userInfo:")
-    public static native NSError errorWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<?, ?> dict);
+    public static native NSError errorWithDomainCodeUserInfo(String domain, @NInt long code,
+            NSDictionary<String, ?> dict);
 
     @Generated
     @Selector("hash")
@@ -202,7 +203,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithDomain:code:userInfo:")
-    public native NSError initWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<?, ?> dict);
+    public native NSError initWithDomainCodeUserInfo(String domain, @NInt long code, NSDictionary<String, ?> dict);
 
     @Generated
     @Selector("localizedDescription")
@@ -233,7 +234,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("userInfo")
-    public native NSDictionary<?, ?> userInfo();
+    public native NSDictionary<String, ?> userInfo();
 
     @Runtime(ObjCRuntime.class)
     @Generated

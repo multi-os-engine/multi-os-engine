@@ -212,4 +212,16 @@ public class UIDocumentPickerViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    @Generated
+    @Selector("allowsMultipleSelection")
+    public native boolean allowsMultipleSelection();
+
+    @Generated
+    @Selector("initWithURLs:inMode:")
+    public native UIDocumentPickerViewController initWithURLsInMode(NSArray<? extends NSURL> urls, @NUInt long mode);
+
+    @Generated
+    @Selector("setAllowsMultipleSelection:")
+    public native void setAllowsMultipleSelection(boolean value);
 }

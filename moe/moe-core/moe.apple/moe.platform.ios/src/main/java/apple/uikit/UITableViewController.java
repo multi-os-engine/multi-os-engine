@@ -547,4 +547,27 @@ public class UITableViewController extends UIViewController implements UITableVi
     @IsOptional
     @Selector("viewForZoomingInScrollView:")
     public native UIView viewForZoomingInScrollView(UIScrollView scrollView);
+
+    @Generated
+    @IsOptional
+    @Selector("scrollViewDidChangeAdjustedContentInset:")
+    public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:leadingSwipeActionsConfigurationForRowAtIndexPath:")
+    public native UISwipeActionsConfiguration tableViewLeadingSwipeActionsConfigurationForRowAtIndexPath(
+            UITableView tableView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:shouldSpringLoadRowAtIndexPath:withContext:")
+    public native boolean tableViewShouldSpringLoadRowAtIndexPathWithContext(UITableView tableView,
+            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:trailingSwipeActionsConfigurationForRowAtIndexPath:")
+    public native UISwipeActionsConfiguration tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(
+            UITableView tableView, NSIndexPath indexPath);
 }

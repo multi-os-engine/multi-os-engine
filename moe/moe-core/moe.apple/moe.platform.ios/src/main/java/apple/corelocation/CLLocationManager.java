@@ -391,4 +391,12 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Selector("stopUpdatingLocation")
     public native void stopUpdatingLocation();
+
+    @Generated
+    @Selector("setShowsBackgroundLocationIndicator:")
+    public native void setShowsBackgroundLocationIndicator(boolean value);
+
+    @Generated
+    @Selector("showsBackgroundLocationIndicator")
+    public native boolean showsBackgroundLocationIndicator();
 }

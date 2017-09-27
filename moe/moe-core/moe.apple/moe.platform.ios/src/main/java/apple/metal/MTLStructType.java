@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTLStructType extends NSObject {
+public class MTLStructType extends MTLType {
     static {
         NatJ.register();
     }

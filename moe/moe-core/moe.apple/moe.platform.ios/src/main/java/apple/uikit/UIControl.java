@@ -549,4 +549,9 @@ public class UIControl extends UIView {
             }
         }
     }
+
+    @Generated
+    @Selector("effectiveContentHorizontalAlignment")
+    @NInt
+    public native long effectiveContentHorizontalAlignment();
 }

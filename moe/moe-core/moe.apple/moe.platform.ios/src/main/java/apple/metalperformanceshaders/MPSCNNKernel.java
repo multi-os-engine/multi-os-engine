@@ -18,14 +18,14 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLCommandBuffer;
-import apple.metal.protocol.MTLDevice;
 import apple.metal.struct.MTLRegion;
-import apple.metal.struct.MTLSize;
+import apple.metalperformanceshaders.protocol.MPSImageAllocator;
+import apple.metalperformanceshaders.protocol.MPSNNPadding;
 import apple.metalperformanceshaders.struct.MPSOffset;
-import apple.metalperformanceshaders.struct.MPSRegion;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -43,6 +43,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -184,7 +185,7 @@ public class MPSCNNKernel extends MPSKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNKernel initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSCNNKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("offset")
@@ -208,7 +209,67 @@ public class MPSCNNKernel extends MPSKernel {
     public native void setOffset(@ByValue MPSOffset value);
 
     @Generated
-    @Selector("sourceRegionForDestinationSize:")
-    @ByValue
-    public native MPSRegion sourceRegionForDestinationSize(@ByValue MTLSize destinationSize);
+    @Selector("destinationImageAllocator")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MPSImageAllocator destinationImageAllocator();
+
+    @Generated
+    @Selector("encodeToCommandBuffer:sourceImage:")
+    public native MPSImage encodeToCommandBufferSourceImage(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MPSCNNKernel initWithCoder(NSCoder aDecoder);
+
+    @Generated
+    @Selector("initWithCoder:device:")
+    public native MPSCNNKernel initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("isBackwards")
+    public native boolean isBackwards();
+
+    @Generated
+    @Selector("kernelHeight")
+    @NUInt
+    public native long kernelHeight();
+
+    @Generated
+    @Selector("kernelWidth")
+    @NUInt
+    public native long kernelWidth();
+
+    @Generated
+    @Selector("padding")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MPSNNPadding padding();
+
+    @Generated
+    @Selector("setDestinationImageAllocator:")
+    public native void setDestinationImageAllocator(@Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
+
+    @Generated
+    @Selector("setPadding:")
+    public native void setPadding(@Mapped(ObjCObjectMapper.class) MPSNNPadding value);
+
+    @Generated
+    @Selector("strideInPixelsX")
+    @NUInt
+    public native long strideInPixelsX();
+
+    @Generated
+    @Selector("strideInPixelsY")
+    @NUInt
+    public native long strideInPixelsY();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -28,6 +28,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.opengles.EAGLContext;
+import apple.scenekit.protocol.SCNCameraControlConfiguration;
 import apple.scenekit.protocol.SCNSceneRenderer;
 import apple.scenekit.protocol.SCNTechniqueSupport;
 import apple.scenekit.struct.SCNVector3;
@@ -673,4 +674,21 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("unprojectPoint:")
     @ByValue
     public native SCNVector3 unprojectPoint(@ByValue SCNVector3 point);
+
+    @Generated
+    @Selector("cameraControlConfiguration")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native SCNCameraControlConfiguration cameraControlConfiguration();
+
+    @Generated
+    @Selector("defaultCameraController")
+    public native SCNCameraController defaultCameraController();
+
+    @Generated
+    @Selector("rendersContinuously")
+    public native boolean rendersContinuously();
+
+    @Generated
+    @Selector("setRendersContinuously:")
+    public native void setRendersContinuously(boolean value);
 }

@@ -22,6 +22,7 @@ import apple.intents.INMessageAttributeOptionsResolutionResult;
 import apple.intents.INPersonResolutionResult;
 import apple.intents.INSearchForMessagesIntent;
 import apple.intents.INSearchForMessagesIntentResponse;
+import apple.intents.INSpeakableStringResolutionResult;
 import apple.intents.INStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -137,5 +138,21 @@ public interface INSearchForMessagesIntentHandling {
     public interface Block_resolveSendersForSearchForMessagesWithCompletion {
         @Generated
         void call_resolveSendersForSearchForMessagesWithCompletion(NSArray<? extends INPersonResolutionResult> arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveSpeakableGroupNamesForSearchForMessages:withCompletion:")
+    default void resolveSpeakableGroupNamesForSearchForMessagesWithCompletion(INSearchForMessagesIntent intent,
+            @ObjCBlock(name = "call_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion") Block_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion {
+        @Generated
+        void call_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion(
+                NSArray<? extends INSpeakableStringResolutionResult> arg0);
     }
 }

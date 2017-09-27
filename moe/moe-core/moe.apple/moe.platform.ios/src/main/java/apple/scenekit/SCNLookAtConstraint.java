@@ -21,9 +21,11 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.scenekit.struct.SCNVector3;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -189,4 +191,31 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Generated
     @Selector("target")
     public native SCNNode target();
+
+    @Generated
+    @Selector("localFront")
+    @ByValue
+    public native SCNVector3 localFront();
+
+    @Generated
+    @Selector("setLocalFront:")
+    public native void setLocalFront(@ByValue SCNVector3 value);
+
+    @Generated
+    @Selector("setTargetOffset:")
+    public native void setTargetOffset(@ByValue SCNVector3 value);
+
+    @Generated
+    @Selector("setWorldUp:")
+    public native void setWorldUp(@ByValue SCNVector3 value);
+
+    @Generated
+    @Selector("targetOffset")
+    @ByValue
+    public native SCNVector3 targetOffset();
+
+    @Generated
+    @Selector("worldUp")
+    @ByValue
+    public native SCNVector3 worldUp();
 }

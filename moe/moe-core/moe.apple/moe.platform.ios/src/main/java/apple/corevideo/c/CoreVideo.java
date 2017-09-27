@@ -20,6 +20,8 @@ import apple.corefoundation.opaque.CFAllocatorRef;
 import apple.corefoundation.opaque.CFArrayRef;
 import apple.corefoundation.opaque.CFDictionaryRef;
 import apple.corefoundation.opaque.CFStringRef;
+import apple.coregraphics.opaque.CGColorSpaceRef;
+import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
 import apple.corevideo.opaque.CVBufferRef;
@@ -837,4 +839,77 @@ public final class CoreVideo {
         void call_CVPixelBufferCreateWithPlanarBytes(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2,
                 @NUInt long arg3, @ReferenceInfo(type = Void.class, depth = 2) Ptr<ConstVoidPtr> arg4);
     }
+
+    @Generated
+    @CFunction
+    public static native int CVYCbCrMatrixGetIntegerCodePointForString(CFStringRef yCbCrMatrixString);
+
+    @Generated
+    @CFunction
+    public static native int CVColorPrimariesGetIntegerCodePointForString(CFStringRef colorPrimariesString);
+
+    @Generated
+    @CFunction
+    public static native int CVTransferFunctionGetIntegerCodePointForString(CFStringRef transferFunctionString);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef CVYCbCrMatrixGetStringForIntegerCodePoint(int yCbCrMatrixCodePoint);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef CVColorPrimariesGetStringForIntegerCodePoint(int colorPrimariesCodePoint);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef CVTransferFunctionGetStringForIntegerCodePoint(int transferFunctionCodePoint);
+
+    @Generated
+    @CFunction
+    public static native CGColorSpaceRef CVImageBufferCreateColorSpaceFromAttachments(CFDictionaryRef attachments);
+
+    @Generated
+    @CFunction
+    public static native IOSurfaceRef CVPixelBufferGetIOSurface(CVBufferRef pixelBuffer);
+
+    @Generated
+    @CFunction
+    public static native int CVPixelBufferCreateWithIOSurface(CFAllocatorRef allocator, IOSurfaceRef surface,
+            CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferTransferFunction_sRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferTransferFunction_SMPTE_ST_2084_PQ();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferTransferFunction_ITU_R_2100_HLG();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferMasteringDisplayColorVolumeKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferContentLightLevelInfoKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferIOSurfaceCoreAnimationCompatibilityKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferIOSurfaceOpenGLESTextureCompatibilityKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferIOSurfaceOpenGLESFBOCompatibilityKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVMetalTextureUsage();
 }

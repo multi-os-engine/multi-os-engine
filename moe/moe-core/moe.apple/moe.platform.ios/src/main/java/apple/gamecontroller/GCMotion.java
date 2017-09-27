@@ -206,4 +206,8 @@ public class GCMotion extends NSObject {
         @Generated
         void call_valueChangedHandler_ret(GCMotion arg0);
     }
+
+    @Generated
+    @Selector("hasAttitudeAndRotationRate")
+    public native boolean hasAttitudeAndRotationRate();
 }

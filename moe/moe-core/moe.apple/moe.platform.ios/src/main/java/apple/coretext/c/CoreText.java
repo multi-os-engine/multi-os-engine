@@ -1351,4 +1351,12 @@ public final class CoreText {
         @Generated
         void call_CTLineEnumerateCaretOffsets(double arg0, @NInt long arg1, boolean arg2, BoolPtr arg3);
     }
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTFontVariationAxisHiddenKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTBaselineOffsetAttributeName();
 }

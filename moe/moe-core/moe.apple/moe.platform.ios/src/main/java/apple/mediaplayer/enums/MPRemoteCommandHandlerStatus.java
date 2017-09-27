@@ -29,4 +29,6 @@ public final class MPRemoteCommandHandlerStatus {
     @Generated
     private MPRemoteCommandHandlerStatus() {
     }
+
+    @Generated @NInt public static final long DeviceNotFound = 0x0000000000000078L;
 }

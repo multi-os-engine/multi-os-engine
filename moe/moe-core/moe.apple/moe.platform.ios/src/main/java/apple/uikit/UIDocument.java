@@ -456,4 +456,14 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
         @Generated
         void call_saveToURLForSaveOperationCompletionHandler(boolean arg0);
     }
+
+    @Generated
+    @IsOptional
+    @Selector("observedPresentedItemUbiquityAttributes")
+    public native NSSet<String> observedPresentedItemUbiquityAttributes();
+
+    @Generated
+    @IsOptional
+    @Selector("presentedItemDidChangeUbiquityAttributes:")
+    public native void presentedItemDidChangeUbiquityAttributes(NSSet<String> attributes);
 }

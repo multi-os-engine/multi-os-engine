@@ -76,7 +76,7 @@ public final class JavaScriptCore {
 
     @Generated
     @CFunction
-    public static native int JSValueGetType(JSContextRef ctx, JSValueRef arg2);
+    public static native int JSValueGetType(JSContextRef ctx, JSValueRef value);
 
     @Generated
     @CFunction

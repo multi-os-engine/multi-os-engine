@@ -18,10 +18,9 @@ package apple.metalperformanceshaders;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.metal.protocol.MTLDevice;
-import apple.metalperformanceshaders.struct.MPSScaleTransform;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -38,6 +37,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSImageLanczosScale extends MPSUnaryImageKernel {
+public class MPSImageLanczosScale extends MPSImageScale {
     static {
         NatJ.register();
     }
@@ -158,13 +158,24 @@ public class MPSImageLanczosScale extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageLanczosScale initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSImageLanczosScale initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
-    @Selector("scaleTransform")
-    public native MPSScaleTransform scaleTransform();
+    @Selector("initWithCoder:")
+    public native MPSImageLanczosScale initWithCoder(NSCoder aDecoder);
 
     @Generated
-    @Selector("setScaleTransform:")
-    public native void setScaleTransform(MPSScaleTransform value);
+    @Selector("initWithCoder:device:")
+    public native MPSImageLanczosScale initWithCoderDevice(NSCoder aDecoder,
+            @Mapped(ObjCObjectMapper.class) Object device);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

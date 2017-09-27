@@ -29,4 +29,7 @@ public final class UIControlContentHorizontalAlignment {
     @Generated
     private UIControlContentHorizontalAlignment() {
     }
+
+    @Generated @NInt public static final long Leading = 0x0000000000000004L;
+    @Generated @NInt public static final long Trailing = 0x0000000000000005L;
 }

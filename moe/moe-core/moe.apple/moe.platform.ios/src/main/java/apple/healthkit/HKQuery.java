@@ -269,4 +269,9 @@ public class HKQuery extends NSObject {
     @Generated
     @Selector("sampleType")
     public native HKSampleType sampleType();
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
+            HKQuantity totalFlightsClimbed);
 }

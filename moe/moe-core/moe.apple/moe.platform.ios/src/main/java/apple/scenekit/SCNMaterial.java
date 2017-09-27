@@ -176,7 +176,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("ambient")
@@ -427,4 +427,38 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Generated
     @Selector("writesToDepthBuffer")
     public native boolean writesToDepthBuffer();
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("colorBufferWriteMask")
+    @NInt
+    public native long colorBufferWriteMask();
+
+    @Generated
+    @Selector("displacement")
+    public native SCNMaterialProperty displacement();
+
+    @Generated
+    @Selector("fillMode")
+    @NUInt
+    public native long fillMode();
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("setColorBufferWriteMask:")
+    public native void setColorBufferWriteMask(@NInt long value);
+
+    @Generated
+    @Selector("setFillMode:")
+    public native void setFillMode(@NUInt long value);
 }

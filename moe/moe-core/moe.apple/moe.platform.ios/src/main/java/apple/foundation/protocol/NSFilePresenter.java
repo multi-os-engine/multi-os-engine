@@ -19,6 +19,7 @@ package apple.foundation.protocol;
 import apple.foundation.NSError;
 import apple.foundation.NSFileVersion;
 import apple.foundation.NSOperationQueue;
+import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -162,5 +163,19 @@ public interface NSFilePresenter {
     public interface Block_savePresentedItemChangesWithCompletionHandler {
         @Generated
         void call_savePresentedItemChangesWithCompletionHandler(NSError arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("observedPresentedItemUbiquityAttributes")
+    default NSSet<String> observedPresentedItemUbiquityAttributes() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("presentedItemDidChangeUbiquityAttributes:")
+    default void presentedItemDidChangeUbiquityAttributes(NSSet<String> attributes) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

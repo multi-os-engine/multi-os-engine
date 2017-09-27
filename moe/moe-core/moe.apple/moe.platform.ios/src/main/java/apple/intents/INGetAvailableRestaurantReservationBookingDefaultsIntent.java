@@ -177,4 +177,8 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithRestaurant:")
+    public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithRestaurant(INRestaurant restaurant);
 }

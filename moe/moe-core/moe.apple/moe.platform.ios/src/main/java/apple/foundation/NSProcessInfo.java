@@ -264,4 +264,9 @@ public class NSProcessInfo extends NSObject {
         @Generated
         void call_performExpiringActivityWithReasonUsingBlock(boolean arg0);
     }
+
+    @Generated
+    @Selector("thermalState")
+    @NInt
+    public native long thermalState();
 }

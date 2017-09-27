@@ -17,12 +17,14 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -157,4 +159,8 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Generated
     @Selector("segments")
     public native NSArray<? extends AVCompositionTrackSegment> segments();
+
+    @Generated
+    @Selector("segmentForTrackTime:")
+    public native AVCompositionTrackSegment segmentForTrackTime(@ByValue CMTime trackTime);
 }

@@ -16,9 +16,11 @@ limitations under the License.
 
 package apple.healthkit.c;
 
+import apple.foundation.struct.NSOperatingSystemVersion;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.NatJ;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -814,4 +816,94 @@ public final class HealthKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathQuantity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKPredicateKeyPathWorkoutTotalFlightsClimbed();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKWorkoutSortIdentifierTotalFlightsClimbed();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyHeartRateMotionContext();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeySyncIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeySyncVersion();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyInsulinDeliveryReason();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyBloodGlucoseMealTime();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKMetadataKeyVO2MaxTestType();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierWaistCircumference();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierVO2Max();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierRestingHeartRate();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierWalkingHeartRateAverage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierHeartRateVariabilitySDNN();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKQuantityTypeIdentifierInsulinDelivery();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKWorkoutRouteTypeIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKSourceRevisionAnyVersion();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKSourceRevisionAnyProductType();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSOperatingSystemVersion HKSourceRevisionAnyOperatingSystem();
 }

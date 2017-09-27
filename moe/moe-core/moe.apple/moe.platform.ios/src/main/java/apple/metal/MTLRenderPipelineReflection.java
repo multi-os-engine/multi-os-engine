@@ -161,4 +161,8 @@ public class MTLRenderPipelineReflection extends NSObject {
     @Generated
     @Selector("vertexArguments")
     public native NSArray<? extends MTLArgument> vertexArguments();
+
+    @Generated
+    @Selector("tileArguments")
+    public native NSArray<? extends MTLArgument> tileArguments();
 }

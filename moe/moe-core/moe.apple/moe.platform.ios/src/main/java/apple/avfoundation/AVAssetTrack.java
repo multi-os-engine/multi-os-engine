@@ -301,4 +301,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Generated
     @Selector("trackID")
     public native int trackID();
+
+    @Generated
+    @Selector("isDecodable")
+    public native boolean isDecodable();
 }

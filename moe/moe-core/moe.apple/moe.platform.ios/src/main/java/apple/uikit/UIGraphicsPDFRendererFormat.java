@@ -167,4 +167,9 @@ public class UIGraphicsPDFRendererFormat extends UIGraphicsRendererFormat {
     @Generated
     @Selector("setDocumentInfo:")
     public native void setDocumentInfo(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("preferredFormat")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object preferredFormat();
 }

@@ -320,4 +320,20 @@ public class NSUserActivity extends NSObject {
         @Generated
         void call_getContinuationStreamsWithCompletionHandler(NSInputStream arg0, NSOutputStream arg1, NSError arg2);
     }
+
+    @Generated
+    @Selector("externalMediaContentIdentifier")
+    public native String externalMediaContentIdentifier();
+
+    @Generated
+    @Selector("referrerURL")
+    public native NSURL referrerURL();
+
+    @Generated
+    @Selector("setExternalMediaContentIdentifier:")
+    public native void setExternalMediaContentIdentifier(String value);
+
+    @Generated
+    @Selector("setReferrerURL:")
+    public native void setReferrerURL(NSURL value);
 }

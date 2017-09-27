@@ -188,4 +188,16 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
     @Generated
     @Selector("setPacketCount:")
     public native void setPacketCount(int value);
+
+    @Generated
+    @Selector("byteCapacity")
+    public native int byteCapacity();
+
+    @Generated
+    @Selector("byteLength")
+    public native int byteLength();
+
+    @Generated
+    @Selector("setByteLength:")
+    public native void setByteLength(int value);
 }

@@ -213,4 +213,18 @@ public class RPBroadcastActivityViewController extends UIViewController {
         @Generated
         void call_loadBroadcastActivityViewControllerWithHandler(RPBroadcastActivityViewController arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("loadBroadcastActivityViewControllerWithPreferredExtension:handler:")
+    public static native void loadBroadcastActivityViewControllerWithPreferredExtensionHandler(
+            String preferredExtension,
+            @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler") Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler {
+        @Generated
+        void call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler(
+                RPBroadcastActivityViewController arg0, NSError arg1);
+    }
 }

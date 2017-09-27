@@ -166,4 +166,13 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Generated
     @Selector("setNowPlayingInfo:")
     public native void setNowPlayingInfo(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("playbackState")
+    @NUInt
+    public native long playbackState();
+
+    @Generated
+    @Selector("setPlaybackState:")
+    public native void setPlaybackState(@NUInt long value);
 }

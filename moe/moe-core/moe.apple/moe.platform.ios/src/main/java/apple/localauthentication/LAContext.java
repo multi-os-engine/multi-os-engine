@@ -240,4 +240,25 @@ public class LAContext extends NSObject {
         @Generated
         void call_evaluatePolicyLocalizedReasonReply(boolean arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("biometryType")
+    @NInt
+    public native long biometryType();
+
+    @Generated
+    @Selector("interactionNotAllowed")
+    public native boolean interactionNotAllowed();
+
+    @Generated
+    @Selector("localizedReason")
+    public native String localizedReason();
+
+    @Generated
+    @Selector("setInteractionNotAllowed:")
+    public native void setInteractionNotAllowed(boolean value);
+
+    @Generated
+    @Selector("setLocalizedReason:")
+    public native void setLocalizedReason(String value);
 }

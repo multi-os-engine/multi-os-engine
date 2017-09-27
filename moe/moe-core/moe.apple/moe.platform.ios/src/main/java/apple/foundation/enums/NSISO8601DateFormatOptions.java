@@ -38,4 +38,6 @@ public final class NSISO8601DateFormatOptions {
     @Generated
     private NSISO8601DateFormatOptions() {
     }
+
+    @Generated @NUInt public static final long FractionalSeconds = 0x0000000000000800L;
 }

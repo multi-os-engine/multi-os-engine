@@ -196,4 +196,40 @@ public class SKCloudServiceController extends NSObject {
         @Generated
         void call_requestStorefrontIdentifierWithCompletionHandler(String arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("requestPersonalizationTokenForClientToken:withCompletionHandler:")
+    public native void requestPersonalizationTokenForClientTokenWithCompletionHandler(String clientToken,
+            @ObjCBlock(name = "call_requestPersonalizationTokenForClientTokenWithCompletionHandler") Block_requestPersonalizationTokenForClientTokenWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestPersonalizationTokenForClientTokenWithCompletionHandler {
+        @Generated
+        void call_requestPersonalizationTokenForClientTokenWithCompletionHandler(String arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("requestStorefrontCountryCodeWithCompletionHandler:")
+    public native void requestStorefrontCountryCodeWithCompletionHandler(
+            @ObjCBlock(name = "call_requestStorefrontCountryCodeWithCompletionHandler") Block_requestStorefrontCountryCodeWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestStorefrontCountryCodeWithCompletionHandler {
+        @Generated
+        void call_requestStorefrontCountryCodeWithCompletionHandler(String arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("requestUserTokenForDeveloperToken:completionHandler:")
+    public native void requestUserTokenForDeveloperTokenCompletionHandler(String developerToken,
+            @ObjCBlock(name = "call_requestUserTokenForDeveloperTokenCompletionHandler") Block_requestUserTokenForDeveloperTokenCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestUserTokenForDeveloperTokenCompletionHandler {
+        @Generated
+        void call_requestUserTokenForDeveloperTokenCompletionHandler(String arg0, NSError arg1);
+    }
 }

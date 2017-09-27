@@ -35,4 +35,6 @@ public final class INListRideOptionsIntentResponseCode {
     @Generated
     private INListRideOptionsIntentResponseCode() {
     }
+
+    @Generated @NInt public static final long FailurePreviousRideNeedsFeedback = 0x000000000000000AL;
 }

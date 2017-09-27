@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.avfoundation.protocol;
 
+import apple.avfoundation.AVAggregateAssetDownloadTask;
 import apple.avfoundation.AVAssetDownloadTask;
 import apple.avfoundation.AVMediaSelection;
 import apple.coremedia.struct.CMTimeRange;
@@ -60,6 +61,32 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     @Selector("URLSession:assetDownloadTask:didResolveMediaSelection:")
     default void URLSessionAssetDownloadTaskDidResolveMediaSelection(NSURLSession session,
             AVAssetDownloadTask assetDownloadTask, AVMediaSelection resolvedMediaSelection) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("URLSession:aggregateAssetDownloadTask:didCompleteForMediaSelection:")
+    default void URLSessionAggregateAssetDownloadTaskDidCompleteForMediaSelection(NSURLSession session,
+            AVAggregateAssetDownloadTask aggregateAssetDownloadTask, AVMediaSelection mediaSelection) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("URLSession:aggregateAssetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:forMediaSelection:")
+    default void URLSessionAggregateAssetDownloadTaskDidLoadTimeRangeTotalTimeRangesLoadedTimeRangeExpectedToLoadForMediaSelection(
+            NSURLSession session, AVAggregateAssetDownloadTask aggregateAssetDownloadTask,
+            @ByValue CMTimeRange timeRange, NSArray<? extends NSValue> loadedTimeRanges,
+            @ByValue CMTimeRange timeRangeExpectedToLoad, AVMediaSelection mediaSelection) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("URLSession:aggregateAssetDownloadTask:willDownloadToURL:")
+    default void URLSessionAggregateAssetDownloadTaskWillDownloadToURL(NSURLSession session,
+            AVAggregateAssetDownloadTask aggregateAssetDownloadTask, NSURL location) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

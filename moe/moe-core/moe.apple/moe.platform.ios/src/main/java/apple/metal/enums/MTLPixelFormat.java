@@ -132,4 +132,6 @@ public final class MTLPixelFormat {
     @Generated
     private MTLPixelFormat() {
     }
+
+    @Generated @NUInt public static final long BGR10A2Unorm = 0x000000000000005EL;
 }

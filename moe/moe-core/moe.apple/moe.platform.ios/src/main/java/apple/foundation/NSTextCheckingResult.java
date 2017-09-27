@@ -325,4 +325,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
+
+    @Generated
+    @Selector("rangeWithName:")
+    @ByValue
+    public native NSRange rangeWithName(String name);
 }

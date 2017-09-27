@@ -175,7 +175,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -535,4 +535,141 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Generated
     @Selector("zNear")
     public native double zNear();
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("apertureBladeCount")
+    @NInt
+    public native long apertureBladeCount();
+
+    @Generated
+    @Selector("fStop")
+    @NFloat
+    public native double fStop();
+
+    @Generated
+    @Selector("fieldOfView")
+    @NFloat
+    public native double fieldOfView();
+
+    @Generated
+    @Selector("focalBlurSampleCount")
+    @NInt
+    public native long focalBlurSampleCount();
+
+    @Generated
+    @Selector("focalLength")
+    @NFloat
+    public native double focalLength();
+
+    @Generated
+    @Selector("focusDistance")
+    @NFloat
+    public native double focusDistance();
+
+    @Generated
+    @Selector("projectionDirection")
+    @NInt
+    public native long projectionDirection();
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("screenSpaceAmbientOcclusionBias")
+    @NFloat
+    public native double screenSpaceAmbientOcclusionBias();
+
+    @Generated
+    @Selector("screenSpaceAmbientOcclusionDepthThreshold")
+    @NFloat
+    public native double screenSpaceAmbientOcclusionDepthThreshold();
+
+    @Generated
+    @Selector("screenSpaceAmbientOcclusionIntensity")
+    @NFloat
+    public native double screenSpaceAmbientOcclusionIntensity();
+
+    @Generated
+    @Selector("screenSpaceAmbientOcclusionNormalThreshold")
+    @NFloat
+    public native double screenSpaceAmbientOcclusionNormalThreshold();
+
+    @Generated
+    @Selector("screenSpaceAmbientOcclusionRadius")
+    @NFloat
+    public native double screenSpaceAmbientOcclusionRadius();
+
+    @Generated
+    @Selector("sensorHeight")
+    @NFloat
+    public native double sensorHeight();
+
+    @Generated
+    @Selector("setApertureBladeCount:")
+    public native void setApertureBladeCount(@NInt long value);
+
+    @Generated
+    @Selector("setFStop:")
+    public native void setFStop(@NFloat double value);
+
+    @Generated
+    @Selector("setFieldOfView:")
+    public native void setFieldOfView(@NFloat double value);
+
+    @Generated
+    @Selector("setFocalBlurSampleCount:")
+    public native void setFocalBlurSampleCount(@NInt long value);
+
+    @Generated
+    @Selector("setFocalLength:")
+    public native void setFocalLength(@NFloat double value);
+
+    @Generated
+    @Selector("setFocusDistance:")
+    public native void setFocusDistance(@NFloat double value);
+
+    @Generated
+    @Selector("setProjectionDirection:")
+    public native void setProjectionDirection(@NInt long value);
+
+    @Generated
+    @Selector("setScreenSpaceAmbientOcclusionBias:")
+    public native void setScreenSpaceAmbientOcclusionBias(@NFloat double value);
+
+    @Generated
+    @Selector("setScreenSpaceAmbientOcclusionDepthThreshold:")
+    public native void setScreenSpaceAmbientOcclusionDepthThreshold(@NFloat double value);
+
+    @Generated
+    @Selector("setScreenSpaceAmbientOcclusionIntensity:")
+    public native void setScreenSpaceAmbientOcclusionIntensity(@NFloat double value);
+
+    @Generated
+    @Selector("setScreenSpaceAmbientOcclusionNormalThreshold:")
+    public native void setScreenSpaceAmbientOcclusionNormalThreshold(@NFloat double value);
+
+    @Generated
+    @Selector("setScreenSpaceAmbientOcclusionRadius:")
+    public native void setScreenSpaceAmbientOcclusionRadius(@NFloat double value);
+
+    @Generated
+    @Selector("setSensorHeight:")
+    public native void setSensorHeight(@NFloat double value);
+
+    @Generated
+    @Selector("setWantsDepthOfField:")
+    public native void setWantsDepthOfField(boolean value);
+
+    @Generated
+    @Selector("wantsDepthOfField")
+    public native boolean wantsDepthOfField();
 }

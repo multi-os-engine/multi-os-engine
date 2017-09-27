@@ -25,6 +25,8 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSURL;
 import apple.foundation.NSUserActivity;
+import apple.intents.INIntent;
+import apple.intents.INIntentResponse;
 import apple.uikit.UIApplication;
 import apple.uikit.UIApplicationShortcutItem;
 import apple.uikit.UILocalNotification;
@@ -487,5 +489,20 @@ public interface UIApplicationDelegate {
     public interface Block_applicationPerformFetchWithCompletionHandler {
         @Generated
         void call_applicationPerformFetchWithCompletionHandler(@NUInt long arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:handleIntent:completionHandler:")
+    default void applicationHandleIntentCompletionHandler(UIApplication application, INIntent intent,
+            @ObjCBlock(name = "call_applicationHandleIntentCompletionHandler") Block_applicationHandleIntentCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applicationHandleIntentCompletionHandler {
+        @Generated
+        void call_applicationHandleIntentCompletionHandler(INIntentResponse arg0);
     }
 }

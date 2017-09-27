@@ -690,4 +690,19 @@ public final class SceneKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNPhysicsTestSearchModeAll();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNHitTestOptionSearchMode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNSceneSourceConvertUnitsToMetersKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNSceneSourceConvertToYUpKey();
 }

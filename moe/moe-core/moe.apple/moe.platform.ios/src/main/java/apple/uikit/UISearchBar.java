@@ -764,4 +764,37 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartDashesType:")
+    public native void setSmartDashesType(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartInsertDeleteType:")
+    public native void setSmartInsertDeleteType(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setSmartQuotesType:")
+    public native void setSmartQuotesType(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("smartDashesType")
+    @NInt
+    public native long smartDashesType();
+
+    @Generated
+    @IsOptional
+    @Selector("smartInsertDeleteType")
+    @NInt
+    public native long smartInsertDeleteType();
+
+    @Generated
+    @IsOptional
+    @Selector("smartQuotesType")
+    @NInt
+    public native long smartQuotesType();
 }

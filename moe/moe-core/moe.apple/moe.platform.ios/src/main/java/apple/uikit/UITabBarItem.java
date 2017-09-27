@@ -22,6 +22,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import apple.uikit.struct.UIOffset;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -49,7 +50,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITabBarItem extends UIBarItem {
+public class UITabBarItem extends UIBarItem implements UISpringLoadedInteractionSupporting {
     static {
         NatJ.register();
     }
@@ -315,4 +316,12 @@ public class UITabBarItem extends UIBarItem {
     @Selector("titlePositionAdjustment")
     @ByValue
     public native UIOffset titlePositionAdjustment();
+
+    @Generated
+    @Selector("isSpringLoaded")
+    public native boolean isSpringLoaded();
+
+    @Generated
+    @Selector("setSpringLoaded:")
+    public native void setSpringLoaded(boolean value);
 }

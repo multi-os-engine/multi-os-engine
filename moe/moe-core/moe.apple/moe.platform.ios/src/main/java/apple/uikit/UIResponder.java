@@ -18,10 +18,12 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSItemProvider;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSUndoManager;
 import apple.foundation.NSUserActivity;
+import apple.uikit.protocol.UIPasteConfigurationSupporting;
 import apple.uikit.protocol.UIResponderStandardEditActions;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -47,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIResponder extends NSObject implements UIResponderStandardEditActions {
+public class UIResponder extends NSObject implements UIResponderStandardEditActions, UIPasteConfigurationSupporting {
     static {
         NatJ.register();
     }
@@ -367,4 +369,22 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();
+
+    @Generated
+    @IsOptional
+    @Selector("canPasteItemProviders:")
+    public native boolean canPasteItemProviders(NSArray<? extends NSItemProvider> itemProviders);
+
+    @Generated
+    @Selector("pasteConfiguration")
+    public native UIPasteConfiguration pasteConfiguration();
+
+    @Generated
+    @IsOptional
+    @Selector("pasteItemProviders:")
+    public native void pasteItemProviders(NSArray<? extends NSItemProvider> itemProviders);
+
+    @Generated
+    @Selector("setPasteConfiguration:")
+    public native void setPasteConfiguration(UIPasteConfiguration value);
 }

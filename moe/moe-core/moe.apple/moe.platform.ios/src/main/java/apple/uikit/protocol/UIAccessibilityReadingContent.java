@@ -18,12 +18,14 @@ package apple.uikit.protocol;
 
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
+import apple.foundation.NSAttributedString;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
@@ -49,4 +51,18 @@ public interface UIAccessibilityReadingContent {
     @Generated
     @Selector("accessibilityPageContent")
     String accessibilityPageContent();
+
+    @Generated
+    @IsOptional
+    @Selector("accessibilityAttributedContentForLineNumber:")
+    default NSAttributedString accessibilityAttributedContentForLineNumber(@NInt long lineNumber) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("accessibilityAttributedPageContent")
+    default NSAttributedString accessibilityAttributedPageContent() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

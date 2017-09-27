@@ -17,6 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.audiotoolbox.AUAudioUnit;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -208,4 +209,16 @@ public class AVAudioNode extends NSObject {
         @Generated
         void call_installTapOnBusBufferSizeFormatBlock(AVAudioPCMBuffer arg0, AVAudioTime arg1);
     }
+
+    @Generated
+    @Selector("AUAudioUnit")
+    public native AUAudioUnit AUAudioUnit();
+
+    @Generated
+    @Selector("latency")
+    public native double latency();
+
+    @Generated
+    @Selector("outputPresentationLatency")
+    public native double outputPresentationLatency();
 }

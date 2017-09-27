@@ -179,79 +179,76 @@ public class MTKTextureLoader extends NSObject {
     @Generated
     @Selector("newTextureWithCGImage:options:completionHandler:")
     public native void newTextureWithCGImageOptionsCompletionHandler(CGImageRef cgImage,
-            NSDictionary<String, ? extends NSObject> options,
+            NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_newTextureWithCGImageOptionsCompletionHandler") Block_newTextureWithCGImageOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("newTextureWithCGImage:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture newTextureWithCGImageOptionsError(CGImageRef cgImage,
-            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MTLTexture newTextureWithCGImageOptionsError(CGImageRef cgImage, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithContentsOfURL:options:completionHandler:")
-    public native void newTextureWithContentsOfURLOptionsCompletionHandler(NSURL URL,
-            NSDictionary<String, ? extends NSObject> options,
+    public native void newTextureWithContentsOfURLOptionsCompletionHandler(NSURL URL, NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_newTextureWithContentsOfURLOptionsCompletionHandler") Block_newTextureWithContentsOfURLOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("newTextureWithContentsOfURL:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture newTextureWithContentsOfURLOptionsError(NSURL URL,
-            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MTLTexture newTextureWithContentsOfURLOptionsError(NSURL URL, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithData:options:completionHandler:")
-    public native void newTextureWithDataOptionsCompletionHandler(NSData data,
-            NSDictionary<String, ? extends NSObject> options,
+    public native void newTextureWithDataOptionsCompletionHandler(NSData data, NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_newTextureWithDataOptionsCompletionHandler") Block_newTextureWithDataOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("newTextureWithData:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture newTextureWithDataOptionsError(NSData data,
-            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MTLTexture newTextureWithDataOptionsError(NSData data, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithMDLTexture:options:completionHandler:")
     public native void newTextureWithMDLTextureOptionsCompletionHandler(MDLTexture texture,
-            NSDictionary<String, ? extends NSObject> options,
+            NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_newTextureWithMDLTextureOptionsCompletionHandler") Block_newTextureWithMDLTextureOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("newTextureWithMDLTexture:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture newTextureWithMDLTextureOptionsError(MDLTexture texture,
-            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MTLTexture newTextureWithMDLTextureOptionsError(MDLTexture texture, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithName:scaleFactor:bundle:options:completionHandler:")
     public native void newTextureWithNameScaleFactorBundleOptionsCompletionHandler(String name,
-            @NFloat double scaleFactor, NSBundle bundle, NSDictionary<String, ? extends NSObject> options,
+            @NFloat double scaleFactor, NSBundle bundle, NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_newTextureWithNameScaleFactorBundleOptionsCompletionHandler") Block_newTextureWithNameScaleFactorBundleOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("newTextureWithName:scaleFactor:bundle:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLTexture newTextureWithNameScaleFactorBundleOptionsError(String name, @NFloat double scaleFactor,
-            NSBundle bundle, NSDictionary<String, ? extends NSObject> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            NSBundle bundle, NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTexturesWithContentsOfURLs:options:completionHandler:")
     public native void newTexturesWithContentsOfURLsOptionsCompletionHandler(NSArray<? extends NSURL> URLs,
-            NSDictionary<String, ? extends NSObject> options,
+            NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_newTexturesWithContentsOfURLsOptionsCompletionHandler") Block_newTexturesWithContentsOfURLsOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("newTexturesWithContentsOfURLs:options:error:")
     public native NSArray<?> newTexturesWithContentsOfURLsOptionsError(NSArray<? extends NSURL> URLs,
-            NSDictionary<String, ? extends NSObject> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTexturesWithNames:scaleFactor:bundle:options:completionHandler:")
     public native void newTexturesWithNamesScaleFactorBundleOptionsCompletionHandler(NSArray<String> names,
-            @NFloat double scaleFactor, NSBundle bundle, NSDictionary<String, ? extends NSObject> options,
+            @NFloat double scaleFactor, NSBundle bundle, NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_newTexturesWithNamesScaleFactorBundleOptionsCompletionHandler") Block_newTexturesWithNamesScaleFactorBundleOptionsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)

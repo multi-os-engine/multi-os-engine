@@ -257,4 +257,86 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     @Generated
     @Selector("uniqueID")
     public native long uniqueID();
+
+    @Generated
+    @Selector("availableEmbeddedThumbnailPhotoCodecTypes")
+    public native NSArray<String> availableEmbeddedThumbnailPhotoCodecTypes();
+
+    @Generated
+    @Selector("embeddedThumbnailPhotoFormat")
+    public native NSDictionary<String, ?> embeddedThumbnailPhotoFormat();
+
+    @Generated
+    @Selector("embedsDepthDataInPhoto")
+    public native boolean embedsDepthDataInPhoto();
+
+    @Generated
+    @Selector("isCameraCalibrationDataDeliveryEnabled")
+    public native boolean isCameraCalibrationDataDeliveryEnabled();
+
+    @Generated
+    @Selector("isDepthDataDeliveryEnabled")
+    public native boolean isDepthDataDeliveryEnabled();
+
+    @Generated
+    @Selector("isDepthDataFiltered")
+    public native boolean isDepthDataFiltered();
+
+    @Generated
+    @Selector("isDualCameraDualPhotoDeliveryEnabled")
+    public native boolean isDualCameraDualPhotoDeliveryEnabled();
+
+    @Generated
+    @Selector("livePhotoVideoCodecType")
+    public native String livePhotoVideoCodecType();
+
+    @Generated
+    @Selector("metadata")
+    public native NSDictionary<String, ?> metadata();
+
+    @Generated
+    @Selector("photoSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:")
+    public static native AVCapturePhotoSettings photoSettingsWithRawPixelFormatTypeRawFileTypeProcessedFormatProcessedFileType(
+            int rawPixelFormatType, String rawFileType, NSDictionary<String, ?> processedFormat,
+            String processedFileType);
+
+    @Generated
+    @Selector("processedFileType")
+    public native String processedFileType();
+
+    @Generated
+    @Selector("rawFileType")
+    public native String rawFileType();
+
+    @Generated
+    @Selector("setCameraCalibrationDataDeliveryEnabled:")
+    public native void setCameraCalibrationDataDeliveryEnabled(boolean value);
+
+    @Generated
+    @Selector("setDepthDataDeliveryEnabled:")
+    public native void setDepthDataDeliveryEnabled(boolean value);
+
+    @Generated
+    @Selector("setDepthDataFiltered:")
+    public native void setDepthDataFiltered(boolean value);
+
+    @Generated
+    @Selector("setDualCameraDualPhotoDeliveryEnabled:")
+    public native void setDualCameraDualPhotoDeliveryEnabled(boolean value);
+
+    @Generated
+    @Selector("setEmbeddedThumbnailPhotoFormat:")
+    public native void setEmbeddedThumbnailPhotoFormat(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("setEmbedsDepthDataInPhoto:")
+    public native void setEmbedsDepthDataInPhoto(boolean value);
+
+    @Generated
+    @Selector("setLivePhotoVideoCodecType:")
+    public native void setLivePhotoVideoCodecType(String value);
+
+    @Generated
+    @Selector("setMetadata:")
+    public native void setMetadata(NSDictionary<String, ?> value);
 }

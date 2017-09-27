@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.quartzcore.CAAnimation;
@@ -162,7 +163,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("animationForKey:")
@@ -243,4 +244,41 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("weightForTargetAtIndex:")
     @NFloat
     public native double weightForTargetAtIndex(@NUInt long targetIndex);
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("setUnifiesNormals:")
+    public native void setUnifiesNormals(boolean value);
+
+    @Generated
+    @Selector("setWeight:forTargetNamed:")
+    public native void setWeightForTargetNamed(@NFloat double weight, String targetName);
+
+    @Generated
+    @Selector("setWeights:")
+    public native void setWeights(NSArray<? extends NSNumber> value);
+
+    @Generated
+    @Selector("unifiesNormals")
+    public native boolean unifiesNormals();
+
+    @Generated
+    @Selector("weightForTargetNamed:")
+    @NFloat
+    public native double weightForTargetNamed(String targetName);
+
+    @Generated
+    @Selector("weights")
+    public native NSArray<? extends NSNumber> weights();
 }

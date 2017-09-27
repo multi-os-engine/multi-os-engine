@@ -19,6 +19,7 @@ package apple;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
+import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
@@ -34,6 +35,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSThread;
 import apple.uikit.UIAccessibilityCustomAction;
 import apple.uikit.UIAccessibilityCustomRotor;
+import apple.uikit.UIAccessibilityLocationDescriptor;
 import apple.uikit.UIBezierPath;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -698,4 +700,54 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
         @Generated
         void call_methodForSelector_ret();
     }
+
+    @Generated
+    @Selector("accessibilityAttributedHint")
+    public native NSAttributedString accessibilityAttributedHint();
+
+    @Generated
+    @Selector("accessibilityAttributedLabel")
+    public native NSAttributedString accessibilityAttributedLabel();
+
+    @Generated
+    @Selector("accessibilityAttributedValue")
+    public native NSAttributedString accessibilityAttributedValue();
+
+    @Generated
+    @Selector("accessibilityContainerType")
+    @NInt
+    public native long accessibilityContainerType();
+
+    @Generated
+    @Selector("accessibilityDragSourceDescriptors")
+    public native NSArray<? extends UIAccessibilityLocationDescriptor> accessibilityDragSourceDescriptors();
+
+    @Generated
+    @Selector("accessibilityDropPointDescriptors")
+    public native NSArray<? extends UIAccessibilityLocationDescriptor> accessibilityDropPointDescriptors();
+
+    @Generated
+    @Selector("setAccessibilityAttributedHint:")
+    public native void setAccessibilityAttributedHint(NSAttributedString value);
+
+    @Generated
+    @Selector("setAccessibilityAttributedLabel:")
+    public native void setAccessibilityAttributedLabel(NSAttributedString value);
+
+    @Generated
+    @Selector("setAccessibilityAttributedValue:")
+    public native void setAccessibilityAttributedValue(NSAttributedString value);
+
+    @Generated
+    @Selector("setAccessibilityContainerType:")
+    public native void setAccessibilityContainerType(@NInt long value);
+
+    @Generated
+    @Selector("setAccessibilityDragSourceDescriptors:")
+    public native void setAccessibilityDragSourceDescriptors(
+            NSArray<? extends UIAccessibilityLocationDescriptor> value);
+
+    @Generated
+    @Selector("setAccessibilityDropPointDescriptors:")
+    public native void setAccessibilityDropPointDescriptors(NSArray<? extends UIAccessibilityLocationDescriptor> value);
 }

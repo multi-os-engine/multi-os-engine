@@ -228,10 +228,28 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     @Generated
     @Selector("videoSupportedFrameRateRanges")
-    public native NSArray<?> videoSupportedFrameRateRanges();
+    public native NSArray<? extends AVFrameRateRange> videoSupportedFrameRateRanges();
 
     @Generated
     @Selector("videoZoomFactorUpscaleThreshold")
     @NFloat
     public native double videoZoomFactorUpscaleThreshold();
+
+    @Generated
+    @Selector("supportedDepthDataFormats")
+    public native NSArray<? extends AVCaptureDeviceFormat> supportedDepthDataFormats();
+
+    @Generated
+    @Selector("unsupportedCaptureOutputClasses")
+    public native NSArray<? extends Class> unsupportedCaptureOutputClasses();
+
+    @Generated
+    @Selector("videoMaxZoomFactorForDepthDataDelivery")
+    @NFloat
+    public native double videoMaxZoomFactorForDepthDataDelivery();
+
+    @Generated
+    @Selector("videoMinZoomFactorForDepthDataDelivery")
+    @NFloat
+    public native double videoMinZoomFactorForDepthDataDelivery();
 }

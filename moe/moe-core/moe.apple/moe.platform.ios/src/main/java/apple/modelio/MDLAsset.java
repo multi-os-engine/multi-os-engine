@@ -24,6 +24,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSFastEnumeration;
+import apple.modelio.protocol.MDLAssetResolver;
 import apple.modelio.protocol.MDLLightProbeIrradianceDataSource;
 import apple.modelio.protocol.MDLMeshBufferAllocator;
 import apple.modelio.protocol.MDLObjectContainerComponent;
@@ -298,4 +299,30 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();
+
+    @Generated
+    @Selector("animations")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MDLObjectContainerComponent animations();
+
+    @Generated
+    @Selector("loadTextures")
+    public native void loadTextures();
+
+    @Generated
+    @Selector("objectAtPath:")
+    public native MDLObject objectAtPath(String path);
+
+    @Generated
+    @Selector("resolver")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MDLAssetResolver resolver();
+
+    @Generated
+    @Selector("setAnimations:")
+    public native void setAnimations(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
+
+    @Generated
+    @Selector("setResolver:")
+    public native void setResolver(@Mapped(ObjCObjectMapper.class) MDLAssetResolver value);
 }

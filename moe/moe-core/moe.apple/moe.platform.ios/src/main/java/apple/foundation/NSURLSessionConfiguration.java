@@ -350,4 +350,21 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("timeoutIntervalForResource")
     public native double timeoutIntervalForResource();
+
+    @Generated
+    @Selector("multipathServiceType")
+    @NInt
+    public native long multipathServiceType();
+
+    @Generated
+    @Selector("setMultipathServiceType:")
+    public native void setMultipathServiceType(@NInt long value);
+
+    @Generated
+    @Selector("setWaitsForConnectivity:")
+    public native void setWaitsForConnectivity(boolean value);
+
+    @Generated
+    @Selector("waitsForConnectivity")
+    public native boolean waitsForConnectivity();
 }

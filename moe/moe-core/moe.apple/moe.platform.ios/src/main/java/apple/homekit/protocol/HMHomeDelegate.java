@@ -28,6 +28,7 @@ import apple.homekit.HMUser;
 import apple.homekit.HMZone;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -239,6 +240,20 @@ public interface HMHomeDelegate {
     @IsOptional
     @Selector("homeDidUpdateName:")
     default void homeDidUpdateName(HMHome home) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("home:didUpdateHomeHubState:")
+    default void homeDidUpdateHomeHubState(HMHome home, @NUInt long homeHubState) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("homeDidUpdateAccessControlForCurrentUser:")
+    default void homeDidUpdateAccessControlForCurrentUser(HMHome home) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

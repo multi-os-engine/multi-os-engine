@@ -109,4 +109,27 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
         @Generated
         void call_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler(NSURLRequest arg0);
     }
+
+    @Generated
+    @IsOptional
+    @Selector("URLSession:task:willBeginDelayedRequest:completionHandler:")
+    default void URLSessionTaskWillBeginDelayedRequestCompletionHandler(NSURLSession session, NSURLSessionTask task,
+            NSURLRequest request,
+            @ObjCBlock(name = "call_URLSessionTaskWillBeginDelayedRequestCompletionHandler") Block_URLSessionTaskWillBeginDelayedRequestCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_URLSessionTaskWillBeginDelayedRequestCompletionHandler {
+        @Generated
+        void call_URLSessionTaskWillBeginDelayedRequestCompletionHandler(@NInt long arg0, NSURLRequest arg1);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("URLSession:taskIsWaitingForConnectivity:")
+    default void URLSessionTaskIsWaitingForConnectivity(NSURLSession session, NSURLSessionTask task) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

@@ -82,13 +82,11 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("blackColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object blackColor();
+    public static native CIColor blackColor();
 
     @Generated
     @Selector("blueColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object blueColor();
+    public static native CIColor blueColor();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -110,8 +108,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("clearColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object clearColor();
+    public static native CIColor clearColor();
 
     @Generated
     @Selector("colorWithCGColor:")
@@ -142,8 +139,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("cyanColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cyanColor();
+    public static native CIColor cyanColor();
 
     @Generated
     @Selector("debugDescription")
@@ -155,13 +151,11 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("grayColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object grayColor();
+    public static native CIColor grayColor();
 
     @Generated
     @Selector("greenColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object greenColor();
+    public static native CIColor greenColor();
 
     @Generated
     @Selector("hash")
@@ -191,8 +185,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("magentaColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object magentaColor();
+    public static native CIColor magentaColor();
 
     @Generated
     @Owned
@@ -202,8 +195,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("redColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object redColor();
+    public static native CIColor redColor();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -232,13 +224,11 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("whiteColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object whiteColor();
+    public static native CIColor whiteColor();
 
     @Generated
     @Selector("yellowColor")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object yellowColor();
+    public static native CIColor yellowColor();
 
     @Generated
     @Selector("alpha")

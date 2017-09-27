@@ -38,6 +38,8 @@ import apple.uikit.protocol.UIViewControllerPreviewingDelegate;
 import apple.uikit.protocol.UIViewControllerRestoration;
 import apple.uikit.protocol.UIViewControllerTransitionCoordinator;
 import apple.uikit.protocol.UIViewControllerTransitioningDelegate;
+import apple.uikit.struct.NSDirectionalEdgeInsets;
+import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -638,10 +640,6 @@ public class UIViewController extends UIResponder
     public native void setDefinesPresentationContext(boolean value);
 
     @Generated
-    @Selector("setDisablesAutomaticKeyboardDismissal:")
-    public native void setDisablesAutomaticKeyboardDismissal(boolean value);
-
-    @Generated
     @Selector("setEdgesForExtendedLayout:")
     public native void setEdgesForExtendedLayout(@NUInt long value);
 
@@ -1015,4 +1013,59 @@ public class UIViewController extends UIResponder
         @Generated
         void call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5(boolean arg0);
     }
+
+    @Generated
+    @Selector("additionalSafeAreaInsets")
+    @ByValue
+    public native UIEdgeInsets additionalSafeAreaInsets();
+
+    @Generated
+    @Selector("childViewControllerForHomeIndicatorAutoHidden")
+    public native UIViewController childViewControllerForHomeIndicatorAutoHidden();
+
+    @Generated
+    @Selector("childViewControllerForScreenEdgesDeferringSystemGestures")
+    public native UIViewController childViewControllerForScreenEdgesDeferringSystemGestures();
+
+    @Generated
+    @Selector("preferredScreenEdgesDeferringSystemGestures")
+    @NUInt
+    public native long preferredScreenEdgesDeferringSystemGestures();
+
+    @Generated
+    @Selector("prefersHomeIndicatorAutoHidden")
+    public native boolean prefersHomeIndicatorAutoHidden();
+
+    @Generated
+    @Selector("setAdditionalSafeAreaInsets:")
+    public native void setAdditionalSafeAreaInsets(@ByValue UIEdgeInsets value);
+
+    @Generated
+    @Selector("setNeedsUpdateOfHomeIndicatorAutoHidden")
+    public native void setNeedsUpdateOfHomeIndicatorAutoHidden();
+
+    @Generated
+    @Selector("setNeedsUpdateOfScreenEdgesDeferringSystemGestures")
+    public native void setNeedsUpdateOfScreenEdgesDeferringSystemGestures();
+
+    @Generated
+    @Selector("setViewRespectsSystemMinimumLayoutMargins:")
+    public native void setViewRespectsSystemMinimumLayoutMargins(boolean value);
+
+    @Generated
+    @Selector("systemMinimumLayoutMargins")
+    @ByValue
+    public native NSDirectionalEdgeInsets systemMinimumLayoutMargins();
+
+    @Generated
+    @Selector("viewLayoutMarginsDidChange")
+    public native void viewLayoutMarginsDidChange();
+
+    @Generated
+    @Selector("viewRespectsSystemMinimumLayoutMargins")
+    public native boolean viewRespectsSystemMinimumLayoutMargins();
+
+    @Generated
+    @Selector("viewSafeAreaInsetsDidChange")
+    public native void viewSafeAreaInsetsDidChange();
 }

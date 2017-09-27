@@ -22,6 +22,8 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.scenekit.struct.SCNMatrix4;
+import apple.scenekit.struct.SCNVector3;
+import apple.scenekit.struct.SCNVector4;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -184,5 +186,33 @@ public class SCNTransformConstraint extends SCNConstraint {
         @Generated
         @ByValue
         SCNMatrix4 call_transformConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNMatrix4 arg1);
+    }
+
+    @Generated
+    @Selector("orientationConstraintInWorldSpace:withBlock:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object orientationConstraintInWorldSpaceWithBlock(boolean world,
+            @ObjCBlock(name = "call_orientationConstraintInWorldSpaceWithBlock") Block_orientationConstraintInWorldSpaceWithBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_orientationConstraintInWorldSpaceWithBlock {
+        @Generated
+        @ByValue
+        SCNVector4 call_orientationConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNVector4 arg1);
+    }
+
+    @Generated
+    @Selector("positionConstraintInWorldSpace:withBlock:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object positionConstraintInWorldSpaceWithBlock(boolean world,
+            @ObjCBlock(name = "call_positionConstraintInWorldSpaceWithBlock") Block_positionConstraintInWorldSpaceWithBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_positionConstraintInWorldSpaceWithBlock {
+        @Generated
+        @ByValue
+        SCNVector3 call_positionConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNVector3 arg1);
     }
 }

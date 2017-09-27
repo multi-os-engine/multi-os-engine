@@ -16,6 +16,8 @@ limitations under the License.
 
 package apple.intents.protocol;
 
+import apple.intents.INBooleanResolutionResult;
+import apple.intents.INCallRecordTypeOptionsResolutionResult;
 import apple.intents.INCallRecordTypeResolutionResult;
 import apple.intents.INDateComponentsRangeResolutionResult;
 import apple.intents.INPersonResolutionResult;
@@ -105,5 +107,35 @@ public interface INSearchCallHistoryIntentHandling {
     public interface Block_resolveRecipientForSearchCallHistoryWithCompletion {
         @Generated
         void call_resolveRecipientForSearchCallHistoryWithCompletion(INPersonResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveCallTypesForSearchCallHistory:withCompletion:")
+    default void resolveCallTypesForSearchCallHistoryWithCompletion(INSearchCallHistoryIntent intent,
+            @ObjCBlock(name = "call_resolveCallTypesForSearchCallHistoryWithCompletion") Block_resolveCallTypesForSearchCallHistoryWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveCallTypesForSearchCallHistoryWithCompletion {
+        @Generated
+        void call_resolveCallTypesForSearchCallHistoryWithCompletion(INCallRecordTypeOptionsResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveUnseenForSearchCallHistory:withCompletion:")
+    default void resolveUnseenForSearchCallHistoryWithCompletion(INSearchCallHistoryIntent intent,
+            @ObjCBlock(name = "call_resolveUnseenForSearchCallHistoryWithCompletion") Block_resolveUnseenForSearchCallHistoryWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveUnseenForSearchCallHistoryWithCompletion {
+        @Generated
+        void call_resolveUnseenForSearchCallHistoryWithCompletion(INBooleanResolutionResult arg0);
     }
 }

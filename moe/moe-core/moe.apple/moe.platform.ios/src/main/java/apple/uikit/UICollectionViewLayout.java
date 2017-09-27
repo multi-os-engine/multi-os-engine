@@ -350,4 +350,13 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("targetIndexPathForInteractivelyMovingItem:withPosition:")
     public native NSIndexPath targetIndexPathForInteractivelyMovingItemWithPosition(NSIndexPath previousIndexPath,
             @ByValue CGPoint position);
+
+    @Generated
+    @Selector("developmentLayoutDirection")
+    @NInt
+    public native long developmentLayoutDirection();
+
+    @Generated
+    @Selector("flipsHorizontallyInOppositeLayoutDirection")
+    public native boolean flipsHorizontallyInOppositeLayoutDirection();
 }

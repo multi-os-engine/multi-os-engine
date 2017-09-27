@@ -34,4 +34,7 @@ public final class ADError {
     @Generated
     private ADError() {
     }
+
+    @Generated @NInt public static final long AdResponseValidateFailure = 0x0000000000000009L;
+    @Generated @NInt public static final long AdAssetLoadPending = 0x000000000000000AL;
 }

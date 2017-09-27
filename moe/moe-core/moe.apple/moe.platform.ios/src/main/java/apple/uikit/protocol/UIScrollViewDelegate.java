@@ -125,4 +125,11 @@ public interface UIScrollViewDelegate {
     default UIView viewForZoomingInScrollView(UIScrollView scrollView) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("scrollViewDidChangeAdjustedContentInset:")
+    default void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

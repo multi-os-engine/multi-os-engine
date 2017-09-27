@@ -32,4 +32,6 @@ public final class MTLTextureType {
     @Generated
     private MTLTextureType() {
     }
+
+    @Generated @NUInt public static final long TypeCubeArray = 0x0000000000000006L;
 }

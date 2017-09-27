@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
 import apple.uikit.UICollectionReusableView;
 import apple.uikit.UICollectionView;
@@ -71,6 +72,21 @@ public interface UICollectionViewDataSource {
     @Selector("numberOfSectionsInCollectionView:")
     @NInt
     default long numberOfSectionsInCollectionView(UICollectionView collectionView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:indexPathForIndexTitle:atIndex:")
+    default NSIndexPath collectionViewIndexPathForIndexTitleAtIndex(UICollectionView collectionView, String title,
+            @NInt long index) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("indexTitlesForCollectionView:")
+    default NSArray<String> indexTitlesForCollectionView(UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

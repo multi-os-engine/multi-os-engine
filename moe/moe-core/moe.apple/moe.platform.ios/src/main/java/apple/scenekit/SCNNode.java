@@ -25,6 +25,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.gameplaykit.GKEntity;
 import apple.modelio.MDLObject;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNActionable;
@@ -34,6 +35,10 @@ import apple.scenekit.protocol.SCNNodeRendererDelegate;
 import apple.scenekit.struct.SCNMatrix4;
 import apple.scenekit.struct.SCNVector3;
 import apple.scenekit.struct.SCNVector4;
+import apple.uikit.UIFocusAnimationCoordinator;
+import apple.uikit.UIFocusUpdateContext;
+import apple.uikit.UIView;
+import apple.uikit.protocol.UIFocusItem;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -53,6 +58,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
@@ -64,7 +70,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class SCNNode extends NSObject
-        implements NSCopying, NSSecureCoding, SCNAnimatable, SCNActionable, SCNBoundingVolume {
+        implements NSCopying, NSSecureCoding, SCNAnimatable, SCNActionable, SCNBoundingVolume, UIFocusItem {
     static {
         NatJ.register();
     }
@@ -197,7 +203,7 @@ public class SCNNode extends NSObject
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(CAAnimation animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
 
     @Generated
     @Selector("addAudioPlayer:")
@@ -664,4 +670,158 @@ public class SCNNode extends NSObject
         @Generated
         void call_enumerateHierarchyUsingBlock(SCNNode arg0, BoolPtr arg1);
     }
+
+    @Generated
+    @Selector("addAnimationPlayer:forKey:")
+    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+
+    @Generated
+    @Selector("animationPlayerForKey:")
+    public native SCNAnimationPlayer animationPlayerForKey(String key);
+
+    @Generated
+    @Selector("canBecomeFocused")
+    public native boolean canBecomeFocused();
+
+    @Generated
+    @Selector("convertVector:fromNode:")
+    @ByValue
+    public native SCNVector3 convertVectorFromNode(@ByValue SCNVector3 vector, SCNNode node);
+
+    @Generated
+    @Selector("convertVector:toNode:")
+    @ByValue
+    public native SCNVector3 convertVectorToNode(@ByValue SCNVector3 vector, SCNNode node);
+
+    @Generated
+    @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
+    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
+            UIFocusAnimationCoordinator coordinator);
+
+    @Generated
+    @Selector("entity")
+    public native GKEntity entity();
+
+    @Generated
+    @Selector("focusBehavior")
+    @NInt
+    public native long focusBehavior();
+
+    @Generated
+    @Selector("localFront")
+    @ByValue
+    public static native SCNVector3 localFront();
+
+    @Generated
+    @Selector("localRight")
+    @ByValue
+    public static native SCNVector3 localRight();
+
+    @Generated
+    @Selector("localRotateBy:")
+    public native void localRotateBy(@ByValue SCNVector4 rotation);
+
+    @Generated
+    @Selector("localTranslateBy:")
+    public native void localTranslateBy(@ByValue SCNVector3 translation);
+
+    @Generated
+    @Selector("localUp")
+    @ByValue
+    public static native SCNVector3 localUp();
+
+    @Generated
+    @Selector("lookAt:")
+    public native void lookAt(@ByValue SCNVector3 worldTarget);
+
+    @Generated
+    @Selector("lookAt:up:localFront:")
+    public native void lookAtUpLocalFront(@ByValue SCNVector3 worldTarget, @ByValue SCNVector3 worldUp,
+            @ByValue SCNVector3 localFront);
+
+    @Generated
+    @Selector("preferredFocusEnvironments")
+    public native NSArray<?> preferredFocusEnvironments();
+
+    @Generated
+    @IsOptional
+    @Selector("preferredFocusedView")
+    public native UIView preferredFocusedView();
+
+    @Generated
+    @Selector("removeAnimationForKey:blendOutDuration:")
+    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("rotateBy:aroundTarget:")
+    public native void rotateByAroundTarget(@ByValue SCNVector4 worldRotation, @ByValue SCNVector3 worldTarget);
+
+    @Generated
+    @Selector("setEntity:")
+    public native void setEntity_unsafe(GKEntity value);
+
+    @Generated
+    public void setEntity(GKEntity value) {
+        Object __old = entity();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setEntity_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setFocusBehavior:")
+    public native void setFocusBehavior(@NInt long value);
+
+    @Generated
+    @Selector("setNeedsFocusUpdate")
+    public native void setNeedsFocusUpdate();
+
+    @Generated
+    @Selector("setWorldOrientation:")
+    public native void setWorldOrientation(@ByValue SCNVector4 value);
+
+    @Generated
+    @Selector("setWorldPosition:")
+    public native void setWorldPosition(@ByValue SCNVector3 value);
+
+    @Generated
+    @Selector("setWorldTransform:")
+    public native void setWorldTransform(@ByValue SCNMatrix4 worldTransform);
+
+    @Generated
+    @Selector("shouldUpdateFocusInContext:")
+    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+
+    @Generated
+    @Selector("updateFocusIfNeeded")
+    public native void updateFocusIfNeeded();
+
+    @Generated
+    @Selector("worldFront")
+    @ByValue
+    public native SCNVector3 worldFront();
+
+    @Generated
+    @Selector("worldOrientation")
+    @ByValue
+    public native SCNVector4 worldOrientation();
+
+    @Generated
+    @Selector("worldPosition")
+    @ByValue
+    public native SCNVector3 worldPosition();
+
+    @Generated
+    @Selector("worldRight")
+    @ByValue
+    public native SCNVector3 worldRight();
+
+    @Generated
+    @Selector("worldUp")
+    @ByValue
+    public native SCNVector3 worldUp();
 }

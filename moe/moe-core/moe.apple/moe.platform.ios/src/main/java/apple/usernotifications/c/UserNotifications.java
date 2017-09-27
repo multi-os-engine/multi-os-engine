@@ -76,4 +76,6 @@ public final class UserNotifications {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UNNotificationDismissActionIdentifier();
+
+    @Generated @NUInt public static final long UNNotificationCategoryOptionNone = 0x0000000000000000L;
 }

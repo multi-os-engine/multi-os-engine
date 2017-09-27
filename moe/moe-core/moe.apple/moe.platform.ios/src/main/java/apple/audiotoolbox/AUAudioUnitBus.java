@@ -230,4 +230,12 @@ public class AUAudioUnitBus extends NSObject {
     @Generated
     @Selector("supportedChannelLayoutTags")
     public native NSArray<? extends NSNumber> supportedChannelLayoutTags();
+
+    @Generated
+    @Selector("setShouldAllocateBuffer:")
+    public native void setShouldAllocateBuffer(boolean value);
+
+    @Generated
+    @Selector("shouldAllocateBuffer")
+    public native boolean shouldAllocateBuffer();
 }

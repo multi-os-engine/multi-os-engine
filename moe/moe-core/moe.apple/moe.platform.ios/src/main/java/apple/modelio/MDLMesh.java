@@ -19,6 +19,7 @@ package apple.modelio;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableArray;
 import apple.foundation.NSSet;
@@ -36,7 +37,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -217,12 +220,12 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:")
     public native void addTangentBasisForTextureCoordinateAttributeNamedNormalAttributeNamedTangentAttributeNamed(
-            String textureCoordinateAttributeName, String normalAttributeNamed, String tangentAttributeNamed);
+            String textureCoordinateAttributeName, String normalAttributeName, String tangentAttributeName);
 
     @Generated
     @Selector("addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:")
     public native void addTangentBasisForTextureCoordinateAttributeNamedTangentAttributeNamedBitangentAttributeNamed(
-            String textureCoordinateAttributeName, String tangentAttributeNamed, String bitangentAttributeName);
+            String textureCoordinateAttributeName, String tangentAttributeName, String bitangentAttributeName);
 
     @Generated
     @Selector("addUnwrappedTextureCoordinatesForAttributeNamed:")
@@ -344,4 +347,17 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();
+
+    @Generated
+    @Selector("addOrthTanBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:")
+    public native void addOrthTanBasisForTextureCoordinateAttributeNamedNormalAttributeNamedTangentAttributeNamed(
+            String textureCoordinateAttributeName, String normalAttributeName, String tangentAttributeName);
+
+    @Generated
+    @Selector("flipTextureCoordinatesInAttributeNamed:")
+    public native void flipTextureCoordinatesInAttributeNamed(String textureCoordinateAttributeName);
+
+    @Generated
+    @Selector("makeVerticesUniqueAndReturnError:")
+    public native boolean makeVerticesUniqueAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

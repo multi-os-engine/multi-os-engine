@@ -34,6 +34,7 @@ import apple.quartzcore.struct.CATransform3D;
 import apple.scenekit.struct.SCNMatrix4;
 import apple.scenekit.struct.SCNVector3;
 import apple.scenekit.struct.SCNVector4;
+import apple.uikit.struct.NSDirectionalEdgeInsets;
 import apple.uikit.struct.UIEdgeInsets;
 import apple.uikit.struct.UIOffset;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -476,4 +477,8 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Generated
     @Selector("unsignedShortValue")
     public native char unsignedShortValue();
+
+    @Generated
+    @Selector("valueWithDirectionalEdgeInsets:")
+    public static native NSValue valueWithDirectionalEdgeInsets(@ByValue NSDirectionalEdgeInsets insets);
 }

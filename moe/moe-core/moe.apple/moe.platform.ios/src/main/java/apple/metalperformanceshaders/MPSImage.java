@@ -22,9 +22,13 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLTexture;
+import apple.metal.struct.MTLRegion;
+import apple.metalperformanceshaders.protocol.MPSImageAllocator;
+import apple.metalperformanceshaders.struct.MPSImageReadWriteParams;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -33,6 +37,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -233,4 +238,30 @@ public class MPSImage extends NSObject {
     @Selector("width")
     @NUInt
     public native long width();
+
+    @Generated
+    @Selector("defaultAllocator")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native MPSImageAllocator defaultAllocator();
+
+    @Generated
+    @Selector("readBytes:dataLayout:bytesPerRow:region:featureChannelInfo:imageIndex:")
+    public native void readBytesDataLayoutBytesPerRowRegionFeatureChannelInfoImageIndex(VoidPtr dataBytes,
+            @NUInt long dataLayout, @NUInt long bytesPerRow, @ByValue MTLRegion region,
+            @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
+
+    @Generated
+    @Selector("readBytes:dataLayout:imageIndex:")
+    public native void readBytesDataLayoutImageIndex(VoidPtr dataBytes, @NUInt long dataLayout, @NUInt long imageIndex);
+
+    @Generated
+    @Selector("writeBytes:dataLayout:bytesPerRow:region:featureChannelInfo:imageIndex:")
+    public native void writeBytesDataLayoutBytesPerRowRegionFeatureChannelInfoImageIndex(ConstVoidPtr dataBytes,
+            @NUInt long dataLayout, @NUInt long bytesPerRow, @ByValue MTLRegion region,
+            @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
+
+    @Generated
+    @Selector("writeBytes:dataLayout:imageIndex:")
+    public native void writeBytesDataLayoutImageIndex(ConstVoidPtr dataBytes, @NUInt long dataLayout,
+            @NUInt long imageIndex);
 }

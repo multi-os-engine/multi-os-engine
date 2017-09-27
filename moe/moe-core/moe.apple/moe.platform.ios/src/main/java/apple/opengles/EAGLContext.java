@@ -208,4 +208,8 @@ public class EAGLContext extends NSObject {
     @Generated
     @Selector("sharegroup")
     public native EAGLSharegroup sharegroup();
+
+    @Generated
+    @Selector("presentRenderbuffer:afterMinimumDuration:")
+    public native boolean presentRenderbufferAfterMinimumDuration(@NUInt long target, double duration);
 }

@@ -19,6 +19,7 @@ package apple.networkextension;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -186,4 +187,16 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("sourceAppIdentifier")
+    public native String sourceAppIdentifier();
+
+    @Generated
+    @Selector("sourceAppUniqueIdentifier")
+    public native NSData sourceAppUniqueIdentifier();
+
+    @Generated
+    @Selector("sourceAppVersion")
+    public native String sourceAppVersion();
 }

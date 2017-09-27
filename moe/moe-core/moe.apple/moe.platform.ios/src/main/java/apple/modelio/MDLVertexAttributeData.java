@@ -187,4 +187,13 @@ public class MDLVertexAttributeData extends NSObject {
     @Selector("stride")
     @NUInt
     public native long stride();
+
+    @Generated
+    @Selector("bufferSize")
+    @NUInt
+    public native long bufferSize();
+
+    @Generated
+    @Selector("setBufferSize:")
+    public native void setBufferSize(@NUInt long value);
 }

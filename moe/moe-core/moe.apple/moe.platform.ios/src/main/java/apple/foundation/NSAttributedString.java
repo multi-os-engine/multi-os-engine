@@ -21,6 +21,8 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSItemProviderReading;
+import apple.foundation.protocol.NSItemProviderWriting;
 import apple.foundation.protocol.NSMutableCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
@@ -45,6 +47,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
@@ -55,7 +58,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSAttributedString extends NSObject implements NSCopying, NSMutableCopying, NSSecureCoding {
+public class NSAttributedString extends NSObject
+        implements NSCopying, NSMutableCopying, NSSecureCoding, NSItemProviderReading, NSItemProviderWriting {
     static {
         NatJ.register();
     }
@@ -333,4 +337,68 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
         void call_enumerateAttributesInRangeOptionsUsingBlock(NSDictionary<String, ?> arg0, @ByValue NSRange arg1,
                 BoolPtr arg2);
     }
+
+    @Generated
+    @IsOptional
+    @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
+    @NInt
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+
+    @Generated
+    @IsOptional
+    @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
+    @NInt
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+        return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
+    @NInt
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+
+    @Generated
+    @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
+            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("objectWithItemProviderData:typeIdentifier:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+        return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
+    }
+
+    @Generated
+    @Selector("readableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> readableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
+    public NSArray<String> _readableTypeIdentifiersForItemProvider() {
+        return readableTypeIdentifiersForItemProvider();
+    }
+
+    @Generated
+    @Selector("writableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
+
+    @Generated
+    @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
+    public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
+        return writableTypeIdentifiersForItemProvider_static();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("writableTypeIdentifiersForItemProvider")
+    public native NSArray<String> writableTypeIdentifiersForItemProvider();
 }

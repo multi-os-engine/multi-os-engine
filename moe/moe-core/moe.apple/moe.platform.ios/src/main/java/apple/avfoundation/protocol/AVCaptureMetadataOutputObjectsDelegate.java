@@ -18,6 +18,7 @@ package apple.avfoundation.protocol;
 
 import apple.avfoundation.AVCaptureConnection;
 import apple.avfoundation.AVCaptureOutput;
+import apple.avfoundation.AVMetadataObject;
 import apple.foundation.NSArray;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -35,8 +36,8 @@ public interface AVCaptureMetadataOutputObjectsDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputMetadataObjects:fromConnection:")
-    default void captureOutputDidOutputMetadataObjectsFromConnection(AVCaptureOutput captureOutput,
-            NSArray<?> metadataObjects, AVCaptureConnection connection) {
+    default void captureOutputDidOutputMetadataObjectsFromConnection(AVCaptureOutput output,
+            NSArray<? extends AVMetadataObject> metadataObjects, AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

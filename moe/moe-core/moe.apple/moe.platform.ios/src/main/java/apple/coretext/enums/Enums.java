@@ -794,4 +794,20 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated public static final int kCTFontTableCBDT = 0x43424454;
+    @Generated public static final int kCTFontTableCBLC = 0x43424C43;
+    @Generated public static final int kCTFontTableCFF2 = 0x43464632;
+    @Generated public static final int kCTFontTableCOLR = 0x434F4C52;
+    @Generated public static final int kCTFontTableCPAL = 0x4350414C;
+    @Generated public static final int kCTFontTableHVAR = 0x48564152;
+    @Generated public static final int kCTFontTableMERG = 0x4D455247;
+    @Generated public static final int kCTFontTableMVAR = 0x4D564152;
+    @Generated public static final int kCTFontTableSTAT = 0x53544154;
+    @Generated public static final int kCTFontTableSVG = 0x53564720;
+    @Generated public static final int kCTFontTableVVAR = 0x56564152;
+    @Generated public static final int kCTFontTableCidg = 0x63696467;
+    @Generated public static final int kCTFontTableFond = 0x666F6E64;
+    @Generated public static final int kCTFontTableMeta = 0x6D657461;
+    @Generated public static final int kCTFontTableXref = 0x78726566;
 }

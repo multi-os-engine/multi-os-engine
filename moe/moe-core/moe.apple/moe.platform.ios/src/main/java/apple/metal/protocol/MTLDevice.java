@@ -17,8 +17,12 @@ limitations under the License.
 package apple.metal.protocol;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.IOSurfaceRef;
+import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSError;
+import apple.foundation.NSURL;
+import apple.metal.MTLArgumentDescriptor;
 import apple.metal.MTLCompileOptions;
 import apple.metal.MTLComputePipelineDescriptor;
 import apple.metal.MTLComputePipelineReflection;
@@ -28,6 +32,8 @@ import apple.metal.MTLRenderPipelineDescriptor;
 import apple.metal.MTLRenderPipelineReflection;
 import apple.metal.MTLSamplerDescriptor;
 import apple.metal.MTLTextureDescriptor;
+import apple.metal.MTLTileRenderPipelineDescriptor;
+import apple.metal.struct.MTLSamplePosition;
 import apple.metal.struct.MTLSize;
 import apple.metal.struct.MTLSizeAndAlign;
 import org.moe.natj.general.ann.ByValue;
@@ -38,6 +44,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
@@ -279,4 +286,85 @@ public interface MTLDevice {
         void call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler(
                 @Mapped(ObjCObjectMapper.class) Object arg0, MTLRenderPipelineReflection arg1, NSError arg2);
     }
+
+    @Generated
+    @Selector("areProgrammableSamplePositionsSupported")
+    boolean areProgrammableSamplePositionsSupported();
+
+    @Generated
+    @Selector("areRasterOrderGroupsSupported")
+    boolean areRasterOrderGroupsSupported();
+
+    @Generated
+    @Selector("argumentBuffersSupport")
+    @NUInt
+    long argumentBuffersSupport();
+
+    @Generated
+    @Selector("currentAllocatedSize")
+    @NUInt
+    long currentAllocatedSize();
+
+    @Generated
+    @Selector("getDefaultSamplePositions:count:")
+    void getDefaultSamplePositionsCount(
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
+            @NUInt long count);
+
+    @Generated
+    @Selector("maxThreadgroupMemoryLength")
+    @NUInt
+    long maxThreadgroupMemoryLength();
+
+    @Generated
+    @Selector("minimumLinearTextureAlignmentForPixelFormat:")
+    @NUInt
+    long minimumLinearTextureAlignmentForPixelFormat(@NUInt long format);
+
+    @Generated
+    @Selector("newArgumentEncoderWithArguments:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newArgumentEncoderWithArguments(NSArray<? extends MTLArgumentDescriptor> arguments);
+
+    @Generated
+    @Selector("newLibraryWithURL:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newLibraryWithURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("newRenderPipelineStateWithTileDescriptor:options:completionHandler:")
+    void newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler(MTLTileRenderPipelineDescriptor descriptor,
+            @NUInt long options,
+            @ObjCBlock(name = "call_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler") Block_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler {
+        @Generated
+        void call_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object arg0, MTLRenderPipelineReflection arg1, NSError arg2);
+    }
+
+    @Generated
+    @Selector("newRenderPipelineStateWithTileDescriptor:options:reflection:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newRenderPipelineStateWithTileDescriptorOptionsReflectionError(MTLTileRenderPipelineDescriptor descriptor,
+            @NUInt long options,
+            @ReferenceInfo(type = MTLRenderPipelineReflection.class) Ptr<MTLRenderPipelineReflection> reflection,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("newTextureWithDescriptor:iosurface:plane:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newTextureWithDescriptorIosurfacePlane(MTLTextureDescriptor descriptor, IOSurfaceRef iosurface,
+            @NUInt long plane);
+
+    @Generated
+    @Selector("readWriteTextureSupport")
+    @NUInt
+    long readWriteTextureSupport();
+
+    @Generated
+    @Selector("registryID")
+    long registryID();
 }

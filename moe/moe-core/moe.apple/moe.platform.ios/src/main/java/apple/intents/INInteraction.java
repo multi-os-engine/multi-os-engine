@@ -282,4 +282,9 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
         @Generated
         void call_donateInteractionWithCompletion(NSError arg0);
     }
+
+    @Generated
+    @Selector("parameterValueForParameter:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object parameterValueForParameter(INParameter parameter);
 }
