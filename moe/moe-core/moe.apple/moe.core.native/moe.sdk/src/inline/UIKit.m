@@ -40,6 +40,10 @@ EXPORT UIEdgeInsets __natj_inline_UIEdgeInsetsMake(CGFloat top, CGFloat left, CG
 	return UIEdgeInsetsMake(top, left, bottom, right);
 }
 
+EXPORT NSDirectionalEdgeInsets __natj_inline_NSDirectionalEdgeInsetsMake(CGFloat top, CGFloat leading, CGFloat bottom, CGFloat trailing) {
+	return NSDirectionalEdgeInsetsMake(top, leading, bottom, trailing);
+}
+
 EXPORT CGRect __natj_inline_UIEdgeInsetsInsetRect(CGRect rect, UIEdgeInsets insets) {
 	return UIEdgeInsetsInsetRect(rect, insets);
 }
@@ -50,6 +54,10 @@ EXPORT UIOffset __natj_inline_UIOffsetMake(CGFloat horizontal, CGFloat vertical)
 
 EXPORT BOOL __natj_inline_UIEdgeInsetsEqualToEdgeInsets(UIEdgeInsets insets1, UIEdgeInsets insets2) {
 	return UIEdgeInsetsEqualToEdgeInsets(insets1, insets2);
+}
+
+EXPORT BOOL __natj_inline_NSDirectionalEdgeInsetsEqualToDirectionalEdgeInsets(NSDirectionalEdgeInsets insets1, NSDirectionalEdgeInsets insets2) {
+	return NSDirectionalEdgeInsetsEqualToDirectionalEdgeInsets(insets1, insets2);
 }
 
 EXPORT BOOL __natj_inline_UIOffsetEqualToOffset(UIOffset offset1, UIOffset offset2) {

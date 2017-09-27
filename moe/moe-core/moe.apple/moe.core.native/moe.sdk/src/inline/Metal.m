@@ -41,6 +41,10 @@ EXPORT MTLRegion __natj_inline_MTLRegionMake3D(NSUInteger x, NSUInteger y, NSUIn
 	return MTLRegionMake3D(x, y, z, width, height, depth);
 }
 
+EXPORT MTLSamplePosition __natj_inline_MTLSamplePositionMake(float x, float y) {
+	return MTLSamplePositionMake(x, y);
+}
+
 EXPORT MTLClearColor __natj_inline_MTLClearColorMake(double red, double green, double blue, double alpha) {
 	return MTLClearColorMake(red, green, blue, alpha);
 }
