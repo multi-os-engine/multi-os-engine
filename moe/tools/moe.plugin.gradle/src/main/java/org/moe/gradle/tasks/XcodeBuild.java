@@ -927,6 +927,10 @@ public class XcodeBuild extends AbstractBaseTask {
                 }
 
                 NSDictionary suppressBuildableAutocreationDict = (NSDictionary)rootDict.objectForKey("SuppressBuildableAutocreation");
+                if (suppressBuildableAutocreationDict == null) {
+                    suppressBuildableAutocreationDict = new NSDictionary();
+                    rootDict.put("SuppressBuildableAutocreation", suppressBuildableAutocreationDict);
+                }
                 NSDictionary targetDict = (NSDictionary)suppressBuildableAutocreationDict.get(targetId);
                 if (targetDict == null) {
                     targetDict = new NSDictionary();
