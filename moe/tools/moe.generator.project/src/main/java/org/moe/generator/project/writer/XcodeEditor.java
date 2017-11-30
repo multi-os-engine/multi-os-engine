@@ -184,6 +184,10 @@ public class XcodeEditor extends AbstractXcodeEditor {
                 .entrySet()) {
             if (entry.getValue() instanceof PBXBuildFile) {
                 final PBXObjectRef<?> fileRefObjRef = ((PBXBuildFile)entry.getValue()).getFileRef();
+                if (fileRefObjRef == null) {
+                    toRemove.add(entry.getKey());
+                    continue;
+                }
                 final PBXObject filerefobj = fileRefObjRef.getReferenced();
                 if (filerefobj instanceof PBXFileReference) {
                     PBXFileReference fileref = (PBXFileReference)filerefobj;
