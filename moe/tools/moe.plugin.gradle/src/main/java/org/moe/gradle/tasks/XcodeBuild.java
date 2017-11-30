@@ -255,7 +255,7 @@ public class XcodeBuild extends AbstractBaseTask {
     @Optional
     @Nullable
     public String getProvisioningProfileSpecifier() {
-        return nullableGetOrConvention(provisioningProfileSpecifier, CONVENTION_PROVISIONING_PROFILE);
+        return nullableGetOrConvention(provisioningProfileSpecifier, CONVENTION_PROVISIONING_PROFILE_SPECIFIER);
     }
 
     @IgnoreUnused

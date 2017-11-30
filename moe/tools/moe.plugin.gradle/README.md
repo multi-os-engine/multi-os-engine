@@ -606,6 +606,8 @@ moe {
 }
 ```
 
+**Note:** If xcode project use manual signing, provisioningProfileSpecifier is required!
+
 #### Task Properties
 
 - `inputApp`: path to the app to create the ipa from.

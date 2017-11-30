@@ -24,6 +24,9 @@ public class ExportOptionsPlistManager {
     public static final String DISPLAY_IMAGE_URL_KEY = "displayImageURL";
     public static final String FULL_SIZE_IMAGE_URL_KEY = "fullSizeImageURL";
     public static final String MANIFEST_KEY = "manifest";
+    public static final String PROVISIONING_PROFILES_KEY = "provisioningProfiles";
+    public static final String SIGNING_STYLE_KEY = "signingStyle";
+    public static final String SIGNING_CERTIFICATE_KEY = "signingCertificate";
 
     public static final String APP_STORE_METHOD = "app-store";
     public static final String AD_HOC_METHOD = "ad-hoc";
@@ -114,6 +117,28 @@ public class ExportOptionsPlistManager {
             rootDict.put(MANIFEST_KEY, manifest);
         }
         return manifest;
+    }
+
+    public void setProvisioningProfiles(String bundleId, String provisioningProfileSpecifier) {
+        NSDictionary provisioningProfiles = getProvisioningProfilesOrCreate();
+        provisioningProfiles.put(bundleId, provisioningProfileSpecifier);
+    }
+
+    public NSDictionary getProvisioningProfilesOrCreate() {
+        NSDictionary provisioningProfiles = (NSDictionary) rootDict.get(PROVISIONING_PROFILES_KEY);
+        if (provisioningProfiles == null) {
+            provisioningProfiles = new NSDictionary();
+            rootDict.put(PROVISIONING_PROFILES_KEY, provisioningProfiles);
+        }
+        return provisioningProfiles;
+    }
+
+    public void setSigningStyle(String style) {
+        rootDict.put(SIGNING_STYLE_KEY, style);
+    }
+
+    public void setSigningCertificate(String certificate) {
+        rootDict.put(SIGNING_CERTIFICATE_KEY, certificate);
     }
 
     public void save() throws IOException {

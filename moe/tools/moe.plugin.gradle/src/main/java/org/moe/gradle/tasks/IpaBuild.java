@@ -78,6 +78,11 @@ public class IpaBuild extends AbstractBaseTask {
     private static final String CONVENTION_FULL_SIZE_IMAGE_URL = "fullSizeImageURL";
     private static final String CONVENTION_USER_PLIST_FILE = "userPlistFile";
     private static final String CONVENTION_USER_EXPORT_PLIST = "userExportPlist";
+    private static final String CONVENTION_BUNDLE_IDENTIFIER = "bundleIdentifier";
+    private static final String CONVENTION_PROVISIONING_PROFILE_SPECIFIER = "provisioningProfileSpecifier";
+    private static final String CONVENTION_PROVISIONING_PROFILE = "provisioningProfile";
+
+    public static final String BUNDLE_IDENTIFIER_KEY = "PRODUCT_BUNDLE_IDENTIFIER";
 
     @Nullable
     private Object inputApp;
@@ -124,17 +129,17 @@ public class IpaBuild extends AbstractBaseTask {
     }
 
     @Nullable
-    private String target;
+    private String bundleIdentifier;
 
     @Input
     @NotNull
-    public String getTarget() {
-        return getOrConvention(target, CONVENTION_TARGET);
+    public String getBundleIdentifier() {
+        return nullableGetOrConvention(bundleIdentifier, CONVENTION_BUNDLE_IDENTIFIER);
     }
 
     @IgnoreUnused
-    public void setTarget(@Nullable String target) {
-        this.target = target;
+    public void setBundleIdentifier(@Nullable String bundleIdentifier) {
+        this.bundleIdentifier = bundleIdentifier;
     }
 
     @Nullable
@@ -447,6 +452,48 @@ public class IpaBuild extends AbstractBaseTask {
         this.uploadSymbols = uploadSymbols;
     }
 
+    @Nullable
+    private String provisioningProfileSpecifier;
+
+    @Input
+    @Optional
+    public String getProvisioningProfileSpecifier() {
+        return nullableGetOrConvention(provisioningProfileSpecifier, CONVENTION_PROVISIONING_PROFILE_SPECIFIER);
+    }
+
+    @IgnoreUnused
+    public void setProvisioningProfileSpecifier(@Nullable String provisioningProfileSpecifier) {
+        this.provisioningProfileSpecifier = provisioningProfileSpecifier;
+    }
+
+    @Nullable
+    private String provisioningProfile;
+
+    @Input
+    @Optional
+    public String getProvisioningProfile() {
+        return nullableGetOrConvention(provisioningProfile, CONVENTION_PROVISIONING_PROFILE);
+    }
+
+    @IgnoreUnused
+    public void setProvisioningProfile(@Nullable String provisioningProfile) {
+        this.provisioningProfileSpecifier = provisioningProfile;
+    }
+
+    @Nullable
+    private String target;
+
+    @Input
+    @NotNull
+    public String getTarget() {
+        return getOrConvention(target, CONVENTION_TARGET);
+    }
+
+    @IgnoreUnused
+    public void setTarget(@Nullable String target) {
+        this.target = target;
+    }
+
     @Override
     protected void run() {
         getMoePlugin().requireMacHostOrRemoteServerConfig(this);
@@ -466,6 +513,7 @@ public class IpaBuild extends AbstractBaseTask {
 
         if (!isUserExportPlist()) {
             generateExportOptionsPlist();
+        } else {
             LOG.warn("Ipa export option plist is defined, ignore all other settings");
         }
 
@@ -569,6 +617,14 @@ public class IpaBuild extends AbstractBaseTask {
             }
             return resolvePathRelativeToRoot(getProject().file(workspace));
         });
+        addConvention(CONVENTION_BUNDLE_IDENTIFIER, () -> {
+            final Map<String, String> buildSettings = xcodeBuildTask.getNullableXcodeBuildSettings();
+            if (buildSettings == null) {
+                return null;
+            }
+            final String bundleIdentifier = buildSettings.get(BUNDLE_IDENTIFIER_KEY);
+            return bundleIdentifier;
+        });
 
         addConvention(CONVENTION_EXPORT_METHOD, ext.ipaExport::getMethod);
         setUploadBitcode(ext.ipaExport.getUploadBitcode());
@@ -607,6 +663,12 @@ public class IpaBuild extends AbstractBaseTask {
         });
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
+        addConvention(CONVENTION_PROVISIONING_PROFILE_SPECIFIER, () -> {
+            return ext.signing.getProvisioningProfileSpecifier();
+        });
+        addConvention(CONVENTION_PROVISIONING_PROFILE, () -> {
+            return ext.signing.getProvisioningProfile();
+        });
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "IpaBuild.log"));
     }
 
@@ -683,6 +745,11 @@ public class IpaBuild extends AbstractBaseTask {
 
         args.add("-archivePath");
         args.add(_archiveFile);
+
+        String provProf = getProvisioningProfile();
+        if (provProf != null && !provProf.isEmpty()) {
+            args.add("PROVISIONING_PROFILE=" + provProf);
+        }
         return args;
     }
 
@@ -829,6 +896,17 @@ public class IpaBuild extends AbstractBaseTask {
             String fullSizeImageURL = getFullSizeImageURL();
             if (fullSizeImageURL != null && !fullSizeImageURL.isEmpty()) {
                 manager.setFullSizeImageURL(fullSizeImageURL);
+            }
+
+            String bundleId = getBundleIdentifier();
+            String provisioningProf = getProvisioningProfileSpecifier();
+
+            if (bundleId == null || bundleId.isEmpty()) {
+                throw new GradleException("Bundle id is null");
+            }
+
+            if (bundleId != null && !bundleId.isEmpty() && provisioningProf != null && !provisioningProf.isEmpty()) {
+                manager.setProvisioningProfiles(bundleId, provisioningProf);
             }
 
             manager.save();
