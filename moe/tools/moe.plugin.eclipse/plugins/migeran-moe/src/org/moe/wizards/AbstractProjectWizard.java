@@ -77,7 +77,7 @@ public abstract class AbstractProjectWizard extends Wizard implements INewWizard
 		final File projectFile = projectSettingsPage.isUseDefault() ? new File(path.toOSString() , projectName) : new File(path.toOSString());
 		
 		projectComposer.setTargetDirectory(projectFile)
-        .setMoeVersion("1.3.+")
+        .setMoeVersion("1.4.+")
         .setProjectName(projectName)
         .setOrganizationName(organizationName)
         .setOrganizationID(xcodeWizardPage.getCompanyIdentifier())
