@@ -132,7 +132,15 @@ public class MOESdkPlugin {
         return modules;
     }
 
+    public static boolean isValidMoeLibModule(Module module) {
+        return isValidMoeModule(module, "moeSDKProperties");
+    }
+
     public static boolean isValidMoeModule(Module module) {
+        return isValidMoeModule(module, "moeLaunch");
+    }
+
+    public static boolean isValidMoeModule(Module module, String taskName) {
         if (module == null) {
             return false;
         }

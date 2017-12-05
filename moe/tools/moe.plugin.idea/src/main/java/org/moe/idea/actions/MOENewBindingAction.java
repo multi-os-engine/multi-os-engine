@@ -92,7 +92,7 @@ public class MOENewBindingAction extends AnAction {
         module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
 
         boolean enabled = false;
-        if ((module != null) && MOESdkPlugin.isValidMoeModule(module)) {
+        if ((module != null) && MOESdkPlugin.isValidMoeLibModule(module)) {
             enabled = true;
         }
 
