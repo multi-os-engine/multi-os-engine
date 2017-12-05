@@ -192,7 +192,7 @@ public class MOESdkPlugin {
             return false;
         }
         for (ExternalTaskPojo taskPojo : taskPojos) {
-            if ("moeSDKProperties".equals(taskPojo.getName())) {
+            if (taskName.equals(taskPojo.getName())) {
                 return true;
             }
         }
