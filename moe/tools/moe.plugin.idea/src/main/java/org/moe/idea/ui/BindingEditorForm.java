@@ -82,7 +82,7 @@ public class BindingEditorForm {
             try {
                 bindings.load(configurationFile);
             } catch (Exception e) {
-                LOG.info("Wrong configurationó: " + e.getMessage());
+                LOG.info("Wrong configuration: " + e.getMessage());
             }
         }
     }
