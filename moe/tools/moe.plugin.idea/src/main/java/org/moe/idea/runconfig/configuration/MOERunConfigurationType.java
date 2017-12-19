@@ -53,4 +53,9 @@ public class MOERunConfigurationType extends MOERunConfigurationTypeBase {
     public static MOERunConfigurationType getInstance() {
         return ConfigurationTypeUtil.findConfigurationType(MOERunConfigurationType.class);
     }
+
+    @Override
+    public boolean isDumbAware() {
+        return false;
+    }
 }

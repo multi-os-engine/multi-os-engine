@@ -30,7 +30,7 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
 group 'org.multi-os-engine'
-version '1.4.0'
+version '1.4.1'
 
 sourceCompatibility = 1.6
 targetCompatibility = 1.6
@@ -43,7 +43,7 @@ def PLUGIN_NAME = 'moe_intellij_plugin'
 //}
 
 intellij {
-    version 'IC-2016.2'
+    version 'IC-2017.3'
     plugins = ['gradle', 'maven']
     pluginName PLUGIN_NAME
     downloadSources false
