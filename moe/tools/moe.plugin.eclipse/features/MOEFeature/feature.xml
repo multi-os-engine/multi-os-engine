@@ -2,7 +2,7 @@
 <feature
       id="MOEFeature"
       label="Multi-OS Engine Developer Tools"
-      version="1.4.0.qualifier"
+      version="1.4.1.qualifier"
       provider-name="Multi-OS Engine"
       plugin="MOE-Eclipse">
 
