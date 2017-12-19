@@ -40,7 +40,7 @@ public class XcodeEditorManager {
     public static final String DEVICE_IPHONE_KEY = "iPhone";
     public static final String DEVICE_IPAD_KEY = "iPad";
     public static final String DEVICE_UNIVERSAL_KEY = "Universal";
-    public static final String[] DEPLOYMENT_TARGET_SUGGESTED_VALUES = {"8.0", "8.1", "8.2", "8.3", "8.4", "9.0", "9.1", "9.2", "9.3", "10.0"};
+    public static final String[] DEPLOYMENT_TARGET_SUGGESTED_VALUES = {"8.0", "8.1", "8.2", "8.3", "8.4", "9.0", "9.1", "9.2", "9.3", "10.0", "10.1", "10.2", "10.3", "11.0", "11.1", "11.2"};
     public static final String PRODUCT_BUNDLE_ID_KEY = "PRODUCT_BUNDLE_IDENTIFIER";
     public static final String ORGANIZATIONNAME_KEY = "ORGANIZATIONNAME";
     public static final String STORYBOARD_FILE = ".storyboard";
