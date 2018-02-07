@@ -9,7 +9,7 @@
         <relativePath>../../pom.xml</relativePath>
         <groupId>org.multi-os-engine</groupId>
         <artifactId>eclipse-ide</artifactId>
-        <version>1.4.1-SNAPSHOT</version>
+        <version>1.4.2-SNAPSHOT</version>
     </parent>
     <build>
         <plugins>
