@@ -901,10 +901,6 @@ public class IpaBuild extends AbstractBaseTask {
             String bundleId = getBundleIdentifier();
             String provisioningProf = getProvisioningProfileSpecifier();
 
-            if (bundleId == null || bundleId.isEmpty()) {
-                throw new GradleException("Bundle id is null");
-            }
-
             if (bundleId != null && !bundleId.isEmpty() && provisioningProf != null && !provisioningProf.isEmpty()) {
                 manager.setProvisioningProfiles(bundleId, provisioningProf);
             }
