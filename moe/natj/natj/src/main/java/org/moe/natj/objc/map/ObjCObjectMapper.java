@@ -341,11 +341,11 @@ public class ObjCObjectMapper implements Mapper {
                     && ((NativeObject) instance).getPeer().getPeer() == 0) {
 
                 // Check whether we are handling an init message
-                NativeObject target = null;
+                Object target = null;
                 if (isInitHandlingNeeded) {
-                    target = (NativeObject) ObjCRuntime.getInitTargetOnCurrentThread();
-                    if (target != null && !info.arg) {
-                        Pointer pointer = target.getPeer();
+                    target = ObjCRuntime.getInitTargetOnCurrentThread();
+                    if (target != null && !info.arg && target instanceof NativeObject) {
+                        Pointer pointer = ((NativeObject)target).getPeer();
                         pointer.setPeer(0);
                     }
                 }
@@ -437,7 +437,9 @@ public class ObjCObjectMapper implements Mapper {
                 if (!info.arg) {
                     if (target != null) {
                         if (instance != target) {
-                            ((NativeObject) target).getPeer().setPeer(0);
+                            if (target instanceof NativeObject) {
+                                ((NativeObject) target).getPeer().setPeer(0);
+                            }
                             ObjCRuntime.releaseObject(peer);
                         }
                     } else if (info.owned) {
