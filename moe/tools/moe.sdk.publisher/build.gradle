@@ -28,7 +28,7 @@ plugins {
 }
 
 group 'org.multi-os-engine'
-version '1.4.0'
+version '1.4.2'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
