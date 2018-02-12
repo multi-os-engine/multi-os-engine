@@ -22,12 +22,7 @@ import org.moe.gradle.natj.IBActionAndOutletComposer.ClassVisitor;
 import org.moe.gradle.utils.Require;
 import org.objectweb.asm.Type;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.BiConsumer;
 
 /**
@@ -37,7 +32,7 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
 
     private static final Logger LOG = Logging.getLogger(NatJResolver.class);
 
-    final Map<String, ResolvedClass> classes = new HashMap<>();
+    final TreeMap<String, ResolvedClass> classes = new TreeMap<>();
     final List<String> issues = new ArrayList<>();
 
     /**
@@ -141,7 +136,7 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
     /**
      * Adds a skipping issue to the issues list.
      *
-     * @param clazz Skipped class
+     * @param clazz  Skipped class
      * @param reason Skipping reason
      */
     private void issueSkip(String clazz, String reason) {
@@ -152,10 +147,10 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
     /**
      * Creates an ordered list based on class hierarchy.
      *
-     * @param clazz Class name to add order for
+     * @param clazz    Class name to add order for
      * @param resolved Class to add order for
-     * @param order Ordered list
-     * @param ordered Set of objects already in the ordered list
+     * @param order    Ordered list
+     * @param ordered  Set of objects already in the ordered list
      */
     private void createOrder(String clazz, ResolvedClass resolved, List<String> order, Set<String> ordered) {
         Require.nonNull(clazz);

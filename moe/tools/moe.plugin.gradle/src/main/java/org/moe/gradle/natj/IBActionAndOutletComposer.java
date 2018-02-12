@@ -29,11 +29,7 @@ import org.objectweb.asm.Type;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -163,6 +159,10 @@ public class IBActionAndOutletComposer {
                 builder.append(" <").append(interfaces.stream().collect(Collectors.joining(", "))).append(">");
             }
             builder.append("\n");
+
+            //Sort methods
+            Collections.sort(v.methods);
+
             v.methods.forEach(m -> {
                 final Type methodType = Type.getMethodType(m.getDesc());
                 final String sel = m.getSel();
@@ -328,7 +328,7 @@ public class IBActionAndOutletComposer {
             return new org.objectweb.asm.ClassVisitor(api, super.getInitializingVisitor(api, consumer)) {
                 @Override
                 public MethodVisitor visitMethod(int access, String name, String desc, String signature,
-                        String[] exceptions) {
+                                                 String[] exceptions) {
                     if (!hasObjcClassName() && !hasObjcClassBinding()) {
                         return null;
                     }

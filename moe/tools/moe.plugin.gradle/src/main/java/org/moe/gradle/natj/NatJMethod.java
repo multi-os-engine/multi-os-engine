@@ -26,17 +26,19 @@ import java.util.function.Consumer;
 /**
  * Class representing a Java method.
  */
-public class NatJMethod {
+public class NatJMethod implements Comparable {
 
     /**
      * Java name of the method.
      */
-    @NotNull private final String name;
+    @NotNull
+    private final String name;
 
     /**
      * Java method descriptor.
      */
-    @NotNull private final String desc;
+    @NotNull
+    private final String desc;
 
     /**
      * Java method static attribute.
@@ -46,7 +48,8 @@ public class NatJMethod {
     /**
      * Optional Objective-C selector.
      */
-    @Nullable private String sel;
+    @Nullable
+    private String sel;
 
     /**
      * Flag for existence of @IBAction annotation.
@@ -165,7 +168,7 @@ public class NatJMethod {
     /**
      * Returns a MethodVisitor used to initialize this object.
      *
-     * @param api ASM API version
+     * @param api      ASM API version
      * @param consumer Consumer to invoke post-initialization.
      * @return MethodVisitor instance
      */
@@ -220,7 +223,7 @@ public class NatJMethod {
                         @Override
                         public void visit(String name, Object value) {
                             if ("value".equals(name)) {
-                                sel = (String)value;
+                                sel = (String) value;
                             }
                         }
                     };
@@ -240,5 +243,11 @@ public class NatJMethod {
     @Override
     public String toString() {
         return name + desc;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        NatJMethod m = (NatJMethod) o;
+        return this.name.compareTo(m.name);
     }
 }
