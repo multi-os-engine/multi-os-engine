@@ -17,6 +17,10 @@ limitations under the License.
 package org.moe.idea.component;
 
 import com.intellij.ProjectTopics;
+import com.intellij.compiler.CompilerManagerImpl;
+import com.intellij.execution.RunManager;
+import com.intellij.execution.impl.RunManagerImpl;
+import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileTask;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
@@ -59,18 +63,8 @@ public class MOEProjectComponent extends AbstractProjectComponent {
         super.disposeComponent();
     }
 
-    private void installCompileTask() {
-        for (CompileTask task : CompilerManager.getInstance(myProject).getAfterTasks()) {
-            if (task instanceof MOECompileTask) {
-                return;
-            }
-        }
-        CompilerManager.getInstance(myProject).addAfterTask(new MOECompileTask());
-    }
-
     @Override
     public void projectOpened() {
-        installCompileTask();
         // Find MOE modules
         for (Module module : ModuleManager.getInstance(myProject).getModules()) {
             if (MOESdkPlugin.isValidMoeModule(module)) {
