@@ -38,7 +38,7 @@ brew install repo
 Mainline branch:
 
 ```
-repo init -u https://github.com/multi-os-engine-community/manifest.git
+repo init -u https://github.com/multi-os-engine-community/manifest.git -b moe-master
 repo sync
 ```
 
