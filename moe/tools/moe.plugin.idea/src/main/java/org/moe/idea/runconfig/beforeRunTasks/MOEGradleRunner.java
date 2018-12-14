@@ -73,7 +73,7 @@ public class MOEGradleRunner extends Task.Backgroundable {
     }
 
     public MOEGradleRunner(@Nullable Project project, @NotNull String title, MOERunConfiguration migeranConfig) {
-        this(project, title, false, migeranConfig);
+        this(project, title, true, migeranConfig);
     }
 
     @Override
@@ -105,7 +105,7 @@ public class MOEGradleRunner extends Task.Backgroundable {
 
             result.setBuildSuccessful(false);
 
-            buildProject(result);
+            buildProject(indicator, result);
         } finally {
             try {
                 indicator.stop();
@@ -121,7 +121,7 @@ public class MOEGradleRunner extends Task.Backgroundable {
         }
     }
 
-    private void buildProject(MOEGradleInvocationResult result) {
+    private void buildProject(@NotNull ProgressIndicator indicator, MOEGradleInvocationResult result) {
 
         final Stopwatch stopwatch = Stopwatch.createUnstarted();
         stopwatch.start();
@@ -138,21 +138,36 @@ public class MOEGradleRunner extends Task.Backgroundable {
             if (!isMaven) {
                 final GeneralCommandLine commandLine = gradleRunner.construct(isDebug, false);
                 final OSProcessHandler handler = new OSProcessHandler(commandLine);
-                handler.setShouldDestroyProcessRecursively(true);
-                handler.addProcessListener(new ProcessAdapter() {
-                    @Override
-                    public void onTextAvailable(ProcessEvent event, Key outputType) {
-                        if (ProcessOutputTypes.STDERR.equals(outputType)) {
-                            toolWindow.error(event.getText());
-                        } else if (ProcessOutputTypes.STDOUT.equals(outputType)) {
-                            toolWindow.log(event.getText());
+                try {
+                    handler.setShouldDestroyProcessRecursively(true);
+                    handler.addProcessListener(new ProcessAdapter() {
+                        @Override
+                        public void onTextAvailable(ProcessEvent event, Key outputType) {
+                            if (ProcessOutputTypes.STDERR.equals(outputType)) {
+                                toolWindow.error(event.getText());
+                            } else if (ProcessOutputTypes.STDOUT.equals(outputType)) {
+                                toolWindow.log(event.getText());
+                            }
+                        }
+                    });
+                    handler.startNotify();
+
+                    // Start and wait
+                    while (!handler.isProcessTerminated() && !indicator.isCanceled()) {
+                        if (handler.waitFor(1000)) {
+                            break;
                         }
                     }
-                });
-                handler.startNotify();
-
-                // Start and wait
-                handler.waitFor();
+                } finally {
+                    handler.destroyProcess();
+                    while (!handler.isProcessTerminated()) {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            break;
+                        }
+                    }
+                }
 
                 int returnCode = handler.getProcess().exitValue();
 
