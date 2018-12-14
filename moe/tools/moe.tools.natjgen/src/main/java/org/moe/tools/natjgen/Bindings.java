@@ -21,6 +21,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonPrimitive;
+import com.google.gson.internal.Streams;
+import com.google.gson.stream.JsonWriter;
 import org.moe.common.developer.NativeSDKUtil;
 
 import java.io.File;
@@ -350,7 +352,10 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         }
         final PrintWriter writer = new PrintWriter(target);
         try {
-            writer.write(getJsonObject().toString());
+            JsonWriter jsonWriter = new JsonWriter(writer);
+            jsonWriter.setLenient(true);
+            jsonWriter.setIndent("  ");
+            Streams.write(getJsonObject(), jsonWriter);
         } finally {
             writer.close();
         }
