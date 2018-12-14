@@ -26,7 +26,6 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.moe.common.utils.OsUtils;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.ui.NewBindingDialog;
 import org.moe.idea.utils.ModuleUtils;
@@ -41,7 +40,7 @@ public class MOENewBindingAction extends AnAction {
 
     private static final String ACTION_TITLE = "Create New Binding Configuration";
 
-    private Module module;;
+    private Module module;
 
     public MOENewBindingAction() {
         super(ACTION_TITLE);
@@ -79,15 +78,6 @@ public class MOENewBindingAction extends AnAction {
 
     @Override
     public void update(AnActionEvent e) {
-        Presentation presentation = e.getPresentation();
-
-        if (OsUtils.isWindows()) {
-            presentation.setEnabled(false);
-            presentation.setVisible(false);
-
-            return;
-        }
-
         DataContext dataContext = e.getDataContext();
         module = (Module) dataContext.getData(LangDataKeys.MODULE.getName());
 
@@ -96,6 +86,7 @@ public class MOENewBindingAction extends AnAction {
             enabled = true;
         }
 
+        Presentation presentation = e.getPresentation();
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);
     }
