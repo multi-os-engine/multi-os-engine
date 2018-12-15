@@ -81,6 +81,7 @@ public class IpaBuild extends AbstractBaseTask {
     private static final String CONVENTION_BUNDLE_IDENTIFIER = "bundleIdentifier";
     private static final String CONVENTION_PROVISIONING_PROFILE_SPECIFIER = "provisioningProfileSpecifier";
     private static final String CONVENTION_PROVISIONING_PROFILE = "provisioningProfile";
+    private static final String CONVENTION_SIGNING_IDENTITY = "signingIdentity";
 
     public static final String BUNDLE_IDENTIFIER_KEY = "PRODUCT_BUNDLE_IDENTIFIER";
 
@@ -481,6 +482,21 @@ public class IpaBuild extends AbstractBaseTask {
     }
 
     @Nullable
+    private String signingIdentity;
+
+    @Input
+    @Optional
+    @Nullable
+    public String getSigningIdentity() {
+        return nullableGetOrConvention(signingIdentity, CONVENTION_SIGNING_IDENTITY);
+    }
+
+    @IgnoreUnused
+    public void setSigningIdentity(@Nullable String signingIdentity) {
+        this.signingIdentity = signingIdentity;
+    }
+
+    @Nullable
     private String target;
 
     @Input
@@ -663,12 +679,9 @@ public class IpaBuild extends AbstractBaseTask {
         });
         addConvention(CONVENTION_ADDITIONAL_PARAMETERS, () ->
                 new ArrayList<>(Arrays.asList("MOE_GRADLE_EXTERNAL_BUILD=YES", "ONLY_ACTIVE_ARCH=NO")));
-        addConvention(CONVENTION_PROVISIONING_PROFILE_SPECIFIER, () -> {
-            return ext.signing.getProvisioningProfileSpecifier();
-        });
-        addConvention(CONVENTION_PROVISIONING_PROFILE, () -> {
-            return ext.signing.getProvisioningProfile();
-        });
+        addConvention(CONVENTION_PROVISIONING_PROFILE, ext.signing::getProvisioningProfile);
+        addConvention(CONVENTION_PROVISIONING_PROFILE_SPECIFIER, ext.signing::getProvisioningProfileSpecifier);
+        addConvention(CONVENTION_SIGNING_IDENTITY, ext.signing::getSigningIdentity);
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "IpaBuild.log"));
     }
 
@@ -750,6 +763,12 @@ public class IpaBuild extends AbstractBaseTask {
         if (provProf != null && !provProf.isEmpty()) {
             args.add("PROVISIONING_PROFILE=" + provProf);
         }
+
+        String signingId = getSigningIdentity();
+        if(signingId != null && !signingId.isEmpty()) {
+            args.add("CODE_SIGN_IDENTITY=" + signingId);
+        }
+
         return args;
     }
 
@@ -903,6 +922,11 @@ public class IpaBuild extends AbstractBaseTask {
 
             if (bundleId != null && !bundleId.isEmpty() && provisioningProf != null && !provisioningProf.isEmpty()) {
                 manager.setProvisioningProfiles(bundleId, provisioningProf);
+            }
+
+            String signingId = getSigningIdentity();
+            if (signingId != null && !signingId.isEmpty()) {
+                manager.setSigningCertificate(signingId);
             }
 
             manager.save();
