@@ -5,3 +5,4 @@ org.moe.mdt.natjgen/logs
 .idea
 build
 logs
+out
