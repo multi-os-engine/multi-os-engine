@@ -3,3 +3,4 @@
 build
 mingw
 llvm
+*.iml
