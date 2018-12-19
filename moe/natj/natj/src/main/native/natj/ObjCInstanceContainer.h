@@ -16,7 +16,7 @@ limitations under the License.
 
 #import <objc/NSObject.h>
 
-#include <jni.h>
+#include "jni.h"
 
 #include "NatJ.h"
 

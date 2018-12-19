@@ -18,7 +18,7 @@ limitations under the License.
 #define NatJ_CxxRuntime_hpp
 
 #include <iostream>
-#include <jni.h>
+#include "jni.h"
 #include <stdlib.h>
 #include <type_traits>
 

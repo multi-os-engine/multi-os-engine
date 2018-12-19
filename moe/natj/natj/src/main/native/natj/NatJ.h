@@ -17,7 +17,7 @@ limitations under the License.
 #ifndef NatJ_NatJ_h
 #define NatJ_NatJ_h
 
-#include <jni.h>
+#include "jni.h"
 #include <ffi.h>
 #include <assert.h>
 #include <stdint.h>
