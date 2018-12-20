@@ -260,18 +260,22 @@ def getSDKCopySpec() {
             }
         }
 
-        if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
-            into('tools/macosx/x86_64') {
+        into('tools/macosx/x86_64') {
+            if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
                 from files(external.llvm.macos)
                 from files(external.libimobiledevice.macos)
                 from files(external.natj.mac)
+            } else {
+                from files('.placeholder')
             }
         }
 
-        if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
-            into('tools/windows/x86_64') {
+        into('tools/windows/x86_64') {
+            if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
                 from files(external.libimobiledevice.windows)
                 from files(external.natj.win)
+            } else {
+                from files('.placeholder')
             }
         }
 
