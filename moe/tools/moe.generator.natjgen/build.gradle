@@ -19,7 +19,9 @@ apply plugin: 'java'
 targetCompatibility = "1.8"
 sourceCompatibility = "1.8"
 
-tasks.classes.dependsOn ':ext_natj_mac'
+if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
+    tasks.classes.dependsOn ':ext_natj_mac'
+}
 tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
