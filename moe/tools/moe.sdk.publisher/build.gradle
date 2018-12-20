@@ -37,11 +37,15 @@ if (rootProject.hasProperty('artifactory.url')) {
     apply plugin: "com.jfrog.artifactory"
 }
 
-tasks.build.dependsOn ':ext_natj_mac'
-tasks.build.dependsOn ':ext_natj_win'
+if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
+    tasks.build.dependsOn ':ext_natj_mac'
+    tasks.build.dependsOn ':prebuild_libimobiledevice_macos'
+}
 
-tasks.build.dependsOn ':prebuild_libimobiledevice_macos'
-tasks.build.dependsOn ':prebuild_libimobiledevice_windows'
+if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
+    tasks.build.dependsOn ':ext_natj_win'
+    tasks.build.dependsOn ':prebuild_libimobiledevice_windows'
+}
 
 def projectDeps = [
         ':moe.binding.clang',
@@ -255,15 +259,22 @@ def getSDKCopySpec() {
                 include 'gradlew.zip'
             }
         }
-        into('tools/macosx/x86_64') {
-            from files(external.llvm.macos)
-            from files(external.libimobiledevice.macos)
-            from files(external.natj.mac)
+
+        if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
+            into('tools/macosx/x86_64') {
+                from files(external.llvm.macos)
+                from files(external.libimobiledevice.macos)
+                from files(external.natj.mac)
+            }
         }
-        into('tools/windows/x86_64') {
-            from files(external.libimobiledevice.windows)
-            from files(external.natj.win)
+
+        if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
+            into('tools/windows/x86_64') {
+                from files(external.libimobiledevice.windows)
+                from files(external.natj.win)
+            }
         }
+
         eachFile { println "${it}" }
     }
 }

@@ -69,6 +69,13 @@ cd <repo>/moe/tools/master
 
 This requires debug builds of the frameworks, for more information on how to create them, [visit here](https://github.com/multi-os-engine/moe-core).
 
+### Limit the Build
+
+By default the SDK contains tools executables for running on both Windows and macOS. To limit the SDK to contain tools for one single paltform we provide the following properties:
+
+- `moe.tools.sdk.win_only`: build and pack SDK tools for Windows only.
+- `moe.tools.sdk.mac_only`: build and pack SDK tools for macOS only.
+
 ## Notes
 
 Custom SDKs require a customized [Gradle plugin](https://github.com/multi-os-engine/moe-plugin-gradle).
