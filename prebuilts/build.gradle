@@ -112,6 +112,7 @@ sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_heade
     exec 'make'
     exec 'make', "install-strip"
     rawWorkDir 'mingw/i686-w64-mingw32'
+    exec 'rm', '-f', 'lib32'
     exec 'ln', '-s', 'lib', 'lib32'
 
     progress "Building 64-bit $mingw_version"
@@ -121,6 +122,7 @@ sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_heade
     exec 'make'
     exec 'make', "install-strip"
     rawWorkDir 'mingw/x86_64-w64-mingw32'
+    exec 'rm', '-f', 'lib64'
     exec 'ln', '-s', 'lib', 'lib64'
 
     progress "Downloading $gcc_version"
@@ -133,6 +135,7 @@ sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_heade
 
     progress "Building 32-bit $gcc_version"
     rawWorkDir 'mingw'
+    exec 'rm', '-f', 'mingw'
     exec 'ln', '-s', 'i686-w64-mingw32', 'mingw'
     workDir "mingw/${gcc_version}/build32"
     exec '../configure', '--target=i686-w64-mingw32',
