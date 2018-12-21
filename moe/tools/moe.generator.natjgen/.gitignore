@@ -6,3 +6,6 @@ org.moe.mdt.natjgen/logs
 build
 logs
 out
+.settings
+.classpath
+.project
