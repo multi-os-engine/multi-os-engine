@@ -4,3 +4,6 @@ build
 mingw
 llvm
 *.iml
+.settings
+.classpath
+.project
