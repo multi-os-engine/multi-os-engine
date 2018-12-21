@@ -57,9 +57,9 @@ task processCxxTests(type: JavaExec) {
 tasks.getByPath(':natj-mac:build_TestClassesCxx_Release_macosx').dependsOn(processCxxTests)
 tasks.getByPath(':natj-mac:build_TestClassesCxx_Debug_macosx').dependsOn(processCxxTests)
 tasks.getByPath(':natj-win:build_TestClassesCxx_Release_Win64').dependsOn(processCxxTests)
-tasks.getByPath(':natj-win:build_TestClassesCxx_Release_Win32').dependsOn(processCxxTests)
+// tasks.getByPath(':natj-win:build_TestClassesCxx_Release_Win32').dependsOn(processCxxTests)
 tasks.getByPath(':natj-win:build_TestClassesCxx_Debug_Win64').dependsOn(processCxxTests)
-tasks.getByPath(':natj-win:build_TestClassesCxx_Debug_Win32').dependsOn(processCxxTests)
+// tasks.getByPath(':natj-win:build_TestClassesCxx_Debug_Win32').dependsOn(processCxxTests)
 
 tasks.withType(Test) {
     def nativeConfiguration = 'Release'
@@ -82,7 +82,7 @@ tasks.withType(Test) {
 task ansibleTestWinPrepare(type: Tar) {
     def nativeConfiguration = 'Release'
     dependsOn ":natj-win:build_TestClassesCxx_${nativeConfiguration}_Win64"
-    dependsOn ":natj-win:build_TestClassesCxx_${nativeConfiguration}_Win32"
+    // dependsOn ":natj-win:build_TestClassesCxx_${nativeConfiguration}_Win32"
 
     archiveName = "win-test.tar"
     into('classes') {
@@ -97,9 +97,9 @@ task ansibleTestWinPrepare(type: Tar) {
     into('natives') {
         from "../natj-win/build/${nativeConfiguration}-Win64/TestClassesCxx.dll"
     }
-    into('natives32') {
-        from "../natj-win/build/${nativeConfiguration}-Win32/TestClassesCxx.dll"
-    }
+    // into('natives32') {
+    //     from "../natj-win/build/${nativeConfiguration}-Win32/TestClassesCxx.dll"
+    // }
     from '../build/libs/natj.jar'
 }
 

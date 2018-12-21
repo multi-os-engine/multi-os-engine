@@ -18,7 +18,7 @@ apply plugin: 'maven-publish'
 
 def pm5_configs = ['Debug', 'Release']
 def pm5_platforms = [
-        [name: 'Win32', mingw: 'i686-w64-mingw32'],
+        // [name: 'Win32', mingw: 'i686-w64-mingw32'],
         [name: 'Win64', mingw: 'x86_64-w64-mingw32']
 ]
 def pm5_allOutputs = []

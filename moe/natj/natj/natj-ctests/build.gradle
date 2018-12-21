@@ -44,7 +44,7 @@ tasks.withType(Test) {
 task ansibleTestWinPrepare(type: Tar) {
     def nativeConfiguration = 'Release'
     dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win64"
-    dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win32"
+    // dependsOn ":natj-win:build_TestClassesC_${nativeConfiguration}_Win32"
 
     archiveName = "win-test.tar"
     into('classes') {
@@ -62,9 +62,9 @@ task ansibleTestWinPrepare(type: Tar) {
     into('natives') {
         from "../natj-win/build/${nativeConfiguration}-Win64/TestClassesC.dll"
     }
-    into('natives32') {
-        from "../natj-win/build/${nativeConfiguration}-Win32/TestClassesC.dll"
-    }
+    // into('natives32') {
+    //     from "../natj-win/build/${nativeConfiguration}-Win32/TestClassesC.dll"
+    // }
     from '../build/libs/natj.jar'
 }
 
