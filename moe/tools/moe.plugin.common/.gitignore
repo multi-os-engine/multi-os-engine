@@ -2,3 +2,6 @@
 .idea
 build
 out
+.settings
+.classpath
+.project
