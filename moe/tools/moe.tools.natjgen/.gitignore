@@ -4,3 +4,6 @@ src/test/resources/MyApp/Pods
 Podfile.lock
 src/test/resources/MyApp/MyApp.xcworkspace
 out
+.settings
+.classpath
+.project
