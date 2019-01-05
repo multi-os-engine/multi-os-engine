@@ -548,7 +548,7 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
             if (loc != selector.length()) --loc;
         }
 
-        return selector.substring(0, loc);
+        return selector.substring(start, loc);
     }
 
     /**
@@ -569,7 +569,7 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
      * @return selector's first word
      */
     private String clangFirstWord() {
-        return clangFirstWord(1);
+        return clangFirstWord(0);
     }
 
     /**
