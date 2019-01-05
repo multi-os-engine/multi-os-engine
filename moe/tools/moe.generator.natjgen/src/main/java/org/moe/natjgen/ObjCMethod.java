@@ -527,27 +527,39 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
      * Small helper method to get the first word from the selector, ie.:
      * <code> initWithString -> init </code>
      *
-     * @param start start index
+     * @param selector the selector name
+     * @param start    start index
      * @return selector's first word
      */
-    private String clangFirstWord(int start) {
+    public static String clangFirstWord(String selector, int start) {
         int loc = start;
-        while (loc < getName().length()) {
-            char c = getName().charAt(loc);
+        while (loc < selector.length()) {
+            char c = selector.charAt(loc);
             if (Character.isUpperCase(c) || c == ':') break;
             ++loc;
         }
 
         if (loc == 0) {
-            while (loc < getName().length()) {
-                char c = getName().charAt(loc);
+            while (loc < selector.length()) {
+                char c = selector.charAt(loc);
                 if (Character.isLowerCase(c) || c == ':') break;
                 ++loc;
             }
-            if (loc != getName().length()) --loc;
+            if (loc != selector.length()) --loc;
         }
 
-        return getName().substring(0, loc);
+        return selector.substring(0, loc);
+    }
+
+    /**
+     * Small helper method to get the first word from the selector, ie.:
+     * <code> initWithString -> init </code>
+     *
+     * @param start start index
+     * @return selector's first word
+     */
+    private String clangFirstWord(int start) {
+        return clangFirstWord(getName(), start);
     }
 
     /**
