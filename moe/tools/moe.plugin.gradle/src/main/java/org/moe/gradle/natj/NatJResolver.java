@@ -130,7 +130,8 @@ public class NatJResolver<T extends NatJClass<ClassVisitor>> {
         // Print issues
         issues.forEach(LOG::warn);
 
-        classes.forEach(action);
+        // Iter through the classes with order we will visit the superclass before any subclasses.
+        order.forEach(c -> action.accept(c, classes.get(c)));
     }
 
     /**
