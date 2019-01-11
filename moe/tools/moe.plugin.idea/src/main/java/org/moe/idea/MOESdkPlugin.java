@@ -20,8 +20,11 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.extensions.PluginId;
+import com.intellij.openapi.externalSystem.model.ProjectSystemId;
 import com.intellij.openapi.externalSystem.model.execution.ExternalTaskPojo;
 import com.intellij.openapi.externalSystem.model.project.ExternalProjectPojo;
+import com.intellij.openapi.externalSystem.model.task.TaskData;
+import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.ModuleUtil;
@@ -30,6 +33,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.plugins.gradle.settings.GradleLocalSettings;
+import org.jetbrains.plugins.gradle.util.GradleConstants;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
@@ -38,6 +42,9 @@ import res.MOEIcons;
 import res.MOEText;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -185,6 +192,11 @@ public class MOESdkPlugin {
         }
 
         // Check for moeLaunch task
+        if (checkTaskFix(project, path, taskName)) {
+            return true;
+        }
+
+        // Backward compatibility for pre IDEA 2018.3
         Map<String, Collection<ExternalTaskPojo>> tasks = localSettings.getAvailableTasks();
         Collection<ExternalTaskPojo> taskPojos = tasks.get(path);
         if (taskPojos == null) {
@@ -195,6 +207,47 @@ public class MOESdkPlugin {
             if (taskName.equals(taskPojo.getName())) {
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    /**
+     * Workaround of IDEA-204092.
+     */
+    @SuppressWarnings("unchecked")
+    private static boolean checkTaskFix(Project project, String path, String taskName) {
+        Method m;
+        try {
+            m = ExternalSystemApiUtil.class.getMethod("findProjectTasks", Project.class, ProjectSystemId.class, String.class);
+        } catch (NoSuchMethodException e) {
+            // We are running on IDEA < 2018.3
+            return false;
+        }
+
+        try {
+            Collection<TaskData> tasks;
+            if (Modifier.isStatic(m.getModifiers())) {
+                tasks = (Collection<TaskData>) m.invoke(null, project, GradleConstants.SYSTEM_ID, path);
+            } else {
+                // IDEA-204092 hack
+                Constructor<ExternalSystemApiUtil> c = ExternalSystemApiUtil.class.getDeclaredConstructor();
+                c.setAccessible(true);
+                ExternalSystemApiUtil ins = c.newInstance();
+                tasks = (Collection<TaskData>) m.invoke(ins, project, GradleConstants.SYSTEM_ID, path);
+            }
+
+            if (tasks != null) {
+                for (TaskData t : tasks) {
+                    if (taskName.equals(t.getName())) {
+                        return true;
+                    }
+                }
+            } else {
+                LOG.info("Not found gradle task path: " + path);
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
 
         return false;
