@@ -226,16 +226,14 @@ public class MOESdkPlugin {
         }
 
         try {
-            Collection<TaskData> tasks;
-            if (Modifier.isStatic(m.getModifiers())) {
-                tasks = (Collection<TaskData>) m.invoke(null, project, GradleConstants.SYSTEM_ID, path);
-            } else {
+            ExternalSystemApiUtil ins = null;
+            if (!Modifier.isStatic(m.getModifiers())) {
                 // IDEA-204092 hack
                 Constructor<ExternalSystemApiUtil> c = ExternalSystemApiUtil.class.getDeclaredConstructor();
                 c.setAccessible(true);
-                ExternalSystemApiUtil ins = c.newInstance();
-                tasks = (Collection<TaskData>) m.invoke(ins, project, GradleConstants.SYSTEM_ID, path);
+                ins = c.newInstance();
             }
+            Collection<TaskData> tasks = (Collection<TaskData>) m.invoke(ins, project, GradleConstants.SYSTEM_ID, path);
 
             if (tasks != null) {
                 for (TaskData t : tasks) {
