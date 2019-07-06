@@ -24,13 +24,13 @@ buildscript {
 }
 
 plugins {
-    id "com.jfrog.bintray" version "1.7"
+    id "com.jfrog.bintray" version "1.8.4"
 }
 
 if (name != 'moe-gradle') {
     throw new GradleException('Incorrect name')
 }
-group 'org.multi-os-engine'
+group 'org.multi-os-engine.community'
 
 String loadPluginVersion() {
     final Properties props = new Properties()
@@ -94,9 +94,9 @@ bintray {
     pkg {
         repo = 'maven'
         name = 'moe-gradle'
-        userOrg = 'multi-os-engine'
-        websiteUrl = 'https://multi-os-engine.org'
-        vcsUrl = 'https://github.com/multi-os-engine/moe-plugin-gradle'
+        // userOrg = 'multi-os-engine'
+        websiteUrl = 'https://discuss.multi-os-engine.org'
+        vcsUrl = 'https://github.com/multi-os-engine-community/moe-plugin-gradle'
         licenses = ['Apache-2.0']
         labels = ['moe', 'multi-os-engine']
         publicDownloadNumbers = false
