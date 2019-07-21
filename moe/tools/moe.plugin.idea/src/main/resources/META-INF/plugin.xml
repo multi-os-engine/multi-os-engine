@@ -133,5 +133,6 @@
   </actions>
 
   <depends>org.jetbrains.plugins.gradle</depends>
+  <depends>org.jetbrains.idea.maven</depends>
 
 </idea-plugin>
