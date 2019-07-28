@@ -40,10 +40,8 @@ import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.moe.idea.maven.MOEMavenBuildTask;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.ui.MOEToolWindow;
-import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.util.Collection;
@@ -131,58 +129,47 @@ public class MOEGradleRunner extends Task.Backgroundable {
             final org.moe.idea.compiler.MOEGradleRunner gradleRunner = new org.moe.idea.compiler.MOEGradleRunner(runConfig);
             final boolean isDebug = runConfig.getActionType().equals("Debug");
 
-            boolean isMaven = ModuleUtils.isMOEMavenModule(runConfig.module());
-
             final MOEToolWindow toolWindow = MOEToolWindow.getInstance(runConfig.getProject());
 
-            if (!isMaven) {
-                final GeneralCommandLine commandLine = gradleRunner.construct(isDebug, false);
-                final OSProcessHandler handler = new OSProcessHandler(commandLine);
-                try {
-                    handler.setShouldDestroyProcessRecursively(true);
-                    handler.addProcessListener(new ProcessAdapter() {
-                        @Override
-                        public void onTextAvailable(ProcessEvent event, Key outputType) {
-                            if (ProcessOutputTypes.STDERR.equals(outputType)) {
-                                toolWindow.error(event.getText());
-                            } else if (ProcessOutputTypes.STDOUT.equals(outputType)) {
-                                toolWindow.log(event.getText());
-                            }
-                        }
-                    });
-                    handler.startNotify();
-
-                    // Start and wait
-                    while (!handler.isProcessTerminated() && !indicator.isCanceled()) {
-                        if (handler.waitFor(1000)) {
-                            break;
+            final GeneralCommandLine commandLine = gradleRunner.construct(isDebug, false);
+            final OSProcessHandler handler = new OSProcessHandler(commandLine);
+            try {
+                handler.setShouldDestroyProcessRecursively(true);
+                handler.addProcessListener(new ProcessAdapter() {
+                    @Override
+                    public void onTextAvailable(ProcessEvent event, Key outputType) {
+                        if (ProcessOutputTypes.STDERR.equals(outputType)) {
+                            toolWindow.error(event.getText());
+                        } else if (ProcessOutputTypes.STDOUT.equals(outputType)) {
+                            toolWindow.log(event.getText());
                         }
                     }
-                } finally {
-                    handler.destroyProcess();
-                    while (!handler.isProcessTerminated()) {
-                        try {
-                            Thread.sleep(100);
-                        } catch (InterruptedException e) {
-                            break;
-                        }
+                });
+                handler.startNotify();
+
+                // Start and wait
+                while (!handler.isProcessTerminated() && !indicator.isCanceled()) {
+                    if (handler.waitFor(1000)) {
+                        break;
                     }
                 }
-
-                int returnCode = handler.getProcess().exitValue();
-
-                // Show on failure
-                if (returnCode != 0) {
-                    toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
-                    errorMessage = "Multi-OS Engine module build failed";
+            } finally {
+                handler.destroyProcess();
+                while (!handler.isProcessTerminated()) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        break;
+                    }
                 }
-            } else {
-                MOEMavenBuildTask mavenTask = new MOEMavenBuildTask(runConfig, "Building " + runConfig.moduleName(), true);
-                boolean res = mavenTask.runTask();
-                if (!res) {
-                    toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
-                    errorMessage = "Multi-OS Engine module build failed";
-                }
+            }
+
+            int returnCode = handler.getProcess().exitValue();
+
+            // Show on failure
+            if (returnCode != 0) {
+                toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
+                errorMessage = "Multi-OS Engine module build failed";
             }
 
             if (errorMessage == null) {

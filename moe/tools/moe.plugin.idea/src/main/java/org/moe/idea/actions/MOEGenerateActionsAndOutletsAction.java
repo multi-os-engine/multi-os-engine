@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
-import com.intellij.compiler.progress.CompilerTask;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.process.OSProcessHandler;
@@ -27,7 +26,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -37,9 +35,7 @@ import com.intellij.openapi.util.Key;
 import com.intellij.util.ui.UIUtil;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.compiler.MOEGradleRunner;
-import org.moe.idea.maven.MOEMavenTask;
 import org.moe.idea.ui.MOEToolWindow;
-import org.moe.idea.utils.ModuleUtils;
 
 import java.io.IOException;
 
@@ -70,100 +66,65 @@ public class MOEGenerateActionsAndOutletsAction extends AnAction {
             return;
         }
 
-        boolean isMaven = ModuleUtils.isMOEMavenModule(module);
-
-        if (!isMaven) {
-            ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-                @Override
-                public void run() {
-                    ProgressIndicator progress = ProgressManager.getInstance().getProgressIndicator();
-                    if (progress == null) {
-                        progress = new EmptyProgressIndicator();
-                    }
-                    progress.pushState();
-                    try {
-                        progress.setText(ACTION_PROGRESS_LABEL);
-                        runInternal();
-                    } catch (final Throwable t) {
-                        t.printStackTrace(System.err);
-                        UIUtil.invokeLaterIfNeeded(new Runnable() {
-                            @Override
-                            public void run() {
-                                String message = t.getMessage();
-                                if (message == null || message.length() == 0) {
-                                    message = "Unknown error";
-                                }
-                                Messages.showErrorDialog(message, "Actions and Outlets Generation Error");
-                                final MOEToolWindow toolWindow = MOEToolWindow.getInstance(module.getProject());
-                                toolWindow.show();
-                            }
-                        });
-                    } finally {
-                        progress.popState();
-                    }
+        ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+            @Override
+            public void run() {
+                ProgressIndicator progress = ProgressManager.getInstance().getProgressIndicator();
+                if (progress == null) {
+                    progress = new EmptyProgressIndicator();
                 }
-
-                private void runInternal() throws IOException, ExecutionException {
-
-                    final GeneralCommandLine commandLine = MOEGradleRunner.construct(module, "moeGenerateUIObjCInterfaces");
-
-                    final OSProcessHandler handler = new OSProcessHandler(commandLine);
-                    handler.setShouldDestroyProcessRecursively(true);
-
-                    // Configure output
-                    final MOEToolWindow toolWindow = MOEToolWindow.getInstance(module.getProject());
-                    toolWindow.clear();
-                    handler.addProcessListener(new ProcessAdapter() {
+                progress.pushState();
+                try {
+                    progress.setText(ACTION_PROGRESS_LABEL);
+                    runInternal();
+                } catch (final Throwable t) {
+                    t.printStackTrace(System.err);
+                    UIUtil.invokeLaterIfNeeded(new Runnable() {
                         @Override
-                        public void onTextAvailable(ProcessEvent event, Key outputType) {
-                            if (ProcessOutputTypes.STDERR.equals(outputType)) {
-                                toolWindow.error(event.getText());
-                            } else if (ProcessOutputTypes.STDOUT.equals(outputType)) {
-                                toolWindow.log(event.getText());
+                        public void run() {
+                            String message = t.getMessage();
+                            if (message == null || message.length() == 0) {
+                                message = "Unknown error";
                             }
+                            Messages.showErrorDialog(message, "Actions and Outlets Generation Error");
+                            final MOEToolWindow toolWindow = MOEToolWindow.getInstance(module.getProject());
+                            toolWindow.show();
                         }
                     });
-                    handler.startNotify();
-
-                    // Start and wait
-                    handler.waitFor();
-                    final int exitValue = handler.getProcess().exitValue();
-                    if (exitValue != 0) {
-                        throw new IOException(ACTION_TITLE + " finished with non-zero exit value (" + exitValue + ")");
-                    }
+                } finally {
+                    progress.popState();
                 }
-            }, ACTION_TITLE, true, module.getProject());
-        } else {
-            CompilerTask compilerTask = new CompilerTask(module.getProject(), "", false, true, true, true);
-            compilerTask.start(new Runnable() {
-                @Override
-                public void run() {
-                    MOEMavenTask task = new MOEMavenTask(module, ACTION_TITLE, false);
-                    task.setGoal("moe:generateUIObjCInterfaces");
+            }
 
-                    if (!task.runTask()) {
-                        ModuleUtils.runInDispatchedThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Messages.showErrorDialog("Unable run generation", "Actions and Outlets Generation Error");
-                            }
-                        });
+            private void runInternal() throws IOException, ExecutionException {
+
+                final GeneralCommandLine commandLine = MOEGradleRunner.construct(module, "moeGenerateUIObjCInterfaces");
+
+                final OSProcessHandler handler = new OSProcessHandler(commandLine);
+                handler.setShouldDestroyProcessRecursively(true);
+
+                // Configure output
+                final MOEToolWindow toolWindow = MOEToolWindow.getInstance(module.getProject());
+                toolWindow.clear();
+                handler.addProcessListener(new ProcessAdapter() {
+                    @Override
+                    public void onTextAvailable(ProcessEvent event, Key outputType) {
+                        if (ProcessOutputTypes.STDERR.equals(outputType)) {
+                            toolWindow.error(event.getText());
+                        } else if (ProcessOutputTypes.STDOUT.equals(outputType)) {
+                            toolWindow.log(event.getText());
+                        }
                     }
+                });
+                handler.startNotify();
+
+                // Start and wait
+                handler.waitFor();
+                final int exitValue = handler.getProcess().exitValue();
+                if (exitValue != 0) {
+                    throw new IOException(ACTION_TITLE + " finished with non-zero exit value (" + exitValue + ")");
                 }
-            }, null);
-
-            ModuleUtils.runInDispatchedThread(new Runnable() {
-                @Override
-                public void run() {
-                    MOEMavenTask task = new MOEMavenTask(module, ACTION_TITLE, false);
-                    task.setGoal("moe:generateUIObjCInterfaces");
-
-                    if (!task.runTask()) {
-                        Messages.showErrorDialog("Unable run generation", "Actions and Outlets Generation Error");
-                    }
-                }
-            });
-
-        }
+            }
+        }, ACTION_TITLE, true, module.getProject());
     }
 }

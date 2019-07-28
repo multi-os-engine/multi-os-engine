@@ -44,7 +44,7 @@ def PLUGIN_NAME = 'moe_intellij_plugin'
 
 intellij {
     version 'IC-2017.3'
-    plugins = ['gradle', 'maven']
+    plugins = ['gradle']
     pluginName PLUGIN_NAME
     downloadSources false
     updateSinceUntilBuild false

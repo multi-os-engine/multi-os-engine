@@ -59,26 +59,15 @@ public class ModuleObserver implements ModuleListener {
 
     @Override
     public void moduleAdded(@NotNull final Project project, @NotNull final Module module) {
-        if (ModuleUtils.isMavenModule(module)) {
-            ModuleUtils.runWhenInitialized(project, new DumbAwareRunnable() {
-                @Override
-                public void run() {
-                    if (ModuleUtils.isMOEMavenModule(module)) {
-                        checkMavenDependencies(module);
-                    }
+        ModuleUtils.runWhenInitialized(project, new DumbAwareRunnable() {
+            @Override
+            public void run() {
+                if (MOESdkPlugin.isValidMoeModule(module)) {
+                    checkRunConfiguration(project, module);
+                    checkMoeSDK(module);
                 }
-            });
-        } else {
-            ModuleUtils.runWhenInitialized(project, new DumbAwareRunnable() {
-                @Override
-                public void run() {
-                    if (MOESdkPlugin.isValidMoeModule(module)) {
-                        checkRunConfiguration(project, module);
-                        checkMoeSDK(module);
-                    }
-                }
-            });
-        }
+            }
+        });
     }
 
     private void checkMoeSDK(@NotNull Module module) {

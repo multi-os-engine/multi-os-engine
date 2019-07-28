@@ -157,10 +157,6 @@ public class MOESdkPlugin {
             return false;
         }
 
-        if (ModuleUtils.isMavenModule(module)) {
-            return ModuleUtils.isMOEMavenModule(module);
-        }
-
         final Project project = module.getProject();
         final String path = ModuleUtils.getModulePath(module);
         final GradleLocalSettings localSettings = GradleLocalSettings.getInstance(project);

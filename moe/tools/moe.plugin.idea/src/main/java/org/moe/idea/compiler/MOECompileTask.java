@@ -33,11 +33,9 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.util.Key;
 import com.intellij.util.ui.UIUtil;
-import org.moe.idea.maven.MOEMavenBuildTask;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.ui.DeviceChooserDialog;
 import org.moe.idea.ui.MOEToolWindow;
-import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.io.IOException;
@@ -83,8 +81,6 @@ public class MOECompileTask implements CompileTask {
                 Thread.sleep(100);
             }
 
-            boolean isMaven = ModuleUtils.isMOEMavenModule(runConfig.module());
-
             // Start progress
             ProgressIndicator progress = context.getProgressIndicator();
             context.getProgressIndicator().pushState();
@@ -95,45 +91,34 @@ public class MOECompileTask implements CompileTask {
                 return true;
             }
 
-            if (!isMaven) {
+            final CompileThread compileThread = new CompileThread(runConfig, context);
+            compileThread.start();
 
-                final CompileThread compileThread = new CompileThread(runConfig, context);
-                compileThread.start();
+            context.addMessage(CompilerMessageCategory.INFORMATION, "Building " + runConfig.moduleName(), null, -1, -1);
 
-                context.addMessage(CompilerMessageCategory.INFORMATION, "Building " + runConfig.moduleName(), null, -1, -1);
+            // Wait for completion
+            while (compileThread.isAlive() && !progress.isCanceled()) {
+                compileThread.join(1000);
+            }
+            if (compileThread.isAlive() && progress.isCanceled()) {
+                compileThread.interrupt();
+                compileThread.join(1000);
+            }
 
-                // Wait for completion
-                while (compileThread.isAlive() && !progress.isCanceled()) {
-                    compileThread.join(1000);
-                }
-                if (compileThread.isAlive() && progress.isCanceled()) {
-                    compileThread.interrupt();
-                    compileThread.join(1000);
-                }
+            // Re-throw error
+            if (compileThread.throwable != null) {
+                throw compileThread.throwable;
+            }
 
-                // Re-throw error
-                if (compileThread.throwable != null) {
-                    throw compileThread.throwable;
-                }
-
-                // Show on failure
-                if (compileThread.returnCode != 0) {
-                    if (!compileThread.canceled) {
-                        toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
-                        context.addMessage(CompilerMessageCategory.ERROR, "Multi-OS Engine module build failed", null, -1, -1, toolWindow.getNavigatable());
-                    } else {
-                        toolWindow.balloon(MessageType.INFO, "BUILD CANCELED");
-                    }
-                    return false;
-                }
-            } else {
-                MOEMavenBuildTask mavenTask = new MOEMavenBuildTask(runConfig, "Building " + runConfig.moduleName(), true);
-                boolean result = mavenTask.runTask();
-                if (!result) {
+            // Show on failure
+            if (compileThread.returnCode != 0) {
+                if (!compileThread.canceled) {
                     toolWindow.balloon(MessageType.ERROR, "BUILD FAILED");
                     context.addMessage(CompilerMessageCategory.ERROR, "Multi-OS Engine module build failed", null, -1, -1, toolWindow.getNavigatable());
-                    return false;
+                } else {
+                    toolWindow.balloon(MessageType.INFO, "BUILD CANCELED");
                 }
+                return false;
             }
 
         } catch (Throwable t) {
