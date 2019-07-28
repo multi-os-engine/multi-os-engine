@@ -1,13 +1,21 @@
 <idea-plugin version="2">
   <id>org.moe.community</id>
   <name>Multi-OS Engine Community Edition</name>
-  <version>1.3.2</version>
+  <version>1.4.5</version>
 
   <vendor url="https://discuss.multi-os-engine.org/">Multi-OS Engine Community</vendor>
 
   <description><![CDATA[
       Multi-OS Engine IDE plugin for Android Studio, Community Edition
     ]]></description>
+
+  <change-notes><![CDATA[
+      1.4.5<br>
+      - Initial release of the community edition<br>
+      - Remove maven support<br>
+      - Fix "Open Project in Xcode" when multiple Xcode versions are installed<br>
+      - Use MOE gradle plugin community edition for new project<br>
+    ]]></change-notes>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
   <idea-version since-build="143"/>
