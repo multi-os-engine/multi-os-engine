@@ -25,7 +25,7 @@ import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.moe.common.exec.SimpleExec;
+import org.moe.common.developer.NativeSDKUtil;
 import org.moe.common.utils.OsUtils;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.idea.MOESdkPlugin;
@@ -56,7 +56,7 @@ public class MOEOpenXcodeAction extends AnAction {
                 Messages.showErrorDialog("Xcode workspace does not exist", "Open Xcode Project");
             }
             try {
-                SimpleExec.getOpen("xcode", file.getAbsolutePath()).getRunner().run(null);
+                NativeSDKUtil.openWithXcode(file.getAbsolutePath());
             } catch (IOException ignored) {
                 System.out.println("Could not open workspace " + file.getAbsolutePath() + "\n" + ignored.getMessage());
             }
@@ -71,7 +71,7 @@ public class MOEOpenXcodeAction extends AnAction {
                 Messages.showErrorDialog("Xcode project does not exist", "Open Xcode Project");
             }
             try {
-                SimpleExec.getOpen("xcode", file.getAbsolutePath()).getRunner().run(null);
+                NativeSDKUtil.openWithXcode(file.getAbsolutePath());
             } catch (IOException ignored) {
                 System.out.println("Could not open project " + file.getAbsolutePath() + "\n" + ignored.getMessage());
             }
