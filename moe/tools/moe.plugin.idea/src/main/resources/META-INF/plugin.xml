@@ -1,12 +1,12 @@
 <idea-plugin version="2">
-  <id>org.moe</id>
-  <name>Multi-OS Engine Plugin</name>
+  <id>org.moe.community</id>
+  <name>Multi-OS Engine Community Edition</name>
   <version>1.3.2</version>
 
-  <vendor url="https://multi-os-engine.org">Multi-OS Engine</vendor>
+  <vendor url="https://discuss.multi-os-engine.org/">Multi-OS Engine Community</vendor>
 
   <description><![CDATA[
-      Multi-OS Engine IDE plugin for Android Studio
+      Multi-OS Engine IDE plugin for Android Studio, Community Edition
     ]]></description>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
