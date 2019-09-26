@@ -85,6 +85,10 @@ public class SimCtl {
          * Simulator's runtime.
          */
         public final String runtime;
+        /**
+         * Simulator's running state.
+         */
+        public final String state;
 
         /**
          * Creates a new Device instance.
@@ -92,16 +96,18 @@ public class SimCtl {
          * @param name    Name
          * @param udid    UDID
          * @param runtime Runtime
+         * @param state   state
          */
-        Device(String name, String udid, String runtime) {
+        Device(String name, String udid, String runtime, String state) {
             this.name = name;
             this.udid = udid;
             this.runtime = runtime;
+            this.state = state;
         }
 
         @Override
         public String toString() {
-            return udid + " - " + runtime + " - " + name;
+            return udid + " - " + runtime + " - " + name + " - " + state;
         }
     }
 
@@ -152,7 +158,7 @@ public class SimCtl {
                     runtime = key;
                 }
                 final JsonObject value = x.right;
-                devices.add(new Device(value.get("name").getAsString(), value.get("udid").getAsString(), runtime));
+                devices.add(new Device(value.get("name").getAsString(), value.get("udid").getAsString(), runtime, value.get("state").getAsString()));
             }
         }
         return devices;
