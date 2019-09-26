@@ -16,11 +16,7 @@ limitations under the License.
 
 package org.moe.gradle.tasks;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import org.apache.commons.io.output.NullOutputStream;
-import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.DefaultTask;
 import org.gradle.api.GradleException;
@@ -32,7 +28,7 @@ import org.gradle.api.tasks.JavaExec;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.SourceSetContainer;
 import org.gradle.api.tasks.TaskContainer;
-import org.gradle.process.ExecSpec;
+import org.gradle.process.BaseExecSpec;
 import org.gradle.process.JavaExecSpec;
 import org.moe.common.utils.SimCtl;
 import org.moe.gradle.AbstractMoePlugin;
@@ -58,10 +54,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class Launchers {
 
@@ -451,78 +447,6 @@ public class Launchers {
         }
     }
 
-    private static class SimulatorLauncherBuilder {
-        // @formatter:off
-        private static final String UDID_ARG            = "--udid";
-        private static final String APP_PATH_ARG        = "--app-path";
-        private static final String LAUNCH_ARG_ARG      = "--launch-arg";
-        private static final String ENV_ARG             = "--env";
-        private static final String DEBUG_ARG           = "--debug";
-        // @formatter:on
-
-        private String udid;
-        private File appPath;
-        private final List<String> launchArgs = new ArrayList<>();
-        private final Map<String, String> envVars = new HashMap<>();
-        private Port debug;
-
-        private SimulatorLauncherBuilder setUDID(@Nullable String udid) {
-            this.udid = udid;
-            return this;
-        }
-
-        private SimulatorLauncherBuilder setAppPath(@Nullable File appPath) {
-            this.appPath = appPath;
-            return this;
-        }
-
-        @IgnoreUnused
-        private SimulatorLauncherBuilder addLaunchArgs(@NotNull String arg) {
-            launchArgs.add(Require.nonNull(arg));
-            return this;
-        }
-
-        @IgnoreUnused
-        private SimulatorLauncherBuilder putEnvVar(@NotNull String key, @Nullable String value) {
-            if (value == null) {
-                envVars.remove(Require.nonNull(key));
-            } else {
-                envVars.put(Require.nonNull(key), value);
-            }
-            return this;
-        }
-
-        private SimulatorLauncherBuilder setDebug(int local) {
-            debug = new Port(local, null);
-            return this;
-        }
-
-        private void build(@NotNull MoePlugin plugin, @NotNull ExecSpec exec) {
-            Require.nonNull(plugin);
-            Require.nonNull(exec);
-
-            exec.setWorkingDir(plugin.getSDK().getToolsDir().getAbsolutePath());
-
-            exec.setExecutable(plugin.getSDK().getSimlauncherExec());
-
-            if (udid != null) {
-                exec.args(UDID_ARG + "=" + udid);
-            }
-
-            if (appPath != null) {
-                exec.args(APP_PATH_ARG + "=" + appPath);
-            }
-
-            launchArgs.forEach(arg -> exec.args(LAUNCH_ARG_ARG + "=" + arg));
-
-            envVars.forEach((k, v) -> exec.args(ENV_ARG + "=" + k + "=" + v));
-
-            if (debug != null) {
-                exec.args(DEBUG_ARG + "=" + debug.local);
-            }
-        }
-    }
-
     public static void addTasks(@NotNull MoePlugin plugin) {
         Require.nonNull(plugin);
 
@@ -806,14 +730,7 @@ public class Launchers {
                     builder.setAppPath(appPath)
                             .build(plugin, exec);
 
-                    if (testCollector != null) {
-                        final JUnitTestCollectorWriter writer = new JUnitTestCollectorWriter(testCollector);
-                        exec.setStandardOutput(writer);
-                        exec.setErrorOutput(writer);
-                    } else {
-                        exec.setStandardOutput(new StreamToLogForwarder(LOG, false));
-                        exec.setErrorOutput(new StreamToLogForwarder(LOG, true));
-                    }
+                    execConfigOutput(exec, testCollector);
                 });
 
                 if (testCollector != null) {
@@ -843,6 +760,9 @@ public class Launchers {
                 }
                 final File appPath = new File(settings.get("BUILT_PRODUCTS_DIR"), productName);
 
+                // Get app bundle identifier
+                final String bundleIdentifier = settings.get("PRODUCT_BUNDLE_IDENTIFIER");
+
                 final JUnitTestCollector testCollector;
                 if (test && !options.rawTestOutput) {
                     testCollector = new JUnitTestCollector();
@@ -850,30 +770,71 @@ public class Launchers {
                     testCollector = null;
                 }
 
-                TaskUtils.exec(project, exec -> {
-                    // Create simulator launcher
-                    final SimulatorLauncherBuilder builder = new SimulatorLauncherBuilder();
-                    if (udid != null) {
-                        builder.setUDID(udid);
+                SimCtl.Device selectedSim = null;
+                try {
+                    List<SimCtl.Device> sims = SimCtl.getDevices();
+                    for (SimCtl.Device s : sims) {
+                        if (Objects.equals(udid, s.udid)) {
+                            selectedSim = s;
+                            break;
+                        }
                     }
-                    if (options.debug != null) {
-                        builder.setDebug(options.debug.local);
-                    }
-                    options.envs.forEach(builder::putEnvVar);
-                    options.vmargs.forEach(builder::addLaunchArgs);
-                    builder.addLaunchArgs("-args");
-                    options.args.forEach(builder::addLaunchArgs);
-                    builder.setAppPath(appPath)
-                            .build(plugin, exec);
+                } catch (Exception e) {
+                    throw new GradleException("Unable to find simulator (udid=" + udid + ")", e);
+                }
+                if (selectedSim == null) {
+                    throw new GradleException("Unable to find simulator (udid=" + udid + ")");
+                }
 
-                    if (testCollector != null) {
-                        final JUnitTestCollectorWriter writer = new JUnitTestCollectorWriter(testCollector);
-                        exec.setStandardOutput(writer);
-                        exec.setErrorOutput(writer);
-                    } else {
-                        exec.setStandardOutput(new StreamToLogForwarder(LOG, false));
-                        exec.setErrorOutput(new StreamToLogForwarder(LOG, true));
+                if ("shutdown".equalsIgnoreCase(selectedSim.state)) {
+                    LOG.info("Booting simulator {}", selectedSim.udid);
+                    TaskUtils.exec(project, exec -> {
+                        exec.setExecutable("xcrun");
+                        exec.args("simctl", "boot", udid);
+
+                        execConfigOutput(exec, testCollector);
+                    });
+                }
+                // Bring simulator window to front
+                TaskUtils.exec(project, exec -> {
+                    exec.setExecutable("open");
+                    exec.args("-a", "Simulator");
+
+                    execConfigOutput(exec, testCollector);
+                });
+
+                // Install app
+                LOG.info("Installing app {} to simulator {}", appPath, selectedSim.udid);
+                TaskUtils.exec(project, exec -> {
+                    exec.setExecutable("xcrun");
+                    exec.args("simctl", "install", udid, appPath);
+
+                    execConfigOutput(exec, testCollector);
+                });
+
+                // Launch app
+                LOG.info("Launching app {} on simulator {}", appPath, selectedSim.udid);
+                TaskUtils.exec(project, exec -> {
+                    exec.setExecutable("xcrun");
+                    exec.args("simctl", "launch", "--console", udid, bundleIdentifier);
+
+                    if (options.debug != null) {
+                        exec.args("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=" + options.debug.local);
                     }
+
+                    exec.args(options.vmargs);
+                    exec.args("-args");
+                    exec.args(options.args);
+
+                    // https://stackoverflow.com/a/53604237
+                    Map<String, String> envs = new HashMap<>();
+                    for (Map.Entry<String, String> entry : options.envs.entrySet()) {
+                        envs.put("SIMCTL_CHILD_" + entry.getKey(), entry.getValue());
+                    }
+                    envs.put("SIMCTL_CHILD_NSUnbufferedIO", "YES");
+                    exec.environment(envs);
+
+                    execConfigOutput(exec, testCollector);
                 });
 
                 if (testCollector != null) {
@@ -889,6 +850,17 @@ public class Launchers {
                     throw new GradleException(numFailedTests.get() + " tests failed on all targets combined, reports can be found here: " + testOutputDir);
                 }
             });
+        }
+    }
+
+    private static void execConfigOutput(@NotNull BaseExecSpec exec, @Nullable JUnitTestCollector testCollector) {
+        if (testCollector != null) {
+            final JUnitTestCollectorWriter writer = new JUnitTestCollectorWriter(testCollector);
+            exec.setStandardOutput(writer);
+            exec.setErrorOutput(writer);
+        } else {
+            exec.setStandardOutput(new StreamToLogForwarder(LOG, false));
+            exec.setErrorOutput(new StreamToLogForwarder(LOG, true));
         }
     }
 
