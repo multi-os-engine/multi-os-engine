@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.moe.community</id>
   <name>Multi-OS Engine Community Edition</name>
-  <version>1.4.5</version>
+  <version>1.4.6</version>
 
   <vendor url="https://discuss.multi-os-engine.org/">Multi-OS Engine Community</vendor>
 
@@ -10,6 +10,9 @@
     ]]></description>
 
   <change-notes><![CDATA[
+      1.4.6<br>
+      - Fix "Failed to populate list of simulators" error with Xcode 11<br>
+      <br>
       1.4.5<br>
       - Initial release of the community edition<br>
       - Remove maven support<br>
