@@ -125,7 +125,7 @@ public class SimCtl {
 
         for (JsonElement _runtime : root.getAsJsonArray("runtimes")) {
             final JsonObject runtime = _runtime.getAsJsonObject();
-            if (!runtime.get("availability").getAsString().equals("(available)")) continue;
+            if (!isAvailable(runtime)) continue;
 
             final String identifier = runtime.get("identifier").getAsString();
             final String lastcomp = identifier.substring(identifier.lastIndexOf('.') + 1);
@@ -142,7 +142,7 @@ public class SimCtl {
 
             for (JsonElement _x : e.getValue().getAsJsonArray()) {
                 final Pair<String, JsonObject> x = new Pair<String, JsonObject>(e.getKey(), _x.getAsJsonObject());
-                if (!x.right.get("availability").getAsString().equals("(available)")) continue;
+                if (!isAvailable(x.right)) continue;
 
                 final String key = x.left;
                 final String runtime;
@@ -156,5 +156,18 @@ public class SimCtl {
             }
         }
         return devices;
+    }
+
+    private static boolean isAvailable(JsonObject node) {
+        boolean available = false;
+        if (node.has("isAvailable")) {
+            // Xcode 11+ removed 'availability'
+            available = node.get("isAvailable").getAsBoolean();
+        } else if (node.has("availability")) {
+            // Just in case some really old Xcode doesn't have 'isAvailable'
+            available = node.get("availability").getAsString().equals("(available)");
+        }
+
+        return available;
     }
 }
