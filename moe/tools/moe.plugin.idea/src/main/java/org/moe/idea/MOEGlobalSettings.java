@@ -29,7 +29,7 @@ import java.util.Map;
 @State(
         name = "MOEGlobalSettings",
         storages = {
-                @Storage(id="other", file = "$APP_CONFIG$/moe.global.settings.xml")
+                @Storage(value = "$APP_CONFIG$/moe.global.settings.xml")
         }
 )
 public class MOEGlobalSettings implements PersistentStateComponent<MOEGlobalSettings.MOEGlobalSettingsBean> {

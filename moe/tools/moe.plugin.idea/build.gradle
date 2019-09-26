@@ -43,8 +43,8 @@ def PLUGIN_NAME = 'moe_intellij_plugin'
 //}
 
 intellij {
-    version 'IC-2017.3'
-    plugins = ['gradle']
+    version 'IC-2019.2.3'
+    plugins = ['gradle', 'java']
     pluginName PLUGIN_NAME
     downloadSources false
     updateSinceUntilBuild false
@@ -57,6 +57,10 @@ intellij {
             password = property('intellij.password')
         }
     }
+}
+
+runIde {
+    jbrVersion '8u222b1626.3'
 }
 
 dependencies {
