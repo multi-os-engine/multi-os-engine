@@ -55,6 +55,7 @@ import org.jetbrains.jps.model.java.JavaResourceRootType;
 import org.jetbrains.jps.model.java.JavaSourceRootProperties;
 import org.jetbrains.plugins.gradle.settings.DistributionType;
 import org.jetbrains.plugins.gradle.settings.GradleProjectSettings;
+import org.jetbrains.plugins.gradle.settings.GradleSettings;
 import org.jetbrains.plugins.gradle.util.GradleConstants;
 import org.moe.generator.project.MOEProjectComposer;
 import org.moe.idea.MOESdkPlugin;
@@ -270,23 +271,24 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
     private void configureGradle(ModifiableRootModel rootModel) throws IOException {
         Project project = rootModel.getProject();
 
+        // Disable this so Intellij will keep generating *.iml files for us.
+        // Our plugin relies on this file otherwise it can't find the correct module path.
+        GradleSettings.getInstance(project).setStoreProjectFilesExternally(false);
+
         String contentEntryPath = getContentEntryPath();
+        if (contentEntryPath != null) {
+            GradleProjectSettings gradleSettings = new GradleProjectSettings();
 
-        if (contentEntryPath == null) {
-            return;
+            gradleSettings.setDistributionType(DistributionType.WRAPPED);
+
+            gradleSettings.setExternalProjectPath(contentEntryPath);
+
+            gradleSettings.setResolveModulePerSourceSet(false);
+
+            AbstractExternalSystemSettings settings = ExternalSystemApiUtil.getSettings(rootModel.getProject(), GradleConstants.SYSTEM_ID);
+            project.putUserData(ExternalSystemDataKeys.NEWLY_CREATED_PROJECT, Boolean.TRUE);
+            settings.linkProject(gradleSettings);
         }
-
-        GradleProjectSettings gradleSettings = new GradleProjectSettings();
-
-        gradleSettings.setDistributionType(DistributionType.WRAPPED);
-
-        gradleSettings.setExternalProjectPath(contentEntryPath);
-
-        gradleSettings.setResolveModulePerSourceSet(false);
-
-        AbstractExternalSystemSettings settings = ExternalSystemApiUtil.getSettings(rootModel.getProject(), GradleConstants.SYSTEM_ID);
-        project.putUserData(ExternalSystemDataKeys.NEWLY_CREATED_PROJECT, Boolean.TRUE);
-        settings.linkProject(gradleSettings);
 
         FileDocumentManager.getInstance().saveAllDocuments();
 
