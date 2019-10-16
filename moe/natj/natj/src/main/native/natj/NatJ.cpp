@@ -218,9 +218,9 @@ std::mutex* MutexInstance::getMutex() {
   return ((MutexInstanceImpl*)this)->it->second.mutex;
 }
 
-ReferencedMutexContainer gMutexReferences;
+ReferencedMutexContainer& gMutexReferences = *new ReferencedMutexContainer();
 
-std::mutex gMutex;
+std::mutex& gMutex = *new std::mutex();
 
 void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz) {
   env->GetJavaVM(&gJVM);
