@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 #
 # Copyright (C) 2015 Intel Corporation
 #
