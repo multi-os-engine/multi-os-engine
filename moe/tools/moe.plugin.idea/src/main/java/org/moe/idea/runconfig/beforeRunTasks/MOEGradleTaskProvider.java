@@ -91,11 +91,6 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
     }
 
     @Override
-    public boolean configureTask(RunConfiguration runConfiguration, MOEGradleTask task) {
-        return false;
-    }
-
-    @Override
     public boolean canExecuteTask(RunConfiguration configuration, MOEGradleTask task) {
         return configuration instanceof MOERunConfigurationBase;
     }

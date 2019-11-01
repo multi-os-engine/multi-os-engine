@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.moe.idea.utils;
 
-import com.intellij.openapi.application.AccessToken;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ReadAction;
 import com.intellij.openapi.application.WriteAction;
@@ -43,12 +42,7 @@ public class ModuleUtils {
     public static final String MAIN_PRODUCT_NAME_TASK = "moeMainProductName";
 
     public static Module findModuleByName(Project project, String moduleName) {
-        AccessToken token = ReadAction.start();
-        try {
-            return ModuleManager.getInstance(project).findModuleByName(moduleName);
-        } finally {
-            token.finish();
-        }
+        return ReadAction.compute(() -> ModuleManager.getInstance(project).findModuleByName(moduleName));
     }
     
     public static void setOption(Module module, String key, String value) {
@@ -56,32 +50,14 @@ public class ModuleUtils {
             return;
         }
 
-        final Module m = module;
-        final String k = key, v = value;
-
-        runInDispatchedThread(new Runnable() {
-            @Override
-            public void run() {
-                AccessToken token = WriteAction.start();
-                try {
-                    m.setOption(k, v);
-                } finally {
-                    token.finish();
-                }
-            }
-        });
+        runInDispatchedThread(() -> WriteAction.run(() -> module.setOption(key, value)));
     }
-    
+
     public static String getOption(Module module, String key) {
         if (module == null) {
             return null;
         }
-        AccessToken token = ReadAction.start();
-        try {
-            return module.getOptionValue(key);
-        } finally {
-            token.finish();
-        }
+        return ReadAction.compute(() -> module.getOptionValue(key));
     }
 
     public static void setXcodeProjectPath(Module module, String xcodeProjectPath) {

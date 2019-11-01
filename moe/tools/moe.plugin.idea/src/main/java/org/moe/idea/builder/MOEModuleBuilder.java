@@ -237,8 +237,8 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         String projectName = moduleProperties.getProjectName();
 
-        if (projectName != null && settingsStep.getModuleNameField() != null) {
-            settingsStep.getModuleNameField().setText(projectName);
+        if (projectName != null && settingsStep.getModuleNameLocationSettings() != null) {
+            settingsStep.getModuleNameLocationSettings().setModuleName(projectName);
         }
 
         return StdModuleTypes.JAVA.modifySettingsStep(settingsStep, this);

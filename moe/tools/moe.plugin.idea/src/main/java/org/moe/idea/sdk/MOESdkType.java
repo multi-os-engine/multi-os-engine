@@ -23,6 +23,7 @@ import com.intellij.openapi.projectRoots.AdditionalDataConfigurable;
 import com.intellij.openapi.projectRoots.JavaSdk;
 import com.intellij.openapi.projectRoots.JavaSdkType;
 import com.intellij.openapi.projectRoots.JavaSdkVersion;
+import com.intellij.openapi.projectRoots.JdkUtil;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkAdditionalData;
@@ -35,14 +36,12 @@ import com.intellij.openapi.roots.JavadocOrderRootType;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.java.LanguageLevel;
 import com.intellij.util.SystemProperties;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.common.utils.ProjectUtil;
-import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.utils.ModuleUtils;
 import res.MOEIcons;
 import res.MOEText;
@@ -51,8 +50,6 @@ import javax.swing.*;
 import java.io.File;
 import java.util.List;
 import java.util.Properties;
-
-import static com.intellij.openapi.projectRoots.JavaSdk.checkForJdk;
 
 public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
     private String name;
@@ -246,7 +243,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
             }
 
             for (File jdkPath : jdkPaths) {
-                if (checkForJdk(jdkPath)) {
+                if (JdkUtil.checkForJdk(jdkPath)) {
                     Sdk jdk = SdkConfigurationUtil.createAndAddSDK(jdkPath.getAbsolutePath(), JavaSdk.getInstance());
 
                     if(jdk != null) {

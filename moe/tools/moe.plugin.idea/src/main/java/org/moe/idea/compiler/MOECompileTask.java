@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.moe.idea.compiler;
 
-import com.intellij.compiler.options.CompileStepBeforeRun;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.configurations.RunConfiguration;
@@ -26,6 +25,7 @@ import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileTask;
+import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.compiler.CompilerMessageCategory;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -48,7 +48,7 @@ public class MOECompileTask implements CompileTask {
 
     @Override
     public boolean execute(CompileContext context) {
-        RunConfiguration c = context.getCompileScope().getUserData(CompileStepBeforeRun.RUN_CONFIGURATION);
+        RunConfiguration c = context.getCompileScope().getUserData(CompilerManager.RUN_CONFIGURATION_KEY);
 
         if (!(c instanceof MOERunConfiguration)) {
             return true;

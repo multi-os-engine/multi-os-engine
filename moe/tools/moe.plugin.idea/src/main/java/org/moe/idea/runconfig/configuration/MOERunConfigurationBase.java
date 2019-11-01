@@ -26,7 +26,6 @@ import com.intellij.execution.configurations.RunProfileWithCompileBeforeLaunchOp
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.RunConfigurationWithSuppressedDefaultRunAction;
 import com.intellij.ide.passwordSafe.PasswordSafe;
-import com.intellij.ide.passwordSafe.PasswordSafeException;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -37,7 +36,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.moe.common.PasswordEntry;
 import org.moe.idea.runconfig.MOERunProfileState;
 import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.JDOMHelper;
@@ -317,75 +315,6 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
             }
             return new Module[]{ moduleByName };
         }
-    }
-
-    public String secureValue(String key) throws PasswordSafeException {
-        String result = null;
-        try {
-            // If we are asking password first time here, User will see standard IntelliJ master password dialog.
-            result = safeStorage.getPassword(getProject(), this.getClass(), key);
-        } catch (PasswordSafeException pse) {
-            throw pse;
-        } catch (Exception e) {
-            throw new PasswordSafeException(e.getMessage());
-        }
-
-        return result;
-    }
-
-    public void secureValue(String key, String value, boolean cleanValue) throws PasswordSafeException {
-        try {
-            safeStorage.storePassword(getProject(), this.getClass(), key, value);
-        } catch (PasswordSafeException pse) {
-            throw pse;
-        } catch (Exception e) {
-            throw new PasswordSafeException(e.getMessage());
-        } finally {
-            if (cleanValue) {
-                try {
-                    PasswordEntry.clean(value);
-                } catch (Exception e) {
-                    throw new PasswordSafeException(e.getMessage());
-                }
-            }
-        }
-    }
-
-    public void secureValue(String key, char[] value, boolean cleanValue) throws PasswordSafeException {
-        String sValue = new String(value);
-        if (cleanValue) {
-            PasswordEntry.clean(value);
-        }
-        try {
-            safeStorage.storePassword(getProject(), this.getClass(), key, sValue);
-        } catch (PasswordSafeException pse) {
-            throw pse;
-        } catch (Exception e) {
-            throw new PasswordSafeException(e.getMessage());
-        } finally {
-            try {
-                PasswordEntry.clean(sValue);
-            } catch (Exception e) {
-                throw new PasswordSafeException(e.getMessage());
-            }
-        }
-    }
-
-    // This function is needed for console execution to avoid issues with special symbols.
-    // In particular is used with gradle tasks.
-    public String getQuotedPassKey(String key) throws PasswordSafeException {
-        String valueTmp = secureValue(key);
-        String value = null;
-        if (valueTmp != null) {
-            value = String.format("\"%s\"", valueTmp);
-            try {
-                PasswordEntry.clean(valueTmp);
-            } catch (Exception e) {
-                throw new PasswordSafeException(e.getMessage());
-            }
-        }
-
-        return value;
     }
 
     public boolean runJUnitTests() {

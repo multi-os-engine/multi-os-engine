@@ -26,7 +26,7 @@ import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileAdapter;
+import com.intellij.openapi.vfs.VirtualFileListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.idea.ui.BindingEditorForm;
@@ -34,7 +34,7 @@ import org.moe.idea.ui.BindingEditorForm;
 import javax.swing.*;
 import java.beans.PropertyChangeListener;
 
-public class BindingEditor extends VirtualFileAdapter implements FileEditor {
+public class BindingEditor implements VirtualFileListener, FileEditor {
 
     private BindingEditorForm bindingEditorForm;
     private FileDocumentManager fileDocumentManager;

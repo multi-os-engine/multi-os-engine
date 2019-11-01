@@ -30,7 +30,7 @@ import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileAdapter;
+import com.intellij.openapi.vfs.VirtualFileListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.document.pbxproj.ProjectException;
@@ -45,7 +45,7 @@ import javax.swing.*;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 
-public class XcodeEditor extends VirtualFileAdapter implements FileEditor {
+public class XcodeEditor implements VirtualFileListener, FileEditor {
 
     private static final Logger LOG = LoggerFactory.getLogger(XcodeEditor.class);
 
