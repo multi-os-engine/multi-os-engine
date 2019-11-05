@@ -770,76 +770,78 @@ public class Launchers {
                     testCollector = null;
                 }
 
-                SimCtl.Device selectedSim = null;
                 try {
-                    List<SimCtl.Device> sims = SimCtl.getDevices();
-                    for (SimCtl.Device s : sims) {
-                        if (Objects.equals(udid, s.udid)) {
-                            selectedSim = s;
-                            break;
+                    SimCtl.Device selectedSim = null;
+                    try {
+                        List<SimCtl.Device> sims = SimCtl.getDevices();
+                        for (SimCtl.Device s : sims) {
+                            if (Objects.equals(udid, s.udid)) {
+                                selectedSim = s;
+                                break;
+                            }
                         }
+                    } catch (Exception e) {
+                        throw new GradleException("Unable to find simulator (udid=" + udid + ")", e);
                     }
-                } catch (Exception e) {
-                    throw new GradleException("Unable to find simulator (udid=" + udid + ")", e);
-                }
-                if (selectedSim == null) {
-                    throw new GradleException("Unable to find simulator (udid=" + udid + ")");
-                }
+                    if (selectedSim == null) {
+                        throw new GradleException("Unable to find simulator (udid=" + udid + ")");
+                    }
 
-                if ("shutdown".equalsIgnoreCase(selectedSim.state)) {
-                    LOG.info("Booting simulator {}", selectedSim.udid);
+                    if ("shutdown".equalsIgnoreCase(selectedSim.state)) {
+                        LOG.info("Booting simulator {}", selectedSim.udid);
+                        TaskUtils.exec(project, exec -> {
+                            exec.setExecutable("xcrun");
+                            exec.args("simctl", "boot", udid);
+
+                            execConfigOutput(exec, testCollector);
+                        });
+                    }
+                    // Bring simulator window to front
                     TaskUtils.exec(project, exec -> {
-                        exec.setExecutable("xcrun");
-                        exec.args("simctl", "boot", udid);
+                        exec.setExecutable("open");
+                        exec.args("-a", "Simulator");
 
                         execConfigOutput(exec, testCollector);
                     });
-                }
-                // Bring simulator window to front
-                TaskUtils.exec(project, exec -> {
-                    exec.setExecutable("open");
-                    exec.args("-a", "Simulator");
 
-                    execConfigOutput(exec, testCollector);
-                });
+                    // Install app
+                    LOG.info("Installing app {} to simulator {}", appPath, selectedSim.udid);
+                    TaskUtils.exec(project, exec -> {
+                        exec.setExecutable("xcrun");
+                        exec.args("simctl", "install", udid, appPath);
 
-                // Install app
-                LOG.info("Installing app {} to simulator {}", appPath, selectedSim.udid);
-                TaskUtils.exec(project, exec -> {
-                    exec.setExecutable("xcrun");
-                    exec.args("simctl", "install", udid, appPath);
+                        execConfigOutput(exec, testCollector);
+                    });
 
-                    execConfigOutput(exec, testCollector);
-                });
+                    // Launch app
+                    LOG.info("Launching app {} on simulator {}", appPath, selectedSim.udid);
+                    TaskUtils.exec(project, exec -> {
+                        exec.setExecutable("xcrun");
+                        exec.args("simctl", "launch", "--console", udid, bundleIdentifier);
 
-                // Launch app
-                LOG.info("Launching app {} on simulator {}", appPath, selectedSim.udid);
-                TaskUtils.exec(project, exec -> {
-                    exec.setExecutable("xcrun");
-                    exec.args("simctl", "launch", "--console", udid, bundleIdentifier);
+                        if (options.debug != null) {
+                            exec.args("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=" + options.debug.local);
+                        }
 
-                    if (options.debug != null) {
-                        exec.args("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=" + options.debug.local);
+                        exec.args(options.vmargs);
+                        exec.args("-args");
+                        exec.args(options.args);
+
+                        // https://stackoverflow.com/a/53604237
+                        Map<String, String> envs = new HashMap<>();
+                        for (Map.Entry<String, String> entry : options.envs.entrySet()) {
+                            envs.put("SIMCTL_CHILD_" + entry.getKey(), entry.getValue());
+                        }
+                        envs.put("SIMCTL_CHILD_NSUnbufferedIO", "YES");
+                        exec.environment(envs);
+
+                        execConfigOutput(exec, testCollector);
+                    });
+                } finally {
+                    if (testCollector != null) {
+                        numFailedTests.getAndAdd(testCollector.getNumFailures() + testCollector.getNumErrors());
+                        writeJUnitReport(udid == null ? "unknown-simulator" : udid, testCollector, testOutputDir);
                     }
-
-                    exec.args(options.vmargs);
-                    exec.args("-args");
-                    exec.args(options.args);
-
-                    // https://stackoverflow.com/a/53604237
-                    Map<String, String> envs = new HashMap<>();
-                    for (Map.Entry<String, String> entry : options.envs.entrySet()) {
-                        envs.put("SIMCTL_CHILD_" + entry.getKey(), entry.getValue());
-                    }
-                    envs.put("SIMCTL_CHILD_NSUnbufferedIO", "YES");
-                    exec.environment(envs);
-
-                    execConfigOutput(exec, testCollector);
-                });
-
-                if (testCollector != null) {
-                    numFailedTests.getAndAdd(testCollector.getNumFailures() + testCollector.getNumErrors());
-                    writeJUnitReport(udid == null ? "unknown-simulator" : udid, testCollector, testOutputDir);
                 }
             });
         }
