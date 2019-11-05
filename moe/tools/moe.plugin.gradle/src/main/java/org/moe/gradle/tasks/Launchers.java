@@ -817,7 +817,7 @@ public class Launchers {
                     LOG.info("Launching app {} on simulator {}", appPath, selectedSim.udid);
                     TaskUtils.exec(project, exec -> {
                         exec.setExecutable("xcrun");
-                        exec.args("simctl", "launch", "--console", udid, bundleIdentifier);
+                        exec.args("simctl", "launch", "--console-pty", udid, bundleIdentifier);
 
                         if (options.debug != null) {
                             exec.args("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=" + options.debug.local);
