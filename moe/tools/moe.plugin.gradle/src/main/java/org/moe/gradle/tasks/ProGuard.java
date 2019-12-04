@@ -20,9 +20,11 @@ import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.file.ConfigurableFileCollection;
+import org.gradle.api.file.FileCollection;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.plugins.JavaPlugin;
+import org.gradle.api.tasks.Classpath;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.Optional;
@@ -42,9 +44,11 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -248,6 +252,18 @@ public class ProGuard extends AbstractBaseTask {
         return javaCompileTaskDep;
     }
 
+    private List<FileCollection> runtimeClasspath = new ArrayList<>();
+
+    /**
+     * Declare as task runtime classpath so jar files will be generated.
+     *
+     * A hack that forces gradle to generate jars of dependency projects
+     */
+    @Classpath @Optional
+    public List<FileCollection> getRuntimeClasspath() {
+        return runtimeClasspath;
+    }
+
     protected final void setupMoeTask(final @NotNull SourceSet sourceSet) {
         Require.nonNull(sourceSet);
 
@@ -284,6 +300,10 @@ public class ProGuard extends AbstractBaseTask {
             javaCompileTaskDep = javaCompileTask;
             javaCompileTask.setSourceCompatibility("1.8");
             javaCompileTask.setTargetCompatibility("1.8");
+
+            // A hack that forces gradle to generate jars of dependency projects
+            runtimeClasspath.clear();
+            runtimeClasspath.add(sourceSet.getRuntimeClasspath());
         }
 
         addConvention(CONVENTION_PROGUARD_JAR, sdk::getProGuardJar);
