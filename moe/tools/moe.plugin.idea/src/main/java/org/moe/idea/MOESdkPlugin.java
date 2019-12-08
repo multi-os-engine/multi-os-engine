@@ -32,6 +32,7 @@ import com.intellij.openapi.module.impl.scopes.ModuleWithDependenciesScope;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.plugins.gradle.service.project.GradleProjectResolverUtil;
 import org.jetbrains.plugins.gradle.settings.GradleLocalSettings;
 import org.jetbrains.plugins.gradle.util.GradleConstants;
 import org.moe.common.utils.ProjectUtil;
@@ -177,9 +178,15 @@ public class MOESdkPlugin {
 
         // Match IDEA module to Gradle project/subproject
         String moduleId = ModuleUtils.getModuleId(module);
+        String sourceSet = GradleProjectResolverUtil.getSourceSetName(module);
+        if (sourceSet == null) {
+            sourceSet = "";
+        } else {
+            sourceSet = ":" + sourceSet;
+        }
         for (ExternalProjectPojo availableProject : availableProjects) {
             if (availableProject.getPath().equals(path)) {
-                boolean matchById = availableProject.getName().equals(moduleId);
+                boolean matchById = (availableProject.getName() + sourceSet).equals(moduleId);
                 boolean matchByExplicitModuleName = availableProject.getName().equals(moduleName)
                         || availableProject.getName().endsWith(":" + moduleName);
 
