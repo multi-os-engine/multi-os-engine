@@ -10,6 +10,11 @@
     ]]></description>
 
   <change-notes><![CDATA[
+      1.4.7<br>
+      - Support Gradle group modules using qualified names<br>
+      - Support storing generated project files externally<br>
+      - Support separate module per source set<br>
+      <br>
       1.4.6<br>
       - Fix "Failed to populate list of simulators" error with Xcode 11<br>
       <br>
