@@ -176,10 +176,14 @@ public class MOESdkPlugin {
         }
 
         // Match IDEA module to Gradle project/subproject
+        String moduleId = ModuleUtils.getModuleId(module);
         for (ExternalProjectPojo availableProject : availableProjects) {
             if (availableProject.getPath().equals(path)) {
-                if (!availableProject.getName().equals(moduleName) && !availableProject.getName()
-                        .endsWith(":" + moduleName)) {
+                boolean matchById = availableProject.getName().equals(moduleId);
+                boolean matchByExplicitModuleName = availableProject.getName().equals(moduleName)
+                        || availableProject.getName().endsWith(":" + moduleName);
+
+                if (!matchById && !matchByExplicitModuleName) {
                     LOG.info("Could not associate IDEA module with Gradle project: " + moduleName);
                     return false;
                 }

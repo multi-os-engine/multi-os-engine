@@ -35,6 +35,7 @@ import java.io.File;
 public class ModuleUtils {
 
     public static final String MODULE_PATH_KEY = "external.linked.project.path";
+    public static final String MODULE_ID_KEY = "external.linked.project.id";
     public static final String XCODE_PROJECT_PATH_KEY = "moe.xcode.xcodeProjectPath";
     public static final String MAIN_PRODUCT_NAME_KEY = "moe.xcode.mainProductName";
 
@@ -89,6 +90,21 @@ public class ModuleUtils {
 
     public static String getModulePath(Project project, String moduleName) {
         return getModulePath(findModuleByName(project, moduleName));
+    }
+
+    public static String getModuleId(Module module) {
+        if (module.getModuleFile() == null) {
+            module.getProject().save();
+        }
+        String moduleId = getOption(module, MODULE_ID_KEY);
+        if ((moduleId == null) || moduleId.isEmpty()) {
+            moduleId = module.getName();
+        }
+        return moduleId;
+    }
+
+    public static String getModuleId(Project project, String moduleName) {
+        return getModuleId(findModuleByName(project, moduleName));
     }
 
     public static void runInDispatchedThread(@NotNull Runnable runnable) {
