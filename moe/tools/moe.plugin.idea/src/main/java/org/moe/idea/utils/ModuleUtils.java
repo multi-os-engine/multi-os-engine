@@ -19,6 +19,7 @@ package org.moe.idea.utils;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ReadAction;
 import com.intellij.openapi.application.WriteAction;
+import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.module.Module;
@@ -78,13 +79,19 @@ public class ModuleUtils {
     }
 
     public static String getModulePath(Module module) {
-        if (module.getModuleFile() == null) {
-            module.getProject().save();
-        }
-        String modulePath = getOption(module, MODULE_PATH_KEY);
+        String modulePath = ExternalSystemApiUtil.getExternalProjectPath(module);
+
         if ((modulePath == null) || modulePath.isEmpty()) {
-            modulePath = new File(module.getModuleFilePath()).getParent();
+            if (module.getModuleFile() == null) {
+                module.getProject().save();
+            }
+
+            modulePath = getOption(module, MODULE_PATH_KEY);
+            if ((modulePath == null) || modulePath.isEmpty()) {
+                modulePath = new File(module.getModuleFilePath()).getParent();
+            }
         }
+
         return modulePath;
     }
 
@@ -93,13 +100,19 @@ public class ModuleUtils {
     }
 
     public static String getModuleId(Module module) {
-        if (module.getModuleFile() == null) {
-            module.getProject().save();
-        }
-        String moduleId = getOption(module, MODULE_ID_KEY);
+        String moduleId = ExternalSystemApiUtil.getExternalProjectId(module);
+
         if ((moduleId == null) || moduleId.isEmpty()) {
-            moduleId = module.getName();
+            if (module.getModuleFile() == null) {
+                module.getProject().save();
+            }
+
+            moduleId = getOption(module, MODULE_ID_KEY);
+            if ((moduleId == null) || moduleId.isEmpty()) {
+                moduleId = module.getName();
+            }
         }
+
         return moduleId;
     }
 
