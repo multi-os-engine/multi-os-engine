@@ -188,7 +188,7 @@ public class ProGuard extends AbstractBaseTask {
         startSection(conf, "Generating -injars");
         getInJars().forEach(it -> {
             if (it.exists()) {
-                conf.append("-injars ").append(it.getAbsolutePath()).append("(!**.framework/**,!**.bundle/**)\n");
+                conf.append("-injars ").append(it.getAbsolutePath()).append("(!**.framework/**,!**.bundle/**,!module-info.class)\n");
             } else {
                 LOG.debug("inJars file doesn't exist: " + it.getAbsolutePath());
             }
