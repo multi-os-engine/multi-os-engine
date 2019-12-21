@@ -75,7 +75,7 @@ p = {"<BEGIN>":"#", "<END>":"#", "<LINE>":"#"}
 s = {"<BEGIN>":"..", "<END>":"", "<LINE>":"\t"}
 
 extensions = {"cpp":c, "h":c, "mm":c, "m":c, "c":c, "cc":c, "cxx":c, "hh":c, "hpp":c, "hxx":c, "inc":c, "pch":c, "s":c, "sh":p, "py":p, "java":c, "rst":s, "gradle":c, "groovy":c}
-moe_skip = ["libffi", "libimobiledevice", "retrolambda", "samples"]
+moe_skip = ["libffi", "libimobiledevice", "retrolambda", 'proguard', "samples"]
 moe_epl10 = ["idea-ide", "eclipse-ide","tools/master", "tools/moe.appium.cucumber", "tools/moe.binding.clang", "tools/moe.binding.libimobiledevice", \
 					"tools/moe.build.gradle", "tools/moe.document.pbxproj", "tools/moe.document.xib", "tools/moe.generator.project", \
 					"tools/moe.ios.device.launcher", "tools/moe.maven.core", \
