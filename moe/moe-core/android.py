@@ -78,7 +78,7 @@ extensions = {"cpp":c, "h":c, "mm":c, "m":c, "c":c, "cc":c, "cxx":c, "hh":c, "hp
 moe_skip = ["libffi", "libimobiledevice", "retrolambda", "samples"]
 moe_epl10 = ["idea-ide", "eclipse-ide","tools/master", "tools/moe.appium.cucumber", "tools/moe.binding.clang", "tools/moe.binding.libimobiledevice", \
 					"tools/moe.build.gradle", "tools/moe.document.pbxproj", "tools/moe.document.xib", "tools/moe.generator.project", \
-					"tools/moe.ios.device.launcher", "tools/moe.ios.simulator.launcher", "tools/moe.maven.core", \
+					"tools/moe.ios.device.launcher", "tools/moe.maven.core", \
 					"tools/moe.protocol.gdbremote", "tools/moe.tools.common"]
 moe_apache20 = ["test", "tools/moe.mac.core"]
 moe_rst = ["doc"]
