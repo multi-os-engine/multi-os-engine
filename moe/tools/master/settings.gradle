@@ -29,3 +29,6 @@ includeFlat 'moe.sdk.publisher'
 project(':moe.sdk.publisher').name = 'moe-sdk'
 includeFlat 'moe.tools.common'
 includeFlat 'moe.tools.natjgen'
+
+include 'proguard'
+project(':proguard').projectDir = new File('../../../external/proguard/core')

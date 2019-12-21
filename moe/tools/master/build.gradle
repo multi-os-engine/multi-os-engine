@@ -131,7 +131,6 @@ ext {
     external.moe_core.out.preloaded_classes = file('../../../aosp/frameworks/base/preloaded-classes')
     external.moe_core.out.proguard_full_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard-full.cfg")
     external.moe_core.out.proguard_cfg = file("${external.moe_core.root}/moe.apple/tools/proguard.cfg")
-    external.moe_core.out.proguard_jar = file("${external.moe_core.root}/moe.apple/tools/proguard.jar")
     external.moe_core.out.retrolambda_jar = file("${external.moe_core.root}/moe.apple/tools/retrolambda-2.0.2.jar")
     external.moe_core.out.dx_exec = file("${external.moe_core.root}/moe.apple/tools/prebuilts/dx")
     external.moe_core.out.dx_jar = file("${external.moe_core.root}/moe.apple/tools/prebuilts/lib/dx.jar")
