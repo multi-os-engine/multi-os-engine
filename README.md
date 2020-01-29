@@ -59,9 +59,19 @@ brew install autogen autoconf automake libtool pkg-config wget gcc@5 cloog cmake
 
 cd <repo>/moe/moe-core
 brew install file://`pwd`/dependencies/premake5.rb
+brew install file://`pwd`/dependencies/isl@0.14.rb
 ```
 
 ### Building MinGW & LLVM
+
+Note: On MacOS Mojave the header files are not installed automatically. To install them, execute the following commands:
+
+```
+sudo rm -rf /Library/Developer/CommandLineTools # We remove the previously installed command line tools to make sure we have the latest one
+xcode-select --install   # Install the latest one
+open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg # Install the headers
+sudo xcode-select --reset # To make sure that the default toolchain path points to Xcode (required by xcodebuild)
+```
 
 Building the complete SDK and related tools requires LLVM and MinGW. To build these execute the following:
 
