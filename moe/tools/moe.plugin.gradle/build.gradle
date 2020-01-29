@@ -30,7 +30,7 @@ plugins {
 if (name != 'moe-gradle') {
     throw new GradleException('Incorrect name')
 }
-group 'org.multi-os-engine.community'
+group 'org.multi-os-engine'
 
 String loadPluginVersion() {
     final Properties props = new Properties()
