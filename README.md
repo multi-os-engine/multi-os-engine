@@ -15,7 +15,7 @@
 
 ### Requirements
 
-- Apple macOS 10.11
+- Apple macOS 10.14+
 - Minimum 8GB RAM
 
 ### Install the 'repo' Tool
@@ -55,11 +55,10 @@ Install brew from [brew.sh](http://brew.sh), then you can install MOE's dependen
 
 ```sh
 brew tap homebrew/versions
-brew install autogen autoconf automake libtool pkg-config wget gcc@5 cloog cmake jasmin gpg ant maven
+brew install autogen autoconf automake libtool pkg-config wget isl cloog cmake jasmin gpg ant maven
 
 cd <repo>/moe/moe-core
 brew install file://`pwd`/dependencies/premake5.rb
-brew install file://`pwd`/dependencies/isl@0.14.rb
 ```
 
 ### Building MinGW & LLVM
