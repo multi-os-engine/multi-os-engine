@@ -17,6 +17,8 @@ limitations under the License.
 package org.moe.ios.device.launcher;
 
 import org.libimobiledevice.c.Globals;
+import org.libimobiledevice.enums.idevice_connection_type;
+import org.libimobiledevice.enums.idevice_event_type;
 import org.libimobiledevice.struct.idevice_event_t;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.slf4j.Logger;
@@ -67,10 +69,8 @@ public class USBDeviceWatcher {
         idevice_event_subscribe(new Globals.Function_idevice_event_subscribe() {
             @Override
             public void call_idevice_event_subscribe(idevice_event_t event, VoidPtr context) {
-                LOG.debug("Event: " + event.event() + ", conn_type: " + event.conn_type() + ", conn_subtype: " + event
-                        .conn_subtype());
-                if (event.conn_type() != DeviceHelper.CONN_TYPE_USBMUXD || !DeviceHelper.CONN_SUB_TYPE_USB
-                        .equals(event.conn_subtype())) {
+                LOG.debug("Event: " + event.event() + ", conn_type: " + event.conn_type());
+                if (event.conn_type() != idevice_connection_type.USBMUXD) {
                     return;
                 }
                 // Initializing listeners is always a priority
@@ -80,7 +80,7 @@ public class USBDeviceWatcher {
                 lock.lock();
                 final int eventType = event.event();
                 final String eventUDID = event.udid();
-                if (eventType == DeviceHelper.CONN_EVENT_ADD) {
+                if (eventType == idevice_event_type.ADD) {
                     if (!connectedDevices.contains(eventUDID)) {
                         connectedDevices.add(eventUDID);
                     }
@@ -152,7 +152,7 @@ public class USBDeviceWatcher {
                     lock.lock();
                     try {
                         for (String device : connectedDevices) {
-                            listener.handle(DeviceHelper.CONN_EVENT_ADD, device);
+                            listener.handle(idevice_event_type.ADD, device);
                         }
                     } finally {
                         initializingListeners.remove(listener);

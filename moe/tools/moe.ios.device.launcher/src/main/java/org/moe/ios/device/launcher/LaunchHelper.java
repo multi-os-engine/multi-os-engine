@@ -18,6 +18,7 @@ package org.moe.ios.device.launcher;
 
 import org.libimobiledevice.enums.debugserver_error_t;
 import org.libimobiledevice.enums.idevice_error_t;
+import org.libimobiledevice.enums.idevice_event_type;
 import org.libimobiledevice.opaque.debugserver_client_t;
 import org.libimobiledevice.opaque.idevice_t;
 import org.moe.common.Port;
@@ -480,7 +481,7 @@ public class LaunchHelper implements IStopReplyListener {
                 USBDeviceWatcher.IUSBDeviceListener listener = new USBDeviceWatcher.IUSBDeviceListener() {
                     @Override
                     public void handle(int event, String deviceUDID) {
-                        if (deviceUDID.equals(udid) && event == DeviceHelper.CONN_EVENT_REMOVE) {
+                        if (deviceUDID.equals(udid) && event == idevice_event_type.REMOVE) {
                             signalProcessEnded(false);
                         }
                     }
