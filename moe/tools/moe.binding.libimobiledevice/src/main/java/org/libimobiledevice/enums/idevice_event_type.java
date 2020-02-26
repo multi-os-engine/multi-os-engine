@@ -30,4 +30,6 @@ public final class idevice_event_type {
     @Generated
     private idevice_event_type() {
     }
+
+    @Generated public static final int PAIRED = 0x00000003;
 }

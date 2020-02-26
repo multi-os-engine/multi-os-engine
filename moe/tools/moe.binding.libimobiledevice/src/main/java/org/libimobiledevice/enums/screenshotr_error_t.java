@@ -28,10 +28,13 @@ public final class screenshotr_error_t {
     @Generated public static final int SCREENSHOTR_E_INVALID_ARG = 0xFFFFFFFF;
     @Generated public static final int SCREENSHOTR_E_PLIST_ERROR = 0xFFFFFFFE;
     @Generated public static final int SCREENSHOTR_E_MUX_ERROR = 0xFFFFFFFD;
-    @Generated public static final int SCREENSHOTR_E_BAD_VERSION = 0xFFFFFFFC;
+    @Generated public static final int SCREENSHOTR_E_BAD_VERSION = 0xFFFFFFFA;
     @Generated public static final int SCREENSHOTR_E_UNKNOWN_ERROR = 0xFFFFFF00;
 
     @Generated
     private screenshotr_error_t() {
     }
+
+    @Generated public static final int SCREENSHOTR_E_SSL_ERROR = 0xFFFFFFFC;
+    @Generated public static final int SCREENSHOTR_E_RECEIVE_TIMEOUT = 0xFFFFFFFB;
 }

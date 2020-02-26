@@ -34,4 +34,6 @@ public final class debugserver_error_t {
     @Generated
     private debugserver_error_t() {
     }
+
+    @Generated public static final int DEBUGSERVER_E_TIMEOUT = 0xFFFFFFFB;
 }

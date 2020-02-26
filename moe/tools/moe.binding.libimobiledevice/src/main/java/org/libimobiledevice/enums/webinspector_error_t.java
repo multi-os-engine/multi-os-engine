@@ -34,4 +34,7 @@ public final class webinspector_error_t {
     @Generated
     private webinspector_error_t() {
     }
+
+    @Generated public static final int WEBINSPECTOR_E_RECEIVE_TIMEOUT = 0xFFFFFFFB;
+    @Generated public static final int WEBINSPECTOR_E_NOT_ENOUGH_DATA = 0xFFFFFFFA;
 }

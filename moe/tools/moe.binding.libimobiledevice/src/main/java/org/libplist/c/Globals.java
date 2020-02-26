@@ -20,6 +20,7 @@
 
 package org.libplist.c;
 
+import org.libplist.opaque.plist_array_iter;
 import org.libplist.opaque.plist_dict_iter;
 import org.libplist.opaque.plist_t;
 import org.moe.natj.c.CRuntime;
@@ -29,6 +30,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
+import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.DoublePtr;
@@ -267,10 +269,6 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native void plist_cleanup();
-
-    @Generated
-    @CFunction
     public static native void plist_from_memory(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String plist_data,
             int length, Ptr<plist_t> plist);
@@ -280,4 +278,38 @@ public final class Globals {
     public static native int plist_is_binary(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String plist_data,
             int length);
+
+    @Generated
+    @CFunction
+    public static native void plist_array_item_remove(plist_t node);
+
+    @Generated
+    @CFunction
+    public static native void plist_array_new_iter(plist_t node, Ptr<plist_array_iter> iter);
+
+    @Generated
+    @CFunction
+    public static native void plist_array_next_item(plist_t node, plist_array_iter iter, Ptr<plist_t> item);
+
+    @Generated
+    @CFunction
+    public static native plist_t plist_dict_item_get_key(plist_t node);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String plist_get_string_ptr(plist_t node, LongPtr length);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String plist_get_data_ptr(plist_t node, LongPtr length);
+
+    @Generated
+    @CFunction
+    public static native void plist_to_xml_free(BytePtr plist_xml);
+
+    @Generated
+    @CFunction
+    public static native void plist_to_bin_free(BytePtr plist_bin);
 }

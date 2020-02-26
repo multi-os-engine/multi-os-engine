@@ -34,4 +34,7 @@ public final class heartbeat_error_t {
     @Generated
     private heartbeat_error_t() {
     }
+
+    @Generated public static final int HEARTBEAT_E_NOT_ENOUGH_DATA = 0xFFFFFFFB;
+    @Generated public static final int HEARTBEAT_E_TIMEOUT = 0xFFFFFFFA;
 }

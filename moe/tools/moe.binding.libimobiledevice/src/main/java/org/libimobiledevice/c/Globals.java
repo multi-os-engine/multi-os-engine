@@ -37,6 +37,7 @@ import org.libimobiledevice.opaque.mobilebackup2_client_t;
 import org.libimobiledevice.opaque.mobilebackup_client_t;
 import org.libimobiledevice.opaque.mobilesync_client_t;
 import org.libimobiledevice.opaque.np_client_t;
+import org.libimobiledevice.opaque.preboard_client_t;
 import org.libimobiledevice.opaque.property_list_service_client_t;
 import org.libimobiledevice.opaque.restored_client_t;
 import org.libimobiledevice.opaque.sbservices_client_t;
@@ -45,6 +46,7 @@ import org.libimobiledevice.opaque.service_client_t;
 import org.libimobiledevice.opaque.syslog_relay_client_t;
 import org.libimobiledevice.opaque.webinspector_client_t;
 import org.libimobiledevice.struct.idevice_event_t;
+import org.libimobiledevice.struct.idevice_info;
 import org.libimobiledevice.struct.lockdownd_pair_record;
 import org.libimobiledevice.struct.lockdownd_service_descriptor;
 import org.libimobiledevice.struct.mobilesync_anchors;
@@ -106,13 +108,6 @@ public final class Globals {
     @CFunction
     public static native int idevice_new(Ptr<idevice_t> device,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String udid);
-
-    @Generated
-    @CFunction
-    public static native int idevice_new_with_connection(Ptr<idevice_t> device,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String udid,
-            int conn_type,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String conn_subtype);
 
     @Generated
     @CFunction
@@ -414,11 +409,12 @@ public final class Globals {
     @Generated
     @CFunction
     public static native int debugserver_client_send_command(debugserver_client_t client, debugserver_command_t command,
-            Ptr<BytePtr> response);
+            Ptr<BytePtr> response, LongPtr response_size);
 
     @Generated
     @CFunction
-    public static native int debugserver_client_receive_response(debugserver_client_t client, Ptr<BytePtr> response);
+    public static native int debugserver_client_receive_response(debugserver_client_t client, Ptr<BytePtr> response,
+            LongPtr response_size);
 
     @Generated
     @CFunction
@@ -1258,12 +1254,6 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native int idevice_get_device_list_with_connection(Ptr<Ptr<BytePtr>> devices, IntPtr count,
-            int conn_type,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String conn_subtype);
-
-    @Generated
-    @CFunction
     public static native int debugserver_client_set_ack_mode(debugserver_client_t client, int enabled);
 
     @Generated
@@ -1414,5 +1404,94 @@ public final class Globals {
     public interface Function_instproxy_browse_with_callback {
         @Generated
         void call_instproxy_browse_with_callback(plist_t arg0, plist_t arg1, VoidPtr arg2);
+    }
+
+    @Generated
+    @CFunction
+    public static native int idevice_get_device_list_extended(Ptr<Ptr<Ptr<idevice_info>>> devices, IntPtr count);
+
+    @Generated
+    @CFunction
+    public static native int idevice_device_list_extended_free(Ptr<Ptr<idevice_info>> devices);
+
+    @Generated
+    @CFunction
+    public static native int idevice_new_with_options(Ptr<idevice_t> device,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String udid,
+            int options);
+
+    @Generated
+    @CFunction
+    public static native int idevice_connection_disable_bypass_ssl(idevice_connection_t connection, byte sslBypass);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String lockdownd_strerror(int err);
+
+    @Generated
+    @CFunction
+    public static native void instproxy_get_cfbundle_identifier(plist_t status, Ptr<BytePtr> name);
+
+    @Generated
+    @CFunction
+    public static native int misagent_copy_all(misagent_client_t client, Ptr<plist_t> profiles);
+
+    @Generated
+    @CFunction
+    public static native int service_disable_bypass_ssl(service_client_t client, byte sslBypass);
+
+    @Generated
+    @CFunction
+    public static native int preboard_client_new(idevice_t device,
+            @UncertainArgument("Options: reference, array Fallback: reference") lockdownd_service_descriptor service,
+            Ptr<preboard_client_t> client);
+
+    @Generated
+    @CFunction
+    public static native int preboard_client_start_service(idevice_t device, Ptr<preboard_client_t> client,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
+
+    @Generated
+    @CFunction
+    public static native int preboard_client_free(preboard_client_t client);
+
+    @Generated
+    @CFunction
+    public static native int preboard_send(preboard_client_t client, plist_t plist);
+
+    @Generated
+    @CFunction
+    public static native int preboard_receive(preboard_client_t client, Ptr<plist_t> plist);
+
+    @Generated
+    @CFunction
+    public static native int preboard_receive_with_timeout(preboard_client_t client, Ptr<plist_t> plist,
+            int timeout_ms);
+
+    @Generated
+    @CFunction
+    public static native int preboard_create_stashbag(preboard_client_t client, plist_t manifest,
+            @FunctionPtr(name = "call_preboard_create_stashbag") Function_preboard_create_stashbag status_cb,
+            VoidPtr user_data);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_preboard_create_stashbag {
+        @Generated
+        void call_preboard_create_stashbag(plist_t arg0, VoidPtr arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native int preboard_commit_stashbag(preboard_client_t client, plist_t manifest,
+            @FunctionPtr(name = "call_preboard_commit_stashbag") Function_preboard_commit_stashbag status_cb,
+            VoidPtr user_data);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_preboard_commit_stashbag {
+        @Generated
+        void call_preboard_commit_stashbag(plist_t arg0, VoidPtr arg1);
     }
 }

@@ -34,4 +34,6 @@ public final class mobile_image_mounter_error_t {
     @Generated
     private mobile_image_mounter_error_t() {
     }
+
+    @Generated public static final int MOBILE_IMAGE_MOUNTER_E_DEVICE_LOCKED = 0xFFFFFFFB;
 }
