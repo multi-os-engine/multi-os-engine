@@ -16,6 +16,8 @@ limitations under the License.
 
 package org.moe.ios.device;
 
+import org.libimobiledevice.enums.debugserver_error_t;
+import org.libimobiledevice.enums.idevice_error_t;
 import org.libimobiledevice.opaque.debugserver_client_t;
 import org.libimobiledevice.opaque.idevice_connection_t;
 import org.moe.natj.general.ptr.BytePtr;
@@ -55,7 +57,13 @@ public class ConnectionHelper {
                     if (usageLock.lockGetClosed()) {
                         return -1;
                     }
-                    return debugserver_client_receive_with_timeout(handle, buffer, len, recvBytes, timeout);
+                    int result = debugserver_client_receive_with_timeout(handle, buffer, len, recvBytes, timeout);
+                    if (result == debugserver_error_t.DEBUGSERVER_E_TIMEOUT) {
+                        // This is actually not an error, we just return a success with len=0
+                        // and caller will retry if needed.
+                        result = idevice_error_t.IDEVICE_E_SUCCESS;
+                    }
+                    return result;
                 } finally {
                     usageLock.unlock();
                 }
@@ -110,7 +118,13 @@ public class ConnectionHelper {
                     if (usageLock.lockGetClosed()) {
                         return -1;
                     }
-                    return idevice_connection_receive_timeout(handle, buffer, len, recvBytes, timeout);
+                    int result = idevice_connection_receive_timeout(handle, buffer, len, recvBytes, timeout);
+                    if (result == idevice_error_t.IDEVICE_E_TIMEOUT) {
+                        // This is actually not an error, we just return a success with len=0
+                        // and caller will retry if needed.
+                        result = idevice_error_t.IDEVICE_E_SUCCESS;
+                    }
+                    return result;
                 } finally {
                     usageLock.unlock();
                 }
