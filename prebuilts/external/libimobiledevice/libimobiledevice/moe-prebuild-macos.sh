@@ -25,7 +25,9 @@ __MOE_PREBUILTS_DIR="$__MOE_PREBUILTS_DIR:$MOE_PREBUILTS_DIR/external/libimobile
 ./autogen.sh \
 --prefix="$__MOE_TARGET" \
 --disable-shared \
-CFLAGS="-DMOE -I$MOE_PREBUILTS_DIR/external/libimobiledevice/openssl/build/macos/include" \
+CFLAGS="-DMOE"\
+" -I$MOE_PREBUILTS_DIR/external/libimobiledevice/openssl/build/macos/include"\
+" -I$MOE_PREBUILTS_DIR/external/libimobiledevice/libusbmuxd/build/macos/include" \
 --without-cython \
 PKG_CONFIG_LIBDIR="$__MOE_PREBUILTS_DIR"
 make
