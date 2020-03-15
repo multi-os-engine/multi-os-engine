@@ -521,7 +521,7 @@ public final class CManager extends AbstractUnitManager {
      */
     private void update(CVariable variable, ClassMemberEditor cme) {
         if (variable.getValue() != null) {
-            updateContant(variable, cme);
+            updateConstant(variable, cme);
             return;
         }
 
@@ -581,7 +581,7 @@ public final class CManager extends AbstractUnitManager {
         }
     }
 
-    private void updateContant(CVariable variable, ClassMemberEditor cme) {
+    private void updateConstant(CVariable variable, ClassMemberEditor cme) {
         if (variable.getDontGenerate()) {
             return;
         }
