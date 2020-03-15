@@ -19,6 +19,10 @@ import org.gradle.internal.jvm.Jvm
 
 apply plugin: 'java'
 
+java {
+    disableAutoTargetJvm()
+}
+
 static def JvmVersionMeets(version) {
     def currentJvm = Jvm.current()
     return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
