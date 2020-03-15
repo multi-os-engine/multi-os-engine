@@ -216,7 +216,7 @@ public class CVariables extends AbstractNatJGenTest {
         assertPrimitiveType(field.getType(), "double");
         assertHasMarkerAnnotation(field, Constants.NFloatAnnotationFQ);
 
-        assertInitialValue(field, "0x0000000000000000L", "0x00000000", PrimitiveType.FLOAT);
+        assertInitialValue(field, "0.0", "0.0", PrimitiveType.FLOAT);
     }
 
     public void test_cvar_nfloat_poz_one() {
@@ -225,7 +225,7 @@ public class CVariables extends AbstractNatJGenTest {
         assertPrimitiveType(field.getType(), "double");
         assertHasMarkerAnnotation(field, Constants.NFloatAnnotationFQ);
 
-        assertInitialValue(field, "0x3FF0000000000000L", "0x3F800000", PrimitiveType.FLOAT);
+        assertInitialValue(field, "1.0", "1.0", PrimitiveType.FLOAT);
     }
 
     public void test_cvar_nfloat_neg_one() {
@@ -234,7 +234,7 @@ public class CVariables extends AbstractNatJGenTest {
         assertPrimitiveType(field.getType(), "double");
         assertHasMarkerAnnotation(field, Constants.NFloatAnnotationFQ);
 
-        assertInitialValue(field, "0xBFF0000000000000L", "0xBF800000", PrimitiveType.FLOAT);
+        assertInitialValue(field, "-1.0", "-1.0", PrimitiveType.FLOAT);
     }
 
     public void test_cvar_long_max() {
@@ -347,7 +347,7 @@ public class CVariables extends AbstractNatJGenTest {
         assertPrimitiveType(field.getType(), "double");
         assertHasMarkerAnnotation(field, Constants.NFloatAnnotationFQ);
 
-        assertInitialValue(field, "0x4A02A05EE28AF686L", "0x7F7FFFFD", PrimitiveType.FLOAT);
+        assertInitialValue(field, "3.402823E48", "3.402823E38", PrimitiveType.FLOAT);
     }
 
     public void test_cvar_int64_diff() {
