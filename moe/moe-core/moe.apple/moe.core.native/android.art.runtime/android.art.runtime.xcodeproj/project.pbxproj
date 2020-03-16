@@ -784,6 +784,7 @@
 		23CDF7F2192E02C600EBA5E8 /* libinterpreter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libinterpreter.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		23FE08551BD796C300924CF3 /* oat_quick_method_header.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = oat_quick_method_header.cc; sourceTree = "<group>"; };
 		23FE08561BD796C300924CF3 /* oat_quick_method_header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oat_quick_method_header.h; sourceTree = "<group>"; };
+		550F46FB241F0DA20048962D /* thread-current-inl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "thread-current-inl.h"; sourceTree = "<group>"; };
 		57ED17131B56748100605F42 /* MachoUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MachoUtils.cpp; sourceTree = "<group>"; };
 		57ED17141B56748100605F42 /* MachoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachoUtils.h; sourceTree = "<group>"; };
 		57ED17151B56748100605F42 /* xrtLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xrtLog.h; sourceTree = "<group>"; };
@@ -1102,6 +1103,7 @@
 				23AF44EA1ABB068E00EF7F42 /* stack_map.h */,
 				6D62141B1BBC477B009F133F /* stride_iterator.h */,
 				23AF44EB1ABB068E00EF7F42 /* thread-inl.h */,
+				550F46FB241F0DA20048962D /* thread-current-inl.h */,
 				23AF44EC1ABB068E00EF7F42 /* thread.cc */,
 				23AF44ED1ABB068E00EF7F42 /* thread.h */,
 				6D62141C1BBC478E009F133F /* thread_android.cc */,
