@@ -24,11 +24,11 @@ buildscript {
 }
 
 plugins {
-    id "com.jfrog.bintray" version "1.7"
+    id "com.jfrog.bintray" version "1.8.4"
 }
 
-group 'org.multi-os-engine'
-version '1.4.2'
+group 'org.multi-os-engine.community'
+version '1.5.0'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
@@ -306,9 +306,9 @@ bintray {
     pkg {
         repo = 'maven'
         name = 'moe-sdk'
-        userOrg = 'multi-os-engine'
-        websiteUrl = 'https://multi-os-engine.org'
-        vcsUrl = 'https://github.com/multi-os-engine/multi-os-engine'
+        // userOrg = 'multi-os-engine'
+        websiteUrl = 'https://discuss.multi-os-engine.org'
+        vcsUrl = 'https://github.com/multi-os-engine-community/multi-os-engine'
         licenses = ['Apache-2.0']
         labels = ['moe', 'multi-os-engine']
         publicDownloadNumbers = false
