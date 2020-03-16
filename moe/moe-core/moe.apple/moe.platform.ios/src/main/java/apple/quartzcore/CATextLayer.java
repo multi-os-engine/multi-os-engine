@@ -201,7 +201,7 @@ public class CATextLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATextLayer initWithCoder(NSCoder aDecoder);
+    public native CATextLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -261,4 +261,9 @@ public class CATextLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

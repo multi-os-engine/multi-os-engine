@@ -32,4 +32,6 @@ public final class UIButtonType {
     @Generated
     private UIButtonType() {
     }
+
+    @Generated @NInt public static final long Close = 0x0000000000000007L;
 }

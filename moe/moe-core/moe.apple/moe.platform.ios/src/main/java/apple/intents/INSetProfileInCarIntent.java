@@ -167,7 +167,7 @@ public class INSetProfileInCarIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetProfileInCarIntent initWithCoder(NSCoder aDecoder);
+    public native INSetProfileInCarIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithProfileNumber:profileLabel:defaultProfile:")
@@ -196,4 +196,13 @@ public class INSetProfileInCarIntent extends INIntent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("carName")
+    public native INSpeakableString carName();
+
+    @Generated
+    @Selector("initWithProfileNumber:profileName:defaultProfile:carName:")
+    public native INSetProfileInCarIntent initWithProfileNumberProfileNameDefaultProfileCarName(NSNumber profileNumber,
+            String profileName, NSNumber defaultProfile, INSpeakableString carName);
 }

@@ -25,7 +25,7 @@ import apple.foundation.NSData;
 import apple.foundation.NSFileWrapper;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.uikit.protocol.NSTextAttachmentContainer;
 import apple.uikit.protocol.UIAccessibilityContentSizeCategoryImageAdjusting;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -45,6 +45,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -53,7 +54,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class NSTextAttachment extends NSObject
-        implements NSTextAttachmentContainer, NSCoding, UIAccessibilityContentSizeCategoryImageAdjusting {
+        implements NSTextAttachmentContainer, NSSecureCoding, UIAccessibilityContentSizeCategoryImageAdjusting {
     static {
         NatJ.register();
     }
@@ -177,7 +178,7 @@ public class NSTextAttachment extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fileType")
@@ -202,7 +203,7 @@ public class NSTextAttachment extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextAttachment initWithCoder(NSCoder aDecoder);
+    public native NSTextAttachment initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithData:ofType:")
@@ -235,4 +236,18 @@ public class NSTextAttachment extends NSObject
     @Generated
     @Selector("setAdjustsImageSizeForAccessibilityContentSizeCategory:")
     public native void setAdjustsImageSizeForAccessibilityContentSizeCategory(boolean value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
+    @Selector("textAttachmentWithImage:")
+    public static native NSTextAttachment textAttachmentWithImage(UIImage image);
 }

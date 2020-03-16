@@ -239,4 +239,24 @@ public class GCController extends NSObject {
         @Generated
         void call_startWirelessControllerDiscoveryWithCompletionHandler();
     }
+
+    @Generated
+    @Selector("capture")
+    public native GCController capture();
+
+    @Generated
+    @Selector("controllerWithExtendedGamepad")
+    public static native GCController controllerWithExtendedGamepad();
+
+    @Generated
+    @Selector("controllerWithMicroGamepad")
+    public static native GCController controllerWithMicroGamepad();
+
+    @Generated
+    @Selector("isSnapshot")
+    public native boolean isSnapshot();
+
+    @Generated
+    @Selector("productCategory")
+    public native String productCategory();
 }

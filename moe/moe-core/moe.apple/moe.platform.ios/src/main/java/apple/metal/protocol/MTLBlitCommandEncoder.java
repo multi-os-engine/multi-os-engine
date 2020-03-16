@@ -18,6 +18,7 @@ package apple.metal.protocol;
 
 import apple.foundation.struct.NSRange;
 import apple.metal.struct.MTLOrigin;
+import apple.metal.struct.MTLRegion;
 import apple.metal.struct.MTLSize;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -96,4 +97,61 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("waitForFence:")
     void waitForFence(@Mapped(ObjCObjectMapper.class) Object fence);
+
+    @Generated
+    @Selector("copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:")
+    void copyFromTextureSourceSliceSourceLevelToTextureDestinationSliceDestinationLevelSliceCountLevelCount(
+            @Mapped(ObjCObjectMapper.class) Object sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
+            @Mapped(ObjCObjectMapper.class) Object destinationTexture, @NUInt long destinationSlice,
+            @NUInt long destinationLevel, @NUInt long sliceCount, @NUInt long levelCount);
+
+    @Generated
+    @Selector("copyFromTexture:toTexture:")
+    void copyFromTextureToTexture(@Mapped(ObjCObjectMapper.class) Object sourceTexture,
+            @Mapped(ObjCObjectMapper.class) Object destinationTexture);
+
+    @Generated
+    @Selector("copyIndirectCommandBuffer:sourceRange:destination:destinationIndex:")
+    void copyIndirectCommandBufferSourceRangeDestinationDestinationIndex(@Mapped(ObjCObjectMapper.class) Object source,
+            @ByValue NSRange sourceRange, @Mapped(ObjCObjectMapper.class) Object destination,
+            @NUInt long destinationIndex);
+
+    @Generated
+    @Selector("getTextureAccessCounters:region:mipLevel:slice:resetCounters:countersBuffer:countersBufferOffset:")
+    void getTextureAccessCountersRegionMipLevelSliceResetCountersCountersBufferCountersBufferOffset(
+            @Mapped(ObjCObjectMapper.class) Object texture, @ByValue MTLRegion region, @NUInt long mipLevel,
+            @NUInt long slice, boolean resetCounters, @Mapped(ObjCObjectMapper.class) Object countersBuffer,
+            @NUInt long countersBufferOffset);
+
+    @Generated
+    @Selector("optimizeContentsForCPUAccess:")
+    void optimizeContentsForCPUAccess(@Mapped(ObjCObjectMapper.class) Object texture);
+
+    @Generated
+    @Selector("optimizeContentsForCPUAccess:slice:level:")
+    void optimizeContentsForCPUAccessSliceLevel(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long slice,
+            @NUInt long level);
+
+    @Generated
+    @Selector("optimizeContentsForGPUAccess:")
+    void optimizeContentsForGPUAccess(@Mapped(ObjCObjectMapper.class) Object texture);
+
+    @Generated
+    @Selector("optimizeContentsForGPUAccess:slice:level:")
+    void optimizeContentsForGPUAccessSliceLevel(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long slice,
+            @NUInt long level);
+
+    @Generated
+    @Selector("optimizeIndirectCommandBuffer:withRange:")
+    void optimizeIndirectCommandBufferWithRange(@Mapped(ObjCObjectMapper.class) Object indirectCommandBuffer,
+            @ByValue NSRange range);
+
+    @Generated
+    @Selector("resetCommandsInBuffer:withRange:")
+    void resetCommandsInBufferWithRange(@Mapped(ObjCObjectMapper.class) Object buffer, @ByValue NSRange range);
+
+    @Generated
+    @Selector("resetTextureAccessCounters:region:mipLevel:slice:")
+    void resetTextureAccessCountersRegionMipLevelSlice(@Mapped(ObjCObjectMapper.class) Object texture,
+            @ByValue MTLRegion region, @NUInt long mipLevel, @NUInt long slice);
 }

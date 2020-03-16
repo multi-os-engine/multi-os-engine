@@ -217,7 +217,7 @@ public class CAEmitterLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAEmitterLayer initWithCoder(NSCoder aDecoder);
+    public native CAEmitterLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -320,4 +320,9 @@ public class CAEmitterLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

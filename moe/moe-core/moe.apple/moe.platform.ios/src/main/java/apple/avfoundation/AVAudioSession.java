@@ -455,4 +455,30 @@ public class AVAudioSession extends NSObject {
     @Selector("setCategory:mode:routeSharingPolicy:options:error:")
     public native boolean setCategoryModeRouteSharingPolicyOptionsError(String category, String mode,
             @NUInt long policy, @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("allowHapticsAndSystemSoundsDuringRecording")
+    public native boolean allowHapticsAndSystemSoundsDuringRecording();
+
+    @Generated
+    @Selector("promptStyle")
+    @NUInt
+    public native long promptStyle();
+
+    @Generated
+    @Selector("setAllowHapticsAndSystemSoundsDuringRecording:error:")
+    public native boolean setAllowHapticsAndSystemSoundsDuringRecordingError(boolean inValue,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("prepareRouteSelectionForPlaybackWithCompletionHandler:")
+    public native void prepareRouteSelectionForPlaybackWithCompletionHandler(
+            @ObjCBlock(name = "call_prepareRouteSelectionForPlaybackWithCompletionHandler") Block_prepareRouteSelectionForPlaybackWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareRouteSelectionForPlaybackWithCompletionHandler {
+        @Generated
+        void call_prepareRouteSelectionForPlaybackWithCompletionHandler(boolean arg0, @NInt long arg1);
+    }
 }

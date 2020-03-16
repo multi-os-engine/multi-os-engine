@@ -156,7 +156,7 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("error")
@@ -178,7 +178,7 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLAuthenticationChallenge initWithCoder(NSCoder aDecoder);
+    public native NSURLAuthenticationChallenge initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithProtectionSpace:proposedCredential:previousFailureCount:failureResponse:error:sender:")

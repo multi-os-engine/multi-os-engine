@@ -170,7 +170,7 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +178,7 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKShareMetadata initWithCoder(NSCoder aDecoder);
+    public native CKShareMetadata initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("ownerIdentity")
@@ -216,4 +216,9 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("participantRole")
+    @NInt
+    public native long participantRole();
 }

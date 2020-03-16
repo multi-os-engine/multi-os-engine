@@ -168,7 +168,7 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -176,7 +176,7 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaQuerySection initWithCoder(NSCoder aDecoder);
+    public native MPMediaQuerySection initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("range")

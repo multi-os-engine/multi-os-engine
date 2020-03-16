@@ -141,4 +141,34 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Selector("useResources:count:usage:")
     void useResourcesCountUsage(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources, @NUInt long count,
             @NUInt long usage);
+
+    @Generated
+    @Selector("dispatchType")
+    @NUInt
+    long dispatchType();
+
+    @Generated
+    @Selector("executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:")
+    void executeCommandsInBufferIndirectBufferIndirectBufferOffset(
+            @Mapped(ObjCObjectMapper.class) Object indirectCommandbuffer,
+            @Mapped(ObjCObjectMapper.class) Object indirectRangeBuffer, @NUInt long indirectBufferOffset);
+
+    @Generated
+    @Selector("executeCommandsInBuffer:withRange:")
+    void executeCommandsInBufferWithRange(@Mapped(ObjCObjectMapper.class) Object indirectCommandBuffer,
+            @ByValue NSRange executionRange);
+
+    @Generated
+    @Selector("memoryBarrierWithResources:count:")
+    void memoryBarrierWithResourcesCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
+            @NUInt long count);
+
+    @Generated
+    @Selector("memoryBarrierWithScope:")
+    void memoryBarrierWithScope(@NUInt long scope);
+
+    @Generated
+    @Selector("setStageInRegionWithIndirectBuffer:indirectBufferOffset:")
+    void setStageInRegionWithIndirectBufferIndirectBufferOffset(@Mapped(ObjCObjectMapper.class) Object indirectBuffer,
+            @NUInt long indirectBufferOffset);
 }

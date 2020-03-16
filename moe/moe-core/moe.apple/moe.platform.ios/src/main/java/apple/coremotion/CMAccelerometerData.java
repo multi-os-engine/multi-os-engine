@@ -169,7 +169,7 @@ public class CMAccelerometerData extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMAccelerometerData initWithCoder(NSCoder aDecoder);
+    public native CMAccelerometerData initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

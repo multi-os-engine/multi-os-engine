@@ -166,7 +166,7 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEOnDemandRuleEvaluateConnection initWithCoder(NSCoder aDecoder);
+    public native NEOnDemandRuleEvaluateConnection initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setConnectionRules:")

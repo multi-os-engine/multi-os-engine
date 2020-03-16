@@ -170,11 +170,11 @@ public class NSQueryGenerationToken extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSQueryGenerationToken initWithCoder(NSCoder aDecoder);
+    public native NSQueryGenerationToken initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

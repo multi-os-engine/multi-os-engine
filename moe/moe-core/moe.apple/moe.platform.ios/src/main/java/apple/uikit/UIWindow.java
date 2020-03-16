@@ -422,7 +422,7 @@ public class UIWindow extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIWindow initWithCoder(NSCoder aDecoder);
+    public native UIWindow initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -462,7 +462,7 @@ public class UIWindow extends UIView {
 
     @Generated
     @Selector("setScreen:")
-    public native void setScreen(UIScreen value);
+    public native void setScreen(UIScreen screen);
 
     @Generated
     @Selector("setWindowLevel:")
@@ -472,4 +472,42 @@ public class UIWindow extends UIView {
     @Selector("windowLevel")
     @NFloat
     public native double windowLevel();
+
+    @Generated
+    @Selector("canResizeToFitContent")
+    public native boolean canResizeToFitContent();
+
+    @Generated
+    @Selector("initWithWindowScene:")
+    public native UIWindow initWithWindowScene(UIWindowScene windowScene);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("setCanResizeToFitContent:")
+    public native void setCanResizeToFitContent(boolean value);
+
+    @Generated
+    @Selector("setWindowScene:")
+    public native void setWindowScene_unsafe(UIWindowScene value);
+
+    @Generated
+    public void setWindowScene(UIWindowScene value) {
+        Object __old = windowScene();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setWindowScene_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("windowScene")
+    public native UIWindowScene windowScene();
 }

@@ -19,7 +19,6 @@ package apple.mediaplayer;
 import apple.NSObject;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
-import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -42,7 +41,6 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
-import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -138,10 +136,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public static native Object new_objc();
 
     @Generated
-    @Selector("preparePrerollAds")
-    public static native void preparePrerollAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -187,10 +181,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Deprecated
     @Selector("cancelAllThumbnailImageRequests")
     public native void cancelAllThumbnailImageRequests();
-
-    @Generated
-    @Selector("cancelPreroll")
-    public native void cancelPreroll();
 
     @Generated
     @Selector("contentURL")
@@ -281,11 +271,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Generated
     @Selector("play")
     public native void play();
-
-    @Generated
-    @Selector("playPrerollAdWithCompletionHandler:")
-    public native void playPrerollAdWithCompletionHandler(
-            @ObjCBlock(name = "call_playPrerollAdWithCompletionHandler") Block_playPrerollAdWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("playableDuration")
@@ -398,11 +383,4 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Generated
     @Selector("view")
     public native UIView view();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_playPrerollAdWithCompletionHandler {
-        @Generated
-        void call_playPrerollAdWithCompletionHandler(NSError arg0);
-    }
 }

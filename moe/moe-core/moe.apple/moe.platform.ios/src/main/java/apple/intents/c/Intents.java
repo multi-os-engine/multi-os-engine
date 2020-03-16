@@ -365,4 +365,29 @@ public final class Intents {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierExercise();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INPersonRelationshipSon();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INPersonRelationshipDaughter();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INWorkoutNameIdentifierHike();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INWorkoutNameIdentifierHighIntensityIntervalTraining();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INWorkoutNameIdentifierSwim();
 }

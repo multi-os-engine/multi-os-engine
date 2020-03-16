@@ -158,7 +158,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hidesBackButton")
@@ -292,4 +292,28 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Generated
     @Selector("setSearchController:")
     public native void setSearchController(UISearchController value);
+
+    @Generated
+    @Selector("compactAppearance")
+    public native UINavigationBarAppearance compactAppearance();
+
+    @Generated
+    @Selector("scrollEdgeAppearance")
+    public native UINavigationBarAppearance scrollEdgeAppearance();
+
+    @Generated
+    @Selector("setCompactAppearance:")
+    public native void setCompactAppearance(UINavigationBarAppearance value);
+
+    @Generated
+    @Selector("setScrollEdgeAppearance:")
+    public native void setScrollEdgeAppearance(UINavigationBarAppearance value);
+
+    @Generated
+    @Selector("setStandardAppearance:")
+    public native void setStandardAppearance(UINavigationBarAppearance value);
+
+    @Generated
+    @Selector("standardAppearance")
+    public native UINavigationBarAppearance standardAppearance();
 }

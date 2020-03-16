@@ -163,7 +163,7 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NETunnelProviderProtocol initWithCoder(NSCoder aDecoder);
+    public native NETunnelProviderProtocol initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("providerBundleIdentifier")

@@ -141,4 +141,38 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("isWorldTrackingEnabled")
+    public native boolean isWorldTrackingEnabled();
+
+    @Generated
+    @Selector("maximumNumberOfTrackedFaces")
+    @NInt
+    public native long maximumNumberOfTrackedFaces();
+
+    @Generated
+    @Selector("setMaximumNumberOfTrackedFaces:")
+    public native void setMaximumNumberOfTrackedFaces(@NInt long value);
+
+    @Generated
+    @Selector("setWorldTrackingEnabled:")
+    public native void setWorldTrackingEnabled(boolean value);
+
+    @Generated
+    @Selector("supportedNumberOfTrackedFaces")
+    @NInt
+    public static native long supportedNumberOfTrackedFaces();
+
+    @Generated
+    @Selector("supportedVideoFormats")
+    public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
+
+    @Generated
+    @Selector("supportsFrameSemantics:")
+    public static native boolean supportsFrameSemantics(@NUInt long frameSemantics);
+
+    @Generated
+    @Selector("supportsWorldTracking")
+    public static native boolean supportsWorldTracking();
 }

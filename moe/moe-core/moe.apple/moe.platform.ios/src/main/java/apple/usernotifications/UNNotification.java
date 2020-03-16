@@ -171,7 +171,7 @@ public class UNNotification extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -179,7 +179,7 @@ public class UNNotification extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotification initWithCoder(NSCoder aDecoder);
+    public native UNNotification initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("request")

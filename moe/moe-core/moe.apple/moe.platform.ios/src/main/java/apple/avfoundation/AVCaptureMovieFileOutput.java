@@ -196,4 +196,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Selector("setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:")
     public native void setRecordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection(
             boolean doRecordChanges, AVCaptureConnection connection);
+
+    @Generated
+    @Selector("supportedOutputSettingsKeysForConnection:")
+    public native NSArray<String> supportedOutputSettingsKeysForConnection(AVCaptureConnection connection);
 }

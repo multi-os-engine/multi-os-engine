@@ -209,7 +209,7 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableParagraphStyle initWithCoder(NSCoder aDecoder);
+    public native NSMutableParagraphStyle initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("lineBreakMode")

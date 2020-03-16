@@ -300,7 +300,7 @@ public class NSURL extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("filePathURL")
@@ -379,7 +379,7 @@ public class NSURL extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURL initWithCoder(NSCoder aDecoder);
+    public native NSURL initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDataRepresentation:relativeToURL:")

@@ -182,7 +182,7 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -190,7 +190,7 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsShape initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsShape initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("options")

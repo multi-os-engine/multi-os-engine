@@ -188,7 +188,7 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -196,7 +196,7 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterDataVerdict initWithCoder(NSCoder aDecoder);
+    public native NEFilterDataVerdict initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

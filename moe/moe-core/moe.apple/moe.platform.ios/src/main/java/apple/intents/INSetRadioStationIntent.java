@@ -171,7 +171,7 @@ public class INSetRadioStationIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetRadioStationIntent initWithCoder(NSCoder aDecoder);
+    public native INSetRadioStationIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRadioType:frequency:stationName:channel:presetNumber:")

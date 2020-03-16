@@ -30,4 +30,8 @@ public final class PKPaymentButtonType {
     @Generated
     private PKPaymentButtonType() {
     }
+
+    @Generated @NInt public static final long Checkout = 0x0000000000000005L;
+    @Generated @NInt public static final long Book = 0x0000000000000006L;
+    @Generated @NInt public static final long Subscribe = 0x0000000000000007L;
 }

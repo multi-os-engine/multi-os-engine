@@ -428,7 +428,7 @@ public class MKOverlayPathView extends MKOverlayView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKOverlayPathView initWithCoder(NSCoder aDecoder);
+    public native MKOverlayPathView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -536,4 +536,10 @@ public class MKOverlayPathView extends MKOverlayView {
     @Deprecated
     @Selector("strokePath:inContext:")
     public native void strokePathInContext(CGPathRef path, CGContextRef context);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

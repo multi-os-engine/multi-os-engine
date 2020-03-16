@@ -92,12 +92,6 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
     public native MPSCNNConvolutionTransposeNode init();
 
     @Generated
-    @Selector("initWithSource:convolutionState:weights:")
-    public native MPSCNNConvolutionTransposeNode initWithSourceConvolutionStateWeights(MPSNNImageNode sourceNode,
-            MPSCNNConvolutionStateNode convolutionState,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
-
-    @Generated
     @Selector("initWithSource:weights:")
     public native MPSCNNConvolutionTransposeNode initWithSourceWeights(MPSNNImageNode sourceNode,
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
@@ -130,12 +124,6 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
     public static native Object new_objc();
 
     @Generated
-    @Selector("nodeWithSource:convolutionState:weights:")
-    public static native MPSCNNConvolutionTransposeNode nodeWithSourceConvolutionStateWeights(MPSNNImageNode sourceNode,
-            MPSCNNConvolutionStateNode convolutionState,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
-
-    @Generated
     @Selector("nodeWithSource:weights:")
     public static native MPSCNNConvolutionTransposeNode nodeWithSourceWeights(MPSNNImageNode sourceNode,
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
@@ -160,4 +148,16 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithSource:convolutionGradientState:weights:")
+    public native MPSCNNConvolutionTransposeNode initWithSourceConvolutionGradientStateWeights(
+            MPSNNImageNode sourceNode, MPSCNNConvolutionGradientStateNode convolutionGradientState,
+            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+
+    @Generated
+    @Selector("nodeWithSource:convolutionGradientState:weights:")
+    public static native MPSCNNConvolutionTransposeNode nodeWithSourceConvolutionGradientStateWeights(
+            MPSNNImageNode sourceNode, MPSCNNConvolutionGradientStateNode convolutionGradientState,
+            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 }

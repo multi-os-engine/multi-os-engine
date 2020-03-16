@@ -169,7 +169,7 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,7 +177,7 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterBrowserFlow initWithCoder(NSCoder aDecoder);
+    public native NEFilterBrowserFlow initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("parentURL")

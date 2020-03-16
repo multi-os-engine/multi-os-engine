@@ -172,7 +172,7 @@ public class INSetDefrosterSettingsInCarIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetDefrosterSettingsInCarIntent initWithCoder(NSCoder aDecoder);
+    public native INSetDefrosterSettingsInCarIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithEnable:defroster:")
@@ -183,4 +183,13 @@ public class INSetDefrosterSettingsInCarIntent extends INIntent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("carName")
+    public native INSpeakableString carName();
+
+    @Generated
+    @Selector("initWithEnable:defroster:carName:")
+    public native INSetDefrosterSettingsInCarIntent initWithEnableDefrosterCarName(NSNumber enable,
+            @NInt long defroster, INSpeakableString carName);
 }

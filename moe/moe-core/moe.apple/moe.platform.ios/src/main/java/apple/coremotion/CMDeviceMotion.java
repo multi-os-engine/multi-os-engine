@@ -175,7 +175,7 @@ public class CMDeviceMotion extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMDeviceMotion initWithCoder(NSCoder aDecoder);
+    public native CMDeviceMotion initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("magneticField")

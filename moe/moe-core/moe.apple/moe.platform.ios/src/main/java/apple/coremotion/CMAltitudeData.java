@@ -163,7 +163,7 @@ public class CMAltitudeData extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMAltitudeData initWithCoder(NSCoder aDecoder);
+    public native CMAltitudeData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("pressure")

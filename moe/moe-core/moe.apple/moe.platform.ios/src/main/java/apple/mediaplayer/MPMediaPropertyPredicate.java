@@ -177,7 +177,7 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPropertyPredicate initWithCoder(NSCoder aDecoder);
+    public native MPMediaPropertyPredicate initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("property")

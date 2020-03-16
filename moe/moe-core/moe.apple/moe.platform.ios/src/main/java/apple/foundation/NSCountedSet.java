@@ -211,7 +211,7 @@ public class NSCountedSet<_ObjectType> extends NSMutableSet<_ObjectType> {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSCountedSet<?> initWithCoder(NSCoder aDecoder);
+    public native NSCountedSet<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Variadic()

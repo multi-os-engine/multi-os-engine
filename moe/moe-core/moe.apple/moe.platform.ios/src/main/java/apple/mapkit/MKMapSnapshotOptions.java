@@ -24,6 +24,7 @@ import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.mapkit.struct.MKCoordinateRegion;
 import apple.mapkit.struct.MKMapRect;
+import apple.uikit.UITraitCollection;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -234,4 +235,20 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("size")
     @ByValue
     public native CGSize size();
+
+    @Generated
+    @Selector("pointOfInterestFilter")
+    public native MKPointOfInterestFilter pointOfInterestFilter();
+
+    @Generated
+    @Selector("setPointOfInterestFilter:")
+    public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
+
+    @Generated
+    @Selector("setTraitCollection:")
+    public native void setTraitCollection(UITraitCollection value);
+
+    @Generated
+    @Selector("traitCollection")
+    public native UITraitCollection traitCollection();
 }

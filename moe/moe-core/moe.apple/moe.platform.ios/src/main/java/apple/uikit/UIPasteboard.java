@@ -211,7 +211,7 @@ public class UIPasteboard extends NSObject {
 
     @Generated
     @Selector("dataForPasteboardType:inItemSet:")
-    public native NSArray<?> dataForPasteboardTypeInItemSet(String pasteboardType, NSIndexSet itemSet);
+    public native NSArray<? extends NSData> dataForPasteboardTypeInItemSet(String pasteboardType, NSIndexSet itemSet);
 
     @Generated
     @Selector("hasColors")

@@ -172,7 +172,7 @@ public class SCNTransformConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNTransformConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNTransformConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

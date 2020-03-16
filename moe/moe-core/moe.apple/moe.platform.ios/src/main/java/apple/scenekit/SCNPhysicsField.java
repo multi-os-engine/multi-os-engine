@@ -223,7 +223,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("falloffExponent")
@@ -241,7 +241,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsField initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsField initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isActive")

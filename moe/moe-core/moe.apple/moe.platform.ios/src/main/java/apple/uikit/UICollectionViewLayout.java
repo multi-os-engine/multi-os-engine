@@ -176,7 +176,7 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("finalLayoutAttributesForDisappearingDecorationElementOfKind:atIndexPath:")
@@ -227,7 +227,7 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewLayout initWithCoder(NSCoder aDecoder);
+    public native UICollectionViewLayout initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initialLayoutAttributesForAppearingDecorationElementOfKind:atIndexPath:")

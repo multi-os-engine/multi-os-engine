@@ -164,7 +164,7 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("formatOptions")
@@ -177,7 +177,7 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSISO8601DateFormatter initWithCoder(NSCoder aDecoder);
+    public native NSISO8601DateFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setFormatOptions:")

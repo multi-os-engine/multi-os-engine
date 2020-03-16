@@ -28,6 +28,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.NSURLRequest;
 import apple.security.opaque.SecTrustRef;
+import apple.uikit.UIImage;
 import apple.uikit.UIScrollView;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
@@ -587,4 +588,22 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("handlesURLScheme:")
     public static native boolean handlesURLScheme(String urlScheme);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("takeSnapshotWithConfiguration:completionHandler:")
+    public native void takeSnapshotWithConfigurationCompletionHandler(WKSnapshotConfiguration snapshotConfiguration,
+            @ObjCBlock(name = "call_takeSnapshotWithConfigurationCompletionHandler") Block_takeSnapshotWithConfigurationCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_takeSnapshotWithConfigurationCompletionHandler {
+        @Generated
+        void call_takeSnapshotWithConfigurationCompletionHandler(UIImage arg0, NSError arg1);
+    }
 }

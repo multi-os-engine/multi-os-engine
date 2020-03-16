@@ -179,4 +179,13 @@ public class AVCaptureInputPort extends NSObject {
     @Generated
     @Selector("mediaType")
     public native String mediaType();
+
+    @Generated
+    @Selector("sourceDevicePosition")
+    @NInt
+    public native long sourceDevicePosition();
+
+    @Generated
+    @Selector("sourceDeviceType")
+    public native String sourceDeviceType();
 }

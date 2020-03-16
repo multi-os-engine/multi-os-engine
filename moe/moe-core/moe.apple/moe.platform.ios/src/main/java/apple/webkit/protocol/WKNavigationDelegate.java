@@ -23,6 +23,7 @@ import apple.webkit.WKNavigation;
 import apple.webkit.WKNavigationAction;
 import apple.webkit.WKNavigationResponse;
 import apple.webkit.WKWebView;
+import apple.webkit.WKWebpagePreferences;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
@@ -134,5 +135,22 @@ public interface WKNavigationDelegate {
     public interface Block_webViewDidReceiveAuthenticationChallengeCompletionHandler {
         @Generated
         void call_webViewDidReceiveAuthenticationChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("webView:decidePolicyForNavigationAction:preferences:decisionHandler:")
+    default void webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(WKWebView webView,
+            WKNavigationAction navigationAction, WKWebpagePreferences preferences,
+            @ObjCBlock(name = "call_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler") Block_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler decisionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler {
+        @Generated
+        void call_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(@NInt long arg0,
+                WKWebpagePreferences arg1);
     }
 }

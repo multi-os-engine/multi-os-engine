@@ -200,8 +200,4 @@ public class NEFilterControlProvider extends NEFilterProvider {
         @Generated
         void call_handleRemediationForFlowCompletionHandler(NEFilterControlVerdict arg0);
     }
-
-    @Generated
-    @Selector("handleReport:")
-    public native void handleReport(NEFilterReport report);
 }

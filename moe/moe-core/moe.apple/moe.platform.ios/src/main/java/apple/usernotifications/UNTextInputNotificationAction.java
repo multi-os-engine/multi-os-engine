@@ -173,7 +173,7 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNTextInputNotificationAction initWithCoder(NSCoder aDecoder);
+    public native UNTextInputNotificationAction initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

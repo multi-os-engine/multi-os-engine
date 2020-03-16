@@ -167,7 +167,7 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native INTermsAndConditions initWithCoder(NSCoder aDecoder);
+    public native INTermsAndConditions initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLocalizedTermsAndConditionsText:privacyPolicyURL:termsAndConditionsURL:")

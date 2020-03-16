@@ -175,7 +175,7 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")

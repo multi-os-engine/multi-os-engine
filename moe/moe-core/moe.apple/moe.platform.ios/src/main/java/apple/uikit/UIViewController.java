@@ -327,7 +327,7 @@ public class UIViewController extends UIResponder
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("endAppearanceTransition")
@@ -351,7 +351,7 @@ public class UIViewController extends UIResponder
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIViewController initWithCoder(NSCoder aDecoder);
+    public native UIViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -1068,4 +1068,40 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("viewSafeAreaInsetsDidChange")
     public native void viewSafeAreaInsetsDidChange();
+
+    @Generated
+    @Selector("canPerformUnwindSegueAction:fromViewController:sender:")
+    public native boolean canPerformUnwindSegueActionFromViewControllerSender(SEL action,
+            UIViewController fromViewController, @Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @Selector("focusItemContainer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object focusItemContainer();
+
+    @Generated
+    @Selector("isModalInPresentation")
+    public native boolean isModalInPresentation();
+
+    @Generated
+    @Selector("overrideUserInterfaceStyle")
+    @NInt
+    public native long overrideUserInterfaceStyle();
+
+    @Generated
+    @Selector("parentFocusEnvironment")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object parentFocusEnvironment();
+
+    @Generated
+    @Selector("performsActionsWhilePresentingModally")
+    public native boolean performsActionsWhilePresentingModally();
+
+    @Generated
+    @Selector("setModalInPresentation:")
+    public native void setModalInPresentation(boolean value);
+
+    @Generated
+    @Selector("setOverrideUserInterfaceStyle:")
+    public native void setOverrideUserInterfaceStyle(@NInt long value);
 }

@@ -177,7 +177,7 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("framesDisplayed")
@@ -199,7 +199,7 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
 
     @Generated
     @Selector("initWithCoder:")
-    public native GLKViewController initWithCoder(NSCoder aDecoder);
+    public native GLKViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

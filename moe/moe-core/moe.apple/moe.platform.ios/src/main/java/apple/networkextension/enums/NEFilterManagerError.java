@@ -29,4 +29,7 @@ public final class NEFilterManagerError {
     @Generated
     private NEFilterManagerError() {
     }
+
+    @Generated @NInt public static final long PermissionDenied = 0x0000000000000005L;
+    @Generated @NInt public static final long InternalError = 0x0000000000000006L;
 }

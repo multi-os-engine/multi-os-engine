@@ -39,4 +39,5 @@ public final class MPSDataType {
     @Generated public static final int NormalizedBit = 0x40000000;
     @Generated public static final int Unorm1 = 0x40000001;
     @Generated public static final int Unorm8 = 0x40000008;
+    @Generated public static final int Int32 = 0x20000020;
 }

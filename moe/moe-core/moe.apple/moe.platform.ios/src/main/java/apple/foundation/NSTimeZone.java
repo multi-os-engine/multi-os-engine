@@ -234,7 +234,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -242,7 +242,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTimeZone initWithCoder(NSCoder aDecoder);
+    public native NSTimeZone initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithName:")

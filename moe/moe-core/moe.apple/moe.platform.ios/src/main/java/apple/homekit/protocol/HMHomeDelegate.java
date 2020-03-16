@@ -256,4 +256,11 @@ public interface HMHomeDelegate {
     default void homeDidUpdateAccessControlForCurrentUser(HMHome home) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("homeDidUpdateSupportedFeatures:")
+    default void homeDidUpdateSupportedFeatures(HMHome home) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

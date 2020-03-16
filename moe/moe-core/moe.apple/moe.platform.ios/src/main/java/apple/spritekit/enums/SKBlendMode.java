@@ -32,4 +32,6 @@ public final class SKBlendMode {
     @Generated
     private SKBlendMode() {
     }
+
+    @Generated @NInt public static final long MultiplyAlpha = 0x0000000000000007L;
 }

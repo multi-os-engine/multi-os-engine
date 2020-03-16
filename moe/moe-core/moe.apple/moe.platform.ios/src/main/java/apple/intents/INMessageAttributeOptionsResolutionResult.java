@@ -189,4 +189,15 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
     @Selector("successWithResolvedMessageAttributeOptions:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedMessageAttributeOptions(@NUInt long resolvedMessageAttributeOptions);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

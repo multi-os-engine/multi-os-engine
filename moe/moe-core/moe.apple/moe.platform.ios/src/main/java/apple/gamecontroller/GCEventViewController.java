@@ -175,7 +175,7 @@ public class GCEventViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GCEventViewController initWithCoder(NSCoder aDecoder);
+    public native GCEventViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

@@ -163,10 +163,6 @@ public class TWRequest extends NSObject {
     public native NSURL URL();
 
     @Generated
-    @Selector("account")
-    public native ACAccount account();
-
-    @Generated
     @Selector("addMultiPartData:withName:type:")
     public native void addMultiPartDataWithNameType(NSData data, String name, String type);
 
@@ -194,10 +190,6 @@ public class TWRequest extends NSObject {
     public native long requestMethod();
 
     @Generated
-    @Selector("setAccount:")
-    public native void setAccount(ACAccount value);
-
-    @Generated
     @Selector("signedURLRequest")
     public native NSURLRequest signedURLRequest();
 
@@ -207,4 +199,12 @@ public class TWRequest extends NSObject {
         @Generated
         void call_performRequestWithHandler(NSData arg0, NSHTTPURLResponse arg1, NSError arg2);
     }
+
+    @Generated
+    @Selector("account")
+    public native ACAccount account();
+
+    @Generated
+    @Selector("setAccount:")
+    public native void setAccount(ACAccount value);
 }

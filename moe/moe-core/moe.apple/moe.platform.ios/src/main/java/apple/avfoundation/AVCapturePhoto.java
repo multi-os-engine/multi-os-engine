@@ -1,6 +1,7 @@
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.avfoundation.protocol.AVCapturePhotoFileDataRepresentationCustomizer;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coremedia.struct.CMTime;
 import apple.corevideo.opaque.CVBufferRef;
@@ -222,4 +223,17 @@ public class AVCapturePhoto extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("fileDataRepresentationWithCustomizer:")
+    public native NSData fileDataRepresentationWithCustomizer(
+            @Mapped(ObjCObjectMapper.class) AVCapturePhotoFileDataRepresentationCustomizer customizer);
+
+    @Generated
+    @Selector("portraitEffectsMatte")
+    public native AVPortraitEffectsMatte portraitEffectsMatte();
+
+    @Generated
+    @Selector("semanticSegmentationMatteForType:")
+    public native AVSemanticSegmentationMatte semanticSegmentationMatteForType(String semanticSegmentationMatteType);
 }

@@ -166,7 +166,7 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native CSCustomAttributeKey initWithCoder(NSCoder aDecoder);
+    public native CSCustomAttributeKey initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithKeyName:")

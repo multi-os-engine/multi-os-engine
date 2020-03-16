@@ -181,7 +181,7 @@ public class SCNTorus extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNTorus initWithCoder(NSCoder aDecoder);
+    public native SCNTorus initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("pipeRadius")

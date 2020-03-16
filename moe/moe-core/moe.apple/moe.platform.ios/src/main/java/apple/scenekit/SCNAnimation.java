@@ -153,7 +153,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fillsBackward")
@@ -174,7 +174,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAnimation initWithCoder(NSCoder aDecoder);
+    public native SCNAnimation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

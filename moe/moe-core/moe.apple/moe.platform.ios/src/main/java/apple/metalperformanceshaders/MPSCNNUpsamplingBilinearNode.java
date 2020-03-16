@@ -155,4 +155,20 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("alignCorners")
+    public native boolean alignCorners();
+
+    @Generated
+    @Selector("initWithSource:integerScaleFactorX:integerScaleFactorY:alignCorners:")
+    public native MPSCNNUpsamplingBilinearNode initWithSourceIntegerScaleFactorXIntegerScaleFactorYAlignCorners(
+            MPSNNImageNode sourceNode, @NUInt long integerScaleFactorX, @NUInt long integerScaleFactorY,
+            boolean alignCorners);
+
+    @Generated
+    @Selector("nodeWithSource:integerScaleFactorX:integerScaleFactorY:alignCorners:")
+    public static native MPSCNNUpsamplingBilinearNode nodeWithSourceIntegerScaleFactorXIntegerScaleFactorYAlignCorners(
+            MPSNNImageNode sourceNode, @NUInt long integerScaleFactorX, @NUInt long integerScaleFactorY,
+            boolean alignCorners);
 }

@@ -174,7 +174,7 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -182,7 +182,7 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNInstantMessageAddress initWithCoder(NSCoder aDecoder);
+    public native CNInstantMessageAddress initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithUsername:service:")

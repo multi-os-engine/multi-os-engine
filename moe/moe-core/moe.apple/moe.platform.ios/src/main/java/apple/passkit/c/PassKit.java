@@ -191,4 +191,39 @@ public final class PassKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPaymentErrorPostalAddressUserInfoKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkCartesBancaires();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkEftpos();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkElectron();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkElo();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkMada();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkMaestro();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkVPay();
 }

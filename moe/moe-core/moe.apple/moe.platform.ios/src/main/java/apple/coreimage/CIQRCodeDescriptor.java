@@ -109,7 +109,7 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIQRCodeDescriptor initWithCoder(NSCoder aDecoder);
+    public native CIQRCodeDescriptor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:")

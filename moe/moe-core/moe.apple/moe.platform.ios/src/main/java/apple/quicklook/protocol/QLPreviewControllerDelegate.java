@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
@@ -83,6 +84,31 @@ public interface QLPreviewControllerDelegate {
     @IsOptional
     @Selector("previewControllerWillDismiss:")
     default void previewControllerWillDismiss(QLPreviewController controller) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("previewController:didSaveEditedCopyOfPreviewItem:atURL:")
+    default void previewControllerDidSaveEditedCopyOfPreviewItemAtURL(QLPreviewController controller,
+            @Mapped(ObjCObjectMapper.class) Object previewItem, NSURL modifiedContentsURL) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("previewController:didUpdateContentsOfPreviewItem:")
+    default void previewControllerDidUpdateContentsOfPreviewItem(QLPreviewController controller,
+            @Mapped(ObjCObjectMapper.class) Object previewItem) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("previewController:editingModeForPreviewItem:")
+    @NInt
+    default long previewControllerEditingModeForPreviewItem(QLPreviewController controller,
+            @Mapped(ObjCObjectMapper.class) Object previewItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

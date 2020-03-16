@@ -201,7 +201,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("executeFetchRequest:error:")
@@ -229,7 +229,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSManagedObjectContext initWithCoder(NSCoder aDecoder);
+    public native NSManagedObjectContext initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithConcurrencyType:")

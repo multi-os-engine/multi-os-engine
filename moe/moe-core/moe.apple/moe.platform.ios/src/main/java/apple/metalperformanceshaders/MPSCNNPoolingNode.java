@@ -161,4 +161,24 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("kernelHeight")
+    @NUInt
+    public native long kernelHeight();
+
+    @Generated
+    @Selector("kernelWidth")
+    @NUInt
+    public native long kernelWidth();
+
+    @Generated
+    @Selector("strideInPixelsX")
+    @NUInt
+    public native long strideInPixelsX();
+
+    @Generated
+    @Selector("strideInPixelsY")
+    @NUInt
+    public native long strideInPixelsY();
 }

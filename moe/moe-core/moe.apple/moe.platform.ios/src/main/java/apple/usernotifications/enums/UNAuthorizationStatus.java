@@ -28,4 +28,6 @@ public final class UNAuthorizationStatus {
     @Generated
     private UNAuthorizationStatus() {
     }
+
+    @Generated @NInt public static final long Provisional = 0x0000000000000003L;
 }

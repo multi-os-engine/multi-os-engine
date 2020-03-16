@@ -218,7 +218,7 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNText initWithCoder(NSCoder aDecoder);
+    public native SCNText initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isWrapped")

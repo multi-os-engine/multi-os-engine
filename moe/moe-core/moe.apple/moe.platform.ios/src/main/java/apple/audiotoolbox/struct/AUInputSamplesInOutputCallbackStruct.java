@@ -16,7 +16,7 @@ limitations under the License.
 
 package apple.audiotoolbox.struct;
 
-import apple.coreaudio.struct.AudioTimeStamp;
+import apple.coreaudiotypes.struct.AudioTimeStamp;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.FunctionPtr;

@@ -170,7 +170,7 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +178,7 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMeasurement<?> initWithCoder(NSCoder aDecoder);
+    public native NSMeasurement<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDoubleValue:unit:")

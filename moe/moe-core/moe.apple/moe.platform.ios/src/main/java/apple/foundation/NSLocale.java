@@ -276,7 +276,7 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("exemplarCharacterSet")
@@ -292,7 +292,7 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSLocale initWithCoder(NSCoder aDecoder);
+    public native NSLocale initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLocaleIdentifier:")

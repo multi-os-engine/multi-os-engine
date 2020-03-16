@@ -17,6 +17,7 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
+import apple.fileprovider.protocol.NSFileProviderItem;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -187,7 +188,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("helpAnchor")
@@ -199,7 +200,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSError initWithCoder(NSCoder aDecoder);
+    public native NSError initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDomain:code:userInfo:")
@@ -251,4 +252,15 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
         @MappedReturn(ObjCObjectMapper.class)
         Object call_userInfoValueProviderForDomain_ret(NSError arg0, String arg1);
     }
+
+    @Generated
+    @Selector("fileProviderErrorForCollisionWithItem:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fileProviderErrorForCollisionWithItem(
+            @Mapped(ObjCObjectMapper.class) NSFileProviderItem existingItem);
+
+    @Generated
+    @Selector("fileProviderErrorForNonExistentItemWithIdentifier:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fileProviderErrorForNonExistentItemWithIdentifier(String itemIdentifier);
 }

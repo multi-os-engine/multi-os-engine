@@ -175,7 +175,7 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("endDate")

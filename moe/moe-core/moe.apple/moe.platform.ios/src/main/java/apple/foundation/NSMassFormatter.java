@@ -163,7 +163,7 @@ public class NSMassFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMassFormatter initWithCoder(NSCoder aDecoder);
+    public native NSMassFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isForPersonMassUse")

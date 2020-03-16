@@ -18,6 +18,7 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -176,4 +177,8 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("setNumberOfTouchesRequired:")
     public native void setNumberOfTouchesRequired(@NUInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UITapGestureRecognizer initWithCoder(NSCoder coder);
 }

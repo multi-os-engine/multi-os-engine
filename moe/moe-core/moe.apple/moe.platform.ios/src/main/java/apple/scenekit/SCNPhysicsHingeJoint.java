@@ -203,7 +203,7 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsHingeJoint initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsHingeJoint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setAnchorA:")

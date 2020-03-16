@@ -186,7 +186,7 @@ public class UITableViewController extends UIViewController implements UITableVi
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITableViewController initWithCoder(NSCoder aDecoder);
+    public native UITableViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -570,4 +570,45 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("tableView:trailingSwipeActionsConfigurationForRowAtIndexPath:")
     public native UISwipeActionsConfiguration tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(
             UITableView tableView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:contextMenuConfigurationForRowAtIndexPath:point:")
+    public native UIContextMenuConfiguration tableViewContextMenuConfigurationForRowAtIndexPathPoint(
+            UITableView tableView, NSIndexPath indexPath, @ByValue CGPoint point);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:didBeginMultipleSelectionInteractionAtIndexPath:")
+    public native void tableViewDidBeginMultipleSelectionInteractionAtIndexPath(UITableView tableView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:previewForDismissingContextMenuWithConfiguration:")
+    public native UITargetedPreview tableViewPreviewForDismissingContextMenuWithConfiguration(UITableView tableView,
+            UIContextMenuConfiguration configuration);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:previewForHighlightingContextMenuWithConfiguration:")
+    public native UITargetedPreview tableViewPreviewForHighlightingContextMenuWithConfiguration(UITableView tableView,
+            UIContextMenuConfiguration configuration);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
+    public native boolean tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(UITableView tableView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willPerformPreviewActionForMenuWithConfiguration:animator:")
+    public native void tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration, @Mapped(ObjCObjectMapper.class) Object animator);
+
+    @Generated
+    @IsOptional
+    @Selector("tableViewDidEndMultipleSelectionInteraction:")
+    public native void tableViewDidEndMultipleSelectionInteraction(UITableView tableView);
 }

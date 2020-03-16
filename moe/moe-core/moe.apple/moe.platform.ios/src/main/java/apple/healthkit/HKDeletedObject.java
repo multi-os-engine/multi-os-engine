@@ -165,7 +165,7 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -173,7 +173,7 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKDeletedObject initWithCoder(NSCoder aDecoder);
+    public native HKDeletedObject initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

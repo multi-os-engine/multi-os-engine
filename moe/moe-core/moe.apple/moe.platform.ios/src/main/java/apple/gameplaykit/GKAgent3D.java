@@ -37,6 +37,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -157,7 +158,7 @@ public class GKAgent3D extends GKAgent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAgent3D initWithCoder(NSCoder aDecoder);
+    public native GKAgent3D initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("rightHanded")
@@ -170,4 +171,14 @@ public class GKAgent3D extends GKAgent {
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

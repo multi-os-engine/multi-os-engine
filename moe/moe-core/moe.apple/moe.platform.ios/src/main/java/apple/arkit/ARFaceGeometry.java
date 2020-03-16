@@ -2,11 +2,13 @@ package apple.arkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -24,6 +26,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -31,7 +34,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ARFaceGeometry extends NSObject implements NSCopying {
+public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -170,4 +173,22 @@ public class ARFaceGeometry extends NSObject implements NSCopying {
     @Selector("vertexCount")
     @NUInt
     public native long vertexCount();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ARFaceGeometry initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

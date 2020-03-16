@@ -180,7 +180,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("groupIdentifier")
@@ -201,7 +201,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievementDescription initWithCoder(NSCoder aDecoder);
+    public native GKAchievementDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isHidden")

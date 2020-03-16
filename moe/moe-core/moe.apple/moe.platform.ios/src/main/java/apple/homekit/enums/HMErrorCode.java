@@ -119,4 +119,10 @@ public final class HMErrorCode {
     @Generated @NInt public static final long NoHomeHub = 0x000000000000005BL;
     @Generated @NInt public static final long NoCompatibleHomeHub = 0x000000000000005CL;
     @Generated @NInt public static final long IncompatibleHomeHub = 0x000000000000005CL;
+    @Generated @NInt public static final long UnexpectedError = 0xFFFFFFFFFFFFFFFFL;
+    @Generated @NInt public static final long IncompatibleAccessory = 0x000000000000005DL;
+    @Generated @NInt public static final long ObjectWithSimilarNameExists = 0x000000000000005FL;
+    @Generated @NInt public static final long OwnershipFailure = 0x0000000000000060L;
+    @Generated @NInt public static final long MaximumAccessoriesOfTypeInHome = 0x0000000000000061L;
+    @Generated @NInt public static final long WiFiCredentialGenerationFailed = 0x0000000000000062L;
 }

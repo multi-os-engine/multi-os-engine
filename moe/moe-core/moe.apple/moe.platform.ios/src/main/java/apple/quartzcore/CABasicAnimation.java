@@ -182,7 +182,7 @@ public class CABasicAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CABasicAnimation initWithCoder(NSCoder aDecoder);
+    public native CABasicAnimation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setByValue:")

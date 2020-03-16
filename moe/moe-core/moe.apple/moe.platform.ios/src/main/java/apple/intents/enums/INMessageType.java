@@ -28,4 +28,11 @@ public final class INMessageType {
     @Generated @NInt public static final long MediaVideo = 0x0000000000000010L;
     @Generated @NInt public static final long MediaPass = 0x0000000000000011L;
     @Generated @NInt public static final long MediaAudio = 0x0000000000000012L;
+    @Generated @NInt public static final long PaymentSent = 0x0000000000000013L;
+    @Generated @NInt public static final long PaymentRequest = 0x0000000000000014L;
+    @Generated @NInt public static final long PaymentNote = 0x0000000000000015L;
+    @Generated @NInt public static final long Animoji = 0x0000000000000016L;
+    @Generated @NInt public static final long ActivitySnippet = 0x0000000000000017L;
+    @Generated @NInt public static final long File = 0x0000000000000018L;
+    @Generated @NInt public static final long Link = 0x0000000000000019L;
 }

@@ -177,7 +177,7 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMutableUserNotificationAction initWithCoder(NSCoder aDecoder);
+    public native UIMutableUserNotificationAction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAuthenticationRequired")

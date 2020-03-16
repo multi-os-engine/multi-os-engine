@@ -231,7 +231,7 @@ public class NSSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
@@ -257,7 +257,7 @@ public class NSSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSSet<?> initWithCoder(NSCoder aDecoder);
+    public native NSSet<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Variadic()
@@ -303,6 +303,7 @@ public class NSSet<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType member(@Mapped(ObjCObjectMapper.class) _ObjectType object);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

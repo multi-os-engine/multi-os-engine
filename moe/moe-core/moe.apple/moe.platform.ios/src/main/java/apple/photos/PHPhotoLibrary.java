@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.photos.protocol.PHPhotoLibraryAvailabilityObserver;
 import apple.photos.protocol.PHPhotoLibraryChangeObserver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -220,4 +221,28 @@ public class PHPhotoLibrary extends NSObject {
         @Generated
         void call_requestAuthorization(@NInt long arg0);
     }
+
+    @Generated
+    @Selector("cloudIdentifiersForLocalIdentifiers:")
+    public native NSArray<? extends PHCloudIdentifier> cloudIdentifiersForLocalIdentifiers(
+            NSArray<String> localIdentifiers);
+
+    @Generated
+    @Selector("localIdentifiersForCloudIdentifiers:")
+    public native NSArray<String> localIdentifiersForCloudIdentifiers(
+            NSArray<? extends PHCloudIdentifier> cloudIdentifiers);
+
+    @Generated
+    @Selector("registerAvailabilityObserver:")
+    public native void registerAvailabilityObserver(
+            @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
+
+    @Generated
+    @Selector("unavailabilityReason")
+    public native NSError unavailabilityReason();
+
+    @Generated
+    @Selector("unregisterAvailabilityObserver:")
+    public native void unregisterAvailabilityObserver(
+            @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
 }

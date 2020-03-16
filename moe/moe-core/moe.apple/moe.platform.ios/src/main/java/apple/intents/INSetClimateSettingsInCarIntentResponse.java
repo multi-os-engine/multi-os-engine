@@ -173,7 +173,7 @@ public class INSetClimateSettingsInCarIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetClimateSettingsInCarIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSetClimateSettingsInCarIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

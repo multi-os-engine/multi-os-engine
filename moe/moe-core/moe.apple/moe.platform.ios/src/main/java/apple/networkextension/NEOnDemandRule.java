@@ -184,7 +184,7 @@ public class NEOnDemandRule extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -192,7 +192,7 @@ public class NEOnDemandRule extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEOnDemandRule initWithCoder(NSCoder aDecoder);
+    public native NEOnDemandRule initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("interfaceTypeMatch")

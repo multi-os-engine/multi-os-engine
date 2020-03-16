@@ -101,8 +101,8 @@ public class MPSMatrixCopy extends MPSKernel {
 
     @Generated
     @Selector("encodeToCommandBuffer:copyDescriptor:")
-    public native void encodeToCommandBufferCopyDescriptor(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
-            MPSMatrixCopyDescriptor copyDescriptor);
+    public native void encodeToCommandBufferCopyDescriptor(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrixCopyDescriptor copyDescriptor);
 
     @Generated
     @Selector("hash")
@@ -192,4 +192,11 @@ public class MPSMatrixCopy extends MPSKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeToCommandBuffer:copyDescriptor:rowPermuteIndices:rowPermuteOffset:columnPermuteIndices:columnPermuteOffset:")
+    public native void encodeToCommandBufferCopyDescriptorRowPermuteIndicesRowPermuteOffsetColumnPermuteIndicesColumnPermuteOffset(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrixCopyDescriptor copyDescriptor,
+            MPSVector rowPermuteIndices, @NUInt long rowPermuteOffset, MPSVector columnPermuteIndices,
+            @NUInt long columnPermuteOffset);
 }

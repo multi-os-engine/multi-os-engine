@@ -631,4 +631,10 @@ public final class CoreMIDI {
         @Generated
         void call_MIDIDestinationCreateWithBlock(MIDIPacketList arg0, VoidPtr arg1);
     }
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kMIDIPropertyNameConfigurationDictionary();
+
+    @Generated public static final byte MIDIChannelsWholePort = 127;
 }

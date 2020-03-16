@@ -190,7 +190,7 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPlaylist initWithCoder(NSCoder aDecoder);
+    public native MPMediaPlaylist initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithItems:")

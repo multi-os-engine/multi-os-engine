@@ -24,6 +24,7 @@ import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.NSValue;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.modelio.MDLLight;
@@ -56,7 +57,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSupport, NSCopying, NSSecureCoding {
+public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSecureCoding, SCNTechniqueSupport {
     static {
         NatJ.register();
     }
@@ -228,7 +229,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("gobo")
@@ -240,7 +241,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNLight initWithCoder(NSCoder aDecoder);
+    public native SCNLight initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("intensity")
@@ -511,4 +512,67 @@ public class SCNLight extends NSObject implements SCNAnimatable, SCNTechniqueSup
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();
+
+    @Generated
+    @Selector("areaPolygonVertices")
+    public native NSArray<? extends NSValue> areaPolygonVertices();
+
+    @Generated
+    @Selector("areaType")
+    @NInt
+    public native long areaType();
+
+    @Generated
+    @Selector("doubleSided")
+    public native boolean doubleSided();
+
+    @Generated
+    @Selector("drawsArea")
+    public native boolean drawsArea();
+
+    @Generated
+    @Selector("parallaxCorrectionEnabled")
+    public native boolean parallaxCorrectionEnabled();
+
+    @Generated
+    @Selector("probeEnvironment")
+    public native SCNMaterialProperty probeEnvironment();
+
+    @Generated
+    @Selector("probeType")
+    @NInt
+    public native long probeType();
+
+    @Generated
+    @Selector("probeUpdateType")
+    @NInt
+    public native long probeUpdateType();
+
+    @Generated
+    @Selector("setAreaPolygonVertices:")
+    public native void setAreaPolygonVertices(NSArray<? extends NSValue> value);
+
+    @Generated
+    @Selector("setAreaType:")
+    public native void setAreaType(@NInt long value);
+
+    @Generated
+    @Selector("setDoubleSided:")
+    public native void setDoubleSided(boolean value);
+
+    @Generated
+    @Selector("setDrawsArea:")
+    public native void setDrawsArea(boolean value);
+
+    @Generated
+    @Selector("setParallaxCorrectionEnabled:")
+    public native void setParallaxCorrectionEnabled(boolean value);
+
+    @Generated
+    @Selector("setProbeType:")
+    public native void setProbeType(@NInt long value);
+
+    @Generated
+    @Selector("setProbeUpdateType:")
+    public native void setProbeUpdateType(@NInt long value);
 }

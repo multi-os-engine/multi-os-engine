@@ -173,7 +173,7 @@ public class INSetDefrosterSettingsInCarIntentResponse extends INIntentResponse 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetDefrosterSettingsInCarIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSetDefrosterSettingsInCarIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -248,7 +248,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("image")
@@ -265,7 +265,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBarItem initWithCoder(NSCoder aDecoder);
+    public native UIBarItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isEnabled")

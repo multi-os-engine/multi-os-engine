@@ -37,4 +37,5 @@ public final class SSLProtocol {
 
     @Generated public static final int TLSProtocol13 = 0x0000000A;
     @Generated public static final int TLSProtocolMaxSupported = 0x000003E7;
+    @Generated public static final int DTLSProtocol12 = 0x0000000B;
 }

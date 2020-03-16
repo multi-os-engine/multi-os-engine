@@ -169,7 +169,7 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("flags")
@@ -181,7 +181,7 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AUParameter initWithCoder(NSCoder aDecoder);
+    public native AUParameter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("maxValue")

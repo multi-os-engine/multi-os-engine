@@ -104,7 +104,7 @@ public class INGetVisualCodeIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetVisualCodeIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INGetVisualCodeIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

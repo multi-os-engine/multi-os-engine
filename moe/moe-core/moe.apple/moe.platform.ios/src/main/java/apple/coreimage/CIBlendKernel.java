@@ -1,6 +1,7 @@
 package apple.coreimage;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSError;
@@ -327,4 +328,9 @@ public class CIBlendKernel extends CIColorKernel {
     @Generated
     @Selector("vividLight")
     public static native CIBlendKernel vividLight();
+
+    @Generated
+    @Selector("applyWithForeground:background:colorSpace:")
+    public native CIImage applyWithForegroundBackgroundColorSpace(CIImage foreground, CIImage background,
+            CGColorSpaceRef colorSpace);
 }

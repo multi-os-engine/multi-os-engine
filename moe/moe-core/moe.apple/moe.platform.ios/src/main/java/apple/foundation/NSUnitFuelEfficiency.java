@@ -172,7 +172,7 @@ public class NSUnitFuelEfficiency extends NSDimension implements NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +180,7 @@ public class NSUnitFuelEfficiency extends NSDimension implements NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitFuelEfficiency initWithCoder(NSCoder aDecoder);
+    public native NSUnitFuelEfficiency initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

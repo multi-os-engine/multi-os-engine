@@ -210,4 +210,8 @@ public class GCControllerButtonInput extends GCControllerElement {
         @Generated
         void call_valueChangedHandler_ret(GCControllerButtonInput arg0, float arg1, boolean arg2);
     }
+
+    @Generated
+    @Selector("setValue:")
+    public native void setValue(float value);
 }

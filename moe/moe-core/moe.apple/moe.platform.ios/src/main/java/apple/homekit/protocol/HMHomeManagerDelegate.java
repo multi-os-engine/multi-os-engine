@@ -16,10 +16,12 @@ limitations under the License.
 
 package apple.homekit.protocol;
 
+import apple.homekit.HMAddAccessoryRequest;
 import apple.homekit.HMHome;
 import apple.homekit.HMHomeManager;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -56,6 +58,20 @@ public interface HMHomeManagerDelegate {
     @IsOptional
     @Selector("homeManagerDidUpdatePrimaryHome:")
     default void homeManagerDidUpdatePrimaryHome(HMHomeManager manager) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("homeManager:didReceiveAddAccessoryRequest:")
+    default void homeManagerDidReceiveAddAccessoryRequest(HMHomeManager manager, HMAddAccessoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("homeManager:didUpdateAuthorizationStatus:")
+    default void homeManagerDidUpdateAuthorizationStatus(HMHomeManager manager, @NUInt long status) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

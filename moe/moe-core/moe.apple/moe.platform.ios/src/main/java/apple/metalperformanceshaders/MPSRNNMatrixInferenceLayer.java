@@ -19,6 +19,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.NUIntPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -235,4 +236,12 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeSequenceToCommandBuffer:sourceMatrices:sourceOffsets:destinationMatrices:destinationOffsets:recurrentInputState:recurrentOutputStates:")
+    public native void encodeSequenceToCommandBufferSourceMatricesSourceOffsetsDestinationMatricesDestinationOffsetsRecurrentInputStateRecurrentOutputStates(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<? extends MPSMatrix> sourceMatrices,
+            NUIntPtr sourceOffsets, NSArray<? extends MPSMatrix> destinationMatrices, NUIntPtr destinationOffsets,
+            MPSRNNRecurrentMatrixState recurrentInputState,
+            NSMutableArray<MPSRNNRecurrentMatrixState> recurrentOutputStates);
 }

@@ -94,7 +94,7 @@ public class HKWorkoutRoute extends HKSeriesSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKWorkoutRoute initWithCoder(NSCoder aDecoder);
+    public native HKWorkoutRoute initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

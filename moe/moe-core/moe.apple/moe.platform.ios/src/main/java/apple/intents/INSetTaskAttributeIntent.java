@@ -94,7 +94,7 @@ public class INSetTaskAttributeIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetTaskAttributeIntent initWithCoder(NSCoder aDecoder);
+    public native INSetTaskAttributeIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTargetTask:status:spatialEventTrigger:temporalEventTrigger:")
@@ -176,4 +176,19 @@ public class INSetTaskAttributeIntent extends INIntent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithTargetTask:taskTitle:status:priority:spatialEventTrigger:temporalEventTrigger:")
+    public native INSetTaskAttributeIntent initWithTargetTaskTaskTitleStatusPrioritySpatialEventTriggerTemporalEventTrigger(
+            INTask targetTask, INSpeakableString taskTitle, @NInt long status, @NInt long priority,
+            INSpatialEventTrigger spatialEventTrigger, INTemporalEventTrigger temporalEventTrigger);
+
+    @Generated
+    @Selector("priority")
+    @NInt
+    public native long priority();
+
+    @Generated
+    @Selector("taskTitle")
+    public native INSpeakableString taskTitle();
 }

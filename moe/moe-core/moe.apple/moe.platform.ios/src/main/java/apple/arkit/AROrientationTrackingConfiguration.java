@@ -141,4 +141,20 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("isAutoFocusEnabled")
+    public native boolean isAutoFocusEnabled();
+
+    @Generated
+    @Selector("setAutoFocusEnabled:")
+    public native void setAutoFocusEnabled(boolean value);
+
+    @Generated
+    @Selector("supportedVideoFormats")
+    public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
+
+    @Generated
+    @Selector("supportsFrameSemantics:")
+    public static native boolean supportsFrameSemantics(@NUInt long frameSemantics);
 }

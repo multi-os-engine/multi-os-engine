@@ -33,4 +33,7 @@ public final class MTLResourceOptions {
     @Generated
     private MTLResourceOptions() {
     }
+
+    @Generated @NUInt public static final long HazardTrackingModeDefault = 0x0000000000000000L;
+    @Generated @NUInt public static final long HazardTrackingModeTracked = 0x0000000000000200L;
 }

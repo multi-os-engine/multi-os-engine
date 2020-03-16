@@ -178,7 +178,7 @@ public class HKCDADocumentSample extends HKDocumentSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKCDADocumentSample initWithCoder(NSCoder aDecoder);
+    public native HKCDADocumentSample initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -33,4 +33,12 @@ public final class CTFontManagerError {
     @Generated
     private CTFontManagerError() {
     }
+
+    @Generated @NInt public static final long ExceededResourceLimit = 0x000000000000006AL;
+    @Generated @NInt public static final long RegistrationFailed = 0x000000000000012DL;
+    @Generated @NInt public static final long MissingEntitlement = 0x000000000000012EL;
+    @Generated @NInt public static final long InsufficientInfo = 0x000000000000012FL;
+    @Generated @NInt public static final long CancelledByUser = 0x0000000000000130L;
+    @Generated @NInt public static final long DuplicatedName = 0x0000000000000131L;
+    @Generated @NInt public static final long InvalidFilePath = 0x0000000000000132L;
 }

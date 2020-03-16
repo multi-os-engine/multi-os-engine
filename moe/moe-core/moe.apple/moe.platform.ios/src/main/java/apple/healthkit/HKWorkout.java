@@ -206,7 +206,7 @@ public class HKWorkout extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKWorkout initWithCoder(NSCoder aDecoder);
+    public native HKWorkout initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

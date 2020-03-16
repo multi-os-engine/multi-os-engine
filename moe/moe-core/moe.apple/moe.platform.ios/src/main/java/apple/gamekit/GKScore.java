@@ -201,7 +201,7 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("formattedValue")
@@ -218,7 +218,7 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKScore initWithCoder(NSCoder aDecoder);
+    public native GKScore initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLeaderboardIdentifier:")

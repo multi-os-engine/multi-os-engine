@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -196,4 +197,9 @@ public class MDLCheckerboardTexture extends MDLTexture {
     @Generated
     @Selector("setDivisions:")
     public native void setDivisions(float value);
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLCheckerboardTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

@@ -251,7 +251,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKUserTrackingBarButtonItem initWithCoder(NSCoder aDecoder);
+    public native MKUserTrackingBarButtonItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCustomView:")

@@ -24,6 +24,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UIButton;
+import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -408,7 +409,7 @@ public class PKPaymentButton extends UIButton {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKPaymentButton initWithCoder(NSCoder aDecoder);
+    public native PKPaymentButton initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -417,4 +418,25 @@ public class PKPaymentButton extends UIButton {
     @Generated
     @Selector("initWithPaymentButtonType:paymentButtonStyle:")
     public native PKPaymentButton initWithPaymentButtonTypePaymentButtonStyle(@NInt long type, @NInt long style);
+
+    @Generated
+    @Selector("cornerRadius")
+    @NFloat
+    public native double cornerRadius();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("setCornerRadius:")
+    public native void setCornerRadius(@NFloat double value);
+
+    @Generated
+    @Selector("systemButtonWithImage:target:action:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemButtonWithImageTargetAction(UIImage image,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
 }

@@ -289,145 +289,6 @@ public final class AddressBook {
     public static native CFDataRef ABPersonCreateVCardRepresentationWithPeople(CFArrayRef people);
 
     @Generated
-    @Deprecated
-    @CFunction
-    public static native ConstVoidPtr ABGroupCreate();
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native ConstVoidPtr ABGroupCreateInSource(ConstVoidPtr source);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native ConstVoidPtr ABGroupCopySource(ConstVoidPtr group);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native CFArrayRef ABGroupCopyArrayOfAllMembers(ConstVoidPtr group);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native CFArrayRef ABGroupCopyArrayOfAllMembersWithSortOrdering(ConstVoidPtr group, int sortOrdering);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native boolean ABGroupAddMember(ConstVoidPtr group, ConstVoidPtr person, Ptr<CFErrorRef> error);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native boolean ABGroupRemoveMember(ConstVoidPtr group, ConstVoidPtr member, Ptr<CFErrorRef> error);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native ConstVoidPtr ABAddressBookGetGroupWithRecordID(ConstVoidPtr addressBook, int recordID);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    @NInt
-    public static native long ABAddressBookGetGroupCount(ConstVoidPtr addressBook);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native CFArrayRef ABAddressBookCopyArrayOfAllGroups(ConstVoidPtr addressBook);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native CFArrayRef ABAddressBookCopyArrayOfAllGroupsInSource(ConstVoidPtr addressBook,
-            ConstVoidPtr source);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native int ABMultiValueGetPropertyType(ConstVoidPtr multiValue);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    @NInt
-    public static native long ABMultiValueGetCount(ConstVoidPtr multiValue);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native ConstVoidPtr ABMultiValueCopyValueAtIndex(ConstVoidPtr multiValue, @NInt long index);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native CFArrayRef ABMultiValueCopyArrayOfAllValues(ConstVoidPtr multiValue);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native CFStringRef ABMultiValueCopyLabelAtIndex(ConstVoidPtr multiValue, @NInt long index);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    @NInt
-    public static native long ABMultiValueGetIndexForIdentifier(ConstVoidPtr multiValue, int identifier);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native int ABMultiValueGetIdentifierAtIndex(ConstVoidPtr multiValue, @NInt long index);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    @NInt
-    public static native long ABMultiValueGetFirstIndexOfValue(ConstVoidPtr multiValue, ConstVoidPtr value);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native ConstVoidPtr ABMultiValueCreateMutable(int type);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native ConstVoidPtr ABMultiValueCreateMutableCopy(ConstVoidPtr multiValue);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native boolean ABMultiValueAddValueAndLabel(ConstVoidPtr multiValue, ConstVoidPtr value,
-            CFStringRef label, IntPtr outIdentifier);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native boolean ABMultiValueInsertValueAndLabelAtIndex(ConstVoidPtr multiValue, ConstVoidPtr value,
-            CFStringRef label, @NInt long index, IntPtr outIdentifier);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native boolean ABMultiValueRemoveValueAndLabelAtIndex(ConstVoidPtr multiValue, @NInt long index);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native boolean ABMultiValueReplaceValueAtIndex(ConstVoidPtr multiValue, ConstVoidPtr value,
-            @NInt long index);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native boolean ABMultiValueReplaceLabelAtIndex(ConstVoidPtr multiValue, CFStringRef label,
-            @NInt long index);
-
-    @Generated
     @CVariable()
     public static native CFStringRef ABAddressBookErrorDomain();
 
@@ -783,10 +644,6 @@ public final class AddressBook {
     @CVariable()
     public static native CFStringRef kABPersonAlternateBirthdayDayKey();
 
-    @Generated
-    @CVariable()
-    public static native int kABGroupNameProperty();
-
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_ABAddressBookRequestAccessWithCompletion {
@@ -807,4 +664,147 @@ public final class AddressBook {
         @Generated
         void call_ABAddressBookUnregisterExternalChangeCallback(ConstVoidPtr arg0, CFDictionaryRef arg1, VoidPtr arg2);
     }
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native ConstVoidPtr ABGroupCreate();
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native ConstVoidPtr ABGroupCreateInSource(ConstVoidPtr source);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native ConstVoidPtr ABGroupCopySource(ConstVoidPtr group);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native CFArrayRef ABGroupCopyArrayOfAllMembers(ConstVoidPtr group);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native CFArrayRef ABGroupCopyArrayOfAllMembersWithSortOrdering(ConstVoidPtr group, int sortOrdering);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native boolean ABGroupAddMember(ConstVoidPtr group, ConstVoidPtr person, Ptr<CFErrorRef> error);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native boolean ABGroupRemoveMember(ConstVoidPtr group, ConstVoidPtr member, Ptr<CFErrorRef> error);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native ConstVoidPtr ABAddressBookGetGroupWithRecordID(ConstVoidPtr addressBook, int recordID);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    @NInt
+    public static native long ABAddressBookGetGroupCount(ConstVoidPtr addressBook);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native CFArrayRef ABAddressBookCopyArrayOfAllGroups(ConstVoidPtr addressBook);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native CFArrayRef ABAddressBookCopyArrayOfAllGroupsInSource(ConstVoidPtr addressBook,
+            ConstVoidPtr source);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native int ABMultiValueGetPropertyType(ConstVoidPtr multiValue);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    @NInt
+    public static native long ABMultiValueGetCount(ConstVoidPtr multiValue);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native ConstVoidPtr ABMultiValueCopyValueAtIndex(ConstVoidPtr multiValue, @NInt long index);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native CFArrayRef ABMultiValueCopyArrayOfAllValues(ConstVoidPtr multiValue);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native CFStringRef ABMultiValueCopyLabelAtIndex(ConstVoidPtr multiValue, @NInt long index);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    @NInt
+    public static native long ABMultiValueGetIndexForIdentifier(ConstVoidPtr multiValue, int identifier);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native int ABMultiValueGetIdentifierAtIndex(ConstVoidPtr multiValue, @NInt long index);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    @NInt
+    public static native long ABMultiValueGetFirstIndexOfValue(ConstVoidPtr multiValue, ConstVoidPtr value);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native ConstVoidPtr ABMultiValueCreateMutable(int type);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native ConstVoidPtr ABMultiValueCreateMutableCopy(ConstVoidPtr multiValue);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native boolean ABMultiValueAddValueAndLabel(ConstVoidPtr multiValue, ConstVoidPtr value,
+            CFStringRef label, IntPtr outIdentifier);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native boolean ABMultiValueInsertValueAndLabelAtIndex(ConstVoidPtr multiValue, ConstVoidPtr value,
+            CFStringRef label, @NInt long index, IntPtr outIdentifier);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native boolean ABMultiValueRemoveValueAndLabelAtIndex(ConstVoidPtr multiValue, @NInt long index);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native boolean ABMultiValueReplaceValueAtIndex(ConstVoidPtr multiValue, ConstVoidPtr value,
+            @NInt long index);
+
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native boolean ABMultiValueReplaceLabelAtIndex(ConstVoidPtr multiValue, CFStringRef label,
+            @NInt long index);
+
+    @Generated
+    @CVariable()
+    public static native int kABGroupNameProperty();
 }

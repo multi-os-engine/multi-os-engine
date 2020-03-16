@@ -182,7 +182,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hasPassword")
@@ -198,7 +198,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLCredential initWithCoder(NSCoder aDecoder);
+    public native NSURLCredential initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIdentity:certificates:persistence:")

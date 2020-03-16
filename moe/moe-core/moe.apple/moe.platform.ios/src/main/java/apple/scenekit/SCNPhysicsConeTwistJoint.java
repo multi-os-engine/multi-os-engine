@@ -115,7 +115,7 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsConeTwistJoint initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsConeTwistJoint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

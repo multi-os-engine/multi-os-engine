@@ -168,7 +168,7 @@ public class GKScoreChallenge extends GKChallenge {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKScoreChallenge initWithCoder(NSCoder aDecoder);
+    public native GKScoreChallenge initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("score")

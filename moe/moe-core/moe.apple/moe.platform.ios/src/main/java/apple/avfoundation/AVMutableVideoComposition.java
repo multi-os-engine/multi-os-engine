@@ -261,4 +261,9 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Generated
     @Selector("sourceTrackIDForFrameTiming")
     public native int sourceTrackIDForFrameTiming();
+
+    @Generated
+    @Selector("videoCompositionWithPropertiesOfAsset:prototypeInstruction:")
+    public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAssetPrototypeInstruction(
+            AVAsset asset, AVVideoCompositionInstruction prototypeInstruction);
 }

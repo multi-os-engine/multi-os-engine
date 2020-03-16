@@ -172,7 +172,7 @@ public class INStartVideoCallIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartVideoCallIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INStartVideoCallIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

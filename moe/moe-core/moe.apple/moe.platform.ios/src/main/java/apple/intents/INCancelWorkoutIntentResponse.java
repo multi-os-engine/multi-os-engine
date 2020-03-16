@@ -172,7 +172,7 @@ public class INCancelWorkoutIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCancelWorkoutIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INCancelWorkoutIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -164,7 +164,7 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("entity")
@@ -176,7 +176,7 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPropertyDescription initWithCoder(NSCoder aDecoder);
+    public native NSPropertyDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isIndexed")

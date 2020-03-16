@@ -173,7 +173,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -181,7 +181,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIRegion initWithCoder(NSCoder aDecoder);
+    public native UIRegion initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRadius:")

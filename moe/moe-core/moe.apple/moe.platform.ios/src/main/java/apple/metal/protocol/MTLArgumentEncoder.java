@@ -84,4 +84,37 @@ public interface MTLArgumentEncoder {
     @Generated
     @Selector("setTextures:withRange:")
     void setTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures, @ByValue NSRange range);
+
+    @Generated
+    @Selector("newArgumentEncoderForBufferAtIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newArgumentEncoderForBufferAtIndex(@NUInt long index);
+
+    @Generated
+    @Selector("setComputePipelineState:atIndex:")
+    void setComputePipelineStateAtIndex(@Mapped(ObjCObjectMapper.class) Object pipeline, @NUInt long index);
+
+    @Generated
+    @Selector("setComputePipelineStates:withRange:")
+    void setComputePipelineStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
+            @ByValue NSRange range);
+
+    @Generated
+    @Selector("setIndirectCommandBuffer:atIndex:")
+    void setIndirectCommandBufferAtIndex(@Mapped(ObjCObjectMapper.class) Object indirectCommandBuffer,
+            @NUInt long index);
+
+    @Generated
+    @Selector("setIndirectCommandBuffers:withRange:")
+    void setIndirectCommandBuffersWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+            @ByValue NSRange range);
+
+    @Generated
+    @Selector("setRenderPipelineState:atIndex:")
+    void setRenderPipelineStateAtIndex(@Mapped(ObjCObjectMapper.class) Object pipeline, @NUInt long index);
+
+    @Generated
+    @Selector("setRenderPipelineStates:withRange:")
+    void setRenderPipelineStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
+            @ByValue NSRange range);
 }

@@ -173,7 +173,7 @@ public class INSearchForMessagesIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForMessagesIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSearchForMessagesIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("messages")

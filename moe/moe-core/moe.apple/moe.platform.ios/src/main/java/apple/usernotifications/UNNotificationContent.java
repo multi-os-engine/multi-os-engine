@@ -185,7 +185,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -193,12 +193,13 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationContent initWithCoder(NSCoder aDecoder);
+    public native UNNotificationContent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("launchImageName")
     public native String launchImageName();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -229,4 +230,17 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
+
+    @Generated
+    @Selector("summaryArgument")
+    public native String summaryArgument();
+
+    @Generated
+    @Selector("summaryArgumentCount")
+    @NUInt
+    public native long summaryArgumentCount();
+
+    @Generated
+    @Selector("targetContentIdentifier")
+    public native String targetContentIdentifier();
 }

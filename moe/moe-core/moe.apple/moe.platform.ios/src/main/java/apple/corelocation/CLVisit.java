@@ -182,7 +182,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("horizontalAccuracy")
@@ -194,7 +194,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLVisit initWithCoder(NSCoder aDecoder);
+    public native CLVisit initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

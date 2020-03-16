@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.struct.NSRange;
+import apple.mapkit.protocol.MKGeoJSONObject;
 import apple.mapkit.struct.MKMapPoint;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -49,7 +50,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MKMultiPoint extends MKShape {
+public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     static {
         NatJ.register();
     }

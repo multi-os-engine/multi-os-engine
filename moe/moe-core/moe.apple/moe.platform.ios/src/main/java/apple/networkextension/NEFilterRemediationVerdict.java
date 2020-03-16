@@ -178,7 +178,7 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -186,7 +186,7 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterRemediationVerdict initWithCoder(NSCoder aDecoder);
+    public native NEFilterRemediationVerdict initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

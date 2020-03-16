@@ -163,7 +163,7 @@ public class NSLengthFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSLengthFormatter initWithCoder(NSCoder aDecoder);
+    public native NSLengthFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isForPersonHeightUse")

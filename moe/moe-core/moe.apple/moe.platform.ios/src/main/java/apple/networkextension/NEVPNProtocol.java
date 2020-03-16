@@ -171,7 +171,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identityData")
@@ -191,7 +191,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNProtocol initWithCoder(NSCoder aDecoder);
+    public native NEVPNProtocol initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("passwordReference")

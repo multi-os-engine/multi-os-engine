@@ -167,7 +167,7 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")

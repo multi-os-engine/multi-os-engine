@@ -33,10 +33,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface NSCoding {
     @Generated
     @Selector("encodeWithCoder:")
-    void encodeWithCoder(NSCoder aCoder);
+    void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object initWithCoder(NSCoder aDecoder);
+    Object initWithCoder(NSCoder coder);
 }

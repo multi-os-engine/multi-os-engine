@@ -1,5 +1,6 @@
 package apple.fileprovider.c;
 
+import apple.foundation.NSData;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.NatJ;
@@ -34,4 +35,27 @@ public final class FileProvider {
     @Generated
     @CVariable()
     public static native long NSFileProviderFavoriteRankUnranked();
+
+    @Generated
+    @CVariable()
+    public static native NSData NSFileProviderInitialPageSortedByDate();
+
+    @Generated
+    @CVariable()
+    public static native NSData NSFileProviderInitialPageSortedByName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSFileProviderErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSFileProviderErrorCollidingItemKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSFileProviderErrorNonExistentItemIdentifierKey();
 }

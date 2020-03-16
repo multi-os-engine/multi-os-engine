@@ -18,7 +18,6 @@ package apple.mediaplayer;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
-import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -37,7 +36,6 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
-import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -148,10 +146,6 @@ public class MPMusicPlayerMediaItemQueueDescriptor extends MPMusicPlayerQueueDes
     public static native Class superclass_static();
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
@@ -159,10 +153,6 @@ public class MPMusicPlayerMediaItemQueueDescriptor extends MPMusicPlayerQueueDes
     @Generated
     @Selector("init")
     public native MPMusicPlayerMediaItemQueueDescriptor init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMusicPlayerMediaItemQueueDescriptor initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithItemCollection:")
@@ -195,10 +185,4 @@ public class MPMusicPlayerMediaItemQueueDescriptor extends MPMusicPlayerQueueDes
     @Generated
     @Selector("startItem")
     public native MPMediaItem startItem();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

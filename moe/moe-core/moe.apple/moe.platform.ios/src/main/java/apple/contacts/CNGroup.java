@@ -176,7 +176,7 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -188,8 +188,9 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNGroup initWithCoder(NSCoder aDecoder);
+    public native CNGroup initWithCoder(NSCoder coder);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

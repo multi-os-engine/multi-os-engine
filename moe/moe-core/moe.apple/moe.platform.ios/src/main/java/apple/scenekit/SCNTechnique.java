@@ -24,6 +24,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.metal.protocol.MTLLibrary;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -195,7 +196,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("handleBindingOfSymbol:usingBlock:")
@@ -208,7 +209,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNTechnique initWithCoder(NSCoder aDecoder);
+    public native SCNTechnique initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAnimationForKeyPaused:")
@@ -272,4 +273,13 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+
+    @Generated
+    @Selector("library")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLLibrary library();
+
+    @Generated
+    @Selector("setLibrary:")
+    public native void setLibrary(@Mapped(ObjCObjectMapper.class) MTLLibrary value);
 }

@@ -189,7 +189,7 @@ public class CAShapeLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAShapeLayer initWithCoder(NSCoder aDecoder);
+    public native CAShapeLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -297,4 +297,9 @@ public class CAShapeLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

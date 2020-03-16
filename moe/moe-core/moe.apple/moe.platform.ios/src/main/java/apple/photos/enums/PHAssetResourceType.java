@@ -36,4 +36,6 @@ public final class PHAssetResourceType {
     @Generated
     private PHAssetResourceType() {
     }
+
+    @Generated @NInt public static final long AdjustmentBaseVideo = 0x000000000000000CL;
 }

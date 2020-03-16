@@ -166,7 +166,7 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSCachedURLResponse initWithCoder(NSCoder aDecoder);
+    public native NSCachedURLResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithResponse:data:")

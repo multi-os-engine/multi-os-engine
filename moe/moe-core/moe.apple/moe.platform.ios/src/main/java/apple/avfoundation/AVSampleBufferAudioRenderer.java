@@ -59,10 +59,6 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native Object allocWithZone(VoidPtr zone);
 
     @Generated
-    @Selector("audioOutputDeviceUniqueID")
-    public native String audioOutputDeviceUniqueID();
-
-    @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
 
@@ -176,10 +172,6 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setAudioOutputDeviceUniqueID:")
-    public native void setAudioOutputDeviceUniqueID(String value);
 
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")

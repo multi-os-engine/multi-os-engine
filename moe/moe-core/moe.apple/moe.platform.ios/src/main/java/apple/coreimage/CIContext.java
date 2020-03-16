@@ -33,6 +33,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLCommandQueue;
 import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLTexture;
 import apple.opengles.EAGLContext;
@@ -202,12 +203,12 @@ public class CIContext extends NSObject {
     @Generated
     @Selector("JPEGRepresentationOfImage:colorSpace:options:")
     public native NSData JPEGRepresentationOfImageColorSpaceOptions(CIImage image, CGColorSpaceRef colorSpace,
-            NSDictionary<?, ?> options);
+            NSDictionary<String, ?> options);
 
     @Generated
     @Selector("TIFFRepresentationOfImage:format:colorSpace:options:")
     public native NSData TIFFRepresentationOfImageFormatColorSpaceOptions(CIImage image, int format,
-            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options);
+            CGColorSpaceRef colorSpace, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("clearCaches")
@@ -286,24 +287,24 @@ public class CIContext extends NSObject {
     @Generated
     @Selector("writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:")
     public native boolean writeJPEGRepresentationOfImageToURLColorSpaceOptionsError(CIImage image, NSURL url,
-            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
+            CGColorSpaceRef colorSpace, NSDictionary<String, ?> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:")
     public native boolean writeTIFFRepresentationOfImageToURLFormatColorSpaceOptionsError(CIImage image, NSURL url,
-            int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
+            int format, CGColorSpaceRef colorSpace, NSDictionary<String, ?> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("HEIFRepresentationOfImage:format:colorSpace:options:")
     public native NSData HEIFRepresentationOfImageFormatColorSpaceOptions(CIImage image, int format,
-            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options);
+            CGColorSpaceRef colorSpace, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("PNGRepresentationOfImage:format:colorSpace:options:")
     public native NSData PNGRepresentationOfImageFormatColorSpaceOptions(CIImage image, int format,
-            CGColorSpaceRef colorSpace, NSDictionary<?, ?> options);
+            CGColorSpaceRef colorSpace, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("prepareRender:fromRect:toDestination:atPoint:error:")
@@ -335,12 +336,42 @@ public class CIContext extends NSObject {
     @Generated
     @Selector("writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:")
     public native boolean writeHEIFRepresentationOfImageToURLFormatColorSpaceOptionsError(CIImage image, NSURL url,
-            int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
+            int format, CGColorSpaceRef colorSpace, NSDictionary<String, ?> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
     @Generated
     @Selector("writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:")
     public native boolean writePNGRepresentationOfImageToURLFormatColorSpaceOptionsError(CIImage image, NSURL url,
-            int format, CGColorSpaceRef colorSpace, NSDictionary<?, ?> options,
+            int format, CGColorSpaceRef colorSpace, NSDictionary<String, ?> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+
+    @Generated
+    @Selector("contextWithMTLCommandQueue:")
+    public static native CIContext contextWithMTLCommandQueue(
+            @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
+
+    @Generated
+    @Selector("contextWithMTLCommandQueue:options:")
+    public static native CIContext contextWithMTLCommandQueueOptions(
+            @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("depthBlurEffectFilterForImage:disparityImage:portraitEffectsMatte:hairSemanticSegmentation:orientation:options:")
+    public native CIFilter depthBlurEffectFilterForImageDisparityImagePortraitEffectsMatteHairSemanticSegmentationOrientationOptions(
+            CIImage image, CIImage disparityImage, CIImage portraitEffectsMatte, CIImage hairSemanticSegmentation,
+            int orientation, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("depthBlurEffectFilterForImage:disparityImage:portraitEffectsMatte:orientation:options:")
+    public native CIFilter depthBlurEffectFilterForImageDisparityImagePortraitEffectsMatteOrientationOptions(
+            CIImage image, CIImage disparityImage, CIImage portraitEffectsMatte, int orientation,
+            NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("depthBlurEffectFilterForImageData:options:")
+    public native CIFilter depthBlurEffectFilterForImageDataOptions(NSData data, NSDictionary<?, ?> options);
+
+    @Generated
+    @Selector("depthBlurEffectFilterForImageURL:options:")
+    public native CIFilter depthBlurEffectFilterForImageURLOptions(NSURL url, NSDictionary<?, ?> options);
 }

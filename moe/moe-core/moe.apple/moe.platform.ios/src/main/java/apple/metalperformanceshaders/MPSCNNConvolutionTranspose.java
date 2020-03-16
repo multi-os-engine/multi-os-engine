@@ -18,7 +18,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -85,12 +87,6 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @Generated
     @Selector("description")
     public static native String description_static();
-
-    @Generated
-    @Selector("encodeToCommandBuffer:sourceImage:convolutionState:")
-    public native MPSImage encodeToCommandBufferSourceImageConvolutionState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSCNNConvolutionState convolutionState);
 
     @Generated
     @Selector("groups")
@@ -209,4 +205,64 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("accumulatorPrecisionOption")
+    @NUInt
+    public native long accumulatorPrecisionOption();
+
+    @Generated
+    @Selector("dataSource")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MPSCNNConvolutionDataSource dataSource();
+
+    @Generated
+    @Selector("encodeToCommandBuffer:sourceImage:convolutionGradientState:")
+    public native MPSImage encodeToCommandBufferSourceImageConvolutionGradientState(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            MPSCNNConvolutionGradientState convolutionGradientState);
+
+    @Generated
+    @Selector("encodeToCommandBuffer:sourceImage:convolutionGradientState:destinationImage:")
+    public native void encodeToCommandBufferSourceImageConvolutionGradientStateDestinationImage(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            MPSCNNConvolutionGradientState convolutionGradientState, MPSImage destinationImage);
+
+    @Generated
+    @Selector("encodeToCommandBuffer:sourceImage:convolutionGradientState:destinationState:destinationStateIsTemporary:")
+    public native MPSImage encodeToCommandBufferSourceImageConvolutionGradientStateDestinationStateDestinationStateIsTemporary(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            MPSCNNConvolutionGradientState convolutionGradientState,
+            @ReferenceInfo(type = MPSCNNConvolutionTransposeGradientState.class) Ptr<MPSCNNConvolutionTransposeGradientState> outState,
+            boolean isTemporary);
+
+    @Generated
+    @Selector("exportWeightsAndBiasesWithCommandBuffer:resultStateCanBeTemporary:")
+    public native MPSCNNConvolutionWeightsAndBiasesState exportWeightsAndBiasesWithCommandBufferResultStateCanBeTemporary(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, boolean resultStateCanBeTemporary);
+
+    @Generated
+    @Selector("reloadWeightsAndBiasesFromDataSource")
+    public native void reloadWeightsAndBiasesFromDataSource();
+
+    @Generated
+    @Selector("reloadWeightsAndBiasesWithCommandBuffer:state:")
+    public native void reloadWeightsAndBiasesWithCommandBufferState(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            MPSCNNConvolutionWeightsAndBiasesState state);
+
+    @Generated
+    @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
+    public native MPSCNNConvolutionTransposeGradientState resultStateForSourceImageSourceStatesDestinationImage(
+            MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+
+    @Generated
+    @Selector("setAccumulatorPrecisionOption:")
+    public native void setAccumulatorPrecisionOption(@NUInt long value);
+
+    @Generated
+    @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
+    public native MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 }

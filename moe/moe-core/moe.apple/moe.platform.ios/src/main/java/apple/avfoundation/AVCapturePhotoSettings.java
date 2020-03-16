@@ -339,4 +339,81 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("availableRawEmbeddedThumbnailPhotoCodecTypes")
+    public native NSArray<String> availableRawEmbeddedThumbnailPhotoCodecTypes();
+
+    @Generated
+    @Selector("embedsPortraitEffectsMatteInPhoto")
+    public native boolean embedsPortraitEffectsMatteInPhoto();
+
+    @Generated
+    @Selector("embedsSemanticSegmentationMattesInPhoto")
+    public native boolean embedsSemanticSegmentationMattesInPhoto();
+
+    @Generated
+    @Selector("enabledSemanticSegmentationMatteTypes")
+    public native NSArray<String> enabledSemanticSegmentationMatteTypes();
+
+    @Generated
+    @Selector("isAutoRedEyeReductionEnabled")
+    public native boolean isAutoRedEyeReductionEnabled();
+
+    @Generated
+    @Selector("isAutoVirtualDeviceFusionEnabled")
+    public native boolean isAutoVirtualDeviceFusionEnabled();
+
+    @Generated
+    @Selector("isPortraitEffectsMatteDeliveryEnabled")
+    public native boolean isPortraitEffectsMatteDeliveryEnabled();
+
+    @Generated
+    @Selector("photoQualityPrioritization")
+    @NInt
+    public native long photoQualityPrioritization();
+
+    @Generated
+    @Selector("rawEmbeddedThumbnailPhotoFormat")
+    public native NSDictionary<String, ?> rawEmbeddedThumbnailPhotoFormat();
+
+    @Generated
+    @Selector("setAutoRedEyeReductionEnabled:")
+    public native void setAutoRedEyeReductionEnabled(boolean value);
+
+    @Generated
+    @Selector("setAutoVirtualDeviceFusionEnabled:")
+    public native void setAutoVirtualDeviceFusionEnabled(boolean value);
+
+    @Generated
+    @Selector("setEmbedsPortraitEffectsMatteInPhoto:")
+    public native void setEmbedsPortraitEffectsMatteInPhoto(boolean value);
+
+    @Generated
+    @Selector("setEmbedsSemanticSegmentationMattesInPhoto:")
+    public native void setEmbedsSemanticSegmentationMattesInPhoto(boolean value);
+
+    @Generated
+    @Selector("setEnabledSemanticSegmentationMatteTypes:")
+    public native void setEnabledSemanticSegmentationMatteTypes(NSArray<String> value);
+
+    @Generated
+    @Selector("setPhotoQualityPrioritization:")
+    public native void setPhotoQualityPrioritization(@NInt long value);
+
+    @Generated
+    @Selector("setPortraitEffectsMatteDeliveryEnabled:")
+    public native void setPortraitEffectsMatteDeliveryEnabled(boolean value);
+
+    @Generated
+    @Selector("setRawEmbeddedThumbnailPhotoFormat:")
+    public native void setRawEmbeddedThumbnailPhotoFormat(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("setVirtualDeviceConstituentPhotoDeliveryEnabledDevices:")
+    public native void setVirtualDeviceConstituentPhotoDeliveryEnabledDevices(NSArray<? extends AVCaptureDevice> value);
+
+    @Generated
+    @Selector("virtualDeviceConstituentPhotoDeliveryEnabledDevices")
+    public native NSArray<? extends AVCaptureDevice> virtualDeviceConstituentPhotoDeliveryEnabledDevices();
 }

@@ -405,7 +405,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewCell initWithCoder(NSCoder aDecoder);
+    public native UICollectionViewCell initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -442,4 +442,10 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Generated
     @Selector("dragStateDidChange:")
     public native void dragStateDidChange(@NInt long dragState);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

@@ -17,6 +17,7 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -246,7 +247,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("exposureAdaptationBrighteningSpeedFactor")
@@ -284,7 +285,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNCamera initWithCoder(NSCoder aDecoder);
+    public native SCNCamera initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAnimationForKeyPaused:")
@@ -672,4 +673,71 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Generated
     @Selector("wantsDepthOfField")
     public native boolean wantsDepthOfField();
+
+    @Generated
+    @Selector("bloomIterationCount")
+    @NInt
+    public native long bloomIterationCount();
+
+    @Generated
+    @Selector("bloomIterationSpread")
+    @NFloat
+    public native double bloomIterationSpread();
+
+    @Generated
+    @Selector("grainIntensity")
+    @NFloat
+    public native double grainIntensity();
+
+    @Generated
+    @Selector("grainIsColored")
+    public native boolean grainIsColored();
+
+    @Generated
+    @Selector("grainScale")
+    @NFloat
+    public native double grainScale();
+
+    @Generated
+    @Selector("projectionTransformWithViewportSize:")
+    @ByValue
+    public native SCNMatrix4 projectionTransformWithViewportSize(@ByValue CGSize viewportSize);
+
+    @Generated
+    @Selector("setBloomIterationCount:")
+    public native void setBloomIterationCount(@NInt long value);
+
+    @Generated
+    @Selector("setBloomIterationSpread:")
+    public native void setBloomIterationSpread(@NFloat double value);
+
+    @Generated
+    @Selector("setGrainIntensity:")
+    public native void setGrainIntensity(@NFloat double value);
+
+    @Generated
+    @Selector("setGrainIsColored:")
+    public native void setGrainIsColored(boolean value);
+
+    @Generated
+    @Selector("setGrainScale:")
+    public native void setGrainScale(@NFloat double value);
+
+    @Generated
+    @Selector("setWhiteBalanceTemperature:")
+    public native void setWhiteBalanceTemperature(@NFloat double value);
+
+    @Generated
+    @Selector("setWhiteBalanceTint:")
+    public native void setWhiteBalanceTint(@NFloat double value);
+
+    @Generated
+    @Selector("whiteBalanceTemperature")
+    @NFloat
+    public native double whiteBalanceTemperature();
+
+    @Generated
+    @Selector("whiteBalanceTint")
+    @NFloat
+    public native double whiteBalanceTint();
 }

@@ -175,7 +175,7 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -187,7 +187,7 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNLabeledValue<?> initWithCoder(NSCoder aDecoder);
+    public native CNLabeledValue<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLabel:value:")

@@ -184,7 +184,7 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewFlowLayout initWithCoder(NSCoder aDecoder);
+    public native UICollectionViewFlowLayout initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("itemSize")

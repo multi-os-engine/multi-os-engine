@@ -483,4 +483,10 @@ public class UIStackView extends UIView {
     @Generated
     @Selector("setCustomSpacing:afterView:")
     public native void setCustomSpacingAfterView(@NFloat double spacing, UIView arrangedSubview);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

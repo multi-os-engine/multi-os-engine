@@ -185,7 +185,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIInputViewController initWithCoder(NSCoder aDecoder);
+    public native UIInputViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -247,4 +247,12 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Generated
     @Selector("needsInputModeSwitchKey")
     public native boolean needsInputModeSwitchKey();
+
+    @Generated
+    @Selector("hasDictationKey")
+    public native boolean hasDictationKey();
+
+    @Generated
+    @Selector("setHasDictationKey:")
+    public native void setHasDictationKey(boolean value);
 }

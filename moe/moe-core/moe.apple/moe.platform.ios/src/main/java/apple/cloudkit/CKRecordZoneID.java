@@ -166,7 +166,7 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKRecordZoneID initWithCoder(NSCoder aDecoder);
+    public native CKRecordZoneID initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithZoneName:ownerName:")

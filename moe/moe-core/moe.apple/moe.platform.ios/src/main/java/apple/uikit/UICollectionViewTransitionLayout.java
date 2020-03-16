@@ -170,7 +170,7 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewTransitionLayout initWithCoder(NSCoder aDecoder);
+    public native UICollectionViewTransitionLayout initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCurrentLayout:nextLayout:")

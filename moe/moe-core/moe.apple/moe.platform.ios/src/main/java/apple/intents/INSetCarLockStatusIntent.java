@@ -99,7 +99,7 @@ public class INSetCarLockStatusIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetCarLockStatusIntent initWithCoder(NSCoder aDecoder);
+    public native INSetCarLockStatusIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLocked:carName:")

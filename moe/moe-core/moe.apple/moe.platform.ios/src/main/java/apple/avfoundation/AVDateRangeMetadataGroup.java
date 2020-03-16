@@ -176,6 +176,7 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

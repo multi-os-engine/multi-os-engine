@@ -197,7 +197,7 @@ public class SCNCone extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNCone initWithCoder(NSCoder aDecoder);
+    public native SCNCone initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("radialSegmentCount")

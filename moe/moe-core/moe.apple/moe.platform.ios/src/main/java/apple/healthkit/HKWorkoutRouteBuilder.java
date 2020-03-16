@@ -3,7 +3,6 @@ package apple.healthkit;
 import apple.NSObject;
 import apple.corelocation.CLLocation;
 import apple.foundation.NSArray;
-import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -25,7 +24,6 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
-import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -109,10 +107,6 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     public native HKWorkoutRouteBuilder init();
 
     @Generated
-    @Selector("initWithCoder:")
-    public native HKWorkoutRouteBuilder initWithCoder(NSCoder aDecoder);
-
-    @Generated
     @Selector("initWithHealthStore:device:")
     public native HKWorkoutRouteBuilder initWithHealthStoreDevice(HKHealthStore healthStore, HKDevice device);
 
@@ -172,17 +166,19 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     public static native Class superclass_static();
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addMetadata:completion:")
+    public native void addMetadataCompletion(NSDictionary<String, ?> metadata,
+            @ObjCBlock(name = "call_addMetadataCompletion") Block_addMetadataCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addMetadataCompletion {
+        @Generated
+        void call_addMetadataCompletion(boolean arg0, NSError arg1);
+    }
 }

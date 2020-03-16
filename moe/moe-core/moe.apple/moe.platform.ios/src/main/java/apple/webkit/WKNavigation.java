@@ -153,4 +153,9 @@ public class WKNavigation extends NSObject {
     @Generated
     @Selector("init")
     public native WKNavigation init();
+
+    @Generated
+    @Selector("effectiveContentMode")
+    @NInt
+    public native long effectiveContentMode();
 }

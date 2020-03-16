@@ -168,5 +168,5 @@ public class UINib extends NSObject {
     @Generated
     @Selector("instantiateWithOwner:options:")
     public native NSArray<?> instantiateWithOwnerOptions(@Mapped(ObjCObjectMapper.class) Object ownerOrNil,
-            NSDictionary<?, ?> optionsOrNil);
+            NSDictionary<String, ?> optionsOrNil);
 }

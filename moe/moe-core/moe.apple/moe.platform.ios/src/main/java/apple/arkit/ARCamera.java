@@ -161,4 +161,12 @@ public class ARCamera extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("exposureDuration")
+    public native double exposureDuration();
+
+    @Generated
+    @Selector("exposureOffset")
+    public native float exposureOffset();
 }

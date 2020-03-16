@@ -98,7 +98,7 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("flow")
@@ -115,7 +115,7 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterReport initWithCoder(NSCoder aDecoder);
+    public native NEFilterReport initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -174,4 +174,19 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("bytesInboundCount")
+    @NUInt
+    public native long bytesInboundCount();
+
+    @Generated
+    @Selector("bytesOutboundCount")
+    @NUInt
+    public native long bytesOutboundCount();
+
+    @Generated
+    @Selector("event")
+    @NInt
+    public native long event();
 }

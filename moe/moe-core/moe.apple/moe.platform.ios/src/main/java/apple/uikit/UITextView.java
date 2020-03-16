@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -543,7 +544,7 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITextView initWithCoder(NSCoder aDecoder);
+    public native UITextView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -633,7 +634,7 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("markedTextStyle")
-    public native NSDictionary<?, ?> markedTextStyle();
+    public native NSDictionary<String, ?> markedTextStyle();
 
     @Generated
     @Selector("offsetFromPosition:toPosition:")
@@ -695,7 +696,7 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("selectionRectsForRange:")
-    public native NSArray<?> selectionRectsForRange(UITextRange range);
+    public native NSArray<? extends UITextSelectionRect> selectionRectsForRange(UITextRange range);
 
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")
@@ -800,7 +801,7 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setMarkedTextStyle:")
-    public native void setMarkedTextStyle(NSDictionary<?, ?> value);
+    public native void setMarkedTextStyle(NSDictionary<String, ?> value);
 
     @Generated
     @IsOptional
@@ -1067,4 +1068,49 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("textDropInteraction")
     public native UIDropInteraction textDropInteraction();
+
+    @Generated
+    @IsOptional
+    @Selector("insertText:alternatives:style:")
+    public native void insertTextAlternativesStyle(String text, NSArray<String> alternatives, @NInt long style);
+
+    @Generated
+    @IsOptional
+    @Selector("insertTextPlaceholderWithSize:")
+    public native UITextPlaceholder insertTextPlaceholderWithSize(@ByValue CGSize size);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @IsOptional
+    @Selector("passwordRules")
+    public native UITextInputPasswordRules passwordRules();
+
+    @Generated
+    @IsOptional
+    @Selector("removeTextPlaceholder:")
+    public native void removeTextPlaceholder(UITextPlaceholder textPlaceholder);
+
+    @Generated
+    @IsOptional
+    @Selector("setAttributedMarkedText:selectedRange:")
+    public native void setAttributedMarkedTextSelectedRange(NSAttributedString markedText,
+            @ByValue NSRange selectedRange);
+
+    @Generated
+    @IsOptional
+    @Selector("setPasswordRules:")
+    public native void setPasswordRules(UITextInputPasswordRules value);
+
+    @Generated
+    @Selector("setUsesStandardTextScaling:")
+    public native void setUsesStandardTextScaling(boolean value);
+
+    @Generated
+    @Selector("usesStandardTextScaling")
+    public native boolean usesStandardTextScaling();
 }

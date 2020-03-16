@@ -989,4 +989,74 @@ public final class CoreImage {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCIInputMoireAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageAuxiliaryPortraitEffectsMatte();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageAuxiliarySemanticSegmentationSkinMatte();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageAuxiliarySemanticSegmentationHairMatte();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageAuxiliarySemanticSegmentationTeethMatte();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIContextAllowLowPower();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationAVPortraitEffectsMatte();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationPortraitEffectsMatteImage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationAVSemanticSegmentationMattes();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationSemanticSegmentationSkinMatteImage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationSemanticSegmentationHairMatteImage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIImageRepresentationSemanticSegmentationTeethMatteImage();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputAmountKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputMatteImageKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIInputEnableEDRModeKey();
 }

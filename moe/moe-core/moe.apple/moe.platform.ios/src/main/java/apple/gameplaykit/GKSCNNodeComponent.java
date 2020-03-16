@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -110,7 +111,7 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKSCNNodeComponent initWithCoder(NSCoder aDecoder);
+    public native GKSCNNodeComponent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNode:")
@@ -167,4 +168,14 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

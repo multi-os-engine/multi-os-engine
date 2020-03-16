@@ -99,8 +99,7 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("defaultSound")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultSound();
+    public static native UNNotificationSound defaultSound();
 
     @Generated
     @Selector("description")
@@ -175,7 +174,7 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -183,11 +182,30 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationSound initWithCoder(NSCoder aDecoder);
+    public native UNNotificationSound initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("criticalSoundNamed:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object criticalSoundNamed(String name);
+
+    @Generated
+    @Selector("criticalSoundNamed:withAudioVolume:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object criticalSoundNamedWithAudioVolume(String name, float volume);
+
+    @Generated
+    @Selector("defaultCriticalSound")
+    public static native UNNotificationSound defaultCriticalSound();
+
+    @Generated
+    @Selector("defaultCriticalSoundWithAudioVolume:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object defaultCriticalSoundWithAudioVolume(float volume);
 }

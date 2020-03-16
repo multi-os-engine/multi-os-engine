@@ -216,7 +216,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("floatComponents")
@@ -228,7 +228,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNGeometrySource initWithCoder(NSCoder aDecoder);
+    public native SCNGeometrySource initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("semantic")

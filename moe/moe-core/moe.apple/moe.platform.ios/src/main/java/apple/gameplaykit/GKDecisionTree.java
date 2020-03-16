@@ -162,7 +162,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("findActionForAnswers:")
@@ -179,7 +179,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKDecisionTree initWithCoder(NSCoder aDecoder);
+    public native GKDecisionTree initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithExamples:actions:attributes:")

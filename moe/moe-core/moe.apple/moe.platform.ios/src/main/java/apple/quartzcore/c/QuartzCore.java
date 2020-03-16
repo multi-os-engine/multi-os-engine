@@ -602,4 +602,24 @@ public final class QuartzCore {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCAValueFunctionTranslateZ();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCACornerCurveCircular();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCACornerCurveContinuous();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCAGradientLayerRadial();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCAGradientLayerConic();
 }

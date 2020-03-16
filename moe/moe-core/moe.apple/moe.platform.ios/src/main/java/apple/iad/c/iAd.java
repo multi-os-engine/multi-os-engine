@@ -16,9 +16,12 @@ limitations under the License.
 
 package apple.iad.c;
 
+import apple.coregraphics.struct.CGSize;
 import org.moe.natj.c.CRuntime;
+import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.NatJ;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -66,4 +69,9 @@ public final class iAd {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ADClientErrorDomain();
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CGSize ADClampedBannerSize(@ByValue CGSize size);
 }

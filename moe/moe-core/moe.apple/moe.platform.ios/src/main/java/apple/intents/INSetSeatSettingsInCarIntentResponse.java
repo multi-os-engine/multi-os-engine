@@ -173,7 +173,7 @@ public class INSetSeatSettingsInCarIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetSeatSettingsInCarIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSetSeatSettingsInCarIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

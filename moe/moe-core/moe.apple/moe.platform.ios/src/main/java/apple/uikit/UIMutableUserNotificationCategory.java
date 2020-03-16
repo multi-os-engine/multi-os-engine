@@ -166,7 +166,7 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMutableUserNotificationCategory initWithCoder(NSCoder aDecoder);
+    public native UIMutableUserNotificationCategory initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setActions:forContext:")

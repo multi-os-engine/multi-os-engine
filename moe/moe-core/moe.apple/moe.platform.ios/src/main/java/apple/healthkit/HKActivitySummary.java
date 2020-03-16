@@ -196,7 +196,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -204,7 +204,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKActivitySummary initWithCoder(NSCoder aDecoder);
+    public native HKActivitySummary initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setActiveEnergyBurned:")

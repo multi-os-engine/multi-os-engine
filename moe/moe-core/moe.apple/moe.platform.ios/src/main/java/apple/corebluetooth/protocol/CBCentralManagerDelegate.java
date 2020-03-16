@@ -23,6 +23,7 @@ import apple.foundation.NSError;
 import apple.foundation.NSNumber;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -75,4 +76,20 @@ public interface CBCentralManagerDelegate {
     @Generated
     @Selector("centralManagerDidUpdateState:")
     void centralManagerDidUpdateState(CBCentralManager central);
+
+    @Generated
+    @IsOptional
+    @Selector("centralManager:connectionEventDidOccur:forPeripheral:")
+    default void centralManagerConnectionEventDidOccurForPeripheral(CBCentralManager central, @NInt long event,
+            CBPeripheral peripheral) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("centralManager:didUpdateANCSAuthorizationForPeripheral:")
+    default void centralManagerDidUpdateANCSAuthorizationForPeripheral(CBCentralManager central,
+            CBPeripheral peripheral) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

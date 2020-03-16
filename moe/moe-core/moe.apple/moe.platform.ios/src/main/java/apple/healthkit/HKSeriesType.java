@@ -114,7 +114,7 @@ public class HKSeriesType extends HKSampleType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSeriesType initWithCoder(NSCoder aDecoder);
+    public native HKSeriesType initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -190,4 +190,17 @@ public class HKSeriesType extends HKSampleType {
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
+
+    @Generated
+    @Selector("audiogramSampleType")
+    public static native HKAudiogramSampleType audiogramSampleType();
+
+    @Generated
+    @Selector("clinicalTypeForIdentifier:")
+    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("heartbeatSeriesType")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object heartbeatSeriesType();
 }

@@ -162,7 +162,7 @@ public class INCancelWorkoutIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCancelWorkoutIntent initWithCoder(NSCoder aDecoder);
+    public native INCancelWorkoutIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithWorkoutName:")

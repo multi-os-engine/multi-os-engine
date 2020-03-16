@@ -188,4 +188,15 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
     @Selector("successWithResolvedCallRecordType:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedCallRecordType(@NInt long resolvedCallRecordType);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

@@ -17,6 +17,7 @@ limitations under the License.
 package apple.coretelephony;
 
 import apple.NSObject;
+import apple.coretelephony.protocol.CTSubscriberDelegate;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
@@ -158,4 +159,29 @@ public class CTSubscriber extends NSObject {
     @Generated
     @Selector("init")
     public native CTSubscriber init();
+
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native CTSubscriberDelegate delegate();
+
+    @Generated
+    @Selector("identifier")
+    public native String identifier();
+
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CTSubscriberDelegate value);
+
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) CTSubscriberDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

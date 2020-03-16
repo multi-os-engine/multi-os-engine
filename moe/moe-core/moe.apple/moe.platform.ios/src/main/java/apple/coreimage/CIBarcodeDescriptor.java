@@ -93,7 +93,7 @@ public class CIBarcodeDescriptor extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -106,7 +106,7 @@ public class CIBarcodeDescriptor extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIBarcodeDescriptor initWithCoder(NSCoder aDecoder);
+    public native CIBarcodeDescriptor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

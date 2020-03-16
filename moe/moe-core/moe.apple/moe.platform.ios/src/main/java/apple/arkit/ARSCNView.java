@@ -1,6 +1,7 @@
 package apple.arkit;
 
 import apple.NSObject;
+import apple.arkit.protocol.ARSessionProviding;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
@@ -42,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ARSCNView extends SCNView {
+public class ARSCNView extends SCNView implements ARSessionProviding {
     static {
         NatJ.register();
     }
@@ -265,7 +266,7 @@ public class ARSCNView extends SCNView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARSCNView initWithCoder(NSCoder aDecoder);
+    public native ARSCNView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -454,4 +455,31 @@ public class ARSCNView extends SCNView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("raycastQueryFromPoint:allowingTarget:alignment:")
+    public native ARRaycastQuery raycastQueryFromPointAllowingTargetAlignment(@ByValue CGPoint point, @NInt long target,
+            @NInt long alignment);
+
+    @Generated
+    @Selector("rendersCameraGrain")
+    public native boolean rendersCameraGrain();
+
+    @Generated
+    @Selector("rendersMotionBlur")
+    public native boolean rendersMotionBlur();
+
+    @Generated
+    @Selector("setRendersCameraGrain:")
+    public native void setRendersCameraGrain(boolean value);
+
+    @Generated
+    @Selector("setRendersMotionBlur:")
+    public native void setRendersMotionBlur(boolean value);
 }

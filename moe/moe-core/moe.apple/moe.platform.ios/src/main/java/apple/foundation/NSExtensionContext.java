@@ -18,8 +18,10 @@ package apple.foundation;
 
 import apple.NSObject;
 import apple.coregraphics.struct.CGSize;
+import apple.intents.INIntent;
 import apple.replaykit.RPBroadcastConfiguration;
 import apple.uikit.UIImage;
+import apple.usernotifications.UNNotificationAction;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -250,4 +252,24 @@ public class NSExtensionContext extends NSObject {
     @Generated
     @Selector("interfaceParametersDescription")
     public native String interfaceParametersDescription();
+
+    @Generated
+    @Selector("dismissNotificationContentExtension")
+    public native void dismissNotificationContentExtension();
+
+    @Generated
+    @Selector("intent")
+    public native INIntent intent();
+
+    @Generated
+    @Selector("notificationActions")
+    public native NSArray<? extends UNNotificationAction> notificationActions();
+
+    @Generated
+    @Selector("performNotificationDefaultAction")
+    public native void performNotificationDefaultAction();
+
+    @Generated
+    @Selector("setNotificationActions:")
+    public native void setNotificationActions(NSArray<? extends UNNotificationAction> value);
 }

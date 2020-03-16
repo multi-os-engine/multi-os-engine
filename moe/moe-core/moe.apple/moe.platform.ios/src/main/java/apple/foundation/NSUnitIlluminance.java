@@ -164,7 +164,7 @@ public class NSUnitIlluminance extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,7 +172,7 @@ public class NSUnitIlluminance extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitIlluminance initWithCoder(NSCoder aDecoder);
+    public native NSUnitIlluminance initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

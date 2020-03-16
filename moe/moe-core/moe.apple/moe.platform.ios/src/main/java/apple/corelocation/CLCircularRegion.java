@@ -184,7 +184,7 @@ public class CLCircularRegion extends CLRegion {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLCircularRegion initWithCoder(NSCoder aDecoder);
+    public native CLCircularRegion initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("radius")

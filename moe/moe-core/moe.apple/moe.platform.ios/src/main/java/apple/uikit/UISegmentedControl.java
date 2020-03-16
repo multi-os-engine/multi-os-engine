@@ -422,7 +422,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("imageForSegmentAtIndex:")
@@ -434,7 +434,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISegmentedControl initWithCoder(NSCoder aDecoder);
+    public native UISegmentedControl initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -529,24 +529,16 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native void setSelectedSegmentIndex(@NInt long value);
 
     @Generated
-    @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
-
-    @Generated
     @Selector("setTitle:forSegmentAtIndex:")
     public native void setTitleForSegmentAtIndex(String title, @NUInt long segment);
 
     @Generated
     @Selector("setTitleTextAttributes:forState:")
-    public native void setTitleTextAttributesForState(NSDictionary<?, ?> attributes, @NUInt long state);
+    public native void setTitleTextAttributesForState(NSDictionary<String, ?> attributes, @NUInt long state);
 
     @Generated
     @Selector("setWidth:forSegmentAtIndex:")
     public native void setWidthForSegmentAtIndex(@NFloat double width, @NUInt long segment);
-
-    @Generated
-    @Selector("tintColor")
-    public native UIColor tintColor();
 
     @Generated
     @Selector("titleForSegmentAtIndex:")
@@ -554,7 +546,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     @Generated
     @Selector("titleTextAttributesForState:")
-    public native NSDictionary<?, ?> titleTextAttributesForState(@NUInt long state);
+    public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
 
     @Generated
     @Selector("widthForSegmentAtIndex:")
@@ -568,4 +560,18 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Generated
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("selectedSegmentTintColor")
+    public native UIColor selectedSegmentTintColor();
+
+    @Generated
+    @Selector("setSelectedSegmentTintColor:")
+    public native void setSelectedSegmentTintColor(UIColor value);
 }

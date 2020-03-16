@@ -243,7 +243,7 @@ public class MKUserTrackingButton extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKUserTrackingButton initWithCoder(NSCoder aDecoder);
+    public native MKUserTrackingButton initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -412,4 +412,10 @@ public class MKUserTrackingButton extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

@@ -171,7 +171,7 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPersonNameComponentsFormatter initWithCoder(NSCoder aDecoder);
+    public native NSPersonNameComponentsFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isPhonetic")

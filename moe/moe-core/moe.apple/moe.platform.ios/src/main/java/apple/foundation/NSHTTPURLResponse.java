@@ -166,7 +166,7 @@ public class NSHTTPURLResponse extends NSURLResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSHTTPURLResponse initWithCoder(NSCoder aDecoder);
+    public native NSHTTPURLResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
@@ -188,4 +188,8 @@ public class NSHTTPURLResponse extends NSURLResponse {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("valueForHTTPHeaderField:")
+    public native String valueForHTTPHeaderField(String field);
 }

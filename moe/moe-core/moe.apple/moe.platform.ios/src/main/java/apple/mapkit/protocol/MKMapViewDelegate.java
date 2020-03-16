@@ -74,7 +74,6 @@ public interface MKMapViewDelegate {
 
     @Generated
     @IsOptional
-    @Deprecated
     @Selector("mapView:didAddOverlayViews:")
     default void mapViewDidAddOverlayViews(MKMapView mapView, NSArray<?> overlayViews) {
         throw new java.lang.UnsupportedOperationException();
@@ -147,7 +146,6 @@ public interface MKMapViewDelegate {
 
     @Generated
     @IsOptional
-    @Deprecated
     @Selector("mapView:viewForOverlay:")
     default MKOverlayView mapViewViewForOverlay(MKMapView mapView, @Mapped(ObjCObjectMapper.class) Object overlay) {
         throw new java.lang.UnsupportedOperationException();
@@ -207,6 +205,13 @@ public interface MKMapViewDelegate {
     @Selector("mapView:clusterAnnotationForMemberAnnotations:")
     default MKClusterAnnotation mapViewClusterAnnotationForMemberAnnotations(MKMapView mapView,
             NSArray<?> memberAnnotations) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("mapViewDidChangeVisibleRegion:")
+    default void mapViewDidChangeVisibleRegion(MKMapView mapView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

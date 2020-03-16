@@ -159,7 +159,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -167,7 +167,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AUAudioUnitPreset initWithCoder(NSCoder aDecoder);
+    public native AUAudioUnitPreset initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("name")

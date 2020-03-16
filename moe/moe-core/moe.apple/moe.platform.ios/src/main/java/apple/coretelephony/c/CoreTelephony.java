@@ -121,4 +121,9 @@ public final class CoreTelephony {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CTRadioAccessTechnologyLTE();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CTServiceRadioAccessTechnologyDidChangeNotification();
 }

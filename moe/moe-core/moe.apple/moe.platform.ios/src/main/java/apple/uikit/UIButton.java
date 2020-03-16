@@ -464,7 +464,7 @@ public class UIButton extends UIControl
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Deprecated
@@ -495,7 +495,7 @@ public class UIButton extends UIControl
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIButton initWithCoder(NSCoder aDecoder);
+    public native UIButton initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -637,4 +637,29 @@ public class UIButton extends UIControl
     @Generated
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
+
+    @Generated
+    @Selector("currentPreferredSymbolConfiguration")
+    public native UIImageSymbolConfiguration currentPreferredSymbolConfiguration();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("preferredSymbolConfigurationForImageInState:")
+    public native UIImageSymbolConfiguration preferredSymbolConfigurationForImageInState(@NUInt long state);
+
+    @Generated
+    @Selector("setPreferredSymbolConfiguration:forImageInState:")
+    public native void setPreferredSymbolConfigurationForImageInState(UIImageSymbolConfiguration configuration,
+            @NUInt long state);
+
+    @Generated
+    @Selector("systemButtonWithImage:target:action:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemButtonWithImageTargetAction(UIImage image,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
 }

@@ -188,4 +188,15 @@ public class INRadioTypeResolutionResult extends INIntentResolutionResult {
     @Selector("successWithResolvedRadioType:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedRadioType(@NInt long resolvedRadioType);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

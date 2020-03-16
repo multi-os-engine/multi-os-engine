@@ -21,9 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CXErrorCode {
-    @Generated @NInt public static final long CXErrorCodeUnknownError = 0x0000000000000000L;
-
     @Generated
     private CXErrorCode() {
     }
+
+    @Generated @NInt public static final long UnknownError = 0x0000000000000000L;
+    @Generated @NInt public static final long Unentitled = 0x0000000000000001L;
+    @Generated @NInt public static final long InvalidArgument = 0x0000000000000002L;
 }

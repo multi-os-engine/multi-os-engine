@@ -174,7 +174,7 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("handleIdentifier")
@@ -190,7 +190,7 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CSPerson initWithCoder(NSCoder aDecoder);
+    public native CSPerson initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDisplayName:handles:handleIdentifier:")

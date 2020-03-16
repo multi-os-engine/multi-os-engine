@@ -176,7 +176,7 @@ public class CMMotionActivity extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMMotionActivity initWithCoder(NSCoder aDecoder);
+    public native CMMotionActivity initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("running")

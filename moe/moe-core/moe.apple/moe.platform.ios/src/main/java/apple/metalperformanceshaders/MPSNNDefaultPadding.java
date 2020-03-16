@@ -94,7 +94,7 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -107,7 +107,7 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNDefaultPadding initWithCoder(NSCoder aDecoder);
+    public native MPSNNDefaultPadding initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -183,4 +183,14 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @IsOptional
+    @Selector("inverse")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object inverse();
+
+    @Generated
+    @Selector("paddingForTensorflowAveragePoolingValidOnly")
+    public static native MPSNNDefaultPadding paddingForTensorflowAveragePoolingValidOnly();
 }

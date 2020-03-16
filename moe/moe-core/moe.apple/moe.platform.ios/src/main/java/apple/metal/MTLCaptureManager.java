@@ -2,6 +2,7 @@ package apple.metal;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLCaptureScope;
@@ -17,7 +18,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -184,4 +187,13 @@ public class MTLCaptureManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("startCaptureWithDescriptor:error:")
+    public native boolean startCaptureWithDescriptorError(MTLCaptureDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("supportsDestination:")
+    public native boolean supportsDestination(@NInt long destination);
 }

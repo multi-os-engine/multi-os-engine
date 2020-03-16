@@ -1101,4 +1101,64 @@ public final class HomeKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HMPresenceKeyPath();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeIrrigationSystem();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeValve();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMServiceTypeFaucet();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeProgramMode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeInUse();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeSetDuration();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeRemainingDuration();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeValveType();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMCharacteristicTypeIsConfigured();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeSprinkler();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeFaucet();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HMAccessoryCategoryTypeShowerHead();
 }

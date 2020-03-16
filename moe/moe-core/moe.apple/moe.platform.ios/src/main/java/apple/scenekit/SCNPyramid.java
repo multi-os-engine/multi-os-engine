@@ -192,7 +192,7 @@ public class SCNPyramid extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPyramid initWithCoder(NSCoder aDecoder);
+    public native SCNPyramid initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("length")

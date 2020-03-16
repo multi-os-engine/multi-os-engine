@@ -23,6 +23,7 @@ import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.NSUUID;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -172,7 +173,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +181,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterFlow initWithCoder(NSCoder aDecoder);
+    public native NEFilterFlow initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -199,4 +200,13 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("sourceAppVersion")
     public native String sourceAppVersion();
+
+    @Generated
+    @Selector("direction")
+    @NInt
+    public native long direction();
+
+    @Generated
+    @Selector("identifier")
+    public native NSUUID identifier();
 }

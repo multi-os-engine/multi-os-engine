@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHAssetCollectionChangeRequest extends NSObject {
+public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     static {
         NatJ.register();
     }
@@ -91,7 +91,7 @@ public class PHAssetCollectionChangeRequest extends NSObject {
     @Generated
     @Selector("changeRequestForAssetCollection:assets:")
     public static native PHAssetCollectionChangeRequest changeRequestForAssetCollectionAssets(
-            PHAssetCollection assetCollection, PHFetchResult<PHAsset> assets);
+            PHAssetCollection assetCollection, PHFetchResult<? extends PHAsset> assets);
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")

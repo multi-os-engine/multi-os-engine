@@ -189,7 +189,7 @@ public class INSearchForMessagesIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForMessagesIntent initWithCoder(NSCoder aDecoder);
+    public native INSearchForMessagesIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:groupNames:")
@@ -255,4 +255,21 @@ public class INSearchForMessagesIntent extends INIntent {
     @Selector("speakableGroupNamesOperator")
     @NInt
     public native long speakableGroupNamesOperator();
+
+    @Generated
+    @Selector("conversationIdentifiers")
+    public native NSArray<String> conversationIdentifiers();
+
+    @Generated
+    @Selector("conversationIdentifiersOperator")
+    @NInt
+    public native long conversationIdentifiersOperator();
+
+    @Generated
+    @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:speakableGroupNames:conversationIdentifiers:")
+    public native INSearchForMessagesIntent initWithRecipientsSendersSearchTermsAttributesDateTimeRangeIdentifiersNotificationIdentifiersSpeakableGroupNamesConversationIdentifiers(
+            NSArray<? extends INPerson> recipients, NSArray<? extends INPerson> senders, NSArray<String> searchTerms,
+            @NUInt long attributes, INDateComponentsRange dateTimeRange, NSArray<String> identifiers,
+            NSArray<String> notificationIdentifiers, NSArray<? extends INSpeakableString> speakableGroupNames,
+            NSArray<String> conversationIdentifiers);
 }

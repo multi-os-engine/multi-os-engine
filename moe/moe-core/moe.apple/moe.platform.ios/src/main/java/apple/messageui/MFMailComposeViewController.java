@@ -182,7 +182,7 @@ public class MFMailComposeViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MFMailComposeViewController initWithCoder(NSCoder aDecoder);
+    public native MFMailComposeViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

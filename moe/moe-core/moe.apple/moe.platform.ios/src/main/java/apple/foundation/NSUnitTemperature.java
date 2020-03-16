@@ -172,7 +172,7 @@ public class NSUnitTemperature extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +180,7 @@ public class NSUnitTemperature extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitTemperature initWithCoder(NSCoder aDecoder);
+    public native NSUnitTemperature initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

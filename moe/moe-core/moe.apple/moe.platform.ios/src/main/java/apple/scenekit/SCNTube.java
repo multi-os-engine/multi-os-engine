@@ -192,7 +192,7 @@ public class SCNTube extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNTube initWithCoder(NSCoder aDecoder);
+    public native SCNTube initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("innerRadius")

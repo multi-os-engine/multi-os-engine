@@ -36,6 +36,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -207,4 +208,32 @@ public class AVSpeechSynthesizer extends NSObject {
     @Generated
     @Selector("stopSpeakingAtBoundary:")
     public native boolean stopSpeakingAtBoundary(@NInt long boundary);
+
+    @Generated
+    @Selector("mixToTelephonyUplink")
+    public native boolean mixToTelephonyUplink();
+
+    @Generated
+    @Selector("setMixToTelephonyUplink:")
+    public native void setMixToTelephonyUplink(boolean value);
+
+    @Generated
+    @Selector("setUsesApplicationAudioSession:")
+    public native void setUsesApplicationAudioSession(boolean value);
+
+    @Generated
+    @Selector("usesApplicationAudioSession")
+    public native boolean usesApplicationAudioSession();
+
+    @Generated
+    @Selector("writeUtterance:toBufferCallback:")
+    public native void writeUtteranceToBufferCallback(AVSpeechUtterance utterance,
+            @ObjCBlock(name = "call_writeUtteranceToBufferCallback") Block_writeUtteranceToBufferCallback bufferCallback);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeUtteranceToBufferCallback {
+        @Generated
+        void call_writeUtteranceToBufferCallback(AVAudioBuffer arg0);
+    }
 }

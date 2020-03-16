@@ -262,7 +262,7 @@ public class NSMutableData extends NSData {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableData initWithCoder(NSCoder aDecoder);
+    public native NSMutableData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -330,4 +330,14 @@ public class NSMutableData extends NSData {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("compressUsingAlgorithm:error:")
+    public native boolean compressUsingAlgorithmError(@NInt long algorithm,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("decompressUsingAlgorithm:error:")
+    public native boolean decompressUsingAlgorithmError(@NInt long algorithm,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

@@ -167,7 +167,7 @@ public class NSRelationshipDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSRelationshipDescription initWithCoder(NSCoder aDecoder);
+    public native NSRelationshipDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("inverseRelationship")

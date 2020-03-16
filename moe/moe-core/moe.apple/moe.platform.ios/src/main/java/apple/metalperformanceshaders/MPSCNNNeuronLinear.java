@@ -154,14 +154,6 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     public static native long version_static();
 
     @Generated
-    @Selector("a")
-    public native float a();
-
-    @Generated
-    @Selector("b")
-    public native float b();
-
-    @Generated
     @Selector("init")
     public native MPSCNNNeuronLinear init();
 
@@ -192,4 +184,9 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuronLinear initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNNeuronDescriptor neuronDescriptor);
 }

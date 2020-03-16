@@ -167,6 +167,7 @@ public class GKVoiceChatService extends NSObject {
     @Selector("acceptCallID:error:")
     public native boolean acceptCallIDError(@NInt long callID, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Deprecated
     @Generated
     @Selector("client")
     @MappedReturn(ObjCObjectMapper.class)
@@ -224,10 +225,12 @@ public class GKVoiceChatService extends NSObject {
     @Selector("remoteParticipantVolume")
     public native float remoteParticipantVolume();
 
+    @Deprecated
     @Generated
     @Selector("setClient:")
     public native void setClient_unsafe(@Mapped(ObjCObjectMapper.class) GKVoiceChatClient value);
 
+    @Deprecated
     @Generated
     public void setClient(@Mapped(ObjCObjectMapper.class) GKVoiceChatClient value) {
         Object __old = client();

@@ -193,7 +193,7 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("gravity")
@@ -206,7 +206,7 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsWorld initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsWorld initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("rayTestWithSegmentFromPoint:toPoint:options:")

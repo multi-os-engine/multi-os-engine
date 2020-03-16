@@ -270,4 +270,21 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Generated
     @Selector("setRequiresSecureCoding:")
     public native void setRequiresSecureCoding(boolean value);
+
+    @Generated
+    @Selector("initForReadingFromData:error:")
+    public native NSKeyedUnarchiver initForReadingFromDataError(NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("unarchivedObjectOfClass:fromData:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unarchivedObjectOfClassFromDataError(Class cls, NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("unarchivedObjectOfClasses:fromData:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unarchivedObjectOfClassesFromDataError(NSSet<? extends Class> classes, NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

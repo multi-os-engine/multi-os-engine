@@ -37,6 +37,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -183,9 +184,19 @@ public class GKGridGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKGridGraph<?> initWithCoder(NSCoder aDecoder);
+    public native GKGridGraph<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNodes:")
     public native GKGridGraph<?> initWithNodes(NSArray<? extends GKGraphNode> nodes);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

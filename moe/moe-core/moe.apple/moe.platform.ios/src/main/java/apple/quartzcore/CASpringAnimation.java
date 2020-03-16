@@ -178,7 +178,7 @@ public class CASpringAnimation extends CABasicAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CASpringAnimation initWithCoder(NSCoder aDecoder);
+    public native CASpringAnimation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initialVelocity")

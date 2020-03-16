@@ -41,4 +41,6 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated public static final int kMIDIUnknownError = 0xFFFFD5A3;
 }

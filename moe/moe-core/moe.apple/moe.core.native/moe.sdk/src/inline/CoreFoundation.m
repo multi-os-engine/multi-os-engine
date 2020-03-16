@@ -29,30 +29,6 @@ EXPORT CFRange __natj_inline_CFRangeMake(CFIndex loc, CFIndex len) {
 	return CFRangeMake(loc, len);
 }
 
-EXPORT void __natj_inline_CFStringInitInlineBuffer(CFStringRef str, CFStringInlineBuffer * buf, CFRange range) {
-	CFStringInitInlineBuffer(str, buf, range);
-}
-
-EXPORT UniChar __natj_inline_CFStringGetCharacterFromInlineBuffer(CFStringInlineBuffer * buf, CFIndex idx) {
-	return CFStringGetCharacterFromInlineBuffer(buf, idx);
-}
-
-EXPORT Boolean __natj_inline_CFStringIsSurrogateHighCharacter(UniChar character) {
-	return CFStringIsSurrogateHighCharacter(character);
-}
-
-EXPORT Boolean __natj_inline_CFStringIsSurrogateLowCharacter(UniChar character) {
-	return CFStringIsSurrogateLowCharacter(character);
-}
-
-EXPORT UTF32Char __natj_inline_CFStringGetLongCharacterForSurrogatePair(UniChar surrogateHigh, UniChar surrogateLow) {
-	return CFStringGetLongCharacterForSurrogatePair(surrogateHigh, surrogateLow);
-}
-
-EXPORT Boolean __natj_inline_CFStringGetSurrogatePairForLongCharacter(UTF32Char character, UniChar * surrogates) {
-	return CFStringGetSurrogatePairForLongCharacter(character, surrogates);
-}
-
 EXPORT CFByteOrder __natj_inline_CFByteOrderGetCurrent() {
 	return CFByteOrderGetCurrent();
 }
@@ -147,6 +123,30 @@ EXPORT CFSwappedFloat64 __natj_inline_CFConvertDoubleHostToSwapped(double arg) {
 
 EXPORT double __natj_inline_CFConvertDoubleSwappedToHost(CFSwappedFloat64 arg) {
 	return CFConvertDoubleSwappedToHost(arg);
+}
+
+EXPORT void __natj_inline_CFStringInitInlineBuffer(CFStringRef str, CFStringInlineBuffer * buf, CFRange range) {
+	CFStringInitInlineBuffer(str, buf, range);
+}
+
+EXPORT UniChar __natj_inline_CFStringGetCharacterFromInlineBuffer(CFStringInlineBuffer * buf, CFIndex idx) {
+	return CFStringGetCharacterFromInlineBuffer(buf, idx);
+}
+
+EXPORT Boolean __natj_inline_CFStringIsSurrogateHighCharacter(UniChar character) {
+	return CFStringIsSurrogateHighCharacter(character);
+}
+
+EXPORT Boolean __natj_inline_CFStringIsSurrogateLowCharacter(UniChar character) {
+	return CFStringIsSurrogateLowCharacter(character);
+}
+
+EXPORT UTF32Char __natj_inline_CFStringGetLongCharacterForSurrogatePair(UniChar surrogateHigh, UniChar surrogateLow) {
+	return CFStringGetLongCharacterForSurrogatePair(surrogateHigh, surrogateLow);
+}
+
+EXPORT Boolean __natj_inline_CFStringGetSurrogatePairForLongCharacter(UTF32Char character, UniChar * surrogates) {
+	return CFStringGetSurrogatePairForLongCharacter(character, surrogates);
 }
 
 

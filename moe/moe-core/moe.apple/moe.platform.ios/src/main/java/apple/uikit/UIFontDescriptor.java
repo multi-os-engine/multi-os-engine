@@ -192,7 +192,7 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fontAttributes")
@@ -228,7 +228,7 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIFontDescriptor initWithCoder(NSCoder aDecoder);
+    public native UIFontDescriptor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFontAttributes:")
@@ -267,4 +267,8 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("symbolicTraits")
     public native int symbolicTraits();
+
+    @Generated
+    @Selector("fontDescriptorWithDesign:")
+    public native UIFontDescriptor fontDescriptorWithDesign(String design);
 }

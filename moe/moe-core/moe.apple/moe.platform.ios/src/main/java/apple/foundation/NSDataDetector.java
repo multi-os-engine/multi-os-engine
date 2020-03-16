@@ -182,7 +182,7 @@ public class NSDataDetector extends NSRegularExpression {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDataDetector initWithCoder(NSCoder aDecoder);
+    public native NSDataDetector initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPattern:options:error:")

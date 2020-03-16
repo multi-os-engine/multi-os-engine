@@ -120,7 +120,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetCarPowerLevelStatusIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INGetCarPowerLevelStatusIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -191,4 +191,20 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("charging")
+    public native NSNumber charging();
+
+    @Generated
+    @Selector("minutesToFull")
+    public native NSNumber minutesToFull();
+
+    @Generated
+    @Selector("setCharging:")
+    public native void setCharging(NSNumber value);
+
+    @Generated
+    @Selector("setMinutesToFull:")
+    public native void setMinutesToFull(NSNumber value);
 }

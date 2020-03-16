@@ -436,7 +436,7 @@ public class UIActionSheet extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIActionSheet initWithCoder(NSCoder aDecoder);
+    public native UIActionSheet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -513,4 +513,10 @@ public class UIActionSheet extends UIView {
     @Generated
     @Selector("title")
     public native String title();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

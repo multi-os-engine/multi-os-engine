@@ -157,5 +157,5 @@ public class NSMessagePort extends NSPort {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMessagePort initWithCoder(NSCoder aDecoder);
+    public native NSMessagePort initWithCoder(NSCoder coder);
 }

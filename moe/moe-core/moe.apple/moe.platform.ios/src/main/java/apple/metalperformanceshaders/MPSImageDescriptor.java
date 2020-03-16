@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -43,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSImageDescriptor extends NSObject {
+public class MPSImageDescriptor extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -241,4 +242,10 @@ public class MPSImageDescriptor extends NSObject {
     @Selector("width")
     @NUInt
     public native long width();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 }

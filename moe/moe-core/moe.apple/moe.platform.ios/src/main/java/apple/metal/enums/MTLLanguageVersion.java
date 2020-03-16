@@ -29,4 +29,6 @@ public final class MTLLanguageVersion {
     @Generated @NUInt public static final long Version1_1 = 0x0000000000010001L;
     @Generated @NUInt public static final long Version1_2 = 0x0000000000010002L;
     @Generated @NUInt public static final long Version2_0 = 0x0000000000020000L;
+    @Generated @NUInt public static final long Version2_1 = 0x0000000000020001L;
+    @Generated @NUInt public static final long Version2_2 = 0x0000000000020002L;
 }

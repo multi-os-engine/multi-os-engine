@@ -18,6 +18,7 @@ package apple.avfoundation;
 
 import apple.NSObject;
 import apple.coregraphics.struct.CGAffineTransform;
+import apple.coremedia.opaque.CMFormatDescriptionRef;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeRange;
 import apple.foundation.NSArray;
@@ -238,4 +239,26 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     @Selector("validateTrackSegments:error:")
     public native boolean validateTrackSegmentsError(NSArray<? extends AVCompositionTrackSegment> trackSegments,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("addTrackAssociationToTrack:type:")
+    public native void addTrackAssociationToTrackType(AVCompositionTrack compositionTrack, String trackAssociationType);
+
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    @Generated
+    @Selector("removeTrackAssociationToTrack:type:")
+    public native void removeTrackAssociationToTrackType(AVCompositionTrack compositionTrack,
+            String trackAssociationType);
+
+    @Generated
+    @Selector("replaceFormatDescription:withFormatDescription:")
+    public native void replaceFormatDescriptionWithFormatDescription(CMFormatDescriptionRef originalFormatDescription,
+            CMFormatDescriptionRef replacementFormatDescription);
+
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
 }

@@ -166,7 +166,7 @@ public class CKNotificationID extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class CKNotificationID extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKNotificationID initWithCoder(NSCoder aDecoder);
+    public native CKNotificationID initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

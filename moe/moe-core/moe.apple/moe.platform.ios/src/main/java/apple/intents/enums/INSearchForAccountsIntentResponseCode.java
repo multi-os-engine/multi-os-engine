@@ -17,4 +17,6 @@ public final class INSearchForAccountsIntentResponseCode {
     @Generated @NInt public static final long FailureRequiringAppLaunch = 0x0000000000000005L;
     @Generated @NInt public static final long FailureCredentialsUnverified = 0x0000000000000006L;
     @Generated @NInt public static final long FailureAccountNotFound = 0x0000000000000007L;
+    @Generated @NInt public static final long FailureTermsAndConditionsAcceptanceRequired = 0x0000000000000008L;
+    @Generated @NInt public static final long FailureNotEligible = 0x0000000000000009L;
 }

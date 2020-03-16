@@ -17,9 +17,9 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSFastEnumeration;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,6 +39,7 @@ import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSCoding, NSFastEnumeration {
+public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSSecureCoding, NSFastEnumeration {
     static {
         NatJ.register();
     }
@@ -197,7 +198,7 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -205,7 +206,7 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSHashTable<?> initWithCoder(NSCoder aDecoder);
+    public native NSHashTable<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithOptions:capacity:")
@@ -264,4 +265,14 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSC
     @Generated
     @Selector("unionHashTable:")
     public native void unionHashTable(NSHashTable<_ObjectType> other);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native <_ObjectType> boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

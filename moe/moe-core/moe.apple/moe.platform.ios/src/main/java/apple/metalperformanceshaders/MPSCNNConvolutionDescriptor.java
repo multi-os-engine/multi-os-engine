@@ -311,4 +311,12 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("fusedNeuronDescriptor")
+    public native MPSNNNeuronDescriptor fusedNeuronDescriptor();
+
+    @Generated
+    @Selector("setFusedNeuronDescriptor:")
+    public native void setFusedNeuronDescriptor(MPSNNNeuronDescriptor value);
 }

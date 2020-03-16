@@ -19,6 +19,7 @@ package apple.corelocation;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
@@ -172,7 +173,7 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +181,7 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLBeacon initWithCoder(NSCoder aDecoder);
+    public native CLBeacon initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("major")
@@ -209,4 +210,12 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("UUID")
+    public native NSUUID UUID();
+
+    @Generated
+    @Selector("timestamp")
+    public native NSDate timestamp();
 }

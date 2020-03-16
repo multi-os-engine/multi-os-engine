@@ -397,4 +397,24 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
         @Generated
         void call_setDefaultLeaderboardIdentifierCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("isMultiplayerGamingRestricted")
+    public native boolean isMultiplayerGamingRestricted();
+
+    @Generated
+    @Selector("loadChallengableFriendsWithCompletionHandler:")
+    public native void loadChallengableFriendsWithCompletionHandler(
+            @ObjCBlock(name = "call_loadChallengableFriendsWithCompletionHandler") Block_loadChallengableFriendsWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadChallengableFriendsWithCompletionHandler {
+        @Generated
+        void call_loadChallengableFriendsWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("local")
+    public static native GKLocalPlayer local();
 }

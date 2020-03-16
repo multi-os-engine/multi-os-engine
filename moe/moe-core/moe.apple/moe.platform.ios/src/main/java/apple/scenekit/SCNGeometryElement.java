@@ -182,7 +182,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -190,7 +190,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNGeometryElement initWithCoder(NSCoder aDecoder);
+    public native SCNGeometryElement initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("primitiveCount")

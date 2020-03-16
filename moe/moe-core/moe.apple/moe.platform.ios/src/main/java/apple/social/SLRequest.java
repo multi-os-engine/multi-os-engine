@@ -168,10 +168,6 @@ public class SLRequest extends NSObject {
     public native NSURL URL();
 
     @Generated
-    @Selector("account")
-    public native ACAccount account();
-
-    @Generated
     @Selector("addMultipartData:withName:type:filename:")
     public native void addMultipartDataWithNameTypeFilename(NSData data, String name, String type, String filename);
 
@@ -197,14 +193,18 @@ public class SLRequest extends NSObject {
     @NInt
     public native long requestMethod();
 
-    @Generated
-    @Selector("setAccount:")
-    public native void setAccount(ACAccount value);
-
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_performRequestWithHandler {
         @Generated
         void call_performRequestWithHandler(NSData arg0, NSHTTPURLResponse arg1, NSError arg2);
     }
+
+    @Generated
+    @Selector("account")
+    public native ACAccount account();
+
+    @Generated
+    @Selector("setAccount:")
+    public native void setAccount(ACAccount value);
 }

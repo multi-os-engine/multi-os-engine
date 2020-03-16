@@ -239,7 +239,7 @@ public class CNMutableContact extends CNContact {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNMutableContact initWithCoder(NSCoder aDecoder);
+    public native CNMutableContact initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instantMessageAddresses")
@@ -474,4 +474,12 @@ public class CNMutableContact extends CNContact {
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
+
+    @Generated
+    @Selector("predicateForContactsMatchingEmailAddress:")
+    public static native NSPredicate predicateForContactsMatchingEmailAddress(String emailAddress);
+
+    @Generated
+    @Selector("predicateForContactsMatchingPhoneNumber:")
+    public static native NSPredicate predicateForContactsMatchingPhoneNumber(CNPhoneNumber phoneNumber);
 }

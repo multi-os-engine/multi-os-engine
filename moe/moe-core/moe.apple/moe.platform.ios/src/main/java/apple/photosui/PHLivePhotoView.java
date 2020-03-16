@@ -412,7 +412,7 @@ public class PHLivePhotoView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PHLivePhotoView initWithCoder(NSCoder aDecoder);
+    public native PHLivePhotoView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -461,4 +461,10 @@ public class PHLivePhotoView extends UIView {
     @Generated
     @Selector("stopPlayback")
     public native void stopPlayback();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

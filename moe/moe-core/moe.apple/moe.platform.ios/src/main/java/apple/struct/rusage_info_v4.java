@@ -299,10 +299,18 @@ public final class rusage_info_v4 extends StructObject {
     public native void setRi_serviced_energy(long value);
 
     @Generated
-    @StructureField(order = 34, isGetter = true, count = 2)
-    public native long ri_unused(int field_idx);
+    @StructureField(order = 34, isGetter = true)
+    public native long ri_interval_max_phys_footprint();
 
     @Generated
-    @StructureField(order = 34, isGetter = false, count = 2)
-    public native void setRi_unused(long value, int field_idx);
+    @StructureField(order = 34, isGetter = false)
+    public native void setRi_interval_max_phys_footprint(long value);
+
+    @Generated
+    @StructureField(order = 35, isGetter = true)
+    public native long ri_runnable_time();
+
+    @Generated
+    @StructureField(order = 35, isGetter = false)
+    public native void setRi_runnable_time(long value);
 }

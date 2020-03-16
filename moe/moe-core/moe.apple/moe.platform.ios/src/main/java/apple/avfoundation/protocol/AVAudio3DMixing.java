@@ -80,4 +80,22 @@ public interface AVAudio3DMixing {
     @Generated
     @Selector("setReverbBlend:")
     void setReverbBlend(float value);
+
+    @Generated
+    @Selector("pointSourceInHeadMode")
+    @NInt
+    long pointSourceInHeadMode();
+
+    @Generated
+    @Selector("setPointSourceInHeadMode:")
+    void setPointSourceInHeadMode(@NInt long value);
+
+    @Generated
+    @Selector("setSourceMode:")
+    void setSourceMode(@NInt long value);
+
+    @Generated
+    @Selector("sourceMode")
+    @NInt
+    long sourceMode();
 }

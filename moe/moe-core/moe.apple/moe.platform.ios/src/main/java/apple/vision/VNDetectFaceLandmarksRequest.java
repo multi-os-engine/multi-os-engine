@@ -2,6 +2,7 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.vision.protocol.VNFaceObservationAccepting;
@@ -152,4 +153,31 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("constellation")
+    @NUInt
+    public native long constellation();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("revision:supportsConstellation:")
+    public static native boolean revisionSupportsConstellation(@NUInt long requestRevision, @NUInt long constellation);
+
+    @Generated
+    @Selector("setConstellation:")
+    public native void setConstellation(@NUInt long value);
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
 }

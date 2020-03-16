@@ -93,7 +93,7 @@ public class NSPersistentHistoryToken extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -106,7 +106,7 @@ public class NSPersistentHistoryToken extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPersistentHistoryToken initWithCoder(NSCoder aDecoder);
+    public native NSPersistentHistoryToken initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

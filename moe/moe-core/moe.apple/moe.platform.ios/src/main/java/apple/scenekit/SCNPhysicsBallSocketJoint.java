@@ -191,7 +191,7 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsBallSocketJoint initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsBallSocketJoint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setAnchorA:")

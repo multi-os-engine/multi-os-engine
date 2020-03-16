@@ -5,6 +5,7 @@ import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -96,7 +97,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNFaceObservation initWithCoder(NSCoder aDecoder);
+    public native VNFaceObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -163,4 +164,26 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("faceCaptureQuality")
+    public native NSNumber faceCaptureQuality();
+
+    @Generated
+    @Selector("faceObservationWithRequestRevision:boundingBox:roll:yaw:")
+    public static native VNFaceObservation faceObservationWithRequestRevisionBoundingBoxRollYaw(
+            @NUInt long requestRevision, @ByValue CGRect boundingBox, NSNumber roll, NSNumber yaw);
+
+    @Generated
+    @Selector("observationWithRequestRevision:boundingBox:")
+    public static native VNFaceObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
+            @ByValue CGRect boundingBox);
+
+    @Generated
+    @Selector("roll")
+    public native NSNumber roll();
+
+    @Generated
+    @Selector("yaw")
+    public native NSNumber yaw();
 }

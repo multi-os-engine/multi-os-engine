@@ -353,4 +353,28 @@ public class AVAssetExportSession extends NSObject {
         @Generated
         void call_exportAsynchronouslyWithCompletionHandler();
     }
+
+    @Generated
+    @Selector("estimateMaximumDurationWithCompletionHandler:")
+    public native void estimateMaximumDurationWithCompletionHandler(
+            @ObjCBlock(name = "call_estimateMaximumDurationWithCompletionHandler") Block_estimateMaximumDurationWithCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_estimateMaximumDurationWithCompletionHandler {
+        @Generated
+        void call_estimateMaximumDurationWithCompletionHandler(@ByValue CMTime arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("estimateOutputFileLengthWithCompletionHandler:")
+    public native void estimateOutputFileLengthWithCompletionHandler(
+            @ObjCBlock(name = "call_estimateOutputFileLengthWithCompletionHandler") Block_estimateOutputFileLengthWithCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_estimateOutputFileLengthWithCompletionHandler {
+        @Generated
+        void call_estimateOutputFileLengthWithCompletionHandler(long arg0, NSError arg1);
+    }
 }

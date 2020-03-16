@@ -28,11 +28,16 @@ import apple.metal.MTLComputePipelineDescriptor;
 import apple.metal.MTLComputePipelineReflection;
 import apple.metal.MTLDepthStencilDescriptor;
 import apple.metal.MTLHeapDescriptor;
+import apple.metal.MTLIndirectCommandBufferDescriptor;
+import apple.metal.MTLRasterizationRateMapDescriptor;
 import apple.metal.MTLRenderPipelineDescriptor;
 import apple.metal.MTLRenderPipelineReflection;
 import apple.metal.MTLSamplerDescriptor;
+import apple.metal.MTLSharedEventHandle;
+import apple.metal.MTLSharedTextureHandle;
 import apple.metal.MTLTextureDescriptor;
 import apple.metal.MTLTileRenderPipelineDescriptor;
+import apple.metal.struct.MTLRegion;
 import apple.metal.struct.MTLSamplePosition;
 import apple.metal.struct.MTLSize;
 import apple.metal.struct.MTLSizeAndAlign;
@@ -41,6 +46,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
@@ -49,6 +55,7 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
@@ -367,4 +374,102 @@ public interface MTLDevice {
     @Generated
     @Selector("registryID")
     long registryID();
+
+    @Generated
+    @IsOptional
+    @Selector("convertSparsePixelRegions:toTileRegions:withTileSize:alignmentMode:numRegions:")
+    default void convertSparsePixelRegionsToTileRegionsWithTileSizeAlignmentModeNumRegions(
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion pixelRegions,
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion tileRegions,
+            @ByValue MTLSize tileSize, @NUInt long mode, @NUInt long numRegions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("convertSparseTileRegions:toPixelRegions:withTileSize:numRegions:")
+    default void convertSparseTileRegionsToPixelRegionsWithTileSizeNumRegions(
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion tileRegions,
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion pixelRegions,
+            @ByValue MTLSize tileSize, @NUInt long numRegions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @Selector("hasUnifiedMemory")
+    boolean hasUnifiedMemory();
+
+    @Generated
+    @Selector("maxArgumentBufferSamplerCount")
+    @NUInt
+    long maxArgumentBufferSamplerCount();
+
+    @Generated
+    @Selector("maxBufferLength")
+    @NUInt
+    long maxBufferLength();
+
+    @Generated
+    @Selector("minimumTextureBufferAlignmentForPixelFormat:")
+    @NUInt
+    long minimumTextureBufferAlignmentForPixelFormat(@NUInt long format);
+
+    @Generated
+    @Selector("newEvent")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newEvent();
+
+    @Generated
+    @Selector("newIndirectCommandBufferWithDescriptor:maxCommandCount:options:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newIndirectCommandBufferWithDescriptorMaxCommandCountOptions(MTLIndirectCommandBufferDescriptor descriptor,
+            @NUInt long maxCount, @NUInt long options);
+
+    @Generated
+    @Selector("newRasterizationRateMapWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newRasterizationRateMapWithDescriptor(MTLRasterizationRateMapDescriptor descriptor);
+
+    @Generated
+    @Selector("newSharedEvent")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newSharedEvent();
+
+    @Generated
+    @Selector("newSharedEventWithHandle:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newSharedEventWithHandle(MTLSharedEventHandle sharedEventHandle);
+
+    @Generated
+    @Selector("newSharedTextureWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newSharedTextureWithDescriptor(MTLTextureDescriptor descriptor);
+
+    @Generated
+    @Selector("newSharedTextureWithHandle:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newSharedTextureWithHandle(MTLSharedTextureHandle sharedHandle);
+
+    @Generated
+    @Selector("sparseTileSizeInBytes")
+    @NUInt
+    long sparseTileSizeInBytes();
+
+    @Generated
+    @Selector("sparseTileSizeWithTextureType:pixelFormat:sampleCount:")
+    @ByValue
+    MTLSize sparseTileSizeWithTextureTypePixelFormatSampleCount(@NUInt long textureType, @NUInt long pixelFormat,
+            @NUInt long sampleCount);
+
+    @Generated
+    @Selector("supportsFamily:")
+    boolean supportsFamily(@NInt long gpuFamily);
+
+    @Generated
+    @Selector("supportsRasterizationRateMapWithLayerCount:")
+    boolean supportsRasterizationRateMapWithLayerCount(@NUInt long layerCount);
+
+    @Generated
+    @Selector("supportsVertexAmplificationCount:")
+    boolean supportsVertexAmplificationCount(@NUInt long count);
 }

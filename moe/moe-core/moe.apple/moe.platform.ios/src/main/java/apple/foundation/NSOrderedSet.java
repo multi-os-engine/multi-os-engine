@@ -251,7 +251,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
@@ -346,7 +346,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSOrderedSet<?> initWithCoder(NSCoder aDecoder);
+    public native NSOrderedSet<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithObject:")
@@ -409,6 +409,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType lastObject();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -579,4 +580,32 @@ public class NSOrderedSet<_ObjectType> extends NSObject
         long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
                 @Mapped(ObjCObjectMapper.class) Object arg1);
     }
+
+    @Generated
+    @Selector("differenceFromOrderedSet:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSet(NSOrderedSet<_ObjectType> other);
+
+    @Generated
+    @Selector("differenceFromOrderedSet:withOptions:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSetWithOptions(
+            NSOrderedSet<_ObjectType> other, @NUInt long options);
+
+    @Generated
+    @Selector("differenceFromOrderedSet:withOptions:usingEquivalenceTest:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromOrderedSetWithOptionsUsingEquivalenceTest(
+            NSOrderedSet<_ObjectType> other, @NUInt long options,
+            @ObjCBlock(name = "call_differenceFromOrderedSetWithOptionsUsingEquivalenceTest") Block_differenceFromOrderedSetWithOptionsUsingEquivalenceTest block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_differenceFromOrderedSetWithOptionsUsingEquivalenceTest {
+        @Generated
+        boolean call_differenceFromOrderedSetWithOptionsUsingEquivalenceTest(
+                @Mapped(ObjCObjectMapper.class) Object arg0, @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
+
+    @Generated
+    @Selector("orderedSetByApplyingDifference:")
+    public native NSOrderedSet<_ObjectType> orderedSetByApplyingDifference(
+            NSOrderedCollectionDifference<_ObjectType> difference);
 }

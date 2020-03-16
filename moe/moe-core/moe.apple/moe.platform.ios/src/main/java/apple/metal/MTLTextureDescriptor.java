@@ -21,9 +21,11 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.metal.struct.MTLTextureSwizzleChannels;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -278,4 +280,35 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @Selector("width")
     @NUInt
     public native long width();
+
+    @Generated
+    @Selector("allowGPUOptimizedContents")
+    public native boolean allowGPUOptimizedContents();
+
+    @Generated
+    @Selector("hazardTrackingMode")
+    @NUInt
+    public native long hazardTrackingMode();
+
+    @Generated
+    @Selector("setAllowGPUOptimizedContents:")
+    public native void setAllowGPUOptimizedContents(boolean value);
+
+    @Generated
+    @Selector("setHazardTrackingMode:")
+    public native void setHazardTrackingMode(@NUInt long value);
+
+    @Generated
+    @Selector("setSwizzle:")
+    public native void setSwizzle(@ByValue MTLTextureSwizzleChannels value);
+
+    @Generated
+    @Selector("swizzle")
+    @ByValue
+    public native MTLTextureSwizzleChannels swizzle();
+
+    @Generated
+    @Selector("textureBufferDescriptorWithPixelFormat:width:resourceOptions:usage:")
+    public static native MTLTextureDescriptor textureBufferDescriptorWithPixelFormatWidthResourceOptionsUsage(
+            @NUInt long pixelFormat, @NUInt long width, @NUInt long resourceOptions, @NUInt long usage);
 }

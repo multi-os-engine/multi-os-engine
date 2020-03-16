@@ -162,7 +162,7 @@ public class INPauseWorkoutIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPauseWorkoutIntent initWithCoder(NSCoder aDecoder);
+    public native INPauseWorkoutIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithWorkoutName:")

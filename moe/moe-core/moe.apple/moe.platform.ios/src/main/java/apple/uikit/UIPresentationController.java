@@ -329,4 +329,14 @@ public class UIPresentationController extends NSObject
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
     public native void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
             @Mapped(ObjCObjectMapper.class) Object coordinator);
+
+    @Generated
+    @Selector("focusItemContainer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object focusItemContainer();
+
+    @Generated
+    @Selector("parentFocusEnvironment")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object parentFocusEnvironment();
 }

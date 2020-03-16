@@ -211,7 +211,7 @@ public class SCNGeometry extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("firstMaterial")
@@ -264,7 +264,7 @@ public class SCNGeometry extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNGeometry initWithCoder(NSCoder aDecoder);
+    public native SCNGeometry initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("insertMaterial:atIndex:")

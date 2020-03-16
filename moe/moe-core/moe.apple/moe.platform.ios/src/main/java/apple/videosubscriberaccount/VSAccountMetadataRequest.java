@@ -241,4 +241,12 @@ public class VSAccountMetadataRequest extends NSObject {
     @Generated
     @Selector("setFeaturedAccountProviderIdentifiers:")
     public native void setFeaturedAccountProviderIdentifiers(NSArray<String> value);
+
+    @Generated
+    @Selector("accountProviderAuthenticationToken")
+    public native String accountProviderAuthenticationToken();
+
+    @Generated
+    @Selector("setAccountProviderAuthenticationToken:")
+    public native void setAccountProviderAuthenticationToken(String value);
 }

@@ -21,8 +21,6 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCopying;
-import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -47,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding {
+public class UIKeyCommand extends UICommand {
     static {
         NatJ.register();
     }
@@ -169,18 +167,8 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     public static native long version_static();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
     @Selector("discoverabilityTitle")
     public native String discoverabilityTitle();
-
-    @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
 
     @Generated
     @Selector("init")
@@ -188,7 +176,7 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIKeyCommand initWithCoder(NSCoder aDecoder);
+    public native UIKeyCommand initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("input")
@@ -208,4 +196,74 @@ public class UIKeyCommand extends NSObject implements NSCopying, NSSecureCoding 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("action")
+    public native SEL action();
+
+    @Generated
+    @Selector("alternates")
+    public native NSArray<? extends UICommandAlternate> alternates();
+
+    @Generated
+    @Selector("attributes")
+    @NUInt
+    public native long attributes();
+
+    @Generated
+    @Selector("commandWithTitle:image:action:input:modifierFlags:propertyList:")
+    public static native UIKeyCommand commandWithTitleImageActionInputModifierFlagsPropertyList(String title,
+            UIImage image, SEL action, String input, @NInt long modifierFlags,
+            @Mapped(ObjCObjectMapper.class) Object propertyList);
+
+    @Generated
+    @Selector("commandWithTitle:image:action:input:modifierFlags:propertyList:alternates:")
+    public static native UIKeyCommand commandWithTitleImageActionInputModifierFlagsPropertyListAlternates(String title,
+            UIImage image, SEL action, String input, @NInt long modifierFlags,
+            @Mapped(ObjCObjectMapper.class) Object propertyList, NSArray<? extends UICommandAlternate> alternates);
+
+    @Generated
+    @Selector("commandWithTitle:image:action:propertyList:")
+    public static native UIKeyCommand commandWithTitleImageActionPropertyList(String title, UIImage image, SEL action,
+            @Mapped(ObjCObjectMapper.class) Object propertyList);
+
+    @Generated
+    @Selector("commandWithTitle:image:action:propertyList:alternates:")
+    public static native UIKeyCommand commandWithTitleImageActionPropertyListAlternates(String title, UIImage image,
+            SEL action, @Mapped(ObjCObjectMapper.class) Object propertyList,
+            NSArray<? extends UICommandAlternate> alternates);
+
+    @Generated
+    @Selector("image")
+    public native UIImage image();
+
+    @Generated
+    @Selector("propertyList")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object propertyList();
+
+    @Generated
+    @Selector("setAttributes:")
+    public native void setAttributes(@NUInt long value);
+
+    @Generated
+    @Selector("setImage:")
+    public native void setImage(UIImage value);
+
+    @Generated
+    @Selector("setState:")
+    public native void setState(@NInt long value);
+
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    @Generated
+    @Selector("state")
+    @NInt
+    public native long state();
+
+    @Generated
+    @Selector("title")
+    public native String title();
 }

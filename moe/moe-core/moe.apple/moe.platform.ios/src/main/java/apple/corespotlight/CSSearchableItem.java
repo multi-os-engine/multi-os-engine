@@ -175,7 +175,7 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("expirationDate")
@@ -187,7 +187,7 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native CSSearchableItem initWithCoder(NSCoder aDecoder);
+    public native CSSearchableItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithUniqueIdentifier:domainIdentifier:attributeSet:")

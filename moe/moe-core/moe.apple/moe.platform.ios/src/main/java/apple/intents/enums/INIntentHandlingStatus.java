@@ -31,4 +31,6 @@ public final class INIntentHandlingStatus {
     @Generated
     private INIntentHandlingStatus() {
     }
+
+    @Generated @NInt public static final long UserConfirmationRequired = 0x0000000000000006L;
 }

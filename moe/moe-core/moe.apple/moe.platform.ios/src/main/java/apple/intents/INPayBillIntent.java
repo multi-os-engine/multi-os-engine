@@ -118,7 +118,7 @@ public class INPayBillIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPayBillIntent initWithCoder(NSCoder aDecoder);
+    public native INPayBillIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

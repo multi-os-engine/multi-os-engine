@@ -23,6 +23,7 @@ import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -199,7 +200,7 @@ public class AVPlayerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVPlayerViewController initWithCoder(NSCoder aDecoder);
+    public native AVPlayerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -293,4 +294,12 @@ public class AVPlayerViewController extends UIViewController {
     @Generated
     @Selector("setExitsFullScreenWhenPlaybackEnds:")
     public native void setExitsFullScreenWhenPlaybackEnds(boolean value);
+
+    @Generated
+    @Selector("pixelBufferAttributes")
+    public native NSDictionary<String, ?> pixelBufferAttributes();
+
+    @Generated
+    @Selector("setPixelBufferAttributes:")
+    public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
 }

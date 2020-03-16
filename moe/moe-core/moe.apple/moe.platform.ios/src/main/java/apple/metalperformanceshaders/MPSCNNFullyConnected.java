@@ -166,7 +166,7 @@ public class MPSCNNFullyConnected extends MPSCNNConvolution {
     @Generated
     @Selector("initWithDevice:convolutionDescriptor:kernelWeights:biasTerms:flags:")
     public native MPSCNNFullyConnected initWithDeviceConvolutionDescriptorKernelWeightsBiasTermsFlags(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSCNNConvolutionDescriptor fullyConnectedDescriptor,
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSCNNConvolutionDescriptor convolutionDescriptor,
             ConstFloatPtr kernelWeights, ConstFloatPtr biasTerms, @NUInt long flags);
 
     @Generated

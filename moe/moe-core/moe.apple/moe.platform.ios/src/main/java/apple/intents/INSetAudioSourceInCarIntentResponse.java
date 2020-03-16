@@ -173,7 +173,7 @@ public class INSetAudioSourceInCarIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetAudioSourceInCarIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSetAudioSourceInCarIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

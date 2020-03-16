@@ -40,4 +40,25 @@ public final class RPRecordingErrorCode {
     @Generated @NInt public static final long ActivePhoneCall = 0xFFFFFFFFFFFFE94DL;
     @Generated @NInt public static final long FailedToSave = 0xFFFFFFFFFFFFE94CL;
     @Generated @NInt public static final long CarPlay = 0xFFFFFFFFFFFFE94BL;
+    @Generated @NInt public static final long FailedApplicationConnectionInvalid = 0xFFFFFFFFFFFFE94AL;
+    @Generated @NInt public static final long FailedApplicationConnectionInterrupted = 0xFFFFFFFFFFFFE949L;
+    @Generated @NInt public static final long FailedNoMatchingApplicationContext = 0xFFFFFFFFFFFFE948L;
+    @Generated @NInt public static final long FailedMediaServicesFailure = 0xFFFFFFFFFFFFE947L;
+    @Generated @NInt public static final long VideoMixingFailure = 0xFFFFFFFFFFFFE946L;
+    @Generated @NInt public static final long BroadcastSetupFailed = 0xFFFFFFFFFFFFE945L;
+    @Generated @NInt public static final long FailedToObtainURL = 0xFFFFFFFFFFFFE944L;
+    @Generated @NInt public static final long FailedIncorrectTimeStamps = 0xFFFFFFFFFFFFE943L;
+    @Generated @NInt public static final long FailedToProcessFirstSample = 0xFFFFFFFFFFFFE942L;
+    @Generated @NInt public static final long FailedAssetWriterFailedToSave = 0xFFFFFFFFFFFFE941L;
+    @Generated @NInt public static final long FailedNoAssetWriter = 0xFFFFFFFFFFFFE940L;
+    @Generated @NInt public static final long FailedAssetWriterInWrongState = 0xFFFFFFFFFFFFE93FL;
+    @Generated @NInt public static final long FailedAssetWriterExportFailed = 0xFFFFFFFFFFFFE93EL;
+    @Generated @NInt public static final long FailedToRemoveFile = 0xFFFFFFFFFFFFE93DL;
+    @Generated @NInt public static final long FailedAssetWriterExportCanceled = 0xFFFFFFFFFFFFE93CL;
+    @Generated @NInt public static final long AttemptToStopNonRecording = 0xFFFFFFFFFFFFE93BL;
+    @Generated @NInt public static final long AttemptToStartInRecordingState = 0xFFFFFFFFFFFFE93AL;
+    @Generated @NInt public static final long PhotoFailure = 0xFFFFFFFFFFFFE939L;
+    @Generated @NInt public static final long RecordingInvalidSession = 0xFFFFFFFFFFFFE938L;
+    @Generated @NInt public static final long FailedToStartCaptureStack = 0xFFFFFFFFFFFFE937L;
+    @Generated @NInt public static final long CodeSuccessful = 0x0000000000000000L;
 }

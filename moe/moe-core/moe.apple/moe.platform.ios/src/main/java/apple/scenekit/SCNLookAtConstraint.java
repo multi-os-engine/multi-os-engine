@@ -172,7 +172,7 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNLookAtConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNLookAtConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setGimbalLockEnabled:")

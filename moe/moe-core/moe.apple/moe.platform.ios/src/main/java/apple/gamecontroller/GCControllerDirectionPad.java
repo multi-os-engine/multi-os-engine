@@ -202,4 +202,8 @@ public class GCControllerDirectionPad extends GCControllerElement {
         @Generated
         void call_valueChangedHandler_ret(GCControllerDirectionPad arg0, float arg1, float arg2);
     }
+
+    @Generated
+    @Selector("setValueForXAxis:yAxis:")
+    public native void setValueForXAxisYAxis(float xAxis, float yAxis);
 }

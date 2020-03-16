@@ -27,4 +27,8 @@ public final class MPSImageEdgeMode {
     @Generated
     private MPSImageEdgeMode() {
     }
+
+    @Generated @NUInt public static final long Mirror = 0x0000000000000002L;
+    @Generated @NUInt public static final long MirrorWithEdge = 0x0000000000000003L;
+    @Generated @NUInt public static final long Constant = 0x0000000000000004L;
 }

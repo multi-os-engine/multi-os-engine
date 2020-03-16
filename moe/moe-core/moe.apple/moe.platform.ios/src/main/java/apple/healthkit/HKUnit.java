@@ -407,7 +407,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -415,7 +415,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKUnit initWithCoder(NSCoder aDecoder);
+    public native HKUnit initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isNull")
@@ -461,4 +461,24 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("smallCalorieUnit")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object smallCalorieUnit();
+
+    @Generated
+    @Selector("decibelAWeightedSoundPressureLevelUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object decibelAWeightedSoundPressureLevelUnit();
+
+    @Generated
+    @Selector("decibelHearingLevelUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object decibelHearingLevelUnit();
+
+    @Generated
+    @Selector("hertzUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object hertzUnit();
+
+    @Generated
+    @Selector("hertzUnitWithMetricPrefix:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object hertzUnitWithMetricPrefix(@NInt long prefix);
 }

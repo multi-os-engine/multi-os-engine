@@ -17,6 +17,7 @@ limitations under the License.
 package apple.quartzcore;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -33,6 +34,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -195,7 +197,7 @@ public class CAMetalLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAMetalLayer initWithCoder(NSCoder aDecoder);
+    public native CAMetalLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -252,4 +254,31 @@ public class CAMetalLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("colorspace")
+    public native CGColorSpaceRef colorspace();
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
+
+    @Generated
+    @Selector("maximumDrawableCount")
+    @NUInt
+    public native long maximumDrawableCount();
+
+    @Generated
+    @Selector("preferredDevice")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLDevice preferredDevice();
+
+    @Generated
+    @Selector("setColorspace:")
+    public native void setColorspace(CGColorSpaceRef value);
+
+    @Generated
+    @Selector("setMaximumDrawableCount:")
+    public native void setMaximumDrawableCount(@NUInt long value);
 }

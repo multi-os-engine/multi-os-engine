@@ -173,4 +173,15 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

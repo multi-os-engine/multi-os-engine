@@ -191,7 +191,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fireDate")
@@ -207,7 +207,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native UILocalNotification initWithCoder(NSCoder aDecoder);
+    public native UILocalNotification initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("region")

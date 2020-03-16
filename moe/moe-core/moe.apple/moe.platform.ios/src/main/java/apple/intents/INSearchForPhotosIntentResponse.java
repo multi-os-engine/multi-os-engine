@@ -174,7 +174,7 @@ public class INSearchForPhotosIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForPhotosIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSearchForPhotosIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("searchResultsCount")

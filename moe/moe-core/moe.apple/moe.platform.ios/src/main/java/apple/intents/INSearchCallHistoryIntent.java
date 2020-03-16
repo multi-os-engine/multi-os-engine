@@ -182,7 +182,7 @@ public class INSearchCallHistoryIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchCallHistoryIntent initWithCoder(NSCoder aDecoder);
+    public native INSearchCallHistoryIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("recipient")

@@ -21,7 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.webkit.protocol.WKScriptMessageHandler;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -39,6 +39,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKUserContentController extends NSObject implements NSCoding {
+public class WKUserContentController extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -164,7 +165,7 @@ public class WKUserContentController extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,7 +173,7 @@ public class WKUserContentController extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native WKUserContentController initWithCoder(NSCoder aDecoder);
+    public native WKUserContentController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("removeAllUserScripts")
@@ -197,4 +198,14 @@ public class WKUserContentController extends NSObject implements NSCoding {
     @Generated
     @Selector("removeContentRuleList:")
     public native void removeContentRuleList(WKContentRuleList contentRuleList);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

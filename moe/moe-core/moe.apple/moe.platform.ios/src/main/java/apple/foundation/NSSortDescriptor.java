@@ -196,7 +196,7 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")

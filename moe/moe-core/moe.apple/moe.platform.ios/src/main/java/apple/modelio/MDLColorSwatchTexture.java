@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -171,4 +172,9 @@ public class MDLColorSwatchTexture extends MDLTexture {
     @Generated
     @Selector("init")
     public native MDLColorSwatchTexture init();
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLColorSwatchTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

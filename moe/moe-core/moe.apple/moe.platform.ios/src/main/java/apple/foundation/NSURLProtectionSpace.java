@@ -171,7 +171,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("host")
@@ -183,7 +183,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLProtectionSpace initWithCoder(NSCoder aDecoder);
+    public native NSURLProtectionSpace initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithHost:port:protocol:realm:authenticationMethod:")

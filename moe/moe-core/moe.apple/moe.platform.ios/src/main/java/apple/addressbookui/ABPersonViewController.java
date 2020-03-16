@@ -173,7 +173,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Generated
     @Selector("viewControllerWithRestorationIdentifierPath:coder:")
     public static native UIViewController viewControllerWithRestorationIdentifierPathCoder(
-            NSArray<?> identifierComponents, NSCoder coder);
+            NSArray<String> identifierComponents, NSCoder coder);
 
     @Generated
     @Selector("addressBook")
@@ -201,7 +201,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABPersonViewController initWithCoder(NSCoder aDecoder);
+    public native ABPersonViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -263,7 +263,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     @Generated
     @ProtocolClassMethod("viewControllerWithRestorationIdentifierPathCoder")
-    public UIViewController _viewControllerWithRestorationIdentifierPathCoder(NSArray<?> identifierComponents,
+    public UIViewController _viewControllerWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents,
             NSCoder coder) {
         return viewControllerWithRestorationIdentifierPathCoder(identifierComponents, coder);
     }

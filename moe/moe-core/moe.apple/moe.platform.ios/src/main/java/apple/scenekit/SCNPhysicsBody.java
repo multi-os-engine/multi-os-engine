@@ -250,7 +250,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("friction")
@@ -263,7 +263,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsBody initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsBody initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAffectedByGravity")
@@ -405,4 +405,44 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Selector("velocityFactor")
     @ByValue
     public native SCNVector3 velocityFactor();
+
+    @Generated
+    @Selector("angularRestingThreshold")
+    @NFloat
+    public native double angularRestingThreshold();
+
+    @Generated
+    @Selector("centerOfMassOffset")
+    @ByValue
+    public native SCNVector3 centerOfMassOffset();
+
+    @Generated
+    @Selector("continuousCollisionDetectionThreshold")
+    @NFloat
+    public native double continuousCollisionDetectionThreshold();
+
+    @Generated
+    @Selector("linearRestingThreshold")
+    @NFloat
+    public native double linearRestingThreshold();
+
+    @Generated
+    @Selector("setAngularRestingThreshold:")
+    public native void setAngularRestingThreshold(@NFloat double value);
+
+    @Generated
+    @Selector("setCenterOfMassOffset:")
+    public native void setCenterOfMassOffset(@ByValue SCNVector3 value);
+
+    @Generated
+    @Selector("setContinuousCollisionDetectionThreshold:")
+    public native void setContinuousCollisionDetectionThreshold(@NFloat double value);
+
+    @Generated
+    @Selector("setLinearRestingThreshold:")
+    public native void setLinearRestingThreshold(@NFloat double value);
+
+    @Generated
+    @Selector("setResting:")
+    public native void setResting(boolean resting);
 }

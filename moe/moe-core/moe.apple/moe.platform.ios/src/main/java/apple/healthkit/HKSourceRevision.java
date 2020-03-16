@@ -163,7 +163,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -171,7 +171,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSourceRevision initWithCoder(NSCoder aDecoder);
+    public native HKSourceRevision initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSource:version:")

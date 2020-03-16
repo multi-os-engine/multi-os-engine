@@ -159,7 +159,7 @@ public class MPMediaPredicate extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -167,7 +167,7 @@ public class MPMediaPredicate extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPredicate initWithCoder(NSCoder aDecoder);
+    public native MPMediaPredicate initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

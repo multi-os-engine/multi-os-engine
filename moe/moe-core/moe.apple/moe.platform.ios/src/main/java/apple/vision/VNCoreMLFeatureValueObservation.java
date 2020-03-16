@@ -99,7 +99,7 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNCoreMLFeatureValueObservation initWithCoder(NSCoder aDecoder);
+    public native VNCoreMLFeatureValueObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -158,4 +158,8 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("featureName")
+    public native String featureName();
 }

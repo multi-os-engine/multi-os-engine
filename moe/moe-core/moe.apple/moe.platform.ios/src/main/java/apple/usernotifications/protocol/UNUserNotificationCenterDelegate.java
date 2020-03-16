@@ -65,4 +65,12 @@ public interface UNUserNotificationCenterDelegate {
         @Generated
         void call_userNotificationCenterWillPresentNotificationWithCompletionHandler(@NUInt long arg0);
     }
+
+    @Generated
+    @IsOptional
+    @Selector("userNotificationCenter:openSettingsForNotification:")
+    default void userNotificationCenterOpenSettingsForNotification(UNUserNotificationCenter center,
+            UNNotification notification) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

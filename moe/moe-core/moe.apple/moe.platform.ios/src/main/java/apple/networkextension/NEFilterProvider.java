@@ -183,4 +183,8 @@ public class NEFilterProvider extends NEProvider {
         @Generated
         void call_stopFilterWithReasonCompletionHandler();
     }
+
+    @Generated
+    @Selector("handleReport:")
+    public native void handleReport(NEFilterReport report);
 }

@@ -233,4 +233,9 @@ public class NSURLCache extends NSObject {
         @Generated
         void call_getCachedResponseForDataTaskCompletionHandler(NSCachedURLResponse arg0);
     }
+
+    @Generated
+    @Selector("initWithMemoryCapacity:diskCapacity:directoryURL:")
+    public native NSURLCache initWithMemoryCapacityDiskCapacityDirectoryURL(@NUInt long memoryCapacity,
+            @NUInt long diskCapacity, NSURL directoryURL);
 }

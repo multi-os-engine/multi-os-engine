@@ -189,4 +189,15 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
     @Selector("successWithResolvedWorkoutGoalUnitType:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedWorkoutGoalUnitType(@NInt long resolvedWorkoutGoalUnitType);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

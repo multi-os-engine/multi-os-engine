@@ -243,7 +243,7 @@ public class MKScaleView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKScaleView initWithCoder(NSCoder aDecoder);
+    public native MKScaleView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -430,4 +430,10 @@ public class MKScaleView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

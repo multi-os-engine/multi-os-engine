@@ -182,7 +182,7 @@ public class CNContactPickerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactPickerViewController initWithCoder(NSCoder aDecoder);
+    public native CNContactPickerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

@@ -195,7 +195,7 @@ public class SLComposeViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SLComposeViewController initWithCoder(NSCoder aDecoder);
+    public native SLComposeViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

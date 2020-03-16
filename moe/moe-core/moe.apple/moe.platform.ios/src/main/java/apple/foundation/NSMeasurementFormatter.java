@@ -155,7 +155,7 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -163,7 +163,7 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMeasurementFormatter initWithCoder(NSCoder aDecoder);
+    public native NSMeasurementFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("locale")

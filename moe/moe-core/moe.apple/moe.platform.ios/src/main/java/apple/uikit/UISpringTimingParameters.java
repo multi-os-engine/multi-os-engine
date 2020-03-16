@@ -167,7 +167,7 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISpringTimingParameters initWithCoder(NSCoder aDecoder);
+    public native UISpringTimingParameters initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDampingRatio:")

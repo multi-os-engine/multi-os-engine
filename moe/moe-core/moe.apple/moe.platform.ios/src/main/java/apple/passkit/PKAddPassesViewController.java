@@ -181,7 +181,7 @@ public class PKAddPassesViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKAddPassesViewController initWithCoder(NSCoder aDecoder);
+    public native PKAddPassesViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

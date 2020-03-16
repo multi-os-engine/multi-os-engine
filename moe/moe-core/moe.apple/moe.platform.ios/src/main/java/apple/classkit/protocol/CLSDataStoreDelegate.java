@@ -1,0 +1,21 @@
+package apple.classkit.protocol;
+
+import apple.classkit.CLSContext;
+import apple.foundation.NSArray;
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.ObjCProtocolName;
+import org.moe.natj.objc.ann.Selector;
+
+@Generated
+@Library("ClassKit")
+@Runtime(ObjCRuntime.class)
+@ObjCProtocolName("CLSDataStoreDelegate")
+public interface CLSDataStoreDelegate {
+    @Generated
+    @Selector("createContextForIdentifier:parentContext:parentIdentifierPath:")
+    CLSContext createContextForIdentifierParentContextParentIdentifierPath(String identifier, CLSContext parentContext,
+            NSArray<String> parentIdentifierPath);
+}

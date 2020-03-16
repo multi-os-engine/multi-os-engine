@@ -158,4 +158,14 @@ public class CBManager extends NSObject {
     @Selector("state")
     @NInt
     public native long state();
+
+    @Generated
+    @Selector("authorization")
+    @NInt
+    public native long authorization();
+
+    @Generated
+    @Selector("authorization")
+    @NInt
+    public static native long authorization_static();
 }

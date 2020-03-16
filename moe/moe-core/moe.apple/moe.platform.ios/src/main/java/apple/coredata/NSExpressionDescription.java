@@ -167,7 +167,7 @@ public class NSExpressionDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSExpressionDescription initWithCoder(NSCoder aDecoder);
+    public native NSExpressionDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setExpression:")

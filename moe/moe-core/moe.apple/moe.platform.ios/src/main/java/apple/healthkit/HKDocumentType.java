@@ -190,7 +190,7 @@ public class HKDocumentType extends HKSampleType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKDocumentType initWithCoder(NSCoder aDecoder);
+    public native HKDocumentType initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -201,4 +201,12 @@ public class HKDocumentType extends HKSampleType {
     @Generated
     @Selector("seriesTypeForIdentifier:")
     public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("audiogramSampleType")
+    public static native HKAudiogramSampleType audiogramSampleType();
+
+    @Generated
+    @Selector("clinicalTypeForIdentifier:")
+    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
 }

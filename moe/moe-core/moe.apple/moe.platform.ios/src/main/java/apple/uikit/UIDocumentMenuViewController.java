@@ -183,7 +183,7 @@ public class UIDocumentMenuViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentMenuViewController initWithCoder(NSCoder aDecoder);
+    public native UIDocumentMenuViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDocumentTypes:inMode:")

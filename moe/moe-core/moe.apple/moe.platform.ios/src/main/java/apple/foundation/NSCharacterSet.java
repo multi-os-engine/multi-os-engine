@@ -273,7 +273,7 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hasMemberInPlane:")
@@ -285,7 +285,7 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSCharacterSet initWithCoder(NSCoder aDecoder);
+    public native NSCharacterSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("invertedSet")
@@ -299,6 +299,7 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("longCharacterIsMember:")
     public native boolean longCharacterIsMember(int theLongChar);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

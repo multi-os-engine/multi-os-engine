@@ -206,4 +206,20 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("maximumValue")
+    public native float maximumValue();
+
+    @Generated
+    @Selector("minimumValue")
+    public native float minimumValue();
+
+    @Generated
+    @Selector("setMaximumValue:")
+    public native void setMaximumValue(float value);
+
+    @Generated
+    @Selector("setMinimumValue:")
+    public native void setMinimumValue(float value);
 }

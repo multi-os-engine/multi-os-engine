@@ -207,7 +207,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fogColor")
@@ -235,7 +235,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNScene initWithCoder(NSCoder aDecoder);
+    public native SCNScene initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isPaused")
@@ -307,4 +307,39 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
         @Generated
         void call_writeToURLOptionsDelegateProgressHandler(float arg0, NSError arg1, BoolPtr arg2);
     }
+
+    @Generated
+    @Selector("screenSpaceReflectionMaximumDistance")
+    @NFloat
+    public native double screenSpaceReflectionMaximumDistance();
+
+    @Generated
+    @Selector("screenSpaceReflectionSampleCount")
+    @NInt
+    public native long screenSpaceReflectionSampleCount();
+
+    @Generated
+    @Selector("screenSpaceReflectionStride")
+    @NFloat
+    public native double screenSpaceReflectionStride();
+
+    @Generated
+    @Selector("setScreenSpaceReflectionMaximumDistance:")
+    public native void setScreenSpaceReflectionMaximumDistance(@NFloat double value);
+
+    @Generated
+    @Selector("setScreenSpaceReflectionSampleCount:")
+    public native void setScreenSpaceReflectionSampleCount(@NInt long value);
+
+    @Generated
+    @Selector("setScreenSpaceReflectionStride:")
+    public native void setScreenSpaceReflectionStride(@NFloat double value);
+
+    @Generated
+    @Selector("setWantsScreenSpaceReflection:")
+    public native void setWantsScreenSpaceReflection(boolean value);
+
+    @Generated
+    @Selector("wantsScreenSpaceReflection")
+    public native boolean wantsScreenSpaceReflection();
 }

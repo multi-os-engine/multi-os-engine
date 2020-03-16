@@ -436,7 +436,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("gapBetweenPages")
@@ -457,7 +457,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIWebView initWithCoder(NSCoder aDecoder);
+    public native UIWebView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -684,4 +684,10 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
     public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

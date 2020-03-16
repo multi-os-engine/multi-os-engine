@@ -213,7 +213,7 @@ public class NSMutableURLRequest extends NSURLRequest {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableURLRequest initWithCoder(NSCoder aDecoder);
+    public native NSMutableURLRequest initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithURL:")
@@ -294,4 +294,20 @@ public class NSMutableURLRequest extends NSURLRequest {
     @Generated
     @Selector("timeoutInterval")
     public native double timeoutInterval();
+
+    @Generated
+    @Selector("allowsConstrainedNetworkAccess")
+    public native boolean allowsConstrainedNetworkAccess();
+
+    @Generated
+    @Selector("allowsExpensiveNetworkAccess")
+    public native boolean allowsExpensiveNetworkAccess();
+
+    @Generated
+    @Selector("setAllowsConstrainedNetworkAccess:")
+    public native void setAllowsConstrainedNetworkAccess(boolean value);
+
+    @Generated
+    @Selector("setAllowsExpensiveNetworkAccess:")
+    public native void setAllowsExpensiveNetworkAccess(boolean value);
 }

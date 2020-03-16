@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -192,4 +193,8 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Selector("velocityInView:")
     @ByValue
     public native CGPoint velocityInView(UIView view);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIPanGestureRecognizer initWithCoder(NSCoder coder);
 }

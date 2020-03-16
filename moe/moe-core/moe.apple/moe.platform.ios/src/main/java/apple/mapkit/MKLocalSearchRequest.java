@@ -183,4 +183,30 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @Generated
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
+
+    @Generated
+    @Selector("initWithNaturalLanguageQuery:")
+    public native MKLocalSearchRequest initWithNaturalLanguageQuery(String naturalLanguageQuery);
+
+    @Generated
+    @Selector("initWithNaturalLanguageQuery:region:")
+    public native MKLocalSearchRequest initWithNaturalLanguageQueryRegion(String naturalLanguageQuery,
+            @ByValue MKCoordinateRegion region);
+
+    @Generated
+    @Selector("pointOfInterestFilter")
+    public native MKPointOfInterestFilter pointOfInterestFilter();
+
+    @Generated
+    @Selector("resultTypes")
+    @NUInt
+    public native long resultTypes();
+
+    @Generated
+    @Selector("setPointOfInterestFilter:")
+    public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
+
+    @Generated
+    @Selector("setResultTypes:")
+    public native void setResultTypes(@NUInt long value);
 }

@@ -102,41 +102,42 @@ public class PHAssetCollection extends PHCollection {
 
     @Generated
     @Selector("fetchAssetCollectionsContainingAsset:withType:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsContainingAssetWithTypeOptions(
+    public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsContainingAssetWithTypeOptions(
             PHAsset asset, @NInt long type, PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetCollectionsWithALAssetGroupURLs:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithALAssetGroupURLsOptions(
+    public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithALAssetGroupURLsOptions(
             NSArray<? extends NSURL> assetGroupURLs, PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetCollectionsWithLocalIdentifiers:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithLocalIdentifiersOptions(
+    public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithLocalIdentifiersOptions(
             NSArray<String> identifiers, PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetCollectionsWithType:subtype:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchAssetCollectionsWithTypeSubtypeOptions(@NInt long type,
-            @NInt long subtype, PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithTypeSubtypeOptions(
+            @NInt long type, @NInt long subtype, PHFetchOptions options);
 
     @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
-    public static native PHFetchResult<PHCollection> fetchCollectionsInCollectionListOptions(
+    public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
 
     @Generated
     @Selector("fetchMomentsInMomentList:options:")
-    public static native PHFetchResult<PHAssetCollection> fetchMomentsInMomentListOptions(PHCollectionList momentList,
-            PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAssetCollection> fetchMomentsInMomentListOptions(
+            PHCollectionList momentList, PHFetchOptions options);
 
     @Generated
     @Selector("fetchMomentsWithOptions:")
-    public static native PHFetchResult<PHAssetCollection> fetchMomentsWithOptions(PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAssetCollection> fetchMomentsWithOptions(PHFetchOptions options);
 
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
-    public static native PHFetchResult<PHCollection> fetchTopLevelUserCollectionsWithOptions(PHFetchOptions options);
+    public static native PHFetchResult<? extends PHCollection> fetchTopLevelUserCollectionsWithOptions(
+            PHFetchOptions options);
 
     @Generated
     @Selector("hash")
@@ -189,7 +190,7 @@ public class PHAssetCollection extends PHCollection {
     @Generated
     @Selector("transientAssetCollectionWithAssetFetchResult:title:")
     public static native PHAssetCollection transientAssetCollectionWithAssetFetchResultTitle(
-            PHFetchResult<PHAsset> fetchResult, String title);
+            PHFetchResult<? extends PHAsset> fetchResult, String title);
 
     @Generated
     @Selector("transientAssetCollectionWithAssets:title:")

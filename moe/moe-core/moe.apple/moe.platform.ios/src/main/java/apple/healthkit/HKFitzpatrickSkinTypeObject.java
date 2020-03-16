@@ -166,7 +166,7 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKFitzpatrickSkinTypeObject initWithCoder(NSCoder aDecoder);
+    public native HKFitzpatrickSkinTypeObject initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("skinType")

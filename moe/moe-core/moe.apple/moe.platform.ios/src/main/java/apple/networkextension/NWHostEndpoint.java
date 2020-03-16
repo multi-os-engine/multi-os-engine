@@ -170,7 +170,7 @@ public class NWHostEndpoint extends NWEndpoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NWHostEndpoint initWithCoder(NSCoder aDecoder);
+    public native NWHostEndpoint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("port")

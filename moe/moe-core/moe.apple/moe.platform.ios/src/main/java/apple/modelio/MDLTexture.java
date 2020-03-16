@@ -25,6 +25,7 @@ import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.modelio.protocol.MDLAssetResolver;
 import apple.modelio.protocol.MDLNamed;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -259,4 +260,9 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Generated
     @Selector("writeToURL:type:level:")
     public native boolean writeToURLTypeLevel(NSURL nsurl, CFStringRef type, @NUInt long level);
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

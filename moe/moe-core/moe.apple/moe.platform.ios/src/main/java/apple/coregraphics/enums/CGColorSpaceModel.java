@@ -32,4 +32,6 @@ public final class CGColorSpaceModel {
     @Generated
     private CGColorSpaceModel() {
     }
+
+    @Generated public static final int XYZ = 0x00000007;
 }

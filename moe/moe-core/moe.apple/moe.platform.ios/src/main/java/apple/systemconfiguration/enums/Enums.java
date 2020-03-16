@@ -38,8 +38,6 @@ public final class Enums {
     @Generated public static final int kSCStatusStale = 0x00000BBD;
     @Generated public static final int kSCStatusMaxLink = 0x00000BBE;
     @Generated public static final int kSCStatusReachabilityUnknown = 0x00000FA1;
-    @Generated public static final int kSCStatusConnectionNoService = 0x00001389;
-    @Generated public static final int kSCStatusConnectionIgnore = 0x0000138A;
     @Generated public static final int kSCBondStatusOK = 0x00000000;
     @Generated public static final int kSCBondStatusLinkInvalid = 0x00000001;
     @Generated public static final int kSCBondStatusNoPartner = 0x00000002;

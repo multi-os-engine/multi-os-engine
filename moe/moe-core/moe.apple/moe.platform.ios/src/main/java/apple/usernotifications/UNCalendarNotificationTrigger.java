@@ -173,7 +173,7 @@ public class UNCalendarNotificationTrigger extends UNNotificationTrigger {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNCalendarNotificationTrigger initWithCoder(NSCoder aDecoder);
+    public native UNCalendarNotificationTrigger initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("nextTriggerDate")

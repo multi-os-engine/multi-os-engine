@@ -22,14 +22,16 @@ import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableDictionary;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.gameplaykit.GKEntity;
 import apple.gameplaykit.GKPolygonObstacle;
 import apple.uikit.UIFocusAnimationCoordinator;
+import apple.uikit.UIFocusMovementHint;
 import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIResponder;
 import apple.uikit.UIView;
@@ -46,8 +48,10 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BoolPtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -55,6 +59,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -62,7 +67,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusItem {
+public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UIFocusItem {
     static {
         NatJ.register();
     }
@@ -256,7 +261,7 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusI
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("entity")
@@ -554,4 +559,34 @@ public class SKNode extends UIResponder implements NSCopying, NSCoding, UIFocusI
     @Generated
     @Selector("valueForAttributeNamed:")
     public native SKAttributeValue valueForAttributeNamed(String key);
+
+    @Generated
+    @IsOptional
+    @Selector("didHintFocusMovement:")
+    public native void didHintFocusMovement(UIFocusMovementHint hint);
+
+    @Generated
+    @Selector("focusItemContainer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object focusItemContainer();
+
+    @Generated
+    @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
+    public static native SKNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
+            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("parentFocusEnvironment")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object parentFocusEnvironment();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

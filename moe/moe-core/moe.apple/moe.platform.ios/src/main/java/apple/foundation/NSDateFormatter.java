@@ -235,7 +235,7 @@ public class NSDateFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateFormatter initWithCoder(NSCoder aDecoder);
+    public native NSDateFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isLenient")

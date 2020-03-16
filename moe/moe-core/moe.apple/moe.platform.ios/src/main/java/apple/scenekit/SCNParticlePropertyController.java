@@ -176,7 +176,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -184,7 +184,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNParticlePropertyController initWithCoder(NSCoder aDecoder);
+    public native SCNParticlePropertyController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("inputBias")

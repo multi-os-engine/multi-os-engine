@@ -370,4 +370,16 @@ public class NSURLSession extends NSObject {
         @Generated
         void call_uploadTaskWithRequestFromFileCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
     }
+
+    @Generated
+    @Selector("webSocketTaskWithRequest:")
+    public native NSURLSessionWebSocketTask webSocketTaskWithRequest(NSURLRequest request);
+
+    @Generated
+    @Selector("webSocketTaskWithURL:")
+    public native NSURLSessionWebSocketTask webSocketTaskWithURL(NSURL url);
+
+    @Generated
+    @Selector("webSocketTaskWithURL:protocols:")
+    public native NSURLSessionWebSocketTask webSocketTaskWithURLProtocols(NSURL url, NSArray<String> protocols);
 }

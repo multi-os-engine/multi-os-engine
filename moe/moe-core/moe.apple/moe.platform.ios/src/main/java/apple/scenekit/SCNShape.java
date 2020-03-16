@@ -201,7 +201,7 @@ public class SCNShape extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNShape initWithCoder(NSCoder aDecoder);
+    public native SCNShape initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("path")

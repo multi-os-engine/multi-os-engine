@@ -106,7 +106,7 @@ public class INGetCarLockStatusIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetCarLockStatusIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INGetCarLockStatusIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

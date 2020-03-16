@@ -201,7 +201,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -209,7 +209,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideCompletionStatus initWithCoder(NSCoder aDecoder);
+    public native INRideCompletionStatus initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isCanceled")

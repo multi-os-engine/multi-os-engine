@@ -415,7 +415,7 @@ public class UIPageControl extends UIControl {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPageControl initWithCoder(NSCoder aDecoder);
+    public native UIPageControl initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -462,4 +462,10 @@ public class UIPageControl extends UIControl {
     @Generated
     @Selector("updateCurrentPageDisplay")
     public native void updateCurrentPageDisplay();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

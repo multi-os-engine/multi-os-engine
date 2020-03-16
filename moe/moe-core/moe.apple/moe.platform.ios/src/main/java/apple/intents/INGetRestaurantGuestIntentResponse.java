@@ -181,7 +181,7 @@ public class INGetRestaurantGuestIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetRestaurantGuestIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INGetRestaurantGuestIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setGuest:")

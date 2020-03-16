@@ -499,7 +499,7 @@ public class UICollectionView extends UIScrollView
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionView initWithCoder(NSCoder aDecoder);
+    public native UICollectionView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -838,4 +838,10 @@ public class UICollectionView extends UIScrollView
     @Generated
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

@@ -190,7 +190,7 @@ public class HKActivitySummaryType extends HKObjectType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKActivitySummaryType initWithCoder(NSCoder aDecoder);
+    public native HKActivitySummaryType initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -201,4 +201,12 @@ public class HKActivitySummaryType extends HKObjectType {
     @Generated
     @Selector("seriesTypeForIdentifier:")
     public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("audiogramSampleType")
+    public static native HKAudiogramSampleType audiogramSampleType();
+
+    @Generated
+    @Selector("clinicalTypeForIdentifier:")
+    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
 }

@@ -37,7 +37,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -272,4 +274,78 @@ public class MPSCNNKernel extends MPSKernel {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("appendBatchBarrier")
+    public native boolean appendBatchBarrier();
+
+    @Generated
+    @Selector("destinationImageDescriptorForSourceImages:sourceStates:")
+    public native MPSImageDescriptor destinationImageDescriptorForSourceImagesSourceStates(
+            NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates);
+
+    @Generated
+    @Selector("dilationRateX")
+    @NUInt
+    public native long dilationRateX();
+
+    @Generated
+    @Selector("dilationRateY")
+    @NUInt
+    public native long dilationRateY();
+
+    @Generated
+    @Selector("encodeToCommandBuffer:sourceImage:destinationState:destinationImage:")
+    public native void encodeToCommandBufferSourceImageDestinationStateDestinationImage(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            MPSState destinationState, MPSImage destinationImage);
+
+    @Generated
+    @Selector("encodeToCommandBuffer:sourceImage:destinationState:destinationStateIsTemporary:")
+    public native MPSImage encodeToCommandBufferSourceImageDestinationStateDestinationStateIsTemporary(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outState, boolean isTemporary);
+
+    @Generated
+    @Selector("encodingStorageSizeForSourceImage:sourceStates:destinationImage:")
+    @NUInt
+    public native long encodingStorageSizeForSourceImageSourceStatesDestinationImage(MPSImage sourceImage,
+            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+
+    @Generated
+    @Selector("isResultStateReusedAcrossBatch")
+    public native boolean isResultStateReusedAcrossBatch();
+
+    @Generated
+    @Selector("isStateModified")
+    public native boolean isStateModified();
+
+    @Generated
+    @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
+    public native MPSState resultStateForSourceImageSourceStatesDestinationImage(MPSImage sourceImage,
+            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+
+    @Generated
+    @Selector("setSourceFeatureChannelMaxCount:")
+    public native void setSourceFeatureChannelMaxCount(@NUInt long value);
+
+    @Generated
+    @Selector("setSourceFeatureChannelOffset:")
+    public native void setSourceFeatureChannelOffset(@NUInt long value);
+
+    @Generated
+    @Selector("sourceFeatureChannelMaxCount")
+    @NUInt
+    public native long sourceFeatureChannelMaxCount();
+
+    @Generated
+    @Selector("sourceFeatureChannelOffset")
+    @NUInt
+    public native long sourceFeatureChannelOffset();
+
+    @Generated
+    @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
+    public native MPSState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 }

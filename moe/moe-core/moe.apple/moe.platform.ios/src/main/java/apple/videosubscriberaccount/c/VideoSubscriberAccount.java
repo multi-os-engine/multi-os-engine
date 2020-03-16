@@ -71,4 +71,14 @@ public final class VideoSubscriberAccount {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String VSAccountProviderAuthenticationSchemeSAML();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VSOpenTVProviderSettingsURLString();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VSAccountProviderAuthenticationSchemeAPI();
 }

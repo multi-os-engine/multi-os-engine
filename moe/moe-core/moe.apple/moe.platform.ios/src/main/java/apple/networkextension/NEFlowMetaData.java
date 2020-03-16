@@ -167,7 +167,7 @@ public class NEFlowMetaData extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class NEFlowMetaData extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFlowMetaData initWithCoder(NSCoder aDecoder);
+    public native NEFlowMetaData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("sourceAppSigningIdentifier")

@@ -23,6 +23,7 @@ import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.gameplaykit.GKPolygonObstacle;
@@ -39,12 +40,15 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -654,4 +658,19 @@ public class SKEmitterNode extends SKNode {
     @Selector("yAcceleration")
     @NFloat
     public native double yAcceleration();
+
+    @Generated
+    @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
+    public static native SKEmitterNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
+            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

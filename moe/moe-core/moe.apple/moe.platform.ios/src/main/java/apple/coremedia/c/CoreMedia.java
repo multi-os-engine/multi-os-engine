@@ -17,11 +17,11 @@ limitations under the License.
 package apple.coremedia.c;
 
 import apple.NSObject;
-import apple.audiotoolbox.struct.AudioFormatListItem;
-import apple.coreaudio.struct.AudioBufferList;
-import apple.coreaudio.struct.AudioChannelLayout;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
-import apple.coreaudio.struct.AudioStreamPacketDescription;
+import apple.coreaudiotypes.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioChannelLayout;
+import apple.coreaudiotypes.struct.AudioFormatListItem;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamPacketDescription;
 import apple.corefoundation.opaque.CFAllocatorRef;
 import apple.corefoundation.opaque.CFArrayRef;
 import apple.corefoundation.opaque.CFDataRef;
@@ -116,12 +116,12 @@ public final class CoreMedia {
     @Generated
     @CFunction
     @ByValue
-    public static native CMTime CMTimeAdd(@ByValue CMTime addend1, @ByValue CMTime addend2);
+    public static native CMTime CMTimeAdd(@ByValue CMTime lhs, @ByValue CMTime rhs);
 
     @Generated
     @CFunction
     @ByValue
-    public static native CMTime CMTimeSubtract(@ByValue CMTime minuend, @ByValue CMTime subtrahend);
+    public static native CMTime CMTimeSubtract(@ByValue CMTime lhs, @ByValue CMTime rhs);
 
     @Generated
     @CFunction
@@ -164,7 +164,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     @ByValue
-    public static native CMTime CMTimeMakeFromDictionary(CFDictionaryRef dict);
+    public static native CMTime CMTimeMakeFromDictionary(CFDictionaryRef dictionaryRepresentation);
 
     @Generated
     @CFunction
@@ -182,13 +182,13 @@ public final class CoreMedia {
     @Generated
     @CFunction
     @ByValue
-    public static native CMTimeRange CMTimeRangeGetUnion(@ByValue CMTimeRange range1, @ByValue CMTimeRange range2);
+    public static native CMTimeRange CMTimeRangeGetUnion(@ByValue CMTimeRange range, @ByValue CMTimeRange otherRange);
 
     @Generated
     @CFunction
     @ByValue
-    public static native CMTimeRange CMTimeRangeGetIntersection(@ByValue CMTimeRange range1,
-            @ByValue CMTimeRange range2);
+    public static native CMTimeRange CMTimeRangeGetIntersection(@ByValue CMTimeRange range,
+            @ByValue CMTimeRange otherRange);
 
     @Generated
     @CFunction
@@ -200,7 +200,7 @@ public final class CoreMedia {
 
     @Generated
     @CFunction
-    public static native byte CMTimeRangeContainsTimeRange(@ByValue CMTimeRange range1, @ByValue CMTimeRange range2);
+    public static native byte CMTimeRangeContainsTimeRange(@ByValue CMTimeRange range, @ByValue CMTimeRange otherRange);
 
     @Generated
     @CFunction
@@ -237,7 +237,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     @ByValue
-    public static native CMTimeRange CMTimeRangeMakeFromDictionary(CFDictionaryRef dict);
+    public static native CMTimeRange CMTimeRangeMakeFromDictionary(CFDictionaryRef dictionaryRepresentation);
 
     @Generated
     @CFunction
@@ -265,7 +265,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     @ByValue
-    public static native CMTimeMapping CMTimeMappingMakeFromDictionary(CFDictionaryRef dict);
+    public static native CMTimeMapping CMTimeMappingMakeFromDictionary(CFDictionaryRef dictionaryRepresentation);
 
     @Generated
     @CFunction
@@ -309,27 +309,27 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMBlockBufferCreateEmpty(CFAllocatorRef structureAllocator, int subBlockCapacity,
-            int flags, Ptr<CMBlockBufferRef> newBBufOut);
+            int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
     public static native int CMBlockBufferCreateWithMemoryBlock(CFAllocatorRef structureAllocator, VoidPtr memoryBlock,
             @NUInt long blockLength, CFAllocatorRef blockAllocator,
             @UncertainArgument("Options: reference, array Fallback: reference") CMBlockBufferCustomBlockSource customBlockSource,
-            @NUInt long offsetToData, @NUInt long dataLength, int flags, Ptr<CMBlockBufferRef> newBBufOut);
+            @NUInt long offsetToData, @NUInt long dataLength, int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
     public static native int CMBlockBufferCreateWithBufferReference(CFAllocatorRef structureAllocator,
-            CMBlockBufferRef targetBuffer, @NUInt long offsetToData, @NUInt long dataLength, int flags,
-            Ptr<CMBlockBufferRef> newBBufOut);
+            CMBlockBufferRef bufferReference, @NUInt long offsetToData, @NUInt long dataLength, int flags,
+            Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
     public static native int CMBlockBufferCreateContiguous(CFAllocatorRef structureAllocator,
             CMBlockBufferRef sourceBuffer, CFAllocatorRef blockAllocator,
             @UncertainArgument("Options: reference, array Fallback: reference") CMBlockBufferCustomBlockSource customBlockSource,
-            @NUInt long offsetToData, @NUInt long dataLength, int flags, Ptr<CMBlockBufferRef> newBBufOut);
+            @NUInt long offsetToData, @NUInt long dataLength, int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
@@ -355,7 +355,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMBlockBufferAccessDataBytes(CMBlockBufferRef theBuffer, @NUInt long offset,
-            @NUInt long length, VoidPtr temporaryBlock, Ptr<BytePtr> returnedPointer);
+            @NUInt long length, VoidPtr temporaryBlock, Ptr<BytePtr> returnedPointerOut);
 
     @Generated
     @CFunction
@@ -375,7 +375,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMBlockBufferGetDataPointer(CMBlockBufferRef theBuffer, @NUInt long offset,
-            NUIntPtr lengthAtOffset, NUIntPtr totalLength, Ptr<BytePtr> dataPointer);
+            NUIntPtr lengthAtOffsetOut, NUIntPtr totalLengthOut, Ptr<BytePtr> dataPointerOut);
 
     @Generated
     @CFunction
@@ -393,8 +393,8 @@ public final class CoreMedia {
 
     @Generated
     @CFunction
-    public static native int CMFormatDescriptionCreate(CFAllocatorRef allocator, int mediaType, int mediaSubtype,
-            CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> descOut);
+    public static native int CMFormatDescriptionCreate(CFAllocatorRef allocator, int mediaType, int mediaSubType,
+            CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
@@ -403,12 +403,13 @@ public final class CoreMedia {
 
     @Generated
     @CFunction
-    public static native byte CMFormatDescriptionEqual(CMFormatDescriptionRef desc1, CMFormatDescriptionRef desc2);
+    public static native byte CMFormatDescriptionEqual(CMFormatDescriptionRef formatDescription,
+            CMFormatDescriptionRef otherFormatDescription);
 
     @Generated
     @CFunction
-    public static native byte CMFormatDescriptionEqualIgnoringExtensionKeys(CMFormatDescriptionRef desc1,
-            CMFormatDescriptionRef desc2, ConstVoidPtr formatDescriptionExtensionKeysToIgnore,
+    public static native byte CMFormatDescriptionEqualIgnoringExtensionKeys(CMFormatDescriptionRef formatDescription,
+            CMFormatDescriptionRef otherFormatDescription, ConstVoidPtr formatDescriptionExtensionKeysToIgnore,
             ConstVoidPtr sampleDescriptionExtensionAtomKeysToIgnore);
 
     @Generated
@@ -435,7 +436,7 @@ public final class CoreMedia {
             @NUInt long layoutSize,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioChannelLayout layout,
             @NUInt long magicCookieSize, ConstVoidPtr magicCookie, CFDictionaryRef extensions,
-            Ptr<CMFormatDescriptionRef> outDesc);
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
@@ -446,19 +447,19 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native ConstVoidPtr CMAudioFormatDescriptionGetMagicCookie(CMFormatDescriptionRef desc,
-            NUIntPtr cookieSizeOut);
+            NUIntPtr sizeOut);
 
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native AudioChannelLayout CMAudioFormatDescriptionGetChannelLayout(CMFormatDescriptionRef desc,
-            NUIntPtr layoutSize);
+            NUIntPtr sizeOut);
 
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native AudioFormatListItem CMAudioFormatDescriptionGetFormatList(CMFormatDescriptionRef desc,
-            NUIntPtr formatListSize);
+            NUIntPtr sizeOut);
 
     @Generated
     @CFunction
@@ -475,22 +476,22 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMAudioFormatDescriptionCreateSummary(CFAllocatorRef allocator,
-            CFArrayRef formatDescriptionArray, int flags, Ptr<CMFormatDescriptionRef> summaryFormatDescriptionOut);
+            CFArrayRef formatDescriptionArray, int flags, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
-    public static native byte CMAudioFormatDescriptionEqual(CMFormatDescriptionRef desc1, CMFormatDescriptionRef desc2,
-            int equalityMask, IntPtr equalityMaskOut);
+    public static native byte CMAudioFormatDescriptionEqual(CMFormatDescriptionRef formatDescription,
+            CMFormatDescriptionRef otherFormatDescription, int equalityMask, IntPtr equalityMaskOut);
 
     @Generated
     @CFunction
     public static native int CMVideoFormatDescriptionCreate(CFAllocatorRef allocator, int codecType, int width,
-            int height, CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> outDesc);
+            int height, CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMVideoFormatDescriptionCreateForImageBuffer(CFAllocatorRef allocator,
-            CVBufferRef imageBuffer, Ptr<CMFormatDescriptionRef> outDesc);
+            CVBufferRef imageBuffer, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
@@ -535,34 +536,34 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMMuxedFormatDescriptionCreate(CFAllocatorRef allocator, int muxType,
-            CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> outDesc);
+            CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionGetDisplayFlags(CMFormatDescriptionRef desc,
-            IntPtr outDisplayFlags);
+            IntPtr displayFlagsOut);
 
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionGetJustification(CMFormatDescriptionRef desc,
-            BytePtr outHorizontalJust, BytePtr outVerticalJust);
+            BytePtr horizontaJustificationlOut, BytePtr verticalJustificationOut);
 
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionGetDefaultTextBox(CMFormatDescriptionRef desc,
             byte originIsAtTopLeft, @NFloat double heightOfTextTrack,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect outDefaultTextBox);
+            @UncertainArgument("Options: reference, array Fallback: reference") CGRect defaultTextBoxOut);
 
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionGetFontName(CMFormatDescriptionRef desc, char localFontID,
-            Ptr<CFStringRef> outFontName);
+            Ptr<CFStringRef> fontNameOut);
 
     @Generated
     @CFunction
     public static native int CMTimeCodeFormatDescriptionCreate(CFAllocatorRef allocator, int timeCodeFormatType,
-            @ByValue CMTime frameDuration, int frameQuanta, int tcFlags, CFDictionaryRef extensions,
-            Ptr<CMFormatDescriptionRef> descOut);
+            @ByValue CMTime frameDuration, int frameQuanta, int flags, CFDictionaryRef extensions,
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
@@ -582,24 +583,24 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMMetadataFormatDescriptionCreateWithKeys(CFAllocatorRef allocator, int metadataType,
-            CFArrayRef keys, Ptr<CMFormatDescriptionRef> outDesc);
+            CFArrayRef keys, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMMetadataFormatDescriptionCreateWithMetadataSpecifications(CFAllocatorRef allocator,
-            int metadataType, CFArrayRef metadataSpecifications, Ptr<CMFormatDescriptionRef> outDesc);
+            int metadataType, CFArrayRef metadataSpecifications, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMMetadataFormatDescriptionCreateWithMetadataFormatDescriptionAndMetadataSpecifications(
-            CFAllocatorRef allocator, CMFormatDescriptionRef srcDesc, CFArrayRef metadataSpecifications,
-            Ptr<CMFormatDescriptionRef> outDesc);
+            CFAllocatorRef allocator, CMFormatDescriptionRef sourceDescription, CFArrayRef metadataSpecifications,
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMMetadataFormatDescriptionCreateByMergingMetadataFormatDescriptions(
-            CFAllocatorRef allocator, CMFormatDescriptionRef srcDesc1, CMFormatDescriptionRef srcDesc2,
-            Ptr<CMFormatDescriptionRef> outDesc);
+            CFAllocatorRef allocator, CMFormatDescriptionRef sourceDescription,
+            CMFormatDescriptionRef otherSourceDescription, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
@@ -617,14 +618,14 @@ public final class CoreMedia {
             VoidPtr makeDataReadyRefcon, CMFormatDescriptionRef formatDescription, @NInt long numSamples,
             @NInt long numSampleTimingEntries,
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTimingArray,
-            @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sBufOut);
+            @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
     public static native int CMSampleBufferCreateReady(CFAllocatorRef allocator, CMBlockBufferRef dataBuffer,
             CMFormatDescriptionRef formatDescription, @NInt long numSamples, @NInt long numSampleTimingEntries,
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTimingArray,
-            @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sBufOut);
+            @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
@@ -632,17 +633,17 @@ public final class CoreMedia {
             CMBlockBufferRef dataBuffer, byte dataReady,
             @FunctionPtr(name = "call_CMAudioSampleBufferCreateWithPacketDescriptions") Function_CMAudioSampleBufferCreateWithPacketDescriptions makeDataReadyCallback,
             VoidPtr makeDataReadyRefcon, CMFormatDescriptionRef formatDescription, @NInt long numSamples,
-            @ByValue CMTime sbufPTS,
+            @ByValue CMTime presentationTimeStamp,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription packetDescriptions,
-            Ptr<CMSampleBufferRef> sBufOut);
+            Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
     public static native int CMAudioSampleBufferCreateReadyWithPacketDescriptions(CFAllocatorRef allocator,
             CMBlockBufferRef dataBuffer, CMFormatDescriptionRef formatDescription, @NInt long numSamples,
-            @ByValue CMTime sbufPTS,
+            @ByValue CMTime presentationTimeStamp,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription packetDescriptions,
-            Ptr<CMSampleBufferRef> sBufOut);
+            Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
@@ -651,31 +652,31 @@ public final class CoreMedia {
             @FunctionPtr(name = "call_CMSampleBufferCreateForImageBuffer") Function_CMSampleBufferCreateForImageBuffer makeDataReadyCallback,
             VoidPtr makeDataReadyRefcon, CMFormatDescriptionRef formatDescription,
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTiming,
-            Ptr<CMSampleBufferRef> sBufOut);
+            Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
     public static native int CMSampleBufferCreateReadyWithImageBuffer(CFAllocatorRef allocator, CVBufferRef imageBuffer,
             CMFormatDescriptionRef formatDescription,
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTiming,
-            Ptr<CMSampleBufferRef> sBufOut);
+            Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
     public static native int CMSampleBufferCreateCopy(CFAllocatorRef allocator, CMSampleBufferRef sbuf,
-            Ptr<CMSampleBufferRef> sbufCopyOut);
+            Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
     public static native int CMSampleBufferCreateCopyWithNewTiming(CFAllocatorRef allocator,
             CMSampleBufferRef originalSBuf, @NInt long numSampleTimingEntries,
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTimingArray,
-            Ptr<CMSampleBufferRef> sBufCopyOut);
+            Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
     public static native int CMSampleBufferCopySampleBufferForRange(CFAllocatorRef allocator, CMSampleBufferRef sbuf,
-            @ByValue CFRange sampleRange, Ptr<CMSampleBufferRef> sBufOut);
+            @ByValue CFRange sampleRange, Ptr<CMSampleBufferRef> sampleBufferOut);
 
     @Generated
     @CFunction
@@ -697,7 +698,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMSampleBufferSetDataBufferFromAudioBufferList(CMSampleBufferRef sbuf,
-            CFAllocatorRef bbufStructAllocator, CFAllocatorRef bbufMemoryAllocator, int flags,
+            CFAllocatorRef blockBufferStructureAllocator, CFAllocatorRef blockBufferBlockAllocator, int flags,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferList);
 
     @Generated
@@ -705,8 +706,8 @@ public final class CoreMedia {
     public static native int CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(CMSampleBufferRef sbuf,
             NUIntPtr bufferListSizeNeededOut,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferListOut,
-            @NUInt long bufferListSize, CFAllocatorRef bbufStructAllocator, CFAllocatorRef bbufMemoryAllocator,
-            int flags, Ptr<CMBlockBufferRef> blockBufferOut);
+            @NUInt long bufferListSize, CFAllocatorRef blockBufferStructureAllocator,
+            CFAllocatorRef blockBufferBlockAllocator, int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
@@ -718,7 +719,8 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMSampleBufferGetAudioStreamPacketDescriptionsPtr(CMSampleBufferRef sbuf,
-            Ptr<ConstPtr<AudioStreamPacketDescription>> packetDescriptionsPtrOut, NUIntPtr packetDescriptionsSizeOut);
+            Ptr<ConstPtr<AudioStreamPacketDescription>> packetDescriptionsPointerOut,
+            NUIntPtr packetDescriptionsSizeOut);
 
     @Generated
     @CFunction
@@ -748,7 +750,8 @@ public final class CoreMedia {
 
     @Generated
     @CFunction
-    public static native int CMSampleBufferTrackDataReadiness(CMSampleBufferRef sbuf, CMSampleBufferRef sbufToTrack);
+    public static native int CMSampleBufferTrackDataReadiness(CMSampleBufferRef sbuf,
+            CMSampleBufferRef sampleBufferToTrack);
 
     @Generated
     @CFunction
@@ -812,7 +815,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMSampleBufferGetSampleTimingInfoArray(CMSampleBufferRef sbuf,
-            @NInt long timingArrayEntries,
+            @NInt long numSampleTimingEntries,
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo timingArrayOut,
             NIntPtr timingArrayEntriesNeededOut);
 
@@ -889,8 +892,8 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMClockGetAnchorTime(CMClockRef clock,
-            @UncertainArgument("Options: reference, array Fallback: reference") CMTime outClockTime,
-            @UncertainArgument("Options: reference, array Fallback: reference") CMTime outReferenceClockTime);
+            @UncertainArgument("Options: reference, array Fallback: reference") CMTime clockTimeOut,
+            @UncertainArgument("Options: reference, array Fallback: reference") CMTime referenceClockTimeOut);
 
     @Generated
     @CFunction
@@ -977,7 +980,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMTimebaseGetTimeAndRate(CMTimebaseRef timebase,
-            @UncertainArgument("Options: reference, array Fallback: reference") CMTime outTime, DoublePtr outRate);
+            @UncertainArgument("Options: reference, array Fallback: reference") CMTime timeOut, DoublePtr rateOut);
 
     @Generated
     @CFunction
@@ -1062,20 +1065,19 @@ public final class CoreMedia {
     @CFunction
     public static native int CMVideoFormatDescriptionCreateFromBigEndianImageDescriptionData(CFAllocatorRef allocator,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String imageDescriptionData,
-            @NUInt long imageDescriptionSize, int imageDescriptionStringEncoding, CFStringRef imageDescriptionFlavor,
-            Ptr<CMFormatDescriptionRef> videoFormatDescriptionOut);
+            @NUInt long size, int stringEncoding, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMVideoFormatDescriptionCreateFromBigEndianImageDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMBlockBufferRef imageDescriptionBlockBuffer, int imageDescriptionStringEncoding,
-            CFStringRef imageDescriptionFlavor, Ptr<CMFormatDescriptionRef> videoFormatDescriptionOut);
+            CFAllocatorRef allocator, CMBlockBufferRef imageDescriptionBlockBuffer, int stringEncoding,
+            CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMVideoFormatDescriptionCopyAsBigEndianImageDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMFormatDescriptionRef videoFormatDescription, int imageDescriptionStringEncoding,
-            CFStringRef imageDescriptionFlavor, Ptr<CMBlockBufferRef> imageDescriptionBlockBufferOut);
+            CFAllocatorRef allocator, CMFormatDescriptionRef videoFormatDescription, int stringEncoding,
+            CFStringRef flavor, Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
@@ -1091,25 +1093,24 @@ public final class CoreMedia {
     @CFunction
     public static native int CMAudioFormatDescriptionCreateFromBigEndianSoundDescriptionData(CFAllocatorRef allocator,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String soundDescriptionData,
-            @NUInt long soundDescriptionSize, CFStringRef soundDescriptionFlavor,
-            Ptr<CMFormatDescriptionRef> audioFormatDescriptionOut);
+            @NUInt long size, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMAudioFormatDescriptionCreateFromBigEndianSoundDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMBlockBufferRef soundDescriptionBlockBuffer, CFStringRef soundDescriptionFlavor,
-            Ptr<CMFormatDescriptionRef> audioFormatDescriptionOut);
+            CFAllocatorRef allocator, CMBlockBufferRef soundDescriptionBlockBuffer, CFStringRef flavor,
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMAudioFormatDescriptionCopyAsBigEndianSoundDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMFormatDescriptionRef audioFormatDescription, CFStringRef soundDescriptionFlavor,
-            Ptr<CMBlockBufferRef> soundDescriptionBlockBufferOut);
+            CFAllocatorRef allocator, CMFormatDescriptionRef audioFormatDescription, CFStringRef flavor,
+            Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
     public static native byte CMDoesBigEndianSoundDescriptionRequireLegacyCBRSampleTableLayout(
-            CMBlockBufferRef soundDescriptionBlockBuffer, CFStringRef soundDescriptionFlavor);
+            CMBlockBufferRef soundDescriptionBlockBuffer, CFStringRef flavor);
 
     @Generated
     @CFunction
@@ -1125,20 +1126,18 @@ public final class CoreMedia {
     @CFunction
     public static native int CMTextFormatDescriptionCreateFromBigEndianTextDescriptionData(CFAllocatorRef allocator,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String textDescriptionData,
-            @NUInt long textDescriptionSize, CFStringRef textDescriptionFlavor, int mediaType,
-            Ptr<CMFormatDescriptionRef> textFormatDescriptionOut);
+            @NUInt long size, CFStringRef flavor, int mediaType, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionCreateFromBigEndianTextDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMBlockBufferRef textDescriptionBlockBuffer, CFStringRef textDescriptionFlavor,
-            int mediaType, Ptr<CMFormatDescriptionRef> textFormatDescriptionOut);
+            CFAllocatorRef allocator, CMBlockBufferRef textDescriptionBlockBuffer, CFStringRef flavor, int mediaType,
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMTextFormatDescriptionCopyAsBigEndianTextDescriptionBlockBuffer(CFAllocatorRef allocator,
-            CMFormatDescriptionRef textFormatDescription, CFStringRef textDescriptionFlavor,
-            Ptr<CMBlockBufferRef> textDescriptionBlockBufferOut);
+            CMFormatDescriptionRef textFormatDescription, CFStringRef flavor, Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
@@ -1155,20 +1154,19 @@ public final class CoreMedia {
     public static native int CMClosedCaptionFormatDescriptionCreateFromBigEndianClosedCaptionDescriptionData(
             CFAllocatorRef allocator,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String closedCaptionDescriptionData,
-            @NUInt long closedCaptionDescriptionSize, CFStringRef closedCaptionDescriptionFlavor,
-            Ptr<CMFormatDescriptionRef> closedCaptionFormatDescriptionOut);
+            @NUInt long size, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMClosedCaptionFormatDescriptionCreateFromBigEndianClosedCaptionDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMBlockBufferRef closedCaptionDescriptionBlockBuffer,
-            CFStringRef closedCaptionDescriptionFlavor, Ptr<CMFormatDescriptionRef> closedCaptionFormatDescriptionOut);
+            CFAllocatorRef allocator, CMBlockBufferRef closedCaptionDescriptionBlockBuffer, CFStringRef flavor,
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMClosedCaptionFormatDescriptionCopyAsBigEndianClosedCaptionDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMFormatDescriptionRef closedCaptionFormatDescription,
-            CFStringRef closedCaptionDescriptionFlavor, Ptr<CMBlockBufferRef> closedCaptionDescriptionBlockBufferOut);
+            CFAllocatorRef allocator, CMFormatDescriptionRef closedCaptionFormatDescription, CFStringRef flavor,
+            Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
@@ -1185,20 +1183,19 @@ public final class CoreMedia {
     public static native int CMTimeCodeFormatDescriptionCreateFromBigEndianTimeCodeDescriptionData(
             CFAllocatorRef allocator,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String timeCodeDescriptionData,
-            @NUInt long timeCodeDescriptionSize, CFStringRef timeCodeDescriptionFlavor,
-            Ptr<CMFormatDescriptionRef> timeCodeFormatDescriptionOut);
+            @NUInt long size, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMTimeCodeFormatDescriptionCreateFromBigEndianTimeCodeDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMBlockBufferRef timeCodeDescriptionBlockBuffer,
-            CFStringRef timeCodeDescriptionFlavor, Ptr<CMFormatDescriptionRef> timeCodeFormatDescriptionOut);
+            CFAllocatorRef allocator, CMBlockBufferRef timeCodeDescriptionBlockBuffer, CFStringRef flavor,
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMTimeCodeFormatDescriptionCopyAsBigEndianTimeCodeDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMFormatDescriptionRef timeCodeFormatDescription,
-            CFStringRef timeCodeDescriptionFlavor, Ptr<CMBlockBufferRef> timeCodeDescriptionBlockBufferOut);
+            CFAllocatorRef allocator, CMFormatDescriptionRef timeCodeFormatDescription, CFStringRef flavor,
+            Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
@@ -1215,20 +1212,19 @@ public final class CoreMedia {
     public static native int CMMetadataFormatDescriptionCreateFromBigEndianMetadataDescriptionData(
             CFAllocatorRef allocator,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String metadataDescriptionData,
-            @NUInt long metadataDescriptionSize, CFStringRef metadataDescriptionFlavor,
-            Ptr<CMFormatDescriptionRef> metadataFormatDescriptionOut);
+            @NUInt long size, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMMetadataFormatDescriptionCreateFromBigEndianMetadataDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMBlockBufferRef metadataDescriptionBlockBuffer,
-            CFStringRef metadataDescriptionFlavor, Ptr<CMFormatDescriptionRef> metadataFormatDescriptionOut);
+            CFAllocatorRef allocator, CMBlockBufferRef metadataDescriptionBlockBuffer, CFStringRef flavor,
+            Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     @Generated
     @CFunction
     public static native int CMMetadataFormatDescriptionCopyAsBigEndianMetadataDescriptionBlockBuffer(
-            CFAllocatorRef allocator, CMFormatDescriptionRef metadataFormatDescription,
-            CFStringRef metadataDescriptionFlavor, Ptr<CMBlockBufferRef> metadataDescriptionBlockBufferOut);
+            CFAllocatorRef allocator, CMFormatDescriptionRef metadataFormatDescription, CFStringRef flavor,
+            Ptr<CMBlockBufferRef> blockBufferOut);
 
     @Generated
     @CFunction
@@ -1351,16 +1347,14 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMBufferQueueInstallTrigger(CMBufferQueueRef queue,
-            @FunctionPtr(name = "call_CMBufferQueueInstallTrigger") Function_CMBufferQueueInstallTrigger triggerCallback,
-            VoidPtr triggerRefcon, int triggerCondition, @ByValue CMTime triggerTime,
-            Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
+            @FunctionPtr(name = "call_CMBufferQueueInstallTrigger") Function_CMBufferQueueInstallTrigger callback,
+            VoidPtr refcon, int condition, @ByValue CMTime time, Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
 
     @Generated
     @CFunction
     public static native int CMBufferQueueInstallTriggerWithIntegerThreshold(CMBufferQueueRef queue,
-            @FunctionPtr(name = "call_CMBufferQueueInstallTriggerWithIntegerThreshold") Function_CMBufferQueueInstallTriggerWithIntegerThreshold triggerCallback,
-            VoidPtr triggerRefcon, int triggerCondition, @NInt long triggerThreshold,
-            Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
+            @FunctionPtr(name = "call_CMBufferQueueInstallTriggerWithIntegerThreshold") Function_CMBufferQueueInstallTriggerWithIntegerThreshold callback,
+            VoidPtr refcon, int condition, @NInt long threshold, Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
 
     @Generated
     @CFunction
@@ -1379,8 +1373,8 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMBufferQueueSetValidationCallback(CMBufferQueueRef queue,
-            @FunctionPtr(name = "call_CMBufferQueueSetValidationCallback") Function_CMBufferQueueSetValidationCallback validationCallback,
-            VoidPtr validationRefCon);
+            @FunctionPtr(name = "call_CMBufferQueueSetValidationCallback") Function_CMBufferQueueSetValidationCallback callback,
+            VoidPtr refcon);
 
     @Generated
     @CFunction
@@ -2711,4 +2705,155 @@ public final class CoreMedia {
     @Generated
     @CVariable()
     public static native CFStringRef kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix();
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTime CMTimeFoldIntoRange(@ByValue CMTime time, @ByValue CMTimeRange foldRange);
+
+    @Generated
+    @CFunction
+    public static native int CMSampleBufferCreateWithMakeDataReadyHandler(CFAllocatorRef allocator,
+            CMBlockBufferRef dataBuffer, byte dataReady, CMFormatDescriptionRef formatDescription,
+            @NInt long numSamples, @NInt long numSampleTimingEntries,
+            @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTimingArray,
+            @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sampleBufferOut,
+            @ObjCBlock(name = "call_CMSampleBufferCreateWithMakeDataReadyHandler") Block_CMSampleBufferCreateWithMakeDataReadyHandler makeDataReadyHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CMSampleBufferCreateWithMakeDataReadyHandler {
+        @Generated
+        int call_CMSampleBufferCreateWithMakeDataReadyHandler(CMSampleBufferRef arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native int CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler(
+            CFAllocatorRef allocator, CMBlockBufferRef dataBuffer, byte dataReady,
+            CMFormatDescriptionRef formatDescription, @NInt long numSamples, @ByValue CMTime presentationTimeStamp,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription packetDescriptions,
+            Ptr<CMSampleBufferRef> sampleBufferOut,
+            @ObjCBlock(name = "call_CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler") Block_CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler makeDataReadyHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler {
+        @Generated
+        int call_CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler(CMSampleBufferRef arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native int CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler(CFAllocatorRef allocator,
+            CVBufferRef imageBuffer, byte dataReady, CMFormatDescriptionRef formatDescription,
+            @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo sampleTiming,
+            Ptr<CMSampleBufferRef> sampleBufferOut,
+            @ObjCBlock(name = "call_CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler") Block_CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler makeDataReadyHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler {
+        @Generated
+        int call_CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler(CMSampleBufferRef arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native int CMTimebaseSetMasterClock(CMTimebaseRef timebase, CMClockRef newMasterClock);
+
+    @Generated
+    @CFunction
+    public static native int CMTimebaseSetMasterTimebase(CMTimebaseRef timebase, CMTimebaseRef newMasterTimebase);
+
+    @Generated
+    @CFunction
+    public static native int CMBufferQueueCreateWithHandlers(CFAllocatorRef allocator, @NInt long capacity,
+            VoidPtr handlers, Ptr<CMBufferQueueRef> queueOut);
+
+    @Generated
+    @CFunction
+    public static native int CMBufferQueueInstallTriggerHandler(CMBufferQueueRef queue, int condition,
+            @ByValue CMTime time, Ptr<CMBufferQueueTriggerToken> triggerTokenOut,
+            @ObjCBlock(name = "call_CMBufferQueueInstallTriggerHandler") Block_CMBufferQueueInstallTriggerHandler handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CMBufferQueueInstallTriggerHandler {
+        @Generated
+        void call_CMBufferQueueInstallTriggerHandler(CMBufferQueueTriggerToken arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native int CMBufferQueueInstallTriggerHandlerWithIntegerThreshold(CMBufferQueueRef queue,
+            int condition, @NInt long threshold, Ptr<CMBufferQueueTriggerToken> triggerTokenOut,
+            @ObjCBlock(name = "call_CMBufferQueueInstallTriggerHandlerWithIntegerThreshold") Block_CMBufferQueueInstallTriggerHandlerWithIntegerThreshold handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CMBufferQueueInstallTriggerHandlerWithIntegerThreshold {
+        @Generated
+        void call_CMBufferQueueInstallTriggerHandlerWithIntegerThreshold(CMBufferQueueTriggerToken arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native int CMBufferQueueSetValidationHandler(CMBufferQueueRef queue,
+            @ObjCBlock(name = "call_CMBufferQueueSetValidationHandler") Block_CMBufferQueueSetValidationHandler handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CMBufferQueueSetValidationHandler {
+        @Generated
+        int call_CMBufferQueueSetValidationHandler(CMBufferQueueRef arg0, ConstVoidPtr arg1);
+    }
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_Linear();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionTransferFunction_sRGB();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_AlternativeTransferCharacteristics();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_AuxiliaryTypeInfo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_AlphaChannelMode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionAlphaChannelMode_StraightAlpha();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionAlphaChannelMode_PremultipliedAlpha();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_ContainsAlphaChannel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMSampleAttachmentKey_AudioIndependentSampleDecoderRefreshCount();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataLivePhotoStillImageTransform();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataIdentifier_QuickTimeMetadataLivePhotoStillImageTransformReferenceDimensions();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMMetadataBaseDataType_PerspectiveTransformF64();
 }

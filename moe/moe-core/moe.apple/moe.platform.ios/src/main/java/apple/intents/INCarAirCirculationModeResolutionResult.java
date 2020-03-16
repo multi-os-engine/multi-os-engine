@@ -189,4 +189,15 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
     @Selector("successWithResolvedCarAirCirculationMode:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedCarAirCirculationMode(@NInt long resolvedCarAirCirculationMode);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

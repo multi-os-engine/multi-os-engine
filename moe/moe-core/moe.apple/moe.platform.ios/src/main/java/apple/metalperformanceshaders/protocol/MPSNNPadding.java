@@ -8,12 +8,14 @@ import apple.metalperformanceshaders.MPSKernel;
 import apple.metalperformanceshaders.MPSState;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("MetalPerformanceShaders")
@@ -40,4 +42,12 @@ public interface MPSNNPadding extends NSSecureCoding {
     @Selector("paddingMethod")
     @NUInt
     long paddingMethod();
+
+    @Generated
+    @IsOptional
+    @Selector("inverse")
+    @MappedReturn(ObjCObjectMapper.class)
+    default Object inverse() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

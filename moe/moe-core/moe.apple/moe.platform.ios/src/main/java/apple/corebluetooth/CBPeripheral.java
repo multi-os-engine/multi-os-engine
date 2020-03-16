@@ -250,4 +250,8 @@ public class CBPeripheral extends CBPeer {
     @Generated
     @Selector("openL2CAPChannel:")
     public native void openL2CAPChannel(char PSM);
+
+    @Generated
+    @Selector("ancsAuthorized")
+    public native boolean ancsAuthorized();
 }

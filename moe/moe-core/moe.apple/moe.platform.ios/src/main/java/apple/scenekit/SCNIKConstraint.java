@@ -178,7 +178,7 @@ public class SCNIKConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNIKConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNIKConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("maxAllowedRotationAngleForJoint:")

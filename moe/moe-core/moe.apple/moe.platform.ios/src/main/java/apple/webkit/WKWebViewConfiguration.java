@@ -21,8 +21,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.webkit.protocol.WKURLSchemeHandler;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -40,6 +40,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -47,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKWebViewConfiguration extends NSObject implements NSCoding, NSCopying {
+public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -183,7 +184,7 @@ public class WKWebViewConfiguration extends NSObject implements NSCoding, NSCopy
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("ignoresViewportScaleLimits")
@@ -195,7 +196,7 @@ public class WKWebViewConfiguration extends NSObject implements NSCoding, NSCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native WKWebViewConfiguration initWithCoder(NSCoder aDecoder);
+    public native WKWebViewConfiguration initWithCoder(NSCoder coder);
 
     @Generated
     @Deprecated
@@ -316,4 +317,22 @@ public class WKWebViewConfiguration extends NSObject implements NSCoding, NSCopy
     @Selector("urlSchemeHandlerForURLScheme:")
     @MappedReturn(ObjCObjectMapper.class)
     public native WKURLSchemeHandler urlSchemeHandlerForURLScheme(String urlScheme);
+
+    @Generated
+    @Selector("defaultWebpagePreferences")
+    public native WKWebpagePreferences defaultWebpagePreferences();
+
+    @Generated
+    @Selector("setDefaultWebpagePreferences:")
+    public native void setDefaultWebpagePreferences(WKWebpagePreferences value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

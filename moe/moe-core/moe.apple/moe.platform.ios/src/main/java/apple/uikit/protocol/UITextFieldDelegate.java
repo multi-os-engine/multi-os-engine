@@ -89,4 +89,11 @@ public interface UITextFieldDelegate {
     default boolean textFieldShouldReturn(UITextField textField) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("textFieldDidChangeSelection:")
+    default void textFieldDidChangeSelection(UITextField textField) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

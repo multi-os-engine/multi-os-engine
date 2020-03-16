@@ -164,7 +164,7 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -172,7 +172,7 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDimension initWithCoder(NSCoder aDecoder);
+    public native NSDimension initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

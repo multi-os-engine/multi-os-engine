@@ -163,4 +163,12 @@ public class VSSubscription extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("billingIdentifier")
+    public native String billingIdentifier();
+
+    @Generated
+    @Selector("setBillingIdentifier:")
+    public native void setBillingIdentifier(String value);
 }

@@ -167,7 +167,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("entity")
@@ -218,7 +218,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchRequest<?> initWithCoder(NSCoder aDecoder);
+    public native NSFetchRequest<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithEntityName:")

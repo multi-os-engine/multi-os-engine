@@ -170,7 +170,7 @@ public class INSendMessageIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSendMessageIntent initWithCoder(NSCoder aDecoder);
+    public native INSendMessageIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRecipients:content:groupName:serviceName:sender:")

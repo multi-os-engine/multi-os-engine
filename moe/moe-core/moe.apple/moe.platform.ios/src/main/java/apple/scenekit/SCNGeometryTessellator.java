@@ -99,7 +99,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -112,7 +112,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNGeometryTessellator initWithCoder(NSCoder aDecoder);
+    public native SCNGeometryTessellator initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("insideTessellationFactor")

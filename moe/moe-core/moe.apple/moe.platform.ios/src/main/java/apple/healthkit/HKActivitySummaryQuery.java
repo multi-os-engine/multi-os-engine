@@ -302,4 +302,13 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
             HKQuantity totalFlightsClimbed);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
+            String resourceType, String identifier);
+
+    @Generated
+    @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
 }

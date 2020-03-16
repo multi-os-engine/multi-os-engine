@@ -379,4 +379,21 @@ public class HKHealthStore extends NSObject {
         @Generated
         void call_startWatchAppWithWorkoutConfigurationCompletion(boolean arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("getRequestStatusForAuthorizationToShareTypes:readTypes:completion:")
+    public native void getRequestStatusForAuthorizationToShareTypesReadTypesCompletion(
+            NSSet<? extends HKSampleType> typesToShare, NSSet<? extends HKObjectType> typesToRead,
+            @ObjCBlock(name = "call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion") Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion {
+        @Generated
+        void call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion(@NInt long arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("supportsHealthRecords")
+    public native boolean supportsHealthRecords();
 }

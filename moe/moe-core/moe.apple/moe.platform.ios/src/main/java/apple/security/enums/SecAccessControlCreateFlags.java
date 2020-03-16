@@ -33,4 +33,7 @@ public final class SecAccessControlCreateFlags {
     @Generated
     private SecAccessControlCreateFlags() {
     }
+
+    @Generated @NUInt public static final long BiometryAny = 0x0000000000000002L;
+    @Generated @NUInt public static final long BiometryCurrentSet = 0x0000000000000008L;
 }

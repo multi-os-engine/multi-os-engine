@@ -257,7 +257,7 @@ public class NSArray<_ObjectType> extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
@@ -373,7 +373,7 @@ public class NSArray<_ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSArray<?> initWithCoder(NSCoder aDecoder);
+    public native NSArray<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -411,6 +411,7 @@ public class NSArray<_ObjectType> extends NSObject
     public native void makeObjectsPerformSelectorWithObject(SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object argument);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -950,4 +951,31 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     @Selector("writeToURL:error:")
     public native boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("arrayByApplyingDifference:")
+    public native NSArray<_ObjectType> arrayByApplyingDifference(NSOrderedCollectionDifference<_ObjectType> difference);
+
+    @Generated
+    @Selector("differenceFromArray:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArray(NSArray<_ObjectType> other);
+
+    @Generated
+    @Selector("differenceFromArray:withOptions:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArrayWithOptions(NSArray<_ObjectType> other,
+            @NUInt long options);
+
+    @Generated
+    @Selector("differenceFromArray:withOptions:usingEquivalenceTest:")
+    public native NSOrderedCollectionDifference<_ObjectType> differenceFromArrayWithOptionsUsingEquivalenceTest(
+            NSArray<_ObjectType> other, @NUInt long options,
+            @ObjCBlock(name = "call_differenceFromArrayWithOptionsUsingEquivalenceTest") Block_differenceFromArrayWithOptionsUsingEquivalenceTest block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_differenceFromArrayWithOptionsUsingEquivalenceTest {
+        @Generated
+        boolean call_differenceFromArrayWithOptionsUsingEquivalenceTest(@Mapped(ObjCObjectMapper.class) Object arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1);
+    }
 }

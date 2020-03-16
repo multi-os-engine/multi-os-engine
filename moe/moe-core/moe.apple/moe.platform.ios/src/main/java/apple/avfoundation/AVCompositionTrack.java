@@ -163,4 +163,8 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Generated
     @Selector("segmentForTrackTime:")
     public native AVCompositionTrackSegment segmentForTrackTime(@ByValue CMTime trackTime);
+
+    @Generated
+    @Selector("formatDescriptionReplacements")
+    public native NSArray<? extends AVCompositionTrackFormatDescriptionReplacement> formatDescriptionReplacements();
 }

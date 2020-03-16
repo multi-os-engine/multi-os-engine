@@ -178,7 +178,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -190,7 +190,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIUserNotificationAction initWithCoder(NSCoder aDecoder);
+    public native UIUserNotificationAction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAuthenticationRequired")
@@ -200,6 +200,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("isDestructive")
     public native boolean isDestructive();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

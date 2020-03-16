@@ -175,7 +175,7 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -187,7 +187,7 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCurrencyAmount initWithCoder(NSCoder aDecoder);
+    public native INCurrencyAmount initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

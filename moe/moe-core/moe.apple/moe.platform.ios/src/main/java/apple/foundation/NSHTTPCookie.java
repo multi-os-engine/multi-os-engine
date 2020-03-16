@@ -216,4 +216,8 @@ public class NSHTTPCookie extends NSObject {
     @Selector("version")
     @NUInt
     public native long version();
+
+    @Generated
+    @Selector("sameSitePolicy")
+    public native String sameSitePolicy();
 }

@@ -104,36 +104,36 @@ public class PHAsset extends PHObject {
 
     @Generated
     @Selector("fetchAssetsInAssetCollection:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsInAssetCollectionOptions(PHAssetCollection assetCollection,
-            PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsInAssetCollectionOptions(
+            PHAssetCollection assetCollection, PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetsWithALAssetURLs:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithALAssetURLsOptions(NSArray<? extends NSURL> assetURLs,
-            PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithALAssetURLsOptions(
+            NSArray<? extends NSURL> assetURLs, PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetsWithBurstIdentifier:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithBurstIdentifierOptions(String burstIdentifier,
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithBurstIdentifierOptions(String burstIdentifier,
             PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetsWithLocalIdentifiers:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithLocalIdentifiersOptions(NSArray<String> identifiers,
-            PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithLocalIdentifiersOptions(
+            NSArray<String> identifiers, PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetsWithMediaType:options:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithMediaTypeOptions(@NInt long mediaType,
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithMediaTypeOptions(@NInt long mediaType,
             PHFetchOptions options);
 
     @Generated
     @Selector("fetchAssetsWithOptions:")
-    public static native PHFetchResult<PHAsset> fetchAssetsWithOptions(PHFetchOptions options);
+    public static native PHFetchResult<? extends PHAsset> fetchAssetsWithOptions(PHFetchOptions options);
 
     @Generated
     @Selector("fetchKeyAssetsInAssetCollection:options:")
-    public static native PHFetchResult<PHAsset> fetchKeyAssetsInAssetCollectionOptions(
+    public static native PHFetchResult<? extends PHAsset> fetchKeyAssetsInAssetCollectionOptions(
             PHAssetCollection assetCollection, PHFetchOptions options);
 
     @Generated

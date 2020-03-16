@@ -87,7 +87,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -109,7 +109,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native AUAudioUnitViewConfiguration initWithCoder(NSCoder aDecoder);
+    public native AUAudioUnitViewConfiguration initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithWidth:height:hostHasController:")

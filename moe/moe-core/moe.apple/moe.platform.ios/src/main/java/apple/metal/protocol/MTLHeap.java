@@ -20,6 +20,7 @@ import apple.metal.MTLTextureDescriptor;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
@@ -89,4 +90,29 @@ public interface MTLHeap {
     @Selector("currentAllocatedSize")
     @NUInt
     long currentAllocatedSize();
+
+    @Generated
+    @Selector("hazardTrackingMode")
+    @NUInt
+    long hazardTrackingMode();
+
+    @Generated
+    @Selector("newBufferWithLength:options:offset:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newBufferWithLengthOptionsOffset(@NUInt long length, @NUInt long options, @NUInt long offset);
+
+    @Generated
+    @Selector("newTextureWithDescriptor:offset:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newTextureWithDescriptorOffset(MTLTextureDescriptor descriptor, @NUInt long offset);
+
+    @Generated
+    @Selector("resourceOptions")
+    @NUInt
+    long resourceOptions();
+
+    @Generated
+    @Selector("type")
+    @NInt
+    long type();
 }

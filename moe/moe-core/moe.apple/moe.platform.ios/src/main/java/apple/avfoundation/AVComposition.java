@@ -167,6 +167,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Selector("init")
     public native AVComposition init();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

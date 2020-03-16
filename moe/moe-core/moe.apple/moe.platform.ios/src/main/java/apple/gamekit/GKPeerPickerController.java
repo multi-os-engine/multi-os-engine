@@ -156,6 +156,7 @@ public class GKPeerPickerController extends NSObject {
     @NUInt
     public native long connectionTypesMask();
 
+    @Deprecated
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -177,10 +178,12 @@ public class GKPeerPickerController extends NSObject {
     @Selector("setConnectionTypesMask:")
     public native void setConnectionTypesMask(@NUInt long value);
 
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value);
 
+    @Deprecated
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKPeerPickerControllerDelegate value) {
         Object __old = delegate();

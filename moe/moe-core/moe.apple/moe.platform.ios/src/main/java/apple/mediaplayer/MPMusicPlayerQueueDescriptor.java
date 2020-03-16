@@ -18,10 +18,8 @@ package apple.mediaplayer;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
-import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -38,7 +36,6 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
-import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPMusicPlayerQueueDescriptor extends NSObject implements NSSecureCoding {
+public class MPMusicPlayerQueueDescriptor extends NSObject {
     static {
         NatJ.register();
     }
@@ -149,29 +146,11 @@ public class MPMusicPlayerQueueDescriptor extends NSObject implements NSSecureCo
     public static native Class superclass_static();
 
     @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
-
-    @Generated
     @Selector("init")
     public native MPMusicPlayerQueueDescriptor init();
-
-    @Generated
-    @Selector("initWithCoder:")
-    public native MPMusicPlayerQueueDescriptor initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
 }

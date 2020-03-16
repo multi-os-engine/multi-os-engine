@@ -175,7 +175,7 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -187,7 +187,7 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationCategory initWithCoder(NSCoder aDecoder);
+    public native UNNotificationCategory initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("intentIdentifiers")
@@ -213,4 +213,14 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("hiddenPreviewsBodyPlaceholder")
     public native String hiddenPreviewsBodyPlaceholder();
+
+    @Generated
+    @Selector("categorySummaryFormat")
+    public native String categorySummaryFormat();
+
+    @Generated
+    @Selector("categoryWithIdentifier:actions:intentIdentifiers:hiddenPreviewsBodyPlaceholder:categorySummaryFormat:options:")
+    public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersHiddenPreviewsBodyPlaceholderCategorySummaryFormatOptions(
+            String identifier, NSArray<? extends UNNotificationAction> actions, NSArray<String> intentIdentifiers,
+            String hiddenPreviewsBodyPlaceholder, String categorySummaryFormat, @NUInt long options);
 }

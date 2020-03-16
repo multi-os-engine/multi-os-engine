@@ -184,7 +184,7 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKPlacemark initWithCoder(NSCoder aDecoder);
+    public native MKPlacemark initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCoordinate:")

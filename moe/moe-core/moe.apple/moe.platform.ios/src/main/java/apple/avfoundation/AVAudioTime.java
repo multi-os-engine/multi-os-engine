@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coreaudio.struct.AudioTimeStamp;
+import apple.coreaudiotypes.struct.AudioTimeStamp;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;

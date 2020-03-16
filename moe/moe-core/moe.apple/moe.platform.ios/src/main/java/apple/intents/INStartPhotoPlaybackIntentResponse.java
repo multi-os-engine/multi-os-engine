@@ -174,7 +174,7 @@ public class INStartPhotoPlaybackIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartPhotoPlaybackIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INStartPhotoPlaybackIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("searchResultsCount")

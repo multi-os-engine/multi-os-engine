@@ -192,7 +192,7 @@ public class EKEventEditViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKEventEditViewController initWithCoder(NSCoder aDecoder);
+    public native EKEventEditViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

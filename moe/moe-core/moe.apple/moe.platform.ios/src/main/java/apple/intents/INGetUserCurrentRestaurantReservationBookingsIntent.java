@@ -175,7 +175,7 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetUserCurrentRestaurantReservationBookingsIntent initWithCoder(NSCoder aDecoder);
+    public native INGetUserCurrentRestaurantReservationBookingsIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("maximumNumberOfResults")

@@ -176,6 +176,7 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @Selector("init")
     public native SKPayment init();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -197,4 +198,8 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
     public native boolean simulatesAskToBuyInSandbox();
+
+    @Generated
+    @Selector("paymentDiscount")
+    public native SKPaymentDiscount paymentDiscount();
 }

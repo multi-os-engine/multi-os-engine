@@ -165,7 +165,7 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateValuesForProperties:usingBlock:")
@@ -178,7 +178,7 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaEntity initWithCoder(NSCoder aDecoder);
+    public native MPMediaEntity initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("objectForKeyedSubscript:")

@@ -108,7 +108,7 @@ public class INCreateNoteIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCreateNoteIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INCreateNoteIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

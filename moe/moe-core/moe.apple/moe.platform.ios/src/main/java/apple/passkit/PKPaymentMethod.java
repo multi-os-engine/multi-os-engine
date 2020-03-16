@@ -17,6 +17,7 @@ limitations under the License.
 package apple.passkit;
 
 import apple.NSObject;
+import apple.contacts.CNContact;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -170,4 +171,8 @@ public class PKPaymentMethod extends NSObject {
     @Selector("type")
     @NUInt
     public native long type();
+
+    @Generated
+    @Selector("billingAddress")
+    public native CNContact billingAddress();
 }

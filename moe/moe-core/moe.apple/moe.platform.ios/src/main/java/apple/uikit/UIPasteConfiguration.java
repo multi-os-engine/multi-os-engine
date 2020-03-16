@@ -107,7 +107,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -124,7 +124,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPasteConfiguration initWithCoder(NSCoder aDecoder);
+    public native UIPasteConfiguration initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTypeIdentifiersForAcceptingClass:")

@@ -55,4 +55,6 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated public static final int kVTVideoDecoderRemovedErr = 0xFFFFBAE6;
 }

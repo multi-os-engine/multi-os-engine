@@ -228,7 +228,7 @@ public class UIImagePickerController extends UINavigationController implements N
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -236,7 +236,7 @@ public class UIImagePickerController extends UINavigationController implements N
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIImagePickerController initWithCoder(NSCoder aDecoder);
+    public native UIImagePickerController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

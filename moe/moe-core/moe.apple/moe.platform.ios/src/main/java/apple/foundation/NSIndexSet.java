@@ -202,7 +202,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateIndexesInRange:options:usingBlock:")
@@ -302,7 +302,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSIndexSet initWithCoder(NSCoder aDecoder);
+    public native NSIndexSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIndex:")
@@ -329,6 +329,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @NUInt
     public native long lastIndex();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

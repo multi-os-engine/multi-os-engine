@@ -19,8 +19,10 @@ package apple.metalperformanceshaders;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.metal.protocol.MTLDevice;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -177,4 +179,29 @@ public class MPSCNNNeuron extends MPSCNNKernel {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("a")
+    public native float a();
+
+    @Generated
+    @Selector("b")
+    public native float b();
+
+    @Generated
+    @Selector("c")
+    public native float c();
+
+    @Generated
+    @Selector("data")
+    public native NSData data();
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuron initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNNeuronDescriptor neuronDescriptor);
+
+    @Generated
+    @Selector("neuronType")
+    public native int neuronType();
 }

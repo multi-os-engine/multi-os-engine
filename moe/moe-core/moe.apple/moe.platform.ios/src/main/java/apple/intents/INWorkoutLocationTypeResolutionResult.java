@@ -189,4 +189,15 @@ public class INWorkoutLocationTypeResolutionResult extends INIntentResolutionRes
     @Selector("successWithResolvedWorkoutLocationType:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedWorkoutLocationType(@NInt long resolvedWorkoutLocationType);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

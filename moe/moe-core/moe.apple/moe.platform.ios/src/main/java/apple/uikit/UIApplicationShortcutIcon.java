@@ -173,4 +173,8 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native UIApplicationShortcutIcon init();
+
+    @Generated
+    @Selector("iconWithSystemImageName:")
+    public static native UIApplicationShortcutIcon iconWithSystemImageName(String systemImageName);
 }

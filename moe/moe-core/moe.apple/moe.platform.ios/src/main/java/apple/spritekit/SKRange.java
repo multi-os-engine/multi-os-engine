@@ -21,8 +21,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -40,6 +40,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -47,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKRange extends NSObject implements NSCoding, NSCopying {
+public class SKRange extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -186,7 +187,7 @@ public class SKRange extends NSObject implements NSCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -194,7 +195,7 @@ public class SKRange extends NSObject implements NSCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKRange initWithCoder(NSCoder aDecoder);
+    public native SKRange initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLowerLimit:upperLimit:")
@@ -217,4 +218,14 @@ public class SKRange extends NSObject implements NSCoding, NSCopying {
     @Selector("upperLimit")
     @NFloat
     public native double upperLimit();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

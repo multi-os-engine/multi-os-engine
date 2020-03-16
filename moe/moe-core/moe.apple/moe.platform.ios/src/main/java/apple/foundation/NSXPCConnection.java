@@ -266,4 +266,20 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentConnection")
+    public static native NSXPCConnection currentConnection();
+
+    @Generated
+    @Selector("scheduleSendBarrierBlock:")
+    public native void scheduleSendBarrierBlock(
+            @ObjCBlock(name = "call_scheduleSendBarrierBlock") Block_scheduleSendBarrierBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_scheduleSendBarrierBlock {
+        @Generated
+        void call_scheduleSendBarrierBlock();
+    }
 }

@@ -213,6 +213,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     public native boolean isValidForAssetTimeRangeValidationDelegate(AVAsset asset, @ByValue CMTimeRange timeRange,
             @Mapped(ObjCObjectMapper.class) AVVideoCompositionValidationHandling validationDelegate);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

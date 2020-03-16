@@ -161,7 +161,7 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchedPropertyDescription initWithCoder(NSCoder aDecoder);
+    public native NSFetchedPropertyDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setFetchRequest:")

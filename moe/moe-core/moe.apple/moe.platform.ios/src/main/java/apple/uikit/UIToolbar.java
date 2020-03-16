@@ -422,7 +422,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIToolbar initWithCoder(NSCoder aDecoder);
+    public native UIToolbar initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -492,4 +492,26 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
+
+    @Generated
+    @Selector("compactAppearance")
+    public native UIToolbarAppearance compactAppearance();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("setCompactAppearance:")
+    public native void setCompactAppearance(UIToolbarAppearance value);
+
+    @Generated
+    @Selector("setStandardAppearance:")
+    public native void setStandardAppearance(UIToolbarAppearance value);
+
+    @Generated
+    @Selector("standardAppearance")
+    public native UIToolbarAppearance standardAppearance();
 }

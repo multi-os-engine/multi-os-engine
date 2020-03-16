@@ -101,7 +101,7 @@ public class VNDetectedObjectObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNDetectedObjectObservation initWithCoder(NSCoder aDecoder);
+    public native VNDetectedObjectObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -164,4 +164,9 @@ public class VNDetectedObjectObservation extends VNObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("observationWithRequestRevision:boundingBox:")
+    public static native VNDetectedObjectObservation observationWithRequestRevisionBoundingBox(
+            @NUInt long requestRevision, @ByValue CGRect boundingBox);
 }

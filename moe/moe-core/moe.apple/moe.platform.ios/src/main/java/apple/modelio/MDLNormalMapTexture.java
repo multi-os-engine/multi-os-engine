@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -176,4 +177,9 @@ public class MDLNormalMapTexture extends MDLTexture {
     @Selector("initByGeneratingNormalMapWithTexture:name:smoothness:contrast:")
     public native MDLNormalMapTexture initByGeneratingNormalMapWithTextureNameSmoothnessContrast(
             MDLTexture sourceTexture, String name, float smoothness, float contrast);
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLNormalMapTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

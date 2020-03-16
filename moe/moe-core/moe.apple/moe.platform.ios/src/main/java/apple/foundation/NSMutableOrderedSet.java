@@ -254,7 +254,7 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableOrderedSet<?> initWithCoder(NSCoder aDecoder);
+    public native NSMutableOrderedSet<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithObject:")
@@ -425,4 +425,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
         long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
                 @Mapped(ObjCObjectMapper.class) Object arg1);
     }
+
+    @Generated
+    @Selector("applyDifference:")
+    public native void applyDifference(NSOrderedCollectionDifference<_ObjectType> difference);
 }

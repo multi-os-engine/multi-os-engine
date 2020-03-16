@@ -134,4 +134,19 @@ public final class MTLPixelFormat {
     }
 
     @Generated @NUInt public static final long BGR10A2Unorm = 0x000000000000005EL;
+    @Generated @NUInt public static final long ASTC_4x4_HDR = 0x00000000000000DEL;
+    @Generated @NUInt public static final long ASTC_5x4_HDR = 0x00000000000000DFL;
+    @Generated @NUInt public static final long ASTC_5x5_HDR = 0x00000000000000E0L;
+    @Generated @NUInt public static final long ASTC_6x5_HDR = 0x00000000000000E1L;
+    @Generated @NUInt public static final long ASTC_6x6_HDR = 0x00000000000000E2L;
+    @Generated @NUInt public static final long ASTC_8x5_HDR = 0x00000000000000E4L;
+    @Generated @NUInt public static final long ASTC_8x6_HDR = 0x00000000000000E5L;
+    @Generated @NUInt public static final long ASTC_8x8_HDR = 0x00000000000000E6L;
+    @Generated @NUInt public static final long ASTC_10x5_HDR = 0x00000000000000E7L;
+    @Generated @NUInt public static final long ASTC_10x6_HDR = 0x00000000000000E8L;
+    @Generated @NUInt public static final long ASTC_10x8_HDR = 0x00000000000000E9L;
+    @Generated @NUInt public static final long ASTC_10x10_HDR = 0x00000000000000EAL;
+    @Generated @NUInt public static final long ASTC_12x10_HDR = 0x00000000000000EBL;
+    @Generated @NUInt public static final long ASTC_12x12_HDR = 0x00000000000000ECL;
+    @Generated @NUInt public static final long Depth16Unorm = 0x00000000000000FAL;
 }

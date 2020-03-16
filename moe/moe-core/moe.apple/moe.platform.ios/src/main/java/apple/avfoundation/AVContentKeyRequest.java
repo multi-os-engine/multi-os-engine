@@ -17,7 +17,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -193,4 +195,13 @@ public class AVContentKeyRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("options")
+    public native NSDictionary<String, ?> options();
+
+    @Generated
+    @Selector("respondByRequestingPersistableContentKeyRequestAndReturnError:")
+    public native boolean respondByRequestingPersistableContentKeyRequestAndReturnError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

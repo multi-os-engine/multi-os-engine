@@ -17,6 +17,7 @@ limitations under the License.
 package apple.uikit.protocol;
 
 import apple.coregraphics.struct.CGSize;
+import apple.linkpresentation.LPLinkMetadata;
 import apple.uikit.UIActivityViewController;
 import apple.uikit.UIImage;
 import org.moe.natj.general.ann.ByValue;
@@ -69,4 +70,11 @@ public interface UIActivityItemSource {
     @Selector("activityViewControllerPlaceholderItem:")
     @MappedReturn(ObjCObjectMapper.class)
     Object activityViewControllerPlaceholderItem(UIActivityViewController activityViewController);
+
+    @Generated
+    @IsOptional
+    @Selector("activityViewControllerLinkMetadata:")
+    default LPLinkMetadata activityViewControllerLinkMetadata(UIActivityViewController activityViewController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -564,7 +565,7 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @IsOptional
@@ -600,7 +601,7 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITextField initWithCoder(NSCoder aDecoder);
+    public native UITextField initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -680,7 +681,7 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("markedTextStyle")
-    public native NSDictionary<?, ?> markedTextStyle();
+    public native NSDictionary<String, ?> markedTextStyle();
 
     @Generated
     @Selector("minimumFontSize")
@@ -761,7 +762,7 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("selectionRectsForRange:")
-    public native NSArray<?> selectionRectsForRange(UITextRange range);
+    public native NSArray<? extends UITextSelectionRect> selectionRectsForRange(UITextRange range);
 
     @Generated
     @Selector("setAdjustsFontForContentSizeCategory:")
@@ -898,7 +899,7 @@ public class UITextField extends UIControl
 
     @Generated
     @Selector("setMarkedTextStyle:")
-    public native void setMarkedTextStyle(NSDictionary<?, ?> value);
+    public native void setMarkedTextStyle(NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setMinimumFontSize:")
@@ -1165,4 +1166,41 @@ public class UITextField extends UIControl
     @Generated
     @Selector("textDropInteraction")
     public native UIDropInteraction textDropInteraction();
+
+    @Generated
+    @IsOptional
+    @Selector("insertText:alternatives:style:")
+    public native void insertTextAlternativesStyle(String text, NSArray<String> alternatives, @NInt long style);
+
+    @Generated
+    @IsOptional
+    @Selector("insertTextPlaceholderWithSize:")
+    public native UITextPlaceholder insertTextPlaceholderWithSize(@ByValue CGSize size);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @IsOptional
+    @Selector("passwordRules")
+    public native UITextInputPasswordRules passwordRules();
+
+    @Generated
+    @IsOptional
+    @Selector("removeTextPlaceholder:")
+    public native void removeTextPlaceholder(UITextPlaceholder textPlaceholder);
+
+    @Generated
+    @IsOptional
+    @Selector("setAttributedMarkedText:selectedRange:")
+    public native void setAttributedMarkedTextSelectedRange(NSAttributedString markedText,
+            @ByValue NSRange selectedRange);
+
+    @Generated
+    @IsOptional
+    @Selector("setPasswordRules:")
+    public native void setPasswordRules(UITextInputPasswordRules value);
 }

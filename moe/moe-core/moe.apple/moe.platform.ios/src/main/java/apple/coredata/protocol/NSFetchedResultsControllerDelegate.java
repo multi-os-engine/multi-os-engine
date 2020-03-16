@@ -17,7 +17,10 @@ limitations under the License.
 package apple.coredata.protocol;
 
 import apple.coredata.NSFetchedResultsController;
+import apple.coredata.NSManagedObjectID;
 import apple.foundation.NSIndexPath;
+import apple.foundation.NSOrderedCollectionDifference;
+import apple.uikit.NSDiffableDataSourceSnapshot;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -70,6 +73,22 @@ public interface NSFetchedResultsControllerDelegate {
     @IsOptional
     @Selector("controllerWillChangeContent:")
     default void controllerWillChangeContent(NSFetchedResultsController<?> controller) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("controller:didChangeContentWithDifference:")
+    default void controllerDidChangeContentWithDifference(NSFetchedResultsController<?> controller,
+            NSOrderedCollectionDifference<NSManagedObjectID> diff) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("controller:didChangeContentWithSnapshot:")
+    default void controllerDidChangeContentWithSnapshot(NSFetchedResultsController<?> controller,
+            NSDiffableDataSourceSnapshot<String, NSManagedObjectID> snapshot) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -109,7 +109,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAccelerationConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNAccelerationConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

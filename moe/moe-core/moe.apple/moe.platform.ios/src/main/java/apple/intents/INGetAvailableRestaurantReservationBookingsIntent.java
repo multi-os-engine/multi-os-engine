@@ -176,7 +176,7 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetAvailableRestaurantReservationBookingsIntent initWithCoder(NSCoder aDecoder);
+    public native INGetAvailableRestaurantReservationBookingsIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("latestBookingDateForResults")

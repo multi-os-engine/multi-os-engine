@@ -259,4 +259,10 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated public static final int kCMMetadataFormatType_EMSG = 0x656D7367;
+    @Generated public static final int kCMVideoCodecType_HEVCWithAlpha = 0x6D757861;
+    @Generated public static final int kCMVideoCodecType_AppleProRes4444XQ = 0x61703478;
+    @Generated public static final int kCMVideoCodecType_AppleProResRAW = 0x6170726E;
+    @Generated public static final int kCMVideoCodecType_AppleProResRAWHQ = 0x61707268;
 }

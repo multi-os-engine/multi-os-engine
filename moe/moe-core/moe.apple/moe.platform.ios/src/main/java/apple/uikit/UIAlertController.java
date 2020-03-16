@@ -190,7 +190,7 @@ public class UIAlertController extends UIViewController implements UISpringLoade
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIAlertController initWithCoder(NSCoder aDecoder);
+    public native UIAlertController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

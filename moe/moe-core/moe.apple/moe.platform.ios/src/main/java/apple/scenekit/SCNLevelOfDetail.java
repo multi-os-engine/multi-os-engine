@@ -177,7 +177,7 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("geometry")
@@ -189,7 +189,7 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNLevelOfDetail initWithCoder(NSCoder aDecoder);
+    public native SCNLevelOfDetail initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("screenSpaceRadius")

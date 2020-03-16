@@ -230,4 +230,24 @@ public class GCExtendedGamepad extends NSObject {
         @Generated
         void call_valueChangedHandler_ret(GCExtendedGamepad arg0, GCControllerElement arg1);
     }
+
+    @Generated
+    @Selector("buttonMenu")
+    public native GCControllerButtonInput buttonMenu();
+
+    @Generated
+    @Selector("buttonOptions")
+    public native GCControllerButtonInput buttonOptions();
+
+    @Generated
+    @Selector("leftThumbstickButton")
+    public native GCControllerButtonInput leftThumbstickButton();
+
+    @Generated
+    @Selector("rightThumbstickButton")
+    public native GCControllerButtonInput rightThumbstickButton();
+
+    @Generated
+    @Selector("setStateFromExtendedGamepad:")
+    public native void setStateFromExtendedGamepad(GCExtendedGamepad extendedGamepad);
 }

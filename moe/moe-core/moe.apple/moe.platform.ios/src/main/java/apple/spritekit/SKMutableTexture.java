@@ -46,6 +46,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -219,7 +220,7 @@ public class SKMutableTexture extends SKTexture {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKMutableTexture initWithCoder(NSCoder aDecoder);
+    public native SKMutableTexture initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSize:")
@@ -239,5 +240,15 @@ public class SKMutableTexture extends SKTexture {
     public interface Block_modifyPixelDataWithBlock {
         @Generated
         void call_modifyPixelDataWithBlock(VoidPtr arg0, @NUInt long arg1);
+    }
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
     }
 }

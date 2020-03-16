@@ -179,7 +179,7 @@ public class UIVideoEditorController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIVideoEditorController initWithCoder(NSCoder aDecoder);
+    public native UIVideoEditorController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

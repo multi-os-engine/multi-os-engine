@@ -167,7 +167,7 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKRecordZoneSubscription initWithCoder(NSCoder aDecoder);
+    public native CKRecordZoneSubscription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRecordType:predicate:options:")

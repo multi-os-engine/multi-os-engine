@@ -197,7 +197,7 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("entities")
@@ -234,7 +234,7 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSManagedObjectModel initWithCoder(NSCoder aDecoder);
+    public native NSManagedObjectModel initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfURL:")

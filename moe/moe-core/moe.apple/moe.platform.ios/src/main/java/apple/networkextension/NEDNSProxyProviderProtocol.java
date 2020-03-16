@@ -95,7 +95,7 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEDNSProxyProviderProtocol initWithCoder(NSCoder aDecoder);
+    public native NEDNSProxyProviderProtocol initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

@@ -406,7 +406,7 @@ public class UISlider extends UIControl implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -414,7 +414,7 @@ public class UISlider extends UIControl implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISlider initWithCoder(NSCoder aDecoder);
+    public native UISlider initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -539,4 +539,10 @@ public class UISlider extends UIControl implements NSCoding {
     @Generated
     @Selector("value")
     public native float value();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

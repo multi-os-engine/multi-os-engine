@@ -17,6 +17,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -132,7 +133,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -163,7 +164,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentBrowserViewController initWithCoder(NSCoder aDecoder);
+    public native UIDocumentBrowserViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -277,4 +278,37 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("defaultDocumentAspectRatio")
+    @NFloat
+    public native double defaultDocumentAspectRatio();
+
+    @Generated
+    @Selector("localizedCreateDocumentActionTitle")
+    public native String localizedCreateDocumentActionTitle();
+
+    @Generated
+    @Selector("recentDocumentsContentTypes")
+    public native NSArray<String> recentDocumentsContentTypes();
+
+    @Generated
+    @Selector("setDefaultDocumentAspectRatio:")
+    public native void setDefaultDocumentAspectRatio(@NFloat double value);
+
+    @Generated
+    @Selector("setLocalizedCreateDocumentActionTitle:")
+    public native void setLocalizedCreateDocumentActionTitle(String value);
+
+    @Generated
+    @Selector("setShouldShowFileExtensions:")
+    public native void setShouldShowFileExtensions(boolean value);
+
+    @Generated
+    @Selector("shouldShowFileExtensions")
+    public native boolean shouldShowFileExtensions();
+
+    @Generated
+    @Selector("transitionControllerForDocumentAtURL:")
+    public native UIDocumentBrowserTransitionController transitionControllerForDocumentAtURL(NSURL documentURL);
 }

@@ -283,7 +283,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -296,7 +296,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBarButtonItem initWithCoder(NSCoder aDecoder);
+    public native UIBarButtonItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCustomView:")

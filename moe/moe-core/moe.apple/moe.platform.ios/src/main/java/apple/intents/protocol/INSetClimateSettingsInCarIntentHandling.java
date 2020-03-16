@@ -24,6 +24,7 @@ import apple.intents.INIntegerResolutionResult;
 import apple.intents.INRelativeSettingResolutionResult;
 import apple.intents.INSetClimateSettingsInCarIntent;
 import apple.intents.INSetClimateSettingsInCarIntentResponse;
+import apple.intents.INSpeakableStringResolutionResult;
 import apple.intents.INTemperatureResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -238,5 +239,20 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveTemperatureForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveTemperatureForSetClimateSettingsInCarWithCompletion(INTemperatureResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveCarNameForSetClimateSettingsInCar:withCompletion:")
+    default void resolveCarNameForSetClimateSettingsInCarWithCompletion(INSetClimateSettingsInCarIntent intent,
+            @ObjCBlock(name = "call_resolveCarNameForSetClimateSettingsInCarWithCompletion") Block_resolveCarNameForSetClimateSettingsInCarWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveCarNameForSetClimateSettingsInCarWithCompletion {
+        @Generated
+        void call_resolveCarNameForSetClimateSettingsInCarWithCompletion(INSpeakableStringResolutionResult arg0);
     }
 }

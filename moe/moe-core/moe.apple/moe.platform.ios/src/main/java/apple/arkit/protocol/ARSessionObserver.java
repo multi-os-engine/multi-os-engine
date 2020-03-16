@@ -1,6 +1,7 @@
 package apple.arkit.protocol;
 
 import apple.arkit.ARCamera;
+import apple.arkit.ARCollaborationData;
 import apple.arkit.ARSession;
 import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.foundation.NSError;
@@ -49,6 +50,20 @@ public interface ARSessionObserver {
     @IsOptional
     @Selector("sessionWasInterrupted:")
     default void sessionWasInterrupted(ARSession session) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("session:didOutputCollaborationData:")
+    default void sessionDidOutputCollaborationData(ARSession session, ARCollaborationData data) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("sessionShouldAttemptRelocalization:")
+    default boolean sessionShouldAttemptRelocalization(ARSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

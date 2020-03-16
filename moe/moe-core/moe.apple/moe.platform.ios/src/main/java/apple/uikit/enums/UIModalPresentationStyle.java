@@ -34,4 +34,6 @@ public final class UIModalPresentationStyle {
     @Generated
     private UIModalPresentationStyle() {
     }
+
+    @Generated @NInt public static final long Automatic = 0xFFFFFFFFFFFFFFFEL;
 }

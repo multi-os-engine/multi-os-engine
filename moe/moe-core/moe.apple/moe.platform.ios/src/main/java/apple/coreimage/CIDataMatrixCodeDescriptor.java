@@ -114,7 +114,7 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIDataMatrixCodeDescriptor initWithCoder(NSCoder aDecoder);
+    public native CIDataMatrixCodeDescriptor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPayload:rowCount:columnCount:eccVersion:")

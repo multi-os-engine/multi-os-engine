@@ -180,7 +180,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNMutableNotificationContent initWithCoder(NSCoder aDecoder);
+    public native UNMutableNotificationContent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("launchImageName")
@@ -251,4 +251,29 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
+
+    @Generated
+    @Selector("setSummaryArgument:")
+    public native void setSummaryArgument(String value);
+
+    @Generated
+    @Selector("setSummaryArgumentCount:")
+    public native void setSummaryArgumentCount(@NUInt long value);
+
+    @Generated
+    @Selector("setTargetContentIdentifier:")
+    public native void setTargetContentIdentifier(String value);
+
+    @Generated
+    @Selector("summaryArgument")
+    public native String summaryArgument();
+
+    @Generated
+    @Selector("summaryArgumentCount")
+    @NUInt
+    public native long summaryArgumentCount();
+
+    @Generated
+    @Selector("targetContentIdentifier")
+    public native String targetContentIdentifier();
 }

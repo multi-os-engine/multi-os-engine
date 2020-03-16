@@ -18,12 +18,13 @@ package apple.avfoundation;
 
 import apple.NSObject;
 import apple.audiotoolbox.opaque.MusicSequence;
-import apple.coreaudio.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioBufferList;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.c.map.CStringMapper;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
@@ -310,4 +311,52 @@ public class AVAudioEngine extends NSObject {
     @Generated
     @Selector("setAutoShutdownEnabled:")
     public native void setAutoShutdownEnabled(boolean value);
+
+    @Generated
+    @Selector("attachedNodes")
+    public native NSSet<? extends AVAudioNode> attachedNodes();
+
+    @Generated
+    @Selector("connectMIDI:to:format:block:")
+    public native void connectMIDIToFormatBlock(AVAudioNode sourceNode, AVAudioNode destinationNode,
+            AVAudioFormat format,
+            @ObjCBlock(name = "call_connectMIDIToFormatBlock") Block_connectMIDIToFormatBlock tapBlock);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_connectMIDIToFormatBlock {
+        @Generated
+        int call_connectMIDIToFormatBlock(long arg0, byte arg1, @NInt long arg2,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg3);
+    }
+
+    @Generated
+    @Selector("connectMIDI:toNodes:format:block:")
+    public native void connectMIDIToNodesFormatBlock(AVAudioNode sourceNode,
+            NSArray<? extends AVAudioNode> destinationNodes, AVAudioFormat format,
+            @ObjCBlock(name = "call_connectMIDIToNodesFormatBlock") Block_connectMIDIToNodesFormatBlock tapBlock);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_connectMIDIToNodesFormatBlock {
+        @Generated
+        int call_connectMIDIToNodesFormatBlock(long arg0, byte arg1, @NInt long arg2,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg3);
+    }
+
+    @Generated
+    @Selector("disconnectMIDI:from:")
+    public native void disconnectMIDIFrom(AVAudioNode sourceNode, AVAudioNode destinationNode);
+
+    @Generated
+    @Selector("disconnectMIDI:fromNodes:")
+    public native void disconnectMIDIFromNodes(AVAudioNode sourceNode, NSArray<? extends AVAudioNode> destinationNodes);
+
+    @Generated
+    @Selector("disconnectMIDIInput:")
+    public native void disconnectMIDIInput(AVAudioNode node);
+
+    @Generated
+    @Selector("disconnectMIDIOutput:")
+    public native void disconnectMIDIOutput(AVAudioNode node);
 }

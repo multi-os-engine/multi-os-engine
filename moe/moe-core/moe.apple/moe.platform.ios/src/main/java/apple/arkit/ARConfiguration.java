@@ -173,4 +173,29 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @Selector("worldAlignment")
     @NInt
     public native long worldAlignment();
+
+    @Generated
+    @Selector("frameSemantics")
+    @NUInt
+    public native long frameSemantics();
+
+    @Generated
+    @Selector("setFrameSemantics:")
+    public native void setFrameSemantics(@NUInt long value);
+
+    @Generated
+    @Selector("setVideoFormat:")
+    public native void setVideoFormat(ARVideoFormat value);
+
+    @Generated
+    @Selector("supportedVideoFormats")
+    public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
+
+    @Generated
+    @Selector("supportsFrameSemantics:")
+    public static native boolean supportsFrameSemantics(@NUInt long frameSemantics);
+
+    @Generated
+    @Selector("videoFormat")
+    public native ARVideoFormat videoFormat();
 }

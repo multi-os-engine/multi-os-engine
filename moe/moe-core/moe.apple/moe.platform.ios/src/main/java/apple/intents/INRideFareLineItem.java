@@ -171,7 +171,7 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -179,7 +179,7 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideFareLineItem initWithCoder(NSCoder aDecoder);
+    public native INRideFareLineItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:price:currencyCode:")

@@ -191,7 +191,7 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -199,7 +199,7 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationSettings initWithCoder(NSCoder aDecoder);
+    public native UNNotificationSettings initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("lockScreenSetting")
@@ -226,4 +226,18 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
     @Selector("showPreviewsSetting")
     @NInt
     public native long showPreviewsSetting();
+
+    @Generated
+    @Selector("announcementSetting")
+    @NInt
+    public native long announcementSetting();
+
+    @Generated
+    @Selector("criticalAlertSetting")
+    @NInt
+    public native long criticalAlertSetting();
+
+    @Generated
+    @Selector("providesAppNotificationSettings")
+    public native boolean providesAppNotificationSettings();
 }

@@ -159,7 +159,7 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("imageWithTraitCollection:")
@@ -171,7 +171,7 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIImageAsset initWithCoder(NSCoder aDecoder);
+    public native UIImageAsset initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("registerImage:withTraitCollection:")
@@ -186,4 +186,16 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("unregisterImageWithTraitCollection:")
     public native void unregisterImageWithTraitCollection(UITraitCollection traitCollection);
+
+    @Generated
+    @Selector("imageWithConfiguration:")
+    public native UIImage imageWithConfiguration(UIImageConfiguration configuration);
+
+    @Generated
+    @Selector("registerImage:withConfiguration:")
+    public native void registerImageWithConfiguration(UIImage image, UIImageConfiguration configuration);
+
+    @Generated
+    @Selector("unregisterImageWithConfiguration:")
+    public native void unregisterImageWithConfiguration(UIImageConfiguration configuration);
 }

@@ -167,7 +167,7 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurant initWithCoder(NSCoder aDecoder);
+    public native INRestaurant initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLocation:name:vendorIdentifier:restaurantIdentifier:")

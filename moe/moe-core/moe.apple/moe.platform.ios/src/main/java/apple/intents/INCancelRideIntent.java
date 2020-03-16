@@ -94,7 +94,7 @@ public class INCancelRideIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCancelRideIntent initWithCoder(NSCoder aDecoder);
+    public native INCancelRideIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRideIdentifier:")

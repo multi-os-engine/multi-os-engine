@@ -167,7 +167,7 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native INIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -186,4 +186,8 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();
+
+    @Generated
+    @Selector("setUserActivity:")
+    public native void setUserActivity(NSUserActivity value);
 }

@@ -16,4 +16,5 @@ public final class MLFeatureType {
     @Generated @NInt public static final long Image = 0x0000000000000004L;
     @Generated @NInt public static final long MultiArray = 0x0000000000000005L;
     @Generated @NInt public static final long Dictionary = 0x0000000000000006L;
+    @Generated @NInt public static final long Sequence = 0x0000000000000007L;
 }

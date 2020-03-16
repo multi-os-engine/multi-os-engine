@@ -209,4 +209,8 @@ public final class Enums {
 
     @Generated @NInt public static final long NSURLErrorFileOutsideSafeArea = 0xFFFFFFFFFFFFFBB0L;
     @Generated @NInt public static final long NSCoderInvalidValueError = 0x0000000000001302L;
+    @Generated @NInt public static final long NSCompressionFailedError = 0x0000000000001500L;
+    @Generated @NInt public static final long NSDecompressionFailedError = 0x0000000000001501L;
+    @Generated @NInt public static final long NSCompressionErrorMinimum = 0x0000000000001500L;
+    @Generated @NInt public static final long NSCompressionErrorMaximum = 0x000000000000157FL;
 }

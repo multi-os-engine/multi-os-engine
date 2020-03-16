@@ -166,7 +166,7 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPort initWithCoder(NSCoder aDecoder);
+    public native NSPort initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("invalidate")

@@ -132,6 +132,7 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

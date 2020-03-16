@@ -1,6 +1,7 @@
 package apple.vision;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.coreimage.CIBarcodeDescriptor;
 import apple.foundation.NSArray;
@@ -101,7 +102,7 @@ public class VNBarcodeObservation extends VNRectangleObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNBarcodeObservation initWithCoder(NSCoder aDecoder);
+    public native VNBarcodeObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -172,4 +173,15 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("observationWithRequestRevision:boundingBox:")
+    public static native VNBarcodeObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
+            @ByValue CGRect boundingBox);
+
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
+    public static native VNBarcodeObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
 }

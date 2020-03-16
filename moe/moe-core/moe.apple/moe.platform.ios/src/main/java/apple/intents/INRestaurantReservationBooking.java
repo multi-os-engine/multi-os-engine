@@ -179,7 +179,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -187,7 +187,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantReservationBooking initWithCoder(NSCoder aDecoder);
+    public native INRestaurantReservationBooking initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRestaurant:bookingDate:partySize:bookingIdentifier:")

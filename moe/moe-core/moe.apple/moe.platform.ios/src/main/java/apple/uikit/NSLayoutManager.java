@@ -27,7 +27,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
 import apple.uikit.protocol.NSLayoutManagerDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -44,6 +44,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.CharPtr;
@@ -60,6 +61,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -67,7 +69,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSLayoutManager extends NSObject implements NSCoding {
+public class NSLayoutManager extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -249,7 +251,7 @@ public class NSLayoutManager extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("ensureGlyphsForCharacterRange:")
@@ -649,4 +651,37 @@ public class NSLayoutManager extends NSObject implements NSCoding {
         void call_enumerateLineFragmentsForGlyphRangeUsingBlock(@ByValue CGRect arg0, @ByValue CGRect arg1,
                 NSTextContainer arg2, @ByValue NSRange arg3, BoolPtr arg4);
     }
+
+    @Generated
+    @Selector("limitsLayoutForSuspiciousContents")
+    public native boolean limitsLayoutForSuspiciousContents();
+
+    @Generated
+    @Selector("setLimitsLayoutForSuspiciousContents:")
+    public native void setLimitsLayoutForSuspiciousContents(boolean value);
+
+    @Generated
+    @Selector("setUsesDefaultHyphenation:")
+    public native void setUsesDefaultHyphenation(boolean value);
+
+    @Generated
+    @Selector("showCGGlyphs:positions:count:font:textMatrix:attributes:inContext:")
+    public native void showCGGlyphsPositionsCountFontTextMatrixAttributesInContext(ConstCharPtr glyphs,
+            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint positions,
+            @NInt long glyphCount, UIFont font, @ByValue CGAffineTransform textMatrix,
+            NSDictionary<String, ?> attributes, CGContextRef CGContext);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
+    @Selector("usesDefaultHyphenation")
+    public native boolean usesDefaultHyphenation();
 }

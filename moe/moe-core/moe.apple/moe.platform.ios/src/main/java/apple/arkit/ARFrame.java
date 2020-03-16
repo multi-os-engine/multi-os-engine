@@ -10,6 +10,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.metal.protocol.MTLTexture;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -192,4 +193,35 @@ public class ARFrame extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("cameraGrainIntensity")
+    public native float cameraGrainIntensity();
+
+    @Generated
+    @Selector("cameraGrainTexture")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLTexture cameraGrainTexture();
+
+    @Generated
+    @Selector("detectedBody")
+    public native ARBody2D detectedBody();
+
+    @Generated
+    @Selector("estimatedDepthData")
+    public native CVBufferRef estimatedDepthData();
+
+    @Generated
+    @Selector("raycastQueryFromPoint:allowingTarget:alignment:")
+    public native ARRaycastQuery raycastQueryFromPointAllowingTargetAlignment(@ByValue CGPoint point, @NInt long target,
+            @NInt long alignment);
+
+    @Generated
+    @Selector("segmentationBuffer")
+    public native CVBufferRef segmentationBuffer();
+
+    @Generated
+    @Selector("worldMappingStatus")
+    @NInt
+    public native long worldMappingStatus();
 }

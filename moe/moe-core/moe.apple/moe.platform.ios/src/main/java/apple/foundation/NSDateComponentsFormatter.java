@@ -197,7 +197,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateComponentsFormatter initWithCoder(NSCoder aDecoder);
+    public native NSDateComponentsFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("maximumUnitCount")

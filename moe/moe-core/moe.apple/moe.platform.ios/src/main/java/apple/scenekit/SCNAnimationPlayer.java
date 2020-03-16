@@ -129,7 +129,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -142,7 +142,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAnimationPlayer initWithCoder(NSCoder aDecoder);
+    public native SCNAnimationPlayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

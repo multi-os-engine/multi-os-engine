@@ -183,7 +183,7 @@ public class HKCategorySample extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKCategorySample initWithCoder(NSCoder aDecoder);
+    public native HKCategorySample initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

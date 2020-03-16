@@ -167,7 +167,7 @@ public class UNLocationNotificationTrigger extends UNNotificationTrigger {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNLocationNotificationTrigger initWithCoder(NSCoder aDecoder);
+    public native UNLocationNotificationTrigger initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("region")

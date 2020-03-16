@@ -147,4 +147,20 @@ public class MPSNNStateNode extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("exportFromGraph")
+    public native boolean exportFromGraph();
+
+    @Generated
+    @Selector("setExportFromGraph:")
+    public native void setExportFromGraph(boolean value);
+
+    @Generated
+    @Selector("setSynchronizeResource:")
+    public native void setSynchronizeResource(boolean value);
+
+    @Generated
+    @Selector("synchronizeResource")
+    public native boolean synchronizeResource();
 }

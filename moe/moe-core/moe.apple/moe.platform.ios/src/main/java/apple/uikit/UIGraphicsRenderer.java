@@ -17,8 +17,10 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -32,11 +34,14 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -171,4 +176,38 @@ public class UIGraphicsRenderer extends NSObject {
     @Generated
     @Selector("initWithBounds:format:")
     public native UIGraphicsRenderer initWithBoundsFormat(@ByValue CGRect bounds, UIGraphicsRendererFormat format);
+
+    @Generated
+    @Selector("contextWithFormat:")
+    public static native CGContextRef contextWithFormat(UIGraphicsRendererFormat format);
+
+    @Generated
+    @Selector("prepareCGContext:withRendererContext:")
+    public static native void prepareCGContextWithRendererContext(CGContextRef context,
+            UIGraphicsRendererContext rendererContext);
+
+    @Generated
+    @Selector("rendererContextClass")
+    public static native Class rendererContextClass();
+
+    @Generated
+    @Selector("runDrawingActions:completionActions:error:")
+    public native boolean runDrawingActionsCompletionActionsError(
+            @ObjCBlock(name = "call_runDrawingActionsCompletionActionsError_0") Block_runDrawingActionsCompletionActionsError_0 drawingActions,
+            @ObjCBlock(name = "call_runDrawingActionsCompletionActionsError_1") Block_runDrawingActionsCompletionActionsError_1 completionActions,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_runDrawingActionsCompletionActionsError_0 {
+        @Generated
+        void call_runDrawingActionsCompletionActionsError_0(UIGraphicsRendererContext arg0);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_runDrawingActionsCompletionActionsError_1 {
+        @Generated
+        void call_runDrawingActionsCompletionActionsError_1(UIGraphicsRendererContext arg0);
+    }
 }

@@ -180,7 +180,7 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsVehicle initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsVehicle initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setSteeringAngle:forWheelAtIndex:")

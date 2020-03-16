@@ -250,4 +250,12 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Generated
     @Selector("type")
     public native String type();
+
+    @Generated
+    @Selector("cloudKitContainerOptions")
+    public native NSPersistentCloudKitContainerOptions cloudKitContainerOptions();
+
+    @Generated
+    @Selector("setCloudKitContainerOptions:")
+    public native void setCloudKitContainerOptions(NSPersistentCloudKitContainerOptions value);
 }

@@ -281,4 +281,31 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Selector("outputType")
+    @NInt
+    public native long outputType();
+
+    @Generated
+    @Selector("pointSourceInHeadMode")
+    @NInt
+    public native long pointSourceInHeadMode();
+
+    @Generated
+    @Selector("setOutputType:")
+    public native void setOutputType(@NInt long value);
+
+    @Generated
+    @Selector("setPointSourceInHeadMode:")
+    public native void setPointSourceInHeadMode(@NInt long value);
+
+    @Generated
+    @Selector("setSourceMode:")
+    public native void setSourceMode(@NInt long value);
+
+    @Generated
+    @Selector("sourceMode")
+    @NInt
+    public native long sourceMode();
 }

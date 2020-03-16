@@ -171,7 +171,7 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNBillboardConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNBillboardConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setFreeAxes:")

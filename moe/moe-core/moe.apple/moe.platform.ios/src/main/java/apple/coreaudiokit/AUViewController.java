@@ -177,7 +177,7 @@ public class AUViewController extends UIViewController implements NSExtensionReq
 
     @Generated
     @Selector("initWithCoder:")
-    public native AUViewController initWithCoder(NSCoder aDecoder);
+    public native AUViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

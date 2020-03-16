@@ -193,7 +193,7 @@ public class ABUnknownPersonViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABUnknownPersonViewController initWithCoder(NSCoder aDecoder);
+    public native ABUnknownPersonViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

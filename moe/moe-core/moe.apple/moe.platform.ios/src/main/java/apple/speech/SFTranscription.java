@@ -166,7 +166,7 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("formattedString")
@@ -178,7 +178,7 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFTranscription initWithCoder(NSCoder aDecoder);
+    public native SFTranscription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("segments")
@@ -189,4 +189,12 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("averagePauseDuration")
+    public native double averagePauseDuration();
+
+    @Generated
+    @Selector("speakingRate")
+    public native double speakingRate();
 }

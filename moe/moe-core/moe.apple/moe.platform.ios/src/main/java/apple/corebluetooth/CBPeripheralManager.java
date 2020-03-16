@@ -238,4 +238,9 @@ public class CBPeripheralManager extends CBManager {
     @Generated
     @Selector("unpublishL2CAPChannel:")
     public native void unpublishL2CAPChannel(char PSM);
+
+    @Generated
+    @Selector("authorization")
+    @NInt
+    public static native long authorization_static();
 }

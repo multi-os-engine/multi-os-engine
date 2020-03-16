@@ -121,7 +121,7 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARSCNFaceGeometry initWithCoder(NSCoder aDecoder);
+    public native ARSCNFaceGeometry initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

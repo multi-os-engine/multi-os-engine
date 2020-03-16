@@ -265,7 +265,7 @@ public class MPMediaItem extends MPMediaEntity {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaItem initWithCoder(NSCoder aDecoder);
+    public native MPMediaItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isCloudItem")

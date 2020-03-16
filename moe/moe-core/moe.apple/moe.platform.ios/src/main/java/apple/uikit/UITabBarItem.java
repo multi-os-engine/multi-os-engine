@@ -268,7 +268,7 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITabBarItem initWithCoder(NSCoder aDecoder);
+    public native UITabBarItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTabBarSystemItem:tag:")
@@ -324,4 +324,12 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     @Generated
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
+
+    @Generated
+    @Selector("setStandardAppearance:")
+    public native void setStandardAppearance(UITabBarAppearance value);
+
+    @Generated
+    @Selector("standardAppearance")
+    public native UITabBarAppearance standardAppearance();
 }

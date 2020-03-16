@@ -113,7 +113,7 @@ public class INCancelRideIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCancelRideIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INCancelRideIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

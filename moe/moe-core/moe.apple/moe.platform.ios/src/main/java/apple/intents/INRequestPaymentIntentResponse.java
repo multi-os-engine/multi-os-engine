@@ -172,7 +172,7 @@ public class INRequestPaymentIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRequestPaymentIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INRequestPaymentIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("paymentRecord")

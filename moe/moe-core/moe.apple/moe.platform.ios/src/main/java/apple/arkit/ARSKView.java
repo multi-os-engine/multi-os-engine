@@ -1,6 +1,7 @@
 package apple.arkit;
 
 import apple.NSObject;
+import apple.arkit.protocol.ARSessionProviding;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
@@ -40,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ARSKView extends SKView {
+public class ARSKView extends SKView implements ARSessionProviding {
     static {
         NatJ.register();
     }
@@ -258,7 +259,7 @@ public class ARSKView extends SKView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARSKView initWithCoder(NSCoder aDecoder);
+    public native ARSKView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -431,4 +432,10 @@ public class ARSKView extends SKView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

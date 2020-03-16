@@ -21,8 +21,8 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,6 +39,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKEntity extends NSObject implements NSCopying, NSCoding {
+public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -177,7 +178,7 @@ public class GKEntity extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -185,7 +186,7 @@ public class GKEntity extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKEntity initWithCoder(NSCoder aDecoder);
+    public native GKEntity initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("removeComponentForClass:")
@@ -194,4 +195,14 @@ public class GKEntity extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

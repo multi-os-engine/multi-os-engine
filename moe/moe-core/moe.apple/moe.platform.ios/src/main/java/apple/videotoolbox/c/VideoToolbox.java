@@ -120,7 +120,7 @@ public final class VideoToolbox {
     @CFunction
     public static native int VTCompressionSessionEncodeFrame(VTCompressionSessionRef session, CVBufferRef imageBuffer,
             @ByValue CMTime presentationTimeStamp, @ByValue CMTime duration, CFDictionaryRef frameProperties,
-            VoidPtr sourceFrameRefCon, IntPtr infoFlagsOut);
+            VoidPtr sourceFrameRefcon, IntPtr infoFlagsOut);
 
     @Generated
     @CFunction
@@ -203,7 +203,7 @@ public final class VideoToolbox {
     @Generated
     @CFunction
     public static native int VTFrameSiloCreate(CFAllocatorRef allocator, CFURLRef fileURL,
-            @ByValue CMTimeRange timeRange, CFDictionaryRef options, Ptr<VTFrameSiloRef> siloOut);
+            @ByValue CMTimeRange timeRange, CFDictionaryRef options, Ptr<VTFrameSiloRef> frameSiloOut);
 
     @Generated
     @CFunction
@@ -221,7 +221,7 @@ public final class VideoToolbox {
     @Generated
     @CFunction
     public static native int VTFrameSiloCallFunctionForEachSampleBuffer(VTFrameSiloRef silo,
-            @ByValue CMTimeRange timeRange, VoidPtr callbackInfo,
+            @ByValue CMTimeRange timeRange, VoidPtr refcon,
             @FunctionPtr(name = "call_VTFrameSiloCallFunctionForEachSampleBuffer") Function_VTFrameSiloCallFunctionForEachSampleBuffer callback);
 
     @Generated
@@ -896,8 +896,8 @@ public final class VideoToolbox {
     @Generated
     @CFunction
     public static native int VTCopySupportedPropertyDictionaryForEncoder(int width, int height, int codecType,
-            CFDictionaryRef encoderSpecification, Ptr<CFStringRef> outEncoderID,
-            Ptr<CFDictionaryRef> outSupportedProperties);
+            CFDictionaryRef encoderSpecification, Ptr<CFStringRef> encoderIDOut,
+            Ptr<CFDictionaryRef> supportedPropertiesOut);
 
     @Generated
     @CVariable()
@@ -926,4 +926,88 @@ public final class VideoToolbox {
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_TemporalLevelLimit();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_AllowOpenGOP();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_TargetQualityForAlpha();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_MaximizePowerEfficiency();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderSpecification_RequiredEncoderGPURegistryID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderSpecification_PreferredEncoderGPURegistryID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_UsingGPURegistryID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_GammaLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_AlphaChannelMode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTAlphaChannelMode_StraightAlpha();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTAlphaChannelMode_PremultipliedAlpha();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTDecompressionPropertyKey_MaximizePowerEfficiency();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoDecoderSpecification_RequiredDecoderGPURegistryID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoDecoderSpecification_PreferredDecoderGPURegistryID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTDecompressionPropertyKey_UsingGPURegistryID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderList_GPURegistryID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderList_SupportedSelectionProperties();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderList_PerformanceRating();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderList_QualityRating();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderList_InstanceLimit();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderList_IsHardwareAccelerated();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelTransferPropertyKey_RealTime();
 }

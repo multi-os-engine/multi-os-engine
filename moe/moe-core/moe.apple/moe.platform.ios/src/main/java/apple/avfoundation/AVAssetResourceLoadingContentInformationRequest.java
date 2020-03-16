@@ -186,4 +186,8 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
     @Generated
     @Selector("setRenewalDate:")
     public native void setRenewalDate(NSDate value);
+
+    @Generated
+    @Selector("allowedContentTypes")
+    public native NSArray<String> allowedContentTypes();
 }

@@ -109,7 +109,7 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIPDF417CodeDescriptor initWithCoder(NSCoder aDecoder);
+    public native CIPDF417CodeDescriptor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPayload:isCompact:rowCount:columnCount:")

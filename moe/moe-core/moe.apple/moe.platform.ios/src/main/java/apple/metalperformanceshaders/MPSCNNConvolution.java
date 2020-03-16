@@ -34,10 +34,8 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
-import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstFloatPtr;
-import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -197,23 +195,6 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native long channelMultiplier();
 
     @Generated
-    @Selector("dilationRateX")
-    @NUInt
-    public native long dilationRateX();
-
-    @Generated
-    @Selector("dilationRateY")
-    @NUInt
-    public native long dilationRateY();
-
-    @Generated
-    @Selector("encodeToCommandBuffer:sourceImage:destinationImage:state:")
-    public native void encodeToCommandBufferSourceImageDestinationImageState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSImage destinationImage,
-            @ReferenceInfo(type = MPSCNNConvolutionState.class) Ptr<MPSCNNConvolutionState> outState);
-
-    @Generated
     @Selector("initWithCoder:")
     public native MPSCNNConvolution initWithCoder(NSCoder aDecoder);
 
@@ -253,4 +234,57 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("accumulatorPrecisionOption")
+    @NUInt
+    public native long accumulatorPrecisionOption();
+
+    @Generated
+    @Selector("dataSource")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MPSCNNConvolutionDataSource dataSource();
+
+    @Generated
+    @Selector("exportWeightsAndBiasesWithCommandBuffer:resultStateCanBeTemporary:")
+    public native MPSCNNConvolutionWeightsAndBiasesState exportWeightsAndBiasesWithCommandBufferResultStateCanBeTemporary(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, boolean resultStateCanBeTemporary);
+
+    @Generated
+    @Selector("fusedNeuronDescriptor")
+    public native MPSNNNeuronDescriptor fusedNeuronDescriptor();
+
+    @Generated
+    @Selector("neuronParameterC")
+    public native float neuronParameterC();
+
+    @Generated
+    @Selector("reloadWeightsAndBiasesFromDataSource")
+    public native void reloadWeightsAndBiasesFromDataSource();
+
+    @Generated
+    @Selector("reloadWeightsAndBiasesWithCommandBuffer:state:")
+    public native void reloadWeightsAndBiasesWithCommandBufferState(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            MPSCNNConvolutionWeightsAndBiasesState state);
+
+    @Generated
+    @Selector("reloadWeightsAndBiasesWithDataSource:")
+    public native void reloadWeightsAndBiasesWithDataSource(
+            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource dataSource);
+
+    @Generated
+    @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
+    public native MPSCNNConvolutionGradientState resultStateForSourceImageSourceStatesDestinationImage(
+            MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+
+    @Generated
+    @Selector("setAccumulatorPrecisionOption:")
+    public native void setAccumulatorPrecisionOption(@NUInt long value);
+
+    @Generated
+    @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
+    public native MPSCNNConvolutionGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
+            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 }

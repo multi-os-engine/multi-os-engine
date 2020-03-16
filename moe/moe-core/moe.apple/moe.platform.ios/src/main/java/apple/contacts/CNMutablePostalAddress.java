@@ -178,7 +178,7 @@ public class CNMutablePostalAddress extends CNPostalAddress {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNMutablePostalAddress initWithCoder(NSCoder aDecoder);
+    public native CNMutablePostalAddress initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("postalCode")

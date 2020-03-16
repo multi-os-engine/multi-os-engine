@@ -174,7 +174,7 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNPostalAddressFormatter initWithCoder(NSCoder aDecoder);
+    public native CNPostalAddressFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setStyle:")

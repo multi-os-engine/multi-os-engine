@@ -182,7 +182,7 @@ public class GKMatchmakerViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKMatchmakerViewController initWithCoder(NSCoder aDecoder);
+    public native GKMatchmakerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithInvite:")

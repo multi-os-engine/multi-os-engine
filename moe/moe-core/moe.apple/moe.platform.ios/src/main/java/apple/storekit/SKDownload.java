@@ -192,4 +192,13 @@ public class SKDownload extends NSObject {
     @Generated
     @Selector("transaction")
     public native SKPaymentTransaction transaction();
+
+    @Generated
+    @Selector("expectedContentLength")
+    public native long expectedContentLength();
+
+    @Generated
+    @Selector("state")
+    @NInt
+    public native long state();
 }

@@ -176,7 +176,7 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSAttributeDescription initWithCoder(NSCoder aDecoder);
+    public native NSAttributeDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setAllowsExternalBinaryDataStorage:")
@@ -205,4 +205,12 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
+
+    @Generated
+    @Selector("preservesValueInHistoryOnDeletion")
+    public native boolean preservesValueInHistoryOnDeletion();
+
+    @Generated
+    @Selector("setPreservesValueInHistoryOnDeletion:")
+    public native void setPreservesValueInHistoryOnDeletion(boolean value);
 }

@@ -326,4 +326,8 @@ public class EKEventStore extends NSObject {
         @Generated
         void call_requestAccessToEntityTypeCompletion(boolean arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("delegateSources")
+    public native NSArray<? extends EKSource> delegateSources();
 }

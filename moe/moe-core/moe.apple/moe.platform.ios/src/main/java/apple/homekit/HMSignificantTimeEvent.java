@@ -129,6 +129,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

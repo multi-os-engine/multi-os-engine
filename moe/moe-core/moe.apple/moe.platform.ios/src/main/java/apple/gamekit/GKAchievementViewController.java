@@ -177,7 +177,7 @@ public class GKAchievementViewController extends GKGameCenterViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievementViewController initWithCoder(NSCoder aDecoder);
+    public native GKAchievementViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

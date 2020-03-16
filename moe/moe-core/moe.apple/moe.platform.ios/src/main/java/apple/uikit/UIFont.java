@@ -277,4 +277,8 @@ public class UIFont extends NSObject implements NSCopying {
     @Selector("xHeight")
     @NFloat
     public native double xHeight();
+
+    @Generated
+    @Selector("monospacedSystemFontOfSize:weight:")
+    public static native UIFont monospacedSystemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
 }

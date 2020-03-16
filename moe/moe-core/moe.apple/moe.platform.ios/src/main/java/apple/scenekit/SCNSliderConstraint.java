@@ -102,7 +102,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNSliderConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNSliderConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

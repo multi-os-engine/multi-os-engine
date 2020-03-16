@@ -28,4 +28,7 @@ public final class UIActivityIndicatorViewStyle {
     @Generated
     private UIActivityIndicatorViewStyle() {
     }
+
+    @Generated @NInt public static final long Medium = 0x0000000000000064L;
+    @Generated @NInt public static final long Large = 0x0000000000000065L;
 }

@@ -90,7 +90,7 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("entity")
@@ -107,7 +107,7 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchIndexDescription initWithCoder(NSCoder aDecoder);
+    public native NSFetchIndexDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithName:elements:")

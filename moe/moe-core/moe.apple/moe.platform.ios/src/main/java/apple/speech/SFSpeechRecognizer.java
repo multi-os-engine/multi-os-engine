@@ -247,4 +247,12 @@ public class SFSpeechRecognizer extends NSObject {
         @Generated
         void call_requestAuthorization(@NInt long arg0);
     }
+
+    @Generated
+    @Selector("setSupportsOnDeviceRecognition:")
+    public native void setSupportsOnDeviceRecognition(boolean value);
+
+    @Generated
+    @Selector("supportsOnDeviceRecognition")
+    public native boolean supportsOnDeviceRecognition();
 }

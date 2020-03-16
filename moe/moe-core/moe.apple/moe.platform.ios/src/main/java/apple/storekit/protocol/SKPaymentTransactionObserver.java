@@ -76,4 +76,11 @@ public interface SKPaymentTransactionObserver {
             SKProduct product) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentQueueDidChangeStorefront:")
+    default void paymentQueueDidChangeStorefront(SKPaymentQueue queue) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

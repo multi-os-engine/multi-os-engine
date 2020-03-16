@@ -171,7 +171,7 @@ public class CMPedometerEvent extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -179,7 +179,7 @@ public class CMPedometerEvent extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMPedometerEvent initWithCoder(NSCoder aDecoder);
+    public native CMPedometerEvent initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

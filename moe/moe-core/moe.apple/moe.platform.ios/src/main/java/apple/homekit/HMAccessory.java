@@ -268,4 +268,8 @@ public class HMAccessory extends NSObject {
     @Generated
     @Selector("profiles")
     public native NSArray<? extends HMAccessoryProfile> profiles();
+
+    @Generated
+    @Selector("supportsIdentify")
+    public native boolean supportsIdentify();
 }

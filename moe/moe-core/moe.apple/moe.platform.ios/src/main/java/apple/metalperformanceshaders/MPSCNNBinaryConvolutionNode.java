@@ -16,6 +16,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -160,4 +161,18 @@ public class MPSCNNBinaryConvolutionNode extends MPSCNNConvolutionNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithSource:weights:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
+    public native MPSCNNBinaryConvolutionNode initWithSourceWeightsOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
+            MPSNNImageNode sourceNode, @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
+            ConstFloatPtr outputBiasTerms, ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms,
+            ConstFloatPtr inputScaleTerms, @NUInt long type, @NUInt long flags);
+
+    @Generated
+    @Selector("nodeWithSource:weights:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
+    public static native MPSCNNBinaryConvolutionNode nodeWithSourceWeightsOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
+            MPSNNImageNode sourceNode, @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
+            ConstFloatPtr outputBiasTerms, ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms,
+            ConstFloatPtr inputScaleTerms, @NUInt long type, @NUInt long flags);
 }

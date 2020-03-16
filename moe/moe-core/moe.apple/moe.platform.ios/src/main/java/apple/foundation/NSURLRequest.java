@@ -209,7 +209,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -217,7 +217,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLRequest initWithCoder(NSCoder aDecoder);
+    public native NSURLRequest initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithURL:")
@@ -232,6 +232,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Selector("mainDocumentURL")
     public native NSURL mainDocumentURL();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -255,4 +256,12 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Generated
     @Selector("valueForHTTPHeaderField:")
     public native String valueForHTTPHeaderField(String field);
+
+    @Generated
+    @Selector("allowsConstrainedNetworkAccess")
+    public native boolean allowsConstrainedNetworkAccess();
+
+    @Generated
+    @Selector("allowsExpensiveNetworkAccess")
+    public native boolean allowsExpensiveNetworkAccess();
 }

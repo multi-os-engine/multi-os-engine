@@ -21,7 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,6 +39,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKPreferences extends NSObject implements NSCoding {
+public class WKPreferences extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -155,7 +156,7 @@ public class WKPreferences extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -163,7 +164,7 @@ public class WKPreferences extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native WKPreferences initWithCoder(NSCoder aDecoder);
+    public native WKPreferences initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("javaScriptCanOpenWindowsAutomatically")
@@ -189,4 +190,38 @@ public class WKPreferences extends NSObject implements NSCoding {
     @Generated
     @Selector("setMinimumFontSize:")
     public native void setMinimumFontSize(@NFloat double value);
+
+    @Generated
+    @Selector("isFraudulentWebsiteWarningEnabled")
+    public native boolean isFraudulentWebsiteWarningEnabled();
+
+    @Generated
+    @Selector("javaEnabled")
+    public native boolean javaEnabled();
+
+    @Generated
+    @Selector("plugInsEnabled")
+    public native boolean plugInsEnabled();
+
+    @Generated
+    @Selector("setFraudulentWebsiteWarningEnabled:")
+    public native void setFraudulentWebsiteWarningEnabled(boolean value);
+
+    @Generated
+    @Selector("setJavaEnabled:")
+    public native void setJavaEnabled(boolean value);
+
+    @Generated
+    @Selector("setPlugInsEnabled:")
+    public native void setPlugInsEnabled(boolean value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

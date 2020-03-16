@@ -6,7 +6,6 @@ import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -31,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIDragPreviewTarget extends NSObject implements NSCopying {
+public class UIDragPreviewTarget extends UIPreviewTarget {
     static {
         NatJ.register();
     }
@@ -70,27 +69,12 @@ public class UIDragPreviewTarget extends NSObject implements NSCopying {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     @Generated
-    @Selector("center")
-    @ByValue
-    public native CGPoint center();
-
-    @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("container")
-    public native UIView container();
-
-    @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -160,11 +144,6 @@ public class UIDragPreviewTarget extends NSObject implements NSCopying {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
-
-    @Generated
-    @Selector("transform")
-    @ByValue
-    public native CGAffineTransform transform();
 
     @Generated
     @Selector("version")

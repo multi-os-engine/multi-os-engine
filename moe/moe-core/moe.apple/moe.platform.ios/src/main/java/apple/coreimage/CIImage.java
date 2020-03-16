@@ -18,6 +18,8 @@ package apple.coreimage;
 
 import apple.NSObject;
 import apple.avfoundation.AVDepthData;
+import apple.avfoundation.AVPortraitEffectsMatte;
+import apple.avfoundation.AVSemanticSegmentationMatte;
 import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coregraphics.opaque.IOSurfaceRef;
@@ -34,6 +36,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.imageio.opaque.CGImageSourceRef;
 import apple.metal.protocol.MTLTexture;
 import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -267,7 +270,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("extent")
@@ -370,7 +373,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIImage initWithCoder(NSCoder aDecoder);
+    public native CIImage initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithColor:")
@@ -398,7 +401,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithImage:options:")
-    public native CIImage initWithImageOptions(UIImage image, NSDictionary<?, ?> options);
+    public native CIImage initWithImageOptions(UIImage image, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithImageProvider:size::format:colorSpace:options:")
@@ -478,4 +481,127 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("initWithIOSurface:options:")
     public native CIImage initWithIOSurfaceOptions(IOSurfaceRef surface, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("blackImage")
+    public static native CIImage blackImage();
+
+    @Generated
+    @Selector("blueImage")
+    public static native CIImage blueImage();
+
+    @Generated
+    @Selector("clearImage")
+    public static native CIImage clearImage();
+
+    @Generated
+    @Selector("cyanImage")
+    public static native CIImage cyanImage();
+
+    @Generated
+    @Selector("grayImage")
+    public static native CIImage grayImage();
+
+    @Generated
+    @Selector("greenImage")
+    public static native CIImage greenImage();
+
+    @Generated
+    @Selector("imageByApplyingTransform:highQualityDownsample:")
+    public native CIImage imageByApplyingTransformHighQualityDownsample(@ByValue CGAffineTransform matrix,
+            boolean highQualityDownsample);
+
+    @Generated
+    @Selector("imageByInsertingIntermediate")
+    public native CIImage imageByInsertingIntermediate();
+
+    @Generated
+    @Selector("imageByInsertingIntermediate:")
+    public native CIImage imageByInsertingIntermediate(boolean cache);
+
+    @Generated
+    @Selector("imageWithCGImageSource:index:options:")
+    public static native CIImage imageWithCGImageSourceIndexOptions(CGImageSourceRef source, @NUInt long index,
+            NSDictionary<String, ?> dict);
+
+    @Generated
+    @Selector("imageWithDepthData:")
+    public static native CIImage imageWithDepthData(AVDepthData data);
+
+    @Generated
+    @Selector("imageWithDepthData:options:")
+    public static native CIImage imageWithDepthDataOptions(AVDepthData data, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithPortaitEffectsMatte:")
+    public static native CIImage imageWithPortaitEffectsMatte(AVPortraitEffectsMatte matte);
+
+    @Generated
+    @Selector("imageWithPortaitEffectsMatte:options:")
+    public static native CIImage imageWithPortaitEffectsMatteOptions(AVPortraitEffectsMatte matte,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("imageWithSemanticSegmentationMatte:")
+    public static native CIImage imageWithSemanticSegmentationMatte(AVSemanticSegmentationMatte matte);
+
+    @Generated
+    @Selector("imageWithSemanticSegmentationMatte:options:")
+    public static native CIImage imageWithSemanticSegmentationMatteOptions(AVSemanticSegmentationMatte matte,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithCGImageSource:index:options:")
+    public native CIImage initWithCGImageSourceIndexOptions(CGImageSourceRef source, @NUInt long index,
+            NSDictionary<String, ?> dict);
+
+    @Generated
+    @Selector("initWithDepthData:")
+    public native CIImage initWithDepthData(AVDepthData data);
+
+    @Generated
+    @Selector("initWithDepthData:options:")
+    public native CIImage initWithDepthDataOptions(AVDepthData data, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithPortaitEffectsMatte:")
+    public native CIImage initWithPortaitEffectsMatte(AVPortraitEffectsMatte matte);
+
+    @Generated
+    @Selector("initWithPortaitEffectsMatte:options:")
+    public native CIImage initWithPortaitEffectsMatteOptions(AVPortraitEffectsMatte matte,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithSemanticSegmentationMatte:")
+    public native CIImage initWithSemanticSegmentationMatte(AVSemanticSegmentationMatte matte);
+
+    @Generated
+    @Selector("initWithSemanticSegmentationMatte:options:")
+    public native CIImage initWithSemanticSegmentationMatteOptions(AVSemanticSegmentationMatte matte,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("magentaImage")
+    public static native CIImage magentaImage();
+
+    @Generated
+    @Selector("portraitEffectsMatte")
+    public native AVPortraitEffectsMatte portraitEffectsMatte();
+
+    @Generated
+    @Selector("redImage")
+    public static native CIImage redImage();
+
+    @Generated
+    @Selector("semanticSegmentationMatte")
+    public native AVSemanticSegmentationMatte semanticSegmentationMatte();
+
+    @Generated
+    @Selector("whiteImage")
+    public static native CIImage whiteImage();
+
+    @Generated
+    @Selector("yellowImage")
+    public static native CIImage yellowImage();
 }

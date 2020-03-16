@@ -361,4 +361,22 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
         @Generated
         void call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler(@NInt long arg0);
     }
+
+    @Generated
+    @Selector("pointSourceInHeadMode")
+    @NInt
+    public native long pointSourceInHeadMode();
+
+    @Generated
+    @Selector("setPointSourceInHeadMode:")
+    public native void setPointSourceInHeadMode(@NInt long value);
+
+    @Generated
+    @Selector("setSourceMode:")
+    public native void setSourceMode(@NInt long value);
+
+    @Generated
+    @Selector("sourceMode")
+    @NInt
+    public native long sourceMode();
 }

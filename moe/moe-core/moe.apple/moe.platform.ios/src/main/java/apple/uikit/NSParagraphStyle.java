@@ -196,7 +196,7 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("firstLineHeadIndent")
@@ -218,7 +218,7 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSParagraphStyle initWithCoder(NSCoder aDecoder);
+    public native NSParagraphStyle initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("lineBreakMode")
@@ -245,6 +245,7 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @NFloat
     public native double minimumLineHeight();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

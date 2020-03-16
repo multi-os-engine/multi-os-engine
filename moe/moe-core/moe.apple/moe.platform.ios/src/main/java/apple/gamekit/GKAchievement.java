@@ -198,7 +198,7 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -210,7 +210,7 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievement initWithCoder(NSCoder aDecoder);
+    public native GKAchievement initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIdentifier:")

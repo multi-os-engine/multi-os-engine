@@ -172,7 +172,7 @@ public class INSendMessageIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSendMessageIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSendMessageIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

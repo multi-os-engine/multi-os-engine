@@ -181,4 +181,17 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("fetchHistoryWithFetchRequest:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fetchHistoryWithFetchRequest(NSFetchRequest<?> fetchRequest);
+
+    @Generated
+    @Selector("fetchRequest")
+    public native NSFetchRequest<?> fetchRequest();
+
+    @Generated
+    @Selector("setFetchRequest:")
+    public native void setFetchRequest(NSFetchRequest<?> value);
 }

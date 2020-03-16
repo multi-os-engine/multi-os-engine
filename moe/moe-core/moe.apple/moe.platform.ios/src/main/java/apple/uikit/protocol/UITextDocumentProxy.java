@@ -17,7 +17,9 @@ limitations under the License.
 package apple.uikit.protocol;
 
 import apple.foundation.NSUUID;
+import apple.foundation.struct.NSRange;
 import apple.uikit.UITextInputMode;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
@@ -54,4 +56,12 @@ public interface UITextDocumentProxy extends UIKeyInput {
     @Generated
     @Selector("selectedText")
     String selectedText();
+
+    @Generated
+    @Selector("setMarkedText:selectedRange:")
+    void setMarkedTextSelectedRange(String markedText, @ByValue NSRange selectedRange);
+
+    @Generated
+    @Selector("unmarkText")
+    void unmarkText();
 }

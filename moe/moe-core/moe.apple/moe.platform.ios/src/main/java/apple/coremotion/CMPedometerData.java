@@ -184,7 +184,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("endDate")
@@ -204,7 +204,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMPedometerData initWithCoder(NSCoder aDecoder);
+    public native CMPedometerData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("numberOfSteps")

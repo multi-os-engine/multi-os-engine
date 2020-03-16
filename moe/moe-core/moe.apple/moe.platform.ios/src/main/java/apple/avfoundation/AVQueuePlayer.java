@@ -202,4 +202,9 @@ public class AVQueuePlayer extends AVPlayer {
     @Generated
     @Selector("removeItem:")
     public native void removeItem(AVPlayerItem item);
+
+    @Generated
+    @Selector("availableHDRModes")
+    @NInt
+    public static native long availableHDRModes();
 }

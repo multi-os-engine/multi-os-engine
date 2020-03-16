@@ -201,7 +201,7 @@ public class SCNPlane extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPlane initWithCoder(NSCoder aDecoder);
+    public native SCNPlane initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setCornerRadius:")

@@ -12,4 +12,6 @@ public final class AVAudioSessionRouteSharingPolicy {
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     @Generated @NUInt public static final long LongForm = 0x0000000000000001L;
     @Generated @NUInt public static final long Independent = 0x0000000000000002L;
+    @Generated @NUInt public static final long LongFormAudio = 0x0000000000000001L;
+    @Generated @NUInt public static final long LongFormVideo = 0x0000000000000003L;
 }

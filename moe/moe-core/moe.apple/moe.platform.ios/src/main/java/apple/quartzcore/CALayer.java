@@ -368,7 +368,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fillMode")
@@ -393,7 +393,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CALayer initWithCoder(NSCoder aDecoder);
+    public native CALayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -542,7 +542,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("replaceSublayer:with:")
-    public native void replaceSublayerWith(CALayer layer, CALayer layer2);
+    public native void replaceSublayerWith(CALayer oldLayer, CALayer newLayer);
 
     @Generated
     @Selector("scrollPoint:")
@@ -876,4 +876,17 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurve")
+    public native String cornerCurve();
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
+
+    @Generated
+    @Selector("setCornerCurve:")
+    public native void setCornerCurve(String value);
 }

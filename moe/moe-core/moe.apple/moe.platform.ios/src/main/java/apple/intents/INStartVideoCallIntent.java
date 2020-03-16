@@ -166,7 +166,7 @@ public class INStartVideoCallIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartVideoCallIntent initWithCoder(NSCoder aDecoder);
+    public native INStartVideoCallIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContacts:")

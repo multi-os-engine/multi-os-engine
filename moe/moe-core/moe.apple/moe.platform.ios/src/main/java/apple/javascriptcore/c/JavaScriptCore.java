@@ -563,4 +563,37 @@ public final class JavaScriptCore {
         @Generated
         void call_JSObjectMakeArrayBufferWithBytesNoCopy(VoidPtr arg0, VoidPtr arg1);
     }
+
+    @Generated
+    @CFunction
+    public static native boolean JSValueIsSymbol(JSContextRef ctx, JSValueRef value);
+
+    @Generated
+    @CFunction
+    public static native JSValueRef JSValueMakeSymbol(JSContextRef ctx, JSStringRef description);
+
+    @Generated
+    @CFunction
+    public static native JSObjectRef JSObjectMakeDeferredPromise(JSContextRef ctx, Ptr<JSObjectRef> resolve,
+            Ptr<JSObjectRef> reject, Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native boolean JSObjectHasPropertyForKey(JSContextRef ctx, JSObjectRef object, JSValueRef propertyKey,
+            Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native JSValueRef JSObjectGetPropertyForKey(JSContextRef ctx, JSObjectRef object,
+            JSValueRef propertyKey, Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native void JSObjectSetPropertyForKey(JSContextRef ctx, JSObjectRef object, JSValueRef propertyKey,
+            JSValueRef value, int attributes, Ptr<JSValueRef> exception);
+
+    @Generated
+    @CFunction
+    public static native boolean JSObjectDeletePropertyForKey(JSContextRef ctx, JSObjectRef object,
+            JSValueRef propertyKey, Ptr<JSValueRef> exception);
 }

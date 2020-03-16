@@ -162,7 +162,7 @@ public class NEOnDemandRuleConnect extends NEOnDemandRule {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEOnDemandRuleConnect initWithCoder(NSCoder aDecoder);
+    public native NEOnDemandRuleConnect initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

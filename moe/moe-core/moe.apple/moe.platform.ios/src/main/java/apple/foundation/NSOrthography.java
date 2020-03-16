@@ -187,7 +187,7 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -195,7 +195,7 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSOrthography initWithCoder(NSCoder aDecoder);
+    public native NSOrthography initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDominantScript:languageMap:")

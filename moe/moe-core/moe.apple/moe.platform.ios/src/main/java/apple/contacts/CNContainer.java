@@ -179,7 +179,7 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -191,7 +191,7 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContainer initWithCoder(NSCoder aDecoder);
+    public native CNContainer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("name")

@@ -184,7 +184,7 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentPickerExtensionViewController initWithCoder(NSCoder aDecoder);
+    public native UIDocumentPickerExtensionViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

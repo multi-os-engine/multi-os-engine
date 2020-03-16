@@ -173,7 +173,7 @@ public class INSearchCallHistoryIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchCallHistoryIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSearchCallHistoryIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

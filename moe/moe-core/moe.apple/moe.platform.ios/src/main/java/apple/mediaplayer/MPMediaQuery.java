@@ -214,7 +214,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("filterPredicates")
@@ -231,7 +231,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaQuery initWithCoder(NSCoder aDecoder);
+    public native MPMediaQuery initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFilterPredicates:")

@@ -172,7 +172,7 @@ public class INSetAudioSourceInCarIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetAudioSourceInCarIntent initWithCoder(NSCoder aDecoder);
+    public native INSetAudioSourceInCarIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("relativeAudioSourceReference")

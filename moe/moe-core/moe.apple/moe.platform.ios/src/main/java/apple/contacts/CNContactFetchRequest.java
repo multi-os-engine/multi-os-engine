@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CNContactFetchRequest extends NSObject implements NSSecureCoding {
+public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -160,7 +160,7 @@ public class CNContactFetchRequest extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -168,7 +168,7 @@ public class CNContactFetchRequest extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactFetchRequest initWithCoder(NSCoder aDecoder);
+    public native CNContactFetchRequest initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithKeysToFetch:")

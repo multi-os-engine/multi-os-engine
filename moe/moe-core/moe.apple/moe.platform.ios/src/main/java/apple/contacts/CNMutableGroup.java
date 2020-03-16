@@ -171,7 +171,7 @@ public class CNMutableGroup extends CNGroup {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNMutableGroup initWithCoder(NSCoder aDecoder);
+    public native CNMutableGroup initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("name")

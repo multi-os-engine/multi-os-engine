@@ -175,7 +175,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEPacketTunnelNetworkSettings initWithCoder(NSCoder aDecoder);
+    public native NEPacketTunnelNetworkSettings initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTunnelRemoteAddress:")

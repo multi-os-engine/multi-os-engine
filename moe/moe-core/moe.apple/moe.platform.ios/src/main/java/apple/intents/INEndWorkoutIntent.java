@@ -162,7 +162,7 @@ public class INEndWorkoutIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INEndWorkoutIntent initWithCoder(NSCoder aDecoder);
+    public native INEndWorkoutIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithWorkoutName:")

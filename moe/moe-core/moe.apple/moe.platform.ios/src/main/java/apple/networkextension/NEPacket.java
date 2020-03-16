@@ -171,7 +171,7 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -179,7 +179,7 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEPacket initWithCoder(NSCoder aDecoder);
+    public native NEPacket initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithData:protocolFamily:")

@@ -1,6 +1,7 @@
 package apple.coreml;
 
 import apple.NSObject;
+import apple.coreml.protocol.MLBatchProvider;
 import apple.coreml.protocol.MLFeatureProvider;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
@@ -169,4 +170,32 @@ public class MLModel extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("configuration")
+    public native MLModelConfiguration configuration();
+
+    @Generated
+    @Selector("modelWithContentsOfURL:configuration:error:")
+    public static native MLModel modelWithContentsOfURLConfigurationError(NSURL url, MLModelConfiguration configuration,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("parameterValueForKey:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object parameterValueForKeyError(MLParameterKey key,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("predictionsFromBatch:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MLBatchProvider predictionsFromBatchError(@Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("predictionsFromBatch:options:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MLBatchProvider predictionsFromBatchOptionsError(
+            @Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch, MLPredictionOptions options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

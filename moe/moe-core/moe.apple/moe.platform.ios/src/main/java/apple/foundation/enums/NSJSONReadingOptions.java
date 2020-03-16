@@ -28,4 +28,6 @@ public final class NSJSONReadingOptions {
     @Generated
     private NSJSONReadingOptions() {
     }
+
+    @Generated @NUInt public static final long FragmentsAllowed = 0x0000000000000004L;
 }

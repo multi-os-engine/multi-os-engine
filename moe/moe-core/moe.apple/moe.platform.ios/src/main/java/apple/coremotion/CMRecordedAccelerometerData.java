@@ -167,7 +167,7 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMRecordedAccelerometerData initWithCoder(NSCoder aDecoder);
+    public native CMRecordedAccelerometerData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("startDate")

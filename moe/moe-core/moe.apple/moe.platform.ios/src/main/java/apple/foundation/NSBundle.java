@@ -305,7 +305,7 @@ public class NSBundle extends NSObject {
     @Generated
     @Selector("loadNibNamed:owner:options:")
     public native NSArray<?> loadNibNamedOwnerOptions(String name, @Mapped(ObjCObjectMapper.class) Object owner,
-            NSDictionary<?, ?> options);
+            NSDictionary<String, ?> options);
 
     @Generated
     @Selector("localizations")

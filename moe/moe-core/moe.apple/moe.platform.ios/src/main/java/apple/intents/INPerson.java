@@ -185,7 +185,7 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("handle")
@@ -206,7 +206,7 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPerson initWithCoder(NSCoder aDecoder);
+    public native INPerson initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
@@ -282,4 +282,10 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Generated
     @Selector("vocabularyIdentifier")
     public native String vocabularyIdentifier();
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:")
+    public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, boolean isMe);
 }

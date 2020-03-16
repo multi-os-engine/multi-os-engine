@@ -270,4 +270,8 @@ public class AVCaptureSession extends NSObject {
     @Generated
     @Selector("usesApplicationAudioSession")
     public native boolean usesApplicationAudioSession();
+
+    @Generated
+    @Selector("connections")
+    public native NSArray<? extends AVCaptureConnection> connections();
 }

@@ -168,7 +168,7 @@ public class UNTimeIntervalNotificationTrigger extends UNNotificationTrigger {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNTimeIntervalNotificationTrigger initWithCoder(NSCoder aDecoder);
+    public native UNTimeIntervalNotificationTrigger initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("nextTriggerDate")

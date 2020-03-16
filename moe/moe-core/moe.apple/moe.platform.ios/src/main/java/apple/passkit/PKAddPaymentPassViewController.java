@@ -181,7 +181,7 @@ public class PKAddPaymentPassViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKAddPaymentPassViewController initWithCoder(NSCoder aDecoder);
+    public native PKAddPaymentPassViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

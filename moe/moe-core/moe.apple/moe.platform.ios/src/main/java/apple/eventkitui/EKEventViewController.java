@@ -190,7 +190,7 @@ public class EKEventViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKEventViewController initWithCoder(NSCoder aDecoder);
+    public native EKEventViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

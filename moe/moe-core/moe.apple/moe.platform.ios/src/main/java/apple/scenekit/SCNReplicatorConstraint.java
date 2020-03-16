@@ -97,7 +97,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNReplicatorConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNReplicatorConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

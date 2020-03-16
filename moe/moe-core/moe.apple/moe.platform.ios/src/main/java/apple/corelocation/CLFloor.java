@@ -166,7 +166,7 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLFloor initWithCoder(NSCoder aDecoder);
+    public native CLFloor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("level")

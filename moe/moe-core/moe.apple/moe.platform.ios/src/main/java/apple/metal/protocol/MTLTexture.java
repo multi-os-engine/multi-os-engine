@@ -18,7 +18,9 @@ package apple.metal.protocol;
 
 import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.foundation.struct.NSRange;
+import apple.metal.MTLSharedTextureHandle;
 import apple.metal.struct.MTLRegion;
+import apple.metal.struct.MTLTextureSwizzleChannels;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -160,4 +162,41 @@ public interface MTLTexture extends MTLResource {
     @Selector("iosurfacePlane")
     @NUInt
     long iosurfacePlane();
+
+    @Generated
+    @Selector("allowGPUOptimizedContents")
+    boolean allowGPUOptimizedContents();
+
+    @Generated
+    @Selector("firstMipmapInTail")
+    @NUInt
+    long firstMipmapInTail();
+
+    @Generated
+    @Selector("isShareable")
+    boolean isShareable();
+
+    @Generated
+    @Selector("isSparse")
+    boolean isSparse();
+
+    @Generated
+    @Selector("newSharedTextureHandle")
+    MTLSharedTextureHandle newSharedTextureHandle();
+
+    @Generated
+    @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object newTextureViewWithPixelFormatTextureTypeLevelsSlicesSwizzle(@NUInt long pixelFormat, @NUInt long textureType,
+            @ByValue NSRange levelRange, @ByValue NSRange sliceRange, @ByValue MTLTextureSwizzleChannels swizzle);
+
+    @Generated
+    @Selector("swizzle")
+    @ByValue
+    MTLTextureSwizzleChannels swizzle();
+
+    @Generated
+    @Selector("tailSizeInBytes")
+    @NUInt
+    long tailSizeInBytes();
 }

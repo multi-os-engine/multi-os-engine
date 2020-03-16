@@ -194,6 +194,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Selector("isSupportedForHome:")
     public static native boolean isSupportedForHome(HMHome home);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

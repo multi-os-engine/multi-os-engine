@@ -186,7 +186,7 @@ public class UISplitViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISplitViewController initWithCoder(NSCoder aDecoder);
+    public native UISplitViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -286,4 +286,13 @@ public class UISplitViewController extends UIViewController {
     @Generated
     @Selector("setPrimaryEdge:")
     public native void setPrimaryEdge(@NInt long value);
+
+    @Generated
+    @Selector("primaryBackgroundStyle")
+    @NInt
+    public native long primaryBackgroundStyle();
+
+    @Generated
+    @Selector("setPrimaryBackgroundStyle:")
+    public native void setPrimaryBackgroundStyle(@NInt long value);
 }

@@ -8,6 +8,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSUUID;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.vision.protocol.VNRequestRevisionProviding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -32,7 +33,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class VNObservation extends NSObject implements NSCopying, NSSecureCoding {
+public class VNObservation extends NSObject implements NSCopying, NSSecureCoding, VNRequestRevisionProviding {
     static {
         NatJ.register();
     }
@@ -98,7 +99,7 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -111,7 +112,7 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNObservation initWithCoder(NSCoder aDecoder);
+    public native VNObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -174,4 +175,9 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("requestRevision")
+    @NUInt
+    public native long requestRevision();
 }

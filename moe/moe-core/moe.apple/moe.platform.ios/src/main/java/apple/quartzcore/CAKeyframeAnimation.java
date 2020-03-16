@@ -186,7 +186,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAKeyframeAnimation initWithCoder(NSCoder aDecoder);
+    public native CAKeyframeAnimation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("keyTimes")

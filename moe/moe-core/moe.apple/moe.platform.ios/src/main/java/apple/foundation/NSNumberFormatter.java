@@ -235,7 +235,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSNumberFormatter initWithCoder(NSCoder aDecoder);
+    public native NSNumberFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("internationalCurrencySymbol")

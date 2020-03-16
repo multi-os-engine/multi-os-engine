@@ -403,7 +403,7 @@ public class MSStickerView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSStickerView initWithCoder(NSCoder aDecoder);
+    public native MSStickerView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -432,4 +432,10 @@ public class MSStickerView extends UIView {
     @Generated
     @Selector("stopAnimating")
     public native void stopAnimating();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

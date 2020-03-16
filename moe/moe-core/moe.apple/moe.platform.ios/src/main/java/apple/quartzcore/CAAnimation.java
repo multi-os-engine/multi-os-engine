@@ -199,7 +199,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fadeInDuration")
@@ -221,7 +221,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAAnimation initWithCoder(NSCoder aDecoder);
+    public native CAAnimation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isRemovedOnCompletion")

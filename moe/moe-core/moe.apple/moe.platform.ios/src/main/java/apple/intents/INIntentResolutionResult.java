@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class INIntentResolutionResult<_ObjectType> extends NSObject {
+public class INIntentResolutionResult extends NSObject {
     static {
         NatJ.register();
     }
@@ -60,7 +60,7 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
     @Generated
     @Owned
     @Selector("alloc")
-    public static native INIntentResolutionResult<?> alloc();
+    public static native INIntentResolutionResult alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -126,7 +126,7 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
     @Generated
     @Selector("needsValue")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_ObjectType> Object needsValue();
+    public static native Object needsValue();
 
     @Generated
     @Owned
@@ -137,7 +137,7 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
     @Generated
     @Selector("notRequired")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_ObjectType> Object notRequired();
+    public static native Object notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,7 +158,7 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
     @Generated
     @Selector("unsupported")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_ObjectType> Object unsupported();
+    public static native Object unsupported();
 
     @Generated
     @Selector("version")
@@ -167,5 +167,16 @@ public class INIntentResolutionResult<_ObjectType> extends NSObject {
 
     @Generated
     @Selector("init")
-    public native INIntentResolutionResult<?> init();
+    public native INIntentResolutionResult init();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

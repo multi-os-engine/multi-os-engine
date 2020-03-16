@@ -22,6 +22,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CKShare extends CKRecord {
+public class CKShare extends CKRecord implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -223,4 +224,8 @@ public class CKShare extends CKRecord {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
 }

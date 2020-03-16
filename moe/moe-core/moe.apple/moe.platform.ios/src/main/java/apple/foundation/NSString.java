@@ -461,7 +461,7 @@ public class NSString extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateLinesUsingBlock:")
@@ -598,7 +598,7 @@ public class NSString extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSString initWithCoder(NSCoder aDecoder);
+    public native NSString initWithCoder(NSCoder coder);
 
     @Generated
     @Deprecated
@@ -766,6 +766,7 @@ public class NSString extends NSObject
     @NUInt
     public native long maximumLengthOfBytesUsingEncoding(@NUInt long enc);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1120,4 +1121,20 @@ public class NSString extends NSObject
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @Variadic()
+    @Selector("deferredLocalizedIntentsStringWithFormat:")
+    public static native String deferredLocalizedIntentsStringWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:")
+    public static native String deferredLocalizedIntentsStringWithFormatFromTable(String format, String table,
+            Object... varargs);
+
+    @Generated
+    @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:arguments:")
+    public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(String format, String table,
+            BytePtr arguments);
 }

@@ -192,7 +192,7 @@ public class UIActivityViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIActivityViewController initWithCoder(NSCoder aDecoder);
+    public native UIActivityViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

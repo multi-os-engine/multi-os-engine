@@ -156,7 +156,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("attachments")
-    public native NSArray<?> attachments();
+    public native NSArray<? extends NSItemProvider> attachments();
 
     @Generated
     @Selector("attributedContentText")
@@ -174,7 +174,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -182,11 +182,11 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSExtensionItem initWithCoder(NSCoder aDecoder);
+    public native NSExtensionItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setAttachments:")
-    public native void setAttachments(NSArray<?> value);
+    public native void setAttachments(NSArray<? extends NSItemProvider> value);
 
     @Generated
     @Selector("setAttributedContentText:")

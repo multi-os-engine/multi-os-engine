@@ -180,4 +180,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     @Generated
     @Selector("processSampleBuffer:withType:")
     public native void processSampleBufferWithType(CMSampleBufferRef sampleBuffer, @NInt long sampleBufferType);
+
+    @Generated
+    @Selector("broadcastAnnotatedWithApplicationInfo:")
+    public native void broadcastAnnotatedWithApplicationInfo(NSDictionary<?, ?> applicationInfo);
 }

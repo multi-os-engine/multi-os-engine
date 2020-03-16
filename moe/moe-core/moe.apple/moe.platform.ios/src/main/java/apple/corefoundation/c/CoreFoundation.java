@@ -3371,18 +3371,6 @@ public final class CoreFoundation {
 
     @Generated
     @CFunction
-    public static native int CFBundleOpenBundleResourceMap(CFBundleRef bundle);
-
-    @Generated
-    @CFunction
-    public static native int CFBundleOpenBundleResourceFiles(CFBundleRef bundle, IntPtr refNum, IntPtr localizedRefNum);
-
-    @Generated
-    @CFunction
-    public static native void CFBundleCloseBundleResourceMap(CFBundleRef bundle, int refNum);
-
-    @Generated
-    @CFunction
     @NUInt
     public static native long CFMessagePortGetTypeID();
 
@@ -5359,4 +5347,72 @@ public final class CoreFoundation {
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeSupportsAccessPermissionsKey();
+
+    @Generated
+    @CVariable()
+    public static native int kCFStreamErrorDomainSOCKS();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertySOCKSProxy();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertySOCKSProxyHost();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertySOCKSProxyPort();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertySOCKSVersion();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamSocketSOCKSVersion4();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamSocketSOCKSVersion5();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertySOCKSUser();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertySOCKSPassword();
+
+    @Generated
+    @CVariable()
+    public static native int kCFStreamErrorDomainSSL();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertySocketSecurityLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamSocketSecurityLevelNone();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamSocketSecurityLevelSSLv2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamSocketSecurityLevelSSLv3();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamSocketSecurityLevelTLSv1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamSocketSecurityLevelNegotiatedSSL();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertyShouldCloseNativeSocket();
 }

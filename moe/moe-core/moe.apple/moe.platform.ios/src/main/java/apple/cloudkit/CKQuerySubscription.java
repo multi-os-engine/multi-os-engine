@@ -167,7 +167,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKQuerySubscription initWithCoder(NSCoder aDecoder);
+    public native CKQuerySubscription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRecordType:predicate:options:")

@@ -179,7 +179,7 @@ public class SFSafariViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFSafariViewController initWithCoder(NSCoder aDecoder);
+    public native SFSafariViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

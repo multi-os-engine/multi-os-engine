@@ -171,7 +171,7 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
@@ -185,7 +185,7 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFormatter initWithCoder(NSCoder aDecoder);
+    public native NSFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isPartialStringValid:newEditingString:errorDescription:")

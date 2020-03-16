@@ -41,4 +41,14 @@ public final class ReplayKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String RPRecordingErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String RPVideoSampleOrientationKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String RPApplicationInfoBundleIdentifierKey();
 }

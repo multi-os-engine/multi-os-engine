@@ -79,11 +79,6 @@ public class INBalanceTypeResolutionResult extends INIntentResolutionResult {
     public static native Object confirmationRequiredWithBalanceTypeToConfirm(@NInt long balanceTypeToConfirm);
 
     @Generated
-    @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
-
-    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
@@ -155,11 +150,6 @@ public class INBalanceTypeResolutionResult extends INIntentResolutionResult {
     public static native Object successWithResolvedBalanceType(@NInt long resolvedBalanceType);
 
     @Generated
-    @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
-
-    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -172,4 +162,15 @@ public class INBalanceTypeResolutionResult extends INIntentResolutionResult {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

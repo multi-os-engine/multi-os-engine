@@ -29,4 +29,6 @@ public final class NEVPNIKEv2CertificateType {
     @Generated
     private NEVPNIKEv2CertificateType() {
     }
+
+    @Generated @NInt public static final long Ed25519 = 0x0000000000000005L;
 }

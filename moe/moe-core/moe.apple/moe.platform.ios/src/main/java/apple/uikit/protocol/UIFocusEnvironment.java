@@ -22,11 +22,13 @@ import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("UIKit")
@@ -60,4 +62,14 @@ public interface UIFocusEnvironment {
     @Generated
     @Selector("updateFocusIfNeeded")
     void updateFocusIfNeeded();
+
+    @Generated
+    @Selector("focusItemContainer")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object focusItemContainer();
+
+    @Generated
+    @Selector("parentFocusEnvironment")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object parentFocusEnvironment();
 }

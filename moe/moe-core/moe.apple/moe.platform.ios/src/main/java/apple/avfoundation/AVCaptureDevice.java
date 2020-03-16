@@ -23,8 +23,10 @@ import apple.avfoundation.struct.AVCaptureWhiteBalanceTemperatureAndTintValues;
 import apple.coregraphics.struct.CGPoint;
 import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -655,4 +657,62 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("setActiveDepthDataFormat:")
     public native void setActiveDepthDataFormat(AVCaptureDeviceFormat value);
+
+    @Generated
+    @Selector("activeDepthDataMinFrameDuration")
+    @ByValue
+    public native CMTime activeDepthDataMinFrameDuration();
+
+    @Generated
+    @Selector("activeMaxExposureDuration")
+    @ByValue
+    public native CMTime activeMaxExposureDuration();
+
+    @Generated
+    @Selector("constituentDevices")
+    public native NSArray<? extends AVCaptureDevice> constituentDevices();
+
+    @Generated
+    @Selector("extrinsicMatrixFromDevice:toDevice:")
+    public static native NSData extrinsicMatrixFromDeviceToDevice(AVCaptureDevice fromDevice, AVCaptureDevice toDevice);
+
+    @Generated
+    @Selector("isGeometricDistortionCorrectionEnabled")
+    public native boolean isGeometricDistortionCorrectionEnabled();
+
+    @Generated
+    @Selector("isGeometricDistortionCorrectionSupported")
+    public native boolean isGeometricDistortionCorrectionSupported();
+
+    @Generated
+    @Selector("isGlobalToneMappingEnabled")
+    public native boolean isGlobalToneMappingEnabled();
+
+    @Generated
+    @Selector("isVirtualDevice")
+    public native boolean isVirtualDevice();
+
+    @Generated
+    @Selector("setActiveDepthDataMinFrameDuration:")
+    public native void setActiveDepthDataMinFrameDuration(@ByValue CMTime value);
+
+    @Generated
+    @Selector("setActiveMaxExposureDuration:")
+    public native void setActiveMaxExposureDuration(@ByValue CMTime value);
+
+    @Generated
+    @Selector("setGeometricDistortionCorrectionEnabled:")
+    public native void setGeometricDistortionCorrectionEnabled(boolean value);
+
+    @Generated
+    @Selector("setGlobalToneMappingEnabled:")
+    public native void setGlobalToneMappingEnabled(boolean value);
+
+    @Generated
+    @Selector("systemPressureState")
+    public native AVCaptureSystemPressureState systemPressureState();
+
+    @Generated
+    @Selector("virtualDeviceSwitchOverVideoZoomFactors")
+    public native NSArray<? extends NSNumber> virtualDeviceSwitchOverVideoZoomFactors();
 }

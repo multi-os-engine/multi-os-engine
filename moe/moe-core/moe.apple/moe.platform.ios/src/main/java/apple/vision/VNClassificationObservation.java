@@ -98,7 +98,7 @@ public class VNClassificationObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNClassificationObservation initWithCoder(NSCoder aDecoder);
+    public native VNClassificationObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,4 +157,16 @@ public class VNClassificationObservation extends VNObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("hasMinimumPrecision:forRecall:")
+    public native boolean hasMinimumPrecisionForRecall(float minimumPrecision, float recall);
+
+    @Generated
+    @Selector("hasMinimumRecall:forPrecision:")
+    public native boolean hasMinimumRecallForPrecision(float minimumRecall, float precision);
+
+    @Generated
+    @Selector("hasPrecisionRecallCurve")
+    public native boolean hasPrecisionRecallCurve();
 }

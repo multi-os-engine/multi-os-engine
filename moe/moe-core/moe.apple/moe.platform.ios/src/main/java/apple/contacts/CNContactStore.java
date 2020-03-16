@@ -18,6 +18,8 @@ package apple.contacts;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
+import apple.foundation.NSEnumerator;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
@@ -218,4 +220,18 @@ public class CNContactStore extends NSObject {
         @Generated
         void call_requestAccessForEntityTypeCompletionHandler(boolean arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("currentHistoryToken")
+    public native NSData currentHistoryToken();
+
+    @Generated
+    @Selector("enumeratorForChangeHistoryFetchRequest:error:")
+    public native CNFetchResult<NSEnumerator<CNChangeHistoryEvent>> enumeratorForChangeHistoryFetchRequestError(
+            CNChangeHistoryFetchRequest request, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("enumeratorForContactFetchRequest:error:")
+    public native CNFetchResult<NSEnumerator<CNContact>> enumeratorForContactFetchRequestError(
+            CNContactFetchRequest request, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

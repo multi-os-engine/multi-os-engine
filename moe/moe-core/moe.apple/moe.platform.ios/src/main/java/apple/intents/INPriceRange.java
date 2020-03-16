@@ -171,7 +171,7 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -179,7 +179,7 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPriceRange initWithCoder(NSCoder aDecoder);
+    public native INPriceRange initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithMaximumPrice:currencyCode:")

@@ -162,7 +162,7 @@ public class NEOnDemandRuleIgnore extends NEOnDemandRule {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEOnDemandRuleIgnore initWithCoder(NSCoder aDecoder);
+    public native NEOnDemandRuleIgnore initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

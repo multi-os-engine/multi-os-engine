@@ -164,7 +164,7 @@ public class CMMagnetometerData extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMMagnetometerData initWithCoder(NSCoder aDecoder);
+    public native CMMagnetometerData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("magneticField")

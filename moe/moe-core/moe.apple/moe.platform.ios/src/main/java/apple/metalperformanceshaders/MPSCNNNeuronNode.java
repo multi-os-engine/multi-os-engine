@@ -145,4 +145,13 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("c")
+    public native float c();
+
+    @Generated
+    @Selector("nodeWithSource:descriptor:")
+    public static native MPSCNNNeuronNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
+            MPSNNNeuronDescriptor descriptor);
 }

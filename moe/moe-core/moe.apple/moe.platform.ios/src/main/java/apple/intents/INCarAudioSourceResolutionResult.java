@@ -188,4 +188,15 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
     @Selector("successWithResolvedCarAudioSource:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedCarAudioSource(@NInt long resolvedCarAudioSource);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

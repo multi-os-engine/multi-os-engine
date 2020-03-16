@@ -465,7 +465,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("encodingApplications")
@@ -549,7 +549,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     @Generated
     @Selector("initWithCoder:")
-    public native CSSearchableItemAttributeSet initWithCoder(NSCoder aDecoder);
+    public native CSSearchableItemAttributeSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithItemContentType:")

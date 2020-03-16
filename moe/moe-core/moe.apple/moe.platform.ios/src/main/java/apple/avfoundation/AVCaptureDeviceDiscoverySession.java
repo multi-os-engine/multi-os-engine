@@ -162,4 +162,8 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
     @Generated
     @Selector("init")
     public native AVCaptureDeviceDiscoverySession init();
+
+    @Generated
+    @Selector("supportedMultiCamDeviceSets")
+    public native NSArray<? extends NSSet<? extends AVCaptureDevice>> supportedMultiCamDeviceSets();
 }

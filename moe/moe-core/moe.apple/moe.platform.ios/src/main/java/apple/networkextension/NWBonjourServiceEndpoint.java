@@ -170,7 +170,7 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NWBonjourServiceEndpoint initWithCoder(NSCoder aDecoder);
+    public native NWBonjourServiceEndpoint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("name")

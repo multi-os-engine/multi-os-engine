@@ -22,7 +22,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -40,6 +40,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -47,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class WKWebsiteDataStore extends NSObject implements NSCoding {
+public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -168,7 +169,7 @@ public class WKWebsiteDataStore extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fetchDataRecordsOfTypes:completionHandler:")
@@ -181,7 +182,7 @@ public class WKWebsiteDataStore extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native WKWebsiteDataStore initWithCoder(NSCoder aDecoder);
+    public native WKWebsiteDataStore initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isPersistent")
@@ -195,7 +196,7 @@ public class WKWebsiteDataStore extends NSObject implements NSCoding {
 
     @Generated
     @Selector("removeDataOfTypes:modifiedSince:completionHandler:")
-    public native void removeDataOfTypesModifiedSinceCompletionHandler(NSSet<String> websiteDataTypes, NSDate date,
+    public native void removeDataOfTypesModifiedSinceCompletionHandler(NSSet<String> dataTypes, NSDate date,
             @ObjCBlock(name = "call_removeDataOfTypesModifiedSinceCompletionHandler") Block_removeDataOfTypesModifiedSinceCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -222,4 +223,14 @@ public class WKWebsiteDataStore extends NSObject implements NSCoding {
     @Generated
     @Selector("httpCookieStore")
     public native WKHTTPCookieStore httpCookieStore();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

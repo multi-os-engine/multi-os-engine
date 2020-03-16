@@ -211,7 +211,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
 
     @Generated
     @Selector("initWithCoder:")
-    public native SLComposeServiceViewController initWithCoder(NSCoder aDecoder);
+    public native SLComposeServiceViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

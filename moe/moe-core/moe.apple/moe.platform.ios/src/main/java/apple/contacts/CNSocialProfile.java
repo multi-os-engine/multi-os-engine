@@ -174,7 +174,7 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -182,7 +182,7 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNSocialProfile initWithCoder(NSCoder aDecoder);
+    public native CNSocialProfile initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithUrlString:username:userIdentifier:service:")

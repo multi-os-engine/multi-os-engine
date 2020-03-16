@@ -453,4 +453,17 @@ public class AVPlayer extends NSObject {
         @Generated
         void call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler(boolean arg0);
     }
+
+    @Generated
+    @Selector("availableHDRModes")
+    @NInt
+    public static native long availableHDRModes();
+
+    @Generated
+    @Selector("preventsDisplaySleepDuringVideoPlayback")
+    public native boolean preventsDisplaySleepDuringVideoPlayback();
+
+    @Generated
+    @Selector("setPreventsDisplaySleepDuringVideoPlayback:")
+    public native void setPreventsDisplaySleepDuringVideoPlayback(boolean value);
 }

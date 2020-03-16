@@ -32,4 +32,6 @@ public final class CFURLEnumeratorOptions {
     @Generated
     private CFURLEnumeratorOptions() {
     }
+
+    @Generated @NUInt public static final long GenerateRelativePathURLs = 0x0000000000000040L;
 }

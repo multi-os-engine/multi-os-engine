@@ -60,4 +60,5 @@ public final class CKErrorCode {
     }
 
     @Generated @NInt public static final long ServerResponseLost = 0x0000000000000022L;
+    @Generated @NInt public static final long AssetNotAvailable = 0x0000000000000023L;
 }

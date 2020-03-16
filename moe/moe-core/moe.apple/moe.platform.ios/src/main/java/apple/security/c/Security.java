@@ -43,6 +43,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
+import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.CharPtr;
 import org.moe.natj.general.ptr.ConstCharPtr;
@@ -527,7 +528,7 @@ public final class Security {
 
     @Generated
     @CFunction
-    public static native int SSLGetBufferedReadSize(SSLContextRef context, NUIntPtr bufSize);
+    public static native int SSLGetBufferedReadSize(SSLContextRef context, NUIntPtr bufferSize);
 
     @Generated
     @CFunction
@@ -1677,4 +1678,316 @@ public final class Security {
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorVariableIVX963SHA512AESGCM();
+
+    @Generated
+    @CFunction
+    public static native CFStringRef SecCopyErrorMessageString(int status, VoidPtr reserved);
+
+    @Generated
+    @CFunction
+    public static native SecKeyRef SecCertificateCopyKey(SecCertificateRef certificate);
+
+    @Generated
+    @CFunction
+    public static native boolean SecTrustEvaluateWithError(SecTrustRef trust, Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native int SecTrustEvaluateAsyncWithError(SecTrustRef trust, NSObject queue,
+            @ObjCBlock(name = "call_SecTrustEvaluateAsyncWithError") Block_SecTrustEvaluateAsyncWithError result);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_SecTrustEvaluateAsyncWithError {
+        @Generated
+        void call_SecTrustEvaluateAsyncWithError(SecTrustRef arg0, boolean arg1, CFErrorRef arg2);
+    }
+
+    @Generated
+    @CFunction
+    public static native int SecTrustSetSignedCertificateTimestamps(SecTrustRef trust, CFArrayRef sctArray);
+
+    @Generated
+    @CFunction
+    public static native NSObject sec_trust_create(SecTrustRef trust);
+
+    @Generated
+    @CFunction
+    public static native SecTrustRef sec_trust_copy_ref(NSObject trust);
+
+    @Generated
+    @CFunction
+    public static native NSObject sec_identity_create(SecIdentityRef identity);
+
+    @Generated
+    @CFunction
+    public static native NSObject sec_identity_create_with_certificates(SecIdentityRef identity,
+            CFArrayRef certificates);
+
+    @Generated
+    @CFunction
+    public static native boolean sec_identity_access_certificates(NSObject identity,
+            @ObjCBlock(name = "call_sec_identity_access_certificates") Block_sec_identity_access_certificates handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_identity_access_certificates {
+        @Generated
+        void call_sec_identity_access_certificates(NSObject arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native SecIdentityRef sec_identity_copy_ref(NSObject identity);
+
+    @Generated
+    @CFunction
+    public static native CFArrayRef sec_identity_copy_certificates_ref(NSObject identity);
+
+    @Generated
+    @CFunction
+    public static native NSObject sec_certificate_create(SecCertificateRef certificate);
+
+    @Generated
+    @CFunction
+    public static native SecCertificateRef sec_certificate_copy_ref(NSObject certificate);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String sec_protocol_metadata_get_negotiated_protocol(NSObject metadata);
+
+    @Generated
+    @CFunction
+    public static native NSObject sec_protocol_metadata_copy_peer_public_key(NSObject metadata);
+
+    @Generated
+    @CFunction
+    public static native short sec_protocol_metadata_get_negotiated_tls_protocol_version(NSObject metadata);
+
+    @Generated
+    @CFunction
+    public static native int sec_protocol_metadata_get_negotiated_protocol_version(NSObject metadata);
+
+    @Generated
+    @CFunction
+    public static native short sec_protocol_metadata_get_negotiated_tls_ciphersuite(NSObject metadata);
+
+    @Generated
+    @CFunction
+    public static native char sec_protocol_metadata_get_negotiated_ciphersuite(NSObject metadata);
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_metadata_get_early_data_accepted(NSObject metadata);
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_metadata_access_peer_certificate_chain(NSObject metadata,
+            @ObjCBlock(name = "call_sec_protocol_metadata_access_peer_certificate_chain") Block_sec_protocol_metadata_access_peer_certificate_chain handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_metadata_access_peer_certificate_chain {
+        @Generated
+        void call_sec_protocol_metadata_access_peer_certificate_chain(NSObject arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_metadata_access_ocsp_response(NSObject metadata,
+            @ObjCBlock(name = "call_sec_protocol_metadata_access_ocsp_response") Block_sec_protocol_metadata_access_ocsp_response handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_metadata_access_ocsp_response {
+        @Generated
+        void call_sec_protocol_metadata_access_ocsp_response(NSObject arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_metadata_access_supported_signature_algorithms(NSObject metadata,
+            @ObjCBlock(name = "call_sec_protocol_metadata_access_supported_signature_algorithms") Block_sec_protocol_metadata_access_supported_signature_algorithms handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_metadata_access_supported_signature_algorithms {
+        @Generated
+        void call_sec_protocol_metadata_access_supported_signature_algorithms(char arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_metadata_access_distinguished_names(NSObject metadata,
+            @ObjCBlock(name = "call_sec_protocol_metadata_access_distinguished_names") Block_sec_protocol_metadata_access_distinguished_names handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_metadata_access_distinguished_names {
+        @Generated
+        void call_sec_protocol_metadata_access_distinguished_names(NSObject arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_metadata_access_pre_shared_keys(NSObject metadata,
+            @ObjCBlock(name = "call_sec_protocol_metadata_access_pre_shared_keys") Block_sec_protocol_metadata_access_pre_shared_keys handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_metadata_access_pre_shared_keys {
+        @Generated
+        void call_sec_protocol_metadata_access_pre_shared_keys(NSObject arg0, NSObject arg1);
+    }
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String sec_protocol_metadata_get_server_name(NSObject metadata);
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_metadata_peers_are_equal(NSObject metadataA, NSObject metadataB);
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_metadata_challenge_parameters_are_equal(NSObject metadataA,
+            NSObject metadataB);
+
+    @Generated
+    @CFunction
+    public static native NSObject sec_protocol_metadata_create_secret(NSObject metadata, @NUInt long label_len,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
+            @NUInt long exporter_length);
+
+    @Generated
+    @CFunction
+    public static native NSObject sec_protocol_metadata_create_secret_with_context(NSObject metadata,
+            @NUInt long label_len,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
+            @NUInt long context_len,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String context,
+            @NUInt long exporter_length);
+
+    @Generated
+    @CFunction
+    public static native boolean sec_protocol_options_are_equal(NSObject optionsA, NSObject optionsB);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_local_identity(NSObject options, NSObject identity);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_append_tls_ciphersuite(NSObject options, short ciphersuite);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_add_tls_ciphersuite(NSObject options, char ciphersuite);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_append_tls_ciphersuite_group(NSObject options, short group);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_add_tls_ciphersuite_group(NSObject options, int group);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_min_version(NSObject options, int version);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_min_tls_protocol_version(NSObject options, short version);
+
+    @Generated
+    @CFunction
+    public static native short sec_protocol_options_get_default_min_tls_protocol_version();
+
+    @Generated
+    @CFunction
+    public static native short sec_protocol_options_get_default_min_dtls_protocol_version();
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_max_version(NSObject options, int version);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_max_tls_protocol_version(NSObject options, short version);
+
+    @Generated
+    @CFunction
+    public static native short sec_protocol_options_get_default_max_tls_protocol_version();
+
+    @Generated
+    @CFunction
+    public static native short sec_protocol_options_get_default_max_dtls_protocol_version();
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_add_tls_application_protocol(NSObject options,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_protocol);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_server_name(NSObject options,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String server_name);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_diffie_hellman_parameters(NSObject options, NSObject params);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_add_pre_shared_key(NSObject options, NSObject psk,
+            NSObject psk_identity);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_pre_shared_key_identity_hint(NSObject options,
+            NSObject psk_identity_hint);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_tickets_enabled(NSObject options, boolean tickets_enabled);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_is_fallback_attempt(NSObject options,
+            boolean is_fallback_attempt);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_resumption_enabled(NSObject options,
+            boolean resumption_enabled);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_false_start_enabled(NSObject options,
+            boolean false_start_enabled);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_ocsp_enabled(NSObject options, boolean ocsp_enabled);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_sct_enabled(NSObject options, boolean sct_enabled);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_tls_renegotiation_enabled(NSObject options,
+            boolean renegotiation_enabled);
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_peer_authentication_required(NSObject options,
+            boolean peer_authentication_required);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kSecUseDataProtectionKeychain();
 }

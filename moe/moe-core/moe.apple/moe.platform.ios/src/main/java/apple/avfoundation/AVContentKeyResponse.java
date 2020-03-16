@@ -148,4 +148,9 @@ public class AVContentKeyResponse extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("contentKeyResponseWithAuthorizationTokenData:")
+    public static native AVContentKeyResponse contentKeyResponseWithAuthorizationTokenData(
+            NSData authorizationTokenData);
 }

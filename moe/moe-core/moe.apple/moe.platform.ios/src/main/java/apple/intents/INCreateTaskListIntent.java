@@ -98,7 +98,7 @@ public class INCreateTaskListIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCreateTaskListIntent initWithCoder(NSCoder aDecoder);
+    public native INCreateTaskListIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:taskTitles:groupName:")

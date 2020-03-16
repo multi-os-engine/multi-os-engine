@@ -128,6 +128,7 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

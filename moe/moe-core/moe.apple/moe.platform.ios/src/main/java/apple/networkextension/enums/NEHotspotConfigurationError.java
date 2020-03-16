@@ -24,4 +24,5 @@ public final class NEHotspotConfigurationError {
     @Generated @NInt public static final long JoinOnceNotSupported = 0x000000000000000CL;
     @Generated @NInt public static final long AlreadyAssociated = 0x000000000000000DL;
     @Generated @NInt public static final long ApplicationIsNotInForeground = 0x000000000000000EL;
+    @Generated @NInt public static final long InvalidSSIDPrefix = 0x000000000000000FL;
 }

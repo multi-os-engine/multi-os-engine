@@ -17,7 +17,7 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -36,6 +36,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -43,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSFileWrapper extends NSObject implements NSCoding {
+public class NSFileWrapper extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -160,7 +161,7 @@ public class NSFileWrapper extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fileAttributes")
@@ -265,4 +266,14 @@ public class NSFileWrapper extends NSObject implements NSCoding {
     @Selector("writeToURL:options:originalContentsURL:error:")
     public native boolean writeToURLOptionsOriginalContentsURLError(NSURL url, @NUInt long options,
             NSURL originalContentsURL, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

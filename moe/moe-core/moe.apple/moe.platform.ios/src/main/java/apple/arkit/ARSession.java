@@ -3,8 +3,10 @@ package apple.arkit;
 import apple.NSObject;
 import apple.arkit.protocol.ARSessionDelegate;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSUUID;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -20,6 +22,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -195,4 +198,40 @@ public class ARSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("getCurrentWorldMapWithCompletionHandler:")
+    public native void getCurrentWorldMapWithCompletionHandler(
+            @ObjCBlock(name = "call_getCurrentWorldMapWithCompletionHandler") Block_getCurrentWorldMapWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getCurrentWorldMapWithCompletionHandler {
+        @Generated
+        void call_getCurrentWorldMapWithCompletionHandler(ARWorldMap arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("identifier")
+    public native NSUUID identifier();
+
+    @Generated
+    @Selector("raycast:")
+    public native NSArray<? extends ARRaycastResult> raycast(ARRaycastQuery query);
+
+    @Generated
+    @Selector("trackedRaycast:updateHandler:")
+    public native ARTrackedRaycast trackedRaycastUpdateHandler(ARRaycastQuery query,
+            @ObjCBlock(name = "call_trackedRaycastUpdateHandler") Block_trackedRaycastUpdateHandler updateHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_trackedRaycastUpdateHandler {
+        @Generated
+        void call_trackedRaycastUpdateHandler(NSArray<? extends ARRaycastResult> arg0);
+    }
+
+    @Generated
+    @Selector("updateWithCollaborationData:")
+    public native void updateWithCollaborationData(ARCollaborationData collaborationData);
 }

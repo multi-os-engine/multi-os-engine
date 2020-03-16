@@ -214,7 +214,7 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableSet<?> initWithCoder(NSCoder aDecoder);
+    public native NSMutableSet<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Variadic()

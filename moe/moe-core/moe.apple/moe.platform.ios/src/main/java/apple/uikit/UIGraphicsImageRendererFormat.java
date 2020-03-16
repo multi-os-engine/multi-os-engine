@@ -193,4 +193,13 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     @Selector("preferredFormat")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object preferredFormat();
+
+    @Generated
+    @Selector("preferredRange")
+    @NInt
+    public native long preferredRange();
+
+    @Generated
+    @Selector("setPreferredRange:")
+    public native void setPreferredRange(@NInt long value);
 }

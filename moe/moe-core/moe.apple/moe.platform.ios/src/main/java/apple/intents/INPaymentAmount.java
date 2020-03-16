@@ -102,7 +102,7 @@ public class INPaymentAmount extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -119,7 +119,7 @@ public class INPaymentAmount extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPaymentAmount initWithCoder(NSCoder aDecoder);
+    public native INPaymentAmount initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

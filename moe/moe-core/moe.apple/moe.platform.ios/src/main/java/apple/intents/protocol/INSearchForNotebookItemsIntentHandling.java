@@ -9,7 +9,9 @@ import apple.intents.INSearchForNotebookItemsIntent;
 import apple.intents.INSearchForNotebookItemsIntentResponse;
 import apple.intents.INSpeakableStringResolutionResult;
 import apple.intents.INStringResolutionResult;
+import apple.intents.INTaskPriorityResolutionResult;
 import apple.intents.INTaskStatusResolutionResult;
+import apple.intents.INTemporalEventTriggerTypeOptionsResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
@@ -170,5 +172,37 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveTitleForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveTitleForSearchForNotebookItemsWithCompletion(INSpeakableStringResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveTaskPriorityForSearchForNotebookItems:withCompletion:")
+    default void resolveTaskPriorityForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
+            @ObjCBlock(name = "call_resolveTaskPriorityForSearchForNotebookItemsWithCompletion") Block_resolveTaskPriorityForSearchForNotebookItemsWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveTaskPriorityForSearchForNotebookItemsWithCompletion {
+        @Generated
+        void call_resolveTaskPriorityForSearchForNotebookItemsWithCompletion(INTaskPriorityResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveTemporalEventTriggerTypesForSearchForNotebookItems:withCompletion:")
+    default void resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion(
+            INSearchForNotebookItemsIntent intent,
+            @ObjCBlock(name = "call_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion") Block_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion {
+        @Generated
+        void call_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion(
+                INTemporalEventTriggerTypeOptionsResolutionResult arg0);
     }
 }

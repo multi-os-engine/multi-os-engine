@@ -240,7 +240,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fillMode")
@@ -260,7 +260,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAEmitterCell initWithCoder(NSCoder aDecoder);
+    public native CAEmitterCell initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isEnabled")

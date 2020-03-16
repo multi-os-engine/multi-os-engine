@@ -36,6 +36,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -209,4 +210,51 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Generated
     @Selector("setAttributedName:")
     public native void setAttributedName(NSAttributedString value);
+
+    @Generated
+    @Selector("actionHandler")
+    @ObjCBlock(name = "call_actionHandler_ret")
+    public native Block_actionHandler_ret actionHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_actionHandler_ret {
+        @Generated
+        boolean call_actionHandler_ret(UIAccessibilityCustomAction arg0);
+    }
+
+    @Generated
+    @Selector("initWithAttributedName:actionHandler:")
+    public native UIAccessibilityCustomAction initWithAttributedNameActionHandler(NSAttributedString attributedName,
+            @ObjCBlock(name = "call_initWithAttributedNameActionHandler") Block_initWithAttributedNameActionHandler actionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithAttributedNameActionHandler {
+        @Generated
+        boolean call_initWithAttributedNameActionHandler(UIAccessibilityCustomAction arg0);
+    }
+
+    @Generated
+    @Selector("initWithName:actionHandler:")
+    public native UIAccessibilityCustomAction initWithNameActionHandler(String name,
+            @ObjCBlock(name = "call_initWithNameActionHandler") Block_initWithNameActionHandler actionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithNameActionHandler {
+        @Generated
+        boolean call_initWithNameActionHandler(UIAccessibilityCustomAction arg0);
+    }
+
+    @Generated
+    @Selector("setActionHandler:")
+    public native void setActionHandler(@ObjCBlock(name = "call_setActionHandler") Block_setActionHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setActionHandler {
+        @Generated
+        boolean call_setActionHandler(UIAccessibilityCustomAction arg0);
+    }
 }

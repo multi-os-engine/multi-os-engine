@@ -163,7 +163,7 @@ public class NSEnergyFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSEnergyFormatter initWithCoder(NSCoder aDecoder);
+    public native NSEnergyFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isForFoodEnergyUse")

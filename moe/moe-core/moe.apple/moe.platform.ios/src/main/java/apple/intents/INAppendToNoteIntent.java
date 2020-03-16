@@ -98,7 +98,7 @@ public class INAppendToNoteIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INAppendToNoteIntent initWithCoder(NSCoder aDecoder);
+    public native INAppendToNoteIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTargetNote:content:")

@@ -108,7 +108,7 @@ public class INAddTasksIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INAddTasksIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INAddTasksIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

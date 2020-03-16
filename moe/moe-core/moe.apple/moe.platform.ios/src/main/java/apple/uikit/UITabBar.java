@@ -425,7 +425,7 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITabBar initWithCoder(NSCoder aDecoder);
+    public native UITabBar initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -579,4 +579,18 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     @Generated
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("setStandardAppearance:")
+    public native void setStandardAppearance(UITabBarAppearance value);
+
+    @Generated
+    @Selector("standardAppearance")
+    public native UITabBarAppearance standardAppearance();
 }

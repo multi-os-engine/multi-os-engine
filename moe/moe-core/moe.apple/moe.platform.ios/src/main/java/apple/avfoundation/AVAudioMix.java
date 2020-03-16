@@ -166,6 +166,7 @@ public class AVAudioMix extends NSObject implements NSCopying, NSMutableCopying 
     @Selector("inputParameters")
     public native NSArray<? extends AVAudioMixInputParameters> inputParameters();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

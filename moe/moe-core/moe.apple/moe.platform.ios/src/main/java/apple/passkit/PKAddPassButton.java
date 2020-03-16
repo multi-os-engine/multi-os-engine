@@ -24,6 +24,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UIButton;
+import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -417,7 +418,7 @@ public class PKAddPassButton extends UIButton {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKAddPassButton initWithCoder(NSCoder aDecoder);
+    public native PKAddPassButton initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -426,4 +427,16 @@ public class PKAddPassButton extends UIButton {
     @Generated
     @Selector("setAddPassButtonStyle:")
     public native void setAddPassButtonStyle(@NInt long value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("systemButtonWithImage:target:action:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemButtonWithImageTargetAction(UIImage image,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
 }

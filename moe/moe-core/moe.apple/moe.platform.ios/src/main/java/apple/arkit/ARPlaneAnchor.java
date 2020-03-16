@@ -2,6 +2,7 @@ package apple.arkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -20,6 +21,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -142,4 +144,40 @@ public class ARPlaneAnchor extends ARAnchor {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("classification")
+    @NInt
+    public native long classification();
+
+    @Generated
+    @Selector("classificationStatus")
+    @NInt
+    public native long classificationStatus();
+
+    @Generated
+    @Selector("geometry")
+    public native ARPlaneGeometry geometry();
+
+    @Generated
+    @Selector("initWithAnchor:")
+    public native ARPlaneAnchor initWithAnchor(ARAnchor anchor);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ARPlaneAnchor initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("isClassificationSupported")
+    public static native boolean isClassificationSupported();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

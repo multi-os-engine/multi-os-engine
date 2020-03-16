@@ -166,7 +166,7 @@ public class UIVisualEffect extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class UIVisualEffect extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIVisualEffect initWithCoder(NSCoder aDecoder);
+    public native UIVisualEffect initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

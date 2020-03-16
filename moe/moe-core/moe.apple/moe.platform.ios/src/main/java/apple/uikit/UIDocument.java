@@ -31,6 +31,7 @@ import apple.foundation.NSUndoManager;
 import apple.foundation.NSUserActivity;
 import apple.foundation.protocol.NSFilePresenter;
 import apple.foundation.protocol.NSProgressReporting;
+import apple.uikit.protocol.UIUserActivityRestoring;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -58,7 +59,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIDocument extends NSObject implements NSFilePresenter, NSProgressReporting {
+public class UIDocument extends NSObject implements NSFilePresenter, NSProgressReporting, UIUserActivityRestoring {
     static {
         NatJ.register();
     }

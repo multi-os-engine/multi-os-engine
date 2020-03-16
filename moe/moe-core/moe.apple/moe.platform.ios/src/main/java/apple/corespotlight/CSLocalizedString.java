@@ -317,7 +317,7 @@ public class CSLocalizedString extends NSString {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CSLocalizedString initWithCoder(NSCoder aDecoder);
+    public native CSLocalizedString initWithCoder(NSCoder coder);
 
     @Generated
     @Deprecated
@@ -442,4 +442,20 @@ public class CSLocalizedString extends NSString {
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
+
+    @Generated
+    @Variadic()
+    @Selector("deferredLocalizedIntentsStringWithFormat:")
+    public static native String deferredLocalizedIntentsStringWithFormat(String format, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:")
+    public static native String deferredLocalizedIntentsStringWithFormatFromTable(String format, String table,
+            Object... varargs);
+
+    @Generated
+    @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:arguments:")
+    public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(String format, String table,
+            BytePtr arguments);
 }

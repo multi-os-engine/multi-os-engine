@@ -102,7 +102,7 @@ public class VNHorizonObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNHorizonObservation initWithCoder(NSCoder aDecoder);
+    public native VNHorizonObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

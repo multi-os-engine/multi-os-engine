@@ -181,7 +181,7 @@ public class MPMediaPickerController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaPickerController initWithCoder(NSCoder aDecoder);
+    public native MPMediaPickerController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithMediaTypes:")

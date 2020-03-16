@@ -175,7 +175,7 @@ public class MPMediaItemCollection extends MPMediaEntity {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaItemCollection initWithCoder(NSCoder aDecoder);
+    public native MPMediaItemCollection initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithItems:")

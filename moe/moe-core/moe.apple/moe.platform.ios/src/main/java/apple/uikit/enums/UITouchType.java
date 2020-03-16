@@ -28,4 +28,6 @@ public final class UITouchType {
     @Generated
     private UITouchType() {
     }
+
+    @Generated @NInt public static final long Pencil = 0x0000000000000002L;
 }

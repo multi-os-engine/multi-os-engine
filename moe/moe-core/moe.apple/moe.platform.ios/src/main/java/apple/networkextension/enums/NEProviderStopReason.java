@@ -40,4 +40,7 @@ public final class NEProviderStopReason {
     @Generated
     private NEProviderStopReason() {
     }
+
+    @Generated @NInt public static final long Sleep = 0x000000000000000FL;
+    @Generated @NInt public static final long AppUpdate = 0x0000000000000010L;
 }

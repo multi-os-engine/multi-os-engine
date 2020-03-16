@@ -3,6 +3,7 @@ package apple.arkit;
 import apple.NSObject;
 import apple.arkit.protocol.ARTrackable;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
@@ -23,6 +24,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -152,4 +154,22 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithAnchor:")
+    public native ARFaceAnchor initWithAnchor(ARAnchor anchor);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native ARFaceAnchor initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

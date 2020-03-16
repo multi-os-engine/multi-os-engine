@@ -30,4 +30,5 @@ public final class UNNotificationCategoryOptions {
 
     @Generated @NUInt public static final long HiddenPreviewsShowTitle = 0x0000000000000004L;
     @Generated @NUInt public static final long HiddenPreviewsShowSubtitle = 0x0000000000000008L;
+    @Generated @NUInt public static final long AllowAnnouncement = 0x0000000000000010L;
 }

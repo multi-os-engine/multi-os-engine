@@ -270,6 +270,7 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @Selector("locale")
     public native NSLocale locale();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

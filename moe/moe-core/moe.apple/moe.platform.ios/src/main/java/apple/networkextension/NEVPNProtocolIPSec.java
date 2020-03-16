@@ -168,7 +168,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNProtocolIPSec initWithCoder(NSCoder aDecoder);
+    public native NEVPNProtocolIPSec initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("localIdentifier")

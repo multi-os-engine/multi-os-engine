@@ -102,7 +102,7 @@ public class INCreateNoteIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INCreateNoteIntent initWithCoder(NSCoder aDecoder);
+    public native INCreateNoteIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:content:groupName:")

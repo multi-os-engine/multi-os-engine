@@ -18,6 +18,7 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -167,4 +168,8 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
     @Generated
     @Selector("setEdges:")
     public native void setEdges(@NUInt long value);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIScreenEdgePanGestureRecognizer initWithCoder(NSCoder coder);
 }

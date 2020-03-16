@@ -173,7 +173,7 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKTurnBasedMatchmakerViewController initWithCoder(NSCoder aDecoder);
+    public native GKTurnBasedMatchmakerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithMatchRequest:")

@@ -37,4 +37,6 @@ public final class NEVPNIKEv2DiffieHellmanGroup {
     @Generated
     private NEVPNIKEv2DiffieHellmanGroup() {
     }
+
+    @Generated @NInt public static final long Group31 = 0x000000000000001FL;
 }

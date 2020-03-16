@@ -19,6 +19,7 @@ package apple.foundation.protocol;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ObjCRuntime;
@@ -31,6 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSMutableCopying")
 public interface NSMutableCopying {
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

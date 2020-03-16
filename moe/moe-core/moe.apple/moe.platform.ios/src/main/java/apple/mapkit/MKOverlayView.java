@@ -415,7 +415,7 @@ public class MKOverlayView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKOverlayView initWithCoder(NSCoder aDecoder);
+    public native MKOverlayView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -465,4 +465,10 @@ public class MKOverlayView extends UIView {
     @Deprecated
     @Selector("setNeedsDisplayInMapRect:zoomScale:")
     public native void setNeedsDisplayInMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

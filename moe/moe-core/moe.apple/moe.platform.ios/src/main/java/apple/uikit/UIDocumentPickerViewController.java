@@ -182,7 +182,7 @@ public class UIDocumentPickerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentPickerViewController initWithCoder(NSCoder aDecoder);
+    public native UIDocumentPickerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDocumentTypes:inMode:")
@@ -224,4 +224,20 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Generated
     @Selector("setAllowsMultipleSelection:")
     public native void setAllowsMultipleSelection(boolean value);
+
+    @Generated
+    @Selector("directoryURL")
+    public native NSURL directoryURL();
+
+    @Generated
+    @Selector("setDirectoryURL:")
+    public native void setDirectoryURL(NSURL value);
+
+    @Generated
+    @Selector("setShouldShowFileExtensions:")
+    public native void setShouldShowFileExtensions(boolean value);
+
+    @Generated
+    @Selector("shouldShowFileExtensions")
+    public native boolean shouldShowFileExtensions();
 }

@@ -146,4 +146,9 @@ public class MPSCNNNeuronPReLUNode extends MPSCNNNeuronNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("nodeWithSource:descriptor:")
+    public static native MPSCNNNeuronPReLUNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
+            MPSNNNeuronDescriptor descriptor);
 }

@@ -661,75 +661,7 @@ public final class CFNetwork {
 
     @Generated
     @CVariable()
-    public static native int kCFStreamErrorDomainSOCKS();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertySOCKSProxy();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertySOCKSProxyHost();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertySOCKSProxyPort();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertySOCKSVersion();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamSocketSOCKSVersion4();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamSocketSOCKSVersion5();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertySOCKSUser();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertySOCKSPassword();
-
-    @Generated
-    @CVariable()
     public static native CFStringRef kCFStreamPropertyProxyLocalBypass();
-
-    @Generated
-    @CVariable()
-    public static native int kCFStreamErrorDomainSSL();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertySocketSecurityLevel();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamSocketSecurityLevelNone();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamSocketSecurityLevelSSLv2();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamSocketSecurityLevelSSLv3();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamSocketSecurityLevelTLSv1();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamSocketSecurityLevelNegotiatedSSL();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFStreamPropertyShouldCloseNativeSocket();
 
     @Generated
     @CVariable()
@@ -882,10 +814,6 @@ public final class CFNetwork {
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationSchemeXMobileMeAuthToken();
-
-    @Generated
-    @CVariable()
-    public static native CFStringRef kCFHTTPAuthenticationSchemeOAuth1();
 
     @Generated
     @CVariable()
@@ -1076,4 +1004,28 @@ public final class CFNetwork {
         @Generated
         void call_CFNetworkExecuteProxyAutoConfigurationURL(VoidPtr arg0, CFArrayRef arg1, CFErrorRef arg2);
     }
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamNetworkServiceTypeResponsiveData();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamNetworkServiceTypeAVStreaming();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamNetworkServiceTypeResponsiveAV();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertyAllowExpensiveNetworkAccess();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertyConnectionIsExpensive();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFStreamPropertyAllowConstrainedNetworkAccess();
 }

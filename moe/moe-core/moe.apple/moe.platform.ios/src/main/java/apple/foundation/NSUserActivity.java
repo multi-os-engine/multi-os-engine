@@ -17,7 +17,11 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
+import apple.coreimage.CIBarcodeDescriptor;
+import apple.corenfc.NFCNDEFMessage;
 import apple.corespotlight.CSSearchableItemAttributeSet;
+import apple.foundation.protocol.NSItemProviderReading;
+import apple.foundation.protocol.NSItemProviderWriting;
 import apple.foundation.protocol.NSUserActivityDelegate;
 import apple.intents.INInteraction;
 import apple.mapkit.MKMapItem;
@@ -31,13 +35,17 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -45,7 +53,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSUserActivity extends NSObject {
+public class NSUserActivity extends NSObject implements NSItemProviderReading, NSItemProviderWriting {
     static {
         NatJ.register();
     }
@@ -336,4 +344,141 @@ public class NSUserActivity extends NSObject {
     @Generated
     @Selector("setReferrerURL:")
     public native void setReferrerURL(NSURL value);
+
+    @Generated
+    @Selector("deleteAllSavedUserActivitiesWithCompletionHandler:")
+    public static native void deleteAllSavedUserActivitiesWithCompletionHandler(
+            @ObjCBlock(name = "call_deleteAllSavedUserActivitiesWithCompletionHandler") Block_deleteAllSavedUserActivitiesWithCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deleteAllSavedUserActivitiesWithCompletionHandler {
+        @Generated
+        void call_deleteAllSavedUserActivitiesWithCompletionHandler();
+    }
+
+    @Generated
+    @Selector("deleteSavedUserActivitiesWithPersistentIdentifiers:completionHandler:")
+    public static native void deleteSavedUserActivitiesWithPersistentIdentifiersCompletionHandler(
+            NSArray<String> persistentIdentifiers,
+            @ObjCBlock(name = "call_deleteSavedUserActivitiesWithPersistentIdentifiersCompletionHandler") Block_deleteSavedUserActivitiesWithPersistentIdentifiersCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deleteSavedUserActivitiesWithPersistentIdentifiersCompletionHandler {
+        @Generated
+        void call_deleteSavedUserActivitiesWithPersistentIdentifiersCompletionHandler();
+    }
+
+    @Generated
+    @Selector("detectedBarcodeDescriptor")
+    public native CIBarcodeDescriptor detectedBarcodeDescriptor();
+
+    @Generated
+    @Selector("isEligibleForPrediction")
+    public native boolean isEligibleForPrediction();
+
+    @Generated
+    @IsOptional
+    @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
+    @NInt
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+
+    @Generated
+    @IsOptional
+    @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
+    @NInt
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+        return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
+    @NInt
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+
+    @Generated
+    @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
+            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("objectWithItemProviderData:typeIdentifier:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+        return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
+    }
+
+    @Generated
+    @Selector("persistentIdentifier")
+    public native String persistentIdentifier();
+
+    @Generated
+    @Selector("readableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> readableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
+    public NSArray<String> _readableTypeIdentifiersForItemProvider() {
+        return readableTypeIdentifiersForItemProvider();
+    }
+
+    @Generated
+    @Selector("setEligibleForPrediction:")
+    public native void setEligibleForPrediction(boolean value);
+
+    @Generated
+    @Selector("setPersistentIdentifier:")
+    public native void setPersistentIdentifier(String value);
+
+    @Generated
+    @Selector("setSuggestedInvocationPhrase:")
+    public native void setSuggestedInvocationPhrase(String value);
+
+    @Generated
+    @Selector("setTargetContentIdentifier:")
+    public native void setTargetContentIdentifier(String value);
+
+    @Generated
+    @Selector("suggestedInvocationPhrase")
+    public native String suggestedInvocationPhrase();
+
+    @Generated
+    @Selector("targetContentIdentifier")
+    public native String targetContentIdentifier();
+
+    @Generated
+    @Selector("writableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
+
+    @Generated
+    @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
+    public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
+        return writableTypeIdentifiersForItemProvider_static();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("writableTypeIdentifiersForItemProvider")
+    public native NSArray<String> writableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @Selector("contextIdentifierPath")
+    public native NSArray<String> contextIdentifierPath();
+
+    @Generated
+    @Selector("isClassKitDeepLink")
+    public native boolean isClassKitDeepLink();
+
+    @Generated
+    @Selector("ndefMessagePayload")
+    public native NFCNDEFMessage ndefMessagePayload();
 }

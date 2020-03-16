@@ -181,7 +181,7 @@ public class HKQuantitySample extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKQuantitySample initWithCoder(NSCoder aDecoder);
+    public native HKQuantitySample initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("quantity")
@@ -196,4 +196,9 @@ public class HKQuantitySample extends HKSample {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("count")
+    @NInt
+    public native long count();
 }

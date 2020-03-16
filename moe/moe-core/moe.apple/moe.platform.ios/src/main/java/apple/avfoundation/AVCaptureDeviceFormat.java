@@ -252,4 +252,24 @@ public class AVCaptureDeviceFormat extends NSObject {
     @Selector("videoMinZoomFactorForDepthDataDelivery")
     @NFloat
     public native double videoMinZoomFactorForDepthDataDelivery();
+
+    @Generated
+    @Selector("geometricDistortionCorrectedVideoFieldOfView")
+    public native float geometricDistortionCorrectedVideoFieldOfView();
+
+    @Generated
+    @Selector("isGlobalToneMappingSupported")
+    public native boolean isGlobalToneMappingSupported();
+
+    @Generated
+    @Selector("isHighestPhotoQualitySupported")
+    public native boolean isHighestPhotoQualitySupported();
+
+    @Generated
+    @Selector("isMultiCamSupported")
+    public native boolean isMultiCamSupported();
+
+    @Generated
+    @Selector("isPortraitEffectsMatteStillImageDeliverySupported")
+    public native boolean isPortraitEffectsMatteStillImageDeliverySupported();
 }

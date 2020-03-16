@@ -175,7 +175,7 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -183,7 +183,7 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKRecordZone initWithCoder(NSCoder aDecoder);
+    public native CKRecordZone initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithZoneID:")

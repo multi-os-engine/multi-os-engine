@@ -86,7 +86,7 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     @Generated
     @Selector("changeDetailsFromFetchResult:toFetchResult:changedObjects:")
     public static native <_ObjectType> PHFetchResultChangeDetails<?> changeDetailsFromFetchResultToFetchResultChangedObjects(
-            PHFetchResult<PHObject> fromResult, PHFetchResult<PHObject> toResult,
+            PHFetchResult<? extends PHObject> fromResult, PHFetchResult<? extends PHObject> toResult,
             NSArray<? extends PHObject> changedObjects);
 
     @Generated
@@ -173,11 +173,11 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
 
     @Generated
     @Selector("fetchResultAfterChanges")
-    public native PHFetchResult<PHObject> fetchResultAfterChanges();
+    public native PHFetchResult<? extends PHObject> fetchResultAfterChanges();
 
     @Generated
     @Selector("fetchResultBeforeChanges")
-    public native PHFetchResult<PHObject> fetchResultBeforeChanges();
+    public native PHFetchResult<? extends PHObject> fetchResultBeforeChanges();
 
     @Generated
     @Selector("hasIncrementalChanges")

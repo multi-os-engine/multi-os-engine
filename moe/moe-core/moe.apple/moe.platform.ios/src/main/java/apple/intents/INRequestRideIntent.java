@@ -168,7 +168,7 @@ public class INRequestRideIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRequestRideIntent initWithCoder(NSCoder aDecoder);
+    public native INRequestRideIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPickupLocation:dropOffLocation:rideOptionName:partySize:paymentMethod:")

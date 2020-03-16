@@ -234,7 +234,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableArray<?> initWithCoder(NSCoder aDecoder);
+    public native NSMutableArray<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -691,4 +691,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("initWithContentsOfURL:error:")
     public native NSArray<_ObjectType> initWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("applyDifference:")
+    public native void applyDifference(NSOrderedCollectionDifference<_ObjectType> difference);
 }

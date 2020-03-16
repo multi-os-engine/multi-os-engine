@@ -161,4 +161,13 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     @Generated
     @Selector("setClearStencil:")
     public native void setClearStencil(int value);
+
+    @Generated
+    @Selector("setStencilResolveFilter:")
+    public native void setStencilResolveFilter(@NUInt long value);
+
+    @Generated
+    @Selector("stencilResolveFilter")
+    @NUInt
+    public native long stencilResolveFilter();
 }

@@ -172,7 +172,7 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +180,7 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEEvaluateConnectionRule initWithCoder(NSCoder aDecoder);
+    public native NEEvaluateConnectionRule initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithMatchDomains:andAction:")

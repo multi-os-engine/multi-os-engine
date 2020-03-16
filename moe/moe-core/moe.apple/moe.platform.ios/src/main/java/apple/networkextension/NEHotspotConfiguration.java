@@ -98,7 +98,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -111,7 +111,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEHotspotConfiguration initWithCoder(NSCoder aDecoder);
+    public native NEHotspotConfiguration initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithHS20Settings:eapSettings:")
@@ -203,4 +203,25 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("SSIDPrefix")
+    public native String SSIDPrefix();
+
+    @Generated
+    @Selector("hidden")
+    public native boolean hidden();
+
+    @Generated
+    @Selector("initWithSSIDPrefix:")
+    public native NEHotspotConfiguration initWithSSIDPrefix(String SSIDPrefix);
+
+    @Generated
+    @Selector("initWithSSIDPrefix:passphrase:isWEP:")
+    public native NEHotspotConfiguration initWithSSIDPrefixPassphraseIsWEP(String SSIDPrefix, String passphrase,
+            boolean isWEP);
+
+    @Generated
+    @Selector("setHidden:")
+    public native void setHidden(boolean value);
 }

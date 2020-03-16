@@ -42,4 +42,7 @@ public final class WCErrorCode {
     @Generated
     private WCErrorCode() {
     }
+
+    @Generated @NInt public static final long CompanionAppNotInstalled = 0x0000000000001B6AL;
+    @Generated @NInt public static final long WatchOnlyApp = 0x0000000000001B6BL;
 }

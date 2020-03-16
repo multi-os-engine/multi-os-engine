@@ -325,4 +325,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
         @Generated
         void call_performBlockAndWait();
     }
+
+    @Generated
+    @Selector("currentPersistentHistoryTokenFromStores:")
+    public native NSPersistentHistoryToken currentPersistentHistoryTokenFromStores(NSArray<?> stores);
 }

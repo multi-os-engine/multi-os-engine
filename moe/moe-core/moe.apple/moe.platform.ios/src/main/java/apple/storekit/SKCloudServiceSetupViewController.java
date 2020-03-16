@@ -180,7 +180,7 @@ public class SKCloudServiceSetupViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKCloudServiceSetupViewController initWithCoder(NSCoder aDecoder);
+    public native SKCloudServiceSetupViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

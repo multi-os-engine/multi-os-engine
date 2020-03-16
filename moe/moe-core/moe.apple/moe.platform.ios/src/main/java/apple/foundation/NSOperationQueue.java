@@ -17,6 +17,7 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
+import apple.foundation.protocol.NSProgressReporting;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSOperationQueue extends NSObject {
+public class NSOperationQueue extends NSObject implements NSProgressReporting {
     static {
         NatJ.register();
     }
@@ -250,4 +251,19 @@ public class NSOperationQueue extends NSObject {
         @Generated
         void call_addOperationWithBlock();
     }
+
+    @Generated
+    @Selector("addBarrierBlock:")
+    public native void addBarrierBlock(@ObjCBlock(name = "call_addBarrierBlock") Block_addBarrierBlock barrier);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addBarrierBlock {
+        @Generated
+        void call_addBarrierBlock();
+    }
+
+    @Generated
+    @Selector("progress")
+    public native NSProgress progress();
 }

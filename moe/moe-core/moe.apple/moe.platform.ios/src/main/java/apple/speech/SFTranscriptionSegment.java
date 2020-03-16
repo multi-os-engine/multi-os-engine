@@ -180,7 +180,7 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -188,7 +188,7 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFTranscriptionSegment initWithCoder(NSCoder aDecoder);
+    public native SFTranscriptionSegment initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("substring")
@@ -208,4 +208,8 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("timestamp")
     public native double timestamp();
+
+    @Generated
+    @Selector("voiceAnalytics")
+    public native SFVoiceAnalytics voiceAnalytics();
 }

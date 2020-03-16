@@ -403,7 +403,7 @@ public class HMCameraView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HMCameraView initWithCoder(NSCoder aDecoder);
+    public native HMCameraView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -412,4 +412,10 @@ public class HMCameraView extends UIView {
     @Generated
     @Selector("setCameraSource:")
     public native void setCameraSource(HMCameraSource value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

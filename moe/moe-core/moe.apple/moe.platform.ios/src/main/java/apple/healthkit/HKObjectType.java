@@ -194,7 +194,7 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -206,7 +206,7 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKObjectType initWithCoder(NSCoder aDecoder);
+    public native HKObjectType initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -217,4 +217,12 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("seriesTypeForIdentifier:")
     public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("audiogramSampleType")
+    public static native HKAudiogramSampleType audiogramSampleType();
+
+    @Generated
+    @Selector("clinicalTypeForIdentifier:")
+    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
 }

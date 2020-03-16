@@ -167,7 +167,7 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native AUParameterGroup initWithCoder(NSCoder aDecoder);
+    public native AUParameterGroup initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

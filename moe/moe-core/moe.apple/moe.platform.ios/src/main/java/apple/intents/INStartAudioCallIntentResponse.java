@@ -172,7 +172,7 @@ public class INStartAudioCallIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartAudioCallIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INStartAudioCallIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

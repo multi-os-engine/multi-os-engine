@@ -23,8 +23,11 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSUndoManager;
 import apple.foundation.NSUserActivity;
+import apple.uikit.protocol.UIActivityItemsConfigurationReading;
+import apple.uikit.protocol.UIMenuBuilder;
 import apple.uikit.protocol.UIPasteConfigurationSupporting;
 import apple.uikit.protocol.UIResponderStandardEditActions;
+import apple.uikit.protocol.UIUserActivityRestoring;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,6 +44,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -49,7 +53,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIResponder extends NSObject implements UIResponderStandardEditActions, UIPasteConfigurationSupporting {
+public class UIResponder extends NSObject
+        implements UIResponderStandardEditActions, UIUserActivityRestoring, UIPasteConfigurationSupporting {
     static {
         NatJ.register();
     }
@@ -387,4 +392,33 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Generated
     @Selector("setPasteConfiguration:")
     public native void setPasteConfiguration(UIPasteConfiguration value);
+
+    @Generated
+    @Selector("activityItemsConfiguration")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIActivityItemsConfigurationReading activityItemsConfiguration();
+
+    @Generated
+    @Selector("buildMenuWithBuilder:")
+    public native void buildMenuWithBuilder(@Mapped(ObjCObjectMapper.class) UIMenuBuilder builder);
+
+    @Generated
+    @Selector("editingInteractionConfiguration")
+    @NInt
+    public native long editingInteractionConfiguration();
+
+    @Generated
+    @Selector("setActivityItemsConfiguration:")
+    public native void setActivityItemsConfiguration(
+            @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationReading value);
+
+    @Generated
+    @IsOptional
+    @Selector("updateTextAttributesWithConversionHandler:")
+    public native void updateTextAttributesWithConversionHandler(
+            @ObjCBlock(name = "call_updateTextAttributesWithConversionHandler") UIResponderStandardEditActions.Block_updateTextAttributesWithConversionHandler conversionHandler);
+
+    @Generated
+    @Selector("validateCommand:")
+    public native void validateCommand(UICommand command);
 }

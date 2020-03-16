@@ -172,7 +172,7 @@ public class GKAchievementChallenge extends GKChallenge {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAchievementChallenge initWithCoder(NSCoder aDecoder);
+    public native GKAchievementChallenge initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -214,4 +214,12 @@ public class GCMicroGamepad extends NSObject {
         @Generated
         void call_valueChangedHandler_ret(GCMicroGamepad arg0, GCControllerElement arg1);
     }
+
+    @Generated
+    @Selector("buttonMenu")
+    public native GCControllerButtonInput buttonMenu();
+
+    @Generated
+    @Selector("setStateFromMicroGamepad:")
+    public native void setStateFromMicroGamepad(GCMicroGamepad microGamepad);
 }

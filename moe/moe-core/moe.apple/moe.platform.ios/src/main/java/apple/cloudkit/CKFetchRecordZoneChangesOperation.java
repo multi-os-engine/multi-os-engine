@@ -310,4 +310,19 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
         void call_setRecordZoneFetchCompletionBlock(CKRecordZoneID arg0, CKServerChangeToken arg1, NSData arg2,
                 boolean arg3, NSError arg4);
     }
+
+    @Generated
+    @Selector("configurationsByRecordZoneID")
+    public native NSDictionary<? extends CKRecordZoneID, ? extends CKFetchRecordZoneChangesConfiguration> configurationsByRecordZoneID();
+
+    @Generated
+    @Selector("initWithRecordZoneIDs:configurationsByRecordZoneID:")
+    public native CKFetchRecordZoneChangesOperation initWithRecordZoneIDsConfigurationsByRecordZoneID(
+            NSArray<? extends CKRecordZoneID> recordZoneIDs,
+            NSDictionary<? extends CKRecordZoneID, ? extends CKFetchRecordZoneChangesConfiguration> configurationsByRecordZoneID);
+
+    @Generated
+    @Selector("setConfigurationsByRecordZoneID:")
+    public native void setConfigurationsByRecordZoneID(
+            NSDictionary<? extends CKRecordZoneID, ? extends CKFetchRecordZoneChangesConfiguration> value);
 }

@@ -170,7 +170,7 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +178,7 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("initWithCoder:")
-    public native SFSpeechRecognitionResult initWithCoder(NSCoder aDecoder);
+    public native SFSpeechRecognitionResult initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isFinal")

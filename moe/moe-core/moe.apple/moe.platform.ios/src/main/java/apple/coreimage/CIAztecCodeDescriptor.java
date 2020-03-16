@@ -109,7 +109,7 @@ public class CIAztecCodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIAztecCodeDescriptor initWithCoder(NSCoder aDecoder);
+    public native CIAztecCodeDescriptor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPayload:isCompact:layerCount:dataCodewordCount:")

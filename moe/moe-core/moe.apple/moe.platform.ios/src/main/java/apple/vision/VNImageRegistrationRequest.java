@@ -7,6 +7,7 @@ import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -259,4 +260,18 @@ public class VNImageRegistrationRequest extends VNTargetedImageRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
 }

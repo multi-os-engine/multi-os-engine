@@ -1,6 +1,7 @@
 package apple.coreml;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGImageRef;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
@@ -8,6 +9,7 @@ import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -217,4 +219,60 @@ public class MLFeatureValue extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("featureValueWithCGImage:constraint:options:error:")
+    public static native MLFeatureValue featureValueWithCGImageConstraintOptionsError(CGImageRef cgImage,
+            MLImageConstraint constraint, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("featureValueWithCGImage:orientation:constraint:options:error:")
+    public static native MLFeatureValue featureValueWithCGImageOrientationConstraintOptionsError(CGImageRef cgImage,
+            int orientation, MLImageConstraint constraint, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("featureValueWithCGImage:orientation:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
+    public static native MLFeatureValue featureValueWithCGImageOrientationPixelsWidePixelsHighPixelFormatTypeOptionsError(
+            CGImageRef cgImage, int orientation, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
+            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("featureValueWithCGImage:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
+    public static native MLFeatureValue featureValueWithCGImagePixelsWidePixelsHighPixelFormatTypeOptionsError(
+            CGImageRef cgImage, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
+            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("featureValueWithImageAtURL:constraint:options:error:")
+    public static native MLFeatureValue featureValueWithImageAtURLConstraintOptionsError(NSURL url,
+            MLImageConstraint constraint, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("featureValueWithImageAtURL:orientation:constraint:options:error:")
+    public static native MLFeatureValue featureValueWithImageAtURLOrientationConstraintOptionsError(NSURL url,
+            int orientation, MLImageConstraint constraint, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("featureValueWithImageAtURL:orientation:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
+    public static native MLFeatureValue featureValueWithImageAtURLOrientationPixelsWidePixelsHighPixelFormatTypeOptionsError(
+            NSURL url, int orientation, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
+            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("featureValueWithImageAtURL:pixelsWide:pixelsHigh:pixelFormatType:options:error:")
+    public static native MLFeatureValue featureValueWithImageAtURLPixelsWidePixelsHighPixelFormatTypeOptionsError(
+            NSURL url, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
+            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("featureValueWithSequence:")
+    public static native MLFeatureValue featureValueWithSequence(MLSequence sequence);
+
+    @Generated
+    @Selector("sequenceValue")
+    public native MLSequence sequenceValue();
 }

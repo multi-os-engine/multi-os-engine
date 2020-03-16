@@ -50,4 +50,14 @@ public final class CoreML {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MLModelErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MLFeatureValueImageOptionCropRect();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MLFeatureValueImageOptionCropAndScale();
 }

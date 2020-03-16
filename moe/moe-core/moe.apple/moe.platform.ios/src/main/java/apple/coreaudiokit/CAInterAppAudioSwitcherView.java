@@ -405,7 +405,7 @@ public class CAInterAppAudioSwitcherView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAInterAppAudioSwitcherView initWithCoder(NSCoder aDecoder);
+    public native CAInterAppAudioSwitcherView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -422,4 +422,10 @@ public class CAInterAppAudioSwitcherView extends UIView {
     @Generated
     @Selector("setOutputAudioUnit:")
     public native void setOutputAudioUnit(AudioComponentInstance au);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

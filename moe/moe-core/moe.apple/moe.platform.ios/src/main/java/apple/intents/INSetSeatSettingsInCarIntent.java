@@ -175,7 +175,7 @@ public class INSetSeatSettingsInCarIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetSeatSettingsInCarIntent initWithCoder(NSCoder aDecoder);
+    public native INSetSeatSettingsInCarIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithEnableHeating:enableCooling:enableMassage:seat:level:relativeLevelSetting:")
@@ -202,4 +202,14 @@ public class INSetSeatSettingsInCarIntent extends INIntent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("carName")
+    public native INSpeakableString carName();
+
+    @Generated
+    @Selector("initWithEnableHeating:enableCooling:enableMassage:seat:level:relativeLevelSetting:carName:")
+    public native INSetSeatSettingsInCarIntent initWithEnableHeatingEnableCoolingEnableMassageSeatLevelRelativeLevelSettingCarName(
+            NSNumber enableHeating, NSNumber enableCooling, NSNumber enableMassage, @NInt long seat, NSNumber level,
+            @NInt long relativeLevelSetting, INSpeakableString carName);
 }

@@ -98,7 +98,7 @@ public class INTaskList extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("groupName")
@@ -119,7 +119,7 @@ public class INTaskList extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INTaskList initWithCoder(NSCoder aDecoder);
+    public native INTaskList initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:tasks:groupName:createdDateComponents:modifiedDateComponents:identifier:")

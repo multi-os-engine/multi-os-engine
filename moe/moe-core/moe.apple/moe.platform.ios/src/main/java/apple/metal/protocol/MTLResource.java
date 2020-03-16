@@ -76,4 +76,19 @@ public interface MTLResource {
     @Selector("allocatedSize")
     @NUInt
     long allocatedSize();
+
+    @Generated
+    @Selector("hazardTrackingMode")
+    @NUInt
+    long hazardTrackingMode();
+
+    @Generated
+    @Selector("heapOffset")
+    @NUInt
+    long heapOffset();
+
+    @Generated
+    @Selector("resourceOptions")
+    @NUInt
+    long resourceOptions();
 }

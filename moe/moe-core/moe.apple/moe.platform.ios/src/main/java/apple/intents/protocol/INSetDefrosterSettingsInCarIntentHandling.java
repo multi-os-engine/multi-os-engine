@@ -20,6 +20,7 @@ import apple.intents.INBooleanResolutionResult;
 import apple.intents.INCarDefrosterResolutionResult;
 import apple.intents.INSetDefrosterSettingsInCarIntent;
 import apple.intents.INSetDefrosterSettingsInCarIntentResponse;
+import apple.intents.INSpeakableStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
@@ -89,5 +90,20 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
     public interface Block_resolveEnableForSetDefrosterSettingsInCarWithCompletion {
         @Generated
         void call_resolveEnableForSetDefrosterSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveCarNameForSetDefrosterSettingsInCar:withCompletion:")
+    default void resolveCarNameForSetDefrosterSettingsInCarWithCompletion(INSetDefrosterSettingsInCarIntent intent,
+            @ObjCBlock(name = "call_resolveCarNameForSetDefrosterSettingsInCarWithCompletion") Block_resolveCarNameForSetDefrosterSettingsInCarWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveCarNameForSetDefrosterSettingsInCarWithCompletion {
+        @Generated
+        void call_resolveCarNameForSetDefrosterSettingsInCarWithCompletion(INSpeakableStringResolutionResult arg0);
     }
 }

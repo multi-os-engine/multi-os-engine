@@ -172,7 +172,7 @@ public class INGetRideStatusIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetRideStatusIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INGetRideStatusIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("rideStatus")

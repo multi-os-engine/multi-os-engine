@@ -79,11 +79,6 @@ public class INDateSearchTypeResolutionResult extends INIntentResolutionResult {
     public static native Object confirmationRequiredWithDateSearchTypeToConfirm(@NInt long dateSearchTypeToConfirm);
 
     @Generated
-    @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
-
-    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
@@ -155,11 +150,6 @@ public class INDateSearchTypeResolutionResult extends INIntentResolutionResult {
     public static native Object successWithResolvedDateSearchType(@NInt long resolvedDateSearchType);
 
     @Generated
-    @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
-
-    @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
@@ -172,4 +162,15 @@ public class INDateSearchTypeResolutionResult extends INIntentResolutionResult {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

@@ -189,7 +189,7 @@ public class UICloudSharingController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICloudSharingController initWithCoder(NSCoder aDecoder);
+    public native UICloudSharingController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

@@ -17,6 +17,7 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGRect;
 import apple.coreimage.CIFilter;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -36,6 +37,7 @@ import apple.scenekit.struct.SCNMatrix4;
 import apple.scenekit.struct.SCNVector3;
 import apple.scenekit.struct.SCNVector4;
 import apple.uikit.UIFocusAnimationCoordinator;
+import apple.uikit.UIFocusMovementHint;
 import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIView;
 import apple.uikit.protocol.UIFocusItem;
@@ -292,7 +294,7 @@ public class SCNNode extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateChildNodesUsingBlock:")
@@ -345,7 +347,7 @@ public class SCNNode extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNNode initWithCoder(NSCoder aDecoder);
+    public native SCNNode initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("insertChildNode:atIndex:")
@@ -824,4 +826,24 @@ public class SCNNode extends NSObject
     @Selector("worldUp")
     @ByValue
     public native SCNVector3 worldUp();
+
+    @Generated
+    @IsOptional
+    @Selector("didHintFocusMovement:")
+    public native void didHintFocusMovement(UIFocusMovementHint hint);
+
+    @Generated
+    @Selector("focusItemContainer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object focusItemContainer();
+
+    @Generated
+    @Selector("frame")
+    @ByValue
+    public native CGRect frame();
+
+    @Generated
+    @Selector("parentFocusEnvironment")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object parentFocusEnvironment();
 }

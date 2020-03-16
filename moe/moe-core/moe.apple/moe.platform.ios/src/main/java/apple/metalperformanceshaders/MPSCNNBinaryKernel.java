@@ -21,7 +21,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -160,16 +162,6 @@ public class MPSCNNBinaryKernel extends MPSKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     @Generated
-    @Selector("kernelHeight")
-    @NUInt
-    public native long kernelHeight();
-
-    @Generated
-    @Selector("kernelWidth")
-    @NUInt
-    public native long kernelWidth();
-
-    @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
@@ -286,4 +278,137 @@ public class MPSCNNBinaryKernel extends MPSKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("appendBatchBarrier")
+    public native boolean appendBatchBarrier();
+
+    @Generated
+    @Selector("destinationImageDescriptorForSourceImages:sourceStates:")
+    public native MPSImageDescriptor destinationImageDescriptorForSourceImagesSourceStates(
+            NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates);
+
+    @Generated
+    @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationState:destinationStateIsTemporary:")
+    public native MPSImage encodeToCommandBufferPrimaryImageSecondaryImageDestinationStateDestinationStateIsTemporary(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage primaryImage,
+            MPSImage secondaryImage, @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outState, boolean isTemporary);
+
+    @Generated
+    @Selector("encodingStorageSizeForPrimaryImage:secondaryImage:sourceStates:destinationImage:")
+    @NUInt
+    public native long encodingStorageSizeForPrimaryImageSecondaryImageSourceStatesDestinationImage(
+            MPSImage primaryImage, MPSImage secondaryImage, NSArray<? extends MPSState> sourceStates,
+            MPSImage destinationImage);
+
+    @Generated
+    @Selector("isResultStateReusedAcrossBatch")
+    public native boolean isResultStateReusedAcrossBatch();
+
+    @Generated
+    @Selector("isStateModified")
+    public native boolean isStateModified();
+
+    @Generated
+    @Selector("primaryDilationRateX")
+    @NUInt
+    public native long primaryDilationRateX();
+
+    @Generated
+    @Selector("primaryDilationRateY")
+    @NUInt
+    public native long primaryDilationRateY();
+
+    @Generated
+    @Selector("primaryKernelHeight")
+    @NUInt
+    public native long primaryKernelHeight();
+
+    @Generated
+    @Selector("primaryKernelWidth")
+    @NUInt
+    public native long primaryKernelWidth();
+
+    @Generated
+    @Selector("primarySourceFeatureChannelMaxCount")
+    @NUInt
+    public native long primarySourceFeatureChannelMaxCount();
+
+    @Generated
+    @Selector("primarySourceFeatureChannelOffset")
+    @NUInt
+    public native long primarySourceFeatureChannelOffset();
+
+    @Generated
+    @Selector("resultStateForPrimaryImage:secondaryImage:sourceStates:destinationImage:")
+    public native MPSState resultStateForPrimaryImageSecondaryImageSourceStatesDestinationImage(MPSImage primaryImage,
+            MPSImage secondaryImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+
+    @Generated
+    @Selector("secondaryDilationRateX")
+    @NUInt
+    public native long secondaryDilationRateX();
+
+    @Generated
+    @Selector("secondaryDilationRateY")
+    @NUInt
+    public native long secondaryDilationRateY();
+
+    @Generated
+    @Selector("secondaryKernelHeight")
+    @NUInt
+    public native long secondaryKernelHeight();
+
+    @Generated
+    @Selector("secondaryKernelWidth")
+    @NUInt
+    public native long secondaryKernelWidth();
+
+    @Generated
+    @Selector("secondarySourceFeatureChannelMaxCount")
+    @NUInt
+    public native long secondarySourceFeatureChannelMaxCount();
+
+    @Generated
+    @Selector("secondarySourceFeatureChannelOffset")
+    @NUInt
+    public native long secondarySourceFeatureChannelOffset();
+
+    @Generated
+    @Selector("setPrimarySourceFeatureChannelMaxCount:")
+    public native void setPrimarySourceFeatureChannelMaxCount(@NUInt long value);
+
+    @Generated
+    @Selector("setPrimarySourceFeatureChannelOffset:")
+    public native void setPrimarySourceFeatureChannelOffset(@NUInt long value);
+
+    @Generated
+    @Selector("setPrimaryStrideInPixelsX:")
+    public native void setPrimaryStrideInPixelsX(@NUInt long value);
+
+    @Generated
+    @Selector("setPrimaryStrideInPixelsY:")
+    public native void setPrimaryStrideInPixelsY(@NUInt long value);
+
+    @Generated
+    @Selector("setSecondarySourceFeatureChannelMaxCount:")
+    public native void setSecondarySourceFeatureChannelMaxCount(@NUInt long value);
+
+    @Generated
+    @Selector("setSecondarySourceFeatureChannelOffset:")
+    public native void setSecondarySourceFeatureChannelOffset(@NUInt long value);
+
+    @Generated
+    @Selector("setSecondaryStrideInPixelsX:")
+    public native void setSecondaryStrideInPixelsX(@NUInt long value);
+
+    @Generated
+    @Selector("setSecondaryStrideInPixelsY:")
+    public native void setSecondaryStrideInPixelsY(@NUInt long value);
+
+    @Generated
+    @Selector("temporaryResultStateForCommandBuffer:primaryImage:secondaryImage:sourceStates:destinationImage:")
+    public native MPSState temporaryResultStateForCommandBufferPrimaryImageSecondaryImageSourceStatesDestinationImage(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage primaryImage,
+            MPSImage secondaryImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 }

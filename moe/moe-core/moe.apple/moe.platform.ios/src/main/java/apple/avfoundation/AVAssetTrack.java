@@ -305,4 +305,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Generated
     @Selector("isDecodable")
     public native boolean isDecodable();
+
+    @Generated
+    @Selector("hasAudioSampleDependencies")
+    public native boolean hasAudioSampleDependencies();
 }

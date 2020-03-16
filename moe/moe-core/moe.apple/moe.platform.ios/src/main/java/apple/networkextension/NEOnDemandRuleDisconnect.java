@@ -162,7 +162,7 @@ public class NEOnDemandRuleDisconnect extends NEOnDemandRule {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEOnDemandRuleDisconnect initWithCoder(NSCoder aDecoder);
+    public native NEOnDemandRuleDisconnect initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

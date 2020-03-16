@@ -219,4 +219,17 @@ public class CBCentralManager extends CBManager {
     @Generated
     @Selector("stopScan")
     public native void stopScan();
+
+    @Generated
+    @Selector("authorization")
+    @NInt
+    public static native long authorization_static();
+
+    @Generated
+    @Selector("registerForConnectionEventsWithOptions:")
+    public native void registerForConnectionEventsWithOptions(NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("supportsFeatures:")
+    public static native boolean supportsFeatures(@NUInt long features);
 }

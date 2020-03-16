@@ -176,7 +176,7 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVMutableVideoCompositionLayerInstruction initWithCoder(NSCoder aDecoder);
+    public native AVMutableVideoCompositionLayerInstruction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setCropRectangle:atTime:")

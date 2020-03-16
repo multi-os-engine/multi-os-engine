@@ -180,7 +180,7 @@ public class SKStoreProductViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKStoreProductViewController initWithCoder(NSCoder aDecoder);
+    public native SKStoreProductViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

@@ -110,7 +110,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAvoidOccluderConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNAvoidOccluderConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

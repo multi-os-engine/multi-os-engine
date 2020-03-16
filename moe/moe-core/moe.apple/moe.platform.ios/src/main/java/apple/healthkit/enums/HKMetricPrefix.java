@@ -38,4 +38,6 @@ public final class HKMetricPrefix {
     @Generated
     private HKMetricPrefix() {
     }
+
+    @Generated @NInt public static final long Femto = 0x000000000000000DL;
 }

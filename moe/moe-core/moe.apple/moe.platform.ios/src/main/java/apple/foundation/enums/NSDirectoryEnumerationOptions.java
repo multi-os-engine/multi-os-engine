@@ -21,11 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSDirectoryEnumerationOptions {
-    @Generated @NUInt public static final long SubdirectoryDescendants = 0x0000000000000001L;
-    @Generated @NUInt public static final long PackageDescendants = 0x0000000000000002L;
-    @Generated @NUInt public static final long HiddenFiles = 0x0000000000000004L;
-
     @Generated
     private NSDirectoryEnumerationOptions() {
     }
+
+    @Generated @NUInt public static final long SkipsSubdirectoryDescendants = 0x0000000000000001L;
+    @Generated @NUInt public static final long SkipsPackageDescendants = 0x0000000000000002L;
+    @Generated @NUInt public static final long SkipsHiddenFiles = 0x0000000000000004L;
+    @Generated @NUInt public static final long IncludesDirectoriesPostOrder = 0x0000000000000008L;
+    @Generated @NUInt public static final long ProducesRelativePathURLs = 0x0000000000000010L;
 }

@@ -108,7 +108,7 @@ public class INTransferMoneyIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INTransferMoneyIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INTransferMoneyIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

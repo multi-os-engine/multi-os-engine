@@ -30,6 +30,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.LongPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
@@ -217,7 +218,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fileDescriptor")
@@ -348,4 +349,42 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
         @Generated
         void call_writeabilityHandler_ret(NSFileHandle arg0);
     }
+
+    @Generated
+    @Selector("closeAndReturnError:")
+    public native boolean closeAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("getOffset:error:")
+    public native boolean getOffsetError(LongPtr offsetInFile, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("readDataToEndOfFileAndReturnError:")
+    public native NSData readDataToEndOfFileAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("readDataUpToLength:error:")
+    public native NSData readDataUpToLengthError(@NUInt long length,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("seekToEndReturningOffset:error:")
+    public native boolean seekToEndReturningOffsetError(LongPtr offsetInFile,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("seekToOffset:error:")
+    public native boolean seekToOffsetError(long offset, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("synchronizeAndReturnError:")
+    public native boolean synchronizeAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("truncateAtOffset:error:")
+    public native boolean truncateAtOffsetError(long offset, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("writeData:error:")
+    public native boolean writeDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

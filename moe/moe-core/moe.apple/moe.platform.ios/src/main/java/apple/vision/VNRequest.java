@@ -3,6 +3,7 @@ package apple.vision;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
@@ -190,4 +191,31 @@ public class VNRequest extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("cancel")
+    public native void cancel();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("revision")
+    @NUInt
+    public native long revision();
+
+    @Generated
+    @Selector("setRevision:")
+    public native void setRevision(@NUInt long value);
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
 }

@@ -164,7 +164,7 @@ public class CMGyroData extends CMLogItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMGyroData initWithCoder(NSCoder aDecoder);
+    public native CMGyroData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("rotationRate")

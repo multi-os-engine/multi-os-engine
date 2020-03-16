@@ -6,6 +6,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLBuffer;
 import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLDevice;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -164,4 +165,14 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithBuffer:offset:descriptor:")
+    public native MPSTemporaryMatrix initWithBufferOffsetDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NUInt long offset, MPSMatrixDescriptor descriptor);
+
+    @Generated
+    @Selector("initWithDevice:descriptor:")
+    public native MPSTemporaryMatrix initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSMatrixDescriptor descriptor);
 }

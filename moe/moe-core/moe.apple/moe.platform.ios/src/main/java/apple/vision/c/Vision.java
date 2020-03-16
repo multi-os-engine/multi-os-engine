@@ -161,4 +161,55 @@ public final class Vision {
     @Generated
     @CVariable()
     public static native double VNVisionVersionNumber();
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long VNElementTypeSize(@NUInt long elementType);
+
+    @Generated @NUInt public static final long VNRequestRevisionUnspecified = 0x0000000000000000L;
+    @Generated @NUInt public static final long VNClassifyImageRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNDetectBarcodesRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNDetectFaceRectanglesRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNDetectFaceRectanglesRequestRevision2 = 0x0000000000000002L;
+    @Generated @NUInt public static final long VNDetectFaceLandmarksRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNDetectFaceLandmarksRequestRevision2 = 0x0000000000000002L;
+    @Generated @NUInt public static final long VNDetectFaceLandmarksRequestRevision3 = 0x0000000000000003L;
+    @Generated @NUInt public static final long VNDetectFaceCaptureQualityRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNDetectHorizonRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNDetectRectanglesRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNDetectTextRectanglesRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNRecognizeTextRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNGenerateAttentionBasedSaliencyImageRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNGenerateObjectnessBasedSaliencyImageRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNGenerateImageFeaturePrintRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNCoreMLRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNTranslationalImageRegistrationRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNHomographicImageRegistrationRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNTrackObjectRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNTrackObjectRequestRevision2 = 0x0000000000000002L;
+    @Generated @NUInt public static final long VNTrackRectangleRequestRevision1 = 0x0000000000000001L;
+    @Generated @NUInt public static final long VNDetectHumanRectanglesRequestRevision1 = 0x0000000000000001L;
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalIdentifierDog();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalIdentifierCat();
+
+    @Generated @NUInt public static final long VNRecognizeAnimalsRequestRevision1 = 0x0000000000000001L;
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalDetectorDog();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalDetectorCat();
 }

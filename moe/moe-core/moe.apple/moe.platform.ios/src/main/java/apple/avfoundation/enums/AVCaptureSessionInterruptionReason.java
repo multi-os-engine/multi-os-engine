@@ -29,4 +29,6 @@ public final class AVCaptureSessionInterruptionReason {
     @Generated
     private AVCaptureSessionInterruptionReason() {
     }
+
+    @Generated @NInt public static final long VideoDeviceNotAvailableDueToSystemPressure = 0x0000000000000005L;
 }

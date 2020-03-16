@@ -107,7 +107,7 @@ public class INBalanceAmount extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -128,7 +128,7 @@ public class INBalanceAmount extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBalanceAmount initWithCoder(NSCoder aDecoder);
+    public native INBalanceAmount initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

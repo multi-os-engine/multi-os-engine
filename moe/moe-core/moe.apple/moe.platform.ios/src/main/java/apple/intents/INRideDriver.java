@@ -167,7 +167,7 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideDriver initWithCoder(NSCoder aDecoder);
+    public native INRideDriver initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
@@ -239,4 +239,10 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:")
+    public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, boolean isMe);
 }

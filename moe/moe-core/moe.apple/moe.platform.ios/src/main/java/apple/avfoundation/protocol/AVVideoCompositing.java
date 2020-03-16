@@ -18,6 +18,7 @@ package apple.avfoundation.protocol;
 
 import apple.avfoundation.AVAsynchronousVideoCompositionRequest;
 import apple.avfoundation.AVVideoCompositionRenderContext;
+import apple.avfoundation.AVVideoCompositionRenderHint;
 import apple.foundation.NSDictionary;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -59,6 +60,20 @@ public interface AVVideoCompositing {
     @IsOptional
     @Selector("supportsWideColorSourceFrames")
     default boolean supportsWideColorSourceFrames() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("anticipateRenderingUsingHint:")
+    default void anticipateRenderingUsingHint(AVVideoCompositionRenderHint renderHint) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("prerollForRenderingUsingHint:")
+    default void prerollForRenderingUsingHint(AVVideoCompositionRenderHint renderHint) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

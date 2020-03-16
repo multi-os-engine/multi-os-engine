@@ -190,7 +190,7 @@ public class HKSampleType extends HKObjectType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSampleType initWithCoder(NSCoder aDecoder);
+    public native HKSampleType initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -201,4 +201,28 @@ public class HKSampleType extends HKObjectType {
     @Generated
     @Selector("seriesTypeForIdentifier:")
     public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("audiogramSampleType")
+    public static native HKAudiogramSampleType audiogramSampleType();
+
+    @Generated
+    @Selector("clinicalTypeForIdentifier:")
+    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("isMaximumDurationRestricted")
+    public native boolean isMaximumDurationRestricted();
+
+    @Generated
+    @Selector("isMinimumDurationRestricted")
+    public native boolean isMinimumDurationRestricted();
+
+    @Generated
+    @Selector("maximumAllowedDuration")
+    public native double maximumAllowedDuration();
+
+    @Generated
+    @Selector("minimumAllowedDuration")
+    public native double minimumAllowedDuration();
 }

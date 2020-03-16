@@ -165,7 +165,7 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -173,7 +173,7 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native RPBroadcastConfiguration initWithCoder(NSCoder aDecoder);
+    public native RPBroadcastConfiguration initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setClipDuration:")

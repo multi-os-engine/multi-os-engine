@@ -198,7 +198,7 @@ public class QLPreviewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native QLPreviewController initWithCoder(NSCoder aDecoder);
+    public native QLPreviewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

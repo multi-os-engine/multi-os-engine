@@ -173,7 +173,7 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBookRestaurantReservationIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INBookRestaurantReservationIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setUserBooking:")

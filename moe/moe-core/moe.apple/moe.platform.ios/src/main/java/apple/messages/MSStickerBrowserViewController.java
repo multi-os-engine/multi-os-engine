@@ -172,7 +172,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSStickerBrowserViewController initWithCoder(NSCoder aDecoder);
+    public native MSStickerBrowserViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

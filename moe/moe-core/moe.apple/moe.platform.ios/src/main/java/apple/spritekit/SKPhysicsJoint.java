@@ -22,7 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -41,6 +41,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -48,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKPhysicsJoint extends NSObject implements NSCoding {
+public class SKPhysicsJoint extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -165,7 +166,7 @@ public class SKPhysicsJoint extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -173,7 +174,7 @@ public class SKPhysicsJoint extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKPhysicsJoint initWithCoder(NSCoder aDecoder);
+    public native SKPhysicsJoint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("reactionForce")
@@ -192,4 +193,14 @@ public class SKPhysicsJoint extends NSObject implements NSCoding {
     @Generated
     @Selector("setBodyB:")
     public native void setBodyB(SKPhysicsBody value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

@@ -105,7 +105,7 @@ public class INSetTaskAttributeIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetTaskAttributeIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSetTaskAttributeIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

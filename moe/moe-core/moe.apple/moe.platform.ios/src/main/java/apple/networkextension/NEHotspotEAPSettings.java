@@ -95,7 +95,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -108,7 +108,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEHotspotEAPSettings initWithCoder(NSCoder aDecoder);
+    public native NEHotspotEAPSettings initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

@@ -211,4 +211,9 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentTime")
+    @ByValue
+    public native CMTime currentTime();
 }

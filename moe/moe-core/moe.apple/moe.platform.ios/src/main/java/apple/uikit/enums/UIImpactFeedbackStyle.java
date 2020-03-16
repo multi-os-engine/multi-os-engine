@@ -28,4 +28,7 @@ public final class UIImpactFeedbackStyle {
     @Generated
     private UIImpactFeedbackStyle() {
     }
+
+    @Generated @NInt public static final long Soft = 0x0000000000000003L;
+    @Generated @NInt public static final long Rigid = 0x0000000000000004L;
 }

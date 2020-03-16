@@ -260,7 +260,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateKeysAndObjectsUsingBlock:")
@@ -355,7 +355,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDictionary<?, ?> initWithCoder(NSCoder aDecoder);
+    public native NSDictionary<?, ?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -422,6 +422,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public native NSArray<_KeyType> keysSortedByValueWithOptionsUsingComparator(@NUInt long opts,
             @ObjCBlock(name = "call_keysSortedByValueWithOptionsUsingComparator") Block_keysSortedByValueWithOptionsUsingComparator cmptr);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

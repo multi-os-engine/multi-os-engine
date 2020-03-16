@@ -31,4 +31,6 @@ public final class NEVPNIKEv2EncryptionAlgorithm {
     @Generated
     private NEVPNIKEv2EncryptionAlgorithm() {
     }
+
+    @Generated @NInt public static final long AlgorithmChaCha20Poly1305 = 0x0000000000000007L;
 }

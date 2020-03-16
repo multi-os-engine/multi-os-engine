@@ -31,4 +31,8 @@ public final class NSURLRequestNetworkServiceType {
     @Generated
     private NSURLRequestNetworkServiceType() {
     }
+
+    @Generated @NUInt public static final long ResponsiveData = 0x0000000000000006L;
+    @Generated @NUInt public static final long AVStreaming = 0x0000000000000008L;
+    @Generated @NUInt public static final long ResponsiveAV = 0x0000000000000009L;
 }

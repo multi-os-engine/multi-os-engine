@@ -154,4 +154,107 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("bias")
+    public native float bias();
+
+    @Generated
+    @Selector("gradientClass")
+    public native Class gradientClass();
+
+    @Generated
+    @Selector("gradientFiltersWithSources:")
+    public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSources(
+            NSArray<? extends MPSNNImageNode> gradientImages);
+
+    @Generated
+    @Selector("maximumValue")
+    public native float maximumValue();
+
+    @Generated
+    @Selector("minimumValue")
+    public native float minimumValue();
+
+    @Generated
+    @Selector("primaryScale")
+    public native float primaryScale();
+
+    @Generated
+    @Selector("primaryStrideInFeatureChannels")
+    @NUInt
+    public native long primaryStrideInFeatureChannels();
+
+    @Generated
+    @Selector("primaryStrideInPixelsX")
+    @NUInt
+    public native long primaryStrideInPixelsX();
+
+    @Generated
+    @Selector("primaryStrideInPixelsY")
+    @NUInt
+    public native long primaryStrideInPixelsY();
+
+    @Generated
+    @Selector("secondaryScale")
+    public native float secondaryScale();
+
+    @Generated
+    @Selector("secondaryStrideInFeatureChannels")
+    @NUInt
+    public native long secondaryStrideInFeatureChannels();
+
+    @Generated
+    @Selector("secondaryStrideInPixelsX")
+    @NUInt
+    public native long secondaryStrideInPixelsX();
+
+    @Generated
+    @Selector("secondaryStrideInPixelsY")
+    @NUInt
+    public native long secondaryStrideInPixelsY();
+
+    @Generated
+    @Selector("setBias:")
+    public native void setBias(float value);
+
+    @Generated
+    @Selector("setMaximumValue:")
+    public native void setMaximumValue(float value);
+
+    @Generated
+    @Selector("setMinimumValue:")
+    public native void setMinimumValue(float value);
+
+    @Generated
+    @Selector("setPrimaryScale:")
+    public native void setPrimaryScale(float value);
+
+    @Generated
+    @Selector("setPrimaryStrideInFeatureChannels:")
+    public native void setPrimaryStrideInFeatureChannels(@NUInt long value);
+
+    @Generated
+    @Selector("setPrimaryStrideInPixelsX:")
+    public native void setPrimaryStrideInPixelsX(@NUInt long value);
+
+    @Generated
+    @Selector("setPrimaryStrideInPixelsY:")
+    public native void setPrimaryStrideInPixelsY(@NUInt long value);
+
+    @Generated
+    @Selector("setSecondaryScale:")
+    public native void setSecondaryScale(float value);
+
+    @Generated
+    @Selector("setSecondaryStrideInFeatureChannels:")
+    public native void setSecondaryStrideInFeatureChannels(@NUInt long value);
+
+    @Generated
+    @Selector("setSecondaryStrideInPixelsX:")
+    public native void setSecondaryStrideInPixelsX(@NUInt long value);
+
+    @Generated
+    @Selector("setSecondaryStrideInPixelsY:")
+    public native void setSecondaryStrideInPixelsY(@NUInt long value);
 }

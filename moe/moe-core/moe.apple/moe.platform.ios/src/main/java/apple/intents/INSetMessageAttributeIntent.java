@@ -171,7 +171,7 @@ public class INSetMessageAttributeIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetMessageAttributeIntent initWithCoder(NSCoder aDecoder);
+    public native INSetMessageAttributeIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIdentifiers:attribute:")

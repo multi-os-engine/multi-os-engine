@@ -39,6 +39,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ann.ObjCBlock;
@@ -1840,4 +1841,1157 @@ public final class ImageIO {
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAuxiliaryDataType();
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long CGImageSourceGetPrimaryImageIndex(CGImageSourceRef isrc);
+
+    @Generated
+    @CFunction
+    public static native int CGAnimateImageAtURLWithBlock(CFURLRef url, CFDictionaryRef options,
+            @ObjCBlock(name = "call_CGAnimateImageAtURLWithBlock") Block_CGAnimateImageAtURLWithBlock block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGAnimateImageAtURLWithBlock {
+        @Generated
+        void call_CGAnimateImageAtURLWithBlock(@NUInt long arg0, CGImageRef arg1, BoolPtr arg2);
+    }
+
+    @Generated
+    @CFunction
+    public static native int CGAnimateImageDataWithBlock(CFDataRef data, CFDictionaryRef options,
+            @ObjCBlock(name = "call_CGAnimateImageDataWithBlock") Block_CGAnimateImageDataWithBlock block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGAnimateImageDataWithBlock {
+        @Generated
+        void call_CGAnimateImageDataWithBlock(@NUInt long arg0, CGImageRef arg1, BoolPtr arg2);
+    }
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageMetadataNamespaceIPTCExtension();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageMetadataPrefixIPTCExtension();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyHEICSDictionary();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyOpenEXRDictionary();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyPrimaryImage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyHEICSLoopCount();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyHEICSDelayTime();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyHEICSUnclampedDelayTime();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyHEICSCanvasPixelWidth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyHEICSCanvasPixelHeight();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyHEICSFrameInfoArray();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyExifOffsetTime();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyExifOffsetTimeOriginal();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyExifOffsetTimeDigitized();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyExifCompositeImage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyExifSourceImageNumberOfCompositeImage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyExifSourceExposureTimesOfCompositeImage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGIFCanvasPixelWidth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGIFCanvasPixelHeight();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGIFFrameInfoArray();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyPNGComment();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyPNGDisclaimer();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyPNGSource();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyPNGWarning();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyAPNGFrameInfoArray();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyAPNGCanvasPixelWidth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyAPNGCanvasPixelHeight();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTerm();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTermCvId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTermId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTermName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTermRefinedAbout();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAddlModelInfo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkOrObject();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkCircaDateCreated();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkContentDescription();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkContributionDescription();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkCopyrightNotice();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkCreator();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkCreatorID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkCopyrightOwnerID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkCopyrightOwnerName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkLicensorID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkLicensorName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkDateCreated();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkPhysicalDescription();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkSource();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkSourceInventoryNo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkSourceInvURL();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkStylePeriod();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtArtworkTitle();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAudioBitrate();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAudioBitrateMode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtAudioChannelCount();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtCircaDateCreated();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtContainerFormat();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtContainerFormatIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtContainerFormatName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtContributor();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtContributorIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtContributorName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtContributorRole();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtCopyrightYear();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtCreator();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtCreatorIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtCreatorName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtCreatorRole();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtControlledVocabularyTerm();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreen();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegion();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionD();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionH();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionText();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionUnit();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionW();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionX();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionY();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDigitalImageGUID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDigitalSourceFileType();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDigitalSourceType();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDopesheet();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDopesheetLink();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDopesheetLinkLink();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtDopesheetLinkLinkQualifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEmbdEncRightsExpr();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEmbeddedEncodedRightsExpr();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEmbeddedEncodedRightsExprType();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEmbeddedEncodedRightsExprLangID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEpisode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEpisodeIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEpisodeName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEpisodeNumber();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtEvent();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtShownEvent();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtShownEventIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtShownEventName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtExternalMetadataLink();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtFeedIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtGenre();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtGenreCvId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtGenreCvTermId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtGenreCvTermName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtGenreCvTermRefinedAbout();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtHeadline();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtIPTCLastEdited();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLinkedEncRightsExpr();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLinkedEncodedRightsExpr();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLinkedEncodedRightsExprType();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLinkedEncodedRightsExprLangID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationCreated();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationCity();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationCountryCode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationCountryName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationGPSAltitude();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationGPSLatitude();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationGPSLongitude();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationLocationId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationLocationName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationProvinceState();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationSublocation();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationWorldRegion();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtLocationShown();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtMaxAvailHeight();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtMaxAvailWidth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtModelAge();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtOrganisationInImageCode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtOrganisationInImageName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonHeard();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonHeardIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonHeardName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageWDetails();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCharacteristic();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCvTermCvId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCvTermId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCvTermName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCvTermRefinedAbout();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageDescription();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtProductInImage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtProductInImageDescription();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtProductInImageGTIN();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtProductInImageName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPublicationEvent();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPublicationEventDate();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPublicationEventIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtPublicationEventName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRating();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRatingRegion();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionCity();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionCountryCode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionCountryName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionGPSAltitude();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionGPSLatitude();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionGPSLongitude();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionLocationId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionLocationName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionProvinceState();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionSublocation();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionWorldRegion();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingScaleMaxValue();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingScaleMinValue();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingSourceLink();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingValue();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRatingValueLogoLink();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRegistryID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRegistryEntryRole();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRegistryItemID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtRegistryOrganisationID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtReleaseReady();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSeason();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSeasonIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSeasonName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSeasonNumber();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSeries();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSeriesIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSeriesName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtStorylineIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtStreamReady();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtStylePeriod();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSupplyChainSource();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSupplyChainSourceIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtSupplyChainSourceName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtTemporalCoverage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtTemporalCoverageFrom();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtTemporalCoverageTo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtTranscript();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtTranscriptLink();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtTranscriptLinkLink();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtTranscriptLinkLinkQualifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVideoBitrate();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVideoBitrateMode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVideoDisplayAspectRatio();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVideoEncodingProfile();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVideoShotType();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVideoShotTypeIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVideoShotTypeName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVideoStreamsCount();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtVisualColor();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTag();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTagCvId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTagCvTermId();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTagCvTermName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTagCvTermRefinedAbout();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGActiveArea();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGAnalogBalance();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGAntiAliasStrength();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGAsShotICCProfile();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGAsShotPreProfileMatrix();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGAsShotProfileName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBaselineExposureOffset();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBayerGreenSplit();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBestQualityScale();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBlackLevelDeltaH();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBlackLevelDeltaV();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGBlackLevelRepeatDim();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCFALayout();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCFAPlaneColor();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGChromaBlurRadius();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGColorimetricReference();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCurrentICCProfile();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGCurrentPreProfileMatrix();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGDefaultBlackRender();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGDefaultCropOrigin();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGDefaultCropSize();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGDefaultScale();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGDefaultUserCrop();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGExtraCameraProfiles();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGForwardMatrix1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGForwardMatrix2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGLinearizationTable();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGLinearResponseLimit();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGMakerNoteSafety();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGMaskedAreas();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGNewRawImageDigest();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGNoiseReductionApplied();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOpcodeList1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOpcodeList2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOpcodeList3();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOriginalBestQualityFinalSize();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOriginalDefaultCropSize();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOriginalDefaultFinalSize();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOriginalRawFileData();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOriginalRawFileDigest();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGOriginalRawFileName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGPreviewApplicationName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGPreviewApplicationVersion();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGPreviewColorSpace();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGPreviewDateTime();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGPreviewSettingsDigest();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGPreviewSettingsName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileCopyright();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileEmbedPolicy();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileHueSatMapData1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileHueSatMapData2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileHueSatMapDims();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileHueSatMapEncoding();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileLookTableData();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileLookTableDims();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileLookTableEncoding();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGProfileToneCurve();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGRawDataUniqueID();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGRawImageDigest();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGRawToPreviewGain();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGReductionMatrix1();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGReductionMatrix2();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGRowInterleaveFactor();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGShadowScale();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyDNGSubTileBlockSize();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyOpenEXRAspectRatio();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataTypePortraitEffectsMatte();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationSkinMatte();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationHairMatte();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationTeethMatte();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAnimationStartIndex();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAnimationDelayTime();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAnimationLoopCount();
 }

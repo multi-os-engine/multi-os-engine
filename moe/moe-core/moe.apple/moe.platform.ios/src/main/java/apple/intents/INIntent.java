@@ -166,7 +166,7 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -178,7 +178,7 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INIntent initWithCoder(NSCoder aDecoder);
+    public native INIntent initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -189,4 +189,24 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("intentDescription")
     public native String intentDescription();
+
+    @Generated
+    @Selector("imageForParameterNamed:")
+    public native INImage imageForParameterNamed(String parameterName);
+
+    @Generated
+    @Selector("keyImage")
+    public native INImage keyImage();
+
+    @Generated
+    @Selector("setImage:forParameterNamed:")
+    public native void setImageForParameterNamed(INImage image, String parameterName);
+
+    @Generated
+    @Selector("setSuggestedInvocationPhrase:")
+    public native void setSuggestedInvocationPhrase(String value);
+
+    @Generated
+    @Selector("suggestedInvocationPhrase")
+    public native String suggestedInvocationPhrase();
 }

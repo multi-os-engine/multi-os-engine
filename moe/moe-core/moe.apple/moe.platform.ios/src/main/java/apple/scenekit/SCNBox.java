@@ -202,7 +202,7 @@ public class SCNBox extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNBox initWithCoder(NSCoder aDecoder);
+    public native SCNBox initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("length")

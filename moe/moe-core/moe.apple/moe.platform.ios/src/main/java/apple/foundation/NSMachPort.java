@@ -170,7 +170,7 @@ public class NSMachPort extends NSPort {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMachPort initWithCoder(NSCoder aDecoder);
+    public native NSMachPort initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithMachPort:")

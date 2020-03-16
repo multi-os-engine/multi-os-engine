@@ -168,7 +168,7 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("endDateComponents")
@@ -180,7 +180,7 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native INDateComponentsRange initWithCoder(NSCoder aDecoder);
+    public native INDateComponentsRange initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithStartDateComponents:endDateComponents:")

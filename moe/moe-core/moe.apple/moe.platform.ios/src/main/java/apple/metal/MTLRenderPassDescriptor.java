@@ -22,6 +22,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.metal.protocol.MTLBuffer;
+import apple.metal.protocol.MTLRasterizationRateMap;
 import apple.metal.struct.MTLSamplePosition;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -203,11 +204,6 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     public native long defaultRasterSampleCount();
 
     @Generated
-    @Selector("defaultSampleCount")
-    @NUInt
-    public native long defaultSampleCount();
-
-    @Generated
     @Selector("getSamplePositions:count:")
     @NUInt
     public native long getSamplePositionsCount(
@@ -232,10 +228,6 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setDefaultRasterSampleCount:")
     public native void setDefaultRasterSampleCount(@NUInt long value);
-
-    @Generated
-    @Selector("setDefaultSampleCount:")
-    public native void setDefaultSampleCount(@NUInt long value);
 
     @Generated
     @Selector("setImageblockSampleLength:")
@@ -281,4 +273,22 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("tileWidth")
     @NUInt
     public native long tileWidth();
+
+    @Generated
+    @Selector("rasterizationRateMap")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLRasterizationRateMap rasterizationRateMap();
+
+    @Generated
+    @Selector("renderTargetArrayLength")
+    @NUInt
+    public native long renderTargetArrayLength();
+
+    @Generated
+    @Selector("setRasterizationRateMap:")
+    public native void setRasterizationRateMap(@Mapped(ObjCObjectMapper.class) MTLRasterizationRateMap value);
+
+    @Generated
+    @Selector("setRenderTargetArrayLength:")
+    public native void setRenderTargetArrayLength(@NUInt long value);
 }

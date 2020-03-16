@@ -19,7 +19,7 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.avfoundation.protocol.AVAudioMixing;
 import apple.avfoundation.struct.AVAudio3DPoint;
-import apple.coreaudio.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioBufferList;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -242,4 +242,46 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
         @UncertainReturn("Options: reference, array Fallback: reference")
         AudioBufferList call_setManualRenderingInputPCMFormatInputBlock(int arg0);
     }
+
+    @Generated
+    @Selector("isVoiceProcessingAGCEnabled")
+    public native boolean isVoiceProcessingAGCEnabled();
+
+    @Generated
+    @Selector("isVoiceProcessingBypassed")
+    public native boolean isVoiceProcessingBypassed();
+
+    @Generated
+    @Selector("isVoiceProcessingInputMuted")
+    public native boolean isVoiceProcessingInputMuted();
+
+    @Generated
+    @Selector("pointSourceInHeadMode")
+    @NInt
+    public native long pointSourceInHeadMode();
+
+    @Generated
+    @Selector("setPointSourceInHeadMode:")
+    public native void setPointSourceInHeadMode(@NInt long value);
+
+    @Generated
+    @Selector("setSourceMode:")
+    public native void setSourceMode(@NInt long value);
+
+    @Generated
+    @Selector("setVoiceProcessingAGCEnabled:")
+    public native void setVoiceProcessingAGCEnabled(boolean value);
+
+    @Generated
+    @Selector("setVoiceProcessingBypassed:")
+    public native void setVoiceProcessingBypassed(boolean value);
+
+    @Generated
+    @Selector("setVoiceProcessingInputMuted:")
+    public native void setVoiceProcessingInputMuted(boolean value);
+
+    @Generated
+    @Selector("sourceMode")
+    @NInt
+    public native long sourceMode();
 }

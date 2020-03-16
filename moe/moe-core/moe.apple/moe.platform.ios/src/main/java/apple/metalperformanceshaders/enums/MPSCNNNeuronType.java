@@ -20,5 +20,9 @@ public final class MPSCNNNeuronType {
     @Generated public static final int ELU = 0x00000009;
     @Generated public static final int PReLU = 0x0000000A;
     @Generated public static final int ReLUN = 0x0000000B;
-    @Generated public static final int Count = 0x0000000C;
+    @Generated public static final int Count = 0x00000010;
+    @Generated public static final int Power = 0x0000000C;
+    @Generated public static final int Exponential = 0x0000000D;
+    @Generated public static final int Logarithm = 0x0000000E;
+    @Generated public static final int GeLU = 0x0000000F;
 }

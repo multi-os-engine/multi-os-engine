@@ -406,7 +406,7 @@ public class UICollectionReusableView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionReusableView initWithCoder(NSCoder aDecoder);
+    public native UICollectionReusableView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -429,4 +429,10 @@ public class UICollectionReusableView extends UIView {
     @Selector("willTransitionFromLayout:toLayout:")
     public native void willTransitionFromLayoutToLayout(UICollectionViewLayout oldLayout,
             UICollectionViewLayout newLayout);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

@@ -179,7 +179,7 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -187,7 +187,7 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIPrintInfo initWithCoder(NSCoder aDecoder);
+    public native UIPrintInfo initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("jobName")

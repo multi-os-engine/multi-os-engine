@@ -17,7 +17,9 @@ limitations under the License.
 package apple.webkit.protocol;
 
 import apple.foundation.NSArray;
+import apple.uikit.UIContextMenuConfiguration;
 import apple.uikit.UIViewController;
+import apple.webkit.WKContextMenuElementInfo;
 import apple.webkit.WKFrameInfo;
 import apple.webkit.WKNavigationAction;
 import apple.webkit.WKPreviewElementInfo;
@@ -26,12 +28,14 @@ import apple.webkit.WKWebViewConfiguration;
 import apple.webkit.WKWindowFeatures;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("WebKit")
@@ -122,5 +126,43 @@ public interface WKUIDelegate {
     public interface Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler {
         @Generated
         void call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(String arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("webView:contextMenuConfigurationForElement:completionHandler:")
+    default void webViewContextMenuConfigurationForElementCompletionHandler(WKWebView webView,
+            WKContextMenuElementInfo elementInfo,
+            @ObjCBlock(name = "call_webViewContextMenuConfigurationForElementCompletionHandler") Block_webViewContextMenuConfigurationForElementCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewContextMenuConfigurationForElementCompletionHandler {
+        @Generated
+        void call_webViewContextMenuConfigurationForElementCompletionHandler(UIContextMenuConfiguration arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("webView:contextMenuDidEndForElement:")
+    default void webViewContextMenuDidEndForElement(WKWebView webView, WKContextMenuElementInfo elementInfo) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("webView:contextMenuForElement:willCommitWithAnimator:")
+    default void webViewContextMenuForElementWillCommitWithAnimator(WKWebView webView,
+            WKContextMenuElementInfo elementInfo, @Mapped(ObjCObjectMapper.class) Object animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("webView:contextMenuWillPresentForElement:")
+    default void webViewContextMenuWillPresentForElement(WKWebView webView, WKContextMenuElementInfo elementInfo) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

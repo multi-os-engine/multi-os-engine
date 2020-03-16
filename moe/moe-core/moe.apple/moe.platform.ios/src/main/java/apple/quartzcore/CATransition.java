@@ -172,7 +172,7 @@ public class CATransition extends CAAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATransition initWithCoder(NSCoder aDecoder);
+    public native CATransition initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setEndProgress:")

@@ -27,4 +27,6 @@ public final class UITableViewStyle {
     @Generated
     private UITableViewStyle() {
     }
+
+    @Generated @NInt public static final long InsetGrouped = 0x0000000000000002L;
 }

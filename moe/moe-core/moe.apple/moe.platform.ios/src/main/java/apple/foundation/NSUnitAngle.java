@@ -184,7 +184,7 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -192,7 +192,7 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitAngle initWithCoder(NSCoder aDecoder);
+    public native NSUnitAngle initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

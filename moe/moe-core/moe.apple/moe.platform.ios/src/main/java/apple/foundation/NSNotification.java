@@ -167,7 +167,7 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -175,7 +175,7 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSNotification initWithCoder(NSCoder aDecoder);
+    public native NSNotification initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithName:object:userInfo:")

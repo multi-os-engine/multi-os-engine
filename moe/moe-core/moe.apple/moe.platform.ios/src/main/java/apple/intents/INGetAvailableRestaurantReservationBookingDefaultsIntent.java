@@ -162,7 +162,7 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithCoder(NSCoder aDecoder);
+    public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("restaurant")

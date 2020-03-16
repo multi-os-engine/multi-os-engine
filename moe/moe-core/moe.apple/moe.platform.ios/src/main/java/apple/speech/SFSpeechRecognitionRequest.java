@@ -186,4 +186,12 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @Selector("taskHint")
     @NInt
     public native long taskHint();
+
+    @Generated
+    @Selector("requiresOnDeviceRecognition")
+    public native boolean requiresOnDeviceRecognition();
+
+    @Generated
+    @Selector("setRequiresOnDeviceRecognition:")
+    public native void setRequiresOnDeviceRecognition(boolean value);
 }

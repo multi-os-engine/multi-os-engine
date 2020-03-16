@@ -19,6 +19,7 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
@@ -175,7 +176,7 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -187,7 +188,7 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVSpeechSynthesisVoice initWithCoder(NSCoder aDecoder);
+    public native AVSpeechSynthesisVoice initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("language")
@@ -207,4 +208,13 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("audioFileSettings")
+    public native NSDictionary<String, ?> audioFileSettings();
+
+    @Generated
+    @Selector("gender")
+    @NInt
+    public native long gender();
 }

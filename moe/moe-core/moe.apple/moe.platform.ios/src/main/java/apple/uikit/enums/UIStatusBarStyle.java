@@ -29,4 +29,6 @@ public final class UIStatusBarStyle {
     @Generated
     private UIStatusBarStyle() {
     }
+
+    @Generated @NInt public static final long DarkContent = 0x0000000000000003L;
 }

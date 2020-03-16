@@ -166,7 +166,7 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterVerdict initWithCoder(NSCoder aDecoder);
+    public native NEFilterVerdict initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

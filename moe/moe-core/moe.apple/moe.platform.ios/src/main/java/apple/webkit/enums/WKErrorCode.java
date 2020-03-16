@@ -35,4 +35,6 @@ public final class WKErrorCode {
     @Generated @NInt public static final long ContentRuleListStoreLookUpFailed = 0x0000000000000007L;
     @Generated @NInt public static final long ContentRuleListStoreRemoveFailed = 0x0000000000000008L;
     @Generated @NInt public static final long ContentRuleListStoreVersionMismatch = 0x0000000000000009L;
+    @Generated @NInt public static final long AttributedStringContentFailedToLoad = 0x000000000000000AL;
+    @Generated @NInt public static final long AttributedStringContentLoadTimedOut = 0x000000000000000BL;
 }

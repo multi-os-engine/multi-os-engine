@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIAccessibilityElement extends NSObject implements UIAccessibilityIdentification {
+public class UIAccessibilityElement extends UIResponder implements UIAccessibilityIdentification {
     static {
         NatJ.register();
     }
@@ -248,4 +248,8 @@ public class UIAccessibilityElement extends NSObject implements UIAccessibilityI
     @Generated
     @Selector("setIsAccessibilityElement:")
     public native void setIsAccessibilityElement(boolean value);
+
+    @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
 }

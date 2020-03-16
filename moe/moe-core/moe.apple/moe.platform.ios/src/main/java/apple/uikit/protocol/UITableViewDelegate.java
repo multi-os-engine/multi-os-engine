@@ -16,15 +16,19 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
+import apple.uikit.UIContextMenuConfiguration;
 import apple.uikit.UIFocusAnimationCoordinator;
 import apple.uikit.UISwipeActionsConfiguration;
 import apple.uikit.UITableView;
 import apple.uikit.UITableViewCell;
 import apple.uikit.UITableViewFocusUpdateContext;
 import apple.uikit.UITableViewRowAction;
+import apple.uikit.UITargetedPreview;
 import apple.uikit.UIView;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -348,6 +352,61 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @Selector("tableView:trailingSwipeActionsConfigurationForRowAtIndexPath:")
     default UISwipeActionsConfiguration tableViewTrailingSwipeActionsConfigurationForRowAtIndexPath(
             UITableView tableView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:contextMenuConfigurationForRowAtIndexPath:point:")
+    default UIContextMenuConfiguration tableViewContextMenuConfigurationForRowAtIndexPathPoint(UITableView tableView,
+            NSIndexPath indexPath, @ByValue CGPoint point) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:didBeginMultipleSelectionInteractionAtIndexPath:")
+    default void tableViewDidBeginMultipleSelectionInteractionAtIndexPath(UITableView tableView,
+            NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:previewForDismissingContextMenuWithConfiguration:")
+    default UITargetedPreview tableViewPreviewForDismissingContextMenuWithConfiguration(UITableView tableView,
+            UIContextMenuConfiguration configuration) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:previewForHighlightingContextMenuWithConfiguration:")
+    default UITargetedPreview tableViewPreviewForHighlightingContextMenuWithConfiguration(UITableView tableView,
+            UIContextMenuConfiguration configuration) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
+    default boolean tableViewShouldBeginMultipleSelectionInteractionAtIndexPath(UITableView tableView,
+            NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willPerformPreviewActionForMenuWithConfiguration:animator:")
+    default void tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration, @Mapped(ObjCObjectMapper.class) Object animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableViewDidEndMultipleSelectionInteraction:")
+    default void tableViewDidEndMultipleSelectionInteraction(UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -175,7 +175,6 @@ public class ADInterstitialAd extends NSObject {
     public native boolean isLoaded();
 
     @Generated
-    @Deprecated
     @Selector("presentFromViewController:")
     public native void presentFromViewController(UIViewController viewController);
 

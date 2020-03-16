@@ -180,7 +180,7 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -188,7 +188,7 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextTab initWithCoder(NSCoder aDecoder);
+    public native NSTextTab initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTextAlignment:location:options:")

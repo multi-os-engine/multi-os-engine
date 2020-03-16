@@ -912,4 +912,28 @@ public final class CoreVideo {
     @Generated
     @CVariable()
     public static native CFStringRef kCVMetalTextureUsage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferTransferFunction_Linear();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferAlphaChannelModeKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferAlphaChannelMode_StraightAlpha();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferAlphaChannelMode_PremultipliedAlpha();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelFormatContainsGrayscale();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVMetalTextureStorageMode();
 }

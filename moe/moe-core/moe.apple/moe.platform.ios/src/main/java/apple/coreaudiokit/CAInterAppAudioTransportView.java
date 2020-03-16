@@ -406,7 +406,7 @@ public class CAInterAppAudioTransportView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAInterAppAudioTransportView initWithCoder(NSCoder aDecoder);
+    public native CAInterAppAudioTransportView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -479,4 +479,10 @@ public class CAInterAppAudioTransportView extends UIView {
     @Generated
     @Selector("setRewindButtonColor:")
     public native void setRewindButtonColor(UIColor value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

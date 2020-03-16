@@ -167,4 +167,8 @@ public class MDLSkeleton extends MDLObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("jointRestTransforms")
+    public native MDLMatrix4x4Array jointRestTransforms();
 }

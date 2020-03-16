@@ -22,6 +22,7 @@ import apple.intents.INIntegerResolutionResult;
 import apple.intents.INRelativeSettingResolutionResult;
 import apple.intents.INSetSeatSettingsInCarIntent;
 import apple.intents.INSetSeatSettingsInCarIntentResponse;
+import apple.intents.INSpeakableStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
@@ -152,5 +153,20 @@ public interface INSetSeatSettingsInCarIntentHandling {
     public interface Block_resolveSeatForSetSeatSettingsInCarWithCompletion {
         @Generated
         void call_resolveSeatForSetSeatSettingsInCarWithCompletion(INCarSeatResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveCarNameForSetSeatSettingsInCar:withCompletion:")
+    default void resolveCarNameForSetSeatSettingsInCarWithCompletion(INSetSeatSettingsInCarIntent intent,
+            @ObjCBlock(name = "call_resolveCarNameForSetSeatSettingsInCarWithCompletion") Block_resolveCarNameForSetSeatSettingsInCarWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveCarNameForSetSeatSettingsInCarWithCompletion {
+        @Generated
+        void call_resolveCarNameForSetSeatSettingsInCarWithCompletion(INSpeakableStringResolutionResult arg0);
     }
 }

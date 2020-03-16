@@ -201,7 +201,7 @@ public class SCNCapsule extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNCapsule initWithCoder(NSCoder aDecoder);
+    public native SCNCapsule initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("radialSegmentCount")

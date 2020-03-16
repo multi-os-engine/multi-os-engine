@@ -95,7 +95,7 @@ public class VNPixelBufferObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNPixelBufferObservation initWithCoder(NSCoder aDecoder);
+    public native VNPixelBufferObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -158,4 +158,8 @@ public class VNPixelBufferObservation extends VNObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("featureName")
+    public native String featureName();
 }

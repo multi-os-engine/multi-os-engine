@@ -163,7 +163,7 @@ public class MKDistanceFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKDistanceFormatter initWithCoder(NSCoder aDecoder);
+    public native MKDistanceFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("locale")

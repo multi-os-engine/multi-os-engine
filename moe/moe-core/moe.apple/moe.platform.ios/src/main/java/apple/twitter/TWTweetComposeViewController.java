@@ -191,7 +191,7 @@ public class TWTweetComposeViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native TWTweetComposeViewController initWithCoder(NSCoder aDecoder);
+    public native TWTweetComposeViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

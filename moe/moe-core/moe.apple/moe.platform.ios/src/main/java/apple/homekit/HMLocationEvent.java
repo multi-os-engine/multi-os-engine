@@ -189,6 +189,7 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("isSupportedForHome:")
     public static native boolean isSupportedForHome(HMHome home);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

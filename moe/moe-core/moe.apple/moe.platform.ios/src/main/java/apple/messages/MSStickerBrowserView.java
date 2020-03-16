@@ -417,7 +417,7 @@ public class MSStickerBrowserView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSStickerBrowserView initWithCoder(NSCoder aDecoder);
+    public native MSStickerBrowserView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -463,4 +463,10 @@ public class MSStickerBrowserView extends UIView {
     @Selector("stickerSize")
     @NInt
     public native long stickerSize();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

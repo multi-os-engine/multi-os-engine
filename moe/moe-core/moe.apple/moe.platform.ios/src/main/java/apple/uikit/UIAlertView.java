@@ -430,7 +430,7 @@ public class UIAlertView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIAlertView initWithCoder(NSCoder aDecoder);
+    public native UIAlertView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -499,4 +499,10 @@ public class UIAlertView extends UIView {
     @Generated
     @Selector("title")
     public native String title();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

@@ -340,7 +340,7 @@ public class UICollectionViewController extends UIViewController
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewController initWithCoder(NSCoder aDecoder);
+    public native UICollectionViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCollectionViewLayout:")
@@ -468,4 +468,46 @@ public class UICollectionViewController extends UIViewController
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
     public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfigurationForItemAtIndexPath:point:")
+    public native UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemAtIndexPathPoint(
+            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:didBeginMultipleSelectionInteractionAtIndexPath:")
+    public native void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:previewForDismissingContextMenuWithConfiguration:")
+    public native UITargetedPreview collectionViewPreviewForDismissingContextMenuWithConfiguration(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:previewForHighlightingContextMenuWithConfiguration:")
+    public native UITargetedPreview collectionViewPreviewForHighlightingContextMenuWithConfiguration(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
+    public native boolean collectionViewShouldBeginMultipleSelectionInteractionAtIndexPath(
+            UICollectionView collectionView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:")
+    public native void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) Object animator);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionViewDidEndMultipleSelectionInteraction:")
+    public native void collectionViewDidEndMultipleSelectionInteraction(UICollectionView collectionView);
 }

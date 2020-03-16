@@ -194,7 +194,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -202,7 +202,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKNotificationInfo initWithCoder(NSCoder aDecoder);
+    public native CKNotificationInfo initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setAlertActionLocalizationKey:")

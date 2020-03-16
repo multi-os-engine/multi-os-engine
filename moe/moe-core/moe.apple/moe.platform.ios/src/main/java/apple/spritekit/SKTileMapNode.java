@@ -22,11 +22,12 @@ import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.gameplaykit.GKNoiseMap;
 import apple.gameplaykit.GKPolygonObstacle;
 import apple.uikit.UIColor;
@@ -42,12 +43,15 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -55,7 +59,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKTileMapNode extends SKNode implements NSCopying, NSCoding {
+public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -250,7 +254,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fillWithTileGroup:")
@@ -262,7 +266,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKTileMapNode initWithCoder(NSCoder aDecoder);
+    public native SKTileMapNode initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTileSet:columns:rows:tileSize:")
@@ -394,4 +398,19 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSCoding {
     @Generated
     @Selector("valueForAttributeNamed:")
     public native SKAttributeValue valueForAttributeNamed(String key);
+
+    @Generated
+    @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
+    public static native SKTileMapNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
+            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

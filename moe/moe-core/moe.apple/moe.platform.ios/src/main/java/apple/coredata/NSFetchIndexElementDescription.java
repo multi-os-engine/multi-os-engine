@@ -90,7 +90,7 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -107,7 +107,7 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchIndexElementDescription initWithCoder(NSCoder aDecoder);
+    public native NSFetchIndexElementDescription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithProperty:collationType:")

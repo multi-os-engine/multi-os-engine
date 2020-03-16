@@ -105,7 +105,7 @@ public class INSendRideFeedbackIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSendRideFeedbackIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSendRideFeedbackIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

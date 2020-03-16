@@ -38,6 +38,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -201,7 +202,7 @@ public class NSMutableAttributedString extends NSAttributedString {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableAttributedString initWithCoder(NSCoder aDecoder);
+    public native NSMutableAttributedString initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
@@ -333,4 +334,27 @@ public class NSMutableAttributedString extends NSAttributedString {
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
+
+    @Generated
+    @Selector("loadFromHTMLWithData:options:completionHandler:")
+    public static native void loadFromHTMLWithDataOptionsCompletionHandler(NSData data, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithDataOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithDataOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithFileURL:options:completionHandler:")
+    public static native void loadFromHTMLWithFileURLOptionsCompletionHandler(NSURL fileURL,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithFileURLOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithFileURLOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithRequest:options:completionHandler:")
+    public static native void loadFromHTMLWithRequestOptionsCompletionHandler(NSURLRequest request,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithRequestOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithRequestOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithString:options:completionHandler:")
+    public static native void loadFromHTMLWithStringOptionsCompletionHandler(String string,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithStringOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithStringOptionsCompletionHandler completionHandler);
 }

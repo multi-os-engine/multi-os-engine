@@ -171,7 +171,7 @@ public class CABTMIDILocalPeripheralViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CABTMIDILocalPeripheralViewController initWithCoder(NSCoder aDecoder);
+    public native CABTMIDILocalPeripheralViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

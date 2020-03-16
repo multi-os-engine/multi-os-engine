@@ -75,4 +75,12 @@ public interface UIDocumentBrowserViewControllerDelegate {
             UIActivityViewController activityViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("documentBrowser:didPickDocumentsAtURLs:")
+    default void documentBrowserDidPickDocumentsAtURLs(UIDocumentBrowserViewController controller,
+            NSArray<? extends NSURL> documentURLs) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

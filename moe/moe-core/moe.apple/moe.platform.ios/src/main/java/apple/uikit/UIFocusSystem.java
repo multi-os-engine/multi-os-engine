@@ -5,6 +5,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIFocusEnvironment;
+import apple.uikit.protocol.UIFocusItem;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -144,4 +145,22 @@ public class UIFocusSystem extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("focusSystemForEnvironment:")
+    public static native UIFocusSystem focusSystemForEnvironment(
+            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+
+    @Generated
+    @Selector("focusedItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIFocusItem focusedItem();
+
+    @Generated
+    @Selector("requestFocusUpdateToEnvironment:")
+    public native void requestFocusUpdateToEnvironment(@Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+
+    @Generated
+    @Selector("updateFocusIfNeeded")
+    public native void updateFocusIfNeeded();
 }

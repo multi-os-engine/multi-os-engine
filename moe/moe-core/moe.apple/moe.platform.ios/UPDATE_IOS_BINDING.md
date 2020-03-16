@@ -58,9 +58,17 @@
 * In `apple.callkit.CXCallDirectoryProvider` method was changed:
 	* from: `public native void beginRequestWithExtensionContext(CXCallDirectoryExtensionContext context);`
 	* to: `public native void beginRequestWithExtensionContext(NSExtensionContext context);`
+* In `apple.cloudkit.protocol.CKRecordKeyValueSetting` method was changed:
+    * from `void setObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);`
+    * to: `void setObjectForKey(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);`
+    * from `void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object object, String key);`
+    * to: `void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);`
 * In `apple.gameplaykit.GKCompositeBehavior` method was changed:
 	* from: `public native GKBehavior objectAtIndexedSubscript(@NUInt long idx);`
 	* to: `public native GKGoal objectAtIndexedSubscript(@NUInt long idx);`
+* In `apple.metalperformanceshaders.protocol.MPSSVGFTextureAllocator` method was changed:
+    * from `void returnTexture(@Mapped(ObjCObjectMapper.class) Object texture);`
+    * to `void returnTexture(@Mapped(ObjCObjectMapper.class) MTLTexture texture);`
 
 ### How to Update Custom Modifications List
 

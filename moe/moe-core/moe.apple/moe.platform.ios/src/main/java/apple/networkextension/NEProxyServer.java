@@ -174,7 +174,7 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -186,7 +186,7 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEProxyServer initWithCoder(NSCoder aDecoder);
+    public native NEProxyServer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("password")

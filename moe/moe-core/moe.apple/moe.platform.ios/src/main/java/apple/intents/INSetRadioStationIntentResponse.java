@@ -173,7 +173,7 @@ public class INSetRadioStationIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetRadioStationIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSetRadioStationIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -192,7 +192,7 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -200,7 +200,7 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterNewFlowVerdict initWithCoder(NSCoder aDecoder);
+    public native NEFilterNewFlowVerdict initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -169,7 +169,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,7 +177,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMAttitude initWithCoder(NSCoder aDecoder);
+    public native CMAttitude initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("multiplyByInverseOfAttitude:")

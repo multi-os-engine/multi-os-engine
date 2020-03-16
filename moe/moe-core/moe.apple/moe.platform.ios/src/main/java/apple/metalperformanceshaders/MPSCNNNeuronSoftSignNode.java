@@ -145,4 +145,9 @@ public class MPSCNNNeuronSoftSignNode extends MPSCNNNeuronNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("nodeWithSource:descriptor:")
+    public static native MPSCNNNeuronSoftSignNode nodeWithSourceDescriptor(MPSNNImageNode sourceNode,
+            MPSNNNeuronDescriptor descriptor);
 }

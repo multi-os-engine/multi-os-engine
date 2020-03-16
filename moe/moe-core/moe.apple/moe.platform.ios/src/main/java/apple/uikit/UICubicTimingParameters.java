@@ -181,7 +181,7 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -193,7 +193,7 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICubicTimingParameters initWithCoder(NSCoder aDecoder);
+    public native UICubicTimingParameters initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithControlPoint1:controlPoint2:")

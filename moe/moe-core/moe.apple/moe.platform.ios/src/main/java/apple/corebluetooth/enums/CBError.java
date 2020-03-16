@@ -39,4 +39,6 @@ public final class CBError {
     }
 
     @Generated @NInt public static final long UnkownDevice = 0x000000000000000CL;
+    @Generated @NInt public static final long UnknownDevice = 0x000000000000000CL;
+    @Generated @NInt public static final long OperationNotSupported = 0x000000000000000DL;
 }

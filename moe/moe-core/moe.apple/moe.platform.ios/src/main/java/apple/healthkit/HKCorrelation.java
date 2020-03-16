@@ -185,7 +185,7 @@ public class HKCorrelation extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKCorrelation initWithCoder(NSCoder aDecoder);
+    public native HKCorrelation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("objects")

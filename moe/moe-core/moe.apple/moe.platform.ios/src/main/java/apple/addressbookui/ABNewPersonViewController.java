@@ -181,7 +181,7 @@ public class ABNewPersonViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABNewPersonViewController initWithCoder(NSCoder aDecoder);
+    public native ABNewPersonViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

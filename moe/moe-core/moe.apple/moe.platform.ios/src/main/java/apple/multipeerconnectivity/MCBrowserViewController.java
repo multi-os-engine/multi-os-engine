@@ -203,7 +203,7 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
 
     @Generated
     @Selector("initWithCoder:")
-    public native MCBrowserViewController initWithCoder(NSCoder aDecoder);
+    public native MCBrowserViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

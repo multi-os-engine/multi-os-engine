@@ -172,7 +172,7 @@ public class CAAnimationGroup extends CAAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAAnimationGroup initWithCoder(NSCoder aDecoder);
+    public native CAAnimationGroup initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setAnimations:")

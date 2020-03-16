@@ -42,6 +42,8 @@ import apple.accelerate.struct.DSPComplex;
 import apple.accelerate.struct.DSPDoubleComplex;
 import apple.accelerate.struct.DSPDoubleSplitComplex;
 import apple.accelerate.struct.DSPSplitComplex;
+import apple.accelerate.struct.SparseNumericFactorOptions;
+import apple.accelerate.struct.SparseSymbolicFactorOptions;
 import apple.accelerate.struct.__CLPK_complex;
 import apple.accelerate.struct.__CLPK_doublecomplex;
 import apple.accelerate.struct.quadrature_integrate_function;
@@ -3498,11 +3500,6 @@ public final class Accelerate {
     public static native void appleblas_dgeadd(int __order, int __transA, int __transB, int __m, int __n,
             double __alpha, ConstDoublePtr __A, int __lda, double __beta, ConstDoublePtr __B, int __ldb, DoublePtr __C,
             int __ldc);
-
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native void ATLU_DestroyThreadMemory();
 
     @Generated
     @CFunction
@@ -13406,7 +13403,7 @@ public final class Accelerate {
 
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_splat(NSObject splat, @NUInt long vector_length);
+    public static native NSObject la_vector_from_splat(NSObject splat, @NUInt long simd_length);
 
     @Generated
     @CFunction
@@ -16764,4 +16761,117 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor out_desc,
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSActivation activation,
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native void _SparseRetainSymbolic(VoidPtr symbolicFactor);
+
+    @Generated
+    @CFunction
+    public static native void _SparseDestroyOpaqueSymbolic(VoidPtr toFree);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native SparseSymbolicFactorOptions _SparseGetOptionsFromSymbolicFactor(VoidPtr factor);
+
+    @Generated
+    @CFunction
+    public static native void _SparseTrap();
+
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorSymmetric_Double(VoidPtr Matrix, VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
+            VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorQR_Double(VoidPtr Matrix, VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
+            VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseMultiplySubfactor_Double(VoidPtr Subfactor, VoidPtr x, VoidPtr y,
+            BytePtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseSolveSubfactor_Double(VoidPtr Subfactor, VoidPtr b, VoidPtr x, BytePtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseSolveOpaque_Double(VoidPtr Factored, VoidPtr RHS, VoidPtr Soln, VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseDestroyOpaqueNumeric_Double(VoidPtr toFree);
+
+    @Generated
+    @CFunction
+    public static native void _SparseRetainNumeric_Double(VoidPtr numericFactor);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native SparseNumericFactorOptions _SparseGetOptionsFromNumericFactor_Double(VoidPtr factor);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long _SparseGetIterativeStateSize_Double(VoidPtr method, boolean preconditioner, int m, int n,
+            int nrhs);
+
+    @Generated
+    @CFunction
+    public static native void _SparseReleaseOpaquePreconditioner_Double(VoidPtr toFree);
+
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorSymmetric_Float(VoidPtr Matrix, VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
+            VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorQR_Float(VoidPtr Matrix, VoidPtr Factorization,
+            @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
+            VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseMultiplySubfactor_Float(VoidPtr Subfactor, VoidPtr x, VoidPtr y,
+            BytePtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseSolveSubfactor_Float(VoidPtr Subfactor, VoidPtr b, VoidPtr x, BytePtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseSolveOpaque_Float(VoidPtr Factored, VoidPtr RHS, VoidPtr Soln, VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    public static native void _SparseDestroyOpaqueNumeric_Float(VoidPtr toFree);
+
+    @Generated
+    @CFunction
+    public static native void _SparseRetainNumeric_Float(VoidPtr numericFactor);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native SparseNumericFactorOptions _SparseGetOptionsFromNumericFactor_Float(VoidPtr factor);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long _SparseGetIterativeStateSize_Float(VoidPtr method, boolean preconditioner, int m, int n,
+            int nrhs);
+
+    @Generated
+    @CFunction
+    public static native void _SparseReleaseOpaquePreconditioner_Float(VoidPtr toFree);
 }

@@ -186,7 +186,7 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native INBookRestaurantReservationIntent initWithCoder(NSCoder aDecoder);
+    public native INBookRestaurantReservationIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("partySize")

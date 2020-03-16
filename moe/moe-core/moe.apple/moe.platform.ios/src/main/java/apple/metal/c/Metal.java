@@ -17,10 +17,12 @@ limitations under the License.
 package apple.metal.c;
 
 import apple.metal.struct.MTLClearColor;
+import apple.metal.struct.MTLIndirectCommandBufferExecutionRange;
 import apple.metal.struct.MTLOrigin;
 import apple.metal.struct.MTLRegion;
 import apple.metal.struct.MTLSamplePosition;
 import apple.metal.struct.MTLSize;
+import apple.metal.struct.MTLTextureSwizzleChannels;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
@@ -104,4 +106,28 @@ public final class Metal {
     @CFunction
     @ByValue
     public static native MTLSamplePosition MTLSamplePositionMake(float x, float y);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLSamplePosition MTLCoordinate2DMake(float x, float y);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLTextureSwizzleChannels MTLTextureSwizzleChannelsMake(byte r, byte g, byte b, byte a);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MTLIndirectCommandBufferExecutionRange MTLIndirectCommandBufferExecutionRangeMake(int location,
+            int length);
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLCaptureErrorDomain();
 }

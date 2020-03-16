@@ -333,4 +333,30 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("vertexBuffers")
     public native MTLPipelineBufferDescriptorArray vertexBuffers();
+
+    @Generated
+    @Selector("inputPrimitiveTopology")
+    @NUInt
+    public native long inputPrimitiveTopology();
+
+    @Generated
+    @Selector("maxVertexAmplificationCount")
+    @NUInt
+    public native long maxVertexAmplificationCount();
+
+    @Generated
+    @Selector("setInputPrimitiveTopology:")
+    public native void setInputPrimitiveTopology(@NUInt long value);
+
+    @Generated
+    @Selector("setMaxVertexAmplificationCount:")
+    public native void setMaxVertexAmplificationCount(@NUInt long value);
+
+    @Generated
+    @Selector("setSupportIndirectCommandBuffers:")
+    public native void setSupportIndirectCommandBuffers(boolean value);
+
+    @Generated
+    @Selector("supportIndirectCommandBuffers")
+    public native boolean supportIndirectCommandBuffers();
 }

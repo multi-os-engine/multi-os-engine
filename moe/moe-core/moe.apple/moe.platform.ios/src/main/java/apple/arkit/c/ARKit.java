@@ -291,4 +291,54 @@ public final class ARKit {
     @CVariable()
     @NUInt
     public static native long ARSCNDebugOptionShowFeaturePoints();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARReferenceObjectArchiveExtension();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARBlendShapeLocationTongueOut();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameRoot();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameHead();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameLeftHand();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameRightHand();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameLeftFoot();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameRightFoot();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameLeftShoulder();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ARSkeletonJointNameRightShoulder();
 }

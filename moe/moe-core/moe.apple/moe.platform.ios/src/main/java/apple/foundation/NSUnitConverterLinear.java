@@ -163,7 +163,7 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -171,7 +171,7 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitConverterLinear initWithCoder(NSCoder aDecoder);
+    public native NSUnitConverterLinear initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCoefficient:")

@@ -427,7 +427,7 @@ public class SKView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKView initWithCoder(NSCoder aDecoder);
+    public native SKView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -569,4 +569,10 @@ public class SKView extends UIView {
     @Generated
     @Selector("textureFromNode:crop:")
     public native SKTexture textureFromNodeCrop(SKNode node, @ByValue CGRect crop);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

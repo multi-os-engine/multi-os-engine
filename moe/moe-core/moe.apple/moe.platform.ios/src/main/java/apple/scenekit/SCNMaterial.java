@@ -220,7 +220,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("fresnelExponent")
@@ -245,7 +245,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNMaterial initWithCoder(NSCoder aDecoder);
+    public native SCNMaterial initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAnimationForKeyPaused:")
@@ -461,4 +461,16 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Generated
     @Selector("setFillMode:")
     public native void setFillMode(@NUInt long value);
+
+    @Generated
+    @Selector("clearCoat")
+    public native SCNMaterialProperty clearCoat();
+
+    @Generated
+    @Selector("clearCoatNormal")
+    public native SCNMaterialProperty clearCoatNormal();
+
+    @Generated
+    @Selector("clearCoatRoughness")
+    public native SCNMaterialProperty clearCoatRoughness();
 }

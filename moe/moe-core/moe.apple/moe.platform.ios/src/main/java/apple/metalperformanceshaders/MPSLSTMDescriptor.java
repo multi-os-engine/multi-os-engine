@@ -284,4 +284,12 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("cellToOutputNeuronParamC")
+    public native float cellToOutputNeuronParamC();
+
+    @Generated
+    @Selector("setCellToOutputNeuronParamC:")
+    public native void setCellToOutputNeuronParamC(float value);
 }

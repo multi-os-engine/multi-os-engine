@@ -16,7 +16,7 @@ limitations under the License.
 
 package apple.mediatoolbox.c;
 
-import apple.coreaudio.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioBufferList;
 import apple.corefoundation.opaque.CFAllocatorRef;
 import apple.corefoundation.opaque.CFStringRef;
 import apple.coremedia.struct.CMTimeRange;

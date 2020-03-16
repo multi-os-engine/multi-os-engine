@@ -181,7 +181,7 @@ public class INSearchForPhotosIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForPhotosIntent initWithCoder(NSCoder aDecoder);
+    public native INSearchForPhotosIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDateCreated:locationCreated:albumName:searchTerms:includedAttributes:excludedAttributes:peopleInPhoto:")

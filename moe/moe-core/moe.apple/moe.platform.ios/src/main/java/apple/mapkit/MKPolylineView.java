@@ -400,7 +400,7 @@ public class MKPolylineView extends MKOverlayPathView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKPolylineView initWithCoder(NSCoder aDecoder);
+    public native MKPolylineView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -420,4 +420,10 @@ public class MKPolylineView extends MKOverlayPathView {
     @Deprecated
     @Selector("polyline")
     public native MKPolyline polyline();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

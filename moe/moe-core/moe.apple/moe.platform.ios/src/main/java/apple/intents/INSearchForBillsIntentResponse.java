@@ -108,7 +108,7 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForBillsIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSearchForBillsIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

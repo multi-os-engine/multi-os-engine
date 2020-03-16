@@ -26,6 +26,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIFocusItemScrollableContainer;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -55,7 +56,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIScrollView extends UIView implements NSCoding {
+public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrollableContainer {
     static {
         NatJ.register();
     }
@@ -446,7 +447,7 @@ public class UIScrollView extends UIView implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("flashScrollIndicators")
@@ -463,7 +464,7 @@ public class UIScrollView extends UIView implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIScrollView initWithCoder(NSCoder aDecoder);
+    public native UIScrollView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -721,4 +722,50 @@ public class UIScrollView extends UIView implements NSCoding {
     @Generated
     @Selector("setIndexDisplayMode:")
     public native void setIndexDisplayMode(@NInt long value);
+
+    @Generated
+    @Selector("automaticallyAdjustsScrollIndicatorInsets")
+    public native boolean automaticallyAdjustsScrollIndicatorInsets();
+
+    @Generated
+    @Selector("coordinateSpace")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object coordinateSpace();
+
+    @Generated
+    @Selector("focusItemsInRect:")
+    public native NSArray<?> focusItemsInRect(@ByValue CGRect rect);
+
+    @Generated
+    @Selector("horizontalScrollIndicatorInsets")
+    @ByValue
+    public native UIEdgeInsets horizontalScrollIndicatorInsets();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("setAutomaticallyAdjustsScrollIndicatorInsets:")
+    public native void setAutomaticallyAdjustsScrollIndicatorInsets(boolean value);
+
+    @Generated
+    @Selector("setHorizontalScrollIndicatorInsets:")
+    public native void setHorizontalScrollIndicatorInsets(@ByValue UIEdgeInsets value);
+
+    @Generated
+    @Selector("setVerticalScrollIndicatorInsets:")
+    public native void setVerticalScrollIndicatorInsets(@ByValue UIEdgeInsets value);
+
+    @Generated
+    @Selector("verticalScrollIndicatorInsets")
+    @ByValue
+    public native UIEdgeInsets verticalScrollIndicatorInsets();
+
+    @Generated
+    @Selector("visibleSize")
+    @ByValue
+    public native CGSize visibleSize();
 }

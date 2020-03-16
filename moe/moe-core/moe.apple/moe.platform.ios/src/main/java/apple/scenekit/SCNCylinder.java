@@ -191,7 +191,7 @@ public class SCNCylinder extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNCylinder initWithCoder(NSCoder aDecoder);
+    public native SCNCylinder initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("radialSegmentCount")

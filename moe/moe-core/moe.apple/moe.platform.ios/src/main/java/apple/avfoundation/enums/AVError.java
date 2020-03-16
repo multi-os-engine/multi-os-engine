@@ -91,4 +91,9 @@ public final class AVError {
     @Generated @NInt public static final long ContentNotUpdated = 0xFFFFFFFFFFFFD1A6L;
     @Generated @NInt public static final long NoLongerPlayable = 0xFFFFFFFFFFFFD1A5L;
     @Generated @NInt public static final long NoCompatibleAlternatesForExternalDisplay = 0xFFFFFFFFFFFFD1A4L;
+    @Generated @NInt public static final long NoSourceTrack = 0xFFFFFFFFFFFFD1A3L;
+    @Generated @NInt public static final long ExternalPlaybackNotSupportedForAsset = 0xFFFFFFFFFFFFD1A2L;
+    @Generated @NInt public static final long OperationNotSupportedForPreset = 0xFFFFFFFFFFFFD1A1L;
+    @Generated @NInt public static final long SessionHardwareCostOverage = 0xFFFFFFFFFFFFD1A0L;
+    @Generated @NInt public static final long UnsupportedDeviceActiveFormat = 0xFFFFFFFFFFFFD19FL;
 }

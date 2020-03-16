@@ -159,7 +159,7 @@ public class SCNPhysicsBehavior extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -167,7 +167,7 @@ public class SCNPhysicsBehavior extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsBehavior initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsBehavior initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -17,6 +17,8 @@ limitations under the License.
 package apple.c;
 
 import apple.NSObject;
+import apple.opaque.DNSRecordRef;
+import apple.opaque.DNSServiceRef;
 import apple.opaque.acl_entry_t;
 import apple.opaque.acl_flagset_t;
 import apple.opaque.acl_permset_t;
@@ -38,9 +40,11 @@ import apple.struct.fd_set;
 import apple.struct.imaxdiv_t;
 import apple.struct.in_addr;
 import apple.struct.iovec;
+import apple.struct.itimerval;
 import apple.struct.lconv;
 import apple.struct.ldiv_t;
 import apple.struct.lldiv_t;
+import apple.struct.mach_header;
 import apple.struct.mach_msg_header_t;
 import apple.struct.msghdr;
 import apple.struct.os_unfair_lock_s;
@@ -56,6 +60,7 @@ import apple.struct.sockaddr_storage;
 import apple.struct.stack_t;
 import apple.struct.timespec;
 import apple.struct.timeval;
+import apple.struct.timezone;
 import apple.struct.tm;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
@@ -4425,10 +4430,6 @@ public final class Globals {
 
     @Generated
     @CFunction
-    public static native void addrsel_policy_init();
-
-    @Generated
-    @CFunction
     public static native int bindresvport(int arg1,
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr_in arg2);
 
@@ -5999,4 +6000,720 @@ public final class Globals {
     @Inline
     @CFunction
     public static native float simd_smoothstep(float edge0, float edge1, float x);
+
+    @Generated
+    @CFunction
+    public static native void dispatch_set_qos_class_floor(NSObject object, int qos_class, int relative_priority);
+
+    @Generated
+    @CFunction
+    public static native void dispatch_async_and_wait(NSObject queue,
+            @ObjCBlock(name = "call_dispatch_async_and_wait") Block_dispatch_async_and_wait block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_async_and_wait {
+        @Generated
+        void call_dispatch_async_and_wait();
+    }
+
+    @Generated
+    @CFunction
+    public static native void dispatch_async_and_wait_f(NSObject queue, VoidPtr context,
+            @FunctionPtr(name = "call_dispatch_async_and_wait_f") Function_dispatch_async_and_wait_f work);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_async_and_wait_f {
+        @Generated
+        void call_dispatch_async_and_wait_f(VoidPtr arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native void dispatch_barrier_async_and_wait(NSObject queue,
+            @ObjCBlock(name = "call_dispatch_barrier_async_and_wait") Block_dispatch_barrier_async_and_wait block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_dispatch_barrier_async_and_wait {
+        @Generated
+        void call_dispatch_barrier_async_and_wait();
+    }
+
+    @Generated
+    @CFunction
+    public static native void dispatch_barrier_async_and_wait_f(NSObject queue, VoidPtr context,
+            @FunctionPtr(name = "call_dispatch_barrier_async_and_wait_f") Function_dispatch_barrier_async_and_wait_f work);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_dispatch_barrier_async_and_wait_f {
+        @Generated
+        void call_dispatch_barrier_async_and_wait_f(VoidPtr arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native NSObject dispatch_workloop_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
+
+    @Generated
+    @CFunction
+    public static native NSObject dispatch_workloop_create_inactive(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
+
+    @Generated
+    @CFunction
+    public static native void dispatch_workloop_set_autorelease_frequency(NSObject workloop, @NUInt long frequency);
+
+    @Generated
+    @CFunction
+    public static native int ptsname_r(int fildes, BytePtr buffer, @NUInt long buflen);
+
+    @Generated
+    @CFunction
+    public static native int rpmatch(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapShort(char inv);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapInt(int inv);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapLong(@NUInt long inv);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapLongLong(long inv);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXConvertHostFloatToSwapped(float x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native float NXConvertSwappedFloatToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXConvertHostDoubleToSwapped(double x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native double NXConvertSwappedDoubleToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapFloat(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapDouble(long x);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int NXHostByteOrder();
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapBigShortToHost(char x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapBigIntToHost(int x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapBigLongToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapBigLongLongToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native double NXSwapBigDoubleToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native float NXSwapBigFloatToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapHostShortToBig(char x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapHostIntToBig(int x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapHostLongToBig(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapHostLongLongToBig(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapHostDoubleToBig(double x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapHostFloatToBig(float x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapLittleShortToHost(char x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapLittleIntToHost(int x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapLittleLongToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapLittleLongLongToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native double NXSwapLittleDoubleToHost(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native float NXSwapLittleFloatToHost(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native char NXSwapHostShortToLittle(char x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native int NXSwapHostIntToLittle(int x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapHostLongToLittle(@NUInt long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapHostLongLongToLittle(long x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    public static native long NXSwapHostDoubleToLittle(double x);
+
+    @Generated
+    @Inline
+    @Deprecated
+    @CFunction
+    @NUInt
+    public static native long NXSwapHostFloatToLittle(float x);
+
+    @Generated
+    @CFunction
+    public static native int adjtime(@UncertainArgument("Options: reference, array Fallback: reference") timeval arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
+
+    @Generated
+    @CFunction
+    public static native int futimes(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
+
+    @Generated
+    @CFunction
+    public static native int lutimes(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
+
+    @Generated
+    @CFunction
+    public static native int settimeofday(
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timezone arg2);
+
+    @Generated
+    @CFunction
+    public static native int getitimer(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") itimerval arg2);
+
+    @Generated
+    @CFunction
+    public static native int gettimeofday(
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg1, VoidPtr arg2);
+
+    @Generated
+    @CFunction
+    public static native int setitimer(int arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") itimerval arg2,
+            @UncertainArgument("Options: reference, array Fallback: reference") itimerval arg3);
+
+    @Generated
+    @CFunction
+    public static native int utimes(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+            @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
+
+    @Generated
+    @CFunction
+    public static native boolean os_trace_info_enabled();
+
+    @Generated
+    @CFunction
+    public static native boolean os_trace_debug_enabled();
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native boolean os_trace_type_enabled(byte type);
+
+    @Generated
+    @CFunction
+    public static native void _os_trace_with_buffer(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
+            byte type, ConstVoidPtr buffer, @NUInt long buffer_size,
+            @ObjCBlock(name = "call__os_trace_with_buffer") Block__os_trace_with_buffer payload);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block__os_trace_with_buffer {
+        @Generated
+        void call__os_trace_with_buffer(VoidPtr arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native NSObject os_log_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String subsystem,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String category);
+
+    @Generated
+    @CFunction
+    public static native boolean os_log_type_enabled(NSObject oslog, byte type);
+
+    @Generated
+    @CFunction
+    public static native void _os_log_impl(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    @Generated
+    @CFunction
+    public static native void _os_log_debug_impl(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    @Generated
+    @CFunction
+    public static native void _os_log_error_impl(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    @Generated
+    @CFunction
+    public static native void _os_log_fault_impl(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
+
+    @Generated
+    @Variadic()
+    @CFunction
+    public static native void _os_log_internal(VoidPtr dso, NSObject log, byte type,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String message,
+            Object... varargs);
+
+    @Generated
+    @CFunction
+    public static native NSObject _os_log_create(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String subsystem,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String category);
+
+    @Generated
+    @CFunction
+    public static native boolean os_log_is_enabled(NSObject log);
+
+    @Generated
+    @CFunction
+    public static native boolean os_log_is_debug_enabled(NSObject log);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void _os_log_sensitive_deprecated();
+
+    @Generated
+    @CFunction
+    public static native void os_unfair_lock_assert_owner(
+            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+
+    @Generated
+    @CFunction
+    public static native void os_unfair_lock_assert_not_owner(
+            @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceGetProperty(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String property,
+            VoidPtr result, IntPtr size);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceRefSockFD(DNSServiceRef sdRef);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceProcessResult(DNSServiceRef sdRef);
+
+    @Generated
+    @CFunction
+    public static native void DNSServiceRefDeallocate(DNSServiceRef sdRef);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceEnumerateDomains(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @FunctionPtr(name = "call_DNSServiceEnumerateDomains") Function_DNSServiceEnumerateDomains callBack,
+            VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceEnumerateDomains {
+        @Generated
+        void call_DNSServiceEnumerateDomains(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                VoidPtr arg5);
+    }
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceRegister(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String host, char port,
+            char txtLen, ConstVoidPtr txtRecord,
+            @FunctionPtr(name = "call_DNSServiceRegister") Function_DNSServiceRegister callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceRegister {
+        @Generated
+        void call_DNSServiceRegister(DNSServiceRef arg0, int arg1, int arg2,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
+                VoidPtr arg6);
+    }
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceAddRecord(DNSServiceRef sdRef, Ptr<DNSRecordRef> RecordRef, int flags,
+            char rrtype, char rdlen, ConstVoidPtr rdata, int ttl);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceUpdateRecord(DNSServiceRef sdRef, DNSRecordRef RecordRef, int flags, char rdlen,
+            ConstVoidPtr rdata, int ttl);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceRemoveRecord(DNSServiceRef sdRef, DNSRecordRef RecordRef, int flags);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceBrowse(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain,
+            @FunctionPtr(name = "call_DNSServiceBrowse") Function_DNSServiceBrowse callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceBrowse {
+        @Generated
+        void call_DNSServiceBrowse(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg6,
+                VoidPtr arg7);
+    }
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceResolve(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain,
+            @FunctionPtr(name = "call_DNSServiceResolve") Function_DNSServiceResolve callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceResolve {
+        @Generated
+        void call_DNSServiceResolve(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg5,
+                char arg6, char arg7,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg8,
+                VoidPtr arg9);
+    }
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceQueryRecord(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String fullname,
+            char rrtype, char rrclass,
+            @FunctionPtr(name = "call_DNSServiceQueryRecord") Function_DNSServiceQueryRecord callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceQueryRecord {
+        @Generated
+        void call_DNSServiceQueryRecord(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                char arg5, char arg6, char arg7, ConstVoidPtr arg8, int arg9, VoidPtr arg10);
+    }
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceGetAddrInfo(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            int protocol,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String hostname,
+            @FunctionPtr(name = "call_DNSServiceGetAddrInfo") Function_DNSServiceGetAddrInfo callBack, VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceGetAddrInfo {
+        @Generated
+        void call_DNSServiceGetAddrInfo(DNSServiceRef arg0, int arg1, int arg2, int arg3,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg4,
+                @UncertainArgument("Options: reference, array Fallback: reference") sockaddr arg5, int arg6,
+                VoidPtr arg7);
+    }
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceCreateConnection(Ptr<DNSServiceRef> sdRef);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceRegisterRecord(DNSServiceRef sdRef, Ptr<DNSRecordRef> RecordRef, int flags,
+            int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String fullname,
+            char rrtype, char rrclass, char rdlen, ConstVoidPtr rdata, int ttl,
+            @FunctionPtr(name = "call_DNSServiceRegisterRecord") Function_DNSServiceRegisterRecord callBack,
+            VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceRegisterRecord {
+        @Generated
+        void call_DNSServiceRegisterRecord(DNSServiceRef arg0, DNSRecordRef arg1, int arg2, int arg3, VoidPtr arg4);
+    }
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceReconfirmRecord(int flags, int interfaceIndex,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String fullname,
+            char rrtype, char rrclass, char rdlen, ConstVoidPtr rdata);
+
+    @Generated
+    @CFunction
+    public static native int PeerConnectionRelease(int flags,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceNATPortMappingCreate(Ptr<DNSServiceRef> sdRef, int flags, int interfaceIndex,
+            int protocol, char internalPort, char externalPort, int ttl,
+            @FunctionPtr(name = "call_DNSServiceNATPortMappingCreate") Function_DNSServiceNATPortMappingCreate callBack,
+            VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceNATPortMappingCreate {
+        @Generated
+        void call_DNSServiceNATPortMappingCreate(DNSServiceRef arg0, int arg1, int arg2, int arg3, int arg4, int arg5,
+                char arg6, char arg7, int arg8, VoidPtr arg9);
+    }
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceConstructFullName(BytePtr fullName,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String service,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String regtype,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
+
+    @Generated
+    @CFunction
+    public static native void TXTRecordCreate(VoidPtr txtRecord, char bufferLen, VoidPtr buffer);
+
+    @Generated
+    @CFunction
+    public static native void TXTRecordDeallocate(VoidPtr txtRecord);
+
+    @Generated
+    @CFunction
+    public static native int TXTRecordSetValue(VoidPtr txtRecord,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            byte valueSize, ConstVoidPtr value);
+
+    @Generated
+    @CFunction
+    public static native int TXTRecordRemoveValue(VoidPtr txtRecord,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
+
+    @Generated
+    @CFunction
+    public static native char TXTRecordGetLength(VoidPtr txtRecord);
+
+    @Generated
+    @CFunction
+    public static native ConstVoidPtr TXTRecordGetBytesPtr(VoidPtr txtRecord);
+
+    @Generated
+    @CFunction
+    public static native int TXTRecordContainsKey(char txtLen, ConstVoidPtr txtRecord,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
+
+    @Generated
+    @CFunction
+    public static native ConstVoidPtr TXTRecordGetValuePtr(char txtLen, ConstVoidPtr txtRecord,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            BytePtr valueLen);
+
+    @Generated
+    @CFunction
+    public static native char TXTRecordGetCount(char txtLen, ConstVoidPtr txtRecord);
+
+    @Generated
+    @CFunction
+    public static native int TXTRecordGetItemAtIndex(char txtLen, ConstVoidPtr txtRecord, char itemIndex,
+            char keyBufLen, BytePtr key, BytePtr valueLen, Ptr<ConstVoidPtr> value);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceSetDispatchQueue(DNSServiceRef service, NSObject queue);
+
+    @Generated
+    @CFunction
+    public static native int DNSServiceSleepKeepalive(Ptr<DNSServiceRef> sdRef, int flags, int fd, int timeout,
+            @FunctionPtr(name = "call_DNSServiceSleepKeepalive") Function_DNSServiceSleepKeepalive callBack,
+            VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_DNSServiceSleepKeepalive {
+        @Generated
+        void call_DNSServiceSleepKeepalive(DNSServiceRef arg0, int arg1, VoidPtr arg2);
+    }
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native mach_header __dso_handle();
+
+    @Generated
+    @CFunction
+    public static native long os_signpost_id_make_with_pointer(NSObject log, ConstVoidPtr ptr);
+
+    @Generated
+    @CFunction
+    public static native long os_signpost_id_generate(NSObject log);
+
+    @Generated
+    @CFunction
+    public static native boolean os_signpost_enabled(NSObject log);
+
+    @Generated
+    @CFunction
+    public static native void _os_signpost_emit_with_name_impl(VoidPtr dso, NSObject log, byte type, long spid,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
+            BytePtr buf, int size);
 }

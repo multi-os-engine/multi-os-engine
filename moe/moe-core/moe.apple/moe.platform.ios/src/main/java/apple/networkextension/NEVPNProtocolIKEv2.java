@@ -196,7 +196,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNProtocolIKEv2 initWithCoder(NSCoder aDecoder);
+    public native NEVPNProtocolIKEv2 initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("serverCertificateCommonName")
@@ -277,4 +277,12 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @Generated
     @Selector("setMinimumTLSVersion:")
     public native void setMinimumTLSVersion(@NInt long value);
+
+    @Generated
+    @Selector("enableFallback")
+    public native boolean enableFallback();
+
+    @Generated
+    @Selector("setEnableFallback:")
+    public native void setEnableFallback(boolean value);
 }

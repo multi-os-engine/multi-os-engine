@@ -168,7 +168,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("filterBrowsers")
@@ -188,7 +188,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterProviderConfiguration initWithCoder(NSCoder aDecoder);
+    public native NEFilterProviderConfiguration initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("organization")

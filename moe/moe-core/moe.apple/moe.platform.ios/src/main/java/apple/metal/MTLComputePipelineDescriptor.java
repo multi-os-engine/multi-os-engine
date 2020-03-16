@@ -202,4 +202,21 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Generated
     @Selector("buffers")
     public native MTLPipelineBufferDescriptorArray buffers();
+
+    @Generated
+    @Selector("maxTotalThreadsPerThreadgroup")
+    @NUInt
+    public native long maxTotalThreadsPerThreadgroup();
+
+    @Generated
+    @Selector("setMaxTotalThreadsPerThreadgroup:")
+    public native void setMaxTotalThreadsPerThreadgroup(@NUInt long value);
+
+    @Generated
+    @Selector("setSupportIndirectCommandBuffers:")
+    public native void setSupportIndirectCommandBuffers(boolean value);
+
+    @Generated
+    @Selector("supportIndirectCommandBuffers")
+    public native boolean supportIndirectCommandBuffers();
 }

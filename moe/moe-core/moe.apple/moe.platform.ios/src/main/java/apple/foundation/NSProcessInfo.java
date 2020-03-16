@@ -269,4 +269,8 @@ public class NSProcessInfo extends NSObject {
     @Selector("thermalState")
     @NInt
     public native long thermalState();
+
+    @Generated
+    @Selector("isMacCatalystApp")
+    public native boolean isMacCatalystApp();
 }

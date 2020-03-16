@@ -311,7 +311,7 @@ public class UIColor extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("getHue:saturation:brightness:alpha:")
@@ -340,7 +340,7 @@ public class UIColor extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIColor initWithCoder(NSCoder aDecoder);
+    public native UIColor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDisplayP3Red:green:blue:alpha:")
@@ -455,4 +455,164 @@ public class UIColor extends NSObject
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @Selector("colorWithDynamicProvider:")
+    public static native UIColor colorWithDynamicProvider(
+            @ObjCBlock(name = "call_colorWithDynamicProvider") Block_colorWithDynamicProvider dynamicProvider);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_colorWithDynamicProvider {
+        @Generated
+        UIColor call_colorWithDynamicProvider(UITraitCollection arg0);
+    }
+
+    @Generated
+    @Selector("initWithDynamicProvider:")
+    public native UIColor initWithDynamicProvider(
+            @ObjCBlock(name = "call_initWithDynamicProvider") Block_initWithDynamicProvider dynamicProvider);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithDynamicProvider {
+        @Generated
+        UIColor call_initWithDynamicProvider(UITraitCollection arg0);
+    }
+
+    @Generated
+    @Selector("labelColor")
+    public static native UIColor labelColor();
+
+    @Generated
+    @Selector("linkColor")
+    public static native UIColor linkColor();
+
+    @Generated
+    @Selector("opaqueSeparatorColor")
+    public static native UIColor opaqueSeparatorColor();
+
+    @Generated
+    @Selector("placeholderTextColor")
+    public static native UIColor placeholderTextColor();
+
+    @Generated
+    @Selector("quaternaryLabelColor")
+    public static native UIColor quaternaryLabelColor();
+
+    @Generated
+    @Selector("quaternarySystemFillColor")
+    public static native UIColor quaternarySystemFillColor();
+
+    @Generated
+    @Selector("resolvedColorWithTraitCollection:")
+    public native UIColor resolvedColorWithTraitCollection(UITraitCollection traitCollection);
+
+    @Generated
+    @Selector("secondaryLabelColor")
+    public static native UIColor secondaryLabelColor();
+
+    @Generated
+    @Selector("secondarySystemBackgroundColor")
+    public static native UIColor secondarySystemBackgroundColor();
+
+    @Generated
+    @Selector("secondarySystemFillColor")
+    public static native UIColor secondarySystemFillColor();
+
+    @Generated
+    @Selector("secondarySystemGroupedBackgroundColor")
+    public static native UIColor secondarySystemGroupedBackgroundColor();
+
+    @Generated
+    @Selector("separatorColor")
+    public static native UIColor separatorColor();
+
+    @Generated
+    @Selector("systemBackgroundColor")
+    public static native UIColor systemBackgroundColor();
+
+    @Generated
+    @Selector("systemBlueColor")
+    public static native UIColor systemBlueColor();
+
+    @Generated
+    @Selector("systemFillColor")
+    public static native UIColor systemFillColor();
+
+    @Generated
+    @Selector("systemGray2Color")
+    public static native UIColor systemGray2Color();
+
+    @Generated
+    @Selector("systemGray3Color")
+    public static native UIColor systemGray3Color();
+
+    @Generated
+    @Selector("systemGray4Color")
+    public static native UIColor systemGray4Color();
+
+    @Generated
+    @Selector("systemGray5Color")
+    public static native UIColor systemGray5Color();
+
+    @Generated
+    @Selector("systemGray6Color")
+    public static native UIColor systemGray6Color();
+
+    @Generated
+    @Selector("systemGrayColor")
+    public static native UIColor systemGrayColor();
+
+    @Generated
+    @Selector("systemGreenColor")
+    public static native UIColor systemGreenColor();
+
+    @Generated
+    @Selector("systemGroupedBackgroundColor")
+    public static native UIColor systemGroupedBackgroundColor();
+
+    @Generated
+    @Selector("systemIndigoColor")
+    public static native UIColor systemIndigoColor();
+
+    @Generated
+    @Selector("systemOrangeColor")
+    public static native UIColor systemOrangeColor();
+
+    @Generated
+    @Selector("systemPinkColor")
+    public static native UIColor systemPinkColor();
+
+    @Generated
+    @Selector("systemPurpleColor")
+    public static native UIColor systemPurpleColor();
+
+    @Generated
+    @Selector("systemRedColor")
+    public static native UIColor systemRedColor();
+
+    @Generated
+    @Selector("systemTealColor")
+    public static native UIColor systemTealColor();
+
+    @Generated
+    @Selector("systemYellowColor")
+    public static native UIColor systemYellowColor();
+
+    @Generated
+    @Selector("tertiaryLabelColor")
+    public static native UIColor tertiaryLabelColor();
+
+    @Generated
+    @Selector("tertiarySystemBackgroundColor")
+    public static native UIColor tertiarySystemBackgroundColor();
+
+    @Generated
+    @Selector("tertiarySystemFillColor")
+    public static native UIColor tertiarySystemFillColor();
+
+    @Generated
+    @Selector("tertiarySystemGroupedBackgroundColor")
+    public static native UIColor tertiarySystemGroupedBackgroundColor();
 }

@@ -422,7 +422,7 @@ public class MKPinAnnotationView extends MKAnnotationView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKPinAnnotationView initWithCoder(NSCoder aDecoder);
+    public native MKPinAnnotationView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -450,4 +450,10 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Generated
     @Selector("setPinTintColor:")
     public native void setPinTintColor(UIColor value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

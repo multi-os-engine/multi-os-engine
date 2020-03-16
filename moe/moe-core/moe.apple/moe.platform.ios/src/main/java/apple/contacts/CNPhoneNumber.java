@@ -170,7 +170,7 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +178,7 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNPhoneNumber initWithCoder(NSCoder aDecoder);
+    public native CNPhoneNumber initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithStringValue:")

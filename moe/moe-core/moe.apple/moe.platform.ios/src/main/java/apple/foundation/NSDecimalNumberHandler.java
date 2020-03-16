@@ -161,7 +161,7 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("exceptionDuringOperation:error:leftOperand:rightOperand:")
@@ -174,7 +174,7 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDecimalNumberHandler initWithCoder(NSCoder aDecoder);
+    public native NSDecimalNumberHandler initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRoundingMode:scale:raiseOnExactness:raiseOnOverflow:raiseOnUnderflow:raiseOnDivideByZero:")

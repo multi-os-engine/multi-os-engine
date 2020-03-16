@@ -178,7 +178,7 @@ public class INListRideOptionsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INListRideOptionsIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INListRideOptionsIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("paymentMethods")

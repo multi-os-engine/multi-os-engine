@@ -1,6 +1,7 @@
 package apple.vision;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -31,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class VNTextObservation extends VNDetectedObjectObservation {
+public class VNTextObservation extends VNRectangleObservation {
     static {
         NatJ.register();
     }
@@ -100,7 +101,7 @@ public class VNTextObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNTextObservation initWithCoder(NSCoder aDecoder);
+    public native VNTextObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -163,4 +164,15 @@ public class VNTextObservation extends VNDetectedObjectObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("observationWithRequestRevision:boundingBox:")
+    public static native VNTextObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
+            @ByValue CGRect boundingBox);
+
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
+    public static native VNTextObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
 }

@@ -220,4 +220,12 @@ public class AVPictureInPictureController extends NSObject {
     @Generated
     @Selector("stopPictureInPicture")
     public native void stopPictureInPicture();
+
+    @Generated
+    @Selector("pictureInPictureButtonStartImage")
+    public static native UIImage pictureInPictureButtonStartImage();
+
+    @Generated
+    @Selector("pictureInPictureButtonStopImage")
+    public static native UIImage pictureInPictureButtonStopImage();
 }

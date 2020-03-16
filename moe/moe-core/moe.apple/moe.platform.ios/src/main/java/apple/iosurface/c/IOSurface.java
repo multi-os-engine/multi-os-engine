@@ -467,4 +467,9 @@ public final class IOSurface {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String IOSurfacePropertyKeyPixelSizeCastingAllowed();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String IOSurfacePropertyKeyAllocSize();
 }

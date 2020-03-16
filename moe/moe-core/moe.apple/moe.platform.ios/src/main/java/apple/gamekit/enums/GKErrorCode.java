@@ -54,4 +54,7 @@ public final class GKErrorCode {
     @Generated
     private GKErrorCode() {
     }
+
+    @Generated @NInt public static final long RestrictedToAutomatch = 0x000000000000001EL;
+    @Generated @NInt public static final long APINotAvailable = 0x000000000000001FL;
 }

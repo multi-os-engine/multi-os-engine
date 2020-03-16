@@ -17,7 +17,9 @@ limitations under the License.
 package apple.mediaaccessibility.c;
 
 import apple.corefoundation.opaque.CFArrayRef;
+import apple.corefoundation.opaque.CFErrorRef;
 import apple.corefoundation.opaque.CFStringRef;
+import apple.corefoundation.opaque.CFURLRef;
 import apple.coregraphics.opaque.CGColorRef;
 import apple.coretext.opaque.CTFontDescriptorRef;
 import org.moe.natj.c.CRuntime;
@@ -30,6 +32,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.NIntPtr;
+import org.moe.natj.general.ptr.Ptr;
 
 @Generated
 @Library("MediaAccessibility")
@@ -134,4 +137,20 @@ public final class MediaAccessibility {
     @Generated
     @CVariable()
     public static native CFStringRef MAMediaCharacteristicDescribesVideoForAccessibility();
+
+    @Generated
+    @CFunction
+    public static native void MACaptionAppearanceDidDisplayCaptions(CFArrayRef strings);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef MAImageCaptioningCopyCaption(CFURLRef url, Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native boolean MAImageCaptioningSetCaption(CFURLRef url, CFStringRef string, Ptr<CFErrorRef> error);
+
+    @Generated
+    @CFunction
+    public static native CFStringRef MAImageCaptioningCopyMetadataTagPath();
 }

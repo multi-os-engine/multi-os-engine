@@ -19,6 +19,7 @@ package apple.metal.protocol;
 import apple.foundation.struct.NSRange;
 import apple.metal.struct.MTLScissorRect;
 import apple.metal.struct.MTLSize;
+import apple.metal.struct.MTLVertexAmplificationViewMapping;
 import apple.metal.struct.MTLViewport;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -28,6 +29,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.ConstFloatPtr;
 import org.moe.natj.general.ptr.ConstNUIntPtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
@@ -372,4 +374,64 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Selector("useResources:count:usage:")
     void useResourcesCountUsage(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources, @NUInt long count,
             @NUInt long usage);
+
+    @Generated
+    @Selector("drawIndexedPatches:patchIndexBuffer:patchIndexBufferOffset:controlPointIndexBuffer:controlPointIndexBufferOffset:indirectBuffer:indirectBufferOffset:")
+    void drawIndexedPatchesPatchIndexBufferPatchIndexBufferOffsetControlPointIndexBufferControlPointIndexBufferOffsetIndirectBufferIndirectBufferOffset(
+            @NUInt long numberOfPatchControlPoints, @Mapped(ObjCObjectMapper.class) Object patchIndexBuffer,
+            @NUInt long patchIndexBufferOffset, @Mapped(ObjCObjectMapper.class) Object controlPointIndexBuffer,
+            @NUInt long controlPointIndexBufferOffset, @Mapped(ObjCObjectMapper.class) Object indirectBuffer,
+            @NUInt long indirectBufferOffset);
+
+    @Generated
+    @Selector("drawPatches:patchIndexBuffer:patchIndexBufferOffset:indirectBuffer:indirectBufferOffset:")
+    void drawPatchesPatchIndexBufferPatchIndexBufferOffsetIndirectBufferIndirectBufferOffset(
+            @NUInt long numberOfPatchControlPoints, @Mapped(ObjCObjectMapper.class) Object patchIndexBuffer,
+            @NUInt long patchIndexBufferOffset, @Mapped(ObjCObjectMapper.class) Object indirectBuffer,
+            @NUInt long indirectBufferOffset);
+
+    @Generated
+    @Selector("executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:")
+    void executeCommandsInBufferIndirectBufferIndirectBufferOffset(
+            @Mapped(ObjCObjectMapper.class) Object indirectCommandbuffer,
+            @Mapped(ObjCObjectMapper.class) Object indirectRangeBuffer, @NUInt long indirectBufferOffset);
+
+    @Generated
+    @Selector("executeCommandsInBuffer:withRange:")
+    void executeCommandsInBufferWithRange(@Mapped(ObjCObjectMapper.class) Object indirectCommandBuffer,
+            @ByValue NSRange executionRange);
+
+    @Generated
+    @Selector("setScissorRects:count:")
+    void setScissorRectsCount(
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLScissorRect scissorRects,
+            @NUInt long count);
+
+    @Generated
+    @Selector("setVertexAmplificationCount:viewMappings:")
+    void setVertexAmplificationCountViewMappings(@NUInt long count,
+            @UncertainArgument("Options: reference, array Fallback: reference") MTLVertexAmplificationViewMapping viewMappings);
+
+    @Generated
+    @Selector("setViewports:count:")
+    void setViewportsCount(@UncertainArgument("Options: reference, array Fallback: reference") MTLViewport viewports,
+            @NUInt long count);
+
+    @Generated
+    @Selector("useHeap:stages:")
+    void useHeapStages(@Mapped(ObjCObjectMapper.class) Object heap, @NUInt long stages);
+
+    @Generated
+    @Selector("useHeaps:count:stages:")
+    void useHeapsCountStages(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count,
+            @NUInt long stages);
+
+    @Generated
+    @Selector("useResource:usage:stages:")
+    void useResourceUsageStages(@Mapped(ObjCObjectMapper.class) Object resource, @NUInt long usage, @NUInt long stages);
+
+    @Generated
+    @Selector("useResources:count:usage:stages:")
+    void useResourcesCountUsageStages(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
+            @NUInt long count, @NUInt long usage, @NUInt long stages);
 }

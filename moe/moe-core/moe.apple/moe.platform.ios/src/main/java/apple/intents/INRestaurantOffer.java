@@ -166,7 +166,7 @@ public class INRestaurantOffer extends NSObject implements NSSecureCoding, NSCop
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class INRestaurantOffer extends NSObject implements NSSecureCoding, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantOffer initWithCoder(NSCoder aDecoder);
+    public native INRestaurantOffer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("offerDetailText")

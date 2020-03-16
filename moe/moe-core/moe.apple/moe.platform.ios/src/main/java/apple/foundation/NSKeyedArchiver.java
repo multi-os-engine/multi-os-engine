@@ -28,8 +28,10 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstBytePtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -263,4 +265,14 @@ public class NSKeyedArchiver extends NSCoder {
     @Generated
     @Selector("setRequiresSecureCoding:")
     public native void setRequiresSecureCoding(boolean value);
+
+    @Generated
+    @Selector("archivedDataWithRootObject:requiringSecureCoding:error:")
+    public static native NSData archivedDataWithRootObjectRequiringSecureCodingError(
+            @Mapped(ObjCObjectMapper.class) Object object, boolean requiresSecureCoding,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("initRequiringSecureCoding:")
+    public native NSKeyedArchiver initRequiringSecureCoding(boolean requiresSecureCoding);
 }

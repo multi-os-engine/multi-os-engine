@@ -167,7 +167,7 @@ public class HKSample extends HKObject {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSample initWithCoder(NSCoder aDecoder);
+    public native HKSample initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("sampleType")

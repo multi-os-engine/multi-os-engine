@@ -401,7 +401,7 @@ public class UIInputView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIInputView initWithCoder(NSCoder aDecoder);
+    public native UIInputView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -419,4 +419,10 @@ public class UIInputView extends UIView {
     @Generated
     @Selector("setAllowsSelfSizing:")
     public native void setAllowsSelfSizing(boolean value);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

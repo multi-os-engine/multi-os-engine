@@ -188,4 +188,24 @@ public class SKProduct extends NSObject {
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
+
+    @Generated
+    @Selector("contentVersion")
+    public native String contentVersion();
+
+    @Generated
+    @Selector("discounts")
+    public native NSArray<? extends SKProductDiscount> discounts();
+
+    @Generated
+    @Selector("introductoryPrice")
+    public native SKProductDiscount introductoryPrice();
+
+    @Generated
+    @Selector("subscriptionGroupIdentifier")
+    public native String subscriptionGroupIdentifier();
+
+    @Generated
+    @Selector("subscriptionPeriod")
+    public native SKProductSubscriptionPeriod subscriptionPeriod();
 }

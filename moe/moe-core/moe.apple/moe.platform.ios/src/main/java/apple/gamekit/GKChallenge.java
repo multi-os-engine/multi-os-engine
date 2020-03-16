@@ -176,7 +176,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -184,7 +184,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKChallenge initWithCoder(NSCoder aDecoder);
+    public native GKChallenge initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("issueDate")

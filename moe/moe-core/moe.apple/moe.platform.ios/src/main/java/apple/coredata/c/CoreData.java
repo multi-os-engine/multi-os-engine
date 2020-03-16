@@ -379,4 +379,24 @@ public final class CoreData {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSBinaryStoreInsecureDecodingCompatibilityOption();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentStoreRemoteChangeNotificationPostOptionKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentStoreRemoteChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentStoreURLKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentHistoryTokenKey();
 }

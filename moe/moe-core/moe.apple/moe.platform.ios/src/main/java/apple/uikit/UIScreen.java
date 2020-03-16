@@ -294,4 +294,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("maximumFramesPerSecond")
     @NInt
     public native long maximumFramesPerSecond();
+
+    @Generated
+    @Selector("calibratedLatency")
+    public native double calibratedLatency();
 }

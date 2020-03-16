@@ -17,6 +17,7 @@ limitations under the License.
 package apple.corelocation.protocol;
 
 import apple.corelocation.CLBeacon;
+import apple.corelocation.CLBeaconIdentityConstraint;
 import apple.corelocation.CLBeaconRegion;
 import apple.corelocation.CLHeading;
 import apple.corelocation.CLLocation;
@@ -161,6 +162,22 @@ public interface CLLocationManagerDelegate {
     @IsOptional
     @Selector("locationManagerShouldDisplayHeadingCalibration:")
     default boolean locationManagerShouldDisplayHeadingCalibration(CLLocationManager manager) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("locationManager:didFailRangingBeaconsForConstraint:error:")
+    default void locationManagerDidFailRangingBeaconsForConstraintError(CLLocationManager manager,
+            CLBeaconIdentityConstraint beaconConstraint, NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("locationManager:didRangeBeacons:satisfyingConstraint:")
+    default void locationManagerDidRangeBeaconsSatisfyingConstraint(CLLocationManager manager,
+            NSArray<? extends CLBeacon> beacons, CLBeaconIdentityConstraint beaconConstraint) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

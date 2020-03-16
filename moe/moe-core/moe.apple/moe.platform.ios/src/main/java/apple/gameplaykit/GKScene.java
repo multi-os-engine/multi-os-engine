@@ -22,8 +22,8 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.gameplaykit.protocol.GKSceneRootNodeType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -41,6 +41,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -48,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GKScene extends NSObject implements NSCopying, NSCoding {
+public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -175,7 +176,7 @@ public class GKScene extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("entities")
@@ -191,7 +192,7 @@ public class GKScene extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKScene initWithCoder(NSCoder aDecoder);
+    public native GKScene initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("removeEntity:")
@@ -214,4 +215,14 @@ public class GKScene extends NSObject implements NSCopying, NSCoding {
     @Selector("sceneWithFileNamed:rootNode:")
     public static native GKScene sceneWithFileNamedRootNode(String filename,
             @Mapped(ObjCObjectMapper.class) GKSceneRootNodeType rootNode);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

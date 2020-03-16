@@ -409,7 +409,7 @@ public class UITableViewHeaderFooterView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITableViewHeaderFooterView initWithCoder(NSCoder aDecoder);
+    public native UITableViewHeaderFooterView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -434,4 +434,10 @@ public class UITableViewHeaderFooterView extends UIView {
     @Generated
     @Selector("textLabel")
     public native UILabel textLabel();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

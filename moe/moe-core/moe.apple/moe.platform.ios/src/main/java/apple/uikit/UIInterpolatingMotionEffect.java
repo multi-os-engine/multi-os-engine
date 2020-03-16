@@ -157,7 +157,7 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIInterpolatingMotionEffect initWithCoder(NSCoder aDecoder);
+    public native UIInterpolatingMotionEffect initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithKeyPath:type:")

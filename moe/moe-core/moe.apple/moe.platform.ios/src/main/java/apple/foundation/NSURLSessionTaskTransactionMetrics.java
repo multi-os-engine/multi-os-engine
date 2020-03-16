@@ -219,4 +219,68 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     @Generated
     @Selector("secureConnectionStartDate")
     public native NSDate secureConnectionStartDate();
+
+    @Generated
+    @Selector("countOfRequestBodyBytesBeforeEncoding")
+    public native long countOfRequestBodyBytesBeforeEncoding();
+
+    @Generated
+    @Selector("countOfRequestBodyBytesSent")
+    public native long countOfRequestBodyBytesSent();
+
+    @Generated
+    @Selector("countOfRequestHeaderBytesSent")
+    public native long countOfRequestHeaderBytesSent();
+
+    @Generated
+    @Selector("countOfResponseBodyBytesAfterDecoding")
+    public native long countOfResponseBodyBytesAfterDecoding();
+
+    @Generated
+    @Selector("countOfResponseBodyBytesReceived")
+    public native long countOfResponseBodyBytesReceived();
+
+    @Generated
+    @Selector("countOfResponseHeaderBytesReceived")
+    public native long countOfResponseHeaderBytesReceived();
+
+    @Generated
+    @Selector("isCellular")
+    public native boolean isCellular();
+
+    @Generated
+    @Selector("isConstrained")
+    public native boolean isConstrained();
+
+    @Generated
+    @Selector("isExpensive")
+    public native boolean isExpensive();
+
+    @Generated
+    @Selector("isMultipath")
+    public native boolean isMultipath();
+
+    @Generated
+    @Selector("localAddress")
+    public native String localAddress();
+
+    @Generated
+    @Selector("localPort")
+    public native NSNumber localPort();
+
+    @Generated
+    @Selector("negotiatedTLSCipherSuite")
+    public native NSNumber negotiatedTLSCipherSuite();
+
+    @Generated
+    @Selector("negotiatedTLSProtocolVersion")
+    public native NSNumber negotiatedTLSProtocolVersion();
+
+    @Generated
+    @Selector("remoteAddress")
+    public native String remoteAddress();
+
+    @Generated
+    @Selector("remotePort")
+    public native NSNumber remotePort();
 }

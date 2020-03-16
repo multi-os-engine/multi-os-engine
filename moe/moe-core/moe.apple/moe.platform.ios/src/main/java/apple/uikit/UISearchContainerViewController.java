@@ -170,7 +170,7 @@ public class UISearchContainerViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISearchContainerViewController initWithCoder(NSCoder aDecoder);
+    public native UISearchContainerViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

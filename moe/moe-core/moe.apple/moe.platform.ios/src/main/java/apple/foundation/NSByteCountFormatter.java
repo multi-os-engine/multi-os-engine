@@ -188,7 +188,7 @@ public class NSByteCountFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSByteCountFormatter initWithCoder(NSCoder aDecoder);
+    public native NSByteCountFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAdaptive")
@@ -237,4 +237,17 @@ public class NSByteCountFormatter extends NSFormatter {
     @Generated
     @Selector("zeroPadsFractionDigits")
     public native boolean zeroPadsFractionDigits();
+
+    @Generated
+    @Selector("stringForObjectValue:")
+    public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
+
+    @Generated
+    @Selector("stringFromMeasurement:")
+    public native String stringFromMeasurement(NSMeasurement<NSUnitInformationStorage> measurement);
+
+    @Generated
+    @Selector("stringFromMeasurement:countStyle:")
+    public static native String stringFromMeasurementCountStyle(NSMeasurement<NSUnitInformationStorage> measurement,
+            @NInt long countStyle);
 }

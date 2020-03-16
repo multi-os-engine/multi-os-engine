@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HMHomeAccessControl extends NSObject {
+public class HMHomeAccessControl extends HMAccessControl {
     static {
         NatJ.register();
     }

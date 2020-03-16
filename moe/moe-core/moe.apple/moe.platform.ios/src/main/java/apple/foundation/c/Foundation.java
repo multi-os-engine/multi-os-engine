@@ -19,6 +19,13 @@ package apple.foundation.c;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSException;
+import apple.foundation.NSHashTable;
+import apple.foundation.NSMapTable;
+import apple.foundation.struct.NSHashEnumerator;
+import apple.foundation.struct.NSHashTableCallBacks;
+import apple.foundation.struct.NSMapEnumerator;
+import apple.foundation.struct.NSMapTableKeyCallBacks;
+import apple.foundation.struct.NSMapTableValueCallBacks;
 import apple.foundation.struct.NSRange;
 import apple.foundation.struct.NSSwappedDouble;
 import apple.foundation.struct.NSSwappedFloat;
@@ -42,6 +49,7 @@ import org.moe.natj.general.ann.UncertainReturn;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.NUIntPtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.SEL;
@@ -3288,4 +3296,279 @@ public final class Foundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMetadataUbiquitousSharedItemPermissionsReadWrite();
+
+    @Generated
+    @CFunction
+    public static native void NSFreeHashTable(NSHashTable<?> table);
+
+    @Generated
+    @CFunction
+    public static native void NSResetHashTable(NSHashTable<?> table);
+
+    @Generated
+    @CFunction
+    public static native boolean NSCompareHashTables(NSHashTable<?> table1, NSHashTable<?> table2);
+
+    @Generated
+    @CFunction
+    public static native NSHashTable<?> NSCopyHashTableWithZone(NSHashTable<?> table, VoidPtr zone);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr NSHashGet(NSHashTable<?> table, ConstVoidPtr pointer);
+
+    @Generated
+    @CFunction
+    public static native void NSHashInsert(NSHashTable<?> table, ConstVoidPtr pointer);
+
+    @Generated
+    @CFunction
+    public static native void NSHashInsertKnownAbsent(NSHashTable<?> table, ConstVoidPtr pointer);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr NSHashInsertIfAbsent(NSHashTable<?> table, ConstVoidPtr pointer);
+
+    @Generated
+    @CFunction
+    public static native void NSHashRemove(NSHashTable<?> table, ConstVoidPtr pointer);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native NSHashEnumerator NSEnumerateHashTable(NSHashTable<?> table);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr NSNextHashEnumeratorItem(
+            @UncertainArgument("Options: reference, array Fallback: reference") NSHashEnumerator enumerator);
+
+    @Generated
+    @CFunction
+    public static native void NSEndHashTableEnumeration(
+            @UncertainArgument("Options: reference, array Fallback: reference") NSHashEnumerator enumerator);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long NSCountHashTable(NSHashTable<?> table);
+
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSStringFromHashTable(NSHashTable<?> table);
+
+    @Generated
+    @CFunction
+    public static native NSArray<?> NSAllHashTableObjects(NSHashTable<?> table);
+
+    @Generated
+    @CFunction
+    public static native NSHashTable<?> NSCreateHashTableWithZone(@ByValue NSHashTableCallBacks callBacks,
+            @NUInt long capacity, VoidPtr zone);
+
+    @Generated
+    @CFunction
+    public static native NSHashTable<?> NSCreateHashTable(@ByValue NSHashTableCallBacks callBacks,
+            @NUInt long capacity);
+
+    @Generated
+    @CFunction
+    public static native void NSFreeMapTable(NSMapTable<?, ?> table);
+
+    @Generated
+    @CFunction
+    public static native void NSResetMapTable(NSMapTable<?, ?> table);
+
+    @Generated
+    @CFunction
+    public static native boolean NSCompareMapTables(NSMapTable<?, ?> table1, NSMapTable<?, ?> table2);
+
+    @Generated
+    @CFunction
+    public static native NSMapTable<?, ?> NSCopyMapTableWithZone(NSMapTable<?, ?> table, VoidPtr zone);
+
+    @Generated
+    @CFunction
+    public static native boolean NSMapMember(NSMapTable<?, ?> table, ConstVoidPtr key, Ptr<VoidPtr> originalKey,
+            Ptr<VoidPtr> value);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr NSMapGet(NSMapTable<?, ?> table, ConstVoidPtr key);
+
+    @Generated
+    @CFunction
+    public static native void NSMapInsert(NSMapTable<?, ?> table, ConstVoidPtr key, ConstVoidPtr value);
+
+    @Generated
+    @CFunction
+    public static native void NSMapInsertKnownAbsent(NSMapTable<?, ?> table, ConstVoidPtr key, ConstVoidPtr value);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr NSMapInsertIfAbsent(NSMapTable<?, ?> table, ConstVoidPtr key, ConstVoidPtr value);
+
+    @Generated
+    @CFunction
+    public static native void NSMapRemove(NSMapTable<?, ?> table, ConstVoidPtr key);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native NSMapEnumerator NSEnumerateMapTable(NSMapTable<?, ?> table);
+
+    @Generated
+    @CFunction
+    public static native boolean NSNextMapEnumeratorPair(
+            @UncertainArgument("Options: reference, array Fallback: reference") NSMapEnumerator enumerator,
+            Ptr<VoidPtr> key, Ptr<VoidPtr> value);
+
+    @Generated
+    @CFunction
+    public static native void NSEndMapTableEnumeration(
+            @UncertainArgument("Options: reference, array Fallback: reference") NSMapEnumerator enumerator);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long NSCountMapTable(NSMapTable<?, ?> table);
+
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSStringFromMapTable(NSMapTable<?, ?> table);
+
+    @Generated
+    @CFunction
+    public static native NSArray<?> NSAllMapTableKeys(NSMapTable<?, ?> table);
+
+    @Generated
+    @CFunction
+    public static native NSArray<?> NSAllMapTableValues(NSMapTable<?, ?> table);
+
+    @Generated
+    @CFunction
+    public static native NSMapTable<?, ?> NSCreateMapTableWithZone(@ByValue NSMapTableKeyCallBacks keyCallBacks,
+            @ByValue NSMapTableValueCallBacks valueCallBacks, @NUInt long capacity, VoidPtr zone);
+
+    @Generated
+    @CFunction
+    public static native NSMapTable<?, ?> NSCreateMapTable(@ByValue NSMapTableKeyCallBacks keyCallBacks,
+            @ByValue NSMapTableValueCallBacks valueCallBacks, @NUInt long capacity);
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSInconsistentArchiveException();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSHashTableCallBacks NSNonOwnedPointerHashCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSHashTableCallBacks NSNonRetainedObjectHashCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSHashTableCallBacks NSObjectHashCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSHashTableCallBacks NSOwnedObjectIdentityHashCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSHashTableCallBacks NSOwnedPointerHashCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSHashTableCallBacks NSPointerToStructHashCallBacks();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSHTTPCookieSameSitePolicy();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSHTTPCookieSameSiteLax();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSHTTPCookieSameSiteStrict();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableKeyCallBacks NSNonOwnedPointerMapKeyCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableKeyCallBacks NSNonOwnedPointerOrNullMapKeyCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableKeyCallBacks NSNonRetainedObjectMapKeyCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableKeyCallBacks NSObjectMapKeyCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableKeyCallBacks NSOwnedPointerMapKeyCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableKeyCallBacks NSIntMapKeyCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableValueCallBacks NSNonOwnedPointerMapValueCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableValueCallBacks NSObjectMapValueCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableValueCallBacks NSNonRetainedObjectMapValueCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableValueCallBacks NSOwnedPointerMapValueCallBacks();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native NSMapTableValueCallBacks NSIntMapValueCallBacks();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLErrorNetworkUnavailableReasonKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSSecureUnarchiveFromDataTransformerName();
 }

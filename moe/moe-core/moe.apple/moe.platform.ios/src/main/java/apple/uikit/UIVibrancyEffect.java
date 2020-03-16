@@ -178,11 +178,19 @@ public class UIVibrancyEffect extends UIVisualEffect {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIVibrancyEffect initWithCoder(NSCoder aDecoder);
+    public native UIVibrancyEffect initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("effectForBlurEffect:style:")
+    public static native UIVibrancyEffect effectForBlurEffectStyle(UIBlurEffect blurEffect, @NInt long style);
+
+    @Generated
+    @Selector("widgetEffectForVibrancyStyle:")
+    public static native UIVibrancyEffect widgetEffectForVibrancyStyle(@NInt long vibrancyStyle);
 }

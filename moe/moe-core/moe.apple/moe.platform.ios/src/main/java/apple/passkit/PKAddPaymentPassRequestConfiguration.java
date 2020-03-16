@@ -217,4 +217,21 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Generated
     @Selector("setRequiresFelicaSecureElement:")
     public native void setRequiresFelicaSecureElement(boolean value);
+
+    @Generated
+    @Selector("productIdentifiers")
+    public native NSSet<String> productIdentifiers();
+
+    @Generated
+    @Selector("setProductIdentifiers:")
+    public native void setProductIdentifiers(NSSet<String> value);
+
+    @Generated
+    @Selector("setStyle:")
+    public native void setStyle(@NInt long value);
+
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
 }

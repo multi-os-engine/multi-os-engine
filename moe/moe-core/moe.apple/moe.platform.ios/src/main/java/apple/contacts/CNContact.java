@@ -239,7 +239,7 @@ public class CNContact extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("familyName")
@@ -267,7 +267,7 @@ public class CNContact extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContact initWithCoder(NSCoder aDecoder);
+    public native CNContact initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instantMessageAddresses")
@@ -289,6 +289,7 @@ public class CNContact extends NSObject
     @Selector("middleName")
     public native String middleName();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -436,4 +437,12 @@ public class CNContact extends NSObject
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @Selector("predicateForContactsMatchingEmailAddress:")
+    public static native NSPredicate predicateForContactsMatchingEmailAddress(String emailAddress);
+
+    @Generated
+    @Selector("predicateForContactsMatchingPhoneNumber:")
+    public static native NSPredicate predicateForContactsMatchingPhoneNumber(CNPhoneNumber phoneNumber);
 }

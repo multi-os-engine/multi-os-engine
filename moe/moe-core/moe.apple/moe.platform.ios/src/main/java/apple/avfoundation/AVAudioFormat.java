@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
 import apple.coremedia.opaque.CMFormatDescriptionRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -176,7 +176,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("formatDescription")
@@ -201,7 +201,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVAudioFormat initWithCoder(NSCoder aDecoder);
+    public native AVAudioFormat initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCommonFormat:sampleRate:channels:interleaved:")

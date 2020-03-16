@@ -261,7 +261,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:")
@@ -303,7 +303,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSCalendar initWithCoder(NSCoder aDecoder);
+    public native NSCalendar initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isDate:equalToDate:toUnitGranularity:")

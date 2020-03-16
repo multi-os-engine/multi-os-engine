@@ -18,12 +18,16 @@ package apple.uikit.protocol;
 
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
+import apple.foundation.NSAttributedString;
 import apple.foundation.NSDictionary;
 import apple.foundation.struct.NSRange;
 import apple.uikit.UIDictationPhrase;
+import apple.uikit.UITextPlaceholder;
 import apple.uikit.UITextPosition;
 import apple.uikit.UITextRange;
+import apple.uikit.UITextSelectionRect;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -157,7 +161,7 @@ public interface UITextInput extends UIKeyInput {
 
     @Generated
     @Selector("markedTextStyle")
-    NSDictionary<?, ?> markedTextStyle();
+    NSDictionary<String, ?> markedTextStyle();
 
     @Generated
     @Selector("offsetFromPosition:toPosition:")
@@ -210,7 +214,7 @@ public interface UITextInput extends UIKeyInput {
 
     @Generated
     @Selector("selectionRectsForRange:")
-    NSArray<?> selectionRectsForRange(UITextRange range);
+    NSArray<? extends UITextSelectionRect> selectionRectsForRange(UITextRange range);
 
     @Generated
     @Selector("setBaseWritingDirection:forRange:")
@@ -226,7 +230,7 @@ public interface UITextInput extends UIKeyInput {
 
     @Generated
     @Selector("setMarkedTextStyle:")
-    void setMarkedTextStyle(NSDictionary<?, ?> value);
+    void setMarkedTextStyle(NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setSelectedTextRange:")
@@ -281,6 +285,34 @@ public interface UITextInput extends UIKeyInput {
     @IsOptional
     @Selector("updateFloatingCursorAtPoint:")
     default void updateFloatingCursorAtPoint(@ByValue CGPoint point) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("insertText:alternatives:style:")
+    default void insertTextAlternativesStyle(String text, NSArray<String> alternatives, @NInt long style) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("insertTextPlaceholderWithSize:")
+    default UITextPlaceholder insertTextPlaceholderWithSize(@ByValue CGSize size) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("removeTextPlaceholder:")
+    default void removeTextPlaceholder(UITextPlaceholder textPlaceholder) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("setAttributedMarkedText:selectedRange:")
+    default void setAttributedMarkedTextSelectedRange(NSAttributedString markedText, @ByValue NSRange selectedRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

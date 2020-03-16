@@ -187,4 +187,31 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     @Selector("storageMode")
     @NUInt
     public native long storageMode();
+
+    @Generated
+    @Selector("hazardTrackingMode")
+    @NUInt
+    public native long hazardTrackingMode();
+
+    @Generated
+    @Selector("resourceOptions")
+    @NUInt
+    public native long resourceOptions();
+
+    @Generated
+    @Selector("setHazardTrackingMode:")
+    public native void setHazardTrackingMode(@NUInt long value);
+
+    @Generated
+    @Selector("setResourceOptions:")
+    public native void setResourceOptions(@NUInt long value);
+
+    @Generated
+    @Selector("setType:")
+    public native void setType(@NInt long value);
+
+    @Generated
+    @Selector("type")
+    @NInt
+    public native long type();
 }

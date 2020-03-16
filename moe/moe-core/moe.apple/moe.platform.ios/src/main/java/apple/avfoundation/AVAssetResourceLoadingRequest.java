@@ -221,4 +221,8 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     public native NSData streamingContentKeyRequestDataForAppContentIdentifierOptionsError(NSData appIdentifier,
             NSData contentIdentifier, NSDictionary<String, ?> options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("requestor")
+    public native AVAssetResourceLoadingRequestor requestor();
 }

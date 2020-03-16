@@ -162,7 +162,7 @@ public class INGetRideStatusIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetRideStatusIntent initWithCoder(NSCoder aDecoder);
+    public native INGetRideStatusIntent initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

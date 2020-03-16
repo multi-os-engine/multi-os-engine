@@ -39,4 +39,23 @@ public final class INIntentErrorCode {
 
     @Generated @NInt public static final long ExtensionLaunchingTimeout = 0x0000000000001388L;
     @Generated @NInt public static final long ExtensionBringUpFailed = 0x0000000000001389L;
+    @Generated @NInt public static final long NoAppAvailable = 0x00000000000007D5L;
+    @Generated @NInt public static final long MissingInformation = 0x0000000000000BBAL;
+    @Generated @NInt public static final long ImageGeneric = 0x0000000000001770L;
+    @Generated @NInt public static final long ImageNoServiceAvailable = 0x0000000000001771L;
+    @Generated @NInt public static final long ImageStorageFailed = 0x0000000000001772L;
+    @Generated @NInt public static final long ImageLoadingFailed = 0x0000000000001773L;
+    @Generated @NInt public static final long ImageRetrievalFailed = 0x0000000000001774L;
+    @Generated @NInt public static final long ImageProxyLoop = 0x0000000000001775L;
+    @Generated @NInt public static final long ImageProxyInvalid = 0x0000000000001776L;
+    @Generated @NInt public static final long ImageProxyTimeout = 0x0000000000001777L;
+    @Generated @NInt public static final long ImageServiceFailure = 0x0000000000001778L;
+    @Generated @NInt public static final long ImageScalingFailed = 0x0000000000001779L;
+    @Generated @NInt public static final long PermissionDenied = 0x000000000000177AL;
+    @Generated @NInt public static final long VoiceShortcutCreationFailed = 0x0000000000001B58L;
+    @Generated @NInt public static final long VoiceShortcutGetFailed = 0x0000000000001B59L;
+    @Generated @NInt public static final long VoiceShortcutDeleteFailed = 0x0000000000001B5AL;
+    @Generated @NInt public static final long EncodingGeneric = 0x0000000000001F40L;
+    @Generated @NInt public static final long EncodingFailed = 0x0000000000001F41L;
+    @Generated @NInt public static final long DecodingGeneric = 0x0000000000002328L;
 }

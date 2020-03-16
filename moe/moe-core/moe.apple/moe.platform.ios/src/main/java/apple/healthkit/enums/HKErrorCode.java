@@ -35,4 +35,6 @@ public final class HKErrorCode {
     @Generated
     private HKErrorCode() {
     }
+
+    @Generated @NInt public static final long ErrorRequiredAuthorizationDenied = 0x000000000000000AL;
 }

@@ -99,7 +99,7 @@ public class HKSeriesSample extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKSeriesSample initWithCoder(NSCoder aDecoder);
+    public native HKSeriesSample initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

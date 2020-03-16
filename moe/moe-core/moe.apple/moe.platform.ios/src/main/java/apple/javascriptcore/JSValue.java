@@ -44,6 +44,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -319,7 +320,8 @@ public class JSValue extends NSObject {
 
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object object, NSObject key);
+    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object object,
+            @Mapped(ObjCObjectMapper.class) Object key);
 
     @Generated
     @Selector("setValue:atIndex:")
@@ -402,4 +404,34 @@ public class JSValue extends NSObject {
     @Generated
     @Selector("valueForProperty:")
     public native JSValue valueForProperty(String property);
+
+    @Generated
+    @Selector("isSymbol")
+    public native boolean isSymbol();
+
+    @Generated
+    @Selector("valueWithNewPromiseInContext:fromExecutor:")
+    public static native JSValue valueWithNewPromiseInContextFromExecutor(JSContext context,
+            @ObjCBlock(name = "call_valueWithNewPromiseInContextFromExecutor") Block_valueWithNewPromiseInContextFromExecutor callback);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_valueWithNewPromiseInContextFromExecutor {
+        @Generated
+        void call_valueWithNewPromiseInContextFromExecutor(JSValue arg0, JSValue arg1);
+    }
+
+    @Generated
+    @Selector("valueWithNewPromiseRejectedWithReason:inContext:")
+    public static native JSValue valueWithNewPromiseRejectedWithReasonInContext(
+            @Mapped(ObjCObjectMapper.class) Object reason, JSContext context);
+
+    @Generated
+    @Selector("valueWithNewPromiseResolvedWithResult:inContext:")
+    public static native JSValue valueWithNewPromiseResolvedWithResultInContext(
+            @Mapped(ObjCObjectMapper.class) Object result, JSContext context);
+
+    @Generated
+    @Selector("valueWithNewSymbolFromDescription:inContext:")
+    public static native JSValue valueWithNewSymbolFromDescriptionInContext(String description, JSContext context);
 }

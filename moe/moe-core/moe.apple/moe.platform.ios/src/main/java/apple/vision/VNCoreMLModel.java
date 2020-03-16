@@ -2,6 +2,7 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.coreml.MLModel;
+import apple.coreml.protocol.MLFeatureProvider;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -146,4 +147,21 @@ public class VNCoreMLModel extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("featureProvider")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MLFeatureProvider featureProvider();
+
+    @Generated
+    @Selector("inputImageFeatureName")
+    public native String inputImageFeatureName();
+
+    @Generated
+    @Selector("setFeatureProvider:")
+    public native void setFeatureProvider(@Mapped(ObjCObjectMapper.class) MLFeatureProvider value);
+
+    @Generated
+    @Selector("setInputImageFeatureName:")
+    public native void setInputImageFeatureName(String value);
 }

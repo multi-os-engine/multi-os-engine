@@ -41,10 +41,6 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
     }
 
     @Generated
-    @Selector("a")
-    public native float a();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -170,4 +166,9 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuronELU initWithDeviceNeuronDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNNeuronDescriptor neuronDescriptor);
 }

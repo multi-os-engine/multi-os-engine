@@ -74,11 +74,6 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
-    @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
-
-    @Generated
     @Selector("confirmationRequiredWithVisualCodeTypeToConfirm:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object confirmationRequiredWithVisualCodeTypeToConfirm(@NInt long visualCodeTypeToConfirm);
@@ -150,11 +145,6 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
-    @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
-
-    @Generated
     @Selector("successWithResolvedVisualCodeType:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedVisualCodeType(@NInt long resolvedVisualCodeType);
@@ -172,4 +162,15 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

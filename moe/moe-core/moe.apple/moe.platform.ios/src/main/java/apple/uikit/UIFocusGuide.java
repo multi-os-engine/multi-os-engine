@@ -157,7 +157,7 @@ public class UIFocusGuide extends UILayoutGuide {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIFocusGuide initWithCoder(NSCoder aDecoder);
+    public native UIFocusGuide initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isEnabled")

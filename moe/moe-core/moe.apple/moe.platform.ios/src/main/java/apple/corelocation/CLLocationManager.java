@@ -399,4 +399,16 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Selector("showsBackgroundLocationIndicator")
     public native boolean showsBackgroundLocationIndicator();
+
+    @Generated
+    @Selector("rangedBeaconConstraints")
+    public native NSSet<? extends CLBeaconIdentityConstraint> rangedBeaconConstraints();
+
+    @Generated
+    @Selector("startRangingBeaconsSatisfyingConstraint:")
+    public native void startRangingBeaconsSatisfyingConstraint(CLBeaconIdentityConstraint constraint);
+
+    @Generated
+    @Selector("stopRangingBeaconsSatisfyingConstraint:")
+    public native void stopRangingBeaconsSatisfyingConstraint(CLBeaconIdentityConstraint constraint);
 }

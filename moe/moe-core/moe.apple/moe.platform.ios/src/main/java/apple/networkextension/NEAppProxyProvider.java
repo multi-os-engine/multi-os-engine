@@ -188,4 +188,8 @@ public class NEAppProxyProvider extends NETunnelProvider {
         @Generated
         void call_stopProxyWithReasonCompletionHandler();
     }
+
+    @Generated
+    @Selector("handleNewUDPFlow:initialRemoteEndpoint:")
+    public native boolean handleNewUDPFlowInitialRemoteEndpoint(NEAppProxyUDPFlow flow, NWEndpoint remoteEndpoint);
 }

@@ -166,7 +166,7 @@ public class INStartAudioCallIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartAudioCallIntent initWithCoder(NSCoder aDecoder);
+    public native INStartAudioCallIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContacts:")

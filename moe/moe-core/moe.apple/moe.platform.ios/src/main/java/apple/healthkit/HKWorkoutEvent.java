@@ -182,7 +182,7 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -190,7 +190,7 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKWorkoutEvent initWithCoder(NSCoder aDecoder);
+    public native HKWorkoutEvent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("metadata")

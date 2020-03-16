@@ -172,7 +172,7 @@ public class INPauseWorkoutIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPauseWorkoutIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INPauseWorkoutIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

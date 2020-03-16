@@ -174,7 +174,7 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -182,7 +182,7 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantGuestDisplayPreferences initWithCoder(NSCoder aDecoder);
+    public native INRestaurantGuestDisplayPreferences initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("nameEditable")

@@ -5,6 +5,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metalperformanceshaders.protocol.MPSCNNConvolutionDataSource;
+import apple.metalperformanceshaders.protocol.MPSNNTrainableNode;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -28,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSCNNConvolutionNode extends MPSNNFilterNode {
+public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrainableNode {
     static {
         NatJ.register();
     }
@@ -73,10 +74,6 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
-
-    @Generated
-    @Selector("convolutionState")
-    public native MPSCNNConvolutionStateNode convolutionState();
 
     @Generated
     @Selector("debugDescription")
@@ -152,4 +149,26 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("accumulatorPrecision")
+    @NUInt
+    public native long accumulatorPrecision();
+
+    @Generated
+    @Selector("convolutionGradientState")
+    public native MPSCNNConvolutionGradientStateNode convolutionGradientState();
+
+    @Generated
+    @Selector("setAccumulatorPrecision:")
+    public native void setAccumulatorPrecision(@NUInt long value);
+
+    @Generated
+    @Selector("setTrainingStyle:")
+    public native void setTrainingStyle(@NUInt long value);
+
+    @Generated
+    @Selector("trainingStyle")
+    @NUInt
+    public native long trainingStyle();
 }

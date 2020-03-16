@@ -4,7 +4,9 @@ import apple.NSObject;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -24,6 +26,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -151,4 +154,22 @@ public class VNFaceLandmarkRegion2D extends VNFaceLandmarkRegion {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native VNFaceLandmarkRegion2D initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("precisionEstimatesPerPoint")
+    public native NSArray<? extends NSNumber> precisionEstimatesPerPoint();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

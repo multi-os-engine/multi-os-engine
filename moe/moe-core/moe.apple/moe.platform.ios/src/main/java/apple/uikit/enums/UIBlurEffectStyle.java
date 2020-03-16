@@ -30,4 +30,20 @@ public final class UIBlurEffectStyle {
     @Generated
     private UIBlurEffectStyle() {
     }
+
+    @Generated @NInt public static final long SystemUltraThinMaterial = 0x0000000000000006L;
+    @Generated @NInt public static final long SystemThinMaterial = 0x0000000000000007L;
+    @Generated @NInt public static final long SystemMaterial = 0x0000000000000008L;
+    @Generated @NInt public static final long SystemThickMaterial = 0x0000000000000009L;
+    @Generated @NInt public static final long SystemChromeMaterial = 0x000000000000000AL;
+    @Generated @NInt public static final long SystemUltraThinMaterialLight = 0x000000000000000BL;
+    @Generated @NInt public static final long SystemThinMaterialLight = 0x000000000000000CL;
+    @Generated @NInt public static final long SystemMaterialLight = 0x000000000000000DL;
+    @Generated @NInt public static final long SystemThickMaterialLight = 0x000000000000000EL;
+    @Generated @NInt public static final long SystemChromeMaterialLight = 0x000000000000000FL;
+    @Generated @NInt public static final long SystemUltraThinMaterialDark = 0x0000000000000010L;
+    @Generated @NInt public static final long SystemThinMaterialDark = 0x0000000000000011L;
+    @Generated @NInt public static final long SystemMaterialDark = 0x0000000000000012L;
+    @Generated @NInt public static final long SystemThickMaterialDark = 0x0000000000000013L;
+    @Generated @NInt public static final long SystemChromeMaterialDark = 0x0000000000000014L;
 }

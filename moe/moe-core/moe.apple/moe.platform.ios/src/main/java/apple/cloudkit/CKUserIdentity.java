@@ -167,7 +167,7 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hasiCloudAccount")
@@ -179,7 +179,7 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKUserIdentity initWithCoder(NSCoder aDecoder);
+    public native CKUserIdentity initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("lookupInfo")

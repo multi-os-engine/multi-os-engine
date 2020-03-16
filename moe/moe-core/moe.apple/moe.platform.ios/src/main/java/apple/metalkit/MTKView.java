@@ -487,7 +487,7 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("framebufferOnly")
@@ -618,4 +618,38 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Generated
     @Selector("setSampleCount:")
     public native void setSampleCount(@NUInt long value);
+
+    @Generated
+    @Selector("depthStencilAttachmentTextureUsage")
+    @NUInt
+    public native long depthStencilAttachmentTextureUsage();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("multisampleColorAttachmentTextureUsage")
+    @NUInt
+    public native long multisampleColorAttachmentTextureUsage();
+
+    @Generated
+    @Selector("preferredDevice")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLDevice preferredDevice();
+
+    @Generated
+    @Selector("preferredDrawableSize")
+    @ByValue
+    public native CGSize preferredDrawableSize();
+
+    @Generated
+    @Selector("setDepthStencilAttachmentTextureUsage:")
+    public native void setDepthStencilAttachmentTextureUsage(@NUInt long value);
+
+    @Generated
+    @Selector("setMultisampleColorAttachmentTextureUsage:")
+    public native void setMultisampleColorAttachmentTextureUsage(@NUInt long value);
 }

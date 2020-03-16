@@ -18,6 +18,7 @@ package apple.coretext.c;
 
 import apple.corefoundation.opaque.CFArrayRef;
 import apple.corefoundation.opaque.CFAttributedStringRef;
+import apple.corefoundation.opaque.CFBundleRef;
 import apple.corefoundation.opaque.CFCharacterSetRef;
 import apple.corefoundation.opaque.CFDataRef;
 import apple.corefoundation.opaque.CFDictionaryRef;
@@ -674,7 +675,7 @@ public final class CoreText {
 
     @Generated
     @CFunction
-    public static native CTFramesetterRef CTFramesetterCreateWithAttributedString(CFAttributedStringRef string);
+    public static native CTFramesetterRef CTFramesetterCreateWithAttributedString(CFAttributedStringRef attrString);
 
     @Generated
     @CFunction
@@ -1359,4 +1360,138 @@ public final class CoreText {
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineOffsetAttributeName();
+
+    @Generated
+    @CFunction
+    public static native CTFontRef CTFontCreateForStringWithLanguage(CTFontRef currentFont, CFStringRef string,
+            @ByValue CFRange range, CFStringRef language);
+
+    @Generated
+    @CFunction
+    public static native CFArrayRef CTFontCollectionCreateMatchingFontDescriptorsWithOptions(
+            CTFontCollectionRef collection, CFDictionaryRef options);
+
+    @Generated
+    @CFunction
+    public static native CFArrayRef CTFontManagerCreateFontDescriptorsFromData(CFDataRef data);
+
+    @Generated
+    @CFunction
+    public static native void CTFontManagerRegisterFontURLs(CFArrayRef fontURLs, int scope, boolean enabled,
+            @ObjCBlock(name = "call_CTFontManagerRegisterFontURLs") Block_CTFontManagerRegisterFontURLs registrationHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CTFontManagerRegisterFontURLs {
+        @Generated
+        boolean call_CTFontManagerRegisterFontURLs(CFArrayRef arg0, boolean arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native void CTFontManagerUnregisterFontURLs(CFArrayRef fontURLs, int scope,
+            @ObjCBlock(name = "call_CTFontManagerUnregisterFontURLs") Block_CTFontManagerUnregisterFontURLs registrationHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CTFontManagerUnregisterFontURLs {
+        @Generated
+        boolean call_CTFontManagerUnregisterFontURLs(CFArrayRef arg0, boolean arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native void CTFontManagerRegisterFontDescriptors(CFArrayRef fontDescriptors, int scope,
+            boolean enabled,
+            @ObjCBlock(name = "call_CTFontManagerRegisterFontDescriptors") Block_CTFontManagerRegisterFontDescriptors registrationHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CTFontManagerRegisterFontDescriptors {
+        @Generated
+        boolean call_CTFontManagerRegisterFontDescriptors(CFArrayRef arg0, boolean arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native void CTFontManagerUnregisterFontDescriptors(CFArrayRef fontDescriptors, int scope,
+            @ObjCBlock(name = "call_CTFontManagerUnregisterFontDescriptors") Block_CTFontManagerUnregisterFontDescriptors registrationHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CTFontManagerUnregisterFontDescriptors {
+        @Generated
+        boolean call_CTFontManagerUnregisterFontDescriptors(CFArrayRef arg0, boolean arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native void CTFontManagerRegisterFontsWithAssetNames(CFArrayRef fontAssetNames, CFBundleRef bundle,
+            int scope, boolean enabled,
+            @ObjCBlock(name = "call_CTFontManagerRegisterFontsWithAssetNames") Block_CTFontManagerRegisterFontsWithAssetNames registrationHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CTFontManagerRegisterFontsWithAssetNames {
+        @Generated
+        boolean call_CTFontManagerRegisterFontsWithAssetNames(CFArrayRef arg0, boolean arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native CFArrayRef CTFontManagerCopyRegisteredFontDescriptors(int scope, boolean enabled);
+
+    @Generated
+    @CFunction
+    public static native void CTFontManagerRequestFonts(CFArrayRef fontDescriptors,
+            @ObjCBlock(name = "call_CTFontManagerRequestFonts") Block_CTFontManagerRequestFonts completionHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CTFontManagerRequestFonts {
+        @Generated
+        void call_CTFontManagerRequestFonts(CFArrayRef arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native CTFramesetterRef CTFramesetterCreateWithTypesetter(CTTypesetterRef typesetter);
+
+    @Generated
+    @CFunction
+    public static native char CTGlyphInfoGetGlyph(CTGlyphInfoRef glyphInfo);
+
+    @Generated
+    @CFunction
+    public static native void CTRunGetBaseAdvancesAndOrigins(CTRunRef runRef, @ByValue CFRange range,
+            @UncertainArgument("Options: reference, array Fallback: reference") CGSize advancesBuffer,
+            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint originsBuffer);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTFontFeatureSampleTextKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTFontFeatureTooltipTextKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTFontManagerErrorFontDescriptorsKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTFontManagerErrorFontAssetNameKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTFontRegistrationUserInfoAttribute();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTTypesetterOptionAllowUnboundedLayout();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTTrackingAttributeName();
 }

@@ -172,7 +172,7 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +180,7 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitDuration initWithCoder(NSCoder aDecoder);
+    public native NSUnitDuration initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
@@ -195,4 +195,20 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("microseconds")
+    public static native NSUnitDuration microseconds();
+
+    @Generated
+    @Selector("milliseconds")
+    public static native NSUnitDuration milliseconds();
+
+    @Generated
+    @Selector("nanoseconds")
+    public static native NSUnitDuration nanoseconds();
+
+    @Generated
+    @Selector("picoseconds")
+    public static native NSUnitDuration picoseconds();
 }

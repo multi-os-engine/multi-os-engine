@@ -196,4 +196,29 @@ public final class CoreBluetooth {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CBUUIDL2CAPPSMCharacteristicString();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CBConnectPeripheralOptionStartDelayKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CBConnectPeripheralOptionEnableTransportBridgingKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CBConnectPeripheralOptionRequiresANCS();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CBConnectionEventMatchingOptionServiceUUIDs();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CBConnectionEventMatchingOptionPeripheralUUIDs();
 }

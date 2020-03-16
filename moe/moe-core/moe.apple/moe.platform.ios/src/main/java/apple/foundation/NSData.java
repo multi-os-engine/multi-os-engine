@@ -231,7 +231,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateByteRangesUsingBlock:")
@@ -287,7 +287,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSData initWithCoder(NSCoder aDecoder);
+    public native NSData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -325,6 +325,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @NUInt
     public native long length();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -376,4 +377,16 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
         @Generated
         void call_initWithBytesNoCopyLengthDeallocator(VoidPtr arg0, @NUInt long arg1);
     }
+
+    @Generated
+    @Selector("compressedDataUsingAlgorithm:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object compressedDataUsingAlgorithmError(@NInt long algorithm,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("decompressedDataUsingAlgorithm:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object decompressedDataUsingAlgorithmError(@NInt long algorithm,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

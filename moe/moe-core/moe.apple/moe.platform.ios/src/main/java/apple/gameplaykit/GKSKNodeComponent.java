@@ -40,6 +40,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -174,7 +175,7 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKSKNodeComponent initWithCoder(NSCoder aDecoder);
+    public native GKSKNodeComponent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNode:")
@@ -187,4 +188,14 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     @Generated
     @Selector("setNode:")
     public native void setNode(SKNode value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

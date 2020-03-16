@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHAssetChangeRequest extends NSObject {
+public class PHAssetChangeRequest extends PHChangeRequest {
     static {
         NatJ.register();
     }

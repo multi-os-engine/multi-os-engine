@@ -422,4 +422,25 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("updateAtTime:")
     public native void updateAtTime(double time);
+
+    @Generated
+    @Selector("currentViewport")
+    @ByValue
+    public native CGRect currentViewport();
+
+    @Generated
+    @Selector("isTemporalAntialiasingEnabled")
+    public native boolean isTemporalAntialiasingEnabled();
+
+    @Generated
+    @Selector("setTemporalAntialiasingEnabled:")
+    public native void setTemporalAntialiasingEnabled(boolean value);
+
+    @Generated
+    @Selector("setUsesReverseZ:")
+    public native void setUsesReverseZ(boolean value);
+
+    @Generated
+    @Selector("usesReverseZ")
+    public native boolean usesReverseZ();
 }

@@ -2,6 +2,7 @@ package apple.vision;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -168,4 +169,18 @@ public class VNTrackingRequest extends VNImageBasedRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("currentRevision")
+    @NUInt
+    public static native long currentRevision();
+
+    @Generated
+    @Selector("defaultRevision")
+    @NUInt
+    public static native long defaultRevision();
+
+    @Generated
+    @Selector("supportedRevisions")
+    public static native NSIndexSet supportedRevisions();
 }

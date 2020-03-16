@@ -100,37 +100,38 @@ public class PHCollectionList extends PHCollection {
 
     @Generated
     @Selector("fetchCollectionListsContainingCollection:options:")
-    public static native PHFetchResult<PHCollectionList> fetchCollectionListsContainingCollectionOptions(
+    public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsContainingCollectionOptions(
             PHCollection collection, PHFetchOptions options);
 
     @Generated
     @Selector("fetchCollectionListsWithLocalIdentifiers:options:")
-    public static native PHFetchResult<PHCollectionList> fetchCollectionListsWithLocalIdentifiersOptions(
+    public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsWithLocalIdentifiersOptions(
             NSArray<String> identifiers, PHFetchOptions options);
 
     @Generated
     @Selector("fetchCollectionListsWithType:subtype:options:")
-    public static native PHFetchResult<PHCollectionList> fetchCollectionListsWithTypeSubtypeOptions(
+    public static native PHFetchResult<? extends PHCollectionList> fetchCollectionListsWithTypeSubtypeOptions(
             @NInt long collectionListType, @NInt long subtype, PHFetchOptions options);
 
     @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
-    public static native PHFetchResult<PHCollection> fetchCollectionsInCollectionListOptions(
+    public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
 
     @Generated
     @Selector("fetchMomentListsWithSubtype:containingMoment:options:")
-    public static native PHFetchResult<PHCollectionList> fetchMomentListsWithSubtypeContainingMomentOptions(
+    public static native PHFetchResult<? extends PHCollectionList> fetchMomentListsWithSubtypeContainingMomentOptions(
             @NInt long momentListSubtype, PHAssetCollection moment, PHFetchOptions options);
 
     @Generated
     @Selector("fetchMomentListsWithSubtype:options:")
-    public static native PHFetchResult<PHCollectionList> fetchMomentListsWithSubtypeOptions(
+    public static native PHFetchResult<? extends PHCollectionList> fetchMomentListsWithSubtypeOptions(
             @NInt long momentListSubtype, PHFetchOptions options);
 
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
-    public static native PHFetchResult<PHCollection> fetchTopLevelUserCollectionsWithOptions(PHFetchOptions options);
+    public static native PHFetchResult<? extends PHCollection> fetchTopLevelUserCollectionsWithOptions(
+            PHFetchOptions options);
 
     @Generated
     @Selector("hash")
@@ -188,7 +189,7 @@ public class PHCollectionList extends PHCollection {
     @Generated
     @Selector("transientCollectionListWithCollectionsFetchResult:title:")
     public static native PHCollectionList transientCollectionListWithCollectionsFetchResultTitle(
-            PHFetchResult<PHCollection> fetchResult, String title);
+            PHFetchResult<? extends PHCollection> fetchResult, String title);
 
     @Generated
     @Selector("version")

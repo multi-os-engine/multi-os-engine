@@ -705,4 +705,19 @@ public final class SceneKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNSceneSourceConvertToYUpKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNHitTestOptionIgnoreLightArea();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNLightTypeArea();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SCNLightingModelShadowOnly();
 }

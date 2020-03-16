@@ -175,7 +175,7 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
     public native UIApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(String type,
             String localizedTitle, String localizedSubtitle, UIApplicationShortcutIcon icon,
-            NSDictionary<?, ?> userInfo);
+            NSDictionary<String, ?> userInfo);
 
     @Generated
     @Selector("localizedSubtitle")
@@ -185,6 +185,7 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Selector("localizedTitle")
     public native String localizedTitle();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -197,4 +198,9 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
+
+    @Generated
+    @Selector("targetContentIdentifier")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object targetContentIdentifier();
 }

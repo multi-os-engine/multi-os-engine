@@ -171,7 +171,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("encryptionAlgorithm")
@@ -184,7 +184,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNIKEv2SecurityAssociationParameters initWithCoder(NSCoder aDecoder);
+    public native NEVPNIKEv2SecurityAssociationParameters initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("integrityAlgorithm")

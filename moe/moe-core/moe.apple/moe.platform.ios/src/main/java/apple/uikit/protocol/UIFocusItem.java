@@ -16,10 +16,14 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.coregraphics.struct.CGRect;
+import apple.uikit.UIFocusMovementHint;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
@@ -31,4 +35,16 @@ public interface UIFocusItem extends UIFocusEnvironment {
     @Generated
     @Selector("canBecomeFocused")
     boolean canBecomeFocused();
+
+    @Generated
+    @IsOptional
+    @Selector("didHintFocusMovement:")
+    default void didHintFocusMovement(UIFocusMovementHint hint) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @Selector("frame")
+    @ByValue
+    CGRect frame();
 }

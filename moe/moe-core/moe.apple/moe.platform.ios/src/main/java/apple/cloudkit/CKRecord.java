@@ -17,6 +17,7 @@ limitations under the License.
 package apple.cloudkit;
 
 import apple.NSObject;
+import apple.cloudkit.protocol.CKRecordKeyValueSetting;
 import apple.cloudkit.protocol.CKRecordValue;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -49,7 +50,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
+public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKRecordKeyValueSetting {
     static {
         NatJ.register();
     }
@@ -192,7 +193,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -200,7 +201,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKRecord initWithCoder(NSCoder aDecoder);
+    public native CKRecord initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRecordType:")

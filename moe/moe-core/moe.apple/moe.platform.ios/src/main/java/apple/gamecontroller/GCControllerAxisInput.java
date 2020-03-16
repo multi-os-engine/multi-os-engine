@@ -182,4 +182,8 @@ public class GCControllerAxisInput extends GCControllerElement {
         @Generated
         void call_valueChangedHandler_ret(GCControllerAxisInput arg0, float arg1);
     }
+
+    @Generated
+    @Selector("setValue:")
+    public native void setValue(float value);
 }

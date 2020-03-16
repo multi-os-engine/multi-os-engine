@@ -106,4 +106,9 @@ public final class NetworkExtension {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NEDNSProxyConfigurationDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEHotspotConfigurationErrorDomain();
 }

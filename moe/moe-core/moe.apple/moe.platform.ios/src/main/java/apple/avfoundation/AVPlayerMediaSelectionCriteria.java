@@ -166,4 +166,14 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
     @Generated
     @Selector("preferredMediaCharacteristics")
     public native NSArray<String> preferredMediaCharacteristics();
+
+    @Generated
+    @Selector("initWithPrincipalMediaCharacteristics:preferredLanguages:preferredMediaCharacteristics:")
+    public native AVPlayerMediaSelectionCriteria initWithPrincipalMediaCharacteristicsPreferredLanguagesPreferredMediaCharacteristics(
+            NSArray<String> principalMediaCharacteristics, NSArray<String> preferredLanguages,
+            NSArray<String> preferredMediaCharacteristics);
+
+    @Generated
+    @Selector("principalMediaCharacteristics")
+    public native NSArray<String> principalMediaCharacteristics();
 }

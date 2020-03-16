@@ -102,7 +102,7 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("groupName")
@@ -123,7 +123,7 @@ public class INNote extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INNote initWithCoder(NSCoder aDecoder);
+    public native INNote initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTitle:contents:groupName:createdDateComponents:modifiedDateComponents:identifier:")

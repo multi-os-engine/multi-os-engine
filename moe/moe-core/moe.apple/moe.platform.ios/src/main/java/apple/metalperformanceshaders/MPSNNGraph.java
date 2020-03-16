@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -117,7 +118,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("executeAsyncWithSourceImages:completionHandler:")
@@ -142,7 +143,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNGraph initWithCoder(NSCoder aDecoder);
+    public native MPSNNGraph initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:device:")
@@ -247,4 +248,58 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("format")
+    @NUInt
+    public native long format();
+
+    @Generated
+    @Selector("graphWithDevice:resultImage:")
+    public static native MPSNNGraph graphWithDeviceResultImage(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSNNImageNode resultImage);
+
+    @Generated
+    @Selector("graphWithDevice:resultImage:resultImageIsNeeded:")
+    public static native MPSNNGraph graphWithDeviceResultImageResultImageIsNeeded(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSNNImageNode resultImage, boolean resultIsNeeded);
+
+    @Generated
+    @Selector("graphWithDevice:resultImages:resultsAreNeeded:")
+    public static native MPSNNGraph graphWithDeviceResultImagesResultsAreNeeded(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, NSArray<? extends MPSNNImageNode> resultImages,
+            BoolPtr areResultsNeeded);
+
+    @Generated
+    @Selector("initWithDevice:resultImage:resultImageIsNeeded:")
+    public native MPSNNGraph initWithDeviceResultImageResultImageIsNeeded(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSNNImageNode resultImage, boolean resultIsNeeded);
+
+    @Generated
+    @Selector("initWithDevice:resultImages:resultsAreNeeded:")
+    public native MPSNNGraph initWithDeviceResultImagesResultsAreNeeded(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, NSArray<? extends MPSNNImageNode> resultImages,
+            BoolPtr areResultsNeeded);
+
+    @Generated
+    @Selector("readCountForSourceImageAtIndex:")
+    @NUInt
+    public native long readCountForSourceImageAtIndex(@NUInt long index);
+
+    @Generated
+    @Selector("readCountForSourceStateAtIndex:")
+    @NUInt
+    public native long readCountForSourceStateAtIndex(@NUInt long index);
+
+    @Generated
+    @Selector("reloadFromDataSources")
+    public native void reloadFromDataSources();
+
+    @Generated
+    @Selector("resultImageIsNeeded")
+    public native boolean resultImageIsNeeded();
+
+    @Generated
+    @Selector("setFormat:")
+    public native void setFormat(@NUInt long value);
 }

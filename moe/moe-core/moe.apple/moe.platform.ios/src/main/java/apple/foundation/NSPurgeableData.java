@@ -261,7 +261,7 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPurgeableData initWithCoder(NSCoder aDecoder);
+    public native NSPurgeableData initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")

@@ -188,4 +188,15 @@ public class INCarDefrosterResolutionResult extends INIntentResolutionResult {
     @Selector("successWithResolvedCarDefroster:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedCarDefroster(@NInt long resolvedCarDefroster);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

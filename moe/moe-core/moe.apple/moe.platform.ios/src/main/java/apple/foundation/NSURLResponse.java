@@ -170,7 +170,7 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("expectedContentLength")
@@ -182,7 +182,7 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLResponse initWithCoder(NSCoder aDecoder);
+    public native NSURLResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")

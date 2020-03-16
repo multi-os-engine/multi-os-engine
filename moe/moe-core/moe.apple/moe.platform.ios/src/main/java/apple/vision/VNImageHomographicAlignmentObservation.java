@@ -94,7 +94,7 @@ public class VNImageHomographicAlignmentObservation extends VNImageAlignmentObse
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNImageHomographicAlignmentObservation initWithCoder(NSCoder aDecoder);
+    public native VNImageHomographicAlignmentObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

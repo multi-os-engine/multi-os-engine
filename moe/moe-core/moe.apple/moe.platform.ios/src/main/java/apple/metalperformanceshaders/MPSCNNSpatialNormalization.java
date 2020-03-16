@@ -179,16 +179,6 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     @Generated
-    @Selector("kernelHeight")
-    @NUInt
-    public native long kernelHeight();
-
-    @Generated
-    @Selector("kernelWidth")
-    @NUInt
-    public native long kernelWidth();
-
-    @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);
 

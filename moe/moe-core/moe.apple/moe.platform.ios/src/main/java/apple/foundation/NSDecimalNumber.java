@@ -451,7 +451,7 @@ public class NSDecimalNumber extends NSNumber {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDecimalNumber initWithCoder(NSCoder aDecoder);
+    public native NSDecimalNumber initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDouble:")

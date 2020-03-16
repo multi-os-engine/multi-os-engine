@@ -31,4 +31,8 @@ public final class HKStatisticsOptions {
     @Generated
     private HKStatisticsOptions() {
     }
+
+    @Generated @NUInt public static final long MostRecent = 0x0000000000000020L;
+    @Generated @NUInt public static final long DiscreteMostRecent = 0x0000000000000020L;
+    @Generated @NUInt public static final long Duration = 0x0000000000000040L;
 }

@@ -20,10 +20,11 @@ import apple.NSObject;
 import apple.avfoundation.AVAudioNode;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
-import apple.foundation.protocol.NSCoding;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.gameplaykit.GKPolygonObstacle;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -35,12 +36,15 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -48,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class SKAudioNode extends SKNode implements NSCoding {
+public class SKAudioNode extends SKNode implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -191,7 +195,7 @@ public class SKAudioNode extends SKNode implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -228,4 +232,19 @@ public class SKAudioNode extends SKNode implements NSCoding {
     @Generated
     @Selector("setAvAudioNode:")
     public native void setAvAudioNode(AVAudioNode value);
+
+    @Generated
+    @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
+    public static native SKAudioNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
+            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

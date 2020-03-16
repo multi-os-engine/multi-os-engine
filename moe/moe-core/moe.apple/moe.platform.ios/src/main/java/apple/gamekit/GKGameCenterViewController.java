@@ -178,7 +178,7 @@ public class GKGameCenterViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKGameCenterViewController initWithCoder(NSCoder aDecoder);
+    public native GKGameCenterViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

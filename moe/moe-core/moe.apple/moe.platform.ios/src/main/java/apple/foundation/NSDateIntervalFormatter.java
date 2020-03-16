@@ -166,7 +166,7 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateIntervalFormatter initWithCoder(NSCoder aDecoder);
+    public native NSDateIntervalFormatter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("locale")

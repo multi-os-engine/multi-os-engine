@@ -181,7 +181,7 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("enumerateMatchesInString:options:range:usingBlock:")
@@ -200,7 +200,7 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSRegularExpression initWithCoder(NSCoder aDecoder);
+    public native NSRegularExpression initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPattern:options:error:")

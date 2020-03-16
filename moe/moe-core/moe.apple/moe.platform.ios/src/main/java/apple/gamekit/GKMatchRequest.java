@@ -279,4 +279,12 @@ public class GKMatchRequest extends NSObject {
         @Generated
         void call_setRecipientResponseHandler(GKPlayer arg0, @NInt long arg1);
     }
+
+    @Generated
+    @Selector("restrictToAutomatch")
+    public native boolean restrictToAutomatch();
+
+    @Generated
+    @Selector("setRestrictToAutomatch:")
+    public native void setRestrictToAutomatch(boolean value);
 }

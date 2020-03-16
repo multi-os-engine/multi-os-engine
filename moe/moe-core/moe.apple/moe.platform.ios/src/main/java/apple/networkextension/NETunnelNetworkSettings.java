@@ -170,7 +170,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +178,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     @Generated
     @Selector("initWithCoder:")
-    public native NETunnelNetworkSettings initWithCoder(NSCoder aDecoder);
+    public native NETunnelNetworkSettings initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithTunnelRemoteAddress:")

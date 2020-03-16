@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
+import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.NSUserActivity;
 import apple.intents.INIntent;
@@ -30,6 +31,9 @@ import apple.intents.INIntentResponse;
 import apple.uikit.UIApplication;
 import apple.uikit.UIApplicationShortcutItem;
 import apple.uikit.UILocalNotification;
+import apple.uikit.UISceneConfiguration;
+import apple.uikit.UISceneConnectionOptions;
+import apple.uikit.UISceneSession;
 import apple.uikit.UIUserNotificationSettings;
 import apple.uikit.UIViewController;
 import apple.uikit.UIWindow;
@@ -102,7 +106,7 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Selector("application:didFinishLaunchingWithOptions:")
     default boolean applicationDidFinishLaunchingWithOptions(UIApplication application,
-            NSDictionary<?, ?> launchOptions) {
+            NSDictionary<String, ?> launchOptions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -289,7 +293,7 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Selector("application:viewControllerWithRestorationIdentifierPath:coder:")
     default UIViewController applicationViewControllerWithRestorationIdentifierPathCoder(UIApplication application,
-            NSArray<?> identifierComponents, NSCoder coder) {
+            NSArray<String> identifierComponents, NSCoder coder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -326,7 +330,7 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Selector("application:willFinishLaunchingWithOptions:")
     default boolean applicationWillFinishLaunchingWithOptions(UIApplication application,
-            NSDictionary<?, ?> launchOptions) {
+            NSDictionary<String, ?> launchOptions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -504,5 +508,35 @@ public interface UIApplicationDelegate {
     public interface Block_applicationHandleIntentCompletionHandler {
         @Generated
         void call_applicationHandleIntentCompletionHandler(INIntentResponse arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:configurationForConnectingSceneSession:options:")
+    default UISceneConfiguration applicationConfigurationForConnectingSceneSessionOptions(UIApplication application,
+            UISceneSession connectingSceneSession, UISceneConnectionOptions options) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:didDiscardSceneSessions:")
+    default void applicationDidDiscardSceneSessions(UIApplication application,
+            NSSet<? extends UISceneSession> sceneSessions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:shouldRestoreSecureApplicationState:")
+    default boolean applicationShouldRestoreSecureApplicationState(UIApplication application, NSCoder coder) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:shouldSaveSecureApplicationState:")
+    default boolean applicationShouldSaveSecureApplicationState(UIApplication application, NSCoder coder) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

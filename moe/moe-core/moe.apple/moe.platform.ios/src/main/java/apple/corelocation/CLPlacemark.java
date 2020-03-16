@@ -194,7 +194,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -202,7 +202,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLPlacemark initWithCoder(NSCoder aDecoder);
+    public native CLPlacemark initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPlacemark:")

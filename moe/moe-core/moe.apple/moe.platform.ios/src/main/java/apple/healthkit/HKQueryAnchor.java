@@ -170,7 +170,7 @@ public class HKQueryAnchor extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +178,7 @@ public class HKQueryAnchor extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKQueryAnchor initWithCoder(NSCoder aDecoder);
+    public native HKQueryAnchor initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

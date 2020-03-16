@@ -19,6 +19,7 @@ package apple.uikit;
 import apple.NSObject;
 import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
@@ -282,4 +283,76 @@ public class UIGestureRecognizer extends NSObject {
     @Generated
     @Selector("setName:")
     public native void setName(String value);
+
+    @Generated
+    @Selector("canBePreventedByGestureRecognizer:")
+    public native boolean canBePreventedByGestureRecognizer(UIGestureRecognizer preventingGestureRecognizer);
+
+    @Generated
+    @Selector("canPreventGestureRecognizer:")
+    public native boolean canPreventGestureRecognizer(UIGestureRecognizer preventedGestureRecognizer);
+
+    @Generated
+    @Selector("ignorePress:forEvent:")
+    public native void ignorePressForEvent(UIPress button, UIPressesEvent event);
+
+    @Generated
+    @Selector("ignoreTouch:forEvent:")
+    public native void ignoreTouchForEvent(UITouch touch, UIEvent event);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native UIGestureRecognizer initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("pressesBegan:withEvent:")
+    public native void pressesBeganWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+
+    @Generated
+    @Selector("pressesCancelled:withEvent:")
+    public native void pressesCancelledWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+
+    @Generated
+    @Selector("pressesChanged:withEvent:")
+    public native void pressesChangedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+
+    @Generated
+    @Selector("pressesEnded:withEvent:")
+    public native void pressesEndedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
+
+    @Generated
+    @Selector("reset")
+    public native void reset();
+
+    @Generated
+    @Selector("setState:")
+    public native void setState(@NInt long value);
+
+    @Generated
+    @Selector("shouldBeRequiredToFailByGestureRecognizer:")
+    public native boolean shouldBeRequiredToFailByGestureRecognizer(UIGestureRecognizer otherGestureRecognizer);
+
+    @Generated
+    @Selector("shouldRequireFailureOfGestureRecognizer:")
+    public native boolean shouldRequireFailureOfGestureRecognizer(UIGestureRecognizer otherGestureRecognizer);
+
+    @Generated
+    @Selector("touchesBegan:withEvent:")
+    public native void touchesBeganWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+
+    @Generated
+    @Selector("touchesCancelled:withEvent:")
+    public native void touchesCancelledWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+
+    @Generated
+    @Selector("touchesEnded:withEvent:")
+    public native void touchesEndedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+
+    @Generated
+    @Selector("touchesEstimatedPropertiesUpdated:")
+    public native void touchesEstimatedPropertiesUpdated(NSSet<? extends UITouch> touches);
+
+    @Generated
+    @Selector("touchesMoved:withEvent:")
+    public native void touchesMovedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
 }

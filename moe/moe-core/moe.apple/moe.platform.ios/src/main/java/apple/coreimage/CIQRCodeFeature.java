@@ -198,11 +198,11 @@ public class CIQRCodeFeature extends CIFeature implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIQRCodeFeature initWithCoder(NSCoder aDecoder);
+    public native CIQRCodeFeature initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

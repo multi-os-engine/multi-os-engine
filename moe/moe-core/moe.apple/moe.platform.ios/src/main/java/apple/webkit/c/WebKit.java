@@ -101,4 +101,19 @@ public final class WebKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeIndexedDBDatabases();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSReadAccessURLDocumentOption();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebsiteDataTypeFetchCache();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String WKWebsiteDataTypeServiceWorkerRegistrations();
 }

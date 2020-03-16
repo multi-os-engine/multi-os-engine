@@ -93,7 +93,7 @@ public class INNoteContent extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -106,7 +106,7 @@ public class INNoteContent extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native INNoteContent initWithCoder(NSCoder aDecoder);
+    public native INNoteContent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

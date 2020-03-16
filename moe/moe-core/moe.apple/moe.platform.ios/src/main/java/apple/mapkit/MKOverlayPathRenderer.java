@@ -262,4 +262,12 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Generated
     @Selector("strokePath:inContext:")
     public native void strokePathInContext(CGPathRef path, CGContextRef context);
+
+    @Generated
+    @Selector("setShouldRasterize:")
+    public native void setShouldRasterize(boolean value);
+
+    @Generated
+    @Selector("shouldRasterize")
+    public native boolean shouldRasterize();
 }

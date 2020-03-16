@@ -19,6 +19,7 @@ package apple.scenekit.protocol;
 import apple.avfoundation.AVAudioEngine;
 import apple.avfoundation.AVAudioEnvironmentNode;
 import apple.coregraphics.struct.CGPoint;
+import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.scenekit.SCNHitTestResult;
@@ -249,4 +250,25 @@ public interface SCNSceneRenderer {
         @Generated
         void call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler();
     }
+
+    @Generated
+    @Selector("currentViewport")
+    @ByValue
+    CGRect currentViewport();
+
+    @Generated
+    @Selector("isTemporalAntialiasingEnabled")
+    boolean isTemporalAntialiasingEnabled();
+
+    @Generated
+    @Selector("setTemporalAntialiasingEnabled:")
+    void setTemporalAntialiasingEnabled(boolean value);
+
+    @Generated
+    @Selector("setUsesReverseZ:")
+    void setUsesReverseZ(boolean value);
+
+    @Generated
+    @Selector("usesReverseZ")
+    boolean usesReverseZ();
 }

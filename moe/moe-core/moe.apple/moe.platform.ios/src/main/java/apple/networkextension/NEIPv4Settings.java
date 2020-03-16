@@ -170,7 +170,7 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("excludedRoutes")
@@ -190,7 +190,7 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEIPv4Settings initWithCoder(NSCoder aDecoder);
+    public native NEIPv4Settings initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setExcludedRoutes:")

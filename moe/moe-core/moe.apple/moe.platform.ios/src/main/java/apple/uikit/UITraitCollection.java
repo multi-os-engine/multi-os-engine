@@ -39,6 +39,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -219,7 +220,7 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("forceTouchCapability")
@@ -237,7 +238,7 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITraitCollection initWithCoder(NSCoder aDecoder);
+    public native UITraitCollection initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("layoutDirection")
@@ -263,4 +264,68 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("verticalSizeClass")
     @NInt
     public native long verticalSizeClass();
+
+    @Generated
+    @Selector("accessibilityContrast")
+    @NInt
+    public native long accessibilityContrast();
+
+    @Generated
+    @Selector("currentTraitCollection")
+    public static native UITraitCollection currentTraitCollection();
+
+    @Generated
+    @Selector("hasDifferentColorAppearanceComparedToTraitCollection:")
+    public native boolean hasDifferentColorAppearanceComparedToTraitCollection(UITraitCollection traitCollection);
+
+    @Generated
+    @Selector("imageConfiguration")
+    public native UIImageConfiguration imageConfiguration();
+
+    @Generated
+    @Selector("legibilityWeight")
+    @NInt
+    public native long legibilityWeight();
+
+    @Generated
+    @Selector("performAsCurrentTraitCollection:")
+    public native void performAsCurrentTraitCollection(
+            @ObjCBlock(name = "call_performAsCurrentTraitCollection") Block_performAsCurrentTraitCollection actions);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performAsCurrentTraitCollection {
+        @Generated
+        void call_performAsCurrentTraitCollection();
+    }
+
+    @Generated
+    @Selector("setCurrentTraitCollection:")
+    public static native void setCurrentTraitCollection(UITraitCollection value);
+
+    @Generated
+    @Selector("traitCollectionWithAccessibilityContrast:")
+    public static native UITraitCollection traitCollectionWithAccessibilityContrast(@NInt long accessibilityContrast);
+
+    @Generated
+    @Selector("traitCollectionWithLegibilityWeight:")
+    public static native UITraitCollection traitCollectionWithLegibilityWeight(@NInt long legibilityWeight);
+
+    @Generated
+    @Selector("traitCollectionWithUserInterfaceLevel:")
+    public static native UITraitCollection traitCollectionWithUserInterfaceLevel(@NInt long userInterfaceLevel);
+
+    @Generated
+    @Selector("traitCollectionWithUserInterfaceStyle:")
+    public static native UITraitCollection traitCollectionWithUserInterfaceStyle(@NInt long userInterfaceStyle);
+
+    @Generated
+    @Selector("userInterfaceLevel")
+    @NInt
+    public native long userInterfaceLevel();
+
+    @Generated
+    @Selector("userInterfaceStyle")
+    @NInt
+    public native long userInterfaceStyle();
 }

@@ -20,6 +20,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -167,4 +168,35 @@ public class MPSNNFilterNode extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("gradientFilterWithSource:")
+    public native MPSNNGradientFilterNode gradientFilterWithSource(MPSNNImageNode gradientImage);
+
+    @Generated
+    @Selector("gradientFilterWithSources:")
+    public native MPSNNGradientFilterNode gradientFilterWithSources(NSArray<? extends MPSNNImageNode> gradientImages);
+
+    @Generated
+    @Selector("gradientFiltersWithSource:")
+    public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSource(MPSNNImageNode gradientImage);
+
+    @Generated
+    @Selector("gradientFiltersWithSources:")
+    public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSources(
+            NSArray<? extends MPSNNImageNode> gradientImages);
+
+    @Generated
+    @Selector("trainingGraphWithSourceGradient:nodeHandler:")
+    public native NSArray<? extends MPSNNFilterNode> trainingGraphWithSourceGradientNodeHandler(
+            MPSNNImageNode gradientImage,
+            @ObjCBlock(name = "call_trainingGraphWithSourceGradientNodeHandler") Block_trainingGraphWithSourceGradientNodeHandler nodeHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_trainingGraphWithSourceGradientNodeHandler {
+        @Generated
+        void call_trainingGraphWithSourceGradientNodeHandler(MPSNNFilterNode arg0, MPSNNFilterNode arg1,
+                MPSNNImageNode arg2, MPSNNImageNode arg3);
+    }
 }

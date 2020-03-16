@@ -61,4 +61,8 @@ public interface MTLComputePipelineState {
     @Selector("staticThreadgroupMemoryLength")
     @NUInt
     long staticThreadgroupMemoryLength();
+
+    @Generated
+    @Selector("supportIndirectCommandBuffers")
+    boolean supportIndirectCommandBuffers();
 }

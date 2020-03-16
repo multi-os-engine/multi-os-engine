@@ -174,7 +174,7 @@ public class AVVideoCompositionLayerInstruction extends NSObject
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:")
@@ -197,8 +197,9 @@ public class AVVideoCompositionLayerInstruction extends NSObject
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVVideoCompositionLayerInstruction initWithCoder(NSCoder aDecoder);
+    public native AVVideoCompositionLayerInstruction initWithCoder(NSCoder coder);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

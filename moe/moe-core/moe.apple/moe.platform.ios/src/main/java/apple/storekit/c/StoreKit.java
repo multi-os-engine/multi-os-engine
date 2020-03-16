@@ -160,4 +160,29 @@ public final class StoreKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStoreProductParameterProductIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterAdNetworkAttributionSignature();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterAdNetworkCampaignIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterAdNetworkIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterAdNetworkNonce();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterAdNetworkTimestamp();
 }

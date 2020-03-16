@@ -17,9 +17,9 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.foundation.protocol.NSCoding;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSFastEnumeration;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -39,6 +39,7 @@ import org.moe.natj.objc.ObjCObject;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -46,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCopying, NSCoding {
+public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -200,7 +201,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -208,7 +209,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPointerArray initWithCoder(NSCoder aDecoder);
+    public native NSPointerArray initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithOptions:")
@@ -241,4 +242,14 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Generated
     @Selector("setCount:")
     public native void setCount(@NUInt long value);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

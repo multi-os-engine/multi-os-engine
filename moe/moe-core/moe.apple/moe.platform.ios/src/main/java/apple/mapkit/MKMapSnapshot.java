@@ -23,6 +23,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UIImage;
+import apple.uikit.UITraitCollection;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -166,4 +167,8 @@ public class MKMapSnapshot extends NSObject {
     @Selector("pointForCoordinate:")
     @ByValue
     public native CGPoint pointForCoordinate(@ByValue CLLocationCoordinate2D coordinate);
+
+    @Generated
+    @Selector("traitCollection")
+    public native UITraitCollection traitCollection();
 }

@@ -29,4 +29,6 @@ public final class NSPersistentStoreRequestType {
     @Generated
     private NSPersistentStoreRequestType() {
     }
+
+    @Generated @NUInt public static final long BatchInsertRequestType = 0x0000000000000005L;
 }

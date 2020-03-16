@@ -68,4 +68,32 @@ public interface UIAdaptivePresentationControllerDelegate {
             @Mapped(ObjCObjectMapper.class) Object transitionCoordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("presentationControllerDidAttemptToDismiss:")
+    default void presentationControllerDidAttemptToDismiss(UIPresentationController presentationController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("presentationControllerDidDismiss:")
+    default void presentationControllerDidDismiss(UIPresentationController presentationController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("presentationControllerShouldDismiss:")
+    default boolean presentationControllerShouldDismiss(UIPresentationController presentationController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("presentationControllerWillDismiss:")
+    default void presentationControllerWillDismiss(UIPresentationController presentationController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

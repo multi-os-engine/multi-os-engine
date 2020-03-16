@@ -210,7 +210,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSMessagesAppViewController initWithCoder(NSCoder aDecoder);
+    public native MSMessagesAppViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -245,4 +245,9 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     @Selector("contentSizeThatFits:")
     @ByValue
     public native CGSize contentSizeThatFits(@ByValue CGSize size);
+
+    @Generated
+    @Selector("presentationContext")
+    @NUInt
+    public native long presentationContext();
 }

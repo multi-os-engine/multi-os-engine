@@ -37,4 +37,9 @@ public final class INVocabularyStringType {
     @Generated @NInt public static final long PaymentsAccountNickname = 0x0000000000000191L;
     @Generated @NInt public static final long NotebookItemTitle = 0x00000000000001F4L;
     @Generated @NInt public static final long NotebookItemGroupName = 0x00000000000001F5L;
+    @Generated @NInt public static final long MediaPlaylistTitle = 0x00000000000002BCL;
+    @Generated @NInt public static final long MediaMusicArtistName = 0x00000000000002BDL;
+    @Generated @NInt public static final long MediaAudiobookTitle = 0x00000000000002BEL;
+    @Generated @NInt public static final long MediaAudiobookAuthorName = 0x00000000000002BFL;
+    @Generated @NInt public static final long MediaShowTitle = 0x00000000000002C0L;
 }

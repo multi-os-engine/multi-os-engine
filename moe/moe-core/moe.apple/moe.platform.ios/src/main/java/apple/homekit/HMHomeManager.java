@@ -221,4 +221,9 @@ public class HMHomeManager extends NSObject {
         @Generated
         void call_updatePrimaryHomeCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("authorizationStatus")
+    @NUInt
+    public native long authorizationStatus();
 }

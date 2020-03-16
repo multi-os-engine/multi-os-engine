@@ -20,6 +20,8 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.struct.NSRange;
+import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLTexture;
 import apple.metal.struct.MTLRegion;
@@ -264,4 +266,50 @@ public class MPSImage extends NSObject {
     @Selector("writeBytes:dataLayout:imageIndex:")
     public native void writeBytesDataLayoutImageIndex(ConstVoidPtr dataBytes, @NUInt long dataLayout,
             @NUInt long imageIndex);
+
+    @Generated
+    @Selector("featureChannelFormat")
+    @NUInt
+    public native long featureChannelFormat();
+
+    @Generated
+    @Selector("initWithParentImage:sliceRange:featureChannels:")
+    public native MPSImage initWithParentImageSliceRangeFeatureChannels(MPSImage parent, @ByValue NSRange sliceRange,
+            @NUInt long featureChannels);
+
+    @Generated
+    @Selector("parent")
+    public native MPSImage parent();
+
+    @Generated
+    @Selector("readBytes:dataLayout:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")
+    public native void readBytesDataLayoutBytesPerRowBytesPerImageRegionFeatureChannelInfoImageIndex(VoidPtr dataBytes,
+            @NUInt long dataLayout, @NUInt long bytesPerRow, @NUInt long bytesPerImage, @ByValue MTLRegion region,
+            @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
+
+    @Generated
+    @Selector("resourceSize")
+    @NUInt
+    public native long resourceSize();
+
+    @Generated
+    @Selector("subImageWithFeatureChannelRange:")
+    public native MPSImage subImageWithFeatureChannelRange(@ByValue NSRange range);
+
+    @Generated
+    @Selector("synchronizeOnCommandBuffer:")
+    public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+
+    @Generated
+    @Selector("writeBytes:dataLayout:bytesPerColumn:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")
+    public native void writeBytesDataLayoutBytesPerColumnBytesPerRowBytesPerImageRegionFeatureChannelInfoImageIndex(
+            ConstVoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerColumn, @NUInt long bytesPerRow,
+            @NUInt long bytesPerImage, @ByValue MTLRegion region, @ByValue MPSImageReadWriteParams featureChannelInfo,
+            @NUInt long imageIndex);
+
+    @Generated
+    @Selector("writeBytes:dataLayout:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")
+    public native void writeBytesDataLayoutBytesPerRowBytesPerImageRegionFeatureChannelInfoImageIndex(
+            ConstVoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerRow, @NUInt long bytesPerImage,
+            @ByValue MTLRegion region, @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 }

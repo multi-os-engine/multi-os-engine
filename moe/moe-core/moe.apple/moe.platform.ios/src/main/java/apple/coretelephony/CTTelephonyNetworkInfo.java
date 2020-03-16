@@ -17,7 +17,9 @@ limitations under the License.
 package apple.coretelephony;
 
 import apple.NSObject;
+import apple.coretelephony.protocol.CTTelephonyNetworkInfoDelegate;
 import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -185,5 +187,62 @@ public class CTTelephonyNetworkInfo extends NSObject {
     public interface Block_subscriberCellularProviderDidUpdateNotifier_ret {
         @Generated
         void call_subscriberCellularProviderDidUpdateNotifier_ret(CTCarrier arg0);
+    }
+
+    @Generated
+    @Selector("dataServiceIdentifier")
+    public native String dataServiceIdentifier();
+
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native CTTelephonyNetworkInfoDelegate delegate();
+
+    @Generated
+    @Selector("serviceCurrentRadioAccessTechnology")
+    public native NSDictionary<String, String> serviceCurrentRadioAccessTechnology();
+
+    @Generated
+    @Selector("serviceSubscriberCellularProviders")
+    public native NSDictionary<String, ? extends CTCarrier> serviceSubscriberCellularProviders();
+
+    @Generated
+    @Selector("serviceSubscriberCellularProvidersDidUpdateNotifier")
+    @ObjCBlock(name = "call_serviceSubscriberCellularProvidersDidUpdateNotifier_ret")
+    public native Block_serviceSubscriberCellularProvidersDidUpdateNotifier_ret serviceSubscriberCellularProvidersDidUpdateNotifier();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_serviceSubscriberCellularProvidersDidUpdateNotifier_ret {
+        @Generated
+        void call_serviceSubscriberCellularProvidersDidUpdateNotifier_ret(String arg0);
+    }
+
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CTTelephonyNetworkInfoDelegate value);
+
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) CTTelephonyNetworkInfoDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setServiceSubscriberCellularProvidersDidUpdateNotifier:")
+    public native void setServiceSubscriberCellularProvidersDidUpdateNotifier(
+            @ObjCBlock(name = "call_setServiceSubscriberCellularProvidersDidUpdateNotifier") Block_setServiceSubscriberCellularProvidersDidUpdateNotifier value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setServiceSubscriberCellularProvidersDidUpdateNotifier {
+        @Generated
+        void call_setServiceSubscriberCellularProvidersDidUpdateNotifier(String arg0);
     }
 }

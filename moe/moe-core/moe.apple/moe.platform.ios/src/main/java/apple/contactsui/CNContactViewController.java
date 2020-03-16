@@ -227,7 +227,7 @@ public class CNContactViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactViewController initWithCoder(NSCoder aDecoder);
+    public native CNContactViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

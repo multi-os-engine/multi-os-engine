@@ -26,4 +26,5 @@ public final class MPSNNPaddingMethod {
     @Generated @NUInt public static final long Custom = 0x0000000000004000L;
     @Generated @NUInt public static final long SizeMask = 0x00000000000007F0L;
     @Generated @NUInt public static final long ExcludeEdges = 0x0000000000008000L;
+    @Generated @NUInt public static final long CustomWhitelistForNodeFusion = 0x0000000000002000L;
 }

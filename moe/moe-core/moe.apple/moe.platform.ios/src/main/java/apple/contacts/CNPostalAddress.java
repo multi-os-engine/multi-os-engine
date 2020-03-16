@@ -183,7 +183,7 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -191,8 +191,9 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNPostalAddress initWithCoder(NSCoder aDecoder);
+    public native CNPostalAddress initWithCoder(NSCoder coder);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

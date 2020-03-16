@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.storekit.protocol.SKPaymentQueueDelegate;
 import apple.storekit.protocol.SKPaymentTransactionObserver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -207,4 +208,29 @@ public class SKPaymentQueue extends NSObject {
     @Generated
     @Selector("transactions")
     public native NSArray<? extends SKPaymentTransaction> transactions();
+
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native SKPaymentQueueDelegate delegate();
+
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKPaymentQueueDelegate value);
+
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) SKPaymentQueueDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("storefront")
+    public native SKStorefront storefront();
 }

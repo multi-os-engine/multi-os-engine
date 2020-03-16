@@ -194,7 +194,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -202,7 +202,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNSkinner initWithCoder(NSCoder aDecoder);
+    public native SCNSkinner initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("setBaseGeometry:")

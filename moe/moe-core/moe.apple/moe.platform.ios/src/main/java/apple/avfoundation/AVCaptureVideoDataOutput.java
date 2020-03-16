@@ -222,4 +222,20 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Selector("recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:")
     public native NSDictionary<?, ?> recommendedVideoSettingsForVideoCodecTypeAssetWriterOutputFileType(
             String videoCodecType, String outputFileType);
+
+    @Generated
+    @Selector("automaticallyConfiguresOutputBufferDimensions")
+    public native boolean automaticallyConfiguresOutputBufferDimensions();
+
+    @Generated
+    @Selector("deliversPreviewSizedOutputBuffers")
+    public native boolean deliversPreviewSizedOutputBuffers();
+
+    @Generated
+    @Selector("setAutomaticallyConfiguresOutputBufferDimensions:")
+    public native void setAutomaticallyConfiguresOutputBufferDimensions(boolean value);
+
+    @Generated
+    @Selector("setDeliversPreviewSizedOutputBuffers:")
+    public native void setDeliversPreviewSizedOutputBuffers(boolean value);
 }

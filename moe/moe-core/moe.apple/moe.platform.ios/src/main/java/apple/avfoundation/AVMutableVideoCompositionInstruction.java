@@ -177,7 +177,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVMutableVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
+    public native AVMutableVideoCompositionInstruction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("layerInstructions")

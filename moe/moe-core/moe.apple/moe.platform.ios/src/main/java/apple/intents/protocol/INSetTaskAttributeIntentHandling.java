@@ -2,7 +2,10 @@ package apple.intents.protocol;
 
 import apple.intents.INSetTaskAttributeIntent;
 import apple.intents.INSetTaskAttributeIntentResponse;
+import apple.intents.INSetTaskAttributeTemporalEventTriggerResolutionResult;
 import apple.intents.INSpatialEventTriggerResolutionResult;
+import apple.intents.INSpeakableStringResolutionResult;
+import apple.intents.INTaskPriorityResolutionResult;
 import apple.intents.INTaskResolutionResult;
 import apple.intents.INTaskStatusResolutionResult;
 import apple.intents.INTemporalEventTriggerResolutionResult;
@@ -107,5 +110,51 @@ public interface INSetTaskAttributeIntentHandling {
         @Generated
         void call_resolveTemporalEventTriggerForSetTaskAttributeWithCompletion(
                 INTemporalEventTriggerResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolvePriorityForSetTaskAttribute:withCompletion:")
+    default void resolvePriorityForSetTaskAttributeWithCompletion(INSetTaskAttributeIntent intent,
+            @ObjCBlock(name = "call_resolvePriorityForSetTaskAttributeWithCompletion") Block_resolvePriorityForSetTaskAttributeWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolvePriorityForSetTaskAttributeWithCompletion {
+        @Generated
+        void call_resolvePriorityForSetTaskAttributeWithCompletion(INTaskPriorityResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveTaskTitleForSetTaskAttribute:withCompletion:")
+    default void resolveTaskTitleForSetTaskAttributeWithCompletion(INSetTaskAttributeIntent intent,
+            @ObjCBlock(name = "call_resolveTaskTitleForSetTaskAttributeWithCompletion") Block_resolveTaskTitleForSetTaskAttributeWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveTaskTitleForSetTaskAttributeWithCompletion {
+        @Generated
+        void call_resolveTaskTitleForSetTaskAttributeWithCompletion(INSpeakableStringResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveTemporalEventTriggerForSetTaskAttribute:completion:")
+    default void resolveTemporalEventTriggerForSetTaskAttributeCompletion(INSetTaskAttributeIntent intent,
+            @ObjCBlock(name = "call_resolveTemporalEventTriggerForSetTaskAttributeCompletion") Block_resolveTemporalEventTriggerForSetTaskAttributeCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveTemporalEventTriggerForSetTaskAttributeCompletion {
+        @Generated
+        void call_resolveTemporalEventTriggerForSetTaskAttributeCompletion(
+                INSetTaskAttributeTemporalEventTriggerResolutionResult arg0);
     }
 }

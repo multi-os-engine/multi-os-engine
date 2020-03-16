@@ -166,7 +166,7 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLQueryItem initWithCoder(NSCoder aDecoder);
+    public native NSURLQueryItem initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithName:value:")

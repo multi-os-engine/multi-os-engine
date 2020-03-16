@@ -4,6 +4,10 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.metal.MTLTextureDescriptor;
+import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLDevice;
+import apple.metal.protocol.MTLResource;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -145,4 +149,51 @@ public class MPSRNNRecurrentImageState extends MPSState {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithDevice:bufferSize:")
+    public native MPSRNNRecurrentImageState initWithDeviceBufferSize(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NUInt long bufferSize);
+
+    @Generated
+    @Selector("initWithDevice:resourceList:")
+    public native MPSRNNRecurrentImageState initWithDeviceResourceList(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSStateResourceList resourceList);
+
+    @Generated
+    @Selector("initWithDevice:textureDescriptor:")
+    public native MPSRNNRecurrentImageState initWithDeviceTextureDescriptor(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
+
+    @Generated
+    @Selector("initWithResource:")
+    public native MPSRNNRecurrentImageState initWithResource(@Mapped(ObjCObjectMapper.class) MTLResource resource);
+
+    @Generated
+    @Selector("initWithResources:")
+    public native MPSRNNRecurrentImageState initWithResources(NSArray<?> resources);
+
+    @Generated
+    @Selector("temporaryStateWithCommandBuffer:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object temporaryStateWithCommandBuffer(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+
+    @Generated
+    @Selector("temporaryStateWithCommandBuffer:bufferSize:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object temporaryStateWithCommandBufferBufferSize(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+
+    @Generated
+    @Selector("temporaryStateWithCommandBuffer:resourceList:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object temporaryStateWithCommandBufferResourceList(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+
+    @Generated
+    @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object temporaryStateWithCommandBufferTextureDescriptor(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 }

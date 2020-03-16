@@ -171,4 +171,8 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
     @Generated
     @Selector("skipDescendents")
     public native void skipDescendents();
+
+    @Generated
+    @Selector("isEnumeratingDirectoryPostOrder")
+    public native boolean isEnumeratingDirectoryPostOrder();
 }

@@ -233,7 +233,7 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableDictionary<?, ?> initWithCoder(NSCoder aDecoder);
+    public native NSMutableDictionary<?, ?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")

@@ -172,7 +172,7 @@ public class NSUnitConcentrationMass extends NSDimension implements NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +180,7 @@ public class NSUnitConcentrationMass extends NSDimension implements NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitConcentrationMass initWithCoder(NSCoder aDecoder);
+    public native NSUnitConcentrationMass initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")

@@ -341,4 +341,9 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Selector("allMediaSelections")
     public native NSArray<? extends AVMediaSelection> allMediaSelections();
+
+    @Generated
+    @Selector("minimumTimeOffsetFromLive")
+    @ByValue
+    public native CMTime minimumTimeOffsetFromLive();
 }

@@ -174,7 +174,7 @@ public class UIReferenceLibraryViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIReferenceLibraryViewController initWithCoder(NSCoder aDecoder);
+    public native UIReferenceLibraryViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

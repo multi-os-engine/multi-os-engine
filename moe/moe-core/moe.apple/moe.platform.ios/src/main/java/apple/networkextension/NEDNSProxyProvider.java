@@ -176,4 +176,8 @@ public class NEDNSProxyProvider extends NEProvider {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("handleNewUDPFlow:initialRemoteEndpoint:")
+    public native boolean handleNewUDPFlowInitialRemoteEndpoint(NEAppProxyUDPFlow flow, NWEndpoint remoteEndpoint);
 }

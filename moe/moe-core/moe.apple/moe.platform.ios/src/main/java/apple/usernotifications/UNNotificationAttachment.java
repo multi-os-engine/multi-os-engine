@@ -180,7 +180,7 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("identifier")
@@ -192,7 +192,7 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationAttachment initWithCoder(NSCoder aDecoder);
+    public native UNNotificationAttachment initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

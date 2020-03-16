@@ -24,7 +24,9 @@ import apple.uikit.UICollectionViewCell;
 import apple.uikit.UICollectionViewFocusUpdateContext;
 import apple.uikit.UICollectionViewLayout;
 import apple.uikit.UICollectionViewTransitionLayout;
+import apple.uikit.UIContextMenuConfiguration;
 import apple.uikit.UIFocusAnimationCoordinator;
+import apple.uikit.UITargetedPreview;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -209,6 +211,61 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
     default boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
             NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfigurationForItemAtIndexPath:point:")
+    default UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemAtIndexPathPoint(
+            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:didBeginMultipleSelectionInteractionAtIndexPath:")
+    default void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
+            NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:previewForDismissingContextMenuWithConfiguration:")
+    default UITargetedPreview collectionViewPreviewForDismissingContextMenuWithConfiguration(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:previewForHighlightingContextMenuWithConfiguration:")
+    default UITargetedPreview collectionViewPreviewForHighlightingContextMenuWithConfiguration(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
+    default boolean collectionViewShouldBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
+            NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:")
+    default void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UICollectionView collectionView,
+            UIContextMenuConfiguration configuration, @Mapped(ObjCObjectMapper.class) Object animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionViewDidEndMultipleSelectionInteraction:")
+    default void collectionViewDidEndMultipleSelectionInteraction(UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

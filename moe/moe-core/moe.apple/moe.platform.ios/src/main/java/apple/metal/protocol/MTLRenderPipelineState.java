@@ -60,4 +60,8 @@ public interface MTLRenderPipelineState {
     @Generated
     @Selector("threadgroupSizeMatchesTileSize")
     boolean threadgroupSizeMatchesTileSize();
+
+    @Generated
+    @Selector("supportIndirectCommandBuffers")
+    boolean supportIndirectCommandBuffers();
 }

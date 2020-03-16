@@ -173,7 +173,7 @@ public class CLBeaconRegion extends CLRegion {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLBeaconRegion initWithCoder(NSCoder aDecoder);
+    public native CLBeaconRegion initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithProximityUUID:identifier:")
@@ -218,4 +218,30 @@ public class CLBeaconRegion extends CLRegion {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("UUID")
+    public native NSUUID UUID();
+
+    @Generated
+    @Selector("beaconIdentityConstraint")
+    public native CLBeaconIdentityConstraint beaconIdentityConstraint();
+
+    @Generated
+    @Selector("initWithBeaconIdentityConstraint:identifier:")
+    public native CLBeaconRegion initWithBeaconIdentityConstraintIdentifier(
+            CLBeaconIdentityConstraint beaconIdentityConstraint, String identifier);
+
+    @Generated
+    @Selector("initWithUUID:identifier:")
+    public native CLBeaconRegion initWithUUIDIdentifier(NSUUID uuid, String identifier);
+
+    @Generated
+    @Selector("initWithUUID:major:identifier:")
+    public native CLBeaconRegion initWithUUIDMajorIdentifier(NSUUID uuid, char major, String identifier);
+
+    @Generated
+    @Selector("initWithUUID:major:minor:identifier:")
+    public native CLBeaconRegion initWithUUIDMajorMinorIdentifier(NSUUID uuid, char major, char minor,
+            String identifier);
 }

@@ -20,6 +20,7 @@ import apple.intents.INBooleanResolutionResult;
 import apple.intents.INIntegerResolutionResult;
 import apple.intents.INSetProfileInCarIntent;
 import apple.intents.INSetProfileInCarIntentResponse;
+import apple.intents.INSpeakableStringResolutionResult;
 import apple.intents.INStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -105,5 +106,20 @@ public interface INSetProfileInCarIntentHandling {
     public interface Block_resolveProfileNumberForSetProfileInCarWithCompletion {
         @Generated
         void call_resolveProfileNumberForSetProfileInCarWithCompletion(INIntegerResolutionResult arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveCarNameForSetProfileInCar:withCompletion:")
+    default void resolveCarNameForSetProfileInCarWithCompletion(INSetProfileInCarIntent intent,
+            @ObjCBlock(name = "call_resolveCarNameForSetProfileInCarWithCompletion") Block_resolveCarNameForSetProfileInCarWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveCarNameForSetProfileInCarWithCompletion {
+        @Generated
+        void call_resolveCarNameForSetProfileInCarWithCompletion(INSpeakableStringResolutionResult arg0);
     }
 }

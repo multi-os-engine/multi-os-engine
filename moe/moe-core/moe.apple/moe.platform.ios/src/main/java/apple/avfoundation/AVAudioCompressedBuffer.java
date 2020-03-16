@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coreaudio.struct.AudioStreamPacketDescription;
+import apple.coreaudiotypes.struct.AudioStreamPacketDescription;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;

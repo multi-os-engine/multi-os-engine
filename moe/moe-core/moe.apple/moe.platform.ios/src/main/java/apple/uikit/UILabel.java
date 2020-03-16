@@ -427,7 +427,7 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("font")
@@ -443,7 +443,7 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     @Generated
     @Selector("initWithCoder:")
-    public native UILabel initWithCoder(NSCoder aDecoder);
+    public native UILabel initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -599,4 +599,10 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("textRectForBounds:limitedToNumberOfLines:")
     @ByValue
     public native CGRect textRectForBoundsLimitedToNumberOfLines(@ByValue CGRect bounds, @NInt long numberOfLines);
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

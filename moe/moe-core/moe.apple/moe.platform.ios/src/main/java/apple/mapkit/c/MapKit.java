@@ -328,9 +328,9 @@ public final class MapKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKMapItemTypeIdentifier();
 
-    @Generated public static final float MKFeatureDisplayPriorityRequired = (float)0x447A0000;
-    @Generated public static final float MKFeatureDisplayPriorityDefaultHigh = (float)0x443B8000;
-    @Generated public static final float MKFeatureDisplayPriorityDefaultLow = (float)0x437A0000;
+    @Generated public static final float MKFeatureDisplayPriorityRequired = (float)1000.0;
+    @Generated public static final float MKFeatureDisplayPriorityDefaultHigh = (float)750.0;
+    @Generated public static final float MKFeatureDisplayPriorityDefaultLow = (float)250.0;
 
     @Generated
     @CVariable()
@@ -341,4 +341,208 @@ public final class MapKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKMapViewDefaultClusterAnnotationViewReuseIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryAirport();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryAmusementPark();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryAquarium();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryATM();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryBakery();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryBank();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryBeach();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryBrewery();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryCafe();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryCampground();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryCarRental();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryEVCharger();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryFireStation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryFitnessCenter();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryFoodMarket();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryGasStation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryHospital();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryHotel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryLaundry();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryLibrary();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryMarina();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryMovieTheater();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryMuseum();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryNationalPark();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryNightlife();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryPark();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryParking();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryPharmacy();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryPolice();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryPostOffice();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryPublicTransport();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryRestaurant();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryRestroom();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategorySchool();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryStadium();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryStore();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryTheater();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryUniversity();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryWinery();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MKPointOfInterestCategoryZoo();
+
+    @Generated
+    @CVariable()
+    public static native double MKMapCameraZoomDefault();
 }

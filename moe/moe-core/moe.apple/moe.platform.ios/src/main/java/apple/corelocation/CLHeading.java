@@ -167,7 +167,7 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("headingAccuracy")
@@ -179,7 +179,7 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLHeading initWithCoder(NSCoder aDecoder);
+    public native CLHeading initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("magneticHeading")

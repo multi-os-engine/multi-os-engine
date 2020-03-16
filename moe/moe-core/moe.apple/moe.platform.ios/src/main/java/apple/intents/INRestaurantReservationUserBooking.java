@@ -186,7 +186,7 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRestaurantReservationUserBooking initWithCoder(NSCoder aDecoder);
+    public native INRestaurantReservationUserBooking initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithRestaurant:bookingDate:partySize:bookingIdentifier:")

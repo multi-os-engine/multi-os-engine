@@ -31,6 +31,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -183,7 +184,7 @@ public class CATiledLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CATiledLayer initWithCoder(NSCoder aDecoder);
+    public native CATiledLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -225,4 +226,9 @@ public class CATiledLayer extends CALayer {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
 }

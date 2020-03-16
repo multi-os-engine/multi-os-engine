@@ -107,4 +107,14 @@ public final class Photos {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PHImageErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PHPhotosErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PHLocalIdentifierNotFound();
 }

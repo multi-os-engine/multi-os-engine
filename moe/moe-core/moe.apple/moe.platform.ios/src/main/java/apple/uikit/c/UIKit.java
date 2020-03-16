@@ -25,6 +25,7 @@ import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMutableData;
 import apple.foundation.NSURL;
 import apple.uikit.UIBezierPath;
@@ -61,10 +62,10 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("UIKit")
 @Runtime(CRuntime.class)
 public final class UIKit {
-    @Generated public static final float UILayoutPriorityRequired = (float)0x447A0000;
-    @Generated public static final float UILayoutPriorityDefaultHigh = (float)0x443B8000;
-    @Generated public static final float UILayoutPriorityDefaultLow = (float)0x437A0000;
-    @Generated public static final float UILayoutPriorityFittingSizeLevel = (float)0x42480000;
+    @Generated public static final float UILayoutPriorityRequired = (float)1000.0;
+    @Generated public static final float UILayoutPriorityDefaultHigh = (float)750.0;
+    @Generated public static final float UILayoutPriorityDefaultLow = (float)250.0;
+    @Generated public static final float UILayoutPriorityFittingSizeLevel = (float)50.0;
 
     static {
         NatJ.register();
@@ -193,7 +194,7 @@ public final class UIKit {
     @Generated
     @Variadic()
     @CFunction
-    public static native NSDictionary<?, ?> _NSDictionaryOfVariableBindings(
+    public static native NSDictionary<String, ?> _NSDictionaryOfVariableBindings(
             @Mapped(ObjCStringMapper.class) String commaSeparatedKeysString,
             @Mapped(ObjCObjectMapper.class) Object firstValue, Object... varargs);
 
@@ -443,6 +444,7 @@ public final class UIKit {
     @CFunction
     public static native boolean UIFloatRangeIsInfinite(@ByValue UIFloatRange range);
 
+    @Inline
     @Generated
     @CFunction
     public static native boolean UIFloatRangeIsEqualToRange(@ByValue UIFloatRange range,
@@ -2276,14 +2278,488 @@ public final class UIKit {
     public static native String NSCharacterEncodingDocumentOption();
 
     @Generated @NFloat public static final double UIStackViewSpacingUseDefault = org.moe.natj.general.NatJ.is64Bit() ?
-            0x47EFFFFFE0000000L :
-            (float)0x7F7FFFFF;
+            3.4028234663852886E38 :
+            (float)3.4028235E38;
     @Generated @NFloat public static final double UIStackViewSpacingUseSystem = org.moe.natj.general.NatJ.is64Bit() ?
-            0x3810000000000000L :
-            (float)0x00800000;
+            1.1754943508222875E-38 :
+            (float)1.17549435E-38;
 
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIDocumentBrowserErrorDomain();
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native boolean UIDeviceOrientationIsFlat(@NInt long orientation);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native boolean UIDeviceOrientationIsValidInterfaceOrientation(@NInt long orientation);
+
+    @Generated
+    @CFunction
+    public static native void UIGuidedAccessConfigureAccessibilityFeatures(@NUInt long features, boolean enabled,
+            @ObjCBlock(name = "call_UIGuidedAccessConfigureAccessibilityFeatures") Block_UIGuidedAccessConfigureAccessibilityFeatures completion);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_UIGuidedAccessConfigureAccessibilityFeatures {
+        @Generated
+        void call_UIGuidedAccessConfigureAccessibilityFeatures(boolean arg0, NSError arg1);
+    }
+
+    @Generated
+    @CFunction
+    public static native boolean UIAccessibilityIsVideoAutoplayEnabled();
+
+    @Generated
+    @CFunction
+    public static native boolean UIAccessibilityShouldDifferentiateWithoutColor();
+
+    @Generated
+    @CFunction
+    public static native boolean UIAccessibilityIsOnOffSwitchLabelsEnabled();
+
+    @Generated
+    @CFunction
+    @NFloat
+    public static native double UIFontWeightForImageSymbolWeight(@NInt long symbolWeight);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long UIImageSymbolWeightForFontWeight(@NFloat double fontWeight);
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuApplication();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuFile();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuEdit();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuView();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuWindow();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuHelp();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuAbout();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuPreferences();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuServices();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuHide();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuQuit();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuNewScene();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuClose();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuPrint();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuUndoRedo();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuStandardEdit();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuFind();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuReplace();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuShare();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuTextStyle();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuSpelling();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuSpellingPanel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuSpellingOptions();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuSubstitutions();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuSubstitutionsPanel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuSubstitutionOptions();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuTransformations();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuSpeech();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuLookup();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuLearn();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuFormat();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuFont();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuTextSize();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuTextColor();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuTextStylePasteboard();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuText();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuWritingDirection();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuAlignment();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuToolbar();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuFullscreen();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuMinimizeAndZoom();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuBringAllToFront();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuRoot();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UICommandTagShare();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontDescriptorSystemDesignDefault();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontDescriptorSystemDesignRounded();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontDescriptorSystemDesignSerif();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIFontDescriptorSystemDesignMonospaced();
+
+    @Generated public static final float UILayoutPriorityDragThatCanResizeScene = (float)510.0;
+    @Generated public static final float UILayoutPrioritySceneSizeStayPut = (float)500.0;
+    @Generated public static final float UILayoutPriorityDragThatCannotResizeScene = (float)490.0;
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeNewPassword();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UITextContentTypeOneTimeCode();
+
+    @Generated @NInt public static final long UITextWritingDirectionNatural = 0xFFFFFFFFFFFFFFFFL;
+    @Generated @NInt public static final long UITextWritingDirectionLeftToRight = 0x0000000000000000L;
+    @Generated @NInt public static final long UITextWritingDirectionRightToLeft = 0x0000000000000001L;
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISceneErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextualContextWordProcessing();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextualContextNarrative();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextualContextMessaging();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextualContextSpreadsheet();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextualContextFileSystem();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextualContextSourceCode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextualContextConsole();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilitySpeechAttributeSpellOut();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityTextAttributeContext();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIGuidedAccessErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityVideoAutoplayStatusDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityShouldDifferentiateWithoutColorDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityOnOffSwitchLabelsDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UILargeContentViewerInteractionEnabledStatusDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityItemsConfigurationMetadataKeyTitle();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityItemsConfigurationMetadataKeyMessageBody();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityItemsConfigurationPreviewIntentFullSize();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityItemsConfigurationPreviewIntentThumbnail();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityItemsConfigurationInteractionShare();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextScalingDocumentAttribute();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSSourceTextScalingDocumentAttribute();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSCocoaVersionDocumentAttribute();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTargetTextScalingDocumentOption();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSSourceTextScalingDocumentOption();
+
+    @Generated @NInt public static final long NSUnderlinePatternSolid = 0x0000000000000000L;
+    @Generated @NInt public static final long NSUnderlinePatternDot = 0x0000000000000100L;
+    @Generated @NInt public static final long NSUnderlinePatternDash = 0x0000000000000200L;
+    @Generated @NInt public static final long NSUnderlinePatternDashDot = 0x0000000000000300L;
+    @Generated @NInt public static final long NSUnderlinePatternDashDotDot = 0x0000000000000400L;
+    @Generated @NInt public static final long NSUnderlineByWord = 0x0000000000008000L;
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISceneWillConnectNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISceneDidDisconnectNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISceneDidActivateNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISceneWillDeactivateNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISceneWillEnterForegroundNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UISceneDidEnterBackgroundNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIWindowSceneSessionRoleApplication();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIWindowSceneSessionRoleExternalDisplay();
 }

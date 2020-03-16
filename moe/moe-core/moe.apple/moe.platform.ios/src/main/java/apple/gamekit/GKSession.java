@@ -168,6 +168,7 @@ public class GKSession extends NSObject {
     @Selector("connectToPeer:withTimeout:")
     public native void connectToPeerWithTimeout(String peerID, double timeout);
 
+    @Deprecated
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -249,10 +250,12 @@ public class GKSession extends NSObject {
     public native void setDataReceiveHandlerWithContext(@Mapped(ObjCObjectMapper.class) Object handler,
             VoidPtr context);
 
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKSessionDelegate value);
 
+    @Deprecated
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKSessionDelegate value) {
         Object __old = delegate();

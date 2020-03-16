@@ -486,4 +486,20 @@ public class HMHome extends NSObject {
     @Selector("homeHubState")
     @NUInt
     public native long homeHubState();
+
+    @Generated
+    @Selector("addAndSetupAccessoriesWithPayload:completionHandler:")
+    public native void addAndSetupAccessoriesWithPayloadCompletionHandler(HMAccessorySetupPayload payload,
+            @ObjCBlock(name = "call_addAndSetupAccessoriesWithPayloadCompletionHandler") Block_addAndSetupAccessoriesWithPayloadCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addAndSetupAccessoriesWithPayloadCompletionHandler {
+        @Generated
+        void call_addAndSetupAccessoriesWithPayloadCompletionHandler(NSArray<? extends HMAccessory> arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("supportsAddingNetworkRouter")
+    public native boolean supportsAddingNetworkRouter();
 }

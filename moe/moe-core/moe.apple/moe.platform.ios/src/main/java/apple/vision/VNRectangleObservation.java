@@ -107,7 +107,7 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNRectangleObservation initWithCoder(NSCoder aDecoder);
+    public native VNRectangleObservation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -180,4 +180,15 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("observationWithRequestRevision:boundingBox:")
+    public static native VNRectangleObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
+            @ByValue CGRect boundingBox);
+
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
+    public static native VNRectangleObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
 }

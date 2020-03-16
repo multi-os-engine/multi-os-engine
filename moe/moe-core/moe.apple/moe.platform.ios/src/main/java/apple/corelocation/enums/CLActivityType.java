@@ -29,4 +29,6 @@ public final class CLActivityType {
     @Generated
     private CLActivityType() {
     }
+
+    @Generated @NInt public static final long Airborne = 0x0000000000000005L;
 }

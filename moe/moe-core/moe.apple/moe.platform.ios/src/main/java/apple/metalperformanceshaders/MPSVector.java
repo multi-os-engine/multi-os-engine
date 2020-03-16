@@ -5,6 +5,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.protocol.MTLBuffer;
+import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLDevice;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -173,4 +174,28 @@ public class MPSVector extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithBuffer:offset:descriptor:")
+    public native MPSVector initWithBufferOffsetDescriptor(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NUInt long offset, MPSVectorDescriptor descriptor);
+
+    @Generated
+    @Selector("initWithDevice:descriptor:")
+    public native MPSVector initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+            MPSVectorDescriptor descriptor);
+
+    @Generated
+    @Selector("offset")
+    @NUInt
+    public native long offset();
+
+    @Generated
+    @Selector("resourceSize")
+    @NUInt
+    public native long resourceSize();
+
+    @Generated
+    @Selector("synchronizeOnCommandBuffer:")
+    public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 }

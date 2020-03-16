@@ -196,7 +196,7 @@ public class GKFriendRequestComposeViewController extends UINavigationController
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKFriendRequestComposeViewController initWithCoder(NSCoder aDecoder);
+    public native GKFriendRequestComposeViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

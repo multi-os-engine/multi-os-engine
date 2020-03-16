@@ -18,8 +18,10 @@ package apple.gamecontroller.c;
 
 import apple.foundation.NSData;
 import apple.gamecontroller.struct.GCExtendedGamepadSnapShotDataV100;
+import apple.gamecontroller.struct.GCExtendedGamepadSnapshotData;
 import apple.gamecontroller.struct.GCGamepadSnapShotDataV100;
 import apple.gamecontroller.struct.GCMicroGamepadSnapShotDataV100;
+import apple.gamecontroller.struct.GCMicroGamepadSnapshotData;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
@@ -27,6 +29,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.objc.map.ObjCStringMapper;
@@ -85,4 +88,36 @@ public final class GameController {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCControllerDidDisconnectNotification();
+
+    @Generated
+    @CFunction
+    public static native boolean GCExtendedGamepadSnapshotDataFromNSData(
+            @UncertainArgument("Options: reference, array Fallback: reference") GCExtendedGamepadSnapshotData snapshotData,
+            NSData data);
+
+    @Generated
+    @CFunction
+    public static native NSData NSDataFromGCExtendedGamepadSnapshotData(
+            @UncertainArgument("Options: reference, array Fallback: reference") GCExtendedGamepadSnapshotData snapshotData);
+
+    @Generated
+    @CFunction
+    public static native boolean GCMicroGamepadSnapshotDataFromNSData(
+            @UncertainArgument("Options: reference, array Fallback: reference") GCMicroGamepadSnapshotData snapshotData,
+            NSData data);
+
+    @Generated
+    @CFunction
+    public static native NSData NSDataFromGCMicroGamepadSnapshotData(
+            @UncertainArgument("Options: reference, array Fallback: reference") GCMicroGamepadSnapshotData snapshotData);
+
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCCurrentExtendedGamepadSnapshotDataVersion();
+
+    @Generated
+    @CVariable()
+    @NInt
+    public static native long GCCurrentMicroGamepadSnapshotDataVersion();
 }

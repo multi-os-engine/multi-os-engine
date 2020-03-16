@@ -166,7 +166,7 @@ public class UIBlurEffect extends UIVisualEffect {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBlurEffect initWithCoder(NSCoder aDecoder);
+    public native UIBlurEffect initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -177,7 +177,7 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")

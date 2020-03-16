@@ -23,6 +23,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.uikit.UIScene;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -170,7 +171,7 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +179,7 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationResponse initWithCoder(NSCoder aDecoder);
+    public native UNNotificationResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("notification")
@@ -189,4 +190,8 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("targetScene")
+    public native UIScene targetScene();
 }

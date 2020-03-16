@@ -446,7 +446,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("focusStyle")
@@ -521,7 +521,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITableViewCell initWithCoder(NSCoder aDecoder);
+    public native UITableViewCell initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -796,4 +796,10 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Selector("userInteractionEnabledWhileDragging")
     public native boolean userInteractionEnabledWhileDragging();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

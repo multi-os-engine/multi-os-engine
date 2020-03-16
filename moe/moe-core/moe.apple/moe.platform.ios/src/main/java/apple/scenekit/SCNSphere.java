@@ -181,7 +181,7 @@ public class SCNSphere extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNSphere initWithCoder(NSCoder aDecoder);
+    public native SCNSphere initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isGeodesic")

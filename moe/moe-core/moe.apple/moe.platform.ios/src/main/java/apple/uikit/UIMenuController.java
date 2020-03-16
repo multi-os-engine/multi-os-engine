@@ -171,7 +171,7 @@ public class UIMenuController extends NSObject {
 
     @Generated
     @Selector("setMenuVisible:")
-    public native void setMenuVisible(boolean value);
+    public native void setMenuVisible(boolean menuVisible);
 
     @Generated
     @Selector("menuFrame")
@@ -201,4 +201,16 @@ public class UIMenuController extends NSObject {
     @Generated
     @Selector("update")
     public native void update();
+
+    @Generated
+    @Selector("hideMenu")
+    public native void hideMenu();
+
+    @Generated
+    @Selector("hideMenuFromView:")
+    public native void hideMenuFromView(UIView targetView);
+
+    @Generated
+    @Selector("showMenuFromView:rect:")
+    public native void showMenuFromViewRect(UIView targetView, @ByValue CGRect targetRect);
 }

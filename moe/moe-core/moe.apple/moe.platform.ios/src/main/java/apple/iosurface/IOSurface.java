@@ -158,7 +158,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -185,7 +185,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native IOSurface initWithCoder(NSCoder aDecoder);
+    public native IOSurface initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithProperties:")

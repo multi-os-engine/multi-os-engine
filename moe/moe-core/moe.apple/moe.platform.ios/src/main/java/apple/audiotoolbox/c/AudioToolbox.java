@@ -46,12 +46,12 @@ import apple.audiotoolbox.struct.MIDIRawData;
 import apple.audiotoolbox.struct.MusicDeviceNoteParams;
 import apple.audiotoolbox.struct.MusicEventUserData;
 import apple.audiotoolbox.struct.ParameterEvent;
-import apple.coreaudio.struct.AudioBufferList;
-import apple.coreaudio.struct.AudioChannelLayout;
-import apple.coreaudio.struct.AudioClassDescription;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
-import apple.coreaudio.struct.AudioStreamPacketDescription;
-import apple.coreaudio.struct.AudioTimeStamp;
+import apple.coreaudiotypes.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioChannelLayout;
+import apple.coreaudiotypes.struct.AudioClassDescription;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamPacketDescription;
+import apple.coreaudiotypes.struct.AudioTimeStamp;
 import apple.corefoundation.opaque.CFArrayRef;
 import apple.corefoundation.opaque.CFDataRef;
 import apple.corefoundation.opaque.CFDictionaryRef;
@@ -1721,4 +1721,63 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native CFArrayRef AudioUnitExtensionCopyComponentList(CFStringRef extensionIdentifier);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecGetPropertyInfo(AudioComponentInstance inCodec, int inPropertyID, IntPtr outSize,
+            BytePtr outWritable);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecGetProperty(AudioComponentInstance inCodec, int inPropertyID,
+            IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecSetProperty(AudioComponentInstance inCodec, int inPropertyID,
+            int inPropertyDataSize, ConstVoidPtr inPropertyData);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecInitialize(AudioComponentInstance inCodec,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inInputFormat,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inOutputFormat,
+            ConstVoidPtr inMagicCookie, int inMagicCookieByteSize);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecUninitialize(AudioComponentInstance inCodec);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecAppendInputData(AudioComponentInstance inCodec, ConstVoidPtr inInputData,
+            IntPtr ioInputDataByteSize, IntPtr ioNumberPackets,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescription);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecProduceOutputPackets(AudioComponentInstance inCodec, VoidPtr outOutputData,
+            IntPtr ioOutputDataByteSize, IntPtr ioNumberPackets,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription,
+            IntPtr outStatus);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecAppendInputBufferList(AudioComponentInstance inCodec,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inBufferList,
+            IntPtr ioNumberPackets,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescription,
+            IntPtr outBytesConsumed);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecProduceOutputBufferList(AudioComponentInstance inCodec,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioBufferList,
+            IntPtr ioNumberPackets,
+            @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription outPacketDescription,
+            IntPtr outStatus);
+
+    @Generated
+    @CFunction
+    public static native int AudioCodecReset(AudioComponentInstance inCodec);
 }

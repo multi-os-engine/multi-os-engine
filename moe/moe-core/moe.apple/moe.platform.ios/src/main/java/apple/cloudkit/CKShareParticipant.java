@@ -171,7 +171,7 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -179,7 +179,7 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKShareParticipant initWithCoder(NSCoder aDecoder);
+    public native CKShareParticipant initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("permission")
@@ -208,4 +208,13 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @Generated
     @Selector("userIdentity")
     public native CKUserIdentity userIdentity();
+
+    @Generated
+    @Selector("role")
+    @NInt
+    public native long role();
+
+    @Generated
+    @Selector("setRole:")
+    public native void setRole(@NInt long value);
 }

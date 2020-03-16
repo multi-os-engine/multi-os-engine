@@ -109,4 +109,5 @@ public final class Enums {
     @Generated public static final int kCVPixelFormatType_420YpCbCr10BiPlanarFullRange = 0x78663230;
     @Generated public static final int kCVPixelFormatType_422YpCbCr10BiPlanarFullRange = 0x78663232;
     @Generated public static final int kCVPixelFormatType_444YpCbCr10BiPlanarFullRange = 0x78663434;
+    @Generated public static final int kCVPixelFormatType_420YpCbCr8VideoRange_8A_TriPlanar = 0x76306138;
 }

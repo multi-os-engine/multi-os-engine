@@ -168,7 +168,7 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("groupIdentifier")
@@ -184,7 +184,7 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKLeaderboardSet initWithCoder(NSCoder aDecoder);
+    public native GKLeaderboardSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("loadImageWithCompletionHandler:")

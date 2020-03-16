@@ -367,4 +367,36 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("waitsForConnectivity")
     public native boolean waitsForConnectivity();
+
+    @Generated
+    @Selector("TLSMaximumSupportedProtocolVersion")
+    public native short TLSMaximumSupportedProtocolVersion();
+
+    @Generated
+    @Selector("TLSMinimumSupportedProtocolVersion")
+    public native short TLSMinimumSupportedProtocolVersion();
+
+    @Generated
+    @Selector("allowsConstrainedNetworkAccess")
+    public native boolean allowsConstrainedNetworkAccess();
+
+    @Generated
+    @Selector("allowsExpensiveNetworkAccess")
+    public native boolean allowsExpensiveNetworkAccess();
+
+    @Generated
+    @Selector("setAllowsConstrainedNetworkAccess:")
+    public native void setAllowsConstrainedNetworkAccess(boolean value);
+
+    @Generated
+    @Selector("setAllowsExpensiveNetworkAccess:")
+    public native void setAllowsExpensiveNetworkAccess(boolean value);
+
+    @Generated
+    @Selector("setTLSMaximumSupportedProtocolVersion:")
+    public native void setTLSMaximumSupportedProtocolVersion(short value);
+
+    @Generated
+    @Selector("setTLSMinimumSupportedProtocolVersion:")
+    public native void setTLSMinimumSupportedProtocolVersion(short value);
 }

@@ -193,7 +193,7 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("heading")
@@ -205,7 +205,7 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKMapCamera initWithCoder(NSCoder aDecoder);
+    public native MKMapCamera initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("pitch")
@@ -233,4 +233,12 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("centerCoordinateDistance")
+    public native double centerCoordinateDistance();
+
+    @Generated
+    @Selector("setCenterCoordinateDistance:")
+    public native void setCenterCoordinateDistance(double value);
 }

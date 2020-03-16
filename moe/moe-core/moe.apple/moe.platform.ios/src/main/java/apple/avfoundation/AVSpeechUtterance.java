@@ -179,7 +179,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -191,7 +191,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVSpeechUtterance initWithCoder(NSCoder aDecoder);
+    public native AVSpeechUtterance initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithString:")

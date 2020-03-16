@@ -302,7 +302,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("awakeAfterUsingCoder:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object awakeAfterUsingCoder(NSCoder aDecoder);
+    public native Object awakeAfterUsingCoder(NSCoder coder);
 
     @Generated
     @Selector("awakeFromNib")
@@ -436,6 +436,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("mutableArrayValueForKeyPath:")
     public native NSMutableArray<?> mutableArrayValueForKeyPath(String keyPath);
 
+    @Owned
     @Generated
     @Selector("mutableCopy")
     @MappedReturn(ObjCObjectMapper.class)
@@ -537,7 +538,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("replacementObjectForCoder:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object replacementObjectForCoder(NSCoder aCoder);
+    public native Object replacementObjectForCoder(NSCoder coder);
 
     @Generated
     @Selector("replacementObjectForKeyedArchiver:")
@@ -750,4 +751,36 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("setAccessibilityDropPointDescriptors:")
     public native void setAccessibilityDropPointDescriptors(NSArray<? extends UIAccessibilityLocationDescriptor> value);
+
+    @Generated
+    @Selector("accessibilityAttributedUserInputLabels")
+    public native NSArray<? extends NSAttributedString> accessibilityAttributedUserInputLabels();
+
+    @Generated
+    @Selector("accessibilityRespondsToUserInteraction")
+    public native boolean accessibilityRespondsToUserInteraction();
+
+    @Generated
+    @Selector("accessibilityTextualContext")
+    public native String accessibilityTextualContext();
+
+    @Generated
+    @Selector("accessibilityUserInputLabels")
+    public native NSArray<String> accessibilityUserInputLabels();
+
+    @Generated
+    @Selector("setAccessibilityAttributedUserInputLabels:")
+    public native void setAccessibilityAttributedUserInputLabels(NSArray<? extends NSAttributedString> value);
+
+    @Generated
+    @Selector("setAccessibilityRespondsToUserInteraction:")
+    public native void setAccessibilityRespondsToUserInteraction(boolean value);
+
+    @Generated
+    @Selector("setAccessibilityTextualContext:")
+    public native void setAccessibilityTextualContext(String value);
+
+    @Generated
+    @Selector("setAccessibilityUserInputLabels:")
+    public native void setAccessibilityUserInputLabels(NSArray<String> value);
 }

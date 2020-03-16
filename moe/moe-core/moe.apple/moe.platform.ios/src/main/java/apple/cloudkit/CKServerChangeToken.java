@@ -166,7 +166,7 @@ public class CKServerChangeToken extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class CKServerChangeToken extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKServerChangeToken initWithCoder(NSCoder aDecoder);
+    public native CKServerChangeToken initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -400,7 +400,7 @@ public class MKPolygonView extends MKOverlayPathView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKPolygonView initWithCoder(NSCoder aDecoder);
+    public native MKPolygonView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -420,4 +420,10 @@ public class MKPolygonView extends MKOverlayPathView {
     @Deprecated
     @Selector("polygon")
     public native MKPolygon polygon();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

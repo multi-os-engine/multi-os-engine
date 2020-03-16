@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coreaudio.struct.AudioChannelLayout;
+import apple.coreaudiotypes.struct.AudioChannelLayout;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -172,7 +172,7 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +180,7 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVAudioChannelLayout initWithCoder(NSCoder aDecoder);
+    public native AVAudioChannelLayout initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayout:")

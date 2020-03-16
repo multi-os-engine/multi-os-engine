@@ -166,7 +166,7 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +174,7 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEFilterSocketFlow initWithCoder(NSCoder aDecoder);
+    public native NEFilterSocketFlow initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("localEndpoint")
@@ -183,18 +183,6 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     @Generated
     @Selector("remoteEndpoint")
     public native NWEndpoint remoteEndpoint();
-
-    @Generated
-    @Selector("setSocketFamily:")
-    public native void setSocketFamily(int value);
-
-    @Generated
-    @Selector("setSocketProtocol:")
-    public native void setSocketProtocol(int value);
-
-    @Generated
-    @Selector("setSocketType:")
-    public native void setSocketType(int value);
 
     @Generated
     @Selector("socketFamily")

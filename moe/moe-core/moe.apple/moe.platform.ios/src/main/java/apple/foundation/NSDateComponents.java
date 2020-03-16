@@ -175,7 +175,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("era")
@@ -193,7 +193,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateComponents initWithCoder(NSCoder aDecoder);
+    public native NSDateComponents initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isLeapMonth")

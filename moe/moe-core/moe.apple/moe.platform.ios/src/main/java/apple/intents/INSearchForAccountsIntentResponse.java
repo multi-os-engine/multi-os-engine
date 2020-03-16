@@ -109,7 +109,7 @@ public class INSearchForAccountsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForAccountsIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSearchForAccountsIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

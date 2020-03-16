@@ -504,4 +504,42 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Generated
     @Selector("videoApertureMode")
     public native String videoApertureMode();
+
+    @Generated
+    @Selector("automaticallyPreservesTimeOffsetFromLive")
+    public native boolean automaticallyPreservesTimeOffsetFromLive();
+
+    @Generated
+    @Selector("configuredTimeOffsetFromLive")
+    @ByValue
+    public native CMTime configuredTimeOffsetFromLive();
+
+    @Generated
+    @Selector("isAudioSpatializationAllowed")
+    public native boolean isAudioSpatializationAllowed();
+
+    @Generated
+    @Selector("recommendedTimeOffsetFromLive")
+    @ByValue
+    public native CMTime recommendedTimeOffsetFromLive();
+
+    @Generated
+    @Selector("setAudioSpatializationAllowed:")
+    public native void setAudioSpatializationAllowed(boolean value);
+
+    @Generated
+    @Selector("setAutomaticallyPreservesTimeOffsetFromLive:")
+    public native void setAutomaticallyPreservesTimeOffsetFromLive(boolean value);
+
+    @Generated
+    @Selector("setConfiguredTimeOffsetFromLive:")
+    public native void setConfiguredTimeOffsetFromLive(@ByValue CMTime value);
+
+    @Generated
+    @Selector("externalMetadata")
+    public native NSArray<? extends AVMetadataItem> externalMetadata();
+
+    @Generated
+    @Selector("setExternalMetadata:")
+    public native void setExternalMetadata(NSArray<? extends AVMetadataItem> value);
 }

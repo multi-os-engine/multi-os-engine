@@ -170,7 +170,7 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -178,7 +178,7 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactRelation initWithCoder(NSCoder aDecoder);
+    public native CNContactRelation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithName:")

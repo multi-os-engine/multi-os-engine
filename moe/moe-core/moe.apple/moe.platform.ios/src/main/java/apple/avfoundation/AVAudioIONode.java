@@ -19,6 +19,7 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.audiotoolbox.opaque.AudioComponentInstance;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -31,7 +32,9 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
@@ -162,4 +165,13 @@ public class AVAudioIONode extends AVAudioNode {
     @Generated
     @Selector("presentationLatency")
     public native double presentationLatency();
+
+    @Generated
+    @Selector("isVoiceProcessingEnabled")
+    public native boolean isVoiceProcessingEnabled();
+
+    @Generated
+    @Selector("setVoiceProcessingEnabled:error:")
+    public native boolean setVoiceProcessingEnabledError(boolean enabled,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

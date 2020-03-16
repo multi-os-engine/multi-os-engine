@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.uikit.UITextInputPasswordRules;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
@@ -204,6 +205,20 @@ public interface UITextInputTraits {
     @Selector("smartQuotesType")
     @NInt
     default long smartQuotesType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("passwordRules")
+    default UITextInputPasswordRules passwordRules() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("setPasswordRules:")
+    default void setPasswordRules(UITextInputPasswordRules value) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

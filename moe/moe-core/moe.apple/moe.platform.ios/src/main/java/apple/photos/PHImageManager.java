@@ -249,4 +249,18 @@ public class PHImageManager extends NSObject {
         @Generated
         void call_requestPlayerItemForVideoOptionsResultHandler(AVPlayerItem arg0, NSDictionary<?, ?> arg1);
     }
+
+    @Generated
+    @Selector("requestImageDataAndOrientationForAsset:options:resultHandler:")
+    public native int requestImageDataAndOrientationForAssetOptionsResultHandler(PHAsset asset,
+            PHImageRequestOptions options,
+            @ObjCBlock(name = "call_requestImageDataAndOrientationForAssetOptionsResultHandler") Block_requestImageDataAndOrientationForAssetOptionsResultHandler resultHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestImageDataAndOrientationForAssetOptionsResultHandler {
+        @Generated
+        void call_requestImageDataAndOrientationForAssetOptionsResultHandler(NSData arg0, String arg1, int arg2,
+                NSDictionary<?, ?> arg3);
+    }
 }

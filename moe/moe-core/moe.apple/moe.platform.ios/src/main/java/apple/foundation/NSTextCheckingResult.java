@@ -263,7 +263,7 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("grammarDetails")
@@ -275,7 +275,7 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextCheckingResult initWithCoder(NSCoder aDecoder);
+    public native NSTextCheckingResult initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("numberOfRanges")

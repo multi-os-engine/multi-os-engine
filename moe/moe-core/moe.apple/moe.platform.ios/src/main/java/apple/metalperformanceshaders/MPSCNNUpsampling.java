@@ -169,4 +169,8 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("alignCorners")
+    public native boolean alignCorners();
 }

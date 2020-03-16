@@ -181,7 +181,7 @@ public class SCNFloor extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNFloor initWithCoder(NSCoder aDecoder);
+    public native SCNFloor initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("length")

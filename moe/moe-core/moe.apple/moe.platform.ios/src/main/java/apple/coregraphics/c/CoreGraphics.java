@@ -66,6 +66,7 @@ import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Inline;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.c.map.CStringArrayMapper;
+import org.moe.natj.c.map.CStringMapper;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -2432,4 +2433,117 @@ public final class CoreGraphics {
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFContextAccessPermissions();
+
+    @Generated
+    @CFunction
+    public static native boolean CGColorSpaceIsHDR(CGColorSpaceRef arg1);
+
+    @Generated
+    @CFunction
+    public static native ConstVoidPtr CGColorSpaceCopyPropertyList(CGColorSpaceRef space);
+
+    @Generated
+    @CFunction
+    public static native CGColorSpaceRef CGColorSpaceCreateWithPropertyList(ConstVoidPtr plist);
+
+    @Generated
+    @CFunction
+    public static native CGColorRef CGColorCreateGenericGrayGamma2_2(@NFloat double gray, @NFloat double alpha);
+
+    @Generated
+    @CFunction
+    public static native CGColorRef CGColorCreateSRGB(@NFloat double red, @NFloat double green, @NFloat double blue,
+            @NFloat double alpha);
+
+    @Generated
+    @CFunction
+    public static native int CGImageGetByteOrderInfo(CGImageRef image);
+
+    @Generated
+    @CFunction
+    public static native int CGImageGetPixelFormatInfo(CGImageRef image);
+
+    @Generated
+    @CFunction
+    public static native void CGPDFArrayApplyBlock(CGPDFArrayRef array,
+            @ObjCBlock(name = "call_CGPDFArrayApplyBlock") Block_CGPDFArrayApplyBlock block, VoidPtr info);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGPDFArrayApplyBlock {
+        @Generated
+        boolean call_CGPDFArrayApplyBlock(@NUInt long arg0, CGPDFObjectRef arg1, VoidPtr arg2);
+    }
+
+    @Generated
+    @CFunction
+    public static native void CGPDFDictionaryApplyBlock(CGPDFDictionaryRef dict,
+            @ObjCBlock(name = "call_CGPDFDictionaryApplyBlock") Block_CGPDFDictionaryApplyBlock block, VoidPtr info);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_CGPDFDictionaryApplyBlock {
+        @Generated
+        boolean call_CGPDFDictionaryApplyBlock(
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg0,
+                CGPDFObjectRef arg1, VoidPtr arg2);
+    }
+
+    @Generated
+    @CFunction
+    public static native CGColorConversionInfoRef CGColorConversionInfoCreateWithOptions(CGColorSpaceRef src,
+            CGColorSpaceRef dst, CFDictionaryRef options);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
+    public static native String CGPDFTagTypeGetName(int tagType);
+
+    @Generated
+    @CFunction
+    public static native void CGPDFContextBeginTag(CGContextRef context, int tagType, CFDictionaryRef tagProperties);
+
+    @Generated
+    @CFunction
+    public static native void CGPDFContextEndTag(CGContextRef context);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceExtendedLinearITUR_2020();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceExtendedLinearDisplayP3();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_2020_PQ_EOTF();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceDisplayP3_PQ_EOTF();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceDisplayP3_HLG();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_2020_HLG();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFTagPropertyActualText();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFTagPropertyAlternativeText();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFTagPropertyTitleText();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFTagPropertyLanguageText();
 }

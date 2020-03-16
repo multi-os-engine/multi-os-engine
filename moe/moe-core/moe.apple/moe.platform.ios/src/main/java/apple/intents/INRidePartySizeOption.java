@@ -168,7 +168,7 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -176,7 +176,7 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRidePartySizeOption initWithCoder(NSCoder aDecoder);
+    public native INRidePartySizeOption initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithPartySizeRange:sizeDescription:priceRange:")

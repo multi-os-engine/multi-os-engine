@@ -27,4 +27,8 @@ public final class HKQuantityAggregationStyle {
     @Generated
     private HKQuantityAggregationStyle() {
     }
+
+    @Generated @NInt public static final long DiscreteArithmetic = 0x0000000000000001L;
+    @Generated @NInt public static final long DiscreteTemporallyWeighted = 0x0000000000000002L;
+    @Generated @NInt public static final long DiscreteEquivalentContinuousLevel = 0x0000000000000003L;
 }

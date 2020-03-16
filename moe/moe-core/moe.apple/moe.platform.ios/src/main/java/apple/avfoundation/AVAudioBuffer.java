@@ -17,7 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coreaudio.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioBufferList;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -175,6 +175,7 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @Selector("mutableAudioBufferList")
     public native AudioBufferList mutableAudioBufferList();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

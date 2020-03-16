@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -272,4 +273,9 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Generated
     @Selector("sunAzimuth")
     public native float sunAzimuth();
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLSkyCubeTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

@@ -183,6 +183,7 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

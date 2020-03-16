@@ -27,6 +27,8 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSMutableAttributedString;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.NSURLRequest;
+import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
 import apple.uikit.protocol.NSTextStorageDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -48,6 +50,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -57,7 +60,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSTextStorage extends NSMutableAttributedString {
+public class NSTextStorage extends NSMutableAttributedString implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -219,7 +222,7 @@ public class NSTextStorage extends NSMutableAttributedString {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextStorage initWithCoder(NSCoder aDecoder);
+    public native NSTextStorage initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
@@ -333,4 +336,31 @@ public class NSTextStorage extends NSMutableAttributedString {
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("loadFromHTMLWithData:options:completionHandler:")
+    public static native void loadFromHTMLWithDataOptionsCompletionHandler(NSData data, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithDataOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithDataOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithFileURL:options:completionHandler:")
+    public static native void loadFromHTMLWithFileURLOptionsCompletionHandler(NSURL fileURL,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithFileURLOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithFileURLOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithRequest:options:completionHandler:")
+    public static native void loadFromHTMLWithRequestOptionsCompletionHandler(NSURLRequest request,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithRequestOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithRequestOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("loadFromHTMLWithString:options:completionHandler:")
+    public static native void loadFromHTMLWithStringOptionsCompletionHandler(String string,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_loadFromHTMLWithStringOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithStringOptionsCompletionHandler completionHandler);
 }

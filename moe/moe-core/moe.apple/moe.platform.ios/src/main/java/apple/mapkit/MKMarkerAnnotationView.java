@@ -267,7 +267,7 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKMarkerAnnotationView initWithCoder(NSCoder aDecoder);
+    public native MKMarkerAnnotationView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -462,4 +462,10 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

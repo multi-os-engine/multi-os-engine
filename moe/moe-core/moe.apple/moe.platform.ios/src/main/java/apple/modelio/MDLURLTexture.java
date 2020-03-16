@@ -22,6 +22,7 @@ import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -183,4 +184,9 @@ public class MDLURLTexture extends MDLTexture {
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLURLTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

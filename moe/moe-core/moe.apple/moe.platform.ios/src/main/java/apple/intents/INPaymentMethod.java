@@ -171,7 +171,7 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("icon")
@@ -187,7 +187,7 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPaymentMethod initWithCoder(NSCoder aDecoder);
+    public native INPaymentMethod initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithType:name:identificationHint:icon:")

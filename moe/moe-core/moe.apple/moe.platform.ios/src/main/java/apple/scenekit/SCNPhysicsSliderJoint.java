@@ -204,7 +204,7 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsSliderJoint initWithCoder(NSCoder aDecoder);
+    public native SCNPhysicsSliderJoint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("maximumAngularLimit")

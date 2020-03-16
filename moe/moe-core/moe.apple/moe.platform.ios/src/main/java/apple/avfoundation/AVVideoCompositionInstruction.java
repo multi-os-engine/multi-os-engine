@@ -184,7 +184,7 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -192,12 +192,13 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVVideoCompositionInstruction initWithCoder(NSCoder aDecoder);
+    public native AVVideoCompositionInstruction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("layerInstructions")
     public native NSArray<? extends AVVideoCompositionLayerInstruction> layerInstructions();
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

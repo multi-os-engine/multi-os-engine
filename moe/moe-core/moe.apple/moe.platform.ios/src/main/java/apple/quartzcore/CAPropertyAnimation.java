@@ -172,7 +172,7 @@ public class CAPropertyAnimation extends CAAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAPropertyAnimation initWithCoder(NSCoder aDecoder);
+    public native CAPropertyAnimation initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isAdditive")

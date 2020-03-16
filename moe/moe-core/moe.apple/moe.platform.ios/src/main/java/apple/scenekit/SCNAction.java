@@ -294,7 +294,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -302,7 +302,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAction initWithCoder(NSCoder aDecoder);
+    public native SCNAction initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("reversedAction")

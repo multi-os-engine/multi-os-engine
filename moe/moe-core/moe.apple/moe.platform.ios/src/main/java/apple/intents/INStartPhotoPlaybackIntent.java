@@ -181,7 +181,7 @@ public class INStartPhotoPlaybackIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INStartPhotoPlaybackIntent initWithCoder(NSCoder aDecoder);
+    public native INStartPhotoPlaybackIntent initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDateCreated:locationCreated:albumName:searchTerms:includedAttributes:excludedAttributes:peopleInPhoto:")

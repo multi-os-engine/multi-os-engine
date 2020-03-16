@@ -484,7 +484,7 @@ public class MKMapView extends UIView implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("exchangeOverlay:withOverlay:")
@@ -501,7 +501,7 @@ public class MKMapView extends UIView implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKMapView initWithCoder(NSCoder aDecoder);
+    public native MKMapView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -759,7 +759,6 @@ public class MKMapView extends UIView implements NSCoding {
     public native MKAnnotationView viewForAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
 
     @Generated
-    @Deprecated
     @Selector("viewForOverlay:")
     public native MKOverlayView viewForOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
@@ -776,4 +775,42 @@ public class MKMapView extends UIView implements NSCoding {
     @Generated
     @Selector("registerClass:forAnnotationViewWithReuseIdentifier:")
     public native void registerClassForAnnotationViewWithReuseIdentifier(Class viewClass, String identifier);
+
+    @Generated
+    @Selector("cameraBoundary")
+    public native MKMapCameraBoundary cameraBoundary();
+
+    @Generated
+    @Selector("cameraZoomRange")
+    public native MKMapCameraZoomRange cameraZoomRange();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("pointOfInterestFilter")
+    public native MKPointOfInterestFilter pointOfInterestFilter();
+
+    @Generated
+    @Selector("setCameraBoundary:")
+    public native void setCameraBoundary(MKMapCameraBoundary value);
+
+    @Generated
+    @Selector("setCameraBoundary:animated:")
+    public native void setCameraBoundaryAnimated(MKMapCameraBoundary cameraBoundary, boolean animated);
+
+    @Generated
+    @Selector("setCameraZoomRange:")
+    public native void setCameraZoomRange(MKMapCameraZoomRange value);
+
+    @Generated
+    @Selector("setCameraZoomRange:animated:")
+    public native void setCameraZoomRangeAnimated(MKMapCameraZoomRange cameraZoomRange, boolean animated);
+
+    @Generated
+    @Selector("setPointOfInterestFilter:")
+    public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
 }

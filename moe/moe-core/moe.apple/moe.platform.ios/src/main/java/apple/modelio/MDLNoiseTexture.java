@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.modelio.protocol.MDLAssetResolver;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -170,4 +171,9 @@ public class MDLNoiseTexture extends MDLTexture {
     @Generated
     @Selector("init")
     public native MDLNoiseTexture init();
+
+    @Generated
+    @Selector("textureNamed:assetResolver:")
+    public static native MDLNoiseTexture textureNamedAssetResolver(String name,
+            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

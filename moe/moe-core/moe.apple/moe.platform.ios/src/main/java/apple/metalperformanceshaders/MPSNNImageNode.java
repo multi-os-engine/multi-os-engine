@@ -187,4 +187,20 @@ public class MPSNNImageNode extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("setStopGradient:")
+    public native void setStopGradient(boolean value);
+
+    @Generated
+    @Selector("setSynchronizeResource:")
+    public native void setSynchronizeResource(boolean value);
+
+    @Generated
+    @Selector("stopGradient")
+    public native boolean stopGradient();
+
+    @Generated
+    @Selector("synchronizeResource")
+    public native boolean synchronizeResource();
 }

@@ -32,6 +32,14 @@ EXPORT BOOL __natj_inline_UIDeviceOrientationIsLandscape(UIDeviceOrientation ori
 	return UIDeviceOrientationIsLandscape(orientation);
 }
 
+EXPORT BOOL __natj_inline_UIDeviceOrientationIsFlat(UIDeviceOrientation orientation) {
+	return UIDeviceOrientationIsFlat(orientation);
+}
+
+EXPORT BOOL __natj_inline_UIDeviceOrientationIsValidInterfaceOrientation(UIDeviceOrientation orientation) {
+	return UIDeviceOrientationIsValidInterfaceOrientation(orientation);
+}
+
 EXPORT UIUserInterfaceIdiom __natj_inline_UI_USER_INTERFACE_IDIOM() {
 	return UI_USER_INTERFACE_IDIOM();
 }
@@ -74,6 +82,10 @@ EXPORT BOOL __natj_inline_UIInterfaceOrientationIsLandscape(UIInterfaceOrientati
 
 EXPORT UIFloatRange __natj_inline_UIFloatRangeMake(CGFloat minimum, CGFloat maximum) {
 	return UIFloatRangeMake(minimum, maximum);
+}
+
+EXPORT BOOL __natj_inline_UIFloatRangeIsEqualToRange(UIFloatRange range, UIFloatRange otherRange) {
+	return UIFloatRangeIsEqualToRange(range, otherRange);
 }
 
 

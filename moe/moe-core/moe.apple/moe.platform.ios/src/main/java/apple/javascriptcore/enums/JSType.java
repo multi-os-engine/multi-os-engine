@@ -30,4 +30,6 @@ public final class JSType {
     @Generated
     private JSType() {
     }
+
+    @Generated public static final int kJSTypeSymbol = 0x00000006;
 }

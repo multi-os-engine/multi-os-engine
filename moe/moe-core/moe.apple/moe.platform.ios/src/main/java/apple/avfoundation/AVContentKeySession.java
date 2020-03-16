@@ -228,4 +228,30 @@ public class AVContentKeySession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("invalidateAllPersistableContentKeysForApp:options:completionHandler:")
+    public native void invalidateAllPersistableContentKeysForAppOptionsCompletionHandler(NSData appIdentifier,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_invalidateAllPersistableContentKeysForAppOptionsCompletionHandler") Block_invalidateAllPersistableContentKeysForAppOptionsCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_invalidateAllPersistableContentKeysForAppOptionsCompletionHandler {
+        @Generated
+        void call_invalidateAllPersistableContentKeysForAppOptionsCompletionHandler(NSData arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("invalidatePersistableContentKey:options:completionHandler:")
+    public native void invalidatePersistableContentKeyOptionsCompletionHandler(NSData persistableContentKeyData,
+            NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_invalidatePersistableContentKeyOptionsCompletionHandler") Block_invalidatePersistableContentKeyOptionsCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_invalidatePersistableContentKeyOptionsCompletionHandler {
+        @Generated
+        void call_invalidatePersistableContentKeyOptionsCompletionHandler(NSData arg0, NSError arg1);
+    }
 }

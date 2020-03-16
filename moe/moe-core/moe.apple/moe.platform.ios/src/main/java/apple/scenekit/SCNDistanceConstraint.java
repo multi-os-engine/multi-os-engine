@@ -99,7 +99,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNDistanceConstraint initWithCoder(NSCoder aDecoder);
+    public native SCNDistanceConstraint initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

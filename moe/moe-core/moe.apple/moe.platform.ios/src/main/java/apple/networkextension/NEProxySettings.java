@@ -187,7 +187,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("exceptionList")
@@ -203,7 +203,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEProxySettings initWithCoder(NSCoder aDecoder);
+    public native NEProxySettings initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("matchDomains")

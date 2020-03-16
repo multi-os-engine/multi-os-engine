@@ -189,4 +189,15 @@ public class INRelativeReferenceResolutionResult extends INIntentResolutionResul
     @Selector("successWithResolvedRelativeReference:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object successWithResolvedRelativeReference(@NInt long resolvedRelativeReference);
+
+    @Generated
+    @Selector("confirmationRequiredWithItemToConfirm:forReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object confirmationRequiredWithItemToConfirmForReason(
+            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+
+    @Generated
+    @Selector("unsupportedWithReason:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object unsupportedWithReason(@NInt long reason);
 }

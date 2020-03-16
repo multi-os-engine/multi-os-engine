@@ -37,6 +37,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -197,7 +198,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKObstacleGraph<?> initWithCoder(NSCoder aDecoder);
+    public native GKObstacleGraph<?> initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNodes:")
@@ -240,4 +241,14 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     @Generated
     @Selector("unlockConnectionFromNode:toNode:")
     public native void unlockConnectionFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

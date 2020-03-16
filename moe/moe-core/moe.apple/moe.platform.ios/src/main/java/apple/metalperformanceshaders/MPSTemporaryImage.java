@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.struct.NSRange;
 import apple.metal.MTLTextureDescriptor;
 import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLDevice;
@@ -28,6 +29,7 @@ import apple.metalperformanceshaders.protocol.MPSImageAllocator;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -198,4 +200,15 @@ public class MPSTemporaryImage extends MPSImage {
     @Selector("defaultAllocator")
     @MappedReturn(ObjCObjectMapper.class)
     public static native MPSImageAllocator defaultAllocator();
+
+    @Generated
+    @Selector("initWithParentImage:sliceRange:featureChannels:")
+    public native MPSTemporaryImage initWithParentImageSliceRangeFeatureChannels(MPSImage parent,
+            @ByValue NSRange sliceRange, @NUInt long featureChannels);
+
+    @Generated
+    @Selector("temporaryImageWithCommandBuffer:textureDescriptor:featureChannels:")
+    public static native MPSTemporaryImage temporaryImageWithCommandBufferTextureDescriptorFeatureChannels(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MTLTextureDescriptor textureDescriptor,
+            @NUInt long featureChannels);
 }

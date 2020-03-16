@@ -159,4 +159,22 @@ public interface MTLCommandBuffer {
     @Generated
     @Selector("pushDebugGroup:")
     void pushDebugGroup(String string);
+
+    @Generated
+    @Selector("computeCommandEncoderWithDispatchType:")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object computeCommandEncoderWithDispatchType(@NUInt long dispatchType);
+
+    @Generated
+    @Selector("encodeSignalEvent:value:")
+    void encodeSignalEventValue(@Mapped(ObjCObjectMapper.class) Object event, long value);
+
+    @Generated
+    @Selector("encodeWaitForEvent:value:")
+    void encodeWaitForEventValue(@Mapped(ObjCObjectMapper.class) Object event, long value);
+
+    @Generated
+    @Selector("resourceStateCommandEncoder")
+    @MappedReturn(ObjCObjectMapper.class)
+    Object resourceStateCommandEncoder();
 }

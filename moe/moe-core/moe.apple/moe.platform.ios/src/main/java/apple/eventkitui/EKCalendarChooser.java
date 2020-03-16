@@ -179,7 +179,7 @@ public class EKCalendarChooser extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native EKCalendarChooser initWithCoder(NSCoder aDecoder);
+    public native EKCalendarChooser initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

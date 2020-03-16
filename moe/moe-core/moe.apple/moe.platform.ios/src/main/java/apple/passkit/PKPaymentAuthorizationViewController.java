@@ -190,7 +190,7 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder aDecoder);
+    public native PKPaymentAuthorizationViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

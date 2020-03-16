@@ -213,7 +213,7 @@ public class MFMessageComposeViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MFMessageComposeViewController initWithCoder(NSCoder aDecoder);
+    public native MFMessageComposeViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

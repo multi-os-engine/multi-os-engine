@@ -30,13 +30,16 @@ import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.quartzcore.CALayer;
 import apple.quartzcore.protocol.CALayerDelegate;
+import apple.quartzcore.struct.CATransform3D;
 import apple.uikit.protocol.UIAccessibilityIdentification;
 import apple.uikit.protocol.UIAppearance;
 import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UICoordinateSpace;
 import apple.uikit.protocol.UIDynamicItem;
 import apple.uikit.protocol.UIFocusItem;
+import apple.uikit.protocol.UIFocusItemContainer;
 import apple.uikit.protocol.UIInteraction;
+import apple.uikit.protocol.UILargeContentViewerItem;
 import apple.uikit.protocol.UITraitEnvironment;
 import apple.uikit.struct.NSDirectionalEdgeInsets;
 import apple.uikit.struct.UIEdgeInsets;
@@ -71,7 +74,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCClassBinding
 public class UIView extends UIResponder
         implements NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace,
-        UIFocusItem, CALayerDelegate, UIAccessibilityIdentification {
+        UIFocusItem, UIFocusItemContainer, CALayerDelegate, UIAccessibilityIdentification, UILargeContentViewerItem {
     static {
         NatJ.register();
     }
@@ -652,7 +655,7 @@ public class UIView extends UIResponder
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("endEditing:")
@@ -706,7 +709,7 @@ public class UIView extends UIResponder
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIView initWithCoder(NSCoder aDecoder);
+    public native UIView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -1338,4 +1341,100 @@ public class UIView extends UIResponder
     @Generated
     @Selector("setInteractions:")
     public native void setInteractions(NSArray<?> value);
+
+    @Generated
+    @Selector("coordinateSpace")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object coordinateSpace();
+
+    @Generated
+    @IsOptional
+    @Selector("didHintFocusMovement:")
+    public native void didHintFocusMovement(UIFocusMovementHint hint);
+
+    @Generated
+    @Selector("focusItemContainer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object focusItemContainer();
+
+    @Generated
+    @Selector("focusItemsInRect:")
+    public native NSArray<?> focusItemsInRect(@ByValue CGRect rect);
+
+    @Generated
+    @Selector("largeContentImage")
+    public native UIImage largeContentImage();
+
+    @Generated
+    @Selector("largeContentImageInsets")
+    @ByValue
+    public native UIEdgeInsets largeContentImageInsets();
+
+    @Generated
+    @Selector("largeContentTitle")
+    public native String largeContentTitle();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_modifyAnimationsWithRepeatCountAutoreversesAnimations {
+        @Generated
+        void call_modifyAnimationsWithRepeatCountAutoreversesAnimations();
+    }
+
+    @Generated
+    @Selector("overrideUserInterfaceStyle")
+    @NInt
+    public native long overrideUserInterfaceStyle();
+
+    @Generated
+    @Selector("parentFocusEnvironment")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object parentFocusEnvironment();
+
+    @Generated
+    @Selector("scalesLargeContentImage")
+    public native boolean scalesLargeContentImage();
+
+    @Generated
+    @Selector("setLargeContentImage:")
+    public native void setLargeContentImage(UIImage value);
+
+    @Generated
+    @Selector("setLargeContentImageInsets:")
+    public native void setLargeContentImageInsets(@ByValue UIEdgeInsets value);
+
+    @Generated
+    @Selector("setLargeContentTitle:")
+    public native void setLargeContentTitle(String value);
+
+    @Generated
+    @Selector("setOverrideUserInterfaceStyle:")
+    public native void setOverrideUserInterfaceStyle(@NInt long value);
+
+    @Generated
+    @Selector("setScalesLargeContentImage:")
+    public native void setScalesLargeContentImage(boolean value);
+
+    @Generated
+    @Selector("setShowsLargeContentViewer:")
+    public native void setShowsLargeContentViewer(boolean value);
+
+    @Generated
+    @Selector("setTransform3D:")
+    public native void setTransform3D(@ByValue CATransform3D value);
+
+    @Generated
+    @Selector("showsLargeContentViewer")
+    public native boolean showsLargeContentViewer();
+
+    @Generated
+    @Selector("transform3D")
+    @ByValue
+    public native CATransform3D transform3D();
 }

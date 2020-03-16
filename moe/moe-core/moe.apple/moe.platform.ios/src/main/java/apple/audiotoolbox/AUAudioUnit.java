@@ -20,9 +20,11 @@ import apple.NSObject;
 import apple.audiotoolbox.opaque.AudioComponent;
 import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.avfoundation.AVAudioFormat;
-import apple.coreaudio.struct.AudioBufferList;
-import apple.coreaudio.struct.AudioTimeStamp;
 import apple.coreaudiokit.AUAudioUnitViewConfiguration;
+import apple.coreaudiotypes.struct.AudioBufferList;
+import apple.coreaudiotypes.struct.AudioTimeStamp;
+import apple.coremidi.MIDICIProfile;
+import apple.coremidi.MIDICIProfileState;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
@@ -608,4 +610,69 @@ public class AUAudioUnit extends NSObject {
     @Selector("supportedViewConfigurations:")
     public native NSIndexSet supportedViewConfigurations(
             NSArray<? extends AUAudioUnitViewConfiguration> availableViewConfigurations);
+
+    @Generated
+    @Selector("deleteUserPreset:error:")
+    public native boolean deleteUserPresetError(AUAudioUnitPreset userPreset,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("disableProfile:cable:onChannel:error:")
+    public native boolean disableProfileCableOnChannelError(MIDICIProfile profile, byte cable, byte channel,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("enableProfile:cable:onChannel:error:")
+    public native boolean enableProfileCableOnChannelError(MIDICIProfile profile, byte cable, byte channel,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("presetStateFor:error:")
+    public native NSDictionary<String, ?> presetStateForError(AUAudioUnitPreset userPreset,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("profileChangedBlock")
+    @ObjCBlock(name = "call_profileChangedBlock_ret")
+    public native Block_profileChangedBlock_ret profileChangedBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_profileChangedBlock_ret {
+        @Generated
+        void call_profileChangedBlock_ret(byte arg0, byte arg1, MIDICIProfile arg2, boolean arg3);
+    }
+
+    @Generated
+    @Selector("profileStateForCable:channel:")
+    public native MIDICIProfileState profileStateForCableChannel(byte cable, byte channel);
+
+    @Generated
+    @Selector("saveUserPreset:error:")
+    public native boolean saveUserPresetError(AUAudioUnitPreset userPreset,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("setParameterTree:")
+    public native void setParameterTree(AUParameterTree value);
+
+    @Generated
+    @Selector("setProfileChangedBlock:")
+    public native void setProfileChangedBlock(
+            @ObjCBlock(name = "call_setProfileChangedBlock") Block_setProfileChangedBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setProfileChangedBlock {
+        @Generated
+        void call_setProfileChangedBlock(byte arg0, byte arg1, MIDICIProfile arg2, boolean arg3);
+    }
+
+    @Generated
+    @Selector("supportsUserPresets")
+    public native boolean supportsUserPresets();
+
+    @Generated
+    @Selector("userPresets")
+    public native NSArray<? extends AUAudioUnitPreset> userPresets();
 }

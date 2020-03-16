@@ -24,6 +24,7 @@ import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.NSUserActivity;
 import apple.uikit.protocol.UIApplicationDelegate;
 import apple.uikit.protocol.UIStateRestoring;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -537,4 +538,46 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("supportsAlternateIcons")
     public native boolean supportsAlternateIcons();
+
+    @Generated
+    @Selector("connectedScenes")
+    public native NSSet<? extends UIScene> connectedScenes();
+
+    @Generated
+    @Selector("openSessions")
+    public native NSSet<? extends UISceneSession> openSessions();
+
+    @Generated
+    @Selector("requestSceneSessionActivation:userActivity:options:errorHandler:")
+    public native void requestSceneSessionActivationUserActivityOptionsErrorHandler(UISceneSession sceneSession,
+            NSUserActivity userActivity, UISceneActivationRequestOptions options,
+            @ObjCBlock(name = "call_requestSceneSessionActivationUserActivityOptionsErrorHandler") Block_requestSceneSessionActivationUserActivityOptionsErrorHandler errorHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestSceneSessionActivationUserActivityOptionsErrorHandler {
+        @Generated
+        void call_requestSceneSessionActivationUserActivityOptionsErrorHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("requestSceneSessionDestruction:options:errorHandler:")
+    public native void requestSceneSessionDestructionOptionsErrorHandler(UISceneSession sceneSession,
+            UISceneDestructionRequestOptions options,
+            @ObjCBlock(name = "call_requestSceneSessionDestructionOptionsErrorHandler") Block_requestSceneSessionDestructionOptionsErrorHandler errorHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestSceneSessionDestructionOptionsErrorHandler {
+        @Generated
+        void call_requestSceneSessionDestructionOptionsErrorHandler(NSError arg0);
+    }
+
+    @Generated
+    @Selector("requestSceneSessionRefresh:")
+    public native void requestSceneSessionRefresh(UISceneSession sceneSession);
+
+    @Generated
+    @Selector("supportsMultipleScenes")
+    public native boolean supportsMultipleScenes();
 }

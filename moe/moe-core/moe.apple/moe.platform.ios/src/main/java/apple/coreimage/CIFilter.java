@@ -128,15 +128,15 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("filterWithCVPixelBuffer:properties:options:")
     public static native CIFilter filterWithCVPixelBufferPropertiesOptions(CVBufferRef pixelBuffer,
-            NSDictionary<?, ?> properties, NSDictionary<?, ?> options);
+            NSDictionary<?, ?> properties, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("filterWithImageData:options:")
-    public static native CIFilter filterWithImageDataOptions(NSData data, NSDictionary<?, ?> options);
+    public static native CIFilter filterWithImageDataOptions(NSData data, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("filterWithImageURL:options:")
-    public static native CIFilter filterWithImageURLOptions(NSURL url, NSDictionary<?, ?> options);
+    public static native CIFilter filterWithImageURLOptions(NSURL url, NSDictionary<String, ?> options);
 
     @Generated
     @Selector("filterWithName:")
@@ -247,7 +247,7 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -255,7 +255,7 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIFilter initWithCoder(NSCoder aDecoder);
+    public native CIFilter initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("inputKeys")
@@ -286,4 +286,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("supportedRawCameraModels")
+    public static native NSArray<String> supportedRawCameraModels();
 }

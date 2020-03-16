@@ -171,6 +171,7 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     public native boolean mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup(
             AVMediaSelectionGroup mediaSelectionGroup);
 
+    @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)

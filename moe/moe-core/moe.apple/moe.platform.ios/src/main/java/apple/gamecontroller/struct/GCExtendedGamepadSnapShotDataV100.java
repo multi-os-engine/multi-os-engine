@@ -24,7 +24,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 
 @Generated
-@Structure(alignment = 1)
+@Structure()
 public final class GCExtendedGamepadSnapShotDataV100 extends StructObject {
     private static long __natjCache;
 

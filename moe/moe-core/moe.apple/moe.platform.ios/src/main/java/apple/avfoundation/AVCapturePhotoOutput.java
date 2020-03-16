@@ -328,4 +328,57 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Generated
     @Selector("supportedRawPhotoPixelFormatTypesForFileType:")
     public native NSArray<? extends NSNumber> supportedRawPhotoPixelFormatTypesForFileType(String fileType);
+
+    @Generated
+    @Selector("availableSemanticSegmentationMatteTypes")
+    public native NSArray<String> availableSemanticSegmentationMatteTypes();
+
+    @Generated
+    @Selector("enabledSemanticSegmentationMatteTypes")
+    public native NSArray<String> enabledSemanticSegmentationMatteTypes();
+
+    @Generated
+    @Selector("isAutoRedEyeReductionSupported")
+    public native boolean isAutoRedEyeReductionSupported();
+
+    @Generated
+    @Selector("isPortraitEffectsMatteDeliveryEnabled")
+    public native boolean isPortraitEffectsMatteDeliveryEnabled();
+
+    @Generated
+    @Selector("isPortraitEffectsMatteDeliverySupported")
+    public native boolean isPortraitEffectsMatteDeliverySupported();
+
+    @Generated
+    @Selector("isVirtualDeviceConstituentPhotoDeliveryEnabled")
+    public native boolean isVirtualDeviceConstituentPhotoDeliveryEnabled();
+
+    @Generated
+    @Selector("isVirtualDeviceConstituentPhotoDeliverySupported")
+    public native boolean isVirtualDeviceConstituentPhotoDeliverySupported();
+
+    @Generated
+    @Selector("isVirtualDeviceFusionSupported")
+    public native boolean isVirtualDeviceFusionSupported();
+
+    @Generated
+    @Selector("maxPhotoQualityPrioritization")
+    @NInt
+    public native long maxPhotoQualityPrioritization();
+
+    @Generated
+    @Selector("setEnabledSemanticSegmentationMatteTypes:")
+    public native void setEnabledSemanticSegmentationMatteTypes(NSArray<String> value);
+
+    @Generated
+    @Selector("setMaxPhotoQualityPrioritization:")
+    public native void setMaxPhotoQualityPrioritization(@NInt long value);
+
+    @Generated
+    @Selector("setPortraitEffectsMatteDeliveryEnabled:")
+    public native void setPortraitEffectsMatteDeliveryEnabled(boolean value);
+
+    @Generated
+    @Selector("setVirtualDeviceConstituentPhotoDeliveryEnabled:")
+    public native void setVirtualDeviceConstituentPhotoDeliveryEnabled(boolean value);
 }

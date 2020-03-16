@@ -104,7 +104,7 @@ public class INAppendToNoteIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INAppendToNoteIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INAppendToNoteIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

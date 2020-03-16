@@ -34,6 +34,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -203,7 +204,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVSampleBufferDisplayLayer initWithCoder(NSCoder aDecoder);
+    public native AVSampleBufferDisplayLayer initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
@@ -252,4 +253,25 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Generated
     @Selector("timebase")
     public native CMTimebaseRef timebase();
+
+    @Generated
+    @Selector("cornerCurveExpansionFactor:")
+    @NFloat
+    public static native double cornerCurveExpansionFactor(String curve);
+
+    @Generated
+    @Selector("preventsCapture")
+    public native boolean preventsCapture();
+
+    @Generated
+    @Selector("preventsDisplaySleepDuringVideoPlayback")
+    public native boolean preventsDisplaySleepDuringVideoPlayback();
+
+    @Generated
+    @Selector("setPreventsCapture:")
+    public native void setPreventsCapture(boolean value);
+
+    @Generated
+    @Selector("setPreventsDisplaySleepDuringVideoPlayback:")
+    public native void setPreventsDisplaySleepDuringVideoPlayback(boolean value);
 }

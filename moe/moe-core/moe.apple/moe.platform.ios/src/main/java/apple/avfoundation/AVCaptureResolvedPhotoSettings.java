@@ -17,6 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.coremedia.struct.CMTimeRange;
 import apple.coremedia.struct.CMVideoDimensions;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
@@ -201,4 +202,32 @@ public class AVCaptureResolvedPhotoSettings extends NSObject {
     @Selector("expectedPhotoCount")
     @NUInt
     public native long expectedPhotoCount();
+
+    @Generated
+    @Selector("dimensionsForSemanticSegmentationMatteOfType:")
+    @ByValue
+    public native CMVideoDimensions dimensionsForSemanticSegmentationMatteOfType(String semanticSegmentationMatteType);
+
+    @Generated
+    @Selector("isRedEyeReductionEnabled")
+    public native boolean isRedEyeReductionEnabled();
+
+    @Generated
+    @Selector("isVirtualDeviceFusionEnabled")
+    public native boolean isVirtualDeviceFusionEnabled();
+
+    @Generated
+    @Selector("photoProcessingTimeRange")
+    @ByValue
+    public native CMTimeRange photoProcessingTimeRange();
+
+    @Generated
+    @Selector("portraitEffectsMatteDimensions")
+    @ByValue
+    public native CMVideoDimensions portraitEffectsMatteDimensions();
+
+    @Generated
+    @Selector("rawEmbeddedThumbnailDimensions")
+    @ByValue
+    public native CMVideoDimensions rawEmbeddedThumbnailDimensions();
 }

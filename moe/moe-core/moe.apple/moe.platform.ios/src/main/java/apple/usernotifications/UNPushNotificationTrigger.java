@@ -162,7 +162,7 @@ public class UNPushNotificationTrigger extends UNNotificationTrigger {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNPushNotificationTrigger initWithCoder(NSCoder aDecoder);
+    public native UNPushNotificationTrigger initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

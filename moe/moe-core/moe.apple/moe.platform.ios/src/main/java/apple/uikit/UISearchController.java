@@ -211,7 +211,7 @@ public class UISearchController extends UIViewController
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISearchController initWithCoder(NSCoder aDecoder);
+    public native UISearchController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
@@ -317,4 +317,36 @@ public class UISearchController extends UIViewController
     @Generated
     @Selector("transitionDuration:")
     public native double transitionDuration(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+
+    @Generated
+    @Selector("automaticallyShowsCancelButton")
+    public native boolean automaticallyShowsCancelButton();
+
+    @Generated
+    @Selector("automaticallyShowsScopeBar")
+    public native boolean automaticallyShowsScopeBar();
+
+    @Generated
+    @Selector("automaticallyShowsSearchResultsController")
+    public native boolean automaticallyShowsSearchResultsController();
+
+    @Generated
+    @Selector("setAutomaticallyShowsCancelButton:")
+    public native void setAutomaticallyShowsCancelButton(boolean value);
+
+    @Generated
+    @Selector("setAutomaticallyShowsScopeBar:")
+    public native void setAutomaticallyShowsScopeBar(boolean value);
+
+    @Generated
+    @Selector("setAutomaticallyShowsSearchResultsController:")
+    public native void setAutomaticallyShowsSearchResultsController(boolean value);
+
+    @Generated
+    @Selector("setShowsSearchResultsController:")
+    public native void setShowsSearchResultsController(boolean value);
+
+    @Generated
+    @Selector("showsSearchResultsController")
+    public native boolean showsSearchResultsController();
 }

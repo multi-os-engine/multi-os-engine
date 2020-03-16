@@ -157,7 +157,7 @@ public class UIMotionEffectGroup extends UIMotionEffect {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIMotionEffectGroup initWithCoder(NSCoder aDecoder);
+    public native UIMotionEffectGroup initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("motionEffects")

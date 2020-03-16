@@ -41,10 +41,6 @@ public class MPSCNNNeuronHardSigmoid extends MPSCNNNeuron {
     }
 
     @Generated
-    @Selector("a")
-    public native float a();
-
-    @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
@@ -61,10 +57,6 @@ public class MPSCNNNeuronHardSigmoid extends MPSCNNNeuron {
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("b")
-    public native float b();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -176,4 +168,9 @@ public class MPSCNNNeuronHardSigmoid extends MPSCNNNeuron {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithDevice:neuronDescriptor:")
+    public native MPSCNNNeuronHardSigmoid initWithDeviceNeuronDescriptor(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSNNNeuronDescriptor neuronDescriptor);
 }

@@ -101,7 +101,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -114,7 +114,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEHotspotHS20Settings initWithCoder(NSCoder aDecoder);
+    public native NEHotspotHS20Settings initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithDomainName:roamingEnabled:")

@@ -181,7 +181,7 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("estimatedPickupDate")

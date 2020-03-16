@@ -29,4 +29,6 @@ public final class HKCategoryValueMenstrualFlow {
     @Generated
     private HKCategoryValueMenstrualFlow() {
     }
+
+    @Generated @NInt public static final long None = 0x0000000000000005L;
 }

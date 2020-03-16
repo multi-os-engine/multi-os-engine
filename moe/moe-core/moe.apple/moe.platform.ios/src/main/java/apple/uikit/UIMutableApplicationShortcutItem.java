@@ -167,7 +167,7 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Selector("initWithType:localizedTitle:localizedSubtitle:icon:userInfo:")
     public native UIMutableApplicationShortcutItem initWithTypeLocalizedTitleLocalizedSubtitleIconUserInfo(String type,
             String localizedTitle, String localizedSubtitle, UIApplicationShortcutIcon icon,
-            NSDictionary<?, ?> userInfo);
+            NSDictionary<String, ?> userInfo);
 
     @Generated
     @Selector("localizedSubtitle")
@@ -204,4 +204,13 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
+
+    @Generated
+    @Selector("setTargetContentIdentifier:")
+    public native void setTargetContentIdentifier(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @Selector("targetContentIdentifier")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object targetContentIdentifier();
 }

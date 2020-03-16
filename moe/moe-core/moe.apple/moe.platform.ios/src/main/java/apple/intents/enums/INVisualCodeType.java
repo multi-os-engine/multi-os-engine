@@ -13,4 +13,7 @@ public final class INVisualCodeType {
     @Generated @NInt public static final long Contact = 0x0000000000000001L;
     @Generated @NInt public static final long RequestPayment = 0x0000000000000002L;
     @Generated @NInt public static final long SendPayment = 0x0000000000000003L;
+    @Generated @NInt public static final long Transit = 0x0000000000000004L;
+    @Generated @NInt public static final long Bus = 0x0000000000000005L;
+    @Generated @NInt public static final long Subway = 0x0000000000000006L;
 }

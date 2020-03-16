@@ -31,4 +31,6 @@ public final class MPSImageFeatureChannelFormat {
     }
 
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    @Generated @NUInt public static final long _reserved0 = 0x0000000000000005L;
+    @Generated @NUInt public static final long Count = 0x0000000000000006L;
 }

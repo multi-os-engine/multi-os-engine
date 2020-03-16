@@ -169,7 +169,7 @@ public class HKObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,7 +177,7 @@ public class HKObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKObject initWithCoder(NSCoder aDecoder);
+    public native HKObject initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("metadata")

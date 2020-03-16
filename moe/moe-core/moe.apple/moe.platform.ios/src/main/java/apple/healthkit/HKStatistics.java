@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
@@ -175,7 +176,7 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("endDate")
@@ -187,7 +188,7 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKStatistics initWithCoder(NSCoder aDecoder);
+    public native HKStatistics initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("maximumQuantity")
@@ -230,4 +231,28 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("duration")
+    public native HKQuantity duration();
+
+    @Generated
+    @Selector("durationForSource:")
+    public native HKQuantity durationForSource(HKSource source);
+
+    @Generated
+    @Selector("mostRecentQuantity")
+    public native HKQuantity mostRecentQuantity();
+
+    @Generated
+    @Selector("mostRecentQuantityDateInterval")
+    public native NSDateInterval mostRecentQuantityDateInterval();
+
+    @Generated
+    @Selector("mostRecentQuantityDateIntervalForSource:")
+    public native NSDateInterval mostRecentQuantityDateIntervalForSource(HKSource source);
+
+    @Generated
+    @Selector("mostRecentQuantityForSource:")
+    public native HKQuantity mostRecentQuantityForSource(HKSource source);
 }

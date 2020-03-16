@@ -436,7 +436,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -444,7 +444,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("initWithCoder:")
-    public native UINavigationBar initWithCoder(NSCoder aDecoder);
+    public native UINavigationBar initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -572,4 +572,34 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Generated
     @Selector("setPrefersLargeTitles:")
     public native void setPrefersLargeTitles(boolean value);
+
+    @Generated
+    @Selector("compactAppearance")
+    public native UINavigationBarAppearance compactAppearance();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("scrollEdgeAppearance")
+    public native UINavigationBarAppearance scrollEdgeAppearance();
+
+    @Generated
+    @Selector("setCompactAppearance:")
+    public native void setCompactAppearance(UINavigationBarAppearance value);
+
+    @Generated
+    @Selector("setScrollEdgeAppearance:")
+    public native void setScrollEdgeAppearance(UINavigationBarAppearance value);
+
+    @Generated
+    @Selector("setStandardAppearance:")
+    public native void setStandardAppearance(UINavigationBarAppearance value);
+
+    @Generated
+    @Selector("standardAppearance")
+    public native UINavigationBarAppearance standardAppearance();
 }

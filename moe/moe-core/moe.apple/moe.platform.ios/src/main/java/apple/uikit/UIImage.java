@@ -283,7 +283,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("flipsForRightToLeftLayoutDirection")
@@ -346,7 +346,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIImage initWithCoder(NSCoder aDecoder);
+    public native UIImage initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithContentsOfFile:")
@@ -486,4 +486,87 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @Selector("actionsImage")
+    public static native UIImage actionsImage();
+
+    @Generated
+    @Selector("addImage")
+    public static native UIImage addImage();
+
+    @Generated
+    @Selector("baselineOffsetFromBottom")
+    @NFloat
+    public native double baselineOffsetFromBottom();
+
+    @Generated
+    @Selector("checkmarkImage")
+    public static native UIImage checkmarkImage();
+
+    @Generated
+    @Selector("configuration")
+    public native UIImageConfiguration configuration();
+
+    @Generated
+    @Selector("hasBaseline")
+    public native boolean hasBaseline();
+
+    @Generated
+    @Selector("imageByApplyingSymbolConfiguration:")
+    public native UIImage imageByApplyingSymbolConfiguration(UIImageSymbolConfiguration configuration);
+
+    @Generated
+    @Selector("imageNamed:inBundle:withConfiguration:")
+    public static native UIImage imageNamedInBundleWithConfiguration(String name, NSBundle bundle,
+            UIImageConfiguration configuration);
+
+    @Generated
+    @Selector("imageWithBaselineOffsetFromBottom:")
+    public native UIImage imageWithBaselineOffsetFromBottom(@NFloat double baselineOffset);
+
+    @Generated
+    @Selector("imageWithConfiguration:")
+    public native UIImage imageWithConfiguration(UIImageConfiguration configuration);
+
+    @Generated
+    @Selector("imageWithTintColor:")
+    public native UIImage imageWithTintColor(UIColor color);
+
+    @Generated
+    @Selector("imageWithTintColor:renderingMode:")
+    public native UIImage imageWithTintColorRenderingMode(UIColor color, @NInt long renderingMode);
+
+    @Generated
+    @Selector("imageWithoutBaseline")
+    public native UIImage imageWithoutBaseline();
+
+    @Generated
+    @Selector("isSymbolImage")
+    public native boolean isSymbolImage();
+
+    @Generated
+    @Selector("removeImage")
+    public static native UIImage removeImage();
+
+    @Generated
+    @Selector("strokedCheckmarkImage")
+    public static native UIImage strokedCheckmarkImage();
+
+    @Generated
+    @Selector("symbolConfiguration")
+    public native UIImageSymbolConfiguration symbolConfiguration();
+
+    @Generated
+    @Selector("systemImageNamed:")
+    public static native UIImage systemImageNamed(String name);
+
+    @Generated
+    @Selector("systemImageNamed:compatibleWithTraitCollection:")
+    public static native UIImage systemImageNamedCompatibleWithTraitCollection(String name,
+            UITraitCollection traitCollection);
+
+    @Generated
+    @Selector("systemImageNamed:withConfiguration:")
+    public static native UIImage systemImageNamedWithConfiguration(String name, UIImageConfiguration configuration);
 }

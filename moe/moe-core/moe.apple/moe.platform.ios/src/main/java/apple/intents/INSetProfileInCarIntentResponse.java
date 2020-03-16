@@ -173,7 +173,7 @@ public class INSetProfileInCarIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSetProfileInCarIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSetProfileInCarIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

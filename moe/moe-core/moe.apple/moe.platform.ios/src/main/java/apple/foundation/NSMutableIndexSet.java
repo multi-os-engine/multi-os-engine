@@ -184,7 +184,7 @@ public class NSMutableIndexSet extends NSIndexSet {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSMutableIndexSet initWithCoder(NSCoder aDecoder);
+    public native NSMutableIndexSet initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithIndex:")

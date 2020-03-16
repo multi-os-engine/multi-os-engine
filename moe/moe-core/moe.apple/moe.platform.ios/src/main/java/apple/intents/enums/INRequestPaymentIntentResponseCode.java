@@ -38,4 +38,5 @@ public final class INRequestPaymentIntentResponseCode {
     }
 
     @Generated @NInt public static final long FailureNotEligible = 0x000000000000000BL;
+    @Generated @NInt public static final long FailureTermsAndConditionsAcceptanceRequired = 0x000000000000000CL;
 }

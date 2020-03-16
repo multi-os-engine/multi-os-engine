@@ -17,6 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -24,6 +25,7 @@ import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -170,4 +172,26 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Selector("initWithDevice:error:")
     public native AVCaptureDeviceInput initWithDeviceError(AVCaptureDevice device,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Selector("portsWithMediaType:sourceDeviceType:sourceDevicePosition:")
+    public native NSArray<? extends AVCaptureInputPort> portsWithMediaTypeSourceDeviceTypeSourceDevicePosition(
+            String mediaType, String sourceDeviceType, @NInt long sourceDevicePosition);
+
+    @Generated
+    @Selector("setUnifiedAutoExposureDefaultsEnabled:")
+    public native void setUnifiedAutoExposureDefaultsEnabled(boolean value);
+
+    @Generated
+    @Selector("setVideoMinFrameDurationOverride:")
+    public native void setVideoMinFrameDurationOverride(@ByValue CMTime value);
+
+    @Generated
+    @Selector("unifiedAutoExposureDefaultsEnabled")
+    public native boolean unifiedAutoExposureDefaultsEnabled();
+
+    @Generated
+    @Selector("videoMinFrameDurationOverride")
+    @ByValue
+    public native CMTime videoMinFrameDurationOverride();
 }

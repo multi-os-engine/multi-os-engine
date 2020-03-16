@@ -105,7 +105,7 @@ public class INSearchForNotebookItemsIntentResponse extends INIntentResponse {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForNotebookItemsIntentResponse initWithCoder(NSCoder aDecoder);
+    public native INSearchForNotebookItemsIntentResponse initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")

@@ -171,7 +171,7 @@ public class CABTMIDICentralViewController extends UITableViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CABTMIDICentralViewController initWithCoder(NSCoder aDecoder);
+    public native CABTMIDICentralViewController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")

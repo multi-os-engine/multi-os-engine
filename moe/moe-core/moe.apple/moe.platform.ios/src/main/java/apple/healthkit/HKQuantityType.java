@@ -195,7 +195,7 @@ public class HKQuantityType extends HKSampleType {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKQuantityType initWithCoder(NSCoder aDecoder);
+    public native HKQuantityType initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("isCompatibleWithUnit:")
@@ -210,4 +210,12 @@ public class HKQuantityType extends HKSampleType {
     @Generated
     @Selector("seriesTypeForIdentifier:")
     public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("audiogramSampleType")
+    public static native HKAudiogramSampleType audiogramSampleType();
+
+    @Generated
+    @Selector("clinicalTypeForIdentifier:")
+    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
 }

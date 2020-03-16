@@ -450,7 +450,7 @@ public class GLKView extends UIView implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder aCoder);
+    public native void encodeWithCoder(NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -458,7 +458,7 @@ public class GLKView extends UIView implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GLKView initWithCoder(NSCoder aDecoder);
+    public native GLKView initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -511,4 +511,10 @@ public class GLKView extends UIView implements NSCoding {
     @Generated
     @Selector("snapshot")
     public native UIImage snapshot();
+
+    @Generated
+    @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
+    public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
+            boolean autoreverses,
+            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 }

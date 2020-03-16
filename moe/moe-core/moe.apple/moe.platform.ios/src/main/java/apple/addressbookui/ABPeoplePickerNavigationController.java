@@ -184,7 +184,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABPeoplePickerNavigationController initWithCoder(NSCoder aDecoder);
+    public native ABPeoplePickerNavigationController initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")

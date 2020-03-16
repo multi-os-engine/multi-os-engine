@@ -20,12 +20,14 @@ import apple.avkit.AVPlayerViewController;
 import apple.foundation.NSError;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("AVKit")
@@ -90,5 +92,21 @@ public interface AVPlayerViewControllerDelegate {
     public interface Block_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
         @Generated
         void call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(boolean arg0);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:")
+    default void playerViewControllerWillBeginFullScreenPresentationWithAnimationCoordinator(
+            AVPlayerViewController playerViewController, @Mapped(ObjCObjectMapper.class) Object coordinator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:")
+    default void playerViewControllerWillEndFullScreenPresentationWithAnimationCoordinator(
+            AVPlayerViewController playerViewController, @Mapped(ObjCObjectMapper.class) Object coordinator) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

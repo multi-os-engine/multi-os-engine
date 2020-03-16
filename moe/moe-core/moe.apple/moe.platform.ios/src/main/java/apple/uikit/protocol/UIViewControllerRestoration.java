@@ -35,5 +35,6 @@ public interface UIViewControllerRestoration {
     @Generated
     @Selector("viewControllerWithRestorationIdentifierPath:coder:")
     @ProtocolClassMethod("viewControllerWithRestorationIdentifierPathCoder")
-    UIViewController _viewControllerWithRestorationIdentifierPathCoder(NSArray<?> identifierComponents, NSCoder coder);
+    UIViewController _viewControllerWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents,
+            NSCoder coder);
 }

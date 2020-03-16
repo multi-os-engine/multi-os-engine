@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSOperation;
 import apple.foundation.NSSet;
+import apple.linkpresentation.LPLinkMetadata;
 import apple.uikit.protocol.UIActivityItemSource;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -206,4 +207,9 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Selector("placeholderItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object placeholderItem();
+
+    @Generated
+    @IsOptional
+    @Selector("activityViewControllerLinkMetadata:")
+    public native LPLinkMetadata activityViewControllerLinkMetadata(UIActivityViewController activityViewController);
 }

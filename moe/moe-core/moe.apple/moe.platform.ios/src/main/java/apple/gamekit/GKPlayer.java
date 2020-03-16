@@ -206,4 +206,16 @@ public class GKPlayer extends GKBasePlayer {
         @Generated
         void call_loadPlayersForIdentifiersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("gamePlayerID")
+    public native String gamePlayerID();
+
+    @Generated
+    @Selector("scopedIDsArePersistent")
+    public native boolean scopedIDsArePersistent();
+
+    @Generated
+    @Selector("teamPlayerID")
+    public native String teamPlayerID();
 }
