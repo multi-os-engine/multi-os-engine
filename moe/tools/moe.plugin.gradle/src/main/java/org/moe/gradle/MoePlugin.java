@@ -20,6 +20,7 @@ import org.apache.tools.ant.taskdefs.condition.Os;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
+import org.gradle.api.artifacts.repositories.IvyArtifactRepository;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.plugins.JavaPlugin;
@@ -124,7 +125,7 @@ public class MoePlugin extends AbstractMoePlugin {
                 throw new GradleException("Failed to add Multi-OS Engine SDK repo", e);
             }
             ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
-        });
+        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
         project.getRepositories().ivy(ivy -> {
             ivy.setName("multi-os-engine-implicit-tools-repo");
             try {
@@ -133,7 +134,7 @@ public class MoePlugin extends AbstractMoePlugin {
                 throw new GradleException("Failed to add Multi-OS Engine Tools repo", e);
             }
             ivy.artifactPattern(ivy.getUrl() + "/[artifact](-[classifier])(.[ext])");
-        });
+        }).metadataSources(IvyArtifactRepository.MetadataSources::artifact);
 
         project.getDependencies().add(JavaPlugin.COMPILE_CONFIGURATION_NAME,
                 FileUtils.getNameAsArtifact(getSDK().getCoreJar(), getSDK().sdkVersion));
