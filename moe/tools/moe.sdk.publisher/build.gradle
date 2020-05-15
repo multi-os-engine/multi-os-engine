@@ -28,14 +28,14 @@ plugins {
 }
 
 group 'org.multi-os-engine.community'
-version '1.5.0'
+version '1.5.1'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
 
-if (rootProject.hasProperty('artifactory.url')) {
+//if (rootProject.hasProperty('artifactory.url')) {
     apply plugin: "com.jfrog.artifactory"
-}
+//}
 
 if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
     tasks.build.dependsOn ':ext_natj_mac'
