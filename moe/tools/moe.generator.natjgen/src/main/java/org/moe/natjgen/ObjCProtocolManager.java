@@ -77,11 +77,6 @@ public class ObjCProtocolManager extends ObjCClassManager {
     }
 
     @Override
-    public void preparationPhase_Final() {
-        sortAllMethods();
-    }
-
-    @Override
     public void update() {
         ClassMemberEditor cme = updateClass();
         for (ObjCMethod method : allMethods) {
