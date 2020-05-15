@@ -22,6 +22,8 @@ import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.modelio.protocol.MDLMeshBuffer;
+import apple.modelio.protocol.MDLMeshBufferAllocator;
+import apple.modelio.protocol.MDLMeshBufferZone;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -155,7 +157,7 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object allocator();
+    public native MDLMeshBufferAllocator allocator();
 
     @Generated
     @Owned
@@ -200,5 +202,5 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object zone();
+    public native MDLMeshBufferZone zone();
 }

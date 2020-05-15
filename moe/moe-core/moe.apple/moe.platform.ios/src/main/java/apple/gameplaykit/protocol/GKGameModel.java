@@ -38,27 +38,27 @@ public interface GKGameModel extends NSCopying {
     @Generated
     @Selector("activePlayer")
     @MappedReturn(ObjCObjectMapper.class)
-    Object activePlayer();
+    GKGameModelPlayer activePlayer();
 
     @Generated
     @Selector("applyGameModelUpdate:")
-    void applyGameModelUpdate(@Mapped(ObjCObjectMapper.class) Object gameModelUpdate);
+    void applyGameModelUpdate(@Mapped(ObjCObjectMapper.class) GKGameModelUpdate gameModelUpdate);
 
     @Generated
     @Selector("gameModelUpdatesForPlayer:")
-    NSArray<?> gameModelUpdatesForPlayer(@Mapped(ObjCObjectMapper.class) Object player);
+    NSArray<?> gameModelUpdatesForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player);
 
     @Generated
     @IsOptional
     @Selector("isLossForPlayer:")
-    default boolean isLossForPlayer(@Mapped(ObjCObjectMapper.class) Object player) {
+    default boolean isLossForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("isWinForPlayer:")
-    default boolean isWinForPlayer(@Mapped(ObjCObjectMapper.class) Object player) {
+    default boolean isWinForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,18 +70,18 @@ public interface GKGameModel extends NSCopying {
     @IsOptional
     @Selector("scoreForPlayer:")
     @NInt
-    default long scoreForPlayer(@Mapped(ObjCObjectMapper.class) Object player) {
+    default long scoreForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("setGameModel:")
-    void setGameModel(@Mapped(ObjCObjectMapper.class) Object gameModel);
+    void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel gameModel);
 
     @Generated
     @IsOptional
     @Selector("unapplyGameModelUpdate:")
-    default void unapplyGameModelUpdate(@Mapped(ObjCObjectMapper.class) Object gameModelUpdate) {
+    default void unapplyGameModelUpdate(@Mapped(ObjCObjectMapper.class) GKGameModelUpdate gameModelUpdate) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

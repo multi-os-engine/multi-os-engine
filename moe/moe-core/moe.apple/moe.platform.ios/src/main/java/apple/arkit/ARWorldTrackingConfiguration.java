@@ -244,4 +244,17 @@ public class ARWorldTrackingConfiguration extends ARConfiguration {
     @Generated
     @Selector("wantsHDREnvironmentTextures")
     public native boolean wantsHDREnvironmentTextures();
+
+    @Generated
+    @Selector("sceneReconstruction")
+    @NUInt
+    public native long sceneReconstruction();
+
+    @Generated
+    @Selector("setSceneReconstruction:")
+    public native void setSceneReconstruction(@NUInt long value);
+
+    @Generated
+    @Selector("supportsSceneReconstruction:")
+    public static native boolean supportsSceneReconstruction(@NUInt long sceneReconstruction);
 }

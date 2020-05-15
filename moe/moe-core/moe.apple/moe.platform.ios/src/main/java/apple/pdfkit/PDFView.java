@@ -19,6 +19,7 @@ import apple.uikit.UIPress;
 import apple.uikit.UITouch;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIGestureRecognizerDelegate;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -146,14 +147,14 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -176,14 +177,15 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -801,4 +803,9 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Generated
     @Selector("zoomOut:")
     public native void zoomOut(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("gestureRecognizer:shouldReceiveEvent:")
+    public native boolean gestureRecognizerShouldReceiveEvent(UIGestureRecognizer gestureRecognizer, UIEvent event);
 }

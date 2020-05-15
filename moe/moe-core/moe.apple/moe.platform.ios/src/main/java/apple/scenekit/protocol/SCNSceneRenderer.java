@@ -22,6 +22,9 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
+import apple.metal.protocol.MTLCommandQueue;
+import apple.metal.protocol.MTLDevice;
+import apple.metal.protocol.MTLRenderCommandEncoder;
 import apple.scenekit.SCNHitTestResult;
 import apple.scenekit.SCNNode;
 import apple.scenekit.SCNScene;
@@ -71,7 +74,7 @@ public interface SCNSceneRenderer {
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
-    Object commandQueue();
+    MTLCommandQueue commandQueue();
 
     @Generated
     @Selector("context")
@@ -80,7 +83,7 @@ public interface SCNSceneRenderer {
     @Generated
     @Selector("currentRenderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    Object currentRenderCommandEncoder();
+    MTLRenderCommandEncoder currentRenderCommandEncoder();
 
     @Generated
     @Selector("debugOptions")
@@ -100,7 +103,7 @@ public interface SCNSceneRenderer {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("hitTest:options:")

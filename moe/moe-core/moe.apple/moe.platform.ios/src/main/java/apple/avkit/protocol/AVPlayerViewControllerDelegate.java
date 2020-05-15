@@ -18,6 +18,7 @@ package apple.avkit.protocol;
 
 import apple.avkit.AVPlayerViewController;
 import apple.foundation.NSError;
+import apple.uikit.protocol.UIViewControllerTransitionCoordinator;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -98,7 +99,8 @@ public interface AVPlayerViewControllerDelegate {
     @IsOptional
     @Selector("playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:")
     default void playerViewControllerWillBeginFullScreenPresentationWithAnimationCoordinator(
-            AVPlayerViewController playerViewController, @Mapped(ObjCObjectMapper.class) Object coordinator) {
+            AVPlayerViewController playerViewController,
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,7 +108,8 @@ public interface AVPlayerViewControllerDelegate {
     @IsOptional
     @Selector("playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:")
     default void playerViewControllerWillEndFullScreenPresentationWithAnimationCoordinator(
-            AVPlayerViewController playerViewController, @Mapped(ObjCObjectMapper.class) Object coordinator) {
+            AVPlayerViewController playerViewController,
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

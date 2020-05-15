@@ -26,5 +26,5 @@ public interface UISpringLoadedInteractionBehavior {
     @Generated
     @Selector("shouldAllowInteraction:withContext:")
     boolean shouldAllowInteractionWithContext(UISpringLoadedInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object context);
+            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 }

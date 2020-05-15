@@ -57,7 +57,7 @@ public interface UIStateRestoring {
     @IsOptional
     @Selector("objectRestorationClass")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object objectRestorationClass() {
+    default UIObjectRestoration objectRestorationClass() {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,7 +65,7 @@ public interface UIStateRestoring {
     @IsOptional
     @Selector("restorationParent")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object restorationParent() {
+    default UIStateRestoring restorationParent() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

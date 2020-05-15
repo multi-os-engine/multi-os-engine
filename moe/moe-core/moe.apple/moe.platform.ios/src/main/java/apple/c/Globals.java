@@ -157,7 +157,7 @@ public final class Globals {
     @Generated
     @Inline
     @CFunction
-    public static native int __darwin_fd_isset(int _n,
+    public static native int __darwin_fd_isset(int _fd,
             @UncertainArgument("Options: reference, array Fallback: reference") fd_set _p);
 
     @Generated
@@ -6716,4 +6716,29 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String format,
             BytePtr buf, int size);
+
+    @Generated
+    @CFunction
+    public static native int __darwin_check_fd_set_overflow(int arg1, ConstVoidPtr arg2, int arg3);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int __darwin_check_fd_set(int _a, ConstVoidPtr _b);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void __darwin_fd_set(int _fd,
+            @UncertainArgument("Options: reference, array Fallback: reference") fd_set _p);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native void __darwin_fd_clr(int _fd,
+            @UncertainArgument("Options: reference, array Fallback: reference") fd_set _p);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr object_getIndexedIvars(@Mapped(ObjCObjectMapper.class) Object obj);
 }

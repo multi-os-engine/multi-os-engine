@@ -24,7 +24,7 @@ public interface UITextDragRequest {
     @Generated
     @Selector("dragSession")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dragSession();
+    UIDragSession dragSession();
 
     @Generated
     @Selector("existingItems")

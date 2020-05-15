@@ -20,13 +20,13 @@ public interface CHHapticDeviceCapability {
     @Generated
     @Selector("attributesForDynamicParameter:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object attributesForDynamicParameterError(String inParameter,
+    CHHapticParameterAttributes attributesForDynamicParameterError(String inParameter,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("attributesForEventParameter:eventType:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object attributesForEventParameterEventTypeError(String inParameter, String type,
+    CHHapticParameterAttributes attributesForEventParameterEventTypeError(String inParameter, String type,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated

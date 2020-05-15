@@ -1,5 +1,6 @@
 package apple.metalperformanceshaders.protocol;
 
+import apple.metal.protocol.MTLDevice;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -17,5 +18,5 @@ public interface MPSDeviceProvider {
     @Generated
     @Selector("mpsMTLDevice")
     @MappedReturn(ObjCObjectMapper.class)
-    Object mpsMTLDevice();
+    MTLDevice mpsMTLDevice();
 }

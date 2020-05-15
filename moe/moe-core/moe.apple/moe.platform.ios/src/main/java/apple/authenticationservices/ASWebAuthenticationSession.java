@@ -193,4 +193,8 @@ public class ASWebAuthenticationSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("canStart")
+    public native boolean canStart();
 }

@@ -417,4 +417,17 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     @Selector("local")
     public static native GKLocalPlayer local();
+
+    @Generated
+    @Selector("fetchItemsForIdentityVerificationSignature:")
+    public native void fetchItemsForIdentityVerificationSignature(
+            @ObjCBlock(name = "call_fetchItemsForIdentityVerificationSignature") Block_fetchItemsForIdentityVerificationSignature completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchItemsForIdentityVerificationSignature {
+        @Generated
+        void call_fetchItemsForIdentityVerificationSignature(NSURL arg0, NSData arg1, NSData arg2, long arg3,
+                NSError arg4);
+    }
 }

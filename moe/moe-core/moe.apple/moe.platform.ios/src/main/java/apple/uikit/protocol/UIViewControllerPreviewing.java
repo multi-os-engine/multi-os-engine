@@ -37,7 +37,7 @@ public interface UIViewControllerPreviewing {
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
-    Object delegate();
+    UIViewControllerPreviewingDelegate delegate();
 
     @Generated
     @Selector("previewingGestureRecognizerForFailureRelationship")

@@ -231,4 +231,8 @@ public class PKPass extends PKObject {
     @Generated
     @Selector("webServiceURL")
     public native NSURL webServiceURL();
+
+    @Generated
+    @Selector("secureElementPass")
+    public native PKSecureElementPass secureElementPass();
 }

@@ -38,31 +38,33 @@ public interface MDLMeshBufferAllocator {
     @Generated
     @Selector("newBuffer:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferType(@NUInt long length, @NUInt long type);
+    MDLMeshBuffer newBufferType(@NUInt long length, @NUInt long type);
 
     @Generated
     @Selector("newBufferFromZone:data:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) Object zone, NSData data, @NUInt long type);
+    MDLMeshBuffer newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone, NSData data,
+            @NUInt long type);
 
     @Generated
     @Selector("newBufferFromZone:length:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) Object zone, @NUInt long length,
-            @NUInt long type);
+    MDLMeshBuffer newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
+            @NUInt long length, @NUInt long type);
 
     @Generated
     @Selector("newBufferWithData:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferWithDataType(NSData data, @NUInt long type);
+    MDLMeshBuffer newBufferWithDataType(NSData data, @NUInt long type);
 
     @Generated
     @Selector("newZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newZone(@NUInt long capacity);
+    MDLMeshBufferZone newZone(@NUInt long capacity);
 
     @Generated
     @Selector("newZoneForBuffersWithSize:andType:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes, NSArray<? extends NSNumber> types);
+    MDLMeshBufferZone newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes,
+            NSArray<? extends NSNumber> types);
 }

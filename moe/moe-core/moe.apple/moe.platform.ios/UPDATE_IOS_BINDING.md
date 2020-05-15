@@ -50,25 +50,22 @@
 
 ### Custom Modifications List
 
-* `ios.foundation.NSArray` and `ios.foundation.NSMutableArray` have been extended to implement Java's List interface.
-* `ios.foundation.NSDictionary` and `ios.foundation.NSMutableDictionary` have been extended to implement Java's Map interface.
-* `setValueForKey` method in `ios.foundation.NSMutableDictionary` has been manually edited due to a compiler error
-* `ios.uikit.UIControl` was extended to be able to use custom `TargetActionProxy` and `ITargetAction` classes/interfaces, both of which can be found in the ios.uikit package.
-* `playerDidRequestMatchWithPlayers` method was added to `ios.gamekit.protocol.GKLocalPlayerListener` to override duplicate default methods in 2 parent interfaces.
+* `apple.foundation.NSArray` and `apple.foundation.NSMutableArray` have been extended to implement Java's List interface.
+* `apple.foundation.NSDictionary` and `apple.foundation.NSMutableDictionary` have been extended to implement Java's Map interface.
+* `setValueForKey` method in `apple.foundation.NSMutableDictionary` has been manually edited due to a compiler error
+* `apple.uikit.UIControl` was extended to be able to use custom `TargetActionProxy` and `ITargetAction` classes/interfaces, both of which can be found in the apple.uikit package.
+* `playerDidRequestMatchWithPlayers` method was added to `apple.gamekit.protocol.GKLocalPlayerListener` to override duplicate default methods in 2 parent interfaces.
 * In `apple.callkit.CXCallDirectoryProvider` method was changed:
 	* from: `public native void beginRequestWithExtensionContext(CXCallDirectoryExtensionContext context);`
 	* to: `public native void beginRequestWithExtensionContext(NSExtensionContext context);`
-* In `apple.cloudkit.protocol.CKRecordKeyValueSetting` method was changed:
-    * from `void setObjectForKey(@Mapped(ObjCObjectMapper.class) Object object, String key);`
-    * to: `void setObjectForKey(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);`
-    * from `void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object object, String key);`
-    * to: `void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);`
 * In `apple.gameplaykit.GKCompositeBehavior` method was changed:
 	* from: `public native GKBehavior objectAtIndexedSubscript(@NUInt long idx);`
 	* to: `public native GKGoal objectAtIndexedSubscript(@NUInt long idx);`
-* In `apple.metalperformanceshaders.protocol.MPSSVGFTextureAllocator` method was changed:
-    * from `void returnTexture(@Mapped(ObjCObjectMapper.class) Object texture);`
-    * to `void returnTexture(@Mapped(ObjCObjectMapper.class) MTLTexture texture);`
+* In `apple.metalperformanceshaders.MPSCNNConvolutionTranspose` method was changed:
+    * from `MPSCNNConvolutionTransposeGradientState resultStateForSourceImageSourceStatesDestinationImage(MPSImage sourceImage, NSArray<? extends MPSCNNConvolutionGradientState> sourceStates, MPSImage destinationImage);`
+    * to: `MPSCNNConvolutionTransposeGradientState resultStateForSourceImageSourceStatesDestinationImage(MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);`
+    * from `MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage, NSArray<? extends MPSCNNConvolutionGradientState> sourceStates, MPSImage destinationImage);`
+    * to: `MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);`
 
 ### How to Update Custom Modifications List
 

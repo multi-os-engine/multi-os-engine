@@ -27,12 +27,12 @@ public interface CKRecordKeyValueSetting {
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object objectForKey(String key);
+    CKRecordValue objectForKey(String key);
 
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object objectForKeyedSubscript(String key);
+    CKRecordValue objectForKeyedSubscript(String key);
 
     @Generated
     @Selector("setObject:forKey:")

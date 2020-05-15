@@ -45,7 +45,7 @@ public interface QLPreviewControllerDelegate {
     @Selector("previewController:frameForPreviewItem:inSourceView:")
     @ByValue
     default CGRect previewControllerFrameForPreviewItemInSourceView(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) Object item, @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
+            @Mapped(ObjCObjectMapper.class) QLPreviewItem item, @ReferenceInfo(type = UIView.class) Ptr<UIView> view) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +53,7 @@ public interface QLPreviewControllerDelegate {
     @IsOptional
     @Selector("previewController:shouldOpenURL:forPreviewItem:")
     default boolean previewControllerShouldOpenURLForPreviewItem(QLPreviewController controller, NSURL url,
-            @Mapped(ObjCObjectMapper.class) Object item) {
+            @Mapped(ObjCObjectMapper.class) QLPreviewItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,7 +61,7 @@ public interface QLPreviewControllerDelegate {
     @IsOptional
     @Selector("previewController:transitionImageForPreviewItem:contentRect:")
     default UIImage previewControllerTransitionImageForPreviewItemContentRect(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) Object item, CGRect contentRect) {
+            @Mapped(ObjCObjectMapper.class) QLPreviewItem item, CGRect contentRect) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,7 +69,7 @@ public interface QLPreviewControllerDelegate {
     @IsOptional
     @Selector("previewController:transitionViewForPreviewItem:")
     default UIView previewControllerTransitionViewForPreviewItem(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) Object item) {
+            @Mapped(ObjCObjectMapper.class) QLPreviewItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,7 +91,7 @@ public interface QLPreviewControllerDelegate {
     @IsOptional
     @Selector("previewController:didSaveEditedCopyOfPreviewItem:atURL:")
     default void previewControllerDidSaveEditedCopyOfPreviewItemAtURL(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) Object previewItem, NSURL modifiedContentsURL) {
+            @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem, NSURL modifiedContentsURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,7 +99,7 @@ public interface QLPreviewControllerDelegate {
     @IsOptional
     @Selector("previewController:didUpdateContentsOfPreviewItem:")
     default void previewControllerDidUpdateContentsOfPreviewItem(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) Object previewItem) {
+            @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,7 +108,7 @@ public interface QLPreviewControllerDelegate {
     @Selector("previewController:editingModeForPreviewItem:")
     @NInt
     default long previewControllerEditingModeForPreviewItem(QLPreviewController controller,
-            @Mapped(ObjCObjectMapper.class) Object previewItem) {
+            @Mapped(ObjCObjectMapper.class) QLPreviewItem previewItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

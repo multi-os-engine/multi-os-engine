@@ -36,7 +36,7 @@ public interface MTLComputePipelineState {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")

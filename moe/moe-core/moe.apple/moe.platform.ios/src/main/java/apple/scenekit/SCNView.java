@@ -27,6 +27,9 @@ import apple.foundation.NSDate;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.metal.protocol.MTLCommandQueue;
+import apple.metal.protocol.MTLDevice;
+import apple.metal.protocol.MTLRenderCommandEncoder;
 import apple.opengles.EAGLContext;
 import apple.scenekit.protocol.SCNCameraControlConfiguration;
 import apple.scenekit.protocol.SCNSceneRenderer;
@@ -37,6 +40,7 @@ import apple.spritekit.SKTransition;
 import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -143,7 +147,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -156,8 +160,8 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -387,7 +391,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -403,7 +407,8 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -438,7 +443,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object commandQueue();
+    public native MTLCommandQueue commandQueue();
 
     @Generated
     @Selector("context")
@@ -447,7 +452,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Generated
     @Selector("currentRenderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object currentRenderCommandEncoder();
+    public native MTLRenderCommandEncoder currentRenderCommandEncoder();
 
     @Generated
     @Selector("debugOptions")
@@ -467,7 +472,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object device();
+    public native MTLDevice device();
 
     @Generated
     @Selector("eaglContext")

@@ -26,6 +26,7 @@ import apple.foundation.NSIndexPath;
 import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UICollectionViewDataSource;
 import apple.uikit.protocol.UICollectionViewDataSourcePrefetching;
 import apple.uikit.protocol.UICollectionViewDragDelegate;
@@ -139,7 +140,7 @@ public class UICollectionView extends UIScrollView
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -152,8 +153,8 @@ public class UICollectionView extends UIScrollView
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -382,7 +383,7 @@ public class UICollectionView extends UIScrollView
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -398,7 +399,8 @@ public class UICollectionView extends UIScrollView
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 

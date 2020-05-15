@@ -34,23 +34,23 @@ public interface GKStrategist {
     @Generated
     @Selector("bestMoveForActivePlayer")
     @MappedReturn(ObjCObjectMapper.class)
-    Object bestMoveForActivePlayer();
+    GKGameModelUpdate bestMoveForActivePlayer();
 
     @Generated
     @Selector("gameModel")
     @MappedReturn(ObjCObjectMapper.class)
-    Object gameModel();
+    GKGameModel gameModel();
 
     @Generated
     @Selector("randomSource")
     @MappedReturn(ObjCObjectMapper.class)
-    Object randomSource();
+    GKRandom randomSource();
 
     @Generated
     @Selector("setGameModel:")
-    void setGameModel(@Mapped(ObjCObjectMapper.class) Object value);
+    void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel value);
 
     @Generated
     @Selector("setRandomSource:")
-    void setRandomSource(@Mapped(ObjCObjectMapper.class) Object value);
+    void setRandomSource(@Mapped(ObjCObjectMapper.class) GKRandom value);
 }

@@ -33,17 +33,17 @@ public interface MTLCommandQueue {
     @Generated
     @Selector("commandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
-    Object commandBuffer();
+    MTLCommandBuffer commandBuffer();
 
     @Generated
     @Selector("commandBufferWithUnretainedReferences")
     @MappedReturn(ObjCObjectMapper.class)
-    Object commandBufferWithUnretainedReferences();
+    MTLCommandBuffer commandBufferWithUnretainedReferences();
 
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("insertDebugCaptureBoundary")

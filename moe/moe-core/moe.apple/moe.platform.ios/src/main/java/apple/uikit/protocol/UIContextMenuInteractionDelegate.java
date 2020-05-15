@@ -45,7 +45,8 @@ public interface UIContextMenuInteractionDelegate {
     @IsOptional
     @Selector("contextMenuInteraction:willDisplayMenuForConfiguration:animator:")
     default void contextMenuInteractionWillDisplayMenuForConfigurationAnimator(UIContextMenuInteraction interaction,
-            UIContextMenuConfiguration configuration, @Mapped(ObjCObjectMapper.class) Object animator) {
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +54,8 @@ public interface UIContextMenuInteractionDelegate {
     @IsOptional
     @Selector("contextMenuInteraction:willEndForConfiguration:animator:")
     default void contextMenuInteractionWillEndForConfigurationAnimator(UIContextMenuInteraction interaction,
-            UIContextMenuConfiguration configuration, @Mapped(ObjCObjectMapper.class) Object animator) {
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,7 +64,7 @@ public interface UIContextMenuInteractionDelegate {
     @Selector("contextMenuInteraction:willPerformPreviewActionForMenuWithConfiguration:animator:")
     default void contextMenuInteractionWillPerformPreviewActionForMenuWithConfigurationAnimator(
             UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) Object animator) {
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

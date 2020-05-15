@@ -36,7 +36,7 @@ public interface UIBarPositioningDelegate {
     @IsOptional
     @Selector("positionForBar:")
     @NInt
-    default long positionForBar(@Mapped(ObjCObjectMapper.class) Object bar) {
+    default long positionForBar(@Mapped(ObjCObjectMapper.class) UIBarPositioning bar) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

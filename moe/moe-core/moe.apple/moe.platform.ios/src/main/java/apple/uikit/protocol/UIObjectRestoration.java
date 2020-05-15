@@ -37,5 +37,5 @@ public interface UIObjectRestoration {
     @Selector("objectWithRestorationIdentifierPath:coder:")
     @ProtocolClassMethod("objectWithRestorationIdentifierPathCoder")
     @MappedReturn(ObjCObjectMapper.class)
-    Object _objectWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents, NSCoder coder);
+    UIStateRestoring _objectWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents, NSCoder coder);
 }

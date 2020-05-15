@@ -35,7 +35,7 @@ public interface MTLArgumentEncoder {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("encodedLength")
@@ -48,16 +48,17 @@ public interface MTLArgumentEncoder {
 
     @Generated
     @Selector("setArgumentBuffer:offset:")
-    void setArgumentBufferOffset(@Mapped(ObjCObjectMapper.class) Object argumentBuffer, @NUInt long offset);
+    void setArgumentBufferOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer argumentBuffer, @NUInt long offset);
 
     @Generated
     @Selector("setArgumentBuffer:startOffset:arrayElement:")
-    void setArgumentBufferStartOffsetArrayElement(@Mapped(ObjCObjectMapper.class) Object argumentBuffer,
+    void setArgumentBufferStartOffsetArrayElement(@Mapped(ObjCObjectMapper.class) MTLBuffer argumentBuffer,
             @NUInt long startOffset, @NUInt long arrayElement);
 
     @Generated
     @Selector("setBuffer:offset:atIndex:")
-    void setBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) Object buffer, @NUInt long offset, @NUInt long index);
+    void setBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+            @NUInt long index);
 
     @Generated
     @Selector("setBuffers:offsets:withRange:")
@@ -70,7 +71,7 @@ public interface MTLArgumentEncoder {
 
     @Generated
     @Selector("setSamplerState:atIndex:")
-    void setSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler, @NUInt long index);
+    void setSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
 
     @Generated
     @Selector("setSamplerStates:withRange:")
@@ -79,7 +80,7 @@ public interface MTLArgumentEncoder {
 
     @Generated
     @Selector("setTexture:atIndex:")
-    void setTextureAtIndex(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long index);
+    void setTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
 
     @Generated
     @Selector("setTextures:withRange:")
@@ -88,11 +89,12 @@ public interface MTLArgumentEncoder {
     @Generated
     @Selector("newArgumentEncoderForBufferAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newArgumentEncoderForBufferAtIndex(@NUInt long index);
+    MTLArgumentEncoder newArgumentEncoderForBufferAtIndex(@NUInt long index);
 
     @Generated
     @Selector("setComputePipelineState:atIndex:")
-    void setComputePipelineStateAtIndex(@Mapped(ObjCObjectMapper.class) Object pipeline, @NUInt long index);
+    void setComputePipelineStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipeline,
+            @NUInt long index);
 
     @Generated
     @Selector("setComputePipelineStates:withRange:")
@@ -101,7 +103,7 @@ public interface MTLArgumentEncoder {
 
     @Generated
     @Selector("setIndirectCommandBuffer:atIndex:")
-    void setIndirectCommandBufferAtIndex(@Mapped(ObjCObjectMapper.class) Object indirectCommandBuffer,
+    void setIndirectCommandBufferAtIndex(@Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandBuffer,
             @NUInt long index);
 
     @Generated
@@ -111,7 +113,8 @@ public interface MTLArgumentEncoder {
 
     @Generated
     @Selector("setRenderPipelineState:atIndex:")
-    void setRenderPipelineStateAtIndex(@Mapped(ObjCObjectMapper.class) Object pipeline, @NUInt long index);
+    void setRenderPipelineStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLRenderPipelineState pipeline,
+            @NUInt long index);
 
     @Generated
     @Selector("setRenderPipelineStates:withRange:")

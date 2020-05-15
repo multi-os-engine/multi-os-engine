@@ -24,5 +24,5 @@ public interface MPSSVGFTextureAllocator {
     @Generated
     @Selector("textureWithPixelFormat:width:height:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object textureWithPixelFormatWidthHeight(@NUInt long pixelFormat, @NUInt long width, @NUInt long height);
+    MTLTexture textureWithPixelFormatWidthHeight(@NUInt long pixelFormat, @NUInt long width, @NUInt long height);
 }

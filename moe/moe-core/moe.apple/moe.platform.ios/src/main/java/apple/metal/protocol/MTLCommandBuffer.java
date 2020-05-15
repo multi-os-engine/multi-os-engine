@@ -46,12 +46,12 @@ public interface MTLCommandBuffer {
     @Generated
     @Selector("blitCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    Object blitCommandEncoder();
+    MTLBlitCommandEncoder blitCommandEncoder();
 
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
-    Object commandQueue();
+    MTLCommandQueue commandQueue();
 
     @Generated
     @Selector("commit")
@@ -60,12 +60,12 @@ public interface MTLCommandBuffer {
     @Generated
     @Selector("computeCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    Object computeCommandEncoder();
+    MTLComputeCommandEncoder computeCommandEncoder();
 
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("enqueue")
@@ -82,20 +82,21 @@ public interface MTLCommandBuffer {
     @Generated
     @Selector("parallelRenderCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object parallelRenderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
+    MTLParallelRenderCommandEncoder parallelRenderCommandEncoderWithDescriptor(
+            MTLRenderPassDescriptor renderPassDescriptor);
 
     @Generated
     @Selector("presentDrawable:")
-    void presentDrawable(@Mapped(ObjCObjectMapper.class) Object drawable);
+    void presentDrawable(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable);
 
     @Generated
     @Selector("presentDrawable:atTime:")
-    void presentDrawableAtTime(@Mapped(ObjCObjectMapper.class) Object drawable, double presentationTime);
+    void presentDrawableAtTime(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable, double presentationTime);
 
     @Generated
     @Selector("renderCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object renderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
+    MTLRenderCommandEncoder renderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
 
     @Generated
     @Selector("retainedReferences")
@@ -154,7 +155,7 @@ public interface MTLCommandBuffer {
 
     @Generated
     @Selector("presentDrawable:afterMinimumDuration:")
-    void presentDrawableAfterMinimumDuration(@Mapped(ObjCObjectMapper.class) Object drawable, double duration);
+    void presentDrawableAfterMinimumDuration(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable, double duration);
 
     @Generated
     @Selector("pushDebugGroup:")
@@ -163,18 +164,18 @@ public interface MTLCommandBuffer {
     @Generated
     @Selector("computeCommandEncoderWithDispatchType:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object computeCommandEncoderWithDispatchType(@NUInt long dispatchType);
+    MTLComputeCommandEncoder computeCommandEncoderWithDispatchType(@NUInt long dispatchType);
 
     @Generated
     @Selector("encodeSignalEvent:value:")
-    void encodeSignalEventValue(@Mapped(ObjCObjectMapper.class) Object event, long value);
+    void encodeSignalEventValue(@Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
 
     @Generated
     @Selector("encodeWaitForEvent:value:")
-    void encodeWaitForEventValue(@Mapped(ObjCObjectMapper.class) Object event, long value);
+    void encodeWaitForEventValue(@Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
 
     @Generated
     @Selector("resourceStateCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    Object resourceStateCommandEncoder();
+    MTLResourceStateCommandEncoder resourceStateCommandEncoder();
 }

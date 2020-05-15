@@ -26,6 +26,8 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UICollectionViewDataSource;
 import apple.uikit.protocol.UICollectionViewDelegate;
+import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
+import apple.uikit.protocol.UISpringLoadedInteractionContext;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -457,7 +459,7 @@ public class UICollectionViewController extends UIViewController
     @IsOptional
     @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
     public native boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context);
+            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 
     @Generated
     @IsOptional
@@ -504,7 +506,7 @@ public class UICollectionViewController extends UIViewController
     @Selector("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:")
     public native void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(
             UICollectionView collectionView, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) Object animator);
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
 
     @Generated
     @IsOptional

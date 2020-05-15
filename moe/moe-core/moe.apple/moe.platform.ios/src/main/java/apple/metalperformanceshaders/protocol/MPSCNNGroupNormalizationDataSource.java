@@ -2,6 +2,7 @@ package apple.metalperformanceshaders.protocol;
 
 import apple.foundation.NSCoder;
 import apple.foundation.protocol.NSCopying;
+import apple.metal.protocol.MTLDevice;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -32,7 +33,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     @IsOptional
     @Selector("copyWithZone:device:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) Object device) {
+    default Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 

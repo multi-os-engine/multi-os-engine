@@ -4822,4 +4822,9 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVSampleBufferRenderSynchronizerRateDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVPlayerEligibleForHDRPlaybackDidChangeNotification();
 }

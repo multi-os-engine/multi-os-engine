@@ -49,12 +49,13 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("dispatchThreadgroupsWithIndirectBuffer:indirectBufferOffset:threadsPerThreadgroup:")
     void dispatchThreadgroupsWithIndirectBufferIndirectBufferOffsetThreadsPerThreadgroup(
-            @Mapped(ObjCObjectMapper.class) Object indirectBuffer, @NUInt long indirectBufferOffset,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer, @NUInt long indirectBufferOffset,
             @ByValue MTLSize threadsPerThreadgroup);
 
     @Generated
     @Selector("setBuffer:offset:atIndex:")
-    void setBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) Object buffer, @NUInt long offset, @NUInt long index);
+    void setBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+            @NUInt long index);
 
     @Generated
     @Selector("setBufferOffset:atIndex:")
@@ -71,16 +72,16 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setComputePipelineState:")
-    void setComputePipelineState(@Mapped(ObjCObjectMapper.class) Object state);
+    void setComputePipelineState(@Mapped(ObjCObjectMapper.class) MTLComputePipelineState state);
 
     @Generated
     @Selector("setSamplerState:atIndex:")
-    void setSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler, @NUInt long index);
+    void setSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
 
     @Generated
     @Selector("setSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
-    void setSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler, float lodMinClamp,
-            float lodMaxClamp, @NUInt long index);
+    void setSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler,
+            float lodMinClamp, float lodMaxClamp, @NUInt long index);
 
     @Generated
     @Selector("setSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
@@ -99,7 +100,7 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setTexture:atIndex:")
-    void setTextureAtIndex(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long index);
+    void setTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
 
     @Generated
     @Selector("setTextures:withRange:")
@@ -111,11 +112,11 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("updateFence:")
-    void updateFence(@Mapped(ObjCObjectMapper.class) Object fence);
+    void updateFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     @Generated
     @Selector("waitForFence:")
-    void waitForFence(@Mapped(ObjCObjectMapper.class) Object fence);
+    void waitForFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     @Generated
     @Selector("dispatchThreads:threadsPerThreadgroup:")
@@ -127,7 +128,7 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("useHeap:")
-    void useHeap(@Mapped(ObjCObjectMapper.class) Object heap);
+    void useHeap(@Mapped(ObjCObjectMapper.class) MTLHeap heap);
 
     @Generated
     @Selector("useHeaps:count:")
@@ -135,7 +136,7 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("useResource:usage:")
-    void useResourceUsage(@Mapped(ObjCObjectMapper.class) Object resource, @NUInt long usage);
+    void useResourceUsage(@Mapped(ObjCObjectMapper.class) MTLResource resource, @NUInt long usage);
 
     @Generated
     @Selector("useResources:count:usage:")
@@ -150,12 +151,13 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:")
     void executeCommandsInBufferIndirectBufferIndirectBufferOffset(
-            @Mapped(ObjCObjectMapper.class) Object indirectCommandbuffer,
-            @Mapped(ObjCObjectMapper.class) Object indirectRangeBuffer, @NUInt long indirectBufferOffset);
+            @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandbuffer,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer indirectRangeBuffer, @NUInt long indirectBufferOffset);
 
     @Generated
     @Selector("executeCommandsInBuffer:withRange:")
-    void executeCommandsInBufferWithRange(@Mapped(ObjCObjectMapper.class) Object indirectCommandBuffer,
+    void executeCommandsInBufferWithRange(
+            @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandBuffer,
             @ByValue NSRange executionRange);
 
     @Generated
@@ -169,6 +171,6 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setStageInRegionWithIndirectBuffer:indirectBufferOffset:")
-    void setStageInRegionWithIndirectBufferIndirectBufferOffset(@Mapped(ObjCObjectMapper.class) Object indirectBuffer,
-            @NUInt long indirectBufferOffset);
+    void setStageInRegionWithIndirectBufferIndirectBufferOffset(
+            @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer, @NUInt long indirectBufferOffset);
 }

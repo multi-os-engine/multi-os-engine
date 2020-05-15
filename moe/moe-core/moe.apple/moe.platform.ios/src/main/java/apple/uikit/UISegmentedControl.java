@@ -26,6 +26,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import apple.uikit.struct.UIOffset;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -134,7 +135,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -147,8 +148,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -369,7 +370,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -385,7 +386,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 

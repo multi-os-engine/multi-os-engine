@@ -24,7 +24,7 @@ public interface UITextDragDelegate {
     @IsOptional
     @Selector("textDraggableView:dragPreviewForLiftingItem:session:")
     default UITargetedDragPreview textDraggableViewDragPreviewForLiftingItemSession(UIView textDraggableView,
-            UIDragItem item, @Mapped(ObjCObjectMapper.class) Object session) {
+            UIDragItem item, @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -32,7 +32,7 @@ public interface UITextDragDelegate {
     @IsOptional
     @Selector("textDraggableView:dragSessionDidEnd:withOperation:")
     default void textDraggableViewDragSessionDidEndWithOperation(UIView textDraggableView,
-            @Mapped(ObjCObjectMapper.class) Object session, @NUInt long operation) {
+            @Mapped(ObjCObjectMapper.class) UIDragSession session, @NUInt long operation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -40,7 +40,7 @@ public interface UITextDragDelegate {
     @IsOptional
     @Selector("textDraggableView:dragSessionWillBegin:")
     default void textDraggableViewDragSessionWillBegin(UIView textDraggableView,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,7 +48,7 @@ public interface UITextDragDelegate {
     @IsOptional
     @Selector("textDraggableView:itemsForDrag:")
     default NSArray<? extends UIDragItem> textDraggableViewItemsForDrag(UIView textDraggableView,
-            @Mapped(ObjCObjectMapper.class) Object dragRequest) {
+            @Mapped(ObjCObjectMapper.class) UITextDragRequest dragRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,7 +56,8 @@ public interface UITextDragDelegate {
     @IsOptional
     @Selector("textDraggableView:willAnimateLiftWithAnimator:session:")
     default void textDraggableViewWillAnimateLiftWithAnimatorSession(UIView textDraggableView,
-            @Mapped(ObjCObjectMapper.class) Object animator, @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDragAnimating animator,
+            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

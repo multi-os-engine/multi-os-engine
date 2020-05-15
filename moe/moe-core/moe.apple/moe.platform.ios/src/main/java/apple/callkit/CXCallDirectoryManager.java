@@ -183,4 +183,16 @@ public class CXCallDirectoryManager extends NSObject {
         @Generated
         void call_reloadExtensionWithIdentifierCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("openSettingsWithCompletionHandler:")
+    public native void openSettingsWithCompletionHandler(
+            @ObjCBlock(name = "call_openSettingsWithCompletionHandler") Block_openSettingsWithCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_openSettingsWithCompletionHandler {
+        @Generated
+        void call_openSettingsWithCompletionHandler(NSError arg0);
+    }
 }

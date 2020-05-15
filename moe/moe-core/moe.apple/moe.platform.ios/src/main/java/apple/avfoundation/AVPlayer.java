@@ -466,4 +466,8 @@ public class AVPlayer extends NSObject {
     @Generated
     @Selector("setPreventsDisplaySleepDuringVideoPlayback:")
     public native void setPreventsDisplaySleepDuringVideoPlayback(boolean value);
+
+    @Generated
+    @Selector("eligibleForHDRPlayback")
+    public static native boolean eligibleForHDRPlayback();
 }

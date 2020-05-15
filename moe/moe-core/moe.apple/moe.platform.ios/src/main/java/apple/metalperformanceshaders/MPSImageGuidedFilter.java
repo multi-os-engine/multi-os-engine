@@ -216,4 +216,23 @@ public class MPSImageGuidedFilter extends MPSKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeReconstructionToCommandBuffer:guidanceTexture:coefficientsTextureA:coefficientsTextureB:destinationTexture:")
+    public native void encodeReconstructionToCommandBufferGuidanceTextureCoefficientsTextureACoefficientsTextureBDestinationTexture(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
+            @Mapped(ObjCObjectMapper.class) MTLTexture coefficientsTextureA,
+            @Mapped(ObjCObjectMapper.class) MTLTexture coefficientsTextureB,
+            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture);
+
+    @Generated
+    @Selector("encodeRegressionToCommandBuffer:sourceTexture:guidanceTexture:weightsTexture:destinationCoefficientsTextureA:destinationCoefficientsTextureB:")
+    public native void encodeRegressionToCommandBufferSourceTextureGuidanceTextureWeightsTextureDestinationCoefficientsTextureADestinationCoefficientsTextureB(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @Mapped(ObjCObjectMapper.class) MTLTexture guidanceTexture,
+            @Mapped(ObjCObjectMapper.class) MTLTexture weightsTexture,
+            @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTextureA,
+            @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTextureB);
 }

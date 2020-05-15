@@ -50,7 +50,7 @@ public interface INGetRideStatusIntentHandling {
     @Generated
     @Selector("startSendingUpdatesForGetRideStatus:toObserver:")
     void startSendingUpdatesForGetRideStatusToObserver(INGetRideStatusIntent intent,
-            @Mapped(ObjCObjectMapper.class) Object observer);
+            @Mapped(ObjCObjectMapper.class) INGetRideStatusIntentResponseObserver observer);
 
     @Generated
     @Selector("stopSendingUpdatesForGetRideStatus:")

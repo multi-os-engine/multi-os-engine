@@ -66,10 +66,10 @@ public interface UIFocusEnvironment {
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
-    Object focusItemContainer();
+    UIFocusItemContainer focusItemContainer();
 
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
-    Object parentFocusEnvironment();
+    UIFocusEnvironment parentFocusEnvironment();
 }

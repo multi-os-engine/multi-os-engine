@@ -29,6 +29,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.quartzcore.CALayer;
+import apple.quartzcore.protocol.CAAction;
 import apple.quartzcore.protocol.CALayerDelegate;
 import apple.quartzcore.struct.CATransform3D;
 import apple.uikit.protocol.UIAccessibilityIdentification;
@@ -36,6 +37,7 @@ import apple.uikit.protocol.UIAppearance;
 import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UICoordinateSpace;
 import apple.uikit.protocol.UIDynamicItem;
+import apple.uikit.protocol.UIFocusEnvironment;
 import apple.uikit.protocol.UIFocusItem;
 import apple.uikit.protocol.UIFocusItemContainer;
 import apple.uikit.protocol.UIInteraction;
@@ -152,7 +154,7 @@ public class UIView extends UIResponder
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -165,8 +167,8 @@ public class UIView extends UIResponder
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -376,7 +378,7 @@ public class UIView extends UIResponder
     @IsOptional
     @Selector("actionForLayer:forKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object actionForLayerForKey(CALayer layer, String event);
+    public native CAAction actionForLayerForKey(CALayer layer, String event);
 
     @Generated
     @Selector("addConstraint:")
@@ -436,7 +438,7 @@ public class UIView extends UIResponder
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -452,7 +454,8 @@ public class UIView extends UIResponder
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -561,7 +564,7 @@ public class UIView extends UIResponder
     @Selector("convertPoint:fromCoordinateSpace:")
     @ByValue
     public native CGPoint convertPointFromCoordinateSpace(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertPoint:fromView:")
@@ -572,7 +575,7 @@ public class UIView extends UIResponder
     @Selector("convertPoint:toCoordinateSpace:")
     @ByValue
     public native CGPoint convertPointToCoordinateSpace(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertPoint:toView:")
@@ -583,7 +586,7 @@ public class UIView extends UIResponder
     @Selector("convertRect:fromCoordinateSpace:")
     @ByValue
     public native CGRect convertRectFromCoordinateSpace(@ByValue CGRect rect,
-            @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertRect:fromView:")
@@ -594,7 +597,7 @@ public class UIView extends UIResponder
     @Selector("convertRect:toCoordinateSpace:")
     @ByValue
     public native CGRect convertRectToCoordinateSpace(@ByValue CGRect rect,
-            @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertRect:toView:")
@@ -1345,7 +1348,7 @@ public class UIView extends UIResponder
     @Generated
     @Selector("coordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object coordinateSpace();
+    public native UICoordinateSpace coordinateSpace();
 
     @Generated
     @IsOptional
@@ -1355,7 +1358,7 @@ public class UIView extends UIResponder
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object focusItemContainer();
+    public native UIFocusItemContainer focusItemContainer();
 
     @Generated
     @Selector("focusItemsInRect:")
@@ -1395,7 +1398,7 @@ public class UIView extends UIResponder
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object parentFocusEnvironment();
+    public native UIFocusEnvironment parentFocusEnvironment();
 
     @Generated
     @Selector("scalesLargeContentImage")

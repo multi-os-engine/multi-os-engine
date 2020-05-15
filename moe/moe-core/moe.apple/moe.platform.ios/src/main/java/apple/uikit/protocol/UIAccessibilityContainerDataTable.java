@@ -25,7 +25,8 @@ public interface UIAccessibilityContainerDataTable {
     @Generated
     @Selector("accessibilityDataTableCellElementForRow:column:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object accessibilityDataTableCellElementForRowColumn(@NUInt long row, @NUInt long column);
+    UIAccessibilityContainerDataTableCell accessibilityDataTableCellElementForRowColumn(@NUInt long row,
+            @NUInt long column);
 
     @Generated
     @IsOptional

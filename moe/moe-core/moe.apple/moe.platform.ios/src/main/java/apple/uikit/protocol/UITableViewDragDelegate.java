@@ -34,14 +34,15 @@ public interface UITableViewDragDelegate {
     @IsOptional
     @Selector("tableView:dragSessionAllowsMoveOperation:")
     default boolean tableViewDragSessionAllowsMoveOperation(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("tableView:dragSessionDidEnd:")
-    default void tableViewDragSessionDidEnd(UITableView tableView, @Mapped(ObjCObjectMapper.class) Object session) {
+    default void tableViewDragSessionDidEnd(UITableView tableView,
+            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,14 +50,15 @@ public interface UITableViewDragDelegate {
     @IsOptional
     @Selector("tableView:dragSessionIsRestrictedToDraggingApplication:")
     default boolean tableViewDragSessionIsRestrictedToDraggingApplication(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("tableView:dragSessionWillBegin:")
-    default void tableViewDragSessionWillBegin(UITableView tableView, @Mapped(ObjCObjectMapper.class) Object session) {
+    default void tableViewDragSessionWillBegin(UITableView tableView,
+            @Mapped(ObjCObjectMapper.class) UIDragSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,12 +66,12 @@ public interface UITableViewDragDelegate {
     @IsOptional
     @Selector("tableView:itemsForAddingToDragSession:atIndexPath:point:")
     default NSArray<? extends UIDragItem> tableViewItemsForAddingToDragSessionAtIndexPathPoint(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) Object session, NSIndexPath indexPath, @ByValue CGPoint point) {
+            @Mapped(ObjCObjectMapper.class) UIDragSession session, NSIndexPath indexPath, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("tableView:itemsForBeginningDragSession:atIndexPath:")
     NSArray<? extends UIDragItem> tableViewItemsForBeginningDragSessionAtIndexPath(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) Object session, NSIndexPath indexPath);
+            @Mapped(ObjCObjectMapper.class) UIDragSession session, NSIndexPath indexPath);
 }

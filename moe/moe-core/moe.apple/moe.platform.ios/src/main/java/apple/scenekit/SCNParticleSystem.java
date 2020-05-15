@@ -26,6 +26,7 @@ import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import apple.scenekit.struct.SCNVector3;
 import apple.scenekit.struct.SCNVector4;
 import apple.uikit.UIColor;
@@ -186,7 +187,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("addModifierForProperties:atStage:withBlock:")

@@ -34,4 +34,9 @@ public final class CarPlay {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CPTemplateApplicationSceneSessionRoleApplication();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CPTemplateApplicationDashboardSceneSessionRoleApplication();
 }

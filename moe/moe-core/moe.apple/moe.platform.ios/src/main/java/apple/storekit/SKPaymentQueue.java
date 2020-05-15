@@ -233,4 +233,8 @@ public class SKPaymentQueue extends NSObject {
     @Generated
     @Selector("storefront")
     public native SKStorefront storefront();
+
+    @Generated
+    @Selector("showPriceConsentIfNeeded")
+    public native void showPriceConsentIfNeeded();
 }

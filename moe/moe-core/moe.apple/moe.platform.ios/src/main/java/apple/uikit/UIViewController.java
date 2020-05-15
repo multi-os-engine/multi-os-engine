@@ -30,7 +30,9 @@ import apple.mediaplayer.MPMoviePlayerViewController;
 import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentContainer;
 import apple.uikit.protocol.UIFocusEnvironment;
+import apple.uikit.protocol.UIFocusItemContainer;
 import apple.uikit.protocol.UILayoutSupport;
+import apple.uikit.protocol.UIObjectRestoration;
 import apple.uikit.protocol.UIStateRestoring;
 import apple.uikit.protocol.UITraitEnvironment;
 import apple.uikit.protocol.UIViewControllerPreviewing;
@@ -459,7 +461,7 @@ public class UIViewController extends UIResponder
     @IsOptional
     @Selector("objectRestorationClass")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectRestorationClass();
+    public native UIObjectRestoration objectRestorationClass();
 
     @Generated
     @Selector("originalContentView")
@@ -490,7 +492,7 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
     public native void preferredContentSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) Object container);
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     @Generated
     @Selector("preferredFocusEnvironments")
@@ -590,7 +592,7 @@ public class UIViewController extends UIResponder
     @IsOptional
     @Selector("restorationParent")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object restorationParent();
+    public native UIStateRestoring restorationParent();
 
     @Generated
     @Selector("restoresFocusAfterTransition")
@@ -802,7 +804,7 @@ public class UIViewController extends UIResponder
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
     @ByValue
     public native CGSize sizeForChildContentContainerWithParentContainerSize(
-            @Mapped(ObjCObjectMapper.class) Object container, @ByValue CGSize parentSize);
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
 
     @Generated
     @Selector("splitViewController")
@@ -820,7 +822,7 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("systemLayoutFittingSizeDidChangeForChildContentContainer:")
     public native void systemLayoutFittingSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) Object container);
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     @Generated
     @Selector("tabBarController")
@@ -942,7 +944,7 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
     public native void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size,
-            @Mapped(ObjCObjectMapper.class) Object coordinator);
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
     @Generated
     @Deprecated
@@ -984,7 +986,7 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
     public native void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
-            @Mapped(ObjCObjectMapper.class) Object coordinator);
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1077,7 +1079,7 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object focusItemContainer();
+    public native UIFocusItemContainer focusItemContainer();
 
     @Generated
     @Selector("isModalInPresentation")
@@ -1091,7 +1093,7 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object parentFocusEnvironment();
+    public native UIFocusEnvironment parentFocusEnvironment();
 
     @Generated
     @Selector("performsActionsWhilePresentingModally")

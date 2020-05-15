@@ -19,6 +19,7 @@ package apple.webkit.protocol;
 import apple.foundation.NSArray;
 import apple.uikit.UIContextMenuConfiguration;
 import apple.uikit.UIViewController;
+import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
 import apple.webkit.WKContextMenuElementInfo;
 import apple.webkit.WKFrameInfo;
 import apple.webkit.WKNavigationAction;
@@ -155,7 +156,8 @@ public interface WKUIDelegate {
     @IsOptional
     @Selector("webView:contextMenuForElement:willCommitWithAnimator:")
     default void webViewContextMenuForElementWillCommitWithAnimator(WKWebView webView,
-            WKContextMenuElementInfo elementInfo, @Mapped(ObjCObjectMapper.class) Object animator) {
+            WKContextMenuElementInfo elementInfo,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 

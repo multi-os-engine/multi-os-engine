@@ -175,4 +175,8 @@ public class PKPaymentMethod extends NSObject {
     @Generated
     @Selector("billingAddress")
     public native CNContact billingAddress();
+
+    @Generated
+    @Selector("secureElementPass")
+    public native PKSecureElementPass secureElementPass();
 }

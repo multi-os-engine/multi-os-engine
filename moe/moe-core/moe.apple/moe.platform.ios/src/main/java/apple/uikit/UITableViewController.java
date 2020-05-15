@@ -24,6 +24,8 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
+import apple.uikit.protocol.UISpringLoadedInteractionContext;
 import apple.uikit.protocol.UITableViewDataSource;
 import apple.uikit.protocol.UITableViewDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -563,7 +565,7 @@ public class UITableViewController extends UIViewController implements UITableVi
     @IsOptional
     @Selector("tableView:shouldSpringLoadRowAtIndexPath:withContext:")
     public native boolean tableViewShouldSpringLoadRowAtIndexPathWithContext(UITableView tableView,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context);
+            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 
     @Generated
     @IsOptional
@@ -605,7 +607,8 @@ public class UITableViewController extends UIViewController implements UITableVi
     @IsOptional
     @Selector("tableView:willPerformPreviewActionForMenuWithConfiguration:animator:")
     public native void tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UITableView tableView,
-            UIContextMenuConfiguration configuration, @Mapped(ObjCObjectMapper.class) Object animator);
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
 
     @Generated
     @IsOptional

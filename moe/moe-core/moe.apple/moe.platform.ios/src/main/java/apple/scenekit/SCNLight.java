@@ -30,6 +30,7 @@ import apple.foundation.protocol.NSSecureCoding;
 import apple.modelio.MDLLight;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import apple.scenekit.protocol.SCNTechniqueSupport;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -182,7 +183,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("animationForKey:")

@@ -31,6 +31,7 @@ import apple.modelio.MDLObject;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNActionable;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import apple.scenekit.protocol.SCNBoundingVolume;
 import apple.scenekit.protocol.SCNNodeRendererDelegate;
 import apple.scenekit.struct.SCNMatrix4;
@@ -40,7 +41,9 @@ import apple.uikit.UIFocusAnimationCoordinator;
 import apple.uikit.UIFocusMovementHint;
 import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIFocusEnvironment;
 import apple.uikit.protocol.UIFocusItem;
+import apple.uikit.protocol.UIFocusItemContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -205,7 +208,7 @@ public class SCNNode extends NSObject
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("addAudioPlayer:")
@@ -835,7 +838,7 @@ public class SCNNode extends NSObject
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object focusItemContainer();
+    public native UIFocusItemContainer focusItemContainer();
 
     @Generated
     @Selector("frame")
@@ -845,5 +848,5 @@ public class SCNNode extends NSObject
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object parentFocusEnvironment();
+    public native UIFocusEnvironment parentFocusEnvironment();
 }

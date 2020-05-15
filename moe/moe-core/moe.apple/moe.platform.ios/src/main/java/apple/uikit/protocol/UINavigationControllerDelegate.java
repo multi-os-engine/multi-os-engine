@@ -40,7 +40,7 @@ public interface UINavigationControllerDelegate {
     @IsOptional
     @Selector("navigationController:animationControllerForOperation:fromViewController:toViewController:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object navigationControllerAnimationControllerForOperationFromViewControllerToViewController(
+    default UIViewControllerAnimatedTransitioning navigationControllerAnimationControllerForOperationFromViewControllerToViewController(
             UINavigationController navigationController, @NInt long operation, UIViewController fromVC,
             UIViewController toVC) {
         throw new java.lang.UnsupportedOperationException();
@@ -58,8 +58,9 @@ public interface UINavigationControllerDelegate {
     @IsOptional
     @Selector("navigationController:interactionControllerForAnimationController:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object navigationControllerInteractionControllerForAnimationController(
-            UINavigationController navigationController, @Mapped(ObjCObjectMapper.class) Object animationController) {
+    default UIViewControllerInteractiveTransitioning navigationControllerInteractionControllerForAnimationController(
+            UINavigationController navigationController,
+            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 

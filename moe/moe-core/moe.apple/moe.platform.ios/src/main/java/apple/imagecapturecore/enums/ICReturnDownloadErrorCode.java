@@ -10,5 +10,5 @@ public final class ICReturnDownloadErrorCode {
     }
 
     @Generated @NInt public static final long PathInvalid = 0xFFFFFFFFFFFFAD94L;
-    @Generated @NInt public static final long FileWritable = 0xFFFFFFFFFFFFAD93L;
+    @Generated @NInt public static final long FileWritable = 0xFFFFFFFFFFFFAD95L;
 }

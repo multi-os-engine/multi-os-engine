@@ -31,14 +31,14 @@ public interface MLCustomModel {
     @Generated
     @Selector("predictionFromFeatures:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object predictionFromFeaturesOptionsError(@Mapped(ObjCObjectMapper.class) Object input, MLPredictionOptions options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MLFeatureProvider predictionFromFeaturesOptionsError(@Mapped(ObjCObjectMapper.class) MLFeatureProvider input,
+            MLPredictionOptions options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @IsOptional
     @Selector("predictionsFromBatch:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object predictionsFromBatchOptionsError(@Mapped(ObjCObjectMapper.class) Object inputBatch,
+    default MLBatchProvider predictionsFromBatchOptionsError(@Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch,
             MLPredictionOptions options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }

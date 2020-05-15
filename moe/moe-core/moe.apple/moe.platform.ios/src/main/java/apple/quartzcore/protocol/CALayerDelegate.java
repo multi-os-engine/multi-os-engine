@@ -37,7 +37,7 @@ public interface CALayerDelegate {
     @IsOptional
     @Selector("actionForLayer:forKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object actionForLayerForKey(CALayer layer, String event) {
+    default CAAction actionForLayerForKey(CALayer layer, String event) {
         throw new java.lang.UnsupportedOperationException();
     }
 

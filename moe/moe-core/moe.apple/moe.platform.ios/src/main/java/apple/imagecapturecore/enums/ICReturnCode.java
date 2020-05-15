@@ -47,6 +47,6 @@ public final class ICReturnCode {
     @Generated @NInt public static final long DeviceFailedToCompleteTransfer = 0xFFFFFFFFFFFFD91CL;
     @Generated @NInt public static final long DeviceFailedToSendData = 0xFFFFFFFFFFFFD91BL;
     @Generated @NInt public static final long SessionNotOpened = 0xFFFFFFFFFFFFD91AL;
-    @Generated @NInt public static final long ExFATVolumeInvalid = 0xFFFFFFFFFFFFAD30L;
+    @Generated @NInt public static final long ExFATVolumeInvalid = 0x00000000000052D0L;
     @Generated @NInt public static final long MultiErrorDictionary = 0xFFFFFFFFFFFF8AD0L;
 }

@@ -41,4 +41,5 @@ public final class CTFontManagerError {
     @Generated @NInt public static final long CancelledByUser = 0x0000000000000130L;
     @Generated @NInt public static final long DuplicatedName = 0x0000000000000131L;
     @Generated @NInt public static final long InvalidFilePath = 0x0000000000000132L;
+    @Generated @NInt public static final long AssetNotFound = 0x000000000000006BL;
 }

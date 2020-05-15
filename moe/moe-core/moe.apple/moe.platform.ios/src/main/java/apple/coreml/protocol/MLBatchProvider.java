@@ -23,5 +23,5 @@ public interface MLBatchProvider {
     @Generated
     @Selector("featuresAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object featuresAtIndex(@NInt long index);
+    MLFeatureProvider featuresAtIndex(@NInt long index);
 }

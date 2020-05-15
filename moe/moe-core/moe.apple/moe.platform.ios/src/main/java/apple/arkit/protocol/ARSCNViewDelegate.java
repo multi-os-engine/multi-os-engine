@@ -2,6 +2,7 @@ package apple.arkit.protocol;
 
 import apple.arkit.ARAnchor;
 import apple.scenekit.SCNNode;
+import apple.scenekit.protocol.SCNSceneRenderer;
 import apple.scenekit.protocol.SCNSceneRendererDelegate;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -21,7 +22,7 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
     @Generated
     @IsOptional
     @Selector("renderer:didAddNode:forAnchor:")
-    default void rendererDidAddNodeForAnchor(@Mapped(ObjCObjectMapper.class) Object renderer, SCNNode node,
+    default void rendererDidAddNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNNode node,
             ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -29,7 +30,7 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
     @Generated
     @IsOptional
     @Selector("renderer:didRemoveNode:forAnchor:")
-    default void rendererDidRemoveNodeForAnchor(@Mapped(ObjCObjectMapper.class) Object renderer, SCNNode node,
+    default void rendererDidRemoveNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNNode node,
             ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -37,7 +38,7 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
     @Generated
     @IsOptional
     @Selector("renderer:didUpdateNode:forAnchor:")
-    default void rendererDidUpdateNodeForAnchor(@Mapped(ObjCObjectMapper.class) Object renderer, SCNNode node,
+    default void rendererDidUpdateNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNNode node,
             ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -45,15 +46,15 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
     @Generated
     @IsOptional
     @Selector("renderer:nodeForAnchor:")
-    default SCNNode rendererNodeForAnchor(@Mapped(ObjCObjectMapper.class) Object renderer, ARAnchor anchor) {
+    default SCNNode rendererNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("renderer:willUpdateNode:forAnchor:")
-    default void rendererWillUpdateNodeForAnchor(@Mapped(ObjCObjectMapper.class) Object renderer, SCNNode node,
-            ARAnchor anchor) {
+    default void rendererWillUpdateNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            SCNNode node, ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

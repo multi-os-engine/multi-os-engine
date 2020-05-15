@@ -35,7 +35,9 @@ import apple.uikit.UIFocusMovementHint;
 import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIResponder;
 import apple.uikit.UIView;
+import apple.uikit.protocol.UIFocusEnvironment;
 import apple.uikit.protocol.UIFocusItem;
+import apple.uikit.protocol.UIFocusItemContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -568,7 +570,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object focusItemContainer();
+    public native UIFocusItemContainer focusItemContainer();
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
@@ -578,7 +580,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object parentFocusEnvironment();
+    public native UIFocusEnvironment parentFocusEnvironment();
 
     @Generated
     @Selector("supportsSecureCoding")

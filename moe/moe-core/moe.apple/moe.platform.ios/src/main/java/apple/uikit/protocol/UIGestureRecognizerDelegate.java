@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
+import apple.uikit.UIEvent;
 import apple.uikit.UIGestureRecognizer;
 import apple.uikit.UIPress;
 import apple.uikit.UITouch;
@@ -74,6 +75,13 @@ public interface UIGestureRecognizerDelegate {
     @IsOptional
     @Selector("gestureRecognizerShouldBegin:")
     default boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("gestureRecognizer:shouldReceiveEvent:")
+    default boolean gestureRecognizerShouldReceiveEvent(UIGestureRecognizer gestureRecognizer, UIEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

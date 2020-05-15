@@ -1,6 +1,7 @@
 package apple.metalperformanceshaders.protocol;
 
 import apple.metal.MTLHeapDescriptor;
+import apple.metal.protocol.MTLHeap;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -20,12 +21,12 @@ public interface MPSHeapProvider {
     @Generated
     @Selector("newHeapWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newHeapWithDescriptor(MTLHeapDescriptor descriptor);
+    MTLHeap newHeapWithDescriptor(MTLHeapDescriptor descriptor);
 
     @Generated
     @IsOptional
     @Selector("retireHeap:cacheDelay:")
-    default void retireHeapCacheDelay(@Mapped(ObjCObjectMapper.class) Object heap, double seconds) {
+    default void retireHeapCacheDelay(@Mapped(ObjCObjectMapper.class) MTLHeap heap, double seconds) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -29,22 +29,23 @@ public interface UICollectionViewDropCoordinator {
     @Generated
     @Selector("dropItem:intoItemAtIndexPath:rect:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropItemIntoItemAtIndexPathRect(UIDragItem dragItem, NSIndexPath indexPath, @ByValue CGRect rect);
+    UIDragAnimating dropItemIntoItemAtIndexPathRect(UIDragItem dragItem, NSIndexPath indexPath, @ByValue CGRect rect);
 
     @Generated
     @Selector("dropItem:toItemAtIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropItemToItemAtIndexPath(UIDragItem dragItem, NSIndexPath indexPath);
+    UIDragAnimating dropItemToItemAtIndexPath(UIDragItem dragItem, NSIndexPath indexPath);
 
     @Generated
     @Selector("dropItem:toPlaceholder:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropItemToPlaceholder(UIDragItem dragItem, UICollectionViewDropPlaceholder placeholder);
+    UICollectionViewDropPlaceholderContext dropItemToPlaceholder(UIDragItem dragItem,
+            UICollectionViewDropPlaceholder placeholder);
 
     @Generated
     @Selector("dropItem:toTarget:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropItemToTarget(UIDragItem dragItem, UIDragPreviewTarget target);
+    UIDragAnimating dropItemToTarget(UIDragItem dragItem, UIDragPreviewTarget target);
 
     @Generated
     @Selector("items")
@@ -57,5 +58,5 @@ public interface UICollectionViewDropCoordinator {
     @Generated
     @Selector("session")
     @MappedReturn(ObjCObjectMapper.class)
-    Object session();
+    UIDropSession session();
 }

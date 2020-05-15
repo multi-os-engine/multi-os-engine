@@ -27,6 +27,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.protocol.UIAccessibilityContentSizeCategoryImageAdjusting;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UISpringLoadedInteractionSupporting;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -136,7 +137,7 @@ public class UIButton extends UIControl
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -149,8 +150,8 @@ public class UIButton extends UIControl
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -383,7 +384,7 @@ public class UIButton extends UIControl
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -399,7 +400,8 @@ public class UIButton extends UIControl
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -662,4 +664,36 @@ public class UIButton extends UIControl
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object systemButtonWithImageTargetAction(UIImage image,
             @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+
+    @Generated
+    @Selector("isPointerInteractionEnabled")
+    public native boolean isPointerInteractionEnabled();
+
+    @Generated
+    @Selector("pointerStyleProvider")
+    @ObjCBlock(name = "call_pointerStyleProvider_ret")
+    public native Block_pointerStyleProvider_ret pointerStyleProvider();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_pointerStyleProvider_ret {
+        @Generated
+        UIPointerStyle call_pointerStyleProvider_ret(UIButton arg0, UIPointerEffect arg1, UIPointerShape arg2);
+    }
+
+    @Generated
+    @Selector("setPointerInteractionEnabled:")
+    public native void setPointerInteractionEnabled(boolean value);
+
+    @Generated
+    @Selector("setPointerStyleProvider:")
+    public native void setPointerStyleProvider(
+            @ObjCBlock(name = "call_setPointerStyleProvider") Block_setPointerStyleProvider value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPointerStyleProvider {
+        @Generated
+        UIPointerStyle call_setPointerStyleProvider(UIButton arg0, UIPointerEffect arg1, UIPointerShape arg2);
+    }
 }

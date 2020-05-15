@@ -29,22 +29,23 @@ public interface UITableViewDropCoordinator {
     @Generated
     @Selector("dropItem:intoRowAtIndexPath:rect:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropItemIntoRowAtIndexPathRect(UIDragItem dragItem, NSIndexPath indexPath, @ByValue CGRect rect);
+    UIDragAnimating dropItemIntoRowAtIndexPathRect(UIDragItem dragItem, NSIndexPath indexPath, @ByValue CGRect rect);
 
     @Generated
     @Selector("dropItem:toPlaceholder:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropItemToPlaceholder(UIDragItem dragItem, UITableViewDropPlaceholder placeholder);
+    UITableViewDropPlaceholderContext dropItemToPlaceholder(UIDragItem dragItem,
+            UITableViewDropPlaceholder placeholder);
 
     @Generated
     @Selector("dropItem:toRowAtIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropItemToRowAtIndexPath(UIDragItem dragItem, NSIndexPath indexPath);
+    UIDragAnimating dropItemToRowAtIndexPath(UIDragItem dragItem, NSIndexPath indexPath);
 
     @Generated
     @Selector("dropItem:toTarget:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropItemToTarget(UIDragItem dragItem, UIDragPreviewTarget target);
+    UIDragAnimating dropItemToTarget(UIDragItem dragItem, UIDragPreviewTarget target);
 
     @Generated
     @Selector("items")
@@ -57,5 +58,5 @@ public interface UITableViewDropCoordinator {
     @Generated
     @Selector("session")
     @MappedReturn(ObjCObjectMapper.class)
-    Object session();
+    UIDropSession session();
 }

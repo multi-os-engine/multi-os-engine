@@ -25,4 +25,6 @@ public final class CLSContextType {
     @Generated @NInt public static final long Document = 0x000000000000000DL;
     @Generated @NInt public static final long Audio = 0x000000000000000EL;
     @Generated @NInt public static final long Video = 0x000000000000000FL;
+    @Generated @NInt public static final long Course = 0x0000000000000010L;
+    @Generated @NInt public static final long Custom = 0x0000000000000011L;
 }

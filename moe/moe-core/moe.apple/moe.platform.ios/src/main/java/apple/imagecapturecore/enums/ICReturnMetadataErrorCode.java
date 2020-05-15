@@ -9,8 +9,8 @@ public final class ICReturnMetadataErrorCode {
     private ICReturnMetadataErrorCode() {
     }
 
-    @Generated @NInt public static final long NotAvailable = 0xFFFFFFFFFFFFADC6L;
-    @Generated @NInt public static final long AlreadyFetching = 0xFFFFFFFFFFFFADC5L;
-    @Generated @NInt public static final long Canceled = 0xFFFFFFFFFFFFADC4L;
-    @Generated @NInt public static final long Invalid = 0xFFFFFFFFFFFFADC3L;
+    @Generated @NInt public static final long NotAvailable = 0xFFFFFFFFFFFFB14AL;
+    @Generated @NInt public static final long AlreadyFetching = 0xFFFFFFFFFFFFB14BL;
+    @Generated @NInt public static final long Canceled = 0xFFFFFFFFFFFFB14CL;
+    @Generated @NInt public static final long Invalid = 0xFFFFFFFFFFFFB14DL;
 }

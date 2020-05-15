@@ -12,4 +12,5 @@ public final class ARSessionRunOptions {
     @Generated @NUInt public static final long ResetTracking = 0x0000000000000001L;
     @Generated @NUInt public static final long RemoveExistingAnchors = 0x0000000000000002L;
     @Generated @NUInt public static final long StopTrackedRaycasts = 0x0000000000000004L;
+    @Generated @NUInt public static final long ResetSceneReconstruction = 0x0000000000000008L;
 }

@@ -20,22 +20,22 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
     @Generated
     @Selector("asNFCFeliCaTag")
     @MappedReturn(ObjCObjectMapper.class)
-    Object asNFCFeliCaTag();
+    NFCFeliCaTag asNFCFeliCaTag();
 
     @Generated
     @Selector("asNFCISO15693Tag")
     @MappedReturn(ObjCObjectMapper.class)
-    Object asNFCISO15693Tag();
+    NFCISO15693Tag asNFCISO15693Tag();
 
     @Generated
     @Selector("asNFCISO7816Tag")
     @MappedReturn(ObjCObjectMapper.class)
-    Object asNFCISO7816Tag();
+    NFCISO7816Tag asNFCISO7816Tag();
 
     @Generated
     @Selector("asNFCMiFareTag")
     @MappedReturn(ObjCObjectMapper.class)
-    Object asNFCMiFareTag();
+    NFCMiFareTag asNFCMiFareTag();
 
     @Generated
     @Selector("isAvailable")
@@ -44,7 +44,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
     @Generated
     @Selector("session")
     @MappedReturn(ObjCObjectMapper.class)
-    Object session();
+    NFCReaderSession session();
 
     @Generated
     @Selector("type")

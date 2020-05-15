@@ -25,7 +25,10 @@ import apple.foundation.NSSet;
 import apple.uikit.protocol.UISearchControllerDelegate;
 import apple.uikit.protocol.UISearchResultsUpdating;
 import apple.uikit.protocol.UIViewControllerAnimatedTransitioning;
+import apple.uikit.protocol.UIViewControllerContextTransitioning;
+import apple.uikit.protocol.UIViewControllerInteractiveTransitioning;
 import apple.uikit.protocol.UIViewControllerTransitioningDelegate;
+import apple.uikit.protocol.UIViewImplicitlyAnimating;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -172,19 +175,21 @@ public class UISearchController extends UIViewController
 
     @Generated
     @Selector("animateTransition:")
-    public native void animateTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    public native void animateTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @IsOptional
     @Selector("animationControllerForDismissedController:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object animationControllerForDismissedController(UIViewController dismissed);
+    public native UIViewControllerAnimatedTransitioning animationControllerForDismissedController(
+            UIViewController dismissed);
 
     @Generated
     @IsOptional
     @Selector("animationControllerForPresentedController:presentingController:sourceController:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object animationControllerForPresentedControllerPresentingControllerSourceController(
+    public native UIViewControllerAnimatedTransitioning animationControllerForPresentedControllerPresentingControllerSourceController(
             UIViewController presented, UIViewController presenting, UIViewController source);
 
     @Generated
@@ -225,19 +230,22 @@ public class UISearchController extends UIViewController
     @IsOptional
     @Selector("interactionControllerForDismissal:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object interactionControllerForDismissal(@Mapped(ObjCObjectMapper.class) Object animator);
+    public native UIViewControllerInteractiveTransitioning interactionControllerForDismissal(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
 
     @Generated
     @IsOptional
     @Selector("interactionControllerForPresentation:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object interactionControllerForPresentation(@Mapped(ObjCObjectMapper.class) Object animator);
+    public native UIViewControllerInteractiveTransitioning interactionControllerForPresentation(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animator);
 
     @Generated
     @IsOptional
     @Selector("interruptibleAnimatorForTransition:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object interruptibleAnimatorForTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    public native UIViewImplicitlyAnimating interruptibleAnimatorForTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @Selector("isActive")
@@ -316,7 +324,8 @@ public class UISearchController extends UIViewController
 
     @Generated
     @Selector("transitionDuration:")
-    public native double transitionDuration(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    public native double transitionDuration(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @Selector("automaticallyShowsCancelButton")

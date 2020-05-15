@@ -17,9 +17,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface WKURLSchemeHandler {
     @Generated
     @Selector("webView:startURLSchemeTask:")
-    void webViewStartURLSchemeTask(WKWebView webView, @Mapped(ObjCObjectMapper.class) Object urlSchemeTask);
+    void webViewStartURLSchemeTask(WKWebView webView, @Mapped(ObjCObjectMapper.class) WKURLSchemeTask urlSchemeTask);
 
     @Generated
     @Selector("webView:stopURLSchemeTask:")
-    void webViewStopURLSchemeTask(WKWebView webView, @Mapped(ObjCObjectMapper.class) Object urlSchemeTask);
+    void webViewStopURLSchemeTask(WKWebView webView, @Mapped(ObjCObjectMapper.class) WKURLSchemeTask urlSchemeTask);
 }

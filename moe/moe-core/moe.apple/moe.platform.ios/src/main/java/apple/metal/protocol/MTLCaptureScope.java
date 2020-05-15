@@ -21,12 +21,12 @@ public interface MTLCaptureScope {
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
-    Object commandQueue();
+    MTLCommandQueue commandQueue();
 
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("endScope")

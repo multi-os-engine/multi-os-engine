@@ -2,6 +2,8 @@ package apple.metalperformanceshaders.protocol;
 
 import apple.foundation.NSCoder;
 import apple.foundation.protocol.NSCopying;
+import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLDevice;
 import apple.metalperformanceshaders.MPSCNNBatchNormalizationState;
 import apple.metalperformanceshaders.MPSCNNNormalizationGammaAndBetaState;
 import apple.metalperformanceshaders.MPSCNNNormalizationMeanAndVarianceState;
@@ -35,7 +37,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     @IsOptional
     @Selector("copyWithZone:device:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) Object device) {
+    default Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,7 +108,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     @IsOptional
     @Selector("updateGammaAndBetaWithCommandBuffer:batchNormalizationState:")
     default MPSCNNNormalizationGammaAndBetaState updateGammaAndBetaWithCommandBufferBatchNormalizationState(
-            @Mapped(ObjCObjectMapper.class) Object commandBuffer,
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
             MPSCNNBatchNormalizationState batchNormalizationState) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,7 +125,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     @IsOptional
     @Selector("updateMeanAndVarianceWithCommandBuffer:batchNormalizationState:")
     default MPSCNNNormalizationMeanAndVarianceState updateMeanAndVarianceWithCommandBufferBatchNormalizationState(
-            @Mapped(ObjCObjectMapper.class) Object commandBuffer,
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
             MPSCNNBatchNormalizationState batchNormalizationState) {
         throw new java.lang.UnsupportedOperationException();
     }

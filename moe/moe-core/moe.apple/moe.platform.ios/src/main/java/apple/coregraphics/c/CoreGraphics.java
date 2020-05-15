@@ -2546,4 +2546,12 @@ public final class CoreGraphics {
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFTagPropertyLanguageText();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_2020_PQ();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceDisplayP3_PQ();
 }

@@ -2,6 +2,7 @@ package apple.uikit.protocol;
 
 import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
+import apple.foundation.protocol.NSItemProviderReading;
 import apple.uikit.UIDragItem;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.ByValue;
@@ -25,7 +26,7 @@ public interface UIDragDropSession {
 
     @Generated
     @Selector("canLoadObjectsOfClass:")
-    boolean canLoadObjectsOfClass(@Mapped(ObjCObjectMapper.class) Object aClass);
+    boolean canLoadObjectsOfClass(@Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass);
 
     @Generated
     @Selector("hasItemsConformingToTypeIdentifiers:")

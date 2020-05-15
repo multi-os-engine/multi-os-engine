@@ -138,7 +138,7 @@ public interface UITextInput extends UIKeyInput {
     @Generated
     @Selector("inputDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    Object inputDelegate();
+    UITextInputDelegate inputDelegate();
 
     @Generated
     @IsOptional
@@ -222,7 +222,7 @@ public interface UITextInput extends UIKeyInput {
 
     @Generated
     @Selector("setInputDelegate:")
-    void setInputDelegate(@Mapped(ObjCObjectMapper.class) Object value);
+    void setInputDelegate(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
 
     @Generated
     @Selector("setMarkedText:selectedRange:")
@@ -275,7 +275,7 @@ public interface UITextInput extends UIKeyInput {
     @Generated
     @Selector("tokenizer")
     @MappedReturn(ObjCObjectMapper.class)
-    Object tokenizer();
+    UITextInputTokenizer tokenizer();
 
     @Generated
     @Selector("unmarkText")

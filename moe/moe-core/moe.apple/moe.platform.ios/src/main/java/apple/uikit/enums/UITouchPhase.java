@@ -30,4 +30,8 @@ public final class UITouchPhase {
     @Generated
     private UITouchPhase() {
     }
+
+    @Generated @NInt public static final long RegionEntered = 0x0000000000000005L;
+    @Generated @NInt public static final long RegionMoved = 0x0000000000000006L;
+    @Generated @NInt public static final long RegionExited = 0x0000000000000007L;
 }

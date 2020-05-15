@@ -47,7 +47,7 @@ public interface MTLTexture extends MTLResource {
     @Generated
     @Selector("buffer")
     @MappedReturn(ObjCObjectMapper.class)
-    Object buffer();
+    MTLBuffer buffer();
 
     @Generated
     @Selector("bufferBytesPerRow")
@@ -91,12 +91,12 @@ public interface MTLTexture extends MTLResource {
     @Generated
     @Selector("newTextureViewWithPixelFormat:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureViewWithPixelFormat(@NUInt long pixelFormat);
+    MTLTexture newTextureViewWithPixelFormat(@NUInt long pixelFormat);
 
     @Generated
     @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureViewWithPixelFormatTextureTypeLevelsSlices(@NUInt long pixelFormat, @NUInt long textureType,
+    MTLTexture newTextureViewWithPixelFormatTextureTypeLevelsSlices(@NUInt long pixelFormat, @NUInt long textureType,
             @ByValue NSRange levelRange, @ByValue NSRange sliceRange);
 
     @Generated
@@ -112,7 +112,7 @@ public interface MTLTexture extends MTLResource {
     @Generated
     @Selector("parentTexture")
     @MappedReturn(ObjCObjectMapper.class)
-    Object parentTexture();
+    MTLTexture parentTexture();
 
     @Generated
     @Selector("pixelFormat")
@@ -132,7 +132,7 @@ public interface MTLTexture extends MTLResource {
     @Generated
     @Selector("rootResource")
     @MappedReturn(ObjCObjectMapper.class)
-    Object rootResource();
+    MTLResource rootResource();
 
     @Generated
     @Selector("sampleCount")
@@ -187,8 +187,9 @@ public interface MTLTexture extends MTLResource {
     @Generated
     @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureViewWithPixelFormatTextureTypeLevelsSlicesSwizzle(@NUInt long pixelFormat, @NUInt long textureType,
-            @ByValue NSRange levelRange, @ByValue NSRange sliceRange, @ByValue MTLTextureSwizzleChannels swizzle);
+    MTLTexture newTextureViewWithPixelFormatTextureTypeLevelsSlicesSwizzle(@NUInt long pixelFormat,
+            @NUInt long textureType, @ByValue NSRange levelRange, @ByValue NSRange sliceRange,
+            @ByValue MTLTextureSwizzleChannels swizzle);
 
     @Generated
     @Selector("swizzle")

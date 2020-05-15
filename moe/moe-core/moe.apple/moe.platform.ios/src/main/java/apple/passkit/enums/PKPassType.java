@@ -30,4 +30,6 @@ public final class PKPassType {
     @Generated
     private PKPassType() {
     }
+
+    @Generated @NUInt public static final long SecureElement = 0x0000000000000001L;
 }

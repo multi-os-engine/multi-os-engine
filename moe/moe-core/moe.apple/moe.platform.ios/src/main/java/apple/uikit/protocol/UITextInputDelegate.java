@@ -32,17 +32,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UITextInputDelegate {
     @Generated
     @Selector("selectionDidChange:")
-    void selectionDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    void selectionDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("selectionWillChange:")
-    void selectionWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    void selectionWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("textDidChange:")
-    void textDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    void textDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("textWillChange:")
-    void textWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    void textWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 }

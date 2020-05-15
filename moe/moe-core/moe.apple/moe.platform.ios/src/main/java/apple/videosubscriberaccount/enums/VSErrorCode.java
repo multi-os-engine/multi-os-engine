@@ -33,4 +33,5 @@ public final class VSErrorCode {
     }
 
     @Generated @NInt public static final long Rejected = 0x0000000000000006L;
+    @Generated @NInt public static final long Unsupported = 0x0000000000000007L;
 }

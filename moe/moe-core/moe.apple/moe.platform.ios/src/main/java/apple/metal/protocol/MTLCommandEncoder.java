@@ -33,7 +33,7 @@ public interface MTLCommandEncoder {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("endEncoding")

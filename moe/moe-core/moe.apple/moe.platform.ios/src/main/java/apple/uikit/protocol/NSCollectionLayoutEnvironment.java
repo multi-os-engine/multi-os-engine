@@ -18,7 +18,7 @@ public interface NSCollectionLayoutEnvironment {
     @Generated
     @Selector("container")
     @MappedReturn(ObjCObjectMapper.class)
-    Object container();
+    NSCollectionLayoutContainer container();
 
     @Generated
     @Selector("traitCollection")

@@ -343,7 +343,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:shouldSpringLoadRowAtIndexPath:withContext:")
     default boolean tableViewShouldSpringLoadRowAtIndexPathWithContext(UITableView tableView, NSIndexPath indexPath,
-            @Mapped(ObjCObjectMapper.class) Object context) {
+            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -399,7 +399,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("tableView:willPerformPreviewActionForMenuWithConfiguration:animator:")
     default void tableViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UITableView tableView,
-            UIContextMenuConfiguration configuration, @Mapped(ObjCObjectMapper.class) Object animator) {
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 

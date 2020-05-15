@@ -43,7 +43,7 @@ public interface MTLFunction {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("functionConstantsDictionary")
@@ -87,11 +87,11 @@ public interface MTLFunction {
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newArgumentEncoderWithBufferIndex(@NUInt long bufferIndex);
+    MTLArgumentEncoder newArgumentEncoderWithBufferIndex(@NUInt long bufferIndex);
 
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:reflection:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newArgumentEncoderWithBufferIndexReflection(@NUInt long bufferIndex,
+    MTLArgumentEncoder newArgumentEncoderWithBufferIndexReflection(@NUInt long bufferIndex,
             @ReferenceInfo(type = MTLArgument.class) Ptr<MTLArgument> reflection);
 }

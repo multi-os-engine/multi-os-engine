@@ -2,6 +2,7 @@ package apple.coreml;
 
 import apple.NSObject;
 import apple.coreml.protocol.MLBatchProvider;
+import apple.coreml.protocol.MLFeatureProvider;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
@@ -98,7 +99,7 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
     @Generated
     @Selector("featuresAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object featuresAtIndex(@NInt long index);
+    public native MLFeatureProvider featuresAtIndex(@NInt long index);
 
     @Generated
     @Selector("hash")

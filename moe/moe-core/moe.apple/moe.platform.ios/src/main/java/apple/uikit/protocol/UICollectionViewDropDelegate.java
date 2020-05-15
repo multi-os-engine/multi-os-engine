@@ -23,7 +23,7 @@ public interface UICollectionViewDropDelegate {
     @IsOptional
     @Selector("collectionView:canHandleDropSession:")
     default boolean collectionViewCanHandleDropSession(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -39,7 +39,7 @@ public interface UICollectionViewDropDelegate {
     @IsOptional
     @Selector("collectionView:dropSessionDidEnd:")
     default void collectionViewDropSessionDidEnd(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -47,7 +47,7 @@ public interface UICollectionViewDropDelegate {
     @IsOptional
     @Selector("collectionView:dropSessionDidEnter:")
     default void collectionViewDropSessionDidEnter(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,7 +55,7 @@ public interface UICollectionViewDropDelegate {
     @IsOptional
     @Selector("collectionView:dropSessionDidExit:")
     default void collectionViewDropSessionDidExit(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +63,7 @@ public interface UICollectionViewDropDelegate {
     @IsOptional
     @Selector("collectionView:dropSessionDidUpdate:withDestinationIndexPath:")
     default UICollectionViewDropProposal collectionViewDropSessionDidUpdateWithDestinationIndexPath(
-            UICollectionView collectionView, @Mapped(ObjCObjectMapper.class) Object session,
+            UICollectionView collectionView, @Mapped(ObjCObjectMapper.class) UIDropSession session,
             NSIndexPath destinationIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -71,5 +71,5 @@ public interface UICollectionViewDropDelegate {
     @Generated
     @Selector("collectionView:performDropWithCoordinator:")
     void collectionViewPerformDropWithCoordinator(UICollectionView collectionView,
-            @Mapped(ObjCObjectMapper.class) Object coordinator);
+            @Mapped(ObjCObjectMapper.class) UICollectionViewDropCoordinator coordinator);
 }

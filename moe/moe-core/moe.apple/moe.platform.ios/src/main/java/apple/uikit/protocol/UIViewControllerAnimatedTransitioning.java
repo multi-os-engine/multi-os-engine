@@ -34,7 +34,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UIViewControllerAnimatedTransitioning {
     @Generated
     @Selector("animateTransition:")
-    void animateTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    void animateTransition(@Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @IsOptional
@@ -47,11 +47,12 @@ public interface UIViewControllerAnimatedTransitioning {
     @IsOptional
     @Selector("interruptibleAnimatorForTransition:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object interruptibleAnimatorForTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext) {
+    default UIViewImplicitlyAnimating interruptibleAnimatorForTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("transitionDuration:")
-    double transitionDuration(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    double transitionDuration(@Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 }

@@ -24,7 +24,7 @@ public interface UILargeContentViewerInteractionDelegate {
     @IsOptional
     @Selector("largeContentViewerInteraction:didEndOnItem:atPoint:")
     default void largeContentViewerInteractionDidEndOnItemAtPoint(UILargeContentViewerInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object item, @ByValue CGPoint point) {
+            @Mapped(ObjCObjectMapper.class) UILargeContentViewerItem item, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -32,8 +32,8 @@ public interface UILargeContentViewerInteractionDelegate {
     @IsOptional
     @Selector("largeContentViewerInteraction:itemAtPoint:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object largeContentViewerInteractionItemAtPoint(UILargeContentViewerInteraction interaction,
-            @ByValue CGPoint point) {
+    default UILargeContentViewerItem largeContentViewerInteractionItemAtPoint(
+            UILargeContentViewerInteraction interaction, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 

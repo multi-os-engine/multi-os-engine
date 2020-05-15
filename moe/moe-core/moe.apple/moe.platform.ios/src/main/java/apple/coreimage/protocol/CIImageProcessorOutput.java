@@ -19,6 +19,8 @@ package apple.coreimage.protocol;
 import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.coregraphics.struct.CGRect;
 import apple.corevideo.opaque.CVBufferRef;
+import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLTexture;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -52,12 +54,12 @@ public interface CIImageProcessorOutput {
     @Generated
     @Selector("metalCommandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
-    Object metalCommandBuffer();
+    MTLCommandBuffer metalCommandBuffer();
 
     @Generated
     @Selector("metalTexture")
     @MappedReturn(ObjCObjectMapper.class)
-    Object metalTexture();
+    MTLTexture metalTexture();
 
     @Generated
     @Selector("pixelBuffer")

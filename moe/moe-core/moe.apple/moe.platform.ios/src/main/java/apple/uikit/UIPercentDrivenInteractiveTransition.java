@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UITimingCurveProvider;
+import apple.uikit.protocol.UIViewControllerContextTransitioning;
 import apple.uikit.protocol.UIViewControllerInteractiveTransitioning;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -207,7 +208,8 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
 
     @Generated
     @Selector("startInteractiveTransition:")
-    public native void startInteractiveTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    public native void startInteractiveTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @Selector("timingCurve")

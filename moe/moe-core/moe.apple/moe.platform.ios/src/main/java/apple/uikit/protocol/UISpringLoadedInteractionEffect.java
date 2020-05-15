@@ -18,5 +18,5 @@ public interface UISpringLoadedInteractionEffect {
     @Generated
     @Selector("interaction:didChangeWithContext:")
     void interactionDidChangeWithContext(UISpringLoadedInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object context);
+            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 }

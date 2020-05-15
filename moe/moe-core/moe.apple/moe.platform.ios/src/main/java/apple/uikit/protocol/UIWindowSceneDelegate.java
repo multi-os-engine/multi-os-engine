@@ -40,8 +40,8 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
     @IsOptional
     @Selector("windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:")
     default void windowSceneDidUpdateCoordinateSpaceInterfaceOrientationTraitCollection(UIWindowScene windowScene,
-            @Mapped(ObjCObjectMapper.class) Object previousCoordinateSpace, @NInt long previousInterfaceOrientation,
-            UITraitCollection previousTraitCollection) {
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace previousCoordinateSpace,
+            @NInt long previousInterfaceOrientation, UITraitCollection previousTraitCollection) {
         throw new java.lang.UnsupportedOperationException();
     }
 

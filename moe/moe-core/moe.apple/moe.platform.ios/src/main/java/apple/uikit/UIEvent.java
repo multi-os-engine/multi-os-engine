@@ -191,4 +191,14 @@ public class UIEvent extends NSObject {
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Selector("buttonMask")
+    @NInt
+    public native long buttonMask();
+
+    @Generated
+    @Selector("modifierFlags")
+    @NInt
+    public native long modifierFlags();
 }

@@ -22,12 +22,12 @@ public interface UITextDroppable extends UITextInput, UITextPasteConfigurationSu
 
     @Generated
     @Selector("setTextDropDelegate:")
-    void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) Object value);
+    void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
 
     @Generated
     @Selector("textDropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    Object textDropDelegate();
+    UITextDropDelegate textDropDelegate();
 
     @Generated
     @Selector("textDropInteraction")

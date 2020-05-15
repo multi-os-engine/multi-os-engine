@@ -57,4 +57,5 @@ public final class Enums {
     }
 
     @Generated public static final int kVTVideoDecoderRemovedErr = 0xFFFFBAE6;
+    @Generated public static final int kVTSessionMalfunctionErr = 0xFFFFBAE5;
 }

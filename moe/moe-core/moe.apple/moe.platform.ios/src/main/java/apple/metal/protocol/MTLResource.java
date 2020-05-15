@@ -39,12 +39,12 @@ public interface MTLResource {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("heap")
     @MappedReturn(ObjCObjectMapper.class)
-    Object heap();
+    MTLHeap heap();
 
     @Generated
     @Selector("isAliasable")

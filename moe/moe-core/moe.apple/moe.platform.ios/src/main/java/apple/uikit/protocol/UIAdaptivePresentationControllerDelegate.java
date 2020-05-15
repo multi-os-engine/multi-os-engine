@@ -65,7 +65,7 @@ public interface UIAdaptivePresentationControllerDelegate {
     @Selector("presentationController:willPresentWithAdaptiveStyle:transitionCoordinator:")
     default void presentationControllerWillPresentWithAdaptiveStyleTransitionCoordinator(
             UIPresentationController presentationController, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) Object transitionCoordinator) {
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator transitionCoordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 

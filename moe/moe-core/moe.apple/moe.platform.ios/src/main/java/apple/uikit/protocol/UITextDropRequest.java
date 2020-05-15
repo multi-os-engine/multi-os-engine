@@ -23,7 +23,7 @@ public interface UITextDropRequest {
     @Generated
     @Selector("dropSession")
     @MappedReturn(ObjCObjectMapper.class)
-    Object dropSession();
+    UIDropSession dropSession();
 
     @Generated
     @Selector("isSameView")

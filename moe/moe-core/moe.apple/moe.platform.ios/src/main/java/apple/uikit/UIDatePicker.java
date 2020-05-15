@@ -27,6 +27,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSTimeZone;
 import apple.foundation.protocol.NSCoding;
+import apple.uikit.protocol.UIAppearanceContainer;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -133,7 +134,7 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -146,8 +147,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -368,7 +369,7 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -384,7 +385,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -494,4 +496,18 @@ public class UIDatePicker extends UIControl implements NSCoding {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("datePickerStyle")
+    @NInt
+    public native long datePickerStyle();
+
+    @Generated
+    @Selector("preferredDatePickerStyle")
+    @NInt
+    public native long preferredDatePickerStyle();
+
+    @Generated
+    @Selector("setPreferredDatePickerStyle:")
+    public native void setPreferredDatePickerStyle(@NInt long value);
 }

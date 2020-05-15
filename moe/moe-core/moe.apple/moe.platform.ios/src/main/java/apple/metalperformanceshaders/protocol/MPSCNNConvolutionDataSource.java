@@ -1,6 +1,8 @@
 package apple.metalperformanceshaders.protocol;
 
 import apple.foundation.protocol.NSCopying;
+import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLDevice;
 import apple.metalperformanceshaders.MPSCNNConvolutionDescriptor;
 import apple.metalperformanceshaders.MPSCNNConvolutionGradientState;
 import apple.metalperformanceshaders.MPSCNNConvolutionWeightsAndBiasesState;
@@ -63,7 +65,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     @IsOptional
     @Selector("copyWithZone:device:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) Object device) {
+    default Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,8 +73,8 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     @IsOptional
     @Selector("updateWithCommandBuffer:gradientState:sourceState:")
     default MPSCNNConvolutionWeightsAndBiasesState updateWithCommandBufferGradientStateSourceState(
-            @Mapped(ObjCObjectMapper.class) Object commandBuffer, MPSCNNConvolutionGradientState gradientState,
-            MPSCNNConvolutionWeightsAndBiasesState sourceState) {
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            MPSCNNConvolutionGradientState gradientState, MPSCNNConvolutionWeightsAndBiasesState sourceState) {
         throw new java.lang.UnsupportedOperationException();
     }
 

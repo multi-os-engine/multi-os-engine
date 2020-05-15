@@ -20,6 +20,9 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.gameplaykit.protocol.GKGameModel;
+import apple.gameplaykit.protocol.GKGameModelUpdate;
+import apple.gameplaykit.protocol.GKRandom;
 import apple.gameplaykit.protocol.GKStrategist;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -154,7 +157,7 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Generated
     @Selector("bestMoveForActivePlayer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object bestMoveForActivePlayer();
+    public native GKGameModelUpdate bestMoveForActivePlayer();
 
     @Generated
     @Selector("budget")
@@ -169,7 +172,7 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Generated
     @Selector("gameModel")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object gameModel();
+    public native GKGameModel gameModel();
 
     @Generated
     @Selector("init")
@@ -178,7 +181,7 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Generated
     @Selector("randomSource")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object randomSource();
+    public native GKRandom randomSource();
 
     @Generated
     @Selector("setBudget:")
@@ -190,9 +193,9 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
 
     @Generated
     @Selector("setGameModel:")
-    public native void setGameModel(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel value);
 
     @Generated
     @Selector("setRandomSource:")
-    public native void setRandomSource(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setRandomSource(@Mapped(ObjCObjectMapper.class) GKRandom value);
 }

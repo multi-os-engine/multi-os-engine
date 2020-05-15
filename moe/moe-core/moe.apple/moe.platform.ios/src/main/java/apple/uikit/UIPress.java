@@ -185,4 +185,8 @@ public class UIPress extends NSObject {
     @Generated
     @Selector("window")
     public native UIWindow window();
+
+    @Generated
+    @Selector("key")
+    public native UIKey key();
 }

@@ -17,6 +17,7 @@ limitations under the License.
 package apple.quartzcore.protocol;
 
 import apple.metal.protocol.MTLDrawable;
+import apple.metal.protocol.MTLTexture;
 import apple.quartzcore.CAMetalLayer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -39,5 +40,5 @@ public interface CAMetalDrawable extends MTLDrawable {
     @Generated
     @Selector("texture")
     @MappedReturn(ObjCObjectMapper.class)
-    Object texture();
+    MTLTexture texture();
 }

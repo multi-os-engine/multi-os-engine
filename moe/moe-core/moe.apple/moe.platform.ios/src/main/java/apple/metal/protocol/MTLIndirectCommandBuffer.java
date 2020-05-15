@@ -20,12 +20,12 @@ public interface MTLIndirectCommandBuffer extends MTLResource {
     @Generated
     @Selector("indirectComputeCommandAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object indirectComputeCommandAtIndex(@NUInt long commandIndex);
+    MTLIndirectComputeCommand indirectComputeCommandAtIndex(@NUInt long commandIndex);
 
     @Generated
     @Selector("indirectRenderCommandAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object indirectRenderCommandAtIndex(@NUInt long commandIndex);
+    MTLIndirectRenderCommand indirectRenderCommandAtIndex(@NUInt long commandIndex);
 
     @Generated
     @Selector("resetWithRange:")

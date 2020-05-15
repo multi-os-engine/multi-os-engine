@@ -243,4 +243,18 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("verticalAccuracy")
     public native double verticalAccuracy();
+
+    @Generated
+    @Selector("courseAccuracy")
+    public native double courseAccuracy();
+
+    @Generated
+    @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:")
+    public native CLLocation initWithCoordinateAltitudeHorizontalAccuracyVerticalAccuracyCourseCourseAccuracySpeedSpeedAccuracyTimestamp(
+            @ByValue CLLocationCoordinate2D coordinate, double altitude, double hAccuracy, double vAccuracy,
+            double course, double courseAccuracy, double speed, double speedAccuracy, NSDate timestamp);
+
+    @Generated
+    @Selector("speedAccuracy")
+    public native double speedAccuracy();
 }

@@ -132,7 +132,7 @@ public interface MKMapViewDelegate {
     @IsOptional
     @Selector("mapView:rendererForOverlay:")
     default MKOverlayRenderer mapViewRendererForOverlay(MKMapView mapView,
-            @Mapped(ObjCObjectMapper.class) Object overlay) {
+            @Mapped(ObjCObjectMapper.class) MKOverlay overlay) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,14 +140,14 @@ public interface MKMapViewDelegate {
     @IsOptional
     @Selector("mapView:viewForAnnotation:")
     default MKAnnotationView mapViewViewForAnnotation(MKMapView mapView,
-            @Mapped(ObjCObjectMapper.class) Object annotation) {
+            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("mapView:viewForOverlay:")
-    default MKOverlayView mapViewViewForOverlay(MKMapView mapView, @Mapped(ObjCObjectMapper.class) Object overlay) {
+    default MKOverlayView mapViewViewForOverlay(MKMapView mapView, @Mapped(ObjCObjectMapper.class) MKOverlay overlay) {
         throw new java.lang.UnsupportedOperationException();
     }
 

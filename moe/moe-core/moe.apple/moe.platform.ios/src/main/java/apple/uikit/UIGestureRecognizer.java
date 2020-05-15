@@ -355,4 +355,18 @@ public class UIGestureRecognizer extends NSObject {
     @Generated
     @Selector("touchesMoved:withEvent:")
     public native void touchesMovedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
+
+    @Generated
+    @Selector("buttonMask")
+    @NInt
+    public native long buttonMask();
+
+    @Generated
+    @Selector("modifierFlags")
+    @NInt
+    public native long modifierFlags();
+
+    @Generated
+    @Selector("shouldReceiveEvent:")
+    public native boolean shouldReceiveEvent(UIEvent event);
 }

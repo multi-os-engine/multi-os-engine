@@ -27,6 +27,7 @@ import apple.foundation.protocol.NSSecureCoding;
 import apple.modelio.MDLMaterial;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import apple.scenekit.protocol.SCNShadable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -176,7 +177,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("ambient")

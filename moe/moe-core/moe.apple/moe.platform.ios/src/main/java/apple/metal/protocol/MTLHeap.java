@@ -41,7 +41,7 @@ public interface MTLHeap {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("label")
@@ -55,12 +55,12 @@ public interface MTLHeap {
     @Generated
     @Selector("newBufferWithLength:options:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferWithLengthOptions(@NUInt long length, @NUInt long options);
+    MTLBuffer newBufferWithLengthOptions(@NUInt long length, @NUInt long options);
 
     @Generated
     @Selector("newTextureWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureWithDescriptor(MTLTextureDescriptor desc);
+    MTLTexture newTextureWithDescriptor(MTLTextureDescriptor desc);
 
     @Generated
     @Selector("setLabel:")
@@ -99,12 +99,12 @@ public interface MTLHeap {
     @Generated
     @Selector("newBufferWithLength:options:offset:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferWithLengthOptionsOffset(@NUInt long length, @NUInt long options, @NUInt long offset);
+    MTLBuffer newBufferWithLengthOptionsOffset(@NUInt long length, @NUInt long options, @NUInt long offset);
 
     @Generated
     @Selector("newTextureWithDescriptor:offset:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureWithDescriptorOffset(MTLTextureDescriptor descriptor, @NUInt long offset);
+    MTLTexture newTextureWithDescriptorOffset(MTLTextureDescriptor descriptor, @NUInt long offset);
 
     @Generated
     @Selector("resourceOptions")

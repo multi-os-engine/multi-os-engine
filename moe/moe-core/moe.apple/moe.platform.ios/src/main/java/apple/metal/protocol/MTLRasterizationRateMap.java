@@ -22,12 +22,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLRasterizationRateMap {
     @Generated
     @Selector("copyParameterDataToBuffer:offset:")
-    void copyParameterDataToBufferOffset(@Mapped(ObjCObjectMapper.class) Object buffer, @NUInt long offset);
+    void copyParameterDataToBufferOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
 
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("label")

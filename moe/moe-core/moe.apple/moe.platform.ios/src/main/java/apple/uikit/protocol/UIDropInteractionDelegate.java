@@ -23,7 +23,7 @@ public interface UIDropInteractionDelegate {
     @IsOptional
     @Selector("dropInteraction:canHandleSession:")
     default boolean dropInteractionCanHandleSession(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -31,7 +31,7 @@ public interface UIDropInteractionDelegate {
     @IsOptional
     @Selector("dropInteraction:concludeDrop:")
     default void dropInteractionConcludeDrop(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -39,7 +39,7 @@ public interface UIDropInteractionDelegate {
     @IsOptional
     @Selector("dropInteraction:item:willAnimateDropWithAnimator:")
     default void dropInteractionItemWillAnimateDropWithAnimator(UIDropInteraction interaction, UIDragItem item,
-            @Mapped(ObjCObjectMapper.class) Object animator) {
+            @Mapped(ObjCObjectMapper.class) UIDragAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -47,7 +47,7 @@ public interface UIDropInteractionDelegate {
     @IsOptional
     @Selector("dropInteraction:performDrop:")
     default void dropInteractionPerformDrop(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +63,7 @@ public interface UIDropInteractionDelegate {
     @IsOptional
     @Selector("dropInteraction:sessionDidEnd:")
     default void dropInteractionSessionDidEnd(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,7 +71,7 @@ public interface UIDropInteractionDelegate {
     @IsOptional
     @Selector("dropInteraction:sessionDidEnter:")
     default void dropInteractionSessionDidEnter(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,7 +79,7 @@ public interface UIDropInteractionDelegate {
     @IsOptional
     @Selector("dropInteraction:sessionDidExit:")
     default void dropInteractionSessionDidExit(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -87,7 +87,7 @@ public interface UIDropInteractionDelegate {
     @IsOptional
     @Selector("dropInteraction:sessionDidUpdate:")
     default UIDropProposal dropInteractionSessionDidUpdate(UIDropInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

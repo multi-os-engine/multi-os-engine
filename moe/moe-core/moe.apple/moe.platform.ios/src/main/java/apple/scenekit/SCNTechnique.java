@@ -27,6 +27,7 @@ import apple.foundation.protocol.NSSecureCoding;
 import apple.metal.protocol.MTLLibrary;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -174,7 +175,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("animationForKey:")

@@ -88,28 +88,28 @@ public interface MTLDevice {
     @Generated
     @Selector("newBufferWithBytes:length:options:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferWithBytesLengthOptions(ConstVoidPtr pointer, @NUInt long length, @NUInt long options);
+    MTLBuffer newBufferWithBytesLengthOptions(ConstVoidPtr pointer, @NUInt long length, @NUInt long options);
 
     @Generated
     @Selector("newBufferWithBytesNoCopy:length:options:deallocator:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr pointer, @NUInt long length, @NUInt long options,
+    MTLBuffer newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr pointer, @NUInt long length, @NUInt long options,
             @ObjCBlock(name = "call_newBufferWithBytesNoCopyLengthOptionsDeallocator") Block_newBufferWithBytesNoCopyLengthOptionsDeallocator deallocator);
 
     @Generated
     @Selector("newBufferWithLength:options:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newBufferWithLengthOptions(@NUInt long length, @NUInt long options);
+    MTLBuffer newBufferWithLengthOptions(@NUInt long length, @NUInt long options);
 
     @Generated
     @Selector("newCommandQueue")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newCommandQueue();
+    MTLCommandQueue newCommandQueue();
 
     @Generated
     @Selector("newCommandQueueWithMaxCommandBufferCount:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newCommandQueueWithMaxCommandBufferCount(@NUInt long maxCommandBufferCount);
+    MTLCommandQueue newCommandQueueWithMaxCommandBufferCount(@NUInt long maxCommandBufferCount);
 
     @Generated
     @Selector("newComputePipelineStateWithDescriptor:options:completionHandler:")
@@ -120,70 +120,73 @@ public interface MTLDevice {
     @Generated
     @Selector("newComputePipelineStateWithDescriptor:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newComputePipelineStateWithDescriptorOptionsReflectionError(MTLComputePipelineDescriptor descriptor,
-            @NUInt long options,
+    MTLComputePipelineState newComputePipelineStateWithDescriptorOptionsReflectionError(
+            MTLComputePipelineDescriptor descriptor, @NUInt long options,
             @ReferenceInfo(type = MTLComputePipelineReflection.class) Ptr<MTLComputePipelineReflection> reflection,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newComputePipelineStateWithFunction:completionHandler:")
-    void newComputePipelineStateWithFunctionCompletionHandler(@Mapped(ObjCObjectMapper.class) Object computeFunction,
+    void newComputePipelineStateWithFunctionCompletionHandler(
+            @Mapped(ObjCObjectMapper.class) MTLFunction computeFunction,
             @ObjCBlock(name = "call_newComputePipelineStateWithFunctionCompletionHandler") Block_newComputePipelineStateWithFunctionCompletionHandler completionHandler);
 
     @Generated
     @Selector("newComputePipelineStateWithFunction:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newComputePipelineStateWithFunctionError(@Mapped(ObjCObjectMapper.class) Object computeFunction,
+    MTLComputePipelineState newComputePipelineStateWithFunctionError(
+            @Mapped(ObjCObjectMapper.class) MTLFunction computeFunction,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newComputePipelineStateWithFunction:options:completionHandler:")
     void newComputePipelineStateWithFunctionOptionsCompletionHandler(
-            @Mapped(ObjCObjectMapper.class) Object computeFunction, @NUInt long options,
+            @Mapped(ObjCObjectMapper.class) MTLFunction computeFunction, @NUInt long options,
             @ObjCBlock(name = "call_newComputePipelineStateWithFunctionOptionsCompletionHandler") Block_newComputePipelineStateWithFunctionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("newComputePipelineStateWithFunction:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newComputePipelineStateWithFunctionOptionsReflectionError(
-            @Mapped(ObjCObjectMapper.class) Object computeFunction, @NUInt long options,
+    MTLComputePipelineState newComputePipelineStateWithFunctionOptionsReflectionError(
+            @Mapped(ObjCObjectMapper.class) MTLFunction computeFunction, @NUInt long options,
             @ReferenceInfo(type = MTLComputePipelineReflection.class) Ptr<MTLComputePipelineReflection> reflection,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newDefaultLibrary")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newDefaultLibrary();
+    MTLLibrary newDefaultLibrary();
 
     @Generated
     @Selector("newDefaultLibraryWithBundle:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newDefaultLibraryWithBundleError(NSBundle bundle, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MTLLibrary newDefaultLibraryWithBundleError(NSBundle bundle,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newDepthStencilStateWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newDepthStencilStateWithDescriptor(MTLDepthStencilDescriptor descriptor);
+    MTLDepthStencilState newDepthStencilStateWithDescriptor(MTLDepthStencilDescriptor descriptor);
 
     @Generated
     @Selector("newFence")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newFence();
+    MTLFence newFence();
 
     @Generated
     @Selector("newHeapWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newHeapWithDescriptor(MTLHeapDescriptor descriptor);
+    MTLHeap newHeapWithDescriptor(MTLHeapDescriptor descriptor);
 
     @Generated
     @Selector("newLibraryWithData:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newLibraryWithDataError(NSObject data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MTLLibrary newLibraryWithDataError(NSObject data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newLibraryWithFile:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newLibraryWithFileError(String filepath, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MTLLibrary newLibraryWithFileError(String filepath, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newLibraryWithSource:options:completionHandler:")
@@ -193,7 +196,7 @@ public interface MTLDevice {
     @Generated
     @Selector("newLibraryWithSource:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newLibraryWithSourceOptionsError(String source, MTLCompileOptions options,
+    MTLLibrary newLibraryWithSourceOptionsError(String source, MTLCompileOptions options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
@@ -204,7 +207,7 @@ public interface MTLDevice {
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newRenderPipelineStateWithDescriptorError(MTLRenderPipelineDescriptor descriptor,
+    MTLRenderPipelineState newRenderPipelineStateWithDescriptorError(MTLRenderPipelineDescriptor descriptor,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
@@ -216,20 +219,20 @@ public interface MTLDevice {
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newRenderPipelineStateWithDescriptorOptionsReflectionError(MTLRenderPipelineDescriptor descriptor,
-            @NUInt long options,
+    MTLRenderPipelineState newRenderPipelineStateWithDescriptorOptionsReflectionError(
+            MTLRenderPipelineDescriptor descriptor, @NUInt long options,
             @ReferenceInfo(type = MTLRenderPipelineReflection.class) Ptr<MTLRenderPipelineReflection> reflection,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newSamplerStateWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newSamplerStateWithDescriptor(MTLSamplerDescriptor descriptor);
+    MTLSamplerState newSamplerStateWithDescriptor(MTLSamplerDescriptor descriptor);
 
     @Generated
     @Selector("newTextureWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureWithDescriptor(MTLTextureDescriptor descriptor);
+    MTLTexture newTextureWithDescriptor(MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("supportsFeatureSet:")
@@ -331,12 +334,12 @@ public interface MTLDevice {
     @Generated
     @Selector("newArgumentEncoderWithArguments:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newArgumentEncoderWithArguments(NSArray<? extends MTLArgumentDescriptor> arguments);
+    MTLArgumentEncoder newArgumentEncoderWithArguments(NSArray<? extends MTLArgumentDescriptor> arguments);
 
     @Generated
     @Selector("newLibraryWithURL:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newLibraryWithURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MTLLibrary newLibraryWithURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newRenderPipelineStateWithTileDescriptor:options:completionHandler:")
@@ -355,15 +358,15 @@ public interface MTLDevice {
     @Generated
     @Selector("newRenderPipelineStateWithTileDescriptor:options:reflection:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newRenderPipelineStateWithTileDescriptorOptionsReflectionError(MTLTileRenderPipelineDescriptor descriptor,
-            @NUInt long options,
+    MTLRenderPipelineState newRenderPipelineStateWithTileDescriptorOptionsReflectionError(
+            MTLTileRenderPipelineDescriptor descriptor, @NUInt long options,
             @ReferenceInfo(type = MTLRenderPipelineReflection.class) Ptr<MTLRenderPipelineReflection> reflection,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("newTextureWithDescriptor:iosurface:plane:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureWithDescriptorIosurfacePlane(MTLTextureDescriptor descriptor, IOSurfaceRef iosurface,
+    MTLTexture newTextureWithDescriptorIosurfacePlane(MTLTextureDescriptor descriptor, IOSurfaceRef iosurface,
             @NUInt long plane);
 
     @Generated
@@ -417,38 +420,38 @@ public interface MTLDevice {
     @Generated
     @Selector("newEvent")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newEvent();
+    MTLEvent newEvent();
 
     @Generated
     @Selector("newIndirectCommandBufferWithDescriptor:maxCommandCount:options:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newIndirectCommandBufferWithDescriptorMaxCommandCountOptions(MTLIndirectCommandBufferDescriptor descriptor,
-            @NUInt long maxCount, @NUInt long options);
+    MTLIndirectCommandBuffer newIndirectCommandBufferWithDescriptorMaxCommandCountOptions(
+            MTLIndirectCommandBufferDescriptor descriptor, @NUInt long maxCount, @NUInt long options);
 
     @Generated
     @Selector("newRasterizationRateMapWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newRasterizationRateMapWithDescriptor(MTLRasterizationRateMapDescriptor descriptor);
+    MTLRasterizationRateMap newRasterizationRateMapWithDescriptor(MTLRasterizationRateMapDescriptor descriptor);
 
     @Generated
     @Selector("newSharedEvent")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newSharedEvent();
+    MTLSharedEvent newSharedEvent();
 
     @Generated
     @Selector("newSharedEventWithHandle:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newSharedEventWithHandle(MTLSharedEventHandle sharedEventHandle);
+    MTLSharedEvent newSharedEventWithHandle(MTLSharedEventHandle sharedEventHandle);
 
     @Generated
     @Selector("newSharedTextureWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newSharedTextureWithDescriptor(MTLTextureDescriptor descriptor);
+    MTLTexture newSharedTextureWithDescriptor(MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("newSharedTextureWithHandle:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newSharedTextureWithHandle(MTLSharedTextureHandle sharedHandle);
+    MTLTexture newSharedTextureWithHandle(MTLSharedTextureHandle sharedHandle);
 
     @Generated
     @Selector("sparseTileSizeInBytes")

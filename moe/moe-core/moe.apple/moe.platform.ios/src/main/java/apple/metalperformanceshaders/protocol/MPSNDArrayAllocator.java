@@ -2,6 +2,7 @@ package apple.metalperformanceshaders.protocol;
 
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.metal.protocol.MTLCommandBuffer;
 import apple.metalperformanceshaders.MPSKernel;
 import apple.metalperformanceshaders.MPSNDArray;
 import apple.metalperformanceshaders.MPSNDArrayDescriptor;
@@ -21,6 +22,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MPSNDArrayAllocator extends NSSecureCoding, NSCopying {
     @Generated
     @Selector("arrayForCommandBuffer:arrayDescriptor:kernel:")
-    MPSNDArray arrayForCommandBufferArrayDescriptorKernel(@Mapped(ObjCObjectMapper.class) Object cmdBuf,
+    MPSNDArray arrayForCommandBufferArrayDescriptorKernel(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
             MPSNDArrayDescriptor descriptor, MPSKernel kernel);
 }

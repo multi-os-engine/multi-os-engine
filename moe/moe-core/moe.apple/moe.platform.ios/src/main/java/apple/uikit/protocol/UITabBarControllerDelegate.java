@@ -41,7 +41,7 @@ public interface UITabBarControllerDelegate {
     @IsOptional
     @Selector("tabBarController:animationControllerForTransitionFromViewController:toViewController:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object tabBarControllerAnimationControllerForTransitionFromViewControllerToViewController(
+    default UIViewControllerAnimatedTransitioning tabBarControllerAnimationControllerForTransitionFromViewControllerToViewController(
             UITabBarController tabBarController, UIViewController fromVC, UIViewController toVC) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -66,8 +66,9 @@ public interface UITabBarControllerDelegate {
     @IsOptional
     @Selector("tabBarController:interactionControllerForAnimationController:")
     @MappedReturn(ObjCObjectMapper.class)
-    default Object tabBarControllerInteractionControllerForAnimationController(UITabBarController tabBarController,
-            @Mapped(ObjCObjectMapper.class) Object animationController) {
+    default UIViewControllerInteractiveTransitioning tabBarControllerInteractionControllerForAnimationController(
+            UITabBarController tabBarController,
+            @Mapped(ObjCObjectMapper.class) UIViewControllerAnimatedTransitioning animationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 

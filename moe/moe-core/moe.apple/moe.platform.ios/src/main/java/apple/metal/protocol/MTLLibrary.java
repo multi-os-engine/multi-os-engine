@@ -40,7 +40,7 @@ public interface MTLLibrary {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    Object device();
+    MTLDevice device();
 
     @Generated
     @Selector("functionNames")
@@ -53,7 +53,7 @@ public interface MTLLibrary {
     @Generated
     @Selector("newFunctionWithName:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newFunctionWithName(String functionName);
+    MTLFunction newFunctionWithName(String functionName);
 
     @Generated
     @Selector("newFunctionWithName:constantValues:completionHandler:")
@@ -63,7 +63,7 @@ public interface MTLLibrary {
     @Generated
     @Selector("newFunctionWithName:constantValues:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newFunctionWithNameConstantValuesError(String name, MTLFunctionConstantValues constantValues,
+    MTLFunction newFunctionWithNameConstantValuesError(String name, MTLFunctionConstantValues constantValues,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated

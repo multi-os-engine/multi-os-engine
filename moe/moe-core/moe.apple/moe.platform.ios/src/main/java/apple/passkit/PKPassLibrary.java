@@ -271,4 +271,45 @@ public class PKPassLibrary extends NSObject {
         @Generated
         void call_requestAutomaticPassPresentationSuppressionWithResponseHandler(@NUInt long arg0);
     }
+
+    @Generated
+    @Selector("activateSecureElementPass:withActivationData:completion:")
+    public native void activateSecureElementPassWithActivationDataCompletion(PKSecureElementPass secureElementPass,
+            NSData activationData,
+            @ObjCBlock(name = "call_activateSecureElementPassWithActivationDataCompletion") Block_activateSecureElementPassWithActivationDataCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_activateSecureElementPassWithActivationDataCompletion {
+        @Generated
+        void call_activateSecureElementPassWithActivationDataCompletion(boolean arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("canAddSecureElementPassWithPrimaryAccountIdentifier:")
+    public native boolean canAddSecureElementPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
+
+    @Generated
+    @Selector("isSecureElementPassActivationAvailable")
+    public native boolean isSecureElementPassActivationAvailable();
+
+    @Generated
+    @Selector("presentSecureElementPass:")
+    public native void presentSecureElementPass(PKSecureElementPass pass);
+
+    @Generated
+    @Selector("remoteSecureElementPasses")
+    public native NSArray<? extends PKSecureElementPass> remoteSecureElementPasses();
+
+    @Generated
+    @Selector("signData:withSecureElementPass:completion:")
+    public native void signDataWithSecureElementPassCompletion(NSData signData, PKSecureElementPass secureElementPass,
+            @ObjCBlock(name = "call_signDataWithSecureElementPassCompletion") Block_signDataWithSecureElementPassCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_signDataWithSecureElementPassCompletion {
+        @Generated
+        void call_signDataWithSecureElementPassCompletion(NSData arg0, NSData arg1, NSError arg2);
+    }
 }

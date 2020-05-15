@@ -23,4 +23,11 @@ public interface SKPaymentQueueDelegate {
             SKPaymentTransaction transaction, SKStorefront newStorefront) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentQueueShouldShowPriceConsent:")
+    default boolean paymentQueueShouldShowPriceConsent(SKPaymentQueue paymentQueue) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

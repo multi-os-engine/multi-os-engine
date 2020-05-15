@@ -30,4 +30,5 @@ public final class UITouchType {
     }
 
     @Generated @NInt public static final long Pencil = 0x0000000000000002L;
+    @Generated @NInt public static final long IndirectPointer = 0x0000000000000003L;
 }

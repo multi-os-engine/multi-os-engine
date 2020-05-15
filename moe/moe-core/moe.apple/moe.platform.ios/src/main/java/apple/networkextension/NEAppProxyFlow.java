@@ -179,4 +179,12 @@ public class NEAppProxyFlow extends NSObject {
         @Generated
         void call_openWithLocalEndpointCompletionHandler(NSError arg0);
     }
+
+    @Generated
+    @Selector("networkInterface")
+    public native NSObject networkInterface();
+
+    @Generated
+    @Selector("setNetworkInterface:")
+    public native void setNetworkInterface(NSObject value);
 }

@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UITextDocumentProxy;
+import apple.uikit.protocol.UITextInput;
 import apple.uikit.protocol.UITextInputDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -206,11 +207,11 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("selectionDidChange:")
-    public native void selectionDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    public native void selectionDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("selectionWillChange:")
-    public native void selectionWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    public native void selectionWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("setInputView:")
@@ -222,7 +223,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("textDidChange:")
-    public native void textDidChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    public native void textDidChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Generated
     @Selector("textDocumentProxy")
@@ -231,7 +232,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
 
     @Generated
     @Selector("textWillChange:")
-    public native void textWillChange(@Mapped(ObjCObjectMapper.class) Object textInput);
+    public native void textWillChange(@Mapped(ObjCObjectMapper.class) UITextInput textInput);
 
     @Runtime(ObjCRuntime.class)
     @Generated

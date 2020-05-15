@@ -35,14 +35,15 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:didApplyAnimationsAtTime:")
-    default void rendererDidApplyAnimationsAtTime(@Mapped(ObjCObjectMapper.class) Object renderer, double time) {
+    default void rendererDidApplyAnimationsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("renderer:didRenderScene:atTime:")
-    default void rendererDidRenderSceneAtTime(@Mapped(ObjCObjectMapper.class) Object renderer, SCNScene scene,
+    default void rendererDidRenderSceneAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNScene scene,
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -50,29 +51,31 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:didSimulatePhysicsAtTime:")
-    default void rendererDidSimulatePhysicsAtTime(@Mapped(ObjCObjectMapper.class) Object renderer, double time) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("renderer:updateAtTime:")
-    default void rendererUpdateAtTime(@Mapped(ObjCObjectMapper.class) Object renderer, double time) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Generated
-    @IsOptional
-    @Selector("renderer:willRenderScene:atTime:")
-    default void rendererWillRenderSceneAtTime(@Mapped(ObjCObjectMapper.class) Object renderer, SCNScene scene,
+    default void rendererDidSimulatePhysicsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
+    @Selector("renderer:updateAtTime:")
+    default void rendererUpdateAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, double time) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("renderer:willRenderScene:atTime:")
+    default void rendererWillRenderSceneAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            SCNScene scene, double time) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
     @Selector("renderer:didApplyConstraintsAtTime:")
-    default void rendererDidApplyConstraintsAtTime(@Mapped(ObjCObjectMapper.class) Object renderer, double time) {
+    default void rendererDidApplyConstraintsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

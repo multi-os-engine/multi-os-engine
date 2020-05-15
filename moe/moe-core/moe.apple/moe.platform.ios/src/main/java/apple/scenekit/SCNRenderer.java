@@ -28,7 +28,9 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.MTLRenderPassDescriptor;
 import apple.metal.protocol.MTLCommandBuffer;
+import apple.metal.protocol.MTLCommandQueue;
 import apple.metal.protocol.MTLDevice;
+import apple.metal.protocol.MTLRenderCommandEncoder;
 import apple.opengles.EAGLContext;
 import apple.scenekit.protocol.SCNSceneRenderer;
 import apple.scenekit.protocol.SCNTechniqueSupport;
@@ -201,7 +203,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object commandQueue();
+    public native MTLCommandQueue commandQueue();
 
     @Generated
     @Selector("context")
@@ -210,7 +212,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("currentRenderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object currentRenderCommandEncoder();
+    public native MTLRenderCommandEncoder currentRenderCommandEncoder();
 
     @Generated
     @Selector("debugOptions")
@@ -230,7 +232,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object device();
+    public native MTLDevice device();
 
     @Generated
     @Selector("hitTest:options:")

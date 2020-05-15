@@ -6,8 +6,16 @@ import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.MTLRenderPassDescriptor;
+import apple.metal.protocol.MTLBlitCommandEncoder;
 import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLCommandQueue;
+import apple.metal.protocol.MTLComputeCommandEncoder;
+import apple.metal.protocol.MTLDevice;
+import apple.metal.protocol.MTLDrawable;
+import apple.metal.protocol.MTLEvent;
+import apple.metal.protocol.MTLParallelRenderCommandEncoder;
+import apple.metal.protocol.MTLRenderCommandEncoder;
+import apple.metal.protocol.MTLResourceStateCommandEncoder;
 import apple.metalperformanceshaders.protocol.MPSHeapProvider;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -82,7 +90,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Selector("blitCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object blitCommandEncoder();
+    public native MTLBlitCommandEncoder blitCommandEncoder();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -120,7 +128,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object commandQueue();
+    public native MTLCommandQueue commandQueue();
 
     @Generated
     @Selector("commit")
@@ -133,12 +141,12 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Selector("computeCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object computeCommandEncoder();
+    public native MTLComputeCommandEncoder computeCommandEncoder();
 
     @Generated
     @Selector("computeCommandEncoderWithDispatchType:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object computeCommandEncoderWithDispatchType(@NUInt long dispatchType);
+    public native MTLComputeCommandEncoder computeCommandEncoderWithDispatchType(@NUInt long dispatchType);
 
     @Generated
     @Selector("debugDescription")
@@ -151,15 +159,15 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object device();
+    public native MTLDevice device();
 
     @Generated
     @Selector("encodeSignalEvent:value:")
-    public native void encodeSignalEventValue(@Mapped(ObjCObjectMapper.class) Object event, long value);
+    public native void encodeSignalEventValue(@Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
 
     @Generated
     @Selector("encodeWaitForEvent:value:")
-    public native void encodeWaitForEventValue(@Mapped(ObjCObjectMapper.class) Object event, long value);
+    public native void encodeWaitForEventValue(@Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
 
     @Generated
     @Selector("enqueue")
@@ -230,7 +238,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Selector("parallelRenderCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object parallelRenderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
+    public native MTLParallelRenderCommandEncoder parallelRenderCommandEncoderWithDescriptor(
+            MTLRenderPassDescriptor renderPassDescriptor);
 
     @Generated
     @Selector("popDebugGroup")
@@ -246,16 +255,17 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
 
     @Generated
     @Selector("presentDrawable:")
-    public native void presentDrawable(@Mapped(ObjCObjectMapper.class) Object drawable);
+    public native void presentDrawable(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable);
 
     @Generated
     @Selector("presentDrawable:afterMinimumDuration:")
-    public native void presentDrawableAfterMinimumDuration(@Mapped(ObjCObjectMapper.class) Object drawable,
+    public native void presentDrawableAfterMinimumDuration(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable,
             double duration);
 
     @Generated
     @Selector("presentDrawable:atTime:")
-    public native void presentDrawableAtTime(@Mapped(ObjCObjectMapper.class) Object drawable, double presentationTime);
+    public native void presentDrawableAtTime(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable,
+            double presentationTime);
 
     @Generated
     @Selector("pushDebugGroup:")
@@ -264,7 +274,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Selector("renderCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object renderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
+    public native MTLRenderCommandEncoder renderCommandEncoderWithDescriptor(
+            MTLRenderPassDescriptor renderPassDescriptor);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -277,7 +288,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Selector("resourceStateCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object resourceStateCommandEncoder();
+    public native MTLResourceStateCommandEncoder resourceStateCommandEncoder();
 
     @Generated
     @Selector("retainedReferences")

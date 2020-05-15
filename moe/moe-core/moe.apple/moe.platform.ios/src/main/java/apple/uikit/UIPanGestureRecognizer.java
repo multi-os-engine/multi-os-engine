@@ -197,4 +197,13 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("initWithCoder:")
     public native UIPanGestureRecognizer initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("allowedScrollTypesMask")
+    @NInt
+    public native long allowedScrollTypesMask();
+
+    @Generated
+    @Selector("setAllowedScrollTypesMask:")
+    public native void setAllowedScrollTypesMask(@NInt long value);
 }

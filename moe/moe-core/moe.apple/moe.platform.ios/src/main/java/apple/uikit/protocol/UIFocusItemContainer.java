@@ -20,7 +20,7 @@ public interface UIFocusItemContainer {
     @Generated
     @Selector("coordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
-    Object coordinateSpace();
+    UICoordinateSpace coordinateSpace();
 
     @Generated
     @Selector("focusItemsInRect:")

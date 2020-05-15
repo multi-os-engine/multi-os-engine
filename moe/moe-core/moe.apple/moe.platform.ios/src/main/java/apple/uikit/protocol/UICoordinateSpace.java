@@ -42,21 +42,23 @@ public interface UICoordinateSpace {
     @Selector("convertPoint:fromCoordinateSpace:")
     @ByValue
     CGPoint convertPointFromCoordinateSpace(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertPoint:toCoordinateSpace:")
     @ByValue
     CGPoint convertPointToCoordinateSpace(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertRect:fromCoordinateSpace:")
     @ByValue
-    CGRect convertRectFromCoordinateSpace(@ByValue CGRect rect, @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
+    CGRect convertRectFromCoordinateSpace(@ByValue CGRect rect,
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertRect:toCoordinateSpace:")
     @ByValue
-    CGRect convertRectToCoordinateSpace(@ByValue CGRect rect, @Mapped(ObjCObjectMapper.class) Object coordinateSpace);
+    CGRect convertRectToCoordinateSpace(@ByValue CGRect rect,
+            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 }

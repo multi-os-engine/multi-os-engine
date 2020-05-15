@@ -10,7 +10,7 @@ public final class ICReturnThumbnailErrorCode {
     }
 
     @Generated @NInt public static final long NotAvailable = 0xFFFFFFFFFFFFADF8L;
-    @Generated @NInt public static final long AlreadyFetching = 0xFFFFFFFFFFFFADF7L;
-    @Generated @NInt public static final long Canceled = 0xFFFFFFFFFFFFADF6L;
-    @Generated @NInt public static final long Invalid = 0xFFFFFFFFFFFFADF5L;
+    @Generated @NInt public static final long AlreadyFetching = 0xFFFFFFFFFFFFADF9L;
+    @Generated @NInt public static final long Canceled = 0xFFFFFFFFFFFFB17EL;
+    @Generated @NInt public static final long Invalid = 0xFFFFFFFFFFFFB17FL;
 }

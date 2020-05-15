@@ -27,6 +27,7 @@ import apple.foundation.protocol.NSSecureCoding;
 import apple.modelio.MDLMesh;
 import apple.quartzcore.CAAnimation;
 import apple.scenekit.protocol.SCNAnimatable;
+import apple.scenekit.protocol.SCNAnimation;
 import apple.scenekit.protocol.SCNBoundingVolume;
 import apple.scenekit.protocol.SCNShadable;
 import apple.scenekit.struct.SCNVector3;
@@ -185,7 +186,7 @@ public class SCNGeometry extends NSObject
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("animationForKey:")

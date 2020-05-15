@@ -19,4 +19,6 @@ public final class MPSRayMaskOperator {
     @Generated @NUInt public static final long LessThanOrEqualTo = 0x0000000000000007L;
     @Generated @NUInt public static final long GreaterThan = 0x0000000000000008L;
     @Generated @NUInt public static final long GreaterThanOrEqualTo = 0x0000000000000009L;
+    @Generated @NUInt public static final long Equal = 0x000000000000000AL;
+    @Generated @NUInt public static final long NotEqual = 0x000000000000000BL;
 }

@@ -40,5 +40,5 @@ public interface QLPreviewControllerDataSource {
     @Generated
     @Selector("previewController:previewItemAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object previewControllerPreviewItemAtIndex(QLPreviewController controller, @NInt long index);
+    QLPreviewItem previewControllerPreviewItemAtIndex(QLPreviewController controller, @NInt long index);
 }

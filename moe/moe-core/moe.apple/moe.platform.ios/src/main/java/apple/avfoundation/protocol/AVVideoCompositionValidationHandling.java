@@ -48,7 +48,8 @@ public interface AVVideoCompositionValidationHandling {
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction:")
     default boolean videoCompositionShouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction(
-            AVVideoComposition videoComposition, @Mapped(ObjCObjectMapper.class) Object videoCompositionInstruction) {
+            AVVideoComposition videoComposition,
+            @Mapped(ObjCObjectMapper.class) AVVideoCompositionInstruction videoCompositionInstruction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,7 +57,8 @@ public interface AVVideoCompositionValidationHandling {
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingInvalidTrackIDInInstruction:layerInstruction:asset:")
     default boolean videoCompositionShouldContinueValidatingAfterFindingInvalidTrackIDInInstructionLayerInstructionAsset(
-            AVVideoComposition videoComposition, @Mapped(ObjCObjectMapper.class) Object videoCompositionInstruction,
+            AVVideoComposition videoComposition,
+            @Mapped(ObjCObjectMapper.class) AVVideoCompositionInstruction videoCompositionInstruction,
             AVVideoCompositionLayerInstruction layerInstruction, AVAsset asset) {
         throw new java.lang.UnsupportedOperationException();
     }

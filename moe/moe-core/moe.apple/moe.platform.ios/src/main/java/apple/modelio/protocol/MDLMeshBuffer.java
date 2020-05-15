@@ -37,7 +37,7 @@ public interface MDLMeshBuffer extends NSCopying {
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
-    Object allocator();
+    MDLMeshBufferAllocator allocator();
 
     @Generated
     @Selector("fillData:offset:")
@@ -60,5 +60,5 @@ public interface MDLMeshBuffer extends NSCopying {
     @Generated
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)
-    Object zone();
+    MDLMeshBufferZone zone();
 }

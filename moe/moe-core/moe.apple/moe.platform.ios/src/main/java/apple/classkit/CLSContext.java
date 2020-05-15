@@ -1,6 +1,7 @@
 package apple.classkit;
 
 import apple.NSObject;
+import apple.coregraphics.opaque.CGImageRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSError;
@@ -246,4 +247,32 @@ public class CLSContext extends CLSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("customTypeName")
+    public native String customTypeName();
+
+    @Generated
+    @Selector("identifierPath")
+    public native NSArray<String> identifierPath();
+
+    @Generated
+    @Selector("setCustomTypeName:")
+    public native void setCustomTypeName(String value);
+
+    @Generated
+    @Selector("setSummary:")
+    public native void setSummary(String value);
+
+    @Generated
+    @Selector("setThumbnail:")
+    public native void setThumbnail(CGImageRef value);
+
+    @Generated
+    @Selector("summary")
+    public native String summary();
+
+    @Generated
+    @Selector("thumbnail")
+    public native CGImageRef thumbnail();
 }

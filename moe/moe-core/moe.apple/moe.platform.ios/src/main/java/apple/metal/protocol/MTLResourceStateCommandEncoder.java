@@ -21,25 +21,26 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("updateFence:")
-    void updateFence(@Mapped(ObjCObjectMapper.class) Object fence);
+    void updateFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     @Generated
     @Selector("updateTextureMapping:mode:indirectBuffer:indirectBufferOffset:")
-    void updateTextureMappingModeIndirectBufferIndirectBufferOffset(@Mapped(ObjCObjectMapper.class) Object texture,
-            @NUInt long mode, @Mapped(ObjCObjectMapper.class) Object indirectBuffer, @NUInt long indirectBufferOffset);
+    void updateTextureMappingModeIndirectBufferIndirectBufferOffset(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            @NUInt long mode, @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer,
+            @NUInt long indirectBufferOffset);
 
     @Generated
     @Selector("updateTextureMapping:mode:region:mipLevel:slice:")
-    void updateTextureMappingModeRegionMipLevelSlice(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long mode,
-            @ByValue MTLRegion region, @NUInt long mipLevel, @NUInt long slice);
+    void updateTextureMappingModeRegionMipLevelSlice(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            @NUInt long mode, @ByValue MTLRegion region, @NUInt long mipLevel, @NUInt long slice);
 
     @Generated
     @Selector("updateTextureMappings:mode:regions:mipLevels:slices:numRegions:")
-    void updateTextureMappingsModeRegionsMipLevelsSlicesNumRegions(@Mapped(ObjCObjectMapper.class) Object texture,
+    void updateTextureMappingsModeRegionsMipLevelsSlicesNumRegions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
             @NUInt long mode, @UncertainArgument("Options: reference, array Fallback: reference") MTLRegion regions,
             ConstNUIntPtr mipLevels, ConstNUIntPtr slices, @NUInt long numRegions);
 
     @Generated
     @Selector("waitForFence:")
-    void waitForFence(@Mapped(ObjCObjectMapper.class) Object fence);
+    void waitForFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
 }

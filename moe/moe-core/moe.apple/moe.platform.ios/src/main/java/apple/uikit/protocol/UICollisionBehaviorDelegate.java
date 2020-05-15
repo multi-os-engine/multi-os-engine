@@ -38,7 +38,7 @@ public interface UICollisionBehaviorDelegate {
     @IsOptional
     @Selector("collisionBehavior:beganContactForItem:withBoundaryIdentifier:atPoint:")
     default void collisionBehaviorBeganContactForItemWithBoundaryIdentifierAtPoint(UICollisionBehavior behavior,
-            @Mapped(ObjCObjectMapper.class) Object item, @Mapped(ObjCObjectMapper.class) Object identifier,
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @Mapped(ObjCObjectMapper.class) Object identifier,
             @ByValue CGPoint p) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -47,7 +47,7 @@ public interface UICollisionBehaviorDelegate {
     @IsOptional
     @Selector("collisionBehavior:beganContactForItem:withItem:atPoint:")
     default void collisionBehaviorBeganContactForItemWithItemAtPoint(UICollisionBehavior behavior,
-            @Mapped(ObjCObjectMapper.class) Object item1, @Mapped(ObjCObjectMapper.class) Object item2,
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
             @ByValue CGPoint p) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -56,7 +56,7 @@ public interface UICollisionBehaviorDelegate {
     @IsOptional
     @Selector("collisionBehavior:endedContactForItem:withBoundaryIdentifier:")
     default void collisionBehaviorEndedContactForItemWithBoundaryIdentifier(UICollisionBehavior behavior,
-            @Mapped(ObjCObjectMapper.class) Object item, @Mapped(ObjCObjectMapper.class) Object identifier) {
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @Mapped(ObjCObjectMapper.class) Object identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,7 +64,7 @@ public interface UICollisionBehaviorDelegate {
     @IsOptional
     @Selector("collisionBehavior:endedContactForItem:withItem:")
     default void collisionBehaviorEndedContactForItemWithItem(UICollisionBehavior behavior,
-            @Mapped(ObjCObjectMapper.class) Object item1, @Mapped(ObjCObjectMapper.class) Object item2) {
+            @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

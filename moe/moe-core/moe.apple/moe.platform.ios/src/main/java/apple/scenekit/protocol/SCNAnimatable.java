@@ -36,7 +36,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface SCNAnimatable {
     @Generated
     @Selector("addAnimation:forKey:")
-    void addAnimationForKey(@Mapped(ObjCObjectMapper.class) Object animation, String key);
+    void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     @Generated
     @Selector("animationForKey:")

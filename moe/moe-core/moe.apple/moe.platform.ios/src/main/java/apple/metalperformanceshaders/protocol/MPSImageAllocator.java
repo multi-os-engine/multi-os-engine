@@ -1,6 +1,7 @@
 package apple.metalperformanceshaders.protocol;
 
 import apple.foundation.protocol.NSSecureCoding;
+import apple.metal.protocol.MTLCommandBuffer;
 import apple.metalperformanceshaders.MPSImage;
 import apple.metalperformanceshaders.MPSImageDescriptor;
 import apple.metalperformanceshaders.MPSKernel;
@@ -20,6 +21,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MPSImageAllocator extends NSSecureCoding {
     @Generated
     @Selector("imageForCommandBuffer:imageDescriptor:kernel:")
-    MPSImage imageForCommandBufferImageDescriptorKernel(@Mapped(ObjCObjectMapper.class) Object cmdBuf,
+    MPSImage imageForCommandBufferImageDescriptorKernel(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
             MPSImageDescriptor descriptor, MPSKernel kernel);
 }

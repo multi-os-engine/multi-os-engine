@@ -23,7 +23,7 @@ public interface UITableViewDropDelegate {
     @IsOptional
     @Selector("tableView:canHandleDropSession:")
     default boolean tableViewCanHandleDropSession(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) Object session) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,21 +38,24 @@ public interface UITableViewDropDelegate {
     @Generated
     @IsOptional
     @Selector("tableView:dropSessionDidEnd:")
-    default void tableViewDropSessionDidEnd(UITableView tableView, @Mapped(ObjCObjectMapper.class) Object session) {
+    default void tableViewDropSessionDidEnd(UITableView tableView,
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("tableView:dropSessionDidEnter:")
-    default void tableViewDropSessionDidEnter(UITableView tableView, @Mapped(ObjCObjectMapper.class) Object session) {
+    default void tableViewDropSessionDidEnter(UITableView tableView,
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("tableView:dropSessionDidExit:")
-    default void tableViewDropSessionDidExit(UITableView tableView, @Mapped(ObjCObjectMapper.class) Object session) {
+    default void tableViewDropSessionDidExit(UITableView tableView,
+            @Mapped(ObjCObjectMapper.class) UIDropSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,11 +63,12 @@ public interface UITableViewDropDelegate {
     @IsOptional
     @Selector("tableView:dropSessionDidUpdate:withDestinationIndexPath:")
     default UITableViewDropProposal tableViewDropSessionDidUpdateWithDestinationIndexPath(UITableView tableView,
-            @Mapped(ObjCObjectMapper.class) Object session, NSIndexPath destinationIndexPath) {
+            @Mapped(ObjCObjectMapper.class) UIDropSession session, NSIndexPath destinationIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("tableView:performDropWithCoordinator:")
-    void tableViewPerformDropWithCoordinator(UITableView tableView, @Mapped(ObjCObjectMapper.class) Object coordinator);
+    void tableViewPerformDropWithCoordinator(UITableView tableView,
+            @Mapped(ObjCObjectMapper.class) UITableViewDropCoordinator coordinator);
 }

@@ -29,11 +29,17 @@ import apple.foundation.NSItemProvider;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.struct.NSRange;
+import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentSizeCategoryAdjusting;
+import apple.uikit.protocol.UITextDragDelegate;
 import apple.uikit.protocol.UITextDraggable;
+import apple.uikit.protocol.UITextDropDelegate;
 import apple.uikit.protocol.UITextDroppable;
 import apple.uikit.protocol.UITextInput;
+import apple.uikit.protocol.UITextInputDelegate;
+import apple.uikit.protocol.UITextInputTokenizer;
 import apple.uikit.protocol.UITextPasteConfigurationSupporting;
+import apple.uikit.protocol.UITextPasteDelegate;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
@@ -144,7 +150,7 @@ public class UITextView extends UIScrollView
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs);
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
@@ -157,8 +163,8 @@ public class UITextView extends UIScrollView
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass,
-            Object... varargs);
+    public static native Object appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
@@ -387,7 +393,7 @@ public class UITextView extends UIScrollView
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
     public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
@@ -403,7 +409,8 @@ public class UITextView extends UIScrollView
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) Object ContainerClass, Object... varargs) {
+    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
@@ -561,7 +568,7 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("inputDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object inputDelegate();
+    public native UITextInputDelegate inputDelegate();
 
     @Generated
     @Selector("inputView")
@@ -763,10 +770,10 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setInputDelegate:")
-    public native void setInputDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setInputDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
 
     @Generated
-    public void setInputDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setInputDelegate(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value) {
         Object __old = inputDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -915,7 +922,7 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("tokenizer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object tokenizer();
+    public native UITextInputTokenizer tokenizer();
 
     @Generated
     @Selector("typingAttributes")
@@ -950,7 +957,7 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("pasteDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object pasteDelegate();
+    public native UITextPasteDelegate pasteDelegate();
 
     @Generated
     @IsOptional
@@ -963,10 +970,10 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setPasteDelegate:")
-    public native void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);
 
     @Generated
-    public void setPasteDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setPasteDelegate(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value) {
         Object __old = pasteDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -994,10 +1001,10 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setTextDragDelegate:")
-    public native void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
 
     @Generated
-    public void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value) {
         Object __old = textDragDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1014,10 +1021,10 @@ public class UITextView extends UIScrollView
 
     @Generated
     @Selector("setTextDropDelegate:")
-    public native void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTextDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value);
 
     @Generated
-    public void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTextDropDelegate(@Mapped(ObjCObjectMapper.class) UITextDropDelegate value) {
         Object __old = textDropDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1049,7 +1056,7 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("textDragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object textDragDelegate();
+    public native UITextDragDelegate textDragDelegate();
 
     @Generated
     @Selector("textDragInteraction")
@@ -1063,7 +1070,7 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("textDropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object textDropDelegate();
+    public native UITextDropDelegate textDropDelegate();
 
     @Generated
     @Selector("textDropInteraction")

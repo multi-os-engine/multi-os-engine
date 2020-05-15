@@ -6,6 +6,8 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSProgress;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIViewControllerAnimatedTransitioning;
+import apple.uikit.protocol.UIViewControllerContextTransitioning;
+import apple.uikit.protocol.UIViewImplicitlyAnimating;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -56,7 +58,8 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
 
     @Generated
     @Selector("animateTransition:")
-    public native void animateTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    public native void animateTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @IsOptional
@@ -119,7 +122,8 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @IsOptional
     @Selector("interruptibleAnimatorForTransition:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object interruptibleAnimatorForTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    public native UIViewImplicitlyAnimating interruptibleAnimatorForTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @Selector("isSubclassOfClass:")
@@ -181,7 +185,8 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
 
     @Generated
     @Selector("transitionDuration:")
-    public native double transitionDuration(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    public native double transitionDuration(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @Selector("version")

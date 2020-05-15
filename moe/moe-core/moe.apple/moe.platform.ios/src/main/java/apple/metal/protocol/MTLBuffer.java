@@ -51,7 +51,7 @@ public interface MTLBuffer extends MTLResource {
     @Generated
     @Selector("newTextureWithDescriptor:offset:bytesPerRow:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object newTextureWithDescriptorOffsetBytesPerRow(MTLTextureDescriptor descriptor, @NUInt long offset,
+    MTLTexture newTextureWithDescriptorOffsetBytesPerRow(MTLTextureDescriptor descriptor, @NUInt long offset,
             @NUInt long bytesPerRow);
 
     @Generated

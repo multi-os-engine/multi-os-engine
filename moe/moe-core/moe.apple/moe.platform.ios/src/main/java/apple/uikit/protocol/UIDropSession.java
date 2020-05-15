@@ -2,6 +2,7 @@ package apple.uikit.protocol;
 
 import apple.foundation.NSArray;
 import apple.foundation.NSProgress;
+import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSProgressReporting;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -22,7 +23,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     @Generated
     @Selector("loadObjectsOfClass:completion:")
-    NSProgress loadObjectsOfClassCompletion(@Mapped(ObjCObjectMapper.class) Object aClass,
+    NSProgress loadObjectsOfClassCompletion(@Mapped(ObjCObjectMapper.class) NSItemProviderReading aClass,
             @ObjCBlock(name = "call_loadObjectsOfClassCompletion") Block_loadObjectsOfClassCompletion completion);
 
     @Runtime(ObjCRuntime.class)
@@ -35,7 +36,7 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     @Generated
     @Selector("localDragSession")
     @MappedReturn(ObjCObjectMapper.class)
-    Object localDragSession();
+    UIDragSession localDragSession();
 
     @Generated
     @Selector("progressIndicatorStyle")

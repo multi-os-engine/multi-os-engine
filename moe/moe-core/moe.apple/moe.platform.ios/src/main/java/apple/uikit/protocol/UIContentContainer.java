@@ -40,25 +40,27 @@ public interface UIContentContainer {
 
     @Generated
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
-    void preferredContentSizeDidChangeForChildContentContainer(@Mapped(ObjCObjectMapper.class) Object container);
+    void preferredContentSizeDidChangeForChildContentContainer(
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     @Generated
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
     @ByValue
-    CGSize sizeForChildContentContainerWithParentContainerSize(@Mapped(ObjCObjectMapper.class) Object container,
-            @ByValue CGSize parentSize);
+    CGSize sizeForChildContentContainerWithParentContainerSize(
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
 
     @Generated
     @Selector("systemLayoutFittingSizeDidChangeForChildContentContainer:")
-    void systemLayoutFittingSizeDidChangeForChildContentContainer(@Mapped(ObjCObjectMapper.class) Object container);
+    void systemLayoutFittingSizeDidChangeForChildContentContainer(
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
     void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size,
-            @Mapped(ObjCObjectMapper.class) Object coordinator);
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
     @Generated
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
     void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
-            @Mapped(ObjCObjectMapper.class) Object coordinator);
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 }

@@ -68,8 +68,20 @@ EXPORT void __natj_inline_OSWriteSwapInt64(volatile void * base, uintptr_t offse
 	OSWriteSwapInt64(base, offset, data);
 }
 
-EXPORT int __natj_inline___darwin_fd_isset(int _n, const struct fd_set * _p) {
-	return __darwin_fd_isset(_n, _p);
+EXPORT int __natj_inline___darwin_check_fd_set(int _a, const void * _b) {
+	return __darwin_check_fd_set(_a, _b);
+}
+
+EXPORT int __natj_inline___darwin_fd_isset(int _fd, const struct fd_set * _p) {
+	return __darwin_fd_isset(_fd, _p);
+}
+
+EXPORT void __natj_inline___darwin_fd_set(int _fd, struct fd_set *const _p) {
+	__darwin_fd_set(_fd, _p);
+}
+
+EXPORT void __natj_inline___darwin_fd_clr(int _fd, struct fd_set *const _p) {
+	__darwin_fd_clr(_fd, _p);
 }
 
 EXPORT int __natj_inline_isascii(int _c) {

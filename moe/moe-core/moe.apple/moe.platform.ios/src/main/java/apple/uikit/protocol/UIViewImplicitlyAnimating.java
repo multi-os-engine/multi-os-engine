@@ -60,8 +60,8 @@ public interface UIViewImplicitlyAnimating extends UIViewAnimating {
     @Generated
     @IsOptional
     @Selector("continueAnimationWithTimingParameters:durationFactor:")
-    default void continueAnimationWithTimingParametersDurationFactor(@Mapped(ObjCObjectMapper.class) Object parameters,
-            @NFloat double durationFactor) {
+    default void continueAnimationWithTimingParametersDurationFactor(
+            @Mapped(ObjCObjectMapper.class) UITimingCurveProvider parameters, @NFloat double durationFactor) {
         throw new java.lang.UnsupportedOperationException();
     }
 

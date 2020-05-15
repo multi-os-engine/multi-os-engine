@@ -207,4 +207,8 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("availableHDRModes")
     @NInt
     public static native long availableHDRModes();
+
+    @Generated
+    @Selector("eligibleForHDRPlayback")
+    public static native boolean eligibleForHDRPlayback();
 }

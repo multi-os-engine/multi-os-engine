@@ -49,47 +49,47 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Selector("drawIndexedPatches:patchStart:patchCount:patchIndexBuffer:patchIndexBufferOffset:controlPointIndexBuffer:controlPointIndexBufferOffset:instanceCount:baseInstance:")
     void drawIndexedPatchesPatchStartPatchCountPatchIndexBufferPatchIndexBufferOffsetControlPointIndexBufferControlPointIndexBufferOffsetInstanceCountBaseInstance(
             @NUInt long numberOfPatchControlPoints, @NUInt long patchStart, @NUInt long patchCount,
-            @Mapped(ObjCObjectMapper.class) Object patchIndexBuffer, @NUInt long patchIndexBufferOffset,
-            @Mapped(ObjCObjectMapper.class) Object controlPointIndexBuffer, @NUInt long controlPointIndexBufferOffset,
-            @NUInt long instanceCount, @NUInt long baseInstance);
+            @Mapped(ObjCObjectMapper.class) MTLBuffer patchIndexBuffer, @NUInt long patchIndexBufferOffset,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer controlPointIndexBuffer,
+            @NUInt long controlPointIndexBufferOffset, @NUInt long instanceCount, @NUInt long baseInstance);
 
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:")
     void drawIndexedPrimitivesIndexCountIndexTypeIndexBufferIndexBufferOffset(@NUInt long primitiveType,
-            @NUInt long indexCount, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) Object indexBuffer,
+            @NUInt long indexCount, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) MTLBuffer indexBuffer,
             @NUInt long indexBufferOffset);
 
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:")
     void drawIndexedPrimitivesIndexCountIndexTypeIndexBufferIndexBufferOffsetInstanceCount(@NUInt long primitiveType,
-            @NUInt long indexCount, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) Object indexBuffer,
+            @NUInt long indexCount, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) MTLBuffer indexBuffer,
             @NUInt long indexBufferOffset, @NUInt long instanceCount);
 
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:baseVertex:baseInstance:")
     void drawIndexedPrimitivesIndexCountIndexTypeIndexBufferIndexBufferOffsetInstanceCountBaseVertexBaseInstance(
             @NUInt long primitiveType, @NUInt long indexCount, @NUInt long indexType,
-            @Mapped(ObjCObjectMapper.class) Object indexBuffer, @NUInt long indexBufferOffset,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer indexBuffer, @NUInt long indexBufferOffset,
             @NUInt long instanceCount, @NInt long baseVertex, @NUInt long baseInstance);
 
     @Generated
     @Selector("drawIndexedPrimitives:indexType:indexBuffer:indexBufferOffset:indirectBuffer:indirectBufferOffset:")
     void drawIndexedPrimitivesIndexTypeIndexBufferIndexBufferOffsetIndirectBufferIndirectBufferOffset(
-            @NUInt long primitiveType, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) Object indexBuffer,
-            @NUInt long indexBufferOffset, @Mapped(ObjCObjectMapper.class) Object indirectBuffer,
+            @NUInt long primitiveType, @NUInt long indexType, @Mapped(ObjCObjectMapper.class) MTLBuffer indexBuffer,
+            @NUInt long indexBufferOffset, @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer,
             @NUInt long indirectBufferOffset);
 
     @Generated
     @Selector("drawPatches:patchStart:patchCount:patchIndexBuffer:patchIndexBufferOffset:instanceCount:baseInstance:")
     void drawPatchesPatchStartPatchCountPatchIndexBufferPatchIndexBufferOffsetInstanceCountBaseInstance(
             @NUInt long numberOfPatchControlPoints, @NUInt long patchStart, @NUInt long patchCount,
-            @Mapped(ObjCObjectMapper.class) Object patchIndexBuffer, @NUInt long patchIndexBufferOffset,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer patchIndexBuffer, @NUInt long patchIndexBufferOffset,
             @NUInt long instanceCount, @NUInt long baseInstance);
 
     @Generated
     @Selector("drawPrimitives:indirectBuffer:indirectBufferOffset:")
     void drawPrimitivesIndirectBufferIndirectBufferOffset(@NUInt long primitiveType,
-            @Mapped(ObjCObjectMapper.class) Object indirectBuffer, @NUInt long indirectBufferOffset);
+            @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer, @NUInt long indirectBufferOffset);
 
     @Generated
     @Selector("drawPrimitives:vertexStart:vertexCount:")
@@ -124,7 +124,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setDepthStencilState:")
-    void setDepthStencilState(@Mapped(ObjCObjectMapper.class) Object depthStencilState);
+    void setDepthStencilState(@Mapped(ObjCObjectMapper.class) MTLDepthStencilState depthStencilState);
 
     @Generated
     @Selector("setDepthStoreAction:")
@@ -132,7 +132,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setFragmentBuffer:offset:atIndex:")
-    void setFragmentBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) Object buffer, @NUInt long offset,
+    void setFragmentBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
     @Generated
@@ -150,11 +150,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setFragmentSamplerState:atIndex:")
-    void setFragmentSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler, @NUInt long index);
+    void setFragmentSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
 
     @Generated
     @Selector("setFragmentSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
-    void setFragmentSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler,
+    void setFragmentSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler,
             float lodMinClamp, float lodMaxClamp, @NUInt long index);
 
     @Generated
@@ -170,7 +170,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setFragmentTexture:atIndex:")
-    void setFragmentTextureAtIndex(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long index);
+    void setFragmentTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
 
     @Generated
     @Selector("setFragmentTextures:withRange:")
@@ -183,7 +183,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setRenderPipelineState:")
-    void setRenderPipelineState(@Mapped(ObjCObjectMapper.class) Object pipelineState);
+    void setRenderPipelineState(@Mapped(ObjCObjectMapper.class) MTLRenderPipelineState pipelineState);
 
     @Generated
     @Selector("setScissorRect:")
@@ -203,7 +203,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setTessellationFactorBuffer:offset:instanceStride:")
-    void setTessellationFactorBufferOffsetInstanceStride(@Mapped(ObjCObjectMapper.class) Object buffer,
+    void setTessellationFactorBufferOffsetInstanceStride(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
             @NUInt long offset, @NUInt long instanceStride);
 
     @Generated
@@ -216,7 +216,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setVertexBuffer:offset:atIndex:")
-    void setVertexBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) Object buffer, @NUInt long offset,
+    void setVertexBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
     @Generated
@@ -234,11 +234,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setVertexSamplerState:atIndex:")
-    void setVertexSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler, @NUInt long index);
+    void setVertexSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
 
     @Generated
     @Selector("setVertexSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
-    void setVertexSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler,
+    void setVertexSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler,
             float lodMinClamp, float lodMaxClamp, @NUInt long index);
 
     @Generated
@@ -254,7 +254,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setVertexTexture:atIndex:")
-    void setVertexTextureAtIndex(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long index);
+    void setVertexTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
 
     @Generated
     @Selector("setVertexTextures:withRange:")
@@ -271,11 +271,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("updateFence:afterStages:")
-    void updateFenceAfterStages(@Mapped(ObjCObjectMapper.class) Object fence, @NUInt long stages);
+    void updateFenceAfterStages(@Mapped(ObjCObjectMapper.class) MTLFence fence, @NUInt long stages);
 
     @Generated
     @Selector("waitForFence:beforeStages:")
-    void waitForFenceBeforeStages(@Mapped(ObjCObjectMapper.class) Object fence, @NUInt long stages);
+    void waitForFenceBeforeStages(@Mapped(ObjCObjectMapper.class) MTLFence fence, @NUInt long stages);
 
     @Generated
     @Selector("dispatchThreadsPerTile:")
@@ -303,7 +303,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setTileBuffer:offset:atIndex:")
-    void setTileBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) Object buffer, @NUInt long offset,
+    void setTileBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
     @Generated
@@ -321,11 +321,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setTileSamplerState:atIndex:")
-    void setTileSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler, @NUInt long index);
+    void setTileSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
 
     @Generated
     @Selector("setTileSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
-    void setTileSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) Object sampler,
+    void setTileSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler,
             float lodMinClamp, float lodMaxClamp, @NUInt long index);
 
     @Generated
@@ -341,7 +341,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("setTileTexture:atIndex:")
-    void setTileTextureAtIndex(@Mapped(ObjCObjectMapper.class) Object texture, @NUInt long index);
+    void setTileTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
 
     @Generated
     @Selector("setTileTextures:withRange:")
@@ -360,7 +360,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("useHeap:")
-    void useHeap(@Mapped(ObjCObjectMapper.class) Object heap);
+    void useHeap(@Mapped(ObjCObjectMapper.class) MTLHeap heap);
 
     @Generated
     @Selector("useHeaps:count:")
@@ -368,7 +368,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("useResource:usage:")
-    void useResourceUsage(@Mapped(ObjCObjectMapper.class) Object resource, @NUInt long usage);
+    void useResourceUsage(@Mapped(ObjCObjectMapper.class) MTLResource resource, @NUInt long usage);
 
     @Generated
     @Selector("useResources:count:usage:")
@@ -378,27 +378,28 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("drawIndexedPatches:patchIndexBuffer:patchIndexBufferOffset:controlPointIndexBuffer:controlPointIndexBufferOffset:indirectBuffer:indirectBufferOffset:")
     void drawIndexedPatchesPatchIndexBufferPatchIndexBufferOffsetControlPointIndexBufferControlPointIndexBufferOffsetIndirectBufferIndirectBufferOffset(
-            @NUInt long numberOfPatchControlPoints, @Mapped(ObjCObjectMapper.class) Object patchIndexBuffer,
-            @NUInt long patchIndexBufferOffset, @Mapped(ObjCObjectMapper.class) Object controlPointIndexBuffer,
-            @NUInt long controlPointIndexBufferOffset, @Mapped(ObjCObjectMapper.class) Object indirectBuffer,
+            @NUInt long numberOfPatchControlPoints, @Mapped(ObjCObjectMapper.class) MTLBuffer patchIndexBuffer,
+            @NUInt long patchIndexBufferOffset, @Mapped(ObjCObjectMapper.class) MTLBuffer controlPointIndexBuffer,
+            @NUInt long controlPointIndexBufferOffset, @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer,
             @NUInt long indirectBufferOffset);
 
     @Generated
     @Selector("drawPatches:patchIndexBuffer:patchIndexBufferOffset:indirectBuffer:indirectBufferOffset:")
     void drawPatchesPatchIndexBufferPatchIndexBufferOffsetIndirectBufferIndirectBufferOffset(
-            @NUInt long numberOfPatchControlPoints, @Mapped(ObjCObjectMapper.class) Object patchIndexBuffer,
-            @NUInt long patchIndexBufferOffset, @Mapped(ObjCObjectMapper.class) Object indirectBuffer,
+            @NUInt long numberOfPatchControlPoints, @Mapped(ObjCObjectMapper.class) MTLBuffer patchIndexBuffer,
+            @NUInt long patchIndexBufferOffset, @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer,
             @NUInt long indirectBufferOffset);
 
     @Generated
     @Selector("executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:")
     void executeCommandsInBufferIndirectBufferIndirectBufferOffset(
-            @Mapped(ObjCObjectMapper.class) Object indirectCommandbuffer,
-            @Mapped(ObjCObjectMapper.class) Object indirectRangeBuffer, @NUInt long indirectBufferOffset);
+            @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandbuffer,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer indirectRangeBuffer, @NUInt long indirectBufferOffset);
 
     @Generated
     @Selector("executeCommandsInBuffer:withRange:")
-    void executeCommandsInBufferWithRange(@Mapped(ObjCObjectMapper.class) Object indirectCommandBuffer,
+    void executeCommandsInBufferWithRange(
+            @Mapped(ObjCObjectMapper.class) MTLIndirectCommandBuffer indirectCommandBuffer,
             @ByValue NSRange executionRange);
 
     @Generated
@@ -419,7 +420,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("useHeap:stages:")
-    void useHeapStages(@Mapped(ObjCObjectMapper.class) Object heap, @NUInt long stages);
+    void useHeapStages(@Mapped(ObjCObjectMapper.class) MTLHeap heap, @NUInt long stages);
 
     @Generated
     @Selector("useHeaps:count:stages:")
@@ -428,7 +429,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     @Generated
     @Selector("useResource:usage:stages:")
-    void useResourceUsageStages(@Mapped(ObjCObjectMapper.class) Object resource, @NUInt long usage, @NUInt long stages);
+    void useResourceUsageStages(@Mapped(ObjCObjectMapper.class) MTLResource resource, @NUInt long usage,
+            @NUInt long stages);
 
     @Generated
     @Selector("useResources:count:usage:stages:")

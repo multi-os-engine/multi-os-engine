@@ -19,19 +19,19 @@ public interface SNResultsObserving {
     @Generated
     @IsOptional
     @Selector("request:didFailWithError:")
-    default void requestDidFailWithError(@Mapped(ObjCObjectMapper.class) Object request, NSError error) {
+    default void requestDidFailWithError(@Mapped(ObjCObjectMapper.class) SNRequest request, NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("request:didProduceResult:")
-    void requestDidProduceResult(@Mapped(ObjCObjectMapper.class) Object request,
-            @Mapped(ObjCObjectMapper.class) Object result);
+    void requestDidProduceResult(@Mapped(ObjCObjectMapper.class) SNRequest request,
+            @Mapped(ObjCObjectMapper.class) SNResult result);
 
     @Generated
     @IsOptional
     @Selector("requestDidComplete:")
-    default void requestDidComplete(@Mapped(ObjCObjectMapper.class) Object request) {
+    default void requestDidComplete(@Mapped(ObjCObjectMapper.class) SNRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

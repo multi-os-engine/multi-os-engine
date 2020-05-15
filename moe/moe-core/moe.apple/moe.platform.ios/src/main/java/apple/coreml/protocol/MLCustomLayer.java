@@ -6,6 +6,7 @@ import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSNumber;
+import apple.metal.protocol.MTLCommandBuffer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -27,8 +28,9 @@ public interface MLCustomLayer {
     @Generated
     @IsOptional
     @Selector("encodeToCommandBuffer:inputs:outputs:error:")
-    default boolean encodeToCommandBufferInputsOutputsError(@Mapped(ObjCObjectMapper.class) Object commandBuffer,
-            NSArray<?> inputs, NSArray<?> outputs, @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
+    default boolean encodeToCommandBufferInputsOutputsError(
+            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<?> inputs, NSArray<?> outputs,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }
 

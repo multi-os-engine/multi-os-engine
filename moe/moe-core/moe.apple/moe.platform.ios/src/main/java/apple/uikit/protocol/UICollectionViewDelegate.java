@@ -210,7 +210,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
     default boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object context) {
+            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -258,7 +258,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:")
     default void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UICollectionView collectionView,
-            UIContextMenuConfiguration configuration, @Mapped(ObjCObjectMapper.class) Object animator) {
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 

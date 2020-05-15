@@ -50,7 +50,8 @@ public interface NSFetchedResultsControllerDelegate {
     @IsOptional
     @Selector("controller:didChangeSection:atIndex:forChangeType:")
     default void controllerDidChangeSectionAtIndexForChangeType(NSFetchedResultsController<?> controller,
-            @Mapped(ObjCObjectMapper.class) Object sectionInfo, @NUInt long sectionIndex, @NUInt long type) {
+            @Mapped(ObjCObjectMapper.class) NSFetchedResultsSectionInfo sectionInfo, @NUInt long sectionIndex,
+            @NUInt long type) {
         throw new java.lang.UnsupportedOperationException();
     }
 

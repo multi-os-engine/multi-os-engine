@@ -9,5 +9,6 @@ public final class ICReturnPTPDeviceErrorCode {
     private ICReturnPTPDeviceErrorCode() {
     }
 
-    @Generated @NInt public static final long ICReturnPTPFailedToSendCommand = 0xFFFFFFFFFFFFAD94L;
+    @Generated @NInt public static final long FailedToSendCommand = 0xFFFFFFFFFFFFACFEL;
+    @Generated @NInt public static final long NotAuthorizedToSendCommand = 0xFFFFFFFFFFFFACFFL;
 }

@@ -35,14 +35,15 @@ public interface NSFileProviderEnumerator {
     @Generated
     @IsOptional
     @Selector("enumerateChangesForObserver:fromSyncAnchor:")
-    default void enumerateChangesForObserverFromSyncAnchor(@Mapped(ObjCObjectMapper.class) Object observer,
-            NSData syncAnchor) {
+    default void enumerateChangesForObserverFromSyncAnchor(
+            @Mapped(ObjCObjectMapper.class) NSFileProviderChangeObserver observer, NSData syncAnchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("enumerateItemsForObserver:startingAtPage:")
-    void enumerateItemsForObserverStartingAtPage(@Mapped(ObjCObjectMapper.class) Object observer, NSData page);
+    void enumerateItemsForObserverStartingAtPage(
+            @Mapped(ObjCObjectMapper.class) NSFileProviderEnumerationObserver observer, NSData page);
 
     @Generated
     @Selector("invalidate")

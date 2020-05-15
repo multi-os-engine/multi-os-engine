@@ -25,7 +25,9 @@ import apple.foundation.NSSet;
 import apple.uikit.protocol.UIAppearanceContainer;
 import apple.uikit.protocol.UIContentContainer;
 import apple.uikit.protocol.UIFocusEnvironment;
+import apple.uikit.protocol.UIFocusItemContainer;
 import apple.uikit.protocol.UITraitEnvironment;
+import apple.uikit.protocol.UIViewControllerTransitionCoordinator;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -225,7 +227,7 @@ public class UIPresentationController extends NSObject
     @Generated
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
     public native void preferredContentSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) Object container);
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     @Generated
     @Selector("preferredFocusEnvironments")
@@ -301,12 +303,12 @@ public class UIPresentationController extends NSObject
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
     @ByValue
     public native CGSize sizeForChildContentContainerWithParentContainerSize(
-            @Mapped(ObjCObjectMapper.class) Object container, @ByValue CGSize parentSize);
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
 
     @Generated
     @Selector("systemLayoutFittingSizeDidChangeForChildContentContainer:")
     public native void systemLayoutFittingSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) Object container);
+            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     @Generated
     @Selector("traitCollection")
@@ -323,20 +325,20 @@ public class UIPresentationController extends NSObject
     @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
     public native void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size,
-            @Mapped(ObjCObjectMapper.class) Object coordinator);
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
     @Generated
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
     public native void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
-            @Mapped(ObjCObjectMapper.class) Object coordinator);
+            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object focusItemContainer();
+    public native UIFocusItemContainer focusItemContainer();
 
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object parentFocusEnvironment();
+    public native UIFocusEnvironment parentFocusEnvironment();
 }

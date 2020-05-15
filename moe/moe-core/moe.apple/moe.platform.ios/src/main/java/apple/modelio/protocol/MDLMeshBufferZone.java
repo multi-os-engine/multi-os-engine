@@ -34,7 +34,7 @@ public interface MDLMeshBufferZone {
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
-    Object allocator();
+    MDLMeshBufferAllocator allocator();
 
     @Generated
     @Selector("capacity")

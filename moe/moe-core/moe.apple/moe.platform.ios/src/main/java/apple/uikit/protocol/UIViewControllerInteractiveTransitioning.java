@@ -51,7 +51,8 @@ public interface UIViewControllerInteractiveTransitioning {
 
     @Generated
     @Selector("startInteractiveTransition:")
-    void startInteractiveTransition(@Mapped(ObjCObjectMapper.class) Object transitionContext);
+    void startInteractiveTransition(
+            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     @Generated
     @IsOptional

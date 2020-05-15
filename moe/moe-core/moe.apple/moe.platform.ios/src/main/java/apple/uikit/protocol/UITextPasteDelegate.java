@@ -22,7 +22,7 @@ public interface UITextPasteDelegate {
     @IsOptional
     @Selector("textPasteConfigurationSupporting:combineItemAttributedStrings:forRange:")
     default NSAttributedString textPasteConfigurationSupportingCombineItemAttributedStringsForRange(
-            @Mapped(ObjCObjectMapper.class) Object textPasteConfigurationSupporting,
+            @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
             NSArray<? extends NSAttributedString> itemStrings, UITextRange textRange) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -31,7 +31,7 @@ public interface UITextPasteDelegate {
     @IsOptional
     @Selector("textPasteConfigurationSupporting:performPasteOfAttributedString:toRange:")
     default UITextRange textPasteConfigurationSupportingPerformPasteOfAttributedStringToRange(
-            @Mapped(ObjCObjectMapper.class) Object textPasteConfigurationSupporting,
+            @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
             NSAttributedString attributedString, UITextRange textRange) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -40,7 +40,7 @@ public interface UITextPasteDelegate {
     @IsOptional
     @Selector("textPasteConfigurationSupporting:shouldAnimatePasteOfAttributedString:toRange:")
     default boolean textPasteConfigurationSupportingShouldAnimatePasteOfAttributedStringToRange(
-            @Mapped(ObjCObjectMapper.class) Object textPasteConfigurationSupporting,
+            @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
             NSAttributedString attributedString, UITextRange textRange) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,8 +49,8 @@ public interface UITextPasteDelegate {
     @IsOptional
     @Selector("textPasteConfigurationSupporting:transformPasteItem:")
     default void textPasteConfigurationSupportingTransformPasteItem(
-            @Mapped(ObjCObjectMapper.class) Object textPasteConfigurationSupporting,
-            @Mapped(ObjCObjectMapper.class) Object item) {
+            @Mapped(ObjCObjectMapper.class) UITextPasteConfigurationSupporting textPasteConfigurationSupporting,
+            @Mapped(ObjCObjectMapper.class) UITextPasteItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

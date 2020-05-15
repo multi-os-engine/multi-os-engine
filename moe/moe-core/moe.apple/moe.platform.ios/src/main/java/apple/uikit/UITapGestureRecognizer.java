@@ -181,4 +181,13 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("initWithCoder:")
     public native UITapGestureRecognizer initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("buttonMaskRequired")
+    @NInt
+    public native long buttonMaskRequired();
+
+    @Generated
+    @Selector("setButtonMaskRequired:")
+    public native void setButtonMaskRequired(@NInt long value);
 }

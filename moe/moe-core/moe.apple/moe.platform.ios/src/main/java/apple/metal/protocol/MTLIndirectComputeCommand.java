@@ -42,11 +42,11 @@ public interface MTLIndirectComputeCommand {
 
     @Generated
     @Selector("setComputePipelineState:")
-    void setComputePipelineState(@Mapped(ObjCObjectMapper.class) Object pipelineState);
+    void setComputePipelineState(@Mapped(ObjCObjectMapper.class) MTLComputePipelineState pipelineState);
 
     @Generated
     @Selector("setKernelBuffer:offset:atIndex:")
-    void setKernelBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) Object buffer, @NUInt long offset,
+    void setKernelBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
     @Generated

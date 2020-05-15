@@ -34,7 +34,7 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("renderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
-    Object renderCommandEncoder();
+    MTLRenderCommandEncoder renderCommandEncoder();
 
     @Generated
     @Selector("setColorStoreAction:atIndex:")
