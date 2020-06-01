@@ -593,13 +593,11 @@ public class XcodeBuild extends AbstractBaseTask {
         final String _xcodeProjectFile;
         final String _xcodeWorkspaceFile;
         final String _xcodeBuildRoot;
-        final String _configurationBuildDir;
 
         if (remoteServer != null) {
             final Path xcodeProjectFileRel;
             final Path xcodeWorkspaceFileRel;
             final Path xcodeBuildRootRel;
-            final Path configurationBuildDirRel;
             try {
                 xcodeProjectFileRel = getInnerProjectRelativePath(getXcodeProjectFile());
                 if (getXcodeWorkspaceFile() != null) {
@@ -608,7 +606,6 @@ public class XcodeBuild extends AbstractBaseTask {
                     xcodeWorkspaceFileRel = null;
                 }
                 xcodeBuildRootRel = getInnerProjectRelativePath(getXcodeBuildRoot());
-                configurationBuildDirRel = getInnerProjectRelativePath(getConfigurationBuildDir());
             } catch (IOException e) {
                 throw new GradleException("Unsupported configuration", e);
             }
@@ -619,7 +616,6 @@ public class XcodeBuild extends AbstractBaseTask {
                 _xcodeWorkspaceFile = null;
             }
             _xcodeBuildRoot = remoteServer.getRemotePath(xcodeBuildRootRel);
-            _configurationBuildDir = remoteServer.getRemotePath(configurationBuildDirRel);
 
         } else {
             _xcodeProjectFile = getXcodeProjectFile().getAbsolutePath();
@@ -629,7 +625,6 @@ public class XcodeBuild extends AbstractBaseTask {
                 _xcodeWorkspaceFile = null;
             }
             _xcodeBuildRoot = getXcodeBuildRoot().getAbsolutePath();
-            _configurationBuildDir = getConfigurationBuildDir().getAbsolutePath();
         }
 
         if (_xcodeWorkspaceFile != null) {
@@ -654,10 +649,13 @@ public class XcodeBuild extends AbstractBaseTask {
 
         args.addAll(getAdditionalParameters());
 
-        args.add("CONFIGURATION_BUILD_DIR=" + _configurationBuildDir);
+        // DO NOT set CONFIGURATION_BUILD_DIR here! This is conflicted with CocoaPods!
+        // Instead, set SYMROOT to the build root, since the BUILD_DIR is equals to SYMROOT
+        // and CONFIGURATION_BUILD_DIR is derived from it.
+        // args.add("CONFIGURATION_BUILD_DIR=" + _configurationBuildDir);
+        args.add("SYMROOT=" + _xcodeBuildRoot);
         args.add("DSTROOT=" + _xcodeBuildRoot + "/dst");
         args.add("OBJROOT=" + _xcodeBuildRoot + "/obj");
-        args.add("SYMROOT=" + _xcodeBuildRoot + "/sym");
         args.add("SHARED_PRECOMPS_DIR=" + _xcodeBuildRoot + "/shared_precomps");
         if (PROVISIONING_PROFILE != null) {
             args.add("PROVISIONING_PROFILE=" + PROVISIONING_PROFILE);
