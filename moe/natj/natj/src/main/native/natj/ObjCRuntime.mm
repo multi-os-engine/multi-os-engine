@@ -85,6 +85,7 @@ id (*_objc_loadWeakRetained)(id*);
 
 static Class gBlockClass = NSClassFromString(@"NSBlock");
 static Class gStackBlockClass = NSClassFromString(@"__NSStackBlock");
+static Class gStackBlockClass2 = NSClassFromString(@"__NSStackBlock__");
 
 static int8_t gDefaultUnboxPolicy;
 
@@ -985,7 +986,8 @@ jboolean Java_org_moe_natj_objc_ObjCRuntime_isObjectBlock(JNIEnv* env,
 jboolean Java_org_moe_natj_objc_ObjCRuntime_isStackBlock(JNIEnv* env,
                                                              jclass clazz,
                                                              jlong object) {
-  return [reinterpret_cast<id>(object) isKindOfClass:gStackBlockClass];
+  return [reinterpret_cast<id>(object) isKindOfClass:gStackBlockClass]
+    || (gStackBlockClass2 != nil && [reinterpret_cast<id>(object) isKindOfClass:gStackBlockClass2]);
 }
 
 jlong Java_org_moe_natj_objc_ObjCRuntime_copyBlock(JNIEnv* env,
