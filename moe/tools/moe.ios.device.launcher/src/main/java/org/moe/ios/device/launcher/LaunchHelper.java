@@ -386,13 +386,15 @@ public class LaunchHelper implements IStopReplyListener {
 
                 // Check launch success
                 String query_launchSuccess = protocol.query_LaunchSuccess();
-                if ("Locked".equals(query_launchSuccess)) {
-                    if (isFirstTry) {
-                        LOG.info("Please unlock your device");
-                    }
-                    return true;
-                }
                 if (query_launchSuccess != null) {
+                    if ("Locked".equals(query_launchSuccess)
+                            || query_launchSuccess.contains("the device was not, or could not be, unlocked")) {
+                        if (isFirstTry) {
+                            LOG.info("Please unlock your device");
+                        }
+                        return true;
+                    }
+
                     if (config.getDebugserverPort() != null) {
                         protocol.close();
                         try {
