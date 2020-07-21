@@ -507,6 +507,7 @@ extern jmethodID gBuildNativeObjectInfoStaticMethod;
 extern jmethodID gGetMappedMethod;
 extern jmethodID gGetMappedReturnMethod;
 extern jmethodID gGetParameterAnnotationsMethod;
+extern jmethodID gGetParameterAnnotationsInheritedStaticMethod;
 extern jmethodID gGetRuntimeStaticMethod;
 extern jmethodID gGetNativeExceptionMethod;
 extern jmethodID gGetMessageMethod;

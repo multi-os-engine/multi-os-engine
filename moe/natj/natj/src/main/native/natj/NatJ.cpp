@@ -133,6 +133,7 @@ jmethodID gBuildNativeObjectInfoStaticMethod = NULL;
 jmethodID gGetMappedMethod = NULL;
 jmethodID gGetMappedReturnMethod = NULL;
 jmethodID gGetParameterAnnotationsMethod = NULL;
+jmethodID gGetParameterAnnotationsInheritedStaticMethod = NULL;
 jmethodID gGetRuntimeStaticMethod = NULL;
 jmethodID gGetNativeExceptionMethod = NULL;
 jmethodID gGetMessageMethod = NULL;
@@ -403,6 +404,9 @@ void JNICALL Java_org_moe_natj_general_NatJ_initialize(JNIEnv* env, jclass clazz
   gGetParameterAnnotationsMethod =
       env->GetMethodID(gMethodClass, "getParameterAnnotations",
                        "()[[Ljava/lang/annotation/Annotation;");
+  gGetParameterAnnotationsInheritedStaticMethod =
+      env->GetStaticMethodID(gNatJClass, "getParameterAnnotationsInherited",
+                       "(Ljava/lang/reflect/Method;)[[Ljava/lang/annotation/Annotation;");
   gGetRuntimeStaticMethod = env->GetStaticMethodID(
       gNatJClass, "getRuntime",
       "(Ljava/lang/Class;Z)Lorg/moe/natj/general/NativeRuntime;");
@@ -866,8 +870,8 @@ void buildInfos(JNIEnv* env, jobject method, bool toJava, jobject** paramInfos,
 #endif
     jobjectArray parameterTypes =
         (jobjectArray)env->CallObjectMethod(method, gGetParameterTypesMethod);
-    jobjectArray parameterAnns = (jobjectArray)env->CallObjectMethod(
-        method, gGetParameterAnnotationsMethod);
+    jobjectArray parameterAnns = (jobjectArray)env->CallStaticObjectMethod(
+        gNatJClass, gGetParameterAnnotationsInheritedStaticMethod, method);
     jsize parameterCount = env->GetArrayLength(parameterTypes);
     if (isVariadic) {
       parameterCount--;
