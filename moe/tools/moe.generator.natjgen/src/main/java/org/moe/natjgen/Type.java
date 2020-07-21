@@ -27,7 +27,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 import static org.clang.c.clang.clang_equalCursors;
 
@@ -522,6 +524,25 @@ public class Type {
         return typeSpelling;
     }
 
+    private static List<CXCursor> parseParameters(CXType typeDefType, CXCursor parmCursor, int expectedParmCount) {
+        if (expectedParmCount == 0) {
+            return Collections.emptyList();
+        }
+
+        List<CXCursor> argumentCursors = null;
+        if (typeDefType != null) {
+            argumentCursors = ClangUtil.parseParameters(typeDefType.getTypeDeclaration());
+        } else if (parmCursor != null) {
+            argumentCursors = ClangUtil.parseParameters(parmCursor);
+        }
+
+        if (argumentCursors != null && argumentCursors.size() != expectedParmCount) {
+            argumentCursors = null;
+        }
+
+        return argumentCursors;
+    }
+
     /**
      * Create a new type with a CXType
      *
@@ -529,6 +550,16 @@ public class Type {
      * @param memModel memory model
      */
     public Type(final CXType inType, final int memModel) {
+        this(inType, memModel, null);
+    }
+
+    /**
+     * Create a new type with a CXType
+     *
+     * @param inType   clang type
+     * @param memModel memory model
+     */
+    public Type(final CXType inType, final int memModel, final CXCursor parmCursor) {
         typeSpelling = inType.getTypeSpelling().toString();
         CXType type = inType;
 
@@ -828,9 +859,23 @@ public class Type {
             callbackDescriptor = new CallbackDescriptor(ObjCBlock, new Type(pointee.getResultType(), memModel),
                     arg_count);
             callbackDescriptor.setVariadic(type.isFunctionTypeVariadic() != 0);
+
+            List<CXCursor> argumentCursors = parseParameters(typeDefType, parmCursor, arg_count);
             for (int idx = 0; idx < arg_count; ++idx) {
-                Type arg = new Type(pointee.getArgType(idx), memModel);
-                callbackDescriptor.arguments.add(new CallbackArgument("arg" + idx, arg));
+                String argName = "arg" + idx; // The default argument name is argX
+
+                CXCursor argCursor = null;
+                if (argumentCursors != null) {
+                    argCursor = argumentCursors.get(idx);
+                    String cursorName = argCursor.toString();
+                    // The cursor name can be empty if the argument name is omitted from the decl
+                    if (cursorName.length() > 0) {
+                        argName = cursorName;
+                    }
+                }
+
+                Type arg = new Type(pointee.getArgType(idx), memModel, argCursor);
+                callbackDescriptor.arguments.add(new CallbackArgument(argName, arg));
             }
         }
         break;
@@ -842,9 +887,23 @@ public class Type {
             callbackDescriptor = new CallbackDescriptor(FunctionProto, new Type(nonCanonical.getResultType(), memModel),
                     arg_count);
             callbackDescriptor.setVariadic(type.isFunctionTypeVariadic() != 0);
+
+            List<CXCursor> argumentCursors = parseParameters(typeDefType, parmCursor, arg_count);
             for (int idx = 0; idx < arg_count; ++idx) {
-                Type arg = new Type(nonCanonical.getArgType(idx), memModel);
-                callbackDescriptor.arguments.add(new CallbackArgument("arg" + idx, arg));
+                String argName = "arg" + idx; // The default argument name is argX
+
+                CXCursor argCursor = null;
+                if (argumentCursors != null) {
+                    argCursor = argumentCursors.get(idx);
+                    String cursorName = argCursor.toString();
+                    // The cursor name can be empty if the argument name is omitted from the decl
+                    if (cursorName.length() > 0) {
+                        argName = cursorName;
+                    }
+                }
+
+                Type arg = new Type(nonCanonical.getArgType(idx), memModel, argCursor);
+                callbackDescriptor.arguments.add(new CallbackArgument(argName, arg));
             }
         }
         break;

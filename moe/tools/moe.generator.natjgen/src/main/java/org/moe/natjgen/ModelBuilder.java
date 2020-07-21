@@ -267,7 +267,7 @@ class ModelBuilder extends AbstractModelEditor {
             CXCursor argCursor = declCursor.getArgument(i);
             CXType type = argCursor.getCursorType();
             String name = argCursor.toString();
-            method.getArguments().add(new CalleeArgument(name, new Type(type, memModel)));
+            method.getArguments().add(new CalleeArgument(name, new Type(type, memModel, argCursor)));
         }
         method.close();
         method.setDeprecated(ClangUtil.isDeprecated(declCursor));
@@ -554,11 +554,12 @@ class ModelBuilder extends AbstractModelEditor {
                     function.addLocation(clang_getFileName(argtfile).toString());
                 }
             }
-            String name = declCursor.getArgument(i).toString();
+            CXCursor argCursor = declCursor.getArgument(i);
+            String name = argCursor.toString();
             if (name == null || name.length() == 0) {
                 name = "arg" + (i + 1);
             }
-            function.getArguments().add(new CalleeArgument(name, new Type(type, memModel)));
+            function.getArguments().add(new CalleeArgument(name, new Type(type, memModel, argCursor)));
         }
         function.close();
         function.setDeprecated(ClangUtil.isDeprecated(declCursor));

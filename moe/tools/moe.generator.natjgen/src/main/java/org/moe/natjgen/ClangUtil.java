@@ -16,7 +16,9 @@ limitations under the License.
 
 package org.moe.natjgen;
 
+import org.clang.c.clang;
 import org.clang.enums.CXAvailabilityKind;
+import org.clang.enums.CXCursorKind;
 import org.clang.enums.CXLinkageKind;
 import org.clang.enums.CXTokenKind;
 import org.clang.enums.CX_StorageClass;
@@ -33,6 +35,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import static org.clang.c.clang.*;
 
@@ -271,5 +274,55 @@ public final class ClangUtil {
         default:
             throw new RuntimeException("Unknown storage class");
         }
+    }
+
+    /**
+     * Get the list of cursors that point to each parameter of the given function decl.
+     */
+    public static ArrayList<CXCursor> parseParameters(CXCursor decl) {
+        CXTranslationUnit cu = clang.clang_Cursor_getTranslationUnit(decl);
+
+        // Get the range that covers the entire function decl
+        CXSourceRange r = clang.clang_getCursorExtent(decl);
+
+        // Tokenize the function decl
+        @SuppressWarnings("unchecked") Ptr<Ptr<CXToken>> tokens_ref = (Ptr<Ptr<CXToken>>)PtrFactory
+                .newPointerPtr(CXToken.class, 2, 1, true, false);
+        IntPtr numTokens = PtrFactory.newIntReference();
+        clang.clang_tokenize(cu, r, tokens_ref, numTokens);
+        Ptr<CXToken> tokens = tokens_ref.get();
+
+        int num_tokens = numTokens.getValue();
+
+        ArrayList<CXCursor> parameters = new ArrayList<>();
+
+        IntPtr offsetRef = PtrFactory.newIntReference();
+        int lastOffset = -1;
+        for (int idx = 0; idx < num_tokens - 1; ++idx) {
+            CXToken token = tokens.get(idx);
+
+            // Skip token that is covered by current cursor
+            CXSourceLocation tl = clang.clang_getTokenLocation(cu, token);
+            tl.getExpansionLocation(null, null, null, offsetRef);
+            if (offsetRef.getValue() < lastOffset) {
+                continue;
+            }
+
+            // Get the cursor at current token
+            CXCursor c = clang.clang_getCursor(cu, clang.clang_getTokenLocation(cu, token));
+
+            // Check if the current cursor is a parameter decl
+            if (c.kind() == CXCursorKind.ParmDecl && clang.clang_equalCursors(c, decl) == 0) {
+                parameters.add(c);
+
+                // Save the end offset of current cursor
+                CXSourceRange cr = clang.clang_getCursorExtent(c);
+                CXSourceLocation end = clang.clang_getRangeEnd(cr);
+                end.getExpansionLocation(null, null, null, offsetRef);
+                lastOffset = offsetRef.getValue();
+            }
+        }
+
+        return parameters;
     }
 }
