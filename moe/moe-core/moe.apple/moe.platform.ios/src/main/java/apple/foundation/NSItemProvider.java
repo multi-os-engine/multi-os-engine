@@ -313,4 +313,117 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Generated
     @Selector("teamData")
     public native NSData teamData();
+
+    @Generated
+    @Selector("previewImageHandler")
+    @ObjCBlock(name = "call_previewImageHandler_ret")
+    public native Block_previewImageHandler_ret previewImageHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_previewImageHandler_ret {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_previewImageHandler_ret {
+            @Generated
+            void call_Block_previewImageHandler_ret(@Mapped(ObjCObjectMapper.class) Object item, NSError error);
+        }
+
+        @Generated
+        void call_previewImageHandler_ret(
+                @ObjCBlock(name = "call_Block_previewImageHandler_ret") Block_Block_previewImageHandler_ret completionHandler,
+                Class expectedValueClass, NSDictionary<?, ?> options);
+    }
+
+    @Generated
+    @Selector("registerDataRepresentationForTypeIdentifier:visibility:loadHandler:")
+    public native void registerDataRepresentationForTypeIdentifierVisibilityLoadHandler(String typeIdentifier,
+            @NInt long visibility,
+            @ObjCBlock(name = "call_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler") Block_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler loadHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler {
+            @Generated
+            void call_Block_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler(NSData arg0, NSError arg1);
+        }
+
+        @Generated
+        NSProgress call_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler(
+                @ObjCBlock(name = "call_Block_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler") Block_Block_registerDataRepresentationForTypeIdentifierVisibilityLoadHandler completionHandler);
+    }
+
+    @Generated
+    @Selector("registerFileRepresentationForTypeIdentifier:fileOptions:visibility:loadHandler:")
+    public native void registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler(
+            String typeIdentifier, @NInt long fileOptions, @NInt long visibility,
+            @ObjCBlock(name = "call_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler") Block_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler loadHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler {
+            @Generated
+            void call_Block_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler(NSURL arg0,
+                    boolean arg1, NSError arg2);
+        }
+
+        @Generated
+        NSProgress call_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler(
+                @ObjCBlock(name = "call_Block_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler") Block_Block_registerFileRepresentationForTypeIdentifierFileOptionsVisibilityLoadHandler completionHandler);
+    }
+
+    @Generated
+    @Selector("registerItemForTypeIdentifier:loadHandler:")
+    public native void registerItemForTypeIdentifierLoadHandler(String typeIdentifier,
+            @ObjCBlock(name = "call_registerItemForTypeIdentifierLoadHandler") Block_registerItemForTypeIdentifierLoadHandler loadHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_registerItemForTypeIdentifierLoadHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_registerItemForTypeIdentifierLoadHandler {
+            @Generated
+            void call_Block_registerItemForTypeIdentifierLoadHandler(@Mapped(ObjCObjectMapper.class) Object item,
+                    NSError error);
+        }
+
+        @Generated
+        void call_registerItemForTypeIdentifierLoadHandler(
+                @ObjCBlock(name = "call_Block_registerItemForTypeIdentifierLoadHandler") Block_Block_registerItemForTypeIdentifierLoadHandler completionHandler,
+                Class expectedValueClass, NSDictionary<?, ?> options);
+    }
+
+    @Generated
+    @Selector("registerObjectOfClass:visibility:loadHandler:")
+    public native void registerObjectOfClassVisibilityLoadHandler(
+            @Mapped(ObjCObjectMapper.class) NSItemProviderWriting aClass, @NInt long visibility,
+            @ObjCBlock(name = "call_registerObjectOfClassVisibilityLoadHandler") Block_registerObjectOfClassVisibilityLoadHandler loadHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_registerObjectOfClassVisibilityLoadHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_registerObjectOfClassVisibilityLoadHandler {
+            @Generated
+            void call_Block_registerObjectOfClassVisibilityLoadHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                    NSError arg1);
+        }
+
+        @Generated
+        NSProgress call_registerObjectOfClassVisibilityLoadHandler(
+                @ObjCBlock(name = "call_Block_registerObjectOfClassVisibilityLoadHandler") Block_Block_registerObjectOfClassVisibilityLoadHandler completionHandler);
+    }
+
+    @Generated
+    @Selector("setPreviewImageHandler:")
+    public native void setPreviewImageHandler(
+            @ObjCBlock(name = "call_previewImageHandler_ret") Block_previewImageHandler_ret value);
 }

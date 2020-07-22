@@ -263,4 +263,26 @@ public class NSFileCoordinator extends NSObject {
     @Generated
     @Selector("itemAtURL:didChangeUbiquityAttributes:")
     public native void itemAtURLDidChangeUbiquityAttributes(NSURL url, NSSet<String> attributes);
+
+    @Generated
+    @Selector("prepareForReadingItemsAtURLs:options:writingItemsAtURLs:options:error:byAccessor:")
+    public native void prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor(
+            NSArray<? extends NSURL> readingURLs, @NUInt long readingOptions, NSArray<? extends NSURL> writingURLs,
+            @NUInt long writingOptions, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
+            @ObjCBlock(name = "call_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor") Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor batchAccessor);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor {
+            @Generated
+            void call_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor();
+        }
+
+        @Generated
+        void call_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor(
+                @ObjCBlock(name = "call_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor") Block_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor completionHandler);
+    }
 }

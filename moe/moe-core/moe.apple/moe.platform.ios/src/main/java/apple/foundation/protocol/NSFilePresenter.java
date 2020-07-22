@@ -178,4 +178,50 @@ public interface NSFilePresenter {
     default void presentedItemDidChangeUbiquityAttributes(NSSet<String> attributes) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("relinquishPresentedItemToReader:")
+    default void relinquishPresentedItemToReader(
+            @ObjCBlock(name = "call_relinquishPresentedItemToReader") Block_relinquishPresentedItemToReader reader) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_relinquishPresentedItemToReader {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_relinquishPresentedItemToReader {
+            @Generated
+            void call_Block_relinquishPresentedItemToReader();
+        }
+
+        @Generated
+        void call_relinquishPresentedItemToReader(
+                @ObjCBlock(name = "call_Block_relinquishPresentedItemToReader") Block_Block_relinquishPresentedItemToReader reacquirer);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("relinquishPresentedItemToWriter:")
+    default void relinquishPresentedItemToWriter(
+            @ObjCBlock(name = "call_relinquishPresentedItemToWriter") Block_relinquishPresentedItemToWriter writer) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_relinquishPresentedItemToWriter {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_relinquishPresentedItemToWriter {
+            @Generated
+            void call_Block_relinquishPresentedItemToWriter();
+        }
+
+        @Generated
+        void call_relinquishPresentedItemToWriter(
+                @ObjCBlock(name = "call_Block_relinquishPresentedItemToWriter") Block_Block_relinquishPresentedItemToWriter reacquirer);
+    }
 }

@@ -46,7 +46,7 @@
 * Run the license_updater.py script from the moe.apple directory to append license headers to new files
 * Also check generated native source files against the native files found in `moe.apple/moe.core.native/moe.sdk/src/inline`
 	* License headers will not be present in the new files
-	* Some includes/imports were fixed manually, make sure the the native files compile on all platforms
+	* Some includes/imports were fixed manually, make sure the native files compile on all platforms
 
 ### Custom Modifications List
 
@@ -66,6 +66,11 @@
     * to: `MPSCNNConvolutionTransposeGradientState resultStateForSourceImageSourceStatesDestinationImage(MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);`
     * from `MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage, NSArray<? extends MPSCNNConvolutionGradientState> sourceStates, MPSImage destinationImage);`
     * to: `MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);`
+* Merged block definitions in:
+    * `apple.audiotoolbox.AUAudioUnit`
+    * `apple.foundation.NSItemProvider`
+    * `apple.uikit.UIContextualAction`
+
 
 ### How to Update Custom Modifications List
 

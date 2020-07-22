@@ -686,4 +686,35 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Selector("userPresets")
     public native NSArray<? extends AUAudioUnitPreset> userPresets();
+
+    @Generated
+    @Selector("internalRenderBlock")
+    @ObjCBlock(name = "call_renderBlock_ret")
+    public native Block_renderBlock_ret internalRenderBlock();
+
+    @Generated
+    @Selector("renderBlock")
+    @ObjCBlock(name = "call_renderBlock_ret")
+    public native Block_renderBlock_ret renderBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_renderBlock_ret {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_renderBlock_ret {
+            @Generated
+            int call_Block_renderBlock_ret(IntPtr actionFlags,
+                    @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+                    int frameCount, @NInt long inputBusNumber,
+                    @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inputData);
+        }
+
+        @Generated
+        int call_renderBlock_ret(IntPtr actionFlags,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+                int frameCount, @NInt long outputBusNumber,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData,
+                @ObjCBlock(name = "call_Block_renderBlock_ret") Block_Block_renderBlock_ret pullInputBlock);
+    }
 }

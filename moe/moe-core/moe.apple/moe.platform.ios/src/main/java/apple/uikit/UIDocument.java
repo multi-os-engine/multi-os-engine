@@ -467,4 +467,16 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @IsOptional
     @Selector("presentedItemDidChangeUbiquityAttributes:")
     public native void presentedItemDidChangeUbiquityAttributes(NSSet<String> attributes);
+
+    @Generated
+    @IsOptional
+    @Selector("relinquishPresentedItemToReader:")
+    public native void relinquishPresentedItemToReader(
+            @ObjCBlock(name = "call_relinquishPresentedItemToReader") NSFilePresenter.Block_relinquishPresentedItemToReader reader);
+
+    @Generated
+    @IsOptional
+    @Selector("relinquishPresentedItemToWriter:")
+    public native void relinquishPresentedItemToWriter(
+            @ObjCBlock(name = "call_relinquishPresentedItemToWriter") NSFilePresenter.Block_relinquishPresentedItemToWriter writer);
 }

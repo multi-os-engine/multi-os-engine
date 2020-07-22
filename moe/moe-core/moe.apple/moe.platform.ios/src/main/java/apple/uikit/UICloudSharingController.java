@@ -22,6 +22,7 @@ import apple.cloudkit.CKShare;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIActivityItemSource;
@@ -41,6 +42,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -222,4 +224,24 @@ public class UICloudSharingController extends UIViewController {
     @Generated
     @Selector("share")
     public native CKShare share();
+
+    @Generated
+    @Selector("initWithPreparationHandler:")
+    public native UICloudSharingController initWithPreparationHandler(
+            @ObjCBlock(name = "call_initWithPreparationHandler") Block_initWithPreparationHandler preparationHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithPreparationHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_initWithPreparationHandler {
+            @Generated
+            void call_Block_initWithPreparationHandler(CKShare arg0, CKContainer arg1, NSError arg2);
+        }
+
+        @Generated
+        void call_initWithPreparationHandler(UICloudSharingController controller,
+                @ObjCBlock(name = "call_Block_initWithPreparationHandler") Block_Block_initWithPreparationHandler preparationCompletionHandler);
+    }
 }

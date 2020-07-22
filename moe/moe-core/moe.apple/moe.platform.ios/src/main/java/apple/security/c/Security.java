@@ -1990,4 +1990,88 @@ public final class Security {
     @Generated
     @CVariable()
     public static native CFStringRef kSecUseDataProtectionKeychain();
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_pre_shared_key_selection_block(NSObject options,
+            @ObjCBlock(name = "call_sec_protocol_options_set_pre_shared_key_selection_block") Block_sec_protocol_options_set_pre_shared_key_selection_block psk_selection_block,
+            NSObject psk_selection_queue);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_options_set_pre_shared_key_selection_block {
+        @Runtime(CRuntime.class)
+        @Generated
+        public interface Block_Block_sec_protocol_options_set_pre_shared_key_selection_block {
+            @Generated
+            void call_Block_sec_protocol_options_set_pre_shared_key_selection_block(NSObject psk_identity);
+        }
+
+        @Generated
+        void call_sec_protocol_options_set_pre_shared_key_selection_block(NSObject metadata, NSObject psk_identity_hint,
+                @ObjCBlock(name = "call_Block_sec_protocol_options_set_pre_shared_key_selection_block") Block_Block_sec_protocol_options_set_pre_shared_key_selection_block complete);
+    }
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_key_update_block(NSObject options,
+            @ObjCBlock(name = "call_sec_protocol_options_set_key_update_block") Block_sec_protocol_options_set_key_update_block key_update_block,
+            NSObject key_update_queue);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_options_set_key_update_block {
+        @Runtime(CRuntime.class)
+        @Generated
+        public interface Block_Block_sec_protocol_options_set_key_update_block {
+            @Generated
+            void call_Block_sec_protocol_options_set_key_update_block();
+        }
+
+        @Generated
+        void call_sec_protocol_options_set_key_update_block(NSObject metadata,
+                @ObjCBlock(name = "call_Block_sec_protocol_options_set_key_update_block") Block_Block_sec_protocol_options_set_key_update_block complete);
+    }
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_challenge_block(NSObject options,
+            @ObjCBlock(name = "call_sec_protocol_options_set_challenge_block") Block_sec_protocol_options_set_challenge_block challenge_block,
+            NSObject challenge_queue);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_options_set_challenge_block {
+        @Runtime(CRuntime.class)
+        @Generated
+        public interface Block_Block_sec_protocol_options_set_challenge_block {
+            @Generated
+            void call_Block_sec_protocol_options_set_challenge_block(NSObject identity);
+        }
+
+        @Generated
+        void call_sec_protocol_options_set_challenge_block(NSObject metadata,
+                @ObjCBlock(name = "call_Block_sec_protocol_options_set_challenge_block") Block_Block_sec_protocol_options_set_challenge_block complete);
+    }
+
+    @Generated
+    @CFunction
+    public static native void sec_protocol_options_set_verify_block(NSObject options,
+            @ObjCBlock(name = "call_sec_protocol_options_set_verify_block") Block_sec_protocol_options_set_verify_block verify_block,
+            NSObject verify_block_queue);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_sec_protocol_options_set_verify_block {
+        @Runtime(CRuntime.class)
+        @Generated
+        public interface Block_Block_sec_protocol_options_set_verify_block {
+            @Generated
+            void call_Block_sec_protocol_options_set_verify_block(boolean result);
+        }
+
+        @Generated
+        void call_sec_protocol_options_set_verify_block(NSObject metadata, NSObject trust_ref,
+                @ObjCBlock(name = "call_Block_sec_protocol_options_set_verify_block") Block_Block_sec_protocol_options_set_verify_block complete);
+    }
 }

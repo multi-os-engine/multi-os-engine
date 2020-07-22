@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
@@ -39,6 +40,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -271,4 +273,26 @@ public class HKObserverQuery extends HKQuery {
     @Generated
     @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
     public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    @Generated
+    @Selector("initWithSampleType:predicate:updateHandler:")
+    public native HKObserverQuery initWithSampleTypePredicateUpdateHandler(HKSampleType sampleType,
+            NSPredicate predicate,
+            @ObjCBlock(name = "call_initWithSampleTypePredicateUpdateHandler") Block_initWithSampleTypePredicateUpdateHandler updateHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithSampleTypePredicateUpdateHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_initWithSampleTypePredicateUpdateHandler {
+            @Generated
+            void call_Block_initWithSampleTypePredicateUpdateHandler();
+        }
+
+        @Generated
+        void call_initWithSampleTypePredicateUpdateHandler(HKObserverQuery query,
+                @ObjCBlock(name = "call_Block_initWithSampleTypePredicateUpdateHandler") Block_Block_initWithSampleTypePredicateUpdateHandler completionHandler,
+                NSError error);
+    }
 }
