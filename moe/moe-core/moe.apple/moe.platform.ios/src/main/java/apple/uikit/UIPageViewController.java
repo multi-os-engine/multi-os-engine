@@ -268,6 +268,6 @@ public class UIPageViewController extends UIViewController {
     @Generated
     public interface Block_setViewControllersDirectionAnimatedCompletion {
         @Generated
-        void call_setViewControllersDirectionAnimatedCompletion(boolean arg0);
+        void call_setViewControllersDirectionAnimatedCompletion(boolean finished);
     }
 }

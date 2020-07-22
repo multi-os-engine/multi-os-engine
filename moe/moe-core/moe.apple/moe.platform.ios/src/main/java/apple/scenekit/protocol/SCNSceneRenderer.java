@@ -244,7 +244,7 @@ public interface SCNSceneRenderer {
     @Generated
     public interface Block_prepareObjectsWithCompletionHandler {
         @Generated
-        void call_prepareObjectsWithCompletionHandler(boolean arg0);
+        void call_prepareObjectsWithCompletionHandler(boolean success);
     }
 
     @Runtime(ObjCRuntime.class)

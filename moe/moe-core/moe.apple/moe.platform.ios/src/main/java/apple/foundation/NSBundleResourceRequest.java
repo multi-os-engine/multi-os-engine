@@ -199,13 +199,13 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Generated
     public interface Block_beginAccessingResourcesWithCompletionHandler {
         @Generated
-        void call_beginAccessingResourcesWithCompletionHandler(NSError arg0);
+        void call_beginAccessingResourcesWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_conditionallyBeginAccessingResourcesWithCompletionHandler {
         @Generated
-        void call_conditionallyBeginAccessingResourcesWithCompletionHandler(boolean arg0);
+        void call_conditionallyBeginAccessingResourcesWithCompletionHandler(boolean resourcesAvailable);
     }
 }

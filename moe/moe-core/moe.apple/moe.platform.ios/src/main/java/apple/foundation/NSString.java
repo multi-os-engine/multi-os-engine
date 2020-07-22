@@ -1039,23 +1039,23 @@ public class NSString extends NSObject
     @Generated
     public interface Block_enumerateLinesUsingBlock {
         @Generated
-        void call_enumerateLinesUsingBlock(String arg0, BoolPtr arg1);
+        void call_enumerateLinesUsingBlock(String line, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock {
         @Generated
-        void call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock(String arg0, @ByValue NSRange arg1,
-                @ByValue NSRange arg2, BoolPtr arg3);
+        void call_enumerateLinguisticTagsInRangeSchemeOptionsOrthographyUsingBlock(String tag,
+                @ByValue NSRange tokenRange, @ByValue NSRange sentenceRange, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateSubstringsInRangeOptionsUsingBlock {
         @Generated
-        void call_enumerateSubstringsInRangeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, @ByValue NSRange arg2,
-                BoolPtr arg3);
+        void call_enumerateSubstringsInRangeOptionsUsingBlock(String substring, @ByValue NSRange substringRange,
+                @ByValue NSRange enclosingRange, BoolPtr stop);
     }
 
     @Generated

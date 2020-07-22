@@ -177,6 +177,6 @@ public class MKLocalSearch extends NSObject {
     @Generated
     public interface Block_startWithCompletionHandler {
         @Generated
-        void call_startWithCompletionHandler(MKLocalSearchResponse arg0, NSError arg1);
+        void call_startWithCompletionHandler(MKLocalSearchResponse response, NSError error);
     }
 }

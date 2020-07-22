@@ -52,6 +52,6 @@ public interface PKAddPaymentPassViewControllerDelegate {
     public interface Block_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler {
         @Generated
         void call_addPaymentPassViewControllerGenerateRequestWithCertificateChainNonceNonceSignatureCompletionHandler(
-                PKAddPaymentPassRequest arg0);
+                PKAddPaymentPassRequest request);
     }
 }

@@ -52,7 +52,7 @@ public class TKTokenWatcher extends NSObject {
     @Generated
     public interface Block_addRemovalHandlerForTokenID {
         @Generated
-        void call_addRemovalHandlerForTokenID(String arg0);
+        void call_addRemovalHandlerForTokenID(String tokenID);
     }
 
     @Generated
@@ -113,7 +113,7 @@ public class TKTokenWatcher extends NSObject {
     @Generated
     public interface Block_initWithInsertionHandler {
         @Generated
-        void call_initWithInsertionHandler(String arg0);
+        void call_initWithInsertionHandler(String tokenID);
     }
 
     @Generated
@@ -160,7 +160,7 @@ public class TKTokenWatcher extends NSObject {
     @Generated
     public interface Block_setInsertionHandler {
         @Generated
-        void call_setInsertionHandler(String arg0);
+        void call_setInsertionHandler(String tokenID);
     }
 
     @Generated

@@ -259,6 +259,6 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Generated
     public interface Block_loadTileAtPathResult {
         @Generated
-        void call_loadTileAtPathResult(NSData arg0, NSError arg1);
+        void call_loadTileAtPathResult(NSData tileData, NSError error);
     }
 }

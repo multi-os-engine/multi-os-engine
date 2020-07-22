@@ -180,7 +180,7 @@ public class CHHapticEngine extends NSObject {
     public interface Block_notifyWhenPlayersFinished {
         @Generated
         @NInt
-        long call_notifyWhenPlayersFinished(NSError arg0);
+        long call_notifyWhenPlayersFinished(NSError error);
     }
 
     @Generated
@@ -258,7 +258,7 @@ public class CHHapticEngine extends NSObject {
     @Generated
     public interface Block_setStoppedHandler {
         @Generated
-        void call_setStoppedHandler(@NInt long arg0);
+        void call_setStoppedHandler(@NInt long stoppedReason);
     }
 
     @Generated
@@ -278,7 +278,7 @@ public class CHHapticEngine extends NSObject {
     @Generated
     public interface Block_startWithCompletionHandler {
         @Generated
-        void call_startWithCompletionHandler(NSError arg0);
+        void call_startWithCompletionHandler(NSError error);
     }
 
     @Generated
@@ -290,7 +290,7 @@ public class CHHapticEngine extends NSObject {
     @Generated
     public interface Block_stopWithCompletionHandler {
         @Generated
-        void call_stopWithCompletionHandler(NSError arg0);
+        void call_stopWithCompletionHandler(NSError error);
     }
 
     @Generated
@@ -302,7 +302,7 @@ public class CHHapticEngine extends NSObject {
     @Generated
     public interface Block_stoppedHandler_ret {
         @Generated
-        void call_stoppedHandler_ret(@NInt long arg0);
+        void call_stoppedHandler_ret(@NInt long stoppedReason);
     }
 
     @Generated

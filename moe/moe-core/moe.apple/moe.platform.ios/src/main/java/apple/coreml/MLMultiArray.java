@@ -120,7 +120,7 @@ public class MLMultiArray extends NSObject {
     @Generated
     public interface Block_initWithDataPointerShapeDataTypeStridesDeallocatorError {
         @Generated
-        void call_initWithDataPointerShapeDataTypeStridesDeallocatorError(VoidPtr arg0);
+        void call_initWithDataPointerShapeDataTypeStridesDeallocatorError(VoidPtr bytes);
     }
 
     @Generated

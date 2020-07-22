@@ -199,7 +199,7 @@ public class ICCameraDevice extends ICDevice {
     public interface Block_requestDeleteFilesDeleteFailedCompletion_2 {
         @Generated
         void call_requestDeleteFilesDeleteFailedCompletion_2(
-                NSDictionary<String, ? extends NSArray<? extends ICCameraItem>> arg0, NSError arg1);
+                NSDictionary<String, ? extends NSArray<? extends ICCameraItem>> result, NSError error);
     }
 
     @Generated
@@ -218,7 +218,7 @@ public class ICCameraDevice extends ICDevice {
     @Generated
     public interface Block_requestSendPTPCommandOutDataCompletion {
         @Generated
-        void call_requestSendPTPCommandOutDataCompletion(NSData arg0, NSData arg1, NSError arg2);
+        void call_requestSendPTPCommandOutDataCompletion(NSData responseData, NSData ptpResponseData, NSError error);
     }
 
     @Generated

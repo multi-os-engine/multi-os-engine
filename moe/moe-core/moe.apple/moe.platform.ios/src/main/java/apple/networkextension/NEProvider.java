@@ -187,7 +187,7 @@ public class NEProvider extends NSObject {
     @Generated
     public interface Block_displayMessageCompletionHandler {
         @Generated
-        void call_displayMessageCompletionHandler(boolean arg0);
+        void call_displayMessageCompletionHandler(boolean success);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -337,14 +337,14 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     public interface Block_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler {
         @Generated
-        void call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(boolean arg0);
+        void call_determineCompatibilityOfExportPresetWithAssetOutputFileTypeCompletionHandler(boolean compatible);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_determineCompatibleFileTypesWithCompletionHandler {
         @Generated
-        void call_determineCompatibleFileTypesWithCompletionHandler(NSArray<String> arg0);
+        void call_determineCompatibleFileTypesWithCompletionHandler(NSArray<String> compatibleFileTypes);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -363,7 +363,7 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     public interface Block_estimateMaximumDurationWithCompletionHandler {
         @Generated
-        void call_estimateMaximumDurationWithCompletionHandler(@ByValue CMTime arg0, NSError arg1);
+        void call_estimateMaximumDurationWithCompletionHandler(@ByValue CMTime estimatedMaximumDuration, NSError error);
     }
 
     @Generated
@@ -375,6 +375,6 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     public interface Block_estimateOutputFileLengthWithCompletionHandler {
         @Generated
-        void call_estimateOutputFileLengthWithCompletionHandler(long arg0, NSError arg1);
+        void call_estimateOutputFileLengthWithCompletionHandler(long estimatedOutputFileLength, NSError error);
     }
 }

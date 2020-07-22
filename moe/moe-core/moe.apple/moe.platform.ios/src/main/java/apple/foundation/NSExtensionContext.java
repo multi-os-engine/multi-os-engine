@@ -227,21 +227,21 @@ public class NSExtensionContext extends NSObject {
     @Generated
     public interface Block_completeRequestReturningItemsCompletionHandler {
         @Generated
-        void call_completeRequestReturningItemsCompletionHandler(boolean arg0);
+        void call_completeRequestReturningItemsCompletionHandler(boolean expired);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadBroadcastingApplicationInfoWithCompletion {
         @Generated
-        void call_loadBroadcastingApplicationInfoWithCompletion(String arg0, String arg1, UIImage arg2);
+        void call_loadBroadcastingApplicationInfoWithCompletion(String bundleID, String displayName, UIImage appIcon);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_openURLCompletionHandler {
         @Generated
-        void call_openURLCompletionHandler(boolean arg0);
+        void call_openURLCompletionHandler(boolean success);
     }
 
     @Generated

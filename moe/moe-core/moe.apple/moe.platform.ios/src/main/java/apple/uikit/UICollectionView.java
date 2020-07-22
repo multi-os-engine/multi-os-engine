@@ -722,21 +722,21 @@ public class UICollectionView extends UIScrollView
     @Generated
     public interface Block_performBatchUpdatesCompletion_1 {
         @Generated
-        void call_performBatchUpdatesCompletion_1(boolean arg0);
+        void call_performBatchUpdatesCompletion_1(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCollectionViewLayoutAnimatedCompletion {
         @Generated
-        void call_setCollectionViewLayoutAnimatedCompletion(boolean arg0);
+        void call_setCollectionViewLayoutAnimatedCompletion(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startInteractiveTransitionToCollectionViewLayoutCompletion {
         @Generated
-        void call_startInteractiveTransitionToCollectionViewLayoutCompletion(boolean arg0, boolean arg1);
+        void call_startInteractiveTransitionToCollectionViewLayoutCompletion(boolean completed, boolean finished);
     }
 
     @Generated

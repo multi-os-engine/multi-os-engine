@@ -83,13 +83,13 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     public interface Block_URLSessionDataTaskDidReceiveResponseCompletionHandler {
         @Generated
-        void call_URLSessionDataTaskDidReceiveResponseCompletionHandler(@NInt long arg0);
+        void call_URLSessionDataTaskDidReceiveResponseCompletionHandler(@NInt long disposition);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_URLSessionDataTaskWillCacheResponseCompletionHandler {
         @Generated
-        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(NSCachedURLResponse arg0);
+        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(NSCachedURLResponse cachedResponse);
     }
 }

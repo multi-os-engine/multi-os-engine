@@ -76,7 +76,7 @@ public class TKSmartCard extends NSObject {
     @Generated
     public interface Block_beginSessionWithReply {
         @Generated
-        void call_beginSessionWithReply(boolean arg0, NSError arg1);
+        void call_beginSessionWithReply(boolean success, NSError error);
     }
 
     @Generated
@@ -137,7 +137,7 @@ public class TKSmartCard extends NSObject {
     @Generated
     public interface Block_inSessionWithErrorExecuteBlock {
         @Generated
-        boolean call_inSessionWithErrorExecuteBlock(@ReferenceInfo(type = NSError.class) Ptr<NSError> arg0);
+        boolean call_inSessionWithErrorExecuteBlock(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 
     @Generated
@@ -188,7 +188,7 @@ public class TKSmartCard extends NSObject {
     @Generated
     public interface Block_sendInsP1P2DataLeReply {
         @Generated
-        void call_sendInsP1P2DataLeReply(NSData arg0, char arg1, NSError arg2);
+        void call_sendInsP1P2DataLeReply(NSData replyData, char sw, NSError error);
     }
 
     @Generated
@@ -245,7 +245,7 @@ public class TKSmartCard extends NSObject {
     @Generated
     public interface Block_transmitRequestReply {
         @Generated
-        void call_transmitRequestReply(NSData arg0, NSError arg1);
+        void call_transmitRequestReply(NSData response, NSError error);
     }
 
     @Generated

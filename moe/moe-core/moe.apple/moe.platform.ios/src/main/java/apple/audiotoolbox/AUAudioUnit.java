@@ -469,86 +469,97 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_inputHandler_ret {
         @Generated
-        void call_inputHandler_ret(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
+        void call_inputHandler_ret(IntPtr actionFlags, AudioTimeStamp timestamp, int frameCount,
+                @NInt long inputBusNumber);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_instantiateWithComponentDescriptionOptionsCompletionHandler {
         @Generated
-        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AUAudioUnit arg0, NSError arg1);
+        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AUAudioUnit audioUnit, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_musicalContextBlock_ret {
         @Generated
-        boolean call_musicalContextBlock_ret(DoublePtr arg0, DoublePtr arg1, NIntPtr arg2, DoublePtr arg3, NIntPtr arg4,
-                DoublePtr arg5);
+        boolean call_musicalContextBlock_ret(DoublePtr currentTempo, DoublePtr timeSignatureNumerator,
+                NIntPtr timeSignatureDenominator, DoublePtr currentBeatPosition, NIntPtr sampleOffsetToNextBeat,
+                DoublePtr currentMeasureDownbeatPosition);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_outputProvider_ret {
         @Generated
-        int call_outputProvider_ret(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3, AudioBufferList arg4);
+        int call_outputProvider_ret(IntPtr actionFlags, AudioTimeStamp timestamp, int frameCount,
+                @NInt long inputBusNumber, AudioBufferList inputData);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_scheduleMIDIEventBlock_ret {
         @Generated
-        void call_scheduleMIDIEventBlock_ret(long arg0, byte arg1, @NInt long arg2, ConstBytePtr arg3);
+        void call_scheduleMIDIEventBlock_ret(long eventSampleTime, byte cable, @NInt long length,
+                ConstBytePtr midiBytes);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_scheduleParameterBlock_ret {
         @Generated
-        void call_scheduleParameterBlock_ret(long arg0, int arg1, long arg2, float arg3);
+        void call_scheduleParameterBlock_ret(long eventSampleTime, int rampDurationSampleFrames, long parameterAddress,
+                float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setInputHandler {
         @Generated
-        void call_setInputHandler(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
+        void call_setInputHandler(IntPtr actionFlags, AudioTimeStamp timestamp, int frameCount,
+                @NInt long inputBusNumber);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setMusicalContextBlock {
         @Generated
-        boolean call_setMusicalContextBlock(DoublePtr arg0, DoublePtr arg1, NIntPtr arg2, DoublePtr arg3, NIntPtr arg4,
-                DoublePtr arg5);
+        boolean call_setMusicalContextBlock(DoublePtr currentTempo, DoublePtr timeSignatureNumerator,
+                NIntPtr timeSignatureDenominator, DoublePtr currentBeatPosition, NIntPtr sampleOffsetToNextBeat,
+                DoublePtr currentMeasureDownbeatPosition);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setOutputProvider {
         @Generated
-        int call_setOutputProvider(IntPtr arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3, AudioBufferList arg4);
+        int call_setOutputProvider(IntPtr actionFlags, AudioTimeStamp timestamp, int frameCount,
+                @NInt long inputBusNumber, AudioBufferList inputData);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTransportStateBlock {
         @Generated
-        boolean call_setTransportStateBlock(NUIntPtr arg0, DoublePtr arg1, DoublePtr arg2, DoublePtr arg3);
+        boolean call_setTransportStateBlock(NUIntPtr transportStateFlags, DoublePtr currentSamplePosition,
+                DoublePtr cycleStartBeatPosition, DoublePtr cycleEndBeatPosition);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_tokenByAddingRenderObserver {
         @Generated
-        void call_tokenByAddingRenderObserver(int arg0, AudioTimeStamp arg1, int arg2, @NInt long arg3);
+        void call_tokenByAddingRenderObserver(int actionFlags, AudioTimeStamp timestamp, int frameCount,
+                @NInt long outputBusNumber);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_transportStateBlock_ret {
         @Generated
-        boolean call_transportStateBlock_ret(NUIntPtr arg0, DoublePtr arg1, DoublePtr arg2, DoublePtr arg3);
+        boolean call_transportStateBlock_ret(NUIntPtr transportStateFlags, DoublePtr currentSamplePosition,
+                DoublePtr cycleStartBeatPosition, DoublePtr cycleEndBeatPosition);
     }
 
     @Generated
@@ -565,8 +576,8 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_MIDIOutputEventBlock_ret {
         @Generated
-        int call_MIDIOutputEventBlock_ret(long arg0, byte arg1, @NInt long arg2,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg3);
+        int call_MIDIOutputEventBlock_ret(long eventSampleTime, byte cable, @NInt long length,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
     }
 
     @Generated
@@ -602,8 +613,8 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_setMIDIOutputEventBlock {
         @Generated
-        int call_setMIDIOutputEventBlock(long arg0, byte arg1, @NInt long arg2,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg3);
+        int call_setMIDIOutputEventBlock(long eventSampleTime, byte cable, @NInt long length,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
     }
 
     @Generated
@@ -640,7 +651,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_profileChangedBlock_ret {
         @Generated
-        void call_profileChangedBlock_ret(byte arg0, byte arg1, MIDICIProfile arg2, boolean arg3);
+        void call_profileChangedBlock_ret(byte cable, byte channel, MIDICIProfile profile, boolean enabled);
     }
 
     @Generated
@@ -665,7 +676,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_setProfileChangedBlock {
         @Generated
-        void call_setProfileChangedBlock(byte arg0, byte arg1, MIDICIProfile arg2, boolean arg3);
+        void call_setProfileChangedBlock(byte cable, byte channel, MIDICIProfile profile, boolean enabled);
     }
 
     @Generated

@@ -180,13 +180,14 @@ public class NEPacketTunnelFlow extends NSObject {
     @Generated
     public interface Block_readPacketObjectsWithCompletionHandler {
         @Generated
-        void call_readPacketObjectsWithCompletionHandler(NSArray<? extends NEPacket> arg0);
+        void call_readPacketObjectsWithCompletionHandler(NSArray<? extends NEPacket> packets);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readPacketsWithCompletionHandler {
         @Generated
-        void call_readPacketsWithCompletionHandler(NSArray<? extends NSData> arg0, NSArray<? extends NSNumber> arg1);
+        void call_readPacketsWithCompletionHandler(NSArray<? extends NSData> packets,
+                NSArray<? extends NSNumber> protocols);
     }
 }

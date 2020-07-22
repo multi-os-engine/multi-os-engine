@@ -143,7 +143,7 @@ public class QLThumbnailReply extends NSObject {
     @Generated
     public interface Block_replyWithContextSizeDrawingBlock {
         @Generated
-        boolean call_replyWithContextSizeDrawingBlock(CGContextRef arg0);
+        boolean call_replyWithContextSizeDrawingBlock(CGContextRef context);
     }
 
     @Generated

@@ -236,7 +236,8 @@ public class NSFileVersion extends NSObject {
     @Generated
     public interface Block_getNonlocalVersionsOfItemAtURLCompletionHandler {
         @Generated
-        void call_getNonlocalVersionsOfItemAtURLCompletionHandler(NSArray<? extends NSFileVersion> arg0, NSError arg1);
+        void call_getNonlocalVersionsOfItemAtURLCompletionHandler(NSArray<? extends NSFileVersion> nonlocalFileVersions,
+                NSError error);
     }
 
     @Generated

@@ -262,7 +262,7 @@ public class NSProcessInfo extends NSObject {
     @Generated
     public interface Block_performExpiringActivityWithReasonUsingBlock {
         @Generated
-        void call_performExpiringActivityWithReasonUsingBlock(boolean arg0);
+        void call_performExpiringActivityWithReasonUsingBlock(boolean expired);
     }
 
     @Generated

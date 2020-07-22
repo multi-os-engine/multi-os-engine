@@ -228,35 +228,36 @@ public class NSFileCoordinator extends NSObject {
     @Generated
     public interface Block_coordinateAccessWithIntentsQueueByAccessor {
         @Generated
-        void call_coordinateAccessWithIntentsQueueByAccessor(NSError arg0);
+        void call_coordinateAccessWithIntentsQueueByAccessor(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateReadingItemAtURLOptionsErrorByAccessor {
         @Generated
-        void call_coordinateReadingItemAtURLOptionsErrorByAccessor(NSURL arg0);
+        void call_coordinateReadingItemAtURLOptionsErrorByAccessor(NSURL newURL);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor {
         @Generated
-        void call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL arg0, NSURL arg1);
+        void call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL newReadingURL,
+                NSURL newWritingURL);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateWritingItemAtURLOptionsErrorByAccessor {
         @Generated
-        void call_coordinateWritingItemAtURLOptionsErrorByAccessor(NSURL arg0);
+        void call_coordinateWritingItemAtURLOptionsErrorByAccessor(NSURL newURL);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor {
         @Generated
-        void call_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL arg0, NSURL arg1);
+        void call_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL newURL1, NSURL newURL2);
     }
 
     @Generated

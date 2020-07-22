@@ -182,7 +182,7 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
     @Generated
     public interface Block_completionBlock_ret {
         @Generated
-        void call_completionBlock_ret(NSAsynchronousFetchResult<?> arg0);
+        void call_completionBlock_ret(NSAsynchronousFetchResult<?> result);
     }
 
     @Runtime(ObjCRuntime.class)

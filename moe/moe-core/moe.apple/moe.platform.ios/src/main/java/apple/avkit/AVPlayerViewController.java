@@ -276,7 +276,7 @@ public class AVPlayerViewController extends UIViewController {
     @Generated
     public interface Block_playPrerollAdWithCompletionHandler {
         @Generated
-        void call_playPrerollAdWithCompletionHandler(NSError arg0);
+        void call_playPrerollAdWithCompletionHandler(NSError error);
     }
 
     @Generated

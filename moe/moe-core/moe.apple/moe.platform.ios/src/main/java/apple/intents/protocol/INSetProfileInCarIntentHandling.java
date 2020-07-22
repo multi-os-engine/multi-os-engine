@@ -77,35 +77,35 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     public interface Block_confirmSetProfileInCarCompletion {
         @Generated
-        void call_confirmSetProfileInCarCompletion(INSetProfileInCarIntentResponse arg0);
+        void call_confirmSetProfileInCarCompletion(INSetProfileInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetProfileInCarCompletion {
         @Generated
-        void call_handleSetProfileInCarCompletion(INSetProfileInCarIntentResponse arg0);
+        void call_handleSetProfileInCarCompletion(INSetProfileInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDefaultProfileForSetProfileInCarWithCompletion {
         @Generated
-        void call_resolveDefaultProfileForSetProfileInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveDefaultProfileForSetProfileInCarWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveProfileNameForSetProfileInCarWithCompletion {
         @Generated
-        void call_resolveProfileNameForSetProfileInCarWithCompletion(INStringResolutionResult arg0);
+        void call_resolveProfileNameForSetProfileInCarWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveProfileNumberForSetProfileInCarWithCompletion {
         @Generated
-        void call_resolveProfileNumberForSetProfileInCarWithCompletion(INIntegerResolutionResult arg0);
+        void call_resolveProfileNumberForSetProfileInCarWithCompletion(INIntegerResolutionResult resolutionResult);
     }
 
     @Generated
@@ -120,6 +120,6 @@ public interface INSetProfileInCarIntentHandling {
     @Generated
     public interface Block_resolveCarNameForSetProfileInCarWithCompletion {
         @Generated
-        void call_resolveCarNameForSetProfileInCarWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveCarNameForSetProfileInCarWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 }

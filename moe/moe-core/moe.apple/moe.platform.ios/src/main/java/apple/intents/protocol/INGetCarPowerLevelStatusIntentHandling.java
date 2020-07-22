@@ -29,7 +29,7 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     @Generated
     public interface Block_confirmGetCarPowerLevelStatusCompletion {
         @Generated
-        void call_confirmGetCarPowerLevelStatusCompletion(INGetCarPowerLevelStatusIntentResponse arg0);
+        void call_confirmGetCarPowerLevelStatusCompletion(INGetCarPowerLevelStatusIntentResponse response);
     }
 
     @Generated
@@ -41,7 +41,7 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     @Generated
     public interface Block_handleGetCarPowerLevelStatusCompletion {
         @Generated
-        void call_handleGetCarPowerLevelStatusCompletion(INGetCarPowerLevelStatusIntentResponse arg0);
+        void call_handleGetCarPowerLevelStatusCompletion(INGetCarPowerLevelStatusIntentResponse response);
     }
 
     @Generated
@@ -56,6 +56,7 @@ public interface INGetCarPowerLevelStatusIntentHandling {
     @Generated
     public interface Block_resolveCarNameForGetCarPowerLevelStatusWithCompletion {
         @Generated
-        void call_resolveCarNameForGetCarPowerLevelStatusWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveCarNameForGetCarPowerLevelStatusWithCompletion(
+                INSpeakableStringResolutionResult resolutionResult);
     }
 }

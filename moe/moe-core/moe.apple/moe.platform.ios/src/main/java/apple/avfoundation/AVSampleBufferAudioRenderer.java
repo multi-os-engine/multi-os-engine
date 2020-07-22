@@ -113,7 +113,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     @Generated
     public interface Block_flushFromSourceTimeCompletionHandler {
         @Generated
-        void call_flushFromSourceTimeCompletionHandler(boolean arg0);
+        void call_flushFromSourceTimeCompletionHandler(boolean flushSucceeded);
     }
 
     @Generated

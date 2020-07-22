@@ -93,48 +93,48 @@ public interface INSetRadioStationIntentHandling {
     @Generated
     public interface Block_confirmSetRadioStationCompletion {
         @Generated
-        void call_confirmSetRadioStationCompletion(INSetRadioStationIntentResponse arg0);
+        void call_confirmSetRadioStationCompletion(INSetRadioStationIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetRadioStationCompletion {
         @Generated
-        void call_handleSetRadioStationCompletion(INSetRadioStationIntentResponse arg0);
+        void call_handleSetRadioStationCompletion(INSetRadioStationIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveChannelForSetRadioStationWithCompletion {
         @Generated
-        void call_resolveChannelForSetRadioStationWithCompletion(INStringResolutionResult arg0);
+        void call_resolveChannelForSetRadioStationWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveFrequencyForSetRadioStationWithCompletion {
         @Generated
-        void call_resolveFrequencyForSetRadioStationWithCompletion(INDoubleResolutionResult arg0);
+        void call_resolveFrequencyForSetRadioStationWithCompletion(INDoubleResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePresetNumberForSetRadioStationWithCompletion {
         @Generated
-        void call_resolvePresetNumberForSetRadioStationWithCompletion(INIntegerResolutionResult arg0);
+        void call_resolvePresetNumberForSetRadioStationWithCompletion(INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRadioTypeForSetRadioStationWithCompletion {
         @Generated
-        void call_resolveRadioTypeForSetRadioStationWithCompletion(INRadioTypeResolutionResult arg0);
+        void call_resolveRadioTypeForSetRadioStationWithCompletion(INRadioTypeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveStationNameForSetRadioStationWithCompletion {
         @Generated
-        void call_resolveStationNameForSetRadioStationWithCompletion(INStringResolutionResult arg0);
+        void call_resolveStationNameForSetRadioStationWithCompletion(INStringResolutionResult resolutionResult);
     }
 }

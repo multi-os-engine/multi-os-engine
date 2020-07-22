@@ -38,7 +38,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_confirmSearchForNotebookItemsCompletion {
         @Generated
-        void call_confirmSearchForNotebookItemsCompletion(INSearchForNotebookItemsIntentResponse arg0);
+        void call_confirmSearchForNotebookItemsCompletion(INSearchForNotebookItemsIntentResponse response);
     }
 
     @Generated
@@ -50,7 +50,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_handleSearchForNotebookItemsCompletion {
         @Generated
-        void call_handleSearchForNotebookItemsCompletion(INSearchForNotebookItemsIntentResponse arg0);
+        void call_handleSearchForNotebookItemsCompletion(INSearchForNotebookItemsIntentResponse response);
     }
 
     @Generated
@@ -65,7 +65,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveContentForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveContentForSearchForNotebookItemsWithCompletion(INStringResolutionResult arg0);
+        void call_resolveContentForSearchForNotebookItemsWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -80,7 +80,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion(INDateSearchTypeResolutionResult arg0);
+        void call_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion(
+                INDateSearchTypeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -95,7 +96,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveDateTimeForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveDateTimeForSearchForNotebookItemsWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveDateTimeForSearchForNotebookItemsWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -110,7 +112,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveItemTypeForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveItemTypeForSearchForNotebookItemsWithCompletion(INNotebookItemTypeResolutionResult arg0);
+        void call_resolveItemTypeForSearchForNotebookItemsWithCompletion(
+                INNotebookItemTypeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -125,7 +128,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveLocationForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveLocationForSearchForNotebookItemsWithCompletion(INPlacemarkResolutionResult arg0);
+        void call_resolveLocationForSearchForNotebookItemsWithCompletion(INPlacemarkResolutionResult resolutionResult);
     }
 
     @Generated
@@ -141,7 +144,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion(
-                INLocationSearchTypeResolutionResult arg0);
+                INLocationSearchTypeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -156,7 +159,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveStatusForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveStatusForSearchForNotebookItemsWithCompletion(INTaskStatusResolutionResult arg0);
+        void call_resolveStatusForSearchForNotebookItemsWithCompletion(INTaskStatusResolutionResult resolutionResult);
     }
 
     @Generated
@@ -171,7 +174,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveTitleForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveTitleForSearchForNotebookItemsWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveTitleForSearchForNotebookItemsWithCompletion(
+                INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -186,7 +190,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveTaskPriorityForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveTaskPriorityForSearchForNotebookItemsWithCompletion(INTaskPriorityResolutionResult arg0);
+        void call_resolveTaskPriorityForSearchForNotebookItemsWithCompletion(
+                INTaskPriorityResolutionResult resolutionResult);
     }
 
     @Generated
@@ -203,6 +208,6 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion(
-                INTemporalEventTriggerTypeOptionsResolutionResult arg0);
+                INTemporalEventTriggerTypeOptionsResolutionResult resolutionResult);
     }
 }

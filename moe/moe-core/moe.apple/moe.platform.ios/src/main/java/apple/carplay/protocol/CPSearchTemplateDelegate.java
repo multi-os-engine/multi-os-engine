@@ -38,7 +38,7 @@ public interface CPSearchTemplateDelegate {
     @Generated
     public interface Block_searchTemplateUpdatedSearchTextCompletionHandler {
         @Generated
-        void call_searchTemplateUpdatedSearchTextCompletionHandler(NSArray<? extends CPListItem> arg0);
+        void call_searchTemplateUpdatedSearchTextCompletionHandler(NSArray<? extends CPListItem> searchResults);
     }
 
     @Generated

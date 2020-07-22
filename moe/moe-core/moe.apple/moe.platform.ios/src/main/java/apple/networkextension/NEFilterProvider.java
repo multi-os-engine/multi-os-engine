@@ -174,7 +174,7 @@ public class NEFilterProvider extends NEProvider {
     @Generated
     public interface Block_startFilterWithCompletionHandler {
         @Generated
-        void call_startFilterWithCompletionHandler(NSError arg0);
+        void call_startFilterWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -302,79 +302,79 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     public interface Block_authenticateWithCompletionHandler {
         @Generated
-        void call_authenticateWithCompletionHandler(NSError arg0);
+        void call_authenticateWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSavedGamesWithNameCompletionHandler {
         @Generated
-        void call_deleteSavedGamesWithNameCompletionHandler(NSError arg0);
+        void call_deleteSavedGamesWithNameCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchSavedGamesWithCompletionHandler {
         @Generated
-        void call_fetchSavedGamesWithCompletionHandler(NSArray<? extends GKSavedGame> arg0, NSError arg1);
+        void call_fetchSavedGamesWithCompletionHandler(NSArray<? extends GKSavedGame> savedGames, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateIdentityVerificationSignatureWithCompletionHandler {
         @Generated
-        void call_generateIdentityVerificationSignatureWithCompletionHandler(NSURL arg0, NSData arg1, NSData arg2,
-                long arg3, NSError arg4);
+        void call_generateIdentityVerificationSignatureWithCompletionHandler(NSURL publicKeyUrl, NSData signature,
+                NSData salt, long timestamp, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadDefaultLeaderboardCategoryIDWithCompletionHandler {
         @Generated
-        void call_loadDefaultLeaderboardCategoryIDWithCompletionHandler(String arg0, NSError arg1);
+        void call_loadDefaultLeaderboardCategoryIDWithCompletionHandler(String categoryID, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadDefaultLeaderboardIdentifierWithCompletionHandler {
         @Generated
-        void call_loadDefaultLeaderboardIdentifierWithCompletionHandler(String arg0, NSError arg1);
+        void call_loadDefaultLeaderboardIdentifierWithCompletionHandler(String leaderboardIdentifier, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadFriendPlayersWithCompletionHandler {
         @Generated
-        void call_loadFriendPlayersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_loadFriendPlayersWithCompletionHandler(NSArray<? extends GKPlayer> friendPlayers, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadFriendsWithCompletionHandler {
         @Generated
-        void call_loadFriendsWithCompletionHandler(NSArray<String> arg0, NSError arg1);
+        void call_loadFriendsWithCompletionHandler(NSArray<String> friendIDs, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadRecentPlayersWithCompletionHandler {
         @Generated
-        void call_loadRecentPlayersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_loadRecentPlayersWithCompletionHandler(NSArray<? extends GKPlayer> recentPlayers, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveConflictingSavedGamesWithDataCompletionHandler {
         @Generated
-        void call_resolveConflictingSavedGamesWithDataCompletionHandler(NSArray<? extends GKSavedGame> arg0,
-                NSError arg1);
+        void call_resolveConflictingSavedGamesWithDataCompletionHandler(NSArray<? extends GKSavedGame> savedGames,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveGameDataWithNameCompletionHandler {
         @Generated
-        void call_saveGameDataWithNameCompletionHandler(GKSavedGame arg0, NSError arg1);
+        void call_saveGameDataWithNameCompletionHandler(GKSavedGame savedGame, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -388,14 +388,14 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     public interface Block_setDefaultLeaderboardCategoryIDCompletionHandler {
         @Generated
-        void call_setDefaultLeaderboardCategoryIDCompletionHandler(NSError arg0);
+        void call_setDefaultLeaderboardCategoryIDCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDefaultLeaderboardIdentifierCompletionHandler {
         @Generated
-        void call_setDefaultLeaderboardIdentifierCompletionHandler(NSError arg0);
+        void call_setDefaultLeaderboardIdentifierCompletionHandler(NSError error);
     }
 
     @Generated
@@ -411,7 +411,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     public interface Block_loadChallengableFriendsWithCompletionHandler {
         @Generated
-        void call_loadChallengableFriendsWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_loadChallengableFriendsWithCompletionHandler(NSArray<? extends GKPlayer> challengableFriends,
+                NSError error);
     }
 
     @Generated
@@ -427,7 +428,7 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     public interface Block_fetchItemsForIdentityVerificationSignature {
         @Generated
-        void call_fetchItemsForIdentityVerificationSignature(NSURL arg0, NSData arg1, NSData arg2, long arg3,
-                NSError arg4);
+        void call_fetchItemsForIdentityVerificationSignature(NSURL publicKeyURL, NSData signature, NSData salt,
+                long timestamp, NSError error);
     }
 }

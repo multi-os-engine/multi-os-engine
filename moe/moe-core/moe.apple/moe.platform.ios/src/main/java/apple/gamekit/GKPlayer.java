@@ -197,14 +197,14 @@ public class GKPlayer extends GKBasePlayer {
     @Generated
     public interface Block_loadPhotoForSizeWithCompletionHandler {
         @Generated
-        void call_loadPhotoForSizeWithCompletionHandler(UIImage arg0, NSError arg1);
+        void call_loadPhotoForSizeWithCompletionHandler(UIImage photo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadPlayersForIdentifiersWithCompletionHandler {
         @Generated
-        void call_loadPlayersForIdentifiersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_loadPlayersForIdentifiersWithCompletionHandler(NSArray<? extends GKPlayer> players, NSError error);
     }
 
     @Generated

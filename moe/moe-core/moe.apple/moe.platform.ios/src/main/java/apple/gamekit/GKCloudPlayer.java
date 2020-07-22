@@ -165,6 +165,6 @@ public class GKCloudPlayer extends GKBasePlayer {
     @Generated
     public interface Block_getCurrentSignedInPlayerForContainerCompletionHandler {
         @Generated
-        void call_getCurrentSignedInPlayerForContainerCompletionHandler(GKCloudPlayer arg0, NSError arg1);
+        void call_getCurrentSignedInPlayerForContainerCompletionHandler(GKCloudPlayer player, NSError error);
     }
 }

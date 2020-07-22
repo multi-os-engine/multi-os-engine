@@ -116,7 +116,8 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_getPropertyOnChannelResponseHandler {
         @Generated
-        void call_getPropertyOnChannelResponseHandler(MIDICISession arg0, byte arg1, NSData arg2, NSError arg3);
+        void call_getPropertyOnChannelResponseHandler(MIDICISession session, byte channel, NSData response,
+                NSError error);
     }
 
     @Generated
@@ -128,7 +129,8 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_hasPropertyOnChannelResponseHandler {
         @Generated
-        void call_hasPropertyOnChannelResponseHandler(MIDICISession arg0, byte arg1, NSData arg2, NSError arg3);
+        void call_hasPropertyOnChannelResponseHandler(MIDICISession session, byte channel, NSData response,
+                NSError error);
     }
 
     @Generated
@@ -188,7 +190,8 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_profileChangedCallback_ret {
         @Generated
-        void call_profileChangedCallback_ret(MIDICISession arg0, byte arg1, MIDICIProfile arg2, boolean arg3);
+        void call_profileChangedCallback_ret(MIDICISession session, byte channel, MIDICIProfile profile,
+                boolean enabled);
     }
 
     @Generated
@@ -204,7 +207,7 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_propertyChangedCallback_ret {
         @Generated
-        void call_propertyChangedCallback_ret(MIDICISession arg0, byte arg1, NSData arg2);
+        void call_propertyChangedCallback_ret(MIDICISession session, byte channel, NSData data);
     }
 
     @Generated
@@ -224,7 +227,8 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_setProfileChangedCallback {
         @Generated
-        void call_setProfileChangedCallback(MIDICISession arg0, byte arg1, MIDICIProfile arg2, boolean arg3);
+        void call_setProfileChangedCallback(MIDICISession session, byte channel, MIDICIProfile profile,
+                boolean enabled);
     }
 
     @Generated
@@ -236,7 +240,8 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_setPropertyOnChannelResponseHandler {
         @Generated
-        void call_setPropertyOnChannelResponseHandler(MIDICISession arg0, byte arg1, NSData arg2, NSError arg3);
+        void call_setPropertyOnChannelResponseHandler(MIDICISession session, byte channel, NSData response,
+                NSError error);
     }
 
     @Generated
@@ -248,7 +253,7 @@ public class MIDICISession extends NSObject {
     @Generated
     public interface Block_setPropertyChangedCallback {
         @Generated
-        void call_setPropertyChangedCallback(MIDICISession arg0, byte arg1, NSData arg2);
+        void call_setPropertyChangedCallback(MIDICISession session, byte channel, NSData data);
     }
 
     @Generated

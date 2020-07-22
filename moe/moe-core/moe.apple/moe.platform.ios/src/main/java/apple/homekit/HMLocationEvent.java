@@ -176,7 +176,7 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Generated
     public interface Block_updateRegionCompletionHandler {
         @Generated
-        void call_updateRegionCompletionHandler(NSError arg0);
+        void call_updateRegionCompletionHandler(NSError error);
     }
 
     @Generated

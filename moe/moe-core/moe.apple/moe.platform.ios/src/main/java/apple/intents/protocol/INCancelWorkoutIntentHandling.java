@@ -58,20 +58,20 @@ public interface INCancelWorkoutIntentHandling {
     @Generated
     public interface Block_confirmCancelWorkoutCompletion {
         @Generated
-        void call_confirmCancelWorkoutCompletion(INCancelWorkoutIntentResponse arg0);
+        void call_confirmCancelWorkoutCompletion(INCancelWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleCancelWorkoutCompletion {
         @Generated
-        void call_handleCancelWorkoutCompletion(INCancelWorkoutIntentResponse arg0);
+        void call_handleCancelWorkoutCompletion(INCancelWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForCancelWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForCancelWorkoutWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveWorkoutNameForCancelWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 }

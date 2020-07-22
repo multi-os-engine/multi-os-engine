@@ -28,7 +28,7 @@ public interface INSendRideFeedbackIntentHandling {
     @Generated
     public interface Block_confirmSendRideFeedbackCompletion {
         @Generated
-        void call_confirmSendRideFeedbackCompletion(INSendRideFeedbackIntentResponse arg0);
+        void call_confirmSendRideFeedbackCompletion(INSendRideFeedbackIntentResponse response);
     }
 
     @Generated
@@ -40,6 +40,6 @@ public interface INSendRideFeedbackIntentHandling {
     @Generated
     public interface Block_handleSendRideFeedbackCompletion {
         @Generated
-        void call_handleSendRideFeedbackCompletion(INSendRideFeedbackIntentResponse arg0);
+        void call_handleSendRideFeedbackCompletion(INSendRideFeedbackIntentResponse response);
     }
 }

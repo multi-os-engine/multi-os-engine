@@ -135,13 +135,13 @@ public interface WCSessionDelegate {
     @Generated
     public interface Block_sessionDidReceiveMessageReplyHandler {
         @Generated
-        void call_sessionDidReceiveMessageReplyHandler(NSDictionary<String, ?> arg0);
+        void call_sessionDidReceiveMessageReplyHandler(NSDictionary<String, ?> replyMessage);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sessionDidReceiveMessageDataReplyHandler {
         @Generated
-        void call_sessionDidReceiveMessageDataReplyHandler(NSData arg0);
+        void call_sessionDidReceiveMessageDataReplyHandler(NSData replyMessageData);
     }
 }

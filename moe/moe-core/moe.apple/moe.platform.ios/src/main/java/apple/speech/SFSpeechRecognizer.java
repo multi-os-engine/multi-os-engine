@@ -238,14 +238,14 @@ public class SFSpeechRecognizer extends NSObject {
     @Generated
     public interface Block_recognitionTaskWithRequestResultHandler {
         @Generated
-        void call_recognitionTaskWithRequestResultHandler(SFSpeechRecognitionResult arg0, NSError arg1);
+        void call_recognitionTaskWithRequestResultHandler(SFSpeechRecognitionResult result, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorization {
         @Generated
-        void call_requestAuthorization(@NInt long arg0);
+        void call_requestAuthorization(@NInt long status);
     }
 
     @Generated

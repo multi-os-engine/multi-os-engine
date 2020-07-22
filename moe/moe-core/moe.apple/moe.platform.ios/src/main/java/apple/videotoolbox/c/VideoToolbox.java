@@ -864,15 +864,16 @@ public final class VideoToolbox {
     @Generated
     public interface Block_VTCompressionSessionEncodeFrameWithOutputHandler {
         @Generated
-        void call_VTCompressionSessionEncodeFrameWithOutputHandler(int arg0, int arg1, CMSampleBufferRef arg2);
+        void call_VTCompressionSessionEncodeFrameWithOutputHandler(int status, int infoFlags,
+                CMSampleBufferRef sampleBuffer);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_VTDecompressionSessionDecodeFrameWithOutputHandler {
         @Generated
-        void call_VTDecompressionSessionDecodeFrameWithOutputHandler(int arg0, int arg1, CVBufferRef arg2,
-                @ByValue CMTime arg3, @ByValue CMTime arg4);
+        void call_VTDecompressionSessionDecodeFrameWithOutputHandler(int status, int infoFlags, CVBufferRef imageBuffer,
+                @ByValue CMTime presentationTimeStamp, @ByValue CMTime presentationDuration);
     }
 
     @Runtime(CRuntime.class)

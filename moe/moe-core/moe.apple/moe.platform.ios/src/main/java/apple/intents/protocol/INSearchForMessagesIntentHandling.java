@@ -95,49 +95,54 @@ public interface INSearchForMessagesIntentHandling {
     @Generated
     public interface Block_confirmSearchForMessagesCompletion {
         @Generated
-        void call_confirmSearchForMessagesCompletion(INSearchForMessagesIntentResponse arg0);
+        void call_confirmSearchForMessagesCompletion(INSearchForMessagesIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchForMessagesCompletion {
         @Generated
-        void call_handleSearchForMessagesCompletion(INSearchForMessagesIntentResponse arg0);
+        void call_handleSearchForMessagesCompletion(INSearchForMessagesIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveAttributesForSearchForMessagesWithCompletion {
         @Generated
-        void call_resolveAttributesForSearchForMessagesWithCompletion(INMessageAttributeOptionsResolutionResult arg0);
+        void call_resolveAttributesForSearchForMessagesWithCompletion(
+                INMessageAttributeOptionsResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDateTimeRangeForSearchForMessagesWithCompletion {
         @Generated
-        void call_resolveDateTimeRangeForSearchForMessagesWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveDateTimeRangeForSearchForMessagesWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveGroupNamesForSearchForMessagesWithCompletion {
         @Generated
-        void call_resolveGroupNamesForSearchForMessagesWithCompletion(NSArray<? extends INStringResolutionResult> arg0);
+        void call_resolveGroupNamesForSearchForMessagesWithCompletion(
+                NSArray<? extends INStringResolutionResult> resolutionResults);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRecipientsForSearchForMessagesWithCompletion {
         @Generated
-        void call_resolveRecipientsForSearchForMessagesWithCompletion(NSArray<? extends INPersonResolutionResult> arg0);
+        void call_resolveRecipientsForSearchForMessagesWithCompletion(
+                NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveSendersForSearchForMessagesWithCompletion {
         @Generated
-        void call_resolveSendersForSearchForMessagesWithCompletion(NSArray<? extends INPersonResolutionResult> arg0);
+        void call_resolveSendersForSearchForMessagesWithCompletion(
+                NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -153,6 +158,6 @@ public interface INSearchForMessagesIntentHandling {
     public interface Block_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion {
         @Generated
         void call_resolveSpeakableGroupNamesForSearchForMessagesWithCompletion(
-                NSArray<? extends INSpeakableStringResolutionResult> arg0);
+                NSArray<? extends INSpeakableStringResolutionResult> resolutionResults);
     }
 }

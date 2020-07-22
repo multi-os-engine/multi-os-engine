@@ -33,8 +33,8 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_customCommandWithRequestFlagCustomCommandCodeCustomRequestParametersCompletionHandler {
         @Generated
-        void call_customCommandWithRequestFlagCustomCommandCodeCustomRequestParametersCompletionHandler(NSData arg0,
-                NSError arg1);
+        void call_customCommandWithRequestFlagCustomCommandCodeCustomRequestParametersCompletionHandler(
+                NSData customResponseParameters, NSError error);
     }
 
     @Generated
@@ -46,7 +46,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_extendedLockBlockWithRequestFlagsBlockNumberCompletionHandler {
         @Generated
-        void call_extendedLockBlockWithRequestFlagsBlockNumberCompletionHandler(NSError arg0);
+        void call_extendedLockBlockWithRequestFlagsBlockNumberCompletionHandler(NSError error);
     }
 
     @Generated
@@ -58,8 +58,8 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_extendedReadMultipleBlocksWithRequestFlagsBlockRangeCompletionHandler {
         @Generated
-        void call_extendedReadMultipleBlocksWithRequestFlagsBlockRangeCompletionHandler(NSArray<? extends NSData> arg0,
-                NSError arg1);
+        void call_extendedReadMultipleBlocksWithRequestFlagsBlockRangeCompletionHandler(
+                NSArray<? extends NSData> dataBlocks, NSError error);
     }
 
     @Generated
@@ -71,7 +71,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_extendedReadSingleBlockWithRequestFlagsBlockNumberCompletionHandler {
         @Generated
-        void call_extendedReadSingleBlockWithRequestFlagsBlockNumberCompletionHandler(NSData arg0, NSError arg1);
+        void call_extendedReadSingleBlockWithRequestFlagsBlockNumberCompletionHandler(NSData data, NSError error);
     }
 
     @Generated
@@ -84,7 +84,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_extendedWriteSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler {
         @Generated
-        void call_extendedWriteSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(NSError arg0);
+        void call_extendedWriteSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(NSError error);
     }
 
     @Generated
@@ -98,7 +98,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     public interface Block_getMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler {
         @Generated
         void call_getMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler(
-                NSArray<? extends NSNumber> arg0, NSError arg1);
+                NSArray<? extends NSNumber> securityStatus, NSError error);
     }
 
     @Generated
@@ -110,8 +110,8 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_getSystemInfoWithRequestFlagCompletionHandler {
         @Generated
-        void call_getSystemInfoWithRequestFlagCompletionHandler(@NInt long arg0, @NInt long arg1, @NInt long arg2,
-                @NInt long arg3, @NInt long arg4, NSError arg5);
+        void call_getSystemInfoWithRequestFlagCompletionHandler(@NInt long dsfid, @NInt long afi, @NInt long blockSize,
+                @NInt long blockCount, @NInt long icReference, NSError error);
     }
 
     @Generated
@@ -136,7 +136,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_lockAFIWithRequestFlagCompletionHandler {
         @Generated
-        void call_lockAFIWithRequestFlagCompletionHandler(NSError arg0);
+        void call_lockAFIWithRequestFlagCompletionHandler(NSError error);
     }
 
     @Generated
@@ -148,7 +148,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_lockBlockWithRequestFlagsBlockNumberCompletionHandler {
         @Generated
-        void call_lockBlockWithRequestFlagsBlockNumberCompletionHandler(NSError arg0);
+        void call_lockBlockWithRequestFlagsBlockNumberCompletionHandler(NSError error);
     }
 
     @Generated
@@ -160,7 +160,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_lockDFSIDWithRequestFlagCompletionHandler {
         @Generated
-        void call_lockDFSIDWithRequestFlagCompletionHandler(NSError arg0);
+        void call_lockDFSIDWithRequestFlagCompletionHandler(NSError error);
     }
 
     @Generated
@@ -173,7 +173,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_readMultipleBlocksWithConfigurationCompletionHandler {
         @Generated
-        void call_readMultipleBlocksWithConfigurationCompletionHandler(NSData arg0, NSError arg1);
+        void call_readMultipleBlocksWithConfigurationCompletionHandler(NSData data, NSError error);
     }
 
     @Generated
@@ -185,8 +185,8 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_readMultipleBlocksWithRequestFlagsBlockRangeCompletionHandler {
         @Generated
-        void call_readMultipleBlocksWithRequestFlagsBlockRangeCompletionHandler(NSArray<? extends NSData> arg0,
-                NSError arg1);
+        void call_readMultipleBlocksWithRequestFlagsBlockRangeCompletionHandler(NSArray<? extends NSData> dataBlocks,
+                NSError error);
     }
 
     @Generated
@@ -198,7 +198,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_readSingleBlockWithRequestFlagsBlockNumberCompletionHandler {
         @Generated
-        void call_readSingleBlockWithRequestFlagsBlockNumberCompletionHandler(NSData arg0, NSError arg1);
+        void call_readSingleBlockWithRequestFlagsBlockNumberCompletionHandler(NSData data, NSError error);
     }
 
     @Generated
@@ -210,7 +210,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_resetToReadyWithRequestFlagsCompletionHandler {
         @Generated
-        void call_resetToReadyWithRequestFlagsCompletionHandler(NSError arg0);
+        void call_resetToReadyWithRequestFlagsCompletionHandler(NSError error);
     }
 
     @Generated
@@ -222,7 +222,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_selectWithRequestFlagsCompletionHandler {
         @Generated
-        void call_selectWithRequestFlagsCompletionHandler(NSError arg0);
+        void call_selectWithRequestFlagsCompletionHandler(NSError error);
     }
 
     @Generated
@@ -234,7 +234,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_sendCustomCommandWithConfigurationCompletionHandler {
         @Generated
-        void call_sendCustomCommandWithConfigurationCompletionHandler(NSData arg0, NSError arg1);
+        void call_sendCustomCommandWithConfigurationCompletionHandler(NSData customResponseParameters, NSError error);
     }
 
     @Generated
@@ -246,7 +246,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_stayQuietWithCompletionHandler {
         @Generated
-        void call_stayQuietWithCompletionHandler(NSError arg0);
+        void call_stayQuietWithCompletionHandler(NSError error);
     }
 
     @Generated
@@ -258,7 +258,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_writeAFIWithRequestFlagAfiCompletionHandler {
         @Generated
-        void call_writeAFIWithRequestFlagAfiCompletionHandler(NSError arg0);
+        void call_writeAFIWithRequestFlagAfiCompletionHandler(NSError error);
     }
 
     @Generated
@@ -270,7 +270,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_writeDSFIDWithRequestFlagDsfidCompletionHandler {
         @Generated
-        void call_writeDSFIDWithRequestFlagDsfidCompletionHandler(NSError arg0);
+        void call_writeDSFIDWithRequestFlagDsfidCompletionHandler(NSError error);
     }
 
     @Generated
@@ -283,7 +283,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_writeMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler {
         @Generated
-        void call_writeMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler(NSError arg0);
+        void call_writeMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler(NSError error);
     }
 
     @Generated
@@ -296,6 +296,6 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_writeSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler {
         @Generated
-        void call_writeSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(NSError arg0);
+        void call_writeSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(NSError error);
     }
 }

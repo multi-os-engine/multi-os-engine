@@ -231,7 +231,7 @@ public class NSURLCache extends NSObject {
     @Generated
     public interface Block_getCachedResponseForDataTaskCompletionHandler {
         @Generated
-        void call_getCachedResponseForDataTaskCompletionHandler(NSCachedURLResponse arg0);
+        void call_getCachedResponseForDataTaskCompletionHandler(NSCachedURLResponse cachedResponse);
     }
 
     @Generated

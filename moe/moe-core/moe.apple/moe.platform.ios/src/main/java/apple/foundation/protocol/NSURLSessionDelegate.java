@@ -62,6 +62,6 @@ public interface NSURLSessionDelegate {
     @Generated
     public interface Block_URLSessionDidReceiveChallengeCompletionHandler {
         @Generated
-        void call_URLSessionDidReceiveChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
+        void call_URLSessionDidReceiveChallengeCompletionHandler(@NInt long disposition, NSURLCredential credential);
     }
 }

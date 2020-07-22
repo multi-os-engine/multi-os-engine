@@ -69,13 +69,13 @@ public interface NWTCPConnectionAuthenticationDelegate {
     @Generated
     public interface Block_evaluateTrustForConnectionPeerCertificateChainCompletionHandler {
         @Generated
-        void call_evaluateTrustForConnectionPeerCertificateChainCompletionHandler(SecTrustRef arg0);
+        void call_evaluateTrustForConnectionPeerCertificateChainCompletionHandler(SecTrustRef trust);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_provideIdentityForConnectionCompletionHandler {
         @Generated
-        void call_provideIdentityForConnectionCompletionHandler(SecIdentityRef arg0, NSArray<?> arg1);
+        void call_provideIdentityForConnectionCompletionHandler(SecIdentityRef identity, NSArray<?> certificateChain);
     }
 }

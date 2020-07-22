@@ -63,7 +63,7 @@ public class PKDisbursementAuthorizationController extends NSObject {
     @Generated
     public interface Block_authorizeDisbursementWithCompletion {
         @Generated
-        void call_authorizeDisbursementWithCompletion(boolean arg0, NSError arg1);
+        void call_authorizeDisbursementWithCompletion(boolean success, NSError error);
     }
 
     @Generated

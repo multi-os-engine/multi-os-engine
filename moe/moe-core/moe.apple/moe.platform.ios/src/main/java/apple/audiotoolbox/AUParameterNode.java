@@ -248,91 +248,91 @@ public class AUParameterNode extends NSObject {
     @Generated
     public interface Block_implementorDisplayNameWithLengthCallback_ret {
         @Generated
-        String call_implementorDisplayNameWithLengthCallback_ret(AUParameterNode arg0, @NInt long arg1);
+        String call_implementorDisplayNameWithLengthCallback_ret(AUParameterNode node, @NInt long desiredLength);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorStringFromValueCallback_ret {
         @Generated
-        String call_implementorStringFromValueCallback_ret(AUParameter arg0, ConstFloatPtr arg1);
+        String call_implementorStringFromValueCallback_ret(AUParameter param, ConstFloatPtr value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorValueFromStringCallback_ret {
         @Generated
-        float call_implementorValueFromStringCallback_ret(AUParameter arg0, String arg1);
+        float call_implementorValueFromStringCallback_ret(AUParameter param, String string);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorValueObserver_ret {
         @Generated
-        void call_implementorValueObserver_ret(AUParameter arg0, float arg1);
+        void call_implementorValueObserver_ret(AUParameter param, float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorValueProvider_ret {
         @Generated
-        float call_implementorValueProvider_ret(AUParameter arg0);
+        float call_implementorValueProvider_ret(AUParameter param);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorDisplayNameWithLengthCallback {
         @Generated
-        String call_setImplementorDisplayNameWithLengthCallback(AUParameterNode arg0, @NInt long arg1);
+        String call_setImplementorDisplayNameWithLengthCallback(AUParameterNode node, @NInt long desiredLength);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorStringFromValueCallback {
         @Generated
-        String call_setImplementorStringFromValueCallback(AUParameter arg0, ConstFloatPtr arg1);
+        String call_setImplementorStringFromValueCallback(AUParameter param, ConstFloatPtr value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorValueFromStringCallback {
         @Generated
-        float call_setImplementorValueFromStringCallback(AUParameter arg0, String arg1);
+        float call_setImplementorValueFromStringCallback(AUParameter param, String string);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorValueObserver {
         @Generated
-        void call_setImplementorValueObserver(AUParameter arg0, float arg1);
+        void call_setImplementorValueObserver(AUParameter param, float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorValueProvider {
         @Generated
-        float call_setImplementorValueProvider(AUParameter arg0);
+        float call_setImplementorValueProvider(AUParameter param);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_tokenByAddingParameterAutomationObserver {
         @Generated
-        void call_tokenByAddingParameterAutomationObserver(@NInt long arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AUParameterAutomationEvent arg1);
+        void call_tokenByAddingParameterAutomationObserver(@NInt long numberEvents,
+                @UncertainArgument("Options: reference, array Fallback: reference") AUParameterAutomationEvent events);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_tokenByAddingParameterObserver {
         @Generated
-        void call_tokenByAddingParameterObserver(long arg0, float arg1);
+        void call_tokenByAddingParameterObserver(long address, float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_tokenByAddingParameterRecordingObserver {
         @Generated
-        void call_tokenByAddingParameterRecordingObserver(@NInt long arg0, AURecordedParameterEvent arg1);
+        void call_tokenByAddingParameterRecordingObserver(@NInt long numberEvents, AURecordedParameterEvent events);
     }
 }

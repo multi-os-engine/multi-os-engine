@@ -218,13 +218,13 @@ public class NSURLCredentialStorage extends NSObject {
     public interface Block_getCredentialsForProtectionSpaceTaskCompletionHandler {
         @Generated
         void call_getCredentialsForProtectionSpaceTaskCompletionHandler(
-                NSDictionary<String, ? extends NSURLCredential> arg0);
+                NSDictionary<String, ? extends NSURLCredential> credentials);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getDefaultCredentialForProtectionSpaceTaskCompletionHandler {
         @Generated
-        void call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLCredential arg0);
+        void call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLCredential credential);
     }
 }

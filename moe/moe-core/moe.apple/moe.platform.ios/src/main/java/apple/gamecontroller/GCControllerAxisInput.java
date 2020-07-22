@@ -173,14 +173,14 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCControllerAxisInput arg0, float arg1);
+        void call_setValueChangedHandler(GCControllerAxisInput axis, float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCControllerAxisInput arg0, float arg1);
+        void call_valueChangedHandler_ret(GCControllerAxisInput axis, float value);
     }
 
     @Generated

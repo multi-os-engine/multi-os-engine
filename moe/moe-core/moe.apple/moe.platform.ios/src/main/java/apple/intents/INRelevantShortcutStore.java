@@ -140,7 +140,7 @@ public class INRelevantShortcutStore extends NSObject {
     @Generated
     public interface Block_setRelevantShortcutsCompletionHandler {
         @Generated
-        void call_setRelevantShortcutsCompletionHandler(NSError arg0);
+        void call_setRelevantShortcutsCompletionHandler(NSError error);
     }
 
     @Generated

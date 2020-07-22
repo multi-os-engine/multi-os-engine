@@ -116,7 +116,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithModelCompletionHandler {
         @Generated
-        void call_initWithModelCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithModelCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated

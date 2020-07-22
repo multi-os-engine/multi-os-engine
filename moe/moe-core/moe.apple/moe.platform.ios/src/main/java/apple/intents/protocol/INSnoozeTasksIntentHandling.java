@@ -31,7 +31,7 @@ public interface INSnoozeTasksIntentHandling {
     @Generated
     public interface Block_confirmSnoozeTasksCompletion {
         @Generated
-        void call_confirmSnoozeTasksCompletion(INSnoozeTasksIntentResponse arg0);
+        void call_confirmSnoozeTasksCompletion(INSnoozeTasksIntentResponse response);
     }
 
     @Generated
@@ -43,7 +43,7 @@ public interface INSnoozeTasksIntentHandling {
     @Generated
     public interface Block_handleSnoozeTasksCompletion {
         @Generated
-        void call_handleSnoozeTasksCompletion(INSnoozeTasksIntentResponse arg0);
+        void call_handleSnoozeTasksCompletion(INSnoozeTasksIntentResponse response);
     }
 
     @Generated
@@ -58,7 +58,8 @@ public interface INSnoozeTasksIntentHandling {
     @Generated
     public interface Block_resolveNextTriggerTimeForSnoozeTasksWithCompletion {
         @Generated
-        void call_resolveNextTriggerTimeForSnoozeTasksWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveNextTriggerTimeForSnoozeTasksWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -73,6 +74,7 @@ public interface INSnoozeTasksIntentHandling {
     @Generated
     public interface Block_resolveTasksForSnoozeTasksWithCompletion {
         @Generated
-        void call_resolveTasksForSnoozeTasksWithCompletion(NSArray<? extends INSnoozeTasksTaskResolutionResult> arg0);
+        void call_resolveTasksForSnoozeTasksWithCompletion(
+                NSArray<? extends INSnoozeTasksTaskResolutionResult> resolutionResults);
     }
 }

@@ -255,22 +255,22 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_enumerateBodiesAlongRayStartEndUsingBlock {
         @Generated
-        void call_enumerateBodiesAlongRayStartEndUsingBlock(SKPhysicsBody arg0, @ByValue CGPoint arg1,
-                @ByValue CGVector arg2, BoolPtr arg3);
+        void call_enumerateBodiesAlongRayStartEndUsingBlock(SKPhysicsBody body, @ByValue CGPoint point,
+                @ByValue CGVector normal, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateBodiesAtPointUsingBlock {
         @Generated
-        void call_enumerateBodiesAtPointUsingBlock(SKPhysicsBody arg0, BoolPtr arg1);
+        void call_enumerateBodiesAtPointUsingBlock(SKPhysicsBody body, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateBodiesInRectUsingBlock {
         @Generated
-        void call_enumerateBodiesInRectUsingBlock(SKPhysicsBody arg0, BoolPtr arg1);
+        void call_enumerateBodiesInRectUsingBlock(SKPhysicsBody body, BoolPtr stop);
     }
 
     @Generated

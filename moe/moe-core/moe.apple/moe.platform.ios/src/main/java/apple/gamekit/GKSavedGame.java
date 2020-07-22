@@ -186,6 +186,6 @@ public class GKSavedGame extends NSObject implements NSCopying {
     @Generated
     public interface Block_loadDataWithCompletionHandler {
         @Generated
-        void call_loadDataWithCompletionHandler(NSData arg0, NSError arg1);
+        void call_loadDataWithCompletionHandler(NSData data, NSError error);
     }
 }

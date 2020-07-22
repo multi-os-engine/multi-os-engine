@@ -233,20 +233,20 @@ public class NEVPNManager extends NSObject {
     @Generated
     public interface Block_loadFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadFromPreferencesWithCompletionHandler(NSError arg0);
+        void call_loadFromPreferencesWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeFromPreferencesWithCompletionHandler {
         @Generated
-        void call_removeFromPreferencesWithCompletionHandler(NSError arg0);
+        void call_removeFromPreferencesWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveToPreferencesWithCompletionHandler {
         @Generated
-        void call_saveToPreferencesWithCompletionHandler(NSError arg0);
+        void call_saveToPreferencesWithCompletionHandler(NSError error);
     }
 }

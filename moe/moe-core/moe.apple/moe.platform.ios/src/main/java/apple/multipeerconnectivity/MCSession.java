@@ -247,13 +247,13 @@ public class MCSession extends NSObject {
     @Generated
     public interface Block_nearbyConnectionDataForPeerWithCompletionHandler {
         @Generated
-        void call_nearbyConnectionDataForPeerWithCompletionHandler(NSData arg0, NSError arg1);
+        void call_nearbyConnectionDataForPeerWithCompletionHandler(NSData connectionData, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendResourceAtURLWithNameToPeerWithCompletionHandler {
         @Generated
-        void call_sendResourceAtURLWithNameToPeerWithCompletionHandler(NSError arg0);
+        void call_sendResourceAtURLWithNameToPeerWithCompletionHandler(NSError error);
     }
 }

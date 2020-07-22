@@ -96,14 +96,14 @@ public interface INBookRestaurantReservationIntentHandling {
     @Generated
     public interface Block_confirmBookRestaurantReservationCompletion {
         @Generated
-        void call_confirmBookRestaurantReservationCompletion(INBookRestaurantReservationIntentResponse arg0);
+        void call_confirmBookRestaurantReservationCompletion(INBookRestaurantReservationIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleBookRestaurantReservationCompletion {
         @Generated
-        void call_handleBookRestaurantReservationCompletion(INBookRestaurantReservationIntentResponse arg0);
+        void call_handleBookRestaurantReservationCompletion(INBookRestaurantReservationIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -111,14 +111,15 @@ public interface INBookRestaurantReservationIntentHandling {
     public interface Block_resolveBookingDateComponentsForBookRestaurantReservationWithCompletion {
         @Generated
         void call_resolveBookingDateComponentsForBookRestaurantReservationWithCompletion(
-                INDateComponentsResolutionResult arg0);
+                INDateComponentsResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveGuestForBookRestaurantReservationWithCompletion {
         @Generated
-        void call_resolveGuestForBookRestaurantReservationWithCompletion(INRestaurantGuestResolutionResult arg0);
+        void call_resolveGuestForBookRestaurantReservationWithCompletion(
+                INRestaurantGuestResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -126,20 +127,22 @@ public interface INBookRestaurantReservationIntentHandling {
     public interface Block_resolveGuestProvidedSpecialRequestTextForBookRestaurantReservationWithCompletion {
         @Generated
         void call_resolveGuestProvidedSpecialRequestTextForBookRestaurantReservationWithCompletion(
-                INStringResolutionResult arg0);
+                INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePartySizeForBookRestaurantReservationWithCompletion {
         @Generated
-        void call_resolvePartySizeForBookRestaurantReservationWithCompletion(INIntegerResolutionResult arg0);
+        void call_resolvePartySizeForBookRestaurantReservationWithCompletion(
+                INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRestaurantForBookRestaurantReservationWithCompletion {
         @Generated
-        void call_resolveRestaurantForBookRestaurantReservationWithCompletion(INRestaurantResolutionResult arg0);
+        void call_resolveRestaurantForBookRestaurantReservationWithCompletion(
+                INRestaurantResolutionResult resolutionResult);
     }
 }

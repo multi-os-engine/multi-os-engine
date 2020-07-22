@@ -77,7 +77,7 @@ public class SNAudioFileAnalyzer extends NSObject {
     @Generated
     public interface Block_analyzeWithCompletionHandler {
         @Generated
-        void call_analyzeWithCompletionHandler(boolean arg0);
+        void call_analyzeWithCompletionHandler(boolean didReachEndOfFile);
     }
 
     @Generated

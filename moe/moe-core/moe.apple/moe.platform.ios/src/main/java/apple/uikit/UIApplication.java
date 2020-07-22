@@ -509,7 +509,7 @@ public class UIApplication extends UIResponder {
     @Generated
     public interface Block_openURLOptionsCompletionHandler {
         @Generated
-        void call_openURLOptionsCompletionHandler(boolean arg0);
+        void call_openURLOptionsCompletionHandler(boolean success);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -532,7 +532,7 @@ public class UIApplication extends UIResponder {
     @Generated
     public interface Block_setAlternateIconNameCompletionHandler {
         @Generated
-        void call_setAlternateIconNameCompletionHandler(NSError arg0);
+        void call_setAlternateIconNameCompletionHandler(NSError error);
     }
 
     @Generated
@@ -557,7 +557,7 @@ public class UIApplication extends UIResponder {
     @Generated
     public interface Block_requestSceneSessionActivationUserActivityOptionsErrorHandler {
         @Generated
-        void call_requestSceneSessionActivationUserActivityOptionsErrorHandler(NSError arg0);
+        void call_requestSceneSessionActivationUserActivityOptionsErrorHandler(NSError error);
     }
 
     @Generated
@@ -570,7 +570,7 @@ public class UIApplication extends UIResponder {
     @Generated
     public interface Block_requestSceneSessionDestructionOptionsErrorHandler {
         @Generated
-        void call_requestSceneSessionDestructionOptionsErrorHandler(NSError arg0);
+        void call_requestSceneSessionDestructionOptionsErrorHandler(NSError error);
     }
 
     @Generated

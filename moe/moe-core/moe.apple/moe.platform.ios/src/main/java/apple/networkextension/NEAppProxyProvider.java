@@ -179,7 +179,7 @@ public class NEAppProxyProvider extends NETunnelProvider {
     @Generated
     public interface Block_startProxyWithOptionsCompletionHandler {
         @Generated
-        void call_startProxyWithOptionsCompletionHandler(NSError arg0);
+        void call_startProxyWithOptionsCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -181,15 +181,15 @@ public class CMMotionActivityManager extends NSObject {
     @Generated
     public interface Block_queryActivityStartingFromDateToDateToQueueWithHandler {
         @Generated
-        void call_queryActivityStartingFromDateToDateToQueueWithHandler(NSArray<? extends CMMotionActivity> arg0,
-                NSError arg1);
+        void call_queryActivityStartingFromDateToDateToQueueWithHandler(NSArray<? extends CMMotionActivity> activities,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startActivityUpdatesToQueueWithHandler {
         @Generated
-        void call_startActivityUpdatesToQueueWithHandler(CMMotionActivity arg0);
+        void call_startActivityUpdatesToQueueWithHandler(CMMotionActivity activity);
     }
 
     @Generated

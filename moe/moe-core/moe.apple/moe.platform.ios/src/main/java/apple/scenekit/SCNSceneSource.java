@@ -219,13 +219,13 @@ public class SCNSceneSource extends NSObject {
     @Generated
     public interface Block_entriesPassingTest {
         @Generated
-        boolean call_entriesPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, String arg1, BoolPtr arg2);
+        boolean call_entriesPassingTest(@Mapped(ObjCObjectMapper.class) Object entry, String identifier, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sceneWithOptionsStatusHandler {
         @Generated
-        void call_sceneWithOptionsStatusHandler(float arg0, @NInt long arg1, NSError arg2, BoolPtr arg3);
+        void call_sceneWithOptionsStatusHandler(float totalProgress, @NInt long status, NSError error, BoolPtr stop);
     }
 }

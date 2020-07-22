@@ -196,16 +196,16 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Generated
     public interface Block_loadItemForTypeIdentifierOptionsCompletionHandler {
         @Generated
-        void call_loadItemForTypeIdentifierOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_loadItemForTypeIdentifierOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object item,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadPreviewImageWithOptionsCompletionHandler {
         @Generated
-        void call_loadPreviewImageWithOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_loadPreviewImageWithOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object item,
+                NSError error);
     }
 
     @Generated
@@ -230,7 +230,7 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Generated
     public interface Block_loadDataRepresentationForTypeIdentifierCompletionHandler {
         @Generated
-        void call_loadDataRepresentationForTypeIdentifierCompletionHandler(NSData arg0, NSError arg1);
+        void call_loadDataRepresentationForTypeIdentifierCompletionHandler(NSData data, NSError error);
     }
 
     @Generated
@@ -242,7 +242,7 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Generated
     public interface Block_loadFileRepresentationForTypeIdentifierCompletionHandler {
         @Generated
-        void call_loadFileRepresentationForTypeIdentifierCompletionHandler(NSURL arg0, NSError arg1);
+        void call_loadFileRepresentationForTypeIdentifierCompletionHandler(NSURL url, NSError error);
     }
 
     @Generated
@@ -254,8 +254,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Generated
     public interface Block_loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler {
         @Generated
-        void call_loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler(NSURL arg0, boolean arg1,
-                NSError arg2);
+        void call_loadInPlaceFileRepresentationForTypeIdentifierCompletionHandler(NSURL url, boolean isInPlace,
+                NSError error);
     }
 
     @Generated
@@ -268,7 +268,7 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Generated
     public interface Block_loadObjectOfClassCompletionHandler {
         @Generated
-        void call_loadObjectOfClassCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+        void call_loadObjectOfClassCompletionHandler(@Mapped(ObjCObjectMapper.class) Object object, NSError error);
     }
 
     @Generated

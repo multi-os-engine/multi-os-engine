@@ -30,7 +30,7 @@ public interface INCreateNoteIntentHandling {
     @Generated
     public interface Block_confirmCreateNoteCompletion {
         @Generated
-        void call_confirmCreateNoteCompletion(INCreateNoteIntentResponse arg0);
+        void call_confirmCreateNoteCompletion(INCreateNoteIntentResponse response);
     }
 
     @Generated
@@ -42,7 +42,7 @@ public interface INCreateNoteIntentHandling {
     @Generated
     public interface Block_handleCreateNoteCompletion {
         @Generated
-        void call_handleCreateNoteCompletion(INCreateNoteIntentResponse arg0);
+        void call_handleCreateNoteCompletion(INCreateNoteIntentResponse response);
     }
 
     @Generated
@@ -57,7 +57,7 @@ public interface INCreateNoteIntentHandling {
     @Generated
     public interface Block_resolveContentForCreateNoteWithCompletion {
         @Generated
-        void call_resolveContentForCreateNoteWithCompletion(INNoteContentResolutionResult arg0);
+        void call_resolveContentForCreateNoteWithCompletion(INNoteContentResolutionResult resolutionResult);
     }
 
     @Generated
@@ -72,7 +72,7 @@ public interface INCreateNoteIntentHandling {
     @Generated
     public interface Block_resolveGroupNameForCreateNoteWithCompletion {
         @Generated
-        void call_resolveGroupNameForCreateNoteWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveGroupNameForCreateNoteWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -87,6 +87,6 @@ public interface INCreateNoteIntentHandling {
     @Generated
     public interface Block_resolveTitleForCreateNoteWithCompletion {
         @Generated
-        void call_resolveTitleForCreateNoteWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveTitleForCreateNoteWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 }

@@ -240,7 +240,7 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     public interface Block_setManualRenderingInputPCMFormatInputBlock {
         @Generated
         @UncertainReturn("Options: reference, array Fallback: reference")
-        AudioBufferList call_setManualRenderingInputPCMFormatInputBlock(int arg0);
+        AudioBufferList call_setManualRenderingInputPCMFormatInputBlock(int inNumberOfFrames);
     }
 
     @Generated

@@ -1013,7 +1013,7 @@ public class UIViewController extends UIResponder
     @Generated
     public interface Block_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5 {
         @Generated
-        void call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5(boolean arg0);
+        void call_transitionFromViewControllerToViewControllerDurationOptionsAnimationsCompletion_5(boolean finished);
     }
 
     @Generated

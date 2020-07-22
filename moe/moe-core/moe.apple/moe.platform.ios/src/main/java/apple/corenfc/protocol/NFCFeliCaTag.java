@@ -35,7 +35,8 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler {
         @Generated
-        void call_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler(NSData arg0, NSData arg1, NSError arg2);
+        void call_pollingWithSystemCodeRequestCodeTimeSlotCompletionHandler(NSData pmm, NSData requestData,
+                NSError error);
     }
 
     @Generated
@@ -48,8 +49,8 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler {
         @Generated
-        void call_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler(@NInt long arg0, @NInt long arg1,
-                NSArray<? extends NSData> arg2, NSError arg3);
+        void call_readWithoutEncryptionWithServiceCodeListBlockListCompletionHandler(@NInt long statusFlag1,
+                @NInt long statusFlag2, NSArray<? extends NSData> blockData, NSError error);
     }
 
     @Generated
@@ -61,7 +62,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_requestResponseWithCompletionHandler {
         @Generated
-        void call_requestResponseWithCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_requestResponseWithCompletionHandler(@NInt long mode, NSError error);
     }
 
     @Generated
@@ -73,8 +74,9 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_requestServiceV2WithNodeCodeListCompletionHandler {
         @Generated
-        void call_requestServiceV2WithNodeCodeListCompletionHandler(@NInt long arg0, @NInt long arg1, @NInt long arg2,
-                NSArray<? extends NSData> arg3, NSArray<? extends NSData> arg4, NSError arg5);
+        void call_requestServiceV2WithNodeCodeListCompletionHandler(@NInt long statusFlag1, @NInt long statusFlag2,
+                @NInt long encryptionIdentifier, NSArray<? extends NSData> nodeKeyVersionListAES,
+                NSArray<? extends NSData> nodeKeyVersionListDES, NSError error);
     }
 
     @Generated
@@ -86,7 +88,8 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_requestServiceWithNodeCodeListCompletionHandler {
         @Generated
-        void call_requestServiceWithNodeCodeListCompletionHandler(NSArray<? extends NSData> arg0, NSError arg1);
+        void call_requestServiceWithNodeCodeListCompletionHandler(NSArray<? extends NSData> nodeKeyVersionList,
+                NSError error);
     }
 
     @Generated
@@ -98,8 +101,8 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_requestSpecificationVersionWithCompletionHandler {
         @Generated
-        void call_requestSpecificationVersionWithCompletionHandler(@NInt long arg0, @NInt long arg1, NSData arg2,
-                NSData arg3, NSError arg4);
+        void call_requestSpecificationVersionWithCompletionHandler(@NInt long statusFlag1, @NInt long statusFlag2,
+                NSData basicVersion, NSData optionVersion, NSError error);
     }
 
     @Generated
@@ -111,7 +114,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_requestSystemCodeWithCompletionHandler {
         @Generated
-        void call_requestSystemCodeWithCompletionHandler(NSArray<? extends NSData> arg0, NSError arg1);
+        void call_requestSystemCodeWithCompletionHandler(NSArray<? extends NSData> systemCodeList, NSError error);
     }
 
     @Generated
@@ -123,7 +126,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_resetModeWithCompletionHandler {
         @Generated
-        void call_resetModeWithCompletionHandler(@NInt long arg0, @NInt long arg1, NSError arg2);
+        void call_resetModeWithCompletionHandler(@NInt long statusFlag1, @NInt long statusFlag2, NSError error);
     }
 
     @Generated
@@ -135,7 +138,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_sendFeliCaCommandPacketCompletionHandler {
         @Generated
-        void call_sendFeliCaCommandPacketCompletionHandler(NSData arg0, NSError arg1);
+        void call_sendFeliCaCommandPacketCompletionHandler(NSData responsePacket, NSError error);
     }
 
     @Generated
@@ -149,7 +152,7 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler {
         @Generated
-        void call_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler(@NInt long arg0,
-                @NInt long arg1, NSError arg2);
+        void call_writeWithoutEncryptionWithServiceCodeListBlockListBlockDataCompletionHandler(@NInt long statusFlag1,
+                @NInt long statusFlag2, NSError error);
     }
 }

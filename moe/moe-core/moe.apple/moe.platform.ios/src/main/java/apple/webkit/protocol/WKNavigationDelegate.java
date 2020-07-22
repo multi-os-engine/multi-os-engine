@@ -134,7 +134,8 @@ public interface WKNavigationDelegate {
     @Generated
     public interface Block_webViewDidReceiveAuthenticationChallengeCompletionHandler {
         @Generated
-        void call_webViewDidReceiveAuthenticationChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
+        void call_webViewDidReceiveAuthenticationChallengeCompletionHandler(@NInt long disposition,
+                NSURLCredential credential);
     }
 
     @Generated

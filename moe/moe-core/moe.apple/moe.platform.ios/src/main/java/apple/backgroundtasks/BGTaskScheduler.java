@@ -102,7 +102,7 @@ public class BGTaskScheduler extends NSObject {
     @Generated
     public interface Block_getPendingTaskRequestsWithCompletionHandler {
         @Generated
-        void call_getPendingTaskRequestsWithCompletionHandler(NSArray<? extends BGTaskRequest> arg0);
+        void call_getPendingTaskRequestsWithCompletionHandler(NSArray<? extends BGTaskRequest> taskRequests);
     }
 
     @Generated
@@ -150,7 +150,7 @@ public class BGTaskScheduler extends NSObject {
     @Generated
     public interface Block_registerForTaskWithIdentifierUsingQueueLaunchHandler {
         @Generated
-        void call_registerForTaskWithIdentifierUsingQueueLaunchHandler(BGTask arg0);
+        void call_registerForTaskWithIdentifierUsingQueueLaunchHandler(BGTask task);
     }
 
     @Generated

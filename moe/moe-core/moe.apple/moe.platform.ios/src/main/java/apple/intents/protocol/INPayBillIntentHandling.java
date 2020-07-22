@@ -34,7 +34,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_confirmPayBillCompletion {
         @Generated
-        void call_confirmPayBillCompletion(INPayBillIntentResponse arg0);
+        void call_confirmPayBillCompletion(INPayBillIntentResponse response);
     }
 
     @Generated
@@ -46,7 +46,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_handlePayBillCompletion {
         @Generated
-        void call_handlePayBillCompletion(INPayBillIntentResponse arg0);
+        void call_handlePayBillCompletion(INPayBillIntentResponse response);
     }
 
     @Generated
@@ -61,7 +61,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveBillPayeeForPayBillWithCompletion {
         @Generated
-        void call_resolveBillPayeeForPayBillWithCompletion(INBillPayeeResolutionResult arg0);
+        void call_resolveBillPayeeForPayBillWithCompletion(INBillPayeeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -76,7 +76,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveBillTypeForPayBillWithCompletion {
         @Generated
-        void call_resolveBillTypeForPayBillWithCompletion(INBillTypeResolutionResult arg0);
+        void call_resolveBillTypeForPayBillWithCompletion(INBillTypeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -91,7 +91,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveDueDateForPayBillWithCompletion {
         @Generated
-        void call_resolveDueDateForPayBillWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveDueDateForPayBillWithCompletion(INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -106,7 +106,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveFromAccountForPayBillWithCompletion {
         @Generated
-        void call_resolveFromAccountForPayBillWithCompletion(INPaymentAccountResolutionResult arg0);
+        void call_resolveFromAccountForPayBillWithCompletion(INPaymentAccountResolutionResult resolutionResult);
     }
 
     @Generated
@@ -121,7 +121,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveTransactionAmountForPayBillWithCompletion {
         @Generated
-        void call_resolveTransactionAmountForPayBillWithCompletion(INPaymentAmountResolutionResult arg0);
+        void call_resolveTransactionAmountForPayBillWithCompletion(INPaymentAmountResolutionResult resolutionResult);
     }
 
     @Generated
@@ -136,7 +136,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveTransactionNoteForPayBillWithCompletion {
         @Generated
-        void call_resolveTransactionNoteForPayBillWithCompletion(INStringResolutionResult arg0);
+        void call_resolveTransactionNoteForPayBillWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -151,6 +151,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveTransactionScheduledDateForPayBillWithCompletion {
         @Generated
-        void call_resolveTransactionScheduledDateForPayBillWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveTransactionScheduledDateForPayBillWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 }

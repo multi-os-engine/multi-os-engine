@@ -201,6 +201,6 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @Generated
     public interface Block_rowActionWithStyleTitleHandler {
         @Generated
-        void call_rowActionWithStyleTitleHandler(UITableViewRowAction arg0, NSIndexPath arg1);
+        void call_rowActionWithStyleTitleHandler(UITableViewRowAction action, NSIndexPath indexPath);
     }
 }

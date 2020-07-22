@@ -89,6 +89,6 @@ public interface UNNotificationContentExtension {
     @Generated
     public interface Block_didReceiveNotificationResponseCompletionHandler {
         @Generated
-        void call_didReceiveNotificationResponseCompletionHandler(@NUInt long arg0);
+        void call_didReceiveNotificationResponseCompletionHandler(@NUInt long option);
     }
 }

@@ -86,35 +86,36 @@ public interface INSearchForPhotosIntentHandling {
     @Generated
     public interface Block_confirmSearchForPhotosCompletion {
         @Generated
-        void call_confirmSearchForPhotosCompletion(INSearchForPhotosIntentResponse arg0);
+        void call_confirmSearchForPhotosCompletion(INSearchForPhotosIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchForPhotosCompletion {
         @Generated
-        void call_handleSearchForPhotosCompletion(INSearchForPhotosIntentResponse arg0);
+        void call_handleSearchForPhotosCompletion(INSearchForPhotosIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveAlbumNameForSearchForPhotosWithCompletion {
         @Generated
-        void call_resolveAlbumNameForSearchForPhotosWithCompletion(INStringResolutionResult arg0);
+        void call_resolveAlbumNameForSearchForPhotosWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDateCreatedForSearchForPhotosWithCompletion {
         @Generated
-        void call_resolveDateCreatedForSearchForPhotosWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveDateCreatedForSearchForPhotosWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveLocationCreatedForSearchForPhotosWithCompletion {
         @Generated
-        void call_resolveLocationCreatedForSearchForPhotosWithCompletion(INPlacemarkResolutionResult arg0);
+        void call_resolveLocationCreatedForSearchForPhotosWithCompletion(INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -122,7 +123,7 @@ public interface INSearchForPhotosIntentHandling {
     public interface Block_resolvePeopleInPhotoForSearchForPhotosWithCompletion {
         @Generated
         void call_resolvePeopleInPhotoForSearchForPhotosWithCompletion(
-                NSArray<? extends INPersonResolutionResult> arg0);
+                NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -137,6 +138,7 @@ public interface INSearchForPhotosIntentHandling {
     @Generated
     public interface Block_resolveSearchTermsForSearchForPhotosWithCompletion {
         @Generated
-        void call_resolveSearchTermsForSearchForPhotosWithCompletion(NSArray<? extends INStringResolutionResult> arg0);
+        void call_resolveSearchTermsForSearchForPhotosWithCompletion(
+                NSArray<? extends INStringResolutionResult> resolutionResults);
     }
 }

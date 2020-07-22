@@ -211,7 +211,8 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_preloadTextureAtlasesNamedWithCompletionHandler {
         @Generated
-        void call_preloadTextureAtlasesNamedWithCompletionHandler(NSError arg0, NSArray<? extends SKTextureAtlas> arg1);
+        void call_preloadTextureAtlasesNamedWithCompletionHandler(NSError error,
+                NSArray<? extends SKTextureAtlas> foundAtlases);
     }
 
     @Runtime(ObjCRuntime.class)

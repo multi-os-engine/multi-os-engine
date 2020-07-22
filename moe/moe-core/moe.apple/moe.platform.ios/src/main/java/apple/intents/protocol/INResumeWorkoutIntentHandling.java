@@ -58,20 +58,20 @@ public interface INResumeWorkoutIntentHandling {
     @Generated
     public interface Block_confirmResumeWorkoutCompletion {
         @Generated
-        void call_confirmResumeWorkoutCompletion(INResumeWorkoutIntentResponse arg0);
+        void call_confirmResumeWorkoutCompletion(INResumeWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleResumeWorkoutCompletion {
         @Generated
-        void call_handleResumeWorkoutCompletion(INResumeWorkoutIntentResponse arg0);
+        void call_handleResumeWorkoutCompletion(INResumeWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForResumeWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForResumeWorkoutWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveWorkoutNameForResumeWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 }

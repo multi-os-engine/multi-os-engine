@@ -30,7 +30,7 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     public interface Block_confirmAppendToNoteCompletion {
         @Generated
-        void call_confirmAppendToNoteCompletion(INAppendToNoteIntentResponse arg0);
+        void call_confirmAppendToNoteCompletion(INAppendToNoteIntentResponse response);
     }
 
     @Generated
@@ -42,7 +42,7 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     public interface Block_handleAppendToNoteCompletion {
         @Generated
-        void call_handleAppendToNoteCompletion(INAppendToNoteIntentResponse arg0);
+        void call_handleAppendToNoteCompletion(INAppendToNoteIntentResponse response);
     }
 
     @Generated
@@ -57,7 +57,7 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     public interface Block_resolveContentForAppendToNoteWithCompletion {
         @Generated
-        void call_resolveContentForAppendToNoteWithCompletion(INNoteContentResolutionResult arg0);
+        void call_resolveContentForAppendToNoteWithCompletion(INNoteContentResolutionResult resolutionResult);
     }
 
     @Generated
@@ -72,6 +72,6 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     public interface Block_resolveTargetNoteForAppendToNoteWithCompletion {
         @Generated
-        void call_resolveTargetNoteForAppendToNoteWithCompletion(INNoteResolutionResult arg0);
+        void call_resolveTargetNoteForAppendToNoteWithCompletion(INNoteResolutionResult resolutionResult);
     }
 }

@@ -227,6 +227,7 @@ public class NSURLConnection extends NSObject {
     @Generated
     public interface Block_sendAsynchronousRequestQueueCompletionHandler {
         @Generated
-        void call_sendAsynchronousRequestQueueCompletionHandler(NSURLResponse arg0, NSData arg1, NSError arg2);
+        void call_sendAsynchronousRequestQueueCompletionHandler(NSURLResponse response, NSData data,
+                NSError connectionError);
     }
 }

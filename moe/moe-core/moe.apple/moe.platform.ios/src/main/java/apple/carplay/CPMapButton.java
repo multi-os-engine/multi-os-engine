@@ -119,7 +119,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_initWithHandler {
         @Generated
-        void call_initWithHandler(CPMapButton arg0);
+        void call_initWithHandler(CPMapButton mapButton);
     }
 
     @Generated

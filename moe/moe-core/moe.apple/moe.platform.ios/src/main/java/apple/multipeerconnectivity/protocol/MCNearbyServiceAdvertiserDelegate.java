@@ -52,6 +52,6 @@ public interface MCNearbyServiceAdvertiserDelegate {
     @Generated
     public interface Block_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler {
         @Generated
-        void call_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(boolean arg0, MCSession arg1);
+        void call_advertiserDidReceiveInvitationFromPeerWithContextInvitationHandler(boolean accept, MCSession session);
     }
 }

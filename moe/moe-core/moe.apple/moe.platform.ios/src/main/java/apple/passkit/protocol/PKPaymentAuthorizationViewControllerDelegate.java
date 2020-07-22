@@ -105,7 +105,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion {
         @Generated
-        void call_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion(@NInt long arg0);
+        void call_paymentAuthorizationViewControllerDidAuthorizePaymentCompletion(@NInt long status);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -113,31 +113,33 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     public interface Block_paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectPaymentMethodCompletion(
-                NSArray<? extends PKPaymentSummaryItem> arg0);
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion {
         @Generated
-        void call_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion(@NInt long arg0,
-                NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
+        void call_paymentAuthorizationViewControllerDidSelectShippingAddressCompletion(@NInt long status,
+                NSArray<? extends PKShippingMethod> shippingMethods,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingContactCompletion {
         @Generated
-        void call_paymentAuthorizationViewControllerDidSelectShippingContactCompletion(@NInt long arg0,
-                NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
+        void call_paymentAuthorizationViewControllerDidSelectShippingContactCompletion(@NInt long status,
+                NSArray<? extends PKShippingMethod> shippingMethods,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion {
         @Generated
-        void call_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion(@NInt long arg0,
-                NSArray<? extends PKPaymentSummaryItem> arg1);
+        void call_paymentAuthorizationViewControllerDidSelectShippingMethodCompletion(@NInt long status,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Generated
@@ -153,7 +155,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationViewControllerDidAuthorizePaymentHandler {
         @Generated
-        void call_paymentAuthorizationViewControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult arg0);
+        void call_paymentAuthorizationViewControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult result);
     }
 
     @Generated
@@ -170,7 +172,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     public interface Block_paymentAuthorizationViewControllerDidSelectPaymentMethodHandler {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectPaymentMethodHandler(
-                PKPaymentRequestPaymentMethodUpdate arg0);
+                PKPaymentRequestPaymentMethodUpdate update);
     }
 
     @Generated
@@ -187,7 +189,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingContactHandler {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectShippingContactHandler(
-                PKPaymentRequestShippingContactUpdate arg0);
+                PKPaymentRequestShippingContactUpdate update);
     }
 
     @Generated
@@ -204,6 +206,6 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     public interface Block_paymentAuthorizationViewControllerDidSelectShippingMethodHandler {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectShippingMethodHandler(
-                PKPaymentRequestShippingMethodUpdate arg0);
+                PKPaymentRequestShippingMethodUpdate update);
     }
 }

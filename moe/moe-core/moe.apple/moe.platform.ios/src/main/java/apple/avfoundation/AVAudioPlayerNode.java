@@ -320,7 +320,7 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     public interface Block_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler {
         @Generated
-        void call_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler(@NInt long arg0);
+        void call_scheduleBufferAtTimeOptionsCompletionCallbackTypeCompletionHandler(@NInt long callbackType);
     }
 
     @Generated
@@ -333,7 +333,7 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     public interface Block_scheduleBufferCompletionCallbackTypeCompletionHandler {
         @Generated
-        void call_scheduleBufferCompletionCallbackTypeCompletionHandler(@NInt long arg0);
+        void call_scheduleBufferCompletionCallbackTypeCompletionHandler(@NInt long callbackType);
     }
 
     @Generated
@@ -346,7 +346,7 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     public interface Block_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler {
         @Generated
-        void call_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler(@NInt long arg0);
+        void call_scheduleFileAtTimeCompletionCallbackTypeCompletionHandler(@NInt long callbackType);
     }
 
     @Generated
@@ -359,7 +359,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     public interface Block_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler {
         @Generated
-        void call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler(@NInt long arg0);
+        void call_scheduleSegmentStartingFrameFrameCountAtTimeCompletionCallbackTypeCompletionHandler(
+                @NInt long callbackType);
     }
 
     @Generated

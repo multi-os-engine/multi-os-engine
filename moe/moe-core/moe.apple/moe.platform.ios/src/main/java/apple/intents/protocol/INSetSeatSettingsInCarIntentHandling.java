@@ -102,42 +102,42 @@ public interface INSetSeatSettingsInCarIntentHandling {
     @Generated
     public interface Block_confirmSetSeatSettingsInCarCompletion {
         @Generated
-        void call_confirmSetSeatSettingsInCarCompletion(INSetSeatSettingsInCarIntentResponse arg0);
+        void call_confirmSetSeatSettingsInCarCompletion(INSetSeatSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetSeatSettingsInCarCompletion {
         @Generated
-        void call_handleSetSeatSettingsInCarCompletion(INSetSeatSettingsInCarIntentResponse arg0);
+        void call_handleSetSeatSettingsInCarCompletion(INSetSeatSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableMassageForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableMassageForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveEnableMassageForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveLevelForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveLevelForSetSeatSettingsInCarWithCompletion(INIntegerResolutionResult arg0);
+        void call_resolveLevelForSetSeatSettingsInCarWithCompletion(INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -145,14 +145,14 @@ public interface INSetSeatSettingsInCarIntentHandling {
     public interface Block_resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion {
         @Generated
         void call_resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion(
-                INRelativeSettingResolutionResult arg0);
+                INRelativeSettingResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveSeatForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveSeatForSetSeatSettingsInCarWithCompletion(INCarSeatResolutionResult arg0);
+        void call_resolveSeatForSetSeatSettingsInCarWithCompletion(INCarSeatResolutionResult resolutionResult);
     }
 
     @Generated
@@ -167,6 +167,7 @@ public interface INSetSeatSettingsInCarIntentHandling {
     @Generated
     public interface Block_resolveCarNameForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveCarNameForSetSeatSettingsInCarWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveCarNameForSetSeatSettingsInCarWithCompletion(
+                INSpeakableStringResolutionResult resolutionResult);
     }
 }

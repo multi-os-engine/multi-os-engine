@@ -153,7 +153,7 @@ public class TKSmartCardUserInteraction extends NSObject {
     @Generated
     public interface Block_runWithReply {
         @Generated
-        void call_runWithReply(boolean arg0, NSError arg1);
+        void call_runWithReply(boolean success, NSError error);
     }
 
     @Generated

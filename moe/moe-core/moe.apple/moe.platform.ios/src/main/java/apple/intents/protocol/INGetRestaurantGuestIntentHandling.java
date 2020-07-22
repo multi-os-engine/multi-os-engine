@@ -49,13 +49,13 @@ public interface INGetRestaurantGuestIntentHandling {
     @Generated
     public interface Block_confirmGetRestaurantGuestCompletion {
         @Generated
-        void call_confirmGetRestaurantGuestCompletion(INGetRestaurantGuestIntentResponse arg0);
+        void call_confirmGetRestaurantGuestCompletion(INGetRestaurantGuestIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleGetRestaurantGuestCompletion {
         @Generated
-        void call_handleGetRestaurantGuestCompletion(INGetRestaurantGuestIntentResponse arg0);
+        void call_handleGetRestaurantGuestCompletion(INGetRestaurantGuestIntentResponse response);
     }
 }

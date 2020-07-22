@@ -217,27 +217,29 @@ public class UIActivityViewController extends UIViewController {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(String arg0, boolean arg1);
+        void call_completionHandler_ret(String activityType, boolean completed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_completionWithItemsHandler_ret {
         @Generated
-        void call_completionWithItemsHandler_ret(String arg0, boolean arg1, NSArray<?> arg2, NSError arg3);
+        void call_completionWithItemsHandler_ret(String activityType, boolean completed, NSArray<?> returnedItems,
+                NSError activityError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(String arg0, boolean arg1);
+        void call_setCompletionHandler(String activityType, boolean completed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionWithItemsHandler {
         @Generated
-        void call_setCompletionWithItemsHandler(String arg0, boolean arg1, NSArray<?> arg2, NSError arg3);
+        void call_setCompletionWithItemsHandler(String activityType, boolean completed, NSArray<?> returnedItems,
+                NSError activityError);
     }
 }

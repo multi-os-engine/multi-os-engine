@@ -144,8 +144,8 @@ public class AVContentKeyRequest extends NSObject {
     @Generated
     public interface Block_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler {
         @Generated
-        void call_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler(NSData arg0,
-                NSError arg1);
+        void call_makeStreamingContentKeyRequestDataForAppContentIdentifierOptionsCompletionHandler(
+                NSData contentKeyRequestData, NSError error);
     }
 
     @Generated

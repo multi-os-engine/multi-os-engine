@@ -239,14 +239,14 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Generated
     public interface Block_loadAchievementDescriptionsWithCompletionHandler {
         @Generated
-        void call_loadAchievementDescriptionsWithCompletionHandler(NSArray<? extends GKAchievementDescription> arg0,
-                NSError arg1);
+        void call_loadAchievementDescriptionsWithCompletionHandler(
+                NSArray<? extends GKAchievementDescription> descriptions, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadImageWithCompletionHandler {
         @Generated
-        void call_loadImageWithCompletionHandler(UIImage arg0, NSError arg1);
+        void call_loadImageWithCompletionHandler(UIImage image, NSError error);
     }
 }

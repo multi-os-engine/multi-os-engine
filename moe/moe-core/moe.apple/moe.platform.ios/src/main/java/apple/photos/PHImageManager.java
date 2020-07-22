@@ -209,45 +209,47 @@ public class PHImageManager extends NSObject {
     @Generated
     public interface Block_requestAVAssetForVideoOptionsResultHandler {
         @Generated
-        void call_requestAVAssetForVideoOptionsResultHandler(AVAsset arg0, AVAudioMix arg1, NSDictionary<?, ?> arg2);
+        void call_requestAVAssetForVideoOptionsResultHandler(AVAsset asset, AVAudioMix audioMix,
+                NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestExportSessionForVideoOptionsExportPresetResultHandler {
         @Generated
-        void call_requestExportSessionForVideoOptionsExportPresetResultHandler(AVAssetExportSession arg0,
-                NSDictionary<?, ?> arg1);
+        void call_requestExportSessionForVideoOptionsExportPresetResultHandler(AVAssetExportSession exportSession,
+                NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestImageDataForAssetOptionsResultHandler {
         @Generated
-        void call_requestImageDataForAssetOptionsResultHandler(NSData arg0, String arg1, @NInt long arg2,
-                NSDictionary<?, ?> arg3);
+        void call_requestImageDataForAssetOptionsResultHandler(NSData imageData, String dataUTI, @NInt long orientation,
+                NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler {
         @Generated
-        void call_requestImageForAssetTargetSizeContentModeOptionsResultHandler(UIImage arg0, NSDictionary<?, ?> arg1);
+        void call_requestImageForAssetTargetSizeContentModeOptionsResultHandler(UIImage result,
+                NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler {
         @Generated
-        void call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHLivePhoto arg0,
-                NSDictionary<?, ?> arg1);
+        void call_requestLivePhotoForAssetTargetSizeContentModeOptionsResultHandler(PHLivePhoto livePhoto,
+                NSDictionary<?, ?> info);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestPlayerItemForVideoOptionsResultHandler {
         @Generated
-        void call_requestPlayerItemForVideoOptionsResultHandler(AVPlayerItem arg0, NSDictionary<?, ?> arg1);
+        void call_requestPlayerItemForVideoOptionsResultHandler(AVPlayerItem playerItem, NSDictionary<?, ?> info);
     }
 
     @Generated
@@ -260,7 +262,7 @@ public class PHImageManager extends NSObject {
     @Generated
     public interface Block_requestImageDataAndOrientationForAssetOptionsResultHandler {
         @Generated
-        void call_requestImageDataAndOrientationForAssetOptionsResultHandler(NSData arg0, String arg1, int arg2,
-                NSDictionary<?, ?> arg3);
+        void call_requestImageDataAndOrientationForAssetOptionsResultHandler(NSData imageData, String dataUTI,
+                int orientation, NSDictionary<?, ?> info);
     }
 }

@@ -31,7 +31,7 @@ public interface INDeleteTasksIntentHandling {
     @Generated
     public interface Block_confirmDeleteTasksCompletion {
         @Generated
-        void call_confirmDeleteTasksCompletion(INDeleteTasksIntentResponse arg0);
+        void call_confirmDeleteTasksCompletion(INDeleteTasksIntentResponse response);
     }
 
     @Generated
@@ -43,7 +43,7 @@ public interface INDeleteTasksIntentHandling {
     @Generated
     public interface Block_handleDeleteTasksCompletion {
         @Generated
-        void call_handleDeleteTasksCompletion(INDeleteTasksIntentResponse arg0);
+        void call_handleDeleteTasksCompletion(INDeleteTasksIntentResponse response);
     }
 
     @Generated
@@ -58,7 +58,7 @@ public interface INDeleteTasksIntentHandling {
     @Generated
     public interface Block_resolveTaskListForDeleteTasksWithCompletion {
         @Generated
-        void call_resolveTaskListForDeleteTasksWithCompletion(INDeleteTasksTaskListResolutionResult arg0);
+        void call_resolveTaskListForDeleteTasksWithCompletion(INDeleteTasksTaskListResolutionResult resolutionResult);
     }
 
     @Generated
@@ -73,6 +73,7 @@ public interface INDeleteTasksIntentHandling {
     @Generated
     public interface Block_resolveTasksForDeleteTasksWithCompletion {
         @Generated
-        void call_resolveTasksForDeleteTasksWithCompletion(NSArray<? extends INDeleteTasksTaskResolutionResult> arg0);
+        void call_resolveTasksForDeleteTasksWithCompletion(
+                NSArray<? extends INDeleteTasksTaskResolutionResult> resolutionResults);
     }
 }

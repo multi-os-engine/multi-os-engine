@@ -105,8 +105,8 @@ public class HKHeartbeatSeriesQuery extends HKQuery {
     @Generated
     public interface Block_initWithHeartbeatSeriesDataHandler {
         @Generated
-        void call_initWithHeartbeatSeriesDataHandler(HKHeartbeatSeriesQuery arg0, double arg1, boolean arg2,
-                boolean arg3, NSError arg4);
+        void call_initWithHeartbeatSeriesDataHandler(HKHeartbeatSeriesQuery query, double timeSinceSeriesStart,
+                boolean precededByGap, boolean done, NSError error);
     }
 
     @Generated

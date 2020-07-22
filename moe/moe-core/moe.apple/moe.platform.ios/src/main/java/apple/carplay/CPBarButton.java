@@ -121,7 +121,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_initWithTypeHandler {
         @Generated
-        void call_initWithTypeHandler(CPBarButton arg0);
+        void call_initWithTypeHandler(CPBarButton barButton);
     }
 
     @Generated

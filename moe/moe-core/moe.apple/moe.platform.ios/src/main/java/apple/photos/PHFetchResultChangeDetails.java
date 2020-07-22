@@ -211,6 +211,6 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     @Generated
     public interface Block_enumerateMovesWithBlock {
         @Generated
-        void call_enumerateMovesWithBlock(@NUInt long arg0, @NUInt long arg1);
+        void call_enumerateMovesWithBlock(@NUInt long fromIndex, @NUInt long toIndex);
     }
 }

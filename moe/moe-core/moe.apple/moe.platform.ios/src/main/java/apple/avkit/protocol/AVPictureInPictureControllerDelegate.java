@@ -86,6 +86,6 @@ public interface AVPictureInPictureControllerDelegate {
     public interface Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
         @Generated
         void call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
-                boolean arg0);
+                boolean restored);
     }
 }

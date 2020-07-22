@@ -82,7 +82,7 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_confirmGetAvailableRestaurantReservationBookingsCompletion {
         @Generated
         void call_confirmGetAvailableRestaurantReservationBookingsCompletion(
-                INGetAvailableRestaurantReservationBookingsIntentResponse arg0);
+                INGetAvailableRestaurantReservationBookingsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -90,7 +90,7 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_handleGetAvailableRestaurantReservationBookingsCompletion {
         @Generated
         void call_handleGetAvailableRestaurantReservationBookingsCompletion(
-                INGetAvailableRestaurantReservationBookingsIntentResponse arg0);
+                INGetAvailableRestaurantReservationBookingsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -98,7 +98,7 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion {
         @Generated
         void call_resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion(
-                INIntegerResolutionResult arg0);
+                INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -106,7 +106,7 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion {
         @Generated
         void call_resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion(
-                INDateComponentsResolutionResult arg0);
+                INDateComponentsResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -114,6 +114,6 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion {
         @Generated
         void call_resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion(
-                INRestaurantResolutionResult arg0);
+                INRestaurantResolutionResult resolutionResult);
     }
 }

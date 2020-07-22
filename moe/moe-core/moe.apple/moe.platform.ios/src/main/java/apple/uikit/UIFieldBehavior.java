@@ -305,7 +305,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     public interface Block_fieldWithEvaluationBlock {
         @Generated
         @ByValue
-        CGVector call_fieldWithEvaluationBlock(UIFieldBehavior arg0, @ByValue CGPoint arg1, @ByValue CGVector arg2,
-                @NFloat double arg3, @NFloat double arg4, double arg5);
+        CGVector call_fieldWithEvaluationBlock(UIFieldBehavior field, @ByValue CGPoint position,
+                @ByValue CGVector velocity, @NFloat double mass, @NFloat double charge, double deltaTime);
     }
 }

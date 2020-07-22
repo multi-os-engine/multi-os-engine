@@ -187,14 +187,14 @@ public class UIGraphicsPDFRenderer extends UIGraphicsRenderer {
     @Generated
     public interface Block_PDFDataWithActions {
         @Generated
-        void call_PDFDataWithActions(UIGraphicsPDFRendererContext arg0);
+        void call_PDFDataWithActions(UIGraphicsPDFRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writePDFToURLWithActionsError {
         @Generated
-        void call_writePDFToURLWithActionsError(UIGraphicsPDFRendererContext arg0);
+        void call_writePDFToURLWithActionsError(UIGraphicsPDFRendererContext rendererContext);
     }
 
     @Generated

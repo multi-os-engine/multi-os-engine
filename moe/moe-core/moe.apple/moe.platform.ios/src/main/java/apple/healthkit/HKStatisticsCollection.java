@@ -178,6 +178,6 @@ public class HKStatisticsCollection extends NSObject {
     @Generated
     public interface Block_enumerateStatisticsFromDateToDateWithBlock {
         @Generated
-        void call_enumerateStatisticsFromDateToDateWithBlock(HKStatistics arg0, BoolPtr arg1);
+        void call_enumerateStatisticsFromDateToDateWithBlock(HKStatistics result, BoolPtr stop);
     }
 }

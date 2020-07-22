@@ -231,14 +231,14 @@ public class LAContext extends NSObject {
     @Generated
     public interface Block_evaluateAccessControlOperationLocalizedReasonReply {
         @Generated
-        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean arg0, NSError arg1);
+        void call_evaluateAccessControlOperationLocalizedReasonReply(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_evaluatePolicyLocalizedReasonReply {
         @Generated
-        void call_evaluatePolicyLocalizedReasonReply(boolean arg0, NSError arg1);
+        void call_evaluatePolicyLocalizedReasonReply(boolean success, NSError error);
     }
 
     @Generated

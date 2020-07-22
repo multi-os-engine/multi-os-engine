@@ -200,20 +200,20 @@ public class HMTimerTrigger extends HMTrigger {
     @Generated
     public interface Block_updateFireDateCompletionHandler {
         @Generated
-        void call_updateFireDateCompletionHandler(NSError arg0);
+        void call_updateFireDateCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateRecurrenceCompletionHandler {
         @Generated
-        void call_updateRecurrenceCompletionHandler(NSError arg0);
+        void call_updateRecurrenceCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateTimeZoneCompletionHandler {
         @Generated
-        void call_updateTimeZoneCompletionHandler(NSError arg0);
+        void call_updateTimeZoneCompletionHandler(NSError error);
     }
 }

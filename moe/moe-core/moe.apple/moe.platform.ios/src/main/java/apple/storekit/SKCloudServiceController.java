@@ -180,21 +180,21 @@ public class SKCloudServiceController extends NSObject {
     @Generated
     public interface Block_requestAuthorization {
         @Generated
-        void call_requestAuthorization(@NInt long arg0);
+        void call_requestAuthorization(@NInt long status);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestCapabilitiesWithCompletionHandler {
         @Generated
-        void call_requestCapabilitiesWithCompletionHandler(@NUInt long arg0, NSError arg1);
+        void call_requestCapabilitiesWithCompletionHandler(@NUInt long capabilities, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestStorefrontIdentifierWithCompletionHandler {
         @Generated
-        void call_requestStorefrontIdentifierWithCompletionHandler(String arg0, NSError arg1);
+        void call_requestStorefrontIdentifierWithCompletionHandler(String storefrontIdentifier, NSError error);
     }
 
     @Generated
@@ -206,7 +206,8 @@ public class SKCloudServiceController extends NSObject {
     @Generated
     public interface Block_requestPersonalizationTokenForClientTokenWithCompletionHandler {
         @Generated
-        void call_requestPersonalizationTokenForClientTokenWithCompletionHandler(String arg0, NSError arg1);
+        void call_requestPersonalizationTokenForClientTokenWithCompletionHandler(String personalizationToken,
+                NSError error);
     }
 
     @Generated
@@ -218,7 +219,7 @@ public class SKCloudServiceController extends NSObject {
     @Generated
     public interface Block_requestStorefrontCountryCodeWithCompletionHandler {
         @Generated
-        void call_requestStorefrontCountryCodeWithCompletionHandler(String arg0, NSError arg1);
+        void call_requestStorefrontCountryCodeWithCompletionHandler(String storefrontCountryCode, NSError error);
     }
 
     @Generated
@@ -230,6 +231,6 @@ public class SKCloudServiceController extends NSObject {
     @Generated
     public interface Block_requestUserTokenForDeveloperTokenCompletionHandler {
         @Generated
-        void call_requestUserTokenForDeveloperTokenCompletionHandler(String arg0, NSError arg1);
+        void call_requestUserTokenForDeveloperTokenCompletionHandler(String userToken, NSError error);
     }
 }

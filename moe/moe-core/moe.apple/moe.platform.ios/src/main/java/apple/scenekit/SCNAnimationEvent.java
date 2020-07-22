@@ -165,7 +165,7 @@ public class SCNAnimationEvent extends NSObject {
     @Generated
     public interface Block_animationEventWithKeyTimeBlock {
         @Generated
-        void call_animationEventWithKeyTimeBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_animationEventWithKeyTimeBlock(@Mapped(ObjCObjectMapper.class) Object animation,
+                @Mapped(ObjCObjectMapper.class) Object animatedObject, boolean playingBackward);
     }
 }

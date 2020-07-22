@@ -346,140 +346,140 @@ public class HMHome extends NSObject {
     @Generated
     public interface Block_addAccessoryCompletionHandler {
         @Generated
-        void call_addAccessoryCompletionHandler(NSError arg0);
+        void call_addAccessoryCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addActionSetWithNameCompletionHandler {
         @Generated
-        void call_addActionSetWithNameCompletionHandler(HMActionSet arg0, NSError arg1);
+        void call_addActionSetWithNameCompletionHandler(HMActionSet actionSet, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addAndSetupAccessoriesWithCompletionHandler {
         @Generated
-        void call_addAndSetupAccessoriesWithCompletionHandler(NSError arg0);
+        void call_addAndSetupAccessoriesWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addRoomWithNameCompletionHandler {
         @Generated
-        void call_addRoomWithNameCompletionHandler(HMRoom arg0, NSError arg1);
+        void call_addRoomWithNameCompletionHandler(HMRoom room, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addServiceGroupWithNameCompletionHandler {
         @Generated
-        void call_addServiceGroupWithNameCompletionHandler(HMServiceGroup arg0, NSError arg1);
+        void call_addServiceGroupWithNameCompletionHandler(HMServiceGroup group, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addTriggerCompletionHandler {
         @Generated
-        void call_addTriggerCompletionHandler(NSError arg0);
+        void call_addTriggerCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addUserWithCompletionHandler {
         @Generated
-        void call_addUserWithCompletionHandler(HMUser arg0, NSError arg1);
+        void call_addUserWithCompletionHandler(HMUser user, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addZoneWithNameCompletionHandler {
         @Generated
-        void call_addZoneWithNameCompletionHandler(HMZone arg0, NSError arg1);
+        void call_addZoneWithNameCompletionHandler(HMZone zone, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_assignAccessoryToRoomCompletionHandler {
         @Generated
-        void call_assignAccessoryToRoomCompletionHandler(NSError arg0);
+        void call_assignAccessoryToRoomCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_executeActionSetCompletionHandler {
         @Generated
-        void call_executeActionSetCompletionHandler(NSError arg0);
+        void call_executeActionSetCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_manageUsersWithCompletionHandler {
         @Generated
-        void call_manageUsersWithCompletionHandler(NSError arg0);
+        void call_manageUsersWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeAccessoryCompletionHandler {
         @Generated
-        void call_removeAccessoryCompletionHandler(NSError arg0);
+        void call_removeAccessoryCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeActionSetCompletionHandler {
         @Generated
-        void call_removeActionSetCompletionHandler(NSError arg0);
+        void call_removeActionSetCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeRoomCompletionHandler {
         @Generated
-        void call_removeRoomCompletionHandler(NSError arg0);
+        void call_removeRoomCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeServiceGroupCompletionHandler {
         @Generated
-        void call_removeServiceGroupCompletionHandler(NSError arg0);
+        void call_removeServiceGroupCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeTriggerCompletionHandler {
         @Generated
-        void call_removeTriggerCompletionHandler(NSError arg0);
+        void call_removeTriggerCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeUserCompletionHandler {
         @Generated
-        void call_removeUserCompletionHandler(NSError arg0);
+        void call_removeUserCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeZoneCompletionHandler {
         @Generated
-        void call_removeZoneCompletionHandler(NSError arg0);
+        void call_removeZoneCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_unblockAccessoryCompletionHandler {
         @Generated
-        void call_unblockAccessoryCompletionHandler(NSError arg0);
+        void call_unblockAccessoryCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 
     @Generated
@@ -496,7 +496,8 @@ public class HMHome extends NSObject {
     @Generated
     public interface Block_addAndSetupAccessoriesWithPayloadCompletionHandler {
         @Generated
-        void call_addAndSetupAccessoriesWithPayloadCompletionHandler(NSArray<? extends HMAccessory> arg0, NSError arg1);
+        void call_addAndSetupAccessoriesWithPayloadCompletionHandler(NSArray<? extends HMAccessory> accessories,
+                NSError error);
     }
 
     @Generated

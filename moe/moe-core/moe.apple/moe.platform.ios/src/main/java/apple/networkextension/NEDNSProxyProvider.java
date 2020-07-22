@@ -149,7 +149,7 @@ public class NEDNSProxyProvider extends NEProvider {
     @Generated
     public interface Block_startProxyWithOptionsCompletionHandler {
         @Generated
-        void call_startProxyWithOptionsCompletionHandler(NSError arg0);
+        void call_startProxyWithOptionsCompletionHandler(NSError error);
     }
 
     @Generated

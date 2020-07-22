@@ -299,64 +299,66 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Generated
     public interface Block_challengeComposeControllerWithMessagePlayersCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController arg0, boolean arg1,
-                NSArray<String> arg2);
+        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController composeController,
+                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_challengeComposeControllerWithPlayersMessageCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController arg0, boolean arg1,
-                NSArray<String> arg2);
+        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController composeController,
+                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadAchievementsWithCompletionHandler {
         @Generated
-        void call_loadAchievementsWithCompletionHandler(NSArray<? extends GKAchievement> arg0, NSError arg1);
+        void call_loadAchievementsWithCompletionHandler(NSArray<? extends GKAchievement> achievements, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportAchievementWithCompletionHandler {
         @Generated
-        void call_reportAchievementWithCompletionHandler(NSError arg0);
+        void call_reportAchievementWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportAchievementsWithCompletionHandler {
         @Generated
-        void call_reportAchievementsWithCompletionHandler(NSError arg0);
+        void call_reportAchievementsWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportAchievementsWithEligibleChallengesWithCompletionHandler {
         @Generated
-        void call_reportAchievementsWithEligibleChallengesWithCompletionHandler(NSError arg0);
+        void call_reportAchievementsWithEligibleChallengesWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resetAchievementsWithCompletionHandler {
         @Generated
-        void call_resetAchievementsWithCompletionHandler(NSError arg0);
+        void call_resetAchievementsWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_selectChallengeablePlayerIDsWithCompletionHandler {
         @Generated
-        void call_selectChallengeablePlayerIDsWithCompletionHandler(NSArray<String> arg0, NSError arg1);
+        void call_selectChallengeablePlayerIDsWithCompletionHandler(NSArray<String> challengeablePlayerIDs,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_selectChallengeablePlayersWithCompletionHandler {
         @Generated
-        void call_selectChallengeablePlayersWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_selectChallengeablePlayersWithCompletionHandler(NSArray<? extends GKPlayer> challengeablePlayers,
+                NSError error);
     }
 }

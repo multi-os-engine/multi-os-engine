@@ -109,7 +109,8 @@ public class NLTagger extends NSObject {
     @Generated
     public interface Block_enumerateTagsInRangeUnitSchemeOptionsUsingBlock {
         @Generated
-        void call_enumerateTagsInRangeUnitSchemeOptionsUsingBlock(String arg0, @ByValue NSRange arg1, BoolPtr arg2);
+        void call_enumerateTagsInRangeUnitSchemeOptionsUsingBlock(String tag, @ByValue NSRange tokenRange,
+                BoolPtr stop);
     }
 
     @Generated
@@ -169,7 +170,7 @@ public class NLTagger extends NSObject {
     @Generated
     public interface Block_requestAssetsForLanguageTagSchemeCompletionHandler {
         @Generated
-        void call_requestAssetsForLanguageTagSchemeCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_requestAssetsForLanguageTagSchemeCompletionHandler(@NInt long result, NSError error);
     }
 
     @Generated

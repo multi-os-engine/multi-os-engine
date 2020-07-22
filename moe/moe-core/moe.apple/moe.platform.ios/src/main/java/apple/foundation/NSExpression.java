@@ -343,7 +343,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public interface Block_expressionForBlockArguments {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSArray<? extends NSExpression> arg1, NSMutableDictionary<?, ?> arg2);
+        Object call_expressionForBlockArguments(@Mapped(ObjCObjectMapper.class) Object evaluatedObject,
+                NSArray<? extends NSExpression> expressions, NSMutableDictionary<?, ?> context);
     }
 }

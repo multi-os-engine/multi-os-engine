@@ -2575,7 +2575,7 @@ public final class CoreMedia {
     @Generated
     public interface Block_CMSampleBufferSetInvalidateHandler {
         @Generated
-        void call_CMSampleBufferSetInvalidateHandler(CMSampleBufferRef arg0);
+        void call_CMSampleBufferSetInvalidateHandler(CMSampleBufferRef sbuf);
     }
 
     @Runtime(CRuntime.class)
@@ -2724,7 +2724,7 @@ public final class CoreMedia {
     @Generated
     public interface Block_CMSampleBufferCreateWithMakeDataReadyHandler {
         @Generated
-        int call_CMSampleBufferCreateWithMakeDataReadyHandler(CMSampleBufferRef arg0);
+        int call_CMSampleBufferCreateWithMakeDataReadyHandler(CMSampleBufferRef sbuf);
     }
 
     @Generated
@@ -2740,7 +2740,7 @@ public final class CoreMedia {
     @Generated
     public interface Block_CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler {
         @Generated
-        int call_CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler(CMSampleBufferRef arg0);
+        int call_CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler(CMSampleBufferRef sbuf);
     }
 
     @Generated
@@ -2755,7 +2755,7 @@ public final class CoreMedia {
     @Generated
     public interface Block_CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler {
         @Generated
-        int call_CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler(CMSampleBufferRef arg0);
+        int call_CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler(CMSampleBufferRef sbuf);
     }
 
     @Generated
@@ -2781,7 +2781,7 @@ public final class CoreMedia {
     @Generated
     public interface Block_CMBufferQueueInstallTriggerHandler {
         @Generated
-        void call_CMBufferQueueInstallTriggerHandler(CMBufferQueueTriggerToken arg0);
+        void call_CMBufferQueueInstallTriggerHandler(CMBufferQueueTriggerToken triggerToken);
     }
 
     @Generated
@@ -2794,7 +2794,7 @@ public final class CoreMedia {
     @Generated
     public interface Block_CMBufferQueueInstallTriggerHandlerWithIntegerThreshold {
         @Generated
-        void call_CMBufferQueueInstallTriggerHandlerWithIntegerThreshold(CMBufferQueueTriggerToken arg0);
+        void call_CMBufferQueueInstallTriggerHandlerWithIntegerThreshold(CMBufferQueueTriggerToken triggerToken);
     }
 
     @Generated
@@ -2806,7 +2806,7 @@ public final class CoreMedia {
     @Generated
     public interface Block_CMBufferQueueSetValidationHandler {
         @Generated
-        int call_CMBufferQueueSetValidationHandler(CMBufferQueueRef arg0, ConstVoidPtr arg1);
+        int call_CMBufferQueueSetValidationHandler(CMBufferQueueRef queue, ConstVoidPtr buf);
     }
 
     @Generated

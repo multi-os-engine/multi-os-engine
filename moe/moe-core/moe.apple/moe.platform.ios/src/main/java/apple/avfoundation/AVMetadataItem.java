@@ -307,6 +307,6 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @Generated
     public interface Block_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler {
         @Generated
-        void call_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler(AVMetadataItemValueRequest arg0);
+        void call_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler(AVMetadataItemValueRequest valueRequest);
     }
 }

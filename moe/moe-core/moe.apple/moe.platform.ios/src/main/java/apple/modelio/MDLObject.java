@@ -254,7 +254,7 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Generated
     public interface Block_enumerateChildObjectsOfClassRootUsingBlockStopPointer {
         @Generated
-        void call_enumerateChildObjectsOfClassRootUsingBlockStopPointer(MDLObject arg0, BoolPtr arg1);
+        void call_enumerateChildObjectsOfClassRootUsingBlockStopPointer(MDLObject object, BoolPtr stop);
     }
 
     @Generated

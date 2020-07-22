@@ -62,7 +62,7 @@ public interface INGetAvailableRestaurantReservationBookingDefaultsIntentHandlin
     public interface Block_confirmGetAvailableRestaurantReservationBookingDefaultsCompletion {
         @Generated
         void call_confirmGetAvailableRestaurantReservationBookingDefaultsCompletion(
-                INGetAvailableRestaurantReservationBookingDefaultsIntentResponse arg0);
+                INGetAvailableRestaurantReservationBookingDefaultsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -70,7 +70,7 @@ public interface INGetAvailableRestaurantReservationBookingDefaultsIntentHandlin
     public interface Block_handleGetAvailableRestaurantReservationBookingDefaultsCompletion {
         @Generated
         void call_handleGetAvailableRestaurantReservationBookingDefaultsCompletion(
-                INGetAvailableRestaurantReservationBookingDefaultsIntentResponse arg0);
+                INGetAvailableRestaurantReservationBookingDefaultsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -78,6 +78,6 @@ public interface INGetAvailableRestaurantReservationBookingDefaultsIntentHandlin
     public interface Block_resolveRestaurantForGetAvailableRestaurantReservationBookingDefaultsWithCompletion {
         @Generated
         void call_resolveRestaurantForGetAvailableRestaurantReservationBookingDefaultsWithCompletion(
-                INRestaurantResolutionResult arg0);
+                INRestaurantResolutionResult resolutionResult);
     }
 }

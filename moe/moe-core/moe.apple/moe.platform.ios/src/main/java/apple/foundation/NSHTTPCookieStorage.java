@@ -212,6 +212,6 @@ public class NSHTTPCookieStorage extends NSObject {
     @Generated
     public interface Block_getCookiesForTaskCompletionHandler {
         @Generated
-        void call_getCookiesForTaskCompletionHandler(NSArray<? extends NSHTTPCookie> arg0);
+        void call_getCookiesForTaskCompletionHandler(NSArray<? extends NSHTTPCookie> cookies);
     }
 }

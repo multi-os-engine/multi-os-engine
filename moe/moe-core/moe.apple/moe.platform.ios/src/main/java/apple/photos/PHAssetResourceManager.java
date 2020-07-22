@@ -183,20 +183,20 @@ public class PHAssetResourceManager extends NSObject {
     @Generated
     public interface Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2 {
         @Generated
-        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2(NSData arg0);
+        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_2(NSData data);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3 {
         @Generated
-        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3(NSError arg0);
+        void call_requestDataForAssetResourceOptionsDataReceivedHandlerCompletionHandler_3(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDataForAssetResourceToFileOptionsCompletionHandler {
         @Generated
-        void call_writeDataForAssetResourceToFileOptionsCompletionHandler(NSError arg0);
+        void call_writeDataForAssetResourceToFileOptionsCompletionHandler(NSError error);
     }
 }

@@ -128,7 +128,7 @@ public class QLThumbnailProvider extends NSObject {
     @Generated
     public interface Block_provideThumbnailForFileRequestCompletionHandler {
         @Generated
-        void call_provideThumbnailForFileRequestCompletionHandler(QLThumbnailReply arg0, NSError arg1);
+        void call_provideThumbnailForFileRequestCompletionHandler(QLThumbnailReply reply, NSError error);
     }
 
     @Generated

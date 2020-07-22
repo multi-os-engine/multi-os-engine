@@ -108,7 +108,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Generated
     public interface Block_dismissNavigationAlertAnimatedCompletion {
         @Generated
-        void call_dismissNavigationAlertAnimatedCompletion(boolean arg0);
+        void call_dismissNavigationAlertAnimatedCompletion(boolean dismissed);
     }
 
     @Generated

@@ -265,77 +265,77 @@ public class GKGameSession extends NSObject {
     @Generated
     public interface Block_clearBadgeForPlayersCompletionHandler {
         @Generated
-        void call_clearBadgeForPlayersCompletionHandler(NSError arg0);
+        void call_clearBadgeForPlayersCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_createSessionInContainerWithTitleMaxConnectedPlayersCompletionHandler {
         @Generated
-        void call_createSessionInContainerWithTitleMaxConnectedPlayersCompletionHandler(GKGameSession arg0,
-                NSError arg1);
+        void call_createSessionInContainerWithTitleMaxConnectedPlayersCompletionHandler(GKGameSession session,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getShareURLWithCompletionHandler {
         @Generated
-        void call_getShareURLWithCompletionHandler(NSURL arg0, NSError arg1);
+        void call_getShareURLWithCompletionHandler(NSURL url, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadDataWithCompletionHandler {
         @Generated
-        void call_loadDataWithCompletionHandler(NSData arg0, NSError arg1);
+        void call_loadDataWithCompletionHandler(NSData data, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadSessionWithIdentifierCompletionHandler {
         @Generated
-        void call_loadSessionWithIdentifierCompletionHandler(GKGameSession arg0, NSError arg1);
+        void call_loadSessionWithIdentifierCompletionHandler(GKGameSession session, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadSessionsInContainerCompletionHandler {
         @Generated
-        void call_loadSessionsInContainerCompletionHandler(NSArray<? extends GKGameSession> arg0, NSError arg1);
+        void call_loadSessionsInContainerCompletionHandler(NSArray<? extends GKGameSession> sessions, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeSessionWithIdentifierCompletionHandler {
         @Generated
-        void call_removeSessionWithIdentifierCompletionHandler(NSError arg0);
+        void call_removeSessionWithIdentifierCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveDataCompletionHandler {
         @Generated
-        void call_saveDataCompletionHandler(NSData arg0, NSError arg1);
+        void call_saveDataCompletionHandler(NSData conflictingData, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendDataWithTransportTypeCompletionHandler {
         @Generated
-        void call_sendDataWithTransportTypeCompletionHandler(NSError arg0);
+        void call_sendDataWithTransportTypeCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMessageWithLocalizedFormatKeyArgumentsDataToPlayersBadgePlayersCompletionHandler {
         @Generated
-        void call_sendMessageWithLocalizedFormatKeyArgumentsDataToPlayersBadgePlayersCompletionHandler(NSError arg0);
+        void call_sendMessageWithLocalizedFormatKeyArgumentsDataToPlayersBadgePlayersCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setConnectionStateCompletionHandler {
         @Generated
-        void call_setConnectionStateCompletionHandler(NSError arg0);
+        void call_setConnectionStateCompletionHandler(NSError error);
     }
 }

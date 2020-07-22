@@ -192,13 +192,13 @@ public class NETunnelProvider extends NEProvider {
     @Generated
     public interface Block_handleAppMessageCompletionHandler {
         @Generated
-        void call_handleAppMessageCompletionHandler(NSData arg0);
+        void call_handleAppMessageCompletionHandler(NSData responseData);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTunnelNetworkSettingsCompletionHandler {
         @Generated
-        void call_setTunnelNetworkSettingsCompletionHandler(NSError arg0);
+        void call_setTunnelNetworkSettingsCompletionHandler(NSError error);
     }
 }

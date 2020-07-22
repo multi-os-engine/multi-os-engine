@@ -51,7 +51,7 @@ public class CTCellularPlanProvisioning extends NSObject {
     @Generated
     public interface Block_addPlanWithCompletionHandler {
         @Generated
-        void call_addPlanWithCompletionHandler(@NUInt long arg0);
+        void call_addPlanWithCompletionHandler(@NUInt long result);
     }
 
     @Generated

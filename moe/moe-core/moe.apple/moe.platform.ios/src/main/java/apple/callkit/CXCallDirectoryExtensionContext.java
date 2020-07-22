@@ -196,7 +196,7 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
     @Generated
     public interface Block_completeRequestWithCompletionHandler {
         @Generated
-        void call_completeRequestWithCompletionHandler(boolean arg0);
+        void call_completeRequestWithCompletionHandler(boolean expired);
     }
 
     @Generated

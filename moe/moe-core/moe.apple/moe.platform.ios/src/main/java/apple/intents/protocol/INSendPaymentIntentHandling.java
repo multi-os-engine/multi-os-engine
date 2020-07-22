@@ -78,35 +78,35 @@ public interface INSendPaymentIntentHandling {
     @Generated
     public interface Block_confirmSendPaymentCompletion {
         @Generated
-        void call_confirmSendPaymentCompletion(INSendPaymentIntentResponse arg0);
+        void call_confirmSendPaymentCompletion(INSendPaymentIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSendPaymentCompletion {
         @Generated
-        void call_handleSendPaymentCompletion(INSendPaymentIntentResponse arg0);
+        void call_handleSendPaymentCompletion(INSendPaymentIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveCurrencyAmountForSendPaymentWithCompletion {
         @Generated
-        void call_resolveCurrencyAmountForSendPaymentWithCompletion(INCurrencyAmountResolutionResult arg0);
+        void call_resolveCurrencyAmountForSendPaymentWithCompletion(INCurrencyAmountResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveNoteForSendPaymentWithCompletion {
         @Generated
-        void call_resolveNoteForSendPaymentWithCompletion(INStringResolutionResult arg0);
+        void call_resolveNoteForSendPaymentWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePayeeForSendPaymentWithCompletion {
         @Generated
-        void call_resolvePayeeForSendPaymentWithCompletion(INPersonResolutionResult arg0);
+        void call_resolvePayeeForSendPaymentWithCompletion(INPersonResolutionResult resolutionResult);
     }
 
     @Generated
@@ -121,7 +121,8 @@ public interface INSendPaymentIntentHandling {
     @Generated
     public interface Block_resolveCurrencyAmountForSendPaymentCompletion {
         @Generated
-        void call_resolveCurrencyAmountForSendPaymentCompletion(INSendPaymentCurrencyAmountResolutionResult arg0);
+        void call_resolveCurrencyAmountForSendPaymentCompletion(
+                INSendPaymentCurrencyAmountResolutionResult resolutionResult);
     }
 
     @Generated
@@ -136,6 +137,6 @@ public interface INSendPaymentIntentHandling {
     @Generated
     public interface Block_resolvePayeeForSendPaymentCompletion {
         @Generated
-        void call_resolvePayeeForSendPaymentCompletion(INSendPaymentPayeeResolutionResult arg0);
+        void call_resolvePayeeForSendPaymentCompletion(INSendPaymentPayeeResolutionResult resolutionResult);
     }
 }

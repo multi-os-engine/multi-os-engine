@@ -1765,7 +1765,7 @@ public final class ImageIO {
     @Generated
     public interface Block_CGImageMetadataEnumerateTagsUsingBlock {
         @Generated
-        boolean call_CGImageMetadataEnumerateTagsUsingBlock(CFStringRef arg0, CGImageMetadataTagRef arg1);
+        boolean call_CGImageMetadataEnumerateTagsUsingBlock(CFStringRef path, CGImageMetadataTagRef tag);
     }
 
     @Generated
@@ -1856,7 +1856,7 @@ public final class ImageIO {
     @Generated
     public interface Block_CGAnimateImageAtURLWithBlock {
         @Generated
-        void call_CGAnimateImageAtURLWithBlock(@NUInt long arg0, CGImageRef arg1, BoolPtr arg2);
+        void call_CGAnimateImageAtURLWithBlock(@NUInt long index, CGImageRef image, BoolPtr stop);
     }
 
     @Generated
@@ -1868,7 +1868,7 @@ public final class ImageIO {
     @Generated
     public interface Block_CGAnimateImageDataWithBlock {
         @Generated
-        void call_CGAnimateImageDataWithBlock(@NUInt long arg0, CGImageRef arg1, BoolPtr arg2);
+        void call_CGAnimateImageDataWithBlock(@NUInt long index, CGImageRef image, BoolPtr stop);
     }
 
     @Generated

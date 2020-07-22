@@ -220,20 +220,20 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_addItemWithProductIDCompletionHandler {
         @Generated
-        void call_addItemWithProductIDCompletionHandler(NSArray<? extends MPMediaEntity> arg0, NSError arg1);
+        void call_addItemWithProductIDCompletionHandler(NSArray<? extends MPMediaEntity> entities, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getPlaylistWithUUIDCreationMetadataCompletionHandler {
         @Generated
-        void call_getPlaylistWithUUIDCreationMetadataCompletionHandler(MPMediaPlaylist arg0, NSError arg1);
+        void call_getPlaylistWithUUIDCreationMetadataCompletionHandler(MPMediaPlaylist playlist, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorization {
         @Generated
-        void call_requestAuthorization(@NInt long arg0);
+        void call_requestAuthorization(@NInt long status);
     }
 }

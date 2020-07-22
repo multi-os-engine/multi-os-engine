@@ -248,28 +248,28 @@ public class PKPassLibrary extends NSObject {
     @Generated
     public interface Block_activatePaymentPassWithActivationCodeCompletion {
         @Generated
-        void call_activatePaymentPassWithActivationCodeCompletion(boolean arg0, NSError arg1);
+        void call_activatePaymentPassWithActivationCodeCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_activatePaymentPassWithActivationDataCompletion {
         @Generated
-        void call_activatePaymentPassWithActivationDataCompletion(boolean arg0, NSError arg1);
+        void call_activatePaymentPassWithActivationDataCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addPassesWithCompletionHandler {
         @Generated
-        void call_addPassesWithCompletionHandler(@NInt long arg0);
+        void call_addPassesWithCompletionHandler(@NInt long status);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAutomaticPassPresentationSuppressionWithResponseHandler {
         @Generated
-        void call_requestAutomaticPassPresentationSuppressionWithResponseHandler(@NUInt long arg0);
+        void call_requestAutomaticPassPresentationSuppressionWithResponseHandler(@NUInt long result);
     }
 
     @Generated
@@ -282,7 +282,7 @@ public class PKPassLibrary extends NSObject {
     @Generated
     public interface Block_activateSecureElementPassWithActivationDataCompletion {
         @Generated
-        void call_activateSecureElementPassWithActivationDataCompletion(boolean arg0, NSError arg1);
+        void call_activateSecureElementPassWithActivationDataCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -310,6 +310,6 @@ public class PKPassLibrary extends NSObject {
     @Generated
     public interface Block_signDataWithSecureElementPassCompletion {
         @Generated
-        void call_signDataWithSecureElementPassCompletion(NSData arg0, NSData arg1, NSError arg2);
+        void call_signDataWithSecureElementPassCompletion(NSData signedData, NSData signature, NSError error);
     }
 }

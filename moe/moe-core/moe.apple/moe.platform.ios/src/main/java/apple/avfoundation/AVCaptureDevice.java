@@ -604,35 +604,35 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     public interface Block_requestAccessForMediaTypeCompletionHandler {
         @Generated
-        void call_requestAccessForMediaTypeCompletionHandler(boolean arg0);
+        void call_requestAccessForMediaTypeCompletionHandler(boolean granted);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setExposureModeCustomWithDurationISOCompletionHandler {
         @Generated
-        void call_setExposureModeCustomWithDurationISOCompletionHandler(@ByValue CMTime arg0);
+        void call_setExposureModeCustomWithDurationISOCompletionHandler(@ByValue CMTime syncTime);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setExposureTargetBiasCompletionHandler {
         @Generated
-        void call_setExposureTargetBiasCompletionHandler(@ByValue CMTime arg0);
+        void call_setExposureTargetBiasCompletionHandler(@ByValue CMTime syncTime);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFocusModeLockedWithLensPositionCompletionHandler {
         @Generated
-        void call_setFocusModeLockedWithLensPositionCompletionHandler(@ByValue CMTime arg0);
+        void call_setFocusModeLockedWithLensPositionCompletionHandler(@ByValue CMTime syncTime);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler {
         @Generated
-        void call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler(@ByValue CMTime arg0);
+        void call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler(@ByValue CMTime syncTime);
     }
 
     @Generated

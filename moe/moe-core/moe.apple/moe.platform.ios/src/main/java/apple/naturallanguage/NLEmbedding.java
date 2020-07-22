@@ -125,7 +125,8 @@ public class NLEmbedding extends NSObject {
     @Generated
     public interface Block_enumerateNeighborsForStringMaximumCountDistanceTypeUsingBlock {
         @Generated
-        void call_enumerateNeighborsForStringMaximumCountDistanceTypeUsingBlock(String arg0, double arg1, BoolPtr arg2);
+        void call_enumerateNeighborsForStringMaximumCountDistanceTypeUsingBlock(String neighbor, double distance,
+                BoolPtr stop);
     }
 
     @Generated
@@ -138,8 +139,8 @@ public class NLEmbedding extends NSObject {
     @Generated
     public interface Block_enumerateNeighborsForStringMaximumCountMaximumDistanceDistanceTypeUsingBlock {
         @Generated
-        void call_enumerateNeighborsForStringMaximumCountMaximumDistanceDistanceTypeUsingBlock(String arg0, double arg1,
-                BoolPtr arg2);
+        void call_enumerateNeighborsForStringMaximumCountMaximumDistanceDistanceTypeUsingBlock(String neighbor,
+                double distance, BoolPtr stop);
     }
 
     @Generated
@@ -152,7 +153,8 @@ public class NLEmbedding extends NSObject {
     @Generated
     public interface Block_enumerateNeighborsForVectorMaximumCountDistanceTypeUsingBlock {
         @Generated
-        void call_enumerateNeighborsForVectorMaximumCountDistanceTypeUsingBlock(String arg0, double arg1, BoolPtr arg2);
+        void call_enumerateNeighborsForVectorMaximumCountDistanceTypeUsingBlock(String neighbor, double distance,
+                BoolPtr stop);
     }
 
     @Generated
@@ -165,8 +167,8 @@ public class NLEmbedding extends NSObject {
     @Generated
     public interface Block_enumerateNeighborsForVectorMaximumCountMaximumDistanceDistanceTypeUsingBlock {
         @Generated
-        void call_enumerateNeighborsForVectorMaximumCountMaximumDistanceDistanceTypeUsingBlock(String arg0, double arg1,
-                BoolPtr arg2);
+        void call_enumerateNeighborsForVectorMaximumCountMaximumDistanceDistanceTypeUsingBlock(String neighbor,
+                double distance, BoolPtr stop);
     }
 
     @Generated

@@ -104,8 +104,9 @@ public class AVAudioSinkNode extends AVAudioNode {
     public interface Block_initWithReceiverBlock {
         @Generated
         int call_initWithReceiverBlock(
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg0, int arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg2);
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+                int frameCount,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inputData);
     }
 
     @Generated

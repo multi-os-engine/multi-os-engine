@@ -66,27 +66,27 @@ public interface INListRideOptionsIntentHandling {
     @Generated
     public interface Block_confirmListRideOptionsCompletion {
         @Generated
-        void call_confirmListRideOptionsCompletion(INListRideOptionsIntentResponse arg0);
+        void call_confirmListRideOptionsCompletion(INListRideOptionsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleListRideOptionsCompletion {
         @Generated
-        void call_handleListRideOptionsCompletion(INListRideOptionsIntentResponse arg0);
+        void call_handleListRideOptionsCompletion(INListRideOptionsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDropOffLocationForListRideOptionsWithCompletion {
         @Generated
-        void call_resolveDropOffLocationForListRideOptionsWithCompletion(INPlacemarkResolutionResult arg0);
+        void call_resolveDropOffLocationForListRideOptionsWithCompletion(INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePickupLocationForListRideOptionsWithCompletion {
         @Generated
-        void call_resolvePickupLocationForListRideOptionsWithCompletion(INPlacemarkResolutionResult arg0);
+        void call_resolvePickupLocationForListRideOptionsWithCompletion(INPlacemarkResolutionResult resolutionResult);
     }
 }

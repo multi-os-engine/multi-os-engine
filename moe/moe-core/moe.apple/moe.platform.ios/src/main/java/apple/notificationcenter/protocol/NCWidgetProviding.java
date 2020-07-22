@@ -63,6 +63,6 @@ public interface NCWidgetProviding {
     @Generated
     public interface Block_widgetPerformUpdateWithCompletionHandler {
         @Generated
-        void call_widgetPerformUpdateWithCompletionHandler(@NUInt long arg0);
+        void call_widgetPerformUpdateWithCompletionHandler(@NUInt long result);
     }
 }

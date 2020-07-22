@@ -216,6 +216,6 @@ public class PKPaymentAuthorizationController extends NSObject {
     @Generated
     public interface Block_presentWithCompletion {
         @Generated
-        void call_presentWithCompletion(boolean arg0);
+        void call_presentWithCompletion(boolean success);
     }
 }

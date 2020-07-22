@@ -301,36 +301,36 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Generated
     public interface Block_challengeComposeControllerWithMessagePlayersCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController arg0, boolean arg1,
-                NSArray<String> arg2);
+        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController composeController,
+                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_challengeComposeControllerWithPlayersMessageCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController arg0, boolean arg1,
-                NSArray<String> arg2);
+        void call_challengeComposeControllerWithPlayersMessageCompletionHandler(UIViewController composeController,
+                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoreWithCompletionHandler {
         @Generated
-        void call_reportScoreWithCompletionHandler(NSError arg0);
+        void call_reportScoreWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoresWithCompletionHandler {
         @Generated
-        void call_reportScoresWithCompletionHandler(NSError arg0);
+        void call_reportScoresWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_reportScoresWithEligibleChallengesWithCompletionHandler {
         @Generated
-        void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError arg0);
+        void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError error);
     }
 }

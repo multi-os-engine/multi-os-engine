@@ -63,7 +63,7 @@ public interface UNUserNotificationCenterDelegate {
     @Generated
     public interface Block_userNotificationCenterWillPresentNotificationWithCompletionHandler {
         @Generated
-        void call_userNotificationCenterWillPresentNotificationWithCompletionHandler(@NUInt long arg0);
+        void call_userNotificationCenterWillPresentNotificationWithCompletionHandler(@NUInt long options);
     }
 
     @Generated

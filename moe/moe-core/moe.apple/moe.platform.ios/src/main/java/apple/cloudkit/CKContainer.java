@@ -283,126 +283,132 @@ public class CKContainer extends NSObject {
     @Generated
     public interface Block_acceptShareMetadataCompletionHandler {
         @Generated
-        void call_acceptShareMetadataCompletionHandler(CKShare arg0, NSError arg1);
+        void call_acceptShareMetadataCompletionHandler(CKShare acceptedShare, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_accountStatusWithCompletionHandler {
         @Generated
-        void call_accountStatusWithCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_accountStatusWithCompletionHandler(@NInt long accountStatus, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverAllContactUserInfosWithCompletionHandler {
         @Generated
-        void call_discoverAllContactUserInfosWithCompletionHandler(NSArray<? extends CKDiscoveredUserInfo> arg0,
-                NSError arg1);
+        void call_discoverAllContactUserInfosWithCompletionHandler(NSArray<? extends CKDiscoveredUserInfo> userInfos,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverAllIdentitiesWithCompletionHandler {
         @Generated
-        void call_discoverAllIdentitiesWithCompletionHandler(NSArray<? extends CKUserIdentity> arg0, NSError arg1);
+        void call_discoverAllIdentitiesWithCompletionHandler(NSArray<? extends CKUserIdentity> userIdentities,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithEmailAddressCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithEmailAddressCompletionHandler(CKUserIdentity arg0, NSError arg1);
+        void call_discoverUserIdentityWithEmailAddressCompletionHandler(CKUserIdentity userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithPhoneNumberCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithPhoneNumberCompletionHandler(CKUserIdentity arg0, NSError arg1);
+        void call_discoverUserIdentityWithPhoneNumberCompletionHandler(CKUserIdentity userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithUserRecordIDCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithUserRecordIDCompletionHandler(CKUserIdentity arg0, NSError arg1);
+        void call_discoverUserIdentityWithUserRecordIDCompletionHandler(CKUserIdentity userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserInfoWithEmailAddressCompletionHandler {
         @Generated
-        void call_discoverUserInfoWithEmailAddressCompletionHandler(CKDiscoveredUserInfo arg0, NSError arg1);
+        void call_discoverUserInfoWithEmailAddressCompletionHandler(CKDiscoveredUserInfo userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserInfoWithUserRecordIDCompletionHandler {
         @Generated
-        void call_discoverUserInfoWithUserRecordIDCompletionHandler(CKDiscoveredUserInfo arg0, NSError arg1);
+        void call_discoverUserInfoWithUserRecordIDCompletionHandler(CKDiscoveredUserInfo userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchAllLongLivedOperationIDsWithCompletionHandler {
         @Generated
-        void call_fetchAllLongLivedOperationIDsWithCompletionHandler(NSArray<String> arg0, NSError arg1);
+        void call_fetchAllLongLivedOperationIDsWithCompletionHandler(NSArray<String> outstandingOperationIDs,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchLongLivedOperationWithIDCompletionHandler {
         @Generated
-        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation arg0, NSError arg1);
+        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation outstandingOperation, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchShareMetadataWithURLCompletionHandler {
         @Generated
-        void call_fetchShareMetadataWithURLCompletionHandler(CKShareMetadata arg0, NSError arg1);
+        void call_fetchShareMetadataWithURLCompletionHandler(CKShareMetadata metadata, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchShareParticipantWithEmailAddressCompletionHandler {
         @Generated
-        void call_fetchShareParticipantWithEmailAddressCompletionHandler(CKShareParticipant arg0, NSError arg1);
+        void call_fetchShareParticipantWithEmailAddressCompletionHandler(CKShareParticipant shareParticipant,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchShareParticipantWithPhoneNumberCompletionHandler {
         @Generated
-        void call_fetchShareParticipantWithPhoneNumberCompletionHandler(CKShareParticipant arg0, NSError arg1);
+        void call_fetchShareParticipantWithPhoneNumberCompletionHandler(CKShareParticipant shareParticipant,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchShareParticipantWithUserRecordIDCompletionHandler {
         @Generated
-        void call_fetchShareParticipantWithUserRecordIDCompletionHandler(CKShareParticipant arg0, NSError arg1);
+        void call_fetchShareParticipantWithUserRecordIDCompletionHandler(CKShareParticipant shareParticipant,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchUserRecordIDWithCompletionHandler {
         @Generated
-        void call_fetchUserRecordIDWithCompletionHandler(CKRecordID arg0, NSError arg1);
+        void call_fetchUserRecordIDWithCompletionHandler(CKRecordID recordID, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestApplicationPermissionCompletionHandler {
         @Generated
-        void call_requestApplicationPermissionCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_requestApplicationPermissionCompletionHandler(@NInt long applicationPermissionStatus, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_statusForApplicationPermissionCompletionHandler {
         @Generated
-        void call_statusForApplicationPermissionCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_statusForApplicationPermissionCompletionHandler(@NInt long applicationPermissionStatus,
+                NSError error);
     }
 }

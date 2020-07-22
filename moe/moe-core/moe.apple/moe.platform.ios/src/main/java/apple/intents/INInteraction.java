@@ -259,28 +259,28 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Generated
     public interface Block_deleteAllInteractionsWithCompletion {
         @Generated
-        void call_deleteAllInteractionsWithCompletion(NSError arg0);
+        void call_deleteAllInteractionsWithCompletion(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteInteractionsWithGroupIdentifierCompletion {
         @Generated
-        void call_deleteInteractionsWithGroupIdentifierCompletion(NSError arg0);
+        void call_deleteInteractionsWithGroupIdentifierCompletion(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteInteractionsWithIdentifiersCompletion {
         @Generated
-        void call_deleteInteractionsWithIdentifiersCompletion(NSError arg0);
+        void call_deleteInteractionsWithIdentifiersCompletion(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_donateInteractionWithCompletion {
         @Generated
-        void call_donateInteractionWithCompletion(NSError arg0);
+        void call_donateInteractionWithCompletion(NSError error);
     }
 
     @Generated

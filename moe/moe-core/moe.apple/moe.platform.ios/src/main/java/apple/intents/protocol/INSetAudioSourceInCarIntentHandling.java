@@ -68,21 +68,22 @@ public interface INSetAudioSourceInCarIntentHandling {
     @Generated
     public interface Block_confirmSetAudioSourceInCarCompletion {
         @Generated
-        void call_confirmSetAudioSourceInCarCompletion(INSetAudioSourceInCarIntentResponse arg0);
+        void call_confirmSetAudioSourceInCarCompletion(INSetAudioSourceInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetAudioSourceInCarCompletion {
         @Generated
-        void call_handleSetAudioSourceInCarCompletion(INSetAudioSourceInCarIntentResponse arg0);
+        void call_handleSetAudioSourceInCarCompletion(INSetAudioSourceInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveAudioSourceForSetAudioSourceInCarWithCompletion {
         @Generated
-        void call_resolveAudioSourceForSetAudioSourceInCarWithCompletion(INCarAudioSourceResolutionResult arg0);
+        void call_resolveAudioSourceForSetAudioSourceInCarWithCompletion(
+                INCarAudioSourceResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -90,6 +91,6 @@ public interface INSetAudioSourceInCarIntentHandling {
     public interface Block_resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion {
         @Generated
         void call_resolveRelativeAudioSourceReferenceForSetAudioSourceInCarWithCompletion(
-                INRelativeReferenceResolutionResult arg0);
+                INRelativeReferenceResolutionResult resolutionResult);
     }
 }

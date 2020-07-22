@@ -89,7 +89,7 @@ public class ILMessageFilterExtensionContext extends NSExtensionContext {
     @Generated
     public interface Block_deferQueryRequestToNetworkWithCompletion {
         @Generated
-        void call_deferQueryRequestToNetworkWithCompletion(ILNetworkResponse arg0, NSError arg1);
+        void call_deferQueryRequestToNetworkWithCompletion(ILNetworkResponse response, NSError error);
     }
 
     @Generated

@@ -285,56 +285,57 @@ public class HKHealthStore extends NSObject {
     @Generated
     public interface Block_addSamplesToWorkoutCompletion {
         @Generated
-        void call_addSamplesToWorkoutCompletion(boolean arg0, NSError arg1);
+        void call_addSamplesToWorkoutCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteObjectWithCompletion {
         @Generated
-        void call_deleteObjectWithCompletion(boolean arg0, NSError arg1);
+        void call_deleteObjectWithCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteObjectsWithCompletion {
         @Generated
-        void call_deleteObjectsWithCompletion(boolean arg0, NSError arg1);
+        void call_deleteObjectsWithCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteObjectsOfTypePredicateWithCompletion {
         @Generated
-        void call_deleteObjectsOfTypePredicateWithCompletion(boolean arg0, @NUInt long arg1, NSError arg2);
+        void call_deleteObjectsOfTypePredicateWithCompletion(boolean success, @NUInt long deletedObjectCount,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_disableAllBackgroundDeliveryWithCompletion {
         @Generated
-        void call_disableAllBackgroundDeliveryWithCompletion(boolean arg0, NSError arg1);
+        void call_disableAllBackgroundDeliveryWithCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_disableBackgroundDeliveryForTypeWithCompletion {
         @Generated
-        void call_disableBackgroundDeliveryForTypeWithCompletion(boolean arg0, NSError arg1);
+        void call_disableBackgroundDeliveryForTypeWithCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion {
         @Generated
-        void call_enableBackgroundDeliveryForTypeFrequencyWithCompletion(boolean arg0, NSError arg1);
+        void call_enableBackgroundDeliveryForTypeFrequencyWithCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleAuthorizationForExtensionWithCompletion {
         @Generated
-        void call_handleAuthorizationForExtensionWithCompletion(boolean arg0, NSError arg1);
+        void call_handleAuthorizationForExtensionWithCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -342,42 +343,43 @@ public class HKHealthStore extends NSObject {
     public interface Block_preferredUnitsForQuantityTypesCompletion {
         @Generated
         void call_preferredUnitsForQuantityTypesCompletion(
-                NSDictionary<? extends HKQuantityType, ? extends HKUnit> arg0, NSError arg1);
+                NSDictionary<? extends HKQuantityType, ? extends HKUnit> preferredUnits, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorizationToShareTypesReadTypesCompletion {
         @Generated
-        void call_requestAuthorizationToShareTypesReadTypesCompletion(boolean arg0, NSError arg1);
+        void call_requestAuthorizationToShareTypesReadTypesCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveObjectWithCompletion {
         @Generated
-        void call_saveObjectWithCompletion(boolean arg0, NSError arg1);
+        void call_saveObjectWithCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveObjectsWithCompletion {
         @Generated
-        void call_saveObjectsWithCompletion(boolean arg0, NSError arg1);
+        void call_saveObjectsWithCompletion(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_splitTotalEnergyStartDateEndDateResultsHandler {
         @Generated
-        void call_splitTotalEnergyStartDateEndDateResultsHandler(HKQuantity arg0, HKQuantity arg1, NSError arg2);
+        void call_splitTotalEnergyStartDateEndDateResultsHandler(HKQuantity restingEnergy, HKQuantity activeEnergy,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startWatchAppWithWorkoutConfigurationCompletion {
         @Generated
-        void call_startWatchAppWithWorkoutConfigurationCompletion(boolean arg0, NSError arg1);
+        void call_startWatchAppWithWorkoutConfigurationCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -390,7 +392,8 @@ public class HKHealthStore extends NSObject {
     @Generated
     public interface Block_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion {
         @Generated
-        void call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion(@NInt long arg0, NSError arg1);
+        void call_getRequestStatusForAuthorizationToShareTypesReadTypesCompletion(@NInt long requestStatus,
+                NSError error);
     }
 
     @Generated

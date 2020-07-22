@@ -1334,7 +1334,8 @@ public final class CoreText {
     @Generated
     public interface Block_CTFontDescriptorMatchFontDescriptorsWithProgressHandler {
         @Generated
-        boolean call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler(int arg0, CFDictionaryRef arg1);
+        boolean call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler(int state,
+                CFDictionaryRef progressParameter);
     }
 
     @Runtime(CRuntime.class)

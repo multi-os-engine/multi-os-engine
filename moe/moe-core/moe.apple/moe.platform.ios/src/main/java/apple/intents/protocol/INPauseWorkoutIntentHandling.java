@@ -58,20 +58,20 @@ public interface INPauseWorkoutIntentHandling {
     @Generated
     public interface Block_confirmPauseWorkoutCompletion {
         @Generated
-        void call_confirmPauseWorkoutCompletion(INPauseWorkoutIntentResponse arg0);
+        void call_confirmPauseWorkoutCompletion(INPauseWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handlePauseWorkoutCompletion {
         @Generated
-        void call_handlePauseWorkoutCompletion(INPauseWorkoutIntentResponse arg0);
+        void call_handlePauseWorkoutCompletion(INPauseWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForPauseWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForPauseWorkoutWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveWorkoutNameForPauseWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 }

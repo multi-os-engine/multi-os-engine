@@ -243,8 +243,8 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     public interface Block_comparator_ret {
         @Generated
         @NInt
-        long call_comparator_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_comparator_ret(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -252,8 +252,8 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     public interface Block_initWithKeyAscendingComparator {
         @Generated
         @NInt
-        long call_initWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_initWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -261,7 +261,7 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     public interface Block_sortDescriptorWithKeyAscendingComparator {
         @Generated
         @NInt
-        long call_sortDescriptorWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortDescriptorWithKeyAscendingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 }

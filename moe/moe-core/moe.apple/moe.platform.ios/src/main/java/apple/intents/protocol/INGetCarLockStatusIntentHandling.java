@@ -29,7 +29,7 @@ public interface INGetCarLockStatusIntentHandling {
     @Generated
     public interface Block_confirmGetCarLockStatusCompletion {
         @Generated
-        void call_confirmGetCarLockStatusCompletion(INGetCarLockStatusIntentResponse arg0);
+        void call_confirmGetCarLockStatusCompletion(INGetCarLockStatusIntentResponse response);
     }
 
     @Generated
@@ -41,7 +41,7 @@ public interface INGetCarLockStatusIntentHandling {
     @Generated
     public interface Block_handleGetCarLockStatusCompletion {
         @Generated
-        void call_handleGetCarLockStatusCompletion(INGetCarLockStatusIntentResponse arg0);
+        void call_handleGetCarLockStatusCompletion(INGetCarLockStatusIntentResponse response);
     }
 
     @Generated
@@ -56,6 +56,6 @@ public interface INGetCarLockStatusIntentHandling {
     @Generated
     public interface Block_resolveCarNameForGetCarLockStatusWithCompletion {
         @Generated
-        void call_resolveCarNameForGetCarLockStatusWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveCarNameForGetCarLockStatusWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 }

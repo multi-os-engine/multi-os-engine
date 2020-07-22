@@ -95,7 +95,7 @@ public class TKSmartCardSlotManager extends NSObject {
     @Generated
     public interface Block_getSlotWithNameReply {
         @Generated
-        void call_getSlotWithNameReply(TKSmartCardSlot arg0);
+        void call_getSlotWithNameReply(TKSmartCardSlot slot);
     }
 
     @Generated

@@ -236,83 +236,83 @@ public class ALAssetsLibrary extends NSObject {
     @Generated
     public interface Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1 {
         @Generated
-        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1(ALAssetsGroup arg0);
+        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_1(ALAssetsGroup group);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2 {
         @Generated
-        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2(NSError arg0);
+        void call_addAssetsGroupAlbumWithNameResultBlockFailureBlock_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_assetForURLResultBlockFailureBlock_1 {
         @Generated
-        void call_assetForURLResultBlockFailureBlock_1(ALAsset arg0);
+        void call_assetForURLResultBlockFailureBlock_1(ALAsset asset);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_assetForURLResultBlockFailureBlock_2 {
         @Generated
-        void call_assetForURLResultBlockFailureBlock_2(NSError arg0);
+        void call_assetForURLResultBlockFailureBlock_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateGroupsWithTypesUsingBlockFailureBlock_1 {
         @Generated
-        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_1(ALAssetsGroup arg0, BoolPtr arg1);
+        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_1(ALAssetsGroup group, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateGroupsWithTypesUsingBlockFailureBlock_2 {
         @Generated
-        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_2(NSError arg0);
+        void call_enumerateGroupsWithTypesUsingBlockFailureBlock_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_groupForURLResultBlockFailureBlock_1 {
         @Generated
-        void call_groupForURLResultBlockFailureBlock_1(ALAssetsGroup arg0);
+        void call_groupForURLResultBlockFailureBlock_1(ALAssetsGroup group);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_groupForURLResultBlockFailureBlock_2 {
         @Generated
-        void call_groupForURLResultBlockFailureBlock_2(NSError arg0);
+        void call_groupForURLResultBlockFailureBlock_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock {
         @Generated
-        void call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock {
         @Generated
-        void call_writeImageToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeImageToSavedPhotosAlbumMetadataCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeImageToSavedPhotosAlbumOrientationCompletionBlock {
         @Generated
-        void call_writeImageToSavedPhotosAlbumOrientationCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeImageToSavedPhotosAlbumOrientationCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeVideoAtPathToSavedPhotosAlbumCompletionBlock {
         @Generated
-        void call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL assetURL, NSError error);
     }
 }

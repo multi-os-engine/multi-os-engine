@@ -197,21 +197,21 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @Generated
     public interface Block_JPEGDataWithCompressionQualityActions {
         @Generated
-        void call_JPEGDataWithCompressionQualityActions(UIGraphicsImageRendererContext arg0);
+        void call_JPEGDataWithCompressionQualityActions(UIGraphicsImageRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_PNGDataWithActions {
         @Generated
-        void call_PNGDataWithActions(UIGraphicsImageRendererContext arg0);
+        void call_PNGDataWithActions(UIGraphicsImageRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_imageWithActions {
         @Generated
-        void call_imageWithActions(UIGraphicsImageRendererContext arg0);
+        void call_imageWithActions(UIGraphicsImageRendererContext rendererContext);
     }
 
     @Generated

@@ -212,20 +212,20 @@ public class ALAssetsGroup extends NSObject {
     @Generated
     public interface Block_enumerateAssetsAtIndexesOptionsUsingBlock {
         @Generated
-        void call_enumerateAssetsAtIndexesOptionsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
+        void call_enumerateAssetsAtIndexesOptionsUsingBlock(ALAsset result, @NUInt long index, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateAssetsUsingBlock {
         @Generated
-        void call_enumerateAssetsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
+        void call_enumerateAssetsUsingBlock(ALAsset result, @NUInt long index, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateAssetsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateAssetsWithOptionsUsingBlock(ALAsset arg0, @NUInt long arg1, BoolPtr arg2);
+        void call_enumerateAssetsWithOptionsUsingBlock(ALAsset result, @NUInt long index, BoolPtr stop);
     }
 }

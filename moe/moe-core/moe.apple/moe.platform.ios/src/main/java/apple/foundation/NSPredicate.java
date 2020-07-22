@@ -229,6 +229,7 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     public interface Block_predicateWithBlock {
         @Generated
-        boolean call_predicateWithBlock(@Mapped(ObjCObjectMapper.class) Object arg0, NSDictionary<String, ?> arg1);
+        boolean call_predicateWithBlock(@Mapped(ObjCObjectMapper.class) Object evaluatedObject,
+                NSDictionary<String, ?> bindings);
     }
 }

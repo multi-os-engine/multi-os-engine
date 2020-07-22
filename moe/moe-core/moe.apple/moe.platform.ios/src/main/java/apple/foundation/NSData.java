@@ -368,14 +368,14 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Generated
     public interface Block_enumerateByteRangesUsingBlock {
         @Generated
-        void call_enumerateByteRangesUsingBlock(ConstVoidPtr arg0, @ByValue NSRange arg1, BoolPtr arg2);
+        void call_enumerateByteRangesUsingBlock(ConstVoidPtr bytes, @ByValue NSRange byteRange, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithBytesNoCopyLengthDeallocator {
         @Generated
-        void call_initWithBytesNoCopyLengthDeallocator(VoidPtr arg0, @NUInt long arg1);
+        void call_initWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length);
     }
 
     @Generated

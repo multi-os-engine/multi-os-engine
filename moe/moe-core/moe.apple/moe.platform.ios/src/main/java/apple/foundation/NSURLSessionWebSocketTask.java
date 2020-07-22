@@ -142,7 +142,7 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     @Generated
     public interface Block_receiveMessageWithCompletionHandler {
         @Generated
-        void call_receiveMessageWithCompletionHandler(NSURLSessionWebSocketMessage arg0, NSError arg1);
+        void call_receiveMessageWithCompletionHandler(NSURLSessionWebSocketMessage message, NSError error);
     }
 
     @Generated
@@ -162,7 +162,7 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     @Generated
     public interface Block_sendMessageCompletionHandler {
         @Generated
-        void call_sendMessageCompletionHandler(NSError arg0);
+        void call_sendMessageCompletionHandler(NSError error);
     }
 
     @Generated
@@ -174,7 +174,7 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     @Generated
     public interface Block_sendPingWithPongReceiveHandler {
         @Generated
-        void call_sendPingWithPongReceiveHandler(NSError arg0);
+        void call_sendPingWithPongReceiveHandler(NSError error);
     }
 
     @Generated

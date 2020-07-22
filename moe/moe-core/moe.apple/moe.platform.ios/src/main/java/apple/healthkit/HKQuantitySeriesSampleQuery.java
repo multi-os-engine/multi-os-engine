@@ -111,8 +111,8 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     @Generated
     public interface Block_initWithQuantityTypePredicateQuantityHandler {
         @Generated
-        void call_initWithQuantityTypePredicateQuantityHandler(HKQuantitySeriesSampleQuery arg0, HKQuantity arg1,
-                NSDateInterval arg2, HKQuantitySample arg3, boolean arg4, NSError arg5);
+        void call_initWithQuantityTypePredicateQuantityHandler(HKQuantitySeriesSampleQuery query, HKQuantity quantity,
+                NSDateInterval dateInterval, HKQuantitySample quantitySample, boolean done, NSError error);
     }
 
     @Generated
@@ -124,8 +124,8 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     @Generated
     public interface Block_initWithSampleQuantityHandler {
         @Generated
-        void call_initWithSampleQuantityHandler(HKQuantitySeriesSampleQuery arg0, HKQuantity arg1, NSDate arg2,
-                boolean arg3, NSError arg4);
+        void call_initWithSampleQuantityHandler(HKQuantitySeriesSampleQuery query, HKQuantity quantity, NSDate date,
+                boolean done, NSError error);
     }
 
     @Generated

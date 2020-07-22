@@ -255,8 +255,9 @@ public class MPSBinaryImageKernel extends MPSKernel {
     public interface Block_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator(MPSKernel arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
+        Object call_encodeToCommandBufferInPlacePrimaryTextureSecondaryTextureFallbackCopyAllocator(MPSKernel filter,
+                @Mapped(ObjCObjectMapper.class) Object commandBuffer,
+                @Mapped(ObjCObjectMapper.class) Object sourceTexture);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -264,8 +265,9 @@ public class MPSBinaryImageKernel extends MPSKernel {
     public interface Block_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator(MPSKernel arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
+        Object call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator(MPSKernel filter,
+                @Mapped(ObjCObjectMapper.class) Object commandBuffer,
+                @Mapped(ObjCObjectMapper.class) Object sourceTexture);
     }
 
     @Generated

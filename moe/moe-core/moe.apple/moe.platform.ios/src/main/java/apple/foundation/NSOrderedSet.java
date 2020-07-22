@@ -486,24 +486,23 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Generated
     public interface Block_enumerateObjectsAtIndexesOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsUsingBlock {
         @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -511,56 +510,56 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public interface Block_indexOfObjectInSortedRangeOptionsUsingComparator {
         @Generated
         @NInt
-        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_indexOfObjectInSortedRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectAtIndexesOptionsPassingTest {
         @Generated
-        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexOfObjectAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectPassingTest {
         @Generated
-        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexOfObjectPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexOfObjectWithOptionsPassingTest {
         @Generated
-        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexOfObjectWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsAtIndexesOptionsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexesOfObjectsAtIndexesOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        boolean call_indexesOfObjectsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexesOfObjectsWithOptionsPassingTest {
         @Generated
-        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        boolean call_indexesOfObjectsWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -568,8 +567,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public interface Block_sortedArrayUsingComparator {
         @Generated
         @NInt
-        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortedArrayUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -577,8 +576,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public interface Block_sortedArrayWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortedArrayWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Generated
@@ -601,7 +600,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public interface Block_differenceFromOrderedSetWithOptionsUsingEquivalenceTest {
         @Generated
         boolean call_differenceFromOrderedSetWithOptionsUsingEquivalenceTest(
-                @Mapped(ObjCObjectMapper.class) Object arg0, @Mapped(ObjCObjectMapper.class) Object arg1);
+                @Mapped(ObjCObjectMapper.class) Object obj1, @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Generated

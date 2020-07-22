@@ -180,7 +180,7 @@ public class CIWarpKernel extends CIKernel {
     public interface Block_applyWithExtentRoiCallbackInputImageArguments {
         @Generated
         @ByValue
-        CGRect call_applyWithExtentRoiCallbackInputImageArguments(int arg0, @ByValue CGRect arg1);
+        CGRect call_applyWithExtentRoiCallbackInputImageArguments(int index, @ByValue CGRect destRect);
     }
 
     @Generated

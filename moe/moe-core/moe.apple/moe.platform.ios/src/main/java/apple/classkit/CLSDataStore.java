@@ -94,7 +94,7 @@ public class CLSDataStore extends NSObject {
     @Generated
     public interface Block_contextsMatchingIdentifierPathCompletion {
         @Generated
-        void call_contextsMatchingIdentifierPathCompletion(NSArray<? extends CLSContext> arg0, NSError arg1);
+        void call_contextsMatchingIdentifierPathCompletion(NSArray<? extends CLSContext> contexts, NSError error);
     }
 
     @Generated
@@ -106,7 +106,7 @@ public class CLSDataStore extends NSObject {
     @Generated
     public interface Block_contextsMatchingPredicateCompletion {
         @Generated
-        void call_contextsMatchingPredicateCompletion(NSArray<? extends CLSContext> arg0, NSError arg1);
+        void call_contextsMatchingPredicateCompletion(NSArray<? extends CLSContext> contexts, NSError error);
     }
 
     @Generated
@@ -187,7 +187,7 @@ public class CLSDataStore extends NSObject {
     @Generated
     public interface Block_saveWithCompletion {
         @Generated
-        void call_saveWithCompletion(NSError arg0);
+        void call_saveWithCompletion(NSError error);
     }
 
     @Generated

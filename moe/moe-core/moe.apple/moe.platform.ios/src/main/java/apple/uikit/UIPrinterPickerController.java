@@ -213,22 +213,23 @@ public class UIPrinterPickerController extends NSObject {
     @Generated
     public interface Block_presentAnimatedCompletionHandler {
         @Generated
-        void call_presentAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1, NSError arg2);
+        void call_presentAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
+                boolean userDidSelect, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
         @Generated
-        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1,
-                NSError arg2);
+        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
+                boolean userDidSelect, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentFromRectInViewAnimatedCompletionHandler {
         @Generated
-        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrinterPickerController arg0, boolean arg1,
-                NSError arg2);
+        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrinterPickerController printerPickerController,
+                boolean userDidSelect, NSError error);
     }
 }

@@ -309,7 +309,7 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Generated
     public interface Block_prepareToPlayWithCompletionHandler {
         @Generated
-        void call_prepareToPlayWithCompletionHandler(NSError arg0);
+        void call_prepareToPlayWithCompletionHandler(NSError error);
     }
 
     @Generated

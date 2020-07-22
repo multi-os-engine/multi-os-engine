@@ -58,20 +58,21 @@ public interface INSetMessageAttributeIntentHandling {
     @Generated
     public interface Block_confirmSetMessageAttributeCompletion {
         @Generated
-        void call_confirmSetMessageAttributeCompletion(INSetMessageAttributeIntentResponse arg0);
+        void call_confirmSetMessageAttributeCompletion(INSetMessageAttributeIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetMessageAttributeCompletion {
         @Generated
-        void call_handleSetMessageAttributeCompletion(INSetMessageAttributeIntentResponse arg0);
+        void call_handleSetMessageAttributeCompletion(INSetMessageAttributeIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveAttributeForSetMessageAttributeWithCompletion {
         @Generated
-        void call_resolveAttributeForSetMessageAttributeWithCompletion(INMessageAttributeResolutionResult arg0);
+        void call_resolveAttributeForSetMessageAttributeWithCompletion(
+                INMessageAttributeResolutionResult resolutionResult);
     }
 }

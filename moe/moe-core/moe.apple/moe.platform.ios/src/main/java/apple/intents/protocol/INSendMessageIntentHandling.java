@@ -78,35 +78,36 @@ public interface INSendMessageIntentHandling {
     @Generated
     public interface Block_confirmSendMessageCompletion {
         @Generated
-        void call_confirmSendMessageCompletion(INSendMessageIntentResponse arg0);
+        void call_confirmSendMessageCompletion(INSendMessageIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSendMessageCompletion {
         @Generated
-        void call_handleSendMessageCompletion(INSendMessageIntentResponse arg0);
+        void call_handleSendMessageCompletion(INSendMessageIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveContentForSendMessageWithCompletion {
         @Generated
-        void call_resolveContentForSendMessageWithCompletion(INStringResolutionResult arg0);
+        void call_resolveContentForSendMessageWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveGroupNameForSendMessageWithCompletion {
         @Generated
-        void call_resolveGroupNameForSendMessageWithCompletion(INStringResolutionResult arg0);
+        void call_resolveGroupNameForSendMessageWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRecipientsForSendMessageWithCompletion {
         @Generated
-        void call_resolveRecipientsForSendMessageWithCompletion(NSArray<? extends INPersonResolutionResult> arg0);
+        void call_resolveRecipientsForSendMessageWithCompletion(
+                NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -122,7 +123,7 @@ public interface INSendMessageIntentHandling {
     public interface Block_resolveRecipientsForSendMessageCompletion {
         @Generated
         void call_resolveRecipientsForSendMessageCompletion(
-                NSArray<? extends INSendMessageRecipientResolutionResult> arg0);
+                NSArray<? extends INSendMessageRecipientResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -137,6 +138,7 @@ public interface INSendMessageIntentHandling {
     @Generated
     public interface Block_resolveSpeakableGroupNameForSendMessageWithCompletion {
         @Generated
-        void call_resolveSpeakableGroupNameForSendMessageWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveSpeakableGroupNameForSendMessageWithCompletion(
+                INSpeakableStringResolutionResult resolutionResult);
     }
 }

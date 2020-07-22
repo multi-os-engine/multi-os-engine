@@ -31,7 +31,7 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     public interface Block_confirmSearchForAccountsCompletion {
         @Generated
-        void call_confirmSearchForAccountsCompletion(INSearchForAccountsIntentResponse arg0);
+        void call_confirmSearchForAccountsCompletion(INSearchForAccountsIntentResponse response);
     }
 
     @Generated
@@ -43,7 +43,7 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     public interface Block_handleSearchForAccountsCompletion {
         @Generated
-        void call_handleSearchForAccountsCompletion(INSearchForAccountsIntentResponse arg0);
+        void call_handleSearchForAccountsCompletion(INSearchForAccountsIntentResponse response);
     }
 
     @Generated
@@ -58,7 +58,8 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     public interface Block_resolveAccountNicknameForSearchForAccountsWithCompletion {
         @Generated
-        void call_resolveAccountNicknameForSearchForAccountsWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveAccountNicknameForSearchForAccountsWithCompletion(
+                INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -73,7 +74,7 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     public interface Block_resolveAccountTypeForSearchForAccountsWithCompletion {
         @Generated
-        void call_resolveAccountTypeForSearchForAccountsWithCompletion(INAccountTypeResolutionResult arg0);
+        void call_resolveAccountTypeForSearchForAccountsWithCompletion(INAccountTypeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -88,7 +89,8 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     public interface Block_resolveOrganizationNameForSearchForAccountsWithCompletion {
         @Generated
-        void call_resolveOrganizationNameForSearchForAccountsWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveOrganizationNameForSearchForAccountsWithCompletion(
+                INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -103,6 +105,7 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     public interface Block_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion {
         @Generated
-        void call_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion(INBalanceTypeResolutionResult arg0);
+        void call_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion(
+                INBalanceTypeResolutionResult resolutionResult);
     }
 }

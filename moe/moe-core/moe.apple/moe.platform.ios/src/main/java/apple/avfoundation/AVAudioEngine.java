@@ -281,8 +281,9 @@ public class AVAudioEngine extends NSObject {
     public interface Block_manualRenderingBlock_ret {
         @Generated
         @NInt
-        long call_manualRenderingBlock_ret(int arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg1, IntPtr arg2);
+        long call_manualRenderingBlock_ret(int numberOfFrames,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outBuffer,
+                IntPtr outError);
     }
 
     @Generated
@@ -326,8 +327,8 @@ public class AVAudioEngine extends NSObject {
     @Generated
     public interface Block_connectMIDIToFormatBlock {
         @Generated
-        int call_connectMIDIToFormatBlock(long arg0, byte arg1, @NInt long arg2,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg3);
+        int call_connectMIDIToFormatBlock(long eventSampleTime, byte cable, @NInt long length,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
     }
 
     @Generated
@@ -340,8 +341,8 @@ public class AVAudioEngine extends NSObject {
     @Generated
     public interface Block_connectMIDIToNodesFormatBlock {
         @Generated
-        int call_connectMIDIToNodesFormatBlock(long arg0, byte arg1, @NInt long arg2,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg3);
+        int call_connectMIDIToNodesFormatBlock(long eventSampleTime, byte cable, @NInt long length,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String midiBytes);
     }
 
     @Generated

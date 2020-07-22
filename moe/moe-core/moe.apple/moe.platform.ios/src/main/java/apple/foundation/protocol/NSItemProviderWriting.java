@@ -38,7 +38,7 @@ public interface NSItemProviderWriting {
     @Generated
     public interface Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler {
         @Generated
-        void call_loadDataWithTypeIdentifierForItemProviderCompletionHandler(NSData arg0, NSError arg1);
+        void call_loadDataWithTypeIdentifierForItemProviderCompletionHandler(NSData data, NSError error);
     }
 
     @Generated

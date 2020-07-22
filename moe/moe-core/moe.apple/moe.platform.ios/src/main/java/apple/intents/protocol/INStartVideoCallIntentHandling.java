@@ -59,20 +59,21 @@ public interface INStartVideoCallIntentHandling {
     @Generated
     public interface Block_confirmStartVideoCallCompletion {
         @Generated
-        void call_confirmStartVideoCallCompletion(INStartVideoCallIntentResponse arg0);
+        void call_confirmStartVideoCallCompletion(INStartVideoCallIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartVideoCallCompletion {
         @Generated
-        void call_handleStartVideoCallCompletion(INStartVideoCallIntentResponse arg0);
+        void call_handleStartVideoCallCompletion(INStartVideoCallIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveContactsForStartVideoCallWithCompletion {
         @Generated
-        void call_resolveContactsForStartVideoCallWithCompletion(NSArray<? extends INPersonResolutionResult> arg0);
+        void call_resolveContactsForStartVideoCallWithCompletion(
+                NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 }

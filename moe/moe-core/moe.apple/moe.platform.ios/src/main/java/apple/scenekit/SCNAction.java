@@ -349,34 +349,34 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_customActionWithDurationActionBlock {
         @Generated
-        void call_customActionWithDurationActionBlock(SCNNode arg0, @NFloat double arg1);
+        void call_customActionWithDurationActionBlock(SCNNode node, @NFloat double elapsedTime);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_runBlock {
         @Generated
-        void call_runBlock(SCNNode arg0);
+        void call_runBlock(SCNNode node);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_runBlockQueue {
         @Generated
-        void call_runBlockQueue(SCNNode arg0);
+        void call_runBlockQueue(SCNNode node);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTimingFunction {
         @Generated
-        float call_setTimingFunction(float arg0);
+        float call_setTimingFunction(float time);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_timingFunction_ret {
         @Generated
-        float call_timingFunction_ret(float arg0);
+        float call_timingFunction_ret(float time);
     }
 }

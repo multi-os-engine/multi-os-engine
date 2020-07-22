@@ -190,6 +190,6 @@ public class AVAudioUnitComponentManager extends NSObject {
     @Generated
     public interface Block_componentsPassingTest {
         @Generated
-        boolean call_componentsPassingTest(AVAudioUnitComponent arg0, BoolPtr arg1);
+        boolean call_componentsPassingTest(AVAudioUnitComponent comp, BoolPtr stop);
     }
 }

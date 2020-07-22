@@ -188,7 +188,7 @@ public class CIKernel extends NSObject {
     public interface Block_applyWithExtentRoiCallbackArguments {
         @Generated
         @ByValue
-        CGRect call_applyWithExtentRoiCallbackArguments(int arg0, @ByValue CGRect arg1);
+        CGRect call_applyWithExtentRoiCallbackArguments(int index, @ByValue CGRect destRect);
     }
 
     @Generated

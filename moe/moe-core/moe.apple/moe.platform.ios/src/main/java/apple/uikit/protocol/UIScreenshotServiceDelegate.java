@@ -31,7 +31,7 @@ public interface UIScreenshotServiceDelegate {
     @Generated
     public interface Block_screenshotServiceGeneratePDFRepresentationWithCompletion {
         @Generated
-        void call_screenshotServiceGeneratePDFRepresentationWithCompletion(NSData arg0, @NInt long arg1,
-                @ByValue CGRect arg2);
+        void call_screenshotServiceGeneratePDFRepresentationWithCompletion(NSData PDFData,
+                @NInt long indexOfCurrentPage, @ByValue CGRect rectInCurrentPage);
     }
 }

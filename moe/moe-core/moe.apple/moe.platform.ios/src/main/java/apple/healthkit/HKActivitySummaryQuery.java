@@ -278,8 +278,8 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Generated
     public interface Block_initWithPredicateResultsHandler {
         @Generated
-        void call_initWithPredicateResultsHandler(HKActivitySummaryQuery arg0,
-                NSArray<? extends HKActivitySummary> arg1, NSError arg2);
+        void call_initWithPredicateResultsHandler(HKActivitySummaryQuery query,
+                NSArray<? extends HKActivitySummary> activitySummaries, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

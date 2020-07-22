@@ -227,6 +227,6 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     @Generated
     public interface Block_loadReceivedChallengesWithCompletionHandler {
         @Generated
-        void call_loadReceivedChallengesWithCompletionHandler(NSArray<? extends GKChallenge> arg0, NSError arg1);
+        void call_loadReceivedChallengesWithCompletionHandler(NSArray<? extends GKChallenge> challenges, NSError error);
     }
 }

@@ -251,7 +251,7 @@ public class AVAssetImageGenerator extends NSObject {
     @Generated
     public interface Block_generateCGImagesAsynchronouslyForTimesCompletionHandler {
         @Generated
-        void call_generateCGImagesAsynchronouslyForTimesCompletionHandler(@ByValue CMTime arg0, CGImageRef arg1,
-                @ByValue CMTime arg2, @NInt long arg3, NSError arg4);
+        void call_generateCGImagesAsynchronouslyForTimesCompletionHandler(@ByValue CMTime requestedTime,
+                CGImageRef image, @ByValue CMTime actualTime, @NInt long result, NSError error);
     }
 }

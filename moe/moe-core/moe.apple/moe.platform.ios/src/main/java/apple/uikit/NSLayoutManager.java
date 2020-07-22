@@ -641,15 +641,15 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     public interface Block_enumerateEnclosingRectsForGlyphRangeWithinSelectedGlyphRangeInTextContainerUsingBlock {
         @Generated
         void call_enumerateEnclosingRectsForGlyphRangeWithinSelectedGlyphRangeInTextContainerUsingBlock(
-                @ByValue CGRect arg0, BoolPtr arg1);
+                @ByValue CGRect rect, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateLineFragmentsForGlyphRangeUsingBlock {
         @Generated
-        void call_enumerateLineFragmentsForGlyphRangeUsingBlock(@ByValue CGRect arg0, @ByValue CGRect arg1,
-                NSTextContainer arg2, @ByValue NSRange arg3, BoolPtr arg4);
+        void call_enumerateLineFragmentsForGlyphRangeUsingBlock(@ByValue CGRect rect, @ByValue CGRect usedRect,
+                NSTextContainer textContainer, @ByValue NSRange glyphRange, BoolPtr stop);
     }
 
     @Generated

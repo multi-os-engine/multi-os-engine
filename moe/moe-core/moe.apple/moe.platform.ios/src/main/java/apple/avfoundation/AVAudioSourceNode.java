@@ -111,9 +111,10 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     public interface Block_initWithFormatRenderBlock {
         @Generated
-        int call_initWithFormatRenderBlock(BoolPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg1, int arg2,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg3);
+        int call_initWithFormatRenderBlock(BoolPtr isSilence,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+                int frameCount,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData);
     }
 
     @Generated
@@ -125,9 +126,10 @@ public class AVAudioSourceNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     public interface Block_initWithRenderBlock {
         @Generated
-        int call_initWithRenderBlock(BoolPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg1, int arg2,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg3);
+        int call_initWithRenderBlock(BoolPtr isSilence,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+                int frameCount,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData);
     }
 
     @Generated

@@ -30,7 +30,7 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     public interface Block_confirmCreateTaskListCompletion {
         @Generated
-        void call_confirmCreateTaskListCompletion(INCreateTaskListIntentResponse arg0);
+        void call_confirmCreateTaskListCompletion(INCreateTaskListIntentResponse response);
     }
 
     @Generated
@@ -42,7 +42,7 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     public interface Block_handleCreateTaskListCompletion {
         @Generated
-        void call_handleCreateTaskListCompletion(INCreateTaskListIntentResponse arg0);
+        void call_handleCreateTaskListCompletion(INCreateTaskListIntentResponse response);
     }
 
     @Generated
@@ -57,7 +57,7 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     public interface Block_resolveGroupNameForCreateTaskListWithCompletion {
         @Generated
-        void call_resolveGroupNameForCreateTaskListWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveGroupNameForCreateTaskListWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -73,7 +73,7 @@ public interface INCreateTaskListIntentHandling {
     public interface Block_resolveTaskTitlesForCreateTaskListWithCompletion {
         @Generated
         void call_resolveTaskTitlesForCreateTaskListWithCompletion(
-                NSArray<? extends INSpeakableStringResolutionResult> arg0);
+                NSArray<? extends INSpeakableStringResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -88,6 +88,6 @@ public interface INCreateTaskListIntentHandling {
     @Generated
     public interface Block_resolveTitleForCreateTaskListWithCompletion {
         @Generated
-        void call_resolveTitleForCreateTaskListWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveTitleForCreateTaskListWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 }

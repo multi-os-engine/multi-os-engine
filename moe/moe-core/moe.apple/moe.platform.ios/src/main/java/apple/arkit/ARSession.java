@@ -208,7 +208,7 @@ public class ARSession extends NSObject {
     @Generated
     public interface Block_getCurrentWorldMapWithCompletionHandler {
         @Generated
-        void call_getCurrentWorldMapWithCompletionHandler(ARWorldMap arg0, NSError arg1);
+        void call_getCurrentWorldMapWithCompletionHandler(ARWorldMap worldMap, NSError error);
     }
 
     @Generated

@@ -370,8 +370,8 @@ public class CNContact extends NSObject
     public interface Block_comparatorForNameSortOrder_ret {
         @Generated
         @NInt
-        long call_comparatorForNameSortOrder_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_comparatorForNameSortOrder_ret(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Generated

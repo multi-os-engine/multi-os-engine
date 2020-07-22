@@ -31,7 +31,7 @@ public interface INAddMediaIntentHandling {
     @Generated
     public interface Block_confirmAddMediaCompletion {
         @Generated
-        void call_confirmAddMediaCompletion(INAddMediaIntentResponse arg0);
+        void call_confirmAddMediaCompletion(INAddMediaIntentResponse response);
     }
 
     @Generated
@@ -43,7 +43,7 @@ public interface INAddMediaIntentHandling {
     @Generated
     public interface Block_handleAddMediaCompletion {
         @Generated
-        void call_handleAddMediaCompletion(INAddMediaIntentResponse arg0);
+        void call_handleAddMediaCompletion(INAddMediaIntentResponse response);
     }
 
     @Generated
@@ -58,7 +58,8 @@ public interface INAddMediaIntentHandling {
     @Generated
     public interface Block_resolveMediaDestinationForAddMediaWithCompletion {
         @Generated
-        void call_resolveMediaDestinationForAddMediaWithCompletion(INAddMediaMediaDestinationResolutionResult arg0);
+        void call_resolveMediaDestinationForAddMediaWithCompletion(
+                INAddMediaMediaDestinationResolutionResult resolutionResult);
     }
 
     @Generated
@@ -74,6 +75,6 @@ public interface INAddMediaIntentHandling {
     public interface Block_resolveMediaItemsForAddMediaWithCompletion {
         @Generated
         void call_resolveMediaItemsForAddMediaWithCompletion(
-                NSArray<? extends INAddMediaMediaItemResolutionResult> arg0);
+                NSArray<? extends INAddMediaMediaItemResolutionResult> resolutionResults);
     }
 }

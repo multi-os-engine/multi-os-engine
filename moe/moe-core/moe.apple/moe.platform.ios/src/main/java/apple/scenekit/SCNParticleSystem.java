@@ -797,16 +797,16 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public interface Block_addModifierForPropertiesAtStageWithBlock {
         @Generated
         void call_addModifierForPropertiesAtStageWithBlock(
-                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0, NUIntPtr arg1, @NInt long arg2,
-                @NInt long arg3, float arg4);
+                @ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> data, NUIntPtr dataStride, @NInt long start,
+                @NInt long end, float deltaTime);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleEventForPropertiesWithBlock {
         @Generated
-        void call_handleEventForPropertiesWithBlock(@ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> arg0,
-                NUIntPtr arg1, IntPtr arg2, @NInt long arg3);
+        void call_handleEventForPropertiesWithBlock(@ReferenceInfo(type = Void.class, depth = 2) Ptr<VoidPtr> data,
+                NUIntPtr dataStride, IntPtr indices, @NInt long count);
     }
 
     @Generated

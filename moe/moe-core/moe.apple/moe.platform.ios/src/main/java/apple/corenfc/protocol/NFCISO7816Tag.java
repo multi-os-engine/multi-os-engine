@@ -45,6 +45,6 @@ public interface NFCISO7816Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_sendCommandAPDUCompletionHandler {
         @Generated
-        void call_sendCommandAPDUCompletionHandler(NSData arg0, byte arg1, byte arg2, NSError arg3);
+        void call_sendCommandAPDUCompletionHandler(NSData responseData, byte sw1, byte sw2, NSError error);
     }
 }

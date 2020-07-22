@@ -24,6 +24,6 @@ public interface CLSContextProvider {
     @Generated
     public interface Block_updateDescendantsOfContextCompletion {
         @Generated
-        void call_updateDescendantsOfContextCompletion(NSError arg0);
+        void call_updateDescendantsOfContextCompletion(NSError error);
     }
 }

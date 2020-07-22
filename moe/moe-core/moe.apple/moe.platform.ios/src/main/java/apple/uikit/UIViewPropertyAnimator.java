@@ -332,7 +332,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Generated
     public interface Block_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4 {
         @Generated
-        void call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4(@NInt long arg0);
+        void call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4(@NInt long finalPosition);
     }
 
     @Generated

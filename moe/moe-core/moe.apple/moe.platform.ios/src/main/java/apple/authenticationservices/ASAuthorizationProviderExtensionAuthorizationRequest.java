@@ -176,7 +176,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Generated
     public interface Block_presentAuthorizationViewControllerWithCompletion {
         @Generated
-        void call_presentAuthorizationViewControllerWithCompletion(boolean arg0, NSError arg1);
+        void call_presentAuthorizationViewControllerWithCompletion(boolean success, NSError error);
     }
 
     @Generated

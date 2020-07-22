@@ -223,7 +223,7 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_fetchUIImageWithCompletion {
         @Generated
-        void call_fetchUIImageWithCompletion(UIImage arg0);
+        void call_fetchUIImageWithCompletion(UIImage image);
     }
 
     @Generated

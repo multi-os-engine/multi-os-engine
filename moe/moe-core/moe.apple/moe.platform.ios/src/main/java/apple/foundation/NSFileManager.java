@@ -467,7 +467,7 @@ public class NSFileManager extends NSObject {
     @Generated
     public interface Block_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler {
         @Generated
-        boolean call_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler(NSURL arg0, NSError arg1);
+        boolean call_enumeratorAtURLIncludingPropertiesForKeysOptionsErrorHandler(NSURL url, NSError error);
     }
 
     @Generated
@@ -480,7 +480,7 @@ public class NSFileManager extends NSObject {
     public interface Block_getFileProviderServicesForItemAtURLCompletionHandler {
         @Generated
         void call_getFileProviderServicesForItemAtURLCompletionHandler(
-                NSDictionary<String, ? extends NSFileProviderService> arg0, NSError arg1);
+                NSDictionary<String, ? extends NSFileProviderService> services, NSError error);
     }
 
     @Generated

@@ -106,8 +106,8 @@ public class HKWorkoutRouteQuery extends HKQuery {
     @Generated
     public interface Block_initWithRouteDataHandler {
         @Generated
-        void call_initWithRouteDataHandler(HKWorkoutRouteQuery arg0, NSArray<? extends CLLocation> arg1, boolean arg2,
-                NSError arg3);
+        void call_initWithRouteDataHandler(HKWorkoutRouteQuery query, NSArray<? extends CLLocation> routeData,
+                boolean done, NSError error);
     }
 
     @Generated

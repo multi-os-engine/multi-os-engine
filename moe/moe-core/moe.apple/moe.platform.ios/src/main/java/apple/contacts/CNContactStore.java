@@ -211,14 +211,14 @@ public class CNContactStore extends NSObject {
     @Generated
     public interface Block_enumerateContactsWithFetchRequestErrorUsingBlock {
         @Generated
-        void call_enumerateContactsWithFetchRequestErrorUsingBlock(CNContact arg0, BoolPtr arg1);
+        void call_enumerateContactsWithFetchRequestErrorUsingBlock(CNContact contact, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAccessForEntityTypeCompletionHandler {
         @Generated
-        void call_requestAccessForEntityTypeCompletionHandler(boolean arg0, NSError arg1);
+        void call_requestAccessForEntityTypeCompletionHandler(boolean granted, NSError error);
     }
 
     @Generated

@@ -193,14 +193,14 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCControllerDirectionPad arg0, float arg1, float arg2);
+        void call_setValueChangedHandler(GCControllerDirectionPad dpad, float xValue, float yValue);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCControllerDirectionPad arg0, float arg1, float arg2);
+        void call_valueChangedHandler_ret(GCControllerDirectionPad dpad, float xValue, float yValue);
     }
 
     @Generated

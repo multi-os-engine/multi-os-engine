@@ -286,17 +286,17 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Generated
     public interface Block_initWithTypePredicateAnchorLimitCompletionHandler {
         @Generated
-        void call_initWithTypePredicateAnchorLimitCompletionHandler(HKAnchoredObjectQuery arg0,
-                NSArray<? extends HKSample> arg1, @NUInt long arg2, NSError arg3);
+        void call_initWithTypePredicateAnchorLimitCompletionHandler(HKAnchoredObjectQuery query,
+                NSArray<? extends HKSample> results, @NUInt long newAnchor, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithTypePredicateAnchorLimitResultsHandler {
         @Generated
-        void call_initWithTypePredicateAnchorLimitResultsHandler(HKAnchoredObjectQuery arg0,
-                NSArray<? extends HKSample> arg1, NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3,
-                NSError arg4);
+        void call_initWithTypePredicateAnchorLimitResultsHandler(HKAnchoredObjectQuery query,
+                NSArray<? extends HKSample> sampleObjects, NSArray<? extends HKDeletedObject> deletedObjects,
+                HKQueryAnchor newAnchor, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

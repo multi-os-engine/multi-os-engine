@@ -116,7 +116,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_initWithTitleVariantsImageHandler {
         @Generated
-        void call_initWithTitleVariantsImageHandler(CPGridButton arg0);
+        void call_initWithTitleVariantsImageHandler(CPGridButton barButton);
     }
 
     @Generated

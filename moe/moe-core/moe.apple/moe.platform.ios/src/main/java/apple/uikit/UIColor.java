@@ -465,7 +465,7 @@ public class UIColor extends NSObject
     @Generated
     public interface Block_colorWithDynamicProvider {
         @Generated
-        UIColor call_colorWithDynamicProvider(UITraitCollection arg0);
+        UIColor call_colorWithDynamicProvider(UITraitCollection traitCollection);
     }
 
     @Generated
@@ -477,7 +477,7 @@ public class UIColor extends NSObject
     @Generated
     public interface Block_initWithDynamicProvider {
         @Generated
-        UIColor call_initWithDynamicProvider(UITraitCollection arg0);
+        UIColor call_initWithDynamicProvider(UITraitCollection traitCollection);
     }
 
     @Generated

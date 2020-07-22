@@ -107,7 +107,7 @@ public class SFAuthenticationSession extends NSObject {
     @Generated
     public interface Block_initWithURLCallbackURLSchemeCompletionHandler {
         @Generated
-        void call_initWithURLCallbackURLSchemeCompletionHandler(NSURL arg0, NSError arg1);
+        void call_initWithURLCallbackURLSchemeCompletionHandler(NSURL callbackURL, NSError error);
     }
 
     @Generated

@@ -179,6 +179,6 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     @Generated
     public interface Block_updateTargetValueCompletionHandler {
         @Generated
-        void call_updateTargetValueCompletionHandler(NSError arg0);
+        void call_updateTargetValueCompletionHandler(NSError error);
     }
 }

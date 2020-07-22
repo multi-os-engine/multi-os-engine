@@ -174,6 +174,6 @@ public class NEHotspotHelper extends NSObject {
     @Generated
     public interface Block_registerWithOptionsQueueHandler {
         @Generated
-        void call_registerWithOptionsQueueHandler(NEHotspotHelperCommand arg0);
+        void call_registerWithOptionsQueueHandler(NEHotspotHelperCommand cmd);
     }
 }

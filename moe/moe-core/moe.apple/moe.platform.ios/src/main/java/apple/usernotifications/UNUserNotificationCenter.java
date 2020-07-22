@@ -240,41 +240,42 @@ public class UNUserNotificationCenter extends NSObject {
     @Generated
     public interface Block_addNotificationRequestWithCompletionHandler {
         @Generated
-        void call_addNotificationRequestWithCompletionHandler(NSError arg0);
+        void call_addNotificationRequestWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getDeliveredNotificationsWithCompletionHandler {
         @Generated
-        void call_getDeliveredNotificationsWithCompletionHandler(NSArray<? extends UNNotification> arg0);
+        void call_getDeliveredNotificationsWithCompletionHandler(NSArray<? extends UNNotification> notifications);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getNotificationCategoriesWithCompletionHandler {
         @Generated
-        void call_getNotificationCategoriesWithCompletionHandler(NSSet<? extends UNNotificationCategory> arg0);
+        void call_getNotificationCategoriesWithCompletionHandler(NSSet<? extends UNNotificationCategory> categories);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getNotificationSettingsWithCompletionHandler {
         @Generated
-        void call_getNotificationSettingsWithCompletionHandler(UNNotificationSettings arg0);
+        void call_getNotificationSettingsWithCompletionHandler(UNNotificationSettings settings);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getPendingNotificationRequestsWithCompletionHandler {
         @Generated
-        void call_getPendingNotificationRequestsWithCompletionHandler(NSArray<? extends UNNotificationRequest> arg0);
+        void call_getPendingNotificationRequestsWithCompletionHandler(
+                NSArray<? extends UNNotificationRequest> requests);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorizationWithOptionsCompletionHandler {
         @Generated
-        void call_requestAuthorizationWithOptionsCompletionHandler(boolean arg0, NSError arg1);
+        void call_requestAuthorizationWithOptionsCompletionHandler(boolean granted, NSError error);
     }
 }

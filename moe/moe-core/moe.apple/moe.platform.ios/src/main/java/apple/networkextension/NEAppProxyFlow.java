@@ -177,7 +177,7 @@ public class NEAppProxyFlow extends NSObject {
     @Generated
     public interface Block_openWithLocalEndpointCompletionHandler {
         @Generated
-        void call_openWithLocalEndpointCompletionHandler(NSError arg0);
+        void call_openWithLocalEndpointCompletionHandler(NSError error);
     }
 
     @Generated

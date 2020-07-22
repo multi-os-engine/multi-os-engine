@@ -648,7 +648,7 @@ public final class AddressBook {
     @Generated
     public interface Block_ABAddressBookRequestAccessWithCompletion {
         @Generated
-        void call_ABAddressBookRequestAccessWithCompletion(boolean arg0, CFErrorRef arg1);
+        void call_ABAddressBookRequestAccessWithCompletion(boolean granted, CFErrorRef error);
     }
 
     @Runtime(CRuntime.class)

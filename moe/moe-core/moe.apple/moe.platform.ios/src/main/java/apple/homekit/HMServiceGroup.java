@@ -188,20 +188,20 @@ public class HMServiceGroup extends NSObject {
     @Generated
     public interface Block_addServiceCompletionHandler {
         @Generated
-        void call_addServiceCompletionHandler(NSError arg0);
+        void call_addServiceCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeServiceCompletionHandler {
         @Generated
-        void call_removeServiceCompletionHandler(NSError arg0);
+        void call_removeServiceCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 }

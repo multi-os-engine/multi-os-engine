@@ -62,7 +62,7 @@ public class NEHotspotConfigurationManager extends NSObject {
     @Generated
     public interface Block_applyConfigurationCompletionHandler {
         @Generated
-        void call_applyConfigurationCompletionHandler(NSError arg0);
+        void call_applyConfigurationCompletionHandler(NSError error);
     }
 
     @Generated

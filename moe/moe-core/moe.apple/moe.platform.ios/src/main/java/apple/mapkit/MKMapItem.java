@@ -319,7 +319,7 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Generated
     public interface Block_openInMapsWithLaunchOptionsFromSceneCompletionHandler {
         @Generated
-        void call_openInMapsWithLaunchOptionsFromSceneCompletionHandler(boolean arg0);
+        void call_openInMapsWithLaunchOptionsFromSceneCompletionHandler(boolean success);
     }
 
     @Generated
@@ -332,7 +332,7 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Generated
     public interface Block_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler {
         @Generated
-        void call_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler(boolean arg0);
+        void call_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler(boolean success);
     }
 
     @Generated

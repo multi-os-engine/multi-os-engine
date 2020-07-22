@@ -327,16 +327,16 @@ public class NSAttributedString extends NSObject
     @Generated
     public interface Block_enumerateAttributeInRangeOptionsUsingBlock {
         @Generated
-        void call_enumerateAttributeInRangeOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @ByValue NSRange arg1, BoolPtr arg2);
+        void call_enumerateAttributeInRangeOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object value,
+                @ByValue NSRange range, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateAttributesInRangeOptionsUsingBlock {
         @Generated
-        void call_enumerateAttributesInRangeOptionsUsingBlock(NSDictionary<String, ?> arg0, @ByValue NSRange arg1,
-                BoolPtr arg2);
+        void call_enumerateAttributesInRangeOptionsUsingBlock(NSDictionary<String, ?> attrs, @ByValue NSRange range,
+                BoolPtr stop);
     }
 
     @Generated

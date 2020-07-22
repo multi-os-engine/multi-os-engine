@@ -94,48 +94,50 @@ public interface INStartWorkoutIntentHandling {
     @Generated
     public interface Block_confirmStartWorkoutCompletion {
         @Generated
-        void call_confirmStartWorkoutCompletion(INStartWorkoutIntentResponse arg0);
+        void call_confirmStartWorkoutCompletion(INStartWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartWorkoutCompletion {
         @Generated
-        void call_handleStartWorkoutCompletion(INStartWorkoutIntentResponse arg0);
+        void call_handleStartWorkoutCompletion(INStartWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveGoalValueForStartWorkoutWithCompletion {
         @Generated
-        void call_resolveGoalValueForStartWorkoutWithCompletion(INDoubleResolutionResult arg0);
+        void call_resolveGoalValueForStartWorkoutWithCompletion(INDoubleResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveIsOpenEndedForStartWorkoutWithCompletion {
         @Generated
-        void call_resolveIsOpenEndedForStartWorkoutWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveIsOpenEndedForStartWorkoutWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion(INWorkoutGoalUnitTypeResolutionResult arg0);
+        void call_resolveWorkoutGoalUnitTypeForStartWorkoutWithCompletion(
+                INWorkoutGoalUnitTypeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutLocationTypeForStartWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutLocationTypeForStartWorkoutWithCompletion(INWorkoutLocationTypeResolutionResult arg0);
+        void call_resolveWorkoutLocationTypeForStartWorkoutWithCompletion(
+                INWorkoutLocationTypeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForStartWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForStartWorkoutWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveWorkoutNameForStartWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 }

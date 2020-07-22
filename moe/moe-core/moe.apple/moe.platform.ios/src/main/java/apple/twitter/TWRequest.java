@@ -197,7 +197,7 @@ public class TWRequest extends NSObject {
     @Generated
     public interface Block_performRequestWithHandler {
         @Generated
-        void call_performRequestWithHandler(NSData arg0, NSHTTPURLResponse arg1, NSError arg2);
+        void call_performRequestWithHandler(NSData responseData, NSHTTPURLResponse urlResponse, NSError error);
     }
 
     @Generated

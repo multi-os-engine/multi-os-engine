@@ -4827,7 +4827,7 @@ public final class Globals {
     @Generated
     public interface Block_dispatch_data_apply {
         @Generated
-        boolean call_dispatch_data_apply(NSObject arg0, @NUInt long arg1, ConstVoidPtr arg2, @NUInt long arg3);
+        boolean call_dispatch_data_apply(NSObject region, @NUInt long offset, ConstVoidPtr buffer, @NUInt long size);
     }
 
     @Runtime(CRuntime.class)
@@ -4869,14 +4869,14 @@ public final class Globals {
     @Generated
     public interface Block_dispatch_io_read {
         @Generated
-        void call_dispatch_io_read(boolean arg0, NSObject arg1, int arg2);
+        void call_dispatch_io_read(boolean done, NSObject data, int error);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_dispatch_io_write {
         @Generated
-        void call_dispatch_io_write(boolean arg0, NSObject arg1, int arg2);
+        void call_dispatch_io_write(boolean done, NSObject data, int error);
     }
 
     @Runtime(CRuntime.class)
@@ -6362,7 +6362,7 @@ public final class Globals {
     @Generated
     public interface Block__os_trace_with_buffer {
         @Generated
-        void call__os_trace_with_buffer(VoidPtr arg0);
+        void call__os_trace_with_buffer(VoidPtr xdict);
     }
 
     @Generated

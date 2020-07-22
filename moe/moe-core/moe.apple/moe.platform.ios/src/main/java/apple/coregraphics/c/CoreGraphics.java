@@ -2382,7 +2382,7 @@ public final class CoreGraphics {
     public interface Block_CGPathApplyWithBlock {
         @Generated
         void call_CGPathApplyWithBlock(
-                @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement arg0);
+                @UncertainArgument("Options: reference, array Fallback: reference") CGPathElement element);
     }
 
     @Generated
@@ -2472,7 +2472,7 @@ public final class CoreGraphics {
     @Generated
     public interface Block_CGPDFArrayApplyBlock {
         @Generated
-        boolean call_CGPDFArrayApplyBlock(@NUInt long arg0, CGPDFObjectRef arg1, VoidPtr arg2);
+        boolean call_CGPDFArrayApplyBlock(@NUInt long index, CGPDFObjectRef value, VoidPtr info);
     }
 
     @Generated
@@ -2485,8 +2485,8 @@ public final class CoreGraphics {
     public interface Block_CGPDFDictionaryApplyBlock {
         @Generated
         boolean call_CGPDFDictionaryApplyBlock(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg0,
-                CGPDFObjectRef arg1, VoidPtr arg2);
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
+                CGPDFObjectRef value, VoidPtr info);
     }
 
     @Generated

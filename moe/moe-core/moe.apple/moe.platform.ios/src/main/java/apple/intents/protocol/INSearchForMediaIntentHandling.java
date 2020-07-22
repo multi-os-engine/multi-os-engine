@@ -30,7 +30,7 @@ public interface INSearchForMediaIntentHandling {
     @Generated
     public interface Block_confirmSearchForMediaCompletion {
         @Generated
-        void call_confirmSearchForMediaCompletion(INSearchForMediaIntentResponse arg0);
+        void call_confirmSearchForMediaCompletion(INSearchForMediaIntentResponse response);
     }
 
     @Generated
@@ -42,7 +42,7 @@ public interface INSearchForMediaIntentHandling {
     @Generated
     public interface Block_handleSearchForMediaCompletion {
         @Generated
-        void call_handleSearchForMediaCompletion(INSearchForMediaIntentResponse arg0);
+        void call_handleSearchForMediaCompletion(INSearchForMediaIntentResponse response);
     }
 
     @Generated
@@ -58,6 +58,6 @@ public interface INSearchForMediaIntentHandling {
     public interface Block_resolveMediaItemsForSearchForMediaWithCompletion {
         @Generated
         void call_resolveMediaItemsForSearchForMediaWithCompletion(
-                NSArray<? extends INSearchForMediaMediaItemResolutionResult> arg0);
+                NSArray<? extends INSearchForMediaMediaItemResolutionResult> resolutionResults);
     }
 }

@@ -97,7 +97,8 @@ public class SKProductStorePromotionController extends NSObject {
     @Generated
     public interface Block_fetchStorePromotionOrderWithCompletionHandler {
         @Generated
-        void call_fetchStorePromotionOrderWithCompletionHandler(NSArray<? extends SKProduct> arg0, NSError arg1);
+        void call_fetchStorePromotionOrderWithCompletionHandler(NSArray<? extends SKProduct> storePromotionOrder,
+                NSError error);
     }
 
     @Generated
@@ -109,7 +110,8 @@ public class SKProductStorePromotionController extends NSObject {
     @Generated
     public interface Block_fetchStorePromotionVisibilityForProductCompletionHandler {
         @Generated
-        void call_fetchStorePromotionVisibilityForProductCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_fetchStorePromotionVisibilityForProductCompletionHandler(@NInt long storePromotionVisibility,
+                NSError error);
     }
 
     @Generated
@@ -173,7 +175,7 @@ public class SKProductStorePromotionController extends NSObject {
     @Generated
     public interface Block_updateStorePromotionOrderCompletionHandler {
         @Generated
-        void call_updateStorePromotionOrderCompletionHandler(NSError arg0);
+        void call_updateStorePromotionOrderCompletionHandler(NSError error);
     }
 
     @Generated
@@ -186,7 +188,7 @@ public class SKProductStorePromotionController extends NSObject {
     @Generated
     public interface Block_updateStorePromotionVisibilityForProductCompletionHandler {
         @Generated
-        void call_updateStorePromotionVisibilityForProductCompletionHandler(NSError arg0);
+        void call_updateStorePromotionVisibilityForProductCompletionHandler(NSError error);
     }
 
     @Generated

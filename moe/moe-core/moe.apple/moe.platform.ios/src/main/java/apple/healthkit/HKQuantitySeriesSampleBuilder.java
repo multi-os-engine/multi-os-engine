@@ -105,7 +105,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     @Generated
     public interface Block_finishSeriesWithMetadataCompletion {
         @Generated
-        void call_finishSeriesWithMetadataCompletion(NSArray<? extends HKQuantitySample> arg0, NSError arg1);
+        void call_finishSeriesWithMetadataCompletion(NSArray<? extends HKQuantitySample> samples, NSError error);
     }
 
     @Generated
@@ -117,7 +117,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     @Generated
     public interface Block_finishSeriesWithMetadataEndDateCompletion {
         @Generated
-        void call_finishSeriesWithMetadataEndDateCompletion(NSArray<? extends HKQuantitySample> arg0, NSError arg1);
+        void call_finishSeriesWithMetadataEndDateCompletion(NSArray<? extends HKQuantitySample> samples, NSError error);
     }
 
     @Generated

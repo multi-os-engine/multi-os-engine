@@ -32,6 +32,6 @@ public interface UIPointerInteractionAnimating {
     @Generated
     public interface Block_addCompletion {
         @Generated
-        void call_addCompletion(boolean arg0);
+        void call_addCompletion(boolean finished);
     }
 }

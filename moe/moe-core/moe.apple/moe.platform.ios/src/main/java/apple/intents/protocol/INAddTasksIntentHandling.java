@@ -36,7 +36,7 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_confirmAddTasksCompletion {
         @Generated
-        void call_confirmAddTasksCompletion(INAddTasksIntentResponse arg0);
+        void call_confirmAddTasksCompletion(INAddTasksIntentResponse response);
     }
 
     @Generated
@@ -48,7 +48,7 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_handleAddTasksCompletion {
         @Generated
-        void call_handleAddTasksCompletion(INAddTasksIntentResponse arg0);
+        void call_handleAddTasksCompletion(INAddTasksIntentResponse response);
     }
 
     @Generated
@@ -63,7 +63,8 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_resolveSpatialEventTriggerForAddTasksWithCompletion {
         @Generated
-        void call_resolveSpatialEventTriggerForAddTasksWithCompletion(INSpatialEventTriggerResolutionResult arg0);
+        void call_resolveSpatialEventTriggerForAddTasksWithCompletion(
+                INSpatialEventTriggerResolutionResult resolutionResult);
     }
 
     @Generated
@@ -78,7 +79,7 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_resolveTargetTaskListForAddTasksWithCompletion {
         @Generated
-        void call_resolveTargetTaskListForAddTasksWithCompletion(INTaskListResolutionResult arg0);
+        void call_resolveTargetTaskListForAddTasksWithCompletion(INTaskListResolutionResult resolutionResult);
     }
 
     @Generated
@@ -93,7 +94,8 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_resolveTaskTitlesForAddTasksWithCompletion {
         @Generated
-        void call_resolveTaskTitlesForAddTasksWithCompletion(NSArray<? extends INSpeakableStringResolutionResult> arg0);
+        void call_resolveTaskTitlesForAddTasksWithCompletion(
+                NSArray<? extends INSpeakableStringResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -108,7 +110,8 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_resolveTemporalEventTriggerForAddTasksWithCompletion {
         @Generated
-        void call_resolveTemporalEventTriggerForAddTasksWithCompletion(INTemporalEventTriggerResolutionResult arg0);
+        void call_resolveTemporalEventTriggerForAddTasksWithCompletion(
+                INTemporalEventTriggerResolutionResult resolutionResult);
     }
 
     @Generated
@@ -123,7 +126,7 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_resolvePriorityForAddTasksWithCompletion {
         @Generated
-        void call_resolvePriorityForAddTasksWithCompletion(INTaskPriorityResolutionResult arg0);
+        void call_resolvePriorityForAddTasksWithCompletion(INTaskPriorityResolutionResult resolutionResult);
     }
 
     @Generated
@@ -138,7 +141,7 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_resolveTargetTaskListForAddTasksCompletion {
         @Generated
-        void call_resolveTargetTaskListForAddTasksCompletion(INAddTasksTargetTaskListResolutionResult arg0);
+        void call_resolveTargetTaskListForAddTasksCompletion(INAddTasksTargetTaskListResolutionResult resolutionResult);
     }
 
     @Generated
@@ -153,6 +156,7 @@ public interface INAddTasksIntentHandling {
     @Generated
     public interface Block_resolveTemporalEventTriggerForAddTasksCompletion {
         @Generated
-        void call_resolveTemporalEventTriggerForAddTasksCompletion(INAddTasksTemporalEventTriggerResolutionResult arg0);
+        void call_resolveTemporalEventTriggerForAddTasksCompletion(
+                INAddTasksTemporalEventTriggerResolutionResult resolutionResult);
     }
 }

@@ -39,7 +39,7 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_sendMiFareCommandCompletionHandler {
         @Generated
-        void call_sendMiFareCommandCompletionHandler(NSData arg0, NSError arg1);
+        void call_sendMiFareCommandCompletionHandler(NSData response, NSError error);
     }
 
     @Generated
@@ -51,6 +51,6 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_sendMiFareISO7816CommandCompletionHandler {
         @Generated
-        void call_sendMiFareISO7816CommandCompletionHandler(NSData arg0, byte arg1, byte arg2, NSError arg3);
+        void call_sendMiFareISO7816CommandCompletionHandler(NSData responseData, byte sw1, byte sw2, NSError error);
     }
 }

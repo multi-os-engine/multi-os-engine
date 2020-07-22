@@ -95,7 +95,7 @@ public class NLTokenizer extends NSObject {
     @Generated
     public interface Block_enumerateTokensInRangeUsingBlock {
         @Generated
-        void call_enumerateTokensInRangeUsingBlock(@ByValue NSRange arg0, @NUInt long arg1, BoolPtr arg2);
+        void call_enumerateTokensInRangeUsingBlock(@ByValue NSRange tokenRange, @NUInt long flags, BoolPtr stop);
     }
 
     @Generated

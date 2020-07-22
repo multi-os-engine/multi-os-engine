@@ -278,27 +278,27 @@ public class WCSession extends NSObject {
     @Generated
     public interface Block_sendMessageReplyHandlerErrorHandler_1 {
         @Generated
-        void call_sendMessageReplyHandlerErrorHandler_1(NSDictionary<String, ?> arg0);
+        void call_sendMessageReplyHandlerErrorHandler_1(NSDictionary<String, ?> replyMessage);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMessageReplyHandlerErrorHandler_2 {
         @Generated
-        void call_sendMessageReplyHandlerErrorHandler_2(NSError arg0);
+        void call_sendMessageReplyHandlerErrorHandler_2(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMessageDataReplyHandlerErrorHandler_1 {
         @Generated
-        void call_sendMessageDataReplyHandlerErrorHandler_1(NSData arg0);
+        void call_sendMessageDataReplyHandlerErrorHandler_1(NSData replyMessageData);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMessageDataReplyHandlerErrorHandler_2 {
         @Generated
-        void call_sendMessageDataReplyHandlerErrorHandler_2(NSError arg0);
+        void call_sendMessageDataReplyHandlerErrorHandler_2(NSError error);
     }
 }

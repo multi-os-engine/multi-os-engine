@@ -142,14 +142,14 @@ public class MPMusicPlayerApplicationController extends MPMusicPlayerController 
     @Generated
     public interface Block_performQueueTransactionCompletionHandler_0 {
         @Generated
-        void call_performQueueTransactionCompletionHandler_0(MPMusicPlayerControllerMutableQueue arg0);
+        void call_performQueueTransactionCompletionHandler_0(MPMusicPlayerControllerMutableQueue queue);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_performQueueTransactionCompletionHandler_1 {
         @Generated
-        void call_performQueueTransactionCompletionHandler_1(MPMusicPlayerControllerQueue arg0, NSError arg1);
+        void call_performQueueTransactionCompletionHandler_1(MPMusicPlayerControllerQueue queue, NSError error);
     }
 
     @Generated

@@ -205,7 +205,7 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     public interface Block_performChangesCompletionHandler_1 {
         @Generated
-        void call_performChangesCompletionHandler_1(boolean arg0, NSError arg1);
+        void call_performChangesCompletionHandler_1(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -219,7 +219,7 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     public interface Block_requestAuthorization {
         @Generated
-        void call_requestAuthorization(@NInt long arg0);
+        void call_requestAuthorization(@NInt long status);
     }
 
     @Generated

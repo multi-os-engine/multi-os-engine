@@ -423,35 +423,35 @@ public class AVPlayer extends NSObject {
     @Generated
     public interface Block_addPeriodicTimeObserverForIntervalQueueUsingBlock {
         @Generated
-        void call_addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime arg0);
+        void call_addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime time);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_prerollAtRateCompletionHandler {
         @Generated
-        void call_prerollAtRateCompletionHandler(boolean arg0);
+        void call_prerollAtRateCompletionHandler(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_seekToDateCompletionHandler {
         @Generated
-        void call_seekToDateCompletionHandler(boolean arg0);
+        void call_seekToDateCompletionHandler(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_seekToTimeCompletionHandler {
         @Generated
-        void call_seekToTimeCompletionHandler(boolean arg0);
+        void call_seekToTimeCompletionHandler(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler {
         @Generated
-        void call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler(boolean arg0);
+        void call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler(boolean finished);
     }
 
     @Generated

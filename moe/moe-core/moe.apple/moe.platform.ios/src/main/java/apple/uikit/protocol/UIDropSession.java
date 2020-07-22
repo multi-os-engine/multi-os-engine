@@ -30,7 +30,7 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     @Generated
     public interface Block_loadObjectsOfClassCompletion {
         @Generated
-        void call_loadObjectsOfClassCompletion(NSArray<?> arg0);
+        void call_loadObjectsOfClassCompletion(NSArray<?> objects);
     }
 
     @Generated

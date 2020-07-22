@@ -404,8 +404,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public interface Block_sortRangeOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortRangeOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -413,8 +413,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public interface Block_sortUsingComparator {
         @Generated
         @NInt
-        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -422,8 +422,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     public interface Block_sortWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Generated

@@ -28,7 +28,7 @@ public interface INCancelRideIntentHandling {
     @Generated
     public interface Block_confirmCancelRideCompletion {
         @Generated
-        void call_confirmCancelRideCompletion(INCancelRideIntentResponse arg0);
+        void call_confirmCancelRideCompletion(INCancelRideIntentResponse response);
     }
 
     @Generated
@@ -40,6 +40,6 @@ public interface INCancelRideIntentHandling {
     @Generated
     public interface Block_handleCancelRideCompletion {
         @Generated
-        void call_handleCancelRideCompletion(INCancelRideIntentResponse arg0);
+        void call_handleCancelRideCompletion(INCancelRideIntentResponse response);
     }
 }

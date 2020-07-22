@@ -3162,14 +3162,14 @@ public final class Foundation {
     @Generated
     public interface Function_NSGetUncaughtExceptionHandler_ret {
         @Generated
-        void call_NSGetUncaughtExceptionHandler_ret(NSException arg0);
+        void call_NSGetUncaughtExceptionHandler_ret(NSException exception);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_NSSetUncaughtExceptionHandler {
         @Generated
-        void call_NSSetUncaughtExceptionHandler(NSException arg0);
+        void call_NSSetUncaughtExceptionHandler(NSException exception);
     }
 
     @Generated

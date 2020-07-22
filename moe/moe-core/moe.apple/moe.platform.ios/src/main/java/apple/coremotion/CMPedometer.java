@@ -208,21 +208,21 @@ public class CMPedometer extends NSObject {
     @Generated
     public interface Block_queryPedometerDataFromDateToDateWithHandler {
         @Generated
-        void call_queryPedometerDataFromDateToDateWithHandler(CMPedometerData arg0, NSError arg1);
+        void call_queryPedometerDataFromDateToDateWithHandler(CMPedometerData pedometerData, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startPedometerEventUpdatesWithHandler {
         @Generated
-        void call_startPedometerEventUpdatesWithHandler(CMPedometerEvent arg0, NSError arg1);
+        void call_startPedometerEventUpdatesWithHandler(CMPedometerEvent pedometerEvent, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startPedometerUpdatesFromDateWithHandler {
         @Generated
-        void call_startPedometerUpdatesFromDateWithHandler(CMPedometerData arg0, NSError arg1);
+        void call_startPedometerUpdatesFromDateWithHandler(CMPedometerData pedometerData, NSError error);
     }
 
     @Generated

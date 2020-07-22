@@ -57,7 +57,7 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     public interface Block_addDomainCompletionHandler {
         @Generated
-        void call_addDomainCompletionHandler(NSError arg0);
+        void call_addDomainCompletionHandler(NSError error);
     }
 
     @Generated
@@ -117,7 +117,7 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     public interface Block_getDomainsWithCompletionHandler {
         @Generated
-        void call_getDomainsWithCompletionHandler(NSArray<? extends NSFileProviderDomain> arg0, NSError arg1);
+        void call_getDomainsWithCompletionHandler(NSArray<? extends NSFileProviderDomain> domains, NSError error);
     }
 
     @Generated
@@ -178,7 +178,7 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     public interface Block_registerURLSessionTaskForItemWithIdentifierCompletionHandler {
         @Generated
-        void call_registerURLSessionTaskForItemWithIdentifierCompletionHandler(NSError arg0);
+        void call_registerURLSessionTaskForItemWithIdentifierCompletionHandler(NSError error);
     }
 
     @Generated
@@ -190,7 +190,7 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     public interface Block_removeAllDomainsWithCompletionHandler {
         @Generated
-        void call_removeAllDomainsWithCompletionHandler(NSError arg0);
+        void call_removeAllDomainsWithCompletionHandler(NSError error);
     }
 
     @Generated
@@ -202,7 +202,7 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     public interface Block_removeDomainCompletionHandler {
         @Generated
-        void call_removeDomainCompletionHandler(NSError arg0);
+        void call_removeDomainCompletionHandler(NSError error);
     }
 
     @Generated
@@ -226,7 +226,7 @@ public class NSFileProviderManager extends NSObject {
     @Generated
     public interface Block_signalEnumeratorForContainerItemIdentifierCompletionHandler {
         @Generated
-        void call_signalEnumeratorForContainerItemIdentifierCompletionHandler(NSError arg0);
+        void call_signalEnumeratorForContainerItemIdentifierCompletionHandler(NSError error);
     }
 
     @Generated

@@ -678,7 +678,8 @@ public class UIButton extends UIControl
     @Generated
     public interface Block_pointerStyleProvider_ret {
         @Generated
-        UIPointerStyle call_pointerStyleProvider_ret(UIButton arg0, UIPointerEffect arg1, UIPointerShape arg2);
+        UIPointerStyle call_pointerStyleProvider_ret(UIButton button, UIPointerEffect proposedEffect,
+                UIPointerShape proposedShape);
     }
 
     @Generated
@@ -694,6 +695,7 @@ public class UIButton extends UIControl
     @Generated
     public interface Block_setPointerStyleProvider {
         @Generated
-        UIPointerStyle call_setPointerStyleProvider(UIButton arg0, UIPointerEffect arg1, UIPointerShape arg2);
+        UIPointerStyle call_setPointerStyleProvider(UIButton button, UIPointerEffect proposedEffect,
+                UIPointerShape proposedShape);
     }
 }

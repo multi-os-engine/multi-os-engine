@@ -34,7 +34,7 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_confirmPlayMediaCompletion {
         @Generated
-        void call_confirmPlayMediaCompletion(INPlayMediaIntentResponse arg0);
+        void call_confirmPlayMediaCompletion(INPlayMediaIntentResponse response);
     }
 
     @Generated
@@ -46,7 +46,7 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_handlePlayMediaCompletion {
         @Generated
-        void call_handlePlayMediaCompletion(INPlayMediaIntentResponse arg0);
+        void call_handlePlayMediaCompletion(INPlayMediaIntentResponse response);
     }
 
     @Generated
@@ -62,7 +62,7 @@ public interface INPlayMediaIntentHandling {
     public interface Block_resolveMediaItemsForPlayMediaWithCompletion {
         @Generated
         void call_resolveMediaItemsForPlayMediaWithCompletion(
-                NSArray<? extends INPlayMediaMediaItemResolutionResult> arg0);
+                NSArray<? extends INPlayMediaMediaItemResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -77,7 +77,7 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_resolvePlayShuffledForPlayMediaWithCompletion {
         @Generated
-        void call_resolvePlayShuffledForPlayMediaWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolvePlayShuffledForPlayMediaWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 
     @Generated
@@ -92,7 +92,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_resolvePlaybackQueueLocationForPlayMediaWithCompletion {
         @Generated
-        void call_resolvePlaybackQueueLocationForPlayMediaWithCompletion(INPlaybackQueueLocationResolutionResult arg0);
+        void call_resolvePlaybackQueueLocationForPlayMediaWithCompletion(
+                INPlaybackQueueLocationResolutionResult resolutionResult);
     }
 
     @Generated
@@ -107,7 +108,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_resolvePlaybackRepeatModeForPlayMediaWithCompletion {
         @Generated
-        void call_resolvePlaybackRepeatModeForPlayMediaWithCompletion(INPlaybackRepeatModeResolutionResult arg0);
+        void call_resolvePlaybackRepeatModeForPlayMediaWithCompletion(
+                INPlaybackRepeatModeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -122,7 +124,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_resolvePlaybackSpeedForPlayMediaWithCompletion {
         @Generated
-        void call_resolvePlaybackSpeedForPlayMediaWithCompletion(INPlayMediaPlaybackSpeedResolutionResult arg0);
+        void call_resolvePlaybackSpeedForPlayMediaWithCompletion(
+                INPlayMediaPlaybackSpeedResolutionResult resolutionResult);
     }
 
     @Generated
@@ -137,6 +140,6 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_resolveResumePlaybackForPlayMediaWithCompletion {
         @Generated
-        void call_resolveResumePlaybackForPlayMediaWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveResumePlaybackForPlayMediaWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 }

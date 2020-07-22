@@ -112,7 +112,7 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
     @Generated
     public interface Block_initWithRectangleObservationCompletionHandler {
         @Generated
-        void call_initWithRectangleObservationCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithRectangleObservationCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated

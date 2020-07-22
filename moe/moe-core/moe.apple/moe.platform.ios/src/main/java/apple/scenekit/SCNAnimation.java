@@ -68,7 +68,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     public interface Block_animationDidStart_ret {
         @Generated
-        void call_animationDidStart_ret(SCNAnimation arg0, @Mapped(ObjCObjectMapper.class) Object arg1);
+        void call_animationDidStart_ret(SCNAnimation animation, @Mapped(ObjCObjectMapper.class) Object receiver);
     }
 
     @Generated
@@ -80,7 +80,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     public interface Block_animationDidStop_ret {
         @Generated
-        void call_animationDidStop_ret(SCNAnimation arg0, @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_animationDidStop_ret(SCNAnimation animation, @Mapped(ObjCObjectMapper.class) Object receiver,
+                boolean completed);
     }
 
     @Generated
@@ -249,7 +250,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     public interface Block_setAnimationDidStart {
         @Generated
-        void call_setAnimationDidStart(SCNAnimation arg0, @Mapped(ObjCObjectMapper.class) Object arg1);
+        void call_setAnimationDidStart(SCNAnimation animation, @Mapped(ObjCObjectMapper.class) Object receiver);
     }
 
     @Generated
@@ -261,7 +262,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     public interface Block_setAnimationDidStop {
         @Generated
-        void call_setAnimationDidStop(SCNAnimation arg0, @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_setAnimationDidStop(SCNAnimation animation, @Mapped(ObjCObjectMapper.class) Object receiver,
+                boolean completed);
     }
 
     @Generated

@@ -97,7 +97,8 @@ public class QLThumbnailGenerator extends NSObject {
     @Generated
     public interface Block_generateBestRepresentationForRequestCompletionHandler {
         @Generated
-        void call_generateBestRepresentationForRequestCompletionHandler(QLThumbnailRepresentation arg0, NSError arg1);
+        void call_generateBestRepresentationForRequestCompletionHandler(QLThumbnailRepresentation thumbnail,
+                NSError error);
     }
 
     @Generated
@@ -109,8 +110,8 @@ public class QLThumbnailGenerator extends NSObject {
     @Generated
     public interface Block_generateRepresentationsForRequestUpdateHandler {
         @Generated
-        void call_generateRepresentationsForRequestUpdateHandler(QLThumbnailRepresentation arg0, @NInt long arg1,
-                NSError arg2);
+        void call_generateRepresentationsForRequestUpdateHandler(QLThumbnailRepresentation thumbnail, @NInt long type,
+                NSError error);
     }
 
     @Generated
@@ -167,7 +168,7 @@ public class QLThumbnailGenerator extends NSObject {
     @Generated
     public interface Block_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler {
         @Generated
-        void call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(NSError arg0);
+        void call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(NSError error);
     }
 
     @Generated

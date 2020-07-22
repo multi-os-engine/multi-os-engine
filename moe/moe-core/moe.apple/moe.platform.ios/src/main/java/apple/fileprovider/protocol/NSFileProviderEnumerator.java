@@ -29,7 +29,7 @@ public interface NSFileProviderEnumerator {
     @Generated
     public interface Block_currentSyncAnchorWithCompletionHandler {
         @Generated
-        void call_currentSyncAnchorWithCompletionHandler(NSData arg0);
+        void call_currentSyncAnchorWithCompletionHandler(NSData currentAnchor);
     }
 
     @Generated

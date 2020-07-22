@@ -1196,7 +1196,7 @@ public class UIView extends UIResponder
     @Generated
     public interface Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 {
         @Generated
-        void call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4(boolean arg0);
+        void call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -1217,7 +1217,7 @@ public class UIView extends UIResponder
     @Generated
     public interface Block_animateWithDurationAnimationsCompletion_2 {
         @Generated
-        void call_animateWithDurationAnimationsCompletion_2(boolean arg0);
+        void call_animateWithDurationAnimationsCompletion_2(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -1231,7 +1231,7 @@ public class UIView extends UIResponder
     @Generated
     public interface Block_animateWithDurationDelayOptionsAnimationsCompletion_4 {
         @Generated
-        void call_animateWithDurationDelayOptionsAnimationsCompletion_4(boolean arg0);
+        void call_animateWithDurationDelayOptionsAnimationsCompletion_4(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -1246,7 +1246,7 @@ public class UIView extends UIResponder
     public interface Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 {
         @Generated
         void call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6(
-                boolean arg0);
+                boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -1260,7 +1260,7 @@ public class UIView extends UIResponder
     @Generated
     public interface Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 {
         @Generated
-        void call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4(boolean arg0);
+        void call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -1274,7 +1274,7 @@ public class UIView extends UIResponder
     @Generated
     public interface Block_transitionFromViewToViewDurationOptionsCompletion {
         @Generated
-        void call_transitionFromViewToViewDurationOptionsCompletion(boolean arg0);
+        void call_transitionFromViewToViewDurationOptionsCompletion(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -1288,7 +1288,7 @@ public class UIView extends UIResponder
     @Generated
     public interface Block_transitionWithViewDurationOptionsAnimationsCompletion_4 {
         @Generated
-        void call_transitionWithViewDurationOptionsAnimationsCompletion_4(boolean arg0);
+        void call_transitionWithViewDurationOptionsAnimationsCompletion_4(boolean finished);
     }
 
     @Generated

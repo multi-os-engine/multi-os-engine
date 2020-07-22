@@ -92,7 +92,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     public interface Block_customGroupWithLayoutSizeItemProvider {
         @Generated
         NSArray<? extends NSCollectionLayoutGroupCustomItem> call_customGroupWithLayoutSizeItemProvider(
-                @Mapped(ObjCObjectMapper.class) Object arg0);
+                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated

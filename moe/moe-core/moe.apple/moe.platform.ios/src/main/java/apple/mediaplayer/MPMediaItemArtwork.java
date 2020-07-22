@@ -186,6 +186,6 @@ public class MPMediaItemArtwork extends NSObject {
     @Generated
     public interface Block_initWithBoundsSizeRequestHandler {
         @Generated
-        UIImage call_initWithBoundsSizeRequestHandler(@ByValue CGSize arg0);
+        UIImage call_initWithBoundsSizeRequestHandler(@ByValue CGSize size);
     }
 }

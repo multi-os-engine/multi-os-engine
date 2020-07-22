@@ -225,27 +225,27 @@ public class ALAsset extends NSObject {
     @Generated
     public interface Block_setImageDataMetadataCompletionBlock {
         @Generated
-        void call_setImageDataMetadataCompletionBlock(NSURL arg0, NSError arg1);
+        void call_setImageDataMetadataCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setVideoAtPathCompletionBlock {
         @Generated
-        void call_setVideoAtPathCompletionBlock(NSURL arg0, NSError arg1);
+        void call_setVideoAtPathCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock {
         @Generated
-        void call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeModifiedImageDataToSavedPhotosAlbumMetadataCompletionBlock(NSURL assetURL, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock {
         @Generated
-        void call_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL arg0, NSError arg1);
+        void call_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL assetURL, NSError error);
     }
 }

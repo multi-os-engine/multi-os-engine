@@ -168,6 +168,6 @@ public class UNNotificationServiceExtension extends NSObject {
     @Generated
     public interface Block_didReceiveNotificationRequestWithContentHandler {
         @Generated
-        void call_didReceiveNotificationRequestWithContentHandler(UNNotificationContent arg0);
+        void call_didReceiveNotificationRequestWithContentHandler(UNNotificationContent contentToDeliver);
     }
 }

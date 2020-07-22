@@ -202,27 +202,27 @@ public class HMTrigger extends NSObject {
     @Generated
     public interface Block_addActionSetCompletionHandler {
         @Generated
-        void call_addActionSetCompletionHandler(NSError arg0);
+        void call_addActionSetCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enableCompletionHandler {
         @Generated
-        void call_enableCompletionHandler(NSError arg0);
+        void call_enableCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeActionSetCompletionHandler {
         @Generated
-        void call_removeActionSetCompletionHandler(NSError arg0);
+        void call_removeActionSetCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 }

@@ -239,7 +239,7 @@ public class SKMutableTexture extends SKTexture {
     @Generated
     public interface Block_modifyPixelDataWithBlock {
         @Generated
-        void call_modifyPixelDataWithBlock(VoidPtr arg0, @NUInt long arg1);
+        void call_modifyPixelDataWithBlock(VoidPtr pixelData, @NUInt long lengthInBytes);
     }
 
     @Generated

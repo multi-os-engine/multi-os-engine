@@ -174,7 +174,7 @@ public class CMAltimeter extends NSObject {
     @Generated
     public interface Block_startRelativeAltitudeUpdatesToQueueWithHandler {
         @Generated
-        void call_startRelativeAltitudeUpdatesToQueueWithHandler(CMAltitudeData arg0, NSError arg1);
+        void call_startRelativeAltitudeUpdatesToQueueWithHandler(CMAltitudeData altitudeData, NSError error);
     }
 
     @Generated

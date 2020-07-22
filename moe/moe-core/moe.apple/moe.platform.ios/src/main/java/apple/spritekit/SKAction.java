@@ -617,7 +617,7 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_customActionWithDurationActionBlock {
         @Generated
-        void call_customActionWithDurationActionBlock(SKNode arg0, @NFloat double arg1);
+        void call_customActionWithDurationActionBlock(SKNode node, @NFloat double elapsedTime);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -638,14 +638,14 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_setTimingFunction {
         @Generated
-        float call_setTimingFunction(float arg0);
+        float call_setTimingFunction(float time);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_timingFunction_ret {
         @Generated
-        float call_timingFunction_ret(float arg0);
+        float call_timingFunction_ret(float time);
     }
 
     @Generated

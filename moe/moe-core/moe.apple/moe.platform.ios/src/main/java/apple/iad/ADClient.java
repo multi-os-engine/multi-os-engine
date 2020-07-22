@@ -187,20 +187,21 @@ public class ADClient extends NSObject {
     @Generated
     public interface Block_determineAppInstallationAttributionWithCompletionHandler {
         @Generated
-        void call_determineAppInstallationAttributionWithCompletionHandler(boolean arg0);
+        void call_determineAppInstallationAttributionWithCompletionHandler(boolean appInstallationWasAttributedToiAd);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_lookupAdConversionDetails {
         @Generated
-        void call_lookupAdConversionDetails(NSDate arg0, NSDate arg1);
+        void call_lookupAdConversionDetails(NSDate appPurchaseDate, NSDate iAdImpressionDate);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAttributionDetailsWithBlock {
         @Generated
-        void call_requestAttributionDetailsWithBlock(NSDictionary<String, ? extends NSObject> arg0, NSError arg1);
+        void call_requestAttributionDetailsWithBlock(NSDictionary<String, ? extends NSObject> attributionDetails,
+                NSError error);
     }
 }

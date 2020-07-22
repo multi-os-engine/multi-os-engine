@@ -119,14 +119,15 @@ public interface WKUIDelegate {
     @Generated
     public interface Block_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler {
         @Generated
-        void call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler(boolean arg0);
+        void call_webViewRunJavaScriptConfirmPanelWithMessageInitiatedByFrameCompletionHandler(boolean result);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler {
         @Generated
-        void call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(String arg0);
+        void call_webViewRunJavaScriptTextInputPanelWithPromptDefaultTextInitiatedByFrameCompletionHandler(
+                String result);
     }
 
     @Generated
@@ -142,7 +143,7 @@ public interface WKUIDelegate {
     @Generated
     public interface Block_webViewContextMenuConfigurationForElementCompletionHandler {
         @Generated
-        void call_webViewContextMenuConfigurationForElementCompletionHandler(UIContextMenuConfiguration arg0);
+        void call_webViewContextMenuConfigurationForElementCompletionHandler(UIContextMenuConfiguration configuration);
     }
 
     @Generated

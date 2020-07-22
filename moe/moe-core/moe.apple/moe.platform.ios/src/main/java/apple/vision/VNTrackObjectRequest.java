@@ -112,7 +112,7 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
     @Generated
     public interface Block_initWithDetectedObjectObservationCompletionHandler {
         @Generated
-        void call_initWithDetectedObjectObservationCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithDetectedObjectObservationCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated

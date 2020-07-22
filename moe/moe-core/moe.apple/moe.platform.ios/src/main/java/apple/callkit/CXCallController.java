@@ -173,7 +173,7 @@ public class CXCallController extends NSObject {
     @Generated
     public interface Block_requestTransactionCompletion {
         @Generated
-        void call_requestTransactionCompletion(NSError arg0);
+        void call_requestTransactionCompletion(NSError error);
     }
 
     @Generated
@@ -185,7 +185,7 @@ public class CXCallController extends NSObject {
     @Generated
     public interface Block_requestTransactionWithActionCompletion {
         @Generated
-        void call_requestTransactionWithActionCompletion(NSError arg0);
+        void call_requestTransactionWithActionCompletion(NSError error);
     }
 
     @Generated
@@ -197,6 +197,6 @@ public class CXCallController extends NSObject {
     @Generated
     public interface Block_requestTransactionWithActionsCompletion {
         @Generated
-        void call_requestTransactionWithActionsCompletion(NSError arg0);
+        void call_requestTransactionWithActionsCompletion(NSError error);
     }
 }

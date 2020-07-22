@@ -182,13 +182,13 @@ public class MKMapSnapshotter extends NSObject {
     @Generated
     public interface Block_startWithCompletionHandler {
         @Generated
-        void call_startWithCompletionHandler(MKMapSnapshot arg0, NSError arg1);
+        void call_startWithCompletionHandler(MKMapSnapshot snapshot, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startWithQueueCompletionHandler {
         @Generated
-        void call_startWithQueueCompletionHandler(MKMapSnapshot arg0, NSError arg1);
+        void call_startWithQueueCompletionHandler(MKMapSnapshot snapshot, NSError error);
     }
 }

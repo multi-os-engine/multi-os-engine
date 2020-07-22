@@ -186,6 +186,6 @@ public class MPRemoteCommand extends NSObject {
     public interface Block_addTargetWithHandler {
         @Generated
         @NInt
-        long call_addTargetWithHandler(MPRemoteCommandEvent arg0);
+        long call_addTargetWithHandler(MPRemoteCommandEvent event);
     }
 }

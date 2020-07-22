@@ -93,7 +93,7 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
     @Generated
     public interface Block_completeRequestWithSelectedCredentialCompletionHandler {
         @Generated
-        void call_completeRequestWithSelectedCredentialCompletionHandler(boolean arg0);
+        void call_completeRequestWithSelectedCredentialCompletionHandler(boolean expired);
     }
 
     @Generated

@@ -175,13 +175,13 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     @Generated
     public interface Block_readDataWithCompletionHandler {
         @Generated
-        void call_readDataWithCompletionHandler(NSData arg0, NSError arg1);
+        void call_readDataWithCompletionHandler(NSData data, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDataWithCompletionHandler {
         @Generated
-        void call_writeDataWithCompletionHandler(NSError arg0);
+        void call_writeDataWithCompletionHandler(NSError error);
     }
 }

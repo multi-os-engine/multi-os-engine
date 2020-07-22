@@ -94,7 +94,7 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     @Generated
     public interface Block_finishRouteWithWorkoutMetadataCompletion {
         @Generated
-        void call_finishRouteWithWorkoutMetadataCompletion(HKWorkoutRoute arg0, NSError arg1);
+        void call_finishRouteWithWorkoutMetadataCompletion(HKWorkoutRoute workoutRoute, NSError error);
     }
 
     @Generated
@@ -119,7 +119,7 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     @Generated
     public interface Block_insertRouteDataCompletion {
         @Generated
-        void call_insertRouteDataCompletion(boolean arg0, NSError arg1);
+        void call_insertRouteDataCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -179,6 +179,6 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     @Generated
     public interface Block_addMetadataCompletion {
         @Generated
-        void call_addMetadataCompletion(boolean arg0, NSError arg1);
+        void call_addMetadataCompletion(boolean success, NSError error);
     }
 }

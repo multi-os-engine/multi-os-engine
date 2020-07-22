@@ -234,41 +234,41 @@ public class CSSearchableIndex extends NSObject {
     @Generated
     public interface Block_deleteAllSearchableItemsWithCompletionHandler {
         @Generated
-        void call_deleteAllSearchableItemsWithCompletionHandler(NSError arg0);
+        void call_deleteAllSearchableItemsWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSearchableItemsWithDomainIdentifiersCompletionHandler {
         @Generated
-        void call_deleteSearchableItemsWithDomainIdentifiersCompletionHandler(NSError arg0);
+        void call_deleteSearchableItemsWithDomainIdentifiersCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSearchableItemsWithIdentifiersCompletionHandler {
         @Generated
-        void call_deleteSearchableItemsWithIdentifiersCompletionHandler(NSError arg0);
+        void call_deleteSearchableItemsWithIdentifiersCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endIndexBatchWithClientStateCompletionHandler {
         @Generated
-        void call_endIndexBatchWithClientStateCompletionHandler(NSError arg0);
+        void call_endIndexBatchWithClientStateCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchLastClientStateWithCompletionHandler {
         @Generated
-        void call_fetchLastClientStateWithCompletionHandler(NSData arg0, NSError arg1);
+        void call_fetchLastClientStateWithCompletionHandler(NSData clientState, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexSearchableItemsCompletionHandler {
         @Generated
-        void call_indexSearchableItemsCompletionHandler(NSError arg0);
+        void call_indexSearchableItemsCompletionHandler(NSError error);
     }
 }

@@ -166,7 +166,8 @@ public class AVContentKeySession extends NSObject {
     @Generated
     public interface Block_makeSecureTokenForExpirationDateOfPersistableContentKeyCompletionHandler {
         @Generated
-        void call_makeSecureTokenForExpirationDateOfPersistableContentKeyCompletionHandler(NSData arg0, NSError arg1);
+        void call_makeSecureTokenForExpirationDateOfPersistableContentKeyCompletionHandler(NSData secureTokenData,
+                NSError error);
     }
 
     @Generated
@@ -239,7 +240,8 @@ public class AVContentKeySession extends NSObject {
     @Generated
     public interface Block_invalidateAllPersistableContentKeysForAppOptionsCompletionHandler {
         @Generated
-        void call_invalidateAllPersistableContentKeysForAppOptionsCompletionHandler(NSData arg0, NSError arg1);
+        void call_invalidateAllPersistableContentKeysForAppOptionsCompletionHandler(NSData secureTokenData,
+                NSError error);
     }
 
     @Generated
@@ -252,6 +254,6 @@ public class AVContentKeySession extends NSObject {
     @Generated
     public interface Block_invalidatePersistableContentKeyOptionsCompletionHandler {
         @Generated
-        void call_invalidatePersistableContentKeyOptionsCompletionHandler(NSData arg0, NSError arg1);
+        void call_invalidatePersistableContentKeyOptionsCompletionHandler(NSData secureTokenData, NSError error);
     }
 }

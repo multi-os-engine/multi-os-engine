@@ -205,21 +205,21 @@ public class HMHomeManager extends NSObject {
     @Generated
     public interface Block_addHomeWithNameCompletionHandler {
         @Generated
-        void call_addHomeWithNameCompletionHandler(HMHome arg0, NSError arg1);
+        void call_addHomeWithNameCompletionHandler(HMHome home, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeHomeCompletionHandler {
         @Generated
-        void call_removeHomeCompletionHandler(NSError arg0);
+        void call_removeHomeCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updatePrimaryHomeCompletionHandler {
         @Generated
-        void call_updatePrimaryHomeCompletionHandler(NSError arg0);
+        void call_updatePrimaryHomeCompletionHandler(NSError error);
     }
 
     @Generated

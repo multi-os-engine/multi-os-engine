@@ -584,7 +584,7 @@ public class WKWebView extends UIView {
     @Generated
     public interface Block_evaluateJavaScriptCompletionHandler {
         @Generated
-        void call_evaluateJavaScriptCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+        void call_evaluateJavaScriptCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError error);
     }
 
     @Generated
@@ -606,6 +606,6 @@ public class WKWebView extends UIView {
     @Generated
     public interface Block_takeSnapshotWithConfigurationCompletionHandler {
         @Generated
-        void call_takeSnapshotWithConfigurationCompletionHandler(UIImage arg0, NSError arg1);
+        void call_takeSnapshotWithConfigurationCompletionHandler(UIImage snapshotImage, NSError error);
     }
 }

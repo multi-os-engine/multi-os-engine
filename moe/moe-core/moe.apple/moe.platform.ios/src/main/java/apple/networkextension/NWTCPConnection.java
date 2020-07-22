@@ -225,20 +225,20 @@ public class NWTCPConnection extends NSObject {
     @Generated
     public interface Block_readLengthCompletionHandler {
         @Generated
-        void call_readLengthCompletionHandler(NSData arg0, NSError arg1);
+        void call_readLengthCompletionHandler(NSData data, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readMinimumLengthMaximumLengthCompletionHandler {
         @Generated
-        void call_readMinimumLengthMaximumLengthCompletionHandler(NSData arg0, NSError arg1);
+        void call_readMinimumLengthMaximumLengthCompletionHandler(NSData data, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeCompletionHandler {
         @Generated
-        void call_writeCompletionHandler(NSError arg0);
+        void call_writeCompletionHandler(NSError error);
     }
 }

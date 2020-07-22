@@ -222,29 +222,30 @@ public class PHLivePhotoEditingContext extends NSObject {
     @Generated
     public interface Block_frameProcessor_ret {
         @Generated
-        CIImage call_frameProcessor_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @ReferenceInfo(type = NSError.class) Ptr<NSError> arg1);
+        CIImage call_frameProcessor_ret(@Mapped(ObjCObjectMapper.class) Object frame,
+                @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler {
         @Generated
-        void call_prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler(PHLivePhoto arg0, NSError arg1);
+        void call_prepareLivePhotoForPlaybackWithTargetSizeOptionsCompletionHandler(PHLivePhoto livePhoto,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveLivePhotoToOutputOptionsCompletionHandler {
         @Generated
-        void call_saveLivePhotoToOutputOptionsCompletionHandler(boolean arg0, NSError arg1);
+        void call_saveLivePhotoToOutputOptionsCompletionHandler(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFrameProcessor {
         @Generated
-        CIImage call_setFrameProcessor(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @ReferenceInfo(type = NSError.class) Ptr<NSError> arg1);
+        CIImage call_setFrameProcessor(@Mapped(ObjCObjectMapper.class) Object frame,
+                @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
 }

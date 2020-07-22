@@ -305,7 +305,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
     @Generated
     public interface Block_writeToURLOptionsDelegateProgressHandler {
         @Generated
-        void call_writeToURLOptionsDelegateProgressHandler(float arg0, NSError arg1, BoolPtr arg2);
+        void call_writeToURLOptionsDelegateProgressHandler(float totalProgress, NSError error, BoolPtr stop);
     }
 
     @Generated

@@ -326,7 +326,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     @Generated
     public interface Block_getContinuationStreamsWithCompletionHandler {
         @Generated
-        void call_getContinuationStreamsWithCompletionHandler(NSInputStream arg0, NSOutputStream arg1, NSError arg2);
+        void call_getContinuationStreamsWithCompletionHandler(NSInputStream inputStream, NSOutputStream outputStream,
+                NSError error);
     }
 
     @Generated

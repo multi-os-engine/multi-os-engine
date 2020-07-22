@@ -31,7 +31,7 @@ public interface INUpdateMediaAffinityIntentHandling {
     @Generated
     public interface Block_confirmUpdateMediaAffinityCompletion {
         @Generated
-        void call_confirmUpdateMediaAffinityCompletion(INUpdateMediaAffinityIntentResponse arg0);
+        void call_confirmUpdateMediaAffinityCompletion(INUpdateMediaAffinityIntentResponse response);
     }
 
     @Generated
@@ -43,7 +43,7 @@ public interface INUpdateMediaAffinityIntentHandling {
     @Generated
     public interface Block_handleUpdateMediaAffinityCompletion {
         @Generated
-        void call_handleUpdateMediaAffinityCompletion(INUpdateMediaAffinityIntentResponse arg0);
+        void call_handleUpdateMediaAffinityCompletion(INUpdateMediaAffinityIntentResponse response);
     }
 
     @Generated
@@ -58,7 +58,8 @@ public interface INUpdateMediaAffinityIntentHandling {
     @Generated
     public interface Block_resolveAffinityTypeForUpdateMediaAffinityWithCompletion {
         @Generated
-        void call_resolveAffinityTypeForUpdateMediaAffinityWithCompletion(INMediaAffinityTypeResolutionResult arg0);
+        void call_resolveAffinityTypeForUpdateMediaAffinityWithCompletion(
+                INMediaAffinityTypeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -74,6 +75,6 @@ public interface INUpdateMediaAffinityIntentHandling {
     public interface Block_resolveMediaItemsForUpdateMediaAffinityWithCompletion {
         @Generated
         void call_resolveMediaItemsForUpdateMediaAffinityWithCompletion(
-                NSArray<? extends INUpdateMediaAffinityMediaItemResolutionResult> arg0);
+                NSArray<? extends INUpdateMediaAffinityMediaItemResolutionResult> resolutionResults);
     }
 }

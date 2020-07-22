@@ -185,7 +185,7 @@ public class SCNTransformConstraint extends SCNConstraint {
     public interface Block_transformConstraintInWorldSpaceWithBlock {
         @Generated
         @ByValue
-        SCNMatrix4 call_transformConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNMatrix4 arg1);
+        SCNMatrix4 call_transformConstraintInWorldSpaceWithBlock(SCNNode node, @ByValue SCNMatrix4 transform);
     }
 
     @Generated
@@ -199,7 +199,7 @@ public class SCNTransformConstraint extends SCNConstraint {
     public interface Block_orientationConstraintInWorldSpaceWithBlock {
         @Generated
         @ByValue
-        SCNVector4 call_orientationConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNVector4 arg1);
+        SCNVector4 call_orientationConstraintInWorldSpaceWithBlock(SCNNode node, @ByValue SCNVector4 quaternion);
     }
 
     @Generated
@@ -213,6 +213,6 @@ public class SCNTransformConstraint extends SCNConstraint {
     public interface Block_positionConstraintInWorldSpaceWithBlock {
         @Generated
         @ByValue
-        SCNVector3 call_positionConstraintInWorldSpaceWithBlock(SCNNode arg0, @ByValue SCNVector3 arg1);
+        SCNVector3 call_positionConstraintInWorldSpaceWithBlock(SCNNode node, @ByValue SCNVector3 position);
     }
 }

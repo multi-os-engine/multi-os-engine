@@ -85,42 +85,42 @@ public interface INRequestRideIntentHandling {
     @Generated
     public interface Block_confirmRequestRideCompletion {
         @Generated
-        void call_confirmRequestRideCompletion(INRequestRideIntentResponse arg0);
+        void call_confirmRequestRideCompletion(INRequestRideIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleRequestRideCompletion {
         @Generated
-        void call_handleRequestRideCompletion(INRequestRideIntentResponse arg0);
+        void call_handleRequestRideCompletion(INRequestRideIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDropOffLocationForRequestRideWithCompletion {
         @Generated
-        void call_resolveDropOffLocationForRequestRideWithCompletion(INPlacemarkResolutionResult arg0);
+        void call_resolveDropOffLocationForRequestRideWithCompletion(INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePartySizeForRequestRideWithCompletion {
         @Generated
-        void call_resolvePartySizeForRequestRideWithCompletion(INIntegerResolutionResult arg0);
+        void call_resolvePartySizeForRequestRideWithCompletion(INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePickupLocationForRequestRideWithCompletion {
         @Generated
-        void call_resolvePickupLocationForRequestRideWithCompletion(INPlacemarkResolutionResult arg0);
+        void call_resolvePickupLocationForRequestRideWithCompletion(INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRideOptionNameForRequestRideWithCompletion {
         @Generated
-        void call_resolveRideOptionNameForRequestRideWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveRideOptionNameForRequestRideWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -135,6 +135,7 @@ public interface INRequestRideIntentHandling {
     @Generated
     public interface Block_resolveScheduledPickupTimeForRequestRideWithCompletion {
         @Generated
-        void call_resolveScheduledPickupTimeForRequestRideWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveScheduledPickupTimeForRequestRideWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 }

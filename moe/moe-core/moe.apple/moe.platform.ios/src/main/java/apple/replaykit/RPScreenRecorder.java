@@ -243,21 +243,21 @@ public class RPScreenRecorder extends NSObject {
     @Generated
     public interface Block_startRecordingWithHandler {
         @Generated
-        void call_startRecordingWithHandler(NSError arg0);
+        void call_startRecordingWithHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startRecordingWithMicrophoneEnabledHandler {
         @Generated
-        void call_startRecordingWithMicrophoneEnabledHandler(NSError arg0);
+        void call_startRecordingWithMicrophoneEnabledHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_stopRecordingWithHandler {
         @Generated
-        void call_stopRecordingWithHandler(RPPreviewViewController arg0, NSError arg1);
+        void call_stopRecordingWithHandler(RPPreviewViewController previewViewController, NSError error);
     }
 
     @Generated
@@ -279,14 +279,15 @@ public class RPScreenRecorder extends NSObject {
     @Generated
     public interface Block_startCaptureWithHandlerCompletionHandler_0 {
         @Generated
-        void call_startCaptureWithHandlerCompletionHandler_0(CMSampleBufferRef arg0, @NInt long arg1, NSError arg2);
+        void call_startCaptureWithHandlerCompletionHandler_0(CMSampleBufferRef sampleBuffer, @NInt long bufferType,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startCaptureWithHandlerCompletionHandler_1 {
         @Generated
-        void call_startCaptureWithHandlerCompletionHandler_1(NSError arg0);
+        void call_startCaptureWithHandlerCompletionHandler_1(NSError error);
     }
 
     @Generated
@@ -298,6 +299,6 @@ public class RPScreenRecorder extends NSObject {
     @Generated
     public interface Block_stopCaptureWithHandler {
         @Generated
-        void call_stopCaptureWithHandler(NSError arg0);
+        void call_stopCaptureWithHandler(NSError error);
     }
 }

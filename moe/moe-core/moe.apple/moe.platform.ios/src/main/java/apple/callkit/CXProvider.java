@@ -213,6 +213,6 @@ public class CXProvider extends NSObject {
     @Generated
     public interface Block_reportNewIncomingCallWithUUIDUpdateCompletion {
         @Generated
-        void call_reportNewIncomingCallWithUUIDUpdateCompletion(NSError arg0);
+        void call_reportNewIncomingCallWithUUIDUpdateCompletion(NSError error);
     }
 }

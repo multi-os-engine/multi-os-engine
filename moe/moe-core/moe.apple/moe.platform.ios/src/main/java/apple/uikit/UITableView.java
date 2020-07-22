@@ -927,7 +927,7 @@ public class UITableView extends UIScrollView
     @Generated
     public interface Block_performBatchUpdatesCompletion_1 {
         @Generated
-        void call_performBatchUpdatesCompletion_1(boolean arg0);
+        void call_performBatchUpdatesCompletion_1(boolean finished);
     }
 
     @Generated

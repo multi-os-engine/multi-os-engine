@@ -60,13 +60,13 @@ public interface INGetRideStatusIntentHandling {
     @Generated
     public interface Block_confirmGetRideStatusCompletion {
         @Generated
-        void call_confirmGetRideStatusCompletion(INGetRideStatusIntentResponse arg0);
+        void call_confirmGetRideStatusCompletion(INGetRideStatusIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleGetRideStatusCompletion {
         @Generated
-        void call_handleGetRideStatusCompletion(INGetRideStatusIntentResponse arg0);
+        void call_handleGetRideStatusCompletion(INGetRideStatusIntentResponse response);
     }
 }

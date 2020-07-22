@@ -274,8 +274,8 @@ public class PHAsset extends PHObject {
     @Generated
     public interface Block_requestContentEditingInputWithOptionsCompletionHandler {
         @Generated
-        void call_requestContentEditingInputWithOptionsCompletionHandler(PHContentEditingInput arg0,
-                NSDictionary<?, ?> arg1);
+        void call_requestContentEditingInputWithOptionsCompletionHandler(PHContentEditingInput contentEditingInput,
+                NSDictionary<?, ?> info);
     }
 
     @Generated

@@ -214,20 +214,21 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Generated
     public interface Block_loadImageWithCompletionHandler {
         @Generated
-        void call_loadImageWithCompletionHandler(UIImage arg0, NSError arg1);
+        void call_loadImageWithCompletionHandler(UIImage image, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadLeaderboardSetsWithCompletionHandler {
         @Generated
-        void call_loadLeaderboardSetsWithCompletionHandler(NSArray<? extends GKLeaderboardSet> arg0, NSError arg1);
+        void call_loadLeaderboardSetsWithCompletionHandler(NSArray<? extends GKLeaderboardSet> leaderboardSets,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadLeaderboardsWithCompletionHandler {
         @Generated
-        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> arg0, NSError arg1);
+        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> leaderboards, NSError error);
     }
 }

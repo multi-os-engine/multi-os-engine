@@ -92,7 +92,8 @@ public class UIContextMenuConfiguration extends NSObject {
     @Generated
     public interface Block_configurationWithIdentifierPreviewProviderActionProvider_2 {
         @Generated
-        UIMenu call_configurationWithIdentifierPreviewProviderActionProvider_2(NSArray<? extends UIMenuElement> arg0);
+        UIMenu call_configurationWithIdentifierPreviewProviderActionProvider_2(
+                NSArray<? extends UIMenuElement> suggestedActions);
     }
 
     @Generated

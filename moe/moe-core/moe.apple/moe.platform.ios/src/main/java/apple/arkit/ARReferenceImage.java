@@ -182,7 +182,7 @@ public class ARReferenceImage extends NSObject {
     @Generated
     public interface Block_validateWithCompletionHandler {
         @Generated
-        void call_validateWithCompletionHandler(NSError arg0);
+        void call_validateWithCompletionHandler(NSError error);
     }
 
     @Generated

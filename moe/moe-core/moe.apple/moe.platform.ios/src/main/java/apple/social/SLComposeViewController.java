@@ -226,13 +226,13 @@ public class SLComposeViewController extends UIViewController {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(@NInt long arg0);
+        void call_completionHandler_ret(@NInt long result);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(@NInt long arg0);
+        void call_setCompletionHandler(@NInt long result);
     }
 }

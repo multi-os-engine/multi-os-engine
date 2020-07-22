@@ -93,14 +93,15 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     public interface Block_URLSessionTaskDidReceiveChallengeCompletionHandler {
         @Generated
-        void call_URLSessionTaskDidReceiveChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
+        void call_URLSessionTaskDidReceiveChallengeCompletionHandler(@NInt long disposition,
+                NSURLCredential credential);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_URLSessionTaskNeedNewBodyStream {
         @Generated
-        void call_URLSessionTaskNeedNewBodyStream(NSInputStream arg0);
+        void call_URLSessionTaskNeedNewBodyStream(NSInputStream bodyStream);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -123,7 +124,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     public interface Block_URLSessionTaskWillBeginDelayedRequestCompletionHandler {
         @Generated
-        void call_URLSessionTaskWillBeginDelayedRequestCompletionHandler(@NInt long arg0, NSURLRequest arg1);
+        void call_URLSessionTaskWillBeginDelayedRequestCompletionHandler(@NInt long disposition,
+                NSURLRequest newRequest);
     }
 
     @Generated

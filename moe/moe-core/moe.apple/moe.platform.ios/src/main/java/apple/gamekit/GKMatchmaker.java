@@ -243,28 +243,28 @@ public class GKMatchmaker extends NSObject {
     @Generated
     public interface Block_addPlayersToMatchMatchRequestCompletionHandler {
         @Generated
-        void call_addPlayersToMatchMatchRequestCompletionHandler(NSError arg0);
+        void call_addPlayersToMatchMatchRequestCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findMatchForRequestWithCompletionHandler {
         @Generated
-        void call_findMatchForRequestWithCompletionHandler(GKMatch arg0, NSError arg1);
+        void call_findMatchForRequestWithCompletionHandler(GKMatch match, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findPlayersForHostedMatchRequestWithCompletionHandler {
         @Generated
-        void call_findPlayersForHostedMatchRequestWithCompletionHandler(NSArray<String> arg0, NSError arg1);
+        void call_findPlayersForHostedMatchRequestWithCompletionHandler(NSArray<String> playerIDs, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findPlayersForHostedRequestWithCompletionHandler {
         @Generated
-        void call_findPlayersForHostedRequestWithCompletionHandler(NSArray<? extends GKPlayer> arg0, NSError arg1);
+        void call_findPlayersForHostedRequestWithCompletionHandler(NSArray<? extends GKPlayer> players, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -278,21 +278,21 @@ public class GKMatchmaker extends NSObject {
     @Generated
     public interface Block_matchForInviteCompletionHandler {
         @Generated
-        void call_matchForInviteCompletionHandler(GKMatch arg0, NSError arg1);
+        void call_matchForInviteCompletionHandler(GKMatch match, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_queryActivityWithCompletionHandler {
         @Generated
-        void call_queryActivityWithCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_queryActivityWithCompletionHandler(@NInt long activity, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_queryPlayerGroupActivityWithCompletionHandler {
         @Generated
-        void call_queryPlayerGroupActivityWithCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_queryPlayerGroupActivityWithCompletionHandler(@NInt long activity, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -306,13 +306,13 @@ public class GKMatchmaker extends NSObject {
     @Generated
     public interface Block_startBrowsingForNearbyPlayersWithHandler {
         @Generated
-        void call_startBrowsingForNearbyPlayersWithHandler(GKPlayer arg0, boolean arg1);
+        void call_startBrowsingForNearbyPlayersWithHandler(GKPlayer player, boolean reachable);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startBrowsingForNearbyPlayersWithReachableHandler {
         @Generated
-        void call_startBrowsingForNearbyPlayersWithReachableHandler(String arg0, boolean arg1);
+        void call_startBrowsingForNearbyPlayersWithReachableHandler(String playerID, boolean reachable);
     }
 }

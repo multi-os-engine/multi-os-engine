@@ -86,7 +86,7 @@ public class VNRequest extends NSObject implements NSCopying {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(VNRequest arg0, NSError arg1);
+        void call_completionHandler_ret(VNRequest request, NSError error);
     }
 
     @Generated
@@ -121,7 +121,7 @@ public class VNRequest extends NSObject implements NSCopying {
     @Generated
     public interface Block_initWithCompletionHandler {
         @Generated
-        void call_initWithCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated

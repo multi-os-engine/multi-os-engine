@@ -204,6 +204,6 @@ public class AVAudioUnit extends AVAudioNode {
     @Generated
     public interface Block_instantiateWithComponentDescriptionOptionsCompletionHandler {
         @Generated
-        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AVAudioUnit arg0, NSError arg1);
+        void call_instantiateWithComponentDescriptionOptionsCompletionHandler(AVAudioUnit audioUnit, NSError error);
     }
 }

@@ -129,7 +129,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_executeAsyncWithSourceImagesCompletionHandler {
         @Generated
-        void call_executeAsyncWithSourceImagesCompletionHandler(MPSImage arg0, NSError arg1);
+        void call_executeAsyncWithSourceImagesCompletionHandler(MPSImage result, NSError error);
     }
 
     @Generated

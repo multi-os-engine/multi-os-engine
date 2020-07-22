@@ -161,6 +161,6 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @Generated
     public interface Block_cancelByProducingResumeData {
         @Generated
-        void call_cancelByProducingResumeData(NSData arg0);
+        void call_cancelByProducingResumeData(NSData resumeData);
     }
 }

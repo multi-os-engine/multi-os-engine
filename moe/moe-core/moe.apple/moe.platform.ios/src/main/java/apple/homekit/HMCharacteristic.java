@@ -215,27 +215,27 @@ public class HMCharacteristic extends NSObject {
     @Generated
     public interface Block_enableNotificationCompletionHandler {
         @Generated
-        void call_enableNotificationCompletionHandler(NSError arg0);
+        void call_enableNotificationCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readValueWithCompletionHandler {
         @Generated
-        void call_readValueWithCompletionHandler(NSError arg0);
+        void call_readValueWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateAuthorizationDataCompletionHandler {
         @Generated
-        void call_updateAuthorizationDataCompletionHandler(NSError arg0);
+        void call_updateAuthorizationDataCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeValueCompletionHandler {
         @Generated
-        void call_writeValueCompletionHandler(NSError arg0);
+        void call_writeValueCompletionHandler(NSError error);
     }
 }

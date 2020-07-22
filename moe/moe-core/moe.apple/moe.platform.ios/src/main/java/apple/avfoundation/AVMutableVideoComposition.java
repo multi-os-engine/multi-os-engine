@@ -251,7 +251,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     @Generated
     public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandler {
         @Generated
-        void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest arg0);
+        void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest request);
     }
 
     @Generated

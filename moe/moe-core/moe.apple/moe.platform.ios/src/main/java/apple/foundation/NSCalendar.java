@@ -490,7 +490,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock {
         @Generated
-        void call_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock(NSDate arg0, boolean arg1,
-                BoolPtr arg2);
+        void call_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock(NSDate date, boolean exactMatch,
+                BoolPtr stop);
     }
 }

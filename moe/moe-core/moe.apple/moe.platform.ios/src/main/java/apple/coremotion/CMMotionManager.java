@@ -321,34 +321,34 @@ public class CMMotionManager extends NSObject {
     @Generated
     public interface Block_startAccelerometerUpdatesToQueueWithHandler {
         @Generated
-        void call_startAccelerometerUpdatesToQueueWithHandler(CMAccelerometerData arg0, NSError arg1);
+        void call_startAccelerometerUpdatesToQueueWithHandler(CMAccelerometerData accelerometerData, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startDeviceMotionUpdatesToQueueWithHandler {
         @Generated
-        void call_startDeviceMotionUpdatesToQueueWithHandler(CMDeviceMotion arg0, NSError arg1);
+        void call_startDeviceMotionUpdatesToQueueWithHandler(CMDeviceMotion motion, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler {
         @Generated
-        void call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(CMDeviceMotion arg0, NSError arg1);
+        void call_startDeviceMotionUpdatesUsingReferenceFrameToQueueWithHandler(CMDeviceMotion motion, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startGyroUpdatesToQueueWithHandler {
         @Generated
-        void call_startGyroUpdatesToQueueWithHandler(CMGyroData arg0, NSError arg1);
+        void call_startGyroUpdatesToQueueWithHandler(CMGyroData gyroData, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startMagnetometerUpdatesToQueueWithHandler {
         @Generated
-        void call_startMagnetometerUpdatesToQueueWithHandler(CMMagnetometerData arg0, NSError arg1);
+        void call_startMagnetometerUpdatesToQueueWithHandler(CMMagnetometerData magnetometerData, NSError error);
     }
 }

@@ -107,8 +107,8 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Generated
     public interface Block_initWithActivationHandler {
         @Generated
-        void call_initWithActivationHandler(UISpringLoadedInteraction arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        void call_initWithActivationHandler(UISpringLoadedInteraction interaction,
+                @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     @Generated
@@ -122,8 +122,8 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Generated
     public interface Block_initWithInteractionBehaviorInteractionEffectActivationHandler {
         @Generated
-        void call_initWithInteractionBehaviorInteractionEffectActivationHandler(UISpringLoadedInteraction arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        void call_initWithInteractionBehaviorInteractionEffectActivationHandler(UISpringLoadedInteraction interaction,
+                @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     @Generated

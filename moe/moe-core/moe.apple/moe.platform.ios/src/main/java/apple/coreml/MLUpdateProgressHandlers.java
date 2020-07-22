@@ -101,14 +101,14 @@ public class MLUpdateProgressHandlers extends NSObject {
     @Generated
     public interface Block_initForEventsProgressHandlerCompletionHandler_1 {
         @Generated
-        void call_initForEventsProgressHandlerCompletionHandler_1(MLUpdateContext arg0);
+        void call_initForEventsProgressHandlerCompletionHandler_1(MLUpdateContext context);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initForEventsProgressHandlerCompletionHandler_2 {
         @Generated
-        void call_initForEventsProgressHandlerCompletionHandler_2(MLUpdateContext arg0);
+        void call_initForEventsProgressHandlerCompletionHandler_2(MLUpdateContext context);
     }
 
     @Generated

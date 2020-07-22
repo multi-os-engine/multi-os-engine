@@ -279,8 +279,8 @@ public class HKCorrelationQuery extends HKQuery {
     @Generated
     public interface Block_initWithTypePredicateSamplePredicatesCompletion {
         @Generated
-        void call_initWithTypePredicateSamplePredicatesCompletion(HKCorrelationQuery arg0,
-                NSArray<? extends HKCorrelation> arg1, NSError arg2);
+        void call_initWithTypePredicateSamplePredicatesCompletion(HKCorrelationQuery query,
+                NSArray<? extends HKCorrelation> correlations, NSError error);
     }
 
     @Generated

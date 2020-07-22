@@ -204,34 +204,34 @@ public class ACAccountStore extends NSObject {
     @Generated
     public interface Block_removeAccountWithCompletionHandler {
         @Generated
-        void call_removeAccountWithCompletionHandler(boolean arg0, NSError arg1);
+        void call_removeAccountWithCompletionHandler(boolean success, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_renewCredentialsForAccountCompletion {
         @Generated
-        void call_renewCredentialsForAccountCompletion(@NInt long arg0, NSError arg1);
+        void call_renewCredentialsForAccountCompletion(@NInt long renewResult, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAccessToAccountsWithTypeOptionsCompletion {
         @Generated
-        void call_requestAccessToAccountsWithTypeOptionsCompletion(boolean arg0, NSError arg1);
+        void call_requestAccessToAccountsWithTypeOptionsCompletion(boolean granted, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAccessToAccountsWithTypeWithCompletionHandler {
         @Generated
-        void call_requestAccessToAccountsWithTypeWithCompletionHandler(boolean arg0, NSError arg1);
+        void call_requestAccessToAccountsWithTypeWithCompletionHandler(boolean granted, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveAccountWithCompletionHandler {
         @Generated
-        void call_saveAccountWithCompletionHandler(boolean arg0, NSError arg1);
+        void call_saveAccountWithCompletionHandler(boolean success, NSError error);
     }
 }

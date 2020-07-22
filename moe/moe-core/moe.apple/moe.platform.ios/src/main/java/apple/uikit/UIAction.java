@@ -53,7 +53,7 @@ public class UIAction extends UIMenuElement {
     @Generated
     public interface Block_actionWithTitleImageIdentifierHandler {
         @Generated
-        void call_actionWithTitleImageIdentifierHandler(UIAction arg0);
+        void call_actionWithTitleImageIdentifierHandler(UIAction action);
     }
 
     @Generated

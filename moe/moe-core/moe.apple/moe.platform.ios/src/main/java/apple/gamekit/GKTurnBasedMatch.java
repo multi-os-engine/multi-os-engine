@@ -333,119 +333,119 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     public interface Block_acceptInviteWithCompletionHandler {
         @Generated
-        void call_acceptInviteWithCompletionHandler(GKTurnBasedMatch arg0, NSError arg1);
+        void call_acceptInviteWithCompletionHandler(GKTurnBasedMatch match, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_declineInviteWithCompletionHandler {
         @Generated
-        void call_declineInviteWithCompletionHandler(NSError arg0);
+        void call_declineInviteWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endMatchInTurnWithMatchDataCompletionHandler {
         @Generated
-        void call_endMatchInTurnWithMatchDataCompletionHandler(NSError arg0);
+        void call_endMatchInTurnWithMatchDataCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler {
         @Generated
-        void call_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler(NSError arg0);
+        void call_endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endTurnWithNextParticipantMatchDataCompletionHandler {
         @Generated
-        void call_endTurnWithNextParticipantMatchDataCompletionHandler(NSError arg0);
+        void call_endTurnWithNextParticipantMatchDataCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler {
         @Generated
-        void call_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler(NSError arg0);
+        void call_endTurnWithNextParticipantsTurnTimeoutMatchDataCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findMatchForRequestWithCompletionHandler {
         @Generated
-        void call_findMatchForRequestWithCompletionHandler(GKTurnBasedMatch arg0, NSError arg1);
+        void call_findMatchForRequestWithCompletionHandler(GKTurnBasedMatch match, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMatchDataWithCompletionHandler {
         @Generated
-        void call_loadMatchDataWithCompletionHandler(NSData arg0, NSError arg1);
+        void call_loadMatchDataWithCompletionHandler(NSData matchData, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMatchWithIDWithCompletionHandler {
         @Generated
-        void call_loadMatchWithIDWithCompletionHandler(GKTurnBasedMatch arg0, NSError arg1);
+        void call_loadMatchWithIDWithCompletionHandler(GKTurnBasedMatch match, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMatchesWithCompletionHandler {
         @Generated
-        void call_loadMatchesWithCompletionHandler(NSArray<? extends GKTurnBasedMatch> arg0, NSError arg1);
+        void call_loadMatchesWithCompletionHandler(NSArray<? extends GKTurnBasedMatch> matches, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler {
         @Generated
-        void call_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler(NSError arg0);
+        void call_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler {
         @Generated
-        void call_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler(NSError arg0);
+        void call_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_participantQuitOutOfTurnWithOutcomeWithCompletionHandler {
         @Generated
-        void call_participantQuitOutOfTurnWithOutcomeWithCompletionHandler(NSError arg0);
+        void call_participantQuitOutOfTurnWithOutcomeWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_rematchWithCompletionHandler {
         @Generated
-        void call_rematchWithCompletionHandler(GKTurnBasedMatch arg0, NSError arg1);
+        void call_rematchWithCompletionHandler(GKTurnBasedMatch match, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeWithCompletionHandler {
         @Generated
-        void call_removeWithCompletionHandler(NSError arg0);
+        void call_removeWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveCurrentTurnWithMatchDataCompletionHandler {
         @Generated
-        void call_saveCurrentTurnWithMatchDataCompletionHandler(NSError arg0);
+        void call_saveCurrentTurnWithMatchDataCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveMergedMatchDataWithResolvedExchangesCompletionHandler {
         @Generated
-        void call_saveMergedMatchDataWithResolvedExchangesCompletionHandler(NSError arg0);
+        void call_saveMergedMatchDataWithResolvedExchangesCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -453,13 +453,13 @@ public class GKTurnBasedMatch extends NSObject {
     public interface Block_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler {
         @Generated
         void call_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler(
-                GKTurnBasedExchange arg0, NSError arg1);
+                GKTurnBasedExchange exchange, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler {
         @Generated
-        void call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler(NSError arg0);
+        void call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler(NSError error);
     }
 }

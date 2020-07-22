@@ -178,7 +178,7 @@ public class UIStoryboard extends NSObject {
     @Generated
     public interface Block_instantiateInitialViewControllerWithCreator {
         @Generated
-        UIViewController call_instantiateInitialViewControllerWithCreator(NSCoder arg0);
+        UIViewController call_instantiateInitialViewControllerWithCreator(NSCoder coder);
     }
 
     @Generated
@@ -190,6 +190,6 @@ public class UIStoryboard extends NSObject {
     @Generated
     public interface Block_instantiateViewControllerWithIdentifierCreator {
         @Generated
-        UIViewController call_instantiateViewControllerWithIdentifierCreator(NSCoder arg0);
+        UIViewController call_instantiateViewControllerWithIdentifierCreator(NSCoder coder);
     }
 }

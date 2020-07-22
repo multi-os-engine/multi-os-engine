@@ -471,21 +471,21 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Generated
     public interface Block_seekToDateCompletionHandler {
         @Generated
-        void call_seekToDateCompletionHandler(boolean arg0);
+        void call_seekToDateCompletionHandler(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_seekToTimeCompletionHandler {
         @Generated
-        void call_seekToTimeCompletionHandler(boolean arg0);
+        void call_seekToTimeCompletionHandler(boolean finished);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_seekToTimeToleranceBeforeToleranceAfterCompletionHandler {
         @Generated
-        void call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler(boolean arg0);
+        void call_seekToTimeToleranceBeforeToleranceAfterCompletionHandler(boolean finished);
     }
 
     @Generated

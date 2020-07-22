@@ -277,7 +277,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_handleBindingOfBufferNamedFrequencyUsingBlock {
         @Generated
-        void call_handleBindingOfBufferNamedFrequencyUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                SCNNode arg1, @Mapped(ObjCObjectMapper.class) Object arg2, SCNRenderer arg3);
+        void call_handleBindingOfBufferNamedFrequencyUsingBlock(@Mapped(ObjCObjectMapper.class) Object buffer,
+                SCNNode node, @Mapped(ObjCObjectMapper.class) Object shadable, SCNRenderer renderer);
     }
 }

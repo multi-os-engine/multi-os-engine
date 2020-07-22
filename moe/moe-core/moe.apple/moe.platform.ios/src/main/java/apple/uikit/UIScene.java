@@ -151,7 +151,7 @@ public class UIScene extends UIResponder {
     @Generated
     public interface Block_openURLOptionsCompletionHandler {
         @Generated
-        void call_openURLOptionsCompletionHandler(boolean arg0);
+        void call_openURLOptionsCompletionHandler(boolean success);
     }
 
     @Generated

@@ -58,7 +58,7 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
     @Generated
     public interface Block_windowScenePerformActionForShortcutItemCompletionHandler {
         @Generated
-        void call_windowScenePerformActionForShortcutItemCompletionHandler(boolean arg0);
+        void call_windowScenePerformActionForShortcutItemCompletionHandler(boolean succeeded);
     }
 
     @Generated

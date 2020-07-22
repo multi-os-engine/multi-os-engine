@@ -32,7 +32,7 @@ public interface INSearchForBillsIntentHandling {
     @Generated
     public interface Block_confirmSearchForBillsCompletion {
         @Generated
-        void call_confirmSearchForBillsCompletion(INSearchForBillsIntentResponse arg0);
+        void call_confirmSearchForBillsCompletion(INSearchForBillsIntentResponse response);
     }
 
     @Generated
@@ -44,7 +44,7 @@ public interface INSearchForBillsIntentHandling {
     @Generated
     public interface Block_handleSearchForBillsCompletion {
         @Generated
-        void call_handleSearchForBillsCompletion(INSearchForBillsIntentResponse arg0);
+        void call_handleSearchForBillsCompletion(INSearchForBillsIntentResponse response);
     }
 
     @Generated
@@ -59,7 +59,7 @@ public interface INSearchForBillsIntentHandling {
     @Generated
     public interface Block_resolveBillPayeeForSearchForBillsWithCompletion {
         @Generated
-        void call_resolveBillPayeeForSearchForBillsWithCompletion(INBillPayeeResolutionResult arg0);
+        void call_resolveBillPayeeForSearchForBillsWithCompletion(INBillPayeeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -74,7 +74,7 @@ public interface INSearchForBillsIntentHandling {
     @Generated
     public interface Block_resolveBillTypeForSearchForBillsWithCompletion {
         @Generated
-        void call_resolveBillTypeForSearchForBillsWithCompletion(INBillTypeResolutionResult arg0);
+        void call_resolveBillTypeForSearchForBillsWithCompletion(INBillTypeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -89,7 +89,8 @@ public interface INSearchForBillsIntentHandling {
     @Generated
     public interface Block_resolveDueDateRangeForSearchForBillsWithCompletion {
         @Generated
-        void call_resolveDueDateRangeForSearchForBillsWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveDueDateRangeForSearchForBillsWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -104,7 +105,8 @@ public interface INSearchForBillsIntentHandling {
     @Generated
     public interface Block_resolvePaymentDateRangeForSearchForBillsWithCompletion {
         @Generated
-        void call_resolvePaymentDateRangeForSearchForBillsWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolvePaymentDateRangeForSearchForBillsWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Generated
@@ -119,6 +121,6 @@ public interface INSearchForBillsIntentHandling {
     @Generated
     public interface Block_resolveStatusForSearchForBillsWithCompletion {
         @Generated
-        void call_resolveStatusForSearchForBillsWithCompletion(INPaymentStatusResolutionResult arg0);
+        void call_resolveStatusForSearchForBillsWithCompletion(INPaymentStatusResolutionResult resolutionResult);
     }
 }

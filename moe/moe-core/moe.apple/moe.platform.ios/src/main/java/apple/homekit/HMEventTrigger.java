@@ -220,21 +220,21 @@ public class HMEventTrigger extends HMTrigger {
     @Generated
     public interface Block_addEventCompletionHandler {
         @Generated
-        void call_addEventCompletionHandler(NSError arg0);
+        void call_addEventCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeEventCompletionHandler {
         @Generated
-        void call_removeEventCompletionHandler(NSError arg0);
+        void call_removeEventCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updatePredicateCompletionHandler {
         @Generated
-        void call_updatePredicateCompletionHandler(NSError arg0);
+        void call_updatePredicateCompletionHandler(NSError error);
     }
 
     @Generated
@@ -293,7 +293,7 @@ public class HMEventTrigger extends HMTrigger {
     @Generated
     public interface Block_updateEndEventsCompletionHandler {
         @Generated
-        void call_updateEndEventsCompletionHandler(NSError arg0);
+        void call_updateEndEventsCompletionHandler(NSError error);
     }
 
     @Generated
@@ -305,7 +305,7 @@ public class HMEventTrigger extends HMTrigger {
     @Generated
     public interface Block_updateEventsCompletionHandler {
         @Generated
-        void call_updateEventsCompletionHandler(NSError arg0);
+        void call_updateEventsCompletionHandler(NSError error);
     }
 
     @Generated
@@ -317,7 +317,7 @@ public class HMEventTrigger extends HMTrigger {
     @Generated
     public interface Block_updateExecuteOnceCompletionHandler {
         @Generated
-        void call_updateExecuteOnceCompletionHandler(NSError arg0);
+        void call_updateExecuteOnceCompletionHandler(NSError error);
     }
 
     @Generated
@@ -329,6 +329,6 @@ public class HMEventTrigger extends HMTrigger {
     @Generated
     public interface Block_updateRecurrencesCompletionHandler {
         @Generated
-        void call_updateRecurrencesCompletionHandler(NSError arg0);
+        void call_updateRecurrencesCompletionHandler(NSError error);
     }
 }

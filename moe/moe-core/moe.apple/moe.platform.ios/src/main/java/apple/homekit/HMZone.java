@@ -188,20 +188,20 @@ public class HMZone extends NSObject {
     @Generated
     public interface Block_addRoomCompletionHandler {
         @Generated
-        void call_addRoomCompletionHandler(NSError arg0);
+        void call_addRoomCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeRoomCompletionHandler {
         @Generated
-        void call_removeRoomCompletionHandler(NSError arg0);
+        void call_removeRoomCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 }

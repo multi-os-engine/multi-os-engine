@@ -232,7 +232,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Generated
     public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandler {
         @Generated
-        void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest arg0);
+        void call_videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsynchronousCIImageFilteringRequest request);
     }
 
     @Generated

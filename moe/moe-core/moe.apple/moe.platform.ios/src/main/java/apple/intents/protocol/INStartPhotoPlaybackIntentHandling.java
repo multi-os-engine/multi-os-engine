@@ -86,35 +86,37 @@ public interface INStartPhotoPlaybackIntentHandling {
     @Generated
     public interface Block_confirmStartPhotoPlaybackCompletion {
         @Generated
-        void call_confirmStartPhotoPlaybackCompletion(INStartPhotoPlaybackIntentResponse arg0);
+        void call_confirmStartPhotoPlaybackCompletion(INStartPhotoPlaybackIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartPhotoPlaybackCompletion {
         @Generated
-        void call_handleStartPhotoPlaybackCompletion(INStartPhotoPlaybackIntentResponse arg0);
+        void call_handleStartPhotoPlaybackCompletion(INStartPhotoPlaybackIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveAlbumNameForStartPhotoPlaybackWithCompletion {
         @Generated
-        void call_resolveAlbumNameForStartPhotoPlaybackWithCompletion(INStringResolutionResult arg0);
+        void call_resolveAlbumNameForStartPhotoPlaybackWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDateCreatedForStartPhotoPlaybackWithCompletion {
         @Generated
-        void call_resolveDateCreatedForStartPhotoPlaybackWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveDateCreatedForStartPhotoPlaybackWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveLocationCreatedForStartPhotoPlaybackWithCompletion {
         @Generated
-        void call_resolveLocationCreatedForStartPhotoPlaybackWithCompletion(INPlacemarkResolutionResult arg0);
+        void call_resolveLocationCreatedForStartPhotoPlaybackWithCompletion(
+                INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -122,6 +124,6 @@ public interface INStartPhotoPlaybackIntentHandling {
     public interface Block_resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion {
         @Generated
         void call_resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion(
-                NSArray<? extends INPersonResolutionResult> arg0);
+                NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 }

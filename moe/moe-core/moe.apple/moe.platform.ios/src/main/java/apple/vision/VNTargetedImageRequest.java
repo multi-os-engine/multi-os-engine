@@ -119,7 +119,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedCGImageOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedCGImageOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedCGImageOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -137,7 +137,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedCGImageOrientationOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedCGImageOrientationOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedCGImageOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -155,7 +155,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedCIImageOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedCIImageOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedCIImageOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -173,7 +173,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedCIImageOrientationOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedCIImageOrientationOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedCIImageOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -191,7 +191,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedCVPixelBufferOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedCVPixelBufferOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedCVPixelBufferOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -209,7 +209,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -227,7 +227,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedImageDataOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedImageDataOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedImageDataOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -245,7 +245,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedImageDataOrientationOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedImageDataOrientationOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedImageDataOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -263,7 +263,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedImageURLOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedImageURLOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedImageURLOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated
@@ -281,7 +281,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     public interface Block_initWithTargetedImageURLOrientationOptionsCompletionHandler {
         @Generated
-        void call_initWithTargetedImageURLOrientationOptionsCompletionHandler(VNRequest arg0, NSError arg1);
+        void call_initWithTargetedImageURLOrientationOptionsCompletionHandler(VNRequest request, NSError error);
     }
 
     @Generated

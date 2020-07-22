@@ -165,7 +165,7 @@ public class ICDevice extends NSObject {
     @Generated
     public interface Block_requestCloseSessionWithOptionsCompletion {
         @Generated
-        void call_requestCloseSessionWithOptionsCompletion(NSError arg0);
+        void call_requestCloseSessionWithOptionsCompletion(NSError error);
     }
 
     @Generated
@@ -181,7 +181,7 @@ public class ICDevice extends NSObject {
     @Generated
     public interface Block_requestEjectWithCompletion {
         @Generated
-        void call_requestEjectWithCompletion(NSError arg0);
+        void call_requestEjectWithCompletion(NSError error);
     }
 
     @Generated
@@ -197,7 +197,7 @@ public class ICDevice extends NSObject {
     @Generated
     public interface Block_requestOpenSessionWithOptionsCompletion {
         @Generated
-        void call_requestOpenSessionWithOptionsCompletion(NSError arg0);
+        void call_requestOpenSessionWithOptionsCompletion(NSError error);
     }
 
     @Generated

@@ -597,7 +597,7 @@ public final class CoreMIDI {
     @Generated
     public interface Block_MIDIClientCreateWithBlock {
         @Generated
-        void call_MIDIClientCreateWithBlock(MIDINotification arg0);
+        void call_MIDIClientCreateWithBlock(MIDINotification message);
     }
 
     @Runtime(CRuntime.class)
@@ -613,7 +613,7 @@ public final class CoreMIDI {
     @Generated
     public interface Block_MIDIInputPortCreateWithBlock {
         @Generated
-        void call_MIDIInputPortCreateWithBlock(MIDIPacketList arg0, VoidPtr arg1);
+        void call_MIDIInputPortCreateWithBlock(MIDIPacketList pktlist, VoidPtr srcConnRefCon);
     }
 
     @Runtime(CRuntime.class)
@@ -629,7 +629,7 @@ public final class CoreMIDI {
     @Generated
     public interface Block_MIDIDestinationCreateWithBlock {
         @Generated
-        void call_MIDIDestinationCreateWithBlock(MIDIPacketList arg0, VoidPtr arg1);
+        void call_MIDIDestinationCreateWithBlock(MIDIPacketList pktlist, VoidPtr srcConnRefCon);
     }
 
     @Generated

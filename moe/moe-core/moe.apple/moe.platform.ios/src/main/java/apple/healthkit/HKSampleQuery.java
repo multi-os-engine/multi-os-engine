@@ -280,8 +280,8 @@ public class HKSampleQuery extends HKQuery {
     @Generated
     public interface Block_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler {
         @Generated
-        void call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler(HKSampleQuery arg0,
-                NSArray<? extends HKSample> arg1, NSError arg2);
+        void call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler(HKSampleQuery query,
+                NSArray<? extends HKSample> results, NSError error);
     }
 
     @Generated

@@ -271,55 +271,56 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     public interface Block_cubeMapWithContentsOfFileOptionsQueueCompletionHandler {
         @Generated
-        void call_cubeMapWithContentsOfFileOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+        void call_cubeMapWithContentsOfFileOptionsQueueCompletionHandler(GLKTextureInfo textureInfo, NSError outError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler {
         @Generated
-        void call_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+        void call_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler(GLKTextureInfo textureInfo, NSError outError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_cubeMapWithContentsOfURLOptionsQueueCompletionHandler {
         @Generated
-        void call_cubeMapWithContentsOfURLOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+        void call_cubeMapWithContentsOfURLOptionsQueueCompletionHandler(GLKTextureInfo textureInfo, NSError outError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_textureWithCGImageOptionsQueueCompletionHandler {
         @Generated
-        void call_textureWithCGImageOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+        void call_textureWithCGImageOptionsQueueCompletionHandler(GLKTextureInfo textureInfo, NSError outError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_textureWithContentsOfDataOptionsQueueCompletionHandler {
         @Generated
-        void call_textureWithContentsOfDataOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+        void call_textureWithContentsOfDataOptionsQueueCompletionHandler(GLKTextureInfo textureInfo, NSError outError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_textureWithContentsOfFileOptionsQueueCompletionHandler {
         @Generated
-        void call_textureWithContentsOfFileOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+        void call_textureWithContentsOfFileOptionsQueueCompletionHandler(GLKTextureInfo textureInfo, NSError outError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_textureWithContentsOfURLOptionsQueueCompletionHandler {
         @Generated
-        void call_textureWithContentsOfURLOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+        void call_textureWithContentsOfURLOptionsQueueCompletionHandler(GLKTextureInfo textureInfo, NSError outError);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler {
         @Generated
-        void call_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler(GLKTextureInfo arg0, NSError arg1);
+        void call_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler(GLKTextureInfo textureInfo,
+                NSError outError);
     }
 }

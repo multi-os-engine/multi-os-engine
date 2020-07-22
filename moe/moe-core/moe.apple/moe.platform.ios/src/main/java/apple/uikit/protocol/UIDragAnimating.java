@@ -33,6 +33,6 @@ public interface UIDragAnimating {
     @Generated
     public interface Block_addCompletion {
         @Generated
-        void call_addCompletion(@NInt long arg0);
+        void call_addCompletion(@NInt long finalPosition);
     }
 }

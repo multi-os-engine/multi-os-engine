@@ -197,14 +197,14 @@ public class GCMotion extends NSObject {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCMotion arg0);
+        void call_setValueChangedHandler(GCMotion motion);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCMotion arg0);
+        void call_valueChangedHandler_ret(GCMotion motion);
     }
 
     @Generated

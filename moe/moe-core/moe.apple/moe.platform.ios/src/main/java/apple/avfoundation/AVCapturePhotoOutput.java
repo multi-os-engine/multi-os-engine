@@ -274,7 +274,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Generated
     public interface Block_setPreparedPhotoSettingsArrayCompletionHandler {
         @Generated
-        void call_setPreparedPhotoSettingsArrayCompletionHandler(boolean arg0, NSError arg1);
+        void call_setPreparedPhotoSettingsArrayCompletionHandler(boolean prepared, NSError error);
     }
 
     @Generated

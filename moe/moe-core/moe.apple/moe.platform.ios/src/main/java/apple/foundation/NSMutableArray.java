@@ -543,8 +543,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public interface Block_sortUsingComparator {
         @Generated
         @NInt
-        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -561,8 +561,8 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     public interface Block_sortWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_sortWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     private final static class NSMutableArrayIterator<_ObjectType> implements Iterator<_ObjectType> {

@@ -297,35 +297,35 @@ public class NSURLSession extends NSObject {
     @Generated
     public interface Block_dataTaskWithRequestCompletionHandler {
         @Generated
-        void call_dataTaskWithRequestCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
+        void call_dataTaskWithRequestCompletionHandler(NSData data, NSURLResponse response, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_dataTaskWithURLCompletionHandler {
         @Generated
-        void call_dataTaskWithURLCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
+        void call_dataTaskWithURLCompletionHandler(NSData data, NSURLResponse response, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_downloadTaskWithRequestCompletionHandler {
         @Generated
-        void call_downloadTaskWithRequestCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
+        void call_downloadTaskWithRequestCompletionHandler(NSURL location, NSURLResponse response, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_downloadTaskWithResumeDataCompletionHandler {
         @Generated
-        void call_downloadTaskWithResumeDataCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
+        void call_downloadTaskWithResumeDataCompletionHandler(NSURL location, NSURLResponse response, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_downloadTaskWithURLCompletionHandler {
         @Generated
-        void call_downloadTaskWithURLCompletionHandler(NSURL arg0, NSURLResponse arg1, NSError arg2);
+        void call_downloadTaskWithURLCompletionHandler(NSURL location, NSURLResponse response, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -339,15 +339,16 @@ public class NSURLSession extends NSObject {
     @Generated
     public interface Block_getAllTasksWithCompletionHandler {
         @Generated
-        void call_getAllTasksWithCompletionHandler(NSArray<? extends NSURLSessionTask> arg0);
+        void call_getAllTasksWithCompletionHandler(NSArray<? extends NSURLSessionTask> tasks);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getTasksWithCompletionHandler {
         @Generated
-        void call_getTasksWithCompletionHandler(NSArray<? extends NSURLSessionDataTask> arg0,
-                NSArray<? extends NSURLSessionUploadTask> arg1, NSArray<? extends NSURLSessionDownloadTask> arg2);
+        void call_getTasksWithCompletionHandler(NSArray<? extends NSURLSessionDataTask> dataTasks,
+                NSArray<? extends NSURLSessionUploadTask> uploadTasks,
+                NSArray<? extends NSURLSessionDownloadTask> downloadTasks);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -361,14 +362,14 @@ public class NSURLSession extends NSObject {
     @Generated
     public interface Block_uploadTaskWithRequestFromDataCompletionHandler {
         @Generated
-        void call_uploadTaskWithRequestFromDataCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
+        void call_uploadTaskWithRequestFromDataCompletionHandler(NSData data, NSURLResponse response, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_uploadTaskWithRequestFromFileCompletionHandler {
         @Generated
-        void call_uploadTaskWithRequestFromFileCompletionHandler(NSData arg0, NSURLResponse arg1, NSError arg2);
+        void call_uploadTaskWithRequestFromFileCompletionHandler(NSData data, NSURLResponse response, NSError error);
     }
 
     @Generated

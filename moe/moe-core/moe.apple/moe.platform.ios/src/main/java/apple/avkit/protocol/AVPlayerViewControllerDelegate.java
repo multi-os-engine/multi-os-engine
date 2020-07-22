@@ -92,7 +92,8 @@ public interface AVPlayerViewControllerDelegate {
     @Generated
     public interface Block_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler {
         @Generated
-        void call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(boolean arg0);
+        void call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
+                boolean restored);
     }
 
     @Generated

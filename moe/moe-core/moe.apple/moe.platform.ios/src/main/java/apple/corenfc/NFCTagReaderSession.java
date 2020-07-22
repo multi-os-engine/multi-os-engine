@@ -86,7 +86,7 @@ public class NFCTagReaderSession extends NFCReaderSession {
     @Generated
     public interface Block_connectToTagCompletionHandler {
         @Generated
-        void call_connectToTagCompletionHandler(NSError arg0);
+        void call_connectToTagCompletionHandler(NSError error);
     }
 
     @Generated

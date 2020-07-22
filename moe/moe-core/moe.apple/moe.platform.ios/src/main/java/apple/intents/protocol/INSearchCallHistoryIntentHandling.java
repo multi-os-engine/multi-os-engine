@@ -78,35 +78,36 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     public interface Block_confirmSearchCallHistoryCompletion {
         @Generated
-        void call_confirmSearchCallHistoryCompletion(INSearchCallHistoryIntentResponse arg0);
+        void call_confirmSearchCallHistoryCompletion(INSearchCallHistoryIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchCallHistoryCompletion {
         @Generated
-        void call_handleSearchCallHistoryCompletion(INSearchCallHistoryIntentResponse arg0);
+        void call_handleSearchCallHistoryCompletion(INSearchCallHistoryIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveCallTypeForSearchCallHistoryWithCompletion {
         @Generated
-        void call_resolveCallTypeForSearchCallHistoryWithCompletion(INCallRecordTypeResolutionResult arg0);
+        void call_resolveCallTypeForSearchCallHistoryWithCompletion(INCallRecordTypeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDateCreatedForSearchCallHistoryWithCompletion {
         @Generated
-        void call_resolveDateCreatedForSearchCallHistoryWithCompletion(INDateComponentsRangeResolutionResult arg0);
+        void call_resolveDateCreatedForSearchCallHistoryWithCompletion(
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRecipientForSearchCallHistoryWithCompletion {
         @Generated
-        void call_resolveRecipientForSearchCallHistoryWithCompletion(INPersonResolutionResult arg0);
+        void call_resolveRecipientForSearchCallHistoryWithCompletion(INPersonResolutionResult resolutionResult);
     }
 
     @Generated
@@ -121,7 +122,8 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     public interface Block_resolveCallTypesForSearchCallHistoryWithCompletion {
         @Generated
-        void call_resolveCallTypesForSearchCallHistoryWithCompletion(INCallRecordTypeOptionsResolutionResult arg0);
+        void call_resolveCallTypesForSearchCallHistoryWithCompletion(
+                INCallRecordTypeOptionsResolutionResult resolutionResult);
     }
 
     @Generated
@@ -136,6 +138,6 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     public interface Block_resolveUnseenForSearchCallHistoryWithCompletion {
         @Generated
-        void call_resolveUnseenForSearchCallHistoryWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveUnseenForSearchCallHistoryWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 }

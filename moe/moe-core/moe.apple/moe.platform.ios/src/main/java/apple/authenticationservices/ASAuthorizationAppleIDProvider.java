@@ -97,7 +97,7 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
     @Generated
     public interface Block_getCredentialStateForUserIDCompletion {
         @Generated
-        void call_getCredentialStateForUserIDCompletion(@NInt long arg0, NSError arg1);
+        void call_getCredentialStateForUserIDCompletion(@NInt long credentialState, NSError error);
     }
 
     @Generated

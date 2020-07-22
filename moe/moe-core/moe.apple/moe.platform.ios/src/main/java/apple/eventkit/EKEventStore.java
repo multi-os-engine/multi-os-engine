@@ -310,21 +310,21 @@ public class EKEventStore extends NSObject {
     @Generated
     public interface Block_enumerateEventsMatchingPredicateUsingBlock {
         @Generated
-        void call_enumerateEventsMatchingPredicateUsingBlock(EKEvent arg0, BoolPtr arg1);
+        void call_enumerateEventsMatchingPredicateUsingBlock(EKEvent event, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchRemindersMatchingPredicateCompletion {
         @Generated
-        void call_fetchRemindersMatchingPredicateCompletion(NSArray<? extends EKReminder> arg0);
+        void call_fetchRemindersMatchingPredicateCompletion(NSArray<? extends EKReminder> reminders);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAccessToEntityTypeCompletion {
         @Generated
-        void call_requestAccessToEntityTypeCompletion(boolean arg0, NSError arg1);
+        void call_requestAccessToEntityTypeCompletion(boolean granted, NSError error);
     }
 
     @Generated

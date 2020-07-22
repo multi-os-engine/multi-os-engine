@@ -179,6 +179,6 @@ public class NETunnelProviderSession extends NEVPNConnection {
     @Generated
     public interface Block_sendProviderMessageReturnErrorResponseHandler {
         @Generated
-        void call_sendProviderMessageReturnErrorResponseHandler(NSData arg0);
+        void call_sendProviderMessageReturnErrorResponseHandler(NSData responseData);
     }
 }

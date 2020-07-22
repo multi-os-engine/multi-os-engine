@@ -659,21 +659,21 @@ public class SCNNode extends NSObject
     @Generated
     public interface Block_childNodesPassingTest {
         @Generated
-        boolean call_childNodesPassingTest(SCNNode arg0, BoolPtr arg1);
+        boolean call_childNodesPassingTest(SCNNode child, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateChildNodesUsingBlock {
         @Generated
-        void call_enumerateChildNodesUsingBlock(SCNNode arg0, BoolPtr arg1);
+        void call_enumerateChildNodesUsingBlock(SCNNode child, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateHierarchyUsingBlock {
         @Generated
-        void call_enumerateHierarchyUsingBlock(SCNNode arg0, BoolPtr arg1);
+        void call_enumerateHierarchyUsingBlock(SCNNode node, BoolPtr stop);
     }
 
     @Generated

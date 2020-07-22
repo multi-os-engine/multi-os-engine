@@ -71,7 +71,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Generated
     public interface Block_addPeriodicTimeObserverForIntervalQueueUsingBlock {
         @Generated
-        void call_addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime arg0);
+        void call_addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime time);
     }
 
     @Generated
@@ -168,7 +168,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Generated
     public interface Block_removeRendererAtTimeCompletionHandler {
         @Generated
-        void call_removeRendererAtTimeCompletionHandler(boolean arg0);
+        void call_removeRendererAtTimeCompletionHandler(boolean didRemoveRenderer);
     }
 
     @Generated

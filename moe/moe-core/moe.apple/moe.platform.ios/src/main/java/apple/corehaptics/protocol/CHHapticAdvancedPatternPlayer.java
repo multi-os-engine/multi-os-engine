@@ -25,7 +25,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(NSError arg0);
+        void call_completionHandler_ret(NSError error);
     }
 
     @Generated
@@ -64,7 +64,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(NSError arg0);
+        void call_setCompletionHandler(NSError error);
     }
 
     @Generated

@@ -246,7 +246,7 @@ public interface MTLDevice {
     @Generated
     public interface Block_newBufferWithBytesNoCopyLengthOptionsDeallocator {
         @Generated
-        void call_newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr arg0, @NUInt long arg1);
+        void call_newBufferWithBytesNoCopyLengthOptionsDeallocator(VoidPtr pointer, @NUInt long length);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -254,15 +254,16 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, MTLComputePipelineReflection arg1, NSError arg2);
+                @Mapped(ObjCObjectMapper.class) Object computePipelineState, MTLComputePipelineReflection reflection,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newComputePipelineStateWithFunctionCompletionHandler {
         @Generated
-        void call_newComputePipelineStateWithFunctionCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_newComputePipelineStateWithFunctionCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object computePipelineState, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -270,23 +271,24 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithFunctionOptionsCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithFunctionOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, MTLComputePipelineReflection arg1, NSError arg2);
+                @Mapped(ObjCObjectMapper.class) Object computePipelineState, MTLComputePipelineReflection reflection,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newLibraryWithSourceOptionsCompletionHandler {
         @Generated
-        void call_newLibraryWithSourceOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_newLibraryWithSourceOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object library,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newRenderPipelineStateWithDescriptorCompletionHandler {
         @Generated
-        void call_newRenderPipelineStateWithDescriptorCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_newRenderPipelineStateWithDescriptorCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object renderPipelineState, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -294,7 +296,8 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, MTLRenderPipelineReflection arg1, NSError arg2);
+                @Mapped(ObjCObjectMapper.class) Object renderPipelineState, MTLRenderPipelineReflection reflection,
+                NSError error);
     }
 
     @Generated
@@ -352,7 +355,8 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, MTLRenderPipelineReflection arg1, NSError arg2);
+                @Mapped(ObjCObjectMapper.class) Object renderPipelineState, MTLRenderPipelineReflection reflection,
+                NSError error);
     }
 
     @Generated

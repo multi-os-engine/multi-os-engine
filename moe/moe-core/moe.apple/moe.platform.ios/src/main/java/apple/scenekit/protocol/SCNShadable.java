@@ -82,13 +82,15 @@ public interface SCNShadable {
     @Generated
     public interface Block_handleBindingOfSymbolUsingBlock {
         @Generated
-        void call_handleBindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
+        void call_handleBindingOfSymbolUsingBlock(int programID, int location, SCNNode renderedNode,
+                SCNRenderer renderer);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleUnbindingOfSymbolUsingBlock {
         @Generated
-        void call_handleUnbindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
+        void call_handleUnbindingOfSymbolUsingBlock(int programID, int location, SCNNode renderedNode,
+                SCNRenderer renderer);
     }
 }

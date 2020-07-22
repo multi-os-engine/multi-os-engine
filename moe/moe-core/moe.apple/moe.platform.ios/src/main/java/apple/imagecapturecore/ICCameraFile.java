@@ -214,7 +214,7 @@ public class ICCameraFile extends ICCameraItem {
     @Generated
     public interface Block_requestDownloadWithOptionsCompletion {
         @Generated
-        void call_requestDownloadWithOptionsCompletion(String arg0, NSError arg1);
+        void call_requestDownloadWithOptionsCompletion(String filename, NSError error);
     }
 
     @Generated

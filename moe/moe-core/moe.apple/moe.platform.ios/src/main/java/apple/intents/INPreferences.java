@@ -173,6 +173,6 @@ public class INPreferences extends NSObject {
     @Generated
     public interface Block_requestSiriAuthorization {
         @Generated
-        void call_requestSiriAuthorization(@NInt long arg0);
+        void call_requestSiriAuthorization(@NInt long status);
     }
 }

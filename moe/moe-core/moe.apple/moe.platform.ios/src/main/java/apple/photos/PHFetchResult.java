@@ -244,23 +244,22 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Generated
     public interface Block_enumerateObjectsAtIndexesOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @NUInt long arg1, BoolPtr arg2);
+        void call_enumerateObjectsAtIndexesOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj,
+                @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsUsingBlock {
         @Generated
-        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object obj, @NUInt long idx,
+                BoolPtr stop);
     }
 }

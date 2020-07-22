@@ -194,6 +194,6 @@ public class NSNotificationCenter extends NSObject {
     @Generated
     public interface Block_addObserverForNameObjectQueueUsingBlock {
         @Generated
-        void call_addObserverForNameObjectQueueUsingBlock(NSNotification arg0);
+        void call_addObserverForNameObjectQueueUsingBlock(NSNotification note);
     }
 }

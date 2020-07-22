@@ -239,20 +239,20 @@ public class GKMatch extends NSObject {
     @Generated
     public interface Block_chooseBestHostPlayerWithCompletionHandler {
         @Generated
-        void call_chooseBestHostPlayerWithCompletionHandler(String arg0);
+        void call_chooseBestHostPlayerWithCompletionHandler(String playerID);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_chooseBestHostingPlayerWithCompletionHandler {
         @Generated
-        void call_chooseBestHostingPlayerWithCompletionHandler(GKPlayer arg0);
+        void call_chooseBestHostingPlayerWithCompletionHandler(GKPlayer player);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_rematchWithCompletionHandler {
         @Generated
-        void call_rematchWithCompletionHandler(GKMatch arg0, NSError arg1);
+        void call_rematchWithCompletionHandler(GKMatch match, NSError error);
     }
 }

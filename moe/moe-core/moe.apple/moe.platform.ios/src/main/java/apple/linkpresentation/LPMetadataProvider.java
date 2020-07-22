@@ -157,7 +157,7 @@ public class LPMetadataProvider extends NSObject {
     @Generated
     public interface Block_startFetchingMetadataForURLCompletionHandler {
         @Generated
-        void call_startFetchingMetadataForURLCompletionHandler(LPLinkMetadata arg0, NSError arg1);
+        void call_startFetchingMetadataForURLCompletionHandler(LPLinkMetadata metadata, NSError error);
     }
 
     @Generated

@@ -67,27 +67,27 @@ public interface INSaveProfileInCarIntentHandling {
     @Generated
     public interface Block_confirmSaveProfileInCarCompletion {
         @Generated
-        void call_confirmSaveProfileInCarCompletion(INSaveProfileInCarIntentResponse arg0);
+        void call_confirmSaveProfileInCarCompletion(INSaveProfileInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSaveProfileInCarCompletion {
         @Generated
-        void call_handleSaveProfileInCarCompletion(INSaveProfileInCarIntentResponse arg0);
+        void call_handleSaveProfileInCarCompletion(INSaveProfileInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveProfileNameForSaveProfileInCarWithCompletion {
         @Generated
-        void call_resolveProfileNameForSaveProfileInCarWithCompletion(INStringResolutionResult arg0);
+        void call_resolveProfileNameForSaveProfileInCarWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveProfileNumberForSaveProfileInCarWithCompletion {
         @Generated
-        void call_resolveProfileNumberForSaveProfileInCarWithCompletion(INIntegerResolutionResult arg0);
+        void call_resolveProfileNumberForSaveProfileInCarWithCompletion(INIntegerResolutionResult resolutionResult);
     }
 }

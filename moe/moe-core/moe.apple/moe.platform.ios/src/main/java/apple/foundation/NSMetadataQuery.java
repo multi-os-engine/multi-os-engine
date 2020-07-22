@@ -313,15 +313,15 @@ public class NSMetadataQuery extends NSObject {
     @Generated
     public interface Block_enumerateResultsUsingBlock {
         @Generated
-        void call_enumerateResultsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateResultsUsingBlock(@Mapped(ObjCObjectMapper.class) Object result, @NUInt long idx,
+                BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateResultsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateResultsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateResultsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object result, @NUInt long idx,
+                BoolPtr stop);
     }
 }

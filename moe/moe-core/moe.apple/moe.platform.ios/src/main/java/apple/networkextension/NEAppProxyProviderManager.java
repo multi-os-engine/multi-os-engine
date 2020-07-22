@@ -169,7 +169,7 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
     @Generated
     public interface Block_loadAllFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NEAppProxyProviderManager> arg0,
-                NSError arg1);
+        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NEAppProxyProviderManager> managers,
+                NSError error);
     }
 }

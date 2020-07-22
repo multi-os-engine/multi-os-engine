@@ -234,6 +234,6 @@ public class AVSpeechSynthesizer extends NSObject {
     @Generated
     public interface Block_writeUtteranceToBufferCallback {
         @Generated
-        void call_writeUtteranceToBufferCallback(AVAudioBuffer arg0);
+        void call_writeUtteranceToBufferCallback(AVAudioBuffer buffer);
     }
 }

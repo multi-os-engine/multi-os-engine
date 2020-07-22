@@ -300,29 +300,31 @@ public class UIPrintInteractionController extends NSObject {
     @Generated
     public interface Block_presentAnimatedCompletionHandler {
         @Generated
-        void call_presentAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1, NSError arg2);
+        void call_presentAnimatedCompletionHandler(UIPrintInteractionController printInteractionController,
+                boolean completed, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
         @Generated
-        void call_presentFromBarButtonItemAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1,
-                NSError arg2);
+        void call_presentFromBarButtonItemAnimatedCompletionHandler(
+                UIPrintInteractionController printInteractionController, boolean completed, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentFromRectInViewAnimatedCompletionHandler {
         @Generated
-        void call_presentFromRectInViewAnimatedCompletionHandler(UIPrintInteractionController arg0, boolean arg1,
-                NSError arg2);
+        void call_presentFromRectInViewAnimatedCompletionHandler(
+                UIPrintInteractionController printInteractionController, boolean completed, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_printToPrinterCompletionHandler {
         @Generated
-        void call_printToPrinterCompletionHandler(UIPrintInteractionController arg0, boolean arg1, NSError arg2);
+        void call_printToPrinterCompletionHandler(UIPrintInteractionController printInteractionController,
+                boolean completed, NSError error);
     }
 }

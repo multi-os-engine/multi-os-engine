@@ -176,14 +176,14 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Generated
     public interface Block_readDatagramsWithCompletionHandler {
         @Generated
-        void call_readDatagramsWithCompletionHandler(NSArray<? extends NSData> arg0, NSArray<? extends NWEndpoint> arg1,
-                NSError arg2);
+        void call_readDatagramsWithCompletionHandler(NSArray<? extends NSData> datagrams,
+                NSArray<? extends NWEndpoint> remoteEndpoints, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDatagramsSentByEndpointsCompletionHandler {
         @Generated
-        void call_writeDatagramsSentByEndpointsCompletionHandler(NSError arg0);
+        void call_writeDatagramsSentByEndpointsCompletionHandler(NSError error);
     }
 }

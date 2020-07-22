@@ -235,20 +235,20 @@ public class NSTimer extends NSObject {
     @Generated
     public interface Block_initWithFireDateIntervalRepeatsBlock {
         @Generated
-        void call_initWithFireDateIntervalRepeatsBlock(NSTimer arg0);
+        void call_initWithFireDateIntervalRepeatsBlock(NSTimer timer);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_scheduledTimerWithTimeIntervalRepeatsBlock {
         @Generated
-        void call_scheduledTimerWithTimeIntervalRepeatsBlock(NSTimer arg0);
+        void call_scheduledTimerWithTimeIntervalRepeatsBlock(NSTimer timer);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_timerWithTimeIntervalRepeatsBlock {
         @Generated
-        void call_timerWithTimeIntervalRepeatsBlock(NSTimer arg0);
+        void call_timerWithTimeIntervalRepeatsBlock(NSTimer timer);
     }
 }

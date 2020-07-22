@@ -108,7 +108,7 @@ public class CLSContext extends CLSObject {
     @Generated
     public interface Block_descendantMatchingIdentifierPathCompletion {
         @Generated
-        void call_descendantMatchingIdentifierPathCompletion(CLSContext arg0, NSError arg1);
+        void call_descendantMatchingIdentifierPathCompletion(CLSContext context, NSError error);
     }
 
     @Generated

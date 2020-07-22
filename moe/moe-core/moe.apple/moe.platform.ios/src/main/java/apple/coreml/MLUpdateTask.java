@@ -156,7 +156,7 @@ public class MLUpdateTask extends MLTask {
     @Generated
     public interface Block_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError {
         @Generated
-        void call_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError(MLUpdateContext arg0);
+        void call_updateTaskForModelAtURLTrainingDataConfigurationCompletionHandlerError(MLUpdateContext context);
     }
 
     @Generated

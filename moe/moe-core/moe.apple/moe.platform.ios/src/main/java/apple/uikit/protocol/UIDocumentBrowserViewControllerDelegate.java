@@ -57,7 +57,7 @@ public interface UIDocumentBrowserViewControllerDelegate {
     @Generated
     public interface Block_documentBrowserDidRequestDocumentCreationWithHandler {
         @Generated
-        void call_documentBrowserDidRequestDocumentCreationWithHandler(NSURL arg0, @NUInt long arg1);
+        void call_documentBrowserDidRequestDocumentCreationWithHandler(NSURL urlToImport, @NUInt long importMode);
     }
 
     @Generated

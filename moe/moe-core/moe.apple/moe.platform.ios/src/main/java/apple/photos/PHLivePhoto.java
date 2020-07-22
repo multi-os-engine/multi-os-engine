@@ -208,6 +208,6 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding {
     public interface Block_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler {
         @Generated
         void call_requestLivePhotoWithResourceFileURLsPlaceholderImageTargetSizeContentModeResultHandler(
-                PHLivePhoto arg0, NSDictionary<?, ?> arg1);
+                PHLivePhoto livePhoto, NSDictionary<?, ?> info);
     }
 }

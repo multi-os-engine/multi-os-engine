@@ -255,31 +255,32 @@ public class MTKTextureLoader extends NSObject {
     @Generated
     public interface Block_newTextureWithCGImageOptionsCompletionHandler {
         @Generated
-        void call_newTextureWithCGImageOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_newTextureWithCGImageOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object texture,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newTextureWithContentsOfURLOptionsCompletionHandler {
         @Generated
-        void call_newTextureWithContentsOfURLOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_newTextureWithContentsOfURLOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object texture,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newTextureWithDataOptionsCompletionHandler {
         @Generated
-        void call_newTextureWithDataOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+        void call_newTextureWithDataOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object texture,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newTextureWithMDLTextureOptionsCompletionHandler {
         @Generated
-        void call_newTextureWithMDLTextureOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_newTextureWithMDLTextureOptionsCompletionHandler(@Mapped(ObjCObjectMapper.class) Object texture,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -287,20 +288,20 @@ public class MTKTextureLoader extends NSObject {
     public interface Block_newTextureWithNameScaleFactorBundleOptionsCompletionHandler {
         @Generated
         void call_newTextureWithNameScaleFactorBundleOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+                @Mapped(ObjCObjectMapper.class) Object texture, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newTexturesWithContentsOfURLsOptionsCompletionHandler {
         @Generated
-        void call_newTexturesWithContentsOfURLsOptionsCompletionHandler(NSArray<?> arg0, NSError arg1);
+        void call_newTexturesWithContentsOfURLsOptionsCompletionHandler(NSArray<?> textures, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_newTexturesWithNamesScaleFactorBundleOptionsCompletionHandler {
         @Generated
-        void call_newTexturesWithNamesScaleFactorBundleOptionsCompletionHandler(NSArray<?> arg0, NSError arg1);
+        void call_newTexturesWithNamesScaleFactorBundleOptionsCompletionHandler(NSArray<?> textures, NSError error);
     }
 }

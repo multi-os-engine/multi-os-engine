@@ -304,6 +304,6 @@ public class AVAudioConverter extends NSObject {
     @Generated
     public interface Block_convertToBufferErrorWithInputFromBlock {
         @Generated
-        AVAudioBuffer call_convertToBufferErrorWithInputFromBlock(int arg0, NIntPtr arg1);
+        AVAudioBuffer call_convertToBufferErrorWithInputFromBlock(int inNumberOfPackets, NIntPtr outStatus);
     }
 }

@@ -1625,18 +1625,19 @@ public final class AudioToolbox {
     @Generated
     public interface Block_AudioQueueNewOutputWithDispatchQueue {
         @Generated
-        void call_AudioQueueNewOutputWithDispatchQueue(AudioQueueRef arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer arg1);
+        void call_AudioQueueNewOutputWithDispatchQueue(AudioQueueRef inAQ,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_AudioQueueNewInputWithDispatchQueue {
         @Generated
-        void call_AudioQueueNewInputWithDispatchQueue(AudioQueueRef arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription arg4);
+        void call_AudioQueueNewInputWithDispatchQueue(AudioQueueRef inAQ,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inStartTime,
+                int inNumberPacketDescriptions,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescs);
     }
 
     @Runtime(CRuntime.class)

@@ -174,6 +174,6 @@ public class HMCameraStream extends HMCameraSource {
     @Generated
     public interface Block_updateAudioStreamSettingCompletionHandler {
         @Generated
-        void call_updateAudioStreamSettingCompletionHandler(NSError arg0);
+        void call_updateAudioStreamSettingCompletionHandler(NSError error);
     }
 }

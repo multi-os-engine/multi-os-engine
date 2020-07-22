@@ -55,7 +55,8 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     @Generated
     public interface Block_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion {
         @Generated
-        void call_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion(boolean arg0, NSError arg1);
+        void call_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion(boolean success,
+                NSError error);
     }
 
     @Generated
@@ -67,7 +68,7 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     @Generated
     public interface Block_addMetadataCompletion {
         @Generated
-        void call_addMetadataCompletion(boolean arg0, NSError arg1);
+        void call_addMetadataCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -119,7 +120,7 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     @Generated
     public interface Block_finishSeriesWithCompletion {
         @Generated
-        void call_finishSeriesWithCompletion(HKHeartbeatSeriesSample arg0, NSError arg1);
+        void call_finishSeriesWithCompletion(HKHeartbeatSeriesSample heartbeatSeries, NSError error);
     }
 
     @Generated

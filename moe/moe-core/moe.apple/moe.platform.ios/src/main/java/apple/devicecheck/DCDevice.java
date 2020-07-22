@@ -97,7 +97,7 @@ public class DCDevice extends NSObject {
     @Generated
     public interface Block_generateTokenWithCompletionHandler {
         @Generated
-        void call_generateTokenWithCompletionHandler(NSData arg0, NSError arg1);
+        void call_generateTokenWithCompletionHandler(NSData token, NSError error);
     }
 
     @Generated

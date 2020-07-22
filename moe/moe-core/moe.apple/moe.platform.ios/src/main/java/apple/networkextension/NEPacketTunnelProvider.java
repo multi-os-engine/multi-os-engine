@@ -190,7 +190,7 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
     @Generated
     public interface Block_startTunnelWithOptionsCompletionHandler {
         @Generated
-        void call_startTunnelWithOptionsCompletionHandler(NSError arg0);
+        void call_startTunnelWithOptionsCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

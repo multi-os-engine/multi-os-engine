@@ -68,28 +68,29 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
     @Generated
     public interface Block_confirmSetDefrosterSettingsInCarCompletion {
         @Generated
-        void call_confirmSetDefrosterSettingsInCarCompletion(INSetDefrosterSettingsInCarIntentResponse arg0);
+        void call_confirmSetDefrosterSettingsInCarCompletion(INSetDefrosterSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetDefrosterSettingsInCarCompletion {
         @Generated
-        void call_handleSetDefrosterSettingsInCarCompletion(INSetDefrosterSettingsInCarIntentResponse arg0);
+        void call_handleSetDefrosterSettingsInCarCompletion(INSetDefrosterSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion {
         @Generated
-        void call_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion(INCarDefrosterResolutionResult arg0);
+        void call_resolveDefrosterForSetDefrosterSettingsInCarWithCompletion(
+                INCarDefrosterResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableForSetDefrosterSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableForSetDefrosterSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveEnableForSetDefrosterSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 
     @Generated
@@ -104,6 +105,7 @@ public interface INSetDefrosterSettingsInCarIntentHandling {
     @Generated
     public interface Block_resolveCarNameForSetDefrosterSettingsInCarWithCompletion {
         @Generated
-        void call_resolveCarNameForSetDefrosterSettingsInCarWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveCarNameForSetDefrosterSettingsInCarWithCompletion(
+                INSpeakableStringResolutionResult resolutionResult);
     }
 }

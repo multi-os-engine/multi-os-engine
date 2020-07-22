@@ -92,7 +92,7 @@ public class ASCredentialIdentityStore extends NSObject {
     @Generated
     public interface Block_getCredentialIdentityStoreStateWithCompletion {
         @Generated
-        void call_getCredentialIdentityStoreStateWithCompletion(ASCredentialIdentityStoreState arg0);
+        void call_getCredentialIdentityStoreStateWithCompletion(ASCredentialIdentityStoreState state);
     }
 
     @Generated
@@ -140,7 +140,7 @@ public class ASCredentialIdentityStore extends NSObject {
     @Generated
     public interface Block_removeAllCredentialIdentitiesWithCompletion {
         @Generated
-        void call_removeAllCredentialIdentitiesWithCompletion(boolean arg0, NSError arg1);
+        void call_removeAllCredentialIdentitiesWithCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -153,7 +153,7 @@ public class ASCredentialIdentityStore extends NSObject {
     @Generated
     public interface Block_removeCredentialIdentitiesCompletion {
         @Generated
-        void call_removeCredentialIdentitiesCompletion(boolean arg0, NSError arg1);
+        void call_removeCredentialIdentitiesCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -166,7 +166,7 @@ public class ASCredentialIdentityStore extends NSObject {
     @Generated
     public interface Block_replaceCredentialIdentitiesWithIdentitiesCompletion {
         @Generated
-        void call_replaceCredentialIdentitiesWithIdentitiesCompletion(boolean arg0, NSError arg1);
+        void call_replaceCredentialIdentitiesWithIdentitiesCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -187,7 +187,7 @@ public class ASCredentialIdentityStore extends NSObject {
     @Generated
     public interface Block_saveCredentialIdentitiesCompletion {
         @Generated
-        void call_saveCredentialIdentitiesCompletion(boolean arg0, NSError arg1);
+        void call_saveCredentialIdentitiesCompletion(boolean success, NSError error);
     }
 
     @Generated

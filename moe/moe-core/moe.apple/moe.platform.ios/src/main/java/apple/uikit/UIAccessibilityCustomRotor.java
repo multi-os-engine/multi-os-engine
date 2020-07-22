@@ -183,21 +183,23 @@ public class UIAccessibilityCustomRotor extends NSObject {
     public interface Block_initWithNameItemSearchBlock {
         @Generated
         UIAccessibilityCustomRotorItemResult call_initWithNameItemSearchBlock(
-                UIAccessibilityCustomRotorSearchPredicate arg0);
+                UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_itemSearchBlock_ret {
         @Generated
-        UIAccessibilityCustomRotorItemResult call_itemSearchBlock_ret(UIAccessibilityCustomRotorSearchPredicate arg0);
+        UIAccessibilityCustomRotorItemResult call_itemSearchBlock_ret(
+                UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setItemSearchBlock {
         @Generated
-        UIAccessibilityCustomRotorItemResult call_setItemSearchBlock(UIAccessibilityCustomRotorSearchPredicate arg0);
+        UIAccessibilityCustomRotorItemResult call_setItemSearchBlock(
+                UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     @Generated
@@ -214,7 +216,7 @@ public class UIAccessibilityCustomRotor extends NSObject {
     public interface Block_initWithAttributedNameItemSearchBlock {
         @Generated
         UIAccessibilityCustomRotorItemResult call_initWithAttributedNameItemSearchBlock(
-                UIAccessibilityCustomRotorSearchPredicate arg0);
+                UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     @Generated
@@ -227,7 +229,7 @@ public class UIAccessibilityCustomRotor extends NSObject {
     public interface Block_initWithSystemTypeItemSearchBlock {
         @Generated
         UIAccessibilityCustomRotorItemResult call_initWithSystemTypeItemSearchBlock(
-                UIAccessibilityCustomRotorSearchPredicate arg0);
+                UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
     @Generated

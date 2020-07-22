@@ -220,7 +220,7 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Generated
     public interface Block_actionHandler_ret {
         @Generated
-        boolean call_actionHandler_ret(UIAccessibilityCustomAction arg0);
+        boolean call_actionHandler_ret(UIAccessibilityCustomAction customAction);
     }
 
     @Generated
@@ -232,7 +232,7 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Generated
     public interface Block_initWithAttributedNameActionHandler {
         @Generated
-        boolean call_initWithAttributedNameActionHandler(UIAccessibilityCustomAction arg0);
+        boolean call_initWithAttributedNameActionHandler(UIAccessibilityCustomAction customAction);
     }
 
     @Generated
@@ -244,7 +244,7 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Generated
     public interface Block_initWithNameActionHandler {
         @Generated
-        boolean call_initWithNameActionHandler(UIAccessibilityCustomAction arg0);
+        boolean call_initWithNameActionHandler(UIAccessibilityCustomAction customAction);
     }
 
     @Generated
@@ -255,6 +255,6 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Generated
     public interface Block_setActionHandler {
         @Generated
-        boolean call_setActionHandler(UIAccessibilityCustomAction arg0);
+        boolean call_setActionHandler(UIAccessibilityCustomAction customAction);
     }
 }

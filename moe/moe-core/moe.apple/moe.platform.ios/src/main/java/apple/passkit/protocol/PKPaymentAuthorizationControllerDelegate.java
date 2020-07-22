@@ -93,7 +93,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationControllerDidAuthorizePaymentCompletion {
         @Generated
-        void call_paymentAuthorizationControllerDidAuthorizePaymentCompletion(@NInt long arg0);
+        void call_paymentAuthorizationControllerDidAuthorizePaymentCompletion(@NInt long status);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -101,23 +101,24 @@ public interface PKPaymentAuthorizationControllerDelegate {
     public interface Block_paymentAuthorizationControllerDidSelectPaymentMethodCompletion {
         @Generated
         void call_paymentAuthorizationControllerDidSelectPaymentMethodCompletion(
-                NSArray<? extends PKPaymentSummaryItem> arg0);
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationControllerDidSelectShippingContactCompletion {
         @Generated
-        void call_paymentAuthorizationControllerDidSelectShippingContactCompletion(@NInt long arg0,
-                NSArray<? extends PKShippingMethod> arg1, NSArray<? extends PKPaymentSummaryItem> arg2);
+        void call_paymentAuthorizationControllerDidSelectShippingContactCompletion(@NInt long status,
+                NSArray<? extends PKShippingMethod> shippingMethods,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_paymentAuthorizationControllerDidSelectShippingMethodCompletion {
         @Generated
-        void call_paymentAuthorizationControllerDidSelectShippingMethodCompletion(@NInt long arg0,
-                NSArray<? extends PKPaymentSummaryItem> arg1);
+        void call_paymentAuthorizationControllerDidSelectShippingMethodCompletion(@NInt long status,
+                NSArray<? extends PKPaymentSummaryItem> summaryItems);
     }
 
     @Generated
@@ -133,7 +134,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationControllerDidAuthorizePaymentHandler {
         @Generated
-        void call_paymentAuthorizationControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult arg0);
+        void call_paymentAuthorizationControllerDidAuthorizePaymentHandler(PKPaymentAuthorizationResult result);
     }
 
     @Generated
@@ -149,7 +150,8 @@ public interface PKPaymentAuthorizationControllerDelegate {
     @Generated
     public interface Block_paymentAuthorizationControllerDidSelectPaymentMethodHandler {
         @Generated
-        void call_paymentAuthorizationControllerDidSelectPaymentMethodHandler(PKPaymentRequestPaymentMethodUpdate arg0);
+        void call_paymentAuthorizationControllerDidSelectPaymentMethodHandler(
+                PKPaymentRequestPaymentMethodUpdate requestUpdate);
     }
 
     @Generated
@@ -166,7 +168,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
     public interface Block_paymentAuthorizationControllerDidSelectShippingContactHandler {
         @Generated
         void call_paymentAuthorizationControllerDidSelectShippingContactHandler(
-                PKPaymentRequestShippingContactUpdate arg0);
+                PKPaymentRequestShippingContactUpdate requestUpdate);
     }
 
     @Generated
@@ -183,6 +185,6 @@ public interface PKPaymentAuthorizationControllerDelegate {
     public interface Block_paymentAuthorizationControllerDidSelectShippingMethodHandler {
         @Generated
         void call_paymentAuthorizationControllerDidSelectShippingMethodHandler(
-                PKPaymentRequestShippingMethodUpdate arg0);
+                PKPaymentRequestShippingMethodUpdate requestUpdate);
     }
 }

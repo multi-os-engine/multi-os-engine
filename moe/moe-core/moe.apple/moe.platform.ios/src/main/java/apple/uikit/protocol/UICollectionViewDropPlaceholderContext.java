@@ -24,7 +24,7 @@ public interface UICollectionViewDropPlaceholderContext extends UIDragAnimating 
     @Generated
     public interface Block_commitInsertionWithDataSourceUpdates {
         @Generated
-        void call_commitInsertionWithDataSourceUpdates(NSIndexPath arg0);
+        void call_commitInsertionWithDataSourceUpdates(NSIndexPath insertionIndexPath);
     }
 
     @Generated

@@ -181,7 +181,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Generated
     public interface Block_updateTriggerValueCompletionHandler {
         @Generated
-        void call_updateTriggerValueCompletionHandler(NSError arg0);
+        void call_updateTriggerValueCompletionHandler(NSError error);
     }
 
     @Generated

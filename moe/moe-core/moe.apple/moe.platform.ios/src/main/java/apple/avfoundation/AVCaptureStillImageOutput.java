@@ -246,7 +246,8 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Generated
     public interface Block_captureStillImageAsynchronouslyFromConnectionCompletionHandler {
         @Generated
-        void call_captureStillImageAsynchronouslyFromConnectionCompletionHandler(CMSampleBufferRef arg0, NSError arg1);
+        void call_captureStillImageAsynchronouslyFromConnectionCompletionHandler(
+                CMSampleBufferRef imageDataSampleBuffer, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -254,14 +255,14 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     public interface Block_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler {
         @Generated
         void call_captureStillImageBracketAsynchronouslyFromConnectionWithSettingsArrayCompletionHandler(
-                CMSampleBufferRef arg0, AVCaptureBracketedStillImageSettings arg1, NSError arg2);
+                CMSampleBufferRef sampleBuffer, AVCaptureBracketedStillImageSettings stillImageSettings, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler {
         @Generated
-        void call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(boolean arg0,
-                NSError arg1);
+        void call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(boolean prepared,
+                NSError error);
     }
 }

@@ -187,28 +187,28 @@ public class GCControllerButtonInput extends GCControllerElement {
     @Generated
     public interface Block_pressedChangedHandler_ret {
         @Generated
-        void call_pressedChangedHandler_ret(GCControllerButtonInput arg0, float arg1, boolean arg2);
+        void call_pressedChangedHandler_ret(GCControllerButtonInput button, float value, boolean pressed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPressedChangedHandler {
         @Generated
-        void call_setPressedChangedHandler(GCControllerButtonInput arg0, float arg1, boolean arg2);
+        void call_setPressedChangedHandler(GCControllerButtonInput button, float value, boolean pressed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCControllerButtonInput arg0, float arg1, boolean arg2);
+        void call_setValueChangedHandler(GCControllerButtonInput button, float value, boolean pressed);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCControllerButtonInput arg0, float arg1, boolean arg2);
+        void call_valueChangedHandler_ret(GCControllerButtonInput button, float value, boolean pressed);
     }
 
     @Generated

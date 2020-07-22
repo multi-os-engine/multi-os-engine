@@ -88,7 +88,7 @@ public class NSFileProviderService extends NSObject {
     @Generated
     public interface Block_getFileProviderConnectionWithCompletionHandler {
         @Generated
-        void call_getFileProviderConnectionWithCompletionHandler(NSXPCConnection arg0, NSError arg1);
+        void call_getFileProviderConnectionWithCompletionHandler(NSXPCConnection connection, NSError error);
     }
 
     @Generated

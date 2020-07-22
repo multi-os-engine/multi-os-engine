@@ -194,13 +194,13 @@ public class VSAccountManager extends NSObject {
     @Generated
     public interface Block_checkAccessStatusWithOptionsCompletionHandler {
         @Generated
-        void call_checkAccessStatusWithOptionsCompletionHandler(@NInt long arg0, NSError arg1);
+        void call_checkAccessStatusWithOptionsCompletionHandler(@NInt long accessStatus, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enqueueAccountMetadataRequestCompletionHandler {
         @Generated
-        void call_enqueueAccountMetadataRequestCompletionHandler(VSAccountMetadata arg0, NSError arg1);
+        void call_enqueueAccountMetadataRequestCompletionHandler(VSAccountMetadata metadata, NSError error);
     }
 }

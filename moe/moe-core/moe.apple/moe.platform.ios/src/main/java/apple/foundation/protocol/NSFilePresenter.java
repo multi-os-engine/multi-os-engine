@@ -148,21 +148,21 @@ public interface NSFilePresenter {
     @Generated
     public interface Block_accommodatePresentedItemDeletionWithCompletionHandler {
         @Generated
-        void call_accommodatePresentedItemDeletionWithCompletionHandler(NSError arg0);
+        void call_accommodatePresentedItemDeletionWithCompletionHandler(NSError errorOrNil);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_accommodatePresentedSubitemDeletionAtURLCompletionHandler {
         @Generated
-        void call_accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSError arg0);
+        void call_accommodatePresentedSubitemDeletionAtURLCompletionHandler(NSError errorOrNil);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_savePresentedItemChangesWithCompletionHandler {
         @Generated
-        void call_savePresentedItemChangesWithCompletionHandler(NSError arg0);
+        void call_savePresentedItemChangesWithCompletionHandler(NSError errorOrNil);
     }
 
     @Generated

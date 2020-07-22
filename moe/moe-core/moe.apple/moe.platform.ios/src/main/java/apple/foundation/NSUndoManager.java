@@ -297,6 +297,6 @@ public class NSUndoManager extends NSObject {
     @Generated
     public interface Block_registerUndoWithTargetHandler {
         @Generated
-        void call_registerUndoWithTargetHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_registerUndoWithTargetHandler(@Mapped(ObjCObjectMapper.class) Object target);
     }
 }

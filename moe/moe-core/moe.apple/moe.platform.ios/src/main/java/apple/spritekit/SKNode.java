@@ -527,7 +527,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Generated
     public interface Block_enumerateChildNodesWithNameUsingBlock {
         @Generated
-        void call_enumerateChildNodesWithNameUsingBlock(SKNode arg0, BoolPtr arg1);
+        void call_enumerateChildNodesWithNameUsingBlock(SKNode node, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)

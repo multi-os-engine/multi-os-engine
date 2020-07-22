@@ -211,6 +211,6 @@ public class SKStoreProductViewController extends UIViewController {
     @Generated
     public interface Block_loadProductWithParametersCompletionBlock {
         @Generated
-        void call_loadProductWithParametersCompletionBlock(boolean arg0, NSError arg1);
+        void call_loadProductWithParametersCompletionBlock(boolean result, NSError error);
     }
 }

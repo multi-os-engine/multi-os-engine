@@ -219,20 +219,20 @@ public class NWUDPSession extends NSObject {
     @Generated
     public interface Block_setReadHandlerMaxDatagrams {
         @Generated
-        void call_setReadHandlerMaxDatagrams(NSArray<? extends NSData> arg0, NSError arg1);
+        void call_setReadHandlerMaxDatagrams(NSArray<? extends NSData> datagrams, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDatagramCompletionHandler {
         @Generated
-        void call_writeDatagramCompletionHandler(NSError arg0);
+        void call_writeDatagramCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeMultipleDatagramsCompletionHandler {
         @Generated
-        void call_writeMultipleDatagramsCompletionHandler(NSError arg0);
+        void call_writeMultipleDatagramsCompletionHandler(NSError error);
     }
 }

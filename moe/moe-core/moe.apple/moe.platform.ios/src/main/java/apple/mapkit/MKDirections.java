@@ -182,13 +182,13 @@ public class MKDirections extends NSObject {
     @Generated
     public interface Block_calculateDirectionsWithCompletionHandler {
         @Generated
-        void call_calculateDirectionsWithCompletionHandler(MKDirectionsResponse arg0, NSError arg1);
+        void call_calculateDirectionsWithCompletionHandler(MKDirectionsResponse response, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_calculateETAWithCompletionHandler {
         @Generated
-        void call_calculateETAWithCompletionHandler(MKETAResponse arg0, NSError arg1);
+        void call_calculateETAWithCompletionHandler(MKETAResponse response, NSError error);
     }
 }

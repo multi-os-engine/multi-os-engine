@@ -213,13 +213,13 @@ public class GKTurnBasedExchange extends NSObject {
     @Generated
     public interface Block_cancelWithLocalizableMessageKeyArgumentsCompletionHandler {
         @Generated
-        void call_cancelWithLocalizableMessageKeyArgumentsCompletionHandler(NSError arg0);
+        void call_cancelWithLocalizableMessageKeyArgumentsCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler {
         @Generated
-        void call_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler(NSError arg0);
+        void call_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler(NSError error);
     }
 }

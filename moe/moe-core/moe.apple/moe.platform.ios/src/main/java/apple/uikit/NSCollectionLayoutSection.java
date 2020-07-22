@@ -202,8 +202,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     public interface Block_setVisibleItemsInvalidationHandler {
         @Generated
-        void call_setVisibleItemsInvalidationHandler(NSArray<?> arg0, @ByValue CGPoint arg1,
-                @Mapped(ObjCObjectMapper.class) Object arg2);
+        void call_setVisibleItemsInvalidationHandler(NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
+                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated
@@ -228,7 +228,7 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Generated
     public interface Block_visibleItemsInvalidationHandler_ret {
         @Generated
-        void call_visibleItemsInvalidationHandler_ret(NSArray<?> arg0, @ByValue CGPoint arg1,
-                @Mapped(ObjCObjectMapper.class) Object arg2);
+        void call_visibleItemsInvalidationHandler_ret(NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
+                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 }

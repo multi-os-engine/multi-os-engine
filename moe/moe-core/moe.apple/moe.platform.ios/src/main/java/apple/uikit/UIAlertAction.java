@@ -188,6 +188,6 @@ public class UIAlertAction extends NSObject implements NSCopying {
     @Generated
     public interface Block_actionWithTitleStyleHandler {
         @Generated
-        void call_actionWithTitleStyleHandler(UIAlertAction arg0);
+        void call_actionWithTitleStyleHandler(UIAlertAction action);
     }
 }

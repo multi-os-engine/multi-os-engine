@@ -286,7 +286,7 @@ public class HKDocumentQuery extends HKQuery {
     public interface Block_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler {
         @Generated
         void call_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler(
-                HKDocumentQuery arg0, NSArray<? extends HKDocumentSample> arg1, boolean arg2, NSError arg3);
+                HKDocumentQuery query, NSArray<? extends HKDocumentSample> results, boolean done, NSError error);
     }
 
     @Generated

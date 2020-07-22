@@ -117,7 +117,7 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_initWithTitleVariantsSubtitleVariantsImageHandler {
         @Generated
-        void call_initWithTitleVariantsSubtitleVariantsImageHandler(CPDashboardButton arg0);
+        void call_initWithTitleVariantsSubtitleVariantsImageHandler(CPDashboardButton barButton);
     }
 
     @Generated

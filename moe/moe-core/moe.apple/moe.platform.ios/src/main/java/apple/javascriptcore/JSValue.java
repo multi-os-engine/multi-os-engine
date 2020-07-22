@@ -418,7 +418,7 @@ public class JSValue extends NSObject {
     @Generated
     public interface Block_valueWithNewPromiseInContextFromExecutor {
         @Generated
-        void call_valueWithNewPromiseInContextFromExecutor(JSValue arg0, JSValue arg1);
+        void call_valueWithNewPromiseInContextFromExecutor(JSValue resolve, JSValue reject);
     }
 
     @Generated

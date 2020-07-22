@@ -151,14 +151,14 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @Generated
     public interface Block_confirmSetClimateSettingsInCarCompletion {
         @Generated
-        void call_confirmSetClimateSettingsInCarCompletion(INSetClimateSettingsInCarIntentResponse arg0);
+        void call_confirmSetClimateSettingsInCarCompletion(INSetClimateSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetClimateSettingsInCarCompletion {
         @Generated
-        void call_handleSetClimateSettingsInCarCompletion(INSetClimateSettingsInCarIntentResponse arg0);
+        void call_handleSetClimateSettingsInCarCompletion(INSetClimateSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -166,56 +166,62 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion(
-                INCarAirCirculationModeResolutionResult arg0);
+                INCarAirCirculationModeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveClimateZoneForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveClimateZoneForSetClimateSettingsInCarWithCompletion(INCarSeatResolutionResult arg0);
+        void call_resolveClimateZoneForSetClimateSettingsInCarWithCompletion(
+                INCarSeatResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion(
+                INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion(
+                INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion(
+                INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableFanForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableFanForSetClimateSettingsInCarWithCompletion(INBooleanResolutionResult arg0);
+        void call_resolveEnableFanForSetClimateSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion(INIntegerResolutionResult arg0);
+        void call_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion(
+                INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion(INDoubleResolutionResult arg0);
+        void call_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion(
+                INDoubleResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -223,7 +229,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion(
-                INRelativeSettingResolutionResult arg0);
+                INRelativeSettingResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -231,14 +237,15 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion(
-                INRelativeSettingResolutionResult arg0);
+                INRelativeSettingResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveTemperatureForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveTemperatureForSetClimateSettingsInCarWithCompletion(INTemperatureResolutionResult arg0);
+        void call_resolveTemperatureForSetClimateSettingsInCarWithCompletion(
+                INTemperatureResolutionResult resolutionResult);
     }
 
     @Generated
@@ -253,6 +260,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @Generated
     public interface Block_resolveCarNameForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveCarNameForSetClimateSettingsInCarWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveCarNameForSetClimateSettingsInCarWithCompletion(
+                INSpeakableStringResolutionResult resolutionResult);
     }
 }

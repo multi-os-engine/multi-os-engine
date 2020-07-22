@@ -65,10 +65,10 @@ public final class Network {
     public interface Block_nw_txt_record_access_key {
         @Generated
         boolean call_nw_txt_record_access_key(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg0,
-                int arg1,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg2,
-                @NUInt long arg3);
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
+                int found,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value,
+                @NUInt long value_len);
     }
 
     @Generated
@@ -98,8 +98,8 @@ public final class Network {
     public interface Block_nw_txt_record_access_bytes {
         @Generated
         boolean call_nw_txt_record_access_bytes(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg0,
-                @NUInt long arg1);
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String raw_txt_record,
+                @NUInt long len);
     }
 
     @Generated
@@ -112,10 +112,10 @@ public final class Network {
     public interface Block_nw_txt_record_apply {
         @Generated
         boolean call_nw_txt_record_apply(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg0,
-                int arg1,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg2,
-                @NUInt long arg3);
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
+                int found,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value,
+                @NUInt long value_len);
     }
 
     @Generated
@@ -260,14 +260,14 @@ public final class Network {
     @Generated
     public interface Block_nw_parameters_create_secure_tcp_0 {
         @Generated
-        void call_nw_parameters_create_secure_tcp_0(NSObject arg0);
+        void call_nw_parameters_create_secure_tcp_0(NSObject options);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_parameters_create_secure_tcp_1 {
         @Generated
-        void call_nw_parameters_create_secure_tcp_1(NSObject arg0);
+        void call_nw_parameters_create_secure_tcp_1(NSObject options);
     }
 
     @Generated
@@ -280,14 +280,14 @@ public final class Network {
     @Generated
     public interface Block_nw_parameters_create_secure_udp_0 {
         @Generated
-        void call_nw_parameters_create_secure_udp_0(NSObject arg0);
+        void call_nw_parameters_create_secure_udp_0(NSObject options);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_parameters_create_secure_udp_1 {
         @Generated
-        void call_nw_parameters_create_secure_udp_1(NSObject arg0);
+        void call_nw_parameters_create_secure_udp_1(NSObject options);
     }
 
     @Generated
@@ -323,7 +323,7 @@ public final class Network {
     @Generated
     public interface Block_nw_parameters_iterate_prohibited_interfaces {
         @Generated
-        boolean call_nw_parameters_iterate_prohibited_interfaces(NSObject arg0);
+        boolean call_nw_parameters_iterate_prohibited_interfaces(NSObject interface_);
     }
 
     @Generated
@@ -351,7 +351,7 @@ public final class Network {
     @Generated
     public interface Block_nw_parameters_iterate_prohibited_interface_types {
         @Generated
-        boolean call_nw_parameters_iterate_prohibited_interface_types(int arg0);
+        boolean call_nw_parameters_iterate_prohibited_interface_types(int interface_type);
     }
 
     @Generated
@@ -439,7 +439,7 @@ public final class Network {
     @Generated
     public interface Block_nw_protocol_stack_iterate_application_protocols {
         @Generated
-        void call_nw_protocol_stack_iterate_application_protocols(NSObject arg0);
+        void call_nw_protocol_stack_iterate_application_protocols(NSObject protocol);
     }
 
     @Generated
@@ -529,7 +529,7 @@ public final class Network {
     @Generated
     public interface Block_nw_browse_result_enumerate_interfaces {
         @Generated
-        boolean call_nw_browse_result_enumerate_interfaces(NSObject arg0);
+        boolean call_nw_browse_result_enumerate_interfaces(NSObject interface_);
     }
 
     @Generated
@@ -561,7 +561,8 @@ public final class Network {
     @Generated
     public interface Block_nw_browser_set_browse_results_changed_handler {
         @Generated
-        void call_nw_browser_set_browse_results_changed_handler(NSObject arg0, NSObject arg1, boolean arg2);
+        void call_nw_browser_set_browse_results_changed_handler(NSObject old_result, NSObject new_result,
+                boolean batch_complete);
     }
 
     @Generated
@@ -573,7 +574,7 @@ public final class Network {
     @Generated
     public interface Block_nw_browser_set_state_changed_handler {
         @Generated
-        void call_nw_browser_set_state_changed_handler(int arg0, NSObject arg1);
+        void call_nw_browser_set_state_changed_handler(int state, NSObject error);
     }
 
     @Generated
@@ -605,7 +606,7 @@ public final class Network {
     @Generated
     public interface Block_nw_path_enumerate_interfaces {
         @Generated
-        boolean call_nw_path_enumerate_interfaces(NSObject arg0);
+        boolean call_nw_path_enumerate_interfaces(NSObject interface_);
     }
 
     @Generated
@@ -653,7 +654,7 @@ public final class Network {
     @Generated
     public interface Block_nw_path_enumerate_gateways {
         @Generated
-        boolean call_nw_path_enumerate_gateways(NSObject arg0);
+        boolean call_nw_path_enumerate_gateways(NSObject gateway);
     }
 
     @Generated
@@ -741,7 +742,7 @@ public final class Network {
     @Generated
     public interface Block_nw_connection_set_state_changed_handler {
         @Generated
-        void call_nw_connection_set_state_changed_handler(int arg0, NSObject arg1);
+        void call_nw_connection_set_state_changed_handler(int state, NSObject error);
     }
 
     @Generated
@@ -753,7 +754,7 @@ public final class Network {
     @Generated
     public interface Block_nw_connection_set_viability_changed_handler {
         @Generated
-        void call_nw_connection_set_viability_changed_handler(boolean arg0);
+        void call_nw_connection_set_viability_changed_handler(boolean value);
     }
 
     @Generated
@@ -765,7 +766,7 @@ public final class Network {
     @Generated
     public interface Block_nw_connection_set_better_path_available_handler {
         @Generated
-        void call_nw_connection_set_better_path_available_handler(boolean arg0);
+        void call_nw_connection_set_better_path_available_handler(boolean value);
     }
 
     @Generated
@@ -777,7 +778,7 @@ public final class Network {
     @Generated
     public interface Block_nw_connection_set_path_changed_handler {
         @Generated
-        void call_nw_connection_set_path_changed_handler(NSObject arg0);
+        void call_nw_connection_set_path_changed_handler(NSObject path);
     }
 
     @Generated
@@ -813,7 +814,7 @@ public final class Network {
     @Generated
     public interface Block_nw_connection_receive {
         @Generated
-        void call_nw_connection_receive(NSObject arg0, NSObject arg1, boolean arg2, NSObject arg3);
+        void call_nw_connection_receive(NSObject content, NSObject context, boolean is_complete, NSObject error);
     }
 
     @Generated
@@ -825,7 +826,8 @@ public final class Network {
     @Generated
     public interface Block_nw_connection_receive_message {
         @Generated
-        void call_nw_connection_receive_message(NSObject arg0, NSObject arg1, boolean arg2, NSObject arg3);
+        void call_nw_connection_receive_message(NSObject content, NSObject context, boolean is_complete,
+                NSObject error);
     }
 
     @Generated
@@ -837,7 +839,7 @@ public final class Network {
     @Generated
     public interface Block_nw_connection_send {
         @Generated
-        void call_nw_connection_send(NSObject arg0);
+        void call_nw_connection_send(NSObject error);
     }
 
     @Generated
@@ -877,7 +879,7 @@ public final class Network {
     @Generated
     public interface Block_nw_connection_access_establishment_report {
         @Generated
-        void call_nw_connection_access_establishment_report(NSObject arg0);
+        void call_nw_connection_access_establishment_report(NSObject report);
     }
 
     @Generated
@@ -913,8 +915,8 @@ public final class Network {
     @Generated
     public interface Block_nw_establishment_report_enumerate_resolutions {
         @Generated
-        boolean call_nw_establishment_report_enumerate_resolutions(int arg0, long arg1, int arg2, NSObject arg3,
-                NSObject arg4);
+        boolean call_nw_establishment_report_enumerate_resolutions(int source, long milliseconds, int endpoint_count,
+                NSObject successful_endpoint, NSObject preferred_endpoint);
     }
 
     @Generated
@@ -926,7 +928,8 @@ public final class Network {
     @Generated
     public interface Block_nw_establishment_report_enumerate_protocols {
         @Generated
-        boolean call_nw_establishment_report_enumerate_protocols(NSObject arg0, long arg1, long arg2);
+        boolean call_nw_establishment_report_enumerate_protocols(NSObject protocol, long handshake_milliseconds,
+                long handshake_rtt_milliseconds);
     }
 
     @Generated
@@ -946,7 +949,7 @@ public final class Network {
     @Generated
     public interface Block_nw_data_transfer_report_collect {
         @Generated
-        void call_nw_data_transfer_report_collect(NSObject arg0);
+        void call_nw_data_transfer_report_collect(NSObject report);
     }
 
     @Generated
@@ -1039,7 +1042,7 @@ public final class Network {
     @Generated
     public interface Block_nw_framer_message_set_value {
         @Generated
-        void call_nw_framer_message_set_value(VoidPtr arg0);
+        void call_nw_framer_message_set_value(VoidPtr value);
     }
 
     @Generated
@@ -1078,7 +1081,7 @@ public final class Network {
     @Generated
     public interface Block_nw_framer_create_definition {
         @Generated
-        int call_nw_framer_create_definition(NSObject arg0);
+        int call_nw_framer_create_definition(NSObject framer);
     }
 
     @Generated
@@ -1095,7 +1098,7 @@ public final class Network {
     public interface Block_nw_framer_set_input_handler {
         @Generated
         @NUInt
-        long call_nw_framer_set_input_handler(NSObject arg0);
+        long call_nw_framer_set_input_handler(NSObject framer);
     }
 
     @Generated
@@ -1107,7 +1110,8 @@ public final class Network {
     @Generated
     public interface Block_nw_framer_set_output_handler {
         @Generated
-        void call_nw_framer_set_output_handler(NSObject arg0, NSObject arg1, @NUInt long arg2, boolean arg3);
+        void call_nw_framer_set_output_handler(NSObject framer, NSObject message, @NUInt long message_length,
+                boolean is_complete);
     }
 
     @Generated
@@ -1119,7 +1123,7 @@ public final class Network {
     @Generated
     public interface Block_nw_framer_set_wakeup_handler {
         @Generated
-        void call_nw_framer_set_wakeup_handler(NSObject arg0);
+        void call_nw_framer_set_wakeup_handler(NSObject framer);
     }
 
     @Generated
@@ -1131,7 +1135,7 @@ public final class Network {
     @Generated
     public interface Block_nw_framer_set_stop_handler {
         @Generated
-        boolean call_nw_framer_set_stop_handler(NSObject arg0);
+        boolean call_nw_framer_set_stop_handler(NSObject framer);
     }
 
     @Generated
@@ -1143,7 +1147,7 @@ public final class Network {
     @Generated
     public interface Block_nw_framer_set_cleanup_handler {
         @Generated
-        void call_nw_framer_set_cleanup_handler(NSObject arg0);
+        void call_nw_framer_set_cleanup_handler(NSObject framer);
     }
 
     @Generated
@@ -1169,7 +1173,7 @@ public final class Network {
     public interface Block_nw_framer_parse_input {
         @Generated
         @NUInt
-        long call_nw_framer_parse_input(BytePtr arg0, @NUInt long arg1, boolean arg2);
+        long call_nw_framer_parse_input(BytePtr buffer, @NUInt long buffer_length, boolean is_complete);
     }
 
     @Generated
@@ -1198,7 +1202,7 @@ public final class Network {
     public interface Block_nw_framer_parse_output {
         @Generated
         @NUInt
-        long call_nw_framer_parse_output(BytePtr arg0, @NUInt long arg1, boolean arg2);
+        long call_nw_framer_parse_output(BytePtr buffer, @NUInt long buffer_length, boolean is_complete);
     }
 
     @Generated
@@ -1331,7 +1335,7 @@ public final class Network {
     @Generated
     public interface Block_nw_listener_set_state_changed_handler {
         @Generated
-        void call_nw_listener_set_state_changed_handler(int arg0, NSObject arg1);
+        void call_nw_listener_set_state_changed_handler(int state, NSObject error);
     }
 
     @Generated
@@ -1343,7 +1347,7 @@ public final class Network {
     @Generated
     public interface Block_nw_listener_set_new_connection_handler {
         @Generated
-        void call_nw_listener_set_new_connection_handler(NSObject arg0);
+        void call_nw_listener_set_new_connection_handler(NSObject connection);
     }
 
     @Generated
@@ -1367,7 +1371,7 @@ public final class Network {
     @Generated
     public interface Block_nw_listener_set_advertised_endpoint_changed_handler {
         @Generated
-        void call_nw_listener_set_advertised_endpoint_changed_handler(NSObject arg0, boolean arg1);
+        void call_nw_listener_set_advertised_endpoint_changed_handler(NSObject advertised_endpoint, boolean added);
     }
 
     @Generated
@@ -1411,7 +1415,7 @@ public final class Network {
     @Generated
     public interface Block_nw_path_monitor_set_update_handler {
         @Generated
-        void call_nw_path_monitor_set_update_handler(NSObject arg0);
+        void call_nw_path_monitor_set_update_handler(NSObject path);
     }
 
     @Generated
@@ -1609,7 +1613,7 @@ public final class Network {
     @Generated
     public interface Block_nw_ws_metadata_set_pong_handler {
         @Generated
-        void call_nw_ws_metadata_set_pong_handler(NSObject arg0);
+        void call_nw_ws_metadata_set_pong_handler(NSObject error);
     }
 
     @Generated
@@ -1622,7 +1626,7 @@ public final class Network {
     public interface Block_nw_ws_request_enumerate_subprotocols {
         @Generated
         boolean call_nw_ws_request_enumerate_subprotocols(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg0);
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String subprotocol);
     }
 
     @Generated
@@ -1635,8 +1639,8 @@ public final class Network {
     public interface Block_nw_ws_request_enumerate_additional_headers {
         @Generated
         boolean call_nw_ws_request_enumerate_additional_headers(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg0,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg1);
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String name,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value);
     }
 
     @Generated
@@ -1673,8 +1677,8 @@ public final class Network {
     public interface Block_nw_ws_response_enumerate_additional_headers {
         @Generated
         boolean call_nw_ws_response_enumerate_additional_headers(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg0,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String arg1);
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String name,
+                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value);
     }
 
     @Generated
@@ -1686,7 +1690,7 @@ public final class Network {
     @Generated
     public interface Block_nw_ws_options_set_client_request_handler {
         @Generated
-        NSObject call_nw_ws_options_set_client_request_handler(NSObject arg0);
+        NSObject call_nw_ws_options_set_client_request_handler(NSObject request);
     }
 
     @Generated

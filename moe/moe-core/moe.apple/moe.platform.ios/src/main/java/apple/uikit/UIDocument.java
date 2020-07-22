@@ -420,21 +420,21 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     public interface Block_autosaveWithCompletionHandler {
         @Generated
-        void call_autosaveWithCompletionHandler(boolean arg0);
+        void call_autosaveWithCompletionHandler(boolean success);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_closeWithCompletionHandler {
         @Generated
-        void call_closeWithCompletionHandler(boolean arg0);
+        void call_closeWithCompletionHandler(boolean success);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_openWithCompletionHandler {
         @Generated
-        void call_openWithCompletionHandler(boolean arg0);
+        void call_openWithCompletionHandler(boolean success);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -448,14 +448,14 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Generated
     public interface Block_revertToContentsOfURLCompletionHandler {
         @Generated
-        void call_revertToContentsOfURLCompletionHandler(boolean arg0);
+        void call_revertToContentsOfURLCompletionHandler(boolean success);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveToURLForSaveOperationCompletionHandler {
         @Generated
-        void call_saveToURLForSaveOperationCompletionHandler(boolean arg0);
+        void call_saveToURLForSaveOperationCompletionHandler(boolean success);
     }
 
     @Generated

@@ -204,7 +204,7 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_enumerateValuesForPropertiesUsingBlock {
         @Generated
-        void call_enumerateValuesForPropertiesUsingBlock(String arg0, @Mapped(ObjCObjectMapper.class) Object arg1,
-                BoolPtr arg2);
+        void call_enumerateValuesForPropertiesUsingBlock(String property, @Mapped(ObjCObjectMapper.class) Object value,
+                BoolPtr stop);
     }
 }

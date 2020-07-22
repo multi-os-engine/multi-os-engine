@@ -583,32 +583,32 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Generated
     public interface Block_enumerateKeysAndObjectsUsingBlock {
         @Generated
-        void call_enumerateKeysAndObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+        void call_enumerateKeysAndObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object key,
+                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateKeysAndObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateKeysAndObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+        void call_enumerateKeysAndObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object key,
+                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_keysOfEntriesPassingTest {
         @Generated
-        boolean call_keysOfEntriesPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+        boolean call_keysOfEntriesPassingTest(@Mapped(ObjCObjectMapper.class) Object key,
+                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_keysOfEntriesWithOptionsPassingTest {
         @Generated
-        boolean call_keysOfEntriesWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, BoolPtr arg2);
+        boolean call_keysOfEntriesWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object key,
+                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -616,8 +616,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public interface Block_keysSortedByValueUsingComparator {
         @Generated
         @NInt
-        long call_keysSortedByValueUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_keysSortedByValueUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -625,8 +625,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public interface Block_keysSortedByValueWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_keysSortedByValueWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        long call_keysSortedByValueWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
+                @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     private static final class NSDictionaryEntrySet<_KeyType, _ObjectType>

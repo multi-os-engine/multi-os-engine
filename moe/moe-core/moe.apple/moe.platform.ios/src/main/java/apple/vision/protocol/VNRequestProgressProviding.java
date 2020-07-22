@@ -28,7 +28,7 @@ public interface VNRequestProgressProviding {
     @Generated
     public interface Block_progressHandler_ret {
         @Generated
-        void call_progressHandler_ret(VNRequest arg0, double arg1, NSError arg2);
+        void call_progressHandler_ret(VNRequest request, double fractionCompleted, NSError error);
     }
 
     @Generated
@@ -39,6 +39,6 @@ public interface VNRequestProgressProviding {
     @Generated
     public interface Block_setProgressHandler {
         @Generated
-        void call_setProgressHandler(VNRequest arg0, double arg1, NSError arg2);
+        void call_setProgressHandler(VNRequest request, double fractionCompleted, NSError error);
     }
 }

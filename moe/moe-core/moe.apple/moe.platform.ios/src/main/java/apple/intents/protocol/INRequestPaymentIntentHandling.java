@@ -78,35 +78,36 @@ public interface INRequestPaymentIntentHandling {
     @Generated
     public interface Block_confirmRequestPaymentCompletion {
         @Generated
-        void call_confirmRequestPaymentCompletion(INRequestPaymentIntentResponse arg0);
+        void call_confirmRequestPaymentCompletion(INRequestPaymentIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleRequestPaymentCompletion {
         @Generated
-        void call_handleRequestPaymentCompletion(INRequestPaymentIntentResponse arg0);
+        void call_handleRequestPaymentCompletion(INRequestPaymentIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveCurrencyAmountForRequestPaymentWithCompletion {
         @Generated
-        void call_resolveCurrencyAmountForRequestPaymentWithCompletion(INCurrencyAmountResolutionResult arg0);
+        void call_resolveCurrencyAmountForRequestPaymentWithCompletion(
+                INCurrencyAmountResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveNoteForRequestPaymentWithCompletion {
         @Generated
-        void call_resolveNoteForRequestPaymentWithCompletion(INStringResolutionResult arg0);
+        void call_resolveNoteForRequestPaymentWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePayerForRequestPaymentWithCompletion {
         @Generated
-        void call_resolvePayerForRequestPaymentWithCompletion(INPersonResolutionResult arg0);
+        void call_resolvePayerForRequestPaymentWithCompletion(INPersonResolutionResult resolutionResult);
     }
 
     @Generated
@@ -121,7 +122,8 @@ public interface INRequestPaymentIntentHandling {
     @Generated
     public interface Block_resolveCurrencyAmountForRequestPaymentCompletion {
         @Generated
-        void call_resolveCurrencyAmountForRequestPaymentCompletion(INRequestPaymentCurrencyAmountResolutionResult arg0);
+        void call_resolveCurrencyAmountForRequestPaymentCompletion(
+                INRequestPaymentCurrencyAmountResolutionResult resolutionResult);
     }
 
     @Generated
@@ -136,6 +138,6 @@ public interface INRequestPaymentIntentHandling {
     @Generated
     public interface Block_resolvePayerForRequestPaymentCompletion {
         @Generated
-        void call_resolvePayerForRequestPaymentCompletion(INRequestPaymentPayerResolutionResult arg0);
+        void call_resolvePayerForRequestPaymentCompletion(INRequestPaymentPayerResolutionResult resolutionResult);
     }
 }

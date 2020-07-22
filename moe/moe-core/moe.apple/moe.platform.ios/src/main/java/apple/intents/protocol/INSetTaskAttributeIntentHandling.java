@@ -35,7 +35,7 @@ public interface INSetTaskAttributeIntentHandling {
     @Generated
     public interface Block_confirmSetTaskAttributeCompletion {
         @Generated
-        void call_confirmSetTaskAttributeCompletion(INSetTaskAttributeIntentResponse arg0);
+        void call_confirmSetTaskAttributeCompletion(INSetTaskAttributeIntentResponse response);
     }
 
     @Generated
@@ -47,7 +47,7 @@ public interface INSetTaskAttributeIntentHandling {
     @Generated
     public interface Block_handleSetTaskAttributeCompletion {
         @Generated
-        void call_handleSetTaskAttributeCompletion(INSetTaskAttributeIntentResponse arg0);
+        void call_handleSetTaskAttributeCompletion(INSetTaskAttributeIntentResponse response);
     }
 
     @Generated
@@ -63,7 +63,7 @@ public interface INSetTaskAttributeIntentHandling {
     public interface Block_resolveSpatialEventTriggerForSetTaskAttributeWithCompletion {
         @Generated
         void call_resolveSpatialEventTriggerForSetTaskAttributeWithCompletion(
-                INSpatialEventTriggerResolutionResult arg0);
+                INSpatialEventTriggerResolutionResult resolutionResult);
     }
 
     @Generated
@@ -78,7 +78,7 @@ public interface INSetTaskAttributeIntentHandling {
     @Generated
     public interface Block_resolveStatusForSetTaskAttributeWithCompletion {
         @Generated
-        void call_resolveStatusForSetTaskAttributeWithCompletion(INTaskStatusResolutionResult arg0);
+        void call_resolveStatusForSetTaskAttributeWithCompletion(INTaskStatusResolutionResult resolutionResult);
     }
 
     @Generated
@@ -93,7 +93,7 @@ public interface INSetTaskAttributeIntentHandling {
     @Generated
     public interface Block_resolveTargetTaskForSetTaskAttributeWithCompletion {
         @Generated
-        void call_resolveTargetTaskForSetTaskAttributeWithCompletion(INTaskResolutionResult arg0);
+        void call_resolveTargetTaskForSetTaskAttributeWithCompletion(INTaskResolutionResult resolutionResult);
     }
 
     @Generated
@@ -109,7 +109,7 @@ public interface INSetTaskAttributeIntentHandling {
     public interface Block_resolveTemporalEventTriggerForSetTaskAttributeWithCompletion {
         @Generated
         void call_resolveTemporalEventTriggerForSetTaskAttributeWithCompletion(
-                INTemporalEventTriggerResolutionResult arg0);
+                INTemporalEventTriggerResolutionResult resolutionResult);
     }
 
     @Generated
@@ -124,7 +124,7 @@ public interface INSetTaskAttributeIntentHandling {
     @Generated
     public interface Block_resolvePriorityForSetTaskAttributeWithCompletion {
         @Generated
-        void call_resolvePriorityForSetTaskAttributeWithCompletion(INTaskPriorityResolutionResult arg0);
+        void call_resolvePriorityForSetTaskAttributeWithCompletion(INTaskPriorityResolutionResult resolutionResult);
     }
 
     @Generated
@@ -139,7 +139,7 @@ public interface INSetTaskAttributeIntentHandling {
     @Generated
     public interface Block_resolveTaskTitleForSetTaskAttributeWithCompletion {
         @Generated
-        void call_resolveTaskTitleForSetTaskAttributeWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveTaskTitleForSetTaskAttributeWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -155,6 +155,6 @@ public interface INSetTaskAttributeIntentHandling {
     public interface Block_resolveTemporalEventTriggerForSetTaskAttributeCompletion {
         @Generated
         void call_resolveTemporalEventTriggerForSetTaskAttributeCompletion(
-                INSetTaskAttributeTemporalEventTriggerResolutionResult arg0);
+                INSetTaskAttributeTemporalEventTriggerResolutionResult resolutionResult);
     }
 }

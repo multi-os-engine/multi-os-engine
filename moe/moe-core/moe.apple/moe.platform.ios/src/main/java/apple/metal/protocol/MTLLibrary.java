@@ -74,7 +74,7 @@ public interface MTLLibrary {
     @Generated
     public interface Block_newFunctionWithNameConstantValuesCompletionHandler {
         @Generated
-        void call_newFunctionWithNameConstantValuesCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_newFunctionWithNameConstantValuesCompletionHandler(@Mapped(ObjCObjectMapper.class) Object function,
+                NSError error);
     }
 }

@@ -75,6 +75,6 @@ public interface MCSessionDelegate {
     @Generated
     public interface Block_sessionDidReceiveCertificateFromPeerCertificateHandler {
         @Generated
-        void call_sessionDidReceiveCertificateFromPeerCertificateHandler(boolean arg0);
+        void call_sessionDidReceiveCertificateFromPeerCertificateHandler(boolean accept);
     }
 }

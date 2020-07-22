@@ -211,13 +211,13 @@ public class HMService extends NSObject {
     @Generated
     public interface Block_updateAssociatedServiceTypeCompletionHandler {
         @Generated
-        void call_updateAssociatedServiceTypeCompletionHandler(NSError arg0);
+        void call_updateAssociatedServiceTypeCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 }

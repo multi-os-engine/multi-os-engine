@@ -29,7 +29,7 @@ public interface INGetVisualCodeIntentHandling {
     @Generated
     public interface Block_confirmGetVisualCodeCompletion {
         @Generated
-        void call_confirmGetVisualCodeCompletion(INGetVisualCodeIntentResponse arg0);
+        void call_confirmGetVisualCodeCompletion(INGetVisualCodeIntentResponse response);
     }
 
     @Generated
@@ -41,7 +41,7 @@ public interface INGetVisualCodeIntentHandling {
     @Generated
     public interface Block_handleGetVisualCodeCompletion {
         @Generated
-        void call_handleGetVisualCodeCompletion(INGetVisualCodeIntentResponse arg0);
+        void call_handleGetVisualCodeCompletion(INGetVisualCodeIntentResponse response);
     }
 
     @Generated
@@ -56,6 +56,7 @@ public interface INGetVisualCodeIntentHandling {
     @Generated
     public interface Block_resolveVisualCodeTypeForGetVisualCodeWithCompletion {
         @Generated
-        void call_resolveVisualCodeTypeForGetVisualCodeWithCompletion(INVisualCodeTypeResolutionResult arg0);
+        void call_resolveVisualCodeTypeForGetVisualCodeWithCompletion(
+                INVisualCodeTypeResolutionResult resolutionResult);
     }
 }

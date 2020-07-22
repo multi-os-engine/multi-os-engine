@@ -242,7 +242,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     public interface Block_setUserInfoValueProviderForDomainProvider {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_setUserInfoValueProviderForDomainProvider(NSError arg0, String arg1);
+        Object call_setUserInfoValueProviderForDomainProvider(NSError err, String userInfoKey);
     }
 
     @Runtime(ObjCRuntime.class)

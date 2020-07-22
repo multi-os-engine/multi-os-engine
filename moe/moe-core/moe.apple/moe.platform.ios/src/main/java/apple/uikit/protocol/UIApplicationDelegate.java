@@ -429,14 +429,14 @@ public interface UIApplicationDelegate {
     @Generated
     public interface Block_applicationContinueUserActivityRestorationHandler {
         @Generated
-        void call_applicationContinueUserActivityRestorationHandler(NSArray<?> arg0);
+        void call_applicationContinueUserActivityRestorationHandler(NSArray<?> restorableObjects);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_applicationDidReceiveRemoteNotificationFetchCompletionHandler {
         @Generated
-        void call_applicationDidReceiveRemoteNotificationFetchCompletionHandler(@NUInt long arg0);
+        void call_applicationDidReceiveRemoteNotificationFetchCompletionHandler(@NUInt long result);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -478,21 +478,21 @@ public interface UIApplicationDelegate {
     @Generated
     public interface Block_applicationHandleWatchKitExtensionRequestReply {
         @Generated
-        void call_applicationHandleWatchKitExtensionRequestReply(NSDictionary<?, ?> arg0);
+        void call_applicationHandleWatchKitExtensionRequestReply(NSDictionary<?, ?> replyInfo);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_applicationPerformActionForShortcutItemCompletionHandler {
         @Generated
-        void call_applicationPerformActionForShortcutItemCompletionHandler(boolean arg0);
+        void call_applicationPerformActionForShortcutItemCompletionHandler(boolean succeeded);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_applicationPerformFetchWithCompletionHandler {
         @Generated
-        void call_applicationPerformFetchWithCompletionHandler(@NUInt long arg0);
+        void call_applicationPerformFetchWithCompletionHandler(@NUInt long result);
     }
 
     @Generated
@@ -507,7 +507,7 @@ public interface UIApplicationDelegate {
     @Generated
     public interface Block_applicationHandleIntentCompletionHandler {
         @Generated
-        void call_applicationHandleIntentCompletionHandler(INIntentResponse arg0);
+        void call_applicationHandleIntentCompletionHandler(INIntentResponse intentResponse);
     }
 
     @Generated

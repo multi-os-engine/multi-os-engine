@@ -5166,7 +5166,7 @@ public final class CoreFoundation {
     @Generated
     public interface Block_CFRunLoopObserverCreateWithHandler {
         @Generated
-        void call_CFRunLoopObserverCreateWithHandler(CFRunLoopObserverRef arg0, @NUInt long arg1);
+        void call_CFRunLoopObserverCreateWithHandler(CFRunLoopObserverRef observer, @NUInt long activity);
     }
 
     @Runtime(CRuntime.class)
@@ -5180,7 +5180,7 @@ public final class CoreFoundation {
     @Generated
     public interface Block_CFRunLoopTimerCreateWithHandler {
         @Generated
-        void call_CFRunLoopTimerCreateWithHandler(CFRunLoopTimerRef arg0);
+        void call_CFRunLoopTimerCreateWithHandler(CFRunLoopTimerRef timer);
     }
 
     @Runtime(CRuntime.class)

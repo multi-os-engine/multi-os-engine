@@ -62,7 +62,7 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     public interface Block_confirmGetUserCurrentRestaurantReservationBookingsCompletion {
         @Generated
         void call_confirmGetUserCurrentRestaurantReservationBookingsCompletion(
-                INGetUserCurrentRestaurantReservationBookingsIntentResponse arg0);
+                INGetUserCurrentRestaurantReservationBookingsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -70,7 +70,7 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     public interface Block_handleGetUserCurrentRestaurantReservationBookingsCompletion {
         @Generated
         void call_handleGetUserCurrentRestaurantReservationBookingsCompletion(
-                INGetUserCurrentRestaurantReservationBookingsIntentResponse arg0);
+                INGetUserCurrentRestaurantReservationBookingsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -78,6 +78,6 @@ public interface INGetUserCurrentRestaurantReservationBookingsIntentHandling {
     public interface Block_resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion {
         @Generated
         void call_resolveRestaurantForGetUserCurrentRestaurantReservationBookingsWithCompletion(
-                INRestaurantResolutionResult arg0);
+                INRestaurantResolutionResult resolutionResult);
     }
 }

@@ -269,34 +269,35 @@ public class GKLeaderboard extends NSObject {
     @Generated
     public interface Block_loadCategoriesWithCompletionHandler {
         @Generated
-        void call_loadCategoriesWithCompletionHandler(NSArray<String> arg0, NSArray<String> arg1, NSError arg2);
+        void call_loadCategoriesWithCompletionHandler(NSArray<String> categories, NSArray<String> titles,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadImageWithCompletionHandler {
         @Generated
-        void call_loadImageWithCompletionHandler(UIImage arg0, NSError arg1);
+        void call_loadImageWithCompletionHandler(UIImage image, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadLeaderboardsWithCompletionHandler {
         @Generated
-        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> arg0, NSError arg1);
+        void call_loadLeaderboardsWithCompletionHandler(NSArray<? extends GKLeaderboard> leaderboards, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadScoresWithCompletionHandler {
         @Generated
-        void call_loadScoresWithCompletionHandler(NSArray<? extends GKScore> arg0, NSError arg1);
+        void call_loadScoresWithCompletionHandler(NSArray<? extends GKScore> scores, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDefaultLeaderboardWithCompletionHandler {
         @Generated
-        void call_setDefaultLeaderboardWithCompletionHandler(NSError arg0);
+        void call_setDefaultLeaderboardWithCompletionHandler(NSError error);
     }
 }

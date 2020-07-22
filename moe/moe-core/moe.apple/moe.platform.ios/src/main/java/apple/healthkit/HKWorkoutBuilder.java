@@ -54,7 +54,7 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     public interface Block_addMetadataCompletion {
         @Generated
-        void call_addMetadataCompletion(boolean arg0, NSError arg1);
+        void call_addMetadataCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -66,7 +66,7 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     public interface Block_addSamplesCompletion {
         @Generated
-        void call_addSamplesCompletion(boolean arg0, NSError arg1);
+        void call_addSamplesCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -78,7 +78,7 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     public interface Block_addWorkoutEventsCompletion {
         @Generated
-        void call_addWorkoutEventsCompletion(boolean arg0, NSError arg1);
+        void call_addWorkoutEventsCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -104,7 +104,7 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     public interface Block_beginCollectionWithStartDateCompletion {
         @Generated
-        void call_beginCollectionWithStartDateCompletion(boolean arg0, NSError arg1);
+        void call_beginCollectionWithStartDateCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -154,7 +154,7 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     public interface Block_endCollectionWithEndDateCompletion {
         @Generated
-        void call_endCollectionWithEndDateCompletion(boolean arg0, NSError arg1);
+        void call_endCollectionWithEndDateCompletion(boolean success, NSError error);
     }
 
     @Generated
@@ -170,7 +170,7 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     public interface Block_finishWorkoutWithCompletion {
         @Generated
-        void call_finishWorkoutWithCompletion(HKWorkout arg0, NSError arg1);
+        void call_finishWorkoutWithCompletion(HKWorkout workout, NSError error);
     }
 
     @Generated

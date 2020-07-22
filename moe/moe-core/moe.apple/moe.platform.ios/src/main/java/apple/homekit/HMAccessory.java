@@ -243,14 +243,14 @@ public class HMAccessory extends NSObject {
     @Generated
     public interface Block_identifyWithCompletionHandler {
         @Generated
-        void call_identifyWithCompletionHandler(NSError arg0);
+        void call_identifyWithCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 
     @Generated

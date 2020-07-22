@@ -201,20 +201,20 @@ public class HMActionSet extends NSObject {
     @Generated
     public interface Block_addActionCompletionHandler {
         @Generated
-        void call_addActionCompletionHandler(NSError arg0);
+        void call_addActionCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeActionCompletionHandler {
         @Generated
-        void call_removeActionCompletionHandler(NSError arg0);
+        void call_removeActionCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError arg0);
+        void call_updateNameCompletionHandler(NSError error);
     }
 }

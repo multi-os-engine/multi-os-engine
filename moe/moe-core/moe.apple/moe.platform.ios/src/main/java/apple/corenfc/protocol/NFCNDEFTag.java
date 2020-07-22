@@ -31,7 +31,7 @@ public interface NFCNDEFTag extends NSSecureCoding, NSCopying {
     @Generated
     public interface Block_queryNDEFStatusWithCompletionHandler {
         @Generated
-        void call_queryNDEFStatusWithCompletionHandler(@NUInt long arg0, @NUInt long arg1, NSError arg2);
+        void call_queryNDEFStatusWithCompletionHandler(@NUInt long status, @NUInt long capacity, NSError error);
     }
 
     @Generated

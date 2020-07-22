@@ -263,7 +263,7 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Generated
     public interface Block_enumerateMatchesInStringOptionsRangeUsingBlock {
         @Generated
-        void call_enumerateMatchesInStringOptionsRangeUsingBlock(NSTextCheckingResult arg0, @NUInt long arg1,
-                BoolPtr arg2);
+        void call_enumerateMatchesInStringOptionsRangeUsingBlock(NSTextCheckingResult result, @NUInt long flags,
+                BoolPtr stop);
     }
 }

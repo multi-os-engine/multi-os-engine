@@ -166,7 +166,7 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_providePlaceholderAtURLCompletionHandler {
         @Generated
-        void call_providePlaceholderAtURLCompletionHandler(NSError arg0);
+        void call_providePlaceholderAtURLCompletionHandler(NSError error);
     }
 
     @Generated
@@ -194,7 +194,7 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_startProvidingItemAtURLCompletionHandler {
         @Generated
-        void call_startProvidingItemAtURLCompletionHandler(NSError arg0);
+        void call_startProvidingItemAtURLCompletionHandler(NSError error);
     }
 
     @Generated
@@ -226,7 +226,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_createDirectoryWithNameInParentItemIdentifierCompletionHandler {
         @Generated
         void call_createDirectoryWithNameInParentItemIdentifierCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+                @Mapped(ObjCObjectMapper.class) Object createdDirectoryItem, NSError error);
     }
 
     @Generated
@@ -238,7 +238,7 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_deleteItemWithIdentifierCompletionHandler {
         @Generated
-        void call_deleteItemWithIdentifierCompletionHandler(NSError arg0);
+        void call_deleteItemWithIdentifierCompletionHandler(NSError error);
     }
 
     @Generated
@@ -263,7 +263,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_fetchThumbnailsForItemIdentifiersRequestedSizePerThumbnailCompletionHandlerCompletionHandler_2 {
         @Generated
         void call_fetchThumbnailsForItemIdentifiersRequestedSizePerThumbnailCompletionHandlerCompletionHandler_2(
-                String arg0, NSData arg1, NSError arg2);
+                String identifier, NSData imageData, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -271,7 +271,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_fetchThumbnailsForItemIdentifiersRequestedSizePerThumbnailCompletionHandlerCompletionHandler_3 {
         @Generated
         void call_fetchThumbnailsForItemIdentifiersRequestedSizePerThumbnailCompletionHandlerCompletionHandler_3(
-                NSError arg0);
+                NSError error);
     }
 
     @Generated
@@ -285,7 +285,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_importDocumentAtURLToParentItemIdentifierCompletionHandler {
         @Generated
         void call_importDocumentAtURLToParentItemIdentifierCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+                @Mapped(ObjCObjectMapper.class) Object importedDocumentItem, NSError error);
     }
 
     @Generated
@@ -297,8 +297,8 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_renameItemWithIdentifierToNameCompletionHandler {
         @Generated
-        void call_renameItemWithIdentifierToNameCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_renameItemWithIdentifierToNameCompletionHandler(@Mapped(ObjCObjectMapper.class) Object renamedItem,
+                NSError error);
     }
 
     @Generated
@@ -312,7 +312,7 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_reparentItemWithIdentifierToParentItemWithIdentifierNewNameCompletionHandler {
         @Generated
         void call_reparentItemWithIdentifierToParentItemWithIdentifierNewNameCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+                @Mapped(ObjCObjectMapper.class) Object reparentedItem, NSError error);
     }
 
     @Generated
@@ -324,8 +324,8 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_setFavoriteRankForItemIdentifierCompletionHandler {
         @Generated
-        void call_setFavoriteRankForItemIdentifierCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_setFavoriteRankForItemIdentifierCompletionHandler(@Mapped(ObjCObjectMapper.class) Object favoriteItem,
+                NSError error);
     }
 
     @Generated
@@ -337,8 +337,8 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_setLastUsedDateForItemIdentifierCompletionHandler {
         @Generated
-        void call_setLastUsedDateForItemIdentifierCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_setLastUsedDateForItemIdentifierCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object recentlyUsedItem, NSError error);
     }
 
     @Generated
@@ -350,8 +350,8 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_setTagDataForItemIdentifierCompletionHandler {
         @Generated
-        void call_setTagDataForItemIdentifierCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError arg1);
+        void call_setTagDataForItemIdentifierCompletionHandler(@Mapped(ObjCObjectMapper.class) Object taggedItem,
+                NSError error);
     }
 
     @Generated
@@ -368,7 +368,8 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     public interface Block_trashItemWithIdentifierCompletionHandler {
         @Generated
-        void call_trashItemWithIdentifierCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+        void call_trashItemWithIdentifierCompletionHandler(@Mapped(ObjCObjectMapper.class) Object trashedItem,
+                NSError error);
     }
 
     @Generated
@@ -382,6 +383,6 @@ public class NSFileProviderExtension extends NSObject {
     public interface Block_untrashItemWithIdentifierToParentItemIdentifierCompletionHandler {
         @Generated
         void call_untrashItemWithIdentifierToParentItemIdentifierCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, NSError arg1);
+                @Mapped(ObjCObjectMapper.class) Object untrashedItem, NSError error);
     }
 }

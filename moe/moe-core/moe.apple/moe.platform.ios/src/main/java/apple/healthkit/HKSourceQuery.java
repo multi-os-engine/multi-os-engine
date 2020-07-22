@@ -270,8 +270,8 @@ public class HKSourceQuery extends HKQuery {
     @Generated
     public interface Block_initWithSampleTypeSamplePredicateCompletionHandler {
         @Generated
-        void call_initWithSampleTypeSamplePredicateCompletionHandler(HKSourceQuery arg0, NSSet<? extends HKSource> arg1,
-                NSError arg2);
+        void call_initWithSampleTypeSamplePredicateCompletionHandler(HKSourceQuery query,
+                NSSet<? extends HKSource> sources, NSError error);
     }
 
     @Generated

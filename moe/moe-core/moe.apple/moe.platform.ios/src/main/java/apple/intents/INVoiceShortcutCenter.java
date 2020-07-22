@@ -93,7 +93,7 @@ public class INVoiceShortcutCenter extends NSObject {
     @Generated
     public interface Block_getAllVoiceShortcutsWithCompletion {
         @Generated
-        void call_getAllVoiceShortcutsWithCompletion(NSArray<? extends INVoiceShortcut> arg0, NSError arg1);
+        void call_getAllVoiceShortcutsWithCompletion(NSArray<? extends INVoiceShortcut> voiceShortcuts, NSError error);
     }
 
     @Generated
@@ -105,7 +105,7 @@ public class INVoiceShortcutCenter extends NSObject {
     @Generated
     public interface Block_getVoiceShortcutWithIdentifierCompletion {
         @Generated
-        void call_getVoiceShortcutWithIdentifierCompletion(INVoiceShortcut arg0, NSError arg1);
+        void call_getVoiceShortcutWithIdentifierCompletion(INVoiceShortcut voiceShortcut, NSError error);
     }
 
     @Generated

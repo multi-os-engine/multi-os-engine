@@ -185,7 +185,7 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Generated
     public interface Block_addCoordinatedFocusingAnimationsCompletion_0 {
         @Generated
-        void call_addCoordinatedFocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addCoordinatedFocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object animationContext);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -205,7 +205,8 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Generated
     public interface Block_addCoordinatedUnfocusingAnimationsCompletion_0 {
         @Generated
-        void call_addCoordinatedUnfocusingAnimationsCompletion_0(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addCoordinatedUnfocusingAnimationsCompletion_0(
+                @Mapped(ObjCObjectMapper.class) Object animationContext);
     }
 
     @Runtime(ObjCRuntime.class)

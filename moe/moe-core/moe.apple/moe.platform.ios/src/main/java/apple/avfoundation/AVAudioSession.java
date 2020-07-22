@@ -443,7 +443,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     public interface Block_requestRecordPermission {
         @Generated
-        void call_requestRecordPermission(boolean arg0);
+        void call_requestRecordPermission(boolean granted);
     }
 
     @Generated
@@ -479,6 +479,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     public interface Block_prepareRouteSelectionForPlaybackWithCompletionHandler {
         @Generated
-        void call_prepareRouteSelectionForPlaybackWithCompletionHandler(boolean arg0, @NInt long arg1);
+        void call_prepareRouteSelectionForPlaybackWithCompletionHandler(boolean shouldStartPlayback,
+                @NInt long routeSelection);
     }
 }

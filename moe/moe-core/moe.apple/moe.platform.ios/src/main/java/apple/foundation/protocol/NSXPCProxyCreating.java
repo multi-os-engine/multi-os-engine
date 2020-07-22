@@ -32,7 +32,7 @@ public interface NSXPCProxyCreating {
     @Generated
     public interface Block_remoteObjectProxyWithErrorHandler {
         @Generated
-        void call_remoteObjectProxyWithErrorHandler(NSError arg0);
+        void call_remoteObjectProxyWithErrorHandler(NSError error);
     }
 
     @Generated
@@ -48,6 +48,6 @@ public interface NSXPCProxyCreating {
     @Generated
     public interface Block_synchronousRemoteObjectProxyWithErrorHandler {
         @Generated
-        void call_synchronousRemoteObjectProxyWithErrorHandler(NSError arg0);
+        void call_synchronousRemoteObjectProxyWithErrorHandler(NSError error);
     }
 }

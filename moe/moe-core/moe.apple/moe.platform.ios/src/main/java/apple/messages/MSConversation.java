@@ -194,28 +194,28 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_insertAttachmentWithAlternateFilenameCompletionHandler {
         @Generated
-        void call_insertAttachmentWithAlternateFilenameCompletionHandler(NSError arg0);
+        void call_insertAttachmentWithAlternateFilenameCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertMessageCompletionHandler {
         @Generated
-        void call_insertMessageCompletionHandler(NSError arg0);
+        void call_insertMessageCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertStickerCompletionHandler {
         @Generated
-        void call_insertStickerCompletionHandler(NSError arg0);
+        void call_insertStickerCompletionHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertTextCompletionHandler {
         @Generated
-        void call_insertTextCompletionHandler(NSError arg0);
+        void call_insertTextCompletionHandler(NSError error);
     }
 
     @Generated
@@ -227,7 +227,7 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_sendAttachmentWithAlternateFilenameCompletionHandler {
         @Generated
-        void call_sendAttachmentWithAlternateFilenameCompletionHandler(NSError arg0);
+        void call_sendAttachmentWithAlternateFilenameCompletionHandler(NSError error);
     }
 
     @Generated
@@ -239,7 +239,7 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_sendMessageCompletionHandler {
         @Generated
-        void call_sendMessageCompletionHandler(NSError arg0);
+        void call_sendMessageCompletionHandler(NSError error);
     }
 
     @Generated
@@ -251,7 +251,7 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_sendStickerCompletionHandler {
         @Generated
-        void call_sendStickerCompletionHandler(NSError arg0);
+        void call_sendStickerCompletionHandler(NSError error);
     }
 
     @Generated
@@ -263,6 +263,6 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_sendTextCompletionHandler {
         @Generated
-        void call_sendTextCompletionHandler(NSError arg0);
+        void call_sendTextCompletionHandler(NSError error);
     }
 }

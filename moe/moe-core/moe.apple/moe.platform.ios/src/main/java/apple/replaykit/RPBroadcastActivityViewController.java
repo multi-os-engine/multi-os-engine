@@ -211,7 +211,8 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Generated
     public interface Block_loadBroadcastActivityViewControllerWithHandler {
         @Generated
-        void call_loadBroadcastActivityViewControllerWithHandler(RPBroadcastActivityViewController arg0, NSError arg1);
+        void call_loadBroadcastActivityViewControllerWithHandler(
+                RPBroadcastActivityViewController broadcastActivityViewController, NSError error);
     }
 
     @Generated
@@ -225,6 +226,6 @@ public class RPBroadcastActivityViewController extends UIViewController {
     public interface Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler {
         @Generated
         void call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler(
-                RPBroadcastActivityViewController arg0, NSError arg1);
+                RPBroadcastActivityViewController broadcastActivityViewController, NSError error);
     }
 }

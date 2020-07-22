@@ -222,13 +222,13 @@ public class RPBroadcastController extends NSObject {
     @Generated
     public interface Block_finishBroadcastWithHandler {
         @Generated
-        void call_finishBroadcastWithHandler(NSError arg0);
+        void call_finishBroadcastWithHandler(NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startBroadcastWithHandler {
         @Generated
-        void call_startBroadcastWithHandler(NSError arg0);
+        void call_startBroadcastWithHandler(NSError error);
     }
 }

@@ -201,13 +201,13 @@ public class UIGraphicsRenderer extends NSObject {
     @Generated
     public interface Block_runDrawingActionsCompletionActionsError_0 {
         @Generated
-        void call_runDrawingActionsCompletionActionsError_0(UIGraphicsRendererContext arg0);
+        void call_runDrawingActionsCompletionActionsError_0(UIGraphicsRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_runDrawingActionsCompletionActionsError_1 {
         @Generated
-        void call_runDrawingActionsCompletionActionsError_1(UIGraphicsRendererContext arg0);
+        void call_runDrawingActionsCompletionActionsError_1(UIGraphicsRendererContext rendererContext);
     }
 }

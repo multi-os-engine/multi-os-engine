@@ -218,7 +218,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Generated
     public interface Block_revealDocumentAtURLImportIfNeededCompletion {
         @Generated
-        void call_revealDocumentAtURLImportIfNeededCompletion(NSURL arg0, NSError arg1);
+        void call_revealDocumentAtURLImportIfNeededCompletion(NSURL revealedDocumentURL, NSError error);
     }
 
     @Generated

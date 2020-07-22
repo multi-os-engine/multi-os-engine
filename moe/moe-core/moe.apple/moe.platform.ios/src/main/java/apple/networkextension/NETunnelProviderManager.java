@@ -179,7 +179,7 @@ public class NETunnelProviderManager extends NEVPNManager {
     @Generated
     public interface Block_loadAllFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NETunnelProviderManager> arg0,
-                NSError arg1);
+        void call_loadAllFromPreferencesWithCompletionHandler(NSArray<? extends NETunnelProviderManager> managers,
+                NSError error);
     }
 }

@@ -221,14 +221,14 @@ public class GCExtendedGamepad extends NSObject {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCExtendedGamepad arg0, GCControllerElement arg1);
+        void call_setValueChangedHandler(GCExtendedGamepad gamepad, GCControllerElement element);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCExtendedGamepad arg0, GCControllerElement arg1);
+        void call_valueChangedHandler_ret(GCExtendedGamepad gamepad, GCControllerElement element);
     }
 
     @Generated

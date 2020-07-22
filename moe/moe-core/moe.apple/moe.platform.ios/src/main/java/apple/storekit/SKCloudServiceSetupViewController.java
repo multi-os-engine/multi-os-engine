@@ -212,6 +212,6 @@ public class SKCloudServiceSetupViewController extends UIViewController {
     @Generated
     public interface Block_loadWithOptionsCompletionHandler {
         @Generated
-        void call_loadWithOptionsCompletionHandler(boolean arg0, NSError arg1);
+        void call_loadWithOptionsCompletionHandler(boolean result, NSError error);
     }
 }

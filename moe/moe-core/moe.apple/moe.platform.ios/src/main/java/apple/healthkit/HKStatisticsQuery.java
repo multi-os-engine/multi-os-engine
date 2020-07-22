@@ -270,8 +270,8 @@ public class HKStatisticsQuery extends HKQuery {
     @Generated
     public interface Block_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler {
         @Generated
-        void call_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler(HKStatisticsQuery arg0,
-                HKStatistics arg1, NSError arg2);
+        void call_initWithQuantityTypeQuantitySamplePredicateOptionsCompletionHandler(HKStatisticsQuery query,
+                HKStatistics result, NSError error);
     }
 
     @Generated

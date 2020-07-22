@@ -207,7 +207,7 @@ public class AVAudioNode extends NSObject {
     @Generated
     public interface Block_installTapOnBusBufferSizeFormatBlock {
         @Generated
-        void call_installTapOnBusBufferSizeFormatBlock(AVAudioPCMBuffer arg0, AVAudioTime arg1);
+        void call_installTapOnBusBufferSizeFormatBlock(AVAudioPCMBuffer buffer, AVAudioTime when);
     }
 
     @Generated

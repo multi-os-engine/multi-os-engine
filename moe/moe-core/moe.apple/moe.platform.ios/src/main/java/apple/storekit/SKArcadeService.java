@@ -63,8 +63,8 @@ public class SKArcadeService extends NSObject {
     @Generated
     public interface Block_arcadeSubscriptionStatusWithNonceResultHandler {
         @Generated
-        void call_arcadeSubscriptionStatusWithNonceResultHandler(NSData arg0, int arg1, NSData arg2, int arg3,
-                NSError arg4);
+        void call_arcadeSubscriptionStatusWithNonceResultHandler(NSData subscriptionStatus,
+                int subscriptionStatusLength, NSData cmacOfNonce, int cmacOfNonceLength, NSError error);
     }
 
     @Generated
@@ -143,8 +143,8 @@ public class SKArcadeService extends NSObject {
     @Generated
     public interface Block_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler {
         @Generated
-        void call_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler(NSData arg0, int arg1, NSData arg2,
-                int arg3, NSError arg4);
+        void call_registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler(NSData randomFromFP,
+                int randomFromFPLength, NSData cmacOfAppPID, int cmacOfAppPIDLength, NSError error);
     }
 
     @Generated

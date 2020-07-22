@@ -60,21 +60,22 @@ public interface INStartAudioCallIntentHandling {
     @Generated
     public interface Block_confirmStartAudioCallCompletion {
         @Generated
-        void call_confirmStartAudioCallCompletion(INStartAudioCallIntentResponse arg0);
+        void call_confirmStartAudioCallCompletion(INStartAudioCallIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartAudioCallCompletion {
         @Generated
-        void call_handleStartAudioCallCompletion(INStartAudioCallIntentResponse arg0);
+        void call_handleStartAudioCallCompletion(INStartAudioCallIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveContactsForStartAudioCallWithCompletion {
         @Generated
-        void call_resolveContactsForStartAudioCallWithCompletion(NSArray<? extends INPersonResolutionResult> arg0);
+        void call_resolveContactsForStartAudioCallWithCompletion(
+                NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -89,6 +90,7 @@ public interface INStartAudioCallIntentHandling {
     @Generated
     public interface Block_resolveDestinationTypeForStartAudioCallWithCompletion {
         @Generated
-        void call_resolveDestinationTypeForStartAudioCallWithCompletion(INCallDestinationTypeResolutionResult arg0);
+        void call_resolveDestinationTypeForStartAudioCallWithCompletion(
+                INCallDestinationTypeResolutionResult resolutionResult);
     }
 }

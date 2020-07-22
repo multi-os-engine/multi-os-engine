@@ -32,7 +32,7 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_confirmTransferMoneyCompletion {
         @Generated
-        void call_confirmTransferMoneyCompletion(INTransferMoneyIntentResponse arg0);
+        void call_confirmTransferMoneyCompletion(INTransferMoneyIntentResponse response);
     }
 
     @Generated
@@ -44,7 +44,7 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_handleTransferMoneyCompletion {
         @Generated
-        void call_handleTransferMoneyCompletion(INTransferMoneyIntentResponse arg0);
+        void call_handleTransferMoneyCompletion(INTransferMoneyIntentResponse response);
     }
 
     @Generated
@@ -59,7 +59,7 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_resolveFromAccountForTransferMoneyWithCompletion {
         @Generated
-        void call_resolveFromAccountForTransferMoneyWithCompletion(INPaymentAccountResolutionResult arg0);
+        void call_resolveFromAccountForTransferMoneyWithCompletion(INPaymentAccountResolutionResult resolutionResult);
     }
 
     @Generated
@@ -74,7 +74,7 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_resolveToAccountForTransferMoneyWithCompletion {
         @Generated
-        void call_resolveToAccountForTransferMoneyWithCompletion(INPaymentAccountResolutionResult arg0);
+        void call_resolveToAccountForTransferMoneyWithCompletion(INPaymentAccountResolutionResult resolutionResult);
     }
 
     @Generated
@@ -89,7 +89,8 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_resolveTransactionAmountForTransferMoneyWithCompletion {
         @Generated
-        void call_resolveTransactionAmountForTransferMoneyWithCompletion(INPaymentAmountResolutionResult arg0);
+        void call_resolveTransactionAmountForTransferMoneyWithCompletion(
+                INPaymentAmountResolutionResult resolutionResult);
     }
 
     @Generated
@@ -104,7 +105,7 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_resolveTransactionNoteForTransferMoneyWithCompletion {
         @Generated
-        void call_resolveTransactionNoteForTransferMoneyWithCompletion(INStringResolutionResult arg0);
+        void call_resolveTransactionNoteForTransferMoneyWithCompletion(INStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -120,6 +121,6 @@ public interface INTransferMoneyIntentHandling {
     public interface Block_resolveTransactionScheduledDateForTransferMoneyWithCompletion {
         @Generated
         void call_resolveTransactionScheduledDateForTransferMoneyWithCompletion(
-                INDateComponentsRangeResolutionResult arg0);
+                INDateComponentsRangeResolutionResult resolutionResult);
     }
 }

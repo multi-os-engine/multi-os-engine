@@ -196,7 +196,7 @@ public class MPSNNFilterNode extends NSObject {
     @Generated
     public interface Block_trainingGraphWithSourceGradientNodeHandler {
         @Generated
-        void call_trainingGraphWithSourceGradientNodeHandler(MPSNNFilterNode arg0, MPSNNFilterNode arg1,
-                MPSNNImageNode arg2, MPSNNImageNode arg3);
+        void call_trainingGraphWithSourceGradientNodeHandler(MPSNNFilterNode gradientNode,
+                MPSNNFilterNode inferenceNode, MPSNNImageNode inferenceSource, MPSNNImageNode gradientSource);
     }
 }

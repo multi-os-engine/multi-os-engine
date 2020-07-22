@@ -197,6 +197,6 @@ public class UIPrinter extends NSObject {
     @Generated
     public interface Block_contactPrinter {
         @Generated
-        void call_contactPrinter(boolean arg0);
+        void call_contactPrinter(boolean available);
     }
 }

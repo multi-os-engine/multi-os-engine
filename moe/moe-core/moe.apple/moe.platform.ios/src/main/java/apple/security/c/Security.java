@@ -1524,7 +1524,7 @@ public final class Security {
     @Generated
     public interface Block_SecTrustEvaluateAsync {
         @Generated
-        void call_SecTrustEvaluateAsync(SecTrustRef arg0, int arg1);
+        void call_SecTrustEvaluateAsync(SecTrustRef trustRef, int trustResult);
     }
 
     @Runtime(CRuntime.class)
@@ -1700,7 +1700,7 @@ public final class Security {
     @Generated
     public interface Block_SecTrustEvaluateAsyncWithError {
         @Generated
-        void call_SecTrustEvaluateAsyncWithError(SecTrustRef arg0, boolean arg1, CFErrorRef arg2);
+        void call_SecTrustEvaluateAsyncWithError(SecTrustRef trustRef, boolean result, CFErrorRef error);
     }
 
     @Generated

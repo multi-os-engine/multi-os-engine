@@ -180,13 +180,14 @@ public class CMStepCounter extends NSObject {
     @Generated
     public interface Block_queryStepCountStartingFromToToQueueWithHandler {
         @Generated
-        void call_queryStepCountStartingFromToToQueueWithHandler(@NInt long arg0, NSError arg1);
+        void call_queryStepCountStartingFromToToQueueWithHandler(@NInt long numberOfSteps, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startStepCountingUpdatesToQueueUpdateOnWithHandler {
         @Generated
-        void call_startStepCountingUpdatesToQueueUpdateOnWithHandler(@NInt long arg0, NSDate arg1, NSError arg2);
+        void call_startStepCountingUpdatesToQueueUpdateOnWithHandler(@NInt long numberOfSteps, NSDate timestamp,
+                NSError error);
     }
 }

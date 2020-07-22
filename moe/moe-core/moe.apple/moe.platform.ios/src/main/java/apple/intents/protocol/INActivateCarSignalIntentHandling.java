@@ -30,7 +30,7 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     public interface Block_confirmActivateCarSignalCompletion {
         @Generated
-        void call_confirmActivateCarSignalCompletion(INActivateCarSignalIntentResponse arg0);
+        void call_confirmActivateCarSignalCompletion(INActivateCarSignalIntentResponse response);
     }
 
     @Generated
@@ -42,7 +42,7 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     public interface Block_handleActivateCarSignalCompletion {
         @Generated
-        void call_handleActivateCarSignalCompletion(INActivateCarSignalIntentResponse arg0);
+        void call_handleActivateCarSignalCompletion(INActivateCarSignalIntentResponse response);
     }
 
     @Generated
@@ -57,7 +57,7 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     public interface Block_resolveCarNameForActivateCarSignalWithCompletion {
         @Generated
-        void call_resolveCarNameForActivateCarSignalWithCompletion(INSpeakableStringResolutionResult arg0);
+        void call_resolveCarNameForActivateCarSignalWithCompletion(INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
@@ -72,6 +72,6 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     public interface Block_resolveSignalsForActivateCarSignalWithCompletion {
         @Generated
-        void call_resolveSignalsForActivateCarSignalWithCompletion(INCarSignalOptionsResolutionResult arg0);
+        void call_resolveSignalsForActivateCarSignalWithCompletion(INCarSignalOptionsResolutionResult resolutionResult);
     }
 }

@@ -48,7 +48,7 @@ public interface INUIHostedViewControlling {
     @Generated
     public interface Block_configureWithInteractionContextCompletion {
         @Generated
-        void call_configureWithInteractionContextCompletion(@ByValue CGSize arg0);
+        void call_configureWithInteractionContextCompletion(@ByValue CGSize desiredSize);
     }
 
     @Generated
@@ -65,7 +65,7 @@ public interface INUIHostedViewControlling {
     @Generated
     public interface Block_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion {
         @Generated
-        void call_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion(boolean arg0,
-                NSSet<? extends INParameter> arg1, @ByValue CGSize arg2);
+        void call_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion(boolean success,
+                NSSet<? extends INParameter> configuredParameters, @ByValue CGSize desiredSize);
     }
 }

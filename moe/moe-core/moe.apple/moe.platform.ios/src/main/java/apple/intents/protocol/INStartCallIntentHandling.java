@@ -32,7 +32,7 @@ public interface INStartCallIntentHandling {
     @Generated
     public interface Block_confirmStartCallCompletion {
         @Generated
-        void call_confirmStartCallCompletion(INStartCallIntentResponse arg0);
+        void call_confirmStartCallCompletion(INStartCallIntentResponse response);
     }
 
     @Generated
@@ -44,7 +44,7 @@ public interface INStartCallIntentHandling {
     @Generated
     public interface Block_handleStartCallCompletion {
         @Generated
-        void call_handleStartCallCompletion(INStartCallIntentResponse arg0);
+        void call_handleStartCallCompletion(INStartCallIntentResponse response);
     }
 
     @Generated
@@ -59,7 +59,8 @@ public interface INStartCallIntentHandling {
     @Generated
     public interface Block_resolveCallCapabilityForStartCallWithCompletion {
         @Generated
-        void call_resolveCallCapabilityForStartCallWithCompletion(INStartCallCallCapabilityResolutionResult arg0);
+        void call_resolveCallCapabilityForStartCallWithCompletion(
+                INStartCallCallCapabilityResolutionResult resolutionResult);
     }
 
     @Generated
@@ -74,7 +75,8 @@ public interface INStartCallIntentHandling {
     @Generated
     public interface Block_resolveContactsForStartCallWithCompletion {
         @Generated
-        void call_resolveContactsForStartCallWithCompletion(NSArray<? extends INStartCallContactResolutionResult> arg0);
+        void call_resolveContactsForStartCallWithCompletion(
+                NSArray<? extends INStartCallContactResolutionResult> resolutionResults);
     }
 
     @Generated
@@ -89,6 +91,7 @@ public interface INStartCallIntentHandling {
     @Generated
     public interface Block_resolveDestinationTypeForStartCallWithCompletion {
         @Generated
-        void call_resolveDestinationTypeForStartCallWithCompletion(INCallDestinationTypeResolutionResult arg0);
+        void call_resolveDestinationTypeForStartCallWithCompletion(
+                INCallDestinationTypeResolutionResult resolutionResult);
     }
 }

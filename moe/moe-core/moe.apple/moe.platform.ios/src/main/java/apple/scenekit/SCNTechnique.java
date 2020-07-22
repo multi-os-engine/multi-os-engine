@@ -260,7 +260,8 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Generated
     public interface Block_handleBindingOfSymbolUsingBlock {
         @Generated
-        void call_handleBindingOfSymbolUsingBlock(int arg0, int arg1, SCNNode arg2, SCNRenderer arg3);
+        void call_handleBindingOfSymbolUsingBlock(int programID, int location, SCNNode renderedNode,
+                SCNRenderer renderer);
     }
 
     @Generated
