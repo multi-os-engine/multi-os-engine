@@ -29,4 +29,5 @@ public final class INMediaItemType {
     @Generated @NInt public static final long Station = 0x0000000000000011L;
     @Generated @NInt public static final long Music = 0x0000000000000012L;
     @Generated @NInt public static final long AlgorithmicRadioStation = 0x0000000000000013L;
+    @Generated @NInt public static final long News = 0x0000000000000014L;
 }

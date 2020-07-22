@@ -1141,4 +1141,169 @@ public final class HealthKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKMetadataKeyAudioExposureLevel();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierAbdominalCramps();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierAcne();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierAppetiteChanges();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierGeneralizedBodyAche();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierBloating();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierBreastPain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierChestTightnessOrPain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierChills();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierConstipation();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierCoughing();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierDiarrhea();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierDizziness();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierFainting();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierFatigue();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierFever();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierHeadache();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierHeartburn();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierHotFlashes();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierLowerBackPain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierLossOfSmell();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierLossOfTaste();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierMoodChanges();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierNausea();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierPelvicPain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierRapidPoundingOrFlutteringHeartbeat();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierRunnyNose();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierShortnessOfBreath();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierSinusCongestion();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierSkippedHeartbeat();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierSleepChanges();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierSoreThroat();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierVomiting();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String HKCategoryTypeIdentifierWheezing();
 }
