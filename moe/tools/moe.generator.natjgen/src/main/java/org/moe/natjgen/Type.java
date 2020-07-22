@@ -456,6 +456,11 @@ public class Type {
         private Type type;
 
         /**
+         * Additional suffix for the name of the argument (for name collisions)
+         */
+        private String suffix = "";
+
+        /**
          * Create a new callback argument
          *
          * @param name argument name
@@ -469,15 +474,19 @@ public class Type {
             // Set values
             this.name = name;
             this.type = type;
+
+            if (JavaRestrictions.isReserved(this.name)) {
+                pushSuffix();
+            }
         }
 
         /**
-         * Returns the name of the callback argument
+         * Get the full name of the argument, contains the additional suffix
          *
-         * @return name
+         * @return argument's full name
          */
         public String getName() {
-            return name;
+            return name + suffix;
         }
 
         /**
@@ -487,6 +496,13 @@ public class Type {
          */
         public Type getType() {
             return type;
+        }
+
+        /**
+         * Add additional '_' as suffix for the arguments name
+         */
+        public void pushSuffix() {
+            suffix += "_";
         }
 
         @Override
