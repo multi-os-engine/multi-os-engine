@@ -75,7 +75,7 @@ for (target in [[name: 'macos', outputs: ["${external.libimobiledevice.root}/bui
 ext {
     external.natj = [:]
     external.natj.root = file('../../natj/natj').absolutePath
-    external.natj.jar = file("${external.natj.root}/build/libs/natj-1.1.4.jar")
+    external.natj.jar = file("${external.natj.root}/build/libs/natj-1.1.5.jar")
     external.natj.jnipath = file("${external.natj.root}/natj-mac/build/xcode/Release")
 }
 for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xcode/Release-iphoneos/libnatj.a",
