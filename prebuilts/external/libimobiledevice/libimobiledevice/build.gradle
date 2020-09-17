@@ -26,6 +26,7 @@ task prebuild_macos_static(type: Prebuild) {
     preBuildCopySpec project.copySpec {
         from('.') {
             include 'moe-prebuild-macos.sh'
+            include 'libimobiledevice-fix-ssl_read_with_timeout.patch'
         }
     }
 }
@@ -52,6 +53,7 @@ task prebuild_windows_static(type: Prebuild) {
     preBuildCopySpec project.copySpec {
         from('.') {
             include 'moe-prebuild-windows.sh'
+            include 'libimobiledevice-fix-ssl_read_with_timeout.patch'
         }
     }
 }

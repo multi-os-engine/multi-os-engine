@@ -17,6 +17,8 @@ echo "MOE_PREBUILTS_TARGET_DIR=$MOE_PREBUILTS_TARGET_DIR"
 # Clean old build
 rm -rf "$MOE_PREBUILTS_DIR/$MOE_PREBUILTS_TARGET_DIR"
 
+git apply libimobiledevice-fix-ssl_read_with_timeout.patch
+
 __MOE_MINGW="x86_64-w64-mingw32"
 __MOE_TARGET="$MOE_PREBUILTS_DIR/$MOE_PREBUILTS_TARGET_DIR/$__MOE_MINGW"
 __MOE_PREBUILTS_DIR="$MOE_PREBUILTS_DIR/external/libimobiledevice/libplist/build/windows/$__MOE_MINGW/lib/pkgconfig"
