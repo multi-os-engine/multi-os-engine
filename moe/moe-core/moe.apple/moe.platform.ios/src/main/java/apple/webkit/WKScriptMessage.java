@@ -170,4 +170,8 @@ public class WKScriptMessage extends NSObject {
     @Generated
     @Selector("webView")
     public native WKWebView webView();
+
+    @Generated
+    @Selector("world")
+    public native WKContentWorld world();
 }

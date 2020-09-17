@@ -246,4 +246,41 @@ public final class MIDIDriverInterface extends StructObject {
         int call_Monitor(@ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
                 int arg1, @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg2);
     }
+
+    @Generated
+    @StructureField(order = 12, isGetter = true)
+    @FunctionPtr(name = "call_SendPackets")
+    public native Function_SendPackets SendPackets();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_SendPackets {
+        @Generated
+        int call_SendPackets(
+                @ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList arg1, VoidPtr arg2,
+                VoidPtr arg3);
+    }
+
+    @Generated
+    @StructureField(order = 12, isGetter = false)
+    public native void setSendPackets(@FunctionPtr(name = "call_SendPackets") Function_SendPackets value);
+
+    @Generated
+    @StructureField(order = 13, isGetter = true)
+    @FunctionPtr(name = "call_MonitorEvents")
+    public native Function_MonitorEvents MonitorEvents();
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_MonitorEvents {
+        @Generated
+        int call_MonitorEvents(
+                @ReferenceInfo(type = MIDIDriverInterface.class, depth = 2) Ptr<Ptr<MIDIDriverInterface>> arg0,
+                int arg1, @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList arg2);
+    }
+
+    @Generated
+    @StructureField(order = 13, isGetter = false)
+    public native void setMonitorEvents(@FunctionPtr(name = "call_MonitorEvents") Function_MonitorEvents value);
 }

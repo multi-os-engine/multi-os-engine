@@ -29,4 +29,6 @@ public final class GKPeerConnectionState {
     @Generated
     private GKPeerConnectionState() {
     }
+
+    @Generated public static final int ConnectedRelay = 0x00000005;
 }

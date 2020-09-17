@@ -615,4 +615,8 @@ public class UIColor extends NSObject
     @Generated
     @Selector("tertiarySystemGroupedBackgroundColor")
     public static native UIColor tertiarySystemGroupedBackgroundColor();
+
+    @Generated
+    @Selector("accessibilityName")
+    public native String accessibilityName();
 }

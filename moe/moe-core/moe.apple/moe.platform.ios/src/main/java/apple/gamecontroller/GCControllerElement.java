@@ -161,4 +161,53 @@ public class GCControllerElement extends NSObject {
     @Generated
     @Selector("isAnalog")
     public native boolean isAnalog();
+
+    @Generated
+    @Selector("aliases")
+    public native NSSet<String> aliases();
+
+    @Generated
+    @Selector("isBoundToSystemGesture")
+    public native boolean isBoundToSystemGesture();
+
+    @Generated
+    @Selector("localizedName")
+    public native String localizedName();
+
+    @Generated
+    @Selector("preferredSystemGestureState")
+    @NInt
+    public native long preferredSystemGestureState();
+
+    @Generated
+    @Selector("setLocalizedName:")
+    public native void setLocalizedName(String value);
+
+    @Generated
+    @Selector("setPreferredSystemGestureState:")
+    public native void setPreferredSystemGestureState(@NInt long value);
+
+    @Generated
+    @Selector("setSfSymbolsName:")
+    public native void setSfSymbolsName(String value);
+
+    @Generated
+    @Selector("setUnmappedLocalizedName:")
+    public native void setUnmappedLocalizedName(String value);
+
+    @Generated
+    @Selector("setUnmappedSfSymbolsName:")
+    public native void setUnmappedSfSymbolsName(String value);
+
+    @Generated
+    @Selector("sfSymbolsName")
+    public native String sfSymbolsName();
+
+    @Generated
+    @Selector("unmappedLocalizedName")
+    public native String unmappedLocalizedName();
+
+    @Generated
+    @Selector("unmappedSfSymbolsName")
+    public native String unmappedSfSymbolsName();
 }

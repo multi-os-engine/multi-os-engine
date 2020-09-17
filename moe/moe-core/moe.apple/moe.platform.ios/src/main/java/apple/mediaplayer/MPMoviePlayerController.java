@@ -178,7 +178,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native void beginSeekingForward();
 
     @Generated
-    @Deprecated
     @Selector("cancelAllThumbnailImageRequests")
     public native void cancelAllThumbnailImageRequests();
 
@@ -295,7 +294,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native long repeatMode();
 
     @Generated
-    @Deprecated
     @Selector("requestThumbnailImagesAtTimes:timeOption:")
     public native void requestThumbnailImagesAtTimesTimeOption(NSArray<?> playbackTimes, @NInt long option);
 
@@ -366,7 +364,6 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native void stop();
 
     @Generated
-    @Deprecated
     @Selector("thumbnailImageAtTime:timeOption:")
     public native UIImage thumbnailImageAtTimeTimeOption(double playbackTime, @NInt long option);
 

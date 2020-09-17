@@ -698,4 +698,34 @@ public class UIButton extends UIControl
         UIPointerStyle call_setPointerStyleProvider(UIButton button, UIPointerEffect proposedEffect,
                 UIPointerShape proposedShape);
     }
+
+    @Generated
+    @Selector("buttonWithType:primaryAction:")
+    public static native UIButton buttonWithTypePrimaryAction(@NInt long buttonType, UIAction primaryAction);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UIButton initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    @Generated
+    @Selector("menu")
+    public native UIMenu menu();
+
+    @Generated
+    @Selector("role")
+    @NInt
+    public native long role();
+
+    @Generated
+    @Selector("setMenu:")
+    public native void setMenu(UIMenu value);
+
+    @Generated
+    @Selector("setRole:")
+    public native void setRole(@NInt long value);
+
+    @Generated
+    @Selector("systemButtonWithPrimaryAction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemButtonWithPrimaryAction(UIAction primaryAction);
 }

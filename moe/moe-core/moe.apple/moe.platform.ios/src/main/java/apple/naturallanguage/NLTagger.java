@@ -2,8 +2,10 @@ package apple.naturallanguage;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSOrthography;
 import apple.foundation.NSSet;
 import apple.foundation.NSValue;
@@ -237,4 +239,15 @@ public class NLTagger extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("tagHypothesesAtIndex:unit:scheme:maximumCount:tokenRange:")
+    public native NSDictionary<String, ? extends NSNumber> tagHypothesesAtIndexUnitSchemeMaximumCountTokenRange(
+            @NUInt long characterIndex, @NInt long unit, String scheme, @NUInt long maximumCount,
+            @UncertainArgument("Options: reference, array Fallback: reference") NSRange tokenRange);
+
+    @Generated
+    @Selector("tokenRangeForRange:unit:")
+    @ByValue
+    public native NSRange tokenRangeForRangeUnit(@ByValue NSRange range, @NInt long unit);
 }

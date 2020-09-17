@@ -436,4 +436,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Selector("useResources:count:usage:stages:")
     void useResourcesCountUsageStages(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources,
             @NUInt long count, @NUInt long usage, @NUInt long stages);
+
+    @Generated
+    @Selector("sampleCountersInBuffer:atSampleIndex:withBarrier:")
+    void sampleCountersInBufferAtSampleIndexWithBarrier(
+            @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @NUInt long sampleIndex,
+            boolean barrier);
 }

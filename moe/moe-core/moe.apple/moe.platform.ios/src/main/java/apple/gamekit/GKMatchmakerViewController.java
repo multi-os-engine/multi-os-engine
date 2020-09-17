@@ -257,4 +257,13 @@ public class GKMatchmakerViewController extends UINavigationController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    @Generated
+    @Selector("matchmakingMode")
+    @NInt
+    public native long matchmakingMode();
+
+    @Generated
+    @Selector("setMatchmakingMode:")
+    public native void setMatchmakingMode(@NInt long value);
 }

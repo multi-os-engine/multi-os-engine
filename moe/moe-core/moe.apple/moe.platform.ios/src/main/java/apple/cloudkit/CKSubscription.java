@@ -20,7 +20,6 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
-import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
@@ -175,55 +174,19 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKSubscription initWithCoder(NSCoder aDecoder);
-
-    @Generated
-    @Selector("initWithRecordType:predicate:options:")
-    public native CKSubscription initWithRecordTypePredicateOptions(String recordType, NSPredicate predicate,
-            @NUInt long subscriptionOptions);
-
-    @Generated
-    @Selector("initWithRecordType:predicate:subscriptionID:options:")
-    public native CKSubscription initWithRecordTypePredicateSubscriptionIDOptions(String recordType,
-            NSPredicate predicate, String subscriptionID, @NUInt long subscriptionOptions);
-
-    @Generated
-    @Selector("initWithZoneID:options:")
-    public native CKSubscription initWithZoneIDOptions(CKRecordZoneID zoneID, @NUInt long subscriptionOptions);
-
-    @Generated
-    @Selector("initWithZoneID:subscriptionID:options:")
-    public native CKSubscription initWithZoneIDSubscriptionIDOptions(CKRecordZoneID zoneID, String subscriptionID,
-            @NUInt long subscriptionOptions);
+    public native CKSubscription initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("notificationInfo")
     public native CKNotificationInfo notificationInfo();
 
     @Generated
-    @Selector("predicate")
-    public native NSPredicate predicate();
-
-    @Generated
-    @Selector("recordType")
-    public native String recordType();
-
-    @Generated
     @Selector("setNotificationInfo:")
     public native void setNotificationInfo(CKNotificationInfo value);
 
     @Generated
-    @Selector("setZoneID:")
-    public native void setZoneID(CKRecordZoneID value);
-
-    @Generated
     @Selector("subscriptionID")
     public native String subscriptionID();
-
-    @Generated
-    @Selector("subscriptionOptions")
-    @NUInt
-    public native long subscriptionOptions();
 
     @Generated
     @Selector("subscriptionType")
@@ -235,8 +198,4 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
-
-    @Generated
-    @Selector("zoneID")
-    public native CKRecordZoneID zoneID();
 }

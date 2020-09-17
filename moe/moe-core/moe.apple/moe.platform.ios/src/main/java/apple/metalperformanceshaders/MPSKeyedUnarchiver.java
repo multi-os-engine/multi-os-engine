@@ -3,6 +3,7 @@ package apple.metalperformanceshaders;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSKeyedUnarchiver;
 import apple.foundation.NSMethodSignature;
@@ -239,4 +240,25 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("unarchivedArrayOfObjectsOfClass:fromData:error:")
+    public static native NSArray<?> unarchivedArrayOfObjectsOfClassFromDataError(Class cls, NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("unarchivedArrayOfObjectsOfClasses:fromData:error:")
+    public static native NSArray<?> unarchivedArrayOfObjectsOfClassesFromDataError(NSSet<? extends Class> classes,
+            NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("unarchivedDictionaryWithKeysOfClass:objectsOfClass:fromData:error:")
+    public static native NSDictionary<?, ?> unarchivedDictionaryWithKeysOfClassObjectsOfClassFromDataError(Class keyCls,
+            Class valueCls, NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("unarchivedDictionaryWithKeysOfClasses:objectsOfClasses:fromData:error:")
+    public static native NSDictionary<?, ?> unarchivedDictionaryWithKeysOfClassesObjectsOfClassesFromDataError(
+            NSSet<? extends Class> keyClasses, NSSet<? extends Class> valueClasses, NSData data,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

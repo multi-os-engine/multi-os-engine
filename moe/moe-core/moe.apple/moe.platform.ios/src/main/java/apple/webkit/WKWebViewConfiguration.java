@@ -335,4 +335,12 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("limitsNavigationsToAppBoundDomains")
+    public native boolean limitsNavigationsToAppBoundDomains();
+
+    @Generated
+    @Selector("setLimitsNavigationsToAppBoundDomains:")
+    public native void setLimitsNavigationsToAppBoundDomains(boolean value);
 }

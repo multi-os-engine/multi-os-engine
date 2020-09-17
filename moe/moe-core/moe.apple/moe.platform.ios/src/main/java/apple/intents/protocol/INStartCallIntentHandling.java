@@ -2,6 +2,7 @@ package apple.intents.protocol;
 
 import apple.foundation.NSArray;
 import apple.intents.INCallDestinationTypeResolutionResult;
+import apple.intents.INCallRecordResolutionResult;
 import apple.intents.INStartCallCallCapabilityResolutionResult;
 import apple.intents.INStartCallContactResolutionResult;
 import apple.intents.INStartCallIntent;
@@ -93,5 +94,20 @@ public interface INStartCallIntentHandling {
         @Generated
         void call_resolveDestinationTypeForStartCallWithCompletion(
                 INCallDestinationTypeResolutionResult resolutionResult);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveCallRecordToCallBackForStartCall:withCompletion:")
+    default void resolveCallRecordToCallBackForStartCallWithCompletion(INStartCallIntent intent,
+            @ObjCBlock(name = "call_resolveCallRecordToCallBackForStartCallWithCompletion") Block_resolveCallRecordToCallBackForStartCallWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveCallRecordToCallBackForStartCallWithCompletion {
+        @Generated
+        void call_resolveCallRecordToCallBackForStartCallWithCompletion(INCallRecordResolutionResult resolutionResult);
     }
 }

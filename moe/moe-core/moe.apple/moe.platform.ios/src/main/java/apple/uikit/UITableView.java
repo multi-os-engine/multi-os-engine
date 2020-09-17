@@ -1002,4 +1002,12 @@ public class UITableView extends UIScrollView
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("selectionFollowsFocus")
+    public native boolean selectionFollowsFocus();
+
+    @Generated
+    @Selector("setSelectionFollowsFocus:")
+    public native void setSelectionFollowsFocus(boolean value);
 }

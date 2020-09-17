@@ -219,4 +219,45 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Generated
     @Selector("supportIndirectCommandBuffers")
     public native boolean supportIndirectCommandBuffers();
+
+    @Generated
+    @Selector("binaryArchives")
+    public native NSArray<?> binaryArchives();
+
+    @Generated
+    @Selector("insertLibraries")
+    public native NSArray<?> insertLibraries();
+
+    @Generated
+    @Selector("linkedFunctions")
+    public native MTLLinkedFunctions linkedFunctions();
+
+    @Generated
+    @Selector("maxCallStackDepth")
+    @NUInt
+    public native long maxCallStackDepth();
+
+    @Generated
+    @Selector("setBinaryArchives:")
+    public native void setBinaryArchives(NSArray<?> value);
+
+    @Generated
+    @Selector("setInsertLibraries:")
+    public native void setInsertLibraries(NSArray<?> value);
+
+    @Generated
+    @Selector("setLinkedFunctions:")
+    public native void setLinkedFunctions(MTLLinkedFunctions value);
+
+    @Generated
+    @Selector("setMaxCallStackDepth:")
+    public native void setMaxCallStackDepth(@NUInt long value);
+
+    @Generated
+    @Selector("setSupportAddingBinaryFunctions:")
+    public native void setSupportAddingBinaryFunctions(boolean value);
+
+    @Generated
+    @Selector("supportAddingBinaryFunctions")
+    public native boolean supportAddingBinaryFunctions();
 }

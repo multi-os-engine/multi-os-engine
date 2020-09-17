@@ -45,4 +45,5 @@ public final class mach_port_guard_exception_codes {
     @Generated public static final int SEND_INVALID_RIGHT = 0x00040000;
     @Generated public static final int RCV_INVALID_NAME = 0x00080000;
     @Generated public static final int RCV_GUARDED_DESC = 0x00100000;
+    @Generated public static final int MSG_FILTERED = 0x00000080;
 }

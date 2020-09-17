@@ -21,6 +21,9 @@ import apple.corefoundation.opaque.CFDictionaryRef;
 import apple.corefoundation.opaque.CFRunLoopRef;
 import apple.corefoundation.opaque.CFStringRef;
 import apple.coremidi.struct.MIDIDriverInterface;
+import apple.coremidi.struct.MIDIEventList;
+import apple.coremidi.struct.MIDIEventPacket;
+import apple.coremidi.struct.MIDIMessage_64;
 import apple.coremidi.struct.MIDINotification;
 import apple.coremidi.struct.MIDIPacket;
 import apple.coremidi.struct.MIDIPacketList;
@@ -32,6 +35,7 @@ import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Inline;
 import org.moe.natj.general.NatJ;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -39,6 +43,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ann.UncertainReturn;
+import org.moe.natj.general.ptr.ConstIntPtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
@@ -637,4 +642,221 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyNameConfigurationDictionary();
 
     @Generated public static final byte MIDIChannelsWholePort = 127;
+
+    @Generated
+    @CFunction
+    public static native int MIDIInputPortCreateWithProtocol(int client, CFStringRef portName, int protocol,
+            IntPtr outPort,
+            @ObjCBlock(name = "call_MIDIInputPortCreateWithProtocol") Block_MIDIInputPortCreateWithProtocol receiveBlock);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_MIDIInputPortCreateWithProtocol {
+        @Generated
+        void call_MIDIInputPortCreateWithProtocol(
+                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
+                VoidPtr srcConnRefCon);
+    }
+
+    @Generated
+    @CFunction
+    public static native int MIDIDestinationCreateWithProtocol(int client, CFStringRef name, int protocol,
+            IntPtr outDest,
+            @ObjCBlock(name = "call_MIDIDestinationCreateWithProtocol") Block_MIDIDestinationCreateWithProtocol readBlock);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_MIDIDestinationCreateWithProtocol {
+        @Generated
+        void call_MIDIDestinationCreateWithProtocol(
+                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
+                VoidPtr srcConnRefCon);
+    }
+
+    @Generated
+    @CFunction
+    public static native int MIDISourceCreateWithProtocol(int client, CFStringRef name, int protocol, IntPtr outSrc);
+
+    @Generated
+    @CFunction
+    public static native int MIDISendEventList(int port, int dest,
+            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist);
+
+    @Generated
+    @CFunction
+    public static native int MIDIReceivedEventList(int src,
+            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist);
+
+    @Generated
+    @Inline
+    @CFunction
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public static native MIDIEventPacket MIDIEventPacketNext(
+            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventPacket pkt);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public static native MIDIEventPacket MIDIEventListInit(
+            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist, int protocol);
+
+    @Generated
+    @CFunction
+    @UncertainReturn("Options: reference, array Fallback: reference")
+    public static native MIDIEventPacket MIDIEventListAdd(
+            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
+            @NUInt long listSize,
+            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventPacket curPacket, long time,
+            @NUInt long wordCount, ConstIntPtr words);
+
+    @Generated
+    @CFunction
+    public static native int MIDIDeviceNewEntity(int device, CFStringRef name, int protocol, byte embedded,
+            @NUInt long numSourceEndpoints, @NUInt long numDestinationEndpoints, IntPtr newEntity);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDIMessageTypeForUPWord(int word);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPChannelVoiceMessage(byte group, byte status, byte channel, byte data1, byte data2);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPNoteOff(byte group, byte channel, byte noteNumber, byte velocity);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPNoteOn(byte group, byte channel, byte noteNumber, byte velocity);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPControlChange(byte group, byte channel, byte index, byte data);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPPitchBend(byte group, byte channel, byte lsb, byte msb);
+
+    @Generated
+    @Inline
+    @CFunction
+    public static native int MIDI1UPSystemCommon(byte group, byte status, byte byte1, byte byte2);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2ChannelVoiceMessage(byte group, byte status, byte channel, char index,
+            int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2NoteOn(byte group, byte channel, byte noteNumber, byte attributeType,
+            char attributeData, char velocity);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2NoteOff(byte group, byte channel, byte noteNumber, byte attributeType,
+            char attributeData, char velocity);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2PolyPressure(byte group, byte channel, byte noteNumber, int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2RegisteredPNC(byte group, byte channel, byte noteNumber, byte index,
+            int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2AssignablePNC(byte group, byte channel, byte noteNumber, byte index,
+            int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2PerNoteManagment(byte group, byte channel, byte noteNumber,
+            boolean detachPNCs, boolean resetPNCsToDefault);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2ControlChange(byte group, byte channel, byte index, int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2RegisteredControl(byte group, byte channel, byte bank, byte index,
+            int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2AssignableControl(byte group, byte channel, byte bank, byte index,
+            int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2RelRegisteredControl(byte group, byte channel, byte bank, byte index,
+            int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2RelAssignableControl(byte group, byte channel, byte bank, byte index,
+            int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2ProgramChange(byte group, byte channel, boolean bankIsValid, byte program,
+            byte bank_msb, byte bank_lsb);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2ChannelPressure(byte group, byte channel, int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2PitchBend(byte group, byte channel, int value);
+
+    @Generated
+    @Inline
+    @CFunction
+    @ByValue
+    public static native MIDIMessage_64 MIDI2PerNotePitchBend(byte group, byte channel, byte noteNumber, int value);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kMIDIPropertyProtocolID();
 }

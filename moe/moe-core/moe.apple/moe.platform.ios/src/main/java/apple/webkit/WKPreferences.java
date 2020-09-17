@@ -196,24 +196,8 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     public native boolean isFraudulentWebsiteWarningEnabled();
 
     @Generated
-    @Selector("javaEnabled")
-    public native boolean javaEnabled();
-
-    @Generated
-    @Selector("plugInsEnabled")
-    public native boolean plugInsEnabled();
-
-    @Generated
     @Selector("setFraudulentWebsiteWarningEnabled:")
     public native void setFraudulentWebsiteWarningEnabled(boolean value);
-
-    @Generated
-    @Selector("setJavaEnabled:")
-    public native void setJavaEnabled(boolean value);
-
-    @Generated
-    @Selector("setPlugInsEnabled:")
-    public native void setPlugInsEnabled(boolean value);
 
     @Generated
     @Selector("supportsSecureCoding")

@@ -2074,4 +2074,8 @@ public final class Security {
         void call_sec_protocol_options_set_verify_block(NSObject metadata, NSObject trust_ref,
                 @ObjCBlock(name = "call_Block_sec_protocol_options_set_verify_block") Block_Block_sec_protocol_options_set_verify_block complete);
     }
+
+    @Generated
+    @CFunction
+    public static native SecKeyRef SecTrustCopyKey(SecTrustRef trust);
 }

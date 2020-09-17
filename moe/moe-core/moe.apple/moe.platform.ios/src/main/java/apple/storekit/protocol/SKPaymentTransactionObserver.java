@@ -83,4 +83,12 @@ public interface SKPaymentTransactionObserver {
     default void paymentQueueDidChangeStorefront(SKPaymentQueue queue) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentQueue:didRevokeEntitlementsForProductIdentifiers:")
+    default void paymentQueueDidRevokeEntitlementsForProductIdentifiers(SKPaymentQueue queue,
+            NSArray<String> productIdentifiers) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

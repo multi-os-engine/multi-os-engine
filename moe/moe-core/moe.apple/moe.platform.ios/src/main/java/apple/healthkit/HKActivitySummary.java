@@ -235,4 +235,29 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("activityMoveMode")
+    @NInt
+    public native long activityMoveMode();
+
+    @Generated
+    @Selector("appleMoveTime")
+    public native HKQuantity appleMoveTime();
+
+    @Generated
+    @Selector("appleMoveTimeGoal")
+    public native HKQuantity appleMoveTimeGoal();
+
+    @Generated
+    @Selector("setActivityMoveMode:")
+    public native void setActivityMoveMode(@NInt long value);
+
+    @Generated
+    @Selector("setAppleMoveTime:")
+    public native void setAppleMoveTime(HKQuantity value);
+
+    @Generated
+    @Selector("setAppleMoveTimeGoal:")
+    public native void setAppleMoveTimeGoal(HKQuantity value);
 }

@@ -482,4 +482,19 @@ public class AVAudioSession extends NSObject {
         void call_prepareRouteSelectionForPlaybackWithCompletionHandler(boolean shouldStartPlayback,
                 @NInt long routeSelection);
     }
+
+    @Generated
+    @Selector("inputOrientation")
+    @NInt
+    public native long inputOrientation();
+
+    @Generated
+    @Selector("preferredInputOrientation")
+    @NInt
+    public native long preferredInputOrientation();
+
+    @Generated
+    @Selector("setPreferredInputOrientation:error:")
+    public native boolean setPreferredInputOrientationError(@NInt long orientation,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

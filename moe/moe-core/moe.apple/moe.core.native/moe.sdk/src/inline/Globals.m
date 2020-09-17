@@ -32,40 +32,40 @@ limitations under the License.
 
 #define EXPORT __attribute__ ((visibility ("default")))
 
-EXPORT uint16_t __natj_inline__OSSwapInt16(uint16_t data) {
-	return _OSSwapInt16(data);
+EXPORT uint16_t __natj_inline__OSSwapInt16(uint16_t _data) {
+	return _OSSwapInt16(_data);
 }
 
-EXPORT uint32_t __natj_inline__OSSwapInt32(uint32_t data) {
-	return _OSSwapInt32(data);
+EXPORT uint32_t __natj_inline__OSSwapInt32(uint32_t _data) {
+	return _OSSwapInt32(_data);
 }
 
-EXPORT uint64_t __natj_inline__OSSwapInt64(uint64_t data) {
-	return _OSSwapInt64(data);
+EXPORT uint64_t __natj_inline__OSSwapInt64(uint64_t _data) {
+	return _OSSwapInt64(_data);
 }
 
-EXPORT uint16_t __natj_inline_OSReadSwapInt16(const volatile void * base, uintptr_t offset) {
-	return OSReadSwapInt16(base, offset);
+EXPORT uint16_t __natj_inline_OSReadSwapInt16(const volatile void * _base, uintptr_t _offset) {
+	return OSReadSwapInt16(_base, _offset);
 }
 
-EXPORT uint32_t __natj_inline_OSReadSwapInt32(const volatile void * base, uintptr_t offset) {
-	return OSReadSwapInt32(base, offset);
+EXPORT uint32_t __natj_inline_OSReadSwapInt32(const volatile void * _base, uintptr_t _offset) {
+	return OSReadSwapInt32(_base, _offset);
 }
 
-EXPORT uint64_t __natj_inline_OSReadSwapInt64(const volatile void * base, uintptr_t offset) {
-	return OSReadSwapInt64(base, offset);
+EXPORT uint64_t __natj_inline_OSReadSwapInt64(const volatile void * _base, uintptr_t _offset) {
+	return OSReadSwapInt64(_base, _offset);
 }
 
-EXPORT void __natj_inline_OSWriteSwapInt16(volatile void * base, uintptr_t offset, uint16_t data) {
-	OSWriteSwapInt16(base, offset, data);
+EXPORT void __natj_inline_OSWriteSwapInt16(volatile void * _base, uintptr_t _offset, uint16_t _data) {
+	OSWriteSwapInt16(_base, _offset, _data);
 }
 
-EXPORT void __natj_inline_OSWriteSwapInt32(volatile void * base, uintptr_t offset, uint32_t data) {
-	OSWriteSwapInt32(base, offset, data);
+EXPORT void __natj_inline_OSWriteSwapInt32(volatile void * _base, uintptr_t _offset, uint32_t _data) {
+	OSWriteSwapInt32(_base, _offset, _data);
 }
 
-EXPORT void __natj_inline_OSWriteSwapInt64(volatile void * base, uintptr_t offset, uint64_t data) {
-	OSWriteSwapInt64(base, offset, data);
+EXPORT void __natj_inline_OSWriteSwapInt64(volatile void * _base, uintptr_t _offset, uint64_t _data) {
+	OSWriteSwapInt64(_base, _offset, _data);
 }
 
 EXPORT int __natj_inline___darwin_check_fd_set(int _a, const void * _b) {

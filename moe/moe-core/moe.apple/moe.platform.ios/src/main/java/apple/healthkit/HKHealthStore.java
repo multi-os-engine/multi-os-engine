@@ -399,4 +399,9 @@ public class HKHealthStore extends NSObject {
     @Generated
     @Selector("supportsHealthRecords")
     public native boolean supportsHealthRecords();
+
+    @Generated
+    @Selector("activityMoveModeWithError:")
+    public native HKActivityMoveModeObject activityMoveModeWithError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

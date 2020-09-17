@@ -1495,4 +1495,16 @@ public final class CoreText {
     @Generated
     @CVariable()
     public static native CFStringRef kCTTrackingAttributeName();
+
+    @Generated
+    @CFunction
+    public static native CFStringRef CTFontCopyNameForGlyph(CTFontRef font, char glyph);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTFontVariationAxesAttribute();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCTFontOpticalSizeAttribute();
 }

@@ -17,6 +17,7 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
+import apple.avfoundation.protocol.AVAssetWriterDelegate;
 import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
@@ -24,6 +25,7 @@ import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -303,4 +305,76 @@ public class AVAssetWriter extends NSObject {
         @Generated
         void call_finishWritingWithCompletionHandler();
     }
+
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native AVAssetWriterDelegate delegate();
+
+    @Generated
+    @Selector("flushSegment")
+    public native void flushSegment();
+
+    @Generated
+    @Selector("initWithContentType:")
+    public native AVAssetWriter initWithContentType(UTType outputContentType);
+
+    @Generated
+    @Selector("initialMovieFragmentSequenceNumber")
+    @NInt
+    public native long initialMovieFragmentSequenceNumber();
+
+    @Generated
+    @Selector("initialSegmentStartTime")
+    @ByValue
+    public native CMTime initialSegmentStartTime();
+
+    @Generated
+    @Selector("outputFileTypeProfile")
+    public native String outputFileTypeProfile();
+
+    @Generated
+    @Selector("preferredOutputSegmentInterval")
+    @ByValue
+    public native CMTime preferredOutputSegmentInterval();
+
+    @Generated
+    @Selector("producesCombinableFragments")
+    public native boolean producesCombinableFragments();
+
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAssetWriterDelegate value);
+
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAssetWriterDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    @Generated
+    @Selector("setInitialMovieFragmentSequenceNumber:")
+    public native void setInitialMovieFragmentSequenceNumber(@NInt long value);
+
+    @Generated
+    @Selector("setInitialSegmentStartTime:")
+    public native void setInitialSegmentStartTime(@ByValue CMTime value);
+
+    @Generated
+    @Selector("setOutputFileTypeProfile:")
+    public native void setOutputFileTypeProfile(String value);
+
+    @Generated
+    @Selector("setPreferredOutputSegmentInterval:")
+    public native void setPreferredOutputSegmentInterval(@ByValue CMTime value);
+
+    @Generated
+    @Selector("setProducesCombinableFragments:")
+    public native void setProducesCombinableFragments(boolean value);
 }

@@ -184,4 +184,12 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("dictionaryRepresentation")
+    public native NSDictionary<?, ?> dictionaryRepresentation();
+
+    @Generated
+    @Selector("platformArchitecture")
+    public native String platformArchitecture();
 }

@@ -8,6 +8,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -187,4 +188,11 @@ public class INRestaurantReservation extends INReservation implements NSCopying,
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:URL:reservationDuration:partySize:restaurantLocation:")
+    public native INRestaurantReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsURLReservationDurationPartySizeRestaurantLocation(
+            INSpeakableString itemReference, String reservationNumber, NSDate bookingTime, @NInt long reservationStatus,
+            String reservationHolderName, NSArray<? extends INReservationAction> actions, NSURL URL,
+            INDateComponentsRange reservationDuration, NSNumber partySize, CLPlacemark restaurantLocation);
 }

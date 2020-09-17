@@ -24,6 +24,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.uikit.protocol.UIDocumentPickerDelegate;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -240,4 +241,22 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Generated
     @Selector("shouldShowFileExtensions")
     public native boolean shouldShowFileExtensions();
+
+    @Generated
+    @Selector("initForExportingURLs:")
+    public native UIDocumentPickerViewController initForExportingURLs(NSArray<? extends NSURL> urls);
+
+    @Generated
+    @Selector("initForExportingURLs:asCopy:")
+    public native UIDocumentPickerViewController initForExportingURLsAsCopy(NSArray<? extends NSURL> urls,
+            boolean asCopy);
+
+    @Generated
+    @Selector("initForOpeningContentTypes:")
+    public native UIDocumentPickerViewController initForOpeningContentTypes(NSArray<? extends UTType> contentTypes);
+
+    @Generated
+    @Selector("initForOpeningContentTypes:asCopy:")
+    public native UIDocumentPickerViewController initForOpeningContentTypesAsCopy(
+            NSArray<? extends UTType> contentTypes, boolean asCopy);
 }

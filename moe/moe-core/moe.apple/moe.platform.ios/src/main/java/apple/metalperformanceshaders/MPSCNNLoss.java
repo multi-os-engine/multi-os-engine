@@ -209,4 +209,8 @@ public class MPSCNNLoss extends MPSCNNKernel {
     @Generated
     @Selector("weight")
     public native float weight();
+
+    @Generated
+    @Selector("reduceAcrossBatch")
+    public native boolean reduceAcrossBatch();
 }

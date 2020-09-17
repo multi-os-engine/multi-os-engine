@@ -185,4 +185,14 @@ public final class StoreKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStoreProductParameterAdNetworkTimestamp();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterAdNetworkSourceAppStoreIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterAdNetworkVersion();
 }

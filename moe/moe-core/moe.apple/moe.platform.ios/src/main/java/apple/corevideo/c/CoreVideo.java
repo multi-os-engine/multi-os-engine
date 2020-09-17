@@ -936,4 +936,44 @@ public final class CoreVideo {
     @Generated
     @CVariable()
     public static native CFStringRef kCVMetalTextureStorageMode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferVersatileBayerKey_BayerPattern();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_SenselSitingOffsets();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_BlackLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_WhiteLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_WhiteBalanceCCT();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_WhiteBalanceRedFactor();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_WhiteBalanceBlueFactor();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_ColorMatrix();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_GainFactor();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_RecommendedCrop();
 }

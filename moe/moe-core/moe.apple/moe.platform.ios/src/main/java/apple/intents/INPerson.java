@@ -288,4 +288,10 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
             INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
             String contactIdentifier, String customIdentifier, boolean isMe);
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
+    public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, String relationship);
 }

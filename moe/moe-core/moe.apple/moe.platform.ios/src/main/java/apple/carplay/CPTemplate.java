@@ -6,6 +6,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -167,4 +168,37 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("setShowsTabBadge:")
+    public native void setShowsTabBadge(boolean value);
+
+    @Generated
+    @Selector("setTabImage:")
+    public native void setTabImage(UIImage value);
+
+    @Generated
+    @Selector("setTabSystemItem:")
+    public native void setTabSystemItem(@NInt long value);
+
+    @Generated
+    @Selector("setTabTitle:")
+    public native void setTabTitle(String value);
+
+    @Generated
+    @Selector("showsTabBadge")
+    public native boolean showsTabBadge();
+
+    @Generated
+    @Selector("tabImage")
+    public native UIImage tabImage();
+
+    @Generated
+    @Selector("tabSystemItem")
+    @NInt
+    public native long tabSystemItem();
+
+    @Generated
+    @Selector("tabTitle")
+    public native String tabTitle();
 }

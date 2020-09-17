@@ -295,4 +295,101 @@ public class UISplitViewController extends UIViewController {
     @Generated
     @Selector("setPrimaryBackgroundStyle:")
     public native void setPrimaryBackgroundStyle(@NInt long value);
+
+    @Generated
+    @Selector("hideColumn:")
+    public native void hideColumn(@NInt long column);
+
+    @Generated
+    @Selector("initWithStyle:")
+    public native UISplitViewController initWithStyle(@NInt long style);
+
+    @Generated
+    @Selector("maximumSupplementaryColumnWidth")
+    @NFloat
+    public native double maximumSupplementaryColumnWidth();
+
+    @Generated
+    @Selector("minimumSupplementaryColumnWidth")
+    @NFloat
+    public native double minimumSupplementaryColumnWidth();
+
+    @Generated
+    @Selector("preferredPrimaryColumnWidth")
+    @NFloat
+    public native double preferredPrimaryColumnWidth();
+
+    @Generated
+    @Selector("preferredSplitBehavior")
+    @NInt
+    public native long preferredSplitBehavior();
+
+    @Generated
+    @Selector("preferredSupplementaryColumnWidth")
+    @NFloat
+    public native double preferredSupplementaryColumnWidth();
+
+    @Generated
+    @Selector("preferredSupplementaryColumnWidthFraction")
+    @NFloat
+    public native double preferredSupplementaryColumnWidthFraction();
+
+    @Generated
+    @Selector("setMaximumSupplementaryColumnWidth:")
+    public native void setMaximumSupplementaryColumnWidth(@NFloat double value);
+
+    @Generated
+    @Selector("setMinimumSupplementaryColumnWidth:")
+    public native void setMinimumSupplementaryColumnWidth(@NFloat double value);
+
+    @Generated
+    @Selector("setPreferredPrimaryColumnWidth:")
+    public native void setPreferredPrimaryColumnWidth(@NFloat double value);
+
+    @Generated
+    @Selector("setPreferredSplitBehavior:")
+    public native void setPreferredSplitBehavior(@NInt long value);
+
+    @Generated
+    @Selector("setPreferredSupplementaryColumnWidth:")
+    public native void setPreferredSupplementaryColumnWidth(@NFloat double value);
+
+    @Generated
+    @Selector("setPreferredSupplementaryColumnWidthFraction:")
+    public native void setPreferredSupplementaryColumnWidthFraction(@NFloat double value);
+
+    @Generated
+    @Selector("setShowsSecondaryOnlyButton:")
+    public native void setShowsSecondaryOnlyButton(boolean value);
+
+    @Generated
+    @Selector("setViewController:forColumn:")
+    public native void setViewControllerForColumn(UIViewController vc, @NInt long column);
+
+    @Generated
+    @Selector("showColumn:")
+    public native void showColumn(@NInt long column);
+
+    @Generated
+    @Selector("showsSecondaryOnlyButton")
+    public native boolean showsSecondaryOnlyButton();
+
+    @Generated
+    @Selector("splitBehavior")
+    @NInt
+    public native long splitBehavior();
+
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
+
+    @Generated
+    @Selector("supplementaryColumnWidth")
+    @NFloat
+    public native double supplementaryColumnWidth();
+
+    @Generated
+    @Selector("viewControllerForColumn:")
+    public native UIViewController viewControllerForColumn(@NInt long column);
 }

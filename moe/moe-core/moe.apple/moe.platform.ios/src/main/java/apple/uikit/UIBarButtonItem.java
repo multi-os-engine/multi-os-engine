@@ -428,4 +428,51 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Generated
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
+
+    @Generated
+    @Selector("fixedSpaceItemOfWidth:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object fixedSpaceItemOfWidth(@NFloat double width);
+
+    @Generated
+    @Selector("flexibleSpaceItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object flexibleSpaceItem();
+
+    @Generated
+    @Selector("initWithBarButtonSystemItem:menu:")
+    public native UIBarButtonItem initWithBarButtonSystemItemMenu(@NInt long systemItem, UIMenu menu);
+
+    @Generated
+    @Selector("initWithBarButtonSystemItem:primaryAction:")
+    public native UIBarButtonItem initWithBarButtonSystemItemPrimaryAction(@NInt long systemItem,
+            UIAction primaryAction);
+
+    @Generated
+    @Selector("initWithImage:menu:")
+    public native UIBarButtonItem initWithImageMenu(UIImage image, UIMenu menu);
+
+    @Generated
+    @Selector("initWithPrimaryAction:")
+    public native UIBarButtonItem initWithPrimaryAction(UIAction primaryAction);
+
+    @Generated
+    @Selector("initWithTitle:menu:")
+    public native UIBarButtonItem initWithTitleMenu(String title, UIMenu menu);
+
+    @Generated
+    @Selector("menu")
+    public native UIMenu menu();
+
+    @Generated
+    @Selector("primaryAction")
+    public native UIAction primaryAction();
+
+    @Generated
+    @Selector("setMenu:")
+    public native void setMenu(UIMenu value);
+
+    @Generated
+    @Selector("setPrimaryAction:")
+    public native void setPrimaryAction(UIAction value);
 }

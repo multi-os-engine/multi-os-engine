@@ -232,4 +232,8 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
         @Generated
         void call_addMediaItemsCompletionHandler(NSError error);
     }
+
+    @Generated
+    @Selector("cloudGlobalID")
+    public native String cloudGlobalID();
 }

@@ -2554,4 +2554,86 @@ public final class CoreGraphics {
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDisplayP3_PQ();
+
+    @Generated
+    @CFunction
+    public static native boolean CGColorSpaceUsesExtendedRange(CGColorSpaceRef space);
+
+    @Generated
+    @CFunction
+    public static native CGColorRef CGColorCreateGenericGray(@NFloat double gray, @NFloat double alpha);
+
+    @Generated
+    @CFunction
+    public static native CGColorRef CGColorCreateGenericRGB(@NFloat double red, @NFloat double green,
+            @NFloat double blue, @NFloat double alpha);
+
+    @Generated
+    @CFunction
+    public static native CGColorRef CGColorCreateGenericCMYK(@NFloat double cyan, @NFloat double magenta,
+            @NFloat double yellow, @NFloat double black, @NFloat double alpha);
+
+    @Generated
+    @CFunction
+    public static native CGColorRef CGColorGetConstantColor(CFStringRef colorName);
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_2100_PQ();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_2100_HLG();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorWhite();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorBlack();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorClear();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFContextOutputIntent();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFXOutputIntentSubtype();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFXOutputConditionIdentifier();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFXOutputCondition();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFXRegistryName();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFXInfo();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFXDestinationOutputProfile();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFContextOutputIntents();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFContextCreateLinearizedPDF();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGPDFContextCreatePDFA();
 }

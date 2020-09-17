@@ -103,4 +103,8 @@ public final class HKWorkoutActivityType {
     @Generated @NUInt public static final long HandCycling = 0x000000000000004AL;
     @Generated @NUInt public static final long DiscSports = 0x000000000000004BL;
     @Generated @NUInt public static final long FitnessGaming = 0x000000000000004CL;
+    @Generated @NUInt public static final long CardioDance = 0x000000000000004DL;
+    @Generated @NUInt public static final long SocialDance = 0x000000000000004EL;
+    @Generated @NUInt public static final long Pickleball = 0x000000000000004FL;
+    @Generated @NUInt public static final long Cooldown = 0x0000000000000050L;
 }

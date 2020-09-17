@@ -2856,4 +2856,8 @@ public final class CoreMedia {
     @Generated
     @CVariable()
     public static native CFStringRef kCMMetadataBaseDataType_PerspectiveTransformF64();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCMFormatDescriptionExtension_ProtectedContentOriginalFormat();
 }

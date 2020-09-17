@@ -19,10 +19,13 @@ package apple.metal.protocol;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.metal.MTLFunctionConstantValues;
+import apple.metal.MTLFunctionDescriptor;
+import apple.metal.MTLIntersectionFunctionDescriptor;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
@@ -77,4 +80,51 @@ public interface MTLLibrary {
         void call_newFunctionWithNameConstantValuesCompletionHandler(@Mapped(ObjCObjectMapper.class) Object function,
                 NSError error);
     }
+
+    @Generated
+    @Selector("installName")
+    String installName();
+
+    @Generated
+    @Selector("newFunctionWithDescriptor:completionHandler:")
+    void newFunctionWithDescriptorCompletionHandler(MTLFunctionDescriptor descriptor,
+            @ObjCBlock(name = "call_newFunctionWithDescriptorCompletionHandler") Block_newFunctionWithDescriptorCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newFunctionWithDescriptorCompletionHandler {
+        @Generated
+        void call_newFunctionWithDescriptorCompletionHandler(@Mapped(ObjCObjectMapper.class) Object function,
+                NSError error);
+    }
+
+    @Generated
+    @Selector("newFunctionWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLFunction newFunctionWithDescriptorError(MTLFunctionDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("newIntersectionFunctionWithDescriptor:completionHandler:")
+    void newIntersectionFunctionWithDescriptorCompletionHandler(MTLIntersectionFunctionDescriptor descriptor,
+            @ObjCBlock(name = "call_newIntersectionFunctionWithDescriptorCompletionHandler") Block_newIntersectionFunctionWithDescriptorCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newIntersectionFunctionWithDescriptorCompletionHandler {
+        @Generated
+        void call_newIntersectionFunctionWithDescriptorCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object function, NSError error);
+    }
+
+    @Generated
+    @Selector("newIntersectionFunctionWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLFunction newIntersectionFunctionWithDescriptorError(MTLIntersectionFunctionDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("type")
+    @NInt
+    long type();
 }

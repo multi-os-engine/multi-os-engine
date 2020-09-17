@@ -145,4 +145,13 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("databaseScope")
+    @NInt
+    public native long databaseScope();
+
+    @Generated
+    @Selector("setDatabaseScope:")
+    public native void setDatabaseScope(@NInt long value);
 }

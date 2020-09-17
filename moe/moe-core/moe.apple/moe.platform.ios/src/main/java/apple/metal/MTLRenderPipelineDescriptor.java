@@ -359,4 +359,12 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("supportIndirectCommandBuffers")
     public native boolean supportIndirectCommandBuffers();
+
+    @Generated
+    @Selector("binaryArchives")
+    public native NSArray<?> binaryArchives();
+
+    @Generated
+    @Selector("setBinaryArchives:")
+    public native void setBinaryArchives(NSArray<?> value);
 }

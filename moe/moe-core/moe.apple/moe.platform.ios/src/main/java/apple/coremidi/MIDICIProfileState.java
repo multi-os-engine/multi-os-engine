@@ -171,4 +171,13 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithChannel:enabledProfiles:disabledProfiles:")
+    public native MIDICIProfileState initWithChannelEnabledProfilesDisabledProfiles(byte midiChannelNum,
+            NSArray<? extends MIDICIProfile> enabled, NSArray<? extends MIDICIProfile> disabled);
+
+    @Generated
+    @Selector("midiChannel")
+    public native byte midiChannel();
 }

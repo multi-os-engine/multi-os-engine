@@ -301,4 +301,17 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

@@ -1059,4 +1059,9 @@ public final class CoreImage {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCIInputEnableEDRModeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kCIContextName();
 }

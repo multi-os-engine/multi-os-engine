@@ -17,6 +17,7 @@ limitations under the License.
 package apple.intents.protocol;
 
 import apple.foundation.NSArray;
+import apple.intents.INOutgoingMessageTypeResolutionResult;
 import apple.intents.INPersonResolutionResult;
 import apple.intents.INSendMessageIntent;
 import apple.intents.INSendMessageIntentResponse;
@@ -140,5 +141,21 @@ public interface INSendMessageIntentHandling {
         @Generated
         void call_resolveSpeakableGroupNameForSendMessageWithCompletion(
                 INSpeakableStringResolutionResult resolutionResult);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("resolveOutgoingMessageTypeForSendMessage:withCompletion:")
+    default void resolveOutgoingMessageTypeForSendMessageWithCompletion(INSendMessageIntent intent,
+            @ObjCBlock(name = "call_resolveOutgoingMessageTypeForSendMessageWithCompletion") Block_resolveOutgoingMessageTypeForSendMessageWithCompletion completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resolveOutgoingMessageTypeForSendMessageWithCompletion {
+        @Generated
+        void call_resolveOutgoingMessageTypeForSendMessageWithCompletion(
+                INOutgoingMessageTypeResolutionResult resolutionResult);
     }
 }

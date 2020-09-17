@@ -17,6 +17,7 @@ limitations under the License.
 package apple.audiotoolbox;
 
 import apple.NSObject;
+import apple.OS_os_workgroup;
 import apple.audiotoolbox.opaque.AudioComponent;
 import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.avfoundation.AVAudioFormat;
@@ -688,11 +689,6 @@ public class AUAudioUnit extends NSObject {
     public native NSArray<? extends AUAudioUnitPreset> userPresets();
 
     @Generated
-    @Selector("internalRenderBlock")
-    @ObjCBlock(name = "call_renderBlock_ret")
-    public native Block_renderBlock_ret internalRenderBlock();
-
-    @Generated
     @Selector("renderBlock")
     @ObjCBlock(name = "call_renderBlock_ret")
     public native Block_renderBlock_ret renderBlock();
@@ -716,5 +712,21 @@ public class AUAudioUnit extends NSObject {
                 int frameCount, @NInt long outputBusNumber,
                 @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData,
                 @ObjCBlock(name = "call_Block_renderBlock_ret") Block_Block_renderBlock_ret pullInputBlock);
+    }
+
+    @Generated
+    @Selector("osWorkgroup")
+    public native OS_os_workgroup osWorkgroup();
+
+    @Generated
+    @Selector("renderContextObserver")
+    @ObjCBlock(name = "call_renderContextObserver_ret")
+    public native Block_renderContextObserver_ret renderContextObserver();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_renderContextObserver_ret {
+        @Generated
+        void call_renderContextObserver_ret(VoidPtr context);
     }
 }

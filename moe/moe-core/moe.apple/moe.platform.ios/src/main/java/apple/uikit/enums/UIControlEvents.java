@@ -45,4 +45,6 @@ public final class UIControlEvents {
     @Generated
     private UIControlEvents() {
     }
+
+    @Generated @NUInt public static final long MenuActionTriggered = 0x0000000000004000L;
 }

@@ -205,4 +205,12 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("weight")
     public native float weight();
+
+    @Generated
+    @Selector("reduceAcrossBatch")
+    public native boolean reduceAcrossBatch();
+
+    @Generated
+    @Selector("setReduceAcrossBatch:")
+    public native void setReduceAcrossBatch(boolean value);
 }

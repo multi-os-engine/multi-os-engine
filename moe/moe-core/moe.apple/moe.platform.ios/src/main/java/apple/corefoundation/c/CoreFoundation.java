@@ -5415,4 +5415,28 @@ public final class CoreFoundation {
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyShouldCloseNativeSocket();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLFileContentIdentifierKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLMayShareFileContentKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLMayHaveExtendedAttributesKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLIsPurgeableKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLIsSparseKey();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeSupportsFileProtectionKey();
 }

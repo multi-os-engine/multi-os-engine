@@ -3,6 +3,7 @@ package apple.vision;
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coreimage.CIImage;
+import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
@@ -274,4 +275,26 @@ public class VNTranslationalImageRegistrationRequest extends VNImageRegistration
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:options:")
+    public native VNTranslationalImageRegistrationRequest initWithTargetedCMSampleBufferOptions(
+            CMSampleBufferRef sampleBuffer, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:options:completionHandler:")
+    public native VNTranslationalImageRegistrationRequest initWithTargetedCMSampleBufferOptionsCompletionHandler(
+            CMSampleBufferRef sampleBuffer, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:orientation:options:")
+    public native VNTranslationalImageRegistrationRequest initWithTargetedCMSampleBufferOrientationOptions(
+            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:orientation:options:completionHandler:")
+    public native VNTranslationalImageRegistrationRequest initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(
+            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler completionHandler);
 }

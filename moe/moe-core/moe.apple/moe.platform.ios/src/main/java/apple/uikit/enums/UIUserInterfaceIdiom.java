@@ -30,4 +30,6 @@ public final class UIUserInterfaceIdiom {
     @Generated
     private UIUserInterfaceIdiom() {
     }
+
+    @Generated @NInt public static final long Mac = 0x0000000000000005L;
 }

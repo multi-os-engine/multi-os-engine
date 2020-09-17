@@ -238,4 +238,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("reduceAcrossBatch")
+    public native boolean reduceAcrossBatch();
 }

@@ -203,4 +203,8 @@ public class HKSeriesType extends HKSampleType {
     @Selector("heartbeatSeriesType")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object heartbeatSeriesType();
+
+    @Generated
+    @Selector("electrocardiogramType")
+    public static native HKElectrocardiogramType electrocardiogramType();
 }

@@ -23,6 +23,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.webkit.protocol.WKScriptMessageHandler;
+import apple.webkit.protocol.WKScriptMessageHandlerWithReply;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -208,4 +209,28 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("addScriptMessageHandler:contentWorld:name:")
+    public native void addScriptMessageHandlerContentWorldName(
+            @Mapped(ObjCObjectMapper.class) WKScriptMessageHandler scriptMessageHandler, WKContentWorld world,
+            String name);
+
+    @Generated
+    @Selector("addScriptMessageHandlerWithReply:contentWorld:name:")
+    public native void addScriptMessageHandlerWithReplyContentWorldName(
+            @Mapped(ObjCObjectMapper.class) WKScriptMessageHandlerWithReply scriptMessageHandlerWithReply,
+            WKContentWorld contentWorld, String name);
+
+    @Generated
+    @Selector("removeAllScriptMessageHandlers")
+    public native void removeAllScriptMessageHandlers();
+
+    @Generated
+    @Selector("removeAllScriptMessageHandlersFromContentWorld:")
+    public native void removeAllScriptMessageHandlersFromContentWorld(WKContentWorld contentWorld);
+
+    @Generated
+    @Selector("removeScriptMessageHandlerForName:contentWorld:")
+    public native void removeScriptMessageHandlerForNameContentWorld(String name, WKContentWorld contentWorld);
 }

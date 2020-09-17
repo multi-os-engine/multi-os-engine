@@ -6,6 +6,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMeasurement;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSUnit;
 import apple.foundation.NSUnitDuration;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -159,4 +160,8 @@ public class MXCPUMetric extends MXMetric {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("cumulativeCPUInstructions")
+    public native NSMeasurement<NSUnit> cumulativeCPUInstructions();
 }

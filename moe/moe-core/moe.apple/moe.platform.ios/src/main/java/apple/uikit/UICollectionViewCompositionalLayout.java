@@ -195,4 +195,9 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("layoutWithListConfiguration:")
+    public static native UICollectionViewCompositionalLayout layoutWithListConfiguration(
+            UICollectionLayoutListConfiguration configuration);
 }

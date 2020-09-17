@@ -33,4 +33,6 @@ public final class NSNetServicesError {
     @Generated
     private NSNetServicesError() {
     }
+
+    @Generated @NInt public static final long MissingRequiredConfigurationError = 0xFFFFFFFFFFFEE6B8L;
 }

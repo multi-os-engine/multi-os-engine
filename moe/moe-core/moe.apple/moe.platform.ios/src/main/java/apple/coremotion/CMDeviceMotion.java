@@ -201,4 +201,9 @@ public class CMDeviceMotion extends CMLogItem {
     @Generated
     @Selector("heading")
     public native double heading();
+
+    @Generated
+    @Selector("sensorLocation")
+    @NInt
+    public native long sensorLocation();
 }

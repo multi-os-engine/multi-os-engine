@@ -70,4 +70,11 @@ public interface SFSafariViewControllerDelegate {
     default void safariViewControllerInitialLoadDidRedirectToURL(SFSafariViewController controller, NSURL URL) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("safariViewControllerWillOpenInBrowser:")
+    default void safariViewControllerWillOpenInBrowser(SFSafariViewController controller) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

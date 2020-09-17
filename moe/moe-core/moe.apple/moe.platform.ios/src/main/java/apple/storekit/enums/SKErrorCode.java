@@ -41,4 +41,8 @@ public final class SKErrorCode {
     @Generated @NInt public static final long InvalidSignature = 0x000000000000000CL;
     @Generated @NInt public static final long MissingOfferParams = 0x000000000000000DL;
     @Generated @NInt public static final long InvalidOfferPrice = 0x000000000000000EL;
+    @Generated @NInt public static final long OverlayCancelled = 0x000000000000000FL;
+    @Generated @NInt public static final long OverlayInvalidConfiguration = 0x0000000000000010L;
+    @Generated @NInt public static final long OverlayTimeout = 0x0000000000000011L;
+    @Generated @NInt public static final long IneligibleForOffer = 0x0000000000000012L;
 }

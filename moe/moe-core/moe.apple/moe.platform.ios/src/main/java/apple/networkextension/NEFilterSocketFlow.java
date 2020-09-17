@@ -201,4 +201,8 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("remoteHostname")
+    public native String remoteHostname();
 }

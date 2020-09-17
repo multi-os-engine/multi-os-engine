@@ -30,6 +30,7 @@ import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
 import apple.uikit.NSStringDrawingContext;
 import apple.uikit.UIFont;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.c.map.CStringMapper;
@@ -1137,4 +1138,37 @@ public class NSString extends NSObject
     @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:arguments:")
     public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(String format, String table,
             BytePtr arguments);
+
+    @Generated
+    @Selector("initWithBytesNoCopy:length:encoding:deallocator:")
+    public native NSString initWithBytesNoCopyLengthEncodingDeallocator(VoidPtr bytes, @NUInt long len,
+            @NUInt long encoding,
+            @ObjCBlock(name = "call_initWithBytesNoCopyLengthEncodingDeallocator") Block_initWithBytesNoCopyLengthEncodingDeallocator deallocator);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithBytesNoCopyLengthEncodingDeallocator {
+        @Generated
+        void call_initWithBytesNoCopyLengthEncodingDeallocator(VoidPtr arg0, @NUInt long arg1);
+    }
+
+    @Generated
+    @Selector("initWithCharactersNoCopy:length:deallocator:")
+    public native NSString initWithCharactersNoCopyLengthDeallocator(CharPtr chars, @NUInt long len,
+            @ObjCBlock(name = "call_initWithCharactersNoCopyLengthDeallocator") Block_initWithCharactersNoCopyLengthDeallocator deallocator);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithCharactersNoCopyLengthDeallocator {
+        @Generated
+        void call_initWithCharactersNoCopyLengthDeallocator(CharPtr arg0, @NUInt long arg1);
+    }
+
+    @Generated
+    @Selector("stringByAppendingPathComponent:conformingToType:")
+    public native String stringByAppendingPathComponentConformingToType(String partialName, UTType contentType);
+
+    @Generated
+    @Selector("stringByAppendingPathExtensionForType:")
+    public native String stringByAppendingPathExtensionForType(UTType contentType);
 }

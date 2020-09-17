@@ -155,4 +155,16 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     @Selector("resetTextureAccessCounters:region:mipLevel:slice:")
     void resetTextureAccessCountersRegionMipLevelSlice(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
             @ByValue MTLRegion region, @NUInt long mipLevel, @NUInt long slice);
+
+    @Generated
+    @Selector("resolveCounters:inRange:destinationBuffer:destinationOffset:")
+    void resolveCountersInRangeDestinationBufferDestinationOffset(
+            @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @ByValue NSRange range,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer destinationBuffer, @NUInt long destinationOffset);
+
+    @Generated
+    @Selector("sampleCountersInBuffer:atSampleIndex:withBarrier:")
+    void sampleCountersInBufferAtSampleIndexWithBarrier(
+            @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @NUInt long sampleIndex,
+            boolean barrier);
 }

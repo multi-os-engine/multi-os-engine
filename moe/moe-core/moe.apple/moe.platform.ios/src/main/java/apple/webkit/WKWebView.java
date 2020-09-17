@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
 import apple.foundation.NSDate;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -608,4 +609,85 @@ public class WKWebView extends UIView {
         @Generated
         void call_takeSnapshotWithConfigurationCompletionHandler(UIImage snapshotImage, NSError error);
     }
+
+    @Generated
+    @Selector("callAsyncJavaScript:arguments:inFrame:inContentWorld:completionHandler:")
+    public native void callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(String functionBody,
+            NSDictionary<String, ?> arguments, WKFrameInfo frame, WKContentWorld contentWorld,
+            @ObjCBlock(name = "call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler") Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler {
+        @Generated
+        void call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object arg0, NSError error);
+    }
+
+    @Generated
+    @Selector("createPDFWithConfiguration:completionHandler:")
+    public native void createPDFWithConfigurationCompletionHandler(WKPDFConfiguration pdfConfiguration,
+            @ObjCBlock(name = "call_createPDFWithConfigurationCompletionHandler") Block_createPDFWithConfigurationCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_createPDFWithConfigurationCompletionHandler {
+        @Generated
+        void call_createPDFWithConfigurationCompletionHandler(NSData pdfDocumentData, NSError error);
+    }
+
+    @Generated
+    @Selector("createWebArchiveDataWithCompletionHandler:")
+    public native void createWebArchiveDataWithCompletionHandler(
+            @ObjCBlock(name = "call_createWebArchiveDataWithCompletionHandler") Block_createWebArchiveDataWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_createWebArchiveDataWithCompletionHandler {
+        @Generated
+        void call_createWebArchiveDataWithCompletionHandler(NSData arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("evaluateJavaScript:inFrame:inContentWorld:completionHandler:")
+    public native void evaluateJavaScriptInFrameInContentWorldCompletionHandler(String javaScriptString,
+            WKFrameInfo frame, WKContentWorld contentWorld,
+            @ObjCBlock(name = "call_evaluateJavaScriptInFrameInContentWorldCompletionHandler") Block_evaluateJavaScriptInFrameInContentWorldCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_evaluateJavaScriptInFrameInContentWorldCompletionHandler {
+        @Generated
+        void call_evaluateJavaScriptInFrameInContentWorldCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
+                NSError error);
+    }
+
+    @Generated
+    @Selector("findString:withConfiguration:completionHandler:")
+    public native void findStringWithConfigurationCompletionHandler(String string, WKFindConfiguration configuration,
+            @ObjCBlock(name = "call_findStringWithConfigurationCompletionHandler") Block_findStringWithConfigurationCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_findStringWithConfigurationCompletionHandler {
+        @Generated
+        void call_findStringWithConfigurationCompletionHandler(WKFindResult result);
+    }
+
+    @Generated
+    @Selector("mediaType")
+    public native String mediaType();
+
+    @Generated
+    @Selector("pageZoom")
+    @NFloat
+    public native double pageZoom();
+
+    @Generated
+    @Selector("setMediaType:")
+    public native void setMediaType(String value);
+
+    @Generated
+    @Selector("setPageZoom:")
+    public native void setPageZoom(@NFloat double value);
 }

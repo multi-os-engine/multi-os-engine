@@ -9,6 +9,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.intents.INShortcut;
 import apple.intentsui.protocol.INUIAddVoiceShortcutButtonDelegate;
+import apple.uikit.UIAction;
 import apple.uikit.UIButton;
 import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
@@ -461,4 +462,18 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("buttonWithType:primaryAction:")
+    public static native INUIAddVoiceShortcutButton buttonWithTypePrimaryAction(@NInt long buttonType,
+            UIAction primaryAction);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native INUIAddVoiceShortcutButton initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    @Generated
+    @Selector("systemButtonWithPrimaryAction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemButtonWithPrimaryAction(UIAction primaryAction);
 }

@@ -477,4 +477,13 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("drawingPolicy")
+    @NUInt
+    public native long drawingPolicy();
+
+    @Generated
+    @Selector("setDrawingPolicy:")
+    public native void setDrawingPolicy(@NUInt long value);
 }

@@ -24,6 +24,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
+import apple.metal.protocol.MTLBuffer;
 import apple.modelio.MDLSubmesh;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -243,4 +244,10 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("setPrimitiveRange:")
     public native void setPrimitiveRange(@ByValue NSRange value);
+
+    @Generated
+    @Selector("geometryElementWithBuffer:primitiveType:primitiveCount:bytesPerIndex:")
+    public static native SCNGeometryElement geometryElementWithBufferPrimitiveTypePrimitiveCountBytesPerIndex(
+            @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NInt long primitiveType, @NInt long primitiveCount,
+            @NInt long bytesPerIndex);
 }

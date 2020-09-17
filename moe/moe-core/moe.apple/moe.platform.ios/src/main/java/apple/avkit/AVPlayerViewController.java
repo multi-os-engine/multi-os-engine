@@ -302,4 +302,20 @@ public class AVPlayerViewController extends UIViewController {
     @Generated
     @Selector("setPixelBufferAttributes:")
     public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("requiresLinearPlayback")
+    public native boolean requiresLinearPlayback();
+
+    @Generated
+    @Selector("setRequiresLinearPlayback:")
+    public native void setRequiresLinearPlayback(boolean value);
+
+    @Generated
+    @Selector("setShowsTimecodes:")
+    public native void setShowsTimecodes(boolean value);
+
+    @Generated
+    @Selector("showsTimecodes")
+    public native boolean showsTimecodes();
 }

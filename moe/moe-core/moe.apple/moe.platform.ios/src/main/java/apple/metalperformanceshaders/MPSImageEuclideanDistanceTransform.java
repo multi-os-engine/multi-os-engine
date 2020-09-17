@@ -162,4 +162,12 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("searchLimitRadius")
+    public native float searchLimitRadius();
+
+    @Generated
+    @Selector("setSearchLimitRadius:")
+    public native void setSearchLimitRadius(float value);
 }

@@ -179,4 +179,8 @@ public class MKLocalSearch extends NSObject {
         @Generated
         void call_startWithCompletionHandler(MKLocalSearchResponse response, NSError error);
     }
+
+    @Generated
+    @Selector("initWithPointsOfInterestRequest:")
+    public native MKLocalSearch initWithPointsOfInterestRequest(MKLocalPointsOfInterestRequest request);
 }

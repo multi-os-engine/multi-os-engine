@@ -470,4 +470,46 @@ public class UIPageControl extends UIControl {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("allowsContinuousInteraction")
+    public native boolean allowsContinuousInteraction();
+
+    @Generated
+    @Selector("backgroundStyle")
+    @NInt
+    public native long backgroundStyle();
+
+    @Generated
+    @Selector("indicatorImageForPage:")
+    public native UIImage indicatorImageForPage(@NInt long page);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UIPageControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    @Generated
+    @Selector("interactionState")
+    @NInt
+    public native long interactionState();
+
+    @Generated
+    @Selector("preferredIndicatorImage")
+    public native UIImage preferredIndicatorImage();
+
+    @Generated
+    @Selector("setAllowsContinuousInteraction:")
+    public native void setAllowsContinuousInteraction(boolean value);
+
+    @Generated
+    @Selector("setBackgroundStyle:")
+    public native void setBackgroundStyle(@NInt long value);
+
+    @Generated
+    @Selector("setIndicatorImage:forPage:")
+    public native void setIndicatorImageForPage(UIImage image, @NInt long page);
+
+    @Generated
+    @Selector("setPreferredIndicatorImage:")
+    public native void setPreferredIndicatorImage(UIImage value);
 }

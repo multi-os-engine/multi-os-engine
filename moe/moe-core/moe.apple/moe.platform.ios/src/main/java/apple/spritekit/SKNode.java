@@ -591,4 +591,9 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("focusGroupIdentifier")
+    public native String focusGroupIdentifier();
 }

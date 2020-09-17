@@ -186,4 +186,37 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     @Generated
     @Selector("setPreprocessorMacros:")
     public native void setPreprocessorMacros(NSDictionary<String, ? extends NSObject> value);
+
+    @Generated
+    @Selector("installName")
+    public native String installName();
+
+    @Generated
+    @Selector("libraries")
+    public native NSArray<?> libraries();
+
+    @Generated
+    @Selector("libraryType")
+    @NInt
+    public native long libraryType();
+
+    @Generated
+    @Selector("preserveInvariance")
+    public native boolean preserveInvariance();
+
+    @Generated
+    @Selector("setInstallName:")
+    public native void setInstallName(String value);
+
+    @Generated
+    @Selector("setLibraries:")
+    public native void setLibraries(NSArray<?> value);
+
+    @Generated
+    @Selector("setLibraryType:")
+    public native void setLibraryType(@NInt long value);
+
+    @Generated
+    @Selector("setPreserveInvariance:")
+    public native void setPreserveInvariance(boolean value);
 }

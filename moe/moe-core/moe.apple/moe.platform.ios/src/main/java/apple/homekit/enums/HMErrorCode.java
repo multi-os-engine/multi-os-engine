@@ -125,4 +125,8 @@ public final class HMErrorCode {
     @Generated @NInt public static final long OwnershipFailure = 0x0000000000000060L;
     @Generated @NInt public static final long MaximumAccessoriesOfTypeInHome = 0x0000000000000061L;
     @Generated @NInt public static final long WiFiCredentialGenerationFailed = 0x0000000000000062L;
+    @Generated @NInt public static final long EnterpriseNetworkNotSupported = 0x0000000000000063L;
+    @Generated @NInt public static final long TimedOutWaitingForAccessory = 0x0000000000000064L;
+    @Generated @NInt public static final long AccessoryCommunicationFailure = 0x0000000000000065L;
+    @Generated @NInt public static final long FailedToJoinNetwork = 0x0000000000000066L;
 }

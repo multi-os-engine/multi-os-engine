@@ -3,8 +3,10 @@ package apple.carplay;
 import apple.NSObject;
 import apple.carplay.protocol.CPBarButtonProviding;
 import apple.carplay.protocol.CPListTemplateDelegate;
+import apple.carplay.protocol.CPListTemplateItem;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -216,4 +218,44 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("emptyViewSubtitleVariants")
+    public native NSArray<String> emptyViewSubtitleVariants();
+
+    @Generated
+    @Selector("emptyViewTitleVariants")
+    public native NSArray<String> emptyViewTitleVariants();
+
+    @Generated
+    @Selector("indexPathForItem:")
+    public native NSIndexPath indexPathForItem(@Mapped(ObjCObjectMapper.class) CPListTemplateItem item);
+
+    @Generated
+    @Selector("itemCount")
+    @NUInt
+    public native long itemCount();
+
+    @Generated
+    @Selector("maximumItemCount")
+    @NUInt
+    public static native long maximumItemCount();
+
+    @Generated
+    @Selector("maximumSectionCount")
+    @NUInt
+    public static native long maximumSectionCount();
+
+    @Generated
+    @Selector("sectionCount")
+    @NUInt
+    public native long sectionCount();
+
+    @Generated
+    @Selector("setEmptyViewSubtitleVariants:")
+    public native void setEmptyViewSubtitleVariants(NSArray<String> value);
+
+    @Generated
+    @Selector("setEmptyViewTitleVariants:")
+    public native void setEmptyViewTitleVariants(NSArray<String> value);
 }

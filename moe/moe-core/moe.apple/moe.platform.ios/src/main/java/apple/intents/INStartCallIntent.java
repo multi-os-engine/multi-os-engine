@@ -183,4 +183,18 @@ public class INStartCallIntent extends INIntent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("callRecordFilter")
+    public native INCallRecordFilter callRecordFilter();
+
+    @Generated
+    @Selector("callRecordToCallBack")
+    public native INCallRecord callRecordToCallBack();
+
+    @Generated
+    @Selector("initWithCallRecordFilter:callRecordToCallBack:audioRoute:destinationType:contacts:callCapability:")
+    public native INStartCallIntent initWithCallRecordFilterCallRecordToCallBackAudioRouteDestinationTypeContactsCallCapability(
+            INCallRecordFilter callRecordFilter, INCallRecord callRecordToCallBack, @NInt long audioRoute,
+            @NInt long destinationType, NSArray<? extends INPerson> contacts, @NInt long callCapability);
 }

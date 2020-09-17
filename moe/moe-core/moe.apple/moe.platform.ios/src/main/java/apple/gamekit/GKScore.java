@@ -333,4 +333,17 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
         @Generated
         void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError error);
     }
+
+    @Generated
+    @Selector("reportLeaderboardScores:withEligibleChallenges:withCompletionHandler:")
+    public static native void reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler(
+            NSArray<? extends GKLeaderboardScore> scores, NSArray<? extends GKChallenge> challenges,
+            @ObjCBlock(name = "call_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler") Block_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler {
+        @Generated
+        void call_reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler(NSError error);
+    }
 }

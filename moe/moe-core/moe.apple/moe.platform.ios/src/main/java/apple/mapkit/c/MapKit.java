@@ -545,4 +545,13 @@ public final class MapKit {
     @Generated
     @CVariable()
     public static native double MKMapCameraZoomDefault();
+
+    @Generated public static final float MKAnnotationViewZPriorityMax = (float)1000.0;
+    @Generated public static final float MKAnnotationViewZPriorityDefaultSelected = (float)1000.0;
+    @Generated public static final float MKAnnotationViewZPriorityDefaultUnselected = (float)500.0;
+    @Generated public static final float MKAnnotationViewZPriorityMin = (float)0.0;
+
+    @Generated
+    @CVariable()
+    public static native double MKPointsOfInterestRequestMaxRadius();
 }

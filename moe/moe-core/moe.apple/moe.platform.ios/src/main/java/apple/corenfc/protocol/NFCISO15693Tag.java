@@ -298,4 +298,148 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
         @Generated
         void call_writeSingleBlockWithRequestFlagsBlockNumberDataBlockCompletionHandler(NSError error);
     }
+
+    @Generated
+    @Selector("authenticateWithRequestFlags:cryptoSuiteIdentifier:message:completionHandler:")
+    void authenticateWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler(byte flags,
+            @NInt long cryptoSuiteIdentifier, NSData message,
+            @ObjCBlock(name = "call_authenticateWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler") Block_authenticateWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_authenticateWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler {
+        @Generated
+        void call_authenticateWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler(byte responseFlag,
+                NSData response, NSError error);
+    }
+
+    @Generated
+    @Selector("challengeWithRequestFlags:cryptoSuiteIdentifier:message:completionHandler:")
+    void challengeWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler(byte flags,
+            @NInt long cryptoSuiteIdentifier, NSData message,
+            @ObjCBlock(name = "call_challengeWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler") Block_challengeWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_challengeWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler {
+        @Generated
+        void call_challengeWithRequestFlagsCryptoSuiteIdentifierMessageCompletionHandler(NSError error);
+    }
+
+    @Generated
+    @Selector("extendedFastReadMultipleBlocksWithRequestFlag:blockRange:completionHandler:")
+    void extendedFastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler(byte flags,
+            @ByValue NSRange blockRange,
+            @ObjCBlock(name = "call_extendedFastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler") Block_extendedFastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_extendedFastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler {
+        @Generated
+        void call_extendedFastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler(
+                NSArray<? extends NSData> dataBlocks, NSError error);
+    }
+
+    @Generated
+    @Selector("extendedGetMultipleBlockSecurityStatusWithRequestFlag:blockRange:completionHandler:")
+    void extendedGetMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler(byte flags,
+            @ByValue NSRange blockRange,
+            @ObjCBlock(name = "call_extendedGetMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler") Block_extendedGetMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_extendedGetMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler {
+        @Generated
+        void call_extendedGetMultipleBlockSecurityStatusWithRequestFlagBlockRangeCompletionHandler(
+                NSArray<? extends NSNumber> securityStatus, NSError error);
+    }
+
+    @Generated
+    @Selector("extendedWriteMultipleBlocksWithRequestFlags:blockRange:dataBlocks:completionHandler:")
+    void extendedWriteMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler(byte flags,
+            @ByValue NSRange blockRange, NSArray<? extends NSData> dataBlocks,
+            @ObjCBlock(name = "call_extendedWriteMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler") Block_extendedWriteMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_extendedWriteMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler {
+        @Generated
+        void call_extendedWriteMultipleBlocksWithRequestFlagsBlockRangeDataBlocksCompletionHandler(NSError error);
+    }
+
+    @Generated
+    @Selector("fastReadMultipleBlocksWithRequestFlag:blockRange:completionHandler:")
+    void fastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler(byte flags, @ByValue NSRange blockRange,
+            @ObjCBlock(name = "call_fastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler") Block_fastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler {
+        @Generated
+        void call_fastReadMultipleBlocksWithRequestFlagBlockRangeCompletionHandler(NSArray<? extends NSData> dataBlocks,
+                NSError error);
+    }
+
+    @Generated
+    @Selector("getSystemInfoAndUIDWithRequestFlag:completionHandler:")
+    void getSystemInfoAndUIDWithRequestFlagCompletionHandler(byte flags,
+            @ObjCBlock(name = "call_getSystemInfoAndUIDWithRequestFlagCompletionHandler") Block_getSystemInfoAndUIDWithRequestFlagCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getSystemInfoAndUIDWithRequestFlagCompletionHandler {
+        @Generated
+        void call_getSystemInfoAndUIDWithRequestFlagCompletionHandler(NSData uid, @NInt long dsfid, @NInt long afi,
+                @NInt long blockSize, @NInt long blockCount, @NInt long icReference, NSError error);
+    }
+
+    @Generated
+    @Selector("keyUpdateWithRequestFlags:keyIdentifier:message:completionHandler:")
+    void keyUpdateWithRequestFlagsKeyIdentifierMessageCompletionHandler(byte flags, @NInt long keyIdentifier,
+            NSData message,
+            @ObjCBlock(name = "call_keyUpdateWithRequestFlagsKeyIdentifierMessageCompletionHandler") Block_keyUpdateWithRequestFlagsKeyIdentifierMessageCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_keyUpdateWithRequestFlagsKeyIdentifierMessageCompletionHandler {
+        @Generated
+        void call_keyUpdateWithRequestFlagsKeyIdentifierMessageCompletionHandler(byte responseFlag, NSData response,
+                NSError error);
+    }
+
+    @Generated
+    @Selector("lockDSFIDWithRequestFlag:completionHandler:")
+    void lockDSFIDWithRequestFlagCompletionHandler(byte flags,
+            @ObjCBlock(name = "call_lockDSFIDWithRequestFlagCompletionHandler") Block_lockDSFIDWithRequestFlagCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_lockDSFIDWithRequestFlagCompletionHandler {
+        @Generated
+        void call_lockDSFIDWithRequestFlagCompletionHandler(NSError error);
+    }
+
+    @Generated
+    @Selector("readBufferWithRequestFlags:completionHandler:")
+    void readBufferWithRequestFlagsCompletionHandler(byte flags,
+            @ObjCBlock(name = "call_readBufferWithRequestFlagsCompletionHandler") Block_readBufferWithRequestFlagsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readBufferWithRequestFlagsCompletionHandler {
+        @Generated
+        void call_readBufferWithRequestFlagsCompletionHandler(byte responseFlag, NSData data, NSError error);
+    }
+
+    @Generated
+    @Selector("sendRequestWithFlag:commandCode:data:completionHandler:")
+    void sendRequestWithFlagCommandCodeDataCompletionHandler(@NInt long flags, @NInt long commandCode, NSData data,
+            @ObjCBlock(name = "call_sendRequestWithFlagCommandCodeDataCompletionHandler") Block_sendRequestWithFlagCommandCodeDataCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_sendRequestWithFlagCommandCodeDataCompletionHandler {
+        @Generated
+        void call_sendRequestWithFlagCommandCodeDataCompletionHandler(byte responseFlag, NSData data, NSError error);
+    }
 }

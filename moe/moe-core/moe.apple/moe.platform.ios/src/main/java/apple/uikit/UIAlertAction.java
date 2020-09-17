@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.uikit.protocol.UIAccessibilityIdentification;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -45,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIAlertAction extends NSObject implements NSCopying {
+public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilityIdentification {
     static {
         NatJ.register();
     }
@@ -190,4 +191,12 @@ public class UIAlertAction extends NSObject implements NSCopying {
         @Generated
         void call_actionWithTitleStyleHandler(UIAlertAction action);
     }
+
+    @Generated
+    @Selector("accessibilityIdentifier")
+    public native String accessibilityIdentifier();
+
+    @Generated
+    @Selector("setAccessibilityIdentifier:")
+    public native void setAccessibilityIdentifier(String value);
 }

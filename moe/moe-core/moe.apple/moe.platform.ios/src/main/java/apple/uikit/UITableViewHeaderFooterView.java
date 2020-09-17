@@ -24,6 +24,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIAppearanceContainer;
+import apple.uikit.protocol.UIContentConfiguration;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -442,4 +443,53 @@ public class UITableViewHeaderFooterView extends UIView {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("automaticallyUpdatesBackgroundConfiguration")
+    public native boolean automaticallyUpdatesBackgroundConfiguration();
+
+    @Generated
+    @Selector("automaticallyUpdatesContentConfiguration")
+    public native boolean automaticallyUpdatesContentConfiguration();
+
+    @Generated
+    @Selector("backgroundConfiguration")
+    public native UIBackgroundConfiguration backgroundConfiguration();
+
+    @Generated
+    @Selector("configurationState")
+    public native UIViewConfigurationState configurationState();
+
+    @Generated
+    @Selector("contentConfiguration")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIContentConfiguration contentConfiguration();
+
+    @Generated
+    @Selector("defaultContentConfiguration")
+    public native UIListContentConfiguration defaultContentConfiguration();
+
+    @Generated
+    @Selector("setAutomaticallyUpdatesBackgroundConfiguration:")
+    public native void setAutomaticallyUpdatesBackgroundConfiguration(boolean value);
+
+    @Generated
+    @Selector("setAutomaticallyUpdatesContentConfiguration:")
+    public native void setAutomaticallyUpdatesContentConfiguration(boolean value);
+
+    @Generated
+    @Selector("setBackgroundConfiguration:")
+    public native void setBackgroundConfiguration(UIBackgroundConfiguration value);
+
+    @Generated
+    @Selector("setContentConfiguration:")
+    public native void setContentConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);
+
+    @Generated
+    @Selector("setNeedsUpdateConfiguration")
+    public native void setNeedsUpdateConfiguration();
+
+    @Generated
+    @Selector("updateConfigurationUsingState:")
+    public native void updateConfigurationUsingState(UIViewConfigurationState state);
 }

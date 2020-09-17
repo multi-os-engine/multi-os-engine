@@ -180,4 +180,11 @@ public interface CLLocationManagerDelegate {
             NSArray<? extends CLBeacon> beacons, CLBeaconIdentityConstraint beaconConstraint) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("locationManagerDidChangeAuthorization:")
+    default void locationManagerDidChangeAuthorization(CLLocationManager manager) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

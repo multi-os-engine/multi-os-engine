@@ -27,6 +27,7 @@ import apple.foundation.NSDate;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.metal.MTLRenderPassDescriptor;
 import apple.metal.protocol.MTLCommandQueue;
 import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLRenderCommandEncoder;
@@ -723,4 +724,8 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Generated
     @Selector("usesReverseZ")
     public native boolean usesReverseZ();
+
+    @Generated
+    @Selector("currentRenderPassDescriptor")
+    public native MTLRenderPassDescriptor currentRenderPassDescriptor();
 }

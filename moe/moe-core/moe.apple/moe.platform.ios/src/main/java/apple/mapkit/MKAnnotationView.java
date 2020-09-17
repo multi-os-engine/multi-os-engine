@@ -577,4 +577,20 @@ public class MKAnnotationView extends UIView {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("selectedZPriority")
+    public native float selectedZPriority();
+
+    @Generated
+    @Selector("setSelectedZPriority:")
+    public native void setSelectedZPriority(float value);
+
+    @Generated
+    @Selector("setZPriority:")
+    public native void setZPriority(float value);
+
+    @Generated
+    @Selector("zPriority")
+    public native float zPriority();
 }

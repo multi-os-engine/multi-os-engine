@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDate;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSIndexSet;
 import apple.foundation.NSItemProvider;
 import apple.foundation.NSMethodSignature;
@@ -41,6 +42,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -360,4 +362,54 @@ public class UIPasteboard extends NSObject {
     @Generated
     @Selector("setObjects:localOnly:expirationDate:")
     public native void setObjectsLocalOnlyExpirationDate(NSArray<?> objects, boolean localOnly, NSDate expirationDate);
+
+    @Generated
+    @Selector("detectPatternsForPatterns:completionHandler:")
+    public native void detectPatternsForPatternsCompletionHandler(NSSet<String> patterns,
+            @ObjCBlock(name = "call_detectPatternsForPatternsCompletionHandler") Block_detectPatternsForPatternsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detectPatternsForPatternsCompletionHandler {
+        @Generated
+        void call_detectPatternsForPatternsCompletionHandler(NSSet<String> arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("detectPatternsForPatterns:inItemSet:completionHandler:")
+    public native void detectPatternsForPatternsInItemSetCompletionHandler(NSSet<String> patterns, NSIndexSet itemSet,
+            @ObjCBlock(name = "call_detectPatternsForPatternsInItemSetCompletionHandler") Block_detectPatternsForPatternsInItemSetCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detectPatternsForPatternsInItemSetCompletionHandler {
+        @Generated
+        void call_detectPatternsForPatternsInItemSetCompletionHandler(NSArray<? extends NSSet<String>> arg0,
+                NSError arg1);
+    }
+
+    @Generated
+    @Selector("detectValuesForPatterns:completionHandler:")
+    public native void detectValuesForPatternsCompletionHandler(NSSet<String> patterns,
+            @ObjCBlock(name = "call_detectValuesForPatternsCompletionHandler") Block_detectValuesForPatternsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detectValuesForPatternsCompletionHandler {
+        @Generated
+        void call_detectValuesForPatternsCompletionHandler(NSDictionary<String, ?> arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("detectValuesForPatterns:inItemSet:completionHandler:")
+    public native void detectValuesForPatternsInItemSetCompletionHandler(NSSet<String> patterns, NSIndexSet itemSet,
+            @ObjCBlock(name = "call_detectValuesForPatternsInItemSetCompletionHandler") Block_detectValuesForPatternsInItemSetCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_detectValuesForPatternsInItemSetCompletionHandler {
+        @Generated
+        void call_detectValuesForPatternsInItemSetCompletionHandler(NSArray<? extends NSDictionary<String, ?>> arg0,
+                NSError arg1);
+    }
 }

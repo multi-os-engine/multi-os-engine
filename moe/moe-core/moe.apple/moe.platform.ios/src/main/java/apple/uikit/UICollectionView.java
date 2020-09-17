@@ -846,4 +846,47 @@ public class UICollectionView extends UIScrollView
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("allowsMultipleSelectionDuringEditing")
+    public native boolean allowsMultipleSelectionDuringEditing();
+
+    @Generated
+    @Selector("allowsSelectionDuringEditing")
+    public native boolean allowsSelectionDuringEditing();
+
+    @Generated
+    @Selector("dequeueConfiguredReusableCellWithRegistration:forIndexPath:item:")
+    public native UICollectionViewCell dequeueConfiguredReusableCellWithRegistrationForIndexPathItem(
+            UICollectionViewCellRegistration registration, NSIndexPath indexPath,
+            @Mapped(ObjCObjectMapper.class) Object item);
+
+    @Generated
+    @Selector("dequeueConfiguredReusableSupplementaryViewWithRegistration:forIndexPath:")
+    public native UICollectionReusableView dequeueConfiguredReusableSupplementaryViewWithRegistrationForIndexPath(
+            UICollectionViewSupplementaryRegistration registration, NSIndexPath indexPath);
+
+    @Generated
+    @Selector("isEditing")
+    public native boolean isEditing();
+
+    @Generated
+    @Selector("selectionFollowsFocus")
+    public native boolean selectionFollowsFocus();
+
+    @Generated
+    @Selector("setAllowsMultipleSelectionDuringEditing:")
+    public native void setAllowsMultipleSelectionDuringEditing(boolean value);
+
+    @Generated
+    @Selector("setAllowsSelectionDuringEditing:")
+    public native void setAllowsSelectionDuringEditing(boolean value);
+
+    @Generated
+    @Selector("setEditing:")
+    public native void setEditing(boolean value);
+
+    @Generated
+    @Selector("setSelectionFollowsFocus:")
+    public native void setSelectionFollowsFocus(boolean value);
 }

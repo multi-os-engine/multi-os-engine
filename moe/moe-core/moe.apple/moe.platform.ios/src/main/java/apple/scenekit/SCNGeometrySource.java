@@ -109,7 +109,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:")
     public static native SCNGeometrySource geometrySourceWithBufferVertexFormatSemanticVertexCountDataOffsetDataStride(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer mtlBuffer, @NUInt long vertexFormat, String semantic,
+            @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long vertexFormat, String semantic,
             @NInt long vertexCount, @NInt long offset, @NInt long stride);
 
     @Generated

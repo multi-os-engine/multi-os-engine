@@ -5,12 +5,14 @@ import apple.intents.INGetCarPowerLevelStatusIntentResponse;
 import apple.intents.INSpeakableStringResolutionResult;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("Intents")
@@ -58,5 +60,20 @@ public interface INGetCarPowerLevelStatusIntentHandling {
         @Generated
         void call_resolveCarNameForGetCarPowerLevelStatusWithCompletion(
                 INSpeakableStringResolutionResult resolutionResult);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("startSendingUpdatesForGetCarPowerLevelStatus:toObserver:")
+    default void startSendingUpdatesForGetCarPowerLevelStatusToObserver(INGetCarPowerLevelStatusIntent intent,
+            @Mapped(ObjCObjectMapper.class) INGetCarPowerLevelStatusIntentResponseObserver observer) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("stopSendingUpdatesForGetCarPowerLevelStatus:")
+    default void stopSendingUpdatesForGetCarPowerLevelStatus(INGetCarPowerLevelStatusIntent intent) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

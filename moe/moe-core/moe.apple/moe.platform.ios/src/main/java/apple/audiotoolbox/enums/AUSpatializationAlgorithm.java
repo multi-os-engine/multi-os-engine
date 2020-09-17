@@ -32,4 +32,5 @@ public final class AUSpatializationAlgorithm {
     }
 
     @Generated public static final int HRTFHQ = 0x00000006;
+    @Generated public static final int UseOutputType = 0x00000007;
 }

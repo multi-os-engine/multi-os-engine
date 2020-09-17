@@ -185,4 +185,8 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(UIView view);
+
+    @Generated
+    @Selector("prefersPencilOnlyDrawing")
+    public static native boolean prefersPencilOnlyDrawing();
 }

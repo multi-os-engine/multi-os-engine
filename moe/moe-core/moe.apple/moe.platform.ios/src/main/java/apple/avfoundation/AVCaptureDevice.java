@@ -715,4 +715,12 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("virtualDeviceSwitchOverVideoZoomFactors")
     public native NSArray<? extends NSNumber> virtualDeviceSwitchOverVideoZoomFactors();
+
+    @Generated
+    @Selector("isSuspended")
+    public native boolean isSuspended();
+
+    @Generated
+    @Selector("manufacturer")
+    public native String manufacturer();
 }

@@ -10,6 +10,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.protocol.UIDocumentBrowserViewControllerDelegate;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -311,4 +312,12 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Generated
     @Selector("transitionControllerForDocumentAtURL:")
     public native UIDocumentBrowserTransitionController transitionControllerForDocumentAtURL(NSURL documentURL);
+
+    @Generated
+    @Selector("contentTypesForRecentDocuments")
+    public native NSArray<? extends UTType> contentTypesForRecentDocuments();
+
+    @Generated
+    @Selector("initForOpeningContentTypes:")
+    public native UIDocumentBrowserViewController initForOpeningContentTypes(NSArray<? extends UTType> contentTypes);
 }

@@ -22,11 +22,13 @@ import apple.passkit.PKPayment;
 import apple.passkit.PKPaymentAuthorizationController;
 import apple.passkit.PKPaymentAuthorizationResult;
 import apple.passkit.PKPaymentMethod;
+import apple.passkit.PKPaymentRequestMerchantSessionUpdate;
 import apple.passkit.PKPaymentRequestPaymentMethodUpdate;
 import apple.passkit.PKPaymentRequestShippingContactUpdate;
 import apple.passkit.PKPaymentRequestShippingMethodUpdate;
 import apple.passkit.PKPaymentSummaryItem;
 import apple.passkit.PKShippingMethod;
+import apple.uikit.UIWindow;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NInt;
@@ -186,5 +188,29 @@ public interface PKPaymentAuthorizationControllerDelegate {
         @Generated
         void call_paymentAuthorizationControllerDidSelectShippingMethodHandler(
                 PKPaymentRequestShippingMethodUpdate requestUpdate);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationController:didRequestMerchantSessionUpdate:")
+    default void paymentAuthorizationControllerDidRequestMerchantSessionUpdate(
+            PKPaymentAuthorizationController controller,
+            @ObjCBlock(name = "call_paymentAuthorizationControllerDidRequestMerchantSessionUpdate") Block_paymentAuthorizationControllerDidRequestMerchantSessionUpdate handler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationControllerDidRequestMerchantSessionUpdate {
+        @Generated
+        void call_paymentAuthorizationControllerDidRequestMerchantSessionUpdate(
+                PKPaymentRequestMerchantSessionUpdate update);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("presentationWindowForPaymentAuthorizationController:")
+    default UIWindow presentationWindowForPaymentAuthorizationController(PKPaymentAuthorizationController controller) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

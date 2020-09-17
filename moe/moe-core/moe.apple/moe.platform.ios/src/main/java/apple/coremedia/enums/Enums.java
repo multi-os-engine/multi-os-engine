@@ -267,4 +267,5 @@ public final class Enums {
     @Generated public static final int kCMVideoCodecType_AppleProResRAWHQ = 0x61707268;
     @Generated public static final int kCMMemoryPoolError_AllocationFailed = 0xFFFFC37E;
     @Generated public static final int kCMMemoryPoolError_InvalidParameter = 0xFFFFC37D;
+    @Generated public static final int kCMVideoCodecType_VP9 = 0x76703039;
 }

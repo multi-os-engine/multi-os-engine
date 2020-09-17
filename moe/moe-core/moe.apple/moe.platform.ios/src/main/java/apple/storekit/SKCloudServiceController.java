@@ -180,7 +180,7 @@ public class SKCloudServiceController extends NSObject {
     @Generated
     public interface Block_requestAuthorization {
         @Generated
-        void call_requestAuthorization(@NInt long status);
+        void call_requestAuthorization(@NInt long authorizationStatus);
     }
 
     @Runtime(ObjCRuntime.class)

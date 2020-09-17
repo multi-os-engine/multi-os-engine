@@ -34,4 +34,12 @@ public final class PKPaymentButtonType {
     @Generated @NInt public static final long Checkout = 0x0000000000000005L;
     @Generated @NInt public static final long Book = 0x0000000000000006L;
     @Generated @NInt public static final long Subscribe = 0x0000000000000007L;
+    @Generated @NInt public static final long Reload = 0x0000000000000008L;
+    @Generated @NInt public static final long AddMoney = 0x0000000000000009L;
+    @Generated @NInt public static final long TopUp = 0x000000000000000AL;
+    @Generated @NInt public static final long Order = 0x000000000000000BL;
+    @Generated @NInt public static final long Rent = 0x000000000000000CL;
+    @Generated @NInt public static final long Support = 0x000000000000000DL;
+    @Generated @NInt public static final long Contribute = 0x000000000000000EL;
+    @Generated @NInt public static final long Tip = 0x000000000000000FL;
 }

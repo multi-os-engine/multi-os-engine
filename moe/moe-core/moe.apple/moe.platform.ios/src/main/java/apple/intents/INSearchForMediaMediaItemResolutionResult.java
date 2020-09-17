@@ -168,7 +168,7 @@ public class INSearchForMediaMediaItemResolutionResult extends INMediaItemResolu
 
     @Generated
     @Selector("successesWithResolvedMediaItems:")
-    public static native NSArray<? extends INMediaItemResolutionResult> successesWithResolvedMediaItems(
+    public static native NSArray<? extends INSearchForMediaMediaItemResolutionResult> successesWithResolvedMediaItems(
             NSArray<? extends INMediaItem> resolvedMediaItems);
 
     @Generated

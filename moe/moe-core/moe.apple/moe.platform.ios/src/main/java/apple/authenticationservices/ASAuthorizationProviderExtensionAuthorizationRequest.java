@@ -211,4 +211,16 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("callerTeamIdentifier")
+    public native String callerTeamIdentifier();
+
+    @Generated
+    @Selector("isCallerManaged")
+    public native boolean isCallerManaged();
+
+    @Generated
+    @Selector("localizedCallerDisplayName")
+    public native String localizedCallerDisplayName();
 }

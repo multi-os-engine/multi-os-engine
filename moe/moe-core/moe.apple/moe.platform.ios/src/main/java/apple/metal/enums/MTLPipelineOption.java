@@ -28,4 +28,6 @@ public final class MTLPipelineOption {
     @Generated
     private MTLPipelineOption() {
     }
+
+    @Generated @NUInt public static final long FailOnBinaryArchiveMiss = 0x0000000000000004L;
 }

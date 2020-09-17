@@ -46,6 +46,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -487,4 +488,15 @@ public class NSMutableString extends NSString {
     @Selector("deferredLocalizedIntentsStringWithFormat:fromTable:arguments:")
     public static native String deferredLocalizedIntentsStringWithFormatFromTableArguments(String format, String table,
             BytePtr arguments);
+
+    @Generated
+    @Selector("initWithBytesNoCopy:length:encoding:deallocator:")
+    public native NSMutableString initWithBytesNoCopyLengthEncodingDeallocator(VoidPtr bytes, @NUInt long len,
+            @NUInt long encoding,
+            @ObjCBlock(name = "call_initWithBytesNoCopyLengthEncodingDeallocator") NSString.Block_initWithBytesNoCopyLengthEncodingDeallocator deallocator);
+
+    @Generated
+    @Selector("initWithCharactersNoCopy:length:deallocator:")
+    public native NSMutableString initWithCharactersNoCopyLengthDeallocator(CharPtr chars, @NUInt long len,
+            @ObjCBlock(name = "call_initWithCharactersNoCopyLengthDeallocator") NSString.Block_initWithCharactersNoCopyLengthDeallocator deallocator);
 }

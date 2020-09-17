@@ -295,4 +295,17 @@ public class HKObserverQuery extends HKQuery {
                 @ObjCBlock(name = "call_Block_initWithSampleTypePredicateUpdateHandler") Block_Block_initWithSampleTypePredicateUpdateHandler completionHandler,
                 NSError error);
     }
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

@@ -291,4 +291,8 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setRenderTargetArrayLength:")
     public native void setRenderTargetArrayLength(@NUInt long value);
+
+    @Generated
+    @Selector("sampleBufferAttachments")
+    public native MTLRenderPassSampleBufferAttachmentDescriptorArray sampleBufferAttachments();
 }

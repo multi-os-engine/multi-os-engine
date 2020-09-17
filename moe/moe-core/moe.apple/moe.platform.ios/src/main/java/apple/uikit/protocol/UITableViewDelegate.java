@@ -410,4 +410,22 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     default void tableViewDidEndMultipleSelectionInteraction(UITableView tableView) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willDisplayContextMenuWithConfiguration:animator:")
+    default void tableViewWillDisplayContextMenuWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willEndContextMenuInteractionWithConfiguration:animator:")
+    default void tableViewWillEndContextMenuInteractionWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

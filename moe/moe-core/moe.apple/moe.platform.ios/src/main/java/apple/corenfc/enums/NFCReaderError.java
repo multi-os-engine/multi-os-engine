@@ -29,4 +29,6 @@ public final class NFCReaderError {
     @Generated @NInt public static final long NdefReaderSessionErrorTagUpdateFailure = 0x0000000000000191L;
     @Generated @NInt public static final long NdefReaderSessionErrorTagSizeTooSmall = 0x0000000000000192L;
     @Generated @NInt public static final long NdefReaderSessionErrorZeroLengthMessage = 0x0000000000000193L;
+    @Generated @NInt public static final long ReaderErrorRadioDisabled = 0x0000000000000006L;
+    @Generated @NInt public static final long ReaderTransceiveErrorPacketTooLong = 0x0000000000000069L;
 }

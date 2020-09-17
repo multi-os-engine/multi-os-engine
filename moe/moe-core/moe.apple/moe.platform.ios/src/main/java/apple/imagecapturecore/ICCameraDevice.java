@@ -260,4 +260,13 @@ public class ICCameraDevice extends ICDevice {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("mediaPresentation")
+    @NUInt
+    public native long mediaPresentation();
+
+    @Generated
+    @Selector("setMediaPresentation:")
+    public native void setMediaPresentation(@NUInt long value);
 }

@@ -209,4 +209,13 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("suggestedInvocationPhrase")
     public native String suggestedInvocationPhrase();
+
+    @Generated
+    @Selector("setShortcutAvailability:")
+    public native void setShortcutAvailability(@NUInt long value);
+
+    @Generated
+    @Selector("shortcutAvailability")
+    @NUInt
+    public native long shortcutAvailability();
 }

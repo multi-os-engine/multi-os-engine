@@ -41,6 +41,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
@@ -537,6 +538,14 @@ public interface UIApplicationDelegate {
     @IsOptional
     @Selector("application:shouldSaveSecureApplicationState:")
     default boolean applicationShouldSaveSecureApplicationState(UIApplication application, NSCoder coder) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("application:handlerForIntent:")
+    @MappedReturn(ObjCObjectMapper.class)
+    default Object applicationHandlerForIntent(UIApplication application, INIntent intent) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

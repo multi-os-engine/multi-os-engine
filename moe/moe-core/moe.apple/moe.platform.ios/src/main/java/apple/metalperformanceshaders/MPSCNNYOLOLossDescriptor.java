@@ -272,4 +272,12 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("reduceAcrossBatch")
+    public native boolean reduceAcrossBatch();
+
+    @Generated
+    @Selector("setReduceAcrossBatch:")
+    public native void setReduceAcrossBatch(boolean value);
 }

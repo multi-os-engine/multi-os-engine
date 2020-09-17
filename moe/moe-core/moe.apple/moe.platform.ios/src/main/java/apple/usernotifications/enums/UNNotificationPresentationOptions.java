@@ -28,4 +28,7 @@ public final class UNNotificationPresentationOptions {
     @Generated
     private UNNotificationPresentationOptions() {
     }
+
+    @Generated @NUInt public static final long List = 0x0000000000000008L;
+    @Generated @NUInt public static final long Banner = 0x0000000000000010L;
 }

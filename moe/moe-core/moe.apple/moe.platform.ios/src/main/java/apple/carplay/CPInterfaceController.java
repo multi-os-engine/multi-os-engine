@@ -3,8 +3,10 @@ package apple.carplay;
 import apple.NSObject;
 import apple.carplay.protocol.CPInterfaceControllerDelegate;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.UITraitCollection;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -20,6 +22,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -211,4 +214,92 @@ public class CPInterfaceController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("carTraitCollection")
+    public native UITraitCollection carTraitCollection();
+
+    @Generated
+    @Selector("dismissTemplateAnimated:completion:")
+    public native void dismissTemplateAnimatedCompletion(boolean animated,
+            @ObjCBlock(name = "call_dismissTemplateAnimatedCompletion") Block_dismissTemplateAnimatedCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_dismissTemplateAnimatedCompletion {
+        @Generated
+        void call_dismissTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("popTemplateAnimated:completion:")
+    public native void popTemplateAnimatedCompletion(boolean animated,
+            @ObjCBlock(name = "call_popTemplateAnimatedCompletion") Block_popTemplateAnimatedCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_popTemplateAnimatedCompletion {
+        @Generated
+        void call_popTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("popToRootTemplateAnimated:completion:")
+    public native void popToRootTemplateAnimatedCompletion(boolean animated,
+            @ObjCBlock(name = "call_popToRootTemplateAnimatedCompletion") Block_popToRootTemplateAnimatedCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_popToRootTemplateAnimatedCompletion {
+        @Generated
+        void call_popToRootTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("popToTemplate:animated:completion:")
+    public native void popToTemplateAnimatedCompletion(CPTemplate targetTemplate, boolean animated,
+            @ObjCBlock(name = "call_popToTemplateAnimatedCompletion") Block_popToTemplateAnimatedCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_popToTemplateAnimatedCompletion {
+        @Generated
+        void call_popToTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("presentTemplate:animated:completion:")
+    public native void presentTemplateAnimatedCompletion(CPTemplate templateToPresent, boolean animated,
+            @ObjCBlock(name = "call_presentTemplateAnimatedCompletion") Block_presentTemplateAnimatedCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_presentTemplateAnimatedCompletion {
+        @Generated
+        void call_presentTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("pushTemplate:animated:completion:")
+    public native void pushTemplateAnimatedCompletion(CPTemplate templateToPush, boolean animated,
+            @ObjCBlock(name = "call_pushTemplateAnimatedCompletion") Block_pushTemplateAnimatedCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_pushTemplateAnimatedCompletion {
+        @Generated
+        void call_pushTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+    }
+
+    @Generated
+    @Selector("setRootTemplate:animated:completion:")
+    public native void setRootTemplateAnimatedCompletion(CPTemplate rootTemplate, boolean animated,
+            @ObjCBlock(name = "call_setRootTemplateAnimatedCompletion") Block_setRootTemplateAnimatedCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setRootTemplateAnimatedCompletion {
+        @Generated
+        void call_setRootTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+    }
 }

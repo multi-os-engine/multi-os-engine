@@ -273,4 +273,8 @@ public class NSProcessInfo extends NSObject {
     @Generated
     @Selector("isMacCatalystApp")
     public native boolean isMacCatalystApp();
+
+    @Generated
+    @Selector("isiOSAppOnMac")
+    public native boolean isiOSAppOnMac();
 }

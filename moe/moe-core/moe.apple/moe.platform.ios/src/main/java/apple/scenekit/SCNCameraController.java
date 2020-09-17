@@ -298,7 +298,7 @@ public class SCNCameraController extends NSObject {
 
     @Generated
     @Selector("translateInCameraSpaceByX:Y:Z:")
-    public native void translateInCameraSpaceByXYZ(float deltaX, float deltaY, float deltaX_);
+    public native void translateInCameraSpaceByXYZ(float deltaX, float deltaY, float deltaZ);
 
     @Generated
     @Selector("version")

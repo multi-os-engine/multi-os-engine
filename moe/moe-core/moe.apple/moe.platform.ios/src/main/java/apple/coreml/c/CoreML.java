@@ -60,4 +60,9 @@ public final class CoreML {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MLFeatureValueImageOptionCropAndScale();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MLModelCollectionDidChangeNotification();
 }

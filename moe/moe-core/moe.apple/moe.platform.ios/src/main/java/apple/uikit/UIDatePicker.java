@@ -510,4 +510,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Generated
     @Selector("setPreferredDatePickerStyle:")
     public native void setPreferredDatePickerStyle(@NInt long value);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UIDatePicker initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 }

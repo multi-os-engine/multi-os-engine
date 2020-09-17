@@ -228,4 +228,12 @@ public class AVPictureInPictureController extends NSObject {
     @Generated
     @Selector("pictureInPictureButtonStopImage")
     public static native UIImage pictureInPictureButtonStopImage();
+
+    @Generated
+    @Selector("requiresLinearPlayback")
+    public native boolean requiresLinearPlayback();
+
+    @Generated
+    @Selector("setRequiresLinearPlayback:")
+    public native void setRequiresLinearPlayback(boolean value);
 }

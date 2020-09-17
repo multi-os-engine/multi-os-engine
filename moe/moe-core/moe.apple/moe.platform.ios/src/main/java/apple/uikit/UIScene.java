@@ -194,4 +194,8 @@ public class UIScene extends UIResponder {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("pointerLockState")
+    public native UIPointerLockState pointerLockState();
 }

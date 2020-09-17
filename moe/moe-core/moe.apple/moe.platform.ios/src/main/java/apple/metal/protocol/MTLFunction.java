@@ -94,4 +94,9 @@ public interface MTLFunction {
     @MappedReturn(ObjCObjectMapper.class)
     MTLArgumentEncoder newArgumentEncoderWithBufferIndexReflection(@NUInt long bufferIndex,
             @ReferenceInfo(type = MTLArgument.class) Ptr<MTLArgument> reflection);
+
+    @Generated
+    @Selector("options")
+    @NUInt
+    long options();
 }

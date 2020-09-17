@@ -19,6 +19,7 @@ package apple.corelocation;
 import apple.NSObject;
 import apple.corelocation.protocol.CLLocationManagerDelegate;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -36,6 +37,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -70,7 +72,7 @@ public class CLLocationManager extends NSObject {
 
     @Generated
     @Selector("authorizationStatus")
-    public static native int authorizationStatus();
+    public static native int authorizationStatus_static();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -411,4 +413,33 @@ public class CLLocationManager extends NSObject {
     @Generated
     @Selector("stopRangingBeaconsSatisfyingConstraint:")
     public native void stopRangingBeaconsSatisfyingConstraint(CLBeaconIdentityConstraint constraint);
+
+    @Generated
+    @Selector("accuracyAuthorization")
+    @NInt
+    public native long accuracyAuthorization();
+
+    @Generated
+    @Selector("authorizationStatus")
+    public native int authorizationStatus();
+
+    @Generated
+    @Selector("isAuthorizedForWidgetUpdates")
+    public native boolean isAuthorizedForWidgetUpdates();
+
+    @Generated
+    @Selector("requestTemporaryFullAccuracyAuthorizationWithPurposeKey:")
+    public native void requestTemporaryFullAccuracyAuthorizationWithPurposeKey(String purposeKey);
+
+    @Generated
+    @Selector("requestTemporaryFullAccuracyAuthorizationWithPurposeKey:completion:")
+    public native void requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion(String purposeKey,
+            @ObjCBlock(name = "call_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion") Block_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion {
+        @Generated
+        void call_requestTemporaryFullAccuracyAuthorizationWithPurposeKeyCompletion(NSError arg0);
+    }
 }

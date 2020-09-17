@@ -285,4 +285,13 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @Generated
     @Selector("setEnableFallback:")
     public native void setEnableFallback(boolean value);
+
+    @Generated
+    @Selector("mtu")
+    @NUInt
+    public native long mtu();
+
+    @Generated
+    @Selector("setMtu:")
+    public native void setMtu(@NUInt long value);
 }

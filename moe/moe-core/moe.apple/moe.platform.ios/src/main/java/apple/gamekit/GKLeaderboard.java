@@ -18,6 +18,7 @@ package apple.gamekit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSDate;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -300,4 +301,103 @@ public class GKLeaderboard extends NSObject {
         @Generated
         void call_setDefaultLeaderboardWithCompletionHandler(NSError error);
     }
+
+    @Generated
+    @Selector("baseLeaderboardID")
+    public native String baseLeaderboardID();
+
+    @Generated
+    @Selector("duration")
+    public native double duration();
+
+    @Generated
+    @Selector("loadEntriesForPlayerScope:timeScope:range:completionHandler:")
+    public native void loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler(@NInt long playerScope,
+            @NInt long timeScope, @ByValue NSRange range,
+            @ObjCBlock(name = "call_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler") Block_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler {
+        @Generated
+        void call_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler(GKLeaderboardEntry localPlayerEntry,
+                NSArray<? extends GKLeaderboardEntry> entries, @NInt long totalPlayerCount, NSError error);
+    }
+
+    @Generated
+    @Selector("loadEntriesForPlayers:timeScope:completionHandler:")
+    public native void loadEntriesForPlayersTimeScopeCompletionHandler(NSArray<? extends GKPlayer> players,
+            @NInt long timeScope,
+            @ObjCBlock(name = "call_loadEntriesForPlayersTimeScopeCompletionHandler") Block_loadEntriesForPlayersTimeScopeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadEntriesForPlayersTimeScopeCompletionHandler {
+        @Generated
+        void call_loadEntriesForPlayersTimeScopeCompletionHandler(GKLeaderboardEntry localPlayerEntry,
+                NSArray<? extends GKLeaderboardEntry> entries, NSError error);
+    }
+
+    @Generated
+    @Selector("loadLeaderboardsWithIDs:completionHandler:")
+    public static native void loadLeaderboardsWithIDsCompletionHandler(NSArray<String> leaderboardIDs,
+            @ObjCBlock(name = "call_loadLeaderboardsWithIDsCompletionHandler") Block_loadLeaderboardsWithIDsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadLeaderboardsWithIDsCompletionHandler {
+        @Generated
+        void call_loadLeaderboardsWithIDsCompletionHandler(NSArray<? extends GKLeaderboard> leaderboards,
+                NSError error);
+    }
+
+    @Generated
+    @Selector("loadPreviousOccurrenceWithCompletionHandler:")
+    public native void loadPreviousOccurrenceWithCompletionHandler(
+            @ObjCBlock(name = "call_loadPreviousOccurrenceWithCompletionHandler") Block_loadPreviousOccurrenceWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadPreviousOccurrenceWithCompletionHandler {
+        @Generated
+        void call_loadPreviousOccurrenceWithCompletionHandler(GKLeaderboard leaderboard, NSError error);
+    }
+
+    @Generated
+    @Selector("nextStartDate")
+    public native NSDate nextStartDate();
+
+    @Generated
+    @Selector("startDate")
+    public native NSDate startDate();
+
+    @Generated
+    @Selector("submitScore:context:player:completionHandler:")
+    public native void submitScoreContextPlayerCompletionHandler(@NInt long score, @NUInt long context, GKPlayer player,
+            @ObjCBlock(name = "call_submitScoreContextPlayerCompletionHandler") Block_submitScoreContextPlayerCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_submitScoreContextPlayerCompletionHandler {
+        @Generated
+        void call_submitScoreContextPlayerCompletionHandler(NSError error);
+    }
+
+    @Generated
+    @Selector("submitScore:context:player:leaderboardIDs:completionHandler:")
+    public static native void submitScoreContextPlayerLeaderboardIDsCompletionHandler(@NInt long score,
+            @NUInt long context, GKPlayer player, NSArray<String> leaderboardIDs,
+            @ObjCBlock(name = "call_submitScoreContextPlayerLeaderboardIDsCompletionHandler") Block_submitScoreContextPlayerLeaderboardIDsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_submitScoreContextPlayerLeaderboardIDsCompletionHandler {
+        @Generated
+        void call_submitScoreContextPlayerLeaderboardIDsCompletionHandler(NSError error);
+    }
+
+    @Generated
+    @Selector("type")
+    @NInt
+    public native long type();
 }

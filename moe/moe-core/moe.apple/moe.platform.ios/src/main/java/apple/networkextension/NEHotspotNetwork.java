@@ -35,6 +35,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -189,4 +190,16 @@ public class NEHotspotNetwork extends NSObject {
     @Generated
     @Selector("signalStrength")
     public native double signalStrength();
+
+    @Generated
+    @Selector("fetchCurrentWithCompletionHandler:")
+    public static native void fetchCurrentWithCompletionHandler(
+            @ObjCBlock(name = "call_fetchCurrentWithCompletionHandler") Block_fetchCurrentWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchCurrentWithCompletionHandler {
+        @Generated
+        void call_fetchCurrentWithCompletionHandler(NEHotspotNetwork currentNetwork);
+    }
 }

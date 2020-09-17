@@ -224,4 +224,60 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("dashboardAttributedInstructionVariants")
+    public native NSArray<? extends NSAttributedString> dashboardAttributedInstructionVariants();
+
+    @Generated
+    @Selector("dashboardInstructionVariants")
+    public native NSArray<String> dashboardInstructionVariants();
+
+    @Generated
+    @Selector("dashboardJunctionImage")
+    public native UIImage dashboardJunctionImage();
+
+    @Generated
+    @Selector("dashboardSymbolImage")
+    public native UIImage dashboardSymbolImage();
+
+    @Generated
+    @Selector("notificationAttributedInstructionVariants")
+    public native NSArray<? extends NSAttributedString> notificationAttributedInstructionVariants();
+
+    @Generated
+    @Selector("notificationInstructionVariants")
+    public native NSArray<String> notificationInstructionVariants();
+
+    @Generated
+    @Selector("notificationSymbolImage")
+    public native UIImage notificationSymbolImage();
+
+    @Generated
+    @Selector("setDashboardAttributedInstructionVariants:")
+    public native void setDashboardAttributedInstructionVariants(NSArray<? extends NSAttributedString> value);
+
+    @Generated
+    @Selector("setDashboardInstructionVariants:")
+    public native void setDashboardInstructionVariants(NSArray<String> value);
+
+    @Generated
+    @Selector("setDashboardJunctionImage:")
+    public native void setDashboardJunctionImage(UIImage value);
+
+    @Generated
+    @Selector("setDashboardSymbolImage:")
+    public native void setDashboardSymbolImage(UIImage value);
+
+    @Generated
+    @Selector("setNotificationAttributedInstructionVariants:")
+    public native void setNotificationAttributedInstructionVariants(NSArray<? extends NSAttributedString> value);
+
+    @Generated
+    @Selector("setNotificationInstructionVariants:")
+    public native void setNotificationInstructionVariants(NSArray<String> value);
+
+    @Generated
+    @Selector("setNotificationSymbolImage:")
+    public native void setNotificationSymbolImage(UIImage value);
 }

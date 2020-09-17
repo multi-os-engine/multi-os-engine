@@ -399,4 +399,49 @@ public final class CoreData {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersistentHistoryTokenKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSManagedObjectContextDidSaveObjectIDsNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSManagedObjectContextDidMergeChangesObjectIDsNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSInsertedObjectIDsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSUpdatedObjectIDsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSDeletedObjectIDsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSRefreshedObjectIDsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSInvalidatedObjectIDsKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentCloudKitContainerEventChangedNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSPersistentCloudKitContainerEventUserInfoKey();
 }

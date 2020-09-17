@@ -200,4 +200,12 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Generated
     @Selector("setMaxTotalThreadsPerThreadgroup:")
     public native void setMaxTotalThreadsPerThreadgroup(@NUInt long value);
+
+    @Generated
+    @Selector("binaryArchives")
+    public native NSArray<?> binaryArchives();
+
+    @Generated
+    @Selector("setBinaryArchives:")
+    public native void setBinaryArchives(NSArray<?> value);
 }

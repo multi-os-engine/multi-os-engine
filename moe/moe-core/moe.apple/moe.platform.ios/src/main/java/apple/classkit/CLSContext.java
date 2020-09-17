@@ -8,9 +8,11 @@ import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
+import apple.foundation.struct.NSRange;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -275,4 +277,46 @@ public class CLSContext extends CLSObject {
     @Generated
     @Selector("thumbnail")
     public native CGImageRef thumbnail();
+
+    @Generated
+    @Selector("addProgressReportingCapabilities:")
+    public native void addProgressReportingCapabilities(NSSet<? extends CLSProgressReportingCapability> capabilities);
+
+    @Generated
+    @Selector("isAssignable")
+    public native boolean isAssignable();
+
+    @Generated
+    @Selector("progressReportingCapabilities")
+    public native NSSet<? extends CLSProgressReportingCapability> progressReportingCapabilities();
+
+    @Generated
+    @Selector("resetProgressReportingCapabilities")
+    public native void resetProgressReportingCapabilities();
+
+    @Generated
+    @Selector("setAssignable:")
+    public native void setAssignable(boolean value);
+
+    @Generated
+    @Selector("setSuggestedAge:")
+    public native void setSuggestedAge(@ByValue NSRange value);
+
+    @Generated
+    @Selector("setSuggestedCompletionTime:")
+    public native void setSuggestedCompletionTime(@ByValue NSRange value);
+
+    @Generated
+    @Selector("setType:")
+    public native void setType(@NInt long type);
+
+    @Generated
+    @Selector("suggestedAge")
+    @ByValue
+    public native NSRange suggestedAge();
+
+    @Generated
+    @Selector("suggestedCompletionTime")
+    @ByValue
+    public native NSRange suggestedCompletionTime();
 }

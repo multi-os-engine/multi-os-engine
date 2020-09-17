@@ -1440,4 +1440,12 @@ public class UIView extends UIResponder
     @Selector("transform3D")
     @ByValue
     public native CATransform3D transform3D();
+
+    @Generated
+    @Selector("focusGroupIdentifier")
+    public native String focusGroupIdentifier();
+
+    @Generated
+    @Selector("setFocusGroupIdentifier:")
+    public native void setFocusGroupIdentifier(String value);
 }

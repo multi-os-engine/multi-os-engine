@@ -146,4 +146,12 @@ public class WKWebpagePreferences extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("allowsContentJavaScript")
+    public native boolean allowsContentJavaScript();
+
+    @Generated
+    @Selector("setAllowsContentJavaScript:")
+    public native void setAllowsContentJavaScript(boolean value);
 }

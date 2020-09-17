@@ -69,7 +69,8 @@ public final class MetalPerformanceShaders {
     @Inline
     @CFunction
     @NUInt
-    public static native long MPSGetCustomKernelMaxBatchSize(@ByValue MPSCustomKernelArgumentCount c);
+    public static native long MPSGetCustomKernelMaxBatchSize(@ByValue MPSCustomKernelArgumentCount c,
+            @NUInt long MPSMaxTextures);
 
     @Generated
     @Inline
@@ -82,14 +83,14 @@ public final class MetalPerformanceShaders {
     @CFunction
     @NUInt
     public static native long MPSGetCustomKernelBatchedSourceIndex(@ByValue MPSCustomKernelArgumentCount c,
-            @NUInt long sourceIndex);
+            @NUInt long sourceIndex, @NUInt long MPSMaxTextures);
 
     @Generated
     @Inline
     @CFunction
     @NUInt
     public static native long MPSGetCustomKernelBroadcastSourceIndex(@ByValue MPSCustomKernelArgumentCount c,
-            @NUInt long sourceIndex);
+            @NUInt long sourceIndex, @NUInt long MPSMaxTextures);
 
     @Generated
     @CFunction

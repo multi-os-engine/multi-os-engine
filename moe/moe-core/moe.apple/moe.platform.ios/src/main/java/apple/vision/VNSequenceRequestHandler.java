@@ -3,6 +3,7 @@ package apple.vision;
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coreimage.CIImage;
+import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
@@ -195,4 +196,14 @@ public class VNSequenceRequestHandler extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("performRequests:onCMSampleBuffer:error:")
+    public native boolean performRequestsOnCMSampleBufferError(NSArray<? extends VNRequest> requests,
+            CMSampleBufferRef sampleBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("performRequests:onCMSampleBuffer:orientation:error:")
+    public native boolean performRequestsOnCMSampleBufferOrientationError(NSArray<? extends VNRequest> requests,
+            CMSampleBufferRef sampleBuffer, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

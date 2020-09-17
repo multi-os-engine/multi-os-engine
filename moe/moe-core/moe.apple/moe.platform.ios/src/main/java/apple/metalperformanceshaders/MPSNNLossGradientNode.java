@@ -216,4 +216,8 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Generated
     @Selector("weight")
     public native float weight();
+
+    @Generated
+    @Selector("reduceAcrossBatch")
+    public native boolean reduceAcrossBatch();
 }

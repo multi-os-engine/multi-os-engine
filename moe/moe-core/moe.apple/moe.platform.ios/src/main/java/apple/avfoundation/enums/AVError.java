@@ -96,4 +96,6 @@ public final class AVError {
     @Generated @NInt public static final long OperationNotSupportedForPreset = 0xFFFFFFFFFFFFD1A1L;
     @Generated @NInt public static final long SessionHardwareCostOverage = 0xFFFFFFFFFFFFD1A0L;
     @Generated @NInt public static final long UnsupportedDeviceActiveFormat = 0xFFFFFFFFFFFFD19FL;
+    @Generated @NInt public static final long IncorrectlyConfigured = 0xFFFFFFFFFFFFD19DL;
+    @Generated @NInt public static final long SegmentStartedWithNonSyncSample = 0xFFFFFFFFFFFFD19CL;
 }

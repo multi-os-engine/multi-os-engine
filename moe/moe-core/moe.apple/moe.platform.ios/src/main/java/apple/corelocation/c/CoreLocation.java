@@ -103,4 +103,8 @@ public final class CoreLocation {
     @Generated
     @CVariable()
     public static native double kCLHeadingFilterNone();
+
+    @Generated
+    @CVariable()
+    public static native double kCLLocationAccuracyReduced();
 }

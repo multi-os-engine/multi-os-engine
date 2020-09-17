@@ -17,6 +17,7 @@ limitations under the License.
 package apple.audiotoolbox.c;
 
 import apple.NSObject;
+import apple.OS_os_workgroup;
 import apple.audiotoolbox.opaque.AUGraph;
 import apple.audiotoolbox.opaque.AudioComponent;
 import apple.audiotoolbox.opaque.AudioComponentInstance;
@@ -59,6 +60,7 @@ import apple.corefoundation.opaque.CFRunLoopRef;
 import apple.corefoundation.opaque.CFStringRef;
 import apple.corefoundation.opaque.CFURLRef;
 import apple.struct.FILE;
+import apple.struct.os_workgroup_attr_opaque_s;
 import apple.uikit.UIImage;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
@@ -1781,4 +1783,14 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AudioCodecReset(AudioComponentInstance inCodec);
+
+    @Generated
+    @CFunction
+    public static native UIImage AudioComponentCopyIcon(AudioComponent comp);
+
+    @Generated
+    @CFunction
+    public static native OS_os_workgroup AudioWorkIntervalCreate(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name, int clock,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
 }

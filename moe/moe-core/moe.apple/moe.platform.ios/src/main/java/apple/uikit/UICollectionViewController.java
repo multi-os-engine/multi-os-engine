@@ -26,6 +26,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UICollectionViewDataSource;
 import apple.uikit.protocol.UICollectionViewDelegate;
+import apple.uikit.protocol.UIContextMenuInteractionAnimating;
 import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
 import apple.uikit.protocol.UISpringLoadedInteractionContext;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -512,4 +513,23 @@ public class UICollectionViewController extends UIViewController
     @IsOptional
     @Selector("collectionViewDidEndMultipleSelectionInteraction:")
     public native void collectionViewDidEndMultipleSelectionInteraction(UICollectionView collectionView);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:canEditItemAtIndexPath:")
+    public native boolean collectionViewCanEditItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willDisplayContextMenuWithConfiguration:animator:")
+    public native void collectionViewWillDisplayContextMenuWithConfigurationAnimator(UICollectionView collectionView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willEndContextMenuInteractionWithConfiguration:animator:")
+    public native void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
 }

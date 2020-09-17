@@ -154,4 +154,64 @@ public interface UISplitViewControllerDelegate {
     default long targetDisplayModeForActionInSplitViewController(UISplitViewController svc) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("splitViewController:displayModeForExpandingToProposedDisplayMode:")
+    @NInt
+    default long splitViewControllerDisplayModeForExpandingToProposedDisplayMode(UISplitViewController svc,
+            @NInt long proposedDisplayMode) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("splitViewController:topColumnForCollapsingToProposedTopColumn:")
+    @NInt
+    default long splitViewControllerTopColumnForCollapsingToProposedTopColumn(UISplitViewController svc,
+            @NInt long proposedTopColumn) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("splitViewController:willHideColumn:")
+    default void splitViewControllerWillHideColumn(UISplitViewController svc, @NInt long column) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("splitViewController:willShowColumn:")
+    default void splitViewControllerWillShowColumn(UISplitViewController svc, @NInt long column) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("splitViewControllerDidCollapse:")
+    default void splitViewControllerDidCollapse(UISplitViewController svc) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("splitViewControllerDidExpand:")
+    default void splitViewControllerDidExpand(UISplitViewController svc) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("splitViewControllerInteractivePresentationGestureDidEnd:")
+    default void splitViewControllerInteractivePresentationGestureDidEnd(UISplitViewController svc) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("splitViewControllerInteractivePresentationGestureWillBegin:")
+    default void splitViewControllerInteractivePresentationGestureWillBegin(UISplitViewController svc) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

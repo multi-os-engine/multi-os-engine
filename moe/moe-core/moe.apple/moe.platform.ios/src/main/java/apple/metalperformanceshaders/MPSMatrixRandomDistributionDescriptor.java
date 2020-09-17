@@ -194,4 +194,14 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("normalDistributionDescriptorWithMean:standardDeviation:")
+    public static native MPSMatrixRandomDistributionDescriptor normalDistributionDescriptorWithMeanStandardDeviation(
+            float mean, float standardDeviation);
+
+    @Generated
+    @Selector("normalDistributionDescriptorWithMean:standardDeviation:minimum:maximum:")
+    public static native MPSMatrixRandomDistributionDescriptor normalDistributionDescriptorWithMeanStandardDeviationMinimumMaximum(
+            float mean, float standardDeviation, float minimum, float maximum);
 }

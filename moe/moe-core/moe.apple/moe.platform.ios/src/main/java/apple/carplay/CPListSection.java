@@ -1,6 +1,7 @@
 package apple.carplay;
 
 import apple.NSObject;
+import apple.carplay.protocol.CPListTemplateItem;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -107,11 +108,11 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithItems:")
-    public native CPListSection initWithItems(NSArray<? extends CPListItem> items);
+    public native CPListSection initWithItems(NSArray<?> items);
 
     @Generated
     @Selector("initWithItems:header:sectionIndexTitle:")
-    public native CPListSection initWithItemsHeaderSectionIndexTitle(NSArray<? extends CPListItem> items, String header,
+    public native CPListSection initWithItemsHeaderSectionIndexTitle(NSArray<?> items, String header,
             String sectionIndexTitle);
 
     @Generated
@@ -133,7 +134,7 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("items")
-    public native NSArray<? extends CPListItem> items();
+    public native NSArray<?> items();
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
@@ -179,4 +180,14 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("indexOfItem:")
+    @NUInt
+    public native long indexOfItem(@Mapped(ObjCObjectMapper.class) CPListTemplateItem item);
+
+    @Generated
+    @Selector("itemAtIndex:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native CPListTemplateItem itemAtIndex(@NUInt long index);
 }

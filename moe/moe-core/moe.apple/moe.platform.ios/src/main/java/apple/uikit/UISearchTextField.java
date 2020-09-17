@@ -451,4 +451,8 @@ public class UISearchTextField extends UITextField {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UISearchTextField initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 }

@@ -225,4 +225,8 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("clinicalTypeForIdentifier:")
     public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("electrocardiogramType")
+    public static native HKElectrocardiogramType electrocardiogramType();
 }

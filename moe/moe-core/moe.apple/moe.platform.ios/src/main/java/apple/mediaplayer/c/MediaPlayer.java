@@ -604,4 +604,9 @@ public final class MediaPlayer {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPNowPlayingInfoPropertyCurrentPlaybackDate();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MPMediaPlaylistPropertyCloudGlobalID();
 }

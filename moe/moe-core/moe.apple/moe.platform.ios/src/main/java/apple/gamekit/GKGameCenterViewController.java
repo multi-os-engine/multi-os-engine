@@ -245,4 +245,22 @@ public class GKGameCenterViewController extends UINavigationController {
     @Selector("viewState")
     @NInt
     public native long viewState();
+
+    @Generated
+    @Selector("initWithAchievementID:")
+    public native GKGameCenterViewController initWithAchievementID(String achievementID);
+
+    @Generated
+    @Selector("initWithLeaderboard:playerScope:")
+    public native GKGameCenterViewController initWithLeaderboardPlayerScope(GKLeaderboard leaderboard,
+            @NInt long playerScope);
+
+    @Generated
+    @Selector("initWithLeaderboardID:playerScope:timeScope:")
+    public native GKGameCenterViewController initWithLeaderboardIDPlayerScopeTimeScope(String leaderboardID,
+            @NInt long playerScope, @NInt long timeScope);
+
+    @Generated
+    @Selector("initWithState:")
+    public native GKGameCenterViewController initWithState(@NInt long state);
 }

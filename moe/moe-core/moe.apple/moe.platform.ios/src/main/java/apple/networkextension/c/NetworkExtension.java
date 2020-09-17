@@ -111,4 +111,19 @@ public final class NetworkExtension {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NEHotspotConfigurationErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEDNSSettingsErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEDNSSettingsConfigurationDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NEAppPushErrorDomain();
 }

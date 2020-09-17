@@ -28,4 +28,7 @@ public final class MTLFunctionType {
     @Generated
     private MTLFunctionType() {
     }
+
+    @Generated @NUInt public static final long Visible = 0x0000000000000005L;
+    @Generated @NUInt public static final long Intersection = 0x0000000000000006L;
 }

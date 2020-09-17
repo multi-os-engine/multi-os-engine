@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.gamecontroller.protocol.GCDevice;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -44,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GCController extends NSObject {
+public class GCController extends NSObject implements GCDevice {
     static {
         NatJ.register();
     }
@@ -259,4 +260,24 @@ public class GCController extends NSObject {
     @Generated
     @Selector("productCategory")
     public native String productCategory();
+
+    @Generated
+    @Selector("battery")
+    public native GCDeviceBattery battery();
+
+    @Generated
+    @Selector("current")
+    public static native GCController current();
+
+    @Generated
+    @Selector("haptics")
+    public native GCDeviceHaptics haptics();
+
+    @Generated
+    @Selector("light")
+    public native GCDeviceLight light();
+
+    @Generated
+    @Selector("physicalInputProfile")
+    public native GCPhysicalInputProfile physicalInputProfile();
 }

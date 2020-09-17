@@ -219,4 +219,14 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("descriptorForRequiredKeysForDelimiter")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CNKeyDescriptor descriptorForRequiredKeysForDelimiter();
+
+    @Generated
+    @Selector("descriptorForRequiredKeysForNameOrder")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native CNKeyDescriptor descriptorForRequiredKeysForNameOrder();
 }

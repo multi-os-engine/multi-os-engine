@@ -203,4 +203,30 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Generated
     @Selector("vocabularyIdentifier")
     public native String vocabularyIdentifier();
+
+    @Generated
+    @Selector("displayImage")
+    public native INImage displayImage();
+
+    @Generated
+    @Selector("initWithIdentifier:displayString:pronunciationHint:subtitleString:displayImage:")
+    public native INObject initWithIdentifierDisplayStringPronunciationHintSubtitleStringDisplayImage(String identifier,
+            String displayString, String pronunciationHint, String subtitleString, INImage displayImage);
+
+    @Generated
+    @Selector("initWithIdentifier:displayString:subtitleString:displayImage:")
+    public native INObject initWithIdentifierDisplayStringSubtitleStringDisplayImage(String identifier,
+            String displayString, String subtitleString, INImage displayImage);
+
+    @Generated
+    @Selector("setDisplayImage:")
+    public native void setDisplayImage(INImage value);
+
+    @Generated
+    @Selector("setSubtitleString:")
+    public native void setSubtitleString(String value);
+
+    @Generated
+    @Selector("subtitleString")
+    public native String subtitleString();
 }

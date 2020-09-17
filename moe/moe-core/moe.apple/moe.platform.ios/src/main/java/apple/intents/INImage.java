@@ -229,4 +229,9 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("imageWithURL:width:height:")
     public static native INImage imageWithURLWidthHeight(NSURL URL, double width, double height);
+
+    @Generated
+    @Selector("systemImageNamed:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemImageNamed(String systemImageName);
 }

@@ -3571,4 +3571,39 @@ public final class Foundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSSecureUnarchiveFromDataTransformerName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLContentTypeKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLFileContentIdentifierKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLMayShareFileContentKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLMayHaveExtendedAttributesKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLIsPurgeableKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLIsSparseKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSURLVolumeSupportsFileProtectionKey();
 }

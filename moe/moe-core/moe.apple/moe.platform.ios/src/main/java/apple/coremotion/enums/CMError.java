@@ -36,4 +36,7 @@ public final class CMError {
     @Generated
     private CMError() {
     }
+
+    @Generated public static final int CMErrorNilData = 0x00000070;
+    @Generated public static final int CMErrorSize = 0x00000071;
 }

@@ -19,7 +19,9 @@ package apple.mapkit;
 import apple.NSObject;
 import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
+import apple.foundation.NSIndexSet;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.struct.NSRange;
 import apple.mapkit.protocol.MKGeoJSONObject;
@@ -32,6 +34,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -176,4 +179,13 @@ public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     @Selector("points")
     @ReferenceInfo(type = MKMapPoint.class)
     public native Ptr<MKMapPoint> points();
+
+    @Generated
+    @Selector("locationAtPointIndex:")
+    @NFloat
+    public native double locationAtPointIndex(@NUInt long index);
+
+    @Generated
+    @Selector("locationsAtPointIndexes:")
+    public native NSArray<? extends NSNumber> locationsAtPointIndexes(NSIndexSet indexes);
 }

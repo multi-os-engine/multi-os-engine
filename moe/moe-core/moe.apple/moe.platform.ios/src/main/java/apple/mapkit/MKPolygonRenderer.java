@@ -28,6 +28,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -166,4 +167,22 @@ public class MKPolygonRenderer extends MKOverlayPathRenderer {
     @Generated
     @Selector("polygon")
     public native MKPolygon polygon();
+
+    @Generated
+    @Selector("setStrokeEnd:")
+    public native void setStrokeEnd(@NFloat double value);
+
+    @Generated
+    @Selector("setStrokeStart:")
+    public native void setStrokeStart(@NFloat double value);
+
+    @Generated
+    @Selector("strokeEnd")
+    @NFloat
+    public native double strokeEnd();
+
+    @Generated
+    @Selector("strokeStart")
+    @NFloat
+    public native double strokeStart();
 }

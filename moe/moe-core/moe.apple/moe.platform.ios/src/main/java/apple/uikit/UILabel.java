@@ -607,4 +607,13 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("lineBreakStrategy")
+    @NUInt
+    public native long lineBreakStrategy();
+
+    @Generated
+    @Selector("setLineBreakStrategy:")
+    public native void setLineBreakStrategy(@NUInt long value);
 }

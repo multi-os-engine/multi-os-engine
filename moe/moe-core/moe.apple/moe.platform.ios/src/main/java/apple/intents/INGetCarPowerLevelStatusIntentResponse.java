@@ -3,10 +3,13 @@ package apple.intents;
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
+import apple.foundation.NSDateComponents;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSMeasurement;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import apple.foundation.NSUnitEnergy;
 import apple.foundation.NSUnitLength;
 import apple.foundation.NSUserActivity;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -207,4 +210,108 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Generated
     @Selector("setMinutesToFull:")
     public native void setMinutesToFull(NSNumber value);
+
+    @Generated
+    @Selector("activeConnector")
+    public native String activeConnector();
+
+    @Generated
+    @Selector("carIdentifier")
+    public native String carIdentifier();
+
+    @Generated
+    @Selector("chargingFormulaArguments")
+    public native NSDictionary<String, ?> chargingFormulaArguments();
+
+    @Generated
+    @Selector("consumptionFormulaArguments")
+    public native NSDictionary<String, ?> consumptionFormulaArguments();
+
+    @Generated
+    @Selector("currentBatteryCapacity")
+    public native NSMeasurement<NSUnitEnergy> currentBatteryCapacity();
+
+    @Generated
+    @Selector("dateOfLastStateUpdate")
+    public native NSDateComponents dateOfLastStateUpdate();
+
+    @Generated
+    @Selector("distanceRemainingElectric")
+    public native NSMeasurement<NSUnitLength> distanceRemainingElectric();
+
+    @Generated
+    @Selector("distanceRemainingFuel")
+    public native NSMeasurement<NSUnitLength> distanceRemainingFuel();
+
+    @Generated
+    @Selector("maximumBatteryCapacity")
+    public native NSMeasurement<NSUnitEnergy> maximumBatteryCapacity();
+
+    @Generated
+    @Selector("maximumDistance")
+    public native NSMeasurement<NSUnitLength> maximumDistance();
+
+    @Generated
+    @Selector("maximumDistanceElectric")
+    public native NSMeasurement<NSUnitLength> maximumDistanceElectric();
+
+    @Generated
+    @Selector("maximumDistanceFuel")
+    public native NSMeasurement<NSUnitLength> maximumDistanceFuel();
+
+    @Generated
+    @Selector("minimumBatteryCapacity")
+    public native NSMeasurement<NSUnitEnergy> minimumBatteryCapacity();
+
+    @Generated
+    @Selector("setActiveConnector:")
+    public native void setActiveConnector(String value);
+
+    @Generated
+    @Selector("setCarIdentifier:")
+    public native void setCarIdentifier(String value);
+
+    @Generated
+    @Selector("setChargingFormulaArguments:")
+    public native void setChargingFormulaArguments(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("setConsumptionFormulaArguments:")
+    public native void setConsumptionFormulaArguments(NSDictionary<String, ?> value);
+
+    @Generated
+    @Selector("setCurrentBatteryCapacity:")
+    public native void setCurrentBatteryCapacity(NSMeasurement<NSUnitEnergy> value);
+
+    @Generated
+    @Selector("setDateOfLastStateUpdate:")
+    public native void setDateOfLastStateUpdate(NSDateComponents value);
+
+    @Generated
+    @Selector("setDistanceRemainingElectric:")
+    public native void setDistanceRemainingElectric(NSMeasurement<NSUnitLength> value);
+
+    @Generated
+    @Selector("setDistanceRemainingFuel:")
+    public native void setDistanceRemainingFuel(NSMeasurement<NSUnitLength> value);
+
+    @Generated
+    @Selector("setMaximumBatteryCapacity:")
+    public native void setMaximumBatteryCapacity(NSMeasurement<NSUnitEnergy> value);
+
+    @Generated
+    @Selector("setMaximumDistance:")
+    public native void setMaximumDistance(NSMeasurement<NSUnitLength> value);
+
+    @Generated
+    @Selector("setMaximumDistanceElectric:")
+    public native void setMaximumDistanceElectric(NSMeasurement<NSUnitLength> value);
+
+    @Generated
+    @Selector("setMaximumDistanceFuel:")
+    public native void setMaximumDistanceFuel(NSMeasurement<NSUnitLength> value);
+
+    @Generated
+    @Selector("setMinimumBatteryCapacity:")
+    public native void setMinimumBatteryCapacity(NSMeasurement<NSUnitEnergy> value);
 }

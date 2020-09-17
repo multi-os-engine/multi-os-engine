@@ -43,4 +43,8 @@ public final class Enums {
     }
 
     @Generated public static final int kMIDIUnknownError = 0xFFFFD5A3;
+    @Generated public static final int kMIDINoteAttributeNone = 0x00000000;
+    @Generated public static final int kMIDINoteAttributeManufacturerSpecific = 0x00000001;
+    @Generated public static final int kMIDINoteAttributeProfileSpecific = 0x00000002;
+    @Generated public static final int kMIDINoteAttributePitch = 0x00000003;
 }

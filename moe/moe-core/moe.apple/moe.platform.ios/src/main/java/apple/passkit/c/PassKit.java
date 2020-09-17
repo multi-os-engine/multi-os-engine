@@ -231,4 +231,14 @@ public final class PassKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKAddSecureElementPassErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkBarcode();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkGirocard();
 }

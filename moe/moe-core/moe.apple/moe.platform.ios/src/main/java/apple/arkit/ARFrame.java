@@ -224,4 +224,16 @@ public class ARFrame extends NSObject implements NSCopying {
     @Selector("worldMappingStatus")
     @NInt
     public native long worldMappingStatus();
+
+    @Generated
+    @Selector("geoTrackingStatus")
+    public native ARGeoTrackingStatus geoTrackingStatus();
+
+    @Generated
+    @Selector("sceneDepth")
+    public native ARDepthData sceneDepth();
+
+    @Generated
+    @Selector("smoothedSceneDepth")
+    public native ARDepthData smoothedSceneDepth();
 }

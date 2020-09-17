@@ -58,4 +58,6 @@ public final class Enums {
     @Generated
     private Enums() {
     }
+
+    @Generated public static final int kCFBundleExecutableArchitectureARM64 = 0x0100000C;
 }

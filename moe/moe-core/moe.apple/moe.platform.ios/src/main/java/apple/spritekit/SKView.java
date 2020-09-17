@@ -577,4 +577,12 @@ public class SKView extends UIView {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("disableDepthStencilBuffer")
+    public native boolean disableDepthStencilBuffer();
+
+    @Generated
+    @Selector("setDisableDepthStencilBuffer:")
+    public native void setDisableDepthStencilBuffer(boolean value);
 }

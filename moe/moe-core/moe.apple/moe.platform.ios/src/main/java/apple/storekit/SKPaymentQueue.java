@@ -237,4 +237,12 @@ public class SKPaymentQueue extends NSObject {
     @Generated
     @Selector("showPriceConsentIfNeeded")
     public native void showPriceConsentIfNeeded();
+
+    @Generated
+    @Selector("presentCodeRedemptionSheet")
+    public native void presentCodeRedemptionSheet();
+
+    @Generated
+    @Selector("transactionObservers")
+    public native NSArray<?> transactionObservers();
 }

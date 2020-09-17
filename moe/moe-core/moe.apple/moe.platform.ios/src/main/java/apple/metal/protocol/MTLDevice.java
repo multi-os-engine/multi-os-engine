@@ -22,10 +22,13 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSError;
 import apple.foundation.NSURL;
+import apple.metal.MTLAccelerationStructureDescriptor;
 import apple.metal.MTLArgumentDescriptor;
+import apple.metal.MTLBinaryArchiveDescriptor;
 import apple.metal.MTLCompileOptions;
 import apple.metal.MTLComputePipelineDescriptor;
 import apple.metal.MTLComputePipelineReflection;
+import apple.metal.MTLCounterSampleBufferDescriptor;
 import apple.metal.MTLDepthStencilDescriptor;
 import apple.metal.MTLHeapDescriptor;
 import apple.metal.MTLIndirectCommandBufferDescriptor;
@@ -37,6 +40,7 @@ import apple.metal.MTLSharedEventHandle;
 import apple.metal.MTLSharedTextureHandle;
 import apple.metal.MTLTextureDescriptor;
 import apple.metal.MTLTileRenderPipelineDescriptor;
+import apple.metal.struct.MTLAccelerationStructureSizes;
 import apple.metal.struct.MTLRegion;
 import apple.metal.struct.MTLSamplePosition;
 import apple.metal.struct.MTLSize;
@@ -52,6 +56,7 @@ import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.moe.natj.general.ptr.LongPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ObjCRuntime;
@@ -479,4 +484,79 @@ public interface MTLDevice {
     @Generated
     @Selector("supportsVertexAmplificationCount:")
     boolean supportsVertexAmplificationCount(@NUInt long count);
+
+    @Generated
+    @Selector("accelerationStructureSizesWithDescriptor:")
+    @ByValue
+    MTLAccelerationStructureSizes accelerationStructureSizesWithDescriptor(
+            MTLAccelerationStructureDescriptor descriptor);
+
+    @Generated
+    @Selector("areBarycentricCoordsSupported")
+    boolean areBarycentricCoordsSupported();
+
+    @Generated
+    @Selector("counterSets")
+    NSArray<?> counterSets();
+
+    @Generated
+    @Selector("newAccelerationStructureWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLAccelerationStructure newAccelerationStructureWithDescriptor(MTLAccelerationStructureDescriptor descriptor);
+
+    @Generated
+    @Selector("newAccelerationStructureWithSize:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLAccelerationStructure newAccelerationStructureWithSize(@NUInt long size);
+
+    @Generated
+    @Selector("newBinaryArchiveWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLBinaryArchive newBinaryArchiveWithDescriptorError(MTLBinaryArchiveDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("newCounterSampleBufferWithDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLCounterSampleBuffer newCounterSampleBufferWithDescriptorError(MTLCounterSampleBufferDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("newDynamicLibrary:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLDynamicLibrary newDynamicLibraryError(@Mapped(ObjCObjectMapper.class) MTLLibrary library,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("newDynamicLibraryWithURL:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLDynamicLibrary newDynamicLibraryWithURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("sampleTimestamps:gpuTimestamp:")
+    void sampleTimestampsGpuTimestamp(LongPtr cpuTimestamp, LongPtr gpuTimestamp);
+
+    @Generated
+    @Selector("supportsCounterSampling:")
+    boolean supportsCounterSampling(@NUInt long samplingPoint);
+
+    @Generated
+    @Selector("supportsDynamicLibraries")
+    boolean supportsDynamicLibraries();
+
+    @Generated
+    @Selector("supportsFunctionPointers")
+    boolean supportsFunctionPointers();
+
+    @Generated
+    @Selector("supportsPullModelInterpolation")
+    boolean supportsPullModelInterpolation();
+
+    @Generated
+    @Selector("supportsRaytracing")
+    boolean supportsRaytracing();
+
+    @Generated
+    @Selector("supportsShaderBarycentricCoordinates")
+    boolean supportsShaderBarycentricCoordinates();
 }

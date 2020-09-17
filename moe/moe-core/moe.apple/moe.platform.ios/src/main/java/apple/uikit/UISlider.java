@@ -547,4 +547,8 @@ public class UISlider extends UIControl implements NSCoding {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UISlider initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 }

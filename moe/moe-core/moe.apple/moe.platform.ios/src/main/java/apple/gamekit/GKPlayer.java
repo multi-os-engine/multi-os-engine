@@ -218,4 +218,8 @@ public class GKPlayer extends GKBasePlayer {
     @Generated
     @Selector("teamPlayerID")
     public native String teamPlayerID();
+
+    @Generated
+    @Selector("isInvitable")
+    public native boolean isInvitable();
 }

@@ -184,4 +184,9 @@ public class NLTokenizer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("tokenRangeForRange:")
+    @ByValue
+    public native NSRange tokenRangeForRange(@ByValue NSRange range);
 }

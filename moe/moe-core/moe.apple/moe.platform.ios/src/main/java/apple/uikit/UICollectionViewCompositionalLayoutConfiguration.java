@@ -172,4 +172,13 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("contentInsetsReference")
+    @NInt
+    public native long contentInsetsReference();
+
+    @Generated
+    @Selector("setContentInsetsReference:")
+    public native void setContentInsetsReference(@NInt long value);
 }

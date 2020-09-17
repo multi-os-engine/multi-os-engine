@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 
@@ -23,11 +24,6 @@ public final class CarPlay {
     private CarPlay() {
     }
 
-    @Generated
-    @CVariable()
-    @ByValue
-    public static native CGSize CPMaximumListItemImageSize();
-
     @Generated public static final double CPNavigationAlertMinimumDuration = 5.0;
 
     @Generated
@@ -39,4 +35,29 @@ public final class CarPlay {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CPTemplateApplicationDashboardSceneSessionRoleApplication();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CGSize CPButtonMaximumImageSize();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CarPlayErrorDomain();
+
+    @Generated
+    @CVariable()
+    @NUInt
+    public static native long CPMaximumNumberOfGridImages();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CGSize CPMaximumMessageItemImageSize();
+
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CGSize CPNowPlayingButtonMaximumImageSize();
 }

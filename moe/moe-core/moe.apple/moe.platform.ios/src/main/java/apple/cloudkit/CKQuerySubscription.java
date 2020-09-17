@@ -175,7 +175,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKQuerySubscription initWithCoder(NSCoder coder);
+    public native CKQuerySubscription initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithRecordType:predicate:options:")
@@ -186,15 +186,6 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     @Selector("initWithRecordType:predicate:subscriptionID:options:")
     public native CKQuerySubscription initWithRecordTypePredicateSubscriptionIDOptions(String recordType,
             NSPredicate predicate, String subscriptionID, @NUInt long querySubscriptionOptions);
-
-    @Generated
-    @Selector("initWithZoneID:options:")
-    public native CKQuerySubscription initWithZoneIDOptions(CKRecordZoneID zoneID, @NUInt long subscriptionOptions);
-
-    @Generated
-    @Selector("initWithZoneID:subscriptionID:options:")
-    public native CKQuerySubscription initWithZoneIDSubscriptionIDOptions(CKRecordZoneID zoneID, String subscriptionID,
-            @NUInt long subscriptionOptions);
 
     @Generated
     @Selector("predicate")

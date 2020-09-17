@@ -4,6 +4,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.UIWindowScene;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -141,4 +142,8 @@ public class SKStoreReviewController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("requestReviewInScene:")
+    public static native void requestReviewInScene(UIWindowScene windowScene);
 }

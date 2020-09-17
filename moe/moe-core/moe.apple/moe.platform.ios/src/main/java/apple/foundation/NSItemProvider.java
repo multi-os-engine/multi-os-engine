@@ -425,5 +425,21 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Generated
     @Selector("setPreviewImageHandler:")
     public native void setPreviewImageHandler(
-            @ObjCBlock(name = "call_previewImageHandler_ret") Block_previewImageHandler_ret value);
+            @ObjCBlock(name = "call_setPreviewImageHandler") Block_setPreviewImageHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPreviewImageHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_setPreviewImageHandler {
+            @Generated
+            void call_Block_setPreviewImageHandler(@Mapped(ObjCObjectMapper.class) Object item, NSError error);
+        }
+
+        @Generated
+        void call_setPreviewImageHandler(
+                @ObjCBlock(name = "call_Block_setPreviewImageHandler") Block_Block_setPreviewImageHandler completionHandler,
+                Class expectedValueClass, NSDictionary<?, ?> options);
+    }
 }

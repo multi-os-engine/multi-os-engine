@@ -188,4 +188,8 @@ public final class Enums {
     @Generated public static final int kDNSServiceErr_PollingMode = 0xFFFEFFE1;
     @Generated public static final int kDNSServiceErr_Timeout = 0xFFFEFFE0;
     @Generated public static final int kDNSServiceErr_DefunctConnection = 0xFFFEFFDF;
+    @Generated public static final int kDNSServiceErr_PolicyDenied = 0xFFFEFFDE;
+    @Generated public static final int kDNSServiceFlagsEnableDNSSEC = 0x00200000;
+    @Generated public static final int kDNSServiceType_SVCB = 0x00000040;
+    @Generated public static final int kDNSServiceType_HTTPS = 0x00000041;
 }

@@ -22,6 +22,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.replaykit.protocol.RPScreenRecorderDelegate;
 import apple.uikit.UIView;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -300,5 +301,17 @@ public class RPScreenRecorder extends NSObject {
     public interface Block_stopCaptureWithHandler {
         @Generated
         void call_stopCaptureWithHandler(NSError error);
+    }
+
+    @Generated
+    @Selector("stopRecordingWithOutputURL:completionHandler:")
+    public native void stopRecordingWithOutputURLCompletionHandler(NSURL url,
+            @ObjCBlock(name = "call_stopRecordingWithOutputURLCompletionHandler") Block_stopRecordingWithOutputURLCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stopRecordingWithOutputURLCompletionHandler {
+        @Generated
+        void call_stopRecordingWithOutputURLCompletionHandler(NSError error);
     }
 }

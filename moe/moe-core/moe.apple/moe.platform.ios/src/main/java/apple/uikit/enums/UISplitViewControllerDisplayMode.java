@@ -29,4 +29,11 @@ public final class UISplitViewControllerDisplayMode {
     @Generated
     private UISplitViewControllerDisplayMode() {
     }
+
+    @Generated @NInt public static final long SecondaryOnly = 0x0000000000000001L;
+    @Generated @NInt public static final long OneBesideSecondary = 0x0000000000000002L;
+    @Generated @NInt public static final long OneOverSecondary = 0x0000000000000003L;
+    @Generated @NInt public static final long TwoBesideSecondary = 0x0000000000000004L;
+    @Generated @NInt public static final long TwoOverSecondary = 0x0000000000000005L;
+    @Generated @NInt public static final long TwoDisplaceSecondary = 0x0000000000000006L;
 }

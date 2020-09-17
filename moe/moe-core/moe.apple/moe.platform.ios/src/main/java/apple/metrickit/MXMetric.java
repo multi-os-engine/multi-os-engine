@@ -168,4 +168,8 @@ public class MXMetric extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("dictionaryRepresentation")
+    public native NSDictionary<?, ?> dictionaryRepresentation();
 }

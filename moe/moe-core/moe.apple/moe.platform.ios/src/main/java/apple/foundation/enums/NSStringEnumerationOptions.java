@@ -33,4 +33,7 @@ public final class NSStringEnumerationOptions {
     @Generated
     private NSStringEnumerationOptions() {
     }
+
+    @Generated @NUInt public static final long ByCaretPositions = 0x0000000000000005L;
+    @Generated @NUInt public static final long ByDeletionClusters = 0x0000000000000006L;
 }

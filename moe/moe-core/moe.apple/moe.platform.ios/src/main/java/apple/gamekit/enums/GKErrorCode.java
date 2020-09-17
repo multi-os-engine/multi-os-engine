@@ -57,4 +57,7 @@ public final class GKErrorCode {
 
     @Generated @NInt public static final long RestrictedToAutomatch = 0x000000000000001EL;
     @Generated @NInt public static final long APINotAvailable = 0x000000000000001FL;
+    @Generated @NInt public static final long NotAuthorized = 0x0000000000000020L;
+    @Generated @NInt public static final long ConnectionTimeout = 0x0000000000000021L;
+    @Generated @NInt public static final long APIObsolete = 0x0000000000000022L;
 }

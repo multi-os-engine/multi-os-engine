@@ -283,4 +283,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     @Generated
     @Selector("remotePort")
     public native NSNumber remotePort();
+
+    @Generated
+    @Selector("domainResolutionProtocol")
+    @NInt
+    public native long domainResolutionProtocol();
 }

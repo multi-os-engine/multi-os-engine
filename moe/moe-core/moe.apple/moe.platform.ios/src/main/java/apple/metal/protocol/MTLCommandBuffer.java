@@ -17,7 +17,10 @@ limitations under the License.
 package apple.metal.protocol;
 
 import apple.foundation.NSError;
+import apple.metal.MTLBlitPassDescriptor;
+import apple.metal.MTLComputePassDescriptor;
 import apple.metal.MTLRenderPassDescriptor;
+import apple.metal.MTLResourceStatePassDescriptor;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -178,4 +181,35 @@ public interface MTLCommandBuffer {
     @Selector("resourceStateCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
     MTLResourceStateCommandEncoder resourceStateCommandEncoder();
+
+    @Generated
+    @Selector("accelerationStructureCommandEncoder")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLAccelerationStructureCommandEncoder accelerationStructureCommandEncoder();
+
+    @Generated
+    @Selector("blitCommandEncoderWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLBlitCommandEncoder blitCommandEncoderWithDescriptor(MTLBlitPassDescriptor blitPassDescriptor);
+
+    @Generated
+    @Selector("computeCommandEncoderWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLComputeCommandEncoder computeCommandEncoderWithDescriptor(MTLComputePassDescriptor computePassDescriptor);
+
+    @Generated
+    @Selector("errorOptions")
+    @NUInt
+    long errorOptions();
+
+    @Generated
+    @Selector("logs")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLLogContainer logs();
+
+    @Generated
+    @Selector("resourceStateCommandEncoderWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLResourceStateCommandEncoder resourceStateCommandEncoderWithDescriptor(
+            MTLResourceStatePassDescriptor resourceStatePassDescriptor);
 }

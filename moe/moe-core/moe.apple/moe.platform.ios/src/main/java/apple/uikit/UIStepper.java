@@ -499,4 +499,8 @@ public class UIStepper extends UIControl {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UIStepper initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 }

@@ -24,4 +24,8 @@ public final class ARErrorCode {
     @Generated @NInt public static final long InsufficientFeatures = 0x0000000000000190L;
     @Generated @NInt public static final long ObjectMergeFailed = 0x0000000000000191L;
     @Generated @NInt public static final long FileIOFailed = 0x00000000000001F4L;
+    @Generated @NInt public static final long LocationUnauthorized = 0x0000000000000069L;
+    @Generated @NInt public static final long GeoTrackingNotAvailableAtLocation = 0x00000000000000C9L;
+    @Generated @NInt public static final long GeoTrackingFailed = 0x00000000000000CAL;
+    @Generated @NInt public static final long RequestFailed = 0x00000000000001F5L;
 }

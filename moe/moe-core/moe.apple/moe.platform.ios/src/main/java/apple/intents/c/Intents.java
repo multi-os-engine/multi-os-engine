@@ -390,4 +390,54 @@ public final class Intents {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierSwim();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INStartCallIntentIdentifier();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeJ1772();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeCCS1();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeCCS2();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeCHAdeMO();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeGBTAC();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeGBTDC();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeTesla();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INCarChargingConnectorTypeMennekes();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INPersonHandleLabelSchool();
 }

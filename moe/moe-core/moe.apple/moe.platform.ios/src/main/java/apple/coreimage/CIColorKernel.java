@@ -181,4 +181,8 @@ public class CIColorKernel extends CIKernel {
     @Selector("kernelWithFunctionName:fromMetalLibraryData:outputPixelFormat:error:")
     public static native CIColorKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(String name,
             NSData data, int format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("kernelNamesFromMetalLibraryData:")
+    public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
 }

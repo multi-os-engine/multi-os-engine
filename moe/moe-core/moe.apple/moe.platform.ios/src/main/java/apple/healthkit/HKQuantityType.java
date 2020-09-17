@@ -218,4 +218,8 @@ public class HKQuantityType extends HKSampleType {
     @Generated
     @Selector("clinicalTypeForIdentifier:")
     public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+
+    @Generated
+    @Selector("electrocardiogramType")
+    public static native HKElectrocardiogramType electrocardiogramType();
 }

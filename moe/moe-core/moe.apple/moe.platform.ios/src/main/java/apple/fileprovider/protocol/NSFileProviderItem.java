@@ -6,6 +6,7 @@ import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSNumber;
 import apple.foundation.NSPersonNameComponents;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.NUInt;
@@ -166,9 +167,12 @@ public interface NSFileProviderItem {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @IsOptional
     @Generated
     @Selector("typeIdentifier")
-    String typeIdentifier();
+    default String typeIdentifier() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Generated
     @IsOptional
@@ -188,6 +192,13 @@ public interface NSFileProviderItem {
     @IsOptional
     @Selector("versionIdentifier")
     default NSData versionIdentifier() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("contentType")
+    default UTType contentType() {
         throw new java.lang.UnsupportedOperationException();
     }
 }

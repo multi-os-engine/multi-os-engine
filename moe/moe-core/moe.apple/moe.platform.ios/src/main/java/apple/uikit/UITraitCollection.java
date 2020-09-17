@@ -328,4 +328,14 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("userInterfaceStyle")
     @NInt
     public native long userInterfaceStyle();
+
+    @Generated
+    @Selector("activeAppearance")
+    @NInt
+    public native long activeAppearance();
+
+    @Generated
+    @Selector("traitCollectionWithActiveAppearance:")
+    public static native UITraitCollection traitCollectionWithActiveAppearance(
+            @NInt long userInterfaceActiveAppearance);
 }

@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.metal.protocol;
 
+import apple.metal.MTLCommandBufferDescriptor;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -56,4 +57,9 @@ public interface MTLCommandQueue {
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);
+
+    @Generated
+    @Selector("commandBufferWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLCommandBuffer commandBufferWithDescriptor(MTLCommandBufferDescriptor descriptor);
 }

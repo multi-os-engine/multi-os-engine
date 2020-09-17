@@ -328,4 +328,17 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Generated
     @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
     public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithClassification:")
+    public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
+
+    @Generated
+    @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
+    public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
+
+    @Generated
+    @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
+    public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
+            HKElectrocardiogram electrocardiogram);
 }

@@ -31,39 +31,9 @@ import apple.accelerate.opaque.vImageCVImageFormatRef;
 import apple.accelerate.opaque.vImageConstCVImageFormatRef;
 import apple.accelerate.opaque.vImageConverterRef;
 import apple.accelerate.opaque.vImage_MultidimensionalTable;
-import apple.accelerate.struct.BNNSActivation;
-import apple.accelerate.struct.BNNSConvolutionLayerParameters;
-import apple.accelerate.struct.BNNSFilterParameters;
-import apple.accelerate.struct.BNNSFullyConnectedLayerParameters;
-import apple.accelerate.struct.BNNSImageStackDescriptor;
-import apple.accelerate.struct.BNNSPoolingLayerParameters;
-import apple.accelerate.struct.BNNSVectorDescriptor;
-import apple.accelerate.struct.DSPComplex;
-import apple.accelerate.struct.DSPDoubleComplex;
-import apple.accelerate.struct.DSPDoubleSplitComplex;
-import apple.accelerate.struct.DSPSplitComplex;
-import apple.accelerate.struct.SparseNumericFactorOptions;
-import apple.accelerate.struct.SparseSymbolicFactorOptions;
-import apple.accelerate.struct.__CLPK_complex;
-import apple.accelerate.struct.__CLPK_doublecomplex;
-import apple.accelerate.struct.quadrature_integrate_function;
-import apple.accelerate.struct.quadrature_integrate_options;
-import apple.accelerate.struct.vDSP_int24;
-import apple.accelerate.struct.vDSP_uint24;
-import apple.accelerate.struct.vImageChannelDescription;
-import apple.accelerate.struct.vImageRGBPrimaries;
-import apple.accelerate.struct.vImageTransferFunction;
-import apple.accelerate.struct.vImageWhitePoint;
-import apple.accelerate.struct.vImage_ARGBToYpCbCr;
-import apple.accelerate.struct.vImage_ARGBToYpCbCrMatrix;
-import apple.accelerate.struct.vImage_AffineTransform;
-import apple.accelerate.struct.vImage_AffineTransform_Double;
-import apple.accelerate.struct.vImage_Buffer;
-import apple.accelerate.struct.vImage_CGImageFormat;
-import apple.accelerate.struct.vImage_YpCbCrPixelRange;
-import apple.accelerate.struct.vImage_YpCbCrToARGB;
-import apple.accelerate.struct.vImage_YpCbCrToARGBMatrix;
+import apple.accelerate.struct.*;
 import apple.corefoundation.opaque.CFStringRef;
+import apple.coregraphics.opaque.CGColorConversionInfoRef;
 import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coregraphics.struct.CGSize;
@@ -16874,4 +16844,400 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void _SparseReleaseOpaquePreconditioner_Float(VoidPtr toFree);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerConvolution(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersConvolution layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerTransposedConvolution(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersConvolution layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerFullyConnected(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersFullyConnected layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerPooling(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPooling layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerActivation(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersActivation layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerLoss(ConstVoidPtr layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerNormalization(int normType,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersNormalization layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerArithmetic(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersArithmetic layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerPermute(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPermute layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerDropout(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersDropout layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerPadding(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPadding layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerBroadcastMatMul(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersBroadcastMatMul layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerTensorContraction(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersTensorContraction layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerGram(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersGram layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerResize(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersResize layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerMultiheadAttention(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersMultiheadAttention layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateLayerReduction(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersReduction layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr BNNSFilterCreateFusedLayer(@NUInt long number_of_fused_filters,
+            ConstIntPtr filter_type, Ptr<ConstVoidPtr> layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSPoolingFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
+            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, NUIntPtr indices, @NUInt long idx_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSFilterApplyTwoInput(VoidPtr filter, ConstVoidPtr inA, ConstVoidPtr inB, VoidPtr out);
+
+    @Generated
+    @CFunction
+    public static native int BNNSFilterApplyTwoInputBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr inA,
+            @NUInt long inA_stride, ConstVoidPtr inB, @NUInt long inB_stride, VoidPtr out, @NUInt long out_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSNormalizationFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
+            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, boolean training);
+
+    @Generated
+    @CFunction
+    public static native int BNNSFusedFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
+            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, boolean training);
+
+    @Generated
+    @CFunction
+    public static native int BNNSArithmeticFilterApplyBatch(VoidPtr filter, @NUInt long batch_size,
+            @NUInt long number_of_inputs, Ptr<ConstVoidPtr> in, ConstNUIntPtr in_stride, VoidPtr out,
+            @NUInt long out_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSApplyMultiheadAttention(VoidPtr F, @NUInt long batch_size, ConstVoidPtr query,
+            @NUInt long query_stride, ConstVoidPtr key, @NUInt long key_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_mask,
+            @NUInt long key_mask_stride, ConstVoidPtr value, @NUInt long value_stride, VoidPtr output,
+            @NUInt long output_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor add_to_attention,
+            NUIntPtr backprop_cache_size, VoidPtr backprop_cache, NUIntPtr workspace_size, VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    public static native int BNNSOptimizerStep(int function, ConstVoidPtr OptimizerAlgFields,
+            @NUInt long number_of_parameters, Ptr<Ptr<BNNSNDArrayDescriptor>> parameters,
+            Ptr<ConstPtr<BNNSNDArrayDescriptor>> gradients, Ptr<Ptr<BNNSNDArrayDescriptor>> accumulators,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
+            @NUInt long in_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor weights_delta,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta);
+
+    @Generated
+    @CFunction
+    public static native int BNNSPoolingFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size,
+            ConstVoidPtr in, @NUInt long in_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta,
+            ConstNUIntPtr indices, @NUInt long idx_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSFilterApplyBackwardTwoInputBatch(VoidPtr filter, @NUInt long batch_size,
+            ConstVoidPtr inA, @NUInt long inA_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inA_delta,
+            @NUInt long inA_delta_stride, ConstVoidPtr inB, @NUInt long inB_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inB_delta,
+            @NUInt long inB_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor weights_delta,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta);
+
+    @Generated
+    @CFunction
+    public static native int BNNSNormalizationFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor beta_delta,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor gamma_delta);
+
+    @Generated
+    @CFunction
+    public static native int BNNSFusedFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
+            @NUInt long in_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride, Ptr<Ptr<BNNSNDArrayDescriptor>> delta_parameters);
+
+    @Generated
+    @CFunction
+    public static native int BNNSArithmeticFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size,
+            @NUInt long number_of_inputs, Ptr<ConstVoidPtr> in, ConstNUIntPtr in_stride,
+            Ptr<Ptr<BNNSNDArrayDescriptor>> in_delta, ConstNUIntPtr in_delta_stride, ConstVoidPtr out,
+            @NUInt long out_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSPermuteFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSLossFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
+            @NUInt long in_stride, ConstVoidPtr labels, @NUInt long labels_stride, ConstVoidPtr weights,
+            @NUInt long weights_size, VoidPtr out,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSLossFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
+            @NUInt long in_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, ConstVoidPtr labels, @NUInt long labels_stride, ConstVoidPtr weights,
+            @NUInt long weights_size,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSApplyMultiheadAttentionBackward(VoidPtr F, @NUInt long batch_size, ConstVoidPtr query,
+            @NUInt long query_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters query_param_delta,
+            ConstVoidPtr key, @NUInt long key_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_mask,
+            @NUInt long key_mask_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters key_param_delta,
+            ConstVoidPtr value, @NUInt long value_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters value_param_delta,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor add_to_attention,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_attn_bias_delta,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor value_attn_bias_delta,
+            ConstVoidPtr output, @NUInt long output_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters output_param_delta,
+            @NUInt long backprop_cache_size, VoidPtr backprop_cache, NUIntPtr workspace_size, VoidPtr workspace);
+
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long BNNSComputeLSTMTrainingCacheCapacity(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSDirectApplyLSTMBatchTrainingCaching(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
+            VoidPtr training_cache_ptr, @NUInt long training_cache_capacity);
+
+    @Generated
+    @CFunction
+    public static native int BNNSDirectApplyActivationBatch(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersActivation layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
+            @NUInt long batch_size, @NUInt long in_stride, @NUInt long out_stride);
+
+    @Generated
+    @CFunction
+    public static native int BNNSCopy(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native void BNNSDirectApplyBroadcastMatMul(boolean transA, boolean transB, float alpha,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputA,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputB,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSTranspose(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
+            @NUInt long axis0, @NUInt long axis1,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSDirectApplyReduction(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersReduction layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSCompareTensor(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in0,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in1, int op,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out);
+
+    @Generated
+    @CFunction
+    public static native int BNNSDirectApplyTopK(@NUInt long K, @NUInt long axis, @NUInt long batch_size,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NUInt long input_batch_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor best_values,
+            @NUInt long best_values_batch_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor best_indices,
+            @NUInt long best_indices_batch_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSDirectApplyInTopK(@NUInt long K, @NUInt long axis, @NUInt long batch_size,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NUInt long input_batch_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor test_indices,
+            @NUInt long test_indices_batch_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @NUInt long output_batch_stride,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+
+    @Generated
+    @CFunction
+    public static native int BNNSDirectApplyLSTMBatchBackward(
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_delta_params,
+            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
+            ConstVoidPtr training_cache_ptr, @NUInt long training_cache_capacity);
+
+    @Generated
+    @CFunction
+    @ByValue
+    public static native BNNSNDArrayDescriptor BNNSGetPointer(VoidPtr filter, int target);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageSepConvolve_Planar8(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernelX, int kernelX_width,
+            ConstFloatPtr kernelY, int kernelY_width, float bias, char backgroundColor, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageSepConvolve_PlanarF(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernelX, int kernelX_width,
+            ConstFloatPtr kernelY, int kernelY_width, float bias, float backgroundColor, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageSepConvolve_Planar16U(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernelX, int kernelX_width,
+            ConstFloatPtr kernelY, int kernelY_width, float bias, char backgroundColor, int flags);
+
+    @Generated
+    @CFunction
+    @NInt
+    public static native long vImageSepConvolve_Planar8to16U(
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer src,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, VoidPtr tempBuffer,
+            @NUInt long srcOffsetToROI_X, @NUInt long srcOffsetToROI_Y, ConstFloatPtr kernelX, int kernelX_width,
+            ConstFloatPtr kernelY, int kernelY_width, float scale, float bias, byte backgroundColor, int flags);
+
+    @Generated
+    @CFunction
+    public static native vImageConverterRef vImageConverter_CreateWithCGColorConversionInfo(
+            CGColorConversionInfoRef colorConversionInfoRef,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_CGImageFormat sFormat,
+            @UncertainArgument("Options: reference, array Fallback: reference") vImage_CGImageFormat dFormat,
+            ConstNFloatPtr bg, int flags, NIntPtr error);
 }

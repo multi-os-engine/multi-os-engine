@@ -17,6 +17,7 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -24,6 +25,9 @@ import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.protocol.UIAppearanceContainer;
+import apple.uikit.protocol.UIContextMenuInteractionAnimating;
+import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
+import apple.uikit.protocol.UIContextMenuInteractionDelegate;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
@@ -38,10 +42,12 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
@@ -52,7 +58,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIControl extends UIView {
+public class UIControl extends UIView implements UIContextMenuInteractionDelegate {
     static {
         NatJ.register();
     }
@@ -562,4 +568,96 @@ public class UIControl extends UIView {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("addAction:forControlEvents:")
+    public native void addActionForControlEvents(UIAction action, @NUInt long controlEvents);
+
+    @Generated
+    @Selector("contextMenuInteraction")
+    public native UIContextMenuInteraction contextMenuInteraction();
+
+    @Generated
+    @Selector("contextMenuInteraction:configurationForMenuAtLocation:")
+    public native UIContextMenuConfiguration contextMenuInteractionConfigurationForMenuAtLocation(
+            UIContextMenuInteraction interaction, @ByValue CGPoint location);
+
+    @Generated
+    @Selector("contextMenuInteraction:previewForDismissingMenuWithConfiguration:")
+    public native UITargetedPreview contextMenuInteractionPreviewForDismissingMenuWithConfiguration(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration);
+
+    @Generated
+    @Selector("contextMenuInteraction:previewForHighlightingMenuWithConfiguration:")
+    public native UITargetedPreview contextMenuInteractionPreviewForHighlightingMenuWithConfiguration(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration);
+
+    @Generated
+    @Selector("contextMenuInteraction:willDisplayMenuForConfiguration:animator:")
+    public native void contextMenuInteractionWillDisplayMenuForConfigurationAnimator(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @Selector("contextMenuInteraction:willEndForConfiguration:animator:")
+    public native void contextMenuInteractionWillEndForConfigurationAnimator(UIContextMenuInteraction interaction,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("contextMenuInteraction:willPerformPreviewActionForMenuWithConfiguration:animator:")
+    public native void contextMenuInteractionWillPerformPreviewActionForMenuWithConfigurationAnimator(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
+
+    @Generated
+    @Selector("enumerateEventHandlers:")
+    public native void enumerateEventHandlers(
+            @ObjCBlock(name = "call_enumerateEventHandlers") Block_enumerateEventHandlers iterator);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enumerateEventHandlers {
+        @Generated
+        void call_enumerateEventHandlers(UIAction actionHandler, @Mapped(ObjCObjectMapper.class) Object target,
+                SEL action, @NUInt long controlEvents, BoolPtr stop);
+    }
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UIControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    @Generated
+    @Selector("isContextMenuInteractionEnabled")
+    public native boolean isContextMenuInteractionEnabled();
+
+    @Generated
+    @Selector("menuAttachmentPointForConfiguration:")
+    @ByValue
+    public native CGPoint menuAttachmentPointForConfiguration(UIContextMenuConfiguration configuration);
+
+    @Generated
+    @Selector("removeAction:forControlEvents:")
+    public native void removeActionForControlEvents(UIAction action, @NUInt long controlEvents);
+
+    @Generated
+    @Selector("removeActionForIdentifier:forControlEvents:")
+    public native void removeActionForIdentifierForControlEvents(String actionIdentifier, @NUInt long controlEvents);
+
+    @Generated
+    @Selector("sendAction:")
+    public native void sendAction(UIAction action);
+
+    @Generated
+    @Selector("setContextMenuInteractionEnabled:")
+    public native void setContextMenuInteractionEnabled(boolean value);
+
+    @Generated
+    @Selector("setShowsMenuAsPrimaryAction:")
+    public native void setShowsMenuAsPrimaryAction(boolean value);
+
+    @Generated
+    @Selector("showsMenuAsPrimaryAction")
+    public native boolean showsMenuAsPrimaryAction();
 }

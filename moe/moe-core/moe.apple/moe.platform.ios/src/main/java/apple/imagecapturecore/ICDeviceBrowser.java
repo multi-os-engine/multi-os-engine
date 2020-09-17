@@ -20,6 +20,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -175,4 +176,40 @@ public class ICDeviceBrowser extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("contentsAuthorizationStatus")
+    public native String contentsAuthorizationStatus();
+
+    @Generated
+    @Selector("controlAuthorizationStatus")
+    public native String controlAuthorizationStatus();
+
+    @Generated
+    @Selector("isSuspended")
+    public native boolean isSuspended();
+
+    @Generated
+    @Selector("requestContentsAuthorizationWithCompletion:")
+    public native void requestContentsAuthorizationWithCompletion(
+            @ObjCBlock(name = "call_requestContentsAuthorizationWithCompletion") Block_requestContentsAuthorizationWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestContentsAuthorizationWithCompletion {
+        @Generated
+        void call_requestContentsAuthorizationWithCompletion(String status);
+    }
+
+    @Generated
+    @Selector("requestControlAuthorizationWithCompletion:")
+    public native void requestControlAuthorizationWithCompletion(
+            @ObjCBlock(name = "call_requestControlAuthorizationWithCompletion") Block_requestControlAuthorizationWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestControlAuthorizationWithCompletion {
+        @Generated
+        void call_requestControlAuthorizationWithCompletion(String status);
+    }
 }

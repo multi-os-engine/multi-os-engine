@@ -180,4 +180,12 @@ public class PKInkingTool extends PKTool {
     @Selector("width")
     @NFloat
     public native double width();
+
+    @Generated
+    @Selector("initWithInk:width:")
+    public native PKInkingTool initWithInkWidth(PKInk ink, @NFloat double width);
+
+    @Generated
+    @Selector("ink")
+    public native PKInk ink();
 }

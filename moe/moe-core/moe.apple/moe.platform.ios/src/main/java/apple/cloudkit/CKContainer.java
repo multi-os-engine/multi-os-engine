@@ -184,11 +184,6 @@ public class CKContainer extends NSObject {
     public native CKDatabase databaseWithDatabaseScope(@NInt long databaseScope);
 
     @Generated
-    @Selector("discoverAllContactUserInfosWithCompletionHandler:")
-    public native void discoverAllContactUserInfosWithCompletionHandler(
-            @ObjCBlock(name = "call_discoverAllContactUserInfosWithCompletionHandler") Block_discoverAllContactUserInfosWithCompletionHandler completionHandler);
-
-    @Generated
     @Selector("discoverAllIdentitiesWithCompletionHandler:")
     public native void discoverAllIdentitiesWithCompletionHandler(
             @ObjCBlock(name = "call_discoverAllIdentitiesWithCompletionHandler") Block_discoverAllIdentitiesWithCompletionHandler completionHandler);
@@ -207,16 +202,6 @@ public class CKContainer extends NSObject {
     @Selector("discoverUserIdentityWithUserRecordID:completionHandler:")
     public native void discoverUserIdentityWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
             @ObjCBlock(name = "call_discoverUserIdentityWithUserRecordIDCompletionHandler") Block_discoverUserIdentityWithUserRecordIDCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("discoverUserInfoWithEmailAddress:completionHandler:")
-    public native void discoverUserInfoWithEmailAddressCompletionHandler(String email,
-            @ObjCBlock(name = "call_discoverUserInfoWithEmailAddressCompletionHandler") Block_discoverUserInfoWithEmailAddressCompletionHandler completionHandler);
-
-    @Generated
-    @Selector("discoverUserInfoWithUserRecordID:completionHandler:")
-    public native void discoverUserInfoWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
-            @ObjCBlock(name = "call_discoverUserInfoWithUserRecordIDCompletionHandler") Block_discoverUserInfoWithUserRecordIDCompletionHandler completionHandler);
 
     @Generated
     @Selector("fetchAllLongLivedOperationIDsWithCompletionHandler:")
@@ -295,14 +280,6 @@ public class CKContainer extends NSObject {
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_discoverAllContactUserInfosWithCompletionHandler {
-        @Generated
-        void call_discoverAllContactUserInfosWithCompletionHandler(NSArray<? extends CKDiscoveredUserInfo> userInfos,
-                NSError error);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
     public interface Block_discoverAllIdentitiesWithCompletionHandler {
         @Generated
         void call_discoverAllIdentitiesWithCompletionHandler(NSArray<? extends CKUserIdentity> userIdentities,
@@ -328,20 +305,6 @@ public class CKContainer extends NSObject {
     public interface Block_discoverUserIdentityWithUserRecordIDCompletionHandler {
         @Generated
         void call_discoverUserIdentityWithUserRecordIDCompletionHandler(CKUserIdentity userInfo, NSError error);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverUserInfoWithEmailAddressCompletionHandler {
-        @Generated
-        void call_discoverUserInfoWithEmailAddressCompletionHandler(CKDiscoveredUserInfo userInfo, NSError error);
-    }
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_discoverUserInfoWithUserRecordIDCompletionHandler {
-        @Generated
-        void call_discoverUserInfoWithUserRecordIDCompletionHandler(CKDiscoveredUserInfo userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

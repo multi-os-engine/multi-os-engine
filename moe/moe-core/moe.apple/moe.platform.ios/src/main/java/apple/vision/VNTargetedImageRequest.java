@@ -3,6 +3,7 @@ package apple.vision;
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coreimage.CIImage;
+import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
@@ -345,4 +346,40 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:options:")
+    public native VNTargetedImageRequest initWithTargetedCMSampleBufferOptions(CMSampleBufferRef sampleBuffer,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:options:completionHandler:")
+    public native VNTargetedImageRequest initWithTargetedCMSampleBufferOptionsCompletionHandler(
+            CMSampleBufferRef sampleBuffer, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOptionsCompletionHandler") Block_initWithTargetedCMSampleBufferOptionsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithTargetedCMSampleBufferOptionsCompletionHandler {
+        @Generated
+        void call_initWithTargetedCMSampleBufferOptionsCompletionHandler(VNRequest request, NSError error);
+    }
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:orientation:options:")
+    public native VNTargetedImageRequest initWithTargetedCMSampleBufferOrientationOptions(
+            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithTargetedCMSampleBuffer:orientation:options:completionHandler:")
+    public native VNTargetedImageRequest initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(
+            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options,
+            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler") Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler {
+        @Generated
+        void call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(VNRequest request, NSError error);
+    }
 }

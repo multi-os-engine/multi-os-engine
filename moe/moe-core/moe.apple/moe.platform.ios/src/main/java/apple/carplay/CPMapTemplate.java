@@ -302,4 +302,9 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("showTripPreviews:selectedTrip:textConfiguration:")
+    public native void showTripPreviewsSelectedTripTextConfiguration(NSArray<? extends CPTrip> tripPreviews,
+            CPTrip selectedTrip, CPTripPreviewTextConfiguration textConfiguration);
 }

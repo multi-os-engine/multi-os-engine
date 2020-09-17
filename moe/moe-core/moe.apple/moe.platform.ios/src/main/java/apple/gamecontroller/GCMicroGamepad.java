@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GCMicroGamepad extends NSObject {
+public class GCMicroGamepad extends GCPhysicalInputProfile {
     static {
         NatJ.register();
     }

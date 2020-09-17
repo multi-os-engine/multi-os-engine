@@ -32,4 +32,8 @@ public final class MTLArgumentType {
 
     @Generated @NUInt public static final long ImageblockData = 0x0000000000000010L;
     @Generated @NUInt public static final long Imageblock = 0x0000000000000011L;
+    @Generated @NUInt public static final long VisibleFunctionTable = 0x0000000000000018L;
+    @Generated @NUInt public static final long PrimitiveAccelerationStructure = 0x0000000000000019L;
+    @Generated @NUInt public static final long InstanceAccelerationStructure = 0x000000000000001AL;
+    @Generated @NUInt public static final long IntersectionFunctionTable = 0x000000000000001BL;
 }

@@ -16,4 +16,5 @@ public final class ICReturnConnectionErrorCode {
     @Generated @NInt public static final long EjectFailed = 0xFFFFFFFFFFFFAC9EL;
     @Generated @NInt public static final long FailedToOpen = 0xFFFFFFFFFFFFAC9FL;
     @Generated @NInt public static final long FailedToOpenDevice = 0xFFFFFFFFFFFFACA0L;
+    @Generated @NInt public static final long NotAuthorizedToOpenDevice = 0xFFFFFFFFFFFFACA1L;
 }

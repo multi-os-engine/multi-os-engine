@@ -1,6 +1,7 @@
 package apple.vision;
 
 import apple.NSObject;
+import apple.coremedia.struct.CMTimeRange;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -12,6 +13,7 @@ import apple.vision.protocol.VNRequestRevisionProviding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -180,4 +182,9 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("requestRevision")
     @NUInt
     public native long requestRevision();
+
+    @Generated
+    @Selector("timeRange")
+    @ByValue
+    public native CMTimeRange timeRange();
 }

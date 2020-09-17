@@ -32,4 +32,6 @@ public final class CFNetServicesError {
     @Generated
     private CFNetServicesError() {
     }
+
+    @Generated public static final int MissingRequiredConfiguration = 0xFFFEE6B8;
 }

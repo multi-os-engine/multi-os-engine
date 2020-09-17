@@ -125,13 +125,6 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     public native INMediaSearch initWithCoder(NSCoder coder);
 
     @Generated
-    @Selector("initWithMediaType:sortOrder:mediaName:artistName:albumName:genreNames:moodNames:activityNames:releaseDate:reference:mediaIdentifier:")
-    public native INMediaSearch initWithMediaTypeSortOrderMediaNameArtistNameAlbumNameGenreNamesMoodNamesActivityNamesReleaseDateReferenceMediaIdentifier(
-            @NInt long mediaType, @NInt long sortOrder, String mediaName, String artistName, String albumName,
-            NSArray<String> genreNames, NSArray<String> moodNames, NSArray<String> activityNames,
-            INDateComponentsRange releaseDate, @NInt long reference, String mediaIdentifier);
-
-    @Generated
     @Selector("initWithMediaType:sortOrder:mediaName:artistName:albumName:genreNames:moodNames:releaseDate:reference:mediaIdentifier:")
     public native INMediaSearch initWithMediaTypeSortOrderMediaNameArtistNameAlbumNameGenreNamesMoodNamesReleaseDateReferenceMediaIdentifier(
             @NInt long mediaType, @NInt long sortOrder, String mediaName, String artistName, String albumName,

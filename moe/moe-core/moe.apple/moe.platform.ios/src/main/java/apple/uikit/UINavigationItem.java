@@ -316,4 +316,21 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Generated
     @Selector("standardAppearance")
     public native UINavigationBarAppearance standardAppearance();
+
+    @Generated
+    @Selector("backButtonDisplayMode")
+    @NInt
+    public native long backButtonDisplayMode();
+
+    @Generated
+    @Selector("backButtonTitle")
+    public native String backButtonTitle();
+
+    @Generated
+    @Selector("setBackButtonDisplayMode:")
+    public native void setBackButtonDisplayMode(@NInt long value);
+
+    @Generated
+    @Selector("setBackButtonTitle:")
+    public native void setBackButtonTitle(String value);
 }

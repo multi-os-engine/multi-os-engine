@@ -287,4 +287,21 @@ public class NLEmbedding extends NSObject {
     public static native boolean writeEmbeddingForDictionaryLanguageRevisionToURLError(
             NSDictionary<String, ? extends NSArray<? extends NSNumber>> dictionary, String language,
             @NUInt long revision, NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("currentSentenceEmbeddingRevisionForLanguage:")
+    @NUInt
+    public static native long currentSentenceEmbeddingRevisionForLanguage(String language);
+
+    @Generated
+    @Selector("sentenceEmbeddingForLanguage:")
+    public static native NLEmbedding sentenceEmbeddingForLanguage(String language);
+
+    @Generated
+    @Selector("sentenceEmbeddingForLanguage:revision:")
+    public static native NLEmbedding sentenceEmbeddingForLanguageRevision(String language, @NUInt long revision);
+
+    @Generated
+    @Selector("supportedSentenceEmbeddingRevisionsForLanguage:")
+    public static native NSIndexSet supportedSentenceEmbeddingRevisionsForLanguage(String language);
 }

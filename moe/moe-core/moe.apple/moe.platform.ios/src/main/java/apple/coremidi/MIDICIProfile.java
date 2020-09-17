@@ -171,4 +171,8 @@ public class MIDICIProfile extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithData:")
+    public native MIDICIProfile initWithData(NSData data);
 }

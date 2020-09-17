@@ -209,4 +209,26 @@ public class INSendMessageIntent extends INIntent {
     @Generated
     @Selector("speakableGroupName")
     public native INSpeakableString speakableGroupName();
+
+    @Generated
+    @Selector("attachments")
+    public native NSArray<? extends INSendMessageAttachment> attachments();
+
+    @Generated
+    @Selector("initWithRecipients:outgoingMessageType:content:speakableGroupName:conversationIdentifier:serviceName:sender:")
+    public native INSendMessageIntent initWithRecipientsOutgoingMessageTypeContentSpeakableGroupNameConversationIdentifierServiceNameSender(
+            NSArray<? extends INPerson> recipients, @NInt long outgoingMessageType, String content,
+            INSpeakableString speakableGroupName, String conversationIdentifier, String serviceName, INPerson sender);
+
+    @Generated
+    @Selector("initWithRecipients:outgoingMessageType:content:speakableGroupName:conversationIdentifier:serviceName:sender:attachments:")
+    public native INSendMessageIntent initWithRecipientsOutgoingMessageTypeContentSpeakableGroupNameConversationIdentifierServiceNameSenderAttachments(
+            NSArray<? extends INPerson> recipients, @NInt long outgoingMessageType, String content,
+            INSpeakableString speakableGroupName, String conversationIdentifier, String serviceName, INPerson sender,
+            NSArray<? extends INSendMessageAttachment> attachments);
+
+    @Generated
+    @Selector("outgoingMessageType")
+    @NInt
+    public native long outgoingMessageType();
 }

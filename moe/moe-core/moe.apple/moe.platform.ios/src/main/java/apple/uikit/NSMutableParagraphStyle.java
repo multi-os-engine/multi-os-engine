@@ -332,4 +332,13 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("tailIndent")
     @NFloat
     public native double tailIndent();
+
+    @Generated
+    @Selector("lineBreakStrategy")
+    @NUInt
+    public native long lineBreakStrategy();
+
+    @Generated
+    @Selector("setLineBreakStrategy:")
+    public native void setLineBreakStrategy(@NUInt long value);
 }

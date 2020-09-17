@@ -7,6 +7,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.uikit.protocol.UIAccessibilityIdentification;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -31,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding {
+public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding, UIAccessibilityIdentification {
     static {
         NatJ.register();
     }
@@ -173,4 +174,12 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("accessibilityIdentifier")
+    public native String accessibilityIdentifier();
+
+    @Generated
+    @Selector("setAccessibilityIdentifier:")
+    public native void setAccessibilityIdentifier(String value);
 }

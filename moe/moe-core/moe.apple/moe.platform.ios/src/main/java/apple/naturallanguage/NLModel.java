@@ -3,8 +3,10 @@ package apple.naturallanguage;
 import apple.NSObject;
 import apple.coreml.MLModel;
 import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -164,4 +166,14 @@ public class NLModel extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("predictedLabelHypothesesForString:maximumCount:")
+    public native NSDictionary<String, ? extends NSNumber> predictedLabelHypothesesForStringMaximumCount(String string,
+            @NUInt long maximumCount);
+
+    @Generated
+    @Selector("predictedLabelHypothesesForTokens:maximumCount:")
+    public native NSArray<? extends NSDictionary<String, ? extends NSNumber>> predictedLabelHypothesesForTokensMaximumCount(
+            NSArray<String> tokens, @NUInt long maximumCount);
 }

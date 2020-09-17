@@ -188,4 +188,16 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("canDeleteRecordForManagedObjectWithID:")
+    public native boolean canDeleteRecordForManagedObjectWithID(NSManagedObjectID objectID);
+
+    @Generated
+    @Selector("canModifyManagedObjectsInStore:")
+    public native boolean canModifyManagedObjectsInStore(NSPersistentStore store);
+
+    @Generated
+    @Selector("canUpdateRecordForManagedObjectWithID:")
+    public native boolean canUpdateRecordForManagedObjectWithID(NSManagedObjectID objectID);
 }

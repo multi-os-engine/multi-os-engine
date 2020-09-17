@@ -191,4 +191,8 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("trainingInputDescriptionsByName")
     public native NSDictionary<String, ? extends MLFeatureDescription> trainingInputDescriptionsByName();
+
+    @Generated
+    @Selector("classLabels")
+    public native NSArray<?> classLabels();
 }

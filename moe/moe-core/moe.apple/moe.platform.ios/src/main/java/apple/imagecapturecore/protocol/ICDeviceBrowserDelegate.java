@@ -36,4 +36,32 @@ public interface ICDeviceBrowserDelegate {
     @Generated
     @Selector("deviceBrowser:didRemoveDevice:moreGoing:")
     void deviceBrowserDidRemoveDeviceMoreGoing(ICDeviceBrowser browser, ICDevice device, boolean moreGoing);
+
+    @Generated
+    @IsOptional
+    @Selector("deviceBrowserDidCancelSuspendOperations:")
+    default void deviceBrowserDidCancelSuspendOperations(ICDeviceBrowser browser) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("deviceBrowserDidResumeOperations:")
+    default void deviceBrowserDidResumeOperations(ICDeviceBrowser browser) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("deviceBrowserDidSuspendOperations:")
+    default void deviceBrowserDidSuspendOperations(ICDeviceBrowser browser) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("deviceBrowserWillSuspendOperations:")
+    default void deviceBrowserWillSuspendOperations(ICDeviceBrowser browser) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

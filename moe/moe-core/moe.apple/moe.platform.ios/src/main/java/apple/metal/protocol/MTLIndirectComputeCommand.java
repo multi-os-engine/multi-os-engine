@@ -56,4 +56,8 @@ public interface MTLIndirectComputeCommand {
     @Generated
     @Selector("setThreadgroupMemoryLength:atIndex:")
     void setThreadgroupMemoryLengthAtIndex(@NUInt long length, @NUInt long index);
+
+    @Generated
+    @Selector("setImageblockWidth:height:")
+    void setImageblockWidthHeight(@NUInt long width, @NUInt long height);
 }

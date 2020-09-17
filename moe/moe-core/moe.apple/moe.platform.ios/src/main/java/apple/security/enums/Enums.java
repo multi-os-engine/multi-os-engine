@@ -652,4 +652,7 @@ public final class Enums {
     @Generated public static final int errSecCertificatePolicyNotAllowed = 0xFFFEF6C5;
     @Generated public static final int errSecCertificateNameNotAllowed = 0xFFFEF6C4;
     @Generated public static final int errSecCertificateValidityPeriodTooLong = 0xFFFEF6C3;
+    @Generated public static final int errSecRestrictedAPI = 0xFFFF7B1C;
+    @Generated public static final int errSecCertificateIsCA = 0xFFFEF6C2;
+    @Generated public static final int errSSLEarlyDataRejected = 0xFFFFD95E;
 }

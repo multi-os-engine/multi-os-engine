@@ -1057,4 +1057,19 @@ public final class Enums {
     @Generated public static final int kAudioCodecAppendInputBufferListSelect = 0x00000009;
     @Generated public static final int kAudioCodecProduceOutputBufferListSelect = 0x0000000A;
     @Generated public static final int kAudioFileInvalidPacketDependencyError = 0x6465703F;
+    @Generated public static final int kAudioFileBW64Type = 0x42573634;
+    @Generated public static final int kAudioFileWave64Type = 0x57363466;
+    @Generated public static final int kAudioUnitProperty_SpatialMixerSourceMode = 0x00000BBD;
+    @Generated public static final int kAudioUnitProperty_SpatialMixerOutputType = 0x00000C1C;
+    @Generated public static final int kAudioUnitProperty_SpatialMixerPointSourceInHeadMode = 0x00000C1F;
+    @Generated public static final int kSpatialMixerParam_HeadYaw = 0x00000013;
+    @Generated public static final int kSpatialMixerParam_HeadPitch = 0x00000014;
+    @Generated public static final int kSpatialMixerParam_HeadRoll = 0x00000015;
+    @Generated public static final int kAudioFilePropertyID3TagOffset = 0x6964336F;
+    @Generated public static final int kSampleDelayParam_DelayFrames = 0x00000000;
+    @Generated public static final int kAudioUnitProperty_RenderContextObserver = 0x0000003C;
+    @Generated public static final int kExtAudioFilePacketTableInfoOverride_UseFileValue = 0xFFFFFFFF;
+    @Generated public static final int kExtAudioFilePacketTableInfoOverride_UseFileValueIfValid = 0xFFFFFFFE;
+    @Generated public static final int kAudioFormatProperty_AvailableDecodeNumberChannels = 0x61646E63;
+    @Generated public static final int kAudioOutputUnitProperty_OSWorkgroup = 0x000007DF;
 }

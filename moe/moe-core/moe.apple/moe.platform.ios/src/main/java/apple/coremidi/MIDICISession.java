@@ -1,16 +1,15 @@
 package apple.coremidi;
 
 import apple.NSObject;
-import apple.coremidi.struct.MIDICIDeviceIdentification;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
-import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -89,11 +88,6 @@ public class MIDICISession extends NSObject {
     public static native String description_static();
 
     @Generated
-    @Selector("deviceIdentification")
-    @ByValue
-    public native MIDICIDeviceIdentification deviceIdentification();
-
-    @Generated
     @Selector("disableProfile:onChannel:error:")
     public native boolean disableProfileOnChannelError(MIDICIProfile profile, byte channel,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
@@ -104,36 +98,6 @@ public class MIDICISession extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
-    @Selector("entity")
-    public native int entity();
-
-    @Generated
-    @Selector("getProperty:onChannel:responseHandler:")
-    public native void getPropertyOnChannelResponseHandler(NSData inquiry, byte channel,
-            @ObjCBlock(name = "call_getPropertyOnChannelResponseHandler") Block_getPropertyOnChannelResponseHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_getPropertyOnChannelResponseHandler {
-        @Generated
-        void call_getPropertyOnChannelResponseHandler(MIDICISession session, byte channel, NSData response,
-                NSError error);
-    }
-
-    @Generated
-    @Selector("hasProperty:onChannel:responseHandler:")
-    public native void hasPropertyOnChannelResponseHandler(NSData inquiry, byte channel,
-            @ObjCBlock(name = "call_hasPropertyOnChannelResponseHandler") Block_hasPropertyOnChannelResponseHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_hasPropertyOnChannelResponseHandler {
-        @Generated
-        void call_hasPropertyOnChannelResponseHandler(MIDICISession session, byte channel, NSData response,
-                NSError error);
-    }
-
-    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
@@ -141,18 +105,6 @@ public class MIDICISession extends NSObject {
     @Generated
     @Selector("init")
     public native MIDICISession init();
-
-    @Generated
-    @Selector("initWithMIDIEntity:dataReadyHandler:")
-    public native MIDICISession initWithMIDIEntityDataReadyHandler(int entity,
-            @ObjCBlock(name = "call_initWithMIDIEntityDataReadyHandler") Block_initWithMIDIEntityDataReadyHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithMIDIEntityDataReadyHandler {
-        @Generated
-        void call_initWithMIDIEntityDataReadyHandler();
-    }
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -199,18 +151,6 @@ public class MIDICISession extends NSObject {
     public native MIDICIProfileState profileStateForChannel(byte channel);
 
     @Generated
-    @Selector("propertyChangedCallback")
-    @ObjCBlock(name = "call_propertyChangedCallback_ret")
-    public native Block_propertyChangedCallback_ret propertyChangedCallback();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_propertyChangedCallback_ret {
-        @Generated
-        void call_propertyChangedCallback_ret(MIDICISession session, byte channel, NSData data);
-    }
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -229,31 +169,6 @@ public class MIDICISession extends NSObject {
         @Generated
         void call_setProfileChangedCallback(MIDICISession session, byte channel, MIDICIProfile profile,
                 boolean enabled);
-    }
-
-    @Generated
-    @Selector("setProperty:onChannel:responseHandler:")
-    public native void setPropertyOnChannelResponseHandler(NSData inquiry, byte channel,
-            @ObjCBlock(name = "call_setPropertyOnChannelResponseHandler") Block_setPropertyOnChannelResponseHandler handler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setPropertyOnChannelResponseHandler {
-        @Generated
-        void call_setPropertyOnChannelResponseHandler(MIDICISession session, byte channel, NSData response,
-                NSError error);
-    }
-
-    @Generated
-    @Selector("setPropertyChangedCallback:")
-    public native void setPropertyChangedCallback(
-            @ObjCBlock(name = "call_setPropertyChangedCallback") Block_setPropertyChangedCallback value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setPropertyChangedCallback {
-        @Generated
-        void call_setPropertyChangedCallback(MIDICISession session, byte channel, NSData data);
     }
 
     @Generated
@@ -276,4 +191,72 @@ public class MIDICISession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("deviceInfo")
+    public native MIDICIDeviceInfo deviceInfo();
+
+    @Generated
+    @Selector("initWithDiscoveredNode:dataReadyHandler:disconnectHandler:")
+    public native MIDICISession initWithDiscoveredNodeDataReadyHandlerDisconnectHandler(
+            MIDICIDiscoveredNode discoveredNode,
+            @ObjCBlock(name = "call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_1") Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_1 handler,
+            @ObjCBlock(name = "call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2") Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2 disconnectHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_1 {
+        @Generated
+        void call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_1();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2 {
+        @Generated
+        void call_initWithDiscoveredNodeDataReadyHandlerDisconnectHandler_2(MIDICISession session, NSError error);
+    }
+
+    @Generated
+    @Selector("maxPropertyRequests")
+    public native NSNumber maxPropertyRequests();
+
+    @Generated
+    @Selector("maxSysExSize")
+    public native NSNumber maxSysExSize();
+
+    @Generated
+    @Selector("midiDestination")
+    public native int midiDestination();
+
+    @Generated
+    @Selector("profileSpecificDataHandler")
+    @ObjCBlock(name = "call_profileSpecificDataHandler_ret")
+    public native Block_profileSpecificDataHandler_ret profileSpecificDataHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_profileSpecificDataHandler_ret {
+        @Generated
+        void call_profileSpecificDataHandler_ret(MIDICISession session, byte channel, MIDICIProfile profile,
+                NSData profileSpecificData);
+    }
+
+    @Generated
+    @Selector("sendProfile:onChannel:profileData:")
+    public native boolean sendProfileOnChannelProfileData(MIDICIProfile profile, byte channel,
+            NSData profileSpecificData);
+
+    @Generated
+    @Selector("setProfileSpecificDataHandler:")
+    public native void setProfileSpecificDataHandler(
+            @ObjCBlock(name = "call_setProfileSpecificDataHandler") Block_setProfileSpecificDataHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setProfileSpecificDataHandler {
+        @Generated
+        void call_setProfileSpecificDataHandler(MIDICISession session, byte channel, MIDICIProfile profile,
+                NSData profileSpecificData);
+    }
 }

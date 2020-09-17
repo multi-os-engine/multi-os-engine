@@ -1028,4 +1028,8 @@ public final class CFNetwork {
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyAllowConstrainedNetworkAccess();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFHTTPVersion3_0();
 }

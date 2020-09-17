@@ -275,4 +275,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("tailIndent")
     @NFloat
     public native double tailIndent();
+
+    @Generated
+    @Selector("lineBreakStrategy")
+    @NUInt
+    public native long lineBreakStrategy();
 }

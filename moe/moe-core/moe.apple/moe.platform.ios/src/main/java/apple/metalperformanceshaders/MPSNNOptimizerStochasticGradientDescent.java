@@ -218,4 +218,14 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithDevice:momentumScale:useNesterovMomentum:optimizerDescriptor:")
+    public native MPSNNOptimizerStochasticGradientDescent initWithDeviceMomentumScaleUseNesterovMomentumOptimizerDescriptor(
+            @Mapped(ObjCObjectMapper.class) MTLDevice device, float momentumScale, boolean useNesterovMomentum,
+            MPSNNOptimizerDescriptor optimizerDescriptor);
+
+    @Generated
+    @Selector("useNesterovMomentum")
+    public native boolean useNesterovMomentum();
 }

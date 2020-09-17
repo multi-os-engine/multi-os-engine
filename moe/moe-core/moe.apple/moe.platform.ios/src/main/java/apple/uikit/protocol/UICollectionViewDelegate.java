@@ -269,4 +269,29 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     default void collectionViewDidEndMultipleSelectionInteraction(UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:canEditItemAtIndexPath:")
+    default boolean collectionViewCanEditItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willDisplayContextMenuWithConfiguration:animator:")
+    default void collectionViewWillDisplayContextMenuWithConfigurationAnimator(UICollectionView collectionView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:willEndContextMenuInteractionWithConfiguration:animator:")
+    default void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(UICollectionView collectionView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

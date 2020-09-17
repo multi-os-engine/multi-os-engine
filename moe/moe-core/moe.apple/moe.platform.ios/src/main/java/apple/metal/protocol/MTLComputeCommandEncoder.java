@@ -173,4 +173,36 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     @Selector("setStageInRegionWithIndirectBuffer:indirectBufferOffset:")
     void setStageInRegionWithIndirectBufferIndirectBufferOffset(
             @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer, @NUInt long indirectBufferOffset);
+
+    @Generated
+    @Selector("sampleCountersInBuffer:atSampleIndex:withBarrier:")
+    void sampleCountersInBufferAtSampleIndexWithBarrier(
+            @Mapped(ObjCObjectMapper.class) MTLCounterSampleBuffer sampleBuffer, @NUInt long sampleIndex,
+            boolean barrier);
+
+    @Generated
+    @Selector("setAccelerationStructure:atBufferIndex:")
+    void setAccelerationStructureAtBufferIndex(
+            @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure, @NUInt long bufferIndex);
+
+    @Generated
+    @Selector("setIntersectionFunctionTable:atBufferIndex:")
+    void setIntersectionFunctionTableAtBufferIndex(
+            @Mapped(ObjCObjectMapper.class) MTLIntersectionFunctionTable intersectionFunctionTable,
+            @NUInt long bufferIndex);
+
+    @Generated
+    @Selector("setIntersectionFunctionTables:withBufferRange:")
+    void setIntersectionFunctionTablesWithBufferRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables, @ByValue NSRange range);
+
+    @Generated
+    @Selector("setVisibleFunctionTable:atBufferIndex:")
+    void setVisibleFunctionTableAtBufferIndex(
+            @Mapped(ObjCObjectMapper.class) MTLVisibleFunctionTable visibleFunctionTable, @NUInt long bufferIndex);
+
+    @Generated
+    @Selector("setVisibleFunctionTables:withBufferRange:")
+    void setVisibleFunctionTablesWithBufferRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> visibleFunctionTables, @ByValue NSRange range);
 }

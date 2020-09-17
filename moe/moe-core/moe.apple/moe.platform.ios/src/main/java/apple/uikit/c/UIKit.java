@@ -29,6 +29,7 @@ import apple.foundation.NSError;
 import apple.foundation.NSMutableData;
 import apple.foundation.NSURL;
 import apple.uikit.UIBezierPath;
+import apple.uikit.UICellAccessory;
 import apple.uikit.UIImage;
 import apple.uikit.UIView;
 import apple.uikit.struct.NSDirectionalEdgeInsets;
@@ -53,6 +54,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.moe.natj.objc.Class;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -2847,4 +2849,95 @@ public final class UIKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF12();
+
+    @Generated
+    @CFunction
+    public static native boolean UIAccessibilityButtonShapesEnabled();
+
+    @Generated
+    @CFunction
+    public static native boolean UIAccessibilityPrefersCrossFadeTransitions();
+
+    @Generated
+    @CFunction
+    @ObjCBlock(name = "call_UICellAccessoryPositionBeforeAccessoryOfClass_ret")
+    public static native Block_UICellAccessoryPositionBeforeAccessoryOfClass_ret UICellAccessoryPositionBeforeAccessoryOfClass(
+            Class accessoryClass);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_UICellAccessoryPositionBeforeAccessoryOfClass_ret {
+        @Generated
+        @NUInt
+        long call_UICellAccessoryPositionBeforeAccessoryOfClass_ret(NSArray<? extends UICellAccessory> accessories);
+    }
+
+    @Generated
+    @CFunction
+    @ObjCBlock(name = "call_UICellAccessoryPositionAfterAccessoryOfClass_ret")
+    public static native Block_UICellAccessoryPositionAfterAccessoryOfClass_ret UICellAccessoryPositionAfterAccessoryOfClass(
+            Class accessoryClass);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_UICellAccessoryPositionAfterAccessoryOfClass_ret {
+        @Generated
+        @NUInt
+        long call_UICellAccessoryPositionAfterAccessoryOfClass_ret(NSArray<? extends UICellAccessory> accessories);
+    }
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuOpenRecent();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTrackingAttributeName();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPointerLockStateDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPointerLockStateSceneUserInfoKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityButtonShapesEnabledStatusDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIAccessibilityPrefersCrossFadeTransitionsStatusDidChangeNotification();
+
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UICellAccessoryStandardDimension();
+
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UIListContentImageStandardDimension();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternProbableWebURL();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternProbableWebSearch();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIPasteboardDetectionPatternNumber();
 }

@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GCExtendedGamepad extends NSObject {
+public class GCExtendedGamepad extends GCPhysicalInputProfile {
     static {
         NatJ.register();
     }
@@ -250,4 +250,8 @@ public class GCExtendedGamepad extends NSObject {
     @Generated
     @Selector("setStateFromExtendedGamepad:")
     public native void setStateFromExtendedGamepad(GCExtendedGamepad extendedGamepad);
+
+    @Generated
+    @Selector("buttonHome")
+    public native GCControllerButtonInput buttonHome();
 }

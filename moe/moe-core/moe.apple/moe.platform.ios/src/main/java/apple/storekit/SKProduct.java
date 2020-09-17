@@ -208,4 +208,8 @@ public class SKProduct extends NSObject {
     @Generated
     @Selector("subscriptionPeriod")
     public native SKProductSubscriptionPeriod subscriptionPeriod();
+
+    @Generated
+    @Selector("isFamilyShareable")
+    public native boolean isFamilyShareable();
 }

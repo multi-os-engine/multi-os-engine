@@ -260,4 +260,47 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("applySnapshot:toSection:animatingDifferences:")
+    public native void applySnapshotToSectionAnimatingDifferences(
+            NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
+            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier, boolean animatingDifferences);
+
+    @Generated
+    @Selector("applySnapshot:toSection:animatingDifferences:completion:")
+    public native void applySnapshotToSectionAnimatingDifferencesCompletion(
+            NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
+            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier, boolean animatingDifferences,
+            @ObjCBlock(name = "call_applySnapshotToSectionAnimatingDifferencesCompletion") Block_applySnapshotToSectionAnimatingDifferencesCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applySnapshotToSectionAnimatingDifferencesCompletion {
+        @Generated
+        void call_applySnapshotToSectionAnimatingDifferencesCompletion();
+    }
+
+    @Generated
+    @Selector("reorderingHandlers")
+    public native UICollectionViewDiffableDataSourceReorderingHandlers<_SectionIdentifierType, _ItemIdentifierType> reorderingHandlers();
+
+    @Generated
+    @Selector("sectionSnapshotHandlers")
+    public native UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemIdentifierType> sectionSnapshotHandlers();
+
+    @Generated
+    @Selector("setReorderingHandlers:")
+    public native void setReorderingHandlers(
+            UICollectionViewDiffableDataSourceReorderingHandlers<_SectionIdentifierType, _ItemIdentifierType> value);
+
+    @Generated
+    @Selector("setSectionSnapshotHandlers:")
+    public native void setSectionSnapshotHandlers(
+            UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemIdentifierType> value);
+
+    @Generated
+    @Selector("snapshotForSection:")
+    public native NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshotForSection(
+            @Mapped(ObjCObjectMapper.class) _SectionIdentifierType section);
 }

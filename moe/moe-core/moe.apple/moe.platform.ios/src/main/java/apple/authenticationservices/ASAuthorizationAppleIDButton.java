@@ -7,6 +7,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.UIAction;
 import apple.uikit.UIControl;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
@@ -415,4 +416,9 @@ public class ASAuthorizationAppleIDButton extends UIControl {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native ASAuthorizationAppleIDButton initWithFramePrimaryAction(@ByValue CGRect frame,
+            UIAction primaryAction);
 }

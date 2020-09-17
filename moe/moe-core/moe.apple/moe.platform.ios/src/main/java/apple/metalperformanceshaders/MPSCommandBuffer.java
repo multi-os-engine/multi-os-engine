@@ -5,7 +5,11 @@ import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.metal.MTLBlitPassDescriptor;
+import apple.metal.MTLComputePassDescriptor;
 import apple.metal.MTLRenderPassDescriptor;
+import apple.metal.MTLResourceStatePassDescriptor;
+import apple.metal.protocol.MTLAccelerationStructureCommandEncoder;
 import apple.metal.protocol.MTLBlitCommandEncoder;
 import apple.metal.protocol.MTLCommandBuffer;
 import apple.metal.protocol.MTLCommandQueue;
@@ -13,6 +17,7 @@ import apple.metal.protocol.MTLComputeCommandEncoder;
 import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLDrawable;
 import apple.metal.protocol.MTLEvent;
+import apple.metal.protocol.MTLLogContainer;
 import apple.metal.protocol.MTLParallelRenderCommandEncoder;
 import apple.metal.protocol.MTLRenderCommandEncoder;
 import apple.metal.protocol.MTLResourceStateCommandEncoder;
@@ -336,4 +341,36 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Selector("waitUntilScheduled")
     public native void waitUntilScheduled();
+
+    @Generated
+    @Selector("accelerationStructureCommandEncoder")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLAccelerationStructureCommandEncoder accelerationStructureCommandEncoder();
+
+    @Generated
+    @Selector("blitCommandEncoderWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLBlitCommandEncoder blitCommandEncoderWithDescriptor(MTLBlitPassDescriptor blitPassDescriptor);
+
+    @Generated
+    @Selector("computeCommandEncoderWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLComputeCommandEncoder computeCommandEncoderWithDescriptor(
+            MTLComputePassDescriptor computePassDescriptor);
+
+    @Generated
+    @Selector("errorOptions")
+    @NUInt
+    public native long errorOptions();
+
+    @Generated
+    @Selector("logs")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLLogContainer logs();
+
+    @Generated
+    @Selector("resourceStateCommandEncoderWithDescriptor:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLResourceStateCommandEncoder resourceStateCommandEncoderWithDescriptor(
+            MTLResourceStatePassDescriptor resourceStatePassDescriptor);
 }

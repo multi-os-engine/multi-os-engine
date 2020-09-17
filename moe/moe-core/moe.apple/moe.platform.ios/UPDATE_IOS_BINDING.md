@@ -70,6 +70,7 @@
     * `apple.audiotoolbox.AUAudioUnit`
     * `apple.foundation.NSItemProvider`
     * `apple.uikit.UIContextualAction`
+* `setConfiguration` method was added to `apple.uikit.UIListContentView` to implement the interface.
 
 
 ### How to Update Custom Modifications List

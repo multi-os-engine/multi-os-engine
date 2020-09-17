@@ -6,6 +6,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -181,4 +182,11 @@ public class INTrainReservation extends INReservation implements NSCopying, NSSe
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithItemReference:reservationNumber:bookingTime:reservationStatus:reservationHolderName:actions:URL:reservedSeat:trainTrip:")
+    public native INTrainReservation initWithItemReferenceReservationNumberBookingTimeReservationStatusReservationHolderNameActionsURLReservedSeatTrainTrip(
+            INSpeakableString itemReference, String reservationNumber, NSDate bookingTime, @NInt long reservationStatus,
+            String reservationHolderName, NSArray<? extends INReservationAction> actions, NSURL URL,
+            INSeat reservedSeat, INTrainTrip trainTrip);
 }

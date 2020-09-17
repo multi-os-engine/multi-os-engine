@@ -9,6 +9,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -206,4 +207,12 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("contentType")
+    public native UTType contentType();
+
+    @Generated
+    @Selector("setContentType:")
+    public native void setContentType(UTType value);
 }

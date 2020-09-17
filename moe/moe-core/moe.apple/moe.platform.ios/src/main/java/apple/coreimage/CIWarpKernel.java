@@ -192,4 +192,8 @@ public class CIWarpKernel extends CIKernel {
     @Selector("kernelWithFunctionName:fromMetalLibraryData:outputPixelFormat:error:")
     public static native CIWarpKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(String name,
             NSData data, int format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("kernelNamesFromMetalLibraryData:")
+    public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
 }

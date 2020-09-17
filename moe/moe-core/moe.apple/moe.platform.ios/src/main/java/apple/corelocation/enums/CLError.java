@@ -43,4 +43,6 @@ public final class CLError {
     @Generated
     private CLError() {
     }
+
+    @Generated @NInt public static final long PromptDeclined = 0x0000000000000012L;
 }

@@ -321,4 +321,6 @@ public final class Enums {
     @Generated public static final int kAppleLosslessFormatFlag_20BitSourceData = 0x00000002;
     @Generated public static final int kAppleLosslessFormatFlag_24BitSourceData = 0x00000003;
     @Generated public static final int kAppleLosslessFormatFlag_32BitSourceData = 0x00000004;
+    @Generated public static final int kAudioChannelLayoutTag_Atmos_5_1_4 = 0x00C3000A;
+    @Generated public static final int kAudioChannelLayoutTag_Atmos_7_1_2 = 0x00C4000A;
 }

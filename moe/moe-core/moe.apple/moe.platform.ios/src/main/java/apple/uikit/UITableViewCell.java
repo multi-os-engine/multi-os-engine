@@ -25,6 +25,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCoding;
 import apple.uikit.protocol.UIAppearanceContainer;
+import apple.uikit.protocol.UIContentConfiguration;
 import apple.uikit.protocol.UIGestureRecognizerDelegate;
 import apple.uikit.struct.UIEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -809,4 +810,53 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveEvent:")
     public native boolean gestureRecognizerShouldReceiveEvent(UIGestureRecognizer gestureRecognizer, UIEvent event);
+
+    @Generated
+    @Selector("automaticallyUpdatesBackgroundConfiguration")
+    public native boolean automaticallyUpdatesBackgroundConfiguration();
+
+    @Generated
+    @Selector("automaticallyUpdatesContentConfiguration")
+    public native boolean automaticallyUpdatesContentConfiguration();
+
+    @Generated
+    @Selector("backgroundConfiguration")
+    public native UIBackgroundConfiguration backgroundConfiguration();
+
+    @Generated
+    @Selector("configurationState")
+    public native UICellConfigurationState configurationState();
+
+    @Generated
+    @Selector("contentConfiguration")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIContentConfiguration contentConfiguration();
+
+    @Generated
+    @Selector("defaultContentConfiguration")
+    public native UIListContentConfiguration defaultContentConfiguration();
+
+    @Generated
+    @Selector("setAutomaticallyUpdatesBackgroundConfiguration:")
+    public native void setAutomaticallyUpdatesBackgroundConfiguration(boolean value);
+
+    @Generated
+    @Selector("setAutomaticallyUpdatesContentConfiguration:")
+    public native void setAutomaticallyUpdatesContentConfiguration(boolean value);
+
+    @Generated
+    @Selector("setBackgroundConfiguration:")
+    public native void setBackgroundConfiguration(UIBackgroundConfiguration value);
+
+    @Generated
+    @Selector("setContentConfiguration:")
+    public native void setContentConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);
+
+    @Generated
+    @Selector("setNeedsUpdateConfiguration")
+    public native void setNeedsUpdateConfiguration();
+
+    @Generated
+    @Selector("updateConfigurationUsingState:")
+    public native void updateConfigurationUsingState(UICellConfigurationState state);
 }

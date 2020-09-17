@@ -193,4 +193,8 @@ public class HKAudiogramSampleType extends HKSampleType {
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
+
+    @Generated
+    @Selector("electrocardiogramType")
+    public static native HKElectrocardiogramType electrocardiogramType();
 }

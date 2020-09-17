@@ -498,4 +498,22 @@ public class NSCoder extends NSObject {
     @Generated
     @Selector("encodeDirectionalEdgeInsets:forKey:")
     public native void encodeDirectionalEdgeInsetsForKey(@ByValue NSDirectionalEdgeInsets insets, String key);
+
+    @Generated
+    @Selector("decodeArrayOfObjectsOfClass:forKey:")
+    public native NSArray<?> decodeArrayOfObjectsOfClassForKey(Class cls, String key);
+
+    @Generated
+    @Selector("decodeArrayOfObjectsOfClasses:forKey:")
+    public native NSArray<?> decodeArrayOfObjectsOfClassesForKey(NSSet<? extends Class> classes, String key);
+
+    @Generated
+    @Selector("decodeDictionaryWithKeysOfClass:objectsOfClass:forKey:")
+    public native NSDictionary<?, ?> decodeDictionaryWithKeysOfClassObjectsOfClassForKey(Class keyCls, Class objectCls,
+            String key);
+
+    @Generated
+    @Selector("decodeDictionaryWithKeysOfClasses:objectsOfClasses:forKey:")
+    public native NSDictionary<?, ?> decodeDictionaryWithKeysOfClassesObjectsOfClassesForKey(
+            NSSet<? extends Class> keyClasses, NSSet<? extends Class> objectClasses, String key);
 }

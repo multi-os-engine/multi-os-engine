@@ -11,4 +11,5 @@ public final class MKAnnotationViewCollisionMode {
 
     @Generated @NInt public static final long Rectangle = 0x0000000000000000L;
     @Generated @NInt public static final long Circle = 0x0000000000000001L;
+    @Generated @NInt public static final long None = 0x0000000000000002L;
 }

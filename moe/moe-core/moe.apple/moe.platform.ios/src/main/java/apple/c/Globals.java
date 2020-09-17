@@ -17,6 +17,7 @@ limitations under the License.
 package apple.c;
 
 import apple.NSObject;
+import apple.OS_os_workgroup;
 import apple.opaque.DNSRecordRef;
 import apple.opaque.DNSServiceRef;
 import apple.opaque.acl_entry_t;
@@ -25,6 +26,7 @@ import apple.opaque.acl_permset_t;
 import apple.opaque.acl_t;
 import apple.opaque.dispatch_source_type_t;
 import apple.opaque.filesec_t;
+import apple.opaque.os_workgroup_mpt_attr_t;
 import apple.struct.FILE;
 import apple.struct._RuneLocale;
 import apple.struct.__double2;
@@ -48,6 +50,9 @@ import apple.struct.mach_header;
 import apple.struct.mach_msg_header_t;
 import apple.struct.msghdr;
 import apple.struct.os_unfair_lock_s;
+import apple.struct.os_workgroup_attr_opaque_s;
+import apple.struct.os_workgroup_interval_data_opaque_s;
+import apple.struct.os_workgroup_join_token_opaque_s;
 import apple.struct.rlimit;
 import apple.struct.rusage;
 import apple.struct.sa_endpoints;
@@ -112,47 +117,47 @@ public final class Globals {
     @Generated
     @Inline
     @CFunction
-    public static native char _OSSwapInt16(char data);
+    public static native char _OSSwapInt16(char _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native int _OSSwapInt32(int data);
+    public static native int _OSSwapInt32(int _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native long _OSSwapInt64(long data);
+    public static native long _OSSwapInt64(long _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native char OSReadSwapInt16(ConstVoidPtr base, @NUInt long offset);
+    public static native char OSReadSwapInt16(ConstVoidPtr _base, @NUInt long _offset);
 
     @Generated
     @Inline
     @CFunction
-    public static native int OSReadSwapInt32(ConstVoidPtr base, @NUInt long offset);
+    public static native int OSReadSwapInt32(ConstVoidPtr _base, @NUInt long _offset);
 
     @Generated
     @Inline
     @CFunction
-    public static native long OSReadSwapInt64(ConstVoidPtr base, @NUInt long offset);
+    public static native long OSReadSwapInt64(ConstVoidPtr _base, @NUInt long _offset);
 
     @Generated
     @Inline
     @CFunction
-    public static native void OSWriteSwapInt16(VoidPtr base, @NUInt long offset, char data);
+    public static native void OSWriteSwapInt16(VoidPtr _base, @NUInt long _offset, char _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native void OSWriteSwapInt32(VoidPtr base, @NUInt long offset, int data);
+    public static native void OSWriteSwapInt32(VoidPtr _base, @NUInt long _offset, int _data);
 
     @Generated
     @Inline
     @CFunction
-    public static native void OSWriteSwapInt64(VoidPtr base, @NUInt long offset, long data);
+    public static native void OSWriteSwapInt64(VoidPtr _base, @NUInt long _offset, long _data);
 
     @Generated
     @Inline
@@ -6741,4 +6746,88 @@ public final class Globals {
     @Generated
     @CFunction
     public static native VoidPtr object_getIndexedIvars(@Mapped(ObjCObjectMapper.class) Object obj);
+
+    @Generated
+    @CFunction
+    public static native VoidPtr aligned_alloc(@NUInt long __alignment, @NUInt long __size);
+
+    @Generated
+    @CFunction
+    public static native long strtonum(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __numstr,
+            long __minval, long __maxval,
+            @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] __errstrp);
+
+    @Generated
+    @CFunction
+    public static native int strsignal_r(int __sig, BytePtr __strsignalbuf, @NUInt long __buflen);
+
+    @Generated
+    @CFunction
+    public static native OS_os_workgroup os_workgroup_create_with_workgroup(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            OS_os_workgroup wg);
+
+    @Generated
+    @CFunction
+    public static native int os_workgroup_join(OS_os_workgroup wg,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token_out);
+
+    @Generated
+    @CFunction
+    public static native void os_workgroup_leave(OS_os_workgroup wg,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token);
+
+    @Generated
+    @CFunction
+    public static native int os_workgroup_set_working_arena(OS_os_workgroup wg, VoidPtr arena, int max_workers,
+            @FunctionPtr(name = "call_os_workgroup_set_working_arena") Function_os_workgroup_set_working_arena destructor);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_os_workgroup_set_working_arena {
+        @Generated
+        void call_os_workgroup_set_working_arena(VoidPtr arg0);
+    }
+
+    @Generated
+    @CFunction
+    public static native VoidPtr os_workgroup_get_working_arena(OS_os_workgroup wg, IntPtr index_out);
+
+    @Generated
+    @CFunction
+    public static native void os_workgroup_cancel(OS_os_workgroup wg);
+
+    @Generated
+    @CFunction
+    public static native boolean os_workgroup_testcancel(OS_os_workgroup wg);
+
+    @Generated
+    @CFunction
+    public static native int os_workgroup_max_parallel_threads(OS_os_workgroup wg, os_workgroup_mpt_attr_t attr);
+
+    @Generated
+    @CFunction
+    public static native int os_workgroup_interval_start(OS_os_workgroup wg, long start, long deadline,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+
+    @Generated
+    @CFunction
+    public static native int os_workgroup_interval_update(OS_os_workgroup wg, long deadline,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+
+    @Generated
+    @CFunction
+    public static native int os_workgroup_interval_finish(OS_os_workgroup wg,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
+
+    @Generated
+    @CFunction
+    public static native OS_os_workgroup os_workgroup_parallel_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
+
+    @Generated
+    @CFunction
+    public static native void dispatch_workloop_set_os_workgroup(NSObject workloop, OS_os_workgroup workgroup);
 }

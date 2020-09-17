@@ -333,4 +333,8 @@ public class CIBlendKernel extends CIColorKernel {
     @Selector("applyWithForeground:background:colorSpace:")
     public native CIImage applyWithForegroundBackgroundColorSpace(CIImage foreground, CIImage background,
             CGColorSpaceRef colorSpace);
+
+    @Generated
+    @Selector("kernelNamesFromMetalLibraryData:")
+    public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
 }

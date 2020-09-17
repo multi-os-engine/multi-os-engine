@@ -24,6 +24,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIContextMenuInteractionAnimating;
 import apple.uikit.protocol.UIContextMenuInteractionCommitAnimating;
 import apple.uikit.protocol.UISpringLoadedInteractionContext;
 import apple.uikit.protocol.UITableViewDataSource;
@@ -614,4 +615,18 @@ public class UITableViewController extends UIViewController implements UITableVi
     @IsOptional
     @Selector("tableViewDidEndMultipleSelectionInteraction:")
     public native void tableViewDidEndMultipleSelectionInteraction(UITableView tableView);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willDisplayContextMenuWithConfiguration:animator:")
+    public native void tableViewWillDisplayContextMenuWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:willEndContextMenuInteractionWithConfiguration:animator:")
+    public native void tableViewWillEndContextMenuInteractionWithConfigurationAnimator(UITableView tableView,
+            UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator);
 }

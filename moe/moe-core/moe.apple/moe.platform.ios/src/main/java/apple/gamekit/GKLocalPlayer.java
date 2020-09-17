@@ -431,4 +431,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
         void call_fetchItemsForIdentityVerificationSignature(NSURL publicKeyURL, NSData signature, NSData salt,
                 long timestamp, NSError error);
     }
+
+    @Generated
+    @Selector("isPersonalizedCommunicationRestricted")
+    public native boolean isPersonalizedCommunicationRestricted();
 }

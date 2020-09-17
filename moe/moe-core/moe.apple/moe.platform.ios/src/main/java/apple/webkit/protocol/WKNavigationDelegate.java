@@ -154,4 +154,20 @@ public interface WKNavigationDelegate {
         void call_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(@NInt long arg0,
                 WKWebpagePreferences arg1);
     }
+
+    @Generated
+    @IsOptional
+    @Selector("webView:authenticationChallenge:shouldAllowDeprecatedTLS:")
+    default void webViewAuthenticationChallengeShouldAllowDeprecatedTLS(WKWebView webView,
+            NSURLAuthenticationChallenge challenge,
+            @ObjCBlock(name = "call_webViewAuthenticationChallengeShouldAllowDeprecatedTLS") Block_webViewAuthenticationChallengeShouldAllowDeprecatedTLS decisionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_webViewAuthenticationChallengeShouldAllowDeprecatedTLS {
+        @Generated
+        void call_webViewAuthenticationChallengeShouldAllowDeprecatedTLS(boolean arg0);
+    }
 }

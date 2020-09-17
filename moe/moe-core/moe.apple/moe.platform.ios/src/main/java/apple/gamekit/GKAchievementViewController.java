@@ -208,4 +208,22 @@ public class GKAchievementViewController extends GKGameCenterViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    @Generated
+    @Selector("initWithAchievementID:")
+    public native GKAchievementViewController initWithAchievementID(String achievementID);
+
+    @Generated
+    @Selector("initWithLeaderboard:playerScope:")
+    public native GKAchievementViewController initWithLeaderboardPlayerScope(GKLeaderboard leaderboard,
+            @NInt long playerScope);
+
+    @Generated
+    @Selector("initWithLeaderboardID:playerScope:timeScope:")
+    public native GKAchievementViewController initWithLeaderboardIDPlayerScopeTimeScope(String leaderboardID,
+            @NInt long playerScope, @NInt long timeScope);
+
+    @Generated
+    @Selector("initWithState:")
+    public native GKAchievementViewController initWithState(@NInt long state);
 }

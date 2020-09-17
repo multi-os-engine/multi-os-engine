@@ -82,4 +82,9 @@ public final class GameKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GKVoiceChatServiceErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GKPlayerIDNoLongerAvailable();
 }

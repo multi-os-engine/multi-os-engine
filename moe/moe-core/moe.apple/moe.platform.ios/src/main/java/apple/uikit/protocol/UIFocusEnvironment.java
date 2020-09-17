@@ -72,4 +72,11 @@ public interface UIFocusEnvironment {
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
     UIFocusEnvironment parentFocusEnvironment();
+
+    @Generated
+    @IsOptional
+    @Selector("focusGroupIdentifier")
+    default String focusGroupIdentifier() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

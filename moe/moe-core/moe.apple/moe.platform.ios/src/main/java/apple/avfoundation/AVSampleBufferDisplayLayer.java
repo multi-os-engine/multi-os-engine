@@ -274,4 +274,8 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Generated
     @Selector("setPreventsDisplaySleepDuringVideoPlayback:")
     public native void setPreventsDisplaySleepDuringVideoPlayback(boolean value);
+
+    @Generated
+    @Selector("requiresFlushToResumeDecoding")
+    public native boolean requiresFlushToResumeDecoding();
 }

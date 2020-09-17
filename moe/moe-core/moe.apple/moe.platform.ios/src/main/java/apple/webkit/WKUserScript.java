@@ -178,4 +178,9 @@ public class WKUserScript extends NSObject implements NSCopying {
     @Generated
     @Selector("source")
     public native String source();
+
+    @Generated
+    @Selector("initWithSource:injectionTime:forMainFrameOnly:inContentWorld:")
+    public native WKUserScript initWithSourceInjectionTimeForMainFrameOnlyInContentWorld(String source,
+            @NInt long injectionTime, boolean forMainFrameOnly, WKContentWorld contentWorld);
 }

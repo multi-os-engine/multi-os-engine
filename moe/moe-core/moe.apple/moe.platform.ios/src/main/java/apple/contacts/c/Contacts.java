@@ -1566,4 +1566,14 @@ public final class Contacts {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelContactRelationSonInLawOrBrotherInLaw();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNLabelContactRelationGranddaughterOrNiece();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNLabelContactRelationGrandsonOrNephew();
 }

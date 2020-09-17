@@ -482,4 +482,13 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     @Generated
     @Selector("ndefMessagePayload")
     public native NFCNDEFMessage ndefMessagePayload();
+
+    @Generated
+    @Selector("setShortcutAvailability:")
+    public native void setShortcutAvailability(@NUInt long value);
+
+    @Generated
+    @Selector("shortcutAvailability")
+    @NUInt
+    public native long shortcutAvailability();
 }

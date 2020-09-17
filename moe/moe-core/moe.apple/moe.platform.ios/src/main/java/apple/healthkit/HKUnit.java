@@ -481,4 +481,19 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("hertzUnitWithMetricPrefix:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object hertzUnitWithMetricPrefix(@NInt long prefix);
+
+    @Generated
+    @Selector("inchesOfMercuryUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object inchesOfMercuryUnit();
+
+    @Generated
+    @Selector("voltUnit")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object voltUnit();
+
+    @Generated
+    @Selector("voltUnitWithMetricPrefix:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object voltUnitWithMetricPrefix(@NInt long prefix);
 }

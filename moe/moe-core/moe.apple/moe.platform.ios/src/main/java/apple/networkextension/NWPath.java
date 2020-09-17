@@ -166,4 +166,8 @@ public class NWPath extends NSObject {
     @Selector("status")
     @NInt
     public native long status();
+
+    @Generated
+    @Selector("isConstrained")
+    public native boolean isConstrained();
 }

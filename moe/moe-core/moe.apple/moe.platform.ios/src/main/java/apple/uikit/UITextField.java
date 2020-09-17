@@ -1210,4 +1210,8 @@ public class UITextField extends UIControl
     @IsOptional
     @Selector("setPasswordRules:")
     public native void setPasswordRules(UITextInputPasswordRules value);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UITextField initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 }

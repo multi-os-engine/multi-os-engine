@@ -30,7 +30,6 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVAudioSessionDelegate")
 public interface AVAudioSessionDelegate {
-    @Deprecated
     @Generated
     @IsOptional
     @Selector("beginInterruption")
@@ -38,7 +37,6 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
     @Selector("endInterruption")
@@ -46,7 +44,6 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
     @Selector("endInterruptionWithFlags:")
@@ -54,7 +51,6 @@ public interface AVAudioSessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
-    @Deprecated
     @Generated
     @IsOptional
     @Selector("inputIsAvailableChanged:")

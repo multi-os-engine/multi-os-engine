@@ -230,4 +230,37 @@ public class GCMotion extends NSObject {
     @Generated
     @Selector("setUserAcceleration:")
     public native void setUserAcceleration(@ByValue GCAcceleration userAcceleration);
+
+    @Generated
+    @Selector("acceleration")
+    @ByValue
+    public native GCAcceleration acceleration();
+
+    @Generated
+    @Selector("hasAttitude")
+    public native boolean hasAttitude();
+
+    @Generated
+    @Selector("hasGravityAndUserAcceleration")
+    public native boolean hasGravityAndUserAcceleration();
+
+    @Generated
+    @Selector("hasRotationRate")
+    public native boolean hasRotationRate();
+
+    @Generated
+    @Selector("sensorsActive")
+    public native boolean sensorsActive();
+
+    @Generated
+    @Selector("sensorsRequireManualActivation")
+    public native boolean sensorsRequireManualActivation();
+
+    @Generated
+    @Selector("setAcceleration:")
+    public native void setAcceleration(@ByValue GCAcceleration acceleration);
+
+    @Generated
+    @Selector("setSensorsActive:")
+    public native void setSensorsActive(boolean value);
 }

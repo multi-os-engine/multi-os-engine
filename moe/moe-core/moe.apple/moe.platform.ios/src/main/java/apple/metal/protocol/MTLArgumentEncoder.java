@@ -120,4 +120,29 @@ public interface MTLArgumentEncoder {
     @Selector("setRenderPipelineStates:withRange:")
     void setRenderPipelineStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> pipelines,
             @ByValue NSRange range);
+
+    @Generated
+    @Selector("setAccelerationStructure:atIndex:")
+    void setAccelerationStructureAtIndex(@Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure,
+            @NUInt long index);
+
+    @Generated
+    @Selector("setIntersectionFunctionTable:atIndex:")
+    void setIntersectionFunctionTableAtIndex(
+            @Mapped(ObjCObjectMapper.class) MTLIntersectionFunctionTable intersectionFunctionTable, @NUInt long index);
+
+    @Generated
+    @Selector("setIntersectionFunctionTables:withRange:")
+    void setIntersectionFunctionTablesWithRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables, @ByValue NSRange range);
+
+    @Generated
+    @Selector("setVisibleFunctionTable:atIndex:")
+    void setVisibleFunctionTableAtIndex(@Mapped(ObjCObjectMapper.class) MTLVisibleFunctionTable visibleFunctionTable,
+            @NUInt long index);
+
+    @Generated
+    @Selector("setVisibleFunctionTables:withRange:")
+    void setVisibleFunctionTablesWithRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> visibleFunctionTables, @ByValue NSRange range);
 }

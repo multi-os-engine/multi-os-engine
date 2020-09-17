@@ -225,4 +225,22 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @Selector("timeScope")
     @NInt
     public native long timeScope();
+
+    @Generated
+    @Selector("initWithAchievementID:")
+    public native GKLeaderboardViewController initWithAchievementID(String achievementID);
+
+    @Generated
+    @Selector("initWithLeaderboard:playerScope:")
+    public native GKLeaderboardViewController initWithLeaderboardPlayerScope(GKLeaderboard leaderboard,
+            @NInt long playerScope);
+
+    @Generated
+    @Selector("initWithLeaderboardID:playerScope:timeScope:")
+    public native GKLeaderboardViewController initWithLeaderboardIDPlayerScopeTimeScope(String leaderboardID,
+            @NInt long playerScope, @NInt long timeScope);
+
+    @Generated
+    @Selector("initWithState:")
+    public native GKLeaderboardViewController initWithState(@NInt long state);
 }

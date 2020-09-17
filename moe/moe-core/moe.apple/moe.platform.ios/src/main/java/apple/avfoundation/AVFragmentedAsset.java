@@ -3,7 +3,9 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.avfoundation.protocol.AVFragmentMinding;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -17,12 +19,16 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -188,4 +194,52 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @IsOptional
+    @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
+    @NInt
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+
+    @Generated
+    @IsOptional
+    @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
+    @NInt
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+        return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
+    }
+
+    @Generated
+    @Selector("objectWithItemProviderData:typeIdentifier:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
+    @MappedReturn(ObjCObjectMapper.class)
+    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+        return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
+    }
+
+    @Generated
+    @Selector("readableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> readableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
+    public NSArray<String> _readableTypeIdentifiersForItemProvider() {
+        return readableTypeIdentifiersForItemProvider();
+    }
+
+    @Generated
+    @Selector("writableTypeIdentifiersForItemProvider")
+    public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
+
+    @Generated
+    @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
+    public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
+        return writableTypeIdentifiersForItemProvider_static();
+    }
 }

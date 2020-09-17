@@ -576,4 +576,29 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Generated
     @Selector("setSelectedSegmentTintColor:")
     public native void setSelectedSegmentTintColor(UIColor value);
+
+    @Generated
+    @Selector("actionForSegmentAtIndex:")
+    public native UIAction actionForSegmentAtIndex(@NUInt long segment);
+
+    @Generated
+    @Selector("initWithFrame:actions:")
+    public native UISegmentedControl initWithFrameActions(@ByValue CGRect frame, NSArray<? extends UIAction> actions);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UISegmentedControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    @Generated
+    @Selector("insertSegmentWithAction:atIndex:animated:")
+    public native void insertSegmentWithActionAtIndexAnimated(UIAction action, @NUInt long segment, boolean animated);
+
+    @Generated
+    @Selector("segmentIndexForActionIdentifier:")
+    @NInt
+    public native long segmentIndexForActionIdentifier(String actionIdentifier);
+
+    @Generated
+    @Selector("setAction:forSegmentAtIndex:")
+    public native void setActionForSegmentAtIndex(UIAction action, @NUInt long segment);
 }

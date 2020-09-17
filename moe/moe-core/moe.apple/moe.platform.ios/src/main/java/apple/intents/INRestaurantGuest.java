@@ -225,4 +225,10 @@ public class INRestaurantGuest extends INPerson {
     public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
             INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
             String contactIdentifier, String customIdentifier, boolean isMe);
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
+    public native INRestaurantGuest initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, String relationship);
 }

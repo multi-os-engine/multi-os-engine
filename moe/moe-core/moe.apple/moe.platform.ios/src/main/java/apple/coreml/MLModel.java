@@ -25,6 +25,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -198,4 +199,17 @@ public class MLModel extends NSObject {
     public native MLBatchProvider predictionsFromBatchOptionsError(
             @Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch, MLPredictionOptions options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("loadContentsOfURL:configuration:completionHandler:")
+    public static native void loadContentsOfURLConfigurationCompletionHandler(NSURL url,
+            MLModelConfiguration configuration,
+            @ObjCBlock(name = "call_loadContentsOfURLConfigurationCompletionHandler") Block_loadContentsOfURLConfigurationCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadContentsOfURLConfigurationCompletionHandler {
+        @Generated
+        void call_loadContentsOfURLConfigurationCompletionHandler(MLModel model, NSError error);
+    }
 }

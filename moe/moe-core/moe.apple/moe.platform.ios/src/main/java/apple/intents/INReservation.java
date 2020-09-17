@@ -6,6 +6,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -191,4 +192,12 @@ public class INReservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("URL")
+    public native NSURL URL();
+
+    @Generated
+    @Selector("url")
+    public native NSURL url();
 }

@@ -542,4 +542,21 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Generated
     @Selector("setExternalMetadata:")
     public native void setExternalMetadata(NSArray<? extends AVMetadataItem> value);
+
+    @Generated
+    @Selector("allowedAudioSpatializationFormats")
+    @NUInt
+    public native long allowedAudioSpatializationFormats();
+
+    @Generated
+    @Selector("setAllowedAudioSpatializationFormats:")
+    public native void setAllowedAudioSpatializationFormats(@NUInt long value);
+
+    @Generated
+    @Selector("setStartsOnFirstEligibleVariant:")
+    public native void setStartsOnFirstEligibleVariant(boolean value);
+
+    @Generated
+    @Selector("startsOnFirstEligibleVariant")
+    public native boolean startsOnFirstEligibleVariant();
 }

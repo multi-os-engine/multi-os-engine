@@ -459,4 +459,30 @@ public class UISwitch extends UIControl implements NSCoding {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("initWithFrame:primaryAction:")
+    public native UISwitch initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
+
+    @Generated
+    @Selector("preferredStyle")
+    @NInt
+    public native long preferredStyle();
+
+    @Generated
+    @Selector("setPreferredStyle:")
+    public native void setPreferredStyle(@NInt long value);
+
+    @Generated
+    @Selector("setTitle:")
+    public native void setTitle(String value);
+
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
+
+    @Generated
+    @Selector("title")
+    public native String title();
 }

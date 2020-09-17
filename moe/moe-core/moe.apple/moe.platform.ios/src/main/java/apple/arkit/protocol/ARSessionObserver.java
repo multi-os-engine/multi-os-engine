@@ -2,6 +2,7 @@ package apple.arkit.protocol;
 
 import apple.arkit.ARCamera;
 import apple.arkit.ARCollaborationData;
+import apple.arkit.ARGeoTrackingStatus;
 import apple.arkit.ARSession;
 import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.foundation.NSError;
@@ -64,6 +65,13 @@ public interface ARSessionObserver {
     @IsOptional
     @Selector("sessionShouldAttemptRelocalization:")
     default boolean sessionShouldAttemptRelocalization(ARSession session) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("session:didChangeGeoTrackingStatus:")
+    default void sessionDidChangeGeoTrackingStatus(ARSession session, ARGeoTrackingStatus geoTrackingStatus) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

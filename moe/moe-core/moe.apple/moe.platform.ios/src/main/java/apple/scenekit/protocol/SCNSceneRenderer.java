@@ -22,6 +22,7 @@ import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
+import apple.metal.MTLRenderPassDescriptor;
 import apple.metal.protocol.MTLCommandQueue;
 import apple.metal.protocol.MTLDevice;
 import apple.metal.protocol.MTLRenderCommandEncoder;
@@ -274,4 +275,8 @@ public interface SCNSceneRenderer {
     @Generated
     @Selector("usesReverseZ")
     boolean usesReverseZ();
+
+    @Generated
+    @Selector("currentRenderPassDescriptor")
+    MTLRenderPassDescriptor currentRenderPassDescriptor();
 }

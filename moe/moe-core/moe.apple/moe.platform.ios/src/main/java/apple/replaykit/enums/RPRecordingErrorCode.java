@@ -61,4 +61,6 @@ public final class RPRecordingErrorCode {
     @Generated @NInt public static final long RecordingInvalidSession = 0xFFFFFFFFFFFFE938L;
     @Generated @NInt public static final long FailedToStartCaptureStack = 0xFFFFFFFFFFFFE937L;
     @Generated @NInt public static final long CodeSuccessful = 0x0000000000000000L;
+    @Generated @NInt public static final long InvalidParameter = 0xFFFFFFFFFFFFE936L;
+    @Generated @NInt public static final long FilePermissions = 0xFFFFFFFFFFFFE935L;
 }

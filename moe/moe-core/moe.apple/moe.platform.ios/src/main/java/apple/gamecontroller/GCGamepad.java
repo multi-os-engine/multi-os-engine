@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class GCGamepad extends NSObject {
+public class GCGamepad extends GCPhysicalInputProfile {
     static {
         NatJ.register();
     }
@@ -205,13 +205,13 @@ public class GCGamepad extends NSObject {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCGamepad gamepad, GCControllerElement element);
+        void call_setValueChangedHandler(GCGamepad arg0, GCControllerElement arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCGamepad gamepad, GCControllerElement element);
+        void call_valueChangedHandler_ret(GCGamepad arg0, GCControllerElement arg1);
     }
 }

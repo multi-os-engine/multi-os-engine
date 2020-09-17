@@ -214,4 +214,34 @@ public class GCControllerButtonInput extends GCControllerElement {
     @Generated
     @Selector("setValue:")
     public native void setValue(float value);
+
+    @Generated
+    @Selector("isTouched")
+    public native boolean isTouched();
+
+    @Generated
+    @Selector("setTouchedChangedHandler:")
+    public native void setTouchedChangedHandler(
+            @ObjCBlock(name = "call_setTouchedChangedHandler") Block_setTouchedChangedHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setTouchedChangedHandler {
+        @Generated
+        void call_setTouchedChangedHandler(GCControllerButtonInput button, float value, boolean pressed,
+                boolean touched);
+    }
+
+    @Generated
+    @Selector("touchedChangedHandler")
+    @ObjCBlock(name = "call_touchedChangedHandler_ret")
+    public native Block_touchedChangedHandler_ret touchedChangedHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_touchedChangedHandler_ret {
+        @Generated
+        void call_touchedChangedHandler_ret(GCControllerButtonInput button, float value, boolean pressed,
+                boolean touched);
+    }
 }

@@ -23,6 +23,7 @@ import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.photos.protocol.PHPhotoLibraryAvailabilityObserver;
 import apple.photos.protocol.PHPhotoLibraryChangeObserver;
+import apple.uikit.UIViewController;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -245,4 +246,25 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("unregisterAvailabilityObserver:")
     public native void unregisterAvailabilityObserver(
             @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
+
+    @Generated
+    @Selector("authorizationStatusForAccessLevel:")
+    @NInt
+    public static native long authorizationStatusForAccessLevel(@NInt long accessLevel);
+
+    @Generated
+    @Selector("presentLimitedLibraryPickerFromViewController:")
+    public native void presentLimitedLibraryPickerFromViewController(UIViewController controller);
+
+    @Generated
+    @Selector("requestAuthorizationForAccessLevel:handler:")
+    public static native void requestAuthorizationForAccessLevelHandler(@NInt long accessLevel,
+            @ObjCBlock(name = "call_requestAuthorizationForAccessLevelHandler") Block_requestAuthorizationForAccessLevelHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestAuthorizationForAccessLevelHandler {
+        @Generated
+        void call_requestAuthorizationForAccessLevelHandler(@NInt long status);
+    }
 }

@@ -141,4 +141,8 @@ public class SKAdNetwork extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("updateConversionValue:")
+    public static native void updateConversionValue(@NInt long conversionValue);
 }

@@ -20,7 +20,6 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
-import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
@@ -175,30 +174,11 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKDatabaseSubscription initWithCoder(NSCoder coder);
-
-    @Generated
-    @Selector("initWithRecordType:predicate:options:")
-    public native CKDatabaseSubscription initWithRecordTypePredicateOptions(String recordType, NSPredicate predicate,
-            @NUInt long subscriptionOptions);
-
-    @Generated
-    @Selector("initWithRecordType:predicate:subscriptionID:options:")
-    public native CKDatabaseSubscription initWithRecordTypePredicateSubscriptionIDOptions(String recordType,
-            NSPredicate predicate, String subscriptionID, @NUInt long subscriptionOptions);
+    public native CKDatabaseSubscription initWithCoder(NSCoder aDecoder);
 
     @Generated
     @Selector("initWithSubscriptionID:")
     public native CKDatabaseSubscription initWithSubscriptionID(String subscriptionID);
-
-    @Generated
-    @Selector("initWithZoneID:options:")
-    public native CKDatabaseSubscription initWithZoneIDOptions(CKRecordZoneID zoneID, @NUInt long subscriptionOptions);
-
-    @Generated
-    @Selector("initWithZoneID:subscriptionID:options:")
-    public native CKDatabaseSubscription initWithZoneIDSubscriptionIDOptions(CKRecordZoneID zoneID,
-            String subscriptionID, @NUInt long subscriptionOptions);
 
     @Generated
     @Selector("recordType")

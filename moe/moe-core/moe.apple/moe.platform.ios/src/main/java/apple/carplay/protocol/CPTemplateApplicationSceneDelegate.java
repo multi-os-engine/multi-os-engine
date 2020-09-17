@@ -52,4 +52,20 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
             CPNavigationAlert navigationAlert) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("templateApplicationScene:didConnectInterfaceController:")
+    default void templateApplicationSceneDidConnectInterfaceController(
+            CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("templateApplicationScene:didDisconnectInterfaceController:")
+    default void templateApplicationSceneDidDisconnectInterfaceController(
+            CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

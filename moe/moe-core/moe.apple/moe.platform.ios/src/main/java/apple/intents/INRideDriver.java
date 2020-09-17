@@ -245,4 +245,10 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
             INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
             String contactIdentifier, String customIdentifier, boolean isMe);
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
+    public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, String relationship);
 }

@@ -6,6 +6,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.uikit.protocol.NSCollectionLayoutEnvironment;
 import apple.uikit.struct.NSDirectionalEdgeInsets;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -231,4 +232,19 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
         void call_visibleItemsInvalidationHandler_ret(NSArray<?> visibleItems, @ByValue CGPoint contentOffset,
                 @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
+
+    @Generated
+    @Selector("contentInsetsReference")
+    @NInt
+    public native long contentInsetsReference();
+
+    @Generated
+    @Selector("sectionWithListConfiguration:layoutEnvironment:")
+    public static native NSCollectionLayoutSection sectionWithListConfigurationLayoutEnvironment(
+            UICollectionLayoutListConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) NSCollectionLayoutEnvironment layoutEnvironment);
+
+    @Generated
+    @Selector("setContentInsetsReference:")
+    public native void setContentInsetsReference(@NInt long value);
 }

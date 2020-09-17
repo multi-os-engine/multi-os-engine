@@ -1720,4 +1720,206 @@ public final class Network {
     @Generated
     @CVariable()
     public static native int _nw_data_transfer_report_all_paths();
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_resolver_config_create_https(NSObject url_endpoint);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_resolver_config_create_tls(NSObject server_endpoint);
+
+    @Generated
+    @CFunction
+    public static native void nw_resolver_config_add_server_address(NSObject config, NSObject server_address);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_privacy_context_create(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description);
+
+    @Generated
+    @CFunction
+    public static native void nw_privacy_context_flush_cache(NSObject privacy_context);
+
+    @Generated
+    @CFunction
+    public static native void nw_privacy_context_disable_logging(NSObject privacy_context);
+
+    @Generated
+    @CFunction
+    public static native void nw_privacy_context_require_encrypted_name_resolution(NSObject privacy_context,
+            boolean require_encrypted_name_resolution, NSObject fallback_resolver_config);
+
+    @Generated
+    @CFunction
+    public static native void nw_parameters_set_privacy_context(NSObject parameters, NSObject privacy_context);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_group_descriptor_create_multicast(NSObject multicast_group);
+
+    @Generated
+    @CFunction
+    public static native boolean nw_group_descriptor_add_endpoint(NSObject descriptor, NSObject endpoint);
+
+    @Generated
+    @CFunction
+    public static native void nw_group_descriptor_enumerate_endpoints(NSObject descriptor,
+            @ObjCBlock(name = "call_nw_group_descriptor_enumerate_endpoints") Block_nw_group_descriptor_enumerate_endpoints enumerate_block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_nw_group_descriptor_enumerate_endpoints {
+        @Generated
+        boolean call_nw_group_descriptor_enumerate_endpoints(NSObject endpoint);
+    }
+
+    @Generated
+    @CFunction
+    public static native void nw_multicast_group_descriptor_set_specific_source(NSObject multicast_descriptor,
+            NSObject source);
+
+    @Generated
+    @CFunction
+    public static native void nw_multicast_group_descriptor_set_disable_unicast_traffic(NSObject multicast_descriptor,
+            boolean disable_unicast_traffic);
+
+    @Generated
+    @CFunction
+    public static native boolean nw_multicast_group_descriptor_get_disable_unicast_traffic(
+            NSObject multicast_descriptor);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_connection_group_create(NSObject group_descriptor, NSObject parameters);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_connection_group_copy_descriptor(NSObject group);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_connection_group_copy_parameters(NSObject group);
+
+    @Generated
+    @CFunction
+    public static native void nw_connection_group_set_queue(NSObject group, NSObject queue);
+
+    @Generated
+    @CFunction
+    public static native void nw_connection_group_set_state_changed_handler(NSObject group,
+            @ObjCBlock(name = "call_nw_connection_group_set_state_changed_handler") Block_nw_connection_group_set_state_changed_handler state_changed_handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_nw_connection_group_set_state_changed_handler {
+        @Generated
+        void call_nw_connection_group_set_state_changed_handler(int state, NSObject error);
+    }
+
+    @Generated
+    @CFunction
+    public static native void nw_connection_group_set_receive_handler(NSObject group, int maximum_message_size,
+            boolean reject_oversized_messages,
+            @ObjCBlock(name = "call_nw_connection_group_set_receive_handler") Block_nw_connection_group_set_receive_handler receive_handler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_nw_connection_group_set_receive_handler {
+        @Generated
+        void call_nw_connection_group_set_receive_handler(NSObject content, NSObject context, boolean is_complete);
+    }
+
+    @Generated
+    @CFunction
+    public static native void nw_connection_group_start(NSObject group);
+
+    @Generated
+    @CFunction
+    public static native void nw_connection_group_cancel(NSObject group);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_connection_group_copy_remote_endpoint_for_message(NSObject group,
+            NSObject context);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_connection_group_copy_local_endpoint_for_message(NSObject group, NSObject context);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_connection_group_copy_path_for_message(NSObject group, NSObject context);
+
+    @Generated
+    @CFunction
+    public static native void nw_connection_group_reply(NSObject group, NSObject inbound_message,
+            NSObject outbound_message, NSObject content);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_connection_group_extract_connection_for_message(NSObject group, NSObject context);
+
+    @Generated
+    @CFunction
+    public static native void nw_connection_group_send_message(NSObject group, NSObject content, NSObject endpoint,
+            NSObject context,
+            @ObjCBlock(name = "call_nw_connection_group_send_message") Block_nw_connection_group_send_message completion);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_nw_connection_group_send_message {
+        @Generated
+        void call_nw_connection_group_send_message(NSObject error);
+    }
+
+    @Generated
+    @CFunction
+    public static native int nw_resolution_report_get_source(NSObject resolution_report);
+
+    @Generated
+    @CFunction
+    public static native long nw_resolution_report_get_milliseconds(NSObject resolution_report);
+
+    @Generated
+    @CFunction
+    public static native int nw_resolution_report_get_endpoint_count(NSObject resolution_report);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_resolution_report_copy_successful_endpoint(NSObject resolution_report);
+
+    @Generated
+    @CFunction
+    public static native NSObject nw_resolution_report_copy_preferred_endpoint(NSObject resolution_report);
+
+    @Generated
+    @CFunction
+    public static native int nw_resolution_report_get_protocol(NSObject resolution_report);
+
+    @Generated
+    @CFunction
+    public static native void nw_establishment_report_enumerate_resolution_reports(NSObject report,
+            @ObjCBlock(name = "call_nw_establishment_report_enumerate_resolution_reports") Block_nw_establishment_report_enumerate_resolution_reports enumerate_block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_nw_establishment_report_enumerate_resolution_reports {
+        @Generated
+        boolean call_nw_establishment_report_enumerate_resolution_reports(NSObject resolution_report);
+    }
+
+    @Generated
+    @CFunction
+    public static native void nw_ip_options_set_disable_multicast_loopback(NSObject options,
+            boolean disable_multicast_loopback);
+
+    @Generated
+    @CFunction
+    public static native void nw_path_monitor_prohibit_interface_type(NSObject monitor, int interface_type);
+
+    @Generated
+    @CVariable()
+    public static native NSObject _nw_privacy_context_default_context();
 }

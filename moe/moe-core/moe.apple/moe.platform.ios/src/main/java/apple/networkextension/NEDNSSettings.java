@@ -221,4 +221,9 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Selector("dnsProtocol")
+    @NInt
+    public native long dnsProtocol();
 }

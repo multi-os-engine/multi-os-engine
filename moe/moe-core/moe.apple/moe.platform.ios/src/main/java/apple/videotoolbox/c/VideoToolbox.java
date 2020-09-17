@@ -1011,4 +1011,20 @@ public final class VideoToolbox {
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_RealTime();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_PrioritizeEncodingSpeedOverQuality();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_HDRMetadataInsertionMode();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTHDRMetadataInsertionMode_None();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTHDRMetadataInsertionMode_Auto();
 }

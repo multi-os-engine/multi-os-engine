@@ -23,6 +23,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -168,4 +169,25 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(UIView view);
+
+    @Generated
+    @Selector("dismissMenu")
+    public native void dismissMenu();
+
+    @Generated
+    @Selector("menuAppearance")
+    @NInt
+    public native long menuAppearance();
+
+    @Generated
+    @Selector("updateVisibleMenuWithBlock:")
+    public native void updateVisibleMenuWithBlock(
+            @ObjCBlock(name = "call_updateVisibleMenuWithBlock") Block_updateVisibleMenuWithBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateVisibleMenuWithBlock {
+        @Generated
+        UIMenu call_updateVisibleMenuWithBlock(UIMenu visibleMenu);
+    }
 }

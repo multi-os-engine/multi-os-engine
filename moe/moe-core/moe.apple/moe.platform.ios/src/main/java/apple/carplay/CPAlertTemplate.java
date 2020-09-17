@@ -166,4 +166,9 @@ public class CPAlertTemplate extends CPTemplate {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("maximumActionCount")
+    @NUInt
+    public static native long maximumActionCount();
 }

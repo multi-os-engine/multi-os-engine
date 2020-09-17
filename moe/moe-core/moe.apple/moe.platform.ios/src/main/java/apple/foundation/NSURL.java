@@ -22,6 +22,7 @@ import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSItemProviderWriting;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.quicklook.protocol.QLPreviewItem;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.c.map.CStringMapper;
 import org.moe.natj.general.NatJ;
@@ -580,4 +581,12 @@ public class NSURL extends NSObject
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
+
+    @Generated
+    @Selector("URLByAppendingPathComponent:conformingToType:")
+    public native NSURL URLByAppendingPathComponentConformingToType(String partialName, UTType contentType);
+
+    @Generated
+    @Selector("URLByAppendingPathExtensionForType:")
+    public native NSURL URLByAppendingPathExtensionForType(UTType contentType);
 }

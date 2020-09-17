@@ -14,4 +14,6 @@ public final class CHHapticEngineStoppedReason {
     @Generated @NInt public static final long IdleTimeout = 0x0000000000000003L;
     @Generated @NInt public static final long NotifyWhenFinished = 0x0000000000000004L;
     @Generated @NInt public static final long SystemError = 0xFFFFFFFFFFFFFFFFL;
+    @Generated @NInt public static final long EngineDestroyed = 0x0000000000000005L;
+    @Generated @NInt public static final long GameControllerDisconnect = 0x0000000000000006L;
 }

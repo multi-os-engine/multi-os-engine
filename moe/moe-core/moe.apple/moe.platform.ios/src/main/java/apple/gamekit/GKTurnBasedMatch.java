@@ -462,4 +462,17 @@ public class GKTurnBasedMatch extends NSObject {
         @Generated
         void call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler(NSError error);
     }
+
+    @Generated
+    @Selector("endMatchInTurnWithMatchData:leaderboardScores:achievements:completionHandler:")
+    public native void endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler(NSData matchData,
+            NSArray<? extends GKLeaderboardScore> scores, NSArray<?> achievements,
+            @ObjCBlock(name = "call_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler") Block_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler {
+        @Generated
+        void call_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler(NSError error);
+    }
 }

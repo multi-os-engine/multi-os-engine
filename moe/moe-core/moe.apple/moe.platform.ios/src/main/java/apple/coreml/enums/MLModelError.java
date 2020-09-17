@@ -16,4 +16,7 @@ public final class MLModelError {
     @Generated @NInt public static final long CustomModel = 0x0000000000000005L;
     @Generated @NInt public static final long Update = 0x0000000000000006L;
     @Generated @NInt public static final long Parameters = 0x0000000000000007L;
+    @Generated @NInt public static final long ModelDecryptionKeyFetch = 0x0000000000000008L;
+    @Generated @NInt public static final long ModelDecryption = 0x0000000000000009L;
+    @Generated @NInt public static final long ModelCollection = 0x000000000000000AL;
 }

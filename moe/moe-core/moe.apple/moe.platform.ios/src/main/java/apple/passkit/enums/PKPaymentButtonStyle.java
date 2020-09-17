@@ -28,4 +28,6 @@ public final class PKPaymentButtonStyle {
     @Generated
     private PKPaymentButtonStyle() {
     }
+
+    @Generated @NInt public static final long Automatic = 0x0000000000000003L;
 }

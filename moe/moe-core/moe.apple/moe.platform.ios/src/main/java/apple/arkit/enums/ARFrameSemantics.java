@@ -13,4 +13,6 @@ public final class ARFrameSemantics {
     @Generated @NUInt public static final long PersonSegmentation = 0x0000000000000001L;
     @Generated @NUInt public static final long PersonSegmentationWithDepth = 0x0000000000000003L;
     @Generated @NUInt public static final long BodyDetection = 0x0000000000000004L;
+    @Generated @NUInt public static final long SceneDepth = 0x0000000000000008L;
+    @Generated @NUInt public static final long SmoothedSceneDepth = 0x0000000000000010L;
 }

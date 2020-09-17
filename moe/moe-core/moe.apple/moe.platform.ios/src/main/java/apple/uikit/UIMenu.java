@@ -179,4 +179,8 @@ public class UIMenu extends UIMenuElement {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("menuWithChildren:")
+    public static native UIMenu menuWithChildren(NSArray<? extends UIMenuElement> children);
 }

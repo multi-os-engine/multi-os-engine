@@ -28,6 +28,7 @@ import apple.foundation.NSSet;
 import apple.foundation.NSURL;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
+import apple.uniformtypeidentifiers.UTType;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -1662,4 +1663,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("setUserOwned:")
     public native void setUserOwned(NSNumber value);
+
+    @Generated
+    @Selector("initWithContentType:")
+    public native CSSearchableItemAttributeSet initWithContentType(UTType contentType);
 }

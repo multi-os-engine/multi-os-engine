@@ -445,4 +445,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("usesReverseZ")
     public native boolean usesReverseZ();
+
+    @Generated
+    @Selector("currentRenderPassDescriptor")
+    public native MTLRenderPassDescriptor currentRenderPassDescriptor();
 }

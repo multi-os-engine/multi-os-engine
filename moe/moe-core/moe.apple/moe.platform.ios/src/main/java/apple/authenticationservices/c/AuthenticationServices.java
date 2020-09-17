@@ -75,4 +75,14 @@ public final class AuthenticationServices {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ASAuthorizationErrorDomain();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ASExtensionLocalizedFailureReasonErrorKey();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ASAuthorizationProviderAuthorizationOperationConfigurationRemoved();
 }

@@ -202,4 +202,20 @@ public class PKToolPicker extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("setShowsDrawingPolicyControls:")
+    public native void setShowsDrawingPolicyControls(boolean value);
+
+    @Generated
+    @Selector("setStateAutosaveName:")
+    public native void setStateAutosaveName(String value);
+
+    @Generated
+    @Selector("showsDrawingPolicyControls")
+    public native boolean showsDrawingPolicyControls();
+
+    @Generated
+    @Selector("stateAutosaveName")
+    public native String stateAutosaveName();
 }

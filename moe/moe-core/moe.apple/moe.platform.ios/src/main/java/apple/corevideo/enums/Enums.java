@@ -110,4 +110,18 @@ public final class Enums {
     @Generated public static final int kCVPixelFormatType_422YpCbCr10BiPlanarFullRange = 0x78663232;
     @Generated public static final int kCVPixelFormatType_444YpCbCr10BiPlanarFullRange = 0x78663434;
     @Generated public static final int kCVPixelFormatType_420YpCbCr8VideoRange_8A_TriPlanar = 0x76306138;
+    @Generated public static final int kCVPixelFormatType_422YpCbCr8BiPlanarVideoRange = 0x34323276;
+    @Generated public static final int kCVPixelFormatType_422YpCbCr8BiPlanarFullRange = 0x34323266;
+    @Generated public static final int kCVPixelFormatType_444YpCbCr8BiPlanarVideoRange = 0x34343476;
+    @Generated public static final int kCVPixelFormatType_444YpCbCr8BiPlanarFullRange = 0x34343466;
+    @Generated public static final int kCVPixelFormatType_OneComponent10 = 0x4C303130;
+    @Generated public static final int kCVPixelFormatType_OneComponent12 = 0x4C303132;
+    @Generated public static final int kCVPixelFormatType_OneComponent16 = 0x4C303136;
+    @Generated public static final int kCVPixelFormatType_TwoComponent16 = 0x32433136;
+    @Generated public static final int kCVPixelFormatType_16VersatileBayer = 0x62703136;
+    @Generated public static final int kCVPixelFormatType_64RGBA_DownscaledProResRAW = 0x62703634;
+    @Generated public static final int kCVVersatileBayer_BayerPattern_RGGB = 0x00000000;
+    @Generated public static final int kCVVersatileBayer_BayerPattern_GRBG = 0x00000001;
+    @Generated public static final int kCVVersatileBayer_BayerPattern_GBRG = 0x00000002;
+    @Generated public static final int kCVVersatileBayer_BayerPattern_BGGR = 0x00000003;
 }

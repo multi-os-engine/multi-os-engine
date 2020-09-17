@@ -179,4 +179,14 @@ public class INRecurrenceRule extends NSObject implements NSCopying, NSSecureCod
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithInterval:frequency:weeklyRecurrenceDays:")
+    public native INRecurrenceRule initWithIntervalFrequencyWeeklyRecurrenceDays(@NUInt long interval,
+            @NInt long frequency, @NUInt long weeklyRecurrenceDays);
+
+    @Generated
+    @Selector("weeklyRecurrenceDays")
+    @NUInt
+    public native long weeklyRecurrenceDays();
 }

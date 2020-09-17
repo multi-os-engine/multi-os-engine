@@ -99,4 +99,11 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     default int weightsQuantizationType() {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("kernelWeightsDataType")
+    default int kernelWeightsDataType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

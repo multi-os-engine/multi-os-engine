@@ -76,4 +76,11 @@ public interface AVVideoCompositing {
     default void prerollForRenderingUsingHint(AVVideoCompositionRenderHint renderHint) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("supportsHDRSourceFrames")
+    default boolean supportsHDRSourceFrames() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

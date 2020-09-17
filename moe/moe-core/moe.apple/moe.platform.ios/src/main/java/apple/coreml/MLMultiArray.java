@@ -2,10 +2,12 @@ package apple.coreml;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -25,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
@@ -32,7 +35,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MLMultiArray extends NSObject {
+public class MLMultiArray extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -199,4 +202,27 @@ public class MLMultiArray extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native MLMultiArray initWithCoder(NSCoder coder);
+
+    @Generated
+    @Selector("multiArrayByConcatenatingMultiArrays:alongAxis:dataType:")
+    public static native MLMultiArray multiArrayByConcatenatingMultiArraysAlongAxisDataType(
+            NSArray<? extends MLMultiArray> multiArrays, @NInt long axis, @NInt long dataType);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 }

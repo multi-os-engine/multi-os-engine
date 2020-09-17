@@ -237,4 +237,8 @@ public class CKNotification extends NSObject {
     @Generated
     @Selector("titleLocalizationKey")
     public native String titleLocalizationKey();
+
+    @Generated
+    @Selector("subscriptionOwnerUserRecordID")
+    public native CKRecordID subscriptionOwnerUserRecordID();
 }

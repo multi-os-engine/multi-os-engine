@@ -37,4 +37,7 @@ public final class WKErrorCode {
     @Generated @NInt public static final long ContentRuleListStoreVersionMismatch = 0x0000000000000009L;
     @Generated @NInt public static final long AttributedStringContentFailedToLoad = 0x000000000000000AL;
     @Generated @NInt public static final long AttributedStringContentLoadTimedOut = 0x000000000000000BL;
+    @Generated @NInt public static final long JavaScriptInvalidFrameTarget = 0x000000000000000CL;
+    @Generated @NInt public static final long NavigationAppBoundDomain = 0x000000000000000DL;
+    @Generated @NInt public static final long JavaScriptAppBoundDomain = 0x000000000000000EL;
 }

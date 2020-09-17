@@ -22,6 +22,7 @@ import apple.passkit.PKPayment;
 import apple.passkit.PKPaymentAuthorizationResult;
 import apple.passkit.PKPaymentAuthorizationViewController;
 import apple.passkit.PKPaymentMethod;
+import apple.passkit.PKPaymentRequestMerchantSessionUpdate;
 import apple.passkit.PKPaymentRequestPaymentMethodUpdate;
 import apple.passkit.PKPaymentRequestShippingContactUpdate;
 import apple.passkit.PKPaymentRequestShippingMethodUpdate;
@@ -207,5 +208,22 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         @Generated
         void call_paymentAuthorizationViewControllerDidSelectShippingMethodHandler(
                 PKPaymentRequestShippingMethodUpdate update);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationViewController:didRequestMerchantSessionUpdate:")
+    default void paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate(
+            PKPaymentAuthorizationViewController controller,
+            @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate") Block_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate handler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate {
+        @Generated
+        void call_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate(
+                PKPaymentRequestMerchantSessionUpdate update);
     }
 }

@@ -158,4 +158,8 @@ public class MXMetricManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("pastDiagnosticPayloads")
+    public native NSArray<? extends MXDiagnosticPayload> pastDiagnosticPayloads();
 }

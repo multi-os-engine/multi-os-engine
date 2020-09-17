@@ -257,4 +257,48 @@ public class UIAccessibilityCustomAction extends NSObject {
         @Generated
         boolean call_setActionHandler(UIAccessibilityCustomAction customAction);
     }
+
+    @Generated
+    @Selector("image")
+    public native UIImage image();
+
+    @Generated
+    @Selector("initWithAttributedName:image:actionHandler:")
+    public native UIAccessibilityCustomAction initWithAttributedNameImageActionHandler(
+            NSAttributedString attributedName, UIImage image,
+            @ObjCBlock(name = "call_initWithAttributedNameImageActionHandler") Block_initWithAttributedNameImageActionHandler actionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithAttributedNameImageActionHandler {
+        @Generated
+        boolean call_initWithAttributedNameImageActionHandler(UIAccessibilityCustomAction customAction);
+    }
+
+    @Generated
+    @Selector("initWithAttributedName:image:target:selector:")
+    public native UIAccessibilityCustomAction initWithAttributedNameImageTargetSelector(
+            NSAttributedString attributedName, UIImage image, @Mapped(ObjCObjectMapper.class) Object target,
+            SEL selector);
+
+    @Generated
+    @Selector("initWithName:image:actionHandler:")
+    public native UIAccessibilityCustomAction initWithNameImageActionHandler(String name, UIImage image,
+            @ObjCBlock(name = "call_initWithNameImageActionHandler") Block_initWithNameImageActionHandler actionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithNameImageActionHandler {
+        @Generated
+        boolean call_initWithNameImageActionHandler(UIAccessibilityCustomAction customAction);
+    }
+
+    @Generated
+    @Selector("initWithName:image:target:selector:")
+    public native UIAccessibilityCustomAction initWithNameImageTargetSelector(String name, UIImage image,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL selector);
+
+    @Generated
+    @Selector("setImage:")
+    public native void setImage(UIImage value);
 }

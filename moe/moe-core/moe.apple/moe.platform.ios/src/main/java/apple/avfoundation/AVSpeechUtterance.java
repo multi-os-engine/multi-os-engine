@@ -254,4 +254,12 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Selector("prefersAssistiveTechnologySettings")
+    public native boolean prefersAssistiveTechnologySettings();
+
+    @Generated
+    @Selector("setPrefersAssistiveTechnologySettings:")
+    public native void setPrefersAssistiveTechnologySettings(boolean value);
 }

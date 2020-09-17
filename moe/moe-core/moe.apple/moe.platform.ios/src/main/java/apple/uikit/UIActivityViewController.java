@@ -23,6 +23,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIActivityItemsConfigurationReading;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -242,4 +243,9 @@ public class UIActivityViewController extends UIViewController {
         void call_setCompletionWithItemsHandler(String activityType, boolean completed, NSArray<?> returnedItems,
                 NSError activityError);
     }
+
+    @Generated
+    @Selector("initWithActivityItemsConfiguration:")
+    public native UIActivityViewController initWithActivityItemsConfiguration(
+            @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationReading activityItemsConfiguration);
 }

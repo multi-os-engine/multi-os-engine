@@ -246,4 +246,12 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("username")
     public native String username();
+
+    @Generated
+    @Selector("includeAllNetworks")
+    public native boolean includeAllNetworks();
+
+    @Generated
+    @Selector("setIncludeAllNetworks:")
+    public native void setIncludeAllNetworks(boolean value);
 }

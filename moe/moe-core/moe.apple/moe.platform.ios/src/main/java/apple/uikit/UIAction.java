@@ -212,4 +212,21 @@ public class UIAction extends UIMenuElement {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("actionWithHandler:")
+    public static native UIAction actionWithHandler(
+            @ObjCBlock(name = "call_actionWithHandler") Block_actionWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_actionWithHandler {
+        @Generated
+        void call_actionWithHandler(UIAction action);
+    }
+
+    @Generated
+    @Selector("sender")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object sender();
 }

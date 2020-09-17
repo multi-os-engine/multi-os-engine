@@ -170,4 +170,24 @@ public class MLUpdateTask extends MLTask {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("updateTaskForModelAtURL:trainingData:completionHandler:error:")
+    public static native MLUpdateTask updateTaskForModelAtURLTrainingDataCompletionHandlerError(NSURL modelURL,
+            @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
+            @ObjCBlock(name = "call_updateTaskForModelAtURLTrainingDataCompletionHandlerError") Block_updateTaskForModelAtURLTrainingDataCompletionHandlerError completionHandler,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateTaskForModelAtURLTrainingDataCompletionHandlerError {
+        @Generated
+        void call_updateTaskForModelAtURLTrainingDataCompletionHandlerError(MLUpdateContext arg0);
+    }
+
+    @Generated
+    @Selector("updateTaskForModelAtURL:trainingData:progressHandlers:error:")
+    public static native MLUpdateTask updateTaskForModelAtURLTrainingDataProgressHandlersError(NSURL modelURL,
+            @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData, MLUpdateProgressHandlers progressHandlers,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

@@ -2994,4 +2994,32 @@ public final class ImageIO {
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAnimationLoopCount();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyWebPDictionary();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyWebPLoopCount();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyWebPDelayTime();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyWebPUnclampedDelayTime();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyWebPFrameInfoArray();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyWebPCanvasPixelWidth();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyWebPCanvasPixelHeight();
 }

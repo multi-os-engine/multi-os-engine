@@ -30,4 +30,5 @@ public final class UNAuthorizationStatus {
     }
 
     @Generated @NInt public static final long Provisional = 0x0000000000000003L;
+    @Generated @NInt public static final long Ephemeral = 0x0000000000000004L;
 }

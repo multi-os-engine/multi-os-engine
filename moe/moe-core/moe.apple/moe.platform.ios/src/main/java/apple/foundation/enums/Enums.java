@@ -213,4 +213,5 @@ public final class Enums {
     @Generated @NInt public static final long NSDecompressionFailedError = 0x0000000000001501L;
     @Generated @NInt public static final long NSCompressionErrorMinimum = 0x0000000000001500L;
     @Generated @NInt public static final long NSCompressionErrorMaximum = 0x000000000000157FL;
+    @Generated public static final int NSBundleExecutableArchitectureARM64 = 0x0100000C;
 }

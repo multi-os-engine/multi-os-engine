@@ -280,4 +280,13 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("supportArgumentBuffers")
     public native boolean supportArgumentBuffers();
+
+    @Generated
+    @Selector("borderColor")
+    @NUInt
+    public native long borderColor();
+
+    @Generated
+    @Selector("setBorderColor:")
+    public native void setBorderColor(@NUInt long value);
 }

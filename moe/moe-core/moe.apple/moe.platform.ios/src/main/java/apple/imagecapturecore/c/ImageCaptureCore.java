@@ -175,4 +175,34 @@ public final class ImageCaptureCore {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICDeleteErrorCanceled();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICTruncateAfterSuccessfulDownload();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICCameraDeviceSupportsHEIF();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICAuthorizationStatusNotDetermined();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICAuthorizationStatusRestricted();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICAuthorizationStatusDenied();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICAuthorizationStatusAuthorized();
 }

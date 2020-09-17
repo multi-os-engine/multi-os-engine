@@ -166,10 +166,6 @@ public class CKQueryNotification extends CKNotification {
     public native CKQueryNotification init();
 
     @Generated
-    @Selector("isPublicDatabase")
-    public native boolean isPublicDatabase();
-
-    @Generated
     @Selector("queryNotificationReason")
     @NInt
     public native long queryNotificationReason();

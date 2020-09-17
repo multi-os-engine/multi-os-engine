@@ -121,7 +121,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_initWithTypeHandler {
         @Generated
-        void call_initWithTypeHandler(CPBarButton barButton);
+        void call_initWithTypeHandler(CPBarButton arg0);
     }
 
     @Generated
@@ -201,4 +201,37 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("buttonStyle")
+    @NInt
+    public native long buttonStyle();
+
+    @Generated
+    @Selector("initWithImage:handler:")
+    public native CPBarButton initWithImageHandler(UIImage image,
+            @ObjCBlock(name = "call_initWithImageHandler") Block_initWithImageHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithImageHandler {
+        @Generated
+        void call_initWithImageHandler(CPBarButton arg0);
+    }
+
+    @Generated
+    @Selector("initWithTitle:handler:")
+    public native CPBarButton initWithTitleHandler(String title,
+            @ObjCBlock(name = "call_initWithTitleHandler") Block_initWithTitleHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithTitleHandler {
+        @Generated
+        void call_initWithTitleHandler(CPBarButton arg0);
+    }
+
+    @Generated
+    @Selector("setButtonStyle:")
+    public native void setButtonStyle(@NInt long value);
 }

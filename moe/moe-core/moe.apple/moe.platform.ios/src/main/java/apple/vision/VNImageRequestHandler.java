@@ -3,6 +3,7 @@ package apple.vision;
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coreimage.CIImage;
+import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
@@ -197,4 +198,14 @@ public class VNImageRequestHandler extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("initWithCMSampleBuffer:options:")
+    public native VNImageRequestHandler initWithCMSampleBufferOptions(CMSampleBufferRef sampleBuffer,
+            NSDictionary<String, ?> options);
+
+    @Generated
+    @Selector("initWithCMSampleBuffer:orientation:options:")
+    public native VNImageRequestHandler initWithCMSampleBufferOrientationOptions(CMSampleBufferRef sampleBuffer,
+            int orientation, NSDictionary<String, ?> options);
 }

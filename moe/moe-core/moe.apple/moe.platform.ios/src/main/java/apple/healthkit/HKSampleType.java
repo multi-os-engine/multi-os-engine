@@ -225,4 +225,8 @@ public class HKSampleType extends HKObjectType {
     @Generated
     @Selector("minimumAllowedDuration")
     public native double minimumAllowedDuration();
+
+    @Generated
+    @Selector("electrocardiogramType")
+    public static native HKElectrocardiogramType electrocardiogramType();
 }

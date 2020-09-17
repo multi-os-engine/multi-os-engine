@@ -1106,4 +1106,21 @@ public class UIViewController extends UIResponder
     @Generated
     @Selector("setOverrideUserInterfaceStyle:")
     public native void setOverrideUserInterfaceStyle(@NInt long value);
+
+    @Generated
+    @Selector("childViewControllerForPointerLock")
+    public native UIViewController childViewControllerForPointerLock();
+
+    @Generated
+    @IsOptional
+    @Selector("focusGroupIdentifier")
+    public native String focusGroupIdentifier();
+
+    @Generated
+    @Selector("prefersPointerLocked")
+    public native boolean prefersPointerLocked();
+
+    @Generated
+    @Selector("setNeedsUpdateOfPrefersPointerLocked")
+    public native void setNeedsUpdateOfPrefersPointerLocked();
 }

@@ -341,4 +341,9 @@ public class UIPresentationController extends NSObject
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusEnvironment parentFocusEnvironment();
+
+    @Generated
+    @IsOptional
+    @Selector("focusGroupIdentifier")
+    public native String focusGroupIdentifier();
 }

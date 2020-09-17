@@ -165,4 +165,12 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @Generated
     @Selector("visiblePath")
     public native UIBezierPath visiblePath();
+
+    @Generated
+    @Selector("setShadowPath:")
+    public native void setShadowPath(UIBezierPath value);
+
+    @Generated
+    @Selector("shadowPath")
+    public native UIBezierPath shadowPath();
 }

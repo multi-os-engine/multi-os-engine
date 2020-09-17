@@ -190,7 +190,22 @@ public class UIContextualAction extends NSObject {
 
     @Generated
     @Selector("handler")
-    @ObjCBlock(name = "call_contextualActionWithStyleTitleHandler")
-    public native Block_contextualActionWithStyleTitleHandler handler();
+    @ObjCBlock(name = "call_handler_ret")
+    public native Block_handler_ret handler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_handler_ret {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_handler_ret {
+            @Generated
+            void call_Block_handler_ret(boolean arg0);
+        }
+
+        @Generated
+        void call_handler_ret(UIContextualAction action, UIView sourceView,
+                @ObjCBlock(name = "call_Block_handler_ret") Block_Block_handler_ret completionHandler);
+    }
 
 }

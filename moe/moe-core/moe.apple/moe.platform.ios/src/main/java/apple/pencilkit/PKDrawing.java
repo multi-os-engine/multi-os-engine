@@ -199,4 +199,16 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("drawingByAppendingStrokes:")
+    public native PKDrawing drawingByAppendingStrokes(NSArray<? extends PKStroke> strokes);
+
+    @Generated
+    @Selector("initWithStrokes:")
+    public native PKDrawing initWithStrokes(NSArray<? extends PKStroke> strokes);
+
+    @Generated
+    @Selector("strokes")
+    public native NSArray<? extends PKStroke> strokes();
 }
