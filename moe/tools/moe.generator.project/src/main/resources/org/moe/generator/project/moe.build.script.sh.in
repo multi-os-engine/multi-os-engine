@@ -61,7 +61,7 @@ fi
 # Copy and sign MOE framework
 rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers" --filter "- PrivateHeaders" --filter "- Modules" \
     "${MOE_FRAMEWORK_PATH}/MOE.framework" "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/"
-if [ "${VALID_ARCHS}" == "arm64" ] || [ "${VALID_ARCHS}" == "x86_64" ]; then
+if [ "${ARCHS}" == "arm64" ] || [ "${ARCHS}" == "x86_64" ]; then
     if [ "${PLATFORM_NAME}" == "iphonesimulator" ]; then
         lipo -thin x86_64 -output "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework/MOE" "${MOE_FRAMEWORK_PATH}/MOE.framework/MOE"
     else
