@@ -55,7 +55,7 @@ public class MoePlatform {
             */
 
     private static final MoePlatform IOS_SIMULATOR =
-            new MoePlatform("iOS Simulator", "iphonesimulator", new Arch[]{Arch.I386, Arch.X86_64}, null);
+            new MoePlatform("iOS Simulator", "iphonesimulator", new Arch[]{Arch.X86_64}, null);
     public static final MoePlatform IOS =
             new MoePlatform("iOS", "iphoneos", new Arch[]{Arch.ARMV7, Arch.ARMV7S, Arch.ARM64}, IOS_SIMULATOR);
 
