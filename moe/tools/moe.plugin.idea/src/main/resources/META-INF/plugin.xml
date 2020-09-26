@@ -46,7 +46,7 @@
       <projectTemplatesFactory implementation="org.moe.idea.builder.MOEProjectTemplatesFactory"/>
 
       <moduleConfigurable instance="org.moe.idea.configurable.MOEModuleConfigurable"/>
-      <postStartupActivity implementation="org.moe.idea.Startup"></postStartupActivity>
+      <postStartupActivity implementation="org.moe.idea.Startup"/>
 
       <applicationService
               serviceInterface="org.moe.idea.MOEGlobalSettings"
@@ -66,12 +66,6 @@
 
       <projectService serviceImplementation="org.moe.idea.ui.MOEToolWindow" />
   </extensions>
-
-    <project-components>
-        <component>
-            <implementation-class>org.moe.idea.component.MOEProjectComponent</implementation-class>
-        </component>
-    </project-components>
 
   <actions>
 
