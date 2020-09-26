@@ -174,12 +174,6 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             }
         }
 
-        try {
-            configureGradle(rootModel);
-        } catch (IOException e) {
-            MOEToolWindow.getInstance(project).error("Error occurred during gradle configuration: " + e.getMessage());
-        }
-
         if (!isNewProject) {
             File settingsGradle = new File(projectPath, "settings.gradle");
 
@@ -194,7 +188,18 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             } catch (IOException e) {
                 MOEToolWindow.getInstance(project).error("Error occurred during gradle configuration: " + e.getMessage());
             }
+        } else {
+            try {
+                configureGradle(rootModel);
+            } catch (IOException e) {
+                MOEToolWindow.getInstance(project).error("Error occurred during gradle configuration: " + e.getMessage());
+            }
         }
+
+        // Refresh the gradle import
+        ImportSpecBuilder builder = new ImportSpecBuilder(rootModel.getProject(), GradleConstants.SYSTEM_ID);
+        builder.forceWhenUptodate(true);
+        ExternalSystemUtil.refreshProjects(builder);
 
         if (contentRoot != null) {
             contentRoot.refresh(false, true);
@@ -257,7 +262,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         String packageName = moduleProperties.getPackageName();
 
         projectComposer.setTargetDirectory(new File(moduleProperties.getProjectRoot()))
-        .setMoeVersion("1.4.+")
+        .setMoeVersion("1.7.+")
         .setProjectName(moduleProperties.getProjectName())
         .setOrganizationName(moduleProperties.getOrganizationName())
         .setOrganizationID(moduleProperties.getCompanyIdentifier())
@@ -289,11 +294,6 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         settings.linkProject(gradleSettings);
 
         FileDocumentManager.getInstance().saveAllDocuments();
-
-        ImportSpecBuilder builder = new ImportSpecBuilder(rootModel.getProject(), GradleConstants.SYSTEM_ID);
-        builder.forceWhenUptodate(true);
-
-        ExternalSystemUtil.refreshProjects(builder);
     }
 
     private void modifyGradleSettings(@NotNull File file, Module[] modules) throws IOException {
