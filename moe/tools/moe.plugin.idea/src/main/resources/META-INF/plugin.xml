@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>org.moe.community</id>
   <name>Multi-OS Engine Community Edition</name>
-  <version>1.4.6</version>
+  <version>1.4.8</version>
 
   <vendor url="https://discuss.multi-os-engine.org/">Multi-OS Engine Community</vendor>
 
@@ -10,6 +10,11 @@
     ]]></description>
 
   <change-notes><![CDATA[
+      1.4.8<br>
+      - Fix "Wrapper not found" issue after creating new MOE module<br>
+      - Update MOE plugin to 1.7.+<br>
+      - Other bug fixes and improvements<br>
+      <br>
       1.4.7<br>
       - Support Gradle group modules using qualified names<br>
       - Support storing generated project files externally<br>
