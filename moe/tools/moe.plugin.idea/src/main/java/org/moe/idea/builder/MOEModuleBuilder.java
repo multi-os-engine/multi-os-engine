@@ -315,6 +315,8 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         }
 
         Files.append(stringBuilder.toString(), file, Charsets.UTF_8);
+
+        LocalFileSystem.getInstance().refreshIoFiles(Collections.singletonList(file));
     }
 
     private void configureRun(ModifiableRootModel rootModel) {
