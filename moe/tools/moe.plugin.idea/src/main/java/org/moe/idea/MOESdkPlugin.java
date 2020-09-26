@@ -232,11 +232,11 @@ public class MOESdkPlugin {
 
     public static Module findModuleForFile(Project project, VirtualFile file) {
 
-        if (project == null || project.getBaseDir() == null) {
+        if (project == null || project.getBasePath() == null) {
             return null;
         }
 
-        String projectPath = project.getBaseDir().getPath();
+        String projectPath = project.getBasePath();
 
         Module module = null;
 

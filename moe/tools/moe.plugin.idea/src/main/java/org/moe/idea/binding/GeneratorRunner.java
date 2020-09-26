@@ -22,17 +22,19 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.util.ui.UIUtil;
-import org.moe.common.exec.*;
+
+import org.moe.common.exec.ExecRunner;
+import org.moe.common.exec.ExecRunnerBase;
+import org.moe.common.exec.GradleExec;
+import org.moe.common.exec.IKillListener;
 import org.moe.document.pbxproj.ProjectException;
-import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class GeneratorRunner {
 
@@ -139,7 +141,7 @@ public class GeneratorRunner {
 
                 progress.setFraction(0.9);
 
-                module.getProject().getBaseDir().getFileSystem().refresh(true);
+                LocalFileSystem.getInstance().refresh(true);
 
                 progress.setFraction(1.0);
 

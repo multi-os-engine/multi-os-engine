@@ -126,7 +126,6 @@ public class MOEProgramRunner extends GenericProgramRunner {
 
                 if (executionResult instanceof DefaultExecutionResult) {
                     sessionImpl.addRestartActions(((DefaultExecutionResult)executionResult).getRestartActions());
-                    sessionImpl.addExtraStopActions(((DefaultExecutionResult)executionResult).getAdditionalStopActions());
                 }
 
                 return JavaDebugProcess.create(session, debuggerSession);
