@@ -64,13 +64,10 @@
 
       <stepsBeforeRunProvider implementation="org.moe.idea.runconfig.beforeRunTasks.MOEGradleTaskProvider" />
 
+      <projectService serviceImplementation="org.moe.idea.ui.MOEToolWindow" />
   </extensions>
 
     <project-components>
-        <component>
-            <implementation-class>org.moe.idea.ui.MOEToolWindow</implementation-class>
-        </component>
-
         <component>
             <implementation-class>org.moe.idea.component.MOEProjectComponent</implementation-class>
         </component>
