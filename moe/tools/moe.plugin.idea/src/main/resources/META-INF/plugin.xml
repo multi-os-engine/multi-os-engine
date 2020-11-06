@@ -10,6 +10,9 @@
     ]]></description>
 
   <change-notes><![CDATA[
+      1.4.9<br>
+      - Fix binding editor on AS 4.1/Intellij 2020.1+<br>
+      <br>
       1.4.8<br>
       - Fix "Wrapper not found" issue after creating new MOE module<br>
       - Update MOE plugin to 1.7.+<br>
