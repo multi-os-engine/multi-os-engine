@@ -268,6 +268,9 @@ public final class CEnumManager extends AbstractUnitManager {
                 modifiers.setFinal();
                 modifiers.setGenerated();
 
+                XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
+                editor.setJavaDoc(doc);
+
                 editor.close();
             }
 
@@ -325,6 +328,9 @@ public final class CEnumManager extends AbstractUnitManager {
                 modifiers.setStatic();
                 modifiers.setFinal();
                 modifiers.setGenerated();
+
+                XcodeDocumentation doc = new XcodeDocumentation(constant.getComment(), getEditGroup());
+                editor.setJavaDoc(doc);
 
                 editor.close();
             }

@@ -44,13 +44,19 @@ public class XcodeDocumentation {
 
     private final IXcodeDocumenrationImpl impl;
 
-    public XcodeDocumentation(Indexer indexer, String lang, String type, String element, String name,
+    public XcodeDocumentation(Indexer indexer, String lang, String type, String element, String name, String comment,
             TextEditGroup editGroup) throws IOException {
-        if ("true".equals(System.getProperty("moe.natjgen.doc.full", "false"))) {
+        if (indexer.getConfiguration().getDocsets().isEmpty()) {
+            impl = new XcodeCommentDocumentation(comment, editGroup);
+        } else if ("true".equals(System.getProperty("moe.natjgen.doc.full", "false"))) {
             impl = new XcodeFullDocumentation(indexer, lang, type, element, name, editGroup);
         } else {
             impl = new XcodeLinkedDocumentation(indexer, lang, type, element, name, editGroup);
         }
+    }
+
+    public XcodeDocumentation(String comment, TextEditGroup editGroup) {
+        impl = new XcodeCommentDocumentation(comment, editGroup);
     }
 
     public Javadoc getJavaDoc(ASTRewrite rewrite, ArrayList<CalleeArgument> args) {

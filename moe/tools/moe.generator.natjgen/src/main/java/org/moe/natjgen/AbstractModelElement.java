@@ -29,6 +29,11 @@ abstract class AbstractModelElement {
     private boolean edited = true;
 
     /**
+     * Element's comment.
+     */
+    private String comment;
+
+    /**
      * Creates a new Model Element.
      *
      * @param name         element's name
@@ -57,6 +62,24 @@ abstract class AbstractModelElement {
      */
     final void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * Returns the element's comment.
+     *
+     * @return the element's comment
+     */
+    public String getComment() {
+        return comment;
+    }
+
+    /**
+     * Sets the element's comment.
+     *
+     * @param comment new comment
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     /**

@@ -243,4 +243,9 @@ public class ClassEditor extends EditContext {
         }
     }
 
+    public void setJavaDoc(XcodeDocumentation doc) {
+        getRewrite().set(classDecl, TypeDeclaration.JAVADOC_PROPERTY, doc.getJavaDoc(getRewrite(), null),
+                getEditGroup());
+    }
+
 }

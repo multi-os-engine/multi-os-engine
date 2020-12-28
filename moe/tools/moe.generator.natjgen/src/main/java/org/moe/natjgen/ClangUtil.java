@@ -325,4 +325,19 @@ public final class ClangUtil {
 
         return parameters;
     }
+
+    public static String getComment(CXCursor decl) {
+        try {
+            CXString s = clang_Cursor_getRawCommentText(decl);
+            String rawComment = s == null ? null : s.getCString();
+            if (rawComment != null) {
+//                System.out.println(rawComment);
+                return rawComment;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    }
 }

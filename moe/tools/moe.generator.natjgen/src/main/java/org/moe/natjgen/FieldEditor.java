@@ -211,4 +211,9 @@ public class FieldEditor extends EditContext {
         modifiers.forceEdit();
     }
 
+    public void setJavaDoc(XcodeDocumentation doc) {
+        getRewrite().set(fieldDecl, FieldDeclaration.JAVADOC_PROPERTY, doc.getJavaDoc(getRewrite(), null),
+                getEditGroup());
+    }
+
 }

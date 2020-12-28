@@ -370,6 +370,9 @@ public class CStructManager extends AbstractUnitManager {
             }
             modifiers.setGenerated();
 
+            XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
+            editor.setJavaDoc(doc);
+
             editor.close();
         }
 
@@ -470,6 +473,9 @@ public class CStructManager extends AbstractUnitManager {
             modifiers.setNative();
             modifiers.setStructureField(order, isGetter, field.getConstantArraySize());
             modifiers.setGenerated();
+
+            XcodeDocumentation doc = new XcodeDocumentation(field.getComment(), getEditGroup());
+            editor.setJavaDoc(doc, null);
 
             editor.close();
         }
