@@ -27,11 +27,31 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
             return null;
         }
 
-        // Preprocess the comment
+        // Preprocess the comment.
+        // Here we need to extract the content from the raw comment,
+        // removing all syntax elements like the leading slashes from line comments
+        // and the `/* */` from block comments, while maintain the format of the original comment.
+        // We also need to consider consecutive multiple comments in different syntax.
+        // For example, giving the following comments (ignore the leading "//>"):
+        //> /*
+        //> Comment 1
+        //> */
+        //> // Comment 2
+        //> /**
+        //>  * Comment 3
+        //>  */
+
+        // After the process, we will have three lines of pure text (ignore the leading "//>"):
+        //> Comment 1
+        //> Comment 2
+        //> Comment 3
+
         String c = comment.trim();
 
+        // Split the raw comment into lines
         LinkedList<String> lines = new LinkedList<>();
         Collections.addAll(lines, c.split("\\r?\\n"));
+
         lines.add("*/"); // Make sure the last block ends
 
         LinkedList<String> cleanedLines = new LinkedList<>();
@@ -41,25 +61,41 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
             String line = lines.pop();
 
             if (inBlock) {
+                // Check if current line contains the termination of the block comment
+                // TODO: handle sequence like /*/*/ correctly
                 int i = line.indexOf("*/");
                 if (i >= 0) {
+                    // Block terminated
                     inBlock = false;
 
                     String start = line.substring(0, i);
                     if (!start.trim().isEmpty()) {
+                        // Put anything before the termination symbol to the block buffer
+                        // TODO: trim tail
                         blockBuffer.add(start);
                     }
                     String tail = line.substring(i + 2);
                     if (!tail.trim().isEmpty()) {
+                        // Put anything after the termination symbol back to the line buffer
+                        // since there can be more comments afterwards
                         lines.push(tail);
                     }
 
                     if (!blockBuffer.isEmpty()) {
+                        // Handle the first line by removing the block start symbol /*
                         String firstLine = blockBuffer.pop().replaceFirst("/\\*+", "").trim();
                         if (!firstLine.isEmpty()) {
                             cleanedLines.add(firstLine);
                         }
 
+                        // For remaining lines of the block, we remove the leading asterisks
+                        // only if ALL lines start with asterisks.
+                        // We also remove the maximum common indent after the asterisk.
+                        // For the following two lines:
+                        // *   3 leading spaces
+                        // *
+                        // *  2 leading spaces
+                        // the maximum common indent is 2, and the empty line is kept (and trimmed) regardless.
                         boolean allLineStartWithAsterisk = true;
                         int spaceAfterAsterisk = Integer.MAX_VALUE;
                         for (String bl : blockBuffer) {
@@ -80,6 +116,7 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
                             for (String bl : blockBuffer) {
                                 String t = bl.trim().substring(1);
                                 if (t.trim().isEmpty()) {
+                                    // Replace any blank line with empty line
                                     cleanedLines.add("");
                                 } else {
                                     cleanedLines.add(t.substring(spaceAfterAsterisk));
@@ -91,18 +128,29 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
                         blockBuffer.clear();
                     }
                 } else {
+                    // Block not terminate yet, keep buffering
                     blockBuffer.add(line);
                 }
             } else {
                 String tmpLine = line.trim();
                 if (tmpLine.startsWith("/*")) {
+                    // A block comment starts.
+                    // Here we put the line back to the line buffer because this line might also
+                    // contains the end of the block, e.g. a single-line block comment.
                     inBlock = true;
                     lines.push(tmpLine);
                 } else if (tmpLine.startsWith("//")) {
+                    // This is a single-line comment, we remove all continues slashes at the beginning of the line
                     cleanedLines.add(tmpLine.replaceFirst("^//+", ""));
                 } else if (tmpLine.contains("*/")) {
+                    // We are not in a block comment, and also not a line comment (how?), but there is a
+                    // end-of-block symbol in the text, we have to remove it so the final javadoc won't
+                    // terminate accidentally.
+                    // Once the symbol is removed, then this line might be a valid comment, so we put the
+                    // processed line back to the buffer.
                     lines.push(line.replace("*/", " "));
                 } else {
+                    // Otherwise just a plain text, consume i
                     cleanedLines.add(line);
                 }
             }
