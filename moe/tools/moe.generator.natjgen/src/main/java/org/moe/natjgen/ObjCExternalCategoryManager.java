@@ -19,6 +19,8 @@ package org.moe.natjgen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+
 public final class ObjCExternalCategoryManager extends ObjCClassManager {
 
     /**
@@ -114,6 +116,9 @@ public final class ObjCExternalCategoryManager extends ObjCClassManager {
                 }
                 modifiers.setGenerated();
 
+                XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
+                editor.setJavaDoc(doc);
+
                 editor.close();
             }
 
@@ -188,6 +193,35 @@ public final class ObjCExternalCategoryManager extends ObjCClassManager {
                     modifiers.setOwned();
                 }
                 modifiers.setGenerated();
+
+                // Add documentation
+                if (method.getPropertyName() == null) {
+                    String type = null;
+                    type = method.isStatic() ?
+                            XcodeDocumentation.DocInterfaceClassMethodType :
+                            XcodeDocumentation.DocInterfaceMethodType;
+                    if (type != null) {
+                        try {
+                            XcodeDocumentation doc = new XcodeDocumentation(getIndexer(),
+                                    XcodeDocumentation.DocObjectiveCLanguage, type, originalName, method.getSelector(), method.getComment(),
+                                    getEditGroup());
+                            editor.setJavaDoc(doc, method.getArguments());
+                        } catch (IOException e) {
+                        }
+                    }
+                } else {
+                    String type = null;
+                    type = XcodeDocumentation.DocInterfacePropertyType;
+                    if (type != null) {
+                        try {
+                            XcodeDocumentation doc = new XcodeDocumentation(getIndexer(),
+                                    XcodeDocumentation.DocObjectiveCLanguage, type, originalName,
+                                    method.getPropertyName(), method.getComment(), getEditGroup());
+                            editor.setJavaDoc(doc, method.getArguments());
+                        } catch (IOException e) {
+                        }
+                    }
+                }
 
                 editor.close();
             }
