@@ -546,13 +546,17 @@ public class Indexer {
             // skipped but the container class is not generated
             if (!unit.handlingExternal() && cls_manager.isExternalUnit()) {
                 // Add as external category
-                ObjCExternalCategoryManager cat_manager = generator.getExternalCategory(class_name);
+
+                // Use fully qualified name as the lookup key,
+                // so the external categories for the same class from different frameworks won't
+                // be incorrectly merged into a single file.
+                String name_fq = Unit.packageName(unit.getPkg(), "category", class_name);
+                ObjCExternalCategoryManager cat_manager = generator.getExternalCategory(name_fq);
                 if (cat_manager == null) {
-                    cat_manager = new ObjCExternalCategoryManager(this,
-                            Unit.packageName(unit.getPkg(), "category", class_name), cls_manager);
+                    cat_manager = new ObjCExternalCategoryManager(this, name_fq, cls_manager);
                     cat_manager.setLibraryName(unit.getFramework());
                     cat_manager.setComment(ClangUtil.getComment(container));
-                    generator.put(class_name, cat_manager);
+                    generator.put(name_fq, cat_manager);
                 }
                 return cat_manager;
             } else {
