@@ -1359,6 +1359,7 @@ public class Configuration implements IConfigurationElement {
                 cmdlineArgs.add("-fobjc-arc");
                 cmdlineArgs.add("-fpascal-strings");
                 cmdlineArgs.add("-ferror-limit=9999999");
+                cmdlineArgs.add("-fparse-all-comments");
 
                 // Define macros
                 cmdlineArgs.add("-DNS_BLOCK_ASSERTIONS=1");
