@@ -172,4 +172,11 @@ public class StringUtil {
         }
     }
 
+    public static int getIndentCount(String input) {
+        int s = 0;
+        for (; s < input.length() && input.charAt(s) <= ' '; s++) ;
+
+        return s;
+    }
+
 }

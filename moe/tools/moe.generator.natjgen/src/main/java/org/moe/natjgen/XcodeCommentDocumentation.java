@@ -6,10 +6,12 @@ import org.eclipse.jdt.core.dom.TextElement;
 import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
 import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.eclipse.text.edits.TextEditGroup;
+import org.moe.natjgen.util.StringUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocumenrationImpl {
 
@@ -90,42 +92,46 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
 
                         // For remaining lines of the block, we remove the leading asterisks
                         // only if ALL lines start with asterisks.
+                        boolean allLineStartWithAsterisk = true;
+                        for (String bl : blockBuffer) {
+                            String t = bl.trim();
+                            if (!t.startsWith("*")) {
+                                allLineStartWithAsterisk = false;
+                                break;
+                            }
+                        }
+                        List<String> blockBufferWithoutAsterisk = new ArrayList<>(blockBuffer.size());
+                        if (allLineStartWithAsterisk) {
+                            for (String bl : blockBuffer) {
+                                String t = bl.trim();
+                                blockBufferWithoutAsterisk.add(t.substring(1));
+                            }
+                        } else {
+                            blockBufferWithoutAsterisk.addAll(blockBuffer);
+                        }
+                        blockBuffer.clear();
+
                         // We also remove the maximum common indent after the asterisk.
                         // For the following two lines:
                         // *   3 leading spaces
                         // *
                         // *  2 leading spaces
                         // the maximum common indent is 2, and the empty line is kept (and trimmed) regardless.
-                        boolean allLineStartWithAsterisk = true;
-                        int spaceAfterAsterisk = Integer.MAX_VALUE;
-                        for (String bl : blockBuffer) {
-                            String t = bl.trim();
-                            if (t.startsWith("*")) {
-                                t = t.substring(1);
-                                if (!t.trim().isEmpty()) {
-                                    int s = 0;
-                                    for (; s < t.length() && t.charAt(s) == ' '; s++) ;
-                                    spaceAfterAsterisk = Math.min(spaceAfterAsterisk, s);
-                                }
+                        int maxCommonIndent = Integer.MAX_VALUE;
+                        for (String bl : blockBufferWithoutAsterisk) {
+                            if (!bl.trim().isEmpty()) {
+                                maxCommonIndent = Math.min(maxCommonIndent, StringUtil.getIndentCount(bl));
+                            }
+                        }
+                        for (String bl : blockBufferWithoutAsterisk) {
+                            if (bl.trim().isEmpty()) {
+                                // Replace any blank line with empty line
+                                cleanedLines.add("");
                             } else {
-                                allLineStartWithAsterisk = false;
-                                break;
+                                // TODO: trim tail
+                                cleanedLines.add(bl.substring(maxCommonIndent));
                             }
                         }
-                        if (allLineStartWithAsterisk) {
-                            for (String bl : blockBuffer) {
-                                String t = bl.trim().substring(1);
-                                if (t.trim().isEmpty()) {
-                                    // Replace any blank line with empty line
-                                    cleanedLines.add("");
-                                } else {
-                                    cleanedLines.add(t.substring(spaceAfterAsterisk));
-                                }
-                            }
-                        } else {
-                            cleanedLines.addAll(blockBuffer);
-                        }
-                        blockBuffer.clear();
                     }
                 } else {
                     // Block not terminate yet, keep buffering
