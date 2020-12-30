@@ -83,7 +83,7 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
 
                     if (!blockBuffer.isEmpty()) {
                         // Handle the first line by removing the block start symbol /*
-                        String firstLine = blockBuffer.pop().replaceFirst("/\\*+", "").trim();
+                        String firstLine = blockBuffer.pop().replaceFirst("/\\*+!?", "").trim();
                         if (!firstLine.isEmpty()) {
                             cleanedLines.add(firstLine);
                         }
