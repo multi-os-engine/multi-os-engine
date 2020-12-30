@@ -151,6 +151,8 @@ public class UnitEditContext {
         try {
             DefaultCodeFormatterOptions o = DefaultCodeFormatterOptions.getEclipseDefaultSettings();
             o.tab_char = DefaultCodeFormatterOptions.SPACE;
+            o.page_width = 120;
+            o.comment_line_length = 120;
             // When passed null instead of defaultSettings, eclipse did not find
             // the default formatter settings.
             TextEdit edit = rewrite.rewriteAST(document, o.getMap());
