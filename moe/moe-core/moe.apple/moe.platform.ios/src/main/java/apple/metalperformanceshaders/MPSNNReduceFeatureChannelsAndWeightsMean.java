@@ -97,8 +97,10 @@ public class MPSNNReduceFeatureChannelsAndWeightsMean extends MPSNNReduceBinary 
     public native MPSNNReduceFeatureChannelsAndWeightsMean initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
      * @param      device      The MTLDevice on which to make the MPSCNNPooling
      * @return     A new MPSCNNPooling object, or nil if failure.
@@ -109,7 +111,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsMean extends MPSNNReduceBinary 
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to apply the reduction operation on an image.
+     * Specifies information to apply the reduction operation on an image.
+     * 
      * @param    device            The device the filter will run on
      * @return   A valid MPSNNReduceFeatureChannelsAndWeightsMean object or nil, if failure.
      */

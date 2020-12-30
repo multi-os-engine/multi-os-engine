@@ -40,9 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CBDescriptor
+ * CBDescriptor
  * 
- *  @discussion
  *      Represents a characteristic's descriptor.
  */
 @Generated
@@ -157,9 +156,8 @@ public class CBDescriptor extends CBAttribute {
     public static native long version_static();
 
     /**
-     * @property characteristic
+     * [@property] characteristic
      * 
-     * @discussion
      *     A back-pointer to the characteristic this descriptor belongs to.
      */
     @Generated
@@ -171,9 +169,8 @@ public class CBDescriptor extends CBAttribute {
     public native CBDescriptor init();
 
     /**
-     * @property value
+     * [@property] value
      * 
-     * @discussion
      *     The value of the descriptor. The corresponding value types for the various descriptors are detailed in @link CBUUID.h @/link.
      */
     @Generated

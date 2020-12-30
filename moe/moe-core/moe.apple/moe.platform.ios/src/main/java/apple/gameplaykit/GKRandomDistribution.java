@@ -123,6 +123,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     /**
      * Convenience creation of random distribution with the die like range [1, sideCount] using an isolated source to grab input values from.
      * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource alloc] init].
+     * 
      * @see initWithRandomSource:lowestValue:highestValue:
      */
     @Generated
@@ -132,6 +133,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     /**
      * Convenience creation of random distribution within the range [lowest, highest] using an isolated source to grab input values from.
      * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource alloc] init].
+     * 
      * @see initWithRandomSource:lowestValue:highestValue:
      */
     @Generated

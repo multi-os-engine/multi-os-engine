@@ -40,9 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CBService
+ * CBService
  * 
- * @discussion
  *      Represents a peripheral's service or a service's included service.
  */
 @Generated
@@ -157,9 +156,8 @@ public class CBService extends CBAttribute {
     public static native long version_static();
 
     /**
-     * @property characteristics
+     * [@property] characteristics
      * 
-     * @discussion
      *      A list of CBCharacteristics that have so far been discovered in this service.
      */
     @Generated
@@ -167,9 +165,8 @@ public class CBService extends CBAttribute {
     public native NSArray<? extends CBCharacteristic> characteristics();
 
     /**
-     * @property includedServices
+     * [@property] includedServices
      * 
-     * @discussion
      *      A list of included CBServices that have so far been discovered in this service.
      */
     @Generated
@@ -181,9 +178,8 @@ public class CBService extends CBAttribute {
     public native CBService init();
 
     /**
-     * @property isPrimary
+     * [@property] isPrimary
      * 
-     * @discussion
      *      The type of the service (primary or secondary).
      */
     @Generated
@@ -191,9 +187,8 @@ public class CBService extends CBAttribute {
     public native boolean isPrimary();
 
     /**
-     * @property peripheral
+     * [@property] peripheral
      * 
-     * @discussion
      *      A back-pointer to the peripheral this service belongs to.
      */
     @Generated

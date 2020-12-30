@@ -40,9 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Object representing an unconfigured MFi Wireless Accessory Configuration (WAC) accessory.
+ * Object representing an unconfigured MFi Wireless Accessory Configuration (WAC) accessory.
  * 
- * @discussion This class models an unconfigured MFi Wireless Accessory Configuration accessory
+ * This class models an unconfigured MFi Wireless Accessory Configuration accessory
  *             discovered via a EAWiFiUnconfiguredAccessoryBrowser search.
  */
 @Generated
@@ -161,45 +161,45 @@ public class EAWiFiUnconfiguredAccessory extends NSObject {
     public native EAWiFiUnconfiguredAccessory init();
 
     /**
-     * @property macAddress
+     * [@property] macAddress
      * 
-     * @discussion The primary MAC address of the accessory.
+     * The primary MAC address of the accessory.
      */
     @Generated
     @Selector("macAddress")
     public native String macAddress();
 
     /**
-     * @property manufacturer
+     * [@property] manufacturer
      * 
-     * @discussion The name of the accessory's manufacturer.
+     * The name of the accessory's manufacturer.
      */
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
     /**
-     * @property model
+     * [@property] model
      * 
-     * @discussion The model name of accessory.
+     * The model name of accessory.
      */
     @Generated
     @Selector("model")
     public native String model();
 
     /**
-     * @property name
+     * [@property] name
      * 
-     * @discussion The name of the accessory.
+     * The name of the accessory.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @property properties
+     * [@property] properties
      * 
-     * @discussion The properties the accessory supports.
+     * The properties the accessory supports.
      */
     @Generated
     @Selector("properties")
@@ -207,9 +207,9 @@ public class EAWiFiUnconfiguredAccessory extends NSObject {
     public native long properties();
 
     /**
-     * @property ssid
+     * [@property] ssid
      * 
-     * @discussion The Wi-Fi SSID of the accessory.
+     * The Wi-Fi SSID of the accessory.
      */
     @Generated
     @Selector("ssid")

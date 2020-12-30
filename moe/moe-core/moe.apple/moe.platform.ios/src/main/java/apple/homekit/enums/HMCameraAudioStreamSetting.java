@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @abstract This enumeration describes the setting for audio on the recipient of the camera stream.
+ * This enumeration describes the setting for audio on the recipient of the camera stream.
  */
 @Generated
 public final class HMCameraAudioStreamSetting {

@@ -31,9 +31,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MDLMeshBufferAllocator
- * @abstract Object for allocating buffers to back vertex and index data
- * @discussion Accepted by MDLAsset init method.  Implementor creates objects 
+ * [@protocol] MDLMeshBufferAllocator
+ * 
+ * Object for allocating buffers to back vertex and index data
+ * 
+ * Accepted by MDLAsset init method.  Implementor creates objects
  *             implementing MDLMeshBuffer with memory to be filled with vertex and 
  *             index data during 3d file loading and parsing.
  */
@@ -43,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MDLMeshBufferAllocator")
 public interface MDLMeshBufferAllocator {
     /**
-     * @method newBuffer:type:
-     * @abstract Create a buffer in a default zone
+     * newBuffer:type:
+     * 
+     * Create a buffer in a default zone
+     * 
      * @param length Size of buffer to be created in bytes
      * @param type Type of data to be stored in this buffer
      */
@@ -54,18 +58,21 @@ public interface MDLMeshBufferAllocator {
     MDLMeshBuffer newBufferType(@NUInt long length, @NUInt long type);
 
     /**
-     * @method newBufferFromZone:data:type:
-     * @abstract Create a buffer from a given zone and fill with data in the supplied 
+     * newBufferFromZone:data:type:
+     * 
+     * Create a buffer from a given zone and fill with data in the supplied
      *           NSData object
+     * 
+     * An implementing MDLMeshBufferAllocator object may increase the size
+     *             of the zone if the buffer could not be allocated with the current 
+     *             zone size. Alternatively the implementation may return nil if the 
+     *             buffer could not be allocated.
+     * 
      * @return An object conforming to the MDLMeshBuffer protocol.  Returns nil the 
      *         buffer could not be allocated in the given zone
      * @param zone Zone from which to allocate the memory
      * @param data Values with which to fill the buffer
      * @param type Type of data to be stored in this buffer
-     * @discussion An implementing MDLMeshBufferAllocator object may increase the size 
-     *             of the zone if the buffer could not be allocated with the current 
-     *             zone size. Alternatively the implementation may return nil if the 
-     *             buffer could not be allocated.
      */
     @Generated
     @Selector("newBufferFromZone:data:type:")
@@ -74,16 +81,19 @@ public interface MDLMeshBufferAllocator {
             @NUInt long type);
 
     /**
-     * @method newBufferFromZone:length:type:
-     * @abstract Create a buffer from a given zone with the given length
+     * newBufferFromZone:length:type:
+     * 
+     * Create a buffer from a given zone with the given length
+     * 
+     * An implementing MDLMeshBufferAllocator object may increase the size
+     *             of the zone if the buffer could not be allocated with the current 
+     *             zone size.  Alternatively the implementation may return nil if the 
+     *             buffer could not be allocated.
+     * 
      * @return An object conforming to the MDLMeshBuffer protocol.  Returns nil the 
      *         buffer could not be allocated in the zone given.
      * @param zone Zone from which to allocate the memory
      * @param type Type of data to be stored in this buffer
-     * @discussion An implementing MDLMeshBufferAllocator object may increase the size 
-     *             of the zone if the buffer could not be allocated with the current 
-     *             zone size.  Alternatively the implementation may return nil if the 
-     *             buffer could not be allocated.
      */
     @Generated
     @Selector("newBufferFromZone:length:type:")
@@ -92,9 +102,11 @@ public interface MDLMeshBufferAllocator {
             @NUInt long length, @NUInt long type);
 
     /**
-     * @method newBufferWithData:type:
-     * @abstract Create a buffer in a default zone and fill with data in the supplied 
+     * newBufferWithData:type:
+     * 
+     * Create a buffer in a default zone and fill with data in the supplied
      *           NSData object
+     * 
      * @param data Memory to fill the buffer with
      * @param type Type of data to be stored in this buffer
      */
@@ -104,8 +116,10 @@ public interface MDLMeshBufferAllocator {
     MDLMeshBuffer newBufferWithDataType(NSData data, @NUInt long type);
 
     /**
-     * @method newZone:
-     * @abstract Create a zone which can be used to allocate MDLMeshBuffer objects
+     * newZone:
+     * 
+     * Create a zone which can be used to allocate MDLMeshBuffer objects
+     * 
      * @param capacity Total size in bytes of all buffers which can be created from 
      *        this zone
      */
@@ -115,15 +129,18 @@ public interface MDLMeshBufferAllocator {
     MDLMeshBufferZone newZone(@NUInt long capacity);
 
     /**
-     * @method newZoneForBuffersWithSize:andType:
-     * @abstract Create a zone which can be used to allocate MDLMeshBuffer objects
-     * @param sizes Sizes of each buffer to be created in this zone
-     * @param types Type of each buffer to be created in this zone. Values to be of
-     *              MDLMeshBufferType
-     * @discussion Will create a zone from which MDLMeshBuffer objects can be 
+     * newZoneForBuffersWithSize:andType:
+     * 
+     * Create a zone which can be used to allocate MDLMeshBuffer objects
+     * 
+     * Will create a zone from which MDLMeshBuffer objects can be
      *             allocated.  This will allocate a zone with enough capacity
      *             for each of the buffers with sizes and types specified even taking
      *             into any alignment restrictions necessary to use these buffers.
+     * 
+     * @param sizes Sizes of each buffer to be created in this zone
+     * @param types Type of each buffer to be created in this zone. Values to be of
+     *              MDLMeshBufferType
      */
     @Generated
     @Selector("newZoneForBuffersWithSize:andType:")

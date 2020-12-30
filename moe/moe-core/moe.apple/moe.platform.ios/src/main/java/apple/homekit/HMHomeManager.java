@@ -43,9 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   Manages collection of one or more homes.
+ * Manages collection of one or more homes.
  * 
- * @discussion This class is responsible for managing a collection of homes.
+ * This class is responsible for managing a collection of homes.
  */
 @Generated
 @Library("HomeKit")
@@ -159,7 +159,7 @@ public class HMHomeManager extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract   Adds a new home to the collection.
+     * Adds a new home to the collection.
      * 
      * @param      homeName    Name of the  home to create and add to the collection.
      * 
@@ -173,7 +173,7 @@ public class HMHomeManager extends NSObject {
             @ObjCBlock(name = "call_addHomeWithNameCompletionHandler") Block_addHomeWithNameCompletionHandler completion);
 
     /**
-     * @abstract   Delegate that receives updates on the collection of homes.
+     * Delegate that receives updates on the collection of homes.
      */
     @Generated
     @Selector("delegate")
@@ -181,9 +181,9 @@ public class HMHomeManager extends NSObject {
     public native HMHomeManagerDelegate delegate();
 
     /**
-     * @abstract   Array of HMHome objects that represents the homes associated with the home manager.
+     * Array of HMHome objects that represents the homes associated with the home manager.
      * 
-     * @discussion When a new home manager is created, this array is inialized as an empty array. It is
+     * When a new home manager is created, this array is inialized as an empty array. It is
      *             not guaranteed to be filled with the list of homes, represented as HMHome objects,
      *             until the homeManagerDidUpdateHomes: delegate method has been invoked.
      */
@@ -196,14 +196,14 @@ public class HMHomeManager extends NSObject {
     public native HMHomeManager init();
 
     /**
-     * @abstract   The primary home for this collection.
+     * The primary home for this collection.
      */
     @Generated
     @Selector("primaryHome")
     public native HMHome primaryHome();
 
     /**
-     * @abstract   Removes an existing home from the collection.
+     * Removes an existing home from the collection.
      * 
      * @param      home        Home object that needs to be removed from the collection.
      * 
@@ -217,14 +217,14 @@ public class HMHomeManager extends NSObject {
             @ObjCBlock(name = "call_removeHomeCompletionHandler") Block_removeHomeCompletionHandler completion);
 
     /**
-     * @abstract   Delegate that receives updates on the collection of homes.
+     * Delegate that receives updates on the collection of homes.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value);
 
     /**
-     * @abstract   Delegate that receives updates on the collection of homes.
+     * Delegate that receives updates on the collection of homes.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeManagerDelegate value) {
@@ -239,7 +239,7 @@ public class HMHomeManager extends NSObject {
     }
 
     /**
-     * @abstract   This method is used to change the primary home.
+     * This method is used to change the primary home.
      * 
      * @param      home        New primary home.
      * 
@@ -274,8 +274,9 @@ public class HMHomeManager extends NSObject {
     }
 
     /**
-     * @abstract   The current authorization status of the application.
-     * @discussion The authorization is managed by the system, there is no need to explicitly request authorization.
+     * The current authorization status of the application.
+     * 
+     * The authorization is managed by the system, there is no need to explicitly request authorization.
      */
     @Generated
     @Selector("authorizationStatus")

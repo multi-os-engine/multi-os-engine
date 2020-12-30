@@ -19,27 +19,28 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- *    @enum       AudioQueueProcessingTapFlags
- *    @abstract   Flags used in conjunction with processing taps
+ *    [@enum]       AudioQueueProcessingTapFlags
+ * 
+ * Flags used in conjunction with processing taps
  * 
  * In the flags passed to AudioQueueProcessingTapNew, either the PreEffects
  * or PostEffects flag must be set, but not both. 
  * 
- *    @constant   kAudioQueueProcessingTap_PreEffects
+ *    [@constant]   kAudioQueueProcessingTap_PreEffects
  *        Signifies that the processing tap is inserted before any effects.
  *        Passed to AudioQueueProcessingTapNew and to the callback.
- *    @constant   kAudioQueueProcessingTap_PostEffects
+ *    [@constant]   kAudioQueueProcessingTap_PostEffects
  *        Signifies that the processing tap is inserted after any effects.
  *        Passed to AudioQueueProcessingTapNew and to the callback.
- *    @constant   kAudioQueueProcessingTap_Siphon
+ *    [@constant]   kAudioQueueProcessingTap_Siphon
  *        Signifies that the processing tap is a siphon; it does not call
  *        GetSourceAudio. The callback instead receives the source audio
  *        and may not modify it. Passed to AudioQueueProcessingTapNew and to the callback.
- *    @constant   kAudioQueueProcessingTap_StartOfStream
+ *    [@constant]   kAudioQueueProcessingTap_StartOfStream
  *        Signifies that the source audio is the beginning of a continuous stream,
  *        i.e. following the beginning or resumption of playback or recording.
  *        Returned from GetSourceAudio.
- *    @constant   kAudioQueueProcessingTap_EndOfStream
+ *    [@constant]   kAudioQueueProcessingTap_EndOfStream
  *        Signifies that the source audio is past the end of stream. This happens when
  *        the audio queue is being stopped asynchronously and has finished playing
  *        all of its data. Returned from GetSourceAudio and should be propagated

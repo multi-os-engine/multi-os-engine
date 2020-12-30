@@ -29,8 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class  MPSCNNNormalizationGammaAndBetaState
- * @description A state which contains gamma and beta terms used to apply a scale
+ * MPSCNNNormalizationGammaAndBetaState
+ * [@description] A state which contains gamma and beta terms used to apply a scale
  *              and bias in either an MPSCNNInstanceNormalization or MPSCNNBatchNormalization
  *              operation.
  */
@@ -67,8 +67,9 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   beta
-     * @abstract   A MTLBuffer containing the beta terms.
+     * [@property]   beta
+     * 
+     * A MTLBuffer containing the beta terms.
      */
     @Generated
     @Selector("beta")
@@ -102,8 +103,9 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     public static native String description_static();
 
     /**
-     * @property   gamma
-     * @abstract   A MTLBuffer containing the gamma terms.
+     * [@property]   gamma
+     * 
+     * A MTLBuffer containing the gamma terms.
      */
     @Generated
     @Selector("gamma")
@@ -135,7 +137,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
 
     /**
-     * @abstract   Initialize a MPSCNNNormalizationGammaAndBetaState object using values
+     * Initialize a MPSCNNNormalizationGammaAndBetaState object using values
      *             contained in MTLBuffers.
      * 
      * @param      gamma       The MTLBuffer containing gamma terms.
@@ -212,7 +214,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     /**
-     * @abstract   Create a temporary MPSCNNNormalizationGammaAndBetaState suitable
+     * Create a temporary MPSCNNNormalizationGammaAndBetaState suitable
      *             for a normalization operation on images containing no more than
      *             the specified number of feature channels.
      * 

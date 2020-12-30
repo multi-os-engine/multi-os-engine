@@ -47,8 +47,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKDocumentQuery
- * @abstract      A concrete subclass of HKQuery that provides an interface to retrieve documents from the Health store.
+ * HKDocumentQuery
+ * 
+ * A concrete subclass of HKQuery that provides an interface to retrieve documents from the Health store.
  */
 @Generated
 @Library("HealthKit")
@@ -262,8 +263,9 @@ public class HKDocumentQuery extends HKQuery {
     public static native long version_static();
 
     /**
-     * @property      includeDocumentData
-     * @abstract      The XML content for documents may be large.  This property can be used to control whether the query
+     * [@property]      includeDocumentData
+     * 
+     * The XML content for documents may be large.  This property can be used to control whether the query
      *                returns the XML content for each record.
      */
     @Generated
@@ -275,8 +277,16 @@ public class HKDocumentQuery extends HKQuery {
     public native HKDocumentQuery init();
 
     /**
-     * @method        initWithDocumentType:predicate:limit:sortDescriptors:includeDocumentData:resultsHandler:
-     * @abstract      Returns a query that will retrieve HKDocumentSamples matching the given predicate.
+     * initWithDocumentType:predicate:limit:sortDescriptors:includeDocumentData:resultsHandler:
+     * 
+     * Returns a query that will retrieve HKDocumentSamples matching the given predicate.
+     * 
+     * Health documents may contain sensitive data that a user may want to control explicitly. HKDocumentSample
+     *                objects returned by HKSampleQuery and HKAnchoredObjectQuery do not include this data (i.e., the document
+     *                property is nil).  This query can be used to retrieve fully populated HKDocumentSample instances.  The 
+     *                query will prompt the user to authorize your app to read individual documents.  The query will then
+     *                return the documents that your app is authorized to read. The user will only be asked to authorize your
+     *                app to read documents that are new since the last time an HKDocumentQuery was executed.
      * 
      * @param         documentType        The type of document to retreive.
      * @param         predicate           The predicate which documents should match.
@@ -290,13 +300,6 @@ public class HKDocumentQuery extends HKQuery {
      *                                    parameter will be YES and the results array will be empty.  If results is nil, then
      *                                    an error has occurred and the error parameter will be set.  Delivery of results can
      *                                    be stopped by calling HKHealthStore's stopQuery: method.
-     * 
-     * @discussion    Health documents may contain sensitive data that a user may want to control explicitly. HKDocumentSample
-     *                objects returned by HKSampleQuery and HKAnchoredObjectQuery do not include this data (i.e., the document
-     *                property is nil).  This query can be used to retrieve fully populated HKDocumentSample instances.  The 
-     *                query will prompt the user to authorize your app to read individual documents.  The query will then
-     *                return the documents that your app is authorized to read. The user will only be asked to authorize your
-     *                app to read documents that are new since the last time an HKDocumentQuery was executed.
      */
     @Generated
     @Selector("initWithDocumentType:predicate:limit:sortDescriptors:includeDocumentData:resultsHandler:")
@@ -306,8 +309,9 @@ public class HKDocumentQuery extends HKQuery {
             @ObjCBlock(name = "call_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler") Block_initWithDocumentTypePredicateLimitSortDescriptorsIncludeDocumentDataResultsHandler resultsHandler);
 
     /**
-     * @property      limit
-     * @abstract      The maximum number of documents the receiver will return upon completion.
+     * [@property]      limit
+     * 
+     * The maximum number of documents the receiver will return upon completion.
      */
     @Generated
     @Selector("limit")
@@ -315,8 +319,9 @@ public class HKDocumentQuery extends HKQuery {
     public native long limit();
 
     /**
-     * @property      sortDescriptors
-     * @abstract      An array of NSSortDescriptors.
+     * [@property]      sortDescriptors
+     * 
+     * An array of NSSortDescriptors.
      */
     @Generated
     @Selector("sortDescriptors")

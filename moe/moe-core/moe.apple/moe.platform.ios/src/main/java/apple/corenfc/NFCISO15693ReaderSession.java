@@ -25,9 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NFCISO15693ReaderSession
+ * NFCISO15693ReaderSession
  * 
- * @discussion Reader session for processing ISO15693 tags.  @link [NFCReaderSessionDelegate readerSession:didDetectTags:] @link/ will return tag objects that
+ * Reader session for processing ISO15693 tags.  @link [NFCReaderSessionDelegate readerSession:didDetectTags:] @link/ will return tag objects that
  *             are conformed to the NFCISO15693Tag protocol.  This session requires the "com.apple.developer.nfc.readersession.formats" entitlement in your process.
  * 
  * NOTE:
@@ -102,7 +102,7 @@ public class NFCISO15693ReaderSession extends NFCReaderSession {
     public native NFCISO15693ReaderSession init();
 
     /**
-     * @method initWithQueue:
+     * initWithQueue:
      * 
      * @param delegate  The session will hold a weak ARC reference to this @link NFCReaderSessionDelegate @link/ object.
      * @param queue     A dispatch queue where NFCReaderSessionDelegate delegate callbacks will be dispatched to.  A <i>nil</i> value will
@@ -155,9 +155,9 @@ public class NFCISO15693ReaderSession extends NFCReaderSession {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method restartPolling
+     * restartPolling
      * 
-     * @discussion Restart the polling sequence in this session to discover new tags.  Tags that are returned previously by @link [NFCReaderSessionDelegate readerSession:didDetectTags:]
+     * Restart the polling sequence in this session to discover new tags.  Tags that are returned previously by @link [NFCReaderSessionDelegate readerSession:didDetectTags:]
      *             @link/ will become invalid, and all references to these tags shall be removed to properly release the resources.  Calling this method on an invalidated session
      *             will have no effect; a new reader session is required to restart the reader.
      */

@@ -187,13 +187,13 @@ public final class Globals {
      * Registers a method with the Objective-C runtime system, maps the method
      * name to a selector, and returns the selector value.
      * 
+     * [@note] You must register a method name with the Objective-C runtime system to obtain the
+     *  method’s selector before you can add the method to a class definition. If the method name
+     *  has already been registered, this function simply returns the selector.
+     * 
      * @param str A pointer to a C string. Pass the name of the method you wish to register.
      * 
      * @return A pointer of type SEL specifying the selector for the named method.
-     * 
-     * @note You must register a method name with the Objective-C runtime system to obtain the
-     *  method’s selector before you can add the method to a class definition. If the method name
-     *  has already been registered, this function simply returns the selector.
      */
     @Generated
     @CFunction
@@ -215,12 +215,12 @@ public final class Globals {
     /**
      * Identifies a selector as being valid or invalid.
      * 
+     * [@warning] On some platforms, an invalid reference (to invalid memory addresses) can cause
+     *  a crash.
+     * 
      * @param sel The selector you want to identify.
      * 
      * @return YES if selector is valid and has a function implementation, NO otherwise.
-     * 
-     * @warning On some platforms, an invalid reference (to invalid memory addresses) can cause
-     *  a crash.
      */
     @Generated
     @CFunction
@@ -229,14 +229,14 @@ public final class Globals {
     /**
      * Registers a method name with the Objective-C runtime system.
      * 
+     * [@note] The implementation of this method is identical to the implementation of \c sel_registerName.
+     * [@note] Prior to OS X version 10.0, this method tried to find the selector mapped to the given name
+     *  and returned \c NULL if the selector was not found. This was changed for safety, because it was
+     *  observed that many of the callers of this function did not check the return value for \c NULL.
+     * 
      * @param str A pointer to a C string. Pass the name of the method you wish to register.
      * 
      * @return A pointer of type SEL specifying the selector for the named method.
-     * 
-     * @note The implementation of this method is identical to the implementation of \c sel_registerName.
-     * @note Prior to OS X version 10.0, this method tried to find the selector mapped to the given name
-     *  and returned \c NULL if the selector was not found. This was changed for safety, because it was
-     *  observed that many of the callers of this function did not check the return value for \c NULL.
      */
     @Generated
     @CFunction
@@ -1100,19 +1100,17 @@ public final class Globals {
     public static native int filesec_unset_property(filesec_t arg1, int arg2);
 
     /**
-     * @function os_retain
+     * [@function] os_retain
      * 
-     * @abstract
      * Increment the reference count of an os_object.
      * 
-     * @discussion
      * On a platform with the modern Objective-C runtime this is exactly equivalent
      * to sending the object the -[retain] message.
      * 
      * @param object
      * The object to retain.
      * 
-     * @result
+     * @return
      * The retained object.
      */
     @Generated
@@ -1120,12 +1118,10 @@ public final class Globals {
     public static native VoidPtr os_retain(VoidPtr object);
 
     /**
-     * @function os_release
+     * [@function] os_release
      * 
-     * @abstract
      * Decrement the reference count of a os_object.
      * 
-     * @discussion
      * On a platform with the modern Objective-C runtime this is exactly equivalent
      * to sending the object the -[release] message.
      * 
@@ -1137,13 +1133,11 @@ public final class Globals {
     public static native void os_release(VoidPtr object);
 
     /**
-     * @function dispatch_time
+     * [@function] dispatch_time
      * 
-     * @abstract
      * Create a dispatch_time_t relative to the current value of the default or
      * wall time clock, or modify an existing dispatch_time_t.
      * 
-     * @discussion
      * On Apple platforms, the default clock is based on mach_absolute_time().
      * 
      * @param when
@@ -1157,7 +1151,7 @@ public final class Globals {
      * @param delta
      * Nanoseconds to add.
      * 
-     * @result
+     * @return
      * A new dispatch_time_t.
      */
     @Generated
@@ -1165,12 +1159,10 @@ public final class Globals {
     public static native long dispatch_time(long when, long delta);
 
     /**
-     * @function dispatch_walltime
+     * [@function] dispatch_walltime
      * 
-     * @abstract
      * Create a dispatch_time_t using the wall clock.
      * 
-     * @discussion
      * On Mac OS X the wall clock is based on gettimeofday(3).
      * 
      * @param when
@@ -1182,7 +1174,7 @@ public final class Globals {
      * @param delta
      * Nanoseconds to add.
      * 
-     * @result
+     * @return
      * A new dispatch_time_t.
      */
     @Generated
@@ -1196,12 +1188,10 @@ public final class Globals {
     public static native void _dispatch_object_validate(NSObject object);
 
     /**
-     * @function dispatch_retain
+     * [@function] dispatch_retain
      * 
-     * @abstract
      * Increment the reference count of a dispatch object.
      * 
-     * @discussion
      * Calls to dispatch_retain() must be balanced with calls to
      * dispatch_release().
      * 
@@ -1214,12 +1204,10 @@ public final class Globals {
     public static native void dispatch_retain(NSObject object);
 
     /**
-     * @function dispatch_release
+     * [@function] dispatch_release
      * 
-     * @abstract
      * Decrement the reference count of a dispatch object.
      * 
-     * @discussion
      * A dispatch object is asynchronously deallocated once all references are
      * released (i.e. the reference count becomes zero). The system does not
      * guarantee that a given client is the last or only reference to a given
@@ -1234,15 +1222,14 @@ public final class Globals {
     public static native void dispatch_release(NSObject object);
 
     /**
-     * @function dispatch_get_context
+     * [@function] dispatch_get_context
      * 
-     * @abstract
      * Returns the application defined context of the object.
      * 
      * @param object
      * The result of passing NULL in this parameter is undefined.
      * 
-     * @result
+     * @return
      * The context of the object; may be NULL.
      */
     @Generated
@@ -1250,9 +1237,8 @@ public final class Globals {
     public static native VoidPtr dispatch_get_context(NSObject object);
 
     /**
-     * @function dispatch_set_context
+     * [@function] dispatch_set_context
      * 
-     * @abstract
      * Associates an application defined context with the object.
      * 
      * @param object
@@ -1266,10 +1252,16 @@ public final class Globals {
     public static native void dispatch_set_context(NSObject object, VoidPtr context);
 
     /**
-     * @function dispatch_set_finalizer_f
+     * [@function] dispatch_set_finalizer_f
      * 
-     * @abstract
      * Set the finalizer function for a dispatch object.
+     * 
+     * A dispatch object's finalizer will be invoked on the object's target queue
+     * after all references to the object have been released. This finalizer may be
+     * used by the application to release any resources associated with the object,
+     * such as freeing the object's context.
+     * The context parameter passed to the finalizer function is the current
+     * context of the dispatch object at the time the finalizer call is made.
      * 
      * @param object
      * The dispatch object to modify.
@@ -1277,14 +1269,6 @@ public final class Globals {
      * 
      * @param finalizer
      * The finalizer function pointer.
-     * 
-     * @discussion
-     * A dispatch object's finalizer will be invoked on the object's target queue
-     * after all references to the object have been released. This finalizer may be
-     * used by the application to release any resources associated with the object,
-     * such as freeing the object's context.
-     * The context parameter passed to the finalizer function is the current
-     * context of the dispatch object at the time the finalizer call is made.
      */
     @Generated
     @CFunction
@@ -1292,12 +1276,10 @@ public final class Globals {
             @FunctionPtr(name = "call_dispatch_set_finalizer_f") Function_dispatch_set_finalizer_f finalizer);
 
     /**
-     * @function dispatch_activate
+     * [@function] dispatch_activate
      * 
-     * @abstract
      * Activates the specified dispatch object.
      * 
-     * @discussion
      * Dispatch objects such as queues and sources may be created in an inactive
      * state. Objects in this state have to be activated before any blocks
      * associated with them will be invoked.
@@ -1318,12 +1300,10 @@ public final class Globals {
     public static native void dispatch_activate(NSObject object);
 
     /**
-     * @function dispatch_suspend
+     * [@function] dispatch_suspend
      * 
-     * @abstract
      * Suspends the invocation of blocks on a dispatch object.
      * 
-     * @discussion
      * A suspended object will not invoke any blocks associated with it. The
      * suspension of an object will occur after any running block associated with
      * the object completes.
@@ -1340,12 +1320,10 @@ public final class Globals {
     public static native void dispatch_suspend(NSObject object);
 
     /**
-     * @function dispatch_resume
+     * [@function] dispatch_resume
      * 
-     * @abstract
      * Resumes the invocation of blocks on a dispatch object.
      * 
-     * @discussion
      * Dispatch objects can be suspended with dispatch_suspend(), which increments
      * an internal suspension count. dispatch_resume() is the inverse operation,
      * and consumes suspension counts. When the last suspension count is consumed,
@@ -1368,12 +1346,10 @@ public final class Globals {
     public static native void dispatch_resume(NSObject object);
 
     /**
-     * @function dispatch_debug
+     * [@function] dispatch_debug
      * 
-     * @abstract
      * Programmatically log debug information about a dispatch object.
      * 
-     * @discussion
      * Programmatically log debug information about a dispatch object. By default,
      * the log output is sent to syslog at notice level. In the debug version of
      * the library, the log output is sent to a file in /var/tmp.
@@ -1405,9 +1381,8 @@ public final class Globals {
             BytePtr ap);
 
     /**
-     * @function qos_class_self
+     * [@function] qos_class_self
      * 
-     * @abstract
      * Returns the requested QOS class of the current thread.
      * 
      * @return
@@ -1418,12 +1393,10 @@ public final class Globals {
     public static native int qos_class_self();
 
     /**
-     * @function qos_class_main
+     * [@function] qos_class_main
      * 
-     * @abstract
      * Returns the initial requested QOS class of the main thread.
      * 
-     * @discussion
      * The QOS class that the main thread of a process is created with depends on
      * the type of process (e.g. application or daemon) and on how it has been
      * launched.
@@ -1445,12 +1418,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_async") Block_dispatch_async block);
 
     /**
-     * @function dispatch_async_f
+     * [@function] dispatch_async_f
      * 
-     * @abstract
      * Submits a function for asynchronous execution on a dispatch queue.
      * 
-     * @discussion
      * See dispatch_async() for details.
      * 
      * @param queue
@@ -1479,12 +1450,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_sync") Block_dispatch_sync block);
 
     /**
-     * @function dispatch_sync_f
+     * [@function] dispatch_sync_f
      * 
-     * @abstract
      * Submits a function for synchronous execution on a dispatch queue.
      * 
-     * @discussion
      * See dispatch_sync() for details.
      * 
      * @param queue
@@ -1511,12 +1480,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_apply") Block_dispatch_apply block);
 
     /**
-     * @function dispatch_apply_f
+     * [@function] dispatch_apply_f
      * 
-     * @abstract
      * Submits a function to a dispatch queue for parallel invocation.
      * 
-     * @discussion
      * See dispatch_apply() for details.
      * 
      * @param iterations
@@ -1543,12 +1510,10 @@ public final class Globals {
             @FunctionPtr(name = "call_dispatch_apply_f") Function_dispatch_apply_f work);
 
     /**
-     * @function dispatch_get_current_queue
+     * [@function] dispatch_get_current_queue
      * 
-     * @abstract
      * Returns the queue on which the currently executing block is running.
      * 
-     * @discussion
      * Returns the queue on which the currently executing block is running.
      * 
      * When dispatch_get_current_queue() is called outside of the context of a
@@ -1568,7 +1533,7 @@ public final class Globals {
      * 
      * This function is deprecated and will be removed in a future release.
      * 
-     * @result
+     * @return
      * Returns the current queue.
      */
     @Generated
@@ -1577,12 +1542,10 @@ public final class Globals {
     public static native NSObject dispatch_get_current_queue();
 
     /**
-     * @function dispatch_get_main_queue
+     * [@function] dispatch_get_main_queue
      * 
-     * @abstract
      * Returns the default queue that is bound to the main thread.
      * 
-     * @discussion
      * In order to invoke blocks submitted to the main queue, the application must
      * call dispatch_main(), NSApplicationMain(), or use a CFRunLoop on the main
      * thread.
@@ -1596,7 +1559,7 @@ public final class Globals {
      * 
      * @see dispatch_queue_main_t
      * 
-     * @result
+     * @return
      * Returns the main queue. This queue is created automatically on behalf of
      * the main thread before main() is called.
      */
@@ -1606,13 +1569,11 @@ public final class Globals {
     public static native NSObject dispatch_get_main_queue();
 
     /**
-     * @function dispatch_get_global_queue
+     * [@function] dispatch_get_global_queue
      * 
-     * @abstract
      * Returns a well-known global concurrent queue of a given quality of service
      * class.
      * 
-     * @discussion
      * See dispatch_queue_global_t.
      * 
      * @param identifier
@@ -1638,7 +1599,7 @@ public final class Globals {
      * Reserved for future use. Passing any value other than zero may result in
      * a NULL return value.
      * 
-     * @result
+     * @return
      * Returns the requested global queue or NULL if the requested global queue
      * does not exist.
      */
@@ -1647,14 +1608,12 @@ public final class Globals {
     public static native NSObject dispatch_get_global_queue(@NInt long identifier, @NUInt long flags);
 
     /**
-     * @function dispatch_queue_attr_make_initially_inactive
+     * [@function] dispatch_queue_attr_make_initially_inactive
      * 
-     * @abstract
      * Returns an attribute value which may be provided to dispatch_queue_create()
      * or dispatch_queue_create_with_target(), in order to make the created queue
      * initially inactive.
      * 
-     * @discussion
      * Dispatch queues may be created in an inactive state. Queues in this state
      * have to be activated before any blocks associated with them will be invoked.
      * 
@@ -1680,13 +1639,11 @@ public final class Globals {
     public static native NSObject dispatch_queue_attr_make_initially_inactive(NSObject attr);
 
     /**
-     * @function dispatch_queue_attr_make_with_autorelease_frequency
+     * [@function] dispatch_queue_attr_make_with_autorelease_frequency
      * 
-     * @abstract
      * Returns a dispatch queue attribute value with the autorelease frequency
      * set to the specified value.
      * 
-     * @discussion
      * When a queue uses the per-workitem autorelease frequency (either directly
      * or inherithed from its target queue), any block submitted asynchronously to
      * this queue (via dispatch_async(), dispatch_barrier_async(),
@@ -1722,14 +1679,12 @@ public final class Globals {
             @NUInt long frequency);
 
     /**
-     * @function dispatch_queue_attr_make_with_qos_class
+     * [@function] dispatch_queue_attr_make_with_qos_class
      * 
-     * @abstract
      * Returns an attribute value which may be provided to dispatch_queue_create()
      * or dispatch_queue_create_with_target(), in order to assign a QOS class and
      * relative priority to the queue.
      * 
-     * @discussion
      * When specified in this manner, the QOS class and relative priority take
      * precedence over those inherited from the dispatch queue's target queue (if
      * any) as long that does not result in a lower QOS class and relative priority.
@@ -1784,12 +1739,10 @@ public final class Globals {
             int relative_priority);
 
     /**
-     * @function dispatch_queue_create_with_target
+     * [@function] dispatch_queue_create_with_target
      * 
-     * @abstract
      * Creates a new dispatch queue with a specified target queue.
      * 
-     * @discussion
      * Dispatch queues created with the DISPATCH_QUEUE_SERIAL or a NULL attribute
      * invoke blocks serially in FIFO order.
      * 
@@ -1830,7 +1783,7 @@ public final class Globals {
      * If this parameter is DISPATCH_TARGET_QUEUE_DEFAULT, sets the queue's target
      * queue to the default target queue for the given queue type.
      * 
-     * @result
+     * @return
      * The newly created dispatch queue.
      */
     @Generated
@@ -1840,12 +1793,10 @@ public final class Globals {
             NSObject attr, NSObject target);
 
     /**
-     * @function dispatch_queue_create
+     * [@function] dispatch_queue_create
      * 
-     * @abstract
      * Creates a new dispatch queue to which blocks may be submitted.
      * 
-     * @discussion
      * Dispatch queues created with the DISPATCH_QUEUE_SERIAL or a NULL attribute
      * invoke blocks serially in FIFO order.
      * 
@@ -1879,7 +1830,7 @@ public final class Globals {
      * DISPATCH_QUEUE_CONCURRENT, or the result of a call to
      * a dispatch_queue_attr_make_with_* function.
      * 
-     * @result
+     * @return
      * The newly created dispatch queue.
      */
     @Generated
@@ -1889,9 +1840,8 @@ public final class Globals {
             NSObject attr);
 
     /**
-     * @function dispatch_queue_get_label
+     * [@function] dispatch_queue_get_label
      * 
-     * @abstract
      * Returns the label of the given queue, as specified when the queue was
      * created, or the empty string if a NULL label was specified.
      * 
@@ -1901,7 +1851,7 @@ public final class Globals {
      * @param queue
      * The queue to query, or DISPATCH_CURRENT_QUEUE_LABEL.
      * 
-     * @result
+     * @return
      * The label of the queue.
      */
     @Generated
@@ -1910,12 +1860,10 @@ public final class Globals {
     public static native String dispatch_queue_get_label(NSObject queue);
 
     /**
-     * @function dispatch_queue_get_qos_class
+     * [@function] dispatch_queue_get_qos_class
      * 
-     * @abstract
      * Returns the QOS class and relative priority of the given queue.
      * 
-     * @discussion
      * If the given queue was created with an attribute value returned from
      * dispatch_queue_attr_make_with_qos_class(), this function returns the QOS
      * class and relative priority specified at that time; for any other attribute
@@ -1948,12 +1896,10 @@ public final class Globals {
     public static native int dispatch_queue_get_qos_class(NSObject queue, IntPtr relative_priority_ptr);
 
     /**
-     * @function dispatch_set_target_queue
+     * [@function] dispatch_set_target_queue
      * 
-     * @abstract
      * Sets the target queue for the given object.
      * 
-     * @discussion
      * An object's target queue is responsible for processing the object.
      * 
      * When no quality of service class and relative priority is specified for a
@@ -2011,12 +1957,10 @@ public final class Globals {
     public static native void dispatch_set_target_queue(NSObject object, NSObject queue);
 
     /**
-     * @function dispatch_main
+     * [@function] dispatch_main
      * 
-     * @abstract
      * Execute blocks submitted to the main queue.
      * 
-     * @discussion
      * This function "parks" the main thread and waits for blocks to be submitted
      * to the main queue. This function never returns.
      * 
@@ -2033,12 +1977,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_after") Block_dispatch_after block);
 
     /**
-     * @function dispatch_after_f
+     * [@function] dispatch_after_f
      * 
-     * @abstract
      * Schedule a function for execution on a given queue at a specified time.
      * 
-     * @discussion
      * See dispatch_after() for details.
      * 
      * @param when
@@ -2068,12 +2010,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_barrier_async") Block_dispatch_barrier_async block);
 
     /**
-     * @function dispatch_barrier_async_f
+     * [@function] dispatch_barrier_async_f
      * 
-     * @abstract
      * Submits a barrier function for asynchronous execution on a dispatch queue.
      * 
-     * @discussion
      * Submits a function to a dispatch queue like dispatch_async_f(), but marks
      * that function as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT
      * queues).
@@ -2107,12 +2047,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_barrier_sync") Block_dispatch_barrier_sync block);
 
     /**
-     * @function dispatch_barrier_sync_f
+     * [@function] dispatch_barrier_sync_f
      * 
-     * @abstract
      * Submits a barrier function for synchronous execution on a dispatch queue.
      * 
-     * @discussion
      * Submits a function to a dispatch queue like dispatch_sync_f(), but marks that
      * fuction as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT queues).
      * 
@@ -2137,13 +2075,11 @@ public final class Globals {
             @FunctionPtr(name = "call_dispatch_barrier_sync_f") Function_dispatch_barrier_sync_f work);
 
     /**
-     * @function dispatch_queue_set_specific
+     * [@function] dispatch_queue_set_specific
      * 
-     * @abstract
      * Associates a subsystem-specific context with a dispatch queue, for a key
      * unique to the subsystem.
      * 
-     * @discussion
      * The specified destructor will be invoked with the context on the default
      * priority global concurrent queue when a new context is set for the same key,
      * or after all references to the queue have been released.
@@ -2171,13 +2107,11 @@ public final class Globals {
             @FunctionPtr(name = "call_dispatch_queue_set_specific") Function_dispatch_queue_set_specific destructor);
 
     /**
-     * @function dispatch_queue_get_specific
+     * [@function] dispatch_queue_get_specific
      * 
-     * @abstract
      * Returns the subsystem-specific context associated with a dispatch queue, for
      * a key unique to the subsystem.
      * 
-     * @discussion
      * Returns the context for the specified key if it has been set on the specified
      * queue.
      * 
@@ -2190,7 +2124,7 @@ public final class Globals {
      * specific to the subsystem. Keys are only compared as pointers and never
      * dereferenced. Passing a string constant directly is not recommended.
      * 
-     * @result
+     * @return
      * The context for the specified key or NULL if no context was found.
      */
     @Generated
@@ -2198,13 +2132,11 @@ public final class Globals {
     public static native VoidPtr dispatch_queue_get_specific(NSObject queue, ConstVoidPtr key);
 
     /**
-     * @function dispatch_get_specific
+     * [@function] dispatch_get_specific
      * 
-     * @abstract
      * Returns the current subsystem-specific context for a key unique to the
      * subsystem.
      * 
-     * @discussion
      * When called from a block executing on a queue, returns the context for the
      * specified key if it has been set on the queue, otherwise returns the result
      * of dispatch_get_specific() executed on the queue's target queue or NULL
@@ -2215,7 +2147,7 @@ public final class Globals {
      * specific to the subsystem. Keys are only compared as pointers and never
      * dereferenced. Passing a string constant directly is not recommended.
      * 
-     * @result
+     * @return
      * The context for the specified key or NULL if no context was found.
      */
     @Generated
@@ -2223,12 +2155,10 @@ public final class Globals {
     public static native VoidPtr dispatch_get_specific(ConstVoidPtr key);
 
     /**
-     * @function dispatch_assert_queue
+     * [@function] dispatch_assert_queue
      * 
-     * @abstract
      * Verifies that the current block is executing on a given dispatch queue.
      * 
-     * @discussion
      * Some code expects to be run on a specific dispatch queue. This function
      * verifies that that expectation is true.
      * 
@@ -2266,13 +2196,11 @@ public final class Globals {
     public static native void dispatch_assert_queue(NSObject queue);
 
     /**
-     * @function dispatch_assert_queue_barrier
+     * [@function] dispatch_assert_queue_barrier
      * 
-     * @abstract
      * Verifies that the current block is executing on a given dispatch queue,
      * and that the block acts as a barrier on that queue.
      * 
-     * @discussion
      * This behaves exactly like dispatch_assert_queue(), with the additional check
      * that the current block acts as a barrier on the specified queue, which is
      * always true if the specified queue is serial (see DISPATCH_BLOCK_BARRIER or
@@ -2290,12 +2218,10 @@ public final class Globals {
     public static native void dispatch_assert_queue_barrier(NSObject queue);
 
     /**
-     * @function dispatch_assert_queue_not
+     * [@function] dispatch_assert_queue_not
      * 
-     * @abstract
      * Verifies that the current block is not executing on a given dispatch queue.
      * 
-     * @discussion
      * This function is the equivalent of dispatch_assert_queue() with the test for
      * equality inverted. That means that it will terminate the application when
      * dispatch_assert_queue() would return, and vice-versa. See discussion there.
@@ -2312,13 +2238,11 @@ public final class Globals {
     public static native void dispatch_assert_queue_not(NSObject queue);
 
     /**
-     * @function dispatch_block_create
+     * [@function] dispatch_block_create
      * 
-     * @abstract
      * Create a new dispatch block object on the heap from an existing block and
      * the given flags.
      * 
-     * @discussion
      * The provided block is Block_copy'ed to the heap and retained by the newly
      * created dispatch block object.
      * 
@@ -2356,7 +2280,7 @@ public final class Globals {
      * @param block
      * The block to create the dispatch block object from.
      * 
-     * @result
+     * @return
      * The newly created dispatch block object, or NULL.
      * When not building with Objective-C ARC, must be released with a -[release]
      * message or the Block_release() function.
@@ -2368,13 +2292,11 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_block_create") Block_dispatch_block_create block);
 
     /**
-     * @function dispatch_block_create_with_qos_class
+     * [@function] dispatch_block_create_with_qos_class
      * 
-     * @abstract
      * Create a new dispatch block object on the heap from an existing block and
      * the given flags, and assign it the specified QOS class and relative priority.
      * 
-     * @discussion
      * The provided block is Block_copy'ed to the heap and retained by the newly
      * created dispatch block object.
      * 
@@ -2428,7 +2350,7 @@ public final class Globals {
      * @param block
      * The block to create the dispatch block object from.
      * 
-     * @result
+     * @return
      * The newly created dispatch block object, or NULL.
      * When not building with Objective-C ARC, must be released with a -[release]
      * message or the Block_release() function.
@@ -2441,13 +2363,11 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_block_create_with_qos_class") Block_dispatch_block_create_with_qos_class block);
 
     /**
-     * @function dispatch_block_perform
+     * [@function] dispatch_block_perform
      * 
-     * @abstract
      * Create, synchronously execute and release a dispatch block object from the
      * specified block and flags.
      * 
-     * @discussion
      * Behaves identically to the sequence
      * <code>
      * dispatch_block_t b = dispatch_block_create(flags, block);
@@ -2471,13 +2391,11 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_block_perform") Block_dispatch_block_perform block);
 
     /**
-     * @function dispatch_block_wait
+     * [@function] dispatch_block_wait
      * 
-     * @abstract
      * Wait synchronously until execution of the specified dispatch block object has
      * completed or until the specified timeout has elapsed.
      * 
-     * @discussion
      * This function will return immediately if execution of the block object has
      * already completed.
      * 
@@ -2511,7 +2429,7 @@ public final class Globals {
      * When to timeout (see dispatch_time). As a convenience, there are the
      * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
      * 
-     * @result
+     * @return
      * Returns zero on success (the dispatch block object completed within the
      * specified timeout) or non-zero on error (i.e. timed out).
      */
@@ -2522,13 +2440,11 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_block_wait") Block_dispatch_block_wait block, long timeout);
 
     /**
-     * @function dispatch_block_notify
+     * [@function] dispatch_block_notify
      * 
-     * @abstract
      * Schedule a notification block to be submitted to a queue when the execution
      * of a specified dispatch block object has completed.
      * 
-     * @discussion
      * This function will submit the notification block immediately if execution of
      * the observed block object has already completed.
      * 
@@ -2564,12 +2480,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_block_notify_2") Block_dispatch_block_notify_2 notification_block);
 
     /**
-     * @function dispatch_block_cancel
+     * [@function] dispatch_block_cancel
      * 
-     * @abstract
      * Asynchronously cancel the specified dispatch block object.
      * 
-     * @discussion
      * Cancellation causes any future execution of the dispatch block object to
      * return immediately, but does not affect any execution of the block object
      * that is already in progress.
@@ -2595,9 +2509,8 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_block_cancel") Block_dispatch_block_cancel block);
 
     /**
-     * @function dispatch_block_testcancel
+     * [@function] dispatch_block_testcancel
      * 
-     * @abstract
      * Tests whether the given dispatch block object has been canceled.
      * 
      * @param block
@@ -2605,7 +2518,7 @@ public final class Globals {
      * The result of passing NULL or a block object not returned by one of the
      * dispatch_block_create* functions is undefined.
      * 
-     * @result
+     * @return
      * Non-zero if canceled and zero if not canceled.
      */
     @Generated
@@ -2672,13 +2585,11 @@ public final class Globals {
     public static native Function_signal_ret signal(int arg1, @FunctionPtr(name = "call_signal") Function_signal arg2);
 
     /**
-     * @function dispatch_source_create
+     * [@function] dispatch_source_create
      * 
-     * @abstract
      * Creates a new dispatch source to monitor low-level system objects and auto-
      * matically submit a handler block to a dispatch queue in response to events.
      * 
-     * @discussion
      * Dispatch sources are not reentrant. Any events received while the dispatch
      * source is suspended or while the event handler block is currently executing
      * will be coalesced and delivered after the dispatch source is resumed or the
@@ -2712,7 +2623,7 @@ public final class Globals {
      * If queue is DISPATCH_TARGET_QUEUE_DEFAULT, the source will submit the event
      * handler block to the default priority global queue.
      * 
-     * @result
+     * @return
      * The newly created dispatch source. Or NULL if invalid arguments are passed.
      */
     @Generated
@@ -2726,9 +2637,8 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_source_set_event_handler") Block_dispatch_source_set_event_handler handler);
 
     /**
-     * @function dispatch_source_set_event_handler_f
+     * [@function] dispatch_source_set_event_handler_f
      * 
-     * @abstract
      * Sets the event handler function for the given dispatch source.
      * 
      * @param source
@@ -2751,12 +2661,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_source_set_cancel_handler") Block_dispatch_source_set_cancel_handler handler);
 
     /**
-     * @function dispatch_source_set_cancel_handler_f
+     * [@function] dispatch_source_set_cancel_handler_f
      * 
-     * @abstract
      * Sets the cancellation handler function for the given dispatch source.
      * 
-     * @discussion
      * See dispatch_source_set_cancel_handler() for more details.
      * 
      * @param source
@@ -2774,13 +2682,11 @@ public final class Globals {
             @FunctionPtr(name = "call_dispatch_source_set_cancel_handler_f") Function_dispatch_source_set_cancel_handler_f handler);
 
     /**
-     * @function dispatch_source_cancel
+     * [@function] dispatch_source_cancel
      * 
-     * @abstract
      * Asynchronously cancel the dispatch source, preventing any further invocation
      * of its event handler block.
      * 
-     * @discussion
      * Cancellation prevents any further invocation of the event handler block for
      * the specified dispatch source, but does not interrupt an event handler
      * block that is already in progress.
@@ -2800,16 +2706,15 @@ public final class Globals {
     public static native void dispatch_source_cancel(NSObject source);
 
     /**
-     * @function dispatch_source_testcancel
+     * [@function] dispatch_source_testcancel
      * 
-     * @abstract
      * Tests whether the given dispatch source has been canceled.
      * 
      * @param source
      * The dispatch source to be tested.
      * The result of passing NULL in this parameter is undefined.
      * 
-     * @result
+     * @return
      * Non-zero if canceled and zero if not canceled.
      */
     @Generated
@@ -2818,15 +2723,14 @@ public final class Globals {
     public static native long dispatch_source_testcancel(NSObject source);
 
     /**
-     * @function dispatch_source_get_handle
+     * [@function] dispatch_source_get_handle
      * 
-     * @abstract
      * Returns the underlying system handle associated with this dispatch source.
      * 
      * @param source
      * The result of passing NULL in this parameter is undefined.
      * 
-     * @result
+     * @return
      * The return value should be interpreted according to the type of the dispatch
      * source, and may be one of the following handles:
      * 
@@ -2849,15 +2753,14 @@ public final class Globals {
     public static native long dispatch_source_get_handle(NSObject source);
 
     /**
-     * @function dispatch_source_get_mask
+     * [@function] dispatch_source_get_mask
      * 
-     * @abstract
      * Returns the mask of events monitored by the dispatch source.
      * 
      * @param source
      * The result of passing NULL in this parameter is undefined.
      * 
-     * @result
+     * @return
      * The return value should be interpreted according to the type of the dispatch
      * source, and may be one of the following flag sets:
      * 
@@ -2880,12 +2783,10 @@ public final class Globals {
     public static native long dispatch_source_get_mask(NSObject source);
 
     /**
-     * @function dispatch_source_get_data
+     * [@function] dispatch_source_get_data
      * 
-     * @abstract
      * Returns pending data for the dispatch source.
      * 
-     * @discussion
      * This function is intended to be called from within the event handler block.
      * The result of calling this function outside of the event handler callback is
      * undefined.
@@ -2893,7 +2794,7 @@ public final class Globals {
      * @param source
      * The result of passing NULL in this parameter is undefined.
      * 
-     * @result
+     * @return
      * The return value should be interpreted according to the type of the dispatch
      * source, and may be one of the following:
      * 
@@ -2918,9 +2819,8 @@ public final class Globals {
     public static native long dispatch_source_get_data(NSObject source);
 
     /**
-     * @function dispatch_source_merge_data
+     * [@function] dispatch_source_merge_data
      * 
-     * @abstract
      * Merges data into a dispatch source of type DISPATCH_SOURCE_TYPE_DATA_ADD,
      * DISPATCH_SOURCE_TYPE_DATA_OR or DISPATCH_SOURCE_TYPE_DATA_REPLACE,
      * and submits its event handler block to its target queue.
@@ -2938,12 +2838,10 @@ public final class Globals {
     public static native void dispatch_source_merge_data(NSObject source, @NUInt long value);
 
     /**
-     * @function dispatch_source_set_timer
+     * [@function] dispatch_source_set_timer
      * 
-     * @abstract
      * Sets a start time, interval, and leeway value for a timer source.
      * 
-     * @discussion
      * Once this function returns, any pending source data accumulated for the
      * previous timer values has been cleared; the next fire of the timer will
      * occur at 'start', and every 'interval' nanoseconds thereafter until the
@@ -2995,12 +2893,10 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_source_set_registration_handler") Block_dispatch_source_set_registration_handler handler);
 
     /**
-     * @function dispatch_source_set_registration_handler_f
+     * [@function] dispatch_source_set_registration_handler_f
      * 
-     * @abstract
      * Sets the registration handler function for the given dispatch source.
      * 
-     * @discussion
      * See dispatch_source_set_registration_handler() for more details.
      * 
      * @param source
@@ -3018,17 +2914,15 @@ public final class Globals {
             @FunctionPtr(name = "call_dispatch_source_set_registration_handler_f") Function_dispatch_source_set_registration_handler_f handler);
 
     /**
-     * @function dispatch_group_create
+     * [@function] dispatch_group_create
      * 
-     * @abstract
      * Creates new group with which blocks may be associated.
      * 
-     * @discussion
      * This function creates a new group with which blocks may be associated.
      * The dispatch group may be used to wait for the completion of the blocks it
      * references. The group object memory is freed with dispatch_release().
      * 
-     * @result
+     * @return
      * The newly created group, or NULL on failure.
      */
     @Generated
@@ -3041,13 +2935,11 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_group_async") Block_dispatch_group_async block);
 
     /**
-     * @function dispatch_group_async_f
+     * [@function] dispatch_group_async_f
      * 
-     * @abstract
      * Submits a function to a dispatch queue and associates the block with the
      * given dispatch group.
      * 
-     * @discussion
      * See dispatch_group_async() for details.
      * 
      * @param group
@@ -3072,13 +2964,11 @@ public final class Globals {
             @FunctionPtr(name = "call_dispatch_group_async_f") Function_dispatch_group_async_f work);
 
     /**
-     * @function dispatch_group_wait
+     * [@function] dispatch_group_wait
      * 
-     * @abstract
      * Wait synchronously until all the blocks associated with a group have
      * completed or until the specified timeout has elapsed.
      * 
-     * @discussion
      * This function waits for the completion of the blocks associated with the
      * given dispatch group, and returns after all blocks have completed or when
      * the specified timeout has elapsed.
@@ -3101,7 +2991,7 @@ public final class Globals {
      * When to timeout (see dispatch_time). As a convenience, there are the
      * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
      * 
-     * @result
+     * @return
      * Returns zero on success (all blocks associated with the group completed
      * within the specified timeout) or non-zero on error (i.e. timed out).
      */
@@ -3116,13 +3006,11 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_group_notify") Block_dispatch_group_notify block);
 
     /**
-     * @function dispatch_group_notify_f
+     * [@function] dispatch_group_notify_f
      * 
-     * @abstract
      * Schedule a function to be submitted to a queue when all the blocks
      * associated with a group have completed.
      * 
-     * @discussion
      * See dispatch_group_notify() for details.
      * 
      * @param group
@@ -3143,12 +3031,10 @@ public final class Globals {
             @FunctionPtr(name = "call_dispatch_group_notify_f") Function_dispatch_group_notify_f work);
 
     /**
-     * @function dispatch_group_enter
+     * [@function] dispatch_group_enter
      * 
-     * @abstract
      * Manually indicate a block has entered the group
      * 
-     * @discussion
      * Calling this function indicates another block has joined the group through
      * a means other than dispatch_group_async(). Calls to this function must be
      * balanced with dispatch_group_leave().
@@ -3162,12 +3048,10 @@ public final class Globals {
     public static native void dispatch_group_enter(NSObject group);
 
     /**
-     * @function dispatch_group_leave
+     * [@function] dispatch_group_leave
      * 
-     * @abstract
      * Manually indicate a block in the group has completed
      * 
-     * @discussion
      * Calling this function indicates block has completed and left the dispatch
      * group by a means other than dispatch_group_async().
      * 
@@ -3180,12 +3064,10 @@ public final class Globals {
     public static native void dispatch_group_leave(NSObject group);
 
     /**
-     * @function dispatch_semaphore_create
+     * [@function] dispatch_semaphore_create
      * 
-     * @abstract
      * Creates new counting semaphore with an initial value.
      * 
-     * @discussion
      * Passing zero for the value is useful for when two threads need to reconcile
      * the completion of a particular event. Passing a value greater than zero is
      * useful for managing a finite pool of resources, where the pool size is equal
@@ -3195,7 +3077,7 @@ public final class Globals {
      * The starting value for the semaphore. Passing a value less than zero will
      * cause NULL to be returned.
      * 
-     * @result
+     * @return
      * The newly created semaphore, or NULL on failure.
      */
     @Generated
@@ -3203,12 +3085,10 @@ public final class Globals {
     public static native NSObject dispatch_semaphore_create(@NInt long value);
 
     /**
-     * @function dispatch_semaphore_wait
+     * [@function] dispatch_semaphore_wait
      * 
-     * @abstract
      * Wait (decrement) for a semaphore.
      * 
-     * @discussion
      * Decrement the counting semaphore. If the resulting value is less than zero,
      * this function waits for a signal to occur before returning.
      * 
@@ -3219,7 +3099,7 @@ public final class Globals {
      * When to timeout (see dispatch_time). As a convenience, there are the
      * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
      * 
-     * @result
+     * @return
      * Returns zero on success, or non-zero if the timeout occurred.
      */
     @Generated
@@ -3228,19 +3108,17 @@ public final class Globals {
     public static native long dispatch_semaphore_wait(NSObject dsema, long timeout);
 
     /**
-     * @function dispatch_semaphore_signal
+     * [@function] dispatch_semaphore_signal
      * 
-     * @abstract
      * Signal (increment) a semaphore.
      * 
-     * @discussion
      * Increment the counting semaphore. If the previous value was less than zero,
      * this function wakes a waiting thread before returning.
      * 
      * @param dsema The counting semaphore.
      * The result of passing NULL in this parameter is undefined.
      * 
-     * @result
+     * @return
      * This function returns non-zero if a thread is woken. Otherwise, zero is
      * returned.
      */
@@ -3272,7 +3150,7 @@ public final class Globals {
             @FunctionPtr(name = "call__dispatch_once_f") Function__dispatch_once_f function);
 
     /**
-     * @function dispatch_data_create
+     * [@function] dispatch_data_create
      * Creates a dispatch data object from the given contiguous buffer of memory. If
      * a non-default destructor is provided, ownership of the buffer remains with
      * the caller (i.e. the bytes will not be copied). The last release of the data
@@ -3290,7 +3168,7 @@ public final class Globals {
      * @param queue		The queue to which the destructor should be submitted.
      * @param destructor	The destructor responsible for freeing the data when it
      * 		is no longer needed.
-     * @result		A newly created dispatch data object.
+     * @return		A newly created dispatch data object.
      */
     @Generated
     @CFunction
@@ -3298,12 +3176,12 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_data_create") Block_dispatch_data_create destructor);
 
     /**
-     * @function dispatch_data_get_size
+     * [@function] dispatch_data_get_size
      * Returns the logical size of the memory region(s) represented by the specified
      * dispatch data object.
      * 
      * @param data	The dispatch data object to query.
-     * @result	The number of bytes represented by the data object.
+     * @return	The number of bytes represented by the data object.
      */
     @Generated
     @CFunction
@@ -3311,7 +3189,7 @@ public final class Globals {
     public static native long dispatch_data_get_size(NSObject data);
 
     /**
-     * @function dispatch_data_create_map
+     * [@function] dispatch_data_create_map
      * Maps the memory represented by the specified dispatch data object as a single
      * contiguous memory region and returns a new data object representing it.
      * If non-NULL references to a pointer and a size variable are provided, they
@@ -3327,7 +3205,7 @@ public final class Globals {
      * 		NULL.
      * @param size_ptr	A pointer to a size_t variable to be filled with the
      * 		size of the mapped contiguous memory region, or NULL.
-     * @result		A newly created dispatch data object.
+     * @return		A newly created dispatch data object.
      */
     @Generated
     @CFunction
@@ -3335,7 +3213,7 @@ public final class Globals {
             NUIntPtr size_ptr);
 
     /**
-     * @function dispatch_data_create_concat
+     * [@function] dispatch_data_create_concat
      * Returns a new dispatch data object representing the concatenation of the
      * specified data objects. Those objects may be released by the application
      * after the call returns (however, the system might not deallocate the memory
@@ -3346,7 +3224,7 @@ public final class Globals {
      * 	at the beginning of the newly created object.
      * @param data2	The data object representing the region(s) of memory to place
      * 	at the end of the newly created object.
-     * @result	A newly created object representing the concatenation of the
+     * @return	A newly created object representing the concatenation of the
      * 	data1 and data2 objects.
      */
     @Generated
@@ -3354,7 +3232,7 @@ public final class Globals {
     public static native NSObject dispatch_data_create_concat(NSObject data1, NSObject data2);
 
     /**
-     * @function dispatch_data_create_subrange
+     * [@function] dispatch_data_create_subrange
      * Returns a new dispatch data object representing a subrange of the specified
      * data object, which may be released by the application after the call returns
      * (however, the system might not deallocate the memory region(s) described by
@@ -3365,7 +3243,7 @@ public final class Globals {
      * @param offset	The offset into the data object where the subrange
      * 		starts.
      * @param length	The length of the range.
-     * @result		A newly created object representing the specified
+     * @return		A newly created object representing the specified
      * 		subrange of the data object.
      */
     @Generated
@@ -3373,7 +3251,7 @@ public final class Globals {
     public static native NSObject dispatch_data_create_subrange(NSObject data, @NUInt long offset, @NUInt long length);
 
     /**
-     * @function dispatch_data_apply
+     * [@function] dispatch_data_apply
      * Traverse the memory regions represented by the specified dispatch data object
      * in logical order and invoke the specified block once for every contiguous
      * memory region encountered.
@@ -3389,7 +3267,7 @@ public final class Globals {
      * @param data		The data object to traverse.
      * @param applier	The block to be invoked for every contiguous memory
      * 		region in the data object.
-     * @result		A Boolean indicating whether traversal completed
+     * @return		A Boolean indicating whether traversal completed
      * 		successfully.
      */
     @Generated
@@ -3398,7 +3276,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_data_apply") Block_dispatch_data_apply applier);
 
     /**
-     * @function dispatch_data_copy_region
+     * [@function] dispatch_data_copy_region
      * Finds the contiguous memory region containing the specified location among
      * the regions represented by the specified object and returns a copy of the
      * internal dispatch data object representing that region along with its logical
@@ -3409,14 +3287,14 @@ public final class Globals {
      * @param offset_ptr	A pointer to a size_t variable to be filled with the
      * 		logical offset of the returned region object to the
      * 		start of the queried data object.
-     * @result		A newly created dispatch data object.
+     * @return		A newly created dispatch data object.
      */
     @Generated
     @CFunction
     public static native NSObject dispatch_data_copy_region(NSObject data, @NUInt long location, NUIntPtr offset_ptr);
 
     /**
-     * @function dispatch_read
+     * [@function] dispatch_read
      * Schedule a read operation for asynchronous execution on the specified file
      * descriptor. The specified handler is enqueued with the data read from the
      * file descriptor when the operation has completed or an error occurs.
@@ -3461,7 +3339,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_read") Block_dispatch_read handler);
 
     /**
-     * @function dispatch_write
+     * [@function] dispatch_write
      * Schedule a write operation for asynchronous execution on the specified file
      * descriptor. The specified handler is enqueued when the operation has
      * completed or an error occurs.
@@ -3496,7 +3374,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_write") Block_dispatch_write handler);
 
     /**
-     * @function dispatch_io_create
+     * [@function] dispatch_io_create
      * Create a dispatch I/O channel associated with a file descriptor. The system
      * takes control of the file descriptor until the channel is closed, an error
      * occurs on the file descriptor or all references to the channel are released.
@@ -3517,7 +3395,7 @@ public final class Globals {
      * 			relinquishes control over the file descriptor.
      * param error		An errno condition if control is relinquished
      * 			because channel creation failed, zero otherwise.
-     * @result	The newly created dispatch I/O channel or NULL if an error
+     * @return	The newly created dispatch I/O channel or NULL if an error
      * 	occurred (invalid type specified).
      */
     @Generated
@@ -3526,7 +3404,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_io_create") Block_dispatch_io_create cleanup_handler);
 
     /**
-     * @function dispatch_io_create_with_path
+     * [@function] dispatch_io_create_with_path
      * Create a dispatch I/O channel associated with a path name. The specified
      * path, oflag and mode parameters will be passed to open(2) when the first I/O
      * operation on the channel is ready to execute and the resulting file
@@ -3549,7 +3427,7 @@ public final class Globals {
      * param error		An errno condition if control is relinquished
      * 			because channel creation or opening of the
      * 			specified file failed, zero otherwise.
-     * @result	The newly created dispatch I/O channel or NULL if an error
+     * @return	The newly created dispatch I/O channel or NULL if an error
      * 	occurred (invalid type or non-absolute path specified).
      */
     @Generated
@@ -3560,7 +3438,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_io_create_with_path") Block_dispatch_io_create_with_path cleanup_handler);
 
     /**
-     * @function dispatch_io_create_with_io
+     * [@function] dispatch_io_create_with_io
      * Create a new dispatch I/O channel from an existing dispatch I/O channel.
      * The new channel inherits the file descriptor or path name associated with
      * the existing channel, but not its channel type or policies.
@@ -3587,7 +3465,7 @@ public final class Globals {
      * 			the existing channel.
      * param error		An errno condition if control is relinquished
      * 			because channel creation failed, zero otherwise.
-     * @result	The newly created dispatch I/O channel or NULL if an error
+     * @return	The newly created dispatch I/O channel or NULL if an error
      * 	occurred (invalid type specified).
      */
     @Generated
@@ -3596,7 +3474,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_io_create_with_io") Block_dispatch_io_create_with_io cleanup_handler);
 
     /**
-     * @function dispatch_io_read
+     * [@function] dispatch_io_read
      * Schedule a read operation for asynchronous execution on the specified I/O
      * channel. The I/O handler is enqueued one or more times depending on the
      * general load of the system and the policy specified on the I/O channel.
@@ -3643,7 +3521,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_io_read") Block_dispatch_io_read io_handler);
 
     /**
-     * @function dispatch_io_write
+     * [@function] dispatch_io_write
      * Schedule a write operation for asynchronous execution on the specified I/O
      * channel. The I/O handler is enqueued one or more times depending on the
      * general load of the system and the policy specified on the I/O channel.
@@ -3691,7 +3569,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_io_write") Block_dispatch_io_write io_handler);
 
     /**
-     * @function dispatch_io_close
+     * [@function] dispatch_io_close
      * Close the specified I/O channel to new read or write operations; scheduling
      * operations on a closed channel results in their handler returning an error.
      * 
@@ -3712,7 +3590,7 @@ public final class Globals {
     public static native void dispatch_io_close(NSObject channel, @NUInt long flags);
 
     /**
-     * @function dispatch_io_barrier
+     * [@function] dispatch_io_barrier
      * Schedule a barrier operation on the specified I/O channel; all previously
      * scheduled operations on the channel will complete before the provided
      * barrier block is enqueued onto the global queue determined by the channel's
@@ -3738,7 +3616,7 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_io_barrier") Block_dispatch_io_barrier barrier);
 
     /**
-     * @function dispatch_io_get_descriptor
+     * [@function] dispatch_io_get_descriptor
      * Returns the file descriptor underlying a dispatch I/O channel.
      * 
      * Will return -1 for a channel closed with dispatch_io_close() and for a
@@ -3749,14 +3627,14 @@ public final class Globals {
      * operation and return the resulting file descriptor.
      * 
      * @param channel	The dispatch I/O channel to query.
-     * @result		The file descriptor underlying the channel, or -1.
+     * @return		The file descriptor underlying the channel, or -1.
      */
     @Generated
     @CFunction
     public static native int dispatch_io_get_descriptor(NSObject channel);
 
     /**
-     * @function dispatch_io_set_high_water
+     * [@function] dispatch_io_set_high_water
      * Set a high water mark on the I/O channel for all operations.
      * 
      * The system will make a best effort to enqueue I/O handlers with partial
@@ -3776,7 +3654,7 @@ public final class Globals {
     public static native void dispatch_io_set_high_water(NSObject channel, @NUInt long high_water);
 
     /**
-     * @function dispatch_io_set_low_water
+     * [@function] dispatch_io_set_low_water
      * Set a low water mark on the I/O channel for all operations.
      * 
      * The system will process (i.e. read or write) at least the low water mark
@@ -3806,7 +3684,7 @@ public final class Globals {
     public static native void dispatch_io_set_low_water(NSObject channel, @NUInt long low_water);
 
     /**
-     * @function dispatch_io_set_interval
+     * [@function] dispatch_io_set_interval
      * Set a nanosecond interval at which I/O handlers are to be enqueued on the
      * I/O channel for all operations.
      * 
@@ -6586,9 +6464,8 @@ public final class Globals {
     public static native BytePtr acl_to_text(acl_t acl, NIntPtr len_p);
 
     /**
-     * @function os_unfair_lock_lock
+     * [@function] os_unfair_lock_lock
      * 
-     * @abstract
      * Locks an os_unfair_lock.
      * 
      * @param lock
@@ -6600,12 +6477,10 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     /**
-     * @function os_unfair_lock_trylock
+     * [@function] os_unfair_lock_trylock
      * 
-     * @abstract
      * Locks an os_unfair_lock if it is not already locked.
      * 
-     * @discussion
      * It is invalid to surround this function with a retry loop, if this function
      * returns false, the program must be able to proceed without having acquired
      * the lock, or it must call os_unfair_lock_lock() directly (a retry loop around
@@ -6616,7 +6491,7 @@ public final class Globals {
      * @param lock
      * Pointer to an os_unfair_lock.
      * 
-     * @result
+     * @return
      * Returns true if the lock was succesfully locked and false if the lock was
      * already locked.
      */
@@ -6626,9 +6501,8 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     /**
-     * @function os_unfair_lock_unlock
+     * [@function] os_unfair_lock_unlock
      * 
-     * @abstract
      * Unlocks an os_unfair_lock.
      * 
      * @param lock
@@ -8423,7 +8297,7 @@ public final class Globals {
     public static native int audit_session_port(int asid, IntPtr portname);
 
     /**
-     * @abstract Computes accum + x*y by the most efficient means available;
+     * Computes accum + x*y by the most efficient means available;
      * either a fused multiply add or separate multiply and add instructions.
      */
     @Generated
@@ -8432,7 +8306,7 @@ public final class Globals {
     public static native float simd_muladd(float x, float y, float z);
 
     /**
-     * @abstract -1 if x is negative, +1 if x is positive, and 0 otherwise.
+     * -1 if x is negative, +1 if x is positive, and 0 otherwise.
      */
     @Generated
     @Inline
@@ -8440,7 +8314,7 @@ public final class Globals {
     public static native float simd_sign(float x);
 
     /**
-     * @abstract Linearly interpolates between x and y, taking the value x when
+     * Linearly interpolates between x and y, taking the value x when
      * t=0 and y when t=1
      */
     @Generated
@@ -8449,8 +8323,9 @@ public final class Globals {
     public static native float simd_mix(float x, float y, float t);
 
     /**
-     * @abstract A good approximation to 1/x.
-     * @discussion If x is very close to the limits of representation, the
+     * A good approximation to 1/x.
+     * 
+     * If x is very close to the limits of representation, the
      * result may overflow or underflow; otherwise this function is accurate to
      * a few units in the last place (ULPs).
      */
@@ -8460,8 +8335,9 @@ public final class Globals {
     public static native float simd_precise_recip(float x);
 
     /**
-     * @abstract A fast approximation to 1/x.
-     * @discussion If x is very close to the limits of representation, the
+     * A fast approximation to 1/x.
+     * 
+     * If x is very close to the limits of representation, the
      * result may overflow or underflow; otherwise this function is accurate to
      * at least 11 bits for float and 22 bits for double.
      */
@@ -8471,8 +8347,9 @@ public final class Globals {
     public static native float simd_fast_recip(float x);
 
     /**
-     * @abstract An approximation to 1/x.
-     * @discussion If x is very close to the limits of representation, the
+     * An approximation to 1/x.
+     * 
+     * If x is very close to the limits of representation, the
      * result may overflow or underflow. This function maps to
      * simd_fast_recip(x) if -ffast-math is specified, and to
      * simd_precise_recip(x) otherwise.
@@ -8483,8 +8360,9 @@ public final class Globals {
     public static native float simd_recip(float x);
 
     /**
-     * @abstract A good approximation to 1/sqrt(x).
-     * @discussion This function is accurate to a few units in the last place
+     * A good approximation to 1/sqrt(x).
+     * 
+     * This function is accurate to a few units in the last place
      * (ULPs).
      */
     @Generated
@@ -8493,8 +8371,9 @@ public final class Globals {
     public static native float simd_precise_rsqrt(float x);
 
     /**
-     * @abstract A fast approximation to 1/sqrt(x).
-     * @discussion This function is accurate to at least 11 bits for float and
+     * A fast approximation to 1/sqrt(x).
+     * 
+     * This function is accurate to at least 11 bits for float and
      * 22 bits for double.
      */
     @Generated
@@ -8503,8 +8382,9 @@ public final class Globals {
     public static native float simd_fast_rsqrt(float x);
 
     /**
-     * @abstract An approximation to 1/sqrt(x).
-     * @discussion This function maps to simd_fast_recip(x) if -ffast-math is
+     * An approximation to 1/sqrt(x).
+     * 
+     * This function maps to simd_fast_recip(x) if -ffast-math is
      * specified, and to simd_precise_recip(x) otherwise.
      */
     @Generated
@@ -8513,8 +8393,9 @@ public final class Globals {
     public static native float simd_rsqrt(float x);
 
     /**
-     * @abstract The "fractional part" of x, lying in the range [0, 1).
-     * @discussion floor(x) + fract(x) is *approximately* equal to x. If x is
+     * The "fractional part" of x, lying in the range [0, 1).
+     * 
+     * floor(x) + fract(x) is *approximately* equal to x. If x is
      * positive and finite, then the two values are exactly equal.
      */
     @Generated
@@ -8523,8 +8404,9 @@ public final class Globals {
     public static native float simd_fract(float x);
 
     /**
-     * @abstract 0 if x < edge, and 1 otherwise.
-     * @discussion Use a scalar value for edge if you want to apply the same
+     * 0 if x < edge, and 1 otherwise.
+     * 
+     * Use a scalar value for edge if you want to apply the same
      * threshold to all lanes.
      */
     @Generated
@@ -8533,8 +8415,9 @@ public final class Globals {
     public static native float simd_step(float edge, float x);
 
     /**
-     * @abstract Interpolates smoothly between 0 at edge0 and 1 at edge1
-     * @discussion You can use a scalar value for edge0 and edge1 if you want
+     * Interpolates smoothly between 0 at edge0 and 1 at edge1
+     * 
+     * You can use a scalar value for edge0 and edge1 if you want
      * to clamp all lanes at the same points.
      */
     @Generated
@@ -8543,12 +8426,10 @@ public final class Globals {
     public static native float simd_smoothstep(float edge0, float edge1, float x);
 
     /**
-     * @function dispatch_set_qos_class_floor
+     * [@function] dispatch_set_qos_class_floor
      * 
-     * @abstract
      * Sets the QOS class floor on a dispatch queue, source or workloop.
      * 
-     * @discussion
      * The QOS class of workitems submitted to this object asynchronously will be
      * elevated to at least the specified QOS class floor. The QOS of the workitem
      * will be used if higher than the floor even when the workitem has been created
@@ -8596,12 +8477,10 @@ public final class Globals {
     }
 
     /**
-     * @function dispatch_async_and_wait_f
+     * [@function] dispatch_async_and_wait_f
      * 
-     * @abstract
      * Submits a function for synchronous execution on a dispatch queue.
      * 
-     * @discussion
      * See dispatch_async_and_wait() for details.
      * 
      * @param queue
@@ -8642,12 +8521,10 @@ public final class Globals {
     }
 
     /**
-     * @function dispatch_barrier_async_and_wait_f
+     * [@function] dispatch_barrier_async_and_wait_f
      * 
-     * @abstract
      * Submits a function for synchronous execution on a dispatch queue.
      * 
-     * @discussion
      * Submits a function to a dispatch queue like dispatch_async_and_wait_f(), but
      * marks that function as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT
      * queues).
@@ -8680,15 +8557,14 @@ public final class Globals {
     }
 
     /**
-     * @function dispatch_workloop_create
+     * [@function] dispatch_workloop_create
      * 
-     * @abstract
      * Creates a new dispatch workloop to which workitems may be submitted.
      * 
      * @param label
      * A string label to attach to the workloop.
      * 
-     * @result
+     * @return
      * The newly created dispatch workloop.
      */
     @Generated
@@ -8697,13 +8573,11 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
 
     /**
-     * @function dispatch_workloop_create_inactive
+     * [@function] dispatch_workloop_create_inactive
      * 
-     * @abstract
      * Creates a new inactive dispatch workloop that can be setup and then
      * activated.
      * 
-     * @discussion
      * Creating an inactive workloop allows for it to receive further configuration
      * before it is activated, and workitems can be submitted to it.
      * 
@@ -8713,7 +8587,7 @@ public final class Globals {
      * @param label
      * A string label to attach to the workloop.
      * 
-     * @result
+     * @return
      * The newly created dispatch workloop.
      */
     @Generated
@@ -8722,12 +8596,10 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label);
 
     /**
-     * @function dispatch_workloop_set_autorelease_frequency
+     * [@function] dispatch_workloop_set_autorelease_frequency
      * 
-     * @abstract
      * Sets the autorelease frequency of the workloop.
      * 
-     * @discussion
      * See dispatch_queue_attr_make_with_autorelease_frequency().
      * The default policy for a workloop is
      * DISPATCH_AUTORELEASE_FREQUENCY_WORK_ITEM.
@@ -9017,13 +8889,11 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") timeval arg2);
 
     /**
-     * @function os_trace_info_enabled
+     * [@function] os_trace_info_enabled
      * 
-     * @abstract
      * Avoid unnecessary work for a trace point by checking if additional
      * information is enabled.
      * 
-     * @discussion
      * Avoid unnecessary work for a trace point by checking if additional
      * information is enabled. Generally trace points should not involve expensive
      * operations, but some circumstances warrant it.  Use this function to avoid
@@ -9037,7 +8907,7 @@ public final class Globals {
      *     }
      * </code>
      * 
-     * @result
+     * @return
      * Returns true if info types are enabled.
      */
     @Generated
@@ -9045,13 +8915,11 @@ public final class Globals {
     public static native boolean os_trace_info_enabled();
 
     /**
-     * @function os_trace_debug_enabled
+     * [@function] os_trace_debug_enabled
      * 
-     * @abstract
      * Avoid unnecessary work for a trace point by checking if debug level is
      * enabled.
      * 
-     * @discussion
      * Avoid unnecessary work for a trace point by checking if debug level is
      * enabled.  Generally trace points should not involve expensive operations, but
      * some circumstances warrant it.  Use this function to avoid doing the work
@@ -9065,7 +8933,7 @@ public final class Globals {
      *     }
      * </code>
      * 
-     * @result
+     * @return
      * Returns true if debug mode is enabled.
      */
     @Generated
@@ -9073,15 +8941,13 @@ public final class Globals {
     public static native boolean os_trace_debug_enabled();
 
     /**
-     * @function os_trace_type_enabled
+     * [@function] os_trace_type_enabled
      * 
-     * @abstract
      * Avoid unnecessary work for a trace point by checking a specific type
      * 
-     * @discussion
      * Avoid unnecessary work for a trace point by checking a specific type
      * 
-     * @result
+     * @return
      * Returns true if type is enabled.
      */
     @Generated
@@ -9090,9 +8956,8 @@ public final class Globals {
     public static native boolean os_trace_type_enabled(byte type);
 
     /**
-     * @function _os_trace_with_buffer
+     * [@function] _os_trace_with_buffer
      * 
-     * @abstract
      * Internal function to support pre-encoded buffer.
      */
     @Generated
@@ -9110,12 +8975,10 @@ public final class Globals {
     }
 
     /**
-     * @function os_log_create
+     * [@function] os_log_create
      * 
-     * @abstract
      * Creates a log object to be used with other log related functions.
      * 
-     * @discussion
      * Creates a log object to be used with other log related functions.  The
      * log object serves two purposes:  (1) tag related messages by subsystem
      * and category name for easy filtering, and (2) control logging system
@@ -9129,7 +8992,7 @@ public final class Globals {
      * The category within the given subsystem that specifies the settings for
      * the log object.
      * 
-     * @result
+     * @return
      * Returns an os_log_t value to be passed to other os_log API calls.  This
      * should be called once at log initialization and rely on system to detect
      * changes to settings.  This object should be released when no longer used
@@ -9144,12 +9007,10 @@ public final class Globals {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String category);
 
     /**
-     * @function os_log_type_enabled
+     * [@function] os_log_type_enabled
      * 
-     * @abstract
      * Evaluate if a specific log type is enabled before doing work
      * 
-     * @discussion
      * Evaluate if a specific log type is enabled before doing work
      * 
      * @param oslog
@@ -9158,7 +9019,7 @@ public final class Globals {
      * @param type
      * Pass a valid type from os_log_type_t.
      * 
-     * @result
+     * @return
      * Will return a boolean.
      */
     @Generated
@@ -9166,9 +9027,8 @@ public final class Globals {
     public static native boolean os_log_type_enabled(NSObject oslog, byte type);
 
     /**
-     * @function _os_log_impl
+     * [@function] _os_log_impl
      * 
-     * @abstract
      * Internal function that takes compiler generated encoding and captures the necessary content.
      */
     @Generated
@@ -9178,9 +9038,8 @@ public final class Globals {
             BytePtr buf, int size);
 
     /**
-     * @function _os_log_debug_impl
+     * [@function] _os_log_debug_impl
      * 
-     * @abstract
      * Internal function that is taken for any debug log emitted in the system.
      */
     @Generated
@@ -9190,9 +9049,8 @@ public final class Globals {
             BytePtr buf, int size);
 
     /**
-     * @function _os_log_error_impl
+     * [@function] _os_log_error_impl
      * 
-     * @abstract
      * Internal function that is taken for any error emitted in the system.
      */
     @Generated
@@ -9202,9 +9060,8 @@ public final class Globals {
             BytePtr buf, int size);
 
     /**
-     * @function _os_log_fault_impl
+     * [@function] _os_log_fault_impl
      * 
-     * @abstract
      * Internal function that is taken for any fault emitted in the system.
      */
     @Generated
@@ -9243,13 +9100,11 @@ public final class Globals {
     public static native void _os_log_sensitive_deprecated();
 
     /**
-     * @function os_unfair_lock_assert_owner
+     * [@function] os_unfair_lock_assert_owner
      * 
-     * @abstract
      * Asserts that the calling thread is the current owner of the specified
      * unfair lock.
      * 
-     * @discussion
      * If the lock is currently owned by the calling thread, this function returns.
      * 
      * If the lock is unlocked or owned by a different thread, this function
@@ -9264,13 +9119,11 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_unfair_lock_s lock);
 
     /**
-     * @function os_unfair_lock_assert_not_owner
+     * [@function] os_unfair_lock_assert_not_owner
      * 
-     * @abstract
      * Asserts that the calling thread is not the current owner of the specified
      * unfair lock.
      * 
-     * @discussion
      * If the lock is unlocked or owned by a different thread, this function
      * returns.
      * 
@@ -10503,12 +10356,10 @@ public final class Globals {
     public static native mach_header __dso_handle();
 
     /**
-     * @function os_signpost_id_make_with_pointer
+     * [@function] os_signpost_id_make_with_pointer
      * 
-     * @abstract
      * Make an os_signpost_id from a pointer value.
      * 
-     * @discussion
      * Mangles the pointer to create a valid os_signpost_id, including removing
      * address randomization. Checks that the signpost matching scope is not
      * system-wide.
@@ -10520,7 +10371,7 @@ public final class Globals {
      * Any pointer that disambiguates among concurrent intervals with the same
      * os_log_t and interval names.
      * 
-     * @result
+     * @return
      * Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
      * are turned off. Returns OS_SIGNPOST_ID_INVALID if the log handle is
      * system-scoped.
@@ -10530,20 +10381,18 @@ public final class Globals {
     public static native long os_signpost_id_make_with_pointer(NSObject log, ConstVoidPtr ptr);
 
     /**
-     * @function os_signpost_id_generate
+     * [@function] os_signpost_id_generate
      * 
-     * @abstract
      * Generates an ID guaranteed to be unique within the matching scope of the
      * provided log handle.
      * 
-     * @discussion
      * Each call to os_signpost_id_generate() with a given log handle and its
      * matching scope will return a different os_signpost_id_t.
      * 
      * @param log
      * Log handle previously created with os_log_create.
      * 
-     * @result
+     * @return
      * Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
      * are disabled.
      */
@@ -10552,13 +10401,11 @@ public final class Globals {
     public static native long os_signpost_id_generate(NSObject log);
 
     /**
-     * @function os_signpost_enabled
+     * [@function] os_signpost_enabled
      * 
-     * @abstract
      * Returns true if signpost log messages are enabled for a particular log
      * handle.
      * 
-     * @discussion
      * Returns true if signpost log messages are enabled for a particular log.
      * Use this to avoid doing expensive argument marshalling leading into a call
      * to os_signpost_*
@@ -10566,7 +10413,7 @@ public final class Globals {
      * @param log
      * Log handle previously created with os_log_create.
      * 
-     * @result
+     * @return
      * Returns ‘true’ if signpost log messages are enabled.
      */
     @Generated
@@ -10604,18 +10451,18 @@ public final class Globals {
     /**
      * Returns a pointer to any extra bytes allocated with an instance given object.
      * 
+     * [@note] This function returns a pointer to any extra bytes allocated with the instance
+     *  (as specified by \c class_createInstance with extraBytes>0). This memory follows the
+     *  object's ordinary ivars, but may not be adjacent to the last ivar.
+     * [@note] The returned pointer is guaranteed to be pointer-size aligned, even if the area following
+     *  the object's last ivar is less aligned than that. Alignment greater than pointer-size is never
+     *  guaranteed, even if the area following the object's last ivar is more aligned than that.
+     * [@note] In a garbage-collected environment, the memory is scanned conservatively.
+     * 
      * @param obj An Objective-C object.
      * 
      * @return A pointer to any extra bytes allocated with \e obj. If \e obj was
      *   not allocated with any extra bytes, then dereferencing the returned pointer is undefined.
-     * 
-     * @note This function returns a pointer to any extra bytes allocated with the instance
-     *  (as specified by \c class_createInstance with extraBytes>0). This memory follows the
-     *  object's ordinary ivars, but may not be adjacent to the last ivar.
-     * @note The returned pointer is guaranteed to be pointer-size aligned, even if the area following
-     *  the object's last ivar is less aligned than that. Alignment greater than pointer-size is never
-     *  guaranteed, even if the area following the object's last ivar is more aligned than that.
-     * @note In a garbage-collected environment, the memory is scanned conservatively.
      */
     @Generated
     @CFunction
@@ -10637,9 +10484,8 @@ public final class Globals {
     public static native int strsignal_r(int __sig, BytePtr __strsignalbuf, @NUInt long __buflen);
 
     /**
-     * @function os_workgroup_create_with_workgroup
+     * [@function] os_workgroup_create_with_workgroup
      * 
-     * @abstract
      * Create a new os_workgroup object from an existing os_workgroup.
      * 
      * The newly created os_workgroup has no initial member threads - in particular
@@ -10659,9 +10505,8 @@ public final class Globals {
             OS_os_workgroup wg);
 
     /**
-     * @function os_workgroup_join
+     * [@function] os_workgroup_join
      * 
-     * @abstract
      * Joins the current thread to the specified workgroup and populates the join
      * token that has been passed in. This API is real-time safe.
      * 
@@ -10685,9 +10530,8 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token_out);
 
     /**
-     * @function os_workgroup_leave
+     * [@function] os_workgroup_leave
      * 
-     * @abstract
      * This removes the current thread from a workgroup it has previously
      * joined. Threads must leave all workgroups in the reverse order that they
      * have joined them. Failing to do so before exiting will result in undefined
@@ -10710,9 +10554,8 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_join_token_opaque_s token);
 
     /**
-     * @function os_workgroup_set_working_arena
+     * [@function] os_workgroup_set_working_arena
      * 
-     * @abstract
      * Associates a client defined working arena with the workgroup. The arena
      * is local to the workgroup object in the process. This is intended for
      * distributing a manually managed memory allocation between member threads
@@ -10751,9 +10594,8 @@ public final class Globals {
     }
 
     /**
-     * @function os_workgroup_get_working_arena
+     * [@function] os_workgroup_get_working_arena
      * 
-     * @abstract
      * Returns the working arena associated with the workgroup and the current
      * thread's index in the workgroup. This function can only be called by a member
      * of the workgroup. Multiple calls to this API by a member thread will return
@@ -10779,9 +10621,8 @@ public final class Globals {
     public static native VoidPtr os_workgroup_get_working_arena(OS_os_workgroup wg, IntPtr index_out);
 
     /**
-     * @function os_workgroup_cancel
+     * [@function] os_workgroup_cancel
      * 
-     * @abstract
      * This API invalidates a workgroup and indicates to the system that the
      * workload is no longer relevant to the caller.
      * 
@@ -10805,9 +10646,8 @@ public final class Globals {
     public static native void os_workgroup_cancel(OS_os_workgroup wg);
 
     /**
-     * @function os_workgroup_testcancel
+     * [@function] os_workgroup_testcancel
      * 
-     * @abstract
      * Returns true if the workgroup object has been cancelled. See also
      * os_workgroup_cancel
      */
@@ -10816,9 +10656,8 @@ public final class Globals {
     public static native boolean os_workgroup_testcancel(OS_os_workgroup wg);
 
     /**
-     * @function os_workgroup_max_parallel_threads
+     * [@function] os_workgroup_max_parallel_threads
      * 
-     * @abstract
      * Returns the system's recommendation for maximum number of threads the client
      * should make for a multi-threaded workload in a given workgroup.
      * 
@@ -10840,9 +10679,8 @@ public final class Globals {
     public static native int os_workgroup_max_parallel_threads(OS_os_workgroup wg, os_workgroup_mpt_attr_t attr);
 
     /**
-     * @function os_workgroup_interval_start
+     * [@function] os_workgroup_interval_start
      * 
-     * @abstract
      * Indicates to the system that the member threads of this
      * os_workgroup_interval_t have begun working on an instance of the repeatable
      * interval workload with the specified timestamps. This function is real time
@@ -10876,9 +10714,8 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
 
     /**
-     * @function os_workgroup_interval_update
+     * [@function] os_workgroup_interval_update
      * 
-     * @abstract
      * Updates an already started interval workgroup to have the new
      * deadline specified. This function is real time safe.
      * 
@@ -10904,9 +10741,8 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
 
     /**
-     * @function os_workgroup_interval_finish
+     * [@function] os_workgroup_interval_finish
      * 
-     * @abstract
      * Indicates to the system that the member threads of
      * this os_workgroup_interval_t have finished working on the current instance
      * of the interval workload. This function is real time safe.
@@ -10927,9 +10763,8 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_interval_data_opaque_s data);
 
     /**
-     * @function os_workgroup_parallel_create
+     * [@function] os_workgroup_parallel_create
      * 
-     * @abstract
      * Creates an os_workgroup_t which tracks a parallel workload.
      * A newly created os_workgroup_interval_t has no initial member threads -
      * in particular the creating thread does not join the os_workgroup_parallel_t
@@ -10952,9 +10787,8 @@ public final class Globals {
             @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
 
     /**
-     * @function dispatch_workloop_set_os_workgroup
+     * [@function] dispatch_workloop_set_os_workgroup
      * 
-     * @abstract
      * Associates an os_workgroup_t with the specified dispatch workloop.
      * 
      * The worker thread will be a member of the specified os_workgroup_t while executing

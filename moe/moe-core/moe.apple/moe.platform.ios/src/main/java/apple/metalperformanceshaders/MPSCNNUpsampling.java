@@ -26,9 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNUpsampling
- * @dependency This depends on Metal.framework
- * @discussion The MPSCNNUpsampling filter can be used to resample an existing MPSImage
+ * MPSCNNUpsampling
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNUpsampling filter can be used to resample an existing MPSImage
  *             using a different sampling frequency for the x and y dimensions with the purpose of
  *             enlarging the size of an image.
  * 
@@ -155,16 +156,18 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   scaleFactorX
-     * @abstract   The upsampling scale factor for the x dimension. The default value is 1.
+     * [@property]   scaleFactorX
+     * 
+     * The upsampling scale factor for the x dimension. The default value is 1.
      */
     @Generated
     @Selector("scaleFactorX")
     public native double scaleFactorX();
 
     /**
-     * @property   scaleFactorY
-     * @abstract   The upsampling scale factor for the y dimension. The default value is 1.
+     * [@property]   scaleFactorY
+     * 
+     * The upsampling scale factor for the y dimension. The default value is 1.
      */
     @Generated
     @Selector("scaleFactorY")
@@ -194,8 +197,9 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     public static native long version_static();
 
     /**
-     * @property   alignCorners
-     * @abstract   If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
+     * [@property]   alignCorners
+     * 
+     * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
      *             preserving the values at the corner pixels.
      *             The default is NO.
      */

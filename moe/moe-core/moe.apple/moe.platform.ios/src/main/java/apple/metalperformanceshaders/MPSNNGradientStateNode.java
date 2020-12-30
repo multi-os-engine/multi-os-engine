@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSNNGradientStateNode
- * @discussion During training, each MPSNNFilterNode has a corresponding
+ * MPSNNGradientStateNode
+ * 
+ * During training, each MPSNNFilterNode has a corresponding
  *             MPSNNGradientFilterNode for the gradient computation for
  *             trainable parameter update. The two communicate through a
  *             MPSNNGradientStateNode or subclass which carries information

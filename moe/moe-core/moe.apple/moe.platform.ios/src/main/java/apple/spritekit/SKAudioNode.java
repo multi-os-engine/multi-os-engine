@@ -203,6 +203,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * If YES, the node will automatically play sound when added to a scene.
      * 
      * Defaults to YES.
+     * 
      * @see SKView.paused
      */
     @Generated
@@ -226,6 +227,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     /**
      * Creates a SpriteKit scene graph audio node from the given AVAudioNode.
+     * 
      * @see AVAudioNode
      */
     @Generated
@@ -238,6 +240,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     /**
      * Convenience initializer that creates an AVAudioNode from the named audio asset in the main bundle.
+     * 
      * @see initWithAVAudioNode
      */
     @Generated
@@ -246,6 +249,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     /**
      * Convenience initializer that creates an AVAudioNode from the URL that contain a audio asset.
+     * 
      * @see initWithAVAudioNode
      */
     @Generated
@@ -282,6 +286,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * If YES, the node will automatically play sound when added to a scene.
      * 
      * Defaults to YES.
+     * 
      * @see SKView.paused
      */
     @Generated

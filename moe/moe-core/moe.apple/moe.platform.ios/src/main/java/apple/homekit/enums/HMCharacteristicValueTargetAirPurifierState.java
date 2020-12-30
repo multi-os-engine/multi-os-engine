@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueTargetAirPurifierState
+ * [@enum]      HMCharacteristicValueTargetAirPurifierState
  * 
- * @constant  HMCharacteristicValueTargetAirPurifierStateManual       Air Purifier is in manual mode.
- * @constant  HMCharacteristicValueTargetAirPurifierStateAutomatic    Air Purifier is in automatic mode.
+ * [@constant]  HMCharacteristicValueTargetAirPurifierStateManual       Air Purifier is in manual mode.
+ * [@constant]  HMCharacteristicValueTargetAirPurifierStateAutomatic    Air Purifier is in automatic mode.
  */
 @Generated
 public final class HMCharacteristicValueTargetAirPurifierState {

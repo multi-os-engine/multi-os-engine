@@ -19,9 +19,10 @@ package apple.coremidi.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum			MIDIObjectType
- * @abstract		Signifies the type of a MIDIObject.
- * @discussion
+ * [@enum]			MIDIObjectType
+ * 
+ * Signifies the type of a MIDIObject.
+ * 
  * 	Signifies the real type of a MIDIObjectRef instance.
  */
 @Generated

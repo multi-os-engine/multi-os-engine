@@ -3,20 +3,20 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum			AudioSettingsFlags
+ * [@enum]			AudioSettingsFlags
  * 
- * @discussion		Constants to be used with kAudioSettings_Hint
+ * Constants to be used with kAudioSettings_Hint
  * 				in the kAudioCodecPropertySettings property dictionary.
  * 				Indicates any special characteristics of each parameter within the dictionary, 
  * 
- * @constant		kAudioSettingsFlags_ExpertParameter
+ * [@constant]		kAudioSettingsFlags_ExpertParameter
  * 					If set, then the parameter is an expert parameter.
- * @constant		kAudioSettingsFlags_InvisibleParameter
+ * [@constant]		kAudioSettingsFlags_InvisibleParameter
  * 					If set, then the parameter should not be displayed. 
- * @constant		kAudioSettingsFlags_MetaParameter
+ * [@constant]		kAudioSettingsFlags_MetaParameter
  * 					If set, then changing this parameter may affect the values of other parameters. 
  * 					If not set, then this parameter can be set without affecting the values of other parameters.
- * @constant		kAudioSettingsFlags_UserInterfaceParameter
+ * [@constant]		kAudioSettingsFlags_UserInterfaceParameter
  * 					If set, then this is only a user interface element and not reflected in the codec's bit stream.
  */
 @Generated

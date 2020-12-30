@@ -28,9 +28,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol EAWiFiUnconfiguredAccessoryBrowserDelegate
+ * [@protocol] EAWiFiUnconfiguredAccessoryBrowserDelegate
  * 
- * @discussion The delegate of a EAWiFiUnconfiguredAccessoryBrowser object must adopt the
+ * The delegate of a EAWiFiUnconfiguredAccessoryBrowser object must adopt the
  *             EAWiFiUnconfiguredAccessoryBrowserDelegate protocol. The required
  *             callbacks keep the delegate informed of the state of the search and configuration processes.
  */
@@ -40,9 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("EAWiFiUnconfiguredAccessoryBrowserDelegate")
 public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
     /**
-     * @method accessoryBrowser:didFindUnconfiguredAccessories:
+     * accessoryBrowser:didFindUnconfiguredAccessories:
      * 
-     * @discussion Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has found new unconfigured accessories that match
+     * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has found new unconfigured accessories that match
      *             the filter predicate defined when starting the search.
      * 
      * @param browser     The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
@@ -54,9 +54,9 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
             NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
 
     /**
-     * @method accessoryBrowser:didFinishConfiguringAccessory:withStatus:
+     * accessoryBrowser:didFinishConfiguringAccessory:withStatus:
      * 
-     * @discussion Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has completed configuring the selected EAWiFiUnconfiguredAccessory.
+     * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has completed configuring the selected EAWiFiUnconfiguredAccessory.
      * 
      * @param browser   The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
      * @param accessory The EAWiFiUnconfiguredAccessory whose configuration process has completed.
@@ -68,9 +68,9 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
             EAWiFiUnconfiguredAccessory accessory, @NInt long status);
 
     /**
-     * @method accessoryBrowser:didRemoveUnconfiguredAccessories:
+     * accessoryBrowser:didRemoveUnconfiguredAccessories:
      * 
-     * @discussion Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has removed unconfigured accessories from the scan results
+     * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has removed unconfigured accessories from the scan results
      *             that match the filter predicate defined when starting the search.
      * 
      * @param browser     The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
@@ -82,9 +82,9 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
             NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
 
     /**
-     * @method accessoryBrowser:didUpdateState:
+     * accessoryBrowser:didUpdateState:
      * 
-     * @discussion Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser's state has changed.
+     * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser's state has changed.
      * 
      * @param browser The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
      * @param state   The current state of the EAWiFiUnconfiguredAccessoryBrowser.

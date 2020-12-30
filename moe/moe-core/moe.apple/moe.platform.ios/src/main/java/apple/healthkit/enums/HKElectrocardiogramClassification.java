@@ -4,17 +4,18 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKElectrocardiogramClassification
- * @abstract      The possible classifications determined for HKElectrocardiograms
+ * [@enum]          HKElectrocardiogramClassification
  * 
- * @constant      HKElectrocardiogramClassificationNotSet                      No classification is set on this sample.
- * @constant      HKElectrocardiogramClassificationSinusRhythm                 The sample exhibits no signs  of atrial fibrillation.
- * @constant      HKElectrocardiogramClassificationAtrialFibrillation          The sample exhibits signs of atrial fibrillation.
- * @constant      HKElectrocardiogramClassificationInconclusiveLowHeartRate    The sample classifier could not check for atrial fibrillation due to a heart rate under 50 BPM.
- * @constant      HKElectrocardiogramClassificationInconclusiveHighHeartRate   The sample classifier could not check for atrial fibrillation due to a heart rate over 120 BPM.
- * @constant      HKElectrocardiogramClassificationInconclusivePoorReading     The sample classifier did not attempt a classification due to not meeting the signal requirements.
- * @constant      HKElectrocardiogramClassificationInconclusiveOther           The sample classifier could not determine a classification.
- * @constant      HKElectrocardiogramClassificationUnrecognized                The classification created for this sample is unrecognized on this device.
+ * The possible classifications determined for HKElectrocardiograms
+ * 
+ * [@constant]      HKElectrocardiogramClassificationNotSet                      No classification is set on this sample.
+ * [@constant]      HKElectrocardiogramClassificationSinusRhythm                 The sample exhibits no signs  of atrial fibrillation.
+ * [@constant]      HKElectrocardiogramClassificationAtrialFibrillation          The sample exhibits signs of atrial fibrillation.
+ * [@constant]      HKElectrocardiogramClassificationInconclusiveLowHeartRate    The sample classifier could not check for atrial fibrillation due to a heart rate under 50 BPM.
+ * [@constant]      HKElectrocardiogramClassificationInconclusiveHighHeartRate   The sample classifier could not check for atrial fibrillation due to a heart rate over 120 BPM.
+ * [@constant]      HKElectrocardiogramClassificationInconclusivePoorReading     The sample classifier did not attempt a classification due to not meeting the signal requirements.
+ * [@constant]      HKElectrocardiogramClassificationInconclusiveOther           The sample classifier could not determine a classification.
+ * [@constant]      HKElectrocardiogramClassificationUnrecognized                The classification created for this sample is unrecognized on this device.
  */
 @Generated
 public final class HKElectrocardiogramClassification {

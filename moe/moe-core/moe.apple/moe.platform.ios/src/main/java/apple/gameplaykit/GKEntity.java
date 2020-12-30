@@ -172,6 +172,7 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Adds a component to this entity.  If a component of the same class already exists it is overwritten with the new component.
+     * 
      * @param component the component to be added
      * @see GKComponent
      */

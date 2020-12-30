@@ -24,9 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NFCReaderSession
+ * NFCReaderSession
  * 
- * @discussion      This represents a NFC reader session for processing tags; this base class cannot be instantiate. Only one NFCReaderSession
+ * This represents a NFC reader session for processing tags; this base class cannot be instantiate. Only one NFCReaderSession
  *                  can be active at any time in the system.  Subsequent opened sessions will get queued up and processed by the system in FIFO order.
  */
 @Generated
@@ -149,9 +149,9 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     public static native Object new_objc();
 
     /**
-     * @property readingAvailable
+     * [@property] readingAvailable
      * 
-     * @discussion YES if device supports NFC tag reading.
+     * YES if device supports NFC tag reading.
      */
     @Generated
     @Selector("readingAvailable")
@@ -166,9 +166,9 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property sessionQueue
+     * [@property] sessionQueue
      * 
-     * @discussion  The NFCReaderSessionDelegate delegate callbacks and the completion block handlers for tag operation will be dispatched on this queue.
+     * The NFCReaderSessionDelegate delegate callbacks and the completion block handlers for tag operation will be dispatched on this queue.
      */
     @Generated
     @Selector("sessionQueue")

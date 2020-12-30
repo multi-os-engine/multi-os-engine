@@ -24,8 +24,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CHHapticEventParameter
- * @abstract
+ * CHHapticEventParameter
+ * 
  * 	A CHHapticEventParameter contains a CHHapticEventParameterID/value pair which helps determine the initial character
  * 	of a haptic or audio event.
  */
@@ -128,7 +128,7 @@ public class CHHapticEventParameter extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property parameterID
+     * [@property] parameterID
      * 	The ID of the event parameter to use.
      */
     @Generated
@@ -144,7 +144,7 @@ public class CHHapticEventParameter extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property value
+     * [@property] value
      * 	The value of the event parameter.
      */
     @Generated
@@ -160,7 +160,7 @@ public class CHHapticEventParameter extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property value
+     * [@property] value
      * 	The value of the event parameter.
      */
     @Generated

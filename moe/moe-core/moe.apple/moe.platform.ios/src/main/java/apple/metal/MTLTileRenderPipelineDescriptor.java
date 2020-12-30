@@ -124,8 +124,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property label:
-     * @abstract The descriptor label.
+     * [@property] label:
+     * 
+     * The descriptor label.
      */
     @Generated
     @Selector("label")
@@ -158,8 +159,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property label:
-     * @abstract The descriptor label.
+     * [@property] label:
+     * 
+     * The descriptor label.
      */
     @Generated
     @Selector("setLabel:")
@@ -173,18 +175,22 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     public native void setRasterSampleCount(@NUInt long value);
 
     /**
-     * @property threadgroupSizeMatchesTileSize:
-     * @abstract Whether all threadgroups associated with this pipeline will cover tiles entirely.
-     * @discussion Metal can optimize code generation for this case.
+     * [@property] threadgroupSizeMatchesTileSize:
+     * 
+     * Whether all threadgroups associated with this pipeline will cover tiles entirely.
+     * 
+     * Metal can optimize code generation for this case.
      */
     @Generated
     @Selector("setThreadgroupSizeMatchesTileSize:")
     public native void setThreadgroupSizeMatchesTileSize(boolean value);
 
     /**
-     * @property tileFunction:
-     * @abstract  The kernel or fragment function that serves as the tile shader for this pipeline.
-     * @discussion Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
+     * [@property] tileFunction:
+     * 
+     * The kernel or fragment function that serves as the tile shader for this pipeline.
+     * 
+     * Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
      * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
      * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
      */
@@ -201,9 +207,11 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     public static native Class superclass_static();
 
     /**
-     * @property threadgroupSizeMatchesTileSize:
-     * @abstract Whether all threadgroups associated with this pipeline will cover tiles entirely.
-     * @discussion Metal can optimize code generation for this case.
+     * [@property] threadgroupSizeMatchesTileSize:
+     * 
+     * Whether all threadgroups associated with this pipeline will cover tiles entirely.
+     * 
+     * Metal can optimize code generation for this case.
      */
     @Generated
     @Selector("threadgroupSizeMatchesTileSize")
@@ -214,9 +222,11 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     public native MTLPipelineBufferDescriptorArray tileBuffers();
 
     /**
-     * @property tileFunction:
-     * @abstract  The kernel or fragment function that serves as the tile shader for this pipeline.
-     * @discussion Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
+     * [@property] tileFunction:
+     * 
+     * The kernel or fragment function that serves as the tile shader for this pipeline.
+     * 
+     * Both kernel-based and fragment-based tile pipelines dispatches will barrier against previous
      * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
      * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
      */
@@ -231,8 +241,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     public static native long version_static();
 
     /**
-     * @property maxTotalThreadsPerThreadgroup
-     * @abstract Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
      */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
@@ -240,17 +251,21 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     public native long maxTotalThreadsPerThreadgroup();
 
     /**
-     * @property maxTotalThreadsPerThreadgroup
-     * @abstract Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
      */
     @Generated
     @Selector("setMaxTotalThreadsPerThreadgroup:")
     public native void setMaxTotalThreadsPerThreadgroup(@NUInt long value);
 
     /**
-     * @property binaryArchives
-     * @abstract The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * @discussion Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * [@property] binaryArchives
+     * 
+     * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * 
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * 
      * @see MTLBinaryArchive
      */
     @Generated
@@ -258,9 +273,12 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     public native NSArray<?> binaryArchives();
 
     /**
-     * @property binaryArchives
-     * @abstract The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * @discussion Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * [@property] binaryArchives
+     * 
+     * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * 
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * 
      * @see MTLBinaryArchive
      */
     @Generated

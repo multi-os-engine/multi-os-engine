@@ -97,7 +97,7 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
     /**
      * The custom image, if any, displayed on the button.
      * 
-     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      */
     @Generated
     @Selector("image")

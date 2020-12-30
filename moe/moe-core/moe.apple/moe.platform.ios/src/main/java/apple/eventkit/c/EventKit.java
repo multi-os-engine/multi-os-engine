@@ -38,8 +38,9 @@ public final class EventKit {
     }
 
     /**
-     * @constant   EKEventStoreChangedNotification
-     * @discussion Notification name sent out when the database is changed by either an external process,
+     * [@constant]   EKEventStoreChangedNotification
+     * 
+     * Notification name sent out when the database is changed by either an external process,
      *             another event store in the same process, or by calling saveEvent: or removeEvent: on a
      *             store you are managing. When you receive this notification, you should consider all EKEvent
      *             instances you have to be invalid. If you had selected events for a date range using
@@ -57,9 +58,11 @@ public final class EventKit {
     public static native String EKEventStoreChangedNotification();
 
     /**
-     * @const      EKErrorDomain 
-     * @abstract   Error domain for NSError values stemming from the EventKit Framework API.
-     * @discussion This error domain is used as the domain for all NSError instances stemming from the
+     * [@const]      EKErrorDomain 
+     * 
+     * Error domain for NSError values stemming from the EventKit Framework API.
+     * 
+     * This error domain is used as the domain for all NSError instances stemming from the
      *             EventKit Framework.
      */
     @Generated

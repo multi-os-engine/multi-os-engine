@@ -30,18 +30,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * exposed within a given file provider.
  * 
  * Domains can be registered to the system using
- * @c -[NSFileProviderMananger addDomain:completionHandler:]
+ * [@c] -[NSFileProviderMananger addDomain:completionHandler:]
  * 
  * By default, a file provider extension does not have any domain.
  * 
  * On the extension side, a separate instance of NSFileProviderExtension will be
  * created for each @c NSFileProviderDomain registered.  In that case, the
- * @c NSFileProviderExtension.domain properties will indicate which domain the
+ * [@c] NSFileProviderExtension.domain properties will indicate which domain the
  * NSFileProviderExtension belongs to (or nil if none).
  * 
  * All the files on disk belonging to the same domain must be grouped inside a
  * common directory. That directory path is indicated by the
- * @p pathRelativeToDocumentStorage property.
+ * [@p] pathRelativeToDocumentStorage property.
  */
 @Generated
 @Library("FileProvider")
@@ -130,11 +130,12 @@ public class NSFileProviderDomain extends NSObject {
      * The file provider extension implementation can pick any @c identifier as it sees
      * fit to identify the group of items.
      * 
+     * [@c] NSFileProviderExtension.documentStorageURL.
+     * 
      * @param displayName a user visible string representing the group of items the
      * file provider extension is using.
      * 
      * @param pathRelativeToDocumentStorage a path relative to
-     * @c NSFileProviderExtension.documentStorageURL.
      */
     @Generated
     @Selector("initWithIdentifier:displayName:pathRelativeToDocumentStorage:")

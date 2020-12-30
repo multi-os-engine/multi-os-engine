@@ -174,9 +174,8 @@ public class ADInterstitialAd extends NSObject {
     public static native long version_static();
 
     /**
-     * @property cancelAction
+     * [@property] cancelAction
      * 
-     * @discussion
      * Cancels the current in-progress action. This should only be used in cases
      * where the user's attention is required immediately. If this method is called,
      * -interstitialAdActionDidFinish: will not be called.
@@ -186,9 +185,8 @@ public class ADInterstitialAd extends NSObject {
     public native void cancelAction();
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion
      * The interstitial ad delegate is notified when it has loaded, when errors
      * occur in getting ads, when actions begin and end, and when it has unloaded.
      * 
@@ -205,9 +203,8 @@ public class ADInterstitialAd extends NSObject {
     public native ADInterstitialAd init();
 
     /**
-     * @property actionInProgress
+     * [@property] actionInProgress
      * 
-     * @discussion
      * Actions display full screen content in a modal session. Use this property to
      * determine if such an action is currently in progress.
      */
@@ -216,7 +213,7 @@ public class ADInterstitialAd extends NSObject {
     public native boolean isActionInProgress();
 
     /**
-     * @property loaded
+     * [@property] loaded
      * 
      * @return
      * YES if an ad is loaded, NO otherwise. This property should always be checked
@@ -227,9 +224,8 @@ public class ADInterstitialAd extends NSObject {
     public native boolean isLoaded();
 
     /**
-     * @method presentFromViewController:
+     * presentFromViewController:
      * 
-     * @discussion
      * As of iOS 7.0, the interstitial ad presentation APIs on UIViewController
      * should be used instead of managing your own ADInterstitialAd and presenting
      * it via the presentFromViewController: API.
@@ -247,9 +243,8 @@ public class ADInterstitialAd extends NSObject {
     public native void presentFromViewController(UIViewController viewController);
 
     /**
-     * @method presentInView:
+     * presentInView:
      * 
-     * @discussion
      * This method should be used to display the interstitial in a view hierarchy.
      * The view hierarchy must be managed by a view controller and the size of the
      * container view must fit the following constraints:
@@ -274,9 +269,8 @@ public class ADInterstitialAd extends NSObject {
     public native boolean presentInView(UIView containerView);
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion
      * The interstitial ad delegate is notified when it has loaded, when errors
      * occur in getting ads, when actions begin and end, and when it has unloaded.
      * 
@@ -288,9 +282,8 @@ public class ADInterstitialAd extends NSObject {
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADInterstitialAdDelegate value);
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion
      * The interstitial ad delegate is notified when it has loaded, when errors
      * occur in getting ads, when actions begin and end, and when it has unloaded.
      * 

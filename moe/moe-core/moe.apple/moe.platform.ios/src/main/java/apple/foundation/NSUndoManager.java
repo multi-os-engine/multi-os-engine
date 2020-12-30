@@ -258,11 +258,12 @@ public class NSUndoManager extends NSObject {
     public native String redoMenuTitleForUndoActionName(String actionName);
 
     /**
-     * @abstract records single undo operation for the specified target
+     * records single undo operation for the specified target
+     * 
+     *   As with other undo operations, this does not strongly retain target. Care should be taken to avoid introducing retain cycles by other references captured by the block.
+     * 
      * @param target non-nil target of the undo operation
      * @param undoHandler non-nil block to be executed for the undo operation
-     * @discussion
-     *   As with other undo operations, this does not strongly retain target. Care should be taken to avoid introducing retain cycles by other references captured by the block.
      */
     @Generated
     @Selector("registerUndoWithTarget:handler:")

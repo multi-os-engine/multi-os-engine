@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @category NSObject (SCNNodeRendererDelegate)
- * @abstract The SCNNodeRendererDelegate protocol declares the methods that an instance of SCNNode invokes to let a delegate customize its rendering.
+ * [@category] NSObject (SCNNodeRendererDelegate)
+ * 
+ * The SCNNodeRendererDelegate protocol declares the methods that an instance of SCNNode invokes to let a delegate customize its rendering.
  */
 @Generated
 @Library("SceneKit")
@@ -37,11 +38,14 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("SCNNodeRendererDelegate")
 public interface SCNNodeRendererDelegate {
     /**
-     * @method renderNode:renderer:arguments:
-     * @abstract Invoked when a node is rendered.
-     * @discussion The preferred way to customize the rendering is to tweak the material properties of the different materials of the node's geometry. SCNMaterial conforms to the SCNShadable protocol and allows for more advanced rendering using GLSL.
+     * renderNode:renderer:arguments:
+     * 
+     * Invoked when a node is rendered.
+     * 
+     * The preferred way to customize the rendering is to tweak the material properties of the different materials of the node's geometry. SCNMaterial conforms to the SCNShadable protocol and allows for more advanced rendering using GLSL.
      *             You would typically use a renderer delegate with a node that has no geometry and only serves as a location in space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
      *             Only drawing calls and the means to achieve them are supposed to be performed during the renderer delegate callback, any changes in the model (nodes, geometry...) would involve unexpected results.
+     * 
      * @param node The node to render.
      * @param renderer The scene renderer to render into.
      * @param arguments A dictionary whose values are SCNMatrix4 matrices wrapped in NSValue objects.

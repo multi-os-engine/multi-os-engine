@@ -34,10 +34,12 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("PKPushRegistryDelegate")
 public interface PKPushRegistryDelegate {
     /**
-     * @method        pushRegistry:didInvalidatePushTokenForType:
-     * @abstract      This method is invoked if a previously provided push token is no longer valid for use. No action is
+     * pushRegistry:didInvalidatePushTokenForType:
+     * 
+     * This method is invoked if a previously provided push token is no longer valid for use. No action is
      *                necessary to rerequest registration. This feedback can be used to update an app's server to no longer
      *                send push notifications of the specified type to this device.
+     * 
      * @param         registry
      *                The PKPushRegistry instance responsible for the delegate callback.
      * @param         type
@@ -51,8 +53,10 @@ public interface PKPushRegistryDelegate {
     }
 
     /**
-     * @method        pushRegistry:didReceiveIncomingPushWithPayload:forType:
-     * @abstract      This method is invoked when a push notification has been received for the specified PKPushType.
+     * pushRegistry:didReceiveIncomingPushWithPayload:forType:
+     * 
+     * This method is invoked when a push notification has been received for the specified PKPushType.
+     * 
      * @param         registry
      *                The PKPushRegistry instance responsible for the delegate callback.
      * @param         payload
@@ -69,9 +73,11 @@ public interface PKPushRegistryDelegate {
     }
 
     /**
-     * @method        pushRegistry:didUpdatePushCredentials:forType:
-     * @abstract      This method is invoked when new credentials (including push token) have been received for the specified
+     * pushRegistry:didUpdatePushCredentials:forType:
+     * 
+     * This method is invoked when new credentials (including push token) have been received for the specified
      *                PKPushType.
+     * 
      * @param         registry
      *                The PKPushRegistry instance responsible for the delegate callback.
      * @param         pushCredentials
@@ -85,8 +91,10 @@ public interface PKPushRegistryDelegate {
             String type);
 
     /**
-     * @method        pushRegistry:didReceiveIncomingPushWithPayload:forType:withCompletionHandler:
-     * @abstract      This method is invoked when a push notification has been received for the specified PKPushType.
+     * pushRegistry:didReceiveIncomingPushWithPayload:forType:withCompletionHandler:
+     * 
+     * This method is invoked when a push notification has been received for the specified PKPushType.
+     * 
      * @param         registry
      *                The PKPushRegistry instance responsible for the delegate callback.
      * @param         payload

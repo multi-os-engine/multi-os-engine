@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CMDyskineticSymptomResult
- * @discussion A CMDyskineticSymptomResult object describes the presence and prevalence of dyskinetic symptoms (specifically, choreiform movements) during a one minute result period when subjects wear the Apple Watch on their most affected arm.
+ * CMDyskineticSymptomResult
+ * 
+ * A CMDyskineticSymptomResult object describes the presence and prevalence of dyskinetic symptoms (specifically, choreiform movements) during a one minute result period when subjects wear the Apple Watch on their most affected arm.
  * percentUnlikely + percentLikely = 1.0
  * Please note dyskinetic symptom measurements are designed for subjects with known presence of chorea in the arm and should not be displayed to users who do not report episodes of dyskinetic symptoms.
  */
@@ -103,7 +104,7 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @brief The date and time representing the end of the result.
+     * The date and time representing the end of the result.
      */
     @Generated
     @Selector("endDate")
@@ -150,14 +151,14 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
     public static native Object new_objc();
 
     /**
-     * @brief The percentage of time dyskinetic symptoms were likely for the result.
+     * The percentage of time dyskinetic symptoms were likely for the result.
      */
     @Generated
     @Selector("percentLikely")
     public native float percentLikely();
 
     /**
-     * @brief The percentage of time dyskinetic symptoms were unlikely for the result.
+     * The percentage of time dyskinetic symptoms were unlikely for the result.
      */
     @Generated
     @Selector("percentUnlikely")
@@ -176,7 +177,7 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @brief The date and time representing the start of the result.
+     * The date and time representing the start of the result.
      */
     @Generated
     @Selector("startDate")

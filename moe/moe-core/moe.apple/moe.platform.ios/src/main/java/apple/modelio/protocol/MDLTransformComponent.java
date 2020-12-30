@@ -27,9 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * MDLTransformComponent
- * @summary a container for a time sampled local transformation
+ * [@summary] a container for a time sampled local transformation
  * 
- * @discussion Accessors to get the local transform and the global transform
+ * Accessors to get the local transform and the global transform
  * for a particular MDLObject are provided.
  */
 @Generated

@@ -33,9 +33,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol CBPeripheralDelegate
+ * [@protocol] CBPeripheralDelegate
  * 
- * @discussion Delegate for CBPeripheral.
+ * Delegate for CBPeripheral.
  */
 @Generated
 @Library("CoreBluetooth")
@@ -43,14 +43,14 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("CBPeripheralDelegate")
 public interface CBPeripheralDelegate {
     /**
-     *  @method peripheral:didDiscoverCharacteristicsForService:error:
+     * peripheral:didDiscoverCharacteristicsForService:error:
+     * 
+     * This method returns the result of a @link discoverCharacteristics:forService: @/link call. If the characteristic(s) were read successfully,
+     * 					they can be retrieved via <i>service</i>'s <code>characteristics</code> property.
      * 
      *  @param peripheral	The peripheral providing this information.
      *  @param service		The <code>CBService</code> object containing the characteristic(s).
      * @param error		If an error occurred, the cause of the failure.
-     * 
-     *  @discussion			This method returns the result of a @link discoverCharacteristics:forService: @/link call. If the characteristic(s) were read successfully,
-     * 					they can be retrieved via <i>service</i>'s <code>characteristics</code> property.
      */
     @Generated
     @IsOptional
@@ -61,14 +61,14 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didDiscoverDescriptorsForCharacteristic:error:
+     * peripheral:didDiscoverDescriptorsForCharacteristic:error:
+     * 
+     * This method returns the result of a @link discoverDescriptorsForCharacteristic: @/link call. If the descriptors were read successfully,
+     * 						they can be retrieved via <i>characteristic</i>'s <code>descriptors</code> property.
      * 
      *  @param peripheral		The peripheral providing this information.
      *  @param characteristic	A <code>CBCharacteristic</code> object.
      * @param error			If an error occurred, the cause of the failure.
-     * 
-     *  @discussion				This method returns the result of a @link discoverDescriptorsForCharacteristic: @/link call. If the descriptors were read successfully,
-     * 						they can be retrieved via <i>characteristic</i>'s <code>descriptors</code> property.
      */
     @Generated
     @IsOptional
@@ -79,14 +79,14 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didDiscoverIncludedServicesForService:error:
+     * peripheral:didDiscoverIncludedServicesForService:error:
+     * 
+     * This method returns the result of a @link discoverIncludedServices:forService: @/link call. If the included service(s) were read successfully,
+     * 					they can be retrieved via <i>service</i>'s <code>includedServices</code> property.
      * 
      *  @param peripheral	The peripheral providing this information.
      *  @param service		The <code>CBService</code> object containing the included services.
      * @param error		If an error occurred, the cause of the failure.
-     * 
-     *  @discussion			This method returns the result of a @link discoverIncludedServices:forService: @/link call. If the included service(s) were read successfully,
-     * 					they can be retrieved via <i>service</i>'s <code>includedServices</code> property.
      */
     @Generated
     @IsOptional
@@ -97,13 +97,13 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didDiscoverServices:
+     * peripheral:didDiscoverServices:
+     * 
+     * This method returns the result of a @link discoverServices: @/link call. If the service(s) were read successfully, they can be retrieved via
+     * 					<i>peripheral</i>'s @link services @/link property.
      * 
      *  @param peripheral	The peripheral providing this information.
      * @param error		If an error occurred, the cause of the failure.
-     * 
-     *  @discussion			This method returns the result of a @link discoverServices: @/link call. If the service(s) were read successfully, they can be retrieved via
-     * 					<i>peripheral</i>'s @link services @/link property.
      */
     @Generated
     @IsOptional
@@ -113,14 +113,14 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     * @method peripheral:didModifyServices:
+     * peripheral:didModifyServices:
+     * 
+     * This method is invoked when the @link services @/link of <i>peripheral</i> have been changed.
+     * 				At this point, the designated <code>CBService</code> objects have been invalidated.
+     * 				Services can be re-discovered via @link discoverServices: @/link.
      * 
      * @param peripheral			The peripheral providing this update.
      * @param invalidatedServices	The services that have been invalidated
-     * 
-     * @discussion			This method is invoked when the @link services @/link of <i>peripheral</i> have been changed.
-     * 				At this point, the designated <code>CBService</code> objects have been invalidated.
-     * 				Services can be re-discovered via @link discoverServices: @/link.
      */
     @Generated
     @IsOptional
@@ -131,13 +131,13 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     * @method peripheral:didReadRSSI:error:
+     * peripheral:didReadRSSI:error:
+     * 
+     * This method returns the result of a @link readRSSI: @/link call.
      * 
      * @param peripheral	The peripheral providing this update.
      * @param RSSI			The current RSSI of the link.
      * @param error		If an error occurred, the cause of the failure.
-     * 
-     * @discussion			This method returns the result of a @link readRSSI: @/link call.
      */
     @Generated
     @IsOptional
@@ -147,13 +147,13 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didUpdateNotificationStateForCharacteristic:error:
+     * peripheral:didUpdateNotificationStateForCharacteristic:error:
+     * 
+     * This method returns the result of a @link setNotifyValue:forCharacteristic: @/link call.
      * 
      *  @param peripheral		The peripheral providing this information.
      *  @param characteristic	A <code>CBCharacteristic</code> object.
      * @param error			If an error occurred, the cause of the failure.
-     * 
-     *  @discussion				This method returns the result of a @link setNotifyValue:forCharacteristic: @/link call.
      */
     @Generated
     @IsOptional
@@ -164,13 +164,13 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didUpdateValueForCharacteristic:error:
+     * peripheral:didUpdateValueForCharacteristic:error:
+     * 
+     * This method is invoked after a @link readValueForCharacteristic: @/link call, or upon receipt of a notification/indication.
      * 
      *  @param peripheral		The peripheral providing this information.
      *  @param characteristic	A <code>CBCharacteristic</code> object.
      * @param error			If an error occurred, the cause of the failure.
-     * 
-     *  @discussion				This method is invoked after a @link readValueForCharacteristic: @/link call, or upon receipt of a notification/indication.
      */
     @Generated
     @IsOptional
@@ -181,13 +181,13 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didUpdateValueForDescriptor:error:
+     * peripheral:didUpdateValueForDescriptor:error:
+     * 
+     * This method returns the result of a @link readValueForDescriptor: @/link call.
      * 
      *  @param peripheral		The peripheral providing this information.
      *  @param descriptor		A <code>CBDescriptor</code> object.
      * @param error			If an error occurred, the cause of the failure.
-     * 
-     *  @discussion				This method returns the result of a @link readValueForDescriptor: @/link call.
      */
     @Generated
     @IsOptional
@@ -198,13 +198,13 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didWriteValueForCharacteristic:error:
+     * peripheral:didWriteValueForCharacteristic:error:
+     * 
+     * This method returns the result of a {@link writeValue:forCharacteristic:type:} call, when the <code>CBCharacteristicWriteWithResponse</code> type is used.
      * 
      *  @param peripheral		The peripheral providing this information.
      *  @param characteristic	A <code>CBCharacteristic</code> object.
      * @param error			If an error occurred, the cause of the failure.
-     * 
-     *  @discussion				This method returns the result of a {@link writeValue:forCharacteristic:type:} call, when the <code>CBCharacteristicWriteWithResponse</code> type is used.
      */
     @Generated
     @IsOptional
@@ -215,13 +215,13 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didWriteValueForDescriptor:error:
+     * peripheral:didWriteValueForDescriptor:error:
+     * 
+     * This method returns the result of a @link writeValue:forDescriptor: @/link call.
      * 
      *  @param peripheral		The peripheral providing this information.
      *  @param descriptor		A <code>CBDescriptor</code> object.
      * @param error			If an error occurred, the cause of the failure.
-     * 
-     *  @discussion				This method returns the result of a @link writeValue:forDescriptor: @/link call.
      */
     @Generated
     @IsOptional
@@ -232,11 +232,11 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     * @method peripheralDidUpdateName:
+     * peripheralDidUpdateName:
+     * 
+     * This method is invoked when the @link name @/link of <i>peripheral</i> changes.
      * 
      * @param peripheral	The peripheral providing this update.
-     * 
-     * @discussion			This method is invoked when the @link name @/link of <i>peripheral</i> changes.
      */
     @Generated
     @IsOptional
@@ -246,12 +246,12 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheralDidUpdateRSSI:error:
+     * peripheralDidUpdateRSSI:error:
+     * 
+     * This method returns the result of a @link readRSSI: @/link call.
      * 
      *  @param peripheral	The peripheral providing this update.
      * @param error		If an error occurred, the cause of the failure.
-     * 
-     *  @discussion			This method returns the result of a @link readRSSI: @/link call.
      * 
      *  @deprecated			Use {@link peripheral:didReadRSSI:error:} instead.
      */
@@ -264,13 +264,13 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     *  @method peripheral:didOpenL2CAPChannel:error:
+     * peripheral:didOpenL2CAPChannel:error:
+     * 
+     * This method returns the result of a @link openL2CAPChannel: @link call.
      * 
      *  @param peripheral		The peripheral providing this information.
      *  @param channel			A <code>CBL2CAPChannel</code> object.
      * @param error			If an error occurred, the cause of the failure.
-     * 
-     *  @discussion				This method returns the result of a @link openL2CAPChannel: @link call.
      */
     @Generated
     @IsOptional
@@ -280,12 +280,12 @@ public interface CBPeripheralDelegate {
     }
 
     /**
-     * @method peripheralIsReadyToSendWriteWithoutResponse:
+     * peripheralIsReadyToSendWriteWithoutResponse:
+     * 
+     * This method is invoked after a failed call to @link writeValue:forCharacteristic:type: @/link, when <i>peripheral</i> is again
+     *                     ready to send characteristic value updates.
      * 
      * @param peripheral   The peripheral providing this update.
-     * 
-     * @discussion         This method is invoked after a failed call to @link writeValue:forCharacteristic:type: @/link, when <i>peripheral</i> is again
-     *                     ready to send characteristic value updates.
      */
     @Generated
     @IsOptional

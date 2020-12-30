@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueLeakDetectionStatus
+ * [@enum]      HMCharacteristicValueLeakDetectionStatus
  * 
- * @constant  HMCharacteristicValueLeakDetectionStatusNone        Leak is not detected.
- * @constant  HMCharacteristicValueLeakDetectionStatusDetected    Leak is detected.
+ * [@constant]  HMCharacteristicValueLeakDetectionStatusNone        Leak is not detected.
+ * [@constant]  HMCharacteristicValueLeakDetectionStatusDetected    Leak is detected.
  */
 @Generated
 public final class HMCharacteristicValueLeakStatus {

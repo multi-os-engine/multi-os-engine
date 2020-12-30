@@ -125,10 +125,10 @@ public class GCXboxGamepad extends GCExtendedGamepad {
     /**
      * Some Xbox controller variants can support up to four additional buttons.
      * 
-     * @example The standard Bluetooth-enabled Xbox Wireless Controller does not have paddle buttons
-     * @example The Xbox Elite Wireless Controller has four extra digital buttons.
+     * [@example] The standard Bluetooth-enabled Xbox Wireless Controller does not have paddle buttons
+     * [@example] The Xbox Elite Wireless Controller has four extra digital buttons.
      * 
-     * @note The four extra digital buttons on the Xbox Elite Wireless Controller are only directly addressable when the controller
+     * [@note] The four extra digital buttons on the Xbox Elite Wireless Controller are only directly addressable when the controller
      *    is on its default mapping profile. Otherwise, the paddle buttons are directly bound to other inputs on the controller.
      */
     @Generated

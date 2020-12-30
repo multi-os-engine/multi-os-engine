@@ -66,9 +66,12 @@ public final class CoreMIDI {
     }
 
     /**
-     * @function		MIDIClientCreate
+     * [@function]		MIDIClientCreate
      * 
-     * @abstract 		Creates a MIDIClient object.
+     * Creates a MIDIClient object.
+     * 
+     * 	Note that notifyProc will always be called on the run loop which was current when
+     * 	MIDIClientCreate was first called.
      * 
      * @param			name
      * 					The client's name.
@@ -79,11 +82,7 @@ public final class CoreMIDI {
      * 					A refCon passed back to notifyRefCon
      * @param			outClient
      * 					On successful return, points to the newly-created MIDIClientRef.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	Note that notifyProc will always be called on the run loop which was current when
-     * 	MIDIClientCreate was first called.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -92,9 +91,12 @@ public final class CoreMIDI {
             IntPtr outClient);
 
     /**
-     * @function		MIDIClientCreateWithBlock
+     * [@function]		MIDIClientCreateWithBlock
      * 
-     * @abstract 		Creates a MIDIClient object.
+     * Creates a MIDIClient object.
+     * 
+     * 	Note that notifyBlock is called on a thread chosen by the implementation.
+     * 	Thread-safety is the block's responsibility.
      * 
      * @param			name
      * 					The client's name.
@@ -103,11 +105,7 @@ public final class CoreMIDI {
      * @param			notifyBlock
      * 					An optional (may be NULL) block via which the client
      * 					will receive notifications of changes to the system.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	Note that notifyBlock is called on a thread chosen by the implementation.
-     * 	Thread-safety is the block's responsibility.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -115,31 +113,35 @@ public final class CoreMIDI {
             @ObjCBlock(name = "call_MIDIClientCreateWithBlock") Block_MIDIClientCreateWithBlock notifyBlock);
 
     /**
-     * @function   	MIDIClientDispose
+     * [@function]   	MIDIClientDispose
      * 
-     * @abstract   	Disposes a MIDIClient object.
+     * Disposes a MIDIClient object.
      * 
-     * @param  		client
-     * 					The client to dispose.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
      * 	It is not essential to call this function; the CoreMIDI framework will automatically
      * 	dispose all MIDIClients when an application terminates. However, if this method is
      * 	called to dispose the last/only MIDIClient owned by an application, the MIDI server may
      * 	exit if there are no other MIDIClients remaining in the system, causing all subsequent calls
      * 	to MIDIClientCreate and MIDIClientCreateWithBlock by that application to fail. For this reason,
      * 	disposing all of an application's MIDIClients is strongly discouraged.
+     * 
+     * @param  		client
+     * 					The client to dispose.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIClientDispose(int client);
 
     /**
-     * @function		MIDIInputPortCreate
+     * [@function]		MIDIInputPortCreate
      * 
-     * @abstract 		Creates an input port through which the client may receive
+     * Creates an input port through which the client may receive
      * 				incoming MIDI messages from any MIDI source.
+     * 
+     * 	After creating a port, use MIDIPortConnectSource to establish an input connection from
+     * 	any number of sources to your port.
+     * 
+     * 	readProc will be called on a separate high-priority thread owned by CoreMIDI.
      * 
      * @param			client
      * 					The client to own the newly-created port.
@@ -153,13 +155,7 @@ public final class CoreMIDI {
      * @param			outPort
      * 					On successful return, points to the newly-created
      * 					MIDIPort.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	After creating a port, use MIDIPortConnectSource to establish an input connection from
-     * 	any number of sources to your port.
-     * 
-     * 	readProc will be called on a separate high-priority thread owned by CoreMIDI.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -168,10 +164,15 @@ public final class CoreMIDI {
             IntPtr outPort);
 
     /**
-     * @function		MIDIInputPortCreateWithBlock
+     * [@function]		MIDIInputPortCreateWithBlock
      * 
-     * @abstract 		Creates an input port through which the client may receive
+     * Creates an input port through which the client may receive
      * 				incoming MIDI messages from any MIDI source.
+     * 
+     * 	After creating a port, use MIDIPortConnectSource to establish an input connection from
+     * 	any number of sources to your port.
+     * 
+     * 	readBlock will be called on a separate high-priority thread owned by CoreMIDI.
      * 
      * @param			client
      * 					The client to own the newly-created port.
@@ -183,13 +184,7 @@ public final class CoreMIDI {
      * @param			readBlock
      * 					The MIDIReadBlock which will be called with incoming MIDI, from sources
      * 					connected to this port.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	After creating a port, use MIDIPortConnectSource to establish an input connection from
-     * 	any number of sources to your port.
-     * 
-     * 	readBlock will be called on a separate high-priority thread owned by CoreMIDI.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -197,10 +192,17 @@ public final class CoreMIDI {
             @ObjCBlock(name = "call_MIDIInputPortCreateWithBlock") Block_MIDIInputPortCreateWithBlock readBlock);
 
     /**
-     * @function		MIDIOutputPortCreate
+     * [@function]		MIDIOutputPortCreate
      * 
-     * @abstract 		Creates an output port through which the client may send
+     * Creates an output port through which the client may send
      * 				outgoing MIDI messages to any MIDI destination.
+     * 
+     * 	Output ports provide a mechanism for MIDI merging.  CoreMIDI assumes that each output
+     * 	port will be responsible for sending only a single MIDI stream to each destination,
+     * 	although a single port may address all of the destinations in the system.
+     * 
+     * 	Multiple output ports are only necessary when an application is capable of directing
+     * 	multiple simultaneous MIDI streams to the same destination.
      * 
      * @param			client
      * 					The client to own the newly-created port
@@ -209,42 +211,33 @@ public final class CoreMIDI {
      * @param			outPort
      * 					On successful return, points to the newly-created
      * 					MIDIPort.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	Output ports provide a mechanism for MIDI merging.  CoreMIDI assumes that each output
-     * 	port will be responsible for sending only a single MIDI stream to each destination,
-     * 	although a single port may address all of the destinations in the system.
-     * 
-     * 	Multiple output ports are only necessary when an application is capable of directing
-     * 	multiple simultaneous MIDI streams to the same destination.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIOutputPortCreate(int client, CFStringRef portName, IntPtr outPort);
 
     /**
-     * @function		MIDIPortDispose
+     * [@function]		MIDIPortDispose
      * 
-     * @abstract 		Disposes a MIDIPort object.
+     * Disposes a MIDIPort object.
      * 
-     * @param			port
-     * 					The port to dispose.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
      * 	It is not usually necessary to call this function; when an application's MIDIClient's
      * 	are automatically disposed at termination, or explicitly, via MIDIClientDispose, the
      * 	client's ports are automatically disposed at that time.
+     * 
+     * @param			port
+     * 					The port to dispose.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIPortDispose(int port);
 
     /**
-     * @function		MIDIPortConnectSource
+     * [@function]		MIDIPortConnectSource
      * 
-     * @abstract 		Establishes a connection from a source to a client's input port.
+     * Establishes a connection from a source to a client's input port.
      * 
      * @param			port
      * 					The port to which to create the connection.  This port's
@@ -254,16 +247,16 @@ public final class CoreMIDI {
      * @param			connRefCon
      * 					This refCon is passed to the port's MIDIReadProc or MIDIReadBlock, as a way to
      * 					identify the source.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIPortConnectSource(int port, int source, VoidPtr connRefCon);
 
     /**
-     * @function		MIDIPortDisconnectSource
+     * [@function]		MIDIPortDisconnectSource
      * 
-     * @abstract 		Closes a previously-established source-to-input port
+     * Closes a previously-established source-to-input port
      * 				connection.
      * 
      * @param			port
@@ -271,18 +264,18 @@ public final class CoreMIDI {
      * @param			source
      * 					The source from which to close a connection to the
      * 					specified port.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIPortDisconnectSource(int port, int source);
 
     /**
-     * @function		MIDIGetNumberOfDevices
+     * [@function]		MIDIGetNumberOfDevices
      * 
-     * @abstract 		Returns the number of devices in the system.
+     * Returns the number of devices in the system.
      * 
-     * @result			The number of devices in the system, or 0 if an error
+     * @return			The number of devices in the system, or 0 if an error
      * 				occurred.
      */
     @Generated
@@ -291,16 +284,10 @@ public final class CoreMIDI {
     public static native long MIDIGetNumberOfDevices();
 
     /**
-     * @function		MIDIGetDevice
+     * [@function]		MIDIGetDevice
      * 
-     * @abstract 		Returns one of the devices in the system.
+     * Returns one of the devices in the system.
      * 
-     * @param			deviceIndex0
-     * 					The index (0...MIDIGetNumberOfDevices()-1) of the device
-     * 					to return.
-     * @result			A reference to a device, or NULL if an error occurred.
-     * 
-     * @discussion
      * 	Use this to enumerate the devices in the system.
      * 
      * 	To enumerate the entities in the system, you can walk through the devices, then walk
@@ -315,20 +302,25 @@ public final class CoreMIDI {
      * 	Thus clients should usually use MIDIGetNumberOfSources, MIDIGetSource,
      * 	MIDIGetNumberOfDestinations and MIDIGetDestination, rather iterating through devices and
      * 	entities to locate endpoints.
+     * 
+     * @param			deviceIndex0
+     * 					The index (0...MIDIGetNumberOfDevices()-1) of the device
+     * 					to return.
+     * @return			A reference to a device, or NULL if an error occurred.
      */
     @Generated
     @CFunction
     public static native int MIDIGetDevice(@NUInt long deviceIndex0);
 
     /**
-     * @function		MIDIDeviceGetNumberOfEntities
+     * [@function]		MIDIDeviceGetNumberOfEntities
      * 
-     * @abstract 		Returns the number of entities in a given device.
+     * Returns the number of entities in a given device.
      * 
      * @param			device
      * 					The device being queried.
      * 
-     * @result			The number of entities the device contains, or 0 if an
+     * @return			The number of entities the device contains, or 0 if an
      * 				error occurred.
      */
     @Generated
@@ -337,9 +329,9 @@ public final class CoreMIDI {
     public static native long MIDIDeviceGetNumberOfEntities(int device);
 
     /**
-     * @function		MIDIDeviceGetEntity
+     * [@function]		MIDIDeviceGetEntity
      * 
-     * @abstract 		Returns one of a given device's entities.
+     * Returns one of a given device's entities.
      * 
      * @param			device
      * 					The device being queried.
@@ -347,21 +339,21 @@ public final class CoreMIDI {
      * 					The index (0...MIDIDeviceGetNumberOfEntities(device)-1)
      * 					of the entity to return
      * 
-     * @result			A reference to an entity, or NULL if an error occurred.
+     * @return			A reference to an entity, or NULL if an error occurred.
      */
     @Generated
     @CFunction
     public static native int MIDIDeviceGetEntity(int device, @NUInt long entityIndex0);
 
     /**
-     * @function		MIDIEntityGetNumberOfSources
+     * [@function]		MIDIEntityGetNumberOfSources
      * 
-     * @abstract 		Returns the number of sources in a given entity.
+     * Returns the number of sources in a given entity.
      * 
      * @param			entity
      * 					The entity being queried
      * 
-     * @result			The number of sources the entity contains, or 0 if an
+     * @return			The number of sources the entity contains, or 0 if an
      * 				error occurred.
      */
     @Generated
@@ -370,9 +362,9 @@ public final class CoreMIDI {
     public static native long MIDIEntityGetNumberOfSources(int entity);
 
     /**
-     * @function		MIDIEntityGetSource
+     * [@function]		MIDIEntityGetSource
      * 
-     * @abstract 		Returns one of a given entity's sources.
+     * Returns one of a given entity's sources.
      * 
      * @param			entity
      * 					The entity being queried.
@@ -380,21 +372,21 @@ public final class CoreMIDI {
      * 					The index (0...MIDIEntityGetNumberOfSources(entity)-1) of
      * 					the source to return
      * 
-     * @result			A reference to a source, or NULL if an error occurred.
+     * @return			A reference to a source, or NULL if an error occurred.
      */
     @Generated
     @CFunction
     public static native int MIDIEntityGetSource(int entity, @NUInt long sourceIndex0);
 
     /**
-     * @function		MIDIEntityGetNumberOfDestinations
+     * [@function]		MIDIEntityGetNumberOfDestinations
      * 
-     * @abstract 		Returns the number of destinations in a given entity.
+     * Returns the number of destinations in a given entity.
      * 
      * @param			entity
      * 					The entity being queried
      * 
-     * @result			The number of destinations the entity contains, or 0
+     * @return			The number of destinations the entity contains, or 0
      * 				if an error occurred.
      */
     @Generated
@@ -403,9 +395,9 @@ public final class CoreMIDI {
     public static native long MIDIEntityGetNumberOfDestinations(int entity);
 
     /**
-     * @function		MIDIEntityGetDestination
+     * [@function]		MIDIEntityGetDestination
      * 
-     * @abstract 		Returns one of a given entity's destinations.
+     * Returns one of a given entity's destinations.
      * 
      * @param			entity
      * 					The entity being queried.
@@ -413,16 +405,16 @@ public final class CoreMIDI {
      * 					The index (0...MIDIEntityGetNumberOfDestinations(entity)
      * 					- 1) of the destination to return
      * 
-     * @result			A reference to a destination, or NULL if an error occurred.
+     * @return			A reference to a destination, or NULL if an error occurred.
      */
     @Generated
     @CFunction
     public static native int MIDIEntityGetDestination(int entity, @NUInt long destIndex0);
 
     /**
-     * @function		MIDIEntityGetDevice
+     * [@function]		MIDIEntityGetDevice
      * 
-     * @abstract 		Returns an entity's device.
+     * Returns an entity's device.
      * 
      * @param			inEntity
      * 					The entity being queried.
@@ -434,11 +426,11 @@ public final class CoreMIDI {
     public static native int MIDIEntityGetDevice(int inEntity, IntPtr outDevice);
 
     /**
-     * @function		MIDIGetNumberOfSources
+     * [@function]		MIDIGetNumberOfSources
      * 
-     * @abstract 		Returns the number of sources in the system.
+     * Returns the number of sources in the system.
      * 
-     * @result			The number of sources in the system, or 0 if an error
+     * @return			The number of sources in the system, or 0 if an error
      * 				occurred.
      */
     @Generated
@@ -447,25 +439,25 @@ public final class CoreMIDI {
     public static native long MIDIGetNumberOfSources();
 
     /**
-     * @function		MIDIGetSource
+     * [@function]		MIDIGetSource
      * 
-     * @abstract 		Returns one of the sources in the system.
+     * Returns one of the sources in the system.
      * 
      * @param			sourceIndex0
      * 					The index (0...MIDIGetNumberOfSources()-1) of the source
      * 					to return
-     * @result			A reference to a source, or NULL if an error occurred.
+     * @return			A reference to a source, or NULL if an error occurred.
      */
     @Generated
     @CFunction
     public static native int MIDIGetSource(@NUInt long sourceIndex0);
 
     /**
-     * @function		MIDIGetNumberOfDestinations
+     * [@function]		MIDIGetNumberOfDestinations
      * 
-     * @abstract 		Returns the number of destinations in the system.
+     * Returns the number of destinations in the system.
      * 
-     * @result			The number of destinations in the system, or 0 if an error
+     * @return			The number of destinations in the system, or 0 if an error
      * 				occurred.
      */
     @Generated
@@ -474,56 +466,40 @@ public final class CoreMIDI {
     public static native long MIDIGetNumberOfDestinations();
 
     /**
-     * @function		MIDIGetDestination
+     * [@function]		MIDIGetDestination
      * 
-     * @abstract 		Returns one of the destinations in the system.
+     * Returns one of the destinations in the system.
      * 
      * @param			destIndex0
      * 					The index (0...MIDIGetNumberOfDestinations()-1) of the
      * 					destination to return
-     * @result			A reference to a destination, or NULL if an error occurred.
+     * @return			A reference to a destination, or NULL if an error occurred.
      */
     @Generated
     @CFunction
     public static native int MIDIGetDestination(@NUInt long destIndex0);
 
     /**
-     * @function		MIDIEndpointGetEntity
+     * [@function]		MIDIEndpointGetEntity
      * 
-     * @abstract 		Returns an endpoint's entity.
+     * Returns an endpoint's entity.
+     * 
+     * 	Virtual sources and destinations don't have entities.
      * 
      * @param			inEndpoint
      * 					The endpoint being queried.
      * @param			outEntity
      * 					On exit, the endpoint's owning entity, or NULL if none.
-     * 
-     * @discussion
-     * 	Virtual sources and destinations don't have entities.
      */
     @Generated
     @CFunction
     public static native int MIDIEndpointGetEntity(int inEndpoint, IntPtr outEntity);
 
     /**
-     * @function		MIDIDestinationCreate
+     * [@function]		MIDIDestinationCreate
      * 
-     * @abstract 		Creates a virtual destination in a client.
+     * Creates a virtual destination in a client.
      * 
-     * @param			client
-     * 					The client owning the virtual destination.
-     * @param			name
-     * 					The name of the virtual destination.
-     * @param			readProc
-     * 					The MIDIReadProc to be called when a client sends MIDI to
-     * 					the virtual destination.
-     * @param			refCon
-     * 					The refCon to be passed to the readProc.
-     * @param			outDest
-     * 					On successful return, a pointer to the newly-created
-     * 					destination.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
      * 	The specified readProc gets called when clients send MIDI to your virtual destination.
      * 
      * 	Drivers need not call this; when they create devices and entities, sources and
@@ -537,6 +513,20 @@ public final class CoreMIDI {
      * 	See the discussion of kMIDIPropertyAdvanceScheduleTimeMuSec for notes about the
      * 	relationship between when a sender sends MIDI to the destination and when it is
      * 	received.
+     * 
+     * @param			client
+     * 					The client owning the virtual destination.
+     * @param			name
+     * 					The name of the virtual destination.
+     * @param			readProc
+     * 					The MIDIReadProc to be called when a client sends MIDI to
+     * 					the virtual destination.
+     * @param			refCon
+     * 					The refCon to be passed to the readProc.
+     * @param			outDest
+     * 					On successful return, a pointer to the newly-created
+     * 					destination.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -545,23 +535,10 @@ public final class CoreMIDI {
             IntPtr outDest);
 
     /**
-     * @function		MIDIDestinationCreateWithBlock
+     * [@function]		MIDIDestinationCreateWithBlock
      * 
-     * @abstract 		Creates a virtual destination in a client.
+     * Creates a virtual destination in a client.
      * 
-     * @param			client
-     * 					The client owning the virtual destination.
-     * @param			name
-     * 					The name of the virtual destination.
-     * @param			outDest
-     * 					On successful return, a pointer to the newly-created
-     * 					destination.
-     * @param			readBlock
-     * 					The MIDIReadBlock to be called when a client sends MIDI to the virtual
-     * 					destination.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
      * 	The specified readBlock gets called when clients send MIDI to your virtual destination.
      * 
      * 	Drivers need not call this; when they create devices and entities, sources and
@@ -575,6 +552,18 @@ public final class CoreMIDI {
      * 	See the discussion of kMIDIPropertyAdvanceScheduleTimeMuSec for notes about the
      * 	relationship between when a sender sends MIDI to the destination and when it is
      * 	received.
+     * 
+     * @param			client
+     * 					The client owning the virtual destination.
+     * @param			name
+     * 					The name of the virtual destination.
+     * @param			outDest
+     * 					On successful return, a pointer to the newly-created
+     * 					destination.
+     * @param			readBlock
+     * 					The MIDIReadBlock to be called when a client sends MIDI to the virtual
+     * 					destination.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -582,20 +571,10 @@ public final class CoreMIDI {
             @ObjCBlock(name = "call_MIDIDestinationCreateWithBlock") Block_MIDIDestinationCreateWithBlock readBlock);
 
     /**
-     * @function		MIDISourceCreate
+     * [@function]		MIDISourceCreate
      * 
-     * @abstract 		Creates a virtual source in a client.
+     * Creates a virtual source in a client.
      * 
-     * @param			client
-     * 					The client owning the virtual source.
-     * @param			name
-     * 					The name of the virtual source.
-     * @param			outSrc
-     * 					On successful return, a pointer to the newly-created
-     * 					source.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
      * 	Drivers need not call this; when they create devices and entities, sources and
      * 	destinations are created at that time.
      * 
@@ -606,37 +585,45 @@ public final class CoreMIDI {
      * 	the last time your application created it. (Although you should be prepared for this to
      * 	fail in the unlikely event of a collision.) This will permit other clients to retain
      * 	persistent references to your virtual source more easily.
+     * 
+     * @param			client
+     * 					The client owning the virtual source.
+     * @param			name
+     * 					The name of the virtual source.
+     * @param			outSrc
+     * 					On successful return, a pointer to the newly-created
+     * 					source.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDISourceCreate(int client, CFStringRef name, IntPtr outSrc);
 
     /**
-     * @function		MIDIEndpointDispose
+     * [@function]		MIDIEndpointDispose
      * 
-     * @abstract 		Disposes a virtual source or destination your client created.
+     * Disposes a virtual source or destination your client created.
      * 
      * @param			endpt
      * 					The endpoint to be disposed.
      * 
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIEndpointDispose(int endpt);
 
     /**
-     * @function		MIDIGetNumberOfExternalDevices
+     * [@function]		MIDIGetNumberOfExternalDevices
      * 
-     * @abstract 		Returns the number of external MIDI devices in the system.
+     * Returns the number of external MIDI devices in the system.
      * 
-     * @result			The number of external devices in the system, or 0 if an error
-     * 				occurred.
-     * 
-     * @discussion
      * 	External MIDI devices are MIDI devices connected to driver endpoints via a standard MIDI
      * 	cable. Their presence is completely optional, only when a UI (such as Audio MIDI Setup)
      * 	adds them.
+     * 
+     * @return			The number of external devices in the system, or 0 if an error
+     * 				occurred.
      */
     @Generated
     @CFunction
@@ -644,26 +631,27 @@ public final class CoreMIDI {
     public static native long MIDIGetNumberOfExternalDevices();
 
     /**
-     * @function		MIDIGetExternalDevice
+     * [@function]		MIDIGetExternalDevice
      * 
-     * @abstract 		Returns one of the external devices in the system.
+     * Returns one of the external devices in the system.
+     * 
+     * 	Use this to enumerate the external devices in the system.
      * 
      * @param			deviceIndex0
      * 					The index (0...MIDIGetNumberOfDevices()-1) of the device
      * 					to return.
-     * @result			A reference to a device, or NULL if an error occurred.
-     * 
-     * @discussion
-     * 	Use this to enumerate the external devices in the system.
+     * @return			A reference to a device, or NULL if an error occurred.
      */
     @Generated
     @CFunction
     public static native int MIDIGetExternalDevice(@NUInt long deviceIndex0);
 
     /**
-     * @function		MIDIObjectGetIntegerProperty
+     * [@function]		MIDIObjectGetIntegerProperty
      * 
-     * @abstract 		Gets an object's integer-type property.
+     * Gets an object's integer-type property.
+     * 
+     * 	(See the MIDIObjectRef documentation for information about properties.)
      * 
      * @param			obj
      * 					The object whose property is to be returned.
@@ -671,19 +659,18 @@ public final class CoreMIDI {
      * 					Name of the property to return.
      * @param			outValue
      * 					On successful return, the value of the property.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	(See the MIDIObjectRef documentation for information about properties.)
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectGetIntegerProperty(int obj, CFStringRef propertyID, IntPtr outValue);
 
     /**
-     * @function		MIDIObjectSetIntegerProperty
+     * [@function]		MIDIObjectSetIntegerProperty
      * 
-     * @abstract 		Sets an object's integer-type property.
+     * Sets an object's integer-type property.
+     * 
+     * 	(See the MIDIObjectRef documentation for information about properties.)
      * 
      * @param			obj
      * 					The object whose property is to be altered.
@@ -691,19 +678,18 @@ public final class CoreMIDI {
      * 					Name of the property to set.
      * @param			value
      * 					New value of the property.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	(See the MIDIObjectRef documentation for information about properties.)
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectSetIntegerProperty(int obj, CFStringRef propertyID, int value);
 
     /**
-     * @function		MIDIObjectGetStringProperty
+     * [@function]		MIDIObjectGetStringProperty
      * 
-     * @abstract 		Gets an object's string-type property.
+     * Gets an object's string-type property.
+     * 
+     * 	(See the MIDIObjectRef documentation for information about properties.)
      * 
      * @param			obj
      * 					The object whose property is to be returned.
@@ -711,19 +697,18 @@ public final class CoreMIDI {
      * 					Name of the property to return.
      * @param			str
      * 					On successful return, the value of the property.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	(See the MIDIObjectRef documentation for information about properties.)
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectGetStringProperty(int obj, CFStringRef propertyID, Ptr<CFStringRef> str);
 
     /**
-     * @function		MIDIObjectSetStringProperty
+     * [@function]		MIDIObjectSetStringProperty
      * 
-     * @abstract 		Sets an object's string-type property.
+     * Sets an object's string-type property.
+     * 
+     * 	(See the MIDIObjectRef documentation for information about properties.)
      * 
      * @param			obj
      * 					The object whose property is to be altered.
@@ -731,21 +716,17 @@ public final class CoreMIDI {
      * 					Name of the property to set.
      * @param			str
      * 					New value of the property.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	(See the MIDIObjectRef documentation for information about properties.)
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectSetStringProperty(int obj, CFStringRef propertyID, CFStringRef str);
 
     /**
-     * 	@function		MIDIObjectGetDataProperty
+     * 	[@function]		MIDIObjectGetDataProperty
      * 
-     * 	@abstract 		Gets an object's data-type property.
+     * Gets an object's data-type property.
      * 
-     * 	@discussion
      * (See the MIDIObjectRef documentation for information
      * 					about properties.)
      * 
@@ -755,16 +736,18 @@ public final class CoreMIDI {
      * 						Name of the property to return.
      * 	@param			outData
      * 						On successful return, the value of the property.
-     * 	@result			An OSStatus result code.
+     * 	@return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectGetDataProperty(int obj, CFStringRef propertyID, Ptr<CFDataRef> outData);
 
     /**
-     * @function		MIDIObjectSetDataProperty
+     * [@function]		MIDIObjectSetDataProperty
      * 
-     * @abstract 		Sets an object's data-type property.
+     * Sets an object's data-type property.
+     * 
+     * 	(See the MIDIObjectRef documentation for information about properties.)
      * 
      * @param			obj
      * 					The object whose property is to be altered.
@@ -772,19 +755,18 @@ public final class CoreMIDI {
      * 					Name of the property to set.
      * @param			data
      * 					New value of the property.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	(See the MIDIObjectRef documentation for information about properties.)
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectSetDataProperty(int obj, CFStringRef propertyID, CFDataRef data);
 
     /**
-     * @function		MIDIObjectGetDictionaryProperty
+     * [@function]		MIDIObjectGetDictionaryProperty
      * 
-     * @abstract 		Gets an object's dictionary-type property.
+     * Gets an object's dictionary-type property.
+     * 
+     * 	(See the MIDIObjectRef documentation for information about properties.)
      * 
      * @param			obj
      * 					The object whose property is to be returned.
@@ -792,10 +774,7 @@ public final class CoreMIDI {
      * 					Name of the property to return.
      * @param			outDict
      * 					On successful return, the value of the property.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	(See the MIDIObjectRef documentation for information about properties.)
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -803,9 +782,11 @@ public final class CoreMIDI {
             Ptr<CFDictionaryRef> outDict);
 
     /**
-     * @function		MIDIObjectSetDictionaryProperty
+     * [@function]		MIDIObjectSetDictionaryProperty
      * 
-     * @abstract 		Sets an object's dictionary-type property.
+     * Sets an object's dictionary-type property.
+     * 
+     * 	(See the MIDIObjectRef documentation for information about properties.)
      * 
      * @param			obj
      * 					The object whose property is to be altered.
@@ -813,19 +794,22 @@ public final class CoreMIDI {
      * 					Name of the property to set.
      * @param			dict
      * 					New value of the property.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	(See the MIDIObjectRef documentation for information about properties.)
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectSetDictionaryProperty(int obj, CFStringRef propertyID, CFDictionaryRef dict);
 
     /**
-     * @function		MIDIObjectGetProperties
+     * [@function]		MIDIObjectGetProperties
      * 
-     * @abstract		Gets all of an object's properties.
+     * Gets all of an object's properties.
+     * 
+     * 	Returns a CFPropertyList of all of an object's properties. The property list may be a
+     * 	dictionary or an array. Dictionaries map property names (CFString) to values, which may
+     * 	be CFNumber, CFString, or CFData.  Arrays are arrays of such values.
+     * 
+     * 	Properties which an object inherits from its owning object (if any) are not included.
      * 
      * @param			obj
      * 					The object whose properties are to be returned.
@@ -834,39 +818,33 @@ public final class CoreMIDI {
      * @param			deep
      * 					true if the object's child objects are to be included
      * 					(e.g. a device's entities, or an entity's endpoints).
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	Returns a CFPropertyList of all of an object's properties. The property list may be a
-     * 	dictionary or an array. Dictionaries map property names (CFString) to values, which may
-     * 	be CFNumber, CFString, or CFData.  Arrays are arrays of such values.
-     * 
-     * 	Properties which an object inherits from its owning object (if any) are not included.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectGetProperties(int obj, Ptr<ConstVoidPtr> outProperties, byte deep);
 
     /**
-     * @function		MIDIObjectRemoveProperty
+     * [@function]		MIDIObjectRemoveProperty
      * 
-     * @abstract		Removes an object's property.
+     * Removes an object's property.
      * 
      * @param			obj
      * 					The object whose property is to be removed.
      * @param			propertyID
      * 					The property to be removed.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIObjectRemoveProperty(int obj, CFStringRef propertyID);
 
     /**
-     * @function		MIDIObjectFindByUniqueID
+     * [@function]		MIDIObjectFindByUniqueID
      * 
-     * @abstract 		Locates a device, external device, entity, or endpoint
+     * Locates a device, external device, entity, or endpoint
      * 				by its uniqueID.
+     * 
      * @param			inUniqueID
      * 					The uniqueID of the object to search for.  (This should
      * 					be the result of an earlier call to MIDIObjectGetIntegerProperty
@@ -879,7 +857,7 @@ public final class CoreMIDI {
      * @param			outObjectType
      * 					On exit, the type of object which was found; undefined
      * 					if none found.
-     * @result			An OSStatus error code, including kMIDIObjectNotFound if there
+     * @return			An OSStatus error code, including kMIDIObjectNotFound if there
      * 				is no object with the specified uniqueID.
      */
     @Generated
@@ -887,9 +865,12 @@ public final class CoreMIDI {
     public static native int MIDIObjectFindByUniqueID(int inUniqueID, IntPtr outObject, IntPtr outObjectType);
 
     /**
-     * @function		MIDISend
+     * [@function]		MIDISend
      * 
-     * @abstract 		Sends MIDI to a destination.
+     * Sends MIDI to a destination.
+     * 
+     * 	Events with future timestamps are scheduled for future delivery.  CoreMIDI performs
+     * 	any needed MIDI merging.
      * 
      * @param			port
      * 					The output port through which the MIDI is to be sent.
@@ -897,11 +878,7 @@ public final class CoreMIDI {
      * 					The destination to receive the events.
      * @param			pktlist
      * 					The MIDI events to be sent.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	Events with future timestamps are scheduled for future delivery.  CoreMIDI performs
-     * 	any needed MIDI merging.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -909,16 +886,15 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
     /**
-     * @function		MIDISendSysex
+     * [@function]		MIDISendSysex
      * 
-     * @abstract 		Sends a single system-exclusive event, asynchronously.
+     * Sends a single system-exclusive event, asynchronously.
+     * 
+     * 	request->data must point to a single MIDI system-exclusive message, or portion thereof.
      * 
      * @param			request
      * 					Contains the destination, and a pointer to the MIDI data to be sent.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	request->data must point to a single MIDI system-exclusive message, or portion thereof.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -926,18 +902,11 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDISysexSendRequest request);
 
     /**
-     * @function		MIDIReceived
+     * [@function]		MIDIReceived
      * 
-     * @abstract 		Distributes incoming MIDI from a source to the client input ports
+     * Distributes incoming MIDI from a source to the client input ports
      * 				which are connected to that source.
      * 
-     * @param			src
-     * 					The source which is transmitting MIDI.
-     * @param			pktlist
-     * 					The MIDI events to be transmitted.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
      * 	Drivers should call this function when receiving MIDI from a source.
      * 
      * 	Clients which have created virtual sources, using MIDISourceCreate, should call this
@@ -945,6 +914,12 @@ public final class CoreMIDI {
      * 
      * 	Unlike MIDISend(), a timestamp of 0 is not equivalent to "now"; the driver or virtual
      * 	source is responsible for putting proper timestamps in the packets.
+     * 
+     * @param			src
+     * 					The source which is transmitting MIDI.
+     * @param			pktlist
+     * 					The MIDI events to be transmitted.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -952,47 +927,45 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
     /**
-     * @function		MIDIFlushOutput
+     * [@function]		MIDIFlushOutput
      * 
-     * @abstract		Unschedules previously-sent packets.
+     * Unschedules previously-sent packets.
+     * 
+     * 	Clients may use MIDIFlushOutput to cancel the sending of packets that were previously
+     * 	scheduled for future delivery.
      * 
      * @param			dest
      * 					All pending events scheduled to be sent to this destination
      * 					are unscheduled.  If NULL, the operation applies to
      * 					all destinations.
-     * 
-     * @discussion
-     * 	Clients may use MIDIFlushOutput to cancel the sending of packets that were previously
-     * 	scheduled for future delivery.
      */
     @Generated
     @CFunction
     public static native int MIDIFlushOutput(int dest);
 
     /**
-     * @function		MIDIRestart
+     * [@function]		MIDIRestart
      * 
-     * @abstract 		Stops and restarts MIDI I/O.
+     * Stops and restarts MIDI I/O.
      * 
-     * @discussion
      * 	This is useful for forcing CoreMIDI to ask its drivers to rescan for hardware.
      * 
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIRestart();
 
     /**
-     * @function		MIDIPacketNext
+     * [@function]		MIDIPacketNext
      * 
-     * @abstract 		Advances a MIDIPacket pointer to the MIDIPacket which immediately follows it
+     * Advances a MIDIPacket pointer to the MIDIPacket which immediately follows it
      * 				in memory if it is part of a MIDIPacketList.
      * 
      * @param			pkt
      * 					A pointer to a MIDIPacket in a MIDIPacketList.
      * 
-     * @result			The subsequent packet in the MIDIPacketList.
+     * @return			The subsequent packet in the MIDIPacketList.
      */
     @Generated
     @Inline
@@ -1002,14 +975,14 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacket pkt);
 
     /**
-     * @function		MIDIPacketListInit
+     * [@function]		MIDIPacketListInit
      * 
-     * @abstract 		Prepares a MIDIPacketList to be built up dynamically.
+     * Prepares a MIDIPacketList to be built up dynamically.
      * 
      * @param			pktlist
      * 					The packet list to be initialized.
      * 
-     * @result			A pointer to the first MIDIPacket in the packet list.
+     * @return			A pointer to the first MIDIPacket in the packet list.
      */
     @Generated
     @CFunction
@@ -1018,9 +991,12 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
     /**
-     * @function		MIDIPacketListAdd
+     * [@function]		MIDIPacketListAdd
      * 
-     * @abstract 		Adds a MIDI event to a MIDIPacketList.
+     * Adds a MIDI event to a MIDIPacketList.
+     * 
+     * 	The maximum size of a packet list is 65536 bytes. Large sysex messages must be sent in
+     * 	smaller packet lists.
      * 
      * @param			pktlist
      * 					The packet list to which the event is to be added.
@@ -1037,13 +1013,9 @@ public final class CoreMIDI {
      * @param			data
      * 					The new event.  May be a single MIDI event, or a partial
      * 					sys-ex event.  Running status is <b>not</b> permitted.
-     * @result			Returns null if there was not room in the packet for the
+     * @return			Returns null if there was not room in the packet for the
      * 				event; otherwise returns a packet pointer which should be
      * 				passed as curPacket in a subsequent call to this function.
-     * 
-     * @discussion
-     * 	The maximum size of a packet list is 65536 bytes. Large sysex messages must be sent in
-     * 	smaller packet lists.
      */
     @Generated
     @CFunction
@@ -1057,9 +1029,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIDeviceAddEntity
+     * [@function]		MIDIDeviceAddEntity
      * 
-     * @discussion		Drivers call this function to specify one of the entities that 
+     * Drivers call this function to specify one of the entities that
      * 				comprise a device.
      * 
      * 				Non-drivers may call this function as of CoreMIDI 1.1 to
@@ -1079,7 +1051,7 @@ public final class CoreMIDI {
      * 					The number of destination endpoints the entity has.
      * @param			newEntity
      * 					On successful return, points to the newly-created entity.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1088,9 +1060,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIDeviceRemoveEntity
+     * [@function]		MIDIDeviceRemoveEntity
      * 
-     * @discussion		Drivers may call this function to remove one of a device's
+     * Drivers may call this function to remove one of a device's
      * 				entities.
      * 
      * 				New for CoreMIDI 1.1.
@@ -1099,7 +1071,7 @@ public final class CoreMIDI {
      * 					The device from which an entity is to be removed.
      * @param			entity
      * 					The entity to be removed.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1107,9 +1079,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIEntityAddOrRemoveEndpoints
+     * [@function]		MIDIEntityAddOrRemoveEndpoints
      * 
-     * @discussion		Drivers and configuration editors may call this function to add to 
+     * Drivers and configuration editors may call this function to add to
      * 				or remove an entity's endpoints.
      * 
      * 				New for CoreMIDI 1.3.
@@ -1123,7 +1095,7 @@ public final class CoreMIDI {
      * 					The desired new number of source endpoints.
      * @param			numDestinationEndpoints
      * 					The desired new number of destination endpoints.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1132,11 +1104,11 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDISetupAddDevice
+     * [@function]		MIDISetupAddDevice
      * 
-     * @abstract 		Adds a driver-owner MIDI device to the current MIDISetup
+     * Adds a driver-owner MIDI device to the current MIDISetup
      * 
-     * @discussion		Only MIDI drivers may make this call; it is in this header
+     * Only MIDI drivers may make this call; it is in this header
      * 				file only for consistency with MIDISetupRemoveDevice.
      * 
      * 				New for CoreMIDI 1.1.
@@ -1150,11 +1122,11 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDISetupRemoveDevice
+     * [@function]		MIDISetupRemoveDevice
      * 
-     * @abstract 		Removes a driver-owned MIDI device from the current MIDISetup
+     * Removes a driver-owned MIDI device from the current MIDISetup
      * 
-     * @discussion		Generally this should only be called from a studio configuration
+     * Generally this should only be called from a studio configuration
      * 				editor, to remove a device which is offline and which the user
      * 				has specified as being permanently missing.
      * 
@@ -1173,11 +1145,11 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDISetupAddExternalDevice
+     * [@function]		MIDISetupAddExternalDevice
      * 
-     * @abstract 		Adds an external MIDI device to the current MIDISetup
+     * Adds an external MIDI device to the current MIDISetup
      * 
-     * @discussion		Useful for a studio configuration editor.  New for CoreMIDI 1.1.
+     * Useful for a studio configuration editor.  New for CoreMIDI 1.1.
      * 
      * @param			device
      * 					The device to be added.
@@ -1188,11 +1160,11 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDISetupRemoveExternalDevice
+     * [@function]		MIDISetupRemoveExternalDevice
      * 
-     * @abstract 		Removes an external MIDI device from the current MIDISetup
+     * Removes an external MIDI device from the current MIDISetup
      * 
-     * @discussion		Useful for a studio configuration editor.  New for CoreMIDI 1.1.
+     * Useful for a studio configuration editor.  New for CoreMIDI 1.1.
      * 
      * @param			device
      * 					The device to be removed.
@@ -1203,11 +1175,11 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIExternalDeviceCreate
+     * [@function]		MIDIExternalDeviceCreate
      * 
-     * @abstract		Create a new external MIDI device.
+     * Create a new external MIDI device.
      * 
-     * @discussion		Non-drivers may call this function as of CoreMIDI 1.1, to
+     * Non-drivers may call this function as of CoreMIDI 1.1, to
      * 				create external devices.
      * 
      * 				The new device is not added to the current MIDISetupRef;
@@ -1221,7 +1193,7 @@ public final class CoreMIDI {
      * 					The device's model name.
      * @param			outDevice
      * 					On successful return, points to the newly-created device.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1229,8 +1201,9 @@ public final class CoreMIDI {
             IntPtr outDevice);
 
     /**
-     *    @defined    MIDIThruConnectionParamsSize
-     *    @abstract   Returns the size of a MIDIThruConnectionParams.
+     *    [@defined]    MIDIThruConnectionParamsSize
+     * 
+     * Returns the size of a MIDIThruConnectionParams.
      * 
      * Accounts for the variable-length elements in the structure and returns its true
      * size in bytes.
@@ -1243,8 +1216,10 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIThruConnectionParams ptr);
 
     /**
-     *    @function   MIDIThruConnectionParamsInitialize
-     *    @abstract   Fills a MIDIThruConnectionParams with default values.
+     *    [@function]   MIDIThruConnectionParamsInitialize
+     * 
+     * Fills a MIDIThruConnectionParams with default values.
+     * 
      *    @param      inConnectionParams  The struct to be initialized.
      * 
      * This convenience function fills the connection structure with default values: no endpoints,
@@ -1257,8 +1232,10 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIThruConnectionParams inConnectionParams);
 
     /**
-     * @function   MIDIThruConnectionCreate
-     * @abstract   Creates a thru connection.
+     * [@function]   MIDIThruConnectionCreate
+     * 
+     * Creates a thru connection.
+     * 
      * @param      inPersistentOwnerID
      *                 If null, then the connection is marked as owned by the client
      *                 and will be automatically disposed with the client.  if it is non-null, then it
@@ -1267,7 +1244,7 @@ public final class CoreMIDI {
      *                 A MIDIThruConnectionParams contained in a CFDataRef.
      * @param      outConnection
      *                 On successful return, a reference to the newly-created connection.
-     * @result     An OSStatus result code.
+     * @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1275,24 +1252,28 @@ public final class CoreMIDI {
             IntPtr outConnection);
 
     /**
-     * @function   MIDIThruConnectionDispose
-     * @abstract   Disposes a thru connection.
+     * [@function]   MIDIThruConnectionDispose
+     * 
+     * Disposes a thru connection.
+     * 
      * @param      connection
      *                 The connection to be disposed
-     * @result     An OSStatus result code.
+     * @return     An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIThruConnectionDispose(int connection);
 
     /**
-     *    @function   MIDIThruConnectionGetParams
-     *    @abstract   Obtains a thru connection's MIDIThruConnectionParams.
+     *    [@function]   MIDIThruConnectionGetParams
+     * 
+     * Obtains a thru connection's MIDIThruConnectionParams.
+     * 
      *    @param      connection
      *                    The connection to be disposed.
      *    @param      outConnectionParams
      *                    On successful return, the connection's MIDIThruConnectionParams in a CFDataRef
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      * 
      * The returned CFDataRef contains a MIDIThruConnectionParams structure. The caller is responsible
      * for releasing it.
@@ -1302,26 +1283,30 @@ public final class CoreMIDI {
     public static native int MIDIThruConnectionGetParams(int connection, Ptr<CFDataRef> outConnectionParams);
 
     /**
-     * @function   MIDIThruConnectionSetParams
-     * @abstract   Alters a thru connection's MIDIThruConnectionParams.
+     * [@function]   MIDIThruConnectionSetParams
+     * 
+     * Alters a thru connection's MIDIThruConnectionParams.
+     * 
      * @param      connection
      *                 The connection to be modified.
      * @param      inConnectionParams
      *                 The connection's new MIDIThruConnectionParams in a CFDataRef
-     * @result     An OSStatus result code.
+     * @return     An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDIThruConnectionSetParams(int connection, CFDataRef inConnectionParams);
 
     /**
-     * @function   MIDIThruConnectionFind
-     * @abstract   Returns all of the persistent thru connections created by a client.
+     * [@function]   MIDIThruConnectionFind
+     * 
+     * Returns all of the persistent thru connections created by a client.
+     * 
      * @param      inPersistentOwnerID
      *                 The ID of the owner whose connections are to be returned.
      * @param      outConnectionList
      *                 On successful return, a CFDataRef containing an array of MIDIThruConnectionRef's.
-     * @result     An OSStatus result code.
+     * @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1329,9 +1314,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIDeviceCreate
+     * [@function]		MIDIDeviceCreate
      * 
-     * @discussion		Drivers call this function to create new MIDIDevice objects
+     * Drivers call this function to create new MIDIDevice objects
      * 				corresponding to the hardware that is present.
      * 
      * 				Non-drivers may call this function as of CoreMIDI 1.1, to
@@ -1347,7 +1332,7 @@ public final class CoreMIDI {
      * 					The device's model name.
      * @param			outDevice
      * 					On successful return, points to the newly-created device.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1355,9 +1340,9 @@ public final class CoreMIDI {
             CFStringRef manufacturer, CFStringRef model, IntPtr outDevice);
 
     /**
-     * @function		MIDIDeviceDispose
+     * [@function]		MIDIDeviceDispose
      * 
-     * @discussion		Drivers may call this function to dispose MIDIDevice objects
+     * Drivers may call this function to dispose MIDIDevice objects
      * 				which have not yet been added to the system via MIDISetupAddDevice.
      * 				Once a device has been added to the system with MIDISetupAddDevice,
      * 				the driver must not use this call to destroy it; it must
@@ -1368,7 +1353,7 @@ public final class CoreMIDI {
      * 
      * @param			device
      * 					The device to be disposed.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1376,13 +1361,13 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIDeviceListGetNumberOfDevices
+     * [@function]		MIDIDeviceListGetNumberOfDevices
      * 
-     * @discussion		Returns the number of devices in a device list.
+     * Returns the number of devices in a device list.
      * 
      * @param			devList
      * 					The device list.
-     * @result			The number of devices in the list, or 0 if an error occurred.
+     * @return			The number of devices in the list, or 0 if an error occurred.
      */
     @Generated
     @CFunction
@@ -1391,16 +1376,16 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIDeviceListGetDevice
+     * [@function]		MIDIDeviceListGetDevice
      * 
-     * @discussion		Return one of the devices in a device list.
+     * Return one of the devices in a device list.
      * 
      * @param			devList
      * 					The device list.
      * @param			index0
      * 					The index (0...MIDIDeviceListGetNumberOfDevices()-1) of the device
      * 					to return.
-     * @result			A reference to a device, or NULL if an error occurred.
+     * @return			A reference to a device, or NULL if an error occurred.
      */
     @Generated
     @CFunction
@@ -1408,15 +1393,15 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIDeviceListAddDevice
+     * [@function]		MIDIDeviceListAddDevice
      * 
-     * @discussion		Add a device to a device list.
+     * Add a device to a device list.
      * 
      * @param			devList
      * 					The device list.
      * @param			dev
      * 					The device to add to the list.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1424,13 +1409,13 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIDeviceListDispose
+     * [@function]		MIDIDeviceListDispose
      * 
-     * @discussion		Dispose a device list, but not the contained devices.
+     * Dispose a device list, but not the contained devices.
      * 
      * @param			devList
      * 					The device list to be disposed.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1438,9 +1423,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIEndpointSetRefCons
+     * [@function]		MIDIEndpointSetRefCons
      * 
-     * @discussion		Drivers need an efficient way to translate from a MIDIEndpoint (source or
+     * Drivers need an efficient way to translate from a MIDIEndpoint (source or
      * 				destination) to their own internal data structures corresponding to
      * 				that endpoint.  This function provides a way for the driver to
      * 				assign its own refCons to endpoints.
@@ -1460,7 +1445,7 @@ public final class CoreMIDI {
      * 					The first refCon.
      * @param			ref2
      * 					The second refCon.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1468,9 +1453,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIEndpointGetRefCons
+     * [@function]		MIDIEndpointGetRefCons
      * 
-     * @discussion		Obtain the refCons assigned to the endpoints
+     * Obtain the refCons assigned to the endpoints
      * 
      * @param			endpt
      * 					The endpoint whose refCons are to be return
@@ -1478,7 +1463,7 @@ public final class CoreMIDI {
      * 					On exit, the first refCon.
      * @param			ref2
      * 					On exit, the second refCon.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1486,9 +1471,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIGetDriverIORunLoop
+     * [@function]		MIDIGetDriverIORunLoop
      * 
-     * @discussion		Drivers typically need to receive asynchronous I/O completion callbacks
+     * Drivers typically need to receive asynchronous I/O completion callbacks
      * 				on a high-priority thread.  To save drivers from the trouble of
      * 				creating their own threads for this purpose, and to make efficient
      * 				use of system resources, the MIDIServer provides a thread which
@@ -1502,7 +1487,7 @@ public final class CoreMIDI {
      * 				than I/O.  For lower-priority tasks, drivers can use the runloop which
      * 				was current when they were constructed.
      * 
-     * @result			The CFRunLoopRef of the server's driver I/O thread.
+     * @return			The CFRunLoopRef of the server's driver I/O thread.
      */
     @Generated
     @CFunction
@@ -1510,9 +1495,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIGetDriverDeviceList
+     * [@function]		MIDIGetDriverDeviceList
      * 
-     * @discussion		Returns the list of devices which are in the current MIDISetup
+     * Returns the list of devices which are in the current MIDISetup
      * 				and which were created/owned by the specified driver.
      * 
      * 				The returned device list should be disposed (using MIDIDeviceListDispose)
@@ -1521,15 +1506,15 @@ public final class CoreMIDI {
      * @param			driver
      * 					The driver whose devices are to be returned.
      * 
-     * @result			The requested device list.
+     * @return			The requested device list.
      */
     @Generated
     @CFunction
     public static native int MIDIGetDriverDeviceList(Ptr<Ptr<MIDIDriverInterface>> driver);
 
     /**
-     * @constant		kMIDIPropertyName
-     * @discussion
+     * [@constant]		kMIDIPropertyName
+     * 
      * 	device/entity/endpoint property, string
      * 
      * 	Devices, entities, and endpoints may all have names.  The recommended way to display an
@@ -1544,8 +1529,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyName();
 
     /**
-     * @constant		kMIDIPropertyManufacturer
-     * @discussion
+     * [@constant]		kMIDIPropertyManufacturer
+     * 
      * 	device/endpoint property, string
      * 
      * 	Drivers should set this property on their devices.
@@ -1559,8 +1544,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyManufacturer();
 
     /**
-     * @constant		kMIDIPropertyModel
-     * @discussion
+     * [@constant]		kMIDIPropertyModel
+     * 
      * 	device/endpoint property, string
      * 
      * 	Drivers should set this property on their devices.
@@ -1574,8 +1559,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyModel();
 
     /**
-     * @constant		kMIDIPropertyUniqueID
-     * @discussion
+     * [@constant]		kMIDIPropertyUniqueID
+     * 
      * 	devices, entities, endpoints all have unique ID's, integer
      * 
      * 	The system assigns unique ID's to all objects.  Creators of virtual endpoints may set
@@ -1587,8 +1572,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyUniqueID();
 
     /**
-     * @constant		kMIDIPropertyDeviceID
-     * @discussion
+     * [@constant]		kMIDIPropertyDeviceID
+     * 
      * 	device/entity property, integer
      * 
      * 	The entity's system-exclusive ID, in user-visible form
@@ -1602,8 +1587,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyDeviceID();
 
     /**
-     * @constant		kMIDIPropertyReceiveChannels
-     * @discussion
+     * [@constant]		kMIDIPropertyReceiveChannels
+     * 
      * 	endpoint property, integer
      * 
      * 	The value is a bitmap of channels on which the object receives: 1=ch 1, 2=ch 2, 4=ch 3
@@ -1620,8 +1605,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyReceiveChannels();
 
     /**
-     * @constant		kMIDIPropertyTransmitChannels
-     * @discussion
+     * [@constant]		kMIDIPropertyTransmitChannels
+     * 
      * 	endpoint property, integer
      * 
      * 	The value is a bitmap of channels on which the object transmits: 1=ch 1, 2=ch 2, 4=ch 3
@@ -1632,8 +1617,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyTransmitChannels();
 
     /**
-     * @constant		kMIDIPropertyMaxSysExSpeed
-     * @discussion
+     * [@constant]		kMIDIPropertyMaxSysExSpeed
+     * 
      * 	device/entity/endpoint property, integer
      * 
      * 	Set by the owning driver; should not be touched by other clients.
@@ -1645,8 +1630,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyMaxSysExSpeed();
 
     /**
-     * @constant		kMIDIPropertyAdvanceScheduleTimeMuSec
-     * @discussion
+     * [@constant]		kMIDIPropertyAdvanceScheduleTimeMuSec
+     * 
      * 	device/entity/endpoint property, integer
      * 
      * 	Set by the owning driver; should not be touched by other clients. If it is non-zero,
@@ -1668,8 +1653,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyAdvanceScheduleTimeMuSec();
 
     /**
-     * @constant		kMIDIPropertyIsEmbeddedEntity
-     * @discussion
+     * [@constant]		kMIDIPropertyIsEmbeddedEntity
+     * 
      * 	entity/endpoint property, integer
      * 
      * 	0 if there are external MIDI connectors, 1 if not.
@@ -1679,8 +1664,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyIsEmbeddedEntity();
 
     /**
-     * @constant		kMIDIPropertyIsBroadcast
-     * @discussion
+     * [@constant]		kMIDIPropertyIsBroadcast
+     * 
      * 	entity/endpoint property, integer
      * 
      * 	1 if the endpoint broadcasts messages to all of the other endpoints in the device, 0 if
@@ -1691,8 +1676,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyIsBroadcast();
 
     /**
-     * @constant		kMIDIPropertySingleRealtimeEntity
-     * @discussion
+     * [@constant]		kMIDIPropertySingleRealtimeEntity
+     * 
      * 	device property, integer
      * 
      * 	Some MIDI interfaces cannot route MIDI realtime messages to individual outputs; they are
@@ -1708,8 +1693,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertySingleRealtimeEntity();
 
     /**
-     * @constant		kMIDIPropertyConnectionUniqueID
-     * @discussion
+     * [@constant]		kMIDIPropertyConnectionUniqueID
+     * 
      * 	device/entity/endpoint property, integer or CFDataRef
      * 
      * 	UniqueID of an external device/entity/endpoint attached to this one. As of Mac OS X
@@ -1731,8 +1716,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyConnectionUniqueID();
 
     /**
-     * @constant		kMIDIPropertyOffline
-     * @discussion
+     * [@constant]		kMIDIPropertyOffline
+     * 
      * 	device/entity/endpoint property, integer
      * 
      * 	1 = device is offline (is temporarily absent), 0 = present. Set by the owning driver, on
@@ -1744,8 +1729,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyOffline();
 
     /**
-     * @constant		kMIDIPropertyPrivate
-     * @discussion
+     * [@constant]		kMIDIPropertyPrivate
+     * 
      * 	device/entity/endpoint property, integer
      * 
      * 	1 = endpoint is private, hidden from other clients. May be set on a device or entity,
@@ -1757,8 +1742,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyPrivate();
 
     /**
-     * @constant		kMIDIPropertyDriverOwner
-     * @discussion
+     * [@constant]		kMIDIPropertyDriverOwner
+     * 
      * 	device/entity/endpoint property, string
      * 
      * 	Name of the driver that owns a device. Set by the owning driver, on the device; should
@@ -1770,8 +1755,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyDriverOwner();
 
     /**
-     * @constant		kMIDIPropertyNameConfiguration
-     * @discussion
+     * [@constant]		kMIDIPropertyNameConfiguration
+     * 
      * 	device/entity/endpoint property, CFDictionary
      * 
      * 	This specifies the device's current patch, note and control name values using the
@@ -1809,8 +1794,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyNameConfiguration();
 
     /**
-     * @constant		kMIDIPropertyImage
-     * @discussion
+     * [@constant]		kMIDIPropertyImage
+     * 
      * 	device property, CFStringRef which is a full POSIX path to a device or external device's
      * 	icon, stored in any standard graphic file format such as JPEG, GIF, PNG and TIFF are all
      * 	acceptable.  (See CFURL for functions to convert between POSIX paths and other ways of
@@ -1825,8 +1810,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyImage();
 
     /**
-     * @constant		kMIDIPropertyDriverVersion
-     * @discussion
+     * [@constant]		kMIDIPropertyDriverVersion
+     * 
      * 	device/entity/endpoint property, integer, returns the driver version API of the owning
      * 	driver (only for driver- owned devices).  Drivers need not set this property;
      * 	applications should not write to it.
@@ -1836,8 +1821,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyDriverVersion();
 
     /**
-     * @constant		kMIDIPropertySupportsGeneralMIDI
-     * @discussion
+     * [@constant]		kMIDIPropertySupportsGeneralMIDI
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity implements
      * 	the General MIDI specification.
      */
@@ -1846,8 +1831,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertySupportsGeneralMIDI();
 
     /**
-     * @constant		kMIDIPropertySupportsMMC
-     * @discussion
+     * [@constant]		kMIDIPropertySupportsMMC
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity implements
      * 	the MIDI Machine Control portion of the MIDI specification.
      */
@@ -1856,8 +1841,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertySupportsMMC();
 
     /**
-     * @constant		kMIDIPropertyCanRoute
-     * @discussion
+     * [@constant]		kMIDIPropertyCanRoute
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity can route
      * 	MIDI messages to or from other external MIDI devices (as with MIDI patch bays). This
      * 	should NOT be set on devices which are controlled by drivers.
@@ -1867,8 +1852,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyCanRoute();
 
     /**
-     * @constant		kMIDIPropertyReceivesClock
-     * @discussion
+     * [@constant]		kMIDIPropertyReceivesClock
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity  responds
      * 	to MIDI beat clock messages.
      */
@@ -1877,8 +1862,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyReceivesClock();
 
     /**
-     * @constant		kMIDIPropertyReceivesMTC
-     * @discussion
+     * [@constant]		kMIDIPropertyReceivesMTC
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity responds
      * 	to MIDI Time Code messages.
      */
@@ -1887,8 +1872,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyReceivesMTC();
 
     /**
-     * @constant		kMIDIPropertyReceivesNotes
-     * @discussion
+     * [@constant]		kMIDIPropertyReceivesNotes
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity responds
      * 	to MIDI Note On messages.
      */
@@ -1897,8 +1882,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyReceivesNotes();
 
     /**
-     * @constant		kMIDIPropertyReceivesProgramChanges
-     * @discussion
+     * [@constant]		kMIDIPropertyReceivesProgramChanges
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity responds
      * 	to MIDI program change messages.
      */
@@ -1907,8 +1892,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyReceivesProgramChanges();
 
     /**
-     * @constant		kMIDIPropertyReceivesBankSelectMSB
-     * @discussion
+     * [@constant]		kMIDIPropertyReceivesBankSelectMSB
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity responds
      * 	to MIDI bank select MSB messages (control 0).
      */
@@ -1917,8 +1902,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyReceivesBankSelectMSB();
 
     /**
-     * @constant		kMIDIPropertyReceivesBankSelectLSB
-     * @discussion
+     * [@constant]		kMIDIPropertyReceivesBankSelectLSB
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity responds
      * 	to MIDI bank select LSB messages (control 32).
      */
@@ -1927,8 +1912,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyReceivesBankSelectLSB();
 
     /**
-     * @constant		kMIDIPropertyTransmitsClock
-     * @discussion
+     * [@constant]		kMIDIPropertyTransmitsClock
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity transmits
      * 	MIDI beat clock messages.
      */
@@ -1937,8 +1922,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyTransmitsClock();
 
     /**
-     * @constant		kMIDIPropertyTransmitsMTC
-     * @discussion
+     * [@constant]		kMIDIPropertyTransmitsMTC
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity transmits
      * 	MIDI Time Code messages.
      */
@@ -1947,8 +1932,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyTransmitsMTC();
 
     /**
-     * @constant		kMIDIPropertyTransmitsNotes
-     * @discussion
+     * [@constant]		kMIDIPropertyTransmitsNotes
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity transmits
      * 	MIDI note messages.
      */
@@ -1957,8 +1942,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyTransmitsNotes();
 
     /**
-     * @constant		kMIDIPropertyTransmitsProgramChanges
-     * @discussion
+     * [@constant]		kMIDIPropertyTransmitsProgramChanges
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity transmits
      * 	MIDI program change messages.
      */
@@ -1967,8 +1952,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyTransmitsProgramChanges();
 
     /**
-     * @constant		kMIDIPropertyTransmitsBankSelectMSB
-     * @discussion
+     * [@constant]		kMIDIPropertyTransmitsBankSelectMSB
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity transmits
      * 	MIDI bank select MSB messages (control 0).
      */
@@ -1977,8 +1962,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyTransmitsBankSelectMSB();
 
     /**
-     * @constant		kMIDIPropertyTransmitsBankSelectLSB
-     * @discussion
+     * [@constant]		kMIDIPropertyTransmitsBankSelectLSB
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity transmits
      * 	MIDI bank select LSB messages (control 32).
      */
@@ -1987,8 +1972,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyTransmitsBankSelectLSB();
 
     /**
-     * @constant		kMIDIPropertyPanDisruptsStereo
-     * @discussion
+     * [@constant]		kMIDIPropertyPanDisruptsStereo
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the MIDI pan messages (control
      * 	10), when sent to the device or entity, cause undesirable effects when playing stereo
      * 	sounds (e.g. converting the signal to mono).
@@ -1998,8 +1983,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyPanDisruptsStereo();
 
     /**
-     * @constant		kMIDIPropertyIsSampler
-     * @discussion
+     * [@constant]		kMIDIPropertyIsSampler
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity plays
      * 	audio samples in response to MIDI note messages.
      */
@@ -2008,8 +1993,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyIsSampler();
 
     /**
-     * @constant		kMIDIPropertyIsDrumMachine
-     * @discussion
+     * [@constant]		kMIDIPropertyIsDrumMachine
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity's sound
      * 	presets tend to be collections of non-transposable samples (e.g. drum kits).
      */
@@ -2018,8 +2003,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyIsDrumMachine();
 
     /**
-     * @constant		kMIDIPropertyIsMixer
-     * @discussion
+     * [@constant]		kMIDIPropertyIsMixer
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity mixes
      * 	external audio signals, controlled by MIDI messages.
      */
@@ -2028,8 +2013,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyIsMixer();
 
     /**
-     * @constant		kMIDIPropertyIsEffectUnit
-     * @discussion
+     * [@constant]		kMIDIPropertyIsEffectUnit
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device or entity is
      * 	primarily a MIDI-controlled audio effect unit (i.e. does not generate sound on its own).
      */
@@ -2038,8 +2023,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyIsEffectUnit();
 
     /**
-     * @constant		kMIDIPropertyMaxReceiveChannels
-     * @discussion
+     * [@constant]		kMIDIPropertyMaxReceiveChannels
+     * 
      * 	device/entity property, integer (0-16). Indicates the maximum number of MIDI channels on
      * 	which a device may simultaneously receive MIDI Channel Messages. Common values are 0
      * 	(devices which only respond to System Messages), 1 (non-multitimbral devices), and 16
@@ -2051,8 +2036,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyMaxReceiveChannels();
 
     /**
-     * @constant		kMIDIPropertyMaxTransmitChannels
-     * @discussion
+     * [@constant]		kMIDIPropertyMaxTransmitChannels
+     * 
      * 	device/entity property, integer (0/1). Indicates the maximum number of MIDI channels on
      * 	which a device may simultaneously transmit MIDI Channel Messages. Common values are 0, 1
      * 	and 16.
@@ -2062,8 +2047,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyMaxTransmitChannels();
 
     /**
-     * @constant		kMIDIPropertyDriverDeviceEditorApp
-     * @discussion
+     * [@constant]		kMIDIPropertyDriverDeviceEditorApp
+     * 
      * 	device property, string, contains the full path to an application which knows how to
      * 	configure this driver-owned devices. Drivers may set this property on their owned
      * 	devices. Applications must not write to it.
@@ -2073,8 +2058,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertyDriverDeviceEditorApp();
 
     /**
-     * @constant		kMIDIPropertySupportsShowControl
-     * @discussion
+     * [@constant]		kMIDIPropertySupportsShowControl
+     * 
      * 	device/entity property, integer (0/1). Indicates whether the device implements the MIDI
      * 	Show Control specification.
      */
@@ -2083,8 +2068,8 @@ public final class CoreMIDI {
     public static native CFStringRef kMIDIPropertySupportsShowControl();
 
     /**
-     * @constant		kMIDIPropertyDisplayName
-     * @discussion
+     * [@constant]		kMIDIPropertyDisplayName
+     * 
      * 	device/entity/endpoint property, string.
      * 
      * 	Provides the Apple-recommended user-visible name for an endpoint, by combining the
@@ -2170,8 +2155,8 @@ public final class CoreMIDI {
     }
 
     /**
-     * @constant        kMIDIPropertyNameConfigurationDictionary
-     * @discussion
+     * [@constant]        kMIDIPropertyNameConfigurationDictionary
+     * 
      *     device/entity/endpoint property, CFDictionary
      * 
      *     This specifies the device's current patch, note and control name values using the
@@ -2210,10 +2195,15 @@ public final class CoreMIDI {
     @Generated public static final byte MIDIChannelsWholePort = 127;
 
     /**
-     * @function		MIDIInputPortCreateWithProtocol
+     * [@function]		MIDIInputPortCreateWithProtocol
      * 
-     * @abstract 		Creates an input port through which the client may receive
+     * Creates an input port through which the client may receive
      * 				incoming MIDI messages from any MIDI source.
+     * 
+     * 	After creating a port, use MIDIPortConnectSource to establish an input connection from
+     * 	any number of sources to your port.
+     * 
+     * 	readBlock will be called on a separate high-priority thread owned by CoreMIDI.
      * 
      * @param			client
      * 					The client to own the newly-created port.
@@ -2228,13 +2218,7 @@ public final class CoreMIDI {
      * @param			receiveBlock
      * 					The MIDIReceiveBlock which will be called with incoming MIDI, from sources
      * 					connected to this port.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	After creating a port, use MIDIPortConnectSource to establish an input connection from
-     * 	any number of sources to your port.
-     * 
-     * 	readBlock will be called on a separate high-priority thread owned by CoreMIDI.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2252,9 +2236,23 @@ public final class CoreMIDI {
     }
 
     /**
-     * @function		MIDIDestinationCreateWithProtocol
+     * [@function]		MIDIDestinationCreateWithProtocol
      * 
-     * @abstract 		Creates a virtual destination in a client.
+     * Creates a virtual destination in a client.
+     * 
+     * 	The specified readBlock gets called when clients send MIDI to your virtual destination.
+     * 
+     * 	Drivers need not call this; when they create devices and entities, sources and
+     * 	destinations are created at that time.
+     * 
+     * 	After creating a virtual destination, it's a good idea to assign it the same unique ID
+     * 	it had the last time your application created it. (Although you should be prepared for
+     * 	this to fail in the unlikely event of a collision.) This will permit other clients
+     * 	to retain persistent references to your virtual destination more easily.
+     * 
+     * 	See the discussion of kMIDIPropertyAdvanceScheduleTimeMuSec for notes about the
+     * 	relationship between when a sender sends MIDI to the destination and when it is
+     * 	received.
      * 
      * @param			client
      * 					The client owning the virtual destination.
@@ -2269,22 +2267,7 @@ public final class CoreMIDI {
      * @param			readBlock
      * 					The MIDIReceiveBlock to be called when a client sends MIDI to the virtual
      * 					destination.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	The specified readBlock gets called when clients send MIDI to your virtual destination.
-     * 
-     * 	Drivers need not call this; when they create devices and entities, sources and
-     * 	destinations are created at that time.
-     * 
-     * 	After creating a virtual destination, it's a good idea to assign it the same unique ID
-     * 	it had the last time your application created it. (Although you should be prepared for
-     * 	this to fail in the unlikely event of a collision.) This will permit other clients
-     * 	to retain persistent references to your virtual destination more easily.
-     * 
-     * 	See the discussion of kMIDIPropertyAdvanceScheduleTimeMuSec for notes about the
-     * 	relationship between when a sender sends MIDI to the destination and when it is
-     * 	received.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2302,9 +2285,20 @@ public final class CoreMIDI {
     }
 
     /**
-     * @function		MIDISourceCreateWithProtocol
+     * [@function]		MIDISourceCreateWithProtocol
      * 
-     * @abstract 		Creates a virtual source in a client.
+     * Creates a virtual source in a client.
+     * 
+     * Drivers need not call this; when they create devices and entities, sources and
+     * destinations are created at that time.
+     * 
+     * After creating a virtual source, use MIDIReceivedEventList to transmit MIDI messages from your
+     * virtual source to any clients connected to the virtual source.
+     * 
+     * After creating a virtual source, it's a good idea to assign it the same unique ID it had
+     * the last time your application created it. (Although you should be prepared for this to
+     * fail in the unlikely event of a collision.) This will permit other clients to retain
+     * persistent references to your virtual source more easily.
      * 
      * @param			client
      *  					The client owning the virtual source.
@@ -2317,28 +2311,19 @@ public final class CoreMIDI {
      * @param			outSrc
      *  					On successful return, a pointer to the newly-created
      *  					source.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * Drivers need not call this; when they create devices and entities, sources and
-     * destinations are created at that time.
-     * 
-     * After creating a virtual source, use MIDIReceivedEventList to transmit MIDI messages from your
-     * virtual source to any clients connected to the virtual source.
-     * 
-     * After creating a virtual source, it's a good idea to assign it the same unique ID it had
-     * the last time your application created it. (Although you should be prepared for this to
-     * fail in the unlikely event of a collision.) This will permit other clients to retain
-     * persistent references to your virtual source more easily.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int MIDISourceCreateWithProtocol(int client, CFStringRef name, int protocol, IntPtr outSrc);
 
     /**
-     * @function		MIDISendEventList
+     * [@function]		MIDISendEventList
      * 
-     * @abstract 		Sends MIDI to a destination.
+     * Sends MIDI to a destination.
+     * 
+     * 	Events with future timestamps are scheduled for future delivery.  CoreMIDI performs
+     * 	any needed MIDI merging.
      * 
      * @param			port
      * 					The output port through which the MIDI is to be sent.
@@ -2346,11 +2331,7 @@ public final class CoreMIDI {
      * 					The destination to receive the events.
      * @param			evtlist
      * 					The MIDI events to be sent.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
-     * 	Events with future timestamps are scheduled for future delivery.  CoreMIDI performs
-     * 	any needed MIDI merging.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2358,18 +2339,11 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist);
 
     /**
-     * @function		MIDIReceivedEventList
+     * [@function]		MIDIReceivedEventList
      * 
-     * @abstract 		Distributes incoming MIDI from a source to the client input ports
+     * Distributes incoming MIDI from a source to the client input ports
      * 				which are connected to that source.
      * 
-     * @param			src
-     * 					The source which is transmitting MIDI.
-     * @param			evtlist
-     * 					The MIDI events to be transmitted.
-     * @result			An OSStatus result code.
-     * 
-     * @discussion
      * 	Drivers should call this function when receiving MIDI from a source.
      * 
      * 	Clients which have created virtual sources, using MIDISourceCreateWithProtocol, should call this
@@ -2377,6 +2351,12 @@ public final class CoreMIDI {
      * 
      * 	Unlike MIDISendEventList(), a timestamp of 0 is not equivalent to "now"; the driver or virtual
      * 	source is responsible for putting proper timestamps in the packets.
+     * 
+     * @param			src
+     * 					The source which is transmitting MIDI.
+     * @param			evtlist
+     * 					The MIDI events to be transmitted.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2384,14 +2364,14 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist);
 
     /**
-     * @function		MIDIEventPacketNext
+     * [@function]		MIDIEventPacketNext
      * 
-     * @abstract 		Advances a MIDIEventPacket pointer to the MIDIEventPacket which immediately follows it
+     * Advances a MIDIEventPacket pointer to the MIDIEventPacket which immediately follows it
      * in memory if it is part of a MIDIEventList.
      * 
      * @param			pkt
      * 	A pointer to a MIDIEventPacket in a MIDIEventList.
-     * @result		The subsequent packet in the MIDIEventList.
+     * @return		The subsequent packet in the MIDIEventList.
      */
     @Generated
     @Inline
@@ -2401,14 +2381,14 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventPacket pkt);
 
     /**
-     * @function		MIDIEventListInit
+     * [@function]		MIDIEventListInit
      * 
-     * @abstract 		Prepares a MIDIEventList to be built up dynamically.
+     * Prepares a MIDIEventList to be built up dynamically.
      * 
      * @param			evtlist
      * 					The event list to be initialized.
      * 
-     * @result			A pointer to the first MIDIEventPacket in the event list.
+     * @return			A pointer to the first MIDIEventPacket in the event list.
      */
     @Generated
     @CFunction
@@ -2417,9 +2397,14 @@ public final class CoreMIDI {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist, int protocol);
 
     /**
-     * @function		MIDIEventListAdd
+     * [@function]		MIDIEventListAdd
      * 
-     * @abstract 		Adds a MIDI event to a MIDIEventList.
+     * Adds a MIDI event to a MIDIEventList.
+     * 
+     * 	The maximum size of a event list is 65536 bytes. Large sysex messages must be sent in
+     * 	smaller event lists.
+     * 
+     * 	Note that events must use the same protocol as was passed to MIDIEventListInit().
      * 
      * @param			evtlist
      * 					The event list to which the event is to be added.
@@ -2436,15 +2421,9 @@ public final class CoreMIDI {
      * @param			words
      * 					The new event.  May be a single MIDI event, or a partial
      * 					sys-ex event.  Running status is <b>not</b> permitted.
-     * @result			Returns null if there was not room in the packet for the
+     * @return			Returns null if there was not room in the packet for the
      * 				event; otherwise returns a packet pointer which should be
      * 				passed as curPacket in a subsequent call to this function.
-     * 
-     * @discussion
-     * 	The maximum size of a event list is 65536 bytes. Large sysex messages must be sent in
-     * 	smaller event lists.
-     * 
-     * 	Note that events must use the same protocol as was passed to MIDIEventListInit().
      */
     @Generated
     @CFunction
@@ -2457,9 +2436,9 @@ public final class CoreMIDI {
 
     /**
      *   -----------------------------------------------------------------------------
-     * @function		MIDIDeviceNewEntity
+     * [@function]		MIDIDeviceNewEntity
      * 
-     * @discussion		Drivers call this function to specify one of the entities that
+     * Drivers call this function to specify one of the entities that
      * 				comprise a device.
      * 
      * 				Non-drivers may call this function as of macOS 10.16 & iOS 14 to
@@ -2482,7 +2461,7 @@ public final class CoreMIDI {
      * 					The number of destination endpoints the entity has.
      * @param			newEntity
      * 					On successful return, points to the newly-created entity.
-     * @result			An OSStatus result code.
+     * @return			An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2662,7 +2641,7 @@ public final class CoreMIDI {
 
     /**
      * constant		kMIDIPropertyProtocolID
-     * @discussion
+     * 
      * 	device/entity/endpoint property, MIDIProtocolID. Indicates the native protocol in which
      * 	the endpoint communicates. The value is set by the system on endpoints, when they are
      * 	created. Drivers may dynamically change the protocol of an endpoint as a result of a MIDI-CI

@@ -43,9 +43,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MSSession
- * @abstract A MSSession establishes a relationship between a sequence of messages within a conversation.
- * @discussion Messages created with the same session are represented as a single
+ * MSSession
+ * 
+ * A MSSession establishes a relationship between a sequence of messages within a conversation.
+ * 
+ * Messages created with the same session are represented as a single
  * entry in the conversation transcript.
  */
 @Generated

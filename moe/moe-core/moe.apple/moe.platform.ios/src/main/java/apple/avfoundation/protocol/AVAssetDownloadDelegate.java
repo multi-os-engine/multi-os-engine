@@ -35,8 +35,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol		AVAssetDownloadDelegate
- * @abstract		Delegate methods to implement when adopting AVAssetDownloadTask.
+ * [@protocol]		AVAssetDownloadDelegate
+ * 
+ * Delegate methods to implement when adopting AVAssetDownloadTask.
  */
 @Generated
 @Library("AVFoundation")
@@ -44,9 +45,12 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVAssetDownloadDelegate")
 public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     /**
-     * @method		URLSession:assetDownloadTask:didFinishDownloadingToURL:
-     * @abstract		Sent when a download task that has completed a download.
-     * @discussion	Unlike NSURLSessionDownloadDelegate, the delegate should NOT move the file from this directory after it has been called. Downloaded assets must remain at the system provided URL. URLSession:task:didCompleteWithError: will still be called.
+     * URLSession:assetDownloadTask:didFinishDownloadingToURL:
+     * 
+     * Sent when a download task that has completed a download.
+     * 
+     * Unlike NSURLSessionDownloadDelegate, the delegate should NOT move the file from this directory after it has been called. Downloaded assets must remain at the system provided URL. URLSession:task:didCompleteWithError: will still be called.
+     * 
      * @param			session
      * 			The session the asset download task is on.
      * @param			assetDownloadTask
@@ -63,8 +67,10 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * @method		URLSession:assetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:
-     * @abstract		Method to adopt to subscribe to progress updates of an AVAssetDownloadTask.
+     * URLSession:assetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:
+     * 
+     * Method to adopt to subscribe to progress updates of an AVAssetDownloadTask.
+     * 
      * @param			session
      * 			The session the asset download task is on.
      * @param			assetDownloadTask
@@ -86,8 +92,10 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * @method		URLSession:assetDownloadTask:didResolveMediaSelection:
-     * @abstract		Method called when the media selection for the download is fully resolved, including any automatic selections.
+     * URLSession:assetDownloadTask:didResolveMediaSelection:
+     * 
+     * Method called when the media selection for the download is fully resolved, including any automatic selections.
+     * 
      * @param			session
      * 			The session the asset download task is on.
      * @param			assetDownloadTask
@@ -104,8 +112,10 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * @method		URLSession:aggregateAssetDownloadTask:didCompleteForMediaSelection:
-     * @abstract		Method called when a child AVAssetDownloadTask completes.
+     * URLSession:aggregateAssetDownloadTask:didCompleteForMediaSelection:
+     * 
+     * Method called when a child AVAssetDownloadTask completes.
+     * 
      * @param			session
      * 			The session the aggregate asset download task is on.
      * @param			aggregateAssetDownloadTask
@@ -122,8 +132,10 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * @method		URLSession:aggregateAssetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:forMediaSelection:
-     * @abstract		Method to adopt to subscribe to progress updates of an AVAggregateAssetDownloadTask
+     * URLSession:aggregateAssetDownloadTask:didLoadTimeRange:totalTimeRangesLoaded:timeRangeExpectedToLoad:forMediaSelection:
+     * 
+     * Method to adopt to subscribe to progress updates of an AVAggregateAssetDownloadTask
+     * 
      * @param			session
      * 			The session the asset download task is on.
      * @param			aggregateAssetDownloadTask
@@ -148,9 +160,12 @@ public interface AVAssetDownloadDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * @method		URLSession:aggregateAssetDownloadTask:willDownloadToURL:
-     * @abstract		Method called when the aggregate download task determines the location this asset will be downloaded to.
-     * @discussion	This URL should be saved for future instantiations of AVAsset. While an AVAsset already exists for this content, it is advisable to re-use that instance.
+     * URLSession:aggregateAssetDownloadTask:willDownloadToURL:
+     * 
+     * Method called when the aggregate download task determines the location this asset will be downloaded to.
+     * 
+     * This URL should be saved for future instantiations of AVAsset. While an AVAsset already exists for this content, it is advisable to re-use that instance.
+     * 
      * @param			session
      * 			The session the aggregate asset download task is on.
      * @param			aggregateAssetDownloadTask

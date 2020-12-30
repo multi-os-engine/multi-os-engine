@@ -20,17 +20,18 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @typedef NETunnelProviderRoutingMethod
- * @abstract Network traffic routing methods.
+ * [@typedef] NETunnelProviderRoutingMethod
+ * 
+ * Network traffic routing methods.
  */
 @Generated
 public final class NETunnelProviderRoutingMethod {
     /**
-     * @const NETunnelProviderRoutingMethodDestinationIP Route network traffic to the tunnel based on destination IP
+     * [@const] NETunnelProviderRoutingMethodDestinationIP Route network traffic to the tunnel based on destination IP
      */
     @Generated @NInt public static final long DestinationIP = 0x0000000000000001L;
     /**
-     * @const NETunnelProviderRoutingMethodSourceApplication Route network traffic to the tunnel based on source application
+     * [@const] NETunnelProviderRoutingMethodSourceApplication Route network traffic to the tunnel based on source application
      */
     @Generated @NInt public static final long SourceApplication = 0x0000000000000002L;
 

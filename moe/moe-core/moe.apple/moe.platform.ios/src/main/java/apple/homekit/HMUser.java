@@ -41,7 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class describes a user in the home.
+ * This class describes a user in the home.
  */
 @Generated
 @Library("HomeKit")
@@ -159,14 +159,14 @@ public class HMUser extends NSObject {
     public native HMUser init();
 
     /**
-     * @brief Name of the user.
+     * Name of the user.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @brief A unique identifier for the user.
+     * A unique identifier for the user.
      */
     @Generated
     @Selector("uniqueIdentifier")

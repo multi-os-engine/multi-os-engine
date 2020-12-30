@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract returns elementwise difference of left - right
+ * returns elementwise difference of left - right
  */
 @Generated
 @Library("MetalPerformanceShaders")

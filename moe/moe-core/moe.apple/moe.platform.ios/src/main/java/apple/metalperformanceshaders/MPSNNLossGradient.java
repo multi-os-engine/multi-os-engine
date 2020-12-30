@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNLossGradient
- * @dependency This depends on Metal.framework.
- * @discussion The MPSNNLossGradient filter specifies the gradient filter for @ref MPSNNForwardLoss.
+ * MPSNNLossGradient
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * The MPSNNLossGradient filter specifies the gradient filter for @ref MPSNNForwardLoss.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -82,8 +83,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property   computeLabelGradients
-     * @abstract   The computeLabelGradients property is used to control whether the loss gradient
+     * [@property]   computeLabelGradients
+     * 
+     * The computeLabelGradients property is used to control whether the loss gradient
      *             filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
      *             Default: NO.
      */
@@ -121,7 +123,7 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     public native MPSNNLossGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract <NSSecureCoding> support
+     * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -133,7 +135,8 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     public native MPSNNLossGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize the loss gradient filter with a loss descriptor.
+     * Initialize the loss gradient filter with a loss descriptor.
+     * 
      * @param      device                   The device the filter will run on.
      * @param      lossDescriptor           The loss descriptor.
      * @return     A valid MPSNNLossGradient object or nil, if failure.
@@ -199,8 +202,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   computeLabelGradients
-     * @abstract   The computeLabelGradients property is used to control whether the loss gradient
+     * [@property]   computeLabelGradients
+     * 
+     * The computeLabelGradients property is used to control whether the loss gradient
      *             filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
      *             Default: NO.
      */

@@ -44,9 +44,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioChannelLayout
- * @abstract A description of the roles of a set of audio channels.
- * @discussion
+ * AVAudioChannelLayout
+ * 
+ * A description of the roles of a set of audio channels.
+ * 
  * 	This object is a thin wrapper for the AudioChannelLayout structure, described
  * 	in <CoreAudio/CoreAudioTypes.h>.
  */
@@ -135,16 +136,18 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @method layoutWithLayout:
-     * @abstract Create from an AudioChannelLayout
+     * layoutWithLayout:
+     * 
+     * Create from an AudioChannelLayout
      */
     @Generated
     @Selector("layoutWithLayout:")
     public static native AVAudioChannelLayout layoutWithLayout(AudioChannelLayout layout);
 
     /**
-     * @method layoutWithLayoutTag:
-     * @abstract Create from a layout tag.
+     * layoutWithLayoutTag:
+     * 
+     * Create from a layout tag.
      */
     @Generated
     @Selector("layoutWithLayoutTag:")
@@ -182,8 +185,9 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     public static native long version_static();
 
     /**
-     * @property channelCount
-     * @abstract The number of channels of audio data.
+     * [@property] channelCount
+     * 
+     * The number of channels of audio data.
      */
     @Generated
     @Selector("channelCount")
@@ -202,54 +206,62 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     public native AVAudioChannelLayout initWithCoder(NSCoder coder);
 
     /**
-     * @method initWithLayout:
-     * @abstract Initialize from an AudioChannelLayout.
-     * @param layout
-     * 	The AudioChannelLayout.
-     * @discussion
+     * initWithLayout:
+     * 
+     * Initialize from an AudioChannelLayout.
+     * 
      * 	If the provided layout's tag is kAudioChannelLayoutTag_UseChannelDescriptions, this
      * 	initializer attempts to convert it to a more specific tag.
+     * 
+     * @param layout
+     * 	The AudioChannelLayout.
      */
     @Generated
     @Selector("initWithLayout:")
     public native AVAudioChannelLayout initWithLayout(AudioChannelLayout layout);
 
     /**
-     * @method initWithLayoutTag:
-     * @abstract Initialize from a layout tag.
-     * @param layoutTag
-     * 	The tag.
-     * @discussion
+     * initWithLayoutTag:
+     * 
+     * Initialize from a layout tag.
+     * 
      * 	Returns nil if the tag is either kAudioChannelLayoutTag_UseChannelDescriptions or
      * 	kAudioChannelLayoutTag_UseChannelBitmap.
+     * 
+     * @param layoutTag
+     * 	The tag.
      */
     @Generated
     @Selector("initWithLayoutTag:")
     public native AVAudioChannelLayout initWithLayoutTag(int layoutTag);
 
     /**
-     * @method isEqual:
-     * @abstract Determine whether another AVAudioChannelLayout is exactly equal to this layout.
+     * isEqual:
+     * 
+     * Determine whether another AVAudioChannelLayout is exactly equal to this layout.
+     * 
+     * 	The underlying AudioChannelLayoutTag and AudioChannelLayout are compared for equality.
+     * 
      * @param object
      * 	The AVAudioChannelLayout to compare against.
-     * @discussion
-     * 	The underlying AudioChannelLayoutTag and AudioChannelLayout are compared for equality.
      */
     @Generated
     @Selector("isEqual:")
     public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
 
     /**
-     * @property layout
-     * @abstract The underlying AudioChannelLayout. 
+     * [@property] layout
+     * 
+     * The underlying AudioChannelLayout.
      */
     @Generated
     @Selector("layout")
     public native AudioChannelLayout layout();
 
     /**
-     * @property layoutTag
-     * @abstract The layout's tag. 
+     * [@property] layoutTag
+     * 
+     * The layout's tag.
      */
     @Generated
     @Selector("layoutTag")

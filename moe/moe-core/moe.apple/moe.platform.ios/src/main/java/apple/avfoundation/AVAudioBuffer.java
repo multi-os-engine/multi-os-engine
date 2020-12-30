@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioBuffer
- * @abstract A buffer of audio data, with a format.
- * @discussion
+ * AVAudioBuffer
+ * 
+ * A buffer of audio data, with a format.
+ * 
  * 	AVAudioBuffer represents a buffer of audio data and its format.
  */
 @Generated
@@ -160,9 +161,10 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     public static native long version_static();
 
     /**
-     * @property audioBufferList
-     * @abstract The buffer's underlying AudioBufferList.
-     * @discussion
+     * [@property] audioBufferList
+     * 
+     * The buffer's underlying AudioBufferList.
+     * 
      * 	For compatibility with lower-level CoreAudio and AudioToolbox API's, this method accesses
      * 	the buffer implementation's internal AudioBufferList. The buffer list structure must
      * 	not be modified, though you may modify buffer contents.
@@ -180,8 +182,9 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property format
-     * @abstract The format of the audio in the buffer.
+     * [@property] format
+     * 
+     * The format of the audio in the buffer.
      */
     @Generated
     @Selector("format")
@@ -192,9 +195,10 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     public native AVAudioBuffer init();
 
     /**
-     * @property mutableAudioBufferList
-     * @abstract A mutable version of the buffer's underlying AudioBufferList.
-     * @discussion
+     * [@property] mutableAudioBufferList
+     * 
+     * A mutable version of the buffer's underlying AudioBufferList.
+     * 
      * 	Some lower-level CoreAudio and AudioToolbox API's require a mutable AudioBufferList,
      * 	for example, AudioConverterConvertComplexBuffer.
      * 

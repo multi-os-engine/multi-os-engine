@@ -44,9 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Formats a postal address.
+ * Formats a postal address.
  * 
- * @discussion This formatter handles international formatting of a postal address.
+ * This formatter handles international formatting of a postal address.
  */
 @Generated
 @Library("Contacts")
@@ -77,9 +77,9 @@ public class CNPostalAddressFormatter extends NSFormatter {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @abstract Formats the postal address returning an attributed string.
+     * Formats the postal address returning an attributed string.
      * 
-     * @discussion This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
+     * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
      * 
      * @param postalAddress The postal address to be formatted.
      * @param style The formatting style to be used for the postal address.
@@ -166,7 +166,7 @@ public class CNPostalAddressFormatter extends NSFormatter {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract Formats the postal address.
+     * Formats the postal address.
      * 
      * @param postalAddress The postal address to be formatted.
      * @param style The formatting style to be used for the postal address.
@@ -186,9 +186,9 @@ public class CNPostalAddressFormatter extends NSFormatter {
     public static native long version_static();
 
     /**
-     * @abstract Formats the postal address returning an attributed string.
+     * Formats the postal address returning an attributed string.
      * 
-     * @discussion This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
+     * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
      * 
      * @param postalAddress The postal address to be formatted.
      * @param attributes The default attributes to use. See NSFormatter for details.
@@ -208,16 +208,16 @@ public class CNPostalAddressFormatter extends NSFormatter {
     public native CNPostalAddressFormatter initWithCoder(NSCoder coder);
 
     /**
-     * @abstract The style for a postal address formatter instance.
+     * The style for a postal address formatter instance.
      * 
-     * @discussion The default value is CNPostalAddressFormatterStyleMailingAddress.
+     * The default value is CNPostalAddressFormatterStyleMailingAddress.
      */
     @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
     /**
-     * @abstract Formats the postal address.
+     * Formats the postal address.
      * 
      * @param postalAddress The postal address to be formatted.
      * @return The formatted postal address.
@@ -227,9 +227,9 @@ public class CNPostalAddressFormatter extends NSFormatter {
     public native String stringFromPostalAddress(CNPostalAddress postalAddress);
 
     /**
-     * @abstract The style for a postal address formatter instance.
+     * The style for a postal address formatter instance.
      * 
-     * @discussion The default value is CNPostalAddressFormatterStyleMailingAddress.
+     * The default value is CNPostalAddressFormatterStyleMailingAddress.
      */
     @Generated
     @Selector("style")

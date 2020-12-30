@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class is used to represent a generic time event.
+ * This class is used to represent a generic time event.
  */
 @Generated
 @Library("HomeKit")

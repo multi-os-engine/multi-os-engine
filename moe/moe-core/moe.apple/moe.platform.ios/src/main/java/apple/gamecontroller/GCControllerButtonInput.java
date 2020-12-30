@@ -165,6 +165,7 @@ public class GCControllerButtonInput extends GCControllerElement {
      * 
      * Others buttons may support two-stage actuation, where the button reports a value between 0 and 1 but is only considered
      * pressed when its value is greater than some threshold other than 0.
+     * 
      * @see pressedChangedHandler
      * @see value
      */
@@ -199,6 +200,7 @@ public class GCControllerButtonInput extends GCControllerElement {
 
     /**
      * A normalized value for the input. Between 0 and 1 for button inputs. Values are saturated and thus never exceed the range of [0, 1].
+     * 
      * @see valueChangedHandler
      * @see pressed
      */
@@ -242,8 +244,9 @@ public class GCControllerButtonInput extends GCControllerElement {
     /**
      * Sets the normalized value for the button input. Will update the pressed state of the button.
      * 
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
      * @param value the value to set the input to.
-     * @note If the controller's snapshot flag is set to NO, this method has no effect.
      * @see value
      */
     @Generated

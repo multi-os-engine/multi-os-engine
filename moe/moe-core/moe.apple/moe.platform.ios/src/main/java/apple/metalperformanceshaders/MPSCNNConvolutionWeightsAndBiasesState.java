@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNConvolutionWeightsAndBiasesState
- * @discussion The MPSCNNConvolutionWeightsAndBiasesState is returned by exportWeightsAndBiasesWithCommandBuffer: method on MPSCNNConvolution object.
+ * MPSCNNConvolutionWeightsAndBiasesState
+ * 
+ * The MPSCNNConvolutionWeightsAndBiasesState is returned by exportWeightsAndBiasesWithCommandBuffer: method on MPSCNNConvolution object.
  *             This is mainly used for GPU side weights/biases update process.
  *             During training, application can keep a copy of weights, velocity, momentum MTLBuffers in its data source, update the weights (in-place or out of place)
  *             with gradients obtained from MPSCNNConvolutionGradientState and call [MPSCNNConvolution reloadWeightsAndBiasesWithCommandBuffer] with resulting updated
@@ -70,8 +71,9 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   biases
-     * @abstract   A buffer that contains the biases. Each value is float and there are ouputFeatureChannels values.
+     * [@property]   biases
+     * 
+     * A buffer that contains the biases. Each value is float and there are ouputFeatureChannels values.
      */
     @Generated
     @Selector("biases")
@@ -79,8 +81,9 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     public native MTLBuffer biases();
 
     /**
-     * @property   biasesOffset
-     * @discussion Offset at which weights start in biases buffer
+     * [@property]   biasesOffset
+     * 
+     * Offset at which weights start in biases buffer
      *             Default value is 0.
      */
     @Generated
@@ -129,8 +132,9 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
 
     /**
-     * @abstract    Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application provided convolution descriptor
-     * @discussion  Create weights and biases buffers of appropriate size
+     * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application provided convolution descriptor
+     * 
+     * Create weights and biases buffers of appropriate size
      */
     @Generated
     @Selector("initWithDevice:cnnConvolutionDescriptor:")
@@ -157,9 +161,10 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     public native MPSCNNConvolutionWeightsAndBiasesState initWithResources(NSArray<?> resources);
 
     /**
-     * @abstract    Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application
+     * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application
      *              provided weights and biases buffers.
-     * @discussion  This is the convinience API when buffers of exact size i.e.
+     * 
+     * This is the convinience API when buffers of exact size i.e.
      *                 [weights length] =  inputFeatureChannels*kernelWidth*kernelHeight*channelMultiplier*sizeof(float)                   // for depthwise convolution
      *                               outputFeatureChannels*kernelWidth*kernelHeight*(inputChannels/groups)*sizeof(float)      // for regular otherwise
      *              and [biases length]  =  outputFeatureChannels*sizeof(float)
@@ -170,9 +175,10 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
             @Mapped(ObjCObjectMapper.class) MTLBuffer weights, @Mapped(ObjCObjectMapper.class) MTLBuffer biases);
 
     /**
-     * @abstract    Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application
+     * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application
      *              provided weights and biases buffers.
-     * @discussion  It gives finer allocation control to application e.g. application can pass same buffer for weights and biases with
+     * 
+     * It gives finer allocation control to application e.g. application can pass same buffer for weights and biases with
      *              appropriate offsets. Or offset into some larger buffer from application managed heap etc. Number of weights
      *              and biases or the length of weights and biases buffer this object owns (will read or write to), starting at offset is
      *              determined by MPSCNNConvolutionDescriptor passed in.
@@ -236,8 +242,9 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     public static native Class superclass_static();
 
     /**
-     * @abstract    Create and initialize temporary MPSCNNConvolutionWeightsAndBiasesState with application provided convolution descriptor
-     * @discussion  Create weights and biases buffers of appropriate size from command buffer cache.
+     * Create and initialize temporary MPSCNNConvolutionWeightsAndBiasesState with application provided convolution descriptor
+     * 
+     * Create weights and biases buffers of appropriate size from command buffer cache.
      */
     @Generated
     @Selector("temporaryCNNConvolutionWeightsAndBiasesStateWithCommandBuffer:cnnConvolutionDescriptor:")
@@ -275,8 +282,9 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     public static native long version_static();
 
     /**
-     * @property   weights
-     * @abstract   A buffer that contains the weights.
+     * [@property]   weights
+     * 
+     * A buffer that contains the weights.
      *             Each value in the buffer is a float. The layout of the weights with respect to the weights is the same as
      *             the weights layout provided by data source i.e. it can be interpreted as 4D array
      * 
@@ -290,8 +298,9 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     public native MTLBuffer weights();
 
     /**
-     * @property   weightsOffset
-     * @discussion Offset at which weights start in weights buffer
+     * [@property]   weightsOffset
+     * 
+     * Offset at which weights start in weights buffer
      *             Default value is 0.
      */
     @Generated

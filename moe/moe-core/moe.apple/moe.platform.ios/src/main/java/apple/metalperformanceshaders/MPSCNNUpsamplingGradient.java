@@ -26,9 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNUpsamplingGradient
- * @dependency This depends on Metal.framework
- * @discussion The MPSCNNUpsamplingGradient filter is used for training. It is the backward
+ * MPSCNNUpsamplingGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNUpsamplingGradient filter is used for training. It is the backward
  *             filter for the MPSCNNUpsampling filter. It operates on the gradient input,
  *             specifically, it reduces the size of the gradient input in the x and y dimensions.
  * 
@@ -181,16 +182,18 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   scaleFactorX
-     * @abstract   The downsampling scale factor for the x dimension. The default value is 1.
+     * [@property]   scaleFactorX
+     * 
+     * The downsampling scale factor for the x dimension. The default value is 1.
      */
     @Generated
     @Selector("scaleFactorX")
     public native double scaleFactorX();
 
     /**
-     * @property   scaleFactorY
-     * @abstract   The downsampling scale factor for the y dimension. The default value is 1.
+     * [@property]   scaleFactorY
+     * 
+     * The downsampling scale factor for the y dimension. The default value is 1.
      */
     @Generated
     @Selector("scaleFactorY")

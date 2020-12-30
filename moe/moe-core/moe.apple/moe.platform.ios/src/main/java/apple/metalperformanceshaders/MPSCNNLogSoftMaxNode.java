@@ -94,7 +94,8 @@ public class MPSCNNLogSoftMaxNode extends MPSNNFilterNode {
     public native MPSCNNLogSoftMaxNode init();
 
     /**
-     * @abstract   Init a node representing a MPSCNNLogSoftMax kernel
+     * Init a node representing a MPSCNNLogSoftMax kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @return     A new MPSNNFilter node for a MPSCNNLogSoftMax kernel.
      */
@@ -130,7 +131,8 @@ public class MPSCNNLogSoftMaxNode extends MPSNNFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract   Init a node representing a autoreleased MPSCNNLogSoftMax kernel
+     * Init a node representing a autoreleased MPSCNNLogSoftMax kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @return     A new MPSNNFilter node for a MPSCNNLogSoftMax kernel.
      */

@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @discussion Context of a password authentication operation.
+ * Context of a password authentication operation.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -127,7 +127,7 @@ public class TKTokenPasswordAuthOperation extends TKTokenAuthOperation {
     public static native Object new_objc();
 
     /**
-     * @discussion Password, which will be filled in by the system when 'finishWithError:' is called.
+     * Password, which will be filled in by the system when 'finishWithError:' is called.
      */
     @Generated
     @Selector("password")
@@ -142,7 +142,7 @@ public class TKTokenPasswordAuthOperation extends TKTokenAuthOperation {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @discussion Password, which will be filled in by the system when 'finishWithError:' is called.
+     * Password, which will be filled in by the system when 'finishWithError:' is called.
      */
     @Generated
     @Selector("setPassword:")

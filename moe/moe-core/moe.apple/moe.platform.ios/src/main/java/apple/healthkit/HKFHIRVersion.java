@@ -31,10 +31,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKFHIRVersion
- * @abstract      Represents a FHIR version.
- * @discussion    FHIR uses semantic versions ("1.0.2", "4.0.1") to communicate which FHIR version a server supports or a
+ * HKFHIRVersion
+ * 
+ * Represents a FHIR version.
+ * 
+ * FHIR uses semantic versions ("1.0.2", "4.0.1") to communicate which FHIR version a server supports or a
  *                given resource is represented in. A FHIR version is associated with one FHIR release.
+ * 
  * @see           http://hl7.org/fhir/versions.html#versions
  */
 @Generated
@@ -187,8 +190,9 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property      stringRepresentation
-     * @abstract      A string representation in the format "{major}.{minor}.{patch}".
+     * [@property]      stringRepresentation
+     * 
+     * A string representation in the format "{major}.{minor}.{patch}".
      */
     @Generated
     @Selector("stringRepresentation")

@@ -41,9 +41,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      NKLibrary
- * @abstract   Represents the library of Newsstand issues
- * @discussion This is the library of Newsstand issues. Upon launch, one can
+ * NKLibrary
+ * 
+ * Represents the library of Newsstand issues
+ * 
+ * This is the library of Newsstand issues. Upon launch, one can
  * get the issues in the Newsstand library and determine any outstanding
  * downloading assets. To reconnect with any outstanding background
  * download of content, you will be required to call 
@@ -152,8 +154,9 @@ public class NKLibrary extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @method     sharedLibrary
-     * @abstract   The application's shared Newsstand Content Library
+     * sharedLibrary
+     * 
+     * The application's shared Newsstand Content Library
      */
     @Generated
     @Selector("sharedLibrary")
@@ -169,16 +172,18 @@ public class NKLibrary extends NSObject {
     public static native long version_static();
 
     /**
-     * @method     addIssueWithName:date:
-     * @abstract   Add a new issue to the Newsstand Content Library.
+     * addIssueWithName:date:
+     * 
+     * Add a new issue to the Newsstand Content Library.
      */
     @Generated
     @Selector("addIssueWithName:date:")
     public native NKIssue addIssueWithNameDate(String name, NSDate date);
 
     /**
-     * @property   currentlyReadingIssue
-     * @abstract   The issue that is currently being read by the user. Clients should
+     * [@property]   currentlyReadingIssue
+     * 
+     * The issue that is currently being read by the user. Clients should
      * set this property to the currently read issue to prevent data
      * from being purged when under disk pressure.
      */
@@ -187,8 +192,9 @@ public class NKLibrary extends NSObject {
     public native NKIssue currentlyReadingIssue();
 
     /**
-     * @property   downloadingAssets
-     * @abstract   The assets that are currently being downloaded in this
+     * [@property]   downloadingAssets
+     * 
+     * The assets that are currently being downloaded in this
      * Newsstand library. The issue that this asset is associated with
      * can be determined from the asset itself.
      */
@@ -201,32 +207,36 @@ public class NKLibrary extends NSObject {
     public native NKLibrary init();
 
     /**
-     * @method     issueWithName:
-     * @abstract   Return the issue identified by the given name if it exists.
+     * issueWithName:
+     * 
+     * Return the issue identified by the given name if it exists.
      */
     @Generated
     @Selector("issueWithName:")
     public native NKIssue issueWithName(String name);
 
     /**
-     * @property   issues
-     * @abstract   The Newsstand issues in the library
+     * [@property]   issues
+     * 
+     * The Newsstand issues in the library
      */
     @Generated
     @Selector("issues")
     public native NSArray<? extends NKIssue> issues();
 
     /**
-     * @method     removeIssue:
-     * @abstract   Remove the issue from the library
+     * removeIssue:
+     * 
+     * Remove the issue from the library
      */
     @Generated
     @Selector("removeIssue:")
     public native void removeIssue(NKIssue issue);
 
     /**
-     * @property   currentlyReadingIssue
-     * @abstract   The issue that is currently being read by the user. Clients should
+     * [@property]   currentlyReadingIssue
+     * 
+     * The issue that is currently being read by the user. Clients should
      * set this property to the currently read issue to prevent data
      * from being purged when under disk pressure.
      */

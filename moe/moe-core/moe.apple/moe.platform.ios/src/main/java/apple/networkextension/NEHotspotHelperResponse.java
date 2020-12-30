@@ -40,8 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEHotspotHelperResponse
- * @discussion
+ * [@interface] NEHotspotHelperResponse
+ * 
  *   The HotspotHelper creates an NEHotspotHelperResponse object to provide
  *   the results of running the corresponding NEHotspotHelperCommand.
  */
@@ -157,10 +157,10 @@ public class NEHotspotHelperResponse extends NSObject {
     public static native long version_static();
 
     /**
-     * @method deliver
-     * @abstract
+     * deliver
+     * 
      *   Delivers the response to the command.
-     * @discussion
+     * 
      *   Deliver the NEHotspotHelperResponse to the HotspotHelper infrastructure.
      */
     @Generated
@@ -172,10 +172,10 @@ public class NEHotspotHelperResponse extends NSObject {
     public native NEHotspotHelperResponse init();
 
     /**
-     * @method setNetwork
-     * @abstract
+     * setNetwork
+     * 
      *   Set the network that conveys the confidence level.
-     * @discussion
+     * 
      *   Provide the annotated NEHotspotNetwork object in the response to the
      *   kNEHotspotHelperCommandTypeEvaluate command. The helper sets the
      *   confidence in the network object to indicate its ability to handle
@@ -186,10 +186,10 @@ public class NEHotspotHelperResponse extends NSObject {
     public native void setNetwork(NEHotspotNetwork network);
 
     /**
-     * @method setNetworkList
-     * @abstract
+     * setNetworkList
+     * 
      *   Set the list of handled networks.
-     * @discussion
+     * 
      *   Provide an NSArray of annotated NEHotspotNetwork objects in response
      *   to the kNEHotspotHelperCommandTypeFilterScanList command.
      *   The helper provides the list of network objects that it is capable of

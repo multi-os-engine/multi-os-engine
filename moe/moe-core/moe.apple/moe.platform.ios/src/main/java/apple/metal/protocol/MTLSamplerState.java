@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLSamplerState
- * @abstract An immutable collection of sampler state compiled for a single device.
+ * [@protocol] MTLSamplerState
+ * 
+ * An immutable collection of sampler state compiled for a single device.
  */
 @Generated
 @Library("Metal")
@@ -35,8 +36,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLSamplerState")
 public interface MTLSamplerState {
     /**
-     * @property device
-     * @abstract The device this resource was created against.  This resource can only be used with this device.
+     * [@property] device
+     * 
+     * The device this resource was created against.  This resource can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -44,8 +46,9 @@ public interface MTLSamplerState {
     MTLDevice device();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")

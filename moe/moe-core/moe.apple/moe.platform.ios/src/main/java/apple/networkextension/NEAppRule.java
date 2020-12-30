@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEAppRule
- * @discussion The NEAppRule class declares the programmatic interface for an object that contains the match conditions for a rule that is used to match network traffic originated by applications.
+ * [@interface] NEAppRule
+ * 
+ * The NEAppRule class declares the programmatic interface for an object that contains the match conditions for a rule that is used to match network traffic originated by applications.
  * 
  * NEAppRule is used in the context of a Network Extension configuration to specify what traffic should be made available to the Network Extension.
  * 
@@ -185,8 +186,10 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     public native NEAppRule initWithCoder(NSCoder coder);
 
     /**
-     * @method initWithSigningIdentifier:
-     * @discussion Initializes a newly-allocated NEAppRule object.
+     * initWithSigningIdentifier:
+     * 
+     * Initializes a newly-allocated NEAppRule object.
+     * 
      * @param signingIdentifier The signing identifier of the executable that matches the rule.
      */
     @Generated
@@ -194,40 +197,45 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     public native NEAppRule initWithSigningIdentifier(String signingIdentifier);
 
     /**
-     * @property matchDomains
-     * @discussion An array of strings. This property is actually read-only. If the destination host of the network traffic being evaluated has a suffix equal to one of the strings in this array and all other conditions of the rule match, then the rule matches. This property is optional.
+     * [@property] matchDomains
+     * 
+     * An array of strings. This property is actually read-only. If the destination host of the network traffic being evaluated has a suffix equal to one of the strings in this array and all other conditions of the rule match, then the rule matches. This property is optional.
      */
     @Generated
     @Selector("matchDomains")
     public native NSArray<?> matchDomains();
 
     /**
-     * @property matchPath
-     * @discussion A string containing a file system path. If the file system path of the executable being evaluated is equal to this string and all other conditions of the rule match, then the rule matches. This property is optional.
+     * [@property] matchPath
+     * 
+     * A string containing a file system path. If the file system path of the executable being evaluated is equal to this string and all other conditions of the rule match, then the rule matches. This property is optional.
      */
     @Generated
     @Selector("matchPath")
     public native String matchPath();
 
     /**
-     * @property matchSigningIdentifier
-     * @discussion A string containing a signing identifier. If the code signature of the executable being evaluated has a signing identifier equal to this string and all other conditions of the rule match, then the rule matches.
+     * [@property] matchSigningIdentifier
+     * 
+     * A string containing a signing identifier. If the code signature of the executable being evaluated has a signing identifier equal to this string and all other conditions of the rule match, then the rule matches.
      */
     @Generated
     @Selector("matchSigningIdentifier")
     public native String matchSigningIdentifier();
 
     /**
-     * @property matchDomains
-     * @discussion An array of strings. This property is actually read-only. If the destination host of the network traffic being evaluated has a suffix equal to one of the strings in this array and all other conditions of the rule match, then the rule matches. This property is optional.
+     * [@property] matchDomains
+     * 
+     * An array of strings. This property is actually read-only. If the destination host of the network traffic being evaluated has a suffix equal to one of the strings in this array and all other conditions of the rule match, then the rule matches. This property is optional.
      */
     @Generated
     @Selector("setMatchDomains:")
     public native void setMatchDomains(NSArray<?> value);
 
     /**
-     * @property matchPath
-     * @discussion A string containing a file system path. If the file system path of the executable being evaluated is equal to this string and all other conditions of the rule match, then the rule matches. This property is optional.
+     * [@property] matchPath
+     * 
+     * A string containing a file system path. If the file system path of the executable being evaluated is equal to this string and all other conditions of the rule match, then the rule matches. This property is optional.
      */
     @Generated
     @Selector("setMatchPath:")

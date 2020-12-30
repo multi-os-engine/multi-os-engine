@@ -44,9 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Represents a home.
+ * Represents a home.
  * 
- * @discussion This class represents a home and is the entry point to communicate and
+ * This class represents a home and is the entry point to communicate and
  *             configure different accessories in the home. This is also used to manage
  *             all the rooms, zones, service groups, users, triggers, and action sets in
  *             the home.
@@ -163,21 +163,21 @@ public class HMHome extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief Array of HMAccessory objects that represents all accessories added to the home.
+     * Array of HMAccessory objects that represents all accessories added to the home.
      */
     @Generated
     @Selector("accessories")
     public native NSArray<? extends HMAccessory> accessories();
 
     /**
-     * @brief Array of HMActionSet objects that represents all the action sets in the home.
+     * Array of HMActionSet objects that represents all the action sets in the home.
      */
     @Generated
     @Selector("actionSets")
     public native NSArray<? extends HMActionSet> actionSets();
 
     /**
-     * @brief Adds a new accessory to the home.
+     * Adds a new accessory to the home.
      * 
      * @param accessory Accessory to add to the home.
      * 
@@ -191,7 +191,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addAccessoryCompletionHandler") Block_addAccessoryCompletionHandler completion);
 
     /**
-     * @brief Adds a new action set to the home.
+     * Adds a new action set to the home.
      * 
      * @param actionSetName Name of the action set to add to the home.
      * 
@@ -206,7 +206,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addActionSetWithNameCompletionHandler") Block_addActionSetWithNameCompletionHandler completion);
 
     /**
-     * @brief Find nearby accessories and add them to the home. During this process, each of the accessories added
+     * Find nearby accessories and add them to the home. During this process, each of the accessories added
      *        to the home is assigned to a room and its services are configured.
      * 
      * @param completion Block that is invoked once the request is processed.
@@ -219,7 +219,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addAndSetupAccessoriesWithCompletionHandler") Block_addAndSetupAccessoriesWithCompletionHandler completion);
 
     /**
-     * @brief Adds a room to the home.
+     * Adds a room to the home.
      * 
      * @param roomName Name of the room to add to the home.
      * 
@@ -234,7 +234,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addRoomWithNameCompletionHandler") Block_addRoomWithNameCompletionHandler completion);
 
     /**
-     * @brief Adds a service group to the home.
+     * Adds a service group to the home.
      * 
      * @param serviceGroupName Name of the service group to add to the home.
      * 
@@ -249,10 +249,10 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addServiceGroupWithNameCompletionHandler") Block_addServiceGroupWithNameCompletionHandler completion);
 
     /**
-     * @brief Adds a trigger to the home. Unless the trigger object is added to the home, it cannot be
+     * Adds a trigger to the home. Unless the trigger object is added to the home, it cannot be
      *        activated.
      * 
-     * @discussion  Triggers are specific to an iOS device and are not synced across multiple devices to
+     * Triggers are specific to an iOS device and are not synced across multiple devices to
      *              ensure that the action sets are executed only once.
      * 
      * @param trigger Trigger to add to the home.
@@ -268,7 +268,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addTriggerCompletionHandler") Block_addTriggerCompletionHandler completion);
 
     /**
-     * @brief Adds a user to the home.
+     * Adds a user to the home.
      * 
      * @param completion Block that is invoked once the request is processed.
      *                   The HMUser object provides a reference to the user that was added to the home.
@@ -283,7 +283,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addUserWithCompletionHandler") Block_addUserWithCompletionHandler completion);
 
     /**
-     * @brief Adds a zone to the home.
+     * Adds a zone to the home.
      * 
      * @param zoneName Name of the zone to add to the home.
      * 
@@ -298,9 +298,9 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_addZoneWithNameCompletionHandler") Block_addZoneWithNameCompletionHandler completion);
 
     /**
-     * @brief Assigns a new room for the accessory.
+     * Assigns a new room for the accessory.
      * 
-     * @discussion When an accessory is added to a home, it is automatically assigned the room corresponding to
+     * When an accessory is added to a home, it is automatically assigned the room corresponding to
      *             + [HMHome roomForEntireHome]. This method is used to change the room assigned to an accessory.
      * 
      * @param accessory Accessory whose rooms needs to modified
@@ -317,7 +317,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_assignAccessoryToRoomCompletionHandler") Block_assignAccessoryToRoomCompletionHandler completion);
 
     /**
-     * @brief Retrieve a built-in action set for the home.
+     * Retrieve a built-in action set for the home.
      * 
      * @param actionSetType Type of the builtin action set. Supported action set types are HMActionSetTypeWakeUp,
      *                      HMActionSetTypeSleep, HMActionSetTypeHomeDeparture and HMActionSetTypeHomeArrival.
@@ -330,14 +330,14 @@ public class HMHome extends NSObject {
     public native HMActionSet builtinActionSetOfType(String actionSetType);
 
     /**
-     * @brief HMUser object representing the current user of the home.
+     * HMUser object representing the current user of the home.
      */
     @Generated
     @Selector("currentUser")
     public native HMUser currentUser();
 
     /**
-     * @brief Delegate that receives updates on the state of the home.
+     * Delegate that receives updates on the state of the home.
      */
     @Generated
     @Selector("delegate")
@@ -345,7 +345,7 @@ public class HMHome extends NSObject {
     public native HMHomeDelegate delegate();
 
     /**
-     * @brief Executes all the actions within an action set.
+     * Executes all the actions within an action set.
      * 
      * @param actionSet Action set to execute.
      * 
@@ -359,7 +359,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_executeActionSetCompletionHandler") Block_executeActionSetCompletionHandler completion);
 
     /**
-     * @brief Retrieve the access level of the user associated with the home.
+     * Retrieve the access level of the user associated with the home.
      */
     @Generated
     @Selector("homeAccessControlForUser:")
@@ -370,16 +370,16 @@ public class HMHome extends NSObject {
     public native HMHome init();
 
     /**
-     * @brief Specifies whether this home is the primary home.
+     * Specifies whether this home is the primary home.
      */
     @Generated
     @Selector("isPrimary")
     public native boolean isPrimary();
 
     /**
-     * @brief Presents a view controller to manage users of the home.
+     * Presents a view controller to manage users of the home.
      * 
-     * @discussion This API is available only for users that have administrator access to the home.
+     * This API is available only for users that have administrator access to the home.
      * 
      * @param completion Block that is invoked once user management is completed.
      *                   The completion block is fired to allow clients to know when the user has dismissed the view.
@@ -393,14 +393,14 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_manageUsersWithCompletionHandler") Block_manageUsersWithCompletionHandler completion);
 
     /**
-     * @brief The name of the home.
+     * The name of the home.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @brief Removes an accessory from the home.
+     * Removes an accessory from the home.
      * 
      * @param accessory Accessory to remove from the home.
      * 
@@ -414,7 +414,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_removeAccessoryCompletionHandler") Block_removeAccessoryCompletionHandler completion);
 
     /**
-     * @brief Removes an existing action set from the home.
+     * Removes an existing action set from the home.
      * 
      * @param actionSet Action set to remove from the home. A builtin action set cannot be removed.
      * 
@@ -428,8 +428,9 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_removeActionSetCompletionHandler") Block_removeActionSetCompletionHandler completion);
 
     /**
-     * @brief Removes a room from the home.
-     * @discussion Any references to this room will be removed from all properties
+     * Removes a room from the home.
+     * 
+     * Any references to this room will be removed from all properties
      *             of the home. For example, the room will be removed from the zone.
      *             Any accessories associated contained by this room will be moved to
      *             the room provided by - [HMHome roomForEntireHome].
@@ -446,7 +447,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_removeRoomCompletionHandler") Block_removeRoomCompletionHandler completion);
 
     /**
-     * @brief Removes a service group from the home.
+     * Removes a service group from the home.
      * 
      * @param group Service group to remove from the home.
      * 
@@ -460,7 +461,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_removeServiceGroupCompletionHandler") Block_removeServiceGroupCompletionHandler completion);
 
     /**
-     * @brief Removes a trigger from the home. If the trigger is active, they are automatically deactivated.
+     * Removes a trigger from the home. If the trigger is active, they are automatically deactivated.
      * 
      * @param trigger Trigger to remove from the home.
      * 
@@ -474,7 +475,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_removeTriggerCompletionHandler") Block_removeTriggerCompletionHandler completion);
 
     /**
-     * @brief Removes a user from the home.
+     * Removes a user from the home.
      * 
      * @param user HMUser whose access is being revoked.
      * 
@@ -490,7 +491,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_removeUserCompletionHandler") Block_removeUserCompletionHandler completion);
 
     /**
-     * @brief Removes a zone from the home.
+     * Removes a zone from the home.
      * 
      * @param zone Zone to remove from the home.
      * 
@@ -504,7 +505,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_removeZoneCompletionHandler") Block_removeZoneCompletionHandler completion);
 
     /**
-     * @brief This method returns a room that represents the entire home. This can be used to assign a room
+     * This method returns a room that represents the entire home. This can be used to assign a room
      *        to a service that is not necessarily located in one particular room.
      * 
      * @return HMRoom that represents the home.
@@ -514,21 +515,21 @@ public class HMHome extends NSObject {
     public native HMRoom roomForEntireHome();
 
     /**
-     * @brief Array of HMRoom objects that represents all rooms in the home.
+     * Array of HMRoom objects that represents all rooms in the home.
      */
     @Generated
     @Selector("rooms")
     public native NSArray<? extends HMRoom> rooms();
 
     /**
-     * @brief Array of HMServiceGroup objects that represents all service groups in the home.
+     * Array of HMServiceGroup objects that represents all service groups in the home.
      */
     @Generated
     @Selector("serviceGroups")
     public native NSArray<? extends HMServiceGroup> serviceGroups();
 
     /**
-     * @brief Queries all services that match the specified types.
+     * Queries all services that match the specified types.
      * 
      * @param serviceTypes Array of NSString objects that specifies the service types to match.
      * 
@@ -540,14 +541,14 @@ public class HMHome extends NSObject {
     public native NSArray<? extends HMService> servicesWithTypes(NSArray<String> serviceTypes);
 
     /**
-     * @brief Delegate that receives updates on the state of the home.
+     * Delegate that receives updates on the state of the home.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) HMHomeDelegate value);
 
     /**
-     * @brief Delegate that receives updates on the state of the home.
+     * Delegate that receives updates on the state of the home.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) HMHomeDelegate value) {
@@ -562,16 +563,16 @@ public class HMHome extends NSObject {
     }
 
     /**
-     * @brief Array of HMTrigger objects that represents all the triggers in the home.
+     * Array of HMTrigger objects that represents all the triggers in the home.
      */
     @Generated
     @Selector("triggers")
     public native NSArray<? extends HMTrigger> triggers();
 
     /**
-     * @brief unblock a blocked accessory.
+     * unblock a blocked accessory.
      * 
-     * @discussion A misbehaving accessory will automatically be blocked.  After that all requests to
+     * A misbehaving accessory will automatically be blocked.  After that all requests to
      *              the accessory will fail.  This API must be used to explicitly unblock the accessory
      * 
      * @param accessory accessory to be unblocked
@@ -587,14 +588,14 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_unblockAccessoryCompletionHandler") Block_unblockAccessoryCompletionHandler completion);
 
     /**
-     * @brief A unique identifier for the home.
+     * A unique identifier for the home.
      */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
-     * @brief This method is used to change the name of the home.
+     * This method is used to change the name of the home.
      * 
      * @param name New name for the home.
      * 
@@ -608,7 +609,7 @@ public class HMHome extends NSObject {
             @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     /**
-     * @brief Array of HMUser objects that represent all users associated with the home.
+     * Array of HMUser objects that represent all users associated with the home.
      */
     @Generated
     @Deprecated
@@ -616,7 +617,7 @@ public class HMHome extends NSObject {
     public native NSArray<? extends HMUser> users();
 
     /**
-     * @brief Array of HMZone objects that represents all the zones in the home.
+     * Array of HMZone objects that represents all the zones in the home.
      */
     @Generated
     @Selector("zones")
@@ -763,7 +764,7 @@ public class HMHome extends NSObject {
     }
 
     /**
-     * @brief Specifies the state of the home hub.
+     * Specifies the state of the home hub.
      */
     @Generated
     @Selector("homeHubState")
@@ -771,8 +772,8 @@ public class HMHome extends NSObject {
     public native long homeHubState();
 
     /**
-     * @brief Add accessory with the given setup payload to the home.
-     * @note  This SPI requires entitlement: com.apple.homekit.developer.allow-setup-payload
+     * Add accessory with the given setup payload to the home.
+     * [@note]  This SPI requires entitlement: com.apple.homekit.developer.allow-setup-payload
      * 
      * @param completion Block that is invoked once the request is processed.
      *                   Accessories provides the list of added accessories.
@@ -793,7 +794,7 @@ public class HMHome extends NSObject {
     }
 
     /**
-     * @brief True if this home supports all of the requirements for adding a network router.
+     * True if this home supports all of the requirements for adding a network router.
      */
     @Generated
     @Selector("supportsAddingNetworkRouter")

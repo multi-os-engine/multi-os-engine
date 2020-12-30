@@ -4,8 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum SCNColorComponent
- * @abstract Color components
+ * [@enum] SCNColorComponent
+ * 
+ * Color components
  */
 @Generated
 public final class SCNColorMask {

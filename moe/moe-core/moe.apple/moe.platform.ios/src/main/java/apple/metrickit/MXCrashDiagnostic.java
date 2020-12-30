@@ -27,9 +27,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXCrashDiagnostic
- * @abstract      An MXDiagnostic subclass that encapsulates crash reports.
- * @discussion    See "Analyzing a Crash Report" for more information on crash diagnostics.
+ * MXCrashDiagnostic
+ * 
+ * An MXDiagnostic subclass that encapsulates crash reports.
+ * 
+ * See "Analyzing a Crash Report" for more information on crash diagnostics.
  */
 @Generated
 @Library("MetricKit")
@@ -64,9 +66,11 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property      callStackTree
-     * @abstract      The application call stack tree associated with this crash.
-     * @discussion    This call stack tree includes those stack frames present at the time of the crash.
+     * [@property]      callStackTree
+     * 
+     * The application call stack tree associated with this crash.
+     * 
+     * This call stack tree includes those stack frames present at the time of the crash.
      */
     @Generated
     @Selector("callStackTree")
@@ -99,8 +103,10 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public static native String description_static();
 
     /**
-     * @property      exceptionCode
-     * @abstract      Processor specific information about the exception encoded into one or more 64-bit hexadecimal numbers
+     * [@property]      exceptionCode
+     * 
+     * Processor specific information about the exception encoded into one or more 64-bit hexadecimal numbers
+     * 
      * @see           sys/exception_types.h
      */
     @Generated
@@ -108,8 +114,10 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public native NSNumber exceptionCode();
 
     /**
-     * @property      exceptionType
-     * @abstract      The name of the Mach exception that terminated the app.
+     * [@property]      exceptionType
+     * 
+     * The name of the Mach exception that terminated the app.
+     * 
      * @see           sys/exception_types.h
      */
     @Generated
@@ -169,8 +177,10 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property      signal
-     * @abstract      The signal associated with this crash.
+     * [@property]      signal
+     * 
+     * The signal associated with this crash.
+     * 
      * @see           sys/signal.h
      */
     @Generated
@@ -192,9 +202,11 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     }
 
     /**
-     * @property      terminationReason
-     * @abstract      The termination reason associated with this crash.
-     * @discussion    Exit reason information specified when a process is terminated. Key system components, both inside and outside of a process, will terminate the process upon encountering a fatal error (e.g. a bad code signature, a missing dependent library, or accessing privacy sensitive information without the proper entitlement).
+     * [@property]      terminationReason
+     * 
+     * The termination reason associated with this crash.
+     * 
+     * Exit reason information specified when a process is terminated. Key system components, both inside and outside of a process, will terminate the process upon encountering a fatal error (e.g. a bad code signature, a missing dependent library, or accessing privacy sensitive information without the proper entitlement).
      */
     @Generated
     @Selector("terminationReason")
@@ -206,9 +218,11 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public static native long version_static();
 
     /**
-     * @property      virtualMemoryRegionInfo
-     * @abstract      Details about memory that the app incorrectly accessed in relation to other sections of the app’s virtual memory address space.
-     * @discussion    This property is set when a bad memory access crash occurs.
+     * [@property]      virtualMemoryRegionInfo
+     * 
+     * Details about memory that the app incorrectly accessed in relation to other sections of the app’s virtual memory address space.
+     * 
+     * This property is set when a bad memory access crash occurs.
      */
     @Generated
     @Selector("virtualMemoryRegionInfo")

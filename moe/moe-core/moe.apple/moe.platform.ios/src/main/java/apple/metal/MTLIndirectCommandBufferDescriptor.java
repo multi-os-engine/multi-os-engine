@@ -25,7 +25,6 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract
  * Describes the limits and features that can be used in an indirect command
  */
 @Generated
@@ -79,9 +78,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract
      * A bitfield of the command types that be encoded.
-     * @discussion
+     * 
      * MTLCommandTypeDispatch cannot be mixed with any other command type.
      */
     @Generated
@@ -103,7 +101,6 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public static native long hash_static();
 
     /**
-     * @abstract
      * Whether the render or compute pipeline can set arguments.
      */
     @Generated
@@ -111,7 +108,6 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native boolean inheritBuffers();
 
     /**
-     * @abstract
      * Whether the render or compute pipeline are inherited from the encoder
      */
     @Generated
@@ -144,7 +140,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @absract
+     * [@absract]
      * The maximum bind index of fragment argument buffers that can be set per command.
      */
     @Generated
@@ -153,7 +149,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native long maxFragmentBufferBindCount();
 
     /**
-     * @absract
+     * [@absract]
      * The maximum bind index of kernel (or tile) argument buffers that can be set per command.
      */
     @Generated
@@ -162,7 +158,6 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native long maxKernelBufferBindCount();
 
     /**
-     * @abstract
      * The maximum bind index of vertex argument buffers that can be set per command.
      */
     @Generated
@@ -185,9 +180,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract
      * A bitfield of the command types that be encoded.
-     * @discussion
+     * 
      * MTLCommandTypeDispatch cannot be mixed with any other command type.
      */
     @Generated
@@ -195,7 +189,6 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native void setCommandTypes(@NUInt long value);
 
     /**
-     * @abstract
      * Whether the render or compute pipeline can set arguments.
      */
     @Generated
@@ -203,7 +196,6 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native void setInheritBuffers(boolean value);
 
     /**
-     * @abstract
      * Whether the render or compute pipeline are inherited from the encoder
      */
     @Generated
@@ -211,7 +203,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native void setInheritPipelineState(boolean value);
 
     /**
-     * @absract
+     * [@absract]
      * The maximum bind index of fragment argument buffers that can be set per command.
      */
     @Generated
@@ -219,7 +211,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native void setMaxFragmentBufferBindCount(@NUInt long value);
 
     /**
-     * @absract
+     * [@absract]
      * The maximum bind index of kernel (or tile) argument buffers that can be set per command.
      */
     @Generated
@@ -227,7 +219,6 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native void setMaxKernelBufferBindCount(@NUInt long value);
 
     /**
-     * @abstract
      * The maximum bind index of vertex argument buffers that can be set per command.
      */
     @Generated

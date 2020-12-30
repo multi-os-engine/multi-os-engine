@@ -31,8 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Analyzes a stream of audio data and provides analysis results to the client
- * @discussion SNAudioStreamAnalyzer should be used to analyze a stream of audio, represented by a sequence of audio buffers over time.
+ * Analyzes a stream of audio data and provides analysis results to the client
+ * 
+ * SNAudioStreamAnalyzer should be used to analyze a stream of audio, represented by a sequence of audio buffers over time.
  */
 @Generated
 @Library("SoundAnalysis")
@@ -53,12 +54,14 @@ public class SNAudioStreamAnalyzer extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @brief Adds a new analysis request to the analyzer
+     * Adds a new analysis request to the analyzer
+     * 
+     * Requests can be added while analysis is in progress. If the analyzer cannot perform the requested analysis, an error will be returned. For example, an error could be returned if the request requires a stream format that doesn't match the analyzer's stream format.
+     * 
      * @param request An audio analysis request to be performed on the audio stream
      * @param observer The object that will receive the analysis results for the supplied request. The observer is weakly retained by the analyzer.
      * @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
      * @return YES if the request was successfully added, and NO otherwise.
-     * @discussion Requests can be added while analysis is in progress. If the analyzer cannot perform the requested analysis, an error will be returned. For example, an error could be returned if the request requires a stream format that doesn't match the analyzer's stream format.
      */
     @Generated
     @Selector("addRequest:withObserver:error:")
@@ -77,10 +80,12 @@ public class SNAudioStreamAnalyzer extends NSObject {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @brief Provides the next buffer for analysis
+     * Provides the next buffer for analysis
+     * 
+     * The framePosition should be a monotonically increasing sample timestamp. If the sample timeline is detected to be non-continuous, the analyzer's internal state may reset to account for the jump. Some types of audio analysis are performed at a fixed block size, which may differ from the buffer sizes provided for analysis. For this reason, an invocation of analyzeAudioBuffer may cause an analysis request observer to be called zero times, one time, or many times, depending on the relationship between the input buffer size, current analyzer state, and native analysis block size. Any errors produced during analysis will be provided through the request observers. This method may block as a means of indicating backpressure to the caller. These methods are not safe to call from a realtime audio context but may be called from lower priority threads (i.e. AVAudioEngine tap callback or AudioQueue callback).
+     * 
      * @param audioBuffer The buffer containing the audio to be processed
      * @param audioFramePosition The frame position of the data in the buffer
-     * @discussion The framePosition should be a monotonically increasing sample timestamp. If the sample timeline is detected to be non-continuous, the analyzer's internal state may reset to account for the jump. Some types of audio analysis are performed at a fixed block size, which may differ from the buffer sizes provided for analysis. For this reason, an invocation of analyzeAudioBuffer may cause an analysis request observer to be called zero times, one time, or many times, depending on the relationship between the input buffer size, current analyzer state, and native analysis block size. Any errors produced during analysis will be provided through the request observers. This method may block as a means of indicating backpressure to the caller. These methods are not safe to call from a realtime audio context but may be called from lower priority threads (i.e. AVAudioEngine tap callback or AudioQueue callback).
      */
     @Generated
     @Selector("analyzeAudioBuffer:atAudioFramePosition:")
@@ -109,8 +114,9 @@ public class SNAudioStreamAnalyzer extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @brief Indicates that the audio stream has ended, and no more audio buffers will be analyzed
-     * @discussion After this method has been called, it is invalid to provide any more audio data for analysis, and any provided buffers will be ignored. This method is useful for types of analysis that may have final results to provide upon the completion of the stream.
+     * Indicates that the audio stream has ended, and no more audio buffers will be analyzed
+     * 
+     * After this method has been called, it is invalid to provide any more audio data for analysis, and any provided buffers will be ignored. This method is useful for types of analysis that may have final results to provide upon the completion of the stream.
      */
     @Generated
     @Selector("completeAnalysis")
@@ -134,7 +140,8 @@ public class SNAudioStreamAnalyzer extends NSObject {
     public native SNAudioStreamAnalyzer init();
 
     /**
-     * @brief Creates a new analyzer
+     * Creates a new analyzer
+     * 
      * @param format The format of the audio stream to be analyzed. Only PCM formats are supported.
      */
     @Generated
@@ -169,16 +176,18 @@ public class SNAudioStreamAnalyzer extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @brief Removes all requests from the analyzer
+     * Removes all requests from the analyzer
      */
     @Generated
     @Selector("removeAllRequests")
     public native void removeAllRequests();
 
     /**
-     * @brief Removes an existing analysis request from the analyzer
+     * Removes an existing analysis request from the analyzer
+     * 
+     * Requests can be removed while analysis is in progress. Once the removeRequest method returns, the previously registered observer will not receive any more callbacks.
+     * 
      * @param request An audio analysis request to be removed
-     * @discussion Requests can be removed while analysis is in progress. Once the removeRequest method returns, the previously registered observer will not receive any more callbacks.
      */
     @Generated
     @Selector("removeRequest:")

@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNLookAtConstraint
- * @abstract A SCNLookAtConstraint applies on a node's orientation so that it always look at another node.
+ * SCNLookAtConstraint
+ * 
+ * A SCNLookAtConstraint applies on a node's orientation so that it always look at another node.
  */
 @Generated
 @Library("SceneKit")
@@ -132,8 +133,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @method lookAtConstraintWithTarget:
-     * @abstract Creates and returns a SCNLookAtConstraint object with the specified target.
+     * lookAtConstraintWithTarget:
+     * 
+     * Creates and returns a SCNLookAtConstraint object with the specified target.
+     * 
      * @param target The target node to look at.
      */
     @Generated
@@ -172,9 +175,11 @@ public class SCNLookAtConstraint extends SCNConstraint {
     public static native long version_static();
 
     /**
-     * @property gimbalLockEnabled
-     * @abstract Specifies whether the receiver enables the gimbal lock. Defaults to NO.
-     * @discussion Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
+     * [@property] gimbalLockEnabled
+     * 
+     * Specifies whether the receiver enables the gimbal lock. Defaults to NO.
+     * 
+     * Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
      */
     @Generated
     @Selector("gimbalLockEnabled")
@@ -189,9 +194,11 @@ public class SCNLookAtConstraint extends SCNConstraint {
     public native SCNLookAtConstraint initWithCoder(NSCoder coder);
 
     /**
-     * @property gimbalLockEnabled
-     * @abstract Specifies whether the receiver enables the gimbal lock. Defaults to NO.
-     * @discussion Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
+     * [@property] gimbalLockEnabled
+     * 
+     * Specifies whether the receiver enables the gimbal lock. Defaults to NO.
+     * 
+     * Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
      */
     @Generated
     @Selector("setGimbalLockEnabled:")
@@ -212,8 +219,9 @@ public class SCNLookAtConstraint extends SCNConstraint {
     public native SCNNode target();
 
     /**
-     * @property targetOffset
-     * @abstract Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
+     * [@property] targetOffset
+     * 
+     * Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
      */
     @Generated
     @Selector("localFront")
@@ -221,32 +229,36 @@ public class SCNLookAtConstraint extends SCNConstraint {
     public native SCNVector3 localFront();
 
     /**
-     * @property targetOffset
-     * @abstract Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
+     * [@property] targetOffset
+     * 
+     * Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
      */
     @Generated
     @Selector("setLocalFront:")
     public native void setLocalFront(@ByValue SCNVector3 value);
 
     /**
-     * @property targetOffset
-     * @abstract Offset look at position in target space. Defaults to zero. Animatable
+     * [@property] targetOffset
+     * 
+     * Offset look at position in target space. Defaults to zero. Animatable
      */
     @Generated
     @Selector("setTargetOffset:")
     public native void setTargetOffset(@ByValue SCNVector3 value);
 
     /**
-     * @property worldUp
-     * @abstract Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
+     * [@property] worldUp
+     * 
+     * Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
      */
     @Generated
     @Selector("setWorldUp:")
     public native void setWorldUp(@ByValue SCNVector3 value);
 
     /**
-     * @property targetOffset
-     * @abstract Offset look at position in target space. Defaults to zero. Animatable
+     * [@property] targetOffset
+     * 
+     * Offset look at position in target space. Defaults to zero. Animatable
      */
     @Generated
     @Selector("targetOffset")
@@ -254,8 +266,9 @@ public class SCNLookAtConstraint extends SCNConstraint {
     public native SCNVector3 targetOffset();
 
     /**
-     * @property worldUp
-     * @abstract Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
+     * [@property] worldUp
+     * 
+     * Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
      */
     @Generated
     @Selector("worldUp")

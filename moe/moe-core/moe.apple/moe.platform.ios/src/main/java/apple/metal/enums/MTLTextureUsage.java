@@ -20,9 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLTextureUsage
- * @abstract MTLTextureUsage declares how the texture will be used over its lifetime (bitwise OR for multiple uses).
- * @discussion This information may be used by the driver to make optimization decisions.
+ * [@enum] MTLTextureUsage
+ * 
+ * MTLTextureUsage declares how the texture will be used over its lifetime (bitwise OR for multiple uses).
+ * 
+ * This information may be used by the driver to make optimization decisions.
  */
 @Generated
 public final class MTLTextureUsage {

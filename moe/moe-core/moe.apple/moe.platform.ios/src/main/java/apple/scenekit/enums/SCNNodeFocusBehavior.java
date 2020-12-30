@@ -4,8 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum SCNNodeFocusBehavior
- * @abstract Control the focus (UIFocus) behavior.
+ * [@enum] SCNNodeFocusBehavior
+ * 
+ * Control the focus (UIFocus) behavior.
  */
 @Generated
 public final class SCNNodeFocusBehavior {

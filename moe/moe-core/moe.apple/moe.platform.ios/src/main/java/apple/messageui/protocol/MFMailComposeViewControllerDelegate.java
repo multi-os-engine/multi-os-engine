@@ -28,9 +28,11 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol    MFMailComposeViewControllerDelegate
- * @abstract    Protocol for delegate callbacks to MFMailComposeViewController instances.
- * @discussion  This protocol must be implemented for delegates of MFMailComposeViewController instances.  It will
+ * [@protocol]    MFMailComposeViewControllerDelegate
+ * 
+ * Protocol for delegate callbacks to MFMailComposeViewController instances.
+ * 
+ * This protocol must be implemented for delegates of MFMailComposeViewController instances.  It will
  *              be called at various times while the user is composing, sending, saving, or canceling email composition.
  */
 @Generated
@@ -39,11 +41,14 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MFMailComposeViewControllerDelegate")
 public interface MFMailComposeViewControllerDelegate {
     /**
-     * @method     mailComposeController:didFinishWithResult:error:
-     * @abstract   Delegate callback which is called upon user's completion of email composition.
-     * @discussion This delegate callback will be called when the user completes the email composition.  How the user chose
+     * mailComposeController:didFinishWithResult:error:
+     * 
+     * Delegate callback which is called upon user's completion of email composition.
+     * 
+     * This delegate callback will be called when the user completes the email composition.  How the user chose
      *             to complete this task will be given as one of the parameters to the callback.  Upon this call, the client
      *             should remove the view associated with the controller, typically by dismissing modally.
+     * 
      * @param      controller   The MFMailComposeViewController instance which is returning the result.
      * @param      result       MFMailComposeResult indicating how the user chose to complete the composition process.
      * @param      error        NSError indicating the failure reason if failure did occur.  This will be <tt>nil</tt> if

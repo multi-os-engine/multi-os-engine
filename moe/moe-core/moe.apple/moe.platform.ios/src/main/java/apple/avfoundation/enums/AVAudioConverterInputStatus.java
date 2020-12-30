@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum		AVAudioConverterInputStatus
- * @abstract	You must return one of these codes from your AVAudioConverterInputBlock.
+ * [@enum]		AVAudioConverterInputStatus
+ * 
+ * You must return one of these codes from your AVAudioConverterInputBlock.
  */
 @Generated
 public final class AVAudioConverterInputStatus {

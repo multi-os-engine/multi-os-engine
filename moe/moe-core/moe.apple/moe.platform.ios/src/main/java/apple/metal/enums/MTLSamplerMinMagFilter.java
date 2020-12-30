@@ -20,13 +20,14 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLSamplerMinMagFilter
- * @abstract Options for filtering texels within a mip level.
+ * [@enum] MTLSamplerMinMagFilter
  * 
- * @constant MTLSamplerMinMagFilterNearest
+ * Options for filtering texels within a mip level.
+ * 
+ * [@constant] MTLSamplerMinMagFilterNearest
  * Select the single texel nearest to the sample point.
  * 
- * @constant MTLSamplerMinMagFilterLinear
+ * [@constant] MTLSamplerMinMagFilterLinear
  * Select two texels in each dimension, and interpolate linearly between them.  Not all devices support linear filtering for all formats.  Integer textures can not use linear filtering on any device, and only some devices support linear filtering of Float textures.
  */
 @Generated

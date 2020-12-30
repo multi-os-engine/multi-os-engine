@@ -181,8 +181,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     public static native long version_static();
 
     /**
-     * @property animationEvents
-     * @abstract Specifies the animation events attached to the receiver.
+     * [@property] animationEvents
+     * 
+     * Specifies the animation events attached to the receiver.
      */
     @Generated
     @Selector("animationEvents")
@@ -221,9 +222,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @property fadeInDuration
-     * @abstract Determines the receiver's fade-in duration.
-     * @discussion When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     * [@property] fadeInDuration
+     * 
+     * Determines the receiver's fade-in duration.
+     * 
+     * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
      */
     @Generated
     @Selector("fadeInDuration")
@@ -231,9 +234,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     public native double fadeInDuration();
 
     /**
-     * @property fadeOutDuration
-     * @abstract Determines the receiver's fade-out duration.
-     * @discussion When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     * [@property] fadeOutDuration
+     * 
+     * Determines the receiver's fade-out duration.
+     * 
+     * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
      */
     @Generated
     @Selector("fadeOutDuration")
@@ -282,8 +287,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
             NSDictionary<?, ?> dict);
 
     /**
-     * @property animationEvents
-     * @abstract Specifies the animation events attached to the receiver.
+     * [@property] animationEvents
+     * 
+     * Specifies the animation events attached to the receiver.
      */
     @Generated
     @Selector("setAnimationEvents:")
@@ -311,18 +317,22 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     public native void setDuration(double value);
 
     /**
-     * @property fadeInDuration
-     * @abstract Determines the receiver's fade-in duration.
-     * @discussion When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     * [@property] fadeInDuration
+     * 
+     * Determines the receiver's fade-in duration.
+     * 
+     * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
      */
     @Generated
     @Selector("setFadeInDuration:")
     public native void setFadeInDuration(@NFloat double value);
 
     /**
-     * @property fadeOutDuration
-     * @abstract Determines the receiver's fade-out duration.
-     * @discussion When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     * [@property] fadeOutDuration
+     * 
+     * Determines the receiver's fade-out duration.
+     * 
+     * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
      */
     @Generated
     @Selector("setFadeOutDuration:")
@@ -357,9 +367,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     public native void setTimingFunction(CAMediaTimingFunction value);
 
     /**
-     * @property usesSceneTimeBase
-     * @abstract Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
-     * @discussion A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
+     * [@property] usesSceneTimeBase
+     * 
+     * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
+     * 
+     * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
      */
     @Generated
     @Selector("setUsesSceneTimeBase:")
@@ -386,9 +398,11 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     public native CAMediaTimingFunction timingFunction();
 
     /**
-     * @property usesSceneTimeBase
-     * @abstract Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
-     * @discussion A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
+     * [@property] usesSceneTimeBase
+     * 
+     * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
+     * 
+     * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
      */
     @Generated
     @Selector("usesSceneTimeBase")

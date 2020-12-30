@@ -20,15 +20,15 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVCaptureAutoFocusSystem
- * @abstract
+ * [@enum] AVCaptureAutoFocusSystem
+ * 
  *    Constants indicating the autofocus system.
  * 
- * @constant AVCaptureAutoFocusSystemNone
+ * [@constant] AVCaptureAutoFocusSystemNone
  *    Indicates that autofocus is not available.
- * @constant AVCaptureAutoFocusSystemContrastDetection
+ * [@constant] AVCaptureAutoFocusSystemContrastDetection
  *    Indicates that autofocus is achieved by contrast detection. Contrast detection performs a focus scan to find the optimal position.
- * @constant AVCaptureAutoFocusSystemPhaseDetection
+ * [@constant] AVCaptureAutoFocusSystemPhaseDetection
  *    Indicates that autofocus is achieved by phase detection. Phase detection has the ability to achieve focus in many cases without a focus scan. Phase detection autofocus is typically less visually intrusive than contrast detection autofocus.
  */
 @Generated

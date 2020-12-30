@@ -27,10 +27,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXForegroundExitData
- * @abstract      A class that encapsulates cumulative application exit metrics when the application is on screen.
- * @discussion    Foreground exits are user visible terminations that, when unexpected, interrupt usage.
- * @discussion    Not all foreground exits are unexpected. See the documentation for each exit reason for more information.
+ * MXForegroundExitData
+ * 
+ * A class that encapsulates cumulative application exit metrics when the application is on screen.
+ * 
+ * Foreground exits are user visible terminations that, when unexpected, interrupt usage.
+ * 
+ * Not all foreground exits are unexpected. See the documentation for each exit reason for more information.
  */
 @Generated
 @Library("MetricKit")
@@ -83,9 +86,11 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property      cumulativeAbnormalExitCount
-     * @abstract      Cumulative number of times the application exited abnormally.
-     * @discussion    The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to abort().
+     * [@property]      cumulativeAbnormalExitCount
+     * 
+     * Cumulative number of times the application exited abnormally.
+     * 
+     * The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to abort().
      */
     @Generated
     @Selector("cumulativeAbnormalExitCount")
@@ -93,9 +98,11 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeAbnormalExitCount();
 
     /**
-     * @property      cumulativeAppWatchdogExitCount
-     * @abstract      Cumulative number of times the application was terminated because a watchdog timeout occured.
-     * @discussion    These can occur when the application took too long to launch, terminate, or respond to system events.
+     * [@property]      cumulativeAppWatchdogExitCount
+     * 
+     * Cumulative number of times the application was terminated because a watchdog timeout occured.
+     * 
+     * These can occur when the application took too long to launch, terminate, or respond to system events.
      */
     @Generated
     @Selector("cumulativeAppWatchdogExitCount")
@@ -103,8 +110,9 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeAppWatchdogExitCount();
 
     /**
-     * @property      cumulativeBadAccessExitCount
-     * @abstract      Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
+     * [@property]      cumulativeBadAccessExitCount
+     * 
+     * Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
      */
     @Generated
     @Selector("cumulativeBadAccessExitCount")
@@ -112,9 +120,11 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeBadAccessExitCount();
 
     /**
-     * @property      cumulativeIllegalInstructionExitCount
-     * @abstract      Cumulative number of times the application terminated for attempting to execute an illegal or undefined instruction.
-     * @discussion    The process may have attempted to jump to an invalid address via a misconfigured function pointer.
+     * [@property]      cumulativeIllegalInstructionExitCount
+     * 
+     * Cumulative number of times the application terminated for attempting to execute an illegal or undefined instruction.
+     * 
+     * The process may have attempted to jump to an invalid address via a misconfigured function pointer.
      */
     @Generated
     @Selector("cumulativeIllegalInstructionExitCount")
@@ -122,8 +132,9 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeIllegalInstructionExitCount();
 
     /**
-     * @property      cumulativeMemoryResourceLimitExitCount
-     * @abstract      Cumulative number of times the application was terminated for exceeding a memory consumption limit.
+     * [@property]      cumulativeMemoryResourceLimitExitCount
+     * 
+     * Cumulative number of times the application was terminated for exceeding a memory consumption limit.
      */
     @Generated
     @Selector("cumulativeMemoryResourceLimitExitCount")
@@ -131,8 +142,9 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeMemoryResourceLimitExitCount();
 
     /**
-     * @property      cumulativeNormalAppExitCount
-     * @abstract      Cumulative number of times the application exited normally, or was gracefully terminated by the system.
+     * [@property]      cumulativeNormalAppExitCount
+     * 
+     * Cumulative number of times the application exited normally, or was gracefully terminated by the system.
      */
     @Generated
     @Selector("cumulativeNormalAppExitCount")

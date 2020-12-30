@@ -222,7 +222,7 @@ public final class CoreFoundation {
     public static native CFAllocatorRef CFGetAllocator(ConstVoidPtr cf);
 
     /**
-     * @function CFDictionaryGetTypeID
+     * [@function] CFDictionaryGetTypeID
      * Returns the type identifier of all CFDictionary instances.
      */
     @Generated
@@ -231,8 +231,9 @@ public final class CoreFoundation {
     public static native long CFDictionaryGetTypeID();
 
     /**
-     * @function CFDictionaryCreate
+     * [@function] CFDictionaryCreate
      * Creates a new immutable dictionary with the given values.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the dictionary and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -310,7 +311,7 @@ public final class CoreFoundation {
      * 	the behavior is undefined. If any of the values put into the
      * 	dictionary is not one understood by one of the callback functions
      * 	the behavior when that callback function is used is undefined.
-     * @result A reference to the new immutable CFDictionary.
+     * @return A reference to the new immutable CFDictionary.
      */
     @Generated
     @CFunction
@@ -320,9 +321,10 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFDictionaryValueCallBacks valueCallBacks);
 
     /**
-     * @function CFDictionaryCreateCopy
+     * [@function] CFDictionaryCreateCopy
      * Creates a new immutable dictionary with the key-value pairs from
      * 	the given dictionary.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the dictionary and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -338,15 +340,16 @@ public final class CoreFoundation {
      * 	given dictionary. The new dictionary uses the same callbacks
      * 	as the dictionary to be copied. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
-     * @result A reference to the new immutable CFDictionary.
+     * @return A reference to the new immutable CFDictionary.
      */
     @Generated
     @CFunction
     public static native CFDictionaryRef CFDictionaryCreateCopy(CFAllocatorRef allocator, CFDictionaryRef theDict);
 
     /**
-     * @function CFDictionaryCreateMutable
+     * [@function] CFDictionaryCreateMutable
      * Creates a new mutable dictionary.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the dictionary and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -411,7 +414,7 @@ public final class CoreFoundation {
      * 	the behavior is undefined. If any of the values put into the
      * 	dictionary is not one understood by one of the callback functions
      * 	the behavior when that callback function is used is undefined.
-     * @result A reference to the new mutable CFDictionary.
+     * @return A reference to the new mutable CFDictionary.
      */
     @Generated
     @CFunction
@@ -420,9 +423,10 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFDictionaryValueCallBacks valueCallBacks);
 
     /**
-     * @function CFDictionaryCreateMutableCopy
+     * [@function] CFDictionaryCreateMutableCopy
      * Creates a new mutable dictionary with the key-value pairs from
      * 	the given dictionary.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the dictionary and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -447,7 +451,7 @@ public final class CoreFoundation {
      * 	given dictionary. The new dictionary uses the same callbacks
      * 	as the dictionary to be copied. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
-     * @result A reference to the new mutable CFDictionary.
+     * @return A reference to the new mutable CFDictionary.
      */
     @Generated
     @CFunction
@@ -455,11 +459,12 @@ public final class CoreFoundation {
             @NInt long capacity, CFDictionaryRef theDict);
 
     /**
-     * @function CFDictionaryGetCount
+     * [@function] CFDictionaryGetCount
      * Returns the number of values currently in the dictionary.
+     * 
      * @param theDict The dictionary to be queried. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
-     * @result The number of values in the dictionary.
+     * @return The number of values in the dictionary.
      */
     @Generated
     @CFunction
@@ -467,8 +472,9 @@ public final class CoreFoundation {
     public static native long CFDictionaryGetCount(CFDictionaryRef theDict);
 
     /**
-     * @function CFDictionaryGetCountOfKey
+     * [@function] CFDictionaryGetCountOfKey
      * Counts the number of times the given key occurs in the dictionary.
+     * 
      * @param theDict The dictionary to be searched. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
      * @param key The key for which to find matches in the dictionary. The
@@ -479,7 +485,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If key, or any of the keys in
      * 	the dictionary, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result Returns 1 if a matching key is used by the dictionary,
+     * @return Returns 1 if a matching key is used by the dictionary,
      * 	0 otherwise.
      */
     @Generated
@@ -488,8 +494,9 @@ public final class CoreFoundation {
     public static native long CFDictionaryGetCountOfKey(CFDictionaryRef theDict, ConstVoidPtr key);
 
     /**
-     * @function CFDictionaryGetCountOfValue
+     * [@function] CFDictionaryGetCountOfValue
      * Counts the number of times the given value occurs in the dictionary.
+     * 
      * @param theDict The dictionary to be searched. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
      * @param value The value for which to find matches in the dictionary. The
@@ -498,7 +505,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values in
      * 	the dictionary, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result The number of times the given value occurs in the dictionary.
+     * @return The number of times the given value occurs in the dictionary.
      */
     @Generated
     @CFunction
@@ -506,8 +513,9 @@ public final class CoreFoundation {
     public static native long CFDictionaryGetCountOfValue(CFDictionaryRef theDict, ConstVoidPtr value);
 
     /**
-     * @function CFDictionaryContainsKey
+     * [@function] CFDictionaryContainsKey
      * Reports whether or not the key is in the dictionary.
+     * 
      * @param theDict The dictionary to be searched. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
      * @param key The key for which to find matches in the dictionary. The
@@ -518,15 +526,16 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If key, or any of the keys in
      * 	the dictionary, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result true, if the key is in the dictionary, otherwise false.
+     * @return true, if the key is in the dictionary, otherwise false.
      */
     @Generated
     @CFunction
     public static native byte CFDictionaryContainsKey(CFDictionaryRef theDict, ConstVoidPtr key);
 
     /**
-     * @function CFDictionaryContainsValue
+     * [@function] CFDictionaryContainsValue
      * Reports whether or not the value is in the dictionary.
+     * 
      * @param theDict The dictionary to be searched. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
      * @param value The value for which to find matches in the dictionary. The
@@ -535,15 +544,16 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the dictionary, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result true, if the value is in the dictionary, otherwise false.
+     * @return true, if the value is in the dictionary, otherwise false.
      */
     @Generated
     @CFunction
     public static native byte CFDictionaryContainsValue(CFDictionaryRef theDict, ConstVoidPtr value);
 
     /**
-     * @function CFDictionaryGetValue
+     * [@function] CFDictionaryGetValue
      * Retrieves the value associated with the given key.
+     * 
      * @param theDict The dictionary to be queried. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
      * @param key The key for which to find a match in the dictionary. The
@@ -554,7 +564,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If key, or any of the keys in
      * 	the dictionary, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result The value with the given key in the dictionary, or NULL if
+     * @return The value with the given key in the dictionary, or NULL if
      * 	no key-value pair with a matching key exists. Since NULL
      * 	can be a valid value in some dictionaries, the function
      * 	CFDictionaryGetValueIfPresent() must be used to distinguish
@@ -565,8 +575,9 @@ public final class CoreFoundation {
     public static native ConstVoidPtr CFDictionaryGetValue(CFDictionaryRef theDict, ConstVoidPtr key);
 
     /**
-     * @function CFDictionaryGetValueIfPresent
+     * [@function] CFDictionaryGetValueIfPresent
      * Retrieves the value associated with the given key.
+     * 
      * @param theDict The dictionary to be queried. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
      * @param key The key for which to find a match in the dictionary. The
@@ -584,7 +595,7 @@ public final class CoreFoundation {
      * 	in which case the value from the dictionary is not returned
      * 	(but the return value of this function still indicates
      * 	whether or not the key-value pair was present).
-     * @result true, if a matching key was found, false otherwise.
+     * @return true, if a matching key was found, false otherwise.
      */
     @Generated
     @CFunction
@@ -592,8 +603,9 @@ public final class CoreFoundation {
             Ptr<ConstVoidPtr> value);
 
     /**
-     * @function CFDictionaryGetKeysAndValues
+     * [@function] CFDictionaryGetKeysAndValues
      * Fills the two buffers with the keys and values from the dictionary.
+     * 
      * @param theDict The dictionary to be queried. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
      * @param keys A C array of pointer-sized values to be filled with keys
@@ -617,8 +629,9 @@ public final class CoreFoundation {
             Ptr<ConstVoidPtr> values);
 
     /**
-     * @function CFDictionaryApplyFunction
+     * [@function] CFDictionaryApplyFunction
      * Calls a function once for each value in the dictionary.
+     * 
      * @param theDict The dictionary to be queried. If this parameter is
      * 	not a valid CFDictionary, the behavior is undefined.
      * @param applier The callback function to call once for each value in
@@ -640,8 +653,9 @@ public final class CoreFoundation {
             VoidPtr context);
 
     /**
-     * @function CFDictionaryAddValue
+     * [@function] CFDictionaryAddValue
      * Adds the key-value pair to the dictionary if no such key already exists.
+     * 
      * @param theDict The dictionary to which the value is to be added. If this
      * 	parameter is not a valid mutable CFDictionary, the behavior is
      * 	undefined.
@@ -662,8 +676,9 @@ public final class CoreFoundation {
             ConstVoidPtr value);
 
     /**
-     * @function CFDictionarySetValue
+     * [@function] CFDictionarySetValue
      * Sets the value of the key in the dictionary.
+     * 
      * @param theDict The dictionary to which the value is to be set. If this
      * 	parameter is not a valid mutable CFDictionary, the behavior is
      * 	undefined.
@@ -687,8 +702,9 @@ public final class CoreFoundation {
             ConstVoidPtr value);
 
     /**
-     * @function CFDictionaryReplaceValue
+     * [@function] CFDictionaryReplaceValue
      * Replaces the value of the key in the dictionary.
+     * 
      * @param theDict The dictionary to which the value is to be replaced. If this
      * 	parameter is not a valid mutable CFDictionary, the behavior is
      * 	undefined.
@@ -708,8 +724,9 @@ public final class CoreFoundation {
             ConstVoidPtr value);
 
     /**
-     * @function CFDictionaryRemoveValue
+     * [@function] CFDictionaryRemoveValue
      * Removes the value of the key from the dictionary.
+     * 
      * @param theDict The dictionary from which the value is to be removed. If this
      * 	parameter is not a valid mutable CFDictionary, the behavior is
      * 	undefined.
@@ -723,8 +740,9 @@ public final class CoreFoundation {
     public static native void CFDictionaryRemoveValue(CFMutableDictionaryRef theDict, ConstVoidPtr key);
 
     /**
-     * @function CFDictionaryRemoveAllValues
+     * [@function] CFDictionaryRemoveAllValues
      * Removes all the values from the dictionary, making it empty.
+     * 
      * @param theDict The dictionary from which all of the values are to be
      * 	removed. If this parameter is not a valid mutable
      * 	CFDictionary, the behavior is undefined.
@@ -815,7 +833,7 @@ public final class CoreFoundation {
             @NUInt long compareOptions);
 
     /**
-     * @function CFArrayGetTypeID
+     * [@function] CFArrayGetTypeID
      * Returns the type identifier of all CFArray instances.
      */
     @Generated
@@ -824,8 +842,9 @@ public final class CoreFoundation {
     public static native long CFArrayGetTypeID();
 
     /**
-     * @function CFArrayCreate
+     * [@function] CFArrayCreate
      * Creates a new immutable array with the given values.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -871,7 +890,7 @@ public final class CoreFoundation {
      * 	array is not one understood by one of the callback functions
      * 	the behavior when that callback function is used is
      * 	undefined.
-     * @result A reference to the new immutable CFArray.
+     * @return A reference to the new immutable CFArray.
      */
     @Generated
     @CFunction
@@ -880,8 +899,9 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFArrayCallBacks callBacks);
 
     /**
-     * @function CFArrayCreateCopy
+     * [@function] CFArrayCreateCopy
      * Creates a new immutable array with the values from the given array.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -895,15 +915,16 @@ public final class CoreFoundation {
      * 	be the same as the given array. The new array uses the same
      * 	callbacks as the array to be copied. If this parameter is
      * 	not a valid CFArray, the behavior is undefined.
-     * @result A reference to the new immutable CFArray.
+     * @return A reference to the new immutable CFArray.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CFArrayCreateCopy(CFAllocatorRef allocator, CFArrayRef theArray);
 
     /**
-     * @function CFArrayCreateMutable
+     * [@function] CFArrayCreateMutable
      * Creates a new empty mutable array.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -940,7 +961,7 @@ public final class CoreFoundation {
      * 	array is not one understood by one of the callback functions
      * 	the behavior when that callback function is used is
      * 	undefined.
-     * @result A reference to the new mutable CFArray.
+     * @return A reference to the new mutable CFArray.
      */
     @Generated
     @CFunction
@@ -948,8 +969,9 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFArrayCallBacks callBacks);
 
     /**
-     * @function CFArrayCreateMutableCopy
+     * [@function] CFArrayCreateMutableCopy
      * Creates a new mutable array with the values from the given array.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -972,7 +994,7 @@ public final class CoreFoundation {
      * 	be the same as the given array. The new array uses the same
      * 	callbacks as the array to be copied. If this parameter is
      * 	not a valid CFArray, the behavior is undefined.
-     * @result A reference to the new mutable CFArray.
+     * @return A reference to the new mutable CFArray.
      */
     @Generated
     @CFunction
@@ -980,11 +1002,12 @@ public final class CoreFoundation {
             CFArrayRef theArray);
 
     /**
-     * @function CFArrayGetCount
+     * [@function] CFArrayGetCount
      * Returns the number of values currently in the array.
+     * 
      * @param theArray The array to be queried. If this parameter is not a valid
      * 	CFArray, the behavior is undefined.
-     * @result The number of values in the array.
+     * @return The number of values in the array.
      */
     @Generated
     @CFunction
@@ -992,8 +1015,9 @@ public final class CoreFoundation {
     public static native long CFArrayGetCount(CFArrayRef theArray);
 
     /**
-     * @function CFArrayGetCountOfValue
+     * [@function] CFArrayGetCountOfValue
      * Counts the number of times the given value occurs in the array.
+     * 
      * @param theArray The array to be searched. If this parameter is not a
      * 	valid CFArray, the behavior is undefined.
      * @param range The range within the array to search. If the range
@@ -1008,7 +1032,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the array, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result The number of times the given value occurs in the array,
+     * @return The number of times the given value occurs in the array,
      * 	within the specified range.
      */
     @Generated
@@ -1017,8 +1041,9 @@ public final class CoreFoundation {
     public static native long CFArrayGetCountOfValue(CFArrayRef theArray, @ByValue CFRange range, ConstVoidPtr value);
 
     /**
-     * @function CFArrayContainsValue
+     * [@function] CFArrayContainsValue
      * Reports whether or not the value is in the array.
+     * 
      * @param theArray The array to be searched. If this parameter is not a
      * 	valid CFArray, the behavior is undefined.
      * @param range The range within the array to search. If the range
@@ -1033,7 +1058,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the array, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result true, if the value is in the specified range of the array,
+     * @return true, if the value is in the specified range of the array,
      * 	otherwise false.
      */
     @Generated
@@ -1041,23 +1066,25 @@ public final class CoreFoundation {
     public static native byte CFArrayContainsValue(CFArrayRef theArray, @ByValue CFRange range, ConstVoidPtr value);
 
     /**
-     * @function CFArrayGetValueAtIndex
+     * [@function] CFArrayGetValueAtIndex
      * Retrieves the value at the given index.
+     * 
      * @param theArray The array to be queried. If this parameter is not a
      * 	valid CFArray, the behavior is undefined.
      * @param idx The index of the value to retrieve. If the index is
      * 	outside the index space of the array (0 to N-1 inclusive,
      * 	where N is the count of the array), the behavior is
      * 	undefined.
-     * @result The value with the given index in the array.
+     * @return The value with the given index in the array.
      */
     @Generated
     @CFunction
     public static native ConstVoidPtr CFArrayGetValueAtIndex(CFArrayRef theArray, @NInt long idx);
 
     /**
-     * @function CFArrayGetValues
+     * [@function] CFArrayGetValues
      * Fills the buffer with values from the array.
+     * 
      * @param theArray The array to be queried. If this parameter is not a
      * 	valid CFArray, the behavior is undefined.
      * @param range The range of values within the array to retrieve. If
@@ -1078,8 +1105,9 @@ public final class CoreFoundation {
     public static native void CFArrayGetValues(CFArrayRef theArray, @ByValue CFRange range, Ptr<ConstVoidPtr> values);
 
     /**
-     * @function CFArrayApplyFunction
+     * [@function] CFArrayApplyFunction
      * Calls a function once for each value in the array.
+     * 
      * @param theArray The array to be operated upon. If this parameter is not
      * 	a valid CFArray, the behavior is undefined.
      * @param range The range of values within the array to which to apply
@@ -1107,8 +1135,9 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFArrayApplyFunction") Function_CFArrayApplyFunction applier, VoidPtr context);
 
     /**
-     * @function CFArrayGetFirstIndexOfValue
+     * [@function] CFArrayGetFirstIndexOfValue
      * Searches the array for the value.
+     * 
      * @param theArray The array to be searched. If this parameter is not a
      * 	valid CFArray, the behavior is undefined.
      * @param range The range within the array to search. If the range
@@ -1125,7 +1154,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the array, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result The lowest index of the matching values in the range, or
+     * @return The lowest index of the matching values in the range, or
      * 	kCFNotFound if no value in the range matched.
      */
     @Generated
@@ -1135,8 +1164,9 @@ public final class CoreFoundation {
             ConstVoidPtr value);
 
     /**
-     * @function CFArrayGetLastIndexOfValue
+     * [@function] CFArrayGetLastIndexOfValue
      * Searches the array for the value.
+     * 
      * @param theArray The array to be searched. If this parameter is not a
      * 	valid CFArray, the behavior is undefined.
      * @param range The range within the array to search. If the range
@@ -1153,7 +1183,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the array, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result The highest index of the matching values in the range, or
+     * @return The highest index of the matching values in the range, or
      * 	kCFNotFound if no value in the range matched.
      */
     @Generated
@@ -1163,8 +1193,9 @@ public final class CoreFoundation {
             ConstVoidPtr value);
 
     /**
-     * @function CFArrayBSearchValues
+     * [@function] CFArrayBSearchValues
      * Searches the array for the value using a binary search algorithm.
+     * 
      * @param theArray The array to be searched. If this parameter is not a
      * 	valid CFArray, the behavior is undefined. If the array is
      * 	not sorted from least to greatest according to the
@@ -1190,7 +1221,7 @@ public final class CoreFoundation {
      * 	otherwise unused by this function. If the context is not
      * 	what is expected by the comparator function, the behavior is
      * 	undefined.
-     * @result The return value is either 1) the index of a value that
+     * @return The return value is either 1) the index of a value that
      * 	matched, if the target value matches one or more in the
      * 	range, 2) greater than or equal to the end point of the
      * 	range, if the value is greater than all the values in the
@@ -1205,8 +1236,9 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFArrayBSearchValues") Function_CFArrayBSearchValues comparator, VoidPtr context);
 
     /**
-     * @function CFArrayAppendValue
+     * [@function] CFArrayAppendValue
      * Adds the value to the array giving it a new largest index.
+     * 
      * @param theArray The array to which the value is to be added. If this
      * 	parameter is not a valid mutable CFArray, the behavior is
      * 	undefined.
@@ -1222,8 +1254,9 @@ public final class CoreFoundation {
     public static native void CFArrayAppendValue(CFMutableArrayRef theArray, ConstVoidPtr value);
 
     /**
-     * @function CFArrayInsertValueAtIndex
+     * [@function] CFArrayInsertValueAtIndex
      * Adds the value to the array, giving it the given index.
+     * 
      * @param theArray The array to which the value is to be added. If this
      * 	parameter is not a valid mutable CFArray, the behavior is
      * 	undefined.
@@ -1244,8 +1277,9 @@ public final class CoreFoundation {
     public static native void CFArrayInsertValueAtIndex(CFMutableArrayRef theArray, @NInt long idx, ConstVoidPtr value);
 
     /**
-     * @function CFArraySetValueAtIndex
+     * [@function] CFArraySetValueAtIndex
      * Changes the value with the given index in the array.
+     * 
      * @param theArray The array in which the value is to be changed. If this
      * 	parameter is not a valid mutable CFArray, the behavior is
      * 	undefined.
@@ -1266,8 +1300,9 @@ public final class CoreFoundation {
     public static native void CFArraySetValueAtIndex(CFMutableArrayRef theArray, @NInt long idx, ConstVoidPtr value);
 
     /**
-     * @function CFArrayRemoveValueAtIndex
+     * [@function] CFArrayRemoveValueAtIndex
      * Removes the value with the given index from the array.
+     * 
      * @param theArray The array from which the value is to be removed. If
      * 	this parameter is not a valid mutable CFArray, the behavior
      * 	is undefined.
@@ -1281,8 +1316,9 @@ public final class CoreFoundation {
     public static native void CFArrayRemoveValueAtIndex(CFMutableArrayRef theArray, @NInt long idx);
 
     /**
-     * @function CFArrayRemoveAllValues
+     * [@function] CFArrayRemoveAllValues
      * Removes all the values from the array, making it empty.
+     * 
      * @param theArray The array from which all of the values are to be
      * 	removed. If this parameter is not a valid mutable CFArray,
      * 	the behavior is undefined.
@@ -1292,8 +1328,9 @@ public final class CoreFoundation {
     public static native void CFArrayRemoveAllValues(CFMutableArrayRef theArray);
 
     /**
-     * @function CFArrayReplaceValues
+     * [@function] CFArrayReplaceValues
      * Replaces a range of values in the array.
+     * 
      * @param theArray The array from which all of the values are to be
      * 	removed. If this parameter is not a valid mutable CFArray,
      * 	the behavior is undefined.
@@ -1328,8 +1365,9 @@ public final class CoreFoundation {
             Ptr<ConstVoidPtr> newValues, @NInt long newCount);
 
     /**
-     * @function CFArrayExchangeValuesAtIndices
+     * [@function] CFArrayExchangeValuesAtIndices
      * Exchanges the values at two indices of the array.
+     * 
      * @param theArray The array of which the values are to be swapped. If
      * 	this parameter is not a valid mutable CFArray, the behavior
      * 	is undefined.
@@ -1348,8 +1386,9 @@ public final class CoreFoundation {
             @NInt long idx2);
 
     /**
-     * @function CFArraySortValues
+     * [@function] CFArraySortValues
      * Sorts the values in the array using the given comparison function.
+     * 
      * @param theArray The array whose values are to be sorted. If this
      * 	parameter is not a valid mutable CFArray, the behavior is
      * 	undefined.
@@ -1380,8 +1419,9 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFArraySortValues") Function_CFArraySortValues comparator, VoidPtr context);
 
     /**
-     * @function CFArrayAppendArray
+     * [@function] CFArrayAppendArray
      * Adds the values from an array to another array.
+     * 
      * @param theArray The array to which values from the otherArray are to
      * 	be added. If this parameter is not a valid mutable CFArray,
      * 	the behavior is undefined.
@@ -1409,7 +1449,7 @@ public final class CoreFoundation {
             @ByValue CFRange otherRange);
 
     /**
-     * @function CFCharacterSetGetTypeID
+     * [@function] CFCharacterSetGetTypeID
      * Returns the type identifier of all CFCharacterSet instances.
      */
     @Generated
@@ -1418,13 +1458,14 @@ public final class CoreFoundation {
     public static native long CFCharacterSetGetTypeID();
 
     /**
-     * @function CFCharacterSetGetPredefined
+     * [@function] CFCharacterSetGetPredefined
      * Returns a predefined CFCharacterSet instance.
+     * 
      * @param theSetIdentifier The CFCharacterSetPredefinedSet selector
      *                which specifies the predefined character set.  If the
      *                value is not in CFCharacterSetPredefinedSet, the behavior
      *                is undefined.
-     * @result A reference to the predefined immutable CFCharacterSet.
+     * @return A reference to the predefined immutable CFCharacterSet.
      *                This instance is owned by CF.
      */
     @Generated
@@ -1432,8 +1473,9 @@ public final class CoreFoundation {
     public static native CFCharacterSetRef CFCharacterSetGetPredefined(@NInt long theSetIdentifier);
 
     /**
-     * @function CFCharacterSetCreateWithCharactersInRange
+     * [@function] CFCharacterSetCreateWithCharactersInRange
      * Creates a new immutable character set with the values from the given range.
+     * 
      * @param alloc The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -1445,7 +1487,7 @@ public final class CoreFoundation {
      *                valid character point range is from 0x00000 to 0x10FFFF.
      *                If the range is outside of the valid Unicode character
      *                point, the behavior is undefined.
-     * @result A reference to the new immutable CFCharacterSet.
+     * @return A reference to the new immutable CFCharacterSet.
      */
     @Generated
     @CFunction
@@ -1453,8 +1495,9 @@ public final class CoreFoundation {
             @ByValue CFRange theRange);
 
     /**
-     * @function CFCharacterSetCreateWithCharactersInString
+     * [@function] CFCharacterSetCreateWithCharactersInString
      * Creates a new immutable character set with the values in the given string.
+     * 
      * @param alloc The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -1464,7 +1507,7 @@ public final class CoreFoundation {
      *                the Unicode characters the character set is filled with.
      *                If this parameter is not a valid CFString, the behavior
      *                is undefined.
-     *        @result A reference to the new immutable CFCharacterSet.
+     *        @return A reference to the new immutable CFCharacterSet.
      */
     @Generated
     @CFunction
@@ -1472,8 +1515,9 @@ public final class CoreFoundation {
             CFStringRef theString);
 
     /**
-     * @function CFCharacterSetCreateWithBitmapRepresentation
+     * [@function] CFCharacterSetCreateWithBitmapRepresentation
      * Creates a new immutable character set with the bitmap representtion in the given data.
+     * 
      * @param alloc The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -1494,7 +1538,7 @@ public final class CoreFoundation {
      *                this parameter is not a valid CFData or it contains a
      *                Plane index byte outside of the valid Plane range
      *                (1 to 16), the behavior is undefined.
-     *        @result A reference to the new immutable CFCharacterSet.
+     *        @return A reference to the new immutable CFCharacterSet.
      */
     @Generated
     @CFunction
@@ -1502,8 +1546,9 @@ public final class CoreFoundation {
             CFDataRef theData);
 
     /**
-     * @function CFCharacterSetCreateInvertedSet
+     * [@function] CFCharacterSetCreateInvertedSet
      * Creates a new immutable character set that is the invert of the specified character set.
+     * 
      * @param alloc The CFAllocator which should be used to allocate
      * 		memory for the array and its storage for values. This
      * 		parameter may be NULL in which case the current default
@@ -1512,7 +1557,7 @@ public final class CoreFoundation {
      * @param theSet The CFCharacterSet which is to be inverted.  If this
      *                		parameter is not a valid CFCharacterSet, the behavior is
      *              		undefined.
-     * @result A reference to the new immutable CFCharacterSet.
+     * @return A reference to the new immutable CFCharacterSet.
      */
     @Generated
     @CFunction
@@ -1520,8 +1565,9 @@ public final class CoreFoundation {
             CFCharacterSetRef theSet);
 
     /**
-     * @function CFCharacterSetIsSupersetOfSet
+     * [@function] CFCharacterSetIsSupersetOfSet
      * Reports whether or not the character set is a superset of the character set specified as the second parameter.
+     * 
      * @param theSet  The character set to be checked for the membership of theOtherSet.
      * 	If this parameter is not a valid CFCharacterSet, the behavior is undefined.
      * @param theOtherset  The character set to be checked whether or not it is a subset of theSet.
@@ -1532,8 +1578,9 @@ public final class CoreFoundation {
     public static native byte CFCharacterSetIsSupersetOfSet(CFCharacterSetRef theSet, CFCharacterSetRef theOtherset);
 
     /**
-     * @function CFCharacterSetHasMemberInPlane
+     * [@function] CFCharacterSetHasMemberInPlane
      * Reports whether or not the character set contains at least one member character in the specified plane.
+     * 
      * @param theSet  The character set to be checked for the membership.  If this
      * 	parameter is not a valid CFCharacterSet, the behavior is undefined.
      * @param thePlane  The plane number to be checked for the membership.
@@ -1545,22 +1592,24 @@ public final class CoreFoundation {
     public static native byte CFCharacterSetHasMemberInPlane(CFCharacterSetRef theSet, @NInt long thePlane);
 
     /**
-     * @function CFCharacterSetCreateMutable
+     * [@function] CFCharacterSetCreateMutable
      * Creates a new empty mutable character set.
+     * 
      * @param alloc The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
      * 	CFAllocator is used. If this reference is not a valid
      * 	CFAllocator, the behavior is undefined.
-     * @result A reference to the new mutable CFCharacterSet.
+     * @return A reference to the new mutable CFCharacterSet.
      */
     @Generated
     @CFunction
     public static native CFMutableCharacterSetRef CFCharacterSetCreateMutable(CFAllocatorRef alloc);
 
     /**
-     * @function CFCharacterSetCreateCopy
+     * [@function] CFCharacterSetCreateCopy
      * Creates a new character set with the values from the given character set.  This function tries to compact the backing store where applicable.
+     * 
      * @param alloc The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -1569,15 +1618,16 @@ public final class CoreFoundation {
      * @param theSet The CFCharacterSet which is to be copied.  If this
      *                parameter is not a valid CFCharacterSet, the behavior is
      *                undefined.
-     * @result A reference to the new CFCharacterSet.
+     * @return A reference to the new CFCharacterSet.
      */
     @Generated
     @CFunction
     public static native CFCharacterSetRef CFCharacterSetCreateCopy(CFAllocatorRef alloc, CFCharacterSetRef theSet);
 
     /**
-     * @function CFCharacterSetCreateMutableCopy
+     * [@function] CFCharacterSetCreateMutableCopy
      * Creates a new mutable character set with the values from the given character set.
+     * 
      * @param alloc The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -1586,7 +1636,7 @@ public final class CoreFoundation {
      * @param theSet The CFCharacterSet which is to be copied.  If this
      *                parameter is not a valid CFCharacterSet, the behavior is
      *                undefined.
-     * @result A reference to the new mutable CFCharacterSet.
+     * @return A reference to the new mutable CFCharacterSet.
      */
     @Generated
     @CFunction
@@ -1594,36 +1644,39 @@ public final class CoreFoundation {
             CFCharacterSetRef theSet);
 
     /**
-     * @function CFCharacterSetIsCharacterMember
+     * [@function] CFCharacterSetIsCharacterMember
      * Reports whether or not the Unicode character is in the character set.
+     * 
      * @param theSet The character set to be searched. If this parameter
      *                is not a valid CFCharacterSet, the behavior is undefined.
      * @param theChar The Unicode character for which to test against the
      *                character set.  Note that this function takes 16-bit Unicode
      *                character value; hence, it does not support access to the
      *                non-BMP planes.  
-     *        @result true, if the value is in the character set, otherwise false.
+     *        @return true, if the value is in the character set, otherwise false.
      */
     @Generated
     @CFunction
     public static native byte CFCharacterSetIsCharacterMember(CFCharacterSetRef theSet, char theChar);
 
     /**
-     * @function CFCharacterSetIsLongCharacterMember
+     * [@function] CFCharacterSetIsLongCharacterMember
      * Reports whether or not the UTF-32 character is in the character set.
+     * 
      * @param theSet The character set to be searched. If this parameter
      *               		 is not a valid CFCharacterSet, the behavior is undefined.
      * @param theChar The UTF-32 character for which to test against the
      * 		character set.
-     *        @result true, if the value is in the character set, otherwise false.
+     *        @return true, if the value is in the character set, otherwise false.
      */
     @Generated
     @CFunction
     public static native byte CFCharacterSetIsLongCharacterMember(CFCharacterSetRef theSet, int theChar);
 
     /**
-     * @function CFCharacterSetCreateBitmapRepresentation
+     * [@function] CFCharacterSetCreateBitmapRepresentation
      * Creates a new immutable data with the bitmap representation from the given character set.
+     * 
      * @param alloc The CFAllocator which should be used to allocate
      * 	memory for the array and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -1635,7 +1688,7 @@ public final class CoreFoundation {
      *                detailed discussion of the bitmap representation format.
      *                If this parameter is not a valid CFCharacterSet, the
      *                behavior is undefined.
-     * @result A reference to the new immutable CFData.
+     * @return A reference to the new immutable CFData.
      */
     @Generated
     @CFunction
@@ -1643,8 +1696,9 @@ public final class CoreFoundation {
             CFCharacterSetRef theSet);
 
     /**
-     * @function CFCharacterSetAddCharactersInRange
+     * [@function] CFCharacterSetAddCharactersInRange
      * Adds the given range to the charaacter set.
+     * 
      * @param theSet The character set to which the range is to be added.
      *                If this parameter is not a valid mutable CFCharacterSet,
      *                the behavior is undefined.
@@ -1660,8 +1714,9 @@ public final class CoreFoundation {
             @ByValue CFRange theRange);
 
     /**
-     * @function CFCharacterSetRemoveCharactersInRange
+     * [@function] CFCharacterSetRemoveCharactersInRange
      * Removes the given range from the charaacter set.
+     * 
      * @param theSet The character set from which the range is to be
      *                removed.  If this parameter is not a valid mutable
      *                CFCharacterSet, the behavior is undefined.
@@ -1677,8 +1732,9 @@ public final class CoreFoundation {
             @ByValue CFRange theRange);
 
     /**
-     * @function CFCharacterSetAddCharactersInString
+     * [@function] CFCharacterSetAddCharactersInString
      * Adds the characters in the given string to the charaacter set.
+     * 
      * @param theSet The character set to which the characters in the
      *                string are to be added.  If this parameter is not a
      *                valid mutable CFCharacterSet, the behavior is undefined.
@@ -1692,8 +1748,9 @@ public final class CoreFoundation {
             CFStringRef theString);
 
     /**
-     * @function CFCharacterSetRemoveCharactersInString
+     * [@function] CFCharacterSetRemoveCharactersInString
      * Removes the characters in the given string from the charaacter set.
+     * 
      * @param theSet The character set from which the characters in the
      *                string are to be remove.  If this parameter is not a
      *                valid mutable CFCharacterSet, the behavior is undefined.
@@ -1707,8 +1764,9 @@ public final class CoreFoundation {
             CFStringRef theString);
 
     /**
-     * @function CFCharacterSetUnion
+     * [@function] CFCharacterSetUnion
      * Forms the union with the given character set.
+     * 
      * @param theSet The destination character set into which the
      *                union of the two character sets is stored.  If this
      *                parameter is not a valid mutable CFCharacterSet, the
@@ -1722,8 +1780,9 @@ public final class CoreFoundation {
     public static native void CFCharacterSetUnion(CFMutableCharacterSetRef theSet, CFCharacterSetRef theOtherSet);
 
     /**
-     * @function CFCharacterSetIntersect
+     * [@function] CFCharacterSetIntersect
      * Forms the intersection with the given character set.
+     * 
      * @param theSet The destination character set into which the
      *                intersection of the two character sets is stored.
      *                If this parameter is not a valid mutable CFCharacterSet,
@@ -1737,8 +1796,9 @@ public final class CoreFoundation {
     public static native void CFCharacterSetIntersect(CFMutableCharacterSetRef theSet, CFCharacterSetRef theOtherSet);
 
     /**
-     * @function CFCharacterSetInvert
+     * [@function] CFCharacterSetInvert
      * Inverts the content of the given character set.
+     * 
      * @param theSet The character set to be inverted.
      *                If this parameter is not a valid mutable CFCharacterSet,
      *                the behavior is undefined.
@@ -2356,8 +2416,9 @@ public final class CoreFoundation {
     public static native byte CFStringHasSuffix(CFStringRef theString, CFStringRef suffix);
 
     /**
-     * @function CFStringGetRangeOfComposedCharactersAtIndex
+     * [@function] CFStringGetRangeOfComposedCharactersAtIndex
      * Returns the range of the composed character sequence at the specified index.
+     * 
      * @param theString The CFString which is to be searched.  If this
      *                		parameter is not a valid CFString, the behavior is
      *              		undefined.
@@ -2366,7 +2427,7 @@ public final class CoreFoundation {
      * 		outside the index space of the string (0 to N-1 inclusive,
      * 		where N is the length of the string), the behavior is
      * 		undefined.
-     * @result The range of the composed character sequence.
+     * @return The range of the composed character sequence.
      */
     @Generated
     @CFunction
@@ -2375,8 +2436,9 @@ public final class CoreFoundation {
             @NInt long theIndex);
 
     /**
-     * @function CFStringFindCharacterFromSet
+     * [@function] CFStringFindCharacterFromSet
      * Query the range of the first character contained in the specified character set.
+     * 
      * @param theString The CFString which is to be searched.  If this
      *                		parameter is not a valid CFString, the behavior is
      *              		undefined.
@@ -2400,7 +2462,7 @@ public final class CoreFoundation {
      * 		of this range can be more than 1, if for instance the 
      * 		result is a composed character. If a pointer to an invalid
      * 		memory is specified, the behavior is undefined.
-     * @result true, if at least a character which is a member of the character
+     * @return true, if at least a character which is a member of the character
      * 		set is found and result is filled, otherwise, false.
      */
     @Generated
@@ -2433,8 +2495,9 @@ public final class CoreFoundation {
             NIntPtr parBeginIndex, NIntPtr parEndIndex, NIntPtr contentsEndIndex);
 
     /**
-     * @function CFStringGetHyphenationLocationBeforeIndex
+     * [@function] CFStringGetHyphenationLocationBeforeIndex
      * Retrieve the first potential hyphenation location found before the specified location.
+     * 
      * @param string The CFString which is to be hyphenated.  If this
      *                		parameter is not a valid CFString, the behavior is
      *              		undefined.
@@ -2454,7 +2517,7 @@ public final class CoreFoundation {
      * 		to test for availability of hyphenation data.
      * @param character The suggested hyphen character to insert.  Pass NULL if you
      * 		do not need this information.
-     * @result an index in the string where it is appropriate to insert a hyphen, if
+     * @return an index in the string where it is appropriate to insert a hyphen, if
      * 		one exists; else kCFNotFound
      */
     @Generated
@@ -2612,9 +2675,10 @@ public final class CoreFoundation {
     public static native void CFStringCapitalize(CFMutableStringRef theString, CFLocaleRef locale);
 
     /**
-     * @function CFStringNormalize
+     * [@function] CFStringNormalize
      * Normalizes the string into the specified form as described in
      * Unicode Technical Report #15.
+     * 
      * @param theString  The string which is to be normalized.  If this
      * 	parameter is not a valid mutable CFString, the behavior is
      * 	undefined.
@@ -2627,7 +2691,7 @@ public final class CoreFoundation {
     public static native void CFStringNormalize(CFMutableStringRef theString, @NInt long theForm);
 
     /**
-     * @function CFStringFold
+     * [@function] CFStringFold
      * Folds the string into the form specified by the flags.
      * 	Character foldings are operations that convert any of a set of characters
      * 	sharing similar semantics into a single representative from that set.
@@ -2636,6 +2700,7 @@ public final class CoreFoundation {
      * 	Note that folding does not include normalization, so it is necessary
      * 	to use CFStringNormalize in addition to CFStringFold in order to obtain
      * 	the effect of kCFCompareNonliteral.
+     * 
      * @param theString  The string which is to be folded.  If this parameter is not
      * 	a valid mutable CFString, the behavior is undefined.
      * @param theFlags  The equivalency flags which describes the character folding form.
@@ -2792,7 +2857,7 @@ public final class CoreFoundation {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String cStr);
 
     /**
-     * @function CFErrorGetTypeID
+     * [@function] CFErrorGetTypeID
      *     Returns the type identifier of all CFError instances.
      */
     @Generated
@@ -2801,15 +2866,17 @@ public final class CoreFoundation {
     public static native long CFErrorGetTypeID();
 
     /**
-     * @function CFErrorCreate
-     * @abstract Creates a new CFError.
+     * [@function] CFErrorCreate
+     * 
+     * Creates a new CFError.
+     * 
      * @param allocator The CFAllocator which should be used to allocate memory for the error. This parameter may be NULL in which case the 
      *     current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior is undefined.
      * @param domain A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid CFString, the behavior is undefined.
      * @param code A CFIndex identifying the error code. The code is interpreted within the context of the error domain.
      * @param userInfo A CFDictionary created with kCFCopyStringDictionaryKeyCallBacks and kCFTypeDictionaryValueCallBacks. It will be copied with CFDictionaryCreateCopy(). 
      *     If no userInfo dictionary is desired, NULL may be passed in as a convenience, in which case an empty userInfo dictionary will be assigned.
-     * @result A reference to the new CFError.
+     * @return A reference to the new CFError.
      */
     @Generated
     @CFunction
@@ -2817,8 +2884,10 @@ public final class CoreFoundation {
             CFDictionaryRef userInfo);
 
     /**
-     * @function CFErrorCreateWithUserInfoKeysAndValues
-     * @abstract Creates a new CFError without having to create an intermediate userInfo dictionary.
+     * [@function] CFErrorCreateWithUserInfoKeysAndValues
+     * 
+     * Creates a new CFError without having to create an intermediate userInfo dictionary.
+     * 
      * @param allocator The CFAllocator which should be used to allocate memory for the error. This parameter may be NULL in which case the 
      *     current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior is undefined.
      * @param domain A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid CFString, the behavior is undefined.
@@ -2826,7 +2895,7 @@ public final class CoreFoundation {
      * @param userInfoKeys An array of numUserInfoValues CFStrings used as keys in creating the userInfo dictionary. NULL is valid only if numUserInfoValues is 0.
      * @param userInfoValues An array of numUserInfoValues CF types used as values in creating the userInfo dictionary.  NULL is valid only if numUserInfoValues is 0.
      * @param numUserInfoValues CFIndex representing the number of keys and values in the userInfoKeys and userInfoValues arrays.
-     * @result A reference to the new CFError. numUserInfoValues CF types are gathered from each of userInfoKeys and userInfoValues to create the userInfo dictionary.
+     * @return A reference to the new CFError. numUserInfoValues CF types are gathered from each of userInfoKeys and userInfoValues to create the userInfo dictionary.
      */
     @Generated
     @CFunction
@@ -2835,20 +2904,24 @@ public final class CoreFoundation {
             @NInt long numUserInfoValues);
 
     /**
-     * @function CFErrorGetDomain
-     * @abstract Returns the error domain the CFError was created with.
+     * [@function] CFErrorGetDomain
+     * 
+     * Returns the error domain the CFError was created with.
+     * 
      * @param err The CFError whose error domain is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @result The error domain of the CFError. Since this is a "Get" function, the caller shouldn't CFRelease the return value.
+     * @return The error domain of the CFError. Since this is a "Get" function, the caller shouldn't CFRelease the return value.
      */
     @Generated
     @CFunction
     public static native CFStringRef CFErrorGetDomain(CFErrorRef err);
 
     /**
-     * @function CFErrorGetCode
-     * @abstract Returns the error code the CFError was created with.
+     * [@function] CFErrorGetCode
+     * 
+     * Returns the error code the CFError was created with.
+     * 
      * @param err The CFError whose error code is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @result The error code of the CFError (not an error return for the current call).
+     * @return The error code of the CFError (not an error return for the current call).
      */
     @Generated
     @CFunction
@@ -2856,53 +2929,65 @@ public final class CoreFoundation {
     public static native long CFErrorGetCode(CFErrorRef err);
 
     /**
-     * @function CFErrorCopyUserInfo
-     *        @abstract Returns CFError userInfo dictionary.
-     * @discussion Returns a dictionary containing the same keys and values as in the userInfo dictionary the CFError was created with. Returns an empty dictionary if NULL was supplied to CFErrorCreate().
+     * [@function] CFErrorCopyUserInfo
+     * 
+     * Returns CFError userInfo dictionary.
+     * 
+     * Returns a dictionary containing the same keys and values as in the userInfo dictionary the CFError was created with. Returns an empty dictionary if NULL was supplied to CFErrorCreate().
+     * 
      * @param err The CFError whose error user info is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @result The user info of the CFError.
+     * @return The user info of the CFError.
      */
     @Generated
     @CFunction
     public static native CFDictionaryRef CFErrorCopyUserInfo(CFErrorRef err);
 
     /**
-     * @function CFErrorCopyDescription
-     * @abstract Returns a human-presentable description for the error. CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedDescriptionKey at the time of CFError creation.
-     *        @discussion This is a complete sentence or two which says what failed and why it failed. Please refer to header comments for -[NSError localizedDescription] for details on the steps used to compute this; but roughly:
+     * [@function] CFErrorCopyDescription
+     * 
+     * Returns a human-presentable description for the error. CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedDescriptionKey at the time of CFError creation.
+     * 
+     * This is a complete sentence or two which says what failed and why it failed. Please refer to header comments for -[NSError localizedDescription] for details on the steps used to compute this; but roughly:
      *            - Use value of kCFErrorLocalizedDescriptionKey as-is if provided.
      *            - Use value of kCFErrorLocalizedFailureKey if provided, optionally followed by kCFErrorLocalizedFailureReasonKey if available.
      *            - Use value of kCFErrorLocalizedFailureReasonKey, combining with a generic failure message such as: "Operation code not be completed. " + kCFErrorLocalizedFailureReasonKey.
      *            - If all of the above fail, generate a semi-user presentable string from kCFErrorDescriptionKey, the domain, and code. Something like: "Operation could not be completed. Error domain/code occurred. " or "Operation could not be completed. " + kCFErrorDescriptionKey + " (Error domain/code)"
      *            Toll-free bridged NSError instances might provide additional behaviors for manufacturing a description string.  Do not count on the exact contents or format of the returned string, it might change.
+     * 
      * @param err The CFError whose description is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @result A CFString with human-presentable description of the CFError. Never NULL.
+     * @return A CFString with human-presentable description of the CFError. Never NULL.
      */
     @Generated
     @CFunction
     public static native CFStringRef CFErrorCopyDescription(CFErrorRef err);
 
     /**
-     * @function CFErrorCopyFailureReason
-     *        @abstract Returns a human-presentable failure reason for the error.  May return NULL.  CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedFailureReasonKey at the time of CFError creation.
-     *        @discussion This is a complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the description (but as a complete sentence, which makes localization easier). By default this looks for kCFErrorLocalizedFailureReasonKey in the user info. Toll-free bridged NSError instances might provide additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
+     * [@function] CFErrorCopyFailureReason
+     * 
+     * Returns a human-presentable failure reason for the error.  May return NULL.  CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedFailureReasonKey at the time of CFError creation.
+     * 
+     * This is a complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the description (but as a complete sentence, which makes localization easier). By default this looks for kCFErrorLocalizedFailureReasonKey in the user info. Toll-free bridged NSError instances might provide additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
      *            Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have enough space."
      *            Corresponding FailureReason: "The volume 'MyDisk' doesn't have enough space."
+     * 
      * @param err The CFError whose failure reason is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @result A CFString with the localized, end-user presentable failure reason of the CFError, or NULL. 
+     * @return A CFString with the localized, end-user presentable failure reason of the CFError, or NULL. 
      */
     @Generated
     @CFunction
     public static native CFStringRef CFErrorCopyFailureReason(CFErrorRef err);
 
     /**
-     * @function CFErrorCopyRecoverySuggestion
-     *        @abstract Returns a human presentable recovery suggestion for the error.  May return NULL.  CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedRecoverySuggestionKey at the time of CFError creation.
-     *        @discussion This is the string that can be displayed as the "informative" (aka "secondary") message on an alert panel. By default this looks for kCFErrorLocalizedRecoverySuggestionKey in the user info. Toll-free bridged NSError instances might provide additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
+     * [@function] CFErrorCopyRecoverySuggestion
+     * 
+     * Returns a human presentable recovery suggestion for the error.  May return NULL.  CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedRecoverySuggestionKey at the time of CFError creation.
+     * 
+     * This is the string that can be displayed as the "informative" (aka "secondary") message on an alert panel. By default this looks for kCFErrorLocalizedRecoverySuggestionKey in the user info. Toll-free bridged NSError instances might provide additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
      *            Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have enough space."
      *            Corresponding RecoverySuggestion: "Remove some files from the volume and try again."
+     * 
      * @param err The CFError whose recovery suggestion is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @result A CFString with the localized, end-user presentable recovery suggestion of the CFError, or NULL. 
+     * @return A CFString with the localized, end-user presentable recovery suggestion of the CFError, or NULL. 
      */
     @Generated
     @CFunction
@@ -3797,7 +3882,7 @@ public final class CoreFoundation {
     public static native void CFBagRemoveAllValues(CFMutableBagRef theBag);
 
     /**
-     * @function CFBinaryHeapGetTypeID
+     * [@function] CFBinaryHeapGetTypeID
      * Returns the type identifier of all CFBinaryHeap instances.
      */
     @Generated
@@ -3806,8 +3891,9 @@ public final class CoreFoundation {
     public static native long CFBinaryHeapGetTypeID();
 
     /**
-     * @function CFBinaryHeapCreate
+     * [@function] CFBinaryHeapCreate
      * Creates a new mutable binary heap with the given values.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the binary heap and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -3845,7 +3931,7 @@ public final class CoreFoundation {
      * 	binary heap is not one understood by one of the callback functions
      * 	the behavior when that callback function is used is undefined.
      *        @param compareContext A pointer to a CFBinaryHeapCompareContext structure.
-     * @result A reference to the new CFBinaryHeap.
+     * @return A reference to the new CFBinaryHeap.
      */
     @Generated
     @CFunction
@@ -3854,8 +3940,9 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFBinaryHeapCompareContext compareContext);
 
     /**
-     * @function CFBinaryHeapCreateCopy
+     * [@function] CFBinaryHeapCreateCopy
      * Creates a new mutable binary heap with the values from the given binary heap.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the binary heap and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -3878,7 +3965,7 @@ public final class CoreFoundation {
      * 	be the same as the given binary heap. The new binary heap uses the same
      * 	callbacks as the binary heap to be copied. If this parameter is
      * 	not a valid CFBinaryHeap, the behavior is undefined.
-     * @result A reference to the new mutable binary heap.
+     * @return A reference to the new mutable binary heap.
      */
     @Generated
     @CFunction
@@ -3886,11 +3973,12 @@ public final class CoreFoundation {
             CFBinaryHeapRef heap);
 
     /**
-     * @function CFBinaryHeapGetCount
+     * [@function] CFBinaryHeapGetCount
      * Returns the number of values currently in the binary heap.
+     * 
      * @param heap The binary heap to be queried. If this parameter is not a valid
      * 	CFBinaryHeap, the behavior is undefined.
-     * @result The number of values in the binary heap.
+     * @return The number of values in the binary heap.
      */
     @Generated
     @CFunction
@@ -3898,8 +3986,9 @@ public final class CoreFoundation {
     public static native long CFBinaryHeapGetCount(CFBinaryHeapRef heap);
 
     /**
-     * @function CFBinaryHeapGetCountOfValue
+     * [@function] CFBinaryHeapGetCountOfValue
      * Counts the number of times the given value occurs in the binary heap.
+     * 
      * @param heap The binary heap to be searched. If this parameter is not a
      * 	valid CFBinaryHeap, the behavior is undefined.
      * @param value The value for which to find matches in the binary heap. The
@@ -3908,7 +3997,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the binary heap, are not understood by the compare() callback,
      * 	the behavior is undefined.
-     * @result The number of times the given value occurs in the binary heap.
+     * @return The number of times the given value occurs in the binary heap.
      */
     @Generated
     @CFunction
@@ -3916,8 +4005,9 @@ public final class CoreFoundation {
     public static native long CFBinaryHeapGetCountOfValue(CFBinaryHeapRef heap, ConstVoidPtr value);
 
     /**
-     * @function CFBinaryHeapContainsValue
+     * [@function] CFBinaryHeapContainsValue
      * Reports whether or not the value is in the binary heap.
+     * 
      * @param heap The binary heap to be searched. If this parameter is not a
      * 	valid CFBinaryHeap, the behavior is undefined.
      * @param value The value for which to find matches in the binary heap. The
@@ -3926,19 +4016,20 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the binary heap, are not understood by the compare() callback,
      * 	the behavior is undefined.
-     * @result true, if the value is in the specified binary heap, otherwise false.
+     * @return true, if the value is in the specified binary heap, otherwise false.
      */
     @Generated
     @CFunction
     public static native byte CFBinaryHeapContainsValue(CFBinaryHeapRef heap, ConstVoidPtr value);
 
     /**
-     * @function CFBinaryHeapGetMinimum
+     * [@function] CFBinaryHeapGetMinimum
      * Returns the minimum value is in the binary heap.  If the heap contains several equal
      *                minimum values, any one may be returned.
+     * 
      * @param heap The binary heap to be searched. If this parameter is not a
      * 	valid CFBinaryHeap, the behavior is undefined.
-     * @result A reference to the minimum value in the binary heap, or NULL if the
+     * @return A reference to the minimum value in the binary heap, or NULL if the
      *                binary heap contains no values.
      */
     @Generated
@@ -3946,24 +4037,26 @@ public final class CoreFoundation {
     public static native ConstVoidPtr CFBinaryHeapGetMinimum(CFBinaryHeapRef heap);
 
     /**
-     * @function CFBinaryHeapGetMinimumIfPresent
+     * [@function] CFBinaryHeapGetMinimumIfPresent
      * Returns the minimum value is in the binary heap, if present.  If the heap contains several equal
      *                minimum values, any one may be returned.
+     * 
      * @param heap The binary heap to be searched. If this parameter is not a
      * 	valid CFBinaryHeap, the behavior is undefined.
      *        @param value A C pointer to pointer-sized storage to be filled with the minimum value in 
      *                the binary heap.  If this value is not a valid C pointer to a pointer-sized block
      *                of storage, the result is undefined.  If the result of the function is false, the value
      *                stored at this address is undefined.
-     * @result true, if a minimum value was found in the specified binary heap, otherwise false.
+     * @return true, if a minimum value was found in the specified binary heap, otherwise false.
      */
     @Generated
     @CFunction
     public static native byte CFBinaryHeapGetMinimumIfPresent(CFBinaryHeapRef heap, Ptr<ConstVoidPtr> value);
 
     /**
-     * @function CFBinaryHeapGetValues
+     * [@function] CFBinaryHeapGetValues
      * Fills the buffer with values from the binary heap.
+     * 
      * @param heap The binary heap to be queried. If this parameter is not a
      * 	valid CFBinaryHeap, the behavior is undefined.
      * @param values A C array of pointer-sized values to be filled with
@@ -3976,8 +4069,9 @@ public final class CoreFoundation {
     public static native void CFBinaryHeapGetValues(CFBinaryHeapRef heap, Ptr<ConstVoidPtr> values);
 
     /**
-     * @function CFBinaryHeapApplyFunction
+     * [@function] CFBinaryHeapApplyFunction
      * Calls a function once for each value in the binary heap.
+     * 
      * @param heap The binary heap to be operated upon. If this parameter is not a
      * 	valid CFBinaryHeap, the behavior is undefined.
      * @param applier The callback function to call once for each value in
@@ -3999,8 +4093,9 @@ public final class CoreFoundation {
             VoidPtr context);
 
     /**
-     * @function CFBinaryHeapAddValue
+     * [@function] CFBinaryHeapAddValue
      * Adds the value to the binary heap.
+     * 
      * @param heap The binary heap to which the value is to be added. If this parameter is not a
      * 	valid mutable CFBinaryHeap, the behavior is undefined.
      * @param value The value to add to the binary heap. The value is retained by
@@ -4013,8 +4108,9 @@ public final class CoreFoundation {
     public static native void CFBinaryHeapAddValue(CFBinaryHeapRef heap, ConstVoidPtr value);
 
     /**
-     * @function CFBinaryHeapRemoveMinimumValue
+     * [@function] CFBinaryHeapRemoveMinimumValue
      * Removes the minimum value from the binary heap.
+     * 
      * @param heap The binary heap from which the minimum value is to be removed. If this 
      *                parameter is not a valid mutable CFBinaryHeap, the behavior is undefined.
      */
@@ -4023,8 +4119,9 @@ public final class CoreFoundation {
     public static native void CFBinaryHeapRemoveMinimumValue(CFBinaryHeapRef heap);
 
     /**
-     * @function CFBinaryHeapRemoveAllValues
+     * [@function] CFBinaryHeapRemoveAllValues
      * Removes all the values from the binary heap, making it empty.
+     * 
      * @param heap The binary heap from which all of the values are to be
      * 	removed. If this parameter is not a valid mutable CFBinaryHeap,
      * 	the behavior is undefined.
@@ -5679,7 +5776,7 @@ public final class CoreFoundation {
             @NInt long format, @NUInt long options, Ptr<CFErrorRef> error);
 
     /**
-     * @function CFSetGetTypeID
+     * [@function] CFSetGetTypeID
      * Returns the type identifier of all CFSet instances.
      */
     @Generated
@@ -5688,8 +5785,9 @@ public final class CoreFoundation {
     public static native long CFSetGetTypeID();
 
     /**
-     *        @function CFSetCreate
+     *        [@function] CFSetCreate
      *        Creates a new immutable set with the given values.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the set and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -5731,7 +5829,7 @@ public final class CoreFoundation {
      * 	set is not one understood by one of the callback functions
      * 	the behavior when that callback function is used is
      * 	undefined.
-     * @result A reference to the new immutable CFSet.
+     * @return A reference to the new immutable CFSet.
      */
     @Generated
     @CFunction
@@ -5739,8 +5837,9 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFSetCallBacks callBacks);
 
     /**
-     * @function CFSetCreateCopy
+     * [@function] CFSetCreateCopy
      * Creates a new immutable set with the values from the given set.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the set and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -5754,15 +5853,16 @@ public final class CoreFoundation {
      * 	be the same as the copied set. The new set uses the same
      * 	callbacks as the set to be copied. If this parameter is
      * 	not a valid CFSet, the behavior is undefined.
-     * @result A reference to the new immutable CFSet.
+     * @return A reference to the new immutable CFSet.
      */
     @Generated
     @CFunction
     public static native CFSetRef CFSetCreateCopy(CFAllocatorRef allocator, CFSetRef theSet);
 
     /**
-     * @function CFSetCreateMutable
+     * [@function] CFSetCreateMutable
      * Creates a new empty mutable set.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the set and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -5801,7 +5901,7 @@ public final class CoreFoundation {
      * 	set is not one understood by one of the callback functions
      * 	the behavior when that callback function is used is
      * 	undefined.
-     * @result A reference to the new mutable CFSet.
+     * @return A reference to the new mutable CFSet.
      */
     @Generated
     @CFunction
@@ -5809,8 +5909,9 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFSetCallBacks callBacks);
 
     /**
-     * @function CFSetCreateMutableCopy
+     * [@function] CFSetCreateMutableCopy
      * Creates a new immutable set with the values from the given set.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      * 	memory for the set and its storage for values. This
      * 	parameter may be NULL in which case the current default
@@ -5833,7 +5934,7 @@ public final class CoreFoundation {
      * 	be the same as the copied set. The new set uses the same
      * 	callbacks as the set to be copied. If this parameter is
      * 	not a valid CFSet, the behavior is undefined.
-     * @result A reference to the new mutable CFSet.
+     * @return A reference to the new mutable CFSet.
      */
     @Generated
     @CFunction
@@ -5841,11 +5942,12 @@ public final class CoreFoundation {
             CFSetRef theSet);
 
     /**
-     * @function CFSetGetCount
+     * [@function] CFSetGetCount
      * Returns the number of values currently in the set.
+     * 
      * @param theSet The set to be queried. If this parameter is not a valid
      * 	CFSet, the behavior is undefined.
-     * @result The number of values in the set.
+     * @return The number of values in the set.
      */
     @Generated
     @CFunction
@@ -5853,10 +5955,11 @@ public final class CoreFoundation {
     public static native long CFSetGetCount(CFSetRef theSet);
 
     /**
-     * @function CFSetGetCountOfValue
+     * [@function] CFSetGetCountOfValue
      * Counts the number of times the given value occurs in the set. Since 
      *        sets by definition contain only one instance of a value, this function
      *        is synonymous to CFSetContainsValue.
+     * 
      * @param theSet The set to be searched. If this parameter is not a
      * 	valid CFSet, the behavior is undefined.
      * @param value The value for which to find matches in the set. The
@@ -5865,7 +5968,7 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the set, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result The number of times the given value occurs in the set.
+     * @return The number of times the given value occurs in the set.
      */
     @Generated
     @CFunction
@@ -5873,8 +5976,9 @@ public final class CoreFoundation {
     public static native long CFSetGetCountOfValue(CFSetRef theSet, ConstVoidPtr value);
 
     /**
-     * @function CFSetContainsValue
+     * [@function] CFSetContainsValue
      * Reports whether or not the value is in the set.
+     * 
      * @param theSet The set to be searched. If this parameter is not a
      * 	valid CFSet, the behavior is undefined.
      * @param value The value for which to find matches in the set. The
@@ -5883,15 +5987,16 @@ public final class CoreFoundation {
      * 	equality (in C, ==) is used. If value, or any of the values
      * 	in the set, are not understood by the equal() callback,
      * 	the behavior is undefined.
-     * @result true, if the value is in the set, otherwise false.
+     * @return true, if the value is in the set, otherwise false.
      */
     @Generated
     @CFunction
     public static native byte CFSetContainsValue(CFSetRef theSet, ConstVoidPtr value);
 
     /**
-     * @function CFSetGetValue
+     * [@function] CFSetGetValue
      * Retrieves a value in the set which hashes the same as the specified value.
+     * 
      * @param theSet The set to be queried. If this parameter is not a
      * 	valid CFSet, the behavior is undefined.
      * @param value The value to retrieve. The equal() callback provided when
@@ -5899,16 +6004,17 @@ public final class CoreFoundation {
      *                was NULL, pointer equality (in C, ==) is used. If a value, or
      *                any of the values in the set, are not understood by the equal()
      *                callback, the behavior is undefined.
-     *        @result The value in the set with the given hash.
+     *        @return The value in the set with the given hash.
      */
     @Generated
     @CFunction
     public static native ConstVoidPtr CFSetGetValue(CFSetRef theSet, ConstVoidPtr value);
 
     /**
-     * @function CFSetGetValueIfPresent
+     * [@function] CFSetGetValueIfPresent
      * Retrieves a value in the set which hashes the same as the specified value,
      *        if present.
+     * 
      * @param theSet The set to be queried. If this parameter is not a
      * 	valid CFSet, the behavior is undefined.
      * @param candidate This value is hashed and compared with values in the
@@ -5924,15 +6030,16 @@ public final class CoreFoundation {
      * 	in which case the value from the dictionary is not returned
      * 	(but the return value of this function still indicates
      * 	whether or not the value was present).
-     *        @result True if the value was present in the set, otherwise false.
+     *        @return True if the value was present in the set, otherwise false.
      */
     @Generated
     @CFunction
     public static native byte CFSetGetValueIfPresent(CFSetRef theSet, ConstVoidPtr candidate, Ptr<ConstVoidPtr> value);
 
     /**
-     * @function CFSetGetValues
+     * [@function] CFSetGetValues
      * Fills the buffer with values from the set.
+     * 
      * @param theSet The set to be queried. If this parameter is not a
      * 	valid CFSet, the behavior is undefined.
      * @param values A C array of pointer-sized values to be filled with
@@ -5946,8 +6053,9 @@ public final class CoreFoundation {
     public static native void CFSetGetValues(CFSetRef theSet, Ptr<ConstVoidPtr> values);
 
     /**
-     * @function CFSetApplyFunction
+     * [@function] CFSetApplyFunction
      * Calls a function once for each value in the set.
+     * 
      * @param theSet The set to be operated upon. If this parameter is not
      * 	a valid CFSet, the behavior is undefined.
      * @param applier The callback function to call once for each value in
@@ -5968,8 +6076,9 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFSetApplyFunction") Function_CFSetApplyFunction applier, VoidPtr context);
 
     /**
-     * @function CFSetAddValue
+     * [@function] CFSetAddValue
      * Adds the value to the set if it is not already present.
+     * 
      * @param theSet The set to which the value is to be added. If this
      * 	parameter is not a valid mutable CFSet, the behavior is
      * 	undefined.
@@ -5984,8 +6093,9 @@ public final class CoreFoundation {
     public static native void CFSetAddValue(CFMutableSetRef theSet, ConstVoidPtr value);
 
     /**
-     * @function CFSetReplaceValue
+     * [@function] CFSetReplaceValue
      * Replaces the value in the set if it is present.
+     * 
      * @param theSet The set to which the value is to be replaced. If this
      * 	parameter is not a valid mutable CFSet, the behavior is
      * 	undefined.
@@ -6004,9 +6114,10 @@ public final class CoreFoundation {
     public static native void CFSetReplaceValue(CFMutableSetRef theSet, ConstVoidPtr value);
 
     /**
-     * @function CFSetSetValue
+     * [@function] CFSetSetValue
      * Replaces the value in the set if it is present, or adds the value to 
      *        the set if it is absent.
+     * 
      * @param theSet The set to which the value is to be replaced. If this
      * 	parameter is not a valid mutable CFSet, the behavior is
      * 	undefined.
@@ -6025,8 +6136,9 @@ public final class CoreFoundation {
     public static native void CFSetSetValue(CFMutableSetRef theSet, ConstVoidPtr value);
 
     /**
-     * @function CFSetRemoveValue
+     * [@function] CFSetRemoveValue
      * Removes the specified value from the set.
+     * 
      * @param theSet The set from which the value is to be removed.
      *                If this parameter is not a valid mutable CFSet,
      * 	the behavior is undefined.
@@ -6041,8 +6153,9 @@ public final class CoreFoundation {
     public static native void CFSetRemoveValue(CFMutableSetRef theSet, ConstVoidPtr value);
 
     /**
-     * @function CFSetRemoveAllValues
+     * [@function] CFSetRemoveAllValues
      * Removes all the values from the set, making it empty.
+     * 
      * @param theSet The set from which all of the values are to be
      * 	removed. If this parameter is not a valid mutable CFSet,
      * 	the behavior is undefined.
@@ -6052,7 +6165,7 @@ public final class CoreFoundation {
     public static native void CFSetRemoveAllValues(CFMutableSetRef theSet);
 
     /**
-     * @function CFTreeGetTypeID
+     * [@function] CFTreeGetTypeID
      * Returns the type identifier of all CFTree instances.
      */
     @Generated
@@ -6061,8 +6174,9 @@ public final class CoreFoundation {
     public static native long CFTreeGetTypeID();
 
     /**
-     * @function CFTreeCreate
+     * [@function] CFTreeCreate
      * Creates a new mutable tree.
+     * 
      * @param allocator The CFAllocator which should be used to allocate
      *         memory for the tree and storage for its children.  This
      *         parameter may be NULL in which case the current default
@@ -6075,7 +6189,7 @@ public final class CoreFoundation {
      *         structure-sized block of storage, the result is undefined. 
      *         If the version number of the storage is not a valid CFTreeContext
      *         version number, the result is undefined.
-     * @result A reference to the new CFTree.
+     * @return A reference to the new CFTree.
      */
     @Generated
     @CFunction
@@ -6083,41 +6197,45 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFTreeContext context);
 
     /**
-     * @function CFTreeGetParent
+     * [@function] CFTreeGetParent
      * Returns the parent of the specified tree.
+     * 
      * @param tree The tree to be queried.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
-     * @result The parent of the tree.
+     * @return The parent of the tree.
      */
     @Generated
     @CFunction
     public static native CFTreeRef CFTreeGetParent(CFTreeRef tree);
 
     /**
-     * @function CFTreeGetNextSibling
+     * [@function] CFTreeGetNextSibling
      * Returns the sibling after the specified tree in the parent tree's list.
+     * 
      * @param tree The tree to be queried.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
-     * @result The next sibling of the tree.
+     * @return The next sibling of the tree.
      */
     @Generated
     @CFunction
     public static native CFTreeRef CFTreeGetNextSibling(CFTreeRef tree);
 
     /**
-     * @function CFTreeGetFirstChild
+     * [@function] CFTreeGetFirstChild
      * Returns the first child of the tree.
+     * 
      * @param tree The tree to be queried.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
-     * @result The first child of the tree.
+     * @return The first child of the tree.
      */
     @Generated
     @CFunction
     public static native CFTreeRef CFTreeGetFirstChild(CFTreeRef tree);
 
     /**
-     * @function CFTreeGetContext
+     * [@function] CFTreeGetContext
      * Returns the context of the specified tree.
+     * 
      * @param tree The tree to be queried.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
      * @param context A C pointer to a CFTreeContext structure to be filled in with
@@ -6132,11 +6250,12 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFTreeContext context);
 
     /**
-     * @function CFTreeGetChildCount
+     * [@function] CFTreeGetChildCount
      * Returns the number of children of the specified tree.
+     * 
      * @param tree The tree to be queried.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
-     * @result The number of children.
+     * @return The number of children.
      */
     @Generated
     @CFunction
@@ -6144,22 +6263,24 @@ public final class CoreFoundation {
     public static native long CFTreeGetChildCount(CFTreeRef tree);
 
     /**
-     * @function CFTreeGetChildAtIndex
+     * [@function] CFTreeGetChildAtIndex
      * Returns the nth child of the specified tree.
+     * 
      * @param tree The tree to be queried.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
      * @param idx The index of the child tree to be returned.  If this parameter
      *         is less than zero or greater than the number of children of the
      *         tree, the result is undefined.
-     * @result A reference to the specified child tree.
+     * @return A reference to the specified child tree.
      */
     @Generated
     @CFunction
     public static native CFTreeRef CFTreeGetChildAtIndex(CFTreeRef tree, @NInt long idx);
 
     /**
-     *        @function CFTreeGetChildren
+     *        [@function] CFTreeGetChildren
      *        Fills the buffer with children from the tree.
+     * 
      *        @param tree The tree to be queried.  If this parameter is not a valid
      *                CFTree, the behavior is undefined.
      * @param children A C array of pointer-sized values to be filled with
@@ -6171,10 +6292,11 @@ public final class CoreFoundation {
     public static native void CFTreeGetChildren(CFTreeRef tree, Ptr<CFTreeRef> children);
 
     /**
-     * @function CFTreeApplyFunctionToChildren
+     * [@function] CFTreeApplyFunctionToChildren
      * Calls a function once for each child of the tree.  Note that the applier
      *        only operates one level deep, and does not operate on descendents further
      *        removed than the immediate children of the tree.
+     * 
      *        @param tree The tree to be operated upon.  If this parameter is not a
      * 	valid CFTree, the behavior is undefined.
      * @param applier The callback function to call once for each child of
@@ -6195,20 +6317,22 @@ public final class CoreFoundation {
             VoidPtr context);
 
     /**
-     * @function CFTreeFindRoot
+     * [@function] CFTreeFindRoot
      * Returns the root tree of which the specified tree is a descendent.
+     * 
      * @param tree The tree to be queried.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
-     * @result A reference to the root of the tree.
+     * @return A reference to the root of the tree.
      */
     @Generated
     @CFunction
     public static native CFTreeRef CFTreeFindRoot(CFTreeRef tree);
 
     /**
-     * @function CFTreeSetContext
+     * [@function] CFTreeSetContext
      * Replaces the context of a tree.  The tree releases its retain on the
      * info of the previous context, and retains the info of the new context.
+     * 
      * @param tree The tree to be operated on.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
      * @param context A C pointer to a CFTreeContext structure to be copied 
@@ -6225,8 +6349,9 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFTreeContext context);
 
     /**
-     * @function CFTreePrependChild
+     * [@function] CFTreePrependChild
      * Adds the newChild to the specified tree as the first in its list of children.
+     * 
      * @param tree The tree to be operated on.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
      * @param newChild The child to be added.
@@ -6239,8 +6364,9 @@ public final class CoreFoundation {
     public static native void CFTreePrependChild(CFTreeRef tree, CFTreeRef newChild);
 
     /**
-     * @function CFTreeAppendChild
+     * [@function] CFTreeAppendChild
      * Adds the newChild to the specified tree as the last in its list of children.
+     * 
      * @param tree The tree to be operated on.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
      * @param newChild The child to be added.
@@ -6253,9 +6379,10 @@ public final class CoreFoundation {
     public static native void CFTreeAppendChild(CFTreeRef tree, CFTreeRef newChild);
 
     /**
-     * @function CFTreeInsertSibling
+     * [@function] CFTreeInsertSibling
      * Inserts newSibling into the the parent tree's linked list of children after
      * tree.  The newSibling will have the same parent as tree.
+     * 
      * @param tree The tree to insert newSibling after.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.  If the tree does not have a
      *         parent, the behavior is undefined.
@@ -6269,8 +6396,9 @@ public final class CoreFoundation {
     public static native void CFTreeInsertSibling(CFTreeRef tree, CFTreeRef newSibling);
 
     /**
-     * @function CFTreeRemove
+     * [@function] CFTreeRemove
      * Removes the tree from its parent.
+     * 
      * @param tree The tree to be removed.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
      */
@@ -6279,8 +6407,9 @@ public final class CoreFoundation {
     public static native void CFTreeRemove(CFTreeRef tree);
 
     /**
-     * @function CFTreeRemoveAllChildren
+     * [@function] CFTreeRemoveAllChildren
      * Removes all the children of the tree.
+     * 
      * @param tree The tree to remove all children from.  If this parameter is not a valid
      *         CFTree, the behavior is undefined.
      */
@@ -6289,8 +6418,9 @@ public final class CoreFoundation {
     public static native void CFTreeRemoveAllChildren(CFTreeRef tree);
 
     /**
-     *        @function CFTreeSortChildren
+     *        [@function] CFTreeSortChildren
      *        Sorts the children of the specified tree using the specified comparator function.
+     * 
      *        @param tree The tree to be operated on.  If this parameter is not a valid
      *                CFTree, the behavior is undefined.
      * @param comparator The function with the comparator function type
@@ -7010,7 +7140,7 @@ public final class CoreFoundation {
             @NInt long order);
 
     /**
-     * @function CFAttributedStringGetTypeID
+     * [@function] CFAttributedStringGetTypeID
      * Returns the type identifier of all CFAttributedString instances.
      */
     @Generated
@@ -7019,7 +7149,7 @@ public final class CoreFoundation {
     public static native long CFAttributedStringGetTypeID();
 
     /**
-     * @function CFAttributedStringCreate
+     * [@function] CFAttributedStringCreate
      * Creates an attributed string with the specified string and attributes (both copied).
      */
     @Generated
@@ -7028,7 +7158,7 @@ public final class CoreFoundation {
             CFDictionaryRef attributes);
 
     /**
-     * @function CFAttributedStringCreateWithSubstring
+     * [@function] CFAttributedStringCreateWithSubstring
      * Creates a sub-attributed string from the specified range. It's a programming error for range to specify characters outside the bounds of aStr.
      */
     @Generated
@@ -7037,7 +7167,7 @@ public final class CoreFoundation {
             CFAttributedStringRef aStr, @ByValue CFRange range);
 
     /**
-     * @function CFAttributedStringCreateCopy
+     * [@function] CFAttributedStringCreateCopy
      * Creates an immutable attributed string copy.
      */
     @Generated
@@ -7046,7 +7176,7 @@ public final class CoreFoundation {
             CFAttributedStringRef aStr);
 
     /**
-     * @function CFAttributedStringGetString
+     * [@function] CFAttributedStringGetString
      * Returns the string for the attributed string. For performance reasons, this will often point at the backing store of the attributed string, and it might change if the attributed string is edited.  However, this is an implementation detail, and definitely not something that should be counted on.
      */
     @Generated
@@ -7054,7 +7184,7 @@ public final class CoreFoundation {
     public static native CFStringRef CFAttributedStringGetString(CFAttributedStringRef aStr);
 
     /**
-     * @function CFAttributedStringGetLength
+     * [@function] CFAttributedStringGetLength
      * Returns the length of the attributed string in characters; same as CFStringGetLength(CFAttributedStringGetString(aStr))
      */
     @Generated
@@ -7063,7 +7193,7 @@ public final class CoreFoundation {
     public static native long CFAttributedStringGetLength(CFAttributedStringRef aStr);
 
     /**
-     * @function CFAttributedStringGetAttributes
+     * [@function] CFAttributedStringGetAttributes
      * Returns the attributes at the specified location. If effectiveRange is not NULL, upon return *effectiveRange contains a range over which the exact same set of attributes apply. Note that for performance reasons, the returned effectiveRange is not necessarily the maximal range - for that, use CFAttributedStringGetAttributesAndLongestEffectiveRange().  It's a programming error for loc to specify a location outside the bounds of the attributed string.
      * 
      * Note that the returned attribute dictionary might change in unpredictable ways from under the caller if the attributed string is edited after this call. If you wish to hang on to the dictionary long-term, you should make an actual copy of it rather than just retaining it.  Also, no assumptions should be made about the relationship of the actual CFDictionaryRef returned by this call and the dictionary originally used to set the attributes, other than the fact that the values stored in the dictionary will be identical (that is, ==) to those originally specified.
@@ -7074,7 +7204,7 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFRange effectiveRange);
 
     /**
-     * @function CFAttributedStringGetAttribute
+     * [@function] CFAttributedStringGetAttribute
      * Returns the value of a single attribute at the specified location. If the specified attribute doesn't exist at the location, returns NULL. If effectiveRange is not NULL, upon return *effectiveRange contains a range over which the exact same attribute value applies. Note that for performance reasons, the returned effectiveRange is not necessarily the maximal range - for that, use CFAttributedStringGetAttributeAndLongestEffectiveRange(). It's a programming error for loc to specify a location outside the bounds of the attributed string.
      */
     @Generated
@@ -7084,7 +7214,7 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFRange effectiveRange);
 
     /**
-     * @function CFAttributedStringGetAttributesAndLongestEffectiveRange
+     * [@function] CFAttributedStringGetAttributesAndLongestEffectiveRange
      * Returns the attributes at the specified location. If longestEffectiveRange is not NULL, upon return *longestEffectiveRange contains the maximal range within inRange over which the exact same set of attributes apply. The returned range is clipped to inRange. It's a programming error for loc or inRange to specify locations outside the bounds of the attributed string.
      */
     @Generated
@@ -7094,7 +7224,7 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFRange longestEffectiveRange);
 
     /**
-     * @function CFAttributedStringGetAttributeAndLongestEffectiveRange
+     * [@function] CFAttributedStringGetAttributeAndLongestEffectiveRange
      * Returns the value of a single attribute at the specified location. If longestEffectiveRange is not NULL, upon return *longestEffectiveRange contains the maximal range within inRange over which the exact same attribute value applies. The returned range is clipped to inRange. It's a programming error for loc or inRange to specify locations outside the bounds of the attributed string.
      */
     @Generated
@@ -7104,7 +7234,7 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFRange longestEffectiveRange);
 
     /**
-     * @function CFAttributedStringCreateMutableCopy
+     * [@function] CFAttributedStringCreateMutableCopy
      * Creates a mutable attributed string copy. maxLength, if not 0, is a hard bound on the length of the attributed string; exceeding this size limit during any editing operation is a programming error. If 0, there is no limit on the length.
      */
     @Generated
@@ -7113,7 +7243,7 @@ public final class CoreFoundation {
             @NInt long maxLength, CFAttributedStringRef aStr);
 
     /**
-     * @function CFAttributedStringCreateMutable
+     * [@function] CFAttributedStringCreateMutable
      * Creates a mutable empty attributed string. maxLength, if not 0, is a hard bound on the length of the attributed string; exceeding this size limit during any editing operation is a programming error. If 0, there is no limit on the length.
      */
     @Generated
@@ -7122,7 +7252,7 @@ public final class CoreFoundation {
             @NInt long maxLength);
 
     /**
-     * @function CFAttributedStringReplaceString
+     * [@function] CFAttributedStringReplaceString
      * Modifies the string for the attributed string, much like CFStringReplace().  It's an error for range to specify characters outside the bounds of aStr. 
      * 
      * (Note: This function is a convenience on CFAttributedStringGetMutableString(); however, until CFAttributedStringGetMutableString() is implemented, it remains the only way to edit the string of the attributed string.)
@@ -7133,7 +7263,7 @@ public final class CoreFoundation {
             CFStringRef replacement);
 
     /**
-     * @function CFAttributedStringGetMutableString
+     * [@function] CFAttributedStringGetMutableString
      * Gets the string for the attributed string as a mutable string, allowing editing the character contents of the string as if it were an CFMutableString. Attributes corresponding to the edited range are appropriately modified. If, as a result of the edit, new characters are introduced into the string, they inherit the attributes of the first replaced character from range. If no existing characters are replaced by the edit, the new characters inherit the attributes of the character preceding range if it has any, otherwise of the character following range. If the initial string is empty, the attributes for the new characters are also empty.
      * 
      * (Note: This function is not yet implemented and will return NULL except for toll-free bridged instances.)
@@ -7143,7 +7273,7 @@ public final class CoreFoundation {
     public static native CFMutableStringRef CFAttributedStringGetMutableString(CFMutableAttributedStringRef aStr);
 
     /**
-     * @function CFAttributedStringSetAttributes
+     * [@function] CFAttributedStringSetAttributes
      * Sets the value of multiple attributes over the specified range, which should be valid. If clearOtherAttributes is false, existing attributes (which aren't being replaced) are left alone; otherwise they are cleared. The dictionary should be setup for "usual" CF type usage --- CFString keys, and arbitrary CFType values. Note that after this call, further mutations to the replacement dictionary argument by the caller will not affect the contents of the attributed string.
      */
     @Generated
@@ -7152,7 +7282,7 @@ public final class CoreFoundation {
             CFDictionaryRef replacement, byte clearOtherAttributes);
 
     /**
-     * @function CFAttributedStringSetAttribute
+     * [@function] CFAttributedStringSetAttribute
      * Sets the value of a single attribute over the specified range, which should be valid. value should not be NULL. 
      */
     @Generated
@@ -7161,7 +7291,7 @@ public final class CoreFoundation {
             CFStringRef attrName, ConstVoidPtr value);
 
     /**
-     * @function CFAttributedStringRemoveAttribute
+     * [@function] CFAttributedStringRemoveAttribute
      * Removes the value of a single attribute over the specified range, which should be valid. It's OK for the attribute not the exist over the specified range.
      */
     @Generated
@@ -7170,7 +7300,7 @@ public final class CoreFoundation {
             @ByValue CFRange range, CFStringRef attrName);
 
     /**
-     * @function CFAttributedStringReplaceAttributedString
+     * [@function] CFAttributedStringReplaceAttributedString
      * Replaces the attributed substring over the specified range with the attributed string specified in replacement. range should be valid. To delete a range of the attributed string, call CFAttributedStringReplaceString() with empty string and specified range. 
      */
     @Generated
@@ -7179,7 +7309,7 @@ public final class CoreFoundation {
             @ByValue CFRange range, CFAttributedStringRef replacement);
 
     /**
-     * @function CFAttributedStringBeginEditing
+     * [@function] CFAttributedStringBeginEditing
      * In cases where attributed string might do a bunch of work to assure self-consistency, CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require the string to be in consistent state in between. These calls can be nested. 
      */
     @Generated
@@ -7187,7 +7317,7 @@ public final class CoreFoundation {
     public static native void CFAttributedStringBeginEditing(CFMutableAttributedStringRef aStr);
 
     /**
-     * @function CFAttributedStringEndEditing
+     * [@function] CFAttributedStringEndEditing
      * In cases where attributed string might do a bunch of work to assure self-consistency, CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require the string to be in consistent state in between. These calls can be nested. 
      */
     @Generated
@@ -7522,17 +7652,20 @@ public final class CoreFoundation {
     public static native byte CFFileSecurityClearProperties(CFFileSecurityRef fileSec, @NUInt long clearPropertyMask);
 
     /**
-     * @function CFStringTokenizerCopyBestStringLanguage
-     * @abstract Guesses the language of a string and returns the BCP 47 string of the
+     * [@function] CFStringTokenizerCopyBestStringLanguage
+     * 
+     * Guesses the language of a string and returns the BCP 47 string of the
      * 	language.
+     * 
+     * The result is not guaranteed to be accurate. Typically 200-400
+     * 	characters are required to reliably guess the language of a string.
+     * 
      * @param string The string whose language is to be guessed.
      * @param range The range of characters in string whose language to be
      * 	guessed. The specified range must not exceed the bounds of the string.
-     * @result A language represented in BCP 47 string. NULL is returned either if
+     * @return A language represented in BCP 47 string. NULL is returned either if
      * 	string is NULL, the location of range is negative, the length of range
      * 	is 0, or the language of the string cannot be guessed.
-     * @discussion The result is not guaranteed to be accurate. Typically 200-400
-     * 	characters are required to reliably guess the language of a string.
      */
     @Generated
     @CFunction
@@ -7540,9 +7673,11 @@ public final class CoreFoundation {
             @ByValue CFRange range);
 
     /**
-     * @function CFStringTokenizerGetTypeID
-     * @abstract Get the type identifier.
-     * @result the type identifier of all CFStringTokenizer instances.
+     * [@function] CFStringTokenizerGetTypeID
+     * 
+     * Get the type identifier.
+     * 
+     * @return the type identifier of all CFStringTokenizer instances.
      */
     @Generated
     @CFunction
@@ -7550,8 +7685,10 @@ public final class CoreFoundation {
     public static native long CFStringTokenizerGetTypeID();
 
     /**
-     * @function CFStringTokenizerCreate
-     * @abstract Creates a tokenizer instance.
+     * [@function] CFStringTokenizerCreate
+     * 
+     * Creates a tokenizer instance.
+     * 
      * @param alloc The CFAllocator which should be used to allocate memory for the
      * 	tokenizer and its storage for values. This parameter may be NULL in which 
      * 	case the current default CFAllocator is used. 	
@@ -7564,7 +7701,7 @@ public final class CoreFoundation {
      * 	tokenizes the string.
      * @param locale The locale to specify language or region specific behavior. Pass
      *               NULL if you want tokenizer to identify the locale automatically.
-     * @result A reference to the new CFStringTokenizer.
+     * @return A reference to the new CFStringTokenizer.
      */
     @Generated
     @CFunction
@@ -7572,8 +7709,10 @@ public final class CoreFoundation {
             @ByValue CFRange range, @NUInt long options, CFLocaleRef locale);
 
     /**
-     * @function CFStringTokenizerSetString
-     * @abstract Set the string to tokenize.
+     * [@function] CFStringTokenizerSetString
+     * 
+     * Set the string to tokenize.
+     * 
      * @param tokenizer The reference to CFStringTokenizer returned by
      * 	CFStringTokenizerCreate.
      * @param string The string to tokenize.
@@ -7586,19 +7725,22 @@ public final class CoreFoundation {
             @ByValue CFRange range);
 
     /**
-     * @function CFStringTokenizerGoToTokenAtIndex
-     * @abstract Random access to a token. Find a token that includes the character specified
+     * [@function] CFStringTokenizerGoToTokenAtIndex
+     * 
+     * Random access to a token. Find a token that includes the character specified
      * 	by character index, and set it as the current token.
-     * @param tokenizer The reference to CFStringTokenizer returned by
-     * 	CFStringTokenizerCreate.
-     * @param index The index of the Unicode character in the CFString.
-     * @result Type of the token if succeeded in finding a token and setting it as
-     * 	current token. kCFStringTokenizerTokenNone if failed in finding a token.
-     * @discussion The range and attribute of the token can be obtained by calling
+     * 
+     * The range and attribute of the token can be obtained by calling
      * 	CFStringTokenizerGetCurrentTokenRange and CFStringTokenizerCopyCurrentTokenAttribute.
      * 	If the token is a compound (with type kCFStringTokenizerTokenHasSubTokensMask or
      * 	kCFStringTokenizerTokenHasDerivedSubTokensMask), its subtokens and
      * 	(or) derived subtokens can be obtained by calling CFStringTokenizerGetCurrentSubTokens. 
+     * 
+     * @param tokenizer The reference to CFStringTokenizer returned by
+     * 	CFStringTokenizerCreate.
+     * @param index The index of the Unicode character in the CFString.
+     * @return Type of the token if succeeded in finding a token and setting it as
+     * 	current token. kCFStringTokenizerTokenNone if failed in finding a token.
      */
     @Generated
     @CFunction
@@ -7606,13 +7748,11 @@ public final class CoreFoundation {
     public static native long CFStringTokenizerGoToTokenAtIndex(CFStringTokenizerRef tokenizer, @NInt long index);
 
     /**
-     * @function CFStringTokenizerAdvanceToNextToken
-     * @abstract Token enumerator.
-     * @param tokenizer The reference to CFStringTokenizer returned by
-     * 	CFStringTokenizerCreate.
-     * @result Type of the token if succeeded in finding a token and setting it as
-     * 	current token. kCFStringTokenizerTokenNone if failed in finding a token.
-     * @discussion If there is no preceding call to CFStringTokenizerGoToTokenAtIndex 
+     * [@function] CFStringTokenizerAdvanceToNextToken
+     * 
+     * Token enumerator.
+     * 
+     * If there is no preceding call to CFStringTokenizerGoToTokenAtIndex
      * 	or CFStringTokenizerAdvanceToNextToken, it finds the first token in the range
      * 	specified to CFStringTokenizerCreate. If there is a current token after successful
      * 	call to CFStringTokenizerGoToTokenAtIndex or CFStringTokenizerAdvanceToNextToken,
@@ -7625,6 +7765,11 @@ public final class CoreFoundation {
      * 	(with type kCFStringTokenizerTokenHasSubTokensMask or
      * 	kCFStringTokenizerTokenHasDerivedSubTokensMask), its subtokens and
      * 	(or) derived subtokens can be obtained by calling CFStringTokenizerGetCurrentSubTokens. 
+     * 
+     * @param tokenizer The reference to CFStringTokenizer returned by
+     * 	CFStringTokenizerCreate.
+     * @return Type of the token if succeeded in finding a token and setting it as
+     * 	current token. kCFStringTokenizerTokenNone if failed in finding a token.
      */
     @Generated
     @CFunction
@@ -7632,11 +7777,13 @@ public final class CoreFoundation {
     public static native long CFStringTokenizerAdvanceToNextToken(CFStringTokenizerRef tokenizer);
 
     /**
-     * @function CFStringTokenizerGetCurrentTokenRange
-     * @abstract Returns the range of current token.
+     * [@function] CFStringTokenizerGetCurrentTokenRange
+     * 
+     * Returns the range of current token.
+     * 
      * @param tokenizer The reference to CFStringTokenizer returned by
      * 	CFStringTokenizerCreate.
-     * @result Range of current token, or {kCFNotFound,0} if there is no current token.
+     * @return Range of current token, or {kCFNotFound,0} if there is no current token.
      */
     @Generated
     @CFunction
@@ -7644,14 +7791,16 @@ public final class CoreFoundation {
     public static native CFRange CFStringTokenizerGetCurrentTokenRange(CFStringTokenizerRef tokenizer);
 
     /**
-     * @function CFStringTokenizerCopyCurrentTokenAttribute
-     * @abstract Copies the specified attribute of current token.
+     * [@function] CFStringTokenizerCopyCurrentTokenAttribute
+     * 
+     * Copies the specified attribute of current token.
+     * 
      * @param tokenizer The reference to CFStringTokenizer returned by
      * 	CFStringTokenizerCreate.
      * @param attribute Specify a token attribute you want to obtain. The value is
      * 	one of kCFStringTokenizerAttributeLatinTranscription or
      * 	kCFStringTokenizerAttributeLanguage.
-     * @result Token attribute, or NULL if current token does not have the specified
+     * @return Token attribute, or NULL if current token does not have the specified
      * 	attribute or if there is no current token.
      */
     @Generated
@@ -7660,17 +7809,11 @@ public final class CoreFoundation {
             @NUInt long attribute);
 
     /**
-     * @function CFStringTokenizerGetCurrentSubTokens
-     * @abstract Retrieves the subtokens or derived subtokens contained in the compound token.
-     * @param tokenizer The reference to CFStringTokenizer returned by CFStringTokenizerCreate.
-     * @param ranges An array of CFRange to fill in with the ranges of subtokens. The filled in 
-     * 	ranges are relative to the string specified to CFStringTokenizerCreate. This parameter
-     * 	can be NULL.
-     * @param maxRangeLength The maximum number of ranges to return.
-     * @param derivedSubTokens An array of CFMutableArray to which the derived subtokens are to
-     * 	be added. This parameter can be NULL.
-     * @result number of subtokens.
-     * @discussion If token type is kCFStringTokenizerTokenNone, the ranges array and 
+     * [@function] CFStringTokenizerGetCurrentSubTokens
+     * 
+     * Retrieves the subtokens or derived subtokens contained in the compound token.
+     * 
+     * If token type is kCFStringTokenizerTokenNone, the ranges array and
      * 	derivedSubTokens array are untouched and the return value is 0.
      *        If token type is kCFStringTokenizerTokenNormal, the ranges array has one item
      *        filled in with the entire range of the token (if maxRangeLength >= 1) and a string
@@ -7682,6 +7825,15 @@ public final class CoreFoundation {
      * 	The derivedSubTokens array will have sub tokens added even when the sub token is a 
      * 	substring of the token. If token type is kCFStringTokenizerTokenHasSubTokensMask,
      * 	the ordinary non-derived subtokens are added to the derivedSubTokens array. 
+     * 
+     * @param tokenizer The reference to CFStringTokenizer returned by CFStringTokenizerCreate.
+     * @param ranges An array of CFRange to fill in with the ranges of subtokens. The filled in 
+     * 	ranges are relative to the string specified to CFStringTokenizerCreate. This parameter
+     * 	can be NULL.
+     * @param maxRangeLength The maximum number of ranges to return.
+     * @param derivedSubTokens An array of CFMutableArray to which the derived subtokens are to
+     * 	be added. This parameter can be NULL.
+     * @return number of subtokens.
      */
     @Generated
     @CFunction
@@ -7796,7 +7948,7 @@ public final class CoreFoundation {
     public static native CFAllocatorRef kCFAllocatorUseContext();
 
     /**
-     * @constant kCFTypeDictionaryKeyCallBacks
+     * [@constant] kCFTypeDictionaryKeyCallBacks
      * Predefined CFDictionaryKeyCallBacks structure containing a
      * set of callbacks appropriate for use when the keys of a
      * CFDictionary are all CFTypes.
@@ -7807,7 +7959,7 @@ public final class CoreFoundation {
     public static native CFDictionaryKeyCallBacks kCFTypeDictionaryKeyCallBacks();
 
     /**
-     * @constant kCFCopyStringDictionaryKeyCallBacks
+     * [@constant] kCFCopyStringDictionaryKeyCallBacks
      * Predefined CFDictionaryKeyCallBacks structure containing a
      * set of callbacks appropriate for use when the keys of a
      * CFDictionary are all CFStrings, which may be mutable and
@@ -7820,7 +7972,7 @@ public final class CoreFoundation {
     public static native CFDictionaryKeyCallBacks kCFCopyStringDictionaryKeyCallBacks();
 
     /**
-     * @constant kCFTypeDictionaryValueCallBacks
+     * [@constant] kCFTypeDictionaryValueCallBacks
      * Predefined CFDictionaryValueCallBacks structure containing a set
      * of callbacks appropriate for use when the values in a CFDictionary
      * are all CFTypes.
@@ -7831,7 +7983,7 @@ public final class CoreFoundation {
     public static native CFDictionaryValueCallBacks kCFTypeDictionaryValueCallBacks();
 
     /**
-     * @constant kCFTypeArrayCallBacks
+     * [@constant] kCFTypeArrayCallBacks
      * Predefined CFArrayCallBacks structure containing a set of callbacks
      * appropriate for use when the values in a CFArray are all CFTypes.
      */
@@ -8899,7 +9051,7 @@ public final class CoreFoundation {
     public static native CFBagCallBacks kCFCopyStringBagCallBacks();
 
     /**
-     * @constant kCFStringBinaryHeapCallBacks
+     * [@constant] kCFStringBinaryHeapCallBacks
      * Predefined CFBinaryHeapCallBacks structure containing a set
      * of callbacks appropriate for use when the values in a CFBinaryHeap
      * are all CFString types.
@@ -9508,7 +9660,7 @@ public final class CoreFoundation {
     public static native CFStringRef kCFStreamPropertySocketRemotePortNumber();
 
     /**
-     * @constant kCFTypeSetCallBacks
+     * [@constant] kCFTypeSetCallBacks
      * Predefined CFSetCallBacks structure containing a set of callbacks
      * appropriate for use when the values in a CFSet are all CFTypes.
      */
@@ -9518,7 +9670,7 @@ public final class CoreFoundation {
     public static native CFSetCallBacks kCFTypeSetCallBacks();
 
     /**
-     * @constant kCFCopyStringSetCallBacks
+     * [@constant] kCFCopyStringSetCallBacks
      * Predefined CFSetCallBacks structure containing a set of callbacks
      * appropriate for use when the values in a CFSet should be copies
      *        of a CFString.

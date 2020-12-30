@@ -36,16 +36,18 @@ public interface MTLFence {
     MTLDevice device();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")

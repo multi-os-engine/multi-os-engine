@@ -30,9 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A request that will detect regions of text and recognize the containing text in an image.
+ * A request that will detect regions of text and recognize the containing text in an image.
  * 
- * @details This request will generate VNRecognizedTextObservation objects describing the locations of text and the actual text recognized.
+ * This request will generate VNRecognizedTextObservation objects describing the locations of text and the actual text recognized.
  */
 @Generated
 @Library("Vision")
@@ -90,7 +90,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     public static native long currentRevision();
 
     /**
-     * @brief An array of strings that will be used at the word recognition stage in addition to the recognition languages. The customWords list takes precedence over the standard lexicon.
+     * An array of strings that will be used at the word recognition stage in addition to the recognition languages. The customWords list takes precedence over the standard lexicon.
      */
     @Generated
     @Selector("customWords")
@@ -149,7 +149,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief Minimum height of the text expected to be recognized, relative to the image height (e.g. for half of the image height, use 0.5). Increasing the size will reduce the memory consumption and speed up the recognition with the trade-off that text smaller than the minimum height may not be recognized properly. If the minimum height is set to 0.0 the image gets processed at the highest possible resolution with no downscaling. With that the processing time will be the longest and the memory usage the highest but the smallest technically readable text will be recognized. The default value for this is 0.0.
+     * Minimum height of the text expected to be recognized, relative to the image height (e.g. for half of the image height, use 0.5). Increasing the size will reduce the memory consumption and speed up the recognition with the trade-off that text smaller than the minimum height may not be recognized properly. If the minimum height is set to 0.0 the image gets processed at the highest possible resolution with no downscaling. With that the processing time will be the longest and the memory usage the highest but the smallest technically readable text will be recognized. The default value for this is 0.0.
      */
     @Generated
     @Selector("minimumTextHeight")
@@ -167,7 +167,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     public native VNRequestProgressProviding.Block_progressHandler_ret progressHandler();
 
     /**
-     * @brief Specify the languages used for the detection. The order of the languages in the array defines the order in which languages will be used during the language processing.
+     * Specify the languages used for the detection. The order of the languages in the array defines the order in which languages will be used during the language processing.
      * The languages are specified as ISO language codes.
      */
     @Generated
@@ -175,7 +175,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     public native NSArray<String> recognitionLanguages();
 
     /**
-     * @brief The recognition level selects which techniques will be used during the text recognition. There are trade-offs between performance and accuracy.
+     * The recognition level selects which techniques will be used during the text recognition. There are trade-offs between performance and accuracy.
      */
     @Generated
     @Selector("recognitionLevel")
@@ -191,14 +191,14 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief An array of strings that will be used at the word recognition stage in addition to the recognition languages. The customWords list takes precedence over the standard lexicon.
+     * An array of strings that will be used at the word recognition stage in addition to the recognition languages. The customWords list takes precedence over the standard lexicon.
      */
     @Generated
     @Selector("setCustomWords:")
     public native void setCustomWords(NSArray<String> value);
 
     /**
-     * @brief Minimum height of the text expected to be recognized, relative to the image height (e.g. for half of the image height, use 0.5). Increasing the size will reduce the memory consumption and speed up the recognition with the trade-off that text smaller than the minimum height may not be recognized properly. If the minimum height is set to 0.0 the image gets processed at the highest possible resolution with no downscaling. With that the processing time will be the longest and the memory usage the highest but the smallest technically readable text will be recognized. The default value for this is 0.0.
+     * Minimum height of the text expected to be recognized, relative to the image height (e.g. for half of the image height, use 0.5). Increasing the size will reduce the memory consumption and speed up the recognition with the trade-off that text smaller than the minimum height may not be recognized properly. If the minimum height is set to 0.0 the image gets processed at the highest possible resolution with no downscaling. With that the processing time will be the longest and the memory usage the highest but the smallest technically readable text will be recognized. The default value for this is 0.0.
      */
     @Generated
     @Selector("setMinimumTextHeight:")
@@ -210,7 +210,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
             @ObjCBlock(name = "call_setProgressHandler") VNRequestProgressProviding.Block_setProgressHandler value);
 
     /**
-     * @brief Specify the languages used for the detection. The order of the languages in the array defines the order in which languages will be used during the language processing.
+     * Specify the languages used for the detection. The order of the languages in the array defines the order in which languages will be used during the language processing.
      * The languages are specified as ISO language codes.
      */
     @Generated
@@ -218,14 +218,14 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     public native void setRecognitionLanguages(NSArray<String> value);
 
     /**
-     * @brief The recognition level selects which techniques will be used during the text recognition. There are trade-offs between performance and accuracy.
+     * The recognition level selects which techniques will be used during the text recognition. There are trade-offs between performance and accuracy.
      */
     @Generated
     @Selector("setRecognitionLevel:")
     public native void setRecognitionLevel(@NInt long value);
 
     /**
-     * @brief Determines whether language correction should be applied during the recognition process. Disabling this will return the raw recognition results providing performance benefits but less accurate results.
+     * Determines whether language correction should be applied during the recognition process. Disabling this will return the raw recognition results providing performance benefits but less accurate results.
      */
     @Generated
     @Selector("setUsesLanguageCorrection:")
@@ -240,7 +240,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     public static native Class superclass_static();
 
     /**
-     * @brief Returns all the supported languages for a given text recognition level. Note that a language supported in one recognition level might not be available in another.
+     * Returns all the supported languages for a given text recognition level. Note that a language supported in one recognition level might not be available in another.
      */
     @Generated
     @Selector("supportedRecognitionLanguagesForTextRecognitionLevel:revision:error:")
@@ -253,7 +253,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     public static native NSIndexSet supportedRevisions();
 
     /**
-     * @brief Determines whether language correction should be applied during the recognition process. Disabling this will return the raw recognition results providing performance benefits but less accurate results.
+     * Determines whether language correction should be applied during the recognition process. Disabling this will return the raw recognition results providing performance benefits but less accurate results.
      */
     @Generated
     @Selector("usesLanguageCorrection")

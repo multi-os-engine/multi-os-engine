@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLSubmesh
- * @abstract A drawable subset of an MDLMesh, with its own material
+ * MDLSubmesh
+ * 
+ * A drawable subset of an MDLMesh, with its own material
  */
 @Generated
 @Library("ModelIO")
@@ -168,8 +169,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public static native long version_static();
 
     /**
-     * @property geometryType
-     * @abstract Type of primitive that vertices referenced by the indexBuffer are 
+     * [@property] geometryType
+     * 
+     * Type of primitive that vertices referenced by the indexBuffer are
      *           assembled into
      */
     @Generated
@@ -178,8 +180,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public native long geometryType();
 
     /**
-     * @property indexBuffer
-     * @abstract Index data referencing vertex data in parent mesh
+     * [@property] indexBuffer
+     * 
+     * Index data referencing vertex data in parent mesh
      */
     @Generated
     @Selector("indexBuffer")
@@ -192,8 +195,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public native MDLMeshBuffer indexBufferAsIndexType(@NUInt long indexType);
 
     /**
-     * @property indexCount
-     * @abstract Number of indices in the indexBuffer
+     * [@property] indexCount
+     * 
+     * Number of indices in the indexBuffer
      */
     @Generated
     @Selector("indexCount")
@@ -201,9 +205,11 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public native long indexCount();
 
     /**
-     * @property indexType
-     * @abstract Data type of indices in indexBuffer
-     * @discussion Support 8, 16, and 32 bit unsigned integer values
+     * [@property] indexType
+     * 
+     * Data type of indices in indexBuffer
+     * 
+     * Support 8, 16, and 32 bit unsigned integer values
      */
     @Generated
     @Selector("indexType")
@@ -215,8 +221,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public native MDLSubmesh init();
 
     /**
-     * @method initWithIndexBuffer:indexCount:indexType:geometryType:material:
-     * @abstract Initialize submesh with all data necessary to make properties valid
+     * initWithIndexBuffer:indexCount:indexType:geometryType:material:
+     * 
+     * Initialize submesh with all data necessary to make properties valid
      */
     @Generated
     @Selector("initWithIndexBuffer:indexCount:indexType:geometryType:material:")
@@ -225,9 +232,11 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
             @NInt long geometryType, MDLMaterial material);
 
     /**
-     * @method initWithMDLSubmesh:indexType:geometryType:
-     * @abstract Initialize submesh using another submesh as input.
-     * @discussion the resulting submesh will have a new index type if necessary.
+     * initWithMDLSubmesh:indexType:geometryType:
+     * 
+     * Initialize submesh using another submesh as input.
+     * 
+     * the resulting submesh will have a new index type if necessary.
      *  If a conversion from the source submesh's geometry type to the requested
      *  geometry type is possible, conversion will be performed. Otherwise nil will
      *  be returned.
@@ -238,8 +247,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
             @NInt long geometryType);
 
     /**
-     * @method initWithName:indexBuffer:indexCount:indexType:geometryType:material:
-     * @abstract Initialize submesh with all data necessary to make properties valid
+     * initWithName:indexBuffer:indexCount:indexType:geometryType:material:
+     * 
+     * Initialize submesh with all data necessary to make properties valid
      */
     @Generated
     @Selector("initWithName:indexBuffer:indexCount:indexType:geometryType:material:")
@@ -248,10 +258,11 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
             @NInt long geometryType, MDLMaterial material);
 
     /**
-     * @method initWithIndexBuffer:indexCount:indexType:faceTopologyBuffer:geometryType:material:
-     * @abstract Initialize submesh with all data necessary to make properties valid
+     * initWithIndexBuffer:indexCount:indexType:faceTopologyBuffer:geometryType:material:
      * 
-     * @discussion The geometry type will typically be MDLGeometryTypeVariableTopology,
+     * Initialize submesh with all data necessary to make properties valid
+     * 
+     * The geometry type will typically be MDLGeometryTypeVariableTopology,
      *             if other types are used the faceTopologyBuffer contents should
      *             reflect that.
      */
@@ -262,8 +273,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
             @NInt long geometryType, MDLMaterial material, MDLSubmeshTopology topology);
 
     /**
-     * @property material
-     * @abstract Material to apply when rendering this object
+     * [@property] material
+     * 
+     * Material to apply when rendering this object
      */
     @Generated
     @Selector("material")
@@ -274,8 +286,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public native String name();
 
     /**
-     * @property material
-     * @abstract Material to apply when rendering this object
+     * [@property] material
+     * 
+     * Material to apply when rendering this object
      */
     @Generated
     @Selector("setMaterial:")
@@ -286,10 +299,11 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public native void setName(String value);
 
     /**
-     * @property topology
-     * @abstract Topology data structure for use with MDLGeometryTypeVariableTopology
+     * [@property] topology
      * 
-     * @discussion ignored for geometry types other than MDLGeometryTypeVariableTopology.
+     * Topology data structure for use with MDLGeometryTypeVariableTopology
+     * 
+     * ignored for geometry types other than MDLGeometryTypeVariableTopology.
      *             A submesh of type MDLGeometryTypeVariableTopology with no topology
      *             data is an empty submesh.
      */
@@ -298,10 +312,11 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     public native void setTopology(MDLSubmeshTopology value);
 
     /**
-     * @property topology
-     * @abstract Topology data structure for use with MDLGeometryTypeVariableTopology
+     * [@property] topology
      * 
-     * @discussion ignored for geometry types other than MDLGeometryTypeVariableTopology.
+     * Topology data structure for use with MDLGeometryTypeVariableTopology
+     * 
+     * ignored for geometry types other than MDLGeometryTypeVariableTopology.
      *             A submesh of type MDLGeometryTypeVariableTopology with no topology
      *             data is an empty submesh.
      */

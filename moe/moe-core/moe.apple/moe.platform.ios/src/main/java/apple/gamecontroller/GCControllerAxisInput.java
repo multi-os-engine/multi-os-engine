@@ -194,8 +194,9 @@ public class GCControllerAxisInput extends GCControllerElement {
     /**
      * Sets the normalized value for the input.
      * 
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
      * @param value the value to set the input to.
-     * @note If the controller's snapshot flag is set to NO, this method has no effect.
      * @see value
      */
     @Generated

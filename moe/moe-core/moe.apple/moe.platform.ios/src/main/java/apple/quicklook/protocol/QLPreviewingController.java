@@ -24,10 +24,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("QLPreviewingController")
 public interface QLPreviewingController {
     /**
-     * @abstract
      * Use this method to prepare the content of the view controller with the given file URL.
      * 
-     * @discussion
      * This method will be called only once. It will be called in the main thread before presenting the view controller.
      * Heavy work potentially blocking the main thread should be avoided in this method.
      * 
@@ -51,10 +49,8 @@ public interface QLPreviewingController {
     }
 
     /**
-     * @abstract
      * Use this method to prepare the content of the view controller with the data that the searchable item represents.
      * 
-     * @discussion
      * This method will be called only once. It will be called in the main thread before presenting the view controller.
      * Heavy work potentially blocking the main thread should be avoided in this method.
      * 

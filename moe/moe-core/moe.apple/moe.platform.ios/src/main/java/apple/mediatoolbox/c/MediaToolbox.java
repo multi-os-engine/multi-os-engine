@@ -54,9 +54,11 @@ public final class MediaToolbox {
     public static native long MTAudioProcessingTapGetTypeID();
 
     /**
-     * @function	MTAudioProcessingTapCreate
-     * @abstract	Create a new processing tap.
-     * @discussion	This function creates a processing tap.
+     * [@function]	MTAudioProcessingTapCreate
+     * 
+     * Create a new processing tap.
+     * 
+     * This function creates a processing tap.
      * 			The processing tap will then be used to process decoded data.
      * 			The processing is performed on audio either before or after any effects or other
      * 			processing (varispeed, etc) is applied by the audio queue.
@@ -75,7 +77,7 @@ public final class MediaToolbox {
      * @param		tapOut
      * 			The processing tap object.
      * 
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -84,22 +86,25 @@ public final class MediaToolbox {
             int flags, Ptr<MTAudioProcessingTapRef> tapOut);
 
     /**
-     * @function	MTAudioProcessingTapGetStorage
-     * @abstract	Used by a processing tap to retrieve a custom storage pointer.
+     * [@function]	MTAudioProcessingTapGetStorage
+     * 
+     * Used by a processing tap to retrieve a custom storage pointer.
      * 
      * @param		tap
      * 			The processing tap.
      * 
-     * @result		The tapStorage returned by the init callback.
+     * @return		The tapStorage returned by the init callback.
      */
     @Generated
     @CFunction
     public static native VoidPtr MTAudioProcessingTapGetStorage(MTAudioProcessingTapRef tap);
 
     /**
-     * @function	MTAudioProcessingTapGetSourceAudio
-     * @abstract	Used by a processing tap to retrieve source audio.
-     * @discussion	This function may only be called from the processing tap's callback.
+     * [@function]	MTAudioProcessingTapGetSourceAudio
+     * 
+     * Used by a processing tap to retrieve source audio.
+     * 
+     * This function may only be called from the processing tap's callback.
      * 
      * @param		tap
      * 			The processing tap.
@@ -121,7 +126,7 @@ public final class MediaToolbox {
      * 			The number of source frames that have been provided. Can be NULL.
      * 			This can be less than the number of requested frames specified in numberFrames.
      * 
-     * @result		An OSStatus result code.
+     * @return		An OSStatus result code.
      */
     @Generated
     @CFunction

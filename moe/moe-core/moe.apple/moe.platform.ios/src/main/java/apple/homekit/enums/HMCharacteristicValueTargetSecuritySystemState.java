@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueTargetSecuritySystemState
+ * [@enum]      HMCharacteristicValueTargetSecuritySystemState
  * 
- * @constant  HMCharacteristicValueTargetSecuritySystemStateStayArm        Home is occupied and residents are active.
- * @constant  HMCharacteristicValueTargetSecuritySystemStateAwayArm        Home is unoccupied.
- * @constant  HMCharacteristicValueTargetSecuritySystemStateNightArm       Home is occupied and residents are sleeping.
- * @constant  HMCharacteristicValueTargetSecuritySystemStateDisarm         Disarm.
+ * [@constant]  HMCharacteristicValueTargetSecuritySystemStateStayArm        Home is occupied and residents are active.
+ * [@constant]  HMCharacteristicValueTargetSecuritySystemStateAwayArm        Home is unoccupied.
+ * [@constant]  HMCharacteristicValueTargetSecuritySystemStateNightArm       Home is occupied and residents are sleeping.
+ * [@constant]  HMCharacteristicValueTargetSecuritySystemStateDisarm         Disarm.
  */
 @Generated
 public final class HMCharacteristicValueTargetSecuritySystemState {

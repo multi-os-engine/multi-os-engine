@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract  A node for a unary MPSNNReduce node.
- * @discussion This is an abstract base class that does not correspond with any
+ * A node for a unary MPSNNReduce node.
+ * 
+ * This is an abstract base class that does not correspond with any
  *             particular MPSCNNKernel. Please make one of the MPSNNReduction
  *             subclasses instead.
  */
@@ -82,7 +83,7 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   The clip rectangle to apply to the source image.
+     * The clip rectangle to apply to the source image.
      */
     @Generated
     @Selector("clipRectSource")
@@ -107,7 +108,8 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     public native MPSNNUnaryReductionNode init();
 
     /**
-     * @abstract   Init a node representing an MPS reduction kernel.
+     * Init a node representing an MPS reduction kernel.
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @return     A new MPSNNFilter node for an MPS reduction kernel.
      */
@@ -143,7 +145,8 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract   Create an autoreleased node representing an MPS reduction kernel.
+     * Create an autoreleased node representing an MPS reduction kernel.
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @return     A new MPSNNFilter node for an MPS reduction kernel.
      */
@@ -160,7 +163,7 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract   The clip rectangle to apply to the source image.
+     * The clip rectangle to apply to the source image.
      */
     @Generated
     @Selector("setClipRectSource:")

@@ -4,9 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudio3DMixingSourceMode
- * @abstract   Source types available per input bus of the environment node
- * @discussion
+ * [@enum] AVAudio3DMixingSourceMode
+ * 
+ * Source types available per input bus of the environment node
+ * 
  *     The source types differ in how the individual channels of an input bus are distributed
  *     in space.
  * 

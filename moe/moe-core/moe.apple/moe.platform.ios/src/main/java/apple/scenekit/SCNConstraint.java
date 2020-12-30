@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNConstraint
- * @abstract A SCNConstraint is an abstract class that represents a single constraint that can be applied to a node.
+ * SCNConstraint
+ * 
+ * A SCNConstraint is an abstract class that represents a single constraint that can be applied to a node.
  */
 @Generated
 @Library("SceneKit")
@@ -189,8 +190,9 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @property influenceFactor
-     * @abstract Specifies the inflence factor of the receiver. Defaults to 1. Animatable
+     * [@property] influenceFactor
+     * 
+     * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
      */
     @Generated
     @Selector("influenceFactor")
@@ -230,8 +232,9 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     public native void resumeAnimationForKey(String key);
 
     /**
-     * @property influenceFactor
-     * @abstract Specifies the inflence factor of the receiver. Defaults to 1. Animatable
+     * [@property] influenceFactor
+     * 
+     * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
      */
     @Generated
     @Selector("setInfluenceFactor:")
@@ -256,16 +259,18 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     public native SCNAnimationPlayer animationPlayerForKey(String key);
 
     /**
-     * @property enable
-     * @abstract Determines whether the constraint is enabled or not. Defaults to YES.
+     * [@property] enable
+     * 
+     * Determines whether the constraint is enabled or not. Defaults to YES.
      */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
     /**
-     * @property incremental
-     * @abstract Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
+     * [@property] incremental
+     * 
+     * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
      */
     @Generated
     @Selector("isIncremental")
@@ -276,16 +281,18 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
     /**
-     * @property enable
-     * @abstract Determines whether the constraint is enabled or not. Defaults to YES.
+     * [@property] enable
+     * 
+     * Determines whether the constraint is enabled or not. Defaults to YES.
      */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
     /**
-     * @property incremental
-     * @abstract Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
+     * [@property] incremental
+     * 
+     * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
      */
     @Generated
     @Selector("setIncremental:")

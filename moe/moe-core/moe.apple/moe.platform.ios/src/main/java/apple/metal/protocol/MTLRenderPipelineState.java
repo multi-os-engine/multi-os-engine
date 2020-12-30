@@ -29,10 +29,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLRenderPipelineState
- * @abstract MTLRenderPipelineState represents a compiled render pipeline
+ * [@protocol] MTLRenderPipelineState
  * 
- * @discussion MTLRenderPipelineState is a compiled render pipeline and can be set on a MTLRenderCommandEncoder.
+ * MTLRenderPipelineState represents a compiled render pipeline
+ * 
+ * MTLRenderPipelineState is a compiled render pipeline and can be set on a MTLRenderCommandEncoder.
  */
 @Generated
 @Library("Metal")
@@ -49,8 +50,9 @@ public interface MTLRenderPipelineState {
     String label();
 
     /**
-     * @method imageblockMemoryLengthForDimensions:sampleCount:
-     * @brief Returns imageblock memory length for given image block dimensions. Dimensions must be valid tile dimensions.
+     * imageblockMemoryLengthForDimensions:sampleCount:
+     * 
+     * Returns imageblock memory length for given image block dimensions. Dimensions must be valid tile dimensions.
      */
     @Generated
     @Selector("imageblockMemoryLengthForDimensions:")
@@ -58,8 +60,9 @@ public interface MTLRenderPipelineState {
     long imageblockMemoryLengthForDimensions(@ByValue MTLSize imageblockDimensions);
 
     /**
-     * @property imageblockSampleLength
-     * @brief Returns imageblock memory length used by a single sample when rendered using this pipeline.
+     * [@property] imageblockSampleLength
+     * 
+     * Returns imageblock memory length used by a single sample when rendered using this pipeline.
      */
     @Generated
     @Selector("imageblockSampleLength")
@@ -67,8 +70,9 @@ public interface MTLRenderPipelineState {
     long imageblockSampleLength();
 
     /**
-     * @property maxTotalThreadsPerThreadgroup
-     * @abstract The maximum total number of threads that can be in a single threadgroup.
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * The maximum total number of threads that can be in a single threadgroup.
      */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
@@ -76,8 +80,9 @@ public interface MTLRenderPipelineState {
     long maxTotalThreadsPerThreadgroup();
 
     /**
-     * @property threadgroupSizeMatchesTileSize
-     * @abstract Returns true when the pipeline state requires a threadgroup size equal to the tile size
+     * [@property] threadgroupSizeMatchesTileSize
+     * 
+     * Returns true when the pipeline state requires a threadgroup size equal to the tile size
      */
     @Generated
     @Selector("threadgroupSizeMatchesTileSize")

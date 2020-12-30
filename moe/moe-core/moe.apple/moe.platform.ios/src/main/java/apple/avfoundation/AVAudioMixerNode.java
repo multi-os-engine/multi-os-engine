@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioMixerNode
- * @abstract A node that mixes its inputs to a single output.
- * @discussion
+ * AVAudioMixerNode
+ * 
+ * A node that mixes its inputs to a single output.
+ * 
  * 	Mixers may have any number of inputs.
  * 
  * 	The mixer accepts input at any sample rate and efficiently combines sample rate
@@ -172,9 +173,10 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     public native AVAudioMixerNode init();
 
     /**
-     * @property nextAvailableInputBus
-     * @abstract Find an unused input bus.
-     * @discussion
+     * [@property] nextAvailableInputBus
+     * 
+     * Find an unused input bus.
+     * 
      * 	This will find and return the first input bus to which no other node is connected.
      */
     @Generated
@@ -191,9 +193,10 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     public native float occlusion();
 
     /**
-     * @property outputVolume
-     * @abstract The mixer's output volume.
-     * @discussion
+     * [@property] outputVolume
+     * 
+     * The mixer's output volume.
+     * 
      * 	This accesses the mixer's output volume (0.0-1.0, inclusive).
      */
     @Generated
@@ -231,9 +234,10 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
     public native void setOcclusion(float value);
 
     /**
-     * @property outputVolume
-     * @abstract The mixer's output volume.
-     * @discussion
+     * [@property] outputVolume
+     * 
+     * The mixer's output volume.
+     * 
      * 	This accesses the mixer's output volume (0.0-1.0, inclusive).
      */
     @Generated

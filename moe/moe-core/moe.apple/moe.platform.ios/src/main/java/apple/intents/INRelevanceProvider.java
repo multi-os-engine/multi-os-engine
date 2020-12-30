@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A relevance provider represents a piece of relevance information that can be used by Siri when predicting relevant shortcuts.
+ * A relevance provider represents a piece of relevance information that can be used by Siri when predicting relevant shortcuts.
  */
 @Generated
 @Library("Intents")

@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNOptimizerDescriptor
- * @discussion The MPSNNOptimizerDescriptor base class. Optimizers are generally used to update trainable neural network parameters.
+ * MPSNNOptimizerDescriptor
+ * 
+ * The MPSNNOptimizerDescriptor base class. Optimizers are generally used to update trainable neural network parameters.
  *             Users are usually expected to call these MPSKernels from the update methods on their Convolution or BatchNormalization data sources.
  * 
  *             Before the gradient is used to update the original value, some preprocessing occurs on each gradient where it is scaled or clipped
@@ -60,9 +61,11 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property   applyGradientClipping
-     * @abstract   A bool which decides if gradient will be clipped
-     * @discussion The default value is NO
+     * [@property]   applyGradientClipping
+     * 
+     * A bool which decides if gradient will be clipped
+     * 
+     * The default value is NO
      */
     @Generated
     @Selector("applyGradientClipping")
@@ -99,25 +102,29 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native String description_static();
 
     /**
-     * @property   gradientClipMax
-     * @abstract   The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
+     * [@property]   gradientClipMax
+     * 
+     * The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
     @Generated
     @Selector("gradientClipMax")
     public native float gradientClipMax();
 
     /**
-     * @property   gradientClipMin
-     * @abstract   The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
+     * [@property]   gradientClipMin
+     * 
+     * The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
     @Generated
     @Selector("gradientClipMin")
     public native float gradientClipMin();
 
     /**
-     * @property   gradientRescale
-     * @abstract   The gradientRescale at which we apply to incoming gradient values
-     * @discussion The default value is 1.0
+     * [@property]   gradientRescale
+     * 
+     * The gradientRescale at which we apply to incoming gradient values
+     * 
+     * The default value is 1.0
      */
     @Generated
     @Selector("gradientRescale")
@@ -133,7 +140,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native MPSNNOptimizerDescriptor init();
 
     /**
-     * @abstract   Initialization for the MPSNNOptimizerDescriptor object
+     * Initialization for the MPSNNOptimizerDescriptor object
      * 
      * @param      learningRate               The learningRate which will be applied
      * @param      gradientRescale            The gradientRescale which will be applied
@@ -152,7 +159,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
             float gradientClipMin, @NUInt long regularizationType, float regularizationScale);
 
     /**
-     * @abstract   Initialization for the MPSNNOptimizerDescriptor object, no gradient clipping would be applied
+     * Initialization for the MPSNNOptimizerDescriptor object, no gradient clipping would be applied
      * 
      * @param      learningRate               The learningRate which will be applied
      * @param      gradientRescale            The gradientRescale which will be applied
@@ -188,9 +195,11 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   learningRate
-     * @abstract   The learningRate at which we update values
-     * @discussion The default value is 0.001f
+     * [@property]   learningRate
+     * 
+     * The learningRate at which we update values
+     * 
+     * The default value is 0.001f
      */
     @Generated
     @Selector("learningRate")
@@ -203,7 +212,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract   Creates a descriptor on autoreleaspool for the MPSNNOptimizerDescriptor object
+     * Creates a descriptor on autoreleaspool for the MPSNNOptimizerDescriptor object
      * 
      * @param      learningRate               The learningRate which will be applied
      * @param      gradientRescale            The gradientRescale which will be applied
@@ -222,7 +231,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
             float gradientClipMin, @NUInt long regularizationType, float regularizationScale);
 
     /**
-     * @abstract   Creates a descriptor on autoreleaspool for the MPSNNOptimizerDescriptor object, no gradient clipping would be applied
+     * Creates a descriptor on autoreleaspool for the MPSNNOptimizerDescriptor object, no gradient clipping would be applied
      * 
      * @param      learningRate               The learningRate which will be applied
      * @param      gradientRescale            The gradientRescale which will be applied
@@ -237,18 +246,22 @@ public class MPSNNOptimizerDescriptor extends NSObject {
             float learningRate, float gradientRescale, @NUInt long regularizationType, float regularizationScale);
 
     /**
-     * @property   regularizationScale
-     * @abstract   The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
-     * @discussion The default value is 0.0
+     * [@property]   regularizationScale
+     * 
+     * The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
+     * 
+     * The default value is 0.0
      */
     @Generated
     @Selector("regularizationScale")
     public native float regularizationScale();
 
     /**
-     * @property   regularizationType
-     * @abstract   The regularizationType which we apply.
-     * @discussion The default value is MPSRegularizationTypeNone
+     * [@property]   regularizationType
+     * 
+     * The regularizationType which we apply.
+     * 
+     * The default value is MPSRegularizationTypeNone
      */
     @Generated
     @Selector("regularizationType")
@@ -264,61 +277,73 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   applyGradientClipping
-     * @abstract   A bool which decides if gradient will be clipped
-     * @discussion The default value is NO
+     * [@property]   applyGradientClipping
+     * 
+     * A bool which decides if gradient will be clipped
+     * 
+     * The default value is NO
      */
     @Generated
     @Selector("setApplyGradientClipping:")
     public native void setApplyGradientClipping(boolean value);
 
     /**
-     * @property   gradientClipMax
-     * @abstract   The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
+     * [@property]   gradientClipMax
+     * 
+     * The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
     @Generated
     @Selector("setGradientClipMax:")
     public native void setGradientClipMax(float value);
 
     /**
-     * @property   gradientClipMin
-     * @abstract   The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
+     * [@property]   gradientClipMin
+     * 
+     * The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
     @Generated
     @Selector("setGradientClipMin:")
     public native void setGradientClipMin(float value);
 
     /**
-     * @property   gradientRescale
-     * @abstract   The gradientRescale at which we apply to incoming gradient values
-     * @discussion The default value is 1.0
+     * [@property]   gradientRescale
+     * 
+     * The gradientRescale at which we apply to incoming gradient values
+     * 
+     * The default value is 1.0
      */
     @Generated
     @Selector("setGradientRescale:")
     public native void setGradientRescale(float value);
 
     /**
-     * @property   learningRate
-     * @abstract   The learningRate at which we update values
-     * @discussion The default value is 0.001f
+     * [@property]   learningRate
+     * 
+     * The learningRate at which we update values
+     * 
+     * The default value is 0.001f
      */
     @Generated
     @Selector("setLearningRate:")
     public native void setLearningRate(float value);
 
     /**
-     * @property   regularizationScale
-     * @abstract   The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
-     * @discussion The default value is 0.0
+     * [@property]   regularizationScale
+     * 
+     * The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
+     * 
+     * The default value is 0.0
      */
     @Generated
     @Selector("setRegularizationScale:")
     public native void setRegularizationScale(float value);
 
     /**
-     * @property   regularizationType
-     * @abstract   The regularizationType which we apply.
-     * @discussion The default value is MPSRegularizationTypeNone
+     * [@property]   regularizationType
+     * 
+     * The regularizationType which we apply.
+     * 
+     * The default value is MPSRegularizationTypeNone
      */
     @Generated
     @Selector("setRegularizationType:")

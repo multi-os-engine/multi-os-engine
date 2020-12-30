@@ -189,6 +189,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Create a sprite with a color and the specified bounds.
+     * 
      * @param color the color to use for tinting the sprite.
      * @param size the size of the sprite in points
      */
@@ -200,6 +201,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
      * Create a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite. Its size is set to the SKTexture's pixel width/height)
      * The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
      * Thus the sprite has the texture centered about the position. If you wish to have the texture anchored at a different offset set the anchorPoint to another pair of values in the interval from 0.0 up to and including 1.0.
+     * 
      * @param name is the name of an image file stored in the app bundle.
      */
     @Generated
@@ -212,6 +214,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Create a sprite with an SKTexture and set its size to the SKTexture's pixel width/height.
+     * 
      * @param texture the texture to reference for size and content
      */
     @Generated
@@ -224,6 +227,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Create a sprite with an SKTexture and the specified size.
+     * 
      * @param texture the texture to reference for size and content
      * @param size the size of the sprite in points
      */
@@ -258,6 +262,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Sets the blend mode to use when composing the sprite with the final framebuffer.
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -301,6 +306,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Initialize a sprite with a color and the specified bounds.
+     * 
      * @param color the color to use for tinting the sprite.
      * @param size the size of the sprite in points
      */
@@ -312,6 +318,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
      * Initialize a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite. Its size is set to the SKTexture's pixel width/height)
      * The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
      * Thus the sprite has the texture centered about the position. If you wish to have the texture anchored at a different offset set the anchorPoint to another pair of values in the interval from 0.0 up to and including 1.0.
+     * 
      * @param name the name or path of the image to load.
      */
     @Generated
@@ -320,6 +327,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Initialize a sprite with an SKTexture and set its size to the SKTexture's width/height.
+     * 
      * @param texture the texture to reference for size and content
      */
     @Generated
@@ -329,6 +337,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     /**
      * Designated Initializer
      * Initialize a sprite with a color and the specified bounds.
+     * 
      * @param texture the texture to use (can be nil for colored sprite)
      * @param color the color to use for tinting the sprite.
      * @param size the size of the sprite in points
@@ -385,6 +394,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
 
     /**
      * Sets the blend mode to use when composing the sprite with the final framebuffer.
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated

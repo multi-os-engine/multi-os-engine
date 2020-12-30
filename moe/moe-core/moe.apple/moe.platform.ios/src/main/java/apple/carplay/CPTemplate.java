@@ -182,7 +182,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab may optionally
      * display a badge indicator.
      * 
-     * @note This defaults to NO. Specify YES to display a badge indicator on this tab.
+     * [@note] This defaults to NO. Specify YES to display a badge indicator on this tab.
      */
     @Generated
     @Selector("setShowsTabBadge:")
@@ -192,7 +192,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the image specified in this template. If a tabSystemItem is also specified, tabImage will take precedence.
      * 
-     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
     @Selector("setTabImage:")
@@ -202,7 +202,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the system image AND system title specified in this template.
      * 
-     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
     @Selector("setTabSystemItem:")
@@ -212,9 +212,9 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the @c tabTitle specified in this template.
      * 
-     * @note If no @c tabTitle is specified, the tab will inherit the template's title, if any.
+     * [@note] If no @c tabTitle is specified, the tab will inherit the template's title, if any.
      * 
-     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
     @Selector("setTabTitle:")
@@ -224,7 +224,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab may optionally
      * display a badge indicator.
      * 
-     * @note This defaults to NO. Specify YES to display a badge indicator on this tab.
+     * [@note] This defaults to NO. Specify YES to display a badge indicator on this tab.
      */
     @Generated
     @Selector("showsTabBadge")
@@ -234,7 +234,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the image specified in this template. If a tabSystemItem is also specified, tabImage will take precedence.
      * 
-     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
     @Selector("tabImage")
@@ -244,7 +244,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the system image AND system title specified in this template.
      * 
-     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
     @Selector("tabSystemItem")
@@ -255,9 +255,9 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the @c tabTitle specified in this template.
      * 
-     * @note If no @c tabTitle is specified, the tab will inherit the template's title, if any.
+     * [@note] If no @c tabTitle is specified, the tab will inherit the template's title, if any.
      * 
-     * @note Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
+     * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
     @Selector("tabTitle")

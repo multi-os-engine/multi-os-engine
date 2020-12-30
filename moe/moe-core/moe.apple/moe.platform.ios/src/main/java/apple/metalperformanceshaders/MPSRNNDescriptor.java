@@ -24,9 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSRNNDescriptor
- * @dependency This depends on Metal.framework
- * @discussion The MPSRNNDescriptor specifies a Recursive neural network block/layer descriptor.
+ * MPSRNNDescriptor
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSRNNDescriptor specifies a Recursive neural network block/layer descriptor.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -96,8 +97,9 @@ public class MPSRNNDescriptor extends NSObject {
     public native MPSRNNDescriptor init();
 
     /**
-     * @property   inputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the input image or number of rows in the input matrix.
+     * [@property]   inputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the input image or number of rows in the input matrix.
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -126,8 +128,9 @@ public class MPSRNNDescriptor extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   layerSequenceDirection
-     * @abstract   When the layer specified with this descriptor is used to process a sequence of inputs
+     * [@property]   layerSequenceDirection
+     * 
+     * When the layer specified with this descriptor is used to process a sequence of inputs
      *             by calling @see encodeBidirectionalSequenceToCommandBuffer then this parameter defines
      *             in which direction the sequence is processed. The operation of the layer is:
      *                 (yt, ht, ct) = f(xt,ht-1,ct-1) for MPSRNNSequenceDirectionForward
@@ -135,6 +138,7 @@ public class MPSRNNDescriptor extends NSObject {
      *                 (yt, ht, ct) = f(xt,ht+1,ct+1) for MPSRNNSequenceDirectionBackward, where
      *             xt is the output of the previous layer that encodes in the same direction as this layer,
      *             (or the input image or matrix if this is the first layer in stack with this direction).
+     * 
      *             @see MPSRNNImageInferenceLayer and @see MPSRNNMatrixInferenceLayer.
      */
     @Generated
@@ -149,8 +153,9 @@ public class MPSRNNDescriptor extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property   outputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the destination image or number of rows in the destination matrix.
+     * [@property]   outputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the destination image or number of rows in the destination matrix.
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -166,16 +171,18 @@ public class MPSRNNDescriptor extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   inputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the input image or number of rows in the input matrix.
+     * [@property]   inputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the input image or number of rows in the input matrix.
      */
     @Generated
     @Selector("setInputFeatureChannels:")
     public native void setInputFeatureChannels(@NUInt long value);
 
     /**
-     * @property   layerSequenceDirection
-     * @abstract   When the layer specified with this descriptor is used to process a sequence of inputs
+     * [@property]   layerSequenceDirection
+     * 
+     * When the layer specified with this descriptor is used to process a sequence of inputs
      *             by calling @see encodeBidirectionalSequenceToCommandBuffer then this parameter defines
      *             in which direction the sequence is processed. The operation of the layer is:
      *                 (yt, ht, ct) = f(xt,ht-1,ct-1) for MPSRNNSequenceDirectionForward
@@ -183,6 +190,7 @@ public class MPSRNNDescriptor extends NSObject {
      *                 (yt, ht, ct) = f(xt,ht+1,ct+1) for MPSRNNSequenceDirectionBackward, where
      *             xt is the output of the previous layer that encodes in the same direction as this layer,
      *             (or the input image or matrix if this is the first layer in stack with this direction).
+     * 
      *             @see MPSRNNImageInferenceLayer and @see MPSRNNMatrixInferenceLayer.
      */
     @Generated
@@ -190,16 +198,18 @@ public class MPSRNNDescriptor extends NSObject {
     public native void setLayerSequenceDirection(@NUInt long value);
 
     /**
-     * @property   outputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the destination image or number of rows in the destination matrix.
+     * [@property]   outputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the destination image or number of rows in the destination matrix.
      */
     @Generated
     @Selector("setOutputFeatureChannels:")
     public native void setOutputFeatureChannels(@NUInt long value);
 
     /**
-     * @property   useFloat32Weights
-     * @abstract   If YES, then @ref MPSRNNMatrixInferenceLayer uses 32-bit floating point numbers internally for weights when
+     * [@property]   useFloat32Weights
+     * 
+     * If YES, then @ref MPSRNNMatrixInferenceLayer uses 32-bit floating point numbers internally for weights when
      *             computing matrix transformations. If NO, then 16-bit, half precision floating point numbers are used.
      *             Currently @ref MPSRNNImageInferenceLayer ignores this property and the convolution operations always
      *             convert FP32 weights into FP16 for better performance.
@@ -210,8 +220,9 @@ public class MPSRNNDescriptor extends NSObject {
     public native void setUseFloat32Weights(boolean value);
 
     /**
-     * @property   useLayerInputUnitTransformMode
-     * @abstract   if YES then use identity transformation for all weights (W, Wr, Wi, Wf, Wo, Wc) affecting input x_j in this layer,
+     * [@property]   useLayerInputUnitTransformMode
+     * 
+     * if YES then use identity transformation for all weights (W, Wr, Wi, Wf, Wo, Wc) affecting input x_j in this layer,
      *             even if said weights are specified as nil.
      *             For example 'W_ij * x_j' is replaced by 'x_j' in formulae defined in @ref MPSRNNSingleGateDescriptor. Defaults to NO.
      */
@@ -228,8 +239,9 @@ public class MPSRNNDescriptor extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property   useFloat32Weights
-     * @abstract   If YES, then @ref MPSRNNMatrixInferenceLayer uses 32-bit floating point numbers internally for weights when
+     * [@property]   useFloat32Weights
+     * 
+     * If YES, then @ref MPSRNNMatrixInferenceLayer uses 32-bit floating point numbers internally for weights when
      *             computing matrix transformations. If NO, then 16-bit, half precision floating point numbers are used.
      *             Currently @ref MPSRNNImageInferenceLayer ignores this property and the convolution operations always
      *             convert FP32 weights into FP16 for better performance.
@@ -240,8 +252,9 @@ public class MPSRNNDescriptor extends NSObject {
     public native boolean useFloat32Weights();
 
     /**
-     * @property   useLayerInputUnitTransformMode
-     * @abstract   if YES then use identity transformation for all weights (W, Wr, Wi, Wf, Wo, Wc) affecting input x_j in this layer,
+     * [@property]   useLayerInputUnitTransformMode
+     * 
+     * if YES then use identity transformation for all weights (W, Wr, Wi, Wf, Wo, Wc) affecting input x_j in this layer,
      *             even if said weights are specified as nil.
      *             For example 'W_ij * x_j' is replaced by 'x_j' in formulae defined in @ref MPSRNNSingleGateDescriptor. Defaults to NO.
      */

@@ -26,9 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageDivide
- * @dependency This depends on Metal.framework.
- * @discussion Specifies the division operator.
+ * MPSImageDivide
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * Specifies the division operator.
  *             For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
  *             it applies the following function: result = ((primaryScale * x) / (secondaryScale * y)) + bias.
  */
@@ -108,7 +109,8 @@ public class MPSImageDivide extends MPSImageArithmetic {
     public native MPSImageDivide initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the division operator
+     * Initialize the division operator
+     * 
      * @param     device           The device the filter will run on.
      * @return    A valid MPSImageDivide object or nil, if failure.
      */

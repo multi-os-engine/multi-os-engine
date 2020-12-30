@@ -118,7 +118,7 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     public static native INImage imageNamed(String name);
 
     /**
-     * @abstract Returns the image size at which the image for an INIntentResponse will be displayed
+     * Returns the image size at which the image for an INIntentResponse will be displayed
      */
     @Generated
     @Selector("imageSizeForIntentResponse:")

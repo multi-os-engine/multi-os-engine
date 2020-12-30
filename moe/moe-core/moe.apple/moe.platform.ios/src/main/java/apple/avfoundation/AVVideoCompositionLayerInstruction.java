@@ -177,8 +177,10 @@ public class AVVideoCompositionLayerInstruction extends NSObject
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @method		getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:
-     * @abstract		Obtains the crop rectangle ramp that includes the specified time.
+     * getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:
+     * 
+     * Obtains the crop rectangle ramp that includes the specified time.
+     * 
      * @param			time
      *   If a ramp with a timeRange that contains the specified time has been set, information about the effective ramp for that time is supplied.
      *   Otherwise, information about the first ramp that starts after the specified time is supplied.
@@ -188,7 +190,7 @@ public class AVVideoCompositionLayerInstruction extends NSObject
      *   A pointer to a CGRect to receive the ending crop rectangle value for the crop rectangle ramp. May be NULL.
      * @param			timeRange
      *   A pointer to a CMTimeRange to receive the timeRange of the crop rectangle ramp. May be NULL.
-     * @result
+     * @return
      *   An indication of success. NO will be returned if the specified time is beyond the duration of the last crop rectangle ramp that has been set.
      */
     @Generated
@@ -197,8 +199,10 @@ public class AVVideoCompositionLayerInstruction extends NSObject
             CGRect startCropRectangle, CGRect endCropRectangle, CMTimeRange timeRange);
 
     /**
-     * @method		getOpacityRampForTime:startOpacity:endOpacity:timeRange:
-     * @abstract		Obtains the opacity ramp that includes the specified time.
+     * getOpacityRampForTime:startOpacity:endOpacity:timeRange:
+     * 
+     * Obtains the opacity ramp that includes the specified time.
+     * 
      * @param			time
      *   If a ramp with a timeRange that contains the specified time has been set, information about the effective ramp for that time is supplied.
      *   Otherwise, information about the first ramp that starts after the specified time is supplied.
@@ -208,7 +212,7 @@ public class AVVideoCompositionLayerInstruction extends NSObject
      *   A pointer to a float to receive the ending opacity value for the opacity ramp. May be NULL.
      * @param			timeRange
      *   A pointer to a CMTimeRange to receive the timeRange of the opacity ramp. May be NULL.
-     * @result
+     * @return
      *   An indication of success. NO will be returned if the specified time is beyond the duration of the last opacity ramp that has been set.
      */
     @Generated
@@ -217,8 +221,10 @@ public class AVVideoCompositionLayerInstruction extends NSObject
             FloatPtr startOpacity, FloatPtr endOpacity, CMTimeRange timeRange);
 
     /**
-     * @method		getTransformRampForTime:startTransform:endTransform:timeRange:
-     * @abstract		Obtains the transform ramp that includes the specified time.
+     * getTransformRampForTime:startTransform:endTransform:timeRange:
+     * 
+     * Obtains the transform ramp that includes the specified time.
+     * 
      * @param			time
      *   If a ramp with a timeRange that contains the specified time has been set, information about the effective ramp for that time is supplied.
      *   Otherwise, information about the first ramp that starts after the specified time is supplied.
@@ -228,7 +234,7 @@ public class AVVideoCompositionLayerInstruction extends NSObject
      *   A pointer to a float to receive the ending transform value for the transform ramp. May be NULL.
      * @param			timeRange
      *   A pointer to a CMTimeRange to receive the timeRange of the transform ramp. May be NULL.
-     * @result
+     * @return
      *   An indication of success. NO will be returned if the specified time is beyond the duration of the last transform ramp that has been set.
      */
     @Generated

@@ -4,8 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum SCNHitTestSearchMode
- * @abstract hit test modes
+ * [@enum] SCNHitTestSearchMode
+ * 
+ * hit test modes
  */
 @Generated
 public final class SCNHitTestSearchMode {

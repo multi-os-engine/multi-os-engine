@@ -419,15 +419,17 @@ public class NSAttributedString extends NSObject
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
 
     /**
-     * @abstract Converts HTML data into an attributed string.
+     * Converts HTML data into an attributed string.
+     * 
+     * The completionHandler is passed the attributed string result along with any
+     * document-level attributes, or an error. If neither NSTextEncodingNameDocumentOption nor
+     * NSCharacterEncodingDocumentOption is supplied, a best-guess encoding is used.
+     * 
      * @param data The HTML data to use as the contents.
      * @param options Document attributes for interpreting the document contents.
      * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption, NSTextEncodingNameDocumentOption,
      * and NSCharacterEncodingDocumentOption are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
-     * @discussion The completionHandler is passed the attributed string result along with any
-     * document-level attributes, or an error. If neither NSTextEncodingNameDocumentOption nor
-     * NSCharacterEncodingDocumentOption is supplied, a best-guess encoding is used.
      */
     @Generated
     @Selector("loadFromHTMLWithData:options:completionHandler:")
@@ -443,16 +445,18 @@ public class NSAttributedString extends NSObject
     }
 
     /**
-     * @abstract Converts a local HTML file into an attributed string.
+     * Converts a local HTML file into an attributed string.
+     * 
+     * The completionHandler is passed the attributed string result along with any
+     * document-level attributes, or an error. If NSReadAccessURLDocumentOption references a single file,
+     * only that file may be loaded by WebKit. If NSReadAccessURLDocumentOption references a directory,
+     * files inside that directory may be loaded by WebKit.
+     * 
      * @param fileURL The file URL to load.
      * @param options Document attributes for interpreting the document contents.
      * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSReadAccessURLDocumentOption
      * are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
-     * @discussion The completionHandler is passed the attributed string result along with any
-     * document-level attributes, or an error. If NSReadAccessURLDocumentOption references a single file,
-     * only that file may be loaded by WebKit. If NSReadAccessURLDocumentOption references a directory,
-     * files inside that directory may be loaded by WebKit.
      */
     @Generated
     @Selector("loadFromHTMLWithFileURL:options:completionHandler:")
@@ -469,13 +473,15 @@ public class NSAttributedString extends NSObject
     }
 
     /**
-     * @abstract Loads an HTML URL request and converts the contents into an attributed string.
+     * Loads an HTML URL request and converts the contents into an attributed string.
+     * 
+     * The completionHandler is passed the attributed string result along with any
+     * document-level attributes, or an error.
+     * 
      * @param request The request specifying the URL to load.
      * @param options Document attributes for interpreting the document contents.
      * NSTextSizeMultiplierDocumentOption and NSTimeoutDocumentOption are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
-     * @discussion The completionHandler is passed the attributed string result along with any
-     * document-level attributes, or an error.
      */
     @Generated
     @Selector("loadFromHTMLWithRequest:options:completionHandler:")
@@ -492,15 +498,17 @@ public class NSAttributedString extends NSObject
     }
 
     /**
-     * @abstract Converts an HTML string into an attributed string.
+     * Converts an HTML string into an attributed string.
+     * 
+     * The completionHandler is passed the attributed string result along with any
+     * document-level attributes, or an error. NSBaseURLDocumentOption is used to resolve relative URLs
+     * within the document.
+     * 
      * @param string The HTML string to use as the contents.
      * @param options Document attributes for interpreting the document contents.
      * NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSBaseURLDocumentOption
      * are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
-     * @discussion The completionHandler is passed the attributed string result along with any
-     * document-level attributes, or an error. NSBaseURLDocumentOption is used to resolve relative URLs
-     * within the document.
      */
     @Generated
     @Selector("loadFromHTMLWithString:options:completionHandler:")

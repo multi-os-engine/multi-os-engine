@@ -20,15 +20,16 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @typedef NEHotspotHelperCommandType
- * @abstract The type of the NEHotspotHelperCommand object.
- * @const kNEHotspotHelperCommandTypeNone Placeholder for the null command.
- * @const kNEHotspotHelperCommandTypeFilterScanList Filter the Wi-Fi scan list.
- * @const kNEHotspotHelperCommandTypeEvaluate Evaluate the network.
- * @const kNEHotspotHelperCommandTypeAuthenticate Authenticate to the network.
- * @const kNEHotspotHelperCommandTypePresentUI Present user interface.
- * @const kNEHotspotHelperCommandTypeMaintain Maintain the network.
- * @const kNEHotspotHelperCommandTypeLogoff Logoff the network.
+ * [@typedef] NEHotspotHelperCommandType
+ * 
+ * The type of the NEHotspotHelperCommand object.
+ * [@const] kNEHotspotHelperCommandTypeNone Placeholder for the null command.
+ * [@const] kNEHotspotHelperCommandTypeFilterScanList Filter the Wi-Fi scan list.
+ * [@const] kNEHotspotHelperCommandTypeEvaluate Evaluate the network.
+ * [@const] kNEHotspotHelperCommandTypeAuthenticate Authenticate to the network.
+ * [@const] kNEHotspotHelperCommandTypePresentUI Present user interface.
+ * [@const] kNEHotspotHelperCommandTypeMaintain Maintain the network.
+ * [@const] kNEHotspotHelperCommandTypeLogoff Logoff the network.
  */
 @Generated
 public final class NEHotspotHelperCommandType {

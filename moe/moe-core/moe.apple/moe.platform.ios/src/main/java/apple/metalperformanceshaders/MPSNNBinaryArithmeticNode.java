@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract virtual base class for basic arithmetic nodes
+ * virtual base class for basic arithmetic nodes
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -94,7 +94,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     public native MPSNNBinaryArithmeticNode init();
 
     /**
-     * @abstract init an arithemtic node with two sources
+     * init an arithemtic node with two sources
+     * 
      * @param  left    the left operand
      * @param  right   the right operand
      */
@@ -103,7 +104,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     public native MPSNNBinaryArithmeticNode initWithLeftSourceRightSource(MPSNNImageNode left, MPSNNImageNode right);
 
     /**
-     * @abstract init an arithemtic node with an array of sources
+     * init an arithemtic node with an array of sources
+     * 
      * @param  sourceNodes     A valid NSArray containing two sources
      */
     @Generated
@@ -138,7 +140,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract create an autoreleased arithemtic node with two sources
+     * create an autoreleased arithemtic node with two sources
+     * 
      * @param  left    the left operand
      * @param  right   the right operand
      */
@@ -148,7 +151,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
             MPSNNImageNode right);
 
     /**
-     * @abstract create an autoreleased arithemtic node with an array of sources
+     * create an autoreleased arithemtic node with an array of sources
+     * 
      * @param  sourceNodes     A valid NSArray containing two sources
      */
     @Generated
@@ -185,8 +189,9 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     public native Class gradientClass();
 
     /**
-     * @abstract create new arithmetic gradient nodes
-     * @discussion Create two new arithmetic gradient nodes - one that computes the gradient for the primary
+     * create new arithmetic gradient nodes
+     * 
+     * Create two new arithmetic gradient nodes - one that computes the gradient for the primary
      * source image and one that computes the gradient for the secondary sourcefrom the inference pass.
      */
     @Generated

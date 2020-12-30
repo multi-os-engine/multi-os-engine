@@ -29,8 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class  MPSCNNNormalizationMeanAndVarianceState
- * @description A state which contains mean and variance terms used to apply a
+ * MPSCNNNormalizationMeanAndVarianceState
+ * [@description] A state which contains mean and variance terms used to apply a
  *              normalization in a MPSCNNBatchNormalization operation.
  */
 @Generated
@@ -116,7 +116,7 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
 
     /**
-     * @abstract   Initialize a MPSCNNNormalizationMeanAndVarianceState object using values
+     * Initialize a MPSCNNNormalizationMeanAndVarianceState object using values
      *             contained in MTLBuffers.
      * 
      * @param      mean        The MTLBuffer containing mean terms.
@@ -159,8 +159,9 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   mean
-     * @abstract   A MTLBuffer containing the mean terms.
+     * [@property]   mean
+     * 
+     * A MTLBuffer containing the mean terms.
      */
     @Generated
     @Selector("mean")
@@ -202,7 +203,7 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     /**
-     * @abstract   Create a temporary MPSCNNNormalizationMeanAndVarianceState suitable
+     * Create a temporary MPSCNNNormalizationMeanAndVarianceState suitable
      *             for a normalization operation on images containing no more than
      *             the specified number of feature channels.
      * 
@@ -231,8 +232,9 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     /**
-     * @property   variance
-     * @abstract   A MTLBuffer containing the variance terms.
+     * [@property]   variance
+     * 
+     * A MTLBuffer containing the variance terms.
      */
     @Generated
     @Selector("variance")

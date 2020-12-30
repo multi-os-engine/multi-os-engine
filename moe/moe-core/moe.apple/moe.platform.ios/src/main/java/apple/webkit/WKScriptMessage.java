@@ -155,8 +155,9 @@ public class WKScriptMessage extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract The body of the message.
-     * @discussion Allowed types are NSNumber, NSString, NSDate, NSArray,
+     * The body of the message.
+     * 
+     * Allowed types are NSNumber, NSString, NSDate, NSArray,
      * NSDictionary, and NSNull.
      */
     @Generated
@@ -165,7 +166,7 @@ public class WKScriptMessage extends NSObject {
     public native Object body();
 
     /**
-     * @abstract The frame sending the message.
+     * The frame sending the message.
      */
     @Generated
     @Selector("frameInfo")
@@ -176,21 +177,21 @@ public class WKScriptMessage extends NSObject {
     public native WKScriptMessage init();
 
     /**
-     * @abstract The name of the message handler to which the message is sent.
+     * The name of the message handler to which the message is sent.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @abstract The web view sending the message.
+     * The web view sending the message.
      */
     @Generated
     @Selector("webView")
     public native WKWebView webView();
 
     /**
-     * @abstract The content world from which the message was sent.
+     * The content world from which the message was sent.
      */
     @Generated
     @Selector("world")

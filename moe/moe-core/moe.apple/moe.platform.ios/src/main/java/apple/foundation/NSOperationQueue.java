@@ -265,11 +265,13 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     }
 
     /**
-     * @method addBarrierBlock:
-     * @param barrier      A block to execute
-     * @discussion         The `addBarrierBlock:` method executes the block when the NSOperationQueue has finished all enqueued operations and
+     * addBarrierBlock:
+     * 
+     * The `addBarrierBlock:` method executes the block when the NSOperationQueue has finished all enqueued operations and
      * prevents any subsequent operations to be executed until the barrier has been completed. This acts similarly to the
      * `dispatch_barrier_async` function.
+     * 
+     * @param barrier      A block to execute
      */
     @Generated
     @Selector("addBarrierBlock:")

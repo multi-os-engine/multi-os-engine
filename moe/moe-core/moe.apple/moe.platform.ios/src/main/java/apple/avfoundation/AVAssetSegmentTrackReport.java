@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVAssetSegmentTrackReport
- * @abstract	This class is vended by AVAssetSegmentReport. It will provide information on a track in a segment data.
+ * AVAssetSegmentTrackReport
+ * 
+ * This class is vended by AVAssetSegmentReport. It will provide information on a track in a segment data.
  */
 @Generated
 @Library("AVFoundation")
@@ -88,8 +89,9 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public static native String description_static();
 
     /**
-     * @property	duration
-     * @abstract	Indicates the duration for this track. The value is kCMTimeInvalid if there is no information available.
+     * [@property]	duration
+     * 
+     * Indicates the duration for this track. The value is kCMTimeInvalid if there is no information available.
      */
     @Generated
     @Selector("duration")
@@ -97,8 +99,9 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public native CMTime duration();
 
     /**
-     * @property	earliestPresentationTimeStamp
-     * @abstract	Indicates the earliest presentation timestamp (PTS) for this track. The value is kCMTimeInvalid if there is no information available.
+     * [@property]	earliestPresentationTimeStamp
+     * 
+     * Indicates the earliest presentation timestamp (PTS) for this track. The value is kCMTimeInvalid if there is no information available.
      */
     @Generated
     @Selector("earliestPresentationTimeStamp")
@@ -106,8 +109,9 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public native CMTime earliestPresentationTimeStamp();
 
     /**
-     * @property	firstVideoSampleInformation
-     * @abstract	Provides information on the first video sample in this track. The value is nil if this track is not video track or no information available.
+     * [@property]	firstVideoSampleInformation
+     * 
+     * Provides information on the first video sample in this track. The value is nil if this track is not video track or no information available.
      */
     @Generated
     @Selector("firstVideoSampleInformation")
@@ -144,8 +148,9 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property	mediaType
-     * @abstract	Indicates the media type for this track. Media types are declared in AVMediaFormat.h.
+     * [@property]	mediaType
+     * 
+     * Indicates the media type for this track. Media types are declared in AVMediaFormat.h.
      */
     @Generated
     @Selector("mediaType")
@@ -174,8 +179,9 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property	trackID
-     * @abstract	Indicates the persistent unique identifier for this track.
+     * [@property]	trackID
+     * 
+     * Indicates the persistent unique identifier for this track.
      */
     @Generated
     @Selector("trackID")

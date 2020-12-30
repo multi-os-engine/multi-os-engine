@@ -46,8 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKAnchoredObjectQuery
- * @discussion    This query can be used by an application to find out about new or deleted samples in the HealthKit
+ * HKAnchoredObjectQuery
+ * 
+ * This query can be used by an application to find out about new or deleted samples in the HealthKit
  *                database.
  */
 @Generated
@@ -273,10 +274,12 @@ public class HKAnchoredObjectQuery extends HKQuery {
             @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitCompletionHandler") Block_initWithTypePredicateAnchorLimitCompletionHandler handler);
 
     /**
-     * @method        initWithType:predicate:anchor:limit:resultsHandler:
-     * @abstract      Returns a query that will retrieve HKSamples and HKDeletedObjects matching the given predicate that are
+     * initWithType:predicate:anchor:limit:resultsHandler:
+     * 
+     * Returns a query that will retrieve HKSamples and HKDeletedObjects matching the given predicate that are
      *                newer than the given anchor.
-     * @discussion    If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
+     * 
+     * If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
      *                Otherwise, the query continues to run and call updateHandler as samples matching the predicate are
      *                created or deleted.
      * 
@@ -295,9 +298,11 @@ public class HKAnchoredObjectQuery extends HKQuery {
             @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitResultsHandler") Block_initWithTypePredicateAnchorLimitResultsHandler handler);
 
     /**
-     * @property      updateHandler
-     * @abstract      An optional handler to be called when samples matching the given predicate are added or deleted.
-     * @discussion    This property may not be modified once the query has been executed.  It may only be set if the query has
+     * [@property]      updateHandler
+     * 
+     * An optional handler to be called when samples matching the given predicate are added or deleted.
+     * 
+     * This property may not be modified once the query has been executed.  It may only be set if the query has
      *                no limit.
      */
     @Generated
@@ -305,9 +310,11 @@ public class HKAnchoredObjectQuery extends HKQuery {
     public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
 
     /**
-     * @property      updateHandler
-     * @abstract      An optional handler to be called when samples matching the given predicate are added or deleted.
-     * @discussion    This property may not be modified once the query has been executed.  It may only be set if the query has
+     * [@property]      updateHandler
+     * 
+     * An optional handler to be called when samples matching the given predicate are added or deleted.
+     * 
+     * This property may not be modified once the query has been executed.  It may only be set if the query has
      *                no limit.
      */
     @Generated

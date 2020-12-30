@@ -25,9 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class       NFCISO15693CustomCommandConfiguration
+ * NFCISO15693CustomCommandConfiguration
  * 
- * @discussion  Configuration options for the Manufacturer Custom command.
+ * Configuration options for the Manufacturer Custom command.
  */
 @Generated
 @Library("CoreNFC")
@@ -80,7 +80,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @discussion  Manufacturer Custom Command Index.  Valid range is 0xA0 to 0xDF.
+     * Manufacturer Custom Command Index.  Valid range is 0xA0 to 0xDF.
      */
     @Generated
     @Selector("customCommandCode")
@@ -105,13 +105,13 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     public native NFCISO15693CustomCommandConfiguration init();
 
     /**
-     * @method initWithManufacturerCode:customCommandCode:requestParameters:
+     * initWithManufacturerCode:customCommandCode:requestParameters:
+     * 
+     * Initialize with default zero maximum retry and zero retry interval.
      * 
      * @param manufacturerCode      8 bits manufacturer code.
      * @param customCommandCode     8 bits custom command code.  Valid range is 0xA0 to 0xDF.
      * @param requestParameters     Optional custom request parameters.
-     * 
-     * @discussion  Initialize with default zero maximum retry and zero retry interval.
      */
     @Generated
     @Selector("initWithManufacturerCode:customCommandCode:requestParameters:")
@@ -119,7 +119,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
             @NUInt long manufacturerCode, @NUInt long customCommandCode, NSData requestParameters);
 
     /**
-     * @method initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:
+     * initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:
      * 
      * @param manufacturerCode      8 bits manufacturer code.
      * @param customCommandCode     8 bits custom command code.  Valid range is 0xA0 to 0xDF.
@@ -155,7 +155,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @discussion  Manufacturer code. Valid range is 0x00 to 0xFF.
+     * Manufacturer code. Valid range is 0x00 to 0xFF.
      */
     @Generated
     @Selector("manufacturerCode")
@@ -169,7 +169,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     public static native Object new_objc();
 
     /**
-     * @discussion  Custom request data.
+     * Custom request data.
      */
     @Generated
     @Selector("requestParameters")
@@ -184,21 +184,21 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @discussion  Manufacturer Custom Command Index.  Valid range is 0xA0 to 0xDF.
+     * Manufacturer Custom Command Index.  Valid range is 0xA0 to 0xDF.
      */
     @Generated
     @Selector("setCustomCommandCode:")
     public native void setCustomCommandCode(@NUInt long value);
 
     /**
-     * @discussion  Manufacturer code. Valid range is 0x00 to 0xFF.
+     * Manufacturer code. Valid range is 0x00 to 0xFF.
      */
     @Generated
     @Selector("setManufacturerCode:")
     public native void setManufacturerCode(@NUInt long value);
 
     /**
-     * @discussion  Custom request data.
+     * Custom request data.
      */
     @Generated
     @Selector("setRequestParameters:")

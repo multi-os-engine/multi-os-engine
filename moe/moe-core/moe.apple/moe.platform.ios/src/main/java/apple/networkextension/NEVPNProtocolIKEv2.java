@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEVPNProtocolIKEv2
- * @discussion The NEVPNProtocolIKEv2 class declares the programmatic interface of an object that manages the IKEv2-specific portion of a VPN configuration.
+ * [@interface] NEVPNProtocolIKEv2
+ * 
+ * The NEVPNProtocolIKEv2 class declares the programmatic interface of an object that manages the IKEv2-specific portion of a VPN configuration.
  * 
  * Instances of this class use IKE version 2 for key negotiation.
  * Instances of this class are thread safe.
@@ -164,16 +165,18 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public static native long version_static();
 
     /**
-     * @property IKESecurityAssociationParameters
-     * @discussion Parameters for the IKE SA
+     * [@property] IKESecurityAssociationParameters
+     * 
+     * Parameters for the IKE SA
      */
     @Generated
     @Selector("IKESecurityAssociationParameters")
     public native NEVPNIKEv2SecurityAssociationParameters IKESecurityAssociationParameters();
 
     /**
-     * @property certificateType
-     * @discussion contains the type of certificate if an certificate is configured.  Default is RSA.
+     * [@property] certificateType
+     * 
+     * contains the type of certificate if an certificate is configured.  Default is RSA.
      */
     @Generated
     @Selector("certificateType")
@@ -181,16 +184,18 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native long certificateType();
 
     /**
-     * @property childSecurityAssociationParameters
-     * @discussion Parameters for the child SA
+     * [@property] childSecurityAssociationParameters
+     * 
+     * Parameters for the child SA
      */
     @Generated
     @Selector("childSecurityAssociationParameters")
     public native NEVPNIKEv2SecurityAssociationParameters childSecurityAssociationParameters();
 
     /**
-     * @property deadPeerDetectionRate
-     * @discussion How frequently the IKEv2 client will run the dead peer detection algorithm.  Default is NEVPNIKEv2DeadPeerDetectionRateMedium.
+     * [@property] deadPeerDetectionRate
+     * 
+     * How frequently the IKEv2 client will run the dead peer detection algorithm.  Default is NEVPNIKEv2DeadPeerDetectionRateMedium.
      */
     @Generated
     @Selector("deadPeerDetectionRate")
@@ -198,32 +203,36 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native long deadPeerDetectionRate();
 
     /**
-     * @property disableMOBIKE
-     * @discussion Disable MOBIKE negotiation. Default is NO.
+     * [@property] disableMOBIKE
+     * 
+     * Disable MOBIKE negotiation. Default is NO.
      */
     @Generated
     @Selector("disableMOBIKE")
     public native boolean disableMOBIKE();
 
     /**
-     * @property disableRedirect
-     * @discussion Disable Server Redirect. Default is NO.
+     * [@property] disableRedirect
+     * 
+     * Disable Server Redirect. Default is NO.
      */
     @Generated
     @Selector("disableRedirect")
     public native boolean disableRedirect();
 
     /**
-     * @property enablePFS
-     * @discussion Enable Perfect Forward Secrecy. Default is NO.
+     * [@property] enablePFS
+     * 
+     * Enable Perfect Forward Secrecy. Default is NO.
      */
     @Generated
     @Selector("enablePFS")
     public native boolean enablePFS();
 
     /**
-     * @property enableRevocationCheck
-     * @discussion Enable certificate revocation check. Default is NO.
+     * [@property] enableRevocationCheck
+     * 
+     * Enable certificate revocation check. Default is NO.
      */
     @Generated
     @Selector("enableRevocationCheck")
@@ -238,104 +247,117 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native NEVPNProtocolIKEv2 initWithCoder(NSCoder coder);
 
     /**
-     * @property serverCertificateCommonName
-     * @discussion A string containing the value to verify in the IKEv2 server certificate's Subject Common Name field.
+     * [@property] serverCertificateCommonName
+     * 
+     * A string containing the value to verify in the IKEv2 server certificate's Subject Common Name field.
      */
     @Generated
     @Selector("serverCertificateCommonName")
     public native String serverCertificateCommonName();
 
     /**
-     * @property serverCertificateIssuerCommonName
-     * @discussion A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2 server's certificate.
+     * [@property] serverCertificateIssuerCommonName
+     * 
+     * A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2 server's certificate.
      */
     @Generated
     @Selector("serverCertificateIssuerCommonName")
     public native String serverCertificateIssuerCommonName();
 
     /**
-     * @property certificateType
-     * @discussion contains the type of certificate if an certificate is configured.  Default is RSA.
+     * [@property] certificateType
+     * 
+     * contains the type of certificate if an certificate is configured.  Default is RSA.
      */
     @Generated
     @Selector("setCertificateType:")
     public native void setCertificateType(@NInt long value);
 
     /**
-     * @property deadPeerDetectionRate
-     * @discussion How frequently the IKEv2 client will run the dead peer detection algorithm.  Default is NEVPNIKEv2DeadPeerDetectionRateMedium.
+     * [@property] deadPeerDetectionRate
+     * 
+     * How frequently the IKEv2 client will run the dead peer detection algorithm.  Default is NEVPNIKEv2DeadPeerDetectionRateMedium.
      */
     @Generated
     @Selector("setDeadPeerDetectionRate:")
     public native void setDeadPeerDetectionRate(@NInt long value);
 
     /**
-     * @property disableMOBIKE
-     * @discussion Disable MOBIKE negotiation. Default is NO.
+     * [@property] disableMOBIKE
+     * 
+     * Disable MOBIKE negotiation. Default is NO.
      */
     @Generated
     @Selector("setDisableMOBIKE:")
     public native void setDisableMOBIKE(boolean value);
 
     /**
-     * @property disableRedirect
-     * @discussion Disable Server Redirect. Default is NO.
+     * [@property] disableRedirect
+     * 
+     * Disable Server Redirect. Default is NO.
      */
     @Generated
     @Selector("setDisableRedirect:")
     public native void setDisableRedirect(boolean value);
 
     /**
-     * @property enablePFS
-     * @discussion Enable Perfect Forward Secrecy. Default is NO.
+     * [@property] enablePFS
+     * 
+     * Enable Perfect Forward Secrecy. Default is NO.
      */
     @Generated
     @Selector("setEnablePFS:")
     public native void setEnablePFS(boolean value);
 
     /**
-     * @property enableRevocationCheck
-     * @discussion Enable certificate revocation check. Default is NO.
+     * [@property] enableRevocationCheck
+     * 
+     * Enable certificate revocation check. Default is NO.
      */
     @Generated
     @Selector("setEnableRevocationCheck:")
     public native void setEnableRevocationCheck(boolean value);
 
     /**
-     * @property serverCertificateCommonName
-     * @discussion A string containing the value to verify in the IKEv2 server certificate's Subject Common Name field.
+     * [@property] serverCertificateCommonName
+     * 
+     * A string containing the value to verify in the IKEv2 server certificate's Subject Common Name field.
      */
     @Generated
     @Selector("setServerCertificateCommonName:")
     public native void setServerCertificateCommonName(String value);
 
     /**
-     * @property serverCertificateIssuerCommonName
-     * @discussion A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2 server's certificate.
+     * [@property] serverCertificateIssuerCommonName
+     * 
+     * A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2 server's certificate.
      */
     @Generated
     @Selector("setServerCertificateIssuerCommonName:")
     public native void setServerCertificateIssuerCommonName(String value);
 
     /**
-     * @property strictRevocationCheck
-     * @discussion Require positive certificate revocation check response for peer certificate validation to pass. Default is NO.
+     * [@property] strictRevocationCheck
+     * 
+     * Require positive certificate revocation check response for peer certificate validation to pass. Default is NO.
      */
     @Generated
     @Selector("setStrictRevocationCheck:")
     public native void setStrictRevocationCheck(boolean value);
 
     /**
-     * @property useConfigurationAttributeInternalIPSubnet
-     * @discussion Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes.  Default is False.
+     * [@property] useConfigurationAttributeInternalIPSubnet
+     * 
+     * Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes.  Default is False.
      */
     @Generated
     @Selector("setUseConfigurationAttributeInternalIPSubnet:")
     public native void setUseConfigurationAttributeInternalIPSubnet(boolean value);
 
     /**
-     * @property strictRevocationCheck
-     * @discussion Require positive certificate revocation check response for peer certificate validation to pass. Default is NO.
+     * [@property] strictRevocationCheck
+     * 
+     * Require positive certificate revocation check response for peer certificate validation to pass. Default is NO.
      */
     @Generated
     @Selector("strictRevocationCheck")
@@ -348,16 +370,18 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     }
 
     /**
-     * @property useConfigurationAttributeInternalIPSubnet
-     * @discussion Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes.  Default is False.
+     * [@property] useConfigurationAttributeInternalIPSubnet
+     * 
+     * Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes.  Default is False.
      */
     @Generated
     @Selector("useConfigurationAttributeInternalIPSubnet")
     public native boolean useConfigurationAttributeInternalIPSubnet();
 
     /**
-     * @property maximumTLSVersion
-     * @discussion Sets a maximum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
+     * [@property] maximumTLSVersion
+     * 
+     * Sets a maximum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
      */
     @Generated
     @Selector("maximumTLSVersion")
@@ -365,8 +389,9 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native long maximumTLSVersion();
 
     /**
-     * @property minimumTLSVersion
-     * @discussion Sets a minimum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
+     * [@property] minimumTLSVersion
+     * 
+     * Sets a minimum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
      */
     @Generated
     @Selector("minimumTLSVersion")
@@ -374,24 +399,27 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native long minimumTLSVersion();
 
     /**
-     * @property maximumTLSVersion
-     * @discussion Sets a maximum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
+     * [@property] maximumTLSVersion
+     * 
+     * Sets a maximum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
      */
     @Generated
     @Selector("setMaximumTLSVersion:")
     public native void setMaximumTLSVersion(@NInt long value);
 
     /**
-     * @property minimumTLSVersion
-     * @discussion Sets a minimum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
+     * [@property] minimumTLSVersion
+     * 
+     * Sets a minimum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
      */
     @Generated
     @Selector("setMinimumTLSVersion:")
     public native void setMinimumTLSVersion(@NInt long value);
 
     /**
-     * @property enableFallback
-     * @discussion Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch over
+     * [@property] enableFallback
+     * 
+     * Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch over
      *     to Cellular Data when WiFi connectivity is poor. By setting the EnableFallback key, the device will bring up a tunnel over
      *     Cellular Data to carry traffic that is eligible for Wi-Fi Assist and also requires VPN. Enabling fallback requires that the
      *     server support multiple tunnels for a single user. Default is NO.
@@ -401,8 +429,9 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native boolean enableFallback();
 
     /**
-     * @property enableFallback
-     * @discussion Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch over
+     * [@property] enableFallback
+     * 
+     * Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch over
      *     to Cellular Data when WiFi connectivity is poor. By setting the EnableFallback key, the device will bring up a tunnel over
      *     Cellular Data to carry traffic that is eligible for Wi-Fi Assist and also requires VPN. Enabling fallback requires that the
      *     server support multiple tunnels for a single user. Default is NO.
@@ -412,8 +441,9 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native void setEnableFallback(boolean value);
 
     /**
-     * @property mtu
-     * @discussion Maximum Transmission Unit (MTU) size in bytes to assign to the tunnel interface.
+     * [@property] mtu
+     * 
+     * Maximum Transmission Unit (MTU) size in bytes to assign to the tunnel interface.
      */
     @Generated
     @Selector("mtu")
@@ -421,8 +451,9 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     public native long mtu();
 
     /**
-     * @property mtu
-     * @discussion Maximum Transmission Unit (MTU) size in bytes to assign to the tunnel interface.
+     * [@property] mtu
+     * 
+     * Maximum Transmission Unit (MTU) size in bytes to assign to the tunnel interface.
      */
     @Generated
     @Selector("setMtu:")

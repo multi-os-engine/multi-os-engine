@@ -20,10 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @typedef AVMusicSequenceLoadOptions
- * @abstract Determines whether data on different MIDI channels is mapped to multiple tracks, or
+ * [@typedef] AVMusicSequenceLoadOptions
+ * 
+ * Determines whether data on different MIDI channels is mapped to multiple tracks, or
  * 	if the tracks are preserved as-is.
- * @discussion
+ * 
  * 	If AVMusicSequenceLoadSMF_ChannelsToTracks is set, the loaded MIDI Sequence will contain a
  * 	tempo track, one track for each MIDI channel that is found in the SMF, and one track for
  * 	SysEx and/or MetaEvents (this will be the last track in the sequence).

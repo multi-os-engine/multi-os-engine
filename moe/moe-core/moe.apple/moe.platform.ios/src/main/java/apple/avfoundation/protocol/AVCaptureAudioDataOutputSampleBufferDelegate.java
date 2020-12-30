@@ -28,8 +28,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol AVCaptureAudioDataOutputSampleBufferDelegate
- * @abstract
+ * [@protocol] AVCaptureAudioDataOutputSampleBufferDelegate
+ * 
  *    Defines an interface for delegates of AVCaptureAudioDataOutput to receive captured audio sample buffers.
  */
 @Generated
@@ -38,9 +38,13 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVCaptureAudioDataOutputSampleBufferDelegate")
 public interface AVCaptureAudioDataOutputSampleBufferDelegate {
     /**
-     * @method captureOutput:didOutputSampleBuffer:fromConnection:
-     * @abstract
+     * captureOutput:didOutputSampleBuffer:fromConnection:
+     * 
      *    Called whenever an AVCaptureAudioDataOutput instance outputs a new audio sample buffer.
+     * 
+     *    Delegates receive this message whenever the output captures and outputs new audio samples, decoding or re-encoding as specified by the audioSettings property. Delegates can use the provided sample buffer in conjunction with other APIs for further processing. This method will be called on the dispatch queue specified by the output's sampleBufferCallbackQueue property. This method is called periodically, so it must be efficient to prevent capture performance problems, including dropped audio samples.
+     * 
+     *    Clients that need to reference the CMSampleBuffer object outside of the scope of this method must CFRetain it and then CFRelease it when they are finished with it.
      * 
      * @param output
      *    The AVCaptureAudioDataOutput instance that output the samples.
@@ -48,11 +52,6 @@ public interface AVCaptureAudioDataOutputSampleBufferDelegate {
      *    A CMSampleBuffer object containing the audio samples and additional information about them, such as their format and presentation time.
      * @param connection
      *    The AVCaptureConnection from which the audio was received.
-     * 
-     * @discussion
-     *    Delegates receive this message whenever the output captures and outputs new audio samples, decoding or re-encoding as specified by the audioSettings property. Delegates can use the provided sample buffer in conjunction with other APIs for further processing. This method will be called on the dispatch queue specified by the output's sampleBufferCallbackQueue property. This method is called periodically, so it must be efficient to prevent capture performance problems, including dropped audio samples.
-     * 
-     *    Clients that need to reference the CMSampleBuffer object outside of the scope of this method must CFRetain it and then CFRelease it when they are finished with it.
      */
     @Generated
     @IsOptional

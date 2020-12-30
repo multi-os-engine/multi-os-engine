@@ -46,13 +46,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixMultiplication
+ * MPSMatrixMultiplication
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A matrix multiplication kernel.
+ * A matrix multiplication kernel.
  * 
- * @discussion A MPSMatrixMultiplication object computes:
+ * A MPSMatrixMultiplication object computes:
  * 
  *                 C = alpha * op(A) * op(B) + beta * C
  * 
@@ -180,18 +180,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public static native long version_static();
 
     /**
-     * @abstract   Encode a MPSMatrixMultiplication object to a command buffer.
+     * Encode a MPSMatrixMultiplication object to a command buffer.
      * 
-     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
-     * 
-     * @param      leftMatrix      A valid MPSMatrix object which specifies the left input matrix.
-     * 
-     * @param      rightMatrix     A valid MPSMatrix object which specifies the right input matrix.
-     * 
-     * @param      resultMatrix    A valid MPSMatrix object which specifies the addend matrix which will
-     *                             also be overwritten by the result.
-     * 
-     * @discussion Certain constraints apply to the sizes of the matrices depending on the transposition
+     * Certain constraints apply to the sizes of the matrices depending on the transposition
      *             operations and sizes requested at initialization time as well as the origins at the time
      *             this routine is called:
      * 
@@ -207,6 +198,15 @@ public class MPSMatrixMultiplication extends MPSKernel {
      *             Each matrix within the range specified by batchStart and batchSize, which also specifies
      *             a valid set of matrices within leftMatrix, rightMatrix, and resultMatrix, will
      *             be processed.
+     * 
+     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
+     * @param      leftMatrix      A valid MPSMatrix object which specifies the left input matrix.
+     * 
+     * @param      rightMatrix     A valid MPSMatrix object which specifies the right input matrix.
+     * 
+     * @param      resultMatrix    A valid MPSMatrix object which specifies the addend matrix which will
+     *                             also be overwritten by the result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:leftMatrix:rightMatrix:resultMatrix:")
@@ -223,7 +223,7 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native MPSMatrixMultiplication initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize an MPSMatrixMultiplication object on a device for a given size
+     * Initialize an MPSMatrixMultiplication object on a device for a given size
      *             and desired transpose and scale values.
      * 
      * @param      device          The device on which the kernel will execute.
@@ -261,9 +261,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
             @NUInt long resultRows, @NUInt long resultColumns, @NUInt long interiorColumns, double alpha, double beta);
 
     /**
-     * @property   leftMatrixOrigin
+     * [@property]   leftMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the left input matrix, at which to
+     * The origin, relative to [0, 0] in the left input matrix, at which to
      *             start reading values.  This property is modifiable and defaults to
      *             [0, 0] at initialization time.  If a different origin is desired then
      *             this should be modified prior to encoding the kernel.  The z value
@@ -275,9 +275,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native MTLOrigin leftMatrixOrigin();
 
     /**
-     * @property   resultMatrixOrigin
+     * [@property]   resultMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the result matrix, at which to
+     * The origin, relative to [0, 0] in the result matrix, at which to
      *             start writing (and reading if necessary) results.  This property is
      *             modifiable and defaults to [0, 0] at initialization time.  If a
      *             different origin is desired then this should be modified prior to
@@ -289,9 +289,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native MTLOrigin resultMatrixOrigin();
 
     /**
-     * @property   rightMatrixOrigin
+     * [@property]   rightMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the right input matrix, at which to
+     * The origin, relative to [0, 0] in the right input matrix, at which to
      *             start reading values.  This property is modifiable and defaults to
      *             [0, 0] at initialization time.  If a different origin is desired then
      *             this should be modified prior to encoding the kernel.  The z value
@@ -303,9 +303,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native MTLOrigin rightMatrixOrigin();
 
     /**
-     * @property   leftMatrixOrigin
+     * [@property]   leftMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the left input matrix, at which to
+     * The origin, relative to [0, 0] in the left input matrix, at which to
      *             start reading values.  This property is modifiable and defaults to
      *             [0, 0] at initialization time.  If a different origin is desired then
      *             this should be modified prior to encoding the kernel.  The z value
@@ -316,9 +316,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native void setLeftMatrixOrigin(@ByValue MTLOrigin value);
 
     /**
-     * @property   resultMatrixOrigin
+     * [@property]   resultMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the result matrix, at which to
+     * The origin, relative to [0, 0] in the result matrix, at which to
      *             start writing (and reading if necessary) results.  This property is
      *             modifiable and defaults to [0, 0] at initialization time.  If a
      *             different origin is desired then this should be modified prior to
@@ -329,9 +329,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native void setResultMatrixOrigin(@ByValue MTLOrigin value);
 
     /**
-     * @property   rightMatrixOrigin
+     * [@property]   rightMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the right input matrix, at which to
+     * The origin, relative to [0, 0] in the right input matrix, at which to
      *             start reading values.  This property is modifiable and defaults to
      *             [0, 0] at initialization time.  If a different origin is desired then
      *             this should be modified prior to encoding the kernel.  The z value
@@ -342,9 +342,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native void setRightMatrixOrigin(@ByValue MTLOrigin value);
 
     /**
-     * @property   batchSize
+     * [@property]   batchSize
      * 
-     * @discussion The number of matrices in the batch to process.  This property
+     * The number of matrices in the batch to process.  This property
      *             is modifiable and by default allows all matrices available at
      *             encoding time to be processed.
      */
@@ -354,9 +354,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native long batchSize();
 
     /**
-     * @property   batchStart
+     * [@property]   batchStart
      * 
-     * @discussion The index of the first matrix in the batch.  This property is
+     * The index of the first matrix in the batch.  This property is
      *             modifiable and defaults to 0 at initialization time.  If
      *             batch processing should begin at a different matrix this value
      *             should be modified prior to encoding the kernel.
@@ -376,7 +376,7 @@ public class MPSMatrixMultiplication extends MPSKernel {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Convenience initialization for a matrix-matrix multiplication
+     * Convenience initialization for a matrix-matrix multiplication
      *             with no transpositions, unit scaling of the product, and no
      *             accumulation of the result.  The scaling factors alpha and beta
      *             are taken to be 1.0 and 0.0 respectively.
@@ -399,9 +399,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
             @NUInt long interiorColumns);
 
     /**
-     * @property   batchSize
+     * [@property]   batchSize
      * 
-     * @discussion The number of matrices in the batch to process.  This property
+     * The number of matrices in the batch to process.  This property
      *             is modifiable and by default allows all matrices available at
      *             encoding time to be processed.
      */
@@ -410,9 +410,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native void setBatchSize(@NUInt long value);
 
     /**
-     * @property   batchStart
+     * [@property]   batchStart
      * 
-     * @discussion The index of the first matrix in the batch.  This property is
+     * The index of the first matrix in the batch.  This property is
      *             modifiable and defaults to 0 at initialization time.  If
      *             batch processing should begin at a different matrix this value
      *             should be modified prior to encoding the kernel.

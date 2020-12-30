@@ -143,8 +143,9 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public static native String keySpaceForIdentifier(String identifier);
 
     /**
-     * @method			metadataItem
-     * @abstract		Returns an instance of AVMutableMetadataItem.
+     * metadataItem
+     * 
+     * Returns an instance of AVMutableMetadataItem.
      */
     @Generated
     @Selector("metadataItem")

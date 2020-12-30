@@ -19,8 +19,9 @@ package apple.security.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum SSLAuthenticate
- * @discussion Optional; Default is kNeverAuthenticate.
+ * [@enum] SSLAuthenticate
+ * 
+ * Optional; Default is kNeverAuthenticate.
  *    Can only be called when no session is active.
  */
 @Generated

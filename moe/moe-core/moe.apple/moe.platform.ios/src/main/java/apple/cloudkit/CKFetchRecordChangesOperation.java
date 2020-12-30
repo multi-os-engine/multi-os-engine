@@ -43,9 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKFetchRecordChangesOperation
+ * CKFetchRecordChangesOperation
  * 
- * @discussion Use CKFetchRecordZoneChangesOperation instead of this class.
+ * Use CKFetchRecordZoneChangesOperation instead of this class.
  * 
  * Any serverChangeTokens saved from a CKFetchRecordChangesOperation are usable as a serverRecordZoneChangeToken in CKFetchRecordZoneChangesOperation
  * 
@@ -167,9 +167,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public static native long version_static();
 
     /**
-     * @abstract Declares which user-defined keys should be fetched and added to the resulting CKRecords.
+     * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
      * 
-     * @discussion If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
      * Defaults to @c nil.
      */
     @Generated
@@ -177,9 +177,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native NSArray<String> desiredKeys();
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchRecordChangesOperation.
+     * Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchRecordChangesOperation.
      * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion block so that already fetched records don't need to be re-downloaded on a subsequent operation.
      * The @c clientChangeTokenData from the most recent @c CKModifyRecordsOperation is also returned, or nil if none was provided.
      * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil @c previousServerChangeToken.
@@ -200,9 +200,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
             CKRecordZoneID recordZoneID, CKServerChangeToken previousServerChangeToken);
 
     /**
-     * @abstract If true, then the server wasn't able to return all the changes in this response.
+     * If true, then the server wasn't able to return all the changes in this response.
      * 
-     * @discussion Will be set before fetchRecordChangesCompletionBlock is called.
+     * Will be set before fetchRecordChangesCompletionBlock is called.
      * Another CKFetchRecordChangesOperation operation should be run with the updated serverChangeToken token from this operation.
      */
     @Generated
@@ -239,9 +239,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native long resultsLimit();
 
     /**
-     * @abstract Declares which user-defined keys should be fetched and added to the resulting CKRecords.
+     * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
      * 
-     * @discussion If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
      * Defaults to @c nil.
      */
     @Generated
@@ -249,9 +249,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native void setDesiredKeys(NSArray<String> value);
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchRecordChangesOperation.
+     * Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchRecordChangesOperation.
      * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion block so that already fetched records don't need to be re-downloaded on a subsequent operation.
      * The @c clientChangeTokenData from the most recent @c CKModifyRecordsOperation is also returned, or nil if none was provided.
      * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil @c previousServerChangeToken.

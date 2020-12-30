@@ -64,9 +64,10 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     /**
      * Alongside general subscript notation of GCPhysicalInputProfile keys can be accessed using this method.
      * 
-     * @example [keyboard buttonForKey:GCKeyCode.UpArrow] == keyboard[GCKeyUpArrow]
+     * [@example] [keyboard buttonForKey:GCKeyCode.UpArrow] == keyboard[GCKeyUpArrow]
+     * [@note] Full list of supported key constants can be found in GCKeyCodes.h and GCKeyNames.h
+     * 
      * @param code is a low level key code that can be used for accessing a keyboard button.
-     * @note Full list of supported key constants can be found in GCKeyCodes.h and GCKeyNames.h
      */
     @Generated
     @Selector("buttonForKeyCode:")

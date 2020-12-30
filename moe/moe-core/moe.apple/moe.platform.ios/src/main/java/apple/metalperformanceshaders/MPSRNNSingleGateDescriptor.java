@@ -25,9 +25,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSRNNSingleGateDescriptor
- * @dependency This depends on Metal.framework
- * @discussion The MPSRNNSingleGateDescriptor specifies a simple recurrent block/layer descriptor.
+ * MPSRNNSingleGateDescriptor
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSRNNSingleGateDescriptor specifies a simple recurrent block/layer descriptor.
  *             The RNN layer initialized with a MPSRNNSingleGateDescriptor transforms the input data (image or matrix),
  *             and previous output with a set of filters, each producing one feature map in the new output data.
  *             The user may provide the RNN unit a single input or a sequence of inputs.
@@ -106,7 +107,8 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   Creates a MPSRNNSingleGateDescriptor
+     * Creates a MPSRNNSingleGateDescriptor
+     * 
      * @param      inputFeatureChannels    The number of feature channels in the input image/matrix. Must be >= 1.
      * @param      outputFeatureChannels   The number of feature channels in the output image/matrix. Must be >= 1.
      * @return     A valid MPSRNNSingleGateDescriptor object or nil, if failure.
@@ -135,8 +137,9 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public native MPSRNNSingleGateDescriptor init();
 
     /**
-     * @property   inputWeights
-     * @abstract   Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
+     * [@property]   inputWeights
+     * 
+     * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
@@ -172,8 +175,9 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public static native Object new_objc();
 
     /**
-     * @property   recurrentWeights
-     * @abstract   Contains weights 'U_ij' from the simple RNN layer formula.
+     * [@property]   recurrentWeights
+     * 
+     * Contains weights 'U_ij' from the simple RNN layer formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -190,8 +194,9 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   inputWeights
-     * @abstract   Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
+     * [@property]   inputWeights
+     * 
+     * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
@@ -199,8 +204,9 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public native void setInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   recurrentWeights
-     * @abstract   Contains weights 'U_ij' from the simple RNN layer formula.
+     * [@property]   recurrentWeights
+     * 
+     * Contains weights 'U_ij' from the simple RNN layer formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated

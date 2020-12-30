@@ -40,9 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Represents a camera profile the accessory implements.
+ * Represents a camera profile the accessory implements.
  * 
- * @discussion Provides an interface to interact with a Camera in an Accessory.
+ * Provides an interface to interact with a Camera in an Accessory.
  */
 @Generated
 @Library("HomeKit")
@@ -160,35 +160,35 @@ public class HMCameraProfile extends HMAccessoryProfile {
     public native HMCameraProfile init();
 
     /**
-     * @brief Object that can be used to control the microphone settings on the camera.
+     * Object that can be used to control the microphone settings on the camera.
      */
     @Generated
     @Selector("microphoneControl")
     public native HMCameraAudioControl microphoneControl();
 
     /**
-     * @brief Object that can be used to control the settings on the camera.
+     * Object that can be used to control the settings on the camera.
      */
     @Generated
     @Selector("settingsControl")
     public native HMCameraSettingsControl settingsControl();
 
     /**
-     * @brief Object that can be used to take image snapshots from the camera.
+     * Object that can be used to take image snapshots from the camera.
      */
     @Generated
     @Selector("snapshotControl")
     public native HMCameraSnapshotControl snapshotControl();
 
     /**
-     * @brief Object that can be used to control the speaker settings on the camera.
+     * Object that can be used to control the speaker settings on the camera.
      */
     @Generated
     @Selector("speakerControl")
     public native HMCameraAudioControl speakerControl();
 
     /**
-     * @brief Object that can be used to control the camera stream.
+     * Object that can be used to control the camera stream.
      */
     @Generated
     @Selector("streamControl")

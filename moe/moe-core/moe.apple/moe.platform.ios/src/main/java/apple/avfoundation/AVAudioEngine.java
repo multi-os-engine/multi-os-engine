@@ -49,7 +49,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioEngine
+ * AVAudioEngine
  * 
  * An AVAudioEngine contains a group of connected AVAudioNodes ("nodes"), each of which performs
  * an audio signal generation, processing, or input/output task.
@@ -180,9 +180,10 @@ public class AVAudioEngine extends NSObject {
     public static native long version_static();
 
     /**
-     * @method attachNode:
-     * @abstract
+     * attachNode:
+     * 
      * 	Take ownership of a new node.
+     * 
      * @param node
      * 	The node to be attached to the engine.
      * 
@@ -206,8 +207,8 @@ public class AVAudioEngine extends NSObject {
     public native void attachNode(AVAudioNode node);
 
     /**
-     * @method connect:to:format:
-     * @abstract
+     * connect:to:format:
+     * 
      * 	Establish a connection between two nodes
      * 
      * This calls connect:to:fromBus:toBus:format: using bus 0 on the source node,
@@ -219,9 +220,10 @@ public class AVAudioEngine extends NSObject {
     public native void connectToFormat(AVAudioNode node1, AVAudioNode node2, AVAudioFormat format);
 
     /**
-     * @method connect:to:fromBus:toBus:format:
-     * @abstract
+     * connect:to:fromBus:toBus:format:
+     * 
      * 	Establish a connection between two nodes.
+     * 
      * @param node1 
      * 	The source node
      * @param node2 
@@ -248,9 +250,10 @@ public class AVAudioEngine extends NSObject {
             @NUInt long bus2, AVAudioFormat format);
 
     /**
-     * @method connect:toConnectionPoints:fromBus:format:
-     * @abstract
+     * connect:toConnectionPoints:fromBus:format:
+     * 
      * 	Establish connections between a source node and multiple destination nodes.
+     * 
      * @param sourceNode 
      * 	The source node
      * @param destNodes 
@@ -289,8 +292,8 @@ public class AVAudioEngine extends NSObject {
             NSArray<? extends AVAudioConnectionPoint> destNodes, @NUInt long sourceBus, AVAudioFormat format);
 
     /**
-     * @method detachNode:
-     * @abstract
+     * detachNode:
+     * 
      * 	Detach a node previously attached to the engine.
      * 
      * If necessary, the engine will safely disconnect the node before detaching it.
@@ -300,9 +303,10 @@ public class AVAudioEngine extends NSObject {
     public native void detachNode(AVAudioNode node);
 
     /**
-     * @method disconnectNodeInput:
-     * @abstract
+     * disconnectNodeInput:
+     * 
      * 	Remove a connection between two nodes.
+     * 
      * @param node 
      * 	The node whose inputs are to be disconnected
      * 
@@ -313,9 +317,10 @@ public class AVAudioEngine extends NSObject {
     public native void disconnectNodeInput(AVAudioNode node);
 
     /**
-     * @method disconnectNodeInput:bus:
-     * @abstract
+     * disconnectNodeInput:bus:
+     * 
      * 	Remove a connection between two nodes.
+     * 
      * @param node 
      * 	The node whose input is to be disconnected
      * @param bus 
@@ -326,9 +331,10 @@ public class AVAudioEngine extends NSObject {
     public native void disconnectNodeInputBus(AVAudioNode node, @NUInt long bus);
 
     /**
-     * @method disconnectNodeOutput:
-     * @abstract
+     * disconnectNodeOutput:
+     * 
      * 	Remove a connection between two nodes.
+     * 
      * @param node 
      * 	The node whose outputs are to be disconnected
      * 
@@ -339,9 +345,10 @@ public class AVAudioEngine extends NSObject {
     public native void disconnectNodeOutput(AVAudioNode node);
 
     /**
-     * @method disconnectNodeOutput:bus:
-     * @abstract
+     * disconnectNodeOutput:bus:
+     * 
      * 	Remove a connection between two nodes.
+     * 
      * @param node 
      * 	The node whose output is to be disconnected
      * @param bus 
@@ -352,8 +359,8 @@ public class AVAudioEngine extends NSObject {
     public native void disconnectNodeOutputBus(AVAudioNode node, @NUInt long bus);
 
     /**
-     * @method init
-     * @abstract
+     * init
+     * 
      * 	Initialize a new engine.
      * 
      * On creation, the engine is by default connected to an audio device and automatically renders 
@@ -365,9 +372,10 @@ public class AVAudioEngine extends NSObject {
     public native AVAudioEngine init();
 
     /**
-     * @method inputConnectionPointForNode:inputBus:
-     * @abstract 
+     * inputConnectionPointForNode:inputBus:
+     * 
      * 	Get connection information on a node's input bus.
+     * 
      * @param node 
      * 	The node whose input connection is being queried.
      * @param bus 
@@ -385,8 +393,8 @@ public class AVAudioEngine extends NSObject {
     public native AVAudioConnectionPoint inputConnectionPointForNodeInputBus(AVAudioNode node, @NUInt long bus);
 
     /**
-     * @property inputNode
-     * @abstract
+     * [@property] inputNode
+     * 
      * 	The engine's singleton input node.
      * 
      * Audio input is performed via an input node. The engine creates a singleton on demand when
@@ -409,8 +417,8 @@ public class AVAudioEngine extends NSObject {
     public native AVAudioInputNode inputNode();
 
     /**
-     * @property running
-     * @abstract
+     * [@property] running
+     * 
      * 	The engine's running state.
      */
     @Generated
@@ -418,8 +426,8 @@ public class AVAudioEngine extends NSObject {
     public native boolean isRunning();
 
     /**
-     * @property mainMixerNode
-     * @abstract
+     * [@property] mainMixerNode
+     * 
      * 	The engine's optional singleton main mixer node.
      * 
      * The engine will construct a singleton main mixer and connect it to the outputNode on demand,
@@ -439,8 +447,8 @@ public class AVAudioEngine extends NSObject {
     public native AVAudioMixerNode mainMixerNode();
 
     /**
-     * @property musicSequence
-     * @abstract
+     * [@property] musicSequence
+     * 
      * 	The MusicSequence previously attached to the engine (if any).
      */
     @Generated
@@ -448,9 +456,10 @@ public class AVAudioEngine extends NSObject {
     public native MusicSequence musicSequence();
 
     /**
-     * @method outputConnectionPointsForNode:outputBus:
-     * @abstract
+     * outputConnectionPointsForNode:outputBus:
+     * 
      * 	Get connection information on a node's output bus.
+     * 
      * @param node 
      * 	The node whose output connections are being queried.
      * @param bus 
@@ -469,8 +478,8 @@ public class AVAudioEngine extends NSObject {
             @NUInt long bus);
 
     /**
-     * @property outputNode
-     * @abstract
+     * [@property] outputNode
+     * 
      * 	The engine's singleton output node.
      * 
      * Audio output is performed via an output node. The engine creates a singleton on demand when
@@ -493,8 +502,8 @@ public class AVAudioEngine extends NSObject {
     public native AVAudioOutputNode outputNode();
 
     /**
-     * @method pause
-     * @abstract
+     * pause
+     * 
      * 	Pause the engine.
      * 
      * When the engine is rendering to/from an audio device, stops the audio hardware and the flow
@@ -509,8 +518,8 @@ public class AVAudioEngine extends NSObject {
     public native void pause();
 
     /**
-     * @method prepare
-     * @abstract
+     * prepare
+     * 
      * 	Prepare the engine for starting.
      * 
      * This method preallocates many of the resources the engine requires in order to start.
@@ -521,8 +530,9 @@ public class AVAudioEngine extends NSObject {
     public native void prepare();
 
     /**
-     * @method reset
-     * @abstract reset
+     * reset
+     * 
+     * reset
      * 	Reset all of the nodes in the engine.
      * 
      * This will reset all of the nodes in the engine. This is useful, for example, for silencing
@@ -535,8 +545,8 @@ public class AVAudioEngine extends NSObject {
     public native void reset();
 
     /**
-     * @property musicSequence
-     * @abstract
+     * [@property] musicSequence
+     * 
      * 	The MusicSequence previously attached to the engine (if any).
      */
     @Generated
@@ -544,9 +554,10 @@ public class AVAudioEngine extends NSObject {
     public native void setMusicSequence(MusicSequence value);
 
     /**
-     * @method startAndReturnError:
-     * @abstract
+     * startAndReturnError:
+     * 
      * 	Start the engine.
+     * 
      * @return
      * 	YES for success
      * 
@@ -568,8 +579,8 @@ public class AVAudioEngine extends NSObject {
     public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method stop
-     * @abstract
+     * stop
+     * 
      * 	When the engine is rendering to/from an audio device, stops the audio hardware and the
      * 	engine. When operating in this mode, it is recommended that the engine be paused or stopped
      * 	 (as applicable) when not in use, to minimize power consumption.
@@ -581,8 +592,8 @@ public class AVAudioEngine extends NSObject {
     public native void stop();
 
     /**
-     * @method disableManualRenderingMode
-     * @abstract
+     * disableManualRenderingMode
+     * 
      * 	Set the engine to render to/from an audio device.
      * 
      * When disabling the manual rendering mode, the engine:
@@ -600,10 +611,11 @@ public class AVAudioEngine extends NSObject {
     public native void disableManualRenderingMode();
 
     /**
-     * @method enableManualRenderingMode:format:maximumFrameCount:error:
-     * @abstract
+     * enableManualRenderingMode:format:maximumFrameCount:error:
+     * 
      * 	Set the engine to operate in a manual rendering mode with the specified render format and
      * 	maximum frame count.
+     * 
      * @param mode
      * 	The manual rendering mode to use.
      * @param pcmFormat
@@ -647,8 +659,8 @@ public class AVAudioEngine extends NSObject {
             AVAudioFormat pcmFormat, int maximumFrameCount, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property autoShutdownEnabled
-     * @abstract
+     * [@property] autoShutdownEnabled
+     * 
      * 	When auto shutdown is enabled, the engine can start and stop the audio hardware dynamically,
      * 	to conserve power. This is the enforced behavior on watchOS and can be optionally enabled on
      * 	other platforms.
@@ -671,8 +683,8 @@ public class AVAudioEngine extends NSObject {
     public native boolean isAutoShutdownEnabled();
 
     /**
-     * @property isInManualRenderingMode
-     * @abstract
+     * [@property] isInManualRenderingMode
+     * 
      * 	Whether or not the engine is operating in manual rendering mode, i.e. not connected
      * 	to an audio device and rendering in response to the requests from the client
      */
@@ -681,8 +693,8 @@ public class AVAudioEngine extends NSObject {
     public native boolean isInManualRenderingMode();
 
     /**
-     * @property manualRenderingBlock
-     * @abstract
+     * [@property] manualRenderingBlock
+     * 
      * 	Block to render the engine operating in manual rendering mode
      * 
      * This block based render call must be used to render the engine when operating in
@@ -714,8 +726,8 @@ public class AVAudioEngine extends NSObject {
     }
 
     /**
-     * @property manualRenderingFormat
-     * @abstract
+     * [@property] manualRenderingFormat
+     * 
      * 	The render format of the engine in manual rendering mode.
      * 
      * Querying this property when the engine is not in manual rendering mode will return an
@@ -726,8 +738,8 @@ public class AVAudioEngine extends NSObject {
     public native AVAudioFormat manualRenderingFormat();
 
     /**
-     * @property manualRenderingMaximumFrameCount
-     * @abstract
+     * [@property] manualRenderingMaximumFrameCount
+     * 
      * 	The maximum number of PCM sample frames the engine can produce in any single render call in 
      * 	the manual rendering mode.
      * 
@@ -738,8 +750,8 @@ public class AVAudioEngine extends NSObject {
     public native int manualRenderingMaximumFrameCount();
 
     /**
-     * @property manualRenderingMode
-     * @abstract
+     * [@property] manualRenderingMode
+     * 
      * 	The manual rendering mode configured on the engine
      * 
      * This property is meaningful only when the engine is operating in manual rendering mode,
@@ -751,8 +763,8 @@ public class AVAudioEngine extends NSObject {
     public native long manualRenderingMode();
 
     /**
-     * @property manualRenderingSampleTime
-     * @abstract
+     * [@property] manualRenderingSampleTime
+     * 
      * 	Indicates where the engine is on its render timeline in manual rendering mode.
      * 
      * The timeline in manual rendering mode starts at a sample time of zero, and is in terms
@@ -764,9 +776,10 @@ public class AVAudioEngine extends NSObject {
     public native long manualRenderingSampleTime();
 
     /**
-     * @method renderOffline:toBuffer:error:
-     * @abstract
+     * renderOffline:toBuffer:error:
+     * 
      * 	Render call to the engine operating in the offline manual rendering mode
+     * 
      * @param numberOfFrames
      * 	The number of PCM sample frames to be rendered
      * @param buffer
@@ -803,8 +816,8 @@ public class AVAudioEngine extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property autoShutdownEnabled
-     * @abstract
+     * [@property] autoShutdownEnabled
+     * 
      * 	When auto shutdown is enabled, the engine can start and stop the audio hardware dynamically,
      * 	to conserve power. This is the enforced behavior on watchOS and can be optionally enabled on
      * 	other platforms.
@@ -827,8 +840,8 @@ public class AVAudioEngine extends NSObject {
     public native void setAutoShutdownEnabled(boolean value);
 
     /**
-     * @property attachedNodes
-     * @abstract
+     * [@property] attachedNodes
+     * 
      * 	Set of all nodes attached to the engine.
      */
     @Generated
@@ -836,9 +849,10 @@ public class AVAudioEngine extends NSObject {
     public native NSSet<? extends AVAudioNode> attachedNodes();
 
     /**
-     * @method connectMIDI:to:format:block:
-     *    @abstract
+     * connectMIDI:to:format:block:
+     * 
      *        Establish a MIDI only connection between two nodes.
+     * 
      *    @param sourceNode
      *        The source node.
      *    @param destinationNode
@@ -881,9 +895,10 @@ public class AVAudioEngine extends NSObject {
     }
 
     /**
-     * @method connectMIDI:toNodes:format:block:
-     *    @abstract
+     * connectMIDI:toNodes:format:block:
+     * 
      *        Establish a MIDI only connection between a source node and multiple destination nodes.
+     * 
      *    @param sourceNode
      *        The source node.
      *    @param destinationNodes
@@ -930,9 +945,10 @@ public class AVAudioEngine extends NSObject {
     }
 
     /**
-     * @method disconnectMIDI:from:
-     *    @abstract
+     * disconnectMIDI:from:
+     * 
      *        Remove a MIDI connection between two nodes.
+     * 
      *    @param sourceNode
      *        The node whose MIDI output is to be disconnected.
      *    @param destinationNode
@@ -946,9 +962,10 @@ public class AVAudioEngine extends NSObject {
     public native void disconnectMIDIFrom(AVAudioNode sourceNode, AVAudioNode destinationNode);
 
     /**
-     * @method disconnectMIDI:fromNodes:
-     *    @abstract
+     * disconnectMIDI:fromNodes:
+     * 
      *        Remove a MIDI connection between one source node and multiple destination nodes.
+     * 
      *    @param sourceNode
      *        The node whose MIDI output is to be disconnected.
      *    @param destinationNodes
@@ -962,9 +979,10 @@ public class AVAudioEngine extends NSObject {
     public native void disconnectMIDIFromNodes(AVAudioNode sourceNode, NSArray<? extends AVAudioNode> destinationNodes);
 
     /**
-     * @method disconnectMIDIInput:
-     * @abstract
+     * disconnectMIDIInput:
+     * 
      *     Disconnects all input MIDI connections of this node.
+     * 
      * @param node
      *     The node whose MIDI input is to be disconnected.
      */
@@ -973,9 +991,10 @@ public class AVAudioEngine extends NSObject {
     public native void disconnectMIDIInput(AVAudioNode node);
 
     /**
-     * @method disconnectMIDIOutput:
-     * @abstract
+     * disconnectMIDIOutput:
+     * 
      *     Disconnects all output MIDI connections of this node.
+     * 
      * @param node
      *     The node whose MIDI outputs are to be disconnected.
      */

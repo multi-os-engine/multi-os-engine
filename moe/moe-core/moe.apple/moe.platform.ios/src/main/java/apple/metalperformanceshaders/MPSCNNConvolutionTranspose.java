@@ -31,9 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- *  @class      MPSCNNConvolutionTranspose
- *  @dependency This depends on Metal.framework
- *  @discussion The MPSCNNConvolutionTranspose specifies a transposed convolution.
+ * MPSCNNConvolutionTranspose
+ *  [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNConvolutionTranspose specifies a transposed convolution.
  *              The MPSCNNConvolutionTranspose convolves the input image with a set of filters, each producing one feature map in the output image.
  * 
  *              Some third-party frameworks may rotate the weights spatially by 180 degrees for Convolution Transpose. MPS uses the weights
@@ -49,7 +50,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *              Examples:
  * 
  * 
- *  @code
+ *  [@code]
  *              So in case of sride == 2 (this behaves same in both dimensions)
  * 
  *              Source image:
@@ -129,7 +130,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *              |   |   |   |   | X |   |   |
  *               ---------------------------
  * 
- * @endcode
+ * [@endcode]
  * 
  *      Note that if your application is not using MPSCNNConvolutionGradientState to configure the convolution transpose with respect to convolution,
  *      your application may do this using padding policy. In such case if convolution uses valid padding policy, than convolution transpose should use
@@ -194,8 +195,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native String description_static();
 
     /**
-     * @property   groups
-     * @abstract   Number of groups input and output channels are divided into.
+     * [@property]   groups
+     * 
+     * Number of groups input and output channels are divided into.
      */
     @Generated
     @Selector("groups")
@@ -216,7 +218,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native MPSCNNConvolutionTranspose initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract <NSSecureCoding> support
+     * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -228,7 +230,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native MPSCNNConvolutionTranspose initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initializes a convolution transpose kernel
+     * Initializes a convolution transpose kernel
+     * 
      * @param      device                          The MTLDevice on which this MPSCNNConvolutionTranspose filter will be used
      * @param      weights                         A pointer to a object that conforms to the MPSCNNConvolutionDataSource
      *                                             protocol. The MPSCNNConvolutionDataSource protocol declares the methods that an
@@ -243,8 +246,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
-     * @property   inputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the input image.
+     * [@property]   inputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the input image.
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -269,8 +273,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @property   kernelOffsetX
-     * @abstract   Offset in X from which the kernel starts sliding
+     * [@property]   kernelOffsetX
+     * 
+     * Offset in X from which the kernel starts sliding
      */
     @Generated
     @Selector("kernelOffsetX")
@@ -278,8 +283,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native long kernelOffsetX();
 
     /**
-     * @property   kernelOffsetY
-     * @abstract   Offset in Y from which the kernel starts sliding
+     * [@property]   kernelOffsetY
+     * 
+     * Offset in Y from which the kernel starts sliding
      */
     @Generated
     @Selector("kernelOffsetY")
@@ -297,8 +303,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native Object new_objc();
 
     /**
-     * @property   outputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the output image.
+     * [@property]   outputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the output image.
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -314,16 +321,18 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   kernelOffsetX
-     * @abstract   Offset in X from which the kernel starts sliding
+     * [@property]   kernelOffsetX
+     * 
+     * Offset in X from which the kernel starts sliding
      */
     @Generated
     @Selector("setKernelOffsetX:")
     public native void setKernelOffsetX(@NInt long value);
 
     /**
-     * @property   kernelOffsetY
-     * @abstract   Offset in Y from which the kernel starts sliding
+     * [@property]   kernelOffsetY
+     * 
+     * Offset in Y from which the kernel starts sliding
      */
     @Generated
     @Selector("setKernelOffsetY:")
@@ -353,8 +362,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native long version_static();
 
     /**
-     * @abstract    Precision of accumulator used in convolution.
-     * @discussion  See MPSNeuralNetworkTypes.h for discussion. Default is MPSNNConvolutionAccumulatorPrecisionOptionFloat.
+     * Precision of accumulator used in convolution.
+     * 
+     * See MPSNeuralNetworkTypes.h for discussion. Default is MPSNNConvolutionAccumulatorPrecisionOptionFloat.
      */
     @Generated
     @Selector("accumulatorPrecisionOption")
@@ -362,8 +372,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native long accumulatorPrecisionOption();
 
     /**
-     * @property   dataSource
-     * @abstract   dataSource with which convolution transpose object was created
+     * [@property]   dataSource
+     * 
+     * dataSource with which convolution transpose object was created
      */
     @Generated
     @Selector("dataSource")
@@ -371,8 +382,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native MPSCNNConvolutionDataSource dataSource();
 
     /**
-     * @abstract       Encode a MPSCNNKernel into a command Buffer. Create a texture to hold the result and return it.
-     * @discussion     In the first iteration on this method, encodeToCommandBuffer:sourceImage:destinationImage:
+     * Encode a MPSCNNKernel into a command Buffer. Create a texture to hold the result and return it.
+     * 
+     * In the first iteration on this method, encodeToCommandBuffer:sourceImage:destinationImage:
      *                 some work was left for the developer to do in the form of correctly setting the offset property
      *                 and sizing the result buffer. With the introduction of the padding policy (see padding property)
      *                 the filter can do this work itself. If you would like to have some input into what sort of MPSImage
@@ -394,7 +406,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * @param          convolutionGradientState    A valid MPSCNNConvolutionGradientState from the MPSCNNConvoluton counterpart to this MPSCNNConvolutionTranspose.
      *                                     If there is no forward convolution counterpart, pass NULL here. This state affects the sizing
      *                                     the result.
-     * @result         A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
+     * @return         A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
      *                 The offset property will be adjusted to reflect the offset used during the encode.
      *                 The returned image will be automatically released when the command buffer completes. If you want to
      *                 keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
@@ -412,7 +424,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             MPSCNNConvolutionGradientState convolutionGradientState, MPSImage destinationImage);
 
     /**
-     * @abstract        These low level encode functions should be used during training. The first two encode functions, which return
+     * These low level encode functions should be used during training. The first two encode functions, which return
      * destination image on left hand side, takes in MPSCNNConvolutionGradientState that was produced by corresponding
      * MPSCNNConvolution when there is one e.g. auto encoders. This state is used to correctly size destination being returned.
      * These encode methods return MPSCNNConvoltionTransposeGradientState object on auto release pool to be consumed by MPSCNNConvolutionTransposeGradient.
@@ -426,7 +438,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             boolean isTemporary);
 
     /**
-     * @abstract   GPU side export. Enqueue a kernel to export current weights and biases stored in MPSCNNConvoltionTranspose's internal buffers into weights and biases MTLBuffer
+     * GPU side export. Enqueue a kernel to export current weights and biases stored in MPSCNNConvoltionTranspose's internal buffers into weights and biases MTLBuffer
      * *              returned in MPSCNNConvolutionWeightsAndBiasesState.
      * *
      * *  @param      commandBuffer              Metal command buffer on which export kernel is enqueued.
@@ -440,7 +452,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, boolean resultStateCanBeTemporary);
 
     /**
-     * @abstract   CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers. Weights and biases
+     * CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers. Weights and biases
      * gradients needed for update are obtained from MPSCNNConvolutionTransposeGradientState object. Data provider passed in init call is used for this purpose.
      */
     @Generated
@@ -448,7 +460,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native void reloadWeightsAndBiasesFromDataSource();
 
     /**
-     * @abstract   GPU side reload. Reload the updated weights and biases from update buffer produced by application enqueued metal kernel into internal weights
+     * GPU side reload. Reload the updated weights and biases from update buffer produced by application enqueued metal kernel into internal weights
      *             and biases buffer. Weights and biases gradients needed for update are obtained from MPSCNNConvolutionTransposeGradientState object's gradientForWeights and gradientForBiases metal buffer.
      * 
      * @param      commandBuffer      Metal command buffer on which application update kernel was enqueued consuming MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffers
@@ -463,7 +475,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             MPSCNNConvolutionWeightsAndBiasesState state);
 
     /**
-     * @abstract   Allocate a MPCNNConvolutionTransposeGradientState to hold the results from a -encodeBatchToCommandBuffer... operation
+     * Allocate a MPCNNConvolutionTransposeGradientState to hold the results from a -encodeBatchToCommandBuffer... operation
      * 
      * @param      sourceImage         The MPSImage consumed by the associated -encode call.
      * @param      sourceStates        The list of MPSCNNConvolutionGradientState consumed by the associated -encode call,
@@ -479,8 +491,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 
     /**
-     * @abstract    Precision of accumulator used in convolution.
-     * @discussion  See MPSNeuralNetworkTypes.h for discussion. Default is MPSNNConvolutionAccumulatorPrecisionOptionFloat.
+     * Precision of accumulator used in convolution.
+     * 
+     * See MPSNeuralNetworkTypes.h for discussion. Default is MPSNNConvolutionAccumulatorPrecisionOptionFloat.
      */
     @Generated
     @Selector("setAccumulatorPrecisionOption:")

@@ -28,9 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNDArrayDivisionSecondaryGradient
+ * MPSNDArrayDivisionSecondaryGradient
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  */
 @Generated
 @Library("MetalPerformanceShaders")

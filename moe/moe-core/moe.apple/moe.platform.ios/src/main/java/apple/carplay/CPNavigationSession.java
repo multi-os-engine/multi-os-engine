@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPNavigationSession represents the active navigation session. A @c CPNavigationSession will be created for you
+ * [@c] CPNavigationSession represents the active navigation session. A @c CPNavigationSession will be created for you
  * when calling startNavigationSessionForTrip: on @c CYMapTemplate
  */
 @Generated

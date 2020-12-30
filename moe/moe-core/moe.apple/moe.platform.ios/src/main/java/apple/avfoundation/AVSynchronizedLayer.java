@@ -169,9 +169,11 @@ public class AVSynchronizedLayer extends CALayer {
     public static native Class superclass_static();
 
     /**
-     * @method			synchronizedLayerWithPlayerItem:
-     * @abstract		Returns an instance of AVSynchronizedLayer with timing synchronized with the specified AVPlayerItem.
-     * @result			An instance of AVSynchronizedLayer.
+     * synchronizedLayerWithPlayerItem:
+     * 
+     * Returns an instance of AVSynchronizedLayer with timing synchronized with the specified AVPlayerItem.
+     * 
+     * @return			An instance of AVSynchronizedLayer.
      */
     @Generated
     @Selector("synchronizedLayerWithPlayerItem:")

@@ -48,12 +48,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MCBrowserViewController
- *   @abstract The
+ * MCBrowserViewController
+ * 
+ * The
  *      MCBrowserViewController class manages the system-supplied user
  *      interface for choosing peers to connect with for multipeer sessions.
  * 
- *   @discussion
  *      MCBrowserViewController manages presentation of nearby peers and the
  *      invite process for you. The invite process is driven by the user
  *      and handled by the peer picker and the MCNearbyServiceBrowser object

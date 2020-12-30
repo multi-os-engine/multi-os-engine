@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueFilterChange
+ * [@enum]      HMCharacteristicValueFilterChange
  * 
- * @constant  HMCharacteristicValueFilterChangeNotNeeded      Filter does not need to be changed.
- * @constant  HMCharacteristicValueFilterChangeNeeded         Filter needs to be changed.
+ * [@constant]  HMCharacteristicValueFilterChangeNotNeeded      Filter does not need to be changed.
+ * [@constant]  HMCharacteristicValueFilterChangeNeeded         Filter needs to be changed.
  */
 @Generated
 public final class HMCharacteristicValueFilterChange {

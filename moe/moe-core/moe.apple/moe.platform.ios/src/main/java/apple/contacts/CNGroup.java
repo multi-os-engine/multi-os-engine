@@ -46,9 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract An immutable value object representing a group.
+ * An immutable value object representing a group.
  * 
- * @discussion CNGroup is thread safe.
+ * CNGroup is thread safe.
  */
 @Generated
 @Library("Contacts")

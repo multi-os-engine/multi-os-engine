@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNBatchNormalizationState
- * @discussion MPSCNNBatchNormalizationState encapsulates the data necessary
+ * MPSCNNBatchNormalizationState
+ * 
+ * MPSCNNBatchNormalizationState encapsulates the data necessary
  *             to execute batch normalization.
  * 
  *             MPSCNNBatchNormalizationState cannot initialize the size of its own
@@ -74,7 +75,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     public native MPSCNNBatchNormalization batchNormalization();
 
     /**
-     * @abstract   Return an MTLBuffer object with the state's current beta values..
+     * Return an MTLBuffer object with the state's current beta values..
      */
     @Generated
     @Selector("beta")
@@ -108,7 +109,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     public static native String description_static();
 
     /**
-     * @abstract   Return an MTLBuffer object with the state's current gamma values.
+     * Return an MTLBuffer object with the state's current gamma values.
      */
     @Generated
     @Selector("gamma")
@@ -116,7 +117,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     public native MTLBuffer gamma();
 
     /**
-     * @abstract   Return an MTLBuffer object containing the values of the gradient of the loss function
+     * Return an MTLBuffer object containing the values of the gradient of the loss function
      *             with respect to the bias terms.  If a MPSCNNBatchNormalizationGradient kernel
      *             has not successfully generated these values nil will be returned.
      */
@@ -126,7 +127,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     public native MTLBuffer gradientForBeta();
 
     /**
-     * @abstract   Return an MTLBuffer object containing the values of the gradient of the loss function
+     * Return an MTLBuffer object containing the values of the gradient of the loss function
      *             with respect to the scale factors.  If a MPSCNNBatchNormalizationGradient kernel
      *             has not successfully generated these values nil will be returned.
      */
@@ -189,7 +190,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract   Return an MTLBuffer object with the most recently computed batch mean values.
+     * Return an MTLBuffer object with the most recently computed batch mean values.
      */
     @Generated
     @Selector("mean")
@@ -203,7 +204,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     public static native Object new_objc();
 
     /**
-     * @abstract   Reset any accumulated state data to its initial values.
+     * Reset any accumulated state data to its initial values.
      */
     @Generated
     @Selector("reset")
@@ -250,7 +251,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     /**
-     * @abstract   Return an MTLBuffer object with the most recently computed batch variance values.
+     * Return an MTLBuffer object with the most recently computed batch variance values.
      */
     @Generated
     @Selector("variance")

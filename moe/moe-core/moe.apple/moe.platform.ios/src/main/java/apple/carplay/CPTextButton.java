@@ -149,7 +149,7 @@ public class CPTextButton extends NSObject {
      * A @c CPButtonTextStyle value indicating the style for this button, when displayed in a template
      * that supports button styling, like the Information template.
      * 
-     * @discussion This value defaults to @c CPTextButtonStyleNormal.
+     * This value defaults to @c CPTextButtonStyleNormal.
      */
     @Generated
     @Selector("setTextStyle:")
@@ -174,7 +174,7 @@ public class CPTextButton extends NSObject {
      * A @c CPButtonTextStyle value indicating the style for this button, when displayed in a template
      * that supports button styling, like the Information template.
      * 
-     * @discussion This value defaults to @c CPTextButtonStyleNormal.
+     * This value defaults to @c CPTextButtonStyleNormal.
      */
     @Generated
     @Selector("textStyle")

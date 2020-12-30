@@ -34,8 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLCommandBuffer
- * @abstract A serial list of commands for the device to execute.
+ * [@protocol] MTLCommandBuffer
+ * 
+ * A serial list of commands for the device to execute.
  */
 @Generated
 @Library("Metal")
@@ -43,24 +44,27 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLCommandBuffer")
 public interface MTLCommandBuffer {
     /**
-     * @method addCompletedHandler:block:
-     * @abstract Add a block to be called when this command buffer has completed execution.
+     * addCompletedHandler:block:
+     * 
+     * Add a block to be called when this command buffer has completed execution.
      */
     @Generated
     @Selector("addCompletedHandler:")
     void addCompletedHandler(@ObjCBlock(name = "call_addCompletedHandler") Block_addCompletedHandler block);
 
     /**
-     * @method addScheduledHandler:block:
-     * @abstract Adds a block to be called when this command buffer has been scheduled for execution.
+     * addScheduledHandler:block:
+     * 
+     * Adds a block to be called when this command buffer has been scheduled for execution.
      */
     @Generated
     @Selector("addScheduledHandler:")
     void addScheduledHandler(@ObjCBlock(name = "call_addScheduledHandler") Block_addScheduledHandler block);
 
     /**
-     * @method blitCommandEncoder
-     * @abstract returns a blit command encoder to encode into this command buffer.
+     * blitCommandEncoder
+     * 
+     * returns a blit command encoder to encode into this command buffer.
      */
     @Generated
     @Selector("blitCommandEncoder")
@@ -68,8 +72,9 @@ public interface MTLCommandBuffer {
     MTLBlitCommandEncoder blitCommandEncoder();
 
     /**
-     * @property commandQueue
-     * @abstract The command queue this command buffer was created from.
+     * [@property] commandQueue
+     * 
+     * The command queue this command buffer was created from.
      */
     @Generated
     @Selector("commandQueue")
@@ -77,16 +82,18 @@ public interface MTLCommandBuffer {
     MTLCommandQueue commandQueue();
 
     /**
-     * @method commit
-     * @abstract Commit a command buffer so it can be executed as soon as possible.
+     * commit
+     * 
+     * Commit a command buffer so it can be executed as soon as possible.
      */
     @Generated
     @Selector("commit")
     void commit();
 
     /**
-     * @method computeCommandEncoder
-     * @abstract returns a compute command encoder to encode into this command buffer.
+     * computeCommandEncoder
+     * 
+     * returns a compute command encoder to encode into this command buffer.
      */
     @Generated
     @Selector("computeCommandEncoder")
@@ -94,8 +101,9 @@ public interface MTLCommandBuffer {
     MTLComputeCommandEncoder computeCommandEncoder();
 
     /**
-     * @property device
-     * @abstract The device this resource was created against.
+     * [@property] device
+     * 
+     * The device this resource was created against.
      */
     @Generated
     @Selector("device")
@@ -103,32 +111,36 @@ public interface MTLCommandBuffer {
     MTLDevice device();
 
     /**
-     * @method enqueue
-     * @abstract Append this command buffer to the end of its MTLCommandQueue.
+     * enqueue
+     * 
+     * Append this command buffer to the end of its MTLCommandQueue.
      */
     @Generated
     @Selector("enqueue")
     void enqueue();
 
     /**
-     * @property error
-     * @abstract If an error occurred during execution, the NSError may contain more details about the problem.
+     * [@property] error
+     * 
+     * If an error occurred during execution, the NSError may contain more details about the problem.
      */
     @Generated
     @Selector("error")
     NSError error();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @method parallelRenderCommandEncoderWithDescriptor:
-     * @abstract returns a parallel render pass encoder to encode into this command buffer.
+     * parallelRenderCommandEncoderWithDescriptor:
+     * 
+     * returns a parallel render pass encoder to encode into this command buffer.
      */
     @Generated
     @Selector("parallelRenderCommandEncoderWithDescriptor:")
@@ -137,26 +149,31 @@ public interface MTLCommandBuffer {
             MTLRenderPassDescriptor renderPassDescriptor);
 
     /**
-     * @method presentDrawable:
-     * @abstract Add a drawable present that will be invoked when this command buffer has been scheduled for execution.
-     * @discussion The submission thread will be lock stepped with present call been serviced by window server
+     * presentDrawable:
+     * 
+     * Add a drawable present that will be invoked when this command buffer has been scheduled for execution.
+     * 
+     * The submission thread will be lock stepped with present call been serviced by window server
      */
     @Generated
     @Selector("presentDrawable:")
     void presentDrawable(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable);
 
     /**
-     * @method presentDrawable:atTime:
-     * @abstract Add a drawable present for a specific host time that will be invoked when this command buffer has been scheduled for execution.
-     * @discussion The submission thread will be lock stepped with present call been serviced by window server
+     * presentDrawable:atTime:
+     * 
+     * Add a drawable present for a specific host time that will be invoked when this command buffer has been scheduled for execution.
+     * 
+     * The submission thread will be lock stepped with present call been serviced by window server
      */
     @Generated
     @Selector("presentDrawable:atTime:")
     void presentDrawableAtTime(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable, double presentationTime);
 
     /**
-     * @method renderCommandEncoderWithDescriptor:
-     * @abstract returns a render command endcoder to encode into this command buffer.
+     * renderCommandEncoderWithDescriptor:
+     * 
+     * returns a render command endcoder to encode into this command buffer.
      */
     @Generated
     @Selector("renderCommandEncoderWithDescriptor:")
@@ -164,24 +181,27 @@ public interface MTLCommandBuffer {
     MTLRenderCommandEncoder renderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
 
     /**
-     * @property retainedReferences
-     * @abstract If YES, this command buffer holds strong references to objects needed to execute this command buffer.
+     * [@property] retainedReferences
+     * 
+     * If YES, this command buffer holds strong references to objects needed to execute this command buffer.
      */
     @Generated
     @Selector("retainedReferences")
     boolean retainedReferences();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);
 
     /**
-     * @property status
-     * @abstract status reports the current stage in the lifetime of MTLCommandBuffer, as it proceeds to enqueued, committed, scheduled, and completed.
+     * [@property] status
+     * 
+     * status reports the current stage in the lifetime of MTLCommandBuffer, as it proceeds to enqueued, committed, scheduled, and completed.
      */
     @Generated
     @Selector("status")
@@ -189,16 +209,18 @@ public interface MTLCommandBuffer {
     long status();
 
     /**
-     * @method waitUntilCompleted
-     * @abstract Synchronously wait for this command buffer to complete.
+     * waitUntilCompleted
+     * 
+     * Synchronously wait for this command buffer to complete.
      */
     @Generated
     @Selector("waitUntilCompleted")
     void waitUntilCompleted();
 
     /**
-     * @method waitUntilScheduled
-     * @abstract Synchronously wait for this command buffer to be scheduled.
+     * waitUntilScheduled
+     * 
+     * Synchronously wait for this command buffer to be scheduled.
      */
     @Generated
     @Selector("waitUntilScheduled")
@@ -219,16 +241,18 @@ public interface MTLCommandBuffer {
     }
 
     /**
-     * @property GPUEndTime
-     * @abstract The host time in seconds that GPU finishes executing this command buffer. Returns zero if CPU has not received completion notification. This usually can be called in command buffer completion handler.
+     * [@property] GPUEndTime
+     * 
+     * The host time in seconds that GPU finishes executing this command buffer. Returns zero if CPU has not received completion notification. This usually can be called in command buffer completion handler.
      */
     @Generated
     @Selector("GPUEndTime")
     double GPUEndTime();
 
     /**
-     * @property GPUStartTime
-     * @abstract The host time in seconds that GPU starts executing this command buffer. Returns zero if it has not started. This usually can be called in command buffer completion handler.
+     * [@property] GPUStartTime
+     * 
+     * The host time in seconds that GPU starts executing this command buffer. Returns zero if it has not started. This usually can be called in command buffer completion handler.
      */
     @Generated
     @Selector("GPUStartTime")
@@ -243,37 +267,44 @@ public interface MTLCommandBuffer {
     double kernelStartTime();
 
     /**
-     * @method popDebugGroup
-     * @abstract Pop the latest named string off of the stack.
+     * popDebugGroup
+     * 
+     * Pop the latest named string off of the stack.
      */
     @Generated
     @Selector("popDebugGroup")
     void popDebugGroup();
 
     /**
-     * @method presentDrawable:afterMinimumDuration:
-     * @abstract Add a drawable present for a specific host time that allows previous frame to be on screen for at least duration time.
+     * presentDrawable:afterMinimumDuration:
+     * 
+     * Add a drawable present for a specific host time that allows previous frame to be on screen for at least duration time.
+     * 
+     * The difference of this API versus presentDrawable:atTime is that this API defers calculation of the presentation time until the previous frame's actual presentation time is known, thus to be able to maintain a more consistent and stable frame time. This also provides an easy way to set frame rate.
+     *    The submission thread will be lock stepped with present call been serviced by window server 
+     * 
      * @param drawable The drawable to be presented
      * @param duration The minimum time that previous frame should be displayed. The time is double preceision floating point in the unit of seconds.
-     * @discussion The difference of this API versus presentDrawable:atTime is that this API defers calculation of the presentation time until the previous frame's actual presentation time is known, thus to be able to maintain a more consistent and stable frame time. This also provides an easy way to set frame rate.
-     *    The submission thread will be lock stepped with present call been serviced by window server 
      */
     @Generated
     @Selector("presentDrawable:afterMinimumDuration:")
     void presentDrawableAfterMinimumDuration(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable, double duration);
 
     /**
-     * @method pushDebugGroup:
-     * @abstract Push a new named string onto a stack of string labels.
+     * pushDebugGroup:
+     * 
+     * Push a new named string onto a stack of string labels.
      */
     @Generated
     @Selector("pushDebugGroup:")
     void pushDebugGroup(String string);
 
     /**
-     * @method computeCommandEncoderWithDispatchType
-     * @abstract returns a compute command encoder to encode into this command buffer. Optionally allow this command encoder to execute dispatches concurrently.
-     * @discussion On devices that do not support concurrent command encoders, this call is equivalent to computeCommandEncoder
+     * computeCommandEncoderWithDispatchType
+     * 
+     * returns a compute command encoder to encode into this command buffer. Optionally allow this command encoder to execute dispatches concurrently.
+     * 
+     * On devices that do not support concurrent command encoders, this call is equivalent to computeCommandEncoder
      */
     @Generated
     @Selector("computeCommandEncoderWithDispatchType:")
@@ -281,18 +312,22 @@ public interface MTLCommandBuffer {
     MTLComputeCommandEncoder computeCommandEncoderWithDispatchType(@NUInt long dispatchType);
 
     /**
-     * @method encodeSignalEvent:value:
-     * @abstract Encodes a command that signals an event with a given value.
-     * @discussion This method may only be called if there is no current command encoder on the receiver.
+     * encodeSignalEvent:value:
+     * 
+     * Encodes a command that signals an event with a given value.
+     * 
+     * This method may only be called if there is no current command encoder on the receiver.
      */
     @Generated
     @Selector("encodeSignalEvent:value:")
     void encodeSignalEventValue(@Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
 
     /**
-     * @method encodeWaitForEvent:value:
-     * @abstract Encodes a command that pauses execution of this command buffer until the specified event reaches a given value.
-     * @discussion This method may only be called if there is no current command encoder on the receiver.
+     * encodeWaitForEvent:value:
+     * 
+     * Encodes a command that pauses execution of this command buffer until the specified event reaches a given value.
+     * 
+     * This method may only be called if there is no current command encoder on the receiver.
      */
     @Generated
     @Selector("encodeWaitForEvent:value:")
@@ -309,8 +344,9 @@ public interface MTLCommandBuffer {
     MTLAccelerationStructureCommandEncoder accelerationStructureCommandEncoder();
 
     /**
-     * @method blitCommandEncoderWithDescriptor:
-     * @abstract returns a blit command endcoder to encode into this command buffer.
+     * blitCommandEncoderWithDescriptor:
+     * 
+     * returns a blit command endcoder to encode into this command buffer.
      */
     @Generated
     @Selector("blitCommandEncoderWithDescriptor:")
@@ -318,8 +354,9 @@ public interface MTLCommandBuffer {
     MTLBlitCommandEncoder blitCommandEncoderWithDescriptor(MTLBlitPassDescriptor blitPassDescriptor);
 
     /**
-     * @method computeCommandEncoderWithDescriptor:
-     * @abstract returns a compute command endcoder to encode into this command buffer.
+     * computeCommandEncoderWithDescriptor:
+     * 
+     * returns a compute command endcoder to encode into this command buffer.
      */
     @Generated
     @Selector("computeCommandEncoderWithDescriptor:")
@@ -327,7 +364,7 @@ public interface MTLCommandBuffer {
     MTLComputeCommandEncoder computeCommandEncoderWithDescriptor(MTLComputePassDescriptor computePassDescriptor);
 
     /**
-     * @abstract The set of options configuring the error reporting of the created command buffer.
+     * The set of options configuring the error reporting of the created command buffer.
      */
     @Generated
     @Selector("errorOptions")
@@ -335,8 +372,9 @@ public interface MTLCommandBuffer {
     long errorOptions();
 
     /**
-     * @property logs
-     * @abstract Logs generated by the command buffer during execution of the GPU commands. Valid after GPU execution is completed
+     * [@property] logs
+     * 
+     * Logs generated by the command buffer during execution of the GPU commands. Valid after GPU execution is completed
      */
     @Generated
     @Selector("logs")

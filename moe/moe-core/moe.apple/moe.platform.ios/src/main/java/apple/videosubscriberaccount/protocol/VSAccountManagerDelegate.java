@@ -36,6 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface VSAccountManagerDelegate {
     /**
      * Called when the account manager is finished using the presented view controller.
+     * 
      * @param accountManager The account manager instance that previously asked to show the view controller.
      * @param viewController The view controller that is being presented to the user.  You must use -dismissViewControllerAnimated:completion: to begin dismissing the view controller before returning from this method.
      */
@@ -45,6 +46,7 @@ public interface VSAccountManagerDelegate {
 
     /**
      * Called when the account manager needs user interaction to complete a request.
+     * 
      * @param accountManager The account manager instance that needs to show the view controller.
      * @param viewController A view controller that needs to be presented to the user.  You must use -presentViewController:animated:completion: to begin presenting this view controller before returning from this method.
      */
@@ -59,9 +61,10 @@ public interface VSAccountManagerDelegate {
      * the list of providers.
      * If you do not implement this method, the user will be able to authenticate
      * with all supported providers.
+     * [@returns] Returning NO will cause the request will fail with an unsupported provider error.
+     * 
      * @param accountManager The account manager instance that received a metadata request.
      * @param accountProviderIdentifier Identifies the otherwise-supported account provider.
-     * @returns Returning NO will cause the request will fail with an unsupported provider error.
      */
     @Generated
     @IsOptional

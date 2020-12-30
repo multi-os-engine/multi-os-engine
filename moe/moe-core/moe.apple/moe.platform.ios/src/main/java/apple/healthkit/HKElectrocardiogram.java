@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKElectrocardiogram
- * @abstract      An HKElectrocardiogram is a collection of voltage values as waveforms
+ * HKElectrocardiogram
+ * 
+ * An HKElectrocardiogram is a collection of voltage values as waveforms
  *                from one or more leads
  */
 @Generated

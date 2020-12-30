@@ -42,9 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioNode
- * @abstract Base class for an audio generation, processing, or I/O block.
- * @discussion
+ * AVAudioNode
+ * 
+ * Base class for an audio generation, processing, or I/O block.
+ * 
  * 	`AVAudioEngine` objects contain instances of various AVAudioNode subclasses. This
  * 	base class provides certain common functionality.
  * 
@@ -170,8 +171,9 @@ public class AVAudioNode extends NSObject {
     public static native long version_static();
 
     /**
-     * @property engine
-     * @abstract The engine to which the node is attached (or nil).
+     * [@property] engine
+     * 
+     * The engine to which the node is attached (or nil).
      */
     @Generated
     @Selector("engine")
@@ -182,30 +184,19 @@ public class AVAudioNode extends NSObject {
     public native AVAudioNode init();
 
     /**
-     * @method inputFormatForBus:
-     * @abstract Obtain an input bus's format.
+     * inputFormatForBus:
+     * 
+     * Obtain an input bus's format.
      */
     @Generated
     @Selector("inputFormatForBus:")
     public native AVAudioFormat inputFormatForBus(@NUInt long bus);
 
     /**
-     * @method installTapOnBus:bufferSize:format:block:
-     * 	@abstract Create a "tap" to record/monitor/observe the output of the node.
-     * 	@param bus
-     * 		the node output bus to which to attach the tap
-     * 	@param bufferSize
-     * 		the requested size of the incoming buffers in sample frames. Supported range is [100, 400] ms.
-     * 	@param format
-     * 		If non-nil, attempts to apply this as the format of the specified output bus. This should
-     * 		only be done when attaching to an output bus which is not connected to another node; an
-     * 		error will result otherwise.
-     * 		The tap and connection formats (if non-nil) on the specified bus should be identical. 
-     * 		Otherwise, the latter operation will override any previously set format.
-     * 	@param tapBlock
-     * 		a block to be called with audio buffers
+     * installTapOnBus:bufferSize:format:block:
      * 
-     * 	@discussion
+     * Create a "tap" to record/monitor/observe the output of the node.
+     * 
      * 		Only one tap may be installed on any bus. Taps may be safely installed and removed while
      * 		the engine is running.
      * 
@@ -225,6 +216,19 @@ public class AVAudioNode extends NSObject {
      * ....
      * // start engine
      * </pre>
+     * 
+     * 	@param bus
+     * 		the node output bus to which to attach the tap
+     * 	@param bufferSize
+     * 		the requested size of the incoming buffers in sample frames. Supported range is [100, 400] ms.
+     * 	@param format
+     * 		If non-nil, attempts to apply this as the format of the specified output bus. This should
+     * 		only be done when attaching to an output bus which is not connected to another node; an
+     * 		error will result otherwise.
+     * 		The tap and connection formats (if non-nil) on the specified bus should be identical. 
+     * 		Otherwise, the latter operation will override any previously set format.
+     * 	@param tapBlock
+     * 		a block to be called with audio buffers
      */
     @Generated
     @Selector("installTapOnBus:bufferSize:format:block:")
@@ -232,9 +236,10 @@ public class AVAudioNode extends NSObject {
             @ObjCBlock(name = "call_installTapOnBusBufferSizeFormatBlock") Block_installTapOnBusBufferSizeFormatBlock tapBlock);
 
     /**
-     * @property lastRenderTime
-     * @abstract Obtain the time for which the node most recently rendered.
-     * @discussion
+     * [@property] lastRenderTime
+     * 
+     * Obtain the time for which the node most recently rendered.
+     * 
      * 	Will return nil if the engine is not running or if the node is not connected to an input or
      * 	output node.
      */
@@ -243,24 +248,27 @@ public class AVAudioNode extends NSObject {
     public native AVAudioTime lastRenderTime();
 
     /**
-     * @method nameForInputBus:
-     * @abstract Return the name of an input bus.
+     * nameForInputBus:
+     * 
+     * Return the name of an input bus.
      */
     @Generated
     @Selector("nameForInputBus:")
     public native String nameForInputBus(@NUInt long bus);
 
     /**
-     * @method nameForOutputBus:
-     * @abstract Return the name of an output bus.
+     * nameForOutputBus:
+     * 
+     * Return the name of an output bus.
      */
     @Generated
     @Selector("nameForOutputBus:")
     public native String nameForOutputBus(@NUInt long bus);
 
     /**
-     * @property numberOfInputs
-     * @abstract The node's number of input busses.
+     * [@property] numberOfInputs
+     * 
+     * The node's number of input busses.
      */
     @Generated
     @Selector("numberOfInputs")
@@ -268,8 +276,9 @@ public class AVAudioNode extends NSObject {
     public native long numberOfInputs();
 
     /**
-     * @property numberOfOutputs
-     * @abstract The node's number of output busses.
+     * [@property] numberOfOutputs
+     * 
+     * The node's number of output busses.
      */
     @Generated
     @Selector("numberOfOutputs")
@@ -277,16 +286,19 @@ public class AVAudioNode extends NSObject {
     public native long numberOfOutputs();
 
     /**
-     * @method outputFormatForBus:
-     * @abstract Obtain an output bus's format.
+     * outputFormatForBus:
+     * 
+     * Obtain an output bus's format.
      */
     @Generated
     @Selector("outputFormatForBus:")
     public native AVAudioFormat outputFormatForBus(@NUInt long bus);
 
     /**
-     * @method removeTapOnBus:
-     * @abstract Destroy a tap.
+     * removeTapOnBus:
+     * 
+     * Destroy a tap.
+     * 
      * @param bus
      * 	the node output bus whose tap is to be destroyed
      */
@@ -295,8 +307,9 @@ public class AVAudioNode extends NSObject {
     public native void removeTapOnBus(@NUInt long bus);
 
     /**
-     * @method reset
-     * @abstract Clear a unit's previous processing state.
+     * reset
+     * 
+     * Clear a unit's previous processing state.
      */
     @Generated
     @Selector("reset")
@@ -310,9 +323,10 @@ public class AVAudioNode extends NSObject {
     }
 
     /**
-     * @property AUAudioUnit
-     * @abstract An AUAudioUnit wrapping or underlying the implementation's AudioUnit.
-     * @discussion
+     * [@property] AUAudioUnit
+     * 
+     * An AUAudioUnit wrapping or underlying the implementation's AudioUnit.
+     * 
      * 	This provides an AUAudioUnit which either wraps or underlies the implementation's
      * 	AudioUnit, depending on how that audio unit is packaged. Applications can interact with this
      * 	AUAudioUnit to control custom properties, select presets, change parameters, etc.
@@ -326,9 +340,10 @@ public class AVAudioNode extends NSObject {
     public native AUAudioUnit AUAudioUnit();
 
     /**
-     * @property latency
-     * @abstract The processing latency of the node, in seconds.
-     * @discussion
+     * [@property] latency
+     * 
+     * The processing latency of the node, in seconds.
+     * 
      * 	This property reflects the delay between when an impulse in the audio stream arrives at the
      * 	input vs. output of the node. This should reflect the delay due to signal processing 
      * 	(e.g. filters, FFT's, etc.), not delay or reverberation which is being applied as an effect. 
@@ -339,9 +354,10 @@ public class AVAudioNode extends NSObject {
     public native double latency();
 
     /**
-     * @property outputPresentationLatency
-     * @abstract The maximum render pipeline latency downstream of the node, in seconds.
-     * @discussion
+     * [@property] outputPresentationLatency
+     * 
+     * The maximum render pipeline latency downstream of the node, in seconds.
+     * 
      * 	This describes the maximum time it will take for the audio at the output of a node to be
      * 	presented. 
      * 	For instance, the output presentation latency of the output node in the engine is:

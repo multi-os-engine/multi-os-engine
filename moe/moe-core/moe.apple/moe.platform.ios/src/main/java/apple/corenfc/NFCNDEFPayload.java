@@ -32,9 +32,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NFCNDEFPayload
+ * NFCNDEFPayload
  * 
- * @discussion  A NDEF message payload consists of Type Name Format, Type, Payload Identifier, and Payload data.
+ * A NDEF message payload consists of Type Name Format, Type, Payload Identifier, and Payload data.
  *              The NDEF payload cannot result into a record that is greater than 128KB in size.
  */
 @Generated
@@ -117,7 +117,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     public native NFCNDEFPayload initWithCoder(NSCoder coder);
 
     /**
-     * @method initWithFormat:type:identifier:paylaod:
+     * initWithFormat:type:identifier:paylaod:
      * 
      * @param format        NFCTypeNameFormat value.
      * @param type          Identifier describing the type of the payload.  Empty data indicates field is absent from the payload.
@@ -132,7 +132,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
             NSData payload);
 
     /**
-     * @method initWithFormat:type:identifier:paylaod:
+     * initWithFormat:type:identifier:paylaod:
      * 
      * @param format        NFCTypeNameFormat value.
      * @param type          Identifier describing the type of the payload.  Empty data indicates field is absent from the payload.
@@ -237,7 +237,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     public static native Object wellKnowTypeTextPayloadWithStringLocale(String text, NSLocale locale);
 
     /**
-     * @method wellKnownTypeTextPayloadWithLocale:
+     * wellKnownTypeTextPayloadWithLocale:
      * 
      * @param locale    Returns NSLocale object that is constructed from the IANA language code stored with the text payload.
      * @return          NSString object base on a valid Well Known Type Text payload.  nil if payload is not a text.
@@ -247,7 +247,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     public native String wellKnownTypeTextPayloadWithLocale(@ReferenceInfo(type = NSLocale.class) Ptr<NSLocale> locale);
 
     /**
-     * @method wellKnownTypeTextPayloadWithString:locale:
+     * wellKnownTypeTextPayloadWithString:locale:
      * 
      * @param text      Text message.
      * @param locale    NSLocale object.  IANA language code specified by the locale will be saved with the payload.
@@ -258,7 +258,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     public static native Object wellKnownTypeTextPayloadWithStringLocale(String text, NSLocale locale);
 
     /**
-     * @method      wellKnownTypeURIPayload
+     * wellKnownTypeURIPayload
      * 
      * @return      NSURL object base on a valid Well Known Type URI payload. nil if payload is not a URI.
      */
@@ -267,12 +267,12 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     public native NSURL wellKnownTypeURIPayload();
 
     /**
-     * @method wellKnownTypeURIRecordWithString:
+     * wellKnownTypeURIRecordWithString:
+     * 
+     * Used for creating NDEF URI payloads which cannot be represented with NSURL object.  These are URIs that contain characters
+     *                  such as 'ä' and 'ö' which cannot be represent by the 7 bits ASCII encoding.
      * 
      * @param uri       URI string.  UTF-8 encoding representation will be used.
-     * 
-     * @discussion      Used for creating NDEF URI payloads which cannot be represented with NSURL object.  These are URIs that contain characters
-     *                  such as 'ä' and 'ö' which cannot be represent by the 7 bits ASCII encoding.
      */
     @Generated
     @Selector("wellKnownTypeURIPayloadWithString:")
@@ -280,11 +280,11 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     public static native Object wellKnownTypeURIPayloadWithString(String uri);
 
     /**
-     * @method wellKnownTypeURIPayloadWithURL:
+     * wellKnownTypeURIPayloadWithURL:
+     * 
+     * Preferred convenience function for creating NDEF URI payload with common URLs such as "https://www.apple.com" or "tel:+1-555-555-5555".
      * 
      * @param url       NSURL object.
-     * 
-     * @discussion      Preferred convenience function for creating NDEF URI payload with common URLs such as "https://www.apple.com" or "tel:+1-555-555-5555".
      */
     @Generated
     @Selector("wellKnownTypeURIPayloadWithURL:")

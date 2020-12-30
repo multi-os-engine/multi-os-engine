@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNArithmetic
- * @dependency This depends on Metal.framework
- * @discussion The MPSCNNArithmetic filter takes two source images, a primary source image and a
+ * MPSCNNArithmetic
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNArithmetic filter takes two source images, a primary source image and a
  *             secondary source image, and outputs a single destination image. It applies an
  *             element-wise arithmetic operator to each pixel in a primary source image and a
  *             corresponding pixel in a secondary source image over a specified region.
@@ -132,9 +133,11 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract       Encode call that operates on a state for later consumption by a gradient kernel in training
-     * @discussion     This is the older style of encode which reads the offset, doesn't change it,
+     * Encode call that operates on a state for later consumption by a gradient kernel in training
+     * 
+     * This is the older style of encode which reads the offset, doesn't change it,
      *                 and ignores the padding method.
+     * 
      * @param          commandBuffer       The command buffer
      * @param          primaryImage        A MPSImage to use as the source images for the filter.
      * @param          secondaryImage      A MPSImage to use as the source images for the filter.
@@ -191,8 +194,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   maximumValue
-     * @abstract   maximumValue is used to clamp the result of an arithmetic operation:
+     * [@property]   maximumValue
+     * 
+     * maximumValue is used to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of maximumValue is FLT_MAX.
      */
@@ -201,8 +205,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native float maximumValue();
 
     /**
-     * @property   minimumValue
-     * @abstract   minimumValue is to clamp the result of an arithmetic operation:
+     * [@property]   minimumValue
+     * 
+     * minimumValue is to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of minimumValue is -FLT_MAX.
      */
@@ -221,8 +226,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native float primaryScale();
 
     /**
-     * @property   primaryStrideInPixels
-     * @abstract   The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
+     * [@property]   primaryStrideInPixels
+     * 
+     * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated
@@ -243,8 +249,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native float secondaryScale();
 
     /**
-     * @property   secondaryStrideInPixels
-     * @abstract   The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
+     * [@property]   secondaryStrideInPixels
+     * 
+     * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated
@@ -257,8 +264,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native void setBias(float value);
 
     /**
-     * @property   maximumValue
-     * @abstract   maximumValue is used to clamp the result of an arithmetic operation:
+     * [@property]   maximumValue
+     * 
+     * maximumValue is used to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of maximumValue is FLT_MAX.
      */
@@ -267,8 +275,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native void setMaximumValue(float value);
 
     /**
-     * @property   minimumValue
-     * @abstract   minimumValue is to clamp the result of an arithmetic operation:
+     * [@property]   minimumValue
+     * 
+     * minimumValue is to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of minimumValue is -FLT_MAX.
      */
@@ -281,8 +290,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native void setPrimaryScale(float value);
 
     /**
-     * @property   primaryStrideInPixels
-     * @abstract   The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
+     * [@property]   primaryStrideInPixels
+     * 
+     * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated
@@ -294,8 +304,9 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native void setSecondaryScale(float value);
 
     /**
-     * @property   secondaryStrideInPixels
-     * @abstract   The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
+     * [@property]   secondaryStrideInPixels
+     * 
+     * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated

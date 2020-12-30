@@ -115,7 +115,8 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
             MPSNNGradientStateNode gradientState, MPSCNNLossDescriptor descriptor, boolean isLabelsGradientFilter);
 
     /**
-     * @abstract   Init a gradient loss node from multiple images
+     * Init a gradient loss node from multiple images
+     * 
      * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
      *                                     Node0: input gradients, Node1: logits, Node2: labels, Node3: weights
      * @return     A new MPSNNFilter node.
@@ -178,7 +179,8 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
             MPSNNGradientStateNode gradientState, MPSCNNLossDescriptor descriptor, boolean isLabelsGradientFilter);
 
     /**
-     * @abstract   Init a gradient loss node from multiple images
+     * Init a gradient loss node from multiple images
+     * 
      * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
      *                                     Node0: logits, Node1: labels, Node2: weights
      * @return     A new MPSNNFilter node.
@@ -195,8 +197,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     public native long numberOfClasses();
 
     /**
-     * @property   propertyCallBack
-     * @abstract   Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
+     * [@property]   propertyCallBack
+     * 
+     * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      *             Default value: nil.
      */
     @Generated
@@ -217,8 +220,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   propertyCallBack
-     * @abstract   Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
+     * [@property]   propertyCallBack
+     * 
+     * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      *             Default value: nil.
      */
     @Generated

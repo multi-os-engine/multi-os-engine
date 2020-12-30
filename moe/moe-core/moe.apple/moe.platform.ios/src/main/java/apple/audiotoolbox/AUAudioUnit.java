@@ -64,9 +64,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AUAudioUnit
- * @brief		An audio unit instance.
- * @discussion
+ * AUAudioUnit
+ * 
+ * An audio unit instance.
+ * 
  * 	AUAudioUnit is a host interface to an audio unit. Hosts can instantiate either version 2 or
  * 	version 3 units with this class, and to some extent control whether an audio unit is
  * 	instantiated in-process or in a separate extension process.
@@ -173,8 +174,17 @@ public class AUAudioUnit extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @method	instantiateWithComponentDescription:options:completionHandler:
-     * @brief	Asynchronously create an AUAudioUnit instance.
+     * instantiateWithComponentDescription:options:completionHandler:
+     * 
+     * Asynchronously create an AUAudioUnit instance.
+     * 
+     * 	Certain types of AUAudioUnits must be instantiated asynchronously -- see 
+     * 	the discussion of kAudioComponentFlag_RequiresAsyncInstantiation in
+     * 	AudioToolbox/AudioComponent.h.
+     * 
+     * 	Note: Do not block the main thread while waiting for the completion handler to be called;
+     * 	this can deadlock.
+     * 
      * @param componentDescription
      * 	The AudioComponentDescription of the audio unit to instantiate.
      * @param options
@@ -182,13 +192,6 @@ public class AUAudioUnit extends NSObject {
      * @param completionHandler
      * 	Called in a thread/dispatch queue context internal to the implementation. The client should
      * 	retain the supplied AUAudioUnit.
-     * @discussion
-     * 	Certain types of AUAudioUnits must be instantiated asynchronously -- see 
-     * 	the discussion of kAudioComponentFlag_RequiresAsyncInstantiation in
-     * 	AudioToolbox/AudioComponent.h.
-     * 
-     * 	Note: Do not block the main thread while waiting for the completion handler to be called;
-     * 	this can deadlock.
      */
     @Generated
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
@@ -211,8 +214,8 @@ public class AUAudioUnit extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @brief	Register an audio unit component implemented as an AUAudioUnit subclass.
-     * @discussion
+     * Register an audio unit component implemented as an AUAudioUnit subclass.
+     * 
      * 	This method dynamically registers the supplied AUAudioUnit subclass with the Audio Component
      * 	system, in the context of the current process (only). After registering the subclass, it can
      * 	be instantiated via AudioComponentInstanceNew, 
@@ -251,9 +254,10 @@ public class AUAudioUnit extends NSObject {
     public native boolean allParameterValues();
 
     /**
-     * @method		allocateRenderResourcesAndReturnError:
-     * @brief		Allocate resources required to render.
-     * @discussion
+     * allocateRenderResourcesAndReturnError:
+     * 
+     * Allocate resources required to render.
+     * 
      * 	Hosts must call this before beginning to render. Subclassers should call the superclass
      * 	implementation.
      * 
@@ -265,33 +269,37 @@ public class AUAudioUnit extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property	audioUnitName
-     * @brief		The audio unit's name.
+     * [@property]	audioUnitName
+     * 
+     * The audio unit's name.
      */
     @Generated
     @Selector("audioUnitName")
     public native String audioUnitName();
 
     /**
-     * @property	canPerformInput
-     * @brief		Whether the I/O device can perform input.
+     * [@property]	canPerformInput
+     * 
+     * Whether the I/O device can perform input.
      */
     @Generated
     @Selector("canPerformInput")
     public native boolean canPerformInput();
 
     /**
-     * @property	canPerformOutput
-     * @brief		Whether the I/O device can perform output.
+     * [@property]	canPerformOutput
+     * 
+     * Whether the I/O device can perform output.
      */
     @Generated
     @Selector("canPerformOutput")
     public native boolean canPerformOutput();
 
     /**
-     * @property	canProcessInPlace
-     * @brief		Expresses whether an audio unit can process in place.
-     * @discussion
+     * [@property]	canProcessInPlace
+     * 
+     * Expresses whether an audio unit can process in place.
+     * 
      * 	In-place processing is the ability for an audio unit to transform an input signal to an
      * 	output signal in-place in the input buffer, without requiring a separate output buffer.
      * 
@@ -309,9 +317,10 @@ public class AUAudioUnit extends NSObject {
     public native boolean canProcessInPlace();
 
     /**
-     * @property	channelCapabilities
-     * @brief		Expresses valid combinations of input and output channel counts.
-     * @discussion
+     * [@property]	channelCapabilities
+     * 
+     * Expresses valid combinations of input and output channel counts.
+     * 
      * 	Elements are NSNumber containing integers; [0]=input count, [1]=output count, [2]=2nd input
      * 	count, [3]=2nd output count, etc.
      * 
@@ -337,9 +346,10 @@ public class AUAudioUnit extends NSObject {
     public native NSArray<? extends NSNumber> channelCapabilities();
 
     /**
-     * @property	channelMap
-     * @brief		Specify a mapping of input channels to output channels.
-     * @discussion
+     * [@property]	channelMap
+     * 
+     * Specify a mapping of input channels to output channels.
+     * 
      * 	Converter and input/output audio units may support re-ordering or splitting of input
      * 	channels to output channels. The number of channels in the channel map is the number of
      * 	channels of the destination (output format). The channel map entries contain a channel
@@ -356,8 +366,9 @@ public class AUAudioUnit extends NSObject {
     public native NSArray<? extends NSNumber> channelMap();
 
     /**
-     * @property	component
-     * @brief		The AudioComponent which was found based on componentDescription when the
+     * [@property]	component
+     * 
+     * The AudioComponent which was found based on componentDescription when the
      * 			audio unit was created.
      */
     @Generated
@@ -365,8 +376,9 @@ public class AUAudioUnit extends NSObject {
     public native AudioComponent component();
 
     /**
-     * @property	componentDescription
-     * @brief		The AudioComponentDescription with which the audio unit was created.
+     * [@property]	componentDescription
+     * 
+     * The AudioComponentDescription with which the audio unit was created.
      */
     @Generated
     @Selector("componentDescription")
@@ -374,9 +386,10 @@ public class AUAudioUnit extends NSObject {
     public native AudioComponentDescription componentDescription();
 
     /**
-     * @property	componentName
-     * @brief		The unit's component's name.
-     * @discussion
+     * [@property]	componentName
+     * 
+     * The unit's component's name.
+     * 
      * 	By convention, an audio unit's component name is its manufacturer's name, plus ": ",
      * 	plus the audio unit's name. The audioUnitName and manufacturerName properties are derived
      * 	from the component name.
@@ -386,18 +399,20 @@ public class AUAudioUnit extends NSObject {
     public native String componentName();
 
     /**
-     * @property	componentVersion
-     * @brief		The unit's component's version.
+     * [@property]	componentVersion
+     * 
+     * The unit's component's version.
      */
     @Generated
     @Selector("componentVersion")
     public native int componentVersion();
 
     /**
-     * @property	contextName
-     * @brief		Information about the host context in which the audio unit is connected, for display
+     * [@property]	contextName
+     * 
+     * Information about the host context in which the audio unit is connected, for display
      * 			in the audio unit's view.
-     * @discussion
+     * 
      * 	For example, a host could set "track 3" as the context, so that the audio unit's view could
      * 	then display to the user "My audio unit on track 3".
      * 
@@ -408,9 +423,10 @@ public class AUAudioUnit extends NSObject {
     public native String contextName();
 
     /**
-     * @property	currentPreset
-     * @brief		The audio unit's last-selected preset.
-     * @discussion
+     * [@property]	currentPreset
+     * 
+     * The audio unit's last-selected preset.
+     * 
      * 	Hosts can let the user select a preset by setting this property. Note that when getting
      * 	this property, it does not reflect whether parameters may have been modified since the
      * 	preset was selected.
@@ -422,9 +438,10 @@ public class AUAudioUnit extends NSObject {
     public native AUAudioUnitPreset currentPreset();
 
     /**
-     * @method		deallocateRenderResources
-     * @brief		Deallocate resources allocated by allocateRenderResourcesAndReturnError:
-     * @discussion
+     * deallocateRenderResources
+     * 
+     * Deallocate resources allocated by allocateRenderResourcesAndReturnError:
+     * 
      * 	Hosts should call this after finishing rendering. Subclassers should call the superclass
      * 	implementation.
      * 
@@ -435,9 +452,10 @@ public class AUAudioUnit extends NSObject {
     public native void deallocateRenderResources();
 
     /**
-     * @property	factoryPresets
-     * @brief		A collection of presets provided by the audio unit's developer.
-     * @discussion
+     * [@property]	factoryPresets
+     * 
+     * A collection of presets provided by the audio unit's developer.
+     * 
      * 	A preset provides users of an audio unit with an easily-selectable, fine-tuned set of
      * 	parameters provided by the developer. This property returns all of the available factory presets.
      * 
@@ -448,10 +466,11 @@ public class AUAudioUnit extends NSObject {
     public native NSArray<? extends AUAudioUnitPreset> factoryPresets();
 
     /**
-     * @property	fullState
-     * @brief		A persistable snapshot of the audio unit's properties and parameters, suitable for
+     * [@property]	fullState
+     * 
+     * A persistable snapshot of the audio unit's properties and parameters, suitable for
      * 			saving as a user preset.
-     * @discussion
+     * 
      * 	Hosts may use this property to save and restore the state of an audio unit being used in a
      * 	user preset or document. The audio unit should not persist transitory properties such as
      * 	stream formats, but should save and restore all parameters and custom properties.
@@ -468,10 +487,11 @@ public class AUAudioUnit extends NSObject {
     public native NSDictionary<String, ?> fullState();
 
     /**
-     * @property	fullStateForDocument
-     * @brief		A persistable snapshot of the audio unit's properties and parameters, suitable for
+     * [@property]	fullStateForDocument
+     * 
+     * A persistable snapshot of the audio unit's properties and parameters, suitable for
      * 			saving in a user's document.
-     * @discussion
+     * 
      * 	This property is distinct from fullState in that some state is suitable for saving in user
      * 	presets, while other state is not. For example, a synthesizer's master tuning setting could
      * 	be considered global state, inappropriate for storing in reusable presets, but desirable
@@ -491,8 +511,9 @@ public class AUAudioUnit extends NSObject {
     public native AUAudioUnit init();
 
     /**
-     * @method		initWithComponentDescription:error:
-     * @brief		Convenience initializer (omits options).
+     * initWithComponentDescription:error:
+     * 
+     * Convenience initializer (omits options).
      */
     @Generated
     @Selector("initWithComponentDescription:error:")
@@ -500,8 +521,10 @@ public class AUAudioUnit extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method		initWithComponentDescription:options:error:
-     * @brief		Designated initializer.
+     * initWithComponentDescription:options:error:
+     * 
+     * Designated initializer.
+     * 
      * @param componentDescription
      * 	A single AUAudioUnit subclass may implement multiple audio units, for example, an effect
      * 	that can also function as a generator, or a cluster of related effects. The component
@@ -518,9 +541,10 @@ public class AUAudioUnit extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property	inputBusses
-     * @brief		An audio unit's audio input connection points.
-     * @discussion
+     * [@property]	inputBusses
+     * 
+     * An audio unit's audio input connection points.
+     * 
      * 	Subclassers must override this property's getter. The implementation should return the same
      * 	object every time it is asked for it, since clients can install KVO observers on it.
      */
@@ -529,9 +553,11 @@ public class AUAudioUnit extends NSObject {
     public native AUAudioUnitBusArray inputBusses();
 
     /**
-     * @property	inputHandler
-     * @brief		The block that the output unit will call to notify when input is available.
-     * @discussion	See discussion for AUInputHandler.
+     * [@property]	inputHandler
+     * 
+     * The block that the output unit will call to notify when input is available.
+     * 
+     * See discussion for AUInputHandler.
      */
     @Generated
     @Selector("inputHandler")
@@ -539,9 +565,11 @@ public class AUAudioUnit extends NSObject {
     public native Block_inputHandler_ret inputHandler();
 
     /**
-     * @property	inputEnabled
-     * @brief		Flag enabling audio input from the unit.
-     * @discussion	Input is disabled by default. This must be set to YES if input audio is desired. 
+     * [@property]	inputEnabled
+     * 
+     * Flag enabling audio input from the unit.
+     * 
+     * Input is disabled by default. This must be set to YES if input audio is desired.
      * 			Setting to YES will have no effect if canPerformInput is false.
      */
     @Generated
@@ -549,9 +577,11 @@ public class AUAudioUnit extends NSObject {
     public native boolean isInputEnabled();
 
     /**
-     * @property	inputEnabled
-     * @brief		Flag enabling audio input from the unit.
-     * @discussion	Input is disabled by default. This must be set to YES if input audio is desired. 
+     * [@property]	inputEnabled
+     * 
+     * Flag enabling audio input from the unit.
+     * 
+     * Input is disabled by default. This must be set to YES if input audio is desired.
      * 			Setting to YES will have no effect if canPerformInput is false.
      */
     @Generated
@@ -559,9 +589,10 @@ public class AUAudioUnit extends NSObject {
     public native void setInputEnabled(boolean value);
 
     /**
-     * @property	musicDeviceOrEffect
-     * @brief		Specifies whether an audio unit responds to MIDI events.
-     * @discussion
+     * [@property]	musicDeviceOrEffect
+     * 
+     * Specifies whether an audio unit responds to MIDI events.
+     * 
      * 	This is implemented in the base class and returns YES if the component type is music
      * 	device or music effect.
      */
@@ -570,9 +601,11 @@ public class AUAudioUnit extends NSObject {
     public native boolean isMusicDeviceOrEffect();
 
     /**
-     * @property	outputEnabled
-     * @brief		Flag enabling audio output from the unit.
-     * @discussion	Output is enabled by default.
+     * [@property]	outputEnabled
+     * 
+     * Flag enabling audio output from the unit.
+     * 
+     * Output is enabled by default.
      * 			Setting to YES will have no effect if canPerformOutput is false.
      */
     @Generated
@@ -580,9 +613,11 @@ public class AUAudioUnit extends NSObject {
     public native boolean isOutputEnabled();
 
     /**
-     * @property	outputEnabled
-     * @brief		Flag enabling audio output from the unit.
-     * @discussion	Output is enabled by default.
+     * [@property]	outputEnabled
+     * 
+     * Flag enabling audio output from the unit.
+     * 
+     * Output is enabled by default.
      * 			Setting to YES will have no effect if canPerformOutput is false.
      */
     @Generated
@@ -590,9 +625,10 @@ public class AUAudioUnit extends NSObject {
     public native void setOutputEnabled(boolean value);
 
     /**
-     * @property	renderingOffline
-     * @brief		Communicates to an audio unit that it is rendering offline.
-     * @discussion
+     * [@property]	renderingOffline
+     * 
+     * Communicates to an audio unit that it is rendering offline.
+     * 
      * 	A host should set this property when using an audio unit in a context where there are no
      * 	realtime deadlines, before asking the unit to allocate render resources. An audio unit may
      * 	respond by using a more expensive signal processing algorithm, or allowing itself to block
@@ -606,9 +642,10 @@ public class AUAudioUnit extends NSObject {
     public native boolean isRenderingOffline();
 
     /**
-     * @property	renderingOffline
-     * @brief		Communicates to an audio unit that it is rendering offline.
-     * @discussion
+     * [@property]	renderingOffline
+     * 
+     * Communicates to an audio unit that it is rendering offline.
+     * 
      * 	A host should set this property when using an audio unit in a context where there are no
      * 	realtime deadlines, before asking the unit to allocate render resources. An audio unit may
      * 	respond by using a more expensive signal processing algorithm, or allowing itself to block
@@ -622,9 +659,10 @@ public class AUAudioUnit extends NSObject {
     public native void setRenderingOffline(boolean value);
 
     /**
-     * @property	latency
-     * @brief		The audio unit's processing latency, in seconds.
-     * @discussion
+     * [@property]	latency
+     * 
+     * The audio unit's processing latency, in seconds.
+     * 
      * 	This property reflects the delay between when an impulse in the unit's audio unit stream
      * 	arrives in the input vs. output streams. This should reflect the delay due
      * 	to signal processing (e.g. filters, FFT's, etc.), not delay or reverberation which is
@@ -645,17 +683,19 @@ public class AUAudioUnit extends NSObject {
     public native double latency();
 
     /**
-     * @property	manufacturerName
-     * @brief		The manufacturer's name.
+     * [@property]	manufacturerName
+     * 
+     * The manufacturer's name.
      */
     @Generated
     @Selector("manufacturerName")
     public native String manufacturerName();
 
     /**
-     * @property	maximumFramesToRender
-     * @brief		The maximum number of frames which the audio unit can render at once.
-     * @discussion
+     * [@property]	maximumFramesToRender
+     * 
+     * The maximum number of frames which the audio unit can render at once.
+     * 
      * 	This must be set by the host before render resources are allocated. It cannot be changed
      * 	while render resources are allocated.
      * 
@@ -666,9 +706,10 @@ public class AUAudioUnit extends NSObject {
     public native int maximumFramesToRender();
 
     /**
-     * @property	musicalContextBlock
-     * @brief		A callback for the AU to call the host for musical context information.
-     * @discussion
+     * [@property]	musicalContextBlock
+     * 
+     * A callback for the AU to call the host for musical context information.
+     * 
      * 	Note that an audio unit implementation accessing this property should cache it in
      * 	realtime-safe storage before beginning to render.
      * 
@@ -681,9 +722,10 @@ public class AUAudioUnit extends NSObject {
     public native Block_musicalContextBlock_ret musicalContextBlock();
 
     /**
-     * @property	outputBusses
-     * @brief		An audio unit's audio output connection points.
-     * @discussion
+     * [@property]	outputBusses
+     * 
+     * An audio unit's audio output connection points.
+     * 
      * 	Subclassers must override this property's getter. The implementation should return the same
      * 	object every time it is asked for it, since clients can install KVO observers on it.
      */
@@ -692,9 +734,11 @@ public class AUAudioUnit extends NSObject {
     public native AUAudioUnitBusArray outputBusses();
 
     /**
-     * @property	outputProvider
-     * @brief		The block that the output unit will call to get audio to send to the output.
-     * @discussion	This block must be set if output is enabled.
+     * [@property]	outputProvider
+     * 
+     * The block that the output unit will call to get audio to send to the output.
+     * 
+     * This block must be set if output is enabled.
      */
     @Generated
     @Selector("outputProvider")
@@ -702,11 +746,10 @@ public class AUAudioUnit extends NSObject {
     public native Block_outputProvider_ret outputProvider();
 
     /**
-     * @property	parameterTree
-     * @brief		An audio unit's parameters, organized in a hierarchy.
-     * @return
-     * 	A parameter tree object, or nil if the unit has no parameters.
-     * @discussion
+     * [@property]	parameterTree
+     * 
+     * An audio unit's parameters, organized in a hierarchy.
+     * 
      * 	Audio unit hosts can fetch this property to discover a unit's parameters. KVO notifications
      * 	are issued on this member to notify the host of changes to the set of available parameters.
      * 
@@ -725,15 +768,19 @@ public class AUAudioUnit extends NSObject {
      * 	kAudioUnitProperty_ParameterInfo.
      * 
      * 	Note that it is not safe to modify this property in a real-time context.
+     * 
+     * @return
+     * 	A parameter tree object, or nil if the unit has no parameters.
      */
     @Generated
     @Selector("parameterTree")
     public native AUParameterTree parameterTree();
 
     /**
-     * @method		parametersForOverviewWithCount:
-     * @brief		Returns the audio unit's `count` most important parameters.
-     * @discussion
+     * parametersForOverviewWithCount:
+     * 
+     * Returns the audio unit's `count` most important parameters.
+     * 
      * 	This property allows a host to query an audio unit for some small number of parameters which
      * 	are its "most important", to be displayed in a compact generic view.
      * 
@@ -750,8 +797,10 @@ public class AUAudioUnit extends NSObject {
     public native NSArray<? extends NSNumber> parametersForOverviewWithCount(@NInt long count);
 
     /**
-     * @method		removeRenderObserver:
-     * @brief		Remove an observer block added via tokenByAddingRenderObserver:
+     * removeRenderObserver:
+     * 
+     * Remove an observer block added via tokenByAddingRenderObserver:
+     * 
      * @param token
      * 	The token previously returned by tokenByAddingRenderObserver:
      * 
@@ -762,9 +811,10 @@ public class AUAudioUnit extends NSObject {
     public native void removeRenderObserver(@NInt long token);
 
     /**
-     * @property	renderQuality
-     * @brief		Provides a trade-off between rendering quality and CPU load.
-     * @discussion
+     * [@property]	renderQuality
+     * 
+     * Provides a trade-off between rendering quality and CPU load.
+     * 
      * 	The range of valid values is 0-127.
      * 
      * 	Bridged to the v2 property kAudioUnitProperty_RenderQuality.
@@ -775,17 +825,19 @@ public class AUAudioUnit extends NSObject {
     public native long renderQuality();
 
     /**
-     * @property	renderResourcesAllocated
-     * @brief		returns YES if the unit has render resources allocated.
+     * [@property]	renderResourcesAllocated
+     * 
+     * returns YES if the unit has render resources allocated.
      */
     @Generated
     @Selector("renderResourcesAllocated")
     public native boolean renderResourcesAllocated();
 
     /**
-     * @method		reset
-     * @brief		Reset transitory rendering state to its initial state.
-     * @discussion
+     * reset
+     * 
+     * Reset transitory rendering state to its initial state.
+     * 
      * 	Hosts should call this at the point of a discontinuity in the input stream being provided to
      * 	an audio unit, for example, when seeking forward or backward within a track. In response,
      * 	implementations should clear delay lines, filters, etc. Subclassers should call the
@@ -798,9 +850,10 @@ public class AUAudioUnit extends NSObject {
     public native void reset();
 
     /**
-     * @property	scheduleMIDIEventBlock
-     * @brief		Block used to schedule MIDI events.
-     * @discussion
+     * [@property]	scheduleMIDIEventBlock
+     * 
+     * Block used to schedule MIDI events.
+     * 
      * 	As with renderBlock, a host should fetch and cache this block before beginning to render,
      * 	if it intends to schedule MIDI events.
      * 
@@ -818,9 +871,10 @@ public class AUAudioUnit extends NSObject {
     public native Block_scheduleMIDIEventBlock_ret scheduleMIDIEventBlock();
 
     /**
-     * @property	scheduleParameterBlock
-     * @brief		Block which hosts use to schedule parameters.
-     * @discussion
+     * [@property]	scheduleParameterBlock
+     * 
+     * Block which hosts use to schedule parameters.
+     * 
      * 	As with renderBlock, a host should fetch and cache this block before beginning to render,
      * 	if it intends to schedule parameters.
      * 
@@ -838,9 +892,10 @@ public class AUAudioUnit extends NSObject {
     public native Block_scheduleParameterBlock_ret scheduleParameterBlock();
 
     /**
-     * @property	channelMap
-     * @brief		Specify a mapping of input channels to output channels.
-     * @discussion
+     * [@property]	channelMap
+     * 
+     * Specify a mapping of input channels to output channels.
+     * 
      * 	Converter and input/output audio units may support re-ordering or splitting of input
      * 	channels to output channels. The number of channels in the channel map is the number of
      * 	channels of the destination (output format). The channel map entries contain a channel
@@ -857,10 +912,11 @@ public class AUAudioUnit extends NSObject {
     public native void setChannelMap(NSArray<? extends NSNumber> value);
 
     /**
-     * @property	contextName
-     * @brief		Information about the host context in which the audio unit is connected, for display
+     * [@property]	contextName
+     * 
+     * Information about the host context in which the audio unit is connected, for display
      * 			in the audio unit's view.
-     * @discussion
+     * 
      * 	For example, a host could set "track 3" as the context, so that the audio unit's view could
      * 	then display to the user "My audio unit on track 3".
      * 
@@ -871,9 +927,10 @@ public class AUAudioUnit extends NSObject {
     public native void setContextName(String value);
 
     /**
-     * @property	currentPreset
-     * @brief		The audio unit's last-selected preset.
-     * @discussion
+     * [@property]	currentPreset
+     * 
+     * The audio unit's last-selected preset.
+     * 
      * 	Hosts can let the user select a preset by setting this property. Note that when getting
      * 	this property, it does not reflect whether parameters may have been modified since the
      * 	preset was selected.
@@ -885,10 +942,11 @@ public class AUAudioUnit extends NSObject {
     public native void setCurrentPreset(AUAudioUnitPreset value);
 
     /**
-     * @property	fullState
-     * @brief		A persistable snapshot of the audio unit's properties and parameters, suitable for
+     * [@property]	fullState
+     * 
+     * A persistable snapshot of the audio unit's properties and parameters, suitable for
      * 			saving as a user preset.
-     * @discussion
+     * 
      * 	Hosts may use this property to save and restore the state of an audio unit being used in a
      * 	user preset or document. The audio unit should not persist transitory properties such as
      * 	stream formats, but should save and restore all parameters and custom properties.
@@ -905,10 +963,11 @@ public class AUAudioUnit extends NSObject {
     public native void setFullState(NSDictionary<String, ?> value);
 
     /**
-     * @property	fullStateForDocument
-     * @brief		A persistable snapshot of the audio unit's properties and parameters, suitable for
+     * [@property]	fullStateForDocument
+     * 
+     * A persistable snapshot of the audio unit's properties and parameters, suitable for
      * 			saving in a user's document.
-     * @discussion
+     * 
      * 	This property is distinct from fullState in that some state is suitable for saving in user
      * 	presets, while other state is not. For example, a synthesizer's master tuning setting could
      * 	be considered global state, inappropriate for storing in reusable presets, but desirable
@@ -924,18 +983,21 @@ public class AUAudioUnit extends NSObject {
     public native void setFullStateForDocument(NSDictionary<String, ?> value);
 
     /**
-     * @property	inputHandler
-     * @brief		The block that the output unit will call to notify when input is available.
-     * @discussion	See discussion for AUInputHandler.
+     * [@property]	inputHandler
+     * 
+     * The block that the output unit will call to notify when input is available.
+     * 
+     * See discussion for AUInputHandler.
      */
     @Generated
     @Selector("setInputHandler:")
     public native void setInputHandler(@ObjCBlock(name = "call_setInputHandler") Block_setInputHandler value);
 
     /**
-     * @property	maximumFramesToRender
-     * @brief		The maximum number of frames which the audio unit can render at once.
-     * @discussion
+     * [@property]	maximumFramesToRender
+     * 
+     * The maximum number of frames which the audio unit can render at once.
+     * 
      * 	This must be set by the host before render resources are allocated. It cannot be changed
      * 	while render resources are allocated.
      * 
@@ -946,9 +1008,10 @@ public class AUAudioUnit extends NSObject {
     public native void setMaximumFramesToRender(int value);
 
     /**
-     * @property	musicalContextBlock
-     * @brief		A callback for the AU to call the host for musical context information.
-     * @discussion
+     * [@property]	musicalContextBlock
+     * 
+     * A callback for the AU to call the host for musical context information.
+     * 
      * 	Note that an audio unit implementation accessing this property should cache it in
      * 	realtime-safe storage before beginning to render.
      * 
@@ -961,18 +1024,21 @@ public class AUAudioUnit extends NSObject {
             @ObjCBlock(name = "call_setMusicalContextBlock") Block_setMusicalContextBlock value);
 
     /**
-     * @property	outputProvider
-     * @brief		The block that the output unit will call to get audio to send to the output.
-     * @discussion	This block must be set if output is enabled.
+     * [@property]	outputProvider
+     * 
+     * The block that the output unit will call to get audio to send to the output.
+     * 
+     * This block must be set if output is enabled.
      */
     @Generated
     @Selector("setOutputProvider:")
     public native void setOutputProvider(@ObjCBlock(name = "call_setOutputProvider") Block_setOutputProvider value);
 
     /**
-     * @property	renderQuality
-     * @brief		Provides a trade-off between rendering quality and CPU load.
-     * @discussion
+     * [@property]	renderQuality
+     * 
+     * Provides a trade-off between rendering quality and CPU load.
+     * 
      * 	The range of valid values is 0-127.
      * 
      * 	Bridged to the v2 property kAudioUnitProperty_RenderQuality.
@@ -982,7 +1048,8 @@ public class AUAudioUnit extends NSObject {
     public native void setRenderQuality(@NInt long value);
 
     /**
-     * @method	setRenderResourcesAllocated:
+     * setRenderResourcesAllocated:
+     * 
      * @param flag
      *     In the base class implementation of allocateRenderResourcesAndReturnError:, the property renderResourcesAllocated is set to YES.
      *     If allocateRenderResourcesAndReturnError: should fail in a subclass, subclassers must use this method to set renderResourcesAllocated to NO.
@@ -992,9 +1059,10 @@ public class AUAudioUnit extends NSObject {
     public native void setRenderResourcesAllocated(boolean flag);
 
     /**
-     * @property	shouldBypassEffect
-     * @brief		Directs an effect to route input directly to output, without any processing.
-     * @discussion
+     * [@property]	shouldBypassEffect
+     * 
+     * Directs an effect to route input directly to output, without any processing.
+     * 
      * 	Bridged to the v2 property kAudioUnitProperty_BypassEffect.
      */
     @Generated
@@ -1002,9 +1070,10 @@ public class AUAudioUnit extends NSObject {
     public native void setShouldBypassEffect(boolean value);
 
     /**
-     * @property	transportStateBlock
-     * @brief		A callback for the AU to call the host for transport state information.
-     * @discussion
+     * [@property]	transportStateBlock
+     * 
+     * A callback for the AU to call the host for transport state information.
+     * 
      * 	Note that an audio unit implementation accessing this property should cache it in
      * 	realtime-safe storage before beginning to render.
      * 
@@ -1017,9 +1086,10 @@ public class AUAudioUnit extends NSObject {
             @ObjCBlock(name = "call_setTransportStateBlock") Block_setTransportStateBlock value);
 
     /**
-     * @property	shouldBypassEffect
-     * @brief		Directs an effect to route input directly to output, without any processing.
-     * @discussion
+     * [@property]	shouldBypassEffect
+     * 
+     * Directs an effect to route input directly to output, without any processing.
+     * 
      * 	Bridged to the v2 property kAudioUnitProperty_BypassEffect.
      */
     @Generated
@@ -1027,25 +1097,28 @@ public class AUAudioUnit extends NSObject {
     public native boolean shouldBypassEffect();
 
     /**
-     * @method	shouldChangeToFormat:forBus:
-     *    @param format
-     *        An AVAudioFormat which is proposed as the new format.
-     *    @param bus
-     *        The AUAudioUnitBus on which the format will be changed.
-     * @discussion
+     * shouldChangeToFormat:forBus:
+     * 
      *        This is called when setting the format on an AUAudioUnitBus.
      *        The bus has already checked that the format meets the channel constraints of the bus.
      *        The AU can override this method to check before allowing a new format to be set on the bus.
      *        If this method returns NO, then the new format will not be set on the bus.
      *        The default implementation returns NO if the unit has renderResourcesAllocated, otherwise it results YES.
+     * 
+     *    @param format
+     *        An AVAudioFormat which is proposed as the new format.
+     *    @param bus
+     *        The AUAudioUnitBus on which the format will be changed.
      */
     @Generated
     @Selector("shouldChangeToFormat:forBus:")
     public native boolean shouldChangeToFormatForBus(AVAudioFormat format, AUAudioUnitBus bus);
 
     /**
-     * @method		startHardwareAndReturnError:
-     * @brief		Starts the audio hardware.
+     * startHardwareAndReturnError:
+     * 
+     * Starts the audio hardware.
+     * 
      * @param outError
      * 	Returned in the event of failure.
      */
@@ -1054,17 +1127,19 @@ public class AUAudioUnit extends NSObject {
     public native boolean startHardwareAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method		stopHardware
-     * @brief		Stops the audio hardware.
+     * stopHardware
+     * 
+     * Stops the audio hardware.
      */
     @Generated
     @Selector("stopHardware")
     public native void stopHardware();
 
     /**
-     * @property	supportsMPE
-     * @brief		Specifies whether an audio unit supports Multi-dimensional Polyphonic Expression.
-     * @discussion
+     * [@property]	supportsMPE
+     * 
+     * Specifies whether an audio unit supports Multi-dimensional Polyphonic Expression.
+     * 
      * 	Bridged to the v2 property kAudioUnitProperty_SupportsMPE.
      */
     @Generated
@@ -1072,9 +1147,10 @@ public class AUAudioUnit extends NSObject {
     public native boolean supportsMPE();
 
     /**
-     * @property	tailTime
-     * @brief		The audio unit's tail time, in seconds.
-     * @discussion
+     * [@property]	tailTime
+     * 
+     * The audio unit's tail time, in seconds.
+     * 
      * 	This property reflects the time interval between when the input stream ends or otherwise
      * 	transitions to silence, and when the output stream becomes silent. Unlike latency, this
      * 	should reflect the duration of a delay or reverb effect.
@@ -1086,15 +1162,17 @@ public class AUAudioUnit extends NSObject {
     public native double tailTime();
 
     /**
-     * @method		tokenByAddingRenderObserver:
-     * @brief		Add a block to be called on each render cycle.
-     * @discussion
+     * tokenByAddingRenderObserver:
+     * 
+     * Add a block to be called on each render cycle.
+     * 
      * 	The supplied block is called at the beginning and ending of each render cycle. It should
      * 	not make any blocking calls.
      * 
      * 	This method is implemented in the base class AUAudioUnit, and should not be overridden.
      * 
      * 	Bridged to the v2 API AudioUnitAddRenderNotify().
+     * 
      * @param observer
      * 	The block to call.
      * @return
@@ -1107,9 +1185,10 @@ public class AUAudioUnit extends NSObject {
             @ObjCBlock(name = "call_tokenByAddingRenderObserver") Block_tokenByAddingRenderObserver observer);
 
     /**
-     * @property	transportStateBlock
-     * @brief		A callback for the AU to call the host for transport state information.
-     * @discussion
+     * [@property]	transportStateBlock
+     * 
+     * A callback for the AU to call the host for transport state information.
+     * 
      * 	Note that an audio unit implementation accessing this property should cache it in
      * 	realtime-safe storage before beginning to render.
      * 
@@ -1122,9 +1201,10 @@ public class AUAudioUnit extends NSObject {
     public native Block_transportStateBlock_ret transportStateBlock();
 
     /**
-     * @property	virtualMIDICableCount
-     * @brief		The number of virtual MIDI cables implemented by a music device or effect.
-     * @discussion
+     * [@property]	virtualMIDICableCount
+     * 
+     * The number of virtual MIDI cables implemented by a music device or effect.
+     * 
      * 	A music device or MIDI effect can support up to 256 virtual MIDI cables of input; this
      * 	property expresses the number of cables supported by the audio unit.
      */
@@ -1231,9 +1311,10 @@ public class AUAudioUnit extends NSObject {
     }
 
     /**
-     * @property	MIDIOutputBufferSizeHint
-     * @brief		Hint to control the size of the allocated buffer for outgoing MIDI events.
-     * @discussion
+     * [@property]	MIDIOutputBufferSizeHint
+     * 
+     * Hint to control the size of the allocated buffer for outgoing MIDI events.
+     * 
      *        This property allows the plug-in to provide a hint to the framework regarding the size of
      *        its outgoing MIDI data buffer.
      * 
@@ -1254,9 +1335,10 @@ public class AUAudioUnit extends NSObject {
     public native long MIDIOutputBufferSizeHint();
 
     /**
-     * @property	MIDIOutputEventBlock
-     * @brief		Block used by the host to access the MIDI output generated by an audio unit.
-     * @discussion
+     * [@property]	MIDIOutputEventBlock
+     * 
+     * Block used by the host to access the MIDI output generated by an audio unit.
+     * 
      * 		The host can set this block and the plug-in can call it in its renderBlock to provide to the
      * 		host the MIDI data associated with the current render cycle.
      * 
@@ -1276,9 +1358,10 @@ public class AUAudioUnit extends NSObject {
     }
 
     /**
-     * @property	MIDIOutputNames
-     * @brief		Count, and names of, a plug-in's MIDI outputs.
-     * @discussion
+     * [@property]	MIDIOutputNames
+     * 
+     * Count, and names of, a plug-in's MIDI outputs.
+     * 
      * 	A plug-in may override this method to inform hosts about its MIDI outputs. The size of the
      * 	array is the number of outputs the audio unit supports. Each item in the array is the name
      * 	of the MIDI output at that index.
@@ -1290,9 +1373,10 @@ public class AUAudioUnit extends NSObject {
     public native NSArray<String> MIDIOutputNames();
 
     /**
-     * @property	audioUnitShortName
-     * @brief		A short name for the audio unit.
-     * @discussion
+     * [@property]	audioUnitShortName
+     * 
+     * A short name for the audio unit.
+     * 
      * 	Audio unit host applications can display this name in situations where the audioUnitName 
      * 	might be too long. The recommended length is up to 16 characters. Host applications may 
      * 	truncate it.
@@ -1302,17 +1386,19 @@ public class AUAudioUnit extends NSObject {
     public native String audioUnitShortName();
 
     /**
-     * @property	running
-     * @brief		The audio device's running state.
+     * [@property]	running
+     * 
+     * The audio device's running state.
      */
     @Generated
     @Selector("isRunning")
     public native boolean isRunning();
 
     /**
-     * @property	providesUserInterface
-     * @brief		Specifies whether an audio unit provides UI (normally in the form of a view controller).
-     * @discussion
+     * [@property]	providesUserInterface
+     * 
+     * Specifies whether an audio unit provides UI (normally in the form of a view controller).
+     * 
      * 	Implemented in the framework and should not be overridden by implementators. The
      * 	framework detects whether any subclass has implemented
      * 	`requestViewControllerWithCompletionHandler:` or is implemented by an AU extension whose
@@ -1324,7 +1410,14 @@ public class AUAudioUnit extends NSObject {
     public native boolean providesUserInterface();
 
     /**
-     * @method		selectViewConfiguration
+     * selectViewConfiguration
+     * 
+     * Request a view configuration from the audio unit.
+     * 
+     * 	The host can use this method to switch the audio unit's view into a new configuration.
+     * 	Audio Units should override this method with the logic needed to adapt their view controller 
+     * 	to the requested configuration.
+     * 
      * @param		viewConfiguration
      *        The requested view configuration.
      * 
@@ -1332,21 +1425,16 @@ public class AUAudioUnit extends NSObject {
      *        via supportedViewConfigurations. If any other, unsupported, view configuration is passed or 
      *        if supportedViewConfigurations returns an empty set, the audio unit implementation should 
      *        fall back to its default (largest available) view configuration.
-     * 
-     * @brief		Request a view configuration from the audio unit.
-     * @discussion
-     * 	The host can use this method to switch the audio unit's view into a new configuration.
-     * 	Audio Units should override this method with the logic needed to adapt their view controller 
-     * 	to the requested configuration.
      */
     @Generated
     @Selector("selectViewConfiguration:")
     public native void selectViewConfiguration(AUAudioUnitViewConfiguration viewConfiguration);
 
     /**
-     * @property	MIDIOutputBufferSizeHint
-     * @brief		Hint to control the size of the allocated buffer for outgoing MIDI events.
-     * @discussion
+     * [@property]	MIDIOutputBufferSizeHint
+     * 
+     * Hint to control the size of the allocated buffer for outgoing MIDI events.
+     * 
      *        This property allows the plug-in to provide a hint to the framework regarding the size of
      *        its outgoing MIDI data buffer.
      * 
@@ -1366,9 +1454,10 @@ public class AUAudioUnit extends NSObject {
     public native void setMIDIOutputBufferSizeHint(@NInt long value);
 
     /**
-     * @property	MIDIOutputEventBlock
-     * @brief		Block used by the host to access the MIDI output generated by an audio unit.
-     * @discussion
+     * [@property]	MIDIOutputEventBlock
+     * 
+     * Block used by the host to access the MIDI output generated by an audio unit.
+     * 
      * 		The host can set this block and the plug-in can call it in its renderBlock to provide to the
      * 		host the MIDI data associated with the current render cycle.
      * 
@@ -1388,14 +1477,10 @@ public class AUAudioUnit extends NSObject {
     }
 
     /**
-     * @method		supportedViewConfigurations
-     * @param		availableViewConfigurations
-     * 	The list of all available view configurations supported by the host.
-     * @return
-     * 	A set of indices of view configurations from the availableViewConfigurations array that the
-     * 	audio unit supports.
-     * @brief      Query the list of supported view configurations.
-     * @discussion
+     * supportedViewConfigurations
+     * 
+     * Query the list of supported view configurations.
+     * 
      * 	The host can query the audio unit for all the view configurations it supports.
      * 	Hosts can support multiple configurations in which they can display the user interfaces of
      * 	audio units (for example: full screen, normal, live mode, etc). These configurations can be
@@ -1410,6 +1495,12 @@ public class AUAudioUnit extends NSObject {
      * 
      * 	In case an empty set is returned from this method, it is considered that the plugin only 
      * 	supports the largest available view configuration.
+     * 
+     * @param		availableViewConfigurations
+     * 	The list of all available view configurations supported by the host.
+     * @return
+     * 	A set of indices of view configurations from the availableViewConfigurations array that the
+     * 	audio unit supports.
      */
     @Generated
     @Selector("supportedViewConfigurations:")
@@ -1417,9 +1508,10 @@ public class AUAudioUnit extends NSObject {
             NSArray<? extends AUAudioUnitViewConfiguration> availableViewConfigurations);
 
     /**
-     * @method		deleteUserPreset:error
-     * @brief		Remove a user preset.
-     * @discussion
+     * deleteUserPreset:error
+     * 
+     * Remove a user preset.
+     * 
      * 	The user preset will be removed from userPresets and will be permanently deleted.
      * 
      * 	The default implementation of this method will delete the user preset from an internal
@@ -1427,6 +1519,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * 	Audio Units are free to override this method to operate on a different location (e.g. their
      * 	iCloud container).
+     * 
      * @param	userPreset
      * 	The preset to be deleted.
      * @param	outError
@@ -1446,8 +1539,10 @@ public class AUAudioUnit extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method		disableProfile:cable:onChannel:error:
-     * @brief		Disable a MIDI-CI Profile on the specified cable/channel.
+     * disableProfile:cable:onChannel:error:
+     * 
+     * Disable a MIDI-CI Profile on the specified cable/channel.
+     * 
      * @param	profile
      * 	The MIDI-CI profile to be disabled.
      * @param cable
@@ -1466,8 +1561,10 @@ public class AUAudioUnit extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method		enableProfile:cable:onChannel:error:
-     * @brief		Enable a MIDI-CI Profile on the specified cable/channel.
+     * enableProfile:cable:onChannel:error:
+     * 
+     * Enable a MIDI-CI Profile on the specified cable/channel.
+     * 
      * @param	profile
      * 	The MIDI-CI profile to be enabled.
      * @param cable
@@ -1486,9 +1583,10 @@ public class AUAudioUnit extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method		presetStateFor:error
-     * @brief		Retrieve the state stored in a user preset
-     * 	@discussion
+     * presetStateFor:error
+     * 
+     * Retrieve the state stored in a user preset
+     * 
      * 	This method allows access to the contents of a preset without having to set that preset as
      * 	current. The returned dictionary is assignable to the audio unit's fullState and/or
      * 	fullStateForDocument properties.
@@ -1503,6 +1601,13 @@ public class AUAudioUnit extends NSObject {
      * 
      * 	This method can then be called to retrieve the state stored in a user preset and the audio
      * 	unit can assign this to fullState or fullStateForDocument.
+     * 
+     * 												[@kAUPresetSubtypeKey] : NSNumber,
+     * 													[@kAUPresetManufacturerKey] : NSNumber,
+     * 											   		[@kAUPresetVersionKey] : NSNumber,
+     * 													[@kAUPresetNameKey] : NSString,
+     * 													[@kAUPresetNumberKey] NSNumber,
+     * 												[@kAUPresetDataKey] : NSData
      * 
      * @param	userPreset
      * 	The preset to be selected.
@@ -1519,12 +1624,6 @@ public class AUAudioUnit extends NSObject {
      * 	For details on the possible keys present in the full state dictionary, please see the
      * 	documentation for kAudioUnitProperty_ClassInfo.
      * 		The minimal set of keys and their type is:	@kAUPresetTypeKey : NSNumber,
-     * 												@kAUPresetSubtypeKey : NSNumber,
-     * 													@kAUPresetManufacturerKey : NSNumber,
-     * 											   		@kAUPresetVersionKey : NSNumber,
-     * 													@kAUPresetNameKey : NSString,
-     * 													@kAUPresetNumberKey: NSNumber,
-     * 												@kAUPresetDataKey : NSData
      */
     @Generated
     @Selector("presetStateFor:error:")
@@ -1532,10 +1631,11 @@ public class AUAudioUnit extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property	profileChangedBlock
-     * @brief		A block called when a device notifies that a MIDI-CI profile has been enabled or 
+     * [@property]	profileChangedBlock
+     * 
+     * A block called when a device notifies that a MIDI-CI profile has been enabled or
      * 			disabled.
-     * @discussion
+     * 
      * 	Since enabling / disabling MIDI-CI profiles is an asynchronous operation, the host can set 
      * 	this block and the audio unit is expected to call it every time the state of a MIDI-CI 
      * 	profile has changed.
@@ -1553,8 +1653,10 @@ public class AUAudioUnit extends NSObject {
     }
 
     /**
-     * @method		profileStateForCable:channel:
-     * @brief		Given a MIDI cable and channel number, return the supported MIDI-CI Profiles.
+     * profileStateForCable:channel:
+     * 
+     * Given a MIDI cable and channel number, return the supported MIDI-CI Profiles.
+     * 
      * @param cable
      * 	The virtual MIDI cable for which the profiles are requested.
      * @param channel
@@ -1568,9 +1670,10 @@ public class AUAudioUnit extends NSObject {
     public native MIDICIProfileState profileStateForCableChannel(byte cable, byte channel);
 
     /**
-     * @method		saveUserPreset:error
-     * @brief		Persistently save the current state of the audio unit into a userPreset
-     * @discussion
+     * saveUserPreset:error
+     * 
+     * Persistently save the current state of the audio unit into a userPreset
+     * 
      * 	The new preset will be added to userPresets and will become selectable by assigning it
      * 	to the currentPreset property.
      * 	If a preset with the provided name already exists then it will be overwritten.
@@ -1585,6 +1688,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * 	Audio Units are free to override this method to operate on a different location (e.g. their
      * 	iCloud container).
+     * 
      * @param	userPreset
      * 	The preset under which the current state will be saved.
      * @param outError
@@ -1604,11 +1708,10 @@ public class AUAudioUnit extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property	parameterTree
-     * @brief		An audio unit's parameters, organized in a hierarchy.
-     * @return
-     * 	A parameter tree object, or nil if the unit has no parameters.
-     * @discussion
+     * [@property]	parameterTree
+     * 
+     * An audio unit's parameters, organized in a hierarchy.
+     * 
      * 	Audio unit hosts can fetch this property to discover a unit's parameters. KVO notifications
      * 	are issued on this member to notify the host of changes to the set of available parameters.
      * 
@@ -1627,16 +1730,20 @@ public class AUAudioUnit extends NSObject {
      * 	kAudioUnitProperty_ParameterInfo.
      * 
      * 	Note that it is not safe to modify this property in a real-time context.
+     * 
+     * @return
+     * 	A parameter tree object, or nil if the unit has no parameters.
      */
     @Generated
     @Selector("setParameterTree:")
     public native void setParameterTree(AUParameterTree value);
 
     /**
-     * @property	profileChangedBlock
-     * @brief		A block called when a device notifies that a MIDI-CI profile has been enabled or 
+     * [@property]	profileChangedBlock
+     * 
+     * A block called when a device notifies that a MIDI-CI profile has been enabled or
      * 			disabled.
-     * @discussion
+     * 
      * 	Since enabling / disabling MIDI-CI profiles is an asynchronous operation, the host can set 
      * 	this block and the audio unit is expected to call it every time the state of a MIDI-CI 
      * 	profile has changed.
@@ -1654,9 +1761,10 @@ public class AUAudioUnit extends NSObject {
     }
 
     /**
-     * @property	supportsUserPresets
-     * @brief		Specifies whether an audio unit supports loading and saving user presets
-     * @discussion
+     * [@property]	supportsUserPresets
+     * 
+     * Specifies whether an audio unit supports loading and saving user presets
+     * 
      * 	The audio unit should set this property to YES if a user preset can be assigned to
      * 	currentPreset.
      * 
@@ -1671,9 +1779,10 @@ public class AUAudioUnit extends NSObject {
     public native boolean supportsUserPresets();
 
     /**
-     * @property	userPresets
-     * @brief		A collection of presets saved by the user
-     * @discussion
+     * [@property]	userPresets
+     * 
+     * A collection of presets saved by the user
+     * 
      * 	In addition to factory presets, provided by the audio unit vendor, users have the ability to
      * 	save the values of the parameters of an audio unit into a user preset. These users presets
      * 	can be accessed using this property.
@@ -1691,9 +1800,10 @@ public class AUAudioUnit extends NSObject {
     public native NSArray<? extends AUAudioUnitPreset> userPresets();
 
     /**
-     * @property	renderBlock
-     * @brief		Block which hosts use to ask the unit to render.
-     * @discussion
+     * [@property]	renderBlock
+     * 
+     * Block which hosts use to ask the unit to render.
+     * 
      * 	Before invoking an audio unit's rendering functionality, a host should fetch this block and
      * 	cache the result. The block can then be called from a realtime context without the
      * 	possibility of blocking and causing an overload at the Core Audio HAL level.
@@ -1732,9 +1842,10 @@ public class AUAudioUnit extends NSObject {
     }
 
     /**
-     * @property	osWorkgroup
-     * @brief		The os_workgroup_t to which the input/output audio unit belongs.
-     * @discussion
+     * [@property]	osWorkgroup
+     * 
+     * The os_workgroup_t to which the input/output audio unit belongs.
+     * 
      * 	For further background, see <AudioToolbox/AudioWorkInterval.h>.
      * 
      * 	Bridged to the v2 property kAudioOutputUnitProperty_OSWorkgroup.
@@ -1744,8 +1855,9 @@ public class AUAudioUnit extends NSObject {
     public native OS_os_workgroup osWorkgroup();
 
     /**
-     * @property	renderContextObserver
-     * @brief		Block called by the OS when the rendering context changes.
+     * [@property]	renderContextObserver
+     * 
+     * Block called by the OS when the rendering context changes.
      * 
      * Audio Units which create auxiliary realtime rendering threads should implement this property to
      * return a block which will be called by the OS when the render context changes. Audio Unit hosts

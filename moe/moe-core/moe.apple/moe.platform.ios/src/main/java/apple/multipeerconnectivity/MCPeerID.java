@@ -44,11 +44,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MCPeerID
- *   @abstract
+ * MCPeerID
+ * 
  *      MCPeerID represents a peer in a multipeer session.
  * 
- *   @discussion
  *      MCPeerID is used to reference a peer in a multipeer session.
  * 
  *      Use the init method -initWithDisplayName: to create a new ID for the

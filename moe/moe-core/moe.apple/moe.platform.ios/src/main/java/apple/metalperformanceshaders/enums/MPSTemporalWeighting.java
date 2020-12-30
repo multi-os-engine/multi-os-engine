@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @brief Controls how samples are weighted over time
+ * Controls how samples are weighted over time
  */
 @Generated
 public final class MPSTemporalWeighting {
@@ -13,12 +13,12 @@ public final class MPSTemporalWeighting {
     }
 
     /**
-     * @brief Compute an average of all samples. This will fully utilize all samples but may lead
+     * Compute an average of all samples. This will fully utilize all samples but may lead
      * to excessive ghosting artifacts under motion. Therefore, this is best for static images.
      */
     @Generated @NUInt public static final long Average = 0x0000000000000000L;
     /**
-     * @brief Compute an exponential moving average by blending linearly between the previous
+     * Compute an exponential moving average by blending linearly between the previous
      * accumulated samples and the current sample according to the temporalReprojectionBlendFactor
      * property. This will cause older samples to lose their contribution over time, which will
      * prevent ghosting artifacts but will also never converge to a stable value. Therefore, this

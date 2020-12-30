@@ -20,14 +20,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum MACaptionAppearanceBehavior
+ * [@enum] MACaptionAppearanceBehavior
  * 
- * @discussion
  * MACaptionAppearanceBehavior is used to determine how a preference value should be used.
  * 
- * @constant kMACaptionAppearanceBehaviorUseValue
+ * [@constant] kMACaptionAppearanceBehaviorUseValue
  *    The value should override any content, application, or otherwise-defined values.
- * @constant kMACaptionAppearanceBehaviorUseContentIfAvailable
+ * [@constant] kMACaptionAppearanceBehaviorUseContentIfAvailable
  *    Content, application, or otherwise-defined values should override the returned value. If no other value is defined, then the return value should be used.
  */
 @Generated

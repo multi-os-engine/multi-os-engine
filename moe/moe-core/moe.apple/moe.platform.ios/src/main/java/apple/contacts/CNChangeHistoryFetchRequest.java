@@ -28,9 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract    Specifies the criteria to fetch change history.
+ * Specifies the criteria to fetch change history.
  * 
- * @discussion  Changes to contacts are always returned.
+ * Changes to contacts are always returned.
  *              All changes are coalesced to remove redundant adds, updates and deletes.
  *              This request is used with [CNContactStore enumeratorForChangeHistoryFetchRequest:error:].
  */
@@ -53,13 +53,13 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @abstract    Additional keys to include in the fetched contacts.
+     * Additional keys to include in the fetched contacts.
      * 
-     * @discussion  By default, only @c CNContactIdentifierKey will be fetched. If you
+     * By default, only @c CNContactIdentifierKey will be fetched. If you
      *              would like to include additional key descriptors to process the contacts,
      *              include the key descriptors you need.
      * 
-     *              @c CNContactIdentifierKey will always be fetched, whether you
+     *              [@c] CNContactIdentifierKey will always be fetched, whether you
      *              request it or not.
      */
     @Generated
@@ -111,9 +111,9 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @abstract    Exclude changes made by certain authors.
+     * Exclude changes made by certain authors.
      * 
-     * @discussion  If set, transactions made by the specified authors will be excluded
+     * If set, transactions made by the specified authors will be excluded
      *              from the results. Use this, in conjunction with @c CNSaveRequest.transactionAuthor,
      *              to suppress processing of changes you already know about.
      */
@@ -127,7 +127,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public static native long hash_static();
 
     /**
-     * @abstract    Set to @c YES to also fetch group changes. Default is @c NO.
+     * Set to @c YES to also fetch group changes. Default is @c NO.
      */
     @Generated
     @Selector("includeGroupChanges")
@@ -163,9 +163,9 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract    To return mutable contacts and groups.
+     * To return mutable contacts and groups.
      * 
-     * @discussion  If @c YES returns mutable contacts and groups. Default is @c NO.
+     * If @c YES returns mutable contacts and groups. Default is @c NO.
      */
     @Generated
     @Selector("mutableObjects")
@@ -186,13 +186,13 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract    Additional keys to include in the fetched contacts.
+     * Additional keys to include in the fetched contacts.
      * 
-     * @discussion  By default, only @c CNContactIdentifierKey will be fetched. If you
+     * By default, only @c CNContactIdentifierKey will be fetched. If you
      *              would like to include additional key descriptors to process the contacts,
      *              include the key descriptors you need.
      * 
-     *              @c CNContactIdentifierKey will always be fetched, whether you
+     *              [@c] CNContactIdentifierKey will always be fetched, whether you
      *              request it or not.
      */
     @Generated
@@ -200,9 +200,9 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public native void setAdditionalContactKeyDescriptors(NSArray<?> value);
 
     /**
-     * @abstract    Exclude changes made by certain authors.
+     * Exclude changes made by certain authors.
      * 
-     * @discussion  If set, transactions made by the specified authors will be excluded
+     * If set, transactions made by the specified authors will be excluded
      *              from the results. Use this, in conjunction with @c CNSaveRequest.transactionAuthor,
      *              to suppress processing of changes you already know about.
      */
@@ -211,27 +211,27 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public native void setExcludedTransactionAuthors(NSArray<String> value);
 
     /**
-     * @abstract    Set to @c YES to also fetch group changes. Default is @c NO.
+     * Set to @c YES to also fetch group changes. Default is @c NO.
      */
     @Generated
     @Selector("setIncludeGroupChanges:")
     public native void setIncludeGroupChanges(boolean value);
 
     /**
-     * @abstract    To return mutable contacts and groups.
+     * To return mutable contacts and groups.
      * 
-     * @discussion  If @c YES returns mutable contacts and groups. Default is @c NO.
+     * If @c YES returns mutable contacts and groups. Default is @c NO.
      */
     @Generated
     @Selector("setMutableObjects:")
     public native void setMutableObjects(boolean value);
 
     /**
-     * @abstract    Returns contact changes as unified contacts.
+     * Returns contact changes as unified contacts.
      * 
-     * @discussion  If @c YES, returns unified contact history. Otherwise returns individual contact history. Default is @c YES.
+     * If @c YES, returns unified contact history. Otherwise returns individual contact history. Default is @c YES.
      * 
-     * @note        A unified contact is the aggregation of properties from a set of linked individual contacts.
+     * [@note]        A unified contact is the aggregation of properties from a set of linked individual contacts.
      *              If an individual contact is not linked then the unified contact is simply that individual contact.
      */
     @Generated
@@ -239,9 +239,9 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public native void setShouldUnifyResults(boolean value);
 
     /**
-     * @abstract    Request changes made after a certain point.
+     * Request changes made after a certain point.
      * 
-     * @discussion  If non-nil, only changes made after this point in history will be returned.
+     * If non-nil, only changes made after this point in history will be returned.
      * 
      *              If nil, a @c CNChangeHistoryDropEverythingEvent will be returned, followed by an add event
      *              for every contact and group currently in the contacts database.
@@ -255,11 +255,11 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract    Returns contact changes as unified contacts.
+     * Returns contact changes as unified contacts.
      * 
-     * @discussion  If @c YES, returns unified contact history. Otherwise returns individual contact history. Default is @c YES.
+     * If @c YES, returns unified contact history. Otherwise returns individual contact history. Default is @c YES.
      * 
-     * @note        A unified contact is the aggregation of properties from a set of linked individual contacts.
+     * [@note]        A unified contact is the aggregation of properties from a set of linked individual contacts.
      *              If an individual contact is not linked then the unified contact is simply that individual contact.
      */
     @Generated
@@ -267,9 +267,9 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     public native boolean shouldUnifyResults();
 
     /**
-     * @abstract    Request changes made after a certain point.
+     * Request changes made after a certain point.
      * 
-     * @discussion  If non-nil, only changes made after this point in history will be returned.
+     * If non-nil, only changes made after this point in history will be returned.
      * 
      *              If nil, a @c CNChangeHistoryDropEverythingEvent will be returned, followed by an add event
      *              for every contact and group currently in the contacts database.

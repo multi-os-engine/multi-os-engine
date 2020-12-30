@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Where relevant shortcuts are provided to Siri.
- * @seealso INRelevantShortcut
+ * Where relevant shortcuts are provided to Siri.
+ * 
+ * @see INRelevantShortcut
  */
 @Generated
 @Library("Intents")
@@ -136,8 +137,8 @@ public class INRelevantShortcutStore extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract Provide a new set of relevant shortcuts that should be suggested by Siri.
-     * @note Setting new relevant shortcuts will replace all relevant shortcuts that were previously provided.
+     * Provide a new set of relevant shortcuts that should be suggested by Siri.
+     * [@note] Setting new relevant shortcuts will replace all relevant shortcuts that were previously provided.
      */
     @Generated
     @Selector("setRelevantShortcuts:completionHandler:")

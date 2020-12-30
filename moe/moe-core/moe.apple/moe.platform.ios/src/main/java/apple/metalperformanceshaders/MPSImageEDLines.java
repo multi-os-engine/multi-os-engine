@@ -32,8 +32,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageEDLines
- * @discussion The MPSImageEDLInes class implements the EDLines line segmenting algorithm using edge-drawing (ED)
+ * MPSImageEDLines
+ * 
+ * The MPSImageEDLInes class implements the EDLines line segmenting algorithm using edge-drawing (ED)
  *             described here
  *             https://ieeexplore.ieee.org/document/6116138
  * 
@@ -106,9 +107,11 @@ public class MPSImageEDLines extends MPSKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property   clipRectSource
-     * @abstract   The source rectangle to use when reading data.
-     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     * [@property]   clipRectSource
+     * 
+     * The source rectangle to use when reading data.
+     * 
+     * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      *             completely within the source image, the intersection of the image bounds and clipRectSource will
      *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
@@ -127,8 +130,9 @@ public class MPSImageEDLines extends MPSKernel {
     public static native String description_static();
 
     /**
-     * @property detailRatio
-     * @abstract Read-write value used to set the detailRatio to use in the EDLines algorithm
+     * [@property] detailRatio
+     * 
+     * Read-write value used to set the detailRatio to use in the EDLines algorithm
      *           Default is 32
      */
     @Generated
@@ -136,8 +140,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native char detailRatio();
 
     /**
-     * @abstract Encode the filter to a command buffer using a MTLComputeCommandEncoder.
-     * @discussion The filter will not begin to execute until after the command
+     * Encode the filter to a command buffer using a MTLComputeCommandEncoder.
+     * 
+     * The filter will not begin to execute until after the command
      *    buffer has been enqueued and committed.
      * 
      * @param  commandBuffer           A valid MTLCommandBuffer.
@@ -160,8 +165,9 @@ public class MPSImageEDLines extends MPSKernel {
             @Mapped(ObjCObjectMapper.class) MTLBuffer endpointBuffer, @NUInt long endpointOffset);
 
     /**
-     * @property sigma
-     * @abstract Read-only sigma value used in performing Gaussian blur of the image.
+     * [@property] sigma
+     * 
+     * Read-only sigma value used in performing Gaussian blur of the image.
      *           Default is 2.0
      */
     @Generated
@@ -169,8 +175,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native float gaussianSigma();
 
     /**
-     * @property gradientThreshold
-     * @abstract Read-write value used to set the threshold for a pixel to be considered an edge
+     * [@property] gradientThreshold
+     * 
+     * Read-write value used to set the threshold for a pixel to be considered an edge
      *           Default is 0.2
      */
     @Generated
@@ -191,12 +198,14 @@ public class MPSImageEDLines extends MPSKernel {
     public native MPSImageEDLines initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -210,19 +219,20 @@ public class MPSImageEDLines extends MPSKernel {
     public native MPSImageEDLines initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize an EDLines kernel on a given device with specified parameters.
+     * Initialize an EDLines kernel on a given device with specified parameters.
+     *               [@code]
+     *                         w(i) = 1/sqrt(2*pi*sigma) * exp(-i^2/2*sigma^2)
+     *               [@endcode]
+     *                         If we take cut off at 1% of w(0) (max weight) beyond which weights
+     *                         are considered 0, we have
+     *               [@code]
+     *                         ceil (sqrt(-log(0.01)*2)*sigma) ~ ceil(3.7*sigma)
+     *               [@endcode]
+     *                         as rough estimate of filter width
+     * 
      * @param      device             The device the filter will run on
      * @param      gaussianSigma     The standard deviation of gaussian blur filter.
      *                         Gaussian weight, centered at 0, at integer grid i is given as
-     *               @code
-     *                         w(i) = 1/sqrt(2*pi*sigma) * exp(-i^2/2*sigma^2)
-     *               @endcode
-     *                         If we take cut off at 1% of w(0) (max weight) beyond which weights
-     *                         are considered 0, we have
-     *               @code
-     *                         ceil (sqrt(-log(0.01)*2)*sigma) ~ ceil(3.7*sigma)
-     *               @endcode
-     *                         as rough estimate of filter width
      * @param      minLineLength           The minimum length of output line segments.
      * @param      maxLines                      The maximum amount of lines for the EDLines algorithm to output. The size of the
      *                               endpointBuffer supplied at encode must be >= maxLines * 4 * sizeof(unsigned short) + sizeof(uint32_t).
@@ -265,8 +275,9 @@ public class MPSImageEDLines extends MPSKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property lineErrorThreshold
-     * @abstract Read-write value used to set the limit on error for a line segment relative to the edge it fits
+     * [@property] lineErrorThreshold
+     * 
+     * Read-write value used to set the limit on error for a line segment relative to the edge it fits
      *           Default is 0.05
      */
     @Generated
@@ -274,8 +285,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native float lineErrorThreshold();
 
     /**
-     * @property maxLines
-     * @abstract Read-write value used to set the max number of line segments to be written out.
+     * [@property] maxLines
+     * 
+     * Read-write value used to set the max number of line segments to be written out.
      *           The endpointBuffer at encode must be >= maxLines * 4 * sizeof(unsigned short) + sizeof(uint32_t).
      *           Default is 256
      */
@@ -285,8 +297,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native long maxLines();
 
     /**
-     * @property mergeLocalityThreshold
-     * @abstract Read-write value used to set how many pixels apart two lines can deviate spatially and still be merged.
+     * [@property] mergeLocalityThreshold
+     * 
+     * Read-write value used to set how many pixels apart two lines can deviate spatially and still be merged.
      *           Default is 0.0025
      */
     @Generated
@@ -294,8 +307,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native float mergeLocalityThreshold();
 
     /**
-     * @property minLineLength
-     * @abstract Read-write value used to set the minimum length of a line segment.
+     * [@property] minLineLength
+     * 
+     * Read-write value used to set the minimum length of a line segment.
      *           Default is 32
      */
     @Generated
@@ -317,9 +331,11 @@ public class MPSImageEDLines extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   clipRectSource
-     * @abstract   The source rectangle to use when reading data.
-     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     * [@property]   clipRectSource
+     * 
+     * The source rectangle to use when reading data.
+     * 
+     * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      *             completely within the source image, the intersection of the image bounds and clipRectSource will
      *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
@@ -329,8 +345,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native void setClipRectSource(@ByValue MTLRegion value);
 
     /**
-     * @property detailRatio
-     * @abstract Read-write value used to set the detailRatio to use in the EDLines algorithm
+     * [@property] detailRatio
+     * 
+     * Read-write value used to set the detailRatio to use in the EDLines algorithm
      *           Default is 32
      */
     @Generated
@@ -338,8 +355,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native void setDetailRatio(char value);
 
     /**
-     * @property gradientThreshold
-     * @abstract Read-write value used to set the threshold for a pixel to be considered an edge
+     * [@property] gradientThreshold
+     * 
+     * Read-write value used to set the threshold for a pixel to be considered an edge
      *           Default is 0.2
      */
     @Generated
@@ -347,8 +365,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native void setGradientThreshold(float value);
 
     /**
-     * @property lineErrorThreshold
-     * @abstract Read-write value used to set the limit on error for a line segment relative to the edge it fits
+     * [@property] lineErrorThreshold
+     * 
+     * Read-write value used to set the limit on error for a line segment relative to the edge it fits
      *           Default is 0.05
      */
     @Generated
@@ -356,8 +375,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native void setLineErrorThreshold(float value);
 
     /**
-     * @property maxLines
-     * @abstract Read-write value used to set the max number of line segments to be written out.
+     * [@property] maxLines
+     * 
+     * Read-write value used to set the max number of line segments to be written out.
      *           The endpointBuffer at encode must be >= maxLines * 4 * sizeof(unsigned short) + sizeof(uint32_t).
      *           Default is 256
      */
@@ -366,8 +386,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native void setMaxLines(@NUInt long value);
 
     /**
-     * @property mergeLocalityThreshold
-     * @abstract Read-write value used to set how many pixels apart two lines can deviate spatially and still be merged.
+     * [@property] mergeLocalityThreshold
+     * 
+     * Read-write value used to set how many pixels apart two lines can deviate spatially and still be merged.
      *           Default is 0.0025
      */
     @Generated
@@ -375,8 +396,9 @@ public class MPSImageEDLines extends MPSKernel {
     public native void setMergeLocalityThreshold(float value);
 
     /**
-     * @property minLineLength
-     * @abstract Read-write value used to set the minimum length of a line segment.
+     * [@property] minLineLength
+     * 
+     * Read-write value used to set the minimum length of a line segment.
      *           Default is 32
      */
     @Generated

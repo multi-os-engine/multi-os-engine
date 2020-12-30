@@ -44,9 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Represents a trigger event.
+ * Represents a trigger event.
  * 
- * @discussion This class describes a trigger which is an event that can
+ * This class describes a trigger which is an event that can
  *             be used to execute one or more action sets when the event fires.
  */
 @Generated
@@ -161,7 +161,7 @@ public class HMTrigger extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract Array of HMActionSet objects that represent all the action sets associated
+     * Array of HMActionSet objects that represent all the action sets associated
      *           with this trigger.
      */
     @Generated
@@ -169,7 +169,7 @@ public class HMTrigger extends NSObject {
     public native NSArray<? extends HMActionSet> actionSets();
 
     /**
-     * @brief Registers an action set to be executed when the trigger is fired.
+     * Registers an action set to be executed when the trigger is fired.
      * 
      * @param actionSet HMActionSet to execute when the trigger fires. The order of execution of the
      *                  action set is not guaranteed.
@@ -183,8 +183,9 @@ public class HMTrigger extends NSObject {
             @ObjCBlock(name = "call_addActionSetCompletionHandler") Block_addActionSetCompletionHandler completion);
 
     /**
-     * @brief Enables or disables the trigger.
-     * @discussion In order for the trigger to be enabled the following criteria must be met:
+     * Enables or disables the trigger.
+     * 
+     * In order for the trigger to be enabled the following criteria must be met:
      *             1. The trigger must be added to a home.
      *             2. The trigger must have at least one action set associated with it.
      *             3. Each action set added to the trigger must have at least one action.
@@ -207,30 +208,30 @@ public class HMTrigger extends NSObject {
     public native HMTrigger init();
 
     /**
-     * @brief State of the trigger.
+     * State of the trigger.
      * 
-     * @discussion TRUE if the trigger is enable, FALSE otherwise.
+     * TRUE if the trigger is enable, FALSE otherwise.
      */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
     /**
-     * @brief The date that this trigger was most recently fired.
+     * The date that this trigger was most recently fired.
      */
     @Generated
     @Selector("lastFireDate")
     public native NSDate lastFireDate();
 
     /**
-     * @brief Name of the trigger.
+     * Name of the trigger.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @brief De-registers an action set from the trigger.
+     * De-registers an action set from the trigger.
      * 
      * @param actionSet The HMActionSet to disassociate from the trigger.
      * 
@@ -243,14 +244,14 @@ public class HMTrigger extends NSObject {
             @ObjCBlock(name = "call_removeActionSetCompletionHandler") Block_removeActionSetCompletionHandler completion);
 
     /**
-     * @brief A unique identifier for the trigger.
+     * A unique identifier for the trigger.
      */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
-     * @brief This method is used to change the name of the trigger.
+     * This method is used to change the name of the trigger.
      * 
      * @param name New name for the trigger.
      * 

@@ -62,7 +62,7 @@ public final class CMSampleTimingInfo extends StructObject {
     public native void setDuration(@ByValue CMTime value);
 
     /**
-     * @field duration
+     * [@field] duration
      * The duration of the sample. If a single struct applies to
      * each of the samples, they all will have this duration. 
      */
@@ -72,7 +72,7 @@ public final class CMSampleTimingInfo extends StructObject {
     public native CMTime presentationTimeStamp();
 
     /**
-     * @field duration
+     * [@field] duration
      * The duration of the sample. If a single struct applies to
      * each of the samples, they all will have this duration. 
      */
@@ -81,7 +81,7 @@ public final class CMSampleTimingInfo extends StructObject {
     public native void setPresentationTimeStamp(@ByValue CMTime value);
 
     /**
-     * @field presentationTimeStamp
+     * [@field] presentationTimeStamp
      * The time at which the sample will be presented. If a single
      * struct applies to each of the samples, this is the presentationTime of the
      * first sample. The presentationTime of subsequent samples will be derived by
@@ -93,7 +93,7 @@ public final class CMSampleTimingInfo extends StructObject {
     public native CMTime decodeTimeStamp();
 
     /**
-     * @field presentationTimeStamp
+     * [@field] presentationTimeStamp
      * The time at which the sample will be presented. If a single
      * struct applies to each of the samples, this is the presentationTime of the
      * first sample. The presentationTime of subsequent samples will be derived by

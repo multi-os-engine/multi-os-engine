@@ -4,12 +4,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKVO2MaxTestType
- * @abstract      Represents the test used to create a VO2 Max Sample.
+ * [@enum]          HKVO2MaxTestType
  * 
- * @constant      HKVO2MaxTestTypeMaxExercise                      The user was exerted to their physical limit to evaluate and measure actual VO2Max.
- * @constant      HKVO2MaxTestTypePredictionSubMaxExercise         A specific test protocol was used to calculate and correlate a predicted VO2Max.
- * @constant      HKVO2MaxTestTypePredictionNonExercise            A non-exercise equation was used based on user metrics to calculate a predicted VO2Max.
+ * Represents the test used to create a VO2 Max Sample.
+ * 
+ * [@constant]      HKVO2MaxTestTypeMaxExercise                      The user was exerted to their physical limit to evaluate and measure actual VO2Max.
+ * [@constant]      HKVO2MaxTestTypePredictionSubMaxExercise         A specific test protocol was used to calculate and correlate a predicted VO2Max.
+ * [@constant]      HKVO2MaxTestTypePredictionNonExercise            A non-exercise equation was used based on user metrics to calculate a predicted VO2Max.
  */
 @Generated
 public final class HKVO2MaxTestType {

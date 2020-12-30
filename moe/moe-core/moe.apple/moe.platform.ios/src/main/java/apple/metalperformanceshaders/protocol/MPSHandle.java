@@ -9,9 +9,11 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol   MPSHandle
- * @abstract   MPS resource identification
- * @discussion Most of the time, there is only one image and one or fewer states needed as
+ * [@protocol]   MPSHandle
+ * 
+ * MPS resource identification
+ * 
+ * Most of the time, there is only one image and one or fewer states needed as
  *             input to a graph, so the order of the images and states passed to
  *             [MPSNNGraph encodeToCommandBuffer:sourceImages:] or
  *             [MPSNNGraph encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:]
@@ -25,8 +27,8 @@ import org.moe.natj.objc.ann.Selector;
  *             MPSNNGraph.sourceImageHandles and MPSNNGraph.sourceStateHandles.
  * 
  *             Example:
- *             @code
- *             @interface MyHandle : NSObject <MPSHandle>
+ *             [@code]
+ *             [@interface] MyHandle : NSObject <MPSHandle>
  *                 // Add a method for my use to get the image needed based on the handle to it.
  *                 // This isn't part of the MPSHandle protocol, but we need it for MyEncodeGraph
  *                 // below. Since it is my code calling my object, we can add whatever we want like this.
@@ -39,7 +41,7 @@ import org.moe.natj.objc.ann.Selector;
  *                 +(BOOL) supportsSecureCoding;
  *                 - (void)encodeWithCoder:(NSCoder * __nonnull )aCoder;
  *                 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull )aDecoder; // NS_DESIGNATED_INITIALIZER
- *             @end
+ *             [@end]
  * 
  *             // Encode a graph to cmdBuf using handles for images
  *             // Here we assume that the MPSNNImageNodes that are graph inputs (not produced
@@ -60,7 +62,7 @@ import org.moe.natj.objc.ann.Selector;
  *                                      sourceImages: images ];
  *                 }
  *             }
- *             @endcode
+ *             [@endcode]
  * 
  *             But what is a handle?  Here MPS is giving you enough rope with which to hang
  *             yourself. Don't panic! As long as your response is not to start tying nooses,
@@ -92,7 +94,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MPSHandle")
 public interface MPSHandle extends NSSecureCoding {
     /**
-     * @abstract   A label to be attached to associated MTLResources for this node
+     * A label to be attached to associated MTLResources for this node
+     * 
      * @return     A human readable string for debugging purposes
      */
     @Generated

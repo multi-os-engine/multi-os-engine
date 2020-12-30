@@ -31,8 +31,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @brief	Protocol to which principal classes of v3 audio units (extensions) must conform.
- * @discussion
+ * Protocol to which principal classes of v3 audio units (extensions) must conform.
+ * 
  * 	The principal class of a non-UI v3 audio unit extension will generally derive from NSObject
  * 	and implement this protocol.
  * 
@@ -45,8 +45,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AUAudioUnitFactory")
 public interface AUAudioUnitFactory extends NSExtensionRequestHandling {
     /**
-     * @brief	Create an instance of an extension's AUAudioUnit.
-     * @discussion
+     * Create an instance of an extension's AUAudioUnit.
+     * 
      * 	This method should create and return an instance of its audio unit.
      * 
      * 	This method will be called only once per instance of the factory.

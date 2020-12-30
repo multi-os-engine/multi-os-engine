@@ -127,7 +127,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Dismisses the panning interface on the map interface if it is visible.
-     * @note When dismissing the panning interface, mapButtons previously hidden by the system will no longer be hidden.
+     * [@note] When dismissing the panning interface, mapButtons previously hidden by the system will no longer be hidden.
      */
     @Generated
     @Selector("dismissPanningInterfaceAnimated:")
@@ -204,7 +204,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * An array of bar buttons to be displayed on the trailing bottom corner of the map template.
-     * @note The map template may display a maximum of 4 buttons. Setting more than 4 buttons to this
+     * [@note] The map template may display a maximum of 4 buttons. Setting more than 4 buttons to this
      * property will only display the first 4 buttons.
      */
     @Generated
@@ -226,11 +226,11 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      * Display a navigation alert on this map template. Your @c CPMapTemplateDelegate will be notified
      * of navigation alert lifecycle events.
      * 
+     * [@warning] If a navigation alert is already visible, this method has no effect.
+     * You must dismiss the currently-visible navigation alert before presenting a new alert.
+     * 
      * @param navigationAlert The navigation alert to display.
      * @param animated YES to animate the presentation of this alert, or NO to display it immediately.
-     * 
-     * @warning If a navigation alert is already visible, this method has no effect.
-     * You must dismiss the currently-visible navigation alert before presenting a new alert.
      */
     @Generated
     @Selector("presentNavigationAlert:animated:")
@@ -278,7 +278,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * An array of bar buttons to be displayed on the trailing bottom corner of the map template.
-     * @note The map template may display a maximum of 4 buttons. Setting more than 4 buttons to this
+     * [@note] The map template may display a maximum of 4 buttons. Setting more than 4 buttons to this
      * property will only display the first 4 buttons.
      */
     @Generated
@@ -323,7 +323,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      * If more than two mapButtons are visible when the template transitions to panning mode,
      * the system will hide one or more map buttons beginning from the end of the mapButtons array.
      * 
-     * @note The system will not provide a button to dismiss the UI. You are required to provide
+     * [@note] The system will not provide a button to dismiss the UI. You are required to provide
      * a button in the map template navigation bar that will dismiss the panning interface.
      */
     @Generated
@@ -350,6 +350,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * * Begins guidance for a trip.
+     * 
      * @return CPNavigationSession maintain a reference to the navigation session to perform guidance updates
      */
     @Generated

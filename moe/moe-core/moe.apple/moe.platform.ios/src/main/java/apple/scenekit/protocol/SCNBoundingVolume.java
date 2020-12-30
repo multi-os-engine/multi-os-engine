@@ -26,9 +26,11 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol SCNBoundingVolume
- * @abstract The SCNBoundingVolume protocol is implemented by objects which can compute their bounding boxes.
- * @discussion You can currently use this protocol to get the bounding boxes of nodes and geometries.
+ * [@protocol] SCNBoundingVolume
+ * 
+ * The SCNBoundingVolume protocol is implemented by objects which can compute their bounding boxes.
+ * 
+ * You can currently use this protocol to get the bounding boxes of nodes and geometries.
  */
 @Generated
 @Library("SceneKit")
@@ -36,33 +38,42 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("SCNBoundingVolume")
 public interface SCNBoundingVolume {
     /**
-     * @method getBoundingBoxMin:max:
-     * @abstract Fill the min and max vectors with the min and max vertex of the bounding box.
+     * getBoundingBoxMin:max:
+     * 
+     * Fill the min and max vectors with the min and max vertex of the bounding box.
+     * 
+     * the returned bounding box is in local space of the receiver.
+     * 
      * @param min A pointer to a SCNVector3 to store the min vertex of the bounding box into.
      * @param max A pointer to a SCNVector3 to store the max vertex of the bounding box into.
-     * @discussion the returned bounding box is in local space of the receiver.
      */
     @Generated
     @Selector("getBoundingBoxMin:max:")
     boolean getBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
 
     /**
-     * @method getBoundingSphereCenter:radius:
-     * @abstract Fill the center vector with the center of the bounding sphere and store the radius of the bounding sphere in 'radius'.
+     * getBoundingSphereCenter:radius:
+     * 
+     * Fill the center vector with the center of the bounding sphere and store the radius of the bounding sphere in 'radius'.
+     * 
+     * the returned bounding sphere is in local space of the receiver.
+     * 
      * @param center A pointer to a SCNVector3 to store the center of the bounding sphere into.
      * @param radius A pointer to a CGFloat to store the radius of the bounding sphere into.
-     * @discussion the returned bounding sphere is in local space of the receiver.
      */
     @Generated
     @Selector("getBoundingSphereCenter:radius:")
     boolean getBoundingSphereCenterRadius(SCNVector3 center, NFloatPtr radius);
 
     /**
-     * @method setBoundingBoxMin:max:
-     * @abstract Override the receiver bounding box with the min and max vectors provided (in local space of the receiver).
+     * setBoundingBoxMin:max:
+     * 
+     * Override the receiver bounding box with the min and max vectors provided (in local space of the receiver).
+     * 
+     * Passing nil as arguments will recompute the original bounding box of the receiver.
+     * 
      * @param min A pointer to a SCNVector3 representing the min vertex of the desired bounding box.
      * @param max A pointer to a SCNVector3 representing the max vertex of the desired bounding box.
-     * @discussion Passing nil as arguments will recompute the original bounding box of the receiver.
      */
     @Generated
     @Selector("setBoundingBoxMin:max:")

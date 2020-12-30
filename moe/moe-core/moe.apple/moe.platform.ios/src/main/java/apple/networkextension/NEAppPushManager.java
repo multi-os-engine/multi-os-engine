@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEAppPushManager
- * @discussion The NEAppPushManager class declares a programmatic interface to configure NEAppPushProvider.
+ * [@interface] NEAppPushManager
+ * 
+ * The NEAppPushManager class declares a programmatic interface to configure NEAppPushProvider.
  * 
  * NEAppPushManager declares methods and properties for configuring and managing life cycle of app push provider.
  * 
@@ -91,8 +92,9 @@ public class NEAppPushManager extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * @property delegate
-     * @discussion An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
+     * [@property] delegate
+     * 
+     * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
      */
     @Generated
     @Selector("delegate")
@@ -126,16 +128,18 @@ public class NEAppPushManager extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @property active
-     * @discussion If set to YES, it indicates the associated configuration is in use. Use KVO to watch for changes.
+     * [@property] active
+     * 
+     * If set to YES, it indicates the associated configuration is in use. Use KVO to watch for changes.
      */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
     /**
-     * @property enabled
-     * @discussion Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another configuration that overlaps with this configuration.
+     * [@property] enabled
+     * 
+     * Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another configuration that overlaps with this configuration.
      */
     @Generated
     @Selector("isEnabled")
@@ -150,8 +154,10 @@ public class NEAppPushManager extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @method loadAllFromPreferencesWithCompletionHandler:
-     * @discussion This class method asynchronously reads all of the saved configurations and returns them as an array of NEAppPushManager objects.
+     * loadAllFromPreferencesWithCompletionHandler:
+     * 
+     * This class method asynchronously reads all of the saved configurations and returns them as an array of NEAppPushManager objects.
+     * 
      * @param completionHandler A block that takes an array of NEAppPushManager objects. The array passed to the block may be empty if no configurations
      * 		  were successfully read from the disk. The NSError object passed to this block will be nil if the load operation succeeded, non-nil otherwise.
      */
@@ -169,8 +175,10 @@ public class NEAppPushManager extends NSObject {
     }
 
     /**
-     * @method loadFromPreferencesWithCompletionHandler:
-     * @discussion This method loads the saved configuration from the persistent store.
+     * loadFromPreferencesWithCompletionHandler:
+     * 
+     * This method loads the saved configuration from the persistent store.
+     * 
      * @param completionHandler A block that will be called when the load operation is completed. The NSError object passed to this block will be nil if the load operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -186,16 +194,18 @@ public class NEAppPushManager extends NSObject {
     }
 
     /**
-     * @property localizedDescription
-     * @discussion A string containing a description of the app push manager.
+     * [@property] localizedDescription
+     * 
+     * A string containing a description of the app push manager.
      */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
     /**
-     * @property matchSSIDs
-     * @discussion An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings then the NEAppPushProvider
+     * [@property] matchSSIDs
+     * 
+     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings then the NEAppPushProvider
      * is started. It is manadatory to provide at least one SSID to start the provider. The upper limit of number of SSIDs is 10.
      */
     @Generated
@@ -209,16 +219,18 @@ public class NEAppPushManager extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property providerBundleIdentifier
-     * @discussion A string containing the bundle identifier of the NEAppPushProvider.
+     * [@property] providerBundleIdentifier
+     * 
+     * A string containing the bundle identifier of the NEAppPushProvider.
      */
     @Generated
     @Selector("providerBundleIdentifier")
     public native String providerBundleIdentifier();
 
     /**
-     * @property providerConfiguration
-     * @discussion A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data types supported by property list. Values of user defined data
+     * [@property] providerConfiguration
+     * 
+     * A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data types supported by property list. Values of user defined data
      * 	type are not supported. This dictionary is passed as-is to NEAppPushProvider when is it is started or notified for other specified reasons.
      */
     @Generated
@@ -226,8 +238,10 @@ public class NEAppPushManager extends NSObject {
     public native NSDictionary<String, ?> providerConfiguration();
 
     /**
-     * @method removeFromPreferencesWithCompletionHandler:
-     * @discussion This method removes the configuration from the persistent store.
+     * removeFromPreferencesWithCompletionHandler:
+     * 
+     * This method removes the configuration from the persistent store.
+     * 
      * @param completionHandler A block that will be called when the remove operation is completed. The NSError object passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -251,8 +265,10 @@ public class NEAppPushManager extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method saveToPreferencesWithCompletionHandler:
-     * @discussion This method saves the configuration in the persistent store.
+     * saveToPreferencesWithCompletionHandler:
+     * 
+     * This method saves the configuration in the persistent store.
+     * 
      * @param completionHandler A block that will be called when the save operation is completed. The NSError object passed to this block will be nil if the save operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -268,16 +284,18 @@ public class NEAppPushManager extends NSObject {
     }
 
     /**
-     * @property delegate
-     * @discussion An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
+     * [@property] delegate
+     * 
+     * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NEAppPushDelegate value);
 
     /**
-     * @property delegate
-     * @discussion An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
+     * [@property] delegate
+     * 
+     * An instance of type NEAppPushDelegate that is required to receive incoming call informarion from the provider.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NEAppPushDelegate value) {
@@ -292,24 +310,27 @@ public class NEAppPushManager extends NSObject {
     }
 
     /**
-     * @property enabled
-     * @discussion Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another configuration that overlaps with this configuration.
+     * [@property] enabled
+     * 
+     * Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another configuration that overlaps with this configuration.
      */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
     /**
-     * @property localizedDescription
-     * @discussion A string containing a description of the app push manager.
+     * [@property] localizedDescription
+     * 
+     * A string containing a description of the app push manager.
      */
     @Generated
     @Selector("setLocalizedDescription:")
     public native void setLocalizedDescription(String value);
 
     /**
-     * @property matchSSIDs
-     * @discussion An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings then the NEAppPushProvider
+     * [@property] matchSSIDs
+     * 
+     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings then the NEAppPushProvider
      * is started. It is manadatory to provide at least one SSID to start the provider. The upper limit of number of SSIDs is 10.
      */
     @Generated
@@ -317,16 +338,18 @@ public class NEAppPushManager extends NSObject {
     public native void setMatchSSIDs(NSArray<String> value);
 
     /**
-     * @property providerBundleIdentifier
-     * @discussion A string containing the bundle identifier of the NEAppPushProvider.
+     * [@property] providerBundleIdentifier
+     * 
+     * A string containing the bundle identifier of the NEAppPushProvider.
      */
     @Generated
     @Selector("setProviderBundleIdentifier:")
     public native void setProviderBundleIdentifier(String value);
 
     /**
-     * @property providerConfiguration
-     * @discussion A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data types supported by property list. Values of user defined data
+     * [@property] providerConfiguration
+     * 
+     * A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data types supported by property list. Values of user defined data
      * 	type are not supported. This dictionary is passed as-is to NEAppPushProvider when is it is started or notified for other specified reasons.
      */
     @Generated

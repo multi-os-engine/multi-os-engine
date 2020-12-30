@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixRandom
- * @discussion Kernels that implement random number generation.
+ * MPSMatrixRandom
+ * 
+ * Kernels that implement random number generation.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -63,9 +64,9 @@ public class MPSMatrixRandom extends MPSKernel {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   batchSize
+     * [@property]   batchSize
      * 
-     * @discussion The size of the batch to process.
+     * The size of the batch to process.
      */
     @Generated
     @Selector("batchSize")
@@ -73,9 +74,9 @@ public class MPSMatrixRandom extends MPSKernel {
     public native long batchSize();
 
     /**
-     * @property   batchStart
+     * [@property]   batchStart
      * 
-     * @discussion The starting index in the destination batch.
+     * The starting index in the destination batch.
      */
     @Generated
     @Selector("batchStart")
@@ -109,8 +110,9 @@ public class MPSMatrixRandom extends MPSKernel {
     public static native String description_static();
 
     /**
-     * @property   destinationDataType
-     * @discussion The type of the data which makes up the values of the result.
+     * [@property]   destinationDataType
+     * 
+     * The type of the data which makes up the values of the result.
      *             Supported values are:
      *                 MPSDataTypeUInt32
      *                 MPSDataTypeFloat32
@@ -122,8 +124,9 @@ public class MPSMatrixRandom extends MPSKernel {
     public native int destinationDataType();
 
     /**
-     * @property   distributionType
-     * @discussion The distribution from which to generate random values.
+     * [@property]   distributionType
+     * 
+     * The distribution from which to generate random values.
      * 
      *             Default is MPSMatrixRandomDistributionDefault
      */
@@ -133,7 +136,8 @@ public class MPSMatrixRandom extends MPSKernel {
     public native long distributionType();
 
     /**
-     * @abstract   Encode a MPSMatrixRandom kernel into a command Buffer.
+     * Encode a MPSMatrixRandom kernel into a command Buffer.
+     * 
      * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
      * @param      destinationMatrix   A valid MPSMatrix to contain the result.
      */
@@ -143,7 +147,8 @@ public class MPSMatrixRandom extends MPSKernel {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix destinationMatrix);
 
     /**
-     * @abstract   Encode a MPSMatrixRandom kernel into a command Buffer.
+     * Encode a MPSMatrixRandom kernel into a command Buffer.
+     * 
      * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
      * @param      destinationVector   A valid MPSVector to contain the result.
      */
@@ -209,18 +214,18 @@ public class MPSMatrixRandom extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   batchSize
+     * [@property]   batchSize
      * 
-     * @discussion The size of the batch to process.
+     * The size of the batch to process.
      */
     @Generated
     @Selector("setBatchSize:")
     public native void setBatchSize(@NUInt long value);
 
     /**
-     * @property   batchStart
+     * [@property]   batchStart
      * 
-     * @discussion The starting index in the destination batch.
+     * The starting index in the destination batch.
      */
     @Generated
     @Selector("setBatchStart:")

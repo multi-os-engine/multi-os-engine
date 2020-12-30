@@ -19,14 +19,15 @@ package apple.coremedia.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum CMTimeRoundingMethod
- * @abstract Rounding method to use when computing time.value during timescale conversions.
- * @constant	kCMTimeRoundingMethod_RoundHalfAwayFromZero	Round towards zero if abs(fraction) is < 0.5,
+ * [@enum] CMTimeRoundingMethod
+ * 
+ * Rounding method to use when computing time.value during timescale conversions.
+ * [@constant]	kCMTimeRoundingMethod_RoundHalfAwayFromZero	Round towards zero if abs(fraction) is < 0.5,
  * 															away from 0 if abs(fraction) is >= 0.5.
- * @constant	kCMTimeRoundingMethod_Default					Synonym for kCMTimeRoundingMethod_RoundHalfAwayFromZero.
- * @constant	kCMTimeRoundingMethod_RoundTowardZero			Round towards zero if fraction is != 0.
- * @constant	kCMTimeRoundingMethod_RoundAwayFromZero		Round away from zero if abs(fraction) is > 0.
- * @constant	kCMTimeRoundingMethod_QuickTime				Use kCMTimeRoundingMethod_RoundTowardZero if converting
+ * [@constant]	kCMTimeRoundingMethod_Default					Synonym for kCMTimeRoundingMethod_RoundHalfAwayFromZero.
+ * [@constant]	kCMTimeRoundingMethod_RoundTowardZero			Round towards zero if fraction is != 0.
+ * [@constant]	kCMTimeRoundingMethod_RoundAwayFromZero		Round away from zero if abs(fraction) is > 0.
+ * [@constant]	kCMTimeRoundingMethod_QuickTime				Use kCMTimeRoundingMethod_RoundTowardZero if converting
  * 															from larger to smaller scale (ie. from more precision to
  * 															less precision), but use
  * 															kCMTimeRoundingMethod_RoundAwayFromZero if converting
@@ -34,8 +35,8 @@ import org.moe.natj.general.ann.Generated;
  * 															more precision). Also, never round a negative number down
  * 															to 0; always return the smallest magnitude negative
  * 															CMTime in this case (-1/newTimescale).
- * @constant	kCMTimeRoundingMethod_RoundTowardPositiveInfinity	Round towards +inf if fraction is != 0.
- * @constant	kCMTimeRoundingMethod_RoundTowardNegativeInfinity	Round towards -inf if fraction is != 0.
+ * [@constant]	kCMTimeRoundingMethod_RoundTowardPositiveInfinity	Round towards +inf if fraction is != 0.
+ * [@constant]	kCMTimeRoundingMethod_RoundTowardNegativeInfinity	Round towards -inf if fraction is != 0.
  */
 @Generated
 public final class CMTimeRoundingMethod {

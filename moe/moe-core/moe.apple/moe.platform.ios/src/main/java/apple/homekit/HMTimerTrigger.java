@@ -46,9 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Timer based trigger.
+ * Timer based trigger.
  * 
- * @discussion This class represents a trigger that is based on timers.
+ * This class represents a trigger that is based on timers.
  */
 @Generated
 @Library("HomeKit")
@@ -162,9 +162,9 @@ public class HMTimerTrigger extends HMTrigger {
     public static native long version_static();
 
     /**
-     * @brief Specifies when, in an absolute time, the trigger should fire the first time.
+     * Specifies when, in an absolute time, the trigger should fire the first time.
      * 
-     * @discussion Timer triggers are only set at the top of the minute. When the timer trigger fires,
+     * Timer triggers are only set at the top of the minute. When the timer trigger fires,
      *             it will typically fire within 1 minute of the scheduled fire date or calculated
      *             recurrence fire date, depending on how the system is managing its resources.
      */
@@ -177,7 +177,15 @@ public class HMTimerTrigger extends HMTrigger {
     public native HMTimerTrigger init();
 
     /**
-     * @brief Initialize a new HMTimerTrigger object.
+     * Initialize a new HMTimerTrigger object.
+     * 
+     * Validity checks are performed when the trigger is added to the home and the NSError in
+     *             the completion block for addTrigger: method indicates the reason for the failure:
+     *             HMErrorCodeDateMustBeOnSpecifiedBoundaries is returned if the seconds/nanoseconds fields
+     *             in recurrence interval or seconds field in fireDate have a value other than 0.
+     *             HMErrorCodeRecurrenceTooSmall is returned if recurrence interval is less than 5 minutes.
+     *             HMErrorCodeRecurrenceTooLarge is returned if recurrence interval is greater than 5 weeks.
+     *             HMErrorCodeFireDateInPast is returned if recurrence is nil and fireDate is in the past.
      * 
      * @param name Name for the trigger.
      * 
@@ -193,14 +201,6 @@ public class HMTimerTrigger extends HMTrigger {
      *                   multiples of whole minutes.
      * 
      * @param recurrenceCalendar The calendar corresponding to a recurring timer trigger. May be nil.
-     * 
-     * @discussion Validity checks are performed when the trigger is added to the home and the NSError in
-     *             the completion block for addTrigger: method indicates the reason for the failure:
-     *             HMErrorCodeDateMustBeOnSpecifiedBoundaries is returned if the seconds/nanoseconds fields
-     *             in recurrence interval or seconds field in fireDate have a value other than 0.
-     *             HMErrorCodeRecurrenceTooSmall is returned if recurrence interval is less than 5 minutes.
-     *             HMErrorCodeRecurrenceTooLarge is returned if recurrence interval is greater than 5 weeks.
-     *             HMErrorCodeFireDateInPast is returned if recurrence is nil and fireDate is in the past.
      */
     @Generated
     @Selector("initWithName:fireDate:timeZone:recurrence:recurrenceCalendar:")
@@ -208,9 +208,9 @@ public class HMTimerTrigger extends HMTrigger {
             NSTimeZone timeZone, NSDateComponents recurrence, NSCalendar recurrenceCalendar);
 
     /**
-     * @brief The date components that specify how a trigger is to be repeated.
+     * The date components that specify how a trigger is to be repeated.
      * 
-     * @discussion This value must be nil if the trigger should not repeat. The date component
+     * This value must be nil if the trigger should not repeat. The date component
      *             values are relative to the initial fire date of the trigger. If the
      *             calendar value of the recurrence is nil, the current calendar
      *             will be used to calculate the recurrence interval. Recurrence example: if a
@@ -224,16 +224,16 @@ public class HMTimerTrigger extends HMTrigger {
     public native NSDateComponents recurrence();
 
     /**
-     * @brief The calendar corresponding to a recurring timer trigger.
+     * The calendar corresponding to a recurring timer trigger.
      */
     @Generated
     @Selector("recurrenceCalendar")
     public native NSCalendar recurrenceCalendar();
 
     /**
-     * @brief Set the time zone to interpret the fire date in.
+     * Set the time zone to interpret the fire date in.
      * 
-     * @discussion If this value is nil and the user switches time zones, the time the trigger is
+     * If this value is nil and the user switches time zones, the time the trigger is
      *             fired will be adjusted to account for the time zone change. If this value is
      *             non-nil, the trigger will fire at the specified time in the specific time zone.
      */
@@ -242,7 +242,7 @@ public class HMTimerTrigger extends HMTrigger {
     public native NSTimeZone timeZone();
 
     /**
-     * @brief This method is used to change the fire date of a timer trigger.
+     * This method is used to change the fire date of a timer trigger.
      * 
      * @param fireDate New fire date for the trigger. The seconds value must be zero.
      * 
@@ -257,7 +257,7 @@ public class HMTimerTrigger extends HMTrigger {
             @ObjCBlock(name = "call_updateFireDateCompletionHandler") Block_updateFireDateCompletionHandler completion);
 
     /**
-     * @brief This method is used to change the recurrence interval for a timer trigger.
+     * This method is used to change the recurrence interval for a timer trigger.
      * 
      * @param recurrence New recurrence interval for the trigger. Passing a nil indicates that
      *                   the trigger is non-repeating. The minimum recurrence interval is 5 minutes,
@@ -279,7 +279,7 @@ public class HMTimerTrigger extends HMTrigger {
             @ObjCBlock(name = "call_updateRecurrenceCompletionHandler") Block_updateRecurrenceCompletionHandler completion);
 
     /**
-     * @brief This method is used to change the time zone of the fire date of a timer trigger.
+     * This method is used to change the time zone of the fire date of a timer trigger.
      * 
      * @param timeZone New time zone for the trigger. Passing a nil indicates that the default
      *                 (system) timezone is used.

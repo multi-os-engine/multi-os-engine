@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A background task used to perform deferrable processing.
+ * A background task used to perform deferrable processing.
  */
 @Generated
 @Library("BackgroundTasks")

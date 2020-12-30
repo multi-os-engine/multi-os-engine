@@ -42,9 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * 	@class AVAudioTime
- * 	@abstract Represent a moment in time.
- * 	@discussion
+ * AVAudioTime
+ * 
+ * Represent a moment in time.
+ * 
  * 		AVAudioTime is used in AVAudioEngine to represent time. Instances are immutable.
  * 
  * 		A single moment in time may be represented in two different ways:
@@ -125,8 +126,9 @@ public class AVAudioTime extends NSObject {
     public static native long hash_static();
 
     /**
-     * @method hostTimeForSeconds:
-     * @abstract Convert seconds to host time.
+     * hostTimeForSeconds:
+     * 
+     * Convert seconds to host time.
      */
     @Generated
     @Selector("hostTimeForSeconds:")
@@ -168,8 +170,9 @@ public class AVAudioTime extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method secondsForHostTime:
-     * @abstract Convert host time to seconds.
+     * secondsForHostTime:
+     * 
+     * Convert host time to seconds.
      */
     @Generated
     @Selector("secondsForHostTime:")
@@ -184,21 +187,21 @@ public class AVAudioTime extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @method timeWithAudioTimeStamp:sampleRate:
+     * timeWithAudioTimeStamp:sampleRate:
      */
     @Generated
     @Selector("timeWithAudioTimeStamp:sampleRate:")
     public static native AVAudioTime timeWithAudioTimeStampSampleRate(AudioTimeStamp ts, double sampleRate);
 
     /**
-     * @method timeWithHostTime:
+     * timeWithHostTime:
      */
     @Generated
     @Selector("timeWithHostTime:")
     public static native AVAudioTime timeWithHostTime(long hostTime);
 
     /**
-     * @method timeWithHostTime:sampleTime:atRate:
+     * timeWithHostTime:sampleTime:atRate:
      */
     @Generated
     @Selector("timeWithHostTime:sampleTime:atRate:")
@@ -206,7 +209,7 @@ public class AVAudioTime extends NSObject {
             double sampleRate);
 
     /**
-     * @method timeWithSampleTime:atRate:
+     * timeWithSampleTime:atRate:
      */
     @Generated
     @Selector("timeWithSampleTime:atRate:")
@@ -218,9 +221,10 @@ public class AVAudioTime extends NSObject {
     public static native long version_static();
 
     /**
-     * @property audioTimeStamp
-     * @abstract The time expressed as an AudioTimeStamp structure.
-     * @discussion
+     * [@property] audioTimeStamp
+     * 
+     * The time expressed as an AudioTimeStamp structure.
+     * 
      * 	This may be useful for compatibility with lower-level CoreAudio and AudioToolbox API's.
      */
     @Generated
@@ -229,13 +233,10 @@ public class AVAudioTime extends NSObject {
     public native AudioTimeStamp audioTimeStamp();
 
     /**
-     * @method extrapolateTimeFromAnchor:
-     * 	@abstract Converts between host and sample time.
-     * 	@param anchorTime
-     * 		An AVAudioTime with a more complete AudioTimeStamp than that of the receiver (self).
-     * 	@return
-     * 		the extrapolated time
-     * 	@discussion
+     * extrapolateTimeFromAnchor:
+     * 
+     * Converts between host and sample time.
+     * 
      * 		If anchorTime is an AVAudioTime where both host time and sample time are valid,
      * 		and self is another timestamp where only one of the two is valid, this method
      * 		returns a new AVAudioTime copied from self and where any additional valid fields provided by
@@ -252,14 +253,20 @@ public class AVAudioTime extends NSObject {
      * // fill in valid host time representation
      * AVAudioTime *fullTime0 = [time0 extrapolateTimeFromAnchor: anchor];
      * </pre>
+     * 
+     * 	@param anchorTime
+     * 		An AVAudioTime with a more complete AudioTimeStamp than that of the receiver (self).
+     * 	@return
+     * 		the extrapolated time
      */
     @Generated
     @Selector("extrapolateTimeFromAnchor:")
     public native AVAudioTime extrapolateTimeFromAnchor(AVAudioTime anchorTime);
 
     /**
-     * @property hostTime
-     * @abstract The host time.
+     * [@property] hostTime
+     * 
+     * The host time.
      */
     @Generated
     @Selector("hostTime")
@@ -270,60 +277,64 @@ public class AVAudioTime extends NSObject {
     public native AVAudioTime init();
 
     /**
-     * @method initWithAudioTimeStamp:sampleRate:
+     * initWithAudioTimeStamp:sampleRate:
      */
     @Generated
     @Selector("initWithAudioTimeStamp:sampleRate:")
     public native AVAudioTime initWithAudioTimeStampSampleRate(AudioTimeStamp ts, double sampleRate);
 
     /**
-     * @method initWithHostTime:
+     * initWithHostTime:
      */
     @Generated
     @Selector("initWithHostTime:")
     public native AVAudioTime initWithHostTime(long hostTime);
 
     /**
-     * @method initWithHostTime:sampleTime:atRate:
+     * initWithHostTime:sampleTime:atRate:
      */
     @Generated
     @Selector("initWithHostTime:sampleTime:atRate:")
     public native AVAudioTime initWithHostTimeSampleTimeAtRate(long hostTime, long sampleTime, double sampleRate);
 
     /**
-     * @method initWithSampleTime:atRate:
+     * initWithSampleTime:atRate:
      */
     @Generated
     @Selector("initWithSampleTime:atRate:")
     public native AVAudioTime initWithSampleTimeAtRate(long sampleTime, double sampleRate);
 
     /**
-     * @property hostTimeValid
-     * @abstract Whether the hostTime property is valid.
+     * [@property] hostTimeValid
+     * 
+     * Whether the hostTime property is valid.
      */
     @Generated
     @Selector("isHostTimeValid")
     public native boolean isHostTimeValid();
 
     /**
-     * @property sampleTimeValid
-     * @abstract Whether the sampleTime and sampleRate properties are valid.
+     * [@property] sampleTimeValid
+     * 
+     * Whether the sampleTime and sampleRate properties are valid.
      */
     @Generated
     @Selector("isSampleTimeValid")
     public native boolean isSampleTimeValid();
 
     /**
-     * @property sampleRate
-     * @abstract The sample rate at which sampleTime is being expressed.
+     * [@property] sampleRate
+     * 
+     * The sample rate at which sampleTime is being expressed.
      */
     @Generated
     @Selector("sampleRate")
     public native double sampleRate();
 
     /**
-     * @property sampleTime
-     * @abstract The time as a number of audio samples, as tracked by the current audio device.
+     * [@property] sampleTime
+     * 
+     * The time as a number of audio samples, as tracked by the current audio device.
      */
     @Generated
     @Selector("sampleTime")

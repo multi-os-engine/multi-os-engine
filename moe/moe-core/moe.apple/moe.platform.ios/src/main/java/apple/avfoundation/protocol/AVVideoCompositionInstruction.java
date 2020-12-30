@@ -28,9 +28,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol	AVVideoCompositionInstruction
+ * [@protocol]	AVVideoCompositionInstruction
  * 
- * @abstract	The AVVideoCompositionInstruction protocol is implemented by objects to represent operations to be performed by a compositor.
+ * The AVVideoCompositionInstruction protocol is implemented by objects to represent operations to be performed by a compositor.
  */
 @Generated
 @Library("AVFoundation")

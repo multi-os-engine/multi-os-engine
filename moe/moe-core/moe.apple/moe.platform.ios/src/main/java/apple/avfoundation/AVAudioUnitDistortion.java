@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitDistortion
- * @abstract An AVAudioUnitEffect that implements a multi-stage distortion effect.
+ * AVAudioUnitDistortion
+ * 
+ * An AVAudioUnitEffect that implements a multi-stage distortion effect.
  */
 @Generated
 @Library("AVFoundation")
@@ -173,8 +174,9 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
             @ByValue AudioComponentDescription audioComponentDescription);
 
     /**
-     * @method loadFactoryPreset:
-     * @abstract Load a distortion preset.
+     * loadFactoryPreset:
+     * 
+     * Load a distortion preset.
      * Default:    AVAudioUnitDistortionPresetDrumsBitBrush
      */
     @Generated
@@ -182,8 +184,8 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
     public native void loadFactoryPreset(@NInt long preset);
 
     /**
-     * @property preGain
-     * @abstract
+     * [@property] preGain
+     * 
      * Gain applied to the signal before being distorted
      * Range:      -80 -> 20
      * Default:    -6
@@ -194,8 +196,8 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
     public native float preGain();
 
     /**
-     * @property preGain
-     * @abstract
+     * [@property] preGain
+     * 
      * Gain applied to the signal before being distorted
      * Range:      -80 -> 20
      * Default:    -6
@@ -206,8 +208,8 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
     public native void setPreGain(float value);
 
     /**
-     * @property wetDryMix
-     * @abstract
+     * [@property] wetDryMix
+     * 
      * Blend of the distorted and dry signals
      * Range:      0 (all dry) -> 100 (all distorted)
      * Default:    50
@@ -218,8 +220,8 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
     public native void setWetDryMix(float value);
 
     /**
-     * @property wetDryMix
-     * @abstract
+     * [@property] wetDryMix
+     * 
      * Blend of the distorted and dry signals
      * Range:      0 (all dry) -> 100 (all distorted)
      * Default:    50

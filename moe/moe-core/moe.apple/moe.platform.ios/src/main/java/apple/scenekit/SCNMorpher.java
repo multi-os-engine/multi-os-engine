@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNMorpher
- * @abstract SCNMorpher controls the deformation of morphed geometries
+ * SCNMorpher
+ * 
+ * SCNMorpher controls the deformation of morphed geometries
  */
 @Generated
 @Library("SceneKit")
@@ -179,8 +180,9 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     public native NSArray<String> animationKeys();
 
     /**
-     * @property calculationMode
-     * @abstract Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
+     * [@property] calculationMode
+     * 
+     * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
      */
     @Generated
     @Selector("calculationMode")
@@ -224,8 +226,9 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     public native void resumeAnimationForKey(String key);
 
     /**
-     * @property calculationMode
-     * @abstract Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
+     * [@property] calculationMode
+     * 
+     * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
      */
     @Generated
     @Selector("setCalculationMode:")
@@ -236,17 +239,20 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     /**
-     * @property targets
-     * @abstract Specifies the morph targets as an array of SCNGeometry.
-     * @discussion The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
+     * [@property] targets
+     * 
+     * Specifies the morph targets as an array of SCNGeometry.
+     * 
+     * The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
      */
     @Generated
     @Selector("setTargets:")
     public native void setTargets(NSArray<? extends SCNGeometry> value);
 
     /**
-     * @method setWeight:forTargetAtIndex:
-     * @abstract Sets the weight for the target at the specified index. Animatable implicitly or explicitly with the keyPath "weights[index]" or "weights["targetName"]" (targetName is the name of the target geometry).
+     * setWeight:forTargetAtIndex:
+     * 
+     * Sets the weight for the target at the specified index. Animatable implicitly or explicitly with the keyPath "weights[index]" or "weights["targetName"]" (targetName is the name of the target geometry).
      */
     @Generated
     @Selector("setWeight:forTargetAtIndex:")
@@ -259,17 +265,20 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     }
 
     /**
-     * @property targets
-     * @abstract Specifies the morph targets as an array of SCNGeometry.
-     * @discussion The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
+     * [@property] targets
+     * 
+     * Specifies the morph targets as an array of SCNGeometry.
+     * 
+     * The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
      */
     @Generated
     @Selector("targets")
     public native NSArray<? extends SCNGeometry> targets();
 
     /**
-     * @method weightForTargetAtIndex:
-     * @abstract Retrieves the weight for the target at the specified index.
+     * weightForTargetAtIndex:
+     * 
+     * Retrieves the weight for the target at the specified index.
      */
     @Generated
     @Selector("weightForTargetAtIndex:")
@@ -289,40 +298,45 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
     /**
-     * @property unifiesNormals
-     * @abstract When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     * [@property] unifiesNormals
+     * 
+     * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
      */
     @Generated
     @Selector("setUnifiesNormals:")
     public native void setUnifiesNormals(boolean value);
 
     /**
-     * @method setWeight:forTargetNamed:
-     * @abstract Sets the weight for the target with the specified name (targetName is the name of the target geometry).
+     * setWeight:forTargetNamed:
+     * 
+     * Sets the weight for the target with the specified name (targetName is the name of the target geometry).
      */
     @Generated
     @Selector("setWeight:forTargetNamed:")
     public native void setWeightForTargetNamed(@NFloat double weight, String targetName);
 
     /**
-     * @property weights
-     * @abstract Access to all the weights of all the targets.
+     * [@property] weights
+     * 
+     * Access to all the weights of all the targets.
      */
     @Generated
     @Selector("setWeights:")
     public native void setWeights(NSArray<? extends NSNumber> value);
 
     /**
-     * @property unifiesNormals
-     * @abstract When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     * [@property] unifiesNormals
+     * 
+     * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
      */
     @Generated
     @Selector("unifiesNormals")
     public native boolean unifiesNormals();
 
     /**
-     * @method weightForTargetNamed:
-     * @abstract Retrieves the weight for the target with the specified name (targetName is the name of the target geometry).
+     * weightForTargetNamed:
+     * 
+     * Retrieves the weight for the target with the specified name (targetName is the name of the target geometry).
      */
     @Generated
     @Selector("weightForTargetNamed:")
@@ -330,8 +344,9 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     public native double weightForTargetNamed(String targetName);
 
     /**
-     * @property weights
-     * @abstract Access to all the weights of all the targets.
+     * [@property] weights
+     * 
+     * Access to all the weights of all the targets.
      */
     @Generated
     @Selector("weights")

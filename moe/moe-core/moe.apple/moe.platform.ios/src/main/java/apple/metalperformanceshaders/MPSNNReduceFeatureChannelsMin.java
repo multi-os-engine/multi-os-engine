@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNReduceFeatureChannelsMin
- * @discussion The MPSNNReduceFeatureChannelsMin performs a reduction operation returning the mininmum value for feature channels of an image
+ * MPSNNReduceFeatureChannelsMin
+ * 
+ * The MPSNNReduceFeatureChannelsMin performs a reduction operation returning the mininmum value for feature channels of an image
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -101,8 +102,10 @@ public class MPSNNReduceFeatureChannelsMin extends MPSNNReduceUnary {
     public native MPSNNReduceFeatureChannelsMin initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
      * @param      device      The MTLDevice on which to make the MPSCNNPooling
      * @return     A new MPSNNReduceFeatureChannelsMin object, or nil if failure.
@@ -113,7 +116,8 @@ public class MPSNNReduceFeatureChannelsMin extends MPSNNReduceUnary {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to apply the reduction operation on an image.
+     * Specifies information to apply the reduction operation on an image.
+     * 
      * @param    device            The device the filter will run on
      * @return     A valid MPSNNReduceFeatureChannelsMin object or nil, if failure.
      */

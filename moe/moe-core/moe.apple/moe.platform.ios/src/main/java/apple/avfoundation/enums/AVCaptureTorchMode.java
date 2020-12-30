@@ -20,15 +20,15 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVCaptureTorchMode
- * @abstract
+ * [@enum] AVCaptureTorchMode
+ * 
  *    Constants indicating the mode of the torch on the receiver's device, if it has one.
  * 
- * @constant AVCaptureTorchModeOff
+ * [@constant] AVCaptureTorchModeOff
  *    Indicates that the torch should always be off.
- * @constant AVCaptureTorchModeOn
+ * [@constant] AVCaptureTorchModeOn
  *    Indicates that the torch should always be on.
- * @constant AVCaptureTorchModeAuto
+ * [@constant] AVCaptureTorchModeAuto
  *    Indicates that the torch should be used automatically depending on ambient light conditions.
  */
 @Generated

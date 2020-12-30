@@ -26,9 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NFCVASResponse
+ * NFCVASResponse
  * 
- * @discussion Response from one GET VAS DATA command.
+ * Response from one GET VAS DATA command.
  */
 @Generated
 @Library("CoreNFC")
@@ -125,9 +125,9 @@ public class NFCVASResponse extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property mobileToken
+     * [@property] mobileToken
      * 
-     * @discussion Mobile token value.
+     * Mobile token value.
      */
     @Generated
     @Selector("mobileToken")
@@ -152,9 +152,9 @@ public class NFCVASResponse extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property status
+     * [@property] status
      * 
-     * @discussion Response APDU status.
+     * Response APDU status.
      */
     @Generated
     @Selector("status")
@@ -166,9 +166,9 @@ public class NFCVASResponse extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * @property vasData
+     * [@property] vasData
      * 
-     * @discussion VAS data.
+     * VAS data.
      */
     @Generated
     @Selector("vasData")

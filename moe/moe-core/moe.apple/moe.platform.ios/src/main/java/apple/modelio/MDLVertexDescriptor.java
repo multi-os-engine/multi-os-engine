@@ -42,9 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLVertexDescriptor
- * @abstract Describes the layout of vertex buffers in MDLMesh objects
- * @discussion This object is a property of MDLMesh describing the current state of
+ * MDLVertexDescriptor
+ * 
+ * Describes the layout of vertex buffers in MDLMesh objects
+ * 
+ * This object is a property of MDLMesh describing the current state of
  * attributes and buffer layouts of the vertex buffers in the mesh. This must be 
  * immutable otherwise even small changes could cause the buffers to be out of sync 
  * with the layout described here.
@@ -164,8 +166,9 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * @method addOrReplaceAttribute:
-     * @abstract Replace any attribute with the same name and time, or add it if it does not
+     * addOrReplaceAttribute:
+     * 
+     * Replace any attribute with the same name and time, or add it if it does not
      *           already exist.
      */
     @Generated
@@ -173,8 +176,10 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     public native void addOrReplaceAttribute(MDLVertexAttribute attribute);
 
     /**
-     * @method attributeNamed:
-     * @abstract Retrieves the attribute with the given name
+     * attributeNamed:
+     * 
+     * Retrieves the attribute with the given name
+     * 
      * @return The attribute with the supplied name or nil if attribute with the given 
      *         name does not exist in the descriptor object
      */
@@ -183,9 +188,11 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     public native MDLVertexAttribute attributeNamed(String name);
 
     /**
-     * @property attributes
-     * @abstract An array of MDLVertexAttribute objects
-     * @discussion ay describing the current attribute state of vertex buffers in an
+     * [@property] attributes
+     * 
+     * An array of MDLVertexAttribute objects
+     * 
+     * ay describing the current attribute state of vertex buffers in an
      *             MDLMesh mesh
      */
     @Generated
@@ -203,18 +210,22 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     public native MDLVertexDescriptor init();
 
     /**
-     * @method initVertexDescriptor:
-     * @abstract Initializes the object with values from supplied vertexDescriptor
-     * @discussion This performs a deep copy of all data in the supplied descriptor.
+     * initVertexDescriptor:
+     * 
+     * Initializes the object with values from supplied vertexDescriptor
+     * 
+     * This performs a deep copy of all data in the supplied descriptor.
      */
     @Generated
     @Selector("initWithVertexDescriptor:")
     public native MDLVertexDescriptor initWithVertexDescriptor(MDLVertexDescriptor vertexDescriptor);
 
     /**
-     * @property layouts
-     * @abstract An array of MDLVertexBufferLayout
-     * @discussion An array describing the current layout state of vertex buffers in an 
+     * [@property] layouts
+     * 
+     * An array of MDLVertexBufferLayout
+     * 
+     * An array describing the current layout state of vertex buffers in an
      *             MDLMesh mesh
      */
     @Generated
@@ -222,25 +233,29 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     public native NSMutableArray<MDLVertexBufferLayout> layouts();
 
     /**
-     * @method removeAttributeNamed:
-     * @abstract Remove the named attribute if it exists
+     * removeAttributeNamed:
+     * 
+     * Remove the named attribute if it exists
      */
     @Generated
     @Selector("removeAttributeNamed:")
     public native void removeAttributeNamed(String name);
 
     /**
-     * @method reset
-     * @abstract Tesets the descriptor to initial values
+     * reset
+     * 
+     * Tesets the descriptor to initial values
      */
     @Generated
     @Selector("reset")
     public native void reset();
 
     /**
-     * @property attributes
-     * @abstract An array of MDLVertexAttribute objects
-     * @discussion ay describing the current attribute state of vertex buffers in an
+     * [@property] attributes
+     * 
+     * An array of MDLVertexAttribute objects
+     * 
+     * ay describing the current attribute state of vertex buffers in an
      *             MDLMesh mesh
      */
     @Generated
@@ -248,9 +263,11 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     public native void setAttributes(NSMutableArray<MDLVertexAttribute> value);
 
     /**
-     * @property layouts
-     * @abstract An array of MDLVertexBufferLayout
-     * @discussion An array describing the current layout state of vertex buffers in an 
+     * [@property] layouts
+     * 
+     * An array of MDLVertexBufferLayout
+     * 
+     * An array describing the current layout state of vertex buffers in an
      *             MDLMesh mesh
      */
     @Generated
@@ -258,8 +275,9 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     public native void setLayouts(NSMutableArray<MDLVertexBufferLayout> value);
 
     /**
-     * @method setPackedOffsets
-     * @abstract Sets the stride in each VertexAttribute in the attributes array to 
+     * setPackedOffsets
+     * 
+     * Sets the stride in each VertexAttribute in the attributes array to
      *           the minimum value to pack each attribute next to each other in its 
      *           vertexbuffer
      */
@@ -268,8 +286,9 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     public native void setPackedOffsets();
 
     /**
-     * @method setPackedStrides
-     * @abstract Sets the stride in each VertexBufferLout in the layouts array to the 
+     * setPackedStrides
+     * 
+     * Sets the stride in each VertexBufferLout in the layouts array to the
      *           minimum value encompassing all attributes in the vertex buffer
      */
     @Generated

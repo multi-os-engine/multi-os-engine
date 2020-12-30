@@ -151,8 +151,9 @@ public class EKSource extends EKObject {
     public static native long version_static();
 
     /**
-     * @property    calendars
-     * @abstract    This is now deprecated in favor of -[EKSource calendarsForEntityType:]
+     * [@property]    calendars
+     * 
+     * This is now deprecated in favor of -[EKSource calendarsForEntityType:]
      */
     @Generated
     @Deprecated
@@ -160,8 +161,9 @@ public class EKSource extends EKObject {
     public native NSSet<? extends EKCalendar> calendars();
 
     /**
-     * @method      calendarsForEntityType
-     * @abstract    Returns the calendars that belong to this source that 
+     * calendarsForEntityType
+     * 
+     * Returns the calendars that belong to this source that
      *              support a given entity type (reminders, events)
      */
     @Generated

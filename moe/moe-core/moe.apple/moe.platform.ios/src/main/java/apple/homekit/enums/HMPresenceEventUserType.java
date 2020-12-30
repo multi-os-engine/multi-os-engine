@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @abstract This enumeration describes the different types of user sets in presence events.
+ * This enumeration describes the different types of user sets in presence events.
  */
 @Generated
 public final class HMPresenceEventUserType {

@@ -223,7 +223,8 @@ public class GCController extends NSObject implements GCDevice {
      * of suspension in play. You may pause and resume based on game state as well so the event is only called each time the
      * pause/resume button is pressed.
      * 
-     * @note This handler has been deprecated in favor of the Menu button found on GCMicroGamepad and GCExtendedGamepad.
+     * [@note] This handler has been deprecated in favor of the Menu button found on GCMicroGamepad and GCExtendedGamepad.
+     * 
      * @see microGamepad
      * @see extendedGamepad
      */
@@ -250,6 +251,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * If a controller does not support the given profile the returned value will be nil. Use this to filter controllers if the
      * application requires a specific kind of profile.
+     * 
      * @see motion
      */
     @Generated
@@ -280,6 +282,7 @@ public class GCController extends NSObject implements GCDevice {
     /**
      * Gets the motion input profile. This profile is optional and may be available if the controller is attached to a device that supports motion.
      * If this is nil the controller does not support motion input and only the gamepad & extendedGamepad profiles are available.
+     * 
      * @see gamepad
      * @see extendedGamepad
      */
@@ -312,7 +315,8 @@ public class GCController extends NSObject implements GCDevice {
      * of suspension in play. You may pause and resume based on game state as well so the event is only called each time the
      * pause/resume button is pressed.
      * 
-     * @note This handler has been deprecated in favor of the Menu button found on GCMicroGamepad and GCExtendedGamepad.
+     * [@note] This handler has been deprecated in favor of the Menu button found on GCMicroGamepad and GCExtendedGamepad.
+     * 
      * @see microGamepad
      * @see extendedGamepad
      */
@@ -432,7 +436,7 @@ public class GCController extends NSObject implements GCDevice {
     /**
      * The most recently used game controller. If a user actuates a game controller input, that controller will become the current one.
      * 
-     * @note This is useful for single player games where you only care about whether an input is pressed, and not where it came from. You
+     * [@note] This is useful for single player games where you only care about whether an input is pressed, and not where it came from. You
      * will still need to register for changes to GCController.current so that your UI can remain up-to-date with the current controller.
      */
     @Generated
@@ -444,7 +448,7 @@ public class GCController extends NSObject implements GCDevice {
      * 
      * Use this property to create CHHapticEngine instances according to your needs. 
      * 
-     * @note Haptics are a drain on the controller's battery, and can be distracting when used excessively. 
+     * [@note] Haptics are a drain on the controller's battery, and can be distracting when used excessively. 
      */
     @Generated
     @Selector("haptics")

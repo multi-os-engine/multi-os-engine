@@ -19,21 +19,22 @@ package apple.systemconfiguration.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum SCNetworkConnectionStatus
- * @discussion Status of the network connection.
+ * [@enum] SCNetworkConnectionStatus
+ * 
+ * Status of the network connection.
  * 	This status is intended to be generic and high level.
  * 	An extended status, specific to the type of network
  * 	connection is also available for applications that
  * 	need additonal information.
- * @constant kSCNetworkConnectionInvalid
+ * [@constant] kSCNetworkConnectionInvalid
  * 	The network connection refers to an invalid service.
- * @constant kSCNetworkConnectionDisconnected
+ * [@constant] kSCNetworkConnectionDisconnected
  * 	The network connection is disconnected.
- * @constant kSCNetworkConnectionConnecting
+ * [@constant] kSCNetworkConnectionConnecting
  * 	The network connection is connecting.
- * @constant kSCNetworkConnectionConnected
+ * [@constant] kSCNetworkConnectionConnected
  * 	The network connection is connected.
- * @constant kSCNetworkConnectionDisconnecting
+ * [@constant] kSCNetworkConnectionDisconnecting
  * 	The network connection is disconnecting.
  */
 @Generated

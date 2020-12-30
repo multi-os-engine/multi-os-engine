@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNPoolingMaxGradient
- * @dependency This depends on Metal.framework
- * @discussion Specifies the filter for computing the gradient of the max pooling filter.
+ * MPSCNNPoolingMaxGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the filter for computing the gradient of the max pooling filter.
  *             The operation backpropagates a gradient vector using chain rule.
  * 
  *             Dilated Max pooling forward pass is defined as:
@@ -137,8 +138,10 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
     public native MPSCNNPoolingMaxGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPoolingMaxGradient
      * @param      device      The MTLDevice on which to make the MPSCNNPoolingMaxGradient
      * @return     A new MPSCNNPoolingMaxGradient object, or nil if failure.
@@ -158,7 +161,8 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @abstract  Initialize a gradient max pooling filter
+     * Initialize a gradient max pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.

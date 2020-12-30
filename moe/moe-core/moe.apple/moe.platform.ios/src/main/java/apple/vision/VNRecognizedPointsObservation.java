@@ -31,9 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNRecognizedPointsObservation
- * @superclass VNObservation
- * @brief VNRecognizedPointsObservation is a request result detailing points in an image.
+ * VNRecognizedPointsObservation
+ * [@superclass] VNObservation
+ * 
+ * VNRecognizedPointsObservation is a request result detailing points in an image.
  */
 @Generated
 @Library("Vision")
@@ -68,14 +69,14 @@ public class VNRecognizedPointsObservation extends VNObservation {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @brief The availableGroupKeys property returns all of the point group labels usable with the observation.
+     * The availableGroupKeys property returns all of the point group labels usable with the observation.
      */
     @Generated
     @Selector("availableGroupKeys")
     public native NSArray<String> availableGroupKeys();
 
     /**
-     * @brief Returns all of the point group keys available in the observation.
+     * Returns all of the point group keys available in the observation.
      */
     @Generated
     @Selector("availableKeys")
@@ -142,9 +143,9 @@ public class VNRecognizedPointsObservation extends VNObservation {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief    Returns the recognized points packaged into an MLMultiArray.
+     * Returns the recognized points packaged into an MLMultiArray.
      * 
-     * @discussion The MLMultiArray will contain the raw data output of (x coordinate, y coordinate, confidence) for specific points in the format expected by CreateML action recognition models.
+     * The MLMultiArray will contain the raw data output of (x coordinate, y coordinate, confidence) for specific points in the format expected by CreateML action recognition models.
      * The datatype of the elements in the array is double and the dimensions are [1, 3, # of possible points].  If an expected point key is not available in the obeservation, that entry in the MLMultiArray will be populated with 0s.
      * 
      * @param error The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
@@ -163,7 +164,7 @@ public class VNRecognizedPointsObservation extends VNObservation {
     public static native Object new_objc();
 
     /**
-     * @brief Obtains a specific normalized recognized point.
+     * Obtains a specific normalized recognized point.
      * 
      * @param pointKey The key specifying the desired recognized point.
      * 
@@ -177,9 +178,9 @@ public class VNRecognizedPointsObservation extends VNObservation {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Obtains the collection of points associated with an identified grouping.
+     * Obtains the collection of points associated with an identified grouping.
      * 
-     * @discussion The obtained collection is a dictionary that provides the mapping of a recognized point's key to the recognized point.
+     * The obtained collection is a dictionary that provides the mapping of a recognized point's key to the recognized point.
      * 
      * @param groupKey The key representing a specific grouping of points.
      * @param error The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.

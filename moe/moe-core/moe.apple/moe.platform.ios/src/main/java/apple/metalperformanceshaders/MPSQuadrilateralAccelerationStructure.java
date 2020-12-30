@@ -26,9 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief An acceleration structure built over quadrilaterals
+ * An acceleration structure built over quadrilaterals
  * 
- * @discussion See MPSPolygonAccelerationStructure for more information
+ * See MPSPolygonAccelerationStructure for more information
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -147,7 +147,7 @@ public class MPSQuadrilateralAccelerationStructure extends MPSPolygonAcceleratio
     public static native Object new_objc();
 
     /**
-     * @brief Number of quads. Changes to this property require rebuilding the acceleration
+     * Number of quads. Changes to this property require rebuilding the acceleration
      * structure. This is an alias for the polygonCount property.
      */
     @Generated
@@ -164,7 +164,7 @@ public class MPSQuadrilateralAccelerationStructure extends MPSPolygonAcceleratio
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Number of quads. Changes to this property require rebuilding the acceleration
+     * Number of quads. Changes to this property require rebuilding the acceleration
      * structure. This is an alias for the polygonCount property.
      */
     @Generated

@@ -4,7 +4,6 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @abstract
  * A bitfield of commands that may be performed indirectly.
  */
 @Generated

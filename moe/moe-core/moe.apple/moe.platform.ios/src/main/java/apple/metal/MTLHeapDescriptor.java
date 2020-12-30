@@ -41,7 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MTLHeapDescriptor
+ * MTLHeapDescriptor
  */
 @Generated
 @Library("Metal")
@@ -161,9 +161,11 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property cpuCacheMode
-     * @abstract CPU cache mode for the heap. Default is MTLCPUCacheModeDefaultCache.
-     * @discussion All resources created from this heap share the same cache mode.
+     * [@property] cpuCacheMode
+     * 
+     * CPU cache mode for the heap. Default is MTLCPUCacheModeDefaultCache.
+     * 
+     * All resources created from this heap share the same cache mode.
      * CPU cache mode is ignored for MTLStorageModePrivate.
      */
     @Generated
@@ -176,9 +178,11 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native MTLHeapDescriptor init();
 
     /**
-     * @property cpuCacheMode
-     * @abstract CPU cache mode for the heap. Default is MTLCPUCacheModeDefaultCache.
-     * @discussion All resources created from this heap share the same cache mode.
+     * [@property] cpuCacheMode
+     * 
+     * CPU cache mode for the heap. Default is MTLCPUCacheModeDefaultCache.
+     * 
+     * All resources created from this heap share the same cache mode.
      * CPU cache mode is ignored for MTLStorageModePrivate.
      */
     @Generated
@@ -186,18 +190,22 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native void setCpuCacheMode(@NUInt long value);
 
     /**
-     * @property size
-     * @abstract Requested size of the heap's backing memory.
-     * @discussion The size may be rounded up to GPU page granularity.
+     * [@property] size
+     * 
+     * Requested size of the heap's backing memory.
+     * 
+     * The size may be rounded up to GPU page granularity.
      */
     @Generated
     @Selector("setSize:")
     public native void setSize(@NUInt long value);
 
     /**
-     * @property storageMode
-     * @abstract Storage mode for the heap. Default is MTLStorageModePrivate.
-     * @discussion All resources created from this heap share the same storage mode.
+     * [@property] storageMode
+     * 
+     * Storage mode for the heap. Default is MTLStorageModePrivate.
+     * 
+     * All resources created from this heap share the same storage mode.
      * MTLStorageModeManaged and MTLStorageModeMemoryless are disallowed.
      */
     @Generated
@@ -205,9 +213,11 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native void setStorageMode(@NUInt long value);
 
     /**
-     * @property size
-     * @abstract Requested size of the heap's backing memory.
-     * @discussion The size may be rounded up to GPU page granularity.
+     * [@property] size
+     * 
+     * Requested size of the heap's backing memory.
+     * 
+     * The size may be rounded up to GPU page granularity.
      */
     @Generated
     @Selector("size")
@@ -215,9 +225,11 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native long size();
 
     /**
-     * @property storageMode
-     * @abstract Storage mode for the heap. Default is MTLStorageModePrivate.
-     * @discussion All resources created from this heap share the same storage mode.
+     * [@property] storageMode
+     * 
+     * Storage mode for the heap. Default is MTLStorageModePrivate.
+     * 
+     * All resources created from this heap share the same storage mode.
      * MTLStorageModeManaged and MTLStorageModeMemoryless are disallowed.
      */
     @Generated
@@ -226,9 +238,11 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native long storageMode();
 
     /**
-     * @property hazardTrackingMode
-     * @abstract Set hazard tracking mode for the heap. The default value is MTLHazardTrackingModeDefault.
-     * @discussion For heaps, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeUntracked.
+     * [@property] hazardTrackingMode
+     * 
+     * Set hazard tracking mode for the heap. The default value is MTLHazardTrackingModeDefault.
+     * 
+     * For heaps, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeUntracked.
      * Setting hazardTrackingMode to MTLHazardTrackingModeTracked causes hazard tracking to be enabled heap.
      * When a resource on a hazard tracked heap is modified, reads and writes from all resources suballocated on that heap will be delayed until the modification is complete.
      * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from all resources suballocated on that heap have completed.
@@ -241,9 +255,11 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native long hazardTrackingMode();
 
     /**
-     * @property resourceOptions
-     * @abstract A packed tuple of the storageMode, cpuCacheMode and hazardTrackingMode properties.
-     * @discussion Modifications to this property are reflected in the other properties and vice versa.
+     * [@property] resourceOptions
+     * 
+     * A packed tuple of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * 
+     * Modifications to this property are reflected in the other properties and vice versa.
      */
     @Generated
     @Selector("resourceOptions")
@@ -251,9 +267,11 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native long resourceOptions();
 
     /**
-     * @property hazardTrackingMode
-     * @abstract Set hazard tracking mode for the heap. The default value is MTLHazardTrackingModeDefault.
-     * @discussion For heaps, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeUntracked.
+     * [@property] hazardTrackingMode
+     * 
+     * Set hazard tracking mode for the heap. The default value is MTLHazardTrackingModeDefault.
+     * 
+     * For heaps, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeUntracked.
      * Setting hazardTrackingMode to MTLHazardTrackingModeTracked causes hazard tracking to be enabled heap.
      * When a resource on a hazard tracked heap is modified, reads and writes from all resources suballocated on that heap will be delayed until the modification is complete.
      * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from all resources suballocated on that heap have completed.
@@ -265,27 +283,33 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     public native void setHazardTrackingMode(@NUInt long value);
 
     /**
-     * @property resourceOptions
-     * @abstract A packed tuple of the storageMode, cpuCacheMode and hazardTrackingMode properties.
-     * @discussion Modifications to this property are reflected in the other properties and vice versa.
+     * [@property] resourceOptions
+     * 
+     * A packed tuple of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * 
+     * Modifications to this property are reflected in the other properties and vice versa.
      */
     @Generated
     @Selector("setResourceOptions:")
     public native void setResourceOptions(@NUInt long value);
 
     /**
-     * @property type
-     * @abstract The type of the heap. The default value is MTLHeapTypeAutomatic.
-     * @discussion This constrains the resource creation functions that are available.
+     * [@property] type
+     * 
+     * The type of the heap. The default value is MTLHeapTypeAutomatic.
+     * 
+     * This constrains the resource creation functions that are available.
      */
     @Generated
     @Selector("setType:")
     public native void setType(@NInt long value);
 
     /**
-     * @property type
-     * @abstract The type of the heap. The default value is MTLHeapTypeAutomatic.
-     * @discussion This constrains the resource creation functions that are available.
+     * [@property] type
+     * 
+     * The type of the heap. The default value is MTLHeapTypeAutomatic.
+     * 
+     * This constrains the resource creation functions that are available.
      */
     @Generated
     @Selector("type")

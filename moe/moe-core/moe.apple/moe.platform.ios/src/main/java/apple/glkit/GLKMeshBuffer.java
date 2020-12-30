@@ -44,9 +44,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class GLKMeshBuffer
- * @abstract Mesh buffers created when  needs to allocate memory to back vertex or index data
- * @discussion Memory backing these buffer are OpenGL buffers. Model I/O will load index and vertex data from from a model asset directly in to the OpenGL buffer object.
+ * GLKMeshBuffer
+ * 
+ * Mesh buffers created when  needs to allocate memory to back vertex or index data
+ * 
+ * Memory backing these buffer are OpenGL buffers. Model I/O will load index and vertex data from from a model asset directly in to the OpenGL buffer object.
  */
 @Generated
 @Library("GLKit")
@@ -174,9 +176,11 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     public native void fillDataOffset(NSData data, @NUInt long offset);
 
     /**
-     * @property glBufferName
-     * @abstract glBufferName for buffer object backing vertex/index data
-     * @discussion Many GLKMeshBuffers may reference the same OpenGL buffer object, but each with its own offset.  (i.e. Many GLKMeshBuffers may be suballocated from a single OpenGL buffer object)
+     * [@property] glBufferName
+     * 
+     * glBufferName for buffer object backing vertex/index data
+     * 
+     * Many GLKMeshBuffers may reference the same OpenGL buffer object, but each with its own offset.  (i.e. Many GLKMeshBuffers may be suballocated from a single OpenGL buffer object)
      */
     @Generated
     @Selector("glBufferName")
@@ -196,8 +200,9 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     public native MDLMeshBufferMap map();
 
     /**
-     * @property offset
-     * @abstract Byte offset of the data within the OpenGL buffer
+     * [@property] offset
+     * 
+     * Byte offset of the data within the OpenGL buffer
      */
     @Generated
     @Selector("offset")

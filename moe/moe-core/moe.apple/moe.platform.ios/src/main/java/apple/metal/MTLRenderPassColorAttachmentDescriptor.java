@@ -153,8 +153,9 @@ public class MTLRenderPassColorAttachmentDescriptor extends MTLRenderPassAttachm
     public static native long version_static();
 
     /**
-     * @property clearColor
-     * @abstract The clear color to be used if the loadAction property is MTLLoadActionClear
+     * [@property] clearColor
+     * 
+     * The clear color to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
     @Selector("clearColor")
@@ -166,8 +167,9 @@ public class MTLRenderPassColorAttachmentDescriptor extends MTLRenderPassAttachm
     public native MTLRenderPassColorAttachmentDescriptor init();
 
     /**
-     * @property clearColor
-     * @abstract The clear color to be used if the loadAction property is MTLLoadActionClear
+     * [@property] clearColor
+     * 
+     * The clear color to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
     @Selector("setClearColor:")

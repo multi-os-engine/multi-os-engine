@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @typedef CFStringNormalizationForm
+ * [@typedef] CFStringNormalizationForm
  * This is the type of Unicode normalization forms as described in
  * Unicode Technical Report #15. To normalize for use with file
  * system calls, use CFStringGetFileSystemRepresentation().

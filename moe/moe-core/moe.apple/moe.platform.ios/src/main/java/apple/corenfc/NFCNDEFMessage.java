@@ -28,9 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NFCNDEFMessage
+ * NFCNDEFMessage
  * 
- * @discussion A NDEF message consists of payload records.  The maximum size of the NDEF message is limited to 128KB.
+ * A NDEF message consists of payload records.  The maximum size of the NDEF message is limited to 128KB.
  */
 @Generated
 @Library("CoreNFC")
@@ -108,7 +108,7 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
     public native NFCNDEFMessage initWithCoder(NSCoder coder);
 
     /**
-     * @method initWithNDEFRecords:
+     * initWithNDEFRecords:
      * 
      * @param records  NSArray of NFCNDEFPayload object.  An empty array will create an empty NDEF message.
      */
@@ -138,9 +138,9 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property length
+     * [@property] length
      * 
-     * @discussion Length of the resulting NDEF message in bytes as it would be stored on a NFC tag.
+     * Length of the resulting NDEF message in bytes as it would be stored on a NFC tag.
      */
     @Generated
     @Selector("length")
@@ -148,7 +148,7 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
     public native long length();
 
     /**
-     * @method ndefMessageWithData:
+     * ndefMessageWithData:
      * 
      * @param data  NSData storing raw bytes of a complete NDEF message.  The data content will be validated; all NDEF payloads must
      *              be valid according to the NFC Forum NDEF RTD specification and it shall only contain a single NDEF message.
@@ -165,9 +165,9 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
     public static native Object new_objc();
 
     /**
-     * @property records
+     * [@property] records
      * 
-     * @discussion Array of NFCNDEFPayload records contained in this message.
+     * Array of NFCNDEFPayload records contained in this message.
      */
     @Generated
     @Selector("records")
@@ -182,9 +182,9 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property records
+     * [@property] records
      * 
-     * @discussion Array of NFCNDEFPayload records contained in this message.
+     * Array of NFCNDEFPayload records contained in this message.
      */
     @Generated
     @Selector("setRecords:")

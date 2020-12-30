@@ -24,11 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVCaptureSynchronizedDepthData
- * @abstract
+ * AVCaptureSynchronizedDepthData
+ * 
  *    An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureDepthDataOutput.
  * 
- * @discussion
  *    Depth data, like video, may be dropped if not serviced in a timely fashion.
  */
 @Generated
@@ -86,11 +85,10 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
     public static native String debugDescription_static();
 
     /**
-     * @property depthData
-     * @abstract
+     * [@property] depthData
+     * 
      *    An instance of AVDepthData.
      * 
-     * @discussion
      *    If depthDataWasDropped is YES, the returned depthData was dropped before it could be delivered to you, and thus this AVDepthData is a shell containing format information and calibration data, but no actual pixel map data. This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of synchronized data returned by AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
      */
     @Generated
@@ -98,11 +96,10 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
     public native AVDepthData depthData();
 
     /**
-     * @property depthDataWasDropped
-     * @abstract
+     * [@property] depthDataWasDropped
+     * 
      *    YES if the depth data was dropped.
      * 
-     * @discussion
      *    If YES, inspect -droppedReason for the reason.
      */
     @Generated
@@ -114,11 +111,10 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
     public static native String description_static();
 
     /**
-     * @property droppedReason
-     * @abstract
+     * [@property] droppedReason
+     * 
      *    If depthDataWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
      * 
-     * @discussion
      *    AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
      */
     @Generated

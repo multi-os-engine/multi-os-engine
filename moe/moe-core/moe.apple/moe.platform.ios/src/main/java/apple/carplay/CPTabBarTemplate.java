@@ -140,7 +140,7 @@ public class CPTabBarTemplate extends CPTemplate {
      * The maximum number of tabs that your app may display in a @c CPTabBarTemplate,
      * depending on the entitlements that your app declares.
      * 
-     * @warning The system will throw an exception if your app attempts to display more
+     * [@warning] The system will throw an exception if your app attempts to display more
      * than this number of tabs in your tab bar template.
      */
     @Generated

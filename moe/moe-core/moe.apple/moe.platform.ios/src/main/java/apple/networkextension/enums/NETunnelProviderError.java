@@ -20,21 +20,22 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @typedef NETunnelProviderError
- * @abstract Tunnel Provider error codes
+ * [@typedef] NETunnelProviderError
+ * 
+ * Tunnel Provider error codes
  */
 @Generated
 public final class NETunnelProviderError {
     /**
-     * @const NETunnelProviderErrorNetworkSettingsInvalid The provided tunnel network settings are invalid.
+     * [@const] NETunnelProviderErrorNetworkSettingsInvalid The provided tunnel network settings are invalid.
      */
     @Generated @NInt public static final long Invalid = 0x0000000000000001L;
     /**
-     * @const NETunnelProviderErrorNetworkSettingsCanceled The request to set/clear the tunnel network settings was canceled.
+     * [@const] NETunnelProviderErrorNetworkSettingsCanceled The request to set/clear the tunnel network settings was canceled.
      */
     @Generated @NInt public static final long Canceled = 0x0000000000000002L;
     /**
-     * @const NETunnelProviderErrorNetworkSettingsFailed The request to set/clear the tunnel network settings failed.
+     * [@const] NETunnelProviderErrorNetworkSettingsFailed The request to set/clear the tunnel network settings failed.
      */
     @Generated @NInt public static final long Failed = 0x0000000000000003L;
 

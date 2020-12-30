@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKCharacteristicType
- * @abstract      Represents a type of object that describes a characteristic of the user (such as date of birth).
+ * HKCharacteristicType
+ * 
+ * Represents a type of object that describes a characteristic of the user (such as date of birth).
  */
 @Generated
 @Library("HealthKit")

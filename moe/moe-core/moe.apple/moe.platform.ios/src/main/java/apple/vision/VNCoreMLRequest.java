@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief   The VNCoreMLRequest uses a VNCoreMLModel, that is based on a CoreML MLModel object, to run predictions with that model. Depending on the model the returned
+ * The VNCoreMLRequest uses a VNCoreMLModel, that is based on a CoreML MLModel object, to run predictions with that model. Depending on the model the returned
  *             observation is either a VNClassificationObservation for classifier models, VNPixelBufferObservations for image-to-image models, VNRecognizedObjectObservation for object recognition models or VNCoreMLFeatureValueObservation for everything else.
  */
 @Generated
@@ -108,7 +108,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
             @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     /**
-     * @brief Create a new request with a model.
+     * Create a new request with a model.
      * 
      * @param model		The VNCoreMLModel to be used.
      */
@@ -117,7 +117,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     public native VNCoreMLRequest initWithModel(VNCoreMLModel model);
 
     /**
-     * @brief Create a new request with a model.
+     * Create a new request with a model.
      * 
      * @param model		The VNCoreMLModel to be used.
      * 
@@ -157,7 +157,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief The model from CoreML wrapped in a VNCoreMLModel.
+     * The model from CoreML wrapped in a VNCoreMLModel.
      */
     @Generated
     @Selector("model")

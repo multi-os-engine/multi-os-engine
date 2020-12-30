@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class     HKAudiogramSample
- * @abstract  A sample object representing the results of a standard hearing test.
+ * HKAudiogramSample
+ * 
+ * A sample object representing the results of a standard hearing test.
  */
 @Generated
 @Library("HealthKit")
@@ -60,8 +61,10 @@ public class HKAudiogramSample extends HKSample {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method                   audiogramSampleWithsensitivityPoints:startDate:endDate:metadata:
-     * @abstract                 Creates a new audiogram sample with the specified attributes.
+     * audiogramSampleWithsensitivityPoints:startDate:endDate:metadata:
+     * 
+     * Creates a new audiogram sample with the specified attributes.
+     * 
      * @param sensitivityPoints  Sensitivity data associated with the sample, with a maximum limit of 30 points. Frequencies must be unique, and ordered ascending.
      * @param startDate          The start date for the hearing test.
      * @param endDate            The end date for the hearing test.
@@ -153,8 +156,9 @@ public class HKAudiogramSample extends HKSample {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property  sensitivityPoints
-     * @abstract  The hearing sensitivity readings associated with a hearing test.
+     * [@property]  sensitivityPoints
+     * 
+     * The hearing sensitivity readings associated with a hearing test.
      */
     @Generated
     @Selector("sensitivityPoints")

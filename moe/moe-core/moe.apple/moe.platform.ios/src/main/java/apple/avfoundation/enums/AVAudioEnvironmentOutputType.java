@@ -4,9 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudioEnvironmentOutputType
- * @abstract   Types of output for AVAudio3DMixingRenderingAlgorithmAuto
- * @discussion
+ * [@enum] AVAudioEnvironmentOutputType
+ * 
+ * Types of output for AVAudio3DMixingRenderingAlgorithmAuto
+ * 
  *    The output type determines the rendering method for any input bus using
  *    AVAudio3DMixingRenderingAlgorithmAuto.
  * 

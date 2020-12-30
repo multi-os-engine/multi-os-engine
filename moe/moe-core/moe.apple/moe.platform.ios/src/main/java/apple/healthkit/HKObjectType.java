@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKObjectType
- * @abstract      An abstract class representing a type of object that can be stored by HealthKit.
+ * HKObjectType
+ * 
+ * An abstract class representing a type of object that can be stored by HealthKit.
  */
 @Generated
 @Library("HealthKit")
@@ -201,9 +202,11 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @property      identifier
-     * @abstract      A unique string identifying a type of health object.
-     * @discussion    See HKTypeIdentifiers.h for possible values.
+     * [@property]      identifier
+     * 
+     * A unique string identifying a type of health object.
+     * 
+     * See HKTypeIdentifiers.h for possible values.
      */
     @Generated
     @Selector("identifier")

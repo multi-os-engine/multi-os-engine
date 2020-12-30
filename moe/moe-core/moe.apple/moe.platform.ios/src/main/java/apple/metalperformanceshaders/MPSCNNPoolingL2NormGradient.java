@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNPoolingL2NormGradient
- * @dependency This depends on Metal.framework
- * @discussion Specifies the filter for computing the gradient of the L2-Norm pooling filter.
+ * MPSCNNPoolingL2NormGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the filter for computing the gradient of the L2-Norm pooling filter.
  *             The operation backpropagates a gradient vector using chain rule.
  * 
  *             L2-Norm pooling forward pass is defined as:
@@ -122,8 +123,10 @@ public class MPSCNNPoolingL2NormGradient extends MPSCNNPoolingGradient {
     public native MPSCNNPoolingL2NormGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPoolingL2NormGradient
      * @param      device      The MTLDevice on which to make the MPSCNNPoolingL2NormGradient
      * @return     A new MPSCNNPoolingL2NormGradient object, or nil if failure.
@@ -143,7 +146,8 @@ public class MPSCNNPoolingL2NormGradient extends MPSCNNPoolingGradient {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @abstract  Initialize a gradient L2-norm pooling filter
+     * Initialize a gradient L2-norm pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.

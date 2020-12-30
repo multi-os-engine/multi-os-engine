@@ -20,10 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum WKNavigationResponsePolicy
- * @abstract The policy to pass back to the decision handler from the webView:decidePolicyForNavigationResponse:decisionHandler: method.
- * @constant WKNavigationResponsePolicyCancel   Cancel the navigation.
- * @constant WKNavigationResponsePolicyAllow    Allow the navigation to continue.
+ * [@enum] WKNavigationResponsePolicy
+ * 
+ * The policy to pass back to the decision handler from the webView:decidePolicyForNavigationResponse:decisionHandler: method.
+ * [@constant] WKNavigationResponsePolicyCancel   Cancel the navigation.
+ * [@constant] WKNavigationResponsePolicyAllow    Allow the navigation to continue.
  */
 @Generated
 public final class WKNavigationResponsePolicy {

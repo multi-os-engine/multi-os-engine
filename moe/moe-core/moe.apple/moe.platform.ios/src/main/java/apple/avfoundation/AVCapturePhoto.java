@@ -31,11 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVCapturePhoto
- * @abstract
+ * AVCapturePhoto
+ * 
  *    An object representing a photo in memory, produced by the -captureOutput:didFinishingProcessingPhoto:error: in the AVCapturePhotoCaptureDelegate protocol method.
  * 
- * @discussion
  *    Beginning in iOS 11, AVCapturePhotoOutput's AVCapturePhotoCaptureDelegate supports a simplified callback for delivering image data, namely -captureOutput:didFinishingProcessingPhoto:error:. This callback presents each image result for your capture request as an AVCapturePhoto object, an immutable wrapper from which various properties of the photo capture may be queried, such as the photo's preview pixel buffer, metadata, depth data, camera calibration data, and image bracket specific properties. AVCapturePhoto can wrap file-containerized photo results, such as HEVC encoded image data, containerized in the HEIC file format. CMSampleBufferRef, on the other hand, may only be used to express non file format containerized photo data. For this reason, the AVCapturePhotoCaptureDelegate protocol methods that return CMSampleBuffers have been deprecated in favor of -captureOutput:didFinishingProcessingPhoto:error:. A AVCapturePhoto wraps a single image result. For instance, if you've requested a bracketed capture of 3 images, your callback is called 3 times, each time delivering an AVCapturePhoto.
  */
 @Generated
@@ -53,15 +52,14 @@ public class AVCapturePhoto extends NSObject {
     }
 
     /**
-     * @method CGImageRepresentation
-     * @abstract
+     * CGImageRepresentation
+     * 
      *    Utility method that converts the AVCapturePhoto's primary photo to a CGImage.
      * 
-     * @result
-     *    A CGImageRef, or nil if the conversion process fails.
-     * 
-     * @discussion
      *    Each time you access this method, AVCapturePhoto generates a new CGImageRef. When backed by a compressed container (such as HEIC), the CGImageRepresentation is decoded lazily as needed. When backed by an uncompressed format such as BGRA, it is copied into a separate backing buffer whose lifetime is not tied to that of the AVCapturePhoto. For a 12 megapixel image, a BGRA CGImage represents ~48 megabytes per call. If you only intend to use the CGImage for on-screen rendering, use the previewCGImageRepresentation instead. Note that the physical rotation of the CGImageRef matches that of the main image. Exif orientation has not been applied. If you wish to apply rotation when working with UIImage, you can do so by querying the photo's metadata[kCGImagePropertyOrientation] value, and passing it as the orientation parameter to +[UIImage imageWithCGImage:scale:orientation:]. RAW images always return a CGImageRepresentation of nil. If you wish to make a CGImageRef from a RAW image, use CIRAWFilter in the CoreImage framework.
+     * 
+     * @return
+     *    A CGImageRef, or nil if the conversion process fails.
      */
     @Generated
     @Selector("CGImageRepresentation")
@@ -86,11 +84,10 @@ public class AVCapturePhoto extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property bracketSettings
-     * @abstract
+     * [@property] bracketSettings
+     * 
      *    The AVCaptureBracketedStillImageSettings associated with this photo.
      * 
-     * @discussion
      *    When specifying a bracketed capture using AVCapturePhotoBracketSettings, you specify an array of AVCaptureBracketedStillImageSettings -- one per image in the bracket. This property indicates the AVCaptureBracketedStillImageSettings associated with this particular photo, or nil if this photo is not part of a bracketed capture.
      */
     @Generated
@@ -98,11 +95,10 @@ public class AVCapturePhoto extends NSObject {
     public native AVCaptureBracketedStillImageSettings bracketSettings();
 
     /**
-     * @property cameraCalibrationData
-     * @abstract
+     * [@property] cameraCalibrationData
+     * 
      *    An AVCameraCalibrationData object representing the calibration information for the camera providing the photo.
      * 
-     * @discussion
      *    Camera calibration data is only present if you set AVCapturePhotoSettings.setCameraCalibrationDataDeliveryEnabled to YES. When requesting virtual device constituent photo delivery plus cameraCalibrationDataDeliveryEnabled, camera calibration information is delivered with all resultant photos and is specific to the constituent device producing that photo.
      */
     @Generated
@@ -132,11 +128,10 @@ public class AVCapturePhoto extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * @property depthData
-     * @abstract
+     * [@property] depthData
+     * 
      *    An AVDepthData object wrapping a disparity/depth map associated with this photo.
      * 
-     * @discussion
      *    If you requested depth data delivery by calling -[AVCapturePhotoSettings setDepthDataDeliveryEnabled:YES], this property offers access to the resulting AVDepthData object. Nil is returned if you did not request depth data delivery. Note that the depth data is only embedded in the photo's internal file format container if you set -[AVCapturePhotoSettings setEmbedsDepthDataInPhoto:YES].
      */
     @Generated
@@ -148,11 +143,10 @@ public class AVCapturePhoto extends NSObject {
     public static native String description_static();
 
     /**
-     * @property embeddedThumbnailPhotoFormat
-     * @abstract
+     * [@property] embeddedThumbnailPhotoFormat
+     * 
      *    The format of the embedded thumbnail contained in this AVCapturePhoto.
      * 
-     * @discussion
      *    If you requested an embedded thumbnail image by calling -[AVCapturePhotoSettings setEmbeddedThumbnailPhotoFormat:] with a non-nil value, this property offers access to the resolved embedded thumbnail AVVideoSettings dictionary. Nil is returned if you did not request an embedded thumbnail image.
      */
     @Generated
@@ -160,11 +154,11 @@ public class AVCapturePhoto extends NSObject {
     public native NSDictionary<String, ?> embeddedThumbnailPhotoFormat();
 
     /**
-     * @method fileDataRepresentation
-     * @abstract
+     * fileDataRepresentation
+     * 
      *    Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType) specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG).
      * 
-     * @result
+     * @return
      *    An NSData containing bits in the file container's format, or nil if the flattening process fails.
      */
     @Generated
@@ -172,8 +166,8 @@ public class AVCapturePhoto extends NSObject {
     public native NSData fileDataRepresentation();
 
     /**
-     * @method fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:
-     * @abstract
+     * fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:
+     * 
      *    Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType) specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG), and allows you to replace metadata, thumbnail, and depth data in the process.
      * 
      * @param replacementMetadata
@@ -184,7 +178,7 @@ public class AVCapturePhoto extends NSObject {
      *    A pixel buffer containing a source image to be encoded to the file as the replacement thumbnail image. To preserve the existing embedded thumbnail photo to the file, pass self.embeddedThumbnailPhotoFormat as your replacementEmbeddedThumbnailPhotoFormat parameter and nil as your replacementEmbeddedThumbnailPixelBuffer parameter. To strip the existing embedded thumbnail, pass nil for both replacementEmbeddedThumbnailPhotoFormat and replacementEmbeddedThumbnailPixelBuffer. To replace the existing embedded thumbnail photo, pass both a non-nil replacementThumbnailPixelBuffer and replacementEmbeddedThumbnailPhotoFormat dictionary.
      * @param replacementDepthData
      *    Replacement depth data to be written to the flattened file container. To preserve existing depth data to the file, pass self.depthData. To strip it, pass nil. To replace it, pass a new AVDepthData instance.
-     * @result
+     * @return
      *    An NSData containing bits in the file container's format, or nil if the flattening process fails.
      */
     @Generated
@@ -217,11 +211,10 @@ public class AVCapturePhoto extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @property rawPhoto
-     * @abstract
+     * [@property] rawPhoto
+     * 
      *    This property returns YES if this photo is a RAW image.
      * 
-     * @discussion
      *    Your AVCapturePhotoCaptureDelegate's -captureOutput:didFinishingProcessingPhoto:error: method may be called one or more times with image results, including RAW or non-RAW images. This property distinguishes RAW from non-RAW image results, for instance, if you've requested a RAW + JPEG capture.
      */
     @Generated
@@ -237,11 +230,10 @@ public class AVCapturePhoto extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property lensStabilizationStatus
-     * @abstract
+     * [@property] lensStabilizationStatus
+     * 
      *    The status of the lens stabilization module during capture of this photo.
      * 
-     * @discussion
      *    In configurations where lens stabilization (OIS) is unsupported, AVCaptureLensStabilizationStatusUnsupported is returned. If lens stabilization is supported, but this photo is not part of a bracketed capture in which -[AVCapturePhotoBracketSettings setLensStabilizationEnabled:YES] was called, AVCaptureLensStabilizationStatusOff is returned. Otherwise a lens stabilization status is returned indicating how lens stabilization was applied during the capture.
      */
     @Generated
@@ -250,11 +242,10 @@ public class AVCapturePhoto extends NSObject {
     public native long lensStabilizationStatus();
 
     /**
-     * @property metadata
-     * @abstract
+     * [@property] metadata
+     * 
      *    An ImageIO property style dictionary of metadata associated with this photo.
      * 
-     * @discussion
      *    Valid metadata keys are found in <ImageIO/CGImageProperties.h>, such as kCGImagePropertyOrientation, kCGImagePropertyExifDictionary, kCGImagePropertyMakerAppleDictionary, etc.
      */
     @Generated
@@ -268,11 +259,10 @@ public class AVCapturePhoto extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property photoCount
-     * @abstract
+     * [@property] photoCount
+     * 
      *    This photo's index (1-based) in the total expected photo count.
      * 
-     * @discussion
      *    The resolvedSettings.expectedPhotoCount property indicates the total number of images that will be returned for a given capture request. This property indicates this photo's index (1-based). When you receive a -captureOutput:didFinishProcessingPhoto:error: callback with a photo whose photoCount matches resolvedSettings.expectedPhotoCount, you know you've received the last one for the given capture request.
      */
     @Generated
@@ -281,11 +271,10 @@ public class AVCapturePhoto extends NSObject {
     public native long photoCount();
 
     /**
-     * @property pixelBuffer
-     * @abstract
+     * [@property] pixelBuffer
+     * 
      *    For uncompressed or RAW captures, this property offers access to the pixel data.
      * 
-     * @discussion
      *    Uncompressed captures, such as '420f' or 'BGRA', or RAW captures, such as 'bgg4', present pixel data as a CVPixelBuffer. This property is analogous to CMSampleBufferGetImageBuffer(). The pixel buffer contains only the minimal attachments required for correct display. Compressed captures, such as 'jpeg', return nil.
      */
     @Generated
@@ -293,26 +282,24 @@ public class AVCapturePhoto extends NSObject {
     public native CVBufferRef pixelBuffer();
 
     /**
-     * @method CGImageRepresentation
-     * @abstract
+     * CGImageRepresentation
+     * 
      *    Utility method that converts the AVCapturePhoto's preview photo to a CGImage.
      * 
-     * @result
-     *    A CGImageRef, or nil if the conversion process fails, or if you did not request a preview photo.
-     * 
-     * @discussion
      *    Each time you access this method, AVCapturePhoto generates a new CGImageRef. This CGImageRepresentation is a RGB rendering of the previewPixelBuffer property. If you did not request a preview photo by setting the -[AVCapturePhotoSettings previewPhotoFormat] property, this method returns nil. Note that the physical rotation of the CGImageRef matches that of the main image. Exif orientation has not been applied. If you wish to apply rotation when working with UIImage, you can do so by querying the photo's metadata[kCGImagePropertyOrientation] value, and passing it as the orientation parameter to +[UIImage imageWithCGImage:scale:orientation:].
+     * 
+     * @return
+     *    A CGImageRef, or nil if the conversion process fails, or if you did not request a preview photo.
      */
     @Generated
     @Selector("previewCGImageRepresentation")
     public native CGImageRef previewCGImageRepresentation();
 
     /**
-     * @property previewPixelBuffer
-     * @abstract
+     * [@property] previewPixelBuffer
+     * 
      *    This property offers access to the preview image pixel data if you've requested it.
      * 
-     * @discussion
      *    If you requested a preview image by calling -[AVCapturePhotoSettings setPreviewPhotoFormat:] with a non-nil value, this property offers access to the resulting preview image pixel data, and is analogous to CMSampleBufferGetImageBuffer(). The pixel buffer contains only the minimal attachments required for correct display. Nil is returned if you did not request a preview image.
      */
     @Generated
@@ -328,11 +315,10 @@ public class AVCapturePhoto extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property resolvedSettings
-     * @abstract
+     * [@property] resolvedSettings
+     * 
      *    The AVCaptureResolvedPhotoSettings associated with all photo results for a given -[AVCapturePhotoOutput capturePhotoWithSettings:delegate:] request.
      * 
-     * @discussion
      *    Even in the event of an error, the resolved settings are always non nil.
      */
     @Generated
@@ -340,11 +326,10 @@ public class AVCapturePhoto extends NSObject {
     public native AVCaptureResolvedPhotoSettings resolvedSettings();
 
     /**
-     * @property sequenceCount
-     * @abstract
+     * [@property] sequenceCount
+     * 
      *    1-based sequence count of the photo.
      * 
-     * @discussion
      *    If this photo is part of a bracketed capture (invoked using AVCapturePhotoBracketSettings), this property indicates the current result's count in the sequence, starting with 1 for the first result, or 0 if this photo is not part of a bracketed capture.
      */
     @Generated
@@ -357,11 +342,10 @@ public class AVCapturePhoto extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property sourceDeviceType
-     * @abstract
+     * [@property] sourceDeviceType
+     * 
      *    The device type of the source camera providing the photo.
      * 
-     * @discussion
      *    When taking a virtual device constituent photo capture, you may query this property to find out the source type of the photo. For instance, on a DualCamera, resulting photos will be of sourceDeviceType AVCaptureDeviceTypeBuiltInWideCamera, or AVCaptureDeviceTypeBuiltInTelephotoCamera. For all other types of capture, the source device type is equal to the -[AVCaptureDevice deviceType] of the AVCaptureDevice to which the AVCapturePhotoOutput is connected. Returns nil if the source of the photo is not an AVCaptureDevice.
      */
     @Generated
@@ -373,11 +357,10 @@ public class AVCapturePhoto extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property timestamp
-     * @abstract
+     * [@property] timestamp
+     * 
      *    The time at which this image was captured, synchronized to the masterClock of the AVCaptureSession
      * 
-     * @discussion
      *    The timestamp property indicates the time the image was captured, and is analogous to CMSampleBufferGetPresentationTimeStamp(). If an error was provided in the -captureOutput:didFinishingProcessingPhoto:error: callback, timestamp returns kCMTimeInvalid.
      */
     @Generated
@@ -391,13 +374,13 @@ public class AVCapturePhoto extends NSObject {
     public static native long version_static();
 
     /**
-     * @method fileDataRepresentationWithCustomizer:
-     * @abstract
+     * fileDataRepresentationWithCustomizer:
+     * 
      *    Flattens the AVCapturePhoto to an NSData using the file container format (processedFileType or rawFileType) specified in the AVCapturePhotoSettings (e.g. JFIF, HEIF, DNG), and allows you to strip or replace various pieces of metadata in the process.
      * 
      * @param customizer
      *    An object conforming to the AVCapturePhotoFileDataRepresentationCustomizer protocol that will be called synchronously to provide customization of metadata written to the container format. An NSInvalidArgumentException is thrown if you pass nil.
-     * @result
+     * @return
      *    An NSData containing bits in the file container's format, or nil if the flattening process fails.
      */
     @Generated
@@ -406,11 +389,10 @@ public class AVCapturePhoto extends NSObject {
             @Mapped(ObjCObjectMapper.class) AVCapturePhotoFileDataRepresentationCustomizer customizer);
 
     /**
-     * @property portraitEffectsMatte
-     * @abstract
+     * [@property] portraitEffectsMatte
+     * 
      *    An AVPortraitEffectsMatte object wrapping a matte associated with this photo.
      * 
-     * @discussion
      *    If you requested portrait effects matte delivery by calling -[AVCapturePhotoSettings setPortraitEffectsMatteDeliveryEnabled:YES], this property offers access to the resulting AVPortraitEffectsMatte object. Nil is returned if you did not request portrait effects matte delivery. Note that the portrait effects matte is only embedded in the photo's internal file format container if you set -[AVCapturePhotoSettings setEmbedsPortraitEffectsMatteInPhoto:YES].
      */
     @Generated
@@ -418,17 +400,16 @@ public class AVCapturePhoto extends NSObject {
     public native AVPortraitEffectsMatte portraitEffectsMatte();
 
     /**
-     * @method semanticSegmentationMatteForType:
-     * @abstract
+     * semanticSegmentationMatteForType:
+     * 
      *    An accessor for semantic segmentation mattes associated with this photo.
+     * 
+     *    If you requested one or more semantic segmentation mattes by calling -[AVCapturePhotoSettings setEnabledSemanticSegmentationMatteTypes:] with a non-empty array of types, this property offers access to the resulting AVSemanticSegmentationMatte objects. Nil is returned if you did not request semantic segmentation matte delivery, or if no mattes of the specified type are available. Note that semantic segmentation mattes are only embedded in the photo's internal file format container if you call -[AVCapturePhotoSettings setEmbedsSemanticSegmentationMattesInPhoto:YES].
      * 
      * @param semanticSegmentationMatteType
      *    The matte type of interest (hair, skin, etc).
-     * @result
+     * @return
      *    An instance of AVSemanticSegmentationMatte, or nil if none could be found for the specified type.
-     * 
-     * @discussion
-     *    If you requested one or more semantic segmentation mattes by calling -[AVCapturePhotoSettings setEnabledSemanticSegmentationMatteTypes:] with a non-empty array of types, this property offers access to the resulting AVSemanticSegmentationMatte objects. Nil is returned if you did not request semantic segmentation matte delivery, or if no mattes of the specified type are available. Note that semantic segmentation mattes are only embedded in the photo's internal file format container if you call -[AVCapturePhotoSettings setEmbedsSemanticSegmentationMattesInPhoto:YES].
      */
     @Generated
     @Selector("semanticSegmentationMatteForType:")

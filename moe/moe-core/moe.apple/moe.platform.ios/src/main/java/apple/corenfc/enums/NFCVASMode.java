@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum NFCVASMode
+ * [@enum] NFCVASMode
  * 
- * @constant NFCVASModeURLOnly     Reserved.
- * @constant NFCVASModeNormal      Full VAS protocol.
+ * [@constant] NFCVASModeURLOnly     Reserved.
+ * [@constant] NFCVASModeNormal      Full VAS protocol.
  */
 @Generated
 public final class NFCVASMode {

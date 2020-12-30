@@ -43,10 +43,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCommandBuffer
- * @dependency This depends on Metal.framework
- * @abstract   A MPSCommandBuffer object is used to wrap an existing command buffer with MPS specific options.
- * @discussion A MPS kernel typically operates between a fixed set of inputs and outputs.
+ * MPSCommandBuffer
+ * [@dependency] This depends on Metal.framework
+ * 
+ * A MPSCommandBuffer object is used to wrap an existing command buffer with MPS specific options.
+ * 
+ * A MPS kernel typically operates between a fixed set of inputs and outputs.
  *             The MPSCommandBuffer class provides a way to add further encode-time parameters
  *             to the encode call using the command buffer. Currently the only parameter included in the
  *             MPSCommandBuffer that all MPS kernels support is the the predicate option,
@@ -129,8 +131,9 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property   commandBuffer
-     * @abstract   The Metal Command Buffer that was used to initialize this object.
+     * [@property]   commandBuffer
+     * 
+     * The Metal Command Buffer that was used to initialize this object.
      */
     @Generated
     @Selector("commandBuffer")
@@ -138,8 +141,9 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native MTLCommandBuffer commandBuffer();
 
     /**
-     * @abstract   Initializes a MPSCommandBuffer object from a given command queue.
-     * @result     A pointer to the newly initialized MPSCommandBuffer object.
+     * Initializes a MPSCommandBuffer object from a given command queue.
+     * 
+     * @return     A pointer to the newly initialized MPSCommandBuffer object.
      */
     @Generated
     @Selector("commandBufferFromCommandQueue:")
@@ -147,8 +151,9 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
             @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
 
     /**
-     * @abstract   Initializes a MPSCommandBuffer object with given MTLCommandBuffer.
-     * @result     A pointer to the newly initialized MPSCommandBuffer object.
+     * Initializes a MPSCommandBuffer object with given MTLCommandBuffer.
+     * 
+     * @return     A pointer to the newly initialized MPSCommandBuffer object.
      */
     @Generated
     @Selector("commandBufferWithCommandBuffer:")
@@ -165,8 +170,9 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native void commit();
 
     /**
-     * @abstract   Commit work encoded so far and continue with a new underlying command buffer
-     * @discussion This method commits the underlying root MTLCommandBuffer, and makes
+     * Commit work encoded so far and continue with a new underlying command buffer
+     * 
+     * This method commits the underlying root MTLCommandBuffer, and makes
      *             a new one on the same command queue. The MPS heap is moved forward
      *             to the new command buffer such that temporary objects used by
      *             the previous command buffer can be still be used with the new one.
@@ -252,9 +258,11 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public static native long hash_static();
 
     /**
-     * @property   heapProvider
-     * @abstract   A application supplied object to allocate MTLHeaps for MPS
-     * @discussion By default this is nil, which will use MPS' device level global heap cache to
+     * [@property]   heapProvider
+     * 
+     * A application supplied object to allocate MTLHeaps for MPS
+     * 
+     * By default this is nil, which will use MPS' device level global heap cache to
      *             allocate the heaps. This is a reasonable choice. However, it may be inefficient
      *             if you are keeping your own MTLHeap, since there will be two pessimistically
      *             sized free stores which may be larger than is strictly necessary, and of course
@@ -276,8 +284,9 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native MPSCommandBuffer init();
 
     /**
-     * @abstract   Initializes an empty MPSCommandBuffer object with given MTLCommandBuffer.
-     * @result     A pointer to the newly initialized MPSCommandBuffer object.
+     * Initializes an empty MPSCommandBuffer object with given MTLCommandBuffer.
+     * 
+     * @return     A pointer to the newly initialized MPSCommandBuffer object.
      */
     @Generated
     @Selector("initWithCommandBuffer:")
@@ -334,19 +343,22 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native void popDebugGroup();
 
     /**
-     * @property   predicate
-     * @abstract   A GPU predicate object. Default: nil.
+     * [@property]   predicate
+     * 
+     * A GPU predicate object. Default: nil.
      */
     @Generated
     @Selector("predicate")
     public native MPSPredicate predicate();
 
     /**
-     * @abstract   Prefetch heap into the MPS command buffer heap cache.
-     * @discussion If there is not sufficient free storage in the MPS heap for the command buffer for allocations of total size size,
+     * Prefetch heap into the MPS command buffer heap cache.
+     * 
+     * If there is not sufficient free storage in the MPS heap for the command buffer for allocations of total size size,
      *             pre-warm the MPS heap with a new MTLHeap allocation of sufficient size.  If this size turns out to be too small
      *             MPS may ask for more heaps later to cover additional allocations. If heapProvider is not nil, the heapProvider
      *             will be used.
+     * 
      * @param      size        The minimum size of the free store needed
      */
     @Generated
@@ -395,9 +407,11 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native boolean retainedReferences();
 
     /**
-     * @property   rootCommandBuffer
-     * @abstract   The base MTLCommandBuffer underlying the MPSCommandBuffer
-     * @discussion MPSCommandBuffers may wrap other MPSCommandBuffers, in the process
+     * [@property]   rootCommandBuffer
+     * 
+     * The base MTLCommandBuffer underlying the MPSCommandBuffer
+     * 
+     * MPSCommandBuffers may wrap other MPSCommandBuffers, in the process
      *             creating what is in effect a stack of predicate objects that may be
      *             pushed or popped by making new MPSCommandBuffers or by calling -commandBuffer.
      *             In some circumstances, it is preferable to use the root command buffer,
@@ -410,9 +424,11 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native MTLCommandBuffer rootCommandBuffer();
 
     /**
-     * @property   heapProvider
-     * @abstract   A application supplied object to allocate MTLHeaps for MPS
-     * @discussion By default this is nil, which will use MPS' device level global heap cache to
+     * [@property]   heapProvider
+     * 
+     * A application supplied object to allocate MTLHeaps for MPS
+     * 
+     * By default this is nil, which will use MPS' device level global heap cache to
      *             allocate the heaps. This is a reasonable choice. However, it may be inefficient
      *             if you are keeping your own MTLHeap, since there will be two pessimistically
      *             sized free stores which may be larger than is strictly necessary, and of course
@@ -433,8 +449,9 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native void setLabel(String value);
 
     /**
-     * @property   predicate
-     * @abstract   A GPU predicate object. Default: nil.
+     * [@property]   predicate
+     * 
+     * A GPU predicate object. Default: nil.
      */
     @Generated
     @Selector("setPredicate:")

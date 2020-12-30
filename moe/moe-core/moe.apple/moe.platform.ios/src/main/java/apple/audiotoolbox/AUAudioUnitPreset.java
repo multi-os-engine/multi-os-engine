@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class	AUAudioUnitPreset
- * @brief	A collection of parameter settings provided by the audio unit implementor, producing a
+ * AUAudioUnitPreset
+ * 
+ * A collection of parameter settings provided by the audio unit implementor, producing a
  * 		useful sound or starting point.
  */
 @Generated
@@ -175,16 +176,18 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     public native AUAudioUnitPreset initWithCoder(NSCoder coder);
 
     /**
-     * @property	name
-     * @brief		The preset's name.
+     * [@property]	name
+     * 
+     * The preset's name.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @property	number
-     * @brief		The preset's unique numeric identifier.
+     * [@property]	number
+     * 
+     * The preset's unique numeric identifier.
      */
     @Generated
     @Selector("number")
@@ -192,16 +195,18 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     public native long number();
 
     /**
-     * @property	name
-     * @brief		The preset's name.
+     * [@property]	name
+     * 
+     * The preset's name.
      */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
     /**
-     * @property	number
-     * @brief		The preset's unique numeric identifier.
+     * [@property]	number
+     * 
+     * The preset's unique numeric identifier.
      */
     @Generated
     @Selector("setNumber:")

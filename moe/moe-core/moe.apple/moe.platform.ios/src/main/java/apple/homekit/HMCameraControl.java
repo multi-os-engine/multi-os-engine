@@ -40,7 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Represents a generic camera control.
+ * Represents a generic camera control.
  */
 @Generated
 @Library("HomeKit")

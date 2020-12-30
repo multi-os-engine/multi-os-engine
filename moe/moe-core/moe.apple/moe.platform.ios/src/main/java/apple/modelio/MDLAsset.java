@@ -52,11 +52,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLAsset
+ * MDLAsset
  * 
- * @abstract An MDLAsset represents the contents of a model file.
+ * An MDLAsset represents the contents of a model file.
  * 
- * @discussion Each asset contains a collection of hierarchies of objects, where 
+ * Each asset contains a collection of hierarchies of objects, where
  *             each object in the asset is the top level of a hierarchy. Objects
  *             include transforms, lights, cameras, and meshes.
  * 
@@ -119,9 +119,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @method canImportFileExtension:
-     * @abstract Indicates whether MDLAsset object can export asset to resource with
+     * canImportFileExtension:
+     * 
+     * Indicates whether MDLAsset object can export asset to resource with
      *           the given extension
+     * 
      * @return YES is returned if MDLAsset is able is able to export assets to 
      *         resources with the given extension
      */
@@ -130,9 +132,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public static native boolean canExportFileExtension(String extension);
 
     /**
-     * @method canImportFileExtension:
-     * @abstract Indicates whether MDLAsset object can be initialized with resource
+     * canImportFileExtension:
+     * 
+     * Indicates whether MDLAsset object can be initialized with resource
      *           with the given extension
+     * 
      * @return YES is returned if MDLAsset is able to load and represent assets with 
      *           the given extension
      */
@@ -225,26 +229,31 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public static native long version_static();
 
     /**
-     * @property URL
-     * @abstract URL used to create the asset
-     * @discussion If the asset was not created with a URL, nil will be returned.
+     * [@property] URL
+     * 
+     * URL used to create the asset
+     * 
+     * If the asset was not created with a URL, nil will be returned.
      */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
     /**
-     * @method addObject:
-     * @abstract Add a top level object to an asset.
-     * @discussion If the object was already in the asset, this has no effect.
+     * addObject:
+     * 
+     * Add a top level object to an asset.
+     * 
+     * If the object was already in the asset, this has no effect.
      */
     @Generated
     @Selector("addObject:")
     public native void addObject(MDLObject object);
 
     /**
-     * @property bufferAllocator
-     * @abstract  Allocator used to create vertex and index buffers
+     * [@property] bufferAllocator
+     * 
+     * Allocator used to create vertex and index buffers
      */
     @Generated
     @Selector("bufferAllocator")
@@ -252,12 +261,15 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native MDLMeshBufferAllocator bufferAllocator();
 
     /**
-     * @method childObjectsOfClass:
-     * @abstract Inspects an asset's hierarchy for objects of the specified class type
-     * @return returns an NSArray of all objects in the asset matching the requested class
-     * @discussion This can be used to get references to all MDLMesh objects, MDLLights,
+     * childObjectsOfClass:
+     * 
+     * Inspects an asset's hierarchy for objects of the specified class type
+     * 
+     * This can be used to get references to all MDLMesh objects, MDLLights,
      *             etc. if objectClass is not a subclass of MDLObject, an exception will be
      *             raised.
+     * 
+     * @return returns an NSArray of all objects in the asset matching the requested class
      */
     @Generated
     @Selector("childObjectsOfClass:")
@@ -270,8 +282,9 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property count
-     * @abstract The number of top level objects
+     * [@property] count
+     * 
+     * The number of top level objects
      */
     @Generated
     @Selector("count")
@@ -285,9 +298,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
             @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     /**
-     * @property endTime
-     * @abstract End time bracket of animation data
-     * @discussion If no animation data was specified by resource or resource incapable
+     * [@property] endTime
+     * 
+     * End time bracket of animation data
+     * 
+     * If no animation data was specified by resource or resource incapable
      *             of specifying animation data, this value defaults to 0. If the
      *             endTime was set explicitly, then the value of endTime will be the
      *             greater of the set value and the animated values.
@@ -297,8 +312,10 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native double endTime();
 
     /**
-     * @method exportAssetToURL:
-     * @abstract Export an asset to the specified URL.
+     * exportAssetToURL:
+     * 
+     * Export an asset to the specified URL.
+     * 
      * @return YES is returned if exporting proceeded successfully,
      */
     @Generated
@@ -306,8 +323,10 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native boolean exportAssetToURL(NSURL URL);
 
     /**
-     * @method exportAssetToURL:error:
-     * @abstract Export an asset to the specified URL.
+     * exportAssetToURL:error:
+     * 
+     * Export an asset to the specified URL.
+     * 
      * @return YES is returned if exporting proceeded successfully,
      */
     @Generated
@@ -315,9 +334,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native boolean exportAssetToURLError(NSURL URL, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @property frameInterval
-     * @abstract Inherent frame rate of an asset
-     * @discussion If no framerate was specified by resource or resource uncapable of 
+     * [@property] frameInterval
+     * 
+     * Inherent frame rate of an asset
+     * 
+     * If no framerate was specified by resource or resource uncapable of
      *             specifying framerate, this value defaults to 0
      */
     @Generated
@@ -329,8 +350,9 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native MDLAsset init();
 
     /**
-     * @method initWithBufferAllocator:
-     * @abstract Initialize an empty MDLAsset with a buffer allocator to be used during
+     * initWithBufferAllocator:
+     * 
+     * Initialize an empty MDLAsset with a buffer allocator to be used during
      *           other operations.
      */
     @Generated
@@ -339,10 +361,12 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
             @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     /**
-     * @method initWithURL:
-     * @abstract Initialize an MDLAsset using the contents of the resource located at 
+     * initWithURL:
+     * 
+     * Initialize an MDLAsset using the contents of the resource located at
      *           the indicated URL
-     * @discussion Vertex layout (i.e. vertexDescriptor) will be specified by ModelIO 
+     * 
+     * Vertex layout (i.e. vertexDescriptor) will be specified by ModelIO
      *             depending on attributes of the resource.  Buffers will be allocated 
      *             using a default NSData based allocator
      * 
@@ -353,12 +377,13 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native MDLAsset initWithURL(NSURL URL);
 
     /**
-     * @method initWithURL:vertexDescriptor:bufferAllocator:
-     * @abstract Initialize an MDLAsset using the contents of the resource located at 
+     * initWithURL:vertexDescriptor:bufferAllocator:
+     * 
+     * Initialize an MDLAsset using the contents of the resource located at
      *           URL, ensuring that the asset conforms to the supplied vertexDescriptor, 
      *           and buffers are allocated in the supplied allocator
      * 
-     * @discussion The default behavior is to triangulate any discovered meshes and to
+     * The default behavior is to triangulate any discovered meshes and to
      *             conform the mesh to the supplied vertexDescriptor.
      * 
      *             If nil is passed as the vertexDescriptor, then a vertexDescriptor
@@ -375,12 +400,13 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
             @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     /**
-     * @method initWithURL:vertexDescriptor:bufferAllocator:preserveTopology:error:
-     * @abstract Same as initWithURL:vertexDescriptor:bufferAllocator: except that
+     * initWithURL:vertexDescriptor:bufferAllocator:preserveTopology:error:
+     * 
+     * Same as initWithURL:vertexDescriptor:bufferAllocator: except that
      *           if preserveTopology is YES, a topology buffer might be created on the
      *           submeshes.
      * 
-     * @discussion If all faces in a submesh have the same vertex count, then the 
+     * If all faces in a submesh have the same vertex count, then the
      *             submesh will a geometry type corresponding to that vertex count.
      *             For example, if all faces have four vertices, then the geometry
      *             type will be MDLGeometryTypeQuads. If faces have a varying number
@@ -396,8 +422,10 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @property masters
-     * @abstract Master objects that can be instanced into the asset's object hierarchy
+     * [@property] masters
+     * 
+     * Master objects that can be instanced into the asset's object hierarchy
+     * 
      * @see MDLObjectContainerComponent
      */
     @Generated
@@ -406,34 +434,40 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native MDLObjectContainerComponent masters();
 
     /**
-     * @method objectAtIndex:
-     * @abstract return the indexed top level object
+     * objectAtIndex:
+     * 
+     * return the indexed top level object
      */
     @Generated
     @Selector("objectAtIndex:")
     public native MDLObject objectAtIndex(@NUInt long index);
 
     /**
-     * @method objectAtIndexedSubscript:
-     * @abstract return the indexed top level object
+     * objectAtIndexedSubscript:
+     * 
+     * return the indexed top level object
      */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MDLObject objectAtIndexedSubscript(@NUInt long index);
 
     /**
-     * @method removeObject:
-     * @abstract Remove a top level object from an asset.
-     * @discussion If the object not in the asset, this has no effect.
+     * removeObject:
+     * 
+     * Remove a top level object from an asset.
+     * 
+     * If the object not in the asset, this has no effect.
      */
     @Generated
     @Selector("removeObject:")
     public native void removeObject(MDLObject object);
 
     /**
-     * @property endTime
-     * @abstract End time bracket of animation data
-     * @discussion If no animation data was specified by resource or resource incapable
+     * [@property] endTime
+     * 
+     * End time bracket of animation data
+     * 
+     * If no animation data was specified by resource or resource incapable
      *             of specifying animation data, this value defaults to 0. If the
      *             endTime was set explicitly, then the value of endTime will be the
      *             greater of the set value and the animated values.
@@ -443,9 +477,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native void setEndTime(double value);
 
     /**
-     * @property frameInterval
-     * @abstract Inherent frame rate of an asset
-     * @discussion If no framerate was specified by resource or resource uncapable of 
+     * [@property] frameInterval
+     * 
+     * Inherent frame rate of an asset
+     * 
+     * If no framerate was specified by resource or resource uncapable of
      *             specifying framerate, this value defaults to 0
      */
     @Generated
@@ -453,8 +489,10 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native void setFrameInterval(double value);
 
     /**
-     * @property masters
-     * @abstract Master objects that can be instanced into the asset's object hierarchy
+     * [@property] masters
+     * 
+     * Master objects that can be instanced into the asset's object hierarchy
+     * 
      * @see MDLObjectContainerComponent
      */
     @Generated
@@ -462,9 +500,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native void setMasters(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
 
     /**
-     * @property startTime
-     * @abstract Start time bracket of animation data
-     * @discussion If no animation data was specified by resource or resource incapable 
+     * [@property] startTime
+     * 
+     * Start time bracket of animation data
+     * 
+     * If no animation data was specified by resource or resource incapable
      *             of specifying animation data, this value defaults to 0. If startTime
      *             was set explicitly, then the value of startTime will be the lesser
      *             of the set value and the animated values.
@@ -474,9 +514,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native void setStartTime(double value);
 
     /**
-     * @property startTime
-     * @abstract Start time bracket of animation data
-     * @discussion If no animation data was specified by resource or resource incapable 
+     * [@property] startTime
+     * 
+     * Start time bracket of animation data
+     * 
+     * If no animation data was specified by resource or resource incapable
      *             of specifying animation data, this value defaults to 0. If startTime
      *             was set explicitly, then the value of startTime will be the lesser
      *             of the set value and the animated values.
@@ -486,17 +528,21 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native double startTime();
 
     /**
-     * @property vertexDescriptor
-     * @abstract Vertex descriptor set upon asset initialization
-     * @discussion Will be nil if there was no descriptor set
+     * [@property] vertexDescriptor
+     * 
+     * Vertex descriptor set upon asset initialization
+     * 
+     * Will be nil if there was no descriptor set
      */
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();
 
     /**
-     * @property animations
-     * @abstract Animations that can be bound to MDLObjects (@see MDLAnimationBindComponent)
+     * [@property] animations
+     * 
+     * Animations that can be bound to MDLObjects (@see MDLAnimationBindComponent)
+     * 
      * @see MDLObjectContainerComponent
      */
     @Generated
@@ -505,8 +551,9 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native MDLObjectContainerComponent animations();
 
     /**
-     * @method loadTextures
-     * @abstract Iterates over all material properties on all materials. If they are string
+     * loadTextures
+     * 
+     * Iterates over all material properties on all materials. If they are string
      *           values or NSURL values, and can be resolved as textures, then the string 
      *           and NSURL values will be replaced by MDLTextureSampler values.
      */
@@ -515,16 +562,18 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native void loadTextures();
 
     /**
-     * @abstract Return the object at the specified path, or nil if none exists there
+     * Return the object at the specified path, or nil if none exists there
      */
     @Generated
     @Selector("objectAtPath:")
     public native MDLObject objectAtPath(String path);
 
     /**
-     * @property AssetResolver
-     * @abstract Resolver asset that helps find associated files
-     * @discussion The default asset resolver is the RelativeAssetResolver
+     * [@property] AssetResolver
+     * 
+     * Resolver asset that helps find associated files
+     * 
+     * The default asset resolver is the RelativeAssetResolver
      */
     @Generated
     @Selector("resolver")
@@ -532,8 +581,10 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native MDLAssetResolver resolver();
 
     /**
-     * @property animations
-     * @abstract Animations that can be bound to MDLObjects (@see MDLAnimationBindComponent)
+     * [@property] animations
+     * 
+     * Animations that can be bound to MDLObjects (@see MDLAnimationBindComponent)
+     * 
      * @see MDLObjectContainerComponent
      */
     @Generated
@@ -541,9 +592,11 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     public native void setAnimations(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
 
     /**
-     * @property AssetResolver
-     * @abstract Resolver asset that helps find associated files
-     * @discussion The default asset resolver is the RelativeAssetResolver
+     * [@property] AssetResolver
+     * 
+     * Resolver asset that helps find associated files
+     * 
+     * The default asset resolver is the RelativeAssetResolver
      */
     @Generated
     @Selector("setResolver:")

@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Descriptor for triangle geometry
+ * Descriptor for triangle geometry
  */
 @Generated
 @Library("Metal")
@@ -103,7 +103,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native MTLBuffer indexBuffer();
 
     /**
-     * @brief Index buffer offset. Must be a multiple of the index data type size and must be aligned to both
+     * Index buffer offset. Must be a multiple of the index data type size and must be aligned to both
      * the index data type's alignment and the platform's buffer offset alignment.
      */
     @Generated
@@ -112,7 +112,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native long indexBufferOffset();
 
     /**
-     * @brief Index type
+     * Index type
      */
     @Generated
     @Selector("indexType")
@@ -166,7 +166,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native void setIndexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Index buffer offset. Must be a multiple of the index data type size and must be aligned to both
+     * Index buffer offset. Must be a multiple of the index data type size and must be aligned to both
      * the index data type's alignment and the platform's buffer offset alignment.
      */
     @Generated
@@ -174,14 +174,14 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native void setIndexBufferOffset(@NUInt long value);
 
     /**
-     * @brief Index type
+     * Index type
      */
     @Generated
     @Selector("setIndexType:")
     public native void setIndexType(@NUInt long value);
 
     /**
-     * @brief Number of triangles
+     * Number of triangles
      */
     @Generated
     @Selector("setTriangleCount:")
@@ -192,7 +192,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @brief Vertex buffer containing triangle vertices. Each vertex must consist of three 32-bit floats
+     * Vertex buffer containing triangle vertices. Each vertex must consist of three 32-bit floats
      * encoding X, Y, and Z position. Must not be nil.
      */
     @Generated
@@ -200,7 +200,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native void setVertexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Vertex buffer offset. Must be a multiple of the vertex stride and must be aligned to the
+     * Vertex buffer offset. Must be a multiple of the vertex stride and must be aligned to the
      * platform's buffer offset alignment.
      */
     @Generated
@@ -208,7 +208,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native void setVertexBufferOffset(@NUInt long value);
 
     /**
-     * @brief Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
+     * Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
      * multiple of 4 bytes. Defaults to 12 bytes.
      */
     @Generated
@@ -220,7 +220,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public static native Class superclass_static();
 
     /**
-     * @brief Number of triangles
+     * Number of triangles
      */
     @Generated
     @Selector("triangleCount")
@@ -233,7 +233,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public static native long version_static();
 
     /**
-     * @brief Vertex buffer containing triangle vertices. Each vertex must consist of three 32-bit floats
+     * Vertex buffer containing triangle vertices. Each vertex must consist of three 32-bit floats
      * encoding X, Y, and Z position. Must not be nil.
      */
     @Generated
@@ -242,7 +242,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native MTLBuffer vertexBuffer();
 
     /**
-     * @brief Vertex buffer offset. Must be a multiple of the vertex stride and must be aligned to the
+     * Vertex buffer offset. Must be a multiple of the vertex stride and must be aligned to the
      * platform's buffer offset alignment.
      */
     @Generated
@@ -251,7 +251,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native long vertexBufferOffset();
 
     /**
-     * @brief Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
+     * Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
      * multiple of 4 bytes. Defaults to 12 bytes.
      */
     @Generated

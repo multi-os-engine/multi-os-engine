@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      EKParticipant
- * @abstract   Abstract class representing a participant attached to an event.
+ * EKParticipant
+ * 
+ * Abstract class representing a participant attached to an event.
  */
 @Generated
 @Library("EventKit")
@@ -159,9 +160,11 @@ public class EKParticipant extends EKObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * @method     ABRecordWithAddressBook
-     * @abstract   Returns the ABRecordRef that represents this participant.
-     * @discussion This method returns the ABRecordRef that represents this participant,
+     * ABRecordWithAddressBook
+     * 
+     * Returns the ABRecordRef that represents this participant.
+     * 
+     * This method returns the ABRecordRef that represents this participant,
      * if a match can be found based on email address in the address book
      * passed. If we cannot find the participant, nil is returned.
      */
@@ -171,18 +174,21 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native ConstVoidPtr ABRecordWithAddressBook(ConstVoidPtr addressBook);
 
     /**
-     * @property   url
-     * @abstract   URL representing this participant.
+     * [@property]   url
+     * 
+     * URL representing this participant.
      */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
     /**
-     * @method     contactPredicate
-     * @abstract   Returns a predicate to use with Contacts.framework to retrieve the corresponding
+     * contactPredicate
+     * 
+     * Returns a predicate to use with Contacts.framework to retrieve the corresponding
      *             CNContact instance.
-     * @discussion This method returns a predicate that can be used with a CNContactStore to fetch
+     * 
+     * This method returns a predicate that can be used with a CNContactStore to fetch
      *             a CNContact instance for this participant, if one exists.
      */
     @Generated
@@ -200,8 +206,9 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native EKParticipant init();
 
     /**
-     * @property   currentUser
-     * @abstract   A boolean indicating whether this participant represents the
+     * [@property]   currentUser
+     * 
+     * A boolean indicating whether this participant represents the
      *             owner of this account.
      */
     @Generated
@@ -209,17 +216,20 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native boolean isCurrentUser();
 
     /**
-     * @property   name
-     * @abstract   Name of this participant.
+     * [@property]   name
+     * 
+     * Name of this participant.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @property   participantRole
-     * @abstract   The role of the attendee.
-     * @discussion Returns the role of the attendee as a EKParticipantRole value.
+     * [@property]   participantRole
+     * 
+     * The role of the attendee.
+     * 
+     * Returns the role of the attendee as a EKParticipantRole value.
      */
     @Generated
     @Selector("participantRole")
@@ -227,9 +237,11 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native long participantRole();
 
     /**
-     * @property   participantStatus
-     * @abstract   The status of the attendee.
-     * @discussion Returns the status of the attendee as a EKParticipantStatus value.
+     * [@property]   participantStatus
+     * 
+     * The status of the attendee.
+     * 
+     * Returns the status of the attendee as a EKParticipantStatus value.
      */
     @Generated
     @Selector("participantStatus")
@@ -237,9 +249,11 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native long participantStatus();
 
     /**
-     * @property   participantType
-     * @abstract   The type of the attendee.
-     * @discussion Returns the type of the attendee as a EKParticipantType value.
+     * [@property]   participantType
+     * 
+     * The type of the attendee.
+     * 
+     * Returns the type of the attendee as a EKParticipantType value.
      */
     @Generated
     @Selector("participantType")

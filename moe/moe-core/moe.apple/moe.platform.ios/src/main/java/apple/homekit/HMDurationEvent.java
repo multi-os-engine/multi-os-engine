@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class is used to represent a duration of time.
+ * This class is used to represent a duration of time.
  */
 @Generated
 @Library("HomeKit")
@@ -93,7 +93,7 @@ public class HMDurationEvent extends HMTimeEvent implements NSCopying, NSMutable
     public static native String description_static();
 
     /**
-     * @brief duration The duration of time in seconds.
+     * duration The duration of time in seconds.
      */
     @Generated
     @Selector("duration")
@@ -109,7 +109,7 @@ public class HMDurationEvent extends HMTimeEvent implements NSCopying, NSMutable
     public native HMDurationEvent init();
 
     /**
-     * @brief Creates a duration time event.
+     * Creates a duration time event.
      * 
      * @param duration The duration of time in seconds.
      * 

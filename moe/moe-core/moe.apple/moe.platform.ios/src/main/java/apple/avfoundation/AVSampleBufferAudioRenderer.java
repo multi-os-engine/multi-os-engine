@@ -31,9 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class			AVSampleBufferAudioRenderer
- * @abstract		AVSampleBufferAudioRenderer can decompress and play compressed or uncompressed audio.
- * @discussion
+ * AVSampleBufferAudioRenderer
+ * 
+ * AVSampleBufferAudioRenderer can decompress and play compressed or uncompressed audio.
+ * 
  * 	An instance of AVSampleBufferAudioRenderer must be added to an AVSampleBufferRenderSynchronizer before the first sample buffer is enqueued.
  */
 @Generated
@@ -65,9 +66,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property		audioTimePitchAlgorithm
-     * @abstract		Indicates the processing algorithm used to manage audio pitch at varying rates.
-     * @discussion
+     * [@property]		audioTimePitchAlgorithm
+     * 
+     * Indicates the processing algorithm used to manage audio pitch at varying rates.
+     * 
      * 	Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
      * 
      * 	The default value on iOS is AVAudioTimePitchAlgorithmLowQualityZeroLatency and on macOS is AVAudioTimePitchAlgorithmTimeDomain.
@@ -115,9 +117,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public native void enqueueSampleBuffer(CMSampleBufferRef sampleBuffer);
 
     /**
-     * @property		error
-     * @abstract		If the renderer's status is AVQueuedSampleBufferRenderingStatusFailed, this describes the error that caused the failure.
-     * @discussion
+     * [@property]		error
+     * 
+     * If the renderer's status is AVQueuedSampleBufferRenderingStatusFailed, this describes the error that caused the failure.
+     * 
      * 	The value of this property is an NSError that describes what caused the renderer to no longer be able to render sample buffers.  The value of this property is nil unless the value of status is AVQueuedSampleBufferRenderingStatusFailed.
      */
     @Generated
@@ -129,14 +132,16 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public native void flush();
 
     /**
-     * @method			flushFromSourceTime:completionHandler:
-     * @abstract		Flushes enqueued sample buffers with presentation time stamps later than or equal to the specified time.
-     * @param			completionHandler
-     * 	A block that is invoked, possibly asynchronously, after the flush operation completes or fails.
-     * @discussion
+     * flushFromSourceTime:completionHandler:
+     * 
+     * Flushes enqueued sample buffers with presentation time stamps later than or equal to the specified time.
+     * 
      * 	This method can be used to replace media data scheduled to be rendered in the future, without interrupting playback.  One example of this is when the data that has already been enqueued is from a sequence of two songs and the second song is swapped for a new song.  In this case, this method would be called with the time stamp of the first sample buffer from the second song.  After the completion handler is executed with a YES parameter, media data may again be enqueued with timestamps at the specified time.
      * 
      * 	If NO is provided to the completion handler, the flush did not succeed and the set of enqueued sample buffers remains unchanged.  A flush can fail becuse the source time was too close to (or earlier than) the current time or because the current configuration of the receiver does not support flushing at a particular time.  In these cases, the caller can choose to flush all enqueued media data by invoking the -flush method.
+     * 
+     * @param			completionHandler
+     * 	A block that is invoked, possibly asynchronously, after the flush operation completes or fails.
      */
     @Generated
     @Selector("flushFromSourceTime:completionHandler:")
@@ -173,9 +178,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @property		muted
-     * @abstract		Indicates whether or not audio output of the AVSampleBufferAudioRenderer is muted.
-     * @discussion
+     * [@property]		muted
+     * 
+     * Indicates whether or not audio output of the AVSampleBufferAudioRenderer is muted.
+     * 
      * 	Setting this property only affects audio muting for the renderer instance and not for the device.
      */
     @Generated
@@ -214,9 +220,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property		audioTimePitchAlgorithm
-     * @abstract		Indicates the processing algorithm used to manage audio pitch at varying rates.
-     * @discussion
+     * [@property]		audioTimePitchAlgorithm
+     * 
+     * Indicates the processing algorithm used to manage audio pitch at varying rates.
+     * 
      * 	Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
      * 
      * 	The default value on iOS is AVAudioTimePitchAlgorithmLowQualityZeroLatency and on macOS is AVAudioTimePitchAlgorithmTimeDomain.
@@ -230,9 +237,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public native void setAudioTimePitchAlgorithm(String value);
 
     /**
-     * @property		muted
-     * @abstract		Indicates whether or not audio output of the AVSampleBufferAudioRenderer is muted.
-     * @discussion
+     * [@property]		muted
+     * 
+     * Indicates whether or not audio output of the AVSampleBufferAudioRenderer is muted.
+     * 
      * 	Setting this property only affects audio muting for the renderer instance and not for the device.
      */
     @Generated
@@ -244,9 +252,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property		volume
-     * @abstract		Indicates the current audio volume of the AVSampleBufferAudioRenderer.
-     * @discussion
+     * [@property]		volume
+     * 
+     * Indicates the current audio volume of the AVSampleBufferAudioRenderer.
+     * 
      * 	A value of 0.0 means "silence all audio", while 1.0 means "play at the full volume of the audio media".
      * 
      * 	This property should be used for frequent volume changes, for example via a volume knob or fader.
@@ -258,9 +267,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public native void setVolume(float value);
 
     /**
-     * @property		status
-     * @abstract		Indicates the status of the audio renderer.
-     * @discussion
+     * [@property]		status
+     * 
+     * Indicates the status of the audio renderer.
+     * 
      * 	A renderer begins with status AVQueuedSampleBufferRenderingStatusUnknown.
      * 
      * 	As sample buffers are enqueued for rendering using -enqueueSampleBuffer:, the renderer will transition to either AVQueuedSampleBufferRenderingStatusRendering or AVQueuedSampleBufferRenderingStatusFailed.
@@ -292,9 +302,10 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native long version_static();
 
     /**
-     * @property		volume
-     * @abstract		Indicates the current audio volume of the AVSampleBufferAudioRenderer.
-     * @discussion
+     * [@property]		volume
+     * 
+     * Indicates the current audio volume of the AVSampleBufferAudioRenderer.
+     * 
      * 	A value of 0.0 means "silence all audio", while 1.0 means "play at the full volume of the audio media".
      * 
      * 	This property should be used for frequent volume changes, for example via a volume knob or fader.

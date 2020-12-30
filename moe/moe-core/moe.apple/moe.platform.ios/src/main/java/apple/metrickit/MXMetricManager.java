@@ -25,11 +25,15 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXMetricManager
- * @abstract      An instance of this class can be used to retrieve periodic, aggregated power and performance metrics.
- * @discussion    To receive metrics, clients must acquire a reference to the shared instance of the metric manager and add an eligible MXMetricManagerSubscriber.
- * @discussion    Metrics are not guaranteed to be delivered, but can be expected atleast once per day when conditions permit.
- * @discussion    Subscribers to the metric manager can remove themselves using removeSubscriber:subscriber if they no longer wish to receive metrics.
+ * MXMetricManager
+ * 
+ * An instance of this class can be used to retrieve periodic, aggregated power and performance metrics.
+ * 
+ * To receive metrics, clients must acquire a reference to the shared instance of the metric manager and add an eligible MXMetricManagerSubscriber.
+ * 
+ * Metrics are not guaranteed to be delivered, but can be expected atleast once per day when conditions permit.
+ * 
+ * Subscribers to the metric manager can remove themselves using removeSubscriber:subscriber if they no longer wish to receive metrics.
  */
 @Generated
 @Library("MetricKit")
@@ -50,10 +54,13 @@ public class MXMetricManager extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @method        addSubscriber:subscriber
-     * @abstract      Adds a subscriber to the metric manager.
+     * addSubscriber:subscriber
+     * 
+     * Adds a subscriber to the metric manager.
+     * 
+     * Subscribers can receive metric payloads by conforming to the MXMetricManagerSubscriber protocol.
+     * 
      * @param         subscriber An object that conforms to the MXMetricManagerSubscriber protocol.
-     * @discussion    Subscribers can receive metric payloads by conforming to the MXMetricManagerSubscriber protocol.
      */
     @Generated
     @Selector("addSubscriber:")
@@ -130,11 +137,14 @@ public class MXMetricManager extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @method        makeLogHandleWithCategory:category
-     * @abstract      Retrieve a log handle for flagging critical sections with os_signpost().
+     * makeLogHandleWithCategory:category
+     * 
+     * Retrieve a log handle for flagging critical sections with os_signpost().
+     * 
+     * The log handle configures persistence for any signposts emit while using the log handle.
+     * 
      * @param         category A string used to define a log category
-     * @discussion    The log handle configures persistence for any signposts emit while using the log handle.
-     * @result        A log handle that can be used with the logging framework.
+     * @return        A log handle that can be used with the logging framework.
      */
     @Generated
     @Selector("makeLogHandleWithCategory:")
@@ -147,18 +157,22 @@ public class MXMetricManager extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property      pastPayloads
-     * @abstract      A list of past metric payloads received.
+     * [@property]      pastPayloads
+     * 
+     * A list of past metric payloads received.
      */
     @Generated
     @Selector("pastPayloads")
     public native NSArray<? extends MXMetricPayload> pastPayloads();
 
     /**
-     * @method        removeSubscriber:subscriber
-     * @abstract      Removes a subscriber from the metric manager.
+     * removeSubscriber:subscriber
+     * 
+     * Removes a subscriber from the metric manager.
+     * 
+     * The subscriber indicated, if previously registered, will no longer receive metric payloads.
+     * 
      * @param         subscriber An object that conforms to the MXMetricManagerSubscriber protocol.
-     * @discussion    The subscriber indicated, if previously registered, will no longer receive metric payloads.
      */
     @Generated
     @Selector("removeSubscriber:")
@@ -177,8 +191,9 @@ public class MXMetricManager extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property      sharedManager
-     * @abstract      Singleton instance of MXMetricManager.
+     * [@property]      sharedManager
+     * 
+     * Singleton instance of MXMetricManager.
      */
     @Generated
     @Selector("sharedManager")
@@ -194,8 +209,9 @@ public class MXMetricManager extends NSObject {
     public static native long version_static();
 
     /**
-     * @property      pastDiagnosticPayloads
-     * @abstract      A list of past diagnostic payloads received.
+     * [@property]      pastDiagnosticPayloads
+     * 
+     * A list of past diagnostic payloads received.
      */
     @Generated
     @Selector("pastDiagnosticPayloads")

@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageReduceRowMax
- * @discussion The MPSImageReduceRowMax performs a reduction operation returning the maximum value for each row of an image
+ * MPSImageReduceRowMax
+ * 
+ * The MPSImageReduceRowMax performs a reduction operation returning the maximum value for each row of an image
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -106,7 +107,8 @@ public class MPSImageReduceRowMax extends MPSImageReduceUnary {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to apply the reduction operation on an image.
+     * Specifies information to apply the reduction operation on an image.
+     * 
      * @param    device            The device the filter will run on
      * @return     A valid MPSImageReduce object or nil, if failure.
      */

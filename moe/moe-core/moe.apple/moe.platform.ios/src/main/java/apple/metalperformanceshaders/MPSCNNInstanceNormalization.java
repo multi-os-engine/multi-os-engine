@@ -29,9 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNInstanceNormalization
- * @dependency This depends on Metal.framework
- * @discussion This kernel normalizes each image, on a per-channel basis, to
+ * MPSCNNInstanceNormalization
+ * [@dependency] This depends on Metal.framework
+ * 
+ * This kernel normalizes each image, on a per-channel basis, to
  *             have zero mean and unit variance:
  * 
  *             for each image:
@@ -89,7 +90,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   The data source that the object was initialized with
+     * The data source that the object was initialized with
      */
     @Generated
     @Selector("dataSource")
@@ -105,8 +106,9 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     public static native String description_static();
 
     /**
-     * @property   epsilon
-     * @abstract   The epsilon value used to bias the variance when normalizing.
+     * [@property]   epsilon
+     * 
+     * The epsilon value used to bias the variance when normalizing.
      */
     @Generated
     @Selector("epsilon")
@@ -126,12 +128,14 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     public native MPSCNNInstanceNormalization initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSCNNInstanceNormalization object, or nil if failure.
@@ -146,7 +150,8 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     public native MPSCNNInstanceNormalization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a MPSCNNInstanceNormalization kernel on a device.
+     * Initialize a MPSCNNInstanceNormalization kernel on a device.
+     * 
      * @param      dataSource  An object conforming to the MPSCNNInstanceNormalizationDataSource
      *                         protocol which
      */
@@ -183,7 +188,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     public static native Object new_objc();
 
     /**
-     * @abstract   Reload data using a data source.
+     * Reload data using a data source.
      * 
      * @param      dataSource  The data source which will provide the gamma and beta terms
      *                         to scale and bias the normalized result respectively.
@@ -194,14 +199,14 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MPSCNNInstanceNormalizationDataSource dataSource);
 
     /**
-     * @abstract   Reinitialize the filter using the data source provided at kernel initialization.
+     * Reinitialize the filter using the data source provided at kernel initialization.
      */
     @Generated
     @Selector("reloadGammaAndBetaFromDataSource")
     public native void reloadGammaAndBetaFromDataSource();
 
     /**
-     * @abstract   Reload data using new gamma and beta terms contained within an
+     * Reload data using new gamma and beta terms contained within an
      *             MPSCNNInstanceNormalizationGradientState object.
      * 
      * @param      commandBuffer               The command buffer on which to encode the reload.
@@ -224,7 +229,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract   Return a MPSCNNInstanceNormalizationGradientState object for the provided
+     * Return a MPSCNNInstanceNormalizationGradientState object for the provided
      *             source image, source states, and destination image.
      */
     @Generated
@@ -233,8 +238,9 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
             MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 
     /**
-     * @property   epsilon
-     * @abstract   The epsilon value used to bias the variance when normalizing.
+     * [@property]   epsilon
+     * 
+     * The epsilon value used to bias the variance when normalizing.
      */
     @Generated
     @Selector("setEpsilon:")
@@ -259,7 +265,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     }
 
     /**
-     * @abstract       Return a temporary MPSCNNInstanceNormalizationGradientState object which may be used with
+     * Return a temporary MPSCNNInstanceNormalizationGradientState object which may be used with
      * a MPSCNNInstanceNormalization filter.
      */
     @Generated

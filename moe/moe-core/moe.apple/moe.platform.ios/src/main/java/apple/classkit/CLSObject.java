@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract      An object managed by ClassKit.
- * @discussion    See @c CLSContext for more details.
+ * An object managed by ClassKit.
+ * 
+ * See @c CLSContext for more details.
  */
 @Generated
 @Library("ClassKit")
@@ -82,14 +83,14 @@ public class CLSObject extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract      The date this object was created.
+     * The date this object was created.
      */
     @Generated
     @Selector("dateCreated")
     public native NSDate dateCreated();
 
     /**
-     * @abstract      The date this object was last modified.
+     * The date this object was last modified.
      */
     @Generated
     @Selector("dateLastModified")

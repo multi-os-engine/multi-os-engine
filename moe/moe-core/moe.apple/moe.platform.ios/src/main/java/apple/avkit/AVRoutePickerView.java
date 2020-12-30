@@ -37,9 +37,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVRoutePickerView
- * @abstract	AVRoutePickerView is a subclass of UIView that displays controls for picking playback routes.
- * @discussion	Media from AVPlayer or AVSampleBufferAudioRenderer can be routed to compatible AirPlay destinations.
+ * AVRoutePickerView
+ * 
+ * AVRoutePickerView is a subclass of UIView that displays controls for picking playback routes.
+ * 
+ * Media from AVPlayer or AVSampleBufferAudioRenderer can be routed to compatible AirPlay destinations.
  */
 @Generated
 @Library("AVKit")
@@ -60,8 +62,9 @@ public class AVRoutePickerView extends UIView {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @property	activeTintColor
-     * @abstract	The view's tint color when AirPlay is active.
+     * [@property]	activeTintColor
+     * 
+     * The view's tint color when AirPlay is active.
      */
     @Generated
     @Selector("activeTintColor")
@@ -242,8 +245,9 @@ public class AVRoutePickerView extends UIView {
     public static native String debugDescription_static();
 
     /**
-     * @property	delegate
-     * @abstract	The route picker view's delegate.
+     * [@property]	delegate
+     * 
+     * The route picker view's delegate.
      */
     @Generated
     @Selector("delegate")
@@ -331,8 +335,9 @@ public class AVRoutePickerView extends UIView {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property	activeTintColor
-     * @abstract	The view's tint color when AirPlay is active.
+     * [@property]	activeTintColor
+     * 
+     * The view's tint color when AirPlay is active.
      */
     @Generated
     @Selector("setActiveTintColor:")
@@ -387,16 +392,18 @@ public class AVRoutePickerView extends UIView {
     public static native void setAnimationsEnabled(boolean enabled);
 
     /**
-     * @property	delegate
-     * @abstract	The route picker view's delegate.
+     * [@property]	delegate
+     * 
+     * The route picker view's delegate.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVRoutePickerViewDelegate value);
 
     /**
-     * @property	delegate
-     * @abstract	The route picker view's delegate.
+     * [@property]	delegate
+     * 
+     * The route picker view's delegate.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVRoutePickerViewDelegate value) {
@@ -454,16 +461,18 @@ public class AVRoutePickerView extends UIView {
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * @property	prioritizesVideoDevices
-     * @abstract	Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
+     * [@property]	prioritizesVideoDevices
+     * 
+     * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
      */
     @Generated
     @Selector("prioritizesVideoDevices")
     public native boolean prioritizesVideoDevices();
 
     /**
-     * @property	prioritizesVideoDevices
-     * @abstract	Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
+     * [@property]	prioritizesVideoDevices
+     * 
+     * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
      */
     @Generated
     @Selector("setPrioritizesVideoDevices:")

@@ -44,9 +44,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      HKCategorySample
- * @abstract   An HKObject subclass representing an category measurement
- * @discussion Category samples are samples that can be categorized into an enum of concrete values
+ * HKCategorySample
+ * 
+ * An HKObject subclass representing an category measurement
+ * 
+ * Category samples are samples that can be categorized into an enum of concrete values
  */
 @Generated
 @Library("HealthKit")
@@ -91,8 +93,9 @@ public class HKCategorySample extends HKSample {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * @method     categorySampleWithType:value:startDate:endDate:
-     * @abstract   Creates a new HKCategorySample.
+     * categorySampleWithType:value:startDate:endDate:
+     * 
+     * Creates a new HKCategorySample.
      * 
      * @param      type       The type of the sample.
      * @param      value      The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
@@ -105,8 +108,9 @@ public class HKCategorySample extends HKSample {
             @NInt long value, NSDate startDate, NSDate endDate);
 
     /**
-     * @method     categorySampleWithType:value:startDate:endDate:device:metadata:
-     * @abstract   Creates a new HKCategorySample.
+     * categorySampleWithType:value:startDate:endDate:device:metadata:
+     * 
+     * Creates a new HKCategorySample.
      * 
      * @param      type       The type of the sample.
      * @param      value      The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
@@ -121,8 +125,9 @@ public class HKCategorySample extends HKSample {
             @NInt long value, NSDate startDate, NSDate endDate, HKDevice device, NSDictionary<String, ?> metadata);
 
     /**
-     * @method     categorySampleWithType:value:startDate:endDate:metadata:
-     * @abstract   Creates a new HKCategorySample.
+     * categorySampleWithType:value:startDate:endDate:metadata:
+     * 
+     * Creates a new HKCategorySample.
      * 
      * @param      type       The type of the sample.
      * @param      value      The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
@@ -227,8 +232,9 @@ public class HKCategorySample extends HKSample {
     }
 
     /**
-     * @property   value
-     * @discussion The preferred enum for the value is determined by the receiver's category type.
+     * [@property]   value
+     * 
+     * The preferred enum for the value is determined by the receiver's category type.
      */
     @Generated
     @Selector("value")

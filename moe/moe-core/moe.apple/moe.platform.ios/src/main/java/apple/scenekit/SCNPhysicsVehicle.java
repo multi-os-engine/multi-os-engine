@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsVehicle
- * @abstract SCNPhysicsVehicle provides a vehicle behavior.
+ * SCNPhysicsVehicle
+ * 
+ * SCNPhysicsVehicle provides a vehicle behavior.
  */
 @Generated
 @Library("SceneKit")

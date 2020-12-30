@@ -20,11 +20,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKWheelchairUse
- * @abstract      This enumerated type is used to represent whether the user uses a wheelchair.
+ * [@enum]          HKWheelchairUse
  * 
- * @constant      HKWheelchairUseNo      The user does not use a wheelchair.
- * @constant      HKWheelchairUseYes     The user does use a wheelchair.
+ * This enumerated type is used to represent whether the user uses a wheelchair.
+ * 
+ * [@constant]      HKWheelchairUseNo      The user does not use a wheelchair.
+ * [@constant]      HKWheelchairUseYes     The user does use a wheelchair.
  */
 @Generated
 public final class HKWheelchairUse {

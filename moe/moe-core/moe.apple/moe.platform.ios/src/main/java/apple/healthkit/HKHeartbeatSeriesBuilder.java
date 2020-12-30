@@ -28,9 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class              HKHeartbeatSeriesBuilder
- * @abstract           An HKHeartbeatSeriesBuilder is used to generate an HKHeartbeatSeriesSample.
- * @discussion         This class is intended for generating an HKHeartbeatSeriesSample which represents a series of
+ * HKHeartbeatSeriesBuilder
+ * 
+ * An HKHeartbeatSeriesBuilder is used to generate an HKHeartbeatSeriesSample.
+ * 
+ * This class is intended for generating an HKHeartbeatSeriesSample which represents a series of
  *                     heartbeats. If the discard method is called, collected data will be deleted.
  *                     Calling finishSeriesWithcompletion: will stop and complete the series. If the builder is deleted,
  *                     or the client goes away before calling the finish method, data will be lost.
@@ -54,9 +56,11 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @method             addHeartbeatWithTimeIntervalSinceSeriesStartDate:precededByGap:completion:
-     * @abstract           Associate a heartbeat with the receiver.
-     * @discussion         Use this method to asynchronously add a heartbeat to the series.
+     * addHeartbeatWithTimeIntervalSinceSeriesStartDate:precededByGap:completion:
+     * 
+     * Associate a heartbeat with the receiver.
+     * 
+     * Use this method to asynchronously add a heartbeat to the series.
      * 
      * @param              timeInterval   The elapsed time between the series startDate and the heartbeat occurence. Must be
      *                                    a positive value.
@@ -80,8 +84,9 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     }
 
     /**
-     * @method             addMetadata:completion:
-     * @discussion         Adds new metadata to the builder instance. This method can be called more than once; each time
+     * addMetadata:completion:
+     * 
+     * Adds new metadata to the builder instance. This method can be called more than once; each time
      *                     the newly provided metadata will be incorporated in the same manner as
      *                     -[NSMutableDictionary addEntriesFromDictionary:].
      *                     This operation is performed asynchronously and the completion will be executed on an arbitrary
@@ -146,9 +151,11 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     public static native String description_static();
 
     /**
-     * @method             finishSeriesWithCompletion:
-     * @abstract           Method to stop data collection and return the associated HKHeartbeatSeriesSample.
-     * @discussion         Call this method when you have added all heartbeats to this builder. The completion handler will
+     * finishSeriesWithCompletion:
+     * 
+     * Method to stop data collection and return the associated HKHeartbeatSeriesSample.
+     * 
+     * Call this method when you have added all heartbeats to this builder. The completion handler will
      *                     return the saved HKHeartbeatSeriesSample. If no heartbeat was added, then heartbeatSeries will be
      *                     nil and an error returned. The receiver will be considered invalid afterwards and any further calls
      *                     to it will result in an error.
@@ -181,9 +188,11 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     public native HKHeartbeatSeriesBuilder init();
 
     /**
-     * @method             initWithHealthStore:device:startDate:
-     * @abstract           The designated initializer to create an HKHeartbeatSeriesBuilder.
-     * @discussion         The HKHealthStore is retained during the life of the object for the saving of the series data and final
+     * initWithHealthStore:device:startDate:
+     * 
+     * The designated initializer to create an HKHeartbeatSeriesBuilder.
+     * 
+     * The HKHealthStore is retained during the life of the object for the saving of the series data and final
      *                     return of the series sample.
      * 
      * @param              healthStore  Specifies the HKHealthStore object to use for building the series.
@@ -217,9 +226,11 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property           maximumCount
-     * @abstract           The maximum number of heartbeats that can be added to an HKHeartbeatSeriesBuilder.
-     * @discussion         Any calls to addHeartbeatWithTimeIntervalSinceSeriesStartDate:precededByGap:completion: once
+     * [@property]           maximumCount
+     * 
+     * The maximum number of heartbeats that can be added to an HKHeartbeatSeriesBuilder.
+     * 
+     * Any calls to addHeartbeatWithTimeIntervalSinceSeriesStartDate:precededByGap:completion: once
      *                     maximumCount has been reached will fail and an error will be returned in the completion handler.
      */
     @Generated

@@ -29,9 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNNeuronDescriptor
- * @dependency This depends on Metal.framework
- * @discussion The MPSNNNeuronDescriptor specifies a neuron descriptor.
+ * MPSNNNeuronDescriptor
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSNNNeuronDescriptor specifies a neuron descriptor.
  *             Supported neuron types:
  * 
  *             Neuron type "none": f(x) = x
@@ -153,7 +154,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract  Make a descriptor for a MPSCNNNeuron object.
+     * Make a descriptor for a MPSCNNNeuron object.
+     * 
      * @param     neuronType           The type of a neuron filter.
      * @return    A valid MPSNNNeuronDescriptor object or nil, if failure.
      */
@@ -162,7 +164,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithType(int neuronType);
 
     /**
-     * @abstract  Make a descriptor for a MPSCNNNeuron object.
+     * Make a descriptor for a MPSCNNNeuron object.
+     * 
      * @param     neuronType           The type of a neuron filter.
      * @param     a                    Parameter "a".
      * @return    A valid MPSNNNeuronDescriptor object or nil, if failure.
@@ -172,7 +175,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithTypeA(int neuronType, float a);
 
     /**
-     * @abstract  Initialize the neuron descriptor.
+     * Initialize the neuron descriptor.
+     * 
      * @param     neuronType           The type of a neuron filter.
      * @param     a                    Parameter "a".
      * @param     b                    Parameter "b".
@@ -183,7 +187,8 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     public static native MPSNNNeuronDescriptor cnnNeuronDescriptorWithTypeAB(int neuronType, float a, float b);
 
     /**
-     * @abstract  Make a descriptor for a MPSCNNNeuron object.
+     * Make a descriptor for a MPSCNNNeuron object.
+     * 
      * @param     neuronType           The type of a neuron filter.
      * @param     a                    Parameter "a".
      * @param     b                    Parameter "b".
@@ -196,8 +201,10 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
             float c);
 
     /**
-     * @abstract   Make a descriptor for a neuron of type MPSCNNNeuronTypePReLU.
-     * @discussion The PReLU neuron is the same as a ReLU neuron, except parameter "a" is per feature channel.
+     * Make a descriptor for a neuron of type MPSCNNNeuronTypePReLU.
+     * 
+     * The PReLU neuron is the same as a ReLU neuron, except parameter "a" is per feature channel.
+     * 
      * @param      data                A NSData containing a float array with the per feature channel value
      *                                 of PReLu parameter. The number of float values in this array usually
      *                                 corresponds to number of output channels in a convolution layer.

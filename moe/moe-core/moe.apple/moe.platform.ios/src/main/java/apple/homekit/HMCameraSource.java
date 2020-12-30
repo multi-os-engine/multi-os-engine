@@ -40,7 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Abstract class for source of data from a camera.
+ * Abstract class for source of data from a camera.
  */
 @Generated
 @Library("HomeKit")

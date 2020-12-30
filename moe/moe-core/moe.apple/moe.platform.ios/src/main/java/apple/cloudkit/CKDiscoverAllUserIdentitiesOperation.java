@@ -42,11 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKDiscoverAllUserIdentitiesOperation
+ * CKDiscoverAllUserIdentitiesOperation
  * 
- * @abstract Finds all discoverable users in the device's contacts database. No Contacts access dialog will be displayed.
+ * Finds all discoverable users in the device's contacts database. No Contacts access dialog will be displayed.
  * 
- * @discussion This operation scales linearly with the number of email addresses and phone numbers in the device's address book.  It may take some time to complete.
+ * This operation scales linearly with the number of email addresses and phone numbers in the device's address book.  It may take some time to complete.
  */
 @Generated
 @Library("CloudKit")
@@ -160,9 +160,9 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
     public static native long version_static();
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -175,9 +175,9 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
     public native CKDiscoverAllUserIdentitiesOperation init();
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -186,9 +186,9 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
             @ObjCBlock(name = "call_setDiscoverAllUserIdentitiesCompletionBlock") Block_setDiscoverAllUserIdentitiesCompletionBlock value);
 
     /**
-     * @abstract Called once for each successfully-discovered user identity from the device's address book.
+     * Called once for each successfully-discovered user identity from the device's address book.
      * 
-     * @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("setUserIdentityDiscoveredBlock:")
@@ -196,9 +196,9 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
             @ObjCBlock(name = "call_setUserIdentityDiscoveredBlock") Block_setUserIdentityDiscoveredBlock value);
 
     /**
-     * @abstract Called once for each successfully-discovered user identity from the device's address book.
+     * Called once for each successfully-discovered user identity from the device's address book.
      * 
-     * @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("userIdentityDiscoveredBlock")

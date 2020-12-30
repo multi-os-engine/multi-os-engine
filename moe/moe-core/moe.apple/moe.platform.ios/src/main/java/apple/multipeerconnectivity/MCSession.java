@@ -49,12 +49,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MCSession
- *   @abstract
+ * MCSession
+ * 
  *      A MCSession facilitates communication among all peers in a multipeer
  *      session.
  * 
- *   @discussion
  *      To start a multipeer session with remote peers, a MCPeerID that
  *      represents the local peer needs to be supplied to the init method.
  * 

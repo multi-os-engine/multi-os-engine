@@ -28,7 +28,7 @@ public final class LACredentialType {
     /**
      * Password provided by application
      * 
-     * @discussion If not set, LocalAuthentication will ask for the password when necessary. It will use
+     * If not set, LocalAuthentication will ask for the password when necessary. It will use
      *             its own user interface depending on the evaluated policy or ACL.
      *             Applications can provide the password using the setCredential method. In such case,
      *             LocalAuthentication will not show password entry user interface.
@@ -39,7 +39,7 @@ public final class LACredentialType {
     /**
      * Smart card PIN provided by application
      * 
-     * @discussion If not set, LocalAuthentication will ask users for the smart card PIN when necessary.
+     * If not set, LocalAuthentication will ask users for the smart card PIN when necessary.
      *             Applications can provide the PIN using setCredential method. In such case,
      *             LocalAuthentication will not show the smart card PIN user interface.
      *             When entered from the LocalAuthentication user interface, the PIN is stored as

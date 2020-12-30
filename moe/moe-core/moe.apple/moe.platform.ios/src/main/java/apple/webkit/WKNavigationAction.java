@@ -159,8 +159,9 @@ public class WKNavigationAction extends NSObject {
     public native WKNavigationAction init();
 
     /**
-     * @abstract The type of action that triggered the navigation.
-     * @discussion The value is one of the constants of the enumerated type WKNavigationType.
+     * The type of action that triggered the navigation.
+     * 
+     * The value is one of the constants of the enumerated type WKNavigationType.
      */
     @Generated
     @Selector("navigationType")
@@ -168,21 +169,21 @@ public class WKNavigationAction extends NSObject {
     public native long navigationType();
 
     /**
-     * @abstract The navigation's request.
+     * The navigation's request.
      */
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
     /**
-     * @abstract The frame requesting the navigation.
+     * The frame requesting the navigation.
      */
     @Generated
     @Selector("sourceFrame")
     public native WKFrameInfo sourceFrame();
 
     /**
-     * @abstract The target frame, or nil if this is a new window navigation.
+     * The target frame, or nil if this is a new window navigation.
      */
     @Generated
     @Selector("targetFrame")

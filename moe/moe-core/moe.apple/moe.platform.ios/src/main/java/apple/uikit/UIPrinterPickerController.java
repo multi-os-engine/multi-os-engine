@@ -135,8 +135,9 @@ public class UIPrinterPickerController extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @method     printerPickerControllerWithInitiallySelectedPrinter:
-     * @discussion This method returns a printer picker controller object for showing the
+     * printerPickerControllerWithInitiallySelectedPrinter:
+     * 
+     * This method returns a printer picker controller object for showing the
      *             UI that allows the user to select a printer. This is only used with the
      *             UIPrintInteractionController's printWithoutUIToPrinter: method.
      *             If no printer should be preselected, use a value of nil for the parameter.
@@ -206,7 +207,7 @@ public class UIPrinterPickerController extends NSObject {
             @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
 
     /**
-     * @discussion	The selected printer. Set this before presenting the UI to show the currently
+     * The selected printer. Set this before presenting the UI to show the currently
      * 	        selected printer. Use this to determine which printer the user selected.
      */
     @Generated

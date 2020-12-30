@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEIPv6Route
- * @discussion The NEIPv6Route class declares the programmatic interface for an object that contains settings for an IPv6 route.
+ * [@interface] NEIPv6Route
+ * 
+ * The NEIPv6Route class declares the programmatic interface for an object that contains settings for an IPv6 route.
  * 
  * Instances of this class are thread safe.
  */
@@ -105,7 +106,8 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     public static native String debugDescription_static();
 
     /**
-     * @method defaultRoute
+     * defaultRoute
+     * 
      * @return A route object that represents the IPv6 default route.
      */
     @Generated
@@ -180,16 +182,18 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property destinationAddress
-     * @discussion An IPv6 address represented as a string.
+     * [@property] destinationAddress
+     * 
+     * An IPv6 address represented as a string.
      */
     @Generated
     @Selector("destinationAddress")
     public native String destinationAddress();
 
     /**
-     * @property destinationNetworkPrefixLength
-     * @discussion A number containing the length in bits of the network prefix of the destination network. This prefix in combination with the destinationAddress property is used to determine the destination network of the route.
+     * [@property] destinationNetworkPrefixLength
+     * 
+     * A number containing the length in bits of the network prefix of the destination network. This prefix in combination with the destinationAddress property is used to determine the destination network of the route.
      */
     @Generated
     @Selector("destinationNetworkPrefixLength")
@@ -200,8 +204,9 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @property gatewayAddress
-     * @discussion The IPv6 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
+     * [@property] gatewayAddress
+     * 
+     * The IPv6 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
      */
     @Generated
     @Selector("gatewayAddress")
@@ -216,8 +221,10 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     public native NEIPv6Route initWithCoder(NSCoder coder);
 
     /**
-     * @method initWithDestinationAddress:networkPrefixLength:
-     * @discussion Initialize a newly-allocated NEIPv6Route.
+     * initWithDestinationAddress:networkPrefixLength:
+     * 
+     * Initialize a newly-allocated NEIPv6Route.
+     * 
      * @param address The IPv6 address of the destination network.
      * @param networkPrefixLength A number containing the length in bits of the network prefix of the destination network.
      * @return The initialized NEIPv6Route.
@@ -228,8 +235,9 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
             NSNumber networkPrefixLength);
 
     /**
-     * @property gatewayAddress
-     * @discussion The IPv6 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
+     * [@property] gatewayAddress
+     * 
+     * The IPv6 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
      */
     @Generated
     @Selector("setGatewayAddress:")

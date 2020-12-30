@@ -486,7 +486,7 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     }
 
     /**
-     * @abstract The scanned code in the user activity passed in by system scanner.
+     * The scanned code in the user activity passed in by system scanner.
      */
     @Generated
     @Selector("detectedBarcodeDescriptor")
@@ -603,8 +603,9 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
 
     /**
-     * @abstract      Returns the context identifier path you should deep link to.
-     * @discussion    For example for the context identifier path @c @["swift-programming-book", @c "chapter1"],
+     * Returns the context identifier path you should deep link to.
+     * 
+     * For example for the context identifier path @c @["swift-programming-book", @c "chapter1"],
      *                your app should direct the user to @em chapter1 in @em swift-programming-book.
      */
     @Generated
@@ -612,16 +613,16 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     public native NSArray<String> contextIdentifierPath();
 
     /**
-     * @abstract      Returns whether the user activity is a ClassKit deep link.
+     * Returns whether the user activity is a ClassKit deep link.
      */
     @Generated
     @Selector("isClassKitDeepLink")
     public native boolean isClassKitDeepLink();
 
     /**
-     * @property ndefMessagePayload
+     * [@property] ndefMessagePayload
      * 
-     * @discussion The NFC NDEF message with an Universial Link object that triggers the application launch.
+     * The NFC NDEF message with an Universial Link object that triggers the application launch.
      */
     @Generated
     @Selector("ndefMessagePayload")

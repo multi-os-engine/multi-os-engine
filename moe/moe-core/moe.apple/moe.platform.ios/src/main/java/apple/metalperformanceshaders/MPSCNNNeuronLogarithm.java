@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNNeuronLogarithm
- * @dependency This depends on Metal.framework.
- * @discussion Specifies the Logarithm neuron filter.
+ * MPSCNNNeuronLogarithm
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * Specifies the Logarithm neuron filter.
  *             For each pixel, applies the following function: f(x) = log_c(a * x + b).
  * 
  *             If the value of c is -1.0f, the base (c) is set to e.
@@ -115,7 +116,8 @@ public class MPSCNNNeuronLogarithm extends MPSCNNNeuron {
     public native MPSCNNNeuronLogarithm initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a Logarithm neuron filter.
+     * Initialize a Logarithm neuron filter.
+     * 
      * @param      device          The device the filter will run on.
      * @param      a               Filter property "a". See class discussion.
      * @param      b               Filter property "b". See class discussion.

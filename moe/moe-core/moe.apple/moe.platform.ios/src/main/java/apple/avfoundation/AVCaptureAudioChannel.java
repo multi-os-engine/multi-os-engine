@@ -40,11 +40,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVCaptureAudioChannel
- * @abstract
+ * AVCaptureAudioChannel
+ * 
  *    AVCaptureAudioChannel represents a single channel of audio flowing through an AVCaptureSession.
  * 
- * @discussion
  *    An AVCaptureConnection from an input producing audio to an output receiving audio exposes an array of AVCaptureAudioChannel objects, one for each channel of audio available. Iterating through these audio channel objects, a client may poll for audio levels. Instances of AVCaptureAudioChannel cannot be created directly.
  */
 @Generated
@@ -159,11 +158,10 @@ public class AVCaptureAudioChannel extends NSObject {
     public static native long version_static();
 
     /**
-     * @property averagePowerLevel
-     * @abstract
+     * [@property] averagePowerLevel
+     * 
      *    A measurement of the instantaneous average power level of the audio flowing through the receiver.
      * 
-     * @discussion
      *    A client may poll an AVCaptureAudioChannel object for its current averagePowerLevel to get its instantaneous average power level in decibels. This property is not key-value observable.
      */
     @Generated
@@ -175,11 +173,10 @@ public class AVCaptureAudioChannel extends NSObject {
     public native AVCaptureAudioChannel init();
 
     /**
-     * @property peakHoldLevel
-     * @abstract
+     * [@property] peakHoldLevel
+     * 
      *    A measurement of the peak/hold level of the audio flowing through the receiver.
      * 
-     * @discussion
      *    A client may poll an AVCaptureAudioChannel object for its current peakHoldLevel to get its most recent peak hold level in decibels. This property is not key-value observable.
      */
     @Generated

@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitTimeEffect
- * @abstract an AVAudioUnit that processes audio in non real-time
- * @discussion
+ * AVAudioUnitTimeEffect
+ * 
+ * an AVAudioUnit that processes audio in non real-time
+ * 
  * An AVAudioUnitTimeEffect represents an audio unit of type aufc.
  * These effects do not process audio in real-time. The varispeed
  * unit is an example of a time effect unit.
@@ -168,8 +169,9 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
     public static native long version_static();
 
     /**
-     * @property bypass
-     * @abstract bypass state of the audio unit
+     * [@property] bypass
+     * 
+     * bypass state of the audio unit
      */
     @Generated
     @Selector("bypass")
@@ -180,13 +182,14 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
     public native AVAudioUnitTimeEffect init();
 
     /**
-     * @method initWithAudioComponentDescription:
-     * @abstract create an AVAudioUnitTimeEffect object
+     * initWithAudioComponentDescription:
+     * 
+     * create an AVAudioUnitTimeEffect object
+     * 
+     * The componentType must be kAudioUnitType_FormatConverter
      * 
      * @param audioComponentDescription
      * AudioComponentDescription of the audio unit to be initialized
-     * @discussion 
-     * The componentType must be kAudioUnitType_FormatConverter
      */
     @Generated
     @Selector("initWithAudioComponentDescription:")
@@ -194,8 +197,9 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
             @ByValue AudioComponentDescription audioComponentDescription);
 
     /**
-     * @property bypass
-     * @abstract bypass state of the audio unit
+     * [@property] bypass
+     * 
+     * bypass state of the audio unit
      */
     @Generated
     @Selector("setBypass:")

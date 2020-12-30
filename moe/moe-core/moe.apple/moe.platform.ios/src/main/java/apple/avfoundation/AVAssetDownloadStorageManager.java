@@ -127,8 +127,10 @@ public class AVAssetDownloadStorageManager extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method		setStorageManagementPolicy: forURL
-     * @abstract	Sets the policy for asset with disk backing at downloadStorageURL.
+     * setStorageManagementPolicy: forURL
+     * 
+     * Sets the policy for asset with disk backing at downloadStorageURL.
+     * 
      * @param		downloadStorageURL
      * 				The location of downloaded asset.
      */
@@ -142,17 +144,20 @@ public class AVAssetDownloadStorageManager extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @method		sharedDownloadStorageManager
-     * @abstract	returns singleton instance.
+     * sharedDownloadStorageManager
+     * 
+     * returns singleton instance.
      */
     @Generated
     @Selector("sharedDownloadStorageManager")
     public static native AVAssetDownloadStorageManager sharedDownloadStorageManager();
 
     /**
-     * @method		storageManagementPolicyForURL:downloadStorageURL
-     * @abstract	Returns the storage management policy for asset downloaded at downloadStorageURL.
+     * storageManagementPolicyForURL:downloadStorageURL
+     * 
+     * Returns the storage management policy for asset downloaded at downloadStorageURL.
      *                This may be nil if a storageManagementPolicy was never set on the downloaded asset.
+     * 
      * @param		downloadStorageURL
      * 			The location of downloaded asset.
      */

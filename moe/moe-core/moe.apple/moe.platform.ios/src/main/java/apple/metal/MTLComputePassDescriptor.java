@@ -25,8 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MTLComputePassDescriptor
- * @abstract MTLComputePassDescriptor represents a collection of attachments to be used to create a concrete compute command encoder
+ * MTLComputePassDescriptor
+ * 
+ * MTLComputePassDescriptor represents a collection of attachments to be used to create a concrete compute command encoder
  */
 @Generated
 @Library("Metal")
@@ -79,8 +80,9 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @method computePassDescriptor
-     * @abstract Create an autoreleased default frame buffer descriptor
+     * computePassDescriptor
+     * 
+     * Create an autoreleased default frame buffer descriptor
      */
     @Generated
     @Selector("computePassDescriptor")
@@ -101,8 +103,9 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * @property dispatchType
-     * @abstract The dispatch type of the compute command encoder.
+     * [@property] dispatchType
+     * 
+     * The dispatch type of the compute command encoder.
      */
     @Generated
     @Selector("dispatchType")
@@ -154,16 +157,18 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property sampleBufferAttachments
-     * @abstract An array of sample buffers and associated sample indices.
+     * [@property] sampleBufferAttachments
+     * 
+     * An array of sample buffers and associated sample indices.
      */
     @Generated
     @Selector("sampleBufferAttachments")
     public native MTLComputePassSampleBufferAttachmentDescriptorArray sampleBufferAttachments();
 
     /**
-     * @property dispatchType
-     * @abstract The dispatch type of the compute command encoder.
+     * [@property] dispatchType
+     * 
+     * The dispatch type of the compute command encoder.
      */
     @Generated
     @Selector("setDispatchType:")

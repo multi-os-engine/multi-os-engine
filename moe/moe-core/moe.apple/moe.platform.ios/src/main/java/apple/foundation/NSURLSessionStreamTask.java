@@ -231,7 +231,7 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      * Cleanly close a secure connection after all pending secure IO has
      * completed.
      * 
-     * @warning This API is non-functional.
+     * [@warning] This API is non-functional.
      */
     @Generated
     @Selector("stopSecureConnection")

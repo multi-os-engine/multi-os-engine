@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum EAWiFiUnconfiguredAccessoryConfigurationStatus
+ * [@enum] EAWiFiUnconfiguredAccessoryConfigurationStatus
  * 
- * @discussion Represents the state of an EAWiFiUnconfiguredAccessory configuration process.
+ * Represents the state of an EAWiFiUnconfiguredAccessory configuration process.
  * 
- * @constant EAWiFiUnconfiguredAccessoryConfigurationStatusSuccess                     The configuration of the accessory succeeded.
- * @constant EAWiFiUnconfiguredAccessoryConfigurationStatusUserCancelledConfiguration  The user cancelled the configuration process.
- * @constant EAWiFiUnconfiguredAccessoryConfigurationStatusFailed                      The configuration failed.
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusSuccess                     The configuration of the accessory succeeded.
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusUserCancelledConfiguration  The user cancelled the configuration process.
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusFailed                      The configuration failed.
  */
 @Generated
 public final class EAWiFiUnconfiguredAccessoryConfigurationStatus {

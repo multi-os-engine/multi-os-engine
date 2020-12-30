@@ -42,12 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MCNearbyServiceBrowser
- *   @abstract
+ * MCNearbyServiceBrowser
+ * 
  *      MCNearbyServiceBrowser looks for nearby peers, and connects them to
  *      sessions.
  * 
- *   @discussion
  *      To create the MCNearbyServiceBrowser object and start browsing for
  *      nearby peers, a new MCPeerID should be created to represent the local
  *      peer, and a service type needs to be specified.

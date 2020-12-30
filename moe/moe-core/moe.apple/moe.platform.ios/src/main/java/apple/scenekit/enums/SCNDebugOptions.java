@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum SCNDebugOptions
- * @abstract Debug options.
+ * [@enum] SCNDebugOptions
+ * 
+ * Debug options.
  */
 @Generated
 public final class SCNDebugOptions {

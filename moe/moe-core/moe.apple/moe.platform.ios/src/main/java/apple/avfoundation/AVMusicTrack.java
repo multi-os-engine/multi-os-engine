@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVMusicTrack
- * @abstract A collection of music events which will be sent to a given destination, and which can be 
+ * AVMusicTrack
+ * 
+ * A collection of music events which will be sent to a given destination, and which can be
  * 			offset, muted, etc. independently of events in other tracks.
  */
 @Generated
@@ -158,9 +159,10 @@ public class AVMusicTrack extends NSObject {
     public static native long version_static();
 
     /**
-     * @property destinationAudioUnit
-     * @abstract The AVAudioUnit which will receive the track's events
-     * @discussion
+     * [@property] destinationAudioUnit
+     * 
+     * The AVAudioUnit which will receive the track's events
+     * 
      * 	This is mutually exclusive with setting a destination MIDIEndpoint.  The AU must already be
      * 	attached to an audio engine, and the track must be part of the AVAudioSequencer associated
      * 	with that engine. When playing, the track will send its events to that AVAudioUnit. The
@@ -179,9 +181,10 @@ public class AVMusicTrack extends NSObject {
     public native AVMusicTrack init();
 
     /**
-     * @property loopingEnabled
-     * @abstract Determines whether or not the track is looped.
-     * @discussion
+     * [@property] loopingEnabled
+     * 
+     * Determines whether or not the track is looped.
+     * 
      * 	If loopRange has not been set, the full track will be looped.
      */
     @Generated
@@ -189,9 +192,10 @@ public class AVMusicTrack extends NSObject {
     public native boolean isLoopingEnabled();
 
     /**
-     * @property loopingEnabled
-     * @abstract Determines whether or not the track is looped.
-     * @discussion
+     * [@property] loopingEnabled
+     * 
+     * Determines whether or not the track is looped.
+     * 
      * 	If loopRange has not been set, the full track will be looped.
      */
     @Generated
@@ -199,41 +203,46 @@ public class AVMusicTrack extends NSObject {
     public native void setLoopingEnabled(boolean value);
 
     /**
-     * @property muted
-     * @abstract Whether the track is muted
+     * [@property] muted
+     * 
+     * Whether the track is muted
      */
     @Generated
     @Selector("isMuted")
     public native boolean isMuted();
 
     /**
-     * @property muted
-     * @abstract Whether the track is muted
+     * [@property] muted
+     * 
+     * Whether the track is muted
      */
     @Generated
     @Selector("setMuted:")
     public native void setMuted(boolean value);
 
     /**
-     * @property soloed
-     * @abstract Whether the track is soloed
+     * [@property] soloed
+     * 
+     * Whether the track is soloed
      */
     @Generated
     @Selector("isSoloed")
     public native boolean isSoloed();
 
     /**
-     * @property soloed
-     * @abstract Whether the track is soloed
+     * [@property] soloed
+     * 
+     * Whether the track is soloed
      */
     @Generated
     @Selector("setSoloed:")
     public native void setSoloed(boolean value);
 
     /**
-     * @property lengthInBeats
-     * @abstract The total duration of the track in beats
-     * @discussion
+     * [@property] lengthInBeats
+     * 
+     * The total duration of the track in beats
+     * 
      * 	This will return the beat of the last event in the track plus any additional time that may
      * 	be needed for fading out of ending notes or round a loop point to musical bar, etc.  If this
      * 	has not been set by the user, the track length will always be adjusted to the end of the
@@ -246,9 +255,10 @@ public class AVMusicTrack extends NSObject {
     public native double lengthInBeats();
 
     /**
-     * @property lengthInSeconds
-     * @abstract The total duration of the track in seconds
-     * @discussion
+     * [@property] lengthInSeconds
+     * 
+     * The total duration of the track in seconds
+     * 
      * 	This will return time of the last event in the track plus any additional time that may be
      * 	needed for fading out of ending notes or round a loop point to musical bar, etc.  If this
      * 	has not been set by the user, the track length will always be adjusted to the end of the
@@ -261,9 +271,10 @@ public class AVMusicTrack extends NSObject {
     public native double lengthInSeconds();
 
     /**
-     * @property loopRange
-     * @abstract The timestamp range in beats for the loop
-     * @discussion
+     * [@property] loopRange
+     * 
+     * The timestamp range in beats for the loop
+     * 
      * 	The loop is set by specifying its beat range.
      */
     @Generated
@@ -272,9 +283,10 @@ public class AVMusicTrack extends NSObject {
     public native AVBeatRange loopRange();
 
     /**
-     * @property numberOfLoops
-     * @abstract The number of times that the track's loop will repeat
-     * @discussion
+     * [@property] numberOfLoops
+     * 
+     * The number of times that the track's loop will repeat
+     * 
      * 	If set to AVMusicTrackLoopCountForever, the track will loop forever.
      * 	Otherwise, legal values start with 1.
      */
@@ -284,9 +296,10 @@ public class AVMusicTrack extends NSObject {
     public native long numberOfLoops();
 
     /**
-     * @property offsetTime
-     * @abstract Offset the track's start time to the specified time in beats
-     * @discussion
+     * [@property] offsetTime
+     * 
+     * Offset the track's start time to the specified time in beats
+     * 
      * 	By default this value is zero.
      */
     @Generated
@@ -294,9 +307,10 @@ public class AVMusicTrack extends NSObject {
     public native double offsetTime();
 
     /**
-     * @property destinationAudioUnit
-     * @abstract The AVAudioUnit which will receive the track's events
-     * @discussion
+     * [@property] destinationAudioUnit
+     * 
+     * The AVAudioUnit which will receive the track's events
+     * 
      * 	This is mutually exclusive with setting a destination MIDIEndpoint.  The AU must already be
      * 	attached to an audio engine, and the track must be part of the AVAudioSequencer associated
      * 	with that engine. When playing, the track will send its events to that AVAudioUnit. The
@@ -311,9 +325,10 @@ public class AVMusicTrack extends NSObject {
     public native void setDestinationMIDIEndpoint(int value);
 
     /**
-     * @property lengthInBeats
-     * @abstract The total duration of the track in beats
-     * @discussion
+     * [@property] lengthInBeats
+     * 
+     * The total duration of the track in beats
+     * 
      * 	This will return the beat of the last event in the track plus any additional time that may
      * 	be needed for fading out of ending notes or round a loop point to musical bar, etc.  If this
      * 	has not been set by the user, the track length will always be adjusted to the end of the
@@ -326,9 +341,10 @@ public class AVMusicTrack extends NSObject {
     public native void setLengthInBeats(double value);
 
     /**
-     * @property lengthInSeconds
-     * @abstract The total duration of the track in seconds
-     * @discussion
+     * [@property] lengthInSeconds
+     * 
+     * The total duration of the track in seconds
+     * 
      * 	This will return time of the last event in the track plus any additional time that may be
      * 	needed for fading out of ending notes or round a loop point to musical bar, etc.  If this
      * 	has not been set by the user, the track length will always be adjusted to the end of the
@@ -341,9 +357,10 @@ public class AVMusicTrack extends NSObject {
     public native void setLengthInSeconds(double value);
 
     /**
-     * @property loopRange
-     * @abstract The timestamp range in beats for the loop
-     * @discussion
+     * [@property] loopRange
+     * 
+     * The timestamp range in beats for the loop
+     * 
      * 	The loop is set by specifying its beat range.
      */
     @Generated
@@ -351,9 +368,10 @@ public class AVMusicTrack extends NSObject {
     public native void setLoopRange(@ByValue AVBeatRange value);
 
     /**
-     * @property numberOfLoops
-     * @abstract The number of times that the track's loop will repeat
-     * @discussion
+     * [@property] numberOfLoops
+     * 
+     * The number of times that the track's loop will repeat
+     * 
      * 	If set to AVMusicTrackLoopCountForever, the track will loop forever.
      * 	Otherwise, legal values start with 1.
      */
@@ -362,9 +380,10 @@ public class AVMusicTrack extends NSObject {
     public native void setNumberOfLoops(@NInt long value);
 
     /**
-     * @property offsetTime
-     * @abstract Offset the track's start time to the specified time in beats
-     * @discussion
+     * [@property] offsetTime
+     * 
+     * Offset the track's start time to the specified time in beats
+     * 
      * 	By default this value is zero.
      */
     @Generated
@@ -372,9 +391,10 @@ public class AVMusicTrack extends NSObject {
     public native void setOffsetTime(double value);
 
     /**
-     * @property timeResolution
-     * @abstract The time resolution value for the sequence, in ticks (pulses) per quarter note (PPQN)
-     * @discussion
+     * [@property] timeResolution
+     * 
+     * The time resolution value for the sequence, in ticks (pulses) per quarter note (PPQN)
+     * 
      * 	If a MIDI file was used to construct the containing sequence, the resolution will be what
      * 	was in the file. If you want to keep a time resolution when writing a new file, you can
      * 	retrieve this value and then specify it when calling -[AVAudioSequencer

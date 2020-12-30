@@ -30,8 +30,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol AVCaptureFileOutputRecordingDelegate
- * @abstract
+ * [@protocol] AVCaptureFileOutputRecordingDelegate
+ * 
  *    Defines an interface for delegates of AVCaptureFileOutput to respond to events that occur in the process of recording a single file.
  */
 @Generated
@@ -40,9 +40,15 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVCaptureFileOutputRecordingDelegate")
 public interface AVCaptureFileOutputRecordingDelegate {
     /**
-     * @method captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:
-     * @abstract
+     * captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:
+     * 
      *    Informs the delegate when all pending data has been written to an output file.
+     * 
+     *    This method is called when the file output has finished writing all data to a file whose recording was stopped, either because startRecordingToOutputFileURL:recordingDelegate: or stopRecording were called, or because an error, described by the error parameter, occurred (if no error occurred, the error parameter will be nil). This method will always be called for each recording request, even if no data is successfully written to the file.
+     * 
+     *    Clients should not assume that this method will be called on a specific thread.
+     * 
+     *    Delegates are required to implement this method.
      * 
      * @param output
      *    The capture file output that has finished writing the file.
@@ -52,13 +58,6 @@ public interface AVCaptureFileOutputRecordingDelegate {
      *    An array of AVCaptureConnection objects attached to the file output that provided the data that was written to the file.
      * @param error
      *    An error describing what caused the file to stop recording, or nil if there was no error.
-     * 
-     * @discussion
-     *    This method is called when the file output has finished writing all data to a file whose recording was stopped, either because startRecordingToOutputFileURL:recordingDelegate: or stopRecording were called, or because an error, described by the error parameter, occurred (if no error occurred, the error parameter will be nil). This method will always be called for each recording request, even if no data is successfully written to the file.
-     * 
-     *    Clients should not assume that this method will be called on a specific thread.
-     * 
-     *    Delegates are required to implement this method.
      */
     @Generated
     @Selector("captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:")
@@ -66,9 +65,13 @@ public interface AVCaptureFileOutputRecordingDelegate {
             NSURL outputFileURL, NSArray<? extends AVCaptureConnection> connections, NSError error);
 
     /**
-     * @method captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:
-     * @abstract
+     * captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:
+     * 
      *    Informs the delegate when the output has started writing to a file.
+     * 
+     *    This method is called when the file output has started writing data to a file. If an error condition prevents any data from being written, this method may not be called. captureOutput:willFinishRecordingToOutputFileAtURL:fromConnections:error: and captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: will always be called, even if no data is written.
+     * 
+     *    Clients should not assume that this method will be called on a specific thread, and should also try to make this method as efficient as possible.
      * 
      * @param output
      *    The capture file output that started writing the file.
@@ -76,11 +79,6 @@ public interface AVCaptureFileOutputRecordingDelegate {
      *    The file URL of the file that is being written.
      * @param connections
      *    An array of AVCaptureConnection objects attached to the file output that provided the data that is being written to the file.
-     * 
-     * @discussion
-     *    This method is called when the file output has started writing data to a file. If an error condition prevents any data from being written, this method may not be called. captureOutput:willFinishRecordingToOutputFileAtURL:fromConnections:error: and captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error: will always be called, even if no data is written.
-     * 
-     *    Clients should not assume that this method will be called on a specific thread, and should also try to make this method as efficient as possible.
      */
     @Generated
     @IsOptional

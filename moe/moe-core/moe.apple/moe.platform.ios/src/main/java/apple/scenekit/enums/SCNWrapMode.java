@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum SCNWrapeMode
- * @abstract Wrap modes
+ * [@enum] SCNWrapeMode
+ * 
+ * Wrap modes
  */
 @Generated
 public final class SCNWrapMode {

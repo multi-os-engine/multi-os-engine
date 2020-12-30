@@ -115,7 +115,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Enable or disable light estimation.
-     * @discussion Enabled by default.
+     * 
+     * Enabled by default.
      */
     @Generated
     @Selector("isLightEstimationEnabled")
@@ -144,7 +145,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines whether to capture and provide audio data.
-     * @discussion Disabled by default.
+     * 
+     * Disabled by default.
      */
     @Generated
     @Selector("providesAudioData")
@@ -160,7 +162,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Enable or disable light estimation.
-     * @discussion Enabled by default.
+     * 
+     * Enabled by default.
      */
     @Generated
     @Selector("setLightEstimationEnabled:")
@@ -168,7 +171,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines whether to capture and provide audio data.
-     * @discussion Disabled by default.
+     * 
+     * Disabled by default.
      */
     @Generated
     @Selector("setProvidesAudioData:")
@@ -180,7 +184,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines how the coordinate system should be aligned with the world.
-     * @discussion The default is ARWorldAlignmentGravity.
+     * 
+     * The default is ARWorldAlignmentGravity.
      */
     @Generated
     @Selector("setWorldAlignment:")
@@ -197,7 +202,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines how the coordinate system should be aligned with the world.
-     * @discussion The default is ARWorldAlignmentGravity.
+     * 
+     * The default is ARWorldAlignmentGravity.
      */
     @Generated
     @Selector("worldAlignment")
@@ -207,10 +213,11 @@ public class ARConfiguration extends NSObject implements NSCopying {
     /**
      * The type of semantic understanding to provide with each frame.
      * 
-     * @discussion Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the set of frame semantics. For example, when running a session with
+     * Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the set of frame semantics. For example, when running a session with
      * a configuration of type ARWorldTrackingConfiguration one would need to use `+[ ARWorldTrackingConfiguration supportsFrameSemantics:]` to perform said check.
      * An exception is thrown if the option
      * is not supported. Defaults to ARFrameSemanticNone.
+     * 
      * @see ARFrameSemantics
      * @see +[ARConfiguration supportsFrameSemantics:]
      */
@@ -222,10 +229,11 @@ public class ARConfiguration extends NSObject implements NSCopying {
     /**
      * The type of semantic understanding to provide with each frame.
      * 
-     * @discussion Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the set of frame semantics. For example, when running a session with
+     * Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the set of frame semantics. For example, when running a session with
      * a configuration of type ARWorldTrackingConfiguration one would need to use `+[ ARWorldTrackingConfiguration supportsFrameSemantics:]` to perform said check.
      * An exception is thrown if the option
      * is not supported. Defaults to ARFrameSemanticNone.
+     * 
      * @see ARFrameSemantics
      * @see +[ARConfiguration supportsFrameSemantics:]
      */
@@ -242,7 +250,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * A list of supported video formats for this configuration and device.
-     * @discussion The first element in the list is the default format for session output.
+     * 
+     * The first element in the list is the default format for session output.
      */
     @Generated
     @Selector("supportedVideoFormats")
@@ -251,9 +260,10 @@ public class ARConfiguration extends NSObject implements NSCopying {
     /**
      * Determines whether the type of frame semantics is supported by the device and ARConfiguration class.
      * 
-     * @discussion Semantic frame understanding is not supported on all devices. Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the
+     * Semantic frame understanding is not supported on all devices. Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the
      * set of frame semantics. For example, when running a session with a configuration of type ARWorldTrackingConfiguration one would need to use
      * `+[ ARWorldTrackingConfiguration supportsFrameSemantics:]` to perform said check.
+     * 
      * @see ARFrameSemantics
      */
     @Generated

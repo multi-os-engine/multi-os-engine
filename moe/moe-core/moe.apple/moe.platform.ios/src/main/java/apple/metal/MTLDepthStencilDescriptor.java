@@ -195,8 +195,9 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     public native void setDepthWriteEnabled(boolean value);
 
     /**
-     * @property label
-     * @abstract A string to help identify the created object.
+     * [@property] label
+     * 
+     * A string to help identify the created object.
      */
     @Generated
     @Selector("label")
@@ -221,8 +222,9 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     public native void setFrontFaceStencil(MTLStencilDescriptor value);
 
     /**
-     * @property label
-     * @abstract A string to help identify the created object.
+     * [@property] label
+     * 
+     * A string to help identify the created object.
      */
     @Generated
     @Selector("setLabel:")

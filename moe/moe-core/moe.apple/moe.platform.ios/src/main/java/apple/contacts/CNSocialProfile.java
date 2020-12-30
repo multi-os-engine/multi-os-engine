@@ -44,9 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract An immutable value object representing a social profile.
+ * An immutable value object representing a social profile.
  * 
- * @discussion CNSocialProfile is thread safe.
+ * CNSocialProfile is thread safe.
  */
 @Generated
 @Library("Contacts")

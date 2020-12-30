@@ -19,19 +19,20 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum       CTRubyPosition
- * @abstract   These constants specify the position of the ruby text with respect to the base text.
+ * [@enum]       CTRubyPosition
  * 
- * @constant   kCTRubyPositionBefore
+ * These constants specify the position of the ruby text with respect to the base text.
+ * 
+ * [@constant]   kCTRubyPositionBefore
  *             The ruby text is positioned before the base text; i.e. above horizontal text and to the right of vertical text.
  * 
- * @constant   kCTRubyPositionAfter
+ * [@constant]   kCTRubyPositionAfter
  *             The ruby text is positioned after the base text; i.e. below horizontal text and to the left of vertical text.
  * 
- * @constant   kCTRubyPositionInterCharacter
+ * [@constant]   kCTRubyPositionInterCharacter
  *             The ruby text is positioned to the right of the base text whether it is horizontal or vertical. This is the way that Bopomofo annotations are attached to Chinese text in Taiwan.
  * 
- * @constant   kCTRubyPositionInline
+ * [@constant]   kCTRubyPositionInline
  *             The ruby text follows the base text with no special styling.
  */
 @Generated

@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   A MPSNNFilterNode representing a MPSCNNConvolutionTranspose kernel
+ * A MPSNNFilterNode representing a MPSCNNConvolutionTranspose kernel
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -153,7 +153,8 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
     public static native long version_static();
 
     /**
-     * @abstract   Init a node representing a MPSCNNConvolutionTransposeNode kernel
+     * Init a node representing a MPSCNNConvolutionTransposeNode kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      convolutionGradientState        When the convolution transpose is used to 'undo' an earlier convolution
      *                                     in the graph, it is generally desired that the output image be the same
@@ -172,7 +173,8 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
-     * @abstract   Init an autoreleased not representing a MPSCNNConvolutionTransposeNode kernel
+     * Init an autoreleased not representing a MPSCNNConvolutionTransposeNode kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      convolutionGradientState        When the convolution transpose is used to 'undo' an earlier convolution
      *                                     in the graph, it is generally desired that the output image be the same

@@ -58,7 +58,7 @@ public class ARHitTestResult extends NSObject {
     /**
      * The anchor that the hit-test intersected.
      * 
-     * @discussion An anchor will only be provided for existing plane result types.
+     * An anchor will only be provided for existing plane result types.
      */
     @Generated
     @Selector("anchor")

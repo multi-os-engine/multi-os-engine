@@ -49,10 +49,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- *   @class      MPSImage
- *   @dependency This depends on Metal.framework
- *   @abstract   A MPSImage object describes a MTLTexture that may have more than 4 channels.
- *   @discussion Some image types, such as those found in convolutional neural networks (CNN)
+ * MPSImage
+ *   [@dependency] This depends on Metal.framework
+ * 
+ * A MPSImage object describes a MTLTexture that may have more than 4 channels.
+ * 
+ * Some image types, such as those found in convolutional neural networks (CNN)
  *               differ from a standard texture in that they may have more than 4 channels
  *               per image. While the channels could hold RGBA data, they will more commonly
  *               hold a number of structural permutations upon a multi-channel image as the neural
@@ -64,7 +66,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *               such that 4 consecutive channels are stored in each slice of this array.
  *               If the number of feature channels is N, number of array slices needed is (N+3)/4.
  *               E.g. a CNN image with width 3 and height 2 with 9 channels will be stored as
- *  @code
+ *  [@code]
  *               slice 0   RGBA   RGBA  RGBA
  *                         RGBA   RGBA  RGBA
  * 
@@ -73,7 +75,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  *               slice 2         R???   R???   R???
  *                               R???   R???   R???
- * @endcode
+ * [@endcode]
  *               The width and height of underlying 2d texture array is the same as the width and height of the MPSImage.
  *               The array length is equal to (featureChannels + 3) / 4. Channels marked with ? are just
  *               for padding and should not contain NaNs or Infs.
@@ -228,8 +230,9 @@ public class MPSImage extends NSObject {
     public static native long version_static();
 
     /**
-     * @property device
-     * @abstract  The device on which the MPSImage will be used
+     * [@property] device
+     * 
+     * The device on which the MPSImage will be used
      */
     @Generated
     @Selector("device")
@@ -237,8 +240,9 @@ public class MPSImage extends NSObject {
     public native MTLDevice device();
 
     /**
-     * @property   featureChannels
-     * @abstract   The number of feature channels per pixel.
+     * [@property]   featureChannels
+     * 
+     * The number of feature channels per pixel.
      */
     @Generated
     @Selector("featureChannels")
@@ -246,8 +250,9 @@ public class MPSImage extends NSObject {
     public native long featureChannels();
 
     /**
-     * @property   height
-     * @abstract   The formal height of the image in pixels.
+     * [@property]   height
+     * 
+     * The formal height of the image in pixels.
      */
     @Generated
     @Selector("height")
@@ -259,12 +264,14 @@ public class MPSImage extends NSObject {
     public native MPSImage init();
 
     /**
-     * @abstract   Initialize an empty image object
+     * Initialize an empty image object
+     * 
+     * Storage to store data needed is allocated lazily on first use of MPSImage or
+     *             when application calls MPSImage.texture
+     * 
      * @param      device              The device that the image will be used. May not be NULL.
      * @param      imageDescriptor     The MPSImageDescriptor. May not be NULL.
      * @return     A valid MPSImage object or nil, if failure.
-     * @discussion Storage to store data needed is allocated lazily on first use of MPSImage or
-     *             when application calls MPSImage.texture
      */
     @Generated
     @Selector("initWithDevice:imageDescriptor:")
@@ -272,12 +279,10 @@ public class MPSImage extends NSObject {
             MPSImageDescriptor imageDescriptor);
 
     /**
-     * @abstract   Initialize an MPSImage object using Metal texture. Metal texture has been created by
+     * Initialize an MPSImage object using Metal texture. Metal texture has been created by
      *             user for specific number of feature channels and number of images.
-     * @param      texture          The MTLTexture allocated by the user to be used as backing for MPSImage.
-     * @param      featureChannels  Number of feature channels this texture contains.
-     * @return     A valid MPSImage object or nil, if failure.
-     * @discussion Application can let MPS framework allocate texture with properties specified in imageDescriptor
+     * 
+     * Application can let MPS framework allocate texture with properties specified in imageDescriptor
      *             using initWithDevice:MPSImageDescriptor API above. However in memory intensive application,
      *             you can save memory (and allocation/deallocation time) by using MPSTemporaryImage where MPS
      *             framework aggressively reuse memory underlying textures on same command buffer. See MPSTemporaryImage
@@ -295,6 +300,10 @@ public class MPSImage extends NSObject {
      *             other libraries such as that drawn from a JPEG or PNG, featureChannels should
      *             be set to number of valid color channel e.g. for RGB data, even thought MTLPixelFormat will be
      *             MTLPixelFormatRGBA, featureChannels should be set to 3.
+     * 
+     * @param      texture          The MTLTexture allocated by the user to be used as backing for MPSImage.
+     * @param      featureChannels  Number of feature channels this texture contains.
+     * @return     A valid MPSImage object or nil, if failure.
      */
     @Generated
     @Selector("initWithTexture:featureChannels:")
@@ -302,16 +311,18 @@ public class MPSImage extends NSObject {
             @NUInt long featureChannels);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     public native String label();
 
     /**
-     * @property   numberOfImages
-     * @abstract   numberOfImages for batch processing
+     * [@property]   numberOfImages
+     * 
+     * numberOfImages for batch processing
      */
     @Generated
     @Selector("numberOfImages")
@@ -319,9 +330,11 @@ public class MPSImage extends NSObject {
     public native long numberOfImages();
 
     /**
-     * @property   pixelFormat
-     * @abstract   The MTLPixelFormat of the underlying texture
-     * @discussion Note that in some cases, this value may be misleading. For example,
+     * [@property]   pixelFormat
+     * 
+     * The MTLPixelFormat of the underlying texture
+     * 
+     * Note that in some cases, this value may be misleading. For example,
      *             float16 data (BFloat16) is sometimes stored in MTLPixelFormatRGBA16Unorm
      *             Please consult the featureChannelFormat.
      */
@@ -331,8 +344,9 @@ public class MPSImage extends NSObject {
     public native long pixelFormat();
 
     /**
-     * @property   pixelSize
-     * @abstract   Number of bytes from the first byte of one pixel to the first byte of the next
+     * [@property]   pixelSize
+     * 
+     * Number of bytes from the first byte of one pixel to the first byte of the next
      *             pixel in storage order.  (Includes padding.)
      */
     @Generated
@@ -341,9 +355,11 @@ public class MPSImage extends NSObject {
     public native long pixelSize();
 
     /**
-     * @property   precision
-     * @abstract   The number of bits of numeric precision available for each feature channel.
-     * @discussion This is precision, not size.  That is, float is 24 bits, not 32. half
+     * [@property]   precision
+     * 
+     * The number of bits of numeric precision available for each feature channel.
+     * 
+     * This is precision, not size.  That is, float is 24 bits, not 32. half
      *             precision floating-point is 11 bits, not 16. SNorm formats have one less
      *             bit of precision for the sign bit, etc. For formats like MTLPixelFormatB5G6R5Unorm
      *             it is the precision of the most precise channel, in this case 6.  When this
@@ -355,16 +371,18 @@ public class MPSImage extends NSObject {
     public native long precision();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
     /**
-     * @abstract       Set (or query) the purgeability state of a MPSImage
-     * @discussion     Usage is per [MTLResource setPurgeableState:], except that the MTLTexture might be
+     * Set (or query) the purgeability state of a MPSImage
+     * 
+     * Usage is per [MTLResource setPurgeableState:], except that the MTLTexture might be
      *                 MPSPurgeableStateAllocationDeferred, which means there is no texture to mark volatile / nonvolatile.
      *                 Attempts to set purgeability on MTLTextures that have not been allocated will be ignored.
      */
@@ -374,11 +392,13 @@ public class MPSImage extends NSObject {
     public native long setPurgeableState(@NUInt long state);
 
     /**
-     * @property   texture
-     * @abstract   The associated MTLTexture object.
+     * [@property]   texture
+     * 
+     * The associated MTLTexture object.
      *             This is a 2D texture if numberOfImages is 1 and number of feature channels <= 4.
      *             It is a 2D texture array otherwise.
-     * @discussion To avoid the high cost of premature allocation of the underlying texture, avoid calling this
+     * 
+     * To avoid the high cost of premature allocation of the underlying texture, avoid calling this
      *             property except when strictly necessary. [MPSCNNKernel encode...] calls typically cause
      *             their arguments to become allocated. Likewise, MPSImages initialized with -initWithTexture:
      *             featureChannels: have already been allocated.
@@ -389,8 +409,9 @@ public class MPSImage extends NSObject {
     public native MTLTexture texture();
 
     /**
-     * @property   textureType
-     * @abstract   The type of the underlying texture, typically MTLTextureType2D
+     * [@property]   textureType
+     * 
+     * The type of the underlying texture, typically MTLTextureType2D
      *             or MTLTextureType2DArray
      */
     @Generated
@@ -399,8 +420,9 @@ public class MPSImage extends NSObject {
     public native long textureType();
 
     /**
-     * @property   usage
-     * @abstract   Description of texture usage.
+     * [@property]   usage
+     * 
+     * Description of texture usage.
      */
     @Generated
     @Selector("usage")
@@ -408,8 +430,9 @@ public class MPSImage extends NSObject {
     public native long usage();
 
     /**
-     * @property   width
-     * @abstract   The formal width of the image in pixels.
+     * [@property]   width
+     * 
+     * The formal width of the image in pixels.
      */
     @Generated
     @Selector("width")
@@ -425,8 +448,13 @@ public class MPSImage extends NSObject {
     public static native MPSImageAllocator defaultAllocator();
 
     /**
-     * @method         readBytes
-     * @abstract       Get the values inside MPSImage and put them in the Buffer passed in.
+     * readBytes
+     * 
+     * Get the values inside MPSImage and put them in the Buffer passed in.
+     * 
+     * Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
+     *                 defined in the Image Descriptor.
+     * 
      * @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
      *                                              imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
      *                                              defined in the Image Descriptor.
@@ -437,8 +465,6 @@ public class MPSImage extends NSObject {
      * @param          region                       region of the MPSImage to read from. A region is a structure with the origin in the Image from which to start
      *                                              reading values and a size which represents the width and height of the rectangular region to read from.
      *                                              The z direction denotes the number of images, thus for 1 image, origin.z = 0 and size.depth = 1
-     * @discussion     Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
-     *                 defined in the Image Descriptor.
      */
     @Generated
     @Selector("readBytes:dataLayout:bytesPerRow:region:featureChannelInfo:imageIndex:")
@@ -447,22 +473,31 @@ public class MPSImage extends NSObject {
             @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 
     /**
-     * @method         readBytes
-     * @abstract       Get the values inside MPSImage and put them in the Buffer passed in.
+     * readBytes
+     * 
+     * Get the values inside MPSImage and put them in the Buffer passed in.
+     * 
+     * Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
+     *                 defined in the Image Descriptor. Region is full image, buffer width and height is same as MPSImage width and height.
+     * 
      * @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
      *                                              imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
      *                                              defined in the Image Descriptor.
      * @param          dataLayout                   The enum tells how to layout MPS data in the buffer.
      * @param          imageIndex                   Image index in MPSImage to read from.
-     * @discussion     Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
-     *                 defined in the Image Descriptor. Region is full image, buffer width and height is same as MPSImage width and height.
      */
     @Generated
     @Selector("readBytes:dataLayout:imageIndex:")
     public native void readBytesDataLayoutImageIndex(VoidPtr dataBytes, @NUInt long dataLayout, @NUInt long imageIndex);
 
     /**
-     * @abstract       Set the values inside MPSImage with the Buffer passed in.
+     * Set the values inside MPSImage with the Buffer passed in.
+     * 
+     * This method is used to copy data from the storage provided by dataBytes to the MPSImage. The ordering of data in
+     *                 your dataBytes buffer is given by dataLayout. Each image may be stored as either a series of planar images (a series of single WxH images, one per
+     *                 feature channel) or a single chunky image, WxHxfeature_channels. BytesPerRow and BytesPerImage are there to allow some padding between
+     *                 successive rows and successive images. No padding is allowed between successive feature channels.
+     * 
      * @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
      *                                              imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
      *                                              defined in the Image Descriptor.
@@ -473,10 +508,6 @@ public class MPSImage extends NSObject {
      *                                              The z direction denotes the number of images, thus for 1 image, origin.z = 0 and size.depth = 1
      * @param          featureChannelInfo           information user fills in to read from a set of feature channels in the image
      * @param          imageIndex                   Image index in MPSImage to write to.
-     * @discussion     This method is used to copy data from the storage provided by dataBytes to the MPSImage. The ordering of data in
-     *                 your dataBytes buffer is given by dataLayout. Each image may be stored as either a series of planar images (a series of single WxH images, one per
-     *                 feature channel) or a single chunky image, WxHxfeature_channels. BytesPerRow and BytesPerImage are there to allow some padding between
-     *                 successive rows and successive images. No padding is allowed between successive feature channels.
      */
     @Generated
     @Selector("writeBytes:dataLayout:bytesPerRow:region:featureChannelInfo:imageIndex:")
@@ -485,15 +516,18 @@ public class MPSImage extends NSObject {
             @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 
     /**
-     * @method         writeBytes
-     * @abstract       Set the values inside MPSImage with the Buffer passed in.
+     * writeBytes
+     * 
+     * Set the values inside MPSImage with the Buffer passed in.
+     * 
+     * Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
+     *                 defined in the Image Descriptor. Region is full image, buffer width and height is same as MPSImage width and height.
+     * 
      * @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
      *                                              imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
      *                                              defined in the Image Descriptor.
      * @param          dataLayout                   The enum tells how to layout MPS data in the buffer.
      * @param          imageIndex                   Image index in MPSImage to write to.
-     * @discussion     Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
-     *                 defined in the Image Descriptor. Region is full image, buffer width and height is same as MPSImage width and height.
      */
     @Generated
     @Selector("writeBytes:dataLayout:imageIndex:")
@@ -501,8 +535,9 @@ public class MPSImage extends NSObject {
             @NUInt long imageIndex);
 
     /**
-     * @property   featureChannelFormat
-     * @abstract   The true encoding of the feature channels
+     * [@property]   featureChannelFormat
+     * 
+     * The true encoding of the feature channels
      */
     @Generated
     @Selector("featureChannelFormat")
@@ -510,8 +545,9 @@ public class MPSImage extends NSObject {
     public native long featureChannelFormat();
 
     /**
-     * @abstract   Use -batchRepresentation or -subImageWithFeatureChannelRange instead
-     * @discussion Generally, you should call -batchRepresentation or -subImageWithFeatureChannelRange
+     * Use -batchRepresentation or -subImageWithFeatureChannelRange instead
+     * 
+     * Generally, you should call -batchRepresentation or -subImageWithFeatureChannelRange
      *             instead because they are safer. This is provided so that these interfaces will work
      *             with your MPSImage subclass.
      * 
@@ -528,8 +564,9 @@ public class MPSImage extends NSObject {
             @NUInt long featureChannels);
 
     /**
-     * @abstract   The MPSImage from which this MPSImage was derived. Otherwise nil.
-     * @discussion This will point to the original image if this image was created using
+     * The MPSImage from which this MPSImage was derived. Otherwise nil.
+     * 
+     * This will point to the original image if this image was created using
      *             -batchRepresentation, -batchRepresentationWithRange: or
      *             -subImageWithFeatureChannelRange:.
      */
@@ -538,8 +575,22 @@ public class MPSImage extends NSObject {
     public native MPSImage parent();
 
     /**
-     * @method         readBytes
-     * @abstract       Get the values inside MPSImage and put them in the Buffer passed in.
+     * readBytes
+     * 
+     * Get the values inside MPSImage and put them in the Buffer passed in.
+     * 
+     * This method is used to copy data from the MPSImage to the storage provided by dataBytes. The ordering of data in
+     *                 your dataBytes buffer is given by dataLayout. Each image may be stored as either a series of planar images (a series of single WxH images, one per
+     *                 feature channel) or a single chunky image, WxHxfeature_channels. BytesPerRow and BytesPerImage are there to allow some padding between
+     *                 successive rows and successive images. No padding is allowed between successive feature channels.
+     * 
+     *                 BUG: Prior to MacOS 10.15, iOS/tvOS 13.0, incorrect behavior may be observed if region.size.depth != 1 or if
+     *                      bytesPerRow allowed for unused padding between rows.
+     *                 BUG: To provide for full capability to extract and insert content from arbitrarily sized buffers, there should
+     *                      also be a featureChannelStride in addition to bytesPerRow and bytesPerImage. With the current design, when we finish the
+     *                      last feature channel, the next byte will contain the 0th feature channel for the next texel or slice, depending
+     *                      on packing order. This method can not be used to modify some but not all of the feature channels in an image.
+     * 
      * @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
      *                                              imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
      *                                              defined in the Image Descriptor.
@@ -551,18 +602,6 @@ public class MPSImage extends NSObject {
      * @param          region                       region of the MPSImage to read from. A region is a structure with the origin in the Image from which to start
      *                                              reading values and a size which represents the width and height of the rectangular region to read from.
      *                                              The z direction denotes the number of images, thus for 1 image, origin.z = 0 and size.depth = 1
-     * 
-     * @discussion     This method is used to copy data from the MPSImage to the storage provided by dataBytes. The ordering of data in
-     *                 your dataBytes buffer is given by dataLayout. Each image may be stored as either a series of planar images (a series of single WxH images, one per
-     *                 feature channel) or a single chunky image, WxHxfeature_channels. BytesPerRow and BytesPerImage are there to allow some padding between
-     *                 successive rows and successive images. No padding is allowed between successive feature channels.
-     * 
-     *                 BUG: Prior to MacOS 10.15, iOS/tvOS 13.0, incorrect behavior may be observed if region.size.depth != 1 or if
-     *                      bytesPerRow allowed for unused padding between rows.
-     *                 BUG: To provide for full capability to extract and insert content from arbitrarily sized buffers, there should
-     *                      also be a featureChannelStride in addition to bytesPerRow and bytesPerImage. With the current design, when we finish the
-     *                      last feature channel, the next byte will contain the 0th feature channel for the next texel or slice, depending
-     *                      on packing order. This method can not be used to modify some but not all of the feature channels in an image.
      */
     @Generated
     @Selector("readBytes:dataLayout:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")
@@ -571,8 +610,9 @@ public class MPSImage extends NSObject {
             @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
 
     /**
-     * @abstract       Get the number of bytes used to allocate underyling MTLResources
-     * @discussion     This is the size of the backing store of underlying MTLResources.
+     * Get the number of bytes used to allocate underyling MTLResources
+     * 
+     * This is the size of the backing store of underlying MTLResources.
      *                 It does not include all storage used by the object, for example
      *                 the storage used to hold the MPSImage instantiation and MTLTexture
      *                 is not included. It only measures the size of the allocation
@@ -598,8 +638,9 @@ public class MPSImage extends NSObject {
     public native long resourceSize();
 
     /**
-     * @abstract    Make a sub-image that points to a subset of feature channels in the original
-     * @discussion  This makes a MPSImage that points to a feature channel subregion within
+     * Make a sub-image that points to a subset of feature channels in the original
+     * 
+     * This makes a MPSImage that points to a feature channel subregion within
      *              the original image. It is a much cheaper form of the slice operator in both
      *              memory usage and GPU time, and should be used instead when the slice operator
      *              does not need to operate out of place and the feature channel range is a
@@ -619,11 +660,13 @@ public class MPSImage extends NSObject {
     public native MPSImage subImageWithFeatureChannelRange(@ByValue NSRange range);
 
     /**
-     * @abstract   Flush the underlying MTLTexture from the device's caches, and invalidate any CPU caches if needed.
-     * @discussion This will call [id <MTLBlitEncoder> synchronizeResource: ] on the image's MTLTexture, if any.
+     * Flush the underlying MTLTexture from the device's caches, and invalidate any CPU caches if needed.
+     * 
+     * This will call [id <MTLBlitEncoder> synchronizeResource: ] on the image's MTLTexture, if any.
      *             This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary
      *             resources (these are all MTLStorageModePrivate), and textures that have not yet been allocated, nothing is done.
      *             It is more efficient to use this method than to attempt to do this yourself with the texture property.
+     * 
      * @param      commandBuffer       The commandbuffer on which to synchronize
      */
     @Generated
@@ -631,7 +674,13 @@ public class MPSImage extends NSObject {
     public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
-     * @abstract       Set the values inside MPSImage with the Buffer passed in.
+     * Set the values inside MPSImage with the Buffer passed in.
+     * 
+     * This method is used to copy data from the storage provided by dataBytes to the MPSImage. The ordering of data in
+     *                 your dataBytes buffer is given by dataLayout. Each image may be stored as either a series of planar images (a series of single WxH images, one per
+     *                 feature channel) or a single chunky image, WxHxfeature_channels. BytesPerRow and BytesPerImage are there to allow some padding between
+     *                 successive rows and successive images. No padding is allowed between successive feature channels.
+     * 
      * @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
      *                                              imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
      *                                              defined in the Image Descriptor.
@@ -644,10 +693,6 @@ public class MPSImage extends NSObject {
      *                                              The z direction denotes the number of images, thus for 1 image, origin.z = 0 and size.depth = 1
      * @param          featureChannelInfo           information user fills in to read from a set of feature channels in the image
      * @param          imageIndex                   Image index in MPSImage to write to.
-     * @discussion     This method is used to copy data from the storage provided by dataBytes to the MPSImage. The ordering of data in
-     *                 your dataBytes buffer is given by dataLayout. Each image may be stored as either a series of planar images (a series of single WxH images, one per
-     *                 feature channel) or a single chunky image, WxHxfeature_channels. BytesPerRow and BytesPerImage are there to allow some padding between
-     *                 successive rows and successive images. No padding is allowed between successive feature channels.
      */
     @Generated
     @Selector("writeBytes:dataLayout:bytesPerColumn:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")
@@ -657,8 +702,20 @@ public class MPSImage extends NSObject {
             @NUInt long imageIndex);
 
     /**
-     * @method         writeBytes
-     * @abstract       Set the values inside MPSImage with the Buffer passed in.
+     * writeBytes
+     * 
+     * Set the values inside MPSImage with the Buffer passed in.
+     * 
+     * Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
+     *                 defined in the Image Descriptor.
+     * 
+     *                 BUG: Prior to MacOS 10.15, iOS/tvOS 13.0, incorrect behavior may be observed if region.size.depth != 1 or if
+     *                      bytesPerRow allowed for unused padding between rows.
+     *                 BUG: To provide for full capability to extract and insert content from arbitrarily sized buffers, there should
+     *                      also be a featureChannelStride in addition to bytesPerRow and bytesPerImage. With the current design, when we finish the
+     *                      last feature channel, the next byte will contain the 0th feature channel for the next texel or slice, depending
+     *                      on packing order. This method can not be used to modify some but not all of the feature channels in an image.
+     * 
      * @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
      *                                              imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
      *                                              defined in the Image Descriptor.
@@ -670,15 +727,6 @@ public class MPSImage extends NSObject {
      *                                              The z direction denotes the number of images, thus for 1 image, origin.z = 0 and size.depth = 1
      * @param          featureChannelInfo           information user fills in to read from a set of feature channels in the image
      * @param          imageIndex                   Image index in MPSImage to write to.
-     * @discussion     Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
-     *                 defined in the Image Descriptor.
-     * 
-     *                 BUG: Prior to MacOS 10.15, iOS/tvOS 13.0, incorrect behavior may be observed if region.size.depth != 1 or if
-     *                      bytesPerRow allowed for unused padding between rows.
-     *                 BUG: To provide for full capability to extract and insert content from arbitrarily sized buffers, there should
-     *                      also be a featureChannelStride in addition to bytesPerRow and bytesPerImage. With the current design, when we finish the
-     *                      last feature channel, the next byte will contain the 0th feature channel for the next texel or slice, depending
-     *                      on packing order. This method can not be used to modify some but not all of the feature channels in an image.
      */
     @Generated
     @Selector("writeBytes:dataLayout:bytesPerRow:bytesPerImage:region:featureChannelInfo:imageIndex:")

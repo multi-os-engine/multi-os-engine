@@ -27,9 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief An acceleration structure built over polygonal shapes
+ * An acceleration structure built over polygonal shapes
  * 
- * @discussion See MPSAccelerationStructure for more information
+ * See MPSAccelerationStructure for more information
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -95,7 +95,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public static native long hash_static();
 
     /**
-     * @brief Index buffer containing index data. Each index references a vertex in the vertex buffer.
+     * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
      * 
      * This is an alias for polygonBuffers[0].indexBuffer. There must be exactly one polygon buffer
@@ -108,7 +108,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native MTLBuffer indexBuffer();
 
     /**
-     * @brief Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
+     * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
      * multiple of the index type. Changes to this property require rebuilding the acceleration
      * structure.
      * 
@@ -122,7 +122,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native long indexBufferOffset();
 
     /**
-     * @brief Index type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and MPSDataTypeUInt32
+     * Index type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and MPSDataTypeUInt32
      * are supported.
      */
     @Generated
@@ -177,7 +177,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
+     * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
      * 
      * This is an alias for polygonBuffers[0].maskBuffer. There must be exactly one polygon buffer
@@ -190,7 +190,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native MTLBuffer maskBuffer();
 
     /**
-     * @brief Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
      * 
      * This is an alias for polygonBuffers[0].maskBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
@@ -208,7 +208,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public static native Object new_objc();
 
     /**
-     * @brief Array of polygon buffers. Each buffer contains a vertex buffer and optional index and
+     * Array of polygon buffers. Each buffer contains a vertex buffer and optional index and
      * mask buffer for an array of polygons. Changing the length of this array requires rebuilding the
      * acceleration structure.
      * 
@@ -229,7 +229,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native NSArray<? extends MPSPolygonBuffer> polygonBuffers();
 
     /**
-     * @brief Number of polygons. Changes to this property require rebuilding the acceleration
+     * Number of polygons. Changes to this property require rebuilding the acceleration
      * structure.
      * 
      * This is an alias for polygonBuffers[0].polygonCount. There must be exactly one polygon buffer
@@ -242,7 +242,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native long polygonCount();
 
     /**
-     * @brief The type of polygon. Defaults to MPSPolygonTypeTriangle. Changes to this property require
+     * The type of polygon. Defaults to MPSPolygonTypeTriangle. Changes to this property require
      * rebuilding the acceleration structure.
      */
     @Generated
@@ -259,7 +259,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Index buffer containing index data. Each index references a vertex in the vertex buffer.
+     * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
      * 
      * This is an alias for polygonBuffers[0].indexBuffer. There must be exactly one polygon buffer
@@ -271,7 +271,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setIndexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
+     * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
      * multiple of the index type. Changes to this property require rebuilding the acceleration
      * structure.
      * 
@@ -284,7 +284,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setIndexBufferOffset(@NUInt long value);
 
     /**
-     * @brief Index type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and MPSDataTypeUInt32
+     * Index type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and MPSDataTypeUInt32
      * are supported.
      */
     @Generated
@@ -292,7 +292,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setIndexType(int value);
 
     /**
-     * @brief Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
+     * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
      * 
      * This is an alias for polygonBuffers[0].maskBuffer. There must be exactly one polygon buffer
@@ -304,7 +304,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setMaskBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
      * 
      * This is an alias for polygonBuffers[0].maskBufferOffset. There must be exactly one polygon
      * buffer to use this property, or the polygonBuffers property must be nil, in which case an
@@ -315,7 +315,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setMaskBufferOffset(@NUInt long value);
 
     /**
-     * @brief Array of polygon buffers. Each buffer contains a vertex buffer and optional index and
+     * Array of polygon buffers. Each buffer contains a vertex buffer and optional index and
      * mask buffer for an array of polygons. Changing the length of this array requires rebuilding the
      * acceleration structure.
      * 
@@ -336,7 +336,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setPolygonBuffers(NSArray<? extends MPSPolygonBuffer> value);
 
     /**
-     * @brief Number of polygons. Changes to this property require rebuilding the acceleration
+     * Number of polygons. Changes to this property require rebuilding the acceleration
      * structure.
      * 
      * This is an alias for polygonBuffers[0].polygonCount. There must be exactly one polygon buffer
@@ -348,7 +348,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setPolygonCount(@NUInt long value);
 
     /**
-     * @brief The type of polygon. Defaults to MPSPolygonTypeTriangle. Changes to this property require
+     * The type of polygon. Defaults to MPSPolygonTypeTriangle. Changes to this property require
      * rebuilding the acceleration structure.
      */
     @Generated
@@ -360,7 +360,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @brief Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
+     * Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
@@ -384,7 +384,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setVertexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
+     * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
      * 
      * This is an alias for polygonBuffers[0].vertexBufferOffset. There must be exactly one polygon
@@ -396,11 +396,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native void setVertexBufferOffset(@NUInt long value);
 
     /**
-     * @brief Offset, in bytes, between consecutive vertices in the vertex buffer. Defaults to 0 bytes,
+     * Offset, in bytes, between consecutive vertices in the vertex buffer. Defaults to 0 bytes,
      * indicating that the vertices are packed according to the natural alignment of the vector_float3
      * type: 16 bytes.
      * 
-     * @discussion This can be used to skip past any additional per-vertex data which may be stored
+     * This can be used to skip past any additional per-vertex data which may be stored
      * alongside the position such as the vertex normal and texture coordinates. Must be a multiple of
      * 4 bytes, and must be at least 12 bytes. Changes to this property require rebuilding the
      * acceleration structure.
@@ -429,7 +429,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public static native long version_static();
 
     /**
-     * @brief Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
+     * Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
@@ -454,7 +454,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native MTLBuffer vertexBuffer();
 
     /**
-     * @brief Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
+     * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
      * 
      * This is an alias for polygonBuffers[0].vertexBufferOffset. There must be exactly one polygon
@@ -467,11 +467,11 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     public native long vertexBufferOffset();
 
     /**
-     * @brief Offset, in bytes, between consecutive vertices in the vertex buffer. Defaults to 0 bytes,
+     * Offset, in bytes, between consecutive vertices in the vertex buffer. Defaults to 0 bytes,
      * indicating that the vertices are packed according to the natural alignment of the vector_float3
      * type: 16 bytes.
      * 
-     * @discussion This can be used to skip past any additional per-vertex data which may be stored
+     * This can be used to skip past any additional per-vertex data which may be stored
      * alongside the position such as the vertex normal and texture coordinates. Must be a multiple of
      * 4 bytes, and must be at least 12 bytes. Changes to this property require rebuilding the
      * acceleration structure.

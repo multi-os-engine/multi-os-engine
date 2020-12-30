@@ -26,8 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract         MPSCNNDepthWiseConvolutionDescriptor can be used to create MPSCNNConvolution object that does depthwise convolution
- * @discussion
+ * MPSCNNDepthWiseConvolutionDescriptor can be used to create MPSCNNConvolution object that does depthwise convolution
+ * 
  *                   Depthwise convolution applies different filter to each input feature channel i.e. no cross channel mixing.
  *                   Number of outputFeatureChannels can be greater than number of inputFeatureChannels, in which case convolution
  *                   expects channelMultipler = outputFeactureChannels/inputFeatureChannels number of filters for each input channel.
@@ -86,8 +86,9 @@ public class MPSCNNDepthWiseConvolutionDescriptor extends MPSCNNConvolutionDescr
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * @property      channelMultiplier
-     * @discussion    Ratio of outputFeactureChannel to inputFeatureChannels for depthwise convolution i.e. how many output feature channels are
+     * [@property]      channelMultiplier
+     * 
+     * Ratio of outputFeactureChannel to inputFeatureChannels for depthwise convolution i.e. how many output feature channels are
      *                produced by each input channel.
      */
     @Generated

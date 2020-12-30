@@ -49,9 +49,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsWorld
- * @abstract The SCNPhysicsWorld class describes and allows to control the physics simulation of a 3d scene.
- * @discussion The SCNPhysicsWorld class should not be allocated directly but retrieved from the SCNScene class using the physicsWorld property.
+ * SCNPhysicsWorld
+ * 
+ * The SCNPhysicsWorld class describes and allows to control the physics simulation of a 3d scene.
+ * 
+ * The SCNPhysicsWorld class should not be allocated directly but retrieved from the SCNScene class using the physicsWorld property.
  */
 @Generated
 @Library("SceneKit")

@@ -83,6 +83,7 @@ public class GCMouse extends NSObject implements GCDevice {
 
     /**
      * The most recently used mouse device. If a user actuates a mouse input, that mouse will become the current one.
+     * 
      * @see GCMouseDidBecomeCurrentNotification
      * @see GCMouseDidStopBeingCurrentNotification
      */

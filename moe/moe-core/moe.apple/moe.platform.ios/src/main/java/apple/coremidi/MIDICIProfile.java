@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		MIDICIProfile
- * @abstract  	An NSObject representing Capability Inquiry profile. MIDI-CI profiles describe a mapping
+ * MIDICIProfile
+ * 
+ * An NSObject representing Capability Inquiry profile. MIDI-CI profiles describe a mapping
  * 		of MIDI messages to specific sounds and synthesis behaviors, e.g. General MIDI, a drawbar organ,
  * 		etc. A MIDI-CI profile may be a standard registered profile or vendor-specific.
  * 

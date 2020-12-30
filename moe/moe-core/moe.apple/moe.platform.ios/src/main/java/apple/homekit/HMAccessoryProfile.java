@@ -41,7 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Represents a profile implemented by an accessory.
+ * Represents a profile implemented by an accessory.
  */
 @Generated
 @Library("HomeKit")
@@ -155,7 +155,7 @@ public class HMAccessoryProfile extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief Accessory implementing the profile.
+     * Accessory implementing the profile.
      */
     @Generated
     @Selector("accessory")
@@ -166,14 +166,14 @@ public class HMAccessoryProfile extends NSObject {
     public native HMAccessoryProfile init();
 
     /**
-     * @brief Collection of services representing the profile.
+     * Collection of services representing the profile.
      */
     @Generated
     @Selector("services")
     public native NSArray<? extends HMService> services();
 
     /**
-     * @brief A unique identifier for the profile.
+     * A unique identifier for the profile.
      */
     @Generated
     @Selector("uniqueIdentifier")

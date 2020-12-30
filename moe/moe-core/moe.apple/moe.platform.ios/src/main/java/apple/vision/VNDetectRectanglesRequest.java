@@ -26,9 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A request that will detect rectangles in an image.
+ * A request that will detect rectangles in an image.
  * 
- * @details This request will generate VNRectangleObservation objects describing the location of rectangles detected in an image.
+ * This request will generate VNRectangleObservation objects describing the location of rectangles detected in an image.
  */
 @Generated
 @Library("Vision")
@@ -124,14 +124,14 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief Specifies the maximum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 1.0
+     * Specifies the maximum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 1.0
      */
     @Generated
     @Selector("maximumAspectRatio")
     public native float maximumAspectRatio();
 
     /**
-     * @brief Specifies the maximum number of rectangles to be returned.  The default is 1.  Setting this property to 0 will allow an unlimited number of observations to be returned.
+     * Specifies the maximum number of rectangles to be returned.  The default is 1.  Setting this property to 0 will allow an unlimited number of observations to be returned.
      */
     @Generated
     @Selector("maximumObservations")
@@ -139,21 +139,21 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public native long maximumObservations();
 
     /**
-     * @brief Specifies the minimum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 0.5
+     * Specifies the minimum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 0.5
      */
     @Generated
     @Selector("minimumAspectRatio")
     public native float minimumAspectRatio();
 
     /**
-     * @brief Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score will not be returned.
+     * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score will not be returned.
      */
     @Generated
     @Selector("minimumConfidence")
     public native float minimumConfidence();
 
     /**
-     * @brief Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned. 
+     * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
      */
     @Generated
     @Selector("minimumSize")
@@ -166,7 +166,7 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public static native Object new_objc();
 
     /**
-     * @brief Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45], default 30
+     * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45], default 30
      */
     @Generated
     @Selector("quadratureTolerance")
@@ -181,42 +181,42 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Specifies the maximum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 1.0
+     * Specifies the maximum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 1.0
      */
     @Generated
     @Selector("setMaximumAspectRatio:")
     public native void setMaximumAspectRatio(float value);
 
     /**
-     * @brief Specifies the maximum number of rectangles to be returned.  The default is 1.  Setting this property to 0 will allow an unlimited number of observations to be returned.
+     * Specifies the maximum number of rectangles to be returned.  The default is 1.  Setting this property to 0 will allow an unlimited number of observations to be returned.
      */
     @Generated
     @Selector("setMaximumObservations:")
     public native void setMaximumObservations(@NUInt long value);
 
     /**
-     * @brief Specifies the minimum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 0.5
+     * Specifies the minimum aspect ratio of the rectangle(s) to look for, range [0.0, 1.0], default 0.5
      */
     @Generated
     @Selector("setMinimumAspectRatio:")
     public native void setMinimumAspectRatio(float value);
 
     /**
-     * @brief Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score will not be returned.
+     * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score will not be returned.
      */
     @Generated
     @Selector("setMinimumConfidence:")
     public native void setMinimumConfidence(float value);
 
     /**
-     * @brief Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned. 
+     * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
      */
     @Generated
     @Selector("setMinimumSize:")
     public native void setMinimumSize(float value);
 
     /**
-     * @brief Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45], default 30
+     * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45], default 30
      */
     @Generated
     @Selector("setQuadratureTolerance:")

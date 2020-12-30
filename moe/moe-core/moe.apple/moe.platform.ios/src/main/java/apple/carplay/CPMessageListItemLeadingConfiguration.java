@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPMessageListItemLeadingConfiguration encapsulates the configuration options for
+ * [@c] CPMessageListItemLeadingConfiguration encapsulates the configuration options for
  * the leading side of your message list cell.
  */
 @Generated
@@ -96,6 +96,9 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
     public native CPMessageListItemLeadingConfiguration init();
 
     /**
+     * To properly size your list images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     * 
      * @param leadingItem An optional glyph displayed on the leading side of the cell.
      * @param leadingImage An optional image displayed on the leading side of the cell.
      * @param unread Whether this conversation is unread. If unread, the list item
@@ -108,9 +111,6 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
      * both styles.
      * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * 
-     * @discussion To properly size your list images, your app should size them to the display scale of the car screen.
-     * See -[CPInterfaceController carTraitCollection].
      */
     @Generated
     @Selector("initWithLeadingItem:leadingImage:unread:")

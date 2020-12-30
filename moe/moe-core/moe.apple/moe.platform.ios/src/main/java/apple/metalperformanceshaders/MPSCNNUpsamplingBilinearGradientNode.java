@@ -94,8 +94,10 @@ public class MPSCNNUpsamplingBilinearGradientNode extends MPSNNGradientFilterNod
     public native MPSCNNUpsamplingBilinearGradientNode init();
 
     /**
-     * @abstract   A node to represent the gradient calculation for nearest upsampling training.
-     * @discussion [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
+     * A node to represent the gradient calculation for nearest upsampling training.
+     * 
+     * [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
+     * 
      * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
      * @param sourceImage      The input image from the forward filter node
      * @param gradientState    The gradient state from the forward filter
@@ -137,8 +139,10 @@ public class MPSCNNUpsamplingBilinearGradientNode extends MPSNNGradientFilterNod
     public static native Object new_objc();
 
     /**
-     * @abstract   A node to represent the gradient calculation for nearest upsampling training.
-     * @discussion [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
+     * A node to represent the gradient calculation for nearest upsampling training.
+     * 
+     * [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
+     * 
      * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
      * @param sourceImage      The input image from the forward filter node
      * @param gradientState    The gradient state from the forward filter

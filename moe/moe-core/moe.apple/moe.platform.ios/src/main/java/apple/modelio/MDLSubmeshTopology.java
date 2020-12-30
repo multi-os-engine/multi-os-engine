@@ -152,8 +152,9 @@ public class MDLSubmeshTopology extends NSObject {
     public static native long version_static();
 
     /**
-     * @property edgeCreaseCount
-     * @abstract The number of edge creases encoded in edgeCreases
+     * [@property] edgeCreaseCount
+     * 
+     * The number of edge creases encoded in edgeCreases
      */
     @Generated
     @Selector("edgeCreaseCount")
@@ -184,8 +185,9 @@ public class MDLSubmeshTopology extends NSObject {
     public native MDLMeshBuffer edgeCreases();
 
     /**
-     * @property faceCount
-     * @abstract The number of faces encoded in faceTopologyBuffer
+     * [@property] faceCount
+     * 
+     * The number of faces encoded in faceTopologyBuffer
      */
     @Generated
     @Selector("faceCount")
@@ -193,11 +195,12 @@ public class MDLSubmeshTopology extends NSObject {
     public native long faceCount();
 
     /**
-     * @property faceTopologyBuffer
-     * @abstract A buffer of 8 bit unsigned integer values, where each entry corresponds
+     * [@property] faceTopologyBuffer
+     * 
+     * A buffer of 8 bit unsigned integer values, where each entry corresponds
      * to the number of vertices making up a face.
      * 
-     * @discussion A submesh containing two triangles, a four sided polygon, and a
+     * A submesh containing two triangles, a four sided polygon, and a
      * line, would contain the data 3 3 4 2.
      * If geometryType is of a fixed type, such as triangles, the buffer
      * is optional, and will be created on demand if read.
@@ -214,8 +217,9 @@ public class MDLSubmeshTopology extends NSObject {
     public native MDLMeshBuffer faceTopology();
 
     /**
-     * @property holeCount
-     * @abstract The number of holes encoded in holes
+     * [@property] holeCount
+     * 
+     * The number of holes encoded in holes
      */
     @Generated
     @Selector("holeCount")
@@ -240,16 +244,18 @@ public class MDLSubmeshTopology extends NSObject {
     public native MDLSubmeshTopology init();
 
     /**
-     * @method initWithSubmesh:
-     * @abstract create a topology object corresponding to the topology in the submesh
+     * initWithSubmesh:
+     * 
+     * create a topology object corresponding to the topology in the submesh
      */
     @Generated
     @Selector("initWithSubmesh:")
     public native MDLSubmeshTopology initWithSubmesh(MDLSubmesh submesh);
 
     /**
-     * @property edgeCreaseCount
-     * @abstract The number of edge creases encoded in edgeCreases
+     * [@property] edgeCreaseCount
+     * 
+     * The number of edge creases encoded in edgeCreases
      */
     @Generated
     @Selector("setEdgeCreaseCount:")
@@ -277,19 +283,21 @@ public class MDLSubmeshTopology extends NSObject {
     public native void setEdgeCreases(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     /**
-     * @property faceCount
-     * @abstract The number of faces encoded in faceTopologyBuffer
+     * [@property] faceCount
+     * 
+     * The number of faces encoded in faceTopologyBuffer
      */
     @Generated
     @Selector("setFaceCount:")
     public native void setFaceCount(@NUInt long value);
 
     /**
-     * @property faceTopologyBuffer
-     * @abstract A buffer of 8 bit unsigned integer values, where each entry corresponds
+     * [@property] faceTopologyBuffer
+     * 
+     * A buffer of 8 bit unsigned integer values, where each entry corresponds
      * to the number of vertices making up a face.
      * 
-     * @discussion A submesh containing two triangles, a four sided polygon, and a
+     * A submesh containing two triangles, a four sided polygon, and a
      * line, would contain the data 3 3 4 2.
      * If geometryType is of a fixed type, such as triangles, the buffer
      * is optional, and will be created on demand if read.
@@ -305,8 +313,9 @@ public class MDLSubmeshTopology extends NSObject {
     public native void setFaceTopology(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     /**
-     * @property holeCount
-     * @abstract The number of holes encoded in holes
+     * [@property] holeCount
+     * 
+     * The number of holes encoded in holes
      */
     @Generated
     @Selector("setHoleCount:")
@@ -325,8 +334,9 @@ public class MDLSubmeshTopology extends NSObject {
     public native void setHoles(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     /**
-     * @property vertexCreaseCount
-     * @abstract The number of vertex creases encoded in vertexCreases
+     * [@property] vertexCreaseCount
+     * 
+     * The number of vertex creases encoded in vertexCreases
      */
     @Generated
     @Selector("setVertexCreaseCount:")
@@ -352,8 +362,9 @@ public class MDLSubmeshTopology extends NSObject {
     public native void setVertexCreases(@Mapped(ObjCObjectMapper.class) MDLMeshBuffer value);
 
     /**
-     * @property vertexCreaseCount
-     * @abstract The number of vertex creases encoded in vertexCreases
+     * [@property] vertexCreaseCount
+     * 
+     * The number of vertex creases encoded in vertexCreases
      */
     @Generated
     @Selector("vertexCreaseCount")

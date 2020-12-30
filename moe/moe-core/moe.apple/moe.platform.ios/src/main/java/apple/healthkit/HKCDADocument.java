@@ -152,26 +152,31 @@ public class HKCDADocument extends NSObject {
     public static native long version_static();
 
     /**
-     * @property      authorName
-     * @abstract      The person responsible for authoring the document.  Usually, this is the treating physician.
-     * @discussion    This property is extracted automatically from the document.
+     * [@property]      authorName
+     * 
+     * The person responsible for authoring the document.  Usually, this is the treating physician.
+     * 
+     * This property is extracted automatically from the document.
      */
     @Generated
     @Selector("authorName")
     public native String authorName();
 
     /**
-     * @property      custodianName
-     * @abstract      The organization responsible for the document.  This is usually the treating institution name.
-     * @discussion    This property is extracted automatically from the document.
+     * [@property]      custodianName
+     * 
+     * The organization responsible for the document.  This is usually the treating institution name.
+     * 
+     * This property is extracted automatically from the document.
      */
     @Generated
     @Selector("custodianName")
     public native String custodianName();
 
     /**
-     * @property  documentData
-     * @abstract  The CDA document content in XML format as specified in the CDA standard. This may be nil if the
+     * [@property]  documentData
+     * 
+     * The CDA document content in XML format as specified in the CDA standard. This may be nil if the
      *            includeDocumentData option in HKDocumentQuery is specified as NO.
      */
     @Generated
@@ -183,18 +188,22 @@ public class HKCDADocument extends NSObject {
     public native HKCDADocument init();
 
     /**
-     * @property      patientName
-     * @abstract      The name of the patient receiving treatment.
-     * @discussion    This property is extracted automatically from the document.
+     * [@property]      patientName
+     * 
+     * The name of the patient receiving treatment.
+     * 
+     * This property is extracted automatically from the document.
      */
     @Generated
     @Selector("patientName")
     public native String patientName();
 
     /**
-     * @property      title
-     * @abstract      The title of the document.
-     * @discussion    This property is extracted automatically from the document.
+     * [@property]      title
+     * 
+     * The title of the document.
+     * 
+     * This property is extracted automatically from the document.
      */
     @Generated
     @Selector("title")

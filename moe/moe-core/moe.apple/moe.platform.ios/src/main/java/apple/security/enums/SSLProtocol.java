@@ -19,10 +19,11 @@ package apple.security.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum SSLProtocol enumeration
- * @abstract Enumerations for the set of supported TLS and DTLS protocol versions.
+ * [@enum] SSLProtocol enumeration
  * 
- * @note This enumeration is deprecated. Use `tls_protocol_version_t` instead.
+ * Enumerations for the set of supported TLS and DTLS protocol versions.
+ * 
+ * [@note] This enumeration is deprecated. Use `tls_protocol_version_t` instead.
  */
 @Generated
 public final class SSLProtocol {

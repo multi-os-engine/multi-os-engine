@@ -31,8 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol	AVPlayerViewControllerDelegate
- * @abstract	A protocol for delegates of AVPlayerViewController.
+ * [@protocol]	AVPlayerViewControllerDelegate
+ * 
+ * A protocol for delegates of AVPlayerViewController.
  */
 @Generated
 @Library("AVKit")
@@ -40,12 +41,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("AVPlayerViewControllerDelegate")
 public interface AVPlayerViewControllerDelegate {
     /**
-     * @method		playerViewController:failedToStartPictureInPictureWithError:
+     * playerViewController:failedToStartPictureInPictureWithError:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture failed to start.
+     * 
      * @param		playerViewController
      * 			The player view controller.
      * @param		error
      * 			An error describing why it failed.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture failed to start.
      */
     @Generated
     @IsOptional
@@ -56,12 +59,14 @@ public interface AVPlayerViewControllerDelegate {
     }
 
     /**
-     * @method		playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
+     * playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
+     * 
+     * Delegate can implement this method to restore the user interface before Picture in Picture stops.
+     * 
      * @param		playerViewController
      * 			The player view controller.
      * @param		completionHandler
      * 			The completion handler the delegate needs to call after restore.
-     * @abstract	Delegate can implement this method to restore the user interface before Picture in Picture stops.
      */
     @Generated
     @IsOptional
@@ -73,10 +78,12 @@ public interface AVPlayerViewControllerDelegate {
     }
 
     /**
-     * @method		playerViewControllerDidStartPictureInPicture:
+     * playerViewControllerDidStartPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture did start.
+     * 
      * @param		playerViewController
      * 			The player view controller.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture did start.
      */
     @Generated
     @IsOptional
@@ -86,10 +93,12 @@ public interface AVPlayerViewControllerDelegate {
     }
 
     /**
-     * @method		playerViewControllerDidStopPictureInPicture:
+     * playerViewControllerDidStopPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture did stop.
+     * 
      * @param		playerViewController
      * 			The player view controller.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture did stop.
      */
     @Generated
     @IsOptional
@@ -99,10 +108,12 @@ public interface AVPlayerViewControllerDelegate {
     }
 
     /**
-     * @method		playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:
+     * playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:
+     * 
+     * Delegate can implement this method and return NO to prevent player view controller from automatically being dismissed when Picture in Picture starts.
+     * 
      * @param		playerViewController
      * 			The player view controller.
-     * @abstract	Delegate can implement this method and return NO to prevent player view controller from automatically being dismissed when Picture in Picture starts.
      */
     @Generated
     @IsOptional
@@ -113,10 +124,12 @@ public interface AVPlayerViewControllerDelegate {
     }
 
     /**
-     * @method		playerViewControllerWillStartPictureInPicture:
+     * playerViewControllerWillStartPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture will start.
+     * 
      * @param		playerViewController
      * 			The player view controller.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture will start.
      */
     @Generated
     @IsOptional
@@ -126,10 +139,12 @@ public interface AVPlayerViewControllerDelegate {
     }
 
     /**
-     * @method		playerViewControllerWillStopPictureInPicture:
+     * playerViewControllerWillStopPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture will stop.
+     * 
      * @param		playerViewController
      * 			The player view controller.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture will stop.
      */
     @Generated
     @IsOptional
@@ -147,13 +162,16 @@ public interface AVPlayerViewControllerDelegate {
     }
 
     /**
-     * @method		playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:
+     * playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:
+     * 
+     * Informs the delegate that AVPlayerViewController is about to start displaying its contents full screen.
+     * 
+     * This method will not be called if a playerViewController is embedded inside a view controller that is being presented. If the receiver is embedded in a parent view controller, its content will be presented in a new full screen view controller and perhaps in a new window. Use the coordinator to determine whether the playerViewController or its full screen counterpart is being transitioned. Transitions can be interrupted -- use a completion block of one of the coordinator's animation methods to determine whether it has completed.
+     * 
      * @param		playerViewController
      * 			The player view controller.
      * @param		coordinator
      * 			An object conforming to UIViewControllerTransitionCoordinator.
-     * @abstract	Informs the delegate that AVPlayerViewController is about to start displaying its contents full screen.
-     * @discussion	This method will not be called if a playerViewController is embedded inside a view controller that is being presented. If the receiver is embedded in a parent view controller, its content will be presented in a new full screen view controller and perhaps in a new window. Use the coordinator to determine whether the playerViewController or its full screen counterpart is being transitioned. Transitions can be interrupted -- use a completion block of one of the coordinator's animation methods to determine whether it has completed.
      */
     @Generated
     @IsOptional
@@ -165,13 +183,16 @@ public interface AVPlayerViewControllerDelegate {
     }
 
     /**
-     * 	@method		playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:
+     * playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:
+     * 
+     * Informs the delegate that AVPlayerViewController is about to stop displaying its contents full screen.
+     * 
+     * See the discussion of -[AVPlayerViewControllerDelegatePrivate playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:].
+     * 
      * 	@param		playerViewController
      * 				The player view controller.
      * @param		coordinator
      * 			An object conforming to UIViewControllerTransitionCoordinator.
-     * @abstract	Informs the delegate that AVPlayerViewController is about to stop displaying its contents full screen.
-     * @discussion	See the discussion of -[AVPlayerViewControllerDelegatePrivate playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:].
      */
     @Generated
     @IsOptional

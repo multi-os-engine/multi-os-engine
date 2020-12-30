@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLVertexFormat
- * @abstract specifies how the vertex attribute data is laid out in memory.
+ * [@enum] MTLVertexFormat
+ * 
+ * specifies how the vertex attribute data is laid out in memory.
  */
 @Generated
 public final class MTLVertexFormat {

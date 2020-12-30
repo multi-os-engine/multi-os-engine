@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A background task used to update your app's contents in the background.
+ * A background task used to update your app's contents in the background.
  */
 @Generated
 @Library("BackgroundTasks")

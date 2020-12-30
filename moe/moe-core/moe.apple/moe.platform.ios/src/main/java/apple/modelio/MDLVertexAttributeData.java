@@ -40,9 +40,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLVertexAttributeData
- * @abstract convenience object to quickly access vertex attribute data
- * @discussion created by MDLMesh's vertexAttributeData selector
+ * MDLVertexAttributeData
+ * 
+ * convenience object to quickly access vertex attribute data
+ * 
+ * created by MDLMesh's vertexAttributeData selector
  *             Setting values on this object has no effect on the
  *             underlying objects.
  */

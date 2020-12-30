@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @constant	AVKitErrorUnknown
+ * [@constant]	AVKitErrorUnknown
  * 			Unknown error.
- * @constant	AVKitErrorPictureInPictureStartFailed
+ * [@constant]	AVKitErrorPictureInPictureStartFailed
  * 			Failed to start Picture in Picture.
  */
 @Generated

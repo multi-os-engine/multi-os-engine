@@ -38,7 +38,7 @@ public final class WebKit {
     }
 
     /**
-     * @constant WKErrorDomain Indicates a WebKit error.
+     * [@constant] WKErrorDomain Indicates a WebKit error.
      */
     @Generated
     @CVariable()
@@ -66,7 +66,7 @@ public final class WebKit {
     public static native String WKPreviewActionItemIdentifierShare();
 
     /**
-     * @constant WKWebsiteDataTypeDiskCache On-disk caches.
+     * [@constant] WKWebsiteDataTypeDiskCache On-disk caches.
      */
     @Generated
     @CVariable()
@@ -74,7 +74,7 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeDiskCache();
 
     /**
-     * @constant WKWebsiteDataTypeMemoryCache In-memory caches.
+     * [@constant] WKWebsiteDataTypeMemoryCache In-memory caches.
      */
     @Generated
     @CVariable()
@@ -82,7 +82,7 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeMemoryCache();
 
     /**
-     * @constant WKWebsiteDataTypeOfflineWebApplicationCache HTML offline web application caches.
+     * [@constant] WKWebsiteDataTypeOfflineWebApplicationCache HTML offline web application caches.
      */
     @Generated
     @CVariable()
@@ -90,7 +90,7 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeOfflineWebApplicationCache();
 
     /**
-     * @constant WKWebsiteDataTypeCookies Cookies.
+     * [@constant] WKWebsiteDataTypeCookies Cookies.
      */
     @Generated
     @CVariable()
@@ -98,7 +98,7 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeCookies();
 
     /**
-     * @constant WKWebsiteDataTypeSessionStorage HTML session storage.
+     * [@constant] WKWebsiteDataTypeSessionStorage HTML session storage.
      */
     @Generated
     @CVariable()
@@ -106,7 +106,7 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeSessionStorage();
 
     /**
-     * @constant WKWebsiteDataTypeLocalStorage HTML local storage.
+     * [@constant] WKWebsiteDataTypeLocalStorage HTML local storage.
      */
     @Generated
     @CVariable()
@@ -114,7 +114,7 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeLocalStorage();
 
     /**
-     * @constant WKWebsiteDataTypeWebSQLDatabases WebSQL databases.
+     * [@constant] WKWebsiteDataTypeWebSQLDatabases WebSQL databases.
      */
     @Generated
     @CVariable()
@@ -122,7 +122,7 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeWebSQLDatabases();
 
     /**
-     * @constant WKWebsiteDataTypeIndexedDBDatabases IndexedDB databases.
+     * [@constant] WKWebsiteDataTypeIndexedDBDatabases IndexedDB databases.
      */
     @Generated
     @CVariable()
@@ -130,8 +130,9 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeIndexedDBDatabases();
 
     /**
-     * @abstract Indicates which local files WebKit can access when loading content.
-     * @discussion If NSReadAccessURLDocumentOption references a single file, only that file may be
+     * Indicates which local files WebKit can access when loading content.
+     * 
+     * If NSReadAccessURLDocumentOption references a single file, only that file may be
      * loaded by WebKit. If NSReadAccessURLDocumentOption references a directory, files inside that
      * directory may be loaded by WebKit.
      */
@@ -141,7 +142,7 @@ public final class WebKit {
     public static native String NSReadAccessURLDocumentOption();
 
     /**
-     * @constant WKWebsiteDataTypeFetchCache On-disk Fetch caches.
+     * [@constant] WKWebsiteDataTypeFetchCache On-disk Fetch caches.
      */
     @Generated
     @CVariable()
@@ -149,7 +150,7 @@ public final class WebKit {
     public static native String WKWebsiteDataTypeFetchCache();
 
     /**
-     * @constant WKWebsiteDataTypeServiceWorkerRegistrations Service worker registrations.
+     * [@constant] WKWebsiteDataTypeServiceWorkerRegistrations Service worker registrations.
      */
     @Generated
     @CVariable()

@@ -52,9 +52,11 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property   alpha
-     * @abstract   The value of alpha.  Default is 0.0
-     * @discussion The default value 0.0 is not recommended and is
+     * [@property]   alpha
+     * 
+     * The value of alpha.  Default is 0.0
+     * 
+     * The default value 0.0 is not recommended and is
      *             preserved for backwards compatibility. With alpha 0,
      *             it performs a local mean subtraction. The
      *             MPSCNNLocalContrastNormalizationNode used with
@@ -69,8 +71,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   beta
-     * @abstract   The value of beta.  Default is 0.5
+     * [@property]   beta
+     * 
+     * The value of beta.  Default is 0.5
      */
     @Generated
     @Selector("beta")
@@ -99,8 +102,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public static native String debugDescription_static();
 
     /**
-     * @property   delta
-     * @abstract   The value of delta.  Default is 1/1024
+     * [@property]   delta
+     * 
+     * The value of delta.  Default is 1/1024
      */
     @Generated
     @Selector("delta")
@@ -169,24 +173,27 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
             @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @property   p0
-     * @abstract   The value of p0.  Default is 1.0
+     * [@property]   p0
+     * 
+     * The value of p0.  Default is 1.0
      */
     @Generated
     @Selector("p0")
     public native float p0();
 
     /**
-     * @property   pm
-     * @abstract   The value of pm.  Default is 0.0
+     * [@property]   pm
+     * 
+     * The value of pm.  Default is 0.0
      */
     @Generated
     @Selector("pm")
     public native float pm();
 
     /**
-     * @property   ps
-     * @abstract   The value of ps.  Default is 1.0
+     * [@property]   ps
+     * 
+     * The value of ps.  Default is 1.0
      */
     @Generated
     @Selector("ps")
@@ -201,9 +208,11 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   alpha
-     * @abstract   The value of alpha.  Default is 0.0
-     * @discussion The default value 0.0 is not recommended and is
+     * [@property]   alpha
+     * 
+     * The value of alpha.  Default is 0.0
+     * 
+     * The default value 0.0 is not recommended and is
      *             preserved for backwards compatibility. With alpha 0,
      *             it performs a local mean subtraction. The
      *             MPSCNNLocalContrastNormalizationNode used with
@@ -214,40 +223,45 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public native void setAlpha(float value);
 
     /**
-     * @property   beta
-     * @abstract   The value of beta.  Default is 0.5
+     * [@property]   beta
+     * 
+     * The value of beta.  Default is 0.5
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * @property   delta
-     * @abstract   The value of delta.  Default is 1/1024
+     * [@property]   delta
+     * 
+     * The value of delta.  Default is 1/1024
      */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
     /**
-     * @property   p0
-     * @abstract   The value of p0.  Default is 1.0
+     * [@property]   p0
+     * 
+     * The value of p0.  Default is 1.0
      */
     @Generated
     @Selector("setP0:")
     public native void setP0(float value);
 
     /**
-     * @property   pm
-     * @abstract   The value of pm.  Default is 0.0
+     * [@property]   pm
+     * 
+     * The value of pm.  Default is 0.0
      */
     @Generated
     @Selector("setPm:")
     public native void setPm(float value);
 
     /**
-     * @property   ps
-     * @abstract   The value of ps.  Default is 1.0
+     * [@property]   ps
+     * 
+     * The value of ps.  Default is 1.0
      */
     @Generated
     @Selector("setPs:")

@@ -20,34 +20,34 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum NSURLRequestNetworkServiceType
+ * [@enum] NSURLRequestNetworkServiceType
  * 
- * @discussion The NSURLRequestNetworkServiceType enum defines constants that
+ * The NSURLRequestNetworkServiceType enum defines constants that
  * can be used to specify the service type to associate with this request.  The
  * service type is used to provide the networking layers a hint of the purpose 
  * of the request.
  * 
- * @constant NSURLNetworkServiceTypeDefault Is the default value for an NSURLRequest
+ * [@constant] NSURLNetworkServiceTypeDefault Is the default value for an NSURLRequest
  * when created.  This value should be left unchanged for the vast majority of requests.
  * 
- * @constant NSURLNetworkServiceTypeVoIP Specifies that the request is for voice over IP
+ * [@constant] NSURLNetworkServiceTypeVoIP Specifies that the request is for voice over IP
  * control traffic.
  * 
- * @constant NSURLNetworkServiceTypeVideo Specifies that the request is for video
+ * [@constant] NSURLNetworkServiceTypeVideo Specifies that the request is for video
  * traffic.
  * 
- * @constant NSURLNetworkServiceTypeBackground Specifies that the request is for background
+ * [@constant] NSURLNetworkServiceTypeBackground Specifies that the request is for background
  * traffic (such as a file download).
  * 
- * @constant NSURLNetworkServiceTypeVoice Specifies that the request is for voice data.
+ * [@constant] NSURLNetworkServiceTypeVoice Specifies that the request is for voice data.
  * 
- * @constant NSURLNetworkServiceTypeResponsiveData Specifies that the request is for responsive (time sensitive) data.
+ * [@constant] NSURLNetworkServiceTypeResponsiveData Specifies that the request is for responsive (time sensitive) data.
  * 
- * @constant NSURLNetworkServiceTypeAVStreaming Specifies that the request is streaming audio/video data.
+ * [@constant] NSURLNetworkServiceTypeAVStreaming Specifies that the request is streaming audio/video data.
  * 
- * @constant NSURLNetworkServiceTypeResponsiveAV Specifies that the request is for responsive (time sensitive) audio/video data.
+ * [@constant] NSURLNetworkServiceTypeResponsiveAV Specifies that the request is for responsive (time sensitive) audio/video data.
  * 
- * @constant NSURLNetworkServiceTypeCallSignaling Specifies that the request is for call signaling.
+ * [@constant] NSURLNetworkServiceTypeCallSignaling Specifies that the request is for call signaling.
  */
 @Generated
 public final class NSURLRequestNetworkServiceType {

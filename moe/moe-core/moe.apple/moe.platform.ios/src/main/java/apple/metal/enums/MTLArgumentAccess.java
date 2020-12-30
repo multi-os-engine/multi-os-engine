@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLArgumentAccess
+ * [@enum] MTLArgumentAccess
  */
 @Generated
 public final class MTLArgumentAccess {

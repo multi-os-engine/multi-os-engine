@@ -159,6 +159,7 @@ public class VSAccountManager extends NSObject {
 
     /**
      * Determine the state of the application's access to the user's subscription information.
+     * 
      * @param options The only currently supported option key is VSCheckAccessOptionPrompt.
      * @param completionHandler A block to be called when the request finishes.  It will always be called exactly once.  It may be called before the method call returns.  It may be called on any queue.
      * @param accessStatus The current state the application's access to the user's subscription information.
@@ -180,11 +181,12 @@ public class VSAccountManager extends NSObject {
 
     /**
      * Begins requesting information about the subscriber's account.
+     * [@returns] A result object that may be used to cancel the in-flight request.  Cancellation is advisory, and does not guarantee that the request will finish immediately.
+     * 
      * @param request This identifies what specific information the app wants to know.
      * @param completionHandler A block to be called when the request finishes.  It will always be called exactly once.  It may be called before the method call returns.  It may be called on any queue.
      * @param metadata If the request finished successfully, this will contain information about the subscriber's account.
      * @param error If the request did not finish successfully, this will contain an error describing the result of the operation.
-     * @returns A result object that may be used to cancel the in-flight request.  Cancellation is advisory, and does not guarantee that the request will finish immediately.
      */
     @Generated
     @Selector("enqueueAccountMetadataRequest:completionHandler:")

@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNConvolutionTransposeGradientState
- * @discussion The MPSCNNConvolutionTransposeGradientState is returned by resultStateForSourceImage:sourceStates method on MPSCNNConvolutionTranspose object.
+ * MPSCNNConvolutionTransposeGradientState
+ * 
+ * The MPSCNNConvolutionTransposeGradientState is returned by resultStateForSourceImage:sourceStates method on MPSCNNConvolutionTranspose object.
  *             Note that resultStateForSourceImage:sourceStates:destinationImage creates the object on autoreleasepool.
  *             It will be consumed by MPSCNNConvolutionTransposeGradient. It contains reference to MPSCNNConvolutionGradientState object that connects
  *             MPSCNNConvolution and its corresponding MPSCNNConvolutionTranspose in forward pass of autoencoder. In an autoencoder forward pass, MPSCNNConvolutionGradientState is produced
@@ -94,8 +95,9 @@ public class MPSCNNConvolutionTransposeGradientState extends MPSCNNConvolutionGr
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property   convolutionTranspose
-     * @abstract   The convolutionTranspose filter that produced the state.
+     * [@property]   convolutionTranspose
+     * 
+     * The convolutionTranspose filter that produced the state.
      */
     @Generated
     @Selector("convolutionTranspose")

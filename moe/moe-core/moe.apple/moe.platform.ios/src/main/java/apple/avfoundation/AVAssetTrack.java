@@ -169,12 +169,15 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native AVAsset asset();
 
     /**
-     * @method			associatedTracksOfType:
-     * @abstract		Provides an NSArray of AVAssetTracks, one for each track associated with the receiver with the specified type of track association.
+     * associatedTracksOfType:
+     * 
+     * Provides an NSArray of AVAssetTracks, one for each track associated with the receiver with the specified type of track association.
+     * 
+     * Becomes callable without blocking when the key @"availableTrackAssociationTypes" has been loaded.
+     * 
      * @param			trackAssociationType
      * 				The type of track association for which associated tracks are requested.
-     * @result			An NSArray containing AVAssetTracks; may be empty if there is no associated tracks of the specified type.
-     * @discussion		Becomes callable without blocking when the key @"availableTrackAssociationTypes" has been loaded.
+     * @return			An NSArray containing AVAssetTracks; may be empty if there is no associated tracks of the specified type.
      */
     @Generated
     @Selector("associatedTracksOfType:")
@@ -235,12 +238,14 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native NSArray<?> formatDescriptions();
 
     /**
-     * @method			hasMediaCharacteristic:
-     * @abstract		Reports whether the track references media with the specified media characteristic.
+     * hasMediaCharacteristic:
+     * 
+     * Reports whether the track references media with the specified media characteristic.
+     * 
      * @param			mediaCharacteristic
      * 				The media characteristic of interest, e.g. AVMediaCharacteristicVisual, AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, etc.,
      * 				as defined above.
-     * @result			YES if the track references media with the specified characteristic, otherwise NO.
+     * @return			YES if the track references media with the specified characteristic, otherwise NO.
      */
     @Generated
     @Selector("hasMediaCharacteristic:")
@@ -300,12 +305,15 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native NSArray<? extends AVMetadataItem> metadata();
 
     /**
-     * @method			metadataForFormat:
-     * @abstract		Provides an NSArray of AVMetadataItems, one for each metadata item in the container of the specified format.
+     * metadataForFormat:
+     * 
+     * Provides an NSArray of AVMetadataItems, one for each metadata item in the container of the specified format.
+     * 
+     * Becomes callable without blocking when the key @"availableMetadataFormats" has been loaded
+     * 
      * @param			format
      * 				The metadata format for which items are requested.
-     * @result			An NSArray containing AVMetadataItems.
-     * @discussion		Becomes callable without blocking when the key @"availableMetadataFormats" has been loaded
+     * @return			An NSArray containing AVMetadataItems.
      */
     @Generated
     @Selector("metadataForFormat:")
@@ -335,9 +343,11 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native int naturalTimeScale();
 
     /**
-     * @property		nominalFrameRate
-     * @abstract		For tracks that carry a full frame per media sample, indicates the frame rate of the track in units of frames per second.
-     * @discussion		For field-based video tracks that carry one field per media sample, the value of this property is the field rate, not the frame rate.
+     * [@property]		nominalFrameRate
+     * 
+     * For tracks that carry a full frame per media sample, indicates the frame rate of the track in units of frames per second.
+     * 
+     * For field-based video tracks that carry one field per media sample, the value of this property is the field rate, not the frame rate.
      */
     @Generated
     @Selector("nominalFrameRate")
@@ -360,19 +370,22 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native float preferredVolume();
 
     /**
-     * @property       requiresFrameReordering
-     * @abstract       Indicates whether samples in the track may have different values for their presentation and decode timestamps.
+     * [@property]       requiresFrameReordering
+     * 
+     * Indicates whether samples in the track may have different values for their presentation and decode timestamps.
      */
     @Generated
     @Selector("requiresFrameReordering")
     public native boolean requiresFrameReordering();
 
     /**
-     * @method			samplePresentationTimeForTrackTime:
-     * @abstract		Maps the specified trackTime through the appropriate time mapping and returns the resulting sample presentation time.
+     * samplePresentationTimeForTrackTime:
+     * 
+     * Maps the specified trackTime through the appropriate time mapping and returns the resulting sample presentation time.
+     * 
      * @param			trackTime
      * 				The trackTime for which a sample presentation time is requested.
-     * @result			A CMTime; will be invalid if the trackTime is out of range
+     * @return			A CMTime; will be invalid if the trackTime is out of range
      */
     @Generated
     @Selector("samplePresentationTimeForTrackTime:")
@@ -380,12 +393,15 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     public native CMTime samplePresentationTimeForTrackTime(@ByValue CMTime trackTime);
 
     /**
-     * @method			segmentForTrackTime:
-     * @abstract		Supplies the AVAssetTrackSegment from the segments array with a target timeRange that either contains the specified track time or is the closest to it among the target timeRanges of the track's segments.
+     * segmentForTrackTime:
+     * 
+     * Supplies the AVAssetTrackSegment from the segments array with a target timeRange that either contains the specified track time or is the closest to it among the target timeRanges of the track's segments.
+     * 
+     * If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the segment closest in time to the specified trackTime is returned.
+     * 
      * @param			trackTime
      * 				The trackTime for which an AVAssetTrackSegment is requested.
-     * @result			An AVAssetTrackSegment.
-     * @discussion		If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the segment closest in time to the specified trackTime is returned. 
+     * @return			An AVAssetTrackSegment.
      */
     @Generated
     @Selector("segmentForTrackTime:")

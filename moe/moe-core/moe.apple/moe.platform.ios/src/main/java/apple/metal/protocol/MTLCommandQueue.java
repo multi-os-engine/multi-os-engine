@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLCommandQueue
- * @brief A serial queue of command buffers to be executed by the device.
+ * [@protocol] MTLCommandQueue
+ * 
+ * A serial queue of command buffers to be executed by the device.
  */
 @Generated
 @Library("Metal")
@@ -36,8 +37,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLCommandQueue")
 public interface MTLCommandQueue {
     /**
-     * @method commandBuffer
-     * @abstract Returns a new autoreleased command buffer used to encode work into this queue that 
+     * commandBuffer
+     * 
+     * Returns a new autoreleased command buffer used to encode work into this queue that
      * maintains strong references to resources used within the command buffer.
      */
     @Generated
@@ -46,8 +48,9 @@ public interface MTLCommandQueue {
     MTLCommandBuffer commandBuffer();
 
     /**
-     * @method commandBufferWithUnretainedReferences
-     * @abstract Returns a new autoreleased command buffer used to encode work into this queue that 
+     * commandBufferWithUnretainedReferences
+     * 
+     * Returns a new autoreleased command buffer used to encode work into this queue that
      * does not maintain strong references to resources used within the command buffer.
      */
     @Generated
@@ -56,7 +59,7 @@ public interface MTLCommandQueue {
     MTLCommandBuffer commandBufferWithUnretainedReferences();
 
     /**
-     * @brief The device this queue will submit to
+     * The device this queue will submit to
      */
     @Generated
     @Selector("device")
@@ -64,31 +67,34 @@ public interface MTLCommandQueue {
     MTLDevice device();
 
     /**
-     * @method insertDebugCaptureBoundary
-     * @abstract Inform Xcode about when debug capture should start and stop.
+     * insertDebugCaptureBoundary
+     * 
+     * Inform Xcode about when debug capture should start and stop.
      */
     @Generated
     @Selector("insertDebugCaptureBoundary")
     void insertDebugCaptureBoundary();
 
     /**
-     * @brief A string to help identify this object
+     * A string to help identify this object
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @brief A string to help identify this object
+     * A string to help identify this object
      */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);
 
     /**
-     * @method commandBufferWithDescriptor
+     * commandBufferWithDescriptor
+     * 
+     * Returns a new autoreleased command buffer used to encode work into this queue.
+     * 
      * @param descriptor The requested properties of the command buffer.
-     * @abstract Returns a new autoreleased command buffer used to encode work into this queue.
      */
     @Generated
     @Selector("commandBufferWithDescriptor:")

@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNReduceRowMax
- * @discussion The MPSNNReduceRowMax performs a reduction operation returning the maximum value for each row of an image
+ * MPSNNReduceRowMax
+ * 
+ * The MPSNNReduceRowMax performs a reduction operation returning the maximum value for each row of an image
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -101,8 +102,10 @@ public class MPSNNReduceRowMax extends MPSNNReduceUnary {
     public native MPSNNReduceRowMax initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
      * @param      device      The MTLDevice on which to make the MPSCNNPooling
      * @return     A new MPSNNReduceRowMax object, or nil if failure.
@@ -113,7 +116,8 @@ public class MPSNNReduceRowMax extends MPSNNReduceUnary {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to apply the reduction operation on an image.
+     * Specifies information to apply the reduction operation on an image.
+     * 
      * @param    device            The device the filter will run on
      * @return     A valid MPSNNReduceRowMax object or nil, if failure.
      */

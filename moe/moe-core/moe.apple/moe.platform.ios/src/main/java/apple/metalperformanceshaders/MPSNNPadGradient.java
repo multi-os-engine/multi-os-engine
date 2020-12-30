@@ -26,16 +26,17 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNPadGradient
- * @dependency This depends on Metal.framework
- * @discussion Computes the gradient for the @ref MPSNNPad layer.
+ * MPSNNPadGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Computes the gradient for the @ref MPSNNPad layer.
  *             Since the padding forward operation typically increases the size of the image, the gradient operation
  *             decreases it. In case of zero or constant padding forward operation the gradient operation slices the
  *             input gradient and in other edge modes the padded values copied in the forward operation are
  *             summed together in the gradient operation.
  *             For Example for the @ref MPSImageEdgeModeClamp the forward operation with offset = -2, destSize = 8
  *             or @ref paddingSizeBefore = 2, @ref paddingSizeAfter = 3, sourceSize = 3:
- * @code
+ * [@code]
  *             Source Image:
  *               |--------------|
  *               | x0 | x1 | x2 |
@@ -44,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *               |---------------------------------------|
  *               | x0 | x0 | x0 | x1 | x2 | x2 | x2 | x2 |
  *               |---------------------------------------|
- * @endcode
+ * [@endcode]
  *             Then the gradient operation becomes:
- * @code
+ * [@code]
  *             Source Gradient Image:
  *               |---------------------------------------|
  *               | d0 | d1 | d2 | d3 | d4 | d5 | d6 | d7 |
@@ -55,10 +56,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *               |-----------------------------|
  *               | d0+d1+d2 | d3 | d4+d5+d6+d7 |
  *               |-----------------------------|
- * @endcode
+ * [@endcode]
  *             Another example with @ref MPSImageEdgeModeMirror, the forward operation with offset = -4, destSize = 8
  *             or @ref paddingSizeBefore = 4, @ref paddingSizeAfter = 1, sourceSize = 3:
- * @code
+ * [@code]
  *             Source Image:
  *               |--------------|
  *               | x0 | x1 | x2 |
@@ -67,9 +68,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *               |---------------------------------------|
  *               | x0 | x1 | x2 | x1 | x0 | x1 | x2 | x1 |
  *               |---------------------------------------|
- * @endcode
+ * [@endcode]
  *             Then the gradient operation becomes:
- * @code
+ * [@code]
  *             Source Gradient Image:
  *               |---------------------------------------|
  *               | d0 | d1 | d2 | d3 | d4 | d5 | d6 | d7 |
@@ -78,7 +79,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *               |-----------------------------|
  *               | d0+d4 | d1+d3+d5+d7 | d2+d6 |
  *               |-----------------------------|
- * @endcode
+ * [@endcode]
  * 
  *             NOTE: There are no channel fill-values to use with @ref MPSImageEdgeModeConstant
  *             since the gradient values are independent of the constant of the forward pass.
@@ -157,8 +158,10 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
     public native MPSNNPadGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract   NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSNNPadGradient.
      * @param      device      The MTLDevice on which to make the MPSNNPadGradient.
      * @return     A new MPSNNPadGradient object, or nil if failure.
@@ -168,7 +171,8 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
     public native MPSNNPadGradient initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initializes a MPSNNPadGradient filter
+     * Initializes a MPSNNPadGradient filter
+     * 
      * @param      device  The MTLDevice on which this filter will be used
      * 
      * @return     A valid MPSNNPadGradient object or nil, if failure.

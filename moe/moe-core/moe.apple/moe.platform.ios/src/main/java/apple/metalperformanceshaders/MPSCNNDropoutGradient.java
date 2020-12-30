@@ -29,9 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNDropoutGradient
- * @dependency This depends on Metal.framework
- * @discussion This filter is the backward filter for the MPSCNNDropout forward filter.
+ * MPSCNNDropoutGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * This filter is the backward filter for the MPSCNNDropout forward filter.
  *             It requires the mask data, along with all the associated parameters used
  *             to generate the mask, from the forward pass. The mask is associated with
  *             a MPSCNNDropoutGradientState object.
@@ -110,7 +111,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     public native MPSCNNDropoutGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract <NSSecureCoding> support
+     * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -122,7 +123,8 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     public native MPSCNNDropoutGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Standard init with default properties per filter type.
+     * Standard init with default properties per filter type.
+     * 
      * @param      device              The device that the filter will be used on.
      * @param      keepProbability     The probability that each element in the input is kept.
      *                                 The valid range is (0.0f, 1.0f).
@@ -132,7 +134,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
      *                                 values are 0 and 1 for each dimension. For no
      *                                 broadcasting, set the values for each dimension to 1.
      *                                 For broadcasting, set desired values to 0.
-     * @result     A valid MPSCNNDropoutGradient object or nil, if failure.
+     * @return     A valid MPSCNNDropoutGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
@@ -158,8 +160,9 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @property   keepProbability
-     * @abstract   The probability that each element in the input is kept.
+     * [@property]   keepProbability
+     * 
+     * The probability that each element in the input is kept.
      *             The valid range is (0.0f, 1.0f).
      */
     @Generated
@@ -171,10 +174,12 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   maskStrideInPixels
-     * @abstract   The mask stride in the x, y, and x dimensions, which
+     * [@property]   maskStrideInPixels
+     * 
+     * The mask stride in the x, y, and x dimensions, which
      *             allows for the broadcasting the mask data.
-     * @discussion The only valid values are 0 and 1 for each dimension.
+     * 
+     * The only valid values are 0 and 1 for each dimension.
      *             For no broadcasting, set the values for each dimension
      *             to 1. For broadcasting, set desired values to 0.
      */
@@ -198,8 +203,9 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   seed
-     * @abstract   The seed used to generate random numbers.
+     * [@property]   seed
+     * 
+     * The seed used to generate random numbers.
      */
     @Generated
     @Selector("seed")

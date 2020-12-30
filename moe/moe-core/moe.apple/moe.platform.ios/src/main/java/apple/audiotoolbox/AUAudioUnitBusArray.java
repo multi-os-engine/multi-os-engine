@@ -45,9 +45,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class	AUAudioUnitBusArray
- * @brief	Container for an audio unit's input or output busses.
- * @discussion
+ * AUAudioUnitBusArray
+ * 
+ * Container for an audio unit's input or output busses.
+ * 
  * 	Hosts can observe a bus property across all busses by using KVO on this object, without
  * 	having to observe it on each individual bus. (One could add listeners to individual busses,
  * 	but that means one has to observe bus count changes and add/remove listeners in response.
@@ -175,8 +176,9 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     public static native long version_static();
 
     /**
-     * @method		addObserverToAllBusses:forKeyPath:options:context:
-     * @brief		Add a KVO observer for a property on all busses in the array.
+     * addObserverToAllBusses:forKeyPath:options:context:
+     * 
+     * Add a KVO observer for a property on all busses in the array.
      */
     @Generated
     @Selector("addObserverToAllBusses:forKeyPath:options:context:")
@@ -192,7 +194,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     public native long busType();
 
     /**
-     * @property	count
+     * [@property]	count
      */
     @Generated
     @Selector("count")
@@ -210,16 +212,18 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     public native AUAudioUnitBusArray init();
 
     /**
-     * @method		initWithAudioUnit:busType:
-     * @brief		Initializes an empty bus array.
+     * initWithAudioUnit:busType:
+     * 
+     * Initializes an empty bus array.
      */
     @Generated
     @Selector("initWithAudioUnit:busType:")
     public native AUAudioUnitBusArray initWithAudioUnitBusType(AUAudioUnit owner, @NInt long busType);
 
     /**
-     * @method		initWithAudioUnit:busType:busses:
-     * @brief		Initializes by making a copy of the supplied bus array.
+     * initWithAudioUnit:busType:busses:
+     * 
+     * Initializes by making a copy of the supplied bus array.
      */
     @Generated
     @Selector("initWithAudioUnit:busType:busses:")
@@ -227,9 +231,10 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
             NSArray<? extends AUAudioUnitBus> busArray);
 
     /**
-     * @property	countChangeable
-     * @brief		Whether the array can have a variable number of busses.
-     * @discussion
+     * [@property]	countChangeable
+     * 
+     * Whether the array can have a variable number of busses.
+     * 
      * 	The base implementation returns false.
      */
     @Generated
@@ -237,7 +242,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     public native boolean isCountChangeable();
 
     /**
-     * @method		objectAtIndexedSubscript:
+     * objectAtIndexedSubscript:
      */
     @Generated
     @Selector("objectAtIndexedSubscript:")
@@ -251,8 +256,9 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     public native AUAudioUnit ownerAudioUnit();
 
     /**
-     * @method		removeObserverFromAllBusses:forKeyPath:context:
-     * @brief		Remove a KVO observer for a property on all busses in the array.
+     * removeObserverFromAllBusses:forKeyPath:context:
+     * 
+     * Remove a KVO observer for a property on all busses in the array.
      */
     @Generated
     @Selector("removeObserverFromAllBusses:forKeyPath:context:")
@@ -266,8 +272,9 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     public native void replaceBusses(NSArray<? extends AUAudioUnitBus> busArray);
 
     /**
-     * @property	setBusCount:error:
-     * @brief		Change the number of busses in the array.
+     * [@property]	setBusCount:error:
+     * 
+     * Change the number of busses in the array.
      */
     @Generated
     @Selector("setBusCount:error:")

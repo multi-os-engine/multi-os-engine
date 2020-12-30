@@ -178,7 +178,7 @@ public class MTLCaptureManager extends NSObject {
      * Retrieves the shared capture manager for this process. There is only one capture manager per process.
      * The capture manager allows the user to create capture scopes and trigger captures from code.
      * When a capture has been completed, it will be displayed in Xcode and the application will be paused.
-     * @remarks: only MTLCommandBuffers created after starting a capture and committed before stopping it are captured. 
+     * [@remarks] only MTLCommandBuffers created after starting a capture and committed before stopping it are captured. 
      */
     @Generated
     @Selector("sharedCaptureManager")
@@ -223,10 +223,11 @@ public class MTLCaptureManager extends NSObject {
 
     /**
      * Start capturing until stopCapture is called.
+     * [@remarks] Only MTLCommandBuffer​s created after starting and committed before stopping it are captured.
+     * 
      * @param descriptor MTLCaptureDescriptor specifies the parameters.
      * @param error Optional error output to check why a capture could not be started.
      * @return true if the capture was successfully started, otherwise false.
-     * @remarks Only MTLCommandBuffer​s created after starting and committed before stopping it are captured.
      */
     @Generated
     @Selector("startCaptureWithDescriptor:error:")

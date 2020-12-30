@@ -80,7 +80,7 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * @abstract This delegate will be notified upon completion of the upgrade to report success or failure.
+     * This delegate will be notified upon completion of the upgrade to report success or failure.
      */
     @Generated
     @Selector("delegate")
@@ -128,14 +128,14 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract Perform an upgrade request, one at a time. Any requests initiated with a request already in progress will fail immediately.
+     * Perform an upgrade request, one at a time. Any requests initiated with a request already in progress will fail immediately.
      */
     @Generated
     @Selector("performRequest:")
     public native void performRequest(ASAccountAuthenticationModificationRequest request);
 
     /**
-     * @abstract This will be used to provide a presentation context to display authorization UI.
+     * This will be used to provide a presentation context to display authorization UI.
      */
     @Generated
     @Selector("presentationContextProvider")
@@ -151,7 +151,7 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract This delegate will be notified upon completion of the upgrade to report success or failure.
+     * This delegate will be notified upon completion of the upgrade to report success or failure.
      */
     @Generated
     @Selector("setDelegate:")
@@ -159,7 +159,7 @@ public class ASAccountAuthenticationModificationController extends NSObject {
             @Mapped(ObjCObjectMapper.class) ASAccountAuthenticationModificationControllerDelegate value);
 
     /**
-     * @abstract This delegate will be notified upon completion of the upgrade to report success or failure.
+     * This delegate will be notified upon completion of the upgrade to report success or failure.
      */
     @Generated
     public void setDelegate(
@@ -175,7 +175,7 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     }
 
     /**
-     * @abstract This will be used to provide a presentation context to display authorization UI.
+     * This will be used to provide a presentation context to display authorization UI.
      */
     @Generated
     @Selector("setPresentationContextProvider:")
@@ -183,7 +183,7 @@ public class ASAccountAuthenticationModificationController extends NSObject {
             @Mapped(ObjCObjectMapper.class) ASAccountAuthenticationModificationControllerPresentationContextProviding value);
 
     /**
-     * @abstract This will be used to provide a presentation context to display authorization UI.
+     * This will be used to provide a presentation context to display authorization UI.
      */
     @Generated
     public void setPresentationContextProvider(

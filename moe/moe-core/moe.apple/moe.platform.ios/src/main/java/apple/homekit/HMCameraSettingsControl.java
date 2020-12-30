@@ -40,7 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract This class can be used to control the settings on a camera.
+ * This class can be used to control the settings on a camera.
  */
 @Generated
 @Library("HomeKit")

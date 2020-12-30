@@ -98,6 +98,7 @@ public class TKSimpleTLVRecord extends TKTLVRecord {
 
     /**
      * Creates TLV record with specified tag and value.
+     * 
      * @param tag Tag value for the new record.
      * @param value Value for the new record.
      * @return Newly created TLV record.

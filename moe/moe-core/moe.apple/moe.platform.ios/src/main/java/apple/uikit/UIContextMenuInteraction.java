@@ -134,7 +134,7 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract Returns the interaction's location within the given view.
+     * Returns the interaction's location within the given view.
      * 
      * @param view The view in which to locate the interaction.
      */
@@ -179,7 +179,7 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     public native void willMoveToView(UIView view);
 
     /**
-     * @abstract Dismisses the currently presented menu (if there is one).
+     * Dismisses the currently presented menu (if there is one).
      */
     @Generated
     @Selector("dismissMenu")
@@ -195,7 +195,7 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     public native long menuAppearance();
 
     /**
-     * @abstract Call to update the currently visible menu. This method does nothing if called before a menu is presented.
+     * Call to update the currently visible menu. This method does nothing if called before a menu is presented.
      * 
      * @param block  Called with the a mutable copy of the currently visible menu. Modify and return this menu (or an entirely
      *               new one) to change the currently visible menu items.

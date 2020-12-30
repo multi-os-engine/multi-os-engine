@@ -272,6 +272,7 @@ public class UIDocumentPickerViewController extends UIViewController {
 
     /**
      * Initializes the picker for exporting local documents to an external location. The new locations will be returned using `didPickDocumentAtURLs:`.
+     * 
      * @param asCopy if true, a copy will be exported to the destination, otherwise the original document will be moved to the destination. For performance reasons and to avoid copies, we recommand you set `asCopy` to false.
      */
     @Generated
@@ -288,6 +289,7 @@ public class UIDocumentPickerViewController extends UIViewController {
 
     /**
      * Initializes the picker instance for selecting a document in a remote location.
+     * 
      * @param asCopy if true, the picker will give you access to a local copy of the document, otherwise you will have access to the original document
      */
     @Generated

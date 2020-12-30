@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNNeuronPReLU
- * @dependency This depends on Metal.framework
- * @discussion Specifies the parametric ReLU neuron filter.
+ * MPSCNNNeuronPReLU
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the parametric ReLU neuron filter.
  *             For each pixel, applies the following function: f(x_i) = x_i, if x_i >= 0
  *                                                                    = a_i * x_i if x_i < 0
  *             i in [0...channels-1]
@@ -119,7 +120,8 @@ public class MPSCNNNeuronPReLU extends MPSCNNNeuron {
     public native MPSCNNNeuronPReLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the PReLU neuron filter
+     * Initialize the PReLU neuron filter
+     * 
      * @param     device           The device the filter will run on
      * @param     a                Array of floats containing per channel value of PReLu parameter
      * @param     count            Number of float values in array a.

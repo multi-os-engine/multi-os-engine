@@ -43,9 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVMutableTimedMetadataGroup
+ * AVMutableTimedMetadataGroup
  * 
- * @abstract	AVMutableTimedMetadataGroup is used to represent a mutable collection of metadata items that are valid for use during a specific range of time.
+ * AVMutableTimedMetadataGroup is used to represent a mutable collection of metadata items that are valid for use during a specific range of time.
  */
 @Generated
 @Library("AVFoundation")

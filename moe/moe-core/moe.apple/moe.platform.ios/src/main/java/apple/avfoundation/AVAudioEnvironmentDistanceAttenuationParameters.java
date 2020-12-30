@@ -40,9 +40,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioEnvironmentDistanceAttenuationParameters
- * @abstract Parameters specifying the amount of distance attenuation
- * @discussion
+ * AVAudioEnvironmentDistanceAttenuationParameters
+ * 
+ * Parameters specifying the amount of distance attenuation
+ * 
  *     A standalone instance of AVAudioEnvironmentDistanceAttenuationParameters cannot be created. 
  *     Only an instance vended out by a source object (e.g. AVAudioEnvironmentNode) can be used.
  */
@@ -158,9 +159,10 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     public static native long version_static();
 
     /**
-     * @property distanceAttenuationModel
-     * @abstract Type of distance attenuation model
-     * @discussion
+     * [@property] distanceAttenuationModel
+     * 
+     * Type of distance attenuation model
+     * 
      *     Default:    AVAudioEnvironmentDistanceAttenuationModelInverse
      */
     @Generated
@@ -173,9 +175,10 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     public native AVAudioEnvironmentDistanceAttenuationParameters init();
 
     /**
-     * @property maximumDistance
-     * @abstract The distance beyond which no further attenuation is applied
-     * @discussion
+     * [@property] maximumDistance
+     * 
+     * The distance beyond which no further attenuation is applied
+     * 
      *     Default:    100000.0 meters
      *     Models:     AVAudioEnvironmentDistanceAttenuationModelLinear
      */
@@ -184,9 +187,10 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     public native float maximumDistance();
 
     /**
-     * @property referenceDistance
-     * @abstract The minimum distance at which attenuation is applied
-     * @discussion
+     * [@property] referenceDistance
+     * 
+     * The minimum distance at which attenuation is applied
+     * 
      *     Default:    1.0 meter
      *     Models:     AVAudioEnvironmentDistanceAttenuationModelInverse,
      *                 AVAudioEnvironmentDistanceAttenuationModelLinear
@@ -196,9 +200,10 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     public native float referenceDistance();
 
     /**
-     * @property rolloffFactor
-     * @abstract Determines the attenuation curve
-     * @discussion
+     * [@property] rolloffFactor
+     * 
+     * Determines the attenuation curve
+     * 
      *     A higher value results in a steeper attenuation curve.
      *     The rolloff factor should be a value greater than 0.
      *     Default:    1.0
@@ -211,9 +216,10 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     public native float rolloffFactor();
 
     /**
-     * @property distanceAttenuationModel
-     * @abstract Type of distance attenuation model
-     * @discussion
+     * [@property] distanceAttenuationModel
+     * 
+     * Type of distance attenuation model
+     * 
      *     Default:    AVAudioEnvironmentDistanceAttenuationModelInverse
      */
     @Generated
@@ -221,9 +227,10 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     public native void setDistanceAttenuationModel(@NInt long value);
 
     /**
-     * @property maximumDistance
-     * @abstract The distance beyond which no further attenuation is applied
-     * @discussion
+     * [@property] maximumDistance
+     * 
+     * The distance beyond which no further attenuation is applied
+     * 
      *     Default:    100000.0 meters
      *     Models:     AVAudioEnvironmentDistanceAttenuationModelLinear
      */
@@ -232,9 +239,10 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     public native void setMaximumDistance(float value);
 
     /**
-     * @property referenceDistance
-     * @abstract The minimum distance at which attenuation is applied
-     * @discussion
+     * [@property] referenceDistance
+     * 
+     * The minimum distance at which attenuation is applied
+     * 
      *     Default:    1.0 meter
      *     Models:     AVAudioEnvironmentDistanceAttenuationModelInverse,
      *                 AVAudioEnvironmentDistanceAttenuationModelLinear
@@ -244,9 +252,10 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     public native void setReferenceDistance(float value);
 
     /**
-     * @property rolloffFactor
-     * @abstract Determines the attenuation curve
-     * @discussion
+     * [@property] rolloffFactor
+     * 
+     * Determines the attenuation curve
+     * 
      *     A higher value results in a steeper attenuation curve.
      *     The rolloff factor should be a value greater than 0.
      *     Default:    1.0

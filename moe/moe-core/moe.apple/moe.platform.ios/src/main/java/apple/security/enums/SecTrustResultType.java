@@ -19,9 +19,11 @@ package apple.security.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @typedef SecTrustResultType
- * @abstract Specifies the trust result type.
- * @discussion SecTrustResultType results have two dimensions.  They specify
+ * [@typedef] SecTrustResultType
+ * 
+ * Specifies the trust result type.
+ * 
+ * SecTrustResultType results have two dimensions.  They specify
  * both whether evaluation succeeded and whether this is because of a user
  * decision.  The commonly expected result is kSecTrustResultUnspecified,
  * which indicates a positive result that wasn't decided by the user.  The
@@ -31,31 +33,31 @@ import org.moe.natj.general.ann.Generated;
  * decisions are persisted through the use of SecTrustCopyExceptions() and
  * SecTrustSetExceptions().  Finally, kSecTrustResultFatalTrustFailure is a
  * negative result that must not be circumvented.
- * @constant kSecTrustResultInvalid Indicates an invalid setting or result.
+ * [@constant] kSecTrustResultInvalid Indicates an invalid setting or result.
  * This result usually means that SecTrustEvaluate has not yet been called.
- * @constant kSecTrustResultProceed Indicates you may proceed.  This value
+ * [@constant] kSecTrustResultProceed Indicates you may proceed.  This value
  * may be returned by the SecTrustEvaluate function or stored as part of
  * the user trust settings.
- * @constant kSecTrustResultConfirm Indicates confirmation with the user
+ * [@constant] kSecTrustResultConfirm Indicates confirmation with the user
  * is required before proceeding.  Important: this value is no longer returned
  * or supported by SecTrustEvaluate or the SecTrustSettings API starting in
  * OS X 10.5; its use is deprecated in OS X 10.9 and later, as well as in iOS.
- * @constant kSecTrustResultDeny Indicates a user-configured deny; do not
+ * [@constant] kSecTrustResultDeny Indicates a user-configured deny; do not
  * proceed. This value may be returned by the SecTrustEvaluate function
  * or stored as part of the user trust settings.
- * @constant kSecTrustResultUnspecified Indicates the evaluation succeeded
+ * [@constant] kSecTrustResultUnspecified Indicates the evaluation succeeded
  * and the certificate is implicitly trusted, but user intent was not
  * explicitly specified.  This value may be returned by the SecTrustEvaluate
  * function or stored as part of the user trust settings.
- * @constant kSecTrustResultRecoverableTrustFailure Indicates a trust policy
+ * [@constant] kSecTrustResultRecoverableTrustFailure Indicates a trust policy
  * failure which can be overridden by the user.  This value may be returned
  * by the SecTrustEvaluate function but not stored as part of the user
  * trust settings.
- * @constant kSecTrustResultFatalTrustFailure Indicates a trust failure
+ * [@constant] kSecTrustResultFatalTrustFailure Indicates a trust failure
  * which cannot be overridden by the user.  This value may be returned by the
  * SecTrustEvaluate function but not stored as part of the user trust
  * settings.
- * @constant kSecTrustResultOtherError Indicates a failure other than that
+ * [@constant] kSecTrustResultOtherError Indicates a failure other than that
  * of trust evaluation. This value may be returned by the SecTrustEvaluate
  * function but not stored as part of the user trust settings.
  */

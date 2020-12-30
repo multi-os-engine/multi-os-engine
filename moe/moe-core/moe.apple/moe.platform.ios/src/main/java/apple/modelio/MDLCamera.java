@@ -201,6 +201,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * The field of view, in degrees.
+     * 
      * @see focalLength
      */
     @Generated
@@ -216,6 +217,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Lens focal length in mm.
+     * 
      * @see fieldOfView
      */
     @Generated
@@ -263,6 +265,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Sensor or film gate aperture aspect ratio, default is 1.5
+     * 
      * @see sensorVerticalAperture
      */
     @Generated
@@ -271,6 +274,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * vertical aperture of the sensor or film gate, default is 24mm
+     * 
      * @see sensorAspect
      */
     @Generated
@@ -311,6 +315,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * The field of view, in degrees.
+     * 
      * @see focalLength
      */
     @Generated
@@ -326,6 +331,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Lens focal length in mm.
+     * 
      * @see fieldOfView
      */
     @Generated
@@ -368,6 +374,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Sensor or film gate aperture aspect ratio, default is 1.5
+     * 
      * @see sensorVerticalAperture
      */
     @Generated
@@ -376,6 +383,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * vertical aperture of the sensor or film gate, default is 24mm
+     * 
      * @see sensorAspect
      */
     @Generated

@@ -159,9 +159,9 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     public static native long version_static();
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of subscriptionID to errors keyed off of @c CKPartialErrorsByItemIDKey.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -179,9 +179,9 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     public native CKFetchSubscriptionsOperation initWithSubscriptionIDs(NSArray<String> subscriptionIDs);
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of subscriptionID to errors keyed off of @c CKPartialErrorsByItemIDKey.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */

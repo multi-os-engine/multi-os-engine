@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNYOLOLossNode
- * @discussion  This node calculates loss information during training
+ * MPSCNNYOLOLossNode
+ * 
+ * This node calculates loss information during training
  *              typically immediately after the inference portion
  *              of network evaluation is performed. The result image
  *              of the loss operations is typically the first gradient
@@ -107,7 +108,7 @@ public class MPSCNNYOLOLossNode extends MPSNNFilterNode {
             MPSCNNYOLOLossDescriptor descriptor);
 
     /**
-     * @abstract Get the input node for labes and weights, for example to set the handle
+     * Get the input node for labes and weights, for example to set the handle
      */
     @Generated
     @Selector("inputLabels")

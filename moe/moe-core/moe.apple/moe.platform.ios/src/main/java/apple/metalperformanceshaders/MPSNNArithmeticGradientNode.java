@@ -95,9 +95,11 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
     public native MPSNNArithmeticGradientNode init();
 
     /**
-     * @abstract create a new arithmetic gradient node
-     * @discussion See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
+     * create a new arithmetic gradient node
+     * 
+     * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
      *             for an easier way to do this.
+     * 
      * @param      gradientImages          The input gradient from the 'downstream' gradient filter and the source input image
      *                                     from the forward pass (primary or secondary).
      * @param      filter                  The matching filter node from the forward pass.
@@ -111,9 +113,11 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
             NSArray<? extends MPSNNImageNode> gradientImages, MPSNNFilterNode filter, boolean isSecondarySourceFilter);
 
     /**
-     * @abstract create a new arithmetic gradient node
-     * @discussion See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
+     * create a new arithmetic gradient node
+     * 
+     * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
      *             for an easier way to do this.
+     * 
      * @param      sourceGradient          The input gradient from the 'downstream' gradient filter.
      * @param      sourceImage             The source input image from the forward pass (primary or secondary).
      * @param      gradientState           The gradient state produced by the concatenation filter, consumed by this filter.
@@ -164,9 +168,11 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract create a new arithmetic gradient node
-     * @discussion See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
+     * create a new arithmetic gradient node
+     * 
+     * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
      *             for an easier way to do this.
+     * 
      * @param      sourceGradient          The input gradient from the 'downstream' gradient filter.
      * @param      sourceImage             The source input image from the forward pass (primary or secondary).
      * @param      gradientState           The gradient state produced by the concatenation filter, consumed by this filter.

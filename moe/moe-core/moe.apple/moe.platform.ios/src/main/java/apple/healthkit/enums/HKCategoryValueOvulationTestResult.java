@@ -20,9 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKCategoryValueOvulationTestResult
- * @abstract      Set of values that may be used for HKCategorySamples with the HKCategoryValueOvulationTestResult type.
- * @discussion    This category value tracks the result of a home ovulation test that use surges in hormone levels to
+ * [@enum]          HKCategoryValueOvulationTestResult
+ * 
+ * Set of values that may be used for HKCategorySamples with the HKCategoryValueOvulationTestResult type.
+ * 
+ * This category value tracks the result of a home ovulation test that use surges in hormone levels to
  *                indicate fertility.
  */
 @Generated

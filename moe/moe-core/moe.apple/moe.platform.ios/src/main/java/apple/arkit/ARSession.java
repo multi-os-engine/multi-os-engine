@@ -50,7 +50,9 @@ public class ARSession extends NSObject {
 
     /**
      * Adds an anchor to the session.
-     * @discussion The anchor will be added in the next frame update.
+     * 
+     * The anchor will be added in the next frame update.
+     * 
      * @param anchor The anchor to add.
      */
     @Generated
@@ -117,7 +119,8 @@ public class ARSession extends NSObject {
 
     /**
      * The dispatch queue on which the delegate calls are performed.
-     * @discussion If not provided or nil, delegate calls will be performed on the main queue.
+     * 
+     * If not provided or nil, delegate calls will be performed on the main queue.
      */
     @Generated
     @Selector("delegateQueue")
@@ -165,7 +168,8 @@ public class ARSession extends NSObject {
 
     /**
      * Pauses the session.
-     * @discussion Once paused, no more updates will be received from the
+     * 
+     * Once paused, no more updates will be received from the
      * session until run is called again.
      */
     @Generated
@@ -174,7 +178,9 @@ public class ARSession extends NSObject {
 
     /**
      * Removes an anchor from the session.
-     * @discussion The anchor will be removed from subsequent frame updates.
+     * 
+     * The anchor will be removed from subsequent frame updates.
+     * 
      * @param anchor The anchor to remove.
      */
     @Generated
@@ -191,8 +197,10 @@ public class ARSession extends NSObject {
 
     /**
      * Runs the session with the provided configuration.
-     * @discussion Calling run on a session that has already started will
+     * 
+     * Calling run on a session that has already started will
      * transition immediately to using the new configuration.
+     * 
      * @param configuration The configuration to use.
      */
     @Generated
@@ -201,9 +209,11 @@ public class ARSession extends NSObject {
 
     /**
      * Runs the session with the provided configuration and options.
-     * @discussion Calling run on a session that has already started will
+     * 
+     * Calling run on a session that has already started will
      * transition immediately to using the new configuration. Options
      * can be used to alter the default behavior when transitioning configurations.
+     * 
      * @param configuration The configuration to use.
      * @param options The run options to use.
      */
@@ -235,7 +245,8 @@ public class ARSession extends NSObject {
 
     /**
      * The dispatch queue on which the delegate calls are performed.
-     * @discussion If not provided or nil, delegate calls will be performed on the main queue.
+     * 
+     * If not provided or nil, delegate calls will be performed on the main queue.
      */
     @Generated
     @Selector("setDelegateQueue:")
@@ -256,7 +267,9 @@ public class ARSession extends NSObject {
 
     /**
      * Copies the current state of the world being tracked by the session.
-     * @discussion A world map is only provided when running an ARWorldTrackingConfiguration.
+     * 
+     * A world map is only provided when running an ARWorldTrackingConfiguration.
+     * 
      * @param completionHandler The completion handler to call when the get has completed. This handler is executed
      * on the session's delegate queue. The completion handler takes the following parameters:
      * worldMap - The current world map or nil if unavailable.
@@ -277,7 +290,7 @@ public class ARSession extends NSObject {
     /**
      * Unique identifier of the running session.
      * 
-     * @discussion The identifier may change after calling runWithConfiguration.
+     * The identifier may change after calling runWithConfiguration.
      */
     @Generated
     @Selector("identifier")
@@ -285,6 +298,7 @@ public class ARSession extends NSObject {
 
     /**
      * Perform a raycast.
+     * 
      * @param query Raycast query used for raycasting.
      * @return List of raycast results, sorted from nearest to farthest (in distance from the camera). The results could be empty if raycast fails.
      */
@@ -294,8 +308,10 @@ public class ARSession extends NSObject {
 
     /**
      * Perform a tracked raycast.
-     * @discussion The session performs continuous raycasting and calls the update handler with the updated results.
+     * 
+     * The session performs continuous raycasting and calls the update handler with the updated results.
      * The ARTrackedRaycast object returned can be used to update the raycast with a new raycast query or stop raycasting.
+     * 
      * @param query Raycast query used for raycasting.
      * @param updateHandler update handler where updated list of results, sorted from nearest to farthest (in distance from
      *        the camera) are delivered. updateHandler will be called on session's delegate queue.
@@ -317,7 +333,7 @@ public class ARSession extends NSObject {
     /**
      * Update session with collaboration data.
      * 
-     * @discussion Use this to update the session with collaboration data received from other participants.
+     * Use this to update the session with collaboration data received from other participants.
      * 
      * @param collaborationData Collaboration data for updating the session.
      * @see ARCollaborationData

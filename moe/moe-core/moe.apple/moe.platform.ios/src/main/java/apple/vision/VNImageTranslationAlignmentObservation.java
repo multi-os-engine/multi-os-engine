@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNImageTranslationAlignmentObservation
- * @superclass VNImageAlignmentObservation
- * @brief An observation describing the results of performing a translational image alignment.
+ * VNImageTranslationAlignmentObservation
+ * [@superclass] VNImageAlignmentObservation
+ * 
+ * An observation describing the results of performing a translational image alignment.
  */
 @Generated
 @Library("Vision")

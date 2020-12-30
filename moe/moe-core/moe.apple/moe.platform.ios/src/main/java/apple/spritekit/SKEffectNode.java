@@ -198,6 +198,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * Sets the blend mode to use when composing the effect with the final framebuffer.
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -232,6 +233,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
 
     /**
      * Sets the blend mode to use when composing the effect with the final framebuffer.
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated

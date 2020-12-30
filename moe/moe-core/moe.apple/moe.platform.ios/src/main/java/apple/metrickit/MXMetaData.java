@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXMetaData
- * @abstract      A class that contains miscellaneous metadata about an associated payload.
+ * MXMetaData
+ * 
+ * A class that contains miscellaneous metadata about an associated payload.
  */
 @Generated
 @Library("MetricKit")
@@ -47,18 +48,22 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * @method        DictionaryRepresentation
-     * @abstract      Convenience method to return a NSDictionary representation of this metadata.
-     * @result        An NSDictionary object containing the dictionary representation
+     * DictionaryRepresentation
+     * 
+     * Convenience method to return a NSDictionary representation of this metadata.
+     * 
+     * @return        An NSDictionary object containing the dictionary representation
      */
     @Generated
     @Selector("DictionaryRepresentation")
     public native NSDictionary<?, ?> DictionaryRepresentation();
 
     /**
-     * @method        JSONRepresentation
-     * @abstract      Convenience method to return a JSON representation of this metadata.
-     * @result        An NSData object containing the JSON representation
+     * JSONRepresentation
+     * 
+     * Convenience method to return a JSON representation of this metadata.
+     * 
+     * @return        An NSData object containing the JSON representation
      */
     @Generated
     @Selector("JSONRepresentation")
@@ -79,8 +84,9 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property      applicationBuildVersion
-     * @abstract      An NSString designating the app build version.
+     * [@property]      applicationBuildVersion
+     * 
+     * An NSString designating the app build version.
      */
     @Generated
     @Selector("applicationBuildVersion")
@@ -117,8 +123,9 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public static native String description_static();
 
     /**
-     * @property      deviceType
-     * @abstract      An NSString designating the device type associated with this device.
+     * [@property]      deviceType
+     * 
+     * An NSString designating the device type associated with this device.
      */
     @Generated
     @Selector("deviceType")
@@ -169,16 +176,18 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public static native Object new_objc();
 
     /**
-     * @property      osVersion
-     * @abstract      An NSString designating the OS version associated with the device.
+     * [@property]      osVersion
+     * 
+     * An NSString designating the OS version associated with the device.
      */
     @Generated
     @Selector("osVersion")
     public native String osVersion();
 
     /**
-     * @property      regionFormat
-     * @abstract      An NSString designating the region format associated with the application.
+     * [@property]      regionFormat
+     * 
+     * An NSString designating the region format associated with the application.
      */
     @Generated
     @Selector("regionFormat")
@@ -216,17 +225,20 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public static native long version_static();
 
     /**
-     * @method        dictionaryRepresentation
-     * @abstract      Convenience method to return a NSDictionary representation of this metadata.
-     * @result        An NSDictionary object containing the dictionary representation
+     * dictionaryRepresentation
+     * 
+     * Convenience method to return a NSDictionary representation of this metadata.
+     * 
+     * @return        An NSDictionary object containing the dictionary representation
      */
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<?, ?> dictionaryRepresentation();
 
     /**
-     * @property      platformArchitecture
-     * @abstract      An NSString designating the current architecture.
+     * [@property]      platformArchitecture
+     * 
+     * An NSString designating the current architecture.
      */
     @Generated
     @Selector("platformArchitecture")

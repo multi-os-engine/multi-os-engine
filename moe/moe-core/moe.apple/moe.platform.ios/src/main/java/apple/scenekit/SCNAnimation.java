@@ -97,6 +97,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Specifies the animation events attached to the receiver.
+     * 
      * @see SCNAnimationEvent
      */
     @Generated
@@ -116,8 +117,9 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      *  bridge with Core Animation
      * Returns a SCNAnimation initialized from a CAAnimation.
      * 
+     * Only CABasicAnimation, CAKeyframeAnimation and CAAnimationGroup are currently supported.
+     * 
      * @param caAnimation The CAAnimation to initialize from.
-     * @discussion Only CABasicAnimation, CAKeyframeAnimation and CAAnimationGroup are currently supported.
      */
     @Generated
     @Selector("animationWithCAAnimation:")
@@ -145,7 +147,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines the receiver's blend-in duration.
-     * @discussion When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     * 
+     * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
      */
     @Generated
     @Selector("blendInDuration")
@@ -153,7 +156,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines the receiver's blend-out duration.
-     * @discussion When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     * 
+     * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
      */
     @Generated
     @Selector("blendOutDuration")
@@ -363,6 +367,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Specifies the animation events attached to the receiver.
+     * 
      * @see SCNAnimationEvent
      */
     @Generated
@@ -385,7 +390,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines the receiver's blend-in duration.
-     * @discussion When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     * 
+     * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
      */
     @Generated
     @Selector("setBlendInDuration:")
@@ -393,7 +399,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines the receiver's blend-out duration.
-     * @discussion When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     * 
+     * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
      */
     @Generated
     @Selector("setBlendOutDuration:")
@@ -456,7 +463,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * The relative delay to start the animation, in relation to its parent animation if applicable. Defaults to 0.
-     * @discussion This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
+     * 
+     * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
      */
     @Generated
     @Selector("setStartDelay:")
@@ -480,8 +488,10 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
-     * @discussion A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
+     * 
+     * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
      * The "sceneTime" base is typically used by players or editors that need to preview, edit and being able to change the evaluation time.
+     * 
      * @see SCNSceneSourceAnimationImportPolicyKey
      */
     @Generated
@@ -494,7 +504,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * The relative delay to start the animation, in relation to its parent animation if applicable. Defaults to 0.
-     * @discussion This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
+     * 
+     * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
      */
     @Generated
     @Selector("startDelay")
@@ -532,8 +543,10 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
-     * @discussion A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
+     * 
+     * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
      * The "sceneTime" base is typically used by players or editors that need to preview, edit and being able to change the evaluation time.
+     * 
      * @see SCNSceneSourceAnimationImportPolicyKey
      */
     @Generated

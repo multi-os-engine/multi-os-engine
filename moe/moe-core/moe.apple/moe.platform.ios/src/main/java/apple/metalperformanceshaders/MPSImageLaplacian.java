@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageLaplacian
- * @discussion The MPSImageLaplacian is an optimized variant of the MPSImageConvolution filter provided primarily for ease of use.
+ * MPSImageLaplacian
+ * 
+ * The MPSImageLaplacian is an optimized variant of the MPSImageConvolution filter provided primarily for ease of use.
  *             This filter uses an optimized convolution filter with a 3 x 3 kernel with the following weights:
  *                 [ 0  1  0
  *                   1 -4  1
@@ -164,8 +165,9 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * @property    bias
-     * @discussion  The bias is a value to be added to convolved pixel before it is converted back to the storage format.
+     * [@property]    bias
+     * 
+     * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      *              It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
      *              For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
      *              weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.
@@ -187,8 +189,9 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
     public native MPSImageLaplacian initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @property    bias
-     * @discussion  The bias is a value to be added to convolved pixel before it is converted back to the storage format.
+     * [@property]    bias
+     * 
+     * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      *              It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
      *              For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
      *              weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.

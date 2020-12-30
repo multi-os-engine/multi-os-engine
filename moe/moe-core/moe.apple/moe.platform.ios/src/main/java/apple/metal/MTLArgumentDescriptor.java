@@ -25,8 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MTLArgumentDescriptor
- * @abstract Represents a member of an argument buffer
+ * MTLArgumentDescriptor
+ * 
+ * Represents a member of an argument buffer
  */
 @Generated
 @Library("Metal")
@@ -43,8 +44,9 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     }
 
     /**
-     * @property access
-     * @abstract Access flags for the argument
+     * [@property] access
+     * 
+     * Access flags for the argument
      */
     @Generated
     @Selector("access")
@@ -66,16 +68,18 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method argumentDescriptor
-     * @abstract Create an autoreleased default argument descriptor
+     * argumentDescriptor
+     * 
+     * Create an autoreleased default argument descriptor
      */
     @Generated
     @Selector("argumentDescriptor")
     public static native MTLArgumentDescriptor argumentDescriptor();
 
     /**
-     * @property arrayLength
-     * @abstract The length of an array of constants, textures, or samplers, or 0 for non-array arguments
+     * [@property] arrayLength
+     * 
+     * The length of an array of constants, textures, or samplers, or 0 for non-array arguments
      */
     @Generated
     @Selector("arrayLength")
@@ -105,9 +109,11 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property constantBlockAlignment
-     * @abstract if set forces the constant block to be aligned to the given alignment
-     * @discussion Should only be set on the first constant of the block and is only valid if a corresponding
+     * [@property] constantBlockAlignment
+     * 
+     * if set forces the constant block to be aligned to the given alignment
+     * 
+     * Should only be set on the first constant of the block and is only valid if a corresponding
      *     explicit "alignas" is applied to the constant in the metal shader language.
      */
     @Generated
@@ -122,8 +128,9 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property dataType
-     * @abstract For constants, the data type. Otherwise, MTLDataTypeTexture, MTLDataTypeSampler, or
+     * [@property] dataType
+     * 
+     * For constants, the data type. Otherwise, MTLDataTypeTexture, MTLDataTypeSampler, or
      * MTLDataTypePointer.
      */
     @Generated
@@ -145,8 +152,9 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     public static native long hash_static();
 
     /**
-     * @property index
-     * @abstract The binding point index of the argument
+     * [@property] index
+     * 
+     * The binding point index of the argument
      */
     @Generated
     @Selector("index")
@@ -193,25 +201,29 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property access
-     * @abstract Access flags for the argument
+     * [@property] access
+     * 
+     * Access flags for the argument
      */
     @Generated
     @Selector("setAccess:")
     public native void setAccess(@NUInt long value);
 
     /**
-     * @property arrayLength
-     * @abstract The length of an array of constants, textures, or samplers, or 0 for non-array arguments
+     * [@property] arrayLength
+     * 
+     * The length of an array of constants, textures, or samplers, or 0 for non-array arguments
      */
     @Generated
     @Selector("setArrayLength:")
     public native void setArrayLength(@NUInt long value);
 
     /**
-     * @property constantBlockAlignment
-     * @abstract if set forces the constant block to be aligned to the given alignment
-     * @discussion Should only be set on the first constant of the block and is only valid if a corresponding
+     * [@property] constantBlockAlignment
+     * 
+     * if set forces the constant block to be aligned to the given alignment
+     * 
+     * Should only be set on the first constant of the block and is only valid if a corresponding
      *     explicit "alignas" is applied to the constant in the metal shader language.
      */
     @Generated
@@ -219,8 +231,9 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     public native void setConstantBlockAlignment(@NUInt long value);
 
     /**
-     * @property dataType
-     * @abstract For constants, the data type. Otherwise, MTLDataTypeTexture, MTLDataTypeSampler, or
+     * [@property] dataType
+     * 
+     * For constants, the data type. Otherwise, MTLDataTypeTexture, MTLDataTypeSampler, or
      * MTLDataTypePointer.
      */
     @Generated
@@ -228,16 +241,18 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     public native void setDataType(@NUInt long value);
 
     /**
-     * @property index
-     * @abstract The binding point index of the argument
+     * [@property] index
+     * 
+     * The binding point index of the argument
      */
     @Generated
     @Selector("setIndex:")
     public native void setIndex(@NUInt long value);
 
     /**
-     * @property textureType
-     * @abstract For texture arguments, the texture type
+     * [@property] textureType
+     * 
+     * For texture arguments, the texture type
      */
     @Generated
     @Selector("setTextureType:")
@@ -252,8 +267,9 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * @property textureType
-     * @abstract For texture arguments, the texture type
+     * [@property] textureType
+     * 
+     * For texture arguments, the texture type
      */
     @Generated
     @Selector("textureType")

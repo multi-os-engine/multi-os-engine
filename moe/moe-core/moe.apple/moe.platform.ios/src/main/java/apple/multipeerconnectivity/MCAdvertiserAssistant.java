@@ -42,12 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MCAdvertiserAssistant
- *   @abstract
+ * MCAdvertiserAssistant
+ * 
  *      MCAdvertiserAssistant is a convenience class that handles advertising,
  *      presents incoming invitations to the user and handles user's responses.
  * 
- *   @discussion
  *      To create the MCAdvertiserAssistant object a new MCPeerID should be
  *      created to represent the local peer, and a service type needs to be
  *      specified.

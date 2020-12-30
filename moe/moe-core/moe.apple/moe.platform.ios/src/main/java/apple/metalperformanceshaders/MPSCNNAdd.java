@@ -26,9 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNAdd
- * @dependency This depends on Metal.framework.
- * @discussion Specifies the addition operator.
+ * MPSCNNAdd
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * Specifies the addition operator.
  *             For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
  *             it applies the following function: result = ((primaryScale * x) + (secondaryScale * y)) + bias.
  */
@@ -108,7 +109,8 @@ public class MPSCNNAdd extends MPSCNNArithmetic {
     public native MPSCNNAdd initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the addition operator.
+     * Initialize the addition operator.
+     * 
      * @param     device           The device the filter will run on.
      * @return    A valid MPSCNNAdd object or nil, if failure.
      */

@@ -136,16 +136,18 @@ public class NEDNSOverTLSSettings extends NEDNSSettings {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property serverName
-     * @discussion The name of the server to use for TLS certificate validation.
+     * [@property] serverName
+     * 
+     * The name of the server to use for TLS certificate validation.
      */
     @Generated
     @Selector("serverName")
     public native String serverName();
 
     /**
-     * @property serverName
-     * @discussion The name of the server to use for TLS certificate validation.
+     * [@property] serverName
+     * 
+     * The name of the server to use for TLS certificate validation.
      */
     @Generated
     @Selector("setServerName:")

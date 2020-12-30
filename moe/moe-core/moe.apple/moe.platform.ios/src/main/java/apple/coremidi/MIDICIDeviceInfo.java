@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		MIDICIDeviceInfo
- * @brief  	An NSObject containing basic information about a MIDI-CI-capable node.
+ * MIDICIDeviceInfo
+ * 
+ * An NSObject containing basic information about a MIDI-CI-capable node.
  */
 @Generated
 @Library("CoreMIDI")

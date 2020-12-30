@@ -48,7 +48,7 @@ public class CPInformationTemplate extends CPTemplate {
      * 
      * To update the actions appearing in this information template, assign a new array to this property.
      * 
-     * @note The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
+     * [@note] The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
      */
     @Generated
     @Selector("actions")
@@ -110,13 +110,13 @@ public class CPInformationTemplate extends CPTemplate {
     /**
      * Initialize a CPInformationTemplate with a title, optional labels, and optional action buttons.
      * 
+     * [@note] The maximum number of @c CPInformationItem is 10. If you specify more than 10 items, only the first 10 will be used.
+     *       The maximum number of @c CPTextButton is 3. If you specify more than 3, only the first 3 will be used.
+     * 
      * @param layout Information template layout, either leading aligned or two columns
      * @param title Information template title, appears at the top of the template
      * @param items Information items that will appear in the template
      * @param actions Optional actions that appear at the bottom of the template
-     * 
-     * @note The maximum number of @c CPInformationItem is 10. If you specify more than 10 items, only the first 10 will be used.
-     *       The maximum number of @c CPTextButton is 3. If you specify more than 3, only the first 3 will be used.
      */
     @Generated
     @Selector("initWithTitle:layout:items:actions:")
@@ -145,7 +145,7 @@ public class CPInformationTemplate extends CPTemplate {
      * 
      * To update the items appearing in this information template, assign a new array to this property.
      * 
-     * @note The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
+     * [@note] The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
      */
     @Generated
     @Selector("items")
@@ -182,7 +182,7 @@ public class CPInformationTemplate extends CPTemplate {
      * 
      * To update the actions appearing in this information template, assign a new array to this property.
      * 
-     * @note The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
+     * [@note] The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
      */
     @Generated
     @Selector("setActions:")
@@ -193,7 +193,7 @@ public class CPInformationTemplate extends CPTemplate {
      * 
      * To update the items appearing in this information template, assign a new array to this property.
      * 
-     * @note The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
+     * [@note] The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
      */
     @Generated
     @Selector("setItems:")

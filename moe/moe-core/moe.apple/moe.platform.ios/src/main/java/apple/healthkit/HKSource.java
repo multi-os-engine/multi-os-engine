@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class     HKSource
- * @abstract  Represents the entity that created an object stored by HealthKit.
+ * HKSource
+ * 
+ * Represents the entity that created an object stored by HealthKit.
  */
 @Generated
 @Library("HealthKit")
@@ -102,8 +103,9 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     public static native String debugDescription_static();
 
     /**
-     * @method    defaultSource
-     * @abstract  Returns the source representing the calling application.
+     * defaultSource
+     * 
+     * Returns the source representing the calling application.
      */
     @Generated
     @Selector("defaultSource")
@@ -171,8 +173,9 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     public static native long version_static();
 
     /**
-     * @property  bundleIdentifier
-     * @abstract  The bundle identifier of the source represented by the receiver.
+     * [@property]  bundleIdentifier
+     * 
+     * The bundle identifier of the source represented by the receiver.
      */
     @Generated
     @Selector("bundleIdentifier")
@@ -197,8 +200,9 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     public native HKSource initWithCoder(NSCoder coder);
 
     /**
-     * @property      name
-     * @abstract      The name of the source represented by the receiver.  If the source is an app, then the name is the
+     * [@property]      name
+     * 
+     * The name of the source represented by the receiver.  If the source is an app, then the name is the
      *                localized name of the app.
      */
     @Generated

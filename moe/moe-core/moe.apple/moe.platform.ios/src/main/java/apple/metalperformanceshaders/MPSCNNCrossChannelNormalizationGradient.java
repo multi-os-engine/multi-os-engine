@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNCrossChannelNormalizationGradient
- * @dependency This depends on Metal.framework
- * @discussion Specifies the normalization gradient filter across feature channels.
+ * MPSCNNCrossChannelNormalizationGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the normalization gradient filter across feature channels.
  *              This normalization filter applies the filter to a local region across nearby feature channels,
  *             but with no spatial extent (i.e., they have shape kernelSize x 1 x 1).
  *             The normalized output is given by:
@@ -81,8 +82,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property   alpha
-     * @abstract   The value of alpha.  Default is 1.0. Must be non-negative.
+     * [@property]   alpha
+     * 
+     * The value of alpha.  Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("alpha")
@@ -93,8 +95,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   beta
-     * @abstract   The value of beta.  Default is 5.0
+     * [@property]   beta
+     * 
+     * The value of beta.  Default is 5.0
      */
     @Generated
     @Selector("beta")
@@ -123,8 +126,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native String debugDescription_static();
 
     /**
-     * @property   delta
-     * @abstract   The value of delta.  Default is 1.0
+     * [@property]   delta
+     * 
+     * The value of delta.  Default is 1.0
      */
     @Generated
     @Selector("delta")
@@ -148,12 +152,14 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public native MPSCNNCrossChannelNormalizationGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -168,7 +174,8 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public native MPSCNNCrossChannelNormalizationGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize a cross channel normalization gradient filter
+     * Initialize a cross channel normalization gradient filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelSize          The kernel filter size in each dimension.
      * @return     A valid MPSCNNCrossChannelNormalization object or nil, if failure.
@@ -196,8 +203,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @property   kernelSize
-     * @abstract   The size of the square filter window.  Default is 5
+     * [@property]   kernelSize
+     * 
+     * The size of the square filter window.  Default is 5
      */
     @Generated
     @Selector("kernelSize")
@@ -223,24 +231,27 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   alpha
-     * @abstract   The value of alpha.  Default is 1.0. Must be non-negative.
+     * [@property]   alpha
+     * 
+     * The value of alpha.  Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);
 
     /**
-     * @property   beta
-     * @abstract   The value of beta.  Default is 5.0
+     * [@property]   beta
+     * 
+     * The value of beta.  Default is 5.0
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * @property   delta
-     * @abstract   The value of delta.  Default is 1.0
+     * [@property]   delta
+     * 
+     * The value of delta.  Default is 1.0
      */
     @Generated
     @Selector("setDelta:")

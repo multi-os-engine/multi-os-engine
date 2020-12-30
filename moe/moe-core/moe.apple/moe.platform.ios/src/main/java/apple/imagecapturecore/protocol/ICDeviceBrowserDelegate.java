@@ -12,8 +12,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * ------------------------------------------------------------------------------------------------------ ICDeviceBrowserDelegate
- * @protocol ICDeviceBrowserDelegate <NSObject>
- * @abstract A delegate of ICDeviceBrowser must conform to ICDeviceBrowserDelegate protocol.
+ * [@protocol] ICDeviceBrowserDelegate <NSObject>
+ * 
+ * A delegate of ICDeviceBrowser must conform to ICDeviceBrowserDelegate protocol.
  */
 @Generated
 @Library("ImageCaptureCore")
@@ -21,9 +22,11 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("ICDeviceBrowserDelegate")
 public interface ICDeviceBrowserDelegate {
     /**
-     * @method deviceBrowser:deviceDidChangeName:
-     * @abstract This message is sent if the name of a device changes.
-     * @discussion This happens if the device module overrides the default name of the device reported by the device's transport layer, or if the name of the filesystem volume mounted by the device is changed by the user.
+     * deviceBrowser:deviceDidChangeName:
+     * 
+     * This message is sent if the name of a device changes.
+     * 
+     * This happens if the device module overrides the default name of the device reported by the device's transport layer, or if the name of the filesystem volume mounted by the device is changed by the user.
      */
     @Generated
     @IsOptional
@@ -33,9 +36,10 @@ public interface ICDeviceBrowserDelegate {
     }
 
     /**
-     * @method deviceBrowser:deviceDidChangeSharingState:
-     * @abstract This message is sent when the sharing state of a device has changes.
-     * @discusson Any Image Capture client application can choose to share the device over the network using the sharing or webSharing facility in Image Capture.
+     * deviceBrowser:deviceDidChangeSharingState:
+     * 
+     * This message is sent when the sharing state of a device has changes.
+     * [@discusson] Any Image Capture client application can choose to share the device over the network using the sharing or webSharing facility in Image Capture.
      */
     @Generated
     @IsOptional
@@ -45,27 +49,33 @@ public interface ICDeviceBrowserDelegate {
     }
 
     /**
-     * @method deviceBrowser:didAddDevice:moreComing:
-     * @abstract This message is sent to the delegate to inform that a device has been added.
-     * @discussion If several devices are found during the initial search, then this message is sent once for each device with the value of 'moreComing' set to YES in each message except the last one.
+     * deviceBrowser:didAddDevice:moreComing:
+     * 
+     * This message is sent to the delegate to inform that a device has been added.
+     * 
+     * If several devices are found during the initial search, then this message is sent once for each device with the value of 'moreComing' set to YES in each message except the last one.
      */
     @Generated
     @Selector("deviceBrowser:didAddDevice:moreComing:")
     void deviceBrowserDidAddDeviceMoreComing(ICDeviceBrowser browser, ICDevice device, boolean moreComing);
 
     /**
-     * @method deviceBrowser:didRemoveDevice:moreGoing:
-     * @abstract This message is sent to the delegate to inform that a device has been removed.
-     * @discussion If several devices are removed at the same time, then this message is sent once for each device with the value of 'moreGoing' set to YES in each message except the last one.
+     * deviceBrowser:didRemoveDevice:moreGoing:
+     * 
+     * This message is sent to the delegate to inform that a device has been removed.
+     * 
+     * If several devices are removed at the same time, then this message is sent once for each device with the value of 'moreGoing' set to YES in each message except the last one.
      */
     @Generated
     @Selector("deviceBrowser:didRemoveDevice:moreGoing:")
     void deviceBrowserDidRemoveDeviceMoreGoing(ICDeviceBrowser browser, ICDevice device, boolean moreGoing);
 
     /**
-     * @method deviceBrowserDidCancelSuspendOperations:
-     * @abstract This message is sent to the delegate to inform that operations on devices in the browser have resumed before the suspension timeout.
-     * @discussion All communcation with the attached device will remain available as the application was switched back to the foreground before the
+     * deviceBrowserDidCancelSuspendOperations:
+     * 
+     * This message is sent to the delegate to inform that operations on devices in the browser have resumed before the suspension timeout.
+     * 
+     * All communcation with the attached device will remain available as the application was switched back to the foreground before the
      *  suspension timeout.
      */
     @Generated
@@ -76,9 +86,11 @@ public interface ICDeviceBrowserDelegate {
     }
 
     /**
-     * @method deviceBrowserDidResumeOperations:
-     * @abstract This message is sent to the delegate to inform that operations on devices in the browser have resumed.
-     * @discussion All communcation with the attached device has been resumed as the application has now entered the foreground.
+     * deviceBrowserDidResumeOperations:
+     * 
+     * This message is sent to the delegate to inform that operations on devices in the browser have resumed.
+     * 
+     * All communcation with the attached device has been resumed as the application has now entered the foreground.
      */
     @Generated
     @IsOptional
@@ -88,9 +100,11 @@ public interface ICDeviceBrowserDelegate {
     }
 
     /**
-     * @method deviceBrowserDidSuspendOperations:
-     * @abstract This message is sent to the delegate to inform that operations on devices in the browser have been suspended.
-     * @discussion All communcation with the attached device will remain suspended until the application has entered the foreground.
+     * deviceBrowserDidSuspendOperations:
+     * 
+     * This message is sent to the delegate to inform that operations on devices in the browser have been suspended.
+     * 
+     * All communcation with the attached device will remain suspended until the application has entered the foreground.
      *   In no way does this suspension modify the state of the connected device, nor does it issue a close session of any kind.  State should always be
      * managed by the application.
      */
@@ -102,9 +116,11 @@ public interface ICDeviceBrowserDelegate {
     }
 
     /**
-     * @method deviceBrowserWillSuspendOperations:
-     * @abstract This message is sent to the delegate to inform that operations on devices in the browser will be suspended shortly.
-     * @discussion Attached devices may require time to prepare the device for suspended communication.  This delegate method is called
+     * deviceBrowserWillSuspendOperations:
+     * 
+     * This message is sent to the delegate to inform that operations on devices in the browser will be suspended shortly.
+     * 
+     * Attached devices may require time to prepare the device for suspended communication.  This delegate method is called
      *   when the application is switched into the background.
      */
     @Generated

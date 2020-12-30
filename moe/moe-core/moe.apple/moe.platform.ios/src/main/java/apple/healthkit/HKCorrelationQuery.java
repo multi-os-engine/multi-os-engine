@@ -47,9 +47,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKCorrelationQuery
- * @abstract      A query to find HKCorrelations
- * @discussion    Correlations are HKSamples that contain a set of correlated samples. HKCorrelationQuery
+ * HKCorrelationQuery
+ * 
+ * A query to find HKCorrelations
+ * 
+ * Correlations are HKSamples that contain a set of correlated samples. HKCorrelationQuery
  *                accepts a predicate to filter HKCorrelations and a dictionary of predicates to filter the
  *                correlated samples.
  */
@@ -273,8 +275,9 @@ public class HKCorrelationQuery extends HKQuery {
     public native HKCorrelationQuery init();
 
     /**
-     * @method    initWithTypes:predicate:samplePredicate:completion:
-     * @abstract  The designated initializer for HKCorrelationQuery.
+     * initWithTypes:predicate:samplePredicate:completion:
+     * 
+     * The designated initializer for HKCorrelationQuery.
      * 
      * @param     correlationType     The type of correlation that is being queried for
      * 
@@ -291,9 +294,11 @@ public class HKCorrelationQuery extends HKQuery {
             @ObjCBlock(name = "call_initWithTypePredicateSamplePredicatesCompletion") Block_initWithTypePredicateSamplePredicatesCompletion completion);
 
     /**
-     * @property      samplePredicates
-     * @abstract      A dictionary of predicates for the HKCorrelation's objects
-     * @discussion    samplePredicates maps HKSampleTypes to NSPredicates. The predicate value will apply
+     * [@property]      samplePredicates
+     * 
+     * A dictionary of predicates for the HKCorrelation's objects
+     * 
+     * samplePredicates maps HKSampleTypes to NSPredicates. The predicate value will apply
      *                to objects of the key type. 
      */
     @Generated

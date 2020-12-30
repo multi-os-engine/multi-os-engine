@@ -146,13 +146,12 @@ public class ADClient extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @method sharedClient
+     * sharedClient
+     * 
+     * ADClient is a singleton object.
      * 
      * @return
      * The shared singleton instance of ADClient.
-     * 
-     * @discussion
-     * ADClient is a singleton object.
      */
     @Generated
     @Selector("sharedClient")
@@ -168,7 +167,12 @@ public class ADClient extends NSObject {
     public static native long version_static();
 
     /**
-     * @method addClientToSegments:replaceExisting:
+     * addClientToSegments:replaceExisting:
+     * 
+     * Enables apps to add users to custom segments owned and defined by the calling
+     * application.  If Limit Ad Tracking is enabled on the device, this method will
+     * have no effect. For iOS 14 and later, and macOS 11 and later, this method will
+     * have no effect.
      * 
      * @param segmentIdentifiers
      * Array of NSString objects identifying which segments to add the client to.
@@ -177,19 +181,16 @@ public class ADClient extends NSObject {
      * @param replaceExisting
      * If YES, the client will be removed from all existing segments prior to
      * being added to the specified segments.
-     * 
-     * @discussion
-     * Enables apps to add users to custom segments owned and defined by the calling
-     * application.  If Limit Ad Tracking is enabled on the device, this method will
-     * have no effect. For iOS 14 and later, and macOS 11 and later, this method will
-     * have no effect.
      */
     @Generated
     @Selector("addClientToSegments:replaceExisting:")
     public native void addClientToSegmentsReplaceExisting(NSArray<String> segmentIdentifiers, boolean replaceExisting);
 
     /**
-     * @method determineAppInstallationAttributionWithCompletionHandler:
+     * determineAppInstallationAttributionWithCompletionHandler:
+     * 
+     * Provides a way for an app to determine if it was installed by the user in
+     * response to seeing an iAd for the app.
      * 
      * @param completionHandler
      * A block accepting one BOOL argument that will be called when app installation
@@ -200,10 +201,6 @@ public class ADClient extends NSObject {
      * handler will always be called with NO.
      * 
      * The handler will be called on an arbitrary queue.
-     * 
-     * @discussion
-     * Provides a way for an app to determine if it was installed by the user in
-     * response to seeing an iAd for the app.
      */
     @Generated
     @Deprecated
@@ -216,17 +213,16 @@ public class ADClient extends NSObject {
     public native ADClient init();
 
     /**
-     * @method lookupAdConversionDetails:
+     * lookupAdConversionDetails:
+     * 
+     * Provides a way for an app to determine when an iAd was shown to the user
+     * which resulted in the user's purchase of the app.
      * 
      * @param completionHandler
      * This method is deprecated.
      * A block will be called with iAdImpressionDate = nil
      * 
      * The handler will be called on an arbitrary queue.
-     * 
-     * @discussion
-     * Provides a way for an app to determine when an iAd was shown to the user
-     * which resulted in the user's purchase of the app.
      */
     @Generated
     @Deprecated
@@ -235,7 +231,10 @@ public class ADClient extends NSObject {
             @ObjCBlock(name = "call_lookupAdConversionDetails") Block_lookupAdConversionDetails completionHandler);
 
     /**
-     * @method requestAttributionDetailsWithBlock:
+     * requestAttributionDetailsWithBlock:
+     * 
+     * Provides a way for an app to determine when an iAd was shown to the user
+     * which resulted in the user's purchase of the app.
      * 
      * @param completionHandler
      * A block which will be called with details related to the attribution status of the app.
@@ -244,10 +243,6 @@ public class ADClient extends NSObject {
      * dictionary is nil, an NSError is passed with an ADClientError enum.
      * 
      * The handler will be called on an arbitrary queue.
-     * 
-     * @discussion
-     * Provides a way for an app to determine when an iAd was shown to the user
-     * which resulted in the user's purchase of the app.
      */
     @Generated
     @Selector("requestAttributionDetailsWithBlock:")

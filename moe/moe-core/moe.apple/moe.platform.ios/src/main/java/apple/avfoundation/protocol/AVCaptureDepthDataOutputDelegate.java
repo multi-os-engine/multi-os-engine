@@ -15,8 +15,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol AVCaptureDepthDataOutputDelegate
- * @abstract
+ * [@protocol] AVCaptureDepthDataOutputDelegate
+ * 
  *    Defines an interface for delegates of AVCaptureDepthDataOutput to receive captured depth data and be notified of late depth data that were dropped.
  */
 @Generated
@@ -25,9 +25,11 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVCaptureDepthDataOutputDelegate")
 public interface AVCaptureDepthDataOutputDelegate {
     /**
-     * @method depthDataOutput:didDropDepthData:timestamp:connection:reason:
-     * @abstract
+     * depthDataOutput:didDropDepthData:timestamp:connection:reason:
+     * 
      *    Called once for each depth data that is discarded.
+     * 
+     *    Delegates receive this message whenever a depth data object is dropped. This method is called once for each dropped depth data. The object passed to this delegate method will contain a shell of an AVDepthData that contains no actual depth data backing pixel buffer, as well as a presentation time stamp and a reason for the drop. This method will be called on the dispatch queue specified by the output's delegateCallbackQueue property. Because this method is called on the same dispatch queue that outputs depth data, it must be efficient to prevent further capture performance problems, such as additional drops.
      * 
      * @param output
      *    The AVCaptureDepthDataOutput instance that dropped the depth data.
@@ -39,9 +41,6 @@ public interface AVCaptureDepthDataOutputDelegate {
      *    The AVCaptureConnection from which the dropped depth data object was received.
      * @param reason
      *    The reason the depth data object was dropped.
-     * 
-     * @discussion
-     *    Delegates receive this message whenever a depth data object is dropped. This method is called once for each dropped depth data. The object passed to this delegate method will contain a shell of an AVDepthData that contains no actual depth data backing pixel buffer, as well as a presentation time stamp and a reason for the drop. This method will be called on the dispatch queue specified by the output's delegateCallbackQueue property. Because this method is called on the same dispatch queue that outputs depth data, it must be efficient to prevent further capture performance problems, such as additional drops.
      */
     @Generated
     @IsOptional
@@ -52,9 +51,15 @@ public interface AVCaptureDepthDataOutputDelegate {
     }
 
     /**
-     * @method depthDataOutput:didOutputDepthData:timestamp:connection:
-     * @abstract
+     * depthDataOutput:didOutputDepthData:timestamp:connection:
+     * 
      *    Called whenever an AVCaptureDepthDataOutput instance outputs a new depth data object.
+     * 
+     *    The delegate receives this message whenever the depth data output captures and outputs a new depth data object. This method is called on the dispatch queue specified by the output's delegateCallbackQueue property. This method is called frequently. Care must be taken to process the depth data quickly in order to prevent dropped depth data.
+     * 
+     *    Clients that need to reference the AVDepthData object outside of the scope of this method must retain it and then release it when they are finished with it (in a MRR app).
+     * 
+     *    Note that to maintain optimal performance, AVDepthData pixel buffer maps may be backed by a finite memory pool. If AVDepthData objects are held onto for too long, capture inputs will no longer be able to copy new depth data into memory, resulting in droppage. If your application is causing depth data drops by holding on to provided depth data objects for too long, consider copying the pixel buffer map data into a new pixel buffer so that the AVDepthData backing memory can be reused more quickly.
      * 
      * @param output
      *    The AVCaptureDepthDataOutput instance vending the depth data.
@@ -64,13 +69,6 @@ public interface AVCaptureDepthDataOutputDelegate {
      *    A CMTime indicating when the depth data was captured.
      * @param connection
      *    The AVCaptureConnection through which the depth data is received.
-     * 
-     * @discussion
-     *    The delegate receives this message whenever the depth data output captures and outputs a new depth data object. This method is called on the dispatch queue specified by the output's delegateCallbackQueue property. This method is called frequently. Care must be taken to process the depth data quickly in order to prevent dropped depth data.
-     * 
-     *    Clients that need to reference the AVDepthData object outside of the scope of this method must retain it and then release it when they are finished with it (in a MRR app).
-     * 
-     *    Note that to maintain optimal performance, AVDepthData pixel buffer maps may be backed by a finite memory pool. If AVDepthData objects are held onto for too long, capture inputs will no longer be able to copy new depth data into memory, resulting in droppage. If your application is causing depth data drops by holding on to provided depth data objects for too long, consider copying the pixel buffer map data into a new pixel buffer so that the AVDepthData backing memory can be reused more quickly.
      */
     @Generated
     @IsOptional

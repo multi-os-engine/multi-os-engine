@@ -28,13 +28,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixBatchNormalizationGradient
+ * MPSMatrixBatchNormalizationGradient
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A kernel to compute the gradient of the batch normalization operation.
+ * A kernel to compute the gradient of the batch normalization operation.
  * 
- * @discussion A MPSMatrixBatchNormalizationGradient object computes the results of backpropagating
+ * A MPSMatrixBatchNormalizationGradient object computes the results of backpropagating
  *             the gradients of a loss function with respect to the outputs of an
  *             MPSMatrixBatchNormalization object.  The corresponding properties and data used by
  *             the MPSMatrixBatchNormalizationGradient object should correspond to those used by
@@ -91,11 +91,12 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * Make a copy of this kernel for a new device - @see MPSKernel
+     * 
      * @param      zone        The NSZone in which to allocate the object
      * @param      device      The device for the new MPSKernel. If nil, then use
      *                         self.device.
-     * @result     A pointer to a copy of this MPSKernel. This will fail, returning
+     * @return     A pointer to a copy of this MPSKernel. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -114,7 +115,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixBatchNormalizationGradient object to a command buffer and compute
+     * Encode a MPSMatrixBatchNormalizationGradient object to a command buffer and compute
      *             its gradient with respect to its input data.
      * 
      * @param      commandBuffer                   The commandBuffer on which to encode the operation.
@@ -157,9 +158,9 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
             MPSVector resultGradientForBetaVector);
 
     /**
-     * @property   epsilon
+     * [@property]   epsilon
      * 
-     * @discussion A small term added to the variance when normalizing the input.
+     * A small term added to the variance when normalizing the input.
      */
     @Generated
     @Selector("epsilon")
@@ -179,8 +180,10 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public native MPSMatrixBatchNormalizationGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixBatchNormalizationGradient
      * @param      device      The MTLDevice on which to make the MPSMatrixBatchNormalizationGradient object.
      * @return     A new MPSMatrixBatchNormalizationGradient object, or nil if failure.
@@ -216,28 +219,28 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterA")
     public native float neuronParameterA();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterB")
     public native float neuronParameterB();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterC")
     public native float neuronParameterC();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronType")
@@ -258,18 +261,18 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   epsilon
+     * [@property]   epsilon
      * 
-     * @discussion A small term added to the variance when normalizing the input.
+     * A small term added to the variance when normalizing the input.
      */
     @Generated
     @Selector("setEpsilon:")
     public native void setEpsilon(float value);
 
     /**
-     * @abstract   Specifies a neuron activation function to be used.
+     * Specifies a neuron activation function to be used.
      * 
-     * @discussion This method can be used to add a neuron activation funtion of given type with
+     * This method can be used to add a neuron activation funtion of given type with
      *             associated scalar parameters A, B, and C that are shared across all output values.
      *             Note that this method can only be used to specify neurons which are specified by three (or fewer)
      *             parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
@@ -288,18 +291,18 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
             float parameterC);
 
     /**
-     * @property   sourceInputFeatureChannels
+     * [@property]   sourceInputFeatureChannels
      * 
-     * @discussion The number of feature channels in the input vectors.
+     * The number of feature channels in the input vectors.
      */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
     /**
-     * @property   sourceNumberOfFeatureVectors
+     * [@property]   sourceNumberOfFeatureVectors
      * 
-     * @discussion The number of input vectors which make up the input array.
+     * The number of input vectors which make up the input array.
      */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
@@ -310,9 +313,9 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   sourceInputFeatureChannels
+     * [@property]   sourceInputFeatureChannels
      * 
-     * @discussion The number of feature channels in the input vectors.
+     * The number of feature channels in the input vectors.
      */
     @Generated
     @Selector("sourceInputFeatureChannels")
@@ -320,9 +323,9 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public native long sourceInputFeatureChannels();
 
     /**
-     * @property   sourceNumberOfFeatureVectors
+     * [@property]   sourceNumberOfFeatureVectors
      * 
-     * @discussion The number of input vectors which make up the input array.
+     * The number of input vectors which make up the input array.
      */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")

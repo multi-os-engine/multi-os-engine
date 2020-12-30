@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   This class specifies progress reporting capability of a ClassKit client app
+ * This class specifies progress reporting capability of a ClassKit client app
  */
 @Generated
 @Library("ClassKit")
@@ -87,7 +87,7 @@ public class CLSProgressReportingCapability extends CLSObject {
     public static native String description_static();
 
     /**
-     * @abstract      Returns progress reporting details
+     * Returns progress reporting details
      */
     @Generated
     @Selector("details")
@@ -107,7 +107,8 @@ public class CLSProgressReportingCapability extends CLSObject {
     public native CLSProgressReportingCapability initWithCoder(NSCoder coder);
 
     /**
-     * @abstract       Initialize and configure the type of progress reporting capability
+     * Initialize and configure the type of progress reporting capability
+     * 
      *  @param         kind        The kind of progress reporting capability
      *  @param         details     An optional localized string describing the capability. For example: "Reports percentage of progress", "Reports overall score". Schoolwork will use an appropriate default string if one is not provided.
      */
@@ -137,7 +138,7 @@ public class CLSProgressReportingCapability extends CLSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract      Returns the kind of progress reporting capability
+     * Returns the kind of progress reporting capability
      */
     @Generated
     @Selector("kind")

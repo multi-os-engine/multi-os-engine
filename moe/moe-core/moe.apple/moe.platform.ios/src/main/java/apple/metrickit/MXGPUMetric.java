@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXGPUMetric
- * @abstract      An MXMetric subclass that encapsulates GPU metrics.
+ * MXGPUMetric
+ * 
+ * An MXMetric subclass that encapsulates GPU metrics.
  */
 @Generated
 @Library("MetricKit")
@@ -82,10 +83,13 @@ public class MXGPUMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property      cumulativeGPUTime
-     * @abstract      GPU time aggregated cumulatively.
-     * @discussion    The data here represents the total GPU time an application consumed over the date range of the containing payload.
-     * @discussion    Dimensioned as NSUnitDuration.
+     * [@property]      cumulativeGPUTime
+     * 
+     * GPU time aggregated cumulatively.
+     * 
+     * The data here represents the total GPU time an application consumed over the date range of the containing payload.
+     * 
+     * Dimensioned as NSUnitDuration.
      */
     @Generated
     @Selector("cumulativeGPUTime")

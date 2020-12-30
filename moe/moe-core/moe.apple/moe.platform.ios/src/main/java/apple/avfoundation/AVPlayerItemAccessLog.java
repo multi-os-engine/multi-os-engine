@@ -42,9 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class			AVPlayerItemAccessLog
- * @abstract		An AVPlayerItemAccessLog provides methods to retrieve the access log in a format suitable for serialization.
- * @discussion	An AVPlayerItemAccessLog acculumulates key metrics about network playback and presents them as a collection 
+ * AVPlayerItemAccessLog
+ * 
+ * An AVPlayerItemAccessLog provides methods to retrieve the access log in a format suitable for serialization.
+ * 
+ * An AVPlayerItemAccessLog acculumulates key metrics about network playback and presents them as a collection
  * 				of AVPlayerItemAccessLogEvent instances. Each AVPlayerItemAccessLogEvent instance collates the data 
  * 				that relates to each uninterrupted period of playback.
  */
@@ -166,9 +168,11 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property		events
-     * @abstract		An ordered collection of AVPlayerItemAccessLogEvent instances.
-     * @discussion	An ordered collection of AVPlayerItemAccessLogEvent instances that represent the chronological
+     * [@property]		events
+     * 
+     * An ordered collection of AVPlayerItemAccessLogEvent instances.
+     * 
+     * An ordered collection of AVPlayerItemAccessLogEvent instances that represent the chronological
      * 				sequence of events contained in the access log.
      * 				This property is not observable.
      */
@@ -177,21 +181,26 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     public native NSArray<? extends AVPlayerItemAccessLogEvent> events();
 
     /**
-     * @method		extendedLogData
-     * @abstract		Serializes an AVPlayerItemAccessLog in the Extended Log File Format.
-     * @discussion	This method converts the webserver access log into a textual format that conforms to the
+     * extendedLogData
+     * 
+     * Serializes an AVPlayerItemAccessLog in the Extended Log File Format.
+     * 
+     * This method converts the webserver access log into a textual format that conforms to the
      * 			W3C Extended Log File Format for web server log files.
      * 			For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
-     * @result		An autoreleased NSData instance.
+     * 
+     * @return		An autoreleased NSData instance.
      */
     @Generated
     @Selector("extendedLogData")
     public native NSData extendedLogData();
 
     /**
-     * @property		extendedLogDataStringEncoding
-     * @abstract		Returns the NSStringEncoding for extendedLogData, see above.
-     * @discussion	A string suitable for console output is obtainable by: 
+     * [@property]		extendedLogDataStringEncoding
+     * 
+     * Returns the NSStringEncoding for extendedLogData, see above.
+     * 
+     * A string suitable for console output is obtainable by:
      * 				[[NSString alloc] initWithData:[myLog extendedLogData] encoding:[myLog extendedLogDataStringEncoding]]
      */
     @Generated

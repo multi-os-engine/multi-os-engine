@@ -133,7 +133,8 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
             MPSNNImageNode labels, MPSNNImageNode weights, MPSCNNLossDescriptor descriptor);
 
     /**
-     * @abstract   Init a forward loss node from multiple images
+     * Init a forward loss node from multiple images
+     * 
      * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
      *                                     Node0: logits, Node1: labels, Node2: weights
      * @return     A new MPSNNFilter node.
@@ -189,7 +190,8 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
             MPSNNImageNode labels, MPSNNImageNode weights, MPSCNNLossDescriptor descriptor);
 
     /**
-     * @abstract   Init a forward loss node from multiple images
+     * Init a forward loss node from multiple images
+     * 
      * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
      *                                     Node0: logits, Node1: labels, Node2: weights
      * @return     A new MPSNNFilter node.
@@ -205,8 +207,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     public native long numberOfClasses();
 
     /**
-     * @property   propertyCallBack
-     * @abstract   Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
+     * [@property]   propertyCallBack
+     * 
+     * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      *             Default value: nil.
      */
     @Generated
@@ -227,8 +230,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   propertyCallBack
-     * @abstract   Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
+     * [@property]   propertyCallBack
+     * 
+     * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      *             Default value: nil.
      */
     @Generated

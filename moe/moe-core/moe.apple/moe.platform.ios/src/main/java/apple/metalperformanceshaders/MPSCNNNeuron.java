@@ -44,9 +44,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNNeuron
- * @dependency This depends on Metal.framework
- * @discussion This filter applies a neuron activation function.
+ * MPSCNNNeuron
+ * [@dependency] This depends on Metal.framework
+ * 
+ * This filter applies a neuron activation function.
  *             You must use one of the sub-classes of MPSCNNNeuron.
  * 
  * The following filter types are supported:
@@ -191,12 +192,14 @@ public class MPSCNNNeuron extends MPSCNNKernel {
     public native MPSCNNNeuron initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -232,7 +235,8 @@ public class MPSCNNNeuron extends MPSCNNKernel {
     public native NSData data();
 
     /**
-     * @abstract  Initialize the neuron filter with a neuron descriptor.
+     * Initialize the neuron filter with a neuron descriptor.
+     * 
      * @param     device                   The device the filter will run on.
      * @param     neuronDescriptor         The neuron descriptor.
      *                                     For the neuron of type MPSCNNNeuronTypePReLU, the neuron

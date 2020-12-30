@@ -42,11 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVMetadataMachineReadableCodeObject
- * @abstract
+ * AVMetadataMachineReadableCodeObject
+ * 
  *    AVMetadataMachineReadableCodeObject is a concrete subclass of AVMetadataObject defining the features of a detected one-dimensional or two-dimensional barcode.
  * 
- * @discussion
  *    AVMetadataMachineReadableCodeObject represents a single detected machine readable code in a picture. It is an immutable object describing the features and payload of a barcode.
  * 
  *    On supported platforms, AVCaptureMetadataOutput outputs arrays of detected machine readable code objects. See AVCaptureMetadataOutput.h.
@@ -163,11 +162,10 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     public static native long version_static();
 
     /**
-     * @property corners
-     * @abstract
+     * [@property] corners
+     * 
      *    The points defining the (X,Y) locations of the corners of the machine-readable code.
      * 
-     * @discussion
      *    The value of this property is an NSArray of NSDictionaries, each of which has been created from a CGPoint using CGPointCreateDictionaryRepresentation(), representing the coordinates of the corners of the object with respect to the image in which it resides. If the metadata originates from video, the points may be expressed as scalar values from 0. - 1. The points in the corners differ from the bounds rectangle in that bounds is axis-aligned to orientation of the captured image, and the values of the corners reside within the bounds rectangle. The points are arranged in counter-clockwise order (clockwise if the code or image is mirrored), starting with the top-left of the code in its canonical orientation.
      */
     @Generated
@@ -179,11 +177,10 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     public native AVMetadataMachineReadableCodeObject init();
 
     /**
-     * @property stringValue
-     * @abstract
+     * [@property] stringValue
+     * 
      *    Returns the receiver's errorCorrectedData decoded into a human-readable string.
      * 
-     * @discussion
      *    The value of this property is an NSString created by decoding the binary payload according to the format of the machine readable code. Returns nil if a string representation cannot be created from the payload.
      */
     @Generated
@@ -191,11 +188,10 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     public native String stringValue();
 
     /**
-     * @property descriptor
-     * @abstract
+     * [@property] descriptor
+     * 
      *    An abstract representation of a machine readable code's symbol attributes.
      * 
-     * @discussion
      *    The value may be nil if an abstract representation of a machine readable code object is not defined for the code type or could not be detected.
      */
     @Generated

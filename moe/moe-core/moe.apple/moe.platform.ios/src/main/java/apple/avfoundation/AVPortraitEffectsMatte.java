@@ -30,11 +30,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVPortraitEffectsMatte
- * @abstract
+ * AVPortraitEffectsMatte
+ * 
  *    An object wrapping a matting image used for high quality rendering of portrait style effects onto an image (i.e. shallow depth of field, stage lighting, etc).
  * 
- * @discussion
  *    The pixel data in the matting image is represented in CVPixelBuffers as kCVPixelFormatType_OneComponent8 ('L008'). It's stored in image files as an auxiliary image, accessible using CGImageSourceCopyAuxiliaryDataInfoAtIndex with the data type kCGImageAuxiliaryDataTypePortraitEffectsMatte (see <ImageIO/CGImageProperties.h>).
  */
 @Generated
@@ -96,17 +95,16 @@ public class AVPortraitEffectsMatte extends NSObject {
     public static native String description_static();
 
     /**
-     * @method dictionaryRepresentationForAuxiliaryDataType:
-     * @abstract
+     * dictionaryRepresentationForAuxiliaryDataType:
+     * 
      *    Returns a dictionary of primitive map information to be used when writing an image file with a portrait effects matte.
+     * 
+     *    When using ImageIO framework's CGImageDestination API to write portrait effects matte information to a HEIF or JPEG file, you may use this method to generate a dictionary of primitive map information consumed by CGImageDestinationAddAuxiliaryDataInfo.
      * 
      * @param outAuxDataType
      *    On output, the auxiliary data type to be used when calling CGImageDestinationAddAuxiliaryDataInfo. Currently the only supported auxiliary data type is kCGImageAuxiliaryDataTypePortraitEffectsMatte.
-     * @result
+     * @return
      *    A dictionary of CGImageDestination compatible portrait effects matte information, or nil if the auxDataType is unsupported.
-     * 
-     * @discussion
-     *    When using ImageIO framework's CGImageDestination API to write portrait effects matte information to a HEIF or JPEG file, you may use this method to generate a dictionary of primitive map information consumed by CGImageDestinationAddAuxiliaryDataInfo.
      */
     @Generated
     @Selector("dictionaryRepresentationForAuxiliaryDataType:")
@@ -144,11 +142,10 @@ public class AVPortraitEffectsMatte extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property mattingImage
-     * @abstract
+     * [@property] mattingImage
+     * 
      *    Provides access to the portrait effects matte's internal image.
      * 
-     * @discussion
      *    The pixel format can be queried using the pixelFormatType property.
      */
     @Generated
@@ -162,11 +159,10 @@ public class AVPortraitEffectsMatte extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property pixelFormatType
-     * @abstract
+     * [@property] pixelFormatType
+     * 
      *    Specifies the pixel format type of this object's internal matting image.
      * 
-     * @discussion
      *    Currently the only supported CV pixel format type for the matting image is kCVPixelFormatType_OneComponent8.
      */
     @Generated
@@ -174,17 +170,16 @@ public class AVPortraitEffectsMatte extends NSObject {
     public native int pixelFormatType();
 
     /**
-     * @method portraitEffectsMatteByApplyingExifOrientation:
-     * @abstract
+     * portraitEffectsMatteByApplyingExifOrientation:
+     * 
      *    Returns a derivative AVPortraitEffectsMatte instance in which the specified Exif orientation has been applied.
+     * 
+     *    When applying simple 90 degree rotation or mirroring edits to media containing a portrait effects matte, you may use this initializer to create a derivative copy of the portrait effects matte in which the specified orientation is applied. This method throws an NSInvalidArgumentException if you pass an unrecognized exifOrientation.
      * 
      * @param exifOrientation
      *    One of the 8 standard Exif orientation tags expressing how the portrait effects matte should be rotated / mirrored.
-     * @result
+     * @return
      *    An AVPortraitEffectsMatte instance.
-     * 
-     * @discussion
-     *    When applying simple 90 degree rotation or mirroring edits to media containing a portrait effects matte, you may use this initializer to create a derivative copy of the portrait effects matte in which the specified orientation is applied. This method throws an NSInvalidArgumentException if you pass an unrecognized exifOrientation.
      */
     @Generated
     @Selector("portraitEffectsMatteByApplyingExifOrientation:")
@@ -192,19 +187,18 @@ public class AVPortraitEffectsMatte extends NSObject {
     public native Object portraitEffectsMatteByApplyingExifOrientation(int exifOrientation);
 
     /**
-     * @method portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBuffer:error:
-     * @abstract
+     * portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBuffer:error:
+     * 
      *    Returns an AVPortraitEffectsMatte instance wrapping the replacement pixel buffer.
+     * 
+     *    When applying complex edits to media containing a portrait effects matte, you may create a derivative matte with arbitrary transforms applied to it, then use this initializer to create a new AVPortraitEffectsMatte.
      * 
      * @param pixelBuffer
      *    A pixel buffer containing a portrait effects matting image, represented as kCVPixelFormatType_OneComponent8 with a kCVImageBufferTransferFunction_Linear transfer function.
      * @param outError
      *    On return, if the AVPortraitEffectsMatte cannot be created, points to an NSError describing the problem.
-     * @result
+     * @return
      *    An AVPortraitEffectsMatte instance, or nil if the pixel buffer is malformed.
-     * 
-     * @discussion
-     *    When applying complex edits to media containing a portrait effects matte, you may create a derivative matte with arbitrary transforms applied to it, then use this initializer to create a new AVPortraitEffectsMatte.
      */
     @Generated
     @Selector("portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBuffer:error:")
@@ -213,19 +207,18 @@ public class AVPortraitEffectsMatte extends NSObject {
             CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method portraitEffectsMatteFromDictionaryRepresentation:error:
-     * @abstract
+     * portraitEffectsMatteFromDictionaryRepresentation:error:
+     * 
      *    Returns an AVPortraitEffectsMatte instance from auxiliary image information in an image file.
+     * 
+     *    When using ImageIO framework's CGImageSource API to read from a HEIF or JPEG file containing a portrait effects matte, AVPortraitEffectsMatte can be instantiated using the result of CGImageSourceCopyAuxiliaryDataInfoAtIndex, which returns a CFDictionary of primitive map information.
      * 
      * @param imageSourceAuxDataInfoDictionary
      *    A dictionary of primitive portrait effects matte related information obtained from CGImageSourceCopyAuxiliaryDataInfoAtIndex.
      * @param outError
      *    On return, if the portrait effects matte cannot be created, points to an NSError describing the problem.
-     * @result
+     * @return
      *    An AVPortraitEffectsMatte instance, or nil if the auxiliary data info dictionary was malformed.
-     * 
-     * @discussion
-     *    When using ImageIO framework's CGImageSource API to read from a HEIF or JPEG file containing a portrait effects matte, AVPortraitEffectsMatte can be instantiated using the result of CGImageSourceCopyAuxiliaryDataInfoAtIndex, which returns a CFDictionary of primitive map information.
      */
     @Generated
     @Selector("portraitEffectsMatteFromDictionaryRepresentation:error:")

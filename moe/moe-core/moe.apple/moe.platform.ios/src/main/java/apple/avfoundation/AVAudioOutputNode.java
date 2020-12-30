@@ -40,10 +40,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioOutputNode
- * @abstract 
+ * AVAudioOutputNode
+ * 
  * 	A node that performs audio output in the engine.
- * @discussion
+ * 
  * 	When the engine is rendering to/from an audio device, this node connects to the system's 
  * 	audio output.
  * 	When the engine is operating in manual rendering mode, this node performs output in

@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SFAuthenticationSession
+ * SFAuthenticationSession
  * An SFAuthenticationSession object can be used to authenticate a user with a web service, even if the web service is run by a third party.
  * SFAuthenticationSession puts the user in control of whether they want to use their existing logged-in session from Safari. The
  * app provides a URL that points to the authentication webpage. The page will be loaded in a secure view controller. From the
@@ -81,7 +81,7 @@ public class SFAuthenticationSession extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @abstract Cancel an SFAuthenticationSession. If the view controller is already presented to load the webpage for authentication,
+     * Cancel an SFAuthenticationSession. If the view controller is already presented to load the webpage for authentication,
      * it will be dismissed. Calling cancel on an already canceled session will have no effect.
      */
     @Generated
@@ -124,7 +124,8 @@ public class SFAuthenticationSession extends NSObject {
     public native SFAuthenticationSession init();
 
     /**
-     * @abstract Returns a SFAuthenticationSession object.
+     * Returns a SFAuthenticationSession object.
+     * 
      * @param URL the initial URL pointing to the authentication webpage. Only supports URLs with http:// or https:// schemes.
      * @param callbackURLScheme the custom URL scheme that the app expects in the callback URL.
      * @param completionHandler the completion handler which is called when the session is completed successfully or canceled by user.
@@ -182,10 +183,12 @@ public class SFAuthenticationSession extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract Starts the SFAuthenticationSession instance after it is instantiated.
-     * @discussion start can only be called once for an SFAuthenticationSession instance. This also means calling start on a
+     * Starts the SFAuthenticationSession instance after it is instantiated.
+     * 
+     * start can only be called once for an SFAuthenticationSession instance. This also means calling start on a
      * canceled session will fail.
-     * @result Returns YES if the session starts successfully.
+     * 
+     * @return Returns YES if the session starts successfully.
      */
     @Generated
     @Selector("start")

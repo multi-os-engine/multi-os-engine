@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class is used to represent a significant time event.
+ * This class is used to represent a significant time event.
  */
 @Generated
 @Library("HomeKit")
@@ -103,7 +103,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     public native HMSignificantTimeEvent init();
 
     /**
-     * @brief Creates a significant time event.
+     * Creates a significant time event.
      * 
      * @param significantEvent The significant event for the trigger.
      * 
@@ -156,7 +156,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     public static native Object new_objc();
 
     /**
-     * @brief offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
      *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
      *               'minute' property must be set to -30.
      */
@@ -177,7 +177,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @brief significantEvent The significant event for the trigger.
+     * significantEvent The significant event for the trigger.
      */
     @Generated
     @Selector("significantEvent")

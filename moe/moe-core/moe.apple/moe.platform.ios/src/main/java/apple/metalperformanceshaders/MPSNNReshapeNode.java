@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract  A node for a MPSNNReshape kernel
+ * A node for a MPSNNReshape kernel
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -94,7 +94,8 @@ public class MPSNNReshapeNode extends MPSNNFilterNode {
     public native MPSNNReshapeNode init();
 
     /**
-     * @abstract   Init a node representing a MPSNNReshape kernel
+     * Init a node representing a MPSNNReshape kernel
+     * 
      * @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
      * @param      resultWidth             The width of the reshaped image.
      * @param      resultHeight            The height of the reshaped image.
@@ -134,7 +135,8 @@ public class MPSNNReshapeNode extends MPSNNFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract   Init a node representing a autoreleased MPSNNReshape kernel
+     * Init a node representing a autoreleased MPSNNReshape kernel
+     * 
      * @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
      * @param      resultWidth             The width of the reshaped image.
      * @param      resultHeight            The height of the reshaped image.

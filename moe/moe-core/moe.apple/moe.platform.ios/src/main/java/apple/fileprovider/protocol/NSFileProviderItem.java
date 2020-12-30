@@ -278,7 +278,7 @@ public interface NSFileProviderItem {
      * 
      *  - `NSFileProviderUserInteractions` *array*
      *    - `ActivationRule ` *string*, the predicate.
-     *        @parameters predicates
+     *        [@parameters] predicates
      *            - `destinationItem`: the destination item for an action (only present for Move/Import)
      *            - `destinationItemHierarchy` : represents destinationItem and all its parent chain to allow for search
      *                on first item in hierarchy that has a given value. (only present for Move/ImportHere)

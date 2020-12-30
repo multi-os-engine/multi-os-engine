@@ -40,7 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class is used to represent an accessory category.
+ * This class is used to represent an accessory category.
  */
 @Generated
 @Library("HomeKit")
@@ -154,7 +154,7 @@ public class HMAccessoryCategory extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief A type identifier that represents the category.
+     * A type identifier that represents the category.
      */
     @Generated
     @Selector("categoryType")
@@ -165,7 +165,7 @@ public class HMAccessoryCategory extends NSObject {
     public native HMAccessoryCategory init();
 
     /**
-     * @brief The localized description of the category.
+     * The localized description of the category.
      */
     @Generated
     @Selector("localizedDescription")

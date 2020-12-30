@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEFilterSocketFlow
- * @discussion The NEFilterSocketFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered, which is originated from the socket.
+ * [@interface] NEFilterSocketFlow
+ * 
+ * The NEFilterSocketFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered, which is originated from the socket.
  * 
  * NEFilterSocketFlow is part of NetworkExtension.framework
  */
@@ -201,24 +202,27 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     public native NWEndpoint remoteEndpoint();
 
     /**
-     * @property socketFamily
-     * @discussion Socket family of the socket flow, such as PF_INET.
+     * [@property] socketFamily
+     * 
+     * Socket family of the socket flow, such as PF_INET.
      */
     @Generated
     @Selector("socketFamily")
     public native int socketFamily();
 
     /**
-     * @property socketProtocol
-     * @discussion Socket protocol of the socket flow, such as IPPROTO_TCP.
+     * [@property] socketProtocol
+     * 
+     * Socket protocol of the socket flow, such as IPPROTO_TCP.
      */
     @Generated
     @Selector("socketProtocol")
     public native int socketProtocol();
 
     /**
-     * @property socketType
-     * @discussion Socket type of the socket flow, such as SOCK_STREAM.
+     * [@property] socketType
+     * 
+     * Socket type of the socket flow, such as SOCK_STREAM.
      */
     @Generated
     @Selector("socketType")
@@ -231,8 +235,9 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     }
 
     /**
-     * @property remoteHostname
-     * @discussion The flow's remote hostname. This property is only non-nil if the flow was created using Network.framework or NSURLSession.
+     * [@property] remoteHostname
+     * 
+     * The flow's remote hostname. This property is only non-nil if the flow was created using Network.framework or NSURLSession.
      */
     @Generated
     @Selector("remoteHostname")

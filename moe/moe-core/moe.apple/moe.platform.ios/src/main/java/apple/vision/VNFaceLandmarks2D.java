@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNFaceLandmarks2D
- * @brief VNFaceLandmarks2D is the result of a face landmarks 2D request, containing detected facial landmark points organized into VNFaceLandmarkRegion2D regions. The points are accessible as a full list, or as sub-gruops representing pre-defined facial regions.
+ * VNFaceLandmarks2D
+ * 
+ * VNFaceLandmarks2D is the result of a face landmarks 2D request, containing detected facial landmark points organized into VNFaceLandmarkRegion2D regions. The points are accessible as a full list, or as sub-gruops representing pre-defined facial regions.
  */
 @Generated
 @Library("Vision")
@@ -48,7 +49,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @brief allPoints the region containing all face landmark points.
+     * allPoints the region containing all face landmark points.
      */
     @Generated
     @Selector("allPoints")
@@ -95,7 +96,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public static native String description_static();
 
     /**
-     * @brief faceContour the region containing the points that describe the face contour from cheek over chin to cheek.
+     * faceContour the region containing the points that describe the face contour from cheek over chin to cheek.
      */
     @Generated
     @Selector("faceContour")
@@ -111,7 +112,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public native VNFaceLandmarks2D init();
 
     /**
-     * @brief innerLips the region containing the points describing the outline of the space between the of the lips.
+     * innerLips the region containing the points describing the outline of the space between the of the lips.
      */
     @Generated
     @Selector("innerLips")
@@ -139,21 +140,21 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief leftEye the region containing the points describing the outline of the left eye.
+     * leftEye the region containing the points describing the outline of the left eye.
      */
     @Generated
     @Selector("leftEye")
     public native VNFaceLandmarkRegion2D leftEye();
 
     /**
-     * @brief leftEyebrow the region containing the points describing the trace of the left eyebrow.
+     * leftEyebrow the region containing the points describing the trace of the left eyebrow.
      */
     @Generated
     @Selector("leftEyebrow")
     public native VNFaceLandmarkRegion2D leftEyebrow();
 
     /**
-     * @brief leftPupil the region containing the point where the left pupil is located.  This value may be inaccurate if
+     * leftPupil the region containing the point where the left pupil is located.  This value may be inaccurate if
      * the face isBlinking.
      */
     @Generated
@@ -161,7 +162,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public native VNFaceLandmarkRegion2D leftPupil();
 
     /**
-     * @brief medianLine the region containing the points describing the trace of the center line of the face.
+     * medianLine the region containing the points describing the trace of the center line of the face.
      */
     @Generated
     @Selector("medianLine")
@@ -174,21 +175,21 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public static native Object new_objc();
 
     /**
-     * @brief nose the region containing the points describing the outline of the nose.
+     * nose the region containing the points describing the outline of the nose.
      */
     @Generated
     @Selector("nose")
     public native VNFaceLandmarkRegion2D nose();
 
     /**
-     * @brief noseCrest the region containing the points describing the trace of the center crest of the nose.
+     * noseCrest the region containing the points describing the trace of the center crest of the nose.
      */
     @Generated
     @Selector("noseCrest")
     public native VNFaceLandmarkRegion2D noseCrest();
 
     /**
-     * @brief outer lips the region containing the points describing the outline of the outside of the lips.
+     * outer lips the region containing the points describing the outline of the outside of the lips.
      */
     @Generated
     @Selector("outerLips")
@@ -203,21 +204,21 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief rightEye the region containing the points describing the outline of the right eye.
+     * rightEye the region containing the points describing the outline of the right eye.
      */
     @Generated
     @Selector("rightEye")
     public native VNFaceLandmarkRegion2D rightEye();
 
     /**
-     * @brief rightEyebrow the region containing the points describing the trace of the right eyebrow.
+     * rightEyebrow the region containing the points describing the trace of the right eyebrow.
      */
     @Generated
     @Selector("rightEyebrow")
     public native VNFaceLandmarkRegion2D rightEyebrow();
 
     /**
-     * @brief rightPupil the region containing the point where the right pupil is located.  This value may be inaccurate if
+     * rightPupil the region containing the point where the right pupil is located.  This value may be inaccurate if
      * the face isBlinking.
      */
     @Generated

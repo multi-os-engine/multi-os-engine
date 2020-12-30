@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An anchor representing a geographical location in the world.
- * @discussion The anchor's transform will be automatically updated by the session based on location and heading.
+ * 
+ * The anchor's transform will be automatically updated by the session based on location and heading.
  * The session needs to be configured with ARGeoTrackingConfiguration.
  */
 @Generated
@@ -64,7 +65,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     /**
      * The distance to mean sea level, in meters (negative values indicate it's below sea level).
      * 
-     * @discussion Only valid when altitudeSource is not ARAltitudeSourceUnknown.
+     * Only valid when altitudeSource is not ARAltitudeSourceUnknown.
      */
     @Generated
     @Selector("altitude")
@@ -103,7 +104,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     /**
      * The coordinate where this anchor will be placed.
      * 
-     * @discussion The anchor's transform will be automatically updated by the session when ARGeoTrackingConfiguration is set.
+     * The anchor's transform will be automatically updated by the session when ARGeoTrackingConfiguration is set.
      */
     @Generated
     @Selector("coordinate")
@@ -138,7 +139,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     /**
      * Initializes a new ARGeoAnchor with the given coordinates.
      * 
-     * @discussion ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information becomes available.
+     * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information becomes available.
+     * 
      * @param coordinate Coordinates.
      */
     @Generated
@@ -158,7 +160,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     /**
      * Initializes a new named ARGeoAnchor with the given coordinates.
      * 
-     * @discussion ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information becomes available.
+     * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information becomes available.
+     * 
      * @param name Name of the anchor.
      * @param coordinate Coordinates.
      */

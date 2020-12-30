@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   A MPSNNFilterNode representing a MPSCNNBinaryConvolution kernel
+ * A MPSNNFilterNode representing a MPSCNNBinaryConvolution kernel
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -101,7 +101,8 @@ public class MPSCNNBinaryConvolutionNode extends MPSCNNConvolutionNode {
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
-     * @abstract   Init a node representing a MPSCNNBinaryConvolution kernel
+     * Init a node representing a MPSCNNBinaryConvolution kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                                     protocol. This object is provided by you to encapsulate storage for
@@ -150,7 +151,8 @@ public class MPSCNNBinaryConvolutionNode extends MPSCNNConvolutionNode {
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
-     * @abstract   Init an autoreleased node representing a MPSCNNBinaryConvolution kernel
+     * Init an autoreleased node representing a MPSCNNBinaryConvolution kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                                     protocol. This object is provided by you to encapsulate storage for
@@ -188,7 +190,8 @@ public class MPSCNNBinaryConvolutionNode extends MPSCNNConvolutionNode {
     public static native long version_static();
 
     /**
-     * @abstract   Init a node representing a MPSCNNBinaryConvolution kernel
+     * Init a node representing a MPSCNNBinaryConvolution kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                                     protocol. This object is provided by you to encapsulate storage for
@@ -213,7 +216,8 @@ public class MPSCNNBinaryConvolutionNode extends MPSCNNConvolutionNode {
             ConstFloatPtr inputScaleTerms, @NUInt long type, @NUInt long flags);
 
     /**
-     * @abstract   Init an autoreleased node representing a MPSCNNBinaryConvolution kernel
+     * Init an autoreleased node representing a MPSCNNBinaryConvolution kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                                     protocol. This object is provided by you to encapsulate storage for

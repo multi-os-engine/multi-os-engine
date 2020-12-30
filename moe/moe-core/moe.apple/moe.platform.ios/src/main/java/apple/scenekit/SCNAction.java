@@ -216,6 +216,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates an action that plays a sound
+     * 
      * @param source The audio source to play (see SCNAudioSource.h)
      * @param wait If YES, then the duration of this action is the same
      * as the length of the audio playback. If NO, the action is considered
@@ -365,8 +366,9 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property duration
-     * @abstract This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the speed property of the action.
+     * [@property] duration
+     * 
+     * This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the speed property of the action.
      */
     @Generated
     @Selector("duration")
@@ -385,24 +387,27 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public native SCNAction initWithCoder(NSCoder coder);
 
     /**
-     * @method reversedAction
-     * @abstract Creates an action that reverses the behavior of another action.
+     * reversedAction
+     * 
+     * Creates an action that reverses the behavior of another action.
      */
     @Generated
     @Selector("reversedAction")
     public native SCNAction reversedAction();
 
     /**
-     * @property duration
-     * @abstract This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the speed property of the action.
+     * [@property] duration
+     * 
+     * This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the speed property of the action.
      */
     @Generated
     @Selector("setDuration:")
     public native void setDuration(double value);
 
     /**
-     * @property speed
-     * @abstract A speed factor that modifies how fast an action runs. Defaults to 1.
+     * [@property] speed
+     * 
+     * A speed factor that modifies how fast an action runs. Defaults to 1.
      */
     @Generated
     @Selector("setSpeed:")
@@ -411,6 +416,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * When set, prodives a custom timing via a block. Applies after
      * the 'timingMode' property is taken into account, defaults to nil
+     * 
      * @see SCNActionTimingFunction
      */
     @Generated
@@ -418,16 +424,18 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public native void setTimingFunction(@ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
 
     /**
-     * @property timingMode
-     * @abstract The timing mode used to execute an action.
+     * [@property] timingMode
+     * 
+     * The timing mode used to execute an action.
      */
     @Generated
     @Selector("setTimingMode:")
     public native void setTimingMode(@NInt long value);
 
     /**
-     * @property speed
-     * @abstract A speed factor that modifies how fast an action runs. Defaults to 1.
+     * [@property] speed
+     * 
+     * A speed factor that modifies how fast an action runs. Defaults to 1.
      */
     @Generated
     @Selector("speed")
@@ -443,6 +451,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * When set, prodives a custom timing via a block. Applies after
      * the 'timingMode' property is taken into account, defaults to nil
+     * 
      * @see SCNActionTimingFunction
      */
     @Generated
@@ -451,8 +460,9 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public native Block_timingFunction_ret timingFunction();
 
     /**
-     * @property timingMode
-     * @abstract The timing mode used to execute an action.
+     * [@property] timingMode
+     * 
+     * The timing mode used to execute an action.
      */
     @Generated
     @Selector("timingMode")

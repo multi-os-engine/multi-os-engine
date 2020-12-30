@@ -40,7 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A WKBackForwardList object is a list of webpages previously
+ * A WKBackForwardList object is a list of webpages previously
  * visited in a web view that can be reached by going back or forward.
  */
 @Generated
@@ -155,7 +155,7 @@ public class WKBackForwardList extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract The item immediately preceding the current item, or nil
+     * The item immediately preceding the current item, or nil
      * if there isn't one.
      */
     @Generated
@@ -163,8 +163,9 @@ public class WKBackForwardList extends NSObject {
     public native WKBackForwardListItem backItem();
 
     /**
-     * @abstract The portion of the list preceding the current item.
-     * @discussion The items are in the order in which they were originally
+     * The portion of the list preceding the current item.
+     * 
+     * The items are in the order in which they were originally
      * visited.
      */
     @Generated
@@ -172,14 +173,14 @@ public class WKBackForwardList extends NSObject {
     public native NSArray<? extends WKBackForwardListItem> backList();
 
     /**
-     * @abstract The current item.
+     * The current item.
      */
     @Generated
     @Selector("currentItem")
     public native WKBackForwardListItem currentItem();
 
     /**
-     * @abstract The item immediately following the current item, or nil
+     * The item immediately following the current item, or nil
      * if there isn't one.
      */
     @Generated
@@ -187,8 +188,9 @@ public class WKBackForwardList extends NSObject {
     public native WKBackForwardListItem forwardItem();
 
     /**
-     * @abstract The portion of the list following the current item.
-     * @discussion The items are in the order in which they were originally
+     * The portion of the list following the current item.
+     * 
+     * The items are in the order in which they were originally
      * visited.
      */
     @Generated
@@ -200,12 +202,13 @@ public class WKBackForwardList extends NSObject {
     public native WKBackForwardList init();
 
     /**
-     * @abstract Returns the item at a specified distance from the current
+     * Returns the item at a specified distance from the current
      * item.
+     * 
      * @param index Index of the desired list item relative to the current item:
      * 0 for the current item, -1 for the immediately preceding item, 1 for the
      * immediately following item, and so on.
-     * @result The item at the specified distance from the current item, or nil
+     * @return The item at the specified distance from the current item, or nil
      * if the index parameter exceeds the limits of the list.
      */
     @Generated

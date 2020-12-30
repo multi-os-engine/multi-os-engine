@@ -32,8 +32,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSKeyedUnarchiver
- * @abstract A NSKeyedArchiver that supports the MPSDeviceProvider protocol for MPSKernel decoding
+ * MPSKeyedUnarchiver
+ * 
+ * A NSKeyedArchiver that supports the MPSDeviceProvider protocol for MPSKernel decoding
  */
 @Generated
 @Library("MetalPerformanceShaders")

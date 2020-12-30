@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKWorkoutType
- * @abstract      Represents a workout or exercise
+ * HKWorkoutType
+ * 
+ * Represents a workout or exercise
  */
 @Generated
 @Library("HealthKit")

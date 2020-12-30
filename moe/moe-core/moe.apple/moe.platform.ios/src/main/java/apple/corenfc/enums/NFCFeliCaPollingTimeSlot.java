@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @discussion Time slot parameter for the polling command
+ * Time slot parameter for the polling command
  */
 @Generated
 public final class NFCFeliCaPollingTimeSlot {

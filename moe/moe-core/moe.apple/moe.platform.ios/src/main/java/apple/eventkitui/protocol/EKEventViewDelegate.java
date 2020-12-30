@@ -31,10 +31,12 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("EKEventViewDelegate")
 public interface EKEventViewDelegate {
     /**
-     * @method     eventViewController:didCompleteWithAction:
-     * @abstract   Called to let delegate know that an action has occurred that should cause the
+     * eventViewController:didCompleteWithAction:
+     * 
+     * Called to let delegate know that an action has occurred that should cause the
      *             controller to be dismissed.
-     * @discussion If the user taps a button which deletes the event, or responds to an invite, this
+     * 
+     * If the user taps a button which deletes the event, or responds to an invite, this
      *             method is called on the delegate so that the delegate can decide to dismiss
      *             the view controller. When presented in a popover, it also reports when the Done
      *             button is pressed.

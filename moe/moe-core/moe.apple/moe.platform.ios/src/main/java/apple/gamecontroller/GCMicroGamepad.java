@@ -175,6 +175,7 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * 
      * Unlike on other profiles there is no negative button on this profile. Instead the menu button should be
      * used to present menu content or to retreat in a menu flow.
+     * 
      * @see buttonA
      */
     @Generated
@@ -279,7 +280,8 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     /**
      * Sets the state vector of the micro gamepad to a copy of the input micro gamepad's state vector.
      * 
-     * @note If the controller's snapshot flag is set to NO, this method has no effect.
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
      * @see GCController.snapshot
      */
     @Generated

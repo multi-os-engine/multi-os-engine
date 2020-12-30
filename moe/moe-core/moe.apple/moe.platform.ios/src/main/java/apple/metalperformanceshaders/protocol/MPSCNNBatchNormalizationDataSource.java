@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol   MPSCNNBatchNormalizationDataSource
- * @abstract   The MPSCNNBatchNormalizationDataSource protocol declares the methods that an
+ * [@protocol]   MPSCNNBatchNormalizationDataSource
+ * 
+ * The MPSCNNBatchNormalizationDataSource protocol declares the methods that an
  *             instance of MPSCNNBatchNormalizationState uses to initialize the
  *             scale factors, bias terms, and batch statistics.
  */
@@ -35,7 +36,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MPSCNNBatchNormalizationDataSource")
 public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     /**
-     * @abstract   Returns a pointer to the bias terms for the batch normalization.
+     * Returns a pointer to the bias terms for the batch normalization.
      * If NULL then no bias is to be applied.
      */
     @Generated
@@ -43,12 +44,12 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     FloatPtr beta();
 
     /**
-     * @abstract   Optional copy method to create a copy of the data source for use with a new device.
+     * Optional copy method to create a copy of the data source for use with a new device.
      * 
      * @param      zone    The NSZone on which to allocate.
      * @param      device  The device where the kernel which uses this data source will be used.
      * 
-     * @result     A pointer to a copy of this data source.
+     * @return     A pointer to a copy of this data source.
      */
     @Generated
     @Owned
@@ -60,7 +61,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract       NSSecureCoding compatibility.
+     * NSSecureCoding compatibility.
      */
     @Generated
     @IsOptional
@@ -70,8 +71,9 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract       An optional tiny number to use to maintain numerical stability.
-     * @discussion     output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
+     * An optional tiny number to use to maintain numerical stability.
+     * 
+     * output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
      *                 Defalt value if method unavailable: FLT_MIN
      */
     @Generated
@@ -82,14 +84,14 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   Returns a pointer to the scale factors for the batch normalization.
+     * Returns a pointer to the scale factors for the batch normalization.
      */
     @Generated
     @Selector("gamma")
     FloatPtr gamma();
 
     /**
-     * @abstract       NSSecureCoding compatibility.
+     * NSSecureCoding compatibility.
      */
     @Generated
     @IsOptional
@@ -100,19 +102,22 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   A label that is transferred to the batch normalization filter at init time
-     * @discussion Overridden by a MPSCNNBatchNormalizationNode.label if it is non-nil.
+     * A label that is transferred to the batch normalization filter at init time
+     * 
+     * Overridden by a MPSCNNBatchNormalizationNode.label if it is non-nil.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @abstract   Alerts the data source that the data will be needed soon
-     * @discussion Each load alert will be balanced by a purge later, when MPS
+     * Alerts the data source that the data will be needed soon
+     * 
+     * Each load alert will be balanced by a purge later, when MPS
      *             no longer needs the data from this object.
      *             Load will always be called atleast once after initial construction
      *             or each purge of the object before anything else is called.
+     * 
      * @return     Returns YES on success.  If NO is returned, expect MPS
      *             object construction to fail.
      */
@@ -121,7 +126,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     boolean load_objc();
 
     /**
-     * @abstract   Returns a pointer to batch mean values with which to initialize
+     * Returns a pointer to batch mean values with which to initialize
      * the state for a subsequent batch normalization.
      */
     @Generated
@@ -129,7 +134,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     FloatPtr mean();
 
     /**
-     * @abstract   Returns the number of feature channels within images to be normalized
+     * Returns the number of feature channels within images to be normalized
      * using the supplied parameters.
      */
     @Generated
@@ -138,8 +143,9 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     long numberOfFeatureChannels();
 
     /**
-     * @abstract   Alerts the data source that the data is no longer needed
-     * @discussion Each load alert will be balanced by a purge later, when MPS
+     * Alerts the data source that the data is no longer needed
+     * 
+     * Each load alert will be balanced by a purge later, when MPS
      *             no longer needs the data from this object.
      */
     @Generated
@@ -147,7 +153,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     void purge();
 
     /**
-     * @abstract       NSSecureCoding compatibility.
+     * NSSecureCoding compatibility.
      */
     @Generated
     @IsOptional
@@ -158,7 +164,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract       Compute new gamma and beta values using current values and gradients contained within a
+     * Compute new gamma and beta values using current values and gradients contained within a
      *                 MPSCNNBatchNormalizationState.  Perform the update using the CPU.
      * 
      * @param          batchNormalizationState     The MPSCNNBatchNormalizationState object containing the current gamma and
@@ -175,9 +181,10 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract       Compute new gamma and beta values using current values and gradients contained within a
+     * Compute new gamma and beta values using current values and gradients contained within a
      *                 MPSCNNBatchNormalizationState.  Perform the update using a GPU.
-     * @discussion     This operation is expected to also decrement the read count of batchNormalizationState by 1.
+     * 
+     * This operation is expected to also decrement the read count of batchNormalizationState by 1.
      * 
      * @param          commandBuffer               The command buffer on which to encode the update.
      * 
@@ -197,7 +204,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract       Compute new mean and variance values using current batch statistics contained within a
+     * Compute new mean and variance values using current batch statistics contained within a
      *                 MPSCNNBatchNormalizationState.  Perform the update using the CPU.
      * 
      * @param          batchNormalizationState     The MPSCNNBatchNormalizationState object containing the current batch statistics.
@@ -213,9 +220,10 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract       Compute new mean and variance values using current batch statistics contained within a
+     * Compute new mean and variance values using current batch statistics contained within a
      *                 MPSCNNBatchNormalizationState.  Perform the update using a GPU.
-     * @discussion     This operation is expected to also decrement the read count of batchNormalizationState by 1.
+     * 
+     * This operation is expected to also decrement the read count of batchNormalizationState by 1.
      * 
      * @param          commandBuffer               The command buffer on which to encode the update.
      * 
@@ -234,7 +242,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   Returns a pointer to batch variance values with which to initialize
+     * Returns a pointer to batch variance values with which to initialize
      * the state for a subsequent batch normalization.
      */
     @Generated

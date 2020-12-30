@@ -26,9 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A request that will detect faces in an image.
+ * A request that will detect faces in an image.
  * 
- * @details This request will generate VNFaceObservation objects with a defined boundingBox.
+ * This request will generate VNFaceObservation objects with a defined boundingBox.
  */
 @Generated
 @Library("Vision")

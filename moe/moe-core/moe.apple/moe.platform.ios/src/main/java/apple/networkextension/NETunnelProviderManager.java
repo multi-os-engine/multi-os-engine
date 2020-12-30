@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NETunnelProviderManager
- * @discussion The NETunnelProviderManager class declares the programmatic interface for an object that is used to configure and control network tunnels provided by NETunnelProviders.
+ * [@interface] NETunnelProviderManager
+ * 
+ * The NETunnelProviderManager class declares the programmatic interface for an object that is used to configure and control network tunnels provided by NETunnelProviders.
  * 
  * Instances of this class are thread safe.
  */
@@ -132,8 +133,10 @@ public class NETunnelProviderManager extends NEVPNManager {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @method loadAllFromPreferencesWithCompletionHandler:
-     * @discussion This function asynchronously reads all of the NETunnelProvider configurations created by the calling app that have previously been saved to disk and returns them as NETunnelProviderManager objects.
+     * loadAllFromPreferencesWithCompletionHandler:
+     * 
+     * This function asynchronously reads all of the NETunnelProvider configurations created by the calling app that have previously been saved to disk and returns them as NETunnelProviderManager objects.
+     * 
      * @param completionHandler A block that takes an array NETunnelProviderManager objects. The array passed to the block may be empty if no NETunnelProvider configurations were successfully read from the disk.  The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -173,8 +176,9 @@ public class NETunnelProviderManager extends NEVPNManager {
     public static native long version_static();
 
     /**
-     * @method copyAppRules
-     * @discussion This function returns an array of NEAppRule objects.
+     * copyAppRules
+     * 
+     * This function returns an array of NEAppRule objects.
      */
     @Generated
     @Owned
@@ -186,8 +190,9 @@ public class NETunnelProviderManager extends NEVPNManager {
     public native NETunnelProviderManager init();
 
     /**
-     * @property routingMethod
-     * @discussion The method by which network traffic is routed to the tunnel. The default is NETunnelProviderRoutingMethodDestinationIP.
+     * [@property] routingMethod
+     * 
+     * The method by which network traffic is routed to the tunnel. The default is NETunnelProviderRoutingMethodDestinationIP.
      */
     @Generated
     @Selector("routingMethod")

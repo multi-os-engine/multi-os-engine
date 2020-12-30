@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class	AUParameterGroup
- * @brief	A group of related parameters.
- * @discussion
+ * AUParameterGroup
+ * 
+ * A group of related parameters.
+ * 
  * 	A parameter group is KVC-compliant for its children; e.g. valueForKey:@"volume" will
  * 	return a child parameter whose identifier is "volume".
  */

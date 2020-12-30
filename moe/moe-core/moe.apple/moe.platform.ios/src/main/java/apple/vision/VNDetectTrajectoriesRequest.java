@@ -29,9 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A request that detects trajectories of shapes (even small ones) that follow a parabolic path in a sequence of images.
+ * A request that detects trajectories of shapes (even small ones) that follow a parabolic path in a sequence of images.
  * 
- * @discussion This request detects objects moving and (once their path follows the constraint of a parabola), a VNTrajectoryObservation will be returned with the detected points and the equation describing the parabola. 
+ * This request detects objects moving and (once their path follows the constraint of a parabola), a VNTrajectoryObservation will be returned with the detected points and the equation describing the parabola.
  */
 @Generated
 @Library("Vision")
@@ -122,7 +122,7 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
             @ObjCBlock(name = "call_initWithFrameAnalysisSpacingCompletionHandler") VNStatefulRequest.Block_initWithFrameAnalysisSpacingCompletionHandler completionHandler);
 
     /**
-     * @brief Create a new request that will detect the trajectory of a shape in motion.
+     * Create a new request that will detect the trajectory of a shape in motion.
      * 
      * @param frameAnalysisSpacing	The reciprocal of the maximum rate at which buffers will be processed. The request will not process buffers that fall within the frameAnalysisSpacing after it has performed the analysis. The analysis is not done by wall time but by analysis of the time stamps of the samplebuffers being processed. This property is for instance useful to throttle the processing on slower devices. If this is set to kCMTimeZero then no frames get skipped in the analysis.
      * @param trajectoryLength		The number of points required to analyze a parabola that indicates a trajectory. Must be at least 5.
@@ -177,14 +177,14 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     public static native Object new_objc();
 
     /**
-     * @brief Specifies the maximum radius of the bounding circle of the object to be tracked. This can be used to filter out unwanted trajectories from larger objects moving through the scene. The default is 1.0, which means no filtering is applied. Changing the maximum from frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base on this filtering. The size is specified in normalized coordinates.
+     * Specifies the maximum radius of the bounding circle of the object to be tracked. This can be used to filter out unwanted trajectories from larger objects moving through the scene. The default is 1.0, which means no filtering is applied. Changing the maximum from frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base on this filtering. The size is specified in normalized coordinates.
      */
     @Generated
     @Selector("objectMaximumNormalizedRadius")
     public native float objectMaximumNormalizedRadius();
 
     /**
-     * @brief Specifies the minimum radius of the bounding circle of the object to be tracked. This can be used to filter out noise and small objects. The default is 0.0, which means no filtering is applied. Changing the property from frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base on this filtering. The value is specified in normalized coordinates.
+     * Specifies the minimum radius of the bounding circle of the object to be tracked. This can be used to filter out noise and small objects. The default is 0.0, which means no filtering is applied. Changing the property from frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base on this filtering. The value is specified in normalized coordinates.
      */
     @Generated
     @Selector("objectMinimumNormalizedRadius")
@@ -199,7 +199,7 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Provides VNTrajectoryObservation results.
+     * Provides VNTrajectoryObservation results.
      */
     @Generated
     @Selector("results")
@@ -214,14 +214,14 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     public native void setMinimumObjectSize(float value);
 
     /**
-     * @brief Specifies the maximum radius of the bounding circle of the object to be tracked. This can be used to filter out unwanted trajectories from larger objects moving through the scene. The default is 1.0, which means no filtering is applied. Changing the maximum from frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base on this filtering. The size is specified in normalized coordinates.
+     * Specifies the maximum radius of the bounding circle of the object to be tracked. This can be used to filter out unwanted trajectories from larger objects moving through the scene. The default is 1.0, which means no filtering is applied. Changing the maximum from frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base on this filtering. The size is specified in normalized coordinates.
      */
     @Generated
     @Selector("setObjectMaximumNormalizedRadius:")
     public native void setObjectMaximumNormalizedRadius(float value);
 
     /**
-     * @brief Specifies the minimum radius of the bounding circle of the object to be tracked. This can be used to filter out noise and small objects. The default is 0.0, which means no filtering is applied. Changing the property from frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base on this filtering. The value is specified in normalized coordinates.
+     * Specifies the minimum radius of the bounding circle of the object to be tracked. This can be used to filter out noise and small objects. The default is 0.0, which means no filtering is applied. Changing the property from frame to frame can produce eratic trajectories as objects will either disappear or be added to the tracking base on this filtering. The value is specified in normalized coordinates.
      */
     @Generated
     @Selector("setObjectMinimumNormalizedRadius:")
@@ -240,7 +240,7 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     public static native NSIndexSet supportedRevisions();
 
     /**
-     * @brief The number of points required to analyze a parabola that indicates a trajectory.
+     * The number of points required to analyze a parabola that indicates a trajectory.
      */
     @Generated
     @Selector("trajectoryLength")

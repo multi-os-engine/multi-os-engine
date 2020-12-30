@@ -13,7 +13,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Protocol dictating how texture allocator objects should operate so that they can be used
+ * Protocol dictating how texture allocator objects should operate so that they can be used
  * by an MPSSVGFDenoiser object to allocate and reuse intermediate and output textures during the
  * denoising process.
  */
@@ -23,7 +23,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MPSSVGFTextureAllocator")
 public interface MPSSVGFTextureAllocator {
     /**
-     * @brief Return a texture to the allocator. The allocator operate in such a way as to reduce the
+     * Return a texture to the allocator. The allocator operate in such a way as to reduce the
      * allocation cost should another texture be requested with the same width, height, and pixel
      * format.
      */
@@ -32,7 +32,7 @@ public interface MPSSVGFTextureAllocator {
     void returnTexture(@Mapped(ObjCObjectMapper.class) MTLTexture texture);
 
     /**
-     * @brief Returns an autoreleased Metal 2D texture with a matching pixel format, width, and height.
+     * Returns an autoreleased Metal 2D texture with a matching pixel format, width, and height.
      */
     @Generated
     @Selector("textureWithPixelFormat:width:height:")

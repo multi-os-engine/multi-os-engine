@@ -415,6 +415,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     /**
      * Returns the node itself or a child node at the point given.
      * If the receiver is returned there is no child node at the given point.
+     * 
      * @return a child node or self at the given location.
      */
     @Generated

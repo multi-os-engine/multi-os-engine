@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- *  @class      MPSCNNNeuronGradient
- *  @dependency This depends on Metal.framework
- *  @discussion This filter is a backward filter for the neuron activation function filter.
+ * MPSCNNNeuronGradient
+ *  [@dependency] This depends on Metal.framework
+ * 
+ * This filter is a backward filter for the neuron activation function filter.
  * 
  *  The following filter types are supported:
  *  MPSCNNNeuronTypeNone            ///< df/dx = 1
@@ -149,12 +150,14 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
     public native MPSCNNNeuronGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -169,7 +172,8 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
     public native MPSCNNNeuronGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the neuron gradient filter with a neuron descriptor.
+     * Initialize the neuron gradient filter with a neuron descriptor.
+     * 
      * @param     device                   The device the filter will run on.
      * @param     neuronDescriptor         The neuron descriptor.
      *                                     For the neuron of type MPSCNNNeuronTypePReLU, the neuron

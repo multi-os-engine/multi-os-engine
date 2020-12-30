@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKCorrelationType
- * @abstract      Represents a type of HKCorrelation
+ * HKCorrelationType
+ * 
+ * Represents a type of HKCorrelation
  */
 @Generated
 @Library("HealthKit")

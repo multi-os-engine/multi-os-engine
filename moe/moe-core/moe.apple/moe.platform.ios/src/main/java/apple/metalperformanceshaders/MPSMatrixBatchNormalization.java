@@ -28,13 +28,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixBatchNormalization
+ * MPSMatrixBatchNormalization
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   Applies a batch normalization to a matrix.
+ * Applies a batch normalization to a matrix.
  * 
- * @discussion A MPSMatrixBatchNormalization object computes the batch normalization
+ * A MPSMatrixBatchNormalization object computes the batch normalization
  *             of a collection of feature vectors stored in an MPSMatrix.
  * 
  *             Feature vectors are stored in a row of the supplied input matrix and the
@@ -98,9 +98,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property   computeStatistics
+     * [@property]   computeStatistics
      * 
-     * @discussion If YES the batch statistics will be computed prior to performing the normalization.
+     * If YES the batch statistics will be computed prior to performing the normalization.
      *             Otherwise the provided statistics will be used.  Defaults to NO at initialization
      *             time.
      */
@@ -109,11 +109,12 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native boolean computeStatistics();
 
     /**
-     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * Make a copy of this kernel for a new device - @see MPSKernel
+     * 
      * @param      zone        The NSZone in which to allocate the object
      * @param      device      The device for the new MPSKernel. If nil, then use
      *                         self.device.
-     * @result     A pointer to a copy of this MPSKernel. This will fail, returning
+     * @return     A pointer to a copy of this MPSKernel. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -132,7 +133,17 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixBatchNormalization object to a command buffer.
+     * Encode a MPSMatrixBatchNormalization object to a command buffer.
+     * 
+     * Encodes the operation to the specified command buffer.  resultMatrix
+     *             must be large enough to hold a
+     *                 MIN(sourceNumberOfFeatureVectors, inputMatrix.rows - sourceMatrixOrigin.x)
+     *                 x
+     *                 MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) array.
+     * 
+     *             Let numChannels = MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
+     * 
+     *             The gamma, beta, mean, and variance vectors must contain at least numChannels elements.
      * 
      * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -155,16 +166,6 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      *                                 a null object to indicate that no values are to be added.
      * 
      * @param      resultMatrix        A valid MPSMatrix object which specifies the output array.
-     * 
-     * @discussion Encodes the operation to the specified command buffer.  resultMatrix
-     *             must be large enough to hold a
-     *                 MIN(sourceNumberOfFeatureVectors, inputMatrix.rows - sourceMatrixOrigin.x)
-     *                 x
-     *                 MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) array.
-     * 
-     *             Let numChannels = MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
-     * 
-     *             The gamma, beta, mean, and variance vectors must contain at least numChannels elements.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:meanVector:varianceVector:gammaVector:betaVector:resultMatrix:")
@@ -173,9 +174,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
             MPSVector varianceVector, MPSVector gammaVector, MPSVector betaVector, MPSMatrix resultMatrix);
 
     /**
-     * @property   epsilon
+     * [@property]   epsilon
      * 
-     * @discussion A small value to add to the variance when normalizing the inputs.  Defaults
+     * A small value to add to the variance when normalizing the inputs.  Defaults
      *             to FLT_MIN upon initialization.
      */
     @Generated
@@ -196,8 +197,10 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native MPSMatrixBatchNormalization initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixBatchNormalization object.
      * @param      device      The MTLDevice on which to make the MPSMatrixBatchNormalization object.
      * @return     A new MPSMatrixBatchNormalization object, or nil if failure.
@@ -233,28 +236,28 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterA")
     public native float neuronParameterA();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterB")
     public native float neuronParameterB();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterC")
     public native float neuronParameterC();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronType")
@@ -275,9 +278,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   computeStatistics
+     * [@property]   computeStatistics
      * 
-     * @discussion If YES the batch statistics will be computed prior to performing the normalization.
+     * If YES the batch statistics will be computed prior to performing the normalization.
      *             Otherwise the provided statistics will be used.  Defaults to NO at initialization
      *             time.
      */
@@ -286,9 +289,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native void setComputeStatistics(boolean value);
 
     /**
-     * @property   epsilon
+     * [@property]   epsilon
      * 
-     * @discussion A small value to add to the variance when normalizing the inputs.  Defaults
+     * A small value to add to the variance when normalizing the inputs.  Defaults
      *             to FLT_MIN upon initialization.
      */
     @Generated
@@ -296,9 +299,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native void setEpsilon(float value);
 
     /**
-     * @abstract   Specifies a neuron activation function to be used.
+     * Specifies a neuron activation function to be used.
      * 
-     * @discussion This method can be used to add a neuron activation funtion of given type with
+     * This method can be used to add a neuron activation funtion of given type with
      *             associated scalar parameters A, B, and C that are shared across all output values.
      *             Note that this method can only be used to specify neurons which are specified by three (or fewer)
      *             parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
@@ -317,9 +320,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
             float parameterC);
 
     /**
-     * @property   sourceInputFeatureChannels
+     * [@property]   sourceInputFeatureChannels
      * 
-     * @discussion The input size to to use in the operation.  This is equivalent to the
+     * The input size to to use in the operation.  This is equivalent to the
      *             number of columns in the primary (input array) source matrix to consider
      *             and the number of channels to produce for the output matrix.
      *             This property is modifiable and defaults to NSUIntegerMax.  At encode
@@ -335,9 +338,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
     /**
-     * @property   sourceNumberOfFeatureVectors
+     * [@property]   sourceNumberOfFeatureVectors
      * 
-     * @discussion The number of input vectors which make up the input array.  This
+     * The number of input vectors which make up the input array.  This
      *             is equivalent to the number of rows to consider from the primary
      *             source matrix.
      *             This property is modifiable and defaults to NSUIntegerMax.  At encode
@@ -354,9 +357,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   sourceInputFeatureChannels
+     * [@property]   sourceInputFeatureChannels
      * 
-     * @discussion The input size to to use in the operation.  This is equivalent to the
+     * The input size to to use in the operation.  This is equivalent to the
      *             number of columns in the primary (input array) source matrix to consider
      *             and the number of channels to produce for the output matrix.
      *             This property is modifiable and defaults to NSUIntegerMax.  At encode
@@ -373,9 +376,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native long sourceInputFeatureChannels();
 
     /**
-     * @property   sourceNumberOfFeatureVectors
+     * [@property]   sourceNumberOfFeatureVectors
      * 
-     * @discussion The number of input vectors which make up the input array.  This
+     * The number of input vectors which make up the input array.  This
      *             is equivalent to the number of rows to consider from the primary
      *             source matrix.
      *             This property is modifiable and defaults to NSUIntegerMax.  At encode

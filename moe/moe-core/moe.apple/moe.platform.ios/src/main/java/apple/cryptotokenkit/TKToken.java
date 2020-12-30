@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @discussion Class representing single token.  When implementing SmartCard based token, it is recommended to inherit the implementation from TKSmartCardToken.  Token object serves as synchronization point, all operations invoked upon token and all its sessions are serialized.
+ * Class representing single token.  When implementing SmartCard based token, it is recommended to inherit the implementation from TKSmartCardToken.  Token object serves as synchronization point, all operations invoked upon token and all its sessions are serialized.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -107,7 +107,8 @@ public class TKToken extends NSObject {
     public native TKToken init();
 
     /**
-     * @discussion Initializes token instance
+     * Initializes token instance
+     * 
      * @param tokenDriver Creating token driver.
      * @param instanceID Unique, persistent identifier of this token.
      */
@@ -137,7 +138,7 @@ public class TKToken extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @discussion Keychain contents (certificate and key items) representing this token.
+     * Keychain contents (certificate and key items) representing this token.
      */
     @Generated
     @Selector("keychainContents")

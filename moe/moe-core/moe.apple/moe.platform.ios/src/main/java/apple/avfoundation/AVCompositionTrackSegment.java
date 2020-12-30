@@ -93,19 +93,26 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @method			compositionTrackSegmentWithTimeRange:
-     * @abstract		Returns an instance of AVCompositionTrackSegment that presents an empty track segment.
+     * compositionTrackSegmentWithTimeRange:
+     * 
+     * Returns an instance of AVCompositionTrackSegment that presents an empty track segment.
+     * 
      * @param			timeRange
      * 				The timeRange of the empty AVCompositionTrackSegment.
-     * @result			An instance of AVCompositionTrackSegment.
+     * @return			An instance of AVCompositionTrackSegment.
      */
     @Generated
     @Selector("compositionTrackSegmentWithTimeRange:")
     public static native AVCompositionTrackSegment compositionTrackSegmentWithTimeRange(@ByValue CMTimeRange timeRange);
 
     /**
-     * @method			compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:
-     * @abstract		Returns an instance of AVCompositionTrackSegment that presents a portion of a file referenced by URL.
+     * compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:
+     * 
+     * Returns an instance of AVCompositionTrackSegment that presents a portion of a file referenced by URL.
+     * 
+     * To specify that the segment be played at the asset's normal rate, set source.duration == target.duration in the timeMapping.
+     * 				Otherwise, the segment will be played at a rate equal to the ratio source.duration / target.duration.
+     * 
      * @param			URL
      * 				An instance of NSURL that references the container file to be presented by the AVCompositionTrackSegment.
      * @param			trackID
@@ -114,9 +121,7 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
      * 				The timeRange of the track of the container file to be presented by the AVCompositionTrackSegment.
      * @param			targetTimeRange
      * 				The timeRange of the composition track during which the AVCompositionTrackSegment is to be presented.
-     * @result			An instance of AVCompositionTrackSegment.
-     * @discussion		To specify that the segment be played at the asset's normal rate, set source.duration == target.duration in the timeMapping.
-     * 				Otherwise, the segment will be played at a rate equal to the ratio source.duration / target.duration.
+     * @return			An instance of AVCompositionTrackSegment.
      */
     @Generated
     @Selector("compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:")
@@ -189,19 +194,26 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     public native AVCompositionTrackSegment init();
 
     /**
-     * @method			initWithTimeRange:
-     * @abstract		Initializes an instance of AVCompositionTrackSegment that presents an empty track segment.
+     * initWithTimeRange:
+     * 
+     * Initializes an instance of AVCompositionTrackSegment that presents an empty track segment.
+     * 
      * @param			timeRange
      * 				The timeRange of the empty AVCompositionTrackSegment.
-     * @result			An instance of AVCompositionTrackSegment.
+     * @return			An instance of AVCompositionTrackSegment.
      */
     @Generated
     @Selector("initWithTimeRange:")
     public native AVCompositionTrackSegment initWithTimeRange(@ByValue CMTimeRange timeRange);
 
     /**
-     * @method			initWithURL:trackID:sourceTimeRange:targetTimeRange:
-     * @abstract		Initializes an instance of AVCompositionTrackSegment that presents a portion of a file referenced by URL.
+     * initWithURL:trackID:sourceTimeRange:targetTimeRange:
+     * 
+     * Initializes an instance of AVCompositionTrackSegment that presents a portion of a file referenced by URL.
+     * 
+     * To specify that the segment be played at the asset's normal rate, set source.duration == target.duration in the timeMapping.
+     * 				Otherwise, the segment will be played at a rate equal to the ratio source.duration / target.duration.
+     * 
      * @param			URL
      * 				An instance of NSURL that references the container file to be presented by the AVCompositionTrackSegment.
      * @param			trackID
@@ -210,9 +222,7 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
      * 				The timeRange of the track of the container file to be presented by the AVCompositionTrackSegment.
      * @param			targetTimeRange
      * 				The timeRange of the composition track during which the AVCompositionTrackSegment is to be presented.
-     * @result			An instance of AVCompositionTrackSegment.
-     * @discussion		To specify that the segment be played at the asset's normal rate, set source.duration == target.duration in the timeMapping.
-     * 				Otherwise, the segment will be played at a rate equal to the ratio source.duration / target.duration.
+     * @return			An instance of AVCompositionTrackSegment.
      */
     @Generated
     @Selector("initWithURL:trackID:sourceTimeRange:targetTimeRange:")

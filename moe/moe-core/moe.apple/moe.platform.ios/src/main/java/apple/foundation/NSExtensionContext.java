@@ -199,7 +199,8 @@ public class NSExtensionContext extends NSObject {
     public native NSArray<?> inputItems();
 
     /**
-     * @abstract Load information about the broadcasting app.
+     * Load information about the broadcasting app.
+     * 
      * @param handler block which will be supplied a bundleID, displayName and an optional appIcon.
      */
     @Generated

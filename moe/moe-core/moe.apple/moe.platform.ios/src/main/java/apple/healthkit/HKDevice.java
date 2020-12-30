@@ -128,9 +128,11 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @method        localDevice
-     * @abstract      Returns a device representing the host.
-     * @discussion    If an app chooses to save samples that were retrieved from the local device, e.g. an HKWorkout with a 
+     * localDevice
+     * 
+     * Returns a device representing the host.
+     * 
+     * If an app chooses to save samples that were retrieved from the local device, e.g. an HKWorkout with a
      *                totalDistance HKQuantity gathered from CoreLocation GPS distances, then this would be an appropriate 
      *                HKDevice to use.
      */
@@ -170,9 +172,11 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public static native long version_static();
 
     /**
-     * @property      UDIDeviceIdentifier
-     * @abstract      Represents the device identifier portion of a device's FDA UDI (Unique Device Identifier).
-     * @discussion    The device identifier can be used to reference the FDA's GUDID (Globally Unique Device
+     * [@property]      UDIDeviceIdentifier
+     * 
+     * Represents the device identifier portion of a device's FDA UDI (Unique Device Identifier).
+     * 
+     * The device identifier can be used to reference the FDA's GUDID (Globally Unique Device
      *                Identifier Database). Note that for user privacy concerns this field should not be used to
      *                persist the production identifier portion of the device UDI. HealthKit clients should manage
      *                the production identifier independently, if needed.
@@ -193,16 +197,18 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @property      firmwareVersion
-     * @abstract      The firmware revision of the receiver.
+     * [@property]      firmwareVersion
+     * 
+     * The firmware revision of the receiver.
      */
     @Generated
     @Selector("firmwareVersion")
     public native String firmwareVersion();
 
     /**
-     * @property      hardwareVersion
-     * @abstract      The hardware revision of the receiver.
+     * [@property]      hardwareVersion
+     * 
+     * The hardware revision of the receiver.
      */
     @Generated
     @Selector("hardwareVersion")
@@ -217,9 +223,11 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native HKDevice initWithCoder(NSCoder coder);
 
     /**
-     * @method        initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:
-     * @abstract      Initialize a new HKDevice with the specified values.
-     * @discussion    This allows initialization of an HKDevice object based on the
+     * initWithName:manufacturer:model:hardwareVersion:firmwareVersion:softwareVersion:localIdentifier:UDIDeviceIdentifier:
+     * 
+     * Initialize a new HKDevice with the specified values.
+     * 
+     * This allows initialization of an HKDevice object based on the
      *                information provided.
      */
     @Generated
@@ -229,9 +237,11 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
             String softwareVersion, String localIdentifier, String UDIDeviceIdentifier);
 
     /**
-     * @property      localIdentifier
-     * @abstract      A unique identifier for the receiver.
-     * @discussion    This property is available to clients for a local identifier.
+     * [@property]      localIdentifier
+     * 
+     * A unique identifier for the receiver.
+     * 
+     * This property is available to clients for a local identifier.
      *                For example, Bluetooth peripherals managed by HealthKit use this
      *                for the CoreBluetooth UUID which is valid only on the local
      *                device and thus distinguish the same Bluetooth peripheral used
@@ -242,33 +252,38 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native String localIdentifier();
 
     /**
-     * @property      manufacturer
-     * @abstract      The manufacturer of the receiver.
+     * [@property]      manufacturer
+     * 
+     * The manufacturer of the receiver.
      */
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
     /**
-     * @property      model
-     * @abstract      The model of the receiver.
+     * [@property]      model
+     * 
+     * The model of the receiver.
      */
     @Generated
     @Selector("model")
     public native String model();
 
     /**
-     * @property      name
-     * @abstract      The name of the receiver.
-     * @discussion    The user-facing name, such as the one displayed in the Bluetooth Settings for a BLE device.
+     * [@property]      name
+     * 
+     * The name of the receiver.
+     * 
+     * The user-facing name, such as the one displayed in the Bluetooth Settings for a BLE device.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @property      softwareVersion
-     * @abstract      The software revision of the receiver.
+     * [@property]      softwareVersion
+     * 
+     * The software revision of the receiver.
      */
     @Generated
     @Selector("softwareVersion")

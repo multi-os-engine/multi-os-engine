@@ -29,8 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEHotspotConfiguration
- * @discussion
+ * [@interface] NEHotspotConfiguration
+ * 
  *   The NEHotspotConfiguration class represents set of properties that are required
  *   to configure a Wi-Fi Network.
  */
@@ -49,8 +49,9 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     }
 
     /**
-     * @property SSID
-     * @discussion SSID of the Wi-Fi Network.
+     * [@property] SSID
+     * 
+     * SSID of the Wi-Fi Network.
      */
     @Generated
     @Selector("SSID")
@@ -124,8 +125,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     public native NEHotspotConfiguration initWithCoder(NSCoder coder);
 
     /**
-     * @method initWithHS20Settings:eapSettings
-     * @discussion
+     * initWithHS20Settings:eapSettings
+     * 
      *   A designated initializer to instantiate a new NEHotspotConfiguration object.
      *   This initializer is used configure HS2.0 Wi-Fi Networks.
      * 
@@ -138,8 +139,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
             NEHotspotEAPSettings eapSettings);
 
     /**
-     * @method initWithSSID:
-     * @discussion
+     * initWithSSID:
+     * 
      *   A designated initializer to instantiate a new NEHotspotConfiguration object.
      *   This initializer is used to configure open Wi-Fi Networks.
      * 
@@ -151,8 +152,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     public native NEHotspotConfiguration initWithSSID(String SSID);
 
     /**
-     * @method initWithSSID:eapSettings
-     * @discussion
+     * initWithSSID:eapSettings
+     * 
      *   A designated initializer to instantiate a new NEHotspotConfiguration object.
      *   This initializer is used configure WPA/WPA2 Enterprise Wi-Fi Networks.
      * 
@@ -164,8 +165,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     public native NEHotspotConfiguration initWithSSIDEapSettings(String SSID, NEHotspotEAPSettings eapSettings);
 
     /**
-     * @method initWithSSID:passphrase:isWEP
-     * @discussion
+     * initWithSSID:passphrase:isWEP
+     * 
      *   A designated initializer to instantiate a new NEHotspotConfiguration object.
      *   This initializer is used configure either WEP or WPA/WPA2 Personal Wi-Fi Networks.
      * 
@@ -198,8 +199,9 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @property joinOnce
-     * @discussion if set to YES the configuration will not be persisted. Default is NO.
+     * [@property] joinOnce
+     * 
+     * if set to YES the configuration will not be persisted. Default is NO.
      */
     @Generated
     @Selector("joinOnce")
@@ -210,8 +212,9 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property lifeTimeInDays
-     * @discussion The lifetime of the configuration in days. The configuration is stored for the
+     * [@property] lifeTimeInDays
+     * 
+     * The lifetime of the configuration in days. The configuration is stored for the
      *   number of days specified by this property. The minimum value is 1 day and maximum value is 365 days.
      *   A configuration does not get deleted automatically if this property is not set or set to an invalid value.
      *   This property does not apply to Enterprise and HS2.0 networks.
@@ -235,16 +238,18 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property joinOnce
-     * @discussion if set to YES the configuration will not be persisted. Default is NO.
+     * [@property] joinOnce
+     * 
+     * if set to YES the configuration will not be persisted. Default is NO.
      */
     @Generated
     @Selector("setJoinOnce:")
     public native void setJoinOnce(boolean value);
 
     /**
-     * @property lifeTimeInDays
-     * @discussion The lifetime of the configuration in days. The configuration is stored for the
+     * [@property] lifeTimeInDays
+     * 
+     * The lifetime of the configuration in days. The configuration is stored for the
      *   number of days specified by this property. The minimum value is 1 day and maximum value is 365 days.
      *   A configuration does not get deleted automatically if this property is not set or set to an invalid value.
      *   This property does not apply to Enterprise and HS2.0 networks.
@@ -277,24 +282,26 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     public static native long version_static();
 
     /**
-     * @property SSIDPrefix
-     * @discussion Prefix string of SSID of the Wi-Fi Network.
+     * [@property] SSIDPrefix
+     * 
+     * Prefix string of SSID of the Wi-Fi Network.
      */
     @Generated
     @Selector("SSIDPrefix")
     public native String SSIDPrefix();
 
     /**
-     * @property hidden
-     * @discussion if set to YES the system will perform active scan of the SSID. Default is NO.
+     * [@property] hidden
+     * 
+     * if set to YES the system will perform active scan of the SSID. Default is NO.
      */
     @Generated
     @Selector("hidden")
     public native boolean hidden();
 
     /**
-     * @method initWithSSIDPrefix:
-     * @discussion
+     * initWithSSIDPrefix:
+     * 
      *   A designated initializer to instantiate a new NEHotspotConfiguration object.
      *   This initializer is used to configure open Wi-Fi Networks.
      * 
@@ -306,8 +313,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     public native NEHotspotConfiguration initWithSSIDPrefix(String SSIDPrefix);
 
     /**
-     * @method initWithSSIDPrefix:passphrase:isWEP
-     * @discussion
+     * initWithSSIDPrefix:passphrase:isWEP
+     * 
      *   A designated initializer to instantiate a new NEHotspotConfiguration object.
      *   This initializer is used configure either WEP or WPA/WPA2 Personal Wi-Fi Networks.
      * 
@@ -325,8 +332,9 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
             boolean isWEP);
 
     /**
-     * @property hidden
-     * @discussion if set to YES the system will perform active scan of the SSID. Default is NO.
+     * [@property] hidden
+     * 
+     * if set to YES the system will perform active scan of the SSID. Default is NO.
      */
     @Generated
     @Selector("setHidden:")

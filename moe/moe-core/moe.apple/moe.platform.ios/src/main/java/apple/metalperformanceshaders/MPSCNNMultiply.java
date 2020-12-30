@@ -26,9 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNMultiply
- * @dependency This depends on Metal.framework.
- * @discussion Specifies the multiplication operator.
+ * MPSCNNMultiply
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * Specifies the multiplication operator.
  *             For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
  *             it applies the following function: result = ((primaryScale * x) * (secondaryScale * y)) + bias.
  */
@@ -108,7 +109,8 @@ public class MPSCNNMultiply extends MPSCNNArithmetic {
     public native MPSCNNMultiply initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the multiplication operator
+     * Initialize the multiplication operator
+     * 
      * @param     device           The device the filter will run on.
      * @return    A valid MPSCNNMultiply object or nil, if failure.
      */

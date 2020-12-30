@@ -52,9 +52,9 @@ public final class CloudKit {
     public static native String CKOwnerDefaultName();
 
     /**
-     * @abstract This local notification is posted when there has been any change to the logged in iCloud account.
+     * This local notification is posted when there has been any change to the logged in iCloud account.
      * 
-     * @discussion On receipt, an updated account status should be obtained by calling @c accountStatusWithCompletionHandler:
+     * On receipt, an updated account status should be obtained by calling @c accountStatusWithCompletionHandler:
      */
     @Generated
     @CVariable()
@@ -67,9 +67,9 @@ public final class CloudKit {
     public static native String CKErrorDomain();
 
     /**
-     * @abstract When a CKErrorPartialFailure happens this key will be set in the error's userInfo dictionary.
+     * When a CKErrorPartialFailure happens this key will be set in the error's userInfo dictionary.
      * 
-     * @discussion The value of this key will be a dictionary, and the values will be errors for individual items with the keys being the item IDs that failed.
+     * The value of this key will be a dictionary, and the values will be errors for individual items with the keys being the item IDs that failed.
      */
     @Generated
     @CVariable()
@@ -158,7 +158,7 @@ public final class CloudKit {
     public static native String CKShareTypeKey();
 
     /**
-     * @discussion Query operations have a dynamically defined maximum number of results.  If the results of a query exceed this max, your completion block will invoked with a cursor.
+     * Query operations have a dynamically defined maximum number of results.  If the results of a query exceed this max, your completion block will invoked with a cursor.
      * Issue a new query with that cursor to fetch the next batch of results.
      */
     @Generated

@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEFilterControlProvider
- * @discussion The NEFilterControlProvider class declares the programmatic interface for an object that is responsible for installing filtering rules on the device.
+ * [@interface] NEFilterControlProvider
+ * 
+ * The NEFilterControlProvider class declares the programmatic interface for an object that is responsible for installing filtering rules on the device.
  */
 @Generated
 @Library("NetworkExtension")
@@ -157,16 +158,19 @@ public class NEFilterControlProvider extends NEFilterProvider {
     public static native long version_static();
 
     /**
-     * @property URLAppendStringMap
-     * @discussion A dictionary containing strings to be appended to URLs.
+     * [@property] URLAppendStringMap
+     * 
+     * A dictionary containing strings to be appended to URLs.
      */
     @Generated
     @Selector("URLAppendStringMap")
     public native NSDictionary<String, String> URLAppendStringMap();
 
     /**
-     * @method handleNewFlow:completionHandler:
-     * @discussion This function is called by the framework when the NEFilterDataProvider indicates that the filtering verdict for the given flow is NEFilterNewFlowVerdictNeedRules. Subclass implementations must override this method and implement whatever steps are necessary to fetch new rules pertaining to the given flow and place them on disk in a location accessible by the NEFilterDataProvider.
+     * handleNewFlow:completionHandler:
+     * 
+     * This function is called by the framework when the NEFilterDataProvider indicates that the filtering verdict for the given flow is NEFilterNewFlowVerdictNeedRules. Subclass implementations must override this method and implement whatever steps are necessary to fetch new rules pertaining to the given flow and place them on disk in a location accessible by the NEFilterDataProvider.
+     * 
      * @param flow An NEFilterFlow object containing details about the flow that requires a rules update.
      * @param completionHandler A block that must be called when the NEFilterControlProvider is ready for the NEFilterDataProvider to re-process the new flow. NEFilterControlVerdict stores the verdict through which the control provider determines if a flow needs to be dropped or allowed. The verdict also indicates if the control plugin wants the data plugin to update its rules and handle the verdict.
      */
@@ -176,8 +180,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
             @ObjCBlock(name = "call_handleNewFlowCompletionHandler") Block_handleNewFlowCompletionHandler completionHandler);
 
     /**
-     * @method handleRemediationForFlow:completionHandler:
-     * @discussion This function is called by the framework when the NEFilterDataProvider indicates that the filtering verdict for the given flow is NEFilterRemediateVerdictNeedRules. Subclass implementations must override this method and implement whatever steps are necessary to remediate the given flow.
+     * handleRemediationForFlow:completionHandler:
+     * 
+     * This function is called by the framework when the NEFilterDataProvider indicates that the filtering verdict for the given flow is NEFilterRemediateVerdictNeedRules. Subclass implementations must override this method and implement whatever steps are necessary to remediate the given flow.
+     * 
      * @param flow An NEFilterFlow object containing details about the flow that requires remediation.
      * @param completionHandler A block that must be called when the NEFilterControlProvider is ready for the NEFilterDataProvider to re-process the new flow. NEFilterControlVerdict stores the verdict through which the control provider determines if a flow needs to be dropped or allowed. The verdict also indicates if the control plugin wants the data plugin to update its rules and handle the verdict.
      */
@@ -191,8 +197,9 @@ public class NEFilterControlProvider extends NEFilterProvider {
     public native NEFilterControlProvider init();
 
     /**
-     * @method notifyRulesChanged
-     * @discussion This function is called by filter control implementations to notify the data provider "out of band" that the rules changed.
+     * notifyRulesChanged
+     * 
+     * This function is called by filter control implementations to notify the data provider "out of band" that the rules changed.
      */
     @Generated
     @Selector("notifyRulesChanged")
@@ -242,8 +249,9 @@ public class NEFilterControlProvider extends NEFilterProvider {
             NSDictionary<String, ? extends NSDictionary<String, ? extends NSObject>> value);
 
     /**
-     * @property URLAppendStringMap
-     * @discussion A dictionary containing strings to be appended to URLs.
+     * [@property] URLAppendStringMap
+     * 
+     * A dictionary containing strings to be appended to URLs.
      */
     @Generated
     @Selector("setURLAppendStringMap:")

@@ -25,14 +25,16 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   A ReLU node with parameter a provided independently for each feature channel
- * @discussion For each pixel, applies the following function:
- * @code
+ * A ReLU node with parameter a provided independently for each feature channel
+ * 
+ * For each pixel, applies the following function:
+ * [@code]
  *     f(x) = x                if x >= 0
  *          = aData[i] * x     if x < 0,  i is the index of the feature channel
+ * [@endcode]
+ * 
  * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
  * @param      aData                   An array of single precision floating-point alpha values to use
- * @endcode
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,12 +104,14 @@ public class MPSCNNNeuronPReLUNode extends MPSCNNNeuronNode {
     public native MPSCNNNeuronPReLUNode init();
 
     /**
-     * @abstract   Init a node representing a MPSCNNNeuronTanH kernel
-     * @discussion For each pixel, applies the following function:
-     * @code
+     * Init a node representing a MPSCNNNeuronTanH kernel
+     * 
+     * For each pixel, applies the following function:
+     * [@code]
      *     f(x) = x                if x >= 0
      *          = aData[i] * x     if x < 0,  i is the index of the feature channel
-     * @endcode
+     * [@endcode]
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      aData                   An array of single precision floating-point alpha values to use
      * @return     A new MPSNNFilter node for a MPSCNNNeuronTanH kernel.

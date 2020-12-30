@@ -29,13 +29,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixDecompositionCholesky
+ * MPSMatrixDecompositionCholesky
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A kernel for computing the Cholesky factorization of a matrix.
+ * A kernel for computing the Cholesky factorization of a matrix.
  * 
- * @discussion A MPSMatrixDecompositionLU object computes one of the following
+ * A MPSMatrixDecompositionLU object computes one of the following
  *             factorizations of a matrix A:
  * 
  *                 A = L * L**T
@@ -104,20 +104,9 @@ public class MPSMatrixDecompositionCholesky extends MPSMatrixUnaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixDecompositionCholesky kernel into a command Buffer.
+     * Encode a MPSMatrixDecompositionCholesky kernel into a command Buffer.
      * 
-     * @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded filter
-     * 
-     * @param      sourceMatrix            A valid MPSMatrix containing the source data.  Must have
-     *                                     enough space to hold a order x order matrix.
-     * 
-     * @param      resultMatrix            A valid MPSMatrix to contain the result.  Must have enough
-     *                                     space to hold a order x order matrix.
-     * 
-     * @param      status                  A MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus
-     *                                     value.
-     * 
-     * @discussion This function encodes the MPSMatrixDecompositionCholesky object to a valid
+     * This function encodes the MPSMatrixDecompositionCholesky object to a valid
      *             command buffer.
      * 
      *             If during the factorization a leading minor of the matrix is found to be
@@ -135,6 +124,17 @@ public class MPSMatrixDecompositionCholesky extends MPSMatrixUnaryKernel {
      *             completely aliases the source matrix, or out-of-place.  If there
      *             is any partial overlap between input and output data the results
      *             are undefined.
+     * 
+     * @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded filter
+     * 
+     * @param      sourceMatrix            A valid MPSMatrix containing the source data.  Must have
+     *                                     enough space to hold a order x order matrix.
+     * 
+     * @param      resultMatrix            A valid MPSMatrix to contain the result.  Must have enough
+     *                                     space to hold a order x order matrix.
+     * 
+     * @param      status                  A MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus
+     *                                     value.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:resultMatrix:status:")
@@ -165,7 +165,7 @@ public class MPSMatrixDecompositionCholesky extends MPSMatrixUnaryKernel {
     public native MPSMatrixDecompositionCholesky initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize an MPSMatrixDecompositionCholesky object on a device
+     * Initialize an MPSMatrixDecompositionCholesky object on a device
      * 
      * @param      device          The device on which the kernel will execute.
      * 

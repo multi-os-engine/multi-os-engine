@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueBatteryStatus
+ * [@enum]      HMCharacteristicValueBatteryStatus
  * 
- * @constant  HMCharacteristicValueBatteryStatusNormal  Battery level is normal.
- * @constant  HMCharacteristicValueBatteryStatusLow     Battery level is low.
+ * [@constant]  HMCharacteristicValueBatteryStatusNormal  Battery level is normal.
+ * [@constant]  HMCharacteristicValueBatteryStatusLow     Battery level is low.
  */
 @Generated
 public final class HMCharacteristicValueBatteryStatus {

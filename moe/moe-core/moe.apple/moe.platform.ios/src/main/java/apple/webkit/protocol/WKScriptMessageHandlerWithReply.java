@@ -22,11 +22,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("WKScriptMessageHandlerWithReply")
 public interface WKScriptMessageHandlerWithReply {
     /**
-     * @abstract Invoked when a script message is received from a webpage.
-     * @param userContentController The user content controller invoking the delegate method.
-     * @param message The script message received.
-     * @param replyHandler A block to be called with the result of processing the message.
-     * @discussion When the JavaScript running in your application's web content called window.webkit.messageHandlers.<name>.postMessage(<messageBody>),
+     * Invoked when a script message is received from a webpage.
+     * 
+     * When the JavaScript running in your application's web content called window.webkit.messageHandlers.<name>.postMessage(<messageBody>),
      * a JavaScript Promise object was returned. The values passed to the replyHandler are used to resolve that Promise.
      * 
      * Passing a non-nil NSString value to the second parameter of the replyHandler signals an error.
@@ -71,6 +69,10 @@ public interface WKScriptMessageHandlerWithReply {
      *   - Your message handler sends the value @42 as a reply.
      *   - The JavaScript promise is fulfilled with the value 42.
      *   - JavaScript execution continues and the value 42 is returned.
+     * 
+     * @param userContentController The user content controller invoking the delegate method.
+     * @param message The script message received.
+     * @param replyHandler A block to be called with the result of processing the message.
      */
     @Generated
     @Selector("userContentController:didReceiveScriptMessage:replyHandler:")

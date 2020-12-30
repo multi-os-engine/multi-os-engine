@@ -4,8 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudioEngineManualRenderingMode
- *   @abstract 
+ * [@enum] AVAudioEngineManualRenderingMode
+ * 
  * By default, the engine is connected to an audio device and automatically renders in realtime. 
  * It can also be configured to operate in manual rendering mode, i.e. not connected to an 
  * audio device and rendering in response to requests from the client.

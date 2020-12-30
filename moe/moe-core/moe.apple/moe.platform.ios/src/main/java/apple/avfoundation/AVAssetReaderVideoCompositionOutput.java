@@ -42,11 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAssetReaderVideoCompositionOutput
- * @abstract
+ * AVAssetReaderVideoCompositionOutput
+ * 
  * AVAssetReaderVideoCompositionOutput is a concrete subclass of AVAssetReaderOutput that defines an interface for reading video frames that have been composited together from the frames in one or more AVAssetTracks of an AVAssetReader's AVAsset.
  * 
- * @discussion
  * Clients can read the video frames composited from one or more asset tracks by adding an instance of AVAssetReaderVideoCompositionOutput to an AVAssetReader using the -[AVAssetReader addOutput:] method.
  */
 @Generated
@@ -78,18 +77,10 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:
-     * @abstract
+     * assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:
+     * 
      * Creates an instance of AVAssetReaderVideoCompositionOutput for reading composited video from the specified video tracks and supplying media data according to the specified video settings.
      * 
-     * @param tracks
-     * An NSArray of AVAssetTrack objects from which the resulting AVAssetReaderVideoCompositionOutput should read video frames for compositing.
-     * @param videoSettings
-     * An NSDictionary of video settings to be used for video output.  See AVVideoSettings.h for more information about how to construct a video settings dictionary.
-     * @result
-     * An instance of AVAssetReaderVideoCompositionOutput.
-     * 
-     * @discussion
      * Each track must be one of the tracks owned by the target AVAssetReader's asset and must be of media type AVMediaTypeVideo.
      * 
      * A value of nil for videoSettings configures the output to return samples in a convenient uncompressed format, with properties determined according to the properties of the specified video tracks.  Initialization will fail if the video settings cannot be used with the specified tracks.
@@ -99,6 +90,13 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * 	AVVideoCleanApertureKey
      * 	AVVideoPixelAspectRatioKey
      * 	AVVideoScalingModeKey
+     * 
+     * @param tracks
+     * An NSArray of AVAssetTrack objects from which the resulting AVAssetReaderVideoCompositionOutput should read video frames for compositing.
+     * @param videoSettings
+     * An NSDictionary of video settings to be used for video output.  See AVVideoSettings.h for more information about how to construct a video settings dictionary.
+     * @return
+     * An instance of AVAssetReaderVideoCompositionOutput.
      */
     @Generated
     @Selector("assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:")
@@ -189,11 +187,10 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     public static native long version_static();
 
     /**
-     * @property customVideoCompositor
-     * @abstract
+     * [@property] customVideoCompositor
+     * 
      * 	Indicates the custom video compositor instance used by the receiver.
      * 
-     * @discussion
      * 	This property is nil if there is no video compositor, or if the internal video compositor is in use.
      */
     @Generated
@@ -206,17 +203,10 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     public native AVAssetReaderVideoCompositionOutput init();
 
     /**
-     * @method initWithVideoTracks:videoSettings:
-     * @abstract
+     * initWithVideoTracks:videoSettings:
+     * 
      * Creates an instance of AVAssetReaderVideoCompositionOutput for reading composited video from the specified video tracks and supplying media data according to the specified video settings.
      * 
-     * @param tracks
-     * An NSArray of AVAssetTrack objects from which the resulting AVAssetReaderVideoCompositionOutput should read video frames for compositing.
-     * @param videoSettings
-     * An NSDictionary of video settings to be used for video output.  See AVVideoSettings.h for more information about how to construct a video settings dictionary.
-     * @result An instance of AVAssetReaderVideoCompositionOutput.
-     * 
-     * @discussion
      * Each track must be one of the tracks owned by the target AVAssetReader's asset and must be of media type AVMediaTypeVideo.
      * 
      * A value of nil for videoSettings configures the output to return samples in a convenient uncompressed format, with properties determined according to the properties of the specified video tracks.  Initialization will fail if the video settings cannot be used with the specified tracks.
@@ -226,6 +216,12 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * 	AVVideoCleanApertureKey
      * 	AVVideoPixelAspectRatioKey
      * 	AVVideoScalingModeKey
+     * 
+     * @param tracks
+     * An NSArray of AVAssetTrack objects from which the resulting AVAssetReaderVideoCompositionOutput should read video frames for compositing.
+     * @param videoSettings
+     * An NSDictionary of video settings to be used for video output.  See AVVideoSettings.h for more information about how to construct a video settings dictionary.
+     * @return An instance of AVAssetReaderVideoCompositionOutput.
      */
     @Generated
     @Selector("initWithVideoTracks:videoSettings:")
@@ -233,11 +229,10 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
             NSArray<? extends AVAssetTrack> videoTracks, NSDictionary<String, ?> videoSettings);
 
     /**
-     * @property videoComposition
-     * @abstract
+     * [@property] videoComposition
+     * 
      * The composition of video used by the receiver.
      * 
-     * @discussion
      * The value of this property is an AVVideoComposition that can be used to specify the visual arrangement of video frames read from each source track over the timeline of the source asset.
      * 
      * This property cannot be set after reading has started.
@@ -247,11 +242,10 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     public native void setVideoComposition(AVVideoComposition value);
 
     /**
-     * @property videoComposition
-     * @abstract
+     * [@property] videoComposition
+     * 
      * The composition of video used by the receiver.
      * 
-     * @discussion
      * The value of this property is an AVVideoComposition that can be used to specify the visual arrangement of video frames read from each source track over the timeline of the source asset.
      * 
      * This property cannot be set after reading has started.
@@ -261,11 +255,10 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     public native AVVideoComposition videoComposition();
 
     /**
-     * @property videoSettings
-     * @abstract
+     * [@property] videoSettings
+     * 
      * The video settings used by the receiver.
      * 
-     * @discussion
      * The value of this property is an NSDictionary that contains values for keys as specified by AVVideoSettings.h.  A value of nil indicates that the receiver will return video frames in a convenient uncompressed format, with properties determined according to the properties of the receiver's video tracks.
      */
     @Generated
@@ -273,11 +266,10 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     public native NSDictionary<String, ?> videoSettings();
 
     /**
-     * @property videoTracks
-     * @abstract
+     * [@property] videoTracks
+     * 
      * The tracks from which the receiver reads composited video.
      * 
-     * @discussion
      * The value of this property is an NSArray of AVAssetTracks owned by the target AVAssetReader's asset.
      */
     @Generated

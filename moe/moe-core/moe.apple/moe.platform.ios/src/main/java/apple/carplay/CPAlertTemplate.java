@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPAlertTemplate represents a modal alert that must be dismissed with a button press
+ * [@c] CPAlertTemplate represents a modal alert that must be dismissed with a button press
  * before the user may return to using the app.
  */
 @Generated

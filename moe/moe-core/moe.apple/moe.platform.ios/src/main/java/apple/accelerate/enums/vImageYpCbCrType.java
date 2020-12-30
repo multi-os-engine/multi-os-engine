@@ -19,10 +19,13 @@ package apple.accelerate.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @typedef    vImageYpCbCrType
- * @abstract   An encoding of an image format type to be used with RGB <-> Y'CbCr conversions in vImage/Conversions.h
- * @discussion These formats enumerate different vImage/CoreVideo Y'CbCr pixel formats.
- * @seealso    CVPixelBuffer OSTypes in CVPixelBuffer.h
+ * [@typedef]    vImageYpCbCrType
+ * 
+ * An encoding of an image format type to be used with RGB <-> Y'CbCr conversions in vImage/Conversions.h
+ * 
+ * These formats enumerate different vImage/CoreVideo Y'CbCr pixel formats.
+ * 
+ * @see    CVPixelBuffer OSTypes in CVPixelBuffer.h
  */
 @Generated
 public final class vImageYpCbCrType {

@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface MTLCounterSampleBufferDescriptor
- * @abstract Object to represent the counter state.
+ * [@interface] MTLCounterSampleBufferDescriptor
+ * 
+ * Object to represent the counter state.
  */
 @Generated
 @Library("Metal")
@@ -86,7 +87,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property counterSet The counterset to be sampled for this counter sample buffer
+     * [@property] counterSet The counterset to be sampled for this counter sample buffer
      */
     @Generated
     @Selector("counterSet")
@@ -132,7 +133,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property label A label to identify the sample buffer in debugging tools.
+     * [@property] label A label to identify the sample buffer in debugging tools.
      */
     @Generated
     @Selector("label")
@@ -153,7 +154,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property sampleCount The number of samples that may be stored in the
+     * [@property] sampleCount The number of samples that may be stored in the
      * counter sample buffer.
      */
     @Generated
@@ -162,21 +163,21 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     public native long sampleCount();
 
     /**
-     * @property counterSet The counterset to be sampled for this counter sample buffer
+     * [@property] counterSet The counterset to be sampled for this counter sample buffer
      */
     @Generated
     @Selector("setCounterSet:")
     public native void setCounterSet(@Mapped(ObjCObjectMapper.class) MTLCounterSet value);
 
     /**
-     * @property label A label to identify the sample buffer in debugging tools.
+     * [@property] label A label to identify the sample buffer in debugging tools.
      */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
     /**
-     * @property sampleCount The number of samples that may be stored in the
+     * [@property] sampleCount The number of samples that may be stored in the
      * counter sample buffer.
      */
     @Generated
@@ -184,7 +185,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     public native void setSampleCount(@NUInt long value);
 
     /**
-     * @property storageMode The storage mode for the sample buffer.  Only
+     * [@property] storageMode The storage mode for the sample buffer.  Only
      * MTLStorageModeShared and MTLStorageModePrivate may be used.
      */
     @Generated
@@ -196,7 +197,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property storageMode The storage mode for the sample buffer.  Only
+     * [@property] storageMode The storage mode for the sample buffer.  Only
      * MTLStorageModeShared and MTLStorageModePrivate may be used.
      */
     @Generated

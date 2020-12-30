@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum          HKWorkoutActivityType
- * @abstract      Represents a particular type of workout or exercise
+ * [@enum]          HKWorkoutActivityType
+ * 
+ * Represents a particular type of workout or exercise
  */
 @Generated
 public final class HKWorkoutActivityType {

@@ -57,9 +57,10 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @abstract Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom toolbar
+     * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom toolbar
      * when the user scrolls web content.
-     * @discussion The default value is YES.
+     * 
+     * The default value is YES.
      */
     @Generated
     @Selector("barCollapsingEnabled")
@@ -98,7 +99,7 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public static native String description_static();
 
     /**
-     * @abstract Indicates if SFSafariViewController should automatically show the Reader version of web pages. This will only
+     * Indicates if SFSafariViewController should automatically show the Reader version of web pages. This will only
      * happen when Safari Reader is available on a web page.
      */
     @Generated
@@ -150,16 +151,17 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom toolbar
+     * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom toolbar
      * when the user scrolls web content.
-     * @discussion The default value is YES.
+     * 
+     * The default value is YES.
      */
     @Generated
     @Selector("setBarCollapsingEnabled:")
     public native void setBarCollapsingEnabled(boolean value);
 
     /**
-     * @abstract Indicates if SFSafariViewController should automatically show the Reader version of web pages. This will only
+     * Indicates if SFSafariViewController should automatically show the Reader version of web pages. This will only
      * happen when Safari Reader is available on a web page.
      */
     @Generated

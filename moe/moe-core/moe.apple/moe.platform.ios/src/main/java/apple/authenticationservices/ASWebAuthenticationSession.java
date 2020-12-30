@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class ASWebAuthenticationSession
+ * ASWebAuthenticationSession
  * An ASWebAuthenticationSession object can be used to authenticate a user with a web service, even if the web service is run
  * by a third party. ASWebAuthenticationSession puts the user in control of whether they want to use their existing logged-in
  * session from Safari. The app provides a URL that points to the authentication webpage. The page will be loaded in a secure
@@ -83,7 +83,7 @@ public class ASWebAuthenticationSession extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @abstract Cancel an ASWebAuthenticationSession. If the view controller is already presented to load the webpage for
+     * Cancel an ASWebAuthenticationSession. If the view controller is already presented to load the webpage for
      * authentication, it will be dismissed. Calling cancel on an already canceled session will have no effect.
      */
     @Generated
@@ -126,7 +126,8 @@ public class ASWebAuthenticationSession extends NSObject {
     public native ASWebAuthenticationSession init();
 
     /**
-     * @abstract Returns an ASWebAuthenticationSession object.
+     * Returns an ASWebAuthenticationSession object.
+     * 
      * @param URL the initial URL pointing to the authentication webpage. Only supports URLs with http:// or https:// schemes.
      * @param callbackURLScheme the custom URL scheme that the app expects in the callback URL.
      * @param completionHandler the completion handler which is called when the session is completed successfully or canceled by user.
@@ -172,8 +173,9 @@ public class ASWebAuthenticationSession extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract Indicates whether this session should ask the browser for an ephemeral session.
-     * @discussion Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
+     * Indicates whether this session should ask the browser for an ephemeral session.
+     * 
+     * Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
      * This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no effect.
      */
     @Generated
@@ -181,7 +183,7 @@ public class ASWebAuthenticationSession extends NSObject {
     public native boolean prefersEphemeralWebBrowserSession();
 
     /**
-     * @abstract Provides context to target where in an application's UI the authorization view should be shown. A provider
+     * Provides context to target where in an application's UI the authorization view should be shown. A provider
      * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS prior to
      * 13.0, the desired window is inferred by the application's key window.
      */
@@ -199,8 +201,9 @@ public class ASWebAuthenticationSession extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract Indicates whether this session should ask the browser for an ephemeral session.
-     * @discussion Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
+     * Indicates whether this session should ask the browser for an ephemeral session.
+     * 
+     * Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
      * This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no effect.
      */
     @Generated
@@ -208,7 +211,7 @@ public class ASWebAuthenticationSession extends NSObject {
     public native void setPrefersEphemeralWebBrowserSession(boolean value);
 
     /**
-     * @abstract Provides context to target where in an application's UI the authorization view should be shown. A provider
+     * Provides context to target where in an application's UI the authorization view should be shown. A provider
      * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS prior to
      * 13.0, the desired window is inferred by the application's key window.
      */
@@ -218,7 +221,7 @@ public class ASWebAuthenticationSession extends NSObject {
             @Mapped(ObjCObjectMapper.class) ASWebAuthenticationPresentationContextProviding value);
 
     /**
-     * @abstract Provides context to target where in an application's UI the authorization view should be shown. A provider
+     * Provides context to target where in an application's UI the authorization view should be shown. A provider
      * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS prior to
      * 13.0, the desired window is inferred by the application's key window.
      */
@@ -240,10 +243,12 @@ public class ASWebAuthenticationSession extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract Starts the ASWebAuthenticationSession instance after it is instantiated.
-     * @discussion start can only be called once for an ASWebAuthenticationSession instance. This also means calling start on a
+     * Starts the ASWebAuthenticationSession instance after it is instantiated.
+     * 
+     * start can only be called once for an ASWebAuthenticationSession instance. This also means calling start on a
      * canceled session will fail.
-     * @result Returns YES if the session starts successfully.
+     * 
+     * @return Returns YES if the session starts successfully.
      */
     @Generated
     @Selector("start")
@@ -259,7 +264,7 @@ public class ASWebAuthenticationSession extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract Returns whether the session can be successfully started. This property returns the same value as calling -start,
+     * Returns whether the session can be successfully started. This property returns the same value as calling -start,
      * but without the side effect of actually starting the session.
      */
     @Generated

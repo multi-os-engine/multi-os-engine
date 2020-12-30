@@ -33,7 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object encapsulating the state of everything being tracked for a given moment in time.
- * @discussion The model provides a snapshot of all data needed to render a given frame.
+ * 
+ * The model provides a snapshot of all data needed to render a given frame.
  */
 @Generated
 @Library("ARKit")
@@ -76,7 +77,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * The camera used to capture the frame’s image.
-     * @discussion The camera provides the device’s position and orientation as well as camera parameters.
+     * 
+     * The camera provides the device’s position and orientation as well as camera parameters.
      */
     @Generated
     @Selector("camera")
@@ -94,7 +96,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * The frame’s captured depth data.
-     * @discussion Depth data is only provided with face tracking on frames where depth data was captured.
+     * 
+     * Depth data is only provided with face tracking on frames where depth data was captured.
      */
     @Generated
     @Selector("capturedDepthData")
@@ -139,9 +142,10 @@ public class ARFrame extends NSObject implements NSCopying {
     /**
      * Returns a display transform for the provided viewport size and orientation.
      * 
-     * @discussion The display transform can be used to convert normalized points in the image-space coordinate system
+     * The display transform can be used to convert normalized points in the image-space coordinate system
      * of the captured image to normalized points in the view’s coordinate space. The transform provides the correct rotation
      * and aspect-fill for presenting the captured image in the given orientation and size.
+     * 
      * @param orientation The orientation of the viewport.
      * @param viewportSize The size of the viewport.
      */
@@ -159,8 +163,9 @@ public class ARFrame extends NSObject implements NSCopying {
     /**
      * Searches the frame for objects corresponding to a point in the captured image.
      * 
-     * @discussion A 2D point in the captured image’s coordinate space can refer to any point along a line segment
+     * A 2D point in the captured image’s coordinate space can refer to any point along a line segment
      * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line segment.
+     * 
      * @param point A point in the image-space coordinate system of the captured image.
      * Values should range from (0,0) - upper left corner to (1,1) - lower right corner.
      * @param types The types of results to search for.
@@ -197,7 +202,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * A light estimate representing the light in the scene.
-     * @discussion Returns nil if there is no light estimation.
+     * 
+     * Returns nil if there is no light estimation.
      */
     @Generated
     @Selector("lightEstimate")
@@ -211,7 +217,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * Feature points in the scene with respect to the frame’s origin.
-     * @discussion The feature points are only provided for configurations using world tracking.
+     * 
+     * The feature points are only provided for configurations using world tracking.
      */
     @Generated
     @Selector("rawFeaturePoints")
@@ -248,7 +255,7 @@ public class ARFrame extends NSObject implements NSCopying {
     /**
      * The frame’s camera grain intensity in range 0 to 1.
      * 
-     * @discussion A camera stream depicts image noise that gives the captured image
+     * A camera stream depicts image noise that gives the captured image
      * a grainy look and varies with light conditions.
      * The camera grain intensity can be used to select a texture slice from the frames
      * camera grain texture.
@@ -261,7 +268,7 @@ public class ARFrame extends NSObject implements NSCopying {
      * A tileable texture that contains image noise matching the current camera streams
      * noise properties.
      * 
-     * @discussion A camera stream depicts image noise that gives the captured image
+     * A camera stream depicts image noise that gives the captured image
      *    a grainy look and varies with light conditions.
      * The variations are stored along the depth dimension of the camera grain texture
      * and can be selected at runtime using the camera grain intensity of the current frame.
@@ -273,6 +280,7 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * A detected body in the current frame.
+     * 
      * @see -[ARConfiguration setFrameSemantics:]
      */
     @Generated
@@ -281,7 +289,9 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * A buffer that represents the estimated depth values for a performed segmentation.
-     * @discussion For each non-background pixel in the segmentation buffer the corresponding depth value can be accessed in this buffer.
+     * 
+     * For each non-background pixel in the segmentation buffer the corresponding depth value can be accessed in this buffer.
+     * 
      * @see -[ARConfiguration setFrameSemantics:]
      * @see -[ARFrame segmentationBuffer]
      */
@@ -291,7 +301,9 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * Creates a raycast query originating from the point on the captured image, aligned along the center of the field of view of the camera.
-     * @discussion A 2D point in the captured image’s coordinate space and the field of view of the frame's camera is used to create a ray in the 3D cooridnate space originating at the point.
+     * 
+     * A 2D point in the captured image’s coordinate space and the field of view of the frame's camera is used to create a ray in the 3D cooridnate space originating at the point.
+     * 
      * @param point A point in the image-space coordinate system of the captured image.
      * Values should range from (0,0) - upper left corner to (1,1) - lower right corner.
      * @param target Type of target where the ray should terminate.
@@ -304,8 +316,10 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * A buffer that represents the segmented content of the capturedImage.
-     * @discussion In order to identify to which class a pixel has been classified one needs to compare its intensity value with the values
+     * 
+     * In order to identify to which class a pixel has been classified one needs to compare its intensity value with the values
      * found in `ARSegmentationClass`.
+     * 
      * @see ARSegmentationClass
      * @see -[ARConfiguration setFrameSemantics:]
      */
@@ -315,7 +329,8 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * The status of world mapping for the area visible to the frame.
-     * @discussion This can be used to identify the state of the world map for the visible area and if additional scanning
+     * 
+     * This can be used to identify the state of the world map for the visible area and if additional scanning
      * should be done before saving a world map.
      */
     @Generated
@@ -332,6 +347,7 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * Scene depth data.
+     * 
      * @see ARFrameSemanticSceneDepth.
      * @see -[ARConfiguration setFrameSemantics:]
      */
@@ -341,6 +357,7 @@ public class ARFrame extends NSObject implements NSCopying {
 
     /**
      * Scene depth data, smoothed for temporal consistency.
+     * 
      * @see ARFrameSemanticSmoothedSceneDepth.
      * @see -[ARConfiguration setFrameSemantics:]
      */

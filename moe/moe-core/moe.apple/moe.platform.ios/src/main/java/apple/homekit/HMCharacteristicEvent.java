@@ -44,7 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class represents an event that is evaluated based on the value of a characteristic
+ * This class represents an event that is evaluated based on the value of a characteristic
  *        set to a particular value.
  */
 @Generated
@@ -159,7 +159,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     public static native long version_static();
 
     /**
-     * @brief The characteristic associated with the event.
+     * The characteristic associated with the event.
      */
     @Generated
     @Selector("characteristic")
@@ -170,7 +170,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     public native HMCharacteristicEvent<?> init();
 
     /**
-     * @brief Initializes a new characteristic event object
+     * Initializes a new characteristic event object
      * 
      * @param characteristic The characteristic bound to the event. The characteristic must
      *                       support notification. An exception will be thrown otherwise.
@@ -187,7 +187,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
             @Mapped(ObjCObjectMapper.class) Object triggerValue);
 
     /**
-     * @brief The value of the characteristic that triggers the event.
+     * The value of the characteristic that triggers the event.
      *        A value of nil corresponds to any change in the value of the characteristic.
      */
     @Generated
@@ -196,7 +196,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     public native Object triggerValue();
 
     /**
-     * @brief This method is used to change trigger value for the characteristic.
+     * This method is used to change trigger value for the characteristic.
      * 
      * @param triggerValue New trigger value for the characteristic.
      *                     Specifying nil as the trigger value corresponds to any change in the value of the

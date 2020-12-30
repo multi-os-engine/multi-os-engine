@@ -90,17 +90,17 @@ public class MLModel extends NSObject {
     /**
      * Compile a .mlmodel for this device
      * 
-     * @param modelURL URL file path to .mlmodel file you wish to compile
-     * @param error Any errors are surfaced here
-     * 
-     * @returns a URL to the compiled .mlmodelc directory if successful
+     * [@returns] a URL to the compiled .mlmodelc directory if successful
      * The model is compiled to a temporary location on disk
      * You must move the compiled model to a permenant location if you wish to keep it
      * 
-     * @discussion the returned model can be loaded using:
-     * @code
+     * the returned model can be loaded using:
+     * [@code]
      * [MLModel modelWithContentsOfURL:error:]
-     * @endcode
+     * [@endcode]
+     * 
+     * @param modelURL URL file path to .mlmodel file you wish to compile
+     * @param error Any errors are surfaced here
      */
     @Generated
     @Selector("compileModelAtURL:error:")

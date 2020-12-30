@@ -19,12 +19,13 @@ package apple.systemconfiguration.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum SCPreferencesNotification
- * @discussion Used with the SCPreferencesCallBack callback
+ * [@enum] SCPreferencesNotification
+ * 
+ * Used with the SCPreferencesCallBack callback
  * 	to describe the type of notification.
- * @constant kSCPreferencesNotificationCommit Indicates when new
+ * [@constant] kSCPreferencesNotificationCommit Indicates when new
  * 	preferences have been saved.
- * @constant kSCPreferencesNotificationApply Key Indicates when a
+ * [@constant] kSCPreferencesNotificationApply Key Indicates when a
  * 	request has been made to apply the currently saved
  * 	preferences to the active system configuration.
  */

@@ -44,19 +44,20 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageErode
- * @discussion The MPSImageErode filter finds the minimum pixel value in a rectangular region centered around each pixel in the
+ * MPSImageErode
+ * 
+ * The MPSImageErode filter finds the minimum pixel value in a rectangular region centered around each pixel in the
  *             source image. It is like the MPSImageAreaMin, except that the intensity at each position is calculated relative
  *             to a different value before determining which is the maximum pixel value, allowing for shaped, non-rectangular
  *             morphological probes.
- * @code
+ * [@code]
  *         for each pixel in the filter window:
  *             value =  pixel[filterY][filterX] + filter[filterY*filter_width+filterX]
  *             if( value < bestValue ){
  *                  result = value
  *                  bestValue = value;
  *             }
- * @endcode
+ * [@endcode]
  *             A filter that contains all zeros is identical to a MPSImageAreaMin filter. The center filter element
  *             is assumed to be 0, to avoid causing a general lightening of the image.
  * 

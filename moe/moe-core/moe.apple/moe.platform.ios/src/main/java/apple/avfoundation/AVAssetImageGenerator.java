@@ -78,12 +78,11 @@ public class AVAssetImageGenerator extends NSObject {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method			assetImageGeneratorWithAsset:
-     * @abstract		Returns an instance of AVAssetImageGenerator for use with the specified asset.
-     * @param			asset
-     * 				The asset from which images will be extracted.
-     * @result			An instance of AVAssetImageGenerator
-     * @discussion		This method may succeed even if the asset possesses no visual tracks at the time of initialization.
+     * assetImageGeneratorWithAsset:
+     * 
+     * Returns an instance of AVAssetImageGenerator for use with the specified asset.
+     * 
+     * This method may succeed even if the asset possesses no visual tracks at the time of initialization.
      * 				Clients may wish to test whether an asset has any tracks with the visual characteristic via
      * 				-[AVAsset tracksWithMediaCharacteristic:].
      * 
@@ -94,6 +93,10 @@ public class AVAssetImageGenerator extends NSObject {
      * 				are being generated. 
      * 
      * 				AVAssetImageGenerator will use the default enabled video track(s) to generate images.
+     * 
+     * @param			asset
+     * 				The asset from which images will be extracted.
+     * @return			An instance of AVAssetImageGenerator
      */
     @Generated
     @Selector("assetImageGeneratorWithAsset:")
@@ -205,9 +208,11 @@ public class AVAssetImageGenerator extends NSObject {
     public native AVAsset asset();
 
     /**
-     * @method			cancelAllCGImageGeneration
-     * @abstract		Cancels all outstanding image generation requests.
-     * @discussion		Calls the handler block with AVAssetImageGeneratorCancelled for each image time in every previous invocation of -generateCGImagesAsynchronouslyForTimes:completionHandler:
+     * cancelAllCGImageGeneration
+     * 
+     * Cancels all outstanding image generation requests.
+     * 
+     * Calls the handler block with AVAssetImageGeneratorCancelled for each image time in every previous invocation of -generateCGImagesAsynchronouslyForTimes:completionHandler:
      * 				for which images have not yet been supplied.
      */
     @Generated
@@ -215,8 +220,16 @@ public class AVAssetImageGenerator extends NSObject {
     public native void cancelAllCGImageGeneration();
 
     /**
-     * @method			copyCGImageAtTime:actualTime:error:
-     * @abstract		Returns a CFRetained CGImageRef for an asset at or near the specified time.
+     * copyCGImageAtTime:actualTime:error:
+     * 
+     * Returns a CFRetained CGImageRef for an asset at or near the specified time.
+     * 
+     * 	Returns the CGImage synchronously. Ownership follows the Create Rule.
+     * 
+     * 	Because of the nature of timed audiovisual media, generating an image may take significant time. AVAssetImageGenerator may have to block the calling thread in order to do so.  In order to avoid blocking, clients can use -generateCGImagesAsynchronouslyForTimes:completionHandler: to request that one or more images be generated asynchronously and to be notified when they become available.
+     * 
+     * 	On iOS and tvOS, it is particularly important to avoid blocking.  To preserve responsiveness, a synchronous request that blocks for too long (eg, a request to generate an image from an asset on a slow HTTP server) may lead to media services being reset.
+     * 
      * @param			requestedTime
      * 				The time at which the image of the asset is to be created.
      * @param			actualTime
@@ -224,13 +237,7 @@ public class AVAssetImageGenerator extends NSObject {
      * 				in this information, pass NULL.
      * @param			outError
      * 				An error object describing the reason for failure, in the event that this method returns NULL.
-     * @result			A CGImageRef.
-     * @discussion
-     * 	Returns the CGImage synchronously. Ownership follows the Create Rule.
-     * 
-     * 	Because of the nature of timed audiovisual media, generating an image may take significant time. AVAssetImageGenerator may have to block the calling thread in order to do so.  In order to avoid blocking, clients can use -generateCGImagesAsynchronouslyForTimes:completionHandler: to request that one or more images be generated asynchronously and to be notified when they become available.
-     * 
-     * 	On iOS and tvOS, it is particularly important to avoid blocking.  To preserve responsiveness, a synchronous request that blocks for too long (eg, a request to generate an image from an asset on a slow HTTP server) may lead to media services being reset.
+     * @return			A CGImageRef.
      */
     @Generated
     @Selector("copyCGImageAtTime:actualTime:error:")
@@ -246,16 +253,19 @@ public class AVAssetImageGenerator extends NSObject {
     public native AVVideoCompositing customVideoCompositor();
 
     /**
-     * @method			generateCGImagesAsynchronouslyForTimes:completionHandler:
-     * @abstract		Returns a series of CGImageRefs for an asset at or near the specified times.
+     * generateCGImagesAsynchronouslyForTimes:completionHandler:
+     * 
+     * Returns a series of CGImageRefs for an asset at or near the specified times.
+     * 
+     * Employs an efficient "batch mode" for getting images in time order.
+     * 				The client will receive exactly one handler callback for each requested time in requestedTimes.
+     * 				Changes to generator properties (snap behavior, maximum size, etc...) will not affect outstanding asynchronous image generation requests.
+     * 				The generated image is not retained.  Clients should retain the image if they wish it to persist after the completion handler returns.
+     * 
      * @param			requestedTimes
      * 				An NSArray of NSValues, each containing a CMTime, specifying the asset times at which an image is requested.
      * @param			handler
      * 				A block that will be called when an image request is complete.
-     * @discussion		Employs an efficient "batch mode" for getting images in time order.
-     * 				The client will receive exactly one handler callback for each requested time in requestedTimes.
-     * 				Changes to generator properties (snap behavior, maximum size, etc...) will not affect outstanding asynchronous image generation requests.
-     * 				The generated image is not retained.  Clients should retain the image if they wish it to persist after the completion handler returns.
      */
     @Generated
     @Selector("generateCGImagesAsynchronouslyForTimes:completionHandler:")
@@ -268,12 +278,11 @@ public class AVAssetImageGenerator extends NSObject {
     public native AVAssetImageGenerator init();
 
     /**
-     * @method			initWithAsset:
-     * @abstract		Initializes an instance of AVAssetImageGenerator for use with the specified asset.
-     * @param			asset
-     * 				The asset from which images will be extracted.
-     * @result			An instance of AVAssetImageGenerator
-     * @discussion		This method may succeed even if the asset possesses no visual tracks at the time of initialization.
+     * initWithAsset:
+     * 
+     * Initializes an instance of AVAssetImageGenerator for use with the specified asset.
+     * 
+     * This method may succeed even if the asset possesses no visual tracks at the time of initialization.
      * 				Clients may wish to test whether an asset has any tracks with the visual characteristic via
      * 				-[AVAsset tracksWithMediaCharacteristic:].
      * 
@@ -284,6 +293,10 @@ public class AVAssetImageGenerator extends NSObject {
      * 				are being generated. 
      * 
      * 				AVAssetImageGenerator will use the default enabled video track(s) to generate images.
+     * 
+     * @param			asset
+     * 				The asset from which images will be extracted.
+     * @return			An instance of AVAssetImageGenerator
      */
     @Generated
     @Selector("initWithAsset:")

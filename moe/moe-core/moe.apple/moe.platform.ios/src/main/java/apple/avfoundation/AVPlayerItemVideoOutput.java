@@ -156,14 +156,16 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     public static native long version_static();
 
     /**
-     * @method			copyPixelBufferForItemTime:itemTimeForDisplay:
-     * @abstract		Retrieves an image that is appropriate for display at the specified item time, and marks the image as acquired.
-     * @discussion
+     * copyPixelBufferForItemTime:itemTimeForDisplay:
+     * 
+     * Retrieves an image that is appropriate for display at the specified item time, and marks the image as acquired.
+     * 
      * 	The client is responsible for calling CVBufferRelease on the returned CVPixelBuffer when finished with it. 
      * 
      * 	Typically you would call this method in response to a CVDisplayLink callback or CADisplayLink delegate invocation and if hasNewPixelBufferForItemTime: also returns YES. 
      * 
      * 	The buffer reference retrieved from copyPixelBufferForItemTime:itemTimeForDisplay: may itself be NULL. A reference to a NULL pixel buffer communicates that nothing should be displayed for the supplied item time.
+     * 
      * @param			itemTime
      * 				A CMTime that expresses a desired item time.
      * @param			itemTimeForDisplay
@@ -175,8 +177,9 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
             CMTime outItemTimeForDisplay);
 
     /**
-     * @property		delegate
-     * @abstract		The receiver's delegate.
+     * [@property]		delegate
+     * 
+     * The receiver's delegate.
      */
     @Generated
     @Selector("delegate")
@@ -184,21 +187,24 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     public native AVPlayerItemOutputPullDelegate delegate();
 
     /**
-     * @property		delegateQueue
-     * @abstract		The dispatch queue where the delegate is messaged.
+     * [@property]		delegateQueue
+     * 
+     * The dispatch queue where the delegate is messaged.
      */
     @Generated
     @Selector("delegateQueue")
     public native NSObject delegateQueue();
 
     /**
-     * @method			hasNewPixelBufferForItemTime:
-     * @abstract		Query if any new video output is available for an item time.
-     * @discussion
+     * hasNewPixelBufferForItemTime:
+     * 
+     * Query if any new video output is available for an item time.
+     * 
      * 	This method returns YES if there is available video output, appropriate for display, at the specified item time not marked as acquired. If you require multiple objects to acquire video output from the same AVPlayerItem, you should instantiate more than one AVPlayerItemVideoOutput and add each via addOutput:. Each AVPlayerItemVideoOutput maintains a separate record of client acquisition.
+     * 
      * @param			itemTime
      * 				The item time to query.
-     * @result			A BOOL indicating if there is newer output.
+     * @return			A BOOL indicating if there is newer output.
      */
     @Generated
     @Selector("hasNewPixelBufferForItemTime:")
@@ -209,8 +215,10 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     public native AVPlayerItemVideoOutput init();
 
     /**
-     * @method			initWithOutputSettings:
-     * @abstract		Returns an instance of AVPlayerItemVideoOutput, initialized with the specified output settings, for video image output.
+     * initWithOutputSettings:
+     * 
+     * Returns an instance of AVPlayerItemVideoOutput, initialized with the specified output settings, for video image output.
+     * 
      * @param			outputSettings
      * 				The client requirements for output CVPixelBuffers, expressed using the constants in AVVideoSettings.h.
      * 
@@ -220,38 +228,44 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      * 
      * 				AVVideoAllowWideColorKey
      * 
-     * @result			An instance of AVPlayerItemVideoOutput.
+     * @return			An instance of AVPlayerItemVideoOutput.
      */
     @Generated
     @Selector("initWithOutputSettings:")
     public native AVPlayerItemVideoOutput initWithOutputSettings(NSDictionary<String, ?> outputSettings);
 
     /**
-     * @method			initWithPixelBufferAttributes:
-     * @abstract		Returns an instance of AVPlayerItemVideoOutput, initialized with the specified pixel buffer attributes, for video image output.
+     * initWithPixelBufferAttributes:
+     * 
+     * Returns an instance of AVPlayerItemVideoOutput, initialized with the specified pixel buffer attributes, for video image output.
+     * 
      * @param			pixelBufferAttributes
      * 				The client requirements for output CVPixelBuffers, expressed using the constants in <CoreVideo/CVPixelBuffer.h>.
-     * @result			An instance of AVPlayerItemVideoOutput.
+     * @return			An instance of AVPlayerItemVideoOutput.
      */
     @Generated
     @Selector("initWithPixelBufferAttributes:")
     public native AVPlayerItemVideoOutput initWithPixelBufferAttributes(NSDictionary<String, ?> pixelBufferAttributes);
 
     /**
-     * @method			requestNotificationOfMediaDataChangeWithAdvanceInterval:
-     * @abstract		Informs the receiver that the AVPlayerItemVideoOutput client is entering a quiescent state.
+     * requestNotificationOfMediaDataChangeWithAdvanceInterval:
+     * 
+     * Informs the receiver that the AVPlayerItemVideoOutput client is entering a quiescent state.
+     * 
+     * 	Message this method before you suspend your use of a CVDisplayLink or CADisplayLink. The interval you provide will be used to message your delegate, in advance, that it should resume the display link. If the interval you provide is large, effectively requesting wakeup earlier than the AVPlayerItemVideoOutput is prepared to act, the delegate will be invoked as soon as possible. Do not use this method to force a delegate invocation for each sample.
+     * 
      * @param			interval
      * 				A wall clock time interval.
-     * @discussion
-     * 	Message this method before you suspend your use of a CVDisplayLink or CADisplayLink. The interval you provide will be used to message your delegate, in advance, that it should resume the display link. If the interval you provide is large, effectively requesting wakeup earlier than the AVPlayerItemVideoOutput is prepared to act, the delegate will be invoked as soon as possible. Do not use this method to force a delegate invocation for each sample.
      */
     @Generated
     @Selector("requestNotificationOfMediaDataChangeWithAdvanceInterval:")
     public native void requestNotificationOfMediaDataChangeWithAdvanceInterval(double interval);
 
     /**
-     * @method			setDelegate:queue:
-     * @abstract		Sets the receiver's delegate and a dispatch queue on which the delegate will be called.
+     * setDelegate:queue:
+     * 
+     * Sets the receiver's delegate and a dispatch queue on which the delegate will be called.
+     * 
      * @param			delegate
      * 				An object conforming to AVPlayerItemOutputPullDelegate protocol.
      * @param			delegateQueue

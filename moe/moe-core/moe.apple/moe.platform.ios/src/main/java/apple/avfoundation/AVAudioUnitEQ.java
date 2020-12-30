@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitEQ
- * @abstract An AVAudioUnitEffect that implements a Multi-Band Equalizer.
+ * AVAudioUnitEQ
+ * 
+ * An AVAudioUnitEffect that implements a Multi-Band Equalizer.
  */
 @Generated
 @Library("AVFoundation")
@@ -164,9 +165,10 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
     public static native long version_static();
 
     /**
-     * @property bands
-     * @abstract Array of AVAudioUnitEQFilterParameters objects.
-     * @discussion
+     * [@property] bands
+     * 
+     * Array of AVAudioUnitEQFilterParameters objects.
+     * 
      *     The number of elements in the array is equal to the number of bands.
      */
     @Generated
@@ -174,9 +176,10 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
     public native NSArray<? extends AVAudioUnitEQFilterParameters> bands();
 
     /**
-     * @property globalGain
-     * @abstract Overall gain adjustment applied to the signal.
-     * @discussion
+     * [@property] globalGain
+     * 
+     * Overall gain adjustment applied to the signal.
+     * 
      *     Range:     -96 -> 24
      *     Default:   0
      *     Unit:      dB
@@ -195,8 +198,10 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
             @ByValue AudioComponentDescription audioComponentDescription);
 
     /**
-     * @method initWithNumberOfBands:
-     * @abstract Initialize the EQ with number of bands.
+     * initWithNumberOfBands:
+     * 
+     * Initialize the EQ with number of bands.
+     * 
      * @param numberOfBands
      *     The number of bands created by the EQ.
      */
@@ -205,9 +210,10 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
     public native AVAudioUnitEQ initWithNumberOfBands(@NUInt long numberOfBands);
 
     /**
-     * @property globalGain
-     * @abstract Overall gain adjustment applied to the signal.
-     * @discussion
+     * [@property] globalGain
+     * 
+     * Overall gain adjustment applied to the signal.
+     * 
      *     Range:     -96 -> 24
      *     Default:   0
      *     Unit:      dB

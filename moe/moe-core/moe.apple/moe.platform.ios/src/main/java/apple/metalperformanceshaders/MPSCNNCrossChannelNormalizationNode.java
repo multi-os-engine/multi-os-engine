@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Node representing MPSCNNCrossChannelNormalization
- * @discussion  The normalized output is given by:
+ * Node representing MPSCNNCrossChannelNormalization
+ * 
+ * The normalized output is given by:
  *                 Y(i,j,k) = X(i,j,k) / L(i,j,k)^beta,
  *              where the normalizing factor is:
  *                 L(i,j,k) = delta + alpha/N * (sum_{q in Q(k)} X(i,j,q)^2, where
@@ -34,13 +35,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  *             k is the feature channel index (running from 0 to D-1) and
  *             D is the number of feature channels, and alpha, beta and delta are paremeters.
- *     @code
+ *     [@code]
  *       Defaults:
  *            alpha = 1.0f
  *            beta  = 5.0f
  *            delta = 1.0f
  *            kernelHeight = kernelWidth = kernelSize
- *     @endcode
+ *     [@endcode]
  */
 @Generated
 @Library("MetalPerformanceShaders")

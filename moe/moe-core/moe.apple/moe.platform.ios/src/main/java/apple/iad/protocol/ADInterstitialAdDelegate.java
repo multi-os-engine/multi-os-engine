@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol ADInterstitialAdDelegate
+ * [@protocol] ADInterstitialAdDelegate
  */
 @Generated
 @Library("iAd")
@@ -35,9 +35,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("ADInterstitialAdDelegate")
 public interface ADInterstitialAdDelegate {
     /**
-     * @method interstitialAd:didFailWithError:
+     * interstitialAd:didFailWithError:
      * 
-     * @discussion
      * Called when an error has occurred attempting to get ad content.
      * 
      * @see ADError for a list of possible error codes.
@@ -47,7 +46,7 @@ public interface ADInterstitialAdDelegate {
     void interstitialAdDidFailWithError(ADInterstitialAd interstitialAd, NSError error);
 
     /**
-     * @method interstitialAdActionDidFinish:
+     * interstitialAdActionDidFinish:
      * This message is sent when the action has completed and control is returned to
      * the application. Games, media playback, and other activities that were paused
      * in response to the beginning of the action should resume at this point.
@@ -60,9 +59,8 @@ public interface ADInterstitialAdDelegate {
     }
 
     /**
-     * @method interstitialAdActionShouldBegin:willLeaveApplication:
+     * interstitialAdActionShouldBegin:willLeaveApplication:
      * 
-     * @discussion
      * Called when the user chooses to interact with the interstitial ad.
      * 
      * The delegate may return NO to block the action from taking place, but this
@@ -82,9 +80,8 @@ public interface ADInterstitialAdDelegate {
     }
 
     /**
-     * @method interstitialAdDidLoad:
+     * interstitialAdDidLoad:
      * 
-     * @discussion
      * Called when the interstitial ad has finished loading ad content. The delegate
      * should implement this method so it knows when the interstitial ad is ready to
      * be presented.
@@ -97,9 +94,8 @@ public interface ADInterstitialAdDelegate {
     }
 
     /**
-     * @method interstitialAdDidUnload:
+     * interstitialAdDidUnload:
      * 
-     * @discussion
      * When this method is invoked, if the application is using -presentInView:, the
      * content will be unloaded from the container shortly after this method is
      * called and no new content will be loaded. This may occur either as a result
@@ -114,9 +110,8 @@ public interface ADInterstitialAdDelegate {
     void interstitialAdDidUnload(ADInterstitialAd interstitialAd);
 
     /**
-     * @method interstitialAdWillLoad:
+     * interstitialAdWillLoad:
      * 
-     * @discussion
      * Called when the interstitial has confirmation that an ad will be presented,
      * but before the ad has loaded resources necessary for presentation.
      */

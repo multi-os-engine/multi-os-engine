@@ -38,7 +38,7 @@ public final class MPSRayOriginMaskDirectionMaxDistance extends StructObject {
     }
 
     /**
-     * @brief Ray origin. The intersection test will be skipped if the origin contains NaNs
+     * Ray origin. The intersection test will be skipped if the origin contains NaNs
      * or infinities.
      */
     @Generated
@@ -47,7 +47,7 @@ public final class MPSRayOriginMaskDirectionMaxDistance extends StructObject {
     public native MPSPackedFloat3 origin();
 
     /**
-     * @brief Ray origin. The intersection test will be skipped if the origin contains NaNs
+     * Ray origin. The intersection test will be skipped if the origin contains NaNs
      * or infinities.
      */
     @Generated
@@ -55,7 +55,7 @@ public final class MPSRayOriginMaskDirectionMaxDistance extends StructObject {
     public native void setOrigin(@ByValue MPSPackedFloat3 value);
 
     /**
-     * @brief Ray mask which is bitwise AND-ed with instance and primitive masks to filter out
+     * Ray mask which is bitwise AND-ed with instance and primitive masks to filter out
      * intersections. The intersection test will be skipped if the mask is zero.
      */
     @Generated
@@ -63,7 +63,7 @@ public final class MPSRayOriginMaskDirectionMaxDistance extends StructObject {
     public native int mask();
 
     /**
-     * @brief Ray mask which is bitwise AND-ed with instance and primitive masks to filter out
+     * Ray mask which is bitwise AND-ed with instance and primitive masks to filter out
      * intersections. The intersection test will be skipped if the mask is zero.
      */
     @Generated
@@ -71,7 +71,7 @@ public final class MPSRayOriginMaskDirectionMaxDistance extends StructObject {
     public native void setMask(int value);
 
     /**
-     * @brief Ray direction. Does not need to be normalized. The intersection test will be
+     * Ray direction. Does not need to be normalized. The intersection test will be
      * skipped if the direction has length zero or contains NaNs or infinities.
      */
     @Generated
@@ -80,7 +80,7 @@ public final class MPSRayOriginMaskDirectionMaxDistance extends StructObject {
     public native MPSPackedFloat3 direction();
 
     /**
-     * @brief Ray direction. Does not need to be normalized. The intersection test will be
+     * Ray direction. Does not need to be normalized. The intersection test will be
      * skipped if the direction has length zero or contains NaNs or infinities.
      */
     @Generated
@@ -88,7 +88,7 @@ public final class MPSRayOriginMaskDirectionMaxDistance extends StructObject {
     public native void setDirection(@ByValue MPSPackedFloat3 value);
 
     /**
-     * @brief Maximum intersection distance from the origin along the ray direction. May be
+     * Maximum intersection distance from the origin along the ray direction. May be
      * infinite. The intersection test will be skipped if the maximum distance is less than
      * zero or NaN.
      */
@@ -97,7 +97,7 @@ public final class MPSRayOriginMaskDirectionMaxDistance extends StructObject {
     public native float maxDistance();
 
     /**
-     * @brief Maximum intersection distance from the origin along the ray direction. May be
+     * Maximum intersection distance from the origin along the ray direction. May be
      * infinite. The intersection test will be skipped if the maximum distance is less than
      * zero or NaN.
      */

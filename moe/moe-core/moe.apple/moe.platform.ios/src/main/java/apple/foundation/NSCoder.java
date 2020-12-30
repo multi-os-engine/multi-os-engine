@@ -351,8 +351,8 @@ public class NSCoder extends NSObject {
     public native void decodeValuesOfObjCTypes(@Mapped(CStringMapper.class) String types, Object... varargs);
 
     /**
-     * @abstract Defines the behavior this NSCoder should take on decode failure (i.e. corrupt archive, invalid data, etc.).
-     * @discussion
+     * Defines the behavior this NSCoder should take on decode failure (i.e. corrupt archive, invalid data, etc.).
+     * 
      * The default result of this property is NSDecodingFailurePolicyRaiseException, subclasses can change this to an alternative policy.
      */
     @Generated
@@ -483,8 +483,8 @@ public class NSCoder extends NSObject {
     public native void encodeValuesOfObjCTypes(@Mapped(CStringMapper.class) String types, Object... varargs);
 
     /**
-     * @abstract The current error (if there is one) for the current TopLevel decode.
-     * @discussion
+     * The current error (if there is one) for the current TopLevel decode.
+     * 
      * The meaning of this property changes based on the result of the decodingFailurePolicy property:
      * For NSDecodingFailurePolicyRaiseException, this property will always be nil.
      * For NSDecodingFailurePolicySetErrorAndReturn, this property can be non-nil, and if so, indicates that there was a failure while decoding the archive (specifically its the very first error encountered).
@@ -498,9 +498,9 @@ public class NSCoder extends NSObject {
     public native NSError error();
 
     /**
-     * @abstract Signals to this coder that the decode has failed.
-     * @parameter non-nil error that describes the reason why the decode failed
-     * @discussion
+     * Signals to this coder that the decode has failed.
+     * [@parameter] non-nil error that describes the reason why the decode failed
+     * 
      * Sets an error on this NSCoder once per TopLevel decode; calling it repeatedly will have no effect until the call stack unwinds to one of the TopLevel decode entry-points.
      * 
      * This method is only meaningful to call for decodes.

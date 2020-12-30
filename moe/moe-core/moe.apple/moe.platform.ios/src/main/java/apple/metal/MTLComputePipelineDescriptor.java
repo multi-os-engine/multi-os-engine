@@ -153,8 +153,9 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public static native long version_static();
 
     /**
-     * @property computeFunction
-     * @abstract The function to use with the MTLComputePipelineState
+     * [@property] computeFunction
+     * 
+     * The function to use with the MTLComputePipelineState
      */
     @Generated
     @Selector("computeFunction")
@@ -172,80 +173,90 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public native MTLComputePipelineDescriptor init();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     public native String label();
 
     /**
-     * @method reset
-     * @abstract Restore all compute pipeline descriptor properties to their default values.
+     * reset
+     * 
+     * Restore all compute pipeline descriptor properties to their default values.
      */
     @Generated
     @Selector("reset")
     public native void reset();
 
     /**
-     * @property computeFunction
-     * @abstract The function to use with the MTLComputePipelineState
+     * [@property] computeFunction
+     * 
+     * The function to use with the MTLComputePipelineState
      */
     @Generated
     @Selector("setComputeFunction:")
     public native void setComputeFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
     /**
-     * @property computeDataDescriptor
-     * @abstract An MTLStageInputOutputDescriptor to fetch data from buffers
+     * [@property] computeDataDescriptor
+     * 
+     * An MTLStageInputOutputDescriptor to fetch data from buffers
      */
     @Generated
     @Selector("setStageInputDescriptor:")
     public native void setStageInputDescriptor(MTLStageInputOutputDescriptor value);
 
     /**
-     * @property threadGroupSizeIsMultipleOfThreadExecutionWidth
-     * @abstract An optimization flag, set if the thread group size will always be a multiple of thread execution width
+     * [@property] threadGroupSizeIsMultipleOfThreadExecutionWidth
+     * 
+     * An optimization flag, set if the thread group size will always be a multiple of thread execution width
      */
     @Generated
     @Selector("setThreadGroupSizeIsMultipleOfThreadExecutionWidth:")
     public native void setThreadGroupSizeIsMultipleOfThreadExecutionWidth(boolean value);
 
     /**
-     * @property computeDataDescriptor
-     * @abstract An MTLStageInputOutputDescriptor to fetch data from buffers
+     * [@property] computeDataDescriptor
+     * 
+     * An MTLStageInputOutputDescriptor to fetch data from buffers
      */
     @Generated
     @Selector("stageInputDescriptor")
     public native MTLStageInputOutputDescriptor stageInputDescriptor();
 
     /**
-     * @property threadGroupSizeIsMultipleOfThreadExecutionWidth
-     * @abstract An optimization flag, set if the thread group size will always be a multiple of thread execution width
+     * [@property] threadGroupSizeIsMultipleOfThreadExecutionWidth
+     * 
+     * An optimization flag, set if the thread group size will always be a multiple of thread execution width
      */
     @Generated
     @Selector("threadGroupSizeIsMultipleOfThreadExecutionWidth")
     public native boolean threadGroupSizeIsMultipleOfThreadExecutionWidth();
 
     /**
-     * @property buffers
-     * @abstract Optional properties for each buffer binding used by the compute function.
+     * [@property] buffers
+     * 
+     * Optional properties for each buffer binding used by the compute function.
      */
     @Generated
     @Selector("buffers")
     public native MTLPipelineBufferDescriptorArray buffers();
 
     /**
-     * @property maxTotalThreadsPerThreadgroup
-     * @abstract Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
      */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
@@ -253,33 +264,39 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public native long maxTotalThreadsPerThreadgroup();
 
     /**
-     * @property maxTotalThreadsPerThreadgroup
-     * @abstract Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * Optional property. Set the maxTotalThreadsPerThreadgroup. If it is not set, returns zero.
      */
     @Generated
     @Selector("setMaxTotalThreadsPerThreadgroup:")
     public native void setMaxTotalThreadsPerThreadgroup(@NUInt long value);
 
     /**
-     * @property supportIndirectCommandBuffers
-     * @abstract This flag makes this pipeline usable with indirect command buffers.
+     * [@property] supportIndirectCommandBuffers
+     * 
+     * This flag makes this pipeline usable with indirect command buffers.
      */
     @Generated
     @Selector("setSupportIndirectCommandBuffers:")
     public native void setSupportIndirectCommandBuffers(boolean value);
 
     /**
-     * @property supportIndirectCommandBuffers
-     * @abstract This flag makes this pipeline usable with indirect command buffers.
+     * [@property] supportIndirectCommandBuffers
+     * 
+     * This flag makes this pipeline usable with indirect command buffers.
      */
     @Generated
     @Selector("supportIndirectCommandBuffers")
     public native boolean supportIndirectCommandBuffers();
 
     /**
-     * @property binaryArchives
-     * @abstract The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * @discussion Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * [@property] binaryArchives
+     * 
+     * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * 
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * 
      * @see MTLBinaryArchive
      */
     @Generated
@@ -287,11 +304,14 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public native NSArray<?> binaryArchives();
 
     /**
-     * @property insertLibraries
-     * @abstract The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent MTLDynamicLibrary.
-     * @discussion Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use insertLibraries.
+     * [@property] insertLibraries
+     * 
+     * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent MTLDynamicLibrary.
+     * 
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use insertLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     * 
      * @see MTLDynamicLibrary
      */
     @Generated
@@ -303,8 +323,9 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public native MTLLinkedFunctions linkedFunctions();
 
     /**
-     * @property maxCallStackDepth
-     * @abstract The maximum depth of the call stack in stack frames from the kernel. Defaults to 1 additional stack frame.
+     * [@property] maxCallStackDepth
+     * 
+     * The maximum depth of the call stack in stack frames from the kernel. Defaults to 1 additional stack frame.
      */
     @Generated
     @Selector("maxCallStackDepth")
@@ -312,9 +333,12 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public native long maxCallStackDepth();
 
     /**
-     * @property binaryArchives
-     * @abstract The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * @discussion Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * [@property] binaryArchives
+     * 
+     * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
+     * 
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * 
      * @see MTLBinaryArchive
      */
     @Generated
@@ -322,11 +346,14 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public native void setBinaryArchives(NSArray<?> value);
 
     /**
-     * @property insertLibraries
-     * @abstract The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent MTLDynamicLibrary.
-     * @discussion Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use insertLibraries.
+     * [@property] insertLibraries
+     * 
+     * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent MTLDynamicLibrary.
+     * 
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use insertLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     * 
      * @see MTLDynamicLibrary
      */
     @Generated
@@ -338,24 +365,27 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     public native void setLinkedFunctions(MTLLinkedFunctions value);
 
     /**
-     * @property maxCallStackDepth
-     * @abstract The maximum depth of the call stack in stack frames from the kernel. Defaults to 1 additional stack frame.
+     * [@property] maxCallStackDepth
+     * 
+     * The maximum depth of the call stack in stack frames from the kernel. Defaults to 1 additional stack frame.
      */
     @Generated
     @Selector("setMaxCallStackDepth:")
     public native void setMaxCallStackDepth(@NUInt long value);
 
     /**
-     * @property supportAddingBinaryFunctions
-     * @abstract This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     * [@property] supportAddingBinaryFunctions
+     * 
+     * This flag makes this pipeline support creating a new pipeline by adding binary functions.
      */
     @Generated
     @Selector("setSupportAddingBinaryFunctions:")
     public native void setSupportAddingBinaryFunctions(boolean value);
 
     /**
-     * @property supportAddingBinaryFunctions
-     * @abstract This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     * [@property] supportAddingBinaryFunctions
+     * 
+     * This flag makes this pipeline support creating a new pipeline by adding binary functions.
      */
     @Generated
     @Selector("supportAddingBinaryFunctions")

@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNSceneSource
- * @abstract SCNSceneSource objects, abstract the data-reading task. A scene source can read scene data from a URL or a NSData object.
+ * SCNSceneSource
+ * 
+ * SCNSceneSource objects, abstract the data-reading task. A scene source can read scene data from a URL or a NSData object.
  * After creating a SCNSceneSource object for the appropriate source, you can obtain scenes using SCNSceneSource methods.
  */
 @Generated
@@ -151,8 +152,10 @@ public class SCNSceneSource extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method sceneSourceWithData:options:
-     * @abstract Creates and initialize a SCNSceneSource instance.
+     * sceneSourceWithData:options:
+     * 
+     * Creates and initialize a SCNSceneSource instance.
+     * 
      * @param data The scene data.
      * @param options An optional dictionary for future extensions. 
      */
@@ -161,8 +164,10 @@ public class SCNSceneSource extends NSObject {
     public static native SCNSceneSource sceneSourceWithDataOptions(NSData data, NSDictionary<String, ?> options);
 
     /**
-     * @method sceneSourceWithURL:options:
-     * @abstract Creates and initialize a SCNSceneSource instance.
+     * sceneSourceWithURL:options:
+     * 
+     * Creates and initialize a SCNSceneSource instance.
+     * 
      * @param url The URL to read scenes from.
      * @param options An optional dictionary for future extensions. 
      */
@@ -184,18 +189,22 @@ public class SCNSceneSource extends NSObject {
     public static native long version_static();
 
     /**
-     * @property data
-     * @abstract The receiver's data (if any).
+     * [@property] data
+     * 
+     * The receiver's data (if any).
      */
     @Generated
     @Selector("data")
     public native NSData data();
 
     /**
-     * @method entriesPassingTest:
-     * @abstract Returns the entries in the receiver's library that pass a test in a given Block.
+     * entriesPassingTest:
+     * 
+     * Returns the entries in the receiver's library that pass a test in a given Block.
+     * 
+     * The entry is an instance of one of following classes: SCNMaterial, SCNScene, SCNGeometry, SCNNode, CAAnimation, SCNLight, SCNCamera, SCNSkinner, SCNMorpher, NSImage.
+     * 
      * @param predicate The block to apply to entries in the library. The block takes three arguments: "entry" is an entry in the library, "identifier" is the ID of this entry and "stop" is a reference to a Boolean value. The block can set the value to YES to stop further processing of the library. The stop argument is an out-only argument. You should only ever set this Boolean to YES within the Block. The Block returns a Boolean value that indicates whether "entry" passed the test.
-     * @discussion The entry is an instance of one of following classes: SCNMaterial, SCNScene, SCNGeometry, SCNNode, CAAnimation, SCNLight, SCNCamera, SCNSkinner, SCNMorpher, NSImage.
      */
     @Generated
     @Selector("entriesPassingTest:")
@@ -203,11 +212,14 @@ public class SCNSceneSource extends NSObject {
             @ObjCBlock(name = "call_entriesPassingTest") Block_entriesPassingTest predicate);
 
     /**
-     * @method entryWithIdentifier:classType:
-     * @abstract Returns the instance of "entryClass" found in the receiver's library with the id "uid".
+     * entryWithIdentifier:classType:
+     * 
+     * Returns the instance of "entryClass" found in the receiver's library with the id "uid".
+     * 
+     * Returns NULL if the receiver's library doesn't contains such an uid for the specified type.
+     * 
      * @param uid The id of the entry to find as specified in the source file
      * @param entryClass Specifies the type of the object to be returned. It can be one of the following classes: SCNMaterial, SCNGeometry, SCNScene, SCNNode, CAAnimation, SCNLight, SCNCamera, SCNSkinner, SCNMorpher, NSImage
-     * @discussion Returns NULL if the receiver's library doesn't contains such an uid for the specified type.
      */
     @Generated
     @Selector("entryWithIdentifier:withClass:")
@@ -215,8 +227,10 @@ public class SCNSceneSource extends NSObject {
     public native Object entryWithIdentifierWithClass(String uid, Class entryClass);
 
     /**
-     * @method identifiersOfEntriesWithClass:
-     * @abstract Returns the IDs found in the receiver's library for the class "entryClass".
+     * identifiersOfEntriesWithClass:
+     * 
+     * Returns the IDs found in the receiver's library for the class "entryClass".
+     * 
      * @param entryClass Specifies the type of the object referenced by the returned IDs. It can be one of the following classes: SCNMaterial, SCNScene, SCNGeometry, SCNNode, CAAnimation, SCNLight, SCNCamera, SCNSkinner, SCNMorpher, NSImage
      */
     @Generated
@@ -228,8 +242,10 @@ public class SCNSceneSource extends NSObject {
     public native SCNSceneSource init();
 
     /**
-     * @method initWithData:options:
-     * @abstract Initialize a SCNSceneSource instance from a NSData object.
+     * initWithData:options:
+     * 
+     * Initialize a SCNSceneSource instance from a NSData object.
+     * 
      * @param data The data to read scenes from.
      * @param options An optional dictionary for future extensions. 
      */
@@ -238,8 +254,10 @@ public class SCNSceneSource extends NSObject {
     public native SCNSceneSource initWithDataOptions(NSData data, NSDictionary<String, ?> options);
 
     /**
-     * @method initWithURL:options:
-     * @abstract Initialize a SCNSceneSource instance from a URL.
+     * initWithURL:options:
+     * 
+     * Initialize a SCNSceneSource instance from a URL.
+     * 
      * @param url The URL to read scenes from.
      * @param options An optional dictionary for future extensions. 
      */
@@ -248,9 +266,11 @@ public class SCNSceneSource extends NSObject {
     public native SCNSceneSource initWithURLOptions(NSURL url, NSDictionary<String, ?> options);
 
     /**
-     * @method propertyForKey:
+     * propertyForKey:
+     * 
+     * Returns the property as defined in the 3D file for the given key. See keys above.
+     * 
      * @param key The key for which to return the corresponding property.
-     * @abstract Returns the property as defined in the 3D file for the given key. See keys above.
      */
     @Generated
     @Selector("propertyForKey:")
@@ -258,12 +278,15 @@ public class SCNSceneSource extends NSObject {
     public native Object propertyForKey(String key);
 
     /**
-     * @method sceneWithOptions:error:
-     * @abstract Creates and initializes the scene described in the 3D file with the specified options.
+     * sceneWithOptions:error:
+     * 
+     * Creates and initializes the scene described in the 3D file with the specified options.
+     * 
+     * This simpler version is equivalent to providing a block to sceneWithOptions:statusHandler: and checking the "error"
+     * parameter of the block if the status is SCNSceneStatusError.
+     * 
      * @param options A dictionary of options. The valid keys are described in the "Scene loading options" section.
      * @param error If this method returns nil, an error providing more information is returned by reference.
-     * @discussion This simpler version is equivalent to providing a block to sceneWithOptions:statusHandler: and checking the "error"
-     * parameter of the block if the status is SCNSceneStatusError.
      */
     @Generated
     @Selector("sceneWithOptions:error:")
@@ -271,8 +294,10 @@ public class SCNSceneSource extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method sceneWithOptions:statusHandler:
-     * @abstract Creates and initializes the scene described in the 3D file with the specified options and lets you monitor the progress.
+     * sceneWithOptions:statusHandler:
+     * 
+     * Creates and initializes the scene described in the 3D file with the specified options and lets you monitor the progress.
+     * 
      * @param options A dictionary of options. The valid keys are described in the "Scene loading options" section.
      * @param statusHandler This block will be called repeatedly while the scene is being loaded.
      *                      - The first argument, overallProgress, is a floating-point number between 0 and 1. 0 means the loading process has just started and 1 that it is complete.
@@ -286,8 +311,9 @@ public class SCNSceneSource extends NSObject {
             @ObjCBlock(name = "call_sceneWithOptionsStatusHandler") Block_sceneWithOptionsStatusHandler statusHandler);
 
     /**
-     * @property url
-     * @abstract The receiver's URL (if any).
+     * [@property] url
+     * 
+     * The receiver's URL (if any).
      */
     @Generated
     @Selector("url")

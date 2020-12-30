@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      EKReminder
- * @abstract   The EKReminder class represents a reminder (task/todo).
+ * EKReminder
+ * 
+ * The EKReminder class represents a reminder (task/todo).
  */
 @Generated
 @Library("EventKit")
@@ -136,8 +137,9 @@ public class EKReminder extends EKCalendarItem {
     public static native Object new_objc();
 
     /**
-     * @method     reminderWithEventStore:
-     * @abstract   Creates a new reminder in the given event store.
+     * reminderWithEventStore:
+     * 
+     * Creates a new reminder in the given event store.
      */
     @Generated
     @Selector("reminderWithEventStore:")
@@ -165,17 +167,20 @@ public class EKReminder extends EKCalendarItem {
     public static native long version_static();
 
     /**
-     * @property   completionDate
-     * @abstract   The date on which this reminder was completed.
+     * [@property]   completionDate
+     * 
+     * The date on which this reminder was completed.
      */
     @Generated
     @Selector("completionDate")
     public native NSDate completionDate();
 
     /**
-     * @property   dueDateComponents
-     * @abstract   The date by which this reminder should be completed.
-     * @discussion The use of date components allows the due date and its time zone to be represented in a single property. 
+     * [@property]   dueDateComponents
+     * 
+     * The date by which this reminder should be completed.
+     * 
+     * The use of date components allows the due date and its time zone to be represented in a single property.
      *             A nil time zone represents a floating date.  Setting a date component without a hour, minute and second component will set allDay to YES.
      *             If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised otherwise.
      * 
@@ -191,9 +196,11 @@ public class EKReminder extends EKCalendarItem {
     public native EKReminder init();
 
     /**
-     * @property   completed
-     * @abstract   Whether or not the reminder is completed. 
-     * @discussion Setting it to YES will set the completed date to the current date. 
+     * [@property]   completed
+     * 
+     * Whether or not the reminder is completed.
+     * 
+     * Setting it to YES will set the completed date to the current date.
      *             Setting it to NO will set the completed date to nil.
      */
     @Generated
@@ -201,9 +208,11 @@ public class EKReminder extends EKCalendarItem {
     public native boolean isCompleted();
 
     /**
-     * @property   completed
-     * @abstract   Whether or not the reminder is completed. 
-     * @discussion Setting it to YES will set the completed date to the current date. 
+     * [@property]   completed
+     * 
+     * Whether or not the reminder is completed.
+     * 
+     * Setting it to YES will set the completed date to the current date.
      *             Setting it to NO will set the completed date to nil.
      */
     @Generated
@@ -211,9 +220,11 @@ public class EKReminder extends EKCalendarItem {
     public native void setCompleted(boolean value);
 
     /**
-     * @property   priority
-     * @abstract   The priority of the reminder.
-     * @discussion Priorities run from 1 (highest) to 9 (lowest).  A priority of 0 means no priority.
+     * [@property]   priority
+     * 
+     * The priority of the reminder.
+     * 
+     * Priorities run from 1 (highest) to 9 (lowest).  A priority of 0 means no priority.
      *             Saving a reminder with any other priority will fail.
      *             Per RFC 5545, priorities of 1-4 are considered "high," a priority of 5 is "medium," and priorities of 6-9 are "low."
      */
@@ -223,17 +234,20 @@ public class EKReminder extends EKCalendarItem {
     public native long priority();
 
     /**
-     * @property   completionDate
-     * @abstract   The date on which this reminder was completed.
+     * [@property]   completionDate
+     * 
+     * The date on which this reminder was completed.
      */
     @Generated
     @Selector("setCompletionDate:")
     public native void setCompletionDate(NSDate value);
 
     /**
-     * @property   dueDateComponents
-     * @abstract   The date by which this reminder should be completed.
-     * @discussion The use of date components allows the due date and its time zone to be represented in a single property. 
+     * [@property]   dueDateComponents
+     * 
+     * The date by which this reminder should be completed.
+     * 
+     * The use of date components allows the due date and its time zone to be represented in a single property.
      *             A nil time zone represents a floating date.  Setting a date component without a hour, minute and second component will set allDay to YES.
      *             If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised otherwise.
      * 
@@ -245,9 +259,11 @@ public class EKReminder extends EKCalendarItem {
     public native void setDueDateComponents(NSDateComponents value);
 
     /**
-     * @property   priority
-     * @abstract   The priority of the reminder.
-     * @discussion Priorities run from 1 (highest) to 9 (lowest).  A priority of 0 means no priority.
+     * [@property]   priority
+     * 
+     * The priority of the reminder.
+     * 
+     * Priorities run from 1 (highest) to 9 (lowest).  A priority of 0 means no priority.
      *             Saving a reminder with any other priority will fail.
      *             Per RFC 5545, priorities of 1-4 are considered "high," a priority of 5 is "medium," and priorities of 6-9 are "low."
      */
@@ -256,9 +272,11 @@ public class EKReminder extends EKCalendarItem {
     public native void setPriority(@NUInt long value);
 
     /**
-     * @property   startDateComponents
-     * @abstract   The start date of the task, as date components.
-     * @discussion The use of date components allows the start date and its time zone to be represented in a single property. 
+     * [@property]   startDateComponents
+     * 
+     * The start date of the task, as date components.
+     * 
+     * The use of date components allows the start date and its time zone to be represented in a single property.
      *             A nil time zone represents a floating date.  Setting a date component without a hour, minute and second component will set allDay to YES.
      *             If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised otherwise.
      */
@@ -267,9 +285,11 @@ public class EKReminder extends EKCalendarItem {
     public native void setStartDateComponents(NSDateComponents value);
 
     /**
-     * @property   startDateComponents
-     * @abstract   The start date of the task, as date components.
-     * @discussion The use of date components allows the start date and its time zone to be represented in a single property. 
+     * [@property]   startDateComponents
+     * 
+     * The start date of the task, as date components.
+     * 
+     * The use of date components allows the start date and its time zone to be represented in a single property.
      *             A nil time zone represents a floating date.  Setting a date component without a hour, minute and second component will set allDay to YES.
      *             If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised otherwise.
      */

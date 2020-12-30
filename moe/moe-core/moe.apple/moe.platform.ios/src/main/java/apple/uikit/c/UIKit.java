@@ -3869,7 +3869,7 @@ public final class UIKit {
     public static native String NSTrackingAttributeName();
 
     /**
-     * @abstract A notification that is posted when UIPointerLockState.locked changes values for a scene.
+     * A notification that is posted when UIPointerLockState.locked changes values for a scene.
      * It contains the related UIScene in the user info dictionary of the notification.
      */
     @Generated

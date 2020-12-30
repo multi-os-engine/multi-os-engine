@@ -282,6 +282,7 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the shape with the final framebuffer.
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -395,6 +396,7 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the shape with the final framebuffer.
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated

@@ -107,6 +107,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     /**
      * A fixed attachment fuses two dynamic items together at a reference point. 
      * Fixed attachments are useful for creating complex shapes that can be broken apart later.
+     * 
      * @param item1 The first of two dynamic items connected by the attachment behavior.
      * @param item2 The second of two dynamic items connected by the attachment behavior.
      * @param point The point for which each item will be attached. The anchor point will be converted to each items local corrdinate system.
@@ -146,6 +147,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     /**
      * A limit attachment imposes a maximum distance between two dynamic items, as if they were connected by a rope.
+     * 
      * @param item1 The first of two dynamic items connected by the attachment behavior.
      * @param offset1 The point, within the dynamic item and described as an offset from its center point, for the attachment behavior.
      * @param item2 The second of two dynamic items connected by the attachment behavior.
@@ -168,6 +170,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     /**
      * A pin attachment allows two dynamic items to independently rotate around the anchor point as if pinned together. 
      * You can configure how far the two objects may rotate and the resistance to rotation
+     * 
      * @param item1 The first of two dynamic items connected by the attachment behavior.
      * @param item2 The second of two dynamic items connected by the attachment behavior.
      * @param point The point for which each item will be attached. The anchor point will be converted to each items local corrdinate system
@@ -195,6 +198,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     /**
      * A sliding attachment allows for relative translation of two items along a specified axis with respect to the anchor point. A sliding
      * attachment prevents all relative rotation of the dynamic items.
+     * 
      * @param item1 The first of two dynamic items connected by the attachment behavior.
      * @param item2 The second of two dynamic items connected by the attachment behavior.
      * @param point The point for which each item will be attached. The anchor point will be converted to each items local corrdinate system.
@@ -211,6 +215,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     /**
      * A sliding attachment allows for translation of the item along a specified axis with respect to the anchor point. A sliding
      * attachment prevents all relative rotation of the dynamic items.
+     * 
      * @param item1 The dynamic item connected by the attachment behavior.
      * @param point The point for the item will be anchored by the attachment.
      * @param axis Axis of allowed translation for the item. Must be a unit vector.

@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVPictureInPictureController
- * @abstract	AVPictureInPictureController is a subclass of NSObject that can be used to present the contents of an AVPlayerLayer or AVPlayerView floating on top of applications.
+ * AVPictureInPictureController
+ * 
+ * AVPictureInPictureController is a subclass of NSObject that can be used to present the contents of an AVPlayerLayer or AVPlayerView floating on top of applications.
  */
 @Generated
 @Library("AVKit")
@@ -124,9 +125,11 @@ public class AVPictureInPictureController extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @method		isPictureInPictureSupported
-     * @abstract	Whether or not Picture in Picture is supported on the current device.
-     * @discussion	When NO, all initializers will return nil.
+     * isPictureInPictureSupported
+     * 
+     * Whether or not Picture in Picture is supported on the current device.
+     * 
+     * When NO, all initializers will return nil.
      */
     @Generated
     @Selector("isPictureInPictureSupported")
@@ -147,10 +150,12 @@ public class AVPictureInPictureController extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @method		pictureInPictureButtonStartImageCompatibleWithTraitCollection:
+     * pictureInPictureButtonStartImageCompatibleWithTraitCollection:
+     * 
+     * System default Picture in Picture start template image for use in client's Picture in Picture button.
+     * 
      * @param		traitCollection
      * 			Traits that describe the image to retrieve, pass nil to use traits that describe the main screen.
-     * @abstract	System default Picture in Picture start template image for use in client's Picture in Picture button.
      */
     @Generated
     @Selector("pictureInPictureButtonStartImageCompatibleWithTraitCollection:")
@@ -158,10 +163,12 @@ public class AVPictureInPictureController extends NSObject {
             UITraitCollection traitCollection);
 
     /**
-     * @method		pictureInPictureButtonStopImageCompatibleWithTraitCollection:
+     * pictureInPictureButtonStopImageCompatibleWithTraitCollection:
+     * 
+     * System default Picture in Picture stop template image for use in client's Picture in Picture button.
+     * 
      * @param		traitCollection
      * 			Traits that describe the image to retrieve, pass nil to use traits that describe the main screen.
-     * @abstract	System default Picture in Picture stop template image for use in client's Picture in Picture button.
      */
     @Generated
     @Selector("pictureInPictureButtonStopImageCompatibleWithTraitCollection:")
@@ -190,8 +197,9 @@ public class AVPictureInPictureController extends NSObject {
     public static native long version_static();
 
     /**
-     * @property	delegate
-     * @abstract	The receiver's delegate.
+     * [@property]	delegate
+     * 
+     * The receiver's delegate.
      */
     @Generated
     @Selector("delegate")
@@ -203,58 +211,66 @@ public class AVPictureInPictureController extends NSObject {
     public native AVPictureInPictureController init();
 
     /**
-     * @method		initWithPlayerLayer:
+     * initWithPlayerLayer:
+     * 
+     * Designated initializer.
+     * 
      * @param			playerLayer
      * 				The player layer from which to source the media content for the Picture in Picture controller.
-     * @abstract		Designated initializer.
      */
     @Generated
     @Selector("initWithPlayerLayer:")
     public native AVPictureInPictureController initWithPlayerLayer(AVPlayerLayer playerLayer);
 
     /**
-     * @property	pictureInPictureActive
-     * @abstract	Whether or not Picture in Picture is currently active.
+     * [@property]	pictureInPictureActive
+     * 
+     * Whether or not Picture in Picture is currently active.
      */
     @Generated
     @Selector("isPictureInPictureActive")
     public native boolean isPictureInPictureActive();
 
     /**
-     * @property	pictureInPicturePossible
-     * @abstract	Whether or not Picture in Picture is currently possible.
+     * [@property]	pictureInPicturePossible
+     * 
+     * Whether or not Picture in Picture is currently possible.
      */
     @Generated
     @Selector("isPictureInPicturePossible")
     public native boolean isPictureInPicturePossible();
 
     /**
-     * @property	pictureInPictureSuspended
-     * @abstract	Whether or not Picture in Picture is currently suspended.
+     * [@property]	pictureInPictureSuspended
+     * 
+     * Whether or not Picture in Picture is currently suspended.
      */
     @Generated
     @Selector("isPictureInPictureSuspended")
     public native boolean isPictureInPictureSuspended();
 
     /**
-     * @property	playerLayer
-     * @abstract	The receiver's player layer.
+     * [@property]	playerLayer
+     * 
+     * The receiver's player layer.
      */
     @Generated
     @Selector("playerLayer")
     public native AVPlayerLayer playerLayer();
 
     /**
-     * @property	delegate
-     * @abstract	The receiver's delegate.
+     * [@property]	delegate
+     * 
+     * The receiver's delegate.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value);
 
     /**
-     * @property	delegate
-     * @abstract	The receiver's delegate.
+     * [@property]	delegate
+     * 
+     * The receiver's delegate.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPictureInPictureControllerDelegate value) {
@@ -269,70 +285,84 @@ public class AVPictureInPictureController extends NSObject {
     }
 
     /**
-     * @method		startPictureInPicture
-     * @abstract	Start Picture in Picture for the provided AVPlayerLayer if possible.
-     * @discussion	Receiver will call -pictureInPictureControllerWillStartPictureInPicture: if Picture in Picture is currently possible and -pictureInPictureControllerDidStartPictureInPicture: after a successful start. If starting Picture in Picture fails, -pictureInPictureControllerFailedToStartPictureInPicture:withError: is called on the delegate instead. Client can stop Picture in Picture by calling -stopPictureInPicture. In addition the user can stop Picture in Picture through user interaction. It is also possible that Picture in Picture is stopped by the Picture in Picture controller at any time. In all these cases receiver calls -pictureInPictureControllerWillStopPictureInPicture: on the delegate and -pictureInPictureControllerDidStopPictureInPicture:after the stop animation completed.
+     * startPictureInPicture
+     * 
+     * Start Picture in Picture for the provided AVPlayerLayer if possible.
+     * 
+     * Receiver will call -pictureInPictureControllerWillStartPictureInPicture: if Picture in Picture is currently possible and -pictureInPictureControllerDidStartPictureInPicture: after a successful start. If starting Picture in Picture fails, -pictureInPictureControllerFailedToStartPictureInPicture:withError: is called on the delegate instead. Client can stop Picture in Picture by calling -stopPictureInPicture. In addition the user can stop Picture in Picture through user interaction. It is also possible that Picture in Picture is stopped by the Picture in Picture controller at any time. In all these cases receiver calls -pictureInPictureControllerWillStopPictureInPicture: on the delegate and -pictureInPictureControllerDidStopPictureInPicture:after the stop animation completed.
      */
     @Generated
     @Selector("startPictureInPicture")
     public native void startPictureInPicture();
 
     /**
-     * @method		stopPictureInPicture
-     * @abstract	Stop the local Picture in Picture if currently active. On tvOS, this can also stop Picture in Picture sessions for other applications.
-     * @discussion	See startPictureInPicture for details.
+     * stopPictureInPicture
+     * 
+     * Stop the local Picture in Picture if currently active. On tvOS, this can also stop Picture in Picture sessions for other applications.
+     * 
+     * See startPictureInPicture for details.
      */
     @Generated
     @Selector("stopPictureInPicture")
     public native void stopPictureInPicture();
 
     /**
-     * @property	pictureInPictureButtonStartImage
-     * @abstract	System default Picture in Picture start template image for use in client's Picture in Picture button.
+     * [@property]	pictureInPictureButtonStartImage
+     * 
+     * System default Picture in Picture start template image for use in client's Picture in Picture button.
      */
     @Generated
     @Selector("pictureInPictureButtonStartImage")
     public static native UIImage pictureInPictureButtonStartImage();
 
     /**
-     * @property	pictureInPictureButtonStopImage
-     * @abstract	System default Picture in Picture stop template image for use in client's Picture in Picture button.
+     * [@property]	pictureInPictureButtonStopImage
+     * 
+     * System default Picture in Picture stop template image for use in client's Picture in Picture button.
      */
     @Generated
     @Selector("pictureInPictureButtonStopImage")
     public static native UIImage pictureInPictureButtonStopImage();
 
     /**
-     * @property	requiresLinearPlayback
-     * @abstract	Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * @discussion	This can be used to temporarily enforce playback of mandatory content (such as legalese or advertisements).
+     * [@property]	requiresLinearPlayback
+     * 
+     * Disables certain user operations (fast forward, forward skip, and scrubbing).
+     * 
+     * This can be used to temporarily enforce playback of mandatory content (such as legalese or advertisements).
      */
     @Generated
     @Selector("requiresLinearPlayback")
     public native boolean requiresLinearPlayback();
 
     /**
-     * @property	requiresLinearPlayback
-     * @abstract	Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * @discussion	This can be used to temporarily enforce playback of mandatory content (such as legalese or advertisements).
+     * [@property]	requiresLinearPlayback
+     * 
+     * Disables certain user operations (fast forward, forward skip, and scrubbing).
+     * 
+     * This can be used to temporarily enforce playback of mandatory content (such as legalese or advertisements).
      */
     @Generated
     @Selector("setRequiresLinearPlayback:")
     public native void setRequiresLinearPlayback(boolean value);
 
     /**
-     * @property    canStartPictureInPictureAutomaticallyFromInline
-     * @abstract    Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
-     * @discussion  This property must only be set to YES for content intended to be the user's primary focus.
+     * [@property]    canStartPictureInPictureAutomaticallyFromInline
+     * 
+     * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
+     * 
+     * This property must only be set to YES for content intended to be the user's primary focus.
      */
     @Generated
     @Selector("canStartPictureInPictureAutomaticallyFromInline")
     public native boolean canStartPictureInPictureAutomaticallyFromInline();
 
     /**
-     * @property    canStartPictureInPictureAutomaticallyFromInline
-     * @abstract    Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
-     * @discussion  This property must only be set to YES for content intended to be the user's primary focus.
+     * [@property]    canStartPictureInPictureAutomaticallyFromInline
+     * 
+     * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
+     * 
+     * This property must only be set to YES for content intended to be the user's primary focus.
      */
     @Generated
     @Selector("setCanStartPictureInPictureAutomaticallyFromInline:")

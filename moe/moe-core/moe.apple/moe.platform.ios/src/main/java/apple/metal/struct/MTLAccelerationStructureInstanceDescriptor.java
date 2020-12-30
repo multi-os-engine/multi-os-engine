@@ -28,7 +28,7 @@ public final class MTLAccelerationStructureInstanceDescriptor extends StructObje
     }
 
     /**
-     * @brief Transformation matrix describing how to transform the bottom-level acceleration structure.
+     * Transformation matrix describing how to transform the bottom-level acceleration structure.
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -36,63 +36,63 @@ public final class MTLAccelerationStructureInstanceDescriptor extends StructObje
     public native MTLPackedFloat4x3 transformationMatrix();
 
     /**
-     * @brief Transformation matrix describing how to transform the bottom-level acceleration structure.
+     * Transformation matrix describing how to transform the bottom-level acceleration structure.
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setTransformationMatrix(@ByValue MTLPackedFloat4x3 value);
 
     /**
-     * @brief Instance options
+     * Instance options
      */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int options();
 
     /**
-     * @brief Instance options
+     * Instance options
      */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setOptions(int value);
 
     /**
-     * @brief Instance mask used to ignore geometry during ray tracing
+     * Instance mask used to ignore geometry during ray tracing
      */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native int mask();
 
     /**
-     * @brief Instance mask used to ignore geometry during ray tracing
+     * Instance mask used to ignore geometry during ray tracing
      */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setMask(int value);
 
     /**
-     * @brief Used to index into intersection function tables
+     * Used to index into intersection function tables
      */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int intersectionFunctionTableOffset();
 
     /**
-     * @brief Used to index into intersection function tables
+     * Used to index into intersection function tables
      */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setIntersectionFunctionTableOffset(int value);
 
     /**
-     * @brief Acceleration structure index to use for this instance
+     * Acceleration structure index to use for this instance
      */
     @Generated
     @StructureField(order = 4, isGetter = true)
     public native int accelerationStructureIndex();
 
     /**
-     * @brief Acceleration structure index to use for this instance
+     * Acceleration structure index to use for this instance
      */
     @Generated
     @StructureField(order = 4, isGetter = false)

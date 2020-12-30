@@ -153,8 +153,9 @@ public class NWTLSParameters extends NSObject {
     public static native long version_static();
 
     /**
-     * @property SSLCipherSuites
-     * @discussion The set of allowed cipher suites, as defined in <Security/CipherSuite.h>.
+     * [@property] SSLCipherSuites
+     * 
+     * The set of allowed cipher suites, as defined in <Security/CipherSuite.h>.
      * 	If set to nil, the default cipher suites will be used.
      */
     @Generated
@@ -162,8 +163,9 @@ public class NWTLSParameters extends NSObject {
     public native NSSet<? extends NSNumber> SSLCipherSuites();
 
     /**
-     * @property TLSSessionID
-     * @discussion The session ID for the associated connection, used for TLS session resumption.
+     * [@property] TLSSessionID
+     * 
+     * The session ID for the associated connection, used for TLS session resumption.
      * 	This property is optional when using TLS.
      */
     @Generated
@@ -175,8 +177,9 @@ public class NWTLSParameters extends NSObject {
     public native NWTLSParameters init();
 
     /**
-     * @property maximumSSLProtocolVersion
-     * @discussion The maximum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
+     * [@property] maximumSSLProtocolVersion
+     * 
+     * The maximum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * 	If set, the SSL handshake will not accept any protocol version newer than the maximum.
      * 	This property should be used with caution, since it may limit the use of preferred
      * 	SSL protocols.
@@ -187,8 +190,9 @@ public class NWTLSParameters extends NSObject {
     public native long maximumSSLProtocolVersion();
 
     /**
-     * @property minimumSSLProtocolVersion
-     * @discussion The minimum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
+     * [@property] minimumSSLProtocolVersion
+     * 
+     * The minimum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * 	If set, the SSL handshake will not accept any protocol version older than the minimum.
      */
     @Generated
@@ -197,8 +201,9 @@ public class NWTLSParameters extends NSObject {
     public native long minimumSSLProtocolVersion();
 
     /**
-     * @property maximumSSLProtocolVersion
-     * @discussion The maximum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
+     * [@property] maximumSSLProtocolVersion
+     * 
+     * The maximum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * 	If set, the SSL handshake will not accept any protocol version newer than the maximum.
      * 	This property should be used with caution, since it may limit the use of preferred
      * 	SSL protocols.
@@ -208,8 +213,9 @@ public class NWTLSParameters extends NSObject {
     public native void setMaximumSSLProtocolVersion(@NUInt long value);
 
     /**
-     * @property minimumSSLProtocolVersion
-     * @discussion The minimum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
+     * [@property] minimumSSLProtocolVersion
+     * 
+     * The minimum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * 	If set, the SSL handshake will not accept any protocol version older than the minimum.
      */
     @Generated
@@ -217,8 +223,9 @@ public class NWTLSParameters extends NSObject {
     public native void setMinimumSSLProtocolVersion(@NUInt long value);
 
     /**
-     * @property SSLCipherSuites
-     * @discussion The set of allowed cipher suites, as defined in <Security/CipherSuite.h>.
+     * [@property] SSLCipherSuites
+     * 
+     * The set of allowed cipher suites, as defined in <Security/CipherSuite.h>.
      * 	If set to nil, the default cipher suites will be used.
      */
     @Generated
@@ -226,8 +233,9 @@ public class NWTLSParameters extends NSObject {
     public native void setSSLCipherSuites(NSSet<? extends NSNumber> value);
 
     /**
-     * @property TLSSessionID
-     * @discussion The session ID for the associated connection, used for TLS session resumption.
+     * [@property] TLSSessionID
+     * 
+     * The session ID for the associated connection, used for TLS session resumption.
      * 	This property is optional when using TLS.
      */
     @Generated

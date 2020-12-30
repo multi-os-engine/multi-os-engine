@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPVoiceControlState encapsulates the title variants and image(s) for a single voice control
+ * [@c] CPVoiceControlState encapsulates the title variants and image(s) for a single voice control
  * state, like listening, loading, or recognized.
  * 
  * Your app may initialize the voice control template with one or more states, and

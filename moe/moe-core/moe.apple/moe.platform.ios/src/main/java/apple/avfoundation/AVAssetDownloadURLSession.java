@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class			AVAssetDownloadURLSession
- * @abstract		A subclass of NSURLSession to support AVAssetDownloadTask.
+ * AVAssetDownloadURLSession
+ * 
+ * A subclass of NSURLSession to support AVAssetDownloadTask.
  */
 @Generated
 @Library("AVFoundation")
@@ -154,8 +155,10 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
 
     /**
-     * @method		sessionWithConfiguration:assetDownloadDelegate:delegateQueue:
-     * @abstract		Creates and initializes an AVAssetDownloadURLSession for use with AVAssetDownloadTasks.
+     * sessionWithConfiguration:assetDownloadDelegate:delegateQueue:
+     * 
+     * Creates and initializes an AVAssetDownloadURLSession for use with AVAssetDownloadTasks.
+     * 
      * @param			configuration
      * 			The configuration for this URLSession. Must be a background configuration.
      * @param			assetDownloadDelegate
@@ -193,9 +196,12 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     public static native long version_static();
 
     /**
-     * @method		assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:
-     * @abstract		Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
-     * @discussion	This method may return nil if the URLSession has been invalidated.
+     * assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:
+     * 
+     * Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
+     * 
+     * This method may return nil if the URLSession has been invalidated.
+     * 
      * @param			URLAsset
      * 			The AVURLAsset to download locally.
      * @param			assetTitle
@@ -211,9 +217,12 @@ public class AVAssetDownloadURLSession extends NSURLSession {
             AVURLAsset URLAsset, String title, NSData artworkData, NSDictionary<String, ?> options);
 
     /**
-     * @method		assetDownloadTaskWithURLAsset:destinationURL:options:
-     * @abstract		Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
-     * @discussion	This method may return nil if the URLSession has been invalidated.
+     * assetDownloadTaskWithURLAsset:destinationURL:options:
+     * 
+     * Creates and initializes an AVAssetDownloadTask to be used with this AVAssetDownloadURLSession.
+     * 
+     * This method may return nil if the URLSession has been invalidated.
+     * 
      * @param			URLAsset
      * 			The AVURLAsset to download locally.
      * @param			destinationURL
@@ -231,9 +240,12 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     public native AVAssetDownloadURLSession init();
 
     /**
-     * @method		aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:
-     * @abstract		Creates and initializes an AVAggregateAssetDownloadTask to download multiple AVMediaSelections on an AVURLAsset.
-     * @discussion	This method may return nil if the URLSession has been invalidated. The value of AVAssetDownloadTaskMediaSelectionKey will be ignored.
+     * aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:
+     * 
+     * Creates and initializes an AVAggregateAssetDownloadTask to download multiple AVMediaSelections on an AVURLAsset.
+     * 
+     * This method may return nil if the URLSession has been invalidated. The value of AVAssetDownloadTaskMediaSelectionKey will be ignored.
+     * 
      * @param			URLAsset
      * 			The AVURLAsset to download locally.
      * @param			mediaSelections

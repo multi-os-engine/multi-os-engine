@@ -3,8 +3,8 @@ package apple.avfoundation.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum AVAudioEngineManualRenderingError
- *   @abstract 
+ * [@enum] AVAudioEngineManualRenderingError
+ * 
  * Error codes that could be returned from AVAudioEngine manual rendering mode methods,
  * e.g. `enableManualRenderingMode:format:maximumFrameCount:error:` and
  * `renderOffline:toBuffer:error:`.

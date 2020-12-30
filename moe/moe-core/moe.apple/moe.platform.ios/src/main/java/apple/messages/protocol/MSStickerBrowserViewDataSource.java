@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @abstract The MSStickerBrowserViewDataSource protocol declares the methods that the Sticker Browser View uses to access the contents of its data source object.
+ * The MSStickerBrowserViewDataSource protocol declares the methods that the Sticker Browser View uses to access the contents of its data source object.
  */
 @Generated
 @Library("Messages")
@@ -35,9 +35,10 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MSStickerBrowserViewDataSource")
 public interface MSStickerBrowserViewDataSource {
     /**
-     * @abstract Returns the number of Stickers that the sticker browser should show.
+     * Returns the number of Stickers that the sticker browser should show.
+     * 
      * @param stickerBrowserView The sticker browser view .
-     * @result The number of stickers.
+     * @return The number of stickers.
      */
     @Generated
     @Selector("numberOfStickersInStickerBrowserView:")
@@ -45,10 +46,11 @@ public interface MSStickerBrowserViewDataSource {
     long numberOfStickersInStickerBrowserView(MSStickerBrowserView stickerBrowserView);
 
     /**
-     * @abstract Returns the sticker that the sticker browser should show in the browser.
+     * Returns the sticker that the sticker browser should show in the browser.
+     * 
      * @param stickerBrowserView The sticker browser view.
      * @param index The index of the sticker to show.
-     * @result A MSSticker object.
+     * @return A MSSticker object.
      */
     @Generated
     @Selector("stickerBrowserView:stickerAtIndex:")

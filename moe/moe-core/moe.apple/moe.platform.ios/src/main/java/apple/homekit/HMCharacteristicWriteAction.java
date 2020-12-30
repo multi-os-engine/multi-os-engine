@@ -42,7 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class is used to represent an entry in an action set that writes a specific
+ * This class is used to represent an entry in an action set that writes a specific
  *        value to a characteristic.
  */
 @Generated
@@ -157,7 +157,7 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     public static native long version_static();
 
     /**
-     * @brief The characteristic associated with the action.
+     * The characteristic associated with the action.
      */
     @Generated
     @Selector("characteristic")
@@ -168,7 +168,7 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     public native HMCharacteristicWriteAction<?> init();
 
     /**
-     * @brief Initializer method that ties the action to a particular characteristic.
+     * Initializer method that ties the action to a particular characteristic.
      * 
      * @param characteristic The characteristic bound to the action.
      * 
@@ -182,7 +182,7 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
             @Mapped(ObjCObjectMapper.class) Object targetValue);
 
     /**
-     * @brief The target value for the action.
+     * The target value for the action.
      */
     @Generated
     @Selector("targetValue")
@@ -190,7 +190,7 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     public native Object targetValue();
 
     /**
-     * @brief This method is used to change target value for the characteristic.
+     * This method is used to change target value for the characteristic.
      * 
      * @param targetValue New target value for the characteristic.
      * 

@@ -266,6 +266,7 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
      * The constructor object 'anObject' should implement the filterWithName: method.
      * That method will be invoked with the name of the filter to create.
      * The class attributes must have a kCIAttributeFilterCategories key associated with a set of categories.
+     * 
      * @param   attributes    Dictionary of the registration attributes of the filter. See below for attribute keys.
      */
     @Generated

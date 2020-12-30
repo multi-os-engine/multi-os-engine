@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum CBError
+ * [@enum] CBError
  * 
- * @discussion The possible errors returned during LE transactions.
+ * The possible errors returned during LE transactions.
  */
 @Generated
 public final class CBError {

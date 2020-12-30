@@ -40,11 +40,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVCaptureAutoExposureBracketedStillImageSettings
- * @abstract
+ * AVCaptureAutoExposureBracketedStillImageSettings
+ * 
  *    AVCaptureAutoExposureBracketedStillImageSettings is a concrete subclass of AVCaptureBracketedStillImageSettings to be used when bracketing exposure target bias.
  * 
- * @discussion
  *    An AVCaptureAutoExposureBracketedStillImageSettings instance defines the exposure target bias setting that should be applied to one image in a bracket. An array of settings objects is passed to -[AVCaptureStillImageOutput captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:]. Min and max exposure target bias are queryable properties of the AVCaptureDevice supplying data to an AVCaptureStillImageOutput instance. If you wish to leave exposureTargetBias unchanged for this bracketed still image, you may pass the special value AVCaptureExposureTargetBiasCurrent (see AVCaptureDevice.h).
  */
 @Generated
@@ -76,13 +75,13 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method autoExposureSettingsWithExposureTargetBias
-     * @abstract
+     * autoExposureSettingsWithExposureTargetBias
+     * 
      *     Creates an AVCaptureAutoExposureBracketedStillImageSettings using the specified exposure target bias.
      * 
      * @param exposureTargetBias
      *     The exposure target bias. Pass AVCaptureExposureTargetBiasCurrent to leave the exposureTargetBias unchanged for this image.
-     * @result
+     * @return
      *     An initialized AVCaptureAutoExposureBracketedStillImageSettings instance.
      */
     @Generated
@@ -174,8 +173,8 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     public static native long version_static();
 
     /**
-     * @property exposureTargetBias
-     * @abstract
+     * [@property] exposureTargetBias
+     * 
      *     The exposure bias for the auto exposure bracketed settings
      */
     @Generated

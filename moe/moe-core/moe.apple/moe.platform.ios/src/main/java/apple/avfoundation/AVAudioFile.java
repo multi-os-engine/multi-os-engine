@@ -45,10 +45,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioFile
- * @abstract
+ * AVAudioFile
+ * 
  * 	An audio file opened for reading or writing.
- * @discussion
+ * 
  * 	Regardless of the file's actual format, reading and writing the file is done via 
  * 	`AVAudioPCMBuffer` objects, containing samples in an `AVAudioCommonFormat`,
  * 	referred to as the file's "processing format." Conversions are performed to and from
@@ -169,17 +169,19 @@ public class AVAudioFile extends NSObject {
     public static native long version_static();
 
     /**
-     * @property fileFormat
-     * @abstract The on-disk format of the file.
+     * [@property] fileFormat
+     * 
+     * The on-disk format of the file.
      */
     @Generated
     @Selector("fileFormat")
     public native AVAudioFormat fileFormat();
 
     /**
-     * @property framePosition
-     * @abstract The position in the file at which the next read or write will occur.
-     * @discussion
+     * [@property] framePosition
+     * 
+     * The position in the file at which the next read or write will occur.
+     * 
      * 	Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position by the number of frames read or written.
      */
     @Generated
@@ -191,8 +193,10 @@ public class AVAudioFile extends NSObject {
     public native AVAudioFile init();
 
     /**
-     * @method initForReading:commonFormat:interleaved:error:
-     * @abstract Open a file for reading, using a specified processing format.
+     * initForReading:commonFormat:interleaved:error:
+     * 
+     * Open a file for reading, using a specified processing format.
+     * 
      * @param fileURL
      * 	the file to open
      * @param format
@@ -208,14 +212,16 @@ public class AVAudioFile extends NSObject {
             boolean interleaved, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method initForReading:error:
-     * @abstract Open a file for reading.
+     * initForReading:error:
+     * 
+     * Open a file for reading.
+     * 
+     * 	This opens the file for reading using the standard format (deinterleaved floating point).
+     * 
      * @param fileURL
      * 	the file to open
      * @param outError
      * 	on exit, if an error occurs, a description of the error
-     * @discussion
-     * 	This opens the file for reading using the standard format (deinterleaved floating point).
      */
     @Generated
     @Selector("initForReading:error:")
@@ -223,8 +229,13 @@ public class AVAudioFile extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method initForWriting:settings:commonFormat:interleaved:error:
-     * @abstract Open a file for writing.
+     * initForWriting:settings:commonFormat:interleaved:error:
+     * 
+     * Open a file for writing.
+     * 
+     * 	The file type to create can be set through the corresponding settings key. If not set, it will be
+     * 	inferred from the file extension. Will overwrite a file at the specified URL if a file exists.
+     * 
      * @param fileURL
      * 	the path at which to create the file
      * @param settings
@@ -237,9 +248,6 @@ public class AVAudioFile extends NSObject {
      * 	whether to use an interleaved processing format
      * @param outError
      * 	on exit, if an error occurs, a description of the error
-     * @discussion
-     * 	The file type to create can be set through the corresponding settings key. If not set, it will be
-     * 	inferred from the file extension. Will overwrite a file at the specified URL if a file exists.
      */
     @Generated
     @Selector("initForWriting:settings:commonFormat:interleaved:error:")
@@ -248,8 +256,15 @@ public class AVAudioFile extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method initForWriting:settings:error:
-     * @abstract Open a file for writing.
+     * initForWriting:settings:error:
+     * 
+     * Open a file for writing.
+     * 
+     * 	The file type to create can be set through the corresponding settings key. If not set, it will be
+     * 	inferred from the file extension. Will overwrite a file at the specified URL if a file exists.
+     * 
+     * 	This opens the file for writing using the standard format (deinterleaved floating point).
+     * 
      * @param fileURL
      * 	the path at which to create the file
      * @param settings
@@ -258,11 +273,6 @@ public class AVAudioFile extends NSObject {
      * 	ignored and a warning is shown.
      * @param outError
      * 	on exit, if an error occurs, a description of the error
-     * @discussion
-     * 	The file type to create can be set through the corresponding settings key. If not set, it will be
-     * 	inferred from the file extension. Will overwrite a file at the specified URL if a file exists.
-     * 
-     * 	This opens the file for writing using the standard format (deinterleaved floating point).
      */
     @Generated
     @Selector("initForWriting:settings:error:")
@@ -270,9 +280,10 @@ public class AVAudioFile extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property length
-     * @abstract The number of sample frames in the file.
-     * @discussion
+     * [@property] length
+     * 
+     * The number of sample frames in the file.
+     * 
      * 	 Note: this can be expensive to compute for the first time.
      */
     @Generated
@@ -280,16 +291,22 @@ public class AVAudioFile extends NSObject {
     public native long length();
 
     /**
-     * @property processingFormat
-     * @abstract The processing format of the file.
+     * [@property] processingFormat
+     * 
+     * The processing format of the file.
      */
     @Generated
     @Selector("processingFormat")
     public native AVAudioFormat processingFormat();
 
     /**
-     * @method readIntoBuffer:error:
-     * @abstract Read an entire buffer.
+     * readIntoBuffer:error:
+     * 
+     * Read an entire buffer.
+     * 
+     * 	Reading sequentially from framePosition, attempts to fill the buffer to its capacity. On
+     * 	return, the buffer's length indicates the number of sample frames successfully read.
+     * 
      * @param buffer
      * 	The buffer into which to read from the file. Its format must match the file's
      * 	processing format.
@@ -297,9 +314,6 @@ public class AVAudioFile extends NSObject {
      * 	on exit, if an error occurs, a description of the error
      * @return
      * 	YES for success.
-     * @discussion
-     * 	Reading sequentially from framePosition, attempts to fill the buffer to its capacity. On
-     * 	return, the buffer's length indicates the number of sample frames successfully read.
      */
     @Generated
     @Selector("readIntoBuffer:error:")
@@ -307,8 +321,12 @@ public class AVAudioFile extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method readIntoBuffer:frameCount:error:
-     * @abstract Read a portion of a buffer.
+     * readIntoBuffer:frameCount:error:
+     * 
+     * Read a portion of a buffer.
+     * 
+     * 	Like `readIntoBuffer:error:`, but can be used to read fewer frames than buffer.frameCapacity.
+     * 
      * @param frames
      * 	The number of frames to read.
      * @param buffer
@@ -318,8 +336,6 @@ public class AVAudioFile extends NSObject {
      * 	on exit, if an error occurs, a description of the error
      * @return
      * 	YES for success.
-     * @discussion
-     * 	Like `readIntoBuffer:error:`, but can be used to read fewer frames than buffer.frameCapacity.
      */
     @Generated
     @Selector("readIntoBuffer:frameCount:error:")
@@ -327,9 +343,10 @@ public class AVAudioFile extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property framePosition
-     * @abstract The position in the file at which the next read or write will occur.
-     * @discussion
+     * [@property] framePosition
+     * 
+     * The position in the file at which the next read or write will occur.
+     * 
      * 	Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position by the number of frames read or written.
      */
     @Generated
@@ -337,16 +354,21 @@ public class AVAudioFile extends NSObject {
     public native void setFramePosition(long value);
 
     /**
-     * @property url
-     * @abstract The URL the file is reading or writing.
+     * [@property] url
+     * 
+     * The URL the file is reading or writing.
      */
     @Generated
     @Selector("url")
     public native NSURL url();
 
     /**
-     * @method writeFromBuffer:error:
-     * @abstract Write a buffer.
+     * writeFromBuffer:error:
+     * 
+     * Write a buffer.
+     * 
+     * 	Writes sequentially. The buffer's frameLength signifies how much of the buffer is to be written.
+     * 
      * @param buffer
      * 	The buffer from which to write to the file. Its format must match the file's
      * 	processing format.
@@ -354,8 +376,6 @@ public class AVAudioFile extends NSObject {
      * 	on exit, if an error occurs, a description of the error
      * @return
      * 	YES for success.
-     * @discussion
-     * 	Writes sequentially. The buffer's frameLength signifies how much of the buffer is to be written.
      */
     @Generated
     @Selector("writeFromBuffer:error:")

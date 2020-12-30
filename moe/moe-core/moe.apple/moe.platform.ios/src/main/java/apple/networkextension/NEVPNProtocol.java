@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEVPNProtocol
- * @discussion The NEVPNProtocol class declares the programmatic interface of an object that manages the protocol-specific portion of a VPN configuration.
+ * [@interface] NEVPNProtocol
+ * 
+ * The NEVPNProtocol class declares the programmatic interface of an object that manages the protocol-specific portion of a VPN configuration.
  * 
  * NEVPNProtocol is an abstract base class from which other protocol-specific classes are derived.
  * 
@@ -174,8 +175,9 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property disconnectOnSleep
-     * @discussion If YES, the VPN connection will be disconnected when the device goes to sleep. The default is NO.
+     * [@property] disconnectOnSleep
+     * 
+     * If YES, the VPN connection will be disconnected when the device goes to sleep. The default is NO.
      */
     @Generated
     @Selector("disconnectOnSleep")
@@ -186,24 +188,27 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @property identityData
-     * @discussion The PKCS12 data for the VPN authentication identity. The value is a NSData in PKCS12 format.
+     * [@property] identityData
+     * 
+     * The PKCS12 data for the VPN authentication identity. The value is a NSData in PKCS12 format.
      */
     @Generated
     @Selector("identityData")
     public native NSData identityData();
 
     /**
-     * @property identityDataPassword
-     * @discussion The password to be used to decrypt the PKCS12 identity data.
+     * [@property] identityDataPassword
+     * 
+     * The password to be used to decrypt the PKCS12 identity data.
      */
     @Generated
     @Selector("identityDataPassword")
     public native String identityDataPassword();
 
     /**
-     * @property identityReference
-     * @discussion The certificate and private key component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassIdentity class.
+     * [@property] identityReference
+     * 
+     * The certificate and private key component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassIdentity class.
      */
     @Generated
     @Selector("identityReference")
@@ -218,88 +223,99 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     public native NEVPNProtocol initWithCoder(NSCoder coder);
 
     /**
-     * @property passwordReference
-     * @discussion The password component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassGenericPassword class.
+     * [@property] passwordReference
+     * 
+     * The password component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassGenericPassword class.
      */
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
 
     /**
-     * @property proxySettings
-     * @discussion An NEProxySettings object containing the proxy settings to use for connections routed through the tunnel.
+     * [@property] proxySettings
+     * 
+     * An NEProxySettings object containing the proxy settings to use for connections routed through the tunnel.
      */
     @Generated
     @Selector("proxySettings")
     public native NEProxySettings proxySettings();
 
     /**
-     * @property serverAddress
-     * @discussion The VPN server. Depending on the protocol, may be an IP address, host name, or URL.
+     * [@property] serverAddress
+     * 
+     * The VPN server. Depending on the protocol, may be an IP address, host name, or URL.
      */
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
 
     /**
-     * @property disconnectOnSleep
-     * @discussion If YES, the VPN connection will be disconnected when the device goes to sleep. The default is NO.
+     * [@property] disconnectOnSleep
+     * 
+     * If YES, the VPN connection will be disconnected when the device goes to sleep. The default is NO.
      */
     @Generated
     @Selector("setDisconnectOnSleep:")
     public native void setDisconnectOnSleep(boolean value);
 
     /**
-     * @property identityData
-     * @discussion The PKCS12 data for the VPN authentication identity. The value is a NSData in PKCS12 format.
+     * [@property] identityData
+     * 
+     * The PKCS12 data for the VPN authentication identity. The value is a NSData in PKCS12 format.
      */
     @Generated
     @Selector("setIdentityData:")
     public native void setIdentityData(NSData value);
 
     /**
-     * @property identityDataPassword
-     * @discussion The password to be used to decrypt the PKCS12 identity data.
+     * [@property] identityDataPassword
+     * 
+     * The password to be used to decrypt the PKCS12 identity data.
      */
     @Generated
     @Selector("setIdentityDataPassword:")
     public native void setIdentityDataPassword(String value);
 
     /**
-     * @property identityReference
-     * @discussion The certificate and private key component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassIdentity class.
+     * [@property] identityReference
+     * 
+     * The certificate and private key component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassIdentity class.
      */
     @Generated
     @Selector("setIdentityReference:")
     public native void setIdentityReference(NSData value);
 
     /**
-     * @property passwordReference
-     * @discussion The password component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassGenericPassword class.
+     * [@property] passwordReference
+     * 
+     * The password component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassGenericPassword class.
      */
     @Generated
     @Selector("setPasswordReference:")
     public native void setPasswordReference(NSData value);
 
     /**
-     * @property proxySettings
-     * @discussion An NEProxySettings object containing the proxy settings to use for connections routed through the tunnel.
+     * [@property] proxySettings
+     * 
+     * An NEProxySettings object containing the proxy settings to use for connections routed through the tunnel.
      */
     @Generated
     @Selector("setProxySettings:")
     public native void setProxySettings(NEProxySettings value);
 
     /**
-     * @property serverAddress
-     * @discussion The VPN server. Depending on the protocol, may be an IP address, host name, or URL.
+     * [@property] serverAddress
+     * 
+     * The VPN server. Depending on the protocol, may be an IP address, host name, or URL.
      */
     @Generated
     @Selector("setServerAddress:")
     public native void setServerAddress(String value);
 
     /**
-     * @property username
-     * @discussion The username component of the VPN authentication credential.
+     * [@property] username
+     * 
+     * The username component of the VPN authentication credential.
      */
     @Generated
     @Selector("setUsername:")
@@ -312,56 +328,63 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     }
 
     /**
-     * @property username
-     * @discussion The username component of the VPN authentication credential.
+     * [@property] username
+     * 
+     * The username component of the VPN authentication credential.
      */
     @Generated
     @Selector("username")
     public native String username();
 
     /**
-     * @property includeAllNetworks
-     * @discussion If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The default is NO.
+     * [@property] includeAllNetworks
+     * 
+     * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The default is NO.
      */
     @Generated
     @Selector("includeAllNetworks")
     public native boolean includeAllNetworks();
 
     /**
-     * @property includeAllNetworks
-     * @discussion If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The default is NO.
+     * [@property] includeAllNetworks
+     * 
+     * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The default is NO.
      */
     @Generated
     @Selector("setIncludeAllNetworks:")
     public native void setIncludeAllNetworks(boolean value);
 
     /**
-     * @property enforceRoutes
-     * @discussion If YES, route rules for this tunnel will take precendence over any locally-defined routes. The default is NO.
+     * [@property] enforceRoutes
+     * 
+     * If YES, route rules for this tunnel will take precendence over any locally-defined routes. The default is NO.
      */
     @Generated
     @Selector("enforceRoutes")
     public native boolean enforceRoutes();
 
     /**
-     * @property excludeLocalNetworks
-     * @discussion If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and YES on iOS.
+     * [@property] excludeLocalNetworks
+     * 
+     * If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and YES on iOS.
      */
     @Generated
     @Selector("excludeLocalNetworks")
     public native boolean excludeLocalNetworks();
 
     /**
-     * @property enforceRoutes
-     * @discussion If YES, route rules for this tunnel will take precendence over any locally-defined routes. The default is NO.
+     * [@property] enforceRoutes
+     * 
+     * If YES, route rules for this tunnel will take precendence over any locally-defined routes. The default is NO.
      */
     @Generated
     @Selector("setEnforceRoutes:")
     public native void setEnforceRoutes(boolean value);
 
     /**
-     * @property excludeLocalNetworks
-     * @discussion If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and YES on iOS.
+     * [@property] excludeLocalNetworks
+     * 
+     * If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and YES on iOS.
      */
     @Generated
     @Selector("setExcludeLocalNetworks:")

@@ -25,11 +25,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVMutableAssetDownloadStorageManagementPolicy
+ * AVMutableAssetDownloadStorageManagementPolicy
  * 
- * @abstract	A mutable subclass of AVAssetDownloadStorageManagementPolicy.
+ * A mutable subclass of AVAssetDownloadStorageManagementPolicy.
  * 
- * @discussion	System will put in best-effort to evict all the assets based on expirationDate before evicting based on priority.
+ * System will put in best-effort to evict all the assets based on expirationDate before evicting based on priority.
  */
 @Generated
 @Library("AVFoundation")
@@ -90,8 +90,9 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native String description_static();
 
     /**
-     * @property	expirationDate
-     * 	@abstract	Returns the expiration date of asset.
+     * [@property]	expirationDate
+     * 
+     * Returns the expiration date of asset.
      */
     @Generated
     @Selector("expirationDate")
@@ -134,9 +135,11 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native Object new_objc();
 
     /**
-     * @property	priority
-     * @abstract	Indicates the eviction priority of downloaded asset.
-     * @discussion	Assets with default priority will be purged first before assets with higher priorities.
+     * [@property]	priority
+     * 
+     * Indicates the eviction priority of downloaded asset.
+     * 
+     * Assets with default priority will be purged first before assets with higher priorities.
      * 				In case this is not set, default priority is used.
      */
     @Generated
@@ -152,17 +155,20 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property	expirationDate
-     * 	@abstract	Returns the expiration date of asset.
+     * [@property]	expirationDate
+     * 
+     * Returns the expiration date of asset.
      */
     @Generated
     @Selector("setExpirationDate:")
     public native void setExpirationDate(NSDate value);
 
     /**
-     * @property	priority
-     * @abstract	Indicates the eviction priority of downloaded asset.
-     * @discussion	Assets with default priority will be purged first before assets with higher priorities.
+     * [@property]	priority
+     * 
+     * Indicates the eviction priority of downloaded asset.
+     * 
+     * Assets with default priority will be purged first before assets with higher priorities.
      * 				In case this is not set, default priority is used.
      */
     @Generated

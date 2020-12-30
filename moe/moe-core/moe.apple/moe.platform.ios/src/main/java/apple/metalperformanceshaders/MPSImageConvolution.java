@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageConvolution
- * @discussion The MPSImageConvolution convolves an image with given filter of odd width and height.
+ * MPSImageConvolution
+ * 
+ * The MPSImageConvolution convolves an image with given filter of odd width and height.
  *             The center of the kernel aligns with the MPSImageConvolution.offset. That is, the position
  *             of the top left corner of the area covered by the kernel is given by
  *             MPSImageConvolution.offset - {kernel_width>>1, kernel_height>>1, 0}
@@ -57,20 +58,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  *             If there are multiple channels in the source image, each channel is processed independently.
  * 
- * @performance Separable convolution filters may perform better when done in two passes. A convolution filter
+ * [@performance] Separable convolution filters may perform better when done in two passes. A convolution filter
  *             is separable if the ratio of filter values between all rows is constant over the whole row. For
  *             example, this edge detection filter:
- *                 @code
+ *                 [@code]
  *                     -1      0       1
  *                     -2      0       2
  *                     -1      0       1
- *                 @endcode
+ *                 [@endcode]
  *             can be separated into the product of two vectors:
- *                 @code
+ *                 [@code]
  *                     1
  *                     2      x    [-1  0   1]
  *                     1
- *                 @endcode
+ *                 [@endcode]
  *             and consequently can be done as two, one-dimensional convolution passes back to back on the same image.
  *             In this way, the number of multiplies (ignoring the fact that we could skip zeros here) is reduced from
  *             3*3=9 to 3+3 = 6. There are similar savings for addition. For large filters, the savings can be profound.
@@ -187,8 +188,9 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * @property    bias
-     * @discussion  The bias is a value to be added to convolved pixel before it is converted back to the storage format.
+     * [@property]    bias
+     * 
+     * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      *              It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
      *              For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
      *              weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.
@@ -210,7 +212,8 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     public native MPSImageConvolution initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize a convolution filter
+     * Initialize a convolution filter
+     * 
      * @param      device          The device the filter will run on
      * @param      kernelWidth     the width of the kernel
      * @param      kernelHeight    the height of the kernel
@@ -225,8 +228,9 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
             ConstFloatPtr kernelWeights);
 
     /**
-     * @property kernelHeight
-     * @abstract  The height of the filter window. Must be an odd number.
+     * [@property] kernelHeight
+     * 
+     * The height of the filter window. Must be an odd number.
      */
     @Generated
     @Selector("kernelHeight")
@@ -234,8 +238,9 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     public native long kernelHeight();
 
     /**
-     * @property kernelWidth
-     * @abstract  The width of the filter window. Must be an odd number.
+     * [@property] kernelWidth
+     * 
+     * The width of the filter window. Must be an odd number.
      */
     @Generated
     @Selector("kernelWidth")
@@ -243,8 +248,9 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     public native long kernelWidth();
 
     /**
-     * @property    bias
-     * @discussion  The bias is a value to be added to convolved pixel before it is converted back to the storage format.
+     * [@property]    bias
+     * 
+     * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      *              It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
      *              For example, many edge detection filters produce results in the range [-k,k]. By scaling the filter
      *              weights by 0.5/k and adding 0.5, the results will be in range [0,1] suitable for use with unorm formats.
@@ -262,12 +268,14 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     public native MPSImageConvolution initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.

@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPyramid
- * @abstract SCNPyramid represents a right pyramid with a rectangular base.
+ * SCNPyramid
+ * 
+ * SCNPyramid represents a right pyramid with a rectangular base.
  */
 @Generated
 @Library("SceneKit")
@@ -151,8 +152,10 @@ public class SCNPyramid extends SCNGeometry {
     public static native Object new_objc();
 
     /**
-     * @method pyramidWithWidth:height:length:
-     * @abstract Creates and returns a pyramid with given width, height, and length.
+     * pyramidWithWidth:height:length:
+     * 
+     * Creates and returns a pyramid with given width, height, and length.
+     * 
      * @param width The width of the pyramid.
      * @param height The height of the pyramid.
      * @param length The length of the pyramid.
@@ -188,9 +191,11 @@ public class SCNPyramid extends SCNGeometry {
     public static native long version_static();
 
     /**
-     * @property height
-     * @abstract The height of the pyramid. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The height of the pyramid. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("height")
@@ -198,9 +203,11 @@ public class SCNPyramid extends SCNGeometry {
     public native double height();
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1. 
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("heightSegmentCount")
@@ -216,9 +223,11 @@ public class SCNPyramid extends SCNGeometry {
     public native SCNPyramid initWithCoder(NSCoder coder);
 
     /**
-     * @property length
-     * @abstract The length of the pyramid base. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] length
+     * 
+     * The length of the pyramid base. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("length")
@@ -226,9 +235,11 @@ public class SCNPyramid extends SCNGeometry {
     public native double length();
 
     /**
-     * @property lengthSegmentCount
-     * @abstract The number of subdivisions along the Z axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1. 
+     * [@property] lengthSegmentCount
+     * 
+     * The number of subdivisions along the Z axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("lengthSegmentCount")
@@ -236,54 +247,66 @@ public class SCNPyramid extends SCNGeometry {
     public native long lengthSegmentCount();
 
     /**
-     * @property height
-     * @abstract The height of the pyramid. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The height of the pyramid. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1. 
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
     /**
-     * @property length
-     * @abstract The length of the pyramid base. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] length
+     * 
+     * The length of the pyramid base. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setLength:")
     public native void setLength(@NFloat double value);
 
     /**
-     * @property lengthSegmentCount
-     * @abstract The number of subdivisions along the Z axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1. 
+     * [@property] lengthSegmentCount
+     * 
+     * The number of subdivisions along the Z axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setLengthSegmentCount:")
     public native void setLengthSegmentCount(@NInt long value);
 
     /**
-     * @property width
-     * @abstract The width of the pyramid base. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] width
+     * 
+     * The width of the pyramid base. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NFloat double value);
 
     /**
-     * @property widthSegmentCount
-     * @abstract The number of subdivisions along the X axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1. 
+     * [@property] widthSegmentCount
+     * 
+     * The number of subdivisions along the X axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setWidthSegmentCount:")
@@ -296,9 +319,11 @@ public class SCNPyramid extends SCNGeometry {
     }
 
     /**
-     * @property width
-     * @abstract The width of the pyramid base. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] width
+     * 
+     * The width of the pyramid base. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("width")
@@ -306,9 +331,11 @@ public class SCNPyramid extends SCNGeometry {
     public native double width();
 
     /**
-     * @property widthSegmentCount
-     * @abstract The number of subdivisions along the X axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1. 
+     * [@property] widthSegmentCount
+     * 
+     * The number of subdivisions along the X axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("widthSegmentCount")

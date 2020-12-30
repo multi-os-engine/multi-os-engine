@@ -46,8 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageHistogramSpecification
- * @discussion The MPSImageHistogramSpecification performs a histogram specification operation on an image.
+ * MPSImageHistogramSpecification
+ * 
+ * The MPSImageHistogramSpecification performs a histogram specification operation on an image.
  *             It is a generalized version of histogram equalization operation.  The histogram specificaiton filter
  *             converts the image so that its histogram matches the desired histogram.
  */
@@ -163,9 +164,10 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * @abstract Encode the transform function to a command buffer using a MTLComputeCommandEncoder.
+     * Encode the transform function to a command buffer using a MTLComputeCommandEncoder.
      *           The transform function computes the specification lookup table.
-     * @discussion The transform function will not begin to execute until after the command
+     * 
+     * The transform function will not begin to execute until after the command
      *             buffer has been enqueued and committed. This step will need to be repeated
      *             with the new MPSKernel if -copyWithZone:device or -copyWithZone: is called.
      * 
@@ -206,8 +208,9 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
     public native MPSImageHistogramSpecification initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information about the histogram for the channels of an image.
-     * @discussion The MPSImageHistogramSpecification applies a transfor to convert the histogram
+     * Specifies information about the histogram for the channels of an image.
+     * 
+     * The MPSImageHistogramSpecification applies a transfor to convert the histogram
      *             to a specified histogram. The process is divided into three steps:
      * 
      *             -# Call -initWithDevice:histogramInfo:   This creates a MPSImageHistogramSpecification
@@ -245,12 +248,14 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
     public native MPSImageHistogramSpecification initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.

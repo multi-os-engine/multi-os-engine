@@ -41,11 +41,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVCapturePhotoBracketSettings
- * @abstract
+ * AVCapturePhotoBracketSettings
+ * 
  *    A concrete subclass of AVCapturePhotoSettings that describes a bracketed capture.
  * 
- * @discussion
  *    In addition to the properties expressed in the base class, an AVCapturePhotoBracketSettings contains an array of AVCaptureBracketedStillImageSettings objects, where each describes one individual photo in the bracket. bracketedSettings.count must be <= AVCapturePhotoOutput's -maxBracketedCapturePhotoCount. Capturing a photo bracket may require the allocation of additional resources.
  * 
  *    When you request a bracketed capture, your AVCapturePhotoCaptureDelegate's -captureOutput:didFinishProcessing{Photo | RawPhoto}... callbacks are called back bracketSettings.count times and provided with the corresponding AVCaptureBracketedStillImageSettings object from your request.
@@ -141,9 +140,13 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     public static native Object new_objc();
 
     /**
-     * @method photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:
-     * @abstract
+     * photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:
+     * 
      *    Creates an instance of AVCapturePhotoBracketSettings.
+     * 
+     *    An NSInvalidArgumentException is thrown if bracketedSettings is nil, contains zero elements, or mixes and matches different subclasses of AVCaptureBracketedStillImageSettings.
+     * 
+     *    AVCapturePhotoBracketSettings do not support flashMode, autoStillImageStabilizationEnabled, livePhotoMovieFileURL or livePhotoMovieMetadata.
      * 
      * @param rawPixelFormatType
      *    One of the OSTypes contained in AVCapturePhotoOutput's -availableRawPhotoPixelFormatTypes array. May be set to 0 if you do not desire RAW capture.
@@ -151,13 +154,8 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
      *    A dictionary of Core Video pixel buffer attributes or AVVideoSettings, analogous to AVCaptureStillImageOutput's outputSettings property. If you wish an uncompressed format, your dictionary must contain kCVPixelBufferPixelFormatTypeKey, and the format specified must be present in AVCapturePhotoOutput's -availablePhotoPixelFormatTypes array. kCVPixelBufferPixelFormatTypeKey is the only supported key when expressing uncompressed output. If you wish a compressed format, your dictionary must contain AVVideoCodecKey and the codec specified must be present in AVCapturePhotoOutput's -availablePhotoCodecTypes array. If you are specifying a compressed format, the AVVideoCompressionPropertiesKey is also supported, with a payload dictionary containing a single AVVideoQualityKey. If you only wish to capture RAW, you may pass a non-zero rawPixelFormatType and a nil processedFormat dictionary. If you pass a rawPixelFormatType of 0 AND a nil processedFormat dictionary, the default output of AVVideoCodecTypeJPEG will be delivered.
      * @param bracketedSettings
      *    An array of AVCaptureBracketedStillImageSettings objects (defined in AVCaptureStillImageOutput.h). All must be of the same type, either AVCaptureManualExposureBracketedStillImageSettings or AVCaptureAutoExposureBracketedStillImageSettings. bracketedSettings.count must be <= AVCapturePhotoOutput's -maxBracketedCapturePhotoCount.
-     * @result
+     * @return
      *    An instance of AVCapturePhotoBracketSettings.
-     * 
-     * @discussion
-     *    An NSInvalidArgumentException is thrown if bracketedSettings is nil, contains zero elements, or mixes and matches different subclasses of AVCaptureBracketedStillImageSettings.
-     * 
-     *    AVCapturePhotoBracketSettings do not support flashMode, autoStillImageStabilizationEnabled, livePhotoMovieFileURL or livePhotoMovieMetadata.
      */
     @Generated
     @Selector("photoBracketSettingsWithRawPixelFormatType:processedFormat:bracketedSettings:")
@@ -209,11 +207,10 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     public static native long version_static();
 
     /**
-     * @property bracketedSettings
-     * @abstract
+     * [@property] bracketedSettings
+     * 
      *    An array of AVCaptureBracketedStillImageSettings objects you passed in -initWithFormat:rawPixelFormatType:bracketedSettings:
      * 
-     * @discussion
      *    This read-only property never returns nil.
      */
     @Generated
@@ -225,11 +222,10 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     public native AVCapturePhotoBracketSettings init();
 
     /**
-     * @property lensStabilizationEnabled
-     * @abstract
+     * [@property] lensStabilizationEnabled
+     * 
      *    Specifies whether lens (optical) stabilization should be employed during the bracketed capture.
      * 
-     * @discussion
      *    Default value is NO. This property may only be set to YES if AVCapturePhotoOutput's isLensStabilizationDuringBracketedCaptureSupported is YES. When set to YES, AVCapturePhotoOutput holds the lens steady for the duration of the bracket to counter hand shake and produce a sharper bracket of images.
      */
     @Generated
@@ -237,11 +233,10 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     public native boolean isLensStabilizationEnabled();
 
     /**
-     * @property lensStabilizationEnabled
-     * @abstract
+     * [@property] lensStabilizationEnabled
+     * 
      *    Specifies whether lens (optical) stabilization should be employed during the bracketed capture.
      * 
-     * @discussion
      *    Default value is NO. This property may only be set to YES if AVCapturePhotoOutput's isLensStabilizationDuringBracketedCaptureSupported is YES. When set to YES, AVCapturePhotoOutput holds the lens steady for the duration of the bracket to counter hand shake and produce a sharper bracket of images.
      */
     @Generated
@@ -249,9 +244,13 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     public native void setLensStabilizationEnabled(boolean value);
 
     /**
-     * @method photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:
-     * @abstract
+     * photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:
+     * 
      *    Creates an instance of AVCapturePhotoBracketSettings.
+     * 
+     *    An NSInvalidArgumentException is thrown if bracketedSettings is nil, contains zero elements, or mixes and matches different subclasses of AVCaptureBracketedStillImageSettings.
+     * 
+     *    AVCapturePhotoBracketSettings do not support flashMode, autoStillImageStabilizationEnabled, livePhotoMovieFileURL or livePhotoMovieMetadata.
      * 
      * @param rawPixelFormatType
      *    One of the OSTypes contained in AVCapturePhotoOutput's -availableRawPhotoPixelFormatTypes array. May be set to 0 if you do not desire RAW capture.
@@ -263,13 +262,8 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
      *    The file container for which the processed image should be formatted to be written. Pass nil if you have no preferred file container. A default container will be chosen for you.
      * @param bracketedSettings
      *    An array of AVCaptureBracketedStillImageSettings objects (defined in AVCaptureStillImageOutput.h). All must be of the same type, either AVCaptureManualExposureBracketedStillImageSettings or AVCaptureAutoExposureBracketedStillImageSettings. bracketedSettings.count must be <= AVCapturePhotoOutput's -maxBracketedCapturePhotoCount.
-     * @result
+     * @return
      *    An instance of AVCapturePhotoBracketSettings.
-     * 
-     * @discussion
-     *    An NSInvalidArgumentException is thrown if bracketedSettings is nil, contains zero elements, or mixes and matches different subclasses of AVCaptureBracketedStillImageSettings.
-     * 
-     *    AVCapturePhotoBracketSettings do not support flashMode, autoStillImageStabilizationEnabled, livePhotoMovieFileURL or livePhotoMovieMetadata.
      */
     @Generated
     @Selector("photoBracketSettingsWithRawPixelFormatType:rawFileType:processedFormat:processedFileType:bracketedSettings:")

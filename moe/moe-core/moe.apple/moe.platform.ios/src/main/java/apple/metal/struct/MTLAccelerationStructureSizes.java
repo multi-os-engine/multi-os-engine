@@ -37,7 +37,7 @@ public final class MTLAccelerationStructureSizes extends StructObject {
     }
 
     /**
-     * @brief The required size, in bytes, of the built acceleration structure
+     * The required size, in bytes, of the built acceleration structure
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -45,14 +45,14 @@ public final class MTLAccelerationStructureSizes extends StructObject {
     public native long accelerationStructureSize();
 
     /**
-     * @brief The required size, in bytes, of the built acceleration structure
+     * The required size, in bytes, of the built acceleration structure
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setAccelerationStructureSize(@NUInt long value);
 
     /**
-     * @brief The required size, in bytes, of the scratch buffer used to build the acceleration structure
+     * The required size, in bytes, of the scratch buffer used to build the acceleration structure
      */
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -60,14 +60,14 @@ public final class MTLAccelerationStructureSizes extends StructObject {
     public native long buildScratchBufferSize();
 
     /**
-     * @brief The required size, in bytes, of the scratch buffer used to build the acceleration structure
+     * The required size, in bytes, of the scratch buffer used to build the acceleration structure
      */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setBuildScratchBufferSize(@NUInt long value);
 
     /**
-     * @brief The required size, in bytes, of the scratch buffer used to refit the acceleration structure
+     * The required size, in bytes, of the scratch buffer used to refit the acceleration structure
      */
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -75,7 +75,7 @@ public final class MTLAccelerationStructureSizes extends StructObject {
     public native long refitScratchBufferSize();
 
     /**
-     * @brief The required size, in bytes, of the scratch buffer used to refit the acceleration structure
+     * The required size, in bytes, of the scratch buffer used to refit the acceleration structure
      */
     @Generated
     @StructureField(order = 2, isGetter = false)

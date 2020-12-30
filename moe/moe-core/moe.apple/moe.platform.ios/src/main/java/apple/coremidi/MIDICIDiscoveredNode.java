@@ -28,8 +28,9 @@ import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
- * @class    MIDICIDiscoveredNode
- * @brief     An object created during MIDI-CI discovery representing a MIDI destination with an
+ * MIDICIDiscoveredNode
+ * 
+ * An object created during MIDI-CI discovery representing a MIDI destination with an
  *             associated MIDI source that responds to capability inquiries.
  */
 @Generated

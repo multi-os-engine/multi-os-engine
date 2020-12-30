@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class represents an event that is evaluated based on entry to and/or
+ * This class represents an event that is evaluated based on entry to and/or
  *        exit from a Region
  */
 @Generated
@@ -131,7 +131,7 @@ public class HMMutableLocationEvent extends HMLocationEvent {
     public static native Object new_objc();
 
     /**
-     * @brief Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
+     * Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
      *        This property will be nil when an application is not authorized for location services.
      */
     @Generated
@@ -147,7 +147,7 @@ public class HMMutableLocationEvent extends HMLocationEvent {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
+     * Region on which events are triggered based on the properties notifyOnEntry and notifyOnExit.
      *        This property will be nil when an application is not authorized for location services.
      */
     @Generated

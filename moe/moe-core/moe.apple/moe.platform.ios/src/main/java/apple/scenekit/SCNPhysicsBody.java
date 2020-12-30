@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsBody
- * @abstract The SCNPhysicsBody class describes the physics properties (such as mass, friction...) of a node.
+ * SCNPhysicsBody
+ * 
+ * The SCNPhysicsBody class describes the physics properties (such as mass, friction...) of a node.
  */
 @Generated
 @Library("SceneKit")

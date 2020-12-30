@@ -44,9 +44,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLObjectContainer
- * @abstract Default container object
- * @discussion Subclass the object container to support custom containers. Such 
+ * MDLObjectContainer
+ * 
+ * Default container object
+ * 
+ * Subclass the object container to support custom containers. Such
  *             custom containers might reference in memory representations, offline 
  *             databases, and so on.
  */

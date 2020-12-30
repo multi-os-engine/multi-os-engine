@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKSeriesType
- * @abstract      Represents a type of HKSeriesSample
+ * HKSeriesType
+ * 
+ * Represents a type of HKSeriesSample
  */
 @Generated
 @Library("HealthKit")

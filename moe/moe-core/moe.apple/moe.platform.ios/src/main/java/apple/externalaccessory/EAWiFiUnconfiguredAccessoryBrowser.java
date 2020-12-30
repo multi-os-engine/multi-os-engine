@@ -43,9 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Interface for browsing unconfigured accessories
+ * Interface for browsing unconfigured accessories
  * 
- * @discussion This class brokers access to the MFi Wireless Accessory Configuration (WAC) process.
+ * This class brokers access to the MFi Wireless Accessory Configuration (WAC) process.
  *             This browser enables the application to scan for unconfigured accessories,
  *             connect them to the user's Wi-Fi infrastructure and configure attributes of
  *             the accessory.
@@ -162,9 +162,9 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief Begin the configuration process for the chosen accessory
+     * Begin the configuration process for the chosen accessory
      * 
-     * @discussion Stop the search for unconfigured accessories and begins the configuration process of the specified EAWiFiUnconfiguredAccessory.
+     * Stop the search for unconfigured accessories and begins the configuration process of the specified EAWiFiUnconfiguredAccessory.
      *             The user is guided through the configuration process via Apple UI. This process can take up to a few minutes to complete.
      *             The host application delegate will receive the didFinishConfiguringAccessory callback with an error that should be
      *             checked upon completion.
@@ -178,9 +178,9 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
             UIViewController viewController);
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion The delegate object that will receive the browser events.
+     * The delegate object that will receive the browser events.
      */
     @Generated
     @Selector("delegate")
@@ -192,9 +192,9 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     public native EAWiFiUnconfiguredAccessoryBrowser init();
 
     /**
-     * @brief Designated initializer.
+     * Designated initializer.
      * 
-     * @discussion Initializes an instance of the EAWiFiUnconfiguredAccessoryBrowser class
+     * Initializes an instance of the EAWiFiUnconfiguredAccessoryBrowser class
      *             which can be further configured based on the application's interests.
      * 
      * @param delegate The delegate that will receive the EAWiFiUnconfiguredAccessoryBrowserDelegate events.
@@ -208,9 +208,9 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
             @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate delegate, NSObject queue);
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion The delegate object that will receive the browser events.
+     * The delegate object that will receive the browser events.
      */
     @Generated
     @Selector("setDelegate:")
@@ -218,9 +218,9 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
             @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value);
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion The delegate object that will receive the browser events.
+     * The delegate object that will receive the browser events.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate value) {
@@ -235,9 +235,9 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     }
 
     /**
-     * @brief Start the search for unconfigured accessories
+     * Start the search for unconfigured accessories
      * 
-     * @discussion Starts a Wi-Fi scan for unconfigured accessories. This power and resource intensive process and must
+     * Starts a Wi-Fi scan for unconfigured accessories. This power and resource intensive process and must
      *             only be used when actively searching for accessories. Scans should be stopped immediately when the
      *             desired accessories have been located.
      * 
@@ -248,16 +248,16 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     public native void startSearchingForUnconfiguredAccessoriesMatchingPredicate(NSPredicate predicate);
 
     /**
-     * @brief Stop the search for unconfigured MFi Wireless Accessory Configuration accessories
+     * Stop the search for unconfigured MFi Wireless Accessory Configuration accessories
      */
     @Generated
     @Selector("stopSearchingForUnconfiguredAccessories")
     public native void stopSearchingForUnconfiguredAccessories();
 
     /**
-     * @property unconfiguredAccessories
+     * [@property] unconfiguredAccessories
      * 
-     * @discussion The set of discovered unconfigured accessories described by EAWiFiUnconfiguredAccessory objects.
+     * The set of discovered unconfigured accessories described by EAWiFiUnconfiguredAccessory objects.
      *             This snapshot will only include objects matching the filter predicate defined when starting the search.
      */
     @Generated

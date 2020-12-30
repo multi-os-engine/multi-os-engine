@@ -27,9 +27,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSTemporaryNDArray
- * @abstract   A MPSNDArray that uses command buffer specific memory to store the array data
- * @discussion Temporary memory is command buffer specific memory, and is useful for MPSNDArray allocations
+ * MPSTemporaryNDArray
+ * 
+ * A MPSNDArray that uses command buffer specific memory to store the array data
+ * 
+ * Temporary memory is command buffer specific memory, and is useful for MPSNDArray allocations
  *             with limited lifetime within a single command buffer. Typically, most MPSNDArrays that
  *             are not read or written to by the CPU or needed in other command buffers should be
  *             MPSTemporaryNDArray. This will greatly reduce time spent allocating new memory, reduce memory usage
@@ -148,10 +150,10 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     public static native Object new_objc();
 
     /**
-     * @abstract       The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel
+     * The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel
      *                 before its contents become undefined.
      * 
-     * @discussion     MPSTemporaryNDArrays must release their underlying buffers for reuse
+     * MPSTemporaryNDArrays must release their underlying buffers for reuse
      *                 immediately after last use. So as to facilitate *prompt* convenient
      *                 memory recycling, each time a MPSTemporaryNDArray is read by a
      *                 MPSNDArray... -encode... method, its readCount is automatically
@@ -188,10 +190,10 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract       The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel
+     * The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel
      *                 before its contents become undefined.
      * 
-     * @discussion     MPSTemporaryNDArrays must release their underlying buffers for reuse
+     * MPSTemporaryNDArrays must release their underlying buffers for reuse
      *                 immediately after last use. So as to facilitate *prompt* convenient
      *                 memory recycling, each time a MPSTemporaryNDArray is read by a
      *                 MPSNDArray... -encode... method, its readCount is automatically
@@ -227,7 +229,8 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     public static native Class superclass_static();
 
     /**
-     * @abstract   Initialize a MPSTemporaryNDArray for use on a MTLCommandBuffer
+     * Initialize a MPSTemporaryNDArray for use on a MTLCommandBuffer
+     * 
      * @param      commandBuffer       The MTLCommandBuffer on which the MPSTemporaryNDArray will be exclusively used
      * @param      descriptor          A valid MPSNDArrayDescriptor describing the MPSNDArray format to create
      * @return     A valid MPSTemporaryNDArray.  The object is not managed by a NSAutoreleasePool. The object will be

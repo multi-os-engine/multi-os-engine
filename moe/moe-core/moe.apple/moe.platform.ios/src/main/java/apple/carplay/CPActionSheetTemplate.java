@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPActionSheetTemplate represents an action sheet that must be dismissed with a button press
+ * [@c] CPActionSheetTemplate represents an action sheet that must be dismissed with a button press
  * before the user may return to using the app.
  */
 @Generated

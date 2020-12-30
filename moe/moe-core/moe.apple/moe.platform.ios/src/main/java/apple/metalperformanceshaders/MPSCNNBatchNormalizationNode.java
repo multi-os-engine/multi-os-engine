@@ -26,9 +26,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNBatchNormalizationNode
- * @abstract   A node representing batch normalization for inference or training
- * @discussion Batch normalization operates differently for inference and training.
+ * MPSCNNBatchNormalizationNode
+ * 
+ * A node representing batch normalization for inference or training
+ * 
+ * Batch normalization operates differently for inference and training.
  *             For inference, the normalization is done according to a static statistical
  *             representation of data saved during training. For training, this representation
  *             is ever evolving.  In the low level MPS batch normalization interface,
@@ -108,8 +110,9 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
     public static native String description_static();
 
     /**
-     * @abstract Options controlling how batch normalization is calculated
-     * @discussion     Default: MPSCNNBatchNormalizationFlagsDefault
+     * Options controlling how batch normalization is calculated
+     * 
+     * Default: MPSCNNBatchNormalizationFlagsDefault
      */
     @Generated
     @Selector("flags")
@@ -171,8 +174,9 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract Options controlling how batch normalization is calculated
-     * @discussion     Default: MPSCNNBatchNormalizationFlagsDefault
+     * Options controlling how batch normalization is calculated
+     * 
+     * Default: MPSCNNBatchNormalizationFlagsDefault
      */
     @Generated
     @Selector("setFlags:")

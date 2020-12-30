@@ -40,8 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class	AVAudioSessionChannelDescription
- * @brief	Information about a port's audio channels.
+ * AVAudioSessionChannelDescription
+ * 
+ * Information about a port's audio channels.
  * 
  * AudioQueue, AURemoteIO and AUVoiceIO instances can be assigned to communicate with specific
  * hardware channels by setting an array of <port UID, channel index> pairs.

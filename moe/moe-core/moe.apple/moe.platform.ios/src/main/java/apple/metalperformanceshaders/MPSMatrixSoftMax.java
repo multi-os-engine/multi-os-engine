@@ -28,13 +28,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixSoftMax
+ * MPSMatrixSoftMax
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A softmax kernel that operates on matrices.
+ * A softmax kernel that operates on matrices.
  * 
- * @discussion A MPSMatrixSoftMax object computes:
+ * A MPSMatrixSoftMax object computes:
  * 
  *                 B_ij = Exp { A_ij } / ( Sum_k Exp { A_ik } )
  * 
@@ -94,11 +94,12 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * Make a copy of this kernel for a new device - @see MPSKernel
+     * 
      * @param      zone        The NSZone in which to allocate the object
      * @param      device      The device for the new MPSKernel. If nil, then use
      *                         self.device.
-     * @result     a pointer to a copy of this MPSKernel. This will fail, returning
+     * @return     a pointer to a copy of this MPSKernel. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -117,16 +118,9 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixSoftMax object to a command buffer.
+     * Encode a MPSMatrixSoftMax object to a command buffer.
      * 
-     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
-     * 
-     * @param      inputMatrix     A valid MPSMatrix object which specifies the input matrix.
-     * 
-     * @param      resultMatrix    A valid MPSMatrix object which specifies the matrix which will
-     *                             be overwritten by the result.
-     * 
-     * @discussion Certain constraints apply to the sizes of the matrices depending on the sizes requested at
+     * Certain constraints apply to the sizes of the matrices depending on the sizes requested at
      *             initialization time as well as the origins at the time this routine is called:
      * 
      *             The result matrix must be large enough to hold a two dimensional array of 'sourceRows' rows and
@@ -138,6 +132,13 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
      * 
      *             The datatypes of the matrices inputMatrix and resultMatrix must match and be either
      *             MPSDataTypeFloat32 or MPSDataTypeFloat16.
+     * 
+     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
+     * @param      inputMatrix     A valid MPSMatrix object which specifies the input matrix.
+     * 
+     * @param      resultMatrix    A valid MPSMatrix object which specifies the matrix which will
+     *                             be overwritten by the result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:resultMatrix:")
@@ -159,8 +160,10 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public native MPSMatrixSoftMax initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixSoftMax
      * @param      device      The MTLDevice on which to make the MPSMatrixSoftMax
      * @return     A new MPSMatrixSoftMax object, or nil if failure.
@@ -170,7 +173,7 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public native MPSMatrixSoftMax initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize an MPSMatrixSoftMax object on a device for a given size.
+     * Initialize an MPSMatrixSoftMax object on a device for a given size.
      * 
      * @param      device          The device on which the kernel will execute.
      * 
@@ -216,9 +219,9 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   sourceColumns
+     * [@property]   sourceColumns
      * 
-     * @discussion The number of columns to consider from the source in the operation.
+     * The number of columns to consider from the source in the operation.
      *             This property is modifiable and defaults to NSUIntegerMax and the number is
      *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
      *             fit into the source matrix available starting from sourceMatrixOrigin.y,
@@ -237,9 +240,9 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public native void setSourceColumns(@NUInt long value);
 
     /**
-     * @property   sourceRows
+     * [@property]   sourceRows
      * 
-     * @discussion The number of rows to consider from the source in the operation.
+     * The number of rows to consider from the source in the operation.
      *             This property is modifiable and defaults to NSUIntegerMax and the number is
      *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
      *             fit into the source matrix available starting from sourceMatrixOrigin.x,
@@ -262,9 +265,9 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   sourceColumns
+     * [@property]   sourceColumns
      * 
-     * @discussion The number of columns to consider from the source in the operation.
+     * The number of columns to consider from the source in the operation.
      *             This property is modifiable and defaults to NSUIntegerMax and the number is
      *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
      *             fit into the source matrix available starting from sourceMatrixOrigin.y,
@@ -284,9 +287,9 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public native long sourceColumns();
 
     /**
-     * @property   sourceRows
+     * [@property]   sourceRows
      * 
-     * @discussion The number of rows to consider from the source in the operation.
+     * The number of rows to consider from the source in the operation.
      *             This property is modifiable and defaults to NSUIntegerMax and the number is
      *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
      *             fit into the source matrix available starting from sourceMatrixOrigin.x,

@@ -3,11 +3,12 @@ package apple.coremidi.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum		MIDIProtocolID
- * @abstract	Specifies a MIDI protocol variant.
- * @var		kMIDIProtocol_1_0
+ * [@enum]		MIDIProtocolID
+ * 
+ * Specifies a MIDI protocol variant.
+ * [@var]		kMIDIProtocol_1_0
  * 				MIDI 1.0.
- * @var		kMIDIProtocol_2_0
+ * [@var]		kMIDIProtocol_2_0
  * 				MIDI 2.0.
  */
 @Generated

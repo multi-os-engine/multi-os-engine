@@ -46,8 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class RPBroadcastActivityViewController
- * @abstract View controller that presents the user with a list of broadcast services installed on the device.
+ * RPBroadcastActivityViewController
+ * 
+ * View controller that presents the user with a list of broadcast services installed on the device.
  */
 @Generated
 @Library("ReplayKit")
@@ -142,7 +143,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
+     * Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
      * 
      * The view controller will present the user with a list of broadcast services available on the device and allow the user to set up a broadcast with the service through the service's UI.
      * 
@@ -188,7 +189,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     public static native long version_static();
 
     /**
-     * @abstract Delegate that is notified when the activity view controller is complete.
+     * Delegate that is notified when the activity view controller is complete.
      */
     @Generated
     @Selector("delegate")
@@ -208,7 +209,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     public native RPBroadcastActivityViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * @abstract Delegate that is notified when the activity view controller is complete.
+     * Delegate that is notified when the activity view controller is complete.
      */
     @Generated
     @Selector("setDelegate:")
@@ -216,7 +217,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
             @Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value);
 
     /**
-     * @abstract Delegate that is notified when the activity view controller is complete.
+     * Delegate that is notified when the activity view controller is complete.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value) {
@@ -239,7 +240,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     }
 
     /**
-     * @abstract Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
+     * Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
      * 
      * The view controller will present the user with a view that shows the preferred streaming extension service and allow the user to set up a broadcast with the service through the service's UI.
      * 

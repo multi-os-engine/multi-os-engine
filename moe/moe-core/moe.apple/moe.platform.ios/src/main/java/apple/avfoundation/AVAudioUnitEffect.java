@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitEffect
- * @abstract an AVAudioUnit that processes audio in real-time
- * @discussion
+ * AVAudioUnitEffect
+ * 
+ * an AVAudioUnit that processes audio in real-time
+ * 
  * An AVAudioUnitEffect represents an audio unit of type kAudioUnitType_Effect,
  * kAudioUnitType_MusicEffect, kAudioUnitType_Panner, kAudioUnitType_RemoteEffect or 
  * kAudioUnitType_RemoteMusicEffect.
@@ -172,8 +173,9 @@ public class AVAudioUnitEffect extends AVAudioUnit {
     public static native long version_static();
 
     /**
-     * @property bypass
-     * @abstract Bypass state of the audio unit.
+     * [@property] bypass
+     * 
+     * Bypass state of the audio unit.
      */
     @Generated
     @Selector("bypass")
@@ -184,18 +186,19 @@ public class AVAudioUnitEffect extends AVAudioUnit {
     public native AVAudioUnitEffect init();
 
     /**
-     * @method initWithAudioComponentDescription:
-     * @abstract Create an AVAudioUnitEffect object.
+     * initWithAudioComponentDescription:
      * 
-     * @param audioComponentDescription
-     * AudioComponentDescription of the audio unit to be instantiated.
-     * @discussion
+     * Create an AVAudioUnitEffect object.
+     * 
      * The componentType must be one of these types
      * kAudioUnitType_Effect
      * kAudioUnitType_MusicEffect
      * kAudioUnitType_Panner
      * kAudioUnitType_RemoteEffect
      * kAudioUnitType_RemoteMusicEffect
+     * 
+     * @param audioComponentDescription
+     * AudioComponentDescription of the audio unit to be instantiated.
      */
     @Generated
     @Selector("initWithAudioComponentDescription:")
@@ -203,8 +206,9 @@ public class AVAudioUnitEffect extends AVAudioUnit {
             @ByValue AudioComponentDescription audioComponentDescription);
 
     /**
-     * @property bypass
-     * @abstract Bypass state of the audio unit.
+     * [@property] bypass
+     * 
+     * Bypass state of the audio unit.
      */
     @Generated
     @Selector("setBypass:")

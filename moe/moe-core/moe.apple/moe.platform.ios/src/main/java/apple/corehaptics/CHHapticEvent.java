@@ -24,10 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CHHapticEvent
- * @abstract
+ * CHHapticEvent
+ * 
  * 	The description of a single haptic/audio event, plus optional Event parameters which modify the event.
- * @discussion
+ * 
  * 	CHHapticEvents have a relative time property to allow specifying the time relationship between events in a pattern.
  */
 @Generated
@@ -89,7 +89,7 @@ public class CHHapticEvent extends NSObject {
     public static native String description_static();
 
     /**
-     * @property duration
+     * [@property] duration
      * The duration for this event.  Units are seconds.  If unset (0.0), Continuous event types will have no fixed end.
      */
     @Generated
@@ -97,7 +97,7 @@ public class CHHapticEvent extends NSObject {
     public native double duration();
 
     /**
-     * @property eventParameters
+     * [@property] eventParameters
      * NSArray of Event parameters.  Can be empty.
      */
     @Generated
@@ -114,9 +114,10 @@ public class CHHapticEvent extends NSObject {
     public native CHHapticEvent init();
 
     /**
-     * @method initWithAudioResourceID:parameters:relativeTime
-     * @abstract
+     * initWithAudioResourceID:parameters:relativeTime
+     * 
      * 	Initialize a new CHHapticEvent using a previously-loaded audio resource.
+     * 
      * @param resID
      * 	A previously-registered audio resource ID (see `CHHapticEngine(registerAudioResource:options:error)`).
      * @param eventParams
@@ -130,9 +131,13 @@ public class CHHapticEvent extends NSObject {
             NSArray<? extends CHHapticEventParameter> eventParams, double time);
 
     /**
-     * @method initWithAudioResourceID:parameters:relativeTime:duration
-     * @abstract
+     * initWithAudioResourceID:parameters:relativeTime:duration
+     * 
      * 	Initialize a new CHHapticEvent using a previously-loaded audio resource.
+     * 
+     * 	If the specified duration is less than the duration of the audio resource, its playback will be truncated.  If it
+     * 	is greater, its playback will be padded with silence.  If zero, it will be ignored.
+     * 
      * @param resID
      * 	A previously-registered audio resource ID (see `CHHapticEngine(registerAudioResource:options:error)`).
      * @param eventParams
@@ -141,9 +146,6 @@ public class CHHapticEvent extends NSObject {
      * 	The relative time for this event versus the other events in the CHHapticPattern.
      * @param duration
      * 	The duration of this event in seconds.
-     * 	@discussion
-     * 	If the specified duration is less than the duration of the audio resource, its playback will be truncated.  If it
-     * 	is greater, its playback will be padded with silence.  If zero, it will be ignored.
      */
     @Generated
     @Selector("initWithAudioResourceID:parameters:relativeTime:duration:")
@@ -151,9 +153,10 @@ public class CHHapticEvent extends NSObject {
             NSArray<? extends CHHapticEventParameter> eventParams, double time, double duration);
 
     /**
-     * @method initWithEventType:parameters:relativeTime
-     * @abstract
+     * initWithEventType:parameters:relativeTime
+     * 
      * 	Initialize a new CHHapticEvent.  This can only be used to create Transient event types (which do not require a duration).
+     * 
      * @param type
      * 	The type of event.
      * @param eventParams
@@ -167,9 +170,10 @@ public class CHHapticEvent extends NSObject {
             NSArray<? extends CHHapticEventParameter> eventParams, double time);
 
     /**
-     * @method initWithEventType:parameters:relativeTime:duration
-     * @abstract
+     * initWithEventType:parameters:relativeTime:duration
+     * 
      * 	Initialize a new CHHapticEvent, providing a duration.
+     * 
      * @param type
      * 	The type of event.
      * @param eventParams
@@ -213,7 +217,7 @@ public class CHHapticEvent extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property relativeTime
+     * [@property] relativeTime
      * The relative time for this event versus the start time of the pattern.  Units are seconds.
      */
     @Generated
@@ -229,7 +233,7 @@ public class CHHapticEvent extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property duration
+     * [@property] duration
      * The duration for this event.  Units are seconds.  If unset (0.0), Continuous event types will have no fixed end.
      */
     @Generated
@@ -237,7 +241,7 @@ public class CHHapticEvent extends NSObject {
     public native void setDuration(double value);
 
     /**
-     * @property relativeTime
+     * [@property] relativeTime
      * The relative time for this event versus the start time of the pattern.  Units are seconds.
      */
     @Generated
@@ -253,7 +257,7 @@ public class CHHapticEvent extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property type
+     * [@property] type
      * The type of event.
      */
     @Generated

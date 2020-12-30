@@ -132,7 +132,7 @@ public class UIMenu extends UIMenuElement {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract Copies this menu and replaces its children.
+     * Copies this menu and replaces its children.
      * 
      * @param newChildren  The replacement children.
      * 
@@ -143,7 +143,7 @@ public class UIMenu extends UIMenuElement {
     public native UIMenu menuByReplacingChildren(NSArray<? extends UIMenuElement> newChildren);
 
     /**
-     * @abstract Creates a UIMenu with the given arguments.
+     * Creates a UIMenu with the given arguments.
      * 
      * @param title       The menu's title.
      * @param children    The menu's action-based sub-elements and sub-menus.
@@ -155,7 +155,7 @@ public class UIMenu extends UIMenuElement {
     public static native UIMenu menuWithTitleChildren(String title, NSArray<? extends UIMenuElement> children);
 
     /**
-     * @abstract Creates a UIMenu with the given arguments.
+     * Creates a UIMenu with the given arguments.
      * 
      * @param title       The menu's title.
      * @param image       Image to be displayed alongside the menu's title.
@@ -216,7 +216,7 @@ public class UIMenu extends UIMenuElement {
     public static native long version_static();
 
     /**
-     * @abstract Creates a UIMenu with an empty title, nil image, automatically generated identifier, and default options.
+     * Creates a UIMenu with an empty title, nil image, automatically generated identifier, and default options.
      * 
      * @param children    The menu's action-based sub-elements and sub-menus.
      * 

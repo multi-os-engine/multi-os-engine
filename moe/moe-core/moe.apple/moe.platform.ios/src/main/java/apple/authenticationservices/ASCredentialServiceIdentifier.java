@@ -101,8 +101,9 @@ public class ASCredentialServiceIdentifier extends NSObject implements NSCopying
     public static native long hash_static();
 
     /**
-     * @abstract Get the identifier.
-     * @result The service identifier.
+     * Get the identifier.
+     * 
+     * @return The service identifier.
      */
     @Generated
     @Selector("identifier")
@@ -117,7 +118,8 @@ public class ASCredentialServiceIdentifier extends NSObject implements NSCopying
     public native ASCredentialServiceIdentifier initWithCoder(NSCoder coder);
 
     /**
-     * @abstract Initializes an ASCredentialServiceIdentifier object.
+     * Initializes an ASCredentialServiceIdentifier object.
+     * 
      * @param identifier string value for the service identifier.
      * @param type the type that the service identifier string represents.
      */
@@ -179,8 +181,9 @@ public class ASCredentialServiceIdentifier extends NSObject implements NSCopying
     }
 
     /**
-     * @abstract Get the service identifier type.
-     * @result The service identifier type.
+     * Get the service identifier type.
+     * 
+     * @return The service identifier type.
      */
     @Generated
     @Selector("type")

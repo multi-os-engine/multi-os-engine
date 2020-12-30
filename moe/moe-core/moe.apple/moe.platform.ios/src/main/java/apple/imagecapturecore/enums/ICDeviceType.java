@@ -5,10 +5,11 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * ------------------------------------------------------------------------------------------------------------------------------
- * @const ICDeviceType
- * @abstract Image Capture Device Types
- * @constant ICDeviceTypeCamera Camera device.
- * @constant ICDeviceTypeScanner Scanner device.
+ * [@const] ICDeviceType
+ * 
+ * Image Capture Device Types
+ * [@constant] ICDeviceTypeCamera Camera device.
+ * [@constant] ICDeviceTypeScanner Scanner device.
  */
 @Generated
 public final class ICDeviceType {

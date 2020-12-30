@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNTorus
- * @abstract SCNTorus represents a torus with controllable ring radius and pipe radius.
+ * SCNTorus
+ * 
+ * SCNTorus represents a torus with controllable ring radius and pipe radius.
  */
 @Generated
 @Library("SceneKit")
@@ -171,8 +172,10 @@ public class SCNTorus extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     /**
-     * @method torusWithRingRadius:pipeRadius:
-     * @abstract Creates and returns a torus with given ring radius and pipe radius.
+     * torusWithRingRadius:pipeRadius:
+     * 
+     * Creates and returns a torus with given ring radius and pipe radius.
+     * 
      * @param ringRadius The radius of the ring.
      * @param pipeRadius The radius of the pipe.
      */
@@ -194,9 +197,11 @@ public class SCNTorus extends SCNGeometry {
     public native SCNTorus initWithCoder(NSCoder coder);
 
     /**
-     * @property pipeRadius
-     * @abstract The radius of the torus pipe. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 0.25.
+     * [@property] pipeRadius
+     * 
+     * The radius of the torus pipe. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.25.
      */
     @Generated
     @Selector("pipeRadius")
@@ -204,9 +209,11 @@ public class SCNTorus extends SCNGeometry {
     public native double pipeRadius();
 
     /**
-     * @property pipeSegmentCount
-     * @abstract The number of subdivisions of the pipe. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 24.
+     * [@property] pipeSegmentCount
+     * 
+     * The number of subdivisions of the pipe. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
     @Selector("pipeSegmentCount")
@@ -214,9 +221,11 @@ public class SCNTorus extends SCNGeometry {
     public native long pipeSegmentCount();
 
     /**
-     * @property ringRadius
-     * @abstract The radius of the torus ring. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
+     * [@property] ringRadius
+     * 
+     * The radius of the torus ring. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
     @Selector("ringRadius")
@@ -224,9 +233,11 @@ public class SCNTorus extends SCNGeometry {
     public native double ringRadius();
 
     /**
-     * @property ringSegmentCount
-     * @abstract The number of subdivisions of the ring. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 48.
+     * [@property] ringSegmentCount
+     * 
+     * The number of subdivisions of the ring. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
     @Selector("ringSegmentCount")
@@ -234,36 +245,44 @@ public class SCNTorus extends SCNGeometry {
     public native long ringSegmentCount();
 
     /**
-     * @property pipeRadius
-     * @abstract The radius of the torus pipe. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 0.25.
+     * [@property] pipeRadius
+     * 
+     * The radius of the torus pipe. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.25.
      */
     @Generated
     @Selector("setPipeRadius:")
     public native void setPipeRadius(@NFloat double value);
 
     /**
-     * @property pipeSegmentCount
-     * @abstract The number of subdivisions of the pipe. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 24.
+     * [@property] pipeSegmentCount
+     * 
+     * The number of subdivisions of the pipe. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
     @Selector("setPipeSegmentCount:")
     public native void setPipeSegmentCount(@NInt long value);
 
     /**
-     * @property ringRadius
-     * @abstract The radius of the torus ring. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
+     * [@property] ringRadius
+     * 
+     * The radius of the torus ring. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
     @Selector("setRingRadius:")
     public native void setRingRadius(@NFloat double value);
 
     /**
-     * @property ringSegmentCount
-     * @abstract The number of subdivisions of the ring. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 48.
+     * [@property] ringSegmentCount
+     * 
+     * The number of subdivisions of the ring. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
     @Selector("setRingSegmentCount:")

@@ -19,11 +19,12 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum		AudioPanningMode
- * @abstract   Different panning algorithms.
- * @constant   kPanningMode_SoundField
+ * [@enum]		AudioPanningMode
+ * 
+ * Different panning algorithms.
+ * [@constant]   kPanningMode_SoundField
  * 	Sound field panning algorithm
- * @constant   kPanningMode_VectorBasedPanning
+ * [@constant]   kPanningMode_VectorBasedPanning
  * 	Vector based panning algorithm
  */
 @Generated

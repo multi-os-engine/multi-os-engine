@@ -36,9 +36,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_txt_record_create_with_bytes
+     * [@function] nw_txt_record_create_with_bytes
      * 
-     * @abstract
      * 	Create a new TXT record object from a buffer of bytes. If the buffer
      * 	follows the key-value pair format as defined in RFC 1464, the TXT record
      * 	object will be created as a dictionary. Otherwise, it is created as a
@@ -50,7 +49,7 @@ public final class Network {
      * @param txt_len
      * 	The length of the buffer.
      * 
-     * @result
+     * @return
      * 	An instantiated TXT record object.
      * 	Callers are responsible for deallocating using nw_release(obj) or
      * 	[obj release]. These objects support ARC.
@@ -63,12 +62,11 @@ public final class Network {
             @NUInt long txt_len);
 
     /**
-     * @function nw_txt_record_create_dictionary
+     * [@function] nw_txt_record_create_dictionary
      * 
-     * @abstract
      * 	Create an empty TXT record dictionary.
      * 
-     * @result
+     * @return
      * 	An empty TXT record dictionary.
      * 	Callers are responsible for deallocating using nw_release(obj) or
      * 	[obj release]. These objects support ARC.
@@ -78,15 +76,14 @@ public final class Network {
     public static native NSObject nw_txt_record_create_dictionary();
 
     /**
-     * @function nw_txt_record_copy
+     * [@function] nw_txt_record_copy
      * 
-     * @abstract
      *      Create a deep copy of an existing TXT record object.
      * 
      * @param txt_record
      *      The TXT record object to be copied.
      * 
-     * @result
+     * @return
      * 	A deep copy of the TXT record object.
      * 	Callers are responsible for deallocating using nw_release(obj) or
      * 	[obj release]. These objects support ARC.
@@ -96,9 +93,8 @@ public final class Network {
     public static native NSObject nw_txt_record_copy(NSObject txt_record);
 
     /**
-     * @function nw_txt_record_find_key
+     * [@function] nw_txt_record_find_key
      * 
-     * @abstract
      * 	Find a key-value pair in the TXT record object.
      * 
      * @param txt_record
@@ -107,7 +103,7 @@ public final class Network {
      * @param key
      * 	The key of the key-value pair.
      * 
-     * @result
+     * @return
      * 	An nw_txt_record_find_key_t representing the type of the key-value pair found.
      * 	The key may be invalid, may not exist, have no associated value, have an
      * 	empty associated value, or have a non-empty associated value.
@@ -118,9 +114,8 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
 
     /**
-     * @function nw_txt_record_access_key
+     * [@function] nw_txt_record_access_key
      * 
-     * @abstract
      * 	Access a value in the TXT record object with its key. Attempts to access
      * 	or modify the TXT record object from within the block are prohibited.
      * 
@@ -130,7 +125,7 @@ public final class Network {
      * @param access_value
      *      The block that will be used to access the value of the given key.
      * 
-     * @result
+     * @return
      *      The return value of the access_value block. This is an arbitrary return
      * 	value defined by the user.
      */
@@ -152,9 +147,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_txt_record_set_key
+     * [@function] nw_txt_record_set_key
      * 
-     * @abstract
      * 	Set a key-value pair on the TXT record object.
      * 
      * @param txt_record
@@ -173,7 +167,7 @@ public final class Network {
      * 	key will be inserted with a zero-length value. Inserting a NULL value
      * 	with a non-zero length will fail.
      * 
-     * @result
+     * @return
      * 	A boolean indicating if the key-value pair was inserted successfully.
      * 	Returns false if the key is invalid. A key is invalid if it is an empty
      * 	string, contains non-ASCII characters, or has length greater than
@@ -187,9 +181,8 @@ public final class Network {
             @NUInt long value_len);
 
     /**
-     * @function nw_txt_record_remove_key
+     * [@function] nw_txt_record_remove_key
      * 
-     * @abstract
      * 	Removes a key-value pair in the TXT record object given its key.
      * 
      * @param txt_record
@@ -198,7 +191,7 @@ public final class Network {
      * @param key
      * 	The key corresponding to the key-value pair.
      * 
-     * @result
+     * @return
      * 	A boolean indicating if the key-value pair specified by the given key
      * 	was removed. Returns false if the key is invalid or not present in the
      * 	TXT dictionary. A key is invalid if it is an empty string, contains
@@ -210,15 +203,14 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
 
     /**
-     * @function nw_txt_record_get_key_count
+     * [@function] nw_txt_record_get_key_count
      * 
-     * @abstract
      * 	Count the number of keys in the TXT record object.
      * 
      * @param txt_record
      * 	A TXT record object.
      * 
-     * @result
+     * @return
      * 	The number of keys in the TXT record object.
      */
     @Generated
@@ -227,9 +219,8 @@ public final class Network {
     public static native long nw_txt_record_get_key_count(NSObject txt_record);
 
     /**
-     * @function nw_txt_record_access_bytes
+     * [@function] nw_txt_record_access_bytes
      * 
-     * @abstract
      * 	Access the raw TXT record inside the TXT record object.
      * 
      * @param txt_record
@@ -239,7 +230,7 @@ public final class Network {
      * 	The block that will be used to access the raw TXT record inside the TXT
      * 	record object.
      * 
-     * @result
+     * @return
      * 	The return value of the access_bytes block, which is defined by the user.
      * 	For example, the user may want to return a boolean indicating if the
      * 	operation succeeds.
@@ -259,9 +250,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_txt_record_apply
+     * [@function] nw_txt_record_apply
      * 
-     * @abstract
      *      Apply the block to every key-value pair in the TXT record object.
      * 
      * @param txt_record
@@ -270,7 +260,7 @@ public final class Network {
      * @param applier
      *      The block that will be applied to the entire TXT record object.
      * 
-     * @result
+     * @return
      *      A boolean indicating whether iteration of the TXT record object
      * 	completed successfully. Iteration will only fail if the applier block
      * 	returns false.
@@ -292,9 +282,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_txt_record_is_equal
+     * [@function] nw_txt_record_is_equal
      * 
-     * @abstract
      *      Check if the two TXT record objects are equal.
      * 
      * @param left
@@ -303,7 +292,7 @@ public final class Network {
      * @param right
      *      The second TXT record object to be compared.
      * 
-     * @result
+     * @return
      *      A boolean indicating if the two TXT record objects are equal. Two TXT
      * 	record objects are equal if they contain the same set of key-value pairs,
      * 	where keys are compared case-insensitively. For example, "ABC=1" and
@@ -315,15 +304,14 @@ public final class Network {
     public static native boolean nw_txt_record_is_equal(NSObject left, NSObject right);
 
     /**
-     * @function nw_txt_record_is_dictionary
+     * [@function] nw_txt_record_is_dictionary
      * 
-     * @abstract
      *      Check whether the TXT record is a dictionary or a buffer.
      * 
      * @param txt_record
      * 	The TXT record object.
      * 
-     * @result
+     * @return
      *      A boolean indicating whether the TXT record is a dictionary or a buffer.
      * 		If true, the TXT record is a dictionary. If false, the TXT record is a
      * 	buffer.
@@ -333,9 +321,8 @@ public final class Network {
     public static native boolean nw_txt_record_is_dictionary(NSObject txt_record);
 
     /**
-     * @function nw_advertise_descriptor_create_bonjour_service
+     * [@function] nw_advertise_descriptor_create_bonjour_service
      * 
-     * @abstract
      * 	Creates a new advertise descriptor object based on a Bonjour service type
      * 	and optional domain. This object can be used with listener objects to
      *      specify the service the listener should advertise.
@@ -354,7 +341,7 @@ public final class Network {
      * @param domain
      * 	An optional Bonjour service domain.
      * 
-     * @result
+     * @return
      * 	An instantiated browse descriptor object.
      */
     @Generated
@@ -365,9 +352,8 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
 
     /**
-     * @function nw_advertise_descriptor_set_txt_record
+     * [@function] nw_advertise_descriptor_set_txt_record
      * 
-     * @abstract
      * 	Set the TXT record for the advertise descriptor's service. You must call
      *      nw_listener_set_advertise_descriptor to update the listener's advertising
      *      afterwards in order for these changes to take effect.
@@ -389,9 +375,8 @@ public final class Network {
             ConstVoidPtr txt_record, @NUInt long txt_length);
 
     /**
-     * @function nw_advertise_descriptor_set_no_auto_rename
+     * [@function] nw_advertise_descriptor_set_no_auto_rename
      * 
-     * @abstract
      * 	Disable auto-rename for the Bonjour service registration.
      * 	Auto-rename is enabled by default.
      * 
@@ -407,25 +392,23 @@ public final class Network {
             boolean no_auto_rename);
 
     /**
-     * @function nw_advertise_descriptor_get_no_auto_rename
+     * [@function] nw_advertise_descriptor_get_no_auto_rename
      * 
-     * @abstract
      * 	Check if auto-rename has been disabled for the Bonjour service
      * 	registration.
      * 
      * @param advertise_descriptor
      * 	The advertise descriptor object.
      * 
-     * @result A boolean indicating if auto-rename is disabled.
+     * @return A boolean indicating if auto-rename is disabled.
      */
     @Generated
     @CFunction
     public static native boolean nw_advertise_descriptor_get_no_auto_rename(NSObject advertise_descriptor);
 
     /**
-     * @function nw_advertise_descriptor_set_txt_record_object
+     * [@function] nw_advertise_descriptor_set_txt_record_object
      * 
-     * @abstract
      * 	Set the TXT record object on the advertise descriptor.
      * 
      * @param advertise_descriptor
@@ -441,15 +424,14 @@ public final class Network {
             NSObject txt_record);
 
     /**
-     * @function nw_advertise_descriptor_copy_txt_record_object
+     * [@function] nw_advertise_descriptor_copy_txt_record_object
      * 
-     * @abstract
      * 	Copies the TXT record object from the advertise descriptor.
      * 
      * @param advertise_descriptor
      * 	The advertise descriptor object.
      * 
-     * @result
+     * @return
      * 	A copy of the TXT record object, or NULL if the advertise descriptor
      * 	does not have an associated TXT record.
      */
@@ -458,9 +440,8 @@ public final class Network {
     public static native NSObject nw_advertise_descriptor_copy_txt_record_object(NSObject advertise_descriptor);
 
     /**
-     * @function nw_protocol_definition_is_equal
+     * [@function] nw_protocol_definition_is_equal
      * 
-     * @abstract
      * 	Compare two protocol definitions to check if they represent the same protocol.
      * 
      * @param definition1
@@ -469,7 +450,7 @@ public final class Network {
      * @param definition2
      * 	The second definition to compare
      * 
-     * @result
+     * @return
      * 	Returns true if the definitions represent the same protocol, false otherwise.
      */
     @Generated
@@ -477,15 +458,14 @@ public final class Network {
     public static native boolean nw_protocol_definition_is_equal(NSObject definition1, NSObject definition2);
 
     /**
-     * @function nw_protocol_options_copy_definition
+     * [@function] nw_protocol_options_copy_definition
      * 
-     * @abstract
      * 	Retrieve the protocol definition for a given options object.
      * 
      * @param options
      * 	The protocol options to check
      * 
-     * @result
+     * @return
      * 	Returns a reference-counted protocol definition object.
      */
     @Generated
@@ -493,15 +473,14 @@ public final class Network {
     public static native NSObject nw_protocol_options_copy_definition(NSObject options);
 
     /**
-     * @function nw_protocol_metadata_copy_definition
+     * [@function] nw_protocol_metadata_copy_definition
      * 
-     * @abstract
      * 	Retrieve the protocol definition for a given metadata object.
      * 
      * @param metadata
      * 	The protocol metadata to check
      * 
-     * @result
+     * @return
      * 	Returns a reference-counted protocol definition object.
      */
     @Generated
@@ -509,9 +488,8 @@ public final class Network {
     public static native NSObject nw_protocol_metadata_copy_definition(NSObject metadata);
 
     /**
-     * @function nw_interface_get_type
+     * [@function] nw_interface_get_type
      * 
-     * @abstract
      * 	Retrieves the type of an interface. This only accesses the type of the specific
      * 	interface being queried, and will not take into account types used by interfaces
      * 	that traffic will eventually be routed through. That is, if the interface is a virtual
@@ -521,7 +499,7 @@ public final class Network {
      * @param interface
      * 	The interface object to check.
      * 
-     * @result
+     * @return
      * 	Returns the type of the interface.
      */
     @Generated
@@ -529,16 +507,15 @@ public final class Network {
     public static native int nw_interface_get_type(NSObject interface_);
 
     /**
-     * @function nw_interface_get_name
+     * [@function] nw_interface_get_name
      * 
-     * @abstract
      * 	Retrieves the name of an interface, to be used for reference or logging
      * 	purposes.
      * 
      * @param interface
      * 	The interface object to check.
      * 
-     * @result
+     * @return
      * 	Returns the name of the interface as a NULL-terminated C string,
      * 	or NULL if the interface is NULL.
      */
@@ -548,16 +525,15 @@ public final class Network {
     public static native String nw_interface_get_name(NSObject interface_);
 
     /**
-     * @function nw_interface_get_index
+     * [@function] nw_interface_get_index
      * 
-     * @abstract
      * 	Retrieves the index of an interface, to be used for reference or logging
      * 	purposes. This is the same value as provided by if_nametoindex.
      * 
      * @param interface
      * 	The interface object to check.
      * 
-     * @result
+     * @return
      * 	Returns the index of the interface, or 0 if the interface is NULL.
      */
     @Generated
@@ -565,15 +541,14 @@ public final class Network {
     public static native int nw_interface_get_index(NSObject interface_);
 
     /**
-     * @function nw_endpoint_get_type
+     * [@function] nw_endpoint_get_type
      * 
-     * @abstract
      * 	Retrieves the type of a network endpoint.
      * 
      * @param endpoint
      * 	The endpoint object for which to get the type.
      * 
-     * @result
+     * @return
      * 	Returns the type of the network endpoint.
      */
     @Generated
@@ -581,9 +556,8 @@ public final class Network {
     public static native int nw_endpoint_get_type(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_create_host
+     * [@function] nw_endpoint_create_host
      * 
-     * @abstract
      * 	Creates a network endpoint with a hostname and port. The hostname
      * 	may be a string-encoding of an IP address, in which case the
      * 	the endpoint will be treated as an endpoint with the type
@@ -597,7 +571,7 @@ public final class Network {
      * 	A port number as a C string, such as "443", or a service
      * 	name, such as "https".
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_endpoint_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -610,16 +584,15 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String port);
 
     /**
-     * @function nw_endpoint_get_hostname
+     * [@function] nw_endpoint_get_hostname
      * 
-     * @abstract
      * 	Retrieves the hostname string for a network endpoint with
      * 	the type nw_endpoint_type_host or nw_endpoint_type_url.
      * 
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	Returns the hostname string for the endpoint, or NULL
      * 	if the endpoint is not of type nw_endpoint_type_host.
      */
@@ -629,16 +602,15 @@ public final class Network {
     public static native String nw_endpoint_get_hostname(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_copy_port_string
+     * [@function] nw_endpoint_copy_port_string
      * 
-     * @abstract
      * 	Returns an allocated port string for a network endpoint with
      * 	the type nw_endpoint_type_host or nw_endpoint_type_address.
      * 
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	Returns the port string for the endpoint, or NULL
      * 	if the endpoint is not of type nw_endpoint_type_host or
      * 	nw_endpoint_type_address. This string must be freed with free().
@@ -648,9 +620,8 @@ public final class Network {
     public static native BytePtr nw_endpoint_copy_port_string(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_get_port
+     * [@function] nw_endpoint_get_port
      * 
-     * @abstract
      * 	Retrieves the port for a network endpoint with the type
      * 	nw_endpoint_type_url, nw_endpoint_type_host, or nw_endpoint_type_address.
      * 	The port will be returned in Host Byte Order.
@@ -658,7 +629,7 @@ public final class Network {
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	Returns the port for the endpoint, or 0 if the endpoint is not
      * 	of type nw_endpoint_type_host or nw_endpoint_type_address.
      * 	The port will be returned in Host Byte Order.
@@ -668,16 +639,15 @@ public final class Network {
     public static native char nw_endpoint_get_port(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_create_address
+     * [@function] nw_endpoint_create_address
      * 
-     * @abstract
      * 	Creates a network endpoint with a sockaddr struct. The endpoint
      * 	will have the type nw_endpoint_type_address.
      * 
      * @param address
      * 	An address stored as a sockaddr.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_endpoint_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -689,16 +659,15 @@ public final class Network {
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr address);
 
     /**
-     * @function nw_endpoint_copy_address_string
+     * [@function] nw_endpoint_copy_address_string
      * 
-     * @abstract
      * 	Returns an allocated IP address string for a network endpoint with
      * 	the type nw_endpoint_type_address.
      * 
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	Returns the IP address string for the endpoint, or NULL
      * 	if the endpoint is not of type nw_endpoint_type_address.
      * 	This string must be freed with free().
@@ -708,16 +677,15 @@ public final class Network {
     public static native BytePtr nw_endpoint_copy_address_string(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_get_address
+     * [@function] nw_endpoint_get_address
      * 
-     * @abstract
      * 	Retrieves the sockaddr struct for a network endpoint with
      * 	the type nw_endpoint_type_address.
      * 
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	Returns the sockaddr struct for the endpoint, or NULL
      * 	if the endpoint is not of type nw_endpoint_type_address.
      */
@@ -727,9 +695,8 @@ public final class Network {
     public static native sockaddr nw_endpoint_get_address(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_create_bonjour_service
+     * [@function] nw_endpoint_create_bonjour_service
      * 
-     * @abstract
      * 	Creates a network endpoint for a Bonjour Service name, type, and
      * 	domain. The endpoint will have the type nw_endpoint_type_bonjour_service.
      * 
@@ -742,7 +709,7 @@ public final class Network {
      * @param domain
      * 	The Bonjour Service domain, such as "local".
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_endpoint_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -756,16 +723,15 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
 
     /**
-     * @function nw_endpoint_get_bonjour_service_name
+     * [@function] nw_endpoint_get_bonjour_service_name
      * 
-     * @abstract
      * 	Retrieves the Bonjour Service name string for a network
      * 	endpoint with the type nw_endpoint_type_bonjour_service.
      * 
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	Returns the Bonjour Service name string for the endpoint, or NULL
      * 	if the endpoint is not of type nw_endpoint_type_bonjour_service.
      */
@@ -775,16 +741,15 @@ public final class Network {
     public static native String nw_endpoint_get_bonjour_service_name(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_get_bonjour_service_type
+     * [@function] nw_endpoint_get_bonjour_service_type
      * 
-     * @abstract
      * 	Retrieves the Bonjour Service type string for a network
      * 	endpoint with the type nw_endpoint_type_bonjour_service.
      * 
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	Returns the Bonjour Service type string for the endpoint, or NULL
      * 	if the endpoint is not of type nw_endpoint_type_bonjour_service.
      */
@@ -794,16 +759,15 @@ public final class Network {
     public static native String nw_endpoint_get_bonjour_service_type(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_get_bonjour_service_domain
+     * [@function] nw_endpoint_get_bonjour_service_domain
      * 
-     * @abstract
      * 	Retrieves the Bonjour Service domain string for a network
      * 	endpoint with the type nw_endpoint_type_bonjour_service.
      * 
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	Returns the Bonjour Service domain string for the endpoint, or NULL
      * 	if the endpoint is not of type nw_endpoint_type_bonjour_service.
      */
@@ -813,16 +777,15 @@ public final class Network {
     public static native String nw_endpoint_get_bonjour_service_domain(NSObject endpoint);
 
     /**
-     * @function nw_endpoint_create_url
+     * [@function] nw_endpoint_create_url
      * 
-     * @abstract
      * 	Creates a network endpoint with a URL. The endpoint will have the type
      * 	nw_endpoint_type_url.
      * 
      * @param url
      * 	The URL string.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_endpoint_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -834,16 +797,15 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String url);
 
     /**
-     * @function nw_endpoint_get_url
+     * [@function] nw_endpoint_get_url
      * 
-     * @abstract
      * 	Retrieves the URL string from a network endpoint of type
      * 	nw_endpoint_type_url.
      * 
      * @param endpoint
      * 	The endpoint object.
      * 
-     * @result
+     * @return
      * 	The URL string, or NULL if the endpoint is not of type
      * 	nw_endpoint_type_url.
      */
@@ -853,9 +815,8 @@ public final class Network {
     public static native String nw_endpoint_get_url(NSObject endpoint);
 
     /**
-     * @function nw_parameters_create_secure_tcp
+     * [@function] nw_parameters_create_secure_tcp
      * 
-     * @abstract
      * 	Creates a parameters object that is configured for TLS and TCP. The caller can use
      * 	the default configuration for TLS and TCP, or set specific options for each protocol,
      * 	or disable TLS.
@@ -872,7 +833,7 @@ public final class Network {
      * 	block and operate on the nw_protocol_options_t object. It is invalid to try
      * 	to disable TCP using NW_PARAMETERS_DISABLE_PROTOCOL.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_parameters_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -899,9 +860,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_parameters_create_secure_udp
+     * [@function] nw_parameters_create_secure_udp
      * 
-     * @abstract
      * 	Creates a parameters object that is configured for DTLS and UDP. The caller can use
      * 	the default configuration for DTLS and UDP, or set specific options for each protocol,
      * 	or disable DTLS.
@@ -918,7 +878,7 @@ public final class Network {
      * 	block and operate on the nw_protocol_options_t object. It is invalid to try
      * 	to disable UDP using NW_PARAMETERS_DISABLE_PROTOCOL.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_parameters_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -945,16 +905,15 @@ public final class Network {
     }
 
     /**
-     * @function nw_parameters_create
+     * [@function] nw_parameters_create
      * 
-     * @abstract
      * 	Creates a generic parameters object. Note that in order to use parameters
      * 	with an nw_connection_t or an nw_listener_t, the parameters must have protocols
      * 	added into the default nw_protocol_stack_t. Clients using standard protocol
      * 	configurations should use nw_parameters_create_secure_tcp() or
      * 	nw_parameters_create_secure_udp().
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_parameters_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -964,15 +923,14 @@ public final class Network {
     public static native NSObject nw_parameters_create();
 
     /**
-     * @function nw_parameters_copy
+     * [@function] nw_parameters_copy
      * 
-     * @abstract
      * 	Creates a deep copy of a parameters object that can be modified.
      * 
      * @param parameters
      * 	The existing parameters object to copy
      * 
-     * @result
+     * @return
      * 	Returns a newly allocated nw_parameters_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -983,9 +941,8 @@ public final class Network {
     public static native NSObject nw_parameters_copy(NSObject parameters);
 
     /**
-     * @function nw_parameters_require_interface
+     * [@function] nw_parameters_require_interface
      * 
-     * @abstract
      * 	Require any connections or listeners using these parameters to use
      * 	the provided network interface, or none if NULL is passed.
      * 
@@ -1001,15 +958,14 @@ public final class Network {
     public static native void nw_parameters_require_interface(NSObject parameters, NSObject interface_);
 
     /**
-     * @function nw_parameters_copy_required_interface
+     * [@function] nw_parameters_copy_required_interface
      * 
-     * @abstract
      * 	Access the required network interface set on the parameters.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns the interface that is required by the parameters, or
      * 	NULL if no interface is required.
      */
@@ -1018,9 +974,8 @@ public final class Network {
     public static native NSObject nw_parameters_copy_required_interface(NSObject parameters);
 
     /**
-     * @function nw_parameters_prohibit_interface
+     * [@function] nw_parameters_prohibit_interface
      * 
-     * @abstract
      * 	Prohibit any connections or listeners using these parameters from using
      * 	the provided network interface.
      * 
@@ -1035,9 +990,8 @@ public final class Network {
     public static native void nw_parameters_prohibit_interface(NSObject parameters, NSObject interface_);
 
     /**
-     * @function nw_parameters_clear_prohibited_interfaces
+     * [@function] nw_parameters_clear_prohibited_interfaces
      * 
-     * @abstract
      * 	Clear any interfaces that had been prohibited.
      * 
      * @param parameters
@@ -1048,9 +1002,8 @@ public final class Network {
     public static native void nw_parameters_clear_prohibited_interfaces(NSObject parameters);
 
     /**
-     * @function nw_parameters_iterate_prohibited_interfaces
+     * [@function] nw_parameters_iterate_prohibited_interfaces
      * 
-     * @abstract
      * 	List all prohibited network interfaces.
      * 
      * @param parameters
@@ -1074,9 +1027,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_parameters_set_required_interface_type
+     * [@function] nw_parameters_set_required_interface_type
      * 
-     * @abstract
      * 	Require any connections or listeners using these parameters to use
      * 	the provided network interface type.
      * 
@@ -1091,15 +1043,14 @@ public final class Network {
     public static native void nw_parameters_set_required_interface_type(NSObject parameters, int interface_type);
 
     /**
-     * @function nw_parameters_get_required_interface_type
+     * [@function] nw_parameters_get_required_interface_type
      * 
-     * @abstract
      * 	Access the required network interface type set on the parameters.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns the interface type that is required by the parameters, or
      * 	nw_interface_type_other_t if no interface type is required.
      */
@@ -1108,9 +1059,8 @@ public final class Network {
     public static native int nw_parameters_get_required_interface_type(NSObject parameters);
 
     /**
-     * @function nw_parameters_prohibit_interface_type
+     * [@function] nw_parameters_prohibit_interface_type
      * 
-     * @abstract
      * 	Prohibit any connections or listeners using these parameters from using
      * 	the provided network interface type.
      * 
@@ -1125,9 +1075,8 @@ public final class Network {
     public static native void nw_parameters_prohibit_interface_type(NSObject parameters, int interface_type);
 
     /**
-     * @function nw_parameters_clear_prohibited_interface_types
+     * [@function] nw_parameters_clear_prohibited_interface_types
      * 
-     * @abstract
      * 	Clear any interface types that had been prohibited.
      * 
      * @param parameters
@@ -1138,9 +1087,8 @@ public final class Network {
     public static native void nw_parameters_clear_prohibited_interface_types(NSObject parameters);
 
     /**
-     * @function nw_parameters_iterate_prohibited_interface_types
+     * [@function] nw_parameters_iterate_prohibited_interface_types
      * 
-     * @abstract
      * 	List all prohibited network interface types.
      * 
      * @param parameters
@@ -1164,9 +1112,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_parameters_set_prohibit_expensive
+     * [@function] nw_parameters_set_prohibit_expensive
      * 
-     * @abstract
      * 	Prohibit any connections or listeners using these parameters from using
      * 	a network interface that is considered expensive by the system.
      * 
@@ -1182,15 +1129,14 @@ public final class Network {
     public static native void nw_parameters_set_prohibit_expensive(NSObject parameters, boolean prohibit_expensive);
 
     /**
-     * @function nw_parameters_get_prohibit_expensive
+     * [@function] nw_parameters_get_prohibit_expensive
      * 
-     * @abstract
      * 	Check if the parameters prohibit expensive interfaces.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns true if expensive interfaces are prohibited, or
      * 	false otherwise.
      */
@@ -1199,9 +1145,8 @@ public final class Network {
     public static native boolean nw_parameters_get_prohibit_expensive(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_prohibit_constrained
+     * [@function] nw_parameters_set_prohibit_constrained
      * 
-     * @abstract
      * 	Prohibit any connections or listeners using these parameters from using
      * 	a network interface that is considered constrained by the system.
      * 
@@ -1217,15 +1162,14 @@ public final class Network {
     public static native void nw_parameters_set_prohibit_constrained(NSObject parameters, boolean prohibit_constrained);
 
     /**
-     * @function nw_parameters_get_prohibit_constrained
+     * [@function] nw_parameters_get_prohibit_constrained
      * 
-     * @abstract
      * 	Check if the parameters prohibit constrained interfaces.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns true if constrained interfaces are prohibited, or
      * 	false otherwise.
      */
@@ -1234,9 +1178,8 @@ public final class Network {
     public static native boolean nw_parameters_get_prohibit_constrained(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_reuse_local_address
+     * [@function] nw_parameters_set_reuse_local_address
      * 
-     * @abstract
      * 	Allow any connections using these parameters to reuse
      * 	local addresses already in use by other connections.
      * 
@@ -1252,15 +1195,14 @@ public final class Network {
     public static native void nw_parameters_set_reuse_local_address(NSObject parameters, boolean reuse_local_address);
 
     /**
-     * @function nw_parameters_get_reuse_local_address
+     * [@function] nw_parameters_get_reuse_local_address
      * 
-     * @abstract
      * 	Check if the parameters allow local address reuse.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns true if local address reuse is allowed, or
      * 	false otherwise.
      */
@@ -1269,9 +1211,8 @@ public final class Network {
     public static native boolean nw_parameters_get_reuse_local_address(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_local_endpoint
+     * [@function] nw_parameters_set_local_endpoint
      * 
-     * @abstract
      * 	Specify a specific endpoint to use as the local endpoint.
      * 	For connections, this will be used to initiate traffic;
      * 	for listeners, this will be used for receiving incoming
@@ -1289,15 +1230,14 @@ public final class Network {
     public static native void nw_parameters_set_local_endpoint(NSObject parameters, NSObject local_endpoint);
 
     /**
-     * @function nw_parameters_copy_local_endpoint
+     * [@function] nw_parameters_copy_local_endpoint
      * 
-     * @abstract
      * 	Extract the local endpoint set on the connection.
      * 
      * @param parameters
      * 	The parameters object to configure
      * 
-     * @result
+     * @return
      * 	Returns the endpoint that is set in the parameters, or
      * 	NULL if no local endpoint is set.
      */
@@ -1306,9 +1246,8 @@ public final class Network {
     public static native NSObject nw_parameters_copy_local_endpoint(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_include_peer_to_peer
+     * [@function] nw_parameters_set_include_peer_to_peer
      * 
-     * @abstract
      * 	Allow the inclusion of peer-to-peer interfaces when
      * 	listening or establishing outbound connections. This parameter
      * 	will not take effect if a specific interface is required.
@@ -1327,16 +1266,15 @@ public final class Network {
     public static native void nw_parameters_set_include_peer_to_peer(NSObject parameters, boolean include_peer_to_peer);
 
     /**
-     * @function nw_parameters_get_include_peer_to_peer
+     * [@function] nw_parameters_get_include_peer_to_peer
      * 
-     * @abstract
      * 	Check if the parameters allow the inclusion of
      * 	peer-to-peer interfaces.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns true if peer-to-peer interfaces are allowed,
      * 	or false otherwise.
      */
@@ -1345,9 +1283,8 @@ public final class Network {
     public static native boolean nw_parameters_get_include_peer_to_peer(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_fast_open_enabled
+     * [@function] nw_parameters_set_fast_open_enabled
      * 
-     * @abstract
      * 	Use fast open for an outbound connection, which may be done at any
      * 	protocol level. Use of fast open requires that the caller send
      * 	idempotent data on the connection before the connection may move
@@ -1375,16 +1312,15 @@ public final class Network {
     public static native void nw_parameters_set_fast_open_enabled(NSObject parameters, boolean fast_open_enabled);
 
     /**
-     * @function nw_parameters_get_fast_open_enabled
+     * [@function] nw_parameters_get_fast_open_enabled
      * 
-     * @abstract
      * 	Check if the parameters allow the use of fast open for the top level
      * 	protocol.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns true if fast open is allowed for the top level protocol, or
      * 	false otherwise.
      */
@@ -1393,9 +1329,8 @@ public final class Network {
     public static native boolean nw_parameters_get_fast_open_enabled(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_service_class
+     * [@function] nw_parameters_set_service_class
      * 
-     * @abstract
      * 	Set the data service class to use for connections.
      * 
      * @param parameters
@@ -1409,15 +1344,14 @@ public final class Network {
     public static native void nw_parameters_set_service_class(NSObject parameters, int service_class);
 
     /**
-     * @function nw_parameters_get_service_class
+     * [@function] nw_parameters_get_service_class
      * 
-     * @abstract
      * 	Check the service class configured on the parameters.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns the effective service class configured on the parameters.
      */
     @Generated
@@ -1425,9 +1359,8 @@ public final class Network {
     public static native int nw_parameters_get_service_class(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_multipath_service
+     * [@function] nw_parameters_set_multipath_service
      * 
-     * @abstract
      * 	Set the multipath service to use for connections.
      * 
      * @param parameters
@@ -1441,15 +1374,14 @@ public final class Network {
     public static native void nw_parameters_set_multipath_service(NSObject parameters, int multipath_service);
 
     /**
-     * @function nw_parameters_get_multipath_service
+     * [@function] nw_parameters_get_multipath_service
      * 
-     * @abstract
      * 	Check the multipath service mode configured on the parameters.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns the multipath service configured on the parameters.
      */
     @Generated
@@ -1457,9 +1389,8 @@ public final class Network {
     public static native int nw_parameters_get_multipath_service(NSObject parameters);
 
     /**
-     * @function nw_parameters_copy_default_protocol_stack
+     * [@function] nw_parameters_copy_default_protocol_stack
      * 
-     * @abstract
      * 	Retrieve the default protocol stack from a parameters object.
      * 	Every parameters object will have a default protocol stack. For
      * 	parameters created with a convenience initializer, this protocol
@@ -1469,7 +1400,7 @@ public final class Network {
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns an nw_protocol_stack_t object that can be inspected and modified.
      */
     @Generated
@@ -1477,9 +1408,8 @@ public final class Network {
     public static native NSObject nw_parameters_copy_default_protocol_stack(NSObject parameters);
 
     /**
-     * @function nw_protocol_stack_prepend_application_protocol
+     * [@function] nw_protocol_stack_prepend_application_protocol
      * 
-     * @abstract
      * 	Prepend an application-layer protocol onto the top of a protocol stack.
      * 
      * @param stack
@@ -1494,9 +1424,8 @@ public final class Network {
     public static native void nw_protocol_stack_prepend_application_protocol(NSObject stack, NSObject protocol);
 
     /**
-     * @function nw_protocol_stack_clear_application_protocols
+     * [@function] nw_protocol_stack_clear_application_protocols
      * 
-     * @abstract
      * 	Remove all application-layer protocols from a protocol stack.
      * 
      * @param stack
@@ -1507,9 +1436,8 @@ public final class Network {
     public static native void nw_protocol_stack_clear_application_protocols(NSObject stack);
 
     /**
-     * @function nw_protocol_stack_iterate_application_protocols
+     * [@function] nw_protocol_stack_iterate_application_protocols
      * 
-     * @abstract
      * 	List all application protocols attached to a protocol stack.
      * 
      * @param stack
@@ -1531,15 +1459,14 @@ public final class Network {
     }
 
     /**
-     * @function nw_protocol_stack_copy_transport_protocol
+     * [@function] nw_protocol_stack_copy_transport_protocol
      * 
-     * @abstract
      * 	Access the transport-layer protocol used in a protocol stack.
      * 
      * @param stack
      * 	The protocol stack to check
      * 
-     * @result
+     * @return
      * 	Returns the transport protocol currently set in the protocol stack,
      * 	or NULL if no transport protocol is set.
      */
@@ -1548,9 +1475,8 @@ public final class Network {
     public static native NSObject nw_protocol_stack_copy_transport_protocol(NSObject stack);
 
     /**
-     * @function nw_protocol_stack_set_transport_protocol
+     * [@function] nw_protocol_stack_set_transport_protocol
      * 
-     * @abstract
      * 	Set the transport-layer protocol to use for a protocol stack.
      * 
      * @param stack
@@ -1565,15 +1491,14 @@ public final class Network {
     public static native void nw_protocol_stack_set_transport_protocol(NSObject stack, NSObject protocol);
 
     /**
-     * @function nw_protocol_stack_copy_internet_protocol
+     * [@function] nw_protocol_stack_copy_internet_protocol
      * 
-     * @abstract
      * 	Access the internet-layer protocol used in a protocol stack.
      * 
      * @param stack
      * 	The protocol stack to check
      * 
-     * @result
+     * @return
      * 	Returns the internet protocol currently set in the protocol stack,
      * 	or NULL if no internet protocol is set. Note that this will generally
      * 	be NULL, unless a specific IP family is being selected.
@@ -1583,9 +1508,8 @@ public final class Network {
     public static native NSObject nw_protocol_stack_copy_internet_protocol(NSObject stack);
 
     /**
-     * @function nw_parameters_set_local_only
+     * [@function] nw_parameters_set_local_only
      * 
-     * @abstract
      * 	Set to true to limit inbound connections to peers attached to the
      * 	local link only. Defaults to false.
      * 
@@ -1600,16 +1524,15 @@ public final class Network {
     public static native void nw_parameters_set_local_only(NSObject parameters, boolean local_only);
 
     /**
-     * @function nw_parameters_get_local_only
+     * [@function] nw_parameters_get_local_only
      * 
-     * @abstract
      * 	Indicates whether or not the parameters limit connections to the local
      * 	link only.
      * 
      * @param parameters
      * 	The parameters object to check
      * 
-     * @result
+     * @return
      * 	Returns true if the parameters limit inbound connections to the local link.
      */
     @Generated
@@ -1617,9 +1540,8 @@ public final class Network {
     public static native boolean nw_parameters_get_local_only(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_prefer_no_proxy
+     * [@function] nw_parameters_set_prefer_no_proxy
      * 
-     * @abstract
      * 	Set to true to attempt connections without using proxies, only using any configured proxies if the connections
      * 		cannot otherwise be completed. Defaults to false.
      * 
@@ -1634,16 +1556,15 @@ public final class Network {
     public static native void nw_parameters_set_prefer_no_proxy(NSObject parameters, boolean prefer_no_proxy);
 
     /**
-     * @function nw_parameters_get_prefer_no_proxy
+     * [@function] nw_parameters_get_prefer_no_proxy
      * 
-     * @abstract
      * 	Indicates whether or not the parameters cause connections to be attempted without proxies, only using proxies
      * 		if connections cannot otherwise be completed.
      * 
      * @param parameters
      * 	The parameters to get the property from.
      * 
-     * @result
+     * @return
      * 	Returns true if the parameters cause connections to be attempted without proxies, only using proxies if
      * 	connections cannot otherwise be completed.
      */
@@ -1652,9 +1573,8 @@ public final class Network {
     public static native boolean nw_parameters_get_prefer_no_proxy(NSObject parameters);
 
     /**
-     * @function nw_parameters_set_expired_dns_behavior
+     * [@function] nw_parameters_set_expired_dns_behavior
      * 
-     * @abstract
      * 	Allow or prohibit the use of expired DNS answers during connection establishment.
      * 	If allowed, a DNS answer that was previously returned may be re-used for new
      * 	connections even after the answers are considered expired. A query for fresh answers
@@ -1675,9 +1595,8 @@ public final class Network {
     public static native void nw_parameters_set_expired_dns_behavior(NSObject parameters, int expired_dns_behavior);
 
     /**
-     * @function nw_parameters_get_expired_dns_behavior
+     * [@function] nw_parameters_get_expired_dns_behavior
      * 
-     * @abstract
      * 	Check the effective expired DNS behavior of a connection.
      * 	See nw_parameters_set_expired_dns_behavior() for a discussion on the use of expired
      * 	DNS answers.
@@ -1685,7 +1604,7 @@ public final class Network {
      * @param parameters
      * 	The parameters to check.
      * 
-     * @result
+     * @return
      * 	Returns the current effective expired DNS answer behavior.
      */
     @Generated
@@ -1693,9 +1612,8 @@ public final class Network {
     public static native int nw_parameters_get_expired_dns_behavior(NSObject parameters);
 
     /**
-     * @function nw_browse_descriptor_create_bonjour_service
+     * [@function] nw_browse_descriptor_create_bonjour_service
      * 
-     * @abstract
      * 	Creates a new browse descriptor object on a Bonjour service type and
      * 	domain.
      * 
@@ -1706,7 +1624,7 @@ public final class Network {
      * 	An optional Bonjour service domain. If the domain is unspecified, the
      * 	default domains for browsing will be used.
      * 
-     * @result
+     * @return
      * 	An instantiated browse descriptor object.
      */
     @Generated
@@ -1716,15 +1634,14 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
 
     /**
-     * @function nw_browse_descriptor_get_bonjour_service_type
+     * [@function] nw_browse_descriptor_get_bonjour_service_type
      * 
-     * @abstract
      * 	Returns the service type of a browse descriptor.
      * 
      * @param descriptor
      * 	A browse descriptor object.
      * 
-     * @result
+     * @return
      * 	The service type.
      */
     @Generated
@@ -1733,16 +1650,15 @@ public final class Network {
     public static native String nw_browse_descriptor_get_bonjour_service_type(NSObject descriptor);
 
     /**
-     * @function nw_browse_descriptor_get_bonjour_service_domain
+     * [@function] nw_browse_descriptor_get_bonjour_service_domain
      * 
-     * @abstract
      * 	Returns the service domain of a browse descriptor, or NULL if NULL was
      * 	provided while creating the descriptor.
      * 
      * @param descriptor
      * 	A browse descriptor object.
      * 
-     * @result
+     * @return
      * 	The service domain.
      */
     @Generated
@@ -1751,9 +1667,8 @@ public final class Network {
     public static native String nw_browse_descriptor_get_bonjour_service_domain(NSObject descriptor);
 
     /**
-     * @function nw_browse_descriptor_set_include_txt_record
+     * [@function] nw_browse_descriptor_set_include_txt_record
      * 
-     * @abstract
      * 	Set a flag to allow or prohibit the browser from querying for TXT records
      * 	while browsing. This flag should only be set if the client needs information
      * 	from the TXT record during browsing, and may increase network traffic. By
@@ -1773,15 +1688,14 @@ public final class Network {
             boolean include_txt_record);
 
     /**
-     * @function nw_browse_descriptor_get_include_txt_record
+     * [@function] nw_browse_descriptor_get_include_txt_record
      * 
-     * @abstract
      * 	Check whether the browser is allowed to query for TXT records.
      * 
      * @param descriptor
      * 	The browse descriptor to check.
      * 
-     * @result
+     * @return
      * 	Whether the browser is allowed to query for TXT records.
      */
     @Generated
@@ -1789,15 +1703,14 @@ public final class Network {
     public static native boolean nw_browse_descriptor_get_include_txt_record(NSObject descriptor);
 
     /**
-     * @function nw_browse_result_copy_endpoint
+     * [@function] nw_browse_result_copy_endpoint
      * 
-     * @abstract
      * 	Copies the endpoint associated with the browse result object.
      * 
      * @param result
      * 	The browse result object.
      * 
-     * @result
+     * @return
      * 	The associated endpoint.
      */
     @Generated
@@ -1805,9 +1718,8 @@ public final class Network {
     public static native NSObject nw_browse_result_copy_endpoint(NSObject result);
 
     /**
-     * @function nw_browse_result_get_changes
+     * [@function] nw_browse_result_get_changes
      * 
-     * @abstract
      * 	Determines the set of all changes that occurred between an old and a new
      * 	browse result. For example, if the return value of this function matches
      * 	with nw_browse_result_change_interface_added and nw_browse_result_change_txt_record_changed,
@@ -1820,7 +1732,7 @@ public final class Network {
      * @param new_result
      * 	The new result.
      * 
-     * @result
+     * @return
      * 	A nw_browse_result_change_t describing all changes that occurred.
      */
     @Generated
@@ -1828,15 +1740,14 @@ public final class Network {
     public static native long nw_browse_result_get_changes(NSObject old_result, NSObject new_result);
 
     /**
-     * @function nw_browse_result_get_interfaces_count
+     * [@function] nw_browse_result_get_interfaces_count
      * 
-     * @abstract
      * 	Returns the number of interfaces on this browse result.
      * 
      * @param result
      * 	The browse result object.
      * 
-     * @result
+     * @return
      * 	The number of interfaces available.
      */
     @Generated
@@ -1845,15 +1756,14 @@ public final class Network {
     public static native long nw_browse_result_get_interfaces_count(NSObject result);
 
     /**
-     * @function nw_browse_result_copy_txt_record_object
+     * [@function] nw_browse_result_copy_txt_record_object
      * 
-     * @abstract
      * 	Copies the TXT record object from the browse result.
      * 
      * @param result
      * 	The browse result object.
      * 
-     * @result
+     * @return
      * 	A copy of the TXT record object, or NULL if the browse result does not
      * 	have an associated TXT record.
      */
@@ -1862,9 +1772,8 @@ public final class Network {
     public static native NSObject nw_browse_result_copy_txt_record_object(NSObject result);
 
     /**
-     * @function nw_browse_result_enumerate_interfaces
+     * [@function] nw_browse_result_enumerate_interfaces
      * 
-     * @abstract
      * 	Enumerates the list of interfaces on this browse result.
      * 
      * @param result
@@ -1886,57 +1795,53 @@ public final class Network {
     }
 
     /**
-     * @function nw_error_get_error_domain
+     * [@function] nw_error_get_error_domain
      * 
-     * @abstract
      * 	Given a reference to a nw_error, returns the error domain.
+     * 
+     * [@returns]
+     * 	The error domain.
      * 
      * @param error
      * 	A reference to the nw_error.
-     * 
-     * @returns
-     * 	The error domain.
      */
     @Generated
     @CFunction
     public static native int nw_error_get_error_domain(NSObject error);
 
     /**
-     * @function nw_error_get_error_code
+     * [@function] nw_error_get_error_code
      * 
-     * @abstract
      * 	Given a reference to a nw_error, returns the error code.
+     * 
+     * [@returns]
+     * 	The error code.
      * 
      * @param error
      * 	A reference to the nw_error.
-     * 
-     * @returns
-     * 	The error code.
      */
     @Generated
     @CFunction
     public static native int nw_error_get_error_code(NSObject error);
 
     /**
-     * @function nw_error_copy_cf_error
+     * [@function] nw_error_copy_cf_error
      * 
-     * @abstract
      * 	Given a reference to nw_error, returns a CFErrorRef representing the same error.
+     * 
+     * [@returns]
+     * 	The CFErrorRef. The caller is responsible for calling CFRelease on the returned value.
      * 
      * @param error
      * 	A reference to the nw_error.
-     * 
-     * @returns
-     * 	The CFErrorRef. The caller is responsible for calling CFRelease on the returned value.
      */
     @Generated
     @CFunction
     public static native CFErrorRef nw_error_copy_cf_error(NSObject error);
 
     /**
-     * @function nw_browser_create
+     * [@function] nw_browser_create
      * 
-     * @abstract
      * 	Creates a new browser object, which can be used to browse for results
      * 	matching a browse descriptor.
      * 
@@ -1948,7 +1853,7 @@ public final class Network {
      * 	Optional parameters to use for the new browser. If NULL, an empty parameters
      * 	object is created internally.
      * 
-     * @result
+     * @return
      * 	An instantiated browser object.
      */
     @Generated
@@ -1956,9 +1861,8 @@ public final class Network {
     public static native NSObject nw_browser_create(NSObject descriptor, NSObject parameters);
 
     /**
-     * @function nw_browser_set_queue
+     * [@function] nw_browser_set_queue
      * 
-     * @abstract
      * 	Sets the client callback queue, on which blocks for events will
      * 		be scheduled. This must be done before calling nw_browser_start().
      * 
@@ -1973,9 +1877,8 @@ public final class Network {
     public static native void nw_browser_set_queue(NSObject browser, NSObject queue);
 
     /**
-     * @function nw_browser_set_browse_results_changed_handler
+     * [@function] nw_browser_set_browse_results_changed_handler
      * 
-     * @abstract
      * 	Sets a callback handler to be invoked when the browser gets an update
      * 	for changed browse results. This function must be called before starting
      * 	the browser and must not be called after starting the browser.
@@ -2001,9 +1904,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_browser_set_state_changed_handler
+     * [@function] nw_browser_set_state_changed_handler
      * 
-     * @abstract
      * 	Sets the state changed handler. For clients that need to perform cleanup
      * 	when the browser has been cancelled, the nw_browser_state_cancelled state
      * 	will be delivered last. This function must be called before starting the
@@ -2029,9 +1931,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_browser_start
+     * [@function] nw_browser_start
      * 
-     * @abstract
      * 	Starts the browser, which begins browsing for available endpoints.
      * 		You must call nw_browser_set_queue() before starting the browser.
      * 
@@ -2043,9 +1944,8 @@ public final class Network {
     public static native void nw_browser_start(NSObject browser);
 
     /**
-     * @function nw_browser_cancel
+     * [@function] nw_browser_cancel
      * 
-     * @abstract
      * 	Cancels the browser. The process of cancellation will be completed
      * 	asynchronously, and the final callback event delivered to the caller
      * 	will be a state update with a value of nw_browser_state_cancelled.
@@ -2060,15 +1960,14 @@ public final class Network {
     public static native void nw_browser_cancel(NSObject browser);
 
     /**
-     * @function nw_browser_copy_parameters
+     * [@function] nw_browser_copy_parameters
      * 
-     * @abstract
      * 	Returns a copy of the parameters passed to nw_browser_create().
      * 
      * @param browser
      * 	The browser object.
      * 
-     * @result
+     * @return
      * 	Returns an nw_parameters_t object.
      */
     @Generated
@@ -2076,15 +1975,14 @@ public final class Network {
     public static native NSObject nw_browser_copy_parameters(NSObject browser);
 
     /**
-     * @function nw_browser_copy_browse_descriptor
+     * [@function] nw_browser_copy_browse_descriptor
      * 
-     * @abstract
      * 	Returns a copy of the browse_descriptor passed to nw_browser_create().
      * 
      * @param browser
      * 	The browser object.
      * 
-     * @result
+     * @return
      * 	Returns a copy of the browse_descriptor passed to nw_browser_create().
      */
     @Generated
@@ -2092,9 +1990,8 @@ public final class Network {
     public static native NSObject nw_browser_copy_browse_descriptor(NSObject browser);
 
     /**
-     * @function nw_path_get_status
+     * [@function] nw_path_get_status
      * 
-     * @abstract
      * 	Retrieves the status of a path. The status of a specific path object will never
      * 	change, as the path object itself is static. If there is a network change, the
      * 	object that generated the path object will generate a new path object.
@@ -2102,7 +1999,7 @@ public final class Network {
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns the status of the path, or nw_path_status_invalid if the object is NULL.
      */
     @Generated
@@ -2110,9 +2007,8 @@ public final class Network {
     public static native int nw_path_get_status(NSObject path);
 
     /**
-     * @function nw_path_enumerate_interfaces
+     * [@function] nw_path_enumerate_interfaces
      * 
-     * @abstract
      * 	List all interfaces associated with the path.
      * 
      * @param path
@@ -2136,9 +2032,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_path_is_equal
+     * [@function] nw_path_is_equal
      * 
-     * @abstract
      * 	Compares two network path objects and checks if their content is equal.
      * 	If they are not equal, they represent two different network states.
      * 
@@ -2148,7 +2043,7 @@ public final class Network {
      * @param other_path
      * 	The second path object to compare.
      * 
-     * @result
+     * @return
      * 	Returns true if the paths are equivalent, or false if there is any difference
      * 	between the paths.
      */
@@ -2157,16 +2052,15 @@ public final class Network {
     public static native boolean nw_path_is_equal(NSObject path, NSObject other_path);
 
     /**
-     * @function nw_path_is_expensive
+     * [@function] nw_path_is_expensive
      * 
-     * @abstract
      * 	Checks if the path uses any network interfaces that are considered expensive
      * 	to the user, such as, but not limited to, a cellular network.
      * 
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns true if the path uses any network interface that is considered expensive,
      * 	false otherwise.
      */
@@ -2175,16 +2069,15 @@ public final class Network {
     public static native boolean nw_path_is_expensive(NSObject path);
 
     /**
-     * @function nw_path_is_constrained
+     * [@function] nw_path_is_constrained
      * 
-     * @abstract
      * 	Checks if the path uses any network interfaces that are considered constrained
      * 	to the user.
      * 
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns true if the path uses any network interface that is considered constrained,
      * 	false otherwise.
      */
@@ -2193,15 +2086,14 @@ public final class Network {
     public static native boolean nw_path_is_constrained(NSObject path);
 
     /**
-     * @function nw_path_has_ipv4
+     * [@function] nw_path_has_ipv4
      * 
-     * @abstract
      * 	Checks if the path uses a network interface that supports IPv4 connectivity.
      * 
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns true if the path uses a network interface that supports IPv4,
      * 	false otherwise.
      */
@@ -2210,15 +2102,14 @@ public final class Network {
     public static native boolean nw_path_has_ipv4(NSObject path);
 
     /**
-     * @function nw_path_has_ipv6
+     * [@function] nw_path_has_ipv6
      * 
-     * @abstract
      * 	Checks if the path uses a network interface that supports IPv6 connectivity.
      * 
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns true if the path uses a network interface that supports IPv6,
      * 	false otherwise.
      */
@@ -2227,15 +2118,14 @@ public final class Network {
     public static native boolean nw_path_has_ipv6(NSObject path);
 
     /**
-     * @function nw_path_has_dns
+     * [@function] nw_path_has_dns
      * 
-     * @abstract
      * 	Checks if the path has a DNS server configuration set.
      * 
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns true if the path has a DNS server configuration set,
      * 	false otherwise.
      */
@@ -2244,15 +2134,14 @@ public final class Network {
     public static native boolean nw_path_has_dns(NSObject path);
 
     /**
-     * @function nw_path_uses_interface_type
+     * [@function] nw_path_uses_interface_type
      * 
-     * @abstract
      * 	Checks if the path uses a network interface with the specified type.
      * 
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns true if the path uses any network interface with the specified type,
      * 	false otherwise.
      */
@@ -2261,9 +2150,8 @@ public final class Network {
     public static native boolean nw_path_uses_interface_type(NSObject path, int interface_type);
 
     /**
-     * @function nw_path_copy_effective_local_endpoint
+     * [@function] nw_path_copy_effective_local_endpoint
      * 
-     * @abstract
      * 	Retrieve the local endpoint that is being used, if present. If this path
      * 	is the path from an nw_connection_t, it represents the address that data
      * 	is sent from.
@@ -2271,7 +2159,7 @@ public final class Network {
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns an endpoint that is assigned as the local endpoint for this path,
      * 	or NULL if the path does not have a fixed local endpoint.
      */
@@ -2280,9 +2168,8 @@ public final class Network {
     public static native NSObject nw_path_copy_effective_local_endpoint(NSObject path);
 
     /**
-     * @function nw_path_copy_effective_remote_endpoint
+     * [@function] nw_path_copy_effective_remote_endpoint
      * 
-     * @abstract
      * 	Retrieve the remote endpoint that is being used, if present. If this path
      * 	is the path from an nw_connection_t, it represents the address that data
      * 	is sent to.
@@ -2290,7 +2177,7 @@ public final class Network {
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns an endpoint that is assigned as the remote endpoint for this path,
      * 	or NULL if the path does not have a fixed remote endpoint.
      */
@@ -2299,9 +2186,8 @@ public final class Network {
     public static native NSObject nw_path_copy_effective_remote_endpoint(NSObject path);
 
     /**
-     * @function nw_path_enumerate_gateways
+     * [@function] nw_path_enumerate_gateways
      * 
-     * @abstract
      * 	List the IP addresses of the routers acting as the gateways for the path.
      * 
      * @param path
@@ -2325,13 +2211,15 @@ public final class Network {
     }
 
     /**
-     * @function nw_content_context_create
-     * @discussion Create a context object to represent properties associated with
+     * [@function] nw_content_context_create
+     * 
+     * Create a context object to represent properties associated with
      * 	networking content. If the same context object is associated with multiple
      * 	content blobs, then those pieces of content will be considered to be continuations
      * 	of the same message.
+     * 
      * @param context_identifier A string description of the context
-     * @result Returns a new context context object
+     * @return Returns a new context context object
      */
     @Generated
     @CFunction
@@ -2339,9 +2227,11 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String context_identifier);
 
     /**
-     * @function nw_content_context_get_identifier
-     * @discussion Access the identifier description.
-     * @result Returns the context's identifier string.
+     * [@function] nw_content_context_get_identifier
+     * 
+     * Access the identifier description.
+     * 
+     * @return Returns the context's identifier string.
      */
     @Generated
     @CFunction
@@ -2349,25 +2239,29 @@ public final class Network {
     public static native String nw_content_context_get_identifier(NSObject context);
 
     /**
-     * @function nw_content_context_get_is_final
-     * @discussion Check if this is the final context for a connection. When receiving,
+     * [@function] nw_content_context_get_is_final
+     * 
+     * Check if this is the final context for a connection. When receiving,
      * 	once a final context is complete, the connection is "read closed" and will not
      * 	receive more content. See nw_content_context_set_is_final() for a description
      * 	of how to set is_final for sending contexts.
+     * 
      * @param context The context object
-     * @result Returns true if the context is the final context for a connection.
+     * @return Returns true if the context is the final context for a connection.
      */
     @Generated
     @CFunction
     public static native boolean nw_content_context_get_is_final(NSObject context);
 
     /**
-     * @function nw_content_context_set_is_final
-     * @discussion Mark whether or not this context is the final context for a
+     * [@function] nw_content_context_set_is_final
+     * 
+     * Mark whether or not this context is the final context for a
      * 	connection. When sending, marking a context as final will perform
      * 	a "write close" once the context is complete, indicating that no more content
      * 	will be sent. As a convenience for sending a final context, use
      * 	NW_CONNECTION_FINAL_MESSAGE_CONTEXT.
+     * 
      * @param context The context object
      * @param is_final If set to true, mark the context as the final context to send on a connection.
      */
@@ -2376,22 +2270,26 @@ public final class Network {
     public static native void nw_content_context_set_is_final(NSObject context, boolean is_final);
 
     /**
-     * @function nw_content_context_get_expiration_milliseconds
-     * @discussion Retrieve the number of milliseconds after which the content will expire.
+     * [@function] nw_content_context_get_expiration_milliseconds
+     * 
+     * Retrieve the number of milliseconds after which the content will expire.
      * 	See nw_content_context_set_expiration_milliseconds for futher discussion.
+     * 
      * @param context The context object
-     * @result Returns content expiration, or 0 if not set.
+     * @return Returns content expiration, or 0 if not set.
      */
     @Generated
     @CFunction
     public static native long nw_content_context_get_expiration_milliseconds(NSObject context);
 
     /**
-     * @function nw_content_context_set_expiration_milliseconds
-     * @discussion Set an expiration (in milliseconds) after which content may be dropped.
+     * [@function] nw_content_context_set_expiration_milliseconds
+     * 
+     * Set an expiration (in milliseconds) after which content may be dropped.
      * 	If the expiration time is reached, the content may not be sent. If the value is
      * 	0, there is no expiration for the content. The expiration timer starts when the
      * 	content is enqueued using nw_connection_send().
+     * 
      * @param context The context object
      * @param expiration_milliseconds The number of milliseconds after which content will expire
      */
@@ -2401,11 +2299,13 @@ public final class Network {
             long expiration_milliseconds);
 
     /**
-     * @function nw_content_context_get_relative_priority
-     * @discussion Get the relative priority for the content. See
+     * [@function] nw_content_context_get_relative_priority
+     * 
+     * Get the relative priority for the content. See
      * 	nw_content_context_set_relative_priority for futher discussion.
+     * 
      * @param context The context object
-     * @result Returns the relative priority, between 0.0 (lowest priority)
+     * @return Returns the relative priority, between 0.0 (lowest priority)
      * 	to 1.0 (highest priority). The default value is 0.5.
      */
     @Generated
@@ -2413,12 +2313,14 @@ public final class Network {
     public static native double nw_content_context_get_relative_priority(NSObject context);
 
     /**
-     * @function nw_content_context_set_relative_priority
-     * @discussion Set A relative priority of the content, compared to other
+     * [@function] nw_content_context_set_relative_priority
+     * 
+     * Set A relative priority of the content, compared to other
      * 	content on the same connection. Priorities range from 0.0 (lowest
      * 	priority) to 1.0 (highest priority), where content with higher
      * 	priority will scheduled first if all else is equal.
      * 	The default value is 0.5.
+     * 
      * @param context The context object
      * @param relative_priority The relative priority of the content, between
      * 	0.0 (lowest priority) to 1.0 (highest priority).
@@ -2428,11 +2330,13 @@ public final class Network {
     public static native void nw_content_context_set_relative_priority(NSObject context, double relative_priority);
 
     /**
-     * @function nw_content_context_set_antecedent
-     * @discussion Set a context as an antecedent to this content context.
+     * [@function] nw_content_context_set_antecedent
+     * 
+     * Set a context as an antecedent to this content context.
      * 	The associated content will not be sent until all of its antecedents have been
      * 	completed. If any of the antecedents fail with an error, this content will
      * 	fail as well.
+     * 
      * @param context The context object
      * @param antecendent_context A context associated with content that should precede
      * 	this content.
@@ -2442,21 +2346,25 @@ public final class Network {
     public static native void nw_content_context_set_antecedent(NSObject context, NSObject antecendent_context);
 
     /**
-     * @function nw_content_context_copy_antecedent
-     * @discussion Copy the optional content context that must be sent prior to this
+     * [@function] nw_content_context_copy_antecedent
+     * 
+     * Copy the optional content context that must be sent prior to this
      * 	content. See nw_content_context_set_antecedent for further discussion.
+     * 
      * @param context The context object
-     * @result Returns a context object set as the antecedent, or NULL.
+     * @return Returns a context object set as the antecedent, or NULL.
      */
     @Generated
     @CFunction
     public static native NSObject nw_content_context_copy_antecedent(NSObject context);
 
     /**
-     * @function nw_content_context_set_metadata_for_protocol
-     * @discussion Set protocol-specific metadata to a parent content context. If
+     * [@function] nw_content_context_set_metadata_for_protocol
+     * 
+     * Set protocol-specific metadata to a parent content context. If
      * 	metadata for the same protocol is set multiple times, the most recently
      * 	set metadata will be applied.
+     * 
      * @param context The context context parent object
      * @param protocol_metadata The per-protocol metadata context object to set
      */
@@ -2466,19 +2374,23 @@ public final class Network {
             NSObject protocol_metadata);
 
     /**
-     * @function nw_content_context_copy_protocol_metadata
-     * @discussion Copy the per-protocol metadata from a parent content context
+     * [@function] nw_content_context_copy_protocol_metadata
+     * 
+     * Copy the per-protocol metadata from a parent content context
+     * 
      * @param context The context context parent object
      * @param protocol The definition identifier of the protocol to retrieve metadata for
-     * @result Returns the metadata registered for the protocol, or NULL if there is none
+     * @return Returns the metadata registered for the protocol, or NULL if there is none
      */
     @Generated
     @CFunction
     public static native NSObject nw_content_context_copy_protocol_metadata(NSObject context, NSObject protocol);
 
     /**
-     * @function nw_content_context_foreach_protocol_metadata
-     * @discussion Access all per-protocol metadata objects from a parent content context
+     * [@function] nw_content_context_foreach_protocol_metadata
+     * 
+     * Access all per-protocol metadata objects from a parent content context
+     * 
      * @param context The context context parent object
      * @param foreach_block A block in which protocol definition and metadata will be sent
      */
@@ -2495,9 +2407,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_create
+     * [@function] nw_connection_create
      * 
-     * @abstract
      * 	Creates a networking connection to an endpoint.
      * 
      * @param endpoint
@@ -2507,7 +2418,7 @@ public final class Network {
      * 	The parameters to use for the connection. The data mode,
      * 	either datagram or stream, must be set.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_connection_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -2518,15 +2429,14 @@ public final class Network {
     public static native NSObject nw_connection_create(NSObject endpoint, NSObject parameters);
 
     /**
-     * @function nw_connection_copy_endpoint
+     * [@function] nw_connection_copy_endpoint
      * 
-     * @abstract
      * 	Retrieves the remote endpoint for a connection.
      * 
      * @param connection
      * 	The connection object.
      * 
-     * @result
+     * @return
      * 	Returns an nw_endpoint_t object on success.
      * 	Returns NULL on failure. Fails due to invalid parameters.
      */
@@ -2535,15 +2445,14 @@ public final class Network {
     public static native NSObject nw_connection_copy_endpoint(NSObject connection);
 
     /**
-     * @function nw_connection_copy_parameters
+     * [@function] nw_connection_copy_parameters
      * 
-     * @abstract
      * 	Retrieves the parameters for a connection.
      * 
      * @param connection
      * 	The connection object.
      * 
-     * @result
+     * @return
      * 	Returns an nw_parameters_t object on success.
      * 	Returns NULL on failure. Fails due to invalid parameters.
      */
@@ -2552,9 +2461,8 @@ public final class Network {
     public static native NSObject nw_connection_copy_parameters(NSObject connection);
 
     /**
-     * @function nw_connection_set_state_changed_handler
+     * [@function] nw_connection_set_state_changed_handler
      * 
-     * @abstract
      * 	Sets the state change handler. For clients that need to perform cleanup when the
      * 	connection has been cancelled, the nw_connection_state_cancelled state will
      * 	be delivered last.
@@ -2579,9 +2487,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_set_viability_changed_handler
+     * [@function] nw_connection_set_viability_changed_handler
      * 
-     * @abstract
      * 	Define a callback to be fired when the viability of the connection changes.
      * 	This indicates whether or not read and write calls will succeed on a ready
      * 	connection.
@@ -2607,9 +2514,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_set_better_path_available_handler
+     * [@function] nw_connection_set_better_path_available_handler
      * 
-     * @abstract
      * 	Define a callback to be fired when a better path is available or not.
      * 	This indicates whether or not a preferred path is available for the
      * 	connection.
@@ -2635,9 +2541,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_set_path_changed_handler
+     * [@function] nw_connection_set_path_changed_handler
      * 
-     * @abstract
      * 	Define a callback to be fired when the connection's path changes.
      * 
      * @param connection
@@ -2660,9 +2565,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_set_queue
+     * [@function] nw_connection_set_queue
      * 
-     * @abstract
      * 	Sets the client callback queue, on which blocks for events will
      * 	be scheduled. This must be done before calling nw_connection_start().
      * 
@@ -2677,9 +2581,8 @@ public final class Network {
     public static native void nw_connection_set_queue(NSObject connection, NSObject queue);
 
     /**
-     * @function nw_connection_start
+     * [@function] nw_connection_start
      * 
-     * @abstract
      * 	Starts the connection, which will cause the connection
      * 	to evaluate its path, do resolution, and try to become
      * 	readable and writable.
@@ -2692,9 +2595,8 @@ public final class Network {
     public static native void nw_connection_start(NSObject connection);
 
     /**
-     * @function nw_connection_restart
+     * [@function] nw_connection_restart
      * 
-     * @abstract
      * 	Connections in the waiting state will normally re-attempt
      * 	on network changes. Call nw_connection_restart() to force
      * 	a connection in the waiting state to retry connection
@@ -2710,9 +2612,8 @@ public final class Network {
     public static native void nw_connection_restart(NSObject connection);
 
     /**
-     * @function nw_connection_cancel
+     * [@function] nw_connection_cancel
      * 
-     * @abstract
      * 	Cancel the connection. This will close the connection, and negotiate over the network
      * 	if applicable for the protocol. The process of cancellation will be completed
      * 	asynchronously, and the final callback event delivered to the caller will be a state
@@ -2731,9 +2632,8 @@ public final class Network {
     public static native void nw_connection_cancel(NSObject connection);
 
     /**
-     * @function nw_connection_force_cancel
+     * [@function] nw_connection_force_cancel
      * 
-     * @abstract
      * 	A variant of nw_connection_cancel() that indicates that the protocol stack should
      * 	not close gracefully, but close as quickly as possible without negotiation. For example,
      * 	a force close would lead to TCP RST packets being sent, as opposed to negotiating with
@@ -2747,9 +2647,8 @@ public final class Network {
     public static native void nw_connection_force_cancel(NSObject connection);
 
     /**
-     * @function nw_connection_cancel_current_endpoint
+     * [@function] nw_connection_cancel_current_endpoint
      * 
-     * @abstract
      * 	Cancel the currently connected endpoint, causing the connection
      * 	to fall through to the next endpoint if available, or fail if no
      * 	more endpoints are available. This is primarily useful for connections
@@ -2765,9 +2664,8 @@ public final class Network {
     public static native void nw_connection_cancel_current_endpoint(NSObject connection);
 
     /**
-     * @function nw_connection_receive
+     * [@function] nw_connection_receive
      * 
-     * @abstract
      * 	Receive data from a connection. This may be called before the connection
      * 	is ready, in which case the receive request will be queued until the
      * 	connection is ready. The completion handler will be invoked exactly
@@ -2805,9 +2703,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_receive_message
+     * [@function] nw_connection_receive_message
      * 
-     * @abstract
      * 	Receive a single atomic message from a connection. The completion
      * 	handler will be invoked exactly once for each call, so the client
      * 	must call this function multiple times to receive multiple messages.
@@ -2834,9 +2731,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_send
+     * [@function] nw_connection_send
      * 
-     * @abstract
      * 	Send data on a connection. This may be called before the connection is ready,
      * 	in which case the send will be enqueued until the connection is ready to send.
      * 	This is an asynchronous send and the completion block can be used to
@@ -2923,9 +2819,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_batch
+     * [@function] nw_connection_batch
      * 
-     * @abstract
      * 	Batch several send and/or receive operations together, to hint to
      * 	the connection that multiple send or recieve operations are expected
      * 	in quick succession.
@@ -2952,15 +2847,14 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_copy_description
+     * [@function] nw_connection_copy_description
      * 
-     * @abstract
      * 	Copy a human-readable description of the connection.
      * 
      * @param connection
      * 	The connection object.
      * 
-     * @result
+     * @return
      * 	Returns a human-readable string description of the connection.
      * 	The caller must call free() on the string.
      */
@@ -2969,16 +2863,15 @@ public final class Network {
     public static native BytePtr nw_connection_copy_description(NSObject connection);
 
     /**
-     * @function nw_connection_copy_current_path
+     * [@function] nw_connection_copy_current_path
      * 
-     * @abstract
      * 	Copy the current path for a connection. If a connection is
      * 	established, this will reflect the connected path.
      * 
      * @param connection
      * 	The connection object.
      * 
-     * @result
+     * @return
      * 	Returns a retained path object, or NULL if the connection
      * 	has not been started or has been cancelled.
      */
@@ -2987,9 +2880,8 @@ public final class Network {
     public static native NSObject nw_connection_copy_current_path(NSObject connection);
 
     /**
-     * @function nw_connection_copy_protocol_metadata
+     * [@function] nw_connection_copy_protocol_metadata
      * 
-     * @abstract
      * 	Copy the connection-wide metadata for a specific protocol.
      * 	This allows the caller to introspect per-protocol state,
      * 	only once the connection has been established. This
@@ -3002,7 +2894,7 @@ public final class Network {
      * @param definition
      * 	The protocol definition for which metadata will be returned.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol metadata object, or NULL if the connection
      * 	has not been established yet, or is cancelled.
      */
@@ -3011,9 +2903,8 @@ public final class Network {
     public static native NSObject nw_connection_copy_protocol_metadata(NSObject connection, NSObject definition);
 
     /**
-     * @function nw_connection_get_maximum_datagram_size
+     * [@function] nw_connection_get_maximum_datagram_size
      * 
-     * @abstract
      * 	Check for the maximum datagram size that can be written
      * 	on the connection. Any datagrams written should be less
      * 	than or equal to this size.
@@ -3021,7 +2912,7 @@ public final class Network {
      * @param connection
      * 	The connection object.
      * 
-     * @result
+     * @return
      * 	Returns a datagram size based on the current MTU and the
      * 	overhead of the protocols being used.
      */
@@ -3030,9 +2921,8 @@ public final class Network {
     public static native int nw_connection_get_maximum_datagram_size(NSObject connection);
 
     /**
-     * @function nw_connection_access_establishment_report
+     * [@function] nw_connection_access_establishment_report
      * 
-     * @abstract
      * 	Access the establishment report for a connection. The report will be
      * 	NULL until the connection is in the "ready" state.
      * 
@@ -3061,9 +2951,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_establishment_report_get_duration_milliseconds
+     * [@function] nw_establishment_report_get_duration_milliseconds
      * 
-     * @abstract
      * 	Retrieve the duration of the connection's establishment. This is
      * 	the total time in milliseconds from when the connection attempt began
      * 	until the connection becomes ready, including resolution, proxy
@@ -3072,7 +2961,7 @@ public final class Network {
      * @param report
      * 	An establishment report.
      * 
-     * @result
+     * @return
      * 	Returns the number of milliseconds the connection took to establish.
      */
     @Generated
@@ -3080,9 +2969,8 @@ public final class Network {
     public static native long nw_establishment_report_get_duration_milliseconds(NSObject report);
 
     /**
-     * @function nw_establishment_report_get_attempt_started_after_milliseconds
+     * [@function] nw_establishment_report_get_attempt_started_after_milliseconds
      * 
-     * @abstract
      * 	Retrieve the delay from calling start() after which the successful connection
      * 	attempt began. For connections that succeed on the first attempt, this value
      * 	will be 0. For connections that move into the "waiting" state, this
@@ -3091,7 +2979,7 @@ public final class Network {
      * @param report
      * 	An establishment report.
      * 
-     * @result
+     * @return
      * 	Returns the number of milliseconds from connection start to the beginning
      * 	of the successful connection attempt.
      */
@@ -3100,9 +2988,8 @@ public final class Network {
     public static native long nw_establishment_report_get_attempt_started_after_milliseconds(NSObject report);
 
     /**
-     * @function nw_establishment_report_get_previous_attempt_count
+     * [@function] nw_establishment_report_get_previous_attempt_count
      * 
-     * @abstract
      * 	Retrieve the number of connection attempts made before the successful
      * 	attempt. For connections that succeed on the first attempt, this value
      * 	will be 0. For connections that move into the "waiting" state, this
@@ -3111,7 +2998,7 @@ public final class Network {
      * @param report
      * 	An establishment report.
      * 
-     * @result
+     * @return
      * 	Returns the number of connection attempts made before the successful attempt.
      */
     @Generated
@@ -3119,15 +3006,14 @@ public final class Network {
     public static native int nw_establishment_report_get_previous_attempt_count(NSObject report);
 
     /**
-     * @function nw_establishment_report_get_used_proxy
+     * [@function] nw_establishment_report_get_used_proxy
      * 
-     * @abstract
      * 	Check if the connection used a proxy during establishment.
      * 
      * @param report
      * 	An establishment report.
      * 
-     * @result
+     * @return
      * 	Returns true if the connection used a proxy, false otherwise.
      */
     @Generated
@@ -3135,9 +3021,8 @@ public final class Network {
     public static native boolean nw_establishment_report_get_used_proxy(NSObject report);
 
     /**
-     * @function nw_establishment_report_get_proxy_configured
+     * [@function] nw_establishment_report_get_proxy_configured
      * 
-     * @abstract
      * 	Check if a proxy configuration applied to the connection,
      * 	even if the connection did not end up using a proxy for the
      * 	successful attempt.
@@ -3145,7 +3030,7 @@ public final class Network {
      * @param report
      * 	An establishment report.
      * 
-     * @result
+     * @return
      * 	Returns true if a proxy configuration applied to the connection,
      * 	false otherwise.
      */
@@ -3154,15 +3039,14 @@ public final class Network {
     public static native boolean nw_establishment_report_get_proxy_configured(NSObject report);
 
     /**
-     * @function nw_establishment_report_copy_proxy_endpoint
+     * [@function] nw_establishment_report_copy_proxy_endpoint
      * 
-     * @abstract
      * 	Access the endpoint of the proxy used by a connection, if applicable.
      * 
      * @param report
      * 	An establishment report.
      * 
-     * @result
+     * @return
      * 	Returns an allocated endpoint object if a proxy was used by the connection,
      * 	or NULL if no proxy was used.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
@@ -3173,9 +3057,8 @@ public final class Network {
     public static native NSObject nw_establishment_report_copy_proxy_endpoint(NSObject report);
 
     /**
-     * @function nw_establishment_report_enumerate_resolutions
+     * [@function] nw_establishment_report_enumerate_resolutions
      * 
-     * @abstract
      * 	Enumerate the steps of connection establishment that involved endpoint
      * 	resolution, such as DNS hostname resolution and Bonjour service resolution.
      * 	The provided block will be called inline zero or more times.
@@ -3211,9 +3094,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_establishment_report_enumerate_protocols
+     * [@function] nw_establishment_report_enumerate_protocols
      * 
-     * @abstract
      * 	Enumerate the protocols used in the established connection.
      * 	The provided block will be called inline zero or more times.
      * 
@@ -3246,9 +3128,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_create_new_data_transfer_report
+     * [@function] nw_connection_create_new_data_transfer_report
      * 
-     * @abstract
      * 	Create a new data transfer report on a connection. Multiple
      * 	reports may be created for a single connection. The report begins
      * 	capturing data when the connection becomes ready, or when the
@@ -3260,7 +3141,7 @@ public final class Network {
      * @param connection
      * 	A connection object, in or before the ready state.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_data_transfer_report_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -3271,16 +3152,15 @@ public final class Network {
     public static native NSObject nw_connection_create_new_data_transfer_report(NSObject connection);
 
     /**
-     * @function nw_data_transfer_report_get_state
+     * [@function] nw_data_transfer_report_get_state
      * 
-     * @abstract
      * 	Access the state of a data transfer report. Once a report
      * 	is "collected", individual fields may be read.
      * 
      * @param report
      * 	A data transfer report to check.
      * 
-     * @result
+     * @return
      * 	Returns the current state of the data transfer report.
      */
     @Generated
@@ -3288,9 +3168,8 @@ public final class Network {
     public static native int nw_data_transfer_report_get_state(NSObject report);
 
     /**
-     * @function nw_data_transfer_report_collect
+     * [@function] nw_data_transfer_report_collect
      * 
-     * @abstract
      * 	Mark a data transfer report as complete, and request collection of
      * 	values. Once the report has been collected, the callback block
      * 	will be invoked exactly once on the provided dispatch queue.
@@ -3321,9 +3200,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_data_transfer_report_get_duration_milliseconds
+     * [@function] nw_data_transfer_report_get_duration_milliseconds
      * 
-     * @abstract
      * 	Retrieve the duration of the data transfer report. This is a length
      * 	of time in milliseconds which can be used to calculate throughput
      * 	when compared to application and transport byte counts.
@@ -3336,7 +3214,7 @@ public final class Network {
      * @param report
      * 	A data transfer report in the "collected" state.
      * 
-     * @result
+     * @return
      * 	Returns the duration of the data transport report in milliseconds, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3345,9 +3223,8 @@ public final class Network {
     public static native long nw_data_transfer_report_get_duration_milliseconds(NSObject report);
 
     /**
-     * @function nw_data_transfer_report_get_path_count
+     * [@function] nw_data_transfer_report_get_path_count
      * 
-     * @abstract
      * 	Retrieve the number of paths used by the connection for the
      * 	duration of the report. Any value greater than or equal to 0 and
      * 	less than this count may be used as a "path_index" for retrieving
@@ -3356,7 +3233,7 @@ public final class Network {
      * @param report
      * 	A data transfer report in the "collected" state.
      * 
-     * @result
+     * @return
      * 	Returns the number of paths used by the connection, which
      * 	limits the value of the "path_index" parameter used in other report
      * 	functions. Returns 0 if the report is not in the "collected" state.
@@ -3366,9 +3243,8 @@ public final class Network {
     public static native int nw_data_transfer_report_get_path_count(NSObject report);
 
     /**
-     * @function nw_data_transfer_report_get_received_ip_packet_count
+     * [@function] nw_data_transfer_report_get_received_ip_packet_count
      * 
-     * @abstract
      * 	Retrieve the number of IP packets received on a given path for the
      * 	duration of the report.
      * 
@@ -3381,7 +3257,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of IP packets received, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3390,9 +3266,8 @@ public final class Network {
     public static native long nw_data_transfer_report_get_received_ip_packet_count(NSObject report, int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_sent_ip_packet_count
+     * [@function] nw_data_transfer_report_get_sent_ip_packet_count
      * 
-     * @abstract
      * 	Retrieve the number of IP packets sent on a given path for the
      * 	duration of the report.
      * 
@@ -3405,7 +3280,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of IP packets sent, or 0 if the report is not
      * 	in the "collected" state.
      */
@@ -3414,9 +3289,8 @@ public final class Network {
     public static native long nw_data_transfer_report_get_sent_ip_packet_count(NSObject report, int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_received_transport_byte_count
+     * [@function] nw_data_transfer_report_get_received_transport_byte_count
      * 
-     * @abstract
      * 	Retrieve the number of transport protocol bytes (such as TCP stream bytes)
      * 	received on a given path for the duration of the report.
      * 
@@ -3429,7 +3303,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of transport protocol bytes received, or 0 if the
      * 	report is not in the "collected" state.
      */
@@ -3439,9 +3313,8 @@ public final class Network {
             int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_received_transport_duplicate_byte_count
+     * [@function] nw_data_transfer_report_get_received_transport_duplicate_byte_count
      * 
-     * @abstract
      * 	Retrieve the number of duplicate transport protocol bytes (such as
      * 	duplicate TCP bytes) received on a given path for the duration of the report.
      * 
@@ -3454,7 +3327,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of duplicate transport protocol bytes received, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3464,9 +3337,8 @@ public final class Network {
             int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_received_transport_out_of_order_byte_count
+     * [@function] nw_data_transfer_report_get_received_transport_out_of_order_byte_count
      * 
-     * @abstract
      * 	Retrieve the number of out-of-order transport protocol bytes (such as
      * 	out-of-order TCP bytes) received on a given path for the duration of the report.
      * 
@@ -3479,7 +3351,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of out-of-order transport protocol bytes received, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3489,9 +3361,8 @@ public final class Network {
             int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_sent_transport_byte_count
+     * [@function] nw_data_transfer_report_get_sent_transport_byte_count
      * 
-     * @abstract
      * 	Retrieve the number of transport protocol bytes (such as TCP stream bytes)
      * 	sent on a given path for the duration of the report.
      * 
@@ -3504,7 +3375,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of transport protocol bytes sent, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3513,9 +3384,8 @@ public final class Network {
     public static native long nw_data_transfer_report_get_sent_transport_byte_count(NSObject report, int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_sent_transport_retransmitted_byte_count
+     * [@function] nw_data_transfer_report_get_sent_transport_retransmitted_byte_count
      * 
-     * @abstract
      * 	Retrieve the number of retransmitted transport protocol bytes (such as
      * 	retransmitted TCP bytes) sent on a given path for the duration of the report.
      * 
@@ -3528,7 +3398,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of retransmitted transport protocol bytes sent, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3538,9 +3408,8 @@ public final class Network {
             int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_transport_smoothed_rtt_milliseconds
+     * [@function] nw_data_transfer_report_get_transport_smoothed_rtt_milliseconds
      * 
-     * @abstract
      * 	Retrieve the smoothed average for the transport protocol's round trip time
      * 	(RTT) on a given path for the duration of the report, measured in milliseconds.
      * 
@@ -3553,7 +3422,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function is
      * 	equivalent to passing 0.
      * 
-     * @result
+     * @return
      * 	Returns the smoothed RTT as measured by the transport protocol, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3563,9 +3432,8 @@ public final class Network {
             int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_transport_minimum_rtt_milliseconds
+     * [@function] nw_data_transfer_report_get_transport_minimum_rtt_milliseconds
      * 
-     * @abstract
      * 	Retrieve the minimum (best) round trip time (RTT) on a given path for
      * 	the duration of the report, measured in milliseconds.
      * 
@@ -3578,7 +3446,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function is
      * 	equivalent to passing 0.
      * 
-     * @result
+     * @return
      * 	Returns the minimum RTT as measured by the transport protocol, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3588,9 +3456,8 @@ public final class Network {
             int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_transport_rtt_variance
+     * [@function] nw_data_transfer_report_get_transport_rtt_variance
      * 
-     * @abstract
      * 	Retrieve the variance of the round trip time (RTT) on a given path for
      * 	the duration of the report.
      * 
@@ -3603,7 +3470,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function is
      * 	equivalent to passing 0.
      * 
-     * @result
+     * @return
      * 	Returns the RTT variance as measured by the transport protocol, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3612,9 +3479,8 @@ public final class Network {
     public static native long nw_data_transfer_report_get_transport_rtt_variance(NSObject report, int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_received_application_byte_count
+     * [@function] nw_data_transfer_report_get_received_application_byte_count
      * 
-     * @abstract
      * 	Retrieve the number of application bytes received on a given
      * 	path for the duration of the report.
      * 
@@ -3627,7 +3493,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of application bytes received, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3637,9 +3503,8 @@ public final class Network {
             int path_index);
 
     /**
-     * @function nw_data_transfer_report_get_sent_application_byte_count
+     * [@function] nw_data_transfer_report_get_sent_application_byte_count
      * 
-     * @abstract
      * 	Retrieve the number of application bytes sent on a given
      * 	path for the duration of the report.
      * 
@@ -3652,7 +3517,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function returns
      * 	the sum of all paths.
      * 
-     * @result
+     * @return
      * 	Returns the number of application bytes sent, or 0
      * 	if the report is not in the "collected" state.
      */
@@ -3661,9 +3526,8 @@ public final class Network {
     public static native long nw_data_transfer_report_get_sent_application_byte_count(NSObject report, int path_index);
 
     /**
-     * @function nw_data_transfer_report_copy_path_interface
+     * [@function] nw_data_transfer_report_copy_path_interface
      * 
-     * @abstract
      * 	Retrieve the interface used for data transfer for a given
      * 	path used by a connection.
      * 
@@ -3676,7 +3540,7 @@ public final class Network {
      * 	the single path. Passing NW_ALL_PATHS for this function is
      * 	equivalent to passing 0.
      * 
-     * @result
+     * @return
      * 	Returns a retained nw_interface_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -3687,9 +3551,8 @@ public final class Network {
     public static native NSObject nw_data_transfer_report_copy_path_interface(NSObject report, int path_index);
 
     /**
-     * @function nw_framer_protocol_create_message
+     * [@function] nw_framer_protocol_create_message
      * 
-     * @abstract
      * 	Create an instance of a framer message on which per-
      * 	message options can be configured when sending data
      * 	on a connection. This is intended to be used by the
@@ -3700,7 +3563,7 @@ public final class Network {
      * 	The framer protocol definition, as retrieved from
      * 	nw_protocol_options_copy_definition() on the framer options.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol metadata object.
      */
     @Generated
@@ -3708,9 +3571,8 @@ public final class Network {
     public static native NSObject nw_framer_protocol_create_message(NSObject definition);
 
     /**
-     * @function nw_protocol_metadata_is_framer_message
+     * [@function] nw_protocol_metadata_is_framer_message
      * 
-     * @abstract
      * 	Checks if a protocol metadata object is a framer protocol
      * 	message. This indicates whether or not it is compatible
      * 	with the framer message setters and accessors.
@@ -3718,7 +3580,7 @@ public final class Network {
      * @param metadata
      * 	The protocol metadata to check.
      * 
-     * @result
+     * @return
      * 	Returns true if the metadata is associated with a framer
      * 	protocol definition, false otherwise.
      */
@@ -3727,9 +3589,8 @@ public final class Network {
     public static native boolean nw_protocol_metadata_is_framer_message(NSObject metadata);
 
     /**
-     * @function nw_framer_message_create
+     * [@function] nw_framer_message_create
      * 
-     * @abstract
      * 	Create a framer message, given a framer instance. This
      * 	is intended to be used within the implementation of
      * 	the framer protocol to create messages that are delivered
@@ -3738,7 +3599,7 @@ public final class Network {
      * @param framer
      * 	The framer instance object.
      * 
-     * @result
+     * @return
      * 	Returns a retained framer message object.
      */
     @Generated
@@ -3746,9 +3607,8 @@ public final class Network {
     public static native NSObject nw_framer_message_create(NSObject framer);
 
     /**
-     * @function nw_framer_message_set_value
+     * [@function] nw_framer_message_set_value
      * 
-     * @abstract
      * 	Set a key-value pair on a framer message, with a custom
      * 	dispose function for the value.
      * 
@@ -3779,9 +3639,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_message_access_value
+     * [@function] nw_framer_message_access_value
      * 
-     * @abstract
      * 	Access the value with a key on a framer message.
      * 
      * @param message
@@ -3812,9 +3671,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_message_set_object_value
+     * [@function] nw_framer_message_set_object_value
      * 
-     * @abstract
      * 	Set a key-value pair on a framer message, where the
      * 	value is a reference-counted object.
      * 
@@ -3834,9 +3692,8 @@ public final class Network {
             @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * @function nw_framer_message_copy_object_value
+     * [@function] nw_framer_message_copy_object_value
      * 
-     * @abstract
      * 	Copy the stored object value using a key on a framer message.
      * 
      * @param message
@@ -3856,9 +3713,8 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
 
     /**
-     * @function nw_framer_create_definition
+     * [@function] nw_framer_create_definition
      * 
-     * @abstract
      * 	Create a protocol definition for a custom framer protocol.
      * 
      * @param identifier
@@ -3873,7 +3729,7 @@ public final class Network {
      * 	A block to be invoked when starting a new instance of the framer
      * 	protocol. This may occur more than once for a single nw_connection.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol definition that can be used with protocol
      * 	options and metadata.
      */
@@ -3892,9 +3748,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_create_options
+     * [@function] nw_framer_create_options
      * 
-     * @abstract
      * 	Create protocol options from a framer definition. This object can
      * 	be added to an nw_protocol_stack_t to be used in an nw_connection_t
      * 	or an nw_listener_t.
@@ -3902,7 +3757,7 @@ public final class Network {
      * @param framer_definition
      * 	A protocol definition created with nw_framer_create_definition().
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol options object to add into a protocol
      * 	stack.
      */
@@ -3911,9 +3766,8 @@ public final class Network {
     public static native NSObject nw_framer_create_options(NSObject framer_definition);
 
     /**
-     * @function nw_framer_set_input_handler
+     * [@function] nw_framer_set_input_handler
      * 
-     * @abstract
      * 	Set a handler block to be invoked whenever new input
      * 	data is available to be parsed. When this block is
      * 	run, the implementation should call functions like
@@ -3943,9 +3797,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_set_output_handler
+     * [@function] nw_framer_set_output_handler
      * 
-     * @abstract
      * 	Set a handler block to be invoked whenever an output
      * 	message is ready to be sent. When this block is
      * 	run, the implementation should call functions like
@@ -3976,9 +3829,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_set_wakeup_handler
+     * [@function] nw_framer_set_wakeup_handler
      * 
-     * @abstract
      * 	Set a handler block to be invoked whenever the wakeup timer
      * 	set via nw_framer_schedule_wakeup() fires. This is intended to
      * 	be used for sending keepalives or other control traffic.
@@ -4007,9 +3859,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_set_stop_handler
+     * [@function] nw_framer_set_stop_handler
      * 
-     * @abstract
      * 	Set a handler block to be invoked when the connection
      * 	is being disconnected, to allow the framer implementation
      * 	a chance to send any final data.
@@ -4037,9 +3888,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_set_cleanup_handler
+     * [@function] nw_framer_set_cleanup_handler
      * 
-     * @abstract
      * 	Set a handler block to be invoked when the protocol stack
      * 	is being torn down and deallocated. This is the opportunity
      * 	for the framer implementation to release any state it may
@@ -4068,9 +3918,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_mark_ready
+     * [@function] nw_framer_mark_ready
      * 
-     * @abstract
      * 	Mark the connection associated with the framer instance
      * 	as ready (see nw_connection_state_ready). This is intended
      * 	to be used by protocols that require a handshake before being
@@ -4090,9 +3939,8 @@ public final class Network {
     public static native void nw_framer_mark_ready(NSObject framer);
 
     /**
-     * @function nw_framer_prepend_application_protocol
+     * [@function] nw_framer_prepend_application_protocol
      * 
-     * @abstract
      * 	Dynamically add a protocol to a connection establishment
      * 	attempt "above" the framer protocol. This means that the
      * 	protocol above will start running once the framer becomes
@@ -4114,7 +3962,7 @@ public final class Network {
      * 	Protocol options for an application protocol to dynamically
      * 	add "above" the framer.
      * 
-     * @result Returns true if the protocol was successfully added,
+     * @return Returns true if the protocol was successfully added,
      * 	or false it it could not be added. This will fail if
      * 	the framer is already marked ready.
      */
@@ -4123,9 +3971,8 @@ public final class Network {
     public static native boolean nw_framer_prepend_application_protocol(NSObject framer, NSObject protocol_options);
 
     /**
-     * @function nw_framer_mark_failed_with_error
+     * [@function] nw_framer_mark_failed_with_error
      * 
-     * @abstract
      * 	Mark the connection associated with the framer instance
      * 	as failed (see nw_connection_state_failed).
      * 
@@ -4144,9 +3991,8 @@ public final class Network {
     public static native void nw_framer_mark_failed_with_error(NSObject framer, int error_code);
 
     /**
-     * @function nw_framer_parse_input
+     * [@function] nw_framer_parse_input
      * 
-     * @abstract
      * 	Parse currently available input from the location of the input
      * 	cursor in the stream or message being parsed.
      * 
@@ -4183,7 +4029,7 @@ public final class Network {
      * 	The completion that provides the bytes to parse, which will
      * 	be called exactly once.
      * 
-     * @result
+     * @return
      * 	Returns true if the parse succeeded, or false if not enough
      * 	bytes were available.
      */
@@ -4202,9 +4048,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_deliver_input
+     * [@function] nw_framer_deliver_input
      * 
-     * @abstract
      * 	Deliver arbitrary data to the application. This is intended to
      * 	deliver any data that is generated or transformed by the
      * 	protocol instance. It will incur a copy of bytes.
@@ -4238,9 +4083,8 @@ public final class Network {
             @NUInt long input_length, NSObject message, boolean is_complete);
 
     /**
-     * @function nw_framer_deliver_input_no_copy
+     * [@function] nw_framer_deliver_input_no_copy
      * 
-     * @abstract
      * 	Deliver bytes directly to the application without any
      * 	transformation or copy. The bytes will start at the current
      * 	input cursor used for parsing, and will implicitly advance
@@ -4267,7 +4111,7 @@ public final class Network {
      * 	A boolean indicating whether or not this data represents
      * 	the end of the message.
      * 
-     * @result
+     * @return
      * 	Returns true if the input was delivered immediately, or
      * 	false if it will be delivered once more bytes become available.
      */
@@ -4277,9 +4121,8 @@ public final class Network {
             NSObject message, boolean is_complete);
 
     /**
-     * @function nw_framer_pass_through_input
+     * [@function] nw_framer_pass_through_input
      * 
-     * @abstract
      * 	Mark the input side of the framer as a pass-through, which
      * 	means the framer will not be notified of any further input
      * 	data.
@@ -4296,9 +4139,8 @@ public final class Network {
     public static native void nw_framer_pass_through_input(NSObject framer);
 
     /**
-     * @function nw_framer_parse_output
+     * [@function] nw_framer_parse_output
      * 
-     * @abstract
      * 	Parse currently available output from a message from the location
      * 	of the output cursor in the message being parsed.
      * 
@@ -4334,7 +4176,7 @@ public final class Network {
      * 	The completion that provides the bytes to parse, which will
      * 	be called exactly once.
      * 
-     * @result
+     * @return
      * 	Returns true if the parse succeeded, or false if not enough
      * 	bytes were available.
      */
@@ -4353,9 +4195,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_write_output
+     * [@function] nw_framer_write_output
      * 
-     * @abstract
      * 	Write arbitrary bytes as part of an outbound message. This
      * 	is intended to be used for adding headers around application
      * 	data, or writing any other data that is generated or transformed
@@ -4387,9 +4228,8 @@ public final class Network {
             @NUInt long output_length);
 
     /**
-     * @function nw_framer_write_output_data
+     * [@function] nw_framer_write_output_data
      * 
-     * @abstract
      * 	Write arbitrary bytes as part of an outbound message. This
      * 	is intended to be used for adding headers around application
      * 	data, or writing any other data that is generated or transformed
@@ -4418,9 +4258,8 @@ public final class Network {
     public static native void nw_framer_write_output_data(NSObject framer, NSObject output_data);
 
     /**
-     * @function nw_framer_write_output_no_copy
+     * [@function] nw_framer_write_output_no_copy
      * 
-     * @abstract
      * 	Write bytes directly from the application without any
      * 	transformation or copy. The bytes will start at the current
      * 	output cursor used for parsing, and will implicitly advance
@@ -4450,9 +4289,8 @@ public final class Network {
     public static native boolean nw_framer_write_output_no_copy(NSObject framer, @NUInt long output_length);
 
     /**
-     * @function nw_framer_pass_through_output
+     * [@function] nw_framer_pass_through_output
      * 
-     * @abstract
      * 	Mark the output side of the framer as a pass-through, which
      * 	means the framer will not be notified of any further output
      * 	data.
@@ -4469,9 +4307,8 @@ public final class Network {
     public static native void nw_framer_pass_through_output(NSObject framer);
 
     /**
-     * @function nw_framer_schedule_wakeup
+     * [@function] nw_framer_schedule_wakeup
      * 
-     * @abstract
      * 	Schedule a wakeup on the framer instance for a number of
      * 	milliseconds into the future. If this is called multiple
      * 	times before the timeout is reached, the new value replaces
@@ -4495,9 +4332,8 @@ public final class Network {
     public static native void nw_framer_schedule_wakeup(NSObject framer, long milliseconds);
 
     /**
-     * @function nw_framer_async
+     * [@function] nw_framer_async
      * 
-     * @abstract
      * 	Schedule a block asynchronously on the framer instance. This
      * 	must be used anytime the caller wants to perform any other
      * 	action on the framer instance while not directly in the callstack
@@ -4523,9 +4359,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_framer_copy_remote_endpoint
+     * [@function] nw_framer_copy_remote_endpoint
      * 
-     * @abstract
      * 	Access the remote endpoint being used for a given
      * 	instance of a framer.
      * 
@@ -4545,9 +4380,8 @@ public final class Network {
     public static native NSObject nw_framer_copy_remote_endpoint(NSObject framer);
 
     /**
-     * @function nw_framer_copy_local_endpoint
+     * [@function] nw_framer_copy_local_endpoint
      * 
-     * @abstract
      * 	Access the local endpoint being used for a given
      * 	instance of a framer.
      * 
@@ -4567,9 +4401,8 @@ public final class Network {
     public static native NSObject nw_framer_copy_local_endpoint(NSObject framer);
 
     /**
-     * @function nw_framer_copy_parameters
+     * [@function] nw_framer_copy_parameters
      * 
-     * @abstract
      * 	Access the parameters being used for a given
      * 	instance of a framer.
      * 
@@ -4588,14 +4421,13 @@ public final class Network {
     public static native NSObject nw_framer_copy_parameters(NSObject framer);
 
     /**
-     * @function nw_protocol_copy_ip_definition
+     * [@function] nw_protocol_copy_ip_definition
      * 
-     * @abstract
      * 	Access the definition of the default system protocol implementation
      * 	of IP (Internet Protocol). This protocol can be used
      * 	as part of a connection's protocol stack as the internet protocol.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol definition object.
      */
     @Generated
@@ -4603,9 +4435,8 @@ public final class Network {
     public static native NSObject nw_protocol_copy_ip_definition();
 
     /**
-     * @function nw_ip_options_set_version
+     * [@function] nw_ip_options_set_version
      * 
-     * @abstract
      * 	Specify a single version of the Internet Protocol to allow.
      * 	Setting this value will constrain which address endpoints can
      * 	be used, and will filter DNS results during connection establishment.
@@ -4621,9 +4452,8 @@ public final class Network {
     public static native void nw_ip_options_set_version(NSObject options, int version);
 
     /**
-     * @function nw_ip_options_set_hop_limit
+     * [@function] nw_ip_options_set_hop_limit
      * 
-     * @abstract
      * 	Configure the IP hop limit (or 'TTL' for IPv4).
      * 
      * @param options
@@ -4637,9 +4467,8 @@ public final class Network {
     public static native void nw_ip_options_set_hop_limit(NSObject options, byte hop_limit);
 
     /**
-     * @function nw_ip_options_set_use_minimum_mtu
+     * [@function] nw_ip_options_set_use_minimum_mtu
      * 
-     * @abstract
      * 	Configure IP to use the minimum MTU value, which
      * 	is 1280 bytes for IPv6. This value has no effect for
      * 	IPv4.
@@ -4656,9 +4485,8 @@ public final class Network {
     public static native void nw_ip_options_set_use_minimum_mtu(NSObject options, boolean use_minimum_mtu);
 
     /**
-     * @function nw_ip_options_set_disable_fragmentation
+     * [@function] nw_ip_options_set_disable_fragmentation
      * 
-     * @abstract
      * 	Configure IP to disable fragmentation on outgoing
      * 	packets.
      * 
@@ -4674,9 +4502,8 @@ public final class Network {
     public static native void nw_ip_options_set_disable_fragmentation(NSObject options, boolean disable_fragmentation);
 
     /**
-     * @function nw_ip_options_set_calculate_receive_time
+     * [@function] nw_ip_options_set_calculate_receive_time
      * 
-     * @abstract
      * 	Configure IP to calculate receive time for inbound
      * 	packets.
      * 
@@ -4693,9 +4520,8 @@ public final class Network {
             boolean calculate_receive_time);
 
     /**
-     * @function nw_ip_options_set_local_address_preference
+     * [@function] nw_ip_options_set_local_address_preference
      * 
-     * @abstract
      * 	Specify a preference for how to select local addresses for outbound
      * 	connections.
      * 
@@ -4710,14 +4536,13 @@ public final class Network {
     public static native void nw_ip_options_set_local_address_preference(NSObject options, int preference);
 
     /**
-     * @function nw_ip_create_metadata
+     * [@function] nw_ip_create_metadata
      * 
-     * @abstract
      * 	Create an instance of IP metadata that can be used
      * 	to configure per-packet options when sending data
      * 	on a connection.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol metadata object.
      */
     @Generated
@@ -4725,14 +4550,13 @@ public final class Network {
     public static native NSObject nw_ip_create_metadata();
 
     /**
-     * @function nw_protocol_metadata_is_ip
+     * [@function] nw_protocol_metadata_is_ip
      * 
-     * @abstract
      * 	Checks if a protocol metadata object is compatible with the
      * 	accessors defined in this file for the default system
      * 	implementation of IP.
      * 
-     * @result
+     * @return
      * 	Returns true if the metadata is for the default system IP,
      * 	false otherwise.
      */
@@ -4741,9 +4565,8 @@ public final class Network {
     public static native boolean nw_protocol_metadata_is_ip(NSObject metadata);
 
     /**
-     * @function nw_ip_metadata_set_ecn_flag
+     * [@function] nw_ip_metadata_set_ecn_flag
      * 
-     * @abstract
      * 	Sets ECN flags on IP metadata. This will take effect if
      * 	applied to any sent content.
      * 
@@ -4758,9 +4581,8 @@ public final class Network {
     public static native void nw_ip_metadata_set_ecn_flag(NSObject metadata, int ecn_flag);
 
     /**
-     * @function nw_ip_metadata_get_ecn_flag
+     * [@function] nw_ip_metadata_get_ecn_flag
      * 
-     * @abstract
      * 	Gets ECN flags from IP metadata. This will be set only
      * 	for metadata associated with received content.
      * 
@@ -4775,9 +4597,8 @@ public final class Network {
     public static native int nw_ip_metadata_get_ecn_flag(NSObject metadata);
 
     /**
-     * @function nw_ip_metadata_set_service_class
+     * [@function] nw_ip_metadata_set_service_class
      * 
-     * @abstract
      * 	Sets service class on IP metadata. This will not generally
      * 	translate into TOS or Traffic Class bits unless the network
      * 	explictly supports it, but it will impact local queuing of
@@ -4794,9 +4615,8 @@ public final class Network {
     public static native void nw_ip_metadata_set_service_class(NSObject metadata, int service_class);
 
     /**
-     * @function nw_ip_metadata_get_service_class
+     * [@function] nw_ip_metadata_get_service_class
      * 
-     * @abstract
      * 	Gets service class from IP metadata. This reflects the value
      * 	set using nw_ip_metadata_set_service_class. It will not
      * 	be received from the network.
@@ -4812,9 +4632,8 @@ public final class Network {
     public static native int nw_ip_metadata_get_service_class(NSObject metadata);
 
     /**
-     * @function nw_ip_metadata_get_receive_time
+     * [@function] nw_ip_metadata_get_receive_time
      * 
-     * @abstract
      * 	Access the time at which a packet was received. This is
      * 	useful for calculating precise timing for round-trip-time
      * 	estimates. Same as clock_gettime_nsec_np(CLOCK_MONOTONIC_RAW).
@@ -4833,9 +4652,8 @@ public final class Network {
     public static native long nw_ip_metadata_get_receive_time(NSObject metadata);
 
     /**
-     * @function nw_listener_create_with_port
+     * [@function] nw_listener_create_with_port
      * 
-     * @abstract
      * 	Creates a networking listener bound to a specified local port.
      * 
      * @param port
@@ -4846,7 +4664,7 @@ public final class Network {
      * 	The parameters to use for the listener. These include the protocols to be
      * 	used for the listener.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_listener_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -4859,9 +4677,8 @@ public final class Network {
             NSObject parameters);
 
     /**
-     * @function nw_listener_create
+     * [@function] nw_listener_create
      * 
-     * @abstract
      * 	Creates a networking listener. The listener will be assigned a random
      * 	port upon which to listen unless otherwise specified by the parameters.
      * 
@@ -4869,7 +4686,7 @@ public final class Network {
      * 	The parameters to use for the listener. These include the protocols to be
      * 	used for the listener.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_listener_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -4880,9 +4697,8 @@ public final class Network {
     public static native NSObject nw_listener_create(NSObject parameters);
 
     /**
-     * @function nw_listener_create_with_connection
+     * [@function] nw_listener_create_with_connection
      * 
-     * @abstract
      * 	Creates a networking listener based on an existing
      * 	multiplexing connection. If there are multiple protocols
      * 	in the connection that support listening for incoming flows,
@@ -4898,7 +4714,7 @@ public final class Network {
      * 	defined in the parameters must be able to join a protocol
      * 	in the connection that supports listening protocols.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_listener_t object on success. Use nw_release() to deallocate.
      * 	Returns NULL on failure. Fails due to invalid parameters.
      */
@@ -4907,9 +4723,8 @@ public final class Network {
     public static native NSObject nw_listener_create_with_connection(NSObject connection, NSObject parameters);
 
     /**
-     * @function nw_listener_set_queue
+     * [@function] nw_listener_set_queue
      * 
-     * @abstract
      * 	Sets the client callback queue, on which blocks for events will
      * 	be scheduled. This must be done before calling nw_listener_start().
      * 
@@ -4924,9 +4739,8 @@ public final class Network {
     public static native void nw_listener_set_queue(NSObject listener, NSObject queue);
 
     /**
-     * @function nw_listener_set_state_changed_handler
+     * [@function] nw_listener_set_state_changed_handler
      * 
-     * @abstract
      * 	Sets the state change handler. For clients that need to perform cleanup when the
      * 	connection has been cancelled, the nw_listener_state_cancelled state will
      * 	be delivered last.
@@ -4951,9 +4765,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_listener_set_new_connection_handler
+     * [@function] nw_listener_set_new_connection_handler
      * 
-     * @abstract
      * 	Sets the client new connection handler. Must be called before
      * 	nw_listener_start.
      * 
@@ -4977,9 +4790,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_listener_get_new_connection_limit
+     * [@function] nw_listener_get_new_connection_limit
      * 
-     * @abstract
      * 	Gets the listener new connection limit. The default value is
      *      NW_LISTENER_INFINITE_CONNECTION_LIMIT which indicates that
      *      the listener should not limit incoming connections. If the value
@@ -4994,7 +4806,7 @@ public final class Network {
      * @param listener
      * 	The listener object.
      * 
-     * @result
+     * @return
      * 	Returns current new connection limit
      */
     @Generated
@@ -5002,9 +4814,8 @@ public final class Network {
     public static native int nw_listener_get_new_connection_limit(NSObject listener);
 
     /**
-     * @function nw_listener_set_new_connection_limit
+     * [@function] nw_listener_set_new_connection_limit
      * 
-     * @abstract
      * 	Sets the listener new connection limit. Use the value NW_LISTENER_INFINITE_CONNECTION_LIMIT
      *      to disable connection limits. If the value is not NW_LISTENER_INFINITE_CONNECTION_LIMIT,
      *      it will be decremented by 1 every time a new connection is created. When the value becomes
@@ -5026,9 +4837,8 @@ public final class Network {
     public static native void nw_listener_set_new_connection_limit(NSObject listener, int new_connection_limit);
 
     /**
-     * @function nw_listener_set_advertise_descriptor
+     * [@function] nw_listener_set_advertise_descriptor
      * 
-     * @abstract
      * 	Describes the bonjour service the listener should register. Setting the
      * 	advertise descriptor more than once may be used to update the TXT record.
      * 
@@ -5043,9 +4853,8 @@ public final class Network {
     public static native void nw_listener_set_advertise_descriptor(NSObject listener, NSObject advertise_descriptor);
 
     /**
-     * @function nw_listener_set_advertised_endpoint_changed_handler
+     * [@function] nw_listener_set_advertised_endpoint_changed_handler
      * 
-     * @abstract
      * 	Sets the client advertised endpoint changed handler. The handler will be
      * 	invoked for listeners which have called nw_listener_set_advertise_descriptor().
      * 
@@ -5069,9 +4878,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_listener_get_port
+     * [@function] nw_listener_get_port
      * 
-     * @abstract
      * 	Gets the local port as a number in host byte order. If the listener was created with a
      * 	port of 0 (let the system assign a port), nw_listener_get_port will return 0 until the
      * 	listener is in the ready state.
@@ -5079,7 +4887,7 @@ public final class Network {
      * @param listener
      * 	The listener to get the local port of.
      * 
-     * @result
+     * @return
      * 	Returns a port in host byte order.
      */
     @Generated
@@ -5087,9 +4895,8 @@ public final class Network {
     public static native char nw_listener_get_port(NSObject listener);
 
     /**
-     * @function nw_listener_start
+     * [@function] nw_listener_start
      * 
-     * @abstract
      * 	Starts the listener, which will cause the listener
      * 	to start listening for inbound connections.
      * 
@@ -5101,9 +4908,8 @@ public final class Network {
     public static native void nw_listener_start(NSObject listener);
 
     /**
-     * @function nw_listener_cancel
+     * [@function] nw_listener_cancel
      * 
-     * @abstract
      * 	Cancel the listener. This will de-register the listener from the system. The process
      * 	of cancellation will be completed asynchronously, and the final callback event
      * 	delivered to the caller will be a state update with a value of nw_listener_state_cancelled.
@@ -5117,13 +4923,12 @@ public final class Network {
     public static native void nw_listener_cancel(NSObject listener);
 
     /**
-     * @function nw_path_monitor_create
+     * [@function] nw_path_monitor_create
      * 
-     * @abstract
      * 	Create a default path monitor, that will allow the enumeration of all available
      * 	interfaces on the system.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_path_monitor_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -5134,16 +4939,15 @@ public final class Network {
     public static native NSObject nw_path_monitor_create();
 
     /**
-     * @function nw_path_monitor_create_with_type
+     * [@function] nw_path_monitor_create_with_type
      * 
-     * @abstract
      * 	Create a path monitor specific to an interface type, that will allow the enumeration
      * 	of any interface that matches the type on the system.
      * 
      * @param required_interface_type
      * 	An interface type that will filter any results that the path monitor returns.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_path_monitor_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -5154,8 +4958,8 @@ public final class Network {
     public static native NSObject nw_path_monitor_create_with_type(int required_interface_type);
 
     /**
-     * @function nw_path_monitor_set_cancel_handler
-     * @abstract
+     * [@function] nw_path_monitor_set_cancel_handler
+     * 
      * 	Set a handler to be called on the queue provided to nw_path_monitor_set_queue
      * 	once cancellation has completed. Once the cancel handler has been called, the
      * 	update handler will not fire again.
@@ -5179,8 +4983,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_path_monitor_set_update_handler
-     * @abstract
+     * [@function] nw_path_monitor_set_update_handler
+     * 
      * 	Sets the client update handler. This block will be called with the
      * 	current path when start is called and any time the path changes.
      * 
@@ -5203,8 +5007,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_path_monitor_set_queue
-     * @abstract
+     * [@function] nw_path_monitor_set_queue
+     * 
      * 	Sets the client update queue. All blocks will be scheduled on
      * 	this queue. Call before calling nw_path_monitor_start.
      * 
@@ -5219,8 +5023,8 @@ public final class Network {
     public static native void nw_path_monitor_set_queue(NSObject monitor, NSObject queue);
 
     /**
-     * @function nw_path_monitor_start
-     * @abstract
+     * [@function] nw_path_monitor_start
+     * 
      * 	Starts the path monitor.
      * 
      * @param monitor
@@ -5231,9 +5035,8 @@ public final class Network {
     public static native void nw_path_monitor_start(NSObject monitor);
 
     /**
-     * @function nw_path_monitor_cancel
+     * [@function] nw_path_monitor_cancel
      * 
-     * @abstract
      * 	Cancel the path monitor.
      * 
      * @param monitor
@@ -5244,14 +5047,13 @@ public final class Network {
     public static native void nw_path_monitor_cancel(NSObject monitor);
 
     /**
-     * @function nw_protocol_copy_tcp_definition
+     * [@function] nw_protocol_copy_tcp_definition
      * 
-     * @abstract
      * 	Access the definition of the default system protocol implementation
      * 	of TCP (Transmission Control Protocol). This protocol can be used
      * 	as part of a connection's protocol stack as the transport protocol.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol definition object.
      */
     @Generated
@@ -5259,14 +5061,13 @@ public final class Network {
     public static native NSObject nw_protocol_copy_tcp_definition();
 
     /**
-     * @function nw_tcp_create_options
+     * [@function] nw_tcp_create_options
      * 
-     * @abstract
      * 	Create an instance of TCP protocol options. This object can be added
      * 	to an nw_protocol_stack_t to be used in an nw_connection_t or
      * 	an nw_listener_t.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol options object.
      */
     @Generated
@@ -5274,9 +5075,8 @@ public final class Network {
     public static native NSObject nw_tcp_create_options();
 
     /**
-     * @function nw_tcp_options_set_no_delay
+     * [@function] nw_tcp_options_set_no_delay
      * 
-     * @abstract
      * 	Configure TCP to disable Nagle's algorithm, which will
      * 	delay sending packets to coalesce sending.
      * 
@@ -5292,9 +5092,8 @@ public final class Network {
     public static native void nw_tcp_options_set_no_delay(NSObject options, boolean no_delay);
 
     /**
-     * @function nw_tcp_options_set_no_push
+     * [@function] nw_tcp_options_set_no_push
      * 
-     * @abstract
      * 	Wait to send TCP data until the connection has finished
      * 	writing, or else the TCP send buffer is full.
      * 
@@ -5310,9 +5109,8 @@ public final class Network {
     public static native void nw_tcp_options_set_no_push(NSObject options, boolean no_push);
 
     /**
-     * @function nw_tcp_options_set_no_options
+     * [@function] nw_tcp_options_set_no_options
      * 
-     * @abstract
      * 	Disable sending TCP options and extensions.
      * 
      * @param options
@@ -5327,9 +5125,8 @@ public final class Network {
     public static native void nw_tcp_options_set_no_options(NSObject options, boolean no_options);
 
     /**
-     * @function nw_tcp_options_set_enable_keepalive
+     * [@function] nw_tcp_options_set_enable_keepalive
      * 
-     * @abstract
      * 	Enable sending TCP keepalive probes.
      * 
      * @param options
@@ -5343,9 +5140,8 @@ public final class Network {
     public static native void nw_tcp_options_set_enable_keepalive(NSObject options, boolean enable_keepalive);
 
     /**
-     * @function nw_tcp_options_set_keepalive_count
+     * [@function] nw_tcp_options_set_keepalive_count
      * 
-     * @abstract
      * 	Configure the number of times TCP keepalive probes
      * 	should be sent without reply before terminating
      * 	the connection.
@@ -5362,9 +5158,8 @@ public final class Network {
     public static native void nw_tcp_options_set_keepalive_count(NSObject options, int keepalive_count);
 
     /**
-     * @function nw_tcp_options_set_keepalive_idle_time
+     * [@function] nw_tcp_options_set_keepalive_idle_time
      * 
-     * @abstract
      * 	Configure the amount of time that a connection must be
      * 	idle before TCP should start sending keepalive probes.
      * 
@@ -5380,9 +5175,8 @@ public final class Network {
     public static native void nw_tcp_options_set_keepalive_idle_time(NSObject options, int keepalive_idle_time);
 
     /**
-     * @function nw_tcp_options_set_keepalive_interval
+     * [@function] nw_tcp_options_set_keepalive_interval
      * 
-     * @abstract
      * 	Configure the amount of time between sending TCP keepalive
      * 	probes when the peer is not responding.
      * 
@@ -5398,9 +5192,8 @@ public final class Network {
     public static native void nw_tcp_options_set_keepalive_interval(NSObject options, int keepalive_interval);
 
     /**
-     * @function nw_tcp_options_set_maximum_segment_size
+     * [@function] nw_tcp_options_set_maximum_segment_size
      * 
-     * @abstract
      * 	Directly configure the maximum segment size (MSS)
      * 	TCP will use.
      * 
@@ -5415,9 +5208,8 @@ public final class Network {
     public static native void nw_tcp_options_set_maximum_segment_size(NSObject options, int maximum_segment_size);
 
     /**
-     * @function nw_tcp_options_set_connection_timeout
+     * [@function] nw_tcp_options_set_connection_timeout
      * 
-     * @abstract
      * 	Define a timeout value after which TCP connection
      * 	establishment will give up.
      * 
@@ -5432,9 +5224,8 @@ public final class Network {
     public static native void nw_tcp_options_set_connection_timeout(NSObject options, int connection_timeout);
 
     /**
-     * @function nw_tcp_options_set_persist_timeout
+     * [@function] nw_tcp_options_set_persist_timeout
      * 
-     * @abstract
      * 	Define a timeout value after which TCP connections
      * 	in the persist state will terminate. See RFC 6429.
      * 
@@ -5449,9 +5240,8 @@ public final class Network {
     public static native void nw_tcp_options_set_persist_timeout(NSObject options, int persist_timeout);
 
     /**
-     * @function nw_tcp_options_set_retransmit_connection_drop_time
+     * [@function] nw_tcp_options_set_retransmit_connection_drop_time
      * 
-     * @abstract
      * 	Define a timeout value after which TCP will drop
      * 	a connection with unacknowledged retransmissions.
      * 
@@ -5467,9 +5257,8 @@ public final class Network {
             int retransmit_connection_drop_time);
 
     /**
-     * @function nw_tcp_options_set_retransmit_fin_drop
+     * [@function] nw_tcp_options_set_retransmit_fin_drop
      * 
-     * @abstract
      * 	Cause TCP to drop connections after not receiving
      * 	an ACK multiple times after a FIN, currently set at three.
      * 
@@ -5485,9 +5274,8 @@ public final class Network {
     public static native void nw_tcp_options_set_retransmit_fin_drop(NSObject options, boolean retransmit_fin_drop);
 
     /**
-     * @function nw_tcp_options_set_disable_ack_stretching
+     * [@function] nw_tcp_options_set_disable_ack_stretching
      * 
-     * @abstract
      * 	Configure TCP to disable ACK stretching. ACKs will be sent
      * 	for every other data packet.
      * 
@@ -5503,9 +5291,8 @@ public final class Network {
             boolean disable_ack_stretching);
 
     /**
-     * @function nw_tcp_options_set_enable_fast_open
+     * [@function] nw_tcp_options_set_enable_fast_open
      * 
-     * @abstract
      * 	Configure TCP to enable TCP Fast Open (TFO). This may take effect
      * 	even when TCP is not the top-level protocol in the protocol stack.
      * 	For example, if TLS is running over TCP, the Client Hello message
@@ -5527,9 +5314,8 @@ public final class Network {
     public static native void nw_tcp_options_set_enable_fast_open(NSObject options, boolean enable_fast_open);
 
     /**
-     * @function nw_tcp_options_set_disable_ecn
+     * [@function] nw_tcp_options_set_disable_ecn
      * 
-     * @abstract
      * 	Configure TCP to disable default Explicit Congestion
      * 	Notification (ECN) behavior.
      * 
@@ -5544,14 +5330,13 @@ public final class Network {
     public static native void nw_tcp_options_set_disable_ecn(NSObject options, boolean disable_ecn);
 
     /**
-     * @function nw_protocol_metadata_is_tcp
+     * [@function] nw_protocol_metadata_is_tcp
      * 
-     * @abstract
      * 	Checks if a protocol metadata object is compatible with the
      * 	accessors defined in this file for the default system
      * 	implementation of TCP.
      * 
-     * @result
+     * @return
      * 	Returns true if the metadata is for the default system TCP,
      * 	false otherwise.
      */
@@ -5560,12 +5345,11 @@ public final class Network {
     public static native boolean nw_protocol_metadata_is_tcp(NSObject metadata);
 
     /**
-     * @function nw_tcp_get_available_receive_buffer
+     * [@function] nw_tcp_get_available_receive_buffer
      * 
-     * @abstract
      * 	Fetch the number of bytes waiting to be read from the receive buffer.
      * 
-     * @result
+     * @return
      * 	The number of bytes available in the receive buffer.
      */
     @Generated
@@ -5573,12 +5357,11 @@ public final class Network {
     public static native int nw_tcp_get_available_receive_buffer(NSObject metadata);
 
     /**
-     * @function nw_tcp_get_available_send_buffer
+     * [@function] nw_tcp_get_available_send_buffer
      * 
-     * @abstract
      * 	Fetch the number of bytes waiting to be acknowledged in the send buffer.
      * 
-     * @result
+     * @return
      * 	The number of bytes waiting to be acknowledged.
      */
     @Generated
@@ -5586,14 +5369,13 @@ public final class Network {
     public static native int nw_tcp_get_available_send_buffer(NSObject metadata);
 
     /**
-     * @function nw_protocol_copy_tls_definition
+     * [@function] nw_protocol_copy_tls_definition
      * 
-     * @abstract
      * 	Access the definition of the default system protocol implementation
      * 	of TLS (Transport Layer Security). This protocol can be used
      * 	as part of a connection's protocol stack as an application protocol.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol definition object.
      */
     @Generated
@@ -5601,14 +5383,13 @@ public final class Network {
     public static native NSObject nw_protocol_copy_tls_definition();
 
     /**
-     * @function nw_tls_create_options
+     * [@function] nw_tls_create_options
      * 
-     * @abstract
      * 	Create an instance of TLS protocol options. This object can be added
      * 	to an nw_protocol_stack_t to be used in an nw_connection_t or
      * 	an nw_listener_t.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol options object.
      */
     @Generated
@@ -5616,9 +5397,8 @@ public final class Network {
     public static native NSObject nw_tls_create_options();
 
     /**
-     * @function nw_tls_copy_sec_protocol_options
+     * [@function] nw_tls_copy_sec_protocol_options
      * 
-     * @abstract
      * 	Access the sec_protocol_options_t for a given network protocol
      * 	options instance. See <Security/SecProtocolOptions.h> for functions
      * 	to futher configure security options.
@@ -5626,7 +5406,7 @@ public final class Network {
      * @param options
      * 	An nw_protocol_options_t that has been created for TLS.
      * 
-     * @result
+     * @return
      * 	Returns a retained sec_protocol_options_t object.
      */
     @Generated
@@ -5634,14 +5414,13 @@ public final class Network {
     public static native NSObject nw_tls_copy_sec_protocol_options(NSObject options);
 
     /**
-     * @function nw_protocol_metadata_is_tls
+     * [@function] nw_protocol_metadata_is_tls
      * 
-     * @abstract
      * 	Checks if a protocol metadata object is compatible with the
      * 	accessors defined in this file for the default system
      * 	implementation of TLS.
      * 
-     * @result
+     * @return
      * 	Returns true if the metadata is for the default system TLS,
      * 	false otherwise.
      */
@@ -5650,9 +5429,8 @@ public final class Network {
     public static native boolean nw_protocol_metadata_is_tls(NSObject metadata);
 
     /**
-     * @function nw_tls_copy_sec_protocol_metadata
+     * [@function] nw_tls_copy_sec_protocol_metadata
      * 
-     * @abstract
      * 	Access the sec_protocol_metadata_t for a given network protocol
      * 	metadata instance. See <Security/SecProtocolMetadata.h> for functions
      * 	to access security properties.
@@ -5660,7 +5438,7 @@ public final class Network {
      * @param metadata
      * 	An nw_protocol_metadata_t for the TLS protocol.
      * 
-     * @result
+     * @return
      * 	Returns a retained sec_protocol_metadata_t object.
      */
     @Generated
@@ -5668,14 +5446,13 @@ public final class Network {
     public static native NSObject nw_tls_copy_sec_protocol_metadata(NSObject metadata);
 
     /**
-     * @function nw_protocol_copy_udp_definition
+     * [@function] nw_protocol_copy_udp_definition
      * 
-     * @abstract
      * 	Access the definition of the default system protocol implementation
      * 	of UDP (User Datagram Protocol). This protocol can be used
      * 	as part of a connection's protocol stack as the transport protocol.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol definition object.
      */
     @Generated
@@ -5683,14 +5460,13 @@ public final class Network {
     public static native NSObject nw_protocol_copy_udp_definition();
 
     /**
-     * @function nw_udp_create_options
+     * [@function] nw_udp_create_options
      * 
-     * @abstract
      * 	Create an instance of UDP protocol options. This object can be added
      * 	to an nw_protocol_stack_t to be used in an nw_connection_t or
      * 	an nw_listener_t.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol options object.
      */
     @Generated
@@ -5698,9 +5474,8 @@ public final class Network {
     public static native NSObject nw_udp_create_options();
 
     /**
-     * @function nw_udp_options_set_prefer_no_checksum
+     * [@function] nw_udp_options_set_prefer_no_checksum
      * 
-     * @abstract
      * 	Configure UDP to skip computing checksums when sending.
      * 	This will only take effect when running over IPv4.
      * 
@@ -5716,14 +5491,13 @@ public final class Network {
     public static native void nw_udp_options_set_prefer_no_checksum(NSObject options, boolean prefer_no_checksum);
 
     /**
-     * @function nw_udp_create_metadata
+     * [@function] nw_udp_create_metadata
      * 
-     * @abstract
      * 	Create an instance of UDP metadata that can be used
      * 	to configure per-datagram options when sending data
      * 	on a connection.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol metadata object.
      */
     @Generated
@@ -5731,14 +5505,13 @@ public final class Network {
     public static native NSObject nw_udp_create_metadata();
 
     /**
-     * @function nw_protocol_metadata_is_udp
+     * [@function] nw_protocol_metadata_is_udp
      * 
-     * @abstract
      * 	Checks if a protocol metadata object is compatible with the
      * 	accessors defined in this file for the default system
      * 	implementation of UDP.
      * 
-     * @result
+     * @return
      * 	Returns true if the metadata is for the default system UDP,
      * 	false otherwise.
      */
@@ -5747,14 +5520,13 @@ public final class Network {
     public static native boolean nw_protocol_metadata_is_udp(NSObject metadata);
 
     /**
-     * @function nw_protocol_copy_ws_definition
+     * [@function] nw_protocol_copy_ws_definition
      * 
-     * @abstract
      * 	Access the definition of the default system implementation of the
      * 	WebSocket protocol. This protocol can be appended to a connection's
      * 	protocol stack.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol definition object.
      */
     @Generated
@@ -5762,14 +5534,13 @@ public final class Network {
     public static native NSObject nw_protocol_copy_ws_definition();
 
     /**
-     * @function nw_ws_create_options
+     * [@function] nw_ws_create_options
      * 
-     * @abstract
      * 	Create an instance of WebSocket protocol options. This object can be
      * 	added to an nw_protocol_stack_t to be used in an nw_connection_t or
      * 	an nw_listener_t.
      * 
-     * @result
+     * @return
      * 	Returns a retained protocol options object.
      */
     @Generated
@@ -5777,9 +5548,8 @@ public final class Network {
     public static native NSObject nw_ws_create_options(int version);
 
     /**
-     * @function nw_ws_options_add_additional_header
+     * [@function] nw_ws_options_add_additional_header
      * 
-     * @abstract
      * 	Set additional HTTP headers to be sent by the client during the
      * 	WebSocket handshake.
      * 
@@ -5799,9 +5569,8 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
     /**
-     * @function nw_ws_options_add_subprotocol
+     * [@function] nw_ws_options_add_subprotocol
      * 
-     * @abstract
      * 	Add to the list of subprotocols that will be presented to a
      * 	WebSocket server during connection establishment.
      * 
@@ -5817,9 +5586,8 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String subprotocol);
 
     /**
-     * @function nw_ws_options_set_auto_reply_ping
+     * [@function] nw_ws_options_set_auto_reply_ping
      * 
-     * @abstract
      * 	Set whether the WebSocket connection should automatically reply to all
      * 	incoming pings.
      * 
@@ -5835,9 +5603,8 @@ public final class Network {
     public static native void nw_ws_options_set_auto_reply_ping(NSObject options, boolean auto_reply_ping);
 
     /**
-     * @function nw_ws_options_set_skip_handshake
+     * [@function] nw_ws_options_set_skip_handshake
      * 
-     * @abstract
      * 	Set whether the WebSocket protocol should skip the opening handshake
      * 	and begin framing data as soon as a connection is established.
      * 
@@ -5852,9 +5619,8 @@ public final class Network {
     public static native void nw_ws_options_set_skip_handshake(NSObject options, boolean skip_handshake);
 
     /**
-     * @function nw_ws_options_set_maximum_message_size
+     * [@function] nw_ws_options_set_maximum_message_size
      * 
-     * @abstract
      * 	Set the maximum allowed message size to be received by the WebSocket
      * 	connection. This does not limit the sending message size.
      * 
@@ -5871,14 +5637,13 @@ public final class Network {
             @NUInt long maximum_message_size);
 
     /**
-     * @function nw_protocol_metadata_is_ws
+     * [@function] nw_protocol_metadata_is_ws
      * 
-     * @abstract
      * 	Checks if a protocol metadata object is compatible with the
      * 	accessors defined in this file for the default system
      * 	implementation of WebSocket.
      * 
-     * @result
+     * @return
      * 	Returns true if the metadata is for the default system
      * 	implementation of WebSocket, false otherwise.
      */
@@ -5887,16 +5652,15 @@ public final class Network {
     public static native boolean nw_protocol_metadata_is_ws(NSObject metadata);
 
     /**
-     * @function nw_ws_create_metadata
+     * [@function] nw_ws_create_metadata
      * 
-     * @abstract
      * 	Creates a protocol metadata object that can be used to define the
      * 	content context of messages sent over a WebSocket connection.
      * 
      * @param opcode
      * 	Set the opcode on a WebSocket frame. This must be defined on create.
      * 
-     * @result
+     * @return
      * 	Returns a retained metadata object representing the WebSocket frame.
      */
     @Generated
@@ -5904,15 +5668,14 @@ public final class Network {
     public static native NSObject nw_ws_create_metadata(int opcode);
 
     /**
-     * @function nw_ws_metadata_get_opcode
+     * [@function] nw_ws_metadata_get_opcode
      * 
-     * @abstract
      * 	Get the opcode on a WebSocket frame.
      * 
      * @param metadata
      * 	The metadata object representing the WebSocket frame.
      * 
-     * @result
+     * @return
      * 	The opcode on the WebSocket frame.
      */
     @Generated
@@ -5920,9 +5683,8 @@ public final class Network {
     public static native int nw_ws_metadata_get_opcode(NSObject metadata);
 
     /**
-     * @function nw_ws_metadata_set_close_code
+     * [@function] nw_ws_metadata_set_close_code
      * 
-     * @abstract
      * 	Set the close code on a WebSocket frame. The WebSocket frame's opcode
      * 	should be nw_ws_opcode_close.
      * 
@@ -5937,9 +5699,8 @@ public final class Network {
     public static native void nw_ws_metadata_set_close_code(NSObject metadata, int close_code);
 
     /**
-     * @function nw_ws_metadata_get_close_code
+     * [@function] nw_ws_metadata_get_close_code
      * 
-     * @abstract
      * 	Get the close code from a WebSocket frame. If the close code is equal
      * 	to nw_ws_close_code_no_status_received, it means that a close code
      * 	was not actually present in the WebSocket frame.
@@ -5947,7 +5708,7 @@ public final class Network {
      * @param metadata
      * 	The metadata object representing the WebSocket frame.
      * 
-     * @result
+     * @return
      * 	The close code on the WebSocket frame.
      */
     @Generated
@@ -5955,9 +5716,8 @@ public final class Network {
     public static native int nw_ws_metadata_get_close_code(NSObject metadata);
 
     /**
-     * @function nw_ws_metadata_set_pong_handler
+     * [@function] nw_ws_metadata_set_pong_handler
      * 
-     * @abstract
      * 	Set a callback that will notify the client when a pong message has been
      * 	received for a ping message sent. The metadata object's associated
      * 	opcode should be nw_ws_opcode_ping.
@@ -5984,9 +5744,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_ws_request_enumerate_subprotocols
+     * [@function] nw_ws_request_enumerate_subprotocols
      * 
-     * @abstract
      * 	Enumerates the list of subprotocols on the client's request.
      * 
      * @param request
@@ -5995,7 +5754,7 @@ public final class Network {
      * @param enumerator
      * 	The enumerator block.
      * 
-     * @result
+     * @return
      * 	Whether the enumeration completed.
      */
     @Generated
@@ -6012,9 +5771,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_ws_request_enumerate_additional_headers
+     * [@function] nw_ws_request_enumerate_additional_headers
      * 
-     * @abstract
      * 	Enumerates the list of additional headers on the client's request.
      * 
      * @param request
@@ -6023,7 +5781,7 @@ public final class Network {
      * @param enumerator
      * 	The enumerator block.
      * 
-     * @result
+     * @return
      * 	Whether the enumeration completed.
      */
     @Generated
@@ -6041,9 +5799,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_ws_response_create
+     * [@function] nw_ws_response_create
      * 
-     * @abstract
      *      Create a server response to a WebSocket client's opening handshake.
      * 
      * @param status
@@ -6059,7 +5816,7 @@ public final class Network {
      *      a suitable subprotocol, but has accepted the handshake anyways.
      *      Passing an empty string is prohibited by the WebSocket protocol.
      * 
-     * @result
+     * @return
      *      An instantiated WebSocket server response object.
      */
     @Generated
@@ -6068,16 +5825,15 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String selected_subprotocol);
 
     /**
-     * @function nw_ws_response_get_status
+     * [@function] nw_ws_response_get_status
      * 
-     * @abstract
      * 	Get the status from a WebSocket server's response. If the response is
      * 	nil, the return value will be nw_ws_response_status_invalid.
      * 
      * @param response
      * 	The server response.
      * 
-     * @result
+     * @return
      * 	The status of the server's response.
      */
     @Generated
@@ -6085,15 +5841,14 @@ public final class Network {
     public static native int nw_ws_response_get_status(NSObject response);
 
     /**
-     * @function nw_ws_response_get_selected_subprotocol
+     * [@function] nw_ws_response_get_selected_subprotocol
      * 
-     * @abstract
      * 	Get the selected subprotocol from a WebSocket server's response.
      * 
      * @param response
      * 	The server response.
      * 
-     * @result
+     * @return
      * 	The status of the server's response.
      */
     @Generated
@@ -6102,9 +5857,8 @@ public final class Network {
     public static native String nw_ws_response_get_selected_subprotocol(NSObject response);
 
     /**
-     * @function nw_ws_response_add_additional_header
+     * [@function] nw_ws_response_add_additional_header
      * 
-     * @abstract
      * 	Add additional HTTP headers to be sent back to the WebSocket client in
      * 	the server's response.
      * 
@@ -6124,9 +5878,8 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
     /**
-     * @function nw_ws_metadata_copy_server_response
+     * [@function] nw_ws_metadata_copy_server_response
      * 
-     * @abstract
      * 	Copy the WebSocket server's response to a client's request to connect.
      * 	If this is called on a WebSocket server, the response object will contain
      * 	the server's own response to the client.
@@ -6134,7 +5887,7 @@ public final class Network {
      * @param metadata
      * 	The metadata object representing the WebSocket connection.
      * 
-     * @result
+     * @return
      * 	The server response.
      */
     @Generated
@@ -6142,9 +5895,8 @@ public final class Network {
     public static native NSObject nw_ws_metadata_copy_server_response(NSObject metadata);
 
     /**
-     * @function nw_ws_response_enumerate_additional_headers
+     * [@function] nw_ws_response_enumerate_additional_headers
      * 
-     * @abstract
      * 	Enumerates the list of additional headers on the server's response.
      * 
      * @param response
@@ -6153,7 +5905,7 @@ public final class Network {
      * @param enumerator
      * 	The enumerator block.
      * 
-     * @result
+     * @return
      * 	Whether the enumeration completed.
      */
     @Generated
@@ -6171,9 +5923,8 @@ public final class Network {
     }
 
     /**
-     * @typedef nw_ws_options_set_client_request_handler
+     * [@typedef] nw_ws_options_set_client_request_handler
      * 
-     * @abstract
      * 	Set callback handler to be invoked when a WebSocket server receives a
      * 	WebSocket client's request to connect.
      * 
@@ -6232,8 +5983,9 @@ public final class Network {
     public static native NSObject _nw_content_context_default_stream();
 
     /**
-     * @const NW_ALL_PATHS
-     * @discussion Pass NW_ALL_PATHS to data transfer report accessors to sum
+     * [@const] NW_ALL_PATHS
+     * 
+     * Pass NW_ALL_PATHS to data transfer report accessors to sum
      * 	values across paths where applicable. For values that cannot
      * 	sum, the value of the primary path is used.
      */
@@ -6242,9 +5994,8 @@ public final class Network {
     public static native int _nw_data_transfer_report_all_paths();
 
     /**
-     * @function nw_resolver_config_create_https
+     * [@function] nw_resolver_config_create_https
      * 
-     * @abstract
      * 	Creates a DNS-over-HTTPS (DoH) resolver configuration. The provided
      * 	URL describes the location of the DNS server, such as
      * 	"https://dnsserver.example.net/dns-query". See RFC 8484.
@@ -6252,7 +6003,7 @@ public final class Network {
      * @param url_endpoint
      * 	The URL template of the DoH server as an endpoint.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_resolver_config_t object on success.
      */
     @Generated
@@ -6260,9 +6011,8 @@ public final class Network {
     public static native NSObject nw_resolver_config_create_https(NSObject url_endpoint);
 
     /**
-     * @function nw_resolver_config_create_tls
+     * [@function] nw_resolver_config_create_tls
      * 
-     * @abstract
      * 	Creates a DNS-over-TLS (DoT) resolver configuration. The hostname
      * 	of the provided endpoint will be used to validate the TLS certificate of the server.
      * 	See RFC 7858.
@@ -6270,7 +6020,7 @@ public final class Network {
      * @param server_endpoint
      * 	A host endpoint identifying the DoT server.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_resolver_config_t object on success.
      */
     @Generated
@@ -6278,9 +6028,8 @@ public final class Network {
     public static native NSObject nw_resolver_config_create_tls(NSObject server_endpoint);
 
     /**
-     * @function nw_resolver_config_add_name_server
+     * [@function] nw_resolver_config_add_name_server
      * 
-     * @abstract
      * 	Modifies the resolver configuration by adding a DNS server address as an endpoint.
      * 
      * @param config
@@ -6294,9 +6043,8 @@ public final class Network {
     public static native void nw_resolver_config_add_server_address(NSObject config, NSObject server_address);
 
     /**
-     * @function nw_privacy_context_create
+     * [@function] nw_privacy_context_create
      * 
-     * @abstract
      * 		Create a new privacy context. This object can be added to connections and listeners
      * 		by setting the privacy context on the nw_parameters_t. Each privacy context can have
      * 		unique settings for logging and resolution, and implicitly has an isolated cache for
@@ -6305,7 +6053,7 @@ public final class Network {
      * @param description
      * 		A string description used for logging.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_privacy_context_t object on success.
      */
     @Generated
@@ -6314,9 +6062,8 @@ public final class Network {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description);
 
     /**
-     * @function nw_privacy_context_flush_cache
+     * [@function] nw_privacy_context_flush_cache
      * 
-     * @abstract
      * 		Flush any cached state stored in this privacy context. The act of flushing the
      * 		cache may be asynchronous, which means that it will take effect shortly after the
      * 		function is invoked.
@@ -6329,9 +6076,8 @@ public final class Network {
     public static native void nw_privacy_context_flush_cache(NSObject privacy_context);
 
     /**
-     * @function nw_privacy_context_disable_logging
+     * [@function] nw_privacy_context_disable_logging
      * 
-     * @abstract
      * 		Disable logging for connections and listeners associated with this context. Logging
      * 		may not be disabled on the default privacy context.
      * 
@@ -6343,9 +6089,8 @@ public final class Network {
     public static native void nw_privacy_context_disable_logging(NSObject privacy_context);
 
     /**
-     * @function nw_privacy_context_require_encrypted_name_resolution
+     * [@function] nw_privacy_context_require_encrypted_name_resolution
      * 
-     * @abstract
      * 		Require that any DNS name resolution occurring for connections
      * 		associated with this context use encrypted transports, such as TLS or HTTPS.
      * 		Any unencrypted queries will be blocked if require_encrypted_name_resolution
@@ -6373,9 +6118,8 @@ public final class Network {
             boolean require_encrypted_name_resolution, NSObject fallback_resolver_config);
 
     /**
-     * @function nw_parameters_set_privacy_context
+     * [@function] nw_parameters_set_privacy_context
      * 
-     * @abstract
      * 	Set a privacy context on the parameters, which will be associated
      * 	with connections and listeners. The privacy context allows
      * 	using separate caches for different sets of connections, as well as
@@ -6394,16 +6138,15 @@ public final class Network {
     public static native void nw_parameters_set_privacy_context(NSObject parameters, NSObject privacy_context);
 
     /**
-     * @function nw_group_descriptor_create_multicast
+     * [@function] nw_group_descriptor_create_multicast
      * 
-     * @abstract
      * 	Creates a new group descriptor object based on a multicast group,
      * 	represented as an address endpoint.
      * 
      * @param multicast_group
      * 	An address endpoint that contains a multicast group to join.
      * 
-     * @result
+     * @return
      * 	An instantiated group descriptor object or nil if the specified
      * 	endpoint is not an address endpoint representing a valid multicast
      * 	group.
@@ -6413,9 +6156,8 @@ public final class Network {
     public static native NSObject nw_group_descriptor_create_multicast(NSObject multicast_group);
 
     /**
-     * @function nw_group_descriptor_add_endpoint
+     * [@function] nw_group_descriptor_add_endpoint
      * 
-     * @abstract
      * 	Add an additional endpoint to a given group descriptor.
      * 
      * @param descriptor
@@ -6424,7 +6166,7 @@ public final class Network {
      * @param endpoint
      * 	An endpoint to add to the group.
      * 
-     * @result Returns true if the endpoint was added, false if the endpoint was
+     * @return Returns true if the endpoint was added, false if the endpoint was
      * 		not of a valid type and therefore not added.
      */
     @Generated
@@ -6432,9 +6174,8 @@ public final class Network {
     public static native boolean nw_group_descriptor_add_endpoint(NSObject descriptor, NSObject endpoint);
 
     /**
-     * @function nw_group_descriptor_enumerate_endpoints
+     * [@function] nw_group_descriptor_enumerate_endpoints
      * 
-     * @abstract
      * 	List all endpoints associated with the group descriptor.
      * 
      * @param descriptor
@@ -6458,9 +6199,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_multicast_group_descriptor_set_specific_source
+     * [@function] nw_multicast_group_descriptor_set_specific_source
      * 
-     * @abstract
      * 	Require a particular source for this multicast group descriptor.
      * 
      * @param multicast_descriptor
@@ -6475,9 +6215,8 @@ public final class Network {
             NSObject source);
 
     /**
-     * @function nw_multicast_group_descriptor_set_disable_unicast_traffic
+     * [@function] nw_multicast_group_descriptor_set_disable_unicast_traffic
      * 
-     * @abstract
      * 	Disable receiving unicast traffic for a connection group that is also receiving multicast traffic.
      * 
      * @param multicast_descriptor
@@ -6492,15 +6231,14 @@ public final class Network {
             boolean disable_unicast_traffic);
 
     /**
-     * @function nw_multicast_group_descriptor_get_disable_unicast_traffic
+     * [@function] nw_multicast_group_descriptor_get_disable_unicast_traffic
      * 
-     * @abstract
      * 	Check if receiving unicast traffic has been disabled for a multicast connection group.
      * 
      * @param multicast_descriptor
      * 	The multicast group descriptor to check.
      * 
-     * @result A boolean indicating if receiving unicast traffic should be disabled.
+     * @return A boolean indicating if receiving unicast traffic should be disabled.
      */
     @Generated
     @CFunction
@@ -6508,9 +6246,8 @@ public final class Network {
             NSObject multicast_descriptor);
 
     /**
-     * @function nw_connection_group_create
+     * [@function] nw_connection_group_create
      * 
-     * @abstract
      * 	Creates a new connection group object to use for communication with
      * 	a group descriptor using protocols described by parameters.
      * 
@@ -6523,7 +6260,7 @@ public final class Network {
      * 	will be used to delineate complete messages for processing. For multicast
      * 	joining, all available interfaces will be joined as prohibited or required.
      * 
-     * @result
+     * @return
      * 	Returns an allocated nw_connection_group_t object on success.
      * 	Callers are responsible for deallocating using nw_release(obj) or [obj release].
      * 	These objects support ARC.
@@ -6534,15 +6271,14 @@ public final class Network {
     public static native NSObject nw_connection_group_create(NSObject group_descriptor, NSObject parameters);
 
     /**
-     * @function nw_connection_group_copy_descriptor
+     * [@function] nw_connection_group_copy_descriptor
      * 
-     * @abstract
      * 	Gets the group descriptor with which the connection group was created.
      * 
      * @param group
      * 	The connection group to check.
      * 
-     * @result
+     * @return
      * 	Returns the descriptor with which the connection group was created.
      */
     @Generated
@@ -6550,15 +6286,14 @@ public final class Network {
     public static native NSObject nw_connection_group_copy_descriptor(NSObject group);
 
     /**
-     * @function nw_connection_group_copy_parameters
+     * [@function] nw_connection_group_copy_parameters
      * 
-     * @abstract
      * 	Returns a copy of the parameters passed to nw_connection_group_create.
      * 
      * @param group
      * 	The connection group object.
      * 
-     * @result
+     * @return
      * 	Returns an nw_parameters_t object.
      */
     @Generated
@@ -6566,9 +6301,8 @@ public final class Network {
     public static native NSObject nw_connection_group_copy_parameters(NSObject group);
 
     /**
-     * @function nw_connection_group_set_queue
+     * [@function] nw_connection_group_set_queue
      * 
-     * @abstract
      * 	Sets the client callback queue, on which blocks for events will
      * 		be scheduled. This must be done before calling nw_connection_group_start().
      * 
@@ -6583,9 +6317,8 @@ public final class Network {
     public static native void nw_connection_group_set_queue(NSObject group, NSObject queue);
 
     /**
-     * @function nw_connection_group_set_state_changed_handler
+     * [@function] nw_connection_group_set_state_changed_handler
      * 
-     * @abstract
      * 	Sets the state changed handler. For clients that need to perform cleanup
      * 	when the connection group has been cancelled, the nw_connection_group_state_cancelled state
      * 	will be delivered last. This function must not be called after starting the connection group.
@@ -6610,9 +6343,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_group_set_receive_handler
+     * [@function] nw_connection_group_set_receive_handler
      * 
-     * @abstract
      * 	Sets the handler to be invoked whenever a new inbound message
      * 	arrives at the connection group. This function must not be called after starting the connection group.
      * 
@@ -6649,9 +6381,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_connection_group_start
+     * [@function] nw_connection_group_start
      * 
-     * @abstract
      * 	Starts the connection group, which begins listening for and processing incoming messages.
      * 	You must call nw_connection_group_set_queue() and set a receive handler with
      * 	nw_connection_group_set_receive_handler() before starting the connection group.
@@ -6664,9 +6395,8 @@ public final class Network {
     public static native void nw_connection_group_start(NSObject group);
 
     /**
-     * @function nw_connection_group_cancel
+     * [@function] nw_connection_group_cancel
      * 
-     * @abstract
      * 	Cancels the connection group. The process of cancellation will be completed
      * 	asynchronously, and the final callback event delivered to the caller
      * 	will be a state update with a value of nw_connection_group_state_cancelled.
@@ -6681,9 +6411,8 @@ public final class Network {
     public static native void nw_connection_group_cancel(NSObject group);
 
     /**
-     * @function nw_connection_group_copy_remote_endpoint_for_message
+     * [@function] nw_connection_group_copy_remote_endpoint_for_message
      * 
-     * @abstract
      * 	Copy the remote endpoint corresponding to a given inbound connection group message.
      * 
      * @param group
@@ -6692,7 +6421,7 @@ public final class Network {
      * @param context
      * 	A content context representing an inbound message received from this connection group.
      * 
-     * @result
+     * @return
      * 	Returns the remote endpoint, or nil if the context is not a valid
      * 	inbound message received from this connection group.
      */
@@ -6702,9 +6431,8 @@ public final class Network {
             NSObject context);
 
     /**
-     * @function nw_connection_group_copy_local_endpoint_for_message
+     * [@function] nw_connection_group_copy_local_endpoint_for_message
      * 
-     * @abstract
      * 	Copy the local endpoint corresponding to a given inbound connection group message.
      * 
      * @param group
@@ -6713,7 +6441,7 @@ public final class Network {
      * @param context
      * 	A content context representing an inbound message received from this connection group.
      * 
-     * @result
+     * @return
      * 	Returns the local endpoint, or nil if the context is not a valid
      * 	inbound message received from this connection group.
      */
@@ -6722,9 +6450,8 @@ public final class Network {
     public static native NSObject nw_connection_group_copy_local_endpoint_for_message(NSObject group, NSObject context);
 
     /**
-     * @function nw_connection_group_copy_path_for_message
+     * [@function] nw_connection_group_copy_path_for_message
      * 
-     * @abstract
      * 	Copy the path associated with a given inbound connection group message.
      * 
      * @param group
@@ -6733,7 +6460,7 @@ public final class Network {
      * @param context
      * 	A content context representing an inbound message received from this connection group.
      * 
-     * @result
+     * @return
      * 	Returns the path associated with the provided message, or nil if the context
      * 	is not a valid inbound message received from this connection group.
      */
@@ -6742,9 +6469,8 @@ public final class Network {
     public static native NSObject nw_connection_group_copy_path_for_message(NSObject group, NSObject context);
 
     /**
-     * @function nw_connection_group_reply
+     * [@function] nw_connection_group_reply
      * 
-     * @abstract
      * 	Send data in response to an inbound message received by a connection group.
      * 
      * @param group
@@ -6774,9 +6500,8 @@ public final class Network {
             NSObject outbound_message, NSObject content);
 
     /**
-     * @function nw_connection_group_extract_connection_for_message
+     * [@function] nw_connection_group_extract_connection_for_message
      * 
-     * @abstract
      * 	Extract a connection corresponding to an inbound message from the
      * 	connection group. Once extracted, subsequent messages from this
      * 	remote endpoint on this connection will no longer be handled by the
@@ -6793,7 +6518,7 @@ public final class Network {
      * @param context
      * 	A content context representing an inbound message received from this connection group.
      * 
-     * @result
+     * @return
      * 	Returns the connection associated with the provided message, or nil if the extraction
      * 	fails. Extraction will fail if the provided message is not an inbound message from
      * 	this connection group.
@@ -6803,9 +6528,8 @@ public final class Network {
     public static native NSObject nw_connection_group_extract_connection_for_message(NSObject group, NSObject context);
 
     /**
-     * @function nw_connection_group_send_message
+     * [@function] nw_connection_group_send_message
      * 
-     * @abstract
      * 	Send data that is not in response to an inbound message. This outgoing
      * 	message will be sent from the local endpoint on which the connection group is
      * 	listening for incoming messages.
@@ -6858,15 +6582,14 @@ public final class Network {
     }
 
     /**
-     * @function nw_resolution_report_get_source
+     * [@function] nw_resolution_report_get_source
      * 
-     * @abstract
      * 	Check the source of a resolution, such as query or cache.
      * 
      * @param resolution_report
      * 	A resolution report.
      * 
-     * @result
+     * @return
      * 	The source of the resolution (query or cache).
      */
     @Generated
@@ -6874,15 +6597,14 @@ public final class Network {
     public static native int nw_resolution_report_get_source(NSObject resolution_report);
 
     /**
-     * @function nw_resolution_report_get_milliseconds
+     * [@function] nw_resolution_report_get_milliseconds
      * 
-     * @abstract
      * 	Get the number of milliseconds spent on this resolution step.
      * 
      * @param resolution_report
      * 	A resolution report.
      * 
-     * @result
+     * @return
      * 	The number of milliseconds spent on this resolution step.
      */
     @Generated
@@ -6890,15 +6612,14 @@ public final class Network {
     public static native long nw_resolution_report_get_milliseconds(NSObject resolution_report);
 
     /**
-     * @function nw_resolution_report_get_endpoint_count
+     * [@function] nw_resolution_report_get_endpoint_count
      * 
-     * @abstract
      * 	Get the number of resolved endpoints discovered by the resolution step.
      * 
      * @param resolution_report
      * 	A resolution report.
      * 
-     * @result
+     * @return
      * 	The number of resolved endpoints discovered by the resolution step.
      */
     @Generated
@@ -6906,15 +6627,14 @@ public final class Network {
     public static native int nw_resolution_report_get_endpoint_count(NSObject resolution_report);
 
     /**
-     * @function nw_resolution_report_copy_successful_endpoint
+     * [@function] nw_resolution_report_copy_successful_endpoint
      * 
-     * @abstract
      * 	Copy the resolved endpoint that led to a successful connection.
      * 
      * @param resolution_report
      * 	A resolution report.
      * 
-     * @result
+     * @return
      * 	The resolved endpoint that led to a successful connection.
      */
     @Generated
@@ -6922,15 +6642,14 @@ public final class Network {
     public static native NSObject nw_resolution_report_copy_successful_endpoint(NSObject resolution_report);
 
     /**
-     * @function nw_resolution_report_copy_preferred_endpoint
+     * [@function] nw_resolution_report_copy_preferred_endpoint
      * 
-     * @abstract
      * 	Copy first resolved endpoint attempted, which may be the same as the successful endpoint.
      * 
      * @param resolution_report
      * 	A resolution report.
      * 
-     * @result
+     * @return
      * 	The first resolved endpoint attempted.
      */
     @Generated
@@ -6938,15 +6657,14 @@ public final class Network {
     public static native NSObject nw_resolution_report_copy_preferred_endpoint(NSObject resolution_report);
 
     /**
-     * @function nw_resolution_report_get_protocol
+     * [@function] nw_resolution_report_get_protocol
      * 
-     * @abstract
      * 	Check the protocol used for endpoint resolution.
      * 
      * @param resolution_report
      * 	A resolution report.
      * 
-     * @result
+     * @return
      * 	The protocol used for endpoint resolution.
      */
     @Generated
@@ -6954,9 +6672,8 @@ public final class Network {
     public static native int nw_resolution_report_get_protocol(NSObject resolution_report);
 
     /**
-     * @function nw_establishment_report_enumerate_resolution_reports
+     * [@function] nw_establishment_report_enumerate_resolution_reports
      * 
-     * @abstract
      * 	Enumerate the steps of connection establishment that involved endpoint
      * 	resolution, such as DNS hostname resolution and Bonjour service resolution.
      * 	This variant provides resolution report objects, which allow more detailed
@@ -6987,9 +6704,8 @@ public final class Network {
     }
 
     /**
-     * @function nw_ip_options_set_disable_multicast_loopback
+     * [@function] nw_ip_options_set_disable_multicast_loopback
      * 
-     * @abstract
      * 	If a multicast packet is sent to a group to which the sending host itself
      * 	belongs (on the outgoing interface), a copy of the datagram is, by default,
      * 	looped back by the IP layer for local delivery.
@@ -7009,9 +6725,8 @@ public final class Network {
             boolean disable_multicast_loopback);
 
     /**
-     * @function nw_path_monitor_prohibit_interface_type
+     * [@function] nw_path_monitor_prohibit_interface_type
      * 
-     * @abstract
      * 	Prohibit this path monitor from using the provided network interface type.
      * 	Call before calling nw_path_monitor_start.
      * 
@@ -7030,9 +6745,8 @@ public final class Network {
     public static native NSObject _nw_privacy_context_default_context();
 
     /**
-     * @function nw_path_get_unsatisfied_reason
+     * [@function] nw_path_get_unsatisfied_reason
      * 
-     * @abstract
      * 	Retrieves a reason the path is not satisfied. In some cases, the reason helps to
      * 	determine why the path is not satisfied. While the path may be unsatisfied for more
      * 	than one reason, only the first reason will be given. In many cases, the path may be
@@ -7041,7 +6755,7 @@ public final class Network {
      * @param path
      * 	The path object to check.
      * 
-     * @result
+     * @return
      * 	Returns a reason the path is unsatisfied or nw_path_unsatisfied_reason_not_available if a reason is not available.
      */
     @Generated

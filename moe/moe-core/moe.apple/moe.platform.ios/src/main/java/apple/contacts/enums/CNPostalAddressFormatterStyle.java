@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @abstract The formatting styles for postal addresses.
+ * The formatting styles for postal addresses.
  */
 @Generated
 public final class CNPostalAddressFormatterStyle {

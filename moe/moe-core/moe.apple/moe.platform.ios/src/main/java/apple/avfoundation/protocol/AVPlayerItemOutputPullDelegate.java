@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol		AVPlayerItemOutputPullDelegate
- * @abstract		Defines common delegate methods for objects participating in AVPlayerItemOutput pull sample output acquisition.
+ * [@protocol]		AVPlayerItemOutputPullDelegate
+ * 
+ * Defines common delegate methods for objects participating in AVPlayerItemOutput pull sample output acquisition.
  */
 @Generated
 @Library("AVFoundation")
@@ -35,9 +36,10 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVPlayerItemOutputPullDelegate")
 public interface AVPlayerItemOutputPullDelegate {
     /**
-     * @method			outputMediaDataWillChange:
-     * @abstract		A method invoked once, prior to a new sample, if the AVPlayerItemOutput sender was previously messaged requestNotificationOfMediaDataChangeWithAdvanceInterval:.
-     * @discussion
+     * outputMediaDataWillChange:
+     * 
+     * A method invoked once, prior to a new sample, if the AVPlayerItemOutput sender was previously messaged requestNotificationOfMediaDataChangeWithAdvanceInterval:.
+     * 
      * 	This method is invoked once after the sender is messaged requestNotificationOfMediaDataChangeWithAdvanceInterval:.
      */
     @Generated
@@ -48,9 +50,10 @@ public interface AVPlayerItemOutputPullDelegate {
     }
 
     /**
-     * @method			outputSequenceWasFlushed:
-     * @abstract		A method invoked when the output is commencing a new sequence.
-     * @discussion
+     * outputSequenceWasFlushed:
+     * 
+     * A method invoked when the output is commencing a new sequence.
+     * 
      * 	This method is invoked after any seeking and change in playback direction. If you are maintaining any queued future samples, copied previously, you may want to discard these after receiving this message.
      */
     @Generated

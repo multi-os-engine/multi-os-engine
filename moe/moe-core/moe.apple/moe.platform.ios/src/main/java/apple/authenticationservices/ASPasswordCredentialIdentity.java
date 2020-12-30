@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class ASPasswordCredentialIdentity
+ * ASPasswordCredentialIdentity
  * An ASPasswordCredentialIdentity is used to describe an identity that can use a service upon successful password based authentication.
  * Use this class to save entries into ASCredentialIdentityStore.
  */
@@ -106,7 +106,8 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     public static native long hash_static();
 
     /**
-     * @abstract Creates and initializes an instance of ASPasswordCredentialIdentity.
+     * Creates and initializes an instance of ASPasswordCredentialIdentity.
+     * 
      * @param serviceIdentifier the service identifier for which this credential identity is valid.
      * @param user the user that can authenticate into the service indicated by the serviceIdentifier.
      * @param recordIdentifier an optional string to uniquely identify this record in your local database.
@@ -125,7 +126,8 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     public native ASPasswordCredentialIdentity initWithCoder(NSCoder coder);
 
     /**
-     * @abstract Initializes an instance of ASPasswordCredentialIdentity.
+     * Initializes an instance of ASPasswordCredentialIdentity.
+     * 
      * @param serviceIdentifier the service identifier for which this credential identity is valid.
      * @param user the user that can authenticate into the service indicated by the serviceIdentifier.
      * @param recordIdentifier an optional string to uniquely identify this record in your local database.
@@ -163,8 +165,9 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     public static native Object new_objc();
 
     /**
-     * @abstract Get or set the rank of the credential identity object.
-     * @discussion The system may utilize the rank to decide which credential identity precedes the other
+     * Get or set the rank of the credential identity object.
+     * 
+     * The system may utilize the rank to decide which credential identity precedes the other
      * if two identities have the same service identifier. A credential identity with a larger rank value
      * precedes one with a smaller value if both credential identities have the same service identifier.
      * The default value of this property is 0.
@@ -175,9 +178,11 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     public native long rank();
 
     /**
-     * @abstract Get the record identifier.
-     * @result The record identifier.
-     * @discussion You can utilize the record identifier to uniquely identify the credential identity in your local database.
+     * Get the record identifier.
+     * 
+     * You can utilize the record identifier to uniquely identify the credential identity in your local database.
+     * 
+     * @return The record identifier.
      */
     @Generated
     @Selector("recordIdentifier")
@@ -192,16 +197,18 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract Get the service identifier.
-     * @result The service identifier for this credential identity.
+     * Get the service identifier.
+     * 
+     * @return The service identifier for this credential identity.
      */
     @Generated
     @Selector("serviceIdentifier")
     public native ASCredentialServiceIdentifier serviceIdentifier();
 
     /**
-     * @abstract Get or set the rank of the credential identity object.
-     * @discussion The system may utilize the rank to decide which credential identity precedes the other
+     * Get or set the rank of the credential identity object.
+     * 
+     * The system may utilize the rank to decide which credential identity precedes the other
      * if two identities have the same service identifier. A credential identity with a larger rank value
      * precedes one with a smaller value if both credential identities have the same service identifier.
      * The default value of this property is 0.
@@ -229,8 +236,9 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     }
 
     /**
-     * @abstract Get the user.
-     * @result The user string.
+     * Get the user.
+     * 
+     * @return The user string.
      */
     @Generated
     @Selector("user")

@@ -40,9 +40,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitEQFilterParameters
- * @abstract Filter parameters used by AVAudioUnitEQ.
- * @discussion
+ * AVAudioUnitEQFilterParameters
+ * 
+ * Filter parameters used by AVAudioUnitEQ.
+ * 
  *     A standalone instance of AVAudioUnitEQFilterParameters cannot be created. Only an instance
  *     vended out by a source object (e.g. AVAudioUnitEQ) can be used.
  */
@@ -158,9 +159,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public static native long version_static();
 
     /**
-     * @property bandwidth
-     * @abstract Bandwidth in octaves.
-     * @discussion
+     * [@property] bandwidth
+     * 
+     * Bandwidth in octaves.
+     * 
      * Range:      0.05 -> 5.0
      * Unit:       Octaves
      */
@@ -169,9 +171,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native float bandwidth();
 
     /**
-     * @property bypass
-     * @abstract bypass state of band.
-     * @discussion
+     * [@property] bypass
+     * 
+     * bypass state of band.
+     * 
      * Default:    YES
      */
     @Generated
@@ -179,9 +182,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native boolean bypass();
 
     /**
-     * @property filterType
-     * @abstract AVAudioUnitEQFilterType
-     * @discussion
+     * [@property] filterType
+     * 
+     * AVAudioUnitEQFilterType
+     * 
      * Default:    AVAudioUnitEQFilterTypeParametric
      */
     @Generated
@@ -190,9 +194,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native long filterType();
 
     /**
-     * @property frequency
-     * @abstract Frequency in Hertz.
-     * @discussion
+     * [@property] frequency
+     * 
+     * Frequency in Hertz.
+     * 
      * Range:      20 -> (SampleRate/2)
      * Unit:       Hertz
      */
@@ -201,9 +206,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native float frequency();
 
     /**
-     * @property gain
-     * @abstract Gain in dB.
-     * @discussion
+     * [@property] gain
+     * 
+     * Gain in dB.
+     * 
      * Range:      -96 -> 24
      * Default:    0
      * Unit:       dB
@@ -217,9 +223,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native AVAudioUnitEQFilterParameters init();
 
     /**
-     * @property bandwidth
-     * @abstract Bandwidth in octaves.
-     * @discussion
+     * [@property] bandwidth
+     * 
+     * Bandwidth in octaves.
+     * 
      * Range:      0.05 -> 5.0
      * Unit:       Octaves
      */
@@ -228,9 +235,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native void setBandwidth(float value);
 
     /**
-     * @property bypass
-     * @abstract bypass state of band.
-     * @discussion
+     * [@property] bypass
+     * 
+     * bypass state of band.
+     * 
      * Default:    YES
      */
     @Generated
@@ -238,9 +246,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native void setBypass(boolean value);
 
     /**
-     * @property filterType
-     * @abstract AVAudioUnitEQFilterType
-     * @discussion
+     * [@property] filterType
+     * 
+     * AVAudioUnitEQFilterType
+     * 
      * Default:    AVAudioUnitEQFilterTypeParametric
      */
     @Generated
@@ -248,9 +257,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native void setFilterType(@NInt long value);
 
     /**
-     * @property frequency
-     * @abstract Frequency in Hertz.
-     * @discussion
+     * [@property] frequency
+     * 
+     * Frequency in Hertz.
+     * 
      * Range:      20 -> (SampleRate/2)
      * Unit:       Hertz
      */
@@ -259,9 +269,10 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     public native void setFrequency(float value);
 
     /**
-     * @property gain
-     * @abstract Gain in dB.
-     * @discussion
+     * [@property] gain
+     * 
+     * Gain in dB.
+     * 
      * Range:      -96 -> 24
      * Default:    0
      * Unit:       dB

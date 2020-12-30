@@ -75,8 +75,9 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property constantValues
-     * @abstract The set of constant values assigned to the function constants. Compilation fails if you do not provide valid constant values for all required function constants.
+     * [@property] constantValues
+     * 
+     * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid constant values for all required function constants.
      */
     @Generated
     @Selector("constantValues")
@@ -97,8 +98,9 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * @method functionDescriptor
-     * @abstract Create an autoreleased function descriptor
+     * functionDescriptor
+     * 
+     * Create an autoreleased function descriptor
      */
     @Generated
     @Selector("functionDescriptor")
@@ -135,8 +137,9 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property name
-     * @abstract The name of the `visible` function to find.
+     * [@property] name
+     * 
+     * The name of the `visible` function to find.
      */
     @Generated
     @Selector("name")
@@ -149,8 +152,9 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     public static native Object new_objc();
 
     /**
-     * @property options
-     * @abstract The options to use for this new `MTLFunction`.
+     * [@property] options
+     * 
+     * The options to use for this new `MTLFunction`.
      */
     @Generated
     @Selector("options")
@@ -166,32 +170,36 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property constantValues
-     * @abstract The set of constant values assigned to the function constants. Compilation fails if you do not provide valid constant values for all required function constants.
+     * [@property] constantValues
+     * 
+     * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid constant values for all required function constants.
      */
     @Generated
     @Selector("setConstantValues:")
     public native void setConstantValues(MTLFunctionConstantValues value);
 
     /**
-     * @property name
-     * @abstract The name of the `visible` function to find.
+     * [@property] name
+     * 
+     * The name of the `visible` function to find.
      */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
     /**
-     * @property options
-     * @abstract The options to use for this new `MTLFunction`.
+     * [@property] options
+     * 
+     * The options to use for this new `MTLFunction`.
      */
     @Generated
     @Selector("setOptions:")
     public native void setOptions(@NUInt long value);
 
     /**
-     * @property specializedName
-     * @abstract An optional new name for a `visible` function to allow reuse with different specializations.
+     * [@property] specializedName
+     * 
+     * An optional new name for a `visible` function to allow reuse with different specializations.
      */
     @Generated
     @Selector("setSpecializedName:")
@@ -202,8 +210,9 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property specializedName
-     * @abstract An optional new name for a `visible` function to allow reuse with different specializations.
+     * [@property] specializedName
+     * 
+     * An optional new name for a `visible` function to allow reuse with different specializations.
      */
     @Generated
     @Selector("specializedName")

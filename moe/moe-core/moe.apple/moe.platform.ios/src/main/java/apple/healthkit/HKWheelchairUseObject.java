@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class     HKWheelchairUseObject
- * @abstract  A wrapper object for HKWheelchairUse enumeration.
+ * HKWheelchairUseObject
+ * 
+ * A wrapper object for HKWheelchairUse enumeration.
  */
 @Generated
 @Library("HealthKit")

@@ -26,9 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A request that will detect human Torsos in an image.
+ * A request that will detect human Torsos in an image.
  * 
- * @details This request will generate VNDetectedObjectObservation objects with a defined boundingBox and confidence score.
+ * This request will generate VNDetectedObjectObservation objects with a defined boundingBox and confidence score.
  */
 @Generated
 @Library("Vision")

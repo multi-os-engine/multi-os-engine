@@ -41,9 +41,8 @@ public final class iAd {
     }
 
     /**
-     * @const ADErrorDomain
+     * [@const] ADErrorDomain
      * 
-     * @discussion
      * Error domain for NSErrors passed to the following delegate methods:
      * 
      *   • -[ADBannerViewDelegate bannerView:didFailToReceiveAdWithError:]
@@ -75,9 +74,8 @@ public final class iAd {
     public static native String ADBannerContentSizeIdentifierLandscape();
 
     /**
-     * @const ADClientErrorDomain
+     * [@const] ADClientErrorDomain
      * 
-     * @discussion
      * Error domain for NSErrors passed to the completionHandler as a
      * result of calling:
      * 

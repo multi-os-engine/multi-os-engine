@@ -107,6 +107,7 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * Creates a new app overlay configuration that will show an app clip's full app.
+     * 
      * @param position the desired position of the overlay.
      */
     @Generated

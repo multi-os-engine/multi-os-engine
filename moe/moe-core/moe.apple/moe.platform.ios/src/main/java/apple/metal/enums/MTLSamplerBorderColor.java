@@ -20,16 +20,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLSamplerBorderColor
- * @abstract Specify the color value that will be clamped to when the sampler address mode is MTLSamplerAddressModeClampToBorderColor.
+ * [@enum] MTLSamplerBorderColor
  * 
- * @constant MTLSamplerBorderColorTransparentBlack
+ * Specify the color value that will be clamped to when the sampler address mode is MTLSamplerAddressModeClampToBorderColor.
+ * 
+ * [@constant] MTLSamplerBorderColorTransparentBlack
  * Transparent black returns {0,0,0,0} for clamped texture values.
  * 
- * @constant MTLSamplerBorderColorOpaqueBlack
+ * [@constant] MTLSamplerBorderColorOpaqueBlack
  * OpaqueBlack returns {0,0,0,1} for clamped texture values.
  * 
- * @constant MTLSamplerBorderColorOpaqueWhite
+ * [@constant] MTLSamplerBorderColorOpaqueWhite
  * OpaqueWhite returns {1,1,1,1} for clamped texture values.
  */
 @Generated

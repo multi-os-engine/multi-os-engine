@@ -29,7 +29,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @abstract   This delegate receives updates on homes being managed via the home manager.
+ * This delegate receives updates on homes being managed via the home manager.
  */
 @Generated
 @Library("HomeKit")
@@ -37,7 +37,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("HMHomeManagerDelegate")
 public interface HMHomeManagerDelegate {
     /**
-     * @abstract   Informs the delegate when a new home is added.
+     * Informs the delegate when a new home is added.
      * 
      * @param      manager     Sender of this message.
      * 
@@ -51,7 +51,7 @@ public interface HMHomeManagerDelegate {
     }
 
     /**
-     * @abstract   Informs the delegate when an existing home is removed.
+     * Informs the delegate when an existing home is removed.
      * 
      * @param      manager     Sender of this message.
      * 
@@ -65,9 +65,9 @@ public interface HMHomeManagerDelegate {
     }
 
     /**
-     * @abstract   Informs the delegate when homes configured by the user have been detected by the system.
+     * Informs the delegate when homes configured by the user have been detected by the system.
      * 
-     * @discussion This delegate method is also invoked to inform an application of significant changes
+     * This delegate method is also invoked to inform an application of significant changes
      *             to the home configuration. Applications should use this as a cue to invalidate their
      *             current references to HomeKit objects and refresh their views with the new list of homes.
      * 
@@ -81,7 +81,7 @@ public interface HMHomeManagerDelegate {
     }
 
     /**
-     * @abstract   Informs the delegate when the primary home is modified.
+     * Informs the delegate when the primary home is modified.
      * 
      * @param      manager     Sender of this message.
      */
@@ -93,7 +93,7 @@ public interface HMHomeManagerDelegate {
     }
 
     /**
-     * @abstract   Informs the delegate an accessory needs to be added to the home by using one of the
+     * Informs the delegate an accessory needs to be added to the home by using one of the
      *       HMAccessorySetupPayload factory methods on the request parameter.
      * 
      * @param      manager     Sender of this message.
@@ -108,7 +108,7 @@ public interface HMHomeManagerDelegate {
     }
 
     /**
-     * @abstract   Informs the delegate a change in authorization status has occurred.
+     * Informs the delegate a change in authorization status has occurred.
      * 
      * @param      manager     Sender of this message.
      * @param      status      The updated authorization status.

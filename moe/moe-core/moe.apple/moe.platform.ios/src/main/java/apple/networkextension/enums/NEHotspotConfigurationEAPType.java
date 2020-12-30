@@ -4,12 +4,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @typedef NEHotspotConfigurationEAPType
- * @abstract EAP Type.
- * @const NEHotspotConfigurationEAPTypeTLS EAP-TLS.
- * @const NEHotspotConfigurationEAPTypeTTLS TTLS.
- * @const NEHotspotConfigurationEAPTypePEAP PEAP.
- * @const NEHotspotConfigurationEAPTypeFAST EAP-FAST.
+ * [@typedef] NEHotspotConfigurationEAPType
+ * 
+ * EAP Type.
+ * [@const] NEHotspotConfigurationEAPTypeTLS EAP-TLS.
+ * [@const] NEHotspotConfigurationEAPTypeTTLS TTLS.
+ * [@const] NEHotspotConfigurationEAPTypePEAP PEAP.
+ * [@const] NEHotspotConfigurationEAPTypeFAST EAP-FAST.
  */
 @Generated
 public final class NEHotspotConfigurationEAPType {

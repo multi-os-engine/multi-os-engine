@@ -61,6 +61,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * visible on the display.
  * 
  * In order to use a camera; set it on the scene that contains the camera.
+ * 
  * @see SKScene.camera
  */
 @Generated
@@ -202,6 +203,7 @@ public class SKCameraNode extends SKNode {
 
     /**
      * Returns the set of nodes in the same scene as the camera that are contained within its viewport.
+     * 
      * @return the set of nodes contained
      */
     @Generated

@@ -30,8 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVSampleBufferRenderSynchronizer
- * @abstract		AVSampleBufferRenderSynchronizer can synchronize multiple objects conforming to AVQueuedSampleBufferRendering to a single timebase.
+ * AVSampleBufferRenderSynchronizer
+ * 
+ * AVSampleBufferRenderSynchronizer can synchronize multiple objects conforming to AVQueuedSampleBufferRendering to a single timebase.
  */
 @Generated
 @Library("AVFoundation")
@@ -52,8 +53,12 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @method			addBoundaryTimeObserverForTimes:queue:usingBlock:
-     * @abstract		Requests invocation of a block when specified times are traversed during normal rendering.
+     * addBoundaryTimeObserverForTimes:queue:usingBlock:
+     * 
+     * Requests invocation of a block when specified times are traversed during normal rendering.
+     * 
+     * 	Each call to -addPeriodicTimeObserverForInterval:queue:usingBlock: should be paired with a corresponding call to -removeTimeObserver:.  Releasing the observer object without a call to -removeTimeObserver: will result in undefined behavior.
+     * 
      * @param			times
      * 	The times for which the observer requests notification, supplied as an array of NSValues carrying CMTimes.
      * @param			queue
@@ -61,10 +66,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      *   concurrent queue to this method will result in undefined behavior.
      * @param			block
      * 	The block to be invoked when any of the specified times is crossed during normal rendering.
-     * @result
+     * @return
      * 	An object conforming to the NSObject protocol.  You must retain this returned value as long as you want the time observer to be invoked by the synchronizer.  Pass this object to -removeTimeObserver: to cancel time observation.
-     * @discussion
-     * 	Each call to -addPeriodicTimeObserverForInterval:queue:usingBlock: should be paired with a corresponding call to -removeTimeObserver:.  Releasing the observer object without a call to -removeTimeObserver: will result in undefined behavior.
      */
     @Generated
     @Selector("addBoundaryTimeObserverForTimes:queue:usingBlock:")
@@ -81,22 +84,24 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     }
 
     /**
-     * @method			addPeriodicTimeObserverForInterval:queue:usingBlock:
-     * @abstract		Requests invocation of a block during rendering to report changing time.
+     * addPeriodicTimeObserverForInterval:queue:usingBlock:
+     * 
+     * Requests invocation of a block during rendering to report changing time.
+     * 
+     * 	The block is invoked periodically at the interval specified, interpreted according to the timeline of the timebase.  The block is also invoked whenever time jumps and whenever rendering starts or stops.
+     * 
+     * 	If the interval corresponds to a very short interval in real time, the synchronizer may invoke the block less frequently than requested. Even so, the synchronizer will invoke the block sufficiently often for the client to update indications of the current time appropriately in its end-user interface.
+     * 
+     * 	Each call to -addPeriodicTimeObserverForInterval:queue:usingBlock: should be paired with a corresponding call to -removeTimeObserver:.  Releasing the observer object without a call to -removeTimeObserver: will result in undefined behavior.
+     * 
      * @param			interval
      * 	The interval of invocation of the block during normal rendering, according to progress of the current time of the timebase.
      * @param			queue
      * 	The serial queue onto which block should be enqueued.  If you pass NULL, the main queue (obtained using dispatch_get_main_queue()) will be used.  Passing a concurrent queue to this method will result in undefined behavior.
      * @param			block
      * 	The block to be invoked periodically.
-     * @result
+     * @return
      * 	An object conforming to the NSObject protocol.  You must retain this returned value as long as you want the time observer to be invoked by the synchronizer.  Pass this object to -removeTimeObserver: to cancel time observation.
-     * @discussion
-     * 	The block is invoked periodically at the interval specified, interpreted according to the timeline of the timebase.  The block is also invoked whenever time jumps and whenever rendering starts or stops.
-     * 
-     * 	If the interval corresponds to a very short interval in real time, the synchronizer may invoke the block less frequently than requested. Even so, the synchronizer will invoke the block sufficiently often for the client to update indications of the current time appropriately in its end-user interface.
-     * 
-     * 	Each call to -addPeriodicTimeObserverForInterval:queue:usingBlock: should be paired with a corresponding call to -removeTimeObserver:.  Releasing the observer object without a call to -removeTimeObserver: will result in undefined behavior.
      */
     @Generated
     @Selector("addPeriodicTimeObserverForInterval:queue:usingBlock:")
@@ -112,14 +117,16 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     }
 
     /**
-     * @method			addRenderer:
-     * @abstract		Adds a renderer to the list of renderers under the synchronizer's control.
-     * @param			renderer
-     * 	An object conforming to AVQueuedSampleBufferRendering to be synchronized by this synchronizer.
-     * @discussion
+     * addRenderer:
+     * 
+     * Adds a renderer to the list of renderers under the synchronizer's control.
+     * 
      * 	Adds a renderer to begin operating with the synchronizer's timebase.
      * 
      * 	This method can be called while rate is non-0.0.
+     * 
+     * @param			renderer
+     * 	An object conforming to AVQueuedSampleBufferRendering to be synchronized by this synchronizer.
      */
     @Generated
     @Selector("addRenderer:")
@@ -202,9 +209,10 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property		rate
-     * @abstract		Playback rate.
-     * @discussion
+     * [@property]		rate
+     * 
+     * Playback rate.
+     * 
      * 	Indicates the current rate of rendering.  A value of 0.0 means "stopped"; a value of 1.0 means "play at the natural rate of the media".  Must be greater than or equal to 0.0.
      */
     @Generated
@@ -212,15 +220,10 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public native float rate();
 
     /**
-     * @method			removeRenderer:atTime:completionHandler:
-     * @abstract		Removes a renderer from the list of renderers under the synchronizer's control.
-     * @param			renderer
-     * 	An object conforming to AVQueuedSampleBufferRendering currently synchronized by this synchronizer to no longer be synchronized by the synchronizer.
-     * @param			time
-     * 	The time on the timebase's timeline at which the renderer should be removed.
-     * @param			completionHandler
-     * 	Optional.  A block called when the renderer is removed from the synchronizer.  If provided, this block will always be called with didRemoveRenderer indicating whether the renderer was removed by this scheduled removal.
-     * @discussion
+     * removeRenderer:atTime:completionHandler:
+     * 
+     * Removes a renderer from the list of renderers under the synchronizer's control.
+     * 
      * 	This method can be called while rate is non-0.0.
      * 
      * 	time is used to schedule future removals.  If the time is in the past, the renderer will be removed immediately.  kCMTimeInvalid can also be used to force immediate removal.
@@ -232,6 +235,13 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * 		- If the renderer has not been added to this synchronizer, completionHandler will be called and didRemoveRenderer will be NO.
      * 		- If a removal of a particular renderer is scheduled after another removal of that same renderer has already been scheduled but not yet occurred, the previously-scheduled removal's completionHandler will be called and didRemoveRenderer will be NO.  The new scheduled removal's completionHandler will not be called until it is replaced by another scheduled removal or the renderer is actually removed.
      * 		- When the renderer is removed due to a scheduled removal, the completionHandler provided when that removal was scheduled will be called and didRemoveRenderer will be YES.
+     * 
+     * @param			renderer
+     * 	An object conforming to AVQueuedSampleBufferRendering currently synchronized by this synchronizer to no longer be synchronized by the synchronizer.
+     * @param			time
+     * 	The time on the timebase's timeline at which the renderer should be removed.
+     * @param			completionHandler
+     * 	Optional.  A block called when the renderer is removed from the synchronizer.  If provided, this block will always be called with didRemoveRenderer indicating whether the renderer was removed by this scheduled removal.
      */
     @Generated
     @Selector("removeRenderer:atTime:completionHandler:")
@@ -247,21 +257,24 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     }
 
     /**
-     * @method			removeTimeObserver:
-     * @abstract		Cancels a previously registered time observer.
+     * removeTimeObserver:
+     * 
+     * Cancels a previously registered time observer.
+     * 
+     * 	Upon return, the caller is guaranteed that no new time observer blocks will begin executing.  Depending on the calling thread and the queue used to add the time observer, an in-flight block may continue to execute after this method returns.  You can guarantee synchronous time observer removal by enqueuing the call to -removeTimeObserver: on that queue.  Alternatively, call dispatch_sync(queue, ^{}) after -removeTimeObserver: to wait for any in-flight blocks to finish executing.  -removeTimeObserver: should be used to explicitly cancel each time observer added using -addPeriodicTimeObserverForInterval:queue:usingBlock: and -addBoundaryTimeObserverForTimes:queue:usingBlock:.
+     * 
      * @param			observer
      * 	An object returned by a previous call to -addPeriodicTimeObserverForInterval:queue:usingBlock: or -addBoundaryTimeObserverForTimes:queue:usingBlock:.
-     * @discussion
-     * 	Upon return, the caller is guaranteed that no new time observer blocks will begin executing.  Depending on the calling thread and the queue used to add the time observer, an in-flight block may continue to execute after this method returns.  You can guarantee synchronous time observer removal by enqueuing the call to -removeTimeObserver: on that queue.  Alternatively, call dispatch_sync(queue, ^{}) after -removeTimeObserver: to wait for any in-flight blocks to finish executing.  -removeTimeObserver: should be used to explicitly cancel each time observer added using -addPeriodicTimeObserverForInterval:queue:usingBlock: and -addBoundaryTimeObserverForTimes:queue:usingBlock:.
      */
     @Generated
     @Selector("removeTimeObserver:")
     public native void removeTimeObserver(@Mapped(ObjCObjectMapper.class) Object observer);
 
     /**
-     * @property		renderers
-     * @abstract		Array of id<AVQueuedSampleBufferRendering> currently attached to the synchronizer.
-     * @discussion
+     * [@property]		renderers
+     * 
+     * Array of id<AVQueuedSampleBufferRendering> currently attached to the synchronizer.
+     * 
      * 	A list of renderers added to and not removed from the synchronizer.  The list also includes renderers that have been scheduled to be removed but have not yet been removed.
      * 
      * 	This property is not KVO observable.
@@ -279,9 +292,10 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property		rate
-     * @abstract		Playback rate.
-     * @discussion
+     * [@property]		rate
+     * 
+     * Playback rate.
+     * 
      * 	Indicates the current rate of rendering.  A value of 0.0 means "stopped"; a value of 1.0 means "play at the natural rate of the media".  Must be greater than or equal to 0.0.
      */
     @Generated
@@ -289,14 +303,16 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public native void setRate(float value);
 
     /**
-     * @method			setRate:time:
-     * @abstract		Sets the timebase's time and rate.
+     * setRate:time:
+     * 
+     * Sets the timebase's time and rate.
+     * 
+     * 	Sets the timebase's time to time and then sets the rendering rate to rate.  A rate value of 0.0 means "stopped"; a rate value of 1.0 means "play at the natural rate of the media".  Use kCMTimeInvalid for time to not modify the timebase's time.
+     * 
      * @param			rate
      * 	A new timebase rate to set.  Must be greater than or equal to 0.0
      * @param			time
      * 	A new time to set.  Must be greater than or equal to kCMTimeZero, or kCMTimeInvalid
-     * @discussion
-     * 	Sets the timebase's time to time and then sets the rendering rate to rate.  A rate value of 0.0 means "stopped"; a rate value of 1.0 means "play at the natural rate of the media".  Use kCMTimeInvalid for time to not modify the timebase's time.
      */
     @Generated
     @Selector("setRate:time:")
@@ -311,9 +327,10 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property		timebase
-     * @abstract		The synchronizer's rendering timebase, which governs how time stamps are interpreted.
-     * @discussion
+     * [@property]		timebase
+     * 
+     * The synchronizer's rendering timebase, which governs how time stamps are interpreted.
+     * 
      * 	By default, this timebase will be driven by the clock of an added AVSampleBufferAudioRenderer.
      * 
      * 	If no AVSampleBufferAudioRenderer has been added, the master clock will be the host time clock (mach_absolute_time with the appropriate timescale conversion; this is the same as Core Animation's CACurrentMediaTime).
@@ -330,10 +347,13 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     public static native long version_static();
 
     /**
-     * @method			currentTime
-     * @abstract		Returns the current time of the synchronizer.
-     * @result			A CMTime
-     * @discussion		Returns the current time of the synchronizer. Not key-value observable; use -addPeriodicTimeObserverForInterval:queue:usingBlock: instead.
+     * currentTime
+     * 
+     * Returns the current time of the synchronizer.
+     * 
+     * Returns the current time of the synchronizer. Not key-value observable; use -addPeriodicTimeObserverForInterval:queue:usingBlock: instead.
+     * 
+     * @return			A CMTime
      */
     @Generated
     @Selector("currentTime")

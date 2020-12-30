@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLMultisampleDepthResolveFilter
- * @abstract Controls the MSAA depth resolve operation. Supported on iOS GPU Family 3 and later.
+ * [@enum] MTLMultisampleDepthResolveFilter
+ * 
+ * Controls the MSAA depth resolve operation. Supported on iOS GPU Family 3 and later.
  */
 @Generated
 public final class MTLMultisampleDepthResolveFilter {

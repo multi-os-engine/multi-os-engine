@@ -26,9 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NFCVASCommandConfiguration
+ * NFCVASCommandConfiguration
  * 
- * @discussion Configuration for one GET VAS DATA command.
+ * Configuration for one GET VAS DATA command.
  */
 @Generated
 @Library("CoreNFC")
@@ -104,7 +104,7 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
     public native NFCVASCommandConfiguration init();
 
     /**
-     * @method initWithVASMode:passTypeIdentifier:url:
+     * initWithVASMode:passTypeIdentifier:url:
      * 
      * @param mode                  VAS operation mode
      * @param passTypeIdentifier    Pass type identifier of the Wallet pass.
@@ -137,8 +137,9 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property mode
-     * @discussion  VAS protocol mode.
+     * [@property] mode
+     * 
+     * VAS protocol mode.
      */
     @Generated
     @Selector("mode")
@@ -152,8 +153,9 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
     public static native Object new_objc();
 
     /**
-     * @property passTypeIdentifier
-     * @discussion  Wallet Pass Type Identifier of the Wallet Pass.  The string value will be used to calculate the
+     * [@property] passTypeIdentifier
+     * 
+     * Wallet Pass Type Identifier of the Wallet Pass.  The string value will be used to calculate the
      *              Merchant ID value for the GET VAS DATA command.
      */
     @Generated
@@ -169,16 +171,18 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property mode
-     * @discussion  VAS protocol mode.
+     * [@property] mode
+     * 
+     * VAS protocol mode.
      */
     @Generated
     @Selector("setMode:")
     public native void setMode(@NInt long value);
 
     /**
-     * @property passTypeIdentifier
-     * @discussion  Wallet Pass Type Identifier of the Wallet Pass.  The string value will be used to calculate the
+     * [@property] passTypeIdentifier
+     * 
+     * Wallet Pass Type Identifier of the Wallet Pass.  The string value will be used to calculate the
      *              Merchant ID value for the GET VAS DATA command.
      */
     @Generated
@@ -186,8 +190,9 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
     public native void setPassTypeIdentifier(String value);
 
     /**
-     * @property url
-     * @discussion  Merchant URL object.  Maximum length of the URL is 64 characters, including the schema.
+     * [@property] url
+     * 
+     * Merchant URL object.  Maximum length of the URL is 64 characters, including the schema.
      *              Set to nil to disable the merchant URL.
      */
     @Generated
@@ -203,8 +208,9 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * @property url
-     * @discussion  Merchant URL object.  Maximum length of the URL is 64 characters, including the schema.
+     * [@property] url
+     * 
+     * Merchant URL object.  Maximum length of the URL is 64 characters, including the schema.
      *              Set to nil to disable the merchant URL.
      */
     @Generated

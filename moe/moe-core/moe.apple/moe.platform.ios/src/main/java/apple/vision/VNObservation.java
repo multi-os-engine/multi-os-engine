@@ -32,8 +32,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNObservation
- * @brief VNObservation describes the results of performing a VNRequest. The result has a confidence score. The different types of requests will create different subclasses of VNObservation to return their results in properties of those subclasses.
+ * VNObservation
+ * 
+ * VNObservation describes the results of performing a VNRequest. The result has a confidence score. The different types of requests will create different subclasses of VNObservation to return their results in properties of those subclasses.
  */
 @Generated
 @Library("Vision")
@@ -86,8 +87,9 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @brief The level of confidence normalized to [0, 1] where 1 is most confident
-     * @discussion Confidence can always be returned as 1.0 if confidence is not supported or has no meaning
+     * The level of confidence normalized to [0, 1] where 1 is most confident
+     * 
+     * Confidence can always be returned as 1.0 if confidence is not supported or has no meaning
      */
     @Generated
     @Selector("confidence")
@@ -178,7 +180,7 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     }
 
     /**
-     * @brief The unique identifier assigned to an observation.
+     * The unique identifier assigned to an observation.
      */
     @Generated
     @Selector("uuid")
@@ -195,8 +197,9 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     public native long requestRevision();
 
     /**
-     * @brief The duration of the observation reporting when first detected and how long it is valid.
-     * @discussion The duration of the observation when used with a sequence of buffers. If a request does not support a timeRange or the timeRange is not known, the start time and duration will be set to 0.
+     * The duration of the observation reporting when first detected and how long it is valid.
+     * 
+     * The duration of the observation when used with a sequence of buffers. If a request does not support a timeRange or the timeRange is not known, the start time and duration will be set to 0.
      */
     @Generated
     @Selector("timeRange")

@@ -19,21 +19,22 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum			AudioUnitParameterOptions
- * @discussion		Bit positions 18, 17, and 16 are set aside for display scales. Bit 19 is reserved.
- * @constant		kAudioUnitParameterFlag_CFNameRelease
- * @constant		kAudioUnitParameterFlag_PlotHistory
- * @constant		kAudioUnitParameterFlag_MeterReadOnly
- * @constant		kAudioUnitParameterFlag_DisplayMask
- * @constant		kAudioUnitParameterFlag_DisplaySquareRoot
- * @constant		kAudioUnitParameterFlag_DisplaySquared
- * @constant		kAudioUnitParameterFlag_DisplayCubed
- * @constant		kAudioUnitParameterFlag_DisplayCubeRoot
- * @constant		kAudioUnitParameterFlag_DisplayExponential
- * @constant		kAudioUnitParameterFlag_HasClump
- * @constant		kAudioUnitParameterFlag_ValuesHaveStrings
- * @constant		kAudioUnitParameterFlag_DisplayLogarithmic		
- * @constant		kAudioUnitParameterFlag_IsHighResolution
+ * [@enum]			AudioUnitParameterOptions
+ * 
+ * Bit positions 18, 17, and 16 are set aside for display scales. Bit 19 is reserved.
+ * [@constant]		kAudioUnitParameterFlag_CFNameRelease
+ * [@constant]		kAudioUnitParameterFlag_PlotHistory
+ * [@constant]		kAudioUnitParameterFlag_MeterReadOnly
+ * [@constant]		kAudioUnitParameterFlag_DisplayMask
+ * [@constant]		kAudioUnitParameterFlag_DisplaySquareRoot
+ * [@constant]		kAudioUnitParameterFlag_DisplaySquared
+ * [@constant]		kAudioUnitParameterFlag_DisplayCubed
+ * [@constant]		kAudioUnitParameterFlag_DisplayCubeRoot
+ * [@constant]		kAudioUnitParameterFlag_DisplayExponential
+ * [@constant]		kAudioUnitParameterFlag_HasClump
+ * [@constant]		kAudioUnitParameterFlag_ValuesHaveStrings
+ * [@constant]		kAudioUnitParameterFlag_DisplayLogarithmic		
+ * [@constant]		kAudioUnitParameterFlag_IsHighResolution
  * 	This flag provides a hint to a host that this parameter should be controlled through the
  * 	highest resolution if the host has limitations on the control resolution of parameter
  * 	values. Generally this means that controlling this parameter with a single MIDI Control
@@ -41,24 +42,24 @@ import org.moe.natj.general.ann.Generated;
  * 	resolution should be used if possible. If this flag is not set, then a host can assume that
  * 	a 7-bit control quantization is acceptable. Ideally, parameters should be controlled in the
  * 	fullest resolution that they are published with.
- * @constant		kAudioUnitParameterFlag_NonRealTime
+ * [@constant]		kAudioUnitParameterFlag_NonRealTime
  * 	Changing the parameter in real-time will cause a glitch or otherwise undesirable effect.
- * @constant		kAudioUnitParameterFlag_CanRamp
+ * [@constant]		kAudioUnitParameterFlag_CanRamp
  * 	If set, the parameter can be ramped.
- * @constant		kAudioUnitParameterFlag_ExpertMode
+ * [@constant]		kAudioUnitParameterFlag_ExpertMode
  * 	If set, the parameter is obscure (hint to UI to only display in expert mode).
- * @constant		kAudioUnitParameterFlag_HasCFNameString
+ * [@constant]		kAudioUnitParameterFlag_HasCFNameString
  * 	In the original ParameterInfo a C string only was specified. With MacOS 10.2 and later, the
  * 	last four bytes of this string are reserved for a CFStringRef, which gives the ability to
  * 	used Unicode encoding, necessary for providing a name in languages using non-ASCII
  * 	characters. If this flag bit is set, the CFStringRef is valid.
- * @constant		kAudioUnitParameterFlag_IsGlobalMeta
+ * [@constant]		kAudioUnitParameterFlag_IsGlobalMeta
  * 	If set, changing this parameter may change any number of others in the AudioUnit.
- * @constant		kAudioUnitParameterFlag_IsElementMeta
+ * [@constant]		kAudioUnitParameterFlag_IsElementMeta
  * 	If set, changing this parameter may change others in the same element as the current
  * 	parameter.
- * @constant		kAudioUnitParameterFlag_IsReadable
- * @constant		kAudioUnitParameterFlag_IsWritable
+ * [@constant]		kAudioUnitParameterFlag_IsReadable
+ * [@constant]		kAudioUnitParameterFlag_IsWritable
  */
 @Generated
 public final class AudioUnitParameterOptions {

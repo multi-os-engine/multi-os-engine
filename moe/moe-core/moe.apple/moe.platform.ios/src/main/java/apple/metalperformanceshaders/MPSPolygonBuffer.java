@@ -29,7 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A vertex buffer and optional index and mask buffer for a set of polygons
+ * A vertex buffer and optional index and mask buffer for a set of polygons
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -105,7 +105,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public static native long hash_static();
 
     /**
-     * @brief Index buffer containing index data. Each index references a vertex in the vertex buffer.
+     * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
      */
     @Generated
@@ -114,7 +114,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public native MTLBuffer indexBuffer();
 
     /**
-     * @brief Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
+     * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
      * multiple of the index type. Changes to this property require rebuilding the acceleration
      * structure.
      */
@@ -124,7 +124,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public native long indexBufferOffset();
 
     /**
-     * @brief Initialize the polygon buffer
+     * Initialize the polygon buffer
      */
     @Generated
     @Selector("init")
@@ -156,7 +156,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
+     * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
      */
     @Generated
@@ -165,7 +165,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public native MTLBuffer maskBuffer();
 
     /**
-     * @brief Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
      */
     @Generated
     @Selector("maskBufferOffset")
@@ -183,7 +183,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public static native MPSPolygonBuffer polygonBuffer();
 
     /**
-     * @brief Number of polygons. Changes to this property require rebuilding the acceleration
+     * Number of polygons. Changes to this property require rebuilding the acceleration
      * structure.
      */
     @Generated
@@ -200,7 +200,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Index buffer containing index data. Each index references a vertex in the vertex buffer.
+     * Index buffer containing index data. Each index references a vertex in the vertex buffer.
      * May be nil.
      */
     @Generated
@@ -208,7 +208,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public native void setIndexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
+     * Offset, in bytes, into the index buffer. Defaults to 0 bytes. Must be aligned to a
      * multiple of the index type. Changes to this property require rebuilding the acceleration
      * structure.
      */
@@ -217,7 +217,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public native void setIndexBufferOffset(@NUInt long value);
 
     /**
-     * @brief Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
+     * Mask buffer containing one uint32_t mask per polygon. May be nil. Otherwise, the mask
      * type must be specified on the MPSRayIntersector with which it is used.
      */
     @Generated
@@ -225,14 +225,14 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public native void setMaskBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
      */
     @Generated
     @Selector("setMaskBufferOffset:")
     public native void setMaskBufferOffset(@NUInt long value);
 
     /**
-     * @brief Number of polygons. Changes to this property require rebuilding the acceleration
+     * Number of polygons. Changes to this property require rebuilding the acceleration
      * structure.
      */
     @Generated
@@ -244,7 +244,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @brief Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
+     * Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
@@ -264,7 +264,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public native void setVertexBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
+     * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
      */
     @Generated
@@ -291,7 +291,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public static native long version_static();
 
     /**
-     * @brief Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
+     * Vertex buffer containing vertex data encoded as three 32 bit floats per vertex. Note
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
@@ -312,7 +312,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     public native MTLBuffer vertexBuffer();
 
     /**
-     * @brief Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
+     * Offset, in bytes, into the vertex buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
      */
     @Generated

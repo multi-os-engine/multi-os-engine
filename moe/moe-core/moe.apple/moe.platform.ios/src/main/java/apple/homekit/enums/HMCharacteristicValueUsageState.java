@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueUsageState
+ * [@enum]      HMCharacteristicValueUsageState
  * 
- * @constant  HMCharacteristicValueUsageStateNotInUse        Not in use.
- * @constant  HMCharacteristicValueUsageStateInUse           Currently in use.
+ * [@constant]  HMCharacteristicValueUsageStateNotInUse        Not in use.
+ * [@constant]  HMCharacteristicValueUsageStateInUse           Currently in use.
  */
 @Generated
 public final class HMCharacteristicValueUsageState {

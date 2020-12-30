@@ -94,7 +94,8 @@ public class MPSCNNUpsamplingNearestNode extends MPSNNFilterNode {
     public native MPSCNNUpsamplingNearestNode init();
 
     /**
-     * @abstract   Init a node representing a MPSCNNUpsamplingNearest kernel
+     * Init a node representing a MPSCNNUpsamplingNearest kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      integerScaleFactorX     The upsampling factor for the x dimension.
      * @param      integerScaleFactorY     The upsampling factor for the y dimension.
@@ -133,7 +134,8 @@ public class MPSCNNUpsamplingNearestNode extends MPSNNFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract Convenience initializer for an autoreleased MPSCNNUpsamplingNearest nodes
+     * Convenience initializer for an autoreleased MPSCNNUpsamplingNearest nodes
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      integerScaleFactorX     The upsampling factor for the x dimension.
      * @param      integerScaleFactorY     The upsampling factor for the y dimension.

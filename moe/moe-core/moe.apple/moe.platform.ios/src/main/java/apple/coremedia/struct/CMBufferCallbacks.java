@@ -60,7 +60,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setVersion(int value);
 
     /**
-     * @field version
+     * [@field] version
      * Must be 0 or 1. 
      */
     @Generated
@@ -68,7 +68,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native VoidPtr refcon();
 
     /**
-     * @field version
+     * [@field] version
      * Must be 0 or 1. 
      */
     @Generated
@@ -76,7 +76,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setRefcon(VoidPtr value);
 
     /**
-     * @field refcon
+     * [@field] refcon
      * Client refcon to be passed to all callbacks (can be NULL,
      * if the callbacks don't require it). 
      */
@@ -86,7 +86,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native Function_getDecodeTimeStamp getDecodeTimeStamp();
 
     /**
-     * @field refcon
+     * [@field] refcon
      * Client refcon to be passed to all callbacks (can be NULL,
      * if the callbacks don't require it). 
      */
@@ -96,7 +96,7 @@ public final class CMBufferCallbacks extends StructObject {
             @FunctionPtr(name = "call_getDecodeTimeStamp") Function_getDecodeTimeStamp value);
 
     /**
-     * @field getDecodeTimeStamp
+     * [@field] getDecodeTimeStamp
      * This callback is called from CMBufferQueueGetFirstDecodeTimeStamp (once),
      * and from CMBufferQueueGetMinDecodeTimeStamp (multiple times).  It should
      * return the decode timestamp of the buffer.  If there are multiple samples
@@ -110,7 +110,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native Function_getPresentationTimeStamp getPresentationTimeStamp();
 
     /**
-     * @field getDecodeTimeStamp
+     * [@field] getDecodeTimeStamp
      * This callback is called from CMBufferQueueGetFirstDecodeTimeStamp (once),
      * and from CMBufferQueueGetMinDecodeTimeStamp (multiple times).  It should
      * return the decode timestamp of the buffer.  If there are multiple samples
@@ -124,7 +124,7 @@ public final class CMBufferCallbacks extends StructObject {
             @FunctionPtr(name = "call_getPresentationTimeStamp") Function_getPresentationTimeStamp value);
 
     /**
-     * @field getPresentationTimeStamp
+     * [@field] getPresentationTimeStamp
      * This callback is called from CMBufferQueueGetFirstPresentationTimeStamp
      * (once) and from CMBufferQueueGetMinPresentationTimeStamp (multiple times).
      * It should return the presentation timestamp of the buffer.  If there are
@@ -139,7 +139,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native Function_getDuration getDuration();
 
     /**
-     * @field getPresentationTimeStamp
+     * [@field] getPresentationTimeStamp
      * This callback is called from CMBufferQueueGetFirstPresentationTimeStamp
      * (once) and from CMBufferQueueGetMinPresentationTimeStamp (multiple times).
      * It should return the presentation timestamp of the buffer.  If there are
@@ -153,7 +153,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setGetDuration(@FunctionPtr(name = "call_getDuration") Function_getDuration value);
 
     /**
-     * @field getDuration
+     * [@field] getDuration
      * This callback is called (once) during enqueue and dequeue operations to
      * update the total duration of the queue.  Must not be NULL. 
      */
@@ -163,7 +163,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native Function_isDataReady isDataReady();
 
     /**
-     * @field getDuration
+     * [@field] getDuration
      * This callback is called (once) during enqueue and dequeue operations to
      * update the total duration of the queue.  Must not be NULL. 
      */
@@ -172,7 +172,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setIsDataReady(@FunctionPtr(name = "call_isDataReady") Function_isDataReady value);
 
     /**
-     * @field isDataReady
+     * [@field] isDataReady
      * This callback is called from CMBufferQueueDequeueIfDataReadyAndRetain, to
      * ask if the buffer that is about to be dequeued is ready.  Can be NULL
      * (data will be assumed to be ready). 
@@ -183,7 +183,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native Function_compare compare();
 
     /**
-     * @field isDataReady
+     * [@field] isDataReady
      * This callback is called from CMBufferQueueDequeueIfDataReadyAndRetain, to
      * ask if the buffer that is about to be dequeued is ready.  Can be NULL
      * (data will be assumed to be ready). 
@@ -193,7 +193,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setCompare(@FunctionPtr(name = "call_compare") Function_compare value);
 
     /**
-     * @field compare
+     * [@field] compare
      * This callback is called (multiple times) from CMBufferQueueEnqueue, to
      * perform an insertion sort. Can be NULL (queue will be FIFO). 
      */
@@ -202,7 +202,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native CFStringRef dataBecameReadyNotification();
 
     /**
-     * @field compare
+     * [@field] compare
      * This callback is called (multiple times) from CMBufferQueueEnqueue, to
      * perform an insertion sort. Can be NULL (queue will be FIFO). 
      */
@@ -211,7 +211,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native void setDataBecameReadyNotification(CFStringRef value);
 
     /**
-     * @field dataBecameReadyNotification
+     * [@field] dataBecameReadyNotification
      * If triggers of type kCMBufferQueueTrigger_WhenDataBecomesReady are installed,
      * the queue will listen for this notification on the head buffer. 
      * Can be NULL (then the queue won't listen for it). 
@@ -222,7 +222,7 @@ public final class CMBufferCallbacks extends StructObject {
     public native Function_getSize getSize();
 
     /**
-     * @field dataBecameReadyNotification
+     * [@field] dataBecameReadyNotification
      * If triggers of type kCMBufferQueueTrigger_WhenDataBecomesReady are installed,
      * the queue will listen for this notification on the head buffer. 
      * Can be NULL (then the queue won't listen for it). 

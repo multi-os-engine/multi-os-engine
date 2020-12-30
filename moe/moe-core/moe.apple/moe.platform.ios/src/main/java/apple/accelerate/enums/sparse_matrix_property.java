@@ -19,7 +19,7 @@ package apple.accelerate.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @abstract The matrix property type
+ * The matrix property type
  */
 @Generated
 public final class sparse_matrix_property {

@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract returns elementwise product of left * right
+ * returns elementwise product of left * right
  */
 @Generated
 @Library("MetalPerformanceShaders")

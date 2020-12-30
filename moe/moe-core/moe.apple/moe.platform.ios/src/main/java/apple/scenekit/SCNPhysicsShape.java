@@ -46,8 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsShape
- * @abstract SCNPhysicsShape represents the shape of a physics body.
+ * SCNPhysicsShape
+ * 
+ * SCNPhysicsShape represents the shape of a physics body.
  */
 @Generated
 @Library("SceneKit")

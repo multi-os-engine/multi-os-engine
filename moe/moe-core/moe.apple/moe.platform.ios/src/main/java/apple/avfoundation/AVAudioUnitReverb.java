@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitReverb
- * @abstract an AVAudioUnitEffect that implements a reverb
- * @discussion
+ * AVAudioUnitReverb
+ * 
+ * an AVAudioUnitEffect that implements a reverb
+ * 
  *     A reverb simulates the acoustic characteristics of a particular environment.
  *     Use the different presets to simulate a particular space and blend it in with
  *     the original signal using the wetDryMix parameter.
@@ -177,8 +178,9 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
             @ByValue AudioComponentDescription audioComponentDescription);
 
     /**
-     * @method loadFactoryPreset:
-     * @abstract load a reverb preset
+     * loadFactoryPreset:
+     * 
+     * load a reverb preset
      * Default:    AVAudioUnitReverbPresetMediumHall
      */
     @Generated
@@ -186,8 +188,8 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
     public native void loadFactoryPreset(@NInt long preset);
 
     /**
-     * @property wetDryMix
-     * @abstract
+     * [@property] wetDryMix
+     * 
      * Blend of the wet and dry signals
      * Range:      0 (all dry) -> 100 (all wet)
      * Unit:       Percent
@@ -197,8 +199,8 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
     public native void setWetDryMix(float value);
 
     /**
-     * @property wetDryMix
-     * @abstract
+     * [@property] wetDryMix
+     * 
      * Blend of the wet and dry signals
      * Range:      0 (all dry) -> 100 (all wet)
      * Unit:       Percent

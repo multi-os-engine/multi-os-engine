@@ -51,8 +51,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVPlayerViewController
- * @abstract	AVPlayerViewController is a subclass of UIViewController that can be used to display the visual content of an AVPlayer object and the standard playback controls.
+ * AVPlayerViewController
+ * 
+ * AVPlayerViewController is a subclass of UIViewController that can be used to display the visual content of an AVPlayer object and the standard playback controls.
  */
 @Generated
 @Library("AVKit")
@@ -157,9 +158,8 @@ public class AVPlayerViewController extends UIViewController {
     public static native void prepareInterstitialAds();
 
     /**
-     * @method +preparePrerollAds
+     * +preparePrerollAds
      * 
-     * @discussion
      * Inform iAd that the application intends to use AVPlayerViewController's
      * -playPrerollAdWithCompletionHandler: API. Ad metadata will be fetched eagerly,
      * increasing the likelihood of an ad being available when first requested.
@@ -190,17 +190,17 @@ public class AVPlayerViewController extends UIViewController {
     public static native long version_static();
 
     /**
-     * @property	allowsPictureInPicturePlayback
-     * @abstract	Whether or not the receiver allows Picture in Picture playback. Default is YES.
+     * [@property]	allowsPictureInPicturePlayback
+     * 
+     * Whether or not the receiver allows Picture in Picture playback. Default is YES.
      */
     @Generated
     @Selector("allowsPictureInPicturePlayback")
     public native boolean allowsPictureInPicturePlayback();
 
     /**
-     * @method -cancelPreroll
+     * -cancelPreroll
      * 
-     * @discussion
      * Cancel pre-roll video ad playback.
      */
     @Generated
@@ -208,16 +208,18 @@ public class AVPlayerViewController extends UIViewController {
     public native void cancelPreroll();
 
     /**
-     * @property	contentOverlayView
-     * @abstract	Use the content overlay view to add additional custom views between the video content and the controls.
+     * [@property]	contentOverlayView
+     * 
+     * Use the content overlay view to add additional custom views between the video content and the controls.
      */
     @Generated
     @Selector("contentOverlayView")
     public native UIView contentOverlayView();
 
     /**
-     * @property	delegate
-     * @abstract	The receiver's delegate.
+     * [@property]	delegate
+     * 
+     * The receiver's delegate.
      */
     @Generated
     @Selector("delegate")
@@ -237,17 +239,17 @@ public class AVPlayerViewController extends UIViewController {
     public native AVPlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * @property	readyForDisplay
-     * @abstract	Boolean indicating that the first video frame has been made ready for display for the current item of the associated AVPlayer.
+     * [@property]	readyForDisplay
+     * 
+     * Boolean indicating that the first video frame has been made ready for display for the current item of the associated AVPlayer.
      */
     @Generated
     @Selector("isReadyForDisplay")
     public native boolean isReadyForDisplay();
 
     /**
-     * @method -playPrerollAdWithCompletionHandler:
+     * -playPrerollAdWithCompletionHandler:
      * 
-     * @discussion
      * Request playback of a pre-roll video iAd.
      * 
      * If -[AVPlayerViewController player] begins playing during a pre-roll ad, the
@@ -267,32 +269,36 @@ public class AVPlayerViewController extends UIViewController {
             @ObjCBlock(name = "call_playPrerollAdWithCompletionHandler") Block_playPrerollAdWithCompletionHandler completionHandler);
 
     /**
-     * @property	player
-     * @abstract	The player from which to source the media content for the view controller.
+     * [@property]	player
+     * 
+     * The player from which to source the media content for the view controller.
      */
     @Generated
     @Selector("player")
     public native AVPlayer player();
 
     /**
-     * @property	allowsPictureInPicturePlayback
-     * @abstract	Whether or not the receiver allows Picture in Picture playback. Default is YES.
+     * [@property]	allowsPictureInPicturePlayback
+     * 
+     * Whether or not the receiver allows Picture in Picture playback. Default is YES.
      */
     @Generated
     @Selector("setAllowsPictureInPicturePlayback:")
     public native void setAllowsPictureInPicturePlayback(boolean value);
 
     /**
-     * @property	delegate
-     * @abstract	The receiver's delegate.
+     * [@property]	delegate
+     * 
+     * The receiver's delegate.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value);
 
     /**
-     * @property	delegate
-     * @abstract	The receiver's delegate.
+     * [@property]	delegate
+     * 
+     * The receiver's delegate.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) AVPlayerViewControllerDelegate value) {
@@ -307,59 +313,69 @@ public class AVPlayerViewController extends UIViewController {
     }
 
     /**
-     * @property	player
-     * @abstract	The player from which to source the media content for the view controller.
+     * [@property]	player
+     * 
+     * The player from which to source the media content for the view controller.
      */
     @Generated
     @Selector("setPlayer:")
     public native void setPlayer(AVPlayer value);
 
     /**
-     * @property	showsPlaybackControls
-     * @abstract	Whether or not the receiver shows playback controls. Default is YES.
-     * @discussion	Clients can set this property to NO when they don't want to have any playback controls on top of the visual content (e.g. for a game splash screen).
+     * [@property]	showsPlaybackControls
+     * 
+     * Whether or not the receiver shows playback controls. Default is YES.
+     * 
+     * Clients can set this property to NO when they don't want to have any playback controls on top of the visual content (e.g. for a game splash screen).
      */
     @Generated
     @Selector("setShowsPlaybackControls:")
     public native void setShowsPlaybackControls(boolean value);
 
     /**
-     * @property	updatesNowPlayingInfoCenter
-     * @abstract	Whether or not the now playing info center should be updated. Default is YES.
+     * [@property]	updatesNowPlayingInfoCenter
+     * 
+     * Whether or not the now playing info center should be updated. Default is YES.
      */
     @Generated
     @Selector("setUpdatesNowPlayingInfoCenter:")
     public native void setUpdatesNowPlayingInfoCenter(boolean value);
 
     /**
-     * @property	videoGravity
-     * @abstract	A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-     * @discussion	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
+     * [@property]	videoGravity
+     * 
+     * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
+     * 
+     * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      */
     @Generated
     @Selector("setVideoGravity:")
     public native void setVideoGravity(String value);
 
     /**
-     * @property	showsPlaybackControls
-     * @abstract	Whether or not the receiver shows playback controls. Default is YES.
-     * @discussion	Clients can set this property to NO when they don't want to have any playback controls on top of the visual content (e.g. for a game splash screen).
+     * [@property]	showsPlaybackControls
+     * 
+     * Whether or not the receiver shows playback controls. Default is YES.
+     * 
+     * Clients can set this property to NO when they don't want to have any playback controls on top of the visual content (e.g. for a game splash screen).
      */
     @Generated
     @Selector("showsPlaybackControls")
     public native boolean showsPlaybackControls();
 
     /**
-     * @property	updatesNowPlayingInfoCenter
-     * @abstract	Whether or not the now playing info center should be updated. Default is YES.
+     * [@property]	updatesNowPlayingInfoCenter
+     * 
+     * Whether or not the now playing info center should be updated. Default is YES.
      */
     @Generated
     @Selector("updatesNowPlayingInfoCenter")
     public native boolean updatesNowPlayingInfoCenter();
 
     /**
-     * @property	videoBounds
-     * @abstract	The current size and position of the video image as displayed within the receiver's view's bounds.
+     * [@property]	videoBounds
+     * 
+     * The current size and position of the video image as displayed within the receiver's view's bounds.
      */
     @Generated
     @Selector("videoBounds")
@@ -367,9 +383,11 @@ public class AVPlayerViewController extends UIViewController {
     public native CGRect videoBounds();
 
     /**
-     * @property	videoGravity
-     * @abstract	A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-     * @discussion	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
+     * [@property]	videoGravity
+     * 
+     * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
+     * 
+     * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      */
     @Generated
     @Selector("videoGravity")
@@ -383,106 +401,128 @@ public class AVPlayerViewController extends UIViewController {
     }
 
     /**
-     * @property	entersFullScreenWhenPlaybackBegins
-     * @abstract	Whether or not the receiver automatically enters full screen when the play button is tapped. Default is NO.
-     * @discussion	If YES, the receiver will show a user interface tailored to this behavior.
+     * [@property]	entersFullScreenWhenPlaybackBegins
+     * 
+     * Whether or not the receiver automatically enters full screen when the play button is tapped. Default is NO.
+     * 
+     * If YES, the receiver will show a user interface tailored to this behavior.
      */
     @Generated
     @Selector("entersFullScreenWhenPlaybackBegins")
     public native boolean entersFullScreenWhenPlaybackBegins();
 
     /**
-     * @property	exitsFullScreenWhenPlaybackEnds
-     * @abstract	Whether or not the receiver automatically exits full screen when playback ends. Default is NO.
-     * @discussion	If multiple player items have been enqueued, the receiver exits fullscreen once no more items are remaining in the queue.
+     * [@property]	exitsFullScreenWhenPlaybackEnds
+     * 
+     * Whether or not the receiver automatically exits full screen when playback ends. Default is NO.
+     * 
+     * If multiple player items have been enqueued, the receiver exits fullscreen once no more items are remaining in the queue.
      */
     @Generated
     @Selector("exitsFullScreenWhenPlaybackEnds")
     public native boolean exitsFullScreenWhenPlaybackEnds();
 
     /**
-     * @property	entersFullScreenWhenPlaybackBegins
-     * @abstract	Whether or not the receiver automatically enters full screen when the play button is tapped. Default is NO.
-     * @discussion	If YES, the receiver will show a user interface tailored to this behavior.
+     * [@property]	entersFullScreenWhenPlaybackBegins
+     * 
+     * Whether or not the receiver automatically enters full screen when the play button is tapped. Default is NO.
+     * 
+     * If YES, the receiver will show a user interface tailored to this behavior.
      */
     @Generated
     @Selector("setEntersFullScreenWhenPlaybackBegins:")
     public native void setEntersFullScreenWhenPlaybackBegins(boolean value);
 
     /**
-     * @property	exitsFullScreenWhenPlaybackEnds
-     * @abstract	Whether or not the receiver automatically exits full screen when playback ends. Default is NO.
-     * @discussion	If multiple player items have been enqueued, the receiver exits fullscreen once no more items are remaining in the queue.
+     * [@property]	exitsFullScreenWhenPlaybackEnds
+     * 
+     * Whether or not the receiver automatically exits full screen when playback ends. Default is NO.
+     * 
+     * If multiple player items have been enqueued, the receiver exits fullscreen once no more items are remaining in the queue.
      */
     @Generated
     @Selector("setExitsFullScreenWhenPlaybackEnds:")
     public native void setExitsFullScreenWhenPlaybackEnds(boolean value);
 
     /**
-     * @property	pixelBufferAttributes
-     * @abstract	The client requirements for the visual output during playback.
-     * @discussion	Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
+     * [@property]	pixelBufferAttributes
+     * 
+     * The client requirements for the visual output during playback.
+     * 
+     * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
      */
     @Generated
     @Selector("pixelBufferAttributes")
     public native NSDictionary<String, ?> pixelBufferAttributes();
 
     /**
-     * @property	pixelBufferAttributes
-     * @abstract	The client requirements for the visual output during playback.
-     * @discussion	Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
+     * [@property]	pixelBufferAttributes
+     * 
+     * The client requirements for the visual output during playback.
+     * 
+     * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
      */
     @Generated
     @Selector("setPixelBufferAttributes:")
     public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
 
     /**
-     * @property    requiresLinearPlayback
-     * @abstract    Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * @discussion  This can be used to enforce playback of mandatory content (such as legalese or advertisements).
+     * [@property]    requiresLinearPlayback
+     * 
+     * Disables certain user operations (fast forward, forward skip, and scrubbing).
+     * 
+     * This can be used to enforce playback of mandatory content (such as legalese or advertisements).
      */
     @Generated
     @Selector("requiresLinearPlayback")
     public native boolean requiresLinearPlayback();
 
     /**
-     * @property    requiresLinearPlayback
-     * @abstract    Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * @discussion  This can be used to enforce playback of mandatory content (such as legalese or advertisements).
+     * [@property]    requiresLinearPlayback
+     * 
+     * Disables certain user operations (fast forward, forward skip, and scrubbing).
+     * 
+     * This can be used to enforce playback of mandatory content (such as legalese or advertisements).
      */
     @Generated
     @Selector("setRequiresLinearPlayback:")
     public native void setRequiresLinearPlayback(boolean value);
 
     /**
-     * @property	showsTimecodes
-     * @abstract	Controls whether timecodes can be displayed in the playback UI when playing media with embedded timecodes. Default NO.
+     * [@property]	showsTimecodes
+     * 
+     * Controls whether timecodes can be displayed in the playback UI when playing media with embedded timecodes. Default NO.
      */
     @Generated
     @Selector("setShowsTimecodes:")
     public native void setShowsTimecodes(boolean value);
 
     /**
-     * @property	showsTimecodes
-     * @abstract	Controls whether timecodes can be displayed in the playback UI when playing media with embedded timecodes. Default NO.
+     * [@property]	showsTimecodes
+     * 
+     * Controls whether timecodes can be displayed in the playback UI when playing media with embedded timecodes. Default NO.
      */
     @Generated
     @Selector("showsTimecodes")
     public native boolean showsTimecodes();
 
     /**
-     * @property    canStartPictureInPictureAutomaticallyFromInline
-     * @abstract    Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
-     * @discussion  This property must only be set to YES for content intended to be the user's primary focus.
+     * [@property]    canStartPictureInPictureAutomaticallyFromInline
+     * 
+     * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
+     * 
+     * This property must only be set to YES for content intended to be the user's primary focus.
      */
     @Generated
     @Selector("canStartPictureInPictureAutomaticallyFromInline")
     public native boolean canStartPictureInPictureAutomaticallyFromInline();
 
     /**
-     * @property    canStartPictureInPictureAutomaticallyFromInline
-     * @abstract    Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
-     * @discussion  This property must only be set to YES for content intended to be the user's primary focus.
+     * [@property]    canStartPictureInPictureAutomaticallyFromInline
+     * 
+     * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
+     * 
+     * This property must only be set to YES for content intended to be the user's primary focus.
      */
     @Generated
     @Selector("setCanStartPictureInPictureAutomaticallyFromInline:")

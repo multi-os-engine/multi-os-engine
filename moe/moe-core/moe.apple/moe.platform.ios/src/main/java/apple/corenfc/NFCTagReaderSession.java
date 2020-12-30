@@ -28,9 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NFCTagReaderSession
+ * NFCTagReaderSession
  * 
- * @discussion  Reader session for processing NFC tags supporting one of the @link NFCTagType @link/ types.  @link [NFCTagReaderSessionDelegate readerSession:didDetectTags:] @link/
+ * Reader session for processing NFC tags supporting one of the @link NFCTagType @link/ types.  @link [NFCTagReaderSessionDelegate readerSession:didDetectTags:] @link/
  *              will return tag objects matching the requested type for the session.  This session requires the "com.apple.developer.nfc.readersession.formats" entitlement
  *              in your process.  In addition your application's Info.plist must contain a non-empty usage description string. @link NFCReaderErrorSecurityViolation @link/ will be
  *              returned from @link [NFCTagReaderSessionDelegate tagReaderSession:didInvalidateWithError:] @link/ if the required entitlement is missing when session is started.
@@ -92,16 +92,16 @@ public class NFCTagReaderSession extends NFCReaderSession {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @method connectToTag:completionHandler:
+     * connectToTag:completionHandler:
+     * 
+     * This method establishes a tag connection and activates the tag.  Connecting to the same tag that is currently opened has no effect.
+     *              Connecting to a different tag will automatically terminate the previous tag connection and put it into the halt state.  Tag stays in the
+     *              connected state until another tag is connected or the polling is restarted.
      * 
      * @param tag   A NFCTag protocol compliant tag object that will be connected to.
      * 
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
      *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag.
-     * 
-     * @discussion  This method establishes a tag connection and activates the tag.  Connecting to the same tag that is currently opened has no effect.
-     *              Connecting to a different tag will automatically terminate the previous tag connection and put it into the halt state.  Tag stays in the
-     *              connected state until another tag is connected or the polling is restarted.
      */
     @Generated
     @Selector("connectToTag:completionHandler:")
@@ -116,7 +116,7 @@ public class NFCTagReaderSession extends NFCReaderSession {
     }
 
     /**
-     * @property connectedTag  Current connected tag object; nil if no tag is connected in the session.
+     * [@property] connectedTag  Current connected tag object; nil if no tag is connected in the session.
      */
     @Generated
     @Selector("connectedTag")
@@ -141,7 +141,7 @@ public class NFCTagReaderSession extends NFCReaderSession {
     public native NFCTagReaderSession init();
 
     /**
-     * @method initWithPollingOption:delegate:queue:
+     * initWithPollingOption:delegate:queue:
      * 
      * @param pollingOption Configures the RF polling of the reader session; multiple options can be OR'ed together.  This option affects the possible NFC tag type discover.
      * @param delegate      The session will hold a weak ARC reference to this @link NFCTagReaderSessionDelegate @link/ object.
@@ -195,9 +195,9 @@ public class NFCTagReaderSession extends NFCReaderSession {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method restartPolling
+     * restartPolling
      * 
-     * @discussion Restart the polling sequence in this session to discover new tags.  New tags discovered from polling will return in the subsequent @link [NFCTagReaderSessionDelegate tagReaderSession:didDetectTags:]
+     * Restart the polling sequence in this session to discover new tags.  New tags discovered from polling will return in the subsequent @link [NFCTagReaderSessionDelegate tagReaderSession:didDetectTags:]
      *             @link/ call. Tags that are returned previously by @link [NFCTagReaderSessionDelegate tagReaderSession:didDetectTags:] @link/ will become invalid,
      *             and all references to these tags shall be removed to properly release the resources.  Calling this method on an invalidated session
      *             will have no effect; a new reader session is required to restart the reader.

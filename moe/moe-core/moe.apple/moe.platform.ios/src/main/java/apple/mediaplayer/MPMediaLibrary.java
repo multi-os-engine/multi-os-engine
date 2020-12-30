@@ -200,7 +200,7 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
      * If the playlist exists, the creation metadata is ignored.
      * If no such playlist exists and creation metadata is valid, a playlist associated the UUID will be created.
      * 
-     * @discussion The UUID should typically be pre-generated to avoid creating a new playlist with every call.
+     * The UUID should typically be pre-generated to avoid creating a new playlist with every call.
      */
     @Generated
     @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")

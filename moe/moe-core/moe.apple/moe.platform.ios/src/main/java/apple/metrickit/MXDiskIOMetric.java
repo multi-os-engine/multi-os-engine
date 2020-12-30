@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXDiskIOMetric
- * @abstract      An MXMetric subclass that encapsulates disk IO metrics.
+ * MXDiskIOMetric
+ * 
+ * An MXMetric subclass that encapsulates disk IO metrics.
  */
 @Generated
 @Library("MetricKit")
@@ -82,9 +83,11 @@ public class MXDiskIOMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property      cumulativeLogicalWrites
-     * @abstract      Cumulative amount of logical writes.
-     * @discussion    Dimensioned as NSUnitInformationStorage.
+     * [@property]      cumulativeLogicalWrites
+     * 
+     * Cumulative amount of logical writes.
+     * 
+     * Dimensioned as NSUnitInformationStorage.
      */
     @Generated
     @Selector("cumulativeLogicalWrites")

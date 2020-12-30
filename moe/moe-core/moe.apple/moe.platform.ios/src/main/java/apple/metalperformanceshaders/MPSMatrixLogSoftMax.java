@@ -26,13 +26,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixLogSoftMax
+ * MPSMatrixLogSoftMax
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A logarithmic softmax kernel that operates on matrices.
+ * A logarithmic softmax kernel that operates on matrices.
  * 
- * @discussion A MPSMatrixLogSoftMax object computes:
+ * A MPSMatrixLogSoftMax object computes:
  * 
  *                 B_ij = ln { Exp { A_ij } / ( Sum_k Exp { A_ik } ) } = A_ij - ln { Sum_k Exp { A_ik } }
  * 

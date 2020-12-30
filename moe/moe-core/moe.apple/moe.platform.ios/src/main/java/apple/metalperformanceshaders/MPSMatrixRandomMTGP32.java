@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixRandomMTGP32
- * @discussion Generates random numbers using a Mersenne Twister algorithm
+ * MPSMatrixRandomMTGP32
+ * 
+ * Generates random numbers using a Mersenne Twister algorithm
  *             suitable for GPU execution.  It uses a period of 2**11214.
  *             For further details see:
  *         Mutsuo Saito. A Variant of Mersenne Twister Suitable for Graphic Processors. arXiv:1005.4973
@@ -111,8 +112,9 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   initialize a MPSMatrixRandomMTGP32 filter to generate 32-bit unsigned
+     * initialize a MPSMatrixRandomMTGP32 filter to generate 32-bit unsigned
      *             integer values with an initial seed of 0.
+     * 
      * @param      device          The device the filter will run on
      */
     @Generated
@@ -120,7 +122,8 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
     public native MPSMatrixRandomMTGP32 initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   initialize a MPSMatrixRandomMTGP32 filter using a default distribution.
+     * initialize a MPSMatrixRandomMTGP32 filter using a default distribution.
+     * 
      * @param      device                  The device the filter will run on
      * @param      destinationDataType     The data type of the result.
      * @param      seed                    The seed to initialize the random number generators with.
@@ -131,7 +134,8 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, int destinationDataType, @NUInt long seed);
 
     /**
-     * @abstract   initialize a MPSMatrixRandomMTGP32 filter
+     * initialize a MPSMatrixRandomMTGP32 filter
+     * 
      * @param      device                  The device the filter will run on
      * @param      destinationDataType     The data type of the result.
      * @param      seed                    The seed to initialize the random number generators with.
@@ -197,7 +201,8 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
     }
 
     /**
-     * @abstract   Synchronize internal MTGP32 state between GPU and CPU.
+     * Synchronize internal MTGP32 state between GPU and CPU.
+     * 
      * @param      commandBuffer       The command buffer on which to encode the synchronization.
      */
     @Generated

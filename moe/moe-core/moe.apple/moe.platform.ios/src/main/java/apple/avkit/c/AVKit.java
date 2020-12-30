@@ -38,8 +38,9 @@ public final class AVKit {
     }
 
     /**
-     * @constant	AVKitErrorDomain
-     * @abstract	Domain for errors from AVKit APIs.
+     * [@constant]	AVKitErrorDomain
+     * 
+     * Domain for errors from AVKit APIs.
      */
     @Generated
     @CVariable()

@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXCPUMetric
- * @abstract      An MXMetric subclass that encapsulates CPU metrics.
+ * MXCPUMetric
+ * 
+ * An MXMetric subclass that encapsulates CPU metrics.
  */
 @Generated
 @Library("MetricKit")
@@ -83,10 +84,13 @@ public class MXCPUMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property      cumulativeCPUTime
-     * @abstract      CPU time aggregated cumulatively.
-     * @discussion    The data here represents the total CPU time an application consumed over the date range of the containing payload.
-     * @discussion    Dimensioned as NSUnitDuration.
+     * [@property]      cumulativeCPUTime
+     * 
+     * CPU time aggregated cumulatively.
+     * 
+     * The data here represents the total CPU time an application consumed over the date range of the containing payload.
+     * 
+     * Dimensioned as NSUnitDuration.
      */
     @Generated
     @Selector("cumulativeCPUTime")
@@ -172,10 +176,13 @@ public class MXCPUMetric extends MXMetric {
     public static native long version_static();
 
     /**
-     * @property      cumulativeCPUInstructions
-     * @abstract      CPU instructions retired aggregated cumulatively.
-     * @discussion    The data here represents the total number of CPU instructions an application retired over the date range of the containing payload.
-     * @discussion    Dimensionless.
+     * [@property]      cumulativeCPUInstructions
+     * 
+     * CPU instructions retired aggregated cumulatively.
+     * 
+     * The data here represents the total number of CPU instructions an application retired over the date range of the containing payload.
+     * 
+     * Dimensionless.
      */
     @Generated
     @Selector("cumulativeCPUInstructions")

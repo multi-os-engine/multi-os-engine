@@ -4,16 +4,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudioPlayerNodeCompletionCallbackType
- * @abstract	Specifies when the completion handler must be invoked.
+ * [@enum] AVAudioPlayerNodeCompletionCallbackType
  * 
- * @constant	AVAudioPlayerNodeCompletionDataConsumed
+ * Specifies when the completion handler must be invoked.
+ * 
+ * [@constant]	AVAudioPlayerNodeCompletionDataConsumed
  * 				The buffer or file data has been consumed by the player.
- *  	@constant	AVAudioPlayerNodeCompletionDataRendered
+ *  	[@constant]	AVAudioPlayerNodeCompletionDataRendered
  * 				The buffer or file data has been rendered (i.e. output) by the player. This
  * 				does not account for any signal processing latencies downstream of the player 
  * 				in the engine (see `AVAudioNode(outputPresentationLatency)`).
- * @constant	AVAudioPlayerNodeCompletionDataPlayedBack
+ * [@constant]	AVAudioPlayerNodeCompletionDataPlayedBack
  * 				Applicable only when the engine is rendering to/from an audio device.
  * 				The buffer or file has finished playing. This accounts for both (small) signal 
  * 				processing latencies downstream of the player in the engine, as well as

@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class     HKBloodTypeObject
- * @abstract  A wrapper object for HKBloodType enumeration.
+ * HKBloodTypeObject
+ * 
+ * A wrapper object for HKBloodType enumeration.
  */
 @Generated
 @Library("HealthKit")

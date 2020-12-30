@@ -295,7 +295,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * Sets the state vector of the extended gamepad to a copy of the input extended gamepad's state vector.
      * 
-     * @note If the controller's snapshot flag is set to NO, this method has no effect.
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
      * @see GCController.snapshot
      */
     @Generated

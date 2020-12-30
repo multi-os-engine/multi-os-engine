@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPTrip represents an origin and destination with route choices.
+ * [@c] CPTrip represents an origin and destination with route choices.
  */
 @Generated
 @Library("CarPlay")
@@ -89,7 +89,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     public static native String description_static();
 
     /**
-     * @c MKMapItem representing the destination for the trip.
+     * [@c] MKMapItem representing the destination for the trip.
      */
     @Generated
     @Selector("destination")
@@ -148,7 +148,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     public static native Object new_objc();
 
     /**
-     * @c MKMapItem representing the origin for the trip.
+     * [@c] MKMapItem representing the origin for the trip.
      */
     @Generated
     @Selector("origin")

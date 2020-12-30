@@ -41,9 +41,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CBATTRequest
+ * CBATTRequest
  * 
- * @discussion Represents a read or write request from a central.
+ * Represents a read or write request from a central.
  */
 @Generated
 @Library("CoreBluetooth")
@@ -157,18 +157,18 @@ public class CBATTRequest extends NSObject {
     public static native long version_static();
 
     /**
-     * @property central
+     * [@property] central
      * 
-     * @discussion The central that originated the request.
+     * The central that originated the request.
      */
     @Generated
     @Selector("central")
     public native CBCentral central();
 
     /**
-     * @property characteristic
+     * [@property] characteristic
      * 
-     * @discussion The characteristic whose value will be read or written.
+     * The characteristic whose value will be read or written.
      */
     @Generated
     @Selector("characteristic")
@@ -179,9 +179,9 @@ public class CBATTRequest extends NSObject {
     public native CBATTRequest init();
 
     /**
-     * @property offset
+     * [@property] offset
      * 
-     * @discussion The zero-based index of the first byte for the read or write.
+     * The zero-based index of the first byte for the read or write.
      */
     @Generated
     @Selector("offset")
@@ -189,9 +189,9 @@ public class CBATTRequest extends NSObject {
     public native long offset();
 
     /**
-     * @property value
+     * [@property] value
      * 
-     * @discussion The data being read or written.
+     * The data being read or written.
      * 		For read requests, <i>value</i> will be nil and should be set before responding via @link respondToRequest:withResult: @/link.
      * 		For write requests, <i>value</i> will contain the data to be written.
      */
@@ -200,9 +200,9 @@ public class CBATTRequest extends NSObject {
     public native void setValue(NSData value);
 
     /**
-     * @property value
+     * [@property] value
      * 
-     * @discussion The data being read or written.
+     * The data being read or written.
      * 		For read requests, <i>value</i> will be nil and should be set before responding via @link respondToRequest:withResult: @/link.
      * 		For write requests, <i>value</i> will contain the data to be written.
      */

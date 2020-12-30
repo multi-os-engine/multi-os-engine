@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNNeuronReLU
- * @dependency This depends on Metal.framework
- * @discussion Specifies the ReLU neuron filter.
+ * MPSCNNNeuronReLU
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the ReLU neuron filter.
  *             For each pixel, applies the following function: f(x) = x, if x >= 0
  *                                                                  = a * x if x < 0
  *             This is called Leaky ReLU in literature. Some literature defines
@@ -171,7 +172,8 @@ public class MPSCNNNeuronReLU extends MPSCNNNeuron {
     public native MPSCNNNeuronReLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the ReLU neuron filter
+     * Initialize the ReLU neuron filter
+     * 
      * @param     device           The device the filter will run on
      * @param     a                Filter property "a". See class discussion.
      * @return    A valid MPSCNNNeuronReLU object or nil, if failure.

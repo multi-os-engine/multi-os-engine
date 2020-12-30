@@ -26,9 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNBatchNormalizationStatistics
- * @dependency This depends on Metal.framework
- * @discussion MPSCNNBatchNormalizationStatistics updates a MPSCNNBatchNormalizationState
+ * MPSCNNBatchNormalizationStatistics
+ * [@dependency] This depends on Metal.framework
+ * 
+ * MPSCNNBatchNormalizationStatistics updates a MPSCNNBatchNormalizationState
  *             with the batch statistics necessary to perform a batch normalization.
  *             MPSCNNBatchNormalizationStatistics may be executed multiple times with
  *             multiple images to accumulate all the statistics necessary to perform
@@ -106,12 +107,14 @@ public class MPSCNNBatchNormalizationStatistics extends MPSCNNKernel {
     public native MPSCNNBatchNormalizationStatistics initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSCNNBatchNormalizationStatistics object, or nil if failure.
@@ -122,7 +125,7 @@ public class MPSCNNBatchNormalizationStatistics extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract    Initialize this kernel on a device.
+     * Initialize this kernel on a device.
      * 
      *  @param      device      The MTLDevice on which to initialize the kernel.
      */

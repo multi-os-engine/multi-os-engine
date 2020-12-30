@@ -41,7 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class defines the metadata for a characteristic. Metadata provides
+ * This class defines the metadata for a characteristic. Metadata provides
  * 	  further information about a characteristic’s value, which can be used
  * 		  for presentation purposes.
  */
@@ -157,7 +157,7 @@ public class HMCharacteristicMetadata extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief The format of the value. Refer to HMCharacteristicMetadataFormat constants for supported units.
+     * The format of the value. Refer to HMCharacteristicMetadataFormat constants for supported units.
      */
     @Generated
     @Selector("format")
@@ -168,49 +168,49 @@ public class HMCharacteristicMetadata extends NSObject {
     public native HMCharacteristicMetadata init();
 
     /**
-     * @brief Manufacturer provided description for the characteristic to present to the user.
+     * Manufacturer provided description for the characteristic to present to the user.
      */
     @Generated
     @Selector("manufacturerDescription")
     public native String manufacturerDescription();
 
     /**
-     * @brief Max length value for the characteristic that indicates the maximum number of UTF-8 characters allowed if it has a format of "string".
+     * Max length value for the characteristic that indicates the maximum number of UTF-8 characters allowed if it has a format of "string".
      */
     @Generated
     @Selector("maxLength")
     public native NSNumber maxLength();
 
     /**
-     * @brief The maximum value for the characteristic if it has a format of "int" or "float".
+     * The maximum value for the characteristic if it has a format of "int" or "float".
      */
     @Generated
     @Selector("maximumValue")
     public native NSNumber maximumValue();
 
     /**
-     * @brief The minimum value for the characteristic if it has a format of "int" or "float".
+     * The minimum value for the characteristic if it has a format of "int" or "float".
      */
     @Generated
     @Selector("minimumValue")
     public native NSNumber minimumValue();
 
     /**
-     * @brief Step value for the characteristic that indicates the minimum step value allowed if it has a format of "int" or "float".
+     * Step value for the characteristic that indicates the minimum step value allowed if it has a format of "int" or "float".
      */
     @Generated
     @Selector("stepValue")
     public native NSNumber stepValue();
 
     /**
-     * @brief The units of the value. Refer to HMCharacteristicMetadataUnits constants for supported units.
+     * The units of the value. Refer to HMCharacteristicMetadataUnits constants for supported units.
      */
     @Generated
     @Selector("units")
     public native String units();
 
     /**
-     * @brief The subset of valid values supported by the characteristic when the format is unsigned integral type.
+     * The subset of valid values supported by the characteristic when the format is unsigned integral type.
      */
     @Generated
     @Selector("validValues")

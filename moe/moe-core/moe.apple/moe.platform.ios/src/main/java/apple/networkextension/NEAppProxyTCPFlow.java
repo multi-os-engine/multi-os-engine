@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEAppProxyTCPFlow
- * @discussion The NEAppProxyTCPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider implementations to proxy the payload of TCP connections.
+ * [@interface] NEAppProxyTCPFlow
+ * 
+ * The NEAppProxyTCPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider implementations to proxy the payload of TCP connections.
  * 
  * NEAppProxyTCPFlow is part of NetworkExtension.framework
  * 
@@ -166,8 +167,10 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     public native NEAppProxyTCPFlow init();
 
     /**
-     * @method readDataWithCompletionHandler:
-     * @discussion Read data from the flow.
+     * readDataWithCompletionHandler:
+     * 
+     * Read data from the flow.
+     * 
      * @param completionHandler A block that will be executed when some data is read from the flow. The block is passed either the data that was read or a non-nil error if an error occurred. If data has a length of 0 then no data can be subsequently read from the flow. The completion handler is only called for the single read operation that was initiated by calling this method. If the caller wants to read more data then it should call this method again to schedule another read operation and another execution of the completion handler block.
      */
     @Generated
@@ -176,16 +179,19 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
             @ObjCBlock(name = "call_readDataWithCompletionHandler") Block_readDataWithCompletionHandler completionHandler);
 
     /**
-     * @property remoteEndpoint
-     * @discussion An NWEndpoint object containing information about the intended remote endpoint of the flow.
+     * [@property] remoteEndpoint
+     * 
+     * An NWEndpoint object containing information about the intended remote endpoint of the flow.
      */
     @Generated
     @Selector("remoteEndpoint")
     public native NWEndpoint remoteEndpoint();
 
     /**
-     * @method writeData:completionHandler
-     * @discussion Write data to the flow.
+     * writeData:completionHandler
+     * 
+     * Write data to the flow.
+     * 
      * @param data The data to write.
      * @param completionHandler A block that will be executed when the data is written into the associated socket's receive buffer. The caller should use this callback as an indication that it is possible to write more data to the flow without using up excessive buffer memory. If an error occurs while writing the data then a non-nil NSError object is passed to the block.
      */

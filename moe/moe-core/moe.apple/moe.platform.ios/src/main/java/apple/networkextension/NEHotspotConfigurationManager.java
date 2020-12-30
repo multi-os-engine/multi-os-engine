@@ -26,8 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEHotspotConfigurationManager
- * @discussion
+ * [@interface] NEHotspotConfigurationManager
+ * 
  *   The NEHotspotConfigurationManager class allows an application to
  *   Add/Update/Remove Wi-Fi Network Configuraton.
  */
@@ -60,8 +60,10 @@ public class NEHotspotConfigurationManager extends NSObject {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method applyConfiguration:
-     * @discussion This function adds or updates a Wi-Fi network configuration.
+     * applyConfiguration:
+     * 
+     * This function adds or updates a Wi-Fi network configuration.
+     * 
      * @param configuration NEHotspotConfiguration object containing the Wi-Fi network configuration.
      * @param completionHandler A block that will be called when add/update operation is completed.
      *   This could be nil if application does not intend to receive the result.
@@ -113,8 +115,9 @@ public class NEHotspotConfigurationManager extends NSObject {
     public static native String description_static();
 
     /**
-     * @method getConfiguredSSIDsWithCompletionHandler:
-     * @discussion This function returns array of SSIDs and HS2.0 Domain Names that the calling application has configured.
+     * getConfiguredSSIDsWithCompletionHandler:
+     * 
+     * This function returns array of SSIDs and HS2.0 Domain Names that the calling application has configured.
      *   It returns nil if there are no networks configurred by the calling application.
      */
     @Generated
@@ -166,8 +169,10 @@ public class NEHotspotConfigurationManager extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @method removeConfigurationForNetworkName:
-     * @discussion This function removes Wi-Fi configuration.
+     * removeConfigurationForNetworkName:
+     * 
+     * This function removes Wi-Fi configuration.
+     * 
      * @param domainName HS2.0 domainName for which the configuration is to be deleted.
      */
     @Generated
@@ -175,10 +180,12 @@ public class NEHotspotConfigurationManager extends NSObject {
     public native void removeConfigurationForHS20DomainName(String domainName);
 
     /**
-     * @method removeConfigurationForSSID:
-     * @discussion This function removes Wi-Fi configuration.
+     * removeConfigurationForSSID:
+     * 
+     * This function removes Wi-Fi configuration.
      *   If the joinOnce property was set to YES, invoking this method will disassociate from the Wi-Fi network
      *   after the configuration is removed.
+     * 
      * @param SSID Wi-Fi SSID for which the configuration is to be deleted.
      */
     @Generated

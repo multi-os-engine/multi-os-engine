@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNPooling
- * @dependency This depends on Metal.framework
- * @discussion Pooling is a form of non-linear sub-sampling. Pooling partitions the input image into a set of
+ * MPSCNNPooling
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Pooling is a form of non-linear sub-sampling. Pooling partitions the input image into a set of
  *             rectangles (overlapping or non-overlapping) and, for each such sub-region, outputs a value.
  *             The pooling operation is used in computer vision to reduce the dimensionality of intermediate representations.
  */
@@ -169,7 +170,8 @@ public class MPSCNNPooling extends MPSCNNKernel {
     public native MPSCNNPooling initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize a pooling filter
+     * Initialize a pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
@@ -181,7 +183,8 @@ public class MPSCNNPooling extends MPSCNNKernel {
             @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @abstract  Initialize a pooling filter
+     * Initialize a pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
@@ -200,8 +203,10 @@ public class MPSCNNPooling extends MPSCNNKernel {
     public native MPSCNNPooling initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
      * @param      device      The MTLDevice on which to make the MPSCNNPooling
      * @return     A new MPSCNNPooling object, or nil if failure.

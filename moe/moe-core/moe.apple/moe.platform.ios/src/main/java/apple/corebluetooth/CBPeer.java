@@ -159,9 +159,9 @@ public class CBPeer extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property identifier
+     * [@property] identifier
      * 
-     * @discussion The unique, persistent identifier associated with the peer.
+     * The unique, persistent identifier associated with the peer.
      */
     @Generated
     @Selector("identifier")

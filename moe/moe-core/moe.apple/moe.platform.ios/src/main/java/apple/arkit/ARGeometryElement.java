@@ -123,8 +123,10 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * The number of indices for each primitive.
+     * 
+     * This is based on the primitiveType. For ARGeometryPrimitiveTypeTriangle the value is 3.
+     * 
      * @see ARGeometryPrimitiveType
-     * @discussion This is based on the primitiveType. For ARGeometryPrimitiveTypeTriangle the value is 3.
      */
     @Generated
     @Selector("indexCountPerPrimitive")

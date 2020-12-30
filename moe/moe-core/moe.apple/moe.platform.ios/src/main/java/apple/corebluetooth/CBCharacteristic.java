@@ -41,9 +41,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CBCharacteristic
+ * CBCharacteristic
  * 
- * @discussion
  *     Represents a service's characteristic.
  */
 @Generated
@@ -158,9 +157,8 @@ public class CBCharacteristic extends CBAttribute {
     public static native long version_static();
 
     /**
-     * @property descriptors
+     * [@property] descriptors
      * 
-     *  @discussion
      *      A list of the CBDescriptors that have so far been discovered in this characteristic.
      */
     @Generated
@@ -172,9 +170,8 @@ public class CBCharacteristic extends CBAttribute {
     public native CBCharacteristic init();
 
     /**
-     * @property isBroadcasted
+     * [@property] isBroadcasted
      * 
-     *  @discussion
      *      Whether the characteristic is currently broadcasted or not.
      */
     @Generated
@@ -183,9 +180,8 @@ public class CBCharacteristic extends CBAttribute {
     public native boolean isBroadcasted();
 
     /**
-     * @property isNotifying
+     * [@property] isNotifying
      * 
-     *  @discussion
      *      Whether the characteristic is currently notifying or not.
      */
     @Generated
@@ -193,9 +189,8 @@ public class CBCharacteristic extends CBAttribute {
     public native boolean isNotifying();
 
     /**
-     * @property properties
+     * [@property] properties
      * 
-     *  @discussion
      *      The properties of the characteristic.
      */
     @Generated
@@ -204,9 +199,8 @@ public class CBCharacteristic extends CBAttribute {
     public native long properties();
 
     /**
-     * @property service
+     * [@property] service
      * 
-     *  @discussion
      *      A back-pointer to the service this characteristic belongs to.
      */
     @Generated
@@ -214,9 +208,8 @@ public class CBCharacteristic extends CBAttribute {
     public native CBService service();
 
     /**
-     * @property value
+     * [@property] value
      * 
-     *  @discussion
      *      The value of the characteristic.
      */
     @Generated

@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class  MPSCNNGradientKernel
- *   @discussion Gradient kernels are the backwards pass of a MPSCNNKernel
+ * MPSCNNGradientKernel
+ * 
+ * Gradient kernels are the backwards pass of a MPSCNNKernel
  *               used during training to calculate gradient back propagation.
  *               These take as arguments the gradient result from the next filter
  *               and the source image for the forward version of the filter.
@@ -37,7 +38,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *               MPSCNNKernel parameters at the time it encoded and possibly
  *               also additional MTLResources to enable it to do its job.
  * 
- * @code
+ * [@code]
  *           Training graph (partial):
  * 
  *               ---> input image ---------> MPSCNNKernel ------>  resultImage ------>-->-->-->.
@@ -60,7 +61,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *               5b) The result gradient for the MPSCNNGradientKernel is created from the MPSImageDescriptor from 5a
  *               5c) Call MPSCNNGradientKernel -encode with the input image, input gradient, result gradient and MPSNNGradientState
  *               6) pass the result gradient on to leftward gradient passes.
- * @endcode
+ * [@endcode]
  * 
  *               For MPSCNNKernels that are trained, there may be other accompanying training kernels that
  *               need to be called in addition to the gradient kernel to update convolution weights or batch
@@ -132,8 +133,9 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a gradient filter and return a gradient
-     * @discussion During training, gradient filters are used to calculate the gradient
+     * Encode a gradient filter and return a gradient
+     * 
+     * During training, gradient filters are used to calculate the gradient
      *             associated with the loss for each feature channel in the forward pass
      *             source image. For those nodes that are trainable, these are then used
      *             to refine the value used in the trainable parameter. They consume
@@ -152,7 +154,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * @param      sourceImage     The image used as source image by the forward inference pass
      * @param      gradientState   The MPSNNGradientState or MPSNNBinaryGradientState subclass produced by the forward
      *                             inference pass
-     * @result   The result gradient from the gradient filter
+     * @return   The result gradient from the gradient filter
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceGradient:sourceImage:gradientState:")
@@ -161,8 +163,9 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
             MPSImage sourceImage, MPSState gradientState);
 
     /**
-     * @abstract   Encode a gradient filter and return a gradient
-     * @discussion During training, gradient filters are used to calculate the gradient
+     * Encode a gradient filter and return a gradient
+     * 
+     * During training, gradient filters are used to calculate the gradient
      *             associated with the loss for each feature channel in the forward pass
      *             source image. For those nodes that are trainable, these are then used
      *             to refine the value used in the trainable parameter. They consume
@@ -206,12 +209,14 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public native MPSCNNGradientKernel initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -222,9 +227,10 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Standard init with default properties per filter type
+     * Standard init with default properties per filter type
+     * 
      * @param      device      The device that the filter will be used on. May not be NULL.
-     * @result     A pointer to the newly initialized object. This will fail, returning
+     * @return     A pointer to the newly initialized object. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -250,9 +256,11 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @property   kernelOffsetX
-     * @abstract   Offset in the kernel reference frame to position the kernel in the X dimension
-     * @discussion In some cases, the input gradient must be upsampled with zero insertion
+     * [@property]   kernelOffsetX
+     * 
+     * Offset in the kernel reference frame to position the kernel in the X dimension
+     * 
+     * In some cases, the input gradient must be upsampled with zero insertion
      *             to account for things like strides in the forward MPSCNNKernel pass.
      *             As such, the offset, which describes a X,Y offset in the source coordinate
      *             space is insufficient to fully describe the offset applied to a kernel.
@@ -266,9 +274,11 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public native long kernelOffsetX();
 
     /**
-     * @property   kernelOffsetY
-     * @abstract   Offset in the kernel reference frame to position the kernel in the Y dimension
-     * @discussion In some cases, the input gradient must be upsampled with zero insertion
+     * [@property]   kernelOffsetY
+     * 
+     * Offset in the kernel reference frame to position the kernel in the Y dimension
+     * 
+     * In some cases, the input gradient must be upsampled with zero insertion
      *             to account for things like strides in the forward MPSCNNKernel pass.
      *             As such, the offset, which describes a X,Y offset in the source coordinate
      *             space is insufficient to fully describe the offset applied to a kernel.
@@ -300,9 +310,11 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   kernelOffsetX
-     * @abstract   Offset in the kernel reference frame to position the kernel in the X dimension
-     * @discussion In some cases, the input gradient must be upsampled with zero insertion
+     * [@property]   kernelOffsetX
+     * 
+     * Offset in the kernel reference frame to position the kernel in the X dimension
+     * 
+     * In some cases, the input gradient must be upsampled with zero insertion
      *             to account for things like strides in the forward MPSCNNKernel pass.
      *             As such, the offset, which describes a X,Y offset in the source coordinate
      *             space is insufficient to fully describe the offset applied to a kernel.
@@ -315,9 +327,11 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public native void setKernelOffsetX(@NInt long value);
 
     /**
-     * @property   kernelOffsetY
-     * @abstract   Offset in the kernel reference frame to position the kernel in the Y dimension
-     * @discussion In some cases, the input gradient must be upsampled with zero insertion
+     * [@property]   kernelOffsetY
+     * 
+     * Offset in the kernel reference frame to position the kernel in the Y dimension
+     * 
+     * In some cases, the input gradient must be upsampled with zero insertion
      *             to account for things like strides in the forward MPSCNNKernel pass.
      *             As such, the offset, which describes a X,Y offset in the source coordinate
      *             space is insufficient to fully describe the offset applied to a kernel.

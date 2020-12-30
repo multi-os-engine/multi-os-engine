@@ -55,7 +55,7 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @abstract Parameters required by the specific Authorization Server which should be used by the selected Authorization Services extension for authorization.
+     * Parameters required by the specific Authorization Server which should be used by the selected Authorization Services extension for authorization.
      */
     @Generated
     @Selector("authorizationOptions")
@@ -140,7 +140,7 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract Parameters required by the specific Authorization Server which should be used by the selected Authorization Services extension for authorization.
+     * Parameters required by the specific Authorization Server which should be used by the selected Authorization Services extension for authorization.
      */
     @Generated
     @Selector("setAuthorizationOptions:")

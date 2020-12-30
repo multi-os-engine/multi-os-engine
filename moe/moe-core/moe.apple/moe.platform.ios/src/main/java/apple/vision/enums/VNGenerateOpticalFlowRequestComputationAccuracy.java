@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @brief The level of optical flow computational accuracy.
+ * The level of optical flow computational accuracy.
  */
 @Generated
 public final class VNGenerateOpticalFlowRequestComputationAccuracy {

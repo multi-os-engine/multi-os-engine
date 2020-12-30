@@ -149,8 +149,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * @method texture2DDescriptorWithPixelFormat:width:height:mipmapped:
-     * @abstract Create a TextureDescriptor for a common 2D texture.
+     * texture2DDescriptorWithPixelFormat:width:height:mipmapped:
+     * 
+     * Create a TextureDescriptor for a common 2D texture.
      */
     @Generated
     @Selector("texture2DDescriptorWithPixelFormat:width:height:mipmapped:")
@@ -158,8 +159,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
             @NUInt long pixelFormat, @NUInt long width, @NUInt long height, boolean mipmapped);
 
     /**
-     * @method textureCubeDescriptorWithPixelFormat:size:mipmapped:
-     * @abstract Create a TextureDescriptor for a common Cube texture.
+     * textureCubeDescriptorWithPixelFormat:size:mipmapped:
+     * 
+     * Create a TextureDescriptor for a common Cube texture.
      */
     @Generated
     @Selector("textureCubeDescriptorWithPixelFormat:size:mipmapped:")
@@ -172,9 +174,11 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * @property arrayLength
-     * @abstract The number of array elements to allocate. The default value is 1.
-     * @discussion When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something greater than 1 and less than 2048.
+     * [@property] arrayLength
+     * 
+     * The number of array elements to allocate. The default value is 1.
+     * 
+     * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something greater than 1 and less than 2048.
      */
     @Generated
     @Selector("arrayLength")
@@ -188,8 +192,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property cpuCacheMode
-     * @abstract Options to specify CPU cache mode of texture resource.
+     * [@property] cpuCacheMode
+     * 
+     * Options to specify CPU cache mode of texture resource.
      */
     @Generated
     @Selector("cpuCacheMode")
@@ -197,9 +202,11 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long cpuCacheMode();
 
     /**
-     * @property depth
-     * @abstract The depth of the texture to create. The default value is 1.
-     * @discussion depth When allocating any texture types other than 3D, depth must be 1.
+     * [@property] depth
+     * 
+     * The depth of the texture to create. The default value is 1.
+     * 
+     * depth When allocating any texture types other than 3D, depth must be 1.
      */
     @Generated
     @Selector("depth")
@@ -207,9 +214,11 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long depth();
 
     /**
-     * @property height
-     * @abstract The height of the texture to create. The default value is 1.
-     * @discussion height If allocating a 1D texture, height must be 1.
+     * [@property] height
+     * 
+     * The height of the texture to create. The default value is 1.
+     * 
+     * height If allocating a 1D texture, height must be 1.
      */
     @Generated
     @Selector("height")
@@ -221,9 +230,11 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native MTLTextureDescriptor init();
 
     /**
-     * @property mipmapLevelCount
-     * @abstract The number of mipmap levels to allocate. The default value is 1.
-     * @discussion When creating Buffer and Multisample textures, mipmapLevelCount must be 1.
+     * [@property] mipmapLevelCount
+     * 
+     * The number of mipmap levels to allocate. The default value is 1.
+     * 
+     * When creating Buffer and Multisample textures, mipmapLevelCount must be 1.
      */
     @Generated
     @Selector("mipmapLevelCount")
@@ -231,8 +242,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long mipmapLevelCount();
 
     /**
-     * @property pixelFormat
-     * @abstract The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
+     * [@property] pixelFormat
+     * 
+     * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
      */
     @Generated
     @Selector("pixelFormat")
@@ -240,9 +252,11 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long pixelFormat();
 
     /**
-     * @property resourceOptions
-     * @abstract Options to control memory allocation parameters, etc.
-     * @discussion Contains a packed set of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * [@property] resourceOptions
+     * 
+     * Options to control memory allocation parameters, etc.
+     * 
+     * Contains a packed set of the storageMode, cpuCacheMode and hazardTrackingMode properties.
      */
     @Generated
     @Selector("resourceOptions")
@@ -250,9 +264,11 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long resourceOptions();
 
     /**
-     * @property sampleCount
-     * @abstract The number of samples in the texture to create. The default value is 1.
-     * @discussion When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next supported value.
+     * [@property] sampleCount
+     * 
+     * The number of samples in the texture to create. The default value is 1.
+     * 
+     * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next supported value.
      */
     @Generated
     @Selector("sampleCount")
@@ -260,110 +276,129 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long sampleCount();
 
     /**
-     * @property arrayLength
-     * @abstract The number of array elements to allocate. The default value is 1.
-     * @discussion When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something greater than 1 and less than 2048.
+     * [@property] arrayLength
+     * 
+     * The number of array elements to allocate. The default value is 1.
+     * 
+     * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something greater than 1 and less than 2048.
      */
     @Generated
     @Selector("setArrayLength:")
     public native void setArrayLength(@NUInt long value);
 
     /**
-     * @property cpuCacheMode
-     * @abstract Options to specify CPU cache mode of texture resource.
+     * [@property] cpuCacheMode
+     * 
+     * Options to specify CPU cache mode of texture resource.
      */
     @Generated
     @Selector("setCpuCacheMode:")
     public native void setCpuCacheMode(@NUInt long value);
 
     /**
-     * @property depth
-     * @abstract The depth of the texture to create. The default value is 1.
-     * @discussion depth When allocating any texture types other than 3D, depth must be 1.
+     * [@property] depth
+     * 
+     * The depth of the texture to create. The default value is 1.
+     * 
+     * depth When allocating any texture types other than 3D, depth must be 1.
      */
     @Generated
     @Selector("setDepth:")
     public native void setDepth(@NUInt long value);
 
     /**
-     * @property height
-     * @abstract The height of the texture to create. The default value is 1.
-     * @discussion height If allocating a 1D texture, height must be 1.
+     * [@property] height
+     * 
+     * The height of the texture to create. The default value is 1.
+     * 
+     * height If allocating a 1D texture, height must be 1.
      */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NUInt long value);
 
     /**
-     * @property mipmapLevelCount
-     * @abstract The number of mipmap levels to allocate. The default value is 1.
-     * @discussion When creating Buffer and Multisample textures, mipmapLevelCount must be 1.
+     * [@property] mipmapLevelCount
+     * 
+     * The number of mipmap levels to allocate. The default value is 1.
+     * 
+     * When creating Buffer and Multisample textures, mipmapLevelCount must be 1.
      */
     @Generated
     @Selector("setMipmapLevelCount:")
     public native void setMipmapLevelCount(@NUInt long value);
 
     /**
-     * @property pixelFormat
-     * @abstract The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
+     * [@property] pixelFormat
+     * 
+     * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
      */
     @Generated
     @Selector("setPixelFormat:")
     public native void setPixelFormat(@NUInt long value);
 
     /**
-     * @property resourceOptions
-     * @abstract Options to control memory allocation parameters, etc.
-     * @discussion Contains a packed set of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * [@property] resourceOptions
+     * 
+     * Options to control memory allocation parameters, etc.
+     * 
+     * Contains a packed set of the storageMode, cpuCacheMode and hazardTrackingMode properties.
      */
     @Generated
     @Selector("setResourceOptions:")
     public native void setResourceOptions(@NUInt long value);
 
     /**
-     * @property sampleCount
-     * @abstract The number of samples in the texture to create. The default value is 1.
-     * @discussion When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next supported value.
+     * [@property] sampleCount
+     * 
+     * The number of samples in the texture to create. The default value is 1.
+     * 
+     * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next supported value.
      */
     @Generated
     @Selector("setSampleCount:")
     public native void setSampleCount(@NUInt long value);
 
     /**
-     * @property storageMode
-     * @abstract To specify storage mode of texture resource.
+     * [@property] storageMode
+     * 
+     * To specify storage mode of texture resource.
      */
     @Generated
     @Selector("setStorageMode:")
     public native void setStorageMode(@NUInt long value);
 
     /**
-     * @property type
-     * @abstract The overall type of the texture to be created. The default value is MTLTextureType2D.
+     * [@property] type
+     * 
+     * The overall type of the texture to be created. The default value is MTLTextureType2D.
      */
     @Generated
     @Selector("setTextureType:")
     public native void setTextureType(@NUInt long value);
 
     /**
-     * @property usage
-     * @abstract Description of texture usage
+     * [@property] usage
+     * 
+     * Description of texture usage
      */
     @Generated
     @Selector("setUsage:")
     public native void setUsage(@NUInt long value);
 
     /**
-     * @property width
-     * @abstract The width of the texture to create. The default value is 1.
+     * [@property] width
+     * 
+     * The width of the texture to create. The default value is 1.
      */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NUInt long value);
 
     /**
-     * @property storageMode
-     * @abstract To specify storage mode of texture resource.
+     * [@property] storageMode
+     * 
+     * To specify storage mode of texture resource.
      */
     @Generated
     @Selector("storageMode")
@@ -371,8 +406,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long storageMode();
 
     /**
-     * @property type
-     * @abstract The overall type of the texture to be created. The default value is MTLTextureType2D.
+     * [@property] type
+     * 
+     * The overall type of the texture to be created. The default value is MTLTextureType2D.
      */
     @Generated
     @Selector("textureType")
@@ -380,8 +416,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long textureType();
 
     /**
-     * @property usage
-     * @abstract Description of texture usage
+     * [@property] usage
+     * 
+     * Description of texture usage
      */
     @Generated
     @Selector("usage")
@@ -389,8 +426,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long usage();
 
     /**
-     * @property width
-     * @abstract The width of the texture to create. The default value is 1.
+     * [@property] width
+     * 
+     * The width of the texture to create. The default value is 1.
      */
     @Generated
     @Selector("width")
@@ -398,18 +436,21 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long width();
 
     /**
-     * @property allowGPUOptimizedContents
-     * @abstract Allow GPU-optimization for the contents of this texture. The default value is true.
-     * @discussion Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
+     * [@property] allowGPUOptimizedContents
+     * 
+     * Allow GPU-optimization for the contents of this texture. The default value is true.
+     * 
+     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
      */
     @Generated
     @Selector("allowGPUOptimizedContents")
     public native boolean allowGPUOptimizedContents();
 
     /**
-     * @property hazardTrackingMode
-     * @abstract Set hazard tracking mode for the texture. The default value is MTLHazardTrackingModeDefault.
-     * @discussion
+     * [@property] hazardTrackingMode
+     * 
+     * Set hazard tracking mode for the texture. The default value is MTLHazardTrackingModeDefault.
+     * 
      * For resources created from the device, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeTracked.
      * For resources created on a heap, MTLHazardTrackingModeDefault is treated as the hazardTrackingMode of the heap itself.
      * In either case, it is possible to opt-out of hazard tracking by setting MTLHazardTrackingModeUntracked.
@@ -422,18 +463,21 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native long hazardTrackingMode();
 
     /**
-     * @property allowGPUOptimizedContents
-     * @abstract Allow GPU-optimization for the contents of this texture. The default value is true.
-     * @discussion Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
+     * [@property] allowGPUOptimizedContents
+     * 
+     * Allow GPU-optimization for the contents of this texture. The default value is true.
+     * 
+     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
      */
     @Generated
     @Selector("setAllowGPUOptimizedContents:")
     public native void setAllowGPUOptimizedContents(boolean value);
 
     /**
-     * @property hazardTrackingMode
-     * @abstract Set hazard tracking mode for the texture. The default value is MTLHazardTrackingModeDefault.
-     * @discussion
+     * [@property] hazardTrackingMode
+     * 
+     * Set hazard tracking mode for the texture. The default value is MTLHazardTrackingModeDefault.
+     * 
      * For resources created from the device, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeTracked.
      * For resources created on a heap, MTLHazardTrackingModeDefault is treated as the hazardTrackingMode of the heap itself.
      * In either case, it is possible to opt-out of hazard tracking by setting MTLHazardTrackingModeUntracked.
@@ -445,16 +489,18 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native void setHazardTrackingMode(@NUInt long value);
 
     /**
-     * @property swizzle
-     * @abstract Channel swizzle to use when reading or sampling from the texture, the default value is MTLTextureSwizzleChannelsDefault.
+     * [@property] swizzle
+     * 
+     * Channel swizzle to use when reading or sampling from the texture, the default value is MTLTextureSwizzleChannelsDefault.
      */
     @Generated
     @Selector("setSwizzle:")
     public native void setSwizzle(@ByValue MTLTextureSwizzleChannels value);
 
     /**
-     * @property swizzle
-     * @abstract Channel swizzle to use when reading or sampling from the texture, the default value is MTLTextureSwizzleChannelsDefault.
+     * [@property] swizzle
+     * 
+     * Channel swizzle to use when reading or sampling from the texture, the default value is MTLTextureSwizzleChannelsDefault.
      */
     @Generated
     @Selector("swizzle")
@@ -462,8 +508,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     public native MTLTextureSwizzleChannels swizzle();
 
     /**
-     * @method textureBufferDescriptorWithPixelFormat:width:resourceOptions:usage:
-     * @abstract Create a TextureDescriptor for a common texture buffer.
+     * textureBufferDescriptorWithPixelFormat:width:resourceOptions:usage:
+     * 
+     * Create a TextureDescriptor for a common texture buffer.
      */
     @Generated
     @Selector("textureBufferDescriptorWithPixelFormat:width:resourceOptions:usage:")

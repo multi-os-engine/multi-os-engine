@@ -77,7 +77,7 @@ public final class AuthenticationServices {
     public static native String ASAuthorizationErrorDomain();
 
     /**
-     * @abstract A key that specifies an error string to be shown to the user when an extension request fails.
+     * A key that specifies an error string to be shown to the user when an extension request fails.
      */
     @Generated
     @CVariable()
@@ -85,7 +85,7 @@ public final class AuthenticationServices {
     public static native String ASExtensionLocalizedFailureReasonErrorKey();
 
     /**
-     * @abstract Operation which is invoked when the extension configuration is removed from the system.
+     * Operation which is invoked when the extension configuration is removed from the system.
      */
     @Generated
     @CVariable()

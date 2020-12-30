@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @abstract This enumeration describes the different states of a camera stream.
+ * This enumeration describes the different states of a camera stream.
  */
 @Generated
 public final class HMCameraStreamState {

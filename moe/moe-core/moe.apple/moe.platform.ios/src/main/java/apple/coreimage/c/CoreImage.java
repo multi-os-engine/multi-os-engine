@@ -208,7 +208,7 @@ public final class CoreImage {
 
     /**
      * A boolean NSNumber controlling the quality of affine downsample operations.
-     * @YES implies that more quality is desired.
+     * [@YES] implies that more quality is desired.
      * On iOS the default value is @NO.
      * On OSX the default value is @YES.
      */

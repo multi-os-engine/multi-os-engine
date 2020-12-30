@@ -151,8 +151,9 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     public static native long version_static();
 
     /**
-     * @property clearStencil
-     * @abstract The clear stencil value to be used if the loadAction property is MTLLoadActionClear
+     * [@property] clearStencil
+     * 
+     * The clear stencil value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
     @Selector("clearStencil")
@@ -163,24 +164,27 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     public native MTLRenderPassStencilAttachmentDescriptor init();
 
     /**
-     * @property clearStencil
-     * @abstract The clear stencil value to be used if the loadAction property is MTLLoadActionClear
+     * [@property] clearStencil
+     * 
+     * The clear stencil value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
     @Selector("setClearStencil:")
     public native void setClearStencil(int value);
 
     /**
-     * @property stencilResolveFilter
-     * @abstract The filter to be used for stencil multisample resolve. Defaults to MTLMultisampleStencilResolveFilterSample0.
+     * [@property] stencilResolveFilter
+     * 
+     * The filter to be used for stencil multisample resolve. Defaults to MTLMultisampleStencilResolveFilterSample0.
      */
     @Generated
     @Selector("setStencilResolveFilter:")
     public native void setStencilResolveFilter(@NUInt long value);
 
     /**
-     * @property stencilResolveFilter
-     * @abstract The filter to be used for stencil multisample resolve. Defaults to MTLMultisampleStencilResolveFilterSample0.
+     * [@property] stencilResolveFilter
+     * 
+     * The filter to be used for stencil multisample resolve. Defaults to MTLMultisampleStencilResolveFilterSample0.
      */
     @Generated
     @Selector("stencilResolveFilter")

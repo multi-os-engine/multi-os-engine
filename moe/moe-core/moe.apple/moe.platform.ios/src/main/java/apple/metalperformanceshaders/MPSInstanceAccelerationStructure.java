@@ -27,9 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief An acceleration structure built over instances of other acceleration structures
+ * An acceleration structure built over instances of other acceleration structures
  * 
- * @discussion Instancing can be used to reduce memory usage in scenes that contain many copies
+ * Instancing can be used to reduce memory usage in scenes that contain many copies
  * of the same object(s) or to combine multiple acceleration structures such as a static and
  * dynamic acceleration structure into a two-level instance hierarchy.
  * 
@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * must share the same vertex buffer, index buffer, etc. although they may have different offsets
  * within those buffers.
  * 
- *     @code
+ *     [@code]
  *     MPSAccelerationStructureGroup *group = nil;
  *     group = [[MPSAccelerationStructureGroup alloc] initWithDevice:device];
  * 
@@ -66,12 +66,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  *         [accelerationStructures addObject:triAccel];
  *     }
- *     @endcode
+ *     [@endcode]
  * 
  * Next, create a buffer containing the acceleration structure index for each instance, and
  * another acceleration structure containing the transformation matrix for each instance:
  * 
- *     @code
+ *     [@code]
  *     NSUInteger instanceBufferLength = sizeof(uint32_t) * instanceCount;
  * 
  *     id <MTLBuffer> instanceBuffer =
@@ -86,13 +86,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *     instanceAccel.instanceBuffer = instanceBuffer;
  * 
  *     // Similar for transformation matrix buffer
- *     @endcode
+ *     [@endcode]
  * 
  * Finally, rebuild the instance acceleration structure:
  * 
- *     @code
+ *     [@code]
  *     [instanceAccel rebuild];
- *     @endcode
+ *     [@endcode]
  * 
  * Refitting and Rebuilding Bottom-Level Acceleration Structures: when a bottom level acceleration
  * structure is rebuild or refit, its' bounding box may change. Therefore, the instance
@@ -148,7 +148,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     }
 
     /**
-     * @brief Acceleration structures available for use in this instance acceleration structure. Each
+     * Acceleration structures available for use in this instance acceleration structure. Each
      * instance must provide an index into this array in the instance buffer as well as a
      * transformation matrix in the transform buffer. All acceleration structures must share a single
      * vertex buffer, optional index buffer, and optional mask buffer, though they may have different
@@ -236,7 +236,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native MPSInstanceAccelerationStructure initWithGroup(MPSAccelerationStructureGroup group);
 
     /**
-     * @brief Buffer containing the 32 bit unsigned integer index into the acceleration structure array
+     * Buffer containing the 32 bit unsigned integer index into the acceleration structure array
      * for each instance
      */
     @Generated
@@ -245,7 +245,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native MTLBuffer instanceBuffer();
 
     /**
-     * @brief Offset, in bytes, into the instance buffer. Defaults to 0 bytes. Must be aligned to 4
+     * Offset, in bytes, into the instance buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
      */
     @Generated
@@ -254,7 +254,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native long instanceBufferOffset();
 
     /**
-     * @brief Number of instances. Changes to this property require rebuilding the acceleration
+     * Number of instances. Changes to this property require rebuilding the acceleration
      * structure.
      */
     @Generated
@@ -284,7 +284,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief Mask buffer containing one uint32_t mask per instance. May be nil.
+     * Mask buffer containing one uint32_t mask per instance. May be nil.
      */
     @Generated
     @Selector("maskBuffer")
@@ -292,7 +292,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native MTLBuffer maskBuffer();
 
     /**
-     * @brief Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
      */
     @Generated
     @Selector("maskBufferOffset")
@@ -314,7 +314,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Acceleration structures available for use in this instance acceleration structure. Each
+     * Acceleration structures available for use in this instance acceleration structure. Each
      * instance must provide an index into this array in the instance buffer as well as a
      * transformation matrix in the transform buffer. All acceleration structures must share a single
      * vertex buffer, optional index buffer, and optional mask buffer, though they may have different
@@ -327,7 +327,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native void setAccelerationStructures(NSArray<? extends MPSPolygonAccelerationStructure> value);
 
     /**
-     * @brief Buffer containing the 32 bit unsigned integer index into the acceleration structure array
+     * Buffer containing the 32 bit unsigned integer index into the acceleration structure array
      * for each instance
      */
     @Generated
@@ -335,7 +335,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native void setInstanceBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the instance buffer. Defaults to 0 bytes. Must be aligned to 4
+     * Offset, in bytes, into the instance buffer. Defaults to 0 bytes. Must be aligned to 4
      * bytes.
      */
     @Generated
@@ -343,7 +343,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native void setInstanceBufferOffset(@NUInt long value);
 
     /**
-     * @brief Number of instances. Changes to this property require rebuilding the acceleration
+     * Number of instances. Changes to this property require rebuilding the acceleration
      * structure.
      */
     @Generated
@@ -351,28 +351,28 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native void setInstanceCount(@NUInt long value);
 
     /**
-     * @brief Mask buffer containing one uint32_t mask per instance. May be nil.
+     * Mask buffer containing one uint32_t mask per instance. May be nil.
      */
     @Generated
     @Selector("setMaskBuffer:")
     public native void setMaskBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
+     * Offset, in bytes, into the mask buffer. Defaults to 0 bytes. Must be aligned to 4 bytes.
      */
     @Generated
     @Selector("setMaskBufferOffset:")
     public native void setMaskBufferOffset(@NUInt long value);
 
     /**
-     * @brief Buffer containing one column major matrix_float4x4 transformation matrix per instance
+     * Buffer containing one column major matrix_float4x4 transformation matrix per instance
      */
     @Generated
     @Selector("setTransformBuffer:")
     public native void setTransformBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset, in bytes, into the transform buffer. Defaults to 0 bytes. Must be aligned to the
+     * Offset, in bytes, into the transform buffer. Defaults to 0 bytes. Must be aligned to the
      * stride of the transform type.
      */
     @Generated
@@ -380,7 +380,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native void setTransformBufferOffset(@NUInt long value);
 
     /**
-     * @brief Instance transform type. Defaults to MPSTransformTypeFloat4x4. Changes to this property
+     * Instance transform type. Defaults to MPSTransformTypeFloat4x4. Changes to this property
      * require rebuilding the acceleration structure.
      */
     @Generated
@@ -406,7 +406,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     }
 
     /**
-     * @brief Buffer containing one column major matrix_float4x4 transformation matrix per instance
+     * Buffer containing one column major matrix_float4x4 transformation matrix per instance
      */
     @Generated
     @Selector("transformBuffer")
@@ -414,7 +414,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native MTLBuffer transformBuffer();
 
     /**
-     * @brief Offset, in bytes, into the transform buffer. Defaults to 0 bytes. Must be aligned to the
+     * Offset, in bytes, into the transform buffer. Defaults to 0 bytes. Must be aligned to the
      * stride of the transform type.
      */
     @Generated
@@ -423,7 +423,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     public native long transformBufferOffset();
 
     /**
-     * @brief Instance transform type. Defaults to MPSTransformTypeFloat4x4. Changes to this property
+     * Instance transform type. Defaults to MPSTransformTypeFloat4x4. Changes to this property
      * require rebuilding the acceleration structure.
      */
     @Generated

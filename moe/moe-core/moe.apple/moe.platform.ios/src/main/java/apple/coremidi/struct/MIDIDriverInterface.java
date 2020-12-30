@@ -87,8 +87,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setRelease(@FunctionPtr(name = "call_Release") Function_Release value);
 
     /**
-     * @fn FindDevices
-     * @discussion
+     * [@fn] FindDevices
+     * 
      * 	This is only called for version 1 drivers.  The server is requesting that the driver
      * 	detect the devices which are present.  For each device present, the driver should
      * 	create a MIDIDeviceRef with entities, using MIDIDeviceCreate and
@@ -103,8 +103,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_FindDevices FindDevices();
 
     /**
-     * @fn FindDevices
-     * @discussion
+     * [@fn] FindDevices
+     * 
      * 	This is only called for version 1 drivers.  The server is requesting that the driver
      * 	detect the devices which are present.  For each device present, the driver should
      * 	create a MIDIDeviceRef with entities, using MIDIDeviceCreate and
@@ -118,8 +118,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setFindDevices(@FunctionPtr(name = "call_FindDevices") Function_FindDevices value);
 
     /**
-     * @fn Start
-     * @discussion
+     * [@fn] Start
+     * 
      * 	The server is telling the driver to begin MIDI I/O.
      * 
      * 	The provided device list contains the devices which were previously located by
@@ -154,8 +154,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Start Start();
 
     /**
-     * @fn Start
-     * @discussion
+     * [@fn] Start
+     * 
      * 	The server is telling the driver to begin MIDI I/O.
      * 
      * 	The provided device list contains the devices which were previously located by
@@ -189,8 +189,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setStart(@FunctionPtr(name = "call_Start") Function_Start value);
 
     /**
-     * @fn Stop
-     * @discussion
+     * [@fn] Stop
+     * 
      * 	The server is telling the driver to terminate MIDI I/O.  All I/O operations that
      * 	were begun in Start, or as a result of a subsequent IOKit notification, should be
      * 	terminated.
@@ -201,8 +201,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Stop Stop();
 
     /**
-     * @fn Stop
-     * @discussion
+     * [@fn] Stop
+     * 
      * 	The server is telling the driver to terminate MIDI I/O.  All I/O operations that
      * 	were begun in Start, or as a result of a subsequent IOKit notification, should be
      * 	terminated.
@@ -212,8 +212,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setStop(@FunctionPtr(name = "call_Stop") Function_Stop value);
 
     /**
-     * @fn Configure
-     * @discussion
+     * [@fn] Configure
+     * 
      * 	not currently used
      */
     @Generated
@@ -222,8 +222,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Configure Configure();
 
     /**
-     * @fn Configure
-     * @discussion
+     * [@fn] Configure
+     * 
      * 	not currently used
      */
     @Generated
@@ -231,8 +231,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setConfigure(@FunctionPtr(name = "call_Configure") Function_Configure value);
 
     /**
-     * @fn Send
-     * @discussion
+     * [@fn] Send
+     * 
      * 	Send a MIDIPacketList to the destination endpoint whose refCons are being passed as
      * 	arguments.
      */
@@ -242,8 +242,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Send Send();
 
     /**
-     * @fn Send
-     * @discussion
+     * [@fn] Send
+     * 
      * 	Send a MIDIPacketList to the destination endpoint whose refCons are being passed as
      * 	arguments.
      */
@@ -252,8 +252,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setSend(@FunctionPtr(name = "call_Send") Function_Send value);
 
     /**
-     * @fn EnableSource
-     * @discussion
+     * [@fn] EnableSource
+     * 
      * 	A client has opened or closed a connection, and now the server is telling the driver
      * 	that input from a particular source either does or does not have any listeners in
      * 	the system.  The driver may use this information to decide whether to pass messages
@@ -266,8 +266,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_EnableSource EnableSource();
 
     /**
-     * @fn EnableSource
-     * @discussion
+     * [@fn] EnableSource
+     * 
      * 	A client has opened or closed a connection, and now the server is telling the driver
      * 	that input from a particular source either does or does not have any listeners in
      * 	the system.  The driver may use this information to decide whether to pass messages
@@ -279,8 +279,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setEnableSource(@FunctionPtr(name = "call_EnableSource") Function_EnableSource value);
 
     /**
-     * @fn Flush
-     * @discussion
+     * [@fn] Flush
+     * 
      * 	Only for version 2 drivers (new for CoreMIDI 1.1).
      * 
      * 	Drivers which support schedule-ahead, when receiving this message, should unschedule
@@ -293,8 +293,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Flush Flush();
 
     /**
-     * @fn Flush
-     * @discussion
+     * [@fn] Flush
+     * 
      * 	Only for version 2 drivers (new for CoreMIDI 1.1).
      * 
      * 	Drivers which support schedule-ahead, when receiving this message, should unschedule
@@ -306,8 +306,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setFlush(@FunctionPtr(name = "call_Flush") Function_Flush value);
 
     /**
-     * @fn Monitor
-     * @discussion
+     * [@fn] Monitor
+     * 
      * 	Only for version 2 drivers (new for CoreMIDI 1.1).
      * 
      * 	Some specialized drivers (e.g. a MIDI monitor display) may wish to intercept and
@@ -323,8 +323,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native Function_Monitor Monitor();
 
     /**
-     * @fn Monitor
-     * @discussion
+     * [@fn] Monitor
+     * 
      * 	Only for version 2 drivers (new for CoreMIDI 1.1).
      * 
      * 	Some specialized drivers (e.g. a MIDI monitor display) may wish to intercept and
@@ -428,8 +428,8 @@ public final class MIDIDriverInterface extends StructObject {
     }
 
     /**
-     * @fn SendPackets
-     * @discussion
+     * [@fn] SendPackets
+     * 
      * 		Only for provisional drivers.
      * 
      * 	Send a MIDIEventList to the destination endpoint whose refCons are being passed as
@@ -451,8 +451,8 @@ public final class MIDIDriverInterface extends StructObject {
     }
 
     /**
-     * @fn SendPackets
-     * @discussion
+     * [@fn] SendPackets
+     * 
      * 		Only for provisional drivers.
      * 
      * 	Send a MIDIEventList to the destination endpoint whose refCons are being passed as
@@ -463,8 +463,8 @@ public final class MIDIDriverInterface extends StructObject {
     public native void setSendPackets(@FunctionPtr(name = "call_SendPackets") Function_SendPackets value);
 
     /**
-     * @fn MonitorEvents
-     * @discussion
+     * [@fn] MonitorEvents
+     * 
      * 	Only for provisional drivers.
      * 
      * 	Same as Monitor but uses MIDEventList, whose protocol may vary from MIDI 1.0.
@@ -484,8 +484,8 @@ public final class MIDIDriverInterface extends StructObject {
     }
 
     /**
-     * @fn MonitorEvents
-     * @discussion
+     * [@fn] MonitorEvents
+     * 
      * 	Only for provisional drivers.
      * 
      * 	Same as Monitor but uses MIDEventList, whose protocol may vary from MIDI 1.0.

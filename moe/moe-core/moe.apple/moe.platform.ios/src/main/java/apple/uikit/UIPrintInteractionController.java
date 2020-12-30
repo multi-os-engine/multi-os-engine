@@ -253,7 +253,7 @@ public class UIPrintInteractionController extends NSObject {
     public native UIPrintPaper printPaper();
 
     /**
-     * @discussion	Use to print without showing the standard print panel. Use with a
+     * Use to print without showing the standard print panel. Use with a
      * 	UIPrinter found using the UIPrinterPickerController.
      *              The value for the duplex property on printInfo will be ignored.
      */

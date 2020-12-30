@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class	AUAudioUnitViewConfiguration
- * @brief	Properties of the configuration that a host uses to embed the view of an audio unit.
- * @discussion
+ * AUAudioUnitViewConfiguration
+ * 
+ * Properties of the configuration that a host uses to embed the view of an audio unit.
+ * 
  * 	Hosts may support embedding the view of an audio unit in different configurations. These
  * 	configurations may vary in the size reserved for the audio unit's view and the additional 
  * 	control surfaces that are displayed along with it. The host can propose several view 
@@ -106,9 +107,10 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     public static native long hash_static();
 
     /**
-     * @property	height
-     * @brief		The height of the view, measured in points.
-     * @discussion
+     * [@property]	height
+     * 
+     * The height of the view, measured in points.
+     * 
      * 	Setting the height to 0 will match any height.
      */
     @Generated
@@ -117,8 +119,9 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     public native double height();
 
     /**
-     * @property	hostHasController
-     * @brief		Boolean property specifying whether the host displays its own control surface
+     * [@property]	hostHasController
+     * 
+     * Boolean property specifying whether the host displays its own control surface
      * 			when showing the view of the audio unit.
      */
     @Generated
@@ -134,8 +137,10 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     public native AUAudioUnitViewConfiguration initWithCoder(NSCoder coder);
 
     /**
-     * @method		initWithWidth
-     * @brief		Designated initializer.
+     * initWithWidth
+     * 
+     * Designated initializer.
+     * 
      * @param		width
      * 	The width associated with this view configuration.
      * @param		height
@@ -209,9 +214,10 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     public static native long version_static();
 
     /**
-     * @property	width
-     * @brief		The width of the view, measured in points.
-     * @discussion
+     * [@property]	width
+     * 
+     * The width of the view, measured in points.
+     * 
      * 	Setting the width to 0 will match any width.
      */
     @Generated

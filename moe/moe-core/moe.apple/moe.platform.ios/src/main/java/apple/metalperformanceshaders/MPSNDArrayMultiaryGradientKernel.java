@@ -132,7 +132,8 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long count);
 
     /**
-     * @abstract   Initialize a MPSNDArrayMultiaryKernel
+     * Initialize a MPSNDArrayMultiaryKernel
+     * 
      * @param      device                The device on which the kernel will run
      * @param      count                 The maximum number of NDArrays read by the kernel
      * @param      sourceGradientIndex   The source index for which gradient will be calculated

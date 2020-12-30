@@ -43,11 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVCaptureMovieFileOutput
- * @abstract
+ * AVCaptureMovieFileOutput
+ * 
  *    AVCaptureMovieFileOutput is a concrete subclass of AVCaptureFileOutput that writes captured media to QuickTime movie files.
  * 
- * @discussion
  *    AVCaptureMovieFileOutput implements the complete file recording interface declared by AVCaptureFileOutput for writing media data to QuickTime movie files. In addition, instances of AVCaptureMovieFileOutput allow clients to configure options specific to the QuickTime file format, including allowing them to write metadata collections to each file, specify media encoding options for each track (Mac OS X), and specify an interval at which movie fragments should be written.
  */
 @Generated
@@ -162,11 +161,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     public static native long version_static();
 
     /**
-     * @property availableVideoCodecTypes
-     * @abstract
+     * [@property] availableVideoCodecTypes
+     * 
      *    Indicates the supported video codec formats that can be specified in setOutputSettingsForConnection:.
      * 
-     * @discussion
      *    The value of this property is an NSArray of AVVideoCodecTypes that can be used as values for the AVVideoCodecKey in the receiver's setOutputSettingsForConnection: dictionary. The array of available video codecs may change depending on the current session preset. The first codec in the array is used by default when recording a file.
      */
     @Generated
@@ -178,11 +176,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     public native AVCaptureMovieFileOutput init();
 
     /**
-     * @property metadata
-     * @abstract
+     * [@property] metadata
+     * 
      *    A collection of metadata to be written to the receiver's output files.
      * 
-     * @discussion
      *    The value of this property is an array of AVMetadataItem objects representing the collection of top-level metadata to be written in each output file.
      */
     @Generated
@@ -190,11 +187,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     public native NSArray<? extends AVMetadataItem> metadata();
 
     /**
-     * @property movieFragmentInterval
-     * @abstract
+     * [@property] movieFragmentInterval
+     * 
      *    Specifies the frequency with which movie fragments should be written.
      * 
-     * @discussion
      *    When movie fragments are used, a partially written QuickTime movie file whose writing is unexpectedly interrupted can be successfully opened and played up to multiples of the specified time interval. A value of kCMTimeInvalid indicates that movie fragments should not be used, but that only a movie atom describing all of the media in the file should be written. The default value of this property is ten seconds.
      * 
      *    Changing the value of this property will not affect the movie fragment interval of the file currently being written, if there is one.
@@ -205,32 +201,30 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     public native CMTime movieFragmentInterval();
 
     /**
-     * @method outputSettingsForConnection:
-     * @abstract
+     * outputSettingsForConnection:
+     * 
      *    Returns the options the receiver uses to encode media from the given connection as it is being recorded.
+     * 
+     *    See AVAudioSettings.h for audio connections or AVVideoSettings.h for video connections for more information on the structure of an output settings dictionary. If the returned value is an empty dictionary (i.e. [NSDictionary dictionary], the format of the media from the connection will not be changed before being written to the file. If -setOutputSettings:forConnection: was called with a nil dictionary, this method returns a non-nil dictionary reflecting the settings used by the AVCaptureSession's current sessionPreset.
      * 
      * @param connection
      *    The connection delivering the media to be encoded.
-     * @result
+     * @return
      *    An NSDictionary of output settings.
-     * 
-     * @discussion
-     *    See AVAudioSettings.h for audio connections or AVVideoSettings.h for video connections for more information on the structure of an output settings dictionary. If the returned value is an empty dictionary (i.e. [NSDictionary dictionary], the format of the media from the connection will not be changed before being written to the file. If -setOutputSettings:forConnection: was called with a nil dictionary, this method returns a non-nil dictionary reflecting the settings used by the AVCaptureSession's current sessionPreset.
      */
     @Generated
     @Selector("outputSettingsForConnection:")
     public native NSDictionary<String, ?> outputSettingsForConnection(AVCaptureConnection connection);
 
     /**
-     * @method recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:
-     * @abstract
+     * recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:
+     * 
      *    Returns YES if the movie file output will create a timed metadata track that records samples which reflect changes made to the given connection's videoOrientation and videoMirrored properties during recording.
+     * 
+     *    See setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection: for details on the behavior controlled by this value. The default value returned is NO.
      * 
      * @param connection
      *    A connection delivering video media to the movie file output. This method throws an NSInvalidArgumentException if the connection does not have a mediaType of AVMediaTypeVideo or if the connection does not terminate at the movie file output.
-     * 
-     * @discussion
-     *    See setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection: for details on the behavior controlled by this value. The default value returned is NO.
      */
     @Generated
     @Selector("recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:")
@@ -238,11 +232,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
             AVCaptureConnection connection);
 
     /**
-     * @property metadata
-     * @abstract
+     * [@property] metadata
+     * 
      *    A collection of metadata to be written to the receiver's output files.
      * 
-     * @discussion
      *    The value of this property is an array of AVMetadataItem objects representing the collection of top-level metadata to be written in each output file.
      */
     @Generated
@@ -250,11 +243,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     public native void setMetadata(NSArray<? extends AVMetadataItem> value);
 
     /**
-     * @property movieFragmentInterval
-     * @abstract
+     * [@property] movieFragmentInterval
+     * 
      *    Specifies the frequency with which movie fragments should be written.
      * 
-     * @discussion
      *    When movie fragments are used, a partially written QuickTime movie file whose writing is unexpectedly interrupted can be successfully opened and played up to multiples of the specified time interval. A value of kCMTimeInvalid indicates that movie fragments should not be used, but that only a movie atom describing all of the media in the file should be written. The default value of this property is ten seconds.
      * 
      *    Changing the value of this property will not affect the movie fragment interval of the file currently being written, if there is one.
@@ -264,21 +256,20 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     public native void setMovieFragmentInterval(@ByValue CMTime value);
 
     /**
-     * @method setOutputSettings:forConnection:
-     * @abstract
+     * setOutputSettings:forConnection:
+     * 
      *    Sets the options the receiver uses to encode media from the given connection as it is being recorded.
      * 
-     * @param outputSettings
-     *    An NSDictionary of output settings.
-     * @param connection
-     *    The connection delivering the media to be encoded.
-     * 
-     * @discussion
      *    See AVAudioSettings.h for audio connections or AVVideoSettings.h for video connections for more information on how to construct an output settings dictionary. A value of an empty dictionary (i.e. [NSDictionary dictionary], means that the format of the media from the connection should not be changed before being written to the file. A value of nil means that the output format will be determined by the session preset. In this case, -outputSettingsForConnection: will return a non-nil dictionary reflecting the settings used by the AVCaptureSession's current sessionPreset.
      * 
      *    On iOS, your outputSettings dictionary may only contain keys listed in - supportedOutputSettingsKeysForConnection:. If you specify any other key, an NSInvalidArgumentException will be thrown. Further restrictions may be imposed on the AVVideoCodecTypeKey. Its value should be present in the -availableVideoCodecTypes array. If AVVideoCompressionPropertiesKey is specified, you must also specify a valid value for AVVideoCodecKey. On iOS versions prior to 12.0, the only settable key for video connections is AVVideoCodecTypeKey. On iOS 12.0 and later, video connections gain support for AVVideoCompressionPropertiesKey.
      * 
      *    On iOS, -outputSettingsForConnection: always provides a fully populated dictionary. If you call -outputSettingsForConnection: with the intent of overriding a few of the values, you must take care to exclude keys that are not supported before calling -setOutputSettings:forConnection:. When providing an AVVideoCompressionPropertiesKey sub dictionary, you may specify a sparse dictionary. AVCaptureMovieFileOutput will always fill in missing keys with default values for the current AVCaptureSession configuration.
+     * 
+     * @param outputSettings
+     *    An NSDictionary of output settings.
+     * @param connection
+     *    The connection delivering the media to be encoded.
      */
     @Generated
     @Selector("setOutputSettings:forConnection:")
@@ -286,16 +277,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
             AVCaptureConnection connection);
 
     /**
-     * @method setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:
-     * @abstract
+     * setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:
+     * 
      *    Controls whether or not the movie file output will create a timed metadata track that records samples which reflect changes made to the given connection's videoOrientation and videoMirrored properties during recording.
      * 
-     * @param doRecordChanges
-     *    If YES, the movie file output will create a timed metadata track that records samples which reflect changes made to the given connection's videoOrientation and videoMirrored properties during recording.
-     * @param connection
-     *    A connection delivering video media to the movie file output. This method throws an NSInvalidArgumentException if the connection does not have a mediaType of AVMediaTypeVideo or if the connection does not terminate at the movie file output.
-     * 
-     * @discussion
      *    When a recording is started the current state of a video capture connection's videoOrientation and videoMirrored properties are used to build the display matrix for the created video track. The movie file format allows only one display matrix per track, which means that any changes made during a recording to the videoOrientation and videoMirrored properties are not captured. For example, a user starts a recording with their device in the portrait orientation, and then partway through the recording changes the device to a landscape orientation. The landscape orientation requires a different display matrix, but only the initial display matrix (the portrait display matrix) is recorded for the video track.
      * 
      *    By invoking this method the client application directs the movie file output to create an additional track in the captured movie. This track is a timed metadata track that is associated with the video track, and contains one or more samples that contain a Video Orientation value (as defined by EXIF and TIFF specifications, which is enumerated by CGImagePropertyOrientation in <ImageIO/CGImageProperties.h>). The value represents the display matrix corresponding to the AVCaptureConnection's videoOrientation and videoMirrored properties when applied to the input source. The initial sample written to the timed metadata track represents video track's display matrix. During recording additional samples will be written to the timed metadata track whenever the client application changes the video connection's videoOrienation or videoMirrored properties. Using the above example, when the client application detects the user changing the device from portrait to landscape orientation, it updates the video connection's videoOrientation property, thus causing the movie file output to add a new sample to the timed metadata track.
@@ -305,6 +290,11 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      *    The default behavior is to not create the timed metadata track.
      * 
      *    The doRecordChanges value is only observed at the start of recording. Changes to the value will not have any effect until the next recording is started.
+     * 
+     * @param doRecordChanges
+     *    If YES, the movie file output will create a timed metadata track that records samples which reflect changes made to the given connection's videoOrientation and videoMirrored properties during recording.
+     * @param connection
+     *    A connection delivering video media to the movie file output. This method throws an NSInvalidArgumentException if the connection does not have a mediaType of AVMediaTypeVideo or if the connection does not terminate at the movie file output.
      */
     @Generated
     @Selector("setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:")
@@ -312,15 +302,14 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
             boolean doRecordChanges, AVCaptureConnection connection);
 
     /**
-     * @method supportedOutputSettingsKeysForConnection:
-     * @abstract
+     * supportedOutputSettingsKeysForConnection:
+     * 
      *    Indicates the supported keys that can be specified in setOutputSettings:forConnection:.
+     * 
+     *    Returns an NSArray of NSStrings listing the allowable keys in the receiver's setOutputSettings:forConnection: dictionary.
      * 
      * @param connection
      *    The connection delivering the media to be encoded.
-     * 
-     * @discussion
-     *    Returns an NSArray of NSStrings listing the allowable keys in the receiver's setOutputSettings:forConnection: dictionary.
      */
     @Generated
     @Selector("supportedOutputSettingsKeysForConnection:")

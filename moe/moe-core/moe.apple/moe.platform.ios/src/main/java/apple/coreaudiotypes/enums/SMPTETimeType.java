@@ -3,31 +3,32 @@ package apple.coreaudiotypes.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum           SMPTE Time Types
- * @abstract       Constants that describe the type of SMPTE time.
- * @constant       kSMPTETimeType24
+ * [@enum]           SMPTE Time Types
+ * 
+ * Constants that describe the type of SMPTE time.
+ * [@constant]       kSMPTETimeType24
  *                     24 Frame
- * @constant       kSMPTETimeType25
+ * [@constant]       kSMPTETimeType25
  *                     25 Frame
- * @constant       kSMPTETimeType30Drop
+ * [@constant]       kSMPTETimeType30Drop
  *                     30 Drop Frame
- * @constant       kSMPTETimeType30
+ * [@constant]       kSMPTETimeType30
  *                     30 Frame
- * @constant       kSMPTETimeType2997
+ * [@constant]       kSMPTETimeType2997
  *                     29.97 Frame
- * @constant       kSMPTETimeType2997Drop
+ * [@constant]       kSMPTETimeType2997Drop
  *                     29.97 Drop Frame
- * @constant       kSMPTETimeType60
+ * [@constant]       kSMPTETimeType60
  *                     60 Frame
- * @constant       kSMPTETimeType5994
+ * [@constant]       kSMPTETimeType5994
  *                     59.94 Frame
- * @constant       kSMPTETimeType60Drop
+ * [@constant]       kSMPTETimeType60Drop
  *                     60 Drop Frame
- * @constant       kSMPTETimeType5994Drop
+ * [@constant]       kSMPTETimeType5994Drop
  *                     59.94 Drop Frame
- * @constant       kSMPTETimeType50
+ * [@constant]       kSMPTETimeType50
  *                     50 Frame
- * @constant       kSMPTETimeType2398
+ * [@constant]       kSMPTETimeType2398
  *                     23.98 Frame
  */
 @Generated

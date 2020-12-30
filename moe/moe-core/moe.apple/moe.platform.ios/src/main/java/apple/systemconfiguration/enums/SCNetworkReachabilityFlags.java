@@ -19,18 +19,19 @@ package apple.systemconfiguration.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum SCNetworkReachabilityFlags
- * @discussion Flags that indicate whether the specified network
+ * [@enum] SCNetworkReachabilityFlags
+ * 
+ * Flags that indicate whether the specified network
  * 	nodename or address is reachable, whether a connection is
  * 	required, and whether some user intervention may be required
  * 	when establishing a connection.
- * @constant kSCNetworkReachabilityFlagsTransientConnection
+ * [@constant] kSCNetworkReachabilityFlagsTransientConnection
  * 	This flag indicates that the specified nodename or address can
  * 	be reached via a transient connection, such as PPP.
- * @constant kSCNetworkReachabilityFlagsReachable
+ * [@constant] kSCNetworkReachabilityFlagsReachable
  * 	This flag indicates that the specified nodename or address can
  * 	be reached using the current network configuration.
- * @constant kSCNetworkReachabilityFlagsConnectionRequired
+ * [@constant] kSCNetworkReachabilityFlagsConnectionRequired
  * 	This flag indicates that the specified nodename or address can
  * 	be reached using the current network configuration, but a
  * 	connection must first be established.
@@ -38,14 +39,14 @@ import org.moe.natj.general.ann.Generated;
  * 	As an example, this status would be returned for a dialup
  * 	connection that was not currently active, but could handle
  * 	network traffic for the target system.
- * @constant kSCNetworkReachabilityFlagsConnectionOnTraffic
+ * [@constant] kSCNetworkReachabilityFlagsConnectionOnTraffic
  * 	This flag indicates that the specified nodename or address can
  * 	be reached using the current network configuration, but a
  * 	connection must first be established.  Any traffic directed
  * 	to the specified name or address will initiate the connection.
  * 
  * 	Note: this flag was previously named kSCNetworkReachabilityFlagsConnectionAutomatic
- * @constant kSCNetworkReachabilityFlagsInterventionRequired
+ * [@constant] kSCNetworkReachabilityFlagsInterventionRequired
  * 	This flag indicates that the specified nodename or address can
  * 	be reached using the current network configuration, but a
  * 	connection must first be established.  In addition, some
@@ -61,22 +62,22 @@ import org.moe.natj.general.ann.Generated;
  * 	automatic connection attempt.  In this case the PPP controller
  * 	will stop attempting to establish a connection until the user
  * 	has intervened.
- * @constant kSCNetworkReachabilityFlagsConnectionOnDemand
+ * [@constant] kSCNetworkReachabilityFlagsConnectionOnDemand
  * 	This flag indicates that the specified nodename or address can
  * 	be reached using the current network configuration, but a
  * 	connection must first be established.
  * 	The connection will be established "On Demand" by the
  * 	CFSocketStream APIs.
  * 	Other APIs will not establish the connection.
- * @constant kSCNetworkReachabilityFlagsIsLocalAddress
+ * [@constant] kSCNetworkReachabilityFlagsIsLocalAddress
  * 	This flag indicates that the specified nodename or address
  * 	is one associated with a network interface on the current
  * 	system.
- * @constant kSCNetworkReachabilityFlagsIsDirect
+ * [@constant] kSCNetworkReachabilityFlagsIsDirect
  * 	This flag indicates that network traffic to the specified
  * 	nodename or address will not go through a gateway, but is
  * 	routed directly to one of the interfaces in the system.
- * @constant kSCNetworkReachabilityFlagsIsWWAN
+ * [@constant] kSCNetworkReachabilityFlagsIsWWAN
  * 	This flag indicates that the specified nodename or address can
  * 	be reached via an EDGE, GPRS, or other "cell" connection.
  */

@@ -43,8 +43,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLVoxelArray
- * @summary Voxel data represented on a three dimensional grid. Voxel data can
+ * MDLVoxelArray
+ * [@summary] Voxel data represented on a three dimensional grid. Voxel data can
  *          include voxels considered to be on the surface of an object, and a 
  *          series of shells on the outside and inside of the surface.
  */

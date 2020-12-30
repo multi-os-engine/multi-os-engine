@@ -125,7 +125,7 @@ public class UISearchToken extends NSObject {
      * 
      * The application can assign any object it wants to this property. UISearchTextField does not attempt to interpret this object.
      * 
-     * @note
+     * [@note]
      * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken may be considerably longer than expected, especially if the token has been copied to a pasteboard.
      */
     @Generated
@@ -146,7 +146,7 @@ public class UISearchToken extends NSObject {
      * 
      * The application can assign any object it wants to this property. UISearchTextField does not attempt to interpret this object.
      * 
-     * @note
+     * [@note]
      * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken may be considerably longer than expected, especially if the token has been copied to a pasteboard.
      */
     @Generated

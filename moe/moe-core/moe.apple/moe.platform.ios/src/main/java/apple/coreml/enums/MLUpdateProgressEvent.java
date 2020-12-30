@@ -6,7 +6,7 @@ import org.moe.natj.general.ann.NInt;
 /**
  * Events on which update task is capable of invoking progress handler.
  * 
- * @note MLUpdateProgressEventMiniBatchEnd may induce performance problems
+ * [@note] MLUpdateProgressEventMiniBatchEnd may induce performance problems
  *       during pipeline execution.
  */
 @Generated

@@ -14,16 +14,18 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MPSNNTrainableNode")
 public interface MPSNNTrainableNode {
     /**
-     * @abstract   Configure whether and when neural network training parameters are updated
-     * @discussion Default: MPSNNTrainingStyleUpdateDeviceGPU
+     * Configure whether and when neural network training parameters are updated
+     * 
+     * Default: MPSNNTrainingStyleUpdateDeviceGPU
      */
     @Generated
     @Selector("setTrainingStyle:")
     void setTrainingStyle(@NUInt long value);
 
     /**
-     * @abstract   Configure whether and when neural network training parameters are updated
-     * @discussion Default: MPSNNTrainingStyleUpdateDeviceGPU
+     * Configure whether and when neural network training parameters are updated
+     * 
+     * Default: MPSNNTrainingStyleUpdateDeviceGPU
      */
     @Generated
     @Selector("trainingStyle")

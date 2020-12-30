@@ -19,9 +19,10 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum       AudioComponentInstantiationOptions
- * @brief      Options controlling component instantiation.
- * @discussion
+ * [@enum]       AudioComponentInstantiationOptions
+ * 
+ * Options controlling component instantiation.
+ * 
  *     Most component instances are loaded into the calling process.
  * 
  *     A version 3 audio unit, however, can be loaded into a separate extension service process,
@@ -38,9 +39,9 @@ import org.moe.natj.general.ann.Generated;
  * 
  *     These options are just requests to the implementation. It may fail and fall back to the
  *     default.
- * @constant kAudioComponentInstantiation_LoadOutOfProcess
+ * [@constant] kAudioComponentInstantiation_LoadOutOfProcess
  *     Attempt to load the component into a separate extension process.
- * @constant kAudioComponentInstantiation_LoadInProcess
+ * [@constant] kAudioComponentInstantiation_LoadInProcess
  *     Attempt to load the component into the current process. Only available on macOS.
  */
 @Generated

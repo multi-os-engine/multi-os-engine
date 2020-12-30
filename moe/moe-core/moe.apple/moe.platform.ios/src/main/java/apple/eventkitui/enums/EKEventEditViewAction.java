@@ -20,12 +20,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum       EKEventEditViewAction
- * @abstract   Represents actions that should cause the edit view controller to be dismissed
+ * [@enum]       EKEventEditViewAction
  * 
- * @constant   EKEventEditViewActionCanceled    The Cancel button was pressed, or the Done button was pressed, but the event was not dirty.
- * @constant   EKEventEditViewActionSaved       The event was saved.
- * @constant   EKEventEditViewActionDeleted     The event was deleted, either by the user or by another calendar store.
+ * Represents actions that should cause the edit view controller to be dismissed
+ * 
+ * [@constant]   EKEventEditViewActionCanceled    The Cancel button was pressed, or the Done button was pressed, but the event was not dirty.
+ * [@constant]   EKEventEditViewActionSaved       The event was saved.
+ * [@constant]   EKEventEditViewActionDeleted     The event was deleted, either by the user or by another calendar store.
  */
 @Generated
 public final class EKEventEditViewAction {

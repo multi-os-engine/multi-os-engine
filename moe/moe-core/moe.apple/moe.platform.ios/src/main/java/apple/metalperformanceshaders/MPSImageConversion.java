@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageConversion
- * @discussion The MPSImageConversion filter performs a conversion from source to destination
+ * MPSImageConversion
+ * 
+ * The MPSImageConversion filter performs a conversion from source to destination
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -160,9 +161,11 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * @property   destinationAlpha
-     * @abstract   Premultiplication description for the destinationAlpha texture
-     * @discussion Colorspace conversion operations produce non-premultiplied data.
+     * [@property]   destinationAlpha
+     * 
+     * Premultiplication description for the destinationAlpha texture
+     * 
+     * Colorspace conversion operations produce non-premultiplied data.
      *             Use this property to tag cases where premultiplied results are required.
      *             If MPSPixelAlpha_AlphaIsOne is used, the alpha channel will be set to 1.
      *             Default: MPSPixelAlpha_AlphaIsOne
@@ -181,9 +184,11 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
     public native MPSImageConversion initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Create a converter that can convert texture colorspace, alpha and texture format
-     * @discussion Create a converter that can convert texture colorspace, alpha and MTLPixelFormat.
+     * Create a converter that can convert texture colorspace, alpha and texture format
+     * 
+     * Create a converter that can convert texture colorspace, alpha and MTLPixelFormat.
      *             Optimized cases exist for NULL color space converter and no alpha conversion.
+     * 
      * @param      device              The device the filter will run on
      * @param      srcAlpha            The alpha encoding for the source texture
      * @param      destAlpha           The alpha encoding for the destination texture
@@ -193,7 +198,7 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
      * @param      conversionInfo      The colorspace conversion to use. May be NULL, indicating no
      *                                 color space conversions need to be done.
      * 
-     * @result     An initialized MPSImageConversion object.
+     * @return     An initialized MPSImageConversion object.
      */
     @Generated
     @Selector("initWithDevice:srcAlpha:destAlpha:backgroundColor:conversionInfo:")
@@ -202,9 +207,11 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
             NFloatPtr backgroundColor, CGColorConversionInfoRef conversionInfo);
 
     /**
-     * @property   sourceAlpha
-     * @abstract   Premultiplication description for the source texture
-     * @discussion Most colorspace conversion operations can not work directly on premultiplied data.
+     * [@property]   sourceAlpha
+     * 
+     * Premultiplication description for the source texture
+     * 
+     * Most colorspace conversion operations can not work directly on premultiplied data.
      *             Use this property to tag premultiplied data so that the source texture can
      *             be unpremultiplied prior to application of these transforms.
      *             Default: MPSPixelAlpha_AlphaIsOne

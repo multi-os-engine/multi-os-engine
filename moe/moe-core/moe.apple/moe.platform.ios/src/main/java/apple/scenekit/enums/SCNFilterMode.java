@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum SCNFilterMode
- * @abstract Filtering modes
+ * [@enum] SCNFilterMode
+ * 
+ * Filtering modes
  */
 @Generated
 public final class SCNFilterMode {

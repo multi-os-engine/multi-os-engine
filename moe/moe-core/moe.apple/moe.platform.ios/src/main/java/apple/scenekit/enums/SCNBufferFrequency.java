@@ -20,9 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum SCNBufferFrequency
- * @abstract The frequency at which the custom program input should be updated.
- * @discussion When the frequency is set to SCNBufferFrequencyPerFrame, the binding block is invoked once per frame.
+ * [@enum] SCNBufferFrequency
+ * 
+ * The frequency at which the custom program input should be updated.
+ * 
+ * When the frequency is set to SCNBufferFrequencyPerFrame, the binding block is invoked once per frame.
  * When the frequency is set to SCNBufferFrequencyPerNode, the binding block is invoked once per SCNNode.
  * When the frequency is set to SCNBufferFrequencyPerShadable, the binding block is invoked once per SCNMaterial or SCNGeometry (depending on the object that owns the SCNProgram).
  */

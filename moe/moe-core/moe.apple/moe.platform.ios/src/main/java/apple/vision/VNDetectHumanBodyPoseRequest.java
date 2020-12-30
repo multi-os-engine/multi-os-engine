@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Detects specific landmark points on human bodies.
- * @discussion This request will produce a collection of VNHumanBodyPoseObservation objects which describe the pose of each detected human body.
+ * Detects specific landmark points on human bodies.
+ * 
+ * This request will produce a collection of VNHumanBodyPoseObservation objects which describe the pose of each detected human body.
  */
 @Generated
 @Library("Vision")
@@ -150,7 +151,7 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @discussion VNHumanBodyPoseObservation results.
+     * VNHumanBodyPoseObservation results.
      */
     @Generated
     @Selector("results")
@@ -175,7 +176,8 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Obtain the collection of human body joint names that are supported by a given request revision.
+     * Obtain the collection of human body joint names that are supported by a given request revision.
+     * 
      * @param revision The revision of VNDetectHumanBodyPoseRequest being queried.
      * @param error The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
      * @return An array of VNHumanBodyPoseObservationJointName symbols that are supported by the request revision, or nil if a failure occurs.
@@ -186,7 +188,8 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Obtain the collection of human body joints group names that are supported by a given request revision.
+     * Obtain the collection of human body joints group names that are supported by a given request revision.
+     * 
      * @param revision The revision of VNDetectHumanBodyPoseRequest being queried.
      * @param error The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
      * @return An array of VNHumanBodyPoseObservationJointsGroupName symbols that are supported by the request revision, or nil if a failure occurs.

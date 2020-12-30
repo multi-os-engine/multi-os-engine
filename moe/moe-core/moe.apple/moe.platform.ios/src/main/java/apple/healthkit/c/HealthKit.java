@@ -174,7 +174,7 @@ public final class HealthKit {
     public static native String HKWorkoutSortIdentifierTotalSwimmingStrokeCount();
 
     /**
-     * @constant     HKPredicateKeyPathCategoryValue
+     * [@constant]     HKPredicateKeyPathCategoryValue
      */
     @Generated
     @CVariable()
@@ -182,7 +182,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCategoryValue();
 
     /**
-     * @constant  HKPredicateKeyPathCDATitle
+     * [@constant]  HKPredicateKeyPathCDATitle
      */
     @Generated
     @CVariable()
@@ -190,7 +190,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCDATitle();
 
     /**
-     * @constant  HKPredicateKeyPathCDAPatientName
+     * [@constant]  HKPredicateKeyPathCDAPatientName
      */
     @Generated
     @CVariable()
@@ -198,7 +198,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCDAPatientName();
 
     /**
-     * @constant  HKPredicateKeyPathCDAAuthorName
+     * [@constant]  HKPredicateKeyPathCDAAuthorName
      */
     @Generated
     @CVariable()
@@ -206,7 +206,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCDAAuthorName();
 
     /**
-     * @constant  HKPredicateKeyPathCDACustodianName
+     * [@constant]  HKPredicateKeyPathCDACustodianName
      */
     @Generated
     @CVariable()
@@ -214,8 +214,9 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCDACustodianName();
 
     /**
-     * @constant      HKDetailedCDAValidationErrorKey
-     * @discussion    This may be used with the validationError parameter of
+     * [@constant]      HKDetailedCDAValidationErrorKey
+     * 
+     * This may be used with the validationError parameter of
      *                CDADocumentSampleWithData:startDate:endDate:device:metadata:validationError: to obtain a detailed
      *                description of the validation errors encountered when creating a CDA document.
      */
@@ -225,9 +226,11 @@ public final class HealthKit {
     public static native String HKDetailedCDAValidationErrorKey();
 
     /**
-     * @constant      HKDevicePropertyKeyName
-     * @abstract      Used with predicateForObjectsWithDeviceProperty to specify a device name.
-     * @discussion    The expected value type is an NSString.
+     * [@constant]      HKDevicePropertyKeyName
+     * 
+     * Used with predicateForObjectsWithDeviceProperty to specify a device name.
+     * 
+     * The expected value type is an NSString.
      */
     @Generated
     @CVariable()
@@ -235,9 +238,11 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyName();
 
     /**
-     * @constant      HKDevicePropertyKeyManufacturer
-     * @abstract      Used with predicateForObjectsWithDeviceProperty to specify a device manufacturer.
-     * @discussion    The expected value type is an NSString.
+     * [@constant]      HKDevicePropertyKeyManufacturer
+     * 
+     * Used with predicateForObjectsWithDeviceProperty to specify a device manufacturer.
+     * 
+     * The expected value type is an NSString.
      */
     @Generated
     @CVariable()
@@ -245,9 +250,11 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyManufacturer();
 
     /**
-     * @constant      HKDevicePropertyKeyModel
-     * @abstract      Used with predicateForObjectsWithDeviceProperty to specify a device model.
-     * @discussion    The expected value type is an NSString.
+     * [@constant]      HKDevicePropertyKeyModel
+     * 
+     * Used with predicateForObjectsWithDeviceProperty to specify a device model.
+     * 
+     * The expected value type is an NSString.
      */
     @Generated
     @CVariable()
@@ -255,9 +262,11 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyModel();
 
     /**
-     * @constant      HKDevicePropertyKeyHardwareVersion
-     * @abstract      Used with predicateForObjectsWithDeviceProperty to specify a hardware version.
-     * @discussion    The expected value type is an NSString.
+     * [@constant]      HKDevicePropertyKeyHardwareVersion
+     * 
+     * Used with predicateForObjectsWithDeviceProperty to specify a hardware version.
+     * 
+     * The expected value type is an NSString.
      */
     @Generated
     @CVariable()
@@ -265,9 +274,11 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyHardwareVersion();
 
     /**
-     * @constant      HKDevicePropertyKeyFirmwareVersion
-     * @abstract      Used with predicateForObjectsWithDeviceProperty to specify a firmware version.
-     * @discussion    The expected value type is an NSString.
+     * [@constant]      HKDevicePropertyKeyFirmwareVersion
+     * 
+     * Used with predicateForObjectsWithDeviceProperty to specify a firmware version.
+     * 
+     * The expected value type is an NSString.
      */
     @Generated
     @CVariable()
@@ -275,9 +286,11 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyFirmwareVersion();
 
     /**
-     * @constant      HKDevicePropertyKeySoftwareVersion
-     * @abstract      Used with predicateForObjectsWithDeviceProperty to specify a software version.
-     * @discussion    The expected value type is an NSString.
+     * [@constant]      HKDevicePropertyKeySoftwareVersion
+     * 
+     * Used with predicateForObjectsWithDeviceProperty to specify a software version.
+     * 
+     * The expected value type is an NSString.
      */
     @Generated
     @CVariable()
@@ -285,9 +298,11 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeySoftwareVersion();
 
     /**
-     * @constant      HKDevicePropertyKeyLocalIdentifier
-     * @abstract      Used with predicateForObjectsWithDeviceProperty to specify a local identifier.
-     * @discussion    The expected value type is an NSString.
+     * [@constant]      HKDevicePropertyKeyLocalIdentifier
+     * 
+     * Used with predicateForObjectsWithDeviceProperty to specify a local identifier.
+     * 
+     * The expected value type is an NSString.
      */
     @Generated
     @CVariable()
@@ -295,9 +310,11 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyLocalIdentifier();
 
     /**
-     * @constant      HKDevicePropertyKeyUDIDeviceIdentifier
-     * @abstract      Used with predicateForObjectsWithDeviceProperty to specify a UDI device identifier.
-     * @discussion    The expected value type is an NSString.
+     * [@constant]      HKDevicePropertyKeyUDIDeviceIdentifier
+     * 
+     * Used with predicateForObjectsWithDeviceProperty to specify a UDI device identifier.
+     * 
+     * The expected value type is an NSString.
      */
     @Generated
     @CVariable()
@@ -305,9 +322,11 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyUDIDeviceIdentifier();
 
     /**
-     * @constant      HKUserPreferencesDidChangeNotification
-     * @abstract      A notification posted every time the user updates their preferred units.
-     * @discussion    Each HKHealthStore posts a HKUserPreferencesDidChangeNotification notification when the preferred unit
+     * [@constant]      HKUserPreferencesDidChangeNotification
+     * 
+     * A notification posted every time the user updates their preferred units.
+     * 
+     * Each HKHealthStore posts a HKUserPreferencesDidChangeNotification notification when the preferred unit
      *                for a HKQuantityType is changed by the user. To guarantee your listener will only receive a single
      *                notification when this occurs, it is necessary to provide an HKHealthStore instance for the object
      *                parameter of NSNotificationCenter's addObserver methods.
@@ -318,9 +337,11 @@ public final class HealthKit {
     public static native String HKUserPreferencesDidChangeNotification();
 
     /**
-     * @constant      HKMetadataKeyUDIProductionIdentifier
-     * @abstract      Represents the serial number of the device that created the HKObject.
-     * @discussion    The expected value type is NSString.
+     * [@constant]      HKMetadataKeyUDIProductionIdentifier
+     * 
+     * Represents the serial number of the device that created the HKObject.
+     * 
+     * The expected value type is NSString.
      */
     @Generated
     @CVariable()
@@ -328,9 +349,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyDeviceSerialNumber();
 
     /**
-     * @constant      HKMetadataKeyBodyTemperatureSensorLocation
-     * @abstract      Represents the location where a particular body temperature reading was taken.
-     * @discussion    The expected value type is an NSNumber containing a HKBodyTemperatureSensorLocation value.
+     * [@constant]      HKMetadataKeyBodyTemperatureSensorLocation
+     * 
+     * Represents the location where a particular body temperature reading was taken.
+     * 
+     * The expected value type is an NSNumber containing a HKBodyTemperatureSensorLocation value.
      */
     @Generated
     @CVariable()
@@ -338,9 +361,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyBodyTemperatureSensorLocation();
 
     /**
-     * @constant      HKMetadataKeyHeartRateSensorLocation
-     * @abstract      Represents the location where a particular heart rate reading was taken.
-     * @discussion    The expected value type is an NSNumber containing a HKHeartRateSensorLocation value.
+     * [@constant]      HKMetadataKeyHeartRateSensorLocation
+     * 
+     * Represents the location where a particular heart rate reading was taken.
+     * 
+     * The expected value type is an NSNumber containing a HKHeartRateSensorLocation value.
      */
     @Generated
     @CVariable()
@@ -348,9 +373,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyHeartRateSensorLocation();
 
     /**
-     * @constant      HKMetadataKeyFoodType
-     * @abstract      Represents the type of food that was consumed when creating an HKObject.
-     * @discussion    This should be a short string representing the type of food, such as 'Banana'. The expected value type
+     * [@constant]      HKMetadataKeyFoodType
+     * 
+     * Represents the type of food that was consumed when creating an HKObject.
+     * 
+     * This should be a short string representing the type of food, such as 'Banana'. The expected value type
      *                is NSString.
      */
     @Generated
@@ -359,9 +386,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyFoodType();
 
     /**
-     * @constant      HKMetadataKeyUDIDeviceIdentifier
-     * @abstract      Represents the device identifier portion of a device's UDI (Unique Device Identifier).
-     * @discussion    The device identifier can be used to reference the GUDID (Globally Unique Device Identifier Database).
+     * [@constant]      HKMetadataKeyUDIDeviceIdentifier
+     * 
+     * Represents the device identifier portion of a device's UDI (Unique Device Identifier).
+     * 
+     * The device identifier can be used to reference the GUDID (Globally Unique Device Identifier Database).
      *                The expected value type is NSString.
      * 
      *                ** Note that the use of this key is now discouraged in favor of the HKDevice class.
@@ -372,9 +401,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyUDIDeviceIdentifier();
 
     /**
-     * @constant      HKMetadataKeyUDIProductionIdentifier
-     * @abstract      Represents the production identifier portion of a device's UDI (Unique Device Identifier).
-     * @discussion    While part of a device's UDI, the production identifier is not saved in the FDA's GUDID 
+     * [@constant]      HKMetadataKeyUDIProductionIdentifier
+     * 
+     * Represents the production identifier portion of a device's UDI (Unique Device Identifier).
+     * 
+     * While part of a device's UDI, the production identifier is not saved in the FDA's GUDID
      *                (Globally Unique Device Identifier Database) and its use in HealthKit is now discouraged for
      *                user privacy reasons. Apps should consider handling this independently of HealthKit APIs if
      *                needed.
@@ -386,9 +417,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyUDIProductionIdentifier();
 
     /**
-     * @constant      HKMetadataKeyDigitalSignature
-     * @abstract      Represents a digital signature validating the origin of an HKObject's value.
-     * @discussion    Intended to provide data integrity for sample data produced by trusted (tamper resistant) measuring devices.
+     * [@constant]      HKMetadataKeyDigitalSignature
+     * 
+     * Represents a digital signature validating the origin of an HKObject's value.
+     * 
+     * Intended to provide data integrity for sample data produced by trusted (tamper resistant) measuring devices.
      *                The digital signature format should be CMS (Cryptographic Message Syntax specified in IETF RFC 5652).
      *                It should be a “Signed-data” type signature containing the data items to be signed (e.g., timestamp, value, etc.)
      *                using ASN.1 encoding with DER (Distinguished Encoding Rules). The entire enveloping signature should be further
@@ -401,10 +434,12 @@ public final class HealthKit {
     public static native String HKMetadataKeyDigitalSignature();
 
     /**
-     * @constant      HKMetadataKeyExternalUUID
-     * @abstract      Represents a unique identifier for an HKObject that is set by its source.
+     * [@constant]      HKMetadataKeyExternalUUID
+     * 
+     * Represents a unique identifier for an HKObject that is set by its source.
      *                Uniqueness of objects with the same value of this key is not enforced by HealthKit.
-     * @discussion    The expected value type is NSString.
+     * 
+     * The expected value type is NSString.
      */
     @Generated
     @CVariable()
@@ -412,9 +447,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyExternalUUID();
 
     /**
-     * @constant      HKMetadataKeyTimeZone
-     * @abstract      Represents the time zone that the user was in when the HKObject was created.
-     * @discussion    The expected value type is an NSString compatible with NSTimeZone's +timeZoneWithName:.
+     * [@constant]      HKMetadataKeyTimeZone
+     * 
+     * Represents the time zone that the user was in when the HKObject was created.
+     * 
+     * The expected value type is an NSString compatible with NSTimeZone's +timeZoneWithName:.
      */
     @Generated
     @CVariable()
@@ -422,9 +459,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyTimeZone();
 
     /**
-     * @constant      HKMetadataKeyDeviceName
-     * @abstract      Represents the name of the device that took the reading.
-     * @discussion    The expected value type is NSString.
+     * [@constant]      HKMetadataKeyDeviceName
+     * 
+     * Represents the name of the device that took the reading.
+     * 
+     * The expected value type is NSString.
      * 
      *                ** Note that the use of this key is now discouraged in favor of the HKDevice class.
      */
@@ -434,9 +473,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyDeviceName();
 
     /**
-     * @constant      HKMetadataKeyDeviceManufacturerName
-     * @abstract      Represents the name of the manufacturer of the device that took the reading.
-     * @discussion    The expected value type is NSString.
+     * [@constant]      HKMetadataKeyDeviceManufacturerName
+     * 
+     * Represents the name of the manufacturer of the device that took the reading.
+     * 
+     * The expected value type is NSString.
      * 
      *                ** Note that the use of this key is now discouraged in favor of the HKDevice class.
      */
@@ -446,9 +487,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyDeviceManufacturerName();
 
     /**
-     * @constant      HKMetadataKeyWasTakenInLab
-     * @abstract      Represents whether or not the reading was taken in a lab.
-     * @discussion    The expected value type is an NSNumber containing a BOOL value.
+     * [@constant]      HKMetadataKeyWasTakenInLab
+     * 
+     * Represents whether or not the reading was taken in a lab.
+     * 
+     * The expected value type is an NSNumber containing a BOOL value.
      */
     @Generated
     @CVariable()
@@ -456,9 +499,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyWasTakenInLab();
 
     /**
-     * @constant      HKMetadataKeyReferenceRangeLowerLimit
-     * @abstract      Represents the lower limit of the reference range for a lab result.
-     * @discussion    The expected value type is an NSNumber.
+     * [@constant]      HKMetadataKeyReferenceRangeLowerLimit
+     * 
+     * Represents the lower limit of the reference range for a lab result.
+     * 
+     * The expected value type is an NSNumber.
      */
     @Generated
     @CVariable()
@@ -466,9 +511,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyReferenceRangeLowerLimit();
 
     /**
-     * @constant      HKMetadataKeyReferenceRangeUpperLimit
-     * @abstract      Represents the upper limit of the reference range for a lab result.
-     * @discussion    The expected value type is an NSNumber.
+     * [@constant]      HKMetadataKeyReferenceRangeUpperLimit
+     * 
+     * Represents the upper limit of the reference range for a lab result.
+     * 
+     * The expected value type is an NSNumber.
      */
     @Generated
     @CVariable()
@@ -476,9 +523,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyReferenceRangeUpperLimit();
 
     /**
-     * @constant      HKMetadataKeyWasUserEntered
-     * @abstract      Represents whether or not the reading was entered by the user.
-     * @discussion    The expected value type is an NSNumber containing a BOOL value.
+     * [@constant]      HKMetadataKeyWasUserEntered
+     * 
+     * Represents whether or not the reading was entered by the user.
+     * 
+     * The expected value type is an NSNumber containing a BOOL value.
      */
     @Generated
     @CVariable()
@@ -486,9 +535,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyWasUserEntered();
 
     /**
-     * @constant      HKMetadataKeyWorkoutBrandName
-     * @abstract      Represents the brand name of a particular workout.
-     * @discussion    The expected value type is NSString.
+     * [@constant]      HKMetadataKeyWorkoutBrandName
+     * 
+     * Represents the brand name of a particular workout.
+     * 
+     * The expected value type is NSString.
      */
     @Generated
     @CVariable()
@@ -496,9 +547,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyWorkoutBrandName();
 
     /**
-     * @constant      HKMetadataKeyGroupFitness
-     * @abstract      Represents whether or not a workout was performed as part of a group fitness class.
-     * @discussion    The expected value type is an NSNumber containing a BOOL value.
+     * [@constant]      HKMetadataKeyGroupFitness
+     * 
+     * Represents whether or not a workout was performed as part of a group fitness class.
+     * 
+     * The expected value type is an NSNumber containing a BOOL value.
      */
     @Generated
     @CVariable()
@@ -506,9 +559,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyGroupFitness();
 
     /**
-     * @constant      HKMetadataKeyIndoorWorkout
-     * @abstract      Represents whether or not a workout was performed indoors as opposed to outdoors.
-     * @discussion    The expected value type is an NSNumber containing a BOOL value.
+     * [@constant]      HKMetadataKeyIndoorWorkout
+     * 
+     * Represents whether or not a workout was performed indoors as opposed to outdoors.
+     * 
+     * The expected value type is an NSNumber containing a BOOL value.
      */
     @Generated
     @CVariable()
@@ -516,9 +571,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyIndoorWorkout();
 
     /**
-     * @constant      HKMetadataKeyCoachedWorkout
-     * @abstract      Represents whether or not a workout was performed with a coach or personal trainer.
-     * @discussion    The expected value type is an NSNumber containing a BOOL value.
+     * [@constant]      HKMetadataKeyCoachedWorkout
+     * 
+     * Represents whether or not a workout was performed with a coach or personal trainer.
+     * 
+     * The expected value type is an NSNumber containing a BOOL value.
      */
     @Generated
     @CVariable()
@@ -526,9 +583,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyCoachedWorkout();
 
     /**
-     * @constant      HKMetadataKeyWeatherCondition
-     * @abstract      Represents the weather condition during the sample.
-     * @discussion    The expected value type is an NSNumber containing an HKWeatherCondition value. This key may be set on an
+     * [@constant]      HKMetadataKeyWeatherCondition
+     * 
+     * Represents the weather condition during the sample.
+     * 
+     * The expected value type is an NSNumber containing an HKWeatherCondition value. This key may be set on an
      *                HKWorkout object to represent the overall weather condition during the workout.
      */
     @Generated
@@ -537,9 +596,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyWeatherCondition();
 
     /**
-     * @constant      HKMetadataKeyWeatherTemperature
-     * @abstract      Represents the weather temperature during the sample.
-     * @discussion    The expected value type is an HKQuantity expressed in a temperature unit. This key may be set on an
+     * [@constant]      HKMetadataKeyWeatherTemperature
+     * 
+     * Represents the weather temperature during the sample.
+     * 
+     * The expected value type is an HKQuantity expressed in a temperature unit. This key may be set on an
      *                HKWorkout object to represent the overall temperature during the workout.
      */
     @Generated
@@ -548,9 +609,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyWeatherTemperature();
 
     /**
-     * @constant      HKMetadataKeyHumidity
-     * @abstract      Represents the weather humidity during the sample.
-     * @discussion    The expected value type is an HKQuantity expressed in percent. This key may be set on an HKWorkout
+     * [@constant]      HKMetadataKeyHumidity
+     * 
+     * Represents the weather humidity during the sample.
+     * 
+     * The expected value type is an HKQuantity expressed in percent. This key may be set on an HKWorkout
      *                object to represent the overall humidity during the workout.
      */
     @Generated
@@ -559,10 +622,12 @@ public final class HealthKit {
     public static native String HKMetadataKeyWeatherHumidity();
 
     /**
-     * @constant      HKMetadataKeySexualActivityProtectionUsed
-     * @abstract      Represents whether or not protection was used during sexual activity. This can be used to track either
+     * [@constant]      HKMetadataKeySexualActivityProtectionUsed
+     * 
+     * Represents whether or not protection was used during sexual activity. This can be used to track either
      *                protection from STIs or protection from pregnancy.
-     * @discussion    The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * The expected value type is an NSNumber containing a BOOL value.
      */
     @Generated
     @CVariable()
@@ -570,10 +635,12 @@ public final class HealthKit {
     public static native String HKMetadataKeySexualActivityProtectionUsed();
 
     /**
-     * @constant      HKMetadataKeyMenstrualCycleStart
-     * @abstract      Indicates whether or not the sample represents the start of a menstrual cycle. This is a required
+     * [@constant]      HKMetadataKeyMenstrualCycleStart
+     * 
+     * Indicates whether or not the sample represents the start of a menstrual cycle. This is a required
      *                metadata key for category samples of type HKCategoryTypeIdentifierMenstrualFlow.
-     * @discussion    The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * The expected value type is an NSNumber containing a BOOL value.
      */
     @Generated
     @CVariable()
@@ -581,9 +648,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyMenstrualCycleStart();
 
     /**
-     * @constant      HKMetadataKeyLapLength
-     * @abstract      Represents the length of a lap recorded during a workout.
-     * @discussion    The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
+     * [@constant]      HKMetadataKeyLapLength
+     * 
+     * Represents the length of a lap recorded during a workout.
+     * 
+     * The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
      *                HKWorkout object to represent the length of a lap.
      */
     @Generated
@@ -592,9 +661,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyLapLength();
 
     /**
-     * @constant      HKMetadataKeySwimmingLocationType
-     * @abstract      Represents the location type of a swimming workout.
-     * @discussion    The expected value type is an NSNumber containing an HKWorkoutSwimmingLocationType value. This key may
+     * [@constant]      HKMetadataKeySwimmingLocationType
+     * 
+     * Represents the location type of a swimming workout.
+     * 
+     * The expected value type is an NSNumber containing an HKWorkoutSwimmingLocationType value. This key may
      *                be set on an HKWorkout object to represent the swimming location type.
      */
     @Generated
@@ -603,9 +674,11 @@ public final class HealthKit {
     public static native String HKMetadataKeySwimmingLocationType();
 
     /**
-     * @constant      HKMetadataKeySwimmingStrokeStyle
-     * @abstract      Represents the predominant stroke style during a lap of a swimming workout.
-     * @discussion    The expected value type is an NSNumber containing an HKSwimmingStrokeStyle value. This key may be set on
+     * [@constant]      HKMetadataKeySwimmingStrokeStyle
+     * 
+     * Represents the predominant stroke style during a lap of a swimming workout.
+     * 
+     * The expected value type is an NSNumber containing an HKSwimmingStrokeStyle value. This key may be set on
      *                an HKWorkoutEvent object with the type HKWorkoutEventTypeLap to represent the predominant style used
      *                during the lap.
      */
@@ -1346,9 +1419,11 @@ public final class HealthKit {
     public static native String HKWorkoutSortIdentifierTotalFlightsClimbed();
 
     /**
-     * @constant      HKMetadataKeyHeartRateMotionContext
-     * @abstract      Represents the context in which a particular heart rate reading was taken.
-     * @discussion    The expected value type is an NSNumber containing a HKHeartRateMotionContext value. The value is active
+     * [@constant]      HKMetadataKeyHeartRateMotionContext
+     * 
+     * Represents the context in which a particular heart rate reading was taken.
+     * 
+     * The expected value type is an NSNumber containing a HKHeartRateMotionContext value. The value is active
      *                (HKHeartRateMotionContextActive) if the user is in motion or working out, sedentary if the user is
      *                still (HKHeartRateMotionContextSedentary), or not set (HKHeartRateMotionContextNotSet) otherwise.
      */
@@ -1358,10 +1433,12 @@ public final class HealthKit {
     public static native String HKMetadataKeyHeartRateMotionContext();
 
     /**
-     * @constant      HKMetadataKeySyncIdentifier
-     * @abstract      Represents an identifier for an HKObject that is set by its source and is used by HealthKit to uniquely
+     * [@constant]      HKMetadataKeySyncIdentifier
+     * 
+     * Represents an identifier for an HKObject that is set by its source and is used by HealthKit to uniquely
      *                identify an object.
-     * @discussion    Saving a HKObject with a HKMetadataKeySyncIdentifier will replace an existing HKObject with the
+     * 
+     * Saving a HKObject with a HKMetadataKeySyncIdentifier will replace an existing HKObject with the
      *                same HKMetadataKeySyncIdentifier value if the new HKObject has a greater HKMetadataKeySyncVersion.
      *                The new sample will be added to all HKWorkouts or HKCorrelations containing the replaced sample.
      *                HKMetadataKeySyncVersion must be provided if HKMetadataKeySyncIdentifier is provided.
@@ -1373,10 +1450,12 @@ public final class HealthKit {
     public static native String HKMetadataKeySyncIdentifier();
 
     /**
-     * @constant      HKMetadataKeySyncVersion
-     * @abstract      Represents the version of the HKObject that is set by its source and is used by HealthKit to identify an
+     * [@constant]      HKMetadataKeySyncVersion
+     * 
+     * Represents the version of the HKObject that is set by its source and is used by HealthKit to identify an
      *                object's version.
-     * @discussion    HKMetadataKeySyncVersion may not be provided if HKMetadataKeySyncIdentifier is not provided.
+     * 
+     * HKMetadataKeySyncVersion may not be provided if HKMetadataKeySyncIdentifier is not provided.
      *                The expected value type is NSNumber.
      */
     @Generated
@@ -1385,10 +1464,12 @@ public final class HealthKit {
     public static native String HKMetadataKeySyncVersion();
 
     /**
-     * @constant      HKMetadataKeyInsulinDeliveryReason
-     * @abstract      Represents the medical reason for the delivery of an insulin dose. This is a required metadata key for
+     * [@constant]      HKMetadataKeyInsulinDeliveryReason
+     * 
+     * Represents the medical reason for the delivery of an insulin dose. This is a required metadata key for
      *                samples of type HKQuantityTypeIdentifierInsulinDelivery.
-     * @discussion    The expected value type is an NSNumber containing a HKInsulinDeliveryReason value.
+     * 
+     * The expected value type is an NSNumber containing a HKInsulinDeliveryReason value.
      */
     @Generated
     @CVariable()
@@ -1396,9 +1477,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyInsulinDeliveryReason();
 
     /**
-     * @constant      HKMetadataKeyBloodGlucoseMealTime
-     * @abstract      Indicates the relative timing of a blood glucose reading to a meal.
-     * @discussion    This timing, as well as other factors like meal composition, can be used by medical professionals to
+     * [@constant]      HKMetadataKeyBloodGlucoseMealTime
+     * 
+     * Indicates the relative timing of a blood glucose reading to a meal.
+     * 
+     * This timing, as well as other factors like meal composition, can be used by medical professionals to
      *                determine the acceptable value range for a blood glucose reading. For use cases requiring the capture of
      *                precise timing and composition information, developers should record additional dietary samples, such as
      *                HKQuantityTypeIdentifierDietaryCarbohydrates. The expected value type is an NSNumber containing a
@@ -1410,9 +1493,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyBloodGlucoseMealTime();
 
     /**
-     * @constant      HKMetadataKeyVO2MaxTestType
-     * @abstract      Represents the test used to create VO2 Max Sample
-     * @discussion    The expected value type is an NSNumber containing a HKVO2MaxTestType value.
+     * [@constant]      HKMetadataKeyVO2MaxTestType
+     * 
+     * Represents the test used to create VO2 Max Sample
+     * 
+     * The expected value type is an NSNumber containing a HKVO2MaxTestType value.
      */
     @Generated
     @CVariable()
@@ -1709,9 +1794,11 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathMostRecentDuration();
 
     /**
-     * @constant      HKMetadataKeyAverageSpeed
-     * @abstract      Represents the average speed for a workout segment or distance sample.
-     * @discussion    This represents the average speed when moving so it may not match the value of distance/time for a
+     * [@constant]      HKMetadataKeyAverageSpeed
+     * 
+     * Represents the average speed for a workout segment or distance sample.
+     * 
+     * This represents the average speed when moving so it may not match the value of distance/time for a
      * distance sample.
      * 
      * The expected value type is an HKQuantity object compatible with a speed unit (e.g. m/s). This key may be
@@ -1724,9 +1811,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyAverageSpeed();
 
     /**
-     * @constant      HKMetadataKeyMaximumSpeed
-     * @abstract      Represents the maximum speed for a workout segment or distance sample.
-     * @discussion    The expected value type is an HKQuantity object compatible with a speed unit (e.g. m/s). This key may be
+     * [@constant]      HKMetadataKeyMaximumSpeed
+     * 
+     * Represents the maximum speed for a workout segment or distance sample.
+     * 
+     * The expected value type is an HKQuantity object compatible with a speed unit (e.g. m/s). This key may be
      * set on quantity samples of type HKQuantityTypeIdentifierDistanceDownhillSnowSports or a workout segment
      * representing a skiing run.
      */
@@ -1736,9 +1825,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyMaximumSpeed();
 
     /**
-     * @constant      HKMetadataKeyAlpineSlopeGrade
-     * @abstract      Represents the grade of a ski run.
-     * @discussion    Alpine slope grade is measured in percent where 100% grade is a 45 degree slope.
+     * [@constant]      HKMetadataKeyAlpineSlopeGrade
+     * 
+     * Represents the grade of a ski run.
+     * 
+     * Alpine slope grade is measured in percent where 100% grade is a 45 degree slope.
      * 
      * The expected value type is an HKQuantity object compatible with percent unit. This key may be set on
      * quantity samples of type HKQuantityTypeIdentifierDistanceDownhillSnowSports or a workout segment
@@ -1750,9 +1841,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyAlpineSlopeGrade();
 
     /**
-     * @constant      HKMetadataKeyElevationAscended
-     * @abstract      Represents the cumulative elevation ascent during a workout.
-     * @discussion    The expected value type is an HKQuantity object compatible with length unit. This key may be set on a
+     * [@constant]      HKMetadataKeyElevationAscended
+     * 
+     * Represents the cumulative elevation ascent during a workout.
+     * 
+     * The expected value type is an HKQuantity object compatible with length unit. This key may be set on a
      * workout, workout segments or distance samples.
      */
     @Generated
@@ -1761,9 +1854,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyElevationAscended();
 
     /**
-     * @constant      HKMetadataKeyElevationDescended
-     * @abstract      Represents the cumulative elevation descent during a workout.
-     * @discussion    The expected value type is an HKQuantity object compatible with length unit. This key may be set on a
+     * [@constant]      HKMetadataKeyElevationDescended
+     * 
+     * Represents the cumulative elevation descent during a workout.
+     * 
+     * The expected value type is an HKQuantity object compatible with length unit. This key may be set on a
      * workout, workout segments or distance samples.
      */
     @Generated
@@ -1772,9 +1867,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyElevationDescended();
 
     /**
-     * @constant      HKMetadataKeyFitnessMachineDuration
-     * @abstract      Represents the workout duration as displayed by a GymKit connected fitness machine.
-     * @discussion    The expected value type is an HKQuantity object compatible with a time unit. This key may be set on an
+     * [@constant]      HKMetadataKeyFitnessMachineDuration
+     * 
+     * Represents the workout duration as displayed by a GymKit connected fitness machine.
+     * 
+     * The expected value type is an HKQuantity object compatible with a time unit. This key may be set on an
      *                HKWorkout object to represent the duration of the workout as displayed by a GymKit connected fitness
      *                machine.
      */
@@ -1784,9 +1881,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyFitnessMachineDuration();
 
     /**
-     * @constant      HKMetadataKeyIndoorBikeDistance
-     * @abstract      Represents the distance covered during an indoor bike workout.
-     * @discussion    The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
+     * [@constant]      HKMetadataKeyIndoorBikeDistance
+     * 
+     * Represents the distance covered during an indoor bike workout.
+     * 
+     * The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
      *                HKWorkout object to represent the distance covered during an indoor bike workout.
      */
     @Generated
@@ -1795,9 +1894,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyIndoorBikeDistance();
 
     /**
-     * @constant      HKMetadataKeyCrossTrainerDistance
-     * @abstract      Represents the distance covered during a cross trainer workout.
-     * @discussion    The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
+     * [@constant]      HKMetadataKeyCrossTrainerDistance
+     * 
+     * Represents the distance covered during a cross trainer workout.
+     * 
+     * The expected value type is an HKQuantity object compatible with a length unit. This key may be set on an
      *                HKWorkout object to represent the distance covered during a cross trainer workout.
      */
     @Generated
@@ -1806,9 +1907,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyCrossTrainerDistance();
 
     /**
-     * @constant      HKMetadataKeyHeartRateEventThreshold
-     * @abstract      Represents the threshold heart rate that triggered a heart rate event.
-     * @discussion    The expected value is an HKQuantity object with a compatible unit (e.g. count/min).
+     * [@constant]      HKMetadataKeyHeartRateEventThreshold
+     * 
+     * Represents the threshold heart rate that triggered a heart rate event.
+     * 
+     * The expected value is an HKQuantity object with a compatible unit (e.g. count/min).
      *                This key will be set on heart rate event samples of type HKCategoryTypeIdentifierHighHeartRateEvent and
      *                HKCategoryTypeIdentifierLowHeartRateEvent.
      */
@@ -1818,9 +1921,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyHeartRateEventThreshold();
 
     /**
-     * @constant      HKMetadataKeyAverageMETs
-     * @abstract      Represents the average METs, or Metabolic Equivalent of Task during a workout.
-     * @discussion    The expected value type is an HKQuantity expressed in a METs (kcal/(kg*hr)) unit. This key may be set on an
+     * [@constant]      HKMetadataKeyAverageMETs
+     * 
+     * Represents the average METs, or Metabolic Equivalent of Task during a workout.
+     * 
+     * The expected value type is an HKQuantity expressed in a METs (kcal/(kg*hr)) unit. This key may be set on an
      *                HKWorkout object to represent the average workout intensity represented as METs over the entire workout duration.
      */
     @Generated
@@ -1829,9 +1934,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyAverageMETs();
 
     /**
-     * @constant      HKMetadataKeyAudioExposureLevel
-     * @abstract      Represents the audio level associated with an audio event.
-     * @discussion    The expected value is an HKQuantity whose value is the audio level
+     * [@constant]      HKMetadataKeyAudioExposureLevel
+     * 
+     * Represents the audio level associated with an audio event.
+     * 
+     * The expected value is an HKQuantity whose value is the audio level
      *                associated with the event measured in dbASPL units.
      */
     @Generated
@@ -2265,7 +2372,7 @@ public final class HealthKit {
     public static native String HKClinicalTypeIdentifierCoverageRecord();
 
     /**
-     * @abstract      The "DSTU2" release: http://hl7.org/fhir/DSTU2/
+     * The "DSTU2" release: http://hl7.org/fhir/DSTU2/
      */
     @Generated
     @CVariable()
@@ -2273,7 +2380,7 @@ public final class HealthKit {
     public static native String HKFHIRReleaseDSTU2();
 
     /**
-     * @abstract      The "R4" release: http://hl7.org/fhir/R4/
+     * The "R4" release: http://hl7.org/fhir/R4/
      */
     @Generated
     @CVariable()
@@ -2281,7 +2388,7 @@ public final class HealthKit {
     public static native String HKFHIRReleaseR4();
 
     /**
-     * @abstract      An unknown release
+     * An unknown release
      */
     @Generated
     @CVariable()
@@ -2289,9 +2396,11 @@ public final class HealthKit {
     public static native String HKFHIRReleaseUnknown();
 
     /**
-     * @constant      HKMetadataKeyAppleECGAlgorithmVersion
-     * @abstract      Represents the ECG algorithm version that was used to generate a particular HKElectrocardiogram.
-     * @discussion    The expected value type is an an NSNumber containing a HKAppleECGAlgorithmVersion value.
+     * [@constant]      HKMetadataKeyAppleECGAlgorithmVersion
+     * 
+     * Represents the ECG algorithm version that was used to generate a particular HKElectrocardiogram.
+     * 
+     * The expected value type is an an NSNumber containing a HKAppleECGAlgorithmVersion value.
      */
     @Generated
     @CVariable()
@@ -2299,9 +2408,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyAppleECGAlgorithmVersion();
 
     /**
-     * @constant      HKMetadataKeyDevicePlacementSide
-     * @abstract      Represents the detected placement of the device during the bout of walking
-     * @discussion    The expected value type is an NSNumber containing a HKDevicePlacementSide value.  This key is expected to
+     * [@constant]      HKMetadataKeyDevicePlacementSide
+     * 
+     * Represents the detected placement of the device during the bout of walking
+     * 
+     * The expected value type is an NSNumber containing a HKDevicePlacementSide value.  This key is expected to
      *                be written for Walking Aymmetry Percentage.
      */
     @Generated
@@ -2310,9 +2421,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyDevicePlacementSide();
 
     /**
-     * @constant      HKMetadataKeyBarometricPressure
-     * @abstract      Represents the barometric pressure recorded at the time of a sample.
-     * @discussion    The expected value type is an HKQuantity representing a value in units of pressure (atmospheres, pascals, millimeters of Mercury).
+     * [@constant]      HKMetadataKeyBarometricPressure
+     * 
+     * Represents the barometric pressure recorded at the time of a sample.
+     * 
+     * The expected value type is an HKQuantity representing a value in units of pressure (atmospheres, pascals, millimeters of Mercury).
      */
     @Generated
     @CVariable()
@@ -2320,9 +2433,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyBarometricPressure();
 
     /**
-     * @constant      HKMetadataKeyAppleDeviceCalibrated
-     * @abstract      Represents the calibration status of the devices used to generate this sample.
-     * @discussion    The expected value is a boolean NSNumber indicating whether the sample value was estimated using a sufficient set of device calibration data. The calibration status of a device may vary per data type. This key is read-only.
+     * [@constant]      HKMetadataKeyAppleDeviceCalibrated
+     * 
+     * Represents the calibration status of the devices used to generate this sample.
+     * 
+     * The expected value is a boolean NSNumber indicating whether the sample value was estimated using a sufficient set of device calibration data. The calibration status of a device may vary per data type. This key is read-only.
      */
     @Generated
     @CVariable()
@@ -2338,9 +2453,11 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierHeadphoneAudioExposureEvent();
 
     /**
-     * @constant      HKMetadataKeyAudioExposureDuration
-     * @abstract      Represents the duration of time that is covered by audio samples.
-     * @discussion    The expected value type is an HKQuantity object compatible with a time unit.
+     * [@constant]      HKMetadataKeyAudioExposureDuration
+     * 
+     * Represents the duration of time that is covered by audio samples.
+     * 
+     * The expected value type is an HKQuantity object compatible with a time unit.
      *                This key may be set on headphone audio exposure event samples to indicate
      *                the duration of time that the user was actually exposed to audio through their headphones.
      */

@@ -151,9 +151,8 @@ public class CBAttribute extends NSObject {
     public static native long version_static();
 
     /**
-     * @property UUID
+     * [@property] UUID
      * 
-     * @discussion
      *      The Bluetooth UUID of the attribute.
      */
     @Generated

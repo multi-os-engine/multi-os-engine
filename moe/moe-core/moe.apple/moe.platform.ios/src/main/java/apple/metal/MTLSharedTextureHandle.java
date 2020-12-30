@@ -86,9 +86,11 @@ public class MTLSharedTextureHandle extends NSObject implements NSSecureCoding {
     public static native String description_static();
 
     /**
-     * @property device
-     * @abstract The device this texture was created against.
-     * @discussion This shared texture handle can only be used with this device.
+     * [@property] device
+     * 
+     * The device this texture was created against.
+     * 
+     * This shared texture handle can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -134,8 +136,9 @@ public class MTLSharedTextureHandle extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property label
-     * @abstract A copy of the original texture's label property, if any
+     * [@property] label
+     * 
+     * A copy of the original texture's label property, if any
      */
     @Generated
     @Selector("label")

@@ -21,7 +21,7 @@ public interface CPBarButtonProviding {
     /**
      * An array of bar buttons to be displayed on the leading side of the navigation bar.
      * 
-     * @note The navigation bar may display a maximum of 2 buttons in the leading space.
+     * [@note] The navigation bar may display a maximum of 2 buttons in the leading space.
      * Setting more than 2 buttons to this property will only display the first 2 buttons.
      */
     @Generated
@@ -35,7 +35,7 @@ public interface CPBarButtonProviding {
     /**
      * An array of bar buttons to be displayed on the leading side of the navigation bar.
      * 
-     * @note The navigation bar may display a maximum of 2 buttons in the leading space.
+     * [@note] The navigation bar may display a maximum of 2 buttons in the leading space.
      * Setting more than 2 buttons to this property will only display the first 2 buttons.
      */
     @Generated
@@ -45,7 +45,7 @@ public interface CPBarButtonProviding {
     /**
      * An array of bar buttons to be displayed on the trailing side of the navigation bar.
      * 
-     * @note The navigation bar may display a maximum of 2 buttons in the trailing space.
+     * [@note] The navigation bar may display a maximum of 2 buttons in the trailing space.
      * Setting more than 2 buttons to this property will only display the first 2 buttons.
      */
     @Generated
@@ -55,7 +55,7 @@ public interface CPBarButtonProviding {
     /**
      * An array of bar buttons to be displayed on the trailing side of the navigation bar.
      * 
-     * @note The navigation bar may display a maximum of 2 buttons in the trailing space.
+     * [@note] The navigation bar may display a maximum of 2 buttons in the trailing space.
      * Setting more than 2 buttons to this property will only display the first 2 buttons.
      */
     @Generated

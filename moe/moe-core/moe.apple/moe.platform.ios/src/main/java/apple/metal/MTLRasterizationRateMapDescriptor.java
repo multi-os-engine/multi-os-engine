@@ -29,9 +29,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface MTLRasterizationRateMapDescriptor
- * @abstract Describes a MTLRasterizationRateMap containing an arbitrary number of MTLRasterizationRateLayerDescriptor instances.
- * @discussion An MTLRasterizationRateMapDescriptor is compiled into an MTLRasterizationRateMap using MTLDevice.
+ * [@interface] MTLRasterizationRateMapDescriptor
+ * 
+ * Describes a MTLRasterizationRateMap containing an arbitrary number of MTLRasterizationRateLayerDescriptor instances.
+ * 
+ * An MTLRasterizationRateMapDescriptor is compiled into an MTLRasterizationRateMap using MTLDevice.
  */
 @Generated
 @Library("Metal")
@@ -128,28 +130,34 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
-     * @discussion The default value is nil.
+     * [@property] label
+     * 
+     * A string to help identify this object.
+     * 
+     * The default value is nil.
      */
     @Generated
     @Selector("label")
     public native String label();
 
     /**
-     * @method layerAtIndex:
-     * @return The MTLRasterizationRateLayerDescriptor instance for the given layerIndex, or nil if no instance hasn't been set for this index.
-     * @discussion Use setLayer:atIndex: to add or set the layer.
+     * layerAtIndex:
+     * 
+     * Use setLayer:atIndex: to add or set the layer.
      * Identical to "layers[layerIndex]".
+     * 
+     * @return The MTLRasterizationRateLayerDescriptor instance for the given layerIndex, or nil if no instance hasn't been set for this index.
      */
     @Generated
     @Selector("layerAtIndex:")
     public native MTLRasterizationRateLayerDescriptor layerAtIndex(@NUInt long layerIndex);
 
     /**
-     * @property layerCount
+     * [@property] layerCount
+     * 
+     * This property is modified by setting new layer instances using setLayer:atIndex: or assigning to layers[X]
+     * 
      * @return The number of subsequent non-nil layer instances stored in the descriptor, starting at index 0.
-     * @discussion This property is modified by setting new layer instances using setLayer:atIndex: or assigning to layers[X]
      */
     @Generated
     @Selector("layerCount")
@@ -157,10 +165,12 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
     public native long layerCount();
 
     /**
-     * @property layers
-     * @return A modifiable array of layers
-     * @discussion Accesses the layers currently stored in the descriptor.
+     * [@property] layers
+     * 
+     * Accesses the layers currently stored in the descriptor.
      * Syntactic sugar around "layerAtIndex:" and "setLayer:atIndex:"
+     * 
+     * @return A modifiable array of layers
      */
     @Generated
     @Selector("layers")
@@ -173,8 +183,10 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
     public static native Object new_objc();
 
     /**
-     * @method rasterizationRateMapDescriptorWithScreenSize:
-     * @abstract Convenience descriptor creation function without layers
+     * rasterizationRateMapDescriptorWithScreenSize:
+     * 
+     * Convenience descriptor creation function without layers
+     * 
      * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied. The depth component of MTLSize is ignored.
      * @return A descriptor containing no layers. Add or remove layers using setObject:atIndexedSubscript:.
      */
@@ -184,8 +196,10 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
             @ByValue MTLSize screenSize);
 
     /**
-     * @method rasterizationRateMapDescriptorWithScreenSize:layer:
-     * @abstract Convenience descriptor creation function for a single layer.
+     * rasterizationRateMapDescriptorWithScreenSize:layer:
+     * 
+     * Convenience descriptor creation function for a single layer.
+     * 
      * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied. The depth component of MTLSize is ignored.
      * @param layer The single layer describing how the rasterization rate varies in screen space
      * @return A descriptor containing a single layer. Add or remove layers using setObject:atIndexedSubscript:.
@@ -196,13 +210,16 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
             @ByValue MTLSize screenSize, MTLRasterizationRateLayerDescriptor layer);
 
     /**
-     * @method rasterizationRateMapDescriptorWithScreenSize:layerCount:layers:
-     * @abstract Convenience descriptor creation function for an arbitrary amount of layers stored in a C-array.
+     * rasterizationRateMapDescriptorWithScreenSize:layerCount:layers:
+     * 
+     * Convenience descriptor creation function for an arbitrary amount of layers stored in a C-array.
+     * 
+     * The function copies the array of pointers internally, the caller need not keep the array alive after creating the descriptor.
+     * 
      * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied. The depth component of MTLSize is ignored.
      * @param layerCount The number of layers in the descriptor.
      * @param layers An array of pointers to layer descriptors. The array must contain layerCount non-null pointers to MTLRasterizationRateLayerDescriptor instances.
      * @return A descriptor containing all the specified layers. Add or remove layers using setObject:atIndexedSubscript:.
-     * @discussion The function copies the array of pointers internally, the caller need not keep the array alive after creating the descriptor.
      */
     @Generated
     @Selector("rasterizationRateMapDescriptorWithScreenSize:layerCount:layers:")
@@ -219,10 +236,12 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property screenSize
-     * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
-     * @discussion The region always has its origin at [0, 0].
+     * [@property] screenSize
+     * 
+     * The region always has its origin at [0, 0].
      * The depth component of MTLSize is ignored.
+     * 
+     * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      */
     @Generated
     @Selector("screenSize")
@@ -230,18 +249,22 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
     public native MTLSize screenSize();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
-     * @discussion The default value is nil.
+     * [@property] label
+     * 
+     * A string to help identify this object.
+     * 
+     * The default value is nil.
      */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
     /**
-     * @method setLayer:atIndex:
-     * @abstract Sets the MTLRasterizationRateLayerDescriptor instance for the given layerIndex.
-     * @discussion The previous instance at the index, if any, will be overwritten.
+     * setLayer:atIndex:
+     * 
+     * Sets the MTLRasterizationRateLayerDescriptor instance for the given layerIndex.
+     * 
+     * The previous instance at the index, if any, will be overwritten.
      * Set nil to an index to remove the layer at that index from the descriptor.
      * Identical to "layers[layerIndex] = layer".
      */
@@ -250,10 +273,12 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
     public native void setLayerAtIndex(MTLRasterizationRateLayerDescriptor layer, @NUInt long layerIndex);
 
     /**
-     * @property screenSize
-     * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
-     * @discussion The region always has its origin at [0, 0].
+     * [@property] screenSize
+     * 
+     * The region always has its origin at [0, 0].
      * The depth component of MTLSize is ignored.
+     * 
+     * @return The dimensions, in screen space pixels, of the region where variable rasterization is applied.
      */
     @Generated
     @Selector("setScreenSize:")

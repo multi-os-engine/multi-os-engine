@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @brief This enumeration describes the possible error constants that can be
+ * This enumeration describes the possible error constants that can be
  *        returned from the the HomeKit APIs.
  */
 @Generated

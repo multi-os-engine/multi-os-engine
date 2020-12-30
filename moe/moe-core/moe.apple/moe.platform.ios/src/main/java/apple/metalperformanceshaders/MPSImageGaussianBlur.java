@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageGaussianBlur
- * @discussion The MPSImageGaussianBlur convolves an image with gaussian of given sigma in both x and y direction.
+ * MPSImageGaussianBlur
+ * 
+ * The MPSImageGaussianBlur convolves an image with gaussian of given sigma in both x and y direction.
  * 
  *                 The MPSImageGaussianBlur utilizes a very fast algorith that typically runs at approximately
  *                 1/2 of copy speeds. Notably, it is faster than either the tent or box blur except perhaps
@@ -175,7 +176,8 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
     public native MPSImageGaussianBlur initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a gaussian blur filter for a particular sigma and device
+     * Initialize a gaussian blur filter for a particular sigma and device
+     * 
      * @param      device  The device the filter will run on
      * @param      sigma   The standard deviation of gaussian blur filter.
      *                     Gaussian weight, centered at 0, at integer grid i is given as
@@ -192,8 +194,9 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
             float sigma);
 
     /**
-     * @property sigma
-     * @abstract Read-only sigma value with which filter was created
+     * [@property] sigma
+     * 
+     * Read-only sigma value with which filter was created
      */
     @Generated
     @Selector("sigma")
@@ -204,12 +207,14 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
     public native MPSImageGaussianBlur initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.

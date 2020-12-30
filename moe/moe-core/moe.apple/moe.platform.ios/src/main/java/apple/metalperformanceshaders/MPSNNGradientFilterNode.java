@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSNNGradientFilterNode
- * @discussion For each MPSNNFilterNode, there is a corresponding MPSNNGradientFilterNode
+ * MPSNNGradientFilterNode
+ * 
+ * For each MPSNNFilterNode, there is a corresponding MPSNNGradientFilterNode
  *             used for training that back propagates image gradients to refine the
  *             various parameters in each node. Generally, it takes as input a gradient
  *             corresponding to the result image from the MPSNNFilterNode and returns

@@ -44,9 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Triggers based on events.
+ * Triggers based on events.
  * 
- * @discussion This class represents a trigger that is based on events.
+ * This class represents a trigger that is based on events.
  */
 @Generated
 @Library("HomeKit")
@@ -139,7 +139,7 @@ public class HMEventTrigger extends HMTrigger {
     public static native Object new_objc();
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred at or after the time specified.
+     * Creates a predicate that will evaluate whether the event occurred at or after the time specified.
      * 
      * @param dateComponents Date components representing the time to compare against when the event occurs.
      * 
@@ -151,7 +151,7 @@ public class HMEventTrigger extends HMTrigger {
             NSDateComponents dateComponents);
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred after a significant event.
+     * Creates a predicate that will evaluate whether the event occurred after a significant event.
      * 
      * @param significantEvent The significant event to compare against.
      *                         The valid values are: HMSignificantEventSunrise and HMSignificantEventSunset.
@@ -168,7 +168,7 @@ public class HMEventTrigger extends HMTrigger {
             String significantEvent, NSDateComponents offset);
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred before the time specified.
+     * Creates a predicate that will evaluate whether the event occurred before the time specified.
      * 
      * @param dateComponents Date components representing the time to compare against when the event occurs.
      * 
@@ -180,7 +180,7 @@ public class HMEventTrigger extends HMTrigger {
             NSDateComponents dateComponents);
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred before a significant event.
+     * Creates a predicate that will evaluate whether the event occurred before a significant event.
      * 
      * @param significantEvent The significant event to compare against.
      *                         The valid values are: HMSignificantEventSunrise and HMSignificantEventSunset.
@@ -197,7 +197,7 @@ public class HMEventTrigger extends HMTrigger {
             String significantEvent, NSDateComponents offset);
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred at the time specified.
+     * Creates a predicate that will evaluate whether the event occurred at the time specified.
      * 
      * @param dateComponents Date components representing the time to compare against when the event occurs.
      * 
@@ -209,7 +209,7 @@ public class HMEventTrigger extends HMTrigger {
             NSDateComponents dateComponents);
 
     /**
-     * @brief Creates a predicate that will evaluate whether a characteristic value is related to the specified value.
+     * Creates a predicate that will evaluate whether a characteristic value is related to the specified value.
      * 
      * @param characteristic The characteristic that is evaluated as part of the predicate.
      * 
@@ -248,7 +248,7 @@ public class HMEventTrigger extends HMTrigger {
     public static native long version_static();
 
     /**
-     * @brief Adds a new event to the event trigger.
+     * Adds a new event to the event trigger.
      * 
      * @param event Event to add to the event trigger.
      * 
@@ -262,7 +262,7 @@ public class HMEventTrigger extends HMTrigger {
             @ObjCBlock(name = "call_addEventCompletionHandler") Block_addEventCompletionHandler completion);
 
     /**
-     * @brief The events associated with the trigger.
+     * The events associated with the trigger.
      */
     @Generated
     @Selector("events")
@@ -273,7 +273,7 @@ public class HMEventTrigger extends HMTrigger {
     public native HMEventTrigger init();
 
     /**
-     * @brief Initializes a new event trigger object.
+     * Initializes a new event trigger object.
      * 
      * @param name Name of the event trigger.
      * 
@@ -291,14 +291,14 @@ public class HMEventTrigger extends HMTrigger {
             NSPredicate predicate);
 
     /**
-     * @brief The predicate to evaluate before executing the action sets associated with the trigger.
+     * The predicate to evaluate before executing the action sets associated with the trigger.
      */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
     /**
-     * @brief Removes the specified event from the event trigger.
+     * Removes the specified event from the event trigger.
      * 
      * @param event Event to remove from the event trigger.
      * 
@@ -312,7 +312,7 @@ public class HMEventTrigger extends HMTrigger {
             @ObjCBlock(name = "call_removeEventCompletionHandler") Block_removeEventCompletionHandler completion);
 
     /**
-     * @brief This method replaces the predicate used to evaluate execution of the action sets associated with the trigger.
+     * This method replaces the predicate used to evaluate execution of the action sets associated with the trigger.
      * 
      * @param predicate The new predicate for the event trigger.
      * 
@@ -347,7 +347,7 @@ public class HMEventTrigger extends HMTrigger {
     }
 
     /**
-     * @brief The events that correspond to executing the restore of the scene before the trigger was executed.
+     * The events that correspond to executing the restore of the scene before the trigger was executed.
      *        E.g. Execute the scene for 10 mins and restore original state is achieved by specifying a corresponding
      *        HMDurationEvent in the list of endEvents.
      */
@@ -356,14 +356,14 @@ public class HMEventTrigger extends HMTrigger {
     public native NSArray<? extends HMEvent> endEvents();
 
     /**
-     * @brief Specifies whether this trigger is executed only once after which the trigger is disabled.
+     * Specifies whether this trigger is executed only once after which the trigger is disabled.
      */
     @Generated
     @Selector("executeOnce")
     public native boolean executeOnce();
 
     /**
-     * @brief Initializes a new event trigger object.
+     * Initializes a new event trigger object.
      * 
      * @param name Name of the event trigger.
      * 
@@ -387,7 +387,7 @@ public class HMEventTrigger extends HMTrigger {
             NSArray<? extends NSDateComponents> recurrences, NSPredicate predicate);
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred after a significant event.
+     * Creates a predicate that will evaluate whether the event occurred after a significant event.
      * 
      * @param significantEvent The significant event to compare against.
      * 
@@ -399,7 +399,7 @@ public class HMEventTrigger extends HMTrigger {
             HMSignificantTimeEvent significantEvent);
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred before a significant event.
+     * Creates a predicate that will evaluate whether the event occurred before a significant event.
      * 
      * @param significantEvent The significant event to compare against.
      * 
@@ -411,7 +411,7 @@ public class HMEventTrigger extends HMTrigger {
             HMSignificantTimeEvent significantEvent);
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred between two times.
+     * Creates a predicate that will evaluate whether the event occurred between two times.
      * 
      * @param firstDateComponents The first date component.
      * 
@@ -425,7 +425,7 @@ public class HMEventTrigger extends HMTrigger {
             NSDateComponents firstDateComponents, NSDateComponents secondDateWithComponents);
 
     /**
-     * @brief Creates a predicate that will evaluate whether the event occurred between two significant events.
+     * Creates a predicate that will evaluate whether the event occurred between two significant events.
      * 
      * @param firstSignificantEvent The first significant event.
      * 
@@ -439,7 +439,7 @@ public class HMEventTrigger extends HMTrigger {
             HMSignificantTimeEvent firstSignificantEvent, HMSignificantTimeEvent secondSignificantEvent);
 
     /**
-     * @brief Creates a predicate that will evaluate based on the presence event.
+     * Creates a predicate that will evaluate based on the presence event.
      * 
      * @param presenceEvent The presenceEvent that is evaluated as part of the predicate.
      * 
@@ -450,14 +450,14 @@ public class HMEventTrigger extends HMTrigger {
     public static native NSPredicate predicateForEvaluatingTriggerWithPresence(HMPresenceEvent presenceEvent);
 
     /**
-     * @brief recurrences Specifies the recurrences for when the trigger is evaluated. This only supports days of the week.
+     * recurrences Specifies the recurrences for when the trigger is evaluated. This only supports days of the week.
      */
     @Generated
     @Selector("recurrences")
     public native NSArray<? extends NSDateComponents> recurrences();
 
     /**
-     * @brief Specifies the current activation state of the trigger.
+     * Specifies the current activation state of the trigger.
      */
     @Generated
     @Selector("triggerActivationState")
@@ -465,7 +465,7 @@ public class HMEventTrigger extends HMTrigger {
     public native long triggerActivationState();
 
     /**
-     * @brief Updates the set of events in the event trigger.
+     * Updates the set of events in the event trigger.
      * 
      * @param endEvents Events to update in the event trigger
      * 
@@ -486,7 +486,7 @@ public class HMEventTrigger extends HMTrigger {
     }
 
     /**
-     * @brief Updates the set of events in the event trigger.
+     * Updates the set of events in the event trigger.
      * 
      * @param events Events to update in the event trigger
      * 
@@ -507,7 +507,7 @@ public class HMEventTrigger extends HMTrigger {
     }
 
     /**
-     * @brief This method is used to update whether the event trigger repeats or not.
+     * This method is used to update whether the event trigger repeats or not.
      * 
      * @param executeOnce Specifies whether the event trigger is repeated or not.
      * 
@@ -528,7 +528,7 @@ public class HMEventTrigger extends HMTrigger {
     }
 
     /**
-     * @brief This method replaces the recurrences which secifies the days of the week when the trigger is to be evaluated.
+     * This method replaces the recurrences which secifies the days of the week when the trigger is to be evaluated.
      * 
      * @param recurrences The new recurrences for the event trigger.
      * 

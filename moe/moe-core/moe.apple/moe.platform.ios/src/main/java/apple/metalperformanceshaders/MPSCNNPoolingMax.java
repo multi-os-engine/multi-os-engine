@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNPoolingMax
- * @dependency This depends on Metal.framework
- * @discussion Specifies the max pooling filter.  For each pixel, returns the maximum value of pixels
+ * MPSCNNPoolingMax
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the max pooling filter.  For each pixel, returns the maximum value of pixels
  *             in the kernelWidth x kernelHeight filter region.
  */
 @Generated
@@ -173,7 +174,8 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @abstract   Initialize a MPSCNNPoolingMax pooling filter
+     * Initialize a MPSCNNPoolingMax pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
@@ -192,8 +194,10 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
     public native MPSCNNPoolingMax initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
      * @param      device      The MTLDevice on which to make the MPSCNNPooling
      * @return     A new MPSCNNPooling object, or nil if failure.

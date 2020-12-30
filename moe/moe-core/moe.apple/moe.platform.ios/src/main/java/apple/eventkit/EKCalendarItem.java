@@ -158,8 +158,9 @@ public class EKCalendarItem extends EKObject {
     public native NSURL URL();
 
     /**
-     * @property   UUID
-     * @discussion This is now deprecated; use calendarItemIdentifier instead.
+     * [@property]   UUID
+     * 
+     * This is now deprecated; use calendarItemIdentifier instead.
      */
     @Generated
     @Deprecated
@@ -167,9 +168,11 @@ public class EKCalendarItem extends EKObject {
     public native String UUID();
 
     /**
-     * @method     addAlarm:
-     * @abstract   Adds an alarm to this item.
-     * @discussion This method add an alarm to an item. Be warned that some calendars can only
+     * addAlarm:
+     * 
+     * Adds an alarm to this item.
+     * 
+     * This method add an alarm to an item. Be warned that some calendars can only
      *             allow a certain maximum number of alarms. When this item is saved, it will
      *             truncate any extra alarms from the array.
      */
@@ -196,18 +199,22 @@ public class EKCalendarItem extends EKObject {
     public native NSArray<? extends EKParticipant> attendees();
 
     /**
-     * @property calendar
-     * @abstract The calendar that this calendar item belongs to.
-     * @discussion This will be nil for new calendar items until you set it.
+     * [@property] calendar
+     * 
+     * The calendar that this calendar item belongs to.
+     * 
+     * This will be nil for new calendar items until you set it.
      */
     @Generated
     @Selector("calendar")
     public native EKCalendar calendar();
 
     /**
-     * @property   calendarItemExternalIdentifier
-     * @abstract   A server-provided identifier for this calendar item
-     * @discussion This identifier, provided by the server, allows you to reference the same event or reminder across
+     * [@property]   calendarItemExternalIdentifier
+     * 
+     * A server-provided identifier for this calendar item
+     * 
+     * This identifier, provided by the server, allows you to reference the same event or reminder across
      *             multiple devices. For calendars stored locally on the device, including the birthday calendar,
      *             it simply passes through to calendarItemIdentifier.
      * 
@@ -234,9 +241,11 @@ public class EKCalendarItem extends EKObject {
     public native String calendarItemExternalIdentifier();
 
     /**
-     * @property   calendarItemIdentifier
-     * @abstract   A unique identifier for a calendar item.
-     * @discussion Item identifiers are not sync-proof in that a full sync will lose
+     * [@property]   calendarItemIdentifier
+     * 
+     * A unique identifier for a calendar item.
+     * 
+     * Item identifiers are not sync-proof in that a full sync will lose
      *             this identifier, so you should always have a back up plan for dealing
      *             with a reminder that is no longer fetchable by this property, e.g. by title, etc.
      *             Use [EKEventStore calendarItemWithIdentifier:] to look up the item by this value.
@@ -289,16 +298,18 @@ public class EKCalendarItem extends EKObject {
     public native String notes();
 
     /**
-     * @property   recurrenceRules
-     * @abstract   An array of EKRecurrenceRules, or nil if none.
+     * [@property]   recurrenceRules
+     * 
+     * An array of EKRecurrenceRules, or nil if none.
      */
     @Generated
     @Selector("recurrenceRules")
     public native NSArray<? extends EKRecurrenceRule> recurrenceRules();
 
     /**
-     * @method     removeAlarm:
-     * @abstract   Removes an alarm from this item.
+     * removeAlarm:
+     * 
+     * Removes an alarm from this item.
      */
     @Generated
     @Selector("removeAlarm:")
@@ -316,9 +327,11 @@ public class EKCalendarItem extends EKObject {
     public native void setAlarms(NSArray<? extends EKAlarm> value);
 
     /**
-     * @property calendar
-     * @abstract The calendar that this calendar item belongs to.
-     * @discussion This will be nil for new calendar items until you set it.
+     * [@property] calendar
+     * 
+     * The calendar that this calendar item belongs to.
+     * 
+     * This will be nil for new calendar items until you set it.
      */
     @Generated
     @Selector("setCalendar:")
@@ -333,8 +346,9 @@ public class EKCalendarItem extends EKObject {
     public native void setNotes(String value);
 
     /**
-     * @property   recurrenceRules
-     * @abstract   An array of EKRecurrenceRules, or nil if none.
+     * [@property]   recurrenceRules
+     * 
+     * An array of EKRecurrenceRules, or nil if none.
      */
     @Generated
     @Selector("setRecurrenceRules:")
@@ -345,9 +359,11 @@ public class EKCalendarItem extends EKObject {
     public native void setTimeZone(NSTimeZone value);
 
     /**
-     * @property title
-     * @abstract The title of this calendar item.
-     * @discussion This will be nill for new calendar items until you set it.
+     * [@property] title
+     * 
+     * The title of this calendar item.
+     * 
+     * This will be nill for new calendar items until you set it.
      */
     @Generated
     @Selector("setTitle:")
@@ -362,9 +378,11 @@ public class EKCalendarItem extends EKObject {
     public native NSTimeZone timeZone();
 
     /**
-     * @property title
-     * @abstract The title of this calendar item.
-     * @discussion This will be nill for new calendar items until you set it.
+     * [@property] title
+     * 
+     * The title of this calendar item.
+     * 
+     * This will be nill for new calendar items until you set it.
      */
     @Generated
     @Selector("title")

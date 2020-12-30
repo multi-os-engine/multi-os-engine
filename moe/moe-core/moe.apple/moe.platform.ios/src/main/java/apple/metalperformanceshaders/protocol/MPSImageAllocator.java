@@ -15,8 +15,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract       A class  that allocates new MPSImage or MPSTemporaryImage
- * @discussion     Sometimes it is prohibitively costly for MPS to figure out how
+ * A class  that allocates new MPSImage or MPSTemporaryImage
+ * 
+ * Sometimes it is prohibitively costly for MPS to figure out how
  *                 big an image should be in advance. In addition, you may want to
  *                 have some say over whether the image is a temporary image or not.
  *                 In such circumstances, the MPSImageAllocator is used to
@@ -28,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *                 your own allocator instead.
  * 
  *                 Example:
- *                 @code
+ *                 [@code]
  *                     // Note: MPSImageDefaultAllocator is already provided
  *                     //       by the framework under that name.  It is provided here
  *                     //       as sample code for writing your own variant.
@@ -65,7 +66,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  *                         return self;
  *                     }
- *                 @endcode
+ *                 [@endcode]
  * 
  *             Please see [MPSImage defaultAllocator] and [MPSTemporaryImage defaultAllocator]
  *             for implentations of the protocol already provided by MPS.
@@ -88,8 +89,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MPSImageAllocator")
 public interface MPSImageAllocator extends NSSecureCoding {
     /**
-     * @abstract   Create a new MPSImage
-     * @discussion See class description for sample implementation
+     * Create a new MPSImage
+     * 
+     * See class description for sample implementation
+     * 
      * @param          cmdBuf      The MTLCommandBuffer on which the image will be initialized.
      *                             cmdBuf.device encodes the MTLDevice.
      * @param          descriptor  A MPSImageDescriptor containing the image format to use.

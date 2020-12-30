@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @abstract Points at which a fence may be waited on or signaled.
- * @constant MTLRenderStageVertex   All vertex work prior to rasterization has completed.
- * @constant MTLRenderStageFragment All rendering work has completed.
+ * Points at which a fence may be waited on or signaled.
+ * [@constant] MTLRenderStageVertex   All vertex work prior to rasterization has completed.
+ * [@constant] MTLRenderStageFragment All rendering work has completed.
  */
 @Generated
 public final class MTLRenderStages {

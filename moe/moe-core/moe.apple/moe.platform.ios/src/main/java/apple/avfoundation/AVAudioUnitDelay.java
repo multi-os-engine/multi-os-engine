@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitDelay
- * @abstract an AVAudioUnitEffect that implements a delay effect
- * @discussion
+ * AVAudioUnitDelay
+ * 
+ * an AVAudioUnitEffect that implements a delay effect
+ * 
  *     A delay unit delays the input signal by the specified time interval
  *     and then blends it with the input signal. The amount of high frequency
  *     roll-off can also be controlled in order to simulate the effect of
@@ -169,9 +170,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public static native long version_static();
 
     /**
-     * @property delayTime
+     * [@property] delayTime
      * Time taken by the delayed input signal to reach the output
-     * @abstract
+     * 
      * Range:      0 -> 2
      * Default:    1
      * Unit:       Seconds
@@ -181,8 +182,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public native double delayTime();
 
     /**
-     * @property feedback
-     * @abstract
+     * [@property] feedback
+     * 
      * Amount of the output signal fed back into the delay line
      * Range:      -100 -> 100
      * Default:    50
@@ -202,8 +203,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
             @ByValue AudioComponentDescription audioComponentDescription);
 
     /**
-     * @property lowPassCutoff
-     * @abstract
+     * [@property] lowPassCutoff
+     * 
      * Cutoff frequency above which high frequency content is rolled off
      * Range:      10 -> (samplerate/2)
      * Default:    15000
@@ -214,9 +215,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public native float lowPassCutoff();
 
     /**
-     * @property delayTime
+     * [@property] delayTime
      * Time taken by the delayed input signal to reach the output
-     * @abstract
+     * 
      * Range:      0 -> 2
      * Default:    1
      * Unit:       Seconds
@@ -226,8 +227,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public native void setDelayTime(double value);
 
     /**
-     * @property feedback
-     * @abstract
+     * [@property] feedback
+     * 
      * Amount of the output signal fed back into the delay line
      * Range:      -100 -> 100
      * Default:    50
@@ -238,8 +239,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public native void setFeedback(float value);
 
     /**
-     * @property lowPassCutoff
-     * @abstract
+     * [@property] lowPassCutoff
+     * 
      * Cutoff frequency above which high frequency content is rolled off
      * Range:      10 -> (samplerate/2)
      * Default:    15000
@@ -250,8 +251,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public native void setLowPassCutoff(float value);
 
     /**
-     * @property wetDryMix
-     * @abstract
+     * [@property] wetDryMix
+     * 
      * Blend of the wet and dry signals
      * Range:      0 (all dry) -> 100 (all wet)
      * Default:    100
@@ -262,8 +263,8 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     public native void setWetDryMix(float value);
 
     /**
-     * @property wetDryMix
-     * @abstract
+     * [@property] wetDryMix
+     * 
      * Blend of the wet and dry signals
      * Range:      0 (all dry) -> 100 (all wet)
      * Default:    100

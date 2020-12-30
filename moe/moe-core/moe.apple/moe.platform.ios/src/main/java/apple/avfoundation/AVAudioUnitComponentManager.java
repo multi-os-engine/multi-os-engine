@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class	AVAudioUnitComponentManager
- * @brief	A singleton object that provides an easy way to find audio components that are
+ * AVAudioUnitComponentManager
+ * 
+ * A singleton object that provides an easy way to find audio components that are
  * 		registered with the system.
  * 
  * AVAudioUnitComponentManager provides methods to search and query various information about the
@@ -183,9 +184,10 @@ public class AVAudioUnitComponentManager extends NSObject {
     public static native long version_static();
 
     /**
-     * @method componentsMatchingDescription:
-     * @abstract	returns an array of AVAudioUnitComponent objects that match the description.
-     * @discussion
+     * componentsMatchingDescription:
+     * 
+     * returns an array of AVAudioUnitComponent objects that match the description.
+     * 
      * 		This method provides a mechanism to search for AudioComponents using AudioComponentDescription
      * 	structure. The type, subtype and manufacturer fields are used to search for audio units. A 
      * 		value of 0 for any of these fields is a wildcard and returns the first match found.
@@ -196,9 +198,10 @@ public class AVAudioUnitComponentManager extends NSObject {
             @ByValue AudioComponentDescription desc);
 
     /**
-     * @method componentsMatchingPredicate:
-     * @abstract	returns an array of AVAudioUnitComponent objects that match the search predicate.
-     * @discussion
+     * componentsMatchingPredicate:
+     * 
+     * returns an array of AVAudioUnitComponent objects that match the search predicate.
+     * 
      * 		AudioComponent's information or tags can be used to build a search criteria. 
      * 		For example, "typeName CONTAINS 'Effect'" or tags IN {'Sampler', 'MIDI'}"
      */
@@ -207,9 +210,10 @@ public class AVAudioUnitComponentManager extends NSObject {
     public native NSArray<? extends AVAudioUnitComponent> componentsMatchingPredicate(NSPredicate predicate);
 
     /**
-     * @method componentsPassingTest:
-     * @abstract	returns an array of AVAudioUnitComponent objects that pass the user provided block method.
-     * @discussion
+     * componentsPassingTest:
+     * 
+     * returns an array of AVAudioUnitComponent objects that pass the user provided block method.
+     * 
      * 	For each AudioComponent found by the manager, the block method will be called. If the return
      * 		value is YES then the AudioComponent is added to the resulting array else it will excluded. 
      * 		This gives more control to the block provider to filter out the components returned.
@@ -224,7 +228,6 @@ public class AVAudioUnitComponentManager extends NSObject {
     public native AVAudioUnitComponentManager init();
 
     /**
-     * @discussion
      * returns the localized standard system tags defined by the audio unit(s).
      */
     @Generated
@@ -232,7 +235,6 @@ public class AVAudioUnitComponentManager extends NSObject {
     public native NSArray<String> standardLocalizedTagNames();
 
     /**
-     * @discussion
      * 	returns all tags associated with the current user as well as all system tags defined by 
      * the audio unit(s).
      */

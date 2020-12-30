@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class is used to represent the presence of users in a home.
+ * This class is used to represent the presence of users in a home.
  */
 @Generated
 @Library("HomeKit")
@@ -102,7 +102,7 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
     public native HMPresenceEvent init();
 
     /**
-     * @brief Creates a presence based event.
+     * Creates a presence based event.
      * 
      * @param presenceEventType The event type desired for the event.
      * 
@@ -153,7 +153,7 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
     public static native Object new_objc();
 
     /**
-     * @brief presenceEventType The event type that will trigger the event.
+     * presenceEventType The event type that will trigger the event.
      */
     @Generated
     @Selector("presenceEventType")
@@ -161,7 +161,7 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
     public native long presenceEventType();
 
     /**
-     * @brief presenceUserType The user type whose presence will trigger the event.
+     * presenceUserType The user type whose presence will trigger the event.
      */
     @Generated
     @Selector("presenceUserType")

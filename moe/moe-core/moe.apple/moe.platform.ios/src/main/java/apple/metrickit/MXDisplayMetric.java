@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXDisplayMetric
- * @abstract      An MXMetric subclass that encapsulates display metrics.
+ * MXDisplayMetric
+ * 
+ * An MXMetric subclass that encapsulates display metrics.
  */
 @Generated
 @Library("MetricKit")
@@ -62,11 +63,15 @@ public class MXDisplayMetric extends MXMetric {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property      averagePixelLuminance
-     * @abstract      Average Pixel Luminance for the application.
-     * @discussion    APL data ranges from 0-100, in increments of 1.
-     * @discussion    This value is null when the device does not support APL.
-     * @discussion    Dimensioned as MXUnitAveragePixelLuminance.
+     * [@property]      averagePixelLuminance
+     * 
+     * Average Pixel Luminance for the application.
+     * 
+     * APL data ranges from 0-100, in increments of 1.
+     * 
+     * This value is null when the device does not support APL.
+     * 
+     * Dimensioned as MXUnitAveragePixelLuminance.
      */
     @Generated
     @Selector("averagePixelLuminance")

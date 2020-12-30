@@ -4,12 +4,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum		AVAssetSegmentType
- * @abstract	Indicates the type of segment.
+ * [@enum]		AVAssetSegmentType
  * 
- * @constant	AVAssetSegmentTypeInitialization
+ * Indicates the type of segment.
+ * 
+ * [@constant]	AVAssetSegmentTypeInitialization
  * 			Indicates that the segment is a initialization segment.
- * @constant	AVAssetSegmentTypeSeparable
+ * [@constant]	AVAssetSegmentTypeSeparable
  * 			Indicates that the segment is a separable segment.
  */
 @Generated

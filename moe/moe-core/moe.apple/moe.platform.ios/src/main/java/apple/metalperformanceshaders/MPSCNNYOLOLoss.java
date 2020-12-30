@@ -91,8 +91,9 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSCNNLoss filter and return a gradient.
-     * @discussion This -encode call is similar to the encodeToCommandBuffer:sourceImage:labels:destinationImage: above,
+     * Encode a MPSCNNLoss filter and return a gradient.
+     * 
+     * This -encode call is similar to the encodeToCommandBuffer:sourceImage:labels:destinationImage: above,
      *             except that it creates and returns the MPSImage with the loss gradient result.
      * 
      * @param      commandBuffer       The MTLCommandBuffer on which to encode.
@@ -107,8 +108,9 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
             MPSCNNLossLabels labels);
 
     /**
-     * @abstract   Encode a MPSCNNYOLOLoss filter and return a gradient in the destinationImage.
-     * @discussion This filter consumes the output of a previous layer and the MPSCNNLossLabels object containing
+     * Encode a MPSCNNYOLOLoss filter and return a gradient in the destinationImage.
+     * 
+     * This filter consumes the output of a previous layer and the MPSCNNLossLabels object containing
      *             the target data (labels) and optionally, weights for the labels.
      *             The destinationImage contains the computed gradient for the loss layer.
      *             It serves as a source gradient input image to the first gradient layer (in the backward direction).
@@ -139,7 +141,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     public native MPSCNNYOLOLoss initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract <NSSecureCoding> support
+     * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -150,7 +152,8 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     public native MPSCNNYOLOLoss initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize the loss filter with a loss descriptor.
+     * Initialize the loss filter with a loss descriptor.
+     * 
      * @param      device                   The device the filter will run on.
      * @param      lossDescriptor           The loss descriptor.
      * @return     A valid MPSCNNLoss object or nil, if failure.
@@ -182,32 +185,36 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   lossClasses
-     * @abstract   loss filter for prediction of bounding box predicted class of the detected object
+     * [@property]   lossClasses
+     * 
+     * loss filter for prediction of bounding box predicted class of the detected object
      */
     @Generated
     @Selector("lossClasses")
     public native MPSCNNLoss lossClasses();
 
     /**
-     * @property   lossConfidence
-     * @abstract   loss filter for prediction of bounding box probability of presence of object
+     * [@property]   lossConfidence
+     * 
+     * loss filter for prediction of bounding box probability of presence of object
      */
     @Generated
     @Selector("lossConfidence")
     public native MPSCNNLoss lossConfidence();
 
     /**
-     * @property   lossWH
-     * @abstract   loss filter for prediction of bounding box size
+     * [@property]   lossWH
+     * 
+     * loss filter for prediction of bounding box size
      */
     @Generated
     @Selector("lossWH")
     public native MPSCNNLoss lossWH();
 
     /**
-     * @property   lossXY
-     * @abstract   loss filter for prediction of bounding box position
+     * [@property]   lossXY
+     * 
+     * loss filter for prediction of bounding box position
      */
     @Generated
     @Selector("lossXY")

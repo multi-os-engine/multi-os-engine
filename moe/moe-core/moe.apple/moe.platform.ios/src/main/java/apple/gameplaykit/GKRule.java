@@ -218,6 +218,7 @@ public class GKRule extends NSObject {
      * be evaluated before another rule in the agenda that has a lower salience.
      * 
      * Defaults to 0.
+     * 
      * @see GKRuleSystem.agenda
      */
     @Generated
@@ -230,6 +231,7 @@ public class GKRule extends NSObject {
      * be evaluated before another rule in the agenda that has a lower salience.
      * 
      * Defaults to 0.
+     * 
      * @see GKRuleSystem.agenda
      */
     @Generated

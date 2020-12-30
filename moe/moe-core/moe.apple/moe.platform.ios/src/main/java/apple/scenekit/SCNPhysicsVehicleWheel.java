@@ -47,8 +47,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsVehicleWheel
- * @abstract SCNPhysicsVehicleWheel represents a wheel that can be attached to a SCNPhysicsVehicle instance.
+ * SCNPhysicsVehicleWheel
+ * 
+ * SCNPhysicsVehicleWheel represents a wheel that can be attached to a SCNPhysicsVehicle instance.
  */
 @Generated
 @Library("SceneKit")

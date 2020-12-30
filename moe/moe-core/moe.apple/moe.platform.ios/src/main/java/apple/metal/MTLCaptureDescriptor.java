@@ -68,7 +68,7 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * @brief The object that is captured.
+     * The object that is captured.
      * 
      * Must be one of the following:
      * 
@@ -166,7 +166,7 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief The object that is captured.
+     * The object that is captured.
      * 
      * Must be one of the following:
      * 

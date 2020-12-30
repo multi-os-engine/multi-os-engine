@@ -26,9 +26,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKHeartbeatSeriesSample
- * @abstract      An HKHeartbeatSeriesSample represents a series of heartbeats.
- * @discussion    To retrieve the underlying series data for an HKHeartbeatSeriesSample, use HKHeartbeatSeriesQuery
+ * HKHeartbeatSeriesSample
+ * 
+ * An HKHeartbeatSeriesSample represents a series of heartbeats.
+ * 
+ * To retrieve the underlying series data for an HKHeartbeatSeriesSample, use HKHeartbeatSeriesQuery
  */
 @Generated
 @Library("HealthKit")

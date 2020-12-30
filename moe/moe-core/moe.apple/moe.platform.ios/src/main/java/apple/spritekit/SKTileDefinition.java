@@ -158,6 +158,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create a tile definition with an SKTexture, and set its size to the SKTexture's width/height.
+     * 
      * @param texture the texture to reference for size and content
      */
     @Generated
@@ -166,6 +167,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create a tile definition with an SKTexture and the specified size.
+     * 
      * @param texture the texture to reference for content
      * @param normalTexture the normal texture to use for generating normals for lighting
      * @param size the size of the tile in points
@@ -177,6 +179,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create a tile definition with an SKTexture and the specified size.
+     * 
      * @param texture the texture to reference for content
      * @param size the size of the tile in points
      */
@@ -186,6 +189,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
+     * 
      * @param textures the textures to reference for animated content
      * @param normalTextures the normal textures to use for generating normals for lighting
      * @param size the size of the tile in points
@@ -199,6 +203,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
+     * 
      * @param textures the textures to reference for animated content
      * @param size the size of the tile in points
      * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
@@ -247,6 +252,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize a tile definition with an SKTexture, and set its size to the SKTexture's width/height.
+     * 
      * @param texture the texture to reference for size and content
      */
     @Generated
@@ -255,6 +261,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize a tile definition with an SKTexture and the specified size.
+     * 
      * @param texture the texture to reference for content
      * @param normalTexture the normal texture to use for generating normals for lighting
      * @param size the size of the tile in points
@@ -266,6 +273,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize a tile definition with an SKTexture and the specified size.
+     * 
      * @param texture the texture to reference for content
      * @param size the size of the tile in points
      */
@@ -275,6 +283,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
+     * 
      * @param textures the textures to reference for animated content
      * @param normalTextures the normal textures to use for generating normals for lighting
      * @param size the size of the tile in points
@@ -287,6 +296,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
+     * 
      * @param textures the textures to reference for animated content
      * @param size the size of the tile in points
      * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence

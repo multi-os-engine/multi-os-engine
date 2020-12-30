@@ -3,13 +3,14 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum       CTFontCollectionCopyOptions
- * @abstract   Option bits for use with CTFontCollectionCopyFontAttribute(s).
+ * [@enum]       CTFontCollectionCopyOptions
  * 
- * @constant   kCTFontCollectionCopyStandardSort
+ * Option bits for use with CTFontCollectionCopyFontAttribute(s).
+ * 
+ * [@constant]   kCTFontCollectionCopyStandardSort
  *             Passing this option indicates that the return values should be sorted in standard UI order, suitable for display to the user. This is the same sorting behavior used by NSFontPanel and Font Book.
  * 
- * @constant   kCTFontCollectionCopyUnique
+ * [@constant]   kCTFontCollectionCopyUnique
  *             Passing this option indicates that duplicate values should be removed from the results.
  */
 @Generated

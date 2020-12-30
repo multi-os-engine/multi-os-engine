@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol NSURLAuthenticationChallengeSender 
- * @discussion This protocol represents the sender of an
+ * [@protocol] NSURLAuthenticationChallengeSender 
+ * 
+ * This protocol represents the sender of an
  * authentication challenge. It has methods to provide a credential,
  * to continue without any credential, getting whatever failure
  * result would happen in that case, cancel a challenge, perform the default
@@ -41,21 +42,21 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSURLAuthenticationChallengeSender")
 public interface NSURLAuthenticationChallengeSender {
     /**
-     * @method cancelAuthenticationChallenge:
+     * cancelAuthenticationChallenge:
      */
     @Generated
     @Selector("cancelAuthenticationChallenge:")
     void cancelAuthenticationChallenge(NSURLAuthenticationChallenge challenge);
 
     /**
-     * @method continueWithoutCredentialForAuthenticationChallenge:
+     * continueWithoutCredentialForAuthenticationChallenge:
      */
     @Generated
     @Selector("continueWithoutCredentialForAuthenticationChallenge:")
     void continueWithoutCredentialForAuthenticationChallenge(NSURLAuthenticationChallenge challenge);
 
     /**
-     * @method performDefaultHandlingForAuthenticationChallenge:
+     * performDefaultHandlingForAuthenticationChallenge:
      */
     @Generated
     @IsOptional
@@ -65,7 +66,7 @@ public interface NSURLAuthenticationChallengeSender {
     }
 
     /**
-     * @method rejectProtectionSpaceAndContinueWithChallenge:
+     * rejectProtectionSpaceAndContinueWithChallenge:
      */
     @Generated
     @IsOptional
@@ -75,7 +76,7 @@ public interface NSURLAuthenticationChallengeSender {
     }
 
     /**
-     * @method useCredential:forAuthenticationChallenge:
+     * useCredential:forAuthenticationChallenge:
      */
     @Generated
     @Selector("useCredential:forAuthenticationChallenge:")

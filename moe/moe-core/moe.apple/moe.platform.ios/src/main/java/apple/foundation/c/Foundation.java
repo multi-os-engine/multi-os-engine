@@ -2604,8 +2604,9 @@ public final class Foundation {
     public static native String NSFileSystemFreeNodes();
 
     /**
-     * @const NSHTTPCookieName
-     * @discussion Key for cookie name
+     * [@const] NSHTTPCookieName
+     * 
+     * Key for cookie name
      */
     @Generated
     @CVariable()
@@ -2613,8 +2614,9 @@ public final class Foundation {
     public static native String NSHTTPCookieName();
 
     /**
-     * @const NSHTTPCookieValue
-     * @discussion Key for cookie value
+     * [@const] NSHTTPCookieValue
+     * 
+     * Key for cookie value
      */
     @Generated
     @CVariable()
@@ -2622,8 +2624,9 @@ public final class Foundation {
     public static native String NSHTTPCookieValue();
 
     /**
-     * @const NSHTTPCookieOriginURL
-     * @discussion Key for cookie origin URL
+     * [@const] NSHTTPCookieOriginURL
+     * 
+     * Key for cookie origin URL
      */
     @Generated
     @CVariable()
@@ -2631,8 +2634,9 @@ public final class Foundation {
     public static native String NSHTTPCookieOriginURL();
 
     /**
-     * @const NSHTTPCookieVersion
-     * @discussion Key for cookie version
+     * [@const] NSHTTPCookieVersion
+     * 
+     * Key for cookie version
      */
     @Generated
     @CVariable()
@@ -2640,8 +2644,9 @@ public final class Foundation {
     public static native String NSHTTPCookieVersion();
 
     /**
-     * @const NSHTTPCookieDomain
-     * @discussion Key for cookie domain
+     * [@const] NSHTTPCookieDomain
+     * 
+     * Key for cookie domain
      */
     @Generated
     @CVariable()
@@ -2649,8 +2654,9 @@ public final class Foundation {
     public static native String NSHTTPCookieDomain();
 
     /**
-     * @const NSHTTPCookiePath
-     * @discussion Key for cookie path
+     * [@const] NSHTTPCookiePath
+     * 
+     * Key for cookie path
      */
     @Generated
     @CVariable()
@@ -2658,8 +2664,9 @@ public final class Foundation {
     public static native String NSHTTPCookiePath();
 
     /**
-     * @const NSHTTPCookieSecure
-     * @discussion Key for cookie secure flag
+     * [@const] NSHTTPCookieSecure
+     * 
+     * Key for cookie secure flag
      */
     @Generated
     @CVariable()
@@ -2667,8 +2674,9 @@ public final class Foundation {
     public static native String NSHTTPCookieSecure();
 
     /**
-     * @const NSHTTPCookieExpires
-     * @discussion Key for cookie expiration date
+     * [@const] NSHTTPCookieExpires
+     * 
+     * Key for cookie expiration date
      */
     @Generated
     @CVariable()
@@ -2676,8 +2684,9 @@ public final class Foundation {
     public static native String NSHTTPCookieExpires();
 
     /**
-     * @const NSHTTPCookieComment
-     * @discussion Key for cookie comment text
+     * [@const] NSHTTPCookieComment
+     * 
+     * Key for cookie comment text
      */
     @Generated
     @CVariable()
@@ -2685,8 +2694,9 @@ public final class Foundation {
     public static native String NSHTTPCookieComment();
 
     /**
-     * @const NSHTTPCookieCommentURL
-     * @discussion Key for cookie comment URL
+     * [@const] NSHTTPCookieCommentURL
+     * 
+     * Key for cookie comment URL
      */
     @Generated
     @CVariable()
@@ -2694,8 +2704,9 @@ public final class Foundation {
     public static native String NSHTTPCookieCommentURL();
 
     /**
-     * @const NSHTTPCookieDiscard
-     * @discussion Key for cookie discard (session-only) flag
+     * [@const] NSHTTPCookieDiscard
+     * 
+     * Key for cookie discard (session-only) flag
      */
     @Generated
     @CVariable()
@@ -2703,8 +2714,9 @@ public final class Foundation {
     public static native String NSHTTPCookieDiscard();
 
     /**
-     * @const NSHTTPCookieMaximumAge
-     * @discussion Key for cookie maximum age (an alternate way of specifying the expiration)
+     * [@const] NSHTTPCookieMaximumAge
+     * 
+     * Key for cookie maximum age (an alternate way of specifying the expiration)
      */
     @Generated
     @CVariable()
@@ -2712,8 +2724,9 @@ public final class Foundation {
     public static native String NSHTTPCookieMaximumAge();
 
     /**
-     * @const NSHTTPCookiePort
-     * @discussion Key for cookie ports
+     * [@const] NSHTTPCookiePort
+     * 
+     * Key for cookie ports
      */
     @Generated
     @CVariable()
@@ -2721,8 +2734,9 @@ public final class Foundation {
     public static native String NSHTTPCookiePort();
 
     /**
-     * @const NSHTTPCookieManagerAcceptPolicyChangedNotification
-     * @discussion Name of notification that should be posted to the
+     * [@const] NSHTTPCookieManagerAcceptPolicyChangedNotification
+     * 
+     * Name of notification that should be posted to the
      * distributed notification center whenever the accept cookies
      * preference is changed
      */
@@ -2732,8 +2746,9 @@ public final class Foundation {
     public static native String NSHTTPCookieManagerAcceptPolicyChangedNotification();
 
     /**
-     * @const NSHTTPCookieManagerCookiesChangedNotification
-     * @abstract Notification sent when the set of cookies changes
+     * [@const] NSHTTPCookieManagerCookiesChangedNotification
+     * 
+     * Notification sent when the set of cookies changes
      */
     @Generated
     @CVariable()
@@ -3125,8 +3140,9 @@ public final class Foundation {
     public static native String NSSystemTimeZoneDidChangeNotification();
 
     /**
-     * @const NSURLProtectionSpaceHTTP
-     * @abstract The protocol for HTTP
+     * [@const] NSURLProtectionSpaceHTTP
+     * 
+     * The protocol for HTTP
      */
     @Generated
     @CVariable()
@@ -3134,8 +3150,9 @@ public final class Foundation {
     public static native String NSURLProtectionSpaceHTTP();
 
     /**
-     * @const NSURLProtectionSpaceHTTPS
-     * @abstract The protocol for HTTPS
+     * [@const] NSURLProtectionSpaceHTTPS
+     * 
+     * The protocol for HTTPS
      */
     @Generated
     @CVariable()
@@ -3143,8 +3160,9 @@ public final class Foundation {
     public static native String NSURLProtectionSpaceHTTPS();
 
     /**
-     * @const NSURLProtectionSpaceFTP
-     * @abstract The protocol for FTP
+     * [@const] NSURLProtectionSpaceFTP
+     * 
+     * The protocol for FTP
      */
     @Generated
     @CVariable()
@@ -3152,8 +3170,9 @@ public final class Foundation {
     public static native String NSURLProtectionSpaceFTP();
 
     /**
-     * @const NSURLProtectionSpaceHTTPProxy
-     * @abstract The proxy type for http proxies
+     * [@const] NSURLProtectionSpaceHTTPProxy
+     * 
+     * The proxy type for http proxies
      */
     @Generated
     @CVariable()
@@ -3161,8 +3180,9 @@ public final class Foundation {
     public static native String NSURLProtectionSpaceHTTPProxy();
 
     /**
-     * @const NSURLProtectionSpaceHTTPSProxy
-     * @abstract The proxy type for https proxies
+     * [@const] NSURLProtectionSpaceHTTPSProxy
+     * 
+     * The proxy type for https proxies
      */
     @Generated
     @CVariable()
@@ -3170,8 +3190,9 @@ public final class Foundation {
     public static native String NSURLProtectionSpaceHTTPSProxy();
 
     /**
-     * @const NSURLProtectionSpaceFTPProxy
-     * @abstract The proxy type for ftp proxies
+     * [@const] NSURLProtectionSpaceFTPProxy
+     * 
+     * The proxy type for ftp proxies
      */
     @Generated
     @CVariable()
@@ -3179,8 +3200,9 @@ public final class Foundation {
     public static native String NSURLProtectionSpaceFTPProxy();
 
     /**
-     * @const NSURLProtectionSpaceSOCKSProxy
-     * @abstract The proxy type for SOCKS proxies
+     * [@const] NSURLProtectionSpaceSOCKSProxy
+     * 
+     * The proxy type for SOCKS proxies
      */
     @Generated
     @CVariable()
@@ -3188,8 +3210,9 @@ public final class Foundation {
     public static native String NSURLProtectionSpaceSOCKSProxy();
 
     /**
-     * @const NSURLAuthenticationMethodDefault
-     * @abstract The default authentication method for a protocol
+     * [@const] NSURLAuthenticationMethodDefault
+     * 
+     * The default authentication method for a protocol
      */
     @Generated
     @CVariable()
@@ -3197,8 +3220,9 @@ public final class Foundation {
     public static native String NSURLAuthenticationMethodDefault();
 
     /**
-     * @const NSURLAuthenticationMethodHTTPBasic
-     * @abstract HTTP basic authentication. Equivalent to
+     * [@const] NSURLAuthenticationMethodHTTPBasic
+     * 
+     * HTTP basic authentication. Equivalent to
      * NSURLAuthenticationMethodDefault for http.
      */
     @Generated
@@ -3207,8 +3231,9 @@ public final class Foundation {
     public static native String NSURLAuthenticationMethodHTTPBasic();
 
     /**
-     * @const NSURLAuthenticationMethodHTTPDigest
-     * @abstract HTTP digest authentication.
+     * [@const] NSURLAuthenticationMethodHTTPDigest
+     * 
+     * HTTP digest authentication.
      */
     @Generated
     @CVariable()
@@ -3216,8 +3241,9 @@ public final class Foundation {
     public static native String NSURLAuthenticationMethodHTTPDigest();
 
     /**
-     * @const NSURLAuthenticationMethodHTMLForm
-     * @abstract HTML form authentication. Applies to any protocol.
+     * [@const] NSURLAuthenticationMethodHTMLForm
+     * 
+     * HTML form authentication. Applies to any protocol.
      */
     @Generated
     @CVariable()
@@ -3225,8 +3251,9 @@ public final class Foundation {
     public static native String NSURLAuthenticationMethodHTMLForm();
 
     /**
-     * @const NSURLAuthenticationMethodNTLM
-     * @abstract NTLM authentication.
+     * [@const] NSURLAuthenticationMethodNTLM
+     * 
+     * NTLM authentication.
      */
     @Generated
     @CVariable()
@@ -3234,8 +3261,9 @@ public final class Foundation {
     public static native String NSURLAuthenticationMethodNTLM();
 
     /**
-     * @const NSURLAuthenticationMethodNegotiate
-     * @abstract Negotiate authentication.
+     * [@const] NSURLAuthenticationMethodNegotiate
+     * 
+     * Negotiate authentication.
      */
     @Generated
     @CVariable()
@@ -3243,8 +3271,9 @@ public final class Foundation {
     public static native String NSURLAuthenticationMethodNegotiate();
 
     /**
-     * @const NSURLAuthenticationMethodClientCertificate
-     * @abstract SSL Client certificate.  Applies to any protocol.
+     * [@const] NSURLAuthenticationMethodClientCertificate
+     * 
+     * SSL Client certificate.  Applies to any protocol.
      */
     @Generated
     @CVariable()
@@ -3252,8 +3281,9 @@ public final class Foundation {
     public static native String NSURLAuthenticationMethodClientCertificate();
 
     /**
-     * @const NSURLAuthenticationMethodServerTrust
-     * @abstract SecTrustRef validation required.  Applies to any protocol.
+     * [@const] NSURLAuthenticationMethodServerTrust
+     * 
+     * SecTrustRef validation required.  Applies to any protocol.
      */
     @Generated
     @CVariable()
@@ -3261,8 +3291,9 @@ public final class Foundation {
     public static native String NSURLAuthenticationMethodServerTrust();
 
     /**
-     * @const NSURLCredentialStorageChangedNotification
-     * @abstract This notification is sent on the main thread whenever
+     * [@const] NSURLCredentialStorageChangedNotification
+     * 
+     * This notification is sent on the main thread whenever
      * the set of stored credentials changes.
      */
     @Generated
@@ -3282,8 +3313,8 @@ public final class Foundation {
     public static native String NSURLCredentialStorageRemoveSynchronizableCredentials();
 
     /**
-     * @discussion Constants used by NSError to differentiate between "domains" of error codes, serving as a discriminator for error codes that originate from different subsystems or sources.
-     * @constant NSURLErrorDomain Indicates an NSURL error.
+     * Constants used by NSError to differentiate between "domains" of error codes, serving as a discriminator for error codes that originate from different subsystems or sources.
+     * [@constant] NSURLErrorDomain Indicates an NSURL error.
      */
     @Generated
     @CVariable()
@@ -3291,8 +3322,9 @@ public final class Foundation {
     public static native String NSURLErrorDomain();
 
     /**
-     * @const NSURLErrorFailingURLErrorKey
-     * @abstract The NSError userInfo dictionary key used to store and retrieve the URL which caused a load to fail.
+     * [@const] NSURLErrorFailingURLErrorKey
+     * 
+     * The NSError userInfo dictionary key used to store and retrieve the URL which caused a load to fail.
      */
     @Generated
     @CVariable()
@@ -3300,9 +3332,11 @@ public final class Foundation {
     public static native String NSURLErrorFailingURLErrorKey();
 
     /**
-     * @const NSURLErrorFailingURLStringErrorKey
-     * @abstract The NSError userInfo dictionary key used to store and retrieve the NSString object for the URL which caused a load to fail.
-     * @discussion This constant supersedes NSErrorFailingURLStringKey, which was deprecated in Mac OS X 10.6.  Both constants refer to the same value for backward-compatibility, but this symbol name has a better prefix.
+     * [@const] NSURLErrorFailingURLStringErrorKey
+     * 
+     * The NSError userInfo dictionary key used to store and retrieve the NSString object for the URL which caused a load to fail.
+     * 
+     * This constant supersedes NSErrorFailingURLStringKey, which was deprecated in Mac OS X 10.6.  Both constants refer to the same value for backward-compatibility, but this symbol name has a better prefix.
      */
     @Generated
     @CVariable()
@@ -3310,9 +3344,11 @@ public final class Foundation {
     public static native String NSURLErrorFailingURLStringErrorKey();
 
     /**
-     * @const NSErrorFailingURLStringKey
-     * @abstract The NSError userInfo dictionary key used to store and retrieve the NSString object for the URL which caused a load to fail.
-     * @discussion This constant is deprecated in Mac OS X 10.6, and is superseded by NSURLErrorFailingURLStringErrorKey.  Both constants refer to the same value for backward-compatibility, but the new symbol name has a better prefix.
+     * [@const] NSErrorFailingURLStringKey
+     * 
+     * The NSError userInfo dictionary key used to store and retrieve the NSString object for the URL which caused a load to fail.
+     * 
+     * This constant is deprecated in Mac OS X 10.6, and is superseded by NSURLErrorFailingURLStringErrorKey.  Both constants refer to the same value for backward-compatibility, but the new symbol name has a better prefix.
      */
     @Generated
     @CVariable()
@@ -3320,8 +3356,9 @@ public final class Foundation {
     public static native String NSErrorFailingURLStringKey();
 
     /**
-     * @const NSURLErrorFailingURLPeerTrustErrorKey
-     * @abstract The NSError userInfo dictionary key used to store and retrieve the SecTrustRef object representing the state of a failed SSL handshake.
+     * [@const] NSURLErrorFailingURLPeerTrustErrorKey
+     * 
+     * The NSError userInfo dictionary key used to store and retrieve the SecTrustRef object representing the state of a failed SSL handshake.
      */
     @Generated
     @CVariable()
@@ -3329,8 +3366,9 @@ public final class Foundation {
     public static native String NSURLErrorFailingURLPeerTrustErrorKey();
 
     /**
-     *    @const NSURLErrorBackgroundTaskCancelledReasonKey
-     *    @abstract The NSError userInfo dictionary key used to store and retrieve the NSNumber corresponding to the reason why a background
+     *    [@const] NSURLErrorBackgroundTaskCancelledReasonKey
+     * 
+     * The NSError userInfo dictionary key used to store and retrieve the NSNumber corresponding to the reason why a background
      * NSURLSessionTask was cancelled
      */
     @Generated
@@ -4572,8 +4610,9 @@ public final class Foundation {
     public static native NSHashTableCallBacks NSPointerToStructHashCallBacks();
 
     /**
-     * @const NSHTTPCookieSameSitePolicy
-     * @discussion Key for cookie same site
+     * [@const] NSHTTPCookieSameSitePolicy
+     * 
+     * Key for cookie same site
      */
     @Generated
     @CVariable()
@@ -4581,8 +4620,9 @@ public final class Foundation {
     public static native String NSHTTPCookieSameSitePolicy();
 
     /**
-     * @const NSHTTPCookieSameSiteLax
-     * @discussion String constant "lax" to be used as a value for the property key NSHTTPCookieSameSite
+     * [@const] NSHTTPCookieSameSiteLax
+     * 
+     * String constant "lax" to be used as a value for the property key NSHTTPCookieSameSite
      */
     @Generated
     @CVariable()
@@ -4590,8 +4630,9 @@ public final class Foundation {
     public static native String NSHTTPCookieSameSiteLax();
 
     /**
-     * @const NSHTTPCookieSameSiteStrict
-     * @discussion String constant "strict" to be used as a value for the property key NSHTTPCookieSameSite
+     * [@const] NSHTTPCookieSameSiteStrict
+     * 
+     * String constant "strict" to be used as a value for the property key NSHTTPCookieSameSite
      */
     @Generated
     @CVariable()
@@ -4654,8 +4695,9 @@ public final class Foundation {
     public static native NSMapTableValueCallBacks NSIntMapValueCallBacks();
 
     /**
-     * @const NSURLErrorNetworkUnavailableReasonKey
-     * @abstract The NSErrorUserInfoKey used to store and retrieve the NSNumber object corresponding to the reason why the network is unavailable when the task failed due to unsatisfiable network constraints.  See the NSURLErrorNetworkUnavailableReason enum for details.
+     * [@const] NSURLErrorNetworkUnavailableReasonKey
+     * 
+     * The NSErrorUserInfoKey used to store and retrieve the NSNumber object corresponding to the reason why the network is unavailable when the task failed due to unsatisfiable network constraints.  See the NSURLErrorNetworkUnavailableReason enum for details.
      */
     @Generated
     @CVariable()

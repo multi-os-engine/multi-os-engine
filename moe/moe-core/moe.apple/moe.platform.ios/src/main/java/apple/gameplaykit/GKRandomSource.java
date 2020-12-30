@@ -164,7 +164,7 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
      * also affected by calls to the C apis and should not be used for sources that are intended to
      * be deterministic.
      * 
-     * @discussion Note that while it may seem semantically similar to a GKARC4RandomSource, this is not a drop in replacement.
+     * Note that while it may seem semantically similar to a GKARC4RandomSource, this is not a drop in replacement.
      */
     @Generated
     @Selector("sharedRandom")

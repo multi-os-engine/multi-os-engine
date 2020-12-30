@@ -57,9 +57,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract An immutable value object representing a contact.
+ * An immutable value object representing a contact.
  * 
- * @discussion CNContact is thread safe.
+ * CNContact is thread safe.
  * 
  * If using a CNContact instance where you are not certain of the keys that were fetched, use isKeyAvailable: or areKeysAvailable:. If these return NO you need to refetch the contact by the contact identifier with the keys you want to fetch. Accessing a property that was not fetched will throw CNContactPropertyNotFetchedExceptionName.
  */
@@ -186,9 +186,9 @@ public class CNContact extends NSObject
     public static native NSPredicate predicateForContactsInGroupWithIdentifier(String groupIdentifier);
 
     /**
-     * @abstract To fetch contacts matching a name.
+     * To fetch contacts matching a name.
      * 
-     * @discussion The name can contain any number of words.
+     * The name can contain any number of words.
      */
     @Generated
     @Selector("predicateForContactsMatchingName:")
@@ -485,9 +485,9 @@ public class CNContact extends NSObject
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
 
     /**
-     * @abstract    Fetch contacts matching an email address.
+     * Fetch contacts matching an email address.
      * 
-     * @discussion  Use this predicate to find the contact(s) which contain the specified
+     * Use this predicate to find the contact(s) which contain the specified
      *              email address. The search is not case-sensitive.
      * 
      * @param       emailAddress
@@ -498,9 +498,9 @@ public class CNContact extends NSObject
     public static native NSPredicate predicateForContactsMatchingEmailAddress(String emailAddress);
 
     /**
-     * @abstract    Fetch contacts matching a phone number.
+     * Fetch contacts matching a phone number.
      * 
-     * @discussion  If the predicate and contact differ in their use or presence of country
+     * If the predicate and contact differ in their use or presence of country
      *              codes, a best effort will be made to match results; however, inexact
      *              matches are not guaranteed.
      * 

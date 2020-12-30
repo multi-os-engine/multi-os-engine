@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * User interaction for the secure PIN verification on the SmartCard reader.
- * @note Result is available after the interaction has been successfully completed.
+ * [@note] Result is available after the interaction has been successfully completed.
  */
 @Generated
 @Library("CryptoTokenKit")

@@ -20,8 +20,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("WKURLSchemeHandler")
 public interface WKURLSchemeHandler {
     /**
-     * @abstract Notifies your app to start loading the data for a particular resource
+     * Notifies your app to start loading the data for a particular resource
      * represented by the URL scheme handler task.
+     * 
      * @param webView The web view invoking the method.
      * @param urlSchemeTask The task that your app should start loading data for.
      */
@@ -30,13 +31,15 @@ public interface WKURLSchemeHandler {
     void webViewStartURLSchemeTask(WKWebView webView, @Mapped(ObjCObjectMapper.class) WKURLSchemeTask urlSchemeTask);
 
     /**
-     * @abstract Notifies your app to stop handling a URL scheme handler task.
-     * @param webView The web view invoking the method.
-     * @param urlSchemeTask The task that your app should stop handling.
-     * @discussion After your app is told to stop loading data for a URL scheme handler task
+     * Notifies your app to stop handling a URL scheme handler task.
+     * 
+     * After your app is told to stop loading data for a URL scheme handler task
      * it must not perform any callbacks for that task.
      * An exception will be thrown if any callbacks are made on the URL scheme handler task
      * after your app has been told to stop loading for it.
+     * 
+     * @param webView The web view invoking the method.
+     * @param urlSchemeTask The task that your app should stop handling.
      */
     @Generated
     @Selector("webView:stopURLSchemeTask:")

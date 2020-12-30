@@ -22,10 +22,10 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * MDLMaterialSemantic
  * 
- * @summary The material semantics are identifiers for material properties 
+ * [@summary] The material semantics are identifiers for material properties 
  *            formally identified by one of the standard material descriptors.
  * 
- * @discussion When files containing material properties are loaded and translated 
+ * When files containing material properties are loaded and translated
  *             by ModelIO, an appropriate standard material descriptor will be 
  *             chosen, and any properties translated from the loaded file can be 
  *             retrieved using one of these semantics.

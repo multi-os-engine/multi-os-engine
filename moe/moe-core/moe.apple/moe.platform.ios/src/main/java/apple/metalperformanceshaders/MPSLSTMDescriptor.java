@@ -25,9 +25,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSLSTMDescriptor
- * @dependency This depends on Metal.framework
- * @discussion The MPSLSTMDescriptor specifies a LSTM block/layer descriptor.
+ * MPSLSTMDescriptor
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSLSTMDescriptor specifies a LSTM block/layer descriptor.
  *             The RNN layer initialized with a MPSLSTMDescriptor transforms the input data (image or matrix),
  *             the memory cell data and previous output with a set of filters, each producing one feature map in
  *             the output data and memory cell, according to the LSTM formulae detailed below.
@@ -119,8 +120,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * @property   cellGateInputWeights
-     * @abstract   Contains weights 'Wc_ij', bias 'bc_i' and neuron 'gc' from the LSTM formula.
+     * [@property]   cellGateInputWeights
+     * 
+     * Contains weights 'Wc_ij', bias 'bc_i' and neuron 'gc' from the LSTM formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
@@ -129,8 +131,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource cellGateInputWeights();
 
     /**
-     * @property   cellGateMemoryWeights
-     * @abstract   Contains weights 'Vc_ij' - the 'peephole' weights - from the LSTM formula.
+     * [@property]   cellGateMemoryWeights
+     * 
+     * Contains weights 'Vc_ij' - the 'peephole' weights - from the LSTM formula.
      *             if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      *                 in the memory cell image/matrix.
      *             If nil then assumed zero weights. Defaults to nil.
@@ -141,8 +144,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource cellGateMemoryWeights();
 
     /**
-     * @property   cellGateRecurrentWeights
-     * @abstract   Contains weights 'Uc_ij' from the LSTM formula.
+     * [@property]   cellGateRecurrentWeights
+     * 
+     * Contains weights 'Uc_ij' from the LSTM formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -151,24 +155,27 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource cellGateRecurrentWeights();
 
     /**
-     * @property   cellToOutputNeuronParamA
-     * @abstract   Neuron parameter A for 'gh'. Defaults to 1.0f.
+     * [@property]   cellToOutputNeuronParamA
+     * 
+     * Neuron parameter A for 'gh'. Defaults to 1.0f.
      */
     @Generated
     @Selector("cellToOutputNeuronParamA")
     public native float cellToOutputNeuronParamA();
 
     /**
-     * @property   cellToOutputNeuronParamB
-     * @abstract   Neuron parameter B for 'gh'. Defaults to 1.0f.
+     * [@property]   cellToOutputNeuronParamB
+     * 
+     * Neuron parameter B for 'gh'. Defaults to 1.0f.
      */
     @Generated
     @Selector("cellToOutputNeuronParamB")
     public native float cellToOutputNeuronParamB();
 
     /**
-     * @property   cellToOutputNeuronType
-     * @abstract   Neuron type definition for 'gh', see @ref MPSCNNNeuronType. Defaults to MPSCNNNeuronTypeTanH.
+     * [@property]   cellToOutputNeuronType
+     * 
+     * Neuron type definition for 'gh', see @ref MPSCNNNeuronType. Defaults to MPSCNNNeuronTypeTanH.
      */
     @Generated
     @Selector("cellToOutputNeuronType")
@@ -183,7 +190,8 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   Creates a LSTM descriptor.
+     * Creates a LSTM descriptor.
+     * 
      * @param      inputFeatureChannels    The number of feature channels in the input image/matrix. Must be >= 1.
      * @param      outputFeatureChannels   The number of feature channels in the output image/matrix. Must be >= 1.
      * @return     A valid MPSNNLSTMDescriptor object or nil, if failure.
@@ -203,8 +211,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public static native String description_static();
 
     /**
-     * @property   forgetGateInputWeights
-     * @abstract   Contains weights 'Wf_ij', bias 'bf_i' and neuron 'gf' from the LSTM formula.
+     * [@property]   forgetGateInputWeights
+     * 
+     * Contains weights 'Wf_ij', bias 'bf_i' and neuron 'gf' from the LSTM formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
     @Generated
@@ -213,8 +222,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource forgetGateInputWeights();
 
     /**
-     * @property   forgetGateMemoryWeights
-     * @abstract   Contains weights 'Vf_ij' - the 'peephole' weights - from the LSTM formula.
+     * [@property]   forgetGateMemoryWeights
+     * 
+     * Contains weights 'Vf_ij' - the 'peephole' weights - from the LSTM formula.
      *             if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      *                 in the memory cell image/matrix.
      *             If nil then assumed zero weights. Defaults to nil.
@@ -225,8 +235,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource forgetGateMemoryWeights();
 
     /**
-     * @property   forgetGateRecurrentWeights
-     * @abstract   Contains weights 'Uf_ij' from the LSTM formula.
+     * [@property]   forgetGateRecurrentWeights
+     * 
+     * Contains weights 'Uf_ij' from the LSTM formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -244,8 +255,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSLSTMDescriptor init();
 
     /**
-     * @property   inputGateInputWeights
-     * @abstract   Contains weights 'Wi_ij', bias 'bi_i' and neuron 'gi' from the LSTM formula.
+     * [@property]   inputGateInputWeights
+     * 
+     * Contains weights 'Wi_ij', bias 'bi_i' and neuron 'gi' from the LSTM formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
@@ -254,8 +266,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource inputGateInputWeights();
 
     /**
-     * @property   inputGateMemoryWeights
-     * @abstract   Contains weights 'Vi_ij' - the 'peephole' weights - from the LSTM formula.
+     * [@property]   inputGateMemoryWeights
+     * 
+     * Contains weights 'Vi_ij' - the 'peephole' weights - from the LSTM formula.
      *             if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      *                 in the memory cell image/matrix.
      *             If nil then assumed zero weights. Defaults to nil.
@@ -266,8 +279,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource inputGateMemoryWeights();
 
     /**
-     * @property   inputGateRecurrentWeights
-     * @abstract   Contains weights 'Ui_ij' from the LSTM formula.
+     * [@property]   inputGateRecurrentWeights
+     * 
+     * Contains weights 'Ui_ij' from the LSTM formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -297,8 +311,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   memoryWeightsAreDiagonal
-     * @abstract   If YES, then the 'peephole' weight matrices will be diagonal matrices represented as
+     * [@property]   memoryWeightsAreDiagonal
+     * 
+     * If YES, then the 'peephole' weight matrices will be diagonal matrices represented as
      *             vectors of length the number of features in memory cells, that will be multiplied pointwise
      *             with the peephole matrix or image in order to achieve the diagonal (nonmixing) update.
      *             Defaults to NO.
@@ -314,8 +329,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public static native Object new_objc();
 
     /**
-     * @property   outputGateInputWeights
-     * @abstract   Contains weights 'Wo_ij', bias 'bo_i' and neuron 'go' from the LSTM formula.
+     * [@property]   outputGateInputWeights
+     * 
+     * Contains weights 'Wo_ij', bias 'bo_i' and neuron 'go' from the LSTM formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
@@ -324,8 +340,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource outputGateInputWeights();
 
     /**
-     * @property   outputGateMemoryWeights
-     * @abstract   Contains weights 'Vo_ij' - the 'peephole' weights - from the LSTM.
+     * [@property]   outputGateMemoryWeights
+     * 
+     * Contains weights 'Vo_ij' - the 'peephole' weights - from the LSTM.
      *             if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      *                 in the memory cell image/matrix.
      *             If nil then assumed zero weights. Defaults to nil.
@@ -336,8 +353,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native MPSCNNConvolutionDataSource outputGateMemoryWeights();
 
     /**
-     * @property   outputGateRecurrentWeights
-     * @abstract   Contains weights 'Uo_ij' from the LSTM formula.
+     * [@property]   outputGateRecurrentWeights
+     * 
+     * Contains weights 'Uo_ij' from the LSTM formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -354,8 +372,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   cellGateInputWeights
-     * @abstract   Contains weights 'Wc_ij', bias 'bc_i' and neuron 'gc' from the LSTM formula.
+     * [@property]   cellGateInputWeights
+     * 
+     * Contains weights 'Wc_ij', bias 'bc_i' and neuron 'gc' from the LSTM formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
@@ -363,8 +382,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setCellGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   cellGateMemoryWeights
-     * @abstract   Contains weights 'Vc_ij' - the 'peephole' weights - from the LSTM formula.
+     * [@property]   cellGateMemoryWeights
+     * 
+     * Contains weights 'Vc_ij' - the 'peephole' weights - from the LSTM formula.
      *             if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      *                 in the memory cell image/matrix.
      *             If nil then assumed zero weights. Defaults to nil.
@@ -374,8 +394,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setCellGateMemoryWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   cellGateRecurrentWeights
-     * @abstract   Contains weights 'Uc_ij' from the LSTM formula.
+     * [@property]   cellGateRecurrentWeights
+     * 
+     * Contains weights 'Uc_ij' from the LSTM formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -383,32 +404,36 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setCellGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   cellToOutputNeuronParamA
-     * @abstract   Neuron parameter A for 'gh'. Defaults to 1.0f.
+     * [@property]   cellToOutputNeuronParamA
+     * 
+     * Neuron parameter A for 'gh'. Defaults to 1.0f.
      */
     @Generated
     @Selector("setCellToOutputNeuronParamA:")
     public native void setCellToOutputNeuronParamA(float value);
 
     /**
-     * @property   cellToOutputNeuronParamB
-     * @abstract   Neuron parameter B for 'gh'. Defaults to 1.0f.
+     * [@property]   cellToOutputNeuronParamB
+     * 
+     * Neuron parameter B for 'gh'. Defaults to 1.0f.
      */
     @Generated
     @Selector("setCellToOutputNeuronParamB:")
     public native void setCellToOutputNeuronParamB(float value);
 
     /**
-     * @property   cellToOutputNeuronType
-     * @abstract   Neuron type definition for 'gh', see @ref MPSCNNNeuronType. Defaults to MPSCNNNeuronTypeTanH.
+     * [@property]   cellToOutputNeuronType
+     * 
+     * Neuron type definition for 'gh', see @ref MPSCNNNeuronType. Defaults to MPSCNNNeuronTypeTanH.
      */
     @Generated
     @Selector("setCellToOutputNeuronType:")
     public native void setCellToOutputNeuronType(int value);
 
     /**
-     * @property   forgetGateInputWeights
-     * @abstract   Contains weights 'Wf_ij', bias 'bf_i' and neuron 'gf' from the LSTM formula.
+     * [@property]   forgetGateInputWeights
+     * 
+     * Contains weights 'Wf_ij', bias 'bf_i' and neuron 'gf' from the LSTM formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping).Defaults to nil.
      */
     @Generated
@@ -416,8 +441,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setForgetGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   forgetGateMemoryWeights
-     * @abstract   Contains weights 'Vf_ij' - the 'peephole' weights - from the LSTM formula.
+     * [@property]   forgetGateMemoryWeights
+     * 
+     * Contains weights 'Vf_ij' - the 'peephole' weights - from the LSTM formula.
      *             if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      *                 in the memory cell image/matrix.
      *             If nil then assumed zero weights. Defaults to nil.
@@ -427,8 +453,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setForgetGateMemoryWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   forgetGateRecurrentWeights
-     * @abstract   Contains weights 'Uf_ij' from the LSTM formula.
+     * [@property]   forgetGateRecurrentWeights
+     * 
+     * Contains weights 'Uf_ij' from the LSTM formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -436,8 +463,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setForgetGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   inputGateInputWeights
-     * @abstract   Contains weights 'Wi_ij', bias 'bi_i' and neuron 'gi' from the LSTM formula.
+     * [@property]   inputGateInputWeights
+     * 
+     * Contains weights 'Wi_ij', bias 'bi_i' and neuron 'gi' from the LSTM formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
@@ -445,8 +473,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setInputGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   inputGateMemoryWeights
-     * @abstract   Contains weights 'Vi_ij' - the 'peephole' weights - from the LSTM formula.
+     * [@property]   inputGateMemoryWeights
+     * 
+     * Contains weights 'Vi_ij' - the 'peephole' weights - from the LSTM formula.
      *             if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      *                 in the memory cell image/matrix.
      *             If nil then assumed zero weights. Defaults to nil.
@@ -456,8 +485,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setInputGateMemoryWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   inputGateRecurrentWeights
-     * @abstract   Contains weights 'Ui_ij' from the LSTM formula.
+     * [@property]   inputGateRecurrentWeights
+     * 
+     * Contains weights 'Ui_ij' from the LSTM formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -465,8 +495,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setInputGateRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   memoryWeightsAreDiagonal
-     * @abstract   If YES, then the 'peephole' weight matrices will be diagonal matrices represented as
+     * [@property]   memoryWeightsAreDiagonal
+     * 
+     * If YES, then the 'peephole' weight matrices will be diagonal matrices represented as
      *             vectors of length the number of features in memory cells, that will be multiplied pointwise
      *             with the peephole matrix or image in order to achieve the diagonal (nonmixing) update.
      *             Defaults to NO.
@@ -476,8 +507,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setMemoryWeightsAreDiagonal(boolean value);
 
     /**
-     * @property   outputGateInputWeights
-     * @abstract   Contains weights 'Wo_ij', bias 'bo_i' and neuron 'go' from the LSTM formula.
+     * [@property]   outputGateInputWeights
+     * 
+     * Contains weights 'Wo_ij', bias 'bo_i' and neuron 'go' from the LSTM formula.
      *             If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
     @Generated
@@ -485,8 +517,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setOutputGateInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   outputGateMemoryWeights
-     * @abstract   Contains weights 'Vo_ij' - the 'peephole' weights - from the LSTM.
+     * [@property]   outputGateMemoryWeights
+     * 
+     * Contains weights 'Vo_ij' - the 'peephole' weights - from the LSTM.
      *             if YES == memoryWeightsAreDiagonal, then the number of weights used is the number of features
      *                 in the memory cell image/matrix.
      *             If nil then assumed zero weights. Defaults to nil.
@@ -496,8 +529,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public native void setOutputGateMemoryWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * @property   outputGateRecurrentWeights
-     * @abstract   Contains weights 'Uo_ij' from the LSTM formula.
+     * [@property]   outputGateRecurrentWeights
+     * 
+     * Contains weights 'Uo_ij' from the LSTM formula.
      *             If nil then assumed zero weights. Defaults to nil.
      */
     @Generated
@@ -518,16 +552,18 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     public static native long version_static();
 
     /**
-     * @property   cellToOutputNeuronParamC
-     * @abstract   Neuron parameter C for 'gh'. Defaults to 1.0f.
+     * [@property]   cellToOutputNeuronParamC
+     * 
+     * Neuron parameter C for 'gh'. Defaults to 1.0f.
      */
     @Generated
     @Selector("cellToOutputNeuronParamC")
     public native float cellToOutputNeuronParamC();
 
     /**
-     * @property   cellToOutputNeuronParamC
-     * @abstract   Neuron parameter C for 'gh'. Defaults to 1.0f.
+     * [@property]   cellToOutputNeuronParamC
+     * 
+     * Neuron parameter C for 'gh'. Defaults to 1.0f.
      */
     @Generated
     @Selector("setCellToOutputNeuronParamC:")

@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @abstract Sort order for contacts.
+ * Sort order for contacts.
  * 
- * @discussion CNContactSortOrderUserDefault is the user's preferred sort order.
+ * CNContactSortOrderUserDefault is the user's preferred sort order.
  */
 @Generated
 public final class CNContactSortOrder {

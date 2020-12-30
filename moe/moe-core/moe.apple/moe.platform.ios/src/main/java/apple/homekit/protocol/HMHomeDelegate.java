@@ -36,7 +36,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @brief This delegate receives update on the various accessories, action sets, groups and triggers
+ * This delegate receives update on the various accessories, action sets, groups and triggers
  *        managed in the home.
  */
 @Generated
@@ -45,7 +45,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("HMHomeDelegate")
 public interface HMHomeDelegate {
     /**
-     * @brief Informs the delegate of addition of an accessory to the home.
+     * Informs the delegate of addition of an accessory to the home.
      * 
      * @param home Sender of the message.
      * 
@@ -59,7 +59,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that an action set was added to the home.
+     * Informs the delegate that an action set was added to the home.
      * 
      * @param home Sender of this message.
      * 
@@ -73,7 +73,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate of addition of a room to the home.
+     * Informs the delegate of addition of a room to the home.
      * 
      * @param home Sender of the message.
      * 
@@ -87,7 +87,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the room was added to a zone.
+     * Informs the delegate that the room was added to a zone.
      * 
      * @param home Sender of this message.
      * 
@@ -103,7 +103,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that a service was added to a service group.
+     * Informs the delegate that a service was added to a service group.
      * 
      * @param home Sender of this message.
      * 
@@ -119,7 +119,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that a service group was added to the home.
+     * Informs the delegate that a service group was added to the home.
      * 
      * @param home Sender of the message.
      * 
@@ -133,7 +133,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate of the addition of a trigger to the home.
+     * Informs the delegate of the addition of a trigger to the home.
      * 
      * @param home Sender of the message.
      * 
@@ -147,7 +147,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that a user was added to the home.
+     * Informs the delegate that a user was added to the home.
      * 
      * @param home Sender of this message.
      * 
@@ -161,7 +161,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate of addition of a zone to the home.
+     * Informs the delegate of addition of a zone to the home.
      * 
      * @param home Sender of the message.
      * 
@@ -175,7 +175,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that a configured accessory encountered an error. The
+     * Informs the delegate that a configured accessory encountered an error. The
      *        delegate should check the blocked state of the accessory
      * 
      * @param home Sender of this message.
@@ -192,7 +192,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate of removal of an accessory from the home.
+     * Informs the delegate of removal of an accessory from the home.
      * 
      * @param home Sender of the message.
      * 
@@ -206,7 +206,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that an action set was removed from the home.
+     * Informs the delegate that an action set was removed from the home.
      * 
      * @param home Sender of this message.
      * 
@@ -220,7 +220,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate of removal of a room from the home.
+     * Informs the delegate of removal of a room from the home.
      * 
      * @param home Sender of the message.
      * 
@@ -234,7 +234,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the room was removed from a zone.
+     * Informs the delegate that the room was removed from a zone.
      * 
      * @param home Sender of this message.
      * 
@@ -250,7 +250,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that a service was removed from a service group.
+     * Informs the delegate that a service was removed from a service group.
      * 
      * @param home Sender of this message.
      * 
@@ -266,7 +266,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that a service group was removed from the home.
+     * Informs the delegate that a service group was removed from the home.
      * 
      * @param home Sender of the message.
      * 
@@ -280,7 +280,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate of removal of a trigger from the home.
+     * Informs the delegate of removal of a trigger from the home.
      * 
      * @param home Sender of the message.
      * 
@@ -294,7 +294,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that a user was removed from the home.
+     * Informs the delegate that a user was removed from the home.
      * 
      * @param home Sender of this message.
      * 
@@ -308,7 +308,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate of removal of a zone from the home.
+     * Informs the delegate of removal of a zone from the home.
      * 
      * @param home Sender of the message.
      * 
@@ -322,7 +322,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that an accessory has been unblocked
+     * Informs the delegate that an accessory has been unblocked
      * 
      * @param home Sender of this message.
      * 
@@ -336,7 +336,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the actions of an action set was modified.
+     * Informs the delegate that the actions of an action set was modified.
      * This indicates that an action was added/removed or modified (value replaced)
      * 
      * @param home Sender of this message.
@@ -351,7 +351,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the name of an action set was modified.
+     * Informs the delegate that the name of an action set was modified.
      * 
      * @param home Sender of this message.
      * 
@@ -365,7 +365,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the name of a room was modified
+     * Informs the delegate that the name of a room was modified
      * 
      * @param home Sender of this message.
      * 
@@ -379,7 +379,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the name of a service group was modified.
+     * Informs the delegate that the name of a service group was modified.
      * 
      * @param home Sender of this message.
      * 
@@ -393,7 +393,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the name of the trigger was modified.
+     * Informs the delegate that the name of the trigger was modified.
      * 
      * @param home Sender of this message.
      * 
@@ -407,7 +407,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the name of a zone was modified.
+     * Informs the delegate that the name of a zone was modified.
      * 
      * @param home Sender of this message.
      * 
@@ -421,7 +421,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate when a new room is assigned to an accessory
+     * Informs the delegate when a new room is assigned to an accessory
      * 
      * @param home Sender of the message.
      * 
@@ -437,7 +437,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate whenever a trigger is updated. For example, this method may be
+     * Informs the delegate whenever a trigger is updated. For example, this method may be
      *        invoked when a trigger is activated, when a trigger fires, or when the action sets
      *        associated with a trigger are modified.
      * 
@@ -453,7 +453,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate of a change in the name of a home.
+     * Informs the delegate of a change in the name of a home.
      * 
      * @param home Sender of this message.
      */
@@ -465,7 +465,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate when state of the home hub changes.
+     * Informs the delegate when state of the home hub changes.
      * 
      * @param home Sender of the message.
      * 
@@ -479,7 +479,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate when the access control for current user has been updated.
+     * Informs the delegate when the access control for current user has been updated.
      * 
      * @param home Sender of the message.
      */
@@ -491,7 +491,7 @@ public interface HMHomeDelegate {
     }
 
     /**
-     * @brief Informs the delegate when the supported features of this home changes.
+     * Informs the delegate when the supported features of this home changes.
      * 
      * The supported features covered by this are currently:
      *   - supportsAddingNetworkRouter

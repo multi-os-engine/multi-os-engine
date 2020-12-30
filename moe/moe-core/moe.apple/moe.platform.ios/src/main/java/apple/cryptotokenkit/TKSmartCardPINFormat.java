@@ -42,8 +42,9 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Offset in bits within the PIN block to mark a location for filling in the formatted PIN (justified with respect to PINJustification).
-     * @note Default value: 0
-     * @discussion Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from bits to bytes.
+     * [@note] Default value: 0
+     * 
+     * Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from bits to bytes.
      */
     @Generated
     @Selector("PINBitOffset")
@@ -52,7 +53,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Total length of the PIN block in bytes.
-     * @note Default value: 8
+     * [@note] Default value: 8
      */
     @Generated
     @Selector("PINBlockByteLength")
@@ -61,7 +62,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * PIN justification within the PIN block.
-     * @note Default value: TKSmartCardPINJustificationLeft
+     * [@note] Default value: TKSmartCardPINJustificationLeft
      */
     @Generated
     @Selector("PINJustification")
@@ -70,8 +71,9 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Offset in bits within the PIN block to mark a location for filling in the PIN length (always left justified).
-     * @note Default value: 0
-     * @discussion Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of PINLengthBitOffset gets converted from bits to bytes.
+     * [@note] Default value: 0
+     * 
+     * Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of PINLengthBitOffset gets converted from bits to bytes.
      */
     @Generated
     @Selector("PINLengthBitOffset")
@@ -80,7 +82,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Size in bits of the PIN length field. If set to 0, PIN length is not written.
-     * @note Default value: 0
+     * [@note] Default value: 0
      */
     @Generated
     @Selector("PINLengthBitSize")
@@ -117,7 +119,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Format of PIN characters.
-     * @note Default value: TKSmartCardPINCharsetNumeric
+     * [@note] Default value: TKSmartCardPINCharsetNumeric
      */
     @Generated
     @Selector("charset")
@@ -142,7 +144,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Encoding of PIN characters.
-     * @note Default value: TKSmartCardPINEncodingASCII
+     * [@note] Default value: TKSmartCardPINEncodingASCII
      */
     @Generated
     @Selector("encoding")
@@ -181,7 +183,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Maximum number of characters to form a valid PIN.
-     * @note Default value: 8
+     * [@note] Default value: 8
      */
     @Generated
     @Selector("maxPINLength")
@@ -190,7 +192,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Minimum number of characters to form a valid PIN.
-     * @note Default value: 4
+     * [@note] Default value: 4
      */
     @Generated
     @Selector("minPINLength")
@@ -213,7 +215,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Format of PIN characters.
-     * @note Default value: TKSmartCardPINCharsetNumeric
+     * [@note] Default value: TKSmartCardPINCharsetNumeric
      */
     @Generated
     @Selector("setCharset:")
@@ -221,7 +223,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Encoding of PIN characters.
-     * @note Default value: TKSmartCardPINEncodingASCII
+     * [@note] Default value: TKSmartCardPINEncodingASCII
      */
     @Generated
     @Selector("setEncoding:")
@@ -229,7 +231,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Maximum number of characters to form a valid PIN.
-     * @note Default value: 8
+     * [@note] Default value: 8
      */
     @Generated
     @Selector("setMaxPINLength:")
@@ -237,7 +239,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Minimum number of characters to form a valid PIN.
-     * @note Default value: 4
+     * [@note] Default value: 4
      */
     @Generated
     @Selector("setMinPINLength:")
@@ -245,8 +247,9 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Offset in bits within the PIN block to mark a location for filling in the formatted PIN (justified with respect to PINJustification).
-     * @note Default value: 0
-     * @discussion Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from bits to bytes.
+     * [@note] Default value: 0
+     * 
+     * Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from bits to bytes.
      */
     @Generated
     @Selector("setPINBitOffset:")
@@ -254,7 +257,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Total length of the PIN block in bytes.
-     * @note Default value: 8
+     * [@note] Default value: 8
      */
     @Generated
     @Selector("setPINBlockByteLength:")
@@ -262,7 +265,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * PIN justification within the PIN block.
-     * @note Default value: TKSmartCardPINJustificationLeft
+     * [@note] Default value: TKSmartCardPINJustificationLeft
      */
     @Generated
     @Selector("setPINJustification:")
@@ -270,8 +273,9 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Offset in bits within the PIN block to mark a location for filling in the PIN length (always left justified).
-     * @note Default value: 0
-     * @discussion Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of PINLengthBitOffset gets converted from bits to bytes.
+     * [@note] Default value: 0
+     * 
+     * Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of PINLengthBitOffset gets converted from bits to bytes.
      */
     @Generated
     @Selector("setPINLengthBitOffset:")
@@ -279,7 +283,7 @@ public class TKSmartCardPINFormat extends NSObject {
 
     /**
      * Size in bits of the PIN length field. If set to 0, PIN length is not written.
-     * @note Default value: 0
+     * [@note] Default value: 0
      */
     @Generated
     @Selector("setPINLengthBitSize:")

@@ -44,11 +44,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVSpeechSynthesisVoice
- * @abstract
+ * AVSpeechSynthesisVoice
+ * 
  * AVSpeechSynthesisVoice encapsulates the attributes of the voice used to synthesize speech on the system.
  * 
- * @discussion
  * Retrieve a voice by specifying the language code your text should be spoken in, or by using voiceWithIdentifier
  * for a known voice identifier.
  */
@@ -176,29 +175,33 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     public static native long version_static();
 
     /**
-     * @method        voiceWithIdentifier:
-     * @abstract      Retrieve a voice by its identifier.
-     * @param			identifier
-     * A unique identifier for a voice.
-     * @discussion
+     * voiceWithIdentifier:
+     * 
+     * Retrieve a voice by its identifier.
+     * 
      * Passing in an invalid identifier will return nil.
      * Returns nil if the identifier is valid, but the voice is not available on device (i.e. not yet downloaded by the user).
+     * 
+     * @param			identifier
+     * A unique identifier for a voice.
      */
     @Generated
     @Selector("voiceWithIdentifier:")
     public static native AVSpeechSynthesisVoice voiceWithIdentifier(String identifier);
 
     /**
-     * @method        voiceWithLanguage:
-     * @abstract      Use a BCP-47 language tag to specify the desired language and region.
-     * @param			languageCode
-     * Specifies the BCP-47 language tag that represents the voice.
-     * @discussion
+     * voiceWithLanguage:
+     * 
+     * Use a BCP-47 language tag to specify the desired language and region.
+     * 
      * The default is the system's region and language.
      * Passing in nil will return the default voice.
      * Passing in an invalid languageCode will return nil.
      * Will return enhanced quality voice if available, default quality otherwise.
      * Examples: en-US (U.S. English), fr-CA (French Canadian)
+     * 
+     * @param			languageCode
+     * Specifies the BCP-47 language tag that represents the voice.
      */
     @Generated
     @Selector("voiceWithLanguage:")

@@ -25,8 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MTLBlitPassDescriptor
- * @abstract MTLBlitPassDescriptor represents a collection of attachments to be used to create a concrete blit command encoder
+ * MTLBlitPassDescriptor
+ * 
+ * MTLBlitPassDescriptor represents a collection of attachments to be used to create a concrete blit command encoder
  */
 @Generated
 @Library("Metal")
@@ -61,8 +62,9 @@ public class MTLBlitPassDescriptor extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @method blitPassDescriptor
-     * @abstract Create an autoreleased default frame buffer descriptor
+     * blitPassDescriptor
+     * 
+     * Create an autoreleased default frame buffer descriptor
      */
     @Generated
     @Selector("blitPassDescriptor")
@@ -145,8 +147,9 @@ public class MTLBlitPassDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property sampleBufferAttachments
-     * @abstract An array of sample buffers and associated sample indices.
+     * [@property] sampleBufferAttachments
+     * 
+     * An array of sample buffers and associated sample indices.
      */
     @Generated
     @Selector("sampleBufferAttachments")

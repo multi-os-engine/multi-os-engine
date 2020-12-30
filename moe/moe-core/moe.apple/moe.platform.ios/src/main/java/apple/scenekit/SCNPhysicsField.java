@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsField
- * @abstract SCNPhysicsField is an abstract class that describes a force field that applies in the physics world.
+ * SCNPhysicsField
+ * 
+ * SCNPhysicsField is an abstract class that describes a force field that applies in the physics world.
  */
 @Generated
 @Library("SceneKit")
@@ -257,8 +258,9 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native SCNPhysicsField vortexField();
 
     /**
-     * @property categoryBitMask
-     * @abstract Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
+     * [@property] categoryBitMask
+     * 
+     * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
      */
     @Generated
     @Selector("categoryBitMask")
@@ -360,8 +362,9 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public native long scope();
 
     /**
-     * @property categoryBitMask
-     * @abstract Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
+     * [@property] categoryBitMask
+     * 
+     * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
      */
     @Generated
     @Selector("setCategoryBitMask:")

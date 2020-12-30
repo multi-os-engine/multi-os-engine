@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNVector
- * @brief VNVector is a two-dimensional vector represented its X and Y axis projections. Once created, VNVector objects are immutable.
+ * VNVector
+ * 
+ * VNVector is a two-dimensional vector represented its X and Y axis projections. Once created, VNVector objects are immutable.
  */
 @Generated
 @Library("Vision")
@@ -96,7 +97,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     public static native String description_static();
 
     /**
-     * @brief Caclulates a dot product (aka 'scalar product' or 'inner product') of two vectors v1 and v2 and returns dot product value.
+     * Caclulates a dot product (aka 'scalar product' or 'inner product') of two vectors v1 and v2 and returns dot product value.
      */
     @Generated
     @Selector("dotProductOfVector:vector:")
@@ -120,7 +121,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     public native VNVector initWithCoder(NSCoder coder);
 
     /**
-     * @brief Initializes a vector in polar coordinate space, using R and Theta (radians), where R is the length of the vector and
+     * Initializes a vector in polar coordinate space, using R and Theta (radians), where R is the length of the vector and
      *        Theta is the ange that the vector forms with the positive direction of X axis.
      */
     @Generated
@@ -128,14 +129,14 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     public native VNVector initWithRTheta(double r, double theta);
 
     /**
-     * @brief Initializes a vector in Cartesian Coordinate space, using two VNPoints - the head and the tail of the vector.
+     * Initializes a vector in Cartesian Coordinate space, using two VNPoints - the head and the tail of the vector.
      */
     @Generated
     @Selector("initWithVectorHead:tail:")
     public native VNVector initWithVectorHeadTail(VNPoint head, VNPoint tail);
 
     /**
-     * @brief Initializes a vector in Cartesian Coordinate space, using its X and Y axis projections.
+     * Initializes a vector in Cartesian Coordinate space, using its X and Y axis projections.
      */
     @Generated
     @Selector("initWithXComponent:yComponent:")
@@ -163,7 +164,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief Returns a length, or absolute value, of the vector.
+     * Returns a length, or absolute value, of the vector.
      */
     @Generated
     @Selector("length")
@@ -176,7 +177,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     public static native Object new_objc();
 
     /**
-     * @brief Radius, or absolute value, or length of the vector.
+     * Radius, or absolute value, or length of the vector.
      */
     @Generated
     @Selector("r")
@@ -195,7 +196,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @brief Returns a length ^ 2 of a vector.
+     * Returns a length ^ 2 of a vector.
      */
     @Generated
     @Selector("squaredLength")
@@ -216,35 +217,35 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     /**
-     * @brief Angle between the vector direction and positive direction of X axis.
+     * Angle between the vector direction and positive direction of X axis.
      */
     @Generated
     @Selector("theta")
     public native double theta();
 
     /**
-     * @brief Returns a vector that is normalized by preserving direction, such as |v|, or vector length = 1.0.
+     * Returns a vector that is normalized by preserving direction, such as |v|, or vector length = 1.0.
      */
     @Generated
     @Selector("unitVectorForVector:")
     public static native VNVector unitVectorForVector(VNVector vector);
 
     /**
-     * @brief Adds two vectors v1 and v2 and returns a resulting vector v, such as v = v1 + v2.
+     * Adds two vectors v1 and v2 and returns a resulting vector v, such as v = v1 + v2.
      */
     @Generated
     @Selector("vectorByAddingVector:toVector:")
     public static native VNVector vectorByAddingVectorToVector(VNVector v1, VNVector v2);
 
     /**
-     * @brief Returns a vector that whose X and Y projections multiplied by a scalar value.
+     * Returns a vector that whose X and Y projections multiplied by a scalar value.
      */
     @Generated
     @Selector("vectorByMultiplyingVector:byScalar:")
     public static native VNVector vectorByMultiplyingVectorByScalar(VNVector vector, double scalar);
 
     /**
-     * @brief Substructs vector v1 from v2 and returns a resulting vector v, such as v = v2 - v1.
+     * Substructs vector v1 from v2 and returns a resulting vector v, such as v = v2 - v1.
      */
     @Generated
     @Selector("vectorBySubtractingVector:fromVector:")
@@ -256,21 +257,21 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
-     * @brief Signed projection on X-axis, or X component of the vector. Sign determines direction the vector is facing in X direction.
+     * Signed projection on X-axis, or X component of the vector. Sign determines direction the vector is facing in X direction.
      */
     @Generated
     @Selector("x")
     public native double x();
 
     /**
-     * @brief Signed projection on Y-axis, or Y component of the vector. Sign determines direction the vector is facing in Y direction.
+     * Signed projection on Y-axis, or Y component of the vector. Sign determines direction the vector is facing in Y direction.
      */
     @Generated
     @Selector("y")
     public native double y();
 
     /**
-     * @brief Returns a VNVector object with zero length. The theta for zeroVector is not defined (NaN).
+     * Returns a VNVector object with zero length. The theta for zeroVector is not defined (NaN).
      */
     @Generated
     @Selector("zeroVector")

@@ -34,8 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageFindKeypoints
- * @discussion The MPSImageFindKeypoints kernel is used to find a list of keypoints whose values are >= minimumPixelThresholdValue
+ * MPSImageFindKeypoints
+ * 
+ * The MPSImageFindKeypoints kernel is used to find a list of keypoints whose values are >= minimumPixelThresholdValue
  *             in MPSImageKeypointRangeInfo. The keypoints are generated for a specified region in the image.
  *             The pixel format of the source image must be MTLPixelFormatR8Unorm.
  */
@@ -98,8 +99,9 @@ public class MPSImageFindKeypoints extends MPSKernel {
     public static native String description_static();
 
     /**
-     * @abstract Encode the filter to a command buffer using a MTLComputeCommandEncoder.
-     * @discussion The filter will not begin to execute until after the command
+     * Encode the filter to a command buffer using a MTLComputeCommandEncoder.
+     * 
+     * The filter will not begin to execute until after the command
      * buffer has been enqueued and committed.
      * 
      * @param  commandBuffer               A valid MTLCommandBuffer.
@@ -140,12 +142,14 @@ public class MPSImageFindKeypoints extends MPSKernel {
     public native MPSImageFindKeypoints initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -160,7 +164,8 @@ public class MPSImageFindKeypoints extends MPSKernel {
     public native MPSImageFindKeypoints initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to find keypoints in an image.
+     * Specifies information to find keypoints in an image.
+     * 
      * @param    device    The device the filter will run on
      * @param    info      Pointer to the MPSImageKeypointRangeInfo struct
      * @return   A valid MPSImageFindKeypoints object or nil, if failure.
@@ -192,9 +197,11 @@ public class MPSImageFindKeypoints extends MPSKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   keypointRangeInfo
-     * @abstract   Return a structure describing the keypoint range info
-     * @discussion Returns a MPSImageKeypointRangeInfo structure
+     * [@property]   keypointRangeInfo
+     * 
+     * Return a structure describing the keypoint range info
+     * 
+     * Returns a MPSImageKeypointRangeInfo structure
      */
     @Generated
     @Selector("keypointRangeInfo")

@@ -74,9 +74,9 @@ public final class MPSKernelOptions {
      * is on by default when the MPS_LOG_INFO environment variable is defined.  For
      * even more detailed output on a MPS object, you can use the po command in llvm
      * with MPS objects:
-     * @code
+     * [@code]
      *   llvm>  po  <MPS object pointer>
-     * @endcode
+     * [@endcode]
      */
     @Generated @NUInt public static final long Verbose = 0x0000000000000010L;
 }

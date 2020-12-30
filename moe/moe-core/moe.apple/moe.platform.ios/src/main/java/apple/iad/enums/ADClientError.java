@@ -20,36 +20,35 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum ADClientError
+ * [@enum] ADClientError
  * 
- * @const ADClientErrorUnknown
+ * [@const] ADClientErrorUnknown
  * This is not used and should never be returned.
  * 
- * @const ADClientErrorTrackingRestrictedOrDenied
+ * [@const] ADClientErrorTrackingRestrictedOrDenied
  * The user is restricted or has denied tracking for the calling application.
  * 
- * @const ADClientErrorLimitAdTracking
+ * [@const] ADClientErrorLimitAdTracking
  * This is deprecated, please use ADClientErrorTrackingRestrictedOrDenied.
  * 
- * @const ADClientErrorMissingData
+ * [@const] ADClientErrorMissingData
  * The downloaded app received a payload lacking enough data to perform an attribution check.
  * 
- * @const ADClientErrorCorruptResponse
+ * [@const] ADClientErrorCorruptResponse
  * The response received from the Attribution Server was corrupt.
  * 
- * @const ADClientErrorRequestClientError
+ * [@const] ADClientErrorRequestClientError
  * The response received from the Attribution Server had an HTTP 4xx status code.
  * 
- * @const ADClientErrorRequestServerError
+ * [@const] ADClientErrorRequestServerError
  * The response received from the Attribution Server had an HTTP 5xx status code.
  * 
- * @const ADClientErrorRequestNetworkError
+ * [@const] ADClientErrorRequestNetworkError
  * The communication with the  Attribution Server had a network error. The underlying error will be provided in the user info dictionary if available.
  * 
- * @const ADClientErrorUnsupportedPlatform
+ * [@const] ADClientErrorUnsupportedPlatform
  * The attribution API was called on an unsupported platform. Only iOS and iPadOS are supported.
  * 
- * @discussion
  * Error codes for NSErrors passed to the completionHandler block when calling the requestAttributionDetailsWithBlock: method.
  */
 @Generated

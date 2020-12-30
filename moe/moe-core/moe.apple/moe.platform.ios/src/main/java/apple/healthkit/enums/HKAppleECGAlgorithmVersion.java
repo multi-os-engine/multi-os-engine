@@ -4,10 +4,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKAppleECGAlgorithmVersion
- * @abstract      Indicates which algorithm version number was used by the ECG app on Apple Watch.
+ * [@enum]          HKAppleECGAlgorithmVersion
  * 
- * @constant      HKAppleECGAlgorithmVersion1   Apple Watch used a version 1 algorithm to generate this ECG.
+ * Indicates which algorithm version number was used by the ECG app on Apple Watch.
+ * 
+ * [@constant]      HKAppleECGAlgorithmVersion1   Apple Watch used a version 1 algorithm to generate this ECG.
  */
 @Generated
 public final class HKAppleECGAlgorithmVersion {

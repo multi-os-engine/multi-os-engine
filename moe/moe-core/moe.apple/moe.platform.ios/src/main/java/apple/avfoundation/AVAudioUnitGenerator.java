@@ -45,9 +45,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitGenerator
- *    @abstract an AVAudioUnit that generates audio output
- *    @discussion
+ * AVAudioUnitGenerator
+ * 
+ * an AVAudioUnit that generates audio output
+ * 
  *    An AVAudioUnitGenerator represents an audio unit of type kAudioUnitType_Generator or
  * kAudioUnitType_RemoteGenerator.
  *    A generator will have no audio input, but will just produce audio output.
@@ -171,8 +172,9 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     public static native long version_static();
 
     /**
-     * @property bypass
-     * @abstract Bypass state of the audio unit.
+     * [@property] bypass
+     * 
+     * Bypass state of the audio unit.
      */
     @Generated
     @Selector("bypass")
@@ -187,13 +189,14 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     public native AVAudioUnitGenerator init();
 
     /**
-     * @method initWithAudioComponentDescription:
-     * @abstract Create an AVAudioUnitGenerator object.
+     * initWithAudioComponentDescription:
+     * 
+     * Create an AVAudioUnitGenerator object.
+     * 
+     * The componentType must be kAudioUnitType_Generator or kAudioUnitType_RemoteGenerator
      * 
      * @param audioComponentDescription
      * AudioComponentDescription of the audio unit to be instantiated.
-     * @discussion
-     * The componentType must be kAudioUnitType_Generator or kAudioUnitType_RemoteGenerator
      */
     @Generated
     @Selector("initWithAudioComponentDescription:")
@@ -231,8 +234,9 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     public native float reverbBlend();
 
     /**
-     * @property bypass
-     * @abstract Bypass state of the audio unit.
+     * [@property] bypass
+     * 
+     * Bypass state of the audio unit.
      */
     @Generated
     @Selector("setBypass:")

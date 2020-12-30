@@ -3,19 +3,20 @@ package apple.coreaudiotypes.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum           AudioTimeStampFlags
- * @abstract       The flags that indicate which fields in an AudioTimeStamp structure are valid.
- * @constant       kAudioTimeStampSampleTimeValid
+ * [@enum]           AudioTimeStampFlags
+ * 
+ * The flags that indicate which fields in an AudioTimeStamp structure are valid.
+ * [@constant]       kAudioTimeStampSampleTimeValid
  *                     The sample frame time is valid.
- * @constant       kAudioTimeStampHostTimeValid
+ * [@constant]       kAudioTimeStampHostTimeValid
  *                     The host time is valid.
- * @constant       kAudioTimeStampRateScalarValid
+ * [@constant]       kAudioTimeStampRateScalarValid
  *                     The rate scalar is valid.
- * @constant       kAudioTimeStampWordClockTimeValid
+ * [@constant]       kAudioTimeStampWordClockTimeValid
  *                     The word clock time is valid.
- * @constant       kAudioTimeStampSMPTETimeValid
+ * [@constant]       kAudioTimeStampSMPTETimeValid
  *                     The SMPTE time is valid.
- * @constant       kAudioTimeStampSampleHostTimeValid
+ * [@constant]       kAudioTimeStampSampleHostTimeValid
  *                     The sample frame time and the host time are valid.
  */
 @Generated

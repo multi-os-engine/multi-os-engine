@@ -507,7 +507,7 @@ public final class Contacts {
     public static native String CNContactInstantMessageAddressesKey();
 
     /**
-     * @abstract Notification posted when changes occur in another CNContactStore.
+     * Notification posted when changes occur in another CNContactStore.
      */
     @Generated
     @CVariable()

@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueCurrentHumidifierDehumidifierState
+ * [@enum]      HMCharacteristicValueCurrentHumidifierDehumidifierState
  * 
- * @constant  HMCharacteristicValueCurrentHumidifierDehumidifierStateInactive       Inactive.
- * @constant  HMCharacteristicValueCurrentHumidifierDehumidifierStateIdle           Idle.
- * @constant  HMCharacteristicValueCurrentHumidifierDehumidifierStateHumidifying    Humidifying.
- * @constant  HMCharacteristicValueCurrentHumidifierDehumidifierStateDehumidifying  Dehumidifying.
+ * [@constant]  HMCharacteristicValueCurrentHumidifierDehumidifierStateInactive       Inactive.
+ * [@constant]  HMCharacteristicValueCurrentHumidifierDehumidifierStateIdle           Idle.
+ * [@constant]  HMCharacteristicValueCurrentHumidifierDehumidifierStateHumidifying    Humidifying.
+ * [@constant]  HMCharacteristicValueCurrentHumidifierDehumidifierStateDehumidifying  Dehumidifying.
  */
 @Generated
 public final class HMCharacteristicValueCurrentHumidifierDehumidifierState {

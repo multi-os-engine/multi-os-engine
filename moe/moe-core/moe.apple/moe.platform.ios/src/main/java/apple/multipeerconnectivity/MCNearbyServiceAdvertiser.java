@@ -42,12 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MCNearbyServiceAdvertiser
- *   @abstract
+ * MCNearbyServiceAdvertiser
+ * 
  *      MCNearbyServiceAdvertiser advertises availability of the local peer,
  *      and handles invitations from nearby peers.
  * 
- *   @discussion
  *      To create the MCNearbyServiceAdvertiser object and start advertising
  *      to nearby peers, a new MCPeerID should be created to
  *      represent the local peer, and a service type needs to be specified.

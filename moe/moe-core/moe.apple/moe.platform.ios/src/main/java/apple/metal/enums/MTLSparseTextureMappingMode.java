@@ -4,8 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLSparseTextureMappingMode
- * @abstract Type of mapping operation for sparse texture
+ * [@enum] MTLSparseTextureMappingMode
+ * 
+ * Type of mapping operation for sparse texture
  */
 @Generated
 public final class MTLSparseTextureMappingMode {

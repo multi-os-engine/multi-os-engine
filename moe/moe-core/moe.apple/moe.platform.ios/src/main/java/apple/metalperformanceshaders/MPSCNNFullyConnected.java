@@ -45,20 +45,21 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- *   @class      MPSCNNFullyConnected
- *   @dependency This depends on Metal.framework
- *   @discussion The MPSCNNFullyConnected specifies a fully connected convolution layer a.k.a. Inner product
+ * MPSCNNFullyConnected
+ *   [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNFullyConnected specifies a fully connected convolution layer a.k.a. Inner product
  *               layer. A fully connected CNN layer is one where every input channel is connected
  *               to every output channel. The kernel width is equal to width of source image
  *               and the kernel height is equal to the height of source image. Width and height of the output
  *               is 1x1. Thus, it takes a srcW x srcH x Ni MPSCNNImage, convolves it with Weights[No][SrcW][srcH][Ni]
  *               and produces a 1 x 1 x No output. The following must be true:
- * @code
+ * [@code]
  *                          kernelWidth  == source.width
  *                          kernelHeight == source.height
  *                          clipRect.size.width == 1
  *                          clipRect.size.height == 1
- * @endcode
+ * [@endcode]
  *               One can think of a fully connected layer as a matrix multiplication that flattens an image into a vector of length
  *               srcW*srcH*Ni. The weights are arragned in a matrix of dimension No x (srcW*srcH*Ni) for product output vectors
  *               of length No. The strideInPixelsX, strideInPixelsY, and group must be 1. Offset is not applicable and is ignored.
@@ -66,11 +67,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *               clipRect.
  * 
  *               Note that one can implement an inner product using MPSCNNConvolution by setting
- * @code
+ * [@code]
  *                      offset = (kernelWidth/2,kernelHeight/2)
  *                      clipRect.origin = (ox,oy), clipRect.size = (1,1)
  *                      strideX = strideY = group = 1
- * @endcode
+ * [@endcode]
  *               However, using the MPSCNNFullyConnected for this is better for performance as it lets us choose the most
  *               performant method which may not be possible when using a general convolution. For example,
  *               we may internally use matrix multiplication or special reduction kernels for a specific platform.
@@ -195,10 +196,11 @@ public class MPSCNNFullyConnected extends MPSCNNConvolution {
     public native MPSCNNFullyConnected initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initializes a convolution kernel
+     * Initializes a convolution kernel
      *             WARNING:                        This API is depreated and will be removed in the future. It cannot be used
      *                                             when training. Also serialization/unserialization wont work for MPSCNNConvolution
      *                                             objects created with this init. Please move onto using initWithDevice:weights:.
+     * 
      * @param      device                          The MTLDevice on which this MPSCNNConvolution filter will be used
      * @param      convolutionDescriptor           A pointer to a MPSCNNConvolutionDescriptor.
      * @param      kernelWeights                   A pointer to a weights array.  Each entry is a float value. The number of entries is =
@@ -223,12 +225,14 @@ public class MPSCNNFullyConnected extends MPSCNNConvolution {
     public native MPSCNNFullyConnected initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -239,7 +243,8 @@ public class MPSCNNFullyConnected extends MPSCNNConvolution {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initializes a fully connected kernel
+     * Initializes a fully connected kernel
+     * 
      * @param      device                          The MTLDevice on which this MPSCNNFullyConnected filter will be used
      * @param      weights                         A pointer to a object that conforms to the MPSCNNConvolutionDataSource
      *                                             protocol. The MPSCNNConvolutionDataSource protocol declares the methods that an

@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NWBonjourServiceEndpoint
- * @discussion NWBonjourServiceEndpoint is a subclass of NWEndpoint. It represents an endpoint
+ * [@interface] NWBonjourServiceEndpoint
+ * 
+ * NWBonjourServiceEndpoint is a subclass of NWEndpoint. It represents an endpoint
  * 	backed by a Bonjour service, specified with a name, type, and domain. For example, the
  * 	Bonjour service MyMusicStudio._music._tcp.local. has the name "MyMusicStudio",
  * 	the type "_music._tcp", and the domain "local".
@@ -107,7 +108,8 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     public static native String description_static();
 
     /**
-     * @method endpointWithName:type:domain:
+     * endpointWithName:type:domain:
+     * 
      * @param name The Bonjour service name.
      * @param type The Bonjour service type.
      * @param domain The Bonjour service domain.
@@ -175,8 +177,9 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     public static native long version_static();
 
     /**
-     * @property domain
-     * @discussion The endpoint's Bonjour service domain.
+     * [@property] domain
+     * 
+     * The endpoint's Bonjour service domain.
      */
     @Generated
     @Selector("domain")
@@ -191,8 +194,9 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     public native NWBonjourServiceEndpoint initWithCoder(NSCoder coder);
 
     /**
-     * @property name
-     * @discussion The endpoint's Bonjour service name.
+     * [@property] name
+     * 
+     * The endpoint's Bonjour service name.
      */
     @Generated
     @Selector("name")
@@ -205,8 +209,9 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     }
 
     /**
-     * @property type
-     * @discussion The endpoint's Bonjour service type.
+     * [@property] type
+     * 
+     * The endpoint's Bonjour service type.
      */
     @Generated
     @Selector("type")

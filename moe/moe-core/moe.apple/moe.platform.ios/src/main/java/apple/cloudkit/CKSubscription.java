@@ -177,18 +177,18 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
     public native CKSubscription initWithCoder(NSCoder coder);
 
     /**
-     * @abstract Describes the notification that will be sent when the subscription fires.
+     * Describes the notification that will be sent when the subscription fires.
      * 
-     * @discussion This property must be set to a non-nil value before saving the @c CKSubscription.
+     * This property must be set to a non-nil value before saving the @c CKSubscription.
      */
     @Generated
     @Selector("notificationInfo")
     public native CKNotificationInfo notificationInfo();
 
     /**
-     * @abstract Describes the notification that will be sent when the subscription fires.
+     * Describes the notification that will be sent when the subscription fires.
      * 
-     * @discussion This property must be set to a non-nil value before saving the @c CKSubscription.
+     * This property must be set to a non-nil value before saving the @c CKSubscription.
      */
     @Generated
     @Selector("setNotificationInfo:")

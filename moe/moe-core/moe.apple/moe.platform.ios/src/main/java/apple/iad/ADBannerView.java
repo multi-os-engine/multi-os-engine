@@ -53,9 +53,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class ADBannerView
+ * ADBannerView
  * 
- * @discussion
  * Provides a view for displaying iAds in an application. iAds are automatically
  * loaded, presented, and refreshed. When a banner view is tapped, the iAd will
  * begin its action. In most cases, the action displays a fullscreen interactive
@@ -371,7 +370,7 @@ public class ADBannerView extends UIView {
     public static native long version_static();
 
     /**
-     * @property adType
+     * [@property] adType
      * 
      * @return
      * The banner view's ad type.
@@ -382,9 +381,8 @@ public class ADBannerView extends UIView {
     public native long adType();
 
     /**
-     * @property advertisingSection
+     * [@property] advertisingSection
      * 
-     * @discussion
      * Reserved for future use.
      */
     @Generated
@@ -439,9 +437,8 @@ public class ADBannerView extends UIView {
     }
 
     /**
-     * @method cancelBannerViewAction
+     * cancelBannerViewAction
      * 
-     * @discussion
      * Cancels the current in-progress banner view action. This should only be used
      * in cases where the user's attention is required immediately.
      */
@@ -455,9 +452,8 @@ public class ADBannerView extends UIView {
     public native String currentContentSizeIdentifier();
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion
      * The banner view delegate is notified when events related to the banner view
      * and current ad occur, such as when a new ad is loaded, when errors occur
      * while fetching ads, or when banner actions begin and end.
@@ -475,9 +471,8 @@ public class ADBannerView extends UIView {
     public native ADBannerView init();
 
     /**
-     * @method initWithAdType:
+     * initWithAdType:
      * 
-     * @discussion
      * Initialize the view with a specific ad type. The ad type cannot be changed
      * after initialization.
      */
@@ -494,7 +489,7 @@ public class ADBannerView extends UIView {
     public native ADBannerView initWithFrame(@ByValue CGRect frame);
 
     /**
-     * @property bannerLoaded
+     * [@property] bannerLoaded
      * 
      * @return
      * YES if an ad is currently loaded, NO otherwise.
@@ -504,7 +499,7 @@ public class ADBannerView extends UIView {
     public native boolean isBannerLoaded();
 
     /**
-     * @property bannerViewActionInProgress
+     * [@property] bannerViewActionInProgress
      * 
      * @return
      * YES if the user is currently engaged with a fullscreen interactive ad.
@@ -519,9 +514,8 @@ public class ADBannerView extends UIView {
     public native NSSet<?> requiredContentSizeIdentifiers();
 
     /**
-     * @property advertisingSection
+     * [@property] advertisingSection
      * 
-     * @discussion
      * Reserved for future use.
      */
     @Generated
@@ -534,9 +528,8 @@ public class ADBannerView extends UIView {
     public native void setCurrentContentSizeIdentifier(String value);
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion
      * The banner view delegate is notified when events related to the banner view
      * and current ad occur, such as when a new ad is loaded, when errors occur
      * while fetching ads, or when banner actions begin and end.
@@ -549,9 +542,8 @@ public class ADBannerView extends UIView {
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ADBannerViewDelegate value);
 
     /**
-     * @property delegate
+     * [@property] delegate
      * 
-     * @discussion
      * The banner view delegate is notified when events related to the banner view
      * and current ad occur, such as when a new ad is loaded, when errors occur
      * while fetching ads, or when banner actions begin and end.

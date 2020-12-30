@@ -43,9 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Used to describe a collection of HMService objects
+ * Used to describe a collection of HMService objects
  * 
- * @discussion This class is used to group a collection of HMService objects.
+ * This class is used to group a collection of HMService objects.
  *             This allows for association of a set of accessory services into a group.
  *             Eg. A collection of lights can be grouped as the "Desk Lamps" service group.
  */
@@ -161,7 +161,7 @@ public class HMServiceGroup extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief Adds an service to this service group. The service and the group must be part of the same
+     * Adds an service to this service group. The service and the group must be part of the same
      *        home. A service can be added to multiple service groups, e.g., a light can be added
      *        to "Desk Lamps" as well as "Dimmable Lamps" service groups.
      * 
@@ -181,14 +181,14 @@ public class HMServiceGroup extends NSObject {
     public native HMServiceGroup init();
 
     /**
-     * @brief Name of the service group.
+     * Name of the service group.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @brief Removes an service from this service group.
+     * Removes an service from this service group.
      * 
      * @param service Service to remove from this group.
      * 
@@ -202,21 +202,21 @@ public class HMServiceGroup extends NSObject {
             @ObjCBlock(name = "call_removeServiceCompletionHandler") Block_removeServiceCompletionHandler completion);
 
     /**
-     * @brief Array of HMService objects that correspond to the services contained in this group.
+     * Array of HMService objects that correspond to the services contained in this group.
      */
     @Generated
     @Selector("services")
     public native NSArray<? extends HMService> services();
 
     /**
-     * @brief A unique identifier for the service group.
+     * A unique identifier for the service group.
      */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
-     * @brief This method is used to change the name of the service group.
+     * This method is used to change the name of the service group.
      * 
      * @param name New name for the service group.
      * 

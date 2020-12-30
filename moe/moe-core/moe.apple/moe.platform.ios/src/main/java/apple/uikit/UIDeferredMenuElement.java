@@ -85,7 +85,7 @@ public class UIDeferredMenuElement extends UIMenuElement {
     public static native String description_static();
 
     /**
-     * @abstract Returns a placeholder menu element that is replaced with the result of the block's
+     * Returns a placeholder menu element that is replaced with the result of the block's
      *           completion handler. A loading UI takes the place of the element in the menu
      *           until it is fulfilled. While the element may be stored and re-used across menus, its block is
      *           called only once, when the element is first encountered in a menu.

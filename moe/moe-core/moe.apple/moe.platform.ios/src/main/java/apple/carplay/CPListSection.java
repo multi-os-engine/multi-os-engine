@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPListSection models a single section of items appearing in a @c CPListTemplate.
+ * [@c] CPListSection models a single section of items appearing in a @c CPListTemplate.
  */
 @Generated
 @Library("CarPlay")

@@ -58,7 +58,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @abstract Authorization options.
+     * Authorization options.
      */
     @Generated
     @Selector("authorizationOptions")
@@ -69,14 +69,14 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @abstract Identification of the calling application.
+     * Identification of the calling application.
      */
     @Generated
     @Selector("callerBundleIdentifier")
     public native String callerBundleIdentifier();
 
     /**
-     * @abstract Call when authorization needs to be canceled from some reason (for example user pressed Cancel button).
+     * Call when authorization needs to be canceled from some reason (for example user pressed Cancel button).
      */
     @Generated
     @Selector("cancel")
@@ -101,28 +101,28 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract Call when authorization succeeded without any output.
+     * Call when authorization succeeded without any output.
      */
     @Generated
     @Selector("complete")
     public native void complete();
 
     /**
-     * @abstract Call when authorization failed with an error.
+     * Call when authorization failed with an error.
      */
     @Generated
     @Selector("completeWithError:")
     public native void completeWithError(NSError error);
 
     /**
-     * @abstract Call when authorization succeeded with an authorization tokens stored in HTTP headers.
+     * Call when authorization succeeded with an authorization tokens stored in HTTP headers.
      */
     @Generated
     @Selector("completeWithHTTPAuthorizationHeaders:")
     public native void completeWithHTTPAuthorizationHeaders(NSDictionary<String, String> httpAuthorizationHeaders);
 
     /**
-     * @abstract Call when authorization succeeded with a HTTP response.
+     * Call when authorization succeeded with a HTTP response.
      */
     @Generated
     @Selector("completeWithHTTPResponse:httpBody:")
@@ -137,14 +137,14 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native String description_static();
 
     /**
-     * @abstract Call when authorization was not handled.
+     * Call when authorization was not handled.
      */
     @Generated
     @Selector("doNotHandle")
     public native void doNotHandle();
 
     /**
-     * @abstract Extension data from extension configuration provided by MDM stored as a property-list.
+     * Extension data from extension configuration provided by MDM stored as a property-list.
      */
     @Generated
     @Selector("extensionData")
@@ -156,14 +156,14 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native long hash_static();
 
     /**
-     * @abstract Request body.
+     * Request body.
      */
     @Generated
     @Selector("httpBody")
     public native NSData httpBody();
 
     /**
-     * @abstract Request HTTP headers.
+     * Request HTTP headers.
      */
     @Generated
     @Selector("httpHeaders")
@@ -201,7 +201,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native Object new_objc();
 
     /**
-     * @abstract Asks authorization service to show extension view controller. If the controller cannot be shown an error is returned.
+     * Asks authorization service to show extension view controller. If the controller cannot be shown an error is returned.
      */
     @Generated
     @Selector("presentAuthorizationViewControllerWithCompletion:")
@@ -216,14 +216,14 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     }
 
     /**
-     * @abstract Realm.
+     * Realm.
      */
     @Generated
     @Selector("realm")
     public native String realm();
 
     /**
-     * @abstract Operation to be executed by the extension.
+     * Operation to be executed by the extension.
      */
     @Generated
     @Selector("requestedOperation")
@@ -246,7 +246,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native Class superclass_static();
 
     /**
-     * @abstract Request URL with all components.
+     * Request URL with all components.
      */
     @Generated
     @Selector("url")
@@ -258,21 +258,21 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native long version_static();
 
     /**
-     * @abstract Team identifier of the calling application.
+     * Team identifier of the calling application.
      */
     @Generated
     @Selector("callerTeamIdentifier")
     public native String callerTeamIdentifier();
 
     /**
-     * @abstract Indicates whether the calling application is managed.
+     * Indicates whether the calling application is managed.
      */
     @Generated
     @Selector("isCallerManaged")
     public native boolean isCallerManaged();
 
     /**
-     * @abstract Localized display name of the calling application.
+     * Localized display name of the calling application.
      */
     @Generated
     @Selector("localizedCallerDisplayName")

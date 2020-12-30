@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVAssetSegmentReportSampleInformation
- * @abstract	This class is vended by AVAssetSegmentTrackReport. It will provide information on a sample in a track.
+ * AVAssetSegmentReportSampleInformation
+ * 
+ * This class is vended by AVAssetSegmentTrackReport. It will provide information on a sample in a track.
  */
 @Generated
 @Library("AVFoundation")
@@ -114,8 +115,9 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @property	isSyncSample
-     * @abstract	Indicates whether the sample is a sync sample.
+     * [@property]	isSyncSample
+     * 
+     * Indicates whether the sample is a sync sample.
      */
     @Generated
     @Selector("isSyncSample")
@@ -126,8 +128,9 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property	length
-     * @abstract	The length of the sample.
+     * [@property]	length
+     * 
+     * The length of the sample.
      */
     @Generated
     @Selector("length")
@@ -141,8 +144,9 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property	offset
-     * @abstract	The offset of the sample in the segment.
+     * [@property]	offset
+     * 
+     * The offset of the sample in the segment.
      */
     @Generated
     @Selector("offset")
@@ -150,9 +154,11 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     public native long offset();
 
     /**
-     * @property	presentationTimeStamp
-     * @abstract	The presentation timestamp (PTS) of the sample.
-     * @discussion	This timestamp may be different from the earliestPresentationTimeStamp if the video is encoded using frame reordering.
+     * [@property]	presentationTimeStamp
+     * 
+     * The presentation timestamp (PTS) of the sample.
+     * 
+     * This timestamp may be different from the earliestPresentationTimeStamp if the video is encoded using frame reordering.
      */
     @Generated
     @Selector("presentationTimeStamp")

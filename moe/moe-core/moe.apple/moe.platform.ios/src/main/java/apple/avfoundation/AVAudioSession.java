@@ -179,7 +179,7 @@ public class AVAudioSession extends NSObject {
     public native NSArray<String> availableCategories();
 
     /**
-     * @brief	Get the set of input ports that are available for routing.
+     * Get the set of input ports that are available for routing.
      * 
      * Note that this property only applies to the session's current category and mode. For
      *    example, if the session's current category is AVAudioSessionCategoryPlayback, there will be
@@ -263,7 +263,7 @@ public class AVAudioSession extends NSObject {
     public native AVAudioSessionDataSourceDescription inputDataSource();
 
     /**
-     * @brief DataSource methods are for use with routes that support input or output data source
+     * DataSource methods are for use with routes that support input or output data source
      * selection.
      * 
      * If the attached accessory supports data source selection, the data source properties/methods
@@ -324,7 +324,7 @@ public class AVAudioSession extends NSObject {
     public native boolean isInputGainSettable();
 
     /**
-     * @brief	True when another application is playing audio.
+     * True when another application is playing audio.
      * 
      * Note: As of iOS 8.0, Apple recommends that most applications use
      * secondaryAudioShouldBeSilencedHint instead of this property. The otherAudioPlaying property
@@ -397,7 +397,7 @@ public class AVAudioSession extends NSObject {
     public native float outputVolume();
 
     /**
-     * @brief Use this method to temporarily override the output to built-in speaker.
+     * Use this method to temporarily override the output to built-in speaker.
      * 
      * This method is only valid for a session using PlayAndRecord category. This change remains in
      * effect only until the current route changes or you call this method again with the
@@ -450,7 +450,7 @@ public class AVAudioSession extends NSObject {
     public native long recordPermission();
 
     /**
-     * 	@brief Checks to see if calling process has permission to record audio.
+     * Checks to see if calling process has permission to record audio.
      * 
      * The 'response' block will be called immediately if permission has already been granted or
      * denied.  Otherwise, it presents a dialog to notify the user and allow them to choose, and calls
@@ -470,7 +470,7 @@ public class AVAudioSession extends NSObject {
     public native double sampleRate();
 
     /**
-     * @brief	True when another application with a non-mixable audio session is playing audio.
+     * True when another application with a non-mixable audio session is playing audio.
      * 
      * Applications may use this property as a hint to silence audio that is secondary to the
      * functionality of the application. For example, a game app using AVAudioSessionCategoryAmbient
@@ -482,7 +482,7 @@ public class AVAudioSession extends NSObject {
     public native boolean secondaryAudioShouldBeSilencedHint();
 
     /**
-     *    @brief  Set the session active or inactive.
+     * Set the session active or inactive.
      * 
      * Note that activating an audio session is a synchronous (blocking) operation.
      * Therefore, we recommend that applications not activate their session from a thread where a long
@@ -510,7 +510,7 @@ public class AVAudioSession extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @brief    Controls whether audio input and output are aggregated. Only valid in combination with
+     * Controls whether audio input and output are aggregated. Only valid in combination with
      * AVAudioSessionCategoryPlayAndRecord or AVAudioSessionCategoryMultiRoute.
      * 
      * See the AVAudioSessionIOType documentation for a more detailed explanation of why a client may
@@ -571,7 +571,7 @@ public class AVAudioSession extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @brief A value defined over the range [0.0, 1.0], with 0.0 corresponding to the lowest analog
+     * A value defined over the range [0.0, 1.0], with 0.0 corresponding to the lowest analog
      * gain setting and 1.0 corresponding to the highest analog gain setting.
      * 
      * Attempting to set values outside of the defined range will result in the value being "clamped"
@@ -586,7 +586,7 @@ public class AVAudioSession extends NSObject {
     public native boolean setInputGainError(float gain, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @brief	Set the session's mode.
+     * Set the session's mode.
      * 
      * Modes modify the audio category in order to introduce behavior that is tailored to the specific
      * use of audio within an application. Examples:  AVAudioSessionModeVideoRecording,
@@ -620,7 +620,7 @@ public class AVAudioSession extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @brief Select a preferred input port for audio routing.
+     * Select a preferred input port for audio routing.
      * 
      * If the input port is already part of the current audio route, this will have no effect.
      * Otherwise, selecting an input port for routing will initiate a route change to use the preferred
@@ -663,7 +663,7 @@ public class AVAudioSession extends NSObject {
     }
 
     /**
-     * @brief	Get the route sharing policy.
+     * Get the route sharing policy.
      * 
      * See AVAudioSessionRouteSharingPolicy for a description of the available policies.
      * See setCategory:mode:routeSharingPolicy:options:error: for additional discussion.
@@ -674,7 +674,7 @@ public class AVAudioSession extends NSObject {
     public native long routeSharingPolicy();
 
     /**
-     * @brief	Set session category, mode, routing sharing policy, and options.
+     * Set session category, mode, routing sharing policy, and options.
      * 
      * Use of the long-form route sharing policy is only valid in conjunction with a limited set of
      * category, mode, and option values.
@@ -719,12 +719,15 @@ public class AVAudioSession extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method		prepareRouteSelectionForPlaybackWithCompletionHandler:
+     * prepareRouteSelectionForPlaybackWithCompletionHandler:
+     * 
+     * A call to this method is an indication that playback is about to start. This gives the receiver an opportunity to prompt the user to pick an output destination if necessary.
+     * 			The receiver will only prompt if the audio session has been configured with a long-form video route sharing policy. 
+     * 
+     * Presenting playback UI (e.g. AVPlayerViewController) and commencing playback should be performed in the completionHandler.
+     * 
      * @param		completionHandler
      * 			Once any potential routing is complete, the completion handler is called with the selected route type and with a BOOL indicating whether playback should begin or not.
-     * @abstract	A call to this method is an indication that playback is about to start. This gives the receiver an opportunity to prompt the user to pick an output destination if necessary.
-     * 			The receiver will only prompt if the audio session has been configured with a long-form video route sharing policy. 
-     * @discussion	Presenting playback UI (e.g. AVPlayerViewController) and commencing playback should be performed in the completionHandler.
      */
     @Generated
     @Selector("prepareRouteSelectionForPlaybackWithCompletionHandler:")

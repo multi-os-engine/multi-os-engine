@@ -37,9 +37,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NSHTTPCookie
- * @abstract NSHTTPCookie represents an http cookie.
- * @discussion A NSHTTPCookie instance represents a single http cookie. It is
+ * NSHTTPCookie
+ * 
+ * NSHTTPCookie represents an http cookie.
+ * 
+ * A NSHTTPCookie instance represents a single http cookie. It is
  * an immutable object initialized from a dictionary that contains
  * the various cookie attributes. It has accessors to get the various
  * attributes of a cookie.
@@ -95,14 +97,17 @@ public class NSHTTPCookie extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @method cookieWithProperties:
-     * @abstract Allocates and initializes an NSHTTPCookie with the given
+     * cookieWithProperties:
+     * 
+     * Allocates and initializes an NSHTTPCookie with the given
      * dictionary.
-     * @discussion See the NSHTTPCookie <tt>-initWithProperties:</tt>
+     * 
+     * See the NSHTTPCookie <tt>-initWithProperties:</tt>
      * method for more information on the constraints imposed on the
      * dictionary, and for descriptions of the supported keys and values.
+     * 
      * @param properties The dictionary to use to initialize this cookie.
-     * @result A newly-created and autoreleased NSHTTPCookie instance, or
+     * @return A newly-created and autoreleased NSHTTPCookie instance, or
      * nil if the set of dictionary keys is invalid, for example because
      * a required key is missing, or a recognized key maps to an illegal
      * value.
@@ -112,13 +117,16 @@ public class NSHTTPCookie extends NSObject {
     public static native NSHTTPCookie cookieWithProperties(NSDictionary<String, ?> properties);
 
     /**
-     * @method cookiesWithResponseHeaderFields:forURL:
-     * @abstract Return an array of cookies parsed from the specified response header fields and URL.
+     * cookiesWithResponseHeaderFields:forURL:
+     * 
+     * Return an array of cookies parsed from the specified response header fields and URL.
+     * 
+     * This method will ignore irrelevant header fields so
+     * you can pass a dictionary containing data other than cookie data.
+     * 
      * @param headerFields The response header fields to check for cookies.
      * @param URL The URL that the cookies came from - relevant to how the cookies are interpeted.
-     * @result An NSArray of NSHTTPCookie objects
-     * @discussion This method will ignore irrelevant header fields so
-     * you can pass a dictionary containing data other than cookie data.
+     * @return An NSArray of NSHTTPCookie objects
      */
     @Generated
     @Selector("cookiesWithResponseHeaderFields:forURL:")
@@ -166,11 +174,13 @@ public class NSHTTPCookie extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @method requestHeaderFieldsWithCookies:
-     * @abstract Return a dictionary of header fields that can be used to add the
+     * requestHeaderFieldsWithCookies:
+     * 
+     * Return a dictionary of header fields that can be used to add the
      * specified cookies to the request.
+     * 
      * @param cookies The cookies to turn into request headers.
-     * @result An NSDictionary where the keys are header field names, and the values
+     * @return An NSDictionary where the keys are header field names, and the values
      * are the corresponding header field values.
      */
     @Generated
@@ -195,11 +205,13 @@ public class NSHTTPCookie extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @abstract Returns the comment of the receiver.
-     * @discussion This value specifies a string which is suitable for
+     * Returns the comment of the receiver.
+     * 
+     * This value specifies a string which is suitable for
      * presentation to the user explaining the contents and purpose of this
      * cookie. It may be nil.
-     * @result The comment of the receiver, or nil if the receiver has no
+     * 
+     * @return The comment of the receiver, or nil if the receiver has no
      * comment.
      */
     @Generated
@@ -207,11 +219,13 @@ public class NSHTTPCookie extends NSObject {
     public native String comment();
 
     /**
-     * @abstract Returns the comment URL of the receiver.
-     * @discussion This value specifies a URL which is suitable for
+     * Returns the comment URL of the receiver.
+     * 
+     * This value specifies a URL which is suitable for
      * presentation to the user as a link for further information about
      * this cookie. It may be nil.
-     * @result The comment URL of the receiver, or nil if the receiver
+     * 
+     * @return The comment URL of the receiver, or nil if the receiver
      * has no comment URL.
      */
     @Generated
@@ -219,24 +233,28 @@ public class NSHTTPCookie extends NSObject {
     public native NSURL commentURL();
 
     /**
-     * @abstract Returns the domain of the receiver.
-     * @discussion This value specifies URL domain to which the cookie
+     * Returns the domain of the receiver.
+     * 
+     * This value specifies URL domain to which the cookie
      * should be sent. A domain with a leading dot means the cookie
      * should be sent to subdomains as well, assuming certain other
      * restrictions are valid. See RFC 2965 for more detail.
-     * @result The domain of the receiver.
+     * 
+     * @return The domain of the receiver.
      */
     @Generated
     @Selector("domain")
     public native String domain();
 
     /**
-     * @abstract Returns the expires date of the receiver.
-     * @result the expires date of the receiver.
-     * @discussion The expires date is the date when the cookie should be
+     * Returns the expires date of the receiver.
+     * 
+     * The expires date is the date when the cookie should be
      * deleted. The result will be nil if there is no specific expires
      * date. This will be the case only for "session-only" cookies.
-     * @result The expires date of the receiver.
+     * 
+     * @return the expires date of the receiver.
+     * @return The expires date of the receiver.
      */
     @Generated
     @Selector("expiresDate")
@@ -247,12 +265,12 @@ public class NSHTTPCookie extends NSObject {
     public native NSHTTPCookie init();
 
     /**
-     * @method initWithProperties:
-     * @abstract Initialize a NSHTTPCookie object with a dictionary of
+     * initWithProperties:
+     * 
+     * Initialize a NSHTTPCookie object with a dictionary of
      * parameters
-     * @param properties The dictionary of properties to be used to
-     * initialize this cookie.
-     * @discussion Supported dictionary keys and value types for the
+     * 
+     * Supported dictionary keys and value types for the
      * given dictionary are as follows.
      * 
      * All properties can handle an NSString value, but some can also
@@ -365,7 +383,10 @@ public class NSHTTPCookie extends NSObject {
      * </table>
      * <p>
      * All other keys are ignored.
-     * @result An initialized NSHTTPCookie, or nil if the set of
+     * 
+     * @param properties The dictionary of properties to be used to
+     * initialize this cookie.
+     * @return An initialized NSHTTPCookie, or nil if the set of
      * dictionary keys is invalid, for example because a required key is
      * missing, or a recognized key maps to an illegal value.
      */
@@ -374,14 +395,16 @@ public class NSHTTPCookie extends NSObject {
     public native NSHTTPCookie initWithProperties(NSDictionary<String, ?> properties);
 
     /**
-     * @abstract Returns whether the receiver should only be sent to HTTP servers
+     * Returns whether the receiver should only be sent to HTTP servers
      * per RFC 2965
-     * @discussion Cookies may be marked as HTTPOnly by a server (or by a javascript).
+     * 
+     * Cookies may be marked as HTTPOnly by a server (or by a javascript).
      * Cookies marked as such must only be sent via HTTP Headers in HTTP Requests
      * for URL's that match both the path and domain of the respective Cookies.
      * Specifically these cookies should not be delivered to any javascript 
      * applications to prevent cross-site scripting vulnerabilities.
-     * @result YES if this cookie should only be sent via HTTP headers,
+     * 
+     * @return YES if this cookie should only be sent via HTTP headers,
      * NO otherwise.
      */
     @Generated
@@ -389,13 +412,15 @@ public class NSHTTPCookie extends NSObject {
     public native boolean isHTTPOnly();
 
     /**
-     * @abstract Returns whether the receiver should be sent only over
+     * Returns whether the receiver should be sent only over
      * secure channels
-     * @discussion Cookies may be marked secure by a server (or by a javascript).
+     * 
+     * Cookies may be marked secure by a server (or by a javascript).
      * Cookies marked as such must only be sent via an encrypted connection to 
      * trusted servers (i.e. via SSL or TLS), and should not be delievered to any
      * javascript applications to prevent cross-site scripting vulnerabilities.
-     * @result YES if this cookie should be sent only over secure channels,
+     * 
+     * @return YES if this cookie should be sent only over secure channels,
      * NO otherwise.
      */
     @Generated
@@ -403,8 +428,9 @@ public class NSHTTPCookie extends NSObject {
     public native boolean isSecure();
 
     /**
-     * @abstract Returns whether the receiver is session-only.
-     * @result YES if this receiver should be discarded at the end of the
+     * Returns whether the receiver is session-only.
+     * 
+     * @return YES if this receiver should be discarded at the end of the
      * session (regardless of expiration date), NO if receiver need not
      * be discarded at the end of the session.
      */
@@ -413,31 +439,36 @@ public class NSHTTPCookie extends NSObject {
     public native boolean isSessionOnly();
 
     /**
-     * @abstract Returns the name of the receiver.
-     * @result the name of the receiver.
+     * Returns the name of the receiver.
+     * 
+     * @return the name of the receiver.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @abstract Returns the path of the receiver.
-     * @discussion This value specifies the URL path under the cookie's
+     * Returns the path of the receiver.
+     * 
+     * This value specifies the URL path under the cookie's
      * domain for which this cookie should be sent. The cookie will also
      * be sent for children of that path, so "/" is the most general.
-     * @result The path of the receiver.
+     * 
+     * @return The path of the receiver.
      */
     @Generated
     @Selector("path")
     public native String path();
 
     /**
-     * @abstract Returns the list ports to which the receiver should be
+     * Returns the list ports to which the receiver should be
      * sent.
-     * @discussion This value specifies an NSArray of NSNumbers
+     * 
+     * This value specifies an NSArray of NSNumbers
      * (containing integers) which specify the only ports to which this
      * cookie should be sent.
-     * @result The list ports to which the receiver should be sent. The
+     * 
+     * @return The list ports to which the receiver should be sent. The
      * array may be nil, in which case this cookie can be sent to any
      * port.
      */
@@ -446,33 +477,38 @@ public class NSHTTPCookie extends NSObject {
     public native NSArray<? extends NSNumber> portList();
 
     /**
-     * @abstract Returns a dictionary representation of the receiver.
-     * @discussion This method returns a dictionary representation of the
+     * Returns a dictionary representation of the receiver.
+     * 
+     * This method returns a dictionary representation of the
      * NSHTTPCookie which can be saved and passed to
      * <tt>-initWithProperties:</tt> or <tt>+cookieWithProperties:</tt>
      * later to reconstitute an equivalent cookie.
      * <p>See the NSHTTPCookie <tt>-initWithProperties:</tt> method for
      * more information on the constraints imposed on the dictionary, and
      * for descriptions of the supported keys and values.
-     * @result The dictionary representation of the receiver.
+     * 
+     * @return The dictionary representation of the receiver.
      */
     @Generated
     @Selector("properties")
     public native NSDictionary<String, ?> properties();
 
     /**
-     * @abstract Returns the value of the receiver.
-     * @result the value of the receiver.
+     * Returns the value of the receiver.
+     * 
+     * @return the value of the receiver.
      */
     @Generated
     @Selector("value")
     public native String value();
 
     /**
-     * @abstract Returns the version of the receiver.
-     * @discussion Version 0 maps to "old-style" Netscape cookies.
+     * Returns the version of the receiver.
+     * 
+     * Version 0 maps to "old-style" Netscape cookies.
      * Version 1 maps to RFC2965 cookies. There may be future versions.
-     * @result the version of the receiver.
+     * 
+     * @return the version of the receiver.
      */
     @Generated
     @Selector("version")
@@ -480,13 +516,15 @@ public class NSHTTPCookie extends NSObject {
     public native long version();
 
     /**
-     * @abstract Returns the value of the same site attribute on the cookie.
-     * @discussion Cookies can be marked with an attribute Strict or Lax.
+     * Returns the value of the same site attribute on the cookie.
+     * 
+     * Cookies can be marked with an attribute Strict or Lax.
      * Cookies marked with "strict" (NSHTTPCookieSameSiteStrict) are not sent along with cross-site requests.
      * Cookies marked with "lax" (NSHTTPCookieSameSiteLax) sent along cross-site requests provided the
      * cross-site requests are top-level-requests (one that changes the url in the address bar).
      * The attribute value is canonicalized and stored. Any value other than the default (strict and lax) will be ignored.
-     * @result strict or lax. The result could also be nil, in which case the
+     * 
+     * @return strict or lax. The result could also be nil, in which case the
      * cookie will be sent along with all cross-site requests.
      */
     @Generated

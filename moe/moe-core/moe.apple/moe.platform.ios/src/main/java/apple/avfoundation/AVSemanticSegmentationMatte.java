@@ -31,11 +31,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVSemanticSegmentationMatte
- * @abstract
+ * AVSemanticSegmentationMatte
+ * 
  *    An object wrapping a matting image for a particular semantic segmentation.
  * 
- * @discussion
  *    The pixel data in the matting image is represented in CVPixelBuffers as kCVPixelFormatType_OneComponent8 ('L008'). It is stored in image files as an auxiliary image, accessible using CGImageSourceCopyAuxiliaryDataInfoAtIndex using data types defined in <ImageIO/CGImageProperties.h>.
  */
 @Generated
@@ -97,17 +96,16 @@ public class AVSemanticSegmentationMatte extends NSObject {
     public static native String description_static();
 
     /**
-     * @method dictionaryRepresentationForAuxiliaryDataType:
-     * @abstract
+     * dictionaryRepresentationForAuxiliaryDataType:
+     * 
      *    Returns a dictionary of primitive map information to be used when writing an image file with a semantic segmentation matte.
+     * 
+     *    When using ImageIO framework's CGImageDestination API to write semantic segmentation matte information to a HEIF or JPEG file, you may use this method to generate a dictionary of primitive map information consumed by CGImageDestinationAddAuxiliaryDataInfo.
      * 
      * @param outAuxDataType
      *    On output, the auxiliary data type to be used when calling CGImageDestinationAddAuxiliaryDataInfo. Currently supported auxiliary data types are enumerated in <ImageIO/CGImageProperties.h>
-     * @result
+     * @return
      *    A dictionary of CGImageDestination compatible semantic segmentation matte information, or nil if the auxDataType is unsupported.
-     * 
-     * @discussion
-     *    When using ImageIO framework's CGImageDestination API to write semantic segmentation matte information to a HEIF or JPEG file, you may use this method to generate a dictionary of primitive map information consumed by CGImageDestinationAddAuxiliaryDataInfo.
      */
     @Generated
     @Selector("dictionaryRepresentationForAuxiliaryDataType:")
@@ -145,11 +143,10 @@ public class AVSemanticSegmentationMatte extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property matteType
-     * @abstract
+     * [@property] matteType
+     * 
      *    Specifies the receiver's semantic segmentation matting image type.
      * 
-     * @discussion
      *    An AVSemanticSegmentationMatte's matteType is immutable for the life of the object.
      */
     @Generated
@@ -157,11 +154,10 @@ public class AVSemanticSegmentationMatte extends NSObject {
     public native String matteType();
 
     /**
-     * @property mattingImage
-     * @abstract
+     * [@property] mattingImage
+     * 
      *    Provides access to the semantic segmentation matte's internal image.
      * 
-     * @discussion
      *    The pixel format can be queried using the pixelFormatType property.
      */
     @Generated
@@ -175,11 +171,10 @@ public class AVSemanticSegmentationMatte extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property pixelFormatType
-     * @abstract
+     * [@property] pixelFormatType
+     * 
      *    Specifies the pixel format type of this object's internal matting image.
      * 
-     * @discussion
      *    Currently the only supported CV pixel format type for the matting image is kCVPixelFormatType_OneComponent8.
      */
     @Generated
@@ -195,17 +190,16 @@ public class AVSemanticSegmentationMatte extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method semanticSegmentationMatteByApplyingExifOrientation:
-     * @abstract
+     * semanticSegmentationMatteByApplyingExifOrientation:
+     * 
      *    Returns a derivative AVSemanticSegmentationMatte instance in which the specified Exif orientation has been applied.
+     * 
+     *    When applying simple 90 degree rotation or mirroring edits to media containing a semantic segmentation matte, you may use this initializer to create a derivative copy of the matte in which the specified orientation is applied. This method throws an NSInvalidArgumentException if you pass an unrecognized exifOrientation.
      * 
      * @param exifOrientation
      *    One of the 8 standard Exif orientation tags expressing how the matte should be rotated / mirrored.
-     * @result
+     * @return
      *    An AVSemanticSegmentationMatte's instance.
-     * 
-     * @discussion
-     *    When applying simple 90 degree rotation or mirroring edits to media containing a semantic segmentation matte, you may use this initializer to create a derivative copy of the matte in which the specified orientation is applied. This method throws an NSInvalidArgumentException if you pass an unrecognized exifOrientation.
      */
     @Generated
     @Selector("semanticSegmentationMatteByApplyingExifOrientation:")
@@ -213,19 +207,18 @@ public class AVSemanticSegmentationMatte extends NSObject {
     public native Object semanticSegmentationMatteByApplyingExifOrientation(int exifOrientation);
 
     /**
-     * @method semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBuffer:error:
-     * @abstract
+     * semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBuffer:error:
+     * 
      *    Returns an AVSemanticSegmentationMatte instance wrapping the replacement pixel buffer.
+     * 
+     *    When applying complex edits to media containing a semantic segmentation matte, you may create a derivative matte with arbitrary transforms applied to it, then use this initializer to create a new AVSemanticSegmentationMatte.
      * 
      * @param pixelBuffer
      *    A pixel buffer containing a semantic segmentation matting image, represented as kCVPixelFormatType_OneComponent8 with a kCVImageBufferTransferFunction_Linear transfer function.
      * @param outError
      *    On return, if the AVSemanticSegmentationMatte cannot be created, points to an NSError describing the problem.
-     * @result
+     * @return
      *    An AVSemanticSegmentationMatte instance, or nil if the pixel buffer is malformed.
-     * 
-     * @discussion
-     *    When applying complex edits to media containing a semantic segmentation matte, you may create a derivative matte with arbitrary transforms applied to it, then use this initializer to create a new AVSemanticSegmentationMatte.
      */
     @Generated
     @Selector("semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBuffer:error:")
@@ -234,9 +227,11 @@ public class AVSemanticSegmentationMatte extends NSObject {
             CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method semanticSegmentationMatteFromDictionaryRepresentation:error:
-     * @abstract
+     * semanticSegmentationMatteFromDictionaryRepresentation:error:
+     * 
      *    Returns an AVSemanticSegmentationMatte instance from auxiliary image information in an image file.
+     * 
+     *    When using ImageIO framework's CGImageSource API to read from a HEIF or JPEG file containing a semantic segmentation matte, AVSemanticSegmentationMatte can be instantiated using the result of CGImageSourceCopyAuxiliaryDataInfoAtIndex, which returns a CFDictionary of primitive segmentation matte information.
      * 
      * @param imageSourceAuxiliaryDataType
      *    The kCGImageAuxiliaryDataType constant corresponding to the semantic segmentation matte being created (see <ImageIO/CGImageProperties.h>.
@@ -244,11 +239,8 @@ public class AVSemanticSegmentationMatte extends NSObject {
      *    A dictionary of primitive semantic segmentation matte related information obtained from CGImageSourceCopyAuxiliaryDataInfoAtIndex.
      * @param outError
      *    On return, if the semantic segmentation matte cannot be created, points to an NSError describing the problem.
-     * @result
+     * @return
      *    An AVSemanticSegmentationMatte instance, or nil if the auxiliary data info dictionary was malformed.
-     * 
-     * @discussion
-     *    When using ImageIO framework's CGImageSource API to read from a HEIF or JPEG file containing a semantic segmentation matte, AVSemanticSegmentationMatte can be instantiated using the result of CGImageSourceCopyAuxiliaryDataInfoAtIndex, which returns a CFDictionary of primitive segmentation matte information.
      */
     @Generated
     @Selector("semanticSegmentationMatteFromImageSourceAuxiliaryDataType:dictionaryRepresentation:error:")

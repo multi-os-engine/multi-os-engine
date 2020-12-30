@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPRouteChoice describes a possible route for a @c CPTrip.
+ * [@c] CPRouteChoice describes a possible route for a @c CPTrip.
  */
 @Generated
 @Library("CarPlay")

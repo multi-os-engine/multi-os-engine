@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNSphere
- * @abstract SCNSphere represents a sphere with controllable radius
+ * SCNSphere
+ * 
+ * SCNSphere represents a sphere with controllable radius
  */
 @Generated
 @Library("SceneKit")
@@ -163,8 +164,10 @@ public class SCNSphere extends SCNGeometry {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @method sphereWithRadius:
-     * @abstract Creates and returns a sphere with given radius.
+     * sphereWithRadius:
+     * 
+     * Creates and returns a sphere with given radius.
+     * 
      * @param radius The radius of the sphere.
      */
     @Generated
@@ -193,27 +196,33 @@ public class SCNSphere extends SCNGeometry {
     public native SCNSphere initWithCoder(NSCoder coder);
 
     /**
-     * @property geodesic
-     * @abstract Indicate if the geometry is a geosphere.
-     * @discussion The default value is NO.
+     * [@property] geodesic
+     * 
+     * Indicate if the geometry is a geosphere.
+     * 
+     * The default value is NO.
      */
     @Generated
     @Selector("isGeodesic")
     public native boolean isGeodesic();
 
     /**
-     * @property geodesic
-     * @abstract Indicate if the geometry is a geosphere.
-     * @discussion The default value is NO.
+     * [@property] geodesic
+     * 
+     * Indicate if the geometry is a geosphere.
+     * 
+     * The default value is NO.
      */
     @Generated
     @Selector("setGeodesic:")
     public native void setGeodesic(boolean value);
 
     /**
-     * @property radius
-     * @abstract The sphere radius. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
+     * [@property] radius
+     * 
+     * The sphere radius. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
     @Selector("radius")
@@ -221,9 +230,11 @@ public class SCNSphere extends SCNGeometry {
     public native double radius();
 
     /**
-     * @property segmentCount
-     * @abstract The number of segments along both spherical coordinates. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 24.
+     * [@property] segmentCount
+     * 
+     * The number of segments along both spherical coordinates. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
     @Selector("segmentCount")
@@ -231,18 +242,22 @@ public class SCNSphere extends SCNGeometry {
     public native long segmentCount();
 
     /**
-     * @property radius
-     * @abstract The sphere radius. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
+     * [@property] radius
+     * 
+     * The sphere radius. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
     @Selector("setRadius:")
     public native void setRadius(@NFloat double value);
 
     /**
-     * @property segmentCount
-     * @abstract The number of segments along both spherical coordinates. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 24.
+     * [@property] segmentCount
+     * 
+     * The number of segments along both spherical coordinates. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
     @Selector("setSegmentCount:")

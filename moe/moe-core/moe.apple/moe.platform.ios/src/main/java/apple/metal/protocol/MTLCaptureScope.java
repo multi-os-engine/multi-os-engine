@@ -46,7 +46,7 @@ public interface MTLCaptureScope {
 
     /**
      * Scope label
-     * @remarks Created capture scopes are listed in Xcode when long-pressing the capture button, performing the capture over the selected scope
+     * [@remarks] Created capture scopes are listed in Xcode when long-pressing the capture button, performing the capture over the selected scope
      */
     @Generated
     @Selector("label")
@@ -54,7 +54,7 @@ public interface MTLCaptureScope {
 
     /**
      * Scope label
-     * @remarks Created capture scopes are listed in Xcode when long-pressing the capture button, performing the capture over the selected scope
+     * [@remarks] Created capture scopes are listed in Xcode when long-pressing the capture button, performing the capture over the selected scope
      */
     @Generated
     @Selector("setLabel:")

@@ -20,9 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudioEnvironmentDistanceAttenuationModel
- * @abstract Types of distance attenuation models
- * @discussion
+ * [@enum] AVAudioEnvironmentDistanceAttenuationModel
+ * 
+ * Types of distance attenuation models
+ * 
  *     Distance attenuation is the natural attenuation of sound when traveling from the source to 
  *     the listener. The different attenuation models listed below describe the drop-off in gain as 
  *     the source moves away from the listener.

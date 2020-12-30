@@ -24,17 +24,17 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKOperationConfiguration
+ * CKOperationConfiguration
  * 
- * @discussion An operation configuration is a set of properties that describes how your operation should behave.  All properties have a default value.  When determining what properties to apply to an operation, we consult the operation's configuration property, as well as the operation->group->defaultConfiguration property.  We combine them following these rules:
- * @code
+ * An operation configuration is a set of properties that describes how your operation should behave.  All properties have a default value.  When determining what properties to apply to an operation, we consult the operation's configuration property, as well as the operation->group->defaultConfiguration property.  We combine them following these rules:
+ * [@code]
  *  Group Default Configuration Value | Operation Configuration Value |        Value Applied To Operation
  * -----------------------------------+-------------------------------+-----------------------------------------
  *            default value           |         default value         |                  default value
  *            default value           |         explicit value        |       operation.configuration explicit value
  *            explicit value          |         default value         | operation.group.defaultConfiguration explicit value
  *            explicit value          |         explicit value        |       operation.configuration explicit value
- * @endcode
+ * [@endcode]
  * For example:
  * CKOperationGroup -> defaultConfiguration -> allowsCellularAccess explicitly set to NO
  * + CKOperation -> configuration -> allowsCellularAccess has default value of YES
@@ -139,7 +139,7 @@ public class CKOperationConfiguration extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @discussion Long lived operations will continue running even if your process exits. If your process remains alive for the lifetime of the long lived operation its behavior is the same as a regular operation.
+     * Long lived operations will continue running even if your process exits. If your process remains alive for the lifetime of the long lived operation its behavior is the same as a regular operation.
      * 
      * Long lived operations can be fetched and replayed from the container via the @c fetchAllLongLivedOperations: and @c fetchLongLivedOperationsWithIDs: APIs.
      * 
@@ -167,9 +167,9 @@ public class CKOperationConfiguration extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @discussion CKOperations behave differently depending on how you set qualityOfService.
+     * CKOperations behave differently depending on how you set qualityOfService.
      * 
-     *  @code
+     *  [@code]
      *  Quality of Service | timeoutIntervalForResource | Network Error Behavior | Discretionary Behavior
      *  -------------------+----------------------------+------------------------+-----------------------
      *  UserInteractive    | -1 (no enforcement)        | fail                   | nonDiscretionary
@@ -177,7 +177,7 @@ public class CKOperationConfiguration extends NSObject {
      *  Default            | 1 week                     | fail                   | discretionary when app backgrounded
      *  Utility            | 1 week                     | internally retried     | discretionary when app backgrounded
      *  Background         | 1 week                     | internally retried     | discretionary
-     *  @endcode
+     *  [@endcode]
      * timeoutIntervalForResource
      * - the timeout interval for any network resources retrieved by this operation
      * - this can be overridden via CKOperationConfiguration's timeoutIntervalForResource property
@@ -219,7 +219,7 @@ public class CKOperationConfiguration extends NSObject {
     public native void setContainer(CKContainer value);
 
     /**
-     * @discussion Long lived operations will continue running even if your process exits. If your process remains alive for the lifetime of the long lived operation its behavior is the same as a regular operation.
+     * Long lived operations will continue running even if your process exits. If your process remains alive for the lifetime of the long lived operation its behavior is the same as a regular operation.
      * 
      * Long lived operations can be fetched and replayed from the container via the @c fetchAllLongLivedOperations: and @c fetchLongLivedOperationsWithIDs: APIs.
      * 
@@ -233,9 +233,9 @@ public class CKOperationConfiguration extends NSObject {
     public native void setLongLived(boolean value);
 
     /**
-     * @discussion CKOperations behave differently depending on how you set qualityOfService.
+     * CKOperations behave differently depending on how you set qualityOfService.
      * 
-     *  @code
+     *  [@code]
      *  Quality of Service | timeoutIntervalForResource | Network Error Behavior | Discretionary Behavior
      *  -------------------+----------------------------+------------------------+-----------------------
      *  UserInteractive    | -1 (no enforcement)        | fail                   | nonDiscretionary
@@ -243,7 +243,7 @@ public class CKOperationConfiguration extends NSObject {
      *  Default            | 1 week                     | fail                   | discretionary when app backgrounded
      *  Utility            | 1 week                     | internally retried     | discretionary when app backgrounded
      *  Background         | 1 week                     | internally retried     | discretionary
-     *  @endcode
+     *  [@endcode]
      * timeoutIntervalForResource
      * - the timeout interval for any network resources retrieved by this operation
      * - this can be overridden via CKOperationConfiguration's timeoutIntervalForResource property
@@ -262,7 +262,7 @@ public class CKOperationConfiguration extends NSObject {
     public native void setQualityOfService(@NInt long value);
 
     /**
-     * @discussion If non-zero, overrides the timeout interval for any network requests issued by this operation.
+     * If non-zero, overrides the timeout interval for any network requests issued by this operation.
      *  The default value is 60.
      * 
      * @see NSURLSessionConfiguration.timeoutIntervalForRequest
@@ -272,7 +272,7 @@ public class CKOperationConfiguration extends NSObject {
     public native void setTimeoutIntervalForRequest(double value);
 
     /**
-     * @discussion If set, overrides the timeout interval for any network resources retrieved by this operation.
+     * If set, overrides the timeout interval for any network resources retrieved by this operation.
      *  If not explicitly set, defaults to a value based on the operation's @c qualityOfService
      * 
      * @see NSURLSessionConfiguration.timeoutIntervalForResource
@@ -290,7 +290,7 @@ public class CKOperationConfiguration extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @discussion If non-zero, overrides the timeout interval for any network requests issued by this operation.
+     * If non-zero, overrides the timeout interval for any network requests issued by this operation.
      *  The default value is 60.
      * 
      * @see NSURLSessionConfiguration.timeoutIntervalForRequest
@@ -300,7 +300,7 @@ public class CKOperationConfiguration extends NSObject {
     public native double timeoutIntervalForRequest();
 
     /**
-     * @discussion If set, overrides the timeout interval for any network resources retrieved by this operation.
+     * If set, overrides the timeout interval for any network resources retrieved by this operation.
      *  If not explicitly set, defaults to a value based on the operation's @c qualityOfService
      * 
      * @see NSURLSessionConfiguration.timeoutIntervalForResource

@@ -44,9 +44,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioPlayerNode
- * @abstract Play buffers or segments of audio files.
- * @discussion
+ * AVAudioPlayerNode
+ * 
+ * Play buffers or segments of audio files.
+ * 
  * 	AVAudioPlayerNode supports scheduling the playback of `AVAudioBuffer` instances,
  * 	or segments of audio files opened via `AVAudioFile`. Buffers and segments may be
  * 	scheduled at specific points in time, or to play immediately following preceding segments.
@@ -238,26 +239,28 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     public native AVAudioPlayerNode init();
 
     /**
-     * @property playing
-     * @abstract Indicates whether or not the player is playing.
+     * [@property] playing
+     * 
+     * Indicates whether or not the player is playing.
      */
     @Generated
     @Selector("isPlaying")
     public native boolean isPlaying();
 
     /**
-     * @method nodeTimeForPlayerTime:
-     * @abstract
+     * nodeTimeForPlayerTime:
+     * 
      * 	Convert from player time to node time.
-     * @param playerTime
-     * 	a time relative to the player's start time
-     * @return
-     * 	a node time
-     * @discussion
+     * 
      * 	This method and its inverse `playerTimeForNodeTime:` are discussed in the
      * 	introduction to this class.
      * 
      * 	If the player is not playing when this method is called, nil is returned.
+     * 
+     * @param playerTime
+     * 	a time relative to the player's start time
+     * @return
+     * 	a node time
      */
     @Generated
     @Selector("nodeTimeForPlayerTime:")
@@ -276,9 +279,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     public native float pan();
 
     /**
-     * @method pause
-     * @abstract Pause playback.
-     * @discussion
+     * pause
+     * 
+     * Pause playback.
+     * 
      * 	The player's sample time does not advance while the node is paused.
      * 
      * 	Note that pausing or stopping all the players connected to an engine does not pause or stop
@@ -290,9 +294,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     public native void pause();
 
     /**
-     * @method play
-     * @abstract Start or resume playback immediately.
-     * @discussion
+     * play
+     * 
+     * Start or resume playback immediately.
+     * 
      * 	equivalent to playAtTime:nil
      */
     @Generated
@@ -300,11 +305,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     public native void play();
 
     /**
-     * @method playAtTime:
-     * 	@abstract Start or resume playback at a specific time.
-     * 	@param when
-     * 		the node time at which to start or resume playback. nil signifies "now".
-     * 	@discussion
+     * playAtTime:
+     * 
+     * Start or resume playback at a specific time.
+     * 
      * 		This node is initially paused. Requests to play buffers or file segments are enqueued, and
      * 		any necessary decoding begins immediately. Playback does not begin, however, until the player
      * 		has started playing, via this method.
@@ -325,24 +329,28 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * 	[_player playAtTime:startTime];
      * }
      * </pre>
+     * 
+     * 	@param when
+     * 		the node time at which to start or resume playback. nil signifies "now".
      */
     @Generated
     @Selector("playAtTime:")
     public native void playAtTime(AVAudioTime when);
 
     /**
-     * @method playerTimeForNodeTime:
-     * @abstract
+     * playerTimeForNodeTime:
+     * 
      * 	Convert from node time to player time.
-     * @param nodeTime
-     * 	a node time
-     * @return
-     * 	a time relative to the player's start time
-     * @discussion
+     * 
      * 	This method and its inverse `nodeTimeForPlayerTime:` are discussed in the
      * 	introduction to this class.
      * 
      * 	If the player is not playing when this method is called, nil is returned.
+     * 
+     * @param nodeTime
+     * 	a node time
+     * @return
+     * 	a time relative to the player's start time
      */
     @Generated
     @Selector("playerTimeForNodeTime:")
@@ -354,8 +362,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     public native AVAudio3DPoint position();
 
     /**
-     * @method prepareWithFrameCount:
-     * @abstract Prepares previously scheduled file regions or buffers for playback.
+     * prepareWithFrameCount:
+     * 
+     * Prepares previously scheduled file regions or buffers for playback.
+     * 
      * @param frameCount
      * 	The number of sample frames of data to be prepared before returning.
      */
@@ -377,8 +387,13 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     public native float reverbBlend();
 
     /**
-     * @method scheduleBuffer:atTime:options:completionHandler:
-     * @abstract Schedule playing samples from an AVAudioBuffer.
+     * scheduleBuffer:atTime:options:completionHandler:
+     * 
+     * Schedule playing samples from an AVAudioBuffer.
+     * 
+     * 	It is possible for the completionHandler to be called before rendering begins
+     * 	or before the buffer is played completely.
+     * 
      * @param buffer
      * 	the buffer to play
      * @param when 
@@ -387,9 +402,6 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * 	options for looping, interrupting other buffers, etc.
      * @param completionHandler
      * 	called after the buffer has been consumed by the player or the player is stopped. may be nil.
-     * @discussion
-     * 	It is possible for the completionHandler to be called before rendering begins
-     * 	or before the buffer is played completely.
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:completionHandler:")
@@ -398,17 +410,19 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
             @ObjCBlock(name = "call_scheduleBufferAtTimeOptionsCompletionHandler") Block_scheduleBufferAtTimeOptionsCompletionHandler completionHandler);
 
     /**
-     * @method scheduleBuffer:completionHandler:
-     * @abstract Schedule playing samples from an AVAudioBuffer.
-     * @param buffer
-     * 	the buffer to play
-     * @param completionHandler
-     * 	called after the buffer has been consumed by the player or the player is stopped. may be nil.
-     * @discussion
+     * scheduleBuffer:completionHandler:
+     * 
+     * Schedule playing samples from an AVAudioBuffer.
+     * 
      * 	Schedules the buffer to be played following any previously scheduled commands.
      * 
      * 	It is possible for the completionHandler to be called before rendering begins
      * 	or before the buffer is played completely.
+     * 
+     * @param buffer
+     * 	the buffer to play
+     * @param completionHandler
+     * 	called after the buffer has been consumed by the player or the player is stopped. may be nil.
      */
     @Generated
     @Selector("scheduleBuffer:completionHandler:")
@@ -416,17 +430,19 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
             @ObjCBlock(name = "call_scheduleBufferCompletionHandler") Block_scheduleBufferCompletionHandler completionHandler);
 
     /**
-     * @method scheduleFile:atTime:completionHandler:
-     * @abstract Schedule playing of an entire audio file.
+     * scheduleFile:atTime:completionHandler:
+     * 
+     * Schedule playing of an entire audio file.
+     * 
+     * 	It is possible for the completionHandler to be called before rendering begins
+     * 	or before the file is played completely.
+     * 
      * @param file
      * 	the file to play
      * @param when 
      * 	the time at which to play the file. see the discussion of timestamps, above.
      * @param completionHandler
      * 	called after the file has been consumed by the player or the player is stopped. may be nil.
-     * @discussion
-     * 	It is possible for the completionHandler to be called before rendering begins
-     * 	or before the file is played completely.
      */
     @Generated
     @Selector("scheduleFile:atTime:completionHandler:")
@@ -434,8 +450,13 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
             @ObjCBlock(name = "call_scheduleFileAtTimeCompletionHandler") Block_scheduleFileAtTimeCompletionHandler completionHandler);
 
     /**
-     * @method scheduleSegment:startingFrame:frameCount:atTime:completionHandler:
-     * @abstract Schedule playing a segment of an audio file.
+     * scheduleSegment:startingFrame:frameCount:atTime:completionHandler:
+     * 
+     * Schedule playing a segment of an audio file.
+     * 
+     * 	It is possible for the completionHandler to be called before rendering begins
+     * 	or before the segment is played completely.
+     * 
      * @param file
      * 	the file to play
      * @param startFrame
@@ -446,9 +467,6 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * 	the time at which to play the region. see the discussion of timestamps, above.
      * @param completionHandler
      * 	called after the segment has been consumed by the player or the player is stopped. may be nil.
-     * @discussion
-     * 	It is possible for the completionHandler to be called before rendering begins
-     * 	or before the segment is played completely.
      */
     @Generated
     @Selector("scheduleSegment:startingFrame:frameCount:atTime:completionHandler:")
@@ -489,9 +507,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     public native void setVolume(float value);
 
     /**
-     * @method stop
-     * @abstract Clear all of the node's previously scheduled events and stop playback.
-     * @discussion
+     * stop
+     * 
+     * Clear all of the node's previously scheduled events and stop playback.
+     * 
      * 	All of the node's previously scheduled events are cleared, including any that are in the
      * 	middle of playing. The node's sample time (and therefore the times to which new events are 
      * 	to be scheduled) is reset to 0, and will not proceed until the node is started again (via
@@ -538,8 +557,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     }
 
     /**
-     * @method scheduleBuffer:atTime:options:completionCallbackType:completionHandler:
-     * @abstract Schedule playing samples from an AVAudioBuffer.
+     * scheduleBuffer:atTime:options:completionCallbackType:completionHandler:
+     * 
+     * Schedule playing samples from an AVAudioBuffer.
+     * 
      * @param buffer
      * 	the buffer to play
      * @param when
@@ -566,8 +587,12 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     }
 
     /**
-     * @method scheduleBuffer:completionCallbackType:completionHandler:
-     * @abstract Schedule playing samples from an AVAudioBuffer.
+     * scheduleBuffer:completionCallbackType:completionHandler:
+     * 
+     * Schedule playing samples from an AVAudioBuffer.
+     * 
+     * 	Schedules the buffer to be played following any previously scheduled commands.
+     * 
      * @param buffer
      * 	the buffer to play
      * @param callbackType
@@ -575,8 +600,6 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * @param completionHandler
      * 	called after the buffer has been consumed by the player or has finished playing back or 
      * 	the player is stopped. may be nil.
-     * @discussion
-     * 	Schedules the buffer to be played following any previously scheduled commands.
      */
     @Generated
     @Selector("scheduleBuffer:completionCallbackType:completionHandler:")
@@ -592,8 +615,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     }
 
     /**
-     * @method scheduleFile:atTime:completionCallbackType:completionHandler:
-     * @abstract Schedule playing of an entire audio file.
+     * scheduleFile:atTime:completionCallbackType:completionHandler:
+     * 
+     * Schedule playing of an entire audio file.
+     * 
      * @param file
      * 	the file to play
      * @param when
@@ -618,8 +643,10 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     }
 
     /**
-     * @method scheduleSegment:startingFrame:frameCount:atTime:completionCallbackType:completionHandler:
-     * @abstract Schedule playing a segment of an audio file.
+     * scheduleSegment:startingFrame:frameCount:atTime:completionCallbackType:completionHandler:
+     * 
+     * Schedule playing a segment of an audio file.
+     * 
      * @param file
      * 	the file to play
      * @param startFrame

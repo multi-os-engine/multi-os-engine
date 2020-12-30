@@ -8,8 +8,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol MTLCounter
- * @abstract A descriptor for a single counter.
+ * [@protocol] MTLCounter
+ * 
+ * A descriptor for a single counter.
  */
 @Generated
 @Library("Metal")

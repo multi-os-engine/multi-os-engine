@@ -20,9 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum SCNRenderingAPI
- * @abstract rendering API used by SCNView and SCNRenderer.
- * @discussion Default preferred API is SCNRenderingAPIMetal on iOS and it depends on the configuration on macOS.
+ * [@enum] SCNRenderingAPI
+ * 
+ * rendering API used by SCNView and SCNRenderer.
+ * 
+ * Default preferred API is SCNRenderingAPIMetal on iOS and it depends on the configuration on macOS.
  * If Metal is requested but not available then it fallbacks to SCNRenderingAPIOpenGLES2 on iOS and to SCNRenderingAPIOpenGLLegacy on macOS.
  */
 @Generated

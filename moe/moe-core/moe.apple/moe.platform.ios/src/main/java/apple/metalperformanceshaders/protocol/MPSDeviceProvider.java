@@ -11,8 +11,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   A way of extending a NSCoder to enable the setting of MTLDevice for unarchived objects
- * @discussion When a object is initialized by a NSCoder, it calls -initWithCoder:, which is
+ * A way of extending a NSCoder to enable the setting of MTLDevice for unarchived objects
+ * 
+ * When a object is initialized by a NSCoder, it calls -initWithCoder:, which is
  *             missing the necessary MTLDevice to correctly initialize the MPSKernel, or MPSNNGraph.
  *             If the coder does not conform to MPSDeviceProvider, the system default device
  *             will be used.  If you would like to specify which device to use, subclass the
@@ -29,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MPSDeviceProvider")
 public interface MPSDeviceProvider {
     /**
-     * @abstract   Return the device to use when making MPSKernel subclasses from the NSCoder
+     * Return the device to use when making MPSKernel subclasses from the NSCoder
      */
     @Generated
     @Selector("mpsMTLDevice")

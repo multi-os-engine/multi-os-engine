@@ -30,9 +30,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixSum
- * @dependency This depends on Metal.framework
- * @discussion MPSMatrixSum performs a pointwise summation of N MPSMatrix
+ * MPSMatrixSum
+ * [@dependency] This depends on Metal.framework
+ * 
+ * MPSMatrixSum performs a pointwise summation of N MPSMatrix
  *             objects and applies an optional bias term and neuron activation
  *             function.
  * 
@@ -104,7 +105,7 @@ public class MPSMatrixSum extends MPSKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   The number of columns to sum.
+     * The number of columns to sum.
      */
     @Generated
     @Selector("columns")
@@ -112,7 +113,7 @@ public class MPSMatrixSum extends MPSKernel {
     public native long columns();
 
     /**
-     * @abstract   The number of matrices to sum.
+     * The number of matrices to sum.
      */
     @Generated
     @Selector("count")
@@ -128,7 +129,8 @@ public class MPSMatrixSum extends MPSKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode the operations to the command buffer
+     * Encode the operations to the command buffer
+     * 
      * @param          buffer              The command buffer in which to encode the operation.
      * @param          sourceMatrices      A list of matrices from which the matrix data is read.
      * @param          resultMatrix        The result matrix.
@@ -161,8 +163,10 @@ public class MPSMatrixSum extends MPSKernel {
     public native MPSMatrixSum initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixSum kernel.
      * @param      device      The MTLDevice on which to make the MPSMatrixSum object.
      * @return     A new MPSMatrixSum object, or nil if failure.
@@ -176,7 +180,8 @@ public class MPSMatrixSum extends MPSKernel {
     public native MPSMatrixSum initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a MPSMatrixSum kernel.
+     * Initialize a MPSMatrixSum kernel.
+     * 
      * @param      device                      The device on which to initialize the kernel.
      * @param      count                       The number of matrices to be summed.
      * @param      rows                        The number of rows to use in the input matrices.
@@ -211,28 +216,28 @@ public class MPSMatrixSum extends MPSKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract      Neuron parameter A.
+     * Neuron parameter A.
      */
     @Generated
     @Selector("neuronParameterA")
     public native float neuronParameterA();
 
     /**
-     * @abstract      Neuron parameter B.
+     * Neuron parameter B.
      */
     @Generated
     @Selector("neuronParameterB")
     public native float neuronParameterB();
 
     /**
-     * @abstract      Neuron parameter C.
+     * Neuron parameter C.
      */
     @Generated
     @Selector("neuronParameterC")
     public native float neuronParameterC();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronType")
@@ -253,9 +258,9 @@ public class MPSMatrixSum extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   resultMatrixOrigin
+     * [@property]   resultMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the result matrix, at which to
+     * The origin, relative to [0, 0] in the result matrix, at which to
      *             start writing results.  This property is modifiable and defaults
      *             to [0, 0] at initialization time.  If a different origin is desired
      *             then this should be modified prior to encoding the kernel.
@@ -266,7 +271,7 @@ public class MPSMatrixSum extends MPSKernel {
     public native MTLOrigin resultMatrixOrigin();
 
     /**
-     * @abstract   The number of rows to sum.
+     * The number of rows to sum.
      */
     @Generated
     @Selector("rows")
@@ -274,9 +279,9 @@ public class MPSMatrixSum extends MPSKernel {
     public native long rows();
 
     /**
-     * @abstract   Specifies a neuron activation function to be used.
+     * Specifies a neuron activation function to be used.
      * 
-     * @discussion This method can be used to add a neuron activation funtion of given type with
+     * This method can be used to add a neuron activation funtion of given type with
      *             associated scalar parameters A, B, and C that are shared across all output values.
      *             Note that this method can only be used to specify neurons which are specified by three (or fewer)
      *             parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
@@ -295,9 +300,9 @@ public class MPSMatrixSum extends MPSKernel {
             float parameterC);
 
     /**
-     * @property   resultMatrixOrigin
+     * [@property]   resultMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the result matrix, at which to
+     * The origin, relative to [0, 0] in the result matrix, at which to
      *             start writing results.  This property is modifiable and defaults
      *             to [0, 0] at initialization time.  If a different origin is desired
      *             then this should be modified prior to encoding the kernel.
@@ -325,7 +330,7 @@ public class MPSMatrixSum extends MPSKernel {
     }
 
     /**
-     * @abstract   The transposition used to initialize the kernel.
+     * The transposition used to initialize the kernel.
      */
     @Generated
     @Selector("transpose")

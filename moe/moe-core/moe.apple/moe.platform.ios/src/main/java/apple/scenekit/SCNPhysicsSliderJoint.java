@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsSliderJoint
- * @abstract SCNPhysicsSliderJoint provides a linear sliding joint between two bodies.
+ * SCNPhysicsSliderJoint
+ * 
+ * SCNPhysicsSliderJoint provides a linear sliding joint between two bodies.
  */
 @Generated
 @Library("SceneKit")

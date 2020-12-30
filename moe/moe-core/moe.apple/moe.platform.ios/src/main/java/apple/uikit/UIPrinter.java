@@ -132,9 +132,11 @@ public class UIPrinter extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @method     printerWithURL:
-     * @abstract   Create a printer from its URL
-     * @discussion This method creates a new printer object from the printer's URL.
+     * printerWithURL:
+     * 
+     * Create a printer from its URL
+     * 
+     * This method creates a new printer object from the printer's URL.
      *        A UIPrinter object is returned even if the printer is not available
      *        on the network.
      */
@@ -164,8 +166,9 @@ public class UIPrinter extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract   Return the URL of the printer.
-     * @discussion This method returns the full URL of the printer which can be
+     * Return the URL of the printer.
+     * 
+     * This method returns the full URL of the printer which can be
      *        used in future calls to printerWithURL to access the same
      *        printer.
      */
@@ -174,9 +177,11 @@ public class UIPrinter extends NSObject {
     public native NSURL URL();
 
     /**
-     * @method     contactPrinter:
-     * @abstract   Check if printer is reachable, and update printer information.
-     * @discussion This method checks to see if this printer is available on the network,
+     * contactPrinter:
+     * 
+     * Check if printer is reachable, and update printer information.
+     * 
+     * This method checks to see if this printer is available on the network,
      * 	and sets the displayName, displayLocation, supportedJobTypes, makeAndModel,
      * supportsColor, and supportsDuplex for the printer.
      * The operation can take up to 30 seconds.
@@ -186,8 +191,9 @@ public class UIPrinter extends NSObject {
     public native void contactPrinter(@ObjCBlock(name = "call_contactPrinter") Block_contactPrinter completionHandler);
 
     /**
-     * @abstract   Return a human-readable location.
-     * @discussion This method returns the printer's location. This is human-readable text that
+     * Return a human-readable location.
+     * 
+     * This method returns the printer's location. This is human-readable text that
      *         usually appears in the UI below the printer's name (such as "Front Office").
      * 	        Returns nil if the printer doesn't have a location string.
      * This property's value is undefined until contactPrinter: has been called and
@@ -198,8 +204,9 @@ public class UIPrinter extends NSObject {
     public native String displayLocation();
 
     /**
-     * @abstract   Return a human-readable printer name.
-     * @discussion This method returns the printer name suitable for displaying in the UI.
+     * Return a human-readable printer name.
+     * 
+     * This method returns the printer name suitable for displaying in the UI.
      */
     @Generated
     @Selector("displayName")
@@ -210,8 +217,9 @@ public class UIPrinter extends NSObject {
     public native UIPrinter init();
 
     /**
-     * @abstract   Return make (manufacturer) and model of the printer.
-     * @discussion This method returns the make and model of the printer, which
+     * Return make (manufacturer) and model of the printer.
+     * 
+     * This method returns the make and model of the printer, which
      * is usually the manufacturer, model, and model number.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
@@ -221,8 +229,9 @@ public class UIPrinter extends NSObject {
     public native String makeAndModel();
 
     /**
-     * @abstract   Returns the supported job types of this printer.
-     * @discussion This method returns a mask with all the UIPrinterJobTypes values that
+     * Returns the supported job types of this printer.
+     * 
+     * This method returns a mask with all the UIPrinterJobTypes values that
      * the printer supports.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
@@ -233,8 +242,9 @@ public class UIPrinter extends NSObject {
     public native long supportedJobTypes();
 
     /**
-     * @abstract   Return whether this printer supports color printing.
-     * @discussion This method returns YES if the printer supports full color printing, NO
+     * Return whether this printer supports color printing.
+     * 
+     * This method returns YES if the printer supports full color printing, NO
      * 	otherwise.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
@@ -244,8 +254,9 @@ public class UIPrinter extends NSObject {
     public native boolean supportsColor();
 
     /**
-     * @abstract   Return whether this printer supports duplex (double-sided) printing.
-     * @discussion This method returns YES if the printer supports duplex (double-sided)
+     * Return whether this printer supports duplex (double-sided) printing.
+     * 
+     * This method returns YES if the printer supports duplex (double-sided)
      * printing, NO otherwise.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.

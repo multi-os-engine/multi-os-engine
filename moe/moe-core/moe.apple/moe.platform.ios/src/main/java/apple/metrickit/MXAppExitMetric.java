@@ -26,10 +26,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXAppExitMetric
- * @abstract      A class that encapsulates application exit metrics for both on screen and off screen exits.
- * @discussion    Application exits can be expected, such as when the application is killed in the app switcher by the user, or unexpected, such as when a runtime error occurs.
- * @discussion    Minimizing unexpected exits and maximizing expected exits can improve performance and reliability of your application.
+ * MXAppExitMetric
+ * 
+ * A class that encapsulates application exit metrics for both on screen and off screen exits.
+ * 
+ * Application exits can be expected, such as when the application is killed in the app switcher by the user, or unexpected, such as when a runtime error occurs.
+ * 
+ * Minimizing unexpected exits and maximizing expected exits can improve performance and reliability of your application.
  */
 @Generated
 @Library("MetricKit")
@@ -64,9 +67,11 @@ public class MXAppExitMetric extends MXMetric {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property      backgroundExitData
-     * @abstract      Cumulative background exit data.
-     * @discussion    This includes application exit data when the application was off screen and not visible to the user.
+     * [@property]      backgroundExitData
+     * 
+     * Cumulative background exit data.
+     * 
+     * This includes application exit data when the application was off screen and not visible to the user.
      */
     @Generated
     @Selector("backgroundExitData")
@@ -99,9 +104,11 @@ public class MXAppExitMetric extends MXMetric {
     public static native String description_static();
 
     /**
-     * @property      foregroundExitData
-     * @abstract      Cumulative foreground exit data.
-     * @discussion    This includes application exit data when the application was on screen and visible to the user.
+     * [@property]      foregroundExitData
+     * 
+     * Cumulative foreground exit data.
+     * 
+     * This includes application exit data when the application was on screen and visible to the user.
      */
     @Generated
     @Selector("foregroundExitData")

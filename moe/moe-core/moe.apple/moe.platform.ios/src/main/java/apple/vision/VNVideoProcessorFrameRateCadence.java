@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief An object that defines a frame-based cadence for processing the video stream.
+ * An object that defines a frame-based cadence for processing the video stream.
  */
 @Generated
 @Library("Vision")

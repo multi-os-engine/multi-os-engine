@@ -34,8 +34,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLDepthStencilState")
 public interface MTLDepthStencilState {
     /**
-     * @property device
-     * @abstract The device this resource was created against.  This resource can only be used with this device.
+     * [@property] device
+     * 
+     * The device this resource was created against.  This resource can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -43,8 +44,9 @@ public interface MTLDepthStencilState {
     MTLDevice device();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")

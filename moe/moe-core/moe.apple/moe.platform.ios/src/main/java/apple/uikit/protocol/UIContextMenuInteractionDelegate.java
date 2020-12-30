@@ -21,7 +21,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("UIContextMenuInteractionDelegate")
 public interface UIContextMenuInteractionDelegate {
     /**
-     * @abstract Called when the interaction begins.
+     * Called when the interaction begins.
      * 
      * @param interaction  The UIContextMenuInteraction.
      * @param location     The location of the interaction in its view.
@@ -37,7 +37,7 @@ public interface UIContextMenuInteractionDelegate {
             UIContextMenuInteraction interaction, @ByValue CGPoint location);
 
     /**
-     * @abstract Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
+     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
      * 
      * @param interaction    The UIContextMenuInteraction requesting a dismissal preview.
@@ -55,7 +55,7 @@ public interface UIContextMenuInteractionDelegate {
     }
 
     /**
-     * @abstract Called when the interaction begins. Return a UITargetedPreview describing the desired highlight preview.
+     * Called when the interaction begins. Return a UITargetedPreview describing the desired highlight preview.
      * 
      * @param interaction    The UIContextMenuInteraction requesting a highlighting preview.
      * @param configuration  The configuration of the menu about to be displayed by this interaction.
@@ -69,7 +69,7 @@ public interface UIContextMenuInteractionDelegate {
     }
 
     /**
-     * @abstract Called when the interaction is about to display a menu.
+     * Called when the interaction is about to display a menu.
      * 
      * @param interaction    The UIContextMenuInteraction.
      * @param configuration  The configuration of the menu about to be displayed by this interaction.
@@ -85,7 +85,7 @@ public interface UIContextMenuInteractionDelegate {
     }
 
     /**
-     * @abstract Called when the interaction is about to end.
+     * Called when the interaction is about to end.
      * 
      * @param interaction    The UIContextMenuInteraction.
      * @param configuration  Ending configuration.
@@ -101,7 +101,7 @@ public interface UIContextMenuInteractionDelegate {
     }
 
     /**
-     * @abstract Called when the interaction is about to "commit" in response to the user tapping the preview.
+     * Called when the interaction is about to "commit" in response to the user tapping the preview.
      * 
      * @param interaction    The UIContextMenuInteraction.
      * @param configuration  Configuration of the currently displayed menu.

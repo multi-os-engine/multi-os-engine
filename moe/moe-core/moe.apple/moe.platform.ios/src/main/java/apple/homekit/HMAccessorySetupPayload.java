@@ -92,7 +92,7 @@ public class HMAccessorySetupPayload extends NSObject {
     public native HMAccessorySetupPayload init();
 
     /**
-     * @brief Creates a new accessory setup payload to add an accessory to the home.
+     * Creates a new accessory setup payload to add an accessory to the home.
      * 
      * @param setupPayloadURL The HomeKit setup payload for the accessory being added to the home.
      * 
@@ -103,7 +103,7 @@ public class HMAccessorySetupPayload extends NSObject {
     public native HMAccessorySetupPayload initWithURL(NSURL setupPayloadURL);
 
     /**
-     * @brief Creates a new accessory setup payload to add an accessory to the home.
+     * Creates a new accessory setup payload to add an accessory to the home.
      * 
      * @param setupPayloadURL The HomeKit setup payload URL for the accessory being added to the home.`
      * 

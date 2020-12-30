@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNNeuronAbsolute
- * @dependency This depends on Metal.framework
- * @discussion Specifies the absolute neuron filter.  For each pixel, applies the following function: f(x) = | x |
+ * MPSCNNNeuronAbsolute
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the absolute neuron filter.  For each pixel, applies the following function: f(x) = | x |
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -163,7 +164,8 @@ public class MPSCNNNeuronAbsolute extends MPSCNNNeuron {
     public native MPSCNNNeuronAbsolute init();
 
     /**
-     * @abstract  Initialize a neuron filter
+     * Initialize a neuron filter
+     * 
      * @param      device          The device the filter will run on
      * @return     A valid MPSCNNNeuronAbsolute object or nil, if failure.
      */

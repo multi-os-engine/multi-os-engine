@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValuePositionState
+ * [@enum]      HMCharacteristicValuePositionState
  * 
- * @constant  HMCharacteristicValuePositionStateClosing           Position is moving towards minimum value.
- * @constant  HMCharacteristicValuePositionStateOpening           Position is moving towards maximum value.
- * @constant  HMCharacteristicValuePositionStateStopped           Position is Stopped.
+ * [@constant]  HMCharacteristicValuePositionStateClosing           Position is moving towards minimum value.
+ * [@constant]  HMCharacteristicValuePositionStateOpening           Position is moving towards maximum value.
+ * [@constant]  HMCharacteristicValuePositionStateStopped           Position is Stopped.
  */
 @Generated
 public final class HMCharacteristicValuePositionState {

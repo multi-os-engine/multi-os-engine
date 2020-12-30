@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKSwimmingStrokeStyle
- * @abstract      Represents a style of stroke used during a swimming workout.
+ * [@enum]          HKSwimmingStrokeStyle
+ * 
+ * Represents a style of stroke used during a swimming workout.
  */
 @Generated
 public final class HKSwimmingStrokeStyle {

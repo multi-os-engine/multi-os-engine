@@ -46,8 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKSourceRevision
- * @abstract      Represents a specific revision of an HKSource.
+ * HKSourceRevision
+ * 
+ * Represents a specific revision of an HKSource.
  */
 @Generated
 @Library("HealthKit")
@@ -178,16 +179,18 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     public native HKSourceRevision initWithCoder(NSCoder coder);
 
     /**
-     * @method        initWithSource:version:
-     * @abstract      Initializes a new HKSourceRevision with the given source and version.
+     * initWithSource:version:
+     * 
+     * Initializes a new HKSourceRevision with the given source and version.
      */
     @Generated
     @Selector("initWithSource:version:")
     public native HKSourceRevision initWithSourceVersion(HKSource source, String version);
 
     /**
-     * @property      source
-     * @abstract      The HKSource of the receiver.
+     * [@property]      source
+     * 
+     * The HKSource of the receiver.
      */
     @Generated
     @Selector("source")
@@ -200,17 +203,20 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     }
 
     /**
-     * @property      version
-     * @abstract      The version of the source property.
-     * @discussion    This value is taken from the CFBundleVersion of the source. May be nil for older data.
+     * [@property]      version
+     * 
+     * The version of the source property.
+     * 
+     * This value is taken from the CFBundleVersion of the source. May be nil for older data.
      */
     @Generated
     @Selector("version")
     public native String version();
 
     /**
-     * @method        initWithSource:version:productType:operatingSystemVersion:
-     * @abstract      Initializes a new HKSourceRevision with the given source, version, product type, and operating system
+     * initWithSource:version:productType:operatingSystemVersion:
+     * 
+     * Initializes a new HKSourceRevision with the given source, version, product type, and operating system
      *                version.
      */
     @Generated
@@ -219,9 +225,11 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
             String version, String productType, @ByValue NSOperatingSystemVersion operatingSystemVersion);
 
     /**
-     * @property      operatingSystemVersion
-     * @abstract      Represents the operating system version of the device running HealthKit when the object was created.
-     * @discussion    iOS versions after 8.0 but prior to 8.2 are saved as 8.0, and iOS version after 8.2 but prior to 9.0
+     * [@property]      operatingSystemVersion
+     * 
+     * Represents the operating system version of the device running HealthKit when the object was created.
+     * 
+     * iOS versions after 8.0 but prior to 8.2 are saved as 8.0, and iOS version after 8.2 but prior to 9.0
      *                are saved as 8.2.
      */
     @Generated
@@ -230,9 +238,11 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     public native NSOperatingSystemVersion operatingSystemVersion();
 
     /**
-     * @property      productType
-     * @abstract      Represents the product type of the device running HealthKit when the object was created.
-     * @discussion    This value may be nil for older data, which indicates an unknown product type.
+     * [@property]      productType
+     * 
+     * Represents the product type of the device running HealthKit when the object was created.
+     * 
+     * This value may be nil for older data, which indicates an unknown product type.
      */
     @Generated
     @Selector("productType")

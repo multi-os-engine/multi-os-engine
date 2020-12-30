@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEOnDemandRuleConnect
- * @discussion The NEOnDemandRuleConnect class declares the programmatic interface for an object that defines an On Demand rule with the "Connect" action.
+ * [@interface] NEOnDemandRuleConnect
+ * 
+ * The NEOnDemandRuleConnect class declares the programmatic interface for an object that defines an On Demand rule with the "Connect" action.
  * 
  * When rules of this class match, the VPN connection is started whenever an application running on the system opens a network connection.
  * 

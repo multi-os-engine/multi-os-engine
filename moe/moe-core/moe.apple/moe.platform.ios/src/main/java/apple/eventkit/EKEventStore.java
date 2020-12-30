@@ -47,9 +47,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class       EKEventStore
- * @abstract    The EKEventStore class provides an interface for accessing and manipulating calendar events and reminders.
- * @discussion  The EKEventStore class is the main point of contact for accessing Calendar data. You must
+ * EKEventStore
+ * 
+ * The EKEventStore class provides an interface for accessing and manipulating calendar events and reminders.
+ * 
+ * The EKEventStore class is the main point of contact for accessing Calendar data. You must
  *              create a EKEventStore object in order to retrieve/add/delete events or reminders from the Calendar database.
  * 
  *              Events, Reminders, and Calendar objects retrieved from an event store cannot be used with any other event
@@ -85,8 +87,9 @@ public class EKEventStore extends NSObject {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method     authorizationStatusForEntityType:
-     * @discussion Returns the authorization status for the given entity type
+     * authorizationStatusForEntityType:
+     * 
+     * Returns the authorization status for the given entity type
      */
     @Generated
     @Selector("authorizationStatusForEntityType:")
@@ -177,40 +180,45 @@ public class EKEventStore extends NSObject {
     public static native long version_static();
 
     /**
-     * @method     calendarItemWithIdentifier:
-     * @abstract   Returns either a reminder or the first occurrence of an event.
+     * calendarItemWithIdentifier:
+     * 
+     * Returns either a reminder or the first occurrence of an event.
      */
     @Generated
     @Selector("calendarItemWithIdentifier:")
     public native EKCalendarItem calendarItemWithIdentifier(String identifier);
 
     /**
-     * @method     calendarItemsWithExternalIdentifier:
-     * @abstract   Returns either matching reminders or the first occurrences of any events matching
+     * calendarItemsWithExternalIdentifier:
+     * 
+     * Returns either matching reminders or the first occurrences of any events matching
      *             the given external identifier.
-     * @discussion This method returns a set of EKEvents or EKReminders with the given external identifier.
+     * 
+     * This method returns a set of EKEvents or EKReminders with the given external identifier.
      *             Due to reasons discussed in -[EKCalendarItem calendarItemExternalIdentifier], there may be
      *             more than one matching calendar item.
      * 
      * @param      externalIdentifier  The value obtained from EKCalendarItem's
      *             calendarItemExternalIdentifier property
-     * @result     An unsorted array of EKCalendarItem instances
+     * @return     An unsorted array of EKCalendarItem instances
      */
     @Generated
     @Selector("calendarItemsWithExternalIdentifier:")
     public native NSArray<? extends EKCalendarItem> calendarItemsWithExternalIdentifier(String externalIdentifier);
 
     /**
-     * @method     calendarWithIdentifier:
-     * @abstract   Returns a calendar with a specified identifier.
+     * calendarWithIdentifier:
+     * 
+     * Returns a calendar with a specified identifier.
      */
     @Generated
     @Selector("calendarWithIdentifier:")
     public native EKCalendar calendarWithIdentifier(String identifier);
 
     /**
-     * @method     calendars
-     * @abstract   While this returns an array, the calendars are unordered. This call is deprecated
+     * calendars
+     * 
+     * While this returns an array, the calendars are unordered. This call is deprecated
      *              and only returns calendars that support events. If you want reminder calendars
      *              you should use calendarsForEntityType:
      */
@@ -220,16 +228,18 @@ public class EKEventStore extends NSObject {
     public native NSArray<? extends EKCalendar> calendars();
 
     /**
-     * @method     calendarsForEntityType
-     * @abstract   Returns calendars that support a given entity type (reminders, events)
+     * calendarsForEntityType
+     * 
+     * Returns calendars that support a given entity type (reminders, events)
      */
     @Generated
     @Selector("calendarsForEntityType:")
     public native NSArray<? extends EKCalendar> calendarsForEntityType(@NUInt long entityType);
 
     /**
-     * @method     cancelFetchRequest:
-     * @discussion Given a value returned from fetchRemindersMatchingPredicate, this method can be used to
+     * cancelFetchRequest:
+     * 
+     * Given a value returned from fetchRemindersMatchingPredicate, this method can be used to
      *             cancel the request. Once called, the completion block specified in fetchReminders... will
      *             not be called.
      */
@@ -238,9 +248,11 @@ public class EKEventStore extends NSObject {
     public native void cancelFetchRequest(@Mapped(ObjCObjectMapper.class) Object fetchIdentifier);
 
     /**
-     * @method     commit:
-     * @abstract   Commits pending changes to the database.
-     * @discussion If you use saveCalendar/saveEvent/removeCalendar/removeEvent, etc. and you pass NO to their
+     * commit:
+     * 
+     * Commits pending changes to the database.
+     * 
+     * If you use saveCalendar/saveEvent/removeCalendar/removeEvent, etc. and you pass NO to their
      *             parameter, you are batching changes for a later commit. This method does that commit. This
      *             allows you to save the database only once for many additions or changes.  If you pass
      *             YES to methods' commit parameter, then you don't need to call this method.
@@ -255,27 +267,33 @@ public class EKEventStore extends NSObject {
     public native boolean commit(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @property   defaultCalendarForNewEvents
-     * @abstract   Returns the calendar that events should be added to by default.
-     * @discussion This may be nil if there is no default calendar for new events.
+     * [@property]   defaultCalendarForNewEvents
+     * 
+     * Returns the calendar that events should be added to by default.
+     * 
+     * This may be nil if there is no default calendar for new events.
      */
     @Generated
     @Selector("defaultCalendarForNewEvents")
     public native EKCalendar defaultCalendarForNewEvents();
 
     /**
-     * @method     defaultCalendarForNewReminders
-     * @abstract   Returns the calendar that reminders should be added to by default.
-     * @discussion This may be nil if there is no default calendar for new reminders.
+     * defaultCalendarForNewReminders
+     * 
+     * Returns the calendar that reminders should be added to by default.
+     * 
+     * This may be nil if there is no default calendar for new reminders.
      */
     @Generated
     @Selector("defaultCalendarForNewReminders")
     public native EKCalendar defaultCalendarForNewReminders();
 
     /**
-     * @method     enumerateEventsMatchingPredicate:usingBlock:
-     * @abstract   Searches for events that match the given predicate.
-     * @discussion This call executes a search for the events indicated by the predicate passed to it, calling
+     * enumerateEventsMatchingPredicate:usingBlock:
+     * 
+     * Searches for events that match the given predicate.
+     * 
+     * This call executes a search for the events indicated by the predicate passed to it, calling
      *             the block specified in the callback parameter for each event. It only includes events which 
      *             have been committed (e.g. those saved using saveEvent:commit:NO are not included until commit: is called.)
      * 
@@ -293,28 +311,32 @@ public class EKEventStore extends NSObject {
             @ObjCBlock(name = "call_enumerateEventsMatchingPredicateUsingBlock") Block_enumerateEventsMatchingPredicateUsingBlock block);
 
     /**
-     * @property   eventStoreIdentifier
-     * @abstract   Returns a unique identifier string representing this calendar store.
+     * [@property]   eventStoreIdentifier
+     * 
+     * Returns a unique identifier string representing this calendar store.
      */
     @Generated
     @Selector("eventStoreIdentifier")
     public native String eventStoreIdentifier();
 
     /**
-     * @method     eventWithIdentifier:
-     * @abstract   Returns the first occurrence of an event matching the given event identifier.
+     * eventWithIdentifier:
+     * 
+     * Returns the first occurrence of an event matching the given event identifier.
      * 
      * @param      identifier   The eventIdentifier to search for.
-     * @result     An EKEvent object, or nil if not found.
+     * @return     An EKEvent object, or nil if not found.
      */
     @Generated
     @Selector("eventWithIdentifier:")
     public native EKEvent eventWithIdentifier(String identifier);
 
     /**
-     * @method     eventsMatchingPredicate:
-     * @abstract   Searches for events that match the given predicate.
-     * @discussion This call executes a search for the events indicated by the predicate passed to it.
+     * eventsMatchingPredicate:
+     * 
+     * Searches for events that match the given predicate.
+     * 
+     * This call executes a search for the events indicated by the predicate passed to it.
      *             It only includes events which have been committed (e.g. those saved using 
      *             saveEvent:commit:NO are not included until commit: is called.)
      * 
@@ -324,16 +346,18 @@ public class EKEventStore extends NSObject {
      * 
      * @param      predicate   The predicate to invoke. If this predicate was not created with the predicate
      *                         creation functions in this class, an exception is raised.
-     * @result     An array of EKEvent objects, or nil. There is no guaranteed order to the events.
+     * @return     An array of EKEvent objects, or nil. There is no guaranteed order to the events.
      */
     @Generated
     @Selector("eventsMatchingPredicate:")
     public native NSArray<? extends EKEvent> eventsMatchingPredicate(NSPredicate predicate);
 
     /**
-     * @method     fetchRemindersMatchingPredicate:completion:
-     * @abstract   Fetches reminders asynchronously.
-     * @discussion This method fetches reminders asynchronously and returns a value which can be
+     * fetchRemindersMatchingPredicate:completion:
+     * 
+     * Fetches reminders asynchronously.
+     * 
+     * This method fetches reminders asynchronously and returns a value which can be
      *             used in cancelFetchRequest: to cancel the request later if desired. The completion
      *             block is called with an array of reminders that match the given predicate (or potentially nil).
      *             This only includes reminders which have been committed (e.g. those saved using 
@@ -346,16 +370,18 @@ public class EKEventStore extends NSObject {
             @ObjCBlock(name = "call_fetchRemindersMatchingPredicateCompletion") Block_fetchRemindersMatchingPredicateCompletion completion);
 
     /**
-     * @method     init
+     * init
      */
     @Generated
     @Selector("init")
     public native EKEventStore init();
 
     /**
-     * @method     predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:
-     * @abstract   Fetch completed reminders in a set of calendars.
-     * @discussion You can use this method to search for reminders completed between a range of dates.
+     * predicateForCompletedRemindersWithCompletionDateStarting:ending:calendars:
+     * 
+     * Fetch completed reminders in a set of calendars.
+     * 
+     * You can use this method to search for reminders completed between a range of dates.
      *             You can pass nil for start date to find all reminders completed before endDate.
      *             You can pass nil for both start and end date to get all completed reminders
      *             in the specified calendars.
@@ -367,9 +393,11 @@ public class EKEventStore extends NSObject {
             NSDate endDate, NSArray<? extends EKCalendar> calendars);
 
     /**
-     * @method     predicateForEventsWithStartDate:endDate:calendars:
-     * @abstract   Creates a predicate for use with eventsMatchingPredicate or enumerateEventsMatchingPredicate:usingBlock:.
-     * @discussion Creates a simple query predicate to search for events within a certain date range. At present,
+     * predicateForEventsWithStartDate:endDate:calendars:
+     * 
+     * Creates a predicate for use with eventsMatchingPredicate or enumerateEventsMatchingPredicate:usingBlock:.
+     * 
+     * Creates a simple query predicate to search for events within a certain date range. At present,
      *             this will return events in the default time zone ([NSTimeZone defaultTimeZone]).
      * 
      *             For performance reasons, this method will only return events within a four year timespan.
@@ -386,9 +414,11 @@ public class EKEventStore extends NSObject {
             NSArray<? extends EKCalendar> calendars);
 
     /**
-     * @method     predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:
-     * @abstract   Fetch incomplete reminders in a set of calendars.
-     * @discussion You can use this method to search for incomplete reminders due in a range.
+     * predicateForIncompleteRemindersWithDueDateStarting:ending:calendars:
+     * 
+     * Fetch incomplete reminders in a set of calendars.
+     * 
+     * You can use this method to search for incomplete reminders due in a range.
      *             You can pass nil for start date to find all reminders due before endDate.
      *             You can pass nil for both start and end date to get all incomplete reminders
      *             in the specified calendars.
@@ -400,18 +430,22 @@ public class EKEventStore extends NSObject {
             NSDate endDate, NSArray<? extends EKCalendar> calendars);
 
     /**
-     * @method     predicateForRemindersInCalendars:
-     * @abstract   Fetch all reminders in a set of calendars.
-     * @discussion You can pass nil for calendars to fetch from all available calendars.
+     * predicateForRemindersInCalendars:
+     * 
+     * Fetch all reminders in a set of calendars.
+     * 
+     * You can pass nil for calendars to fetch from all available calendars.
      */
     @Generated
     @Selector("predicateForRemindersInCalendars:")
     public native NSPredicate predicateForRemindersInCalendars(NSArray<? extends EKCalendar> calendars);
 
     /**
-     * @method     refreshSourcesIfNecessary
-     * @abstract   Cause a sync to potentially occur taking into account the necessity of it.
-     * @discussion You can call this method to pull new data from remote sources.  
+     * refreshSourcesIfNecessary
+     * 
+     * Cause a sync to potentially occur taking into account the necessity of it.
+     * 
+     * You can call this method to pull new data from remote sources.
      *             This only updates the event store's data.  If you want to update your objects after 
      *             refreshing the sources, you should call refresh on each of them afterwards.
      *             On iOS, this sync only occurs if deemed necessary.  
@@ -423,9 +457,11 @@ public class EKEventStore extends NSObject {
     public native void refreshSourcesIfNecessary();
 
     /**
-     * @method     removeCalendar:commit:error:
-     * @abstract   Removes a calendar from the database.
-     * @discussion This method attempts to delete the given calendar from the calendar database. It
+     * removeCalendar:commit:error:
+     * 
+     * Removes a calendar from the database.
+     * 
+     * This method attempts to delete the given calendar from the calendar database. It
      *             returns YES if successful and NO otherwise. Passing a calendar fetched from
      *             another EKEventStore instance into this function will raise an exception.
      * 
@@ -456,9 +492,11 @@ public class EKEventStore extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method     removeEvent:span:error:
-     * @abstract   Removes an event from the calendar store.
-     * @discussion This method attempts to remove the event from the calendar database. It returns YES if
+     * removeEvent:span:error:
+     * 
+     * Removes an event from the calendar store.
+     * 
+     * This method attempts to remove the event from the calendar database. It returns YES if
      *             successful and NO otherwise. It's possible for this method to return NO, and error
      *             will be set to nil. This occurs if the event wasn't ever added and didn't need removing. This
      *             means the correct way to detect failure is a result of NO and a non-nil error parameter.
@@ -478,9 +516,11 @@ public class EKEventStore extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method     removeReminder:commit:error:
-     * @abstract   Removes a reminder from the event store.
-     * @discussion This method attempts to remove the reminder from the event store database. It returns YES if
+     * removeReminder:commit:error:
+     * 
+     * Removes a reminder from the event store.
+     * 
+     * This method attempts to remove the reminder from the event store database. It returns YES if
      *             successful and NO otherwise. Passing a reminder from another EKEventStore into this function
      *             will raise an exception. After a reminder is removed, it is no longer tied to this event store.
      * 
@@ -497,8 +537,9 @@ public class EKEventStore extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method     requestAccessToEntityType:completion:
-     * @discussion Users are able to grant or deny access to event and reminder data on a per-app basis. To request access to
+     * requestAccessToEntityType:completion:
+     * 
+     * Users are able to grant or deny access to event and reminder data on a per-app basis. To request access to
      *             event and/or reminder data, call -requestAccessToEntityType:completion:. This will not block the app while
      *             the user is being asked to grant or deny access.
      * 
@@ -513,9 +554,11 @@ public class EKEventStore extends NSObject {
             @ObjCBlock(name = "call_requestAccessToEntityTypeCompletion") Block_requestAccessToEntityTypeCompletion completion);
 
     /**
-     * @method     reset
-     * @abstract   Resets the event store.
-     * @discussion You can use this method to forget ALL changes made to the event store (all additions, all
+     * reset
+     * 
+     * Resets the event store.
+     * 
+     * You can use this method to forget ALL changes made to the event store (all additions, all
      *             fetched objects, etc.). It essentially is as if you released the store and then created a
      *             new one. It brings it back to its initial state. All objects ever created/fetched, etc.
      *             using this store are no longer connected to it and are considered invalid.
@@ -525,9 +568,11 @@ public class EKEventStore extends NSObject {
     public native void reset();
 
     /**
-     * @method     saveCalendar:commit:error:
-     * @abstract   Saves changes to a calendar, or adds a new calendar to the database.
-     * @discussion This method attempts to save the given calendar to the calendar database. It
+     * saveCalendar:commit:error:
+     * 
+     * Saves changes to a calendar, or adds a new calendar to the database.
+     * 
+     * This method attempts to save the given calendar to the calendar database. It
      *             returns YES if successful and NO otherwise. Passing a calendar fetched from
      *             another EKEventStore instance into this function will raise an exception.
      *             On WatchOS, saving changes is not supported.
@@ -552,9 +597,11 @@ public class EKEventStore extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method     saveEvent:span:error:
-     * @abstract   Saves changes to an event permanently.
-     * @discussion This method attempts to save the event to the calendar database. It returns YES if
+     * saveEvent:span:error:
+     * 
+     * Saves changes to an event permanently.
+     * 
+     * This method attempts to save the event to the calendar database. It returns YES if
      *             successful and NO otherwise. It's possible for this method to return NO, and error
      *             will be set to nil. This occurs if the event wasn't dirty and didn't need saving. This
      *             means the correct way to detect failure is a result of NO and a non-nil error parameter.
@@ -578,9 +625,11 @@ public class EKEventStore extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method     saveReminder:commit:error:
-     * @abstract   Saves changes to a reminder.
-     * @discussion This method attempts to save the reminder to the event store database. It returns YES if
+     * saveReminder:commit:error:
+     * 
+     * Saves changes to a reminder.
+     * 
+     * This method attempts to save the reminder to the event store database. It returns YES if
      *             successful and NO otherwise. Passing a reminder fetched from another EKEventStore instance
      *             into this function will raise an exception.
      * 
@@ -600,16 +649,18 @@ public class EKEventStore extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method     sourceWithIdentifier:
-     * @abstract   Returns a source with a specified identifier.
+     * sourceWithIdentifier:
+     * 
+     * Returns a source with a specified identifier.
      */
     @Generated
     @Selector("sourceWithIdentifier:")
     public native EKSource sourceWithIdentifier(String identifier);
 
     /**
-     * @property   sources
-     * @abstract   Returns an unordered array of sources.
+     * [@property]   sources
+     * 
+     * Returns an unordered array of sources.
      */
     @Generated
     @Selector("sources")
@@ -637,11 +688,14 @@ public class EKEventStore extends NSObject {
     }
 
     /**
-     * @property   delegateSources
-     * @abstract   Returns an unordered array of sources for all available delegates.
-     * @discussion By default, delegates are not included in an event store's sources. To work with delegates,
+     * [@property]   delegateSources
+     * 
+     * Returns an unordered array of sources for all available delegates.
+     * 
+     * By default, delegates are not included in an event store's sources. To work with delegates,
      *             you can create a new event store and pass in the sources, including sources returned from this
      *             method, that you're interested in.
+     * 
      * @see        initWithSources:
      */
     @Generated

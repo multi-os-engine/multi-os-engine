@@ -137,7 +137,7 @@ public class ASAuthorizationRequest extends NSObject implements NSCopying, NSSec
     public static native Object new_objc();
 
     /**
-     * @abstract The provider object that is being used to service this request
+     * The provider object that is being used to service this request
      */
     @Generated
     @Selector("provider")

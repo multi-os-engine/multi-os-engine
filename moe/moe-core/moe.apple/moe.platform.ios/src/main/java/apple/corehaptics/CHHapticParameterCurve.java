@@ -24,11 +24,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CHHapticParameterCurve
- * @abstract
+ * CHHapticParameterCurve
+ * 
  * 	A CHHapticParameterCurve is a set of CHHapticParameterCurveControlPoints which describe the control (inflection) points
  * 	for the parameter values to be applied to the associated pattern.
- * @discussion
+ * 
  * 	The CHHapticParameterCurve generates an interpolated value output which passed through each control point at its
  * 	associated relative time.  These times will all be relative to the start time of the CHHapticParameterCurve within the
  * 	playing pattern.
@@ -105,9 +105,10 @@ public class CHHapticParameterCurve extends NSObject {
     public native CHHapticParameterCurve init();
 
     /**
-     * @method initWithParameterID:controlPoints:relativeTime
-     * 	@abstract
+     * initWithParameterID:controlPoints:relativeTime
+     * 
      * 		Initialize a CHHapticParameterCurve with a parameter ID, time, and an array of CHHapticParameterCurveControlPoint.
+     * 
      * 	@param parameterID
      * 		The CHHapticDynamicParameterID for the desired parameter.
      * @param controlPoints

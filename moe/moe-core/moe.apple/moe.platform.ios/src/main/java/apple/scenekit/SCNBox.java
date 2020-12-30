@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNBox
- * @abstract SCNBox represents a box with rectangular sides and optional chamfers.
+ * SCNBox
+ * 
+ * SCNBox represents a box with rectangular sides and optional chamfers.
  */
 @Generated
 @Library("SceneKit")
@@ -80,8 +81,10 @@ public class SCNBox extends SCNGeometry {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @method boxWithWidth:height:length:chamferRadius:
-     * @abstract Creates and returns a box with given width, height, length and chamfer radius.
+     * boxWithWidth:height:length:chamferRadius:
+     * 
+     * Creates and returns a box with given width, height, length and chamfer radius.
+     * 
      * @param width The width of the box.
      * @param height The height of the box.
      * @param length The length of the box.
@@ -189,9 +192,11 @@ public class SCNBox extends SCNGeometry {
     public static native long version_static();
 
     /**
-     * @property chamferRadius
-     * @abstract The chamfer radius. Animatable.
-     * @discussion If the value is strictly less than 0, the geometry is empty. The default value is 0.
+     * [@property] chamferRadius
+     * 
+     * The chamfer radius. Animatable.
+     * 
+     * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
     @Selector("chamferRadius")
@@ -199,9 +204,11 @@ public class SCNBox extends SCNGeometry {
     public native double chamferRadius();
 
     /**
-     * @property chamferSegmentCount
-     * @abstract The number of chamfer subdivisions. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 5.
+     * [@property] chamferSegmentCount
+     * 
+     * The number of chamfer subdivisions. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 5.
      */
     @Generated
     @Selector("chamferSegmentCount")
@@ -209,9 +216,11 @@ public class SCNBox extends SCNGeometry {
     public native long chamferSegmentCount();
 
     /**
-     * @property height
-     * @abstract The height of the box. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The height of the box. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("height")
@@ -219,9 +228,11 @@ public class SCNBox extends SCNGeometry {
     public native double height();
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("heightSegmentCount")
@@ -237,9 +248,11 @@ public class SCNBox extends SCNGeometry {
     public native SCNBox initWithCoder(NSCoder coder);
 
     /**
-     * @property length
-     * @abstract The length of the box. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] length
+     * 
+     * The length of the box. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("length")
@@ -247,9 +260,11 @@ public class SCNBox extends SCNGeometry {
     public native double length();
 
     /**
-     * @property lengthSegmentCount
-     * @abstract The number of subdivisions along the Z axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] lengthSegmentCount
+     * 
+     * The number of subdivisions along the Z axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("lengthSegmentCount")
@@ -257,72 +272,88 @@ public class SCNBox extends SCNGeometry {
     public native long lengthSegmentCount();
 
     /**
-     * @property chamferRadius
-     * @abstract The chamfer radius. Animatable.
-     * @discussion If the value is strictly less than 0, the geometry is empty. The default value is 0.
+     * [@property] chamferRadius
+     * 
+     * The chamfer radius. Animatable.
+     * 
+     * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
     @Selector("setChamferRadius:")
     public native void setChamferRadius(@NFloat double value);
 
     /**
-     * @property chamferSegmentCount
-     * @abstract The number of chamfer subdivisions. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 5.
+     * [@property] chamferSegmentCount
+     * 
+     * The number of chamfer subdivisions. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 5.
      */
     @Generated
     @Selector("setChamferSegmentCount:")
     public native void setChamferSegmentCount(@NInt long value);
 
     /**
-     * @property height
-     * @abstract The height of the box. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The height of the box. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
     /**
-     * @property length
-     * @abstract The length of the box. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] length
+     * 
+     * The length of the box. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setLength:")
     public native void setLength(@NFloat double value);
 
     /**
-     * @property lengthSegmentCount
-     * @abstract The number of subdivisions along the Z axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] lengthSegmentCount
+     * 
+     * The number of subdivisions along the Z axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setLengthSegmentCount:")
     public native void setLengthSegmentCount(@NInt long value);
 
     /**
-     * @property width
-     * @abstract The width of the box. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] width
+     * 
+     * The width of the box. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NFloat double value);
 
     /**
-     * @property widthSegmentCount
-     * @abstract The number of subdivisions along the X axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] widthSegmentCount
+     * 
+     * The number of subdivisions along the X axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setWidthSegmentCount:")
@@ -335,9 +366,11 @@ public class SCNBox extends SCNGeometry {
     }
 
     /**
-     * @property width
-     * @abstract The width of the box. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] width
+     * 
+     * The width of the box. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("width")
@@ -345,9 +378,11 @@ public class SCNBox extends SCNGeometry {
     public native double width();
 
     /**
-     * @property widthSegmentCount
-     * @abstract The number of subdivisions along the X axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] widthSegmentCount
+     * 
+     * The number of subdivisions along the X axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("widthSegmentCount")

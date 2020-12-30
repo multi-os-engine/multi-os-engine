@@ -368,7 +368,7 @@ public class NSFileProviderExtension extends NSObject {
      * The system calls this method to fetch thumbnails.
      * 
      * The @p perThumbnailCompletionHandler should be called for each thumbnail, and
-     * @p completionHandler only after all the per thumbnail completion blocks.
+     * [@p] completionHandler only after all the per thumbnail completion blocks.
      * 
      * In the event of a global error, the implementation is allowed to skip calling
      * the @p perThumbnailCompletionHandler for individual thumbnails. In that case,

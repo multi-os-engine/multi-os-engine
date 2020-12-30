@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A view that integrates ARSession rendering into SpriteKit.
  * 
- * @discussion The view draws the camera background, and projects and maps anchors to nodes.
+ * The view draws the camera background, and projects and maps anchors to nodes.
  */
 @Generated
 @Library("ARKit")
@@ -79,6 +79,7 @@ public class ARSKView extends SKView implements ARSessionProviding {
 
     /**
      * Searches the scene hierarchy for an anchor associated with the provided node.
+     * 
      * @param node A node in the view’s scene.
      */
     @Generated
@@ -262,8 +263,9 @@ public class ARSKView extends SKView implements ARSessionProviding {
     /**
      * Searches the current frame for objects corresponding to a point in the view.
      * 
-     * @discussion A 2D point in the view’s coordinate space can refer to any point along a line segment
+     * A 2D point in the view’s coordinate space can refer to any point along a line segment
      * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line segment.
+     * 
      * @param point A point in the view’s coordinate system.
      * @param types The types of results to search for.
      * @return An array of all hit-test results sorted from nearest to farthest.
@@ -321,6 +323,7 @@ public class ARSKView extends SKView implements ARSessionProviding {
 
     /**
      * Returns the node that has been mapped to a specific anchor.
+     * 
      * @param anchor An anchor with an existing node mapping.
      */
     @Generated

@@ -20,19 +20,20 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLArgumentType
- * @abstract The type for an input to a MTLRenderPipelineState or a MTLComputePipelineState
+ * [@enum] MTLArgumentType
  * 
- * @constant MTLArgumentTypeBuffer
+ * The type for an input to a MTLRenderPipelineState or a MTLComputePipelineState
+ * 
+ * [@constant] MTLArgumentTypeBuffer
  * This input is a MTLBuffer
  * 
- * @constant MTLArgumentTypeThreadgroupMemory
+ * [@constant] MTLArgumentTypeThreadgroupMemory
  * This input is a pointer to the threadgroup memory.
  * 
- * @constant MTLArgumentTypeTexture
+ * [@constant] MTLArgumentTypeTexture
  * This input is a MTLTexture.
  * 
- * @constant MTLArgumentTypeSampler
+ * [@constant] MTLArgumentTypeSampler
  * This input is a sampler.
  */
 @Generated

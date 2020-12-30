@@ -30,10 +30,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class          MPSState
- * @dependency     This depends on Metal Framework
- * @abstract       A semi-opaque data container for large storage in MPS CNN filters
- * @discussion     Some MPS CNN kernels produce additional information beyond a
+ * MPSState
+ * [@dependency]     This depends on Metal Framework
+ * 
+ * A semi-opaque data container for large storage in MPS CNN filters
+ * 
+ * Some MPS CNN kernels produce additional information beyond a
  *                 MPSImage. These may be pooling indices where the result came from,
  *                 convolution weights, or other information not contained in the
  *                 usual MPSImage result from a MPSCNNKernel. A MPSState object
@@ -179,9 +181,9 @@ public class MPSState extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @abstract       Describes whether or not a MPSState object is temporary or not.
+     * Describes whether or not a MPSState object is temporary or not.
      * 
-     * @discussion     Temporary MPSState objects are designed to efficiently share
+     * Temporary MPSState objects are designed to efficiently share
      *                 memory with other objects on a MTLCommandBuffer. Their valid lifetime
      *                 is limited to the lifetime of a MTLCommandBuffer. The valid lifetime
      *                 of the data that they contain stretches from creation to when their
@@ -202,8 +204,9 @@ public class MPSState extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
@@ -216,10 +219,10 @@ public class MPSState extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract       The number of times temporary data may be read by a MPSCNNKernel
+     * The number of times temporary data may be read by a MPSCNNKernel
      *                 before its contents become undefined.
      * 
-     * @discussion     MPSState must release their underlying resources for reuse
+     * MPSState must release their underlying resources for reuse
      *                 immediately after last use. So as to facilitate *prompt* convenient
      *                 memory recycling, each time a temporary MPSState is read by a
      *                 MPSCNNKernel -encode... method, its readCount is automatically
@@ -268,18 +271,19 @@ public class MPSState extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
     /**
-     * @abstract       The number of times temporary data may be read by a MPSCNNKernel
+     * The number of times temporary data may be read by a MPSCNNKernel
      *                 before its contents become undefined.
      * 
-     * @discussion     MPSState must release their underlying resources for reuse
+     * MPSState must release their underlying resources for reuse
      *                 immediately after last use. So as to facilitate *prompt* convenient
      *                 memory recycling, each time a temporary MPSState is read by a
      *                 MPSCNNKernel -encode... method, its readCount is automatically
@@ -332,8 +336,9 @@ public class MPSState extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract Return the buffer size of the MTLBuffer at index or 0 if it is not a MTLBuffer
-     * @discussion Does not force allocation of the MTLResource
+     * Return the buffer size of the MTLBuffer at index or 0 if it is not a MTLBuffer
+     * 
+     * Does not force allocation of the MTLResource
      */
     @Generated
     @Selector("bufferSizeAtIndex:")
@@ -341,8 +346,9 @@ public class MPSState extends NSObject {
     public native long bufferSizeAtIndex(@NUInt long index);
 
     /**
-     * @abstract       Determine padding and sizing of result images
-     * @discussion     A MPSState has the opportunity to reconfigure the MPSImageDescriptor
+     * Determine padding and sizing of result images
+     * 
+     * A MPSState has the opportunity to reconfigure the MPSImageDescriptor
      *                 used to create the filter result state and set the MPSKernel.offset
      *                 to the correct value.  By default, the MPSState does not modify the
      *                 descriptor.
@@ -360,7 +366,7 @@ public class MPSState extends NSObject {
      * 
      *                 Some code that may prove helpful:
      * 
-     *                 @code
+     *                 [@code]
      *                 const int centeringPolicy = 0;  // When kernelSize is even: 0 pad bottom right. 1 pad top left.    Centers the kernel for even sized kernels.
      * 
      *                 typedef enum Style{
@@ -407,7 +413,7 @@ public class MPSState extends NSObject {
      *                     // account for the fact that the offset is based on the center pixel, not the left edge
      *                     return correction - leftExtraPixels;
      *                 }
-     *                 @endcode
+     *                 [@endcode]
      * 
      * @param          sourceImages        The list of source images to be used
      * @param          sourceStates        The list of source states to be used
@@ -432,9 +438,11 @@ public class MPSState extends NSObject {
             @NUInt long bufferSize);
 
     /**
-     * @abstract       Initialize a non-temporary state to hold a number of textures and buffers
-     * @discussion     The allocation of each resource will be deferred  until it is needed.
+     * Initialize a non-temporary state to hold a number of textures and buffers
+     * 
+     * The allocation of each resource will be deferred  until it is needed.
      *                 This occurs when -resource or -resourceAtIndex: is called.
+     * 
      * @param          resourceList The list of resources to create.
      */
     @Generated
@@ -448,7 +456,8 @@ public class MPSState extends NSObject {
             MTLTextureDescriptor descriptor);
 
     /**
-     * @abstract Create a MPSState with a non-temporary MTLResource
+     * Create a MPSState with a non-temporary MTLResource
+     * 
      * @param      resource    A MTLBuffer or MTLTexture. May be nil.
      */
     @Generated
@@ -456,8 +465,9 @@ public class MPSState extends NSObject {
     public native MPSState initWithResource(@Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     /**
-     * @abstract Create a state object with a list of MTLResources
-     * @discussion     Because MPS prefers deferred allocation of resources
+     * Create a state object with a list of MTLResources
+     * 
+     * Because MPS prefers deferred allocation of resources
      *                 your application should use -initWithTextures:bufferSizes:bufferCount:
      *                 whenever possible. This method is useful for cases when the
      *                 MTLResources must be initialized by the CPU.
@@ -467,8 +477,9 @@ public class MPSState extends NSObject {
     public native MPSState initWithResources(NSArray<?> resources);
 
     /**
-     * @abstract Get the private MTLResource underlying the MPSState
-     * @discussion  When the state is not directly initialized with a MTLResource,
+     * Get the private MTLResource underlying the MPSState
+     * 
+     * When the state is not directly initialized with a MTLResource,
      *              the actuall MTLResource creation is deferred. Especially with
      *              temporary resources, it is important to delay this creation
      *              as late as possible to avoid increasing the memory footprint.
@@ -495,8 +506,9 @@ public class MPSState extends NSObject {
     public native MTLResource resource();
 
     /**
-     * @abstract   Get the MTLResource at the indicated index
-     * @discussion  By convention, except where otherwise documented, the MTLResources
+     * Get the MTLResource at the indicated index
+     * 
+     * By convention, except where otherwise documented, the MTLResources
      *              held by the MPSState are private to the MPSState object, owned
      *              by the MPSState subclass author. If the MPSState subclass
      *              author is MPS, then the identity (e.g. texture vs. buffer)
@@ -525,7 +537,7 @@ public class MPSState extends NSObject {
     public native MTLResource resourceAtIndexAllocateMemory(@NUInt long index, boolean allocateMemory);
 
     /**
-     * @abstract   Return the number of MTLResource objects held by the state
+     * Return the number of MTLResource objects held by the state
      */
     @Generated
     @Selector("resourceCount")
@@ -533,8 +545,9 @@ public class MPSState extends NSObject {
     public native long resourceCount();
 
     /**
-     * @abstract       Get the number of bytes used to allocate underyling MTLResources
-     * @discussion     This is the size of the backing store of underlying MTLResources.
+     * Get the number of bytes used to allocate underyling MTLResources
+     * 
+     * This is the size of the backing store of underlying MTLResources.
      *                 It does not include all storage used by the object, for example
      *                 the storage used to hold the MPSState instantiation and MTLTexture
      *                 or MTLBuffer is not included. It only measures the size of the
@@ -559,8 +572,9 @@ public class MPSState extends NSObject {
     public native long resourceSize();
 
     /**
-     * @abstract Return YES if the resource at index is a buffer
-     * @discussion Does not force allocation of the MTLResource
+     * Return YES if the resource at index is a buffer
+     * 
+     * Does not force allocation of the MTLResource
      */
     @Generated
     @Selector("resourceTypeAtIndex:")
@@ -568,10 +582,12 @@ public class MPSState extends NSObject {
     public native long resourceTypeAtIndex(@NUInt long index);
 
     /**
-     * @abstract   Flush any copy of MTLResources held by the state from the device's caches, and invalidate any CPU caches if needed.
-     * @discussion This will call [id <MTLBlitEncoder> synchronizeResource: ] on the state's MTLResources.
+     * Flush any copy of MTLResources held by the state from the device's caches, and invalidate any CPU caches if needed.
+     * 
+     * This will call [id <MTLBlitEncoder> synchronizeResource: ] on the state's MTLResources.
      *             This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary
      *             resources (these are all MTLStorageModePrivate), nothing is done.
+     * 
      * @param      commandBuffer       The commandbuffer on which to synchronize
      */
     @Generated
@@ -579,7 +595,8 @@ public class MPSState extends NSObject {
     public native void synchronizeOnCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
-     * @abstract Create a new autoreleased temporary state object without underlying resource
+     * Create a new autoreleased temporary state object without underlying resource
+     * 
      * @param cmdBuf  The command buffer with which the temporary resource is associated 
      */
     @Generated
@@ -589,7 +606,8 @@ public class MPSState extends NSObject {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
     /**
-     * @abstract Create a MPSState holding a temporary MTLBuffer
+     * Create a MPSState holding a temporary MTLBuffer
+     * 
      * @param   cmdBuf     The command buffer against which the temporary resource is allocated
      * @param   bufferSize The size of the buffer in bytes
      */
@@ -600,8 +618,9 @@ public class MPSState extends NSObject {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     /**
-     * @abstract       Initialize a temporary state to hold a number of textures and buffers
-     * @discussion     The textures occur first in sequence
+     * Initialize a temporary state to hold a number of textures and buffers
+     * 
+     * The textures occur first in sequence
      */
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
@@ -610,7 +629,8 @@ public class MPSState extends NSObject {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
 
     /**
-     * @abstract Create a MPSState holding a temporary MTLTexture
+     * Create a MPSState holding a temporary MTLTexture
+     * 
      * @param   cmdBuf     The command buffer against which the temporary resource is allocated
      * @param   descriptor A descriptor for the new temporary texture
      */
@@ -621,8 +641,9 @@ public class MPSState extends NSObject {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     /**
-     * @abstract Return the texture size {width,height,depth} or {0,0,0} if it is not a MTLTexture
-     * @discussion Does not force allocation of the MTLResource
+     * Return the texture size {width,height,depth} or {0,0,0} if it is not a MTLTexture
+     * 
+     * Does not force allocation of the MTLResource
      */
     @Generated
     @Selector("textureInfoAtIndex:")

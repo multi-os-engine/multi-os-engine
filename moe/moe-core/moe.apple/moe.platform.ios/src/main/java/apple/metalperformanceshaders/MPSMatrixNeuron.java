@@ -29,13 +29,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixNeuron
+ * MPSMatrixNeuron
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A neuron activation kernel that operates on matrices.
+ * A neuron activation kernel that operates on matrices.
  * 
- * @discussion A MPSMatrixNeuron object computes:
+ * A MPSMatrixNeuron object computes:
  * 
  *                 y = neuron(alpha * x + bias)
  * 
@@ -78,9 +78,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property   alpha
+     * [@property]   alpha
      * 
-     * @discussion The scale factor to apply to the input.  Specified in double
+     * The scale factor to apply to the input.  Specified in double
      *             precision.  Will be converted to the appropriate precision in the
      *             implementation subject to rounding and/or clamping as necessary.
      *             Defaults to 1.0 at initialization time.
@@ -112,11 +112,12 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * Make a copy of this kernel for a new device - @see MPSKernel
+     * 
      * @param      zone        The NSZone in which to allocate the object
      * @param      device      The device for the new MPSKernel. If nil, then use
      *                         self.device.
-     * @result     A pointer to a copy of this MPSKernel. This will fail, returning
+     * @return     A pointer to a copy of this MPSKernel. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -135,7 +136,16 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixNeuron object to a command buffer.
+     * Encode a MPSMatrixNeuron object to a command buffer.
+     * 
+     * Encodes the operation to the specified command buffer.  resultMatrix
+     *             must be large enough to hold a
+     *                 MIN(sourceNumberOfFeatureVectors, inputMatrix.rows - sourceMatrixOrigin.x)
+     *                 x
+     *                 MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) array.
+     * 
+     *             The bias vector must contain at least
+     *                 MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) elements.
      * 
      * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -145,15 +155,6 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      *                             a null object to indicate that no bias is to be applied.
      * 
      * @param      resultMatrix    A valid MPSMatrix object which specifies the output array.
-     * 
-     * @discussion Encodes the operation to the specified command buffer.  resultMatrix
-     *             must be large enough to hold a
-     *                 MIN(sourceNumberOfFeatureVectors, inputMatrix.rows - sourceMatrixOrigin.x)
-     *                 x
-     *                 MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) array.
-     * 
-     *             The bias vector must contain at least
-     *                 MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) elements.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:biasVector:resultMatrix:")
@@ -175,8 +176,10 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public native MPSMatrixNeuron initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixNeuron
      * @param      device      The MTLDevice on which to make the MPSMatrixNeuron object.
      * @return     A new MPSMatrixNeuron object, or nil if failure.
@@ -211,28 +214,28 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterA")
     public native float neuronParameterA();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterB")
     public native float neuronParameterB();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterC")
     public native float neuronParameterC();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronType")
@@ -253,9 +256,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   alpha
+     * [@property]   alpha
      * 
-     * @discussion The scale factor to apply to the input.  Specified in double
+     * The scale factor to apply to the input.  Specified in double
      *             precision.  Will be converted to the appropriate precision in the
      *             implementation subject to rounding and/or clamping as necessary.
      *             Defaults to 1.0 at initialization time.
@@ -265,9 +268,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public native void setAlpha(double value);
 
     /**
-     * @abstract   Add per output value neuron parameters A for PReLu neuron activation functions.
+     * Add per output value neuron parameters A for PReLu neuron activation functions.
      * 
-     * @discussion This method sets the neuron to PReLU, zeros parameters A and B and sets the per output value
+     * This method sets the neuron to PReLU, zeros parameters A and B and sets the per output value
      *             neuron parameters A to an array containing a unique value of A for each output value.
      * 
      *             If the neuron function is f(v,a,b), it will apply
@@ -289,9 +292,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public native void setNeuronToPReLUWithParametersA(NSData A);
 
     /**
-     * @abstract   Specifies a neuron activation function to be used.
+     * Specifies a neuron activation function to be used.
      * 
-     * @discussion This method can be used to add a neuron activation funtion of given type with
+     * This method can be used to add a neuron activation funtion of given type with
      *             associated scalar parameters A, B, and C that are shared across all output values.
      *             Note that this method can only be used to specify neurons which are specified by three (or fewer)
      *             parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
@@ -311,9 +314,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
             float parameterC);
 
     /**
-     * @property   sourceInputFeatureChannels
+     * [@property]   sourceInputFeatureChannels
      * 
-     * @discussion The input size to to use in the operation.  This is equivalent to the
+     * The input size to to use in the operation.  This is equivalent to the
      *             number of columns in the primary (input array) source matrix to consider
      *             and the number of channels to produce for the output matrix.
      *             This property is modifiable and defaults to NSUIntegerMax.  At encode
@@ -329,9 +332,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
     /**
-     * @property   sourceNumberOfFeatureVectors
+     * [@property]   sourceNumberOfFeatureVectors
      * 
-     * @discussion The number of input vectors which make up the input array.  This
+     * The number of input vectors which make up the input array.  This
      *             is equivalent to the number of rows to consider from the primary
      *             source matrix.
      *             This property is modifiable and defaults to NSUIntegerMax.  At encode
@@ -348,9 +351,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   sourceInputFeatureChannels
+     * [@property]   sourceInputFeatureChannels
      * 
-     * @discussion The input size to to use in the operation.  This is equivalent to the
+     * The input size to to use in the operation.  This is equivalent to the
      *             number of columns in the primary (input array) source matrix to consider
      *             and the number of channels to produce for the output matrix.
      *             This property is modifiable and defaults to NSUIntegerMax.  At encode
@@ -367,9 +370,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public native long sourceInputFeatureChannels();
 
     /**
-     * @property   sourceNumberOfFeatureVectors
+     * [@property]   sourceNumberOfFeatureVectors
      * 
-     * @discussion The number of input vectors which make up the input array.  This
+     * The number of input vectors which make up the input array.  This
      *             is equivalent to the number of rows to consider from the primary
      *             source matrix.
      *             This property is modifiable and defaults to NSUIntegerMax.  At encode

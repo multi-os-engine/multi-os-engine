@@ -21,8 +21,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MPSNDArrayAllocator")
 public interface MPSNDArrayAllocator extends NSSecureCoding, NSCopying {
     /**
-     * @abstract   Create a new MPSNDArray
-     * @discussion See class description for sample implementation
+     * Create a new MPSNDArray
+     * 
+     * See class description for sample implementation
+     * 
      * @param          cmdBuf      The MTLCommandBuffer on which the array will be initialized.
      *                             cmdBuf.device encodes the MTLDevice.
      * @param          descriptor  A MPSNDArrayDescriptor containing the array parameters to use.

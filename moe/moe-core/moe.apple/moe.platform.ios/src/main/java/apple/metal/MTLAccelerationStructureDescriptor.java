@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Base class for acceleration structure descriptors. Do not use this class directly. Use
+ * Base class for acceleration structure descriptors. Do not use this class directly. Use
  * one of the derived classes instead.
  */
 @Generated

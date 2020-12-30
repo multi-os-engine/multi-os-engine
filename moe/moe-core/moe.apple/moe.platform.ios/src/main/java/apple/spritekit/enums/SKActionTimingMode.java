@@ -22,13 +22,13 @@ import org.moe.natj.general.ann.NInt;
 /**
  * Adjust the timing of an action
  * 
- * @enum SKActionTimingLinear Specifies linear pacing. Linear pacing causes an
+ * [@enum] SKActionTimingLinear Specifies linear pacing. Linear pacing causes an
  * animation to occur evenly over its duration.
- * @enum SKActionTimingEaseIn Specifies ease-in pacing. Ease-in pacing causes the
+ * [@enum] SKActionTimingEaseIn Specifies ease-in pacing. Ease-in pacing causes the
  * animation to begin slowly, and then speed up as it progresses.
- * @enum SKActionTimingEaseOut Specifies ease-out pacing. Ease-out pacing causes
+ * [@enum] SKActionTimingEaseOut Specifies ease-out pacing. Ease-out pacing causes
  * the animation to begin quickly, and then slow as it completes.
- * @enum SKActionTimingEaseInEaseOut Specifies ease-in ease-out pacing. An
+ * [@enum] SKActionTimingEaseInEaseOut Specifies ease-in ease-out pacing. An
  * ease-in ease-out animation begins slowly, accelerates through the middle
  * of its duration, and then slows again before completing.
  */

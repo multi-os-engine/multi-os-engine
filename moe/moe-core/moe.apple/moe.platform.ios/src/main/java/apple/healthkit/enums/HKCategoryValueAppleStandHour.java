@@ -20,12 +20,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKCategoryValueAppleStandHour
- * @abstract      Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierAppleStandHour type.
+ * [@enum]          HKCategoryValueAppleStandHour
  * 
- * @constant      HKCategoryValueAppleStandHourStood  The user stood up and moved a little for at least one minute during
+ * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierAppleStandHour type.
+ * 
+ * [@constant]      HKCategoryValueAppleStandHourStood  The user stood up and moved a little for at least one minute during
  *                                                    the sample.
- * @constant      HKCategoryValueAppleStandHourIdle   The user did not stand up and move a little for at least one
+ * [@constant]      HKCategoryValueAppleStandHourIdle   The user did not stand up and move a little for at least one
  *                                                    continuous minute during the sample.
  */
 @Generated

@@ -92,8 +92,10 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
     public native MPSCNNPoolingGradientNode init();
 
     /**
-     * @abstract make a pooling gradient node
-     * @discussion  It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
+     * make a pooling gradient node
+     * 
+     * It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
+     * 
      * @param      sourceGradient  The gradient from the downstream gradient filter.
      * @param      sourceImage     The input image to the inference pooling filter
      * @param      gradientState   The gradient state produced by the inference poolin filter
@@ -147,8 +149,10 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract make a pooling gradient node
-     * @discussion  It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
+     * make a pooling gradient node
+     * 
+     * It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
+     * 
      * @param      sourceGradient  The gradient from the downstream gradient filter.
      * @param      sourceImage     The input image to the inference pooling filter
      * @param      gradientState   The gradient state produced by the inference poolin filter

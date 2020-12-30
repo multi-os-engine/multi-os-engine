@@ -62,14 +62,14 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @brief All of the joint names available in the observation.
+     * All of the joint names available in the observation.
      */
     @Generated
     @Selector("availableJointNames")
     public native NSArray<String> availableJointNames();
 
     /**
-     * @brief All of the joints group names available in the observation.
+     * All of the joints group names available in the observation.
      */
     @Generated
     @Selector("availableJointsGroupNames")
@@ -142,7 +142,7 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
     public static native Object new_objc();
 
     /**
-     * @brief Obtain a specific normalized point for a named human body joint.
+     * Obtain a specific normalized point for a named human body joint.
      * 
      * @param jointName The name of the human body joint.
      * @param error The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
@@ -154,9 +154,9 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Obtains the collection of points associated with a named human body joints group.
+     * Obtains the collection of points associated with a named human body joints group.
      * 
-     * @discussion The obtained collection is a dictionary that provides the mapping of human body join names to the recognized point.
+     * The obtained collection is a dictionary that provides the mapping of human body join names to the recognized point.
      * 
      * @param jointsGroupName The name of the human body joints group.
      * @param error The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.

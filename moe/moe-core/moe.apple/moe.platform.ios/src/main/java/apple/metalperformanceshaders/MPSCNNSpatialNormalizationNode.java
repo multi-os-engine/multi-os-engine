@@ -24,19 +24,20 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Node representing MPSCNNSpatialNormalization
- * @discussion  For each feature channel, the function computes the sum of squares of X inside each rectangle, N2(i,j).
+ * Node representing MPSCNNSpatialNormalization
+ * 
+ * For each feature channel, the function computes the sum of squares of X inside each rectangle, N2(i,j).
  *              It then divides each element of X as follows:
  *                 Y(i,j) = X(i,j) / (delta + alpha/(kw*kh) * N2(i,j))^beta,
  *              where kw and kh are the kernelWidth and the kernelHeight.
  * 
- *     @code
+ *     [@code]
  *       Defaults:
  *            alpha = 1.0f
  *            beta  = 5.0f
  *            delta = 1.0f
  *            kernelHeight = kernelWidth = kernelSize
- *     @endcode
+ *     [@endcode]
  */
 @Generated
 @Library("MetalPerformanceShaders")

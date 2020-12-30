@@ -92,7 +92,8 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
     public native MPSCNNFullyConnectedGradientNode init();
 
     /**
-     * @abstract   A node to represent the gradient calculation for fully connectd training.
+     * A node to represent the gradient calculation for fully connectd training.
+     * 
      * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
      *                         that is a neuron gradient filter node.
      * @param sourceImage      The input image from the forward fully connected node
@@ -137,7 +138,8 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
     public static native Object new_objc();
 
     /**
-     * @abstract   A node to represent the gradient calculation for fully connected training.
+     * A node to represent the gradient calculation for fully connected training.
+     * 
      * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
      *                         that is a neuron gradient filter node.
      * @param sourceImage      The input image from the forward fully connected node

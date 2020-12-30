@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageIntegral
- * @discussion The MPSImageIntegral calculates the sum of pixels over a specified region in the image.
+ * MPSImageIntegral
+ * 
+ * The MPSImageIntegral calculates the sum of pixels over a specified region in the image.
  *             The value at each position is the sum of all pixels in a source image rectangle, sumRect:
  * 
  *                 sumRect.origin = MPSUnaryImageKernel.offset

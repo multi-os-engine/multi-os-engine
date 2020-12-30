@@ -41,9 +41,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKQueryNotification
+ * CKQueryNotification
  * 
- * @discussion @c notificationType == @c CKNotificationTypeQuery
+ * [@c] notificationType == @c CKNotificationTypeQuery
  * When properties must be dropped (see @c isPruned), here's the order of importance.  The most important properties are first, they'll be the last ones to be dropped.
  * - notificationID
  * - badge
@@ -197,9 +197,9 @@ public class CKQueryNotification extends CKNotification {
     public native long queryNotificationReason();
 
     /**
-     * @abstract A set of key->value pairs for creates and updates.
+     * A set of key->value pairs for creates and updates.
      * 
-     * @discussion You request the server fill out this property via the @c desiredKeys property of @c CKNotificationInfo
+     * You request the server fill out this property via the @c desiredKeys property of @c CKNotificationInfo
      */
     @Generated
     @Selector("recordFields")

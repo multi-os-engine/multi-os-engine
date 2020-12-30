@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNPoolingAverageGradient
- * @dependency This depends on Metal.framework
- * @discussion Specifies the filter for computing the gradient of the average pooling filter.
+ * MPSCNNPoolingAverageGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the filter for computing the gradient of the average pooling filter.
  *             The operation backpropagates a gradient vector using chain rule.
  * 
  *             Average pooling forward pass is defined as:
@@ -135,8 +136,10 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
     public native MPSCNNPoolingAverageGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPoolingAverageGradient
      * @param      device      The MTLDevice on which to make the MPSCNNPoolingAverageGradient
      * @return     A new MPSCNNPoolingAverageGradient object, or nil if failure.
@@ -156,7 +159,8 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @abstract  Initialize a gradient average pooling filter
+     * Initialize a gradient average pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
@@ -210,8 +214,9 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   zeroPadSizeX
-     * @abstract   How much zero padding to apply to both left and right borders of the input image for average pooling,
+     * [@property]   zeroPadSizeX
+     * 
+     * How much zero padding to apply to both left and right borders of the input image for average pooling,
      *             when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
      *             ignored and the area outside the image is interpreted to contain zeros.
      *             The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
@@ -223,8 +228,9 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
     public native void setZeroPadSizeX(@NUInt long value);
 
     /**
-     * @property   zeroPadSizeY
-     * @abstract   How much zero padding to apply to both top and bottom borders of the input image for average pooling,
+     * [@property]   zeroPadSizeY
+     * 
+     * How much zero padding to apply to both top and bottom borders of the input image for average pooling,
      *             when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
      *             ignored and the area outside the image is interpreted to contain zeros.
      *             The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
@@ -255,8 +261,9 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
     public static native long version_static();
 
     /**
-     * @property   zeroPadSizeX
-     * @abstract   How much zero padding to apply to both left and right borders of the input image for average pooling,
+     * [@property]   zeroPadSizeX
+     * 
+     * How much zero padding to apply to both left and right borders of the input image for average pooling,
      *             when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
      *             ignored and the area outside the image is interpreted to contain zeros.
      *             The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image
@@ -269,8 +276,9 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
     public native long zeroPadSizeX();
 
     /**
-     * @property   zeroPadSizeY
-     * @abstract   How much zero padding to apply to both top and bottom borders of the input image for average pooling,
+     * [@property]   zeroPadSizeY
+     * 
+     * How much zero padding to apply to both top and bottom borders of the input image for average pooling,
      *             when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
      *             ignored and the area outside the image is interpreted to contain zeros.
      *             The zero padding size is used to shrink the pooling window to fit inside the area bound by the source image

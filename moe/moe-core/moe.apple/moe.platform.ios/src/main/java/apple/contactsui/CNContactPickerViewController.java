@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract    The CNContactPickerViewController allows the user to select one or multiple contacts or properties.
- * @discussion  The entire list of contacts will be presented to the user.
+ * The CNContactPickerViewController allows the user to select one or multiple contacts or properties.
+ * 
+ * The entire list of contacts will be presented to the user.
  *              The picker supports both single selection and multi-selection.
  *              The app does not need access to the user’s contacts and the user will
  *              not be prompted for access. It will only have access to the final selection of the user.
@@ -176,7 +177,7 @@ public class CNContactPickerViewController extends UIViewController {
     public static native long version_static();
 
     /**
-     * @abstract    The delegate to be notified when the user selects a contact or property.
+     * The delegate to be notified when the user selects a contact or property.
      */
     @Generated
     @Selector("delegate")
@@ -184,8 +185,9 @@ public class CNContactPickerViewController extends UIViewController {
     public native CNContactPickerDelegate delegate();
 
     /**
-     * @abstract    The CNContact property keys to display in the contact detail card.
-     * @discussion  If not set all properties are displayed.
+     * The CNContact property keys to display in the contact detail card.
+     * 
+     * If not set all properties are displayed.
      */
     @Generated
     @Selector("displayedPropertyKeys")
@@ -225,14 +227,14 @@ public class CNContactPickerViewController extends UIViewController {
     public native NSPredicate predicateForSelectionOfProperty();
 
     /**
-     * @abstract    The delegate to be notified when the user selects a contact or property.
+     * The delegate to be notified when the user selects a contact or property.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CNContactPickerDelegate value);
 
     /**
-     * @abstract    The delegate to be notified when the user selects a contact or property.
+     * The delegate to be notified when the user selects a contact or property.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CNContactPickerDelegate value) {
@@ -247,8 +249,9 @@ public class CNContactPickerViewController extends UIViewController {
     }
 
     /**
-     * @abstract    The CNContact property keys to display in the contact detail card.
-     * @discussion  If not set all properties are displayed.
+     * The CNContact property keys to display in the contact detail card.
+     * 
+     * If not set all properties are displayed.
      */
     @Generated
     @Selector("setDisplayedPropertyKeys:")

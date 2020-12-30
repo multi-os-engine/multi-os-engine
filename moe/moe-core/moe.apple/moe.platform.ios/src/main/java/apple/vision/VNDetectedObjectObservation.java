@@ -28,10 +28,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNDetectedObjectObservation
- * @superclass VNObservation
- * @brief VNDetectedObjectObservation is VNObservation in an image that has a location and/or dimension. Further attributes depend on the specific detected object.
- * @discussion All result objects (faces, scene objects, shapes etc) must extend from this class.
+ * VNDetectedObjectObservation
+ * [@superclass] VNObservation
+ * 
+ * VNDetectedObjectObservation is VNObservation in an image that has a location and/or dimension. Further attributes depend on the specific detected object.
+ * 
+ * All result objects (faces, scene objects, shapes etc) must extend from this class.
  */
 @Generated
 @Library("Vision")
@@ -66,7 +68,7 @@ public class VNDetectedObjectObservation extends VNObservation {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @brief The bounding box of the detected object. The coordinates are normalized to the dimensions of the processed image, with the origin at the image's lower-left corner.
+     * The bounding box of the detected object. The coordinates are normalized to the dimensions of the processed image, with the origin at the image's lower-left corner.
      */
     @Generated
     @Selector("boundingBox")
@@ -140,7 +142,7 @@ public class VNDetectedObjectObservation extends VNObservation {
     public static native Object new_objc();
 
     /**
-     * @brief create a new VNDetectedObjectObservation with a normalized bounding box and a confidence of 1.0.
+     * create a new VNDetectedObjectObservation with a normalized bounding box and a confidence of 1.0.
      */
     @Generated
     @Selector("observationWithBoundingBox:")

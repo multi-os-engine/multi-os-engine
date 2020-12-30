@@ -269,6 +269,7 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      * can be resolved as textures, then the string and NSURL values will be replaced by
      * MDLTextureSampler values. The transforms on the samplers will be identity, the
      * wrap modes will be clamp, and the filter modes will be linear.
+     * 
      * @param resolver If non-nil, the resolver can be invoked to convert stringValues
      *                 to NSURLs for loading.
      */
@@ -279,6 +280,7 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     /**
      * Iterates all material properties. If they are string values, they are resolved into
      * valid paths as NSURL values.
+     * 
      * @param resolver If non-nil, the resolver can be invoked to convert stringValues
      *                 to NSURLs for loading.
      */

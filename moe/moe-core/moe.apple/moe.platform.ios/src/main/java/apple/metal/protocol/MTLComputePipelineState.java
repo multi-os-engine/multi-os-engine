@@ -36,9 +36,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLComputePipelineState
- * @abstract A handle to compiled code for a compute function.
- * @discussion MTLComputePipelineState is a single compute function.  It can only be used with the device that it was created against.
+ * [@protocol] MTLComputePipelineState
+ * 
+ * A handle to compiled code for a compute function.
+ * 
+ * MTLComputePipelineState is a single compute function.  It can only be used with the device that it was created against.
  */
 @Generated
 @Library("Metal")
@@ -46,8 +48,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLComputePipelineState")
 public interface MTLComputePipelineState {
     /**
-     * @property device
-     * @abstract The device this resource was created against.  This resource can only be used with this device.
+     * [@property] device
+     * 
+     * The device this resource was created against.  This resource can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -55,8 +58,9 @@ public interface MTLComputePipelineState {
     MTLDevice device();
 
     /**
-     * @property maxTotalThreadsPerThreadgroup
-     * @abstract The maximum total number of threads that can be in a single compute threadgroup.
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * The maximum total number of threads that can be in a single compute threadgroup.
      */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
@@ -64,8 +68,9 @@ public interface MTLComputePipelineState {
     long maxTotalThreadsPerThreadgroup();
 
     /**
-     * @property threadExecutionWidth
-     * @abstract For most efficient execution, the threadgroup size should be a multiple of this when executing the kernel.
+     * [@property] threadExecutionWidth
+     * 
+     * For most efficient execution, the threadgroup size should be a multiple of this when executing the kernel.
      */
     @Generated
     @Selector("threadExecutionWidth")
@@ -73,8 +78,9 @@ public interface MTLComputePipelineState {
     long threadExecutionWidth();
 
     /**
-     * @method imageblockMemoryLengthForDimensions:
-     * @brief Returns imageblock memory length for given image block dimensions.
+     * imageblockMemoryLengthForDimensions:
+     * 
+     * Returns imageblock memory length for given image block dimensions.
      */
     @Generated
     @Selector("imageblockMemoryLengthForDimensions:")
@@ -86,8 +92,9 @@ public interface MTLComputePipelineState {
     String label();
 
     /**
-     * @property staticThreadgroupMemoryLength
-     * @abstract The length in bytes of threadgroup memory that is statically allocated.
+     * [@property] staticThreadgroupMemoryLength
+     * 
+     * The length in bytes of threadgroup memory that is statically allocated.
      */
     @Generated
     @Selector("staticThreadgroupMemoryLength")
@@ -95,8 +102,9 @@ public interface MTLComputePipelineState {
     long staticThreadgroupMemoryLength();
 
     /**
-     * @property supportIndirectCommandBuffers
-     * @abstract Tells whether this pipeline state is usable through an Indirect Command Buffer.
+     * [@property] supportIndirectCommandBuffers
+     * 
+     * Tells whether this pipeline state is usable through an Indirect Command Buffer.
      */
     @Generated
     @Selector("supportIndirectCommandBuffers")

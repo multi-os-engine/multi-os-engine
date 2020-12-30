@@ -31,9 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A convenience object which uses an MPSSVGF object to manage the denoising process
+ * A convenience object which uses an MPSSVGF object to manage the denoising process
  * 
- * @discussion The MPSSVGF object can also be used directly to customize the denoising process.
+ * The MPSSVGF object can also be used directly to customize the denoising process.
  * This object keeps track of auxilary textures used by the MPSSVGF object, manages a temporal
  * history, and encodes the entire denoising process into a command buffer.
  * 
@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * this class can denoise up to two independent textures simultaneously, e.g. specular and diffuse,
  * direct and indirect lighting, shadows and AO, etc.
  * 
- *     @code
+ *     [@code]
  *     MPSSVGF *svgf = [[MPSSVGF alloc] initWithDevice:device];
  * 
  *     // configure svgf properties
@@ -68,7 +68,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *     [denoiser encodeToCommandBuffer:commandBuffer];
  * 
  *     id <MTLTexture> cleanTexture = denoiser.destinationTexture;
- *     @endcode
+ *     [@endcode]
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -103,7 +103,7 @@ public class MPSSVGFDenoiser extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @brief The number of bilateral filter iterations to run. More iterations will improve quality at
+     * The number of bilateral filter iterations to run. More iterations will improve quality at
      * the cost of performance. Defaults to 5. Must be at least 1.
      */
     @Generated
@@ -130,7 +130,7 @@ public class MPSSVGFDenoiser extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @brief Clear the temporal history. Reprojection and temporal accumulation will restart on the
+     * Clear the temporal history. Reprojection and temporal accumulation will restart on the
      * next call to encodeToCommandBuffer:
      */
     @Generated
@@ -146,9 +146,9 @@ public class MPSSVGFDenoiser extends NSObject {
     public static native String description_static();
 
     /**
-     * @brief Encode denoising kernels to a command buffer
+     * Encode denoising kernels to a command buffer
      * 
-     * @discussion Simultaneously removes noise from the source texture and optional second source texture,
+     * Simultaneously removes noise from the source texture and optional second source texture,
      * using the additional data in the motion vector, depth/normal, and previous depth/normal textures.
      * Returns the result through the destination texture pointers. The depth/normal texture should be
      * provided as the previous depth/normal texture for the next call to this method. This method will
@@ -160,18 +160,18 @@ public class MPSSVGFDenoiser extends NSObject {
      * parameters of the denoising process, modify the properties of the MPSSVGF object the
      * MPSSVGFDenoiser was initialized with.
      * 
-     * @parameter commandBuffer              Command buffer to encode into
-     * @parameter sourceTexture              Source image to denoiser
-     * @parameter destinationTexture         Denoised output image
-     * @parameter sourceTexture2             Optional second source image to denoise
-     * @parameter destinationTexture2        Denoised second output image, if there is a second source image
-     * @parameter motionVectorTexture        Motion vector texture describing how much each texel has moved,
+     * [@parameter] commandBuffer              Command buffer to encode into
+     * [@parameter] sourceTexture              Source image to denoiser
+     * [@parameter] destinationTexture         Denoised output image
+     * [@parameter] sourceTexture2             Optional second source image to denoise
+     * [@parameter] destinationTexture2        Denoised second output image, if there is a second source image
+     * [@parameter] motionVectorTexture        Motion vector texture describing how much each texel has moved,
      *                                       in texels, since the previous frame. See the MPSSVGF object for
      *                                       more details.
-     * @parameter depthNormalTexture         Texture containing linear depth in the X component and signed
+     * [@parameter] depthNormalTexture         Texture containing linear depth in the X component and signed
      *                                       normals in the YZW components. See the MPSSVGF object for more
      *                                       details.
-     * @parameter previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
+     * [@parameter] previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
      *                                       object for more details.
      */
     @Generated
@@ -187,9 +187,9 @@ public class MPSSVGFDenoiser extends NSObject {
             @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
 
     /**
-     * @brief Encode denoising kernels to a command buffer
+     * Encode denoising kernels to a command buffer
      * 
-     * @discussion Removes noise from the source texture, using the additional data in the motion vector,
+     * Removes noise from the source texture, using the additional data in the motion vector,
      * depth/normal, and previous depth/normal textures. Returns the resulting texture. The depth/normal
      * texture should be provided as the previous depth/normal texture for the next call to this method.
      * This method will also update an internally managed temporal history to aid the denoising process.
@@ -200,15 +200,15 @@ public class MPSSVGFDenoiser extends NSObject {
      * parameters of the denoising process, modify the properties of the MPSSVGF object the
      * MPSSVGFDenoiser was initialized with.
      * 
-     * @parameter commandBuffer              Command buffer to encode into
-     * @parameter sourceTexture              Source image to denoiser
-     * @parameter motionVectorTexture        Motion vector texture describing how much each texel has moved,
+     * [@parameter] commandBuffer              Command buffer to encode into
+     * [@parameter] sourceTexture              Source image to denoiser
+     * [@parameter] motionVectorTexture        Motion vector texture describing how much each texel has moved,
      *                                       in texels, since the previous frame. See the MPSSVGF object for
      *                                       more details.
-     * @parameter depthNormalTexture         Texture containing linear depth in the X component and signed
+     * [@parameter] depthNormalTexture         Texture containing linear depth in the X component and signed
      *                                       normals in the YZW components. See the MPSSVGF object for more
      *                                       details.
-     * @parameter previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
+     * [@parameter] previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
      *                                       object for more details.
      */
     @Generated
@@ -231,20 +231,20 @@ public class MPSSVGFDenoiser extends NSObject {
     public native MPSSVGFDenoiser init();
 
     /**
-     * @brief Initialize the MPSSVGFDenoiser object
+     * Initialize the MPSSVGFDenoiser object
      * 
-     * @parameter device The Metal device to use for denoising
+     * [@parameter] device The Metal device to use for denoising
      */
     @Generated
     @Selector("initWithDevice:")
     public native MPSSVGFDenoiser initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
-     * @brief Initialize the MPSSVGFDenoiser object
+     * Initialize the MPSSVGFDenoiser object
      * 
-     * @parameter svgf             MPSSVGF kernels to use for denoising. This object can be used to
+     * [@parameter] svgf             MPSSVGF kernels to use for denoising. This object can be used to
      *                             configure temporal reprojection, bilateral blur settings, etc.
-     * @parameter textureAllocator An object conforming to the MPSSVGFTextureAllocator protocol. This
+     * [@parameter] textureAllocator An object conforming to the MPSSVGFTextureAllocator protocol. This
      *                             object will be used to allocate temporary intermediate and output
      *                             textures. This can be a custom object or an instance of the
      *                             MPSSVGFDefaultTextureAllocator class.
@@ -282,7 +282,7 @@ public class MPSSVGFDenoiser extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @brief Return any temporary textures to the texture allocator. Also clears the temporal history.
+     * Return any temporary textures to the texture allocator. Also clears the temporal history.
      * This should be called before resizing the source texture(s).
      */
     @Generated
@@ -298,7 +298,7 @@ public class MPSSVGFDenoiser extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief The number of bilateral filter iterations to run. More iterations will improve quality at
+     * The number of bilateral filter iterations to run. More iterations will improve quality at
      * the cost of performance. Defaults to 5. Must be at least 1.
      */
     @Generated
@@ -314,7 +314,7 @@ public class MPSSVGFDenoiser extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @brief The underlying MPSSVGF kernels object which will be used for denoising. Use this object
+     * The underlying MPSSVGF kernels object which will be used for denoising. Use this object
      * to customize the denoising process.
      */
     @Generated
@@ -322,7 +322,7 @@ public class MPSSVGFDenoiser extends NSObject {
     public native MPSSVGF svgf();
 
     /**
-     * @brief The object which will be used to allocate intermediate and output textures.
+     * The object which will be used to allocate intermediate and output textures.
      */
     @Generated
     @Selector("textureAllocator")

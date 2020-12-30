@@ -96,7 +96,7 @@ public class CPInterfaceController extends NSObject {
     /**
      * Dismiss the current modally-presented template, optionally animating the dismissal.
      * 
-     * @note If there is no current modally-presented template, this method will have no effect.
+     * [@note] If there is no current modally-presented template, this method will have no effect.
      */
     @Generated
     @Selector("dismissTemplateAnimated:")
@@ -172,7 +172,7 @@ public class CPInterfaceController extends NSObject {
     /**
      * Present a template modally over the navigation hierarchy. Only one template may be presented at a time.
      * 
-     * @note Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
+     * [@note] Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
      */
     @Generated
     @Selector("presentTemplate:animated:")
@@ -181,7 +181,7 @@ public class CPInterfaceController extends NSObject {
     /**
      * The current modally-presented template.
      * 
-     * @warning Reading this property may synchronously perform an IPC call to retrieve the current presented template.
+     * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current presented template.
      */
     @Generated
     @Selector("presentedTemplate")
@@ -258,7 +258,7 @@ public class CPInterfaceController extends NSObject {
     /**
      * The current stack of templates in the navigation hierarchy.
      * 
-     * @warning Reading this property may synchronously perform an IPC call to retrieve the current stack of templates.
+     * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current stack of templates.
      */
     @Generated
     @Selector("templates")
@@ -267,7 +267,7 @@ public class CPInterfaceController extends NSObject {
     /**
      * The top template in the navigation hierarchy.
      * 
-     * @warning Reading this property may synchronously perform an IPC call to retrieve the current top-most template.
+     * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current top-most template.
      */
     @Generated
     @Selector("topTemplate")
@@ -293,7 +293,7 @@ public class CPInterfaceController extends NSObject {
     /**
      * Dismiss the current modally-presented template, optionally animating the dismissal.
      * 
-     * @note If there is no current modally-presented template, this method will have no effect.
+     * [@note] If there is no current modally-presented template, this method will have no effect.
      * 
      * The completion block will be called after the template has been dismissed. If the template was dismissed successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
@@ -368,12 +368,12 @@ public class CPInterfaceController extends NSObject {
     /**
      * Present a template modally over the navigation hierarchy. Only one template may be presented at a time.
      * 
-     * @note Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
+     * [@note] Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
      * 
      * The completion block will be called after the template has been presented. If the template was presented successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
      * 
-     * @note If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
+     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
      */
     @Generated
     @Selector("presentTemplate:animated:completion:")
@@ -393,7 +393,7 @@ public class CPInterfaceController extends NSObject {
      * The completion block will be called after the template has been presented. If the template was presented successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
      * 
-     * @note If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
+     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
      */
     @Generated
     @Selector("pushTemplate:animated:completion:")
@@ -414,7 +414,7 @@ public class CPInterfaceController extends NSObject {
      * The completion block will be called after the template has been presented. If the template was presented successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
      * 
-     * @note If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
+     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
      */
     @Generated
     @Selector("setRootTemplate:animated:completion:")

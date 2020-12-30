@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An anchor representing a planar surface in the world.
- * @discussion Planes are defined in the X and Z direction, where Y is the surface’s normal.
+ * 
+ * Planes are defined in the X and Z direction, where Y is the surface’s normal.
  */
 @Generated
 @Library("ARKit")

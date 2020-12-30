@@ -62,9 +62,10 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     /**
      * Implement this to provide a custom node for the given anchor.
      * 
-     * @discussion This node will automatically be added to the scene graph.
+     * This node will automatically be added to the scene graph.
      * If this method is not implemented, a node will be automatically created.
      * If nil is returned the anchor will be ignored.
+     * 
      * @param view The view that will render the scene.
      * @param anchor The added anchor.
      * @return Node that will be mapped to the anchor or nil.

@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueContactState
+ * [@enum]      HMCharacteristicValueContactState
  * 
- * @constant  HMCharacteristicValueContactStateDetected           Contact is detected.
- * @constant  HMCharacteristicValueContactStateNone               Contact is not detected.
+ * [@constant]  HMCharacteristicValueContactStateDetected           Contact is detected.
+ * [@constant]  HMCharacteristicValueContactStateNone               Contact is not detected.
  */
 @Generated
 public final class HMCharacteristicValueContactState {

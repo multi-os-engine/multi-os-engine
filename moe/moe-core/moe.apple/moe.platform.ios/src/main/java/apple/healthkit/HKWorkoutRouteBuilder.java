@@ -28,9 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class              HKWorkoutRouteBuilder
- * @abstract           An HKWorkoutRouteBuilder is used to generate an HKWorkoutRoute.
- * @discussion         This class is intended for generating long-running location data collection such as
+ * HKWorkoutRouteBuilder
+ * 
+ * An HKWorkoutRouteBuilder is used to generate an HKWorkoutRoute.
+ * 
+ * This class is intended for generating long-running location data collection such as
  *                     might be associated with a workout. If the discard method is called, collected data will be deleted.
  *                     Calling finishRouteWithWorkout:metadata: will stop and complete the route. If the builder is deleted,
  *                     or the client goes away before calling the finish method, data will be lost.
@@ -94,11 +96,13 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     public static native String description_static();
 
     /**
-     * @method             finishRouteWithWorkout:Metadata:completion:
-     * @abstract           Method to stop data collection and return the associated HKWorkoutRoute. If you are using this route
+     * finishRouteWithWorkout:Metadata:completion:
+     * 
+     * Method to stop data collection and return the associated HKWorkoutRoute. If you are using this route
      *                     builder with a workout builder, you should never call this method. The route will be finished when you
      *                     finish the workout builder.
-     * @discussion         Call this method when the route has been completed. The completion handler will return the saved
+     * 
+     * Call this method when the route has been completed. The completion handler will return the saved
      * HKWorkoutRoute.     If no series data was added, then workoutRoute will be nil and an error returned. The
      *                     receiver will be considered invalid afterwards and any further calls to it will result in an error.
      * 
@@ -133,10 +137,12 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     public native HKWorkoutRouteBuilder init();
 
     /**
-     * @method             initWithHealthStore:device:
-     * @abstract           The designated initializer to create an HKWorkoutRouteBuilder. If you are using an HKWorkoutBuilder , you
+     * initWithHealthStore:device:
+     * 
+     * The designated initializer to create an HKWorkoutRouteBuilder. If you are using an HKWorkoutBuilder , you
      *                     should not create an HKWorkoutRouteBuilder, instead use -[HKWorkoutBuilder seriesBuilderForType:]
-     * @discussion         The HKHealthStore is retained during the life of the object for the saving of the series data and final
+     * 
+     * The HKHealthStore is retained during the life of the object for the saving of the series data and final
      *                     return of the series sample.
      * 
      * @param healthStore  Specifies the HKHealthStore object to use for building the series.
@@ -147,9 +153,11 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     public native HKWorkoutRouteBuilder initWithHealthStoreDevice(HKHealthStore healthStore, HKDevice device);
 
     /**
-     * @method             insertRouteData:completion:
-     * @abstract           Associate CLLocation with the receiver.
-     * @discussion         Use this method to asynchronously add one or more CLLocation to the
+     * insertRouteData:completion:
+     * 
+     * Associate CLLocation with the receiver.
+     * 
+     * Use this method to asynchronously add one or more CLLocation to the
      *                     series. Note that CLLocation may be inserted in any order but will be
      *                     sorted according to date when the series is finalized.
      * 
@@ -220,8 +228,9 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     public static native long version_static();
 
     /**
-     * @method             addMetadata:completion:
-     * @discussion         Adds new metadata to the builder instance. This method can be called more than once; each time
+     * addMetadata:completion:
+     * 
+     * Adds new metadata to the builder instance. This method can be called more than once; each time
      *                     the newly provided metadata will be incorporated in the same manner as
      *                     -[NSMutableDictionary addEntriesFromDictionary:].
      *                     This operation is performed asynchronously and the completion will be executed on an arbitrary

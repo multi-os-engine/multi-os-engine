@@ -26,13 +26,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixLogSoftMaxGradient
+ * MPSMatrixLogSoftMaxGradient
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   Computes the gradient corresponding to a forward MPSMatrixLogSoftMax object.
+ * Computes the gradient corresponding to a forward MPSMatrixLogSoftMax object.
  * 
- * @discussion A MPSMatrixLogSoftMaxGradient object computes:
+ * A MPSMatrixLogSoftMaxGradient object computes:
  * 
  *                 dL_dX_ij = dL_dY_ij - exp(Y_ij * sum_k(dL_dY_ik))
  * 

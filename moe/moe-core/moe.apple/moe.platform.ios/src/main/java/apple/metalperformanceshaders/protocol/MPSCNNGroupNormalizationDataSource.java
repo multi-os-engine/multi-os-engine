@@ -20,8 +20,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol   MPSCNNGroupNormalizationDataSource
- * @abstract   The MPSCNNGroupNormalizationDataSource protocol declares the methods that an
+ * [@protocol]   MPSCNNGroupNormalizationDataSource
+ * 
+ * The MPSCNNGroupNormalizationDataSource protocol declares the methods that an
  *             group of MPSCNNGroupNormalization uses to initialize the
  *             scale factors (gamma) and bias terms (beta).
  */
@@ -31,20 +32,21 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MPSCNNGroupNormalizationDataSource")
 public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     /**
-     * @abstract   Return a pointer to an array containing the beta terms.
-     * @discussion Must have numberOfFeatureChannels values since scaling is done per feature channel.
+     * Return a pointer to an array containing the beta terms.
+     * 
+     * Must have numberOfFeatureChannels values since scaling is done per feature channel.
      */
     @Generated
     @Selector("beta")
     FloatPtr beta();
 
     /**
-     * @abstract   Optional copy method to create a copy of the data source for use with a new device.
+     * Optional copy method to create a copy of the data source for use with a new device.
      * 
      * @param      zone    The NSZone on which to allocate.
      * @param      device  The device where the kernel which uses this data source will be used.
      * 
-     * @result     A pointer to a copy of this data source.
+     * @return     A pointer to a copy of this data source.
      */
     @Generated
     @Owned
@@ -66,8 +68,9 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract       An optional tiny number to use to maintain numerical stability.
-     * @discussion     output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
+     * An optional tiny number to use to maintain numerical stability.
+     * 
+     * output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
      *                 Defalt value if method unavailable: FLT_MIN
      */
     @Generated
@@ -78,8 +81,9 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   Return a pointer to an array containing the gamma terms.
-     * @discussion Must have numberOfFeatureChannels values since scaling is done per feature channel.
+     * Return a pointer to an array containing the gamma terms.
+     * 
+     * Must have numberOfFeatureChannels values since scaling is done per feature channel.
      */
     @Generated
     @Selector("gamma")
@@ -97,15 +101,16 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   A label that is transferred to the group normalization filter at init time
-     * @discussion Overridden by a MPSCNNGroupNormalizationNode.label if it is non-nil.
+     * A label that is transferred to the group normalization filter at init time
+     * 
+     * Overridden by a MPSCNNGroupNormalizationNode.label if it is non-nil.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @property   The number of feature channels that are normalized.
+     * [@property]   The number of feature channels that are normalized.
      */
     @Generated
     @Selector("numberOfFeatureChannels")
@@ -113,8 +118,9 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     long numberOfFeatureChannels();
 
     /**
-     * @property   The number of groups used.
-     * @discussion numberOfFeatureChannels/numberOfGroups channels are normalized together.
+     * [@property]   The number of groups used.
+     * 
+     * numberOfFeatureChannels/numberOfGroups channels are normalized together.
      */
     @Generated
     @Selector("numberOfGroups")
@@ -122,8 +128,9 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     long numberOfGroups();
 
     /**
-     * @property   The number of groups used.
-     * @discussion numberOfFeatureChannels/numberOfGroups channels are normalized together.
+     * [@property]   The number of groups used.
+     * 
+     * numberOfFeatureChannels/numberOfGroups channels are normalized together.
      */
     @Generated
     @Selector("setNumberOfGroups:")

@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum CBPeripheralState
+ * [@enum] CBPeripheralState
  * 
- * @discussion Represents the current connection state of a CBPeripheral.
+ * Represents the current connection state of a CBPeripheral.
  */
 @Generated
 public final class CBPeripheralState {

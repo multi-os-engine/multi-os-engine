@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @brief This delegate receives updates about new accessories in the home.
+ * This delegate receives updates about new accessories in the home.
  */
 @Generated
 @Library("HomeKit")
@@ -35,7 +35,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("HMAccessoryBrowserDelegate")
 public interface HMAccessoryBrowserDelegate {
     /**
-     * @brief Informs the delegate about new accessories discovered in the home.
+     * Informs the delegate about new accessories discovered in the home.
      * 
      * @param browser Sender of the message.
      * 
@@ -49,7 +49,7 @@ public interface HMAccessoryBrowserDelegate {
     }
 
     /**
-     * @brief Informs the delegate about new accessories removed from the home.
+     * Informs the delegate about new accessories removed from the home.
      * 
      * @param browser Sender of the message.
      * 

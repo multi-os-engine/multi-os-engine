@@ -83,8 +83,9 @@ public class VNFeaturePrintObservation extends VNObservation {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @brief Computes the distance between two observations.
-     * @discussion The larger the distance the more dissimlar the feature prints are. In case of an error this method returns false with an error describing the error condition, for instance comparing two non-comparable feature prints.
+     * Computes the distance between two observations.
+     * 
+     * The larger the distance the more dissimlar the feature prints are. In case of an error this method returns false with an error describing the error condition, for instance comparing two non-comparable feature prints.
      */
     @Generated
     @Selector("computeDistance:toFeaturePrintObservation:error:")
@@ -92,7 +93,7 @@ public class VNFeaturePrintObservation extends VNObservation {
             VNFeaturePrintObservation featurePrint, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief The feature print data.
+     * The feature print data.
      */
     @Generated
     @Selector("data")
@@ -107,7 +108,7 @@ public class VNFeaturePrintObservation extends VNObservation {
     public static native String description_static();
 
     /**
-     * @brief The total number of elements in the data.
+     * The total number of elements in the data.
      */
     @Generated
     @Selector("elementCount")
@@ -115,7 +116,7 @@ public class VNFeaturePrintObservation extends VNObservation {
     public native long elementCount();
 
     /**
-     * @brief The type of each element in the data.
+     * The type of each element in the data.
      */
     @Generated
     @Selector("elementType")

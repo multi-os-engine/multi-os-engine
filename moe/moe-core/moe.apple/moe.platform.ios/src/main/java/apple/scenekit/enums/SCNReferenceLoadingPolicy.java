@@ -20,9 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum SCNReferenceLoadingPolicy
- * @abstract Controls whenever to load the reference node.
- * @discussion When the load policy is set to SCNReferenceLoadingPolicyImmediately, the reference is loaded immediately when the SCNReferenceNode is unarchived.
+ * [@enum] SCNReferenceLoadingPolicy
+ * 
+ * Controls whenever to load the reference node.
+ * 
+ * When the load policy is set to SCNReferenceLoadingPolicyImmediately, the reference is loaded immediately when the SCNReferenceNode is unarchived.
  * When the load policy is set to SCNReferenceLoadingPolicyOnDemand the reference is never loaded until "load" is explicitly invoked.
  */
 @Generated

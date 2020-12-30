@@ -175,7 +175,7 @@ public class AVAudioSessionPortDescription extends NSObject {
     public native NSArray<? extends AVAudioSessionDataSourceDescription> dataSources();
 
     /**
-     * @brief This property's value will be true if the associated hardware port has built-in
+     * This property's value will be true if the associated hardware port has built-in
      * processing for two-way voice communication.
      * 
      * Applications that use their own proprietary voice processing algorithms should use this property
@@ -220,7 +220,7 @@ public class AVAudioSessionPortDescription extends NSObject {
     public native AVAudioSessionDataSourceDescription selectedDataSource();
 
     /**
-     * @brief Select the preferred data source for this port. The input dataSource parameter must be
+     * Select the preferred data source for this port. The input dataSource parameter must be
      * one of the dataSources exposed by the dataSources property. Setting a nil value will clear the
      * preference. Note: if the port is part of the active audio route, changing the data source will
      * likely result in a route reconfiguration.  If the port is not part of the active route,

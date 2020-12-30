@@ -20,17 +20,19 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum       EKReminderPriority
- * @abstract   A priority for a reminder.
- * @discussion RFC 5545 allows priority to be specified with an integer in the range of 0-9,
+ * [@enum]       EKReminderPriority
+ * 
+ * A priority for a reminder.
+ * 
+ * RFC 5545 allows priority to be specified with an integer in the range of 0-9,
  *             with 0 representing an undefined priority, 1 the highest priority, and 9 the lowest priority.
  *             Clients are encouraged to use these values when setting a reminders's priority,
  *             but is is possible to specify any integer value from 0 to 9.
  * 
- * @constant   EKReminderPriorityNone          The reminder has no priority set.
- * @constant   EKReminderPriorityHigh          The reminder is high priority.
- * @constant   EKReminderPriorityMedium        The reminder is medium priority.
- * @constant   EKReminderPriorityLow           The reminder is low priority.
+ * [@constant]   EKReminderPriorityNone          The reminder has no priority set.
+ * [@constant]   EKReminderPriorityHigh          The reminder is high priority.
+ * [@constant]   EKReminderPriorityMedium        The reminder is medium priority.
+ * [@constant]   EKReminderPriorityLow           The reminder is low priority.
  */
 @Generated
 public final class EKReminderPriority {

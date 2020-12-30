@@ -20,7 +20,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface PHPickerViewControllerDelegate {
     /**
      * Called when the user completes a selection or dismisses \c PHPickerViewController using the cancel button.
-     * @discussion The picker won't be automatically dismissed when this method is called.
+     * 
+     * The picker won't be automatically dismissed when this method is called.
      */
     @Generated
     @Selector("picker:didFinishPicking:")

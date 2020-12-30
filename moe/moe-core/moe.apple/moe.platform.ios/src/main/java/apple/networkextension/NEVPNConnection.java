@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEVPNConnection
- * @discussion The NEVPNConnection class declares the programmatic interface for an object that manages VPN connections.
+ * [@interface] NEVPNConnection
+ * 
+ * The NEVPNConnection class declares the programmatic interface for an object that manages VPN connections.
  * 
  * Instances of this class are thread safe.
  */
@@ -162,8 +163,9 @@ public class NEVPNConnection extends NSObject {
     public static native long version_static();
 
     /**
-     * @property connectedDate
-     * @discussion The date and time when the connection status changed to NEVPNStatusConnected. This property is nil if the connection is not fully established.
+     * [@property] connectedDate
+     * 
+     * The date and time when the connection status changed to NEVPNStatusConnected. This property is nil if the connection is not fully established.
      */
     @Generated
     @Selector("connectedDate")
@@ -174,16 +176,19 @@ public class NEVPNConnection extends NSObject {
     public native NEVPNConnection init();
 
     /**
-     * @property manager
-     * @discussion The NEVPNManager associated with this NEVPNConnection.
+     * [@property] manager
+     * 
+     * The NEVPNManager associated with this NEVPNConnection.
      */
     @Generated
     @Selector("manager")
     public native NEVPNManager manager();
 
     /**
-     * @method startVPNTunnelAndReturnError:
-     * @discussion This function is used to start the VPN tunnel using the current VPN configuration. The VPN tunnel connection process is started and this function returns immediately.
+     * startVPNTunnelAndReturnError:
+     * 
+     * This function is used to start the VPN tunnel using the current VPN configuration. The VPN tunnel connection process is started and this function returns immediately.
+     * 
      * @param error If the VPN tunnel was started successfully, this parameter is set to nil. Otherwise this parameter is set to the error that occurred. Possible errors include:
      *    1. NEVPNErrorConfigurationInvalid
      *    2. NEVPNErrorConfigurationDisabled
@@ -194,8 +199,10 @@ public class NEVPNConnection extends NSObject {
     public native boolean startVPNTunnelAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method startVPNTunnelWithOptions:andReturnError:
-     * @discussion This function is used to start the VPN tunnel using the current VPN configuration. The VPN tunnel connection process is started and this function returns immediately.
+     * startVPNTunnelWithOptions:andReturnError:
+     * 
+     * This function is used to start the VPN tunnel using the current VPN configuration. The VPN tunnel connection process is started and this function returns immediately.
+     * 
      * @param options A dictionary that will be passed to the tunnel provider during the process of starting the tunnel.
      *    If not nil, 'options' is an NSDictionary may contain the following keys
      *        NEVPNConnectionStartOptionUsername
@@ -211,8 +218,9 @@ public class NEVPNConnection extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @property status
-     * @discussion The current status of the VPN.
+     * [@property] status
+     * 
+     * The current status of the VPN.
      */
     @Generated
     @Selector("status")
@@ -220,8 +228,9 @@ public class NEVPNConnection extends NSObject {
     public native long status();
 
     /**
-     * @method stopVPNTunnel:
-     * @discussion This function is used to stop the VPN tunnel. The VPN tunnel disconnect process is started and this function returns immediately.
+     * stopVPNTunnel:
+     * 
+     * This function is used to stop the VPN tunnel. The VPN tunnel disconnect process is started and this function returns immediately.
      */
     @Generated
     @Selector("stopVPNTunnel")

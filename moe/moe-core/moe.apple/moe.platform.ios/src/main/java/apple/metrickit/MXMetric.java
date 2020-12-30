@@ -29,9 +29,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXMetric
- * @abstract      An abstract class that describes a specific metric vended by MetricKit.
- * @discussion    All supported metrics are subclasses of MXMetric.
+ * MXMetric
+ * 
+ * An abstract class that describes a specific metric vended by MetricKit.
+ * 
+ * All supported metrics are subclasses of MXMetric.
  */
 @Generated
 @Library("MetricKit")
@@ -48,18 +50,22 @@ public class MXMetric extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * @method        DictionaryRepresentation
-     * @abstract      Convenience method to return a NSDictionary representation of this metric.
-     * @result        An NSDictionary object containing the dictionary representation
+     * DictionaryRepresentation
+     * 
+     * Convenience method to return a NSDictionary representation of this metric.
+     * 
+     * @return        An NSDictionary object containing the dictionary representation
      */
     @Generated
     @Selector("DictionaryRepresentation")
     public native NSDictionary<?, ?> DictionaryRepresentation();
 
     /**
-     * @method        JSONRepresentation
-     * @abstract      Convenience method to return a JSON representation of this metric.
-     * @result        An NSData object containing the JSON representation
+     * JSONRepresentation
+     * 
+     * Convenience method to return a JSON representation of this metric.
+     * 
+     * @return        An NSData object containing the JSON representation
      */
     @Generated
     @Selector("JSONRepresentation")
@@ -185,9 +191,11 @@ public class MXMetric extends NSObject implements NSSecureCoding {
     public static native long version_static();
 
     /**
-     * @method        dictionaryRepresentation
-     * @abstract      Convenience method to return a NSDictionary representation of this metric.
-     * @result        An NSDictionary object containing the dictionary representation
+     * dictionaryRepresentation
+     * 
+     * Convenience method to return a NSDictionary representation of this metric.
+     * 
+     * @return        An NSDictionary object containing the dictionary representation
      */
     @Generated
     @Selector("dictionaryRepresentation")

@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @brief    Tracking level options to favor speed or location accuracy. The VNRequestTrackingLevelFast is the default option used by trackers.   
+ * Tracking level options to favor speed or location accuracy. The VNRequestTrackingLevelFast is the default option used by trackers.
  */
 @Generated
 public final class VNRequestTrackingLevel {

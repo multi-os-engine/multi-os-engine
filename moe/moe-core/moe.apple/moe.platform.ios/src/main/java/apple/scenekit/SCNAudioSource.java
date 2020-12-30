@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNAudioSource
- * @abstract The SCNAudioSource class represents an audio source that can be added to a SCNNode.
+ * SCNAudioSource
+ * 
+ * The SCNAudioSource class represents an audio source that can be added to a SCNNode.
  */
 @Generated
 @Library("SceneKit")
@@ -77,8 +78,9 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method audioSourceNamed:
-     * @abstract Convenience class initializer that caches audioSources.
+     * audioSourceNamed:
+     * 
+     * Convenience class initializer that caches audioSources.
      */
     @Generated
     @Selector("audioSourceNamed:")
@@ -190,25 +192,30 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     public native SCNAudioSource initWithCoder(NSCoder coder);
 
     /**
-     * @method initWithFileNamed:
-     * @abstract Convenience initializer that creates an AVAudioNode from the named audio asset in the main bundle.
+     * initWithFileNamed:
+     * 
+     * Convenience initializer that creates an AVAudioNode from the named audio asset in the main bundle.
      */
     @Generated
     @Selector("initWithFileNamed:")
     public native SCNAudioSource initWithFileNamed(String name);
 
     /**
-     * @method initWithURL:
-     * @abstract Convenience initializer that creates an AVAudioNode from the URL that contain a audio asset.
+     * initWithURL:
+     * 
+     * Convenience initializer that creates an AVAudioNode from the URL that contain a audio asset.
      */
     @Generated
     @Selector("initWithURL:")
     public native SCNAudioSource initWithURL(NSURL url);
 
     /**
-     * @property positional
-     * @abstract Marks the audio source as positional so that the audio mix considers relative position and velocity with regards to the SCNSceneRenderer's current listener node. Defaults to YES.
-     * @discussion shouldStream must be set to false in order to get positional audio (see shouldStream).
+     * [@property] positional
+     * 
+     * Marks the audio source as positional so that the audio mix considers relative position and velocity with regards to the SCNSceneRenderer's current listener node. Defaults to YES.
+     * 
+     * shouldStream must be set to false in order to get positional audio (see shouldStream).
+     * 
      * @see SCNSceneRenderer audioListener.
      */
     @Generated
@@ -216,9 +223,12 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     public native boolean isPositional();
 
     /**
-     * @property positional
-     * @abstract Marks the audio source as positional so that the audio mix considers relative position and velocity with regards to the SCNSceneRenderer's current listener node. Defaults to YES.
-     * @discussion shouldStream must be set to false in order to get positional audio (see shouldStream).
+     * [@property] positional
+     * 
+     * Marks the audio source as positional so that the audio mix considers relative position and velocity with regards to the SCNSceneRenderer's current listener node. Defaults to YES.
+     * 
+     * shouldStream must be set to false in order to get positional audio (see shouldStream).
+     * 
      * @see SCNSceneRenderer audioListener.
      */
     @Generated
@@ -226,81 +236,92 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     public native void setPositional(boolean value);
 
     /**
-     * @method load
-     * @abstract Load and uncompress the audio source in memory. This method has no effect if "shouldStream" is set to YES or if the audio source is already loaded.
-     * @discussion This method let you preload your audio sources. If an audio source is not preloaded, it will be loaded anyway when playing it.
+     * load
+     * 
+     * Load and uncompress the audio source in memory. This method has no effect if "shouldStream" is set to YES or if the audio source is already loaded.
+     * 
+     * This method let you preload your audio sources. If an audio source is not preloaded, it will be loaded anyway when playing it.
      */
     @Generated
     @Selector("load")
     public native void load_objc();
 
     /**
-     * @property loops
-     * @abstract Specifies whether the audio source should loop or not. Defaults to NO.
+     * [@property] loops
+     * 
+     * Specifies whether the audio source should loop or not. Defaults to NO.
      */
     @Generated
     @Selector("loops")
     public native boolean loops();
 
     /**
-     * @property rate
-     * @abstract The default rate for this audio buffer. Default is 1.0 (original rate of the audio source).
+     * [@property] rate
+     * 
+     * The default rate for this audio buffer. Default is 1.0 (original rate of the audio source).
      */
     @Generated
     @Selector("rate")
     public native float rate();
 
     /**
-     * @property reverbBlend
-     * @abstract The default reverbBlend for this audio buffer. Default is 0.0 (no sound is sent to the reverb).
+     * [@property] reverbBlend
+     * 
+     * The default reverbBlend for this audio buffer. Default is 0.0 (no sound is sent to the reverb).
      */
     @Generated
     @Selector("reverbBlend")
     public native float reverbBlend();
 
     /**
-     * @property loops
-     * @abstract Specifies whether the audio source should loop or not. Defaults to NO.
+     * [@property] loops
+     * 
+     * Specifies whether the audio source should loop or not. Defaults to NO.
      */
     @Generated
     @Selector("setLoops:")
     public native void setLoops(boolean value);
 
     /**
-     * @property rate
-     * @abstract The default rate for this audio buffer. Default is 1.0 (original rate of the audio source).
+     * [@property] rate
+     * 
+     * The default rate for this audio buffer. Default is 1.0 (original rate of the audio source).
      */
     @Generated
     @Selector("setRate:")
     public native void setRate(float value);
 
     /**
-     * @property reverbBlend
-     * @abstract The default reverbBlend for this audio buffer. Default is 0.0 (no sound is sent to the reverb).
+     * [@property] reverbBlend
+     * 
+     * The default reverbBlend for this audio buffer. Default is 0.0 (no sound is sent to the reverb).
      */
     @Generated
     @Selector("setReverbBlend:")
     public native void setReverbBlend(float value);
 
     /**
-     * @property shouldStream
-     * @abstract Specifies whether the audio source should be streamed or not. Defaults to NO.
+     * [@property] shouldStream
+     * 
+     * Specifies whether the audio source should be streamed or not. Defaults to NO.
      */
     @Generated
     @Selector("setShouldStream:")
     public native void setShouldStream(boolean value);
 
     /**
-     * @property volume
-     * @abstract The default volume for this audio buffer. Default is 1.0 (full volume).
+     * [@property] volume
+     * 
+     * The default volume for this audio buffer. Default is 1.0 (full volume).
      */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
     /**
-     * @property shouldStream
-     * @abstract Specifies whether the audio source should be streamed or not. Defaults to NO.
+     * [@property] shouldStream
+     * 
+     * Specifies whether the audio source should be streamed or not. Defaults to NO.
      */
     @Generated
     @Selector("shouldStream")
@@ -313,8 +334,9 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     }
 
     /**
-     * @property volume
-     * @abstract The default volume for this audio buffer. Default is 1.0 (full volume).
+     * [@property] volume
+     * 
+     * The default volume for this audio buffer. Default is 1.0 (full volume).
      */
     @Generated
     @Selector("volume")

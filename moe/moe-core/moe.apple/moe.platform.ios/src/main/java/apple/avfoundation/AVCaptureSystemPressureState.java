@@ -24,11 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVCaptureSystemPressureState
- * @abstract
+ * AVCaptureSystemPressureState
+ * 
  *    A model object describing a system pressure level and contributing factors to the pressured state.
  * 
- * @discussion
  *    Beginning in iOS 11.1, AVCaptureDevice can report its current system pressure state. System pressure refers to a state in which capture quality is degraded or capture hardware availability is limited due to factors such as overall system temperature, insufficient battery charge for current peak power requirements, or camera module temperature.
  */
 @Generated
@@ -90,8 +89,8 @@ public class AVCaptureSystemPressureState extends NSObject {
     public static native String description_static();
 
     /**
-     * @property factors
-     * @discussion
+     * [@property] factors
+     * 
      *    A bitmask of values indicating the factors contributing to the current system pressure level.
      */
     @Generated
@@ -130,8 +129,8 @@ public class AVCaptureSystemPressureState extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property level
-     * @discussion
+     * [@property] level
+     * 
      *    An enumerated string value characterizing the pressure level to which the system is currently elevated.
      */
     @Generated

@@ -529,7 +529,8 @@ public class UIPageControl extends UIControl {
     public native long backgroundStyle();
 
     /**
-     * @abstract Returns the override indicator image for the specific page, nil if no override image was set.
+     * Returns the override indicator image for the specific page, nil if no override image was set.
+     * 
      * @param page Must be in the range of 0..numberOfPages
      */
     @Generated
@@ -570,7 +571,8 @@ public class UIPageControl extends UIControl {
     public native void setBackgroundStyle(@NInt long value);
 
     /**
-     * @abstract Override the indicator image for a specific page. Symbol images are recommended.
+     * Override the indicator image for a specific page. Symbol images are recommended.
+     * 
      * @param image    The image for the indicator. Resets to the default if image is nil.
      * @param page      Must be in the range of 0..numberOfPages
      */

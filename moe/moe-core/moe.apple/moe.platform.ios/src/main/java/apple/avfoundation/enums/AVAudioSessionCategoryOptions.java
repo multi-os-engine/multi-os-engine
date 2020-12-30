@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum        AVAudioSessionCategoryOptions
- * @brief        Customization of various aspects of a category's behavior. Use with
+ * [@enum]        AVAudioSessionCategoryOptions
+ * 
+ * Customization of various aspects of a category's behavior. Use with
  *             setCategory:mode:options:error:.
  * 
  * Applications must be prepared for changing category options to fail as behavior may change
@@ -29,7 +30,7 @@ import org.moe.natj.general.ann.NUInt;
  * since they are not sticky across category changes. Introduced in iOS 6.0 / watchOS 2.0 /
  * tvOS 9.0.
  * 
- * @var AVAudioSessionCategoryOptionMixWithOthers
+ * [@var] AVAudioSessionCategoryOptionMixWithOthers
  *     Controls whether other active audio apps will be interrupted or mixed with when your app's
  *     audio session goes active. Details depend on the category.
  * 
@@ -48,7 +49,7 @@ import org.moe.natj.general.ann.NUInt;
  *     MixWithOthers is only valid with AVAudioSessionCategoryPlayAndRecord,
  *     AVAudioSessionCategoryPlayback, and AVAudioSessionCategoryMultiRoute.
  * 
- * @var AVAudioSessionCategoryOptionDuckOthers
+ * [@var] AVAudioSessionCategoryOptionDuckOthers
  *     Controls whether or not other active audio apps will be ducked when when your app's audio
  *     session goes active. An example of this is a workout app, which provides periodic updates to
  *     the user. It reduces the volume of any music currently being played while it provides its
@@ -65,7 +66,7 @@ import org.moe.natj.general.ann.NUInt;
  *     AVAudioSessionCategoryPlayAndRecord, AVAudioSessionCategoryPlayback, and
  *     AVAudioSessionCategoryMultiRoute.
  * 
- * @var AVAudioSessionCategoryOptionAllowBluetooth
+ * [@var] AVAudioSessionCategoryOptionAllowBluetooth
  *     Allows an application to change the default behavior of some audio session categories with
  *     regard to whether Bluetooth Hands-Free Profile (HFP) devices are available for routing. The
  *     exact behavior depends on the category.
@@ -83,7 +84,7 @@ import org.moe.natj.general.ann.NUInt;
  *         AllowBluetooth defaults to false and cannot be changed. Enabling Bluetooth for input in
  *         these categories is not allowed.
  * 
- * @var AVAudioSessionCategoryOptionDefaultToSpeaker
+ * [@var] AVAudioSessionCategoryOptionDefaultToSpeaker
  *     Allows an application to change the default behavior of some audio session categories with
  *     regard to the audio route. The exact behavior depends on the category.
  * 
@@ -94,7 +95,7 @@ import org.moe.natj.general.ann.NUInt;
  *     Other categories:
  *         DefaultToSpeaker is always false and cannot be changed.
  * 
- * @var AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers
+ * [@var] AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers
  *     When a session with InterruptSpokenAudioAndMixWithOthers set goes active, then if there is
  *     another playing app whose session mode is AVAudioSessionModeSpokenAudio (for podcast
  *     playback in the background, for example), then the spoken-audio session will be
@@ -111,7 +112,7 @@ import org.moe.natj.general.ann.NUInt;
  *     Only valid with AVAudioSessionCategoryPlayAndRecord, AVAudioSessionCategoryPlayback, and
  *     AVAudioSessionCategoryMultiRoute. Introduced in iOS 9.0 / watchOS 2.0 / tvOS 9.0.
  * 
- * @var AVAudioSessionCategoryOptionAllowBluetoothA2DP
+ * [@var] AVAudioSessionCategoryOptionAllowBluetoothA2DP
  *     Allows an application to change the default behavior of some audio session categories with
  *     regard to whether Bluetooth Advanced Audio Distribution Profile (A2DP) devices are
  *     available for routing. The exact behavior depends on the category.
@@ -136,7 +137,7 @@ import org.moe.natj.general.ann.NUInt;
  * 
  *     Introduced in iOS 10.0 / watchOS 3.0 / tvOS 10.0.
  * 
- * @var AVAudioSessionCategoryOptionAllowAirPlay
+ * [@var] AVAudioSessionCategoryOptionAllowAirPlay
  *     Allows an application to change the default behavior of some audio session categories with
  *     with regard to showing AirPlay devices as available routes. This option applies to
  *     various categories in the same way as AVAudioSessionCategoryOptionAllowBluetoothA2DP;

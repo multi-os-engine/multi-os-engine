@@ -20,15 +20,15 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVCaptureDevicePosition
- * @abstract
+ * [@enum] AVCaptureDevicePosition
+ * 
  *    Constants indicating the physical position of an AVCaptureDevice's hardware on the system.
  * 
- * @constant AVCaptureDevicePositionUnspecified
+ * [@constant] AVCaptureDevicePositionUnspecified
  *    Indicates that the device's position relative to the system hardware is unspecified.
- * @constant AVCaptureDevicePositionBack
+ * [@constant] AVCaptureDevicePositionBack
  *    Indicates that the device is physically located on the back of the system hardware.
- * @constant AVCaptureDevicePositionFront
+ * [@constant] AVCaptureDevicePositionFront
  *    Indicates that the device is physically located on the front of the system hardware.
  */
 @Generated

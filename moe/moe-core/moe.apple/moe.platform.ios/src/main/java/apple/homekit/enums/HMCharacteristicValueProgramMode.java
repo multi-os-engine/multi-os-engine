@@ -4,11 +4,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueProgramMode
+ * [@enum]      HMCharacteristicValueProgramMode
  * 
- * @constant  HMCharacteristicValueProgramModeNotScheduled                No programs scheduled.
- * @constant  HMCharacteristicValueProgramModeScheduled                   Program scheduled.
- * @constant  HMCharacteristicValueProgramModeScheduleOverriddenToManual  Schedule currently overridden to manual mode.
+ * [@constant]  HMCharacteristicValueProgramModeNotScheduled                No programs scheduled.
+ * [@constant]  HMCharacteristicValueProgramModeScheduled                   Program scheduled.
+ * [@constant]  HMCharacteristicValueProgramModeScheduleOverriddenToManual  Schedule currently overridden to manual mode.
  */
 @Generated
 public final class HMCharacteristicValueProgramMode {

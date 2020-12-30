@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLDrawable
- * @abstract All "drawable" objects (such as those coming from CAMetalLayer) are expected to conform to this protocol
+ * [@protocol] MTLDrawable
+ * 
+ * All "drawable" objects (such as those coming from CAMetalLayer) are expected to conform to this protocol
  */
 @Generated
 @Library("Metal")
@@ -51,8 +52,9 @@ public interface MTLDrawable {
     void presentAtTime(double presentationTime);
 
     /**
-     * @method addPresentedHandler
-     * @abstract Add a block to be called when this drawable is presented on screen.
+     * addPresentedHandler
+     * 
+     * Add a block to be called when this drawable is presented on screen.
      */
     @Generated
     @Selector("addPresentedHandler:")
@@ -66,9 +68,11 @@ public interface MTLDrawable {
     }
 
     /**
-     * @property drawableID
-     * @abstract The monotonically incremented ID for all MTLDrawable objects created from the same CAMetalLayer object.
-     *  @discussion The value starts from 0.
+     * [@property] drawableID
+     * 
+     * The monotonically incremented ID for all MTLDrawable objects created from the same CAMetalLayer object.
+     * 
+     * The value starts from 0.
      */
     @Generated
     @Selector("drawableID")
@@ -76,8 +80,10 @@ public interface MTLDrawable {
     long drawableID();
 
     /**
-     * @method presentAfterMinimumDuration
-     * @abstract Present this drawable while setting a minimum duration in seconds before allowing this drawable to appear on the display.
+     * presentAfterMinimumDuration
+     * 
+     * Present this drawable while setting a minimum duration in seconds before allowing this drawable to appear on the display.
+     * 
      * @param duration Duration in seconds before this drawable is allowed to appear on the display
      */
     @Generated
@@ -85,9 +91,11 @@ public interface MTLDrawable {
     void presentAfterMinimumDuration(double duration);
 
     /**
-     * @property presentedTime
-     * @abstract The host time that this drawable was presented on screen.
-     * @discussion Returns 0 if a frame has not been presented or has been skipped.
+     * [@property] presentedTime
+     * 
+     * The host time that this drawable was presented on screen.
+     * 
+     * Returns 0 if a frame has not been presented or has been skipped.
      */
     @Generated
     @Selector("presentedTime")

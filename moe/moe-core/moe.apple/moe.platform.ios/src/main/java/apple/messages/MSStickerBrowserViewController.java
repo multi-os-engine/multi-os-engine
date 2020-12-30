@@ -44,7 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract The MSStickerBrowserViewController class creates a controller object that manages a MSStickerBrowserView.
+ * The MSStickerBrowserViewController class creates a controller object that manages a MSStickerBrowserView.
  */
 @Generated
 @Library("Messages")
@@ -182,8 +182,9 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     public native MSStickerBrowserViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * @method   initWithStickerSize:
-     * @abstract Initializes a MSStickerBrowserViewController and configures it's MSStickerBrowserView with the provided sticker size class.
+     * initWithStickerSize:
+     * 
+     * Initializes a MSStickerBrowserViewController and configures it's MSStickerBrowserView with the provided sticker size class.
      */
     @Generated
     @Selector("initWithStickerSize:")
@@ -195,8 +196,9 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     public native long numberOfStickersInStickerBrowserView(MSStickerBrowserView stickerBrowserView);
 
     /**
-     * @property   stickerBrowserView
-     * @abstract   Returns the sticker browser view managed by the controller object.
+     * [@property]   stickerBrowserView
+     * 
+     * Returns the sticker browser view managed by the controller object.
      */
     @Generated
     @Selector("stickerBrowserView")
@@ -207,7 +209,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     public native MSSticker stickerBrowserViewStickerAtIndex(MSStickerBrowserView stickerBrowserView, @NInt long index);
 
     /**
-     * @abstract Controls the size of the stickers are displayed at in the sticker browser view.
+     * Controls the size of the stickers are displayed at in the sticker browser view.
      */
     @Generated
     @Selector("stickerSize")

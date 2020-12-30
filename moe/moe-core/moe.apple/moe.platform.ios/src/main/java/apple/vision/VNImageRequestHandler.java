@@ -34,8 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Performs requests on a single image.
- * @discussion The VNImageRequestHandler is created with an image that is used to be used for the requests a client might want to schedule. The VNImageRequestHandler retains, but never modifies, the image source for its entire lifetime. The client also must not modify the content of the image source once the VNImageRequestHandler is created otherwise the results are undefined.
+ * Performs requests on a single image.
+ * 
+ * The VNImageRequestHandler is created with an image that is used to be used for the requests a client might want to schedule. The VNImageRequestHandler retains, but never modifies, the image source for its entire lifetime. The client also must not modify the content of the image source once the VNImageRequestHandler is created otherwise the results are undefined.
  *             The VNImageRequestHandler can choose to also cache intermediate representation of the image or other request-specific information for the purposes of runtime performance.
  */
 @Generated
@@ -106,7 +107,7 @@ public class VNImageRequestHandler extends NSObject {
     public native VNImageRequestHandler init();
 
     /**
-     * @brief initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CGImageRef.
+     * initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CGImageRef.
      * 
      * @param image A CGImageRef containing the image to be used for performing the requests. The content of the image cannot be modified.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
@@ -116,7 +117,7 @@ public class VNImageRequestHandler extends NSObject {
     public native VNImageRequestHandler initWithCGImageOptions(CGImageRef image, NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CGImageRef.
+     * initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CGImageRef.
      * 
      * @param image A CGImageRef containing the image to be used for performing the requests. The content of the image cannot be modified.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -128,27 +129,25 @@ public class VNImageRequestHandler extends NSObject {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithCIImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CIImage.
+     * initWithCIImage:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CIImage.
+     * 
+     * [@note]  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator. The orientation of the original image should be applied for instance by using imageByApplyingOrientation or use the initWithCIImage:options:orientation API.
      * 
      * @param image A CIImage containing the image to be used for performing the requests. The content of the image cannot be modified.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
-     * 
-     * 
-     * @note:  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator. The orientation of the original image should be applied for instance by using imageByApplyingOrientation or use the initWithCIImage:options:orientation API.
      */
     @Generated
     @Selector("initWithCIImage:options:")
     public native VNImageRequestHandler initWithCIImageOptions(CIImage image, NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithCIImage:options:orientation creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CIImage.
+     * initWithCIImage:options:orientation creates a VNImageRequestHandler to be used for performing requests against the image passed in as a CIImage.
+     * 
+     * [@note]  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      * 
      * @param image A CIImage containing the image to be used for performing the requests. The content of the image cannot be modified.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
-     * 
-     * 
-     * @note:  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      */
     @Generated
     @Selector("initWithCIImage:orientation:options:")
@@ -156,7 +155,7 @@ public class VNImageRequestHandler extends NSObject {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as buffer.
+     * initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as buffer.
      * 
      * @param pixelBuffer A CVPixelBuffer containing the image to be used for performing the requests. The content of the buffer cannot be modified for the lifetime of the VNImageRequestHandler.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
@@ -167,7 +166,7 @@ public class VNImageRequestHandler extends NSObject {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as buffer.
+     * initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the image passed in as buffer.
      * 
      * @param pixelBuffer A CVPixelBuffer containing the image to be used for performing the requests. The content of the buffer cannot be modified for the lifetime of the VNImageRequestHandler.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -179,25 +178,25 @@ public class VNImageRequestHandler extends NSObject {
             int orientation, NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image contained in an NSData object.
+     * initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image contained in an NSData object.
+     * 
+     * [@note]  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      * 
      * @param imageData An NSData object containing the content of the image to be used for performing the requests. See CIImage imageWithData for supported format. The content of the image cannot be modified.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
-     * 
-     * @note:  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      */
     @Generated
     @Selector("initWithData:options:")
     public native VNImageRequestHandler initWithDataOptions(NSData imageData, NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image contained in an NSData object.
+     * initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image contained in an NSData object.
+     * 
+     * [@note]  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      * 
      * @param imageData An NSData object containing the content of the image to be used for performing the requests. See CIImage imageWithData for supported format. The content of the image cannot be modified.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
-     * 
-     * @note:  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      */
     @Generated
     @Selector("initWithData:orientation:options:")
@@ -205,25 +204,25 @@ public class VNImageRequestHandler extends NSObject {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified by it's URL
+     * initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified by it's URL
+     * 
+     * [@note]  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      * 
      * @param imageURL A URL pointing at an image to be used for performing the requests. The image has to be in a format that is supported by ImageIO. The content of the image cannot be modified.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
-     * 
-     * @note:  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      */
     @Generated
     @Selector("initWithURL:options:")
     public native VNImageRequestHandler initWithURLOptions(NSURL imageURL, NSDictionary<String, ?> options);
 
     /**
-     * @brief initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified by it's URL
+     * initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified by it's URL
+     * 
+     * [@note]  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      * 
      * @param imageURL A URL pointing at an image to be used for performing the requests. The image has to be in a format that is supported by ImageIO. The content of the image cannot be modified.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
-     * 
-     * @note:  Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in the simulator
      */
     @Generated
     @Selector("initWithURL:orientation:options:")
@@ -258,9 +257,9 @@ public class VNImageRequestHandler extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @brief performRequests schedules one or more VNRequests to be performed. The function returns once all requests have been finished.
+     * performRequests schedules one or more VNRequests to be performed. The function returns once all requests have been finished.
      * 
-     * @discussion The results of the VNRequests as well any possible errors of the individual requests are reported in the VNRequests results and error properties.
+     * The results of the VNRequests as well any possible errors of the individual requests are reported in the VNRequests results and error properties.
      * 
      * @param requests An NSArray of VNRequests that are to be performed.
      * @param error Returns an error that happened during scheduling of the requests. Check individual requests results and errors for their respective success and failures. This parameter is optional.
@@ -293,11 +292,12 @@ public class VNImageRequestHandler extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief Creates a VNImageRequestHandler to be used for performing requests against the image buffer contained in the CMSampleBufferRef
+     * Creates a VNImageRequestHandler to be used for performing requests against the image buffer contained in the CMSampleBufferRef
+     * 
+     * [@note] CMSampleBuffers can contain metadata like camera intrinsics that will be used by algorithms supporting it unless overwritten by the options.
      * 
      * @param sampleBuffer A CMSampleBuffer containing the imageBuffer that will be used for performing the requests. Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid and ready.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
-     * @note CMSampleBuffers can contain metadata like camera intrinsics that will be used by algorithms supporting it unless overwritten by the options.
      */
     @Generated
     @Selector("initWithCMSampleBuffer:options:")
@@ -305,13 +305,14 @@ public class VNImageRequestHandler extends NSObject {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Creates a VNImageRequestHandler to be used for performing requests against the image buffer contained in the CMSampleBufferRef
+     * Creates a VNImageRequestHandler to be used for performing requests against the image buffer contained in the CMSampleBufferRef
+     * 
+     * [@note] CMSampleBuffers can contain metadata like camera intrinsics that will be used by algorithms supporting it unless overwritten by the options.
+     * [@note]  Because CoreImage is unable to render certain pixel formats in the iOS simulator, request results may not be accurate in those cases.
      * 
      * @param sampleBuffer A CMSampleBuffer containing the imageBuffer that will be used for performing the requests. Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid and ready.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like VNImageOptionCameraIntrinsics
-     * @note CMSampleBuffers can contain metadata like camera intrinsics that will be used by algorithms supporting it unless overwritten by the options.
-     * @note:  Because CoreImage is unable to render certain pixel formats in the iOS simulator, request results may not be accurate in those cases.
      */
     @Generated
     @Selector("initWithCMSampleBuffer:orientation:options:")

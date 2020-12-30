@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @abstract This enumeration describes the current activation state of the event trigger.
+ * This enumeration describes the current activation state of the event trigger.
  */
 @Generated
 public final class HMEventTriggerActivationState {

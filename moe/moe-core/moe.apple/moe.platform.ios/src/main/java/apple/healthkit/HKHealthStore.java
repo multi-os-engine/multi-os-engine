@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKHealthStore
- * @abstract      The HKHealthStore class provides an interface for accessing and storing the user's health data.
+ * HKHealthStore
+ * 
+ * The HKHealthStore class provides an interface for accessing and storing the user's health data.
  */
 @Generated
 @Library("HealthKit")
@@ -128,9 +129,11 @@ public class HKHealthStore extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @method        isHealthDataAvailable
-     * @abstract      Returns YES if HealthKit is supported on the device.
-     * @discussion    HealthKit is not supported on all iOS devices.  Using HKHealthStore APIs on devices which are not
+     * isHealthDataAvailable
+     * 
+     * Returns YES if HealthKit is supported on the device.
+     * 
+     * HealthKit is not supported on all iOS devices.  Using HKHealthStore APIs on devices which are not
      *                supported will result in errors with the HKErrorHealthDataUnavailable code.  Call isHealthDataAvailable
      *                before attempting to use other parts of the framework.
      */
@@ -174,9 +177,11 @@ public class HKHealthStore extends NSObject {
     public static native long version_static();
 
     /**
-     * @method        addSamples:toWorkout:completion:
-     * @abstract      Associates samples with a given workout.
-     * @discussion    This will associate the given samples with the given workout. These samples will then be returned by a
+     * addSamples:toWorkout:completion:
+     * 
+     * Associates samples with a given workout.
+     * 
+     * This will associate the given samples with the given workout. These samples will then be returned by a
      *                query that contains this workout as a predicate. If a sample is added that is not saved yet, then it will
      *                be saved for you. Note that the sample will be saved without an HKDevice.
      * 
@@ -188,8 +193,9 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_addSamplesToWorkoutCompletion") Block_addSamplesToWorkoutCompletion completion);
 
     /**
-     * @method        authorizationStatusForType:
-     * @abstract      Returns the application's authorization status for the given object type.
+     * authorizationStatusForType:
+     * 
+     * Returns the application's authorization status for the given object type.
      */
     @Generated
     @Selector("authorizationStatusForType:")
@@ -197,9 +203,11 @@ public class HKHealthStore extends NSObject {
     public native long authorizationStatusForType(HKObjectType type);
 
     /**
-     * @method        biologicalSexWithError:
-     * @abstract      Returns an object encapsulating the user's biological sex.
-     * @discussion    Before calling this method, the application should request authorization to access objects with the
+     * biologicalSexWithError:
+     * 
+     * Returns an object encapsulating the user's biological sex.
+     * 
+     * Before calling this method, the application should request authorization to access objects with the
      *                HKCharacteristicType identified by HKCharacteristicTypeIdentifierBiologicalSex.
      */
     @Generated
@@ -207,9 +215,11 @@ public class HKHealthStore extends NSObject {
     public native HKBiologicalSexObject biologicalSexWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method        bloodTypeWithError:
-     * @abstract      Returns an object encapsulating the user's blood type.
-     * @discussion    Before calling this method, the application should request authorization to access objects with the
+     * bloodTypeWithError:
+     * 
+     * Returns an object encapsulating the user's blood type.
+     * 
+     * Before calling this method, the application should request authorization to access objects with the
      *                HKCharacteristicType identified by HKCharacteristicTypeIdentifierBloodType.
      */
     @Generated
@@ -217,9 +227,11 @@ public class HKHealthStore extends NSObject {
     public native HKBloodTypeObject bloodTypeWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method        dateOfBirthComponentsWithError:
-     * @abstract      Returns the user's date of birth in the Gregorian calendar.
-     * @discussion    Before calling this method, the application should request authorization to access objects with the
+     * dateOfBirthComponentsWithError:
+     * 
+     * Returns the user's date of birth in the Gregorian calendar.
+     * 
+     * Before calling this method, the application should request authorization to access objects with the
      *                HKCharacteristicType identified by HKCharacteristicTypeIdentifierDateOfBirth.
      */
     @Generated
@@ -232,9 +244,11 @@ public class HKHealthStore extends NSObject {
     public native NSDate dateOfBirthWithError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method        deleteObject:withCompletion:
-     * @abstract      Deletes a single HKObject from the HealthKit database.
-     * @discussion    See deleteObjects:withCompletion:.
+     * deleteObject:withCompletion:
+     * 
+     * Deletes a single HKObject from the HealthKit database.
+     * 
+     * See deleteObjects:withCompletion:.
      */
     @Generated
     @Selector("deleteObject:withCompletion:")
@@ -242,9 +256,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_deleteObjectWithCompletion") Block_deleteObjectWithCompletion completion);
 
     /**
-     * @method        deleteObjects:withCompletion:
-     * @abstract      Deletes multiple HKObjects from the HealthKit database.
-     * @discussion    An application may only delete objects that it previously saved.  This operation is performed
+     * deleteObjects:withCompletion:
+     * 
+     * Deletes multiple HKObjects from the HealthKit database.
+     * 
+     * An application may only delete objects that it previously saved.  This operation is performed
      *                asynchronously and the completion will be executed on an arbitrary background queue.
      */
     @Generated
@@ -253,9 +269,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_deleteObjectsWithCompletion") Block_deleteObjectsWithCompletion completion);
 
     /**
-     * @method        deleteObjectsOfType:predicate:withCompletion:
-     * @abstract      Deletes all objects matching the given predicate from the HealthKit database.
-     * @discussion    An application may only delete objects that it previously saved.  This operation is performed
+     * deleteObjectsOfType:predicate:withCompletion:
+     * 
+     * Deletes all objects matching the given predicate from the HealthKit database.
+     * 
+     * An application may only delete objects that it previously saved.  This operation is performed
      *                asynchronously and the completion will be executed on an arbitrary background queue.
      */
     @Generated
@@ -274,9 +292,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_disableBackgroundDeliveryForTypeWithCompletion") Block_disableBackgroundDeliveryForTypeWithCompletion completion);
 
     /**
-     * @method        earliestPermittedSampleDate
-     * @abstract      Samples prior to the earliestPermittedSampleDate cannot be saved or queried.
-     * @discussion    On some platforms, only samples with end dates newer than the value returned by earliestPermittedSampleDate
+     * earliestPermittedSampleDate
+     * 
+     * Samples prior to the earliestPermittedSampleDate cannot be saved or queried.
+     * 
+     * On some platforms, only samples with end dates newer than the value returned by earliestPermittedSampleDate
      *                may be saved or retrieved.
      */
     @Generated
@@ -284,9 +304,11 @@ public class HKHealthStore extends NSObject {
     public native NSDate earliestPermittedSampleDate();
 
     /**
-     * @method        enableBackgroundDeliveryForType:frequency:withCompletion:
-     * @abstract      This method enables activation of your app when data of the type is recorded at the cadence specified.
-     * @discussion    When an app has subscribed to a certain data type it will get activated at the cadence that is specified
+     * enableBackgroundDeliveryForType:frequency:withCompletion:
+     * 
+     * This method enables activation of your app when data of the type is recorded at the cadence specified.
+     * 
+     * When an app has subscribed to a certain data type it will get activated at the cadence that is specified
      *                with the frequency parameter. The app is still responsible for creating an HKObserverQuery to know which
      *                data types have been updated and the corresponding fetch queries. Note that certain data types (such as
      *                HKQuantityTypeIdentifierStepCount) have a minimum frequency of HKUpdateFrequencyHourly. This is enforced
@@ -298,9 +320,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_enableBackgroundDeliveryForTypeFrequencyWithCompletion") Block_enableBackgroundDeliveryForTypeFrequencyWithCompletion completion);
 
     /**
-     * @method        executeQuery:
-     * @abstract      Begins executing the given query.
-     * @discussion    After executing a query, the completion, update, and/or results handlers of that query will be invoked
+     * executeQuery:
+     * 
+     * Begins executing the given query.
+     * 
+     * After executing a query, the completion, update, and/or results handlers of that query will be invoked
      *                asynchronously on an arbitrary background queue as results become available.  Errors that prevent a
      *                query from executing will be delivered to one of the query's handlers.  Which handler the error will be
      *                delivered to is defined by the HKQuery subclass.  
@@ -316,9 +340,11 @@ public class HKHealthStore extends NSObject {
     public native void executeQuery(HKQuery query);
 
     /**
-     * @method        fitzpatrickSkinTypeWithError:
-     * @abstract      Returns an object encapsulating the user's Fitzpatrick skin type.
-     * @discussion    Before calling this method, the application should request authorization to access objects with the
+     * fitzpatrickSkinTypeWithError:
+     * 
+     * Returns an object encapsulating the user's Fitzpatrick skin type.
+     * 
+     * Before calling this method, the application should request authorization to access objects with the
      *                HKCharacteristicType identified by HKCharacteristicTypeIdentifierFitzpatrickSkinType.
      */
     @Generated
@@ -327,9 +353,11 @@ public class HKHealthStore extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method        handleAuthorizationForExtensionWithCompletion:
-     * @abstract      Prompts the user to authorize the application for reading and saving objects.
-     * @discussion    When an app extension calls requestAuthorizationToShareTypes:readTypes:completion:, the parent application
+     * handleAuthorizationForExtensionWithCompletion:
+     * 
+     * Prompts the user to authorize the application for reading and saving objects.
+     * 
+     * When an app extension calls requestAuthorizationToShareTypes:readTypes:completion:, the parent application
      *                is responsible for calling this method to prompt the user to authorize the app and its extensions for the
      *                types that the extension requested access to.
      * 
@@ -348,9 +376,11 @@ public class HKHealthStore extends NSObject {
     public native HKHealthStore init();
 
     /**
-     * @method        preferredUnitsForQuantityTypes:completion:
-     * @abstract      Calls the completion with the preferred HKUnits for a given set of HKQuantityTypes.
-     * @discussion    A preferred unit is either the unit that the user has chosen in Health for displaying samples of the
+     * preferredUnitsForQuantityTypes:completion:
+     * 
+     * Calls the completion with the preferred HKUnits for a given set of HKQuantityTypes.
+     * 
+     * A preferred unit is either the unit that the user has chosen in Health for displaying samples of the
      *                given quantity type or the default unit for that type in the current locale of the device. To access the
      *                user's preferences it is necessary to request read or share authorization for the set of HKQuantityTypes
      *                provided. If neither read nor share authorization has been granted to the app, then the default unit for
@@ -367,9 +397,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_preferredUnitsForQuantityTypesCompletion") Block_preferredUnitsForQuantityTypesCompletion completion);
 
     /**
-     * @method        requestAuthorizationToShareTypes:readTypes:completion:
-     * @abstract      Prompts the user to authorize the application for reading and saving objects of the given types.
-     * @discussion    Before attempting to execute queries or save objects, the application should first request authorization
+     * requestAuthorizationToShareTypes:readTypes:completion:
+     * 
+     * Prompts the user to authorize the application for reading and saving objects of the given types.
+     * 
+     * Before attempting to execute queries or save objects, the application should first request authorization
      *                from the user to read and share every type of object for which the application may require access.
      * 
      *                The request is performed asynchronously and its completion will be executed on an arbitrary background
@@ -390,9 +422,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_requestAuthorizationToShareTypesReadTypesCompletion") Block_requestAuthorizationToShareTypesReadTypesCompletion completion);
 
     /**
-     * @method        saveObject:withCompletion:
-     * @abstract      Saves an HKObject.
-     * @discussion    After an object is saved, on subsequent retrievals the sourceRevision property of the object will be set
+     * saveObject:withCompletion:
+     * 
+     * Saves an HKObject.
+     * 
+     * After an object is saved, on subsequent retrievals the sourceRevision property of the object will be set
      *                to the HKSourceRevision representing the version of the application that saved it.
      * 
      *                If the object has an HKObjectType property, then in order to save an object successfully the application
@@ -411,9 +445,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_saveObjectWithCompletion") Block_saveObjectWithCompletion completion);
 
     /**
-     * @method        saveObjects:withCompletion:
-     * @abstract      Saves an array of HKObjects.
-     * @discussion    See discussion of saveObject:withCompletion:.
+     * saveObjects:withCompletion:
+     * 
+     * Saves an array of HKObjects.
+     * 
+     * See discussion of saveObject:withCompletion:.
      */
     @Generated
     @Selector("saveObjects:withCompletion:")
@@ -421,10 +457,12 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_saveObjectsWithCompletion") Block_saveObjectsWithCompletion completion);
 
     /**
-     * @method        splitTotalEnergy:startDate:endDate:resultsHandler:
-     * @abstract      For the time period specified, this method calculates the resting and active energy parts of the total
+     * splitTotalEnergy:startDate:endDate:resultsHandler:
+     * 
+     * For the time period specified, this method calculates the resting and active energy parts of the total
      *                energy provided.
-     * @discussion    This method uses the user's metrics like age, biological sex, body mass and height to determine
+     * 
+     * This method uses the user's metrics like age, biological sex, body mass and height to determine
      *                their basal metabolic rate. If the application does not have authorization to access these characteristics
      *                or if the user has not entered their data then this method uses builtin default values.
      */
@@ -435,9 +473,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_splitTotalEnergyStartDateEndDateResultsHandler") Block_splitTotalEnergyStartDateEndDateResultsHandler resultsHandler);
 
     /**
-     * @method        startWatchAppWithWorkoutConfiguration:completion:
-     * @abstract      Launches or wakes up the WatchKit app on the watch
-     * @discussion    This method will launch the WatchKit app corresponding to the calling iOS application on the currently
+     * startWatchAppWithWorkoutConfiguration:completion:
+     * 
+     * Launches or wakes up the WatchKit app on the watch
+     * 
+     * This method will launch the WatchKit app corresponding to the calling iOS application on the currently
      *                active Apple Watch. After launching, the handleWorkoutConfiguration: method on the WKExtensionDelegate
      *                protocol will be called with the HKWorkoutConfiguration as a parameter. The receiving Watch app can use
      *                this configuration object to create an HKWorkoutSession and start it with -startWorkoutSession:.
@@ -448,9 +488,11 @@ public class HKHealthStore extends NSObject {
             @ObjCBlock(name = "call_startWatchAppWithWorkoutConfigurationCompletion") Block_startWatchAppWithWorkoutConfigurationCompletion completion);
 
     /**
-     * @method        stopQuery:
-     * @abstract      Stops a query that is executing from continuing to run.
-     * @discussion    Calling this method will prevent the handlers of the query from being invoked in the future.  If the
+     * stopQuery:
+     * 
+     * Stops a query that is executing from continuing to run.
+     * 
+     * Calling this method will prevent the handlers of the query from being invoked in the future.  If the
      *                query is already stopped, this method does nothing.
      */
     @Generated
@@ -458,9 +500,11 @@ public class HKHealthStore extends NSObject {
     public native void stopQuery(HKQuery query);
 
     /**
-     * @method        wheelchairUseWithError:
-     * @abstract      Returns an object encapsulating the user's wheelchair use.
-     * @discussion    Before calling this method, the application should request authorization to access objects with the
+     * wheelchairUseWithError:
+     * 
+     * Returns an object encapsulating the user's wheelchair use.
+     * 
+     * Before calling this method, the application should request authorization to access objects with the
      *                HKCharacteristicType identified by HKCharacteristicTypeIdentifierWheelchairUse.
      */
     @Generated
@@ -569,9 +613,11 @@ public class HKHealthStore extends NSObject {
     }
 
     /**
-     * @method        getRequestStatusForAuthorizationToShareTypes:readTypes:completion:
-     * @abstract      Determines whether requesting authorization for the given types is necessary.
-     * @discussion    Applications may call this method to determine whether the user would be prompted for authorization if
+     * getRequestStatusForAuthorizationToShareTypes:readTypes:completion:
+     * 
+     * Determines whether requesting authorization for the given types is necessary.
+     * 
+     * Applications may call this method to determine whether the user would be prompted for authorization if
      *                the same collections of types are passed to requestAuthorizationToShareTypes:readTypes:completion:.
      *                This determination is performed asynchronously and its completion will be executed on an arbitrary
      *                background queue.
@@ -591,9 +637,11 @@ public class HKHealthStore extends NSObject {
     }
 
     /**
-     * @method        supportsHealthRecords
-     * @abstract      Returns YES if the Health Records feature is available.
-     * @discussion    The Health Records feature is not available in all regions but may be present in unsupported regions
+     * supportsHealthRecords
+     * 
+     * Returns YES if the Health Records feature is available.
+     * 
+     * The Health Records feature is not available in all regions but may be present in unsupported regions
      *                if accounts have already been configured. This can change as accounts are modified during device
      *                restore or synchronization.
      *                Call supportsHealthRecords before attempting to request authorization for any clinical types.
@@ -603,9 +651,11 @@ public class HKHealthStore extends NSObject {
     public native boolean supportsHealthRecords();
 
     /**
-     * @method        activityMoveModeWithError:
-     * @abstract      Returns an object encapsulating the user's activity move mode
-     * @discussion    Before calling this method, the application should request authorization to access objects with the
+     * activityMoveModeWithError:
+     * 
+     * Returns an object encapsulating the user's activity move mode
+     * 
+     * Before calling this method, the application should request authorization to access objects with the
      *                HKCharacteristicType identified by HKCharacteristicTypeIdentifierActivityMoveMode.
      */
     @Generated

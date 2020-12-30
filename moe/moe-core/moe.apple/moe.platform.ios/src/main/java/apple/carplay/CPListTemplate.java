@@ -292,7 +292,7 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * The maximum number of items, across all sections, that may appear in a @c CPListTemplate.
      * 
-     * @note Your list template will display the first @c maximumItemCount items, across all sections.
+     * [@note] Your list template will display the first @c maximumItemCount items, across all sections.
      * Any items or sections beyond that limit will be trimmed.
      */
     @Generated
@@ -303,7 +303,7 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * The maximum number of sections that may appear in a @c CPListTemplate.
      * 
-     * @note Your list template will display the first @c maximumSectionCount sections.
+     * [@note] Your list template will display the first @c maximumSectionCount sections.
      * Any sections beyond that limit will be trimmed.
      */
     @Generated

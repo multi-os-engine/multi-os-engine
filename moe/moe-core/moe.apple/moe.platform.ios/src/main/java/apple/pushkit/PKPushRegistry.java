@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         PKPushRegistry
- * @abstract      An instance of this class can be used to register for 3rd party notifications. The supported push
+ * PKPushRegistry
+ * 
+ * An instance of this class can be used to register for 3rd party notifications. The supported push
  *                notification types are listed above as PKPushType constants.
  */
 @Generated
@@ -158,8 +159,9 @@ public class PKPushRegistry extends NSObject {
     public static native long version_static();
 
     /**
-     * @property      delegate
-     * @abstract      Setting a delegate is required to receive device push tokens and incoming pushes.
+     * [@property]      delegate
+     * 
+     * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
     @Generated
     @Selector("delegate")
@@ -167,8 +169,9 @@ public class PKPushRegistry extends NSObject {
     public native PKPushRegistryDelegate delegate();
 
     /**
-     * @property      desiredPushTypes
-     * @abstract      An app requests registration for various types of pushes by setting this NSSet to the desired
+     * [@property]      desiredPushTypes
+     * 
+     * An app requests registration for various types of pushes by setting this NSSet to the desired
      *                PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
      */
     @Generated
@@ -180,11 +183,13 @@ public class PKPushRegistry extends NSObject {
     public native PKPushRegistry init();
 
     /**
-     * @method        initWithQueue:
-     * @abstract      Instantiates a PKPushRegistry with a delegate callback dispatch queue.
+     * initWithQueue:
+     * 
+     * Instantiates a PKPushRegistry with a delegate callback dispatch queue.
+     * 
      * @param         queue
      *                All delegate callbacks are performed asynchronously by PKPushRegistry on this queue.
-     * @result        A PKPushRegistry instance that can be used to register for push tokens and notifications for supported
+     * @return        A PKPushRegistry instance that can be used to register for push tokens and notifications for supported
      *                push types.
      */
     @Generated
@@ -192,13 +197,16 @@ public class PKPushRegistry extends NSObject {
     public native PKPushRegistry initWithQueue(NSObject queue);
 
     /**
-     * @method        pushTokenForType:
-     * @abstract      Access the locally cached push token for a specified PKPushType.
-     * @discussion    A push token returned here has previously been given to the delegate via handlePushTokenUpdate:forType:
+     * pushTokenForType:
+     * 
+     * Access the locally cached push token for a specified PKPushType.
+     * 
+     * A push token returned here has previously been given to the delegate via handlePushTokenUpdate:forType:
      *                callback.
+     * 
      * @param         type
      *                This is a PKPushType constant that is already in desiredPushTypes.
-     * @result        Returns the push token that can be used to send pushes to the device for the specified PKPushType.
+     * @return        Returns the push token that can be used to send pushes to the device for the specified PKPushType.
      *                Returns nil if no push token is available for this PKPushType at the time of invocation.
      */
     @Generated
@@ -206,16 +214,18 @@ public class PKPushRegistry extends NSObject {
     public native NSData pushTokenForType(String type);
 
     /**
-     * @property      delegate
-     * @abstract      Setting a delegate is required to receive device push tokens and incoming pushes.
+     * [@property]      delegate
+     * 
+     * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value);
 
     /**
-     * @property      delegate
-     * @abstract      Setting a delegate is required to receive device push tokens and incoming pushes.
+     * [@property]      delegate
+     * 
+     * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value) {
@@ -230,8 +240,9 @@ public class PKPushRegistry extends NSObject {
     }
 
     /**
-     * @property      desiredPushTypes
-     * @abstract      An app requests registration for various types of pushes by setting this NSSet to the desired
+     * [@property]      desiredPushTypes
+     * 
+     * An app requests registration for various types of pushes by setting this NSSet to the desired
      *                PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
      */
     @Generated

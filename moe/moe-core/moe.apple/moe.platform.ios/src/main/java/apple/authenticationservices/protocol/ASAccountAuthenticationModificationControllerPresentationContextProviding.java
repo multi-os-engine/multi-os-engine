@@ -15,7 +15,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("ASAccountAuthenticationModificationControllerPresentationContextProviding")
 public interface ASAccountAuthenticationModificationControllerPresentationContextProviding {
     /**
-     * @abstract Return a view anchor that is most appropriate for authorization UI to be presented over.
+     * Return a view anchor that is most appropriate for authorization UI to be presented over.
      */
     @Generated
     @Selector("presentationAnchorForAccountAuthenticationModificationController:")

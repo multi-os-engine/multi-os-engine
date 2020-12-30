@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @discussion Contains TKTokenKeychainItem instances (keys and certificates) which represent keychain state (i.e. set of items) of specific token.
+ * Contains TKTokenKeychainItem instances (keys and certificates) which represent keychain state (i.e. set of items) of specific token.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -72,7 +72,7 @@ public class TKTokenKeychainContents extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * @discussion Returns certificate with specified objectID.  Fills error with TKTokenErrorCodeObjectNotFound if no such certificate exists.
+     * Returns certificate with specified objectID.  Fills error with TKTokenErrorCodeObjectNotFound if no such certificate exists.
      */
     @Generated
     @Selector("certificateForObjectID:error:")
@@ -96,7 +96,8 @@ public class TKTokenKeychainContents extends NSObject {
     public static native String description_static();
 
     /**
-     * @discussion Fills keychain with the set of specified items.  All items belonging to token are first removed from the keychain and then the keychain is populated with new items.
+     * Fills keychain with the set of specified items.  All items belonging to token are first removed from the keychain and then the keychain is populated with new items.
+     * 
      * @param items New items to be stored into the keychain.
      */
     @Generated
@@ -130,14 +131,14 @@ public class TKTokenKeychainContents extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @brief All items related to this token in the keychain.
+     * All items related to this token in the keychain.
      */
     @Generated
     @Selector("items")
     public native NSArray<? extends TKTokenKeychainItem> items();
 
     /**
-     * @discussion Returns key with specified objectID.  Fills error with TKTokenErrorCodeObjectNotFound if no such key exists.
+     * Returns key with specified objectID.  Fills error with TKTokenErrorCodeObjectNotFound if no such key exists.
      */
     @Generated
     @Selector("keyForObjectID:error:")

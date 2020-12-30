@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class	AUAudioUnitBus
- * @brief	An input or output connection point on an audio unit.
+ * AUAudioUnitBus
+ * 
+ * An input or output connection point on an audio unit.
  */
 @Generated
 @Library("AudioToolbox")
@@ -160,8 +161,9 @@ public class AUAudioUnitBus extends NSObject {
     public static native long version_static();
 
     /**
-     * @property   busType
-     * @brief      The AUAudioUnitBusType.
+     * [@property]   busType
+     * 
+     * The AUAudioUnitBusType.
      */
     @Generated
     @Selector("busType")
@@ -169,9 +171,10 @@ public class AUAudioUnitBus extends NSObject {
     public native long busType();
 
     /**
-     * @property	contextPresentationLatency
-     * @brief		Information about latency in the audio unit's processing context.
-     * @discussion
+     * [@property]	contextPresentationLatency
+     * 
+     * Information about latency in the audio unit's processing context.
+     * 
      * 	This should not be confused with the audio unit's latency property, where the audio unit
      * 	describes to the host any processing latency it introduces between its input and its output.
      * 
@@ -212,9 +215,10 @@ public class AUAudioUnitBus extends NSObject {
     public native double contextPresentationLatency();
 
     /**
-     * @property	format
-     * @brief		The audio format and channel layout of audio being transferred on the bus.
-     * @discussion
+     * [@property]	format
+     * 
+     * The audio format and channel layout of audio being transferred on the bus.
+     * 
      * 	Bridged to the v2 property kAudioUnitProperty_StreamFormat.
      */
     @Generated
@@ -222,8 +226,9 @@ public class AUAudioUnitBus extends NSObject {
     public native AVAudioFormat format();
 
     /**
-     * @property   index
-     * @brief      The index of this bus in the containing array.
+     * [@property]   index
+     * 
+     * The index of this bus in the containing array.
      */
     @Generated
     @Selector("index")
@@ -235,8 +240,10 @@ public class AUAudioUnitBus extends NSObject {
     public native AUAudioUnitBus init();
 
     /**
-     * @method		initWithFormat:error:
-     * @brief		initialize with a default format.
+     * initWithFormat:error:
+     * 
+     * initialize with a default format.
+     * 
      * @param format	The initial format for the bus.
      * @param outError	An error if the format is unsupported for the bus.
      */
@@ -246,9 +253,10 @@ public class AUAudioUnitBus extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property	enabled
-     * @brief		Whether the bus is active.
-     * @discussion
+     * [@property]	enabled
+     * 
+     * Whether the bus is active.
+     * 
      * 	Hosts must enable input busses before using them. The reason for this is to allow a unit
      * 	such as a mixer to be prepared to render a large number of inputs, but avoid the work
      * 	of preparing to pull inputs which are not in use.
@@ -261,9 +269,10 @@ public class AUAudioUnitBus extends NSObject {
     public native boolean isEnabled();
 
     /**
-     * @property	enabled
-     * @brief		Whether the bus is active.
-     * @discussion
+     * [@property]	enabled
+     * 
+     * Whether the bus is active.
+     * 
      * 	Hosts must enable input busses before using them. The reason for this is to allow a unit
      * 	such as a mixer to be prepared to render a large number of inputs, but avoid the work
      * 	of preparing to pull inputs which are not in use.
@@ -276,9 +285,10 @@ public class AUAudioUnitBus extends NSObject {
     public native void setEnabled(boolean value);
 
     /**
-     * @property	maximumChannelCount
-     * @brief		The maximum numbers of channels supported for this bus.
-     * @discussion
+     * [@property]	maximumChannelCount
+     * 
+     * The maximum numbers of channels supported for this bus.
+     * 
      * 	If supportedChannelCounts is set, then this value is derived from supportedChannelCounts. If
      * 	setting maximumChannelCount makes the current format unsupported, then format will be set to
      * 	nil. The default value is UINT_MAX.
@@ -288,25 +298,28 @@ public class AUAudioUnitBus extends NSObject {
     public native int maximumChannelCount();
 
     /**
-     * @property	name
-     * @brief		A name for the bus. Can be set by host.
+     * [@property]	name
+     * 
+     * A name for the bus. Can be set by host.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @property   ownerAudioUnit
-     * @brief      The audio unit that owns the bus.
+     * [@property]   ownerAudioUnit
+     * 
+     * The audio unit that owns the bus.
      */
     @Generated
     @Selector("ownerAudioUnit")
     public native AUAudioUnit ownerAudioUnit();
 
     /**
-     * @property	contextPresentationLatency
-     * @brief		Information about latency in the audio unit's processing context.
-     * @discussion
+     * [@property]	contextPresentationLatency
+     * 
+     * Information about latency in the audio unit's processing context.
+     * 
      * 	This should not be confused with the audio unit's latency property, where the audio unit
      * 	describes to the host any processing latency it introduces between its input and its output.
      * 
@@ -347,9 +360,10 @@ public class AUAudioUnitBus extends NSObject {
     public native void setContextPresentationLatency(double value);
 
     /**
-     * @property	setFormat:error:
-     * @brief		Sets the bus's audio format.
-     * @discussion
+     * [@property]	setFormat:error:
+     * 
+     * Sets the bus's audio format.
+     * 
      * 	Audio units can generally be expected to support AVAudioFormat's standard format
      * 	(deinterleaved 32-bit float), at any sample rate. Channel counts can be more complex;
      * 	see AUAudioUnit.channelCapabilities.
@@ -360,9 +374,10 @@ public class AUAudioUnitBus extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property	maximumChannelCount
-     * @brief		The maximum numbers of channels supported for this bus.
-     * @discussion
+     * [@property]	maximumChannelCount
+     * 
+     * The maximum numbers of channels supported for this bus.
+     * 
      * 	If supportedChannelCounts is set, then this value is derived from supportedChannelCounts. If
      * 	setting maximumChannelCount makes the current format unsupported, then format will be set to
      * 	nil. The default value is UINT_MAX.
@@ -372,17 +387,19 @@ public class AUAudioUnitBus extends NSObject {
     public native void setMaximumChannelCount(int value);
 
     /**
-     * @property	name
-     * @brief		A name for the bus. Can be set by host.
+     * [@property]	name
+     * 
+     * A name for the bus. Can be set by host.
      */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
     /**
-     * @property	supportedChannelCounts
-     * @brief		An array of numbers giving the supported numbers of channels for this bus.
-     * @discussion
+     * [@property]	supportedChannelCounts
+     * 
+     * An array of numbers giving the supported numbers of channels for this bus.
+     * 
      * 	If supportedChannelCounts is nil, then any number less than or equal to maximumChannelCount
      * 	is supported. If setting supportedChannelCounts makes the current format unsupported, then
      * 	format will be set to nil. The default value is nil.
@@ -392,9 +409,10 @@ public class AUAudioUnitBus extends NSObject {
     public native void setSupportedChannelCounts(NSArray<? extends NSNumber> value);
 
     /**
-     * @property	supportedChannelCounts
-     * @brief		An array of numbers giving the supported numbers of channels for this bus.
-     * @discussion
+     * [@property]	supportedChannelCounts
+     * 
+     * An array of numbers giving the supported numbers of channels for this bus.
+     * 
      * 	If supportedChannelCounts is nil, then any number less than or equal to maximumChannelCount
      * 	is supported. If setting supportedChannelCounts makes the current format unsupported, then
      * 	format will be set to nil. The default value is nil.
@@ -404,8 +422,8 @@ public class AUAudioUnitBus extends NSObject {
     public native NSArray<? extends NSNumber> supportedChannelCounts();
 
     /**
-     * @property	supportedChannelLayoutTags
-     * @discussion
+     * [@property]	supportedChannelLayoutTags
+     * 
      * 	This is an array of NSNumbers representing AudioChannelLayoutTag.
      */
     @Generated
@@ -413,9 +431,10 @@ public class AUAudioUnitBus extends NSObject {
     public native NSArray<? extends NSNumber> supportedChannelLayoutTags();
 
     /**
-     * @property	shouldAllocateBuffer
-     * @brief		Controls the audio unit's allocation strategy for a bus.
-     * @discussion
+     * [@property]	shouldAllocateBuffer
+     * 
+     * Controls the audio unit's allocation strategy for a bus.
+     * 
      *     Hosts can set this flag to communicate whether an audio unit should allocate its own buffer.
      *     By default this flag is set to true.
      * 
@@ -436,9 +455,10 @@ public class AUAudioUnitBus extends NSObject {
     public native void setShouldAllocateBuffer(boolean value);
 
     /**
-     * @property	shouldAllocateBuffer
-     * @brief		Controls the audio unit's allocation strategy for a bus.
-     * @discussion
+     * [@property]	shouldAllocateBuffer
+     * 
+     * Controls the audio unit's allocation strategy for a bus.
+     * 
      *     Hosts can set this flag to communicate whether an audio unit should allocate its own buffer.
      *     By default this flag is set to true.
      * 

@@ -19,15 +19,15 @@ package apple.accelerate.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @abstract The norm specifier
- * @constant SPARSE_NORM_ONE
+ * The norm specifier
+ * [@constant] SPARSE_NORM_ONE
  * Matrix element wise: sum over i,j ( | A[i,j] | )
  * 
  * Matrix operator    : max over j ( sum over i ( | A[i,j] | )
  * 
  * Vector element wise: sum over i ( | x[i] | )
  * 
- * @constant SPARSE_NORM_TWO
+ * [@constant] SPARSE_NORM_TWO
  * Matrix element wise: sqrt( sum over i,j (A[i,j])^2 )
  * 
  * Matrix operator    : Largest singular value of matrix, note that the operator
@@ -35,14 +35,14 @@ import org.moe.natj.general.ann.Generated;
  * 
  * Vector element wise: sqrt( sum over i (x[i])^2 )
  * 
- * @constant SPARSE_NORM_INF
+ * [@constant] SPARSE_NORM_INF
  * Matrix element wise: max over i,j ( | A[i,j] | )
  * 
  * Matrix operator    : max over i ( sum over j ( | A[i,j] | )
  * 
  * Vector element wise: max over i ( | x[i] | )
  * 
- * @constant SPARSE_NORM_R1
+ * [@constant] SPARSE_NORM_R1
  * Matrix element wise: sum over j ( sqrt ( sum over i ( A[i,j]^2 ) ) )
  * 
  * Matrix operator    : Not supported. Undefined

@@ -53,12 +53,14 @@ public final class SystemConfiguration {
     }
 
     /**
-     * @function SCNetworkReachabilityCreateWithAddress
-     * @discussion Creates a reference to the specified network
+     * [@function] SCNetworkReachabilityCreateWithAddress
+     * 
+     * Creates a reference to the specified network
      * 	address.  This reference can be used later to monitor the
      * 	reachability of the target host.
+     * 
      * @param address The address of the desired host.
-     * @result Returns a reference to the new immutable SCNetworkReachabilityRef.
+     * @return Returns a reference to the new immutable SCNetworkReachabilityRef.
      * 
      * 	 You must release the returned value.
      */
@@ -68,15 +70,17 @@ public final class SystemConfiguration {
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr address);
 
     /**
-     * @function SCNetworkReachabilityCreateWithAddressPair
-     * @discussion Creates a reference to the specified network
+     * [@function] SCNetworkReachabilityCreateWithAddressPair
+     * 
+     * Creates a reference to the specified network
      * 	address.  This reference can be used later to monitor the
      * 	reachability of the target host.
+     * 
      * @param localAddress The local address associated with a network
      * 	connection.  If NULL, only the remote address is of interest.
      * @param remoteAddress The remote address associated with a network
      * 	connection.  If NULL, only the local address is of interest.
-     * @result Returns a reference to the new immutable SCNetworkReachabilityRef.
+     * @return Returns a reference to the new immutable SCNetworkReachabilityRef.
      * 
      * 	 You must release the returned value.
      */
@@ -87,14 +91,16 @@ public final class SystemConfiguration {
             @UncertainArgument("Options: reference, array Fallback: reference") sockaddr remoteAddress);
 
     /**
-     * @function SCNetworkReachabilityCreateWithName
-     * @discussion Creates a reference to the specified network host or node
+     * [@function] SCNetworkReachabilityCreateWithName
+     * 
+     * Creates a reference to the specified network host or node
      * 	name.  This reference can be used later to monitor the
      * 	reachability of the target host.
+     * 
      * @param nodename The node name of the desired host.
      * 	This name would be the same as that passed to the
      * 	gethostbyname(3) or getaddrinfo(3) functions.
-     * @result Returns a reference to the new immutable SCNetworkReachabilityRef.
+     * @return Returns a reference to the new immutable SCNetworkReachabilityRef.
      * 
      * 	You must release the returned value.
      */
@@ -104,8 +110,9 @@ public final class SystemConfiguration {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String nodename);
 
     /**
-     * @function SCNetworkReachabilityGetTypeID
-     * @discussion Returns the type identifier of all SCNetworkReachability
+     * [@function] SCNetworkReachabilityGetTypeID
+     * 
+     * Returns the type identifier of all SCNetworkReachability
      * 	instances.
      */
     @Generated
@@ -114,15 +121,17 @@ public final class SystemConfiguration {
     public static native long SCNetworkReachabilityGetTypeID();
 
     /**
-     * @function SCNetworkReachabilityGetFlags
-     * @discussion Determines if the given target is reachable using the
+     * [@function] SCNetworkReachabilityGetFlags
+     * 
+     * Determines if the given target is reachable using the
      * 	current network configuration.
+     * 
      * @param target The network reference associated with the address or name
      * 	to be checked for reachability.
      * @param flags A pointer to memory that will be filled with the
      * 	SCNetworkReachabilityFlags detailing the reachability
      * 	of the specified target.
-     * @result Returns TRUE if the network connection flags are valid;
+     * @return Returns TRUE if the network connection flags are valid;
      * 	FALSE if the status could not be determined.
      */
     @Generated
@@ -130,9 +139,11 @@ public final class SystemConfiguration {
     public static native byte SCNetworkReachabilityGetFlags(SCNetworkReachabilityRef target, IntPtr flags);
 
     /**
-     * @function SCNetworkReachabilitySetCallback
-     * @discussion Assigns a client to a target, which receives callbacks
+     * [@function] SCNetworkReachabilitySetCallback
+     * 
+     * Assigns a client to a target, which receives callbacks
      * 	when the reachability of the target changes.
+     * 
      * @param target The network reference associated with the address or
      * 	name to be checked for reachability.
      * @param callout The function to be called when the reachability of the
@@ -140,7 +151,7 @@ public final class SystemConfiguration {
      * 	is removed.
      * @param context The SCNetworkReachabilityContext associated with
      * 	the callout.  The value may be NULL.
-     * @result Returns TRUE if the notification client was successfully set.
+     * @return Returns TRUE if the notification client was successfully set.
      */
     @Generated
     @CFunction
@@ -149,15 +160,17 @@ public final class SystemConfiguration {
             @UncertainArgument("Options: reference, array Fallback: reference") SCNetworkReachabilityContext context);
 
     /**
-     * @function SCNetworkReachabilityScheduleWithRunLoop
-     * @discussion Schedules the given target with the given run loop and mode.
+     * [@function] SCNetworkReachabilityScheduleWithRunLoop
+     * 
+     * Schedules the given target with the given run loop and mode.
+     * 
      * @param target The address or name that is set up for asynchronous
      * 	notifications.  Must be non-NULL.
      * @param runLoop A reference to a run loop on which the target should
      * 	be scheduled.  Must be non-NULL.
      * @param runLoopMode The mode on which to schedule the target.
      * 	Must be non-NULL.
-     * @result Returns TRUE if the target is scheduled successfully;
+     * @return Returns TRUE if the target is scheduled successfully;
      * 	FALSE otherwise.
      */
     @Generated
@@ -166,16 +179,18 @@ public final class SystemConfiguration {
             CFRunLoopRef runLoop, CFStringRef runLoopMode);
 
     /**
-     * @function SCNetworkReachabilityUnscheduleFromRunLoop
-     * @discussion Unschedules the given target from the given run loop
+     * [@function] SCNetworkReachabilityUnscheduleFromRunLoop
+     * 
+     * Unschedules the given target from the given run loop
      * 	and mode.
+     * 
      * @param target The address or name that is set up for asynchronous
      * 	notifications.  Must be non-NULL.
      * @param runLoop A reference to a run loop from which the target
      * 	should be unscheduled.  Must be non-NULL.
      * @param runLoopMode The mode on which to unschedule the target.
      * 	Must be non-NULL.
-     * @result Returns TRUE if the target is unscheduled successfully;
+     * @return Returns TRUE if the target is unscheduled successfully;
      * 	FALSE otherwise.
      */
     @Generated
@@ -184,14 +199,16 @@ public final class SystemConfiguration {
             CFRunLoopRef runLoop, CFStringRef runLoopMode);
 
     /**
-     * @function SCNetworkReachabilitySetDispatchQueue
-     * @discussion Schedule or unschedule callbacks for the given target on the given
+     * [@function] SCNetworkReachabilitySetDispatchQueue
+     * 
+     * Schedule or unschedule callbacks for the given target on the given
      * 	dispatch queue.
+     * 
      * @param target The address or name that is set up for asynchronous
      * 	notifications.  Must be non-NULL.
      * @param queue A libdispatch queue to run the callback on.
      * 	Pass NULL to unschedule callbacks.
-     * @result Returns TRUE if the target is scheduled or unscheduled successfully;
+     * @return Returns TRUE if the target is scheduled or unscheduled successfully;
      * 	FALSE otherwise.
      */
     @Generated
@@ -199,32 +216,38 @@ public final class SystemConfiguration {
     public static native byte SCNetworkReachabilitySetDispatchQueue(SCNetworkReachabilityRef target, NSObject queue);
 
     /**
-     * @function SCCopyLastError
-     * @discussion Returns the most recent status or error code generated
+     * [@function] SCCopyLastError
+     * 
+     * Returns the most recent status or error code generated
      * 	as the result of calling a System Configuration framework API.
-     * @result Returns the last error encountered.
+     * 
+     * @return Returns the last error encountered.
      */
     @Generated
     @CFunction
     public static native CFErrorRef SCCopyLastError();
 
     /**
-     * @function SCError
-     * @discussion Returns the most recent status or error code generated
+     * [@function] SCError
+     * 
+     * Returns the most recent status or error code generated
      * 	as the result of calling a System Configuration framework API.
-     * @result Returns the last error encountered.
+     * 
+     * @return Returns the last error encountered.
      */
     @Generated
     @CFunction
     public static native int SCError();
 
     /**
-     * @function SCErrorString
-     * @discussion Returns a pointer to the message string
+     * [@function] SCErrorString
+     * 
+     * Returns a pointer to the message string
      * 	associated with the specified status or error
      * 	number.
+     * 
      * @param status The status or error number.
-     * @result Returns a pointer to the error message string.
+     * @return Returns a pointer to the error message string.
      */
     @Generated
     @CFunction
@@ -232,8 +255,9 @@ public final class SystemConfiguration {
     public static native String SCErrorString(int status);
 
     /**
-     * @function CNSetSupportedSSIDs
-     * @discussion Provides Captive Network Support with an updated list of
+     * [@function] CNSetSupportedSSIDs
+     * 
+     * Provides Captive Network Support with an updated list of
      * 	SSIDs that this application will perform authentication on.
      * 
      * 	Captive Network Support suppresses showing the Web Sheet
@@ -247,7 +271,7 @@ public final class SystemConfiguration {
      * 	is running.
      * 
      * @param ssidArray A CFArray of CFStrings of the SSIDs.
-     * @result Returns TRUE if the operation succeeded, FALSE otherwise.
+     * @return Returns TRUE if the operation succeeded, FALSE otherwise.
      */
     @Generated
     @Deprecated
@@ -255,13 +279,15 @@ public final class SystemConfiguration {
     public static native byte CNSetSupportedSSIDs(CFArrayRef ssidArray);
 
     /**
-     * @function CNMarkPortalOnline
-     * @discussion Tells Captive Network Support that your application has
+     * [@function] CNMarkPortalOnline
+     * 
+     * Tells Captive Network Support that your application has
      * 	authenticated the device to the network. Captive Network Support
      * 	will notify the rest of the system that WiFi is now a viable
      * 	interface.
+     * 
      * @param interfaceName Name of the interface that is now online.
-     * @result Returns TRUE if the operation succeeded, FALSE otherwise.
+     * @return Returns TRUE if the operation succeeded, FALSE otherwise.
      */
     @Generated
     @Deprecated
@@ -269,11 +295,13 @@ public final class SystemConfiguration {
     public static native byte CNMarkPortalOnline(CFStringRef interfaceName);
 
     /**
-     * @function CNMarkPortalOffline
-     * @discussion Tells Captive Network Support that the device is not
+     * [@function] CNMarkPortalOffline
+     * 
+     * Tells Captive Network Support that the device is not
      * 	authenticated on the given network interface.
+     * 
      * @param interfaceName Name of the interface that is still captive.
-     * @result Returns TRUE if the operation succeeded, FALSE otherwise.
+     * @return Returns TRUE if the operation succeeded, FALSE otherwise.
      */
     @Generated
     @Deprecated
@@ -281,9 +309,11 @@ public final class SystemConfiguration {
     public static native byte CNMarkPortalOffline(CFStringRef interfaceName);
 
     /**
-     * @function CNCopySupportedInterfaces
-     * @discussion copies a list of all interfaces CaptiveNetworkSupport is monitoring.
-     * @result An array of CFStringRef- BSD interface names.
+     * [@function] CNCopySupportedInterfaces
+     * 
+     * copies a list of all interfaces CaptiveNetworkSupport is monitoring.
+     * 
+     * @return An array of CFStringRef- BSD interface names.
      *  Returns NULL if an error was encountered.
      *  You MUST release the returned value.
      */
@@ -292,8 +322,9 @@ public final class SystemConfiguration {
     public static native CFArrayRef CNCopySupportedInterfaces();
 
     /**
-     * @function CNCopyCurrentNetworkInfo
-     * @discussion Returns the network information for the specified interface when the requesting application meets one of following 4 requirements -.
+     * [@function] CNCopyCurrentNetworkInfo
+     * 
+     * Returns the network information for the specified interface when the requesting application meets one of following 4 requirements -.
      * 1. application is using CoreLocation API and has the user's authorization to access location.
      * 2. application has used the NEHotspotConfiguration API to configure the current Wi-Fi network.
      * 3. application has active VPN configurations installed.
@@ -318,8 +349,9 @@ public final class SystemConfiguration {
      * </pre>
      * 
      * Pseudo network information will contain "Wi-Fi" SSID and "00:00:00:00:00:00" BSSID. For China region, the SSID will be "WLAN".
+     * 
      * @param interfaceName Name of the interface you are interested in
-     * @result Network Information dictionary associated with the interface.
+     * @return Network Information dictionary associated with the interface.
      *  Returns NULL if an error was encountered.
      *  You MUST release the returned value.
      */
@@ -328,8 +360,9 @@ public final class SystemConfiguration {
     public static native CFDictionaryRef CNCopyCurrentNetworkInfo(CFStringRef interfaceName);
 
     /**
-     * @const kCFErrorDomainSystemConfiguration
-     * @discussion CFError domain associated with errors reported by
+     * [@const] kCFErrorDomainSystemConfiguration
+     * 
+     * CFError domain associated with errors reported by
      * 	the SystemConfiguration.framework.
      */
     @Generated
@@ -337,24 +370,27 @@ public final class SystemConfiguration {
     public static native CFStringRef kCFErrorDomainSystemConfiguration();
 
     /**
-     * @constant kCNNetworkInfoKeySSIDData
-     * @discussion NetworkInfo Dictionary key for SSID in CFData format
+     * [@constant] kCNNetworkInfoKeySSIDData
+     * 
+     * NetworkInfo Dictionary key for SSID in CFData format
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCNNetworkInfoKeySSIDData();
 
     /**
-     * @constant kCNNetworkInfoKeySSID
-     * @discussion NetworkInfo Dictionary key for SSID in CFString format
+     * [@constant] kCNNetworkInfoKeySSID
+     * 
+     * NetworkInfo Dictionary key for SSID in CFString format
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCNNetworkInfoKeySSID();
 
     /**
-     * @constant kCNNetworkInfoKeyBSSID
-     * @discussion NetworkInfo Dictionary key for BSSID in CFString format
+     * [@constant] kCNNetworkInfoKeyBSSID
+     * 
+     * NetworkInfo Dictionary key for BSSID in CFString format
      */
     @Generated
     @CVariable()

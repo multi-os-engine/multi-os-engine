@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Class to handle the loading and animation transition when opening or closing a document.
- * @discussion You can use this object to display a loading indicator if you need time to perform time-consuming operations (loading, parsing, …) after the document download and before presenting it. You can also get a transition controller to pass to UIKit when pushing or presenting your document view
+ * 
+ * You can use this object to display a loading indicator if you need time to perform time-consuming operations (loading, parsing, …) after the document download and before presenting it. You can also get a transition controller to pass to UIKit when pushing or presenting your document view
  * in response to @c documentBrowser:didPickItem:, or when popping or dismissing it.
  */
 @Generated

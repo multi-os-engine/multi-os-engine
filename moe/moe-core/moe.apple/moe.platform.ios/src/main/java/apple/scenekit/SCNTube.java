@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNTube
- * @abstract SCNTube represents a tube with controllable height, inner radius and outer radius.
+ * SCNTube
+ * 
+ * SCNTube represents a tube with controllable height, inner radius and outer radius.
  */
 @Generated
 @Library("SceneKit")
@@ -171,8 +172,10 @@ public class SCNTube extends SCNGeometry {
     public static native boolean supportsSecureCoding();
 
     /**
-     * @method tubeWithInnerRadius:outerRadius:height:
-     * @abstract Creates and returns a tube with given inner radius, outer radius and height.
+     * tubeWithInnerRadius:outerRadius:height:
+     * 
+     * Creates and returns a tube with given inner radius, outer radius and height.
+     * 
      * @param innerRadius The inner radius of the tube.
      * @param outerRadius The outer radius of the tube.
      * @param height The height of the tube.
@@ -188,9 +191,11 @@ public class SCNTube extends SCNGeometry {
     public static native long version_static();
 
     /**
-     * @property height
-     * @abstract The height of the tube. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The height of the tube. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("height")
@@ -198,9 +203,11 @@ public class SCNTube extends SCNGeometry {
     public native double height();
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("heightSegmentCount")
@@ -216,9 +223,11 @@ public class SCNTube extends SCNGeometry {
     public native SCNTube initWithCoder(NSCoder coder);
 
     /**
-     * @property innerRadius
-     * @abstract The inner radius of the tube. Animatable.
-     * @discussion If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry is empty. The default value is 0.25.
+     * [@property] innerRadius
+     * 
+     * The inner radius of the tube. Animatable.
+     * 
+     * If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry is empty. The default value is 0.25.
      */
     @Generated
     @Selector("innerRadius")
@@ -226,9 +235,11 @@ public class SCNTube extends SCNGeometry {
     public native double innerRadius();
 
     /**
-     * @property outerRadius
-     * @abstract The outer radius of the tube. Animatable.
-     * @discussion If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is empty. The default value is 0.5.
+     * [@property] outerRadius
+     * 
+     * The outer radius of the tube. Animatable.
+     * 
+     * If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is empty. The default value is 0.5.
      */
     @Generated
     @Selector("outerRadius")
@@ -236,9 +247,11 @@ public class SCNTube extends SCNGeometry {
     public native double outerRadius();
 
     /**
-     * @property radialSegmentCount
-     * @abstract The number of subdivisions along the radial coordinate. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 48.
+     * [@property] radialSegmentCount
+     * 
+     * The number of subdivisions along the radial coordinate. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
     @Selector("radialSegmentCount")
@@ -246,45 +259,55 @@ public class SCNTube extends SCNGeometry {
     public native long radialSegmentCount();
 
     /**
-     * @property height
-     * @abstract The height of the tube. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The height of the tube. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
     /**
-     * @property innerRadius
-     * @abstract The inner radius of the tube. Animatable.
-     * @discussion If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry is empty. The default value is 0.25.
+     * [@property] innerRadius
+     * 
+     * The inner radius of the tube. Animatable.
+     * 
+     * If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry is empty. The default value is 0.25.
      */
     @Generated
     @Selector("setInnerRadius:")
     public native void setInnerRadius(@NFloat double value);
 
     /**
-     * @property outerRadius
-     * @abstract The outer radius of the tube. Animatable.
-     * @discussion If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is empty. The default value is 0.5.
+     * [@property] outerRadius
+     * 
+     * The outer radius of the tube. Animatable.
+     * 
+     * If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is empty. The default value is 0.5.
      */
     @Generated
     @Selector("setOuterRadius:")
     public native void setOuterRadius(@NFloat double value);
 
     /**
-     * @property radialSegmentCount
-     * @abstract The number of subdivisions along the radial coordinate. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 48.
+     * [@property] radialSegmentCount
+     * 
+     * The number of subdivisions along the radial coordinate. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
     @Selector("setRadialSegmentCount:")

@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsContact
- * @abstract SCNPhysicsContact contains information about a physics contact.
+ * SCNPhysicsContact
+ * 
+ * SCNPhysicsContact contains information about a physics contact.
  */
 @Generated
 @Library("SceneKit")

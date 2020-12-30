@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNOptimizerAdam
- * @discussion The MPSNNOptimizerAdam performs an Adam Update
+ * MPSNNOptimizerAdam
+ * 
+ * The MPSNNOptimizerAdam performs an Adam Update
  * 
  *             Initialization time
  *             m[0] = 0 (Initialize initial 1st moment vector aka momentum, user is responsible for this)
@@ -84,18 +85,22 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   beta1
-     * @abstract   The beta1 at which we update values
-     * @discussion Default value is 0.9
+     * [@property]   beta1
+     * 
+     * The beta1 at which we update values
+     * 
+     * Default value is 0.9
      */
     @Generated
     @Selector("beta1")
     public native double beta1();
 
     /**
-     * @property   beta2
-     * @abstract   The beta2 at which we update values
-     * @discussion Default value is 0.999
+     * [@property]   beta2
+     * 
+     * The beta2 at which we update values
+     * 
+     * Default value is 0.999
      */
     @Generated
     @Selector("beta2")
@@ -128,7 +133,17 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     public static native String description_static();
 
     /**
-     * @abstract   Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     *             At update time:
+     *             t = t + 1
+     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
+     * 
+     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
+     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     *             maxVel[t] = max(maxVel[t-1],v[t])
+     *             variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      * 
      * @param      commandBuffer                              A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      batchNormalizationGradientState            A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients for this update.
@@ -144,17 +159,6 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      *                                                        size 1 in which case biases won't be updated. May be nil, if nil then normal Adam optimizer behaviour is followed.
      * @param      resultState                                A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
      *                                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
-     *             At update time:
-     *             t = t + 1
-     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * 
-     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
-     *             maxVel[t] = max(maxVel[t-1],v[t])
-     *             variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      */
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
@@ -166,7 +170,16 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             NSArray<? extends MPSVector> maximumVelocityVectors, MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
-     * @abstract   Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     * 
+     *             t = t + 1
+     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
+     * 
+     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
+     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     *             variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      * 
      * @param      commandBuffer                              A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      batchNormalizationGradientState            A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients for this update.
@@ -179,16 +192,6 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      *                                                        size 1 in which case beta won't be updated
      * @param      resultState                                A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
      *                                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
-     * 
-     *             t = t + 1
-     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * 
-     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
-     *             variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      */
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputMomentumVectors:inputVelocityVectors:resultState:")
@@ -200,7 +203,17 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
-     * @abstract   Encode an AMSGrad variant of  MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an AMSGrad variant of  MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     *             At update time:
+     *             t = t + 1
+     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
+     * 
+     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
+     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     *             maxVel[t] = max(maxVel[t-1],v[t])
+     *             variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      * 
      * @param      commandBuffer                              A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      batchNormalizationState                    A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients and original gamma/beta for this update.
@@ -215,17 +228,6 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      *                                                        size 1 in which case biases won't be updated. May be nil, if nil then normal Adam optimizer behaviour is followed.
      * @param      resultState                                A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
      *                                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
-     *             At update time:
-     *             t = t + 1
-     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * 
-     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
-     *             maxVel[t] = max(maxVel[t-1],v[t])
-     *             variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      */
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
@@ -236,7 +238,16 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
-     * @abstract   Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     * 
+     *             t = t + 1
+     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
+     * 
+     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
+     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     *             variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      * 
      * @param      commandBuffer                              A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      batchNormalizationState                    A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients and original gamma/beta for this update.
@@ -248,16 +259,6 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      *                                                        size 1 in which case beta won't be updated
      * @param      resultState                                A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
      *                                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
-     * 
-     *             t = t + 1
-     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * 
-     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
-     *             variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      */
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputMomentumVectors:inputVelocityVectors:resultState:")
@@ -267,7 +268,17 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             NSArray<? extends MPSVector> inputVelocityVectors, MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
-     * @abstract   Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     *             At update time:
+     *             t = t + 1
+     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
+     * 
+     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
+     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     *             maxVel[t] = max(maxVel[t-1],v[t])
+     *             variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      * 
      * @param      commandBuffer              A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      convolutionGradientState   A valid MPSCNNConvolutionGradientState object which specifies the input state with gradients for this update.
@@ -283,16 +294,6 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      *                                        size 1 in which case biases won't be updated. May be nil, if nil then normal Adam optimizer behaviour is followed.
      * @param      resultState                A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the resultValues state which will
      *                                        be updated and overwritten.
-     * 
-     * @discussion The following operations would be applied
-     *             At update time:
-     *             t = t + 1
-     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * 
-     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
-     *             maxVel[t] = max(maxVel[t-1],v[t])
-     *             variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      */
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputMomentumVectors:inputVelocityVectors:maximumVelocityVectors:resultState:")
@@ -304,7 +305,16 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             NSArray<? extends MPSVector> maximumVelocityVectors, MPSCNNConvolutionWeightsAndBiasesState resultState);
 
     /**
-     * @abstract   Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     * 
+     *             t = t + 1
+     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
+     * 
+     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
+     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     *             variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      * 
      * @param      commandBuffer              A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      convolutionGradientState   A valid MPSCNNConvolutionGradientState object which specifies the input state with gradients for this update.
@@ -317,16 +327,6 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      *                                        size 1 in which case biases won't be updated
      * @param      resultState                A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the resultValues state which will
      *                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
-     * 
-     *             t = t + 1
-     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * 
-     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
-     *             variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      */
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputMomentumVectors:inputVelocityVectors:resultState:")
@@ -352,7 +352,18 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             MPSMatrix resultValuesMatrix);
 
     /**
-     * @abstract   Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     *             At update time:
+     *             t = t + 1
+     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
+     * 
+     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
+     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     *             maxVel[t] = max(maxVel[t-1],v[t])
+     *             variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
+     * 
      * @param      commandBuffer          A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      inputGradientVector    A valid MPSVector object which specifies the input vector of gradients for this update.
      * @param      inputValuesVector      A valid MPSVector object which specifies the input vector of values to be updated.
@@ -364,16 +375,6 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      *                                    be updated and overwritten. May be nil, if nil then normal Adam optimizer behaviour is followed.
      * @param      resultValuesVector     A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the resultValues state which will
      *                                    be updated and overwritten.
-     * 
-     * @discussion The following operations would be applied
-     *             At update time:
-     *             t = t + 1
-     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * 
-     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
-     *             maxVel[t] = max(maxVel[t-1],v[t])
-     *             variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputMomentumVector:inputVelocityVector:maximumVelocityVector:resultValuesVector:")
@@ -383,7 +384,16 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             MPSVector maximumVelocityVector, MPSVector resultValuesVector);
 
     /**
-     * @abstract   Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     * 
+     *             t = t + 1
+     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
+     * 
+     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
+     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     *             variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      * 
      * @param      commandBuffer          A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      inputGradientVector    A valid MPSVector object which specifies the input vector of gradients for this update.
@@ -394,15 +404,6 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      *                                    be updated and overwritten.
      * @param      resultValuesVector     A valid MPSVector object which specifies the resultValues vector which will
      *                                    be updated and overwritten.
-     * 
-     * @discussion The following operations would be applied
-     * 
-     *             t = t + 1
-     *             lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
-     * 
-     *             m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     *             v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
-     *             variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputMomentumVector:inputVelocityVector:resultValuesVector:")
@@ -412,9 +413,11 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             MPSVector resultValuesVector);
 
     /**
-     * @property   epsilon
-     * @abstract   The epsilon at which we update values
-     * @discussion This value is usually used to ensure to avoid divide by 0, default value is 1e-8
+     * [@property]   epsilon
+     * 
+     * The epsilon at which we update values
+     * 
+     * This value is usually used to ensure to avoid divide by 0, default value is 1e-8
      */
     @Generated
     @Selector("epsilon")
@@ -443,7 +446,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     public native MPSNNOptimizerAdam initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Full initialization for the adam update
+     * Full initialization for the adam update
      * 
      * @param      device                     The device on which the kernel will execute.
      * @param      beta1                      The beta1 to update values
@@ -462,7 +465,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             @NUInt long timeStep, MPSNNOptimizerDescriptor optimizerDescriptor);
 
     /**
-     * @abstract   Convenience initialization for the adam update
+     * Convenience initialization for the adam update
      * 
      * @param      device                     The device on which the kernel will execute.
      * @param      learningRate               The learningRate at which we will update values
@@ -510,8 +513,9 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   timeStep
-     * @abstract   Current timeStep for the update, number of times update has occurred
+     * [@property]   timeStep
+     * 
+     * Current timeStep for the update, number of times update has occurred
      */
     @Generated
     @Selector("setTimeStep:")
@@ -536,8 +540,9 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     }
 
     /**
-     * @property   timeStep
-     * @abstract   Current timeStep for the update, number of times update has occurred
+     * [@property]   timeStep
+     * 
+     * Current timeStep for the update, number of times update has occurred
      */
     @Generated
     @Selector("timeStep")

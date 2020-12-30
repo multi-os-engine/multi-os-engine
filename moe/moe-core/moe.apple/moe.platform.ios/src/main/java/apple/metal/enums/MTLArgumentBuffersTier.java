@@ -4,8 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLArgumentBuffersTier
- * @abstract MTLArgumentBuffersTier determines support level for argument buffers.
+ * [@enum] MTLArgumentBuffersTier
+ * 
+ * MTLArgumentBuffersTier determines support level for argument buffers.
  */
 @Generated
 public final class MTLArgumentBuffersTier {

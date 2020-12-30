@@ -47,8 +47,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKSampleQuery
- * @abstract      A concrete subclass of HKQuery that provides an interface to retrieve HKSample objects.
+ * HKSampleQuery
+ * 
+ * A concrete subclass of HKQuery that provides an interface to retrieve HKSample objects.
  */
 @Generated
 @Library("HealthKit")
@@ -266,8 +267,9 @@ public class HKSampleQuery extends HKQuery {
     public native HKSampleQuery init();
 
     /**
-     * @method        initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:
-     * @abstract      Returns a query that will retrieve HKSamples matching the given predicate.
+     * initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:
+     * 
+     * Returns a query that will retrieve HKSamples matching the given predicate.
      * 
      * @param         sampleType      The type of sample to retrieve.
      * @param         predicate       The predicate which samples should match.
@@ -282,8 +284,9 @@ public class HKSampleQuery extends HKQuery {
             @ObjCBlock(name = "call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler") Block_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler resultsHandler);
 
     /**
-     * @property      limit
-     * @abstract      The maximum number of results the receiver will return upon completion.
+     * [@property]      limit
+     * 
+     * The maximum number of results the receiver will return upon completion.
      */
     @Generated
     @Selector("limit")
@@ -291,8 +294,9 @@ public class HKSampleQuery extends HKQuery {
     public native long limit();
 
     /**
-     * @property      sortDescriptors
-     * @abstract      An array of NSSortDescriptors.
+     * [@property]      sortDescriptors
+     * 
+     * An array of NSSortDescriptors.
      */
     @Generated
     @Selector("sortDescriptors")

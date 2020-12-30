@@ -4,12 +4,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum NFCMiFareFamily
+ * [@enum] NFCMiFareFamily
  * 
- * @constant NFCMiFareUnknown       MiFare compatible ISO14443 Type A tag.
- * @constant NFCMiFareUltralight    MiFare Ultralight series.
- * @constant NFCMiFarePlus          MiFare Plus series.
- * @constant NFCMiFareDESFire       MiFare DESFire series.
+ * [@constant] NFCMiFareUnknown       MiFare compatible ISO14443 Type A tag.
+ * [@constant] NFCMiFareUltralight    MiFare Ultralight series.
+ * [@constant] NFCMiFarePlus          MiFare Plus series.
+ * [@constant] NFCMiFareDESFire       MiFare DESFire series.
  */
 @Generated
 public final class NFCMiFareFamily {

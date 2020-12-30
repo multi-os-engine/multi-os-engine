@@ -19,12 +19,13 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum		AudioBalanceFadeType
- * @abstract   used for mType field of AudioBalanceFade struct
- * @constant   kAudioBalanceFadeType_MaxUnityGain
+ * [@enum]		AudioBalanceFadeType
+ * 
+ * used for mType field of AudioBalanceFade struct
+ * [@constant]   kAudioBalanceFadeType_MaxUnityGain
  * 	the gain value never exceeds 1.0, the opposite channel fades out. 
  * 	This can reduce overall loudness when the balance or fade is not in the center.
- * @constant   kAudioBalanceFadeType_EqualPower
+ * [@constant]   kAudioBalanceFadeType_EqualPower
  * 	The overall loudness remains constant, but gain can exceed 1.0.
  * 	the gain value is 1.0 when the balance and fade are in the center.
  * 	From there they can increase to +3dB (1.414) and decrease to -inf dB (0.0).

@@ -4,11 +4,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueCurrentHeatingCooling
+ * [@enum]      HMCharacteristicValueCurrentHeatingCooling
  * 
- * @constant  HMCharacteristicValueCurrentHeatingCoolingOff   Off.
- * @constant  HMCharacteristicValueCurrentHeatingCoolingHeat  The Heater is currently on.
- * @constant  HMCharacteristicValueCurrentHeatingCoolingCool  Cooler is currently on.
+ * [@constant]  HMCharacteristicValueCurrentHeatingCoolingOff   Off.
+ * [@constant]  HMCharacteristicValueCurrentHeatingCoolingHeat  The Heater is currently on.
+ * [@constant]  HMCharacteristicValueCurrentHeatingCoolingCool  Cooler is currently on.
  */
 @Generated
 public final class HMCharacteristicValueCurrentHeatingCooling {

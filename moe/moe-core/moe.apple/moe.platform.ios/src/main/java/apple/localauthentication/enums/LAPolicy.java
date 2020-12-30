@@ -24,7 +24,7 @@ public final class LAPolicy {
     /**
      * Device owner is going to be authenticated using a biometric method (Touch ID or Face ID).
      * 
-     * @discussion Biometric authentication is required. If the biometry is not available, not enrolled,
+     * Biometric authentication is required. If the biometry is not available, not enrolled,
      *             or locked out, then the evaluation of this policy will fail with LAErrorBiometryNotAvailable,
      *             LAErrorBiometryNotEnrolled or LAErrorBiometryLockout. Biometry can't be used without a passcode,
      *             i.e. when biometry is available, enrolled and not locked out but passcode is not set, then
@@ -53,7 +53,7 @@ public final class LAPolicy {
     /**
      * Device owner is going to be authenticated by biometry or device passcode.
      * 
-     * @discussion Biometric or passcode authentication is required. If the biometry is available, enrolled and
+     * Biometric or passcode authentication is required. If the biometry is available, enrolled and
      *             not locked out, users are asked for it first. Otherwise they are asked to enter device
      *             passcode. If passcode is not enabled, policy evaluation will fail with LAErrorPasscodeNotSet.
      * 

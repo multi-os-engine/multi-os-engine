@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class is used to represent a significant time event.
+ * This class is used to represent a significant time event.
  */
 @Generated
 @Library("HomeKit")
@@ -131,7 +131,7 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
     public static native Object new_objc();
 
     /**
-     * @brief offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
      *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
      *               'minute' property must be set to -30.
      */
@@ -148,7 +148,7 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief offset An offset from the time of the signficant event. To specify an offset before the significant event, the
+     * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
      *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
      *               'minute' property must be set to -30.
      */
@@ -157,7 +157,7 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
     public native void setOffset(NSDateComponents value);
 
     /**
-     * @brief significantEvent The significant event for the trigger.
+     * significantEvent The significant event for the trigger.
      */
     @Generated
     @Selector("setSignificantEvent:")
@@ -168,7 +168,7 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @brief significantEvent The significant event for the trigger.
+     * significantEvent The significant event for the trigger.
      */
     @Generated
     @Selector("significantEvent")

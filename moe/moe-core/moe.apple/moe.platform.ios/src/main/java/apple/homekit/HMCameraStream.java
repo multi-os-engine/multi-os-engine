@@ -42,7 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Represents a camera stream.
+ * Represents a camera stream.
  */
 @Generated
 @Library("HomeKit")
@@ -156,7 +156,7 @@ public class HMCameraStream extends HMCameraSource {
     public static native long version_static();
 
     /**
-     * @brief Represents the audio setting for the current stream.
+     * Represents the audio setting for the current stream.
      */
     @Generated
     @Selector("audioStreamSetting")
@@ -168,7 +168,7 @@ public class HMCameraStream extends HMCameraSource {
     public native HMCameraStream init();
 
     /**
-     * @brief Sets the audio stream setting.
+     * Sets the audio stream setting.
      * 
      * @param audioStreamSetting New audio stream setting.
      */
@@ -177,7 +177,7 @@ public class HMCameraStream extends HMCameraSource {
     public native void setAudioStreamSetting(@NUInt long audioStreamSetting);
 
     /**
-     * @brief Updates the settings of the audio stream.
+     * Updates the settings of the audio stream.
      * 
      * @param audioStreamSetting New audio stream setting.
      * 

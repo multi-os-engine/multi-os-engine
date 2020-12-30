@@ -29,9 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNGroupNormalizationGradientState
- * @dependency This depends on Metal.framework
- * @discussion A state to hold information necessary to execute a gradient
+ * MPSCNNGroupNormalizationGradientState
+ * [@dependency] This depends on Metal.framework
+ * 
+ * A state to hold information necessary to execute a gradient
  *             pass for MPSCNNGroupNormalization.  Gradient states should
  *             be created by using the forward kernel's methods.  This will
  *             ensure that the state captures all information necessary to
@@ -70,7 +71,7 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @abstract   Return an MTLBuffer object with the state's current beta values..
+     * Return an MTLBuffer object with the state's current beta values..
      */
     @Generated
     @Selector("beta")
@@ -104,7 +105,7 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
     public static native String description_static();
 
     /**
-     * @abstract   Return an MTLBuffer object with the state's current gamma values.
+     * Return an MTLBuffer object with the state's current gamma values.
      */
     @Generated
     @Selector("gamma")
@@ -112,7 +113,7 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
     public native MTLBuffer gamma();
 
     /**
-     * @property   The MTLBuffer containing the gradient values for beta.
+     * [@property]   The MTLBuffer containing the gradient values for beta.
      */
     @Generated
     @Selector("gradientForBeta")
@@ -120,7 +121,7 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
     public native MTLBuffer gradientForBeta();
 
     /**
-     * @property   The MTLBuffer containing the gradient values for gamma.
+     * [@property]   The MTLBuffer containing the gradient values for gamma.
      */
     @Generated
     @Selector("gradientForGamma")
@@ -128,7 +129,7 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
     public native MTLBuffer gradientForGamma();
 
     /**
-     * @abstract The MPSCNNGroupNormalization object that created this state object.
+     * The MPSCNNGroupNormalization object that created this state object.
      */
     @Generated
     @Selector("groupNormalization")

@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @discussion Request code parameter for the polling command
+ * Request code parameter for the polling command
  */
 @Generated
 public final class NFCFeliCaPollingRequestCode {

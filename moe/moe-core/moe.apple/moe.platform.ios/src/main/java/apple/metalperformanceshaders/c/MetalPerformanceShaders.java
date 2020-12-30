@@ -48,8 +48,11 @@ public final class MetalPerformanceShaders {
 
     /**
      * MPSSupportsMTLDevice
-     * @abstract   Determine whether a MetalPerformanceShaders.framework  supports a MTLDevice.
-     * @discussion Use this function to determine whether a MTLDevice can be used with interfaces in MetalPerformanceShaders.framework.
+     * 
+     * Determine whether a MetalPerformanceShaders.framework  supports a MTLDevice.
+     * 
+     * Use this function to determine whether a MTLDevice can be used with interfaces in MetalPerformanceShaders.framework.
+     * 
      * @param      device          A valid MTLDevice
      * @return     YES             The device is supported.
      *             NO              The device is not supported
@@ -59,9 +62,10 @@ public final class MetalPerformanceShaders {
     public static native boolean MPSSupportsMTLDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @memberof   MPSKernel
-     * @constant   MPSRectNoClip
-     * @discussion This is a special constant to indicate no clipping is to be done.
+     * [@memberof]   MPSKernel
+     * [@constant]   MPSRectNoClip
+     * 
+     * This is a special constant to indicate no clipping is to be done.
      *             The entire image will be used.
      *             This is the default clipping rectangle or the input extent for MPSKernels.
      */
@@ -86,7 +90,7 @@ public final class MetalPerformanceShaders {
     public static native MPSIntegerDivisionParams MPSFindIntegerDivisionParams(char divisor);
 
     /**
-     * @abstract  maximum allowed batch size
+     * maximum allowed batch size
      */
     @Generated
     @Inline
@@ -96,7 +100,7 @@ public final class MetalPerformanceShaders {
             @NUInt long MPSMaxTextures);
 
     /**
-     * @abstract  The index of the first destination texture argument
+     * The index of the first destination texture argument
      */
     @Generated
     @Inline
@@ -105,7 +109,7 @@ public final class MetalPerformanceShaders {
     public static native long MPSGetCustomKernelBatchedDestinationIndex(@ByValue MPSCustomKernelArgumentCount c);
 
     /**
-     * @abstract  The index of the ith batched source texture argument
+     * The index of the ith batched source texture argument
      */
     @Generated
     @Inline
@@ -115,8 +119,9 @@ public final class MetalPerformanceShaders {
             @NUInt long sourceIndex, @NUInt long MPSMaxTextures);
 
     /**
-     * @abstract The index of the ith non-batched source texture argument.
-     * @discussion  A non-batched source is one that is shared for all items in a batch
+     * The index of the ith non-batched source texture argument.
+     * 
+     * A non-batched source is one that is shared for all items in a batch
      */
     @Generated
     @Inline
@@ -126,8 +131,9 @@ public final class MetalPerformanceShaders {
             @NUInt long sourceIndex, @NUInt long MPSMaxTextures);
 
     /**
-     * @abstract Hint to MPS how much memory your application expects to need for the command buffer
-     *   @discussion This will cause MPS to prefetch a MTLHeap into its internal cache of
+     * Hint to MPS how much memory your application expects to need for the command buffer
+     * 
+     * This will cause MPS to prefetch a MTLHeap into its internal cache of
      *               the indicated size, which will be sub-allocated to back the temporary images,
      *               matrices, vectors and states in used over the course of the command buffer.
      *               This can be helpful in certain pathological situations when allocation sizes
@@ -182,8 +188,9 @@ public final class MetalPerformanceShaders {
             @NUInt long bytes);
 
     /**
-     * @abstract   Set the timeout after which unused cached MTLHeaps are released
-     * @discussion MPS maintains a private set of MTLHeaps attached to each MTLCommandBuffer
+     * Set the timeout after which unused cached MTLHeaps are released
+     * 
+     * MPS maintains a private set of MTLHeaps attached to each MTLCommandBuffer
      *             for use by temporary images, matrices, vectors and states, and also for its own
      *             private usage for temporary storage in some (typically multipass) filters. When the
      *             command buffer completes, these are returned to a MTLDevice level cache for reuse.
@@ -205,8 +212,9 @@ public final class MetalPerformanceShaders {
     public static native void MPSSetHeapCacheDuration(@Mapped(ObjCObjectMapper.class) Object cmdBuf, double seconds);
 
     /**
-     * @abstract   Identify the preferred device for MPS computation
-     * @discussion This method identifies a suitable device for MPS operation. By
+     * Identify the preferred device for MPS computation
+     * 
+     * This method identifies a suitable device for MPS operation. By
      *             default, it prefers a headless high performance GPU. Your application
      *             may use the options parameter to adjust this behavior.  If your application
      *             needs a particular device, for example one attached to the display on

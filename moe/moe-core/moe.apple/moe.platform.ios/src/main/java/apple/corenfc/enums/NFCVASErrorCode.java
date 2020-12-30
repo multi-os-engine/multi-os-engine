@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum NFCVASErrorCode
+ * [@enum] NFCVASErrorCode
  * 
- * @discussion Response APDU status word.
+ * Response APDU status word.
  */
 @Generated
 public final class NFCVASErrorCode {

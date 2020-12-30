@@ -28,9 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		   HKClinicalRecord
- * @abstract     An HKObject subclass representing a health record.
- * @discussion   The startDate and endDate properties (inherited from HKSample) are set to the date the sample was
+ * HKClinicalRecord
+ * 
+ * An HKObject subclass representing a health record.
+ * 
+ * The startDate and endDate properties (inherited from HKSample) are set to the date the sample was
  *               added to Health. Unlike other HKObject subclasses, UUID is not a stable identifier
  *               for a given sample. Use a combination of HKSource, FHIRResource.resourceType, and
  *               FHIRResource.identifier instead.
@@ -50,8 +52,9 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
     }
 
     /**
-     * @property     FHIRResource
-     * @abstract     The FHIR resource (where applicable) backing this sample.
+     * [@property]     FHIRResource
+     * 
+     * The FHIR resource (where applicable) backing this sample.
      */
     @Generated
     @Selector("FHIRResource")
@@ -112,9 +115,11 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
     public static native String description_static();
 
     /**
-     * @property     displayName
-     * @abstract     The primary display name used in Health.
-     * @discussion   The display name is not localized, and is generally expected to be US English.
+     * [@property]     displayName
+     * 
+     * The primary display name used in Health.
+     * 
+     * The display name is not localized, and is generally expected to be US English.
      */
     @Generated
     @Selector("displayName")

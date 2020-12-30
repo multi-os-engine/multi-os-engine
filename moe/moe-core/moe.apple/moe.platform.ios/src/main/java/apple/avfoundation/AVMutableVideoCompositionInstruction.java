@@ -160,9 +160,10 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     public static native long version_static();
 
     /**
-     * @method		videoCompositionInstruction
-     * @abstract		Returns a new instance of AVMutableVideoCompositionInstruction.
-     * @discussion
+     * videoCompositionInstruction
+     * 
+     * Returns a new instance of AVMutableVideoCompositionInstruction.
+     * 
      *   The returned AVMutableVideoCompositionInstruction will have a timeRange of kCMTimeRangeInvalid, a NULL backgroundColor, and a nil array of layerInstructions.
      */
     @Generated

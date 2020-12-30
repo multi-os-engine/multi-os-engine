@@ -25,9 +25,9 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
      * 
-     * @note The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate does not need to retain it.
+     * [@note] The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate does not need to retain it.
      * 
-     * @note This method is provided only for navigation apps; other apps should use the variant that does not provide a window.
+     * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide a window.
      */
     @Generated
     @IsOptional
@@ -41,7 +41,7 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     /**
      * The CarPlay screen has disconnected.
      * 
-     * @note This method is provided only for navigation apps; other apps should use the variant that does not provide a window.
+     * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide a window.
      */
     @Generated
     @IsOptional
@@ -84,7 +84,7 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
      * 
-     * @note The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate does not need to retain it.
+     * [@note] The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate does not need to retain it.
      */
     @Generated
     @IsOptional

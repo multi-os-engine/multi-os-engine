@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum CBCharacteristicWriteType
+ * [@enum] CBCharacteristicWriteType
  * 
- * @discussion Specifies which type of write is to be performed on a CBCharacteristic.
+ * Specifies which type of write is to be performed on a CBCharacteristic.
  */
 @Generated
 public final class CBCharacteristicWriteType {

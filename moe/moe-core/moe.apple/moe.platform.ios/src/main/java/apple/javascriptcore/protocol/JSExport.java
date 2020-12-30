@@ -23,12 +23,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 
 /**
- * @protocol
- * @abstract JSExport provides a declarative way to export Objective-C objects and
+ * [@protocol]
+ * 
+ * JSExport provides a declarative way to export Objective-C objects and
  *  classes -- including properties, instance methods, class methods, and
  *  initializers -- to JavaScript.
  * 
- * @discussion When an Objective-C object is exported to JavaScript, a JavaScript
+ * When an Objective-C object is exported to JavaScript, a JavaScript
  *  wrapper object is created.
  * 
  *  In JavaScript, inheritance works via a chain of prototype objects.
@@ -60,14 +61,14 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
  * 
  * <pre>
  * @textblock
- *     @protocol MyClassJavaScriptMethods <JSExport>
+ *     [@protocol] MyClassJavaScriptMethods <JSExport>
  *     - (void)foo;
- *     @end
+ *     [@end]
  * 
- *     @interface MyClass : NSObject <MyClassJavaScriptMethods>
+ *     [@interface] MyClass : NSObject <MyClassJavaScriptMethods>
  *     - (void)foo;
  *     - (void)bar;
- *     @end
+ *     [@end]
  * @/textblock
  * </pre>
  * 

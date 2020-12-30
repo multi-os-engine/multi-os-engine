@@ -28,7 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents handle to a user interaction involving the SmartCard reader.
- * @discussion It is a proxy object obtained as a result of invoking the userInteractionFor*** family of methods in TKSmartCardSlot and TKSmartCard.
+ * 
+ * It is a proxy object obtained as a result of invoking the userInteractionFor*** family of methods in TKSmartCardSlot and TKSmartCard.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -64,6 +65,7 @@ public class TKSmartCardUserInteraction extends NSObject {
 
     /**
      * Attempts to cancel a running interaction. Note that for some interactions, this functionality might not be available.
+     * 
      * @return Returns NO if the operation is not running, or cancelling is not supported.
      */
     @Generated
@@ -115,7 +117,7 @@ public class TKSmartCardUserInteraction extends NSObject {
 
     /**
      * Initial interaction timeout. If set to 0, the reader-defined default timeout is used.
-     * @note Default value: 0
+     * [@note] Default value: 0
      */
     @Generated
     @Selector("initialTimeout")
@@ -136,7 +138,7 @@ public class TKSmartCardUserInteraction extends NSObject {
 
     /**
      * Timeout after the first key stroke. If set to 0, the reader-defined default timeout is used.
-     * @note Default value: 0
+     * [@note] Default value: 0
      */
     @Generated
     @Selector("interactionTimeout")
@@ -202,7 +204,7 @@ public class TKSmartCardUserInteraction extends NSObject {
 
     /**
      * Initial interaction timeout. If set to 0, the reader-defined default timeout is used.
-     * @note Default value: 0
+     * [@note] Default value: 0
      */
     @Generated
     @Selector("setInitialTimeout:")
@@ -210,7 +212,7 @@ public class TKSmartCardUserInteraction extends NSObject {
 
     /**
      * Timeout after the first key stroke. If set to 0, the reader-defined default timeout is used.
-     * @note Default value: 0
+     * [@note] Default value: 0
      */
     @Generated
     @Selector("setInteractionTimeout:")

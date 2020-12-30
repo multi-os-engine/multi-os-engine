@@ -120,7 +120,7 @@ public class UIPointerInteraction extends NSObject implements UIInteraction {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @abstract  Call this method to cause the interaction to update the pointer in response to some event.
+     * Call this method to cause the interaction to update the pointer in response to some event.
      */
     @Generated
     @Selector("invalidate")

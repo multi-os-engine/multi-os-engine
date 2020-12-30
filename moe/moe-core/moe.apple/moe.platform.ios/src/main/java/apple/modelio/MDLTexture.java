@@ -48,29 +48,29 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLTexture
- * @summary a description of texels provided by a texture object.
+ * [@summary] a description of texels provided by a texture object.
  * 
- * @discussion A texture optionally generates or loads texels
+ * A texture optionally generates or loads texels
  *             through an access to the data property, or one of the other 
  *             properties, otherwise the texture object is a lightweight descriptor 
  *             only.
  * 
- * @property data 
+ * [@property] data 
  *           Texel data that will exist when referenced; it may or may not exist 
  *           before
- * @property dimensions
+ * [@property] dimensions
  *           texel width and height of the texture
- * @property rowStride
+ * [@property] rowStride
  *           The number of bytes from the first texel in a row to the first texel 
  *           in the next row. A rowStride of zero indicates that interleaved x,y 
  *           addressing of texels is not possible. This might be the case if the
  *           texture was compressed in some manner, for example.
- * @property channelCount
+ * [@property] channelCount
  *           The number of channels incoded in a single texel. For example, an RGB 
  *           texture has 3 channels. All channels must have the same encoding.
- * @property channelEncoding
+ * [@property] channelEncoding
  *           The encoding of a channel in a single texel.
- * @property isCube
+ * [@property] isCube
  *           The texture encodes a cube map. If YES, then the layout of the cube 
  *           map is deduced as a vertical strip if dimension.y is six times 
  *           dimension.x. Other layouts are possible in the future.
@@ -234,7 +234,7 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     /**
      * hasAlphaValues
-     * @summary
+     * [@summary]
      * Can be overridden. If not overridden, hasAlpha will be NO if the texture does not
      * have an alpha channel. It wil be YES if the texture has an alpha channel and
      * there is at least one non-opaque texel in it.
@@ -271,7 +271,7 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     /**
      * hasAlphaValues
-     * @summary
+     * [@summary]
      * Can be overridden. If not overridden, hasAlpha will be NO if the texture does not
      * have an alpha channel. It wil be YES if the texture has an alpha channel and
      * there is at least one non-opaque texel in it.

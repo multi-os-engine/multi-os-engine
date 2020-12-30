@@ -31,34 +31,34 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A data structure built over geometry used to accelerate ray tracing
+ * A data structure built over geometry used to accelerate ray tracing
  * 
- * @discussion Do not use this base class directly. Use one of the derived classes instead.
+ * Do not use this base class directly. Use one of the derived classes instead.
  * The general pattern for creating an acceleration structure is as follows. First, create the
  * acceleration structure:
  * 
- *     @code
+ *     [@code]
  *     MPSTriangleAccelerationStructure *accelerationStructure = nil;
  *     accelerationStructure = [[MPSTriangleAccelerationStructure alloc] initWithDevice:device];
- *     @endcode
+ *     [@endcode]
  * 
  * Then, assign values to the acceleration structure's properties:
  * 
- *     @code
+ *     [@code]
  *     accelerationStructure.vertexBuffer = vertexBuffer;
  *     accelerationStructure.triangleCount = triangleCount;
- *     @endcode
+ *     [@endcode]
  * 
  * Finally, the acceleration structure must be built:
  * 
- *     @code
+ *     [@code]
  *     [accelerationStructure rebuild];
- *     @endcode
+ *     [@endcode]
  * 
  * The acceleration structure can then be used to encode ray intersection tests with an
  * MPSRayIntersector:
  * 
- *     @code
+ *     [@code]
  *     [raytracer encodeIntersectionToCommandBuffer:commandBuffer
  *                                 intersectionType:MPSIntersectionTypeNearest
  *                                        rayBuffer:rayBuffer
@@ -67,17 +67,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *                         intersectionBufferOffset:0
  *                                         rayCount:rayCount
  *                            accelerationStructure:accelerationStructure];
- *     @endcode
+ *     [@endcode]
  * 
  * Asynchronous Acceleration Structure Builds: Rebuilding an acceleration structure is an expensive
  * operation. Note that there is also a method to rebuild the acceleration structure asynchronously
  * to avoid blocking the main thread.
  * 
- *     @code
+ *     [@code]
  *     [accelerationStructure rebuildWithCompletionHandler:^(MPSAccelerationStructure *accel) {
  *         // Kick off ray intersection work
  *     }];
- *     @endcode
+ *     [@endcode]
  * 
  * Streaming Geometry Updates: It is generally safe to change buffer properties such as the vertex
  * buffer after intersection tests have been encoded into a command buffer, but the contents of
@@ -88,7 +88,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * If the CPU needs to stream geometry updates to the GPU, ensure the vertex and other buffers are
  * double or triple buffered.
  * 
- *     @code
+ *     [@code]
  *     #define MAX_ASYNC_OPERATIONS 3
  * 
  *     // Initialization:
@@ -154,7 +154,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  *     // Commit the command buffer to allow the GPU to start executing
  *     [commandBuffer commit];
- *     @endcode
+ *     [@endcode]
  * 
  * Refitting acceleration structures: If geometry has only moved slightly and not added or removed
  * from the scene, it can be much faster to refit the existing topology of an acceleration
@@ -163,7 +163,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * transformed entirely on the GPU, it is not necessary to use double or triple buffering. For
  * example:
  * 
- *     @code
+ *     [@code]
  *     id <MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
  * 
  *     id <MTLComputeCommandEncoder> encoder = [commandBuffer computeCommandEncoder];
@@ -186,13 +186,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *     [accelerationStructure encodeRefitToCommandBuffer:commandBuffer];
  * 
  *     [commandBuffer commit];
- *     @endcode
+ *     [@endcode]
  * 
  * Serializing Acceleration Structures: Instead of rebuilding acceleration structures from scratch
  * they can be built offline, serialized, and reloaded at runtime using the NSSecureCoding
  * protocol:
  * 
- *     @code
+ *     [@code]
  *     // Build time:
  *     NSError *error = nil;
  *     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:accel
@@ -212,20 +212,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *     if (!accel)
  *         NSLog(@"Error unarchiving MPSAccelerationStructure: %@",
  *             error.localizedDescription);
- *     @endcode
+ *     [@endcode]
  * 
  * Copying Acceleration Structures: Acceleration structures can be copied using the NSCopying
  * protocol, even to a different Metal device. This can be used for multi-GPU raytracing. Buffer
  * properties are not copied to the new acceleration structure. These buffers must instead be
  * copied to the new Metal device and assigned to the new acceleration structure. For example:
  * 
- *     @code
+ *     [@code]
  *     MPSTriangleAccelerationStructure *copy = [accelerationStructure copyWithZone:nil
  *                                                                           device:newDevice];
  * 
  *     copy.vertexBuffer = [self copyBuffer:accelerationStructure.vertexBuffer
  *                               withDevice:newDevice];
- *     @endcode
+ *     [@endcode]
  * 
  * Performance Guidelines:
  * 
@@ -325,9 +325,9 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @brief Create a a copy of this acceleration structure
+     * Create a a copy of this acceleration structure
      * 
-     * @discussion The acceleration structure may be copied to a different Metal device. Buffer
+     * The acceleration structure may be copied to a different Metal device. Buffer
      * properties of the acceleration structure such as the vertex buffer, instance, buffer, etc. are
      * set to nil. Copy these buffers to the new Metal device and assign them to the new acceleration
      * structure instead. Do not copy the acceleration structure until any prior refit or rebuild
@@ -343,9 +343,9 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
-     * @brief Create a a copy of this acceleration structure
+     * Create a a copy of this acceleration structure
      * 
-     * @discussion The acceleration structure may be copied with a different acceleration structure
+     * The acceleration structure may be copied with a different acceleration structure
      * group. Buffer properties of the acceleration structure such as the vertex buffer, instance
      * buffer, etc. are set to nil. Copy these buffers with the new Metal device and assign them to
      * the new acceleration structure instead. Do not copy the acceleration structure until any prior
@@ -369,9 +369,9 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public static native String description_static();
 
     /**
-     * @brief Refit the existing acceleration structure to new data
+     * Refit the existing acceleration structure to new data
      * 
-     * @discussion This method is used to refit the acceleration structure to new vertex data,
+     * This method is used to refit the acceleration structure to new vertex data,
      * index data, instance data, etc. while preserving the existing acceleration structure topology.
      * This is typically much faster than a full rebuild of the acceleration structure. Refitting can
      * also be pipelined with other GPU work such as ray intersection.
@@ -391,7 +391,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @brief The group this acceleration structure was created with
+     * The group this acceleration structure was created with
      */
     @Generated
     @Selector("group")
@@ -411,7 +411,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public native MPSAccelerationStructure initWithCoder(NSCoder coder);
 
     /**
-     * @brief Initialize the acceleration structure with an NSCoder and a Metal device. Buffer
+     * Initialize the acceleration structure with an NSCoder and a Metal device. Buffer
      * properties such as the vertex buffer, instance buffer, etc. are set to nil. Encode and decode
      * these buffers along with the acceleration structure instead.
      */
@@ -421,7 +421,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @brief Initialize the acceleration structure with an NSCoder and an acceleration structure
+     * Initialize the acceleration structure with an NSCoder and an acceleration structure
      * group, if the acceleration structure will be used in an instance hierarchy. All acceleration
      * structures in the instance hierarchy must share the same group. Buffer properties such as the
      * vertex buffer, instance buffer, etc. are set to nil. Encode and decode these buffers along with
@@ -432,17 +432,17 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public native MPSAccelerationStructure initWithCoderGroup(NSCoder aDecoder, MPSAccelerationStructureGroup group);
 
     /**
-     * @brief Initialize the acceleration structure with a Metal device
+     * Initialize the acceleration structure with a Metal device
      */
     @Generated
     @Selector("initWithDevice:")
     public native MPSAccelerationStructure initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @brief Initialize the acceleration structure with an acceleration structure group, if the
+     * Initialize the acceleration structure with an acceleration structure group, if the
      * acceleration structure will be used in an instance hierarchy.
      * 
-     * @discussion The Metal device is determined from the acceleration structure group. All
+     * The Metal device is determined from the acceleration structure group. All
      * acceleration structures in the instance hierarchy must share the same group.
      */
     @Generated
@@ -477,9 +477,9 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public static native Object new_objc();
 
     /**
-     * @brief Rebuild the acceleration structure
+     * Rebuild the acceleration structure
      * 
-     * @discussion This method must be called before any intersection tests can be scheduled with this
+     * This method must be called before any intersection tests can be scheduled with this
      * acceleration structure. Before calling this method, fill out the properties of the acceleration
      * structure such as vertex buffer, instance buffer, etc. The acceleration structure should be
      * rebuilt when its contents (e.g. vertices in a triangle acceleration structure) have been
@@ -498,9 +498,9 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public native void rebuild();
 
     /**
-     * @brief Rebuild the acceleration structure asynchronously
+     * Rebuild the acceleration structure asynchronously
      * 
-     * @discussion This method must be called before any intersection tests can be scheduled with this
+     * This method must be called before any intersection tests can be scheduled with this
      * acceleration structure. Before calling this method, fill out the properties of the acceleration
      * structure such as vertex buffer, instance buffer, etc. The acceleration structure should be
      * rebuilt when its contents (e.g. vertices in a triangle acceleration structure) have been
@@ -535,7 +535,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Acceleration structure usage options. Changes to this property require rebuilding the
+     * Acceleration structure usage options. Changes to this property require rebuilding the
      * acceleration structure. Defaults to MPSAccelerationStructureUsageNone.
      */
     @Generated
@@ -547,7 +547,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @brief Status indicating whether the acceleration structure has finished building
+     * Status indicating whether the acceleration structure has finished building
      */
     @Generated
     @Selector("status")
@@ -569,7 +569,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     }
 
     /**
-     * @brief Acceleration structure usage options. Changes to this property require rebuilding the
+     * Acceleration structure usage options. Changes to this property require rebuilding the
      * acceleration structure. Defaults to MPSAccelerationStructureUsageNone.
      */
     @Generated

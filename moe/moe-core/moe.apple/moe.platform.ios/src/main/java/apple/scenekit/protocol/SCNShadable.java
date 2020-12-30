@@ -30,8 +30,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol SCNShadable
- * @abstract The SCNShadable protocol defines an object that is rendered with shaders. 
+ * [@protocol] SCNShadable
+ * 
+ * The SCNShadable protocol defines an object that is rendered with shaders.
  */
 @Generated
 @Library("SceneKit")
@@ -39,11 +40,14 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("SCNShadable")
 public interface SCNShadable {
     /**
-     * @method handleBindingOfSymbol:usingBlock:
-     * @abstract Sets the block to call at render time to bind the value for the specified symbol of the receiver's SCNProgram. This method has no effect for symbols declared in shader modifiers.
+     * handleBindingOfSymbol:usingBlock:
+     * 
+     * Sets the block to call at render time to bind the value for the specified symbol of the receiver's SCNProgram. This method has no effect for symbols declared in shader modifiers.
+     * 
+     * This method can only be used with OpenGL and OpenGLES based programs.
+     * 
      * @param symbol The name of the symbol to bind a value for.
      * @param block The block to call to bind the specified symbol.
-     * @discussion This method can only be used with OpenGL and OpenGLES based programs.
      */
     @Generated
     @IsOptional
@@ -54,11 +58,14 @@ public interface SCNShadable {
     }
 
     /**
-     * @method handleUnbindingOfSymbol:usingBlock:
-     * @abstract Sets the block to call at render time to unbind the value for the specified symbol of the receiver's SCNProgram. This method has no effect for symbols declared in shader modifiers.
+     * handleUnbindingOfSymbol:usingBlock:
+     * 
+     * Sets the block to call at render time to unbind the value for the specified symbol of the receiver's SCNProgram. This method has no effect for symbols declared in shader modifiers.
+     * 
+     * This method can only be used with OpenGL and OpenGLES based programs.
+     * 
      * @param symbol The name of the symbol to unbind.
      * @param block The block to call to unbind the specified symbol.
-     * @discussion This method can only be used with OpenGL and OpenGLES based programs.
      */
     @Generated
     @IsOptional
@@ -69,9 +76,11 @@ public interface SCNShadable {
     }
 
     /**
-     * @property program
-     * @abstract Specifies a custom program used to render the receiver.
-     * @discussion When a program is set, it overrides all the rendering parameters such as material settings and shaderModifiers.
+     * [@property] program
+     * 
+     * Specifies a custom program used to render the receiver.
+     * 
+     * When a program is set, it overrides all the rendering parameters such as material settings and shaderModifiers.
      */
     @Generated
     @IsOptional
@@ -81,9 +90,11 @@ public interface SCNShadable {
     }
 
     /**
-     * @property program
-     * @abstract Specifies a custom program used to render the receiver.
-     * @discussion When a program is set, it overrides all the rendering parameters such as material settings and shaderModifiers.
+     * [@property] program
+     * 
+     * Specifies a custom program used to render the receiver.
+     * 
+     * When a program is set, it overrides all the rendering parameters such as material settings and shaderModifiers.
      */
     @Generated
     @IsOptional
@@ -93,9 +104,11 @@ public interface SCNShadable {
     }
 
     /**
-     * @property shaderModifiers
-     * @abstract Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
-     * @discussion Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own declared uniforms.
+     * [@property] shaderModifiers
+     * 
+     * Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
+     * 
+     * Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own declared uniforms.
      * 
      * Shader modifiers can be used to tweak SceneKit rendering by adding custom code at the following entry points:
      *     1. vertex   (SCNShaderModifierEntryPointGeometry)
@@ -232,9 +245,11 @@ public interface SCNShadable {
     }
 
     /**
-     * @property shaderModifiers
-     * @abstract Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
-     * @discussion Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own declared uniforms.
+     * [@property] shaderModifiers
+     * 
+     * Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
+     * 
+     * Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own declared uniforms.
      * 
      * Shader modifiers can be used to tweak SceneKit rendering by adding custom code at the following entry points:
      *     1. vertex   (SCNShaderModifierEntryPointGeometry)

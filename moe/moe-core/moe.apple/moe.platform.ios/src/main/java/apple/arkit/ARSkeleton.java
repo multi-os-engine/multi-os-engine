@@ -25,7 +25,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object representing a skeleton.
- * @discussion A skeleton's structure is defined by a skeleton definition.
+ * 
+ * A skeleton's structure is defined by a skeleton definition.
+ * 
  * @see ARSkeletonDefinition
  */
 @Generated

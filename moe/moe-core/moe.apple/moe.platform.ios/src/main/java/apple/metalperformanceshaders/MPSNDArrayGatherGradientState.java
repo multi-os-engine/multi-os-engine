@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class  A state created to record a MPSNDArrayGather kernel properties
+ * A state created to record a MPSNDArrayGather kernel properties
  * at the time an -encode call was made.
  * 
  * Must be created with the appropriate MPSNDArray kernel method, for example:

@@ -193,7 +193,8 @@ public class PHImageManager extends NSObject {
             @ObjCBlock(name = "call_requestExportSessionForVideoOptionsExportPresetResultHandler") Block_requestExportSessionForVideoOptionsExportPresetResultHandler resultHandler);
 
     /**
-     * @abstract Request largest represented image as data bytes for the specified asset.
+     * Request largest represented image as data bytes for the specified asset.
+     * 
      * @param asset The asset whose image data is to be loaded.
      * @param options Options specifying how Photos should handle the request, format the requested image, and notify your app of progress or errors.
      *      If PHImageRequestOptionsVersionCurrent is requested and the asset has adjustments then the largest rendered image data is returned. In all other cases then the original image data is returned.
@@ -205,7 +206,8 @@ public class PHImageManager extends NSObject {
             @ObjCBlock(name = "call_requestImageDataForAssetOptionsResultHandler") Block_requestImageDataForAssetOptionsResultHandler resultHandler);
 
     /**
-     * @abstract Request an image representation for the specified asset.
+     * Request an image representation for the specified asset.
+     * 
      * @param asset The asset whose image data is to be loaded.
      * @param targetSize The target size of image to be returned.
      * @param contentMode An option for how to fit the image to the aspect ratio of the requested size.
@@ -290,7 +292,8 @@ public class PHImageManager extends NSObject {
     }
 
     /**
-     * @abstract Request largest represented image as data bytes and EXIF orientation for the specified asset.
+     * Request largest represented image as data bytes and EXIF orientation for the specified asset.
+     * 
      * @param asset The asset whose image data is to be loaded.
      * @param options Options specifying how Photos should handle the request, format the requested image, and notify your app of progress or errors.
      * If PHImageRequestOptionsVersionCurrent is requested and the asset has adjustments then the largest rendered image data is returned. In all other cases then the original image data is returned.

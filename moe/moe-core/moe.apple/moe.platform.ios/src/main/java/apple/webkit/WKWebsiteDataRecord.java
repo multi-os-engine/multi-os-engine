@@ -154,14 +154,14 @@ public class WKWebsiteDataRecord extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract The various types of website data that exist for this data record.
+     * The various types of website data that exist for this data record.
      */
     @Generated
     @Selector("dataTypes")
     public native NSSet<String> dataTypes();
 
     /**
-     * @abstract The display name for the data record. This is usually the domain name.
+     * The display name for the data record. This is usually the domain name.
      */
     @Generated
     @Selector("displayName")

@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNNeuronReLUN
- * @dependency This depends on Metal.framework
- * @discussion Specifies the ReLUN neuron filter.
+ * MPSCNNNeuronReLUN
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the ReLUN neuron filter.
  *             For each pixel, applies the following function: f(x) = [ x    , x >= 0
  *                                                                    [ a * x, x <  0
  *                                                                    [ b    , x >= b
@@ -118,7 +119,8 @@ public class MPSCNNNeuronReLUN extends MPSCNNNeuron {
     public native MPSCNNNeuronReLUN initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a ReLUN neuron filter
+     * Initialize a ReLUN neuron filter
+     * 
      * @param      device          The device the filter will run on
      * @param      a               Filter property "a". See class discussion.
      * @param      b               Filter property "b". See class discussion.

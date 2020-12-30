@@ -45,9 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract An immutable value object representing a container.
+ * An immutable value object representing a container.
  * 
- * @discussion CNContainer is thread safe.
+ * CNContainer is thread safe.
  */
 @Generated
 @Library("Contacts")
@@ -140,7 +140,7 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     public static native Object new_objc();
 
     /**
-     * @discussion If the identifier is for a unified contact then the fetch will return an empty array. To fetch the containers of a unified contact, first fetch the linked contacts then fetch the container of each linked contact.
+     * If the identifier is for a unified contact then the fetch will return an empty array. To fetch the containers of a unified contact, first fetch the linked contacts then fetch the container of each linked contact.
      */
     @Generated
     @Selector("predicateForContainerOfContactWithIdentifier:")

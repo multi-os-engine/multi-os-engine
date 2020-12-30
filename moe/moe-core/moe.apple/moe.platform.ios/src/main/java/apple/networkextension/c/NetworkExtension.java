@@ -38,7 +38,7 @@ public final class NetworkExtension {
     }
 
     /**
-     * @const NEAppProxyErrorDomain The NEAppProxyFlow error domain
+     * [@const] NEAppProxyErrorDomain The NEAppProxyFlow error domain
      */
     @Generated
     @CVariable()
@@ -46,7 +46,7 @@ public final class NetworkExtension {
     public static native String NEAppProxyErrorDomain();
 
     /**
-     * @const NETunnelProviderErrorDomain The tunnel provider error domain
+     * [@const] NETunnelProviderErrorDomain The tunnel provider error domain
      */
     @Generated
     @CVariable()
@@ -54,7 +54,7 @@ public final class NetworkExtension {
     public static native String NETunnelProviderErrorDomain();
 
     /**
-     * @const NEVPNErrorDomain The VPN error domain
+     * [@const] NEVPNErrorDomain The VPN error domain
      */
     @Generated
     @CVariable()
@@ -62,7 +62,7 @@ public final class NetworkExtension {
     public static native String NEVPNErrorDomain();
 
     /**
-     * @const NEVPNConfigurationChangeNotification Name of the NSNotification that is posted when the VPN configuration changes.
+     * [@const] NEVPNConfigurationChangeNotification Name of the NSNotification that is posted when the VPN configuration changes.
      */
     @Generated
     @CVariable()
@@ -86,7 +86,7 @@ public final class NetworkExtension {
     public static native String NEFilterProviderRemediationMapRemediationButtonTexts();
 
     /**
-     * @const NEFilterErrorDomain The filter error domain
+     * [@const] NEFilterErrorDomain The filter error domain
      */
     @Generated
     @CVariable()
@@ -94,7 +94,7 @@ public final class NetworkExtension {
     public static native String NEFilterErrorDomain();
 
     /**
-     * @const NEFilterConfigurationDidChangeNotification Name of the NSNotification that is posted when the filter configuration changes.
+     * [@const] NEFilterConfigurationDidChangeNotification Name of the NSNotification that is posted when the filter configuration changes.
      */
     @Generated
     @CVariable()
@@ -102,11 +102,11 @@ public final class NetworkExtension {
     public static native String NEFilterConfigurationDidChangeNotification();
 
     /**
-     * @const kNEHotspotHelperOptionDisplayName
-     * @abstract
+     * [@const] kNEHotspotHelperOptionDisplayName
+     * 
      *   The string displayed in Wi-Fi Settings for a network handled by
      *   the application.
-     * @discussion
+     * 
      *   This key specifies the display name for the application, if an alternate
      *   name is desired.  If this property is not specified, the application's
      *   name is used.
@@ -120,7 +120,7 @@ public final class NetworkExtension {
     public static native String kNEHotspotHelperOptionDisplayName();
 
     /**
-     * @const NEVPNStatusDidChangeNotification Name of the NSNotification that is posted when the VPN status changes.
+     * [@const] NEVPNStatusDidChangeNotification Name of the NSNotification that is posted when the VPN status changes.
      */
     @Generated
     @CVariable()
@@ -128,7 +128,7 @@ public final class NetworkExtension {
     public static native String NEVPNStatusDidChangeNotification();
 
     /**
-     * @const NEVPNConnectionStartOptionUsername Specify this key in the options dictionary passed to startVPNTunnelWithOptions:returningError: to override the username saved in the configuration. The value is a string
+     * [@const] NEVPNConnectionStartOptionUsername Specify this key in the options dictionary passed to startVPNTunnelWithOptions:returningError: to override the username saved in the configuration. The value is a string
      */
     @Generated
     @CVariable()
@@ -136,7 +136,7 @@ public final class NetworkExtension {
     public static native String NEVPNConnectionStartOptionUsername();
 
     /**
-     * @const NEVPNConnectionStartOptionPassword Specify this key in the options dictionary passed to startVPNTunnelWithOptions:returningError: to override the password saved in the configuration. The value is a string
+     * [@const] NEVPNConnectionStartOptionPassword Specify this key in the options dictionary passed to startVPNTunnelWithOptions:returningError: to override the password saved in the configuration. The value is a string
      */
     @Generated
     @CVariable()
@@ -144,7 +144,7 @@ public final class NetworkExtension {
     public static native String NEVPNConnectionStartOptionPassword();
 
     /**
-     * @const NEDNSProxyManagerErrorDomain The DNS proxy error domain
+     * [@const] NEDNSProxyManagerErrorDomain The DNS proxy error domain
      */
     @Generated
     @CVariable()
@@ -152,7 +152,7 @@ public final class NetworkExtension {
     public static native String NEDNSProxyErrorDomain();
 
     /**
-     * @const NEDNSProxyConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS proxy configuration changes.
+     * [@const] NEDNSProxyConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS proxy configuration changes.
      */
     @Generated
     @CVariable()
@@ -160,7 +160,7 @@ public final class NetworkExtension {
     public static native String NEDNSProxyConfigurationDidChangeNotification();
 
     /**
-     * @const NEHotspotConfigurationErrorDomain The Hotspot Configuration error domain
+     * [@const] NEHotspotConfigurationErrorDomain The Hotspot Configuration error domain
      */
     @Generated
     @CVariable()
@@ -168,7 +168,7 @@ public final class NetworkExtension {
     public static native String NEHotspotConfigurationErrorDomain();
 
     /**
-     * @const NEDNSSettingsManagerErrorDomain The DNS settings error domain
+     * [@const] NEDNSSettingsManagerErrorDomain The DNS settings error domain
      */
     @Generated
     @CVariable()
@@ -176,7 +176,7 @@ public final class NetworkExtension {
     public static native String NEDNSSettingsErrorDomain();
 
     /**
-     * @const NEDNSSettingsConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS settings configuration changes.
+     * [@const] NEDNSSettingsConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS settings configuration changes.
      */
     @Generated
     @CVariable()
@@ -184,7 +184,7 @@ public final class NetworkExtension {
     public static native String NEDNSSettingsConfigurationDidChangeNotification();
 
     /**
-     * @const NEAppPushErrorDomain The app push manager error domain
+     * [@const] NEAppPushErrorDomain The app push manager error domain
      */
     @Generated
     @CVariable()

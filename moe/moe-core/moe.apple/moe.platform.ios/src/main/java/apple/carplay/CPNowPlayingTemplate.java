@@ -120,7 +120,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * A Boolean value indicating whether the string that displays the album and artist above the playback controls should be a tappable button
      * 
-     * @discussion Set the value of this property to @c YES to enable the button.
+     * Set the value of this property to @c YES to enable the button.
      * 
      * Defaults to NO.
      */
@@ -135,7 +135,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * A Boolean value indicating whether the "Up Next" button on the upper right of a Now Playing view is enabled.
      * 
-     * @discussion Set the value of this property to @c YES to enable the button.
+     * Set the value of this property to @c YES to enable the button.
      * 
      * Defaults to NO.
      */
@@ -158,7 +158,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * 
      * Your application may specify a maximum of 5 now playing buttons.
      * 
-     * @discussion Buttons are filled in array order, from the leading side to the trailing side of the screen.
+     * Buttons are filled in array order, from the leading side to the trailing side of the screen.
      */
     @Generated
     @Selector("nowPlayingButtons")
@@ -182,7 +182,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * A Boolean value indicating whether the string that displays the album and artist above the playback controls should be a tappable button
      * 
-     * @discussion Set the value of this property to @c YES to enable the button.
+     * Set the value of this property to @c YES to enable the button.
      * 
      * Defaults to NO.
      */
@@ -193,7 +193,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * A Boolean value indicating whether the "Up Next" button on the upper right of a Now Playing view is enabled.
      * 
-     * @discussion Set the value of this property to @c YES to enable the button.
+     * Set the value of this property to @c YES to enable the button.
      * 
      * Defaults to NO.
      */

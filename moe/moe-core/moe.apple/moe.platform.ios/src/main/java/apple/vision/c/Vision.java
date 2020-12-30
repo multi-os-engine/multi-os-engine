@@ -27,7 +27,7 @@ public final class Vision {
     }
 
     /**
-     * @discussion	Determines whether or not the normalized rect describes the identity rect of { {0, 0}, {1, 1} }.
+     * Determines whether or not the normalized rect describes the identity rect of { {0, 0}, {1, 1} }.
      * 
      * @param	normalizedRect			The rectangle in the normalized coordinate space of [0..1].
      * 
@@ -38,7 +38,7 @@ public final class Vision {
     public static native boolean VNNormalizedRectIsIdentityRect(@ByValue CGRect normalizedRect);
 
     /**
-     * @discussion	Returns a point in (possibly non-integral) image coordinates that is projected from a point in a normalized coordinate space.
+     * Returns a point in (possibly non-integral) image coordinates that is projected from a point in a normalized coordinate space.
      * 
      * @param	normalizedPoint			The point in the normalized coordinate space of [0..1].
      * 
@@ -55,7 +55,7 @@ public final class Vision {
             @NUInt long imageWidth, @NUInt long imageHeight);
 
     /**
-     * @discussion	Returns a rectangle in (possibly non-integral) image coordinates that is projected from a rectangle in a normalized coordinate space.
+     * Returns a rectangle in (possibly non-integral) image coordinates that is projected from a rectangle in a normalized coordinate space.
      * 
      * @param	normalizedRect			The rectangle in the normalized coordinate space of [0..1].
      * 
@@ -72,7 +72,7 @@ public final class Vision {
             @NUInt long imageHeight);
 
     /**
-     * @discussion	Returns an image rectangle in normalized coordinates.
+     * Returns an image rectangle in normalized coordinates.
      * 
      * @param	imageRect				The rectangle in image coordinate space.
      * 
@@ -179,7 +179,7 @@ public final class Vision {
     public static native String VNErrorDomain();
 
     /**
-     * @brief	The normalized identity rect of { {0, 0}, {1, 1} }.
+     * The normalized identity rect of { {0, 0}, {1, 1} }.
      */
     @Generated
     @CVariable()
@@ -187,8 +187,9 @@ public final class Vision {
     public static native CGRect VNNormalizedIdentityRect();
 
     /**
-     * @const      VNImageOptionProperties
-     * @abstract   VNImageOptionProperties is the dictionary from CGImageSourceCopyPropertiesAtIndex. This contains metadata that can be used by some algorithms like horizon detection.
+     * [@const]      VNImageOptionProperties
+     * 
+     * VNImageOptionProperties is the dictionary from CGImageSourceCopyPropertiesAtIndex. This contains metadata that can be used by some algorithms like horizon detection.
      */
     @Generated
     @CVariable()
@@ -196,15 +197,15 @@ public final class Vision {
     public static native String VNImageOptionProperties();
 
     /**
-     * @brief VNImageOptionCameraIntrinsics  Specifies the camera intrinsics as an NSData or CFData representing a matrix_float3x3. See kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix for details
-     * @discussion
+     * VNImageOptionCameraIntrinsics  Specifies the camera intrinsics as an NSData or CFData representing a matrix_float3x3. See kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix for details
+     * 
      *     Camera intrinsic matrix is a CFData containing a matrix_float3x3, which is column-major. It has the following contents:
      *     fx	0	ox
      *     0	fy	oy
      *     0	0	1
      *     fx and fy are the focal length in pixels. For square pixels, they will have the same value.
      *     ox and oy are the coordinates of the principal point. The origin is the upper left of the frame.
-     * @note When using a CMSampleBuffer as an input and that sample buffer has camera intrinsics attached to it, Vision will use the camera intrinsic from there unless overwritten by passing in as an explicit option which will take precedence.
+     * [@note] When using a CMSampleBuffer as an input and that sample buffer has camera intrinsics attached to it, Vision will use the camera intrinsic from there unless overwritten by passing in as an explicit option which will take precedence.
      */
     @Generated
     @CVariable()
@@ -212,7 +213,7 @@ public final class Vision {
     public static native String VNImageOptionCameraIntrinsics();
 
     /**
-     * @brief VNImageOptionCIContext  Specifies the CIContext to be used in Core Image operations of request handler. If this is not specified, Vision will create its own CIContext. This option is helpful when the passed in CIImage is the result of a CIFilter chain that has been executed on a CIContext or uses outputs of a CIImage on a given CIContext as they don't have to transfer to other contexts.
+     * VNImageOptionCIContext  Specifies the CIContext to be used in Core Image operations of request handler. If this is not specified, Vision will create its own CIContext. This option is helpful when the passed in CIImage is the result of a CIFilter chain that has been executed on a CIContext or uses outputs of a CIImage on a given CIContext as they don't have to transfer to other contexts.
      */
     @Generated
     @CVariable()
@@ -227,7 +228,7 @@ public final class Vision {
     public static native double VNVisionVersionNumber();
 
     /**
-     * @brief Obtain the size, in bytes, of a given element type.
+     * Obtain the size, in bytes, of a given element type.
      * 
      * @param	elementType		The element type.
      * 
@@ -239,7 +240,7 @@ public final class Vision {
     public static native long VNElementTypeSize(@NUInt long elementType);
 
     /**
-     * @brief	A value that indicates that the request revision is either unknown or not applicable.
+     * A value that indicates that the request revision is either unknown or not applicable.
      */
     @Generated @NUInt public static final long VNRequestRevisionUnspecified = 0x0000000000000000L;
     @Generated @NUInt public static final long VNClassifyImageRequestRevision1 = 0x0000000000000001L;
@@ -254,7 +255,7 @@ public final class Vision {
     @Generated @NUInt public static final long VNDetectRectanglesRequestRevision1 = 0x0000000000000001L;
     @Generated @NUInt public static final long VNDetectTextRectanglesRequestRevision1 = 0x0000000000000001L;
     /**
-     * @brief VNRecognizeTextRequestRevision1 only supports English
+     * VNRecognizeTextRequestRevision1 only supports English
      */
     @Generated @NUInt public static final long VNRecognizeTextRequestRevision1 = 0x0000000000000001L;
     @Generated @NUInt public static final long VNGenerateAttentionBasedSaliencyImageRequestRevision1 = 0x0000000000000001L;
@@ -281,7 +282,7 @@ public final class Vision {
     @Generated @NUInt public static final long VNRecognizeAnimalsRequestRevision1 = 0x0000000000000001L;
 
     /**
-     * @discussion    Returns a point in normalized coordinate space that is projected from a point in a image coordinates
+     * Returns a point in normalized coordinate space that is projected from a point in a image coordinates
      * 
      * @param    imagePoint                  The point in image coordinate space.
      * 
@@ -309,7 +310,7 @@ public final class Vision {
 
     @Generated @NUInt public static final long VNDetectFaceCaptureQualityRequestRevision2 = 0x0000000000000002L;
     /**
-     * @brief VNRecognizeTextRequestRevision2 supports English, Chinese, Portuguese, French, Italian, German and Spanish in the accurate recognition level. The fast recognition level supports English, Portuguese, French, Italian, German and Spanish. Best practice is to use supportedRecognitionLanguagesForTextRecognitionLevel to check for supported languages. As the underlying engine has changed from VNRecognizeTextRequestRevision1, results can differ but are generally more accurate. 
+     * VNRecognizeTextRequestRevision2 supports English, Chinese, Portuguese, French, Italian, German and Spanish in the accurate recognition level. The fast recognition level supports English, Portuguese, French, Italian, German and Spanish. Best practice is to use supportedRecognitionLanguagesForTextRecognitionLevel to check for supported languages. As the underlying engine has changed from VNRecognizeTextRequestRevision1, results can differ but are generally more accurate.
      */
     @Generated @NUInt public static final long VNRecognizeTextRequestRevision2 = 0x0000000000000002L;
 

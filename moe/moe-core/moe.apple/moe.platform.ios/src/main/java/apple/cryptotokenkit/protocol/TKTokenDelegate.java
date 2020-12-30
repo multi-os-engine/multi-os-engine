@@ -14,8 +14,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @abstract TKTokenDelegate contains operations implementing functionality of token class.
- * @discussion TKTokenDelegate represents protocol which must be implemented by token implementors' class representing token.  Apart from being able to identify itself with its unique identifier, and must be able to establish new TKTokenSession when requested.
+ * TKTokenDelegate contains operations implementing functionality of token class.
+ * 
+ * TKTokenDelegate represents protocol which must be implemented by token implementors' class representing token.  Apart from being able to identify itself with its unique identifier, and must be able to establish new TKTokenSession when requested.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -23,8 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("TKTokenDelegate")
 public interface TKTokenDelegate {
     /**
-     * @abstract Create new session instance
-     * @discussion All operations with objects on the token are performed inside TKTokenSession which represent authentication context.  This method is called whenever new authentication context is needed (typically when client application wants to perform token operation using keychain object which has associated LocalAuthentication LAContext which was not yet seen by this token instance).
+     * Create new session instance
+     * 
+     * All operations with objects on the token are performed inside TKTokenSession which represent authentication context.  This method is called whenever new authentication context is needed (typically when client application wants to perform token operation using keychain object which has associated LocalAuthentication LAContext which was not yet seen by this token instance).
+     * 
      * @param token Related token instance.
      */
     @Generated
@@ -32,7 +35,8 @@ public interface TKTokenDelegate {
     TKTokenSession tokenCreateSessionWithError(TKToken token, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @abstract Terminates previously created session, implementation should free all associated resources.
+     * Terminates previously created session, implementation should free all associated resources.
+     * 
      * @param token Related token instance.
      */
     @Generated

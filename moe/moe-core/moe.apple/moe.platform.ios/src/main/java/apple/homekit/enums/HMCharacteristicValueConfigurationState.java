@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueConfigurationState
+ * [@enum]      HMCharacteristicValueConfigurationState
  * 
- * @constant  HMCharacteristicValueConfigurationStateNotConfigured  Not Configured.
- * @constant  HMCharacteristicValueConfigurationStateConfigured     Configured.
+ * [@constant]  HMCharacteristicValueConfigurationStateNotConfigured  Not Configured.
+ * [@constant]  HMCharacteristicValueConfigurationStateConfigured     Configured.
  */
 @Generated
 public final class HMCharacteristicValueConfigurationState {

@@ -166,9 +166,9 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     public native NSArray<String> allKeys();
 
     /**
-     * @abstract A special property that returns an array of token generated from all the string field values in the record.
+     * A special property that returns an array of token generated from all the string field values in the record.
      * 
-     * @discussion These tokens have been normalized for the current locale, so they are suitable for performing full-text searches.
+     * These tokens have been normalized for the current locale, so they are suitable for performing full-text searches.
      */
     @Generated
     @Selector("allTokens")
@@ -196,7 +196,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     public native CKRecordID creatorUserRecordID();
 
     /**
-     * @discussion @c CKRecord supports @c NSSecureCoding.  When you invoke @c encodeWithCoder: on a @c CKRecord, it encodes all its values.  Including the record values you've set.
+     * [@c] CKRecord supports @c NSSecureCoding.  When you invoke @c encodeWithCoder: on a @c CKRecord, it encodes all its values.  Including the record values you've set.
      * If you want to store a @c CKRecord instance locally, AND you're already storing the record values locally, that's overkill.  In that case, you can use @c encodeSystemFieldsWithCoder:.  This will encode all parts of a @c CKRecord except the record keys / values you have access to via the @c changedKeys and @c objectForKey: methods.
      * If you use @c initWithCoder: to reconstitute a @c CKRecord you encoded via @c encodeSystemFieldsWithCoder:, then be aware that
      * - any record values you had set on the original instance, but had not saved, will be lost
@@ -255,9 +255,9 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     public native CKRecordValue objectForKeyedSubscript(String key);
 
     /**
-     * @abstract Use a parent reference to teach CloudKit about the hierarchy of your records.
+     * Use a parent reference to teach CloudKit about the hierarchy of your records.
      * 
-     * @discussion When a record is shared, all children of that record are also shared.
+     * When a record is shared, all children of that record are also shared.
      * 
      * A parent record reference must have @c CKReferenceActionNone set. You can create a separate reference with @c CKReferenceActionDeleteSelf if you would like your hierarchy cleaned up when the parent record is deleted.
      * 
@@ -294,9 +294,9 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) CKRecordValue object, String key);
 
     /**
-     * @abstract Use a parent reference to teach CloudKit about the hierarchy of your records.
+     * Use a parent reference to teach CloudKit about the hierarchy of your records.
      * 
-     * @discussion When a record is shared, all children of that record are also shared.
+     * When a record is shared, all children of that record are also shared.
      * 
      * A parent record reference must have @c CKReferenceActionNone set. You can create a separate reference with @c CKReferenceActionDeleteSelf if you would like your hierarchy cleaned up when the parent record is deleted.
      * 
@@ -321,7 +321,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     public native void setParentReferenceFromRecordID(CKRecordID parentRecordID);
 
     /**
-     * @discussion The share property on a record can be set by creating a share using @code -[CKShare initWithRootRecord:] @endcode.
+     * The share property on a record can be set by creating a share using @code -[CKShare initWithRootRecord:] @endcode.
      * 
      * The share property on a record will be removed when the corresponding CKShare is deleted from the server. Send this record in the same batch as the share delete and this record's share property will be updated.
      * 

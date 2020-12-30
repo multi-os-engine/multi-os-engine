@@ -26,9 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNInitialGradient
- * @dependency This depends on Metal.framework
- * @discussion The MPSCNNInitialGradient filter specifies a layer which computes the initial gradient for
+ * MPSNNInitialGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNInitialGradient filter specifies a layer which computes the initial gradient for
  *             an aribitrary input image. The operation itself is extremely simple: it computes the gradient of the input image
  *             with itself, resulting in an output image which is filled with '1's for all the inputs that were used.
  *             This serves as the starting point for the computation of gradients between arbitrary images in a network.
@@ -136,7 +137,7 @@ public class MPSNNInitialGradient extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initializes a MPSNNInitialGradient kernel.
+     * Initializes a MPSNNInitialGradient kernel.
      * 
      * @param      device      The MTLDevice on which this MPSNNInitialGradient filter will be used.
      * @return     A valid MPSNNInitialGradient object or nil, if failure.

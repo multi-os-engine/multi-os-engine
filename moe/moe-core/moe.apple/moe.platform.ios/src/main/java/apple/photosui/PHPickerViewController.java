@@ -29,7 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A picker that manages the system interfaces for choosing assets from the user's photos library and delivers the results of those interactions to a delegate.
- * @discussion \c PHPickerViewController is intended to be used as-is and does not support subclassing. The view hierarchy for the picker is private and must not be modified. A picker can only be presented once and should not be used for multiple sessions.
+ * 
+ * \c PHPickerViewController is intended to be used as-is and does not support subclassing. The view hierarchy for the picker is private and must not be modified. A picker can only be presented once and should not be used for multiple sessions.
  */
 @Generated
 @Library("PhotosUI")

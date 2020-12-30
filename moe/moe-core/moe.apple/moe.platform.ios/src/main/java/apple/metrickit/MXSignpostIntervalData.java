@@ -30,11 +30,15 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXSignpostIntervalData
- * @abstract      A class that encapsulates metrics associated with app specific signpost intervals.
- * @discussion    These metrics will be collected and aggregated if the associated signposts were emit using the appropriate API.
- * @discussion    To limit on-device overhead, the system will automatically limit the number of signposts (emitted using the MetricKit log handle) processed.
- * @discussion    Avoid losing telemetry by limiting usage of signposts (emitted using the MetricKit log handle) to critical sections of code.
+ * MXSignpostIntervalData
+ * 
+ * A class that encapsulates metrics associated with app specific signpost intervals.
+ * 
+ * These metrics will be collected and aggregated if the associated signposts were emit using the appropriate API.
+ * 
+ * To limit on-device overhead, the system will automatically limit the number of signposts (emitted using the MetricKit log handle) processed.
+ * 
+ * Avoid losing telemetry by limiting usage of signposts (emitted using the MetricKit log handle) to critical sections of code.
  */
 @Generated
 @Library("MetricKit")
@@ -69,9 +73,11 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property      averageMemory
-     * @abstract      Average value of memory snapshots taken at beginning and end of MXSignpost intervals
-     * @discussion    This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
+     * [@property]      averageMemory
+     * 
+     * Average value of memory snapshots taken at beginning and end of MXSignpost intervals
+     * 
+     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
      */
     @Generated
     @Selector("averageMemory")
@@ -96,18 +102,22 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property      cumulativeCPUTime
-     * @abstract      Cumulative CPU time aggregated over the MXSignpost intervals.
-     * @discussion    This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
+     * [@property]      cumulativeCPUTime
+     * 
+     * Cumulative CPU time aggregated over the MXSignpost intervals.
+     * 
+     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
      */
     @Generated
     @Selector("cumulativeCPUTime")
     public native NSMeasurement<NSUnitDuration> cumulativeCPUTime();
 
     /**
-     * @property      cumulativeLogicalWrites
-     * @abstract      Cumulative logical writes aggregated over the MXSignpost intervals.
-     * @discussion    This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
+     * [@property]      cumulativeLogicalWrites
+     * 
+     * Cumulative logical writes aggregated over the MXSignpost intervals.
+     * 
+     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
      */
     @Generated
     @Selector("cumulativeLogicalWrites")
@@ -131,8 +141,9 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     public static native long hash_static();
 
     /**
-     * @property      histogrammedSignpostDuration
-     * @abstract      A histogram of signpost intervals durations associated with the given signposts with signpostName and signpostCategory.
+     * [@property]      histogrammedSignpostDuration
+     * 
+     * A histogram of signpost intervals durations associated with the given signposts with signpostName and signpostCategory.
      */
     @Generated
     @Selector("histogrammedSignpostDuration")

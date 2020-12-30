@@ -212,7 +212,8 @@ public class GCControllerTouchpad extends GCControllerElement {
     /**
      * Sets the normalized value for the touchpad's axes, as well as its current touch and button state.
      * 
-     * @note If the controller's snapshot flag is set to NO, this method has no effect.
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
      * @see touchSurface
      * @see touchState
      */

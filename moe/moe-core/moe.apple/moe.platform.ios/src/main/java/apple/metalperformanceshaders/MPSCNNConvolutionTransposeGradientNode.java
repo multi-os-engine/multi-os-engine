@@ -98,7 +98,8 @@ public class MPSCNNConvolutionTransposeGradientNode extends MPSCNNConvolutionGra
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
-     * @abstract   A node to represent the gradient calculation for convolution transpose training.
+     * A node to represent the gradient calculation for convolution transpose training.
+     * 
      * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
      *                         that is a neuron gradient filter node.
      * @param sourceImage      The input image from the forward convolution transpose node
@@ -150,7 +151,8 @@ public class MPSCNNConvolutionTransposeGradientNode extends MPSCNNConvolutionGra
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
-     * @abstract   A node to represent the gradient calculation for convolution transpose training.
+     * A node to represent the gradient calculation for convolution transpose training.
+     * 
      * @param sourceGradient   The input gradient from the 'downstream' gradient filter. Often
      *                         that is a neuron gradient filter node.
      * @param sourceImage      The input image from the forward convolution transpose node

@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNLossDataDescriptor
- * @dependency This depends on Metal.framework.
- * @discussion The MPSCNNLossDataDescriptor specifies a loss data descriptor.
+ * MPSCNNLossDataDescriptor
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * The MPSCNNLossDataDescriptor specifies a loss data descriptor.
  *             The same descriptor can be used to initialize both the
  *             labels and the optional weights data.
  */
@@ -67,9 +68,11 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   bytesPerImage
-     * @abstract   Slice bytes of loss data.
-     * @discussion This parameter specifies the slice bytes of loss data.
+     * [@property]   bytesPerImage
+     * 
+     * Slice bytes of loss data.
+     * 
+     * This parameter specifies the slice bytes of loss data.
      */
     @Generated
     @Selector("bytesPerImage")
@@ -77,9 +80,11 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public native long bytesPerImage();
 
     /**
-     * @property   bytesPerRow
-     * @abstract   Row bytes of loss data.
-     * @discussion This parameter specifies the row bytes of loss data.
+     * [@property]   bytesPerRow
+     * 
+     * Row bytes of loss data.
+     * 
+     * This parameter specifies the row bytes of loss data.
      */
     @Generated
     @Selector("bytesPerRow")
@@ -105,10 +110,11 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   Make a descriptor loss data. The bytesPerRow and bytesPerImage
+     * Make a descriptor loss data. The bytesPerRow and bytesPerImage
      *             are automatically calculated assuming a dense array. If it is
      *             not a dense array, adjust bytesPerRow and bytesPerImage to the
      *             right value by changing properties.
+     * 
      * @param      data                        The per-element loss data. The data must be in floating point format.
      * @param      layout                      The data layout of loss data.
      * @param      size                        The size of loss data.
@@ -164,9 +170,11 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   layout
-     * @abstract   Data layout of loss data. See MPSImage.h for more information.
-     * @discussion This parameter specifies the layout of loss data.
+     * [@property]   layout
+     * 
+     * Data layout of loss data. See MPSImage.h for more information.
+     * 
+     * This parameter specifies the layout of loss data.
      */
     @Generated
     @Selector("layout")
@@ -188,18 +196,22 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   bytesPerImage
-     * @abstract   Slice bytes of loss data.
-     * @discussion This parameter specifies the slice bytes of loss data.
+     * [@property]   bytesPerImage
+     * 
+     * Slice bytes of loss data.
+     * 
+     * This parameter specifies the slice bytes of loss data.
      */
     @Generated
     @Selector("setBytesPerImage:")
     public native void setBytesPerImage(@NUInt long value);
 
     /**
-     * @property   bytesPerRow
-     * @abstract   Row bytes of loss data.
-     * @discussion This parameter specifies the row bytes of loss data.
+     * [@property]   bytesPerRow
+     * 
+     * Row bytes of loss data.
+     * 
+     * This parameter specifies the row bytes of loss data.
      */
     @Generated
     @Selector("setBytesPerRow:")
@@ -210,9 +222,11 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   size
-     * @abstract   Size of loss data: (width, height, feature channels}.
-     * @discussion This parameter specifies the size of loss data.
+     * [@property]   size
+     * 
+     * Size of loss data: (width, height, feature channels}.
+     * 
+     * This parameter specifies the size of loss data.
      */
     @Generated
     @Selector("size")

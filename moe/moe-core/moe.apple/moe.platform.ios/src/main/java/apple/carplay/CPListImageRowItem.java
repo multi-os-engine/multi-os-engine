@@ -89,7 +89,7 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     /**
      * Read-only access to the grid images shown in a row in the cell.
      * 
-     * @note The maximum number of images shown is @c CPMaximumNumberOfGridImages.
+     * [@note] The maximum number of images shown is @c CPMaximumNumberOfGridImages.
      * If you supply more images, only the first @c CPMaximumNumberOfGridImages will be used.
      */
     @Generated
@@ -121,10 +121,10 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      * 
-     * @note The expected image size is given by @c CPImageRowImageSize. Images provided
+     * [@note] The expected image size is given by @c CPImageRowImageSize. Images provided
      * will be resized to this size.
      * 
-     * @discussion To properly size your images, your app should size them to the display scale of the car screen.
+     * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
     @Generated
@@ -179,7 +179,7 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * The expected image size for the grid images in your @c CPListImageRowItem. Images provided
      * will be resized to this size.
      * 
-     * @discussion To properly size your images, your app should size them to the display scale of the car screen.
+     * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
     @Generated

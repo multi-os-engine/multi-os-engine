@@ -119,17 +119,20 @@ public class AVMovieTrack extends AVAssetTrack {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property       mediaDataStorage
-     * @abstract       The storage container for media data added to a track.
-     * @discussion     The value of this property is an AVMediaDataStorage object that indicates the location at which media data inserted or appended to the track will be written.
+     * [@property]       mediaDataStorage
+     * 
+     * The storage container for media data added to a track.
+     * 
+     * The value of this property is an AVMediaDataStorage object that indicates the location at which media data inserted or appended to the track will be written.
      */
     @Generated
     @Selector("mediaDataStorage")
     public native AVMediaDataStorage mediaDataStorage();
 
     /**
-     * @property       mediaDecodeTimeRange
-     * @abstract       A CMTimeRange indicating the range of decode times for the track's media.
+     * [@property]       mediaDecodeTimeRange
+     * 
+     * A CMTimeRange indicating the range of decode times for the track's media.
      */
     @Generated
     @Selector("mediaDecodeTimeRange")
@@ -137,8 +140,9 @@ public class AVMovieTrack extends AVAssetTrack {
     public native CMTimeRange mediaDecodeTimeRange();
 
     /**
-     * @property       mediaPresentationTimeRange
-     * @abstract       A CMTimeRange indicating the range of presentation times for the track's media.
+     * [@property]       mediaPresentationTimeRange
+     * 
+     * A CMTimeRange indicating the range of presentation times for the track's media.
      */
     @Generated
     @Selector("mediaPresentationTimeRange")

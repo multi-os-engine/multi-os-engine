@@ -19,10 +19,11 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum       CTUnderlineStyleModifiers
- * @abstract   Underline style modifiers.
+ * [@enum]       CTUnderlineStyleModifiers
  * 
- * @discussion Set these bits with the CTUnderlineStyle that you set with the
+ * Underline style modifiers.
+ * 
+ * Set these bits with the CTUnderlineStyle that you set with the
  *             kCTUnderlineStyleAttributeName attribute to modify how the
  *             underline will be drawn.
  */

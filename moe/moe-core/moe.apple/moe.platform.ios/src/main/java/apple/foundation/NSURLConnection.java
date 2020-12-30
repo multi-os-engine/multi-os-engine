@@ -41,13 +41,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NSURLConnection
+ * NSURLConnection
  * 
- * @abstract An NSURLConnection object provides support to perform
+ * An NSURLConnection object provides support to perform
  *     asynchronous loads of a URL request, providing data to a
  *     client supplied delegate.
  * 
- * @discussion The interface for NSURLConnection is very sparse, providing
+ * The interface for NSURLConnection is very sparse, providing
  *     only the controls to start and cancel asynchronous loads of a
  *     URL request.<p>
  * 
@@ -149,15 +149,13 @@ public class NSURLConnection extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @method         canHandleRequest:
+     * canHandleRequest:
      * 
-     * @abstract
      *                 Performs a "preflight" operation that performs
      *                 some speculative checks to see if a connection can
      *                 be initialized, and the associated I/O that is
      *                 started in the initializer methods can begin.
      * 
-     * @discussion
      *                 The result of this method is valid only as long as
      *                 no protocols are registered or unregistered, and
      *                 as long as the request is not mutated (if the
@@ -169,7 +167,7 @@ public class NSURLConnection extends NSObject {
      * @param 
      *     request     The request to preflight.
      * 
-     * @result         YES if it is likely that the given request can be used to
+     * @return         YES if it is likely that the given request can be used to
      *                 initialize a connection and the associated I/O can be
      *                 started, NO otherwise.
      */
@@ -250,15 +248,13 @@ public class NSURLConnection extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method       sendAsynchronousRequest:queue:completionHandler:
+     * sendAsynchronousRequest:queue:completionHandler:
      * 
-     * @abstract 
      *               Performs an asynchronous load of the given
      *               request. When the request has completed or failed,
      *               the block will be executed from the context of the
      *               specified NSOperationQueue.
      * 
-     * @discussion
      *               This is a convenience routine that allows for
      *               asynchronous loading of an url based resource.  If
      *               the resource load is successful, the data parameter
@@ -289,14 +285,12 @@ public class NSURLConnection extends NSObject {
             @ObjCBlock(name = "call_sendAsynchronousRequestQueueCompletionHandler") Block_sendAsynchronousRequestQueueCompletionHandler handler);
 
     /**
-     * @method      sendSynchronousRequest:returningResponse:error:
+     * sendSynchronousRequest:returningResponse:error:
      * 
-     * @abstract 
      *              Performs a synchronous load of the given request,
      *              returning an NSURLResponse in the given out
      *              parameter.
      * 
-     * @discussion
      *              A synchronous load for the given request is built on
      *              top of the asynchronous loading code made available
      *              by the class.  The calling thread is blocked while
@@ -323,7 +317,7 @@ public class NSURLConnection extends NSObject {
      *              while processing the request. Will not be modified if the 
      *              load succeeds.
      * 
-     * @result      The content of the URL resulting from performing the load,
+     * @return      The content of the URL resulting from performing the load,
      *              or nil if the load failed.
      */
     @Generated
@@ -374,8 +368,9 @@ public class NSURLConnection extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
 
     /**
-     * @property   newsstandAssetDownload
-     * @abstract   A pointer to the asset download that this connection is associated with.
+     * [@property]   newsstandAssetDownload
+     * 
+     * A pointer to the asset download that this connection is associated with.
      */
     @Generated
     @Selector("newsstandAssetDownload")

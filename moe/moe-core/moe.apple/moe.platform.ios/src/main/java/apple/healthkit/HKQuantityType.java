@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKQuantityType
- * @abstract      Represents types of HKQuantitySamples.
+ * HKQuantityType
+ * 
+ * Represents types of HKQuantitySamples.
  */
 @Generated
 @Library("HealthKit")
@@ -202,8 +203,9 @@ public class HKQuantityType extends HKSampleType {
     public native HKQuantityType initWithCoder(NSCoder coder);
 
     /**
-     * @method        isCompatibleWithUnit:
-     * @abstract      Returns YES if the type of HKQuantitySample represented by the receiver can be created with quantities 
+     * isCompatibleWithUnit:
+     * 
+     * Returns YES if the type of HKQuantitySample represented by the receiver can be created with quantities
      *                of the given unit.
      */
     @Generated

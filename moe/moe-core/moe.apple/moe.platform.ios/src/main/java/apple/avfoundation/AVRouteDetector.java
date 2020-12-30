@@ -24,9 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVRouteDetector
- * @abstract	AVRouteDetector detects the presence of media playback routes.
- * @discussion	
+ * AVRouteDetector
+ * 
+ * AVRouteDetector detects the presence of media playback routes.
+ * 
  * If route detection is enabled (it is disabled by default), AVRouteDetector reports whether or not multiple playback routes have been detected. If this is the case, AVKit's AVRoutePickerView can be used to allow users to pick from the set of available routes.
  */
 @Generated
@@ -110,9 +111,10 @@ public class AVRouteDetector extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @property	routeDetectionEnabled
-     * @abstract	Whether or not route detection is enabled. The default value is NO.
-     * @discussion	
+     * [@property]	routeDetectionEnabled
+     * 
+     * Whether or not route detection is enabled. The default value is NO.
+     * 
      * Route detection significantly increases power consumption and must be turned off when it's no longer needed.
      */
     @Generated
@@ -128,9 +130,10 @@ public class AVRouteDetector extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property	multipleRoutesDetected
-     * @abstract	This property is YES if, in addition to the local playback route, at least one more playback route has been detected.
-     * @discussion	
+     * [@property]	multipleRoutesDetected
+     * 
+     * This property is YES if, in addition to the local playback route, at least one more playback route has been detected.
+     * 
      * If multiple route have been detected, AVKit's AVRoutePickerView can be used to allow users to pick from the set of available routes. When the values of this property changes AVRouteDetectorMultipleRoutesDetectedDidChangeNotification is posted.
      */
     @Generated
@@ -152,9 +155,10 @@ public class AVRouteDetector extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property	routeDetectionEnabled
-     * @abstract	Whether or not route detection is enabled. The default value is NO.
-     * @discussion	
+     * [@property]	routeDetectionEnabled
+     * 
+     * Whether or not route detection is enabled. The default value is NO.
+     * 
      * Route detection significantly increases power consumption and must be turned off when it's no longer needed.
      */
     @Generated

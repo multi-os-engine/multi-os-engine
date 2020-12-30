@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNLoss
- * @dependency This depends on Metal.framework.
- * @discussion The MPSCNNLoss filter is only used for training. This filter performs both the forward and
+ * MPSCNNLoss
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * The MPSCNNLoss filter is only used for training. This filter performs both the forward and
  *             backward pass computations. Specifically, it computes the loss between the input (predictions)
  *             and target data (labels) and the loss gradient. The loss value can be a 1 x 1 x 1 image containing
  *             a scalar loss value or an image (of the same size as the input source image) with per feature
@@ -281,8 +282,9 @@ public class MPSCNNLoss extends MPSCNNKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSCNNLoss filter and return a gradient.
-     * @discussion This -encode call is similar to the encodeToCommandBuffer:sourceImage:labels:destinationImage: above,
+     * Encode a MPSCNNLoss filter and return a gradient.
+     * 
+     * This -encode call is similar to the encodeToCommandBuffer:sourceImage:labels:destinationImage: above,
      *             except that it creates and returns the MPSImage with the loss gradient result.
      * 
      * @param      commandBuffer       The MTLCommandBuffer on which to encode.
@@ -297,8 +299,9 @@ public class MPSCNNLoss extends MPSCNNKernel {
             MPSCNNLossLabels labels);
 
     /**
-     * @abstract   Encode a MPSCNNLoss filter and return a gradient in the destinationImage.
-     * @discussion This filter consumes the output of a previous layer, for example, the SoftMax layer containing
+     * Encode a MPSCNNLoss filter and return a gradient in the destinationImage.
+     * 
+     * This filter consumes the output of a previous layer, for example, the SoftMax layer containing
      *             predictions, and the MPSCNNLossLabels object containing the target data (labels) and optionally,
      *             weights for the labels. The destinationImage contains the computed gradient for the loss layer.
      *             It serves as a source gradient input image to the first gradient layer (in the backward direction),
@@ -333,7 +336,7 @@ public class MPSCNNLoss extends MPSCNNKernel {
     public native MPSCNNLoss initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract <NSSecureCoding> support
+     * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -344,7 +347,8 @@ public class MPSCNNLoss extends MPSCNNKernel {
     public native MPSCNNLoss initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize the loss filter with a loss descriptor.
+     * Initialize the loss filter with a loss descriptor.
+     * 
      * @param      device                   The device the filter will run on.
      * @param      lossDescriptor           The loss descriptor.
      * @return     A valid MPSCNNLoss object or nil, if failure.

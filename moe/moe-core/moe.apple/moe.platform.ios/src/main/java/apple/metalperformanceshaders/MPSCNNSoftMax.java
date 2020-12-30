@@ -42,9 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNSoftMax
- * @dependency This depends on Metal.framework
- * @discussion The softMax filter is a neural transfer function and is useful for classification tasks.
+ * MPSCNNSoftMax
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The softMax filter is a neural transfer function and is useful for classification tasks.
  *             The softMax filter is applied across feature channels and in a convolutional manner at all
  *             spatial locations. The softMax filter can be seen as the combination of an
  *             activation function (exponential) and a normalization operator.

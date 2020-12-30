@@ -4,22 +4,23 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLCounterSamplingPoint
- * @abstract MTLCounterSamplingPoint determines type of sampling points that are supported on given device.
+ * [@enum] MTLCounterSamplingPoint
  * 
- * @constant MTLCounterSamplingPointAtStageBoundary
+ * MTLCounterSamplingPoint determines type of sampling points that are supported on given device.
+ * 
+ * [@constant] MTLCounterSamplingPointAtStageBoundary
  * Counter sampling points at render, compute, and blit command encoder stage boundary are supported.
  * 
- * @constant MTLCounterSamplingPointAtDrawBoundary
+ * [@constant] MTLCounterSamplingPointAtDrawBoundary
  * Counter sampling at draw boundary is supported, render encoder method sampleCountersInBuffer can be used for sampling.
  * 
- * @constant MTLCounterSamplingPointAtDispatchBoundary
+ * [@constant] MTLCounterSamplingPointAtDispatchBoundary
  * Counter sampling at compute dispatch boundary is supported, compute encoder method sampleCountersInBuffer can be used for sampling.
  * 
- * @constant MTLCounterSamplingPointAtTileDispatchBoundary
+ * [@constant] MTLCounterSamplingPointAtTileDispatchBoundary
  * Counter sampling at tile shader dispatch boundary is supported.
  * 
- * @constant MTLCounterSamplingPointAtBlitBoundary
+ * [@constant] MTLCounterSamplingPointAtBlitBoundary
  * Counter sampling at blit boundary is supported, blit encoder method sampleCountersInBuffer can be used for sampling.
  */
 @Generated

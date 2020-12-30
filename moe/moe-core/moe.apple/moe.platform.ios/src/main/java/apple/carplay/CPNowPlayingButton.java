@@ -106,7 +106,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * Initialize a now playing button with a handler. The handler will be called when the user
      * selects this button.
      * 
-     * @note Your app should use this method in one of the six concrete subclasses of @c CPNowPlayingButton.
+     * [@note] Your app should use this method in one of the six concrete subclasses of @c CPNowPlayingButton.
      * Do not initialize this class directly.
      */
     @Generated
@@ -137,7 +137,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether the button is enabled.
      * 
-     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
      */
     @Generated
     @Selector("isEnabled")
@@ -147,7 +147,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected appearance to
      * indicate its selected state.
      * 
-     * @discussion Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
+     * Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
      * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle states.
      */
     @Generated
@@ -179,7 +179,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether the button is enabled.
      * 
-     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
      */
     @Generated
     @Selector("setEnabled:")
@@ -189,7 +189,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected appearance to
      * indicate its selected state.
      * 
-     * @discussion Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
+     * Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
      * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle states.
      */
     @Generated

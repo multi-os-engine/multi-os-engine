@@ -34,7 +34,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A request that requires an initial image as a starting point for its work.
+ * A request that requires an initial image as a starting point for its work.
  */
 @Generated
 @Library("Vision")
@@ -109,7 +109,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     /**
-     * @brief Create a new request with a targeted CGImage.
+     * Create a new request with a targeted CGImage.
      * 
      * @param	cgImage				The CGImageRef of the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -120,7 +120,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted CGImage.
+     * Create a new request with a targeted CGImage.
      * 
      * @param	cgImage				The CGImageRef of the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -140,7 +140,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request with a targeted CGImage.
+     * Create a new request with a targeted CGImage.
      * 
      * @param	cgImage				The CGImageRef of the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -152,7 +152,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted CGImage.
+     * Create a new request with a targeted CGImage.
      * 
      * @param	cgImage				The CGImageRef of the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -173,7 +173,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request with a targeted CIImage.
+     * Create a new request with a targeted CIImage.
      * 
      * @param	ciImage				The CIImage of the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -184,7 +184,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted CIImage.
+     * Create a new request with a targeted CIImage.
      * 
      * @param	ciImage				The CIImage of the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -204,7 +204,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request with a targeted CIImage.
+     * Create a new request with a targeted CIImage.
      * 
      * @param	ciImage				The CIImage of the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -216,7 +216,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted CIImage.
+     * Create a new request with a targeted CIImage.
      * 
      * @param	ciImage				The CIImage of the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -237,7 +237,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request that targets an image in a pixel buffer.
+     * Create a new request that targets an image in a pixel buffer.
      * 
      * @param	pixelBuffer			The pixel buffer containing the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -248,7 +248,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request that targets an image in a pixel buffer.
+     * Create a new request that targets an image in a pixel buffer.
      * 
      * @param	pixelBuffer			The pixel buffer containing the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -268,7 +268,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request that targets an image in a pixel buffer.
+     * Create a new request that targets an image in a pixel buffer.
      * 
      * @param	pixelBuffer			The pixel buffer containing the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -280,7 +280,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             int orientation, NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request that targets an image in a pixel buffer.
+     * Create a new request that targets an image in a pixel buffer.
      * 
      * @param	pixelBuffer			The pixel buffer containing the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -301,7 +301,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request with a targeted image data.
+     * Create a new request with a targeted image data.
      * 
      * @param imageData			The data of the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -312,7 +312,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted image data.
+     * Create a new request with a targeted image data.
      * 
      * @param imageData			The data of the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -332,7 +332,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request with a targeted image data.
+     * Create a new request with a targeted image data.
      * 
      * @param imageData			The data of the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -344,7 +344,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted image data.
+     * Create a new request with a targeted image data.
      * 
      * @param imageData			The data of the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -365,7 +365,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request with a targeted image URL.
+     * Create a new request with a targeted image URL.
      * 
      * @param	imageURL			The URL of the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -376,7 +376,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted image URL.
+     * Create a new request with a targeted image URL.
      * 
      * @param	imageURL			The URL of the targeted image.
      * @param	options				A dictionary with options specifying auxiliary information for the image.
@@ -396,7 +396,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request with a targeted image URL.
+     * Create a new request with a targeted image URL.
      * 
      * @param	imageURL			The URL of the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -408,7 +408,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted image URL.
+     * Create a new request with a targeted image URL.
      * 
      * @param	imageURL			The URL of the targeted image.
      * @param	orientation			The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -491,7 +491,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     public static native NSIndexSet supportedRevisions();
 
     /**
-     * @brief Create a new request with a targeted CMSampleBuffer.
+     * Create a new request with a targeted CMSampleBuffer.
      * 
      * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
      * @param options A dictionary with options specifying auxiliary information for the image.
@@ -502,7 +502,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted CMSampleBuffer.
+     * Create a new request with a targeted CMSampleBuffer.
      * 
      * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
      * @param options A dictionary with options specifying auxiliary information for the image.
@@ -522,7 +522,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     }
 
     /**
-     * @brief Create a new request with a targeted CMSampleBuffer.
+     * Create a new request with a targeted CMSampleBuffer.
      * 
      * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.
@@ -534,7 +534,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
             CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options);
 
     /**
-     * @brief Create a new request with a targeted CMSampleBuffer.
+     * Create a new request with a targeted CMSampleBuffer.
      * 
      * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every other orientation information.

@@ -73,11 +73,14 @@ public class SCNAnimationEvent extends NSObject {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method animationEventWithKeyTime:block:
-     * @abstract Returns an animation event instance
+     * animationEventWithKeyTime:block:
+     * 
+     * Returns an animation event instance
+     * 
+     * "time" is relative to animation duration and therefor it has to be a value in the range [0,1].
+     * 
      * @param time The relative time to trigger the event.
      * @param eventBlock The block to call when the event is triggered.
-     * @discussion "time" is relative to animation duration and therefor it has to be a value in the range [0,1].
      */
     @Generated
     @Selector("animationEventWithKeyTime:block:")

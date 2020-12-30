@@ -28,15 +28,15 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixSolveCholesky
+ * MPSMatrixSolveCholesky
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A kernel for computing the solution of a linear system of equations
+ * A kernel for computing the solution of a linear system of equations
  *             using the Cholesky factorization resulting from a
  *             MPSMatrixDecompositionCholesky kernel.
  * 
- * @discussion A MPSMatrixSolveCholesky finds the solution matrix to the system:
+ * A MPSMatrixSolveCholesky finds the solution matrix to the system:
  * 
  *                 A * X = B
  * 
@@ -103,7 +103,18 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixSolveCholesky kernel into a command Buffer.
+     * Encode a MPSMatrixSolveCholesky kernel into a command Buffer.
+     * 
+     * This function encodes the MPSMatrixSolveCholesky object to a valid
+     *             command buffer. sourceMatrix should contain either the lower or upper triangular
+     *             factors corresponding to the factorization returned by a previous execution
+     *             of MPSMatrixDecompositionCholesky.
+     * 
+     *             rightHandSideMatrix and solutionMatrix must be large enough to hold a matrix
+     *             of size order x numberOfRightHandSides starting at secondarySourceMatrixOrigin and
+     *             resultMatrixOrigin respectively.
+     * 
+     *             sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.
      * 
      * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
      * 
@@ -114,17 +125,6 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
      * @param      rightHandSideMatrix A valid MPSMatrix containing the right hand side values.
      * 
      * @param      solutionMatrix      A valid MPSMatrix to contain the result.
-     * 
-     * @discussion This function encodes the MPSMatrixSolveCholesky object to a valid
-     *             command buffer. sourceMatrix should contain either the lower or upper triangular
-     *             factors corresponding to the factorization returned by a previous execution
-     *             of MPSMatrixDecompositionCholesky.
-     * 
-     *             rightHandSideMatrix and solutionMatrix must be large enough to hold a matrix
-     *             of size order x numberOfRightHandSides starting at secondarySourceMatrixOrigin and
-     *             resultMatrixOrigin respectively.
-     * 
-     *             sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:")
@@ -155,7 +155,7 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
     public native MPSMatrixSolveCholesky initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize an MPSMatrixSolveCholesky object on a device
+     * Initialize an MPSMatrixSolveCholesky object on a device
      * 
      * @param      device          The device on which the kernel will execute.
      * 

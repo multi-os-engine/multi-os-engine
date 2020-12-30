@@ -201,9 +201,11 @@ public final class SceneKit {
     public static native SCNMatrix4 SCNMatrix4FromGLKMatrix4(@ByValue GLKMatrix4 mat);
 
     /**
-     * @function SCNExportJavaScriptModule
-     * @abstract Exports SceneKit's symbols (constants and class definition) into the specified JavaScript context.
-     * @discussion SceneKit's classes, properties and constants are exported as global object with their original name. Selectors are exported using the rules defined in JavaScriptCore's JSExport.h.
+     * [@function] SCNExportJavaScriptModule
+     * 
+     * Exports SceneKit's symbols (constants and class definition) into the specified JavaScript context.
+     * 
+     * SceneKit's classes, properties and constants are exported as global object with their original name. Selectors are exported using the rules defined in JavaScriptCore's JSExport.h.
      * 
      * For example to instanciate a node in JavaScript:
      * 
@@ -358,9 +360,11 @@ public final class SceneKit {
     public static native String SCNProgramMappingChannelKey();
 
     /**
-     * @constant SCNShaderModifierEntryPointGeometry
-     * @abstract This is the entry point to operate on the geometry vertices, for example deforming them.
-     * @discussion It operates entirely in the vertex shader stage. It's input is the geometry structure:
+     * [@constant] SCNShaderModifierEntryPointGeometry
+     * 
+     * This is the entry point to operate on the geometry vertices, for example deforming them.
+     * 
+     * It operates entirely in the vertex shader stage. It's input is the geometry structure:
      * 
      * Structures available from the SCNShaderModifierEntryPointGeometry entry point:
      * 
@@ -400,8 +404,9 @@ public final class SceneKit {
     public static native String SCNShaderModifierEntryPointGeometry();
 
     /**
-     * @constant SCNShaderModifierEntryPointSurface
-     * @abstract This is the entry point to alter the surface representation of the material, before the lighting has taken place.
+     * [@constant] SCNShaderModifierEntryPointSurface
+     * 
+     * This is the entry point to alter the surface representation of the material, before the lighting has taken place.
      * 
      * Structures available from the SCNShaderModifierEntryPointSurface entry point:
      * 
@@ -484,8 +489,9 @@ public final class SceneKit {
     public static native String SCNShaderModifierEntryPointSurface();
 
     /**
-     * @constant SCNShaderModifierEntryPointLightingModel
-     * @abstract This is the entry point to provide custom lighting equation. The fragment will be called for each active light
+     * [@constant] SCNShaderModifierEntryPointLightingModel
+     * 
+     * This is the entry point to provide custom lighting equation. The fragment will be called for each active light
      * of the scene and will need to accumulate lighting contribution for the vertex or the fragment in the _lightingContribution structure, using the light structure given.
      * 
      * Structures available from the SCNShaderModifierEntryPointLightingModel entry point:
@@ -539,9 +545,11 @@ public final class SceneKit {
     public static native String SCNShaderModifierEntryPointLightingModel();
 
     /**
-     * @constant SCNShaderModifierEntryPointFragment
-     * @abstract This is the last entry point in the fragment shader, where you can alter the final color returned by the shader.
-     * @discussion You can alter the final color by reading and writing to the output color via the output structure below.
+     * [@constant] SCNShaderModifierEntryPointFragment
+     * 
+     * This is the last entry point in the fragment shader, where you can alter the final color returned by the shader.
+     * 
+     * You can alter the final color by reading and writing to the output color via the output structure below.
      * 
      * Structures available from the SCNShaderModifierEntryPointFragment entry point:
      * 
@@ -571,8 +579,9 @@ public final class SceneKit {
     public static native String SCNShaderModifierEntryPointFragment();
 
     /**
-     * @constant SCNViewOptionPreferredRenderingAPI Specifies the preferred rendering API to be used by the renderer.
-     * @discussion Pass it as the key in the options dictionary given to initWithFrame:options:. The value is a NSNumber wrapping a SCNRenderingAPI. You can also select the preferred rendering API directly from the SCNView inspector in InterfaceBuilder.
+     * [@constant] SCNViewOptionPreferredRenderingAPI Specifies the preferred rendering API to be used by the renderer.
+     * 
+     * Pass it as the key in the options dictionary given to initWithFrame:options:. The value is a NSNumber wrapping a SCNRenderingAPI. You can also select the preferred rendering API directly from the SCNView inspector in InterfaceBuilder.
      */
     @Generated
     @CVariable()
@@ -580,8 +589,9 @@ public final class SceneKit {
     public static native String SCNPreferredRenderingAPIKey();
 
     /**
-     * @constant SCNViewOptionPreferredDevice Specifies the preferred Metal device to be used by the renderer.
-     * @discussion The value is directly a id <MTLDevice>.
+     * [@constant] SCNViewOptionPreferredDevice Specifies the preferred Metal device to be used by the renderer.
+     * 
+     * The value is directly a id <MTLDevice>.
      */
     @Generated
     @CVariable()
@@ -589,8 +599,9 @@ public final class SceneKit {
     public static native String SCNPreferredDeviceKey();
 
     /**
-     * @constant SCNViewOptionPreferLowPowerDevice Specifies if the renderer should prefer a low power Metal device.
-     * @discussion The value is a NSNumber wrapping a BOOL. Defaults to NO.
+     * [@constant] SCNViewOptionPreferLowPowerDevice Specifies if the renderer should prefer a low power Metal device.
+     * 
+     * The value is a NSNumber wrapping a BOOL. Defaults to NO.
      */
     @Generated
     @CVariable()
@@ -598,7 +609,7 @@ public final class SceneKit {
     public static native String SCNPreferLowPowerDeviceKey();
 
     /**
-     * @group Scene source properties
+     * [@group] Scene source properties
      * File contributors. The values are dictionaries populated with keys documented in the "Contributor dictionary keys" group.
      */
     @Generated
@@ -639,7 +650,7 @@ public final class SceneKit {
     public static native String SCNSceneSourceAssetUnitKey();
 
     /**
-     * @group Contributor dictionary keys
+     * [@group] Contributor dictionary keys
      * Authoring tool used to create the file. The corresponding value is an NSString.
      */
     @Generated
@@ -656,7 +667,7 @@ public final class SceneKit {
     public static native String SCNSceneSourceAssetAuthorKey();
 
     /**
-     * @group Unit dictionary keys
+     * [@group] Unit dictionary keys
      * The name (NSString) of the unit
      */
     @Generated
@@ -673,9 +684,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceAssetUnitMeterKey();
 
     /**
-     * @constant SCNSceneSourceCreateNormalsIfAbsentKey
-     * @abstract Enable to try to guess acceptable normals for the vertices if none are given in the file
-     *    @discussion Use this with a boolean value encapsulated in a NSNumber. The default value is NO.
+     * [@constant] SCNSceneSourceCreateNormalsIfAbsentKey
+     * 
+     * Enable to try to guess acceptable normals for the vertices if none are given in the file
+     * 
+     * Use this with a boolean value encapsulated in a NSNumber. The default value is NO.
      */
     @Generated
     @CVariable()
@@ -683,9 +696,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceCreateNormalsIfAbsentKey();
 
     /**
-     * @constant SCNSceneSourceCheckConsistencyKey
-     * @abstract Pass YES in order to perform the document validation. 
-     * @discussion This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
+     * [@constant] SCNSceneSourceCheckConsistencyKey
+     * 
+     * Pass YES in order to perform the document validation.
+     * 
+     * This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
      * The value for this option should be a boolean NSNumber. If its boolean value is YES (the default is NO),
      * SceneKit will attempt to check the document for consistency.
      * If the document doesn't pass the consistency check it is then not loaded and an error is returned.
@@ -697,9 +712,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceCheckConsistencyKey();
 
     /**
-     * @constant SCNSceneSourceFlattenSceneKey
-     * @abstract Pass YES to flatten the scene graph when possible.
-     * @discussion This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
+     * [@constant] SCNSceneSourceFlattenSceneKey
+     * 
+     * Pass YES to flatten the scene graph when possible.
+     * 
+     * This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
      * The value for this option should be a boolean NSNumber. If its boolean value is YES (the default is NO),
      * SceneKit will attempt to reduce the scene graph by merging the geometries.
      * This option is suitable to preview a 3D scene efficiently and when manipulating the scene graph is not needed.
@@ -710,9 +727,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceFlattenSceneKey();
 
     /**
-     * @constant SCNSceneSourceUseSafeModeKey
-     * @abstract Pass YES in order to enable the safe mode.
-     * @discussion This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
+     * [@constant] SCNSceneSourceUseSafeModeKey
+     * 
+     * Pass YES in order to enable the safe mode.
+     * 
+     * This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
      * The value for this option should be a boolean NSNumber. If its boolean value is YES (the default is NO),
      * SceneKit will forbid network accesses, prevent the loading of resources from arbitrary directories, and will not execute
      * any code present in the loaded files.
@@ -723,9 +742,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceUseSafeModeKey();
 
     /**
-     * @constant SCNSceneSourceAssetDirectoryURLsKey
-     * @abstract Pass an array of directory URLs where SceneKit should look for resources
-     * @discussion By default, SceneKit will look for the external resources it cannot find in the parent directory of the imported file.
+     * [@constant] SCNSceneSourceAssetDirectoryURLsKey
+     * 
+     * Pass an array of directory URLs where SceneKit should look for resources
+     * 
+     * By default, SceneKit will look for the external resources it cannot find in the parent directory of the imported file.
      * You can add additional directories by setting an array of URLs for this key when calling sceneWithOptions:error:.
      * This is recommended if you want to construct your scene source from a data object, not from an URL,
      * and need to load resources whose paths are not absolute.
@@ -736,9 +757,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceAssetDirectoryURLsKey();
 
     /**
-     * @constant SCNSceneSourceOverrideAssetURLsKey
-     * @abstract Pass YES in order to override assets URLs with the directory URLs passed via SCNSceneSourceAssetDirectoryURLsKey.
-     * @discussion By default, SceneKit will look for the external resources using the paths/urls as described in the imported file.
+     * [@constant] SCNSceneSourceOverrideAssetURLsKey
+     * 
+     * Pass YES in order to override assets URLs with the directory URLs passed via SCNSceneSourceAssetDirectoryURLsKey.
+     * 
+     * By default, SceneKit will look for the external resources using the paths/urls as described in the imported file.
      * You can force SceneKit to only search for extern resources within the directories specified by the SCNSceneSourceAssetDirectoryURLsKey key.
      * This can be useful to load a file and its resources from a specific bundle for instance.
      */
@@ -748,9 +771,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceOverrideAssetURLsKey();
 
     /**
-     * @constant SCNSceneSourceStrictConformanceKey
-     * @abstract Pass YES to interpret the 3D format of the file in a strict way.
-     * @discussion This option defaults to NO. In this case SceneKit will try to read any additional metadata present in the file to
+     * [@constant] SCNSceneSourceStrictConformanceKey
+     * 
+     * Pass YES to interpret the 3D format of the file in a strict way.
+     * 
+     * This option defaults to NO. In this case SceneKit will try to read any additional metadata present in the file to
      * 		 enable additional features and make the rendering as close as possible to the original intent. If you pass YES,
      *             SceneKit will instead only consider features which are part of the file format specification.
      */
@@ -760,9 +785,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceStrictConformanceKey();
 
     /**
-     * @constant SCNSceneSourceAnimationImportPolicyKey
-     * @abstract Pass one of the value below to specify what to do with loaded animations.
-     * @discussion See below for the description of each individual key. Defaults to SCNSceneSourceAnimationImportPolicyPlayRepeatedly. On 10.9 and before the behavior is SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase. For compatibility reason if the application was built on 10.9 or before the default behavior is SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase.
+     * [@constant] SCNSceneSourceAnimationImportPolicyKey
+     * 
+     * Pass one of the value below to specify what to do with loaded animations.
+     * 
+     * See below for the description of each individual key. Defaults to SCNSceneSourceAnimationImportPolicyPlayRepeatedly. On 10.9 and before the behavior is SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase. For compatibility reason if the application was built on 10.9 or before the default behavior is SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase.
      */
     @Generated
     @CVariable()
@@ -770,9 +797,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceAnimationImportPolicyKey();
 
     /**
-     * @constant SCNSceneSourceLoadingOptionPreserveOriginalTopology
-     * @abstract Pass YES to make SceneKit preserve the original topology instead of triangulating at load time. This can be useful to get better results when subdividing a geometry.
-     * @discussion Defaults to YES starting macOS 10.15, iOS 13, tvOS 13 and watchOS 6. Defaults to NO in previous versions.
+     * [@constant] SCNSceneSourceLoadingOptionPreserveOriginalTopology
+     * 
+     * Pass YES to make SceneKit preserve the original topology instead of triangulating at load time. This can be useful to get better results when subdividing a geometry.
+     * 
+     * Defaults to YES starting macOS 10.15, iOS 13, tvOS 13 and watchOS 6. Defaults to NO in previous versions.
      */
     @Generated
     @CVariable()
@@ -780,8 +809,9 @@ public final class SceneKit {
     public static native String SCNSceneSourceLoadingOptionPreserveOriginalTopology();
 
     /**
-     * @constant SCNSceneSourceAnimationImportPolicyPlay
-     * @abstract Add animations to the scene and play them once (repeatCount set to 1).
+     * [@constant] SCNSceneSourceAnimationImportPolicyPlay
+     * 
+     * Add animations to the scene and play them once (repeatCount set to 1).
      */
     @Generated
     @CVariable()
@@ -789,8 +819,9 @@ public final class SceneKit {
     public static native String SCNSceneSourceAnimationImportPolicyPlay();
 
     /**
-     * @constant SCNSceneSourceAnimationImportPolicyPlayRepeatedly
-     * @abstract Add animations to the scene and play them repeatedly (repeatCount set to infinity).
+     * [@constant] SCNSceneSourceAnimationImportPolicyPlayRepeatedly
+     * 
+     * Add animations to the scene and play them repeatedly (repeatCount set to infinity).
      */
     @Generated
     @CVariable()
@@ -798,8 +829,9 @@ public final class SceneKit {
     public static native String SCNSceneSourceAnimationImportPolicyPlayRepeatedly();
 
     /**
-     * @constant SCNSceneSourceAnimationImportPolicyDoNotPlay
-     * @abstract Only keep animations in the SCNSceneSource and don't add to the animatable elements of the scene.
+     * [@constant] SCNSceneSourceAnimationImportPolicyDoNotPlay
+     * 
+     * Only keep animations in the SCNSceneSource and don't add to the animatable elements of the scene.
      */
     @Generated
     @CVariable()
@@ -807,8 +839,9 @@ public final class SceneKit {
     public static native String SCNSceneSourceAnimationImportPolicyDoNotPlay();
 
     /**
-     * @constant SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase
-     * @abstract Add animations to the scene and play them using the SCNView/SCNRenderer's scene time (usesSceneTimeBase set to YES)
+     * [@constant] SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase
+     * 
+     * Add animations to the scene and play them using the SCNView/SCNRenderer's scene time (usesSceneTimeBase set to YES)
      */
     @Generated
     @CVariable()
@@ -816,9 +849,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase();
 
     /**
-     * @constant SCNDetailedErrorsKey
-     * @abstract Key to access the detailed validation errors.
-     * @discussion This key will be present in the user info dictionary of errors created by the various sceneWithOptions: methods.
+     * [@constant] SCNDetailedErrorsKey
+     * 
+     * Key to access the detailed validation errors.
+     * 
+     * This key will be present in the user info dictionary of errors created by the various sceneWithOptions: methods.
      *             When present, the value associated with it is an array of detailed errors found by the consistency checker
      *             which represent consistency errors in the 3D file. Some metadata about these detailed errors is available
      *             in their user info dictionary using the other keys (SCNConsistency*) defined in this file.
@@ -829,9 +864,11 @@ public final class SceneKit {
     public static native String SCNDetailedErrorsKey();
 
     /**
-     * @constant SCNConsistencyElementIDErrorKey
-     * @abstract For XML-based formats, the ID of the element where the error occurred.
-     * @discussion When the element does not have an ID, the ID of the closest parent element which has one is returned.
+     * [@constant] SCNConsistencyElementIDErrorKey
+     * 
+     * For XML-based formats, the ID of the element where the error occurred.
+     * 
+     * When the element does not have an ID, the ID of the closest parent element which has one is returned.
      */
     @Generated
     @CVariable()
@@ -839,8 +876,9 @@ public final class SceneKit {
     public static native String SCNConsistencyElementIDErrorKey();
 
     /**
-     * @constant SCNConsistencyElementTypeErrorKey
-     * @abstract For XML-based formats, the tag name of the element where the error occurred.
+     * [@constant] SCNConsistencyElementTypeErrorKey
+     * 
+     * For XML-based formats, the tag name of the element where the error occurred.
      */
     @Generated
     @CVariable()
@@ -848,8 +886,9 @@ public final class SceneKit {
     public static native String SCNConsistencyElementTypeErrorKey();
 
     /**
-     * @constant SCNConsistencyLineNumberErrorKey
-     * @abstract For text-based formats, the line number where an error occurred.
+     * [@constant] SCNConsistencyLineNumberErrorKey
+     * 
+     * For text-based formats, the line number where an error occurred.
      */
     @Generated
     @CVariable()
@@ -857,9 +896,11 @@ public final class SceneKit {
     public static native String SCNConsistencyLineNumberErrorKey();
 
     /**
-     * @constant SCNSceneExportDestinationURL
-     * @abstract Specifies the final destination (as a NSURL) of the scene being exported.
-     * @discussion The destination URL is required if the scene is exported to a temporary directory and then moved to a final destination. This enables the exported document to get correct relative paths to referenced images.
+     * [@constant] SCNSceneExportDestinationURL
+     * 
+     * Specifies the final destination (as a NSURL) of the scene being exported.
+     * 
+     * The destination URL is required if the scene is exported to a temporary directory and then moved to a final destination. This enables the exported document to get correct relative paths to referenced images.
      */
     @Generated
     @CVariable()
@@ -899,8 +940,9 @@ public final class SceneKit {
     public static native String SCNSceneUpAxisAttributeKey();
 
     /**
-     * @group Rendering arguments
-     * @discussion These keys are used for the 'semantic' argument of -[SCNProgram setSemantic:forSymbol:options:]
+     * [@group] Rendering arguments
+     * 
+     * These keys are used for the 'semantic' argument of -[SCNProgram setSemantic:forSymbol:options:]
      *             Transforms are SCNMatrix4 wrapped in NSValues.
      */
     @Generated
@@ -1283,9 +1325,11 @@ public final class SceneKit {
     public static native String SCNHitTestOptionSearchMode();
 
     /**
-     * @constant SCNSceneSourceConvertUnitsToMetersKey
-     * @abstract Pass the units you want the scene to be converted to (in meter).
-     * @discussion Use this with a floating value encapsulated in a NSNumber. The default value is nil which means no conversion done. Passing a non-zero value will convert the scene coordinates so that 1 unit corresponds to N meters. For example pass 0.01 for 1 unit == 1 centimeter, pass 0.3048 for 1 unit == 1 foot...
+     * [@constant] SCNSceneSourceConvertUnitsToMetersKey
+     * 
+     * Pass the units you want the scene to be converted to (in meter).
+     * 
+     * Use this with a floating value encapsulated in a NSNumber. The default value is nil which means no conversion done. Passing a non-zero value will convert the scene coordinates so that 1 unit corresponds to N meters. For example pass 0.01 for 1 unit == 1 centimeter, pass 0.3048 for 1 unit == 1 foot...
      *     For better physics simulation it is recommended to use 1 unit equals to 1 meter.
      *     This option has no effect for SCN files or if the asset is already compressed by Xcode (use the compression options instead).
      */
@@ -1295,9 +1339,11 @@ public final class SceneKit {
     public static native String SCNSceneSourceConvertUnitsToMetersKey();
 
     /**
-     * @constant SCNSceneSourceConvertToYUpKey
-     * @abstract Pass YES if a scene should be converted to Y up if it currently has a different up axis.
-     * @discussion Use this with a boolean value encapsulated in a NSNumber. The default value is NO.
+     * [@constant] SCNSceneSourceConvertToYUpKey
+     * 
+     * Pass YES if a scene should be converted to Y up if it currently has a different up axis.
+     * 
+     * Use this with a boolean value encapsulated in a NSNumber. The default value is NO.
      * This option has no effect for SCN files or if the asset is already compressed by Xcode (use the compression options instead).
      */
     @Generated

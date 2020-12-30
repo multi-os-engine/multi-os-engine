@@ -201,7 +201,7 @@ public final class GameController {
     /**
      * A set of commonly used strings that can be used to access controller buttons
      * 
-     * @example controller.physicalInputProfile.buttons[GCInputButtonA]
+     * [@example] controller.physicalInputProfile.buttons[GCInputButtonA]
      * 
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
@@ -289,7 +289,7 @@ public final class GameController {
     /**
      * A set of strings commonly used to access Xbox buttons
      * 
-     * @example controller.physicalInputProfile.buttons[GCInputButtonPaddleOne]
+     * [@example] controller.physicalInputProfile.buttons[GCInputButtonPaddleOne]
      * 
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
@@ -317,7 +317,7 @@ public final class GameController {
     /**
      * A set of strings commonly used to access DualShock buttons
      * 
-     * @example controller.physicalInputProfile.dpads[GCInputDualShockTouchpadOne]
+     * [@example] controller.physicalInputProfile.dpads[GCInputDualShockTouchpadOne]
      * 
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
@@ -2389,8 +2389,9 @@ public final class GameController {
      * 
      * The 'object' property of the notification will contain the GCKeyboard that was connected or disconnected.
      * 
+     * [@note] All connected keyboards are coalesced into one keyboard object, so notification about connection/disconnection will only be delivered once until last keyboard disconnects.
+     * 
      * @see NSNotificationCetner
-     * @note All connected keyboards are coalesced into one keyboard object, so notification about connection/disconnection will only be delivered once until last keyboard disconnects.
      */
     @Generated
     @CVariable()

@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class RPBroadcastController
- * @abstract Available once a user has successfully initiated a broadcast using an RPBroadcastActivityViewController. Can be used to start, pause and stop a broadcast.
+ * RPBroadcastController
+ * 
+ * Available once a user has successfully initiated a broadcast using an RPBroadcastActivityViewController. Can be used to start, pause and stop a broadcast.
  */
 @Generated
 @Library("ReplayKit")
@@ -160,21 +161,21 @@ public class RPBroadcastController extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract bundleID of the broadcast extension which was selected by the user.
+     * bundleID of the broadcast extension which was selected by the user.
      */
     @Generated
     @Selector("broadcastExtensionBundleID")
     public native String broadcastExtensionBundleID();
 
     /**
-     * @abstract URL that can be used to redirect the user to the on-going or completed broadcast.
+     * URL that can be used to redirect the user to the on-going or completed broadcast.
      */
     @Generated
     @Selector("broadcastURL")
     public native NSURL broadcastURL();
 
     /**
-     * @abstract Delegate which will be notified when an error occurs during broadcast.
+     * Delegate which will be notified when an error occurs during broadcast.
      */
     @Generated
     @Selector("delegate")
@@ -182,7 +183,8 @@ public class RPBroadcastController extends NSObject {
     public native RPBroadcastControllerDelegate delegate();
 
     /**
-     * @abstract Finish the broadcast.
+     * Finish the broadcast.
+     * 
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has finished successfully.
      */
     @Generated
@@ -195,49 +197,49 @@ public class RPBroadcastController extends NSObject {
     public native RPBroadcastController init();
 
     /**
-     * @abstract Indicates whether the controller is currently broadcasting.
+     * Indicates whether the controller is currently broadcasting.
      */
     @Generated
     @Selector("isBroadcasting")
     public native boolean isBroadcasting();
 
     /**
-     * @abstract Indicates whether the controller is currently paused.
+     * Indicates whether the controller is currently paused.
      */
     @Generated
     @Selector("isPaused")
     public native boolean isPaused();
 
     /**
-     * @abstract Pause the broadcast. The broadcast will pause immediately.
+     * Pause the broadcast. The broadcast will pause immediately.
      */
     @Generated
     @Selector("pauseBroadcast")
     public native void pauseBroadcast();
 
     /**
-     * @abstract Resumes the broadcast. The broadcast will resume immediately.
+     * Resumes the broadcast. The broadcast will resume immediately.
      */
     @Generated
     @Selector("resumeBroadcast")
     public native void resumeBroadcast();
 
     /**
-     * @abstract Dictionary updated by the service during a broadcast. The keys and values of this dictionary are defined by the broadcast service. KVO observable.
+     * Dictionary updated by the service during a broadcast. The keys and values of this dictionary are defined by the broadcast service. KVO observable.
      */
     @Generated
     @Selector("serviceInfo")
     public native NSDictionary<String, ? extends NSObject> serviceInfo();
 
     /**
-     * @abstract Delegate which will be notified when an error occurs during broadcast.
+     * Delegate which will be notified when an error occurs during broadcast.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value);
 
     /**
-     * @abstract Delegate which will be notified when an error occurs during broadcast.
+     * Delegate which will be notified when an error occurs during broadcast.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) RPBroadcastControllerDelegate value) {
@@ -252,7 +254,8 @@ public class RPBroadcastController extends NSObject {
     }
 
     /**
-     * @abstract Start the broadcast.
+     * Start the broadcast.
+     * 
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has started successfully.
      */
     @Generated

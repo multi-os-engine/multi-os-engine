@@ -487,7 +487,7 @@ public class UISwitch extends UIControl implements NSCoding {
 
     /**
      * The title displayed alongside the switch, positioned appropriately for the @c UIUserInterfaceIdiom.
-     * @note This property is only supported for Catalyst in the Mac idiom.
+     * [@note] This property is only supported for Catalyst in the Mac idiom.
      */
     @Generated
     @Selector("setTitle:")
@@ -503,7 +503,7 @@ public class UISwitch extends UIControl implements NSCoding {
 
     /**
      * The title displayed alongside the switch, positioned appropriately for the @c UIUserInterfaceIdiom.
-     * @note This property is only supported for Catalyst in the Mac idiom.
+     * [@note] This property is only supported for Catalyst in the Mac idiom.
      */
     @Generated
     @Selector("title")

@@ -30,15 +30,17 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNPad
- * @dependency This depends on Metal.framework
- * @abstract   Describes a padding operation
- * @discussion You should not use this filter to zero pad your data in the XY-plane.
+ * MPSNNPad
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Describes a padding operation
+ * 
+ * You should not use this filter to zero pad your data in the XY-plane.
  *             This filter achieves padding by copying the input image and therefore should only be used in
  *             special circumstances where the normal padding operation, defined for most filters through
- *             @ref MPSNNPadding, cannot achieve the necessary padding. Therefore use this filter only when
+ *             [@ref] MPSNNPadding, cannot achieve the necessary padding. Therefore use this filter only when
  *             you need one of the special edge modes: @ref MPSImageEdgeModeConstant,
- *             @ref MPSImageEdgeModeMirror, @ref MPSImageEdgeModeMirrorWithEdge or, if you need padding in the
+ *             [@ref] MPSImageEdgeModeMirror, @ref MPSImageEdgeModeMirrorWithEdge or, if you need padding in the
  *             feature-channel dimesion.  In other cases use to @ref MPSNNPadding for best performance.
  *             This kernel copies data from source MPSImage into the destination MPSImage allowing special padding
  *             modes to be applied. It also enables easy to use arbitrary padding area sizes when used in conjuction
@@ -49,20 +51,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *             is defined by the user-specified @ref clipRect and @ref offset properties of the kernel.
  *                 - In the second one the destination image size and @ref clipRect and @ref offset
  *             properties of the kernel are automatically computed by calling
- *             @ref destinationImageDescriptorForSourceImages:sourceStates: or the -encode calls that return the
+ *             [@ref] destinationImageDescriptorForSourceImages:sourceStates: or the -encode calls that return the
  *             resulting image from the left hand side of the call. In this case, the properties
- *             @ref paddingSizeBefore and @ref paddingSizeAfter together with the source image
+ *             [@ref] paddingSizeBefore and @ref paddingSizeAfter together with the source image
  *             dimensions define the size of the destination image and set the correct @ref offset
  *             and @ref clipRect properties to the filter.
  *             Padding in the feature channel dimension is handled a bit differently: the amount of
  *             padding is always determined by @ref paddingSizeBefore.channel and
- *             @ref paddingSizeAfter.channel for this direction and the amount of feature channels
+ *             [@ref] paddingSizeAfter.channel for this direction and the amount of feature channels
  *             filled in the destination is determined by the number of active feature channels
  *             determined by @ref sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount and
  *             the amount of padding to be added on each side of the source.
  * 
  *             Example for feature channel indices:
- * @code
+ * [@code]
  *                 paddingSizeBefore.channel = 2, paddingSizeAfter.channel = 3,
  *                 sourceFeatureChannelOffset = 1, sourceFeatureChannelMaxCount = 3,
  *                 destinationFeatureChannelOffset = 4.
@@ -96,10 +98,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *                     four, which means that there are some limitations to what can be achieved
  *                     with this filter alone.
  * 
- * @endcode
- *             @NOTE:  MPSNNPad is currently the only filter that supports
- *                     @ref MPSImageEdgeModeMirror, @ref MPSImageEdgeModeMirrorWithEdge and
- *                     @ref MPSImageEdgeModeConstant.
+ * [@endcode]
+ *             [@NOTE]  MPSNNPad is currently the only filter that supports
+ *                     [@ref] MPSImageEdgeModeMirror, @ref MPSImageEdgeModeMirrorWithEdge and
+ *                     [@ref] MPSImageEdgeModeConstant.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -160,8 +162,9 @@ public class MPSNNPad extends MPSCNNKernel {
     public static native String description_static();
 
     /**
-     * @property   fillValue
-     * @abstract   Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
+     * [@property]   fillValue
+     * 
+     * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      *             NOTE: this value is ignored if the filter is initialized with a per-channel fill value
      *             using @ref initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:.
      */
@@ -183,8 +186,10 @@ public class MPSNNPad extends MPSCNNKernel {
     public native MPSNNPad initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract   NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSNNPad
      * @param      device      The MTLDevice on which to make the MPSNNPad
      * @return     A new MPSNNPad object, or nil if failure.
@@ -194,7 +199,8 @@ public class MPSNNPad extends MPSCNNKernel {
     public native MPSNNPad initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Initialize a MPSNNPad kernel
+     * Initialize a MPSNNPad kernel
+     * 
      * @param      device      The device the filter will run on.
      * @return     A valid MPSNNPad object or nil, if failure.
      */
@@ -203,7 +209,8 @@ public class MPSNNPad extends MPSCNNKernel {
     public native MPSNNPad initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Initialize a MPSNNPad kernel
+     * Initialize a MPSNNPad kernel
+     * 
      * @param      device              The device the filter will run on
      * @param      paddingSizeBefore   The amount of padding to add before the source image - see details above.
      * @param      paddingSizeAfter    The amount of padding to add after the source image - see details above.
@@ -216,7 +223,8 @@ public class MPSNNPad extends MPSCNNKernel {
             @ByValue MPSImageCoordinate paddingSizeAfter);
 
     /**
-     * @abstract Initialize a MPSNNPad kernel
+     * Initialize a MPSNNPad kernel
+     * 
      * @param      device              The device the filter will run on
      * @param      paddingSizeBefore   The amount of padding to add before the source image - see details above.
      * @param      paddingSizeAfter    The amount of padding to add after the source image - see details above.
@@ -262,8 +270,9 @@ public class MPSNNPad extends MPSCNNKernel {
     public static native Object new_objc();
 
     /**
-     * @property   paddingSizeAfter
-     * @abstract   This property is used for automatically sizing the destination image
+     * [@property]   paddingSizeAfter
+     * 
+     * This property is used for automatically sizing the destination image
      *             for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      *             how much padding to assign on the right, bottom and higher feature channel indices
      *             of the image. NOTE: the x and y coordinates of this property are only
@@ -271,7 +280,7 @@ public class MPSNNPad extends MPSCNNKernel {
      *             the clipRect and offset together define the padding sizes in those directions, but
      *             the 'channel' size defines the amount of padding to be applied in the feature
      *             channel dimension after source feature channel index determined by the sum of
-     *             @ref sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount, naturally
+     *             [@ref] sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount, naturally
      *             clipped to fit the feature channels in the provided source image.
      *             Default: { 0, 0, 0 }
      */
@@ -281,8 +290,9 @@ public class MPSNNPad extends MPSCNNKernel {
     public native MPSImageCoordinate paddingSizeAfter();
 
     /**
-     * @property   paddingSizeBefore
-     * @abstract   This property is used for automatically sizing the destination image
+     * [@property]   paddingSizeBefore
+     * 
+     * This property is used for automatically sizing the destination image
      *             for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      *             how much padding to assign on the left, top and smaller feature channel indices
      *             of the image. NOTE: the x and y coordinates of this property are only
@@ -307,8 +317,9 @@ public class MPSNNPad extends MPSCNNKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   fillValue
-     * @abstract   Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
+     * [@property]   fillValue
+     * 
+     * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      *             NOTE: this value is ignored if the filter is initialized with a per-channel fill value
      *             using @ref initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:.
      */
@@ -317,8 +328,9 @@ public class MPSNNPad extends MPSCNNKernel {
     public native void setFillValue(float value);
 
     /**
-     * @property   paddingSizeAfter
-     * @abstract   This property is used for automatically sizing the destination image
+     * [@property]   paddingSizeAfter
+     * 
+     * This property is used for automatically sizing the destination image
      *             for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      *             how much padding to assign on the right, bottom and higher feature channel indices
      *             of the image. NOTE: the x and y coordinates of this property are only
@@ -326,7 +338,7 @@ public class MPSNNPad extends MPSCNNKernel {
      *             the clipRect and offset together define the padding sizes in those directions, but
      *             the 'channel' size defines the amount of padding to be applied in the feature
      *             channel dimension after source feature channel index determined by the sum of
-     *             @ref sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount, naturally
+     *             [@ref] sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount, naturally
      *             clipped to fit the feature channels in the provided source image.
      *             Default: { 0, 0, 0 }
      */
@@ -335,8 +347,9 @@ public class MPSNNPad extends MPSCNNKernel {
     public native void setPaddingSizeAfter(@ByValue MPSImageCoordinate value);
 
     /**
-     * @property   paddingSizeBefore
-     * @abstract   This property is used for automatically sizing the destination image
+     * [@property]   paddingSizeBefore
+     * 
+     * This property is used for automatically sizing the destination image
      *             for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      *             how much padding to assign on the left, top and smaller feature channel indices
      *             of the image. NOTE: the x and y coordinates of this property are only

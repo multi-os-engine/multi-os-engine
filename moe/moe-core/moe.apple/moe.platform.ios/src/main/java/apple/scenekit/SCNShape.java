@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNShape
- * @abstract SCNShape represents a 2D shape (cubic Bezier spline) than can be extruded.
+ * SCNShape
+ * 
+ * SCNShape represents a 2D shape (cubic Bezier spline) than can be extruded.
  */
 @Generated
 @Library("SceneKit")
@@ -164,8 +165,10 @@ public class SCNShape extends SCNGeometry {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @method shapeWithPath:extrusionDepth:
-     * @abstract Creates and returns a 3D representation of the given shape with the given extrusion depth.
+     * shapeWithPath:extrusionDepth:
+     * 
+     * Creates and returns a 3D representation of the given shape with the given extrusion depth.
+     * 
      * @param path The cubic Bezier spline to extrude.
      * @param extrusionDepth The extrusion depth.
      */
@@ -187,9 +190,11 @@ public class SCNShape extends SCNGeometry {
     public static native long version_static();
 
     /**
-     * @property chamferMode
-     * @abstract The sides of the text that are chamfered.
-     * @discussion The default value is SCNChamferModeBoth.
+     * [@property] chamferMode
+     * 
+     * The sides of the text that are chamfered.
+     * 
+     * The default value is SCNChamferModeBoth.
      */
     @Generated
     @Selector("chamferMode")
@@ -197,18 +202,22 @@ public class SCNShape extends SCNGeometry {
     public native long chamferMode();
 
     /**
-     * @property chamferProfile
-     * @abstract Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
-     * @discussion The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
+     * [@property] chamferProfile
+     * 
+     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
+     * 
+     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
      */
     @Generated
     @Selector("chamferProfile")
     public native UIBezierPath chamferProfile();
 
     /**
-     * @property chamferRadius
-     * @abstract The chamfer radius. Animatable.
-     * @discussion Values are clamped to the range [0, extrusionDepth / 2]. The default value is 0.
+     * [@property] chamferRadius
+     * 
+     * The chamfer radius. Animatable.
+     * 
+     * Values are clamped to the range [0, extrusionDepth / 2]. The default value is 0.
      */
     @Generated
     @Selector("chamferRadius")
@@ -216,9 +225,11 @@ public class SCNShape extends SCNGeometry {
     public native double chamferRadius();
 
     /**
-     * @property extrusionDepth
-     * @abstract The extrusion depth. Animatable.
-     * @discussion If the value is 0, we get a mono-sided, 2D version of the shape.
+     * [@property] extrusionDepth
+     * 
+     * The extrusion depth. Animatable.
+     * 
+     * If the value is 0, we get a mono-sided, 2D version of the shape.
      */
     @Generated
     @Selector("extrusionDepth")
@@ -234,54 +245,66 @@ public class SCNShape extends SCNGeometry {
     public native SCNShape initWithCoder(NSCoder coder);
 
     /**
-     * @property path
-     * @abstract The path defining the shape to be rendered.
-     * @discussion The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is self-intersecting, the behavior is undefined.
+     * [@property] path
+     * 
+     * The path defining the shape to be rendered.
+     * 
+     * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is self-intersecting, the behavior is undefined.
      */
     @Generated
     @Selector("path")
     public native UIBezierPath path();
 
     /**
-     * @property chamferMode
-     * @abstract The sides of the text that are chamfered.
-     * @discussion The default value is SCNChamferModeBoth.
+     * [@property] chamferMode
+     * 
+     * The sides of the text that are chamfered.
+     * 
+     * The default value is SCNChamferModeBoth.
      */
     @Generated
     @Selector("setChamferMode:")
     public native void setChamferMode(@NInt long value);
 
     /**
-     * @property chamferProfile
-     * @abstract Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
-     * @discussion The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
+     * [@property] chamferProfile
+     * 
+     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
+     * 
+     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
      */
     @Generated
     @Selector("setChamferProfile:")
     public native void setChamferProfile(UIBezierPath value);
 
     /**
-     * @property chamferRadius
-     * @abstract The chamfer radius. Animatable.
-     * @discussion Values are clamped to the range [0, extrusionDepth / 2]. The default value is 0.
+     * [@property] chamferRadius
+     * 
+     * The chamfer radius. Animatable.
+     * 
+     * Values are clamped to the range [0, extrusionDepth / 2]. The default value is 0.
      */
     @Generated
     @Selector("setChamferRadius:")
     public native void setChamferRadius(@NFloat double value);
 
     /**
-     * @property extrusionDepth
-     * @abstract The extrusion depth. Animatable.
-     * @discussion If the value is 0, we get a mono-sided, 2D version of the shape.
+     * [@property] extrusionDepth
+     * 
+     * The extrusion depth. Animatable.
+     * 
+     * If the value is 0, we get a mono-sided, 2D version of the shape.
      */
     @Generated
     @Selector("setExtrusionDepth:")
     public native void setExtrusionDepth(@NFloat double value);
 
     /**
-     * @property path
-     * @abstract The path defining the shape to be rendered.
-     * @discussion The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is self-intersecting, the behavior is undefined.
+     * [@property] path
+     * 
+     * The path defining the shape to be rendered.
+     * 
+     * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is self-intersecting, the behavior is undefined.
      */
     @Generated
     @Selector("setPath:")

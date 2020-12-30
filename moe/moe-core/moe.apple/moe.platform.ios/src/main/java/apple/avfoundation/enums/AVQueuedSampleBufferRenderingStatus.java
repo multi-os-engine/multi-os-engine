@@ -20,13 +20,14 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum		 AVQueuedSampleBufferRenderingStatus
- * @abstract	 These constants are the possible status values for queued sample buffer renderers.
- * @constant	 AVQueuedSampleBufferRenderingStatusUnknown
+ * [@enum]		 AVQueuedSampleBufferRenderingStatus
+ * 
+ * These constants are the possible status values for queued sample buffer renderers.
+ * [@constant]	 AVQueuedSampleBufferRenderingStatusUnknown
  * 	Indicates that the receiver is in a fresh state without any sample buffers enqueued on it.
- * @constant	 AVQueuedSampleBufferRenderingStatusRendering
+ * [@constant]	 AVQueuedSampleBufferRenderingStatusRendering
  * 	Indicates at least one sample buffer has been enqueued on the receiver.
- * @constant	 AVQueuedSampleBufferRenderingStatusFailed
+ * [@constant]	 AVQueuedSampleBufferRenderingStatusFailed
  * 	Indicates that the receiver cannot currently enqueue or render sample buffers because of an error.
  */
 @Generated

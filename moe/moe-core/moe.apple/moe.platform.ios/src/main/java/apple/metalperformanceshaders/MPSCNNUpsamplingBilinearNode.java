@@ -94,7 +94,8 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     public native MPSCNNUpsamplingBilinearNode init();
 
     /**
-     * @abstract   Init a node representing a MPSCNNUpsamplingBilinear kernel
+     * Init a node representing a MPSCNNUpsamplingBilinear kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      integerScaleFactorX     The upsampling factor for the x dimension.
      * @param      integerScaleFactorY     The upsampling factor for the y dimension.
@@ -133,7 +134,8 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract   Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
+     * Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      integerScaleFactorX     The upsampling factor for the x dimension.
      * @param      integerScaleFactorY     The upsampling factor for the y dimension.
@@ -178,7 +180,8 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     public native boolean alignCorners();
 
     /**
-     * @abstract   Init a node representing a MPSCNNUpsamplingBilinear kernel
+     * Init a node representing a MPSCNNUpsamplingBilinear kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      integerScaleFactorX     The upsampling factor for the x dimension.
      * @param      integerScaleFactorY     The upsampling factor for the y dimension.
@@ -192,7 +195,8 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
             boolean alignCorners);
 
     /**
-     * @abstract   Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
+     * Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      integerScaleFactorX     The upsampling factor for the x dimension.
      * @param      integerScaleFactorY     The upsampling factor for the y dimension.

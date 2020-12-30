@@ -54,7 +54,7 @@ public class ASAuthorizationController extends NSObject {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @abstract Authorization requests that are being serviced by this controller
+     * Authorization requests that are being serviced by this controller
      */
     @Generated
     @Selector("authorizationRequests")
@@ -87,7 +87,7 @@ public class ASAuthorizationController extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * @abstract This delegate will be invoked upon completion of the authorization indicating success or failure.
+     * This delegate will be invoked upon completion of the authorization indicating success or failure.
      * Delegate is required to receive the results of authorization.
      */
     @Generated
@@ -109,7 +109,7 @@ public class ASAuthorizationController extends NSObject {
     public native ASAuthorizationController init();
 
     /**
-     * @abstract Initialize the controller with authorization requests.
+     * Initialize the controller with authorization requests.
      * 
      * @param authorizationRequests At least one request should be provided. Requests of same type maybe honored in first in first out order
      */
@@ -146,7 +146,7 @@ public class ASAuthorizationController extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract Initiate the authorization flows.  Upon completion, the delegate will be called with either success or failure.
+     * Initiate the authorization flows.  Upon completion, the delegate will be called with either success or failure.
      * Certain authorization flows may require a presentation context, the presentationContextProvider will be called to provider it.
      * 
      * The instance will remain retained until the user completes the flow and the delegate callback is made.
@@ -156,7 +156,7 @@ public class ASAuthorizationController extends NSObject {
     public native void performRequests();
 
     /**
-     * @abstract This delegate will be invoked upon needing a presentation context to display authorization UI.
+     * This delegate will be invoked upon needing a presentation context to display authorization UI.
      */
     @Generated
     @Selector("presentationContextProvider")
@@ -172,7 +172,7 @@ public class ASAuthorizationController extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract This delegate will be invoked upon completion of the authorization indicating success or failure.
+     * This delegate will be invoked upon completion of the authorization indicating success or failure.
      * Delegate is required to receive the results of authorization.
      */
     @Generated
@@ -180,7 +180,7 @@ public class ASAuthorizationController extends NSObject {
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ASAuthorizationControllerDelegate value);
 
     /**
-     * @abstract This delegate will be invoked upon completion of the authorization indicating success or failure.
+     * This delegate will be invoked upon completion of the authorization indicating success or failure.
      * Delegate is required to receive the results of authorization.
      */
     @Generated
@@ -196,7 +196,7 @@ public class ASAuthorizationController extends NSObject {
     }
 
     /**
-     * @abstract This delegate will be invoked upon needing a presentation context to display authorization UI.
+     * This delegate will be invoked upon needing a presentation context to display authorization UI.
      */
     @Generated
     @Selector("setPresentationContextProvider:")
@@ -204,7 +204,7 @@ public class ASAuthorizationController extends NSObject {
             @Mapped(ObjCObjectMapper.class) ASAuthorizationControllerPresentationContextProviding value);
 
     /**
-     * @abstract This delegate will be invoked upon needing a presentation context to display authorization UI.
+     * This delegate will be invoked upon needing a presentation context to display authorization UI.
      */
     @Generated
     public void setPresentationContextProvider(

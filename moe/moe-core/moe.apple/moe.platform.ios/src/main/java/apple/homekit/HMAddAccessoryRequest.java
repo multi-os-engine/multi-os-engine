@@ -43,14 +43,14 @@ public class HMAddAccessoryRequest extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @brief The category of the accessory to be added.
+     * The category of the accessory to be added.
      */
     @Generated
     @Selector("accessoryCategory")
     public native HMAccessoryCategory accessoryCategory();
 
     /**
-     * @brief Name of the accessory to be added.
+     * Name of the accessory to be added.
      */
     @Generated
     @Selector("accessoryName")
@@ -102,7 +102,7 @@ public class HMAddAccessoryRequest extends NSObject {
     public static native long hash_static();
 
     /**
-     * @brief Home that the accessory is to be added to.
+     * Home that the accessory is to be added to.
      */
     @Generated
     @Selector("home")
@@ -140,28 +140,28 @@ public class HMAddAccessoryRequest extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @brief Creates an accessory setup payload with ownership token
+     * Creates an accessory setup payload with ownership token
+     * 
+     * This method may fail if this request requires a setup payload URL.
      * 
      * @param ownershipToken The token proving ownership of the accessory being added to the home.
      * 
      * @return Returns an accessory setup payload object if successful or nil on error.
-     * 
-     * @discussion This method may fail if this request requires a setup payload URL.
      */
     @Generated
     @Selector("payloadWithOwnershipToken:")
     public native HMAccessorySetupPayload payloadWithOwnershipToken(HMAccessoryOwnershipToken ownershipToken);
 
     /**
-     * @brief Creates an accessory setup payload with URL and ownership token
+     * Creates an accessory setup payload with URL and ownership token
+     * 
+     * This method may fail if the setup payload URL is not a valid payload URL.
      * 
      * @param setupPayloadURL The HomeKit setup payload for the accessory being added to the home.
      * 
      * @param ownershipToken The token proving ownership of the accessory being added to the home.
      * 
      * @return Returns an accessory setup payload object if successful or nil on error.
-     * 
-     * @discussion This method may fail if the setup payload URL is not a valid payload URL.
      */
     @Generated
     @Selector("payloadWithURL:ownershipToken:")
@@ -169,14 +169,14 @@ public class HMAddAccessoryRequest extends NSObject {
             HMAccessoryOwnershipToken ownershipToken);
 
     /**
-     * @brief Indication if the ownership token needs to be updated for this request.
+     * Indication if the ownership token needs to be updated for this request.
      */
     @Generated
     @Selector("requiresOwnershipToken")
     public native boolean requiresOwnershipToken();
 
     /**
-     * @brief Indication if the setup URL needs to be updated for this request. If this is true,
+     * Indication if the setup URL needs to be updated for this request. If this is true,
      *        payloadWithURL:ownershipToken: must be used to create the HMAccessorySetupPayload.
      */
     @Generated

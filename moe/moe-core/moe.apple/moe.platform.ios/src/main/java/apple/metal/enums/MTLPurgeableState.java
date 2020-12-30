@@ -20,19 +20,20 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLPurgeableOption
- * @abstract Options for setPurgeable call.
+ * [@enum] MTLPurgeableOption
  * 
- * @constant MTLPurgeableStateNonVolatile
+ * Options for setPurgeable call.
+ * 
+ * [@constant] MTLPurgeableStateNonVolatile
  * The contents of this resource may not be discarded.
  * 
- * @constant MTLPurgeableStateVolatile
+ * [@constant] MTLPurgeableStateVolatile
  * The contents of this resource may be discarded.
  * 
- * @constant MTLPurgeableStateEmpty
+ * [@constant] MTLPurgeableStateEmpty
  * The contents of this are discarded.
  * 
- * @constant MTLPurgeableStateKeepCurrent
+ * [@constant] MTLPurgeableStateKeepCurrent
  * The purgeabelity state is not changed.
  */
 @Generated

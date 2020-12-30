@@ -4,17 +4,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum AVAudioSpatializationFormats
- *  @abstract
+ * [@enum] AVAudioSpatializationFormats
+ * 
  * 	These constants can be used to specify values for allowedAudioSpatializationFormats.
  * 
- *  @constant	 AVAudioSpatializationFormatNone
+ *  [@constant]	 AVAudioSpatializationFormatNone
  * 	Indicates that no audio spatialization is allowed.
- *  @constant	 AVAudioSpatializationFormatMonoAndStereo
+ *  [@constant]	 AVAudioSpatializationFormatMonoAndStereo
  * 	Indicates that only mono and stereo formats may be used for audio spatialization.
- *  @constant	 AVAudioSpatializationFormatMultichannel
+ *  [@constant]	 AVAudioSpatializationFormatMultichannel
  * 	Indicates that only multichannel layouts may be used for audio spatialization.
- *  @constant	 AVAudioSpatializationFormatMonoStereoAndMultichannel
+ *  [@constant]	 AVAudioSpatializationFormatMonoStereoAndMultichannel
  * 	Indicates that mono, stereo and multichannel layouts may be used for audio spatialization.
  */
 @Generated

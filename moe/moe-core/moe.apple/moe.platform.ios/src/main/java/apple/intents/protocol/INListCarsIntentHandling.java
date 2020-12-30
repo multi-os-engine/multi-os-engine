@@ -12,8 +12,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @abstract Protocol to declare support for handling an INListCarsIntent. By implementing this protocol, a class can provide logic for resolving, confirming and handling the intent.
- * @discussion The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and confirmation methods are optional. The handling method is always called last, after resolving and confirming the intent.
+ * Protocol to declare support for handling an INListCarsIntent. By implementing this protocol, a class can provide logic for resolving, confirming and handling the intent.
+ * 
+ * The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and confirmation methods are optional. The handling method is always called last, after resolving and confirming the intent.
  */
 @Generated
 @Library("Intents")
@@ -21,8 +22,9 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("INListCarsIntentHandling")
 public interface INListCarsIntentHandling {
     /**
-     * @abstract Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
-     * @discussion Called prior to asking the app to handle the intent. The app should return a response object that contains additional information about the intent, which may be relevant for the system to show the user prior to handling. If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no additional information relevant to this intent.
+     * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
+     * 
+     * Called prior to asking the app to handle the intent. The app should return a response object that contains additional information about the intent, which may be relevant for the system to show the user prior to handling. If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no additional information relevant to this intent.
      * 
      * @param  intent The input intent
      * @param  completion The response block contains an INListCarsIntentResponse containing additional details about the intent that may be relevant for the system to show the user prior to handling.
@@ -45,8 +47,9 @@ public interface INListCarsIntentHandling {
     }
 
     /**
-     * @abstract Handling method - Execute the task represented by the INListCarsIntent that's passed in
-     * @discussion Called to actually execute the intent. The app must return a response for this intent.
+     * Handling method - Execute the task represented by the INListCarsIntent that's passed in
+     * 
+     * Called to actually execute the intent. The app must return a response for this intent.
      * 
      * @param  intent The input intent
      * @param  completion The response handling block takes a INListCarsIntentResponse containing the details of the result of having executed the intent

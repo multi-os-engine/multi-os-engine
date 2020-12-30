@@ -42,11 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVMetadataFaceObject
- * @abstract
+ * AVMetadataFaceObject
+ * 
  *    AVMetadataFaceObject is a concrete subclass of AVMetadataObject defining the features of a detected face.
  * 
- * @discussion
  *    AVMetadataFaceObject represents a single detected face in a picture. It is an immutable object describing the various features found in the face.
  * 
  *    On supported platforms, AVCaptureMetadataOutput outputs arrays of detected face objects. See AVCaptureOutput.h.
@@ -169,11 +168,10 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property faceID
-     * @abstract
+     * [@property] faceID
+     * 
      *    A unique number associated with the receiver.
      * 
-     * @discussion
      *    The value of this property is an NSInteger indicating the unique identifier of this face in the picture. When a new face enters the picture, it is assigned a new unique identifier. faceIDs are not re-used as faces leave the picture and new ones enter. Faces that leave the picture then re-enter are assigned a new faceID.
      */
     @Generated
@@ -182,8 +180,8 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     public native long faceID();
 
     /**
-     * @property hasRollAngle
-     * @abstract
+     * [@property] hasRollAngle
+     * 
      *    A BOOL indicating whether the rollAngle property is valid for this receiver.
      */
     @Generated
@@ -191,8 +189,8 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     public native boolean hasRollAngle();
 
     /**
-     * @property hasYawAngle
-     * @abstract
+     * [@property] hasYawAngle
+     * 
      *    A BOOL indicating whether the yawAngle property is valid for this receiver.
      */
     @Generated
@@ -204,11 +202,10 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     public native AVMetadataFaceObject init();
 
     /**
-     * @property rollAngle
-     * @abstract
+     * [@property] rollAngle
+     * 
      *    The roll angle of the face in degrees.
      * 
-     * @discussion
      *    The value of this property is a CGFloat indicating the face's angle of roll (or tilt) in degrees. A value of 0.0 indicates that the face is level in the picture. If -hasRollAngle returns NO, then reading this property throws an NSGenericException.
      */
     @Generated
@@ -217,11 +214,10 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     public native double rollAngle();
 
     /**
-     * @property yawAngle
-     * @abstract
+     * [@property] yawAngle
+     * 
      *    The yaw angle of the face in degrees.
      * 
-     * @discussion
      *    The value of this property is a CGFloat indicating the face's angle of yaw (or turn) in degrees. A value of 0.0 indicates that the face is straight on in the picture. If -hasYawAngle returns NO, then reading this property throws an NSGenericException.
      */
     @Generated

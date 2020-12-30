@@ -154,9 +154,11 @@ public class HKStatisticsCollection extends NSObject {
     public static native long version_static();
 
     /**
-     * @method        enumerateStatisticsFromDate:toDate:withBlock:
-     * @abstract      Enumerates all statistics objects from startDate to endDate.
-     * @discussion    Statistics objects will be enumerated in chronological order. If there are no samples for an interval
+     * enumerateStatisticsFromDate:toDate:withBlock:
+     * 
+     * Enumerates all statistics objects from startDate to endDate.
+     * 
+     * Statistics objects will be enumerated in chronological order. If there are no samples for an interval
      *                between the start and end date, then the HKStatistics object for that interval will have nil quantities.
      */
     @Generated
@@ -169,9 +171,11 @@ public class HKStatisticsCollection extends NSObject {
     public native HKStatisticsCollection init();
 
     /**
-     * @method        sources
-     * @abstract      Returns all HKSources found in the contained HKStatistics objects.
-     * @discussion    Sources will be empty unless HKStatisticsOptionSeparateBySource is specified in the
+     * sources
+     * 
+     * Returns all HKSources found in the contained HKStatistics objects.
+     * 
+     * Sources will be empty unless HKStatisticsOptionSeparateBySource is specified in the
      *                HKStatisticsCollectionQuery options.
      */
     @Generated
@@ -179,18 +183,22 @@ public class HKStatisticsCollection extends NSObject {
     public native NSSet<? extends HKSource> sources();
 
     /**
-     * @method        statistics
-     * @abstract      Returns a copy of the populated statistics objects.
-     * @discussion    The statistics objects are ordered chronologically.
+     * statistics
+     * 
+     * Returns a copy of the populated statistics objects.
+     * 
+     * The statistics objects are ordered chronologically.
      */
     @Generated
     @Selector("statistics")
     public native NSArray<? extends HKStatistics> statistics();
 
     /**
-     * @method        statisticsForDate:
-     * @abstract      Returns the statistics object that this date is inside of
-     * @discussion    If there are no samples for the given date, an HKStatistics instance with nil quantities will be returned.
+     * statisticsForDate:
+     * 
+     * Returns the statistics object that this date is inside of
+     * 
+     * If there are no samples for the given date, an HKStatistics instance with nil quantities will be returned.
      */
     @Generated
     @Selector("statisticsForDate:")

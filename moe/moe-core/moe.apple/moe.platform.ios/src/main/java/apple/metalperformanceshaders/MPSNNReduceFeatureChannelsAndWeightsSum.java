@@ -85,8 +85,9 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     public static native String description_static();
 
     /**
-     * @abstract   A boolean to indicate whether the reduction should perform a weighted sum of feature channels with non-zero weights
-     * @discussion If false, computes a dot product of the feature channels and weights.
+     * A boolean to indicate whether the reduction should perform a weighted sum of feature channels with non-zero weights
+     * 
+     * If false, computes a dot product of the feature channels and weights.
      *             If true, computes a dot product of the feature channels and weights divided by the number of non-zero weights
      */
     @Generated
@@ -107,8 +108,10 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     public native MPSNNReduceFeatureChannelsAndWeightsSum initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
      * @param      device      The MTLDevice on which to make the MPSCNNPooling
      * @return     A new MPSCNNPooling object, or nil if failure.
@@ -119,7 +122,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to apply the reduction operation on an image.
+     * Specifies information to apply the reduction operation on an image.
+     * 
      * @param    device            The device the filter will run on
      * @return   A valid MPSNNReduceFeatureChannelsAndWeightsMean object or nil, if failure.
      */
@@ -128,7 +132,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     public native MPSNNReduceFeatureChannelsAndWeightsSum initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to apply the reduction operation on an image.
+     * Specifies information to apply the reduction operation on an image.
+     * 
      * @param    device                         The device the filter will run on
      * @param    doWeightedSumByNonZeroWeights  A boolean to indicate whether to compute a weighted sum or
      *                                          weighted sum divided by the number of non-zero weights

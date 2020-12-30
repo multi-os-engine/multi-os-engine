@@ -48,10 +48,12 @@ public class WKHTTPCookieStore extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @abstract Adds a WKHTTPCookieStoreObserver object with the cookie store.
-     * @param observer The observer object to add.
-     * @discussion The observer is not retained by the receiver. It is your responsibility
+     * Adds a WKHTTPCookieStoreObserver object with the cookie store.
+     * 
+     * The observer is not retained by the receiver. It is your responsibility
      * to unregister the observer before it becomes invalid.
+     * 
+     * @param observer The observer object to add.
      */
     @Generated
     @Selector("addObserver:")
@@ -94,7 +96,8 @@ public class WKHTTPCookieStore extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * @abstract Delete the specified cookie.
+     * Delete the specified cookie.
+     * 
      * @param completionHandler A block to invoke once the cookie has been deleted.
      */
     @Generated
@@ -114,7 +117,8 @@ public class WKHTTPCookieStore extends NSObject {
     public static native String description_static();
 
     /**
-     * @abstract Fetches all stored cookies.
+     * Fetches all stored cookies.
+     * 
      * @param completionHandler A block to invoke with the fetched cookies.
      */
     @Generated
@@ -165,7 +169,8 @@ public class WKHTTPCookieStore extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract Removes a WKHTTPCookieStoreObserver object from the cookie store.
+     * Removes a WKHTTPCookieStoreObserver object from the cookie store.
+     * 
      * @param observer The observer to remove.
      */
     @Generated
@@ -181,7 +186,8 @@ public class WKHTTPCookieStore extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract Set a cookie.
+     * Set a cookie.
+     * 
      * @param cookie The cookie to set.
      * @param completionHandler A block to invoke once the cookie has been stored.
      */

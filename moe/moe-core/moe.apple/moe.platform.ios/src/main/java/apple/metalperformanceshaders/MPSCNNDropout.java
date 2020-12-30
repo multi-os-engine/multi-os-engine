@@ -30,9 +30,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNDropout
- * @dependency This depends on Metal.framework
- * @discussion Dropout is a regularization technique used to prevent neural networks from
+ * MPSCNNDropout
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Dropout is a regularization technique used to prevent neural networks from
  *             overfitting during training. With probability keepProbability, this filter
  *             outputs the input element scaled by 1 / keepProbability. Otherwise, it
  *             outputs 0. Each input element is kept or dropped independently. The scaling
@@ -110,7 +111,7 @@ public class MPSCNNDropout extends MPSCNNKernel {
     public native MPSCNNDropout initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract <NSSecureCoding> support
+     * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -121,7 +122,8 @@ public class MPSCNNDropout extends MPSCNNKernel {
     public native MPSCNNDropout initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Standard init with default properties per filter type.
+     * Standard init with default properties per filter type.
+     * 
      * @param      device              The device that the filter will be used on.
      * @param      keepProbability     The probability that each element in the input is kept.
      *                                 The valid range is (0.0f, 1.0f).
@@ -131,7 +133,7 @@ public class MPSCNNDropout extends MPSCNNKernel {
      *                                 values are 0 and 1 for each dimension. For no
      *                                 broadcasting, set the values for each dimension to 1.
      *                                 For broadcasting, set desired values to 0.
-     * @result     A valid MPSCNNDropout object or nil, if failure.
+     * @return     A valid MPSCNNDropout object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:keepProbability:seed:maskStrideInPixels:")
@@ -157,8 +159,9 @@ public class MPSCNNDropout extends MPSCNNKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * @property   keepProbability
-     * @abstract   The probability that each element in the input is kept.
+     * [@property]   keepProbability
+     * 
+     * The probability that each element in the input is kept.
      *             The valid range is (0.0f, 1.0f).
      */
     @Generated
@@ -170,10 +173,12 @@ public class MPSCNNDropout extends MPSCNNKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   maskStrideInPixels
-     * @abstract   The mask stride in the x, y, and x dimensions, which
+     * [@property]   maskStrideInPixels
+     * 
+     * The mask stride in the x, y, and x dimensions, which
      *             allows for the broadcasting the mask data.
-     * @discussion The only valid values are 0 and 1 for each dimension.
+     * 
+     * The only valid values are 0 and 1 for each dimension.
      *             For no broadcasting, set the values for each dimension
      *             to 1. For broadcasting, set desired values to 0.
      */
@@ -202,8 +207,9 @@ public class MPSCNNDropout extends MPSCNNKernel {
             NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 
     /**
-     * @property   seed
-     * @abstract   The seed used to generate random numbers.
+     * [@property]   seed
+     * 
+     * The seed used to generate random numbers.
      */
     @Generated
     @Selector("seed")

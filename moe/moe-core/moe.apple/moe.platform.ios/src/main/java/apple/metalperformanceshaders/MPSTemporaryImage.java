@@ -47,11 +47,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSTemporaryImage
- * @dependency MPSImage
- * @abstract   MPSTemporaryImages are for MPSImages with short lifetimes.
+ * MPSTemporaryImage
+ * [@dependency] MPSImage
  * 
- * @discussion What is temporary memory? It is memory, plain and simple. Analogy: If we
+ * MPSTemporaryImages are for MPSImages with short lifetimes.
+ * 
+ * What is temporary memory? It is memory, plain and simple. Analogy: If we
  *             use an app as an analogy for a command buffer, then "Regular memory"
  *             (such as what backs a MPSImage or the typical MTLTexture) would be memory
  *             that you allocate at launch and never free. Temporary memory would be memory
@@ -234,8 +235,9 @@ public class MPSTemporaryImage extends MPSImage {
     public static native Object new_objc();
 
     /**
-     * @abstract       Help MPS decide which allocations to make ahead of time
-     * @discussion     The texture cache that underlies the MPSTemporaryImage can automatically allocate new storage as
+     * Help MPS decide which allocations to make ahead of time
+     * 
+     * The texture cache that underlies the MPSTemporaryImage can automatically allocate new storage as
      *                 needed as you create new temporary images.  However, sometimes a more global view of what you
      *                 plan to make is useful for maximizing memory reuse to get the most efficient operation.
      *                 This class method hints to the cache what the list of images will be.
@@ -274,7 +276,7 @@ public class MPSTemporaryImage extends MPSImage {
     public static native Class superclass_static();
 
     /**
-     * @abstract   Initialize a MPSTemporaryImage for use on a MTLCommandBuffer
+     * Initialize a MPSTemporaryImage for use on a MTLCommandBuffer
      * 
      * @param      commandBuffer   The MTLCommandBuffer on which the MPSTemporaryImage will be exclusively used
      * 
@@ -290,8 +292,9 @@ public class MPSTemporaryImage extends MPSImage {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImageDescriptor imageDescriptor);
 
     /**
-     * @abstract       Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor
-     * @discussion     This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor:
+     * Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor
+     * 
+     * This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor:
      *                 The feature channels will be inferred from the MTLPixelFormat without changing the width.
      *                 The following restrictions apply:
      * 
@@ -332,10 +335,10 @@ public class MPSTemporaryImage extends MPSImage {
             @NUInt long featureChannels);
 
     /**
-     * @abstract       The number of times a temporary image may be read by a MPSCNNKernel
+     * The number of times a temporary image may be read by a MPSCNNKernel
      *                 before its contents become undefined.
      * 
-     * @discussion     MPSTemporaryImages must release their underlying textures for reuse
+     * MPSTemporaryImages must release their underlying textures for reuse
      *                 immediately after last use. So as to facilitate *prompt* convenient
      *                 memory recycling, each time a MPSTemporaryImage is read by a
      *                 MPSCNNKernel -encode... method, its readCount is automatically
@@ -364,10 +367,10 @@ public class MPSTemporaryImage extends MPSImage {
     public native long readCount();
 
     /**
-     * @abstract       The number of times a temporary image may be read by a MPSCNNKernel
+     * The number of times a temporary image may be read by a MPSCNNKernel
      *                 before its contents become undefined.
      * 
-     * @discussion     MPSTemporaryImages must release their underlying textures for reuse
+     * MPSTemporaryImages must release their underlying textures for reuse
      *                 immediately after last use. So as to facilitate *prompt* convenient
      *                 memory recycling, each time a MPSTemporaryImage is read by a
      *                 MPSCNNKernel -encode... method, its readCount is automatically
@@ -408,8 +411,9 @@ public class MPSTemporaryImage extends MPSImage {
             @ByValue NSRange sliceRange, @NUInt long featureChannels);
 
     /**
-     * @abstract       Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor
-     * @discussion     This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor:
+     * Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor
+     * 
+     * This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor:
      *                 The number of images will be inferred from number of slices in the descriptor.arrayLength and
      *                 the number of feature channels.
      * 

@@ -31,10 +31,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKQuantitySeriesSampleQuery
- * @abstract      An HKQuantitySeriesSampleQuery is used to access series data associated with
+ * HKQuantitySeriesSampleQuery
+ * 
+ * An HKQuantitySeriesSampleQuery is used to access series data associated with
  *                HKQuantitySample(s).
- * @discussion    Once instantiated, call -[HKHealthStore executeQuery:] to begin enumerating
+ * 
+ * Once instantiated, call -[HKHealthStore executeQuery:] to begin enumerating
  *                the series data.
  *                Call -[HKHealthStore stopQuery:] to discontinue further quantity data reporting.
  */
@@ -102,9 +104,11 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public static native long hash_static();
 
     /**
-     * @property      includeSample
-     * @abstract      Include owning HKQuantitySample in quantityHandler handler.
-     * @discussion    Default value is NO.
+     * [@property]      includeSample
+     * 
+     * Include owning HKQuantitySample in quantityHandler handler.
+     * 
+     * Default value is NO.
      *                If includeSample is set then the quantitySample parameter of quantityHandler will
      *                be non-nil anytime the quantity parameter is non-nil.
      *                Specifying this option has a performance cost.
@@ -119,8 +123,9 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public native HKQuantitySeriesSampleQuery init();
 
     /**
-     * @method        initWithSample:dataHandler:
-     * @abstract      Returns a query that will retrieve HKQuantity objects for samples of a specified
+     * initWithSample:dataHandler:
+     * 
+     * Returns a query that will retrieve HKQuantity objects for samples of a specified
      *                type that match the specified predicate.
      * 
      * @param         quantityType        The type of HKQuantitySample to retrieve.
@@ -195,10 +200,12 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public static native Object new_objc();
 
     /**
-     * @property      orderByQuantitySampleStartDate
-     * @abstract      Order enumerated results first by quantitySample.startDate,
+     * [@property]      orderByQuantitySampleStartDate
+     * 
+     * Order enumerated results first by quantitySample.startDate,
      *                then by the quantity's dateInterval.startDate.
-     * @discussion    Default value is NO.
+     * 
+     * Default value is NO.
      *                All quantities owned by a given quantitySample will be
      *                enumerated before any quantities owned by any other quantity sample,
      *                and the quantity samples will be enumerated in their startDate order.
@@ -333,9 +340,11 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property      includeSample
-     * @abstract      Include owning HKQuantitySample in quantityHandler handler.
-     * @discussion    Default value is NO.
+     * [@property]      includeSample
+     * 
+     * Include owning HKQuantitySample in quantityHandler handler.
+     * 
+     * Default value is NO.
      *                If includeSample is set then the quantitySample parameter of quantityHandler will
      *                be non-nil anytime the quantity parameter is non-nil.
      *                Specifying this option has a performance cost.
@@ -346,10 +355,12 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public native void setIncludeSample(boolean value);
 
     /**
-     * @property      orderByQuantitySampleStartDate
-     * @abstract      Order enumerated results first by quantitySample.startDate,
+     * [@property]      orderByQuantitySampleStartDate
+     * 
+     * Order enumerated results first by quantitySample.startDate,
      *                then by the quantity's dateInterval.startDate.
-     * @discussion    Default value is NO.
+     * 
+     * Default value is NO.
      *                All quantities owned by a given quantitySample will be
      *                enumerated before any quantities owned by any other quantity sample,
      *                and the quantity samples will be enumerated in their startDate order.

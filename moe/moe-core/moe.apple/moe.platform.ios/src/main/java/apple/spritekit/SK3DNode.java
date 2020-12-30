@@ -197,17 +197,21 @@ public class SK3DNode extends SKNode {
     public static native long version_static();
 
     /**
-     * @property autoenablesDefaultLighting
-     * @abstract Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
-     * @discussion When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only ambient lights.
+     * [@property] autoenablesDefaultLighting
+     * 
+     * Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
+     * 
+     * When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only ambient lights.
      */
     @Generated
     @Selector("autoenablesDefaultLighting")
     public native boolean autoenablesDefaultLighting();
 
     /**
-     * @method hitTest:options:
-     * @abstract Returns an array of SCNHitTestResult for each node that contains a specified point.
+     * hitTest:options:
+     * 
+     * Returns an array of SCNHitTestResult for each node that contains a specified point.
+     * 
      * @param point A point in the coordinate system of the receiver.
      * @param options Optional parameters (see the "Hit test options" group for the available options).
      */
@@ -236,42 +240,49 @@ public class SK3DNode extends SKNode {
     public native SK3DNode initWithViewportSize(@ByValue CGSize viewportSize);
 
     /**
-     * @property playing
-     * @abstract Returns YES if the scene is playing, NO otherwise.
+     * [@property] playing
+     * 
+     * Returns YES if the scene is playing, NO otherwise.
      */
     @Generated
     @Selector("isPlaying")
     public native boolean isPlaying();
 
     /**
-     * @property playing
-     * @abstract Returns YES if the scene is playing, NO otherwise.
+     * [@property] playing
+     * 
+     * Returns YES if the scene is playing, NO otherwise.
      */
     @Generated
     @Selector("setPlaying:")
     public native void setPlaying(boolean value);
 
     /**
-     * @property loops
-     * @abstract Indicates whether the receiver restarts playback when it reaches the end of its content. Default: YES.
-     * @discussion YES when the receiver restarts playback when it finishes, NO otherwise.
+     * [@property] loops
+     * 
+     * Indicates whether the receiver restarts playback when it reaches the end of its content. Default: YES.
+     * 
+     * YES when the receiver restarts playback when it finishes, NO otherwise.
      */
     @Generated
     @Selector("loops")
     public native boolean loops();
 
     /**
-     * @property pointOfView
-     * @abstract Specifies the point of view used to render the scene.
-     * @discussion A point of view must have either a camera or a spot light attached.
+     * [@property] pointOfView
+     * 
+     * Specifies the point of view used to render the scene.
+     * 
+     * A point of view must have either a camera or a spot light attached.
      */
     @Generated
     @Selector("pointOfView")
     public native SCNNode pointOfView();
 
     /**
-     * @property sceneTime
-     * @abstract Specifies the current time to display the scene.
+     * [@property] sceneTime
+     * 
+     * Specifies the current time to display the scene.
      */
     @Generated
     @Selector("sceneTime")
@@ -285,35 +296,42 @@ public class SK3DNode extends SKNode {
     public native SCNScene scnScene();
 
     /**
-     * @property autoenablesDefaultLighting
-     * @abstract Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
-     * @discussion When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only ambient lights.
+     * [@property] autoenablesDefaultLighting
+     * 
+     * Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
+     * 
+     * When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only ambient lights.
      */
     @Generated
     @Selector("setAutoenablesDefaultLighting:")
     public native void setAutoenablesDefaultLighting(boolean value);
 
     /**
-     * @property loops
-     * @abstract Indicates whether the receiver restarts playback when it reaches the end of its content. Default: YES.
-     * @discussion YES when the receiver restarts playback when it finishes, NO otherwise.
+     * [@property] loops
+     * 
+     * Indicates whether the receiver restarts playback when it reaches the end of its content. Default: YES.
+     * 
+     * YES when the receiver restarts playback when it finishes, NO otherwise.
      */
     @Generated
     @Selector("setLoops:")
     public native void setLoops(boolean value);
 
     /**
-     * @property pointOfView
-     * @abstract Specifies the point of view used to render the scene.
-     * @discussion A point of view must have either a camera or a spot light attached.
+     * [@property] pointOfView
+     * 
+     * Specifies the point of view used to render the scene.
+     * 
+     * A point of view must have either a camera or a spot light attached.
      */
     @Generated
     @Selector("setPointOfView:")
     public native void setPointOfView(SCNNode value);
 
     /**
-     * @property sceneTime
-     * @abstract Specifies the current time to display the scene.
+     * [@property] sceneTime
+     * 
+     * Specifies the current time to display the scene.
      */
     @Generated
     @Selector("setSceneTime:")

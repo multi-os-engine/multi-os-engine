@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract An abstract class that represents a request for the app to be launched in the background to perform work.
- * @discussion Do not instantiate instances of this class directly. Instead, use one of its concrete subclasses.
+ * An abstract class that represents a request for the app to be launched in the background to perform work.
+ * 
+ * Do not instantiate instances of this class directly. Instead, use one of its concrete subclasses.
  */
 @Generated
 @Library("BackgroundTasks")
@@ -94,8 +95,9 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * @abstract The earliest date at which the task may run.
-     * @discussion Setting this property does not guarantee that the task will begin at the specified date, but only that it will not begin sooner. If not specified, no start delay is used.
+     * The earliest date at which the task may run.
+     * 
+     * Setting this property does not guarantee that the task will begin at the specified date, but only that it will not begin sooner. If not specified, no start delay is used.
      */
     @Generated
     @Selector("earliestBeginDate")
@@ -107,7 +109,7 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     public static native long hash_static();
 
     /**
-     * @abstract The identifier associated with this request.
+     * The identifier associated with this request.
      */
     @Generated
     @Selector("identifier")
@@ -153,8 +155,9 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract The earliest date at which the task may run.
-     * @discussion Setting this property does not guarantee that the task will begin at the specified date, but only that it will not begin sooner. If not specified, no start delay is used.
+     * The earliest date at which the task may run.
+     * 
+     * Setting this property does not guarantee that the task will begin at the specified date, but only that it will not begin sooner. If not specified, no start delay is used.
      */
     @Generated
     @Selector("setEarliestBeginDate:")

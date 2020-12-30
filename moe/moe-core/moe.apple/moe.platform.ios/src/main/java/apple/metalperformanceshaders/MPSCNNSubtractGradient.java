@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNSubtractGradient
- * @dependency This depends on Metal.framework.
- * @discussion Specifies the subtraction gradient operator.
+ * MPSCNNSubtractGradient
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * Specifies the subtraction gradient operator.
  *             This arithmetic gradient filter requires the following inputs: gradient image from
  *             the previous layer (going backwards) and either the primary or the secondary source
  *             image from the forward pass. You will need a separate filter for the primary and
@@ -128,7 +129,8 @@ public class MPSCNNSubtractGradient extends MPSCNNArithmeticGradient {
     public native MPSCNNSubtractGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the subtraction gradient operator.
+     * Initialize the subtraction gradient operator.
+     * 
      * @param     device                   The device the filter will run on.
      * @param     isSecondarySourceFilter  A boolean indicating whether the arithmetic gradient
      *            filter is operating on the primary or secondary source image from the forward pass.

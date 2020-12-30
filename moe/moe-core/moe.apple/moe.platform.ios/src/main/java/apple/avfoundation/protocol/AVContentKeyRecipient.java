@@ -8,9 +8,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol      AVContentKeyRecipient
+ * [@protocol]      AVContentKeyRecipient
  * 
- * @abstract
  *   Classes of objects that may require decryption keys for media data in order to enable processing, such as parsing or playback, conform to this protocol.
  */
 @Generated
@@ -19,9 +18,11 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVContentKeyRecipient")
 public interface AVContentKeyRecipient {
     /**
-     * @property      mayRequireContentKeysForMediaDataProcessing
-     * @abstract      Indicates whether the receiver may require decryption keys for media data in order to enable processing.
-     * @discussion    When the value of mayRequireContentKeysForMediaDataProcessing is YES, adding the receiver to an AVContentKeySession allows it to employ the session's already existing keys and also enables the handling of new key requests by the AVContentKeySession's delegate.
+     * [@property]      mayRequireContentKeysForMediaDataProcessing
+     * 
+     * Indicates whether the receiver may require decryption keys for media data in order to enable processing.
+     * 
+     * When the value of mayRequireContentKeysForMediaDataProcessing is YES, adding the receiver to an AVContentKeySession allows it to employ the session's already existing keys and also enables the handling of new key requests by the AVContentKeySession's delegate.
      */
     @Generated
     @Selector("mayRequireContentKeysForMediaDataProcessing")

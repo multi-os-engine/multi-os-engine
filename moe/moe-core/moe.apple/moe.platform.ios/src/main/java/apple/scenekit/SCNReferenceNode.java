@@ -46,8 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNReferenceNode
- * @abstract Node that references an external file.
+ * SCNReferenceNode
+ * 
+ * Node that references an external file.
  */
 @Generated
 @Library("SceneKit")
@@ -152,8 +153,9 @@ public class SCNReferenceNode extends SCNNode {
     public static native SCNReferenceNode nodeWithMDLObject(MDLObject mdlObject);
 
     /**
-     * @method referenceNodeWithURL:
-     * @abstract Creates a reference node with a url.
+     * referenceNodeWithURL:
+     * 
+     * Creates a reference node with a url.
      */
     @Generated
     @Selector("referenceNodeWithURL:")
@@ -189,32 +191,36 @@ public class SCNReferenceNode extends SCNNode {
     public native SCNReferenceNode init();
 
     /**
-     * @method initWithCoder:
-     * @abstract Support coding and decoding via NSKeyedArchiver.
+     * initWithCoder:
+     * 
+     * Support coding and decoding via NSKeyedArchiver.
      */
     @Generated
     @Selector("initWithCoder:")
     public native SCNReferenceNode initWithCoder(NSCoder aDecoder);
 
     /**
-     * @method initWithURL:
-     * @abstract Creates a reference node with a url.
+     * initWithURL:
+     * 
+     * Creates a reference node with a url.
      */
     @Generated
     @Selector("initWithURL:")
     public native SCNReferenceNode initWithURL(NSURL referenceURL);
 
     /**
-     * @property loaded
-     * @abstract Indicates whether the referenced URL has been loaded.
+     * [@property] loaded
+     * 
+     * Indicates whether the referenced URL has been loaded.
      */
     @Generated
     @Selector("isLoaded")
     public native boolean isLoaded();
 
     /**
-     * @method load
-     * @abstract Force the reference to be loaded if it hasn't been loaded already. The resolved nodes will be added
+     * load
+     * 
+     * Force the reference to be loaded if it hasn't been loaded already. The resolved nodes will be added
      * as child nodes of the receiver.
      */
     @Generated
@@ -222,8 +228,9 @@ public class SCNReferenceNode extends SCNNode {
     public native void load_objc();
 
     /**
-     * @property loadingPolicy
-     * @abstract Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to SCNReferenceLoadingPolicyImmediately.
+     * [@property] loadingPolicy
+     * 
+     * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to SCNReferenceLoadingPolicyImmediately.
      */
     @Generated
     @Selector("loadingPolicy")
@@ -231,24 +238,27 @@ public class SCNReferenceNode extends SCNNode {
     public native long loadingPolicy();
 
     /**
-     * @property referenceURL
-     * @abstract Specifies the url to resolve.
+     * [@property] referenceURL
+     * 
+     * Specifies the url to resolve.
      */
     @Generated
     @Selector("referenceURL")
     public native NSURL referenceURL();
 
     /**
-     * @property loadingPolicy
-     * @abstract Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to SCNReferenceLoadingPolicyImmediately.
+     * [@property] loadingPolicy
+     * 
+     * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to SCNReferenceLoadingPolicyImmediately.
      */
     @Generated
     @Selector("setLoadingPolicy:")
     public native void setLoadingPolicy(@NInt long value);
 
     /**
-     * @property referenceURL
-     * @abstract Specifies the url to resolve.
+     * [@property] referenceURL
+     * 
+     * Specifies the url to resolve.
      */
     @Generated
     @Selector("setReferenceURL:")
@@ -261,8 +271,9 @@ public class SCNReferenceNode extends SCNNode {
     }
 
     /**
-     * @method unload
-     * @abstract Remove the child nodes and mark as unloaded.
+     * unload
+     * 
+     * Remove the child nodes and mark as unloaded.
      */
     @Generated
     @Selector("unload")

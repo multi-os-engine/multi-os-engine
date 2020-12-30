@@ -29,13 +29,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixNeuronGradient
+ * MPSMatrixNeuronGradient
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A neuron gradient activation kernel that operates on matrices.
+ * A neuron gradient activation kernel that operates on matrices.
  * 
- * @discussion A MPSMatrixNeuronGradient object computes the results of backpropagating
+ * A MPSMatrixNeuronGradient object computes the results of backpropagating
  *             the gradients of a loss function with respect to the outputs of an
  *             MPSMatrixNeuron object.  The corresponding properties and data used by
  *             the MPSMatrixNeuronGradient object should correspond to those used by
@@ -70,9 +70,9 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property   alpha
+     * [@property]   alpha
      * 
-     * @discussion The scale factor to apply to the input.
+     * The scale factor to apply to the input.
      */
     @Generated
     @Selector("alpha")
@@ -101,11 +101,12 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * Make a copy of this kernel for a new device - @see MPSKernel
+     * 
      * @param      zone        The NSZone in which to allocate the object
      * @param      device      The device for the new MPSKernel. If nil, then use
      *                         self.device.
-     * @result     A pointer to a copy of this MPSKernel. This will fail, returning
+     * @return     A pointer to a copy of this MPSKernel. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -124,7 +125,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixNeuronGradient object to a command buffer and compute
+     * Encode a MPSMatrixNeuronGradient object to a command buffer and compute
      *             its gradient with respect to its input data.
      * 
      * @param      commandBuffer               The commandBuffer on which to encode the operation.
@@ -164,8 +165,10 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public native MPSMatrixNeuronGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixNeuronGradient
      * @param      device      The MTLDevice on which to make the MPSMatrixNeuronGradient object.
      * @return     A new MPSMatrixNeuronGradient object, or nil if failure.
@@ -201,28 +204,28 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterA")
     public native float neuronParameterA();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterB")
     public native float neuronParameterB();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronParameterC")
     public native float neuronParameterC();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB:parameterC method
      */
     @Generated
     @Selector("neuronType")
@@ -243,18 +246,18 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   alpha
+     * [@property]   alpha
      * 
-     * @discussion The scale factor to apply to the input.
+     * The scale factor to apply to the input.
      */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(double value);
 
     /**
-     * @abstract   Add per output value neuron parameters A for PReLu neuron activation functions.
+     * Add per output value neuron parameters A for PReLu neuron activation functions.
      * 
-     * @discussion This method sets the neuron to PReLU, zeros parameters A and B and sets the per output value
+     * This method sets the neuron to PReLU, zeros parameters A and B and sets the per output value
      *             neuron parameters A to an array containing a unique value of A for each output value.
      * 
      *             If the neuron function is f(v,a,b), it will apply
@@ -276,9 +279,9 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public native void setNeuronToPReLUWithParametersA(NSData A);
 
     /**
-     * @abstract   Specifies a neuron activation function to be used.
+     * Specifies a neuron activation function to be used.
      * 
-     * @discussion This method can be used to add a neuron activation funtion of given type with
+     * This method can be used to add a neuron activation funtion of given type with
      *             associated scalar parameters A, B, and C that are shared across all output values.
      *             Note that this method can only be used to specify neurons which are specified by three (or fewer)
      *             parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
@@ -298,18 +301,18 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
             float parameterC);
 
     /**
-     * @property   sourceInputFeatureChannels
+     * [@property]   sourceInputFeatureChannels
      * 
-     * @discussion The number of feature channels in the input vectors.
+     * The number of feature channels in the input vectors.
      */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
     /**
-     * @property   sourceNumberOfFeatureVectors
+     * [@property]   sourceNumberOfFeatureVectors
      * 
-     * @discussion The number of input vectors which make up the input array.
+     * The number of input vectors which make up the input array.
      */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
@@ -320,9 +323,9 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   sourceInputFeatureChannels
+     * [@property]   sourceInputFeatureChannels
      * 
-     * @discussion The number of feature channels in the input vectors.
+     * The number of feature channels in the input vectors.
      */
     @Generated
     @Selector("sourceInputFeatureChannels")
@@ -330,9 +333,9 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public native long sourceInputFeatureChannels();
 
     /**
-     * @property   sourceNumberOfFeatureVectors
+     * [@property]   sourceNumberOfFeatureVectors
      * 
-     * @discussion The number of input vectors which make up the input array.
+     * The number of input vectors which make up the input array.
      */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")

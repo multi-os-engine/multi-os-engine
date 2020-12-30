@@ -32,13 +32,11 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol       NSURLConnectionDataDelegate
+ * [@protocol]       NSURLConnectionDataDelegate
  * 
- * @abstract        
  *                 Delegate methods used for loading data to memory.
  *                 These delegate methods are all optional.
  * 
- * @discussion
  *                 connection:willSendRequest:redirectResponse: is
  *                 called whenever an connection determines that it
  *                 must change URLs in order to continue loading a

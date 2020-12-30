@@ -40,8 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NWPath
- * @discussion A network path, represented with NWPath, expresses the viability status and
+ * [@interface] NWPath
+ * 
+ * A network path, represented with NWPath, expresses the viability status and
  * 	properties of the path that a networking connection will take on the device. For example,
  * 	if the path status is NWPathStatusSatisfied, then a connection could use that path.
  */
@@ -161,7 +162,8 @@ public class NWPath extends NSObject {
     public native NWPath init();
 
     /**
-     * @method isEqualToPath:
+     * isEqualToPath:
+     * 
      * @param path An NWPath object to compare.
      * @return YES if the two path objects have the same content, NO otherwise.
      */
@@ -170,16 +172,18 @@ public class NWPath extends NSObject {
     public native boolean isEqualToPath(NWPath path);
 
     /**
-     * @property expensive
-     * @discussion Returns YES if the path is considered expensive, as when using a cellular data plan.
+     * [@property] expensive
+     * 
+     * Returns YES if the path is considered expensive, as when using a cellular data plan.
      */
     @Generated
     @Selector("isExpensive")
     public native boolean isExpensive();
 
     /**
-     * @property status
-     * @discussion The evaluated NWPathStatus of the NWPath.
+     * [@property] status
+     * 
+     * The evaluated NWPathStatus of the NWPath.
      */
     @Generated
     @Selector("status")
@@ -187,8 +191,9 @@ public class NWPath extends NSObject {
     public native long status();
 
     /**
-     * @property constrained
-     * @discussion Returns YES if the path is considered constrained, as when it is in save data mode.
+     * [@property] constrained
+     * 
+     * Returns YES if the path is considered constrained, as when it is in save data mode.
      */
     @Generated
     @Selector("isConstrained")

@@ -4,8 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudioEngineManualRenderingStatus
- *   @abstract 
+ * [@enum] AVAudioEngineManualRenderingStatus
+ * 
  * Status codes returned from the render call to the engine operating in manual rendering mode.
  * 
  * AVAudioEngineManualRenderingStatusError

@@ -20,13 +20,15 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum       MFMailComposeErrorCode
- * @abstract   Error codes for NSError values stemming from the MFMailCompose API.
- * @discussion These error codes are used as the codes for all NSError instances stemmming from the
+ * [@enum]       MFMailComposeErrorCode
+ * 
+ * Error codes for NSError values stemming from the MFMailCompose API.
+ * 
+ * These error codes are used as the codes for all NSError instances stemmming from the
  *             MFMailCompose API.  These are the only valid values for NSError instances with the
  *             <tt>MFMailComposeErrorDomain</tt> domain.
- * @constant   MFMailComposeErrorCodeSaveFailed    Generic error indicating a save failed.
- * @constant   MFMailComposeErrorCodeSendFailed    Generic error indicating a send failed.
+ * [@constant]   MFMailComposeErrorCodeSaveFailed    Generic error indicating a save failed.
+ * [@constant]   MFMailComposeErrorCodeSendFailed    Generic error indicating a send failed.
  */
 @Generated
 public final class MFMailComposeErrorCode {

@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEDNSSettings
- * @discussion The NEDNSSettings class declares the programmatic interface for an object that contains DNS settings.
+ * [@interface] NEDNSSettings
+ * 
+ * The NEDNSSettings class declares the programmatic interface for an object that contains DNS settings.
  */
 @Generated
 @Library("NetworkExtension")
@@ -169,8 +170,9 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property domainName
-     * @discussion A string containing the DNS domain.
+     * [@property] domainName
+     * 
+     * A string containing the DNS domain.
      */
     @Generated
     @Selector("domainName")
@@ -189,8 +191,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     public native NEDNSSettings initWithCoder(NSCoder coder);
 
     /**
-     * @method initWithServers:
-     * @discussion Initialize a newly-allocated NEDNSSettings object.
+     * initWithServers:
+     * 
+     * Initialize a newly-allocated NEDNSSettings object.
+     * 
      * @param servers An array of DNS server IP address strings.
      */
     @Generated
@@ -198,64 +202,72 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     public native NEDNSSettings initWithServers(NSArray<String> servers);
 
     /**
-     * @property matchDomains
-     * @discussion An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to resolve host names within the specified domains.
+     * [@property] matchDomains
+     * 
+     * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to resolve host names within the specified domains.
      */
     @Generated
     @Selector("matchDomains")
     public native NSArray<String> matchDomains();
 
     /**
-     * @property matchDomainsNoSearch
-     * @discussion A boolean indicating if the match domains should be appended to the search domain list.  Default is NO (match domains will be appended to the search domain list).
+     * [@property] matchDomainsNoSearch
+     * 
+     * A boolean indicating if the match domains should be appended to the search domain list.  Default is NO (match domains will be appended to the search domain list).
      */
     @Generated
     @Selector("matchDomainsNoSearch")
     public native boolean matchDomainsNoSearch();
 
     /**
-     * @property searchDomains
-     * @discussion An array of DNS server search domain strings.
+     * [@property] searchDomains
+     * 
+     * An array of DNS server search domain strings.
      */
     @Generated
     @Selector("searchDomains")
     public native NSArray<String> searchDomains();
 
     /**
-     * @property servers
-     * @discussion An array of DNS server address strings.
+     * [@property] servers
+     * 
+     * An array of DNS server address strings.
      */
     @Generated
     @Selector("servers")
     public native NSArray<String> servers();
 
     /**
-     * @property domainName
-     * @discussion A string containing the DNS domain.
+     * [@property] domainName
+     * 
+     * A string containing the DNS domain.
      */
     @Generated
     @Selector("setDomainName:")
     public native void setDomainName(String value);
 
     /**
-     * @property matchDomains
-     * @discussion An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to resolve host names within the specified domains.
+     * [@property] matchDomains
+     * 
+     * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to resolve host names within the specified domains.
      */
     @Generated
     @Selector("setMatchDomains:")
     public native void setMatchDomains(NSArray<String> value);
 
     /**
-     * @property matchDomainsNoSearch
-     * @discussion A boolean indicating if the match domains should be appended to the search domain list.  Default is NO (match domains will be appended to the search domain list).
+     * [@property] matchDomainsNoSearch
+     * 
+     * A boolean indicating if the match domains should be appended to the search domain list.  Default is NO (match domains will be appended to the search domain list).
      */
     @Generated
     @Selector("setMatchDomainsNoSearch:")
     public native void setMatchDomainsNoSearch(boolean value);
 
     /**
-     * @property searchDomains
-     * @discussion An array of DNS server search domain strings.
+     * [@property] searchDomains
+     * 
+     * An array of DNS server search domain strings.
      */
     @Generated
     @Selector("setSearchDomains:")
@@ -268,8 +280,9 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     }
 
     /**
-     * @property dnsProtocol
-     * @discussion The DNS protocol used by the settings.
+     * [@property] dnsProtocol
+     * 
+     * The DNS protocol used by the settings.
      */
     @Generated
     @Selector("dnsProtocol")

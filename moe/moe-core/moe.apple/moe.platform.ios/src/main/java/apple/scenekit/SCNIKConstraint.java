@@ -45,8 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNIKConstraint
- * @abstract A SCNIKConstraint applies an inverse kinematics constraint
+ * SCNIKConstraint
+ * 
+ * A SCNIKConstraint applies an inverse kinematics constraint
  */
 @Generated
 @Library("SceneKit")
@@ -125,10 +126,13 @@ public class SCNIKConstraint extends SCNConstraint {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @method inverseKinematicsConstraintWithChainRootNode:
-     * @abstract Creates and returns a SCNIKConstraint object with the specified parameter.
+     * inverseKinematicsConstraintWithChainRootNode:
+     * 
+     * Creates and returns a SCNIKConstraint object with the specified parameter.
+     * 
+     * "chainRootNode" must be an ancestor of the node on which the constraint is applied.
+     * 
      * @param chainRootNode The root node of the kinematic chain.
-     * @discussion "chainRootNode" must be an ancestor of the node on which the constraint is applied.
      */
     @Generated
     @Selector("inverseKinematicsConstraintWithChainRootNode:")
@@ -175,8 +179,9 @@ public class SCNIKConstraint extends SCNConstraint {
     public static native long version_static();
 
     /**
-     * @property chainRootNode
-     * @abstract Specifies the root node of the kinematic chain.
+     * [@property] chainRootNode
+     * 
+     * Specifies the root node of the kinematic chain.
      */
     @Generated
     @Selector("chainRootNode")
@@ -187,10 +192,13 @@ public class SCNIKConstraint extends SCNConstraint {
     public native SCNIKConstraint init();
 
     /**
-     * @method initWithChainRootNode:
-     * @abstract Creates and returns a SCNIKConstraint object with the specified parameter.
+     * initWithChainRootNode:
+     * 
+     * Creates and returns a SCNIKConstraint object with the specified parameter.
+     * 
+     * "chainRootNode" must be an ancestor of the node on which the constraint is applied.
+     * 
      * @param chainRootNode The root node of the kinematic chain.
-     * @discussion "chainRootNode" must be an ancestor of the node on which the constraint is applied.
      */
     @Generated
     @Selector("initWithChainRootNode:")
@@ -206,16 +214,18 @@ public class SCNIKConstraint extends SCNConstraint {
     public native double maxAllowedRotationAngleForJoint(SCNNode node);
 
     /**
-     * @method setMaxAllowedRotationAngle:forJoint:
-     * @abstract Specifies the maximum rotation allowed (in degrees) for the specified joint from its initial orientation. Defaults to 180.
+     * setMaxAllowedRotationAngle:forJoint:
+     * 
+     * Specifies the maximum rotation allowed (in degrees) for the specified joint from its initial orientation. Defaults to 180.
      */
     @Generated
     @Selector("setMaxAllowedRotationAngle:forJoint:")
     public native void setMaxAllowedRotationAngleForJoint(@NFloat double angle, SCNNode node);
 
     /**
-     * @property target
-     * @abstract Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
+     * [@property] target
+     * 
+     * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
      */
     @Generated
     @Selector("setTargetPosition:")
@@ -228,8 +238,9 @@ public class SCNIKConstraint extends SCNConstraint {
     }
 
     /**
-     * @property target
-     * @abstract Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
+     * [@property] target
+     * 
+     * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
      */
     @Generated
     @Selector("targetPosition")

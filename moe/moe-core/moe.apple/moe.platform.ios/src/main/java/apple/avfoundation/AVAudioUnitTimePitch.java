@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitTimePitch
- * @abstract an AVAudioUnitTimeEffect that provides good quality time stretching and pitch shifting
- * @discussion
+ * AVAudioUnitTimePitch
+ * 
+ * an AVAudioUnitTimeEffect that provides good quality time stretching and pitch shifting
+ * 
  *     In this time effect, the playback rate and pitch parameters function independently of each other
  */
 @Generated
@@ -175,9 +176,10 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
             @ByValue AudioComponentDescription audioComponentDescription);
 
     /**
-     * @property overlap
-     * @abstract amount of overlap between segments of the input audio signal
-     * @discussion
+     * [@property] overlap
+     * 
+     * amount of overlap between segments of the input audio signal
+     * 
      * A higher value results in fewer artifacts in the output signal.
      * This parameter also impacts the amount of CPU used.
      * 
@@ -190,9 +192,10 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     public native float overlap();
 
     /**
-     * @property pitch
-     * @abstract amount by which the input signal is pitch shifted
-     * @discussion
+     * [@property] pitch
+     * 
+     * amount by which the input signal is pitch shifted
+     * 
      *           1 octave  = 1200 cents
      * 1 musical semitone  = 100 cents
      * 
@@ -205,8 +208,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     public native float pitch();
 
     /**
-     * @property rate
-     * @abstract playback rate of the input signal
+     * [@property] rate
+     * 
+     * playback rate of the input signal
      * 
      * Range:      1/32 -> 32.0
      * Default:    1.0
@@ -217,9 +221,10 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     public native float rate();
 
     /**
-     * @property overlap
-     * @abstract amount of overlap between segments of the input audio signal
-     * @discussion
+     * [@property] overlap
+     * 
+     * amount of overlap between segments of the input audio signal
+     * 
      * A higher value results in fewer artifacts in the output signal.
      * This parameter also impacts the amount of CPU used.
      * 
@@ -232,9 +237,10 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     public native void setOverlap(float value);
 
     /**
-     * @property pitch
-     * @abstract amount by which the input signal is pitch shifted
-     * @discussion
+     * [@property] pitch
+     * 
+     * amount by which the input signal is pitch shifted
+     * 
      *           1 octave  = 1200 cents
      * 1 musical semitone  = 100 cents
      * 
@@ -247,8 +253,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
     public native void setPitch(float value);
 
     /**
-     * @property rate
-     * @abstract playback rate of the input signal
+     * [@property] rate
+     * 
+     * playback rate of the input signal
      * 
      * Range:      1/32 -> 32.0
      * Default:    1.0

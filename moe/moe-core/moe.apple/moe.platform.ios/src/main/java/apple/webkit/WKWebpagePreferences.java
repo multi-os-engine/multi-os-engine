@@ -26,7 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A WKWebpagePreferences object is a collection of properties that
  * determine the preferences to use when loading and rendering a page.
- * @discussion Contains properties used to determine webpage preferences.
+ * 
+ * Contains properties used to determine webpage preferences.
  */
 @Generated
 @Library("WebKit")
@@ -123,9 +124,10 @@ public class WKWebpagePreferences extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract A WKContentMode indicating the content mode to prefer
+     * A WKContentMode indicating the content mode to prefer
      * when loading and rendering a webpage.
-     * @discussion The default value is WKContentModeRecommended. The stated
+     * 
+     * The default value is WKContentModeRecommended. The stated
      * preference is ignored on subframe navigation
      */
     @Generated
@@ -142,9 +144,10 @@ public class WKWebpagePreferences extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract A WKContentMode indicating the content mode to prefer
+     * A WKContentMode indicating the content mode to prefer
      * when loading and rendering a webpage.
-     * @discussion The default value is WKContentModeRecommended. The stated
+     * 
+     * The default value is WKContentModeRecommended. The stated
      * preference is ignored on subframe navigation
      */
     @Generated
@@ -165,8 +168,9 @@ public class WKWebpagePreferences extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract A Boolean value indicating whether JavaScript from web content is enabled
-     * @discussion If this value is set to NO then JavaScript referenced by the web content will not execute.
+     * A Boolean value indicating whether JavaScript from web content is enabled
+     * 
+     * If this value is set to NO then JavaScript referenced by the web content will not execute.
      * This includes JavaScript found in inline <script> elements, referenced by external JavaScript resources,
      * "javascript:" URLs, and all other forms.
      * 
@@ -183,8 +187,9 @@ public class WKWebpagePreferences extends NSObject {
     public native boolean allowsContentJavaScript();
 
     /**
-     * @abstract A Boolean value indicating whether JavaScript from web content is enabled
-     * @discussion If this value is set to NO then JavaScript referenced by the web content will not execute.
+     * A Boolean value indicating whether JavaScript from web content is enabled
+     * 
+     * If this value is set to NO then JavaScript referenced by the web content will not execute.
      * This includes JavaScript found in inline <script> elements, referenced by external JavaScript resources,
      * "javascript:" URLs, and all other forms.
      * 

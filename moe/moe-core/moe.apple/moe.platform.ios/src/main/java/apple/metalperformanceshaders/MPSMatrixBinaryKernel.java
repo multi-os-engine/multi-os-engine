@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixBinaryKernel
- * @dependency This depends on Metal.framework
- * @discussion A MPSMatrixBinaryKernel consumes two MPSMatrix objects and produces
+ * MPSMatrixBinaryKernel
+ * [@dependency] This depends on Metal.framework
+ * 
+ * A MPSMatrixBinaryKernel consumes two MPSMatrix objects and produces
  *             one MPSMatrix object.
  */
 @Generated
@@ -66,9 +67,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   batchSize
+     * [@property]   batchSize
      * 
-     * @discussion The number of matrices in the batch to process.  This property
+     * The number of matrices in the batch to process.  This property
      *             is modifiable and by default allows all matrices available at
      *             encoding time to be processed.  If a single matrix should be
      *             processed set this value to 1.
@@ -79,9 +80,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public native long batchSize();
 
     /**
-     * @property   batchStart
+     * [@property]   batchStart
      * 
-     * @discussion The index of the first matrix in the batch.  This property is
+     * The index of the first matrix in the batch.  This property is
      *             modifiable and defaults to 0 at initialization time.  If
      *             batch processing should begin at a different matrix this value
      *             should be modified prior to encoding the kernel.
@@ -167,9 +168,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public static native Object new_objc();
 
     /**
-     * @property   primarySourceMatrixOrigin
+     * [@property]   primarySourceMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the primary source matrix, at which to
+     * The origin, relative to [0, 0] in the primary source matrix, at which to
      *             start reading values.  This property is modifiable and defaults to
      *             [0, 0] at initialization time.  If a different origin is desired then
      *             this should be modified prior to encoding the kernel.  The z value
@@ -189,9 +190,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   resultMatrixOrigin
+     * [@property]   resultMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the result matrix, at which to
+     * The origin, relative to [0, 0] in the result matrix, at which to
      *             start writing results.  This property is modifiable and defaults
      *             to [0, 0] at initialization time.  If a different origin is desired
      *             then this should be modified prior to encoding the kernel.  The z
@@ -203,9 +204,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public native MTLOrigin resultMatrixOrigin();
 
     /**
-     * @property   secondarySourceMatrixOrigin
+     * [@property]   secondarySourceMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the secondary source matrix, at which to
+     * The origin, relative to [0, 0] in the secondary source matrix, at which to
      *             start reading values.  This property is modifiable and defaults to
      *             [0, 0] at initialization time.  If a different origin is desired then
      *             this should be modified prior to encoding the kernel.  The z value
@@ -217,9 +218,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public native MTLOrigin secondarySourceMatrixOrigin();
 
     /**
-     * @property   batchSize
+     * [@property]   batchSize
      * 
-     * @discussion The number of matrices in the batch to process.  This property
+     * The number of matrices in the batch to process.  This property
      *             is modifiable and by default allows all matrices available at
      *             encoding time to be processed.  If a single matrix should be
      *             processed set this value to 1.
@@ -229,9 +230,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public native void setBatchSize(@NUInt long value);
 
     /**
-     * @property   batchStart
+     * [@property]   batchStart
      * 
-     * @discussion The index of the first matrix in the batch.  This property is
+     * The index of the first matrix in the batch.  This property is
      *             modifiable and defaults to 0 at initialization time.  If
      *             batch processing should begin at a different matrix this value
      *             should be modified prior to encoding the kernel.
@@ -241,9 +242,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public native void setBatchStart(@NUInt long value);
 
     /**
-     * @property   primarySourceMatrixOrigin
+     * [@property]   primarySourceMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the primary source matrix, at which to
+     * The origin, relative to [0, 0] in the primary source matrix, at which to
      *             start reading values.  This property is modifiable and defaults to
      *             [0, 0] at initialization time.  If a different origin is desired then
      *             this should be modified prior to encoding the kernel.  The z value
@@ -254,9 +255,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public native void setPrimarySourceMatrixOrigin(@ByValue MTLOrigin value);
 
     /**
-     * @property   resultMatrixOrigin
+     * [@property]   resultMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the result matrix, at which to
+     * The origin, relative to [0, 0] in the result matrix, at which to
      *             start writing results.  This property is modifiable and defaults
      *             to [0, 0] at initialization time.  If a different origin is desired
      *             then this should be modified prior to encoding the kernel.  The z
@@ -267,9 +268,9 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     public native void setResultMatrixOrigin(@ByValue MTLOrigin value);
 
     /**
-     * @property   secondarySourceMatrixOrigin
+     * [@property]   secondarySourceMatrixOrigin
      * 
-     * @discussion The origin, relative to [0, 0] in the secondary source matrix, at which to
+     * The origin, relative to [0, 0] in the secondary source matrix, at which to
      *             start reading values.  This property is modifiable and defaults to
      *             [0, 0] at initialization time.  If a different origin is desired then
      *             this should be modified prior to encoding the kernel.  The z value

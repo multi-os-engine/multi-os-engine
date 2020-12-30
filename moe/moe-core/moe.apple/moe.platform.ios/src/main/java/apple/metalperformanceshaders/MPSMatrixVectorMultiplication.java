@@ -28,13 +28,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixVectorMultiplication
+ * MPSMatrixVectorMultiplication
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A matrix-vector multiplication kernel.
+ * A matrix-vector multiplication kernel.
  * 
- * @discussion A MPSMatrixVectorMultiplication object computes:
+ * A MPSMatrixVectorMultiplication object computes:
  * 
  *                 y = alpha * op(A) * x + beta * y
  * 
@@ -106,18 +106,9 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixVectorMultiplication object to a command buffer.
+     * Encode a MPSMatrixVectorMultiplication object to a command buffer.
      * 
-     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
-     * 
-     * @param      inputMatrix     A valid MPSMatrix object which specifies the input matrix A.
-     * 
-     * @param      inputVector     A valid MPSVector object which specifies the input vector x.
-     * 
-     * @param      resultVector    A valid MPSVector object which specifies the addend vector which will
-     *                             also be overwritten by the result.
-     * 
-     * @discussion The left input matrix must be large enough to hold an array of size (rows x columns)
+     * The left input matrix must be large enough to hold an array of size (rows x columns)
      *             elements beginning at primarySourceMatrixOrigin.
      * 
      *             The input vector must be large enough to hold an array of size (columns)
@@ -127,6 +118,15 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
      *             The result vector must be large enough to hold an array of size (rows)
      *             elements beginning at resultMatrixOrigin.x.  resultMatrixOrigin.y and
      *             resultMatrixOrigin.z must be zero.
+     * 
+     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
+     * @param      inputMatrix     A valid MPSMatrix object which specifies the input matrix A.
+     * 
+     * @param      inputVector     A valid MPSVector object which specifies the input vector x.
+     * 
+     * @param      resultVector    A valid MPSVector object which specifies the addend vector which will
+     *                             also be overwritten by the result.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:inputVector:resultVector:")
@@ -157,7 +157,7 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     public native MPSMatrixVectorMultiplication initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Convenience initialization for a matrix-vector multiplication
+     * Convenience initialization for a matrix-vector multiplication
      *             with no transposition, unit scaling of the product, and no
      *             accumulation of the result.  The scaling factors alpha and beta
      *             are taken to be 1.0 and 0.0 respectively.
@@ -178,7 +178,7 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long rows, @NUInt long columns);
 
     /**
-     * @abstract   Initialize an MPSMatrixVectorMultiplication object on a device for a given size
+     * Initialize an MPSMatrixVectorMultiplication object on a device for a given size
      *             and desired transpose and scale values.
      * 
      * @param      device          The device on which the kernel will execute.

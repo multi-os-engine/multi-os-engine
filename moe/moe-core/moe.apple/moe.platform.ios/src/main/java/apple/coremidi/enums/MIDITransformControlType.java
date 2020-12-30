@@ -19,19 +19,19 @@ package apple.coremidi.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum       MIDITransformControlType
+ * [@enum]       MIDITransformControlType
  * 
- * @abstract   Specifies how control numbers are interpreted.
+ * Specifies how control numbers are interpreted.
  * 
- * @constant   kMIDIControlType_7Bit
+ * [@constant]   kMIDIControlType_7Bit
  *     control numbers may be 0-127
- * @constant   kMIDIControlType_14Bit
+ * [@constant]   kMIDIControlType_14Bit
  *     control numbers may be 0-31
- * @constant   kMIDIControlType_7BitRPN
+ * [@constant]   kMIDIControlType_7BitRPN
  *     control numbers may be 0-16383
- * @constant   kMIDIControlType_14BitRPN
- * @constant   kMIDIControlType_7BitNRPN
- * @constant   kMIDIControlType_14BitNRPN
+ * [@constant]   kMIDIControlType_14BitRPN
+ * [@constant]   kMIDIControlType_7BitNRPN
+ * [@constant]   kMIDIControlType_14BitNRPN
  */
 @Generated
 public final class MIDITransformControlType {

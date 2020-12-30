@@ -127,8 +127,9 @@ public class WKPDFConfiguration extends NSObject implements NSCopying {
     public static native Object new_objc();
 
     /**
-     * @abstract The rect to capture in web page coordinates
-     * @discussion If the rect is set to the null rect, the bounds of the currently displayed web page will be used.
+     * The rect to capture in web page coordinates
+     * 
+     * If the rect is set to the null rect, the bounds of the currently displayed web page will be used.
      * The initial value is the null rect.
      */
     @Generated
@@ -145,8 +146,9 @@ public class WKPDFConfiguration extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract The rect to capture in web page coordinates
-     * @discussion If the rect is set to the null rect, the bounds of the currently displayed web page will be used.
+     * The rect to capture in web page coordinates
+     * 
+     * If the rect is set to the null rect, the bounds of the currently displayed web page will be used.
      * The initial value is the null rect.
      */
     @Generated

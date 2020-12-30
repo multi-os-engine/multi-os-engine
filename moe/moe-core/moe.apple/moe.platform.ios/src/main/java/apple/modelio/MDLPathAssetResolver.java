@@ -26,12 +26,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLPathAssetResolver
+ * MDLPathAssetResolver
  * 
- * @abstract The path asset resolver searches for referenced files
+ * The path asset resolver searches for referenced files
  * by prepending path.
  * 
- * @discussion Path should resolve to a well formed URI. A file system
+ * Path should resolve to a well formed URI. A file system
  * path might take the form @"file:///path/to/all/assets/
  * 
  * A trailing slash is automatically appended to path if

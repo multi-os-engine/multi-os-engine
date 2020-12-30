@@ -45,7 +45,7 @@ public class UIAction extends UIMenuElement {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @abstract Creates a UIAction with the given arguments.
+     * Creates a UIAction with the given arguments.
      * 
      * @param title    The action's title.
      * @param image    Image that can appear next to this action, if needed.
@@ -257,7 +257,7 @@ public class UIAction extends UIMenuElement {
     public static native long version_static();
 
     /**
-     * @abstract Creates a UIAction with an empty title, nil image, and automatically generated identifier
+     * Creates a UIAction with an empty title, nil image, and automatically generated identifier
      * 
      * @param handler  Handler block. Called when the user selects the action.
      * 

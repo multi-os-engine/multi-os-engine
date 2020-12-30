@@ -20,7 +20,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLAccelerationStructureCommandEncoder")
 public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncoder {
     /**
-     * @brief Encode an acceleration structure build into the command buffer. All bottom-level acceleration
+     * Encode an acceleration structure build into the command buffer. All bottom-level acceleration
      * structure builds must have completed before a top-level acceleration structure build may begin. Note
      * that this requires the use of fences and multiple acceleration structure encoders if the acceleration
      * structures are allocated from heaps. The resulting acceleration structure will not retain any
@@ -49,7 +49,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
             @NUInt long scratchBufferOffset);
 
     /**
-     * @brief Copy an acceleration structure. The source and destination acceleration structures must not
+     * Copy an acceleration structure. The source and destination acceleration structures must not
      * overlap in memory. If this is a top level acceleration structure, references to bottom level
      * acceleration structures will be preserved.
      * 
@@ -67,7 +67,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
             @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure);
 
     /**
-     * @brief Copy and compact an acceleration structure. The source and destination acceleration structures
+     * Copy and compact an acceleration structure. The source and destination acceleration structures
      * must not overlap in memory. If this is a top level acceleration structure, references to bottom level
      * acceleration structures will be preserved.
      * 
@@ -84,7 +84,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
             @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure);
 
     /**
-     * @brief Encode an acceleration structure refit into the command buffer. Refitting can be used to
+     * Encode an acceleration structure refit into the command buffer. Refitting can be used to
      * update the acceleration structure when geometry changes and is much faster than rebuilding from
      * scratch. However, the quality of the acceleration structure and the subsequent ray tracing
      * performance will degrade depending on how much the geometry changes.
@@ -118,9 +118,11 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
             @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset);
 
     /**
-     * @method sampleCountersInBuffer:atSampleIndex:withBarrier:
-     * @abstract Sample hardware counters at this point in the compute encoder and
+     * sampleCountersInBuffer:atSampleIndex:withBarrier:
+     * 
+     * Sample hardware counters at this point in the compute encoder and
      * store the counter sample into the sample buffer at the specified index.
+     * 
      * @param sampleBuffer The sample buffer to sample into
      * @param sampleIndex The index into the counter buffer to write the sample
      * @param barrier Insert a barrier before taking the sample.  Passing
@@ -139,9 +141,11 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
             boolean barrier);
 
     /**
-     * @method updateFence:
-     * @abstract Update the fence to capture all GPU work so far enqueued by this encoder.
-     * @discussion The fence is updated at kernel submission to maintain global order and prevent deadlock.
+     * updateFence:
+     * 
+     * Update the fence to capture all GPU work so far enqueued by this encoder.
+     * 
+     * The fence is updated at kernel submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
@@ -149,41 +153,48 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     void updateFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
-     * @method useHeap:
-     * @abstract Declare that the resources allocated from a heap may be accessed as readonly by the render pass through an argument buffer
-     * @discussion For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heap through an argument buffer. This method may cause all of the color attachments allocated from the heap to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
-     * @warning Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * useHeap:
+     * 
+     * Declare that the resources allocated from a heap may be accessed as readonly by the render pass through an argument buffer
+     * 
+     * For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heap through an argument buffer. This method may cause all of the color attachments allocated from the heap to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useHeap:")
     void useHeap(@Mapped(ObjCObjectMapper.class) MTLHeap heap);
 
     /**
-     * @method useHeaps:count:
-     * @abstract Declare that the resources allocated from an array of heaps may be accessed as readonly by the render pass through an argument buffer
-     * @discussion For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heaps through an argument buffer. This method may cause all of the color attachments allocated from the heaps to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
-     * @warning Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * useHeaps:count:
+     * 
+     * Declare that the resources allocated from an array of heaps may be accessed as readonly by the render pass through an argument buffer
+     * 
+     * For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heaps through an argument buffer. This method may cause all of the color attachments allocated from the heaps to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useHeaps:count:")
     void useHeapsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
 
     /**
-     * @method useResource:usage:
-     * @abstract Declare that a resource may be accessed by the command encoder through an argument buffer
+     * useResource:usage:
      * 
-     * @discussion For tracked MTLResources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resource through an argument buffer.
-     * @warning Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * Declare that a resource may be accessed by the command encoder through an argument buffer
+     * 
+     * For tracked MTLResources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resource through an argument buffer.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useResource:usage:")
     void useResourceUsage(@Mapped(ObjCObjectMapper.class) MTLResource resource, @NUInt long usage);
 
     /**
-     * @method useResources:count:usage:
-     * @abstract Declare that an array of resources may be accessed through an argument buffer by the command encoder
-     * @discussion For tracked MTL Resources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources through an argument buffer.
-     * @warning Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * useResources:count:usage:
+     * 
+     * Declare that an array of resources may be accessed through an argument buffer by the command encoder
+     * 
+     * For tracked MTL Resources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources through an argument buffer.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useResources:count:usage:")
@@ -191,9 +202,11 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
             @NUInt long usage);
 
     /**
-     * @method waitForFence:
-     * @abstract Prevent further GPU work until the fence is reached.
-     * @discussion The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
+     * waitForFence:
+     * 
+     * Prevent further GPU work until the fence is reached.
+     * 
+     * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
@@ -201,7 +214,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     void waitForFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
-     * @brief Compute the compacted size for an acceleration structure and write it into a buffer.
+     * Compute the compacted size for an acceleration structure and write it into a buffer.
      * 
      * This size is potentially smaller than the source acceleration structure. To perform compaction,
      * read this size from the buffer once the command buffer has completed and use it to allocate a

@@ -78,7 +78,7 @@ public class MPSMatrixCopy extends MPSKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   The number of columns to copy for each copy operation
+     * The number of columns to copy for each copy operation
      */
     @Generated
     @Selector("copyColumns")
@@ -86,7 +86,7 @@ public class MPSMatrixCopy extends MPSKernel {
     public native long copyColumns();
 
     /**
-     * @abstract   The number of rows to copy for each copy operation
+     * The number of rows to copy for each copy operation
      */
     @Generated
     @Selector("copyRows")
@@ -102,14 +102,14 @@ public class MPSMatrixCopy extends MPSKernel {
     public static native String description_static();
 
     /**
-     * @abstract   If YES, the destinations are in row major storage order
+     * If YES, the destinations are in row major storage order
      */
     @Generated
     @Selector("destinationsAreTransposed")
     public native boolean destinationsAreTransposed();
 
     /**
-     * @abstract   Encode the copy operations to the command buffer
+     * Encode the copy operations to the command buffer
      * 
      * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -134,8 +134,10 @@ public class MPSMatrixCopy extends MPSKernel {
     public native MPSMatrixCopy initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixLookUpAndCopy
      * @param      device      The MTLDevice on which to make the MPSMatrixLookUpAndCopy
      * @return     A new MPSMatrixLookUpAndCopy object, or nil if failure.
@@ -149,7 +151,8 @@ public class MPSMatrixCopy extends MPSKernel {
     public native MPSMatrixCopy initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a copy operator
+     * Initialize a copy operator
+     * 
      * @param      copyRows        The number of rows to copy for each copy operation
      * @param      copyColumns     The number of matrix columns to copy in each copy operation
      * @param      sourcesAreTransposed       If YES, the sources are in column major storage order
@@ -201,7 +204,7 @@ public class MPSMatrixCopy extends MPSKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract   If YES, the sources are in row major storage order
+     * If YES, the sources are in row major storage order
      */
     @Generated
     @Selector("sourcesAreTransposed")
@@ -227,7 +230,7 @@ public class MPSMatrixCopy extends MPSKernel {
     public static native long version_static();
 
     /**
-     * @abstract   Encode the copy operations to the command buffer.
+     * Encode the copy operations to the command buffer.
      *             This of the encode version support permuting the outputs with custom vectors of indices.
      *             The permutations are defined on the destination indices and are the same for each copy
      *             operation.

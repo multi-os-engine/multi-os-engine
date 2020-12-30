@@ -19,17 +19,17 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @constant   kCTFontFormatUnrecognized
+ * [@constant]   kCTFontFormatUnrecognized
  *             The font is not a recognized format
- * @constant   kCTFontFormatOpenTypePostScript
+ * [@constant]   kCTFontFormatOpenTypePostScript
  *             The font is an OpenType format containing PostScript data
- * @constant   kCTFontFormatOpenTypeTrueType
+ * [@constant]   kCTFontFormatOpenTypeTrueType
  *             The font is an OpenType format containing TrueType data
- * @constant   kCTFontFormatTrueType
+ * [@constant]   kCTFontFormatTrueType
  *             The font is a recognized TrueType format
- * @constant   kCTFontFormatPostScript
+ * [@constant]   kCTFontFormatPostScript
  *             The font is a recognized PostScript format
- * @constant   kCTFontFormatBitmap
+ * [@constant]   kCTFontFormatBitmap
  *             The font is a bitmap only format
  */
 @Generated

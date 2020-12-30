@@ -27,8 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A relevance provider to indicate relevance at a specific location.
- * @note Your app needs Always or When in Use location authorization to use this relevance provider.
+ * A relevance provider to indicate relevance at a specific location.
+ * [@note] Your app needs Always or When in Use location authorization to use this relevance provider.
  */
 @Generated
 @Library("Intents")
@@ -102,7 +102,7 @@ public class INLocationRelevanceProvider extends INRelevanceProvider {
     public native INLocationRelevanceProvider initWithCoder(NSCoder coder);
 
     /**
-     * @abstract Initializes a location relevance provider with the specified region.
+     * Initializes a location relevance provider with the specified region.
      */
     @Generated
     @Selector("initWithRegion:")
@@ -136,8 +136,9 @@ public class INLocationRelevanceProvider extends INRelevanceProvider {
     public static native Object new_objc();
 
     /**
-     * @abstract The region representing the relevant location.
-     * @seealso CLCircularRegion
+     * The region representing the relevant location.
+     * 
+     * @see CLCircularRegion
      */
     @Generated
     @Selector("region")

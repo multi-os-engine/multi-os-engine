@@ -46,10 +46,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioInputNode
- * @abstract 
+ * AVAudioInputNode
+ * 
  * 	A node that performs audio input in the engine.
- * @discussion
+ * 
  * 		When the engine is rendering to/from an audio device, this node connects to the system's 
  * 	audio input.
  * 	When the engine is operating in manual rendering mode, this node can be used to supply
@@ -254,9 +254,15 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     public native float volume();
 
     /**
-     * @method setManualRenderingInputPCMFormat:inputBlock:
-     * @abstract
+     * setManualRenderingInputPCMFormat:inputBlock:
+     * 
      * 	Supply the data through the input node to the engine operating in the manual rendering mode.
+     * 
+     * 		This block must be set if the input node is being used when the engine is operating in 
+     * 	manual rendering mode.
+     * 	Switching the engine to render to/from an audio device invalidates any previously set block, 
+     * 	and makes this method ineffective.
+     * 
      * @param format
      * 	The format of the PCM audio data the block will supply to the engine
      * @param block
@@ -264,11 +270,6 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
      * 	when operating in the manual rendering mode. See `AVAudioIONodeInputBlock` for more details
      * @return
      * 	YES for success
-     * @discussion
-     * 		This block must be set if the input node is being used when the engine is operating in 
-     * 	manual rendering mode.
-     * 	Switching the engine to render to/from an audio device invalidates any previously set block, 
-     * 	and makes this method ineffective.
      */
     @Generated
     @Selector("setManualRenderingInputPCMFormat:inputBlock:")
@@ -284,11 +285,11 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     }
 
     /**
-     * @property voiceProcessingAGCEnabled
-     * @abstract
+     * [@property] voiceProcessingAGCEnabled
+     * 
      *     Enable automatic gain control on the processed microphone/uplink
      *     signal. Enabled by default.
-     * @discussion
+     * 
      *     Querying this property when voice processing is disabled will return false.
      */
     @Generated
@@ -296,10 +297,10 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     public native boolean isVoiceProcessingAGCEnabled();
 
     /**
-     * @property voiceProcessingBypassed
-     * @abstract
+     * [@property] voiceProcessingBypassed
+     * 
      *    Bypass all processing done by the voice processing unit.
-     * @discussion
+     * 
      *    Querying this property when voice processing is disabled will return false.
      */
     @Generated
@@ -307,10 +308,10 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     public native boolean isVoiceProcessingBypassed();
 
     /**
-     * @property voiceProcessingInputMuted
-     * @abstract
+     * [@property] voiceProcessingInputMuted
+     * 
      *     Mutes the input of the voice processing unit.
-     * @discussion
+     * 
      *     Querying this property when voice processing is disabled will return false.
      */
     @Generated
@@ -331,11 +332,11 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     public native void setSourceMode(@NInt long value);
 
     /**
-     * @property voiceProcessingAGCEnabled
-     * @abstract
+     * [@property] voiceProcessingAGCEnabled
+     * 
      *     Enable automatic gain control on the processed microphone/uplink
      *     signal. Enabled by default.
-     * @discussion
+     * 
      *     Querying this property when voice processing is disabled will return false.
      */
     @Generated
@@ -343,10 +344,10 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     public native void setVoiceProcessingAGCEnabled(boolean value);
 
     /**
-     * @property voiceProcessingBypassed
-     * @abstract
+     * [@property] voiceProcessingBypassed
+     * 
      *    Bypass all processing done by the voice processing unit.
-     * @discussion
+     * 
      *    Querying this property when voice processing is disabled will return false.
      */
     @Generated
@@ -354,10 +355,10 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     public native void setVoiceProcessingBypassed(boolean value);
 
     /**
-     * @property voiceProcessingInputMuted
-     * @abstract
+     * [@property] voiceProcessingInputMuted
+     * 
      *     Mutes the input of the voice processing unit.
-     * @discussion
+     * 
      *     Querying this property when voice processing is disabled will return false.
      */
     @Generated

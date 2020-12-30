@@ -44,11 +44,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKDatabaseSubscription
+ * CKDatabaseSubscription
  * 
- * @abstract A subscription fires whenever any change happens in the database that this subscription was saved in.
+ * A subscription fires whenever any change happens in the database that this subscription was saved in.
  * 
- * @discussion @c CKDatabaseSubscription is only supported in the Private and Shared databases.
+ * [@c] CKDatabaseSubscription is only supported in the Private and Shared databases.
  */
 @Generated
 @Library("CloudKit")

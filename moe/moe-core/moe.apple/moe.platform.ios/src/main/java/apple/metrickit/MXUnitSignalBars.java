@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXUnitSignalBars
- * @abstract      An NSUnit subclass representing the number of signal bars for signal strength.
+ * MXUnitSignalBars
+ * 
+ * An NSUnit subclass representing the number of signal bars for signal strength.
  */
 @Generated
 @Library("MetricKit")

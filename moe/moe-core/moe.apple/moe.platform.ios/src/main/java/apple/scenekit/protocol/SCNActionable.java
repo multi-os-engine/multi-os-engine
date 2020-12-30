@@ -32,56 +32,63 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("SCNActionable")
 public interface SCNActionable {
     /**
-     * @method actionForKey:
-     * @abstract Returns an action associated with a specific key.
+     * actionForKey:
+     * 
+     * Returns an action associated with a specific key.
      */
     @Generated
     @Selector("actionForKey:")
     SCNAction actionForKey(String key);
 
     /**
-     * @property actionKeys
-     * @abstract Returns an array containing the keys of all actions currently attached to the receiver.
+     * [@property] actionKeys
+     * 
+     * Returns an array containing the keys of all actions currently attached to the receiver.
      */
     @Generated
     @Selector("actionKeys")
     NSArray<String> actionKeys();
 
     /**
-     * @property hasActions
-     * @abstract Returns a Boolean value that indicates whether the node is executing actions.
+     * [@property] hasActions
+     * 
+     * Returns a Boolean value that indicates whether the node is executing actions.
      */
     @Generated
     @Selector("hasActions")
     boolean hasActions();
 
     /**
-     * @method removeActionForKey:
-     * @abstract Removes an action associated with a specific key.
+     * removeActionForKey:
+     * 
+     * Removes an action associated with a specific key.
      */
     @Generated
     @Selector("removeActionForKey:")
     void removeActionForKey(String key);
 
     /**
-     * @method removeAllActions
-     * @abstract Ends and removes all actions from the node.
+     * removeAllActions
+     * 
+     * Ends and removes all actions from the node.
      */
     @Generated
     @Selector("removeAllActions")
     void removeAllActions();
 
     /**
-     * @method runAction:
-     * @abstract Adds an action to the list of actions executed by the node.
+     * runAction:
+     * 
+     * Adds an action to the list of actions executed by the node.
      */
     @Generated
     @Selector("runAction:")
     void runAction(SCNAction action);
 
     /**
-     * @method runAction:completionHandler:
-     * @abstract Adds an action to the list of actions executed by the node. Your block is called when the action completes.
+     * runAction:completionHandler:
+     * 
+     * Adds an action to the list of actions executed by the node. Your block is called when the action completes.
      */
     @Generated
     @Selector("runAction:completionHandler:")
@@ -89,16 +96,18 @@ public interface SCNActionable {
             @ObjCBlock(name = "call_runActionCompletionHandler") Block_runActionCompletionHandler block);
 
     /**
-     * @method runAction:forKey:
-     * @abstract Adds an identifiable action to the list of actions executed by the node.
+     * runAction:forKey:
+     * 
+     * Adds an identifiable action to the list of actions executed by the node.
      */
     @Generated
     @Selector("runAction:forKey:")
     void runActionForKey(SCNAction action, String key);
 
     /**
-     * @method runAction:forKey:completionHandler:
-     * @abstract Adds an identifiable action to the list of actions executed by the node. Your block is called when the action completes.
+     * runAction:forKey:completionHandler:
+     * 
+     * Adds an identifiable action to the list of actions executed by the node. Your block is called when the action completes.
      */
     @Generated
     @Selector("runAction:forKey:completionHandler:")

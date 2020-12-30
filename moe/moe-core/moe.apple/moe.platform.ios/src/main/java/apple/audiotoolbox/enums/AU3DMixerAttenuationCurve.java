@@ -19,7 +19,7 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum 3D Mixer Attenuation Curves
+ * [@enum] 3D Mixer Attenuation Curves
  */
 @Generated
 public final class AU3DMixerAttenuationCurve {

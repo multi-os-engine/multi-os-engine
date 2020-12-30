@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKCategoryValueMenstrualFlow
- * @abstract      Set of values to indicate the type of menstrual flow.
+ * [@enum]          HKCategoryValueMenstrualFlow
+ * 
+ * Set of values to indicate the type of menstrual flow.
  */
 @Generated
 public final class HKCategoryValueMenstrualFlow {

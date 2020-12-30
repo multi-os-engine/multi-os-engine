@@ -20,11 +20,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum       MSMessagesAppPresentationStyle
- * @abstract   Describes how the extension is presented in Messages.
- * @constant   MSMessagesAppPresentationStyleCompact     The extension's UI is presented compact in the keyboard area.
- * @constant   MSMessagesAppPresentationStyleExpanded   The extension's UI is presented expanded taking up most of the screen.
- * @constant   MSMessagesAppPresentationStyleTranscript   The extension's UI is presented in the transcript of the conversation in Messages.
+ * [@enum]       MSMessagesAppPresentationStyle
+ * 
+ * Describes how the extension is presented in Messages.
+ * [@constant]   MSMessagesAppPresentationStyleCompact     The extension's UI is presented compact in the keyboard area.
+ * [@constant]   MSMessagesAppPresentationStyleExpanded   The extension's UI is presented expanded taking up most of the screen.
+ * [@constant]   MSMessagesAppPresentationStyleTranscript   The extension's UI is presented in the transcript of the conversation in Messages.
  */
 @Generated
 public final class MSMessagesAppPresentationStyle {

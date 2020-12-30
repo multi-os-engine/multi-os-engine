@@ -33,8 +33,12 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVPlayerItemMetadataCollectorPushDelegate")
 public interface AVPlayerItemMetadataCollectorPushDelegate {
     /**
-     * @method			metadataCollector:didCollectDateRangeMetadataGroups:indexesOfNewGroup:indexesOfModifiedGroups:
-     * @abstract		A delegate callback that delivers the total set of AVDateRangeMetadataGroups for this collector.
+     * metadataCollector:didCollectDateRangeMetadataGroups:indexesOfNewGroup:indexesOfModifiedGroups:
+     * 
+     * A delegate callback that delivers the total set of AVDateRangeMetadataGroups for this collector.
+     * 
+     * 	This method will be invoked whenever new AVDateRangeMetadataGroups are added to metadataGroups or whenever any AVDateRangeMetadataGroups in metadataGroups have been modified since previous invocations. The initial invocation will have indexesOfNewGroup referring to every index in metadataGroups. Subsequent invocations may not contain all previously collected metadata groups if they no longer refer to a region in the AVPlayerItem's seekableTimeRanges.
+     * 
      * @param			metadataCollector
      * 				The AVPlayerItemMetadataCollector source.
      * @param			metadataGroups
@@ -43,8 +47,6 @@ public interface AVPlayerItemMetadataCollectorPushDelegate {
      * 				Indexes of metadataGroups added since the last delegate invocation of this method.
      * @param			indexesOfModifiedGroups
      * 				Indexes of metadataGroups modified since the last delegate invocation of this method.
-     * @discussion
-     * 	This method will be invoked whenever new AVDateRangeMetadataGroups are added to metadataGroups or whenever any AVDateRangeMetadataGroups in metadataGroups have been modified since previous invocations. The initial invocation will have indexesOfNewGroup referring to every index in metadataGroups. Subsequent invocations may not contain all previously collected metadata groups if they no longer refer to a region in the AVPlayerItem's seekableTimeRanges.
      */
     @Generated
     @Selector("metadataCollector:didCollectDateRangeMetadataGroups:indexesOfNewGroups:indexesOfModifiedGroups:")

@@ -46,9 +46,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitMIDIInstrument
- * @abstract Base class for sample synthesizers.
- * @discussion
+ * AVAudioUnitMIDIInstrument
+ * 
+ * Base class for sample synthesizers.
+ * 
  *    This base class represents audio units of type kAudioUnitType_MusicDevice or kAudioUnitType_RemoteInstrument. This can be used in a chain
  *    that processes realtime input (live) and has general concept of music events i.e. notes.
  */
@@ -178,8 +179,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native AVAudioUnitMIDIInstrument init();
 
     /**
-     * @method initWithAudioComponentDescription:
-     * @abstract initialize the node with the component description
+     * initWithAudioComponentDescription:
+     * 
+     * initialize the node with the component description
+     * 
      * @param description
      *    audio component description structure that describes the audio component of type kAudioUnitType_MusicDevice
      *    or kAudioUnitType_RemoteInstrument.
@@ -220,8 +223,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native float reverbBlend();
 
     /**
-     * @method sendController:withValue:onChannel:
-     * @abstract send a MIDI controller event to the instrument.
+     * sendController:withValue:onChannel:
+     * 
+     * send a MIDI controller event to the instrument.
+     * 
      * @param controller
      *    a standard MIDI controller number. 
      *    Range: 0 -> 127
@@ -237,8 +242,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendControllerWithValueOnChannel(byte controller, byte value, byte channel);
 
     /**
-     * @method sendMIDIEvent:data1:
-     * @abstract sends a MIDI event which contains one data byte to the instrument.
+     * sendMIDIEvent:data1:
+     * 
+     * sends a MIDI event which contains one data byte to the instrument.
+     * 
      * @param midiStatus
      *    the STATUS value of the MIDI event
      * @param data1
@@ -249,8 +256,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendMIDIEventData1(byte midiStatus, byte data1);
 
     /**
-     * @method sendMIDIEvent:data1:data2:
-     * @abstract sends a MIDI event which contains two data bytes to the instrument.
+     * sendMIDIEvent:data1:data2:
+     * 
+     * sends a MIDI event which contains two data bytes to the instrument.
+     * 
      * @param midiStatus
      *    the STATUS value of the MIDI event
      * @param data1
@@ -263,8 +272,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendMIDIEventData1Data2(byte midiStatus, byte data1, byte data2);
 
     /**
-     * @method sendMIDISysExEvent:
-     * @abstract sends a MIDI System Exclusive event to the instrument.
+     * sendMIDISysExEvent:
+     * 
+     * sends a MIDI System Exclusive event to the instrument.
+     * 
      * @param midiData
      *    a NSData object containing the complete SysEx data including start(F0) and termination(F7) bytes.
      */
@@ -273,8 +284,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendMIDISysExEvent(NSData midiData);
 
     /**
-     * @method sendPitchBend:onChannel:
-     * @abstract sends MIDI Pitch Bend event to the instrument.
+     * sendPitchBend:onChannel:
+     * 
+     * sends MIDI Pitch Bend event to the instrument.
+     * 
      * @param pitchbend
      *    value of the pitchbend
      *    Range: 0 -> 16383
@@ -287,8 +300,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendPitchBendOnChannel(char pitchbend, byte channel);
 
     /**
-     * @method sendPressure:onChannel:
-     * @abstract sends MIDI channel pressure event to the instrument.
+     * sendPressure:onChannel:
+     * 
+     * sends MIDI channel pressure event to the instrument.
+     * 
      * @param pressure 
      *    value of the pressure.
      *    Range: 0 -> 127
@@ -301,8 +316,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendPressureOnChannel(byte pressure, byte channel);
 
     /**
-     * @method sendPressureForKey:withValue:onChannel:
-     * @abstract sends MIDI Polyphonic key pressure event to the instrument
+     * sendPressureForKey:withValue:onChannel:
+     * 
+     * sends MIDI Polyphonic key pressure event to the instrument
+     * 
      * @param key
      *    the key (note) number to which the pressure event applies
      *    Range: 0 -> 127
@@ -318,8 +335,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendPressureForKeyWithValueOnChannel(byte key, byte value, byte channel);
 
     /**
-     * @method sendProgramChange:bankMSB:bankLSB:onChannel:
-     * @abstract sends a MIDI Program Change and Bank Select events to the instrument
+     * sendProgramChange:bankMSB:bankLSB:onChannel:
+     * 
+     * sends a MIDI Program Change and Bank Select events to the instrument
+     * 
      * @param program
      *    specifies the program (preset) number within the bank to load.
      *    Range: 0 -> 127
@@ -338,17 +357,19 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendProgramChangeBankMSBBankLSBOnChannel(byte program, byte bankMSB, byte bankLSB, byte channel);
 
     /**
-     * @method sendProgramChange:onChannel:
-     * @abstract sends MIDI Program Change event to the instrument
+     * sendProgramChange:onChannel:
+     * 
+     * sends MIDI Program Change event to the instrument
+     * 
+     *    the instrument will be loaded from the bank that has been previous set by MIDI Bank Select
+     *    controller messages (0 and 31). If none has been set, bank 0 will be used. 
+     * 
      * @param program
      *    the program number.
      *    Range: 0 -> 127
      * @param channel
      *    the channel number to which the event is sent.
      * Range: 0 -> 15
-     * @discussion
-     *    the instrument will be loaded from the bank that has been previous set by MIDI Bank Select
-     *    controller messages (0 and 31). If none has been set, bank 0 will be used. 
      */
     @Generated
     @Selector("sendProgramChange:onChannel:")
@@ -387,8 +408,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void setVolume(float value);
 
     /**
-     * @method startNote:withVelocity:onChannel:
-     * @abstract sends a MIDI Note On event to the instrument
+     * startNote:withVelocity:onChannel:
+     * 
+     * sends a MIDI Note On event to the instrument
+     * 
      * @param note
      *    the note number (key) to play.
      *    Range: 0 -> 127
@@ -404,8 +427,10 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void startNoteWithVelocityOnChannel(byte note, byte velocity, byte channel);
 
     /**
-     * @method stopNote:onChannel:
-     * @abstract sends a MIDI Note Off event to the instrument
+     * stopNote:onChannel:
+     * 
+     * sends a MIDI Note Off event to the instrument
+     * 
      * @param note
      *    the note number (key) to stop
      *    Range: 0 -> 127

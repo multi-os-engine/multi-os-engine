@@ -20,9 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKCategoryValueSleepAnalysis
- * @abstract      Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierSleepAnalysis type.
- * @discussion    To represent the user being both in bed and asleep, use two or more samples with overlapping times. By comparing the
+ * [@enum]          HKCategoryValueSleepAnalysis
+ * 
+ * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierSleepAnalysis type.
+ * 
+ * To represent the user being both in bed and asleep, use two or more samples with overlapping times. By comparing the
  *                start and end times of these samples, it is possible to calculate a number of secondary statistics:
  *                1) The amount of time it took for the user to fall asleep
  *                2) The percentage of time in bed that the user actually spent sleeping,

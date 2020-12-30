@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol ADBannerViewDelegate
+ * [@protocol] ADBannerViewDelegate
  */
 @Generated
 @Library("iAd")
@@ -35,9 +35,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("ADBannerViewDelegate")
 public interface ADBannerViewDelegate {
     /**
-     * @method bannerView:didFailToReceiveAdWithError:
+     * bannerView:didFailToReceiveAdWithError:
      * 
-     * @discussion
      * Called when an error has occurred while attempting to get ad content. If the
      * banner is being displayed when an error occurs, it should be hidden
      * to prevent display of a banner view with no ad content.
@@ -52,7 +51,7 @@ public interface ADBannerViewDelegate {
     }
 
     /**
-     * @method bannerViewActionDidFinish:
+     * bannerViewActionDidFinish:
      * 
      * Called when a modal action has completed and control is returned to the
      * application. Games, media playback, and other activities that were paused in
@@ -66,7 +65,7 @@ public interface ADBannerViewDelegate {
     }
 
     /**
-     * @method bannerViewActionShouldBegin:willLeaveApplication:
+     * bannerViewActionShouldBegin:willLeaveApplication:
      * 
      * Called when the user taps on the banner and some action is to be taken.
      * Actions either display full screen content modally, or take the user to a
@@ -88,9 +87,8 @@ public interface ADBannerViewDelegate {
     }
 
     /**
-     * @method bannerViewDidLoadAd:
+     * bannerViewDidLoadAd:
      * 
-     * @discussion
      * Called each time a banner loads a new ad. Once a banner has loaded an ad, it
      * will display it until another ad is available.
      * 
@@ -105,9 +103,8 @@ public interface ADBannerViewDelegate {
     }
 
     /**
-     * @method bannerViewWillLoadAd:
+     * bannerViewWillLoadAd:
      * 
-     * @discussion
      * Called when a banner has confirmation that an ad will be presented, but
      * before the resources necessary for presentation have loaded.
      */

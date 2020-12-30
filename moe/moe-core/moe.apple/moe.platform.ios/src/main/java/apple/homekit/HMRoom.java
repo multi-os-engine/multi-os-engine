@@ -43,7 +43,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class describes a room in the home.
+ * This class describes a room in the home.
  */
 @Generated
 @Library("HomeKit")
@@ -157,7 +157,7 @@ public class HMRoom extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief Array of HMAccessory objects that correspond to the accessories
+     * Array of HMAccessory objects that correspond to the accessories
      *        associated with this room.
      */
     @Generated
@@ -169,21 +169,21 @@ public class HMRoom extends NSObject {
     public native HMRoom init();
 
     /**
-     * @brief Name of the room.
+     * Name of the room.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @brief A unique identifier for the room.
+     * A unique identifier for the room.
      */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
-     * @brief This method is used to change the name of the room.
+     * This method is used to change the name of the room.
      * 
      * @param name New name for the room.
      * 

@@ -30,9 +30,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNLossLabels
- * @dependency This depends on Metal.framework.
- * @discussion The MPSCNNLossLabels is used to hold the per-element weights buffer
+ * MPSCNNLossLabels
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * The MPSCNNLossLabels is used to hold the per-element weights buffer
  *             used by both MPSCNNLoss forward filter and MPSNNLossGradient backward filter.
  *             The MPSCNNLoss forward filter populates the MPSCNNLossLabels object
  *             and the MPSNNLossGradient backward filter consumes the state object.
@@ -110,13 +111,15 @@ public class MPSCNNLossLabels extends MPSState {
             @NUInt long bufferSize);
 
     /**
-     * @abstract   Set labels (aka targets, ground truth) for the MPSCNNLossLabels object.
-     * @discussion The labels and weights data are copied into internal storage. The computed loss can either be a
+     * Set labels (aka targets, ground truth) for the MPSCNNLossLabels object.
+     * 
+     * The labels and weights data are copied into internal storage. The computed loss can either be a
      *                                     scalar value (in batch mode, a single value per image in a batch) or it
      *                                     can be one value per feature channel. Thus, the size of the loss image
      *                                     must either match the size of the input source image or be {1, 1, 1},
      *                                     which results in a scalar value. In this convinience initializer, the
      *                                     assumed size of the loss image is {1, 1, 1}.
+     * 
      * @param      device                  Device the state resources will be created on.
      * @param      labelsDescriptor        Describes the labels data. This includes:
      *                                         - The per-element labels data. The data must be in floating point format.
@@ -131,9 +134,11 @@ public class MPSCNNLossLabels extends MPSState {
             MPSCNNLossDataDescriptor labelsDescriptor);
 
     /**
-     * @abstract   Set labels (aka targets, ground truth) and weights for the MPSCNNLossLabels object.
+     * Set labels (aka targets, ground truth) and weights for the MPSCNNLossLabels object.
      *             Weights are optional.
-     * @discussion The labels and weights data are copied into internal storage.
+     * 
+     * The labels and weights data are copied into internal storage.
+     * 
      * @param      device                  Device the state resources will be created on.
      * @param      lossImageSize           The size of the resulting loss image: { width, height, featureChannels }.
      *                                     The computed loss can either be a scalar value (in batch mode, a single
@@ -162,10 +167,12 @@ public class MPSCNNLossLabels extends MPSState {
             MPSCNNLossDataDescriptor labelsDescriptor, MPSCNNLossDataDescriptor weightsDescriptor);
 
     /**
-     * @abstract   Set labels (aka targets, ground truth) and weights for the MPSCNNLossLabels object.
+     * Set labels (aka targets, ground truth) and weights for the MPSCNNLossLabels object.
      *             Weights are optional.
-     * @discussion The labels and weights images are retained - it is the users responsibility to make sure that they contain
+     * 
+     * The labels and weights images are retained - it is the users responsibility to make sure that they contain
      *             the right data when the loss filter is run on the device.
+     * 
      * @param      device                  Device the state resources will be created on.
      * @param      lossImageSize           The size of the resulting loss image: { width, height, featureChannels }.
      *                                     The computed loss can either be a scalar value (in batch mode, a single
@@ -223,7 +230,8 @@ public class MPSCNNLossLabels extends MPSState {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract   Labels image accessor method.
+     * Labels image accessor method.
+     * 
      * @return     An autoreleased MPSImage object, containing the labels data.
      *             The labels data is populated in the -initWithDevice call.
      * 
@@ -236,7 +244,8 @@ public class MPSCNNLossLabels extends MPSState {
     public native MPSImage labelsImage();
 
     /**
-     * @abstract   Loss image accessor method.
+     * Loss image accessor method.
+     * 
      * @return     An autoreleased MPSImage object, containing the loss data.
      *             The loss data is populated in the -encode call, thus the contents
      *             are undefined until you -encode the filter.
@@ -301,7 +310,8 @@ public class MPSCNNLossLabels extends MPSState {
     public static native long version_static();
 
     /**
-     * @abstract   Weights image accessor method.
+     * Weights image accessor method.
+     * 
      * @return     An autoreleased MPSImage object, containing the weights data.
      *             The weights data is populated in the -initWithDevice call.
      * 

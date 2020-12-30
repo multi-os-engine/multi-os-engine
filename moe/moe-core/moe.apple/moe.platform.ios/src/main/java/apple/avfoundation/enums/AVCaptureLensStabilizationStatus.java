@@ -4,19 +4,19 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVCaptureLensStabilizationStatus
- * @abstract
+ * [@enum] AVCaptureLensStabilizationStatus
+ * 
  *    Constants indicating the status of the lens stabilization module (aka OIS).
  * 
- * @constant AVCaptureLensStabilizationStatusUnsupported
+ * [@constant] AVCaptureLensStabilizationStatusUnsupported
  *    Indicates that lens stabilization is unsupported.
- * @constant AVCaptureLensStabilizationStatusOff
+ * [@constant] AVCaptureLensStabilizationStatusOff
  *    Indicates that lens stabilization was not in use for this capture.
- * @constant AVCaptureLensStabilizationStatusActive
+ * [@constant] AVCaptureLensStabilizationStatusActive
  *    Indicates that the lens stabilization module was active for the duration of the capture.
- * @constant AVCaptureLensStabilizationStatusOutOfRange
+ * [@constant] AVCaptureLensStabilizationStatusOutOfRange
  *    Indicates that device motion or capture duration exceeded the stabilization module's correction limits.
- * @constant AVCaptureLensStabilizationStatusUnavailable
+ * [@constant] AVCaptureLensStabilizationStatusUnavailable
  *    Indicates that the lens stabilization module was unavailable for use at the time of capture. The module may be available in subsequent captures.
  */
 @Generated

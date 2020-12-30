@@ -26,10 +26,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNSlice
- * @dependency This depends on Metal.framework
- * @abstract   Describes a slice operation
- * @discussion The slice kernel is used to extract a slice from a source MPSImage.  The extracted slice is copied
+ * MPSNNSlice
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Describes a slice operation
+ * 
+ * The slice kernel is used to extract a slice from a source MPSImage.  The extracted slice is copied
  *             to a destination MPSImage.  The offset and sourceFeatureChannelOffset specify the following:
  *                 - the (x, y) location in the source image
  *                 - the starting feature channel offset in the source image
@@ -119,7 +121,8 @@ public class MPSNNSlice extends MPSCNNKernel {
     public native MPSNNSlice initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Initialize a MPSNNSlice kernel
+     * Initialize a MPSNNSlice kernel
+     * 
      * @param    device            The device the filter will run on
      * @return   A valid MPSNNSlice object or nil, if failure.
      */

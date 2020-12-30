@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLLibraryError
- * @abstract NSErrors raised when creating a library.
+ * [@enum] MTLLibraryError
+ * 
+ * NSErrors raised when creating a library.
  */
 @Generated
 public final class MTLLibraryError {

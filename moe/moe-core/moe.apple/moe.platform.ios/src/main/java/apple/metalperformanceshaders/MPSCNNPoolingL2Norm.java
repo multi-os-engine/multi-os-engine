@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNPoolingL2Norm
- * @dependency This depends on Metal.framework
- * @discussion Specifies the L2-norm pooling filter.  For each pixel, returns L2-Norm of pixels
+ * MPSCNNPoolingL2Norm
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the L2-norm pooling filter.  For each pixel, returns L2-Norm of pixels
  *             in the kernelWidth x kernelHeight filter region.
  *                 out[c,x,y] = sqrt ( sum_{dx,dy} in[c,x+dx,y+dy] * in[c,x+dx,y+dy] ).
  */
@@ -105,8 +106,10 @@ public class MPSCNNPoolingL2Norm extends MPSCNNPooling {
     public native MPSCNNPoolingL2Norm initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPooling
      * @param      device      The MTLDevice on which to make the MPSCNNPooling
      * @return     A new MPSCNNPooling object, or nil if failure.
@@ -126,7 +129,8 @@ public class MPSCNNPoolingL2Norm extends MPSCNNPooling {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @abstract   Initialize a MPSCNNPoolingL2Norm pooling filter
+     * Initialize a MPSCNNPoolingL2Norm pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.

@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixRandomPhilox
- * @discussion Generates random numbers using a counter based algorithm.
+ * MPSMatrixRandomPhilox
+ * 
+ * Generates random numbers using a counter based algorithm.
  *             For further details see:
  *         John K. Salmon, Mark A. Moraes, Ron O. Dror, and David E. Shaw. Parallel Random Numbers: As Easy as 1, 2, 3.
  */
@@ -109,8 +110,9 @@ public class MPSMatrixRandomPhilox extends MPSMatrixRandom {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   initialize a MPSMatrixRandomPhilox filter to generate 32-bit unsigned
+     * initialize a MPSMatrixRandomPhilox filter to generate 32-bit unsigned
      *             integer values with an initial seed of 0.
+     * 
      * @param      device          The device the filter will run on
      */
     @Generated
@@ -118,7 +120,8 @@ public class MPSMatrixRandomPhilox extends MPSMatrixRandom {
     public native MPSMatrixRandomPhilox initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   initialize a MPSMatrixRandomPhilox filter using a default distribution.
+     * initialize a MPSMatrixRandomPhilox filter using a default distribution.
+     * 
      * @param      device                  The device the filter will run on
      * @param      destinationDataType     The data type of the result.
      * @param      seed                    The seed to initialize the random number generators with.
@@ -129,7 +132,8 @@ public class MPSMatrixRandomPhilox extends MPSMatrixRandom {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, int destinationDataType, @NUInt long seed);
 
     /**
-     * @abstract   initialize a MPSMatrixRandomPhilox filter
+     * initialize a MPSMatrixRandomPhilox filter
+     * 
      * @param      device                  The device the filter will run on
      * @param      destinationDataType     The data type of the result.
      * @param      seed                    The seed to initialize the random number generators with.

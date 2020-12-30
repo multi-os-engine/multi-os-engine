@@ -35,7 +35,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("WKScriptMessageHandler")
 public interface WKScriptMessageHandler {
     /**
-     * @abstract Invoked when a script message is received from a webpage.
+     * Invoked when a script message is received from a webpage.
+     * 
      * @param userContentController The user content controller invoking the
      * delegate method.
      * @param message The script message received.

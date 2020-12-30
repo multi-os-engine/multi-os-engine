@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum       EKEntityType
- * @abstract   A value which specifies an entity type of event or reminder.
+ * [@enum]       EKEntityType
+ * 
+ * A value which specifies an entity type of event or reminder.
  */
 @Generated
 public final class EKEntityType {

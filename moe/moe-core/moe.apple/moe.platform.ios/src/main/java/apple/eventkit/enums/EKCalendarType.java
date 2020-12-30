@@ -20,14 +20,15 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum       EKCalendarType
- * @abstract   An enum representing the type of a calendar.
+ * [@enum]       EKCalendarType
  * 
- * @constant   EKCalendarTypeLocal        This calendar is sync'd from either Mobile Me or tethered.
- * @constant   EKCalendarTypeCalDAV       This calendar is from a CalDAV server.
- * @constant   EKCalendarTypeExchange     This calendar comes from an Exchange server.
- * @constant   EKCalendarTypeSubscription This is a locally subscribed calendar.
- * @constant   EKCalendarTypeBirthday     This is the built-in birthday calendar.
+ * An enum representing the type of a calendar.
+ * 
+ * [@constant]   EKCalendarTypeLocal        This calendar is sync'd from either Mobile Me or tethered.
+ * [@constant]   EKCalendarTypeCalDAV       This calendar is from a CalDAV server.
+ * [@constant]   EKCalendarTypeExchange     This calendar comes from an Exchange server.
+ * [@constant]   EKCalendarTypeSubscription This is a locally subscribed calendar.
+ * [@constant]   EKCalendarTypeBirthday     This is the built-in birthday calendar.
  */
 @Generated
 public final class EKCalendarType {

@@ -423,7 +423,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the interaction begins.
+     * Called when the interaction begins.
      * 
      * @param tableView  This UITableView.
      * @param indexPath  IndexPath of the row for which a configuration is being requested.
@@ -457,7 +457,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
+     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
      * 
      * @param tableView      This UITableView.
@@ -472,7 +472,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the interaction begins. Return a UITargetedPreview to override the default preview created by the table view.
+     * Called when the interaction begins. Return a UITargetedPreview to override the default preview created by the table view.
      * 
      * @param tableView      This UITableView.
      * @param configuration  The configuration of the menu about to be displayed by this interaction.
@@ -505,7 +505,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the interaction is about to "commit" in response to the user tapping the preview.
+     * Called when the interaction is about to "commit" in response to the user tapping the preview.
      * 
      * @param tableView      This UITableView.
      * @param configuration  Configuration of the currently displayed menu.
@@ -534,7 +534,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the table view is about to display a menu.
+     * Called when the table view is about to display a menu.
      * 
      * @param tableView       This UITableView.
      * @param configuration   The configuration of the menu about to be displayed.
@@ -550,7 +550,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the table view's context menu interaction is about to end.
+     * Called when the table view's context menu interaction is about to end.
      * 
      * @param tableView       This UITableView.
      * @param configuration   Ending configuration.

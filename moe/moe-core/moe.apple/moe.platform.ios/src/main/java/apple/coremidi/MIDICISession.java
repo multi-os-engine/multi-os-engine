@@ -30,8 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class  MIDICISession
- * @brief  Object representating a MIDI Capability Inquiry session.
+ * MIDICISession
+ * 
+ * Object representating a MIDI Capability Inquiry session.
  * 
  * A MIDI Capability Inquiry session is a bidirectional communication path between a MIDI process
  * and a MIDI-CI node (i.e., paired MIDI source and destination) identified using MIDI-CI discovery.

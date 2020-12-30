@@ -44,9 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract An immutable value object representing an instant message address.
+ * An immutable value object representing an instant message address.
  * 
- * @discussion CNInstantMessageAddress is thread safe.
+ * CNInstantMessageAddress is thread safe.
  */
 @Generated
 @Library("Contacts")

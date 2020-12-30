@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract      CLSQuantityItem represents user generated quantity information.
+ * CLSQuantityItem represents user generated quantity information.
  */
 @Generated
 @Library("ClassKit")
@@ -100,7 +100,8 @@ public class CLSQuantityItem extends CLSActivityItem {
     public native CLSQuantityItem initWithCoder(NSCoder coder);
 
     /**
-     * @abstract      Create a quantity item with an identifier and title.
+     * Create a quantity item with an identifier and title.
+     * 
      * @param         identifier      An identifier that is unique within activity.
      * @param         title           Title of the quantity. Ex @em Hints
      */
@@ -136,7 +137,7 @@ public class CLSQuantityItem extends CLSActivityItem {
     public static native Object new_objc();
 
     /**
-     * @abstract      Quantity awarded.
+     * Quantity awarded.
      */
     @Generated
     @Selector("quantity")
@@ -151,7 +152,7 @@ public class CLSQuantityItem extends CLSActivityItem {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract      Quantity awarded.
+     * Quantity awarded.
      */
     @Generated
     @Selector("setQuantity:")

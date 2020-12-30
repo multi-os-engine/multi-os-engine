@@ -26,10 +26,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNSaliencyImageObservation
- * @superclass VNPixelBufferObservation
- * @brief VNSaliencyImageObservation provides a grayscale "heat" map of important areas of an image.
- * @discussion In the revision1, the "heat" map is a OneComponent32Float pixel format CVPixelBuffer.
+ * VNSaliencyImageObservation
+ * [@superclass] VNPixelBufferObservation
+ * 
+ * VNSaliencyImageObservation provides a grayscale "heat" map of important areas of an image.
+ * 
+ * In the revision1, the "heat" map is a OneComponent32Float pixel format CVPixelBuffer.
  */
 @Generated
 @Library("Vision")
@@ -138,7 +140,7 @@ public class VNSaliencyImageObservation extends VNPixelBufferObservation {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief An array of bounds of salient objects within the image. Each box represents a distinct mode of the heat map.
+     * An array of bounds of salient objects within the image. Each box represents a distinct mode of the heat map.
      */
     @Generated
     @Selector("salientObjects")

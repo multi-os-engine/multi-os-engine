@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKActivitySummaryType
- * @abstract      Represents an HKActivitySummary
+ * HKActivitySummaryType
+ * 
+ * Represents an HKActivitySummary
  */
 @Generated
 @Library("HealthKit")

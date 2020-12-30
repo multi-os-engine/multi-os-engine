@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKDiscreteQuantitySample
- * @abstract      An HKQuantitySample subclass representing a quantity measurement with
+ * HKDiscreteQuantitySample
+ * 
+ * An HKQuantitySample subclass representing a quantity measurement with
  *                discrete aggregation style.
  */
 @Generated
@@ -66,8 +67,9 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property      averageQuantity
-     * @abstract      The average of the receiver's quantities
+     * [@property]      averageQuantity
+     * 
+     * The average of the receiver's quantities
      */
     @Generated
     @Selector("averageQuantity")
@@ -134,32 +136,36 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property      maximumQuantity
-     * @abstract      The maximum of the receiver's quantities
+     * [@property]      maximumQuantity
+     * 
+     * The maximum of the receiver's quantities
      */
     @Generated
     @Selector("maximumQuantity")
     public native HKQuantity maximumQuantity();
 
     /**
-     * @property      minimumQuantity
-     * @abstract      The minimum of the receiver's quantities
+     * [@property]      minimumQuantity
+     * 
+     * The minimum of the receiver's quantities
      */
     @Generated
     @Selector("minimumQuantity")
     public native HKQuantity minimumQuantity();
 
     /**
-     * @property      mostRecentQuantity
-     * @abstract      The receiver's quantity with most recent date interval
+     * [@property]      mostRecentQuantity
+     * 
+     * The receiver's quantity with most recent date interval
      */
     @Generated
     @Selector("mostRecentQuantity")
     public native HKQuantity mostRecentQuantity();
 
     /**
-     * @property      mostRecentQuantityDateInterval
-     * @abstract      The date interval for the receiver's most recent quantity
+     * [@property]      mostRecentQuantityDateInterval
+     * 
+     * The date interval for the receiver's most recent quantity
      */
     @Generated
     @Selector("mostRecentQuantityDateInterval")

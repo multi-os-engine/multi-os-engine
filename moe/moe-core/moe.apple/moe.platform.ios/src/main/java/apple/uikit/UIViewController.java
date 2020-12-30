@@ -169,9 +169,8 @@ public class UIViewController extends UIResponder
     public static native Object new_objc();
 
     /**
-     * @method prepareInterstitials
+     * prepareInterstitials
      * 
-     * @discussion
      * Ads involve network requests, so if an application needs to use interstitial
      * ads and wants to ensure early availability, this method can be called to trigger
      * a prefetch. If this method is not called, the first fetch will occur when a
@@ -272,9 +271,8 @@ public class UIViewController extends UIResponder
     public native UILayoutSupport bottomLayoutGuide();
 
     /**
-     * @property canDisplayBannerAds
+     * [@property] canDisplayBannerAds
      * 
-     * @discussion
      * Set this to enable automatic management of banner ad display with the view controller.
      * It's important to note that this will modify the view hierarchy of the view controller
      * by inserting a new container view above the view controller's view. The impact
@@ -282,7 +280,7 @@ public class UIViewController extends UIResponder
      * provided view, it will return the new container. To access the original view,
      * use the originalContentView property.
      * 
-     * @seealso originalContentView
+     * @see originalContentView
      */
     @Generated
     @Selector("canDisplayBannerAds")
@@ -483,9 +481,8 @@ public class UIViewController extends UIResponder
     public native long interfaceOrientation();
 
     /**
-     * @property interstitialPresentationPolicy
+     * [@property] interstitialPresentationPolicy
      * 
-     * @discussion
      * The presentation policy determines whether the timing of presentation is entirely
      * managed by the framework or should only take place when the application calls
      * -requestInterstitialAdPresentation. By default the policy is "None", so to be
@@ -511,9 +508,8 @@ public class UIViewController extends UIResponder
     public native boolean isBeingPresented();
 
     /**
-     * @property displayingBannerAd
+     * [@property] displayingBannerAd
      * 
-     * @discussion
      * Can be used to query the controller to determine if it is displaying a banner ad.
      */
     @Generated
@@ -551,9 +547,8 @@ public class UIViewController extends UIResponder
     public native boolean isMovingToParentViewController();
 
     /**
-     * @property presentingFullScreenAd
+     * [@property] presentingFullScreenAd
      * 
-     * @discussion
      * Can be used to query the controller to determine if it is presenting a full screen
      * ad, which may be an interstitial or the iAd shown when the user taps a banner.
      */
@@ -649,9 +644,8 @@ public class UIViewController extends UIResponder
     public native UIObjectRestoration objectRestorationClass();
 
     /**
-     * @property originalContentView
+     * [@property] originalContentView
      * 
-     * @discussion
      * If banner ads have not been enabled, originalContentView will return the view
      * controller's view. If banner ads are enabled, originalContentView returns the
      * view that was previously the view controller's view. If banner ads are then subsequently
@@ -812,16 +806,15 @@ public class UIViewController extends UIResponder
     public native void removeKeyCommand(UIKeyCommand keyCommand);
 
     /**
-     * @method requestInterstitialAdPresentation
+     * requestInterstitialAdPresentation
      * 
-     * @return
-     * Returns YES if an interstitial can be displayed, NO if not.
-     * 
-     * @discussion
      * Call at any time to request that an interstitial ad be presented. This is appropriate
      * for view controllers that are on screen for long periods of time and internally
      * manage significant state changes, such as game levels. Returns YES if an interstitial
      * will be presented.
+     * 
+     * @return
+     * Returns YES if an interstitial can be displayed, NO if not.
      */
     @Generated
     @Selector("requestInterstitialAdPresentation")
@@ -897,9 +890,8 @@ public class UIViewController extends UIResponder
     public native void setAutomaticallyAdjustsScrollViewInsets(boolean value);
 
     /**
-     * @property canDisplayBannerAds
+     * [@property] canDisplayBannerAds
      * 
-     * @discussion
      * Set this to enable automatic management of banner ad display with the view controller.
      * It's important to note that this will modify the view hierarchy of the view controller
      * by inserting a new container view above the view controller's view. The impact
@@ -907,7 +899,7 @@ public class UIViewController extends UIResponder
      * provided view, it will return the new container. To access the original view,
      * use the originalContentView property.
      * 
-     * @seealso originalContentView
+     * @see originalContentView
      */
     @Generated
     @Selector("setCanDisplayBannerAds:")
@@ -959,9 +951,8 @@ public class UIViewController extends UIResponder
     public native void setHidesBottomBarWhenPushed(boolean value);
 
     /**
-     * @property interstitialPresentationPolicy
+     * [@property] interstitialPresentationPolicy
      * 
-     * @discussion
      * The presentation policy determines whether the timing of presentation is entirely
      * managed by the framework or should only take place when the application calls
      * -requestInterstitialAdPresentation. By default the policy is "None", so to be
@@ -1143,17 +1134,16 @@ public class UIViewController extends UIResponder
             @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
-     * @method shouldPresentInterstitialAd
+     * shouldPresentInterstitialAd
      * 
-     * @return
-     * Should return YES to allow presentation to proceed, NO to prevent it. The default
-     * implementation always returns YES.
-     * 
-     * @discussion
      * Subclasses should override this method if they use ADInterstitialPresentationPolicyAutomatic
      * and require the ability to selectively prevent presentation based on application
      * state. The method will be invoked when the framework is about to present an interstitial
      * ad in the ADInterstitialPresentationPolicyAutomatic configuration.
+     * 
+     * @return
+     * Should return YES to allow presentation to proceed, NO to prevent it. The default
+     * implementation always returns YES.
      */
     @Generated
     @Selector("shouldPresentInterstitialAd")

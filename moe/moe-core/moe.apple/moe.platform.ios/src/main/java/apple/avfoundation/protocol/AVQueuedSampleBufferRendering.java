@@ -12,9 +12,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol		AVQueuedSampleBufferRendering
- * @abstract		Defines methods for enqueueing CMSampleBuffers for presentation.
- * @discussion
+ * [@protocol]		AVQueuedSampleBufferRendering
+ * 
+ * Defines methods for enqueueing CMSampleBuffers for presentation.
+ * 
  * 	AVSampleBufferDisplayLayer and AVSampleBufferAudioRenderer conform to this protocol.  When used in conjunction with an AVSampleBufferRenderSynchronizer, an object conforming to AVQueuedSampleBufferRendering can only be attached to a single synchronizer.
  */
 @Generated
@@ -23,9 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVQueuedSampleBufferRendering")
 public interface AVQueuedSampleBufferRendering {
     /**
-     * @method			enqueueSampleBuffer:
-     * @abstract		Sends a sample buffer in order to render its contents.
-     * @discussion
+     * enqueueSampleBuffer:
+     * 
+     * Sends a sample buffer in order to render its contents.
+     * 
      * 	Video-specific notes:
      * 
      * 	If sampleBuffer has the kCMSampleAttachmentKey_DoNotDisplay attachment set to kCFBooleanTrue, the frame will be decoded but not displayed.  Otherwise, if sampleBuffer has the kCMSampleAttachmentKey_DisplayImmediately attachment set to kCFBooleanTrue, the decoded image will be displayed as soon as possible, replacing all previously enqueued images regardless of their timestamps.  Otherwise, the decoded image will be displayed at sampleBuffer's output presentation timestamp, as interpreted by the timebase.
@@ -39,9 +41,10 @@ public interface AVQueuedSampleBufferRendering {
     void enqueueSampleBuffer(CMSampleBufferRef sampleBuffer);
 
     /**
-     * @method			flush
-     * @abstract		Instructs the receiver to discard pending enqueued sample buffers.
-     * @discussion
+     * flush
+     * 
+     * Instructs the receiver to discard pending enqueued sample buffers.
+     * 
      * 	Additional sample buffers can be appended after -flush.
      * 
      * 	Video-specific notes:
@@ -53,9 +56,10 @@ public interface AVQueuedSampleBufferRendering {
     void flush();
 
     /**
-     * @property		readyForMoreMediaData
-     * @abstract		Indicates the readiness of the receiver to accept more sample buffers.
-     * @discussion
+     * [@property]		readyForMoreMediaData
+     * 
+     * Indicates the readiness of the receiver to accept more sample buffers.
+     * 
      * 	An object conforming to AVQueuedSampleBufferRendering keeps track of the occupancy levels of its internal queues for the benefit of clients that enqueue sample buffers from non-real-time sources -- i.e., clients that can supply sample buffers faster than they are consumed, and so need to decide when to hold back.
      * 
      * 	Clients enqueueing sample buffers from non-real-time sources may hold off from generating or obtaining more sample buffers to enqueue when the value of readyForMoreMediaData is NO.
@@ -73,9 +77,10 @@ public interface AVQueuedSampleBufferRendering {
     boolean isReadyForMoreMediaData();
 
     /**
-     * @method			requestMediaDataWhenReadyOnQueue:usingBlock:
-     * @abstract		Instructs the target to invoke a client-supplied block repeatedly, at its convenience, in order to gather sample buffers for playback.
-     * @discussion
+     * requestMediaDataWhenReadyOnQueue:usingBlock:
+     * 
+     * Instructs the target to invoke a client-supplied block repeatedly, at its convenience, in order to gather sample buffers for playback.
+     * 
      * 	The block should enqueue sample buffers to the receiver either until the receiver's readyForMoreMediaData property becomes NO or until there is no more data to supply. When the receiver has decoded enough of the media data it has received that it becomes ready for more media data again, it will invoke the block again in order to obtain more.
      * 
      * 	If this method is called multiple times, only the last call is effective. Call stopRequestingMediaData to cancel this request.
@@ -95,9 +100,10 @@ public interface AVQueuedSampleBufferRendering {
     }
 
     /**
-     * @method			stopRequestingMediaData
-     * @abstract		Cancels any current requestMediaDataWhenReadyOnQueue:usingBlock: call.
-     * @discussion
+     * stopRequestingMediaData
+     * 
+     * Cancels any current requestMediaDataWhenReadyOnQueue:usingBlock: call.
+     * 
      * 	This method may be called from outside the block or from within the block.
      */
     @Generated
@@ -105,9 +111,10 @@ public interface AVQueuedSampleBufferRendering {
     void stopRequestingMediaData();
 
     /**
-     * @property		timebase
-     * @abstract		The renderer's timebase, which governs how time stamps are interpreted.
-     * @discussion
+     * [@property]		timebase
+     * 
+     * The renderer's timebase, which governs how time stamps are interpreted.
+     * 
      * 	The timebase is used to interpret time stamps.
      * 
      * 	The timebase is read-only.  Use the AVSampleBufferRenderSynchronizer to set the rate or time.

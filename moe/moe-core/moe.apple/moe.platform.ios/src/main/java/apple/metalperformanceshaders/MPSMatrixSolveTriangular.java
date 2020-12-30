@@ -28,14 +28,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixSolveTriangular
+ * MPSMatrixSolveTriangular
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A kernel for computing the solution of a linear system of
+ * A kernel for computing the solution of a linear system of
  *             equations using a triangular coefficient matrix.
  * 
- * @discussion A MPSMatrixSolveTriangular finds the solution matrix to the
+ * A MPSMatrixSolveTriangular finds the solution matrix to the
  *             triangular system:
  * 
  *                 op(A) * X = alpha * B    or    X * op(A) = alpha * B
@@ -104,7 +104,17 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixSolveTriangular kernel into a command Buffer.
+     * Encode a MPSMatrixSolveTriangular kernel into a command Buffer.
+     * 
+     * This function encodes the MPSMatrixSolveTriangular object to a
+     *             valid command buffer.
+     * 
+     *             rightHandSideMatrix and solutionMatrix must be large enough to
+     *             hold at least order * numberOfRightHandSides values starting at
+     *             secondarySourceMatrixOrigin and resultMatrixOrigin respectively.
+     * 
+     *             sourceMatrix must be at least size order x order starting at
+     *             primarySourceMatrixOrigin.
      * 
      * @param      commandBuffer       A valid MTLCommandBuffer to receive the
      *                                 encoded filter
@@ -116,16 +126,6 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
      *                                 side values.
      * 
      * @param      solutionMatrix      A valid MPSMatrix to contain the result.
-     * 
-     * @discussion This function encodes the MPSMatrixSolveTriangular object to a
-     *             valid command buffer.
-     * 
-     *             rightHandSideMatrix and solutionMatrix must be large enough to
-     *             hold at least order * numberOfRightHandSides values starting at
-     *             secondarySourceMatrixOrigin and resultMatrixOrigin respectively.
-     * 
-     *             sourceMatrix must be at least size order x order starting at
-     *             primarySourceMatrixOrigin.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:")
@@ -156,7 +156,10 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
     public native MPSMatrixSolveTriangular initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize an MPSMatrixSolveTriangular object on a device
+     * Initialize an MPSMatrixSolveTriangular object on a device
+     * 
+     * This function initializes a MPSMatrixSolveTriangular object.  It
+     *             may allocate device side memory.
      * 
      * @param      device          The device on which the kernel will execute.
      * 
@@ -189,9 +192,6 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
      * 
      * @param      alpha           A double precision value used to scale the right
      *                             hand sides.
-     * 
-     * @discussion This function initializes a MPSMatrixSolveTriangular object.  It
-     *             may allocate device side memory.
      * 
      * @return     A valid MPSMatrixSolveTriangular object or nil, if failure.
      */

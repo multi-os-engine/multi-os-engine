@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MDLMeshBufferType
- * @abstract Type of data a MDLMeshBuffer has been allocated for
+ * [@enum] MDLMeshBufferType
+ * 
+ * Type of data a MDLMeshBuffer has been allocated for
  */
 @Generated
 public final class MDLMeshBufferType {

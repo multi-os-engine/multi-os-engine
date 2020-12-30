@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum       EKParticipantStatus
- * @abstract   Value representing the status of a meeting participant.
+ * [@enum]       EKParticipantStatus
+ * 
+ * Value representing the status of a meeting participant.
  */
 @Generated
 public final class EKParticipantStatus {

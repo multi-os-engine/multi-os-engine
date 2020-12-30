@@ -45,9 +45,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract    Contact vCard support.
+ * Contact vCard support.
  * 
- * @discussion  This converts between a contact and its vCard representation.
+ * This converts between a contact and its vCard representation.
  */
 @Generated
 @Library("Contacts")
@@ -100,15 +100,15 @@ public class CNContactVCardSerialization extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract    Parse data into contacts.
+     * Parse data into contacts.
+     * 
+     * [@returns]     The parsed contacts. If the parsing fails, this will be @c nil.
      * 
      * @param       data
      *              The data to parse.
      * 
      * @param       error
      *              An optional outparameter. If the parsing fails, this will be set.
-     * 
-     * @returns     The parsed contacts. If the parsing fails, this will be @c nil.
      */
     @Generated
     @Selector("contactsWithData:error:")
@@ -116,18 +116,18 @@ public class CNContactVCardSerialization extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @abstract    Serialize contacts to data.
+     * Serialize contacts to data.
      * 
-     * @discussion  The contacts to be serialized must have been fetched with
-     *              @c +descriptorForRequiredKeys.
+     * The contacts to be serialized must have been fetched with
+     *              [@c] +descriptorForRequiredKeys.
+     * 
+     * [@returns]     The encoded data. If the serialization fails, this will be @c nil.
      * 
      * @param       contacts
      *              The contacts to serialize.
      * 
      * @param       error
      *              An optional outparameter. If the serialization fails, this will be set.
-     * 
-     * @returns     The encoded data. If the serialization fails, this will be @c nil.
      */
     @Generated
     @Selector("dataWithContacts:error:")
@@ -143,9 +143,9 @@ public class CNContactVCardSerialization extends NSObject {
     public static native String description_static();
 
     /**
-     * @abstract    Descriptor for all contact keys required by vCard serialization
+     * Descriptor for all contact keys required by vCard serialization
      * 
-     * @discussion  This descriptor must be passed to the fetch request if the returned
+     * This descriptor must be passed to the fetch request if the returned
      *              contacts are to be serialized with dataWithContacts:error:.
      */
     @Generated

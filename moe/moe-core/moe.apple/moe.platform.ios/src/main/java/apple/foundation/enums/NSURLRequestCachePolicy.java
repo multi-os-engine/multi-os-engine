@@ -20,40 +20,40 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum NSURLRequestCachePolicy
+ * [@enum] NSURLRequestCachePolicy
  * 
- * @discussion The NSURLRequestCachePolicy enum defines constants that
+ * The NSURLRequestCachePolicy enum defines constants that
  * can be used to specify the type of interactions that take place with
  * the caching system when the URL loading system processes a request.
  * Specifically, these constants cover interactions that have to do
  * with whether already-existing cache data is returned to satisfy a
  * URL load request.
  * 
- * @constant NSURLRequestUseProtocolCachePolicy Specifies that the
+ * [@constant] NSURLRequestUseProtocolCachePolicy Specifies that the
  * caching logic defined in the protocol implementation, if any, is
  * used for a particular URL load request. This is the default policy
  * for URL load requests.
  * 
- * @constant NSURLRequestReloadIgnoringLocalCacheData Specifies that the
+ * [@constant] NSURLRequestReloadIgnoringLocalCacheData Specifies that the
  * data for the URL load should be loaded from the origin source. No
  * existing local cache data, regardless of its freshness or validity,
  * should be used to satisfy a URL load request.
  * 
- * @constant NSURLRequestReloadIgnoringLocalAndRemoteCacheData Specifies that
+ * [@constant] NSURLRequestReloadIgnoringLocalAndRemoteCacheData Specifies that
  * not only should the local cache data be ignored, but that proxies and
  * other intermediates should be instructed to disregard their caches
  * so far as the protocol allows.
  * 
- * @constant NSURLRequestReloadIgnoringCacheData Older name for
+ * [@constant] NSURLRequestReloadIgnoringCacheData Older name for
  * NSURLRequestReloadIgnoringLocalCacheData.
  * 
- * @constant NSURLRequestReturnCacheDataElseLoad Specifies that the
+ * [@constant] NSURLRequestReturnCacheDataElseLoad Specifies that the
  * existing cache data should be used to satisfy a URL load request,
  * regardless of its age or expiration date. However, if there is no
  * existing data in the cache corresponding to a URL load request,
  * the URL is loaded from the origin source.
  * 
- * @constant NSURLRequestReturnCacheDataDontLoad Specifies that the
+ * [@constant] NSURLRequestReturnCacheDataDontLoad Specifies that the
  * existing cache data should be used to satisfy a URL load request,
  * regardless of its age or expiration date. However, if there is no
  * existing data in the cache corresponding to a URL load request, no
@@ -61,7 +61,7 @@ import org.moe.natj.general.ann.NUInt;
  * load is considered to have failed. This constant specifies a
  * behavior that is similar to an "offline" mode.
  * 
- * @constant NSURLRequestReloadRevalidatingCacheData Specifies that
+ * [@constant] NSURLRequestReloadRevalidatingCacheData Specifies that
  * the existing cache data may be used provided the origin source
  * confirms its validity, otherwise the URL is loaded from the
  * origin source.

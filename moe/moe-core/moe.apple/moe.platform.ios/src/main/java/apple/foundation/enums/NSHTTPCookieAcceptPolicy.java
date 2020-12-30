@@ -20,11 +20,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum NSHTTPCookieAcceptPolicy
- * @abstract Values for the different cookie accept policies
- * @constant NSHTTPCookieAcceptPolicyAlways Accept all cookies
- * @constant NSHTTPCookieAcceptPolicyNever Reject all cookies
- * @constant NSHTTPCookieAcceptPolicyOnlyFromMainDocumentDomain Accept cookies
+ * [@enum] NSHTTPCookieAcceptPolicy
+ * 
+ * Values for the different cookie accept policies
+ * [@constant] NSHTTPCookieAcceptPolicyAlways Accept all cookies
+ * [@constant] NSHTTPCookieAcceptPolicyNever Reject all cookies
+ * [@constant] NSHTTPCookieAcceptPolicyOnlyFromMainDocumentDomain Accept cookies
  * only from the main document domain
  */
 @Generated

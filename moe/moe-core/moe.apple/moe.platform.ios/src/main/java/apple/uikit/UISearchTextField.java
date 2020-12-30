@@ -37,7 +37,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  * In addition to its text, a UISearchField can contain tokens. Tokens are discrete representations of non-textual content. Your app might use tokens to represent filters that are being applied in conjunction with the search field’s text. Tokens are always created by the application, and always occur contiguously before the search field’s text.
  * 
- * @note
+ * [@note]
  * Because the system drives selection and keyboard behaviors through the UITextInput protocol, and UISearchTextField supports selecting tokens, UISearchTextField assigns UITextPositions to tokens as well as text. If the current selection includes any tokens, their positions are part of the range returned by `UISearchTextField.selectedTextRange`. Use the `textualRange` property to obtain the range of the text field that excludes any tokens.
  * 
  * Tokens can be programatically selected by including their position in a range assigned to the `selectedTextRange` property. UISearchTextField does not support placing an insertion point before a token; attempting to do so will select the token instead.
@@ -346,7 +346,7 @@ public class UISearchTextField extends UITextField {
      * 
      * This method is essentially a convenience wrapper around the more fundamental `text`, `tokens`, and `selectedTextRange` properties, providing the selection behavior the user will expect.
      * 
-     * @note
+     * [@note]
      * Because this method does not remove any tokens in the provided range, the caller can pass the field’s selectedTextRange to convert the selected portion of the text into a token without first having to trim the range.
      */
     @Generated

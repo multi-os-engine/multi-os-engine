@@ -94,7 +94,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     public static native long hash_static();
 
     /**
-     * @abstract Hides the pointer when hovering over the current region.
+     * Hides the pointer when hovering over the current region.
      */
     @Generated
     @Selector("hiddenPointerStyle")
@@ -145,7 +145,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract Applies the provided content effect and pointer shape within the current region.
+     * Applies the provided content effect and pointer shape within the current region.
      * 
      * @param effect  The desired pointer effect.
      * @param shape   The desired pointer shape. If omitted, a pointer will be generated automatically from the effect's preview view.
@@ -155,7 +155,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     public static native UIPointerStyle styleWithEffectShape(UIPointerEffect effect, UIPointerShape shape);
 
     /**
-     * @abstract Morphs the pointer into the provided shape when hovering over the current region.
+     * Morphs the pointer into the provided shape when hovering over the current region.
      * 
      * @param shape  The desired pointer shape.
      * @param axes   Axes along which to recenter the pointer on touch up.

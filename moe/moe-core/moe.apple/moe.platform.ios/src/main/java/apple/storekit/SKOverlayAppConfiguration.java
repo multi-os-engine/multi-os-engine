@@ -114,6 +114,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * Creates a new app overlay configuration that will show an app from the App Store.
+     * 
      * @param appIdentifier the app identifier of the app to show.
      * @param position the desired position of the overlay.
      */

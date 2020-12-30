@@ -42,9 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKFetchWebAuthTokenOperation
+ * CKFetchWebAuthTokenOperation
  * 
- * @abstract This operation will fetch a web auth token given an API token obtained from the CloudKit Dashboard for your container
+ * This operation will fetch a web auth token given an API token obtained from the CloudKit Dashboard for your container
  */
 @Generated
 @Library("CloudKit")

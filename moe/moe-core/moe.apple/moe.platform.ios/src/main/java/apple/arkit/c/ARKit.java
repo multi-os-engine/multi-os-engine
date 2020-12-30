@@ -352,9 +352,10 @@ public final class ARKit {
 
     /**
      * Returns the landmark joint name that corresponds to a key point defined in Vision framework.
-     * @see VNRecognizedPointKey, VNDetectHumanBodyPoseRequest
-     * @discussion If an invalid key point is passed the returned point will be nil.
      * 
+     * If an invalid key point is passed the returned point will be nil.
+     * 
+     * @see VNRecognizedPointKey, VNDetectHumanBodyPoseRequest
      * @param recognizedPointKey Recognized key point.
      * @return Joint name that could be mapped to a ARSkeleton2D. Nil if no mapping exists.
      */

@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract Options applied to a request's processing of the video.
+ * Options applied to a request's processing of the video.
  */
 @Generated
 @Library("Vision")
@@ -60,8 +60,9 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @brief The cadence at which the request should be performed.
-     * @discussion If this property is not defined, then every frame will be processed.
+     * The cadence at which the request should be performed.
+     * 
+     * If this property is not defined, then every frame will be processed.
      */
     @Generated
     @Selector("cadence")
@@ -144,8 +145,9 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief The cadence at which the request should be performed.
-     * @discussion If this property is not defined, then every frame will be processed.
+     * The cadence at which the request should be performed.
+     * 
+     * If this property is not defined, then every frame will be processed.
      */
     @Generated
     @Selector("setCadence:")

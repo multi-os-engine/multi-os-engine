@@ -771,7 +771,7 @@ public class UIButton extends UIControl
     public native boolean isPointerInteractionEnabled();
 
     /**
-     * @abstract Called when the system pointer hovers over this button if its pointer interaction is enabled. The
+     * Called when the system pointer hovers over this button if its pointer interaction is enabled. The
      *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
      *           a customized version of the system provided style or return an entirely custom one.
      */
@@ -796,7 +796,7 @@ public class UIButton extends UIControl
     public native void setPointerInteractionEnabled(boolean value);
 
     /**
-     * @abstract Called when the system pointer hovers over this button if its pointer interaction is enabled. The
+     * Called when the system pointer hovers over this button if its pointer interaction is enabled. The
      *           system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
      *           a customized version of the system provided style or return an entirely custom one.
      */

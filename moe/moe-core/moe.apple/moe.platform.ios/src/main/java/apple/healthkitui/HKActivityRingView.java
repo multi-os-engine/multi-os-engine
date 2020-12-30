@@ -54,9 +54,11 @@ public class HKActivityRingView extends UIView {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @property      activitySummary
-     * @abstract      The activity summary that is currently being displayed in the activity ring view
-     * @discussion    Setting this property directly will not animate ring changes
+     * [@property]      activitySummary
+     * 
+     * The activity summary that is currently being displayed in the activity ring view
+     * 
+     * Setting this property directly will not animate ring changes
      */
     @Generated
     @Selector("activitySummary")
@@ -323,9 +325,11 @@ public class HKActivityRingView extends UIView {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property      activitySummary
-     * @abstract      The activity summary that is currently being displayed in the activity ring view
-     * @discussion    Setting this property directly will not animate ring changes
+     * [@property]      activitySummary
+     * 
+     * The activity summary that is currently being displayed in the activity ring view
+     * 
+     * Setting this property directly will not animate ring changes
      */
     @Generated
     @Selector("setActivitySummary:")

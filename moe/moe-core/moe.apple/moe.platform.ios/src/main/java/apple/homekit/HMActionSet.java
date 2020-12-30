@@ -44,7 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class represents a collection of action objects that can be executed.
+ * This class represents a collection of action objects that can be executed.
  *        The order of execution of these actions is undefined.
  */
 @Generated
@@ -159,7 +159,7 @@ public class HMActionSet extends NSObject {
     public static native long version_static();
 
     /**
-     * @brief Specifies the action set type - user-defined, trigger-owned or one of the builtin types.
+     * Specifies the action set type - user-defined, trigger-owned or one of the builtin types.
      *        Builtin action sets cannot be removed from the home. trigger-owned action sets cannot
      *        be executed, renamed or associated with another trigger.
      */
@@ -168,14 +168,14 @@ public class HMActionSet extends NSObject {
     public native String actionSetType();
 
     /**
-     * @brief Set of HMAction objects that represent the individual items of the action set.
+     * Set of HMAction objects that represent the individual items of the action set.
      */
     @Generated
     @Selector("actions")
     public native NSSet<? extends HMAction> actions();
 
     /**
-     * @brief Adds an action to the action set.
+     * Adds an action to the action set.
      * 
      * @param action Action object to add to the action set.
      * 
@@ -193,28 +193,28 @@ public class HMActionSet extends NSObject {
     public native HMActionSet init();
 
     /**
-     * @brief Specifies whether the action set is currently executing or not.
+     * Specifies whether the action set is currently executing or not.
      */
     @Generated
     @Selector("isExecuting")
     public native boolean isExecuting();
 
     /**
-     * @brief Specifies the last execution date for the action set.
+     * Specifies the last execution date for the action set.
      */
     @Generated
     @Selector("lastExecutionDate")
     public native NSDate lastExecutionDate();
 
     /**
-     * @brief The name of the action set.
+     * The name of the action set.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @brief Removes an existing action from the action set.
+     * Removes an existing action from the action set.
      * 
      * @param action Action object to remove from the action set.
      * 
@@ -228,14 +228,14 @@ public class HMActionSet extends NSObject {
             @ObjCBlock(name = "call_removeActionCompletionHandler") Block_removeActionCompletionHandler completion);
 
     /**
-     * @brief A unique identifier for the action set.
+     * A unique identifier for the action set.
      */
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
 
     /**
-     * @brief This method is used to change the name of the action set.
+     * This method is used to change the name of the action set.
      * 
      * @param name New name for the action set.
      * 

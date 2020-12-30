@@ -19,14 +19,14 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- *   @enum AudioFileStreamPropertyFlags
- *   @constant   kAudioFileStreamPropertyFlag_PropertyIsCached 
+ *   [@enum] AudioFileStreamPropertyFlags
+ *   [@constant]   kAudioFileStreamPropertyFlag_PropertyIsCached 
  * This flag is set in a call to AudioFileStream_PropertyListenerProc when the value of the property
  * can be obtained at any later time. If this flag is not set, then you should either get the value of 
  * the property from within this callback or set the flag kAudioFileStreamPropertyFlag_CacheProperty in order to signal
  * to the parser to begin caching the property data. Otherwise the value may not be available in the future.
  * 
- *   @constant   kAudioFileStreamPropertyFlag_CacheProperty 
+ *   [@constant]   kAudioFileStreamPropertyFlag_CacheProperty 
  * This flag can be set by a property listener in order to signal to the parser that the client is
  * interested in the value of the property and that it should be cached until the full value of the property is available.
  */

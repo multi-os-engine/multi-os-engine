@@ -43,9 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNNeuronLinear
- * @dependency This depends on Metal.framework
- * @discussion Specifies the linear neuron filter. For each pixel, applies the following function: f(x) = a * x + b
+ * MPSCNNNeuronLinear
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the linear neuron filter. For each pixel, applies the following function: f(x) = a * x + b
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -167,7 +168,8 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     public native MPSCNNNeuronLinear initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the linear neuron filter
+     * Initialize the linear neuron filter
+     * 
      * @param     device   The device the filter will run on
      * @param     a        Filter property "a". See class discussion.
      * @param     b        Filter property "b". See class discussion.

@@ -29,9 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNBinaryFullyConnected
- * @dependency This depends on Metal.framework
- * @discussion The MPSCNNBinaryFullyConnected specifies a fully connected convolution layer with binary weights
+ * MPSCNNBinaryFullyConnected
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNBinaryFullyConnected specifies a fully connected convolution layer with binary weights
  *             and optionally binarized input image.
  *             See @ref MPSCNNFullyConnected for details on the fully connected layer and
  *             MPSCNNBinaryConvolution for binary convolutions.
@@ -111,12 +112,14 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
     public native MPSCNNBinaryFullyConnected initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -131,7 +134,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
     public native MPSCNNBinaryFullyConnected initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initializes a binary fully connected kernel with binary weights as well as both pre and post scaling terms.
+     * Initializes a binary fully connected kernel with binary weights as well as both pre and post scaling terms.
      * 
      * @param      device                          The MTLDevice on which this MPSCNNBinaryFullyConnected filter will be used
      * @param      convolutionData                 A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
@@ -174,7 +177,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
             @NUInt long type, @NUInt long flags);
 
     /**
-     * @abstract   Initializes a binary fully connected kernel with binary weights and a single scaling term.
+     * Initializes a binary fully connected kernel with binary weights and a single scaling term.
      * 
      * @param      device                          The MTLDevice on which this MPSCNNBinaryFullyConnected filter will be used
      * @param      convolutionData                 A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.

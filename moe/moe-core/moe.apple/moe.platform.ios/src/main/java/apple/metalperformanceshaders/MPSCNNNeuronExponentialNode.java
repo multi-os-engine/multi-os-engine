@@ -24,11 +24,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   A node representing a MPSCNNNeuronExponential kernel
- * @discussion For each pixel, applies the following function:
- * @code
+ * A node representing a MPSCNNNeuronExponential kernel
+ * 
+ * For each pixel, applies the following function:
+ * [@code]
  *     f(x) = c ^ (a * x + b)
- * @endcode
+ * [@endcode]
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -98,18 +99,20 @@ public class MPSCNNNeuronExponentialNode extends MPSCNNNeuronNode {
     public native MPSCNNNeuronExponentialNode init();
 
     /**
-     * @abstract Init a node with default values for parameters a, b, and c
+     * Init a node with default values for parameters a, b, and c
      */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronExponentialNode initWithSource(MPSNNImageNode sourceNode);
 
     /**
-     * @abstract   Init a node representing a MPSCNNNeuronExponential kernel
-     * @discussion For each pixel, applies the following function:
-     * @code
+     * Init a node representing a MPSCNNNeuronExponential kernel
+     * 
+     * For each pixel, applies the following function:
+     * [@code]
      *     f(x) = c ^ (a * x + b)
-     * @endcode
+     * [@endcode]
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      a                       See discussion above.
      * @param      b                       See discussion above.
@@ -148,7 +151,7 @@ public class MPSCNNNeuronExponentialNode extends MPSCNNNeuronNode {
     public static native Object new_objc();
 
     /**
-     * @abstract Create an autoreleased node with default values for parameters a, b, and c
+     * Create an autoreleased node with default values for parameters a, b, and c
      */
     @Generated
     @Selector("nodeWithSource:")

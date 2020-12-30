@@ -17,7 +17,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * A set of methods that are called by the @c UIApplication singleton in response to CarPlay lifecycle events.
  * 
- * @discussion This must be implemented by the same object that serves as your application's delegate object.
+ * This must be implemented by the same object that serves as your application's delegate object.
  */
 @Generated
 @Library("CarPlay")
@@ -30,7 +30,7 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
      * 
-     * @note It is the responsibility of the delegate to maintain a reference to the interface controller beyond the scope of this method.
+     * [@note] It is the responsibility of the delegate to maintain a reference to the interface controller beyond the scope of this method.
      */
     @Generated
     @Selector("application:didConnectCarInterfaceController:toWindow:")

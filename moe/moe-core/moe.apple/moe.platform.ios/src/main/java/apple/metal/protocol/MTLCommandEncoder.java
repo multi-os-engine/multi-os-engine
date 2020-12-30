@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLCommandEncoder
- * @abstract MTLCommandEncoder is the common interface for objects that write commands into MTLCommandBuffers.
+ * [@protocol] MTLCommandEncoder
+ * 
+ * MTLCommandEncoder is the common interface for objects that write commands into MTLCommandBuffers.
  */
 @Generated
 @Library("Metal")
@@ -35,8 +36,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLCommandEncoder")
 public interface MTLCommandEncoder {
     /**
-     * @property device
-     * @abstract The device this resource was created against.
+     * [@property] device
+     * 
+     * The device this resource was created against.
      */
     @Generated
     @Selector("device")
@@ -44,48 +46,54 @@ public interface MTLCommandEncoder {
     MTLDevice device();
 
     /**
-     * @method endEncoding
-     * @abstract Declare that all command generation from this encoder is complete, and detach from the MTLCommandBuffer.
+     * endEncoding
+     * 
+     * Declare that all command generation from this encoder is complete, and detach from the MTLCommandBuffer.
      */
     @Generated
     @Selector("endEncoding")
     void endEncoding();
 
     /**
-     * @method insertDebugSignpost:
-     * @abstract Inserts a debug string into the command buffer.  This does not change any API behavior, but can be useful when debugging.
+     * insertDebugSignpost:
+     * 
+     * Inserts a debug string into the command buffer.  This does not change any API behavior, but can be useful when debugging.
      */
     @Generated
     @Selector("insertDebugSignpost:")
     void insertDebugSignpost(String string);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @method popDebugGroup
-     * @abstract Pop the latest named string off of the stack.
+     * popDebugGroup
+     * 
+     * Pop the latest named string off of the stack.
      */
     @Generated
     @Selector("popDebugGroup")
     void popDebugGroup();
 
     /**
-     * @method pushDebugGroup:
-     * @abstract Push a new named string onto a stack of string labels.
+     * pushDebugGroup:
+     * 
+     * Push a new named string onto a stack of string labels.
      */
     @Generated
     @Selector("pushDebugGroup:")
     void pushDebugGroup(String string);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")

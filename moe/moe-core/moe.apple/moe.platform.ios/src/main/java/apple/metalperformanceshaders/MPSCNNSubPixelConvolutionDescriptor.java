@@ -26,10 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract         MPSCNNSubPixelConvolutionDescriptor can be used to create MPSCNNConvolution object that does sub pixel upsamling
+ * MPSCNNSubPixelConvolutionDescriptor can be used to create MPSCNNConvolution object that does sub pixel upsamling
  *                   and reshaping opeartion as described in
  *                       http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Shi_Real-Time_Single_Image_CVPR_2016_paper.pdf
- * @discussion
+ * 
  *                  Conceptually MPSCNNConvolution with subPixelScaleFactor > 1 can be thought of as filter performing regular CNN convolution producing N output feature channels at each pixel of
  *                  an intermediate MPSImage followed by a kernel that rearranges/reshapes these N channels at each pixel of intermediate MPSImage into a pixel block of
  *                  size subPixelScaleFactor x subPixelScaleFactor with N/(subPixelScaleFactor * subPixelScaleFactor) featureChannels at each pixel of this pixel block. Thus each pixel in intermedaite
@@ -41,10 +41,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *                             width = (clipRect.size.width + r - 1) / r
  *                             height = (clipRect.size.height + r -1) / r
  *                  Reshaping happens as follows
- *                  @code
+ *                  [@code]
  *                  Destination[clipRect.origin.x+x][clipRect.origin.y+y][c] = Io[ floor(x/r) ][ floor(y/r) ][ (N/r^2) * ( r * mod(y,r) + mod(x,r) ) + c ]
  *                  where x in [0,clipRect.size.width-1], y in [0,clipRect.size.height-1], c in [0,N/r^2 - 1]
- *                  @endcode
+ *                  [@endcode]
  * 
  *                  The following conditions must be met:
  *                  1) N (outputFeatureChannels) must be multiple of r^2 (subPixelScaleFactor * subPixelScaleFactor).
@@ -172,8 +172,9 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property      subPixelScaleFactor
-     * @discussion    Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel block by rearranging
+     * [@property]      subPixelScaleFactor
+     * 
+     * Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel block by rearranging
      *                the outputFeatureChannels as described above. Default value is 1.
      */
     @Generated
@@ -185,8 +186,9 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property      subPixelScaleFactor
-     * @discussion    Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel block by rearranging
+     * [@property]      subPixelScaleFactor
+     * 
+     * Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel block by rearranging
      *                the outputFeatureChannels as described above. Default value is 1.
      */
     @Generated

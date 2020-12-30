@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class RPBroadcastSampleHandler
- * @abstract Subclass this class to handle CMSampleBuffer objects as they are captured by ReplayKit. To enable this mode of handling, set the RPBroadcastProcessMode in the extension's info.plist to RPBroadcastProcessModeSampleBuffer.
+ * RPBroadcastSampleHandler
+ * 
+ * Subclass this class to handle CMSampleBuffer objects as they are captured by ReplayKit. To enable this mode of handling, set the RPBroadcastProcessMode in the extension's info.plist to RPBroadcastProcessModeSampleBuffer.
  */
 @Generated
 @Library("ReplayKit")
@@ -158,28 +159,29 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     public static native long version_static();
 
     /**
-     * @abstract Method is called when the RPBroadcastController finishBroadcast method is called from the broadcasting application.
+     * Method is called when the RPBroadcastController finishBroadcast method is called from the broadcasting application.
      */
     @Generated
     @Selector("broadcastFinished")
     public native void broadcastFinished();
 
     /**
-     * @abstract Method is called when the RPBroadcastController pauseBroadcast method is called from the broadcasting application.
+     * Method is called when the RPBroadcastController pauseBroadcast method is called from the broadcasting application.
      */
     @Generated
     @Selector("broadcastPaused")
     public native void broadcastPaused();
 
     /**
-     * @abstract Method is called when the RPBroadcastController resumeBroadcast method is called from the broadcasting application.
+     * Method is called when the RPBroadcastController resumeBroadcast method is called from the broadcasting application.
      */
     @Generated
     @Selector("broadcastResumed")
     public native void broadcastResumed();
 
     /**
-     * @abstract Method is called when the RPBroadcastController startBroadcast method is called from the broadcasting application.
+     * Method is called when the RPBroadcastController startBroadcast method is called from the broadcasting application.
+     * 
      * @param setupInfo Dictionary that can be supplied by the UI extension to the sample handler.
      */
     @Generated
@@ -187,7 +189,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     public native void broadcastStartedWithSetupInfo(NSDictionary<String, ? extends NSObject> setupInfo);
 
     /**
-     * @abstract Method that should be called when broadcasting can not proceed due to an error. Calling this method will stop the broadcast and deliver the error back to the broadcasting app through RPBroadcastController's delegate.
+     * Method that should be called when broadcasting can not proceed due to an error. Calling this method will stop the broadcast and deliver the error back to the broadcasting app through RPBroadcastController's delegate.
+     * 
      * @param error NSError object that will be passed back to the broadcasting app through RPBroadcastControllerDelegate's broadcastController:didFinishWithError: method.
      */
     @Generated
@@ -199,7 +202,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     public native RPBroadcastSampleHandler init();
 
     /**
-     * @abstract Method is called as video and audio data become available during a broadcast session and is delivered as CMSampleBuffer objects.
+     * Method is called as video and audio data become available during a broadcast session and is delivered as CMSampleBuffer objects.
+     * 
      * @param sampleBuffer CMSampleBuffer object which contains either video or audio data.
      * @param sampleBufferType Determine's the type of the sample buffer defined by the RPSampleBufferType enum.
      */
@@ -208,7 +212,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     public native void processSampleBufferWithType(CMSampleBufferRef sampleBuffer, @NInt long sampleBufferType);
 
     /**
-     * @abstract Method is called when broadcast is started from Control Center and provides extension information about the first application opened or used during the broadcast.
+     * Method is called when broadcast is started from Control Center and provides extension information about the first application opened or used during the broadcast.
+     * 
      * @param applicationInfo Dictionary that contains information about the first application opened or used buring the broadcast.
      */
     @Generated

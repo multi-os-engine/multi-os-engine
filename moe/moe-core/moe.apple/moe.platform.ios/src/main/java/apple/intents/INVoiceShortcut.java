@@ -29,7 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A shortcut that has been added to Siri
+ * A shortcut that has been added to Siri
  */
 @Generated
 @Library("Intents")
@@ -105,7 +105,7 @@ public class INVoiceShortcut extends NSObject implements NSSecureCoding, NSCopyi
     public static native long hash_static();
 
     /**
-     * @abstract The unique identifier for this voice shortcut
+     * The unique identifier for this voice shortcut
      */
     @Generated
     @Selector("identifier")
@@ -133,7 +133,7 @@ public class INVoiceShortcut extends NSObject implements NSSecureCoding, NSCopyi
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @abstract The phrase the user speaks to invoke this shortcut; set by the user when they add it to Siri.
+     * The phrase the user speaks to invoke this shortcut; set by the user when they add it to Siri.
      */
     @Generated
     @Selector("invocationPhrase")
@@ -166,7 +166,7 @@ public class INVoiceShortcut extends NSObject implements NSSecureCoding, NSCopyi
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract The shortcut that will be performed when this voice shortcut is invoked via Siri.
+     * The shortcut that will be performed when this voice shortcut is invoked via Siri.
      */
     @Generated
     @Selector("shortcut")

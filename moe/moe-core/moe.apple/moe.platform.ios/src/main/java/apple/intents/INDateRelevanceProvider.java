@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A relevance provider to indicate relevance at a date or date interval.
+ * A relevance provider to indicate relevance at a date or date interval.
  */
 @Generated
 @Library("Intents")
@@ -88,8 +88,8 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
     public static native String description_static();
 
     /**
-     * @abstract The end date of the relevant time interval.
-     * @note If @c endDate is @c nil, the relevant time interval will be assumed to represent a single point in time instead of a time interval.
+     * The end date of the relevant time interval.
+     * [@note] If @c endDate is @c nil, the relevant time interval will be assumed to represent a single point in time instead of a time interval.
      */
     @Generated
     @Selector("endDate")
@@ -109,7 +109,7 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
     public native INDateRelevanceProvider initWithCoder(NSCoder coder);
 
     /**
-     * @abstract Initializes a date relevance provider with the specified relevant date interval.
+     * Initializes a date relevance provider with the specified relevant date interval.
      */
     @Generated
     @Selector("initWithStartDate:endDate:")
@@ -155,7 +155,7 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract The start date of the relevant time interval.
+     * The start date of the relevant time interval.
      */
     @Generated
     @Selector("startDate")

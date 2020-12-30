@@ -19,22 +19,23 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum       CTFrameProgression
- * @abstract   These constants specify frame progression types.
+ * [@enum]       CTFrameProgression
  * 
- * @discussion The lines of text within a frame may be stacked for either
+ * These constants specify frame progression types.
+ * 
+ * The lines of text within a frame may be stacked for either
  *             horizontal or vertical text. Values are enumerated for each
  *             stacking type supported by CTFrame. Frames created with a
  *             progression type specifying vertical text will rotate lines
  *             90 degrees counterclockwise when drawing.
  * 
- * @constant   kCTFrameProgressionTopToBottom
+ * [@constant]   kCTFrameProgressionTopToBottom
  *             Lines are stacked top to bottom for horizontal text.
  * 
- * @constant   kCTFrameProgressionRightToLeft
+ * [@constant]   kCTFrameProgressionRightToLeft
  *             Lines are stacked right to left for vertical text.
  * 
- * @constant   kCTFrameProgressionLeftToRight
+ * [@constant]   kCTFrameProgressionLeftToRight
  *             Lines are stacked left to right for vertical text.
  */
 @Generated

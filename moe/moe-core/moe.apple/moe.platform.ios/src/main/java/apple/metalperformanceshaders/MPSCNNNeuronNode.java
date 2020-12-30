@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract virtual base class for MPSCNNNeuron nodes
- * @discussion This is a virtual base class only. Please create a
+ * virtual base class for MPSCNNNeuron nodes
+ * 
+ * This is a virtual base class only. Please create a
  *             subclass using +newNeuronNodeWithSouce:descriptor or
  *             by making one of the subclasses directly. Better yet, skip
  *             the node entirely and specify the neuron function directly in
@@ -55,7 +56,7 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
     }
 
     /**
-     * @abstract filter parameter a
+     * filter parameter a
      */
     @Generated
     @Selector("a")
@@ -80,7 +81,7 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @abstract filter parameter b
+     * filter parameter b
      */
     @Generated
     @Selector("b")
@@ -170,14 +171,14 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
     public static native long version_static();
 
     /**
-     * @abstract filter parameter c
+     * filter parameter c
      */
     @Generated
     @Selector("c")
     public native float c();
 
     /**
-     * @abstract Create a neuron node of the appropriate type with a MPSNNNeuronDescriptor
+     * Create a neuron node of the appropriate type with a MPSNNNeuronDescriptor
      */
     @Generated
     @Selector("nodeWithSource:descriptor:")

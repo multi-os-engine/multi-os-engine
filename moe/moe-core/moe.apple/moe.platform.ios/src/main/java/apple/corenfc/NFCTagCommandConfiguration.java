@@ -25,9 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface   NFCTagCommandConfiguration
+ * [@interface]   NFCTagCommandConfiguration
  * 
- * @discussion  Define configuration parameters for tag commands.
+ * Define configuration parameters for tag commands.
  */
 @Generated
 @Library("CoreNFC")
@@ -124,7 +124,7 @@ public class NFCTagCommandConfiguration extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @discussion  Maximum number of retries.  Valid value is 0 to 256.  Default is 0.
+     * Maximum number of retries.  Valid value is 0 to 256.  Default is 0.
      */
     @Generated
     @Selector("maximumRetries")
@@ -146,21 +146,21 @@ public class NFCTagCommandConfiguration extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @discussion  Delay in seconds before retry occurs.  Default is 0.
+     * Delay in seconds before retry occurs.  Default is 0.
      */
     @Generated
     @Selector("retryInterval")
     public native double retryInterval();
 
     /**
-     * @discussion  Maximum number of retries.  Valid value is 0 to 256.  Default is 0.
+     * Maximum number of retries.  Valid value is 0 to 256.  Default is 0.
      */
     @Generated
     @Selector("setMaximumRetries:")
     public native void setMaximumRetries(@NUInt long value);
 
     /**
-     * @discussion  Delay in seconds before retry occurs.  Default is 0.
+     * Delay in seconds before retry occurs.  Default is 0.
      */
     @Generated
     @Selector("setRetryInterval:")

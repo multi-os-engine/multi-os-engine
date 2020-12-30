@@ -134,7 +134,8 @@ public class ARTrackedRaycast extends NSObject {
 
     /**
      * Stop raycasting.
-     * @discussion The raycast will be continuously tracked until stopped.
+     * 
+     * The raycast will be continuously tracked until stopped.
      * Resetting session's tracking, changing its configuration or deallocation of ARTrackedRaycast object cause the raycast to stop.
      */
     @Generated

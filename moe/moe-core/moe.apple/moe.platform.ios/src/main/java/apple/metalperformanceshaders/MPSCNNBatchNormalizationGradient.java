@@ -28,10 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNBatchNormalizationGradient
- * @dependency This depends on Metal.framework
+ * MPSCNNBatchNormalizationGradient
+ * [@dependency] This depends on Metal.framework
  * 
- * @discussion MPSCNNBatchNormalizationGradient computes the gradients of a
+ * MPSCNNBatchNormalizationGradient computes the gradients of a
  *             loss function resulting from a network containing a corresponding
  *             MPSCNNBatchNormalization kernel.
  * 
@@ -99,7 +99,7 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
     public static native String description_static();
 
     /**
-     * @abstract       Encode this operation to a command buffer.  Create an MPSImage to contain
+     * Encode this operation to a command buffer.  Create an MPSImage to contain
      * the result and return it.
      * See encodeToCommandBuffer:sourceImage:sourceGradient:sourceImage:batchNormalizationState:destinationGradient
      * for further details.
@@ -111,7 +111,8 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
             MPSImage sourceImage, MPSCNNBatchNormalizationState batchNormalizationState);
 
     /**
-     * @abstract       Encode this operation to a command buffer for a single image.
+     * Encode this operation to a command buffer for a single image.
+     * 
      * @param          commandBuffer               The command buffer.
      * @param          sourceGradient              An MPSImage containing the gradient of the loss function with
      *                                             respect to the results of batch normalization on the source image.
@@ -141,14 +142,16 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
     public native MPSCNNBatchNormalizationGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use a subclass of NSCoder that
      *             implements the <MPSDeviceProvider> protocol  to
      *             tell MPS the MTLDevice to use.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSCNNBatchNormalizationGradient object, or nil if failure.
@@ -163,7 +166,8 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
     public native MPSCNNBatchNormalizationGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initializes a batch normalization gradient kernel using a device and neuron descriptor.
+     * Initializes a batch normalization gradient kernel using a device and neuron descriptor.
+     * 
      * @param      device                          The MTLDevice on which this filter will be used
      * @param      fusedNeuronDescriptor           A MPSNNNeuronDescriptor object which specifies a neuron activation function whose
      *                                             gradient should be applied prior to computing the resulting gradient.

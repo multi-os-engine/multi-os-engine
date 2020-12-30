@@ -116,6 +116,7 @@ public class SKOverlay extends NSObject {
 
     /**
      * Creates an overlay with the provided configuration.
+     * 
      * @param configuration the configuration for the overlay.
      */
     @Generated

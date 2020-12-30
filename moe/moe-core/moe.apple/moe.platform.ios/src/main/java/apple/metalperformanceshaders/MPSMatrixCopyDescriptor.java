@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   A list of copy operations
- * @discussion The MPSMatrixCopy filter can do multiple copy operations.  For RNN filters, these
+ * A list of copy operations
+ * 
+ * The MPSMatrixCopy filter can do multiple copy operations.  For RNN filters, these
  *             copies are often small, and are more efficient when grouped together.
  *             The MPSMatriceCopyDescriptor provides a container to list the operations.
  *             The operations occur in any order, and may not alias.
@@ -92,7 +93,7 @@ public class MPSMatrixCopyDescriptor extends NSObject {
     public static native String description_static();
 
     /**
-     * @abstract   convenience allocator for single copies
+     * convenience allocator for single copies
      */
     @Generated
     @Selector("descriptorWithSourceMatrix:destinationMatrix:offsets:")
@@ -109,9 +110,11 @@ public class MPSMatrixCopyDescriptor extends NSObject {
     public native MPSMatrixCopyDescriptor init();
 
     /**
-     * @abstract       initialize a MPSMatrixCopyDescriptor with default values.
-     * @discussion     Use -setCopyOperationAtIndex:sourceMatrix:destinationMatrix:copyOffsets
+     * initialize a MPSMatrixCopyDescriptor with default values.
+     * 
+     * Use -setCopyOperationAtIndex:sourceMatrix:destinationMatrix:copyOffsets
      *                 to initialize. All indices must be initialized before use.
+     * 
      * @param          device    The device on which the copy will be performed
      * @param          count     The number of copy operations the object will encode
      * @return     A MPSMatrixCopyDescriptor. It still needs to be initialized with
@@ -123,8 +126,10 @@ public class MPSMatrixCopyDescriptor extends NSObject {
             @NUInt long count);
 
     /**
-     * @abstract       Initialize a MPSMatrixCopyDescriptor using offsets generated on the GPU
-     * @discussion     Use this method when the offsets needed are coming from GPU based computation.
+     * Initialize a MPSMatrixCopyDescriptor using offsets generated on the GPU
+     * 
+     * Use this method when the offsets needed are coming from GPU based computation.
+     * 
      * @param          sourceMatrices      A list of matrices from which the matrix data is read
      * @param          destinationMatrices A list of matrices to which to write the data. The count
      *                                     must match the number of source matrices.
@@ -132,7 +137,7 @@ public class MPSMatrixCopyDescriptor extends NSObject {
      *                                 offsets, stored as a packed array of MPSMatrixCopyOffsets.
      * @param          byteOffset      A byte offset into the offsets vector where the data starts in 'offsets'.
      *                                 This value must be a multiple of 16.
-     * @result         A valid MPSMatrixCopyDescriptor to represent the list of copy operations
+     * @return         A valid MPSMatrixCopyDescriptor to represent the list of copy operations
      */
     @Generated
     @Selector("initWithSourceMatrices:destinationMatrices:offsetVector:offset:")
@@ -176,8 +181,10 @@ public class MPSMatrixCopyDescriptor extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract    Initialize a MPSMatrixCopyDescriptor using offsets generated on the CPU
-     * @discussion  This is for one at a time intialization of the copy operations
+     * Initialize a MPSMatrixCopyDescriptor using offsets generated on the CPU
+     * 
+     * This is for one at a time intialization of the copy operations
+     * 
      * @param  index               The index of the copy operation
      * @param  sourceMatrix        The source matrix for this copy operation
      * @param  destinationMatrix   The destination matrix for this copy operation

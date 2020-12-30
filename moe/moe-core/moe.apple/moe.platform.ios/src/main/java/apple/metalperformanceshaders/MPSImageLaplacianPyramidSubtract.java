@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageLaplacianPyramidSubtract
- * @discussion For each mip-level of the destination, MPSImageLaplacianPyramidSubtract constructs Laplacian pyramid
+ * MPSImageLaplacianPyramidSubtract
+ * 
+ * For each mip-level of the destination, MPSImageLaplacianPyramidSubtract constructs Laplacian pyramid
  *             according to the procedure specified in the discussion section for MPSImageLaplacianPyramid
  * 
  *             There needs to be at least as many mip-levels in the destination texture

@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class     HKBiologicalSexObject
- * @abstract  A wrapper object for HKBiologicalSex enumeration.
+ * HKBiologicalSexObject
+ * 
+ * A wrapper object for HKBiologicalSex enumeration.
  */
 @Generated
 @Library("HealthKit")

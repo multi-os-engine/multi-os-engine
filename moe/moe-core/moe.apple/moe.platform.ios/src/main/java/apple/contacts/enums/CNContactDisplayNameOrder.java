@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @abstract The formatting order of the contact name components.
+ * The formatting order of the contact name components.
  */
 @Generated
 public final class CNContactDisplayNameOrder {

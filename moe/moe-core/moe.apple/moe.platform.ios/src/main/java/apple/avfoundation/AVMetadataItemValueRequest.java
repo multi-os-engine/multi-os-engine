@@ -163,8 +163,10 @@ public class AVMetadataItemValueRequest extends NSObject {
     public native AVMetadataItem metadataItem();
 
     /**
-     * @method			respondWithError:
-     * @abstract		Allows you to respond to an AVMetadataItemValueRequest in the case of failure.
+     * respondWithError:
+     * 
+     * Allows you to respond to an AVMetadataItemValueRequest in the case of failure.
+     * 
      * @param			error
      * 				An instance of NSError that describes a failure encountered while loading the value of an AVMetadataItem.
      */
@@ -173,8 +175,10 @@ public class AVMetadataItemValueRequest extends NSObject {
     public native void respondWithError(NSError error);
 
     /**
-     * @method			respondWithValue:
-     * @abstract		Allows you to respond to an AVMetadataItemValueRequest by providing a value.
+     * respondWithValue:
+     * 
+     * Allows you to respond to an AVMetadataItemValueRequest by providing a value.
+     * 
      * @param			value
      * 				The value of the AVMetadataItem.
      */

@@ -252,7 +252,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the interaction begins.
+     * Called when the interaction begins.
      * 
      * @param collectionView  This UICollectionView.
      * @param indexPath       IndexPath of the item for which a configuration is being requested.
@@ -287,7 +287,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
+     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
      * 
      * @param collectionView  This UICollectionView.
@@ -302,7 +302,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the interaction begins. Return a UITargetedPreview describing the desired highlight preview.
+     * Called when the interaction begins. Return a UITargetedPreview describing the desired highlight preview.
      * 
      * @param collectionView  This UICollectionView.
      * @param configuration   The configuration of the menu about to be displayed by this interaction.
@@ -336,7 +336,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the interaction is about to "commit" in response to the user tapping the preview.
+     * Called when the interaction is about to "commit" in response to the user tapping the preview.
      * 
      * @param collectionView  This UICollectionView.
      * @param configuration   Configuration of the currently displayed menu.
@@ -381,7 +381,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the collection view is about to display a menu.
+     * Called when the collection view is about to display a menu.
      * 
      * @param collectionView  This UICollectionView.
      * @param configuration   The configuration of the menu about to be displayed.
@@ -397,7 +397,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * @abstract Called when the collection view's context menu interaction is about to end.
+     * Called when the collection view's context menu interaction is about to end.
      * 
      * @param collectionView  This UICollectionView.
      * @param configuration   Ending configuration.

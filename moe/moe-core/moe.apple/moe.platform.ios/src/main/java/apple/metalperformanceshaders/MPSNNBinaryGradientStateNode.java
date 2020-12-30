@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSNNBinaryGradientStateNode
+ * MPSNNBinaryGradientStateNode
  */
 @Generated
 @Library("MetalPerformanceShaders")

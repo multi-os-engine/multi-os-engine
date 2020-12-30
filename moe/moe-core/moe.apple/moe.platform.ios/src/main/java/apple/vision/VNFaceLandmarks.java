@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNFaceLandmarks
- * @brief VNFaceLandmarks2D is the result of a face landmarks request. It is an abstract base class.
+ * VNFaceLandmarks
+ * 
+ * VNFaceLandmarks2D is the result of a face landmarks request. It is an abstract base class.
  */
 @Generated
 @Library("Vision")
@@ -83,7 +84,7 @@ public class VNFaceLandmarks extends NSObject implements NSCopying, NSSecureCodi
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @brief a confidence estimate for the returned landmarks.
+     * a confidence estimate for the returned landmarks.
      */
     @Generated
     @Selector("confidence")

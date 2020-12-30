@@ -238,6 +238,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
 
     /**
      * Remove the indicated goal from this behavior.
+     * 
      * @param goal the goal to be removed
      */
     @Generated
@@ -254,6 +255,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     /**
      * Adds a new goal or changes the weight of the existing goal in this behavior.
      * If the goal does not exist in this behavior, it is added.
+     * 
      * @param weight the weight for this goal
      * @param goal the goal who's weight to change
      */
@@ -263,6 +265,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
 
     /**
      * Gets the current weight for a given goal.
+     * 
      * @return the weight of the goal, or 0 if there is no such goal on this behavior
      */
     @Generated

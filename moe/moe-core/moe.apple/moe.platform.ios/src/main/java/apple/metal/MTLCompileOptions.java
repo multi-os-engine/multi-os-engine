@@ -159,8 +159,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property fastMathEnabled
-     * @abstract If YES, enables the compiler to perform optimizations for floating-point arithmetic that may violate the IEEE 754 standard. It also enables the high precision variant of math functions for single precision floating-point scalar and vector types. fastMathEnabled defaults to YES.
+     * [@property] fastMathEnabled
+     * 
+     * If YES, enables the compiler to perform optimizations for floating-point arithmetic that may violate the IEEE 754 standard. It also enables the high precision variant of math functions for single precision floating-point scalar and vector types. fastMathEnabled defaults to YES.
      */
     @Generated
     @Selector("fastMathEnabled")
@@ -171,8 +172,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native MTLCompileOptions init();
 
     /**
-     * @property languageVersion
-     * @abstract set the metal language version used to interpret the source.
+     * [@property] languageVersion
+     * 
+     * set the metal language version used to interpret the source.
      */
     @Generated
     @Selector("languageVersion")
@@ -180,43 +182,51 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native long languageVersion();
 
     /**
-     * @property preprocessorNames
-     * @abstract List of preprocessor macros to consider to when compiling this program. Specified as key value pairs, using a NSDictionary. The keys must be NSString objects and values can be either NSString or NSNumber objects.
-     * @discussion The default value is nil.
+     * [@property] preprocessorNames
+     * 
+     * List of preprocessor macros to consider to when compiling this program. Specified as key value pairs, using a NSDictionary. The keys must be NSString objects and values can be either NSString or NSNumber objects.
+     * 
+     * The default value is nil.
      */
     @Generated
     @Selector("preprocessorMacros")
     public native NSDictionary<String, ? extends NSObject> preprocessorMacros();
 
     /**
-     * @property fastMathEnabled
-     * @abstract If YES, enables the compiler to perform optimizations for floating-point arithmetic that may violate the IEEE 754 standard. It also enables the high precision variant of math functions for single precision floating-point scalar and vector types. fastMathEnabled defaults to YES.
+     * [@property] fastMathEnabled
+     * 
+     * If YES, enables the compiler to perform optimizations for floating-point arithmetic that may violate the IEEE 754 standard. It also enables the high precision variant of math functions for single precision floating-point scalar and vector types. fastMathEnabled defaults to YES.
      */
     @Generated
     @Selector("setFastMathEnabled:")
     public native void setFastMathEnabled(boolean value);
 
     /**
-     * @property languageVersion
-     * @abstract set the metal language version used to interpret the source.
+     * [@property] languageVersion
+     * 
+     * set the metal language version used to interpret the source.
      */
     @Generated
     @Selector("setLanguageVersion:")
     public native void setLanguageVersion(@NUInt long value);
 
     /**
-     * @property preprocessorNames
-     * @abstract List of preprocessor macros to consider to when compiling this program. Specified as key value pairs, using a NSDictionary. The keys must be NSString objects and values can be either NSString or NSNumber objects.
-     * @discussion The default value is nil.
+     * [@property] preprocessorNames
+     * 
+     * List of preprocessor macros to consider to when compiling this program. Specified as key value pairs, using a NSDictionary. The keys must be NSString objects and values can be either NSString or NSNumber objects.
+     * 
+     * The default value is nil.
      */
     @Generated
     @Selector("setPreprocessorMacros:")
     public native void setPreprocessorMacros(NSDictionary<String, ? extends NSObject> value);
 
     /**
-     * @property installName
-     * @abstract The install name of this dynamic library.
-     * @discussion The install name is used when a pipeline state is created that depends, directly or indirectly, on a dynamic library.
+     * [@property] installName
+     * 
+     * The install name of this dynamic library.
+     * 
+     * The install name is used when a pipeline state is created that depends, directly or indirectly, on a dynamic library.
      * The installName is embedded into any other MTLLibrary that links against the compilation result.
      * This property should be set such that the dynamic library can be found in the file system at the time a pipeline state is created.
      * Specify one of:
@@ -233,8 +243,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native String installName();
 
     /**
-     * @property libraries
-     * @abstract A set of MTLDynamicLibrary instances to link against.
+     * [@property] libraries
+     * 
+     * A set of MTLDynamicLibrary instances to link against.
      * The installName of the provided MTLDynamicLibrary is embedded into the compilation result.
      * When a function from the resulting MTLLibrary is used (either as an MTLFunction, or as an to create a pipeline state, the embedded install names are used to automatically load the MTLDynamicLibrary instances.
      * This property can be null if no libraries should be automatically loaded, either because the MTLLibrary has no external dependencies, or because you will use insertLibraries to specify the libraries to use at pipeline creation time.
@@ -244,9 +255,11 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native NSArray<?> libraries();
 
     /**
-     * @property type
-     * @abstract Which type the library should be compiled as. The default value is MTLLibraryTypeExecutable.
-     * @discussion MTLLibraryTypeExecutable is suitable to build a library of "kernel", "vertex" and "fragment" qualified functions.
+     * [@property] type
+     * 
+     * Which type the library should be compiled as. The default value is MTLLibraryTypeExecutable.
+     * 
+     * MTLLibraryTypeExecutable is suitable to build a library of "kernel", "vertex" and "fragment" qualified functions.
      * MTLLibraryType is suitable when the compilation result will instead be used to instantiate a MTLDynamicLibrary.
      * MTLDynamicLibrary contains no qualified functions, but it's unqualified functions and variables can be used as an external dependency for compiling other libraries.
      */
@@ -256,17 +269,20 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native long libraryType();
 
     /**
-     * @property preserveInvariance
-     * @abstract If YES,  set the compiler to compile shaders to preserve invariance.  The default is false.
+     * [@property] preserveInvariance
+     * 
+     * If YES,  set the compiler to compile shaders to preserve invariance.  The default is false.
      */
     @Generated
     @Selector("preserveInvariance")
     public native boolean preserveInvariance();
 
     /**
-     * @property installName
-     * @abstract The install name of this dynamic library.
-     * @discussion The install name is used when a pipeline state is created that depends, directly or indirectly, on a dynamic library.
+     * [@property] installName
+     * 
+     * The install name of this dynamic library.
+     * 
+     * The install name is used when a pipeline state is created that depends, directly or indirectly, on a dynamic library.
      * The installName is embedded into any other MTLLibrary that links against the compilation result.
      * This property should be set such that the dynamic library can be found in the file system at the time a pipeline state is created.
      * Specify one of:
@@ -283,8 +299,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native void setInstallName(String value);
 
     /**
-     * @property libraries
-     * @abstract A set of MTLDynamicLibrary instances to link against.
+     * [@property] libraries
+     * 
+     * A set of MTLDynamicLibrary instances to link against.
      * The installName of the provided MTLDynamicLibrary is embedded into the compilation result.
      * When a function from the resulting MTLLibrary is used (either as an MTLFunction, or as an to create a pipeline state, the embedded install names are used to automatically load the MTLDynamicLibrary instances.
      * This property can be null if no libraries should be automatically loaded, either because the MTLLibrary has no external dependencies, or because you will use insertLibraries to specify the libraries to use at pipeline creation time.
@@ -294,9 +311,11 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native void setLibraries(NSArray<?> value);
 
     /**
-     * @property type
-     * @abstract Which type the library should be compiled as. The default value is MTLLibraryTypeExecutable.
-     * @discussion MTLLibraryTypeExecutable is suitable to build a library of "kernel", "vertex" and "fragment" qualified functions.
+     * [@property] type
+     * 
+     * Which type the library should be compiled as. The default value is MTLLibraryTypeExecutable.
+     * 
+     * MTLLibraryTypeExecutable is suitable to build a library of "kernel", "vertex" and "fragment" qualified functions.
      * MTLLibraryType is suitable when the compilation result will instead be used to instantiate a MTLDynamicLibrary.
      * MTLDynamicLibrary contains no qualified functions, but it's unqualified functions and variables can be used as an external dependency for compiling other libraries.
      */
@@ -305,8 +324,9 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     public native void setLibraryType(@NInt long value);
 
     /**
-     * @property preserveInvariance
-     * @abstract If YES,  set the compiler to compile shaders to preserve invariance.  The default is false.
+     * [@property] preserveInvariance
+     * 
+     * If YES,  set the compiler to compile shaders to preserve invariance.  The default is false.
      */
     @Generated
     @Selector("setPreserveInvariance:")

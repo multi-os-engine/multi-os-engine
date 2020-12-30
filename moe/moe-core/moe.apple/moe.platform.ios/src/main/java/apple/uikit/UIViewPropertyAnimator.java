@@ -145,10 +145,11 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract This method provides compatibility with the old style [UIView
+     * This method provides compatibility with the old style [UIView
      * animationWithDuration:...]  method. It is also useful for controlling
      * how animations options are inherited.
-     * @discussion Creates a UIViewPropertyAnimator, sets the duration, options, etc. And starts the
+     * 
+     * Creates a UIViewPropertyAnimator, sets the duration, options, etc. And starts the
      * animation with the associated animation and completion blocks. The animator
      * returned is interruptible only if it is not called from within the execution
      * block of another animation (animator or legacy). Note that if it is called

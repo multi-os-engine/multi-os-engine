@@ -25,9 +25,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNStateNode
- * @abstract   A placeholder node denoting the position in the graph of a MPSState object
- * @discussion Some filters need additional information about an image in order to function. For example
+ * MPSNNStateNode
+ * 
+ * A placeholder node denoting the position in the graph of a MPSState object
+ * 
+ * Some filters need additional information about an image in order to function. For example
  *             a max-pooling gradient filter needs to know which position the max result came from in the
  *             original pooling filter in order to select the right data for gradient computation.  In other cases,
  *             state may be moved into a MPSState object in order to keep the filter itself immutable.
@@ -92,8 +94,9 @@ public class MPSNNStateNode extends NSObject {
     public static native String description_static();
 
     /**
-     * @abstract   MPS resource identification
-     * @discussion See MPSHandle protocol reference.  Default: nil
+     * MPS resource identification
+     * 
+     * See MPSHandle protocol reference.  Default: nil
      */
     @Generated
     @Selector("handle")
@@ -145,8 +148,9 @@ public class MPSNNStateNode extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract   MPS resource identification
-     * @discussion See MPSHandle protocol reference.  Default: nil
+     * MPS resource identification
+     * 
+     * See MPSHandle protocol reference.  Default: nil
      */
     @Generated
     @Selector("setHandle:")
@@ -166,8 +170,9 @@ public class MPSNNStateNode extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract   Tag a state node for view later
-     * @discussion Most state nodes are private to the graph. These alias memory heavily and
+     * Tag a state node for view later
+     * 
+     * Most state nodes are private to the graph. These alias memory heavily and
      *             consequently generally have invalid state when the graph exits.  When
      *             exportFromGraph = YES, the image is preserved and made available through
      *             the [MPSNNGraph encode... resultStates:... list.
@@ -187,8 +192,9 @@ public class MPSNNStateNode extends NSObject {
     public native boolean exportFromGraph();
 
     /**
-     * @abstract   Tag a state node for view later
-     * @discussion Most state nodes are private to the graph. These alias memory heavily and
+     * Tag a state node for view later
+     * 
+     * Most state nodes are private to the graph. These alias memory heavily and
      *             consequently generally have invalid state when the graph exits.  When
      *             exportFromGraph = YES, the image is preserved and made available through
      *             the [MPSNNGraph encode... resultStates:... list.
@@ -208,16 +214,18 @@ public class MPSNNStateNode extends NSObject {
     public native void setExportFromGraph(boolean value);
 
     /**
-     * @abstract   Set to true to cause the resource to be synchronized with the CPU
-     * @discussion Ignored on non-MacOS.
+     * Set to true to cause the resource to be synchronized with the CPU
+     * 
+     * Ignored on non-MacOS.
      */
     @Generated
     @Selector("setSynchronizeResource:")
     public native void setSynchronizeResource(boolean value);
 
     /**
-     * @abstract   Set to true to cause the resource to be synchronized with the CPU
-     * @discussion Ignored on non-MacOS.
+     * Set to true to cause the resource to be synchronized with the CPU
+     * 
+     * Ignored on non-MacOS.
      */
     @Generated
     @Selector("synchronizeResource")

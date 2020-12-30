@@ -30,9 +30,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNCropAndResizeBilinear
- * @dependency This depends on Metal.framework
- * @discussion The MPSNNCropAndResizeBilinear filter resizes the source image  using bilinear interpolation to
+ * MPSNNCropAndResizeBilinear
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSNNCropAndResizeBilinear filter resizes the source image  using bilinear interpolation to
  *             a destination whose dimensions are given by resizeWidth and resizeHeight
  * 
  *             The number of output feature channels remains the same as the number of input feature
@@ -110,8 +111,10 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public native MPSNNCropAndResizeBilinear initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSNNCropAndResizeBilinear
      * @param      device      The MTLDevice on which to make the MPSNNCropAndResizeBilinear
      * @return     A new MPSNNResizeBilinear object, or nil if failure.
@@ -126,7 +129,8 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public native MPSNNCropAndResizeBilinear initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the crop and resize bilinear filter.
+     * Initialize the crop and resize bilinear filter.
+     * 
      * @param     device                   The device the filter will run on.
      * @param     resizeWidth              The destination resize width in pixels
      * @param     resizeHeight             The destination resize height in pixels
@@ -170,8 +174,9 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public static native Object new_objc();
 
     /**
-     * @property   numberOfRegions
-     * @abstract   the number of bounding box i.e. regions to resize.
+     * [@property]   numberOfRegions
+     * 
+     * the number of bounding box i.e. regions to resize.
      */
     @Generated
     @Selector("numberOfRegions")
@@ -179,8 +184,9 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public native long numberOfRegions();
 
     /**
-     * @property   regions
-     * @abstract   This is a pointer to "numberOfRegions" boxes which specify the locations in the
+     * [@property]   regions
+     * 
+     * This is a pointer to "numberOfRegions" boxes which specify the locations in the
      *             source image to use for each box/region to perform the resize operation.
      *             The coordinates specified are normalized values.  A normalized region outside the
      *             [0, 1] range is allowed, in which case we use extrapolation_value to extrapolate
@@ -192,8 +198,9 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public native MPSRegion regions();
 
     /**
-     * @property   resizeHeight
-     * @abstract   The resize height.
+     * [@property]   resizeHeight
+     * 
+     * The resize height.
      */
     @Generated
     @Selector("resizeHeight")
@@ -201,8 +208,9 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public native long resizeHeight();
 
     /**
-     * @property   resizeWidth
-     * @abstract   The resize width.
+     * [@property]   resizeWidth
+     * 
+     * The resize width.
      */
     @Generated
     @Selector("resizeWidth")

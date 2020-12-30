@@ -4,11 +4,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueInputEvent
+ * [@enum]      HMCharacteristicValueInputEvent
  * 
- * @constant  HMCharacteristicValueInputEventSinglePress  Single tap or press.
- * @constant  HMCharacteristicValueInputEventDoublePress  Double tap or press.
- * @constant  HMCharacteristicValueInputEventLongPress    Long Press.
+ * [@constant]  HMCharacteristicValueInputEventSinglePress  Single tap or press.
+ * [@constant]  HMCharacteristicValueInputEventDoublePress  Double tap or press.
+ * [@constant]  HMCharacteristicValueInputEventLongPress    Long Press.
  */
 @Generated
 public final class HMCharacteristicValueInputEvent {

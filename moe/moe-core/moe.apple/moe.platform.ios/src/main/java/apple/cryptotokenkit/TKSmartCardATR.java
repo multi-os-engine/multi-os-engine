@@ -109,7 +109,7 @@ public class TKSmartCardATR extends NSObject {
     /**
      * An array of TKCompactTLVRecord instances with TLV records parsed from historical bytes.  If historical bytes are
      * not structured using Compact TLV encoding, nil is returned.
-     * @note In case that ATR historical bytes begin with 0x00, the last three bytes (status indicator) are automatically
+     * [@note] In case that ATR historical bytes begin with 0x00, the last three bytes (status indicator) are automatically
      *       appended into the returned records as if historical bytes would begin with 0x80 and 0x8 record is present
      *       in historical bytes.
      */
@@ -123,6 +123,7 @@ public class TKSmartCardATR extends NSObject {
 
     /**
      * Parses ATR from binary data block
+     * 
      * @param bytes Data containing full valid ATR
      * @return Parsed ATR instance, or nil when #bytes do not contain valid ATR.
      */
@@ -132,6 +133,7 @@ public class TKSmartCardATR extends NSObject {
 
     /**
      * Parses ATR from stream.
+     * 
      * @param source Provides one byte of ATR from the stream or -1 in case of an error
      * @return Parsed ATR instance, or nil when #source method failed or an invalid ATR is detected
      */
@@ -161,6 +163,7 @@ public class TKSmartCardATR extends NSObject {
 
     /**
      * Retrieves interface group with specified index.
+     * 
      * @param index Index of the requested interface group.  Indexing conforms to ISO7816-3, i.e. starts from 1.
      * @return Interface group with given index, or nil of no such group was present.
      */
@@ -170,6 +173,7 @@ public class TKSmartCardATR extends NSObject {
 
     /**
      * Retrieves interface group belonging to specified protocol.
+     * 
      * @param protocol Protocol number for which the interface group is requested.
      */
     @Generated

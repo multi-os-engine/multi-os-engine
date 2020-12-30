@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNArithmeticGradientState
- * @dependency This depends on Metal.framework.
- * @discussion The MPSCNNArithmeticGradientState is used to hold the clamp mask used by both
+ * MPSCNNArithmeticGradientState
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * The MPSCNNArithmeticGradientState is used to hold the clamp mask used by both
  *             MPSCNNArithmetic forward filter and MPSCNNArithmeticGradient backward filter.
  *             The MPSCNNArithmetic forward filter populates the MPSCNNArithmeticGradientState
  *             object and the MPSCNNArithmeticGradient backward filter consumes the state

@@ -91,7 +91,7 @@ public class ARImageAnchor extends ARAnchor implements ARTrackable {
     /**
      * The factor between estimated physical size and provided size.
      * 
-     * @discussion This value will be estimated if automaticImageScaleEstimationEnabled is set to true on the ARWorldTrackingConfiguration. It is used to
+     * This value will be estimated if automaticImageScaleEstimationEnabled is set to true on the ARWorldTrackingConfiguration. It is used to
      * correct the transform's translation. Default value is 1.0.
      */
     @Generated

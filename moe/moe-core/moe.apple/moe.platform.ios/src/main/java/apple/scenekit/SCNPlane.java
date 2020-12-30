@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPlane
- * @abstract SCNPlane represents a rectangle with controllable width and height. The plane has one visible side.
+ * SCNPlane
+ * 
+ * SCNPlane represents a rectangle with controllable width and height. The plane has one visible side.
  */
 @Generated
 @Library("SceneKit")
@@ -151,8 +152,10 @@ public class SCNPlane extends SCNGeometry {
     public static native Object new_objc();
 
     /**
-     * @method planeWithWidth:height:
-     * @abstract Creates and returns a plane with given width and height.
+     * planeWithWidth:height:
+     * 
+     * Creates and returns a plane with given width and height.
+     * 
      * @param width The width of the plane.
      * @param height The height of the plane.
      */
@@ -186,9 +189,11 @@ public class SCNPlane extends SCNGeometry {
     public static native long version_static();
 
     /**
-     * @property cornerRadius
-     * @abstract The corner radius. Animatable.
-     * @discussion If the value is strictly less than 0, the geometry is empty. The default value is 0.
+     * [@property] cornerRadius
+     * 
+     * The corner radius. Animatable.
+     * 
+     * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
     @Selector("cornerRadius")
@@ -196,9 +201,11 @@ public class SCNPlane extends SCNGeometry {
     public native double cornerRadius();
 
     /**
-     * @property cornerSegmentCount
-     * @abstract The number of subdivisions for the rounded corners. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 10.
+     * [@property] cornerSegmentCount
+     * 
+     * The number of subdivisions for the rounded corners. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 10.
      */
     @Generated
     @Selector("cornerSegmentCount")
@@ -206,9 +213,11 @@ public class SCNPlane extends SCNGeometry {
     public native long cornerSegmentCount();
 
     /**
-     * @property height
-     * @abstract The plane extent along the Y axis. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The plane extent along the Y axis. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("height")
@@ -216,9 +225,11 @@ public class SCNPlane extends SCNGeometry {
     public native double height();
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. The default value is 1. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. The default value is 1. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("heightSegmentCount")
@@ -234,54 +245,66 @@ public class SCNPlane extends SCNGeometry {
     public native SCNPlane initWithCoder(NSCoder coder);
 
     /**
-     * @property cornerRadius
-     * @abstract The corner radius. Animatable.
-     * @discussion If the value is strictly less than 0, the geometry is empty. The default value is 0.
+     * [@property] cornerRadius
+     * 
+     * The corner radius. Animatable.
+     * 
+     * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
     @Selector("setCornerRadius:")
     public native void setCornerRadius(@NFloat double value);
 
     /**
-     * @property cornerSegmentCount
-     * @abstract The number of subdivisions for the rounded corners. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 10.
+     * [@property] cornerSegmentCount
+     * 
+     * The number of subdivisions for the rounded corners. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 10.
      */
     @Generated
     @Selector("setCornerSegmentCount:")
     public native void setCornerSegmentCount(@NInt long value);
 
     /**
-     * @property height
-     * @abstract The plane extent along the Y axis. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The plane extent along the Y axis. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. The default value is 1. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. The default value is 1. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
     /**
-     * @property width
-     * @abstract The plane extent along the X axis. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] width
+     * 
+     * The plane extent along the X axis. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setWidth:")
     public native void setWidth(@NFloat double value);
 
     /**
-     * @property widthSegmentCount
-     * @abstract The number of subdivisions along the X axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] widthSegmentCount
+     * 
+     * The number of subdivisions along the X axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setWidthSegmentCount:")
@@ -294,9 +317,11 @@ public class SCNPlane extends SCNGeometry {
     }
 
     /**
-     * @property width
-     * @abstract The plane extent along the X axis. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] width
+     * 
+     * The plane extent along the X axis. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("width")
@@ -304,9 +329,11 @@ public class SCNPlane extends SCNGeometry {
     public native double width();
 
     /**
-     * @property widthSegmentCount
-     * @abstract The number of subdivisions along the X axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] widthSegmentCount
+     * 
+     * The number of subdivisions along the X axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("widthSegmentCount")

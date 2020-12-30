@@ -43,9 +43,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      NKIssue
- * @abstract   Represents the Newsstand issue and its location on disk.
- * @discussion All Newsstand issues have a publication date and a unique name. 
+ * NKIssue
+ * 
+ * Represents the Newsstand issue and its location on disk.
+ * 
+ * All Newsstand issues have a publication date and a unique name.
  * You register assets for download through this class.
  * All of the Newsstand content that represents this issue should be
  * placed in the URL provided by contentURL.
@@ -168,8 +170,9 @@ public class NKIssue extends NSObject {
     public static native long version_static();
 
     /**
-     * @method     addAssetWithRequest:
-     * @abstract   Add a downloading asset to this issue. Initiate the download for this
+     * addAssetWithRequest:
+     * 
+     * Add a downloading asset to this issue. Initiate the download for this
      * asset with the downloadWithDelegate: method on the NKAssetDownload.
      */
     @Generated
@@ -177,8 +180,9 @@ public class NKIssue extends NSObject {
     public native NKAssetDownload addAssetWithRequest(NSURLRequest request);
 
     /**
-     * @property   contentURL
-     * @abstract   All content that represents this issue should be placed in the
+     * [@property]   contentURL
+     * 
+     * All content that represents this issue should be placed in the
      * URL provided.
      */
     @Generated
@@ -186,16 +190,18 @@ public class NKIssue extends NSObject {
     public native NSURL contentURL();
 
     /**
-     * @property   date
-     * @abstract   The date of this issue
+     * [@property]   date
+     * 
+     * The date of this issue
      */
     @Generated
     @Selector("date")
     public native NSDate date();
 
     /**
-     * @property   downloadingAssets
-     * @abstract   An array of NKAssetDownload associated with this issue.
+     * [@property]   downloadingAssets
+     * 
+     * An array of NKAssetDownload associated with this issue.
      */
     @Generated
     @Selector("downloadingAssets")
@@ -206,17 +212,20 @@ public class NKIssue extends NSObject {
     public native NKIssue init();
 
     /**
-     * @property   name
-     * @abstract   The unique name given to this issue
+     * [@property]   name
+     * 
+     * The unique name given to this issue
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @property   status
-     * @abstract   The availability of this issue's content.
-     * @discussion If there are asset downloads associated with this issue, the status
+     * [@property]   status
+     * 
+     * The availability of this issue's content.
+     * 
+     * If there are asset downloads associated with this issue, the status
      * is NKIssueContentStatusDownloading. If there are no downloading assets
      * and the directory represented by contentURL is non-empty, the status
      * is NKIssueContentStatusAvailable. Otherwise, no content is available

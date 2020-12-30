@@ -4,17 +4,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVCaptureOutputDataDroppedReason
- * @abstract
+ * [@enum] AVCaptureOutputDataDroppedReason
+ * 
  *    Constants indicating the reason a capture data output dropped data.
  * 
- * @constant AVCaptureOutputDataDroppedReasonNone
+ * [@constant] AVCaptureOutputDataDroppedReasonNone
  *    No data was dropped.
- * @constant AVCaptureOutputDataDroppedReasonLateData
+ * [@constant] AVCaptureOutputDataDroppedReasonLateData
  *    Data was dropped because alwaysDiscardsLate{VideoFrames | DepthData} is YES and the client was still processing previous data when the current data needed to be delivered.
- * @constant AVCaptureOutputDataDroppedReasonOutOfBuffers
+ * [@constant] AVCaptureOutputDataDroppedReasonOutOfBuffers
  *    Data was dropped because its pool of buffers ran dry. This is usually indicative that the client is holding onto data objects too long.
- * @constant AVCaptureOutputDataDroppedReasonDiscontinuity
+ * [@constant] AVCaptureOutputDataDroppedReasonDiscontinuity
  *    Data was dropped because the device providing the data experienced a discontinuity, and an unknown number of data objects have been lost. This condition is typically caused by the system being too busy.
  */
 @Generated

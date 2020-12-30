@@ -45,11 +45,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKQuerySubscription
+ * CKQuerySubscription
  * 
- * @abstract A subscription that fires whenever a change matching the predicate occurs.
+ * A subscription that fires whenever a change matching the predicate occurs.
  * 
- * @discussion @c CKQuerySubscriptions are not supported in a @c sharedCloudDatabase
+ * [@c] CKQuerySubscriptions are not supported in a @c sharedCloudDatabase
  */
 @Generated
 @Library("CloudKit")
@@ -202,12 +202,12 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     public native NSPredicate predicate();
 
     /**
-     * @abstract Options flags describing the firing behavior subscription.
+     * Options flags describing the firing behavior subscription.
      * 
-     * @discussion One of
-     * @c CKQuerySubscriptionOptionsFiresOnRecordCreation,
-     * @c CKQuerySubscriptionOptionsFiresOnRecordUpdate, or
-     * @c CKQuerySubscriptionOptionsFiresOnRecordDeletion must be specified or an @c NSInvalidArgumentException will be thrown.
+     * One of
+     * [@c] CKQuerySubscriptionOptionsFiresOnRecordCreation,
+     * [@c] CKQuerySubscriptionOptionsFiresOnRecordUpdate, or
+     * [@c] CKQuerySubscriptionOptionsFiresOnRecordDeletion must be specified or an @c NSInvalidArgumentException will be thrown.
      */
     @Generated
     @Selector("querySubscriptionOptions")

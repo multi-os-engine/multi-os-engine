@@ -29,9 +29,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageScale
- * @abstract   Resize an image and / or change its aspect ratio
- * @discussion The MPSImageScale filter can be used to resample an existing image
+ * MPSImageScale
+ * 
+ * Resize an image and / or change its aspect ratio
+ * 
+ * The MPSImageScale filter can be used to resample an existing image
  *             using a different sampling frequency in each dimension. This can be
  *             used to enlarge or reduce the size of an image, or change the aspect
  *             ratio of an image.
@@ -113,12 +115,14 @@ public class MPSImageScale extends MPSUnaryImageKernel {
     public native MPSImageScale initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -170,9 +174,11 @@ public class MPSImageScale extends MPSUnaryImageKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   scaleTransform
-     * @abstract   An optional transform that describes how to scale and translate the source image
-     * @discussion If the scaleTransform is NULL, then any image scaling factor such as MPSImageLanczosScale
+     * [@property]   scaleTransform
+     * 
+     * An optional transform that describes how to scale and translate the source image
+     * 
+     * If the scaleTransform is NULL, then any image scaling factor such as MPSImageLanczosScale
      *             will rescale the image so that the source image fits exactly into the destination
      *             texture.  If the transform is not NULL, then the transform is used for determining
      *             how to map the source image to the destination. Default: NULL
@@ -188,11 +194,11 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      *             the scale transform to convert the entire source image to the entire destination image
      *             size (clipRect = MPSRectNoClip) would be:
      * 
-     *             @code
+     *             [@code]
      *                 scaleTransform.scaleX = (double) dest.width / source.width;
      *                 scaleTransform.scaleY = (double) dest.height / source.height;
      *                 scaleTransform.translateX = scaleTransform.translateY = 0.0;
-     *             @endcode
+     *             [@endcode]
      * 
      *             The translation parameters allow you to adjust the region of the source image used
      *             to create the destination image. They are in destination coordinates. To place the
@@ -200,18 +206,18 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      *             coordinates, we solve for the translation based on the standard scale matrix operation
      *             for each axis:
      * 
-     *             @code
+     *             [@code]
      *                 dest_position = source_position * scale + translation;
      *                 translation = dest_position - source_position * scale;
-     *             @endcode
+     *             [@endcode]
      * 
      *             For the top left corner of the clipRect, the dest_position is considered to be {0,0}.
      *             This gives us a translation of:
      * 
-     *             @code
+     *             [@code]
      *                 scaleTransform.translateX = -source_origin.x * scaleTransform.scaleX;
      *                 scaleTransform.translateY = -source_origin.y * scaleTransform.scaleY;
-     *             @endcode
+     *             [@endcode]
      * 
      *             One would typically use non-zero translations to do tiling, or provide a resized
      *             view into a internal segment of an image.
@@ -228,9 +234,11 @@ public class MPSImageScale extends MPSUnaryImageKernel {
     public native MPSScaleTransform scaleTransform();
 
     /**
-     * @property   scaleTransform
-     * @abstract   An optional transform that describes how to scale and translate the source image
-     * @discussion If the scaleTransform is NULL, then any image scaling factor such as MPSImageLanczosScale
+     * [@property]   scaleTransform
+     * 
+     * An optional transform that describes how to scale and translate the source image
+     * 
+     * If the scaleTransform is NULL, then any image scaling factor such as MPSImageLanczosScale
      *             will rescale the image so that the source image fits exactly into the destination
      *             texture.  If the transform is not NULL, then the transform is used for determining
      *             how to map the source image to the destination. Default: NULL
@@ -246,11 +254,11 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      *             the scale transform to convert the entire source image to the entire destination image
      *             size (clipRect = MPSRectNoClip) would be:
      * 
-     *             @code
+     *             [@code]
      *                 scaleTransform.scaleX = (double) dest.width / source.width;
      *                 scaleTransform.scaleY = (double) dest.height / source.height;
      *                 scaleTransform.translateX = scaleTransform.translateY = 0.0;
-     *             @endcode
+     *             [@endcode]
      * 
      *             The translation parameters allow you to adjust the region of the source image used
      *             to create the destination image. They are in destination coordinates. To place the
@@ -258,18 +266,18 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      *             coordinates, we solve for the translation based on the standard scale matrix operation
      *             for each axis:
      * 
-     *             @code
+     *             [@code]
      *                 dest_position = source_position * scale + translation;
      *                 translation = dest_position - source_position * scale;
-     *             @endcode
+     *             [@endcode]
      * 
      *             For the top left corner of the clipRect, the dest_position is considered to be {0,0}.
      *             This gives us a translation of:
      * 
-     *             @code
+     *             [@code]
      *                 scaleTransform.translateX = -source_origin.x * scaleTransform.scaleX;
      *                 scaleTransform.translateY = -source_origin.y * scaleTransform.scaleY;
-     *             @endcode
+     *             [@endcode]
      * 
      *             One would typically use non-zero translations to do tiling, or provide a resized
      *             view into a internal segment of an image.

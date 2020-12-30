@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class is used to represent the presence of users in a home.
+ * This class is used to represent the presence of users in a home.
  */
 @Generated
 @Library("HomeKit")
@@ -130,7 +130,7 @@ public class HMMutablePresenceEvent extends HMPresenceEvent {
     public static native Object new_objc();
 
     /**
-     * @brief presenceEventType The event type that will trigger the event.
+     * presenceEventType The event type that will trigger the event.
      */
     @Generated
     @Selector("presenceEventType")
@@ -138,7 +138,7 @@ public class HMMutablePresenceEvent extends HMPresenceEvent {
     public native long presenceEventType();
 
     /**
-     * @brief presenceUserType The user type whose presence will trigger the event.
+     * presenceUserType The user type whose presence will trigger the event.
      */
     @Generated
     @Selector("presenceUserType")
@@ -154,14 +154,14 @@ public class HMMutablePresenceEvent extends HMPresenceEvent {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief presenceEventType The event type that will trigger the event.
+     * presenceEventType The event type that will trigger the event.
      */
     @Generated
     @Selector("setPresenceEventType:")
     public native void setPresenceEventType(@NUInt long value);
 
     /**
-     * @brief presenceUserType The user type whose presence will trigger the event.
+     * presenceUserType The user type whose presence will trigger the event.
      */
     @Generated
     @Selector("setPresenceUserType:")

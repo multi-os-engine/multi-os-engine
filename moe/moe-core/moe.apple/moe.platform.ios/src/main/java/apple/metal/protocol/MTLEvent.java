@@ -15,8 +15,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLEvent")
 public interface MTLEvent {
     /**
-     * @property device
-     * @abstract The device this event can be used with. Will be nil when the event is shared across devices (i.e. MTLSharedEvent).
+     * [@property] device
+     * 
+     * The device this event can be used with. Will be nil when the event is shared across devices (i.e. MTLSharedEvent).
      */
     @Generated
     @Selector("device")
@@ -24,16 +25,18 @@ public interface MTLEvent {
     MTLDevice device();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")

@@ -29,7 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNPhysicsConeTwistJoint
+ * SCNPhysicsConeTwistJoint
  */
 @Generated
 @Library("SceneKit")

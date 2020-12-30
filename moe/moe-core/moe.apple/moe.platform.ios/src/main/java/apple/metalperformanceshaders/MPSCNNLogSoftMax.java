@@ -42,9 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNLogSoftMax
- * @dependency This depends on Metal.framework
- * @discussion The logarithmic softMax filter can be achieved by taking the natural logarithm of the
+ * MPSCNNLogSoftMax
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The logarithmic softMax filter can be achieved by taking the natural logarithm of the
  *             the result of the softMax filter. The results are often used to construct a loss function to be
  *             minimized when training neural networks.
  *             For each feature channel per pixel in an image in a feature map, the logarithmic softMax filter

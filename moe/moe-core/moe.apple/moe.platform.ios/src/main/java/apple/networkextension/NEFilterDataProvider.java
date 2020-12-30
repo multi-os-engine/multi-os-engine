@@ -41,8 +41,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEFilterDataProvider
- * @discussion The NEFilterDataProvider class declares the programmatic interface for an object that evaluates network data flows based on a set of locally-available rules and makes decisions about whether to block or allow the flows.
+ * [@interface] NEFilterDataProvider
+ * 
+ * The NEFilterDataProvider class declares the programmatic interface for an object that evaluates network data flows based on a set of locally-available rules and makes decisions about whether to block or allow the flows.
  */
 @Generated
 @Library("NetworkExtension")
@@ -156,8 +157,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
     public static native long version_static();
 
     /**
-     * @method handleInboundDataCompleteForFlow:
-     * @discussion This function is called by the framework after all of the inbound data for a flow has been seen by the filter. Subclasses must override this method to return an appropriate pass/block result.
+     * handleInboundDataCompleteForFlow:
+     * 
+     * This function is called by the framework after all of the inbound data for a flow has been seen by the filter. Subclasses must override this method to return an appropriate pass/block result.
+     * 
      * @param flow The flow
      * @return The final NEFilterFlowDataVerdict verdict for the flow.
      */
@@ -166,8 +169,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
     public native NEFilterDataVerdict handleInboundDataCompleteForFlow(NEFilterFlow flow);
 
     /**
-     * @method handleInboundDataFromFlow:readBytesStartOffset:readBytes:
-     * @discussion This function is called by the framework when a filtering decision needs to be made about some inbound data that the filter previously requested access to via the NEFilterFlowDataVerdict or the NEFilterNewFlowVerdict. Subclasses must override this method.
+     * handleInboundDataFromFlow:readBytesStartOffset:readBytes:
+     * 
+     * This function is called by the framework when a filtering decision needs to be made about some inbound data that the filter previously requested access to via the NEFilterFlowDataVerdict or the NEFilterNewFlowVerdict. Subclasses must override this method.
+     * 
      * @param flow The NEFilterFlow from which the data was read.
      * @param offset The offset in bytes from the start of the flow's inbound data at which readBytes begins.
      * @param readBytes The data that was read.  For non-UDP/TCP flows, since data may optionally include the IP header, readBytes includes a 4-bytes NEFilterDataAttribute field preceding the user data.  Handler must examine the NEFilterDataAttribute field and handle the data accordingly.
@@ -179,8 +184,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
             @NUInt long offset, NSData readBytes);
 
     /**
-     * @method handleNewFlow:
-     * @discussion This function is called by the framework when a filtering decision needs to be made about a new network data flow. Subclasses must override this method to implement the steps necessary to match the flow against some locally stored rules and return an appropriate verdict.
+     * handleNewFlow:
+     * 
+     * This function is called by the framework when a filtering decision needs to be made about a new network data flow. Subclasses must override this method to implement the steps necessary to match the flow against some locally stored rules and return an appropriate verdict.
+     * 
      * @param flow An NEFilterFlow object containing details about the new flow.
      * @return An NEFilterNewFlowVerdict object containing the veridct for the new flow.
      */
@@ -189,8 +196,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
     public native NEFilterNewFlowVerdict handleNewFlow(NEFilterFlow flow);
 
     /**
-     * @method handleOutboundDataCompleteForFlow:
-     * @discussion This function is called by the framework after all of the outbound data for a flow has been seen by the filter. Subclasses must override this method to return an appropriate pass/block result.
+     * handleOutboundDataCompleteForFlow:
+     * 
+     * This function is called by the framework after all of the outbound data for a flow has been seen by the filter. Subclasses must override this method to return an appropriate pass/block result.
+     * 
      * @param flow The flow
      * @return The final NEFilterFlowDataVerdict verdict for the flow.
      */
@@ -199,8 +208,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
     public native NEFilterDataVerdict handleOutboundDataCompleteForFlow(NEFilterFlow flow);
 
     /**
-     * @method handleOutboundDataFromFlow:readBytesStartOffset:readBytes:
-     * @discussion This function is called by the framework when a filtering decision needs to be made about some outbound data that the filter previously requested access to via the NEFilterFlowDataVerdict or the NEFilterNewFlowVerdict. Subclasses must override this method.
+     * handleOutboundDataFromFlow:readBytesStartOffset:readBytes:
+     * 
+     * This function is called by the framework when a filtering decision needs to be made about some outbound data that the filter previously requested access to via the NEFilterFlowDataVerdict or the NEFilterNewFlowVerdict. Subclasses must override this method.
+     * 
      * @param flow The NEFilterFlow from which the data was read.
      * @param offset The offset in bytes from the start of the flow's outbound data at which readBytes begins.
      * @param readBytes The data that was read.  For non-UDP/TCP flows, since data may optionally include the IP header, readBytes includes a 4-bytes NEFilterDataAttribute field preceding the user data.  Handler must examine the NEFilterDataAttribute field and handle the data accordingly.
@@ -212,8 +223,10 @@ public class NEFilterDataProvider extends NEFilterProvider {
             @NUInt long offset, NSData readBytes);
 
     /**
-     * @method handleRemediationForFlow:
-     * @discussion This function is called by the framework after the user requests remediation for a blocked flow. Subclasses must override this method to return an appropriate pass/block result.
+     * handleRemediationForFlow:
+     * 
+     * This function is called by the framework after the user requests remediation for a blocked flow. Subclasses must override this method to return an appropriate pass/block result.
+     * 
      * @param flow The flow
      * @return The final NEFilterRemediationVerdict verdict for the flow.
      */
@@ -222,8 +235,9 @@ public class NEFilterDataProvider extends NEFilterProvider {
     public native NEFilterRemediationVerdict handleRemediationForFlow(NEFilterFlow flow);
 
     /**
-     * @method handleRulesChanged
-     * @discussion This function is called by the framework when -[NEFilterControlProvider notifyRulesChanged] is called. Subclasses should override this method to reload new rules from disk.
+     * handleRulesChanged
+     * 
+     * This function is called by the framework when -[NEFilterControlProvider notifyRulesChanged] is called. Subclasses should override this method to reload new rules from disk.
      */
     @Generated
     @Selector("handleRulesChanged")

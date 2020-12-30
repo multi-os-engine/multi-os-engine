@@ -93,7 +93,7 @@ public class CPMessageComposeBarButton extends CPBarButton {
     /**
      * Convenience initializer that creates a message compose button with a system-provided image.
      * 
-     * @note This button type does not use a handler. Instead, tapping this button will activate Siri
+     * [@note] This button type does not use a handler. Instead, tapping this button will activate Siri
      *  and launch into a compose message flow.
      */
     @Generated
@@ -107,7 +107,7 @@ public class CPMessageComposeBarButton extends CPBarButton {
     /**
      * Convenience initializer that creates a message compose button with a custom image.
      * 
-     * @note This button type does not use a handler. Instead, tapping this button will activate Siri
+     * [@note] This button type does not use a handler. Instead, tapping this button will activate Siri
      * and launch into a compose message flow.
      */
     @Generated

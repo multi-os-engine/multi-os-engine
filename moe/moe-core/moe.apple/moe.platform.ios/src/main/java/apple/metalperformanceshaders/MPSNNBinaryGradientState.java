@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class  A state created to record MPSCNNBinaryKernel properties
+ * A state created to record MPSCNNBinaryKernel properties
  * at the time an -encode call was made. The contents are opaque.
  * 
  * Gradient states must be created with [MPSCNNBinaryKernel resultStateForPrimaryImage:secondaryImage:sourceStates:destinationImage:]

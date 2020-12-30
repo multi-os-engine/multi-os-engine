@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNCircle
- * @brief VNCircle is two-dimensional circle represented by the center point 'center' and its radius 'radius'. Once created, VNCircle objects are immutable.
+ * VNCircle
+ * 
+ * VNCircle is two-dimensional circle represented by the center point 'center' and its radius 'radius'. Once created, VNCircle objects are immutable.
  */
 @Generated
 @Library("Vision")
@@ -74,7 +75,7 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * @brief Returns circle center.
+     * Returns circle center.
      */
     @Generated
     @Selector("center")
@@ -89,14 +90,14 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @brief Returns YES if the point is inside the circle, including the boundary.
+     * Returns YES if the point is inside the circle, including the boundary.
      */
     @Generated
     @Selector("containsPoint:")
     public native boolean containsPoint(VNPoint point);
 
     /**
-     * @brief Returns YES if the point is within the ring bound by two circles [radius - delta; radius + delta].
+     * Returns YES if the point is within the ring bound by two circles [radius - delta; radius + delta].
      */
     @Generated
     @Selector("containsPoint:inCircumferentialRingOfWidth:")
@@ -117,7 +118,7 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     public static native String description_static();
 
     /**
-     * @brief Returns circle diameter.
+     * Returns circle diameter.
      */
     @Generated
     @Selector("diameter")
@@ -137,14 +138,14 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     public native VNCircle init();
 
     /**
-     * @brief Initializes VNCircle object with given circle center and circle diameter.
+     * Initializes VNCircle object with given circle center and circle diameter.
      */
     @Generated
     @Selector("initWithCenter:diameter:")
     public native VNCircle initWithCenterDiameter(VNPoint center, double diameter);
 
     /**
-     * @brief Initializes VNCircle object with given circle center and circle radius.
+     * Initializes VNCircle object with given circle center and circle radius.
      */
     @Generated
     @Selector("initWithCenter:radius:")
@@ -182,7 +183,7 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     public static native Object new_objc();
 
     /**
-     * @brief Returns circle radius.
+     * Returns circle radius.
      */
     @Generated
     @Selector("radius")
@@ -220,7 +221,7 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
-     * @brief Returns a VNCircle object with center at the Origin [0.0; 0.0] and zero radius.
+     * Returns a VNCircle object with center at the Origin [0.0; 0.0] and zero radius.
      */
     @Generated
     @Selector("zeroCircle")

@@ -41,8 +41,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEHotspotNetwork
- * @discussion
+ * [@interface] NEHotspotNetwork
+ * 
  *   The NEHotspotNetwork class provides a class method to get the SSID and BSSID of
  *   the current Wi-Fi network.
  * 
@@ -160,24 +160,26 @@ public class NEHotspotNetwork extends NSObject {
     public static native long version_static();
 
     /**
-     * @property BSSID
-     * @discussion The BSSID for the Wi-Fi network.
+     * [@property] BSSID
+     * 
+     * The BSSID for the Wi-Fi network.
      */
     @Generated
     @Selector("BSSID")
     public native String BSSID();
 
     /**
-     * @property SSID
-     * @discussion The SSID for the Wi-Fi network.
+     * [@property] SSID
+     * 
+     * The SSID for the Wi-Fi network.
      */
     @Generated
     @Selector("SSID")
     public native String SSID();
 
     /**
-     * @property autoJoined
-     * @discussion
+     * [@property] autoJoined
+     * 
      *   Indicates whether the network was joined automatically
      *   (YES) or joined by the user (NO).
      */
@@ -186,8 +188,8 @@ public class NEHotspotNetwork extends NSObject {
     public native boolean didAutoJoin();
 
     /**
-     * @property justJoined
-     * @discussion
+     * [@property] justJoined
+     * 
      *   Indicates whether the network was just joined. Useful in the
      *   Maintaining state to differentiate whether the Maintain command
      *   is for the initial join, or the subsequent periodic callback.
@@ -201,8 +203,8 @@ public class NEHotspotNetwork extends NSObject {
     public native NEHotspotNetwork init();
 
     /**
-     * @property chosenHelper
-     * @discussion
+     * [@property] chosenHelper
+     * 
      *   Indicates whether the HotspotHelper is the chosen helper for
      *   the network. The NEHotspotNetwork must have been instantiated via a
      *   call to the +[NEHotspotHelper supportedNetworkInterfaces] method. This
@@ -214,18 +216,19 @@ public class NEHotspotNetwork extends NSObject {
     public native boolean isChosenHelper();
 
     /**
-     * @property secure
-     * @discussion Indicates whether the network is secure
+     * [@property] secure
+     * 
+     * Indicates whether the network is secure
      */
     @Generated
     @Selector("isSecure")
     public native boolean isSecure();
 
     /**
-     * @method setConfidence
-     * @abstract
+     * setConfidence
+     * 
      *   Indicate the confidence in being able to handle the network.
-     * @discussion
+     * 
      *   Use this method to indicate the confidence in being able to
      *   successfully authenticate to the given network. Used in the response
      *   to the kNEHotspotHelperCommandTypeEvaluate and
@@ -236,10 +239,10 @@ public class NEHotspotNetwork extends NSObject {
     public native void setConfidence(@NInt long confidence);
 
     /**
-     * @method setPassword
-     * @abstract
+     * setPassword
+     * 
      *   Provide the password for a secure network
-     * @discussion
+     * 
      *   The HotspotHelper may set a password for a secure network. The format
      *   password string must adhere to IEEE 802.11 guidelines appropriate for
      *   the particular security scheme.
@@ -252,8 +255,8 @@ public class NEHotspotNetwork extends NSObject {
     public native void setPassword(String password);
 
     /**
-     * @property signalStrength
-     * @discussion
+     * [@property] signalStrength
+     * 
      *   The signal strength for the Wi-Fi network. The value lies within
      *   the range 0.0 (weak/no signal) to 1.0 (strong signal).
      */
@@ -262,8 +265,9 @@ public class NEHotspotNetwork extends NSObject {
     public native double signalStrength();
 
     /**
-     * @method fetchCurrentWithCompletionHandler:completionHandler:
-     * @discussion This method returns SSID and BSSID of the current Wi-Fi network when the
+     * fetchCurrentWithCompletionHandler:completionHandler:
+     * 
+     * This method returns SSID and BSSID of the current Wi-Fi network when the
      *   requesting application meets one of following 4 requirements -.
      *   1. application is using CoreLocation API and has user's authorization to access precise location.
      *   2. application has used NEHotspotConfiguration API to configure the current Wi-Fi network.
@@ -271,6 +275,7 @@ public class NEHotspotNetwork extends NSObject {
      *   4. application has active NEDNSSettingsManager configuration installed.
      *   An application will receive nil if it fails to meet any of the above 4 requirements.
      *   An application will receive nil if does not have the "com.apple.developer.networking.wifi-info" entitlement.
+     * 
      * @param completionHandler A block that will be executed when current Wi-Fi network details are
      *   obtained from the system. The NEHotspotNetwork object passed to this block will be nil if the requesting
      *   application fails to meet above requirements, non-nil otherwise. NEHotspotNetwork object contains only valid

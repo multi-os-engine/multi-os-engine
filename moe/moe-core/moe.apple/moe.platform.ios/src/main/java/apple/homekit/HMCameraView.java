@@ -51,7 +51,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract This view can render a camera source.
+ * This view can render a camera source.
  */
 @Generated
 @Library("HomeKit")
@@ -399,7 +399,7 @@ public class HMCameraView extends UIView {
     }
 
     /**
-     * @brief Represents the camera source.
+     * Represents the camera source.
      */
     @Generated
     @Selector("cameraSource")
@@ -418,7 +418,7 @@ public class HMCameraView extends UIView {
     public native HMCameraView initWithFrame(@ByValue CGRect frame);
 
     /**
-     * @brief Represents the camera source.
+     * Represents the camera source.
      */
     @Generated
     @Selector("setCameraSource:")

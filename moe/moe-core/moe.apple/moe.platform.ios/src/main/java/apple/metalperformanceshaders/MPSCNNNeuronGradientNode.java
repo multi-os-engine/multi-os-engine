@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A node representing a MPSCNNNeuronGradient
- * @discussion We use one generic neuron gradient node
+ * A node representing a MPSCNNNeuronGradient
+ * 
+ * We use one generic neuron gradient node
  *             instead of having dozens of subclasses.
  */
 @Generated
@@ -87,7 +88,7 @@ public class MPSCNNNeuronGradientNode extends MPSNNGradientFilterNode {
     public static native String description_static();
 
     /**
-     * @abstract The neuron descriptor
+     * The neuron descriptor
      */
     @Generated
     @Selector("descriptor")
@@ -103,8 +104,9 @@ public class MPSCNNNeuronGradientNode extends MPSNNGradientFilterNode {
     public native MPSCNNNeuronGradientNode init();
 
     /**
-     * @abstract create a new neuron gradient node
-     * @discussion See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
+     * create a new neuron gradient node
+     * 
+     * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      *             for an easier way to do this
      */
     @Generated
@@ -141,8 +143,9 @@ public class MPSCNNNeuronGradientNode extends MPSNNGradientFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract create a new neuron gradient node
-     * @discussion See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
+     * create a new neuron gradient node
+     * 
+     * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      *             for an easier way to do this
      */
     @Generated

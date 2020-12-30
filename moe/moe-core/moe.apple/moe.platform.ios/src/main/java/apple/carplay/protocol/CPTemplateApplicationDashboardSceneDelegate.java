@@ -23,7 +23,7 @@ public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDele
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
      * 
-     * @note The dashboardController object will be strongly retained by the CPTemplateApplicationDashboardScene, the delegate does not need to retain it.
+     * [@note] The dashboardController object will be strongly retained by the CPTemplateApplicationDashboardScene, the delegate does not need to retain it.
      */
     @Generated
     @IsOptional

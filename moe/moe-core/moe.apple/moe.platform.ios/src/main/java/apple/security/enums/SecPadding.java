@@ -19,8 +19,9 @@ package apple.security.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @typedef SecPadding
- * @abstract Supported padding types.
+ * [@typedef] SecPadding
+ * 
+ * Supported padding types.
  */
 @Generated
 public final class SecPadding {

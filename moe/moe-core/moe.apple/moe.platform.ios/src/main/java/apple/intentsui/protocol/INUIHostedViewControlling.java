@@ -37,8 +37,9 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("INUIHostedViewControlling")
 public interface INUIHostedViewControlling {
     /**
-     * @abstract Perform configuration of UI based on the provided INInteraction object.
-     * @discussion When configuration is complete for the given interaction, the hosted view controller should call the completion block with its view's desired size. This size will be constrained between hostedViewMinimumAllowedSize and hostedViewMaximumAllowedSize of the extension context.
+     * Perform configuration of UI based on the provided INInteraction object.
+     * 
+     * When configuration is complete for the given interaction, the hosted view controller should call the completion block with its view's desired size. This size will be constrained between hostedViewMinimumAllowedSize and hostedViewMaximumAllowedSize of the extension context.
      * 
      * @param  interaction The input interaction
      * @param  context The hosting context for this interaction. The hosted view will be displayed alongside this context -- for instance, a Siri result snippet, or a place card within Maps.
@@ -62,8 +63,9 @@ public interface INUIHostedViewControlling {
     }
 
     /**
-     * @abstract Perform configuration of UI based on the provided INInteraction and INParameter objects.
-     * @discussion When configuration is complete for the given parameters and interaction, the hosted view controller should call the completion block with whether it was successful, the parameters it configured itself with, and its view's desired size. The size of the view will ultimately be constrained between hostedViewMinimumAllowedSize and hostedViewMaximumAllowedSize of the extension context.
+     * Perform configuration of UI based on the provided INInteraction and INParameter objects.
+     * 
+     * When configuration is complete for the given parameters and interaction, the hosted view controller should call the completion block with whether it was successful, the parameters it configured itself with, and its view's desired size. The size of the view will ultimately be constrained between hostedViewMinimumAllowedSize and hostedViewMaximumAllowedSize of the extension context.
      * 
      * @param  parameters The parameters of the interaction for which to configure the view
      * @param  interaction The input interaction

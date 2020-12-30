@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol   AVAudio3DMixing
- * @abstract   Protocol that defines 3D mixing properties
+ * [@protocol]   AVAudio3DMixing
+ * 
+ * Protocol that defines 3D mixing properties
  */
 @Generated
 @Library("AVFoundation")
@@ -36,9 +37,10 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVAudio3DMixing")
 public interface AVAudio3DMixing {
     /**
-     * @property obstruction
-     * @abstract Simulates filtering of the direct path of sound due to an obstacle
-     * @discussion
+     * [@property] obstruction
+     * 
+     * Simulates filtering of the direct path of sound due to an obstacle
+     * 
      *     Only the direct path of sound between the source and listener is blocked.
      * 
      *     Range:      -100.0 -> 0.0 dB
@@ -50,9 +52,10 @@ public interface AVAudio3DMixing {
     float obstruction();
 
     /**
-     * @property occlusion
-     * @abstract Simulates filtering of the direct and reverb paths of sound due to an obstacle
-     * @discussion
+     * [@property] occlusion
+     * 
+     * Simulates filtering of the direct and reverb paths of sound due to an obstacle
+     * 
      *     Both the direct and reverb paths of sound between the source and listener are blocked.
      * 
      *     Range:      -100.0 -> 0.0 dB
@@ -64,9 +67,10 @@ public interface AVAudio3DMixing {
     float occlusion();
 
     /**
-     * @property position
-     * @abstract The location of the source in the 3D environment
-     * @discussion
+     * [@property] position
+     * 
+     * The location of the source in the 3D environment
+     * 
      *     The coordinates are specified in meters.
      * 
      *     Mixer:      AVAudioEnvironmentNode
@@ -77,9 +81,10 @@ public interface AVAudio3DMixing {
     AVAudio3DPoint position();
 
     /**
-     * @property rate
-     * @abstract Changes the playback rate of the input signal
-     * @discussion
+     * [@property] rate
+     * 
+     * Changes the playback rate of the input signal
+     * 
      *     A value of 2.0 results in the output audio playing one octave higher.
      *     A value of 0.5, results in the output audio playing one octave lower.
      * 
@@ -92,9 +97,10 @@ public interface AVAudio3DMixing {
     float rate();
 
     /**
-     * @property renderingAlgorithm
-     * @abstract Type of rendering algorithm used
-     * @discussion
+     * [@property] renderingAlgorithm
+     * 
+     * Type of rendering algorithm used
+     * 
      *     Depending on the current output format of the AVAudioEnvironmentNode, only a subset of the 
      *     rendering algorithms may be supported. An array of valid rendering algorithms can be 
      *     retrieved by calling applicableRenderingAlgorithms on AVAudioEnvironmentNode.
@@ -108,9 +114,10 @@ public interface AVAudio3DMixing {
     long renderingAlgorithm();
 
     /**
-     * @property reverbBlend
-     * @abstract Controls the blend of dry and reverb processed audio
-     * @discussion
+     * [@property] reverbBlend
+     * 
+     * Controls the blend of dry and reverb processed audio
+     * 
      *     This property controls the amount of the source's audio that will be processed by the reverb 
      *     in AVAudioEnvironmentNode. A value of 0.5 will result in an equal blend of dry and processed 
      *     (wet) audio.
@@ -124,9 +131,10 @@ public interface AVAudio3DMixing {
     float reverbBlend();
 
     /**
-     * @property obstruction
-     * @abstract Simulates filtering of the direct path of sound due to an obstacle
-     * @discussion
+     * [@property] obstruction
+     * 
+     * Simulates filtering of the direct path of sound due to an obstacle
+     * 
      *     Only the direct path of sound between the source and listener is blocked.
      * 
      *     Range:      -100.0 -> 0.0 dB
@@ -138,9 +146,10 @@ public interface AVAudio3DMixing {
     void setObstruction(float value);
 
     /**
-     * @property occlusion
-     * @abstract Simulates filtering of the direct and reverb paths of sound due to an obstacle
-     * @discussion
+     * [@property] occlusion
+     * 
+     * Simulates filtering of the direct and reverb paths of sound due to an obstacle
+     * 
      *     Both the direct and reverb paths of sound between the source and listener are blocked.
      * 
      *     Range:      -100.0 -> 0.0 dB
@@ -152,9 +161,10 @@ public interface AVAudio3DMixing {
     void setOcclusion(float value);
 
     /**
-     * @property position
-     * @abstract The location of the source in the 3D environment
-     * @discussion
+     * [@property] position
+     * 
+     * The location of the source in the 3D environment
+     * 
      *     The coordinates are specified in meters.
      * 
      *     Mixer:      AVAudioEnvironmentNode
@@ -164,9 +174,10 @@ public interface AVAudio3DMixing {
     void setPosition(@ByValue AVAudio3DPoint value);
 
     /**
-     * @property rate
-     * @abstract Changes the playback rate of the input signal
-     * @discussion
+     * [@property] rate
+     * 
+     * Changes the playback rate of the input signal
+     * 
      *     A value of 2.0 results in the output audio playing one octave higher.
      *     A value of 0.5, results in the output audio playing one octave lower.
      * 
@@ -179,9 +190,10 @@ public interface AVAudio3DMixing {
     void setRate(float value);
 
     /**
-     * @property renderingAlgorithm
-     * @abstract Type of rendering algorithm used
-     * @discussion
+     * [@property] renderingAlgorithm
+     * 
+     * Type of rendering algorithm used
+     * 
      *     Depending on the current output format of the AVAudioEnvironmentNode, only a subset of the 
      *     rendering algorithms may be supported. An array of valid rendering algorithms can be 
      *     retrieved by calling applicableRenderingAlgorithms on AVAudioEnvironmentNode.
@@ -194,9 +206,10 @@ public interface AVAudio3DMixing {
     void setRenderingAlgorithm(@NInt long value);
 
     /**
-     * @property reverbBlend
-     * @abstract Controls the blend of dry and reverb processed audio
-     * @discussion
+     * [@property] reverbBlend
+     * 
+     * Controls the blend of dry and reverb processed audio
+     * 
      *     This property controls the amount of the source's audio that will be processed by the reverb 
      *     in AVAudioEnvironmentNode. A value of 0.5 will result in an equal blend of dry and processed 
      *     (wet) audio.
@@ -210,9 +223,10 @@ public interface AVAudio3DMixing {
     void setReverbBlend(float value);
 
     /**
-     * @property pointSourceInHeadMode
-     * @abstract In-head rendering choice for AVAudio3DMixingSourceModePointSource in AVAudio3DMixingRenderingAlgorithmAuto
-     * @discussion
+     * [@property] pointSourceInHeadMode
+     * 
+     * In-head rendering choice for AVAudio3DMixingSourceModePointSource in AVAudio3DMixingRenderingAlgorithmAuto
+     * 
      *     Default:    AVAudio3DMixingPointSourceInHeadModeMono
      *     Mixer:      AVAudioEnvironmentNode
      */
@@ -222,9 +236,10 @@ public interface AVAudio3DMixing {
     long pointSourceInHeadMode();
 
     /**
-     * @property pointSourceInHeadMode
-     * @abstract In-head rendering choice for AVAudio3DMixingSourceModePointSource in AVAudio3DMixingRenderingAlgorithmAuto
-     * @discussion
+     * [@property] pointSourceInHeadMode
+     * 
+     * In-head rendering choice for AVAudio3DMixingSourceModePointSource in AVAudio3DMixingRenderingAlgorithmAuto
+     * 
      *     Default:    AVAudio3DMixingPointSourceInHeadModeMono
      *     Mixer:      AVAudioEnvironmentNode
      */
@@ -233,9 +248,10 @@ public interface AVAudio3DMixing {
     void setPointSourceInHeadMode(@NInt long value);
 
     /**
-     * @property sourceMode
-     * @abstract Controls how individual channels of an input bus are rendered
-     * @discussion
+     * [@property] sourceMode
+     * 
+     * Controls how individual channels of an input bus are rendered
+     * 
      *     Default:    AVAudio3DMixingSourceModeSpatializeIfMono
      *     Mixer:      AVAudioEnvironmentNode
      */
@@ -244,9 +260,10 @@ public interface AVAudio3DMixing {
     void setSourceMode(@NInt long value);
 
     /**
-     * @property sourceMode
-     * @abstract Controls how individual channels of an input bus are rendered
-     * @discussion
+     * [@property] sourceMode
+     * 
+     * Controls how individual channels of an input bus are rendered
+     * 
      *     Default:    AVAudio3DMixingSourceModeSpatializeIfMono
      *     Mixer:      AVAudioEnvironmentNode
      */

@@ -70,6 +70,7 @@ public class QLThumbnailGenerator extends NSObject {
 
     /**
      * Cancels the given QLThumbnailGenerationRequest.
+     * 
      * @param request The request that should be cancelled.
      */
     @Generated

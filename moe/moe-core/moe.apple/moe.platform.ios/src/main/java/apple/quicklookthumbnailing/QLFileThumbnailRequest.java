@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract This class contains information about the thumbnail that should be provided.
+ * This class contains information about the thumbnail that should be provided.
  */
 @Generated
 @Library("QuickLookThumbnailing")

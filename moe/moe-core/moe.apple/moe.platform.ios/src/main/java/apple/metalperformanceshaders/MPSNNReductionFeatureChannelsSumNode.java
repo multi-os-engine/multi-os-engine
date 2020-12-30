@@ -138,7 +138,7 @@ public class MPSNNReductionFeatureChannelsSumNode extends MPSNNUnaryReductionNod
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract   A scale factor to apply to each feature channel sum.
+     * A scale factor to apply to each feature channel sum.
      */
     @Generated
     @Selector("setWeight:")
@@ -154,7 +154,7 @@ public class MPSNNReductionFeatureChannelsSumNode extends MPSNNUnaryReductionNod
     public static native long version_static();
 
     /**
-     * @abstract   A scale factor to apply to each feature channel sum.
+     * A scale factor to apply to each feature channel sum.
      */
     @Generated
     @Selector("weight")

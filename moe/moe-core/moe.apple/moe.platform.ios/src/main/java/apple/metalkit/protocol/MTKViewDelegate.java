@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @class MTKViewDelegate
- * @abstract Allows an object to render into the view and respond to resize events
+ * MTKViewDelegate
+ * 
+ * Allows an object to render into the view and respond to resize events
  */
 @Generated
 @Library("MetalKit")
@@ -36,18 +37,23 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MTKViewDelegate")
 public interface MTKViewDelegate {
     /**
-     * @method drawInMTKView:
-     * @abstract Called on the delegate when it is asked to render into the view
-     * @discussion Called on the delegate when it is asked to render into the view
+     * drawInMTKView:
+     * 
+     * Called on the delegate when it is asked to render into the view
+     * 
+     * Called on the delegate when it is asked to render into the view
      */
     @Generated
     @Selector("drawInMTKView:")
     void drawInMTKView(MTKView view);
 
     /**
-     * @method mtkView:drawableSizeWillChange:
-     * @abstract Called whenever the drawableSize of the view will change
-     * @discussion Delegate can recompute view and projection matricies or regenerate any buffers to be compatible with the new view size or resolution
+     * mtkView:drawableSizeWillChange:
+     * 
+     * Called whenever the drawableSize of the view will change
+     * 
+     * Delegate can recompute view and projection matricies or regenerate any buffers to be compatible with the new view size or resolution
+     * 
      * @param view MTKView which called this method
      * @param size New drawable size in pixels
      */

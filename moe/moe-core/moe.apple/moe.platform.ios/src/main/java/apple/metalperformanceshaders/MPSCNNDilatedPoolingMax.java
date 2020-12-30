@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNDilatedPoolingMax
- * @dependency This depends on Metal.framework
- * @discussion Specifies the dilated max pooling filter.  For each pixel, returns the maximum value of pixels
+ * MPSCNNDilatedPoolingMax
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the dilated max pooling filter.  For each pixel, returns the maximum value of pixels
  *             in the kernelWidth x kernelHeight filter region by step size dilationRateX x dilationRateY.
  */
 @Generated
@@ -91,8 +92,9 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
     public static native String description_static();
 
     /**
-     * @property   dilationRateX
-     * @abstract   dilationRateX for accessing the image passed in as source
+     * [@property]   dilationRateX
+     * 
+     * dilationRateX for accessing the image passed in as source
      */
     @Generated
     @Selector("dilationRateX")
@@ -100,8 +102,9 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
     public native long dilationRateX();
 
     /**
-     * @property   dilationRateY
-     * @abstract   dilationRateY for accessing the image passed in as source
+     * [@property]   dilationRateY
+     * 
+     * dilationRateY for accessing the image passed in as source
      */
     @Generated
     @Selector("dilationRateY")
@@ -122,8 +125,10 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
     public native MPSCNNDilatedPoolingMax initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel.h initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel.h initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNDilatedPoolingMax
      * @param      device      The MTLDevice on which to make the MPSCNNDilatedPoolingMax
      * @return     A new MPSCNNDilatedPoolingMax object, or nil if failure.
@@ -143,7 +148,8 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @abstract   Initialize a MPSCNNDilatedPoolingMax pooling filter
+     * Initialize a MPSCNNDilatedPoolingMax pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.

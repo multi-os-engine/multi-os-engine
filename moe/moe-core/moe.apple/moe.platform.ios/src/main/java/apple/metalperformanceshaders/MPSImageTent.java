@@ -43,17 +43,18 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageTent
- * @discussion The box filter, while fast, may yield square-ish looking blur effects. However, multiple
+ * MPSImageTent
+ * 
+ * The box filter, while fast, may yield square-ish looking blur effects. However, multiple
  *             passes of the box filter tend to smooth out with each additional pass. For example, two 3-wide
  *             box blurs produces the same effective convolution as a 5-wide tent blur:
- *             @code
+ *             [@code]
  *                     1   1   1
  *                         1   1   1
  *                     +       1   1   1
  *                     =================
  *                     1   2   3   2   1
- *             @endcode
+ *             [@endcode]
  *             Addition passes tend to approximate a gaussian line shape.
  * 
  *             The MPSImageTent convolves an image with a tent filter. These form a tent shape with incrementally

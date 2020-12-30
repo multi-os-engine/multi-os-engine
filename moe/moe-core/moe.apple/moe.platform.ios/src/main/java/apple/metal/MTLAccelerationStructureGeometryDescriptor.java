@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Base class for all geometry descriptors. Do not use this class directly. Use one of the derived
+ * Base class for all geometry descriptors. Do not use this class directly. Use one of the derived
  * classes instead.
  */
 @Generated
@@ -57,7 +57,7 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @brief Whether intersection functions may be invoked more than once per ray/primitive
+     * Whether intersection functions may be invoked more than once per ray/primitive
      * intersection. Defaults to YES.
      */
     @Generated
@@ -142,7 +142,7 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     public static native Object new_objc();
 
     /**
-     * @brief Whether the geometry is opaque
+     * Whether the geometry is opaque
      */
     @Generated
     @Selector("opaque")
@@ -157,7 +157,7 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Whether intersection functions may be invoked more than once per ray/primitive
+     * Whether intersection functions may be invoked more than once per ray/primitive
      * intersection. Defaults to YES.
      */
     @Generated
@@ -169,7 +169,7 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     public native void setIntersectionFunctionTableOffset(@NUInt long value);
 
     /**
-     * @brief Whether the geometry is opaque
+     * Whether the geometry is opaque
      */
     @Generated
     @Selector("setOpaque:")

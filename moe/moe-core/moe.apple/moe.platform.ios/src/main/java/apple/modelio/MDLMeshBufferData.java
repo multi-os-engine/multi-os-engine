@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLMeshBufferData
- * @abstract A CPU memory backed mesh buffer
+ * MDLMeshBufferData
+ * 
+ * A CPU memory backed mesh buffer
  */
 @Generated
 @Library("ModelIO")
@@ -182,8 +183,10 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     public native MDLMeshBufferData init();
 
     /**
-     * @method initWithType:data
-     * @abstract instantiate a new data backed mesh buffer
+     * initWithType:data
+     * 
+     * instantiate a new data backed mesh buffer
+     * 
      * @param type the intended use of the buffer
      * @param data the data to be used as a mesh buffer. It will be copied.
      */
@@ -192,8 +195,10 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     public native MDLMeshBufferData initWithTypeData(@NUInt long type, NSData data);
 
     /**
-     * @method initWithType:length
-     * @abstract instantiate a new data backed mesh buffer
+     * initWithType:length
+     * 
+     * instantiate a new data backed mesh buffer
+     * 
      * @param type the intended use of the buffer
      * @param length the size of buffer to allocate, in bytes
      */

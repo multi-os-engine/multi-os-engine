@@ -20,17 +20,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVCaptureExposureMode
- * @abstract
+ * [@enum] AVCaptureExposureMode
+ * 
  *    Constants indicating the mode of the exposure on the receiver's device, if it has adjustable exposure.
  * 
- * @constant AVCaptureExposureModeLocked
+ * [@constant] AVCaptureExposureModeLocked
  *    Indicates that the exposure should be locked at its current value.
- * @constant AVCaptureExposureModeAutoExpose
+ * [@constant] AVCaptureExposureModeAutoExpose
  *    Indicates that the device should automatically adjust exposure once and then change the exposure mode to AVCaptureExposureModeLocked.
- * @constant AVCaptureExposureModeContinuousAutoExposure
+ * [@constant] AVCaptureExposureModeContinuousAutoExposure
  *    Indicates that the device should automatically adjust exposure when needed.
- * @constant AVCaptureExposureModeCustom
+ * [@constant] AVCaptureExposureModeCustom
  *    Indicates that the device should only adjust exposure according to user provided ISO, exposureDuration values.
  */
 @Generated

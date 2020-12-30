@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageArithmetic
- * @dependency This depends on Metal.framework.
- * @discussion This filter takes two source images, a primary source image and a secondary source image,
+ * MPSImageArithmetic
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * This filter takes two source images, a primary source image and a secondary source image,
  *             and outputs a single destination image. It applies an element-wise arithmetic operator to
  *             each pixel in a primary source image and a corresponding pixel in a secondary source image
  *             over a specified region.
@@ -183,8 +184,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     public native float primaryScale();
 
     /**
-     * @property   primaryStrideInPixels
-     * @abstract   The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
+     * [@property]   primaryStrideInPixels
+     * 
+     * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated
@@ -205,8 +207,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     public native float secondaryScale();
 
     /**
-     * @property   secondaryStrideInPixels
-     * @abstract   The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
+     * [@property]   secondaryStrideInPixels
+     * 
+     * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated
@@ -223,8 +226,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     public native void setPrimaryScale(float value);
 
     /**
-     * @property   primaryStrideInPixels
-     * @abstract   The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
+     * [@property]   primaryStrideInPixels
+     * 
+     * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated
@@ -236,8 +240,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     public native void setSecondaryScale(float value);
 
     /**
-     * @property   secondaryStrideInPixels
-     * @abstract   The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
+     * [@property]   secondaryStrideInPixels
+     * 
+     * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated
@@ -268,8 +273,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     public static native long version_static();
 
     /**
-     * @property   maximumValue
-     * @abstract   maximumValue is used to clamp the result of an arithmetic operation:
+     * [@property]   maximumValue
+     * 
+     * maximumValue is used to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of maximumValue is FLT_MAX.
      */
@@ -278,8 +284,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     public native float maximumValue();
 
     /**
-     * @property   minimumValue
-     * @abstract   minimumValue is to clamp the result of an arithmetic operation:
+     * [@property]   minimumValue
+     * 
+     * minimumValue is to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of minimumValue is -FLT_MAX.
      */
@@ -288,8 +295,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     public native float minimumValue();
 
     /**
-     * @property   maximumValue
-     * @abstract   maximumValue is used to clamp the result of an arithmetic operation:
+     * [@property]   maximumValue
+     * 
+     * maximumValue is used to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of maximumValue is FLT_MAX.
      */
@@ -298,8 +306,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     public native void setMaximumValue(float value);
 
     /**
-     * @property   minimumValue
-     * @abstract   minimumValue is to clamp the result of an arithmetic operation:
+     * [@property]   minimumValue
+     * 
+     * minimumValue is to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of minimumValue is -FLT_MAX.
      */

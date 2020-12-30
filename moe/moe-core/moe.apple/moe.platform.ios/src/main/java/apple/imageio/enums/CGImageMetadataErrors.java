@@ -19,8 +19,9 @@ package apple.imageio.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum CGImageMetadataErrors
- * @discussion the list of all error codes returned under the error domain kCFErrorDomainCGImageMetadata
+ * [@enum] CGImageMetadataErrors
+ * 
+ * the list of all error codes returned under the error domain kCFErrorDomainCGImageMetadata
  */
 @Generated
 public final class CGImageMetadataErrors {

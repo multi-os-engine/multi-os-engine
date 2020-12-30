@@ -159,6 +159,7 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
     /**
      * Add a connection to a group of other nodes indicating those nodes can be reached from this node.
      * A new connection is not created if it already exists.
+     * 
      * @param nodes The array of nodes that are end points for their respective connections
      * @param bidirectional should a connection also be added connecting the destination node back to this node?
      */
@@ -186,6 +187,7 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
 
     /**
      * Returns the estimated heuristic cost to reach the indicated node from this node
+     * 
      * @param node The end point of the edge who's cost is to be estimated
      */
     @Generated
@@ -194,6 +196,7 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
 
     /**
      * As with findPathToNode: except this node is the goal node and a startNode is specified
+     * 
      * @param startNode the start node of the pathfinding attempt
      */
     @Generated
@@ -204,6 +207,7 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
      * Attempts to find the optimal path between this node and the indicated goal node.
      * If such a path exists, it is returned in start to end order.
      * If it doesn't exist, the array returned will be empty.
+     * 
      * @param goalNode the goal node of the pathfinding attempt
      */
     @Generated
@@ -221,6 +225,7 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
     /**
      * Removes connections to a group of other nodes indicating those nodes can no longer be reached from this node.
      * Nothing happens if a particular connection does not exist.
+     * 
      * @param nodes The array of nodes that are end points of the edges to be removed
      * @param bidirectional should the connection also be added the destination node back to this node also be removed if it exists?
      */

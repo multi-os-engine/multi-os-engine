@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNReduceBinary
- * @discussion The MPSNNReduce performs a reduction operation
+ * MPSNNReduceBinary
+ * 
+ * The MPSNNReduce performs a reduction operation
  *             The reduction operations supported are:
  *                  - Reduce feature channels mean
  */
@@ -141,8 +142,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     public static native Object new_objc();
 
     /**
-     * @abstract   The source rectangle to use when reading data from primary source
-     * @discussion A MTLRegion that indicates which part of the primary source to read. If the clipRectPrimarySource does not lie
+     * The source rectangle to use when reading data from primary source
+     * 
+     * A MTLRegion that indicates which part of the primary source to read. If the clipRectPrimarySource does not lie
      *             completely within the primary source image, the intersection of the image bounds and clipRectPrimarySource will
      *             be used. The primarySourceClipRect replaces the MPSBinaryImageKernel primaryOffset parameter for this filter.
      *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
@@ -164,8 +166,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract   The source rectangle to use when reading data from secondary source
-     * @discussion A MTLRegion that indicates which part of the secondary source to read. If the clipRectSecondarySource does not lie
+     * The source rectangle to use when reading data from secondary source
+     * 
+     * A MTLRegion that indicates which part of the secondary source to read. If the clipRectSecondarySource does not lie
      *             completely within the secondary source image, the intersection of the image bounds and clipRectSecondarySource will
      *             be used. The secondarySourceClipRect replaces the MPSBinaryImageKernel secondaryOffset parameter for this filter.
      *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
@@ -179,8 +182,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     public native MTLRegion secondarySourceClipRect();
 
     /**
-     * @abstract   The source rectangle to use when reading data from primary source
-     * @discussion A MTLRegion that indicates which part of the primary source to read. If the clipRectPrimarySource does not lie
+     * The source rectangle to use when reading data from primary source
+     * 
+     * A MTLRegion that indicates which part of the primary source to read. If the clipRectPrimarySource does not lie
      *             completely within the primary source image, the intersection of the image bounds and clipRectPrimarySource will
      *             be used. The primarySourceClipRect replaces the MPSBinaryImageKernel primaryOffset parameter for this filter.
      *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
@@ -193,8 +197,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     public native void setPrimarySourceClipRect(@ByValue MTLRegion value);
 
     /**
-     * @abstract   The source rectangle to use when reading data from secondary source
-     * @discussion A MTLRegion that indicates which part of the secondary source to read. If the clipRectSecondarySource does not lie
+     * The source rectangle to use when reading data from secondary source
+     * 
+     * A MTLRegion that indicates which part of the secondary source to read. If the clipRectSecondarySource does not lie
      *             completely within the secondary source image, the intersection of the image bounds and clipRectSecondarySource will
      *             be used. The secondarySourceClipRect replaces the MPSBinaryImageKernel secondaryOffset parameter for this filter.
      *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.

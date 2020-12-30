@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @typedef CFCharacterSetPredefinedSet
+ * [@typedef] CFCharacterSetPredefinedSet
  *        Type of the predefined CFCharacterSet selector values.
  */
 @Generated

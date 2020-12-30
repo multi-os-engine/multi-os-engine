@@ -11,7 +11,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPListTemplateItem describes common properties of list items that can be displayed
+ * [@c] CPListTemplateItem describes common properties of list items that can be displayed
  * in a @c CPListTemplate.
  */
 @Generated

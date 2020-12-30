@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief This class represents an event that is evaluated based on the value of a characteristic
+ * This class represents an event that is evaluated based on the value of a characteristic
  *        set to a particular value.
  */
 @Generated
@@ -70,7 +70,7 @@ public class HMMutableCharacteristicEvent<_TriggerValueType> extends HMCharacter
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * @brief The characteristic associated with the event.
+     * The characteristic associated with the event.
      */
     @Generated
     @Selector("characteristic")
@@ -146,14 +146,14 @@ public class HMMutableCharacteristicEvent<_TriggerValueType> extends HMCharacter
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief The characteristic associated with the event.
+     * The characteristic associated with the event.
      */
     @Generated
     @Selector("setCharacteristic:")
     public native void setCharacteristic(HMCharacteristic value);
 
     /**
-     * @brief The value of the characteristic that triggers the event.
+     * The value of the characteristic that triggers the event.
      *        A value of nil corresponds to any change in the value of the characteristic.
      */
     @Generated
@@ -169,7 +169,7 @@ public class HMMutableCharacteristicEvent<_TriggerValueType> extends HMCharacter
     public static native Class superclass_static();
 
     /**
-     * @brief The value of the characteristic that triggers the event.
+     * The value of the characteristic that triggers the event.
      *        A value of nil corresponds to any change in the value of the characteristic.
      */
     @Generated

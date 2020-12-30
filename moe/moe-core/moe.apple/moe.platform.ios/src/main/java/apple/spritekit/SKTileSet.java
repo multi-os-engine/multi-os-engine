@@ -157,6 +157,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Creates a tile set from the specified tile set file. Returns nil if the URL doesn't point to a valid tile set file.
+     * 
      * @param url the URL of the tile set file
      */
     @Generated
@@ -165,6 +166,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Gets the tile set with the specified name from the SpriteKit resource bundle. Returns nil if a tile set with a matching name cannot be found.
+     * 
      * @param name the name of the tile set to search for
      */
     @Generated
@@ -173,6 +175,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a tile set with the specified tile groups.
+     * 
      * @param tileGroups the tile groups that will be available for use with this set
      */
     @Generated
@@ -181,6 +184,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a tile set with the specified tile groups and tile set type.
+     * 
      * @param tileGroups the tile groups that will be available for use with this set
      * @param tileSetType the type of tile set this will be
      */
@@ -226,6 +230,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initilize a tile set with the specified tile groups.
+     * 
      * @param tileGroups the tile groups that will be available for use with this set
      */
     @Generated
@@ -234,6 +239,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initilize a tile set with the specified tile groups and tile set type.
+     * 
      * @param tileGroups the tile groups that will be available for use with this set
      * @param tileSetType the type of tile set this will be
      */

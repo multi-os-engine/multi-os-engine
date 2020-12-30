@@ -47,8 +47,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNTransformConstraint
- * @abstract A SCNTransformConstraint applies on the transform of a node via a custom block.
+ * SCNTransformConstraint
+ * 
+ * A SCNTransformConstraint applies on the transform of a node via a custom block.
  */
 @Generated
 @Library("SceneKit")
@@ -161,11 +162,14 @@ public class SCNTransformConstraint extends SCNConstraint {
     public static native boolean supportsSecureCoding();
 
     /**
-     * @method transformConstraintInWorldSpace:withBlock:
-     * @abstract Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * transformConstraintInWorldSpace:withBlock:
+     * 
+     * Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * 
+     * The node and its transform are passed to the block. The transform returned by the block will be used to render the node.
+     * 
      * @param world Determines whether the constraint is evaluated in world or local space.
      * @param block The custom block to call to evaluate the constraint.
-     * @discussion The node and its transform are passed to the block. The transform returned by the block will be used to render the node.
      */
     @Generated
     @Selector("transformConstraintInWorldSpace:withBlock:")
@@ -200,11 +204,14 @@ public class SCNTransformConstraint extends SCNConstraint {
     }
 
     /**
-     * @method orientationConstraintInWorldSpace:withBlock:
-     * @abstract Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * orientationConstraintInWorldSpace:withBlock:
+     * 
+     * Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * 
+     * The node and its quaternion are passed to the block. The quaternion returned by the block will be used to render the node.
+     * 
      * @param world Determines whether the constraint is evaluated in world or local space.
      * @param block The custom block to call to evaluate the constraint.
-     * @discussion The node and its quaternion are passed to the block. The quaternion returned by the block will be used to render the node.
      */
     @Generated
     @Selector("orientationConstraintInWorldSpace:withBlock:")
@@ -221,11 +228,14 @@ public class SCNTransformConstraint extends SCNConstraint {
     }
 
     /**
-     * @method positionConstraintInWorldSpace:withBlock:
-     * @abstract Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * positionConstraintInWorldSpace:withBlock:
+     * 
+     * Creates and returns a SCNTransformConstraint object with the specified parameters.
+     * 
+     * The node and its position are passed to the block. The position returned by the block will be used to render the node.
+     * 
      * @param world Determines whether the constraint is evaluated in world or local space.
      * @param block The custom block to call to evaluate the constraint.
-     * @discussion The node and its position are passed to the block. The position returned by the block will be used to render the node.
      */
     @Generated
     @Selector("positionConstraintInWorldSpace:withBlock:")

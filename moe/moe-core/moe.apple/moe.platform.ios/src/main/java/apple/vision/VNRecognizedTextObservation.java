@@ -29,9 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNRecognizedTextObservation
- * @superclass VNDetectedObjectObservation
- * @brief VNRecognizedTextObservation Describes a text area detected and recognized by the VNRecognizeTextRequest request.
+ * VNRecognizedTextObservation
+ * [@superclass] VNDetectedObjectObservation
+ * 
+ * VNRecognizedTextObservation Describes a text area detected and recognized by the VNRecognizeTextRequest request.
  */
 @Generated
 @Library("Vision")
@@ -173,8 +174,9 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
     }
 
     /**
-     * @brief Returns the top N candidates sorted by decreasing confidence score
-     * @discussion This will return no more than N but can be less than N candidates. The maximum number of candidates returned cannot exceed 10 candidates.
+     * Returns the top N candidates sorted by decreasing confidence score
+     * 
+     * This will return no more than N but can be less than N candidates. The maximum number of candidates returned cannot exceed 10 candidates.
      */
     @Generated
     @Selector("topCandidates:")

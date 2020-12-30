@@ -46,9 +46,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNConvolutionDescriptor
- * @dependency This depends on Metal.framework
- * @discussion The MPSCNNConvolutionDescriptor specifies a convolution descriptor
+ * MPSCNNConvolutionDescriptor
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNConvolutionDescriptor specifies a convolution descriptor
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -101,8 +102,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   This method is deprecated. Please use neuronType, neuronParameterA and neuronParameterB properites to fuse
+     * This method is deprecated. Please use neuronType, neuronParameterA and neuronParameterB properites to fuse
      *             neuron with convolution.
+     * 
      * @param      kernelWidth             The width of the filter window.  Must be > 0. Large values will take a long time.
      * @param      kernelHeight            The height of the filter window.   Must be > 0. Large values will take a long time.
      * @param      inputFeatureChannels    The number of feature channels in the input image. Must be >= 1.
@@ -185,8 +187,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property   groups
-     * @abstract   Number of groups input and output channels are divided into. The default value is 1.
+     * [@property]   groups
+     * 
+     * Number of groups input and output channels are divided into. The default value is 1.
      *             Groups lets you reduce the parameterization. If groups is set to n, input is divided into n
      *             groups with inputFeatureChannels/n channels in each group. Similarly output is divided into
      *             n groups with outputFeatureChannels/n channels in each group. ith group in input is only
@@ -204,8 +207,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native MPSCNNConvolutionDescriptor init();
 
     /**
-     * @property   inputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the input image.
+     * [@property]   inputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the input image.
      */
     @Generated
     @Selector("inputFeatureChannels")
@@ -213,8 +217,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native long inputFeatureChannels();
 
     /**
-     * @property   kernelHeight
-     * @abstract   The height of the filter window.  The default value is 3.
+     * [@property]   kernelHeight
+     * 
+     * The height of the filter window.  The default value is 3.
      *             Any positive non-zero value is valid, including even values.
      *             The position of the top edge of the filter window is given
      *             by offset.y - (kernelHeight>>1)
@@ -225,8 +230,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native long kernelHeight();
 
     /**
-     * @property   kernelWidth
-     * @abstract   The width of the filter window.  The default value is 3.
+     * [@property]   kernelWidth
+     * 
+     * The width of the filter window.  The default value is 3.
      *             Any positive non-zero value is valid, including even values.
      *             The position of the left edge of the filter window is given
      *             by offset.x - (kernelWidth>>1)
@@ -237,8 +243,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native long kernelWidth();
 
     /**
-     * @property   neuron
-     * @abstract   MPSCNNNeuron filter to be applied as part of convolution. This is applied after BatchNormalization in the end.
+     * [@property]   neuron
+     * 
+     * MPSCNNNeuron filter to be applied as part of convolution. This is applied after BatchNormalization in the end.
      *             Default is nil.
      *             This is deprecated. You dont need to create MPSCNNNeuron object to fuse with convolution. Use neuron properties
      *             in this descriptor.
@@ -248,8 +255,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native MPSCNNNeuron neuron();
 
     /**
-     * @property   outputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the output image.
+     * [@property]   outputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the output image.
      */
     @Generated
     @Selector("outputFeatureChannels")
@@ -257,8 +265,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native long outputFeatureChannels();
 
     /**
-     * @property   groups
-     * @abstract   Number of groups input and output channels are divided into. The default value is 1.
+     * [@property]   groups
+     * 
+     * Number of groups input and output channels are divided into. The default value is 1.
      *             Groups lets you reduce the parameterization. If groups is set to n, input is divided into n
      *             groups with inputFeatureChannels/n channels in each group. Similarly output is divided into
      *             n groups with outputFeatureChannels/n channels in each group. ith group in input is only
@@ -271,16 +280,18 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native void setGroups(@NUInt long value);
 
     /**
-     * @property   inputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the input image.
+     * [@property]   inputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the input image.
      */
     @Generated
     @Selector("setInputFeatureChannels:")
     public native void setInputFeatureChannels(@NUInt long value);
 
     /**
-     * @property   kernelHeight
-     * @abstract   The height of the filter window.  The default value is 3.
+     * [@property]   kernelHeight
+     * 
+     * The height of the filter window.  The default value is 3.
      *             Any positive non-zero value is valid, including even values.
      *             The position of the top edge of the filter window is given
      *             by offset.y - (kernelHeight>>1)
@@ -290,8 +301,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native void setKernelHeight(@NUInt long value);
 
     /**
-     * @property   kernelWidth
-     * @abstract   The width of the filter window.  The default value is 3.
+     * [@property]   kernelWidth
+     * 
+     * The width of the filter window.  The default value is 3.
      *             Any positive non-zero value is valid, including even values.
      *             The position of the left edge of the filter window is given
      *             by offset.x - (kernelWidth>>1)
@@ -301,8 +313,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native void setKernelWidth(@NUInt long value);
 
     /**
-     * @property   neuron
-     * @abstract   MPSCNNNeuron filter to be applied as part of convolution. This is applied after BatchNormalization in the end.
+     * [@property]   neuron
+     * 
+     * MPSCNNNeuron filter to be applied as part of convolution. This is applied after BatchNormalization in the end.
      *             Default is nil.
      *             This is deprecated. You dont need to create MPSCNNNeuron object to fuse with convolution. Use neuron properties
      *             in this descriptor.
@@ -312,32 +325,36 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native void setNeuron(MPSCNNNeuron value);
 
     /**
-     * @property   outputFeatureChannels
-     * @abstract   The number of feature channels per pixel in the output image.
+     * [@property]   outputFeatureChannels
+     * 
+     * The number of feature channels per pixel in the output image.
      */
     @Generated
     @Selector("setOutputFeatureChannels:")
     public native void setOutputFeatureChannels(@NUInt long value);
 
     /**
-     * @property   strideInPixelsX
-     * @abstract   The output stride (downsampling factor) in the x dimension. The default value is 1.
+     * [@property]   strideInPixelsX
+     * 
+     * The output stride (downsampling factor) in the x dimension. The default value is 1.
      */
     @Generated
     @Selector("setStrideInPixelsX:")
     public native void setStrideInPixelsX(@NUInt long value);
 
     /**
-     * @property   strideInPixelsY
-     * @abstract   The output stride (downsampling factor) in the y dimension. The default value is 1.
+     * [@property]   strideInPixelsY
+     * 
+     * The output stride (downsampling factor) in the y dimension. The default value is 1.
      */
     @Generated
     @Selector("setStrideInPixelsY:")
     public native void setStrideInPixelsY(@NUInt long value);
 
     /**
-     * @property   strideInPixelsX
-     * @abstract   The output stride (downsampling factor) in the x dimension. The default value is 1.
+     * [@property]   strideInPixelsX
+     * 
+     * The output stride (downsampling factor) in the x dimension. The default value is 1.
      */
     @Generated
     @Selector("strideInPixelsX")
@@ -345,8 +362,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native long strideInPixelsX();
 
     /**
-     * @property   strideInPixelsY
-     * @abstract   The output stride (downsampling factor) in the y dimension. The default value is 1.
+     * [@property]   strideInPixelsY
+     * 
+     * The output stride (downsampling factor) in the y dimension. The default value is 1.
      */
     @Generated
     @Selector("strideInPixelsY")
@@ -354,7 +372,8 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native long strideInPixelsY();
 
     /**
-     * @abstract   Creates a convolution descriptor.
+     * Creates a convolution descriptor.
+     * 
      * @param      kernelWidth             The width of the filter window.  Must be > 0. Large values will take a long time.
      * @param      kernelHeight            The height of the filter window.   Must be > 0. Large values will take a long time.
      * @param      inputFeatureChannels    The number of feature channels in the input image. Must be >= 1.
@@ -369,8 +388,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
             @NUInt long outputFeatureChannels);
 
     /**
-     * @property      dilationRateX
-     * @discussion    dilationRateX property can be used to implement dilated convolution as described in
+     * [@property]      dilationRateX
+     * 
+     * dilationRateX property can be used to implement dilated convolution as described in
      *                         https://arxiv.org/pdf/1511.07122v3.pdf
      *                to aggregate global information in dense prediction problems.
      *                Default value is 1. When set to value > 1, original kernel width, kW is dilated to
@@ -386,8 +406,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native long dilationRateX();
 
     /**
-     * @property      dilationRateY
-     * @discussion    dilationRateY property can be used to implement dilated convolution as described in
+     * [@property]      dilationRateY
+     * 
+     * dilationRateY property can be used to implement dilated convolution as described in
      *                         https://arxiv.org/pdf/1511.07122v3.pdf
      *                to aggregate global information in dense prediction problems.
      *                Default value is 1. When set to value > 1, original kernel height, kH is dilated to
@@ -411,31 +432,31 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native MPSCNNConvolutionDescriptor initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB method
      */
     @Generated
     @Selector("neuronParameterA")
     public native float neuronParameterA();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB method
      */
     @Generated
     @Selector("neuronParameterB")
     public native float neuronParameterB();
 
     /**
-     * @abstract   Getter funtion for neuronType set using setNeuronType:parameterA:parameterB method
+     * Getter funtion for neuronType set using setNeuronType:parameterA:parameterB method
      */
     @Generated
     @Selector("neuronType")
     public native int neuronType();
 
     /**
-     * @abstract   Adds batch normalization for inference, it copies all the float arrays provided, expecting
+     * Adds batch normalization for inference, it copies all the float arrays provided, expecting
      *             outputFeatureChannels elements in each.
      * 
-     * @discussion This method will be used to pass in batch normalization parameters to the convolution during the
+     * This method will be used to pass in batch normalization parameters to the convolution during the
      *             init call. For inference we modify weights and bias going in convolution or Fully Connected layer to combine
      *             and optimize the layers.
      * 
@@ -491,8 +512,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
             ConstFloatPtr variance, ConstFloatPtr gamma, ConstFloatPtr beta, float epsilon);
 
     /**
-     * @property      dilationRateX
-     * @discussion    dilationRateX property can be used to implement dilated convolution as described in
+     * [@property]      dilationRateX
+     * 
+     * dilationRateX property can be used to implement dilated convolution as described in
      *                         https://arxiv.org/pdf/1511.07122v3.pdf
      *                to aggregate global information in dense prediction problems.
      *                Default value is 1. When set to value > 1, original kernel width, kW is dilated to
@@ -507,8 +529,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native void setDilationRateX(@NUInt long value);
 
     /**
-     * @property      dilationRateY
-     * @discussion    dilationRateY property can be used to implement dilated convolution as described in
+     * [@property]      dilationRateY
+     * 
+     * dilationRateY property can be used to implement dilated convolution as described in
      *                         https://arxiv.org/pdf/1511.07122v3.pdf
      *                to aggregate global information in dense prediction problems.
      *                Default value is 1. When set to value > 1, original kernel height, kH is dilated to
@@ -523,9 +546,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native void setDilationRateY(@NUInt long value);
 
     /**
-     * @abstract   Add per-channel neuron parameters A for PReLu neuron activation functions.
+     * Add per-channel neuron parameters A for PReLu neuron activation functions.
      * 
-     * @discussion This method sets the neuron to PReLU, zeros parameters A and B and sets the per-channel
+     * This method sets the neuron to PReLU, zeros parameters A and B and sets the per-channel
      *             neuron parameters A to an array containing a unique value of A for each output feature
      *             channel.
      * 
@@ -554,9 +577,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native void setNeuronToPReLUWithParametersA(NSData A);
 
     /**
-     * @abstract   Adds a neuron activation function to convolution descriptor.
+     * Adds a neuron activation function to convolution descriptor.
      * 
-     * @discussion This mathod can be used to add a neuron activation funtion of given type with
+     * This mathod can be used to add a neuron activation funtion of given type with
      *             associated scalar parameters A and B that are shared across all output channels.
      *             Neuron activation fucntion is applied to output of convolution. This is a per-pixel
      *             operation that is fused with convolution kernel itself for best performance.
@@ -588,8 +611,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     }
 
     /**
-     * @property   fusedNeuronDescriptor
-     * @discussion This mathod can be used to add a neuron activation funtion of given type with
+     * [@property]   fusedNeuronDescriptor
+     * 
+     * This mathod can be used to add a neuron activation funtion of given type with
      *             associated scalar parameters A and B that are shared across all output channels.
      *             Neuron activation fucntion is applied to output of convolution. This is a per-pixel
      *             operation that is fused with convolution kernel itself for best performance.
@@ -607,8 +631,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     public native MPSNNNeuronDescriptor fusedNeuronDescriptor();
 
     /**
-     * @property   fusedNeuronDescriptor
-     * @discussion This mathod can be used to add a neuron activation funtion of given type with
+     * [@property]   fusedNeuronDescriptor
+     * 
+     * This mathod can be used to add a neuron activation funtion of given type with
      *             associated scalar parameters A and B that are shared across all output channels.
      *             Neuron activation fucntion is applied to output of convolution. This is a per-pixel
      *             operation that is fused with convolution kernel itself for best performance.

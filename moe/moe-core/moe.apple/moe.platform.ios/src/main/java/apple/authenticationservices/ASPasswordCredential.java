@@ -83,7 +83,8 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @abstract Creates and initializes a new ASPasswordCredential object.
+     * Creates and initializes a new ASPasswordCredential object.
+     * 
      * @param user the user.
      * @param password the password.
      */
@@ -117,7 +118,8 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
     public native ASPasswordCredential initWithCoder(NSCoder coder);
 
     /**
-     * @abstract Initializes an ASPasswordCredential object.
+     * Initializes an ASPasswordCredential object.
+     * 
      * @param user the user.
      * @param password the password.
      */
@@ -153,8 +155,9 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
     public static native Object new_objc();
 
     /**
-     * @abstract The password of this credential.
-     * @result The password string.
+     * The password of this credential.
+     * 
+     * @return The password string.
      */
     @Generated
     @Selector("password")
@@ -187,8 +190,9 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
     }
 
     /**
-     * @abstract The user name of this credential.
-     * @result The user string.
+     * The user name of this credential.
+     * 
+     * @return The user string.
      */
     @Generated
     @Selector("user")

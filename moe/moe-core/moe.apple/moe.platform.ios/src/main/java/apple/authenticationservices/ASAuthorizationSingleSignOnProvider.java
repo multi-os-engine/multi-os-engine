@@ -54,7 +54,7 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @abstract To get the right extension the identity provider main URL has to be provided. The URL is even part of the extension using assosiated domains mechanism or can be configured by MDM profile.
+     * To get the right extension the identity provider main URL has to be provided. The URL is even part of the extension using assosiated domains mechanism or can be configured by MDM profile.
      */
     @Generated
     @Selector("authorizationProviderWithIdentityProviderURL:")
@@ -66,7 +66,7 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @abstract Returns YES if the configured provider is capable of performing authorization within a given configuration.
+     * Returns YES if the configured provider is capable of performing authorization within a given configuration.
      */
     @Generated
     @Selector("canPerformAuthorization")

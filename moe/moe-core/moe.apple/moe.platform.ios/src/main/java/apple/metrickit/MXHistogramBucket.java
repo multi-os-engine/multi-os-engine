@@ -29,10 +29,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXHistogramBucket
- * @abstract      A class that represents a bucket within an MXHistogram
- * @discussion    Histogram buckets are sorted in ascending order.
- * @discussion    Histogram bucket start and end values are exclusive.
+ * MXHistogramBucket
+ * 
+ * A class that represents a bucket within an MXHistogram
+ * 
+ * Histogram buckets are sorted in ascending order.
+ * 
+ * Histogram bucket start and end values are exclusive.
  */
 @Generated
 @Library("MetricKit")
@@ -67,8 +70,9 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property      bucketCount
-     * @abstract      An NSUInteger representing the number of samples in this histogram bucket.
+     * [@property]      bucketCount
+     * 
+     * An NSUInteger representing the number of samples in this histogram bucket.
      */
     @Generated
     @Selector("bucketCount")
@@ -76,16 +80,18 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
     public native long bucketCount();
 
     /**
-     * @property      bucketEnd
-     * @abstract      An NSMeasurement representing the end of a histogram bucket.
+     * [@property]      bucketEnd
+     * 
+     * An NSMeasurement representing the end of a histogram bucket.
      */
     @Generated
     @Selector("bucketEnd")
     public native NSMeasurement<NSUnit> bucketEnd();
 
     /**
-     * @property      bucketStart
-     * @abstract      An NSMeasurement representing the start of a histogram bucket.
+     * [@property]      bucketStart
+     * 
+     * An NSMeasurement representing the start of a histogram bucket.
      */
     @Generated
     @Selector("bucketStart")

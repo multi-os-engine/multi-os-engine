@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKCDADocumentSample
- * @abstract      A sample object representing a CDA document.
+ * HKCDADocumentSample
+ * 
+ * A sample object representing a CDA document.
  */
 @Generated
 @Library("HealthKit")
@@ -66,8 +67,13 @@ public class HKCDADocumentSample extends HKDocumentSample {
     }
 
     /**
-     * @method                CDADocumentSampleWithData:startDate:endDate:device:metadata:validationError:
-     * @abstract              Creates a new document sample with the specified attributes.
+     * CDADocumentSampleWithData:startDate:endDate:device:metadata:validationError:
+     * 
+     * Creates a new document sample with the specified attributes.
+     * 
+     * Attributes of the document, such as title, patient name, etc. will be extracted automatically
+     *                        from the document content.
+     * 
      * @param documentData    Document contents in an XML format that meets the CDA standard.
      * @param startDate       The start date for the document.
      * @param endDate         The end date for the document.
@@ -77,8 +83,6 @@ public class HKCDADocumentSample extends HKDocumentSample {
      *                        failure may be obtained by examining the value for the HKDetailedCDAValidationErrorKey key of
      *                        the NSError's userInfo dictionary.
      * @return                The new instance or nil if the documentData does not pass validation.
-     * @discussion            Attributes of the document, such as title, patient name, etc. will be extracted automatically
-     *                        from the document content.
      */
     @Generated
     @Selector("CDADocumentSampleWithData:startDate:endDate:metadata:validationError:")
@@ -188,9 +192,11 @@ public class HKCDADocumentSample extends HKDocumentSample {
     public static native long version_static();
 
     /**
-     * @property      document
-     * @abstract      The contents of the document.
-     * @discussion    Access to each CDA instance must be authorized by the user in order for the document data to be
+     * [@property]      document
+     * 
+     * The contents of the document.
+     * 
+     * Access to each CDA instance must be authorized by the user in order for the document data to be
      *                accessible to an app.  The authorization request occurs the first time a document matches the predicate
      *                of an executed HKDocumentQuery.  This property will always be nil if the sample is returned by an
      *                HKSampleQuery or an HKAnchoredObjectQuery.

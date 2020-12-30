@@ -9,23 +9,23 @@ public final class MTLAccelerationStructureInstanceOptions {
     }
 
     /**
-     * @brief No options
+     * No options
      */
     @Generated public static final int None = 0x00000000;
     /**
-     * @brief Disable triangle back or front face culling
+     * Disable triangle back or front face culling
      */
     @Generated public static final int DisableTriangleCulling = 0x00000001;
     /**
-     * @brief Disable triangle back or front face culling
+     * Disable triangle back or front face culling
      */
     @Generated public static final int TriangleFrontFacingWindingCounterClockwise = 0x00000002;
     /**
-     * @brief Geometry is opaque
+     * Geometry is opaque
      */
     @Generated public static final int Opaque = 0x00000004;
     /**
-     * @brief Geometry is non-opaque
+     * Geometry is non-opaque
      */
     @Generated public static final int NonOpaque = 0x00000008;
 }

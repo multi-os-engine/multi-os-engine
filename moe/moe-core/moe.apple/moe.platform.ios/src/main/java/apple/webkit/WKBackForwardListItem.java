@@ -155,7 +155,7 @@ public class WKBackForwardListItem extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract The URL of the webpage represented by this item.
+     * The URL of the webpage represented by this item.
      */
     @Generated
     @Selector("URL")
@@ -166,14 +166,14 @@ public class WKBackForwardListItem extends NSObject {
     public native WKBackForwardListItem init();
 
     /**
-     * @abstract The URL of the initial request that created this item.
+     * The URL of the initial request that created this item.
      */
     @Generated
     @Selector("initialURL")
     public native NSURL initialURL();
 
     /**
-     * @abstract The title of the webpage represented by this item.
+     * The title of the webpage represented by this item.
      */
     @Generated
     @Selector("title")

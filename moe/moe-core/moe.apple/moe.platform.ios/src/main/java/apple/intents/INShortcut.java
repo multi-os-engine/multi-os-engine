@@ -29,7 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A shortcut is an action that can be suggested by the system or added to Siri.
+ * A shortcut is an action that can be suggested by the system or added to Siri.
  */
 @Generated
 @Library("Intents")
@@ -113,7 +113,8 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
     public native INShortcut initWithCoder(NSCoder coder);
 
     /**
-     * @abstract Creates a shortcut with the given intent.
+     * Creates a shortcut with the given intent.
+     * 
      * @param intent Unless user configurable, must have a title and have valid shortcut types.
      * @return Will return @c nil (and log an error) if the intent isn't valid.
      */
@@ -122,7 +123,7 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
     public native INShortcut initWithIntent(INIntent intent);
 
     /**
-     * @abstract Creates a shortcut with the given user activity.
+     * Creates a shortcut with the given user activity.
      */
     @Generated
     @Selector("initWithUserActivity:")
@@ -142,8 +143,9 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @abstract The intent that will be performed when this shortcut is invoked.
-     * @discussion Is @c nil if the shortcut was created with a @c NSUserActivity.
+     * The intent that will be performed when this shortcut is invoked.
+     * 
+     * Is @c nil if the shortcut was created with a @c NSUserActivity.
      */
     @Generated
     @Selector("intent")
@@ -190,8 +192,9 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
     }
 
     /**
-     * @abstract The user activity that will be performed when this shortcut is invoked.
-     * @discussion Is @c nil if the shortcut was created with an @c INIntent.
+     * The user activity that will be performed when this shortcut is invoked.
+     * 
+     * Is @c nil if the shortcut was created with an @c INIntent.
      */
     @Generated
     @Selector("userActivity")

@@ -166,45 +166,56 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
     public static native Class superclass_static();
 
     /**
-     * @method		trackWithTrackID:
-     * @abstract		Provides an instance of AVFragmentedMovieTrack that represents the track of the specified trackID.
+     * trackWithTrackID:
+     * 
+     * Provides an instance of AVFragmentedMovieTrack that represents the track of the specified trackID.
+     * 
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
      * @param		trackID
      * 		The trackID of the requested AVFragmentedMovieTrack.
-     * @result		An instance of AVFragmentedMovieTrack; may be nil if no track of the specified trackID is available.
-     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     * @return		An instance of AVFragmentedMovieTrack; may be nil if no track of the specified trackID is available.
      */
     @Generated
     @Selector("trackWithTrackID:")
     public native AVFragmentedMovieTrack trackWithTrackID(int trackID);
 
     /**
-     * @property       tracks
-     * @abstract       The tracks in a movie.
-     * @discussion     The value of this property is an array of tracks the movie contains; the tracks are of type AVFragmentedMovieTrack.
+     * [@property]       tracks
+     * 
+     * The tracks in a movie.
+     * 
+     * The value of this property is an array of tracks the movie contains; the tracks are of type AVFragmentedMovieTrack.
      */
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVFragmentedMovieTrack> tracks();
 
     /**
-     * @method		tracksWithMediaCharacteristic:
-     * @abstract		Provides an array of AVFragmentedMovieTracks of the asset that present media with the specified characteristic.
+     * tracksWithMediaCharacteristic:
+     * 
+     * Provides an array of AVFragmentedMovieTracks of the asset that present media with the specified characteristic.
+     * 
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
      * @param		mediaCharacteristic
      * 		The media characteristic according to which the receiver filters its AVFragmentedMovieTracks. (Media characteristics are defined in AVMediaFormat.h)
-     * @result		An NSArray of AVFragmentedMovieTracks; may be empty if no tracks with the specified characteristic are available.
-     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     * @return		An NSArray of AVFragmentedMovieTracks; may be empty if no tracks with the specified characteristic are available.
      */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
     public native NSArray<? extends AVFragmentedMovieTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
 
     /**
-     * @method		tracksWithMediaType:
-     * @abstract		Provides an array of AVFragmentedMovieTracks of the asset that present media of the specified media type.
+     * tracksWithMediaType:
+     * 
+     * Provides an array of AVFragmentedMovieTracks of the asset that present media of the specified media type.
+     * 
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
      * @param		mediaType
      * 		The media type according to which the receiver filters its AVFragmentedMovieTracks. (Media types are defined in AVMediaFormat.h)
-     * @result		An NSArray of AVFragmentedMovieTracks; may be empty if no tracks of the specified media type are available.
-     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     * @return		An NSArray of AVFragmentedMovieTracks; may be empty if no tracks of the specified media type are available.
      */
     @Generated
     @Selector("tracksWithMediaType:")

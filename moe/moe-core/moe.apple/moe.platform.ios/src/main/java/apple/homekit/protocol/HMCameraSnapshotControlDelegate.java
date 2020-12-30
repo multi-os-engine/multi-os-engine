@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @brief This delegate receives updates on the camera snapshot.
+ * This delegate receives updates on the camera snapshot.
  */
 @Generated
 @Library("HomeKit")
@@ -36,7 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("HMCameraSnapshotControlDelegate")
 public interface HMCameraSnapshotControlDelegate {
     /**
-     * @brief Informs the delegate that the snapshot was taken.
+     * Informs the delegate that the snapshot was taken.
      * 
      * @param cameraSnapshotControl Sender of this message.
      * 
@@ -53,7 +53,7 @@ public interface HMCameraSnapshotControlDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the mostRecentSnapshot was updated.
+     * Informs the delegate that the mostRecentSnapshot was updated.
      * 
      * @param cameraSnapshotControl Sender of this message.
      */

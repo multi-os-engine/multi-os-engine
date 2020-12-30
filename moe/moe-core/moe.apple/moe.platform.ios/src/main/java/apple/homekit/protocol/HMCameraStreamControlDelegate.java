@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @brief This delegate receives updates on the camera stream.
+ * This delegate receives updates on the camera stream.
  */
 @Generated
 @Library("HomeKit")
@@ -35,7 +35,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("HMCameraStreamControlDelegate")
 public interface HMCameraStreamControlDelegate {
     /**
-     * @brief Informs the delegate that the stream has stopped.
+     * Informs the delegate that the stream has stopped.
      * 
      * @param cameraStreamControl Sender of this message.
      * 
@@ -49,7 +49,7 @@ public interface HMCameraStreamControlDelegate {
     }
 
     /**
-     * @brief Informs the delegate that the stream has started.
+     * Informs the delegate that the stream has started.
      * 
      * @param cameraStreamControl Sender of this message.
      */

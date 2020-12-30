@@ -27,8 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CIQRCodeDescriptor
- * @abstract
+ * CIQRCodeDescriptor
+ * 
  *    CIQRCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a QR code symbol. 
  */
 @Generated
@@ -98,11 +98,10 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
             NSData errorCorrectedPayload, @NInt long symbolVersion, byte maskPattern, @NInt long errorCorrectionLevel);
 
     /**
-     * @property errorCorrectedPayload
-     * @abstract
+     * [@property] errorCorrectedPayload
+     * 
      * The error-corrected codewords that comprise the QR code symbol.
      * 
-     * @discussion
      * QR Codes are formally specified in ISO/IEC 18004:2006(E). Section 6.4.10 "Bitstream to codeword conversion" specifies the set of 8-bit codewords in the symbol immediately prior to splitting the message into blocks and applying error correction.
      * 
      * During decode, error correction is applied and if successful, the message is re-ordered to the state immediately following "Bitstream to codeword coversion." The errorCorrectedPayload corresponds to this sequence of 8-bit codewords.
@@ -112,11 +111,10 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     public native NSData errorCorrectedPayload();
 
     /**
-     * @property errorCorrectionLevel
-     * @abstract
+     * [@property] errorCorrectionLevel
+     * 
      *    The error correction level of the QR code.
      * 
-     * @discussion
      *    QR Codes support four levels of Reed-Solomon error correction, in increasing error correction capability: L, M, Q, and H.
      */
     @Generated
@@ -167,11 +165,10 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property maskPattern
-     * @abstract
+     * [@property] maskPattern
+     * 
      *    The data mask pattern for the QR code symbol.
      * 
-     * @discussion
      *    QR Codes support eight data mask patterns, which are used to avoid large black or large white areas inside the symbol body. Valid values range from 0 to 7.
      */
     @Generated
@@ -211,11 +208,10 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     }
 
     /**
-     * @property symbolVersion
-     * @abstract
+     * [@property] symbolVersion
+     * 
      *    The version property corresponds to the size of the QR Code.
      * 
-     * @discussion
      *    QR Codes are square. ISO/IEC 18004 defines versions from 1 to 40, where a higher symbol version indicates a larger data carrying capacity. This field is required in order to properly interpret the error corrected payload.
      */
     @Generated

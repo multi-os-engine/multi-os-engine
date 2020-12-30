@@ -48,8 +48,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageHistogram
- * @discussion The MPSImageHistogram computes the histogram of an image.
+ * MPSImageHistogram
+ * 
+ * The MPSImageHistogram computes the histogram of an image.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -163,9 +164,11 @@ public class MPSImageHistogram extends MPSKernel {
     public static native long version_static();
 
     /**
-     * @property   clipRectSource
-     * @abstract   The source rectangle to use when reading data.
-     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     * [@property]   clipRectSource
+     * 
+     * The source rectangle to use when reading data.
+     * 
+     * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      *             completely within the source image, the intersection of the image bounds and clipRectSource will
      *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
@@ -176,10 +179,10 @@ public class MPSImageHistogram extends MPSKernel {
     public native MTLRegion clipRectSource();
 
     /**
-     * @abstract Encode the filter to a command buffer using a MTLComputeCommandEncoder.
-     * @discussion The filter will not begin to execute until after the command
-     * buffer has been enqueued and committed.
+     * Encode the filter to a command buffer using a MTLComputeCommandEncoder.
      * 
+     * The filter will not begin to execute until after the command
+     * buffer has been enqueued and committed.
      * 
      * @param  commandBuffer           A valid MTLCommandBuffer.
      * @param  source                  A valid MTLTexture containing the source image for the filter
@@ -204,10 +207,12 @@ public class MPSImageHistogram extends MPSKernel {
             @NUInt long histogramOffset);
 
     /**
-     * @abstract   The amount of space in the output MTLBuffer the histogram will take up.
-     * @discussion This convenience function calculates the minimum amount of space
+     * The amount of space in the output MTLBuffer the histogram will take up.
+     * 
+     * This convenience function calculates the minimum amount of space
      *             needed in the output histogram for the results.  The MTLBuffer should
      *             be at least this length, longer if histogramOffset is non-zero.
+     * 
      * @param      sourceFormat      The MTLPixelFormat of the source image. This is
      *                               the source parameter of -encodeToCommandBuffer:
      *                               sourceTexture:histogram:histogramOffset
@@ -227,7 +232,8 @@ public class MPSImageHistogram extends MPSKernel {
     public native MPSImageHistogram initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to compute the histogram for channels of an image.
+     * Specifies information to compute the histogram for channels of an image.
+     * 
      * @param    device            The device the filter will run on
      * @param    histogramInfo     Pointer to the MPSHistogramInfo struct
      * @return     A valid MPSImageHistogram object or nil, if failure.
@@ -238,9 +244,11 @@ public class MPSImageHistogram extends MPSKernel {
             VoidPtr histogramInfo);
 
     /**
-     * @property   clipRectSource
-     * @abstract   The source rectangle to use when reading data.
-     * @discussion A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
+     * [@property]   clipRectSource
+     * 
+     * The source rectangle to use when reading data.
+     * 
+     * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      *             completely within the source image, the intersection of the image bounds and clipRectSource will
      *             be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
@@ -250,9 +258,11 @@ public class MPSImageHistogram extends MPSKernel {
     public native void setClipRectSource(@ByValue MTLRegion value);
 
     /**
-     * @property   zeroHistogram
-     * @abstract   Zero-initalize the histogram results
-     * @discussion Indicates that the memory region in which the histogram results are to be written in the
+     * [@property]   zeroHistogram
+     * 
+     * Zero-initalize the histogram results
+     * 
+     * Indicates that the memory region in which the histogram results are to be written in the
      *             histogram buffer are to be zero-initialized or not. Default: YES.
      */
     @Generated
@@ -260,9 +270,11 @@ public class MPSImageHistogram extends MPSKernel {
     public native void setZeroHistogram(boolean value);
 
     /**
-     * @property   zeroHistogram
-     * @abstract   Zero-initalize the histogram results
-     * @discussion Indicates that the memory region in which the histogram results are to be written in the
+     * [@property]   zeroHistogram
+     * 
+     * Zero-initalize the histogram results
+     * 
+     * Indicates that the memory region in which the histogram results are to be written in the
      *             histogram buffer are to be zero-initialized or not. Default: YES.
      */
     @Generated
@@ -274,12 +286,14 @@ public class MPSImageHistogram extends MPSKernel {
     public native MPSImageHistogram initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.

@@ -26,9 +26,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNImageNode
- * @abstract   A placeholder node denoting the position of a MPSImage in a graph
- * @discussion MPS neural network graphs are made up of filter nodes connected by
+ * MPSNNImageNode
+ * 
+ * A placeholder node denoting the position of a MPSImage in a graph
+ * 
+ * MPS neural network graphs are made up of filter nodes connected by
  *             image (or state) nodes. An image node is produced by one filter but
  *             may be consumed by more than one filter.
  * 
@@ -95,8 +97,9 @@ public class MPSNNImageNode extends NSObject {
     public static native String description_static();
 
     /**
-     * @abstract   Tag a image node for view later
-     * @discussion Most image nodes are private to the graph. These alias memory heavily and
+     * Tag a image node for view later
+     * 
+     * Most image nodes are private to the graph. These alias memory heavily and
      *             consequently generally have invalid state when the graph exits.  When
      *             exportFromGraph = YES, the image is preserved and made available through
      *             the [MPSNNGraph encode... intermediateImages:... list.
@@ -116,8 +119,9 @@ public class MPSNNImageNode extends NSObject {
     public native boolean exportFromGraph();
 
     /**
-     * @abstract Create a autoreleased MPSNNImageNode with exportFromGraph = YES.
-     * @discussion Note: image is still temporary. See MPSNNImageNode.imageAllocator parameter.
+     * Create a autoreleased MPSNNImageNode with exportFromGraph = YES.
+     * 
+     * Note: image is still temporary. See MPSNNImageNode.imageAllocator parameter.
      */
     @Generated
     @Selector("exportedNodeWithHandle:")
@@ -125,8 +129,9 @@ public class MPSNNImageNode extends NSObject {
     public static native Object exportedNodeWithHandle(NSObject handle);
 
     /**
-     * @abstract   The preferred precision for the image
-     * @discussion Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
+     * The preferred precision for the image
+     * 
+     * Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
      *                      Typically, this is 16-bit floating-point.
      */
     @Generated
@@ -135,8 +140,9 @@ public class MPSNNImageNode extends NSObject {
     public native long format();
 
     /**
-     * @abstract   MPS resource identifier
-     * @discussion See MPSHandle protocol description.  Default: nil
+     * MPS resource identifier
+     * 
+     * See MPSHandle protocol description.  Default: nil
      */
     @Generated
     @Selector("handle")
@@ -149,8 +155,9 @@ public class MPSNNImageNode extends NSObject {
     public static native long hash_static();
 
     /**
-     * @abstract   Configurability for image allocation
-     * @discussion Allows you to influence how the image is allocated
+     * Configurability for image allocation
+     * 
+     * Allows you to influence how the image is allocated
      *             Default: MPSTemporaryImage.defaultAllocator
      */
     @Generated
@@ -206,8 +213,9 @@ public class MPSNNImageNode extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract   Tag a image node for view later
-     * @discussion Most image nodes are private to the graph. These alias memory heavily and
+     * Tag a image node for view later
+     * 
+     * Most image nodes are private to the graph. These alias memory heavily and
      *             consequently generally have invalid state when the graph exits.  When
      *             exportFromGraph = YES, the image is preserved and made available through
      *             the [MPSNNGraph encode... intermediateImages:... list.
@@ -227,8 +235,9 @@ public class MPSNNImageNode extends NSObject {
     public native void setExportFromGraph(boolean value);
 
     /**
-     * @abstract   The preferred precision for the image
-     * @discussion Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
+     * The preferred precision for the image
+     * 
+     * Default: MPSImageFeatureChannelFormatNone, meaning MPS should pick a format
      *                      Typically, this is 16-bit floating-point.
      */
     @Generated
@@ -236,16 +245,18 @@ public class MPSNNImageNode extends NSObject {
     public native void setFormat(@NUInt long value);
 
     /**
-     * @abstract   MPS resource identifier
-     * @discussion See MPSHandle protocol description.  Default: nil
+     * MPS resource identifier
+     * 
+     * See MPSHandle protocol description.  Default: nil
      */
     @Generated
     @Selector("setHandle:")
     public native void setHandle(@Mapped(ObjCObjectMapper.class) MPSHandle value);
 
     /**
-     * @abstract   Configurability for image allocation
-     * @discussion Allows you to influence how the image is allocated
+     * Configurability for image allocation
+     * 
+     * Allows you to influence how the image is allocated
      *             Default: MPSTemporaryImage.defaultAllocator
      */
     @Generated
@@ -266,8 +277,9 @@ public class MPSNNImageNode extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract   Stop training graph automatic creation at this node.
-     * @discussion An inference graph of MPSNNFilterNodes, MPSNNStateNodes and MPSNNImageNodes can be automatically
+     * Stop training graph automatic creation at this node.
+     * 
+     * An inference graph of MPSNNFilterNodes, MPSNNStateNodes and MPSNNImageNodes can be automatically
      *             converted to a training graph using -[MPSNNFilterNode trainingGraphWithSourceGradient:nodeHandler:].
      *             Sometimes, an inference graph may contain extra nodes at start to do operations like resampling or range
      *             adjustment that should not be part of the training graph. To prevent gradient operations for these extra
@@ -280,16 +292,18 @@ public class MPSNNImageNode extends NSObject {
     public native void setStopGradient(boolean value);
 
     /**
-     * @abstract   Set to true to cause the resource to be synchronized with the CPU
-     * @discussion It is not needed on iOS/tvOS devices, where it does nothing.
+     * Set to true to cause the resource to be synchronized with the CPU
+     * 
+     * It is not needed on iOS/tvOS devices, where it does nothing.
      */
     @Generated
     @Selector("setSynchronizeResource:")
     public native void setSynchronizeResource(boolean value);
 
     /**
-     * @abstract   Stop training graph automatic creation at this node.
-     * @discussion An inference graph of MPSNNFilterNodes, MPSNNStateNodes and MPSNNImageNodes can be automatically
+     * Stop training graph automatic creation at this node.
+     * 
+     * An inference graph of MPSNNFilterNodes, MPSNNStateNodes and MPSNNImageNodes can be automatically
      *             converted to a training graph using -[MPSNNFilterNode trainingGraphWithSourceGradient:nodeHandler:].
      *             Sometimes, an inference graph may contain extra nodes at start to do operations like resampling or range
      *             adjustment that should not be part of the training graph. To prevent gradient operations for these extra
@@ -302,8 +316,9 @@ public class MPSNNImageNode extends NSObject {
     public native boolean stopGradient();
 
     /**
-     * @abstract   Set to true to cause the resource to be synchronized with the CPU
-     * @discussion It is not needed on iOS/tvOS devices, where it does nothing.
+     * Set to true to cause the resource to be synchronized with the CPU
+     * 
+     * It is not needed on iOS/tvOS devices, where it does nothing.
      */
     @Generated
     @Selector("synchronizeResource")

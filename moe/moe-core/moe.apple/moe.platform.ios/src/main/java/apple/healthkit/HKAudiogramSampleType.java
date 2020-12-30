@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class    HKAudiogramSampleType
- * @abstract Represents an audiogram sample.
+ * HKAudiogramSampleType
+ * 
+ * Represents an audiogram sample.
  */
 @Generated
 @Library("HealthKit")

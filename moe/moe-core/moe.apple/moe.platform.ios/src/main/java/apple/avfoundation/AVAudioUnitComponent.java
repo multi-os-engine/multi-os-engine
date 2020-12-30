@@ -43,8 +43,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitComponent
- * @brief
+ * AVAudioUnitComponent
+ * 
  *  Provides details about an audio unit such as type, subtype, manufacturer, location etc. User
  *  tags can be added to the AVAudioUnitComponent which can be queried later for display.
  */
@@ -155,24 +155,27 @@ public class AVAudioUnitComponent extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property allTagNames
-     * @abstract represent the tags from the current user and the system tags defined by AudioComponent.
+     * [@property] allTagNames
+     * 
+     * represent the tags from the current user and the system tags defined by AudioComponent.
      */
     @Generated
     @Selector("allTagNames")
     public native NSArray<String> allTagNames();
 
     /**
-     * @property audioComponent
-     * @abstract the audioComponent that can be used in AudioComponent APIs.
+     * [@property] audioComponent
+     * 
+     * the audioComponent that can be used in AudioComponent APIs.
      */
     @Generated
     @Selector("audioComponent")
     public native AudioComponent audioComponent();
 
     /**
-     * @property audioComponentDescription
-     * @abstract description of the audio component that can be used in AudioComponent APIs.
+     * [@property] audioComponentDescription
+     * 
+     * description of the audio component that can be used in AudioComponent APIs.
      */
     @Generated
     @Selector("audioComponentDescription")
@@ -180,16 +183,18 @@ public class AVAudioUnitComponent extends NSObject {
     public native AudioComponentDescription audioComponentDescription();
 
     /**
-     * @property hasMIDIInput
-     * @abstract YES if AudioComponent has midi input, otherwise NO
+     * [@property] hasMIDIInput
+     * 
+     * YES if AudioComponent has midi input, otherwise NO
      */
     @Generated
     @Selector("hasMIDIInput")
     public native boolean hasMIDIInput();
 
     /**
-     * @property hasMIDIOutput
-     * @abstract YES if AudioComponent has midi output, otherwise NO
+     * [@property] hasMIDIOutput
+     * 
+     * YES if AudioComponent has midi output, otherwise NO
      */
     @Generated
     @Selector("hasMIDIOutput")
@@ -200,8 +205,9 @@ public class AVAudioUnitComponent extends NSObject {
     public native AVAudioUnitComponent init();
 
     /**
-     * @property sandboxSafe
-     * @abstract On OSX, YES if the AudioComponent can be loaded into a sandboxed process otherwise NO.
+     * [@property] sandboxSafe
+     * 
+     * On OSX, YES if the AudioComponent can be loaded into a sandboxed process otherwise NO.
      * 		  On iOS, this is always YES.
      */
     @Generated
@@ -209,40 +215,45 @@ public class AVAudioUnitComponent extends NSObject {
     public native boolean isSandboxSafe();
 
     /**
-     * @property localizedTypeName
-     * @abstract localized string of typeName for display
+     * [@property] localizedTypeName
+     * 
+     * localized string of typeName for display
      */
     @Generated
     @Selector("localizedTypeName")
     public native String localizedTypeName();
 
     /**
-     * @property manufacturerName
-     * @abstract the manufacturer name, extracted from the manufacturer key defined in Info.plist dictionary
+     * [@property] manufacturerName
+     * 
+     * the manufacturer name, extracted from the manufacturer key defined in Info.plist dictionary
      */
     @Generated
     @Selector("manufacturerName")
     public native String manufacturerName();
 
     /**
-     * @property name
-     * @abstract the name of an audio component
+     * [@property] name
+     * 
+     * the name of an audio component
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @property typeName
-     * @abstract standard audio component types returned as strings
+     * [@property] typeName
+     * 
+     * standard audio component types returned as strings
      */
     @Generated
     @Selector("typeName")
     public native String typeName();
 
     /**
-     * @property version
-     * @abstract version number comprised of a hexadecimal number with major, minor, dot-release format: 0xMMMMmmDD
+     * [@property] version
+     * 
+     * version number comprised of a hexadecimal number with major, minor, dot-release format: 0xMMMMmmDD
      */
     @Generated
     @Selector("version")
@@ -250,8 +261,9 @@ public class AVAudioUnitComponent extends NSObject {
     public native long version();
 
     /**
-     * @property versionString
-     * @abstract version number as string
+     * [@property] versionString
+     * 
+     * version number as string
      */
     @Generated
     @Selector("versionString")

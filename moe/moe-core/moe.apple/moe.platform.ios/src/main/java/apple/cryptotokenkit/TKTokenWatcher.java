@@ -44,7 +44,8 @@ public class TKTokenWatcher extends NSObject {
 
     /**
      * Add removal watcher for specific tokenID
-     * @disscussion after removalHandler for a specific tokenID is called the reference to this handler is removed. For one tokenID just one handler can be added, so next call to addRemovalHandler will replace previous handler
+     * [@disscussion] after removalHandler for a specific tokenID is called the reference to this handler is removed. For one tokenID just one handler can be added, so next call to addRemovalHandler will replace previous handler
+     * 
      * @param removalHandler called when a token is removed
      * @param tokenID specified tokenID, if tokenID does not exist removal handler is called imediately
      */
@@ -115,7 +116,8 @@ public class TKTokenWatcher extends NSObject {
 
     /**
      * Init watcher with insertion handler
-     * @disscussion init watcher with insertion handler which is called when a new token arrives
+     * [@disscussion] init watcher with insertion handler which is called when a new token arrives
+     * 
      * @param insertionHandler called when a new token is inserted
      */
     @Generated
@@ -167,7 +169,8 @@ public class TKTokenWatcher extends NSObject {
 
     /**
      * Set insertion handler
-     * @disscussion when an insertion handler is set the TokenWatcher will call this handler when new token appears in the system. TokenWatcher will call the handler also for tokens which was registered in the system before the handler was set.
+     * [@disscussion] when an insertion handler is set the TokenWatcher will call this handler when new token appears in the system. TokenWatcher will call the handler also for tokens which was registered in the system before the handler was set.
+     * 
      * @param insertionHandler called when a new token is inserted
      */
     @Generated

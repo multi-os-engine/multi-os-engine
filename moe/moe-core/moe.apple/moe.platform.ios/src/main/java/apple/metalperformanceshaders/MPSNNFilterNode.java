@@ -26,9 +26,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNFilterNode
- * @abstract   A placeholder node denoting a neural network filter stage
- * @discussion There are as many MPSNNFilterNode subclasses as there are
+ * MPSNNFilterNode
+ * 
+ * A placeholder node denoting a neural network filter stage
+ * 
+ * There are as many MPSNNFilterNode subclasses as there are
  *             MPS neural network filter objects. Make one of those.
  *             This class defines an polymorphic interface for them.
  */
@@ -121,8 +123,9 @@ public class MPSNNFilterNode extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
@@ -135,8 +138,9 @@ public class MPSNNFilterNode extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract   The padding method used for the filter node
-     * @discussion The padding policy configures how the filter centers
+     * The padding method used for the filter node
+     * 
+     * The padding policy configures how the filter centers
      *             the region of interest in the source image. It principally
      *             is responsible for setting the MPSCNNKernel.offset and
      *             the size of the image produced, and sometimes will also
@@ -180,8 +184,9 @@ public class MPSNNFilterNode extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract   Get the node representing the image result of the filter
-     * @discussion Except where otherwise noted, the precision used for the
+     * Get the node representing the image result of the filter
+     * 
+     * Except where otherwise noted, the precision used for the
      *             result image (see format property) is copied from the precision
      *             from the first input image node.
      */
@@ -190,32 +195,36 @@ public class MPSNNFilterNode extends NSObject {
     public native MPSNNImageNode resultImage();
 
     /**
-     * @abstract   convenience method for resultStates[0]
-     * @discussion  If resultStates is nil, returns nil
+     * convenience method for resultStates[0]
+     * 
+     * If resultStates is nil, returns nil
      */
     @Generated
     @Selector("resultState")
     public native MPSNNStateNode resultState();
 
     /**
-     * @abstract   Get the node representing the state result of the filter
-     * @discussion If more than one, see description of subclass for ordering. 
+     * Get the node representing the state result of the filter
+     * 
+     * If more than one, see description of subclass for ordering.
      */
     @Generated
     @Selector("resultStates")
     public native NSArray<? extends MPSNNStateNode> resultStates();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
     /**
-     * @abstract   The padding method used for the filter node
-     * @discussion The padding policy configures how the filter centers
+     * The padding method used for the filter node
+     * 
+     * The padding policy configures how the filter centers
      *             the region of interest in the source image. It principally
      *             is responsible for setting the MPSCNNKernel.offset and
      *             the size of the image produced, and sometimes will also
@@ -263,10 +272,12 @@ public class MPSNNFilterNode extends NSObject {
     public static native long version_static();
 
     /**
-     * @abstract Return the gradient (backwards) version of this filter.
-     * @discussion The backwards training version of the filter will be returned.
+     * Return the gradient (backwards) version of this filter.
+     * 
+     * The backwards training version of the filter will be returned.
      *             The non-gradient image and state arguments for the filter are automatically
      *             obtained from the target.
+     * 
      * @param  gradientImage The gradient images corresponding with the resultImage
      *                       of the target
      */
@@ -275,10 +286,12 @@ public class MPSNNFilterNode extends NSObject {
     public native MPSNNGradientFilterNode gradientFilterWithSource(MPSNNImageNode gradientImage);
 
     /**
-     * @abstract Return the gradient (backwards) version of this filter.
-     * @discussion The backwards training version of the filter will be returned.
+     * Return the gradient (backwards) version of this filter.
+     * 
+     * The backwards training version of the filter will be returned.
      *             The non-gradient image and state arguments for the filter are automatically
      *             obtained from the target.
+     * 
      * @param  gradientImages The gradient images corresponding with the resultImage
      *                       of the target
      */
@@ -287,8 +300,9 @@ public class MPSNNFilterNode extends NSObject {
     public native MPSNNGradientFilterNode gradientFilterWithSources(NSArray<? extends MPSNNImageNode> gradientImages);
 
     /**
-     * @abstract Return multiple gradient versions of the filter
-     * @discussion     MPSNNFilters that consume multiple inputs generally result in
+     * Return multiple gradient versions of the filter
+     * 
+     * MPSNNFilters that consume multiple inputs generally result in
      *                 multiple conjugate filters for the gradient computation at
      *                 the end of training. For example, a single concatenation operation
      *                 that concatenates multple images will result in an array of slice
@@ -299,8 +313,9 @@ public class MPSNNFilterNode extends NSObject {
     public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSource(MPSNNImageNode gradientImage);
 
     /**
-     * @abstract Return multiple gradient versions of the filter
-     * @discussion     MPSNNFilters that consume multiple inputs generally result in
+     * Return multiple gradient versions of the filter
+     * 
+     * MPSNNFilters that consume multiple inputs generally result in
      *                 multiple conjugate filters for the gradient computation at
      *                 the end of training. For example, a single concatenation operation
      *                 that concatenates multple images will result in an array of slice
@@ -312,8 +327,9 @@ public class MPSNNFilterNode extends NSObject {
             NSArray<? extends MPSNNImageNode> gradientImages);
 
     /**
-     * @abstract       Build training graph from inference graph
-     * @discussion     This method will iteratively build the training portion of a graph based
+     * Build training graph from inference graph
+     * 
+     * This method will iteratively build the training portion of a graph based
      *                 on an inference graph. Self should be the last node in the
      *                 inference graph. It is typically a loss layer, but can be anything.
      *                 Typically, the "inference graph" used here is the desired inference

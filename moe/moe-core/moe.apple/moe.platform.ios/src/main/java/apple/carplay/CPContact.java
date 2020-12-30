@@ -126,18 +126,18 @@ public class CPContact extends NSObject implements NSSecureCoding {
     /**
      * Initializes a new contact to be used with @c CPContactTemplate, with a name and image
      * 
-     * @param name The name to be displayed for this contact.
-     * @param image An image for this contact. The maximum image size in points is CPButtonMaximumImageSize; larger images will be scaled down.
-     * 
-     * @note When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * [@note] When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
      * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      * 
-     * @discussion To properly size your list images, your app should consider the display scale of the car screen.
+     * To properly size your list images, your app should consider the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * @param name The name to be displayed for this contact.
+     * @param image An image for this contact. The maximum image size in points is CPButtonMaximumImageSize; larger images will be scaled down.
      */
     @Generated
     @Selector("initWithName:image:")

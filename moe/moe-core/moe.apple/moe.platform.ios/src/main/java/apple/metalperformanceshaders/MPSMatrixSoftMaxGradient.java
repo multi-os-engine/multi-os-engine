@@ -28,13 +28,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixSoftMaxGradient
+ * MPSMatrixSoftMaxGradient
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   Computes the gradient corresponding to a forward MPSMatrixSoftMax object.
+ * Computes the gradient corresponding to a forward MPSMatrixSoftMax object.
  * 
- * @discussion A MPSMatrixSoftMaxGradient object computes:
+ * A MPSMatrixSoftMaxGradient object computes:
  * 
  *                 dL_dX_ij = Y_ij * (dL_dY_ij - sum_k(dL_dY_ik * Y_ik)
  * 
@@ -94,11 +94,12 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract   Make a copy of this kernel for a new device - @see MPSKernel
+     * Make a copy of this kernel for a new device - @see MPSKernel
+     * 
      * @param      zone        The NSZone in which to allocate the object
      * @param      device      The device for the new MPSKernel. If nil, then use
      *                         self.device.
-     * @result     a pointer to a copy of this MPSKernel. This will fail, returning
+     * @return     a pointer to a copy of this MPSKernel. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -117,7 +118,7 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixSoftMaxGradient object to a command buffer.
+     * Encode a MPSMatrixSoftMaxGradient object to a command buffer.
      * 
      * @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
      * 
@@ -152,8 +153,10 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
     public native MPSMatrixSoftMaxGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixSoftMaxGradient
      * @param      device      The MTLDevice on which to make the MPSMatrixSoftMaxGradient
      * @return     A new MPSMatrixSoftMaxGradient object, or nil if failure.
@@ -164,7 +167,7 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize an MPSMatrixSoftMaxGradient object on a device.
+     * Initialize an MPSMatrixSoftMaxGradient object on a device.
      * 
      * @param      device          The device on which the kernel will execute.
      * 
@@ -210,9 +213,9 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   sourceColumns
+     * [@property]   sourceColumns
      * 
-     * @discussion The number of columns to consider from the sources in the operation.
+     * The number of columns to consider from the sources in the operation.
      *             This property is modifiable and defaults to NSUIntegerMax and the number is
      *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
      *             fit into the source matrices available starting from [primary/secondary]SourceMatrixOrigin.y,
@@ -231,9 +234,9 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
     public native void setSourceColumns(@NUInt long value);
 
     /**
-     * @property   sourceRows
+     * [@property]   sourceRows
      * 
-     * @discussion The number of rows to consider from the sources in the operation.
+     * The number of rows to consider from the sources in the operation.
      *             This property is modifiable and defaults to NSUIntegerMax and the number is
      *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
      *             fit into the source matrices available starting from
@@ -256,9 +259,9 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   sourceColumns
+     * [@property]   sourceColumns
      * 
-     * @discussion The number of columns to consider from the sources in the operation.
+     * The number of columns to consider from the sources in the operation.
      *             This property is modifiable and defaults to NSUIntegerMax and the number is
      *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
      *             fit into the source matrices available starting from [primary/secondary]SourceMatrixOrigin.y,
@@ -278,9 +281,9 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
     public native long sourceColumns();
 
     /**
-     * @property   sourceRows
+     * [@property]   sourceRows
      * 
-     * @discussion The number of rows to consider from the sources in the operation.
+     * The number of rows to consider from the sources in the operation.
      *             This property is modifiable and defaults to NSUIntegerMax and the number is
      *             adjusted dynamically at kernel encode time (see encodeToCommandBuffer) to
      *             fit into the source matrices available starting from

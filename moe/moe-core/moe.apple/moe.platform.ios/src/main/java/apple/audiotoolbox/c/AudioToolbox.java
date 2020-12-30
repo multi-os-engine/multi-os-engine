@@ -99,9 +99,11 @@ public final class AudioToolbox {
     }
 
     /**
-     * @function       AudioComponentFindNext
-     * @abstract       Finds an audio component.
-     * @discussion     This function is used to find an audio component that is the closest match
+     * [@function]       AudioComponentFindNext
+     * 
+     * Finds an audio component.
+     * 
+     * This function is used to find an audio component that is the closest match
      *                 to the provided values. Note that the list of available components may change
      * 	dynamically in situations involving inter-app audio on iOS, or version 3
      * 	audio unit extensions. See kAudioComponentRegistrationsChangedNotification.
@@ -116,7 +118,7 @@ public final class AudioToolbox {
      *                     The type, subtype and manufacturer fields are used to specify the audio
      *                     component to search for. A value of 0 (zero) for any of these fields is
      *                     a wildcard, so the first match found is returned.
-     * @result         An audio component that matches the search parameters, or NULL if none found.
+     * @return         An audio component that matches the search parameters, or NULL if none found.
      */
     @Generated
     @CFunction
@@ -124,15 +126,18 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
 
     /**
-     * @function       AudioComponentCount
-     * @abstract       Counts audio components.
-     * @discussion     Returns the number of AudioComponents that match the specified
+     * [@function]       AudioComponentCount
+     * 
+     * Counts audio components.
+     * 
+     * Returns the number of AudioComponents that match the specified
      *                 AudioComponentDescription.
+     * 
      * @param          inDesc
      *                     The type, subtype and manufacturer fields are used to specify the audio
      *                     components to count A value of 0 (zero) for any of these fields is a
      *                     wildcard, so will match any value for this field
-     * @result         a UInt32. 0 (zero) means no audio components were found that matched the
+     * @return         a UInt32. 0 (zero) means no audio components were found that matched the
      *                 search parameters.
      */
     @Generated
@@ -141,30 +146,36 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription inDesc);
 
     /**
-     * @function       AudioComponentCopyName
-     * @abstract       Retrieves the name of an audio component.
-     * @discussion     the name of an audio component
+     * [@function]       AudioComponentCopyName
+     * 
+     * Retrieves the name of an audio component.
+     * 
+     * the name of an audio component
+     * 
      * @param          inComponent
      *                     the audio component (must not be NULL)
      * @param          outName
      *                     a CFString that is the name of the audio component. This string should
      *                     be released by the caller.
-     * @result         an OSStatus result code.
+     * @return         an OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioComponentCopyName(AudioComponent inComponent, Ptr<CFStringRef> outName);
 
     /**
-     * @function       AudioComponentGetDescription
-     * @abstract       Retrieve an audio component's description.
-     * @discussion     This will return the fully specified audio component description for the
+     * [@function]       AudioComponentGetDescription
+     * 
+     * Retrieve an audio component's description.
+     * 
+     * This will return the fully specified audio component description for the
      *                 provided audio component.
+     * 
      * @param          inComponent
      *                     the audio component (must not be NULL)
      * @param          outDesc
      *                     the audio component description for the specified audio component
-     * @result         an OSStatus result code.
+     * @return         an OSStatus result code.
      */
     @Generated
     @CFunction
@@ -172,22 +183,26 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioComponentDescription outDesc);
 
     /**
-     * @function       AudioComponentGetVersion
-     * @abstract       Retrieve an audio component's version.
+     * [@function]       AudioComponentGetVersion
+     * 
+     * Retrieve an audio component's version.
+     * 
      * @param          inComponent
      *                     the audio component (must not be NULL)
      * @param          outVersion
      *                     the audio component's version in the form of 0xMMMMmmDD (Major, Minor, Dot)
-     * @result         an OSStatus result code.
+     * @return         an OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioComponentGetVersion(AudioComponent inComponent, IntPtr outVersion);
 
     /**
-     * @function       AudioComponentInstanceNew
-     * @abstract       Creates an audio component instance.
-     * @discussion     This function creates an instance of a given audio component. The audio
+     * [@function]       AudioComponentInstanceNew
+     * 
+     * Creates an audio component instance.
+     * 
+     * This function creates an instance of a given audio component. The audio
      *                 component instance is the object that does all of the work, whereas the
      *                 audio component is the way an application finds and then creates this object
      *                 to do this work. For example, an audio unit is a type of audio component
@@ -195,11 +210,12 @@ public final class AudioToolbox {
      *                 creates a new instance of that component. This instance is then used to
      *                 perform the audio tasks for which it was designed (process, mix, synthesise,
      *                 etc.).
+     * 
      * @param          inComponent
      *                     the audio component (must not be NULL)
      * @param          outInstance
      *                     the audio component instance
-     * @result         an OSStatus result code.
+     * @return         an OSStatus result code.
      */
     @Generated
     @CFunction
@@ -207,14 +223,17 @@ public final class AudioToolbox {
             Ptr<AudioComponentInstance> outInstance);
 
     /**
-     * @function       AudioComponentInstantiate
-     * @abstract       Creates an audio component instance, asynchronously.
-     * @discussion     This is an asynchronous version of AudioComponentInstanceNew(). It must be
+     * [@function]       AudioComponentInstantiate
+     * 
+     * Creates an audio component instance, asynchronously.
+     * 
+     * This is an asynchronous version of AudioComponentInstanceNew(). It must be
      *                 used to instantiate any component with kAudioComponentFlag_RequiresAsyncInstantiation
      *                 set in its component flags. It may be used for other components as well.
      * 
      * 	Note: Do not block the main thread while waiting for the completion handler
      * 	to be called; this can deadlock.
+     * 
      * @param          inComponent
      *                     the audio component
      * @param          inOptions
@@ -228,53 +247,62 @@ public final class AudioToolbox {
             @ObjCBlock(name = "call_AudioComponentInstantiate") Block_AudioComponentInstantiate inCompletionHandler);
 
     /**
-     * @function       AudioComponentInstanceDispose
-     * @abstract       Disposes of an audio component instance.
-     * @discussion     This function will dispose the audio component instance that was created
+     * [@function]       AudioComponentInstanceDispose
+     * 
+     * Disposes of an audio component instance.
+     * 
+     * This function will dispose the audio component instance that was created
      *                 with the New call. It will deallocate any resources that the instance was using.
+     * 
      * @param          inInstance
      *                     the audio component instance to dispose (must not be NULL)
-     * @result         an OSStatus result code.
+     * @return         an OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioComponentInstanceDispose(AudioComponentInstance inInstance);
 
     /**
-     * @function       AudioComponentInstanceGetComponent
-     * @abstract       Retrieve the audio component from its instance
-     * @discussion     Allows the application at any time to retrieve the audio component that is
+     * [@function]       AudioComponentInstanceGetComponent
+     * 
+     * Retrieve the audio component from its instance
+     * 
+     * Allows the application at any time to retrieve the audio component that is
      *                 the factory object of a given instance (i.e., the audio component that was
      *                 used to create the instance in the first place). This allows the application
      *                 to retrieve general information about a particular audio component (its
      *                 name, version, etc) when one just has an audio component instance to work
      *                 with
+     * 
      * @param          inInstance
      *                     the audio component instance (must not be NULL, and instance must be valid - that is, not disposed)
-     * @result         a valid audio component or NULL if no component was found.
+     * @return         a valid audio component or NULL if no component was found.
      */
     @Generated
     @CFunction
     public static native AudioComponent AudioComponentInstanceGetComponent(AudioComponentInstance inInstance);
 
     /**
-     * @function       AudioComponentInstanceCanDo
-     * @discussion     Determines if an audio component instance implements a particular component
+     * [@function]       AudioComponentInstanceCanDo
+     * 
+     * Determines if an audio component instance implements a particular component
      *                 API call as signified by the specified selector identifier token.
+     * 
      * @param          inInstance
      *                     the audio component instance
      * @param          inSelectorID
      *                     a number to signify the audio component API (component selector) as appropriate for the instance's component type.
-     * @result         a boolean
+     * @return         a boolean
      */
     @Generated
     @CFunction
     public static native byte AudioComponentInstanceCanDo(AudioComponentInstance inInstance, short inSelectorID);
 
     /**
-     * @function       AudioComponentRegister
-     * @abstract       Dynamically registers an AudioComponent within the current process
-     * @discussion
+     * [@function]       AudioComponentRegister
+     * 
+     * Dynamically registers an AudioComponent within the current process
+     * 
      *     AudioComponents are registered either when found in appropriate bundles in the filesystem,
      *     or via this call. AudioComponents registered via this call are available only within
      *     the current process.
@@ -291,7 +319,7 @@ public final class AudioToolbox {
      * @param          inFactory
      *                     an AudioComponentFactoryFunction which will create instances of your
      *                     AudioComponent
-     * @result         an AudioComponent object
+     * @return         an AudioComponent object
      */
     @Generated
     @CFunction
@@ -301,9 +329,11 @@ public final class AudioToolbox {
             @FunctionPtr(name = "call_AudioComponentRegister") Function_AudioComponentRegister inFactory);
 
     /**
-     * @function		AudioUnitInitialize
-     * @abstract		initialize an audio unit
-     * @discussion		Upon success, the audio unit has been successfully initialized. This means 
+     * [@function]		AudioUnitInitialize
+     * 
+     * initialize an audio unit
+     * 
+     * Upon success, the audio unit has been successfully initialized. This means
      * 				that the formats for input and output are valid and can be supported and it 
      * 				has based its allocations on the max number of frames that it is able to 
      * 				render at any given time. Once initialized, it is in a state where it can be 
@@ -314,7 +344,7 @@ public final class AudioToolbox {
      * 
      * @param			inUnit
      * 				The audio unit to initialize
-     * @result			noErr, or an error representing the reasons why the audio unit was not able 
+     * @return			noErr, or an error representing the reasons why the audio unit was not able 
      * 				to be initialized successfully
      */
     @Generated
@@ -322,9 +352,11 @@ public final class AudioToolbox {
     public static native int AudioUnitInitialize(AudioComponentInstance inUnit);
 
     /**
-     * @function		AudioUnitUninitialize
-     * @abstract		uninitialize an audio unit
-     * @discussion		Once an audio unit has been initialized, to change its state in response to 
+     * [@function]		AudioUnitUninitialize
+     * 
+     * uninitialize an audio unit
+     * 
+     * Once an audio unit has been initialized, to change its state in response to
      * 				some kind of environmental change, the audio unit should be uninitialized. 
      * 				This will have the effect of the audio unit de-allocating its resources.
      * 				The caller can then reconfigure the audio unit to match the new environment 
@@ -333,7 +365,7 @@ public final class AudioToolbox {
      * 
      * @param			inUnit
      * 				The audio unit to uninitialize
-     * @result			noErr, or an error representing the reasons why the audio unit was not able 
+     * @return			noErr, or an error representing the reasons why the audio unit was not able 
      * 				to be initialized successfully. Typically this call won't return an error 
      * 				unless the audio unit in question is no longer valid.
      */
@@ -342,9 +374,11 @@ public final class AudioToolbox {
     public static native int AudioUnitUninitialize(AudioComponentInstance inUnit);
 
     /**
-     * @function		AudioUnitGetPropertyInfo
-     * @abstract		retrieves information about a specified property
-     * @discussion		The API can be used to retrieve both the size of the property, and whether it 
+     * [@function]		AudioUnitGetPropertyInfo
+     * 
+     * retrieves information about a specified property
+     * 
+     * The API can be used to retrieve both the size of the property, and whether it
      * 				is writable or not. In order to get a general answer on the capability of an 
      * 				audio unit, this function should be called before the audio unit
      * 				is initialized (as some properties are writable when the audio unit is 
@@ -365,7 +399,7 @@ public final class AudioToolbox {
      * 				if not null, then will retrieve whether the property can be written or not. 
      * 				if null, then it is ignored
      * 
-     * @result			noErr, or various audio unit errors related to properties
+     * @return			noErr, or various audio unit errors related to properties
      */
     @Generated
     @CFunction
@@ -373,9 +407,11 @@ public final class AudioToolbox {
             int inElement, IntPtr outDataSize, BytePtr outWritable);
 
     /**
-     * @function		AudioUnitGetProperty
-     * @abstract		retrieves the value of a specified property
-     * @discussion		The API can is used to retrieve the value of the property. Property values for 
+     * [@function]		AudioUnitGetProperty
+     * 
+     * retrieves the value of a specified property
+     * 
+     * The API can is used to retrieve the value of the property. Property values for
      * 				audio units are always passed by reference
      * 
      * @param			inUnit
@@ -393,7 +429,7 @@ public final class AudioToolbox {
      * 				on input contains the size of the data pointed to by outData, on output, the 
      * 				size of the data that was returned.
      * 
-     * @result			noErr, or various audio unit errors related to properties
+     * @return			noErr, or various audio unit errors related to properties
      */
     @Generated
     @CFunction
@@ -401,9 +437,11 @@ public final class AudioToolbox {
             VoidPtr outData, IntPtr ioDataSize);
 
     /**
-     * @function		AudioUnitSetProperty
-     * @abstract		sets the value of a specified property
-     * @discussion		The API can is used to set the value of the property. Property values for 
+     * [@function]		AudioUnitSetProperty
+     * 
+     * sets the value of a specified property
+     * 
+     * The API can is used to set the value of the property. Property values for
      * 				audio units are always passed by reference
      * 
      * @param			inUnit
@@ -423,7 +461,7 @@ public final class AudioToolbox {
      * @param			inDataSize	
      * 				the size of the data being provided in inData
      * 
-     * @result			noErr, or various audio unit errors related to properties
+     * @return			noErr, or various audio unit errors related to properties
      */
     @Generated
     @CFunction
@@ -431,9 +469,11 @@ public final class AudioToolbox {
             ConstVoidPtr inData, int inDataSize);
 
     /**
-     * @function		AudioUnitAddPropertyListener
-     * @abstract		registration call to receive notifications for when a property changes
-     * @discussion		When an audio unit property value changes, a notification callback can be 
+     * [@function]		AudioUnitAddPropertyListener
+     * 
+     * registration call to receive notifications for when a property changes
+     * 
+     * When an audio unit property value changes, a notification callback can be
      * 				called by the audio unit to  inform interested parties that this event has 
      * 				occurred. The notification is defined by the tuple of inProc and 
      * 				inProcUserData as paired to the specified property ID, so the previously 
@@ -450,7 +490,7 @@ public final class AudioToolbox {
      * @param			inProcUserData
      * 				the user data to provide with the callback
      * 
-     * @result			noErr, or various audio unit errors related to properties
+     * @return			noErr, or various audio unit errors related to properties
      */
     @Generated
     @CFunction
@@ -459,9 +499,11 @@ public final class AudioToolbox {
             VoidPtr inProcUserData);
 
     /**
-     * @function		AudioUnitRemovePropertyListenerWithUserData
-     * @abstract		remove a previously registered property listener
-     * @discussion		Removes a previously registered property listener as specified by the inProc 
+     * [@function]		AudioUnitRemovePropertyListenerWithUserData
+     * 
+     * remove a previously registered property listener
+     * 
+     * Removes a previously registered property listener as specified by the inProc
      * 				and inProcUser data as paired to the property identifier
      * 
      * @param			inUnit
@@ -473,7 +515,7 @@ public final class AudioToolbox {
      * @param			inProcUserData
      * 				the user data paired with the provided inProc
      * 
-     * @result			noErr, or various audio unit errors related to properties
+     * @return			noErr, or various audio unit errors related to properties
      */
     @Generated
     @CFunction
@@ -482,9 +524,11 @@ public final class AudioToolbox {
             VoidPtr inProcUserData);
 
     /**
-     * @function		AudioUnitAddRenderNotify
-     * @abstract		a notification callback to call when an audio unit is asked to render
-     * @discussion		allows an application to register a callback with an audio unit for whenever 
+     * [@function]		AudioUnitAddRenderNotify
+     * 
+     * a notification callback to call when an audio unit is asked to render
+     * 
+     * allows an application to register a callback with an audio unit for whenever
      * 				the audio unit is asked to render. The callback is called both before the 
      * 				audio unit performs its render operations (the render flag's pre-render bit 
      * 				is set) and after the audio unit has completed its render operations (the 
@@ -501,7 +545,7 @@ public final class AudioToolbox {
      * @param			inProcUserData
      * 				the user data that will be provided with the proc when it is called
      * 
-     * @result			noErr, or an audio unit error code
+     * @return			noErr, or an audio unit error code
      */
     @Generated
     @CFunction
@@ -510,8 +554,9 @@ public final class AudioToolbox {
             VoidPtr inProcUserData);
 
     /**
-     * @function		AudioUnitRemoveRenderNotify
-     * @abstract		remove a previously registered render notification proc
+     * [@function]		AudioUnitRemoveRenderNotify
+     * 
+     * remove a previously registered render notification proc
      * 
      * @param			inUnit
      * 				the audio unit
@@ -521,7 +566,7 @@ public final class AudioToolbox {
      * 				the user data that was provided with the proc when it was previously 
      * 				registered
      * 
-     * @result			noErr, or an audio unit error code
+     * @return			noErr, or an audio unit error code
      */
     @Generated
     @CFunction
@@ -530,9 +575,11 @@ public final class AudioToolbox {
             VoidPtr inProcUserData);
 
     /**
-     * @function		AudioUnitGetParameter
-     * @abstract		Get the value of a parameter
-     * @discussion		Get the value of a parameter as specified by its ID, scope and element. 
+     * [@function]		AudioUnitGetParameter
+     * 
+     * Get the value of a parameter
+     * 
+     * Get the value of a parameter as specified by its ID, scope and element.
      * 
      * @param			inUnit
      * 				the audio unit
@@ -546,7 +593,7 @@ public final class AudioToolbox {
      * 				Must be non-null, and upon success will contain the current value for the 
      * 				specified parameter
      * 
-     * @result			noErr, or an audio unit error code (such as InvalidParameter)
+     * @return			noErr, or an audio unit error code (such as InvalidParameter)
      */
     @Generated
     @CFunction
@@ -554,9 +601,11 @@ public final class AudioToolbox {
             FloatPtr outValue);
 
     /**
-     * @function		AudioUnitSetParameter
-     * @abstract		Set the value of a parameter
-     * @discussion		Set the value of a parameter as specified by its ID, scope and element. 
+     * [@function]		AudioUnitSetParameter
+     * 
+     * Set the value of a parameter
+     * 
+     * Set the value of a parameter as specified by its ID, scope and element.
      * 				Parameter IDs are consistent across all of the elements in a scope - so for a 
      * 				mixer, the "input volume" parameter can be applied on any input, and the 
      * 				particular input is specified by the elementID.
@@ -574,7 +623,7 @@ public final class AudioToolbox {
      * @param			inBufferOffsetInFrames
      * 				generally should be set to zero - see AudioUnitScheduleParameters
      * 
-     * @result			noErr, or an audio unit error code (such as InvalidParameter)
+     * @return			noErr, or an audio unit error code (such as InvalidParameter)
      */
     @Generated
     @CFunction
@@ -582,9 +631,11 @@ public final class AudioToolbox {
             float inValue, int inBufferOffsetInFrames);
 
     /**
-     * @function		AudioUnitScheduleParameters
-     * @abstract		Schedule changes to the value of a parameter
-     * @discussion		This API is used to schedule intra-buffer changes to the value of a parameter 
+     * [@function]		AudioUnitScheduleParameters
+     * 
+     * Schedule changes to the value of a parameter
+     * 
+     * This API is used to schedule intra-buffer changes to the value of a parameter
      * 				(immediate) or to ramp a parameter from a start value to an end value for a 
      * 				specified number of samples (ramp)
      * 
@@ -610,7 +661,7 @@ public final class AudioToolbox {
      * @param			inNumParamEvents
      * 				the number of parameter event structs pointed to by inParameterEvent
      * 
-     * @result			noErr, or an audio unit error code (such as InvalidParameter)
+     * @return			noErr, or an audio unit error code (such as InvalidParameter)
      */
     @Generated
     @CFunction
@@ -618,10 +669,12 @@ public final class AudioToolbox {
             int inNumParamEvents);
 
     /**
-     * @function		AudioUnitRender
-     * @abstract		the render operation where ioData will contain the results of the audio unit's
+     * [@function]		AudioUnitRender
+     * 
+     * the render operation where ioData will contain the results of the audio unit's
      * 				render operations
-     * @discussion		an audio unit will render the amount of audio data described by 
+     * 
+     * an audio unit will render the amount of audio data described by
      * 				inNumberOfFrames and the results of that render will be contained within 
      * 				ioData. The caller should provide audio time stamps where at least the sample 
      * 				time is valid and it is incrementing sequentially from its previous call 
@@ -655,7 +708,7 @@ public final class AudioToolbox {
      * @param			ioData
      * 				the audio buffer list that the audio unit is to render into.
      * 
-     * @result			noErr, or an audio unit render error
+     * @return			noErr, or an audio unit render error
      */
     @Generated
     @CFunction
@@ -679,9 +732,11 @@ public final class AudioToolbox {
             int inNumberOutputBufferLists, Ptr<Ptr<AudioBufferList>> ioOutputBufferLists);
 
     /**
-     * @function		AudioUnitReset
-     * @abstract		reset an audio unit's render state
-     * @discussion		This call will clear any render state of an audio unit. For instance, with a 
+     * [@function]		AudioUnitReset
+     * 
+     * reset an audio unit's render state
+     * 
+     * This call will clear any render state of an audio unit. For instance, with a
      * 				delay or reverb type of audio unit reset will clear any of the delay lines 
      * 				maintained within the audio unit. Typically, this call is made when an
      * 				audio unit was previously rendering, and was taken out of the render chain 
@@ -699,17 +754,21 @@ public final class AudioToolbox {
      * @param			inElement
      * 				the element - typically this is set to 0
      * 
-     * @result			noErr, or an audio unit error
+     * @return			noErr, or an audio unit error
      */
     @Generated
     @CFunction
     public static native int AudioUnitReset(AudioComponentInstance inUnit, int inScope, int inElement);
 
     /**
-     * @function       AudioOutputUnitPublish
+     * [@function]       AudioOutputUnitPublish
      * 
-     * @abstract       Register an audio output unit as available to be used as an audio unit by
+     * Register an audio output unit as available to be used as an audio unit by
      *                 other applications.
+     * 
+     *     This allows a publishing application to register its audio (input/)output unit as being able
+     *     to be redirected and repurposed as an audio unit effect, generator, music device or music
+     *     effect by another host application.
      * 
      * @param          inOutputUnit
      *                     The audio output unit to be published.
@@ -717,12 +776,7 @@ public final class AudioToolbox {
      *                     The AudioComponentDescription under which to register the application.
      * @param          inName  
      *                     The application or component name.
-     * @result         An OSStatus result code.
-     * 
-     * @discussion
-     *     This allows a publishing application to register its audio (input/)output unit as being able
-     *     to be redirected and repurposed as an audio unit effect, generator, music device or music
-     *     effect by another host application.
+     * @return         An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -739,15 +793,16 @@ public final class AudioToolbox {
     public static native UIImage AudioComponentGetIcon(AudioComponent comp, float desiredPointSize);
 
     /**
-     *    @function       AudioComponentGetLastActiveTime
-     *    @abstract       Fetches the time at which the application publishing the component was last active.
-     * @discussion
+     *    [@function]       AudioComponentGetLastActiveTime
+     * 
+     * Fetches the time at which the application publishing the component was last active.
+     * 
      * 	Inter-app audio hosts can use this to sort the list of available nodes by how recently
      * 	the user interacted with them.
      * 
      *    @param          comp
      *                        The AudioComponent being queried.
-     *    @result         The CFAbsoluteTime at which the node was last active (0 if never).
+     *    @return         The CFAbsoluteTime at which the node was last active (0 if never).
      */
     @Generated
     @CFunction
@@ -777,10 +832,11 @@ public final class AudioToolbox {
     public static native int SetAudioUnitParameterDisplayType(int flags, int displayType);
 
     /**
-     * @function	MusicDeviceMIDIEvent
-     * @abstract	Used to sent MIDI channel messages to an audio unit
+     * [@function]	MusicDeviceMIDIEvent
      * 
-     * @discussion	This is the API used to send MIDI channel messages to an audio unit. The status and data parameters 
+     * Used to sent MIDI channel messages to an audio unit
+     * 
+     * This is the API used to send MIDI channel messages to an audio unit. The status and data parameters
      * 			are used exactly as described by the MIDI specification, including the combination of channel and 
      * 			command in the status byte.
      * 
@@ -800,7 +856,7 @@ public final class AudioToolbox {
      * 				important when starting new notes. If you are not scheduling in the audio unit's render thread, 
      * 				then you should set this value to 0
      * 
-     * @result			noErr, or an audio unit error code
+     * @return			noErr, or an audio unit error code
      */
     @Generated
     @CFunction
@@ -808,10 +864,11 @@ public final class AudioToolbox {
             int inOffsetSampleFrame);
 
     /**
-     * @function	MusicDeviceSysEx
-     * @abstract	used to send any non-channel MIDI event to an audio unit
+     * [@function]	MusicDeviceSysEx
      * 
-     * @discussion	This is used to send any non-channel MIDI event to an audio unit. In practise this is a System Exclusive 
+     * used to send any non-channel MIDI event to an audio unit
+     * 
+     * This is used to send any non-channel MIDI event to an audio unit. In practise this is a System Exclusive
      * 				(SysEx) MIDI message
      * 
      * @param			inUnit
@@ -821,7 +878,7 @@ public final class AudioToolbox {
      * @param			inLength
      * 			The size, in bytes, of the data
      * 
-     * @result			noErr, or an audio unit error code
+     * @return			noErr, or an audio unit error code
      */
     @Generated
     @CFunction
@@ -830,10 +887,11 @@ public final class AudioToolbox {
             int inLength);
 
     /**
-     * @function	MusicDeviceStartNote
-     * @abstract	used to start a note
+     * [@function]	MusicDeviceStartNote
      * 
-     * @discussion	This function is used to start a note.  The caller must provide a NoteInstanceID to receive a 
+     * used to start a note
+     * 
+     * This function is used to start a note.  The caller must provide a NoteInstanceID to receive a
      * 				token that is then used to stop the note. The MusicDeviceStopNote call should be used to stop 
      * 				notes started with this API. The token can also be used to address individual notes on the 
      * 				kAudioUnitScope_Note if the audio unit supports it. The instrumentID is no longer used and the 
@@ -866,7 +924,7 @@ public final class AudioToolbox {
      * @param			inParams
      * 			The parameters to be used when starting the note - pitch and velocity must be specified
      * 
-     * @result			noErr, or an audio unit error code
+     * @return			noErr, or an audio unit error code
      */
     @Generated
     @CFunction
@@ -875,10 +933,11 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") MusicDeviceNoteParams inParams);
 
     /**
-     * @function	MusicDeviceStopNote
-     * @abstract	used to stop notes started with the MusicDeviceStartNote call
+     * [@function]	MusicDeviceStopNote
      * 
-     * @discussion	This call is used to stop notes that have been started with the MusicDeviceStartNote call; both the group ID 
+     * used to stop notes started with the MusicDeviceStartNote call
+     * 
+     * This call is used to stop notes that have been started with the MusicDeviceStartNote call; both the group ID
      * 				that the note was started on and the noteInstanceID should be specified.
      * 
      * @param			inUnit
@@ -890,7 +949,7 @@ public final class AudioToolbox {
      * @param			inOffsetSampleFrame
      * 			the sample offset within the next buffer rendered that the note should be turned off at
      * 
-     * @result			noErr, or an audio unit error code
+     * @return			noErr, or an audio unit error code
      */
     @Generated
     @CFunction
@@ -898,8 +957,9 @@ public final class AudioToolbox {
             int inOffsetSampleFrame);
 
     /**
-     * @function	NewAUGraph
-     * @abstract   Create a new AUGraph
+     * [@function]	NewAUGraph
+     * 
+     * Create a new AUGraph
      * 
      * @param		outGraph		the new AUGraph object
      */
@@ -908,8 +968,9 @@ public final class AudioToolbox {
     public static native int NewAUGraph(Ptr<AUGraph> outGraph);
 
     /**
-     *    @function	DisposeAUGraph
-     *    @abstract   Dispose an AUGraph
+     *    [@function]	DisposeAUGraph
+     * 
+     * Dispose an AUGraph
      * 
      * Deallocates the AUGraph along with its nodes and their resources.
      * 
@@ -920,8 +981,9 @@ public final class AudioToolbox {
     public static native int DisposeAUGraph(AUGraph inGraph);
 
     /**
-     *    @function	AUGraphAddNode
-     *    @abstract   Add a node to an AUGraph
+     *    [@function]	AUGraphAddNode
+     * 
+     * Add a node to an AUGraph
      * 
      * Creates a node in the graph that is an AudioUnit, using the supplied
      * AudioComponentDescription to find and open that unit.
@@ -937,8 +999,9 @@ public final class AudioToolbox {
             IntPtr outNode);
 
     /**
-     *    @function	AUGraphRemoveNode
-     *    @abstract   Remove a node from an AUGraph
+     *    [@function]	AUGraphRemoveNode
+     * 
+     * Remove a node from an AUGraph
      * 
      * Nodes can be removed from any thread context. The output node of
      * the AUGraph cannot be removed while the graph is running.
@@ -951,8 +1014,9 @@ public final class AudioToolbox {
     public static native int AUGraphRemoveNode(AUGraph inGraph, int inNode);
 
     /**
-     * @function	AUGraphGetNodeCount
-     * @abstract   The number of nodes in an AUGraph
+     * [@function]	AUGraphGetNodeCount
+     * 
+     * The number of nodes in an AUGraph
      * 
      * @param		inGraph				the AUGraph object
      * @param		outNumberOfNodes	the number of nodes
@@ -962,8 +1026,9 @@ public final class AudioToolbox {
     public static native int AUGraphGetNodeCount(AUGraph inGraph, IntPtr outNumberOfNodes);
 
     /**
-     *    @function	AUGraphGetIndNode
-     *    @abstract   Returns the node at a given index
+     *    [@function]	AUGraphGetIndNode
+     * 
+     * Returns the node at a given index
      * 
      * By using AUGraphGetNodeCount in conjunction with this call, you can
      * iterate through the nodes of an AUGraph.
@@ -977,8 +1042,9 @@ public final class AudioToolbox {
     public static native int AUGraphGetIndNode(AUGraph inGraph, int inIndex, IntPtr outNode);
 
     /**
-     *    @function	AUGraphNodeInfo
-     *    @abstract   Returns information about a particular AUNode
+     *    [@function]	AUGraphNodeInfo
+     * 
+     * Returns information about a particular AUNode
      * 
      * You can pass in NULL for any of the out parameters if you're not interested
      * in that value.
@@ -995,8 +1061,9 @@ public final class AudioToolbox {
             Ptr<AudioComponentInstance> outAudioUnit);
 
     /**
-     * @function	AUGraphConnectNodeInput
-     * @abstract	connect a node's output to a node's input
+     * [@function]	AUGraphConnectNodeInput
+     * 
+     * connect a node's output to a node's input
      */
     @Generated
     @CFunction
@@ -1004,8 +1071,10 @@ public final class AudioToolbox {
             int inDestNode, int inDestInputNumber);
 
     /**
-     * @function	AUGraphSetNodeInputCallback
-     * @abstract	Set a callback for the specified node's specified input.
+     * [@function]	AUGraphSetNodeInputCallback
+     * 
+     * Set a callback for the specified node's specified input.
+     * 
      * @param		inInputCallback		The callback that will provide input data to the node
      */
     @Generated
@@ -1014,8 +1083,9 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AURenderCallbackStruct inInputCallback);
 
     /**
-     * @function	AUGraphDisconnectNodeInput
-     * @abstract	disconnect a node's input
+     * [@function]	AUGraphDisconnectNodeInput
+     * 
+     * disconnect a node's input
      * 
      * This can be used to disconnect either a connection or callback interaction
      * to the specified node input
@@ -1025,8 +1095,9 @@ public final class AudioToolbox {
     public static native int AUGraphDisconnectNodeInput(AUGraph inGraph, int inDestNode, int inDestInputNumber);
 
     /**
-     * @function	AUGraphClearConnections
-     * @abstract	clear all of the interactions in a graph
+     * [@function]	AUGraphClearConnections
+     * 
+     * clear all of the interactions in a graph
      * 
      * This will clear all connections and callback interactions of the nodes of a graph
      */
@@ -1035,8 +1106,9 @@ public final class AudioToolbox {
     public static native int AUGraphClearConnections(AUGraph inGraph);
 
     /**
-     * @function	AUGraphGetNumberOfInteractions
-     * @abstract	Retrieve the number of interactions of a graph
+     * [@function]	AUGraphGetNumberOfInteractions
+     * 
+     * Retrieve the number of interactions of a graph
      * 
      * The number of node interactions currently being managed by the graph
      */
@@ -1045,8 +1117,9 @@ public final class AudioToolbox {
     public static native int AUGraphGetNumberOfInteractions(AUGraph inGraph, IntPtr outNumInteractions);
 
     /**
-     * @function	AUGraphGetInteractionInfo
-     * @abstract	Retrieve information about a particular interaction in a graph
+     * [@function]	AUGraphGetInteractionInfo
+     * 
+     * Retrieve information about a particular interaction in a graph
      * 
      * Returns information about a particular interaction. 
      * inInteractionIndex is based on the outNumInteractions value and is only valid if no 
@@ -1062,8 +1135,9 @@ public final class AudioToolbox {
     public static native int AUGraphGetInteractionInfo(AUGraph inGraph, int inInteractionIndex, VoidPtr outInteraction);
 
     /**
-     * 	@function	AUGraphCountNodeInteractions
-     * 	@abstract	Retrieve the number of interactions of a graph's node
+     * 	[@function]	AUGraphCountNodeInteractions
+     * 
+     * Retrieve the number of interactions of a graph's node
      * 
      * The number of node interactions currently being managed by the graph for the specified node.
      */
@@ -1072,8 +1146,9 @@ public final class AudioToolbox {
     public static native int AUGraphCountNodeInteractions(AUGraph inGraph, int inNode, IntPtr outNumInteractions);
 
     /**
-     * @function	AUGraphGetNodeInteractions
-     * @abstract	Retrieve information about the interactions in a graph for a given node
+     * [@function]	AUGraphGetNodeInteractions
+     * 
+     * Retrieve information about the interactions in a graph for a given node
      * 
      * @param		ioNumInteractions	
      * 				on input, specifies the number of interactions that can be returned
@@ -1086,8 +1161,9 @@ public final class AudioToolbox {
             VoidPtr outInteractions);
 
     /**
-     * @function	AUGraphUpdate
-     * @abstract	Updates the state of a running AUGraph
+     * [@function]	AUGraphUpdate
+     * 
+     * Updates the state of a running AUGraph
      * 
      * Call this after performing a series of "edits" on the AUGraph with calls 
      * such as AUGraphConnectNodeInput() to finalize those edits.
@@ -1129,8 +1205,9 @@ public final class AudioToolbox {
     public static native int AUGraphUpdate(AUGraph inGraph, BytePtr outIsUpdated);
 
     /**
-     * @function	AUGraphOpen
-     * @abstract	Open a graph
+     * [@function]	AUGraphOpen
+     * 
+     * Open a graph
      * 
      * AudioUnits are open but not initialized (no resource allocation occurs here)
      */
@@ -1139,8 +1216,9 @@ public final class AudioToolbox {
     public static native int AUGraphOpen(AUGraph inGraph);
 
     /**
-     * @function	AUGraphClose
-     * @abstract	Close a graph
+     * [@function]	AUGraphClose
+     * 
+     * Close a graph
      * 
      * All AudioUnits are closed - leaving only its nodal representation
      */
@@ -1149,8 +1227,9 @@ public final class AudioToolbox {
     public static native int AUGraphClose(AUGraph inGraph);
 
     /**
-     * @function	AUGraphInitialize
-     * @abstract	Initialise a graph
+     * [@function]	AUGraphInitialize
+     * 
+     * Initialise a graph
      * 
      * AudioUnitInitialize() is called on each opened node/AudioUnit
      * (get ready to render) and SubGraph that are involved in a
@@ -1164,8 +1243,9 @@ public final class AudioToolbox {
     public static native int AUGraphInitialize(AUGraph inGraph);
 
     /**
-     * @function	AUGraphUninitialize
-     * @abstract	Uninitialise a graph
+     * [@function]	AUGraphUninitialize
+     * 
+     * Uninitialise a graph
      * 
      * The member of the graph are uninitialised 
      */
@@ -1174,8 +1254,9 @@ public final class AudioToolbox {
     public static native int AUGraphUninitialize(AUGraph inGraph);
 
     /**
-     * @function	AUGraphStart
-     * @abstract	Start a graph
+     * [@function]	AUGraphStart
+     * 
+     * Start a graph
      * 
      * Start() is called on the "head" node(s) of the AUGraph (now rendering starts) 
      * 
@@ -1186,8 +1267,9 @@ public final class AudioToolbox {
     public static native int AUGraphStart(AUGraph inGraph);
 
     /**
-     * @function	AUGraphStop
-     * @abstract	Stop a graph
+     * [@function]	AUGraphStop
+     * 
+     * Stop a graph
      * 
      * Stop() is called on the "head" node(s) of the AUGraph	(rendering is stopped)
      */
@@ -1196,32 +1278,36 @@ public final class AudioToolbox {
     public static native int AUGraphStop(AUGraph inGraph);
 
     /**
-     * @function	AUGraphIsOpen
-     * @abstract	Is the graph open
+     * [@function]	AUGraphIsOpen
+     * 
+     * Is the graph open
      */
     @Generated
     @CFunction
     public static native int AUGraphIsOpen(AUGraph inGraph, BytePtr outIsOpen);
 
     /**
-     * @function	AUGraphIsInitialized
-     * @abstract	Is the graph initialised
+     * [@function]	AUGraphIsInitialized
+     * 
+     * Is the graph initialised
      */
     @Generated
     @CFunction
     public static native int AUGraphIsInitialized(AUGraph inGraph, BytePtr outIsInitialized);
 
     /**
-     * @function	AUGraphIsRunning
-     * @abstract	Is the graph running (has it been started)
+     * [@function]	AUGraphIsRunning
+     * 
+     * Is the graph running (has it been started)
      */
     @Generated
     @CFunction
     public static native int AUGraphIsRunning(AUGraph inGraph, BytePtr outIsRunning);
 
     /**
-     * @function	AUGraphGetCPULoad
-     * @abstract	The CPU load of the graph
+     * [@function]	AUGraphGetCPULoad
+     * 
+     * The CPU load of the graph
      * 
      * Returns a short-term running average of the current CPU load of the graph.		
      */
@@ -1230,8 +1316,9 @@ public final class AudioToolbox {
     public static native int AUGraphGetCPULoad(AUGraph inGraph, FloatPtr outAverageCPULoad);
 
     /**
-     * @function	AUGraphGetMaxCPULoad
-     * @abstract	The Maximum CPU load of the graph
+     * [@function]	AUGraphGetMaxCPULoad
+     * 
+     * The Maximum CPU load of the graph
      * 
      * Returns the max CPU load of the graph since this call was last made or the graph was last
      * started.
@@ -1241,8 +1328,9 @@ public final class AudioToolbox {
     public static native int AUGraphGetMaxCPULoad(AUGraph inGraph, FloatPtr outMaxLoad);
 
     /**
-     * @function	AUGraphAddRenderNotify
-     * @abstract	Add a notification callback
+     * [@function]	AUGraphAddRenderNotify
+     * 
+     * Add a notification callback
      * 
      * Add a callback that the graph will call every time the graph renders. The callback will be
      * called once before the graph's render operation, and once after the render operation is
@@ -1255,8 +1343,9 @@ public final class AudioToolbox {
             VoidPtr inRefCon);
 
     /**
-     * @function	AUGraphRemoveRenderNotify
-     * @abstract	Remove a notification callback
+     * [@function]	AUGraphRemoveRenderNotify
+     * 
+     * Remove a notification callback
      * 
      * Remove a previously added callback. You must provide both the callback and the refCon that was
      * used previously to add the callback.
@@ -1269,8 +1358,9 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     *    @function   AudioConverterNew
-     *    @abstract   Create a new AudioConverter.
+     *    [@function]   AudioConverterNew
+     * 
+     * Create a new AudioConverter.
      * 
      *    @param      inSourceFormat
      *                    The format of the source audio to be converted.
@@ -1278,7 +1368,7 @@ public final class AudioToolbox {
      *                    The destination format to which the audio is to be converted.
      *    @param      outAudioConverter
      *                    On successful return, points to a new AudioConverter instance.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      * 
      * For a pair of linear PCM formats, the following conversions
      * are supported:
@@ -1314,8 +1404,9 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     *    @function   AudioConverterNewSpecific
-     *    @abstract   Create a new AudioConverter using specific codecs.
+     *    [@function]   AudioConverterNewSpecific
+     * 
+     * Create a new AudioConverter using specific codecs.
      * 
      *    @param      inSourceFormat
      *                    The format of the source audio to be converted.
@@ -1327,7 +1418,7 @@ public final class AudioToolbox {
      *                    AudioClassDescriptions specifiying the codec to instantiate.
      *    @param      outAudioConverter
      *                    On successful return, points to a new AudioConverter instance.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      * 
      * This function is identical to AudioConverterNew(), except that the client may
      * explicitly choose which codec to instantiate if there is more than one choice.
@@ -1343,12 +1434,13 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     * @function   AudioConverterDispose
-     * @abstract   Destroy an AudioConverter.
+     * [@function]   AudioConverterDispose
+     * 
+     * Destroy an AudioConverter.
      * 
      * @param      inAudioConverter
      *                 The AudioConverter to dispose.
-     * @result     An OSStatus result code.
+     * @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1356,12 +1448,13 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     *    @function   AudioConverterReset
-     *    @abstract   Reset an AudioConverter
+     *    [@function]   AudioConverterReset
+     * 
+     * Reset an AudioConverter
      * 
      *    @param      inAudioConverter
      *                    The AudioConverter to reset.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      * 
      * Should be called whenever there is a discontinuity in the source audio stream
      * being provided to the converter. This will flush any internal buffers in the
@@ -1373,8 +1466,9 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     * @function   AudioConverterGetPropertyInfo
-     * @abstract   Returns information about an AudioConverter property.
+     * [@function]   AudioConverterGetPropertyInfo
+     * 
+     * Returns information about an AudioConverter property.
      * 
      * @param      inAudioConverter
      *                 The AudioConverter to query.
@@ -1384,7 +1478,7 @@ public final class AudioToolbox {
      *                 If non-null, on exit, the maximum size of the property value in bytes.
      * @param      outWritable
      *                 If non-null, on exit, indicates whether the property value is writable.
-     * @result     An OSStatus result code.
+     * @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1393,8 +1487,9 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     * @function   AudioConverterGetProperty
-     * @abstract   Returns an AudioConverter property value.
+     * [@function]   AudioConverterGetProperty
+     * 
+     * Returns an AudioConverter property value.
      * 
      * @param      inAudioConverter
      *                 The AudioConverter to query.
@@ -1405,7 +1500,7 @@ public final class AudioToolbox {
      *                 successful exit, the size of the property value.
      * @param      outPropertyData
      *                 On exit, the property value.
-     * @result     An OSStatus result code.
+     * @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1414,8 +1509,9 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     * @function   AudioConverterSetProperty
-     * @abstract   Sets an AudioConverter property value.
+     * [@function]   AudioConverterSetProperty
+     * 
+     * Sets an AudioConverter property value.
      * 
      * @param      inAudioConverter
      *                 The AudioConverter to modify.
@@ -1425,7 +1521,7 @@ public final class AudioToolbox {
      *                 The size in bytes of the property value.
      * @param      inPropertyData
      *                 Points to the new property value.
-     * @result     An OSStatus result code.
+     * @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1434,8 +1530,9 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     *    @function   AudioConverterConvertBuffer
-     *    @abstract   Converts data from an input buffer to an output buffer.
+     *    [@function]   AudioConverterConvertBuffer
+     * 
+     * Converts data from an input buffer to an output buffer.
      * 
      *    @param      inAudioConverter
      *                    The AudioConverter to use.
@@ -1448,7 +1545,7 @@ public final class AudioToolbox {
      *                    written to outOutputData.
      *    @param      outOutputData
      *                    The output data buffer.
-     *    @result
+     *    @return
      *                Produces a buffer of output data from an AudioConverter, using the supplied
      *                input buffer.
      * 
@@ -1465,8 +1562,9 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     *    @function   AudioConverterFillComplexBuffer
-     *    @abstract   Converts data supplied by an input callback function, supporting non-interleaved
+     *    [@function]   AudioConverterFillComplexBuffer
+     * 
+     * Converts data supplied by an input callback function, supporting non-interleaved
      *                and packetized formats.
      * 
      *    @param      inAudioConverter
@@ -1487,7 +1585,7 @@ public final class AudioToolbox {
      *                    block capable of holding *ioOutputDataPacketSize packet descriptions.
      *                    (See AudioFormat.h for ways to determine whether an audio format
      *                    uses packet descriptions).
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      * 
      * Produces a buffer list of output data from an AudioConverter. The supplied input
      * callback function is called whenever necessary.
@@ -1502,8 +1600,15 @@ public final class AudioToolbox {
 
     /**
      * -----------------------------------------------------------------------------
-     *    @function   AudioConverterConvertComplexBuffer
-     *    @abstract   Converts PCM data from an input buffer list to an output buffer list.
+     *    [@function]   AudioConverterConvertComplexBuffer
+     * 
+     * Converts PCM data from an input buffer list to an output buffer list.
+     * 
+     * [@warning]	This function will fail for any conversion where there is a
+     * variable relationship between the input and output data buffer sizes. This
+     * includes sample rate conversions and most compressed formats. In these cases,
+     * use AudioConverterFillComplexBuffer. Generally this function is only appropriate for
+     * PCM-to-PCM conversions where there is no sample rate conversion.
      * 
      *    @param      inAudioConverter
      *                    The AudioConverter to use.
@@ -1513,13 +1618,7 @@ public final class AudioToolbox {
      *                    The source audio buffer list.
      *    @param      outOutputData
      *                    The converted output data is written to this buffer list.
-     *    @result     An OSStatus result code.
-     * 
-     * @warning	This function will fail for any conversion where there is a
-     * variable relationship between the input and output data buffer sizes. This
-     * includes sample rate conversions and most compressed formats. In these cases,
-     * use AudioConverterFillComplexBuffer. Generally this function is only appropriate for
-     * PCM-to-PCM conversions where there is no sample rate conversion.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -1548,11 +1647,14 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioFileRegion inAFRegionPtr);
 
     /**
-     * @function	AudioFileCreateWithURL
-     * @abstract   creates a new audio file (or initialises an existing file)
-     * @discussion	creates a new (or initialises an existing) audio file specified by the URL.
+     * [@function]	AudioFileCreateWithURL
+     * 
+     * creates a new audio file (or initialises an existing file)
+     * 
+     * creates a new (or initialises an existing) audio file specified by the URL.
      * 	Upon success, an AudioFileID is returned which can be used for subsequent calls 
      * 	to the AudioFile APIs.
+     * 
      * @param inFileRef		an CFURLRef fully specifying the path of the file to create/initialise
      * @param inFileType		an AudioFileTypeID indicating the type of audio file to create.
      * @param inFormat			an AudioStreamBasicDescription describing the data format that will be
@@ -1561,7 +1663,7 @@ public final class AudioToolbox {
      * 				if kAudioFileFlags_EraseFile is set, it will erase an existing file
      * 				 if not set, then the Create call will fail if the URL is an existing file
      * @param outAudioFile		if successful, an AudioFileID that can be used for subsequent AudioFile calls.
-     * @result					returns noErr if successful.
+     * @return					returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1570,9 +1672,12 @@ public final class AudioToolbox {
             int inFlags, Ptr<AudioFileID> outAudioFile);
 
     /**
-     * @function				AudioFileOpenURL
-     * @abstract				Open an existing audio file.
-     * @discussion				Open an existing audio file for reading or reading and writing.
+     * [@function]				AudioFileOpenURL
+     * 
+     * Open an existing audio file.
+     * 
+     * Open an existing audio file for reading or reading and writing.
+     * 
      * @param inFileRef		the CFURLRef of an existing audio file.
      * @param inPermissions	use the permission constants
      * @param inFileTypeHint	For files which have no filename extension and whose type cannot be easily or
@@ -1581,7 +1686,7 @@ public final class AudioToolbox {
      * 			For OS versions prior to that, opening files of the above description will fail.
      * @param outAudioFile		upon success, an AudioFileID that can be used for subsequent
      * 			AudioFile calls.
-     * @result					returns noErr if successful.
+     * @return					returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1589,9 +1694,11 @@ public final class AudioToolbox {
             Ptr<AudioFileID> outAudioFile);
 
     /**
-     *    @function	AudioFileInitializeWithCallbacks
-     *    @abstract   Wipe clean an existing file. You provide callbacks that the AudioFile API
+     *    [@function]	AudioFileInitializeWithCallbacks
+     * 
+     * Wipe clean an existing file. You provide callbacks that the AudioFile API
      * 			will use to get the data.
+     * 
      *    @param inClientData		a constant that will be passed to your callbacks.
      * @param inReadFunc		a function that will be called when AudioFile needs to read data.
      * @param inWriteFunc		a function that will be called when AudioFile needs to write data.
@@ -1604,7 +1711,7 @@ public final class AudioToolbox {
      *    @param inFlags			flags for creating/opening the file. Currently zero.
      *    @param outAudioFile		upon success, an AudioFileID that can be used for subsequent
      * 						AudioFile calls.
-     *    @result					returns noErr if successful.
+     *    @return					returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1618,9 +1725,11 @@ public final class AudioToolbox {
             int inFlags, Ptr<AudioFileID> outAudioFile);
 
     /**
-     *    @function	AudioFileOpenWithCallbacks
-     *    @abstract   Open an existing file. You provide callbacks that the AudioFile API
+     *    [@function]	AudioFileOpenWithCallbacks
+     * 
+     * Open an existing file. You provide callbacks that the AudioFile API
      * 			will use to get the data.
+     * 
      *    @param inClientData					a constant that will be passed to your callbacks.
      * @param inReadFunc					a function that will be called when AudioFile needs to read data.
      * @param inWriteFunc					a function that will be called when AudioFile needs to write data.
@@ -1633,7 +1742,7 @@ public final class AudioToolbox {
      * 						For OS versions prior to that, opening files of the above description will fail.
      *    @param outAudioFile		upon success, an AudioFileID that can be used for subsequent
      * 						AudioFile calls.
-     *    @result					returns noErr if successful.
+     *    @return					returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1645,44 +1754,51 @@ public final class AudioToolbox {
             int inFileTypeHint, Ptr<AudioFileID> outAudioFile);
 
     /**
-     * @function	AudioFileClose
-     * @abstract   Close an existing audio file.
+     * [@function]	AudioFileClose
+     * 
+     * Close an existing audio file.
+     * 
      * @param      inAudioFile		an AudioFileID.
-     * @result						returns noErr if successful.
+     * @return						returns noErr if successful.
      */
     @Generated
     @CFunction
     public static native int AudioFileClose(AudioFileID inAudioFile);
 
     /**
-     *    @function	AudioFileOptimize
-     *    @abstract   Move the audio data to the end of the file and other internal optimizations of the file structure.
-     * @discussion			Optimize the file so additional audio data can be appended to 
+     *    [@function]	AudioFileOptimize
+     * 
+     * Move the audio data to the end of the file and other internal optimizations of the file structure.
+     * 
+     * Optimize the file so additional audio data can be appended to
      *                        the existing data. Generally, this will place the audio data at 
      *                        the end of the file so additional writes can be placed to the 
      *                        file end. This can be a potentially expensive and time-consuming operation 
      *                        and should not be used during time critical operations. There is 
      *                        a kAudioFilePropertyIsOptimized property for checking on the optimized state 
      *                        of the file.
+     * 
      *    @param      inAudioFile		an AudioFileID.
-     *    @result						returns noErr if successful.
+     *    @return						returns noErr if successful.
      */
     @Generated
     @CFunction
     public static native int AudioFileOptimize(AudioFileID inAudioFile);
 
     /**
-     * @function	AudioFileReadBytes
-     * @abstract   Read bytes of audio data from the audio file. 
+     * [@function]	AudioFileReadBytes
      * 
-     * @discussion				Returns kAudioFileEndOfFileError when read encounters end of file.
+     * Read bytes of audio data from the audio file.
+     * 
+     * Returns kAudioFileEndOfFileError when read encounters end of file.
+     * 
      * @param inAudioFile		an AudioFileID.
      * @param inUseCache 		true if it is desired to cache the data upon read, else false
      * @param inStartingByte	the byte offset of the audio data desired to be returned
      * @param ioNumBytes 		on input, the number of bytes to read, on output, the number of
      * 			bytes actually read.
      * @param outBuffer 		outBuffer should be a void * to user allocated memory large enough for the requested bytes. 
-     * @result					returns noErr if successful.
+     * @return					returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1690,15 +1806,17 @@ public final class AudioToolbox {
             IntPtr ioNumBytes, VoidPtr outBuffer);
 
     /**
-     * @function				AudioFileWriteBytes
-     * @abstract				Write bytes of audio data to the audio file.
+     * [@function]				AudioFileWriteBytes
+     * 
+     * Write bytes of audio data to the audio file.
+     * 
      * @param inAudioFile		an AudioFileID.
      * @param inUseCache 		true if it is desired to cache the data upon write, else false
      * @param inStartingByte	the byte offset where the audio data should be written
      * @param ioNumBytes 		on input, the number of bytes to write, on output, the number of
      * 			bytes actually written.
      * @param inBuffer 		inBuffer should be a void * containing the bytes to be written 
-     * @result					returns noErr if successful.
+     * @return					returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1706,9 +1824,11 @@ public final class AudioToolbox {
             IntPtr ioNumBytes, ConstVoidPtr inBuffer);
 
     /**
-     * @function	AudioFileReadPacketData
-     * @abstract   Read packets of audio data from the audio file.
-     * @discussion AudioFileReadPacketData reads as many of the requested number of packets
+     * [@function]	AudioFileReadPacketData
+     * 
+     * Read packets of audio data from the audio file.
+     * 
+     * AudioFileReadPacketData reads as many of the requested number of packets
      * as will fit in the buffer size given by ioNumPackets.
      * Unlike the deprecated AudioFileReadPackets, ioNumPackets must be initialized.
      * If the byte size of the number packets requested is 
@@ -1731,7 +1851,7 @@ public final class AudioToolbox {
      * @param ioNumPackets 			on input, the number of packets to read, on output, the number of
      * 					packets actually read.
      * @param outBuffer 				outBuffer should be a pointer to user allocated memory.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1740,9 +1860,11 @@ public final class AudioToolbox {
             VoidPtr outBuffer);
 
     /**
-     * @function	AudioFileReadPackets
-     * @abstract   Read packets of audio data from the audio file.
-     * @discussion AudioFileReadPackets is DEPRECATED. Use AudioFileReadPacketData instead.
+     * [@function]	AudioFileReadPackets
+     * 
+     * Read packets of audio data from the audio file.
+     * 
+     * AudioFileReadPackets is DEPRECATED. Use AudioFileReadPacketData instead.
      * READ THE HEADER DOC FOR AudioFileReadPacketData. It is not a drop-in replacement.
      * In particular, for AudioFileReadPacketData ioNumBytes must be initialized to the buffer size.
      * AudioFileReadPackets assumes you have allocated your buffer to ioNumPackets times the maximum packet size.
@@ -1761,7 +1883,7 @@ public final class AudioToolbox {
      * @param outBuffer 				outBuffer should be a pointer to user allocated memory of size: 
      * 					number of packets requested times file's maximum (or upper bound on)
      * 					packet size.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @Deprecated
@@ -1771,9 +1893,12 @@ public final class AudioToolbox {
             VoidPtr outBuffer);
 
     /**
-     * @function	AudioFileWritePackets
-     * @abstract   Write packets of audio data to the audio file.
-     * @discussion For all uncompressed formats, packets == frames.
+     * [@function]	AudioFileWritePackets
+     * 
+     * Write packets of audio data to the audio file.
+     * 
+     * For all uncompressed formats, packets == frames.
+     * 
      * @param inAudioFile				an AudioFileID.
      * @param inUseCache 				true if it is desired to cache the data upon write, else false
      * @param inNumBytes				the number of bytes being provided for write
@@ -1784,7 +1909,7 @@ public final class AudioToolbox {
      * @param ioNumPackets 			on input, the number of packets to write, on output, the number of
      * 					packets actually written.
      * @param inBuffer 				a void * to user allocated memory containing the packets to write.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1793,28 +1918,33 @@ public final class AudioToolbox {
             ConstVoidPtr inBuffer);
 
     /**
-     * @function	AudioFileCountUserData
-     * @abstract   Get the number of user data items with a certain ID in the file
-     * @discussion		"User Data" refers to chunks in AIFF, CAF and WAVE files, or resources 
+     * [@function]	AudioFileCountUserData
+     * 
+     * Get the number of user data items with a certain ID in the file
+     * 
+     * "User Data" refers to chunks in AIFF, CAF and WAVE files, or resources
      * 	in Sound Designer II files, and possibly other things in other files.
      * 	For simplicity, referred to below as "chunks".
+     * 
      * @param      inAudioFile			an AudioFileID.
      * @param      inUserDataID		the four char code of the chunk.
      * @param      outNumberItems		on output, if successful, number of chunks of this type in the file.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
     public static native int AudioFileCountUserData(AudioFileID inAudioFile, int inUserDataID, IntPtr outNumberItems);
 
     /**
-     * @function	AudioFileGetUserDataSize
-     * @abstract   Get the size of user data in a file
+     * [@function]	AudioFileGetUserDataSize
+     * 
+     * Get the size of user data in a file
+     * 
      * @param      inAudioFile			an AudioFileID.
      * @param      inUserDataID		the four char code of the chunk.
      * @param      inIndex				an index specifying which chunk if there are more than one.
      * @param      outUserDataSize		on output, if successful, the size of the user data chunk.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1822,14 +1952,16 @@ public final class AudioToolbox {
             IntPtr outUserDataSize);
 
     /**
-     *    @function	AudioFileGetUserData
-     *    @abstract   Get the data of a chunk in a file.
+     *    [@function]	AudioFileGetUserData
+     * 
+     * Get the data of a chunk in a file.
+     * 
      *    @param      inAudioFile			an AudioFileID.
      *    @param      inUserDataID		the four char code of the chunk.
      *    @param      inIndex				an index specifying which chunk if there are more than one.
      * @param		ioUserDataSize		the size of the buffer on input, size of bytes copied to buffer on output 
      *    @param      outUserData			a pointer to a buffer in which to copy the chunk data.
-     *    @result							returns noErr if successful.
+     *    @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1837,15 +1969,17 @@ public final class AudioToolbox {
             IntPtr ioUserDataSize, VoidPtr outUserData);
 
     /**
-     *    @function	AudioFileSetUserData
-     *    @abstract   Set the data of a chunk in a file.
+     *    [@function]	AudioFileSetUserData
+     * 
+     * Set the data of a chunk in a file.
+     * 
      *    @param      inAudioFile			an AudioFileID.
      *    @param      inUserDataID		the four char code of the chunk.
      *    @param      inIndex				an index specifying which chunk if there are more than one.
      * @param		inUserDataSize		on input the size of the data to copy, on output, size of bytes copied from the buffer  
      *    @param      inUserData			a pointer to a buffer from which to copy the chunk data 
      * 								(only the contents of the chunk, not including the chunk header).
-     *    @result							returns noErr if successful.
+     *    @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1853,26 +1987,30 @@ public final class AudioToolbox {
             int inUserDataSize, ConstVoidPtr inUserData);
 
     /**
-     * @function	AudioFileRemoveUserData
-     * @abstract   Remove a user chunk in a file.
+     * [@function]	AudioFileRemoveUserData
+     * 
+     * Remove a user chunk in a file.
+     * 
      * @param      inAudioFile			an AudioFileID.
      * @param      inUserDataID		the four char code of the chunk.
      * @param      inIndex				an index specifying which chunk if there are more than one.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
     public static native int AudioFileRemoveUserData(AudioFileID inAudioFile, int inUserDataID, int inIndex);
 
     /**
-     * @function	AudioFileGetPropertyInfo
-     * @abstract   Get information about the size of a property of an AudioFile  and whether it can be set.
+     * [@function]	AudioFileGetPropertyInfo
+     * 
+     * Get information about the size of a property of an AudioFile  and whether it can be set.
+     * 
      * @param      inAudioFile			an AudioFileID.
      * @param      inPropertyID		an AudioFileProperty constant.
      * @param      outDataSize			the size in bytes of the current value of the property. In order to get the property value, 
      * 					you will need a buffer of this size.
      * @param      isWritable			will be set to 1 if writable, or 0 if read only.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1880,13 +2018,15 @@ public final class AudioToolbox {
             IntPtr isWritable);
 
     /**
-     * @function	AudioFileGetProperty
-     * @abstract   Copies the value for a property of an AudioFile into a buffer.
+     * [@function]	AudioFileGetProperty
+     * 
+     * Copies the value for a property of an AudioFile into a buffer.
+     * 
      * @param      inAudioFile			an AudioFileID.
      * @param      inPropertyID		an AudioFileProperty constant.
      * @param      ioDataSize			on input the size of the outPropertyData buffer. On output the number of bytes written to the buffer.
      * @param      outPropertyData		the buffer in which to write the property data.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1894,13 +2034,15 @@ public final class AudioToolbox {
             VoidPtr outPropertyData);
 
     /**
-     * @function	AudioFileSetProperty
-     * @abstract   Sets the value for a property of an AudioFile .
+     * [@function]	AudioFileSetProperty
+     * 
+     * Sets the value for a property of an AudioFile .
+     * 
      * @param      inAudioFile			an AudioFileID.
      * @param      inPropertyID		an AudioFileProperty constant.
      * @param      inDataSize			the size of the property data.
      * @param      inPropertyData		the buffer containing the property data.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1908,14 +2050,16 @@ public final class AudioToolbox {
             ConstVoidPtr inPropertyData);
 
     /**
-     * @function	AudioFileGetGlobalInfoSize
-     * @abstract   Get the size of a global property.
+     * [@function]	AudioFileGetGlobalInfoSize
+     * 
+     * Get the size of a global property.
+     * 
      * @param      inPropertyID		an AudioFileGlobalInfo property constant.
      * @param      inSpecifierSize		The size of the specifier data.
      * @param      inSpecifier			A specifier is a buffer of data used as an input argument to some of the global info properties.
      * @param      outDataSize			the size in bytes of the current value of the property. In order to get the property value, 
      * 					you will need a buffer of this size.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1923,14 +2067,16 @@ public final class AudioToolbox {
             IntPtr outDataSize);
 
     /**
-     * @function	AudioFileGetGlobalInfo
-     * @abstract   Copies the value for a global property into a buffer.
+     * [@function]	AudioFileGetGlobalInfo
+     * 
+     * Copies the value for a global property into a buffer.
+     * 
      * @param      inPropertyID		an AudioFileGlobalInfo property constant.
      * @param      inSpecifierSize		The size of the specifier data.
      * @param      inSpecifier			A specifier is a buffer of data used as an input argument to some of the global info properties.
      * @param      ioDataSize			on input the size of the outPropertyData buffer. On output the number of bytes written to the buffer.
      * @param      outPropertyData		the buffer in which to write the property data.
-     * @result							returns noErr if successful.
+     * @return							returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -1938,9 +2084,9 @@ public final class AudioToolbox {
             IntPtr ioDataSize, VoidPtr outPropertyData);
 
     /**
-     * @function		AudioFileStreamOpen
+     * [@function]		AudioFileStreamOpen
      * 
-     * @discussion		Create a new audio file stream parser.
+     * Create a new audio file stream parser.
      * 				The client provides the parser with data and the parser calls
      * 				callbacks when interesting things are found in the data, such as properties and 
      * 				audio packets.
@@ -1975,9 +2121,9 @@ public final class AudioToolbox {
             int inFileTypeHint, Ptr<AudioFileStreamID> outAudioFileStream);
 
     /**
-     * @function		AudioFileStreamParseBytes
+     * [@function]		AudioFileStreamParseBytes
      * 
-     * @discussion		This call is the means for streams to supply data to the parser. 
+     * This call is the means for streams to supply data to the parser.
      * 				Data is expected to be passed in sequentially from the beginning of the file, without gaps.
      * 				In the course of parsing, the client's property and/or packets callbacks may be called.
      * 				At the end of the stream, this function must be called once with null data pointer and zero
@@ -1998,9 +2144,9 @@ public final class AudioToolbox {
             ConstVoidPtr inData, int inFlags);
 
     /**
-     * @function		AudioFileStreamSeek
+     * [@function]		AudioFileStreamSeek
      * 
-     * @discussion		This call is used to seek in the data stream. The client passes in a packet 
+     * This call is used to seek in the data stream. The client passes in a packet
      * 				offset to seek to and the parser passes back a byte offset from which to
      * 				get the data to satisfy that request. The data passed to the next call to 
      * 				AudioFileParseBytes will be assumed to be from that byte offset.
@@ -2024,9 +2170,9 @@ public final class AudioToolbox {
             LongPtr outDataByteOffset, IntPtr ioFlags);
 
     /**
-     * @function		AudioFileStreamGetPropertyInfo
+     * [@function]		AudioFileStreamGetPropertyInfo
      * 
-     * @discussion		Retrieve the info about the given property. The outSize argument
+     * Retrieve the info about the given property. The outSize argument
      * 				will return the size in bytes of the current value of the property.
      * 
      * @param			inAudioFileStream 
@@ -2038,7 +2184,7 @@ public final class AudioToolbox {
      * @param			outWritable
      * 					whether the property is writable
      * 
-     * @result			an OSStatus return code
+     * @return			an OSStatus return code
      */
     @Generated
     @CFunction
@@ -2046,9 +2192,9 @@ public final class AudioToolbox {
             IntPtr outPropertyDataSize, BytePtr outWritable);
 
     /**
-     * @function		AudioFileStreamGetProperty
+     * [@function]		AudioFileStreamGetProperty
      * 
-     * @discussion		Retrieve the indicated property data. 
+     * Retrieve the indicated property data.
      * 
      * @param			inAudioFileStream 
      * 					The file stream ID
@@ -2060,7 +2206,7 @@ public final class AudioToolbox {
      * @param			outPropertyData
      * 					Pointer to the property data buffer
      * 
-     * @result			an OSStatus return code
+     * @return			an OSStatus return code
      */
     @Generated
     @CFunction
@@ -2068,9 +2214,9 @@ public final class AudioToolbox {
             IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
 
     /**
-     * @function		AudioFileStreamSetProperty
+     * [@function]		AudioFileStreamSetProperty
      * 
-     * @discussion		Set the value of the property. There are currently no settable properties.
+     * Set the value of the property. There are currently no settable properties.
      * 
      * @param			inAudioFileStream 
      * 					The file stream ID
@@ -2081,7 +2227,7 @@ public final class AudioToolbox {
      * @param			inPropertyData
      * 					Pointer to the property data buffer
      * 
-     * @result			an OSStatus return code
+     * @return			an OSStatus return code
      */
     @Generated
     @CFunction
@@ -2089,9 +2235,9 @@ public final class AudioToolbox {
             int inPropertyDataSize, ConstVoidPtr inPropertyData);
 
     /**
-     * @function		AudioFileStreamClose
+     * [@function]		AudioFileStreamClose
      * 
-     * @discussion		Close and deallocate the file stream object.
+     * Close and deallocate the file stream object.
      * 
      * @param			inAudioFileStream 
      * 					The file stream ID
@@ -2101,14 +2247,16 @@ public final class AudioToolbox {
     public static native int AudioFileStreamClose(AudioFileStreamID inAudioFileStream);
 
     /**
-     * @function	AudioFormatGetPropertyInfo
-     * @abstract   Retrieve information about the given property
+     * [@function]	AudioFormatGetPropertyInfo
+     * 
+     * Retrieve information about the given property
+     * 
      * @param      inPropertyID		an AudioFormatPropertyID constant.
      * @param      inSpecifierSize		The size of the specifier data.
      * @param      inSpecifier			A specifier is a buffer of data used as an input argument to some of the properties.
      * @param      outPropertyDataSize	The size in bytes of the current value of the property. In order to get the property value,
      * 					you will need a buffer of this size.
-     * @result     returns noErr if successful.
+     * @return     returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -2116,15 +2264,17 @@ public final class AudioToolbox {
             IntPtr outPropertyDataSize);
 
     /**
-     * @function	AudioFormatGetProperty
-     * @abstract   Retrieve the indicated property data
+     * [@function]	AudioFormatGetProperty
+     * 
+     * Retrieve the indicated property data
+     * 
      * @param      inPropertyID		an AudioFormatPropertyID constant.
      * @param      inSpecifierSize		The size of the specifier data.
      * @param      inSpecifier			A specifier is a buffer of data used as an input argument to some of the properties.
      * @param      ioPropertyDataSize	on input the size of the outPropertyData buffer. On output the number of bytes written to the buffer.
      * @param      outPropertyData		the buffer in which to write the property data. If outPropertyData is NULL and ioPropertyDataSize is
      * 					not, the amount that would have been written will be reported.
-     * @result     returns noErr if successful.
+     * @return     returns noErr if successful.
      */
     @Generated
     @CFunction
@@ -2132,8 +2282,9 @@ public final class AudioToolbox {
             IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
 
     /**
-     *    @function   AudioQueueNewOutput
-     *    @abstract   Creates a new audio queue for playing audio data.
+     *    [@function]   AudioQueueNewOutput
+     * 
+     * Creates a new audio queue for playing audio data.
      * 
      * To create an playback audio queue, you allocate buffers, then queue buffers (using
      * AudioQueueEnqueueBuffer). The callback receives buffers and typically queues them again.
@@ -2162,7 +2313,7 @@ public final class AudioToolbox {
      *    @param      outAQ
      *        On return, this variable contains a pointer to the newly created playback audio queue
      *        object.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2173,8 +2324,9 @@ public final class AudioToolbox {
             Ptr<AudioQueueRef> outAQ);
 
     /**
-     *    @function   AudioQueueNewInput
-     *    @abstract   Creates a new audio queue for recording audio data.
+     *    [@function]   AudioQueueNewInput
+     * 
+     * Creates a new audio queue for recording audio data.
      * 
      * Outline of how to use the queue for input:
      * 
@@ -2205,7 +2357,7 @@ public final class AudioToolbox {
      *    @param      outAQ
      *        On return, this variable contains a pointer to the newly created recording audio queue
      *        object.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2216,8 +2368,9 @@ public final class AudioToolbox {
             Ptr<AudioQueueRef> outAQ);
 
     /**
-     *    @function   AudioQueueNewOutputWithDispatchQueue
-     *    @abstract   Creates a new audio queue for playing audio data.
+     *    [@function]   AudioQueueNewOutputWithDispatchQueue
+     * 
+     * Creates a new audio queue for playing audio data.
      * 
      * To create an playback audio queue, you allocate buffers, then queue buffers (using
      * AudioQueueEnqueueBuffer). The callback receives buffers and typically queues them again.
@@ -2237,7 +2390,7 @@ public final class AudioToolbox {
      *    @param      inCallbackBlock
      *        A pointer to a callback block to be called when the audio queue has finished playing
      *        a buffer.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2247,8 +2400,9 @@ public final class AudioToolbox {
             @ObjCBlock(name = "call_AudioQueueNewOutputWithDispatchQueue") Block_AudioQueueNewOutputWithDispatchQueue inCallbackBlock);
 
     /**
-     *    @function   AudioQueueNewInputWithDispatchQueue
-     *    @abstract   Creates a new audio queue for recording audio data.
+     *    [@function]   AudioQueueNewInputWithDispatchQueue
+     * 
+     * Creates a new audio queue for recording audio data.
      * 
      * Outline of how to use the queue for input:
      * 
@@ -2270,7 +2424,7 @@ public final class AudioToolbox {
      *    @param      inCallbackBlock
      *        A pointer to a callback block to be called when the audio queue has finished filling
      *        a buffer.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2280,8 +2434,9 @@ public final class AudioToolbox {
             @ObjCBlock(name = "call_AudioQueueNewInputWithDispatchQueue") Block_AudioQueueNewInputWithDispatchQueue inCallbackBlock);
 
     /**
-     *    @function   AudioQueueDispose
-     *    @abstract   Disposes an existing audio queue.
+     *    [@function]   AudioQueueDispose
+     * 
+     * Disposes an existing audio queue.
      * 
      * Disposing of the audio queue also disposes of all its resources, including its buffers.
      * 
@@ -2296,15 +2451,16 @@ public final class AudioToolbox {
      * 
      * 	Note that if AudioQueueDispose is called from a buffer completion callback or property
      * 	listener, you may receive further callbacks afterwards.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioQueueDispose(AudioQueueRef inAQ, byte inImmediate);
 
     /**
-     *    @function   AudioQueueAllocateBuffer
-     *    @abstract   Asks an audio queue to allocate a buffer.
+     *    [@function]   AudioQueueAllocateBuffer
+     * 
+     * Asks an audio queue to allocate a buffer.
      * 
      * Once allocated, the pointer to the buffer and the buffer's size are fixed and cannot be
      * changed. The mAudioDataByteSize field in the audio queue buffer structure,
@@ -2318,7 +2474,7 @@ public final class AudioToolbox {
      *    @param      outBuffer
      *        On return, points to the newly created audio buffer. The mAudioDataByteSize field in the
      *        audio queue buffer structure, AudioQueueBuffer, is initially set to 0.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2326,8 +2482,9 @@ public final class AudioToolbox {
             Ptr<Ptr<AudioQueueBuffer>> outBuffer);
 
     /**
-     *    @function   AudioQueueAllocateBufferWithPacketDescriptions
-     *    @abstract   Asks an audio queue to allocate a buffer with space for packet descriptions.
+     *    [@function]   AudioQueueAllocateBufferWithPacketDescriptions
+     * 
+     * Asks an audio queue to allocate a buffer with space for packet descriptions.
      * 
      * Once allocated, the pointer to the buffer and the buffer's size are fixed and cannot be
      * changed. The mAudioDataByteSize field in the audio queue buffer structure,
@@ -2343,7 +2500,7 @@ public final class AudioToolbox {
      *    @param      outBuffer
      *        On return, points to the newly created audio buffer. The mAudioDataByteSize field in the
      *        audio queue buffer structure, AudioQueueBuffer, is initially set to 0.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2351,8 +2508,9 @@ public final class AudioToolbox {
             int inNumberPacketDescriptions, Ptr<Ptr<AudioQueueBuffer>> outBuffer);
 
     /**
-     *    @function   AudioQueueFreeBuffer
-     *    @abstract   Disposes of an audio queue buffer.
+     *    [@function]   AudioQueueFreeBuffer
+     * 
+     * Disposes of an audio queue buffer.
      * 
      * This function disposes of the buffer allocated by AudioQueueAllocateBuffer. Disposing of
      * an audio queue also automatically disposes of any associated buffers and timeline
@@ -2364,7 +2522,7 @@ public final class AudioToolbox {
      *        The queue from which the buffer was allocated.
      *    @param      inBuffer
      *        The buffer to be disposed.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2372,8 +2530,9 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioQueueBuffer inBuffer);
 
     /**
-     *    @function   AudioQueueEnqueueBuffer
-     *    @abstract   Assigns a buffer to an audio queue for recording or playback.
+     *    [@function]   AudioQueueEnqueueBuffer
+     * 
+     * Assigns a buffer to an audio queue for recording or playback.
      * 
      * If the buffer was allocated with AudioQueueAllocateBufferWithPacketDescriptions,
      * the client should provide packet descriptions in the buffer's mPacketDescriptions
@@ -2395,7 +2554,7 @@ public final class AudioToolbox {
      *        An array of packet descriptions. Applicable only for output queues and required only for
      *        variable-bit-rate (VBR) audio formats. Pass NULL for input queues (no packet
      *        descriptions are required).
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2405,8 +2564,9 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescs);
 
     /**
-     *    @function   AudioQueueEnqueueBufferWithParameters
-     *    @abstract   Assigns a buffer to an audio queue for playback, providing parameters
+     *    [@function]   AudioQueueEnqueueBufferWithParameters
+     * 
+     * Assigns a buffer to an audio queue for playback, providing parameters
      *                and start time information.
      * 
      * You can exert some control of the buffer queue by using this function. You can assign
@@ -2463,7 +2623,7 @@ public final class AudioToolbox {
      *    @param      outActualStartTime
      *        On return, points to an AudioTimeStamp structure indicating when the buffer will
      *        actually play.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2477,8 +2637,9 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outActualStartTime);
 
     /**
-     *    @function   AudioQueueStart
-     *    @abstract   Begins playing or recording audio.
+     *    [@function]   AudioQueueStart
+     * 
+     * Begins playing or recording audio.
      * 
      * If the audio hardware is not already running, this function starts it.
      * 
@@ -2488,7 +2649,7 @@ public final class AudioToolbox {
      *        A pointer to the time at which the audio queue should start. If you specify the time
      *        using the mSampleTime field of the AudioTimeStamp structure, the sample time is
      *        referenced to the sample frame timeline of the associated audio device. May be NULL.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2496,8 +2657,9 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp inStartTime);
 
     /**
-     *    @function   AudioQueuePrime
-     *    @abstract   Begins decoding buffers in preparation for playback.
+     *    [@function]   AudioQueuePrime
+     * 
+     * Begins decoding buffers in preparation for playback.
      * 
      * This function begins decoding buffers in preparation for playback. It returns when at
      * least the number of audio sample frames are decoded and ready to play or when all
@@ -2520,7 +2682,7 @@ public final class AudioToolbox {
      *    @param      outNumberOfFramesPrepared
      *        If not NULL, on return, a pointer to the number of frames actually decoded and prepared
      *        for playback.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -2528,8 +2690,9 @@ public final class AudioToolbox {
             IntPtr outNumberOfFramesPrepared);
 
     /**
-     *    @function   AudioQueueStop
-     *    @abstract   Stops playing or recording audio.
+     *    [@function]   AudioQueueStop
+     * 
+     * Stops playing or recording audio.
      * 
      * This function resets the audio queue and stops the audio hardware associated with the
      * queue if it is not in use by other audio services. Synchronous stops occur immediately,
@@ -2551,30 +2714,32 @@ public final class AudioToolbox {
      *        during the process of stopping. But if the calling thread is responding to a buffer
      *        callback, then it is possible for additional buffer callbacks to occur after
      *        AudioQueueStop returns.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioQueueStop(AudioQueueRef inAQ, byte inImmediate);
 
     /**
-     *    @function   AudioQueuePause
-     *    @abstract   Pauses audio playback or recording.
+     *    [@function]   AudioQueuePause
+     * 
+     * Pauses audio playback or recording.
      * 
      * Pausing the queue does not affect buffers or reset the audio queue. To resume playback
      * or recording using the audio queue, call AudioQueueStart.
      * 
      *    @param      inAQ
      *        The queue to be paused.
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioQueuePause(AudioQueueRef inAQ);
 
     /**
-     *    @function   AudioQueueFlush
-     *    @abstract   Resets the audio queue's decoder state.
+     *    [@function]   AudioQueueFlush
+     * 
+     * Resets the audio queue's decoder state.
      * 
      * After all queued buffers have been played, the function cleans up all decoder state
      * information. You must call this function following a sequence of buffers of encoded
@@ -2590,15 +2755,16 @@ public final class AudioToolbox {
      *    @param      inAQ
      *        The audio queue to be flushed.
      * 
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioQueueFlush(AudioQueueRef inAQ);
 
     /**
-     *    @function   AudioQueueReset
-     *    @abstract   Resets an audio queue.
+     *    [@function]   AudioQueueReset
+     * 
+     * Resets an audio queue.
      * 
      * This function immediately resets an audio queue, flushes any queued buffer, removes all
      * buffers from previously scheduled use, and resets any decoder and digital signal
@@ -2615,15 +2781,16 @@ public final class AudioToolbox {
      *    @param      inAQ
      *        The audio queue to reset.
      * 
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioQueueReset(AudioQueueRef inAQ);
 
     /**
-     *    @function   AudioQueueGetParameter
-     *    @abstract   Obtains an audio queue parameter value.
+     *    [@function]   AudioQueueGetParameter
+     * 
+     * Obtains an audio queue parameter value.
      * 
      * You can access the current parameter values for an audio queue at any time with this
      * function.
@@ -2636,7 +2803,7 @@ public final class AudioToolbox {
      *        volume.
      *    @param      outValue
      *        On return, points to the current value of the specified parameter.
-     *    @result
+     *    @return
      *        An OSStatus result code.
      */
     @Generated
@@ -2644,15 +2811,17 @@ public final class AudioToolbox {
     public static native int AudioQueueGetParameter(AudioQueueRef inAQ, int inParamID, FloatPtr outValue);
 
     /**
-     * @function   AudioQueueSetParameter
-     * @abstract   Sets an audio queue parameter value.
+     * [@function]   AudioQueueSetParameter
+     * 
+     * Sets an audio queue parameter value.
+     * 
      * @param      inAQ
      *     The audio queue whose parameter value you want to set.
      * @param      inParamID
      *     The ID of the parameter you want to set.
      * @param      inValue
      *     The parameter value to set.
-     * @result
+     * @return
      *     An OSStatus result code.
      */
     @Generated
@@ -2660,8 +2829,10 @@ public final class AudioToolbox {
     public static native int AudioQueueSetParameter(AudioQueueRef inAQ, int inParamID, float inValue);
 
     /**
-     * @function   AudioQueueGetProperty
-     * @abstract   Obtains an audio queue property value.
+     * [@function]   AudioQueueGetProperty
+     * 
+     * Obtains an audio queue property value.
+     * 
      * @param      inAQ
      *     The audio queue whose property value you want to obtain.
      * @param      inID
@@ -2671,7 +2842,7 @@ public final class AudioToolbox {
      * @param      ioDataSize
      *     A pointer to the size of the property data. On input, points to the maximum bytes of
      *     space the caller expects to receive. On return, points to the actual data size.
-     * @result
+     * @return
      *     An OSStatus result code.
      */
     @Generated
@@ -2679,8 +2850,10 @@ public final class AudioToolbox {
     public static native int AudioQueueGetProperty(AudioQueueRef inAQ, int inID, VoidPtr outData, IntPtr ioDataSize);
 
     /**
-     * @function   AudioQueueSetProperty
-     * @abstract   Sets an audio queue property value.
+     * [@function]   AudioQueueSetProperty
+     * 
+     * Sets an audio queue property value.
+     * 
      * @param      inAQ
      *     The audio queue whose property value you want to set.
      * @param      inID
@@ -2690,7 +2863,7 @@ public final class AudioToolbox {
      *     A pointer to the property value to set.
      * @param      inDataSize
      *     The size of the property data.
-     * @result
+     * @return
      *     An OSStatus result code.
      */
     @Generated
@@ -2698,8 +2871,10 @@ public final class AudioToolbox {
     public static native int AudioQueueSetProperty(AudioQueueRef inAQ, int inID, ConstVoidPtr inData, int inDataSize);
 
     /**
-     * @function   AudioQueueGetPropertySize
-     * @abstract   Obtains the size of an audio queue property.
+     * [@function]   AudioQueueGetPropertySize
+     * 
+     * Obtains the size of an audio queue property.
+     * 
      * @param      inAQ
      *     The audio queue containing the property value whose size you want to obtain.
      * @param      inID
@@ -2707,7 +2882,7 @@ public final class AudioToolbox {
      *     IDs" for possible values.
      * @param      outDataSize
      *     On return, points to the size of the specified property value.
-     * @result
+     * @return
      *     An OSStatus result code.
      */
     @Generated
@@ -2715,8 +2890,9 @@ public final class AudioToolbox {
     public static native int AudioQueueGetPropertySize(AudioQueueRef inAQ, int inID, IntPtr outDataSize);
 
     /**
-     *    @function   AudioQueueAddPropertyListener
-     *    @abstract   Adds a listener callback for a property.
+     *    [@function]   AudioQueueAddPropertyListener
+     * 
+     * Adds a listener callback for a property.
      * 
      * This callback is used to act upon a change in an audio queue property such as
      * kAudioQueueProperty_IsRunning. For instance, if your application has a user interface
@@ -2731,7 +2907,7 @@ public final class AudioToolbox {
      *        The listener callback to be called when the property value changes.
      *    @param      inUserData
      *        A value to be passed to the listener callback when it is called.
-     *    @result
+     *    @return
      *        An OSStatus result code.
      */
     @Generated
@@ -2741,8 +2917,10 @@ public final class AudioToolbox {
             VoidPtr inUserData);
 
     /**
-     * @function   AudioQueueRemovePropertyListener
-     * @abstract   Removes a listener callback for a property.
+     * [@function]   AudioQueueRemovePropertyListener
+     * 
+     * Removes a listener callback for a property.
+     * 
      * @param      inAQ
      *     The audio queue that owns the property from which you want to remove a listener.
      * @param      inID
@@ -2751,7 +2929,7 @@ public final class AudioToolbox {
      *     The listener being removed.
      * @param      inUserData
      *     The same inUserData value that was previously passed to AudioQueueAddPropertyListener.
-     * @result
+     * @return
      *     An OSStatus result code.
      */
     @Generated
@@ -2761,8 +2939,9 @@ public final class AudioToolbox {
             VoidPtr inUserData);
 
     /**
-     *    @function   AudioQueueCreateTimeline
-     *    @abstract   Creates a timeline object.
+     *    [@function]   AudioQueueCreateTimeline
+     * 
+     * Creates a timeline object.
      * 
      * You need to instantiate a timeline object if you want to know about any timeline
      * discontinuities. See AudioQueueGetCurrentTime for more details.
@@ -2771,7 +2950,7 @@ public final class AudioToolbox {
      *        The audio queue to associate with the new timeline object.
      *    @param      outTimeline
      *        On return, points to the newly created timeline object.
-     *    @result
+     *    @return
      *        An OSStatus result code.
      */
     @Generated
@@ -2779,8 +2958,9 @@ public final class AudioToolbox {
     public static native int AudioQueueCreateTimeline(AudioQueueRef inAQ, Ptr<AudioQueueTimelineRef> outTimeline);
 
     /**
-     *    @function   AudioQueueDisposeTimeline
-     *    @abstract   Disposes of a timeline object.
+     *    [@function]   AudioQueueDisposeTimeline
+     * 
+     * Disposes of a timeline object.
      * 
      * Disposing of an audio queue automatically disposes of any associated timeline objects.
      * Call this function only if you want to dispose of a timeline object and not the audio
@@ -2790,7 +2970,7 @@ public final class AudioToolbox {
      *        The audio queue associated with the timeline object you want to dispose of.
      *    @param      inTimeline
      *        The timeline object to dispose of.
-     *    @result
+     *    @return
      *        An OSStatus result code.
      */
     @Generated
@@ -2798,8 +2978,9 @@ public final class AudioToolbox {
     public static native int AudioQueueDisposeTimeline(AudioQueueRef inAQ, AudioQueueTimelineRef inTimeline);
 
     /**
-     *    @function   AudioQueueGetCurrentTime
-     *    @abstract   Obtains the current audio queue time.
+     *    [@function]   AudioQueueGetCurrentTime
+     * 
+     * Obtains the current audio queue time.
      * 
      * You must specify a timeline object if you want to be notified about any timeline
      * discontinuities in the outTimelineDiscontinuity parameter. If you don't care about
@@ -2820,7 +3001,7 @@ public final class AudioToolbox {
      *        queue. For instance, the device's sample rate changed and a gap occurred in playback or
      *        recording, or the audio queue was unable to prepare and playback in time because it was
      *        late.
-     *    @result
+     *    @return
      *        An OSStatus result code.
      */
     @Generated
@@ -2830,8 +3011,9 @@ public final class AudioToolbox {
             BytePtr outTimelineDiscontinuity);
 
     /**
-     *    @function   AudioQueueDeviceGetCurrentTime
-     *    @abstract   Obtains the current time of the audio device associated with an audio queue.
+     *    [@function]   AudioQueueDeviceGetCurrentTime
+     * 
+     * Obtains the current time of the audio device associated with an audio queue.
      * 
      * If the audio device associated with the audio queue is not running, the only valid field
      * in the audio timestamp structure is mHostTime. This result differentiates the action of
@@ -2843,7 +3025,7 @@ public final class AudioToolbox {
      *    @param      outTimeStamp
      *        A pointer to a structure that, on return, contains the current time of the audio device
      *        associated with the audio queue.
-     *    @result
+     *    @return
      *        An OSStatus result code.
      */
     @Generated
@@ -2852,8 +3034,9 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outTimeStamp);
 
     /**
-     *    @function   AudioQueueDeviceTranslateTime
-     *    @abstract   Converts the time in the time base of the associated audio device from one
+     *    [@function]   AudioQueueDeviceTranslateTime
+     * 
+     * Converts the time in the time base of the associated audio device from one
      *                representation to another.
      * 
      * This function converts from one time representation to another (for example, from sample
@@ -2874,7 +3057,7 @@ public final class AudioToolbox {
      *        A pointer to a structure containing the time to be translated.
      *    @param      outTime
      *        A pointer to the the translated time.
-     *    @result
+     *    @return
      *        An OSStatus result code.
      */
     @Generated
@@ -2884,15 +3067,17 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp outTime);
 
     /**
-     * @function   AudioQueueDeviceGetNearestStartTime
-     * @abstract   Obtains an audio device's start time that is closest to a requested start time.
+     * [@function]   AudioQueueDeviceGetNearestStartTime
+     * 
+     * Obtains an audio device's start time that is closest to a requested start time.
+     * 
      * @param      inAQ
      *     The audio queue whose device's nearest start time you want to obtain.
      * @param      ioRequestedStartTime
      *     On entry, points to the requested start time. On return, points to the actual start time.
      * @param      inFlags
      *     Reserved for future use. Pass 0.
-     * @result
+     * @return
      *     An OSStatus result code.
      */
     @Generated
@@ -2902,8 +3087,9 @@ public final class AudioToolbox {
             int inFlags);
 
     /**
-     *    @function   AudioQueueSetOfflineRenderFormat
-     *    @abstract   Specify an audio format to which the queue will perform subsequent offline rendering,
+     *    [@function]   AudioQueueSetOfflineRenderFormat
+     * 
+     * Specify an audio format to which the queue will perform subsequent offline rendering,
      *                or disable offline rendering.
      * 
      * An output queue's audio playback can be redirected for capture to an audio file,
@@ -2918,7 +3104,7 @@ public final class AudioToolbox {
      *        interleaved.
      *    @param      inLayout
      *        The desired channel layout for offline rendering; also NULL when disabling offline rendering.
-     *    @result
+     *    @return
      *        An OSStatus result code.
      */
     @Generated
@@ -2928,8 +3114,10 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioChannelLayout inLayout);
 
     /**
-     * @function   AudioQueueOfflineRender
-     * @abstract   Obtain a buffer of audio output from a queue in offline rendering mode.
+     * [@function]   AudioQueueOfflineRender
+     * 
+     * Obtain a buffer of audio output from a queue in offline rendering mode.
+     * 
      * @param      inAQ
      *     The output queue from which to obtain output.
      * @param      inTimestamp
@@ -2940,7 +3128,7 @@ public final class AudioToolbox {
      * @param      inNumberFrames
      *     The number of frames of audio to render. Note that fewer frames than requested may be returned.
      *     This can happen if insufficient data was enqueued.
-     * @result
+     * @return
      *     An OSStatus result code.
      */
     @Generated
@@ -2951,8 +3139,9 @@ public final class AudioToolbox {
             int inNumberFrames);
 
     /**
-     *    @function   AudioQueueProcessingTapNew
-     *    @abstract   Create a new processing tap
+     *    [@function]   AudioQueueProcessingTapNew
+     * 
+     * Create a new processing tap
      * 
      * This function creates a processing tap on a given audio queue. A
      * processing tap can only be established (or removed) on an audio queue that is
@@ -2999,7 +3188,7 @@ public final class AudioToolbox {
      *    @param      outAQTap
      *                    The processing tap object.
      * 
-     *    @result     An OSStatus result code.
+     *    @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -3010,8 +3199,9 @@ public final class AudioToolbox {
             Ptr<AudioQueueProcessingTapRef> outAQTap);
 
     /**
-     *    @function   AudioQueueProcessingTapDispose
-     *    @abstract   Dispose a processing tap object
+     *    [@function]   AudioQueueProcessingTapDispose
+     * 
+     * Dispose a processing tap object
      * 
      * As with AudioQueueProcessingTapNew(), this call can only be made on an
      * audio queue that is stopped (paused is not sufficient)
@@ -3019,15 +3209,16 @@ public final class AudioToolbox {
      *    @param      inAQTap
      *                    The processing tap to dispose.
      * 
-     *   @result     An OSStatus result code.
+     *   @return     An OSStatus result code.
      */
     @Generated
     @CFunction
     public static native int AudioQueueProcessingTapDispose(AudioQueueProcessingTapRef inAQTap);
 
     /**
-     *    @function   AudioQueueProcessingTapGetSourceAudio
-     *    @abstract   Used by a processing tap to retrieve source audio.
+     *    [@function]   AudioQueueProcessingTapGetSourceAudio
+     * 
+     * Used by a processing tap to retrieve source audio.
      * 
      * This function may only be called from the processing tap's callback.
      * 
@@ -3053,7 +3244,7 @@ public final class AudioToolbox {
      *                    hold inNumberFrames, and the audio queue will copy its source data into those
      *                    buffers.
      * 
-     *   @result     An OSStatus result code.
+     *   @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -3064,8 +3255,9 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
-     *    @function   AudioQueueProcessingTapGetQueueTime
-     *    @abstract   Used by a processing tap to retrieve the queue's current time.
+     *    [@function]   AudioQueueProcessingTapGetQueueTime
+     * 
+     * Used by a processing tap to retrieve the queue's current time.
      * 
      * This function may only be called from the processing tap's callback, and only
      * for audio output queues. It must be called after calling
@@ -3083,7 +3275,7 @@ public final class AudioToolbox {
      *                    use of time compression/expansion. The frame count can also be 0 if the queue is
      *                    paused.
      * 
-     *   @result     An OSStatus result code.
+     *   @return     An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -3091,10 +3283,13 @@ public final class AudioToolbox {
             DoublePtr outQueueSampleTime, IntPtr outQueueFrameCount);
 
     /**
-     * @function       AudioSessionInitialize
-     * @abstract       Initialize the AudioSession.
-     * @discussion     This function has to be called once before calling any other
+     * [@function]       AudioSessionInitialize
+     * 
+     * Initialize the AudioSession.
+     * 
+     * This function has to be called once before calling any other
      * AudioSession functions.
+     * 
      * @param          inRunLoop
      * A CFRunLoopRef indicating the desired run loop the interruption routine should
      * be run on. Pass NULL to use the main run loop.
@@ -3115,13 +3310,16 @@ public final class AudioToolbox {
             VoidPtr inClientData);
 
     /**
-     * @function       AudioSessionSetActive
-     * @abstract       Activate or deactivate the AudioSession.
-     * @discussion     Call this function with active set to true to activate this AudioSession (interrupt
+     * [@function]       AudioSessionSetActive
+     * 
+     * Activate or deactivate the AudioSession.
+     * 
+     * Call this function with active set to true to activate this AudioSession (interrupt
      * the currently active AudioSession).
      * Call this function with active set to false to deactivate this AudioSession (allow
      * another interrupted AudioSession to resume).
      * When active is true this call may fail if the currently active AudioSession has a higher priority.
+     * 
      * @param          active
      * A Boolean indicating if you want to make this AudioSession active or inactive.
      */
@@ -3131,16 +3329,19 @@ public final class AudioToolbox {
     public static native int AudioSessionSetActive(byte active);
 
     /**
-     * @function       AudioSessionSetActiveWithFlags
-     * @abstract       Same functionality as AudioSessionSetActive, with an additional flags parameter for 
+     * [@function]       AudioSessionSetActiveWithFlags
+     * 
+     * Same functionality as AudioSessionSetActive, with an additional flags parameter for
      * refining behavior.
-     * @discussion     Call this function with active set to true to activate this AudioSession (interrupt
+     * 
+     * Call this function with active set to true to activate this AudioSession (interrupt
      * the currently active AudioSession).
      * Call this function with active set to false to deactivate this AudioSession (allow
      * another interrupted AudioSession to resume).
      * Pass in one or more flags to refine the behavior during activation or deactivation.
      * When active is true this call may fail if the currently active AudioSession has a 
      * higher priority.
+     * 
      * @param          active
      * A Boolean indicating if you want to make this AudioSession active or inactive.
      * @param          inFlags
@@ -3152,10 +3353,13 @@ public final class AudioToolbox {
     public static native int AudioSessionSetActiveWithFlags(byte active, int inFlags);
 
     /**
-     * @function       AudioSessionGetProperty
-     * @abstract       Get the value of a property.
-     * @discussion     This function can be called to get the value for a property of the AudioSession.
+     * [@function]       AudioSessionGetProperty
+     * 
+     * Get the value of a property.
+     * 
+     * This function can be called to get the value for a property of the AudioSession.
      * Valid properties are listed in an enum above.
+     * 
      * @param          inID
      * The AudioSessionPropertyID for which we want to get the value.
      * @param          ioDataSize
@@ -3175,10 +3379,13 @@ public final class AudioToolbox {
     public static native int AudioSessionGetProperty(int inID, IntPtr ioDataSize, VoidPtr outData);
 
     /**
-     * @function       AudioSessionSetProperty
-     * @abstract       Set the value of a property.
-     * @discussion     This function can be called to set the value for a property of the AudioSession.
+     * [@function]       AudioSessionSetProperty
+     * 
+     * Set the value of a property.
+     * 
+     * This function can be called to set the value for a property of the AudioSession.
      * Valid properties are listed in an enum above.
+     * 
      * @param          inID
      * The AudioSessionPropertyID for which we want to set the value.
      * @param          inDataSize
@@ -3197,10 +3404,13 @@ public final class AudioToolbox {
     public static native int AudioSessionSetProperty(int inID, int inDataSize, ConstVoidPtr inData);
 
     /**
-     * @function       AudioSessionGetPropertySize
-     * @abstract       Get the size of the payload for a property.
-     * @discussion     This function can be called to get the size for the payload of a property.
+     * [@function]       AudioSessionGetPropertySize
+     * 
+     * Get the size of the payload for a property.
+     * 
+     * This function can be called to get the size for the payload of a property.
      * Valid properties are listed in an enum above.
+     * 
      * @param          inID
      * The AudioSessionPropertyID for which we want to get the size of the payload.
      * @param          outDataSize
@@ -3212,11 +3422,14 @@ public final class AudioToolbox {
     public static native int AudioSessionGetPropertySize(int inID, IntPtr outDataSize);
 
     /**
-     * @function       AudioSessionAddPropertyListener
-     * @abstract       Add a property listener.
-     * @discussion     This function can be used to add a listener to be called when a property changes.
+     * [@function]       AudioSessionAddPropertyListener
+     * 
+     * Add a property listener.
+     * 
+     * This function can be used to add a listener to be called when a property changes.
      * If a listener and user data already exist for this property, they will be replaced.
      * Valid properties are listed above.
+     * 
      * @param          inID
      * The AudioSessionPropertyID for which we want to set a listener.
      * @param          inProc
@@ -3236,9 +3449,11 @@ public final class AudioToolbox {
             VoidPtr inClientData);
 
     /**
-     * @function       AudioSessionRemovePropertyListener
-     * @abstract       see AudioSessionRemovePropertyListenerWithUserData
-     * @discussion     see AudioSessionRemovePropertyListenerWithUserData
+     * [@function]       AudioSessionRemovePropertyListener
+     * 
+     * see AudioSessionRemovePropertyListenerWithUserData
+     * 
+     * see AudioSessionRemovePropertyListenerWithUserData
      */
     @Generated
     @Deprecated
@@ -3246,13 +3461,16 @@ public final class AudioToolbox {
     public static native int AudioSessionRemovePropertyListener(int inID);
 
     /**
-     * @function       AudioSessionRemovePropertyListener
-     * @abstract       Remove a property listener.
-     * @discussion     This function can be called to remove the listener for a property. The caller
+     * [@function]       AudioSessionRemovePropertyListener
+     * 
+     * Remove a property listener.
+     * 
+     * This function can be called to remove the listener for a property. The caller
      * provides the same proc and user data that was used to add the listener. This ensures
      * that there can be more than one listener established for a given property ID,
      * and each listener can be removed as requested.
      * Valid properties are listed above.
+     * 
      * @param          inID
      * The AudioSessionPropertyID for which we want to remove the listener.
      * @param          inProc
@@ -3272,12 +3490,15 @@ public final class AudioToolbox {
             VoidPtr inClientData);
 
     /**
-     * @function       AudioServicesCreateSystemSoundID
-     * @abstract       Allows the application to designate an audio file for playback by the System Sound server.
-     * @discussion     Returned SystemSoundIDs are passed to AudioServicesPlayAlertSoundWithCompletion() 
+     * [@function]       AudioServicesCreateSystemSoundID
+     * 
+     * Allows the application to designate an audio file for playback by the System Sound server.
+     * 
+     * Returned SystemSoundIDs are passed to AudioServicesPlayAlertSoundWithCompletion()
      *                 and AudioServicesPlaySystemSoundWithCompletion() to be played.
      * 
      *                 The maximum supported duration for a system sound is 30 secs.
+     * 
      * @param          inFileURL
      *                     A CFURLRef for an AudioFile.
      * @param          outSystemSoundID
@@ -3288,11 +3509,14 @@ public final class AudioToolbox {
     public static native int AudioServicesCreateSystemSoundID(CFURLRef inFileURL, IntPtr outSystemSoundID);
 
     /**
-     * @function       AudioServicesDisposeSystemSoundID
-     * @abstract       Allows the System Sound server to dispose any resources needed for the provided
+     * [@function]       AudioServicesDisposeSystemSoundID
+     * 
+     * Allows the System Sound server to dispose any resources needed for the provided
      *                 SystemSoundID.
-     * @discussion     Allows the application to tell the System Sound server that the resources for the
+     * 
+     * Allows the application to tell the System Sound server that the resources for the
      *                 associated audio file are no longer required.
+     * 
      * @param          inSystemSoundID
      *                     A SystemSoundID that the application no longer needs to use.
      */
@@ -3301,9 +3525,12 @@ public final class AudioToolbox {
     public static native int AudioServicesDisposeSystemSoundID(int inSystemSoundID);
 
     /**
-     * @function       AudioServicesPlayAlertSoundWithCompletion
-     * @abstract       Play an alert sound
-     * @discussion     Play the sound designated by the provided SystemSoundID with alert sound behavior.
+     * [@function]       AudioServicesPlayAlertSoundWithCompletion
+     * 
+     * Play an alert sound
+     * 
+     * Play the sound designated by the provided SystemSoundID with alert sound behavior.
+     * 
      * @param          inSystemSoundID
      *                     The SystemSoundID to be played. On the desktop the kSystemSoundID_UserPreferredAlert
      *                     constant can be passed in to play back the alert sound selected by the user
@@ -3319,9 +3546,12 @@ public final class AudioToolbox {
             @ObjCBlock(name = "call_AudioServicesPlayAlertSoundWithCompletion") Block_AudioServicesPlayAlertSoundWithCompletion inCompletionBlock);
 
     /**
-     * @function       AudioServicesPlaySystemSoundWithCompletion
-     * @abstract       Play a system sound
-     * @discussion     Play the sound designated by the provided SystemSoundID.
+     * [@function]       AudioServicesPlaySystemSoundWithCompletion
+     * 
+     * Play a system sound
+     * 
+     * Play the sound designated by the provided SystemSoundID.
+     * 
      * @param          inSystemSoundID
      *                     The SystemSoundID to be played.
      * @param          inCompletionBlock
@@ -3335,9 +3565,11 @@ public final class AudioToolbox {
             @ObjCBlock(name = "call_AudioServicesPlaySystemSoundWithCompletion") Block_AudioServicesPlaySystemSoundWithCompletion inCompletionBlock);
 
     /**
-     * @function       AudioServicesGetPropertyInfo
-     * @abstract       Get information about the size of an AudioServices property and whether it can
+     * [@function]       AudioServicesGetPropertyInfo
+     * 
+     * Get information about the size of an AudioServices property and whether it can
      *                 be set.
+     * 
      * @param          inPropertyID
      *                     a AudioServicesPropertyID constant.
      * @param          inSpecifierSize
@@ -3350,7 +3582,7 @@ public final class AudioToolbox {
      *                     property value, you will need a buffer of this size.
      * @param          outWritable
      *                     Will be set to 1 if writable, or 0 if read only.
-     * @result         returns kAudioServicesNoError if successful.
+     * @return         returns kAudioServicesNoError if successful.
      */
     @Generated
     @CFunction
@@ -3358,8 +3590,10 @@ public final class AudioToolbox {
             ConstVoidPtr inSpecifier, IntPtr outPropertyDataSize, BytePtr outWritable);
 
     /**
-     * @function       AudioServicesGetProperty
-     * @abstract       Retrieve the indicated property data
+     * [@function]       AudioServicesGetProperty
+     * 
+     * Retrieve the indicated property data
+     * 
      * @param          inPropertyID
      *                     a AudioServicesPropertyID constant.
      * @param          inSpecifierSize
@@ -3374,7 +3608,7 @@ public final class AudioToolbox {
      *                     The buffer in which to write the property data. May be NULL if caller only
      *                     wants ioPropertyDataSize to be filled with the amount that would have been
      *                     written.
-     * @result         returns kAudioServicesNoError if successful.
+     * @return         returns kAudioServicesNoError if successful.
      */
     @Generated
     @CFunction
@@ -3382,8 +3616,10 @@ public final class AudioToolbox {
             IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
 
     /**
-     * @function       AudioServicesSetProperty
-     * @abstract       Set the indicated property data
+     * [@function]       AudioServicesSetProperty
+     * 
+     * Set the indicated property data
+     * 
      * @param          inPropertyID
      *                     a AudioServicesPropertyID constant.
      * @param          inSpecifierSize
@@ -3395,7 +3631,7 @@ public final class AudioToolbox {
      *                     The size of the inPropertyData buffer.
      * @param          inPropertyData
      *                     The buffer containing the property data.
-     * @result         returns kAudioServicesNoError if successful.
+     * @return         returns kAudioServicesNoError if successful.
      */
     @Generated
     @CFunction
@@ -3405,9 +3641,12 @@ public final class AudioToolbox {
     /**
      * This function will be deprecated in a future release. Use AudioServicesPlayAlertSoundWithCompletion instead.
      * 
-     * @function       AudioServicesPlayAlertSound
-     * @abstract       Play an Alert Sound
-     * @discussion     Play the provided SystemSoundID with AlertSound behavior.
+     * [@function]       AudioServicesPlayAlertSound
+     * 
+     * Play an Alert Sound
+     * 
+     * Play the provided SystemSoundID with AlertSound behavior.
+     * 
      * @param          inSystemSoundID
      *                     A SystemSoundID for the System Sound server to play. On the desktop you
      *                     can pass the kSystemSoundID_UserPreferredAlert constant to playback the alert sound 
@@ -3420,9 +3659,12 @@ public final class AudioToolbox {
     /**
      * This function will be deprecated in a future release. Use AudioServicesPlaySystemSoundWithCompletion instead.
      * 
-     * @function       AudioServicesPlaySystemSound
-     * @abstract       Play the sound designated by the provided SystemSoundID.
-     * @discussion     A SystemSoundID indicating the desired System Sound to be played.
+     * [@function]       AudioServicesPlaySystemSound
+     * 
+     * Play the sound designated by the provided SystemSoundID.
+     * 
+     * A SystemSoundID indicating the desired System Sound to be played.
+     * 
      * @param          inSystemSoundID
      *                     A SystemSoundID for the System Sound server to play.
      */
@@ -3434,11 +3676,14 @@ public final class AudioToolbox {
      * This function will be deprecated in a future release. Use AudioServicesPlayAlertSoundWithCompletion 
      * or AudioServicesPlaySystemSoundWithCompletion instead.
      * 
-     * @function       AudioServicesAddSystemSoundCompletion
-     * @abstract       Call the provided Completion Routine when provided SystemSoundID
+     * [@function]       AudioServicesAddSystemSoundCompletion
+     * 
+     * Call the provided Completion Routine when provided SystemSoundID
      *                 finishes playing.
-     * @discussion     Once set, the System Sound server will send a message to the System Sound client
+     * 
+     * Once set, the System Sound server will send a message to the System Sound client
      *                 indicating which SystemSoundID has finished playing.
+     * 
      * @param          inSystemSoundID
      *                     The SystemSoundID to associate with the provided completion
      *                     routine.
@@ -3465,10 +3710,13 @@ public final class AudioToolbox {
      * This function will be deprecated in a future release. Use AudioServicesPlayAlertSoundWithCompletion
      * or AudioServicesPlaySystemSoundWithCompletion instead.
      * 
-     * @function       AudioServicesRemoveSystemSoundCompletion
-     * @abstract       Disassociate any completion proc for the specified SystemSoundID
-     * @discussion     Tells the SystemSound client to remove any completion proc associated with the
+     * [@function]       AudioServicesRemoveSystemSoundCompletion
+     * 
+     * Disassociate any completion proc for the specified SystemSoundID
+     * 
+     * Tells the SystemSound client to remove any completion proc associated with the
      *                 provided SystemSoundID
+     * 
      * @param          inSystemSoundID
      *                     The SystemSoundID for which completion routines should be
      *                     removed.
@@ -3478,40 +3726,40 @@ public final class AudioToolbox {
     public static native void AudioServicesRemoveSystemSoundCompletion(int inSystemSoundID);
 
     /**
-     * @function   ExtAudioFileOpenURL
+     * [@function]   ExtAudioFileOpenURL
      * 
-     * @abstract   Opens an audio file specified by a CFURLRef.
+     * Opens an audio file specified by a CFURLRef.
+     * 
+     * 			Allocates a new ExtAudioFileRef, for reading an existing audio file.
+     * 
      * @param		inURL
      * 				The audio file to read.
      * @param		outExtAudioFile
      * 				On exit, a newly-allocated ExtAudioFileRef.
-     * @result		An OSStatus error code.
-     * 
-     * @discussion
-     * 			Allocates a new ExtAudioFileRef, for reading an existing audio file.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
     public static native int ExtAudioFileOpenURL(CFURLRef inURL, Ptr<ExtAudioFileRef> outExtAudioFile);
 
     /**
-     * @function   ExtAudioFileWrapAudioFileID
+     * [@function]   ExtAudioFileWrapAudioFileID
      * 
-     * @abstract   Wrap an AudioFileID in an ExtAudioFileRef.
+     * Wrap an AudioFileID in an ExtAudioFileRef.
+     * 
+     * 			Allocates a new ExtAudioFileRef which wraps an existing AudioFileID. The
+     * 			client is responsible for keeping the AudioFileID open until the
+     * 			ExtAudioFileRef is disposed. Disposing the ExtAudioFileRef will not close
+     * 			the AudioFileID when this Wrap API call is used, so the client is also
+     * 			responsible for closing the AudioFileID when finished with it.
+     * 
      * @param		inFileID
      * 				The AudioFileID to wrap.
      * @param		inForWriting
      * 				True if the AudioFileID is a new file opened for writing.
      * @param		outExtAudioFile
      * 				On exit, a newly-allocated ExtAudioFileRef.
-     * @result		An OSStatus error code.
-     * 
-     * @discussion
-     * 			Allocates a new ExtAudioFileRef which wraps an existing AudioFileID. The
-     * 			client is responsible for keeping the AudioFileID open until the
-     * 			ExtAudioFileRef is disposed. Disposing the ExtAudioFileRef will not close
-     * 			the AudioFileID when this Wrap API call is used, so the client is also
-     * 			responsible for closing the AudioFileID when finished with it.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
@@ -3519,9 +3767,17 @@ public final class AudioToolbox {
             Ptr<ExtAudioFileRef> outExtAudioFile);
 
     /**
-     * @function   ExtAudioFileCreateWithURL
+     * [@function]   ExtAudioFileCreateWithURL
      * 
-     * @abstract   Create a new audio file.
+     * Create a new audio file.
+     * 
+     * 			Creates a new audio file.
+     * 
+     * 			If the file to be created is in an encoded format, it is permissible for the
+     * 			sample rate in inStreamDesc to be 0, since in all cases, the file's encoding
+     * 			AudioConverter may produce audio at a different sample rate than the source. The
+     * 			file will be created with the audio format actually produced by the encoder.
+     * 
      * @param		inURL
      * 				The URL of the new audio file.
      * @param		inFileType
@@ -3537,15 +3793,7 @@ public final class AudioToolbox {
      * 				Can use these to control whether an existing file is overwritten (or not).
      * @param		outExtAudioFile
      * 				On exit, a newly-allocated ExtAudioFileRef.
-     * @result		An OSStatus error code.
-     * 
-     * @discussion
-     * 			Creates a new audio file.
-     * 
-     * 			If the file to be created is in an encoded format, it is permissible for the
-     * 			sample rate in inStreamDesc to be 0, since in all cases, the file's encoding
-     * 			AudioConverter may produce audio at a different sample rate than the source. The
-     * 			file will be created with the audio format actually produced by the encoder.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
@@ -3555,24 +3803,32 @@ public final class AudioToolbox {
             int inFlags, Ptr<ExtAudioFileRef> outExtAudioFile);
 
     /**
-     * @function   ExtAudioFileDispose
+     * [@function]   ExtAudioFileDispose
      * 
-     * @abstract   Close the file and dispose the object.
+     * Close the file and dispose the object.
+     * 
+     * 			Closes the file and deletes the object.
+     * 
      * @param		inExtAudioFile
      * 				The extended audio file object.
-     * @result		An OSStatus error code.
-     * 
-     * @discussion
-     * 			Closes the file and deletes the object.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
     public static native int ExtAudioFileDispose(ExtAudioFileRef inExtAudioFile);
 
     /**
-     * @function   ExtAudioFileRead
+     * [@function]   ExtAudioFileRead
      * 
-     * @abstract   Perform a synchronous sequential read.
+     * Perform a synchronous sequential read.
+     * 
+     * 			If the file has a client data format, then the audio data from the file is
+     * 			translated from the file data format to the client format, via the
+     * 			ExtAudioFile's internal AudioConverter.
+     * 
+     * 			(Note that the use of sequential reads/writes means that an ExtAudioFile must
+     * 			not be read on multiple threads; clients wishing to do this should use the
+     * 			lower-level AudioFile API set).
      * 
      * @param		inExtAudioFile
      * 				The extended audio file object.
@@ -3584,16 +3840,7 @@ public final class AudioToolbox {
      * 				returned, however, this indicates that end-of-file was reached.
      * @param		ioData
      * 				Buffer(s) into which the audio data is read.
-     * @result		An OSStatus error code.
-     * 
-     * @discussion
-     * 			If the file has a client data format, then the audio data from the file is
-     * 			translated from the file data format to the client format, via the
-     * 			ExtAudioFile's internal AudioConverter.
-     * 
-     * 			(Note that the use of sequential reads/writes means that an ExtAudioFile must
-     * 			not be read on multiple threads; clients wishing to do this should use the
-     * 			lower-level AudioFile API set).
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
@@ -3601,9 +3848,13 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
-     * @function   ExtAudioFileWrite
+     * [@function]   ExtAudioFileWrite
      * 
-     * @abstract   Perform a synchronous sequential write.
+     * Perform a synchronous sequential write.
+     * 
+     * 			If the file has a client data format, then the audio data in ioData is
+     * 			translated from the client format to the file data format, via the
+     * 			ExtAudioFile's internal AudioConverter.
      * 
      * @param		inExtAudioFile
      * 				The extended audio file object.
@@ -3611,12 +3862,7 @@ public final class AudioToolbox {
      * 				The number of frames to write.
      * @param		ioData
      * 				The buffer(s) from which audio data is written to the file.
-     * @result		An OSStatus error code.
-     * 
-     * @discussion
-     * 			If the file has a client data format, then the audio data in ioData is
-     * 			translated from the client format to the file data format, via the
-     * 			ExtAudioFile's internal AudioConverter.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
@@ -3624,19 +3870,10 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
-     * @function   ExtAudioFileWriteAsync
+     * [@function]   ExtAudioFileWriteAsync
      * 
-     * @abstract   Perform an asynchronous sequential write.
+     * Perform an asynchronous sequential write.
      * 
-     * @param		inExtAudioFile
-     * 				The extended audio file object.
-     * @param		inNumberFrames
-     * 				The number of frames to write.
-     * @param		ioData
-     * 				The buffer(s) from which audio data is written to the file.
-     * @result		An OSStatus error code.
-     * 
-     * @discussion
      * 			Writes the provided buffer list to an internal ring buffer and notifies an
      * 			internal thread to perform the write at a later time. The first time this is
      * 			called, allocations may be performed. You can call this with 0 frames and null
@@ -3651,6 +3888,14 @@ public final class AudioToolbox {
      * 
      * 			N.B. Errors may occur after this call has returned. Such errors may be returned
      * 			from subsequent calls to this function.
+     * 
+     * @param		inExtAudioFile
+     * 				The extended audio file object.
+     * @param		inNumberFrames
+     * 				The number of frames to write.
+     * @param		ioData
+     * 				The buffer(s) from which audio data is written to the file.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
@@ -3658,9 +3903,15 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList ioData);
 
     /**
-     * @function   ExtAudioFileSeek
+     * [@function]   ExtAudioFileSeek
      * 
-     * @abstract   Seek to a specific frame position.
+     * Seek to a specific frame position.
+     * 
+     * 			Sets the file's read position to the specified sample frame number. The next call
+     * 			to ExtAudioFileRead will return samples from precisely this location, even if it
+     * 			is located in the middle of a packet.
+     * 
+     * 			This function's behavior with files open for writing is currently undefined.
      * 
      * @param		inExtAudioFile
      * 				The extended audio file object.
@@ -3668,38 +3919,32 @@ public final class AudioToolbox {
      * 				The desired seek position, in sample frames, relative to the beginning of
      * 				the file. This is specified in the sample rate and frame count of the file's format
      * 				(not the client format)
-     * @result		An OSStatus error code.
-     * 
-     * @discussion
-     * 			Sets the file's read position to the specified sample frame number. The next call
-     * 			to ExtAudioFileRead will return samples from precisely this location, even if it
-     * 			is located in the middle of a packet.
-     * 
-     * 			This function's behavior with files open for writing is currently undefined.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
     public static native int ExtAudioFileSeek(ExtAudioFileRef inExtAudioFile, long inFrameOffset);
 
     /**
-     * @function   ExtAudioFileTell
+     * [@function]   ExtAudioFileTell
      * 
-     * @abstract   Return the file's read/write position.
+     * Return the file's read/write position.
      * 
      * @param		inExtAudioFile
      * 				The extended audio file object.
      * @param		outFrameOffset
      * 				On exit, the file's current read/write position in sample frames. This is specified in the 
      * 				sample rate and frame count of the file's format (not the client format)
-     * @result		An OSStatus error code.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
     public static native int ExtAudioFileTell(ExtAudioFileRef inExtAudioFile, LongPtr outFrameOffset);
 
     /**
-     * @function   ExtAudioFileGetPropertyInfo
-     * @abstract   Get information about a property
+     * [@function]   ExtAudioFileGetPropertyInfo
+     * 
+     * Get information about a property
      * 
      * @param		inExtAudioFile
      * 				The extended audio file object.
@@ -3709,7 +3954,7 @@ public final class AudioToolbox {
      * 				If non-null, on exit, this is set to the size of the property's value.
      * @param		outWritable
      * 				If non-null, on exit, this indicates whether the property value is settable.
-     * @result		An OSStatus error code.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
@@ -3717,8 +3962,9 @@ public final class AudioToolbox {
             IntPtr outSize, BytePtr outWritable);
 
     /**
-     * @function   ExtAudioFileGetProperty
-     * @abstract   Get a property value.
+     * [@function]   ExtAudioFileGetProperty
+     * 
+     * Get a property value.
      * 
      * @param		inExtAudioFile
      * 				The extended audio file object.
@@ -3729,7 +3975,7 @@ public final class AudioToolbox {
      * 				On exit, the actual size of the property data returned.	
      * @param		outPropertyData
      * 				The value of the property is copied to the memory this points to.
-     * @result		An OSStatus error code.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
@@ -3737,8 +3983,9 @@ public final class AudioToolbox {
             IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
 
     /**
-     * @function   ExtAudioFileSetProperty
-     * @abstract   Set a property value.
+     * [@function]   ExtAudioFileSetProperty
+     * 
+     * Set a property value.
      * 
      * @param		inExtAudioFile
      * 				The extended audio file object.
@@ -3748,7 +3995,7 @@ public final class AudioToolbox {
      * 				The size of the property data, in bytes.
      * @param		inPropertyData
      * 				Points to the property's new value.
-     * @result		An OSStatus error code.
+     * @return		An OSStatus error code.
      */
     @Generated
     @CFunction
@@ -3756,11 +4003,14 @@ public final class AudioToolbox {
             int inPropertyDataSize, ConstVoidPtr inPropertyData);
 
     /**
-     * @function	NewMusicPlayer
-     * @abstract	Create a new music player
-     * @discussion	A music player is used to play a sequence back. This call is used to create a player
+     * [@function]	NewMusicPlayer
+     * 
+     * Create a new music player
+     * 
+     * A music player is used to play a sequence back. This call is used to create a player
      * 			When a sequence is to be played by a player, it can play to either an AUGraph, a MIDI Destination or a
      * 			mixture/combination of both.
+     * 
      * @param		outPlayer	the newly created player
      */
     @Generated
@@ -3768,8 +4018,10 @@ public final class AudioToolbox {
     public static native int NewMusicPlayer(Ptr<MusicPlayer> outPlayer);
 
     /**
-     * @function	DisposeMusicPlayer
-     * @abstract	Dispose a music player
+     * [@function]	DisposeMusicPlayer
+     * 
+     * Dispose a music player
+     * 
      * @param		inPlayer	the player to dispose
      */
     @Generated
@@ -3777,10 +4029,13 @@ public final class AudioToolbox {
     public static native int DisposeMusicPlayer(MusicPlayer inPlayer);
 
     /**
-     * @function	MusicPlayerSetSequence
-     * @abstract	Set the sequence for the player to play
-     * @discussion A Sequence cannot be set on a player while it is playing. Setting a sequence
+     * [@function]	MusicPlayerSetSequence
+     * 
+     * Set the sequence for the player to play
+     * 
+     * A Sequence cannot be set on a player while it is playing. Setting a sequence
      * 			will overide the currently set sequence.
+     * 
      * @param		inPlayer	the player
      * @param		inSequence	the sequence for the player to play
      */
@@ -3789,9 +4044,12 @@ public final class AudioToolbox {
     public static native int MusicPlayerSetSequence(MusicPlayer inPlayer, MusicSequence inSequence);
 
     /**
-     * @function	MusicPlayerGetSequence
-     * @abstract	Get the sequence attached to a player
-     * @discussion If the player does not have a sequence set, this will return the _NoSequence error
+     * [@function]	MusicPlayerGetSequence
+     * 
+     * Get the sequence attached to a player
+     * 
+     * If the player does not have a sequence set, this will return the _NoSequence error
+     * 
      * @param		inPlayer	the player
      * @param		outSequence	the sequence currently set on the player
      */
@@ -3800,12 +4058,15 @@ public final class AudioToolbox {
     public static native int MusicPlayerGetSequence(MusicPlayer inPlayer, Ptr<MusicSequence> outSequence);
 
     /**
-     * @function	MusicPlayerSetTime
-     * @abstract	Set the current time on the player
-     * @discussion The Get and Set Time calls take a specification of time as beats. This positions the player
+     * [@function]	MusicPlayerSetTime
+     * 
+     * Set the current time on the player
+     * 
+     * The Get and Set Time calls take a specification of time as beats. This positions the player
      * 			to the specified time based on the currently set sequence. No range checking on the time value
      * 			is done. This can be set on a playing player (in which case playing will be resumed from the
      * 			new time).
+     * 
      * @param		inPlayer	the player
      * @param		inTime		the new time value
      */
@@ -3814,10 +4075,13 @@ public final class AudioToolbox {
     public static native int MusicPlayerSetTime(MusicPlayer inPlayer, double inTime);
 
     /**
-     * @function	MusicPlayerGetTime
-     * @abstract	Get the current time of the player
-     * @discussion The Get and Set Time calls take a specification of time as beats. This retrieves the player's
+     * [@function]	MusicPlayerGetTime
+     * 
+     * Get the current time of the player
+     * 
+     * The Get and Set Time calls take a specification of time as beats. This retrieves the player's
      * 			current time. If it is playing this time is the time of the player at the time the call was made. 
+     * 
      * @param		inPlayer	the player
      * @param		outTime		the current time value
      */
@@ -3826,14 +4090,17 @@ public final class AudioToolbox {
     public static native int MusicPlayerGetTime(MusicPlayer inPlayer, DoublePtr outTime);
 
     /**
-     * @function	MusicPlayerGetHostTimeForBeats
-     * @abstract	Returns the host time that will be (or was) played at the specified beat.
-     * @discussion This call is only valid if the player is playing and will return an error if the player is not playing
+     * [@function]	MusicPlayerGetHostTimeForBeats
+     * 
+     * Returns the host time that will be (or was) played at the specified beat.
+     * 
+     * This call is only valid if the player is playing and will return an error if the player is not playing
      * 			or if the starting position of the player (its "starting beat") was after the specified beat.
      * 			For general translation of beats to time in a sequence, see the MusicSequence calls for beat<->seconds.
      * 
      * 			The call uses the player's sequence's tempo map to translate a beat time from the starting time and beat
      * 			of the player.
+     * 
      * @param		inPlayer	the player
      * @param		inBeats		the specified beat-time value
      * @param		outHostTime the corresponding host time
@@ -3843,9 +4110,11 @@ public final class AudioToolbox {
     public static native int MusicPlayerGetHostTimeForBeats(MusicPlayer inPlayer, double inBeats, LongPtr outHostTime);
 
     /**
-     * @function	MusicPlayerGetBeatsForHostTime
-     * @abstract	Returns the beat that will be (or was) played at the specified host time. 
-     * @discussion This call is only valid if the player is playing and will return an error if the player is not playing
+     * [@function]	MusicPlayerGetBeatsForHostTime
+     * 
+     * Returns the beat that will be (or was) played at the specified host time.
+     * 
+     * This call is only valid if the player is playing and will return an error if the player is not playing
      * 			or if the starting time of the player was after the specified host time.
      * 			For general translation of beats to time in a sequence, see the MusicSequence calls for beat<->seconds.
      * 
@@ -3860,10 +4129,13 @@ public final class AudioToolbox {
     public static native int MusicPlayerGetBeatsForHostTime(MusicPlayer inPlayer, long inHostTime, DoublePtr outBeats);
 
     /**
-     * @function	MusicPlayerPreroll
-     * @abstract	Prepare the player for playing
-     * @discussion Allows the player to prepare its state so that starting is has a lower latency. If a player is started without
+     * [@function]	MusicPlayerPreroll
+     * 
+     * Prepare the player for playing
+     * 
+     * Allows the player to prepare its state so that starting is has a lower latency. If a player is started without
      * 			being prerolled, the player will pre-roll itself and then start.
+     * 
      * @param		inPlayer	the player
      */
     @Generated
@@ -3871,9 +4143,12 @@ public final class AudioToolbox {
     public static native int MusicPlayerPreroll(MusicPlayer inPlayer);
 
     /**
-     * @function	MusicPlayerStart
-     * @abstract	Start the player
-     * @discussion If the player has not been prerolled, it will pre-roll itself and then start.
+     * [@function]	MusicPlayerStart
+     * 
+     * Start the player
+     * 
+     * If the player has not been prerolled, it will pre-roll itself and then start.
+     * 
      * @param		inPlayer	the player
      */
     @Generated
@@ -3881,8 +4156,10 @@ public final class AudioToolbox {
     public static native int MusicPlayerStart(MusicPlayer inPlayer);
 
     /**
-     * @function	MusicPlayerStop
-     * @abstract	Stop the player
+     * [@function]	MusicPlayerStop
+     * 
+     * Stop the player
+     * 
      * @param		inPlayer	the player
      */
     @Generated
@@ -3890,12 +4167,15 @@ public final class AudioToolbox {
     public static native int MusicPlayerStop(MusicPlayer inPlayer);
 
     /**
-     * @function	MusicPlayerIsPlaying
-     * @abstract	Returns the playing state of the player. "Is it playing?"
-     * @discussion This call returns a non-zero value in outIsPlaying if the player has been
+     * [@function]	MusicPlayerIsPlaying
+     * 
+     * Returns the playing state of the player. "Is it playing?"
+     * 
+     * This call returns a non-zero value in outIsPlaying if the player has been
      * 			started and not stopped. It may have "played" past the events of the attached
      * 			MusicSequence, but it is still considered to be playing (and its time value increasing)
      * 			until it is explicitly stopped
+     * 
      * @param		inPlayer		the player
      * @param		outIsPlaying	false if not, true (non-zero) if is playing
      */
@@ -3904,8 +4184,10 @@ public final class AudioToolbox {
     public static native int MusicPlayerIsPlaying(MusicPlayer inPlayer, BytePtr outIsPlaying);
 
     /**
-     * @function	MusicPlayerSetPlayRateScalar
-     * @abstract	Scale the playback rate of the player
+     * [@function]	MusicPlayerSetPlayRateScalar
+     * 
+     * Scale the playback rate of the player
+     * 
      * @param		inPlayer	the player
      * @param		inScaleRate	a scalar that will be applied to the playback rate. If 2, playback is twice as fast, if
      * 			0.5 it is half as fast. As a scalar, the value must be greater than zero.
@@ -3915,8 +4197,10 @@ public final class AudioToolbox {
     public static native int MusicPlayerSetPlayRateScalar(MusicPlayer inPlayer, double inScaleRate);
 
     /**
-     * @function	MusicPlayerGetPlayRateScalar
-     * @abstract	Get the playback rate scalar of the player
+     * [@function]	MusicPlayerGetPlayRateScalar
+     * 
+     * Get the playback rate scalar of the player
+     * 
      * @param		inPlayer		the player
      * @param		outScaleRate	the current scalar being applied to the player. Default value is 1.0
      */
@@ -3925,10 +4209,12 @@ public final class AudioToolbox {
     public static native int MusicPlayerGetPlayRateScalar(MusicPlayer inPlayer, DoublePtr outScaleRate);
 
     /**
-     * @functiongroup Music Sequence
-     * @function	NewMusicSequence
-     * @abstract	Create a new empty sequence
-     * @discussion	A new music sequence will only have a tempo track (with a default tempo of 120 bpm), 
+     * [@functiongroup] Music Sequence
+     * [@function]	NewMusicSequence
+     * 
+     * Create a new empty sequence
+     * 
+     * A new music sequence will only have a tempo track (with a default tempo of 120 bpm),
      * 			and the default type is beat based.
      * 
      * 			When a sequence is to be played by a player, it can play to either an AUGraph, a MIDI Destination or a
@@ -3943,9 +4229,12 @@ public final class AudioToolbox {
     public static native int NewMusicSequence(Ptr<MusicSequence> outSequence);
 
     /**
-     * @function	DisposeMusicSequence
-     * @abstract	Dispose the sequence
-     * @discussion	 A sequence cannot be disposed while a MusicPlayer has it.
+     * [@function]	DisposeMusicSequence
+     * 
+     * Dispose the sequence
+     * 
+     * A sequence cannot be disposed while a MusicPlayer has it.
+     * 
      * @param		inSequence		the sequence
      */
     @Generated
@@ -3953,8 +4242,10 @@ public final class AudioToolbox {
     public static native int DisposeMusicSequence(MusicSequence inSequence);
 
     /**
-     * @function	MusicSequenceNewTrack
-     * @abstract	Add a new (empty) track to the sequence
+     * [@function]	MusicSequenceNewTrack
+     * 
+     * Add a new (empty) track to the sequence
+     * 
      * @param		inSequence		the sequence
      * @param		outTrack		the new track (it is always appended to any existing tracks)
      */
@@ -3963,8 +4254,10 @@ public final class AudioToolbox {
     public static native int MusicSequenceNewTrack(MusicSequence inSequence, Ptr<MusicTrack> outTrack);
 
     /**
-     * @function	MusicSequenceDisposeTrack
-     * @abstract	Remove and dispose a track from a sequence
+     * [@function]	MusicSequenceDisposeTrack
+     * 
+     * Remove and dispose a track from a sequence
+     * 
      * @param		inSequence		the sequence
      * @param		inTrack			the track to remove and dispose
      */
@@ -3973,9 +4266,11 @@ public final class AudioToolbox {
     public static native int MusicSequenceDisposeTrack(MusicSequence inSequence, MusicTrack inTrack);
 
     /**
-     * @function	MusicSequenceGetTrackCount
-     * @abstract	The number of tracks in a sequence. 
+     * [@function]	MusicSequenceGetTrackCount
+     * 
+     * The number of tracks in a sequence.
      * 			The track count and accessors exclude the tempo track (which is treated as a special case)
+     * 
      * @param		inSequence			the sequence
      * @param		outNumberOfTracks	the number of tracks
      */
@@ -3984,10 +4279,13 @@ public final class AudioToolbox {
     public static native int MusicSequenceGetTrackCount(MusicSequence inSequence, IntPtr outNumberOfTracks);
 
     /**
-     * @function	MusicSequenceGetIndTrack
-     * @abstract	Get a track at the specified index
-     * @discussion Index is zero based. It will return kAudio_ParamError if index is not in the range: 0 < TrackCount
+     * [@function]	MusicSequenceGetIndTrack
+     * 
+     * Get a track at the specified index
+     * 
+     * Index is zero based. It will return kAudio_ParamError if index is not in the range: 0 < TrackCount
      * 			The track count and accessors exclude the tempo track (which is treated as a special case)
+     * 
      * @param		inSequence		the sequence
      * @param		inTrackIndex	the index
      * @param		outTrack		the track at that index
@@ -3998,10 +4296,13 @@ public final class AudioToolbox {
             Ptr<MusicTrack> outTrack);
 
     /**
-     * @function	MusicSequenceGetTrackIndex
-     * @abstract	Get the index for a specific track
-     * @discussion Index is zero based. It will return an error if the track is not a member of the sequence.
+     * [@function]	MusicSequenceGetTrackIndex
+     * 
+     * Get the index for a specific track
+     * 
+     * Index is zero based. It will return an error if the track is not a member of the sequence.
      * 			The track count and accessors exclude the tempo track (which is treated as a special case)
+     * 
      * @param		inSequence		the sequence
      * @param		inTrack			the track
      * @param		outTrackIndex	the index of the track
@@ -4012,11 +4313,14 @@ public final class AudioToolbox {
             IntPtr outTrackIndex);
 
     /**
-     * @function	MusicSequenceGetTempoTrack
-     * @abstract	Get the tempo track of the sequence
-     * @discussion	Each sequence has a single tempo track. All tempo events are placed into this tempo track (as well
+     * [@function]	MusicSequenceGetTempoTrack
+     * 
+     * Get the tempo track of the sequence
+     * 
+     * Each sequence has a single tempo track. All tempo events are placed into this tempo track (as well
      * 			as other appropriate events (time sig for instance from a MIDI file). The tempo track, once retrieved
      * 			can be edited and iterated upon as any other track. Non-tempo events in a tempo track are ignored.
+     * 
      * @param		inSequence		the sequence
      * @param		outTrack		the tempo track of the sequence
      */
@@ -4025,14 +4329,17 @@ public final class AudioToolbox {
     public static native int MusicSequenceGetTempoTrack(MusicSequence inSequence, Ptr<MusicTrack> outTrack);
 
     /**
-     * @function	MusicSequenceSetAUGraph
-     * @abstract	Set the graph to be associated with the sequence
-     * @discussion	A sequence can be associated with an AUGraph and this graph will be used to render the events as 
+     * [@function]	MusicSequenceSetAUGraph
+     * 
+     * Set the graph to be associated with the sequence
+     * 
+     * A sequence can be associated with an AUGraph and this graph will be used to render the events as
      * 			controlled by the sequence when it is played. By default, all of the tracks of a sequence will
      * 			find the first AUNode that is an instance of an Apple MusicDevice audio unit (see MusicSequenceGetAUGraph).
      * 			Specific nodes of the graph can be targeted for different tracks (see MusicTrackSetDestNode).  To render a
      * 				multi-track GM MIDI sequence on iOS, create a custom graph with a MIDISynth audio unit as the MusicDevice.
      * 				If inGraph is set to NULL, the sequence will reset to use the default graph.
+     * 
      * @param		inSequence		the sequence
      * @param		inGraph			the graph
      */
@@ -4041,9 +4348,11 @@ public final class AudioToolbox {
     public static native int MusicSequenceSetAUGraph(MusicSequence inSequence, AUGraph inGraph);
 
     /**
-     * @function	MusicSequenceGetAUGraph
-     * @abstract	Gets the graph currently associated with a sequence
-     * @discussion	By default if no graph is assigned to a sequence then the sequence will create a default graph. 
+     * [@function]	MusicSequenceGetAUGraph
+     * 
+     * Gets the graph currently associated with a sequence
+     * 
+     * By default if no graph is assigned to a sequence then the sequence will create a default graph.
      * 			This default graph contains a MusicDevice and a DynamicsProcessor and all tracks will be targeted
      * 			to the MusicDevice.  On macOS, this MusicDevice is an instance of a software synthesizer that is 
      * 			compatible with the GM and GS MIDI standards.  On iOS, it is an instance of a monotimbral software 
@@ -4051,6 +4360,7 @@ public final class AudioToolbox {
      * 				sequences on iOS, create a custom graph with a MIDISynth audio unit as the MusicDevice.
      * 
      * 			This call will thus either return the graph as set by the user, or this default graph.
+     * 
      * @param		inSequence		the sequence
      * @param		outGraph		the graph
      */
@@ -4059,9 +4369,11 @@ public final class AudioToolbox {
     public static native int MusicSequenceGetAUGraph(MusicSequence inSequence, Ptr<AUGraph> outGraph);
 
     /**
-     * @function	MusicSequenceSetMIDIEndpoint
-     * @abstract	Makes the target of all of the tracks in the sequence a MIDI endpoint
-     * @discussion	This is a convenience function, and is equivalent to iterating through all of the tracks in a sequence
+     * [@function]	MusicSequenceSetMIDIEndpoint
+     * 
+     * Makes the target of all of the tracks in the sequence a MIDI endpoint
+     * 
+     * This is a convenience function, and is equivalent to iterating through all of the tracks in a sequence
      * 			and targeting each track to the MIDI endpoint
      * 
      * @param		inSequence		the sequence
@@ -4072,9 +4384,10 @@ public final class AudioToolbox {
     public static native int MusicSequenceSetMIDIEndpoint(MusicSequence inSequence, int inEndpoint);
 
     /**
-     * @function	MusicSequenceSetSequenceType
-     * @abstract	Set the sequence type (the default is beats)
-     * @discussion
+     * [@function]	MusicSequenceSetSequenceType
+     * 
+     * Set the sequence type (the default is beats)
+     * 
      * 			These two calls allow you to get and set a MusicSequence type; specifying
      * 				kMusicSequenceType_Beats		= 'beat',
      * 				kMusicSequenceType_Seconds		= 'secs',
@@ -4093,6 +4406,7 @@ public final class AudioToolbox {
      * 
      * 			A meta event of interest for Seconds based MIDI files is the SMPTE Offset meta event - stored in the tempo track.
      * 			The sequence doesn't do anything with this event (except store/write it)	
+     * 
      * @param		inSequence	the sequence
      * @param		inType		the sequence type
      */
@@ -4101,9 +4415,12 @@ public final class AudioToolbox {
     public static native int MusicSequenceSetSequenceType(MusicSequence inSequence, int inType);
 
     /**
-     * @function	MusicSequenceGetSequenceType
-     * @abstract	Get the sequence type
-     * @discussion	See SetSequence for a full description
+     * [@function]	MusicSequenceGetSequenceType
+     * 
+     * Get the sequence type
+     * 
+     * See SetSequence for a full description
+     * 
      * @param		inSequence		the sequence
      * @param		outType			the type
      */
@@ -4112,9 +4429,12 @@ public final class AudioToolbox {
     public static native int MusicSequenceGetSequenceType(MusicSequence inSequence, IntPtr outType);
 
     /**
-     * @function	MusicSequenceFileLoad
-     * @abstract	Load the data contained within the referenced file to the sequence
-     * @discussion	This function will parse the file referenced by the URL and add the events to the sequence.
+     * [@function]	MusicSequenceFileLoad
+     * 
+     * Load the data contained within the referenced file to the sequence
+     * 
+     * This function will parse the file referenced by the URL and add the events to the sequence.
+     * 
      * @param		inSequence		the sequence
      * @param		inFileRef		a file:// URL that references a file
      * @param		inFileTypeHint	provides a hint to the sequence on the file type being imported. Can be zero in many cases.
@@ -4127,10 +4447,13 @@ public final class AudioToolbox {
             int inFlags);
 
     /**
-     * @function	MusicSequenceFileLoadData
-     * @abstract	Load the data to the sequence
-     * @discussion	This function will parse the data and add the events to the sequence. The data provided needs to 
+     * [@function]	MusicSequenceFileLoadData
+     * 
+     * Load the data to the sequence
+     * 
+     * This function will parse the data and add the events to the sequence. The data provided needs to
      * 			be of a particular file type as specified by the fileTypeHint.
+     * 
      * @param		inSequence		the sequence
      * @param		inData			the contents of a valid file loaded into a CFData object
      * @param		inFileTypeHint	provides a hint to the sequence on the file type being imported. Can be zero in many cases.
@@ -4143,13 +4466,16 @@ public final class AudioToolbox {
             int inFlags);
 
     /**
-     * @function	MusicSequenceSetSMPTEResolution
-     * @abstract	Helper function to establish the SMPTE based MIDI file resolution for the specified ticks
-     * @discussion SMPTE resolution helpers for dealing with the interpretation and creation of
+     * [@function]	MusicSequenceSetSMPTEResolution
+     * 
+     * Helper function to establish the SMPTE based MIDI file resolution for the specified ticks
+     * 
+     * SMPTE resolution helpers for dealing with the interpretation and creation of
      * 			tick values for standard MIDI files (see MusicSequenceFileCreate)
+     * 
      * @param		fps		the frames per second
      * @param		ticks	the ticks per quarter note
-     * @result		the resolution that can be used when creating a MIDI file derived from the two parameters
+     * @return		the resolution that can be used when creating a MIDI file derived from the two parameters
      */
     @Generated
     @Inline
@@ -4157,10 +4483,13 @@ public final class AudioToolbox {
     public static native short MusicSequenceSetSMPTEResolution(byte fps, byte ticks);
 
     /**
-     * @function	MusicSequenceGetSMPTEResolution
-     * @abstract	Helper function to get the fps and ticks from their representation in a SMPTE based MIDI file
-     * @discussion SMPTE resolution helpers for dealing with the interpretation and creation of
+     * [@function]	MusicSequenceGetSMPTEResolution
+     * 
+     * Helper function to get the fps and ticks from their representation in a SMPTE based MIDI file
+     * 
+     * SMPTE resolution helpers for dealing with the interpretation and creation of
      * 			tick values for standard MIDI files (see MusicSequenceFileCreate)
+     * 
      * @param		inRes	the resolution from a MIDI file
      * @param		fps		the frames per second
      * @param		ticks	the ticks per quarter note
@@ -4171,9 +4500,11 @@ public final class AudioToolbox {
     public static native void MusicSequenceGetSMPTEResolution(short inRes, BytePtr fps, BytePtr ticks);
 
     /**
-     * @function	MusicSequenceFileCreate
-     * @abstract	Create a file from a sequence
-     * @discussion	This function can be (and is most commonly) used to create a MIDI file from the events in a sequence.
+     * [@function]	MusicSequenceFileCreate
+     * 
+     * Create a file from a sequence
+     * 
+     * This function can be (and is most commonly) used to create a MIDI file from the events in a sequence.
      * 			Only MIDI based events are used when creating the MIDI file. MIDI files are normally beat based, but
      * 			can also have a SMPTE (or real-time rather than beat time) representation.
      * 
@@ -4221,11 +4552,14 @@ public final class AudioToolbox {
             int inFlags, short inResolution);
 
     /**
-     * @function	MusicSequenceFileCreateData
-     * @abstract	Create a data object from a sequence
-     * @discussion	The same basic parameters apply to this as with the MusicSequenceFileCreate function. The difference
+     * [@function]	MusicSequenceFileCreateData
+     * 
+     * Create a data object from a sequence
+     * 
+     * The same basic parameters apply to this as with the MusicSequenceFileCreate function. The difference
      * 			being that that function will create a file on disk, whereas this one will create a CFData object
      * 			that is a file in memory. The CFData object should be released by the caller.
+     * 
      * @param		inSequence		the sequence
      * @param		inFileType		the type of file to create
      * @param		inFlags			flags to control the file creation
@@ -4238,8 +4572,10 @@ public final class AudioToolbox {
             short inResolution, Ptr<CFDataRef> outData);
 
     /**
-     * @function	MusicSequenceReverse
-     * @abstract	Reverse in time all events in a sequence, including the tempo events
+     * [@function]	MusicSequenceReverse
+     * 
+     * Reverse in time all events in a sequence, including the tempo events
+     * 
      * @param		inSequence		the sequence
      */
     @Generated
@@ -4247,9 +4583,12 @@ public final class AudioToolbox {
     public static native int MusicSequenceReverse(MusicSequence inSequence);
 
     /**
-     * @function	MusicSequenceGetSecondsForBeats
-     * @abstract	Returns a seconds value that would correspond to the supplied beats
-     * @discussion	Uses the sequence's tempo events 
+     * [@function]	MusicSequenceGetSecondsForBeats
+     * 
+     * Returns a seconds value that would correspond to the supplied beats
+     * 
+     * Uses the sequence's tempo events
+     * 
      * @param		inSequence		the sequence
      * @param		inBeats			the beats
      * @param		outSeconds		the seconds (time from 0 beat)
@@ -4260,9 +4599,12 @@ public final class AudioToolbox {
             DoublePtr outSeconds);
 
     /**
-     * @function	MusicSequenceGetBeatsForSeconds
-     * @abstract	Returns a beat value that would correspond to the supplied seconds from zero.
-     * @discussion	Uses the sequence's tempo events 
+     * [@function]	MusicSequenceGetBeatsForSeconds
+     * 
+     * Returns a beat value that would correspond to the supplied seconds from zero.
+     * 
+     * Uses the sequence's tempo events
+     * 
      * @param		inSequence		the sequence
      * @param		inSeconds		the seconds
      * @param		outBeats		the corresponding beat
@@ -4273,9 +4615,11 @@ public final class AudioToolbox {
             DoublePtr outBeats);
 
     /**
-     * @function	MusicSequenceSetUserCallback
-     * @abstract	Establish a user callback for a sequence
-     * @discussion	This call is used to register (or remove if inCallback is NULL) a callback
+     * [@function]	MusicSequenceSetUserCallback
+     * 
+     * Establish a user callback for a sequence
+     * 
+     * This call is used to register (or remove if inCallback is NULL) a callback
      * 			that the MusicSequence will call for ANY UserEvents that are added to any of the
      * 			tracks of the sequence.
      * 
@@ -4291,6 +4635,7 @@ public final class AudioToolbox {
      * 			In this case the start beat will still be less than the end beat (so your callback
      * 			can still determine that it is playing, and what beats are currently being scheduled),
      * 			however, the inEventTime will be the original time-stamped time of the user event. 
+     * 
      * @param		inSequence		the sequence
      * @param		inCallback		the callback
      * @param		inClientData	client (user supplied) data provided back to the callback when it is called by the sequence
@@ -4302,11 +4647,14 @@ public final class AudioToolbox {
             VoidPtr inClientData);
 
     /**
-     * @function	MusicSequenceBeatsToBarBeatTime
-     * @abstract	Convenience function to format a sequence's beat time to its bar-beat time
-     * @discussion	The sequence's tempo track Time Sig events are used to
+     * [@function]	MusicSequenceBeatsToBarBeatTime
+     * 
+     * Convenience function to format a sequence's beat time to its bar-beat time
+     * 
+     * The sequence's tempo track Time Sig events are used to
      * 			to calculate the bar-beat representation. If there are no Time Sig events added to the sequence
      * 			4/4 is assumed. A Time Sig event is a MIDI Meta Event as specified for MIDI files.
+     * 
      * @param		inSequence		the sequence
      * @param		inBeats			the beat which should be represented by the bar-beat
      * @param		inSubbeatDivisor	The denominator of the fractional number of beats.
@@ -4319,11 +4667,14 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") CABarBeatTime outBarBeatTime);
 
     /**
-     * @function	MusicSequenceBarBeatTimeToBeats
-     * @abstract	Convenience function to format a bar-beat time to a sequence's beat time
-     * @discussion	The sequence's tempo track Time Sig events are used to
+     * [@function]	MusicSequenceBarBeatTimeToBeats
+     * 
+     * Convenience function to format a bar-beat time to a sequence's beat time
+     * 
+     * The sequence's tempo track Time Sig events are used to
      * 			to calculate the bar-beat representation. If there are no Time Sig events added to the sequence
      * 			4/4 is assumed. A Time Sig event is a MIDI Meta Event as specified for MIDI files.
+     * 
      * @param		inSequence		the sequence
      * @param		inBarBeatTime	the bar-beat time
      * @param		outBeats		the sequence's beat time for that bar-beat time
@@ -4335,23 +4686,27 @@ public final class AudioToolbox {
             DoublePtr outBeats);
 
     /**
-     * @function	MusicSequenceGetInfoDictionary
-     * @abstract	Returns a dictionary containing meta-data derived from a sequence
-     * @discussion	The dictionary can contain one or more of the kAFInfoDictionary_* 
+     * [@function]	MusicSequenceGetInfoDictionary
+     * 
+     * Returns a dictionary containing meta-data derived from a sequence
+     * 
+     * The dictionary can contain one or more of the kAFInfoDictionary_*
      * 			keys specified in <AudioToolbox/AudioFile.h>
      * 
      * 			The caller should release the returned dictionary. If the call fails it will return NULL
      * 
      * @param		inSequence		the sequence
-     * @result		a CFDictionary or NULL if the call fails.
+     * @return		a CFDictionary or NULL if the call fails.
      */
     @Generated
     @CFunction
     public static native CFDictionaryRef MusicSequenceGetInfoDictionary(MusicSequence inSequence);
 
     /**
-     * @function	MusicTrackGetSequence
-     * @abstract	Gets the sequence which the track is a member of
+     * [@function]	MusicTrackGetSequence
+     * 
+     * Gets the sequence which the track is a member of
+     * 
      * @param		inTrack		the track
      * @param		outSequence the track's sequence
      */
@@ -4360,10 +4715,13 @@ public final class AudioToolbox {
     public static native int MusicTrackGetSequence(MusicTrack inTrack, Ptr<MusicSequence> outSequence);
 
     /**
-     * @function	MusicTrackSetDestNode
-     * @abstract	Sets the track's target to the specified AUNode
-     * @discussion	The node must be a member of the graph that the track's sequence is using. When played, the track
+     * [@function]	MusicTrackSetDestNode
+     * 
+     * Sets the track's target to the specified AUNode
+     * 
+     * The node must be a member of the graph that the track's sequence is using. When played, the track
      * 			will send all of its events to that node.
+     * 
      * @param		inTrack		the track
      * @param		inNode		the new node
      */
@@ -4372,9 +4730,12 @@ public final class AudioToolbox {
     public static native int MusicTrackSetDestNode(MusicTrack inTrack, int inNode);
 
     /**
-     * @function	MusicTrackSetDestMIDIEndpoint
-     * @abstract	Sets the track's target to the specified MIDI endpoint
-     * @discussion	When played, the track will send all of its events to the specified MIDI Endpoint.
+     * [@function]	MusicTrackSetDestMIDIEndpoint
+     * 
+     * Sets the track's target to the specified MIDI endpoint
+     * 
+     * When played, the track will send all of its events to the specified MIDI Endpoint.
+     * 
      * @param		inTrack		the track
      * @param		inEndpoint	the new MIDI endpoint
      */
@@ -4383,10 +4744,13 @@ public final class AudioToolbox {
     public static native int MusicTrackSetDestMIDIEndpoint(MusicTrack inTrack, int inEndpoint);
 
     /**
-     * @function	MusicTrackGetDestNode
-     * @abstract	Gets the track's target if it is an AUNode
-     * @discussion	Returns kAudioToolboxErr_IllegalTrackDestination if the track's target is a MIDIEndpointRef 
+     * [@function]	MusicTrackGetDestNode
+     * 
+     * Gets the track's target if it is an AUNode
+     * 
+     * Returns kAudioToolboxErr_IllegalTrackDestination if the track's target is a MIDIEndpointRef
      * 			and NOT an AUNode
+     * 
      * @param		inTrack		the track
      * @param		outNode		the node target for the track
      */
@@ -4395,10 +4759,13 @@ public final class AudioToolbox {
     public static native int MusicTrackGetDestNode(MusicTrack inTrack, IntPtr outNode);
 
     /**
-     * @function	MusicTrackGetDestMIDIEndpoint
-     * @abstract	Gets the track's target if it is a MIDI Endpoint
-     * @discussion	Returns kAudioToolboxErr_IllegalTrackDestination if the track's target is an AUNode 
+     * [@function]	MusicTrackGetDestMIDIEndpoint
+     * 
+     * Gets the track's target if it is a MIDI Endpoint
+     * 
+     * Returns kAudioToolboxErr_IllegalTrackDestination if the track's target is an AUNode
      * 			and NOT a MIDI Endpoint
+     * 
      * @param		inTrack		the track
      * @param		outEndpoint	the MIDI Endpoint target for the track
      */
@@ -4407,9 +4774,12 @@ public final class AudioToolbox {
     public static native int MusicTrackGetDestMIDIEndpoint(MusicTrack inTrack, IntPtr outEndpoint);
 
     /**
-     * @function	MusicTrackSetProperty
-     * @abstract	Sets the specified property value
-     * @discussion Property values are always get and set by reference
+     * [@function]	MusicTrackSetProperty
+     * 
+     * Sets the specified property value
+     * 
+     * Property values are always get and set by reference
+     * 
      * @param		inTrack			the track
      * @param		inPropertyID	the property ID
      * @param		inData			the new property value
@@ -4420,12 +4790,15 @@ public final class AudioToolbox {
     public static native int MusicTrackSetProperty(MusicTrack inTrack, int inPropertyID, VoidPtr inData, int inLength);
 
     /**
-     * @function	MusicTrackGetProperty
-     * @abstract	Gets the specified property value
-     * @discussion	If outData is NULL, then the size of the data will be passed back in ioLength
+     * [@function]	MusicTrackGetProperty
+     * 
+     * Gets the specified property value
+     * 
+     * If outData is NULL, then the size of the data will be passed back in ioLength
      * 			This allows the client to allocate a buffer of the correct size (useful for variable
      * 			length properties -- currently all properties have fixed size)
      * 			Property values are always get and set by reference
+     * 
      * @param		inTrack			the track
      * @param		inPropertyID	the property ID
      * @param		outData			if not NULL, points to data of size ioLength
@@ -4438,9 +4811,11 @@ public final class AudioToolbox {
             IntPtr ioLength);
 
     /**
-     * @function	MusicTrackMoveEvents
-     * @abstract	Move events in a track
-     * @discussion	Moves all of the events in the specified time range by the moveTime. MoveTime maybe negative to 
+     * [@function]	MusicTrackMoveEvents
+     * 
+     * Move events in a track
+     * 
+     * Moves all of the events in the specified time range by the moveTime. MoveTime maybe negative to
      * 			move events backwards (towards zero).
      * 
      * 			All time ranges are [starttime < endtime]
@@ -4456,9 +4831,12 @@ public final class AudioToolbox {
             double inMoveTime);
 
     /**
-     * @function	MusicTrackClear
-     * @abstract	Removes all events within the specified range
-     * @discussion	All time ranges are [starttime < endtime]
+     * [@function]	MusicTrackClear
+     * 
+     * Removes all events within the specified range
+     * 
+     * All time ranges are [starttime < endtime]
+     * 
      * @param		inTrack		the track
      * @param		inStartTime	the start time for the range of events
      * @param		inEndTime	the end time up to which will form the range of the events to clear
@@ -4468,9 +4846,11 @@ public final class AudioToolbox {
     public static native int MusicTrackClear(MusicTrack inTrack, double inStartTime, double inEndTime);
 
     /**
-     * @function	MusicTrackCut
-     * @abstract	Removes all the events within the specified range
-     * @discussion	Events that fall past the specified range will be moved back by the specified range time.
+     * [@function]	MusicTrackCut
+     * 
+     * Removes all the events within the specified range
+     * 
+     * Events that fall past the specified range will be moved back by the specified range time.
      * 
      * 			All time ranges are [starttime < endtime]
      * 
@@ -4483,9 +4863,11 @@ public final class AudioToolbox {
     public static native int MusicTrackCut(MusicTrack inTrack, double inStartTime, double inEndTime);
 
     /**
-     * @function	MusicTrackCopyInsert
-     * @abstract	Copies events from one track and inserts them into another
-     * @discussion	Copies all of the events with the specified time range of the source track. It then inserts
+     * [@function]	MusicTrackCopyInsert
+     * 
+     * Copies events from one track and inserts them into another
+     * 
+     * Copies all of the events with the specified time range of the source track. It then inserts
      * 			those events into the destination track. All events at and after inDestInsertTime in inDestTrack 
      * 			are moved forward by the range's duration
      * 
@@ -4503,9 +4885,11 @@ public final class AudioToolbox {
             double inSourceEndTime, MusicTrack inDestTrack, double inDestInsertTime);
 
     /**
-     * @function	MusicTrackMerge
-     * @abstract	Copies events from one track and merges them into another
-     * @discussion	Copies all of the events with the specified time range of the source track. It then merges
+     * [@function]	MusicTrackMerge
+     * 
+     * Copies events from one track and merges them into another
+     * 
+     * Copies all of the events with the specified time range of the source track. It then merges
      * 			those events into the destination track starting at inDestInsertTime.
      * 
      * 			All time ranges are [starttime < endtime]
@@ -4522,9 +4906,12 @@ public final class AudioToolbox {
             MusicTrack inDestTrack, double inDestInsertTime);
 
     /**
-     * @function	MusicTrackNewMIDINoteEvent
-     * @abstract	Adds a MIDINoteMessage event to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicTrackNewMIDINoteEvent
+     * 
+     * Adds a MIDINoteMessage event to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inMessage		the event
@@ -4535,9 +4922,12 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDINoteMessage inMessage);
 
     /**
-     * @function	MusicTrackNewMIDIChannelEvent
-     * @abstract	Adds a MIDIChannelMessage event to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicTrackNewMIDIChannelEvent
+     * 
+     * Adds a MIDIChannelMessage event to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inMessage		the event
@@ -4548,9 +4938,12 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIChannelMessage inMessage);
 
     /**
-     * @function	MusicTrackNewMIDIRawDataEvent
-     * @abstract	Adds a MIDIRawData event to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicTrackNewMIDIRawDataEvent
+     * 
+     * Adds a MIDIRawData event to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inRawData		the event
@@ -4561,9 +4954,12 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIRawData inRawData);
 
     /**
-     * @function	MusicTrackNewExtendedNoteEvent
-     * @abstract	Adds a ExtendedNoteOnEvent to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicTrackNewExtendedNoteEvent
+     * 
+     * Adds a ExtendedNoteOnEvent to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inInfo			the event
@@ -4574,9 +4970,12 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") ExtendedNoteOnEvent inInfo);
 
     /**
-     * @function	MusicTrackNewParameterEvent
-     * @abstract	Adds a ParameterEvent to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicTrackNewParameterEvent
+     * 
+     * Adds a ParameterEvent to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inInfo			the event
@@ -4587,9 +4986,12 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") ParameterEvent inInfo);
 
     /**
-     * @function	MusicTrackNewExtendedTempoEvent
-     * @abstract	Adds a tempo event to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicTrackNewExtendedTempoEvent
+     * 
+     * Adds a tempo event to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inBPM			the event
@@ -4599,9 +5001,12 @@ public final class AudioToolbox {
     public static native int MusicTrackNewExtendedTempoEvent(MusicTrack inTrack, double inTimeStamp, double inBPM);
 
     /**
-     * @function	MusicTrackNewMetaEvent
-     * @abstract	Adds a MIDIMetaEvent to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicTrackNewMetaEvent
+     * 
+     * Adds a MIDIMetaEvent to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inMetaEvent		the event
@@ -4612,9 +5017,12 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") MIDIMetaEvent inMetaEvent);
 
     /**
-     * @function	MusicEventUserData
-     * @abstract	Adds a MusicEventUserData event to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicEventUserData
+     * 
+     * Adds a MusicEventUserData event to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inUserData		the event
@@ -4625,9 +5033,12 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") MusicEventUserData inUserData);
 
     /**
-     * @function	MusicTrackNewAUPresetEvent
-     * @abstract	Adds a AUPresetEvent to a track
-     * @discussion	The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * [@function]	MusicTrackNewAUPresetEvent
+     * 
+     * Adds a AUPresetEvent to a track
+     * 
+     * The event is added at the specified time stamp. The time stamp should not be less than zero.
+     * 
      * @param		inTrack			the track
      * @param		inTimeStamp		the time stamp
      * @param		inPresetEvent	the event
@@ -4638,9 +5049,11 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AUPresetEvent inPresetEvent);
 
     /**
-     * @function	NewMusicEventIterator
-     * @abstract	Creates an iterator to iterator over a track's events
-     * @discussion	The iterator should be considered invalid if a track is edited. In that case you should create a new
+     * [@function]	NewMusicEventIterator
+     * 
+     * Creates an iterator to iterator over a track's events
+     * 
+     * The iterator should be considered invalid if a track is edited. In that case you should create a new
      * 			iterator and seek it to the desired position.
      * 
      * @param		inTrack			the track upon which to iterate
@@ -4651,8 +5064,10 @@ public final class AudioToolbox {
     public static native int NewMusicEventIterator(MusicTrack inTrack, Ptr<MusicEventIterator> outIterator);
 
     /**
-     * @function	DisposeMusicEventIterator
-     * @abstract	Dispose an iterator
+     * [@function]	DisposeMusicEventIterator
+     * 
+     * Dispose an iterator
+     * 
      * @param		inIterator		the iterator
      */
     @Generated
@@ -4660,14 +5075,17 @@ public final class AudioToolbox {
     public static native int DisposeMusicEventIterator(MusicEventIterator inIterator);
 
     /**
-     * @function	MusicEventIteratorSeek
-     * @abstract	Move the iterator to an event at the specified time
-     * @discussion If there is no event at the specified time, the iterator will point to the first event after
+     * [@function]	MusicEventIteratorSeek
+     * 
+     * Move the iterator to an event at the specified time
+     * 
+     * If there is no event at the specified time, the iterator will point to the first event after
      * 			that time.
      * 			By specifying kMusicTimeStamp_EndOfTrack you will position the iterator to the end of track
      * 			(which is pointing to the space just AFTER the last event). You can use MusicEventIteratorPreviousEvent 
      * 			to backup to the last event.
      * 			By specifying 0, you will position the iterator at the first event
+     * 
      * @param		inIterator		the iterator
      * @param		inTimeStamp		the time stamp to seek too
      */
@@ -4676,13 +5094,16 @@ public final class AudioToolbox {
     public static native int MusicEventIteratorSeek(MusicEventIterator inIterator, double inTimeStamp);
 
     /**
-     * @function	MusicEventIteratorNextEvent
-     * @abstract	Move the iterator to the next event
-     * @discussion If the iterator was at the last event, then it will move past the last event and will no longer point
+     * [@function]	MusicEventIteratorNextEvent
+     * 
+     * Move the iterator to the next event
+     * 
+     * If the iterator was at the last event, then it will move past the last event and will no longer point
      * 			to an event. You can use check MusicEventIteratorHasCurrentEvent to see if there is an event at the 
      * 			iterator's current position. See also MusicEventIteratorHasNextEvent.
      * 
      * 			Typically this call is used to move the iterator forwards through the track's events.
+     * 
      * @param		inIterator		the iterator
      */
     @Generated
@@ -4690,12 +5111,15 @@ public final class AudioToolbox {
     public static native int MusicEventIteratorNextEvent(MusicEventIterator inIterator);
 
     /**
-     * @function	MusicEventIteratorPreviousEvent
-     * @abstract	Move the iterator to the previous event
-     * @discussion If the iterator was at the first event, then it will leave the iterator unchanged and return an error. 
+     * [@function]	MusicEventIteratorPreviousEvent
+     * 
+     * Move the iterator to the previous event
+     * 
+     * If the iterator was at the first event, then it will leave the iterator unchanged and return an error.
      * 			See also MusicEventIteratorHasPreviousEvent
      * 
      * 			Typically this call is used to move the iterator backwards through the track's events.
+     * 
      * @param		inIterator		the iterator
      */
     @Generated
@@ -4703,9 +5127,11 @@ public final class AudioToolbox {
     public static native int MusicEventIteratorPreviousEvent(MusicEventIterator inIterator);
 
     /**
-     * @function	MusicEventIteratorGetEventInfo
-     * @abstract	Retrieves the event data at the iterator.
-     * @discussion Retrieves the event and other information from the iterator's current position.
+     * [@function]	MusicEventIteratorGetEventInfo
+     * 
+     * Retrieves the event data at the iterator.
+     * 
+     * Retrieves the event and other information from the iterator's current position.
      * 
      * 			If you do not want specific information (eg, the time stamp) pass in NULL for that parameter.
      * 
@@ -4723,9 +5149,11 @@ public final class AudioToolbox {
             IntPtr outEventType, Ptr<ConstVoidPtr> outEventData, IntPtr outEventDataSize);
 
     /**
-     * @function	MusicEventIteratorSetEventInfo
-     * @abstract	Changes the type or value of an event
-     * @discussion Allows you to change either the event type, or the values of the event data, that the iterator is 
+     * [@function]	MusicEventIteratorSetEventInfo
+     * 
+     * Changes the type or value of an event
+     * 
+     * Allows you to change either the event type, or the values of the event data, that the iterator is
      * 			currently pointing too. You cannot change the event's time (to do that you should use 
      * 			MusicEventIteratorSetEventTime).
      * 
@@ -4739,9 +5167,11 @@ public final class AudioToolbox {
             ConstVoidPtr inEventData);
 
     /**
-     * @function	MusicEventIteratorSetEventTime
-     * @abstract	Set a new time for an event
-     * @discussion The iterator will still be pointing to the same event, but as the event will have moved, 
+     * [@function]	MusicEventIteratorSetEventTime
+     * 
+     * Set a new time for an event
+     * 
+     * The iterator will still be pointing to the same event, but as the event will have moved,
      * 			it may or may not have a next or previous event now (depending of course on the time
      * 			you moved it too).
      * 
@@ -4753,9 +5183,11 @@ public final class AudioToolbox {
     public static native int MusicEventIteratorSetEventTime(MusicEventIterator inIterator, double inTimeStamp);
 
     /**
-     * @function	MusicEventIteratorDeleteEvent
-     * @abstract	Deletes the event pointed to by the iterator
-     * @discussion The iterator will reference the next event after the event has been deleted.
+     * [@function]	MusicEventIteratorDeleteEvent
+     * 
+     * Deletes the event pointed to by the iterator
+     * 
+     * The iterator will reference the next event after the event has been deleted.
      * 
      * @param		inIterator		the iterator
      */
@@ -4764,9 +5196,11 @@ public final class AudioToolbox {
     public static native int MusicEventIteratorDeleteEvent(MusicEventIterator inIterator);
 
     /**
-     * @function	MusicEventIteratorHasPreviousEvent
-     * @abstract	Does the track have an event previous to the event the iterator is pointing to?
-     * @discussion To use the iterator going backwards through a track:
+     * [@function]	MusicEventIteratorHasPreviousEvent
+     * 
+     * Does the track have an event previous to the event the iterator is pointing to?
+     * 
+     * To use the iterator going backwards through a track:
      * 				iter = New Iterator (points at first event)
      * 				MusicEventIteratorSeek (iter, kMusicTimeStamp_EndOfTrack) // will point it past the last event
      * 				bool hasPreviousEvent;
@@ -4777,6 +5211,7 @@ public final class AudioToolbox {
      * 
      * 					MusicEventIteratorHasPreviousEvent (iter, &hasPreviousEvent);
      * 				}				
+     * 
      * @param		inIterator		the iterator
      * @param		outHasPrevEvent	true if there is a previous event, false if not
      */
@@ -4785,9 +5220,11 @@ public final class AudioToolbox {
     public static native int MusicEventIteratorHasPreviousEvent(MusicEventIterator inIterator, BytePtr outHasPrevEvent);
 
     /**
-     * @function	MusicEventIteratorHasNextEvent
-     * @abstract	Does the track have an event past the event the iterator is pointing too?
-     * @discussion To use the iterator going forwards through a track:
+     * [@function]	MusicEventIteratorHasNextEvent
+     * 
+     * Does the track have an event past the event the iterator is pointing too?
+     * 
+     * To use the iterator going forwards through a track:
      * 				iter = New Iterator (points at first event)
      * 				bool hasCurrentEvent;
      * 				MusicEventIteratorHasCurrentEvent(iter, &hasCurrentEvent);
@@ -4806,8 +5243,10 @@ public final class AudioToolbox {
     public static native int MusicEventIteratorHasNextEvent(MusicEventIterator inIterator, BytePtr outHasNextEvent);
 
     /**
-     * @function	MusicEventIteratorHasCurrentEvent
-     * @abstract	Is there an event at the iterator's current position?
+     * [@function]	MusicEventIteratorHasCurrentEvent
+     * 
+     * Is there an event at the iterator's current position?
+     * 
      * @param		inIterator		the iterator
      * @param		outHasCurEvent	true if there is an event, false if not
      */
@@ -4831,25 +5270,25 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") FILE inFile);
 
     /**
-     * @function		CopyNameFromSoundBank
+     * [@function]		CopyNameFromSoundBank
      * 
-     * @discussion		This will return the name of a sound bank from a DLS or SF2 bank.
+     * This will return the name of a sound bank from a DLS or SF2 bank.
      * 	The name should be released by the caller.
      * 
      * @param			inURL
      * 		The URL for the sound bank.
      * @param			outName
      * 		A pointer to a CFStringRef to be created and returned by the function.
-     * @result			returns noErr if successful.
+     * @return			returns noErr if successful.
      */
     @Generated
     @CFunction
     public static native int CopyNameFromSoundBank(CFURLRef inURL, Ptr<CFStringRef> outName);
 
     /**
-     * @function		CopyInstrumentInfoFromSoundBank
+     * [@function]		CopyInstrumentInfoFromSoundBank
      * 
-     * @discussion		This will return a CFArray of CFDictionaries, one per instrument found in the DLS or SF2 bank.
+     * This will return a CFArray of CFDictionaries, one per instrument found in the DLS or SF2 bank.
      * 	Each dictionary will contain four items accessed via CFStringRef versions of the keys kInstrumentInfoKey_MSB,
      * 		kInstrumentInfoKey_LSB, kInstrumentInfoKey_Program, and kInstrumentInfoKey_Name.
      * 			MSB: An NSNumberRef for the most-significant byte of the bank number.  GM melodic banks will return 120 (0x78).
@@ -4867,16 +5306,17 @@ public final class AudioToolbox {
      * 			The URL for the sound bank.
      * @param			outInstrumentInfo
      * 		A pointer to a CFArrayRef to be created and returned by the function.
-     * @result			returns noErr if successful.
+     * @return			returns noErr if successful.
      */
     @Generated
     @CFunction
     public static native int CopyInstrumentInfoFromSoundBank(CFURLRef inURL, Ptr<CFArrayRef> outInstrumentInfo);
 
     /**
-     * @constant kAudioComponentRegistrationsChangedNotification
-     * @abstract Notification generated when the set of available AudioComponents changes.
-     * @discussion
+     * [@constant] kAudioComponentRegistrationsChangedNotification
+     * 
+     * Notification generated when the set of available AudioComponents changes.
+     * 
      * 	Register for this notification name with `[NSNotificationCenter defaultCenter]` or
      * 	`CFNotificationCenterGetLocalCenter()`, using an object of NULL.
      */
@@ -4885,9 +5325,10 @@ public final class AudioToolbox {
     public static native CFStringRef kAudioComponentRegistrationsChangedNotification();
 
     /**
-     * @constant kAudioComponentInstanceInvalidationNotification
-     * @abstract Notification generated when an audio unit extension process exits abnormally.
-     * @discussion
+     * [@constant] kAudioComponentInstanceInvalidationNotification
+     * 
+     * Notification generated when an audio unit extension process exits abnormally.
+     * 
      * 	Register for this notification name with `[NSNotificationCenter defaultCenter]` or
      * 	`CFNotificationCenterGetLocalCenter()`. The "object" refers to an AUAudioUnit instance to
      * 	be observed, or can be nil to observe all instances. The notification's userInfo
@@ -4950,19 +5391,20 @@ public final class AudioToolbox {
     public static native CFStringRef kAudioSession_AudioRouteKey_Type();
 
     /**
-     * @enum           AudioSession route input types
-     * @abstract       These are the strings used with the kAudioSession_AudioRouteKey_Type key for the CFDictionary associated 
+     * [@enum]           AudioSession route input types
+     * 
+     * These are the strings used with the kAudioSession_AudioRouteKey_Type key for the CFDictionary associated
      * with kAudioSession_AudioRouteKey_Inputs.
      * Available in iOS 5.0 or greater      
-     * @constant       kAudioSessionInputRoute_LineIn
+     * [@constant]       kAudioSessionInputRoute_LineIn
      * A line in input 
-     * @constant       kAudioSessionInputRoute_BuiltInMic
+     * [@constant]       kAudioSessionInputRoute_BuiltInMic
      * A built-in microphone input.  (Note that some devices like early iPods do not have this input)
-     * @constant       kAudioSessionInputRoute_HeadsetMic
+     * [@constant]       kAudioSessionInputRoute_HeadsetMic
      * A microphone that is part of a headset (combined microphone and headphones)
-     * @constant       kAudioSessionInputRoute_BluetoothHFP
+     * [@constant]       kAudioSessionInputRoute_BluetoothHFP
      * A microphone that is part of a Bluetooth Hands-Free Profile device
-     * @constant       kAudioSessionInputRoute_USBAudio
+     * [@constant]       kAudioSessionInputRoute_USBAudio
      * A Universal Serial Bus input
      */
     @Generated
@@ -4986,27 +5428,28 @@ public final class AudioToolbox {
     public static native CFStringRef kAudioSessionInputRoute_USBAudio();
 
     /**
-     * @enum           AudioSession route output types
-     * @abstract       These are strings used with the kAudioSession_AudioRouteKey_Type key for the CFDictionary associated 
+     * [@enum]           AudioSession route output types
+     * 
+     * These are strings used with the kAudioSession_AudioRouteKey_Type key for the CFDictionary associated
      * with kAudioSession_AudioRouteKey_Outputs. 
      * Available in iOS 5.0 or greater       
-     * @constant       kAudioSessionOutputRoute_LineOut
+     * [@constant]       kAudioSessionOutputRoute_LineOut
      * A line out output
-     * @constant       kAudioSessionOutputRoute_Headphones
+     * [@constant]       kAudioSessionOutputRoute_Headphones
      * Speakers in a headset (mic and headphones) or simple headphones
-     * @constant       kAudioSessionOutputRoute_BluetoothHFP
+     * [@constant]       kAudioSessionOutputRoute_BluetoothHFP
      * Speakers that are part of a Bluetooth Hands-Free Profile device
-     * @constant       kAudioSessionOutputRoute_BluetoothA2DP
+     * [@constant]       kAudioSessionOutputRoute_BluetoothA2DP
      * Speakers in a Bluetooth A2DP device
-     * @constant       kAudioSessionOutputRoute_BuiltInReceiver
+     * [@constant]       kAudioSessionOutputRoute_BuiltInReceiver
      * The speaker you hold to your ear when on a phone call
-     * @constant       kAudioSessionOutputRoute_BuiltInSpeaker
+     * [@constant]       kAudioSessionOutputRoute_BuiltInSpeaker
      * The built-in speaker
-     * @constant       kAudioSessionOutputRoute_USBAudio
+     * [@constant]       kAudioSessionOutputRoute_USBAudio
      * Speaker(s) in a Universal Serial Bus device
-     * @constant       kAudioSessionOutputRoute_HDMI
+     * [@constant]       kAudioSessionOutputRoute_HDMI
      * Output via High-Definition Multimedia Interface
-     * @constant       kAudioSessionOutputRoute_AirPlay
+     * [@constant]       kAudioSessionOutputRoute_AirPlay
      * Output on a remote Air Play device
      */
     @Generated
@@ -5324,18 +5767,20 @@ public final class AudioToolbox {
     }
 
     /**
-     * @function		AudioUnitExtensionSetComponentList
-     * @abstract		Allows the implementor of an audio unit extension to dynamically modify the
+     * [@function]		AudioUnitExtensionSetComponentList
+     * 
+     * Allows the implementor of an audio unit extension to dynamically modify the
      * 				list of component registrations for the extension.
+     * 
+     * 				Note that the bundle ID of the process calling this API must prefix (or match)
+     * 				the provided extension identifier.
+     * 
      * @param			extensionIdentifier
      * 					The bundle ID of the audio unit extension.
      * @param			audioComponentInfo
      * 					An array of dictionaries, one for each component, in the same format as
      * 					described in AudioComponent.h for the Info.plist key "AudioComponents".
-     *    @result         An OSStatus result code.
-     * @discussion
-     * 				Note that the bundle ID of the process calling this API must prefix (or match)
-     * 				the provided extension identifier.
+     *    @return         An OSStatus result code.
      */
     @Generated
     @CFunction
@@ -5343,11 +5788,13 @@ public final class AudioToolbox {
             CFArrayRef audioComponentInfo);
 
     /**
-     * @function		AudioUnitExtensionCopyComponentList
-     * @abstract		Returns the component registrations for a given audio unit extension.
+     * [@function]		AudioUnitExtensionCopyComponentList
+     * 
+     * Returns the component registrations for a given audio unit extension.
+     * 
      * @param			extensionIdentifier
      * 					The bundle ID of the audio unit extension.
-     * @result			An array of dictionaries, one for each component, in the same format as
+     * @return			An array of dictionaries, one for each component, in the same format as
      * 				described in AudioComponent.h for the Info.plist key "AudioComponents".
      * 				The caller should release this value when done with it.
      */
@@ -5356,9 +5803,9 @@ public final class AudioToolbox {
     public static native CFArrayRef AudioUnitExtensionCopyComponentList(CFStringRef extensionIdentifier);
 
     /**
-     * @function		AudioCodecGetPropertyInfo
+     * [@function]		AudioCodecGetPropertyInfo
      * 
-     * @discussion		Retrieve information about the given property. The outSize argument
+     * Retrieve information about the given property. The outSize argument
      * 				will return the size in bytes of the current value of the property.
      * 				The outWritable argument will return whether or not the property
      * 				in question can be changed.
@@ -5372,7 +5819,7 @@ public final class AudioToolbox {
      * @param			outWritable
      * 					Flag indicating wether the underlying property can be modified or not 
      * 
-     * @result			The OSStatus value
+     * @return			The OSStatus value
      */
     @Generated
     @CFunction
@@ -5380,9 +5827,9 @@ public final class AudioToolbox {
             BytePtr outWritable);
 
     /**
-     * @function		AudioCodecGetProperty
+     * [@function]		AudioCodecGetProperty
      * 
-     * @discussion		Retrieve the indicated property data. On input, ioDataSize has the size
+     * Retrieve the indicated property data. On input, ioDataSize has the size
      * 				of the data pointed to by outPropertyData. On output, ioDataSize will contain
      * 				the amount written.
      * 
@@ -5395,7 +5842,7 @@ public final class AudioToolbox {
      * @param			outPropertyData
      * 					Pointer to the property data buffer
      * 
-     * @result			The OSStatus value
+     * @return			The OSStatus value
      */
     @Generated
     @CFunction
@@ -5403,9 +5850,9 @@ public final class AudioToolbox {
             IntPtr ioPropertyDataSize, VoidPtr outPropertyData);
 
     /**
-     * @function		AudioCodecSetProperty
+     * [@function]		AudioCodecSetProperty
      * 
-     * @discussion		Set the indicated property data.
+     * Set the indicated property data.
      * 
      * @param			inCodec
      * 					An AudioCodec instance
@@ -5416,7 +5863,7 @@ public final class AudioToolbox {
      * @param			inPropertyData
      * 					Pointer to the property data buffer
      * 
-     * @result			The OSStatus value
+     * @return			The OSStatus value
      */
     @Generated
     @CFunction
@@ -5424,9 +5871,9 @@ public final class AudioToolbox {
             int inPropertyDataSize, ConstVoidPtr inPropertyData);
 
     /**
-     * @function		AudioCodecInitialize
+     * [@function]		AudioCodecInitialize
      * 
-     * @discussion		This call will allocate any buffers needed and otherwise set the codec
+     * This call will allocate any buffers needed and otherwise set the codec
      * 				up to perform the indicated translation. If an argument is NULL, any
      * 				previously set properties will be used for preparing the codec for work.
      * 				Note that this routine will also validate the format information as useable.
@@ -5442,7 +5889,7 @@ public final class AudioToolbox {
      * @param			inMagicCookieByteSize
      * 					Size in bytes of the magic cookie
      * 
-     * @result			The OSStatus value
+     * @return			The OSStatus value
      */
     @Generated
     @CFunction
@@ -5452,25 +5899,25 @@ public final class AudioToolbox {
             ConstVoidPtr inMagicCookie, int inMagicCookieByteSize);
 
     /**
-     * @function		AudioCodecUninitialize
+     * [@function]		AudioCodecUninitialize
      * 
-     * @discussion		This call will move the codec from the initialized state back to the
+     * This call will move the codec from the initialized state back to the
      * 				uninitialized state. The codec will release any resources it allocated
      * 				or claimed in AudioCodecInitialize.
      * 
      * @param			inCodec
      * 					An AudioCodec instance
      * 
-     * @result			The OSStatus value
+     * @return			The OSStatus value
      */
     @Generated
     @CFunction
     public static native int AudioCodecUninitialize(AudioComponentInstance inCodec);
 
     /**
-     * @function		AudioCodecAppendInputData
+     * [@function]		AudioCodecAppendInputData
      * 
-     * @discussion		Append as much of the given data in inInputData to the codec's input buffer as possible
+     * Append as much of the given data in inInputData to the codec's input buffer as possible
      * 				and return in ioInputDataByteSize the amount of data used.
      * 
      * 				The inPacketDescription argument is an array of AudioStreamPacketDescription
@@ -5493,7 +5940,7 @@ public final class AudioToolbox {
      * @param			inPacketDescription
      * 					The packet description pointer
      * 
-     * @result			The OSStatus value
+     * @return			The OSStatus value
      */
     @Generated
     @CFunction
@@ -5502,9 +5949,9 @@ public final class AudioToolbox {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamPacketDescription inPacketDescription);
 
     /**
-     * @function		AudioCodecProduceOutputPackets
+     * [@function]		AudioCodecProduceOutputPackets
      * 
-     * @discussion		Produce as many output packets as requested and the amount of input data
+     * Produce as many output packets as requested and the amount of input data
      * 				allows for. The outStatus argument returns information about the codec's
      * 				status to allow for proper data management. See the constants above for
      * 				the possible values that can be returned.
@@ -5528,7 +5975,7 @@ public final class AudioToolbox {
      * 					A pointer to the size
      * @param			ioNumberPackets
      * 					number of input/output packets
-     * @result			The OSStatus value
+     * @return			The OSStatus value
      */
     @Generated
     @CFunction
@@ -5554,42 +6001,45 @@ public final class AudioToolbox {
             IntPtr outStatus);
 
     /**
-     * @function		AudioCodecReset
+     * [@function]		AudioCodecReset
      * 
-     * @discussion		Flushes all the data in the codec and clears the input buffer. Note that
+     * Flushes all the data in the codec and clears the input buffer. Note that
      * 				the formats, and magic cookie will be retained so they won't need to be
      * 				set up again to decode the same data.
      * 
      * @param			inCodec The audio codec descriptor
      * 
-     * @result			the OSStatus value
+     * @return			the OSStatus value
      */
     @Generated
     @CFunction
     public static native int AudioCodecReset(AudioComponentInstance inCodec);
 
     /**
-     * @function       AudioComponentCopyIcon
-     * @abstract       Fetches an icon representing the component.
-     * @param          comp
-     * 	The component whose icon data is to be retrieved.
-     * @result
-     * 	A retained UIImage object.
-     * @discussion
+     * [@function]       AudioComponentCopyIcon
+     * 
+     * Fetches an icon representing the component.
+     * 
      * 	For a component originating in an app extension, the returned icon will be that of the
      * 	application containing the extension.
      * 
      * 	For components loaded from bundles, the icon will be that of the bundle.
      * 
      * 	The caller is responsible to release this value when done with it.
+     * 
+     * @param          comp
+     * 	The component whose icon data is to be retrieved.
+     * @return
+     * 	A retained UIImage object.
      */
     @Generated
     @CFunction
     public static native UIImage AudioComponentCopyIcon(AudioComponent comp);
 
     /**
-     * @fn		AudioWorkIntervalCreate
-     * @brief	Create an OS workgroup interval for use with audio realtime threads.
+     * [@fn]		AudioWorkIntervalCreate
+     * 
+     * Create an OS workgroup interval for use with audio realtime threads.
      * 
      * @param name
      * 	A name for the created work interval.

@@ -9,8 +9,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @abstract   MPSStates conforming to this protocol contain information about a image size elsewhere in the graph
- * @discussion In some graphs a sequence of operations are done, then they are undone ins a series of 'reverse'
+ * MPSStates conforming to this protocol contain information about a image size elsewhere in the graph
+ * 
+ * In some graphs a sequence of operations are done, then they are undone ins a series of 'reverse'
  *             operations. Examples might be pooling vs pooling gradient / upsampling,  or convolution vs. convolution transpose.
  *             In such cases, the 'reverse' pass generally is converting from a smaller image to a larger image,
  *             and there is insufficient information to do this correctly. Several answers exist and we don't know
@@ -28,7 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("MPSImageSizeEncodingState")
 public interface MPSImageSizeEncodingState {
     /**
-     * @abstract   The height of the source image passed to MPSCNNConvolution encode call.
+     * The height of the source image passed to MPSCNNConvolution encode call.
      */
     @Generated
     @Selector("sourceHeight")
@@ -36,7 +37,7 @@ public interface MPSImageSizeEncodingState {
     long sourceHeight();
 
     /**
-     * @abstract   The width of the source image passed to MPSCNNConvolution encode call.
+     * The width of the source image passed to MPSCNNConvolution encode call.
      */
     @Generated
     @Selector("sourceWidth")

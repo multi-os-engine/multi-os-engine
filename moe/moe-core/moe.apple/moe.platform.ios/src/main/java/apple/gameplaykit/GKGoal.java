@@ -104,6 +104,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal to align this agent's orientation with the average orientation of the group of agents.
+     * 
      * @param maxDistance the distance between agents before alignment happens
      * @param maxAngle the angle, in radians, between this agent's foward and the vector toward the other agent before alignment happens
      */
@@ -114,6 +115,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal to avoid colliding with a group of agents taking into account those agent's momentum
+     * 
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential collisions
      */
     @Generated
@@ -123,6 +125,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal to avoid colliding with a group of agents without taking into account those agents' momentum
+     * 
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential collisions
      */
     @Generated
@@ -132,6 +135,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal to seek the average position of the group of agents.
+     * 
      * @param maxDistance the distance between agents before cohesion happens
      * @param maxAngle the angle between this agent's foward and the vector toward the other agent before cohesion happens
      */
@@ -142,6 +146,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal to move away from the agent
+     * 
      * @param agent the agent to flee from
      */
     @Generated
@@ -150,6 +155,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal that will attempt to follow the given path
+     * 
      * @param path the path to follow
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential intercepts
      * @param forward direction to follow the path. forward = NO is reverse
@@ -161,6 +167,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal that will attempt to intercept another target agent taking into account that agent's momentum
+     * 
      * @param target agent to intercept
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential intercepts
      */
@@ -170,6 +177,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal that attempts to change our momentum to reach the target speed
+     * 
      * @param targetSpeed the target speed
      */
     @Generated
@@ -178,6 +186,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal to move toward the agent
+     * 
      * @param agent the agent to seek
      */
     @Generated
@@ -186,6 +195,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal that tries to repel this agent away from the other agents and attempts to prevent overlap
+     * 
      * @param maxDistance the distance between agents before repelling happens
      * @param maxAngle the angle, in radians, between this agent's foward and the vector toward the other agent before the repelling happens
      */
@@ -196,6 +206,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal that will attempt to stay on the given path
+     * 
      * @param path the path to follow
      * @param maxPredictionTime how far ahead in the future, in seconds, should we look for potential intercepts
      */
@@ -205,6 +216,7 @@ public class GKGoal extends NSObject implements NSCopying {
 
     /**
      * Creates a goal that will make the agent appear to wander, aimlessly moving forward and turning randomly
+     * 
      * @param speed the speed at which to wander
      */
     @Generated

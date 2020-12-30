@@ -21,9 +21,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol   MPSCNNConvolutionDataSource
- * @abstract   Provides convolution filter weights and bias terms
- * @discussion The MPSCNNConvolutionDataSource protocol declares the methods that an
+ * [@protocol]   MPSCNNConvolutionDataSource
+ * 
+ * Provides convolution filter weights and bias terms
+ * 
+ * The MPSCNNConvolutionDataSource protocol declares the methods that an
  *             instance of MPSCNNConvolution uses to obtain the weights and bias terms
  *             for the CNN convolution filter.
  * 
@@ -51,8 +53,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MPSCNNConvolutionDataSource")
 public interface MPSCNNConvolutionDataSource extends NSCopying {
     /**
-     * @abstract   Returns a pointer to the bias terms for the convolution.
-     * @discussion Each entry in the array is a single precision IEEE-754 float
+     * Returns a pointer to the bias terms for the convolution.
+     * 
+     * Each entry in the array is a single precision IEEE-754 float
      *             and represents one bias. The number of entries is equal
      *             to outputFeatureChannels.
      * 
@@ -67,8 +70,9 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     FloatPtr biasTerms();
 
     /**
-     * @abstract   Alerts MPS what sort of weights are provided by the object
-     * @discussion For MPSCNNConvolution, MPSDataTypeUInt8, MPSDataTypeFloat16
+     * Alerts MPS what sort of weights are provided by the object
+     * 
+     * For MPSCNNConvolution, MPSDataTypeUInt8, MPSDataTypeFloat16
      *             and MPSDataTypeFloat32 are supported for normal convolutions
      *             using MPSCNNConvolution. MPSCNNBinaryConvolution assumes weights to be
      *             of type MPSDataTypeUInt32 always.
@@ -78,13 +82,14 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     int dataType();
 
     /**
-     * @abstract   Return a MPSCNNConvolutionDescriptor as needed
-     * @discussion MPS will not modify this object other than perhaps to retain it.
+     * Return a MPSCNNConvolutionDescriptor as needed
+     * 
+     * MPS will not modify this object other than perhaps to retain it.
      *             User should set the appropriate neuron in the creation of convolution descriptor
      *             and for batch normalization use:
-     * @code
+     * [@code]
      *             -setBatchNormalizationParametersForInferenceWithMean:variance:gamma:beta:epsilon:
-     * @endcode
+     * [@endcode]
      * 
      * @return     A MPSCNNConvolutionDescriptor that describes the kernel housed by this object.
      */
@@ -93,16 +98,18 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     MPSCNNConvolutionDescriptor descriptor();
 
     /**
-     * @abstract   A label that is transferred to the convolution at init time
-     * @discussion Overridden by a MPSCNNConvolutionNode.label if it is non-nil.
+     * A label that is transferred to the convolution at init time
+     * 
+     * Overridden by a MPSCNNConvolutionNode.label if it is non-nil.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @abstract   Alerts the data source that the data will be needed soon
-     * @discussion Each load alert will be balanced by a purge later, when MPS
+     * Alerts the data source that the data will be needed soon
+     * 
+     * Each load alert will be balanced by a purge later, when MPS
      *             no longer needs the data from this object.
      *             Load will always be called atleast once after initial construction
      *             or each purge of the object before anything else is called.
@@ -112,6 +119,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      *             to save touching memory and keep the working set small.
      *             The load function is intended to be an opportunity to open
      *             files or mark memory no longer purgeable.
+     * 
      * @return     Returns YES on success.  If NO is returned, expect MPS
      *             object construction to fail.
      */
@@ -120,7 +128,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     boolean load_objc();
 
     /**
-     * @abstract       A pointer to a 256 entry lookup table containing the values to use for the weight range [0,255]
+     * A pointer to a 256 entry lookup table containing the values to use for the weight range [0,255]
      */
     @Generated
     @IsOptional
@@ -130,8 +138,9 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   Alerts the data source that the data is no longer needed
-     * @discussion Each load alert will be balanced by a purge later, when MPS
+     * Alerts the data source that the data is no longer needed
+     * 
+     * Each load alert will be balanced by a purge later, when MPS
      *             no longer needs the data from this object.
      */
     @Generated
@@ -139,12 +148,13 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     void purge();
 
     /**
-     * @abstract   Returns a pointer to the weights for the convolution.
-     * @discussion The type of each entry in array is given by -dataType. The number
+     * Returns a pointer to the weights for the convolution.
+     * 
+     * The type of each entry in array is given by -dataType. The number
      *             of entries is equal to:
-     *             @code
+     *             [@code]
      *                 inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth
-     *             @endcode
+     *             [@endcode]
      *             The layout of filter weight is as a 4D tensor (array)
      *             weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ]
      * 
@@ -163,7 +173,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     VoidPtr weights();
 
     /**
-     * @abstract  When copyWithZone:device on convolution is called, data source copyWithZone:device
+     * When copyWithZone:device on convolution is called, data source copyWithZone:device
      * will be called if data source object responds to this selector. If not, copyWithZone:
      * will be called if data source responds to it. Otherwise, it is simply retained.
      * This is to allow application to make a separate copy of data source in convolution
@@ -181,8 +191,9 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   Callback for the MPSNNGraph to update the convolution weights on GPU.
-     * @discussion It is the resposibility of this method to decrement the read count of both the gradientState
+     * Callback for the MPSNNGraph to update the convolution weights on GPU.
+     * 
+     * It is the resposibility of this method to decrement the read count of both the gradientState
      *             and the sourceState before returning.  BUG: prior to macOS 10.14, ios/tvos 12.0, the MPSNNGraph
      *             incorrectly decrements the readcount of the gradientState after this method is called.
      * 
@@ -205,9 +216,10 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   Callback for the MPSNNGraph to update the convolution weights on CPU.
+     * Callback for the MPSNNGraph to update the convolution weights on CPU.
      *                               MPSCNNConvolutionGradientNode.MPSNNTrainingStyle controls where you want your update
      *                              to happen. Provide implementation of this function for CPU side update.
+     * 
      *  @param      gradientState   A state object produced by the MPSCNNConvolution and updated by MPSCNNConvolutionGradient
      *                              containing weight gradients. MPSNNGraph is responsible for calling [gradientState synchronizeOnCommandBuffer:]
      *                              so that application get correct gradients for CPU side update.
@@ -227,7 +239,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     }
 
     /**
-     * @abstract Layout of weights returned by data source. Currently only OHWI layout is supported which is default.
+     * Layout of weights returned by data source. Currently only OHWI layout is supported which is default.
      * See MPSCNNConvolutionWeightsLayout above.
      */
     @Generated
@@ -238,7 +250,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     }
 
     /**
-     * @abstract       Quantizaiton type of weights. If it returns MPSCNNWeightsQuantizationTypeLookupTable,
+     * Quantizaiton type of weights. If it returns MPSCNNWeightsQuantizationTypeLookupTable,
      * lookupTableForUInt8Kernel method must be implmented. if it returns MPSCNNWeightsQuantizationTypeLookupLinear,
      * rangesForUInt8Kernel method must be implemented.
      */
@@ -250,8 +262,9 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
     }
 
     /**
-     * @abstract   Alerts MPS what weight precision to use in the CNNConvolution kernel
-     * @discussion If precision of weights returned by dataType does not match precision returned by
+     * Alerts MPS what weight precision to use in the CNNConvolution kernel
+     * 
+     * If precision of weights returned by dataType does not match precision returned by
      *             kernelWeightsDataType, weights are converted to precision specified by kernelWeightsDataType
      *             before being passed to kernel.
      *             For MPSCNNConvolution, dataType precisions of MPSDataTypeUInt8 or MPSDataTypeFloat16

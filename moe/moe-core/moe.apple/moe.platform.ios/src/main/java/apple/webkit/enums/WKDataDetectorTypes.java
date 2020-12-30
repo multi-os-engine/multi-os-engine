@@ -20,14 +20,15 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum WKDataDetectorTypes
- * @abstract The type of data detected.
- * @constant WKDataDetectorTypeNone No detection is performed.
- * @constant WKDataDetectorTypePhoneNumber Phone numbers are detected and turned into links.
- * @constant WKDataDetectorTypeLink URLs in text are detected and turned into links.
- * @constant WKDataDetectorTypeAddress Addresses are detected and turned into links.
- * @constant WKDataDetectorTypeCalendarEvent Dates and times that are in the future are detected and turned into links.
- * @constant WKDataDetectorTypeAll All of the above data types are turned into links when detected. Choosing this value will
+ * [@enum] WKDataDetectorTypes
+ * 
+ * The type of data detected.
+ * [@constant] WKDataDetectorTypeNone No detection is performed.
+ * [@constant] WKDataDetectorTypePhoneNumber Phone numbers are detected and turned into links.
+ * [@constant] WKDataDetectorTypeLink URLs in text are detected and turned into links.
+ * [@constant] WKDataDetectorTypeAddress Addresses are detected and turned into links.
+ * [@constant] WKDataDetectorTypeCalendarEvent Dates and times that are in the future are detected and turned into links.
+ * [@constant] WKDataDetectorTypeAll All of the above data types are turned into links when detected. Choosing this value will
  * automatically include any new detection type that is added.
  */
 @Generated

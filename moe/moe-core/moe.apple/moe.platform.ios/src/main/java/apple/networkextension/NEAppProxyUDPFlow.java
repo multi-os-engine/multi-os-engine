@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEAppProxyUDPFlow
- * @discussion The NEAppProxyUDPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider implementations to proxy the payload of UDP datagrams.
+ * [@interface] NEAppProxyUDPFlow
+ * 
+ * The NEAppProxyUDPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider implementations to proxy the payload of UDP datagrams.
  * 
  * NEAppProxyUDPFlow is part of NetworkExtension.framework.
  * 
@@ -166,16 +167,19 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     public native NEAppProxyUDPFlow init();
 
     /**
-     * @property localEndpoint
-     * @discussion An NWEndpoint object containing the local endpoint of the flow's corresponding socket.
+     * [@property] localEndpoint
+     * 
+     * An NWEndpoint object containing the local endpoint of the flow's corresponding socket.
      */
     @Generated
     @Selector("localEndpoint")
     public native NWEndpoint localEndpoint();
 
     /**
-     * @method readDatagramWithCompletionHandler:
-     * @discussion Read a datagram from the flow.
+     * readDatagramWithCompletionHandler:
+     * 
+     * Read a datagram from the flow.
+     * 
      * @param completionHandler A block that will be executed when datagrams have been read from the flow. The block takes the datagrams that were read, the destination endpoints of the datagrams, and an NSError. If an error occurred while reading then the error parameter will be non-nil. If the datagrams and remoteEndpoints arrays are non-nill but
      */
     @Generated
@@ -184,8 +188,10 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
             @ObjCBlock(name = "call_readDatagramsWithCompletionHandler") Block_readDatagramsWithCompletionHandler completionHandler);
 
     /**
-     * @method writeDatagram:sentByEndpoint:completionHandler:
-     * @discussion Write a datagram to the flow.
+     * writeDatagram:sentByEndpoint:completionHandler:
+     * 
+     * Write a datagram to the flow.
+     * 
      * @param datagrams An array of NSData objects containing the data to be written.
      * @param remoteEndpoints The source endpoints of the datagrams.
      * @param completionHandler A block that will be executed when the datagrams have been written to the corresponding socket's receive buffer.

@@ -75,7 +75,7 @@ public class UIContextMenuConfiguration extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract Returns a UIContextMenuConfiguration.
+     * Returns a UIContextMenuConfiguration.
      * 
      * @param identifier       Optional unique identifier. If omitted, an NSUUID will be generated. May be used to
      *                         identify this configuration throughout the interaction's lifecycle.

@@ -89,11 +89,13 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     /**
      *  Inference encode calls
-     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * 
+     * Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * 
      * @param      cmdBuf          The command buffer into which to encode the kernel
      * @param      sourceArrays    The list of sources for the filter in a NSArray.
      *                             Ordering to be defined by subclass
-     * @result     A newly allocated MPSNDArray that will contain the result of the calculation
+     * @return     A newly allocated MPSNDArray that will contain the result of the calculation
      *             when the command buffer completes successfully.
      */
     @Generated
@@ -102,7 +104,8 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
             NSArray<? extends MPSNDArray> sourceArrays);
 
     /**
-     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * 
      * @param      cmdBuf          The command buffer into which to encode the kernel
      * @param      sourceArrays    The list of sources for the filter in a NSArray.
      *                             Ordering to be defined by subclass
@@ -115,7 +118,8 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
             MPSNDArray destination);
 
     /**
-     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * 
      * @param      cmdBuf          The command buffer into which to encode the kernel
      * @param      sourceArrays    The list of sources for the filter in a NSArray.
      *                             Ordering to be defined by subclass
@@ -131,13 +135,15 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     /**
      *  Forward training encode calls
-     * @abstract   Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * 
+     * Encode a simple inference NDArray kernel and return a NDArray to hold the result
+     * 
      * @param      cmdBuf          The command buffer into which to encode the kernel
      * @param      sourceArrays    The list of sources for the filter in a NSArray.
      *                             Ordering to be defined by subclass
      * @param      outGradientState If non-nil, the address output gradient state is written to this address
      * @param      outputStateIsTemporary  If YES, the state if any will be allocated to contain temporary textures and buffers as needed
-     * @result     A newly allocated MPSNDArray that will contain the result of the calculation
+     * @return     A newly allocated MPSNDArray that will contain the result of the calculation
      *             when the command buffer completes successfully.
      */
     @Generated

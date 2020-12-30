@@ -94,8 +94,9 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
     public native MPSNNConcatenationNode init();
 
     /**
-     * @abstract   Init a node that concatenates feature channels from multiple images
-     * @discussion In some neural network designs, it is necessary to append feature channels
+     * Init a node that concatenates feature channels from multiple images
+     * 
+     * In some neural network designs, it is necessary to append feature channels
      *             from one neural network filter to the results of another. If we have three
      *             image nodes with M, N and O feature channels in them, passed to -initWithSources:
      *             as @[imageM, imageN, imageO], then feature channels [0,M-1] will be drawn from
@@ -155,8 +156,9 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract   Init a autoreleased node that concatenates feature channels from multiple images
-     * @discussion In some neural network designs, it is necessary to append feature channels
+     * Init a autoreleased node that concatenates feature channels from multiple images
+     * 
+     * In some neural network designs, it is necessary to append feature channels
      *             from one neural network filter to the results of another. If we have three
      *             image nodes with M, N and O feature channels in them, passed to -initWithSources:
      *             as @[imageM, imageN, imageO], then feature channels [0,M-1] will be drawn from

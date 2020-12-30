@@ -160,9 +160,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public static native long version_static();
 
     /**
-     * @property       extendedLanguageTag
-     * @abstract       Indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier.
-     * @discussion
+     * [@property]       extendedLanguageTag
+     * 
+     * Indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier.
+     * 
      *   The default value is nil.
      */
     @Generated
@@ -174,22 +175,30 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native AVMutableCompositionTrack init();
 
     /**
-     * @method         insertEmptyTimeRange:
-     * @abstract       Adds or extends an empty timeRange within the composition track.
-     * @param          timeRange
-     *                 Specifies the empty timeRange to be inserted.
-     * @discussion
+     * insertEmptyTimeRange:
+     * 
+     * Adds or extends an empty timeRange within the composition track.
+     * 
      *   If you insert an empty timeRange into the track, any media that was presented during that interval prior to the insertion will be presented instead immediately afterward.
      *   The exact meaning of the term "empty timeRange" depends upon the mediaType of the track. For example, an empty timeRange in a sound track presents silence.
      *   Note that you cannot add empty time ranges to the end of a composition track.
+     * 
+     * @param          timeRange
+     *                 Specifies the empty timeRange to be inserted.
      */
     @Generated
     @Selector("insertEmptyTimeRange:")
     public native void insertEmptyTimeRange(@ByValue CMTimeRange timeRange);
 
     /**
-     * @method         insertTimeRange:ofTrack:atTime:error:
-     * @abstract       Inserts a timeRange of a source track into a track of a composition.
+     * insertTimeRange:ofTrack:atTime:error:
+     * 
+     * Inserts a timeRange of a source track into a track of a composition.
+     * 
+     *   You provide a reference to an AVAssetTrack and the timeRange within it that you want to insert. You specify the start time in the target composition track at which the timeRange should be inserted.
+     * 
+     *   Note that the inserted track timeRange will be presented at its natural duration and rate. It can be scaled to a different duration (and presented at a different rate) via -scaleTimeRange:toDuration:.
+     * 
      * @param          timeRange
      *                 Specifies the timeRange of the track to be inserted.
      * @param          track
@@ -198,11 +207,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      *                 Specifies the time at which the inserted track is to be presented by the composition track. You may pass kCMTimeInvalid for startTime to indicate that the timeRange should be appended to the end of the track.
      * @param          error
      *                 Describes failures that may be reported to the user, e.g. the asset that was selected for insertion in the composition is restricted by copy-protection.
-     * @result         A BOOL value indicating the success of the insertion.
-     * @discussion
-     *   You provide a reference to an AVAssetTrack and the timeRange within it that you want to insert. You specify the start time in the target composition track at which the timeRange should be inserted.
-     * 
-     *   Note that the inserted track timeRange will be presented at its natural duration and rate. It can be scaled to a different duration (and presented at a different rate) via -scaleTimeRange:toDuration:.
+     * @return         A BOOL value indicating the success of the insertion.
      */
     @Generated
     @Selector("insertTimeRange:ofTrack:atTime:error:")
@@ -210,8 +215,12 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
             @ByValue CMTime startTime, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method         insertTimeRanges:ofTracks:atTime:error:
-     * @abstract       Inserts the timeRanges of multiple source tracks into a track of a composition.
+     * insertTimeRanges:ofTracks:atTime:error:
+     * 
+     * Inserts the timeRanges of multiple source tracks into a track of a composition.
+     * 
+     *   This method is equivalent to (but more efficient than) calling -insertTimeRange:ofTrack:atTime:error: for each timeRange/track pair. If this method returns an error, none of the time ranges will be inserted into the composition track. To specify an empty time range, pass NSNull for the track and a time range of starting at kCMTimeInvalid with a duration of the desired empty edit.
+     * 
      * @param          timeRanges
      *                 Specifies the timeRanges to be inserted. An NSArray of NSValues containing CMTimeRange. (See +[NSValue valueWithCMTimeRange:] in AVTime.h.)
      * @param          tracks
@@ -220,9 +229,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      *                 Specifies the time at which the inserted tracks are to be presented by the composition track. You may pass kCMTimeInvalid for startTime to indicate that the timeRanges should be appended to the end of the track.
      * @param          error
      *                 Describes failures that may be reported to the user, e.g. the asset that was selected for insertion in the composition is restricted by copy-protection.
-     * @result         A BOOL value indicating the success of the insertion.
-     * @discussion
-     *   This method is equivalent to (but more efficient than) calling -insertTimeRange:ofTrack:atTime:error: for each timeRange/track pair. If this method returns an error, none of the time ranges will be inserted into the composition track. To specify an empty time range, pass NSNull for the track and a time range of starting at kCMTimeInvalid with a duration of the desired empty edit.
+     * @return         A BOOL value indicating the success of the insertion.
      */
     @Generated
     @Selector("insertTimeRanges:ofTracks:atTime:error:")
@@ -231,9 +238,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property       languageCode
-     * @abstract       Indicates the language associated with the track, as an ISO 639-2/T language code.
-     * @discussion
+     * [@property]       languageCode
+     * 
+     * Indicates the language associated with the track, as an ISO 639-2/T language code.
+     * 
      *   The default value is nil.
      */
     @Generated
@@ -241,9 +249,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native String languageCode();
 
     /**
-     * @property       naturalTimeScale
-     * @abstract       Indicates a timescale in which time values for the track can be operated upon without extraneous numerical conversion.
-     * @discussion
+     * [@property]       naturalTimeScale
+     * 
+     * Indicates a timescale in which time values for the track can be operated upon without extraneous numerical conversion.
+     * 
      *   If not set, the value is the naturalTimeScale of the first non-empty edit, or 600 if there are no non-empty edits.
      *   Set to 0 to revert to default behavior.
      */
@@ -252,9 +261,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native int naturalTimeScale();
 
     /**
-     * @property       preferredTransform
-     * @abstract       The preferred transformation of the visual media data for display purposes.
-     * @discussion
+     * [@property]       preferredTransform
+     * 
+     * The preferred transformation of the visual media data for display purposes.
+     * 
      *   The default value is CGAffineTransformIdentity.
      */
     @Generated
@@ -263,9 +273,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native CGAffineTransform preferredTransform();
 
     /**
-     * @property       preferredVolume
-     * @abstract       The preferred volume of the audible media data.
-     * @discussion
+     * [@property]       preferredVolume
+     * 
+     * The preferred volume of the audible media data.
+     * 
      *   The default value is 1.0.
      */
     @Generated
@@ -273,35 +284,40 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native float preferredVolume();
 
     /**
-     * @method         removeTimeRange:
-     * @abstract       Removes a specified timeRange from the track.
+     * removeTimeRange:
+     * 
+     * Removes a specified timeRange from the track.
+     * 
+     *   Removal of a timeRange does not cause the track to be removed from the composition. Instead it removes or truncates track segments that intersect with the timeRange.
+     * 
      * @param          timeRange
      *                 Specifies the timeRange to be removed.
-     * @discussion
-     *   Removal of a timeRange does not cause the track to be removed from the composition. Instead it removes or truncates track segments that intersect with the timeRange.
      */
     @Generated
     @Selector("removeTimeRange:")
     public native void removeTimeRange(@ByValue CMTimeRange timeRange);
 
     /**
-     * @method         scaleTimeRange:toDuration:
-     * @abstract       Changes the duration of a timeRange of the track.
+     * scaleTimeRange:toDuration:
+     * 
+     * Changes the duration of a timeRange of the track.
+     * 
+     *   Each trackSegment affected by the scaling operation will be presented at a rate equal to source.duration / target.duration of its resulting timeMapping.
+     * 
      * @param          timeRange
      *                 Specifies the timeRange of the track to be scaled.
      * @param          duration
      *                 Specifies the new duration of the timeRange.
-     * @discussion
-     *   Each trackSegment affected by the scaling operation will be presented at a rate equal to source.duration / target.duration of its resulting timeMapping.
      */
     @Generated
     @Selector("scaleTimeRange:toDuration:")
     public native void scaleTimeRangeToDuration(@ByValue CMTimeRange timeRange, @ByValue CMTime duration);
 
     /**
-     * @property       segments
-     * @abstract       Provides read/write access to the array of track segments, each an instance of AVCompositionTrackSegment.
-     * @discussion
+     * [@property]       segments
+     * 
+     * Provides read/write access to the array of track segments, each an instance of AVCompositionTrackSegment.
+     * 
      *   Note that timeMapping.target.start of the first AVCompositionTrackSegment must be kCMTimeZero, and the timeMapping.target.start of each subsequent AVCompositionTrackSegment must equal CMTimeRangeGetEnd(the previous AVCompositionTrackSegment's timeMapping.target).
      *   Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments conforms to this rule.
      */
@@ -310,9 +326,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native NSArray<? extends AVCompositionTrackSegment> segments();
 
     /**
-     * @property       extendedLanguageTag
-     * @abstract       Indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier.
-     * @discussion
+     * [@property]       extendedLanguageTag
+     * 
+     * Indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier.
+     * 
      *   The default value is nil.
      */
     @Generated
@@ -320,9 +337,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native void setExtendedLanguageTag(String value);
 
     /**
-     * @property       languageCode
-     * @abstract       Indicates the language associated with the track, as an ISO 639-2/T language code.
-     * @discussion
+     * [@property]       languageCode
+     * 
+     * Indicates the language associated with the track, as an ISO 639-2/T language code.
+     * 
      *   The default value is nil.
      */
     @Generated
@@ -330,9 +348,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native void setLanguageCode(String value);
 
     /**
-     * @property       naturalTimeScale
-     * @abstract       Indicates a timescale in which time values for the track can be operated upon without extraneous numerical conversion.
-     * @discussion
+     * [@property]       naturalTimeScale
+     * 
+     * Indicates a timescale in which time values for the track can be operated upon without extraneous numerical conversion.
+     * 
      *   If not set, the value is the naturalTimeScale of the first non-empty edit, or 600 if there are no non-empty edits.
      *   Set to 0 to revert to default behavior.
      */
@@ -341,9 +360,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native void setNaturalTimeScale(int value);
 
     /**
-     * @property       preferredTransform
-     * @abstract       The preferred transformation of the visual media data for display purposes.
-     * @discussion
+     * [@property]       preferredTransform
+     * 
+     * The preferred transformation of the visual media data for display purposes.
+     * 
      *   The default value is CGAffineTransformIdentity.
      */
     @Generated
@@ -351,9 +371,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native void setPreferredTransform(@ByValue CGAffineTransform value);
 
     /**
-     * @property       preferredVolume
-     * @abstract       The preferred volume of the audible media data.
-     * @discussion
+     * [@property]       preferredVolume
+     * 
+     * The preferred volume of the audible media data.
+     * 
      *   The default value is 1.0.
      */
     @Generated
@@ -361,9 +382,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native void setPreferredVolume(float value);
 
     /**
-     * @property       segments
-     * @abstract       Provides read/write access to the array of track segments, each an instance of AVCompositionTrackSegment.
-     * @discussion
+     * [@property]       segments
+     * 
+     * Provides read/write access to the array of track segments, each an instance of AVCompositionTrackSegment.
+     * 
      *   Note that timeMapping.target.start of the first AVCompositionTrackSegment must be kCMTimeZero, and the timeMapping.target.start of each subsequent AVCompositionTrackSegment must equal CMTimeRangeGetEnd(the previous AVCompositionTrackSegment's timeMapping.target).
      *   Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments conforms to this rule.
      */
@@ -372,15 +394,17 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native void setSegments(NSArray<? extends AVCompositionTrackSegment> value);
 
     /**
-     * @method         validateTrackSegments:error:
-     * @abstract       Tests an array of AVCompositionTrackSegments to determine whether they conform to the timing rules noted above (see the property key @"trackSegments").
+     * validateTrackSegments:error:
+     * 
+     * Tests an array of AVCompositionTrackSegments to determine whether they conform to the timing rules noted above (see the property key @"trackSegments").
+     * 
+     *   The array is tested for suitability for setting as the value of the trackSegments property. If a portion of an existing trackSegments array is to be modified, the modification can be made via an instance of NSMutableArray, and the resulting array can be tested via -validateTrackSegments:error:.
+     * 
      * @param          trackSegments
      *                 The array of AVCompositionTrackSegments to be validated.
      * @param          error
      *                 If validation fais, returns information about the failure.
-     * @result         YES if validation suceeds, otherwise NO.
-     * @discussion
-     *   The array is tested for suitability for setting as the value of the trackSegments property. If a portion of an existing trackSegments array is to be modified, the modification can be made via an instance of NSMutableArray, and the resulting array can be tested via -validateTrackSegments:error:.
+     * @return         YES if validation suceeds, otherwise NO.
      */
     @Generated
     @Selector("validateTrackSegments:error:")
@@ -388,8 +412,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method			addTrackAssociationToTrack:type:
-     * @abstract		Establishes a track association of a specific type between two tracks.
+     * addTrackAssociationToTrack:type:
+     * 
+     * Establishes a track association of a specific type between two tracks.
+     * 
      * @param			compositionTrack
      * 				An AVCompositionTrack object that is to be associated with the receiver.
      * @param			trackAssociationType
@@ -400,16 +426,19 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     public native void addTrackAssociationToTrackType(AVCompositionTrack compositionTrack, String trackAssociationType);
 
     /**
-     * @property       enabled
-     * @abstract       Specifies whether the track is enabled or disabled.  Default is YES.
+     * [@property]       enabled
+     * 
+     * Specifies whether the track is enabled or disabled.  Default is YES.
      */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
     /**
-     * @method			removeTrackAssociationToTrack:type:
-     * @abstract		Removes a track association of a specific type between two tracks.
+     * removeTrackAssociationToTrack:type:
+     * 
+     * Removes a track association of a specific type between two tracks.
+     * 
      * @param			compositionTrack
      * 				An AVCompositionTrack object that is associated with the receiver.
      * @param			trackAssociationType
@@ -421,13 +450,16 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
             String trackAssociationType);
 
     /**
-     * @method			replaceFormatDescription:withFormatDescription:
-     * @abstract		Replaces one of the receiver's format descriptions with another format description or cancels a previous replacement.
+     * replaceFormatDescription:withFormatDescription:
+     * 
+     * Replaces one of the receiver's format descriptions with another format description or cancels a previous replacement.
+     * 
+     * You can use this method to make surgical changes to a track's format descriptions, such as adding format description extensions to a format description or changing the audio channel layout of an audio track. You should note that a format description can have extensions of type kCMFormatDescriptionExtension_VerbatimSampleDescription and kCMFormatDescriptionExtension_VerbatimISOSampleEntry; if you modify a copy of a format description, you should delete those extensions from the copy or your changes might be ignored. Also note that format description replacements are not transferred when performing editing operations on AVMutableCompositionTrack objects; for instance, inserting a range of a composition track into another composition track does not transfer any replacement format descriptions.
+     * 
      * @param			originalFormatDescription
      * 				A CMFormatDescription occurring in the underlying asset track.
      * @param			replacementFormatDescription
      * 				A CMFormatDescription to replace the specified format description or NULL to indicate that a previous replacement of originalFormatDescription should be cancelled.
-     * @discussion     You can use this method to make surgical changes to a track's format descriptions, such as adding format description extensions to a format description or changing the audio channel layout of an audio track. You should note that a format description can have extensions of type kCMFormatDescriptionExtension_VerbatimSampleDescription and kCMFormatDescriptionExtension_VerbatimISOSampleEntry; if you modify a copy of a format description, you should delete those extensions from the copy or your changes might be ignored. Also note that format description replacements are not transferred when performing editing operations on AVMutableCompositionTrack objects; for instance, inserting a range of a composition track into another composition track does not transfer any replacement format descriptions.
      */
     @Generated
     @Selector("replaceFormatDescription:withFormatDescription:")
@@ -435,8 +467,9 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
             CMFormatDescriptionRef replacementFormatDescription);
 
     /**
-     * @property       enabled
-     * @abstract       Specifies whether the track is enabled or disabled.  Default is YES.
+     * [@property]       enabled
+     * 
+     * Specifies whether the track is enabled or disabled.  Default is YES.
      */
     @Generated
     @Selector("setEnabled:")

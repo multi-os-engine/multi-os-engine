@@ -42,11 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVFrameRateRange
- * @abstract
+ * AVFrameRateRange
+ * 
  *    An AVFrameRateRange expresses a range of valid frame rates as min and max rate and min and max duration.
  * 
- * @discussion
  *    An AVCaptureDevice exposes an array of formats, and its current activeFormat may be queried. The payload for the formats property is an array of AVCaptureDeviceFormat objects and the activeFormat property payload is an AVCaptureDeviceFormat. AVCaptureDeviceFormat wraps a CMFormatDescription and expresses a range of valid video frame rates as an NSArray of AVFrameRateRange objects. AVFrameRateRange expresses min and max frame rate as a rate in frames per second and duration (CMTime). An AVFrameRateRange object is immutable. Its values do not change for the life of the object.
  */
 @Generated
@@ -165,11 +164,10 @@ public class AVFrameRateRange extends NSObject {
     public native AVFrameRateRange init();
 
     /**
-     * @property maxFrameDuration
-     * @abstract
+     * [@property] maxFrameDuration
+     * 
      *    A CMTime indicating the maximum frame duration supported by this range.
      * 
-     * @discussion
      *    This read-only property indicates the maximum frame duration supported by this range. It is the reciprocal of minFrameRate, and expresses minFrameRate as a duration.
      */
     @Generated
@@ -178,11 +176,10 @@ public class AVFrameRateRange extends NSObject {
     public native CMTime maxFrameDuration();
 
     /**
-     * @property maxFrameRate
-     * @abstract
+     * [@property] maxFrameRate
+     * 
      *    A Float64 indicating the maximum frame rate supported by this range.
      * 
-     * @discussion
      *    This read-only property indicates the maximum frame rate supported by this range in frames per second.
      */
     @Generated
@@ -190,11 +187,10 @@ public class AVFrameRateRange extends NSObject {
     public native double maxFrameRate();
 
     /**
-     * @property minFrameDuration
-     * @abstract
+     * [@property] minFrameDuration
+     * 
      *    A CMTime indicating the minimum frame duration supported by this range.
      * 
-     * @discussion
      *    This read-only property indicates the minimum frame duration supported by this range. It is the reciprocal of maxFrameRate, and expresses maxFrameRate as a duration.
      */
     @Generated
@@ -203,11 +199,10 @@ public class AVFrameRateRange extends NSObject {
     public native CMTime minFrameDuration();
 
     /**
-     * @property minFrameRate
-     * @abstract
+     * [@property] minFrameRate
+     * 
      *    A Float64 indicating the minimum frame rate supported by this range.
      * 
-     * @discussion
      *    This read-only property indicates the minimum frame rate supported by this range in frames per second.
      */
     @Generated

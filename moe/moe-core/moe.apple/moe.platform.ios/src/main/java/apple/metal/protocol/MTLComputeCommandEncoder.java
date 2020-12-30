@@ -37,8 +37,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLComputeCommandEncoder
- * @abstract A command encoder that writes data parallel compute commands.
+ * [@protocol] MTLComputeCommandEncoder
+ * 
+ * A command encoder that writes data parallel compute commands.
  */
 @Generated
 @Library("Metal")
@@ -46,8 +47,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLComputeCommandEncoder")
 public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     /**
-     * @method dispatchThreadgroups:threadsPerThreadgroup:
-     * @abstract Enqueue a compute function dispatch as a multiple of the threadgroup size.
+     * dispatchThreadgroups:threadsPerThreadgroup:
+     * 
+     * Enqueue a compute function dispatch as a multiple of the threadgroup size.
      */
     @Generated
     @Selector("dispatchThreadgroups:threadsPerThreadgroup:")
@@ -55,8 +57,10 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @ByValue MTLSize threadsPerThreadgroup);
 
     /**
-     * @method dispatchThreadgroupsWithIndirectBuffer:indirectBufferOffset:threadsPerThreadgroup:
-     * @abstract Enqueue a compute function dispatch using an indirect buffer for threadgroupsPerGrid see MTLDispatchThreadgroupsIndirectArguments.
+     * dispatchThreadgroupsWithIndirectBuffer:indirectBufferOffset:threadsPerThreadgroup:
+     * 
+     * Enqueue a compute function dispatch using an indirect buffer for threadgroupsPerGrid see MTLDispatchThreadgroupsIndirectArguments.
+     * 
      * @param indirectBuffer A buffer object that the device will read dispatchThreadgroups arguments from, see MTLDispatchThreadgroupsIndirectArguments.
      * @param indirectBufferOffset Byte offset within @a indirectBuffer to read arguments from.  @a indirectBufferOffset must be a multiple of 4.
      */
@@ -67,8 +71,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @ByValue MTLSize threadsPerThreadgroup);
 
     /**
-     * @method setBuffer:offset:atIndex:
-     * @brief Set a global buffer for all compute kernels at the given bind point index.
+     * setBuffer:offset:atIndex:
+     * 
+     * Set a global buffer for all compute kernels at the given bind point index.
      */
     @Generated
     @Selector("setBuffer:offset:atIndex:")
@@ -76,16 +81,18 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @NUInt long index);
 
     /**
-     * @method setBufferOffset:atIndex:
-     * @brief Set the offset within the current global buffer for all compute kernels at the given bind point index.
+     * setBufferOffset:atIndex:
+     * 
+     * Set the offset within the current global buffer for all compute kernels at the given bind point index.
      */
     @Generated
     @Selector("setBufferOffset:atIndex:")
     void setBufferOffsetAtIndex(@NUInt long offset, @NUInt long index);
 
     /**
-     * @method setBuffers:offsets:withRange:
-     * @brief Set an array of global buffers for all compute kernels with the given bind point range.
+     * setBuffers:offsets:withRange:
+     * 
+     * Set an array of global buffers for all compute kernels with the given bind point range.
      */
     @Generated
     @Selector("setBuffers:offsets:withRange:")
@@ -93,32 +100,36 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
-     * @method setBytes:length:atIndex:
-     * @brief Set the data (by copy) for a given buffer binding point.  This will remove any existing MTLBuffer from the binding point.
+     * setBytes:length:atIndex:
+     * 
+     * Set the data (by copy) for a given buffer binding point.  This will remove any existing MTLBuffer from the binding point.
      */
     @Generated
     @Selector("setBytes:length:atIndex:")
     void setBytesLengthAtIndex(ConstVoidPtr bytes, @NUInt long length, @NUInt long index);
 
     /**
-     * @method setComputePipelineState:
-     * @abstract Set the compute pipeline state that will be used.
+     * setComputePipelineState:
+     * 
+     * Set the compute pipeline state that will be used.
      */
     @Generated
     @Selector("setComputePipelineState:")
     void setComputePipelineState(@Mapped(ObjCObjectMapper.class) MTLComputePipelineState state);
 
     /**
-     * @method setSamplerState:atIndex:
-     * @brief Set a global sampler for all compute kernels at the given bind point index.
+     * setSamplerState:atIndex:
+     * 
+     * Set a global sampler for all compute kernels at the given bind point index.
      */
     @Generated
     @Selector("setSamplerState:atIndex:")
     void setSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
 
     /**
-     * @method setSamplerState:lodMinClamp:lodMaxClamp:atIndex:
-     * @brief Set a global sampler for all compute kernels at the given bind point index.
+     * setSamplerState:lodMinClamp:lodMaxClamp:atIndex:
+     * 
+     * Set a global sampler for all compute kernels at the given bind point index.
      */
     @Generated
     @Selector("setSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
@@ -126,8 +137,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             float lodMinClamp, float lodMaxClamp, @NUInt long index);
 
     /**
-     * @method setSamplers:lodMinClamps:lodMaxClamps:withRange:
-     * @brief Set an array of global samplers for all compute kernels with the given bind point range.
+     * setSamplers:lodMinClamps:lodMaxClamps:withRange:
+     * 
+     * Set an array of global samplers for all compute kernels with the given bind point range.
      */
     @Generated
     @Selector("setSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
@@ -136,8 +148,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
 
     /**
-     * @method setSamplers:withRange:
-     * @brief Set an array of global samplers for all compute kernels with the given bind point range.
+     * setSamplers:withRange:
+     * 
+     * Set an array of global samplers for all compute kernels with the given bind point range.
      */
     @Generated
     @Selector("setSamplerStates:withRange:")
@@ -145,41 +158,47 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @ByValue NSRange range);
 
     /**
-     * @method setStageInRegion:region:
-     * @brief Set the region of the stage_in attributes to apply the compute kernel.
+     * setStageInRegion:region:
+     * 
+     * Set the region of the stage_in attributes to apply the compute kernel.
      */
     @Generated
     @Selector("setStageInRegion:")
     void setStageInRegion(@ByValue MTLRegion region);
 
     /**
-     * @method setTexture:atIndex:
-     * @brief Set a global texture for all compute kernels at the given bind point index.
+     * setTexture:atIndex:
+     * 
+     * Set a global texture for all compute kernels at the given bind point index.
      */
     @Generated
     @Selector("setTexture:atIndex:")
     void setTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
 
     /**
-     * @method setTextures:withRange:
-     * @brief Set an array of global textures for all compute kernels with the given bind point range.
+     * setTextures:withRange:
+     * 
+     * Set an array of global textures for all compute kernels with the given bind point range.
      */
     @Generated
     @Selector("setTextures:withRange:")
     void setTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures, @ByValue NSRange range);
 
     /**
-     * @method setThreadgroupMemoryLength:atIndex:
-     * @brief Set the threadgroup memory byte length at the binding point specified by the index. This applies to all compute kernels.
+     * setThreadgroupMemoryLength:atIndex:
+     * 
+     * Set the threadgroup memory byte length at the binding point specified by the index. This applies to all compute kernels.
      */
     @Generated
     @Selector("setThreadgroupMemoryLength:atIndex:")
     void setThreadgroupMemoryLengthAtIndex(@NUInt long length, @NUInt long index);
 
     /**
-     * @method updateFence:
-     * @abstract Update the fence to capture all GPU work so far enqueued by this encoder.
-     * @discussion The fence is updated at kernel submission to maintain global order and prevent deadlock.
+     * updateFence:
+     * 
+     * Update the fence to capture all GPU work so far enqueued by this encoder.
+     * 
+     * The fence is updated at kernel submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
@@ -187,9 +206,11 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     void updateFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
-     * @method waitForFence:
-     * @abstract Prevent further GPU work until the fence is reached.
-     * @discussion The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
+     * waitForFence:
+     * 
+     * Prevent further GPU work until the fence is reached.
+     * 
+     * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
@@ -197,58 +218,68 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     void waitForFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
 
     /**
-     * @method dispatchThreads:threadsPerThreadgroup:
-     * @abstract Enqueue a compute function dispatch using an arbitrarily-sized grid.
-     * @discussion threadsPerGrid does not have to be a multiple of the  threadGroup size
+     * dispatchThreads:threadsPerThreadgroup:
+     * 
+     * Enqueue a compute function dispatch using an arbitrarily-sized grid.
+     * 
+     * threadsPerGrid does not have to be a multiple of the  threadGroup size
      */
     @Generated
     @Selector("dispatchThreads:threadsPerThreadgroup:")
     void dispatchThreadsThreadsPerThreadgroup(@ByValue MTLSize threadsPerGrid, @ByValue MTLSize threadsPerThreadgroup);
 
     /**
-     * @method setImageblockWidth:height:
-     * @brief Set imageblock sizes.
+     * setImageblockWidth:height:
+     * 
+     * Set imageblock sizes.
      */
     @Generated
     @Selector("setImageblockWidth:height:")
     void setImageblockWidthHeight(@NUInt long width, @NUInt long height);
 
     /**
-     * @method useHeap:
-     * @abstract Declare that the resources allocated from a heap may be accessed as readonly by the render pass through an argument buffer
-     * @discussion For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heap through an argument buffer. This method may cause all of the color attachments allocated from the heap to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
-     * @warning Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * useHeap:
+     * 
+     * Declare that the resources allocated from a heap may be accessed as readonly by the render pass through an argument buffer
+     * 
+     * For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heap through an argument buffer. This method may cause all of the color attachments allocated from the heap to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useHeap:")
     void useHeap(@Mapped(ObjCObjectMapper.class) MTLHeap heap);
 
     /**
-     * @method useHeaps:count:
-     * @abstract Declare that the resources allocated from an array of heaps may be accessed as readonly by the render pass through an argument buffer
-     * @discussion For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heaps through an argument buffer. This method may cause all of the color attachments allocated from the heaps to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
-     * @warning Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * useHeaps:count:
+     * 
+     * Declare that the resources allocated from an array of heaps may be accessed as readonly by the render pass through an argument buffer
+     * 
+     * For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heaps through an argument buffer. This method may cause all of the color attachments allocated from the heaps to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useHeaps:count:")
     void useHeapsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
 
     /**
-     * @method useResource:usage:
-     * @abstract Declare that a resource may be accessed by the command encoder through an argument buffer
+     * useResource:usage:
      * 
-     * @discussion For tracked MTLResources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resource through an argument buffer.
-     * @warning Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * Declare that a resource may be accessed by the command encoder through an argument buffer
+     * 
+     * For tracked MTLResources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resource through an argument buffer.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useResource:usage:")
     void useResourceUsage(@Mapped(ObjCObjectMapper.class) MTLResource resource, @NUInt long usage);
 
     /**
-     * @method useResources:count:usage:
-     * @abstract Declare that an array of resources may be accessed through an argument buffer by the command encoder
-     * @discussion For tracked MTL Resources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources through an argument buffer.
-     * @warning Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * useResources:count:usage:
+     * 
+     * Declare that an array of resources may be accessed through an argument buffer by the command encoder
+     * 
+     * For tracked MTL Resources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources through an argument buffer.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useResources:count:usage:")
@@ -256,8 +287,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @NUInt long usage);
 
     /**
-     * @property dispatchType
-     * @abstract The dispatch type of the compute command encoder.
+     * [@property] dispatchType
+     * 
+     * The dispatch type of the compute command encoder.
      */
     @Generated
     @Selector("dispatchType")
@@ -265,11 +297,14 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     long dispatchType();
 
     /**
-     * @method executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:
-     * @abstract Execute commands in the buffer within the range specified by the indirect range buffer.
+     * executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:
+     * 
+     * Execute commands in the buffer within the range specified by the indirect range buffer.
+     * 
+     * The same indirect command buffer may be executed any number of times within the same encoder.
+     * 
      * @param indirectRangeBuffer An indirect buffer from which the device reads the execution range parameter, as laid out in the MTLIndirectCommandBufferExecutionRange structure.
      * @param indirectBufferOffset The byte offset within indirectBuffer where the execution range parameter is located. Must be a multiple of 4 bytes.
-     * @discussion The same indirect command buffer may be executed any number of times within the same encoder.
      */
     @Generated
     @Selector("executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:")
@@ -278,9 +313,11 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) MTLBuffer indirectRangeBuffer, @NUInt long indirectBufferOffset);
 
     /**
-     * @method executeCommandsInBuffer:withRange:
-     * @abstract Execute commands in the buffer within the range specified.
-     * @discussion The same indirect command buffer may be executed any number of times within the same encoder.
+     * executeCommandsInBuffer:withRange:
+     * 
+     * Execute commands in the buffer within the range specified.
+     * 
+     * The same indirect command buffer may be executed any number of times within the same encoder.
      */
     @Generated
     @Selector("executeCommandsInBuffer:withRange:")
@@ -289,9 +326,11 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @ByValue NSRange executionRange);
 
     /**
-     * @method memoryBarrierWithResources
-     * @abstract Encodes a barrier between currently dispatched kernels in a concurrent compute command encoder and any subsequent ones on an array of resources.
-     * @discussion  This API ensures that all dispatches in the encoder have completed execution and side effects on the specified resources are visible to subsequent dispatches in that encoder. Calling barrier on a serial encoder is allowed, but ignored.
+     * memoryBarrierWithResources
+     * 
+     * Encodes a barrier between currently dispatched kernels in a concurrent compute command encoder and any subsequent ones on an array of resources.
+     * 
+     * This API ensures that all dispatches in the encoder have completed execution and side effects on the specified resources are visible to subsequent dispatches in that encoder. Calling barrier on a serial encoder is allowed, but ignored.
      */
     @Generated
     @Selector("memoryBarrierWithResources:count:")
@@ -299,17 +338,21 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @NUInt long count);
 
     /**
-     * @method memoryBarrierWithScope
-     * @abstract Encodes a barrier between currently dispatched kernels in a concurrent compute command encoder and any subsequent ones on a specified resource group
-     * @discussion  This API ensures that all dispatches in the encoder have completed execution and their side effects are visible to subsequent dispatches in that encoder. Calling barrier on a serial encoder is allowed, but ignored.
+     * memoryBarrierWithScope
+     * 
+     * Encodes a barrier between currently dispatched kernels in a concurrent compute command encoder and any subsequent ones on a specified resource group
+     * 
+     * This API ensures that all dispatches in the encoder have completed execution and their side effects are visible to subsequent dispatches in that encoder. Calling barrier on a serial encoder is allowed, but ignored.
      */
     @Generated
     @Selector("memoryBarrierWithScope:")
     void memoryBarrierWithScope(@NUInt long scope);
 
     /**
-     * @method setStageInRegionWithIndirectBuffer:indirectBufferOffset:
-     * @abstract sets the stage in region indirectly for the following indirect dispatch calls.
+     * setStageInRegionWithIndirectBuffer:indirectBufferOffset:
+     * 
+     * sets the stage in region indirectly for the following indirect dispatch calls.
+     * 
      * @param indirectBuffer A buffer object that the device will read the stageIn region arguments from, see MTLStageInRegionIndirectArguments.
      * @param indirectBufferOffset Byte offset within indirectBuffer to read arguments from. indirectBufferOffset must be a multiple of 4.
      */
@@ -319,9 +362,14 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer, @NUInt long indirectBufferOffset);
 
     /**
-     * @method sampleCountersInBuffer:atSampleIndex:withBarrier:
-     * @abstract Sample hardware counters at this point in the compute encoder and
+     * sampleCountersInBuffer:atSampleIndex:withBarrier:
+     * 
+     * Sample hardware counters at this point in the compute encoder and
      * store the counter sample into the sample buffer at the specified index.
+     * 
+     * On devices where MTLCounterSamplingPointAtDispatchBoundary is unsupported,
+     * this method is not available and will generate an error if called.
+     * 
      * @param sampleBuffer The sample buffer to sample into
      * @param sampleIndex The index into the counter buffer to write the sample
      * @param barrier Insert a barrier before taking the sample.  Passing
@@ -332,8 +380,6 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
      * In general, passing YES will lead to more repeatable counter results but
      * may negatively impact performance.  Passing NO will generally be higher performance
      * but counter results may not be repeatable.
-     * @discussion On devices where MTLCounterSamplingPointAtDispatchBoundary is unsupported,
-     * this method is not available and will generate an error if called.
      */
     @Generated
     @Selector("sampleCountersInBuffer:atSampleIndex:withBarrier:")
@@ -342,8 +388,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             boolean barrier);
 
     /**
-     * @method setAccelerationStructure:atBufferIndex:
-     * @brief Set a global raytracing acceleration structure for all compute kernels at the given buffer bind point index.
+     * setAccelerationStructure:atBufferIndex:
+     * 
+     * Set a global raytracing acceleration structure for all compute kernels at the given buffer bind point index.
      */
     @Generated
     @Selector("setAccelerationStructure:atBufferIndex:")
@@ -351,8 +398,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure accelerationStructure, @NUInt long bufferIndex);
 
     /**
-     * @method setIntersectionFunctionTable:atBufferIndex:
-     * @brief Set a visible function table at the given buffer index
+     * setIntersectionFunctionTable:atBufferIndex:
+     * 
+     * Set a visible function table at the given buffer index
      */
     @Generated
     @Selector("setIntersectionFunctionTable:atBufferIndex:")
@@ -361,8 +409,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @NUInt long bufferIndex);
 
     /**
-     * @method setIntersectionFunctionTables:withBufferRange:
-     * @brief Set visible function tables at the given buffer index range
+     * setIntersectionFunctionTables:withBufferRange:
+     * 
+     * Set visible function tables at the given buffer index range
      */
     @Generated
     @Selector("setIntersectionFunctionTables:withBufferRange:")
@@ -370,8 +419,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables, @ByValue NSRange range);
 
     /**
-     * @method setVisibleFunctionTable:atBufferIndex:
-     * @brief Set a visible function table at the given buffer index
+     * setVisibleFunctionTable:atBufferIndex:
+     * 
+     * Set a visible function table at the given buffer index
      */
     @Generated
     @Selector("setVisibleFunctionTable:atBufferIndex:")
@@ -379,8 +429,9 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
             @Mapped(ObjCObjectMapper.class) MTLVisibleFunctionTable visibleFunctionTable, @NUInt long bufferIndex);
 
     /**
-     * @method setVisibleFunctionTables:withBufferRange:
-     * @brief Set visible function tables at the given buffer index range
+     * setVisibleFunctionTables:withBufferRange:
+     * 
+     * Set visible function tables at the given buffer index range
      */
     @Generated
     @Selector("setVisibleFunctionTables:withBufferRange:")

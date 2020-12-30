@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNOptimizerRMSProp
- * @discussion The MPSNNOptimizerRMSProp performs an RMSProp Update
+ * MPSNNOptimizerRMSProp
+ * 
+ * The MPSNNOptimizerRMSProp performs an RMSProp Update
  *             RMSProp is also known as root mean square propagation.
  * 
  *             s[t]     = decay * s[t-1] + (1 - decay) * (g ^ 2)
@@ -94,9 +95,11 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     public static native String debugDescription_static();
 
     /**
-     * @property   decay
-     * @abstract   The decay at which we update sumOfSquares
-     * @discussion Default value is 0.9
+     * [@property]   decay
+     * 
+     * The decay at which we update sumOfSquares
+     * 
+     * Default value is 0.9
      */
     @Generated
     @Selector("decay")
@@ -107,7 +110,17 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     public static native String description_static();
 
     /**
-     * @abstract   Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
+     * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     * 
+     * 
+     *             s[t]     = decay * s[t-1] + (1 - decay) * (g ^ 2)
+     *             variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
+     * 
+     *             where,
+     *               g    is gradient of error wrt variable
+     *               s[t] is weighted sum of squares of gradients
      * 
      * @param      commandBuffer                              A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      batchNormalizationGradientState            A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients for this update.
@@ -117,17 +130,6 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      *                                                        size 1 in which case beta won't be updated
      * @param      resultState                                A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
      *                                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
-     * 
-     * 
-     *             s[t]     = decay * s[t-1] + (1 - decay) * (g ^ 2)
-     *             variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * 
-     *             where,
-     *               g    is gradient of error wrt variable
-     *               s[t] is weighted sum of squares of gradients
      */
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputSumOfSquaresVectors:resultState:")
@@ -138,18 +140,9 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
             NSArray<? extends MPSVector> inputSumOfSquaresVectors, MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
-     * @abstract   Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
+     * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
      * 
-     * @param      commandBuffer                              A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param      batchNormalizationState                    A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients and original gamma/beta for this update.
-     * @param      inputSumOfSquaresVectors                   An array MPSVector object which specifies the gradient sumOfSquares vectors which will
-     *                                                        be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
-     *                                                        size 1 in which case beta won't be updated
-     * @param      resultState                                A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
-     *                                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
+     * The following operations would be applied
      * 
      * 
      *             s[t]     = decay * s[t-1] + (1 - decay) * (g ^ 2)
@@ -158,6 +151,14 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      *             where,
      *               g    is gradient of error wrt variable
      *               s[t] is weighted sum of squares of gradients
+     * 
+     * @param      commandBuffer                              A valid MTLCommandBuffer to receive the encoded kernel.
+     * @param      batchNormalizationState                    A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients and original gamma/beta for this update.
+     * @param      inputSumOfSquaresVectors                   An array MPSVector object which specifies the gradient sumOfSquares vectors which will
+     *                                                        be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     *                                                        size 1 in which case beta won't be updated
+     * @param      resultState                                A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
+     *                                                        be updated and overwritten.
      */
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputSumOfSquaresVectors:resultState:")
@@ -167,7 +168,17 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
             NSArray<? extends MPSVector> inputSumOfSquaresVectors, MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
-     * @abstract   Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
+     * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
+     * 
+     * The following operations would be applied
+     * 
+     * 
+     *             s[t]     = decay * s[t-1] + (1 - decay) * (g ^ 2)
+     *             variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
+     * 
+     *             where,
+     *               g    is gradient of error wrt variable
+     *               s[t] is weighted sum of squares of gradients
      * 
      * @param      commandBuffer              A valid MTLCommandBuffer to receive the encoded kernel.
      * @param      convolutionGradientState   A valid MPSCNNConvolutionGradientState object which specifies the input state with gradients for this update.
@@ -177,17 +188,6 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      *                                        size 1 in which case biases won't be updated
      * @param      resultState                A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the resultValues state which will
      *                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
-     * 
-     * 
-     *             s[t]     = decay * s[t-1] + (1 - decay) * (g ^ 2)
-     *             variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * 
-     *             where,
-     *               g    is gradient of error wrt variable
-     *               s[t] is weighted sum of squares of gradients
      */
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputSumOfSquaresVectors:resultState:")
@@ -204,18 +204,9 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
             MPSMatrix inputValuesMatrix, MPSMatrix inputSumOfSquaresMatrix, MPSMatrix resultValuesMatrix);
 
     /**
-     * @abstract   Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
+     * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
      * 
-     * @param      commandBuffer              A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param      inputGradientVector        A valid MPSVector object which specifies the input vector of gradients for this update.
-     * @param      inputValuesVector          A valid MPSVector object which specifies the input vector of values to be updated.
-     * @param      inputSumOfSquaresVector    A valid MPSVector object which specifies the gradient velocity vector which will
-     *                                        be updated and overwritten.
-     * @param      resultValuesVector         A valid MPSVector object which specifies the resultValues vector which will
-     *                                        be updated and overwritten.
-     * 
-     * 
-     * @discussion The following operations would be applied
+     * The following operations would be applied
      * 
      * 
      *             s[t]     = decay * s[t-1] + (1 - decay) * (g ^ 2)
@@ -224,6 +215,14 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
      *             where,
      *               g    is gradient of error wrt variable
      *               s[t] is weighted sum of squares of gradients
+     * 
+     * @param      commandBuffer              A valid MTLCommandBuffer to receive the encoded kernel.
+     * @param      inputGradientVector        A valid MPSVector object which specifies the input vector of gradients for this update.
+     * @param      inputValuesVector          A valid MPSVector object which specifies the input vector of values to be updated.
+     * @param      inputSumOfSquaresVector    A valid MPSVector object which specifies the gradient velocity vector which will
+     *                                        be updated and overwritten.
+     * @param      resultValuesVector         A valid MPSVector object which specifies the resultValues vector which will
+     *                                        be updated and overwritten.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputSumOfSquaresVector:resultValuesVector:")
@@ -232,9 +231,11 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
             MPSVector inputValuesVector, MPSVector inputSumOfSquaresVector, MPSVector resultValuesVector);
 
     /**
-     * @property   epsilon
-     * @abstract   The epsilon at which we update values
-     * @discussion This value is usually used to ensure to avoid divide by 0, default value is 1e-8
+     * [@property]   epsilon
+     * 
+     * The epsilon at which we update values
+     * 
+     * This value is usually used to ensure to avoid divide by 0, default value is 1e-8
      */
     @Generated
     @Selector("epsilon")
@@ -263,7 +264,7 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     public native MPSNNOptimizerRMSProp initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Full initialization for the rmsProp update
+     * Full initialization for the rmsProp update
      * 
      * @param      device                     The device on which the kernel will execute.
      * @param      decay                      The decay to update sumOfSquares
@@ -280,7 +281,7 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
             MPSNNOptimizerDescriptor optimizerDescriptor);
 
     /**
-     * @abstract   Convenience initialization for the RMSProp update
+     * Convenience initialization for the RMSProp update
      * 
      * @param      device                     The device on which the kernel will execute.
      * @param      learningRate               The learningRate which will be applied

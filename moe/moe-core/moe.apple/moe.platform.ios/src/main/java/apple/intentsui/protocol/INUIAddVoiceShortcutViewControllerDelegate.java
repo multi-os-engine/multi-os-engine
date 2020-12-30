@@ -16,8 +16,9 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("INUIAddVoiceShortcutViewControllerDelegate")
 public interface INUIAddVoiceShortcutViewControllerDelegate {
     /**
-     * @abstract Called after the user finishes the setup flow for the voice shortcut, with either the successfully-added voice shortcut, or an error.
-     * @discussion Your implementation of this method should dismiss the view controller.
+     * Called after the user finishes the setup flow for the voice shortcut, with either the successfully-added voice shortcut, or an error.
+     * 
+     * Your implementation of this method should dismiss the view controller.
      */
     @Generated
     @Selector("addVoiceShortcutViewController:didFinishWithVoiceShortcut:error:")
@@ -25,8 +26,9 @@ public interface INUIAddVoiceShortcutViewControllerDelegate {
             INVoiceShortcut voiceShortcut, NSError error);
 
     /**
-     * @abstract Called if the user cancels the setup flow; the voice shortcut was not added.
-     * @discussion Your implementation of this method should dismiss the view controller.
+     * Called if the user cancels the setup flow; the voice shortcut was not added.
+     * 
+     * Your implementation of this method should dismiss the view controller.
      */
     @Generated
     @Selector("addVoiceShortcutViewControllerDidCancel:")

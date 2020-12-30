@@ -145,7 +145,7 @@ public class ARDirectionalLightEstimate extends ARLightEstimate {
     /**
      * Second degree spherical harmonics coefficients representing the intensity of light.
      * 
-     * @discussion The data is an array of 27 32-bit floating-point values, containing three non-interleaved data sets
+     * The data is an array of 27 32-bit floating-point values, containing three non-interleaved data sets
      * corresponding to the red, green, and blue sets of coefficients.
      */
     @Generated

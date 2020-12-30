@@ -18,9 +18,13 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVAssetWriterDelegate")
 public interface AVAssetWriterDelegate {
     /**
-     * @method assetWriter:didOutputSegmentData:segmentType:
-     * @abstract
+     * assetWriter:didOutputSegmentData:segmentType:
+     * 
      * A method invoked when a segment data is output.
+     * 
+     * The usage of this method is same as -assetWriter:didOutputSegmentData:segmentType:segmentReport: except that this method does not deliver AVAssetSegmentReport.
+     * 
+     * If clients implement the -assetWriter:didOutputSegmentData:segmentType:segmentReport: method, that method is called instead of this one.
      * 
      * @param writer
      * An AVAssetWriter instance.
@@ -28,11 +32,6 @@ public interface AVAssetWriterDelegate {
      * An instance of NSData containing a segment data.
      * @param segmentType
      * A segment type of the segment data. Segment types are declared in AVAssetSegmentReport.h.
-     * 
-     * @discussion
-     * The usage of this method is same as -assetWriter:didOutputSegmentData:segmentType:segmentReport: except that this method does not deliver AVAssetSegmentReport.
-     * 
-     * If clients implement the -assetWriter:didOutputSegmentData:segmentType:segmentReport: method, that method is called instead of this one.
      */
     @Generated
     @IsOptional
@@ -43,20 +42,10 @@ public interface AVAssetWriterDelegate {
     }
 
     /**
-     * @method assetWriter:didOutputSegmentData:segmentType:segmentReport:
-     * @abstract
+     * assetWriter:didOutputSegmentData:segmentType:segmentReport:
+     * 
      * A method invoked when a segment data is output.
      * 
-     * @param writer
-     * An AVAssetWriter instance.
-     * @param segmentData
-     * An instance of NSData containing a segment data.
-     * @param segmentType
-     * A segment type of the segment data. Segment types are declared in AVAssetSegmentReport.h.
-     * @param segmentReport
-     * An AVAssetSegmentReport instance.
-     * 
-     * @discussion
      * If this method is implemented, normal file writing will be suppressed. The instance of AVAssetWriter must be initialized by -initWithContentType: initializer.
      * Then, clients append media data to AVAssetWriterInputs added to the receiver, call -markAsFinished for each input to mark the input as finished and call -finishWritingWithCompletionHandler: to finish writing as is the case in normal file writing.
      * 
@@ -81,6 +70,15 @@ public interface AVAssetWriterDelegate {
      * In this configuration, only passthrough is available. The media type of input can be AVMediaTypeVideo or AVMediaTypeAudio.
      * Only one input of each media type can be added.
      * The client should call -flushSegment prior to a sync sample so that the next segment can start with the sync sample. Otherwise, it is an error.
+     * 
+     * @param writer
+     * An AVAssetWriter instance.
+     * @param segmentData
+     * An instance of NSData containing a segment data.
+     * @param segmentType
+     * A segment type of the segment data. Segment types are declared in AVAssetSegmentReport.h.
+     * @param segmentReport
+     * An AVAssetSegmentReport instance.
      */
     @Generated
     @IsOptional

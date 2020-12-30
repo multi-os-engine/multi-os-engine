@@ -136,12 +136,14 @@ public class NSURLCache extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property sharedURLCache
-     * @abstract Returns the shared NSURLCache instance or
+     * [@property] sharedURLCache
+     * 
+     * Returns the shared NSURLCache instance or
      * sets the NSURLCache instance shared by all clients of
      * the current process. This will be the new object returned when
      * calls to the <tt>sharedURLCache</tt> method are made.
-     * @discussion Unless set explicitly through a call to
+     * 
+     * Unless set explicitly through a call to
      * <tt>+setSharedURLCache:</tt>, this method returns an NSURLCache
      * instance created with the following default values:
      * <ul>
@@ -158,7 +160,8 @@ public class NSURLCache extends NSObject {
      * at a time when no other caller has a reference to the previously-set 
      * shared URL cache. This is to prevent storing cache data from 
      * becoming unexpectedly unretrievable.
-     * @result the shared NSURLCache instance.
+     * 
+     * @return the shared NSURLCache instance.
      */
     @Generated
     @Selector("setSharedURLCache:")
@@ -169,12 +172,14 @@ public class NSURLCache extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property sharedURLCache
-     * @abstract Returns the shared NSURLCache instance or
+     * [@property] sharedURLCache
+     * 
+     * Returns the shared NSURLCache instance or
      * sets the NSURLCache instance shared by all clients of
      * the current process. This will be the new object returned when
      * calls to the <tt>sharedURLCache</tt> method are made.
-     * @discussion Unless set explicitly through a call to
+     * 
+     * Unless set explicitly through a call to
      * <tt>+setSharedURLCache:</tt>, this method returns an NSURLCache
      * instance created with the following default values:
      * <ul>
@@ -191,7 +196,8 @@ public class NSURLCache extends NSObject {
      * at a time when no other caller has a reference to the previously-set 
      * shared URL cache. This is to prevent storing cache data from 
      * becoming unexpectedly unretrievable.
-     * @result the shared NSURLCache instance.
+     * 
+     * @return the shared NSURLCache instance.
      */
     @Generated
     @Selector("sharedURLCache")
@@ -207,13 +213,16 @@ public class NSURLCache extends NSObject {
     public static native long version_static();
 
     /**
-     * @method cachedResponseForRequest:
-     * @abstract Returns the NSCachedURLResponse stored in the cache with
+     * cachedResponseForRequest:
+     * 
+     * Returns the NSCachedURLResponse stored in the cache with
      * the given request.
-     * @discussion The method returns nil if there is no
+     * 
+     * The method returns nil if there is no
      * NSCachedURLResponse stored using the given request.
+     * 
      * @param request the NSURLRequest to use as a key for the lookup.
-     * @result The NSCachedURLResponse stored in the cache with the given
+     * @return The NSCachedURLResponse stored in the cache with the given
      * request, or nil if there is no NSCachedURLResponse stored with the
      * given request.
      */
@@ -222,11 +231,13 @@ public class NSURLCache extends NSObject {
     public native NSCachedURLResponse cachedResponseForRequest(NSURLRequest request);
 
     /**
-     * @abstract Returns the current amount of space consumed by the
+     * Returns the current amount of space consumed by the
      * on-disk cache of the receiver.
-     * @discussion This size, measured in bytes, indicates the current
+     * 
+     * This size, measured in bytes, indicates the current
      * usage of the on-disk cache. 
-     * @result the current usage of the on-disk cache of the receiver.
+     * 
+     * @return the current usage of the on-disk cache of the receiver.
      */
     @Generated
     @Selector("currentDiskUsage")
@@ -234,11 +245,13 @@ public class NSURLCache extends NSObject {
     public native long currentDiskUsage();
 
     /**
-     * @abstract Returns the current amount of space consumed by the
+     * Returns the current amount of space consumed by the
      * in-memory cache of the receiver.
-     * @discussion This size, measured in bytes, indicates the current
+     * 
+     * This size, measured in bytes, indicates the current
      * usage of the in-memory cache. 
-     * @result the current usage of the in-memory cache of the receiver.
+     * 
+     * @return the current usage of the in-memory cache of the receiver.
      */
     @Generated
     @Selector("currentMemoryUsage")
@@ -246,8 +259,9 @@ public class NSURLCache extends NSObject {
     public native long currentMemoryUsage();
 
     /**
-     * @abstract The on-disk capacity of the receiver. 
-     * @discussion The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its contents to the size given, if necessary.
+     * The on-disk capacity of the receiver.
+     * 
+     * The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its contents to the size given, if necessary.
      */
     @Generated
     @Selector("diskCapacity")
@@ -264,17 +278,20 @@ public class NSURLCache extends NSObject {
     public native NSURLCache init();
 
     /**
-     * @method initWithMemoryCapacity:diskCapacity:diskPath:
-     * @abstract Initializes an NSURLCache with the given capacity and
+     * initWithMemoryCapacity:diskCapacity:diskPath:
+     * 
+     * Initializes an NSURLCache with the given capacity and
      * path.
-     * @discussion The returned NSURLCache is backed by disk, so
+     * 
+     * The returned NSURLCache is backed by disk, so
      * developers can be more liberal with space when choosing the
      * capacity for this kind of cache. A disk cache measured in the tens
      * of megabytes should be acceptable in most cases.
+     * 
      * @param memoryCapacity the capacity, measured in bytes, for the cache in memory.
      * @param diskCapacity the capacity, measured in bytes, for the cache on disk.
      * @param path the path on disk where the cache data is stored.
-     * @result an initialized NSURLCache, with the given capacity, backed
+     * @return an initialized NSURLCache, with the given capacity, backed
      * by disk.
      */
     @Generated
@@ -283,9 +300,11 @@ public class NSURLCache extends NSObject {
             @NUInt long diskCapacity, String path);
 
     /**
-     * @abstract In-memory capacity of the receiver. 
-     * @discussion At the time this call is made, the in-memory cache will truncate its contents to the size given, if necessary.
-     * @result The in-memory capacity, measured in bytes, for the receiver. 
+     * In-memory capacity of the receiver.
+     * 
+     * At the time this call is made, the in-memory cache will truncate its contents to the size given, if necessary.
+     * 
+     * @return The in-memory capacity, measured in bytes, for the receiver. 
      */
     @Generated
     @Selector("memoryCapacity")
@@ -293,8 +312,9 @@ public class NSURLCache extends NSObject {
     public native long memoryCapacity();
 
     /**
-     * @method removeAllCachedResponses
-     * @abstract Clears the given cache, removing all NSCachedURLResponse
+     * removeAllCachedResponses
+     * 
+     * Clears the given cache, removing all NSCachedURLResponse
      * objects that it stores.
      */
     @Generated
@@ -306,11 +326,14 @@ public class NSURLCache extends NSObject {
     public native void removeCachedResponseForDataTask(NSURLSessionDataTask dataTask);
 
     /**
-     * @method removeCachedResponseForRequest:
-     * @abstract Removes the NSCachedURLResponse from the cache that is
+     * removeCachedResponseForRequest:
+     * 
+     * Removes the NSCachedURLResponse from the cache that is
      * stored using the given request. 
-     * @discussion No action is taken if there is no NSCachedURLResponse
+     * 
+     * No action is taken if there is no NSCachedURLResponse
      * stored with the given request.
+     * 
      * @param request the NSURLRequest to use as a key for the lookup.
      */
     @Generated
@@ -318,25 +341,29 @@ public class NSURLCache extends NSObject {
     public native void removeCachedResponseForRequest(NSURLRequest request);
 
     /**
-     * @method removeCachedResponsesSince:
-     * @abstract Clears the given cache of any cached responses since the provided date.
+     * removeCachedResponsesSince:
+     * 
+     * Clears the given cache of any cached responses since the provided date.
      */
     @Generated
     @Selector("removeCachedResponsesSinceDate:")
     public native void removeCachedResponsesSinceDate(NSDate date);
 
     /**
-     * @abstract The on-disk capacity of the receiver. 
-     * @discussion The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its contents to the size given, if necessary.
+     * The on-disk capacity of the receiver.
+     * 
+     * The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its contents to the size given, if necessary.
      */
     @Generated
     @Selector("setDiskCapacity:")
     public native void setDiskCapacity(@NUInt long value);
 
     /**
-     * @abstract In-memory capacity of the receiver. 
-     * @discussion At the time this call is made, the in-memory cache will truncate its contents to the size given, if necessary.
-     * @result The in-memory capacity, measured in bytes, for the receiver. 
+     * In-memory capacity of the receiver.
+     * 
+     * At the time this call is made, the in-memory cache will truncate its contents to the size given, if necessary.
+     * 
+     * @return The in-memory capacity, measured in bytes, for the receiver. 
      */
     @Generated
     @Selector("setMemoryCapacity:")
@@ -348,9 +375,11 @@ public class NSURLCache extends NSObject {
             NSURLSessionDataTask dataTask);
 
     /**
-     * @method storeCachedResponse:forRequest:
-     * @abstract Stores the given NSCachedURLResponse in the cache using
+     * storeCachedResponse:forRequest:
+     * 
+     * Stores the given NSCachedURLResponse in the cache using
      * the given request.
+     * 
      * @param cachedResponse The cached response to store.
      * @param request the NSURLRequest to use as a key for the storage.
      */
@@ -366,12 +395,14 @@ public class NSURLCache extends NSObject {
     }
 
     /**
-     * @method initWithMemoryCapacity:diskCapacity:directoryURL:
-     * @abstract Initializes an NSURLCache with the given capacity and directory.
+     * initWithMemoryCapacity:diskCapacity:directoryURL:
+     * 
+     * Initializes an NSURLCache with the given capacity and directory.
+     * 
      * @param memoryCapacity the capacity, measured in bytes, for the cache in memory. Or 0 to disable memory cache.
      * @param diskCapacity the capacity, measured in bytes, for the cache on disk. Or 0 to disable disk cache.
      * @param directoryURL the path to a directory on disk where the cache data is stored. Or nil for default directory.
-     * @result an initialized NSURLCache, with the given capacity, optionally backed by disk.
+     * @return an initialized NSURLCache, with the given capacity, optionally backed by disk.
      */
     @Generated
     @Selector("initWithMemoryCapacity:diskCapacity:directoryURL:")

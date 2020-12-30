@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract      CLSActivity represents user generated activity data for a given context.
- * @discussion    CLSActivity has three major components.
+ * CLSActivity represents user generated activity data for a given context.
+ * 
+ * CLSActivity has three major components.
  * 
  *             (1) Progress, used to measure the amount of activity a user generates as a percentage.
  *             (2) Duration, used to measure the length of time a user spent on this activity. Use @c -start and @c -stop methods.
@@ -52,15 +53,17 @@ public class CLSActivity extends CLSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @abstract      Add an activity item to this CLSActivity.
+     * Add an activity item to this CLSActivity.
      */
     @Generated
     @Selector("addAdditionalActivityItem:")
     public native void addAdditionalActivityItem(CLSActivityItem activityItem);
 
     /**
-     * @abstract      Adds progress to this activity.
-     * @discussion    The progress should be a decimal representation of the start and ending percentage [0.0, 1.0].
+     * Adds progress to this activity.
+     * 
+     * The progress should be a decimal representation of the start and ending percentage [0.0, 1.0].
+     * 
      * @param         start      Starting percentage.
      * @param         end        Ending percentage.
      */
@@ -69,7 +72,7 @@ public class CLSActivity extends CLSObject {
     public native void addProgressRangeFromStartToEnd(double start, double end);
 
     /**
-     * @abstract      Array of all additional activity items on this CLSActivity.
+     * Array of all additional activity items on this CLSActivity.
      */
     @Generated
     @Selector("additionalActivityItems")
@@ -116,8 +119,9 @@ public class CLSActivity extends CLSObject {
     public static native String description_static();
 
     /**
-     * @abstract      Returns the total time tracked in this activity (excluding any previous activities).
-     * @discussion    The time between calling @c -start and @c -stop.
+     * Returns the total time tracked in this activity (excluding any previous activities).
+     * 
+     * The time between calling @c -start and @c -stop.
      */
     @Generated
     @Selector("duration")
@@ -150,7 +154,7 @@ public class CLSActivity extends CLSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @abstract      Returns whether this Activity has been started or not.
+     * Returns whether this Activity has been started or not.
      */
     @Generated
     @Selector("isStarted")
@@ -171,16 +175,18 @@ public class CLSActivity extends CLSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract      The primary activityItem to be reported on.
-     * @discussion    This can be nil indicating @c progress property is the primary data instead of any activityItems.
+     * The primary activityItem to be reported on.
+     * 
+     * This can be nil indicating @c progress property is the primary data instead of any activityItems.
      */
     @Generated
     @Selector("primaryActivityItem")
     public native CLSActivityItem primaryActivityItem();
 
     /**
-     * @abstract      Current progress as a decimal representation of a percentage.
-     * @discussion    Should be [0.0, 1.0].
+     * Current progress as a decimal representation of a percentage.
+     * 
+     * Should be [0.0, 1.0].
      */
     @Generated
     @Selector("progress")
@@ -195,16 +201,18 @@ public class CLSActivity extends CLSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract      The primary activityItem to be reported on.
-     * @discussion    This can be nil indicating @c progress property is the primary data instead of any activityItems.
+     * The primary activityItem to be reported on.
+     * 
+     * This can be nil indicating @c progress property is the primary data instead of any activityItems.
      */
     @Generated
     @Selector("setPrimaryActivityItem:")
     public native void setPrimaryActivityItem(CLSActivityItem value);
 
     /**
-     * @abstract      Current progress as a decimal representation of a percentage.
-     * @discussion    Should be [0.0, 1.0].
+     * Current progress as a decimal representation of a percentage.
+     * 
+     * Should be [0.0, 1.0].
      */
     @Generated
     @Selector("setProgress:")
@@ -215,16 +223,18 @@ public class CLSActivity extends CLSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract      Start Activity.
-     * @discussion    Starts the activity (or resumes if previously stopped).
+     * Start Activity.
+     * 
+     * Starts the activity (or resumes if previously stopped).
      */
     @Generated
     @Selector("start")
     public native void start();
 
     /**
-     * @abstract      Stop Activity.
-     * @discussion    Stops or pauses the activity and ends the time being tracked on it.
+     * Stop Activity.
+     * 
+     * Stops or pauses the activity and ends the time being tracked on it.
      */
     @Generated
     @Selector("stop")

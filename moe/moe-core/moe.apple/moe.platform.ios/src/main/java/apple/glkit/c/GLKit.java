@@ -1551,8 +1551,9 @@ public final class GLKit {
     public static native String NSStringFromGLKQuaternion(@ByValue GLKQuaternion quaternion);
 
     /**
-     * @struct GLKVertexAttributeParametersFromModelIO
-     * @abstract Returns parameters to use in a call to glVertexAttribPointer given a MDLVertexFormat
+     * [@struct] GLKVertexAttributeParametersFromModelIO
+     * 
+     * Returns parameters to use in a call to glVertexAttribPointer given a MDLVertexFormat
      */
     @Generated
     @CFunction
@@ -1575,7 +1576,7 @@ public final class GLKit {
     public static native GLKMatrix4 GLKMatrix4Identity();
 
     /**
-     * @constant kGLKModelErrorDomain
+     * [@constant] kGLKModelErrorDomain
      */
     @Generated
     @CVariable()
@@ -1583,7 +1584,7 @@ public final class GLKit {
     public static native String kGLKModelErrorDomain();
 
     /**
-     * @constant kGLKModelErrorKey
+     * [@constant] kGLKModelErrorKey
      */
     @Generated
     @CVariable()

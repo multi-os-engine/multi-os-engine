@@ -91,7 +91,8 @@ public class MPSNNPadGradientNode extends MPSNNGradientFilterNode {
     public native MPSNNPadGradientNode init();
 
     /**
-     * @abstract   A node to represent the gradient of a padding node.
+     * A node to represent the gradient of a padding node.
+     * 
      * @param      sourceGradient   The input gradient from the 'downstream' gradient filter.
      * @param      sourceImage      The input image from the forward reshape node.
      * @return     A MPSNNPadGradientNode
@@ -129,7 +130,8 @@ public class MPSNNPadGradientNode extends MPSNNGradientFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract   A node to represent the gradient of a padding node.
+     * A node to represent the gradient of a padding node.
+     * 
      * @param      sourceGradient   The input gradient from the 'downstream' gradient filter.
      * @param      sourceImage      The input image from the forward padding node.
      * @return     A MPSNNPadGradientNode

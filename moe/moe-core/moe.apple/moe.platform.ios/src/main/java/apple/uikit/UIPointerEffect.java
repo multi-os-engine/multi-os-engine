@@ -89,12 +89,12 @@ public class UIPointerEffect extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * @abstract Creates a pointer content effect with the given preview's view.
+     * Creates a pointer content effect with the given preview's view.
+     * 
+     * UIPointerEffect attempts to determine the appropriate effect for the given preview automatically.
+     *             Use one of its subclasses to request a specific system-provided effect.
      * 
      * @param preview  A UITargetedPreview object describing a view with which to construct the effect.
-     * 
-     * @discussion UIPointerEffect attempts to determine the appropriate effect for the given preview automatically.
-     *             Use one of its subclasses to request a specific system-provided effect.
      */
     @Generated
     @Selector("effectWithPreview:")

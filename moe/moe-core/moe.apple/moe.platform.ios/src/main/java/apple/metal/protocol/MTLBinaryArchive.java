@@ -17,9 +17,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLBinaryArchive
- * @abstract A container of pipeline state descriptors and their associated compiled code.
- * @discussion A MTLBinaryArchive allows to persist compiled pipeline state objects for a device, which can be used to skip recompilation on a subsequent run of the app.
+ * [@protocol] MTLBinaryArchive
+ * 
+ * A container of pipeline state descriptors and their associated compiled code.
+ * 
+ * A MTLBinaryArchive allows to persist compiled pipeline state objects for a device, which can be used to skip recompilation on a subsequent run of the app.
  * One or more archives may be supplied in the descriptor of a pipeline state, allowing the device to attempt to look up compiled code in them before performing compilation.
  * If no archives are provided, or no archives contain the requested content, the pipeline state is created by compiling the code as usual.
  * Note that software updates of the OS or device drivers may cause the archive to become outdated, causing the lookup to fail and the usual path performing on-demand compilation is taken.
@@ -39,8 +41,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLBinaryArchive")
 public interface MTLBinaryArchive {
     /**
-     * @method addComputePipelineFunctionsWithDescriptor:error:
-     * @abstract Add the function(s) from a compute pipeline state to the archive.
+     * addComputePipelineFunctionsWithDescriptor:error:
+     * 
+     * Add the function(s) from a compute pipeline state to the archive.
+     * 
      * @param descriptor The descriptor from which function(s) will be added.
      * @param error If the function fails, this will be set to describe the failure. This can be (but is not required to be) an error from the MTLBinaryArchiveDomain domain.
      * @return Whether or not the addition succeeded. Functions referenced multiple times are silently accepted.
@@ -51,8 +55,10 @@ public interface MTLBinaryArchive {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method addRenderPipelineFunctionsWithDescriptor:error:
-     * @abstract Add the function(s) from a render pipeline state to the archive.
+     * addRenderPipelineFunctionsWithDescriptor:error:
+     * 
+     * Add the function(s) from a render pipeline state to the archive.
+     * 
      * @param descriptor The descriptor from which function(s) will be added.
      * @param error If the function fails, this will be set to describe the failure. This can be (but is not required to be) an error from the MTLBinaryArchiveDomain domain.
      * @return Whether or not the addition succeeded. Functions referenced multiple times are silently accepted.
@@ -63,8 +69,10 @@ public interface MTLBinaryArchive {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method addTileRenderPipelineFunctionsWithDescriptor:error:
-     * @abstract Add the function(s) from a tile render pipeline state to the archive.
+     * addTileRenderPipelineFunctionsWithDescriptor:error:
+     * 
+     * Add the function(s) from a tile render pipeline state to the archive.
+     * 
      * @param descriptor The descriptor from which function(s) will be added.
      * @param error If the function fails, this will be set to describe the failure. This can be (but is not required to be) an error from the MTLBinaryArchiveDomain domain.
      * @return Whether or not the addition succeeded. Functions referenced multiple times are silently accepted.
@@ -75,8 +83,9 @@ public interface MTLBinaryArchive {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @property device
-     * @abstract The device this resource was created against.  This resource can only be used with this device.
+     * [@property] device
+     * 
+     * The device this resource was created against.  This resource can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -84,17 +93,21 @@ public interface MTLBinaryArchive {
     MTLDevice device();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @method serializeToURL:error:
-     * @abstract Write the contents of a MTLBinaryArchive to a file.
-     * @discussion Persisting the archive to a file allows opening the archive on a subsequent instance of the app, making available the contents without recompiling.
+     * serializeToURL:error:
+     * 
+     * Write the contents of a MTLBinaryArchive to a file.
+     * 
+     * Persisting the archive to a file allows opening the archive on a subsequent instance of the app, making available the contents without recompiling.
+     * 
      * @param url The file URL to which to write the file
      * @param error If the function fails, this will be set to describe the failure. This can be (but is not required to be) an error from the MTLBinaryArchiveDomain domain. Other possible errors can be file access or I/O related.
      * @return Whether or not the writing the file succeeded.
@@ -104,8 +117,9 @@ public interface MTLBinaryArchive {
     boolean serializeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")

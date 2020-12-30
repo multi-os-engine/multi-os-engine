@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief The likelihood of a sound belonging to identified class
+ * The likelihood of a sound belonging to identified class
  */
 @Generated
 @Library("SoundAnalysis")
@@ -77,7 +77,7 @@ public class SNClassification extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @brief The level of confidence normalized to [0, 1], where 1 is most confident
+     * The level of confidence normalized to [0, 1], where 1 is most confident
      */
     @Generated
     @Selector("confidence")
@@ -97,7 +97,7 @@ public class SNClassification extends NSObject {
     public static native long hash_static();
 
     /**
-     * @brief The identifier of a classification request. An example classification could be a string like 'laughter' or 'applause'. The string is defined in the model that was used for the classification. Usually these are technical labels that are not localized and not meant to be used directly to be presented to an end user in the UI.
+     * The identifier of a classification request. An example classification could be a string like 'laughter' or 'applause'. The string is defined in the model that was used for the classification. Usually these are technical labels that are not localized and not meant to be used directly to be presented to an end user in the UI.
      */
     @Generated
     @Selector("identifier")

@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol	AVPictureInPictureControllerDelegate
- * @abstract	A protocol for delegates of AVPictureInPictureController.
+ * [@protocol]	AVPictureInPictureControllerDelegate
+ * 
+ * A protocol for delegates of AVPictureInPictureController.
  */
 @Generated
 @Library("AVKit")
@@ -37,12 +38,14 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVPictureInPictureControllerDelegate")
 public interface AVPictureInPictureControllerDelegate {
     /**
-     * @method		pictureInPictureController:failedToStartPictureInPictureWithError:
+     * pictureInPictureController:failedToStartPictureInPictureWithError:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture failed to start.
+     * 
      * @param		pictureInPictureController
      * 			The Picture in Picture controller.
      * @param		error
      * 			An error describing why it failed.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture failed to start.
      */
     @Generated
     @IsOptional
@@ -53,12 +56,14 @@ public interface AVPictureInPictureControllerDelegate {
     }
 
     /**
-     * @method		pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
+     * pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
+     * 
+     * Delegate can implement this method to restore the user interface before Picture in Picture stops.
+     * 
      * @param		pictureInPictureController
      * 			The Picture in Picture controller.
      * @param		completionHandler
      * 			The completion handler the delegate needs to call after restore.
-     * @abstract	Delegate can implement this method to restore the user interface before Picture in Picture stops.
      */
     @Generated
     @IsOptional
@@ -70,10 +75,12 @@ public interface AVPictureInPictureControllerDelegate {
     }
 
     /**
-     * @method		pictureInPictureControllerDidStartPictureInPicture:
+     * pictureInPictureControllerDidStartPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture did start.
+     * 
      * @param		pictureInPictureController
      * 			The Picture in Picture controller.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture did start.
      */
     @Generated
     @IsOptional
@@ -84,10 +91,12 @@ public interface AVPictureInPictureControllerDelegate {
     }
 
     /**
-     * @method		pictureInPictureControllerDidStopPictureInPicture:
+     * pictureInPictureControllerDidStopPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture did stop.
+     * 
      * @param		pictureInPictureController
      * 			The Picture in Picture controller.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture did stop.
      */
     @Generated
     @IsOptional
@@ -98,10 +107,12 @@ public interface AVPictureInPictureControllerDelegate {
     }
 
     /**
-     * @method		pictureInPictureControllerWillStartPictureInPicture:
+     * pictureInPictureControllerWillStartPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture will start.
+     * 
      * @param		pictureInPictureController
      * 			The Picture in Picture controller.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture will start.
      */
     @Generated
     @IsOptional
@@ -112,10 +123,12 @@ public interface AVPictureInPictureControllerDelegate {
     }
 
     /**
-     * @method		pictureInPictureControllerWillStopPictureInPicture:
+     * pictureInPictureControllerWillStopPictureInPicture:
+     * 
+     * Delegate can implement this method to be notified when Picture in Picture will stop.
+     * 
      * @param		pictureInPictureController
      * 			The Picture in Picture controller.
-     * @abstract	Delegate can implement this method to be notified when Picture in Picture will stop.
      */
     @Generated
     @IsOptional

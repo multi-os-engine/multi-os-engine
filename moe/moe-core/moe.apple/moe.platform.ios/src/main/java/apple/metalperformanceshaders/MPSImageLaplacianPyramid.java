@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageLaplacianPyramid
- * @discussion Laplacian pyramid levels are constructed as difference between the current source level and 2x interpolated version of the
+ * MPSImageLaplacianPyramid
+ * 
+ * Laplacian pyramid levels are constructed as difference between the current source level and 2x interpolated version of the
  *             half-resolution source level immediately above it.
  * 
  *                 LaplacianMipLevel[l] := GaussianMipLevel[l] – Interpolate(GaussianMipLevel[l + 1])

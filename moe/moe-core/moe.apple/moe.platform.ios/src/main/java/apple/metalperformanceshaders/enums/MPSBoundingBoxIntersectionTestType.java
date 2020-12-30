@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @brief Options for the MPSRayIntersector bounding box intersection test type property
+ * Options for the MPSRayIntersector bounding box intersection test type property
  */
 @Generated
 public final class MPSBoundingBoxIntersectionTestType {
@@ -13,7 +13,7 @@ public final class MPSBoundingBoxIntersectionTestType {
     }
 
     /**
-     * @brief Use the default MPSBoundingBoxIntersectionTestTypeAxisAligned ray/bounding box
+     * Use the default MPSBoundingBoxIntersectionTestTypeAxisAligned ray/bounding box
      * intersection test.
      * 
      * Note: this option was equivalent to MPSBoundingBoxIntersectionTestTypeFast in
@@ -24,7 +24,7 @@ public final class MPSBoundingBoxIntersectionTestType {
      */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**
-     * @brief This intersection test is potentially slower than
+     * This intersection test is potentially slower than
      * MPSBoundingBoxIntersectionTestTypeFast but does not generate false negatives for
      * axis aligned rays (i.e. rays which have one or more components of their direction set to
      * zero). These rays often do not come up in practice due to perspective projections and
@@ -34,7 +34,7 @@ public final class MPSBoundingBoxIntersectionTestType {
      */
     @Generated @NUInt public static final long AxisAligned = 0x0000000000000001L;
     /**
-     * @brief This intersection test is potentially faster than
+     * This intersection test is potentially faster than
      * MPSBoundingBoxIntersectionTestTypeAxisAligned but can generate false negatives for
      * axis aligned rays (i.e. rays which have one or more components of their direction set to
      * zero). These rays often do not come up in practice due to perspective projections and

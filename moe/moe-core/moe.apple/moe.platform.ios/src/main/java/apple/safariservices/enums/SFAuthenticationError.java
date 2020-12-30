@@ -4,9 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum SFAuthenticationError
- * @abstract Error code of the NSError object passed in by SFAuthenticationCompletionHandler.
- * @constant SFAuthenticationErrorCanceledLogin The user has canceled login by cancelling the alert asking for permission to log in to this app, or by dismissing the view controller for loading the authentication webpage.
+ * [@enum] SFAuthenticationError
+ * 
+ * Error code of the NSError object passed in by SFAuthenticationCompletionHandler.
+ * [@constant] SFAuthenticationErrorCanceledLogin The user has canceled login by cancelling the alert asking for permission to log in to this app, or by dismissing the view controller for loading the authentication webpage.
  */
 @Generated
 public final class SFAuthenticationError {

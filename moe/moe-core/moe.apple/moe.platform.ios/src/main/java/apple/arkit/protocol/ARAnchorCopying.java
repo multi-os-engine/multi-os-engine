@@ -21,8 +21,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface ARAnchorCopying extends NSCopying {
     /**
      * Initializes a new anchor object copying values from an existing anchor.
-     * @discussion This initializer will be called any time copy is called on anchor of this class.
+     * 
+     * This initializer will be called any time copy is called on anchor of this class.
      * This method must be implemented for any ARAnchor subclasses that adds properties.
+     * 
      * @param anchor The anchor from which to copy values.
      */
     @Generated

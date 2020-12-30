@@ -28,10 +28,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXCPUExceptionDiagnostic
- * @abstract      An MXDiagnostic subclass that encapsulates CPU exception diagnostic reports.
- * @discussion    CPU exceptions occur when your application consumes excessive CPU time in a short period of time.
- * @discussion    CPU exceptions can be both fatal and non-fatal to your application.
+ * MXCPUExceptionDiagnostic
+ * 
+ * An MXDiagnostic subclass that encapsulates CPU exception diagnostic reports.
+ * 
+ * CPU exceptions occur when your application consumes excessive CPU time in a short period of time.
+ * 
+ * CPU exceptions can be both fatal and non-fatal to your application.
  */
 @Generated
 @Library("MetricKit")
@@ -66,8 +69,9 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property      callStackTree
-     * @abstract      The application call stack tree associated with the excessive CPU consumption.
+     * [@property]      callStackTree
+     * 
+     * The application call stack tree associated with the excessive CPU consumption.
      */
     @Generated
     @Selector("callStackTree")
@@ -166,18 +170,22 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
     }
 
     /**
-     * @property      totalCPUTime
-     * @abstract      Total CPU time consumed in the scope of this CPU exception.
-     * @discussion    Dimensioned as NSUnitDuration.
+     * [@property]      totalCPUTime
+     * 
+     * Total CPU time consumed in the scope of this CPU exception.
+     * 
+     * Dimensioned as NSUnitDuration.
      */
     @Generated
     @Selector("totalCPUTime")
     public native NSMeasurement<NSUnitDuration> totalCPUTime();
 
     /**
-     * @property      totalSampledTime
-     * @abstract      Total time that the application was sampled for during the CPU exception.
-     * @discussion    Dimensioned as NSUnitDuration.
+     * [@property]      totalSampledTime
+     * 
+     * Total time that the application was sampled for during the CPU exception.
+     * 
+     * Dimensioned as NSUnitDuration.
      */
     @Generated
     @Selector("totalSampledTime")

@@ -170,9 +170,11 @@ public class EKEventEditViewController extends UINavigationController {
     public static native long version_static();
 
     /**
-     * @method     cancelEditing
-     * @abstract   Ends the editing session discarding any changes to the event.
-     * @discussion This method simulates the user tapping the Cancel button. The delegate will not 
+     * cancelEditing
+     * 
+     * Ends the editing session discarding any changes to the event.
+     * 
+     * This method simulates the user tapping the Cancel button. The delegate will not
      *             receive the eventEditViewController:didCompleteWithAction: message, so you are
      *             responsible for dismissing the controller after calling this method.
      */
@@ -186,9 +188,11 @@ public class EKEventEditViewController extends UINavigationController {
     public native EKEventEditViewDelegate editViewDelegate();
 
     /**
-     * @property   event
-     * @abstract   The event to edit.
-     * @discussion You must set this before presenting the view controller. You can leave
+     * [@property]   event
+     * 
+     * The event to edit.
+     * 
+     * You must set this before presenting the view controller. You can leave
      *             it set to nil and a new event will be created for you. If you pass an event
      *             here and it does not belong to the event store (if set) an exception will be
      *             raised.
@@ -198,9 +202,11 @@ public class EKEventEditViewController extends UINavigationController {
     public native EKEvent event();
 
     /**
-     * @property   eventStore
-     * @abstract   The event store to use to save events.
-     * @discussion You must set this before presenting the view controller.
+     * [@property]   eventStore
+     * 
+     * The event store to use to save events.
+     * 
+     * You must set this before presenting the view controller.
      */
     @Generated
     @Selector("eventStore")
@@ -244,9 +250,11 @@ public class EKEventEditViewController extends UINavigationController {
     }
 
     /**
-     * @property   event
-     * @abstract   The event to edit.
-     * @discussion You must set this before presenting the view controller. You can leave
+     * [@property]   event
+     * 
+     * The event to edit.
+     * 
+     * You must set this before presenting the view controller. You can leave
      *             it set to nil and a new event will be created for you. If you pass an event
      *             here and it does not belong to the event store (if set) an exception will be
      *             raised.
@@ -256,9 +264,11 @@ public class EKEventEditViewController extends UINavigationController {
     public native void setEvent(EKEvent value);
 
     /**
-     * @property   eventStore
-     * @abstract   The event store to use to save events.
-     * @discussion You must set this before presenting the view controller.
+     * [@property]   eventStore
+     * 
+     * The event store to use to save events.
+     * 
+     * You must set this before presenting the view controller.
      */
     @Generated
     @Selector("setEventStore:")

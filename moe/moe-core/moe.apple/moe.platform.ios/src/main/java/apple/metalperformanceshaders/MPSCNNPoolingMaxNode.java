@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract  A node representing a MPSCNNPoolingMax kernel
- * @discussion The default edge mode is MPSImageEdgeModeClamp
+ * A node representing a MPSCNNPoolingMax kernel
+ * 
+ * The default edge mode is MPSImageEdgeModeClamp
  */
 @Generated
 @Library("MetalPerformanceShaders")

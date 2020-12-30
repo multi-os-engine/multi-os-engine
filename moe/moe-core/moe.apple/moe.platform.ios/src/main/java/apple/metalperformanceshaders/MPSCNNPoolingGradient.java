@@ -29,9 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNPoolingGradient
- * @dependency This depends on Metal.framework
- * @discussion Specifies the base class for computing the gradient of the pooling filters.
+ * MPSCNNPoolingGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the base class for computing the gradient of the pooling filters.
  *             The operation backpropagates a gradient vector using the chain rule.
  * 
  *             Given the input gradient vector dL(x) = dL/d out(x), which is the derivative of the
@@ -142,8 +143,10 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     public native MPSCNNPoolingGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion See @ref MPSKernel#initWithCoder.
+     * NSSecureCoding compatability
+     * 
+     * See @ref MPSKernel#initWithCoder.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSCNNPoolingGradient
      * @param      device      The MTLDevice on which to make the MPSCNNPoolingGradient
      * @return     A new MPSCNNPooling object, or nil if failure.
@@ -158,7 +161,8 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     public native MPSCNNPoolingGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize a gradient pooling filter
+     * Initialize a gradient pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
@@ -170,7 +174,8 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @abstract  Initialize a gradient pooling filter
+     * Initialize a gradient pooling filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel.  Can be an odd or even value.
      * @param      kernelHeight        The height of the kernel.  Can be an odd or even value.
@@ -220,10 +225,12 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   sourceSize
-     * @abstract   An optional source size which defines together with primaryOffset, the set of input gradient
+     * [@property]   sourceSize
+     * 
+     * An optional source size which defines together with primaryOffset, the set of input gradient
      *             pixels to take into account in the gradient computations.
-     * @discussion A MTLSize that together with primaryOffset indicates which part of the source gradient to consider.
+     * 
+     * A MTLSize that together with primaryOffset indicates which part of the source gradient to consider.
      *             If the area does not lie completely within the primary source image, the intersection between
      *             source area rectangle and primary source bounds is used.
      *             Default: A size where every component is NSUIntegerMax indicating the entire rest of the image,
@@ -238,10 +245,12 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   sourceSize
-     * @abstract   An optional source size which defines together with primaryOffset, the set of input gradient
+     * [@property]   sourceSize
+     * 
+     * An optional source size which defines together with primaryOffset, the set of input gradient
      *             pixels to take into account in the gradient computations.
-     * @discussion A MTLSize that together with primaryOffset indicates which part of the source gradient to consider.
+     * 
+     * A MTLSize that together with primaryOffset indicates which part of the source gradient to consider.
      *             If the area does not lie completely within the primary source image, the intersection between
      *             source area rectangle and primary source bounds is used.
      *             Default: A size where every component is NSUIntegerMax indicating the entire rest of the image,

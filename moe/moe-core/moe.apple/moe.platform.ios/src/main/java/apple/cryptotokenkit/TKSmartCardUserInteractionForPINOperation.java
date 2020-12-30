@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * User interaction for the secure PIN operations on the SmartCard reader.
- * @note Result is available after the interaction has been successfully completed.
+ * [@note] Result is available after the interaction has been successfully completed.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -46,7 +46,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
 
     /**
      * Bitmask specifying condition(s) under which PIN entry should be considered complete.
-     * @note Default value: TKSmartCardPINCompletionKey
+     * [@note] Default value: TKSmartCardPINCompletionKey
      */
     @Generated
     @Selector("PINCompletion")
@@ -55,8 +55,9 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
 
     /**
      * List of message indices referring to a predefined message table. It is used to specify the type and number of messages displayed during the PIN operation.
-     * @discussion If nil, the reader does not display any message (reader specific). Typically, PIN verification takes 1 message, PIN modification 1-3 messages.
-     * @note Default value: nil
+     * 
+     * If nil, the reader does not display any message (reader specific). Typically, PIN verification takes 1 message, PIN modification 1-3 messages.
+     * [@note] Default value: nil
      */
     @Generated
     @Selector("PINMessageIndices")
@@ -138,7 +139,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
 
     /**
      * Locale defining the language of displayed messages. If set to nil, the user's current locale is used.
-     * @note Default value: the user's current locale
+     * [@note] Default value: the user's current locale
      */
     @Generated
     @Selector("locale")
@@ -174,7 +175,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
 
     /**
      * Locale defining the language of displayed messages. If set to nil, the user's current locale is used.
-     * @note Default value: the user's current locale
+     * [@note] Default value: the user's current locale
      */
     @Generated
     @Selector("setLocale:")
@@ -182,7 +183,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
 
     /**
      * Bitmask specifying condition(s) under which PIN entry should be considered complete.
-     * @note Default value: TKSmartCardPINCompletionKey
+     * [@note] Default value: TKSmartCardPINCompletionKey
      */
     @Generated
     @Selector("setPINCompletion:")
@@ -190,8 +191,9 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
 
     /**
      * List of message indices referring to a predefined message table. It is used to specify the type and number of messages displayed during the PIN operation.
-     * @discussion If nil, the reader does not display any message (reader specific). Typically, PIN verification takes 1 message, PIN modification 1-3 messages.
-     * @note Default value: nil
+     * 
+     * If nil, the reader does not display any message (reader specific). Typically, PIN verification takes 1 message, PIN modification 1-3 messages.
+     * [@note] Default value: nil
      */
     @Generated
     @Selector("setPINMessageIndices:")

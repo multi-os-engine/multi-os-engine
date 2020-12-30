@@ -31,9 +31,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKWorkoutRouteQuery
- * @abstract      An HKWorkoutRouteQuery is used to access data associated with an HKWorkoutRoute.
- * @discussion    Once instantiated, call HKHealthStore executeQuery to begin enumerating the route data. Call
+ * HKWorkoutRouteQuery
+ * 
+ * An HKWorkoutRouteQuery is used to access data associated with an HKWorkoutRoute.
+ * 
+ * Once instantiated, call HKHealthStore executeQuery to begin enumerating the route data. Call
  *                HKHealthStore stopQuery to discontinue further route data reporting.
  */
 @Generated
@@ -104,8 +106,9 @@ public class HKWorkoutRouteQuery extends HKQuery {
     public native HKWorkoutRouteQuery init();
 
     /**
-     * @method        initWithRoute:handler:
-     * @abstract      Returns a query that will retrieve CLLocation objects for the specified
+     * initWithRoute:handler:
+     * 
+     * Returns a query that will retrieve CLLocation objects for the specified
      * workoutRoute.
      * 
      * @param workoutRoute    The HKWorkoutRoute for which the location data will be returned.

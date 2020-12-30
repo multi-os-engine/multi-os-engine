@@ -20,9 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudioUnitEQFilterType
- * @abstract Filter types available to use with AVAudioUnitEQ.
- * @discussion
+ * [@enum] AVAudioUnitEQFilterType
+ * 
+ * Filter types available to use with AVAudioUnitEQ.
+ * 
  *     Depending on the filter type, a combination of one or all of the filter parameters defined 
  *     in AVAudioUnitEQFilterParameters are used to set the filter.
  * 

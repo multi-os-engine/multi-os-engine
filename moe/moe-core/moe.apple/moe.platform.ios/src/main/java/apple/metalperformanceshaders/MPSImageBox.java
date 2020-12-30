@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageBox
- * @discussion The MPSImageBox convolves an image with given filter of odd width and height. The kernel elements
+ * MPSImageBox
+ * 
+ * The MPSImageBox convolves an image with given filter of odd width and height. The kernel elements
  *             all have equal weight, achieving a blur effect. (Each result is the unweighted average of the
  *             surrounding pixels.) This allows for much faster algorithms, espcially for larger blur radii.
  *             The box height and width must be odd numbers. The box blur is a separable filter. The implementation
@@ -170,7 +171,8 @@ public class MPSImageBox extends MPSUnaryImageKernel {
     public native MPSImageBox initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a filter for a particular kernel size and device
+     * Initialize a filter for a particular kernel size and device
+     * 
      * @param      device  The device the filter will run on
      * @param      kernelWidth  the width of the kernel.  Must be an odd number.
      * @param      kernelHeight the height of the kernel. Must be an odd number.
@@ -182,8 +184,9 @@ public class MPSImageBox extends MPSUnaryImageKernel {
             @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * @property kernelHeight
-     * @abstract  The height of the filter window.
+     * [@property] kernelHeight
+     * 
+     * The height of the filter window.
      */
     @Generated
     @Selector("kernelHeight")
@@ -191,8 +194,9 @@ public class MPSImageBox extends MPSUnaryImageKernel {
     public native long kernelHeight();
 
     /**
-     * @property kernelWidth
-     * @abstract  The width of the filter window.
+     * [@property] kernelWidth
+     * 
+     * The width of the filter window.
      */
     @Generated
     @Selector("kernelWidth")
@@ -204,12 +208,14 @@ public class MPSImageBox extends MPSUnaryImageKernel {
     public native MPSImageBox initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.

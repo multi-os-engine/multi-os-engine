@@ -27,7 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A result containing the most likely classification candidates in the time range specified
+ * A result containing the most likely classification candidates in the time range specified
  */
 @Generated
 @Library("SoundAnalysis")
@@ -80,7 +80,7 @@ public class SNClassificationResult extends NSObject implements SNResult {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @brief The top classification candidates, sorted with highest confidence first
+     * The top classification candidates, sorted with highest confidence first
      */
     @Generated
     @Selector("classifications")
@@ -147,8 +147,9 @@ public class SNClassificationResult extends NSObject implements SNResult {
     public static native Class superclass_static();
 
     /**
-     * @brief The time range in the client-provided audio stream to which this classification result corresponds
-     * @discussion Each CMTime contains of a value (audio frame count) and timescale (client sample rate). This enables the client to precisely identify the frame range in the original audio stream to which this result corresponds. Time ranges will often be in the past compared to the frame count of the most recent audio buffer provided to the analyzer, due to the inherent audio buffering operations required to deliver a full block of audio to an MLModel.
+     * The time range in the client-provided audio stream to which this classification result corresponds
+     * 
+     * Each CMTime contains of a value (audio frame count) and timescale (client sample rate). This enables the client to precisely identify the frame range in the original audio stream to which this result corresponds. Time ranges will often be in the past compared to the frame count of the most recent audio buffer provided to the analyzer, due to the inherent audio buffering operations required to deliver a full block of audio to an MLModel.
      */
     @Generated
     @Selector("timeRange")

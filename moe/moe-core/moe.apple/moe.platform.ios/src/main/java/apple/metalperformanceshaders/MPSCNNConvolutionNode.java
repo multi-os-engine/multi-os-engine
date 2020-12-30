@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   A MPSNNFilterNode representing a MPSCNNConvolution kernel
+ * A MPSNNFilterNode representing a MPSCNNConvolution kernel
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -96,7 +96,8 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     public native MPSCNNConvolutionNode init();
 
     /**
-     * @abstract   Init a node representing a MPSCNNConvolution kernel
+     * Init a node representing a MPSCNNConvolution kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                                     protocol. This object is provided by you to encapsulate storage for
@@ -137,7 +138,8 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     public static native Object new_objc();
 
     /**
-     * @abstract   Init an autoreleased not representing a MPSCNNConvolution kernel
+     * Init an autoreleased not representing a MPSCNNConvolution kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                                     protocol. This object is provided by you to encapsulate storage for
@@ -172,8 +174,9 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     public static native long version_static();
 
     /**
-     * @abstract   Set the floating-point precision used by the convolution accumulator
-     * @discussion Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
+     * Set the floating-point precision used by the convolution accumulator
+     * 
+     * Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
      */
     @Generated
     @Selector("accumulatorPrecision")
@@ -181,8 +184,9 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     public native long accumulatorPrecision();
 
     /**
-     * @abstract   A node to represent a MPSCNNConvolutionGradientState object
-     * @discussion  Use this if the convolution is mirrored by a convolution transpose node
+     * A node to represent a MPSCNNConvolutionGradientState object
+     * 
+     * Use this if the convolution is mirrored by a convolution transpose node
      *              later on in the graph to make sure that the size of the image returned
      *              from the convolution transpose matches the size of the image passed in
      *              to this node.
@@ -192,8 +196,9 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     public native MPSCNNConvolutionGradientStateNode convolutionGradientState();
 
     /**
-     * @abstract   Set the floating-point precision used by the convolution accumulator
-     * @discussion Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
+     * Set the floating-point precision used by the convolution accumulator
+     * 
+     * Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
      */
     @Generated
     @Selector("setAccumulatorPrecision:")

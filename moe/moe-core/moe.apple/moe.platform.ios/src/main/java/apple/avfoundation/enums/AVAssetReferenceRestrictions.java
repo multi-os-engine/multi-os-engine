@@ -20,20 +20,21 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- *  @enum			AVAssetReferenceRestrictions
- *  @abstract		These constants can be passed in to AVURLAssetReferenceRestrictionsKey to control the resolution of references to external media data.
+ *  [@enum]			AVAssetReferenceRestrictions
  * 
- *  @constant		AVAssetReferenceRestrictionForbidNone
+ * These constants can be passed in to AVURLAssetReferenceRestrictionsKey to control the resolution of references to external media data.
+ * 
+ *  [@constant]		AVAssetReferenceRestrictionForbidNone
  * Indicates that all types of references should be followed.
- *  @constant		AVAssetReferenceRestrictionForbidRemoteReferenceToLocal
+ *  [@constant]		AVAssetReferenceRestrictionForbidRemoteReferenceToLocal
  * Indicates that references from a remote asset (e.g. referenced via http URL) to local media data (e.g. stored in a local file) should not be followed.
- *  @constant		AVAssetReferenceRestrictionForbidLocalReferenceToRemote
+ *  [@constant]		AVAssetReferenceRestrictionForbidLocalReferenceToRemote
  * Indicates that references from a local asset to remote media data should not be followed.
- *  @constant		AVAssetReferenceRestrictionForbidCrossSiteReference
+ *  [@constant]		AVAssetReferenceRestrictionForbidCrossSiteReference
  * Indicates that references from a remote asset to remote media data stored at a different site should not be followed.
- *  @constant		AVAssetReferenceRestrictionForbidLocalReferenceToLocal
+ *  [@constant]		AVAssetReferenceRestrictionForbidLocalReferenceToLocal
  * Indicates that references from a local asset to local media data stored outside the asset's container file should not be followed.
- *  @constant		AVAssetReferenceRestrictionForbidAll
+ *  [@constant]		AVAssetReferenceRestrictionForbidAll
  * Indicates that only references to media data stored within the asset's container file should be allowed.
  */
 @Generated

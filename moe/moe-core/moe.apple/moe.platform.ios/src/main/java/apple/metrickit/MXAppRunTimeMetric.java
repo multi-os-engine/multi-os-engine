@@ -28,9 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         MXAppRunTimeMetric
- * @abstract      An MXMetric subclass that encapsulates app runtime metrics.
- * @discussion    Runtime metrics describe application time spent running in different modes, such as audio, location, etc.
+ * MXAppRunTimeMetric
+ * 
+ * An MXMetric subclass that encapsulates app runtime metrics.
+ * 
+ * Runtime metrics describe application time spent running in different modes, such as audio, location, etc.
  */
 @Generated
 @Library("MetricKit")
@@ -83,38 +85,48 @@ public class MXAppRunTimeMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property      cumulativeBackgroundAudioTime
-     * @abstract      Cumulative time the application spent running in the background to play audio
-     * @discussion    Dimensioned as NSUnitDuration.
+     * [@property]      cumulativeBackgroundAudioTime
+     * 
+     * Cumulative time the application spent running in the background to play audio
+     * 
+     * Dimensioned as NSUnitDuration.
      */
     @Generated
     @Selector("cumulativeBackgroundAudioTime")
     public native NSMeasurement<NSUnitDuration> cumulativeBackgroundAudioTime();
 
     /**
-     * @property      cumulativeBackgroundLocationTime
-     * @abstract      Cumulative time the application spent running in the background to acquire or process location.
-     * @discussion    Dimensioned as NSUnitDuration.
+     * [@property]      cumulativeBackgroundLocationTime
+     * 
+     * Cumulative time the application spent running in the background to acquire or process location.
+     * 
+     * Dimensioned as NSUnitDuration.
      */
     @Generated
     @Selector("cumulativeBackgroundLocationTime")
     public native NSMeasurement<NSUnitDuration> cumulativeBackgroundLocationTime();
 
     /**
-     * @property      cumulativeBackgroundTime
-     * @abstract      Cumulative application background time.
-     * @discussion    Time spent off screen and in the background, invisible to the user.
-     * @discussion    Dimensioned as NSUnitDuration.
+     * [@property]      cumulativeBackgroundTime
+     * 
+     * Cumulative application background time.
+     * 
+     * Time spent off screen and in the background, invisible to the user.
+     * 
+     * Dimensioned as NSUnitDuration.
      */
     @Generated
     @Selector("cumulativeBackgroundTime")
     public native NSMeasurement<NSUnitDuration> cumulativeBackgroundTime();
 
     /**
-     * @property      cumulativeForegroundTime
-     * @abstract      Cumulative application foreground time.
-     * @discussion    Time spent on screen and visible to the user.
-     * @discussion    Dimensioned as NSUnitDuration.
+     * [@property]      cumulativeForegroundTime
+     * 
+     * Cumulative application foreground time.
+     * 
+     * Time spent on screen and visible to the user.
+     * 
+     * Dimensioned as NSUnitDuration.
      */
     @Generated
     @Selector("cumulativeForegroundTime")

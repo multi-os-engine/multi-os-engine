@@ -674,6 +674,7 @@ public class SKView extends UIView {
     /**
      * Create an SKTexture containing a snapshot of how it would have been rendered in this view.
      * The texture is tightly cropped to the size of the node.
+     * 
      * @param node the node subtree to render to the texture.
      */
     @Generated
@@ -683,6 +684,7 @@ public class SKView extends UIView {
     /**
      * Create an SKTexture containing a snapshot of how it would have been rendered in this view.
      * The texture is cropped to the specified rectangle
+     * 
      * @param node the node subtree to render to the texture.
      * @param crop the crop
      */

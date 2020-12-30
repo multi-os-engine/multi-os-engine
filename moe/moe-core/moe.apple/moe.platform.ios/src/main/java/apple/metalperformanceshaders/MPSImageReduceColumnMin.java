@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageReduceColumnMin
- * @discussion The MPSImageReduceColumnMin performs a reduction operation returning the mininmum value for each column of an image
+ * MPSImageReduceColumnMin
+ * 
+ * The MPSImageReduceColumnMin performs a reduction operation returning the mininmum value for each column of an image
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -106,7 +107,8 @@ public class MPSImageReduceColumnMin extends MPSImageReduceUnary {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information to apply the reduction operation on an image.
+     * Specifies information to apply the reduction operation on an image.
+     * 
      * @param    device            The device the filter will run on
      * @return     A valid MPSImageReduce object or nil, if failure.
      */

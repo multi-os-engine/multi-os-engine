@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNCone
- * @abstract SCNCone represents a cone with controllable height, top radius and bottom radius.
+ * SCNCone
+ * 
+ * SCNCone represents a cone with controllable height, top radius and bottom radius.
  */
 @Generated
 @Library("SceneKit")
@@ -98,8 +99,10 @@ public class SCNCone extends SCNGeometry {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @method coneWithTopRadius:bottomRadius:height:
-     * @abstract Creates and returns a cone with given top radius, bottom radius and height.
+     * coneWithTopRadius:bottomRadius:height:
+     * 
+     * Creates and returns a cone with given top radius, bottom radius and height.
+     * 
      * @param topRadius The radius at the top of the cone.
      * @param bottomRadius The radius at the bottom of the cone.
      * @param height The height of the cone.
@@ -188,9 +191,11 @@ public class SCNCone extends SCNGeometry {
     public static native long version_static();
 
     /**
-     * @property bottomRadius
-     * @abstract The radius at the bottom of the cone. Animatable.
-     * @discussion If the value is less than 0, the geometry is empty. The default value is 0.5.
+     * [@property] bottomRadius
+     * 
+     * The radius at the bottom of the cone. Animatable.
+     * 
+     * If the value is less than 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
     @Selector("bottomRadius")
@@ -198,9 +203,11 @@ public class SCNCone extends SCNGeometry {
     public native double bottomRadius();
 
     /**
-     * @property height
-     * @abstract The height of the cone. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The height of the cone. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("height")
@@ -208,9 +215,11 @@ public class SCNCone extends SCNGeometry {
     public native double height();
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("heightSegmentCount")
@@ -226,9 +235,11 @@ public class SCNCone extends SCNGeometry {
     public native SCNCone initWithCoder(NSCoder coder);
 
     /**
-     * @property radialSegmentCount
-     * @abstract The number of subdivisions along the radial coordinate. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 48.
+     * [@property] radialSegmentCount
+     * 
+     * The number of subdivisions along the radial coordinate. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
     @Selector("radialSegmentCount")
@@ -236,45 +247,55 @@ public class SCNCone extends SCNGeometry {
     public native long radialSegmentCount();
 
     /**
-     * @property bottomRadius
-     * @abstract The radius at the bottom of the cone. Animatable.
-     * @discussion If the value is less than 0, the geometry is empty. The default value is 0.5.
+     * [@property] bottomRadius
+     * 
+     * The radius at the bottom of the cone. Animatable.
+     * 
+     * If the value is less than 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
     @Selector("setBottomRadius:")
     public native void setBottomRadius(@NFloat double value);
 
     /**
-     * @property height
-     * @abstract The height of the cone. Animatable.
-     * @discussion If the value is less than or equal to 0, the geometry is empty. The default value is 1.
+     * [@property] height
+     * 
+     * The height of the cone. Animatable.
+     * 
+     * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
     @Selector("setHeight:")
     public native void setHeight(@NFloat double value);
 
     /**
-     * @property heightSegmentCount
-     * @abstract The number of subdivisions along the Y axis. Animatable.
-     * @discussion If the value is less than 1, the behavior is undefined. The default value is 1.
+     * [@property] heightSegmentCount
+     * 
+     * The number of subdivisions along the Y axis. Animatable.
+     * 
+     * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
     @Selector("setHeightSegmentCount:")
     public native void setHeightSegmentCount(@NInt long value);
 
     /**
-     * @property radialSegmentCount
-     * @abstract The number of subdivisions along the radial coordinate. Animatable.
-     * @discussion If the value is less than 3, the behavior is undefined. The default value is 48.
+     * [@property] radialSegmentCount
+     * 
+     * The number of subdivisions along the radial coordinate. Animatable.
+     * 
+     * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
     @Selector("setRadialSegmentCount:")
     public native void setRadialSegmentCount(@NInt long value);
 
     /**
-     * @property topRadius
-     * @abstract The radius at the top of the cone. Animatable.
-     * @discussion If the value is less than 0, the geometry is empty. The default value is 0.
+     * [@property] topRadius
+     * 
+     * The radius at the top of the cone. Animatable.
+     * 
+     * If the value is less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
     @Selector("setTopRadius:")
@@ -287,9 +308,11 @@ public class SCNCone extends SCNGeometry {
     }
 
     /**
-     * @property topRadius
-     * @abstract The radius at the top of the cone. Animatable.
-     * @discussion If the value is less than 0, the geometry is empty. The default value is 0.
+     * [@property] topRadius
+     * 
+     * The radius at the top of the cone. Animatable.
+     * 
+     * If the value is less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
     @Selector("topRadius")

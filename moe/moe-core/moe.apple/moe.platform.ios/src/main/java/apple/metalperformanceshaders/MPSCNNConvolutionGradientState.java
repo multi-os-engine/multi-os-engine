@@ -30,8 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNConvolutionGradientState
- * @discussion The MPSCNNConvolutionGradientState is returned by resultStateForSourceImage:sourceStates method on MPSCNNConvolution object.
+ * MPSCNNConvolutionGradientState
+ * 
+ * The MPSCNNConvolutionGradientState is returned by resultStateForSourceImage:sourceStates method on MPSCNNConvolution object.
  *             Note that resultStateForSourceImage:sourceStates:destinationImage creates the object on autoreleasepool.
  *             It will be consumed by MPSCNNConvolutionGradient. This is also used by MPSCNNConvolutionTranspose encode call
  *             that returns MPSImage on left hand side to correctly size the destination.
@@ -126,8 +127,9 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property   convolution
-     * @abstract   The convolution filter that produced the state.
+     * [@property]   convolution
+     * 
+     * The convolution filter that produced the state.
      *             For child MPSCNNConvolutionTrasposeGradientState object, convolution
      *             below refers to MPSCNNConvolution object that produced MPSCNNConvolutionGradientState object
      *             which was used to create MPSCNNConvolutionTransposeGradientState object. See resultStateForSourceImage:sourceStates
@@ -146,8 +148,9 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
     public static native String description_static();
 
     /**
-     * @property   gradientForBiases
-     * @abstract   A buffer that contains the loss function gradients with respect to biases.
+     * [@property]   gradientForBiases
+     * 
+     * A buffer that contains the loss function gradients with respect to biases.
      */
     @Generated
     @Selector("gradientForBiases")
@@ -155,8 +158,9 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
     public native MTLBuffer gradientForBiases();
 
     /**
-     * @property   gradientForWeights
-     * @abstract   A buffer that contains the loss function gradients with respect to weights.
+     * [@property]   gradientForWeights
+     * 
+     * A buffer that contains the loss function gradients with respect to weights.
      *             Each value in the buffer is a float. The layout of the gradients with respect to the weights is the same as
      *             the weights layout provided by data source i.e. it can be interpreted as 4D array
      * 
@@ -170,8 +174,9 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
     public native MTLBuffer gradientForWeights();
 
     /**
-     * @property   gradientForWeightsLayout
-     * @abstract   Layout of gradient with respect to weights in gradientForWeights buffer.
+     * [@property]   gradientForWeightsLayout
+     * 
+     * Layout of gradient with respect to weights in gradientForWeights buffer.
      *             Currently only MPSCNNConvolutionWeightsLayoutOHWI is supported.
      */
     @Generated

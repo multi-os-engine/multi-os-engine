@@ -3,38 +3,39 @@ package apple.security.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum tls_ciphersuite_t enumeration
- * @abstract Enumerations for the set of supported TLS and DTLS ciphersuites.
+ * [@enum] tls_ciphersuite_t enumeration
+ * 
+ * Enumerations for the set of supported TLS and DTLS ciphersuites.
  * 
  * See https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4
  * for ciphersuite codepoint allocations and reference RFCs.
  * 
- * @constant tls_ciphersuite_RSA_WITH_3DES_EDE_CBC_SHA
- * @constant tls_ciphersuite_RSA_WITH_AES_128_CBC_SHA
- * @constant tls_ciphersuite_RSA_WITH_AES_256_CBC_SHA
- * @constant tls_ciphersuite_RSA_WITH_AES_128_GCM_SHA256
- * @constant tls_ciphersuite_RSA_WITH_AES_256_GCM_SHA384
- * @constant tls_ciphersuite_RSA_WITH_AES_128_CBC_SHA256
- * @constant tls_ciphersuite_RSA_WITH_AES_256_CBC_SHA256
- * @constant tls_ciphersuite_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
- * @constant tls_ciphersuite_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
- * @constant tls_ciphersuite_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
- * @constant tls_ciphersuite_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
- * @constant tls_ciphersuite_ECDHE_RSA_WITH_AES_128_CBC_SHA
- * @constant tls_ciphersuite_ECDHE_RSA_WITH_AES_256_CBC_SHA
- * @constant tls_ciphersuite_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
- * @constant tls_ciphersuite_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
- * @constant tls_ciphersuite_ECDHE_RSA_WITH_AES_128_CBC_SHA256
- * @constant tls_ciphersuite_ECDHE_RSA_WITH_AES_256_CBC_SHA384
- * @constant tls_ciphersuite_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
- * @constant tls_ciphersuite_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
- * @constant tls_ciphersuite_ECDHE_RSA_WITH_AES_128_GCM_SHA256
- * @constant tls_ciphersuite_ECDHE_RSA_WITH_AES_256_GCM_SHA384
- * @constant tls_ciphersuite_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
- * @constant tls_ciphersuite_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
- * @constant tls_ciphersuite_AES_128_GCM_SHA256
- * @constant tls_ciphersuite_AES_256_GCM_SHA384
- * @constant tls_ciphersuite_CHACHA20_POLY1305_SHA256
+ * [@constant] tls_ciphersuite_RSA_WITH_3DES_EDE_CBC_SHA
+ * [@constant] tls_ciphersuite_RSA_WITH_AES_128_CBC_SHA
+ * [@constant] tls_ciphersuite_RSA_WITH_AES_256_CBC_SHA
+ * [@constant] tls_ciphersuite_RSA_WITH_AES_128_GCM_SHA256
+ * [@constant] tls_ciphersuite_RSA_WITH_AES_256_GCM_SHA384
+ * [@constant] tls_ciphersuite_RSA_WITH_AES_128_CBC_SHA256
+ * [@constant] tls_ciphersuite_RSA_WITH_AES_256_CBC_SHA256
+ * [@constant] tls_ciphersuite_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA
+ * [@constant] tls_ciphersuite_ECDHE_ECDSA_WITH_AES_128_CBC_SHA
+ * [@constant] tls_ciphersuite_ECDHE_ECDSA_WITH_AES_256_CBC_SHA
+ * [@constant] tls_ciphersuite_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+ * [@constant] tls_ciphersuite_ECDHE_RSA_WITH_AES_128_CBC_SHA
+ * [@constant] tls_ciphersuite_ECDHE_RSA_WITH_AES_256_CBC_SHA
+ * [@constant] tls_ciphersuite_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
+ * [@constant] tls_ciphersuite_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
+ * [@constant] tls_ciphersuite_ECDHE_RSA_WITH_AES_128_CBC_SHA256
+ * [@constant] tls_ciphersuite_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+ * [@constant] tls_ciphersuite_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+ * [@constant] tls_ciphersuite_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+ * [@constant] tls_ciphersuite_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+ * [@constant] tls_ciphersuite_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+ * [@constant] tls_ciphersuite_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
+ * [@constant] tls_ciphersuite_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+ * [@constant] tls_ciphersuite_AES_128_GCM_SHA256
+ * [@constant] tls_ciphersuite_AES_256_GCM_SHA384
+ * [@constant] tls_ciphersuite_CHACHA20_POLY1305_SHA256
  */
 @Generated
 public final class tls_ciphersuite_t {

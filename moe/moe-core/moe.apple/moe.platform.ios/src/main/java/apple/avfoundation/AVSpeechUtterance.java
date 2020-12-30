@@ -45,11 +45,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVSpeechUtterance
- * @abstract
+ * AVSpeechUtterance
+ * 
  * AVSpeechUtterance is the atom of speaking a string or pausing the synthesizer.
  * 
- * @discussion
  * To start speaking, specify the AVSpeechSynthesisVoice and the string to be spoken, then optionally change the rate, pitch or volume if desired.
  */
 @Generated

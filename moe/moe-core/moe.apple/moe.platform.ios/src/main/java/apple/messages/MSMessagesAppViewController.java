@@ -169,16 +169,19 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public static native long version_static();
 
     /**
-     * @property   activeConversation
-     * @abstract   Current active conversation.
+     * [@property]   activeConversation
+     * 
+     * Current active conversation.
      */
     @Generated
     @Selector("activeConversation")
     public native MSConversation activeConversation();
 
     /**
-     * @method     didBecomeActiveWithConversation:
-     * @abstract   Called when the extension has become active.
+     * didBecomeActiveWithConversation:
+     * 
+     * Called when the extension has become active.
+     * 
      * @param      conversation   The current conversation.
      */
     @Generated
@@ -186,9 +189,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void didBecomeActiveWithConversation(MSConversation conversation);
 
     /**
-     * @method     didCancelSendingMessage:conversation:
-     * @abstract   Informs the extension that the user has removed the message from the input field.
-     * @discussion This method will not be called when the `presentationStyle` is MSMessagesAppPresentationStyleTranscript or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * didCancelSendingMessage:conversation:
+     * 
+     * Informs the extension that the user has removed the message from the input field.
+     * 
+     * This method will not be called when the `presentationStyle` is MSMessagesAppPresentationStyleTranscript or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
      * @param      message    The message sent.
      * @param      conversation    The conversation.
      */
@@ -197,9 +203,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void didCancelSendingMessageConversation(MSMessage message, MSConversation conversation);
 
     /**
-     * @method     didReceiveMessage:conversation:
-     * @abstract   Informs the extension that a new message has arrived.
-     * @discussion This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * didReceiveMessage:conversation:
+     * 
+     * Informs the extension that a new message has arrived.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
      * @param      message    The message received.
      * @param      conversation    The conversation.
      */
@@ -208,8 +217,10 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void didReceiveMessageConversation(MSMessage message, MSConversation conversation);
 
     /**
-     * @method     didResignActiveWithConversation:
-     * @abstract   Called when the extension has resigned active.
+     * didResignActiveWithConversation:
+     * 
+     * Called when the extension has resigned active.
+     * 
      * @param      conversation   The current conversation.
      */
     @Generated
@@ -217,9 +228,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void didResignActiveWithConversation(MSConversation conversation);
 
     /**
-     * @method     didSelectMessage:conversation:
-     * @abstract   Informs the extension that a new message has been selected in the conversation.
-     * @discussion This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * didSelectMessage:conversation:
+     * 
+     * Informs the extension that a new message has been selected in the conversation.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
      * @param      message    The message selected.
      * @param      conversation    The conversation.
      */
@@ -228,9 +242,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void didSelectMessageConversation(MSMessage message, MSConversation conversation);
 
     /**
-     * @method     didStartSendingMessage:conversation:
-     * @abstract   Informs the extension that the message send has been triggered.
-     * @discussion This is called when a user interaction with Messages start the message send process. It does not guarantee the message will be successfully sent or delivered. This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * didStartSendingMessage:conversation:
+     * 
+     * Informs the extension that the message send has been triggered.
+     * 
+     * This is called when a user interaction with Messages start the message send process. It does not guarantee the message will be successfully sent or delivered. This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
      * @param      message    The message being sent.
      * @param      conversation    The conversation the message belongs to.
      */
@@ -239,9 +256,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void didStartSendingMessageConversation(MSMessage message, MSConversation conversation);
 
     /**
-     * @method     didTransitionToPresentationStyle:
-     * @abstract   Called when the extension finished transitioning to a presentation style.
-     * @discussion This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
+     * didTransitionToPresentationStyle:
+     * 
+     * Called when the extension finished transitioning to a presentation style.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
+     * 
      * @param      presentationStyle   The new presentation style.
      */
     @Generated
@@ -249,9 +269,11 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void didTransitionToPresentationStyle(@NUInt long presentationStyle);
 
     /**
-     * @method     dismiss
-     * @abstract   Tells Messages to dismiss the extension and present the keyboard.
-     * @discussion Calling this method does nothing when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
+     * dismiss
+     * 
+     * Tells Messages to dismiss the extension and present the keyboard.
+     * 
+     * Calling this method does nothing when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
      */
     @Generated
     @Selector("dismiss")
@@ -270,8 +292,9 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native MSMessagesAppViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * @property   presentationStyle
-     * @abstract   Get the presentation extension's current presentation style.
+     * [@property]   presentationStyle
+     * 
+     * Get the presentation extension's current presentation style.
      */
     @Generated
     @Selector("presentationStyle")
@@ -279,9 +302,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native long presentationStyle();
 
     /**
-     * @method     requestPresentationStyle:
-     * @abstract   Requests that Messages transition the extension to the specified presentation style.
-     * @discussion When the current `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`, a new instance of `MSMessagesAppViewController` will be instantiated with the requested presentation style if needed.
+     * requestPresentationStyle:
+     * 
+     * Requests that Messages transition the extension to the specified presentation style.
+     * 
+     * When the current `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`, a new instance of `MSMessagesAppViewController` will be instantiated with the requested presentation style if needed.
+     * 
      * @param      presentationStyle   The presentation style to transition to. `MSMessagesAppPresentationStyleTranscript` is not a valid presentation style to request.
      */
     @Generated
@@ -289,8 +315,10 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void requestPresentationStyle(@NUInt long presentationStyle);
 
     /**
-     * @method     willBecomeActiveWithConversation:
-     * @abstract   Called when the extension is about to become active.
+     * willBecomeActiveWithConversation:
+     * 
+     * Called when the extension is about to become active.
+     * 
      * @param      conversation   The current conversation.
      */
     @Generated
@@ -298,8 +326,10 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void willBecomeActiveWithConversation(MSConversation conversation);
 
     /**
-     * @method     willResignActiveWithConversation:
-     * @abstract   Called when the extension will resign active.
+     * willResignActiveWithConversation:
+     * 
+     * Called when the extension will resign active.
+     * 
      * @param      conversation   The current conversation.
      */
     @Generated
@@ -307,9 +337,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void willResignActiveWithConversation(MSConversation conversation);
 
     /**
-     * @method     willSelectMessage:conversation:
-     * @abstract   Informs the extension that a new message will be selected in the conversation.
-     * @discussion This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * willSelectMessage:conversation:
+     * 
+     * Informs the extension that a new message will be selected in the conversation.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * 
      * @param      message    The message selected.
      * @param      conversation    The conversation.
      */
@@ -318,9 +351,12 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native void willSelectMessageConversation(MSMessage message, MSConversation conversation);
 
     /**
-     * @method     willTransitionToPresentationStyle:
-     * @abstract   Called when the extension is about to transition to a new presentation style.
-     * @discussion This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
+     * willTransitionToPresentationStyle:
+     * 
+     * Called when the extension is about to transition to a new presentation style.
+     * 
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
+     * 
      * @param      presentationStyle   The new presentation style.
      */
     @Generated
@@ -333,8 +369,9 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native CGSize contentSizeThatFits(@ByValue CGSize size);
 
     /**
-     * @property   presentationContext
-     * @abstract   The context for which the extension was launched
+     * [@property]   presentationContext
+     * 
+     * The context for which the extension was launched
      */
     @Generated
     @Selector("presentationContext")

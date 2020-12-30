@@ -38,7 +38,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A view that guides users through session initialization
  * 
- * @discussion The view will use context aware messaging and animations to instruct the user on gathering required info for the AR session.
+ * The view will use context aware messaging and animations to instruct the user on gathering required info for the AR session.
  */
 @Generated
 @Library("ARKit")
@@ -62,7 +62,7 @@ public class ARCoachingOverlayView extends UIView {
      * Whether or not the view should activate/deactivate automatically, depending on the current state of the session
      * Defaults to `YES`
      * 
-     * @discussion When set to automatically activate, the view will transition to active when the session loses normal tracking for a set amount
+     * When set to automatically activate, the view will transition to active when the session loses normal tracking for a set amount
      * of time.
      * When tracking resumes and other requirements (based on `goal`) are met, the view will deactivate.
      */
@@ -366,7 +366,7 @@ public class ARCoachingOverlayView extends UIView {
     /**
      * A provider of a session to use
      * 
-     * @discussion This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
+     * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
      * set the `session` property.
      */
     @Generated
@@ -377,7 +377,7 @@ public class ARCoachingOverlayView extends UIView {
      * Whether or not the view should activate/deactivate automatically, depending on the current state of the session
      * Defaults to `YES`
      * 
-     * @discussion When set to automatically activate, the view will transition to active when the session loses normal tracking for a set amount
+     * When set to automatically activate, the view will transition to active when the session loses normal tracking for a set amount
      * of time.
      * When tracking resumes and other requirements (based on `goal`) are met, the view will deactivate.
      */
@@ -388,10 +388,11 @@ public class ARCoachingOverlayView extends UIView {
     /**
      * Transition the view to either an activated or deactivated state
      * 
-     * @discussion On activation the view will check the current session, and if relocalization is needed it will present a modified UI with
+     * On activation the view will check the current session, and if relocalization is needed it will present a modified UI with
      * relocalization coaching and a reset button.
      * 
      * On deactivation the view will become hidden
+     * 
      * @param active Whether the view should activate, or deactivate
      * @param animated Whether the view animated to activated/deactivated states, or transitions instantly
      * 
@@ -489,7 +490,7 @@ public class ARCoachingOverlayView extends UIView {
     /**
      * A provider of a session to use
      * 
-     * @discussion This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
+     * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
      * set the `session` property.
      */
     @Generated
@@ -499,7 +500,7 @@ public class ARCoachingOverlayView extends UIView {
     /**
      * A provider of a session to use
      * 
-     * @discussion This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
+     * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime will also
      * set the `session` property.
      */
     @Generated

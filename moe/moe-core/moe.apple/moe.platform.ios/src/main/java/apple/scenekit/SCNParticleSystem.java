@@ -58,8 +58,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNParticleSystem
- * @abstract The SCNParticleSystem class represents a system of particles.
+ * SCNParticleSystem
+ * 
+ * The SCNParticleSystem class represents a system of particles.
  */
 @Generated
 @Library("SceneKit")

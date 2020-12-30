@@ -3,11 +3,12 @@ package apple.coreaudiotypes.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum           SMPTETimeFlags
- * @abstract       Flags that describe the SMPTE time state.
- * @constant       kSMPTETimeValid
+ * [@enum]           SMPTETimeFlags
+ * 
+ * Flags that describe the SMPTE time state.
+ * [@constant]       kSMPTETimeValid
  *                     The full time is valid.
- * @constant       kSMPTETimeRunning
+ * [@constant]       kSMPTETimeRunning
  *                     Time is running.
  */
 @Generated

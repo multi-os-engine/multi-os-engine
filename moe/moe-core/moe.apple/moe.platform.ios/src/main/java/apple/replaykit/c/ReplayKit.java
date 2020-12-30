@@ -43,8 +43,9 @@ public final class ReplayKit {
     public static native String RPRecordingErrorDomain();
 
     /**
-     * @key RPVideoSampleOrientationKey
-     * @abstract Use this key in conjunction with CMGetAttachment on CMSampleBufferRef to get the orientation for the sample. The orientation will follow the enum CGImagePropertyOrientation
+     * [@key] RPVideoSampleOrientationKey
+     * 
+     * Use this key in conjunction with CMGetAttachment on CMSampleBufferRef to get the orientation for the sample. The orientation will follow the enum CGImagePropertyOrientation
      */
     @Generated
     @CVariable()
@@ -52,8 +53,9 @@ public final class ReplayKit {
     public static native String RPVideoSampleOrientationKey();
 
     /**
-     * @key RPApplicationInfoBundleIdentifierKey
-     * @abstract Use this key to retrieve bundle identifier from dictionary provided by broadcastAnnotatedWithApplicationInfo
+     * [@key] RPApplicationInfoBundleIdentifierKey
+     * 
+     * Use this key to retrieve bundle identifier from dictionary provided by broadcastAnnotatedWithApplicationInfo
      */
     @Generated
     @CVariable()

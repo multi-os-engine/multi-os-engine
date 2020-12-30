@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageCanny
- * @discussion The MPSImageCanny implements the Canny edge detection algorithm.
+ * MPSImageCanny
+ * 
+ * The MPSImageCanny implements the Canny edge detection algorithm.
  *             When the color model of the source and destination textures match, the
  *             filter is applied to each channel seperately. If the destination is monochrome
  *             but source multichannel, the source will be converted to grayscale using the
@@ -113,8 +114,9 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property    colorTransform
-     * @discussion  Returns a pointer to the array of three floats used to convert RGBA, RGB or RG images
+     * [@property]    colorTransform
+     * 
+     * Returns a pointer to the array of three floats used to convert RGBA, RGB or RG images
      *              to the destination format when the destination is monochrome.
      *              Value is readonly and user should not modify or free.
      */
@@ -136,8 +138,9 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public static native long hash_static();
 
     /**
-     * @property highThreshold
-     * @abstract Read-write value used to set the high threshold for double thresholding, value is normalized.
+     * [@property] highThreshold
+     * 
+     * Read-write value used to set the high threshold for double thresholding, value is normalized.
      *           Default is 0.4
      */
     @Generated
@@ -153,12 +156,14 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public native MPSImageCanny initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -168,7 +173,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public native MPSImageCanny initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a Canny filter on a given device using the default color
+     * Initialize a Canny filter on a given device using the default color
      *             transform and default sigma value for Gaussian blur.
      *             Default transform: BT.601/JPEG {0.299f, 0.587f, 0.114f}
      *             Default sigma: sqrt(2)
@@ -184,26 +189,27 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public native MPSImageCanny initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a Canny filter on a given device with a non-default color transform and
+     * Initialize a Canny filter on a given device with a non-default color transform and
      *             non-default sigma.
-     * @param      device             The device the filter will run on
-     * @param      transform       Array of three floats describing the rgb to gray scale color transform.
-     *               @code
+     *               [@code]
      *                         Luminance = transform[0] * pixel.x +
      *                                     transform[1] * pixel.y +
      *                                     transform[2] * pixel.z;
-     *               @endcode
-     * @param      sigma               The standard deviation of gaussian blur filter.
-     *                         Gaussian weight, centered at 0, at integer grid n is given as
-     *               @code
+     *               [@endcode]
+     *               [@code]
      *                         w(i) = 1/sqrt(2*pi*sigma) * exp(-n^2/2*sigma^2)
-     *               @endcode
+     *               [@endcode]
      *                         If we take cut off at 1% of w(0) (max weight) beyond which weights
      *                         are considered 0, we have
-     *               @code
+     *               [@code]
      *                         ceil (sqrt(-log(0.01)*2)*sigma) ~ ceil(3.7*sigma)
-     *               @endcode
+     *               [@endcode]
      *                         as rough estimate of filter width
+     * 
+     * @param      device             The device the filter will run on
+     * @param      transform       Array of three floats describing the rgb to gray scale color transform.
+     * @param      sigma               The standard deviation of gaussian blur filter.
+     *                         Gaussian weight, centered at 0, at integer grid n is given as
      * @return     A valid object or nil, if failure.
      */
     @Generated
@@ -233,8 +239,9 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property lowThreshold
-     * @abstract Read-write value used to set the low threshold for double thresholding, value is normalized.
+     * [@property] lowThreshold
+     * 
+     * Read-write value used to set the low threshold for double thresholding, value is normalized.
      *           Default is 0.2
      */
     @Generated
@@ -256,8 +263,9 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property highThreshold
-     * @abstract Read-write value used to set the high threshold for double thresholding, value is normalized.
+     * [@property] highThreshold
+     * 
+     * Read-write value used to set the high threshold for double thresholding, value is normalized.
      *           Default is 0.4
      */
     @Generated
@@ -265,8 +273,9 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public native void setHighThreshold(float value);
 
     /**
-     * @property lowThreshold
-     * @abstract Read-write value used to set the low threshold for double thresholding, value is normalized.
+     * [@property] lowThreshold
+     * 
+     * Read-write value used to set the low threshold for double thresholding, value is normalized.
      *           Default is 0.2
      */
     @Generated
@@ -274,8 +283,9 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public native void setLowThreshold(float value);
 
     /**
-     * @property useFastMode
-     * @abstract Read-write value used to change algorithm to an approximation of the true Canny Edge detection Algorithm.
+     * [@property] useFastMode
+     * 
+     * Read-write value used to change algorithm to an approximation of the true Canny Edge detection Algorithm.
      *           When true, a limit is placed on how far a single strong edge can extend. The result will be similar to a true output
      *           but some edges may terminate early, resulting in minor differences for cases with long, weak edges. The performance
      *           for the approximate canny implementation is improved and should provide similar enough results for most cases.
@@ -291,8 +301,9 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property sigma
-     * @abstract Read-only sigma value used in performing Gaussian blur of the image
+     * [@property] sigma
+     * 
+     * Read-only sigma value used in performing Gaussian blur of the image
      */
     @Generated
     @Selector("sigma")
@@ -313,8 +324,9 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     }
 
     /**
-     * @property useFastMode
-     * @abstract Read-write value used to change algorithm to an approximation of the true Canny Edge detection Algorithm.
+     * [@property] useFastMode
+     * 
+     * Read-write value used to change algorithm to an approximation of the true Canny Edge detection Algorithm.
      *           When true, a limit is placed on how far a single strong edge can extend. The result will be similar to a true output
      *           but some edges may terminate early, resulting in minor differences for cases with long, weak edges. The performance
      *           for the approximate canny implementation is improved and should provide similar enough results for most cases.

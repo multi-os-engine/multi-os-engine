@@ -47,8 +47,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEFilterBrowserFlow
- * @discussion The NEFilterBrowserFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered, which is originated from NEFilterSource.
+ * [@interface] NEFilterBrowserFlow
+ * 
+ * The NEFilterBrowserFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered, which is originated from NEFilterSource.
  * 
  * NEFilterBrowserFlow is part of NetworkExtension.framework
  */
@@ -186,24 +187,27 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
     public native NEFilterBrowserFlow initWithCoder(NSCoder coder);
 
     /**
-     * @property parentURL
-     * @discussion The parent URL for the current flow which is created to load the sub frames because the flow with the parent URL was allowed. Will be nil if the parent flow does not exist.
+     * [@property] parentURL
+     * 
+     * The parent URL for the current flow which is created to load the sub frames because the flow with the parent URL was allowed. Will be nil if the parent flow does not exist.
      */
     @Generated
     @Selector("parentURL")
     public native NSURL parentURL();
 
     /**
-     * @property request
-     * @discussion The NSURLRequest of the flow. This property is always nil for the control providers.
+     * [@property] request
+     * 
+     * The NSURLRequest of the flow. This property is always nil for the control providers.
      */
     @Generated
     @Selector("request")
     public native NSURLRequest request();
 
     /**
-     * @property response
-     * @discussion The NSURLResponse of the flow. This will be nil until the request is sent to the server and the response headers are received. And this property is always nil for the control providers.
+     * [@property] response
+     * 
+     * The NSURLResponse of the flow. This will be nil until the request is sent to the server and the response headers are received. And this property is always nil for the control providers.
      */
     @Generated
     @Selector("response")

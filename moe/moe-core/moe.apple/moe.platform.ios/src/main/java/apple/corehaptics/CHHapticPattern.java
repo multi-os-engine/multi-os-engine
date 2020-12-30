@@ -28,10 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CHHapticPattern
- * @abstract
+ * CHHapticPattern
+ * 
  * 	A set of one or more haptic events and/or Dynamic parameters/parameter curves.
- * @discussion
+ * 
  * 	The passed-in arrays' contents are not owned by the pattern object.  Changes made to those arrays
  * 	after a CHHapticPattern object is created have no effect on that object.
  */
@@ -94,7 +94,7 @@ public class CHHapticPattern extends NSObject {
     public static native String description_static();
 
     /**
-     * @property duration
+     * [@property] duration
      * Pattern duration is calculated as the start time of the pattern's last event or parameter, plus that event's duration if present.
      */
     @Generated
@@ -102,10 +102,10 @@ public class CHHapticPattern extends NSObject {
     public native double duration();
 
     /**
-     * @method exportDictionaryAndReturnError:error
-     * @abstract
+     * exportDictionaryAndReturnError:error
+     * 
      *     Returns a NSDictionary representation of the contents of the pattern.
-     * @discussion
+     * 
      *     Patterns containing custom audio resource IDs cannot be exported and will return nil
      *     with the error code set to CHHapticErrorCodeOperationNotPermitted.
      */
@@ -124,9 +124,10 @@ public class CHHapticPattern extends NSObject {
     public native CHHapticPattern init();
 
     /**
-     * @method initWithDictionary:error
-     * @abstract
+     * initWithDictionary:error
+     * 
      * 	Initialize a new CHHapticPattern using the passed-in NSDictionary.
+     * 
      * @param patternDict
      * 	NSDictionary containing a pattern property list.
      */
@@ -136,9 +137,10 @@ public class CHHapticPattern extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method initWithEvents:parameterCurves:error
-     * @abstract
+     * initWithEvents:parameterCurves:error
+     * 
      * 	Initialize a new CHHapticPattern with parameters modulated by parameter curves.
+     * 
      * @param events
      * 	An NSArray of CHHapticEvents.  Can be empty.
      * @param parameterCurves
@@ -151,9 +153,10 @@ public class CHHapticPattern extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method initWithEvents:parameters:error
-     * @abstract
+     * initWithEvents:parameters:error
+     * 
      * 	Initialize a new CHHapticPattern.
+     * 
      * @param events
      * 	An NSArray of CHHapticEvents.  Can be empty.
      * @param parameters

@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * For more complex transform components create a class that conforms to 
  * <MDLTransformComponent>.
  * 
- * @discussion Setting any of scale, translation, or rotation individually will 
+ * Setting any of scale, translation, or rotation individually will
  * set the matrix property, and clear any timing information.
  */
 @Generated
@@ -168,8 +168,9 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @method init
-     * @discussion Initialize an MDLTransform's matrices with identity
+     * init
+     * 
+     * Initialize an MDLTransform's matrices with identity
      */
     @Generated
     @Selector("init")

@@ -53,8 +53,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MTKTextureLoader
- * @abstract Load Metal textures from files with the device specified at initialization
+ * MTKTextureLoader
+ * 
+ * Load Metal textures from files with the device specified at initialization
  */
 @Generated
 @Library("MetalKit")
@@ -168,8 +169,9 @@ public class MTKTextureLoader extends NSObject {
     public static native long version_static();
 
     /**
-     * @property device
-     * @abstract Metal device with which to create Metal textures
+     * [@property] device
+     * 
+     * Metal device with which to create Metal textures
      */
     @Generated
     @Selector("device")
@@ -181,8 +183,10 @@ public class MTKTextureLoader extends NSObject {
     public native MTKTextureLoader init();
 
     /**
-     * @method initWithDevice:
-     * @abstract Initialize the loader
+     * initWithDevice:
+     * 
+     * Initialize the loader
+     * 
      * @param device Metal device with which to create Metal textures
      */
     @Generated
@@ -190,8 +194,10 @@ public class MTKTextureLoader extends NSObject {
     public native MTKTextureLoader initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
-     * @method newTextureWithCGImage:options:completionHandler:
-     * @abstract Asynchronously create a Metal texture and load image data from the given CGImageRef
+     * newTextureWithCGImage:options:completionHandler:
+     * 
+     * Asynchronously create a Metal texture and load image data from the given CGImageRef
+     * 
      * @param cgImage CGImageRef containing image data from which to create the texture
      * @param options Dictonary of MTKTextureLoaderOptions
      * @param completionHandler Block called when texture has been loaded and fully initialized
@@ -203,8 +209,10 @@ public class MTKTextureLoader extends NSObject {
             @ObjCBlock(name = "call_newTextureWithCGImageOptionsCompletionHandler") Block_newTextureWithCGImageOptionsCompletionHandler completionHandler);
 
     /**
-     * @method newTextureWithCGImage:options:error:
-     * @abstract Synchronously create a Metal texture and load image data from the given CGImageRef
+     * newTextureWithCGImage:options:error:
+     * 
+     * Synchronously create a Metal texture and load image data from the given CGImageRef
+     * 
      * @return The Metal texture. nil if an error occured
      * @param cgImage CGImageRef containing image data from which to create the texture
      * @param options Dictonary of MTKTextureLoaderOptions
@@ -217,8 +225,10 @@ public class MTKTextureLoader extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method newTextureWithContentsOfURL:options:completionHandler:
-     * @abstract Asynchronously create a Metal texture and load image data from the file at URL
+     * newTextureWithContentsOfURL:options:completionHandler:
+     * 
+     * Asynchronously create a Metal texture and load image data from the file at URL
+     * 
      * @param URL Location of image file from which to create the texture
      * @param options Dictonary of MTKTextureLoaderOptions
      * @param completionHandler Block called when the texture has been loaded and fully initialized
@@ -229,8 +239,10 @@ public class MTKTextureLoader extends NSObject {
             @ObjCBlock(name = "call_newTextureWithContentsOfURLOptionsCompletionHandler") Block_newTextureWithContentsOfURLOptionsCompletionHandler completionHandler);
 
     /**
-     * @method newTextureWithContentsOfURL:options:error:
-     * @abstract Synchronously create a Metal texture and load image data from the file at URL
+     * newTextureWithContentsOfURL:options:error:
+     * 
+     * Synchronously create a Metal texture and load image data from the file at URL
+     * 
      * @return The Metal texture. nil if an error occured
      * @param URL Location of image file from which to create the texture
      * @param options Dictonary of MTKTextureLoaderOptions
@@ -243,8 +255,10 @@ public class MTKTextureLoader extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method newTextureWithData:options:completionHandler:
-     * @abstract Asynchronously create a Metal texture and load image data from the NSData object provided
+     * newTextureWithData:options:completionHandler:
+     * 
+     * Asynchronously create a Metal texture and load image data from the NSData object provided
+     * 
      * @param data NSData object containing image file data from which to create the texture
      * @param options Dictonary of MTKTextureLoaderOptions
      * @param completionHandler Block called when texture has been loaded and fully initialized
@@ -255,8 +269,10 @@ public class MTKTextureLoader extends NSObject {
             @ObjCBlock(name = "call_newTextureWithDataOptionsCompletionHandler") Block_newTextureWithDataOptionsCompletionHandler completionHandler);
 
     /**
-     * @method newTextureWithData:options:error:
-     * @abstract Synchronously create a Metal texture and load image data from the NSData object provided
+     * newTextureWithData:options:error:
+     * 
+     * Synchronously create a Metal texture and load image data from the NSData object provided
+     * 
      * @return The Metal texture. nil if an error occured
      * @param data NSData object containing image file data from which to create the texture
      * @param options Dictonary of MTKTextureLoaderOptions
@@ -269,8 +285,10 @@ public class MTKTextureLoader extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method newTextureWithMDLTexture:options:completionHandler:
-     * @abstract Asynchronously create a Metal texture and load image data from the given MDLTexture
+     * newTextureWithMDLTexture:options:completionHandler:
+     * 
+     * Asynchronously create a Metal texture and load image data from the given MDLTexture
+     * 
      * @param texture MDLTexture containing image data from which to create the texture
      * @param options Dictonary of MTKTextureLoaderOptions
      * @param completionHandler Block called when texture has been loaded and fully initialized
@@ -282,8 +300,10 @@ public class MTKTextureLoader extends NSObject {
             @ObjCBlock(name = "call_newTextureWithMDLTextureOptionsCompletionHandler") Block_newTextureWithMDLTextureOptionsCompletionHandler completionHandler);
 
     /**
-     * @method newTextureWithMDLTexture:options:error:
-     * @abstract Synchronously create a Metal texture and load image data from the given MDLTexture
+     * newTextureWithMDLTexture:options:error:
+     * 
+     * Synchronously create a Metal texture and load image data from the given MDLTexture
+     * 
      * @return The Metal texture. nil if an error occured
      * @param texture MDLTexture containing image data from which to create the texture
      * @param options Dictonary of MTKTextureLoaderOptions
@@ -296,9 +316,17 @@ public class MTKTextureLoader extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method newTextureWithName:scaleFactor:bundle:options:completionHandler:
-     * @abstract Asynchronously create a Metal texture and load image data from a given texture or image 
+     * newTextureWithName:scaleFactor:bundle:options:completionHandler:
+     * 
+     * Asynchronously create a Metal texture and load image data from a given texture or image
      *           asset name
+     * 
+     * Uses texture data from version of the texture from the texture set in the asset catalog
+     *             which mathces the device's traits.
+     *             This method attempts to load a texture asset with thw name iven.  If a texture asset
+     *             with the name given does not exist, it will attempt to create a texture from an
+     *             image asset with the given name
+     * 
      * @param name A texture or image asset name
      * @param scaleFactor scale factor of the texture to retrieve from the asset catalog.  Typically the 
      *                    value retrieved from -[UIView contentScale] or -[NSWindow backingScaleFactor].
@@ -310,11 +338,6 @@ public class MTKTextureLoader extends NSObject {
      *                    MTKTextureLoaderOptionCubeFromVerticalTexture
      *                    MTKTextureLoaderOptionOrigin
      * @param completionHandler Block called when texture has been loaded and fully initialized
-     * @discussion Uses texture data from version of the texture from the texture set in the asset catalog
-     *             which mathces the device's traits.
-     *             This method attempts to load a texture asset with thw name iven.  If a texture asset
-     *             with the name given does not exist, it will attempt to create a texture from an
-     *             image asset with the given name
      */
     @Generated
     @Selector("newTextureWithName:scaleFactor:bundle:options:completionHandler:")
@@ -323,9 +346,17 @@ public class MTKTextureLoader extends NSObject {
             @ObjCBlock(name = "call_newTextureWithNameScaleFactorBundleOptionsCompletionHandler") Block_newTextureWithNameScaleFactorBundleOptionsCompletionHandler completionHandler);
 
     /**
-     * @method newTextursWithName:scaleFactor:bundle:options:error:
-     * @abstract Synchronously create a Metal texture with texture data from a given texture or image 
+     * newTextursWithName:scaleFactor:bundle:options:error:
+     * 
+     * Synchronously create a Metal texture with texture data from a given texture or image
      *           asset name
+     * 
+     * Uses texture data from version of the texture from the texture set in the asset catalog
+     *             which mathces the device's traits.
+     *             This method attempts to load a texture asset with the name given.  If a texture asset
+     *             with the name given does not exist, it will attempt to create a texture from an
+     *             image asset with the given name.
+     * 
      * @return The Metal texture. nil if an error occured
      * @param names An array of texture asset names
      * @param scaleFactor scale factor of the texture to retrieve from the asset catalog.  Typically the
@@ -337,11 +368,6 @@ public class MTKTextureLoader extends NSObject {
      *                    MTKTextureLoaderOptionSRGB
      *                    MTKTextureLoaderOptionCubeFromVerticalTexture
      *                    MTKTextureLoaderOptionOrigins
-     * @discussion Uses texture data from version of the texture from the texture set in the asset catalog
-     *             which mathces the device's traits.
-     *             This method attempts to load a texture asset with the name given.  If a texture asset
-     *             with the name given does not exist, it will attempt to create a texture from an
-     *             image asset with the given name.
      */
     @Generated
     @Selector("newTextureWithName:scaleFactor:bundle:options:error:")
@@ -350,8 +376,10 @@ public class MTKTextureLoader extends NSObject {
             NSBundle bundle, NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method newTexturesWithContentsOfURLs:options:completionHandler:
-     * @abstract Asynchronously create an array of Metal textures and load image data from the files at URLs
+     * newTexturesWithContentsOfURLs:options:completionHandler:
+     * 
+     * Asynchronously create an array of Metal textures and load image data from the files at URLs
+     * 
      * @param URLs Locations of image files from which to create the textures
      * @param options Dictonary of MTKTextureLoaderOptions, which will be used for every texture loaded
      * @param completionHandler Block called when all of the textures have been loaded and fully initialized. The array of MTLTextures will be the same length and in the same order as the requested array of paths. If an error occurs while loading a texture, the corresponding array index will contain NSNull. The NSError will be null if all of the textures are loaded successfully, or will correspond to one of the textures which failed to load.
@@ -363,8 +391,10 @@ public class MTKTextureLoader extends NSObject {
             @ObjCBlock(name = "call_newTexturesWithContentsOfURLsOptionsCompletionHandler") Block_newTexturesWithContentsOfURLsOptionsCompletionHandler completionHandler);
 
     /**
-     * @method newTexturesWithContentsOfURLs:options:completionHandler:
-     * @abstract Synchronously create an array of Metal textures and load image data from the files at URLs
+     * newTexturesWithContentsOfURLs:options:completionHandler:
+     * 
+     * Synchronously create an array of Metal textures and load image data from the files at URLs
+     * 
      * @return An array of MTLTextures of the same length and in the same order as the requested array of
      *         paths.  If an error occurs while loading a texture, the corresponding array index will
      *         contain [NSNull null].
@@ -380,9 +410,17 @@ public class MTKTextureLoader extends NSObject {
             NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method newTexturesWithNames:scaleFactor:bundle:options:completionHandler:
-     * @abstract Asynchronously create Metal textures and load image data from a given texture or image
+     * newTexturesWithNames:scaleFactor:bundle:options:completionHandler:
+     * 
+     * Asynchronously create Metal textures and load image data from a given texture or image
      *           asset names
+     * 
+     * Uses texture data from version of the texture from the texture set in the asset catalog
+     *             which mathces the device's traits.
+     *             This method attempts to load a texture asset with each name iven.  If a texture asset
+     *             with the name given does not exist, it will attempt to create a texture from an
+     *             image asset with the given name.
+     * 
      * @param names An array texture or image asset names.  If an error occurs while loading a texture,
      *              the corresponding index in the returned array contain [NSNull null]
      * @param scaleFactor scale factor of the texture to retrieve from the asset catalog.  Typically the
@@ -398,11 +436,6 @@ public class MTKTextureLoader extends NSObject {
      *                          initialized. The NSError will be null if all of the textures are loaded
      *                          successfully, or will correspond to one of the textures which failed to
      *                          load.
-     * @discussion Uses texture data from version of the texture from the texture set in the asset catalog
-     *             which mathces the device's traits.
-     *             This method attempts to load a texture asset with each name iven.  If a texture asset
-     *             with the name given does not exist, it will attempt to create a texture from an
-     *             image asset with the given name.
      */
     @Generated
     @Selector("newTexturesWithNames:scaleFactor:bundle:options:completionHandler:")

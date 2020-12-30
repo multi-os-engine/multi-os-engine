@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @enum       EKEventEditViewDelegate
- * @abstract   Delegate protocol for event edit view controller.
+ * [@enum]       EKEventEditViewDelegate
+ * 
+ * Delegate protocol for event edit view controller.
  */
 @Generated
 @Library("EventKitUI")
@@ -37,9 +38,11 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("EKEventEditViewDelegate")
 public interface EKEventEditViewDelegate {
     /**
-     * @method     eventEditViewController:didCompleteWithAction:
-     * @abstract   Called to let delegate know the controller is done editing.
-     * @discussion When the user presses Cancel, presses Done, or deletes the event, this method
+     * eventEditViewController:didCompleteWithAction:
+     * 
+     * Called to let delegate know the controller is done editing.
+     * 
+     * When the user presses Cancel, presses Done, or deletes the event, this method
      *             is called. Your delegate is responsible for dismissing the controller. If the editing
      *             session is terminated programmatically using cancelEditing, 
      *             this method will not be called.
@@ -52,9 +55,11 @@ public interface EKEventEditViewDelegate {
     void eventEditViewControllerDidCompleteWithAction(EKEventEditViewController controller, @NInt long action);
 
     /**
-     * @method     eventEditViewControllerDefaultCalendarForNewEvents:
-     * @abstract   Allows you to supply your own default calendar for new events.
-     * @discussion This delegate method allows you to control what the editor chooses for the default calendar
+     * eventEditViewControllerDefaultCalendarForNewEvents:
+     * 
+     * Allows you to supply your own default calendar for new events.
+     * 
+     * This delegate method allows you to control what the editor chooses for the default calendar
      *             if it needs to fill in a calendar. This might be necessary if you either don't pass an initial
      *             event to the view controller, or you do, but you did not supply a calendar. In these cases, we
      *             we set the calendar to a default. If this is not implemented by the delegate, the controller

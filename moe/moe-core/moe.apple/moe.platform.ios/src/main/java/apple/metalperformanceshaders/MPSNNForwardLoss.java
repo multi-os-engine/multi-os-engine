@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNNForwardLoss
- * @dependency This depends on Metal.framework.
- * @discussion The MPSNNForwardLoss filter specifies a version of the loss filter which separates the forward
+ * MPSNNForwardLoss
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * The MPSNNForwardLoss filter specifies a version of the loss filter which separates the forward
  *             computation from the gradient computation. In order to compute gradients for the loss filter
  *             use @ref MPSNNLossGradient filter and in order to start the gradient computation of an arbitrary
  *             image use the @ref MPSNNInitialGradient filter.
@@ -116,7 +117,7 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     public native MPSNNForwardLoss initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract <NSSecureCoding> support
+     * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -127,7 +128,8 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     public native MPSNNForwardLoss initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize the loss forward pass filter with a loss descriptor.
+     * Initialize the loss forward pass filter with a loss descriptor.
+     * 
      * @param      device                   The device the filter will run on.
      * @param      lossDescriptor           The loss descriptor.
      * @return     A valid MPSNNForwardLoss object or nil, if failure.

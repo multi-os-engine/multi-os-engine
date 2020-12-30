@@ -79,7 +79,7 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     /**
      * An optional canonical web page URL for the 3D content that will be shared.
      * 
-     * @discussion If this is supplied, the URL to the canonical web page is shared instead of the 3D content file.
+     * If this is supplied, the URL to the canonical web page is shared instead of the 3D content file.
      * For example, providing https://developer.apple.com/arkit/gallery/ as the canonical web page URL string will be shared via the Share button. If the web page URL string is malformed or not provided, then AR Quick Look will default to sharing the 3D content.
      */
     @Generated
@@ -114,7 +114,7 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     /**
      * Creates an object representing the 3D content that will be previewed in AR Quick Look.
      * 
-     * @discussion This object will be previewed in AR Quick Look using the default
+     * This object will be previewed in AR Quick Look using the default
      * behavior:
      * 
      * - Start in Object mode without camera passthrough
@@ -187,7 +187,7 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     /**
      * An optional canonical web page URL for the 3D content that will be shared.
      * 
-     * @discussion If this is supplied, the URL to the canonical web page is shared instead of the 3D content file.
+     * If this is supplied, the URL to the canonical web page is shared instead of the 3D content file.
      * For example, providing https://developer.apple.com/arkit/gallery/ as the canonical web page URL string will be shared via the Share button. If the web page URL string is malformed or not provided, then AR Quick Look will default to sharing the 3D content.
      */
     @Generated

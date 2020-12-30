@@ -30,8 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol SCNAnimatable
- * @abstract The SCNAnimatable protocol defines an animatable property. Objects that implement this protocol can be animated through these methods.
+ * [@protocol] SCNAnimatable
+ * 
+ * The SCNAnimatable protocol defines an animatable property. Objects that implement this protocol can be animated through these methods.
  */
 @Generated
 @Library("SceneKit")
@@ -39,40 +40,49 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("SCNAnimatable")
 public interface SCNAnimatable {
     /**
-     * @method addAnimation:forKey:
-     * @abstract Adds and runs an animation
+     * addAnimation:forKey:
+     * 
+     * Adds and runs an animation
+     * 
+     * Only SCNAnimation (preferred), CABasicAnimation, CAKeyframeAnimation and CAAnimationGroup are supported.
+     * The animation starts playing right away. The animation is automatically removed on completion unless if removedOnCompletion is explicitly set to NO. 
+     * 
      * @param animation Added animation.
      * @param key May be any string such that only one animation per unique key is added per animatable object.
-     * @discussion Only SCNAnimation (preferred), CABasicAnimation, CAKeyframeAnimation and CAAnimationGroup are supported.
-     * The animation starts playing right away. The animation is automatically removed on completion unless if removedOnCompletion is explicitly set to NO. 
-     * @seealso -[id <SCNAnimation> removedOnCompletion]
+     * @see -[id <SCNAnimation> removedOnCompletion]
      */
     @Generated
     @Selector("addAnimation:forKey:")
     void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
     /**
-     * @method animationForKey:
-     * @abstract Returns the animation with the given identifier
-     * @param key The identifier for the animation to retrieve.
-     * @discussion This will return nil if no such animation exists.
+     * animationForKey:
+     * 
+     * Returns the animation with the given identifier
+     * 
+     * This will return nil if no such animation exists.
      * Attempting to modify any properties of the returned object will result in undefined behavior.
+     * 
+     * @param key The identifier for the animation to retrieve.
      */
     @Generated
     @Selector("animationForKey:")
     CAAnimation animationForKey(String key);
 
     /**
-     * @property animationKeys
-     * @abstract Returns an array containing the keys of all animations currently attached to the receiver.
+     * [@property] animationKeys
+     * 
+     * Returns an array containing the keys of all animations currently attached to the receiver.
      */
     @Generated
     @Selector("animationKeys")
     NSArray<String> animationKeys();
 
     /**
-     * @method isAnimationForKeyPaused:
-     * @abstract Returns whether the animation for the specified identifier is paused.
+     * isAnimationForKeyPaused:
+     * 
+     * Returns whether the animation for the specified identifier is paused.
+     * 
      * @param key The identifier for the animation to query.
      */
     @Generated
@@ -80,8 +90,10 @@ public interface SCNAnimatable {
     boolean isAnimationForKeyPaused(String key);
 
     /**
-     * @method pauseAnimationForKey:
-     * @abstract Pause the animation with the given identifier.
+     * pauseAnimationForKey:
+     * 
+     * Pause the animation with the given identifier.
+     * 
      * @param key The identifier for the animation to pause.
      */
     @Generated
@@ -89,16 +101,19 @@ public interface SCNAnimatable {
     void pauseAnimationForKey(String key);
 
     /**
-     * @method removeAllAnimations
-     * @abstract Remove all animations.
+     * removeAllAnimations
+     * 
+     * Remove all animations.
      */
     @Generated
     @Selector("removeAllAnimations")
     void removeAllAnimations();
 
     /**
-     * @method removeAnimationForKey
-     * @abstract Remove the animation with the given identifier.
+     * removeAnimationForKey
+     * 
+     * Remove the animation with the given identifier.
+     * 
      * @param key The identifier for the animation to remove.
      */
     @Generated
@@ -106,8 +121,10 @@ public interface SCNAnimatable {
     void removeAnimationForKey(String key);
 
     /**
-     * @method removeAnimationForKey:fadeOutDuration:
-     * @abstract Smoothly remove the animation with the given identifier.
+     * removeAnimationForKey:fadeOutDuration:
+     * 
+     * Smoothly remove the animation with the given identifier.
+     * 
      * @param key The identifier for the animation to remove.
      * @param duration The fade out duration used to remove the animation.
      */
@@ -116,8 +133,10 @@ public interface SCNAnimatable {
     void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
 
     /**
-     * @method resumeAnimationForKey:
-     * @abstract Resume the animation with the given identifier.
+     * resumeAnimationForKey:
+     * 
+     * Resume the animation with the given identifier.
+     * 
      * @param key The identifier for the animation to resume.
      */
     @Generated
@@ -125,8 +144,10 @@ public interface SCNAnimatable {
     void resumeAnimationForKey(String key);
 
     /**
-     * @method setSpeed:forAnimationKey:
-     * @abstract Update the animation speed of the animation with the given identifier.
+     * setSpeed:forAnimationKey:
+     * 
+     * Update the animation speed of the animation with the given identifier.
+     * 
      * @param speed The new speed of the animation.
      * @param key The identifier for the animation to update.
      */
@@ -135,30 +156,37 @@ public interface SCNAnimatable {
     void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     /**
-     * @method addAnimationPlayer:forKey:
-     * @abstract Add an animation player.
+     * addAnimationPlayer:forKey:
+     * 
+     * Add an animation player.
+     * 
+     * The animation player is not removed automatically on completion.
+     * The animation doesn't start playing immediatelly. Call "play" on the player to start playing it.
+     * 
      * @param player Added animation player.
      * @param key May be any string such that only one animation per unique key is added per animatable object.
-     * @discussion The animation player is not removed automatically on completion.
-     * The animation doesn't start playing immediatelly. Call "play" on the player to start playing it.
-     * @seealso -[SCNAnimationPlayer play]
+     * @see -[SCNAnimationPlayer play]
      */
     @Generated
     @Selector("addAnimationPlayer:forKey:")
     void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
 
     /**
-     * @method animationPlayerForKey:
-     * @abstract Returns the animation player with the given identifier
+     * animationPlayerForKey:
+     * 
+     * Returns the animation player with the given identifier
+     * 
+     * This will return nil if no such animation player exists.
+     * 
      * @param key The identifier for the animation player to retrieve.
-     * @discussion This will return nil if no such animation player exists.
      */
     @Generated
     @Selector("animationPlayerForKey:")
     SCNAnimationPlayer animationPlayerForKey(String key);
 
     /**
-     * @abstract Smoothly remove the animation with the given identifier.
+     * Smoothly remove the animation with the given identifier.
+     * 
      * @param key The identifier for the animation to remove.
      * @param duration The blend out duration used to remove the animation.
      */

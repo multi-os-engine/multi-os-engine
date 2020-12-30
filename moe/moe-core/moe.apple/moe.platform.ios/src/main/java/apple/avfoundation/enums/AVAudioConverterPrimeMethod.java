@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudioConverterPrimeMethod
- * @abstract values for the primeMethod property. See further discussion under AVAudioConverterPrimeInfo.
+ * [@enum] AVAudioConverterPrimeMethod
+ * 
+ * values for the primeMethod property. See further discussion under AVAudioConverterPrimeInfo.
  */
 @Generated
 public final class AVAudioConverterPrimeMethod {

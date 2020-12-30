@@ -15,14 +15,14 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("ASAuthorizationProviderExtensionAuthorizationRequestHandler")
 public interface ASAuthorizationProviderExtensionAuthorizationRequestHandler {
     /**
-     * @abstract Called to begin the authorization. It’s called on the main thread.
+     * Called to begin the authorization. It’s called on the main thread.
      */
     @Generated
     @Selector("beginAuthorizationWithRequest:")
     void beginAuthorizationWithRequest(ASAuthorizationProviderExtensionAuthorizationRequest request);
 
     /**
-     * @abstract Called when the authorization was canceled by authorization service. It’s called on the main thread.
+     * Called when the authorization was canceled by authorization service. It’s called on the main thread.
      */
     @Generated
     @IsOptional

@@ -28,11 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CIBarcodeDescriptor
- * @abstract
+ * CIBarcodeDescriptor
+ * 
  *    CIBarcodeDescriptor is an abstract base class that defines an abstract representation of a machine readable code's symbol attributes.
  * 
- * @discsussion
+ * [@discsussion]
  *    Each subclass is sufficient to recreate the symbol exactly as seen or to be used with a custom parser. Subclasses of CIBarcodeDescriptor are defined for each code type to contain the formal specification of each symbology.
  */
 @Generated

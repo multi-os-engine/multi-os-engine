@@ -22,9 +22,9 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * MDLCamera
  * 
- * @summary MDLCamera models a physically plausible camera.
+ * [@summary] MDLCamera models a physically plausible camera.
  * 
- * @discussion Values are represented as float in MDLCamera as it offers sufficient 
+ * Values are represented as float in MDLCamera as it offers sufficient
  * precision, and because calculations will be identical on any processor
  * architecture. This consistency is a requirement of the model.
  * 
@@ -35,21 +35,16 @@ import org.moe.natj.general.ann.NUInt;
  * properties of real world cameras.
  * 
  * 1. The position and orientation of the camera
- *    @see MDLObject transform property
- * 
- *    The MDLTransformComponent on an MDLCamera is an MDLTransform.
- * 
- * 2. Visible Objects and Lights
- *    @property nearVisibilityDistance The minimum distance from the camera of a 
+ *    [@property] nearVisibilityDistance The minimum distance from the camera of a 
  *              visible object
- *    @property farVisibilityDistance The maximum distance from the camera of a 
+ *    [@property] farVisibilityDistance The maximum distance from the camera of a 
  *              visible object
  * 
  *    Those objects existing between nearVisibilityDistance and farVisibilityDistance 
  *    are considered to be visible. All lights are considered, irrespective of 
  *    nearVisibilityDistance and farVisibilityDistance, to compute scene luminance.
  * 
- *    @property worldToMetersConversionScale
+ *    [@property] worldToMetersConversionScale
  * 
  *    Some calculations, such as the calculation of stereo view matrices, require
  *    calculations to occur in world space. Significant quantities measured in mm
@@ -58,8 +53,8 @@ import org.moe.natj.general.ann.NUInt;
  * 
  * 3. Scene Luminance through the lens
  * 
- *    @property barrelDistorion
- *    @property fisheyeDistortion
+ *    [@property] barrelDistorion
+ *    [@property] fisheyeDistortion
  * 
  *    Illuminated objects result in scene luminance, which passes through the lens.
  *    All lenses impose some amount of radial distortion which can be computed from 
@@ -78,7 +73,7 @@ import org.moe.natj.general.ann.NUInt;
  *    The default for the radial distortion parameters is zero, resulting in a 
  *    rectilinear projection.
  * 
- *    @property opticalVignetting
+ *    [@property] opticalVignetting
  * 
  *    Optical vignetting occurs to some degree in all lenses. It results from light 
  *    at the edge of an image being blocked as it travels past the lens hood and 
@@ -89,7 +84,7 @@ import org.moe.natj.general.ann.NUInt;
  *    the value here can be used as an intended amount of vignetting to apply to an
  *    image.
  * 
- *    @property chromaticAberration
+ *    [@property] chromaticAberration
  * 
  *    Chromatic aberration occurs to some degree in all lenses. It results from a 
  *    lens bringing different wavelengths of light to focus at different places on 
@@ -103,24 +98,24 @@ import org.moe.natj.general.ann.NUInt;
  * 
  *    This is a thin lens model.
  * 
- *    @property focalLength
+ *    [@property] focalLength
  * 
  *    The default focal length is 50mm, corresponding to a field of view of 54 
  *    degrees, and vertical sensor aperture of 24mm. Changing focalLength will 
  *    update the field of view property.
  * 
- *    @property focusDistance
+ *    [@property] focusDistance
  * 
  *    The distance, in meters, at which the lens is focused. The default is 2.5m.
  * 
- *    @property fieldOfView
+ *    [@property] fieldOfView
  * 
  *    The field of view is calculated from the focal length and sensor aperture.
  *    Changing the field of view will update the focalLength property with respect 
  *    to the sensor aperture. The default is 54 degrees, corresponding to a focal 
  *    length of 50mm, and a vertical sensor aperture of 24mm.
  * 
- *    @property fStop
+ *    [@property] fStop
  * 
  *    The f-stop is the ratio of the lens' focal length to the diameter of the 
  *    entrance pupil. The default is 5.6. It controls the amount of light that 
@@ -130,7 +125,7 @@ import org.moe.natj.general.ann.NUInt;
  * 
  * 5. Lens exit aperture
  * 
- *    @property apertureBladeCount
+ *    [@property] apertureBladeCount
  * 
  *    The shape of out of focus highlights in a scene is commonly known as "bokeh". 
  *    The aesthetic quality of a lens' bokeh is one of the characteristics that 
@@ -146,7 +141,7 @@ import org.moe.natj.general.ann.NUInt;
  *    specification of such effects, but a simulation could incorporate them at 
  *    this stage.
  * 
- *    @property maximumCircleOfConfusion
+ *    [@property] maximumCircleOfConfusion
  * 
  *    Although the size of an out of focus bokeh highlight can be computed from
  *    other camera properties, it is often necessary to limit the size of the 
@@ -154,7 +149,7 @@ import org.moe.natj.general.ann.NUInt;
  *    specified in mm, and the default is 0.05mm. The units are mm on the sensor 
  *    plane.
  * 
- *    @property shutterOpenInterval
+ *    [@property] shutterOpenInterval
  * 
  *    The length of time in seconds the shutter is open, impacting the amount of 
  *    light that reaches the sensor and also the length of motion blur trails. The 
@@ -167,7 +162,7 @@ import org.moe.natj.general.ann.NUInt;
  * 
  * 6. Sensor illuminance
  * 
- *    @property sensorVerticalAperture
+ *    [@property] sensorVerticalAperture
  * 
  *    The default aperture is 24mm, corresponding to a 35mm stills camera.
  *    _____________________
@@ -183,17 +178,17 @@ import org.moe.natj.general.ann.NUInt;
  *    the focal length. The horizontal aperture can be calculated from the aspect 
  *    property.
  * 
- *    @property sensorAspect
+ *    [@property] sensorAspect
  *    aspect ratio of width versus height of the sensor aperture. The default is 
  *    36mm/24mm, ie: 1.5.
  * 
- *    @property sensorEnlargement
+ *    [@property] sensorEnlargement
  * 
  *    The sensor enlargment property scales the active region of the sensor. A 
  *    zoom factor of 2 will result in the central portion of the image being 
  *    cropped and expanded to fill the image plane. The default is 1.
  * 
- *    @property sensorShift
+ *    [@property] sensorShift
  * 
  *    The sensor shift property moves the center of the sensor relative to the 
  *    lens. This is useful in certain calculations, such as shadow or reflection
@@ -203,7 +198,7 @@ import org.moe.natj.general.ann.NUInt;
  * 
  *    Finally, the sensor values need to be converted for display.
  * 
- *    @property flash
+ *    [@property] flash
  * 
  *    Flashing is applied to a film stock some time before processing. It is a 
  *    small and even level of exposure added to the entire image intended shift 
@@ -215,12 +210,12 @@ import org.moe.natj.general.ann.NUInt;
  * 
  *    A negative value for flash can be used to subtract color.
  * 
- *    @property exposure
+ *    [@property] exposure
  * 
  *    Finally, exposure should be applied to the compressed value. Red,
  *    green, and blue exposure can be specified separately. The default is 1.0.
  * 
- *    @property exposureCompression
+ *    [@property] exposureCompression
  * 
  *    Gamma curve compression where values below the x value are to be passed through,
  *    about the y value, values are to be clamped at maximum display brightness,
@@ -229,6 +224,12 @@ import org.moe.natj.general.ann.NUInt;
  * 
  *    A displayable value is therefore obtained via
  *       pow(exposureCompression((sensor value + flash) * exposure), displayGamma)
+ * 
+ *    @see MDLObject transform property
+ * 
+ *    The MDLTransformComponent on an MDLCamera is an MDLTransform.
+ * 
+ * 2. Visible Objects and Lights
  */
 @Generated
 public final class MDLCameraProjection {

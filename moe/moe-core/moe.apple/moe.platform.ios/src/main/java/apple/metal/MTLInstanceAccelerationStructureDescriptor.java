@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Descriptor for an instance acceleration structure
+ * Descriptor for an instance acceleration structure
  */
 @Generated
 @Library("Metal")
@@ -99,7 +99,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public native MTLInstanceAccelerationStructureDescriptor init();
 
     /**
-     * @brief Number of instance descriptors
+     * Number of instance descriptors
      */
     @Generated
     @Selector("instanceCount")
@@ -107,7 +107,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public native long instanceCount();
 
     /**
-     * @brief Buffer containing MTLAccelerationStructureInstanceDescriptors
+     * Buffer containing MTLAccelerationStructureInstanceDescriptors
      */
     @Generated
     @Selector("instanceDescriptorBuffer")
@@ -115,7 +115,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public native MTLBuffer instanceDescriptorBuffer();
 
     /**
-     * @brief Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
+     * Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
      * aligned to the platform's buffer offset alignment.
      */
     @Generated
@@ -124,7 +124,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public native long instanceDescriptorBufferOffset();
 
     /**
-     * @brief Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
+     * Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
      * be at least 64 bytes and must be a multiple of 4 bytes. Defaults to 64 bytes.
      */
     @Generated
@@ -142,7 +142,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
     /**
-     * @brief Acceleration structures to be instanced
+     * Acceleration structures to be instanced
      */
     @Generated
     @Selector("instancedAccelerationStructures")
@@ -175,21 +175,21 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Number of instance descriptors
+     * Number of instance descriptors
      */
     @Generated
     @Selector("setInstanceCount:")
     public native void setInstanceCount(@NUInt long value);
 
     /**
-     * @brief Buffer containing MTLAccelerationStructureInstanceDescriptors
+     * Buffer containing MTLAccelerationStructureInstanceDescriptors
      */
     @Generated
     @Selector("setInstanceDescriptorBuffer:")
     public native void setInstanceDescriptorBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     /**
-     * @brief Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
+     * Offset into the instance descriptor buffer. Must be a multiple of 64 bytes and must be
      * aligned to the platform's buffer offset alignment.
      */
     @Generated
@@ -197,7 +197,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public native void setInstanceDescriptorBufferOffset(@NUInt long value);
 
     /**
-     * @brief Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
+     * Stride, in bytes, between instance descriptors in the instance descriptor buffer. Must
      * be at least 64 bytes and must be a multiple of 4 bytes. Defaults to 64 bytes.
      */
     @Generated
@@ -205,7 +205,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     public native void setInstanceDescriptorStride(@NUInt long value);
 
     /**
-     * @brief Acceleration structures to be instanced
+     * Acceleration structures to be instanced
      */
     @Generated
     @Selector("setInstancedAccelerationStructures:")

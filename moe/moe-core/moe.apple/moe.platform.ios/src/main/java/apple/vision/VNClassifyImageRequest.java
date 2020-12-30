@@ -29,9 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A request for classifying an image.
+ * A request for classifying an image.
  * 
- * @discussion This request will produce a collection of VNClassificationObservation objects which describe an image.
+ * This request will produce a collection of VNClassificationObservation objects which describe an image.
  */
 @Generated
 @Library("Vision")
@@ -137,7 +137,7 @@ public class VNClassifyImageRequest extends VNImageBasedRequest {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief Obtain the collection of classifications currently recognized by the Vision framework.
+     * Obtain the collection of classifications currently recognized by the Vision framework.
      * 
      * @param	requestRevision		The revision of the request for which classifications should be reported.
      * 

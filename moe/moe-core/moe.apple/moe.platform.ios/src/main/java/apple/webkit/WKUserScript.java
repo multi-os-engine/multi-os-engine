@@ -165,11 +165,13 @@ public class WKUserScript extends NSObject implements NSCopying {
     public native WKUserScript init();
 
     /**
-     * @abstract Returns an initialized user script that can be added to a @link WKUserContentController @/link.
+     * Returns an initialized user script that can be added to a @link WKUserContentController @/link.
+     * 
+     * Calling this method is the same as calling `initWithSource:injectionTime:forMainFrameOnly:inContentWorld:` with a `contentWorld` value of `WKContentWorld.pageWorld`
+     * 
      * @param source The script source.
      * @param injectionTime When the script should be injected.
      * @param forMainFrameOnly Whether the script should be injected into all frames or just the main frame.
-     * @discussion Calling this method is the same as calling `initWithSource:injectionTime:forMainFrameOnly:inContentWorld:` with a `contentWorld` value of `WKContentWorld.pageWorld`
      */
     @Generated
     @Selector("initWithSource:injectionTime:forMainFrameOnly:")
@@ -177,7 +179,7 @@ public class WKUserScript extends NSObject implements NSCopying {
             boolean forMainFrameOnly);
 
     /**
-     * @abstract When the script should be injected.
+     * When the script should be injected.
      */
     @Generated
     @Selector("injectionTime")
@@ -185,21 +187,22 @@ public class WKUserScript extends NSObject implements NSCopying {
     public native long injectionTime();
 
     /**
-     * @abstract Whether the script should be injected into all frames or just the main frame.
+     * Whether the script should be injected into all frames or just the main frame.
      */
     @Generated
     @Selector("isForMainFrameOnly")
     public native boolean isForMainFrameOnly();
 
     /**
-     * @abstract The script source code.
+     * The script source code.
      */
     @Generated
     @Selector("source")
     public native String source();
 
     /**
-     * @abstract Returns an initialized user script that can be added to a @link WKUserContentController @/link.
+     * Returns an initialized user script that can be added to a @link WKUserContentController @/link.
+     * 
      * @param source The script source.
      * @param injectionTime When the script should be injected.
      * @param forMainFrameOnly Whether the script should be injected into all frames or just the main frame.

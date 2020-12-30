@@ -93,9 +93,9 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     /**
      * The image displayed on the button when focused.
      * 
-     * @discussion The button will automatically create a focused image using the alpha values from the source image.
+     * The button will automatically create a focused image using the alpha values from the source image.
      * 
-     * @note If unspecified, the button will use the default @c image
+     * [@note] If unspecified, the button will use the default @c image
      */
     @Generated
     @Selector("focusedImage")
@@ -109,7 +109,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     /**
      * The image displayed on the button.
      * 
-     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      */
     @Generated
     @Selector("image")
@@ -155,7 +155,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether the button is enabled.
      * 
-     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
      */
     @Generated
     @Selector("isEnabled")
@@ -164,7 +164,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether the button is hidden.
      * 
-     * @discussion Setting the value of this property to @c YES hides the button and setting it to @c NO shows it. The default value is @c NO.
+     * Setting the value of this property to @c YES hides the button and setting it to @c NO shows it. The default value is @c NO.
      */
     @Generated
     @Selector("isHidden")
@@ -195,7 +195,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether the button is enabled.
      * 
-     * @discussion Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
      */
     @Generated
     @Selector("setEnabled:")
@@ -204,9 +204,9 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     /**
      * The image displayed on the button when focused.
      * 
-     * @discussion The button will automatically create a focused image using the alpha values from the source image.
+     * The button will automatically create a focused image using the alpha values from the source image.
      * 
-     * @note If unspecified, the button will use the default @c image
+     * [@note] If unspecified, the button will use the default @c image
      */
     @Generated
     @Selector("setFocusedImage:")
@@ -215,7 +215,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether the button is hidden.
      * 
-     * @discussion Setting the value of this property to @c YES hides the button and setting it to @c NO shows it. The default value is @c NO.
+     * Setting the value of this property to @c YES hides the button and setting it to @c NO shows it. The default value is @c NO.
      */
     @Generated
     @Selector("setHidden:")
@@ -224,7 +224,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     /**
      * The image displayed on the button.
      * 
-     * @discussion Animated images are not supported. If an animated image is assigned, only the first image will be used.
+     * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      */
     @Generated
     @Selector("setImage:")

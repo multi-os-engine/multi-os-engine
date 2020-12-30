@@ -147,9 +147,9 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * The following properties allow for runtime lookup of any input element on a profile, when provided with a valid alias.
      * 
-     * @example extendedGamepad.elements["Button A"] == extendedGamepad.buttonA // YES
-     * @example extendedGamepad.dpads["Left Thumbstick"] == extendedGamepad.leftThumbstick // YES
-     * @example extendedGamepad.dpads["Button B"] // returns nil, "Button B" is not a GCControllerDirectionPad
+     * [@example] extendedGamepad.elements["Button A"] == extendedGamepad.buttonA // YES
+     * [@example] extendedGamepad.dpads["Left Thumbstick"] == extendedGamepad.leftThumbstick // YES
+     * [@example] extendedGamepad.dpads["Button B"] // returns nil, "Button B" is not a GCControllerDirectionPad
      */
     @Generated
     @Selector("elements")
@@ -201,9 +201,9 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * Profile elements can be accessed using keyed subscript notation, with a valid alias of its inputs.
      * 
-     * @example extendedGamepad["Button A"] == extendedGamepad.buttonA // YES
-     * @example microGamepad["Button X"] == microGamepad.buttonX // YES
-     * @note Equivalent to -elements
+     * [@example] extendedGamepad["Button A"] == extendedGamepad.buttonA // YES
+     * [@example] microGamepad["Button X"] == microGamepad.buttonX // YES
+     * [@note] Equivalent to -elements
      */
     @Generated
     @Selector("objectForKeyedSubscript:")
@@ -220,7 +220,8 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * Sets the state vector of the physical input profile to a copy of the passed in physical input profile's state vector.
      * 
-     * @note If the controller's snapshot flag is set to NO, this method has no effect.
+     * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
+     * 
      * @see GCController.snapshot
      */
     @Generated

@@ -19,8 +19,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLArgumentEncoder
- * @discussion MTLArgumentEncoder encodes buffer, texture, sampler, and constant data into a buffer.
+ * [@protocol] MTLArgumentEncoder
+ * 
+ * MTLArgumentEncoder encodes buffer, texture, sampler, and constant data into a buffer.
  */
 @Generated
 @Library("Metal")
@@ -28,8 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLArgumentEncoder")
 public interface MTLArgumentEncoder {
     /**
-     * @property alignment
-     * @abstract The alignment in bytes required to store the encoded resource bindings.
+     * [@property] alignment
+     * 
+     * The alignment in bytes required to store the encoded resource bindings.
      */
     @Generated
     @Selector("alignment")
@@ -37,16 +39,18 @@ public interface MTLArgumentEncoder {
     long alignment();
 
     /**
-     * @method constantDataAtIndex:
-     * @brief Returns a pointer to the constant data at the given bind point index.
+     * constantDataAtIndex:
+     * 
+     * Returns a pointer to the constant data at the given bind point index.
      */
     @Generated
     @Selector("constantDataAtIndex:")
     VoidPtr constantDataAtIndex(@NUInt long index);
 
     /**
-     * @property device
-     * @abstract The device this argument encoder was created against.
+     * [@property] device
+     * 
+     * The device this argument encoder was created against.
      */
     @Generated
     @Selector("device")
@@ -54,8 +58,9 @@ public interface MTLArgumentEncoder {
     MTLDevice device();
 
     /**
-     * @property encodedLength
-     * @abstract The number of bytes required to store the encoded resource bindings.
+     * [@property] encodedLength
+     * 
+     * The number of bytes required to store the encoded resource bindings.
      */
     @Generated
     @Selector("encodedLength")
@@ -63,16 +68,18 @@ public interface MTLArgumentEncoder {
     long encodedLength();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @method setArgumentBuffer:offset:
-     * @brief Sets the destination buffer and offset at which the arguments will be encoded.
+     * setArgumentBuffer:offset:
+     * 
+     * Sets the destination buffer and offset at which the arguments will be encoded.
      */
     @Generated
     @Selector("setArgumentBuffer:offset:")
@@ -89,8 +96,9 @@ public interface MTLArgumentEncoder {
             @NUInt long startOffset, @NUInt long arrayElement);
 
     /**
-     * @method setBuffer:offset:atIndex:
-     * @brief Set a buffer at the given bind point index.
+     * setBuffer:offset:atIndex:
+     * 
+     * Set a buffer at the given bind point index.
      */
     @Generated
     @Selector("setBuffer:offset:atIndex:")
@@ -98,8 +106,9 @@ public interface MTLArgumentEncoder {
             @NUInt long index);
 
     /**
-     * @method setBuffers:offsets:withRange:
-     * @brief Set an array of buffers at the given bind point index range.
+     * setBuffers:offsets:withRange:
+     * 
+     * Set an array of buffers at the given bind point index range.
      */
     @Generated
     @Selector("setBuffers:offsets:withRange:")
@@ -107,24 +116,27 @@ public interface MTLArgumentEncoder {
             ConstNUIntPtr offsets, @ByValue NSRange range);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
     void setLabel(String value);
 
     /**
-     * @method setSamplerState:atIndex:
-     * @brief Set a sampler at the given bind point index.
+     * setSamplerState:atIndex:
+     * 
+     * Set a sampler at the given bind point index.
      */
     @Generated
     @Selector("setSamplerState:atIndex:")
     void setSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
 
     /**
-     * @method setSamplerStates:withRange:
-     * @brief Set an array of samplers at the given bind point index range.
+     * setSamplerStates:withRange:
+     * 
+     * Set an array of samplers at the given bind point index range.
      */
     @Generated
     @Selector("setSamplerStates:withRange:")
@@ -132,24 +144,27 @@ public interface MTLArgumentEncoder {
             @ByValue NSRange range);
 
     /**
-     * @method setTexture:atIndex:
-     * @brief Set a texture at the given bind point index.
+     * setTexture:atIndex:
+     * 
+     * Set a texture at the given bind point index.
      */
     @Generated
     @Selector("setTexture:atIndex:")
     void setTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
 
     /**
-     * @method setTextures:withRange:
-     * @brief Set an array of textures at the given bind point index range.
+     * setTextures:withRange:
+     * 
+     * Set an array of textures at the given bind point index range.
      */
     @Generated
     @Selector("setTextures:withRange:")
     void setTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures, @ByValue NSRange range);
 
     /**
-     * @method newArgumentEncoderForBufferAtIndex:
-     * @brief Returns a pointer to a new MTLArgumentEncoder that can be used to encode the an argument buffer
+     * newArgumentEncoderForBufferAtIndex:
+     * 
+     * Returns a pointer to a new MTLArgumentEncoder that can be used to encode the an argument buffer
      * in the buffer associated with a given index.
      * Returns nil if the resource at the given index is not an argument buffer.
      */
@@ -159,8 +174,9 @@ public interface MTLArgumentEncoder {
     MTLArgumentEncoder newArgumentEncoderForBufferAtIndex(@NUInt long index);
 
     /**
-     * @method setComputePipelineState:atIndex
-     * @brief Sets a compute pipeline state at a given bind point index
+     * setComputePipelineState:atIndex
+     * 
+     * Sets a compute pipeline state at a given bind point index
      */
     @Generated
     @Selector("setComputePipelineState:atIndex:")
@@ -168,8 +184,9 @@ public interface MTLArgumentEncoder {
             @NUInt long index);
 
     /**
-     * @method setComputePipelineStates:withRange
-     * @brief Set an array of compute pipeline states at a given bind point index range
+     * setComputePipelineStates:withRange
+     * 
+     * Set an array of compute pipeline states at a given bind point index range
      */
     @Generated
     @Selector("setComputePipelineStates:withRange:")
@@ -177,8 +194,9 @@ public interface MTLArgumentEncoder {
             @ByValue NSRange range);
 
     /**
-     * @method setIndirectCommandBuffer:atIndex
-     * @brief Sets an indirect command buffer at a given bind point index
+     * setIndirectCommandBuffer:atIndex
+     * 
+     * Sets an indirect command buffer at a given bind point index
      */
     @Generated
     @Selector("setIndirectCommandBuffer:atIndex:")
@@ -186,8 +204,9 @@ public interface MTLArgumentEncoder {
             @NUInt long index);
 
     /**
-     * @method setIndirectCommandBuffers:withRange:
-     * @brief Set an array of indirect command buffers at the given bind point index range.
+     * setIndirectCommandBuffers:withRange:
+     * 
+     * Set an array of indirect command buffers at the given bind point index range.
      */
     @Generated
     @Selector("setIndirectCommandBuffers:withRange:")
@@ -195,8 +214,9 @@ public interface MTLArgumentEncoder {
             @ByValue NSRange range);
 
     /**
-     * @method setRenderPipelineState:atIndex
-     * @brief Sets a render pipeline state at a given bind point index
+     * setRenderPipelineState:atIndex
+     * 
+     * Sets a render pipeline state at a given bind point index
      */
     @Generated
     @Selector("setRenderPipelineState:atIndex:")
@@ -204,8 +224,9 @@ public interface MTLArgumentEncoder {
             @NUInt long index);
 
     /**
-     * @method setRenderPipelineStates:withRange
-     * @brief Set an array of render pipeline states at a given bind point index range
+     * setRenderPipelineStates:withRange
+     * 
+     * Set an array of render pipeline states at a given bind point index range
      */
     @Generated
     @Selector("setRenderPipelineStates:withRange:")
@@ -218,8 +239,9 @@ public interface MTLArgumentEncoder {
             @NUInt long index);
 
     /**
-     * @method setIntersectionFunctionTable:atIndex:
-     * @brief Set an intersection function table at the given buffer index
+     * setIntersectionFunctionTable:atIndex:
+     * 
+     * Set an intersection function table at the given buffer index
      */
     @Generated
     @Selector("setIntersectionFunctionTable:atIndex:")
@@ -227,8 +249,9 @@ public interface MTLArgumentEncoder {
             @Mapped(ObjCObjectMapper.class) MTLIntersectionFunctionTable intersectionFunctionTable, @NUInt long index);
 
     /**
-     * @method setIntersectionFunctionTables:withRange:
-     * @brief Set intersection function tables at the given buffer index range
+     * setIntersectionFunctionTables:withRange:
+     * 
+     * Set intersection function tables at the given buffer index range
      */
     @Generated
     @Selector("setIntersectionFunctionTables:withRange:")
@@ -236,8 +259,9 @@ public interface MTLArgumentEncoder {
             @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables, @ByValue NSRange range);
 
     /**
-     * @method setVisibleFunctionTable:atIndex:
-     * @brief Set a visible function table at the given buffer index
+     * setVisibleFunctionTable:atIndex:
+     * 
+     * Set a visible function table at the given buffer index
      */
     @Generated
     @Selector("setVisibleFunctionTable:atIndex:")
@@ -245,8 +269,9 @@ public interface MTLArgumentEncoder {
             @NUInt long index);
 
     /**
-     * @method setVisibleFunctionTables:withRange:
-     * @brief Set visible function tables at the given buffer index range
+     * setVisibleFunctionTables:withRange:
+     * 
+     * Set visible function tables at the given buffer index range
      */
     @Generated
     @Selector("setVisibleFunctionTables:withRange:")

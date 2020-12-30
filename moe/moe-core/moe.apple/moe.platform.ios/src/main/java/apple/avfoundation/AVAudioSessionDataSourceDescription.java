@@ -208,10 +208,10 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     public native String selectedPolarPattern();
 
     /**
-     * @brief Select the desired polar pattern from the set of available patterns. Setting a nil value
+     * Select the desired polar pattern from the set of available patterns. Setting a nil value
      * will clear the preference.
      * 
-     * @note If the owning port and data source are part of the active audio route, changing the polar
+     * [@note] If the owning port and data source are part of the active audio route, changing the polar
      * pattern will likely result in a route reconfiguration. If the owning port and data source are
      * not part of the active route, selecting a polar pattern will not result in an immediate route
      * reconfiguration.  Use AVAudioSession's setPreferredInput:error: method to activate the port. Use

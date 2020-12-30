@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A MPSMatrix allocated on GPU private memory.
- * @discussion It may alias one or more other MPSTemporaryMatrices. Undesired data destruction
+ * A MPSMatrix allocated on GPU private memory.
+ * 
+ * It may alias one or more other MPSTemporaryMatrices. Undesired data destruction
  *             due to aliasing is avoided using the readCount property.
  */
 @Generated
@@ -131,8 +132,9 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     public static native Object new_objc();
 
     /**
-     * @abstract       Help MPS decide which allocations to make ahead of time
-     * @discussion     The buffer cache that underlies the MPSTemporaryMatrix can automatically allocate new storage as
+     * Help MPS decide which allocations to make ahead of time
+     * 
+     * The buffer cache that underlies the MPSTemporaryMatrix can automatically allocate new storage as
      *                 needed as you create new temporary matrices.  However, sometimes a more global view of what you
      *                 plan to make is useful for maximizing memory reuse to get the most efficient operation.
      *                 This class method hints to the cache what the list of matrices will be.
@@ -149,10 +151,10 @@ public class MPSTemporaryMatrix extends MPSMatrix {
             NSArray<? extends MPSMatrixDescriptor> descriptorList);
 
     /**
-     * @abstract       The number of times a temporary matrix may be read by a MPSMatrix... kernel
+     * The number of times a temporary matrix may be read by a MPSMatrix... kernel
      *                 before its contents become undefined.
      * 
-     * @discussion     MPSTemporaryMatrices must release their underlying buffers for reuse
+     * MPSTemporaryMatrices must release their underlying buffers for reuse
      *                 immediately after last use. So as to facilitate *prompt* convenient
      *                 memory recycling, each time a MPSTemporaryMatrix is read by a
      *                 MPSMatrix... -encode... method, its readCount is automatically
@@ -189,10 +191,10 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract       The number of times a temporary matrix may be read by a MPSMatrix... kernel
+     * The number of times a temporary matrix may be read by a MPSMatrix... kernel
      *                 before its contents become undefined.
      * 
-     * @discussion     MPSTemporaryMatrices must release their underlying buffers for reuse
+     * MPSTemporaryMatrices must release their underlying buffers for reuse
      *                 immediately after last use. So as to facilitate *prompt* convenient
      *                 memory recycling, each time a MPSTemporaryMatrix is read by a
      *                 MPSMatrix... -encode... method, its readCount is automatically
@@ -228,7 +230,8 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     public static native Class superclass_static();
 
     /**
-     * @abstract   Initialize a MPSTemporaryMatrix for use on a MTLCommandBuffer
+     * Initialize a MPSTemporaryMatrix for use on a MTLCommandBuffer
+     * 
      * @param      commandBuffer       The MTLCommandBuffer on which the MPSTemporaryMatrix will be exclusively used
      * @param      matrixDescriptor    A valid MPSMatrixDescriptor describing the MPSMatrix format to create
      * @return     A valid MPSTemporaryMatrix.  The object is not managed by a NSAutoreleasePool. The object will be

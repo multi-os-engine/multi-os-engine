@@ -12,9 +12,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol NFCReaderSession
+ * [@protocol] NFCReaderSession
  * 
- * @discussion General reader session callbacks
+ * General reader session callbacks
  */
 @Generated
 @Library("CoreNFC")
@@ -22,12 +22,12 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NFCReaderSessionDelegate")
 public interface NFCReaderSessionDelegate {
     /**
-     * @method readerSession:didDetectTags:
+     * readerSession:didDetectTags:
+     * 
+     * Gets called when the reader detects NFC tag(s) in the polling sequence.
      * 
      * @param session   The session object used for tag detection.
      * @param tags      Array of @link NFCTag @link/ objects.
-     * 
-     * @discussion      Gets called when the reader detects NFC tag(s) in the polling sequence.
      */
     @Generated
     @IsOptional
@@ -37,25 +37,25 @@ public interface NFCReaderSessionDelegate {
     }
 
     /**
-     * @method readerSession:didInvalidateWithError:
+     * readerSession:didInvalidateWithError:
+     * 
+     * Gets called when a session becomes invalid.  At this point the client is expected to discard
+     *                  the returned session object.
      * 
      * @param session   The session object that is invalidated.
      * @param error     The error indicates the invalidation reason.
-     * 
-     * @discussion      Gets called when a session becomes invalid.  At this point the client is expected to discard
-     *                  the returned session object.
      */
     @Generated
     @Selector("readerSession:didInvalidateWithError:")
     void readerSessionDidInvalidateWithError(NFCReaderSession session, NSError error);
 
     /**
-     * @method readerSessionDidBecomeActive:
+     * readerSessionDidBecomeActive:
+     * 
+     * Gets called when the NFC reader session has become active. RF is enabled and reader is scanning for tags.
+     *                  The @link readerSession:didDetectTags: @link/ will be called when a tag is detected.
      * 
      * @param session   The session object in the active state.
-     * 
-     * @discussion      Gets called when the NFC reader session has become active. RF is enabled and reader is scanning for tags.
-     *                  The @link readerSession:didDetectTags: @link/ will be called when a tag is detected.
      */
     @Generated
     @Selector("readerSessionDidBecomeActive:")

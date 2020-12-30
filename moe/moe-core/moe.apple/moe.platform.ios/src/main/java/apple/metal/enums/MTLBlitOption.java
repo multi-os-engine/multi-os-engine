@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLBlitOption
- * @abstract Controls the blit operation
+ * [@enum] MTLBlitOption
+ * 
+ * Controls the blit operation
  */
 @Generated
 public final class MTLBlitOption {

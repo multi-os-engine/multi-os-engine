@@ -41,8 +41,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("QLPreviewControllerDelegate")
 public interface QLPreviewControllerDelegate {
     /**
-     * @abstract Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to provide a zoom effect.
-     * @discussion Return the origin of the zoom. It should be relative to view, or screen based if view is not set. The controller will fade in/out if the rect is CGRectZero.
+     * Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to provide a zoom effect.
+     * 
+     * Return the origin of the zoom. It should be relative to view, or screen based if view is not set. The controller will fade in/out if the rect is CGRectZero.
      */
     @Generated
     @IsOptional
@@ -54,9 +55,11 @@ public interface QLPreviewControllerDelegate {
     }
 
     /**
-     * @abstract Invoked by the preview controller before trying to open an URL tapped in the preview.
-     * @result Returns NO to prevent the preview controller from calling -[UIApplication openURL:] on url.
-     * @discussion If not implemented, defaults is YES.
+     * Invoked by the preview controller before trying to open an URL tapped in the preview.
+     * 
+     * If not implemented, defaults is YES.
+     * 
+     * @return Returns NO to prevent the preview controller from calling -[UIApplication openURL:] on url.
      */
     @Generated
     @IsOptional
@@ -67,9 +70,11 @@ public interface QLPreviewControllerDelegate {
     }
 
     /**
-     * @abstract Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to provide a smooth transition when zooming.
+     * Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to provide a smooth transition when zooming.
+     * 
+     * Return an image the controller will crossfade with when zooming. You can specify the actual "document" content rect in the image in contentRect.
+     * 
      * @param contentRect The rect within the image that actually represents the content of the document. For example, for icons the actual rect is generally smaller than the icon itself.
-     * @discussion Return an image the controller will crossfade with when zooming. You can specify the actual "document" content rect in the image in contentRect.
      */
     @Generated
     @IsOptional
@@ -80,8 +85,9 @@ public interface QLPreviewControllerDelegate {
     }
 
     /**
-     * @abstract Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to provide a smooth transition when zooming.
-     * @discussion  Return the view that will crossfade with the preview.
+     * Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to provide a smooth transition when zooming.
+     * 
+     * Return the view that will crossfade with the preview.
      */
     @Generated
     @IsOptional
@@ -92,7 +98,7 @@ public interface QLPreviewControllerDelegate {
     }
 
     /**
-     * @abstract Invoked after the preview controller is closed.
+     * Invoked after the preview controller is closed.
      */
     @Generated
     @IsOptional
@@ -102,7 +108,7 @@ public interface QLPreviewControllerDelegate {
     }
 
     /**
-     * @abstract Invoked before the preview controller is closed.
+     * Invoked before the preview controller is closed.
      */
     @Generated
     @IsOptional
@@ -134,8 +140,9 @@ public interface QLPreviewControllerDelegate {
     }
 
     /**
-     * @abstract Called after the preview controller has successfully overwritten the contents of the file at previewItemURL for the preview item with the edited version of the users.
-     * @discussion May be called multiple times in a row when overwriting the preview item with the successive edited versions of the preview item (whenever the users save the changes).
+     * Called after the preview controller has successfully overwritten the contents of the file at previewItemURL for the preview item with the edited version of the users.
+     * 
+     * May be called multiple times in a row when overwriting the preview item with the successive edited versions of the preview item (whenever the users save the changes).
      */
     @Generated
     @IsOptional

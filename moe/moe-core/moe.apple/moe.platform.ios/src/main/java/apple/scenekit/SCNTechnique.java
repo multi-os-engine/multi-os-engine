@@ -51,9 +51,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SCNTechnique
- * @abstract SCNTechnique represents a rendering process that may require multiple passes.
- * @discussion A technique is generally initialized from a Property List file. It can be set to any object that conforms to the SCNTechniqueSupport protocol.
+ * SCNTechnique
+ * 
+ * SCNTechnique represents a rendering process that may require multiple passes.
+ * 
+ * A technique is generally initialized from a Property List file. It can be set to any object that conforms to the SCNTechniqueSupport protocol.
  */
 @Generated
 @Library("SceneKit")
@@ -166,20 +168,24 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     public static native boolean supportsSecureCoding();
 
     /**
-     * @method techniqueBySequencingTechniques:
-     * @abstract Creates and returns a technique by sequencing the passes from the specified techniques.
+     * techniqueBySequencingTechniques:
+     * 
+     * Creates and returns a technique by sequencing the passes from the specified techniques.
+     * 
+     * The passes from "techniques" are executed sequentially. The symbols and targets are merged. This allows to use the same uniform ad targets across multiple techniques.
+     * 
      * @param techniques The techniques to sequence.
-     * @discussion The passes from "techniques" are executed sequentially. The symbols and targets are merged. This allows to use the same uniform ad targets across multiple techniques.
      */
     @Generated
     @Selector("techniqueBySequencingTechniques:")
     public static native SCNTechnique techniqueBySequencingTechniques(NSArray<? extends SCNTechnique> techniques);
 
     /**
-     *  @method techniqueWithDictionary:
-     *  @abstract Creates and returns a technique instance initialized with the specified dictionary.
-     *  @param dictionary The dictionary representation of the technique.
-     *  @discussion The format of the dictionary is described below. Quoted strings can be any name of your choice. Tags are defined below.
+     * techniqueWithDictionary:
+     * 
+     * Creates and returns a technique instance initialized with the specified dictionary.
+     * 
+     * The format of the dictionary is described below. Quoted strings can be any name of your choice. Tags are defined below.
      *  The passes are executed sequentially as specified in the "sequence" section. The definition of each pass is within the "passes" section. A pass may have inputs/outputs that reference targets or symbols defined in the "targets" and "symbols" section. The entries of the "symbols" section can be set/get and animated with SCNTechnique's APIs below.
      * 
      *  {
@@ -380,6 +386,8 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
      * 
      *  <metalLibraryName>
      *  An optional metal library name to load metal programs from. The metallib file is located from the default or specified bundle using NSBundle pathForResource:ofType:.
+     * 
+     *  @param dictionary The dictionary representation of the technique.
      */
     @Generated
     @Selector("techniqueWithDictionary:")
@@ -409,8 +417,9 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property dictionaryRepresentation
-     * @abstract Returns the dictionary representation of the technique.
+     * [@property] dictionaryRepresentation
+     * 
+     * Returns the dictionary representation of the technique.
      */
     @Generated
     @Selector("dictionaryRepresentation")
@@ -421,11 +430,14 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @method handleBindingOfSymbol:usingBlock:
-     * @abstract Sets the block to call at render time to bind the value for the specified symbol of the receiver. 
+     * handleBindingOfSymbol:usingBlock:
+     * 
+     * Sets the block to call at render time to bind the value for the specified symbol of the receiver.
+     * 
+     * The block will be called at every frame for every pass referencing the specified symbol.
+     * 
      * @param symbol The name of the symbol to bind a value for.
      * @param block The block to call to bind the specified symbol.
-     * @discussion The block will be called at every frame for every pass referencing the specified symbol.
      */
     @Generated
     @Selector("handleBindingOfSymbol:usingBlock:")
@@ -526,8 +538,9 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
     /**
-     * @property library
-     * @abstract The Metal library to use to load the Metal programs specified in the technique description. Defaults to nil which corresponds to the default Metal library.
+     * [@property] library
+     * 
+     * The Metal library to use to load the Metal programs specified in the technique description. Defaults to nil which corresponds to the default Metal library.
      */
     @Generated
     @Selector("library")
@@ -535,8 +548,9 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     public native MTLLibrary library();
 
     /**
-     * @property library
-     * @abstract The Metal library to use to load the Metal programs specified in the technique description. Defaults to nil which corresponds to the default Metal library.
+     * [@property] library
+     * 
+     * The Metal library to use to load the Metal programs specified in the technique description. Defaults to nil which corresponds to the default Metal library.
      */
     @Generated
     @Selector("setLibrary:")

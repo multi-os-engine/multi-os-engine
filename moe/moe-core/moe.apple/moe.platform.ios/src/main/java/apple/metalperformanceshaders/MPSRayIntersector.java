@@ -32,21 +32,22 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSRayIntersector
- * @brief Performs intersection tests between rays and the geometry in an MPSAccelerationStructure
+ * MPSRayIntersector
  * 
- * @discussion An MPSRayIntersector is used to schedule intersection tests between rays and geometry
+ * Performs intersection tests between rays and the geometry in an MPSAccelerationStructure
+ * 
+ * An MPSRayIntersector is used to schedule intersection tests between rays and geometry
  * into an MTLCommandBuffer. First, create a raytracer with a Metal device. Then, configure the
  * properties of the raytracer:
  * 
- *     @code
+ *     [@code]
  *     id <MTLDevice> device = MTLCreateSystemDefaultDevice();
  *     id <MTLCommandQueue> commandQueue = [device newCommandQueue];
  * 
  *     MPSRayIntersector *raytracer = [[MPSRayIntersector alloc] initWithDevice:device];
  * 
  *     // Configure raytracer properties
- *     @endcode
+ *     [@endcode]
  * 
  * Before scheduling intersection tests, an MPSAccelerationStructure must be created. The
  * acceleration structure is built over geometry and is used to accelerate intersection testing.
@@ -55,21 +56,21 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * structure. For example, triangle acceleration structures require a vertex buffer and a triangle
  * count:
  * 
- *     @code
+ *     [@code]
  *     MPSTriangleAccelerationStructure *accelerationStructure =
  *         [[MPSTriangleAccelerationStructure alloc] initWithDevice:device];
  * 
  *     accelerationStructure.vertexBuffer = vertexBuffer;
  *     accelerationStructure.triangleCount = triangleCount;
- *     @endcode
+ *     [@endcode]
  * 
  * Acceleration structures must be built at least once before they are used for intersection
  * testing, and must be rebuilt when the geometry changes. Rebuilding an acceleration structure
  * is a time consuming operation, so an asynchronous version of this method is also available.
  * 
- *     @code
+ *     [@code]
  *     [accelerationStructure rebuild];
- *     @endcode
+ *     [@endcode]
  * 
  * The raytracer is then used to schedule intersection tests into an MTLCommandBuffer. Rays
  * are provided in batches through a Metal buffer, and intersection results are returned through
@@ -85,7 +86,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  * If the rays were generated on the CPU:
  * 
- *     @code
+ *     [@code]
  *     typedef MPSRayOriginDirection Ray;
  * 
  *     // Create a buffer to hold the rays
@@ -97,7 +98,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *     // Create a buffer to hold the intersections
  *     id <MTLBuffer> intersectionBuffer = [device newBufferWithLength:sizeof(Intersection) * rayCount
  *                                                             options:0];
- *     @endcode
+ *     [@endcode]
  * 
  * It can be useful to prevent certain rays from participating in intersection testing. For
  * example: rays which have bounced out of the scene in previous intersection tests. It may be
@@ -114,7 +115,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * for, e.g., shadow rays or ambient occlusion rays and is typically much faster than the "nearest"
  * intersection type.
  * 
- *     @code
+ *     [@code]
  *     id <MTLCommandBuffer> commandBuffer = [commandQueue commandBuffer];
  * 
  *     [raytracer encodeIntersectionToCommandBuffer:commandBuffer
@@ -127,7 +128,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *                            accelerationStructure:accelerationStructure];
  * 
  *     [commandBuffer commit];
- *     @endcode
+ *     [@endcode]
  * 
  * The intersection results are not available until the command buffer has finished executing
  * on the GPU. It is not safe for the CPU to write or read the contents of the ray buffer,
@@ -136,15 +137,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * the CPU until the GPU has finished executing. Then retrieve the intersection results
  * from the intersection buffer:
  * 
- *     @code
+ *     [@code]
  *     typedef MPSIntersectionDistancePrimitiveIndexCoordinates Intersection;
- *     @endcode
+ *     [@endcode]
  * 
- *     @code
+ *     [@code]
  *     [commandBuffer waitUntilCompleted];
  * 
  *     Intersection *intersections = (Intersection *)intersectionBuffer.contents;
- *     @endcode
+ *     [@endcode]
  * 
  * There are also several choices of intersection data type controlled by the intersectionDataType
  * property. The default intersection data type is MPSIntersectionDistancePrimitiveIndexCoordinates,
@@ -173,7 +174,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * executing, the CPU and GPU can advance to the next range of the buffer. This method can be
  * implemented using a completion handler and a semaphore:
  * 
- *     @code
+ *     [@code]
  *     #define MAX_ASYNC_OPERATIONS 3
  * 
  *     // Initialization:
@@ -232,7 +233,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  *     // Commit the command buffer to allow the GPU to start executing
  *     [commandBuffer commit];
- *     @endcode
+ *     [@endcode]
  * 
  * GPU Driven Raytracing: Pipelining CPU and GPU work with asynchronous raytracing is better than
  * allowing the CPU and GPU block each other, but it is even better to produce rays and consume
@@ -248,7 +249,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * intersection testing, and intersection consumption kernels are pipelined on the GPU, there
  * is no need to double or triple buffer the ray or intersection buffers, which saves memory.
  * 
- *     @code
+ *     [@code]
  *     id <MTLBuffer> rayBuffer =
  *         [device newBufferWithLength:sizeof(Ray) * rayCount
  *                             options:MTLResourceStorageModePrivate];
@@ -297,7 +298,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *     [encoder endEncoding];
  * 
  *     [commandBuffer commit];
- *     @endcode
+ *     [@endcode]
  * 
  * Note that the intersection consumption kernel can in turn produce new rays that can be passed
  * back to the MPSRayIntersector. This technique can be used to implement iterative techniques such as
@@ -314,7 +315,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * distance of a ray to a negative number indicates that the ray has become inactive and causes the
  * raytracer to ignore the ray.
  * 
- *     @code
+ *     [@code]
  *     [raytracer encodeIntersectionToCommandBuffer:commandBuffer
  *                                 intersectionType:MPSIntersectionTypeNearest
  *                                        rayBuffer:rayBuffer
@@ -324,7 +325,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *                                   rayCountBuffer:rayCountBuffer
  *                             rayCountBufferOffset:0
  *                            accelerationStructure:accelerationStructure];
- *     @endcode
+ *     [@endcode]
  * 
  * Multi-GPU Raytracing: to implement multi-GPU raytracing, create the MPSRayIntersector and
  * MPSAccelerationStructure objects first with one Metal device and copy them to the other Metal
@@ -450,7 +451,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @brief Ray/bounding box intersection test type. Defaults to
+     * Ray/bounding box intersection test type. Defaults to
      * MPSBoundingBoxIntersectionTestTypeDefault.
      */
     @Generated
@@ -483,7 +484,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @brief Copy the raytracer with a Metal device
+     * Copy the raytracer with a Metal device
      * 
      * @param zone   The NSZone in which to allocate the object
      * @param device The Metal device for the new MPSRayIntersector
@@ -497,10 +498,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
-     * @brief Whether to ignore intersections between rays and back-facing or front-facing triangles
+     * Whether to ignore intersections between rays and back-facing or front-facing triangles
      * or quadrilaterals. Defaults to MTLCullModeNone.
      * 
-     * @discussion A triangle or quadrilateral is back-facing if its normal points in the same
+     * A triangle or quadrilateral is back-facing if its normal points in the same
      * direction as a ray and front-facing if its normal points in the opposite direction as a ray. If
      * the cull mode is set to MTLCullModeBack, then back-facing triangles and quadrilaterals will be
      * ignored. If the cull mode is set to MTLCullModeFront, then front-facing triangles and
@@ -524,7 +525,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public static native String description_static();
 
     /**
-     * @brief Schedule intersection tests between rays and an acceleration structure
+     * Schedule intersection tests between rays and an acceleration structure
      * 
      * @param commandBuffer            Command buffer to schedule intersection testing in
      * @param intersectionType         Which type of intersection to test for
@@ -551,7 +552,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
             @NUInt long rayCount, MPSAccelerationStructure accelerationStructure);
 
     /**
-     * @brief Schedule intersection tests between rays and an acceleration structure with a ray count
+     * Schedule intersection tests between rays and an acceleration structure with a ray count
      * provided in a buffer
      * 
      * @param commandBuffer            Command buffer to schedule intersection testing in
@@ -582,7 +583,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
             MPSAccelerationStructure accelerationStructure);
 
     /**
-     * @brief Schedule intersection tests between rays and an acceleration structure
+     * Schedule intersection tests between rays and an acceleration structure
      * 
      * @param commandBuffer            Command buffer to schedule intersection testing in
      * @param intersectionType         Which type of intersection to test for
@@ -615,7 +616,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
             @NUInt long rayIndexCount, MPSAccelerationStructure accelerationStructure);
 
     /**
-     * @brief Schedule intersection tests between rays and an acceleration structure with a ray count
+     * Schedule intersection tests between rays and an acceleration structure with a ray count
      * provided in a buffer
      * 
      * @param commandBuffer             Command buffer to schedule intersection testing in
@@ -652,7 +653,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
             MPSAccelerationStructure accelerationStructure);
 
     /**
-     * @brief Schedule intersection tests between rays and an acceleration structure, where rays and
+     * Schedule intersection tests between rays and an acceleration structure, where rays and
      * loaded from a texture and intersections are stored into a texture.
      * 
      * This is convenient for hybrid rendering applications which produce ray data from a fragment
@@ -667,24 +668,24 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * texture must have pixel format MTLPixelFormatRGBA32Float and at least two array slices, packed
      * as follows:
      * 
-     *     @code
+     *     [@code]
      *     tex.write(float4(ray.position, as_type<float>(ray.mask)), pixel, 0); // slice 0
      *     tex.write(float4(ray.direction, ray.maxDistance), pixel, 1);         // slice 1
-     *     @end
+     *     [@end]
      * 
      * If the intersection data type is MPSIntersectionDataTypeDistance, the intersection texture may
      * have pixel format MTLPixelFormatR32Float with just a single channel and one array slice, and
      * should be unpacked as follows:
      * 
-     *     @code
+     *     [@code]
      *     float distance = tex.read(pixel, 0).x;
-     *     @end
+     *     [@end]
      * 
      * On the other hand, if the intersection data type is
      * MPSIntersectionDistancePrimitiveIndexInstanceIndexCoordinates, the intersection texture must
      * have pixel format MTLPixelFormatRGBA32Float and at least two slices:
      * 
-     *     @code
+     *     [@code]
      *     float3 f0 = tex.read(pixel, 0);
      * 
      *     float distance = f0.x;
@@ -693,7 +694,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      *     // w component is padding for this intersection data type
      * 
      *     float2 coordinates = tex.read(pixel, 1).xy;
-     *     @end
+     *     [@end]
      * 
      * @param commandBuffer            Command buffer to schedule intersection testing in
      * @param intersectionType         Which type of intersection to test for
@@ -719,10 +720,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * @brief Winding order used to determine which direction a triangle or quadrilateral's normal
+     * Winding order used to determine which direction a triangle or quadrilateral's normal
      * points when back face or front face culling is enabled. Defaults to MTLWindingClockwise.
      * 
-     * @discussion If the front face winding is set to MTLWindingClockwise, the triangle or
+     * If the front face winding is set to MTLWindingClockwise, the triangle or
      * quadrilateral normal is considered to point towards the direction where the vertices are in
      * clockwise order when viewed from that direction. Otherwise, if the front facing winding is set
      * to MTLWindingCounterClockwise, the triangle or quadrilateral normal is considered to point in
@@ -747,7 +748,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native MPSRayIntersector initWithCoder(NSCoder coder);
 
     /**
-     * @brief Initialize the raytracer with an NSCoder and a Metal device
+     * Initialize the raytracer with an NSCoder and a Metal device
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -755,7 +756,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @brief Initialize the raytracer with a Metal device
+     * Initialize the raytracer with a Metal device
      */
     @Generated
     @Selector("initWithDevice:")
@@ -775,7 +776,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @brief Intersection data type. Defaults to
+     * Intersection data type. Defaults to
      * MPSIntersectionDataTypeDistancePrimitiveIndexCoordinates.
      */
     @Generated
@@ -784,10 +785,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native long intersectionDataType();
 
     /**
-     * @brief Offset, in bytes, between consecutive intersections in the intersection buffer. Defaults
+     * Offset, in bytes, between consecutive intersections in the intersection buffer. Defaults
      * to 0, indicating that the intersections are packed according to their natural aligned size.
      * 
-     * @discussion This can be used to skip past any additional per-intersection that which may be
+     * This can be used to skip past any additional per-intersection that which may be
      * stored alongside the MPSRayIntersection struct such as the surface normal at the point
      * of intersection. Must be aligned to the alignment of the intersection data type.
      */
@@ -811,7 +812,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public static native Object new_objc();
 
     /**
-     * @brief Ray data type. Defaults to MPSRayDataTypeOriginDirection.
+     * Ray data type. Defaults to MPSRayDataTypeOriginDirection.
      */
     @Generated
     @Selector("rayDataType")
@@ -819,7 +820,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native long rayDataType();
 
     /**
-     * @brief Ray index data type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and
+     * Ray index data type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and
      * MPSDataTypeUInt32 are supported.
      */
     @Generated
@@ -827,7 +828,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native int rayIndexDataType();
 
     /**
-     * @brief Global ray mask. Defaults to 0xFFFFFFFF. This value will be logically AND-ed with the
+     * Global ray mask. Defaults to 0xFFFFFFFF. This value will be logically AND-ed with the
      * per-ray mask if the ray data type contains a mask.
      */
     @Generated
@@ -835,7 +836,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native int rayMask();
 
     /**
-     * @brief The operator to apply to determine whether to accept an intersection between a ray and a
+     * The operator to apply to determine whether to accept an intersection between a ray and a
      * primitive or instance. Defaults to MPSRayMaskOperatorAnd.
      */
     @Generated
@@ -844,9 +845,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native long rayMaskOperator();
 
     /**
-     * @brief Whether to enable primitive and instance masks. Defaults to MPSRayMaskOptionNone.
+     * Whether to enable primitive and instance masks. Defaults to MPSRayMaskOptionNone.
      * 
-     * @discussion If MPSRayMaskOptionPrimitive or MPSRayMaskOptionInstance is enabled, each ray and
+     * If MPSRayMaskOptionPrimitive or MPSRayMaskOptionInstance is enabled, each ray and
      * primitive and/or instance is associated with a 32 bit unsigned integer mask. Before checking
      * for intersection between a ray and a primitive or instance, the corresponding masks are
      * compared using the ray mask operator defined by the rayMaskOperator property. If the result is
@@ -866,10 +867,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native long rayMaskOptions();
 
     /**
-     * @brief Offset, in bytes, between consecutive rays in the ray buffer. Defaults to 0, indicating
+     * Offset, in bytes, between consecutive rays in the ray buffer. Defaults to 0, indicating
      * that the rays are packed according to their natural aligned size.
      * 
-     * @discussion This can be used to skip past any additional per-ray data that may be stored
+     * This can be used to skip past any additional per-ray data that may be stored
      * alongside the MPSRay struct such as the current radiance along the ray or the source pixel
      * coordinates. Must be aligned to the alignment of the ray data type.
      */
@@ -879,9 +880,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native long rayStride();
 
     /**
-     * @brief Get the recommended minimum number of rays to submit for intersection in one batch
+     * Get the recommended minimum number of rays to submit for intersection in one batch
      * 
-     * @discussion In order to keep the system responsive, and to limit the amount of memory allocated
+     * In order to keep the system responsive, and to limit the amount of memory allocated
      * to ray and intersection buffers, it may be desirable to divide the rays to be intersected
      * against an acceleration structure into smaller batches. However, submitting too few rays in a
      * batch reduces GPU utilization and performance. This method provides a recommended minimum
@@ -907,7 +908,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief Ray/bounding box intersection test type. Defaults to
+     * Ray/bounding box intersection test type. Defaults to
      * MPSBoundingBoxIntersectionTestTypeDefault.
      */
     @Generated
@@ -915,10 +916,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setBoundingBoxIntersectionTestType(@NUInt long value);
 
     /**
-     * @brief Whether to ignore intersections between rays and back-facing or front-facing triangles
+     * Whether to ignore intersections between rays and back-facing or front-facing triangles
      * or quadrilaterals. Defaults to MTLCullModeNone.
      * 
-     * @discussion A triangle or quadrilateral is back-facing if its normal points in the same
+     * A triangle or quadrilateral is back-facing if its normal points in the same
      * direction as a ray and front-facing if its normal points in the opposite direction as a ray. If
      * the cull mode is set to MTLCullModeBack, then back-facing triangles and quadrilaterals will be
      * ignored. If the cull mode is set to MTLCullModeFront, then front-facing triangles and
@@ -933,10 +934,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setCullMode(@NUInt long value);
 
     /**
-     * @brief Winding order used to determine which direction a triangle or quadrilateral's normal
+     * Winding order used to determine which direction a triangle or quadrilateral's normal
      * points when back face or front face culling is enabled. Defaults to MTLWindingClockwise.
      * 
-     * @discussion If the front face winding is set to MTLWindingClockwise, the triangle or
+     * If the front face winding is set to MTLWindingClockwise, the triangle or
      * quadrilateral normal is considered to point towards the direction where the vertices are in
      * clockwise order when viewed from that direction. Otherwise, if the front facing winding is set
      * to MTLWindingCounterClockwise, the triangle or quadrilateral normal is considered to point in
@@ -947,7 +948,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setFrontFacingWinding(@NUInt long value);
 
     /**
-     * @brief Intersection data type. Defaults to
+     * Intersection data type. Defaults to
      * MPSIntersectionDataTypeDistancePrimitiveIndexCoordinates.
      */
     @Generated
@@ -955,10 +956,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setIntersectionDataType(@NUInt long value);
 
     /**
-     * @brief Offset, in bytes, between consecutive intersections in the intersection buffer. Defaults
+     * Offset, in bytes, between consecutive intersections in the intersection buffer. Defaults
      * to 0, indicating that the intersections are packed according to their natural aligned size.
      * 
-     * @discussion This can be used to skip past any additional per-intersection that which may be
+     * This can be used to skip past any additional per-intersection that which may be
      * stored alongside the MPSRayIntersection struct such as the surface normal at the point
      * of intersection. Must be aligned to the alignment of the intersection data type.
      */
@@ -967,14 +968,14 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setIntersectionStride(@NUInt long value);
 
     /**
-     * @brief Ray data type. Defaults to MPSRayDataTypeOriginDirection.
+     * Ray data type. Defaults to MPSRayDataTypeOriginDirection.
      */
     @Generated
     @Selector("setRayDataType:")
     public native void setRayDataType(@NUInt long value);
 
     /**
-     * @brief Ray index data type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and
+     * Ray index data type. Defaults to MPSDataTypeUInt32. Only MPSDataTypeUInt16 and
      * MPSDataTypeUInt32 are supported.
      */
     @Generated
@@ -982,7 +983,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setRayIndexDataType(int value);
 
     /**
-     * @brief Global ray mask. Defaults to 0xFFFFFFFF. This value will be logically AND-ed with the
+     * Global ray mask. Defaults to 0xFFFFFFFF. This value will be logically AND-ed with the
      * per-ray mask if the ray data type contains a mask.
      */
     @Generated
@@ -990,7 +991,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setRayMask(int value);
 
     /**
-     * @brief The operator to apply to determine whether to accept an intersection between a ray and a
+     * The operator to apply to determine whether to accept an intersection between a ray and a
      * primitive or instance. Defaults to MPSRayMaskOperatorAnd.
      */
     @Generated
@@ -998,9 +999,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setRayMaskOperator(@NUInt long value);
 
     /**
-     * @brief Whether to enable primitive and instance masks. Defaults to MPSRayMaskOptionNone.
+     * Whether to enable primitive and instance masks. Defaults to MPSRayMaskOptionNone.
      * 
-     * @discussion If MPSRayMaskOptionPrimitive or MPSRayMaskOptionInstance is enabled, each ray and
+     * If MPSRayMaskOptionPrimitive or MPSRayMaskOptionInstance is enabled, each ray and
      * primitive and/or instance is associated with a 32 bit unsigned integer mask. Before checking
      * for intersection between a ray and a primitive or instance, the corresponding masks are
      * compared using the ray mask operator defined by the rayMaskOperator property. If the result is
@@ -1019,10 +1020,10 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setRayMaskOptions(@NUInt long value);
 
     /**
-     * @brief Offset, in bytes, between consecutive rays in the ray buffer. Defaults to 0, indicating
+     * Offset, in bytes, between consecutive rays in the ray buffer. Defaults to 0, indicating
      * that the rays are packed according to their natural aligned size.
      * 
-     * @discussion This can be used to skip past any additional per-ray data that may be stored
+     * This can be used to skip past any additional per-ray data that may be stored
      * alongside the MPSRay struct such as the current radiance along the ray or the source pixel
      * coordinates. Must be aligned to the alignment of the ray data type.
      */
@@ -1031,7 +1032,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     public native void setRayStride(@NUInt long value);
 
     /**
-     * @brief Ray/triangle intersection test type. Defaults to MPSTriangleIntersectionTestTypeDefault.
+     * Ray/triangle intersection test type. Defaults to MPSTriangleIntersectionTestTypeDefault.
      * Quads are broken into two triangles for intersection testing, so this property also applies to
      * quadrilateral intersections.
      */
@@ -1058,7 +1059,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     }
 
     /**
-     * @brief Ray/triangle intersection test type. Defaults to MPSTriangleIntersectionTestTypeDefault.
+     * Ray/triangle intersection test type. Defaults to MPSTriangleIntersectionTestTypeDefault.
      * Quads are broken into two triangles for intersection testing, so this property also applies to
      * quadrilateral intersections.
      */

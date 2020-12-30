@@ -172,9 +172,10 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     public native WKPreferences initWithCoder(NSCoder coder);
 
     /**
-     * @abstract A Boolean value indicating whether JavaScript can open
+     * A Boolean value indicating whether JavaScript can open
      * windows without user interaction.
-     * @discussion The default value is NO in iOS and YES in OS X.
+     * 
+     * The default value is NO in iOS and YES in OS X.
      */
     @Generated
     @Selector("javaScriptCanOpenWindowsAutomatically")
@@ -185,8 +186,9 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     public native boolean javaScriptEnabled();
 
     /**
-     * @abstract The minimum font size in points.
-     * @discussion The default value is 0.
+     * The minimum font size in points.
+     * 
+     * The default value is 0.
      */
     @Generated
     @Selector("minimumFontSize")
@@ -194,9 +196,10 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     public native double minimumFontSize();
 
     /**
-     * @abstract A Boolean value indicating whether JavaScript can open
+     * A Boolean value indicating whether JavaScript can open
      * windows without user interaction.
-     * @discussion The default value is NO in iOS and YES in OS X.
+     * 
+     * The default value is NO in iOS and YES in OS X.
      */
     @Generated
     @Selector("setJavaScriptCanOpenWindowsAutomatically:")
@@ -207,26 +210,29 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     public native void setJavaScriptEnabled(boolean value);
 
     /**
-     * @abstract The minimum font size in points.
-     * @discussion The default value is 0.
+     * The minimum font size in points.
+     * 
+     * The default value is 0.
      */
     @Generated
     @Selector("setMinimumFontSize:")
     public native void setMinimumFontSize(@NFloat double value);
 
     /**
-     * @abstract A Boolean value indicating whether warnings should be
+     * A Boolean value indicating whether warnings should be
      * shown for suspected fraudulent content such as phishing or malware.
-     * @discussion The default value is YES.
+     * 
+     * The default value is YES.
      */
     @Generated
     @Selector("isFraudulentWebsiteWarningEnabled")
     public native boolean isFraudulentWebsiteWarningEnabled();
 
     /**
-     * @abstract A Boolean value indicating whether warnings should be
+     * A Boolean value indicating whether warnings should be
      * shown for suspected fraudulent content such as phishing or malware.
-     * @discussion The default value is YES.
+     * 
+     * The default value is YES.
      */
     @Generated
     @Selector("setFraudulentWebsiteWarningEnabled:")

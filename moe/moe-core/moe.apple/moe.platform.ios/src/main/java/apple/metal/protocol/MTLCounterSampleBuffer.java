@@ -14,8 +14,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MTLCounterSampleBuffer
- * @abstract The Counter Sample Buffer contains opaque counter samples as well
+ * [@protocol] MTLCounterSampleBuffer
+ * 
+ * The Counter Sample Buffer contains opaque counter samples as well
  * as state needed to request a sample from the API.
  */
 @Generated
@@ -24,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLCounterSampleBuffer")
 public interface MTLCounterSampleBuffer {
     /**
-     * @property device The device that created the sample buffer.  It is only valid
+     * [@property] device The device that created the sample buffer.  It is only valid
      * to use the sample buffer with this device.
      */
     @Generated
@@ -33,7 +34,7 @@ public interface MTLCounterSampleBuffer {
     MTLDevice device();
 
     /**
-     * @property label The label for the sample buffer.  This is set by the label
+     * [@property] label The label for the sample buffer.  This is set by the label
      * property of the descriptor that is used to create the sample buffer.
      */
     @Generated
@@ -41,21 +42,24 @@ public interface MTLCounterSampleBuffer {
     String label();
 
     /**
-     * @method resolveCounterRange:
-     * @abstract Resolve the counters from the sample buffer to an NSData containing
+     * resolveCounterRange:
+     * 
+     * Resolve the counters from the sample buffer to an NSData containing
      * the counter values.  This may only be used with sample buffers that have
      * MTLStorageModeShared.
+     * 
+     * Samples that encountered an error during resolve will be set to
+     * MTLCounterErrorValue.
+     * 
      * @param range The range of indices in the sample buffer to resolve.
      * @return The resolved samples.
-     * @discussion Samples that encountered an error during resolve will be set to
-     * MTLCounterErrorValue.
      */
     @Generated
     @Selector("resolveCounterRange:")
     NSData resolveCounterRange(@ByValue NSRange range);
 
     /**
-     * @property sampleCount The number of samples that may be stored in this sample buffer.
+     * [@property] sampleCount The number of samples that may be stored in this sample buffer.
      */
     @Generated
     @Selector("sampleCount")

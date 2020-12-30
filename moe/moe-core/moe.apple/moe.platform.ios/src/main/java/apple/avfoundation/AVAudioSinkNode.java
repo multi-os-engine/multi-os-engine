@@ -28,9 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioSinkNode
- *   @abstract AVAudioSinkNode wraps a client provided block to receive input audio on the audio IO thread.
- *   @discussion
+ * AVAudioSinkNode
+ * 
+ * AVAudioSinkNode wraps a client provided block to receive input audio on the audio IO thread.
+ * 
  *       AVAudioSinkNode is restricted to be used in the input chain and does not support format
  *       conversion. Hence when connecting to an AVAudioSinkNode node, the format for the connection
  *       should be the output scope format of the input node (essentialy the format should match the input hardware
@@ -113,11 +114,10 @@ public class AVAudioSinkNode extends AVAudioNode {
     public native AVAudioSinkNode init();
 
     /**
-     * @method initWithReceiverBlock:
-     * @abstract Create a node with a receiver block.
-     * @param block
-     *     The block that receives audio data from the input.
-     * @discussion
+     * initWithReceiverBlock:
+     * 
+     * Create a node with a receiver block.
+     * 
      *     The receiver block is called when the input data is available.
      * 
      *     The block will be called on the realtime thread and it is the client's responsibility to
@@ -127,6 +127,9 @@ public class AVAudioSinkNode extends AVAudioNode {
      *     to another node.
      * 
      *     The audio format for the data received by the block will be set to the node's input format.
+     * 
+     * @param block
+     *     The block that receives audio data from the input.
      */
     @Generated
     @Selector("initWithReceiverBlock:")

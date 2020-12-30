@@ -33,8 +33,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Performs requests on a sequence of images.
- * @discussion The VNSequenceRequestHandler is created without any specific image source.  The -performRequests:on<ImageSource>:error: methods will retain the image source for no longer than the lifetime of the call.
+ * Performs requests on a sequence of images.
+ * 
+ * The VNSequenceRequestHandler is created without any specific image source.  The -performRequests:on<ImageSource>:error: methods will retain the image source for no longer than the lifetime of the call.
  *             The VNSequenceRequestHandler can choose to also cache state information related to the previously-processed image sources.
  */
 @Generated
@@ -101,7 +102,7 @@ public class VNSequenceRequestHandler extends NSObject {
     public static native long hash_static();
 
     /**
-     * @brief	Creates a new object.
+     * Creates a new object.
      */
     @Generated
     @Selector("init")
@@ -135,7 +136,7 @@ public class VNSequenceRequestHandler extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @brief Perform requests on an image in a CGImageRef.
+     * Perform requests on an image in a CGImageRef.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -149,7 +150,7 @@ public class VNSequenceRequestHandler extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image in a CGImageRef.
+     * Perform requests on an image in a CGImageRef.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -165,7 +166,7 @@ public class VNSequenceRequestHandler extends NSObject {
             CGImageRef image, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image in a CIImage.
+     * Perform requests on an image in a CIImage.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -179,7 +180,7 @@ public class VNSequenceRequestHandler extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image in a CIImage.
+     * Perform requests on an image in a CIImage.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -195,7 +196,7 @@ public class VNSequenceRequestHandler extends NSObject {
             int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image in a CVPixelBuffer.
+     * Perform requests on an image in a CVPixelBuffer.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -209,7 +210,7 @@ public class VNSequenceRequestHandler extends NSObject {
             CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image in a CVPixelBuffer.
+     * Perform requests on an image in a CVPixelBuffer.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -225,7 +226,7 @@ public class VNSequenceRequestHandler extends NSObject {
             CVBufferRef pixelBuffer, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image with its source format in memory.
+     * Perform requests on an image with its source format in memory.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -239,7 +240,7 @@ public class VNSequenceRequestHandler extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image with its source format in memory.
+     * Perform requests on an image with its source format in memory.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -255,7 +256,7 @@ public class VNSequenceRequestHandler extends NSObject {
             NSData imageData, int orientation, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image referenced by an URL.
+     * Perform requests on an image referenced by an URL.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -269,7 +270,7 @@ public class VNSequenceRequestHandler extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Perform requests on an image referenced by an URL.
+     * Perform requests on an image referenced by an URL.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -306,7 +307,7 @@ public class VNSequenceRequestHandler extends NSObject {
     public static native long version_static();
 
     /**
-     *    @brief Perform requests on the image buffer contained in the CMSampleBufferRef.
+     * Perform requests on the image buffer contained in the CMSampleBufferRef.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 
@@ -320,7 +321,7 @@ public class VNSequenceRequestHandler extends NSObject {
             CMSampleBufferRef sampleBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     *    @brief Perform requests on the image buffer contained in the CMSampleBufferRef.
+     * Perform requests on the image buffer contained in the CMSampleBufferRef.
      * 
      * @param	requests		The VNRequests to be performed on the image.
      * 

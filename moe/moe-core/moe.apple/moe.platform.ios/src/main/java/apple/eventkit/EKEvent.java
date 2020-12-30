@@ -41,8 +41,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      EKEvent
- * @abstract   The EKEvent class represents an occurrence of an event.
+ * EKEvent
+ * 
+ * The EKEvent class represents an occurrence of an event.
  */
 @Generated
 @Library("EventKit")
@@ -103,8 +104,9 @@ public class EKEvent extends EKCalendarItem {
     public static native String description_static();
 
     /**
-     * @method     eventWithEventStore:
-     * @abstract   Creates a new autoreleased event object.
+     * eventWithEventStore:
+     * 
+     * Creates a new autoreleased event object.
      */
     @Generated
     @Selector("eventWithEventStore:")
@@ -164,9 +166,11 @@ public class EKEvent extends EKCalendarItem {
     public static native long version_static();
 
     /**
-     * @property   availability
-     * @abstract   The availability setting for this event.
-     * @discussion The availability setting is used by CalDAV and Exchange servers to indicate
+     * [@property]   availability
+     * 
+     * The availability setting for this event.
+     * 
+     * The availability setting is used by CalDAV and Exchange servers to indicate
      *             how the time should be treated for scheduling. If the calendar the event is
      *             currently in does not support event availability, EKEventAvailabilityNotSupported
      *             is returned.
@@ -177,9 +181,11 @@ public class EKEvent extends EKCalendarItem {
     public native long availability();
 
     /**
-     * @method     birthdayContactIdentifier
-     * @abstract   Specifies the contact identifier of the person this event was created for.
-     * @discussion This property is only valid for events in the built-in Birthdays calendar. It specifies
+     * birthdayContactIdentifier
+     * 
+     * Specifies the contact identifier of the person this event was created for.
+     * 
+     * This property is only valid for events in the built-in Birthdays calendar. It specifies
      *             the contact identifier (for use with the Contacts framework) of the person this event was
      *             created for. For any other type of event, this property returns nil.
      */
@@ -188,9 +194,11 @@ public class EKEvent extends EKCalendarItem {
     public native String birthdayContactIdentifier();
 
     /**
-     * @property   birthdayPersonID
-     * @abstract   Specifies the address book ID of the person this event was created for.
-     * @discussion  This property is only valid for events in the built-in Birthdays calendar. It specifies
+     * [@property]   birthdayPersonID
+     * 
+     * Specifies the address book ID of the person this event was created for.
+     * 
+     * This property is only valid for events in the built-in Birthdays calendar. It specifies
      *             the Address Book ID of the person this event was created for. For any other type of event,
      *             this property returns -1.
      */
@@ -201,8 +209,9 @@ public class EKEvent extends EKCalendarItem {
     public native long birthdayPersonID();
 
     /**
-     * @method     compareStartDateWithEvent
-     * @abstract   Comparison function you can pass to sort NSArrays of EKEvents by start date.
+     * compareStartDateWithEvent
+     * 
+     * Comparison function you can pass to sort NSArrays of EKEvents by start date.
      */
     @Generated
     @Selector("compareStartDateWithEvent:")
@@ -210,18 +219,22 @@ public class EKEvent extends EKCalendarItem {
     public native long compareStartDateWithEvent(EKEvent other);
 
     /**
-     * @property   endDate
-     * @abstract   The end date for the event.
-     * @discussion This will be nil for new events until you set it.
+     * [@property]   endDate
+     * 
+     * The end date for the event.
+     * 
+     * This will be nil for new events until you set it.
      */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
 
     /**
-     * @property   eventIdentifier
-     * @abstract   A unique identifier for this event.
-     * @discussion This identifier can be used to look the event up using [EKEventStore eventWithIdentifier:].
+     * [@property]   eventIdentifier
+     * 
+     * A unique identifier for this event.
+     * 
+     * This identifier can be used to look the event up using [EKEventStore eventWithIdentifier:].
      *             You can use this not only to simply fetch the event, but also to validate the event
      *             has not been deleted out from under you when you get an external change notification
      *             via the EKEventStore database changed notification. If eventWithIdentifier: returns nil,
@@ -243,25 +256,29 @@ public class EKEvent extends EKCalendarItem {
     public native EKEvent init();
 
     /**
-     * @property   allDay
-     * @abstract   Indicates this event is an 'all day' event.
+     * [@property]   allDay
+     * 
+     * Indicates this event is an 'all day' event.
      */
     @Generated
     @Selector("isAllDay")
     public native boolean isAllDay();
 
     /**
-     * @property   allDay
-     * @abstract   Indicates this event is an 'all day' event.
+     * [@property]   allDay
+     * 
+     * Indicates this event is an 'all day' event.
      */
     @Generated
     @Selector("setAllDay:")
     public native void setAllDay(boolean value);
 
     /**
-     * @property   isDetached
-     * @abstract   Represents whether this event is detached from a recurring series.
-     * @discussion If this EKEvent is an instance of a repeating event, and an attribute of this 
+     * [@property]   isDetached
+     * 
+     * Represents whether this event is detached from a recurring series.
+     * 
+     * If this EKEvent is an instance of a repeating event, and an attribute of this
      *             EKEvent has been changed from the default value generated by the repeating event,
      *             isDetached will return YES. If the EKEvent is unchanged from its default state, or
      *             is not a repeating event, isDetached returns NO.
@@ -271,9 +288,11 @@ public class EKEvent extends EKCalendarItem {
     public native boolean isDetached();
 
     /**
-     * @property   occurrenceDate:
-     * @abstract   The occurrence date of an event if it is part of a recurring series.
-     * @discussion This is only set if the event is part of a recurring series. It returns
+     * [@property]   occurrenceDate:
+     * 
+     * The occurrence date of an event if it is part of a recurring series.
+     * 
+     * This is only set if the event is part of a recurring series. It returns
      *             the date on which this event was originally scheduled to occur. For occurrences
      *             that are unmodified from the recurring series, this is the same as the start date.
      *             This value will remain the same even if the event has been detached and its start 
@@ -287,17 +306,20 @@ public class EKEvent extends EKCalendarItem {
     public native NSDate occurrenceDate();
 
     /**
-     * @property   organizer
-     * @abstract   The organizer of this event, or nil.
+     * [@property]   organizer
+     * 
+     * The organizer of this event, or nil.
      */
     @Generated
     @Selector("organizer")
     public native EKParticipant organizer();
 
     /**
-     * @method     refresh
-     * @abstract   Refreshes an event object to ensure it's still valid.
-     * @discussion When the database changes, your application is sent an EKEventStoreChangedNotification
+     * refresh
+     * 
+     * Refreshes an event object to ensure it's still valid.
+     * 
+     * When the database changes, your application is sent an EKEventStoreChangedNotification
      *             note. You should generally consider all EKEvent instances to be invalid as soon as
      *             you receive the notification. However, for events you truly care to keep around, you
      *             can call this method. It ensures the record is still valid by ensuring the event and
@@ -315,9 +337,11 @@ public class EKEvent extends EKCalendarItem {
     public native boolean refresh();
 
     /**
-     * @property   availability
-     * @abstract   The availability setting for this event.
-     * @discussion The availability setting is used by CalDAV and Exchange servers to indicate
+     * [@property]   availability
+     * 
+     * The availability setting for this event.
+     * 
+     * The availability setting is used by CalDAV and Exchange servers to indicate
      *             how the time should be treated for scheduling. If the calendar the event is
      *             currently in does not support event availability, EKEventAvailabilityNotSupported
      *             is returned.
@@ -327,18 +351,22 @@ public class EKEvent extends EKCalendarItem {
     public native void setAvailability(@NInt long value);
 
     /**
-     * @property   endDate
-     * @abstract   The end date for the event.
-     * @discussion This will be nil for new events until you set it.
+     * [@property]   endDate
+     * 
+     * The end date for the event.
+     * 
+     * This will be nil for new events until you set it.
      */
     @Generated
     @Selector("setEndDate:")
     public native void setEndDate(NSDate value);
 
     /**
-     * @property   startDate
-     * @abstract   The start date for the event.
-     * @discussion This property represents the start date for this event. Floating events (such
+     * [@property]   startDate
+     * 
+     * The start date for the event.
+     * 
+     * This property represents the start date for this event. Floating events (such
      *             as all-day events) are currently always returned in the default time zone.
      *             ([NSTimeZone defaultTimeZone])
      * 
@@ -349,8 +377,9 @@ public class EKEvent extends EKCalendarItem {
     public native void setStartDate(NSDate value);
 
     /**
-     * @property   structuredLocation
-     * @abstract   Allows you to set a structured location (a location with a potential geo-coordinate) on an
+     * [@property]   structuredLocation
+     * 
+     * Allows you to set a structured location (a location with a potential geo-coordinate) on an
      *             event. The getter for EKEvent’s location property just returns the structured location’s title.
      *             The setter for EKEvent’s location property is equivalent to
      *             [event setStructuredLocation:[EKStructuredLocation locationWithTitle:…]].
@@ -360,9 +389,11 @@ public class EKEvent extends EKCalendarItem {
     public native void setStructuredLocation(EKStructuredLocation value);
 
     /**
-     * @property   startDate
-     * @abstract   The start date for the event.
-     * @discussion This property represents the start date for this event. Floating events (such
+     * [@property]   startDate
+     * 
+     * The start date for the event.
+     * 
+     * This property represents the start date for this event. Floating events (such
      *             as all-day events) are currently always returned in the default time zone.
      *             ([NSTimeZone defaultTimeZone])
      * 
@@ -373,9 +404,11 @@ public class EKEvent extends EKCalendarItem {
     public native NSDate startDate();
 
     /**
-     * @property   status
-     * @abstract   The status of the event.
-     * @discussion While the status offers four different values in the EKEventStatus enumeration,
+     * [@property]   status
+     * 
+     * The status of the event.
+     * 
+     * While the status offers four different values in the EKEventStatus enumeration,
      *             in practice, the only actionable and reliable status is canceled. Any other status
      *             should be considered informational at best. You cannot set this property. If you
      *             wish to cancel an event, you should simply remove it using removeEvent:.
@@ -386,8 +419,9 @@ public class EKEvent extends EKCalendarItem {
     public native long status();
 
     /**
-     * @property   structuredLocation
-     * @abstract   Allows you to set a structured location (a location with a potential geo-coordinate) on an
+     * [@property]   structuredLocation
+     * 
+     * Allows you to set a structured location (a location with a potential geo-coordinate) on an
      *             event. The getter for EKEvent’s location property just returns the structured location’s title.
      *             The setter for EKEvent’s location property is equivalent to
      *             [event setStructuredLocation:[EKStructuredLocation locationWithTitle:…]].

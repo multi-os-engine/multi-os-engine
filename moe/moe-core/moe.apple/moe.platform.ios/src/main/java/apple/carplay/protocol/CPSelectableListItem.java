@@ -11,7 +11,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPListSelectable describes list items that accept a list item handler, called when
+ * [@c] CPListSelectable describes list items that accept a list item handler, called when
  * the user selects this list item.
  */
 @Generated

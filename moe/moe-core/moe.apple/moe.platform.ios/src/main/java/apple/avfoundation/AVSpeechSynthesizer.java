@@ -42,11 +42,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVSpeechSynthesizer
- * @abstract
+ * AVSpeechSynthesizer
+ * 
  * AVSpeechSynthesizer allows speaking of speech utterances with a basic queuing mechanism.
  * 
- * @discussion
  * Create an instance of AVSpeechSynthesizer to start generating synthesized speech by using AVSpeechUtterance objects.
  */
 @Generated

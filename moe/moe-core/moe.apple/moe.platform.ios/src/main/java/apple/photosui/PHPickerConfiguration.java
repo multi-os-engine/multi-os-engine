@@ -94,7 +94,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
 
     /**
      * Applying a filter to restrict the types that can be displayed. Default is \c nil.
-     * @discussion Setting \c filter to \c nil means all asset types can be displayed.
+     * 
+     * Setting \c filter to \c nil means all asset types can be displayed.
      */
     @Generated
     @Selector("filter")
@@ -148,7 +149,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
 
     /**
      * Preferred representation mode of selected assets. Default is \c PHPickerConfigurationAssetRepresentationModeAutomatic.
-     * @discussion Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the best representation determined by the system will be used.
+     * 
+     * Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the best representation determined by the system will be used.
      */
     @Generated
     @Selector("preferredAssetRepresentationMode")
@@ -165,7 +167,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
 
     /**
      * Maximum number of assets that can be selected. Default is 1.
-     * @discussion Setting \c selectionLimit to 0 means maximum supported by the system.
+     * 
+     * Setting \c selectionLimit to 0 means maximum supported by the system.
      */
     @Generated
     @Selector("selectionLimit")
@@ -174,7 +177,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
 
     /**
      * Applying a filter to restrict the types that can be displayed. Default is \c nil.
-     * @discussion Setting \c filter to \c nil means all asset types can be displayed.
+     * 
+     * Setting \c filter to \c nil means all asset types can be displayed.
      */
     @Generated
     @Selector("setFilter:")
@@ -182,7 +186,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
 
     /**
      * Preferred representation mode of selected assets. Default is \c PHPickerConfigurationAssetRepresentationModeAutomatic.
-     * @discussion Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the best representation determined by the system will be used.
+     * 
+     * Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the best representation determined by the system will be used.
      */
     @Generated
     @Selector("setPreferredAssetRepresentationMode:")
@@ -190,7 +195,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
 
     /**
      * Maximum number of assets that can be selected. Default is 1.
-     * @discussion Setting \c selectionLimit to 0 means maximum supported by the system.
+     * 
+     * Setting \c selectionLimit to 0 means maximum supported by the system.
      */
     @Generated
     @Selector("setSelectionLimit:")

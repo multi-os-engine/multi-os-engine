@@ -40,7 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Represents the access control of a user associated with a home.
+ * Represents the access control of a user associated with a home.
  */
 @Generated
 @Library("HomeKit")
@@ -158,7 +158,7 @@ public class HMHomeAccessControl extends HMAccessControl {
     public native HMHomeAccessControl init();
 
     /**
-     * @brief Specifies if the user has administrative privileges for the home.
+     * Specifies if the user has administrative privileges for the home.
      */
     @Generated
     @Selector("isAdministrator")

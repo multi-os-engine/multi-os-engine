@@ -93,8 +93,9 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
     public native MPSCNNDropoutGradientNode init();
 
     /**
-     * @abstract create a new dropout gradient node
-     * @discussion See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
+     * create a new dropout gradient node
+     * 
+     * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      *             for an easier way to do this
      */
     @Generated
@@ -140,8 +141,9 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
     public static native Object new_objc();
 
     /**
-     * @abstract create a new dropout gradient node
-     * @discussion See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
+     * create a new dropout gradient node
+     * 
+     * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      *             for an easier way to do this
      */
     @Generated

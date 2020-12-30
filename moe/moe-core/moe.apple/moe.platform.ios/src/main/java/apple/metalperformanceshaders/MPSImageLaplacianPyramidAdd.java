@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageLaplacianPyramidAdd
- * @discussion The MPSImageLaplacianPyramidAdd class is responsible for reconstruction of Gaussian pyramid
+ * MPSImageLaplacianPyramidAdd
+ * 
+ * The MPSImageLaplacianPyramidAdd class is responsible for reconstruction of Gaussian pyramid
  *             from the Laplacian pyramid supplied in the source texture. Mathematically it is the inverse
  *             of the process specified in the discussion section for MPSImageLaplacianPyramid.
  * 

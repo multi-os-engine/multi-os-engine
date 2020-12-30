@@ -34,7 +34,7 @@ public final class MPSIntersectionDistancePrimitiveIndex extends StructObject {
     }
 
     /**
-     * @brief Distance from the ray origin to the intersection point along the ray direction
+     * Distance from the ray origin to the intersection point along the ray direction
      * vector such that intersection = ray.origin + ray.direction * distance. Is negative if
      * there is no intersection. If the intersection type is MPSIntersectionTypeAny, is
      * a positive value for a hit or a negative value for a miss.
@@ -44,7 +44,7 @@ public final class MPSIntersectionDistancePrimitiveIndex extends StructObject {
     public native float distance();
 
     /**
-     * @brief Distance from the ray origin to the intersection point along the ray direction
+     * Distance from the ray origin to the intersection point along the ray direction
      * vector such that intersection = ray.origin + ray.direction * distance. Is negative if
      * there is no intersection. If the intersection type is MPSIntersectionTypeAny, is
      * a positive value for a hit or a negative value for a miss.
@@ -54,7 +54,7 @@ public final class MPSIntersectionDistancePrimitiveIndex extends StructObject {
     public native void setDistance(float value);
 
     /**
-     * @brief Index of the intersected primitive. Undefined if the ray does not intersect
+     * Index of the intersected primitive. Undefined if the ray does not intersect
      * a primitive or if the intersection type is MPSIntersectionTypeAny.
      */
     @Generated
@@ -62,7 +62,7 @@ public final class MPSIntersectionDistancePrimitiveIndex extends StructObject {
     public native int primitiveIndex();
 
     /**
-     * @brief Index of the intersected primitive. Undefined if the ray does not intersect
+     * Index of the intersected primitive. Undefined if the ray does not intersect
      * a primitive or if the intersection type is MPSIntersectionTypeAny.
      */
     @Generated

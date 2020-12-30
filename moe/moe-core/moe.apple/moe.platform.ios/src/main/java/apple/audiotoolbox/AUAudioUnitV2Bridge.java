@@ -46,8 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief	Wraps a v2 audio unit in an AUAudioUnit subclass.
- * @discussion
+ * Wraps a v2 audio unit in an AUAudioUnit subclass.
+ * 
  * 	Implementors of version 3 audio units may derive their implementations from
  * 	AUAudioUnitV2Bridge. It expects the component description with which it is initialized to
  * 	refer to a registered component with a v2 implementation using an

@@ -310,6 +310,7 @@ public class GKRuleSystem extends NSObject {
     /**
      * Clears the agenda and executed sets and removes all facts currently in the system.
      * It then fills the agenda with rules from the rule set, in salience order.
+     * 
      * @see rules
      * @see facts
      */

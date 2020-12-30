@@ -35,7 +35,7 @@ public final class MPSRayPackedOriginDirection extends StructObject {
     }
 
     /**
-     * @brief Ray origin. The intersection test will be skipped if the origin contains NaNs
+     * Ray origin. The intersection test will be skipped if the origin contains NaNs
      * or infinities.
      */
     @Generated
@@ -44,7 +44,7 @@ public final class MPSRayPackedOriginDirection extends StructObject {
     public native MPSPackedFloat3 origin();
 
     /**
-     * @brief Ray origin. The intersection test will be skipped if the origin contains NaNs
+     * Ray origin. The intersection test will be skipped if the origin contains NaNs
      * or infinities.
      */
     @Generated
@@ -52,7 +52,7 @@ public final class MPSRayPackedOriginDirection extends StructObject {
     public native void setOrigin(@ByValue MPSPackedFloat3 value);
 
     /**
-     * @brief Ray direction. Does not need to be normalized. The intersection test will be
+     * Ray direction. Does not need to be normalized. The intersection test will be
      * skipped if the direction has length zero or contains NaNs or infinities.
      */
     @Generated
@@ -61,7 +61,7 @@ public final class MPSRayPackedOriginDirection extends StructObject {
     public native MPSPackedFloat3 direction();
 
     /**
-     * @brief Ray direction. Does not need to be normalized. The intersection test will be
+     * Ray direction. Does not need to be normalized. The intersection test will be
      * skipped if the direction has length zero or contains NaNs or infinities.
      */
     @Generated

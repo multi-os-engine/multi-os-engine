@@ -134,9 +134,11 @@ public class HKQuery extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @method        predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:
-     * @abstract      Creates a predicate for use with HKActivitySummaryQuery
-     * @discussion    Creates a query predicate that matches HKActivitySummaries that fall between the given date components.
+     * predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:
+     * 
+     * Creates a predicate for use with HKActivitySummaryQuery
+     * 
+     * Creates a query predicate that matches HKActivitySummaries that fall between the given date components.
      * 
      * @param         startDateComponents The date components that define the beginning of the range. These date components should contain 
      *                era, year, month, and day components in the gregorian calendar.
@@ -150,9 +152,11 @@ public class HKQuery extends NSObject {
             NSDateComponents startDateComponents, NSDateComponents endDateComponents);
 
     /**
-     * @method        predicateForActivitySummaryWithDateComponents:
-     * @abstract      Creates a predicate for use with HKActivitySummaryQuery
-     * @discussion    Creates a query predicate that matches HKActivitySummaries with the given date components.
+     * predicateForActivitySummaryWithDateComponents:
+     * 
+     * Creates a predicate for use with HKActivitySummaryQuery
+     * 
+     * Creates a query predicate that matches HKActivitySummaries with the given date components.
      * 
      * @param         dateComponents  The date components of the activity summary. These date components should contain era, year, month,
      *                and day components in the gregorian calendar.
@@ -162,9 +166,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForActivitySummaryWithDateComponents(NSDateComponents dateComponents);
 
     /**
-     * @method        predicateForCategorySamplesWithOperatorType:value:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches category samples with values that match the expression formed by 
+     * predicateForCategorySamplesWithOperatorType:value:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches category samples with values that match the expression formed by
      *                the given operator and value.
      * 
      * @param         operatorType    The operator type for the expression.
@@ -177,9 +183,11 @@ public class HKQuery extends NSObject {
             @NInt long value);
 
     /**
-     * @method        predicateForObjectWithUUID:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches the object saved with a particular UUID.
+     * predicateForObjectWithUUID:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches the object saved with a particular UUID.
      * 
      * @param         UUID The UUID of the object.
      */
@@ -188,9 +196,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForObjectWithUUID(NSUUID UUID);
 
     /**
-     * @method        predicateForObjectsFromDevices:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches objects associated with any of the given devices. All properties
+     * predicateForObjectsFromDevices:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches objects associated with any of the given devices. All properties
      *                of each HKDevice are considered in the query and must match exactly, including nil values. To perform 
      *                searches based on specific device properties, use predicateForObjectsWithDeviceProperty:allowedValues:.
      * 
@@ -201,9 +211,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForObjectsFromDevices(NSSet<? extends HKDevice> devices);
 
     /**
-     * @method        predicateForObjectsFromSource:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches objects saved by a given source.
+     * predicateForObjectsFromSource:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches objects saved by a given source.
      * 
      * @param         source  The source.
      */
@@ -212,9 +224,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForObjectsFromSource(HKSource source);
 
     /**
-     * @method        predicateForObjectsFromSourceRevisions:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches objects saved by any of the specified HKSourceRevisions.
+     * predicateForObjectsFromSourceRevisions:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches objects saved by any of the specified HKSourceRevisions.
      * 
      * @param         sourceRevisions The list of source revisions.
      */
@@ -224,9 +238,11 @@ public class HKQuery extends NSObject {
             NSSet<? extends HKSourceRevision> sourceRevisions);
 
     /**
-     * @method        predicateForObjectsFromSources:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches objects saved by any of the given sources.
+     * predicateForObjectsFromSources:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches objects saved by any of the given sources.
      * 
      * @param         sources The list of sources.
      */
@@ -235,9 +251,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForObjectsFromSources(NSSet<? extends HKSource> sources);
 
     /**
-     * @method        predicateForObjectsFromWorkout:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches the objects that have been added to the given workout.
+     * predicateForObjectsFromWorkout:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches the objects that have been added to the given workout.
      * 
      * @param         workout     The HKWorkout that the object was added to.
      */
@@ -246,9 +264,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForObjectsFromWorkout(HKWorkout workout);
 
     /**
-     * @method        predicateForObjectsWithDeviceProperty:allowedValues:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches objects associated with an HKDevice with the specified device
+     * predicateForObjectsWithDeviceProperty:allowedValues:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches objects associated with an HKDevice with the specified device
      *                property matching any value included in allowedValues. To query for samples with devices that match all 
      *                the properties of an HKDevice, use predicateForObjectsFromDevices.
      * 
@@ -262,9 +282,11 @@ public class HKQuery extends NSObject {
             NSSet<String> allowedValues);
 
     /**
-     * @method        predicateForObjectsWithMetadataKey:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches objects with metadata that contains a given key.
+     * predicateForObjectsWithMetadataKey:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches objects with metadata that contains a given key.
      * 
      * @param         key     The metadata key.
      */
@@ -273,9 +295,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForObjectsWithMetadataKey(String key);
 
     /**
-     * @method        predicateForObjectsWithMetadataKey:allowedValues:
-     * @abstract      Creates a predicate for use with HKQuery subclasses
-     * @discussion    Creates a query predicate that matches objects with metadata containing a value the matches one of the
+     * predicateForObjectsWithMetadataKey:allowedValues:
+     * 
+     * Creates a predicate for use with HKQuery subclasses
+     * 
+     * Creates a query predicate that matches objects with metadata containing a value the matches one of the
      *                given values for the given key.
      * 
      * @param         key             The metadata key.
@@ -287,9 +311,11 @@ public class HKQuery extends NSObject {
             NSArray<?> allowedValues);
 
     /**
-     * @method        predicateForObjectsWithMetadataKey:operatorType:value:
-     * @abstract      Creates a predicate for use with HKQuery subclasses
-     * @discussion    Creates a query predicate that matches objects with a value for a given metadata key matches the given
+     * predicateForObjectsWithMetadataKey:operatorType:value:
+     * 
+     * Creates a predicate for use with HKQuery subclasses
+     * 
+     * Creates a query predicate that matches objects with a value for a given metadata key matches the given
      *                operator type and value.
      * 
      * @param         key            The metadata key.
@@ -302,18 +328,22 @@ public class HKQuery extends NSObject {
             @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * @method        predicateForObjectsNoCorrelation
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches the objects that are not associated with an HKCorrelation.
+     * predicateForObjectsNoCorrelation
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches the objects that are not associated with an HKCorrelation.
      */
     @Generated
     @Selector("predicateForObjectsWithNoCorrelation")
     public static native NSPredicate predicateForObjectsWithNoCorrelation();
 
     /**
-     * @method        predicateForObjectsWithUUIDs:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches the objects saved with one of the given UUIDs.
+     * predicateForObjectsWithUUIDs:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches the objects saved with one of the given UUIDs.
      * 
      * @param         UUIDs The set of NSUUIDs.
      */
@@ -322,9 +352,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForObjectsWithUUIDs(NSSet<? extends NSUUID> UUIDs);
 
     /**
-     * @method        predicateForQuantitySamplesWithOperatorType:quantity:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches quantity samples with values that match the expression formed by
+     * predicateForQuantitySamplesWithOperatorType:quantity:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches quantity samples with values that match the expression formed by
      *                the given operator and quantity.
      * 
      * @param         operatorType    The operator type for the expression.
@@ -337,9 +369,11 @@ public class HKQuery extends NSObject {
             HKQuantity quantity);
 
     /**
-     * @method        predicateForSamplesWithStartDate:endDate:options:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches samples with a startDate and an endDate that lie inside of a
+     * predicateForSamplesWithStartDate:endDate:options:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches samples with a startDate and an endDate that lie inside of a
      *                given time interval.
      * 
      * @param         startDate  The start date of the predicate's time interval.
@@ -352,9 +386,11 @@ public class HKQuery extends NSObject {
             @NUInt long options);
 
     /**
-     * @method        predicateForWorkoutsWithOperatorType:duration:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and duration
+     * predicateForWorkoutsWithOperatorType:duration:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKWorkouts by the given operator type and duration
      * 
      * @param         operatorType    The operator type for the expression.
      * @param         duration        The value that the workout's duration is being compared to. It is the right hand side of the
@@ -366,9 +402,11 @@ public class HKQuery extends NSObject {
             double duration);
 
     /**
-     * @method        predicateForWorkoutsWithOperatorType:totalDistance:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and totalEnergyBurned
+     * predicateForWorkoutsWithOperatorType:totalDistance:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKWorkouts by the given operator type and totalEnergyBurned
      * 
      * @param         operatorType    The operator type for the expression.
      * @param         totalDistance   The value that the workout's totalEnergyBurned is being compared to. It is the right hand side of the
@@ -380,9 +418,11 @@ public class HKQuery extends NSObject {
             HKQuantity totalDistance);
 
     /**
-     * @method        predicateForWorkoutsWithOperatorType:totalEnergyBurned:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and totalEnergyBurned
+     * predicateForWorkoutsWithOperatorType:totalEnergyBurned:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKWorkouts by the given operator type and totalEnergyBurned
      * 
      * @param         operatorType        The operator type for the expression.
      * @param         totalEnergyBurned   The value that the workout's totalEnergyBurned is being compared to. It is the right hand side of the
@@ -394,9 +434,11 @@ public class HKQuery extends NSObject {
             HKQuantity totalEnergyBurned);
 
     /**
-     * @method        predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and totalSwimmingStrokeCount
+     * predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKWorkouts by the given operator type and totalSwimmingStrokeCount
      * 
      * @param         operatorType                The operator type for the expression.
      * @param         totalSwimmingStrokeCount    The value that the workout's totalSwimmingStrokeCount is being compared to.
@@ -409,9 +451,11 @@ public class HKQuery extends NSObject {
             @NUInt long operatorType, HKQuantity totalSwimmingStrokeCount);
 
     /**
-     * @method        predicateForWorkoutsWithWorkoutActivityType:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKWorkouts with the given HKWorkoutActivityType.
+     * predicateForWorkoutsWithWorkoutActivityType:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKWorkouts with the given HKWorkoutActivityType.
      * 
      * @param         workoutActivityType     The HKWorkoutActivity type of the workout
      */
@@ -457,9 +501,11 @@ public class HKQuery extends NSObject {
     public native HKSampleType sampleType();
 
     /**
-     * @method        predicateForWorkoutsWithOperatorType:totalFlightsClimbed:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKWorkouts by the given operator type and totalFlightsClimbed
+     * predicateForWorkoutsWithOperatorType:totalFlightsClimbed:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKWorkouts by the given operator type and totalFlightsClimbed
      * 
      * @param         operatorType                The operator type for the expression.
      * @param         totalFlightsClimbed         The value that the workout's totalFlightsClimbed is being compared to.
@@ -472,9 +518,11 @@ public class HKQuery extends NSObject {
             HKQuantity totalFlightsClimbed);
 
     /**
-     * @method        predicateForClinicalRecordsFromSource:withFHIRResourceType:identifier:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKClinicalRecords for a given source, FHIR resource type, and FHIR identifier.
+     * predicateForClinicalRecordsFromSource:withFHIRResourceType:identifier:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKClinicalRecords for a given source, FHIR resource type, and FHIR identifier.
      * 
      * @param         source          The source.
      * @param         resourceType    The FHIR resource type.
@@ -486,9 +534,11 @@ public class HKQuery extends NSObject {
             String resourceType, String identifier);
 
     /**
-     * @method        predicateForClinicalRecordsWithFHIRResourceType:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKClinicalRecords with a specific FHIR resource type.
+     * predicateForClinicalRecordsWithFHIRResourceType:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKClinicalRecords with a specific FHIR resource type.
      * 
      * @param         resourceType    The FHIR resource type.
      */
@@ -497,9 +547,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
 
     /**
-     * @method        predicateForElectrocardiogramsWithClassification:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKElectrocardiograms with a specific classification.
+     * predicateForElectrocardiogramsWithClassification:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKElectrocardiograms with a specific classification.
      * 
      * @param         classification    The classification for the electrocardiogram.
      */
@@ -508,9 +560,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
 
     /**
-     * @method        predicateForElectrocardiogramsWithSymptomsStatus:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches HKElectrocardiograms with a specificied symptoms status.
+     * predicateForElectrocardiogramsWithSymptomsStatus:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches HKElectrocardiograms with a specificied symptoms status.
      * 
      * @param         symptomsStatus    The symptoms status for the electrocardiogram.
      */
@@ -519,9 +573,11 @@ public class HKQuery extends NSObject {
     public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
 
     /**
-     * @method        predicateForObjectsAssociatedWithElectrocardiogram:
-     * @abstract      Creates a predicate for use with HKQuery subclasses.
-     * @discussion    Creates a query predicate that matches the objects that have been added to the given electrocardiogram
+     * predicateForObjectsAssociatedWithElectrocardiogram:
+     * 
+     * Creates a predicate for use with HKQuery subclasses.
+     * 
+     * Creates a query predicate that matches the objects that have been added to the given electrocardiogram
      * 
      * @param         electrocardiogram     The HKElectrocardiogram that the object was added to.
      */

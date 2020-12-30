@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract      The data store maintains and syncs your app's contexts.
+ * The data store maintains and syncs your app's contexts.
  */
 @Generated
 @Library("ClassKit")
@@ -49,7 +49,7 @@ public class CLSDataStore extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @abstract      Returns the context that is currently active. If no context is active, this will return nil.
+     * Returns the context that is currently active. If no context is active, this will return nil.
      */
     @Generated
     @Selector("activeContext")
@@ -88,18 +88,20 @@ public class CLSDataStore extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract      Complete all assigned actvities.
-     * @discussion    Marks all of the currently active assigned activities for this contextPath as complete.
+     * Complete all assigned actvities.
+     * 
+     * Marks all of the currently active assigned activities for this contextPath as complete.
      */
     @Generated
     @Selector("completeAllAssignedActivitiesMatching:")
     public native void completeAllAssignedActivitiesMatching(NSArray<String> contextPath);
 
     /**
-     * @abstract      Returns contexts matching a set of identifiers where each identifier is the parent of the following identifier.
-     * @discussion    For example: @c@["math-game", @c"level1"] returns two contexts where @em math-game is the parent of @em level1.
+     * Returns contexts matching a set of identifiers where each identifier is the parent of the following identifier.
+     * 
+     * For example: @c@["math-game", @c"level1"] returns two contexts where @em math-game is the parent of @em level1.
      *                If there are any missing contexts, they will be filled in by calling the following method on the data store's delegate:
-     *                @code -[CLSDataStoreDelegate createContextForIdentifier:parentContext:parentIdentifierPath:] @endcode
+     *                [@code] -[CLSDataStoreDelegate createContextForIdentifier:parentContext:parentIdentifierPath:] @endcode
      *                If the dataStore does not have a delegate and there are missing contexts then an incomplete list of contexts will be passed to the completion handler.  Completion block may be called on a background thread.
      */
     @Generated
@@ -115,8 +117,9 @@ public class CLSDataStore extends NSObject {
     }
 
     /**
-     * @abstract      Fetch contexts matching a predicate.
-     * @discussion    For example: NSPredicate<topic == kCLSContextTopicPhysics AND parent == someContext>.  Completion block may be called on a background thread.
+     * Fetch contexts matching a predicate.
+     * 
+     * For example: NSPredicate<topic == kCLSContextTopicPhysics AND parent == someContext>.  Completion block may be called on a background thread.
      */
     @Generated
     @Selector("contextsMatchingPredicate:completion:")
@@ -135,7 +138,7 @@ public class CLSDataStore extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * @abstract      The data store delegate allows for easy population of the app's context hierarchy.
+     * The data store delegate allows for easy population of the app's context hierarchy.
      */
     @Generated
     @Selector("delegate")
@@ -177,8 +180,9 @@ public class CLSDataStore extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @abstract      Fetch the top level context for the current app.
-     * @discussion    The main context is automatically created. Add child contexts to this context to persist them in the data store.
+     * Fetch the top level context for the current app.
+     * 
+     * The main context is automatically created. Add child contexts to this context to persist them in the data store.
      */
     @Generated
     @Selector("mainAppContext")
@@ -191,8 +195,9 @@ public class CLSDataStore extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @abstract      Mark a context for removal.
-     * @discussion    Save to commit removal. Removal cascades and deletes all descendants.
+     * Mark a context for removal.
+     * 
+     * Save to commit removal. Removal cascades and deletes all descendants.
      */
     @Generated
     @Selector("removeContext:")
@@ -207,15 +212,16 @@ public class CLSDataStore extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract      Returns the most recently started activity that is running.
+     * Returns the most recently started activity that is running.
      */
     @Generated
     @Selector("runningActivity")
     public native CLSActivity runningActivity();
 
     /**
-     * @abstract      Save changes made in the data store.
-     * @discussion    Save new/modified/removed contexts, activities, etc. to the local store. In case of an error -[NSError userInfo] will contain the object that caused the error under the CLSErrorObjectKey..
+     * Save changes made in the data store.
+     * 
+     * Save new/modified/removed contexts, activities, etc. to the local store. In case of an error -[NSError userInfo] will contain the object that caused the error under the CLSErrorObjectKey..
      */
     @Generated
     @Selector("saveWithCompletion:")
@@ -230,14 +236,14 @@ public class CLSDataStore extends NSObject {
     }
 
     /**
-     * @abstract      The data store delegate allows for easy population of the app's context hierarchy.
+     * The data store delegate allows for easy population of the app's context hierarchy.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CLSDataStoreDelegate value);
 
     /**
-     * @abstract      The data store delegate allows for easy population of the app's context hierarchy.
+     * The data store delegate allows for easy population of the app's context hierarchy.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CLSDataStoreDelegate value) {
@@ -256,8 +262,9 @@ public class CLSDataStore extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract      The data store provides read/write access to your app's ClassKit data.
-     * @discussion    Data written to the data store is automatically synced via iCloud across the user's devices.
+     * The data store provides read/write access to your app's ClassKit data.
+     * 
+     * Data written to the data store is automatically synced via iCloud across the user's devices.
      */
     @Generated
     @Selector("shared")

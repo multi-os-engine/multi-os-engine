@@ -24,9 +24,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class		AVAssetSegmentReport
- * @abstract	This class provides information on a segment data.
- * @discussion	Clients may get an instance of AVAssetSegmentReport through the -assetWriter:didOutputSegmentData:segmentType:segmentReport: delegate method, which is defined in AVAssetWriter.h.
+ * AVAssetSegmentReport
+ * 
+ * This class provides information on a segment data.
+ * 
+ * Clients may get an instance of AVAssetSegmentReport through the -assetWriter:didOutputSegmentData:segmentType:segmentReport: delegate method, which is defined in AVAssetWriter.h.
  */
 @Generated
 @Library("AVFoundation")
@@ -131,8 +133,9 @@ public class AVAssetSegmentReport extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property	segmentType
-     * @abstract	A segment type of the segment data.
+     * [@property]	segmentType
+     * 
+     * A segment type of the segment data.
      */
     @Generated
     @Selector("segmentType")
@@ -148,8 +151,9 @@ public class AVAssetSegmentReport extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property	trackReports
-     * @abstract	Provides an array of AVAssetSegmentTrackReport in the segment data.
+     * [@property]	trackReports
+     * 
+     * Provides an array of AVAssetSegmentTrackReport in the segment data.
      */
     @Generated
     @Selector("trackReports")

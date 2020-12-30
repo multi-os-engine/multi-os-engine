@@ -204,8 +204,10 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     public native AVVideoCompositionRenderContext renderContext();
 
     /**
-     *    @method			sourceFrameByTrackID:
-     * @abstract       Returns the source CVPixelBufferRef for the given track ID
+     * sourceFrameByTrackID:
+     * 
+     * Returns the source CVPixelBufferRef for the given track ID
+     * 
      * @param			trackID
      * 				The track ID for the requested source frame
      */

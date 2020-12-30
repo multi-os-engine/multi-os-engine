@@ -47,9 +47,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitSampler
- * @abstract Apple's sampler audio unit.
- * @discussion
+ * AVAudioUnitSampler
+ * 
+ * Apple's sampler audio unit.
+ * 
  *    An AVAudioUnit for Apple's Sampler Audio Unit. The sampler can be configured by loading
  *    instruments from different types of files such as an aupreset, a DLS or SF2 sound bank,
  *    an EXS24 instrument, a single audio file, or an array of audio files.
@@ -174,8 +175,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     public static native long version_static();
 
     /**
-     * @property globalTuning
-     * @abstract
+     * [@property] globalTuning
+     * 
      * 	adjusts the tuning of all the notes played.
      * 	Range:     -2400 -> +2400 cents
      * 	Default:   0
@@ -193,17 +194,19 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     public native AVAudioUnitSampler initWithAudioComponentDescription(@ByValue AudioComponentDescription description);
 
     /**
-     * @method loadAudioFilesAtURLs:error:
-     * @abstract configures the sampler by loading a set of audio files.
-     * @param audioFiles
-     * 	array of URLs for audio files to be loaded
-     * @param outError
-     * 	the status of the operation
-     * @discussion
+     * loadAudioFilesAtURLs:error:
+     * 
+     * configures the sampler by loading a set of audio files.
+     * 
      * 	The audio files are loaded into a new default instrument with each audio file placed
      * 	into its own sampler zone. Any information contained in the audio file regarding
      * 	their placement on the keyboard (e.g. root key, key range) will be used.
      * 	This method reads from file and allocates memory, so it should not be called on a real time thread.
+     * 
+     * @param audioFiles
+     * 	array of URLs for audio files to be loaded
+     * @param outError
+     * 	the status of the operation
      */
     @Generated
     @Selector("loadAudioFilesAtURLs:error:")
@@ -211,13 +214,10 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method loadInstrumentAtURL:error:
-     * @abstract configures the sampler by loading the specified preset file.
-     * @param instrumentURL
-     *    	URL to the preset file or audio file
-     * @param outError
-     * 	the status of the operation
-     * @discussion
+     * loadInstrumentAtURL:error:
+     * 
+     * configures the sampler by loading the specified preset file.
+     * 
      * 	The file can be of one of the following types: Logic/GarageBand EXS24 instrument,
      * 	the Sampler AU's native aupreset, or an audio file (eg. .caf, .aiff, .wav, .mp3).
      * 
@@ -225,6 +225,11 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * 	Any information contained in the file regarding its keyboard placement (e.g. root key,
      * 	key range) will be used.
      * 	This method reads from file and allocates memory, so it should not be called on a real time thread.
+     * 
+     * @param instrumentURL
+     *    	URL to the preset file or audio file
+     * @param outError
+     * 	the status of the operation
      */
     @Generated
     @Selector("loadInstrumentAtURL:error:")
@@ -232,8 +237,12 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:
-     * @abstract loads a specific instrument from the specified sound bank
+     * loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:
+     * 
+     * loads a specific instrument from the specified sound bank
+     * 
+     * 		This method reads from file and allocates memory, so it should not be called on a real time thread.
+     * 
      * @param bankURL
      * 	URL for a Soundbank file. The file can be either a DLS bank (.dls) or a SoundFont bank (.sf2).
      * @param program
@@ -245,8 +254,6 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * 	LSB for the bank number for the instrument to load.  This is often 0, and represents the "bank variation".
      * @param outError
      *    	the status of the operation
-     * @discussion
-     * 		This method reads from file and allocates memory, so it should not be called on a real time thread.
      */
     @Generated
     @Selector("loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:")
@@ -254,8 +261,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
             byte bankMSB, byte bankLSB, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property masterGain
-     * @abstract
+     * [@property] masterGain
+     * 
      *    	adjusts the gain of all the notes played
      * 	Range:     -90.0 -> +12 db
      * 	Default: 0 db
@@ -265,8 +272,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     public native float masterGain();
 
     /**
-     * @property globalTuning
-     * @abstract
+     * [@property] globalTuning
+     * 
      * 	adjusts the tuning of all the notes played.
      * 	Range:     -2400 -> +2400 cents
      * 	Default:   0
@@ -276,8 +283,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     public native void setGlobalTuning(float value);
 
     /**
-     * @property masterGain
-     * @abstract
+     * [@property] masterGain
+     * 
      *    	adjusts the gain of all the notes played
      * 	Range:     -90.0 -> +12 db
      * 	Default: 0 db
@@ -287,8 +294,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     public native void setMasterGain(float value);
 
     /**
-     * @property stereoPan
-     * @abstract
+     * [@property] stereoPan
+     * 
      * 	adjusts the pan for all the notes played.
      * 	Range:     -1 -> +1
      * 	Default:   0
@@ -298,8 +305,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     public native void setStereoPan(float value);
 
     /**
-     * @property stereoPan
-     * @abstract
+     * [@property] stereoPan
+     * 
      * 	adjusts the pan for all the notes played.
      * 	Range:     -1 -> +1
      * 	Default:   0

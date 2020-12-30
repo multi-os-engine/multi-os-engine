@@ -26,9 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class NFCISO7816APDU
+ * NFCISO7816APDU
  * 
- * @discussion ISO7816 Application Data Unit (APDU).
+ * ISO7816 Application Data Unit (APDU).
  */
 @Generated
 @Library("CoreNFC")
@@ -87,7 +87,7 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property data   Data field; nil if data field is absent
+     * [@property] data   Data field; nil if data field is absent
      */
     @Generated
     @Selector("data")
@@ -102,7 +102,7 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * @property expectedResponseLength     Expected response length (Le).  -1 means no response data field is expected.
+     * [@property] expectedResponseLength     Expected response length (Le).  -1 means no response data field is expected.
      */
     @Generated
     @Selector("expectedResponseLength")
@@ -119,7 +119,7 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public native NFCISO7816APDU init();
 
     /**
-     * @method initWithData:
+     * initWithData:
      * 
      * @param data  Data buffer containing the full APDU.
      * 
@@ -130,7 +130,10 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public native NFCISO7816APDU initWithData(NSData data);
 
     /**
-     * @method initWithInstructionClass:instructionCode:p1Parameter:p2Parameter:data:expectedResponseLength:
+     * initWithInstructionClass:instructionCode:p1Parameter:p2Parameter:data:expectedResponseLength:
+     * 
+     * Generates an ISO7816 APDU object.  The Lc value is generated base on the size of the data object; possible value ranges from
+     *              1 to 65535 inclusively.  Use @link -initWithData: @link/ in cases where a finer control on the APDU format is required.
      * 
      * @param instructionClass  Instruction class (CLA) byte
      * @param instructionCode   Instruction code (INS) byte
@@ -141,9 +144,6 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
      *                               -1 means no response data field is expected.  Use 256 if you want to send '00' as the short Le field
      *                               assuming the data field is less than 256 bytes.  Use 65536 if you want to send '0000' as the extended
      *                               Le field.
-     * 
-     * @discussion  Generates an ISO7816 APDU object.  The Lc value is generated base on the size of the data object; possible value ranges from
-     *              1 to 65535 inclusively.  Use @link -initWithData: @link/ in cases where a finer control on the APDU format is required.
      */
     @Generated
     @Selector("initWithInstructionClass:instructionCode:p1Parameter:p2Parameter:data:expectedResponseLength:")
@@ -165,14 +165,14 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @property instructionClass   Class (CLA) byte.
+     * [@property] instructionClass   Class (CLA) byte.
      */
     @Generated
     @Selector("instructionClass")
     public native byte instructionClass();
 
     /**
-     * @property instructionCode    Instruction (INS) byte.
+     * [@property] instructionCode    Instruction (INS) byte.
      */
     @Generated
     @Selector("instructionCode")
@@ -193,14 +193,14 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public static native Object new_objc();
 
     /**
-     * @property p1Parameter     P1 parameter.
+     * [@property] p1Parameter     P1 parameter.
      */
     @Generated
     @Selector("p1Parameter")
     public native byte p1Parameter();
 
     /**
-     * @property p2Parameter     P2 parameter.
+     * [@property] p2Parameter     P2 parameter.
      */
     @Generated
     @Selector("p2Parameter")

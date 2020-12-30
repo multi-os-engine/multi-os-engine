@@ -20,9 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum          HKWorkoutSwimmingLocationType
- * @abstract      This enumerated type is used to represent the location type of a swimming workout.
- * @discussion    This value indicates whether a swimming workout was performed in a pool or open water.
+ * [@enum]          HKWorkoutSwimmingLocationType
+ * 
+ * This enumerated type is used to represent the location type of a swimming workout.
+ * 
+ * This value indicates whether a swimming workout was performed in a pool or open water.
  */
 @Generated
 public final class HKWorkoutSwimmingLocationType {

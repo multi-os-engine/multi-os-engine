@@ -54,9 +54,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MSStickerBrowserView
- * @abstract   A UIView subclass that can display a collection of sticker assets.
- * @discussion This class is a UIView subclass intended to display a collection of
+ * MSStickerBrowserView
+ * 
+ * A UIView subclass that can display a collection of sticker assets.
+ * 
+ * This class is a UIView subclass intended to display a collection of
  * stickers. It provides drag and drop functionality so that user may drag an individual
  * stickers from this view and place it in the Messages transcript. Stickers may also be
  * tapped to add them directly to Messages input field.
@@ -407,7 +409,7 @@ public class MSStickerBrowserView extends UIView {
     }
 
     /**
-     * @abstract The Sticker Browser View content inset.
+     * The Sticker Browser View content inset.
      */
     @Generated
     @Selector("contentInset")
@@ -415,7 +417,7 @@ public class MSStickerBrowserView extends UIView {
     public native UIEdgeInsets contentInset();
 
     /**
-     * @abstract The Sticker Browser View content offset.
+     * The Sticker Browser View content offset.
      */
     @Generated
     @Selector("contentOffset")
@@ -423,7 +425,7 @@ public class MSStickerBrowserView extends UIView {
     public native CGPoint contentOffset();
 
     /**
-     * @abstract The Sticker Browser View data source.
+     * The Sticker Browser View data source.
      */
     @Generated
     @Selector("dataSource")
@@ -439,19 +441,22 @@ public class MSStickerBrowserView extends UIView {
     public native MSStickerBrowserView initWithCoder(NSCoder coder);
 
     /**
-     * @method   initWithFrame:
-     * @abstract   Initializes a MSStickerBrowserView with a frame using the regular size class.
+     * initWithFrame:
+     * 
+     * Initializes a MSStickerBrowserView with a frame using the regular size class.
      */
     @Generated
     @Selector("initWithFrame:")
     public native MSStickerBrowserView initWithFrame(@ByValue CGRect frame);
 
     /**
-     * @method   initWithFrame:stickerSize:
-     * @abstract   Initializes a MSStickerBrowserView with a frame and sticker size class.
-     * @discussion Sticker images will be laid out in a grid similar to a UICollectionView
+     * initWithFrame:stickerSize:
+     * 
+     * Initializes a MSStickerBrowserView with a frame and sticker size class.
+     * 
+     * Sticker images will be laid out in a grid similar to a UICollectionView
      * configured with flow layout.
-     * @property size hints the size of the cells, the size a sticker is drawn at will
+     * [@property] size hints the size of the cells, the size a sticker is drawn at will
      * vary based on the device. Sticker images will be scaled down to fit in the grid cell. If the
      * sticker image is smaller than the cell size measured in pixels then it will be  centered
      * in the grid cell.
@@ -461,42 +466,42 @@ public class MSStickerBrowserView extends UIView {
     public native MSStickerBrowserView initWithFrameStickerSize(@ByValue CGRect frame, @NInt long stickerSize);
 
     /**
-     * @abstract Asks the Sticker Browser View to reload its data from its data source.
+     * Asks the Sticker Browser View to reload its data from its data source.
      */
     @Generated
     @Selector("reloadData")
     public native void reloadData();
 
     /**
-     * @abstract The Sticker Browser View content inset.
+     * The Sticker Browser View content inset.
      */
     @Generated
     @Selector("setContentInset:")
     public native void setContentInset(@ByValue UIEdgeInsets value);
 
     /**
-     * @abstract The Sticker Browser View content offset.
+     * The Sticker Browser View content offset.
      */
     @Generated
     @Selector("setContentOffset:")
     public native void setContentOffset(@ByValue CGPoint value);
 
     /**
-     * @abstract animate Sticker Browser View at constant velocity to new offset.
+     * animate Sticker Browser View at constant velocity to new offset.
      */
     @Generated
     @Selector("setContentOffset:animated:")
     public native void setContentOffsetAnimated(@ByValue CGPoint contentOffset, boolean animated);
 
     /**
-     * @abstract The Sticker Browser View data source.
+     * The Sticker Browser View data source.
      */
     @Generated
     @Selector("setDataSource:")
     public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) MSStickerBrowserViewDataSource value);
 
     /**
-     * @abstract The Sticker Browser View data source.
+     * The Sticker Browser View data source.
      */
     @Generated
     public void setDataSource(@Mapped(ObjCObjectMapper.class) MSStickerBrowserViewDataSource value) {
@@ -511,7 +516,7 @@ public class MSStickerBrowserView extends UIView {
     }
 
     /**
-     * @abstract The sticker size class.
+     * The sticker size class.
      */
     @Generated
     @Selector("stickerSize")

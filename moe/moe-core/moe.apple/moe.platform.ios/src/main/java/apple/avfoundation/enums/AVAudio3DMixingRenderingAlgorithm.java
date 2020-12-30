@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudio3DMixingRenderingAlgorithm
- *    @abstract   Types of rendering algorithms available per input bus of the environment node
+ * [@enum] AVAudio3DMixingRenderingAlgorithm
+ * 
+ * Types of rendering algorithms available per input bus of the environment node
  * 
  * The rendering algorithms differ in terms of quality and cpu cost.
  * AVAudio3DMixingRenderingAlgorithmEqualPowerPanning is the simplest panning algorithm and also

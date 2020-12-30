@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum       EKParticipantRole
- * @abstract   Value representing the role of a meeting participant.
+ * [@enum]       EKParticipantRole
+ * 
+ * Value representing the role of a meeting participant.
  */
 @Generated
 public final class EKParticipantRole {

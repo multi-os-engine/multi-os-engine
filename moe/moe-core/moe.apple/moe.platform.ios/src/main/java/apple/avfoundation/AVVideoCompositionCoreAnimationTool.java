@@ -152,9 +152,11 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     public static native long version_static();
 
     /**
-     * 	@method						videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:
-     * @abstract					Add a Core Animation layer to the video composition
-     * @discussion					Include a Core Animation layer as an individual track input in video composition.
+     * videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:
+     * 
+     * Add a Core Animation layer to the video composition
+     * 
+     * Include a Core Animation layer as an individual track input in video composition.
      * 							This layer should not come from, or be added to, another layer tree.
      * 							trackID should not match any real trackID in the source. Use -[AVAsset unusedTrackID] 
      * 							to obtain a trackID that's guaranteed not to coincide with the trackID of any track of the asset.
@@ -171,9 +173,11 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
             CALayer layer, int trackID);
 
     /**
-     * @method						videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:
-     * @abstract					Compose the composited video frames with the Core Animation layer
-     * @discussion					Place composited video frames in videoLayer and render animationLayer 
+     * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:
+     * 
+     * Compose the composited video frames with the Core Animation layer
+     * 
+     * Place composited video frames in videoLayer and render animationLayer
      * 							to produce the final frame. Normally videoLayer should be in animationLayer's sublayer tree.
      * 							The animationLayer should not come from, or be added to, another layer tree.
      * 							Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
@@ -187,9 +191,11 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
             CALayer videoLayer, CALayer animationLayer);
 
     /**
-     * @method						videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:
-     * @abstract					Compose the composited video frames with the Core Animation layer
-     * @discussion					Duplicate the composited video frames in each videoLayer and render animationLayer 
+     * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:
+     * 
+     * Compose the composited video frames with the Core Animation layer
+     * 
+     * Duplicate the composited video frames in each videoLayer and render animationLayer
      * 							to produce the final frame. Normally videoLayers should be in animationLayer's sublayer tree.
      * 							The animationLayer should not come from, or be added to, another layer tree.
      * 							Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the

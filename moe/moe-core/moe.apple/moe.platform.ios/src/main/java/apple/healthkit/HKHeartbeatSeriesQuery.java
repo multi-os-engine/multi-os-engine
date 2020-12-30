@@ -30,9 +30,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKHeartbeatSeriesQuery
- * @abstract      An HKHeartbeatSeriesQuery is used to access data associated with an HKHeartbeatSeriesSample.
- * @discussion    Once instantiated, call HKHealthStore executeQuery to begin enumerating the heartbeat series data.
+ * HKHeartbeatSeriesQuery
+ * 
+ * An HKHeartbeatSeriesQuery is used to access data associated with an HKHeartbeatSeriesSample.
+ * 
+ * Once instantiated, call HKHealthStore executeQuery to begin enumerating the heartbeat series data.
  */
 @Generated
 @Library("HealthKit")
@@ -102,8 +104,9 @@ public class HKHeartbeatSeriesQuery extends HKQuery {
     public native HKHeartbeatSeriesQuery init();
 
     /**
-     * @method        initWithHeartbeatSeries:dataHandler:
-     * @abstract      Returns a query that will retrieve heartbeat timestamps for the specified HKHeartbeatSeriesSample.
+     * initWithHeartbeatSeries:dataHandler:
+     * 
+     * Returns a query that will retrieve heartbeat timestamps for the specified HKHeartbeatSeriesSample.
      * 
      * @param         heartbeatSeries    The HKHeartbeatSeriesSample for which the heartbeat data will be returned.
      * @param         dataHandler        The block to invoke with results from the query. It is called repeatedly for each

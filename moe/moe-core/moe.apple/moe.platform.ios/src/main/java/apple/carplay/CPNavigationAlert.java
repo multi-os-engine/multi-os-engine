@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPNavigationAlert is a banner alert that can display map or navigation-related information to the user.
+ * [@c] CPNavigationAlert is a banner alert that can display map or navigation-related information to the user.
  */
 @Generated
 @Library("CarPlay")

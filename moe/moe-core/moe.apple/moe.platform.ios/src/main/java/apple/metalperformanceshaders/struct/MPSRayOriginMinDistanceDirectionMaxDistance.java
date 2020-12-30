@@ -38,7 +38,7 @@ public final class MPSRayOriginMinDistanceDirectionMaxDistance extends StructObj
     }
 
     /**
-     * @brief Ray origin. The intersection test will be skipped if the origin contains NaNs
+     * Ray origin. The intersection test will be skipped if the origin contains NaNs
      * or infinities.
      */
     @Generated
@@ -47,7 +47,7 @@ public final class MPSRayOriginMinDistanceDirectionMaxDistance extends StructObj
     public native MPSPackedFloat3 origin();
 
     /**
-     * @brief Ray origin. The intersection test will be skipped if the origin contains NaNs
+     * Ray origin. The intersection test will be skipped if the origin contains NaNs
      * or infinities.
      */
     @Generated
@@ -55,7 +55,7 @@ public final class MPSRayOriginMinDistanceDirectionMaxDistance extends StructObj
     public native void setOrigin(@ByValue MPSPackedFloat3 value);
 
     /**
-     * @brief Minimum intersection distance from the origin along the ray direction. The
+     * Minimum intersection distance from the origin along the ray direction. The
      * intersection test will be skipped if the minimum distance is equal to positive
      * infinity or NaN.
      */
@@ -64,7 +64,7 @@ public final class MPSRayOriginMinDistanceDirectionMaxDistance extends StructObj
     public native float minDistance();
 
     /**
-     * @brief Minimum intersection distance from the origin along the ray direction. The
+     * Minimum intersection distance from the origin along the ray direction. The
      * intersection test will be skipped if the minimum distance is equal to positive
      * infinity or NaN.
      */
@@ -73,7 +73,7 @@ public final class MPSRayOriginMinDistanceDirectionMaxDistance extends StructObj
     public native void setMinDistance(float value);
 
     /**
-     * @brief Ray direction. Does not need to be normalized. The intersection test will be
+     * Ray direction. Does not need to be normalized. The intersection test will be
      * skipped if the direction has length zero or contains NaNs or infinities.
      */
     @Generated
@@ -82,7 +82,7 @@ public final class MPSRayOriginMinDistanceDirectionMaxDistance extends StructObj
     public native MPSPackedFloat3 direction();
 
     /**
-     * @brief Ray direction. Does not need to be normalized. The intersection test will be
+     * Ray direction. Does not need to be normalized. The intersection test will be
      * skipped if the direction has length zero or contains NaNs or infinities.
      */
     @Generated
@@ -90,7 +90,7 @@ public final class MPSRayOriginMinDistanceDirectionMaxDistance extends StructObj
     public native void setDirection(@ByValue MPSPackedFloat3 value);
 
     /**
-     * @brief Maximum intersection distance from the origin along the ray direction. May be
+     * Maximum intersection distance from the origin along the ray direction. May be
      * infinite. The intersection test will be skipped if the maximum distance is less than
      * zero, NaN, or less than the minimum intersection distance.
      */
@@ -99,7 +99,7 @@ public final class MPSRayOriginMinDistanceDirectionMaxDistance extends StructObj
     public native float maxDistance();
 
     /**
-     * @brief Maximum intersection distance from the origin along the ray direction. May be
+     * Maximum intersection distance from the origin along the ray direction. May be
      * infinite. The intersection test will be skipped if the maximum distance is less than
      * zero, NaN, or less than the minimum intersection distance.
      */

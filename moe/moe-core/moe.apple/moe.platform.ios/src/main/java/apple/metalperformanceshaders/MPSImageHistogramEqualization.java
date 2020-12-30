@@ -46,8 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageHistogramEqualization
- * @discussion The MPSImageHistogramEqualization performs equalizes the histogram of an image.
+ * MPSImageHistogramEqualization
+ * 
+ * The MPSImageHistogramEqualization performs equalizes the histogram of an image.
  *             The process is divided into three steps.
  * 
  *             -# Call -initWithDevice:histogramInfo:   This creates a MPSImageHistogramEqualization
@@ -184,9 +185,10 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * @abstract Encode the transform function to a command buffer using a MTLComputeCommandEncoder.
+     * Encode the transform function to a command buffer using a MTLComputeCommandEncoder.
      *           The transform function computes the equalization lookup table.
-     * @discussion The transform function will not begin to execute until after the command
+     * 
+     * The transform function will not begin to execute until after the command
      *             buffer has been enqueued and committed.  This step will need to be repeated
      *             with the new MPSKernel if -copyWithZone:device or -copyWithZone: is called.
      *             The transform is stored as internal state to the object. You still need to
@@ -221,7 +223,8 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     public native MPSImageHistogramEqualization initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract Specifies information about the histogram for the channels of an image.
+     * Specifies information about the histogram for the channels of an image.
+     * 
      * @param    device            The device the filter will run on
      * @param    histogramInfo     Pointer to the MPSHistogramInfo struct
      * @return     A valid MPSImageHistogramEqualization object or nil, if failure.
@@ -236,12 +239,14 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     public native MPSImageHistogramEqualization initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.

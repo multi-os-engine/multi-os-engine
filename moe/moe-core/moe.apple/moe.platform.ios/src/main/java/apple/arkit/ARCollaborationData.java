@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Object representing data for collaborative session.
  * 
- * @discussion This data needs to be sent to each participants in the collaborative session.
+ * This data needs to be sent to each participants in the collaborative session.
  */
 @Generated
 @Library("ARKit")
@@ -135,7 +135,8 @@ public class ARCollaborationData extends NSObject implements NSSecureCoding {
 
     /**
      * Network priority of the data.
-     * @discussion The network implementation should respect this flag and choose the appropriate protocol.
+     * 
+     * The network implementation should respect this flag and choose the appropriate protocol.
      */
     @Generated
     @Selector("priority")

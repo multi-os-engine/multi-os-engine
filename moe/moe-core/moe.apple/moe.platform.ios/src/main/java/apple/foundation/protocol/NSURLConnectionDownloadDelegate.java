@@ -27,9 +27,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol       NSURLConnectionDownloadDelegate
+ * [@protocol]       NSURLConnectionDownloadDelegate
  * 
- * @abstract
  *                 Delegate methods used to perform resource
  *                 downloads directly to a disk file.  All the
  *                 methods are optional with the exception of
@@ -39,7 +38,6 @@ import org.moe.natj.objc.ann.Selector;
  *                 This delegate and download implementation is
  *                 currently only available on iOS 5.0 or later.
  * 
- * @discussion
  *                 connection:didWriteData:totalBytesWritten:expectedTotalBytes:
  *                 provides progress information about the state of
  *                 the download, the number of bytes written since

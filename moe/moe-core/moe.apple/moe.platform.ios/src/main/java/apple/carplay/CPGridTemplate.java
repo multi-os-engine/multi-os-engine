@@ -110,7 +110,7 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Initialize a grid template with an array of @c CPGridButton and a title.
-     * @note A grid template will only display the first 8 buttons in the provided gridButtons array.
+     * [@note] A grid template will only display the first 8 buttons in the provided gridButtons array.
      * A grid template presenting more than 4 buttons will balance the buttons between 2 rows.
      */
     @Generated

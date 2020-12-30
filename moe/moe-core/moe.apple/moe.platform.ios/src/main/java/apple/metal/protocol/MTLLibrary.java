@@ -41,8 +41,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLLibrary")
 public interface MTLLibrary {
     /**
-     * @property device
-     * @abstract The device this resource was created against.  This resource can only be used with this device.
+     * [@property] device
+     * 
+     * The device this resource was created against.  This resource can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -50,24 +51,27 @@ public interface MTLLibrary {
     MTLDevice device();
 
     /**
-     * @property functionNames
-     * @abstract The array contains NSString objects, with the name of each function in library.
+     * [@property] functionNames
+     * 
+     * The array contains NSString objects, with the name of each function in library.
      */
     @Generated
     @Selector("functionNames")
     NSArray<String> functionNames();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     String label();
 
     /**
-     * @method newFunctionWithName
-     * @abstract Returns a pointer to a function object, return nil if the function is not found in the library.
+     * newFunctionWithName
+     * 
+     * Returns a pointer to a function object, return nil if the function is not found in the library.
      */
     @Generated
     @Selector("newFunctionWithName:")
@@ -75,9 +79,11 @@ public interface MTLLibrary {
     MTLFunction newFunctionWithName(String functionName);
 
     /**
-     * @method newFunctionWithName:constantValues:completionHandler:
-     * @abstract Returns a pointer to a function object obtained by applying the constant values to the named function.
-     * @discussion This method is asynchronous since it is will call the compiler.
+     * newFunctionWithName:constantValues:completionHandler:
+     * 
+     * Returns a pointer to a function object obtained by applying the constant values to the named function.
+     * 
+     * This method is asynchronous since it is will call the compiler.
      */
     @Generated
     @Selector("newFunctionWithName:constantValues:completionHandler:")
@@ -85,9 +91,11 @@ public interface MTLLibrary {
             @ObjCBlock(name = "call_newFunctionWithNameConstantValuesCompletionHandler") Block_newFunctionWithNameConstantValuesCompletionHandler completionHandler);
 
     /**
-     * @method newFunctionWithName:constantValues:error:
-     * @abstract Returns a pointer to a function object obtained by applying the constant values to the named function.
-     * @discussion This method will call the compiler. Use newFunctionWithName:constantValues:completionHandler: to
+     * newFunctionWithName:constantValues:error:
+     * 
+     * Returns a pointer to a function object obtained by applying the constant values to the named function.
+     * 
+     * This method will call the compiler. Use newFunctionWithName:constantValues:completionHandler: to
      * avoid waiting on the compiler.
      */
     @Generated
@@ -97,8 +105,9 @@ public interface MTLLibrary {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
@@ -113,9 +122,12 @@ public interface MTLLibrary {
     }
 
     /**
-     * @property installName
-     * @abstract The installName provided when this MTLLibrary was created.
-     * @discussion Always nil if the type of the library is not MTLLibraryTypeDynamic.
+     * [@property] installName
+     * 
+     * The installName provided when this MTLLibrary was created.
+     * 
+     * Always nil if the type of the library is not MTLLibraryTypeDynamic.
+     * 
      * @see MTLCompileOptions
      */
     @Generated
@@ -123,8 +135,9 @@ public interface MTLLibrary {
     String installName();
 
     /**
-     * @method newFunctionWithDescriptor:completionHandler:
-     * @abstract Create a new MTLFunction object asynchronously.
+     * newFunctionWithDescriptor:completionHandler:
+     * 
+     * Create a new MTLFunction object asynchronously.
      */
     @Generated
     @Selector("newFunctionWithDescriptor:completionHandler:")
@@ -140,8 +153,9 @@ public interface MTLLibrary {
     }
 
     /**
-     * @method newFunctionWithDescriptor:error:
-     * @abstract Create  a new MTLFunction object synchronously.
+     * newFunctionWithDescriptor:error:
+     * 
+     * Create  a new MTLFunction object synchronously.
      */
     @Generated
     @Selector("newFunctionWithDescriptor:error:")
@@ -150,8 +164,9 @@ public interface MTLLibrary {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @method newIntersectionFunctionWithDescriptor:completionHandler:
-     * @abstract Create a new MTLFunction object asynchronously.
+     * newIntersectionFunctionWithDescriptor:completionHandler:
+     * 
+     * Create a new MTLFunction object asynchronously.
      */
     @Generated
     @Selector("newIntersectionFunctionWithDescriptor:completionHandler:")
@@ -167,8 +182,9 @@ public interface MTLLibrary {
     }
 
     /**
-     * @method newIntersectionFunctionWithDescriptor:error:
-     * @abstract Create  a new MTLFunction object synchronously.
+     * newIntersectionFunctionWithDescriptor:error:
+     * 
+     * Create  a new MTLFunction object synchronously.
      */
     @Generated
     @Selector("newIntersectionFunctionWithDescriptor:error:")
@@ -177,10 +193,12 @@ public interface MTLLibrary {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @property type
-     * @abstract The library type provided when this MTLLibrary was created.
+     * [@property] type
+     * 
+     * The library type provided when this MTLLibrary was created.
      * Libraries with MTLLibraryTypeExecutable can be used to obtain MTLFunction from.
      * Libraries with MTLLibraryTypeDynamic can be used to resolve external references in other MTLLibrary from.
+     * 
      * @see MTLCompileOptions
      */
     @Generated

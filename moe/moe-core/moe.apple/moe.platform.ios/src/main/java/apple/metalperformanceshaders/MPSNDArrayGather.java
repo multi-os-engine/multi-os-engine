@@ -27,11 +27,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNDArrayGather
+ * MPSNDArrayGather
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   Applies a gather operation along a given axis.  The encoded primary source array
+ * Applies a gather operation along a given axis.  The encoded primary source array
  *             contains the data and the secondary array is a 1-D MPSNDArray containing the
  *             indices.
  * 
@@ -73,8 +73,9 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property  axis
-     * @abstract  The axis along which to apply the gather operation.
+     * [@property]  axis
+     * 
+     * The axis along which to apply the gather operation.
      *             Defaults to zero.
      */
     @Generated
@@ -170,8 +171,9 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property  axis
-     * @abstract  The axis along which to apply the gather operation.
+     * [@property]  axis
+     * 
+     * The axis along which to apply the gather operation.
      *             Defaults to zero.
      */
     @Generated

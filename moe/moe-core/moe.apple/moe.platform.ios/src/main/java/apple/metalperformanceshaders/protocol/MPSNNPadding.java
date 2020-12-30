@@ -18,9 +18,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol   MPSNNPadding
- * @abstract   A method to describe how MPSCNNKernels should pad images when data outside the image is needed
- * @discussion Different (non-Apple) CNN frameworks have different policies for how to size the result
+ * [@protocol]   MPSNNPadding
+ * 
+ * A method to describe how MPSCNNKernels should pad images when data outside the image is needed
+ * 
+ * Different (non-Apple) CNN frameworks have different policies for how to size the result
  *             of a CNN filter and what padding to add around the edges.  Some filters such
  *             as pooling and convolution read from neighboring feature channel (pixel) values.
  *             Four predefined MPSPaddingMethods are available: MPSNNPaddingMethodValidOnly,
@@ -34,15 +36,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MPSNNPadding")
 public interface MPSNNPadding extends NSSecureCoding {
     /**
-     * @abstract       Determine padding and sizing of result images
-     * @discussion     A MPSNNPaddingMethod must both return a valid MPSImageDescriptor
+     * Determine padding and sizing of result images
+     * 
+     * A MPSNNPaddingMethod must both return a valid MPSImageDescriptor
      *                 and set the MPSKernel.offset to the correct value.  This is a
      *                 required feature if the MPSNNPaddingMethodCustom bit is set in
      *                 the paddingMethod.
      * 
      *                 Some code that may prove helpful:
      * 
-     *                 @code
+     *                 [@code]
      *                 const int centeringPolicy = 0;  // When kernelSize is even: 0 pad bottom right. 1 pad top left.    Centers the kernel for even sized kernels.
      * 
      *                 typedef enum Style{
@@ -89,7 +92,7 @@ public interface MPSNNPadding extends NSSecureCoding {
      *                     // account for the fact that the offset is based on the center pixel, not the left edge
      *                     return correction - leftExtraPixels;
      *                 }
-     *                 @endcode
+     *                 [@endcode]
      * 
      * @param          sourceImages        The list of source images to be used
      * @param          sourceStates        The list of source states to be used
@@ -122,7 +125,7 @@ public interface MPSNNPadding extends NSSecureCoding {
     }
 
     /**
-     * @abstract   Get the preferred padding method for the node
+     * Get the preferred padding method for the node
      */
     @Generated
     @Selector("paddingMethod")
@@ -130,7 +133,7 @@ public interface MPSNNPadding extends NSSecureCoding {
     long paddingMethod();
 
     /**
-     * @abstract   Make a "inverted" padding policy suitable for a training gradient pass.
+     * Make a "inverted" padding policy suitable for a training gradient pass.
      */
     @Generated
     @IsOptional

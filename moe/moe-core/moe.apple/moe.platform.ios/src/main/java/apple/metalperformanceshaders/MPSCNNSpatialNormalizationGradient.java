@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNSpatialNormalizationGradient
- * @dependency This depends on Metal.framework
- * @discussion Specifies the spatial normalization gradient filter.
+ * MPSCNNSpatialNormalizationGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the spatial normalization gradient filter.
  *             The spatial normalization for a feature channel applies the filter over local regions which extend
  *             spatially, but are in separate feature channels (i.e., they have shape 1 x kernelWidth x kernelHeight).
  *             For each feature channel, the function computes the sum of squares of X inside each rectangle, N2(i,j).
@@ -80,8 +81,9 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property   alpha
-     * @abstract   The value of alpha.  Default is 1.0. Must be non-negative.
+     * [@property]   alpha
+     * 
+     * The value of alpha.  Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("alpha")
@@ -92,8 +94,9 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   beta
-     * @abstract   The value of beta.  Default is 5.0
+     * [@property]   beta
+     * 
+     * The value of beta.  Default is 5.0
      */
     @Generated
     @Selector("beta")
@@ -122,8 +125,9 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public static native String debugDescription_static();
 
     /**
-     * @property   delta
-     * @abstract   The value of delta.  Default is 1.0
+     * [@property]   delta
+     * 
+     * The value of delta.  Default is 1.0
      */
     @Generated
     @Selector("delta")
@@ -147,12 +151,14 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public native MPSCNNSpatialNormalizationGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -167,7 +173,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public native MPSCNNSpatialNormalizationGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize a spatial normalization filter
+     * Initialize a spatial normalization filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel
      * @param      kernelHeight        The height of the kernel
@@ -216,24 +223,27 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   alpha
-     * @abstract   The value of alpha.  Default is 1.0. Must be non-negative.
+     * [@property]   alpha
+     * 
+     * The value of alpha.  Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);
 
     /**
-     * @property   beta
-     * @abstract   The value of beta.  Default is 5.0
+     * [@property]   beta
+     * 
+     * The value of beta.  Default is 5.0
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * @property   delta
-     * @abstract   The value of delta.  Default is 1.0
+     * [@property]   delta
+     * 
+     * The value of delta.  Default is 1.0
      */
     @Generated
     @Selector("setDelta:")

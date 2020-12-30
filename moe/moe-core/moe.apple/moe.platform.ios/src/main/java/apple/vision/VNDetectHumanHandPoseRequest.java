@@ -29,8 +29,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Detects specific landmark points on human hands.
- * @discussion This request will produce a collection of VNRecognizedPointsObservation objects which describe the pose of each detected human hand.
+ * Detects specific landmark points on human hands.
+ * 
+ * This request will produce a collection of VNRecognizedPointsObservation objects which describe the pose of each detected human hand.
  */
 @Generated
 @Library("Vision")
@@ -136,8 +137,9 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @brief Defines an upper bounds to the maximum number of hands that will be processed for key points in an image.
-     * @discussion The complexity in key points determination is scalable by the number of hands to be processed.  All hands detected in an image will be ordered by relative size, with only the N largest ones having key points determined.  The default value for this property is 2.
+     * Defines an upper bounds to the maximum number of hands that will be processed for key points in an image.
+     * 
+     * The complexity in key points determination is scalable by the number of hands to be processed.  All hands detected in an image will be ordered by relative size, with only the N largest ones having key points determined.  The default value for this property is 2.
      */
     @Generated
     @Selector("maximumHandCount")
@@ -159,15 +161,16 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @discussion VNHumanHandPoseObservation results.
+     * VNHumanHandPoseObservation results.
      */
     @Generated
     @Selector("results")
     public native NSArray<? extends VNHumanHandPoseObservation> results();
 
     /**
-     * @brief Defines an upper bounds to the maximum number of hands that will be processed for key points in an image.
-     * @discussion The complexity in key points determination is scalable by the number of hands to be processed.  All hands detected in an image will be ordered by relative size, with only the N largest ones having key points determined.  The default value for this property is 2.
+     * Defines an upper bounds to the maximum number of hands that will be processed for key points in an image.
+     * 
+     * The complexity in key points determination is scalable by the number of hands to be processed.  All hands detected in an image will be ordered by relative size, with only the N largest ones having key points determined.  The default value for this property is 2.
      */
     @Generated
     @Selector("setMaximumHandCount:")
@@ -192,7 +195,8 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Obtain the collection of human hand joint names that are supported by a given request revision.
+     * Obtain the collection of human hand joint names that are supported by a given request revision.
+     * 
      * @param revision The revision of VNDetectHumanHandPoseRequest being queried.
      * @param error The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
      * @return An array of VNHumanHandPoseObservationJointName symbols that are supported by the request revision, or nil if a failure occurs.
@@ -203,7 +207,8 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @brief Obtain the collection of human hand joints group names that are supported by a given request revision.
+     * Obtain the collection of human hand joints group names that are supported by a given request revision.
+     * 
      * @param revision The revision of VNDetectHumanHandPoseRequest being queried.
      * @param error The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
      * @return An array of VNHumanHandPoseObservationJointsGroupName symbols that are supported by the request revision, or nil if a failure occurs.

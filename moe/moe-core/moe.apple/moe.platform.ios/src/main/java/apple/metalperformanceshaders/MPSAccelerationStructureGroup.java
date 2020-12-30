@@ -25,10 +25,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief A group of acceleration structures which may be used together in an instance acceleration
+ * A group of acceleration structures which may be used together in an instance acceleration
  * structure.
  * 
- * @discussion All acceleration structures in an instance acceleration structures must be created
+ * All acceleration structures in an instance acceleration structures must be created
  * with the same group, although they do not all need to be used in the same instance acceleration
  * structure. The acceleration structures in a group share internal GPU memory allocations, so
  * the total number and size of acceleration structures that can be created with the same group is
@@ -94,7 +94,7 @@ public class MPSAccelerationStructureGroup extends NSObject {
     public static native String description_static();
 
     /**
-     * @brief The Metal device this acceleration structure group was created with
+     * The Metal device this acceleration structure group was created with
      */
     @Generated
     @Selector("device")

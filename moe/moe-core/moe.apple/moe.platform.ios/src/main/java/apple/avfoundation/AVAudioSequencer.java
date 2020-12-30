@@ -46,8 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioSequencer
- * @abstract A collection of MIDI events organized into AVMusicTracks, plus a player to play back the events.
+ * AVAudioSequencer
+ * 
+ * A collection of MIDI events organized into AVMusicTracks, plus a player to play back the events.
  */
 @Generated
 @Library("AVFoundation")
@@ -161,9 +162,10 @@ public class AVAudioSequencer extends NSObject {
     public static native long version_static();
 
     /**
-     * @method beatsForHostTime:error:
-     * @abstract Returns the beat that will be (or was) played at the specified host time.
-     * @discussion
+     * beatsForHostTime:error:
+     * 
+     * Returns the beat that will be (or was) played at the specified host time.
+     * 
      * 	This call is only valid if the player is playing and will return 0 with an error if the
      * 	player is not playing or if the starting time of the player was after the specified host
      * 	time.  The method uses the sequence's tempo map to retrieve a beat time from the starting
@@ -175,17 +177,19 @@ public class AVAudioSequencer extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method beatsForSeconds:
-     * @abstract Get the beat position (timestamp) for the given time in the track
+     * beatsForSeconds:
+     * 
+     * Get the beat position (timestamp) for the given time in the track
      */
     @Generated
     @Selector("beatsForSeconds:")
     public native double beatsForSeconds(double seconds);
 
     /**
-     * @property currentPositionInBeats
-     * @abstract The current playback position in beats
-     * @discussion
+     * [@property] currentPositionInBeats
+     * 
+     * The current playback position in beats
+     * 
      * 	Setting this positions the sequencer's player to the specified beat.  This can be set while
      * 	the player is playing, in which case playback will resume at the new position.
      */
@@ -194,9 +198,10 @@ public class AVAudioSequencer extends NSObject {
     public native double currentPositionInBeats();
 
     /**
-     * @property currentPositionInSeconds
-     * @abstract The current playback position in seconds
-     * @discussion
+     * [@property] currentPositionInSeconds
+     * 
+     * The current playback position in seconds
+     * 
      * 	Setting this positions the sequencer's player to the specified time.  This can be set while
      * 	the player is playing, in which case playback will resume at the new position.
      */
@@ -205,9 +210,10 @@ public class AVAudioSequencer extends NSObject {
     public native double currentPositionInSeconds();
 
     /**
-     * @method dataWithSMPTEResolution:error:
-     * @abstract Return a data object containing the events from the sequence
-     * @discussion
+     * dataWithSMPTEResolution:error:
+     * 
+     * Return a data object containing the events from the sequence
+     * 
      * 	All details regarding the SMPTE resolution apply here as well.
      * 	The returned NSData lifetime is controlled by the client.
      */
@@ -217,9 +223,10 @@ public class AVAudioSequencer extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method hostTimeForBeats:error:
-     * @abstract Returns the host time that will be (or was) played at the specified beat.
-     * @discussion
+     * hostTimeForBeats:error:
+     * 
+     * Returns the host time that will be (or was) played at the specified beat.
+     * 
      * 	This call is only valid if the player is playing and will return 0 with an error if the
      * 	player is not playing or if the starting position of the player (its "starting beat") was 
      * 	after the specified beat.  The method uses the sequence's tempo map to translate a beat
@@ -231,10 +238,10 @@ public class AVAudioSequencer extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method init
-     * @abstract
+     * init
+     * 
      * 	Initialize a new sequencer, which will not be connected to an audio engine.
-     * @discussion
+     * 
      * 	This is used to create a sequencer whose tracks will only send events to external MIDI endpoints.
      */
     @Generated
@@ -242,8 +249,8 @@ public class AVAudioSequencer extends NSObject {
     public native AVAudioSequencer init();
 
     /**
-     * @method initWithAudioEngine:
-     * @abstract
+     * initWithAudioEngine:
+     * 
      * 	Initialize a new sequencer, handing it the audio engine.
      */
     @Generated
@@ -251,9 +258,10 @@ public class AVAudioSequencer extends NSObject {
     public native AVAudioSequencer initWithAudioEngine(AVAudioEngine engine);
 
     /**
-     * @property playing
-     * @abstract Indicates whether or not the sequencer's player is playing
-     * @discussion
+     * [@property] playing
+     * 
+     * Indicates whether or not the sequencer's player is playing
+     * 
      * 	Returns TRUE if the sequencer's player has been started and not stopped. It may have
      * 	"played" past the end of the events in the sequence, but it is still considered to be
      * 	playing (and its time value increasing) until it is explicitly stopped.
@@ -263,8 +271,10 @@ public class AVAudioSequencer extends NSObject {
     public native boolean isPlaying();
 
     /**
-     * @method loadFromData:options:error:
-     * @abstract Parse the data and add the its events to the sequence
+     * loadFromData:options:error:
+     * 
+     * Parse the data and add the its events to the sequence
+     * 
      * @param data
      *        the data to load from
      * @param options
@@ -278,8 +288,10 @@ public class AVAudioSequencer extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method loadFromURL:options:error:
-     * @abstract Load the file referenced by the URL and add the events to the sequence
+     * loadFromURL:options:error:
+     * 
+     * Load the file referenced by the URL and add the events to the sequence
+     * 
      * @param fileURL
      *        the URL to the file
      * @param options
@@ -293,9 +305,10 @@ public class AVAudioSequencer extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method prepareToPlay
-     * @abstract Get ready to play the sequence by prerolling all events
-     * @discussion
+     * prepareToPlay
+     * 
+     * Get ready to play the sequence by prerolling all events
+     * 
      * 	Happens automatically on play if it has not already been called, but may produce a delay in
      * 	startup.
      */
@@ -304,9 +317,10 @@ public class AVAudioSequencer extends NSObject {
     public native void prepareToPlay();
 
     /**
-     * @property rate
-     * @abstract The playback rate of the sequencer's player
-     * @discussion
+     * [@property] rate
+     * 
+     * The playback rate of the sequencer's player
+     * 
      * 	1.0 is normal playback rate.  Rate must be > 0.0.
      */
     @Generated
@@ -314,17 +328,19 @@ public class AVAudioSequencer extends NSObject {
     public native float rate();
 
     /**
-     * @method secondsForBeats:
-     * @abstract Get the time in seconds for the given beat position (timestamp) in the track
+     * secondsForBeats:
+     * 
+     * Get the time in seconds for the given beat position (timestamp) in the track
      */
     @Generated
     @Selector("secondsForBeats:")
     public native double secondsForBeats(double beats);
 
     /**
-     * @property currentPositionInBeats
-     * @abstract The current playback position in beats
-     * @discussion
+     * [@property] currentPositionInBeats
+     * 
+     * The current playback position in beats
+     * 
      * 	Setting this positions the sequencer's player to the specified beat.  This can be set while
      * 	the player is playing, in which case playback will resume at the new position.
      */
@@ -333,9 +349,10 @@ public class AVAudioSequencer extends NSObject {
     public native void setCurrentPositionInBeats(double value);
 
     /**
-     * @property currentPositionInSeconds
-     * @abstract The current playback position in seconds
-     * @discussion
+     * [@property] currentPositionInSeconds
+     * 
+     * The current playback position in seconds
+     * 
      * 	Setting this positions the sequencer's player to the specified time.  This can be set while
      * 	the player is playing, in which case playback will resume at the new position.
      */
@@ -344,9 +361,10 @@ public class AVAudioSequencer extends NSObject {
     public native void setCurrentPositionInSeconds(double value);
 
     /**
-     * @property rate
-     * @abstract The playback rate of the sequencer's player
-     * @discussion
+     * [@property] rate
+     * 
+     * The playback rate of the sequencer's player
+     * 
      * 	1.0 is normal playback rate.  Rate must be > 0.0.
      */
     @Generated
@@ -354,9 +372,10 @@ public class AVAudioSequencer extends NSObject {
     public native void setRate(float value);
 
     /**
-     * @method	startAndReturnError:
-     * @abstract	Start the sequencer's player
-     * @discussion
+     * startAndReturnError:
+     * 
+     * Start the sequencer's player
+     * 
      * 	If the AVAudioSequencer has not been prerolled, it will pre-roll itself and then start.
      * 	When the sequencer is associated with an audio engine, the sequencer's player will only
      * 	play if the audio engine is running.
@@ -366,9 +385,10 @@ public class AVAudioSequencer extends NSObject {
     public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method	stop
-     * @abstract	Stop the sequencer's player
-     * @discussion
+     * stop
+     * 
+     * Stop the sequencer's player
+     * 
      * 	Stopping the player leaves it in an un-prerolled state, but stores the playback position so
      * 	that a subsequent call to startAndReturnError will resume where it left off. This action
      * 	will not stop an associated audio engine.
@@ -378,9 +398,10 @@ public class AVAudioSequencer extends NSObject {
     public native void stop();
 
     /**
-     * @property tempoTrack
-     * @abstract The tempo track
-     *  @discussion
+     * [@property] tempoTrack
+     * 
+     * The tempo track
+     * 
      * 	 Each sequence has a single tempo track. All tempo events are placed into this track (as well
      * 	 as other appropriate events (for instance, the time signature from a MIDI file). The tempo
      * 	 track can be edited and iterated upon as any other track. Non-tempo events in a tempo track
@@ -391,9 +412,10 @@ public class AVAudioSequencer extends NSObject {
     public native AVMusicTrack tempoTrack();
 
     /**
-     * @property tracks
-     * @abstract An NSArray containing all the tracks in the sequence
-     * @discussion
+     * [@property] tracks
+     * 
+     * An NSArray containing all the tracks in the sequence
+     * 
      * 	Track indices count from 0, and do not include the tempo track.
      */
     @Generated
@@ -401,9 +423,10 @@ public class AVAudioSequencer extends NSObject {
     public native NSArray<? extends AVMusicTrack> tracks();
 
     /**
-     * @property userInfo
-     * @abstract A dictionary containing meta-data derived from a sequence
-     * @discussion
+     * [@property] userInfo
+     * 
+     * A dictionary containing meta-data derived from a sequence
+     * 
      * 	The dictionary can contain one or more of the kAFInfoDictionary_* keys
      * 	specified in <AudioToolbox/AudioFile.h>
      */
@@ -412,8 +435,15 @@ public class AVAudioSequencer extends NSObject {
     public native NSDictionary<String, ?> userInfo();
 
     /**
-     * @method writeToURL:SMPTEResolution:replaceExisting:error:
-     * @abstract Create and write a MIDI file from the events in the sequence
+     * writeToURL:SMPTEResolution:replaceExisting:error:
+     * 
+     * Create and write a MIDI file from the events in the sequence
+     * 
+     * 	Only MIDI events are written when writing to the MIDI file. MIDI files are normally beat
+     * 	based, but can also have a SMPTE (or real-time rather than beat time) representation.
+     * 	The relationship between "tick" and quarter note for saving to Standard MIDI File
+     * 	- pass in zero to use default - this will be the value that is currently set on the tempo track
+     * 
      * @param fileURL
      * 	the path for the file to be created
      * @param resolution
@@ -424,11 +454,6 @@ public class AVAudioSequencer extends NSObject {
      * 	Otherwise the call will fail with a permission error.
      * @param outError
      *        on exit, if an error occurs, a description of the error
-     * @discussion
-     * 	Only MIDI events are written when writing to the MIDI file. MIDI files are normally beat
-     * 	based, but can also have a SMPTE (or real-time rather than beat time) representation.
-     * 	The relationship between "tick" and quarter note for saving to Standard MIDI File
-     * 	- pass in zero to use default - this will be the value that is currently set on the tempo track
      */
     @Generated
     @Selector("writeToURL:SMPTEResolution:replaceExisting:error:")

@@ -44,12 +44,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKRecordZoneSubscription
+ * CKRecordZoneSubscription
  * 
- * @abstract A subscription that fires whenever any change happens in the indicated Record Zone.
+ * A subscription that fires whenever any change happens in the indicated Record Zone.
  * 
- * @discussion The RecordZone must have the capability @c CKRecordZoneCapabilityFetchChanges
- * @c CKRecordZoneSubscriptions are not supported in a @c sharedCloudDatabase
+ * The RecordZone must have the capability @c CKRecordZoneCapabilityFetchChanges
+ * [@c] CKRecordZoneSubscriptions are not supported in a @c sharedCloudDatabase
  */
 @Generated
 @Library("CloudKit")

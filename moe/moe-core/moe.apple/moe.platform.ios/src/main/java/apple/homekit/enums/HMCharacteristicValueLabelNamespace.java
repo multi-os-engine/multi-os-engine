@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueLabelNamespace
+ * [@enum]      HMCharacteristicValueLabelNamespace
  * 
- * @constant  HMCharacteristicValueLabelNamespaceDot                      Service labels are dots.
- * @constant  HMCharacteristicValueLabelNamespaceNumeral                  Service labels are Arabic numerals.
+ * [@constant]  HMCharacteristicValueLabelNamespaceDot                      Service labels are dots.
+ * [@constant]  HMCharacteristicValueLabelNamespaceNumeral                  Service labels are Arabic numerals.
  */
 @Generated
 public final class HMCharacteristicValueLabelNamespace {

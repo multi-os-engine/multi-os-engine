@@ -200,6 +200,7 @@ public class GKGaussianDistribution extends GKRandomDistribution {
      * deviation = (highest - lowest) / 6
      * 
      * The mean and deviation will be floating point numbers even if the distribution is meant to produce integer values.
+     * 
      * @see mean
      * @see deviation
      */

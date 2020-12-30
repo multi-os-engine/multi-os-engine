@@ -19,9 +19,11 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum       CTFontSymbolicTraits
- * @abstract   Symbolic representation of stylistic font attributes.
- * @discussion CTFontSymbolicTraits symbolically describes stylistic aspects of a font. The top 4 bits is used to describe appearance of the font while the lower 28 bits for typeface. The font appearance information represented by the upper 4 bits can be used for stylistic font matching.
+ * [@enum]       CTFontSymbolicTraits
+ * 
+ * Symbolic representation of stylistic font attributes.
+ * 
+ * CTFontSymbolicTraits symbolically describes stylistic aspects of a font. The top 4 bits is used to describe appearance of the font while the lower 28 bits for typeface. The font appearance information represented by the upper 4 bits can be used for stylistic font matching.
  */
 @Generated
 public final class CTFontSymbolicTraits {

@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNLocalContrastNormalizationGradient
- * @dependency This depends on Metal.framework
- * @discussion Specifies the local contrast normalization gradient filter.
+ * MPSCNNLocalContrastNormalizationGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the local contrast normalization gradient filter.
  *             The local contrast normalization is quite similar to spatial normalization
  *             (see @ref MPSCNNSpatialNormalization) in that it applies the filter over local regions which extend
  *             spatially, but are in separate feature channels (i.e., they have shape 1 x kernelWidth x kernelHeight),
@@ -92,9 +93,11 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @property   alpha
-     * @abstract   The value of alpha.  Default is 0.0
-     * @discussion The default value 0.0 is not recommended and is
+     * [@property]   alpha
+     * 
+     * The value of alpha.  Default is 0.0
+     * 
+     * The default value 0.0 is not recommended and is
      *             preserved for backwards compatibility. With alpha 0,
      *             it performs a local mean subtraction. The
      *             MPSCNNLocalContrastNormalizationNode used with
@@ -109,8 +112,9 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property   beta
-     * @abstract   The value of beta.  Default is 0.5
+     * [@property]   beta
+     * 
+     * The value of beta.  Default is 0.5
      */
     @Generated
     @Selector("beta")
@@ -139,8 +143,9 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native String debugDescription_static();
 
     /**
-     * @property   delta
-     * @abstract   The value of delta.  Default is 1/1024
+     * [@property]   delta
+     * 
+     * The value of delta.  Default is 1/1024
      */
     @Generated
     @Selector("delta")
@@ -164,12 +169,14 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public native MPSCNNLocalContrastNormalizationGradient initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.
@@ -185,7 +192,8 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize a local contrast normalization filter
+     * Initialize a local contrast normalization filter
+     * 
      * @param      device              The device the filter will run on
      * @param      kernelWidth         The width of the kernel
      * @param      kernelHeight        The height of the kernel
@@ -226,24 +234,27 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native Object new_objc();
 
     /**
-     * @property   p0
-     * @abstract   The value of p0.  Default is 1.0
+     * [@property]   p0
+     * 
+     * The value of p0.  Default is 1.0
      */
     @Generated
     @Selector("p0")
     public native float p0();
 
     /**
-     * @property   pm
-     * @abstract   The value of pm.  Default is 0.0
+     * [@property]   pm
+     * 
+     * The value of pm.  Default is 0.0
      */
     @Generated
     @Selector("pm")
     public native float pm();
 
     /**
-     * @property   ps
-     * @abstract   The value of ps.  Default is 1.0
+     * [@property]   ps
+     * 
+     * The value of ps.  Default is 1.0
      */
     @Generated
     @Selector("ps")
@@ -258,9 +269,11 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   alpha
-     * @abstract   The value of alpha.  Default is 0.0
-     * @discussion The default value 0.0 is not recommended and is
+     * [@property]   alpha
+     * 
+     * The value of alpha.  Default is 0.0
+     * 
+     * The default value 0.0 is not recommended and is
      *             preserved for backwards compatibility. With alpha 0,
      *             it performs a local mean subtraction. The
      *             MPSCNNLocalContrastNormalizationNode used with
@@ -271,40 +284,45 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public native void setAlpha(float value);
 
     /**
-     * @property   beta
-     * @abstract   The value of beta.  Default is 0.5
+     * [@property]   beta
+     * 
+     * The value of beta.  Default is 0.5
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * @property   delta
-     * @abstract   The value of delta.  Default is 1/1024
+     * [@property]   delta
+     * 
+     * The value of delta.  Default is 1/1024
      */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
     /**
-     * @property   p0
-     * @abstract   The value of p0.  Default is 1.0
+     * [@property]   p0
+     * 
+     * The value of p0.  Default is 1.0
      */
     @Generated
     @Selector("setP0:")
     public native void setP0(float value);
 
     /**
-     * @property   pm
-     * @abstract   The value of pm.  Default is 0.0
+     * [@property]   pm
+     * 
+     * The value of pm.  Default is 0.0
      */
     @Generated
     @Selector("setPm:")
     public native void setPm(float value);
 
     /**
-     * @property   ps
-     * @abstract   The value of ps.  Default is 1.0
+     * [@property]   ps
+     * 
+     * The value of ps.  Default is 1.0
      */
     @Generated
     @Selector("setPs:")

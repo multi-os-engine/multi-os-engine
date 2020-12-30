@@ -17,8 +17,9 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("INUIEditVoiceShortcutViewControllerDelegate")
 public interface INUIEditVoiceShortcutViewControllerDelegate {
     /**
-     * @abstract Called if the user deletes the voice shortcut.
-     * @discussion Your implementation of this method should dismiss the view controller.
+     * Called if the user deletes the voice shortcut.
+     * 
+     * Your implementation of this method should dismiss the view controller.
      */
     @Generated
     @Selector("editVoiceShortcutViewController:didDeleteVoiceShortcutWithIdentifier:")
@@ -26,8 +27,9 @@ public interface INUIEditVoiceShortcutViewControllerDelegate {
             INUIEditVoiceShortcutViewController controller, NSUUID deletedVoiceShortcutIdentifier);
 
     /**
-     * @abstract Called if the user updates the voice shortcut, with either the successfully-updated voice shortcut, or an error.
-     * @discussion Your implementation of this method should dismiss the view controller.
+     * Called if the user updates the voice shortcut, with either the successfully-updated voice shortcut, or an error.
+     * 
+     * Your implementation of this method should dismiss the view controller.
      */
     @Generated
     @Selector("editVoiceShortcutViewController:didUpdateVoiceShortcut:error:")
@@ -35,8 +37,9 @@ public interface INUIEditVoiceShortcutViewControllerDelegate {
             INVoiceShortcut voiceShortcut, NSError error);
 
     /**
-     * @abstract Called if the user cancelled; no changes were made to the voice shortcut.
-     * @discussion Your implementation of this method should dismiss the view controller.
+     * Called if the user cancelled; no changes were made to the voice shortcut.
+     * 
+     * Your implementation of this method should dismiss the view controller.
      */
     @Generated
     @Selector("editVoiceShortcutViewControllerDidCancel:")

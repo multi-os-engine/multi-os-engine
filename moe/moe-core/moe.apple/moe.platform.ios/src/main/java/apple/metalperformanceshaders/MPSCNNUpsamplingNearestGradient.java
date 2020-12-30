@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNUpsamplingNearestGradient
- * @dependency This depends on Metal.framework.
- * @discussion Specifies the nearest spatial downsampling filter.
+ * MPSCNNUpsamplingNearestGradient
+ * [@dependency] This depends on Metal.framework.
+ * 
+ * Specifies the nearest spatial downsampling filter.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -112,7 +113,8 @@ public class MPSCNNUpsamplingNearestGradient extends MPSCNNUpsamplingGradient {
     public native MPSCNNUpsamplingNearestGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract  Initialize the nearest spatial upsampling filter.
+     * Initialize the nearest spatial upsampling filter.
+     * 
      * @param     device                   The device the filter will run on.
      * @param     integerScaleFactorX      The downsampling factor for the x dimension.
      * @param     integerScaleFactorY      The downsampling factor for the y dimension.

@@ -43,11 +43,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKContainer
+ * CKContainer
  * 
- * @abstract A CKContainer, and its CKDatabases, are the main entry points into the CloudKit framework.
+ * A CKContainer, and its CKDatabases, are the main entry points into the CloudKit framework.
  * 
- * @discussion
  * Several methods in CloudKit accept completion handlers to indicate when they're completed.
  * All CKOperation subclasses include progress and completion blocks to report significant events in their lifecycles.
  * Each of these handlers and blocks is invoked on a non-main serial queue.  The receiver is responsible for handling the message on a different queue or thread if it is required.
@@ -103,9 +102,9 @@ public class CKContainer extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @abstract Obtain a CKContainer for the given containerIdentifier
+     * Obtain a CKContainer for the given containerIdentifier
      * 
-     * @discussion If the application is in production mode (aka, @c com.apple.developer.icloud-container-environment is set to Production in your entitlements plist, and you have no override in @c com.apple.developer.icloud-container-development-container-identifiers), then the production environment is used.
+     * If the application is in production mode (aka, @c com.apple.developer.icloud-container-environment is set to Production in your entitlements plist, and you have no override in @c com.apple.developer.icloud-container-development-container-identifiers), then the production environment is used.
      */
     @Generated
     @Selector("containerWithIdentifier:")
@@ -116,9 +115,8 @@ public class CKContainer extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * @abstract Convenience method that uses the calling process' "iCloud.\(application-identifier)" as the container identifier
+     * Convenience method that uses the calling process' "iCloud.\(application-identifier)" as the container identifier
      * 
-     * @discussion
      * application-identifier is the calling process' @c application-identifier entitlement on iOS / tvOS / watchOS.
      * application-identifier is the calling process' @c com.apple.application-identifier entitlement on macOS.
      * On all OSes, if an @c com.apple.developer.associated-application-identifier entitlement is present, its value will be preferred over the @c application-identifier variants.
@@ -203,7 +201,7 @@ public class CKContainer extends NSObject {
     public native String containerIdentifier();
 
     /**
-     * @abstract Convenience methods
+     * Convenience methods
      * 
      * @return a database that's pointer-equal to one of the above properties@enum
      */
@@ -212,9 +210,9 @@ public class CKContainer extends NSObject {
     public native CKDatabase databaseWithDatabaseScope(@NInt long databaseScope);
 
     /**
-     * @abstract Fetches all user records that match an entry in the user's address book.
+     * Fetches all user records that match an entry in the user's address book.
      * 
-     * @discussion @c CKDiscoverUserIdentityOperation is the more configurable, @c CKOperation -based alternatives to these methods
+     * [@c] CKDiscoverUserIdentityOperation is the more configurable, @c CKOperation -based alternatives to these methods
      */
     @Generated
     @Selector("discoverAllIdentitiesWithCompletionHandler:")
@@ -237,7 +235,7 @@ public class CKContainer extends NSObject {
             @ObjCBlock(name = "call_discoverUserIdentityWithUserRecordIDCompletionHandler") Block_discoverUserIdentityWithUserRecordIDCompletionHandler completionHandler);
 
     /**
-     * @discussion Long lived CKOperations returned by this call must be started on an operation queue.
+     * Long lived CKOperations returned by this call must be started on an operation queue.
      * Remember to set the callback blocks before starting the operation.
      * If an operation has already completed against the server, and is subsequently resumed, that operation will replay all of its callbacks from the start of the operation, but the request will not be re-sent to the server.
      * If a long lived operation is cancelled or finishes completely it is no longer returned by these calls.
@@ -258,9 +256,9 @@ public class CKContainer extends NSObject {
             @ObjCBlock(name = "call_fetchShareMetadataWithURLCompletionHandler") Block_fetchShareMetadataWithURLCompletionHandler completionHandler);
 
     /**
-     * @abstract Fetches share participants matching the provided info.
+     * Fetches share participants matching the provided info.
      * 
-     * @discussion @c CKFetchShareParticipantsOperation is the more configurable, @c CKOperation -based alternative to these methods.
+     * [@c] CKFetchShareParticipantsOperation is the more configurable, @c CKOperation -based alternative to these methods.
      */
     @Generated
     @Selector("fetchShareParticipantWithEmailAddress:completionHandler:")
@@ -278,7 +276,7 @@ public class CKContainer extends NSObject {
             @ObjCBlock(name = "call_fetchShareParticipantWithUserRecordIDCompletionHandler") Block_fetchShareParticipantWithUserRecordIDCompletionHandler completionHandler);
 
     /**
-     * @discussion If there is no iCloud account configured, or if access is restricted, a @c CKErrorNotAuthenticated error will be returned.
+     * If there is no iCloud account configured, or if access is restricted, a @c CKErrorNotAuthenticated error will be returned.
      * 
      * This work is treated as having @c NSQualityOfServiceUserInitiated quality of service.
      */

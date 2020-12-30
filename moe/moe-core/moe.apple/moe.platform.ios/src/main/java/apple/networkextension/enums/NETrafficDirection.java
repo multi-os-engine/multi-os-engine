@@ -4,8 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @typedef NETrafficDirection
- * @abstract The direction of network traffic
+ * [@typedef] NETrafficDirection
+ * 
+ * The direction of network traffic
  */
 @Generated
 public final class NETrafficDirection {
@@ -14,15 +15,15 @@ public final class NETrafficDirection {
     }
 
     /**
-     * @const NETrafficDirectionAny Any direction
+     * [@const] NETrafficDirectionAny Any direction
      */
     @Generated @NInt public static final long Any = 0x0000000000000000L;
     /**
-     * @const NETrafficDirectionInbound Inbound direction
+     * [@const] NETrafficDirectionInbound Inbound direction
      */
     @Generated @NInt public static final long Inbound = 0x0000000000000001L;
     /**
-     * @const NETrafficDirectionOutbound Outbound direction
+     * [@const] NETrafficDirectionOutbound Outbound direction
      */
     @Generated @NInt public static final long Outbound = 0x0000000000000002L;
 }

@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @c CPMessageListItem is a special variant of a list item for use in a @c CPListTemplate.
+ * [@c] CPMessageListItem is a special variant of a list item for use in a @c CPListTemplate.
  * Unlike @c CPListItem, your application will not receive a callback when the user
  * selects a @c CPMessageListItem in your list template. Instead, Siri will be invoked
  * using the parameters you specify in your message item and the user will continue a
@@ -119,6 +119,9 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     /**
      * Initialize a @c CPMessageListItem for use in a @c CPListTemplate.
      * 
+     * [@note] The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
+     * it will be scaled down to this size.
+     * 
      * @param conversationIdentifier A value meaningful to your app to identify this conversation.
      * This identifier is not directly displayed to the user; rather, when the user selects this list item,
      * SiriKit will pass this identifier back to your app for your own use.
@@ -128,9 +131,6 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
      * @param trailingConfiguration A set of configuration options for the trailing side of the list item.
      * @param detailText Any additional text displayed underneath the @c conversationName.
      * @param trailingText Any additional text displayed along the trailing side of the cell.
-     * 
-     * @note The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
-     * it will be scaled down to this size.
      */
     @Generated
     @Selector("initWithConversationIdentifier:text:leadingConfiguration:trailingConfiguration:detailText:trailingText:")
@@ -141,6 +141,9 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     /**
      * Initialize a @c CPMessageListItem for use in a @c CPListTemplate.
      * 
+     * [@note] The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
+     * it will be scaled down to this size.
+     * 
      * @param fullName The full name of the contact entity represented by this list item. This text
      * will be displayed as the main text label in the cell and will be spoken by Siri.
      * @param phoneOrEmailAddress A phone or email address for this contact entity that can be used
@@ -149,9 +152,6 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
      * @param trailingConfiguration A set of configuration options for the trailing side of the list item.
      * @param detailText Any additional text displayed underneath the @c conversationName.
      * @param trailingText Any additional text displayed along the trailing side of the cell.
-     * 
-     * @note The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
-     * it will be scaled down to this size.
      */
     @Generated
     @Selector("initWithFullName:phoneOrEmailAddress:leadingConfiguration:trailingConfiguration:detailText:trailingText:")

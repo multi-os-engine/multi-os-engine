@@ -25,9 +25,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNBatchNormalizationGradientNode
- * @abstract   A node representing batch normalization gradient for training
- * @discussion This filter encapsulates the MPSCNNBatchNormalizationStatisticsGradient
+ * MPSCNNBatchNormalizationGradientNode
+ * 
+ * A node representing batch normalization gradient for training
+ * 
+ * This filter encapsulates the MPSCNNBatchNormalizationStatisticsGradient
  *             and MPSCNNBatchNormalizationGradient low level filters as a single
  *             node. They will be called in sequence: statistics gradient until the
  *             batch is complete, then batch normalization gradient on the result.

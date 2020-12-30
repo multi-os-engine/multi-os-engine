@@ -25,8 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract TKSmartCardToken base class for implementing SmartCard based token.
- * @discussion When implementing SmartCard token extension, subclass TKSmartCardToken and implement TKTokenDelegate on it.
+ * TKSmartCardToken base class for implementing SmartCard based token.
+ * 
+ * When implementing SmartCard token extension, subclass TKSmartCardToken and implement TKTokenDelegate on it.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -43,7 +44,7 @@ public class TKSmartCardToken extends TKToken {
     }
 
     /**
-     * @discussion This is AID which is specified in extension's plist NSExtensionAttributes as @c com.apple.ctk.aid attribute. If the attribute specifies array of multiple AIDs, this parameter represents AID which was found on the card and is already preselected.  If @c com.apple.ctk.aid is not present, no application is automatically preselected and value of this property is nil.
+     * This is AID which is specified in extension's plist NSExtensionAttributes as @c com.apple.ctk.aid attribute. If the attribute specifies array of multiple AIDs, this parameter represents AID which was found on the card and is already preselected.  If @c com.apple.ctk.aid is not present, no application is automatically preselected and value of this property is nil.
      */
     @Generated
     @Selector("AID")
@@ -103,7 +104,8 @@ public class TKSmartCardToken extends TKToken {
     public native TKSmartCardToken init();
 
     /**
-     * @discussion Initializes token instance with specified attributes.
+     * Initializes token instance with specified attributes.
+     * 
      * @param smartCard TKSmartCard instance representing connection to SmartCard on which the intance should operate.
      * @param AID ISO7816-4 application ID which is preselected on the card.
      * @param instanceID Unique, persistent identifier of this token.  This is typically implemented by some kind of SmartCard serial number.

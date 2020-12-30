@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NWHostEndpoint
- * @discussion NWHostEndpoint is a subclass of NWEndpoint. It represents an endpoint backed by a
+ * [@interface] NWHostEndpoint
+ * 
+ * NWHostEndpoint is a subclass of NWEndpoint. It represents an endpoint backed by a
  * 	hostname and port. Note that a hostname string may be an IP or IPv6 address.
  */
 @Generated
@@ -105,7 +106,8 @@ public class NWHostEndpoint extends NWEndpoint {
     public static native String description_static();
 
     /**
-     * @method endpointWithHostname:port:
+     * endpointWithHostname:port:
+     * 
      * @param hostname A string representation of the hostname or address, such as www.apple.com or 10.0.0.1.
      * @param port A string containing the port on the host, such as 80.
      * @return An initialized NWHostEndpoint object.
@@ -172,8 +174,9 @@ public class NWHostEndpoint extends NWEndpoint {
     public static native long version_static();
 
     /**
-     * @property hostname
-     * @discussion The endpoint's hostname.
+     * [@property] hostname
+     * 
+     * The endpoint's hostname.
      */
     @Generated
     @Selector("hostname")
@@ -188,8 +191,9 @@ public class NWHostEndpoint extends NWEndpoint {
     public native NWHostEndpoint initWithCoder(NSCoder coder);
 
     /**
-     * @property port
-     * @discussion The endpoint's port.
+     * [@property] port
+     * 
+     * The endpoint's port.
      */
     @Generated
     @Selector("port")

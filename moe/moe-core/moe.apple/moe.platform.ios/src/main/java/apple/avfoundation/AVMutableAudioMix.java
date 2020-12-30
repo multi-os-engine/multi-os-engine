@@ -68,8 +68,9 @@ public class AVMutableAudioMix extends AVAudioMix {
     public static native Object allocWithZone(VoidPtr zone);
 
     /**
-     * @method		audioMix
-     * @abstract		Returns a new instance of AVMutableAudioMix with a nil array of inputParameters.
+     * audioMix
+     * 
+     * Returns a new instance of AVMutableAudioMix with a nil array of inputParameters.
      */
     @Generated
     @Selector("audioMix")
@@ -163,18 +164,22 @@ public class AVMutableAudioMix extends AVAudioMix {
     public native AVMutableAudioMix init();
 
     /**
-     * @property		inputParameters
-     * @abstract		Indicates parameters for inputs to the mix; an NSArray of instances of AVAudioMixInputParameters.
-     * @discussion	Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed according to default behavior.
+     * [@property]		inputParameters
+     * 
+     * Indicates parameters for inputs to the mix; an NSArray of instances of AVAudioMixInputParameters.
+     * 
+     * Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed according to default behavior.
      */
     @Generated
     @Selector("inputParameters")
     public native NSArray<? extends AVAudioMixInputParameters> inputParameters();
 
     /**
-     * @property		inputParameters
-     * @abstract		Indicates parameters for inputs to the mix; an NSArray of instances of AVAudioMixInputParameters.
-     * @discussion	Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed according to default behavior.
+     * [@property]		inputParameters
+     * 
+     * Indicates parameters for inputs to the mix; an NSArray of instances of AVAudioMixInputParameters.
+     * 
+     * Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed according to default behavior.
      */
     @Generated
     @Selector("setInputParameters:")

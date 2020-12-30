@@ -81,8 +81,9 @@ public final class Metal {
             @NUInt long height, @NUInt long depth);
 
     /**
-     * @brief Returns a reference to the preferred system default Metal device.
-     * @discussion On Mac OS X systems that support automatic graphics switching, calling
+     * Returns a reference to the preferred system default Metal device.
+     * 
+     * On Mac OS X systems that support automatic graphics switching, calling
      * this API to get a Metal device will cause the system to switch to the high power
      * GPU.  On other systems that support more than one GPU it will return the GPU that
      * is associated with the main display.
@@ -99,8 +100,9 @@ public final class Metal {
     public static native MTLClearColor MTLClearColorMake(double red, double green, double blue, double alpha);
 
     /**
-     * @constant MTLLibraryErrorDomain
-     * @abstract NSErrors raised when creating a library.
+     * [@constant] MTLLibraryErrorDomain
+     * 
+     * NSErrors raised when creating a library.
      */
     @Generated
     @CVariable()
@@ -108,8 +110,9 @@ public final class Metal {
     public static native String MTLLibraryErrorDomain();
 
     /**
-     * @constant MTLCommandBufferErrorDomain
-     * @abstract An error domain for NSError objects produced by MTLCommandBuffer
+     * [@constant] MTLCommandBufferErrorDomain
+     * 
+     * An error domain for NSError objects produced by MTLCommandBuffer
      */
     @Generated
     @CVariable()
@@ -123,8 +126,9 @@ public final class Metal {
     public static native MTLSamplePosition MTLSamplePositionMake(float x, float y);
 
     /**
-     * @function MTLCoordinate2DMake
-     * @abstract Convenience function to create a 2D coordinate from 2 values.
+     * [@function] MTLCoordinate2DMake
+     * 
+     * Convenience function to create a 2D coordinate from 2 values.
      */
     @Generated
     @Inline
@@ -241,8 +245,9 @@ public final class Metal {
     public static native String MTLCommonCounterSetStatistic();
 
     /**
-     * @constant MTLCounterErrorDomain
-     * @abstract NSErrors raised when creating a counter sample buffer.
+     * [@constant] MTLCounterErrorDomain
+     * 
+     * NSErrors raised when creating a counter sample buffer.
      */
     @Generated
     @CVariable()
@@ -250,7 +255,7 @@ public final class Metal {
     public static native String MTLCounterErrorDomain();
 
     /**
-     * @abstract Key in the userInfo for MTLCommandBufferError NSErrors. Value is an NSArray of MTLCommandBufferEncoderInfo objects in recorded order if an appropriate MTLCommandBufferErrorOption was set, otherwise the key will not exist in the userInfo dictionary.
+     * Key in the userInfo for MTLCommandBufferError NSErrors. Value is an NSArray of MTLCommandBufferEncoderInfo objects in recorded order if an appropriate MTLCommandBufferErrorOption was set, otherwise the key will not exist in the userInfo dictionary.
      */
     @Generated
     @CVariable()

@@ -26,10 +26,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNClassificationObservation
- * @superclass VNObservation
- * @brief VNClassificationObservation returns the classifcation in form of a string.
- * @discussion VNClassificationObservation is the observation returned by VNCoreMLRequests that using a model that is a classifier. A classifier produces an arrary (this can be a single entry) of classifications which are labels (identifiers) and confidence scores.
+ * VNClassificationObservation
+ * [@superclass] VNObservation
+ * 
+ * VNClassificationObservation returns the classifcation in form of a string.
+ * 
+ * VNClassificationObservation is the observation returned by VNCoreMLRequests that using a model that is a classifier. A classifier produces an arrary (this can be a single entry) of classifications which are labels (identifiers) and confidence scores.
  */
 @Generated
 @Library("Vision")
@@ -95,7 +97,7 @@ public class VNClassificationObservation extends VNObservation {
     public static native long hash_static();
 
     /**
-     * @brief The is the label or identifier of a classification request. An example classification could be a string like 'cat' or 'hotdog'. The string is defined in the model that was used for the classification. Usually these are technical labels that are not localized and not meant to be used directly to be presented to an end user in the UI.
+     * The is the label or identifier of a classification request. An example classification could be a string like 'cat' or 'hotdog'. The string is defined in the model that was used for the classification. Usually these are technical labels that are not localized and not meant to be used directly to be presented to an end user in the UI.
      */
     @Generated
     @Selector("identifier")
@@ -168,7 +170,7 @@ public class VNClassificationObservation extends VNObservation {
     public static native long version_static();
 
     /**
-     * @brief	Determine whether or not the observation's operation point for a specific recall has a minimum precision value.
+     * Determine whether or not the observation's operation point for a specific recall has a minimum precision value.
      * 
      * @param minimumPrecision	The minimum precision desired for an operation point.
      * 
@@ -181,7 +183,7 @@ public class VNClassificationObservation extends VNObservation {
     public native boolean hasMinimumPrecisionForRecall(float minimumPrecision, float recall);
 
     /**
-     * @brief	Determine whether or not the observation's operation point for a specific precision has a minimum recall value.
+     * Determine whether or not the observation's operation point for a specific precision has a minimum recall value.
      * 
      * @param minimumRecall	The minimum recall desired for an operation point.
      * 
@@ -194,8 +196,9 @@ public class VNClassificationObservation extends VNObservation {
     public native boolean hasMinimumRecallForPrecision(float minimumRecall, float precision);
 
     /**
-     * @brief	Determine whether or not precision/recall curves are available with the observation.
-     * @discussion	If this property is YES, then all other precision/recall related methods in this addition can be called.
+     * Determine whether or not precision/recall curves are available with the observation.
+     * 
+     * If this property is YES, then all other precision/recall related methods in this addition can be called.
      */
     @Generated
     @Selector("hasPrecisionRecallCurve")

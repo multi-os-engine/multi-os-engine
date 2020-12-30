@@ -44,8 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSImageThresholdToZero
- * @discussion The MPSImageThresholdToZero filter applies a fixed-level threshold to each pixel in the image.
+ * MPSImageThresholdToZero
+ * 
+ * The MPSImageThresholdToZero filter applies a fixed-level threshold to each pixel in the image.
  *             The threshold functions convert a single channel image to a binary image.
  *             If the input image is not a single channel image, convert the inputimage to a single channel
  *             luminance image using the linearGrayColorTransform and then apply the threshold.
@@ -172,7 +173,8 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
     public native MPSImageThresholdToZero initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   initialize a MPSImageThresholdToZero filter
+     * initialize a MPSImageThresholdToZero filter
+     * 
      * @param      device          The device the filter will run on
      * @param      thresholdValue  The threshold value to use
      * @param      transform       This matrix is an array of 3 floats.
@@ -184,16 +186,18 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, ConstFloatPtr transform);
 
     /**
-     * @property thresholdValue
-     * @discussion The threshold value used to init the threshold filter
+     * [@property] thresholdValue
+     * 
+     * The threshold value used to init the threshold filter
      */
     @Generated
     @Selector("thresholdValue")
     public native float thresholdValue();
 
     /**
-     * @property transform
-     * @discussion The color transform used to init the threshold filter
+     * [@property] transform
+     * 
+     * The color transform used to init the threshold filter
      */
     @Generated
     @Selector("transform")
@@ -204,12 +208,14 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
     public native MPSImageThresholdToZero initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.

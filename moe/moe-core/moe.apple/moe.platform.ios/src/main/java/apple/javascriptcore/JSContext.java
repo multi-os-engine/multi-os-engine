@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface
- * @discussion A JSContext is a JavaScript execution environment. All
+ * [@interface]
+ * 
+ * A JSContext is a JavaScript execution environment. All
  *  JavaScript execution takes place within a context, and all JavaScript values
  *  are tied to a context.
  */
@@ -99,59 +100,64 @@ public class JSContext extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @method
-     * @abstract Create a JSContext, wrapping its C API counterpart.
-     * @result The JSContext equivalent of the provided JSGlobalContextRef.
+     * Create a JSContext, wrapping its C API counterpart.
+     * 
+     * @return The JSContext equivalent of the provided JSGlobalContextRef.
      */
     @Generated
     @Selector("contextWithJSGlobalContextRef:")
     public static native JSContext contextWithJSGlobalContextRef(JSGlobalContextRef jsGlobalContextRef);
 
     /**
-     * @method
-     * @abstract Get the arguments to the current callback.
-     * @discussion This method may be called from within an Objective-C block or method invoked
+     * Get the arguments to the current callback.
+     * 
+     * This method may be called from within an Objective-C block or method invoked
      *  as a callback from JavaScript to retrieve the callback's arguments, objects
      *  in the returned array are instances of JSValue. Outside of a callback from
      *  JavaScript this method will return nil.
-     * @result An NSArray of the arguments nil if there is no current callback.
+     * 
+     * @return An NSArray of the arguments nil if there is no current callback.
      */
     @Generated
     @Selector("currentArguments")
     public static native NSArray<?> currentArguments();
 
     /**
-     * @method
-     * @abstract Get the JavaScript function that is currently executing.
-     * @discussion This method may be called from within an Objective-C block or method invoked
+     * Get the JavaScript function that is currently executing.
+     * 
+     * This method may be called from within an Objective-C block or method invoked
      *  as a callback from JavaScript to retrieve the callback's context. Outside of
      *  a callback from JavaScript this method will return nil.
-     * @result The currently executing JavaScript function or nil if there isn't one.
+     * 
+     * @return The currently executing JavaScript function or nil if there isn't one.
      */
     @Generated
     @Selector("currentCallee")
     public static native JSValue currentCallee();
 
     /**
-     * @methodgroup Callback Accessors
-     * @method
-     * @abstract Get the JSContext that is currently executing.
-     * @discussion This method may be called from within an Objective-C block or method invoked
+     * [@methodgroup] Callback Accessors
+     * 
+     * Get the JSContext that is currently executing.
+     * 
+     * This method may be called from within an Objective-C block or method invoked
      *  as a callback from JavaScript to retrieve the callback's context. Outside of
      *  a callback from JavaScript this method will return nil.
-     * @result The currently executing JSContext or nil if there isn't one.
+     * 
+     * @return The currently executing JSContext or nil if there isn't one.
      */
     @Generated
     @Selector("currentContext")
     public static native JSContext currentContext();
 
     /**
-     * @method
-     * @abstract Get the <code>this</code> value of the currently executing method.
-     * @discussion This method may be called from within an Objective-C block or method invoked
+     * Get the <code>this</code> value of the currently executing method.
+     * 
+     * This method may be called from within an Objective-C block or method invoked
      *  as a callback from JavaScript to retrieve the callback's this value. Outside
      *  of a callback from JavaScript this method will return nil.
-     * @result The current <code>this</code> value or nil if there isn't one.
+     * 
+     * @return The current <code>this</code> value or nil if there isn't one.
      */
     @Generated
     @Selector("currentThis")
@@ -219,39 +225,43 @@ public class JSContext extends NSObject {
     public static native long version_static();
 
     /**
-     * @property
-     * @abstract Get the C API counterpart wrapped by a JSContext.
-     * @result The C API equivalent of this JSContext.
+     * [@property]
+     * 
+     * Get the C API counterpart wrapped by a JSContext.
+     * 
+     * @return The C API equivalent of this JSContext.
      */
     @Generated
     @Selector("JSGlobalContextRef")
     public native JSGlobalContextRef JSGlobalContextRef();
 
     /**
-     * @methodgroup Evaluating Scripts
-     * @method
-     * @abstract Evaluate a string of JavaScript code.
+     * [@methodgroup] Evaluating Scripts
+     * 
+     * Evaluate a string of JavaScript code.
+     * 
      * @param script A string containing the JavaScript code to evaluate.
-     * @result The last value generated by the script.
+     * @return The last value generated by the script.
      */
     @Generated
     @Selector("evaluateScript:")
     public native JSValue evaluateScript(String script);
 
     /**
-     * @method
-     * @abstract Evaluate a string of JavaScript code, with a URL for the script's source file.
+     * Evaluate a string of JavaScript code, with a URL for the script's source file.
+     * 
      * @param script A string containing the JavaScript code to evaluate.
      * @param sourceURL A URL for the script's source file. Used by debuggers and when reporting exceptions. This parameter is informative only: it does not change the behavior of the script.
-     * @result The last value generated by the script.
+     * @return The last value generated by the script.
      */
     @Generated
     @Selector("evaluateScript:withSourceURL:")
     public native JSValue evaluateScriptWithSourceURL(String script, NSURL sourceURL);
 
     /**
-     * @property
-     * @discussion The <code>exception</code> property may be used to throw an exception to JavaScript.
+     * [@property]
+     * 
+     * The <code>exception</code> property may be used to throw an exception to JavaScript.
      * 
      *  Before a callback is made from JavaScript to an Objective-C block or method,
      *  the prior value of the exception property will be preserved and the property
@@ -268,8 +278,9 @@ public class JSContext extends NSObject {
     public native JSValue exception();
 
     /**
-     * @property
-     * @discussion If a call to an API function results in an uncaught JavaScript exception, the
+     * [@property]
+     * 
+     * If a call to an API function results in an uncaught JavaScript exception, the
      *  <code>exceptionHandler</code> block will be invoked. The default implementation for the
      *  exception handler will store the exception to the exception property on
      *  context. As a consequence the default behaviour is for uncaught exceptions
@@ -283,57 +294,63 @@ public class JSContext extends NSObject {
     public native Block_exceptionHandler_ret exceptionHandler();
 
     /**
-     * @property
-     * @abstract Get the global object of the context.
-     * @discussion This method retrieves the global object of the JavaScript execution context.
+     * [@property]
+     * 
+     * Get the global object of the context.
+     * 
+     * This method retrieves the global object of the JavaScript execution context.
      *  Instances of JSContext originating from WebKit will return a reference to the
      *  WindowProxy object.
-     * @result The global object.
+     * 
+     * @return The global object.
      */
     @Generated
     @Selector("globalObject")
     public native JSValue globalObject();
 
     /**
-     * @methodgroup Creating New JSContexts
-     * @method
-     * @abstract Create a JSContext.
-     * @result The new context.
+     * [@methodgroup] Creating New JSContexts
+     * 
+     * Create a JSContext.
+     * 
+     * @return The new context.
      */
     @Generated
     @Selector("init")
     public native JSContext init();
 
     /**
-     * @method
-     * @abstract Create a JSContext in the specified virtual machine.
+     * Create a JSContext in the specified virtual machine.
+     * 
      * @param virtualMachine The JSVirtualMachine in which the context will be created.
-     * @result The new context.
+     * @return The new context.
      */
     @Generated
     @Selector("initWithVirtualMachine:")
     public native JSContext initWithVirtualMachine(JSVirtualMachine virtualMachine);
 
     /**
-     * @property
-     * @discussion Name of the JSContext. Exposed when remote debugging the context.
+     * [@property]
+     * 
+     * Name of the JSContext. Exposed when remote debugging the context.
      */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
-     * @method
-     * @abstract Get a particular property on the global object.
-     * @result The JSValue for the global object's property.
+     * Get a particular property on the global object.
+     * 
+     * @return The JSValue for the global object's property.
      */
     @Generated
     @Selector("objectForKeyedSubscript:")
     public native JSValue objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
 
     /**
-     * @property
-     * @discussion The <code>exception</code> property may be used to throw an exception to JavaScript.
+     * [@property]
+     * 
+     * The <code>exception</code> property may be used to throw an exception to JavaScript.
      * 
      *  Before a callback is made from JavaScript to an Objective-C block or method,
      *  the prior value of the exception property will be preserved and the property
@@ -350,8 +367,9 @@ public class JSContext extends NSObject {
     public native void setException(JSValue value);
 
     /**
-     * @property
-     * @discussion If a call to an API function results in an uncaught JavaScript exception, the
+     * [@property]
+     * 
+     * If a call to an API function results in an uncaught JavaScript exception, the
      *  <code>exceptionHandler</code> block will be invoked. The default implementation for the
      *  exception handler will store the exception to the exception property on
      *  context. As a consequence the default behaviour is for uncaught exceptions
@@ -365,24 +383,25 @@ public class JSContext extends NSObject {
             @ObjCBlock(name = "call_setExceptionHandler") Block_setExceptionHandler value);
 
     /**
-     * @property
-     * @discussion Name of the JSContext. Exposed when remote debugging the context.
+     * [@property]
+     * 
+     * Name of the JSContext. Exposed when remote debugging the context.
      */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
     /**
-     * @method
-     * @abstract Set a particular property on the global object.
+     * Set a particular property on the global object.
      */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object object, NSObject key);
 
     /**
-     * @property
-     * @discussion All instances of JSContext are associated with a JSVirtualMachine.
+     * [@property]
+     * 
+     * All instances of JSContext are associated with a JSVirtualMachine.
      */
     @Generated
     @Selector("virtualMachine")

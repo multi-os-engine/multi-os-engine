@@ -16,17 +16,18 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("VNRequestProgressProviding")
 public interface VNRequestProgressProviding {
     /**
-     * @brief If a request cannot determine its progress in fractions completed, this property will be set.
-     * @discussion If this is set, it doesn't mean that the request will run forever just that the nature of the request is not broken down into identifiable fractions on which progress can be reported in increments. The progressHandler will nonetheless be called at suitable intervals.
+     * If a request cannot determine its progress in fractions completed, this property will be set.
+     * 
+     * If this is set, it doesn't mean that the request will run forever just that the nature of the request is not broken down into identifiable fractions on which progress can be reported in increments. The progressHandler will nonetheless be called at suitable intervals.
      */
     @Generated
     @Selector("indeterminate")
     boolean indeterminate();
 
     /**
-     * @brief Requests that support the VNRequestProgressProviding protocol would periodically call the progressHandler to report progress on longer running tasks.
+     * Requests that support the VNRequestProgressProviding protocol would periodically call the progressHandler to report progress on longer running tasks.
      * 
-     * @discussion The progessHandler is optional allowing clients of the request to report progress to the user and/or display or process partial results when they become available. Note that the progressHandler can be called on a different dispatch queue than what the request was initiated from.
+     * The progessHandler is optional allowing clients of the request to report progress to the user and/or display or process partial results when they become available. Note that the progressHandler can be called on a different dispatch queue than what the request was initiated from.
      */
     @Generated
     @Selector("progressHandler")
@@ -41,9 +42,9 @@ public interface VNRequestProgressProviding {
     }
 
     /**
-     * @brief Requests that support the VNRequestProgressProviding protocol would periodically call the progressHandler to report progress on longer running tasks.
+     * Requests that support the VNRequestProgressProviding protocol would periodically call the progressHandler to report progress on longer running tasks.
      * 
-     * @discussion The progessHandler is optional allowing clients of the request to report progress to the user and/or display or process partial results when they become available. Note that the progressHandler can be called on a different dispatch queue than what the request was initiated from.
+     * The progessHandler is optional allowing clients of the request to report progress to the user and/or display or process partial results when they become available. Note that the progressHandler can be called on a different dispatch queue than what the request was initiated from.
      */
     @Generated
     @Selector("setProgressHandler:")

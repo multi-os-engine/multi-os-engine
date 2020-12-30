@@ -19,11 +19,12 @@ package apple.corevideo.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum           SMPTE State Flags
- * @abstract       Flags that describe the SMPTE time state.
- * @constant       kCVSMPTETimeValid
+ * [@enum]           SMPTE State Flags
+ * 
+ * Flags that describe the SMPTE time state.
+ * [@constant]       kCVSMPTETimeValid
  *                     The full time is valid.
- * @constant       kCVSMPTETimeRunning
+ * [@constant]       kCVSMPTETimeRunning
  *                     Time is running.
  */
 @Generated

@@ -2767,9 +2767,11 @@ public final class CFNetwork {
             Ptr<CFStringRef> description);
 
     /**
-     * @function CFNetworkCopySystemProxySettings
-     * @discussion Returns a CFDictionary containing the current system internet proxy settings.
-     * @result Returns a dictionary containing key-value pairs that represent
+     * [@function] CFNetworkCopySystemProxySettings
+     * 
+     * Returns a CFDictionary containing the current system internet proxy settings.
+     * 
+     * @return Returns a dictionary containing key-value pairs that represent
      * 	the current internet proxy settings.  See below for definitions of the keys and
      * 	values.
      * 	NULL if no proxy settings have been defined or if an error

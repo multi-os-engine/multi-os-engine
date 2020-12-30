@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class     MIDICIResponder
- * @brief     Responds to MIDI-CI inquiries from an initiator on behalf of a MIDIClient and handles profile and property change
+ * MIDICIResponder
+ * 
+ * Responds to MIDI-CI inquiries from an initiator on behalf of a MIDIClient and handles profile and property change
  *            operations for the Responder role.
  */
 @Generated

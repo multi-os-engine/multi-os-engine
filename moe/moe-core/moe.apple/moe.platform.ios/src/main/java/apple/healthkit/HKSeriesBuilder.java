@@ -24,8 +24,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKSeriesBuilder
- * @abstract      An HKSeriesBuilder is an abstract class for generating HKSeriesSample objects. 
+ * HKSeriesBuilder
+ * 
+ * An HKSeriesBuilder is an abstract class for generating HKSeriesSample objects.
  *                Concrete subclasses generate the actual HKSeriesSample objects.
  */
 @Generated
@@ -87,9 +88,11 @@ public class HKSeriesBuilder extends NSObject {
     public static native String description_static();
 
     /**
-     * @method        discard
-     * @abstract      Stop series generation and discard all collected data.
-     * @discussion    This method informs the receiver that no more data should be collected and all
+     * discard
+     * 
+     * Stop series generation and discard all collected data.
+     * 
+     * This method informs the receiver that no more data should be collected and all
      *                previously collected data should be deleted and the receiver will be considered
      *                invalid. Any further calls to the receiver will result in an exception.
      */

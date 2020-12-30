@@ -14,10 +14,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol CHHapticPatternPlayer
- * @abstract
+ * [@protocol] CHHapticPatternPlayer
+ * 
  * 	A protocol which defines operations for starting, stopping, and sending parameters to a pattern player.
- * @discussion
+ * 
  * 	Instances of these objects are created via the factory methods such as
  *        `CHHapticEngine(createPlayerWithPattern:error)`.
  */
@@ -27,8 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("CHHapticPatternPlayer")
 public interface CHHapticPatternPlayer {
     /**
-     * @method cancelAndReturnError:
-     * @abstract
+     * cancelAndReturnError:
+     * 
      * 	Removes all pending commands and stops the player as soon as possible.
      */
     @Generated
@@ -36,8 +36,8 @@ public interface CHHapticPatternPlayer {
     boolean cancelAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property isMuted
-     * @abstract
+     * [@property] isMuted
+     * 
      * 	When set to YES, the player's audio and haptic output will be silenced.
      */
     @Generated
@@ -45,11 +45,11 @@ public interface CHHapticPatternPlayer {
     boolean isMuted();
 
     /**
-     * @method scheduleParameterCurve:atTime:error
-     * @abstract
+     * scheduleParameterCurve:atTime:error
+     * 
      * 	Schedule a CHHapticParameterCurve, starting at the specified time (see `CHHapticEngine(currentTime)`).
      * 	If 'time' is set to `CHHapticTimeImmediate`, the parameter curve is scheduled as soon as possible.
-     * @discussion
+     * 
      * 	This method overrides the relativeTime property of the passed-in CHHapticParameterCurve,
      * 	setting it to this method's 'time' argument. All the curve's control point times will then be
      * 	calculated relative to that time.
@@ -60,8 +60,8 @@ public interface CHHapticPatternPlayer {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method sendParameters:atTime:error
-     * @abstract
+     * sendParameters:atTime:error
+     * 
      * 	Send an array of CHHapticDynamicParameters, starting at the specified time (see `CHHapticEngine(currentTime)`).
      * 	If 'time' is set to `CHHapticTimeImmediate`, the parameters are sent as soon as possible.
      */
@@ -71,8 +71,8 @@ public interface CHHapticPatternPlayer {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @property isMuted
-     * @abstract
+     * [@property] isMuted
+     * 
      * 	When set to YES, the player's audio and haptic output will be silenced.
      */
     @Generated
@@ -80,8 +80,8 @@ public interface CHHapticPatternPlayer {
     void setIsMuted(boolean value);
 
     /**
-     * @method startAtTime:error
-     * @abstract
+     * startAtTime:error
+     * 
      * 	Start playing the pattern at the specified time (see `CHHapticEngine(currentTime)`).
      * 	If 'time' is set to `CHHapticTimeImmediate`, the pattern is started as soon as possible.
      */
@@ -90,8 +90,8 @@ public interface CHHapticPatternPlayer {
     boolean startAtTimeError(double time, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method stopAtTime:error
-     * @abstract
+     * stopAtTime:error
+     * 
      * 	Stop playing the pattern at the specified time (see `CHHapticEngine(currentTime)`).
      * 	If 'time' is set to `CHHapticTimeImmediate`, the pattern is stopped as soon as possible.
      */

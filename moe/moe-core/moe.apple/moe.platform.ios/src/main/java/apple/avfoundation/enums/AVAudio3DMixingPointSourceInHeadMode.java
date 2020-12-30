@@ -4,9 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudio3DMixingPointSourceInHeadMode
- * @abstract In-head modes available for AVAudio3DMixingSourceModePointSource in AVAudio3DMixingRenderingAlgorithmAuto
- * @discussion
+ * [@enum] AVAudio3DMixingPointSourceInHeadMode
+ * 
+ * In-head modes available for AVAudio3DMixingSourceModePointSource in AVAudio3DMixingRenderingAlgorithmAuto
+ * 
  *     The in-head modes differ in what happens when a point source moves inside the
  *     listener's head while using AVAudio3DMixingRenderingAlgorithmAuto.
  * 

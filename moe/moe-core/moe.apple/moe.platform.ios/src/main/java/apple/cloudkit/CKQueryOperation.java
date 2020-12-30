@@ -157,9 +157,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public native CKQueryCursor cursor();
 
     /**
-     * @abstract Declares which user-defined keys should be fetched and added to the resulting CKRecords.
+     * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
      * 
-     * @discussion If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
      * Defaults to @c nil.
      */
     @Generated
@@ -186,9 +186,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public native CKQuery query();
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -197,9 +197,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public native Block_queryCompletionBlock_ret queryCompletionBlock();
 
     /**
-     * @abstract This block will be called once for every record that is returned as a result of the query.
+     * This block will be called once for every record that is returned as a result of the query.
      * 
-     * @discussion The callbacks will happen in the order that the results were sorted in.
+     * The callbacks will happen in the order that the results were sorted in.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -208,7 +208,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public native Block_recordFetchedBlock_ret recordFetchedBlock();
 
     /**
-     * @discussion Defaults to @c CKQueryOperationMaximumResults.
+     * Defaults to @c CKQueryOperationMaximumResults.
      * Queries may return fewer than @c resultsLimit in some scenarios:
      * - There are legitimately fewer than @c resultsLimit number of records matching the query (and visible to the current user).
      * - During the process of querying and fetching the results, some records were deleted, or became un-readable by the current user.
@@ -224,9 +224,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public native void setCursor(CKQueryCursor value);
 
     /**
-     * @abstract Declares which user-defined keys should be fetched and added to the resulting CKRecords.
+     * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
      * 
-     * @discussion If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
      * Defaults to @c nil.
      */
     @Generated
@@ -238,9 +238,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public native void setQuery(CKQuery value);
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -249,9 +249,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
             @ObjCBlock(name = "call_setQueryCompletionBlock") Block_setQueryCompletionBlock value);
 
     /**
-     * @abstract This block will be called once for every record that is returned as a result of the query.
+     * This block will be called once for every record that is returned as a result of the query.
      * 
-     * @discussion The callbacks will happen in the order that the results were sorted in.
+     * The callbacks will happen in the order that the results were sorted in.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -260,7 +260,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
             @ObjCBlock(name = "call_setRecordFetchedBlock") Block_setRecordFetchedBlock value);
 
     /**
-     * @discussion Defaults to @c CKQueryOperationMaximumResults.
+     * Defaults to @c CKQueryOperationMaximumResults.
      * Queries may return fewer than @c resultsLimit in some scenarios:
      * - There are legitimately fewer than @c resultsLimit number of records matching the query (and visible to the current user).
      * - During the process of querying and fetching the results, some records were deleted, or became un-readable by the current user.
@@ -271,18 +271,18 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public native void setResultsLimit(@NUInt long value);
 
     /**
-     * @abstract Indicates which record zone to query.
+     * Indicates which record zone to query.
      * 
-     * @discussion For query operations constructed using a cursor, this property is ignored and instead will be evaluated in the record zone in which the cursor was originally created.
+     * For query operations constructed using a cursor, this property is ignored and instead will be evaluated in the record zone in which the cursor was originally created.
      */
     @Generated
     @Selector("setZoneID:")
     public native void setZoneID(CKRecordZoneID value);
 
     /**
-     * @abstract Indicates which record zone to query.
+     * Indicates which record zone to query.
      * 
-     * @discussion For query operations constructed using a cursor, this property is ignored and instead will be evaluated in the record zone in which the cursor was originally created.
+     * For query operations constructed using a cursor, this property is ignored and instead will be evaluated in the record zone in which the cursor was originally created.
      */
     @Generated
     @Selector("zoneID")

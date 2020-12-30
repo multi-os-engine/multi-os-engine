@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract      CLSBinaryItem represents user generated information that is true or false, pass or fail, yes or no.
+ * CLSBinaryItem represents user generated information that is true or false, pass or fail, yes or no.
  */
 @Generated
 @Library("ClassKit")
@@ -100,7 +100,8 @@ public class CLSBinaryItem extends CLSActivityItem {
     public native CLSBinaryItem initWithCoder(NSCoder coder);
 
     /**
-     * @abstract      Create an item that represents a binary value
+     * Create an item that represents a binary value
+     * 
      * @param         title           Title of the CLSBinaryItem.
      * @param         identifier      An identifier that is unique within its owning activity.
      * @param         valueType       The type of binary value. Ex. pass or fail.
@@ -145,7 +146,7 @@ public class CLSBinaryItem extends CLSActivityItem {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @abstract      True or false value.
+     * True or false value.
      */
     @Generated
     @Selector("setValue:")
@@ -170,15 +171,16 @@ public class CLSBinaryItem extends CLSActivityItem {
     }
 
     /**
-     * @abstract      True or false value.
+     * True or false value.
      */
     @Generated
     @Selector("value")
     public native boolean value();
 
     /**
-     * @abstract      Value type of this CLSBinaryItem.
-     * @discussion    The type that best describes this CLSBinaryItem value.
+     * Value type of this CLSBinaryItem.
+     * 
+     * The type that best describes this CLSBinaryItem value.
      */
     @Generated
     @Selector("valueType")

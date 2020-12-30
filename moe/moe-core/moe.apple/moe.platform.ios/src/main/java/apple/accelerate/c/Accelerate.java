@@ -15559,51 +15559,37 @@ public final class Accelerate {
             DoublePtr __rmax);
 
     /**
-     * @abstract
      * Increment the reference count of a la_object_t object.
+     * 
+     * On a platform with the modern Objective-C runtime this is exactly equivalent
+     * to sending the object the -[retain] message.
      * 
      * @param object
      * The object to retain.
      * 
-     * @result
+     * @return
      * The retained object.
-     * 
-     * @discussion
-     * On a platform with the modern Objective-C runtime this is exactly equivalent
-     * to sending the object the -[retain] message.
      */
     @Generated
     @CFunction
     public static native NSObject la_retain(NSObject object);
 
     /**
-     * @abstract
      * Decrement the reference count of an la_object_t object.
+     * 
+     * On a platform with the modern Objective-C runtime this is exactly equivalent
+     * to sending the object the -[release] message.
      * 
      * @param object
      * The object to release.
-     * 
-     * @discussion
-     * On a platform with the modern Objective-C runtime this is exactly equivalent
-     * to sending the object the -[release] message.
      */
     @Generated
     @CFunction
     public static native void la_release(NSObject object);
 
     /**
-     * @abstract
      * Add attributes to an la_object_t object.
      * 
-     * @param object
-     * The object that will have its attributes modified.
-     * 
-     * @param attributes
-     * Attributes which are to be added to the object's existing attributes
-     * to create its new set of attributes.  This value should be constructed by
-     * or'ing together LA_ATTRIBUTE_* constants.
-     * 
-     * @discussion
      * This operation does not remove any existing attributes from the LinearAlgebra 
      * object, though it is possible that some attributes will override others (if so, 
      * this will be documented in the discussion of those attributes above).  
@@ -15614,14 +15600,28 @@ public final class Accelerate {
      * 
      * This function is not reentrant or thread-safe.  Attempting to add or remove
      * attributes from multiple threads will have unpredictable results.
+     * 
+     * @param object
+     * The object that will have its attributes modified.
+     * 
+     * @param attributes
+     * Attributes which are to be added to the object's existing attributes
+     * to create its new set of attributes.  This value should be constructed by
+     * or'ing together LA_ATTRIBUTE_* constants.
      */
     @Generated
     @CFunction
     public static native void la_add_attributes(NSObject object, @NUInt long attributes);
 
     /**
-     * @abstract
      * Remove attributes from an la_object_t object.
+     * 
+     * This function removes the specified attributes from the LinearAlgebra object.
+     * Removing an attribute that the object does not have is harmless and does not
+     * change the object.
+     * 
+     * This function is not reentrant or thread-safe.  Attempting to add or remove
+     * attributes from multiple threads will have unpredictable results.
      * 
      * @param object
      * The object that will have its attributes modified.
@@ -15630,29 +15630,15 @@ public final class Accelerate {
      * Attributes which are to be removed from the object's existing attributes
      * to create its new set of attributes.  This value should be constructed by
      * or'ing together LA_ATTRIBUTE_* constants.
-     * 
-     * @discussion
-     * This function removes the specified attributes from the LinearAlgebra object.
-     * Removing an attribute that the object does not have is harmless and does not
-     * change the object.
-     * 
-     * This function is not reentrant or thread-safe.  Attempting to add or remove
-     * attributes from multiple threads will have unpredictable results.
      */
     @Generated
     @CFunction
     public static native void la_remove_attributes(NSObject object, @NUInt long attributes);
 
     /**
-     * @abstract Query the status of an la_object.
+     * Query the status of an la_object.
      * 
-     * @param object
-     * The object whose status is being requested.
-     * 
-     * @return
-     * The status of the supplied object.
-     * 
-     * @discussion Returns the status of a LinearAlgebra object.  The status will be 
+     * Returns the status of a LinearAlgebra object.  The status will be
      * one of the codes defined in LinearAlgebra/base.h.  New status codes may be
      * added in the future, but the following basic principle will continue to hold: 
      * zero indicates success, status codes greater than zero are warnings, and
@@ -15680,6 +15666,12 @@ public final class Accelerate {
      * to do a complete computation, then check to see if anything went wrong.
      * Querying status may force evaluation of parts of your computation that might
      * otherwise be deferred until their results were actually needed.
+     * 
+     * @param object
+     * The object whose status is being requested.
+     * 
+     * @return
+     * The status of the supplied object.
      */
     @Generated
     @CFunction
@@ -15687,9 +15679,24 @@ public final class Accelerate {
     public static native long la_status(NSObject object);
 
     /**
-     * @abstract
      * Create a matrix using data from a buffer of floats.  Ownership of the buffer
      * remains in control of the caller.
+     * 
+     * This function creates an object representing a matrix whose entries are
+     * copied out of the supplied buffer of floats.  Negative or zero strides
+     * are not supported by this function (but note that you can reverse the
+     * rows or columns using the la_matrix_slice function defined below).
+     * 
+     * This routine assumes that the elements of the matrix are stored in the buffer
+     * in row-major order.  If you need to work with data that is in column-major
+     * order, you can do that as follows:
+     * 
+     * 1. Use this routine to create a matrix object, but pass the number of
+     * columns in your matrix for the matrix_rows parameter and vice-versa.  For
+     * the matrix_row_stride parameter, pass the column stride of your matrix.
+     * 
+     * 2. Make a new matrix transpose object from the object created in step 1.  The
+     * resulting object represents the matrix that you want to work with.
      * 
      * @param buffer
      * Pointer to float data providing the elements of the matrix.
@@ -15712,23 +15719,6 @@ public final class Accelerate {
      * to create a normal object.
      * 
      * @return a new la_object_t object representing the matrix.
-     * 
-     * @discussion
-     * This function creates an object representing a matrix whose entries are
-     * copied out of the supplied buffer of floats.  Negative or zero strides
-     * are not supported by this function (but note that you can reverse the
-     * rows or columns using the la_matrix_slice function defined below).
-     * 
-     * This routine assumes that the elements of the matrix are stored in the buffer
-     * in row-major order.  If you need to work with data that is in column-major
-     * order, you can do that as follows:
-     * 
-     * 1. Use this routine to create a matrix object, but pass the number of
-     * columns in your matrix for the matrix_rows parameter and vice-versa.  For
-     * the matrix_row_stride parameter, pass the column stride of your matrix.
-     * 
-     * 2. Make a new matrix transpose object from the object created in step 1.  The
-     * resulting object represents the matrix that you want to work with.
      */
     @Generated
     @CFunction
@@ -15736,33 +15726,9 @@ public final class Accelerate {
             @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint, @NUInt long attributes);
 
     /**
-     * @abstract
      * Create a matrix using data from a buffer of doubles.  Ownership of the buffer
      * remains in control of the caller.
      * 
-     * @param buffer
-     * Pointer to double data providing the elements of the matrix.
-     * 
-     * @param matrix_rows
-     * The number of rows in the matrix.
-     * 
-     * @param matrix_cols
-     * The number of columns in the matrix.
-     * 
-     * @param matrix_row_stride
-     * The offset in the buffer (measured in doubles) between corresponding elements
-     * in consecutive rows of the matrix.  Must be positive.
-     * 
-     * @param matrix_hint
-     * Flags describing special matrix structures.
-     * 
-     * @param attributes
-     * Attributes to attach to the new la_object_t object.  Pass LA_DEFAULT_ATTRIBUTES
-     * to create a normal object.
-     * 
-     * @return a new la_object_t object representing the matrix.
-     * 
-     * @discussion
      * This function creates an object representing a matrix whose entries are
      * copied out of the supplied buffer of doubles.  Negative or zero strides
      * are not supported by this function (but note that you can reverse the
@@ -15778,6 +15744,28 @@ public final class Accelerate {
      * 
      * 2. Make a new matrix transpose object from the object created in step 1.  The
      * resulting object represents the matrix that you want to work with.
+     * 
+     * @param buffer
+     * Pointer to double data providing the elements of the matrix.
+     * 
+     * @param matrix_rows
+     * The number of rows in the matrix.
+     * 
+     * @param matrix_cols
+     * The number of columns in the matrix.
+     * 
+     * @param matrix_row_stride
+     * The offset in the buffer (measured in doubles) between corresponding elements
+     * in consecutive rows of the matrix.  Must be positive.
+     * 
+     * @param matrix_hint
+     * Flags describing special matrix structures.
+     * 
+     * @param attributes
+     * Attributes to attach to the new la_object_t object.  Pass LA_DEFAULT_ATTRIBUTES
+     * to create a normal object.
+     * 
+     * @return a new la_object_t object representing the matrix.
      */
     @Generated
     @CFunction
@@ -15785,9 +15773,24 @@ public final class Accelerate {
             @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint, @NUInt long attributes);
 
     /**
-     * @abstract
      * Create a matrix using data from a buffer of floats.  Ownership of the buffer
      * is transferred from the caller to the returned object.
+     * 
+     * This function creates an object representing a matrix whose entries are
+     * copied out of the supplied buffer of floats.  Negative or zero strides
+     * are not supported by this function (but note that you can reverse the
+     * rows or columns using the la_matrix_slice function defined below).
+     * 
+     * This routine assumes that the elements of the matrix are stored in the buffer
+     * in row-major order.  If you need to work with data that is in column-major
+     * order, you can do that as follows:
+     * 
+     * 1. Use this routine to create a matrix object, but pass the number of
+     * columns in your matrix for the matrix_rows parameter and vice-versa.  For
+     * the matrix_row_stride parameter, pass the column stride of your matrix.
+     * 
+     * 2. Make a new matrix transpose object from the object created in step 1.  The
+     * resulting object represents the matrix that you want to work with.
      * 
      * @param buffer
      * Pointer to float data providing the elements of the matrix.
@@ -15814,23 +15817,6 @@ public final class Accelerate {
      * to create a normal object.
      * 
      * @return a new la_object_t object representing the matrix.
-     * 
-     * @discussion
-     * This function creates an object representing a matrix whose entries are
-     * copied out of the supplied buffer of floats.  Negative or zero strides
-     * are not supported by this function (but note that you can reverse the
-     * rows or columns using the la_matrix_slice function defined below).
-     * 
-     * This routine assumes that the elements of the matrix are stored in the buffer
-     * in row-major order.  If you need to work with data that is in column-major
-     * order, you can do that as follows:
-     * 
-     * 1. Use this routine to create a matrix object, but pass the number of
-     * columns in your matrix for the matrix_rows parameter and vice-versa.  For
-     * the matrix_row_stride parameter, pass the column stride of your matrix.
-     * 
-     * 2. Make a new matrix transpose object from the object created in step 1.  The
-     * resulting object represents the matrix that you want to work with.
      */
     @Generated
     @CFunction
@@ -15840,37 +15826,9 @@ public final class Accelerate {
             @NUInt long attributes);
 
     /**
-     * @abstract
      * Create a matrix using data from a buffer of doubles.  Ownership of the buffer
      * is transferred from the caller to the returned object.
      * 
-     * @param buffer
-     * Pointer to double data providing the elements of the matrix.
-     * 
-     * @param matrix_rows
-     * The number of rows in the matrix.
-     * 
-     * @param matrix_cols
-     * The number of columns in the matrix.
-     * 
-     * @param matrix_row_stride
-     * The offset in the buffer (measured in doubles) between corresponding elements
-     * in consecutive rows of the matrix.  Must be positive.
-     * 
-     * @param matrix_hint
-     * Flags describing special matrix structures.
-     * 
-     * @param deallocator
-     * Callback to be used to deallocate the buffer when the returned matrix object
-     * is destroyed.
-     * 
-     * @param attributes
-     * Attributes to attach to the new la_object_t object.  Pass LA_DEFAULT_ATTRIBUTES
-     * to create a normal object.
-     * 
-     * @return a new la_object_t object representing the matrix.
-     * 
-     * @discussion
      * This function creates an object representing a matrix whose entries are
      * copied out of the supplied buffer of doubles.  Negative or zero strides
      * are not supported by this function (but note that you can reverse
@@ -15886,6 +15844,32 @@ public final class Accelerate {
      * 
      * 2. Make a new matrix transpose object from the object created in step 1.  The
      * resulting object represents the matrix that you want to work with.
+     * 
+     * @param buffer
+     * Pointer to double data providing the elements of the matrix.
+     * 
+     * @param matrix_rows
+     * The number of rows in the matrix.
+     * 
+     * @param matrix_cols
+     * The number of columns in the matrix.
+     * 
+     * @param matrix_row_stride
+     * The offset in the buffer (measured in doubles) between corresponding elements
+     * in consecutive rows of the matrix.  Must be positive.
+     * 
+     * @param matrix_hint
+     * Flags describing special matrix structures.
+     * 
+     * @param deallocator
+     * Callback to be used to deallocate the buffer when the returned matrix object
+     * is destroyed.
+     * 
+     * @param attributes
+     * Attributes to attach to the new la_object_t object.  Pass LA_DEFAULT_ATTRIBUTES
+     * to create a normal object.
+     * 
+     * @return a new la_object_t object representing the matrix.
      */
     @Generated
     @CFunction
@@ -15895,20 +15879,8 @@ public final class Accelerate {
             @NUInt long attributes);
 
     /**
-     * @abstract
      * Stores the elements of a matrix to a buffer.
      * 
-     * @param buffer
-     * Pointer to the destination buffer.
-     * 
-     * @param buffer_row_stride
-     * Offset (measured in floats) between the destinations of corresponding elements
-     * of consecutive rows of the matrix.  Must be positive.
-     * 
-     * @param matrix
-     * The matrix to store.
-     * 
-     * @discussion
      * The buffer must be large enough to accomodate the matrix being stored.
      * Specifically, it must have sufficient space to hold
      * 
@@ -15924,6 +15896,16 @@ public final class Accelerate {
      * 
      * If the object is not a matrix or vector, nothing is written to the buffer and
      * LA_INVALID_PARAMETER_ERROR is returned.
+     * 
+     * @param buffer
+     * Pointer to the destination buffer.
+     * 
+     * @param buffer_row_stride
+     * Offset (measured in floats) between the destinations of corresponding elements
+     * of consecutive rows of the matrix.  Must be positive.
+     * 
+     * @param matrix
+     * The matrix to store.
      */
     @Generated
     @CFunction
@@ -15932,20 +15914,8 @@ public final class Accelerate {
             NSObject matrix);
 
     /**
-     * @abstract
      * Stores the elements of a matrix to a buffer.
      * 
-     * @param buffer
-     * Pointer to the destination buffer.
-     * 
-     * @param buffer_row_stride
-     * Offset (measured in doubles) between the destinations of corresponding elements
-     * of consecutive rows of the matrix.  Must be positive.
-     * 
-     * @param matrix
-     * The matrix to store.
-     * 
-     * @discussion
      * The buffer must be large enough to accomodate the matrix being stored.
      * Specifically, it must have sufficient space to hold
      * 
@@ -15961,6 +15931,16 @@ public final class Accelerate {
      * 
      * If the object is not a matrix or vector, nothing is written to the buffer and
      * LA_INVALID_PARAMETER_ERROR is returned.
+     * 
+     * @param buffer
+     * Pointer to the destination buffer.
+     * 
+     * @param buffer_row_stride
+     * Offset (measured in doubles) between the destinations of corresponding elements
+     * of consecutive rows of the matrix.  Must be positive.
+     * 
+     * @param matrix
+     * The matrix to store.
      */
     @Generated
     @CFunction
@@ -15969,10 +15949,8 @@ public final class Accelerate {
             NSObject matrix);
 
     /**
-     * @abstract
      * Get the number of rows in a matrix.
      * 
-     * @discussion
      * If the argument has an error status, zero is returned.
      * If the argument is a vector, the number of rows may be 1 or length(vector) 
      * depending on the orientation of the vector.
@@ -15985,10 +15963,8 @@ public final class Accelerate {
     public static native long la_matrix_rows(NSObject matrix);
 
     /**
-     * @abstract
      * Get the number of columns in a matrix.
      * 
-     * @discussion
      * If the argument has an error status, zero is returned.
      * If the argument is a vector, the number of columns may be 1 or length(vector)
      * depending on the orientation of the vector.
@@ -16001,8 +15977,26 @@ public final class Accelerate {
     public static native long la_matrix_cols(NSObject matrix);
 
     /**
-     * @abstract
      * Create a slice of a matrix.
+     * 
+     * The result object is the slice_rows x slice_cols matrix whose i,jth entry is:
+     * 
+     *    matrix[matrix_first_row + i*matrix_row_stride,
+     *           matrix_first_col + j*matrix_col_stride]
+     * 
+     * Slices provide an efficient means to operate on tiles and strides.  These are
+     * lightweight objects that reference the storage of the matrix from which they
+     * originate.  In most cases, creating a slice does not require any allocation
+     * beyond the object representing the slice, nor require copying.  In some 
+     * less common cases, a copy may be required.
+     * 
+     * This function supports slicing a vector (interpreted as 
+     * rows(matrix) x cols(matrix)) or a matrix.  If the object is not a matrix or 
+     * vector, the returned object will have status LA_INVALID_PARAMETER_ERROR.
+     * 
+     * If the slice references indices that are less than zero or greater than or
+     * equal to the dimensions of the matrix, LA_SLICE_OUT_OF_BOUNDS_ERROR is 
+     * returned.
      * 
      * @param matrix
      * The matrix to be sliced.
@@ -16032,26 +16026,6 @@ public final class Accelerate {
      * @return
      * A new matrix with size slice_rows x slice_cols whose elements are taken
      * from the source matrix.
-     * 
-     * @discussion
-     * The result object is the slice_rows x slice_cols matrix whose i,jth entry is:
-     * 
-     *    matrix[matrix_first_row + i*matrix_row_stride,
-     *           matrix_first_col + j*matrix_col_stride]
-     * 
-     * Slices provide an efficient means to operate on tiles and strides.  These are
-     * lightweight objects that reference the storage of the matrix from which they
-     * originate.  In most cases, creating a slice does not require any allocation
-     * beyond the object representing the slice, nor require copying.  In some 
-     * less common cases, a copy may be required.
-     * 
-     * This function supports slicing a vector (interpreted as 
-     * rows(matrix) x cols(matrix)) or a matrix.  If the object is not a matrix or 
-     * vector, the returned object will have status LA_INVALID_PARAMETER_ERROR.
-     * 
-     * If the slice references indices that are less than zero or greater than or
-     * equal to the dimensions of the matrix, LA_SLICE_OUT_OF_BOUNDS_ERROR is 
-     * returned.
      */
     @Generated
     @CFunction
@@ -16064,17 +16038,9 @@ public final class Accelerate {
     public static native NSObject la_identity_matrix(@NUInt long matrix_size, int scalar_type, @NUInt long attributes);
 
     /**
-     * @abstract
      * Create a matrix with a specified diagonal provided by a vector, and zeros in
      * all the other entries.
      * 
-     * @param vector
-     * Vector providing the data for the non-zero diagonal.
-     * 
-     * @param matrix_diagonal
-     * The index of the non-zero diagonal.
-     * 
-     * @discussion
      * Creates a new matrix with entries on the specified diagonal taken from the
      * vector argument, and zeros in the other entries.  The matrix is square, and
      * has size length(vector) + abs(matrix_diagonal).
@@ -16087,14 +16053,27 @@ public final class Accelerate {
      * row or only one column.  If the provided object is not a vector or matrix,
      * or is a matrix with both dimensions larger than one, the returned object
      * will have status LA_INVALID_PARAMETER_ERROR.
+     * 
+     * @param vector
+     * Vector providing the data for the non-zero diagonal.
+     * 
+     * @param matrix_diagonal
+     * The index of the non-zero diagonal.
      */
     @Generated
     @CFunction
     public static native NSObject la_diagonal_matrix_from_vector(NSObject vector, @NInt long matrix_diagonal);
 
     /**
-     * @abstract
      * Creates a vector from the specified row of the matrix.
+     * 
+     * Creates a vector from the specified row of the matrix.  If the value for 
+     * matrix_row is less than zero or greater than rows(matrix)-1,
+     * LA_INVALID_PARAMETER_ERROR is returned.  
+     * 
+     * If matrix is a splat, LA_INVALID_PARAMETER_ERROR is returned.
+     * 
+     * Always returns a 1 x vector_length vector.
      * 
      * @param matrix
      * Matrix from which to create the row vector.
@@ -16104,23 +16083,21 @@ public final class Accelerate {
      * 
      * @return
      * The resulting vector is a 1 x cols(matrix) vector.
-     * 
-     * @discussion
-     * Creates a vector from the specified row of the matrix.  If the value for 
-     * matrix_row is less than zero or greater than rows(matrix)-1,
-     * LA_INVALID_PARAMETER_ERROR is returned.  
-     * 
-     * If matrix is a splat, LA_INVALID_PARAMETER_ERROR is returned.
-     * 
-     * Always returns a 1 x vector_length vector.
      */
     @Generated
     @CFunction
     public static native NSObject la_vector_from_matrix_row(NSObject matrix, @NUInt long matrix_row);
 
     /**
-     * @abstract
      * Creates a vector from the specified column of the matrix.
+     * 
+     * Creates a vector from the specified column of the matrix.  If the value for
+     * matrix_col is less than zero or greater than cols(matrix)-1,
+     * LA_INVALID_PARAMETER_ERROR is returned.
+     * 
+     * If matrix is a splat, LA_INVALID_PARAMETER_ERROR is returned.
+     * 
+     * Always returns a vector_length x 1 vector.
      * 
      * @param matrix
      * Matrix from which to create the column vector.
@@ -16130,35 +16107,14 @@ public final class Accelerate {
      * 
      * @return
      * The resulting vector is a rows(matrix) x 1 vector.
-     * 
-     * @discussion
-     * Creates a vector from the specified column of the matrix.  If the value for
-     * matrix_col is less than zero or greater than cols(matrix)-1,
-     * LA_INVALID_PARAMETER_ERROR is returned.
-     * 
-     * If matrix is a splat, LA_INVALID_PARAMETER_ERROR is returned.
-     * 
-     * Always returns a vector_length x 1 vector.
      */
     @Generated
     @CFunction
     public static native NSObject la_vector_from_matrix_col(NSObject matrix, @NUInt long matrix_col);
 
     /**
-     * @abstract
      * Creates a vector from the specified diagonal of the matrix.
      * 
-     * @param matrix
-     * Matrix from which to create the vector.
-     * 
-     * @param matrix_diagonal.
-     * The index of the diagonal to create the vector from.
-     * 
-     * @return
-     * The resulting vector is a length x 1 vector where length is 
-     * min(rows(matrix),cols(matrix)-abs(matrix_diagonal)
-     * 
-     * @discussion
      * Creates a new vector with entries on the specified diagonal taken from the
      * vector argument, and zeros in the other entries.  The matrix is square, and
      * has size length(vector) + abs(matrix_diagonal).
@@ -16175,27 +16131,24 @@ public final class Accelerate {
      * If matrix is a splat, LA_INVALID_PARAMETER_ERROR is returned.
      * 
      * Always returns a vector_length x 1 vector.
+     * 
+     * @param matrix
+     * Matrix from which to create the vector.
+     * 
+     * @param matrix_diagonal.
+     * The index of the diagonal to create the vector from.
+     * 
+     * @return
+     * The resulting vector is a length x 1 vector where length is 
+     * min(rows(matrix),cols(matrix)-abs(matrix_diagonal)
      */
     @Generated
     @CFunction
     public static native NSObject la_vector_from_matrix_diagonal(NSObject matrix, @NInt long matrix_diagonal);
 
     /**
-     * @abstract
      * Stores the elements of a vector to a buffer.
      * 
-     * @param buffer
-     * Pointer to the destination buffer.
-     * 
-     * @param buffer_stride
-     * Offset (in floats) between the destinations of consecutive vector elements
-     * in the buffer.  Negative strides are not supported (you can get the same
-     * effect by reversing the vector before calling this function).
-     * 
-     * @param vector
-     * The vector to store.
-     * 
-     * @discussion
      * The buffer must be large enough to accomodate the vector being stored.
      * Specifically, it must have have sufficient space to hold
      * 
@@ -16223,6 +16176,17 @@ public final class Accelerate {
      * If the object is not a matrix or vector, or if it is a matrix with both
      * dimensions larger than one, nothing is written to the buffer and
      * LA_INVALID_PARAMETER_ERROR is returned.
+     * 
+     * @param buffer
+     * Pointer to the destination buffer.
+     * 
+     * @param buffer_stride
+     * Offset (in floats) between the destinations of consecutive vector elements
+     * in the buffer.  Negative strides are not supported (you can get the same
+     * effect by reversing the vector before calling this function).
+     * 
+     * @param vector
+     * The vector to store.
      */
     @Generated
     @CFunction
@@ -16230,25 +16194,8 @@ public final class Accelerate {
     public static native long la_vector_to_float_buffer(FloatPtr buffer, @NInt long buffer_stride, NSObject vector);
 
     /**
-     * @abstract
      * Stores the elements of a vector to a buffer.
      * 
-     * @param buffer
-     * Pointer to the destination buffer.
-     * 
-     * @param buffer_stride
-     * Offset (in doubles) between the destinations of consecutive vector elements
-     * in the buffer.  Negative strides are not supported (you can get the same
-     * effect by reversing the vector before calling this function).
-     * 
-     * @param vector
-     * The vector to store.
-     * 
-     * @return
-     * If vector is a valid vector object, its status is returned.  Otherwise
-     * the return value is LA_INVALID_PARAMETER_ERROR.
-     * 
-     * @discussion
      * The buffer must be large enough to accomodate the vector being stored.
      * Specifically, it must have have sufficient space to hold
      * 
@@ -16276,6 +16223,21 @@ public final class Accelerate {
      * If the object is not a matrix or vector, or if it is a matrix with both
      * dimensions larger than one, nothing is written to the buffer and
      * LA_INVALID_PARAMETER_ERROR is returned.
+     * 
+     * @param buffer
+     * Pointer to the destination buffer.
+     * 
+     * @param buffer_stride
+     * Offset (in doubles) between the destinations of consecutive vector elements
+     * in the buffer.  Negative strides are not supported (you can get the same
+     * effect by reversing the vector before calling this function).
+     * 
+     * @param vector
+     * The vector to store.
+     * 
+     * @return
+     * If vector is a valid vector object, its status is returned.  Otherwise
+     * the return value is LA_INVALID_PARAMETER_ERROR.
      */
     @Generated
     @CFunction
@@ -16283,10 +16245,8 @@ public final class Accelerate {
     public static native long la_vector_to_double_buffer(DoublePtr buffer, @NInt long buffer_stride, NSObject vector);
 
     /**
-     * @abstract
      * Get the length of a vector.
      * 
-     * @discussion
      * If the argument has an error status, zero is returned.
      * If the argument is a vector, its length is returned.
      * If the argument is a matrix with only one row or only one column, the other
@@ -16299,27 +16259,8 @@ public final class Accelerate {
     public static native long la_vector_length(NSObject vector);
 
     /**
-     * @abstract
      * Create a slice of a vector.
      * 
-     * @param vector
-     * The vector to be sliced.
-     * 
-     * @param vector_first
-     * The index of the source vector element that will become the first element
-     * of the new slice vector.
-     * 
-     * @param vector_stride
-     * The offset in the source vector between elements that will be consecutive in
-     * the new slice vector.
-     * 
-     * @param slice_length
-     * The length of the resulting slice vector.
-     * 
-     * @return
-     * A new vector with length slice_length whose elements are taken from vector.
-     * 
-     * @discussion
      * The result object is the vector:
      * 
      * [ vector[vector_first], vector[vector_first+vector_stride], ...
@@ -16341,6 +16282,23 @@ public final class Accelerate {
      * Always return a vector with the same orientation as the input.  If input is
      * vector_length x 1, output is vector_length x 1 and if input is
      * 1 x vector_length, output is 1 x vector_length.
+     * 
+     * @param vector
+     * The vector to be sliced.
+     * 
+     * @param vector_first
+     * The index of the source vector element that will become the first element
+     * of the new slice vector.
+     * 
+     * @param vector_stride
+     * The offset in the source vector between elements that will be consecutive in
+     * the new slice vector.
+     * 
+     * @param slice_length
+     * The length of the resulting slice vector.
+     * 
+     * @return
+     * A new vector with length slice_length whose elements are taken from vector.
      */
     @Generated
     @CFunction
@@ -16412,10 +16370,8 @@ public final class Accelerate {
             @NUInt long matrix_cols);
 
     /**
-     * @abstract
      * Transpose a vector or matrix.
      * 
-     * @discussion
      * Returns a matrix that is the transpose of the source vector or matrix.  If the
      * source object is not a vector or matrix, the returned object will have status
      * LA_INVALID_PARAMETER_ERROR.
@@ -16425,10 +16381,8 @@ public final class Accelerate {
     public static native NSObject la_transpose(NSObject matrix);
 
     /**
-     * @abstract
      * Multiply a matrix or vector by a scalar given by a float.
      * 
-     * @discussion
      * Returns a matrix whose entries are the product of the scalar and the 
      * corresponding element of the source matrix.  If the source object is not
      * a vector or matrix, the returned object will have status 
@@ -16442,10 +16396,8 @@ public final class Accelerate {
     public static native NSObject la_scale_with_float(NSObject matrix, float scalar);
 
     /**
-     * @abstract
      * Multiply a matrix or vector by a scalar given by a double.
      * 
-     * @discussion
      * Returns a matrix whose entries are the product of the scalar and the
      * corresponding element of the source matrix.  If the source object is not
      * a vector or matrix, the returned object will have status
@@ -16459,10 +16411,8 @@ public final class Accelerate {
     public static native NSObject la_scale_with_double(NSObject matrix, double scalar);
 
     /**
-     * @abstract
      * Compute the element-wise sum of two vectors or matrices.
      * 
-     * @discussion
      * If either source operand is not a vector or matrix or splat, or if both
      * operands are splats, the result has status LA_INVALID_PARAMETER_ERROR.
      * 
@@ -16480,10 +16430,8 @@ public final class Accelerate {
     public static native NSObject la_sum(NSObject obj_left, NSObject obj_right);
 
     /**
-     * @abstract
      * Compute the element-wise difference of two vectors or matrices.
      * 
-     * @discussion
      * If either source operand is not a vector or matrix or splat, or if both
      * operands are splats, the result has status LA_INVALID_PARAMETER_ERROR.
      * 
@@ -16502,10 +16450,8 @@ public final class Accelerate {
     public static native NSObject la_difference(NSObject obj_left, NSObject obj_right);
 
     /**
-     * @abstract
      * Compute the element-wise product of two vectors or matrices.
      * 
-     * @discussion
      * If either source operand is not a vector or matrix or splat, or if both
      * operands are splats, the result has status LA_INVALID_PARAMETER_ERROR.
      * 
@@ -16523,10 +16469,8 @@ public final class Accelerate {
     public static native NSObject la_elementwise_product(NSObject obj_left, NSObject obj_right);
 
     /**
-     * @abstract
      * Compute the inner product of two vectors.
      * 
-     * @discussion
      * If either operand is a matrix that is not 1xn or nx1, the result has the
      * status LA_INVALID_PARAMETER_ERROR.
      * 
@@ -16545,10 +16489,8 @@ public final class Accelerate {
     public static native NSObject la_inner_product(NSObject vector_left, NSObject vector_right);
 
     /**
-     * @abstract
      * Compute the outer product of two vectors.
      * 
-     * @discussion
      * Splats are not supported by this function.  If either operand
      * is a splat, the result has status LA_INVALID_PARAMETER_ERROR.
      * 
@@ -16567,10 +16509,8 @@ public final class Accelerate {
     public static native NSObject la_outer_product(NSObject vector_left, NSObject vector_right);
 
     /**
-     * @abstract
      * Compute a matrix product.
      * 
-     * @discussion
      * Left splat operands are treated as 1 x rows(matrix_right) vectors and right 
      * splat operands are treated as cols(matrix_left) x 1 vectors.
      * 
@@ -16607,20 +16547,8 @@ public final class Accelerate {
     public static native NSObject la_matrix_product(NSObject matrix_left, NSObject matrix_right);
 
     /**
-     * @abstract
      * Solves a system of linear equations
      * 
-     * @param matrix_system
-     * A matrix describing the left-hand side of the system.
-     * 
-     * @param obj_rhs
-     * A vector or matrix describing one or more right-hand sides for which the
-     * equations are to be solved.
-     * 
-     * @return
-     * A matrix of the solution(s) of the system of equations.
-     * 
-     * @discussion
      * If matrix_system represents a matrix A, and obj_rhs represents a vector
      * B, la_solve returns a vector X representing a solution to the equation
      * AX = B, if such a solution exists.  If obj_rhs represents a matrix, then
@@ -16658,16 +16586,24 @@ public final class Accelerate {
      * If you want to solve the system XA = B, which is less common (but still
      * occurs fairly frequently), you may accomplish this by transposing A and B,
      * solving, and then transposing the result of the solve.
+     * 
+     * @param matrix_system
+     * A matrix describing the left-hand side of the system.
+     * 
+     * @param obj_rhs
+     * A vector or matrix describing one or more right-hand sides for which the
+     * equations are to be solved.
+     * 
+     * @return
+     * A matrix of the solution(s) of the system of equations.
      */
     @Generated
     @CFunction
     public static native NSObject la_solve(NSObject matrix_system, NSObject obj_rhs);
 
     /**
-     * @abstract
      * Compute a norm of a vector or matrix.
      * 
-     * @discussion
      * "vector" refers to the fact that this function computes the norm of its
      * argument considered as a vector, and not an operator norm.  The actual
      * argument may be either a vector or a matrix.  If it is not a vector or
@@ -16683,10 +16619,8 @@ public final class Accelerate {
     public static native double la_norm_as_double(NSObject vector, @NUInt long vector_norm);
 
     /**
-     * @abstract
      * "Normalizes" a vector or matrix.
      * 
-     * @discussion
      * The returned object has the same direction as the first operand, and has
      * norm 1 in the specified vector norm.  If the input vector is zero, it cannot
      * be meaningfully normalized and the returned object is also zero.  If the
@@ -16699,8 +16633,10 @@ public final class Accelerate {
     public static native NSObject la_normalized_vector(NSObject vector, @NUInt long vector_norm);
 
     /**
-     * @abstract
      * Compute the inner product of sparse vector x with dense vector y.
+     * 
+     * Compute the inner product of sparse vector x with dense vector y.  Returns zero 
+     * if nz is less than or equal to zero.
      * 
      * @param nz
      * The number of nonzero entries in the sparse vector x.
@@ -16729,12 +16665,8 @@ public final class Accelerate {
      * Increment between valid values in the dense vector y.  Negative strides are
      * supported.
      * 
-     * @result
+     * @return
      * On exit the result of the inner product is returned.
-     * 
-     * @discussion
-     * Compute the inner product of sparse vector x with dense vector y.  Returns zero 
-     * if nz is less than or equal to zero.
      */
     @Generated
     @CFunction
@@ -16747,8 +16679,10 @@ public final class Accelerate {
             ConstDoublePtr y, long incy);
 
     /**
-     * @abstract
      * Compute the inner product of sparse vector x with sparse vector y.
+     * 
+     * Compute the inner product of sparse vector x with sparse vector y.  Returns
+     * zero if nzx or nzy is less than or equal to zero.
      * 
      * @param nzx
      * The number of nonzero entries in the sparse vector x.
@@ -16784,12 +16718,8 @@ public final class Accelerate {
      * 
      * All indices are 0 based (the first element of a pointer is ptr[0]).
      * 
-     * @result
+     * @return
      * On exit the result of the inner product is returned.
-     * 
-     * @discussion
-     * Compute the inner product of sparse vector x with sparse vector y.  Returns
-     * zero if nzx or nzy is less than or equal to zero.
      */
     @Generated
     @CFunction
@@ -16802,10 +16732,16 @@ public final class Accelerate {
             ConstLongPtr indx, ConstDoublePtr y, ConstLongPtr indy);
 
     /**
-     * @abstract
      * Scales the sparse vector x by alpha and adds the result to the dense vector y.
      * 
      * y = alpha * x + y
+     * 
+     * Scales the sparse vector x by alpha and adds the result to the dense vector y.
+     * If alpha or nz is zero, y is unchanged.
+     * 
+     * If the desired operation is y = alpha * x, then an efficient option is to 
+     * create the y buffer of zeros as y = calloc(sizeof(..)*ySize) and then perform
+     * the operation with the zero filled y.
      * 
      * @param nz
      * The number of nonzero entries in the sparse vector x.
@@ -16837,17 +16773,9 @@ public final class Accelerate {
      * Increment between valid values in the dense vector y.  Negative strides are
      * supported.
      * 
-     * @result
+     * @return
      * On exit y has been updated as y = alpha * x + y. If nz is less than or
      * equal to zero or alpha is equal to zero, y is unchanged.
-     * 
-     * @discussion
-     * Scales the sparse vector x by alpha and adds the result to the dense vector y.
-     * If alpha or nz is zero, y is unchanged.
-     * 
-     * If the desired operation is y = alpha * x, then an efficient option is to 
-     * create the y buffer of zeros as y = calloc(sizeof(..)*ySize) and then perform
-     * the operation with the zero filled y.
      */
     @Generated
     @CFunction
@@ -16860,8 +16788,16 @@ public final class Accelerate {
             ConstLongPtr indx, DoublePtr y, long incy);
 
     /**
-     * @abstract
      * Compute the specified norm of the sparse vector x.
+     * 
+     * Compute the specified norm of the sparse vector x.  Specify one of:
+     * 1) SPARSE_NORM_ONE : sum over i ( | x[i] | )
+     * 2) SPARSE_NORM_TWO : sqrt( sum over i (x[i])^2 )
+     * 3) SPARSE_NORM_INF : max over i ( | x[i] | )
+     * 4) SPARSE_NORM_R1  : Not supported, undefined.
+     * 
+     * If norm is not one of the enumerated norm types, the default value is
+     * SPARSE_NORM_INF.
      * 
      * @param nz
      * The number of nonzero values in the sparse vector x.
@@ -16884,18 +16820,8 @@ public final class Accelerate {
      * Specify the norm to be computed.  Must be one of SPARSE_NORM_ONE, SPARSE_NORM_TWO,
      * or SPARSE_NORM_INF.  See discussion for further details.
      * 
-     * @result
+     * @return
      * Upon success, return the requested norm.
-     * 
-     * @discussion
-     * Compute the specified norm of the sparse vector x.  Specify one of:
-     * 1) SPARSE_NORM_ONE : sum over i ( | x[i] | )
-     * 2) SPARSE_NORM_TWO : sqrt( sum over i (x[i])^2 )
-     * 3) SPARSE_NORM_INF : max over i ( | x[i] | )
-     * 4) SPARSE_NORM_R1  : Not supported, undefined.
-     * 
-     * If norm is not one of the enumerated norm types, the default value is
-     * SPARSE_NORM_INF.
      */
     @Generated
     @CFunction
@@ -16906,11 +16832,18 @@ public final class Accelerate {
     public static native double sparse_vector_norm_double(long nz, ConstDoublePtr x, ConstLongPtr indx, int norm);
 
     /**
-     * @abstract
      * Multiplies the dense vector x by the sparse matrix A and adds the result to
      * the dense vector y.
      * 
      * y = alpha * op(A) * x + y; where op(A) is either A or the transpose of A
+     * 
+     * Multiplies the dense vector x by the sparse matrix A and adds the result to
+     * the dense vector y (y = alpha * op(A) * x + y, where op(A) is either A
+     * or the transpose of A).
+     * 
+     * If the desired operation is y = A * x, then an efficient option is to create
+     * the y buffer of zeros as y = calloc(sizeof(..)*ySize) and then perform
+     * the operation with the zero filled y.
      * 
      * @param transa 
      * Specifies whether to perform the operation with A or the transpose of A.
@@ -16944,19 +16877,10 @@ public final class Accelerate {
      * Increment between valid values in the dense vector y.  Negative strides are
      * supported.
      * 
-     * @result
+     * @return
      * On success return SPARSE_SUCCESS and y has been updated with result of the 
      * operation.  Will return SPARSE_ILLEGAL_PARAMETER if transa is invalid and y will 
      * be unchanged.
-     * 
-     * @discussion
-     * Multiplies the dense vector x by the sparse matrix A and adds the result to
-     * the dense vector y (y = alpha * op(A) * x + y, where op(A) is either A
-     * or the transpose of A).
-     * 
-     * If the desired operation is y = A * x, then an efficient option is to create
-     * the y buffer of zeros as y = calloc(sizeof(..)*ySize) and then perform
-     * the operation with the zero filled y.
      */
     @Generated
     @CFunction
@@ -16969,9 +16893,12 @@ public final class Accelerate {
             ConstDoublePtr x, long incx, DoublePtr y, long incy);
 
     /**
-     * @abstract
      * Solve the system of equations x = alpha * T^{-1} * x for x where x is a dense
      * vector and T is a triangular sparse matrix.
+     * 
+     * Solve the system of equations x = alpha * T^{-1} * x for x where x is a dense
+     * vector and T is a triangular sparse matrix.  The matrix T must be an upper or
+     * lower triangular matrix.
      * 
      * @param transt
      * Specifies whether to perform the operation with T or the transpose of T.
@@ -16995,15 +16922,10 @@ public final class Accelerate {
      * Increment between valid values in the dense vector x. Negative strides are
      * supported.
      * 
-     * @result
+     * @return
      * On success, SPARSE_SUCCESS is returned and x has been updated with result of the 
      * operation.  Will return SPARSE_ILLEGAL_PARAMETER if transt is invalid or if the
      * matrix T is not triangular and x will be unchanged.
-     * 
-     * @discussion
-     * Solve the system of equations x = alpha * T^{-1} * x for x where x is a dense
-     * vector and T is a triangular sparse matrix.  The matrix T must be an upper or
-     * lower triangular matrix.
      */
     @Generated
     @CFunction
@@ -17016,10 +16938,16 @@ public final class Accelerate {
             sparse_matrix_double T, DoublePtr x, long incx);
 
     /**
-     * @abstract
      * Compute the outer product of the dense vector x and the sparse vector y and
      * return a new sparse matrix in the uninitialized pointer sparse matrix pointer 
      * C.  C = alpha * x * y'
+     * 
+     * Compute the outer product of the dense vector x and the sparse vector y and
+     * return a new sparse matrix in the uninitialized pointer sparse matrix pointer 
+     * C.  C = alpha * x * y'.  Caller responsible for calling sparse_matrix_destroy on 
+     * the returned matrix.
+     * 
+     * The matrix object returned on success is a point wise based sparse matrix.
      * 
      * @param M
      * The number of rows of x and the resulting matrix.
@@ -17063,18 +16991,10 @@ public final class Accelerate {
      * sparse matrix object is returned in this pointer.  On error, this set to NULL.
      * Caller is responsible for calling sparse_matrix_destroy on this matrix object.
      * 
-     * @result
+     * @return
      * On success SPARSE_SUCCESS is returned an C is valid matrix object.  The caller is 
      * responsible for cleaning up the sparse matrix object with sparse_matrix_destroy.
      * Will return SPARSE_ILLEGAL_PARAMETER if nz > N, and C will be unchanged.
-     * 
-     * @discussion
-     * Compute the outer product of the dense vector x and the sparse vector y and
-     * return a new sparse matrix in the uninitialized pointer sparse matrix pointer 
-     * C.  C = alpha * x * y'.  Caller responsible for calling sparse_matrix_destroy on 
-     * the returned matrix.
-     * 
-     * The matrix object returned on success is a point wise based sparse matrix.
      */
     @Generated
     @CFunction
@@ -17087,9 +17007,15 @@ public final class Accelerate {
             long incx, ConstDoublePtr y, ConstLongPtr indy, Ptr<sparse_matrix_double> C);
 
     /**
-     * @abstract
      * Permute the rows of the sparse matrix A based on the provided permutation
      * array.
+     * 
+     * Permute the rows of the sparse matrix A based on the provided permutation
+     * array.  For each row in A, swap rows as:
+     * 
+     * tmp[:] = A[i,:];
+     * A[i,:] = A[perm[i],:];
+     * A[perm[i],:] = tmp[:];
      * 
      * @param A
      * The sparse matrix.
@@ -17100,16 +17026,8 @@ public final class Accelerate {
      * (first element of pointer is ptr[0]).  The indices in perm are expected to
      * be within bounds of the matrix.  Undefined behavior if not met.
      * 
-     * @result
+     * @return
      * On successful return, A has been permuted and SPARSE_SUCCESS is returned.
-     * 
-     * @discussion
-     * Permute the rows of the sparse matrix A based on the provided permutation
-     * array.  For each row in A, swap rows as:
-     * 
-     * tmp[:] = A[i,:];
-     * A[i,:] = A[perm[i],:];
-     * A[perm[i],:] = tmp[:];
      */
     @Generated
     @CFunction
@@ -17120,9 +17038,15 @@ public final class Accelerate {
     public static native int sparse_permute_rows_double(sparse_matrix_double A, ConstLongPtr perm);
 
     /**
-     * @abstract
      * Permute the columns of the sparse matrix A based on the provided permutation
      * array.
+     * 
+     * Permute the columns of the sparse matrix A based on the provided permutation
+     * array.  For each column in A, swap columns as:
+     * 
+     * tmp[:] = A[:,j];
+     * A[:,j] = A[:,perm[j]];
+     * A[:,perm[j]] = tmp[:];
      * 
      * @param A
      * The sparse matrix.
@@ -17133,16 +17057,8 @@ public final class Accelerate {
      * (first element of pointer is ptr[0]).  The indices in perm are expected to
      * be within bounds of the matrix.  Undefined behavior if not met.
      * 
-     * @result
+     * @return
      * On successful return, A has been permuted and SPARSE_SUCCESS is returned.
-     * 
-     * @discussion
-     * Permute the columns of the sparse matrix A based on the provided permutation
-     * array.  For each column in A, swap columns as:
-     * 
-     * tmp[:] = A[:,j];
-     * A[:,j] = A[:,perm[j]];
-     * A[:,perm[j]] = tmp[:];
      */
     @Generated
     @CFunction
@@ -17153,21 +17069,9 @@ public final class Accelerate {
     public static native int sparse_permute_cols_double(sparse_matrix_double A, ConstLongPtr perm);
 
     /**
-     * @abstract
      * Compute the specified elementwise norm of the sparse matrix A.  This is the 
      * norm of the matrix treated as a vector, not the operator norm.
      * 
-     * @param A
-     * The sparse matrix.
-     * 
-     * @param norm
-     * Specify the norm to be computed.  Must be one of SPARSE_NORM_ONE, SPARSE_NORM_TWO,
-     * SPARSE_NORM_INF, or SPARSE_NORM_R1.  See discussion for further details.
-     * 
-     * @result
-     * Upon success, resulting norm is returned.
-     * 
-     * @discussion
      * Compute the specified norm of the sparse matrix A.  This is the norm of the
      * matrix treated as a vector, not the operator norm.  Specify one of:
      * 1) SPARSE_NORM_ONE : sum over i,j ( | A[i,j] | )
@@ -17177,6 +17081,16 @@ public final class Accelerate {
      * 
      * If norm is not one of the enumerated norm types, the default value is
      * SPARSE_NORM_INF.
+     * 
+     * @param A
+     * The sparse matrix.
+     * 
+     * @param norm
+     * Specify the norm to be computed.  Must be one of SPARSE_NORM_ONE, SPARSE_NORM_TWO,
+     * SPARSE_NORM_INF, or SPARSE_NORM_R1.  See discussion for further details.
+     * 
+     * @return
+     * Upon success, resulting norm is returned.
      */
     @Generated
     @CFunction
@@ -17187,21 +17101,9 @@ public final class Accelerate {
     public static native double sparse_elementwise_norm_double(sparse_matrix_double A, int norm);
 
     /**
-     * @abstract
      * Compute the specified operator norm of the sparse matrix A.  For elementwise
      * norm use elementwise_norm routines.
      * 
-     * @param A
-     * The sparse matrix.
-     * 
-     * @param norm
-     * Specify the norm to be computed.  Must be one of SPARSE_NORM_ONE, SPARSE_NORM_TWO,
-     * or SPARSE_NORM_INF.  See discussion for further details.
-     * 
-     * @result
-     * Upon success, resulting norm is returned.
-     * 
-     * @discussion
      * Compute the specified norm of the sparse matrix A.  This is the norm of the
      * matrix treated as an linear operator, not the elementwise norm.  Specify one of:
      * 1) SPARSE_NORM_ONE : max over j ( sum over i ( | A[i,j] | ) )
@@ -17212,6 +17114,16 @@ public final class Accelerate {
      * 
      * If norm is not one of the enumerated norm types, the default value is
      * SPARSE_NORM_INF.
+     * 
+     * @param A
+     * The sparse matrix.
+     * 
+     * @param norm
+     * Specify the norm to be computed.  Must be one of SPARSE_NORM_ONE, SPARSE_NORM_TWO,
+     * or SPARSE_NORM_INF.  See discussion for further details.
+     * 
+     * @return
+     * Upon success, resulting norm is returned.
      */
     @Generated
     @CFunction
@@ -17222,8 +17134,15 @@ public final class Accelerate {
     public static native double sparse_operator_norm_double(sparse_matrix_double A, int norm);
 
     /**
-     * @abstract
      * Compute the sum along the specified diagonal of the sparse matrix A.
+     * 
+     * Compute the sum along the specified diagonal of the sparse matrix A.  The
+     * diagonal is specified by the parameter offset where zero is the main diagonal,
+     * values greater than one refer to diagonals above the main diagonal
+     * (A[i,i+offset]), and values less than one refer to diagonals below the main
+     * diagonal (A[i-offset, i]).
+     * 
+     * If offset is out of the bounds of the matrix A, 0 is returned.
      * 
      * @param A
      * The sparse matrix.
@@ -17235,17 +17154,8 @@ public final class Accelerate {
      * diagonal (A[i-offset,i]).  If offset is out of the bounds of the matrix A, 0 
      * is returned.
      * 
-     * @result
+     * @return
      * On success, the resulting trace is returned.
-     * 
-     * @discussion
-     * Compute the sum along the specified diagonal of the sparse matrix A.  The
-     * diagonal is specified by the parameter offset where zero is the main diagonal,
-     * values greater than one refer to diagonals above the main diagonal
-     * (A[i,i+offset]), and values less than one refer to diagonals below the main
-     * diagonal (A[i-offset, i]).
-     * 
-     * If offset is out of the bounds of the matrix A, 0 is returned.
      */
     @Generated
     @CFunction
@@ -17257,13 +17167,23 @@ public final class Accelerate {
 
     /**
      * Level 3 Computational Routines
-     * @functiongroup Level 3
-     * @abstract Level 3 routines consisting of matrix-matrix operations
-     * @abstract
+     * [@functiongroup] Level 3
+     * 
+     * Level 3 routines consisting of matrix-matrix operations
+     * 
      * Multiplies the dense matrix B by the sparse matrix A and adds the result to
      * the dense matrix C.
      * 
      * C = alpha * op(A) * B + C; where op(A) is either A or the transpose of A
+     * 
+     * Multiplies the dense matrix B by the sparse matrix A and adds the result to
+     * the dense matrix C (C = alpha * op(A) * B + C, where op(A) is either A
+     * or the transpose of A). If A is of size M x N, then B is of size N x n and C is
+     * of size M x n.
+     * 
+     * If the desired operation is C = A * B, then an efficient option is to create
+     * the C buffer of zeros as C = calloc(sizeof(..)*rows*cols) and then perform
+     * the operation with the zero filled C.
      * 
      * @param order
      * Specified the storage order for the dense matrices B and C. Must be one of
@@ -17305,21 +17225,11 @@ public final class Accelerate {
      * Must be greater than or equal to n when row major, or number of rows of
      * A when column major.
      * 
-     * @result
+     * @return
      * On success, SPARSE_SUCCESS is returned and C has been updated with result of the
      * operation.  Will return SPARSE_ILLEGAL_PARAMETER if order or transa is not valid
      * or the leading dimension parameters do not meet their dimension requirements.
      * On error, C is unchanged.
-     * 
-     * @discussion
-     * Multiplies the dense matrix B by the sparse matrix A and adds the result to
-     * the dense matrix C (C = alpha * op(A) * B + C, where op(A) is either A
-     * or the transpose of A). If A is of size M x N, then B is of size N x n and C is
-     * of size M x n.
-     * 
-     * If the desired operation is C = A * B, then an efficient option is to create
-     * the C buffer of zeros as C = calloc(sizeof(..)*rows*cols) and then perform
-     * the operation with the zero filled C.
      */
     @Generated
     @CFunction
@@ -17332,11 +17242,19 @@ public final class Accelerate {
             sparse_matrix_double A, ConstDoublePtr B, long ldb, DoublePtr C, long ldc);
 
     /**
-     * @abstract
      * Multiplies the sparse matrix B by the sparse matrix A and adds the result to
      * the dense matrix C.
      * 
      * C = alpha * op(A) * B + C; where op(A) is either A or the transpose of A
+     * 
+     * Multiplies the sparse matrix B by the sparse matrix A and adds the result to
+     * the dense matrix C (C = alpha * op(A) * B + C, where op(A) is either A
+     * or the transpose of A). If A is of size M x K, then B is of size K x N and C is
+     * of size M x N.
+     * 
+     * If the desired operation is C = A * B, then an efficient option is to create
+     * the C buffer of zeros as C = calloc(sizeof(..)*rows*cols) and then perform
+     * the operation with the zero filled C.
      * 
      * @param order
      * Specified the storage order for the dense matrix C. Must be one of
@@ -17367,21 +17285,11 @@ public final class Accelerate {
      * Must be greater than or equal to the number of columns of B when row major,
      * or number of rows of A when column major.
      * 
-     * @result
+     * @return
      * On success, SPARSE_SUCCESS is returned and C has been updated with result of the
      * operation.  Will return SPARSE_ILLEGAL_PARAMETER if order or transa is not valid
      * or the leading dimension parameters do not meet their dimension requirements.
      * On error, C is unchanged.
-     * 
-     * @discussion
-     * Multiplies the sparse matrix B by the sparse matrix A and adds the result to
-     * the dense matrix C (C = alpha * op(A) * B + C, where op(A) is either A
-     * or the transpose of A). If A is of size M x K, then B is of size K x N and C is
-     * of size M x N.
-     * 
-     * If the desired operation is C = A * B, then an efficient option is to create
-     * the C buffer of zeros as C = calloc(sizeof(..)*rows*cols) and then perform
-     * the operation with the zero filled C.
      */
     @Generated
     @CFunction
@@ -17394,9 +17302,12 @@ public final class Accelerate {
             sparse_matrix_double A, sparse_matrix_double B, DoublePtr C, long ldc);
 
     /**
-     * @abstract
      * Solve the system of equations B = alpha * T^{-1} * B for B where B is a dense
      * matrix and T is a triangular sparse matrix.
+     * 
+     * Solve the system of equations B = alpha * T^{-1} * B for B where B is a dense
+     * vector and T is a triangular sparse matrix.  If T is of size N x N, then B must
+     * be of size N x nrhs.  The matrix T must be an upper or lower triangular matrix.
      * 
      * @param order
      * Specified the storage order for the dense matrix B. Must be one of
@@ -17428,16 +17339,11 @@ public final class Accelerate {
      * Must be greater than or equal to nrhs when row major, or number of columns of
      * A when column major.
      * 
-     * @result
+     * @return
      * On success, SPARSE_SUCCESS is returned and B has been updated with result of the
      * operation.  Will return SPARSE_ILLEGAL_PARAMETER if either of order or trant are
      * invalid or the ldb does not meet its dimension requirements.  On error
      * B is unchanged.
-     * 
-     * @discussion
-     * Solve the system of equations B = alpha * T^{-1} * B for B where B is a dense
-     * vector and T is a triangular sparse matrix.  If T is of size N x N, then B must
-     * be of size N x nrhs.  The matrix T must be an upper or lower triangular matrix.
      */
     @Generated
     @CFunction
@@ -17450,21 +17356,9 @@ public final class Accelerate {
             sparse_matrix_double T, DoublePtr B, long ldb);
 
     /**
-     * @abstract
      * Create a sparse matrix object that is stored in point wise format and is ready
      * to receive values from the various insert routines.
      * 
-     * @param M
-     * The number of rows of the matrix.  Must be greater than 0.
-     * 
-     * @param N
-     * The number of columns of the matrix.  Must be greater than 0.
-     * 
-     * @result
-     * On success, returns a matrix object that is ready for receiving entries.  If an
-     * error occurs, NULL is returned.
-     * 
-     * @discussion
      * Create a sparse matrix object that is stored in point wise format and is ready
      * to receive values from the various insert routines.  Point wise format means
      * individual values are stored for a given i,j location as opposed to blocks of
@@ -17473,6 +17367,16 @@ public final class Accelerate {
      * 
      * The dimensions M and N must be greater than 0.  On success a valid matrix
      * object is returned, otherwise NULL is returned.
+     * 
+     * @param M
+     * The number of rows of the matrix.  Must be greater than 0.
+     * 
+     * @param N
+     * The number of columns of the matrix.  Must be greater than 0.
+     * 
+     * @return
+     * On success, returns a matrix object that is ready for receiving entries.  If an
+     * error occurs, NULL is returned.
      */
     @Generated
     @CFunction
@@ -17483,10 +17387,23 @@ public final class Accelerate {
     public static native sparse_matrix_double sparse_matrix_create_double(long M, long N);
 
     /**
-     * @abstract
      * Use to build a sparse matrix by inserting one scalar entry at a time.  Update
      * A[i,j] = val.  A must have been created with one of sparse_matrix_create_float or
      * sparse_matrix_create_double.
+     * 
+     * Use to build a sparse matrix by inserting one scalar entry at a time.  Update
+     * A[i,j] = val.
+     * 
+     * A must have been created with one of sparse_matrix_create_float or
+     * sparse_matrix_create_double.
+     * 
+     * Note that matrix properties cannot be modified after value insertion begins.
+     * This includes properties such as specifying a triangular matrix.
+     * 
+     * Insertion can be expensive, generally speaking it is best to do a batch update.
+     * Inserted values may be temporarily held internally within the object and only
+     * inserted into the sparse format when a later computation triggers a need to
+     * insert.
      * 
      * @param A
      * The sparse matrix.  A must have been created with one of sparse_matrix_create_float
@@ -17505,14 +17422,26 @@ public final class Accelerate {
      * pointer is ptr[0]).  Indices expected to be in the bounds of matrix dimensions,
      * undefined behavior if not met.
      * 
-     * @result
+     * @return
      * On successful insertion, A has been updated with the value and SPARSE_SUCCESS is
      * returned.  If A creation requirements are not met, SPARSE_ILLEGAL_PARAMETER is
      * returned and A is unchanged.
+     */
+    @Generated
+    @CFunction
+    public static native int sparse_insert_entry_float(sparse_matrix_float A, float val, long i, long j);
+
+    @Generated
+    @CFunction
+    public static native int sparse_insert_entry_double(sparse_matrix_double A, double val, long i, long j);
+
+    /**
+     * Use to build a sparse matrix by providing a list of point entries.  For each
+     * entry provided, update A[indx[i],jndx[i]] = val[i].  A must have been created
+     * with one of sparse_matrix_create_float or sparse_matrix_create_double.
      * 
-     * @discussion
-     * Use to build a sparse matrix by inserting one scalar entry at a time.  Update
-     * A[i,j] = val.
+     * Use to build a sparse matrix by providing a list of point entries.  For each
+     * entry provided, update A[indx[i],jndx[i]] = val[i].
      * 
      * A must have been created with one of sparse_matrix_create_float or
      * sparse_matrix_create_double.
@@ -17524,20 +17453,6 @@ public final class Accelerate {
      * Inserted values may be temporarily held internally within the object and only
      * inserted into the sparse format when a later computation triggers a need to
      * insert.
-     */
-    @Generated
-    @CFunction
-    public static native int sparse_insert_entry_float(sparse_matrix_float A, float val, long i, long j);
-
-    @Generated
-    @CFunction
-    public static native int sparse_insert_entry_double(sparse_matrix_double A, double val, long i, long j);
-
-    /**
-     * @abstract
-     * Use to build a sparse matrix by providing a list of point entries.  For each
-     * entry provided, update A[indx[i],jndx[i]] = val[i].  A must have been created
-     * with one of sparse_matrix_create_float or sparse_matrix_create_double.
      * 
      * @param A
      * The sparse matrix.  A must have been created with one of sparse_matrix_create_float
@@ -17572,25 +17487,10 @@ public final class Accelerate {
      * 
      * All indices are 0 based (the first element of a pointer is ptr[0]).
      * 
-     * @result
+     * @return
      * On successful insertion, A has been updated with the values and SPARSE_SUCCESS is
      * returned.  If A creation requirements are not met, SPARSE_ILLEGAL_PARAMETER is
      * returned and A is unchanged.
-     * 
-     * @discussion
-     * Use to build a sparse matrix by providing a list of point entries.  For each
-     * entry provided, update A[indx[i],jndx[i]] = val[i].
-     * 
-     * A must have been created with one of sparse_matrix_create_float or
-     * sparse_matrix_create_double.
-     * 
-     * Note that matrix properties cannot be modified after value insertion begins.
-     * This includes properties such as specifying a triangular matrix.
-     * 
-     * Insertion can be expensive, generally speaking it is best to do a batch update.
-     * Inserted values may be temporarily held internally within the object and only
-     * inserted into the sparse format when a later computation triggers a need to
-     * insert.
      */
     @Generated
     @CFunction
@@ -17603,10 +17503,25 @@ public final class Accelerate {
             ConstLongPtr indx, ConstLongPtr jndx);
 
     /**
-     * @abstract
      * Use to build a sparse matrix by providing a list of point entries for a single
      * column.  For each entry provided, update A[indx[i],j] = val[i].  A must have
      * been created with one of sparse_matrix_create_float or sparse_matrix_create_double.
+     * 
+     * Use to build a sparse matrix by providing a list of point entries for a single
+     * column.  For each entry provided, update A[indx[i],j] = val[i].  This will not
+     * replace the existing contents of the column, it appends new values and
+     * overwrites overlapping values.
+     * 
+     * A must have been created with one of sparse_matrix_create_float or
+     * sparse_matrix_create_double.
+     * 
+     * Note that matrix properties cannot be modified after value insertion begins.
+     * This includes properties such as specifying a triangular matrix.
+     * 
+     * Insertion can be expensive, generally speaking it is best to do a batch update.
+     * Inserted values may be temporarily held internally within the object and only
+     * inserted into the sparse format when a later computation triggers a need to
+     * insert.
      * 
      * @param A
      * The sparse matrix.  A must have been created with one of sparse_matrix_create_float
@@ -17637,27 +17552,10 @@ public final class Accelerate {
      * 
      * All indices are 0 based (the first element of a pointer is ptr[0]).
      * 
-     * @result
+     * @return
      * On successful insertion, A has been updated with the value and SPARSE_SUCCESS is
      * returned.  If A creation requirements are not met, SPARSE_ILLEGAL_PARAMETER is
      * returned and A is unchanged.
-     * 
-     * @discussion
-     * Use to build a sparse matrix by providing a list of point entries for a single
-     * column.  For each entry provided, update A[indx[i],j] = val[i].  This will not
-     * replace the existing contents of the column, it appends new values and
-     * overwrites overlapping values.
-     * 
-     * A must have been created with one of sparse_matrix_create_float or
-     * sparse_matrix_create_double.
-     * 
-     * Note that matrix properties cannot be modified after value insertion begins.
-     * This includes properties such as specifying a triangular matrix.
-     * 
-     * Insertion can be expensive, generally speaking it is best to do a batch update.
-     * Inserted values may be temporarily held internally within the object and only
-     * inserted into the sparse format when a later computation triggers a need to
-     * insert.
      */
     @Generated
     @CFunction
@@ -17670,10 +17568,25 @@ public final class Accelerate {
             ConstLongPtr indx);
 
     /**
-     * @abstract
      * Use to build a sparse matrix by providing a list of point entries for a single
      * row.  For each entry provided, update A[i,jndx[i]] = val[i].  A must have been
      * created with one of sparse_matrix_create_float or sparse_matrix_create_double.
+     * 
+     * Use to build a sparse matrix by providing a list of point entries for a single
+     * row.  For each entry provided, update A[i,jndx[i]] = val[i].  This will not
+     * replace the existing contents of the row, it appends new values and
+     * overwrites overlapping values.
+     * 
+     * A must have been created with one of sparse_matrix_create_float or
+     * sparse_matrix_create_double.
+     * 
+     * Note that matrix properties cannot be modified after value insertion begins.
+     * This includes properties such as specifying a triangular matrix.
+     * 
+     * Insertion can be expensive, generally speaking it is best to do a batch update.
+     * Inserted values may be temporarily held internally within the object and only
+     * inserted into the sparse format when a later computation triggers a need to
+     * insert.
      * 
      * @param A
      * The sparse matrix.  A must have been created with one of sparse_matrix_create_float
@@ -17704,27 +17617,10 @@ public final class Accelerate {
      * 
      * All indices are 0 based (the first element of a pointer is ptr[0]).
      * 
-     * @result
+     * @return
      * On successful insertion, A has been updated with the value and SPARSE_SUCCESS is
      * returned.  If A creation requirements are not met, SPARSE_ILLEGAL_PARAMETER is
      * returned and A is unchanged.
-     * 
-     * @discussion
-     * Use to build a sparse matrix by providing a list of point entries for a single
-     * row.  For each entry provided, update A[i,jndx[i]] = val[i].  This will not
-     * replace the existing contents of the row, it appends new values and
-     * overwrites overlapping values.
-     * 
-     * A must have been created with one of sparse_matrix_create_float or
-     * sparse_matrix_create_double.
-     * 
-     * Note that matrix properties cannot be modified after value insertion begins.
-     * This includes properties such as specifying a triangular matrix.
-     * 
-     * Insertion can be expensive, generally speaking it is best to do a batch update.
-     * Inserted values may be temporarily held internally within the object and only
-     * inserted into the sparse format when a later computation triggers a need to
-     * insert.
      */
     @Generated
     @CFunction
@@ -17737,10 +17633,19 @@ public final class Accelerate {
             ConstLongPtr jndx);
 
     /**
-     * @abstract
      * Extract the first nz values of the row begining at A[row,column_start] for the
      * sparse matrix A.  A must have been created with one of sparse_matrix_create_float 
      * or sparse_matrix_create_double.
+     * 
+     * Extract the first nz values of the row begining at A[row,column_start] for the
+     * sparse matrix A.  The number of nonzero values extracted is limited by nz, and
+     * the number of nonzero's written to jndx and val are returned.  Additionally, 
+     * the column index of the next nonzero value is returned in column_end.
+     * For example if nz is returned, not all nonzero values have been extracted,
+     * and a second extract can start from column_end.
+     * 
+     * A must have been created with one of sparse_matrix_create_float or
+     * sparse_matrix_create_double.
      * 
      * @param A
      * The sparse matrix.  A must have been created with one of 
@@ -17781,22 +17686,11 @@ public final class Accelerate {
      * starting column index specified by column_start.  Returned indices are 0 based 
      * (first element of pointer is ptr[0]).  Must be of size nz elements.
      * 
-     * @result
+     * @return
      * On success val and jndx have been updated with the nonzero values of the row'th
      * row, column_end holds the column index of the next nonzero value, and
      * the number of nonzero values written are returned.  If A creation requirements 
      * are not met, SPARSE_ILLEGAL_PARAMETER is returned and val and jndx are unchanged.
-     * 
-     * @discussion
-     * Extract the first nz values of the row begining at A[row,column_start] for the
-     * sparse matrix A.  The number of nonzero values extracted is limited by nz, and
-     * the number of nonzero's written to jndx and val are returned.  Additionally, 
-     * the column index of the next nonzero value is returned in column_end.
-     * For example if nz is returned, not all nonzero values have been extracted,
-     * and a second extract can start from column_end.
-     * 
-     * A must have been created with one of sparse_matrix_create_float or
-     * sparse_matrix_create_double.
      */
     @Generated
     @CFunction
@@ -17809,10 +17703,19 @@ public final class Accelerate {
             LongPtr column_end, long nz, DoublePtr val, LongPtr jndx);
 
     /**
-     * @abstract
      * Extract the first nz values of the column begining at A[row_start,column] for 
      * the sparse matrix A.  A must have been created with one of 
      * sparse_matrix_create_float or sparse_matrix_create_double.
+     * 
+     * Extract the first nz values of the column begining at A[column,row_start] for 
+     * the sparse matrix A.  The number of nonzero values extracted is limited by nz, 
+     * and the number of nonzero's written to indx and val are returned.  
+     * Additionally, the row index of the next nonzero value is returned in
+     * row_end.  For example if nz is returned, not all nonzero values have been
+     * extracted, and a second extract can start from row_end.
+     * 
+     * A must have been created with one of sparse_matrix_create_float or
+     * sparse_matrix_create_double.
      * 
      * @param A
      * The sparse matrix.  A must have been created with one of 
@@ -17854,23 +17757,12 @@ public final class Accelerate {
      * starting row index specified by row_start.  Returned indices are 0 based
      * (first element of pointer is ptr[0]).  Must be of size nz elements.
      * 
-     * @result
+     * @return
      * On success val and indx have been updated with the nonzero values of the 
      * column'th column, row_end holds the row index of the next nonzero value,
      * and the number of nonzero values written are returned.  If A creation
      * requirements are not met, SPARSE_ILLEGAL_PARAMETER is returned and val and indx 
      * are unchanged.
-     * 
-     * @discussion
-     * Extract the first nz values of the column begining at A[column,row_start] for 
-     * the sparse matrix A.  The number of nonzero values extracted is limited by nz, 
-     * and the number of nonzero's written to indx and val are returned.  
-     * Additionally, the row index of the next nonzero value is returned in
-     * row_end.  For example if nz is returned, not all nonzero values have been
-     * extracted, and a second extract can start from row_end.
-     * 
-     * A must have been created with one of sparse_matrix_create_float or
-     * sparse_matrix_create_double.
      */
     @Generated
     @CFunction
@@ -17883,10 +17775,19 @@ public final class Accelerate {
             LongPtr row_end, long nz, DoublePtr val, LongPtr indx);
 
     /**
-     * @abstract
      * Create a sparse matrix object that is stored in block-entry format and is ready
      * to receive values from the various block insert routines.  Blocks are of fixed
      * dimension k x l.
+     * 
+     * Create a sparse matrix object that is stored in block-entry format and is ready
+     * to receive values from the various block insert routines.  Blocks are are of
+     * fixed dimensions k x l.  Block-entry format means blocks of dense regions will 
+     * be stored at block indices i,j.  For point wise format use non block version of
+     * create. See the various insert routines for details on inserting values into
+     * this matrix object.
+     * 
+     * The dimensions Mb, Nb, k, and l must be greater than 0.  On success a valid 
+     * matrix object is returned, otherwise NULL is returned.
      * 
      * @param Mb
      * The number of rows in terms of blocks of the matrix.  There are a total of
@@ -17902,20 +17803,9 @@ public final class Accelerate {
      * @param l
      * The column dimension of a block in the sparse matrix.  Must be greater than 0.
      * 
-     * @result
+     * @return
      * On success, returns a matrix object that is ready for receiving entries.  If an
      * error occurs, NULL is returned.
-     * 
-     * @discussion
-     * Create a sparse matrix object that is stored in block-entry format and is ready
-     * to receive values from the various block insert routines.  Blocks are are of
-     * fixed dimensions k x l.  Block-entry format means blocks of dense regions will 
-     * be stored at block indices i,j.  For point wise format use non block version of
-     * create. See the various insert routines for details on inserting values into
-     * this matrix object.
-     * 
-     * The dimensions Mb, Nb, k, and l must be greater than 0.  On success a valid 
-     * matrix object is returned, otherwise NULL is returned.
      */
     @Generated
     @CFunction
@@ -17926,10 +17816,20 @@ public final class Accelerate {
     public static native sparse_matrix_double sparse_matrix_block_create_double(long Mb, long Nb, long k, long l);
 
     /**
-     * @abstract
      * Create a sparse matrix object that is stored in block-entry format and is ready
      * to receive values from the various block insert routines.  Blocks are of 
      * variable dimensions where the i,j'th block has dimensions K[i] x L[j].
+     * 
+     * Create a sparse matrix object that is stored in block-entry format and is ready
+     * to receive values from the various block insert routines.  Blocks are are of
+     * variable dimension where the i,j'th block index has a dimension K[i] x L[j].  
+     * Block-entry format means blocks of dense regions will be stored at block 
+     * indices i,j.  For point wise format use non block version of create. See the 
+     * various insert routines for details on inserting values into this matrix
+     * object.
+     * 
+     * The dimensions Mb, Nb and all values in K and L must be greater than 0.  On 
+     * success a valid matrix object is returned, otherwise NULL is returned.
      * 
      * @param Mb
      * The number of rows in terms of blocks of the matrix.  Must be greater than 0.
@@ -17948,21 +17848,9 @@ public final class Accelerate {
      * blocks will have a dimension L[j].  L is expected to hold Nb elements.  All 
      * values of L are expected to be greater than 0.
      * 
-     * @result
+     * @return
      * On success, returns a matrix object that is ready for receiving entries.  If an
      * error occurs, NULL is returned.
-     * 
-     * @discussion
-     * Create a sparse matrix object that is stored in block-entry format and is ready
-     * to receive values from the various block insert routines.  Blocks are are of
-     * variable dimension where the i,j'th block index has a dimension K[i] x L[j].  
-     * Block-entry format means blocks of dense regions will be stored at block 
-     * indices i,j.  For point wise format use non block version of create. See the 
-     * various insert routines for details on inserting values into this matrix
-     * object.
-     * 
-     * The dimensions Mb, Nb and all values in K and L must be greater than 0.  On 
-     * success a valid matrix object is returned, otherwise NULL is returned.
      */
     @Generated
     @CFunction
@@ -17975,12 +17863,29 @@ public final class Accelerate {
             ConstLongPtr K, ConstLongPtr L);
 
     /**
-     * @abstract
      * Use to build a sparse matrix by providing a dense block for entry at block
      * location A[bi,bj].  Block size is determined at object creation time.  A must
      * have been created with one of sparse_matrix_block_create_float,
      * sparse_matrix_block_create_double, sparse_matrix_variable_block_create_float, or
      * sparse_matrix_variable_block_create_double.
+     * 
+     * Use to build a sparse matrix by providing a dense block for entry at block
+     * location A[bi,bj].  Block size is determined at object creation time.  Given a
+     * block dimension of k x l and for location bi,bj, update as:
+     * A[bi,bj][i,j] = val[i*row_stride + j*col_stride] for each i in k and each j in
+     * l.  
+     * 
+     * A must have been created with one of sparse_matrix_block_create_float,
+     * sparse_matrix_block_create_double, sparse_matrix_variable_block_create_float, or
+     * sparse_matrix_variable_block_create_double.
+     * 
+     * Note that matrix properties cannot be modified after value insertion begins.
+     * This includes properties such as specifying a triangular matrix.
+     * 
+     * Insertion can be expensive, generally speaking it is best to do a batch update.
+     * Inserted values may be temporarily held internally within the object and only
+     * inserted into the sparse format when a later computation triggers a need to
+     * insert.
      * 
      * @param A
      * The sparse matrix.  A must have been created with one of 
@@ -18014,29 +17919,10 @@ public final class Accelerate {
      * first block is located at 0,0.  Index is assumed to be within the bounds of the
      * matrix object, undefined behavior if not met.
      * 
-     * @result
+     * @return
      * On successful insertion, A has been updated with the value and SPARSE_SUCCESS is
      * returned.  If A creation requirements are not met, SPARSE_ILLEGAL_PARAMETER is
      * returned and A is unchanged.
-     * 
-     * @discussion
-     * Use to build a sparse matrix by providing a dense block for entry at block
-     * location A[bi,bj].  Block size is determined at object creation time.  Given a
-     * block dimension of k x l and for location bi,bj, update as:
-     * A[bi,bj][i,j] = val[i*row_stride + j*col_stride] for each i in k and each j in
-     * l.  
-     * 
-     * A must have been created with one of sparse_matrix_block_create_float,
-     * sparse_matrix_block_create_double, sparse_matrix_variable_block_create_float, or
-     * sparse_matrix_variable_block_create_double.
-     * 
-     * Note that matrix properties cannot be modified after value insertion begins.
-     * This includes properties such as specifying a triangular matrix.
-     * 
-     * Insertion can be expensive, generally speaking it is best to do a batch update.
-     * Inserted values may be temporarily held internally within the object and only
-     * inserted into the sparse format when a later computation triggers a need to
-     * insert.
      */
     @Generated
     @CFunction
@@ -18049,10 +17935,15 @@ public final class Accelerate {
             long col_stride, long bi, long bj);
 
     /**
-     * @abstract
      * Extract the bi,bj'th block from the sparse matrix A.  A must have been created
      * with one of sparse_matrix_block_create_float, sparse_matrix_block_create_double, 
      * sparse_matrix_variable_block_create_float, or 
+     * sparse_matrix_variable_block_create_double.
+     * 
+     * Extract the bi,bj'th block from the sparse matrix A.  
+     * 
+     * A must have been created with one of sparse_matrix_block_create_float, 
+     * sparse_matrix_block_create_double, sparse_matrix_variable_block_create_float, or
      * sparse_matrix_variable_block_create_double.
      * 
      * @param A
@@ -18086,17 +17977,10 @@ public final class Accelerate {
      * K x L where K x L is the block size for the matrix object at block index bi,bj.
      * This dimensions is set at matrix object creation time.
      * 
-     * @result
+     * @return
      * On success SPARSE_SUCCESS is return and val has been updated with the block from
      * block index bi,bj. If A creation requirements are not met, 
      * SPARSE_ILLEGAL_PARAMETER is returned and val is unchanged.
-     * 
-     * @discussion
-     * Extract the bi,bj'th block from the sparse matrix A.  
-     * 
-     * A must have been created with one of sparse_matrix_block_create_float, 
-     * sparse_matrix_block_create_double, sparse_matrix_variable_block_create_float, or
-     * sparse_matrix_variable_block_create_double.
      */
     @Generated
     @CFunction
@@ -18109,7 +17993,6 @@ public final class Accelerate {
             long col_stride, DoublePtr val);
 
     /**
-     * @abstract
      * Return the dimension of the block for the i'th row of a sparse block matrix. 
      * Returns 0 if the matrix was not created with a block create routine.
      */
@@ -18119,7 +18002,6 @@ public final class Accelerate {
     public static native long sparse_get_block_dimension_for_row(VoidPtr A, long i);
 
     /**
-     * @abstract
      * Return the dimension of the block for the j'th column of a sparse block matrix.
      * Returns 0 if the matrix was not created with a block create routine.
      */
@@ -18129,17 +18011,9 @@ public final class Accelerate {
     public static native long sparse_get_block_dimension_for_col(VoidPtr A, long j);
 
     /**
-     * @abstract
      * Force any recently added values to the matrix to be put into the internal
      * sparse storage format.
      * 
-     * @param A
-     * The sparse matrix, which has had values recently inserted into the object.
-     * 
-     * @result
-     * On success, A has all values inserted into the internal sparse representation.
-     * 
-     * @discussion
      * Force any recently added values to the matrix to be put into the internal
      * sparse storage format.  Values inserted into a matrix object will may not go 
      * directly into the sparse representation until needed, for example when a 
@@ -18150,14 +18024,22 @@ public final class Accelerate {
      * Adding values to the sparse format can be costly, and batch updates to the 
      * matrices are recommended.  Similarly, use of this routine may be expensive, so
      * it is best to insert all values of a batch and call this routine once.
+     * 
+     * @param A
+     * The sparse matrix, which has had values recently inserted into the object.
+     * 
+     * @return
+     * On success, A has all values inserted into the internal sparse representation.
      */
     @Generated
     @CFunction
     public static native int sparse_commit(VoidPtr A);
 
     /**
-     * @abstract
      * Returns the value of the given property name.
+     * 
+     * Returns the value of the given property name. See matrix properties enumeration
+     * for further property details.
      * 
      * @param A
      * The sparse matrix object.
@@ -18166,13 +18048,9 @@ public final class Accelerate {
      * The property name to get the value of.  See matrix properties enumeration for
      * options.
      * 
-     * @result
+     * @return
      * Returns the value of the property for a valid object and property, or 0 
      * otherwise.
-     * 
-     * @discussion
-     * Returns the value of the given property name. See matrix properties enumeration
-     * for further property details.
      */
     @Generated
     @CFunction
@@ -18180,9 +18058,15 @@ public final class Accelerate {
     public static native long sparse_get_matrix_property(VoidPtr A, int pname);
 
     /**
-     * @abstract
      * Set the given property for a matrix object that has not had any values 
      * inserted.
+     * 
+     * Set the given property for the matrix object.  The matrix object must not have
+     * had values inserted, else SPARSE_CANNOT_SET_PROPERTY is returned and the 
+     * property is not set.
+     * 
+     * Certain groups of properties are mutually exclusive and setting multiple values
+     * within a group is undefined.
      * 
      * @param A
      * The sparse matrix object.  Note that after elements have been inserted
@@ -18191,24 +18075,15 @@ public final class Accelerate {
      * @param pname
      * The property name to set true.  See matrix properties enumeration for options.
      * 
-     * @result
+     * @return
      * Returns SPARSE_SUCCESS when property is successfully set, otherwise return
      * SPARSE_CANNOT_SET_PROPERTY.
-     * 
-     * @discussion
-     * Set the given property for the matrix object.  The matrix object must not have
-     * had values inserted, else SPARSE_CANNOT_SET_PROPERTY is returned and the 
-     * property is not set.
-     * 
-     * Certain groups of properties are mutually exclusive and setting multiple values
-     * within a group is undefined.
      */
     @Generated
     @CFunction
     public static native int sparse_set_matrix_property(VoidPtr A, int pname);
 
     /**
-     * @abstract
      * Return the number of rows of the matrix.
      */
     @Generated
@@ -18216,7 +18091,6 @@ public final class Accelerate {
     public static native long sparse_get_matrix_number_of_rows(VoidPtr A);
 
     /**
-     * @abstract
      * Return the number of columns of the matrix.
      */
     @Generated
@@ -18224,7 +18098,6 @@ public final class Accelerate {
     public static native long sparse_get_matrix_number_of_columns(VoidPtr A);
 
     /**
-     * @abstract
      * Return the number of nonzero values in the matrix.
      */
     @Generated
@@ -18233,7 +18106,6 @@ public final class Accelerate {
     public static native long sparse_get_matrix_nonzero_count(VoidPtr A);
 
     /**
-     * @abstract
      * Return the number of nonzero values for the i'th row.  If index is out of
      * bounds of the matrix, 0 is returned.
      */
@@ -18243,7 +18115,6 @@ public final class Accelerate {
     public static native long sparse_get_matrix_nonzero_count_for_row(VoidPtr A, long i);
 
     /**
-     * @abstract
      * Return the number of nonzero values for the j'th column.  If index is out of
      * bounds of the matrix, 0 is returned.
      */
@@ -18253,26 +18124,23 @@ public final class Accelerate {
     public static native long sparse_get_matrix_nonzero_count_for_column(VoidPtr A, long j);
 
     /**
-     * @abstract
      * Release any memory associated with the matrix object.
+     * 
+     * Release any memory associated with the matrix object.  Upon return the object 
+     * is no longer valid and any use of the object is undefined.
      * 
      * @param A
      * The sparse matrix object.
      * 
-     * @result
+     * @return
      * All memory associated with the matrix object is released and returns 
      * SPARSE_SUCCESS.
-     * 
-     * @discussion
-     * Release any memory associated with the matrix object.  Upon return the object 
-     * is no longer valid and any use of the object is undefined.
      */
     @Generated
     @CFunction
     public static native int sparse_matrix_destroy(VoidPtr A);
 
     /**
-     * @abstract
      * Return the number of nonzero values in the dense vector x.
      * 
      * @param N
@@ -18285,7 +18153,7 @@ public final class Accelerate {
      * Increment between valid values in the dense vector x.  Negative strides are
      * supported.
      * 
-     * @result
+     * @return
      * Return the count of the nonzero values in the vector x.
      */
     @Generated
@@ -18299,9 +18167,14 @@ public final class Accelerate {
     public static native long sparse_get_vector_nonzero_count_double(long N, ConstDoublePtr x, long incx);
 
     /**
-     * @abstract
      * Pack the first nz nonzero values and indices from the dense vector x and
      * place them in y and indy.
+     * 
+     * Pack the first nz nonzero values and indices from the dense vector x and
+     * place them in y and indy.  If less than nz nonzero elements are found in the N 
+     * elements of x, then the last nz - actual_nonzero_count elements of y and indy 
+     * are unused.  The number of indices written can range from 0 to nz values and 
+     * the number written is returned.
      * 
      * @param N
      * The number of elements in the dense vector x.
@@ -18331,16 +18204,9 @@ public final class Accelerate {
      * nz - actual_nonzero_count elements are unused.  Returned indices are 0 based 
      * (the first element of a pointer is ptr[0]).
      * 
-     * @result
+     * @return
      * On success, y and indy are updated with up to the first nz nonzero indices.  
      * The number of nonzero values written is returned.
-     * 
-     * @discussion
-     * Pack the first nz nonzero values and indices from the dense vector x and
-     * place them in y and indy.  If less than nz nonzero elements are found in the N 
-     * elements of x, then the last nz - actual_nonzero_count elements of y and indy 
-     * are unused.  The number of indices written can range from 0 to nz values and 
-     * the number written is returned.
      */
     @Generated
     @CFunction
@@ -18355,9 +18221,15 @@ public final class Accelerate {
             LongPtr indy);
 
     /**
-     * @abstract
      * Extract elements from the sparse vector x into the corresponding location in
      * the dense vector y.  Optionally zero the unused values of y.
+     * 
+     * Extract elements from the sparse vector x into the corresponding location in
+     * the dense vector y.  Optionally zero the unused values of y.
+     * 
+     * if (zero) for (i in 0 .. N-1) y[i*incy] = 0;
+     * 
+     * for (i in 0 .. nz-1) if (indx[i] < N) y[indx[i]*incy] = x[i];
      * 
      * @param N
      * The number of elements in the dense vector y.
@@ -18396,17 +18268,9 @@ public final class Accelerate {
      * Increment between valid values in the dense vector y.  Negative strides are
      * supported.
      * 
-     * @result
+     * @return
      * On exit y has been updated with the nonzero values. If nz is less than or
      * equal to zero y is unchanged.
-     * 
-     * @discussion
-     * Extract elements from the sparse vector x into the corresponding location in
-     * the dense vector y.  Optionally zero the unused values of y.
-     * 
-     * if (zero) for (i in 0 .. N-1) y[i*incy] = 0;
-     * 
-     * for (i in 0 .. nz-1) if (indx[i] < N) y[indx[i]*incy] = x[i];
      */
     @Generated
     @CFunction
@@ -18419,9 +18283,8 @@ public final class Accelerate {
             ConstLongPtr indx, DoublePtr y, long incy);
 
     /**
-     * @abstract Integrate a function F over ]A,B[.
+     * Integrate a function F over ]A,B[.
      * 
-     * @discussion
      * This function provides a set of algorithms (integrators) to compute an approximation S' of the integral S = &int; F(x) dx over the interval ]A,B[.
      * 
      * The QNG (simple non-adaptive Gauss-Kronrod integration) and QAG (simple adaptive Gauss-Kronrod integration)
@@ -18485,9 +18348,8 @@ public final class Accelerate {
             IntPtr status, DoublePtr abs_error, @NUInt long workspace_size, VoidPtr workspace);
 
     /**
-     * @abstract Create a convolution layer filter (DEPRECATED,  Use BNNSFilterCreateLayerConvolution)
+     * Create a convolution layer filter (DEPRECATED,  Use BNNSFilterCreateLayerConvolution)
      * 
-     * @discussion
      * Creates a filter applying the convolution described in <tt>layer_params</tt>.
      * Some combinations of the parameters may not be supported, in which case the call will fail.
      * 
@@ -18507,9 +18369,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a fully connected layer filter (DEPRECATED,  Use BNNSFilterCreateLayerFullyConnected)
+     * Create a fully connected layer filter (DEPRECATED,  Use BNNSFilterCreateLayerFullyConnected)
      * 
-     * @discussion
      * Creates a filter applying the fully connected layer described in <tt>layer_params</tt>.
      * Some combinations of the parameters may not be supported, in which case the call will fail.
      * 
@@ -18529,9 +18390,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a pooling layer filter (DEPRECATED,  Use BNNSFilterCreateLayerPooling)
+     * Create a pooling layer filter (DEPRECATED,  Use BNNSFilterCreateLayerPooling)
      * 
-     * @discussion
      * Creates a filter applying the pooling layer described in <tt>layer_params</tt>
      * Some combinations of the parameters may not be supported, in which case the call will fail.
      * 
@@ -18551,7 +18411,7 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Apply a filter
+     * Apply a filter
      * 
      * @param filter Filter to apply
      * @param in Pointer to the input data
@@ -18564,9 +18424,8 @@ public final class Accelerate {
     public static native int BNNSFilterApply(VoidPtr filter, ConstVoidPtr in, VoidPtr out);
 
     /**
-     * @abstract Apply a filter to several pairs of (input, output) data
+     * Apply a filter to several pairs of (input, output) data
      * 
-     * @discussion
      * The filter is applied for each of the <tt>batch_size</tt> inputs, and produces <tt>batch_size</tt> outputs.
      * <tt>in</tt> (resp. <tt>out</tt>) is expected to point to <tt>batch_size</tt> times the input (resp. output) object size defined when the filter was created.
      * 
@@ -18585,9 +18444,9 @@ public final class Accelerate {
             @NUInt long in_stride, VoidPtr out, @NUInt long out_stride);
 
     /**
-     * @abstract Destroy filter
+     * Destroy filter
      * 
-     * @discussion Releases all resources allocated for this filter.
+     * Releases all resources allocated for this filter.
      * 
      * @param filter Filter to destroy
      */
@@ -18596,7 +18455,7 @@ public final class Accelerate {
     public static native void BNNSFilterDestroy(VoidPtr filter);
 
     /**
-     * @abstract Calculates the reciprocal for each element of a vector.
+     * Calculates the reciprocal for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to 1/x[i].
      * 
@@ -18609,7 +18468,7 @@ public final class Accelerate {
     public static native void vvrecf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the reciprocal for each element of a vector.
+     * Calculates the reciprocal for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to 1/x[i].
      * 
@@ -18622,7 +18481,7 @@ public final class Accelerate {
     public static native void vvrec(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the quotient of the two source vectors.
+     * Calculates the quotient of the two source vectors.
      * 
      * @param z (output) Output vector of size *n. z[i] is set to y[i]/x[i].
      * 
@@ -18637,7 +18496,7 @@ public final class Accelerate {
     public static native void vvdivf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates the quotient of the two source vectors.
+     * Calculates the quotient of the two source vectors.
      * 
      * @param z (output) Output vector of size *n. z[i] is set to y[i]/x[i].
      * 
@@ -18652,7 +18511,7 @@ public final class Accelerate {
     public static native void vvdiv(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates the square root for each element of a vector.
+     * Calculates the square root for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to sqrt(x[i]).
      * 
@@ -18665,7 +18524,7 @@ public final class Accelerate {
     public static native void vvsqrtf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the square root for each element of a vector.
+     * Calculates the square root for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to sqrt(x[i]).
      * 
@@ -18678,7 +18537,7 @@ public final class Accelerate {
     public static native void vvsqrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the cube root for each element of a vector.
+     * Calculates the cube root for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to cbrt(x[i]).
      * 
@@ -18691,7 +18550,7 @@ public final class Accelerate {
     public static native void vvcbrtf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the cube root for each element of a vector.
+     * Calculates the cube root for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to cbrt(x[i]).
      * 
@@ -18704,7 +18563,7 @@ public final class Accelerate {
     public static native void vvcbrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the reciprocal square root for each element of a
+     * Calculates the reciprocal square root for each element of a
      *           vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to 1/sqrt(x[i]).
@@ -18718,7 +18577,7 @@ public final class Accelerate {
     public static native void vvrsqrtf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the reciprocal square root for each element of a
+     * Calculates the reciprocal square root for each element of a
      *           vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to 1/sqrt(x[i]).
@@ -18732,7 +18591,7 @@ public final class Accelerate {
     public static native void vvrsqrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the exponential function e**x for each element of a
+     * Calculates the exponential function e**x for each element of a
      *           vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to exp(x[i]).
@@ -18746,7 +18605,7 @@ public final class Accelerate {
     public static native void vvexpf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the exponential function e**x for each element of a
+     * Calculates the exponential function e**x for each element of a
      *           vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to exp(x[i]).
@@ -18760,16 +18619,15 @@ public final class Accelerate {
     public static native void vvexp(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates (e**x) - 1 for each element of a vector, with high
+     * Calculates (e**x) - 1 for each element of a vector, with high
      *           accuracy around x=0.
      * 
-     * @discussion
      * If x is nearly zero, then the common expression exp(x) - 1.0 will suffer
      * from catastrophic cancellation and the result will have little or no
      * precision.  This function provides an alternative means to do this
      * calculation without the risk of significant loss of precision.
      * 
-     * @seealso log1pf
+     * @see log1pf
      * 
      * @param y (output) Output vector of size *n. y[i] is set to expm1(x[i]).
      * 
@@ -18782,16 +18640,15 @@ public final class Accelerate {
     public static native void vvexpm1f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates (e**x) - 1 for each element of a vector, with high
+     * Calculates (e**x) - 1 for each element of a vector, with high
      *           accuracy around x=0.
      * 
-     * @discussion
      * If x is nearly zero, then the common expression exp(x) - 1.0 will suffer
      * from catastrophic cancellation and the result will have little or no
      * precision.  This function provides an alternative means to do this
      * calculation without the risk of significant loss of precision.
      * 
-     * @seealso log1p
+     * @see log1p
      * 
      * @param y (output) Output vector of size *n. y[i] is set to expm1(x[i]).
      * 
@@ -18804,7 +18661,7 @@ public final class Accelerate {
     public static native void vvexpm1(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the natural logarithm for each element of a vector.
+     * Calculates the natural logarithm for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to log(x[i]).
      * 
@@ -18817,7 +18674,7 @@ public final class Accelerate {
     public static native void vvlogf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the natural logarithm for each element of a vector.
+     * Calculates the natural logarithm for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to log(x[i]).
      * 
@@ -18830,7 +18687,7 @@ public final class Accelerate {
     public static native void vvlog(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the logarithm base 10 for each element of a vector.
+     * Calculates the logarithm base 10 for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to log10(x[i]).
      * 
@@ -18843,7 +18700,7 @@ public final class Accelerate {
     public static native void vvlog10f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the logarithm base 10 for each element of a vector.
+     * Calculates the logarithm base 10 for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to log10(x[i]).
      * 
@@ -18856,16 +18713,15 @@ public final class Accelerate {
     public static native void vvlog10(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates log(1+x) for each element of a vector, with high
+     * Calculates log(1+x) for each element of a vector, with high
      *           accuracy around x=0.
      * 
-     * @discussion
      * If x is nearly zero, the expression log(1+x) will be highly inaccurate
      * due to floating point rounding errors in (1+x).
      * This function provides an alternative means to calculate this value with
      * higher accuracy.
      * 
-     * @seealso expm1f
+     * @see expm1f
      * 
      * @param y (output) Output vector of size *n. y[i] is set to log1p(x[i]).
      * 
@@ -18878,16 +18734,15 @@ public final class Accelerate {
     public static native void vvlog1pf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates log(1+x) for each element of a vector, with high
+     * Calculates log(1+x) for each element of a vector, with high
      *           accuracy around x=0.
      * 
-     * @discussion
      * If x is nearly zero, the expression log(1+x) will be highly inaccurate
      * due to floating point rounding errors in (1+x).
      * This function provides an alternative means to calculate this value with
      * higher accuracy.
      * 
-     * @seealso expm1
+     * @see expm1
      * 
      * @param y (output) Output vector of size *n. y[i] is set to log1p(x[i]).
      * 
@@ -18900,10 +18755,9 @@ public final class Accelerate {
     public static native void vvlog1p(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns, as a floating-point value, the unbiased floating-point
+     * Returns, as a floating-point value, the unbiased floating-point
      *           exponent for each element of a vector.
      * 
-     * @discussion
      * For a non-zero finite floating-point number f, logb is defined to be the
      * integer that satisfies abs(f) = significand * 2**logb(f), with significand
      * in [1,2).
@@ -18923,10 +18777,9 @@ public final class Accelerate {
     public static native void vvlogbf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns, as a floating-point value, the unbiased floating-point
+     * Returns, as a floating-point value, the unbiased floating-point
      *           exponent for each element of a vector.
      * 
-     * @discussion
      * For a non-zero finite floating-point number f, logb is defined to be the
      * integer that satisfies abs(f) = significand * 2**logb(f), with significand
      * in [1,2).
@@ -18946,7 +18799,7 @@ public final class Accelerate {
     public static native void vvlogb(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the absolute value for each element of a vector.
+     * Returns the absolute value for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to fabs(x[i]).
      * 
@@ -18959,7 +18812,7 @@ public final class Accelerate {
     public static native void vvfabsf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the absolute value for each element of a vector.
+     * Returns the absolute value for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to fabs(x[i]).
      * 
@@ -18972,9 +18825,8 @@ public final class Accelerate {
     public static native void vvfabs(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates, elementwise, x**y for two vectors x and y.
+     * Calculates, elementwise, x**y for two vectors x and y.
      * 
-     * @discussion
      * The following special values of x and y produce the given value of z:
      *        y            x         z
      * ==============   =======   =======
@@ -19010,9 +18862,8 @@ public final class Accelerate {
     public static native void vvpowf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates, elementwise, x**y for two vectors x and y.
+     * Calculates, elementwise, x**y for two vectors x and y.
      * 
-     * @discussion
      * The following special values of x and y produce the given value of z:
      *        y            x         z
      * ==============   =======   =======
@@ -19048,7 +18899,7 @@ public final class Accelerate {
     public static native void vvpow(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates, elementwise, x**y for a vector x and a scalar y.
+     * Calculates, elementwise, x**y for a vector x and a scalar y.
      * 
      * @param z (output) Output vector of size *n. z[i] is set to pow(x[i], y).
      * 
@@ -19063,7 +18914,7 @@ public final class Accelerate {
     public static native void vvpowsf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates, elementwise, x**y for a vector x and a scalar y.
+     * Calculates, elementwise, x**y for a vector x and a scalar y.
      * 
      * @param z (output) Output vector of size *n. z[i] is set to pow(x[i], y).
      * 
@@ -19078,9 +18929,8 @@ public final class Accelerate {
     public static native void vvpows(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Returns the sine for each element of a vector.
+     * Returns the sine for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to NaN.
      * 
@@ -19095,9 +18945,8 @@ public final class Accelerate {
     public static native void vvsinf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the sine for each element of a vector.
+     * Returns the sine for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to NaN.
      * 
@@ -19112,9 +18961,8 @@ public final class Accelerate {
     public static native void vvsin(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the cosine for each element of a vector.
+     * Returns the cosine for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-inf, y[i] is set to NaN.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to cos(x[i]).
@@ -19128,9 +18976,8 @@ public final class Accelerate {
     public static native void vvcosf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the cosine for each element of a vector.
+     * Returns the cosine for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-inf, y[i] is set to NaN.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to cos(x[i]).
@@ -19144,9 +18991,8 @@ public final class Accelerate {
     public static native void vvcos(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the tangent for each element of a vector.
+     * Returns the tangent for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to NaN.
      * 
@@ -19161,9 +19007,8 @@ public final class Accelerate {
     public static native void vvtanf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the tangent for each element of a vector.
+     * Returns the tangent for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to NaN.
      * 
@@ -19178,10 +19023,9 @@ public final class Accelerate {
     public static native void vvtan(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the principal value of arc sine for each element of a
+     * Returns the principal value of arc sine for each element of a
      *           vector.
      * 
-     * @discussion
      * The calculated values are in the range [-pi/2, +pi/2].
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If |x[i]| > 1, y[i] is set to NaN.
@@ -19197,10 +19041,9 @@ public final class Accelerate {
     public static native void vvasinf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the principal value of arc sine for each element of a
+     * Returns the principal value of arc sine for each element of a
      *           vector.
      * 
-     * @discussion
      * The calculated values are in the range [-pi/2, +pi/2].
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If |x[i]| > 1, y[i] is set to NaN.
@@ -19216,10 +19059,9 @@ public final class Accelerate {
     public static native void vvasin(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the principal value of arc cosine for each element of a
+     * Returns the principal value of arc cosine for each element of a
      *           vector.
      * 
-     * @discussion
      * The calculated values are in the range [0, pi].
      * If x[i] is 1, y[i] is set to +0.
      * If |x[i]| > 1, y[i] is set to NaN.
@@ -19235,10 +19077,9 @@ public final class Accelerate {
     public static native void vvacosf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the principal value of arc cosine for each element of a
+     * Returns the principal value of arc cosine for each element of a
      *           vector.
      * 
-     * @discussion
      * The calculated values are in the range [0, pi].
      * If x[i] is 1, y[i] is set to +0.
      * If |x[i]| > 1, y[i] is set to NaN.
@@ -19254,10 +19095,9 @@ public final class Accelerate {
     public static native void vvacos(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the principal value of arc tangent for each element of a
+     * Returns the principal value of arc tangent for each element of a
      *           vector.
      * 
-     * @discussion
      * The calculated values are in the range [-pi/2, pi/2].
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to +/-pi/2.
@@ -19273,10 +19113,9 @@ public final class Accelerate {
     public static native void vvatanf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Returns the principal value of arc tangent for each element of a
+     * Returns the principal value of arc tangent for each element of a
      *           vector.
      * 
-     * @discussion
      * The calculated values are in the range [-pi/2, pi/2].
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to +/-pi/2.
@@ -19292,10 +19131,10 @@ public final class Accelerate {
     public static native void vvatan(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates, elementwise, the principal value of the arc tangent
+     * Calculates, elementwise, the principal value of the arc tangent
      *           of y/x, for two vectors x and y.
      * 
-     * @discusssion
+     * [@discusssion]
      * The signs of both arguments are used to determine the quadrant of the
      * calculated value.
      * 
@@ -19327,10 +19166,10 @@ public final class Accelerate {
     public static native void vvatan2f(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates, elementwise, the principal value of the arc tangent
+     * Calculates, elementwise, the principal value of the arc tangent
      *           of y/x, for two vectors x and y.
      * 
-     * @discusssion
+     * [@discusssion]
      * The signs of both arguments are used to determine the quadrant of the
      * calculated value.
      * 
@@ -19362,7 +19201,7 @@ public final class Accelerate {
     public static native void vvatan2(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Returns the sine and cosine for each element of a vector.
+     * Returns the sine and cosine for each element of a vector.
      * 
      * @param z (output) Output vector of size *n. z[i] is set to sin(x[i]).
      * 
@@ -19377,7 +19216,7 @@ public final class Accelerate {
     public static native void vvsincosf(FloatPtr arg1, FloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Returns the sine and cosine for each element of a vector.
+     * Returns the sine and cosine for each element of a vector.
      * 
      * @param z (output) Output vector of size *n. z[i] is set to sin(x[i]).
      * 
@@ -19392,9 +19231,8 @@ public final class Accelerate {
     public static native void vvsincos(DoublePtr arg1, DoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates the hyperbolic sine for each element of a vector.
+     * Calculates the hyperbolic sine for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to +/-inf.
      * 
@@ -19409,9 +19247,8 @@ public final class Accelerate {
     public static native void vvsinhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the hyperbolic sine for each element of a vector.
+     * Calculates the hyperbolic sine for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to +/-inf.
      * 
@@ -19426,9 +19263,8 @@ public final class Accelerate {
     public static native void vvsinh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the hyperbolic cosine for each element of a vector.
+     * Calculates the hyperbolic cosine for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] is set to 1.
      * If x[i] is +/-inf, y[i] is set to +inf.
      * 
@@ -19443,9 +19279,8 @@ public final class Accelerate {
     public static native void vvcoshf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the hyperbolic cosine for each element of a vector.
+     * Calculates the hyperbolic cosine for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] is set to 1.
      * If x[i] is +/-inf, y[i] is set to +inf.
      * 
@@ -19460,9 +19295,8 @@ public final class Accelerate {
     public static native void vvcosh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the hyperbolic tangent for each element of a vector.
+     * Calculates the hyperbolic tangent for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to +/-1.
      * 
@@ -19477,9 +19311,8 @@ public final class Accelerate {
     public static native void vvtanhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the hyperbolic tangent for each element of a vector.
+     * Calculates the hyperbolic tangent for each element of a vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to +/-1.
      * 
@@ -19494,10 +19327,9 @@ public final class Accelerate {
     public static native void vvtanh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the inverse hyperbolic sine for each element of a
+     * Calculates the inverse hyperbolic sine for each element of a
      *           vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to +/-inf.
      * 
@@ -19512,10 +19344,9 @@ public final class Accelerate {
     public static native void vvasinhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the inverse hyperbolic sine for each element of a
+     * Calculates the inverse hyperbolic sine for each element of a
      *           vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-inf, y[i] is set to +/-inf.
      * 
@@ -19530,10 +19361,9 @@ public final class Accelerate {
     public static native void vvasinh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the principal value of inverse hyperbolic cosine for
+     * Calculates the principal value of inverse hyperbolic cosine for
      *           each element of a vector.
      * 
-     * @discussion
      * The calculated values are in the range [0, +inf].
      * If x[i] == 1, y[i] is set to +0.
      * If x[i] < 1, y[i] is set to NaN.
@@ -19550,10 +19380,9 @@ public final class Accelerate {
     public static native void vvacoshf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the principal value of inverse hyperbolic cosine for
+     * Calculates the principal value of inverse hyperbolic cosine for
      *           each element of a vector.
      * 
-     * @discussion
      * The calculated values are in the range [0, +inf].
      * If x[i] == 1, y[i] is set to +0.
      * If x[i] < 1, y[i] is set to NaN.
@@ -19570,10 +19399,9 @@ public final class Accelerate {
     public static native void vvacosh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the inverse hyperbolic tangent for each element of a
+     * Calculates the inverse hyperbolic tangent for each element of a
      *           vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-1, y[i] is set to +/-inf.
      * If |x[i]|>1, y[i] is set to NaN.
@@ -19589,10 +19417,9 @@ public final class Accelerate {
     public static native void vvatanhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the inverse hyperbolic tangent for each element of a
+     * Calculates the inverse hyperbolic tangent for each element of a
      *           vector.
      * 
-     * @discussion
      * If x[i] is +/-0, y[i] preserves the signed zero.
      * If x[i] is +/-1, y[i] is set to +/-inf.
      * If |x[i]|>1, y[i] is set to NaN.
@@ -19608,9 +19435,8 @@ public final class Accelerate {
     public static native void vvatanh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the integer truncation for each element of a vector.
+     * Calculates the integer truncation for each element of a vector.
      * 
-     * @discussion
      * The behavior of this function is equivalent to the libm function truncf().
      * It rounds x[i] to the nearest integer in the direction of zero,
      * equivalent to the C typecast y[i] = (float) (int) x[i].
@@ -19627,9 +19453,8 @@ public final class Accelerate {
     public static native void vvintf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the integer truncation for each element of a vector.
+     * Calculates the integer truncation for each element of a vector.
      * 
-     * @discussion
      * The behavior of this function is equivalent to the libm function trunc().
      * It rounds x[i] to the nearest integer in the direction of zero,
      * equivalent to the C typecast y[i] = (double) (int) x[i].
@@ -19646,10 +19471,9 @@ public final class Accelerate {
     public static native void vvint(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the rounding to the nearest integer for each element
+     * Calculates the rounding to the nearest integer for each element
      *           of a vector.
      * 
-     * @discussion
      * Rounds x[i] to the nearest integer, with ties rounded to even.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to the nearest
@@ -19664,10 +19488,9 @@ public final class Accelerate {
     public static native void vvnintf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the rounding to the nearest integer for each element
+     * Calculates the rounding to the nearest integer for each element
      *           of a vector.
      * 
-     * @discussion
      * Rounds x[i] to the nearest integer, with ties rounded to even.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to the nearest
@@ -19682,9 +19505,8 @@ public final class Accelerate {
     public static native void vvnint(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the ceiling function for each element of a vector.
+     * Calculates the ceiling function for each element of a vector.
      * 
-     * @discussion
      * Rounds to smallest integral value not less than x[i]. That is to say,
      * rounds towards +inf.
      * 
@@ -19699,9 +19521,8 @@ public final class Accelerate {
     public static native void vvceilf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the ceiling function for each element of a vector.
+     * Calculates the ceiling function for each element of a vector.
      * 
-     * @discussion
      * Rounds to smallest integral value not less than x[i]. That is to say,
      * rounds towards +inf.
      * 
@@ -19716,9 +19537,8 @@ public final class Accelerate {
     public static native void vvceil(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the floor function for each element of a vector.
+     * Calculates the floor function for each element of a vector.
      * 
-     * @discussion
      * Rounds to smallest integral value not greater than x[i]. That is to say,
      * rounds towards -inf.
      * 
@@ -19733,9 +19553,8 @@ public final class Accelerate {
     public static native void vvfloorf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the floor function for each element of a vector.
+     * Calculates the floor function for each element of a vector.
      * 
-     * @discussion
      * Rounds to smallest integral value not greater than x[i]. That is to say,
      * rounds towards -inf.
      * 
@@ -19750,10 +19569,9 @@ public final class Accelerate {
     public static native void vvfloor(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates, elementwise, the floating-point remainder of y/x,
+     * Calculates, elementwise, the floating-point remainder of y/x,
      *           for two vectors x and y.
      * 
-     * @discussion
      * Specifically, the function calculates z=y-k*x, for some integer k such that,
      * if x is non-zero, the result has the same sign as y, and magnitude less than
      * that of x.
@@ -19765,7 +19583,7 @@ public final class Accelerate {
      * Note that argument labels are switched with respect to the libm function
      * fmod().
      * 
-     * @seealso vvremainderf
+     * @see vvremainderf
      * 
      * @param z (output) Output vector of size *n. z[i] is set to fmod(y[i], x[i]).
      * 
@@ -19780,10 +19598,9 @@ public final class Accelerate {
     public static native void vvfmodf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates, elementwise, the floating-point remainder of y/x,
+     * Calculates, elementwise, the floating-point remainder of y/x,
      *           for two vectors x and y.
      * 
-     * @discussion
      * Specifically, the function calculates z=y-k*x, for some integer k such that,
      * if x is non-zero, the result has the same sign as y, and magnitude less than
      * that of x.
@@ -19795,7 +19612,7 @@ public final class Accelerate {
      * Note that argument labels are switched with respect to the libm function
      * fmod().
      * 
-     * @seealso vvremainder
+     * @see vvremainder
      * 
      * @param z (output) Output vector of size *n. z[i] is set to fmod(y[i], x[i]).
      * 
@@ -19810,10 +19627,9 @@ public final class Accelerate {
     public static native void vvfmod(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates, elementwise, the difference between k*x and y, where
+     * Calculates, elementwise, the difference between k*x and y, where
      *           k is the nearest integer to y/x.
      * 
-     * @discussion
      * Specifically, the function calculates z=y-k*x, for the integer k nearest the
      * exact value of y/x, with ties rounded to even.
      * The result z satisfies abs(z) <= abs(x)/2.
@@ -19823,7 +19639,7 @@ public final class Accelerate {
      * If y[i] is +/-inf, or x[i] is +/-0, z[i] is set to NaN.
      * If x[i] is +/-inf, and y is finite, z[i] is set to y[i].
      * 
-     * @seealso vvfmodf
+     * @see vvfmodf
      * 
      * @param z (output) Output vector of size *n. z[i] is set to y[i]-k[i]*x[i].
      * 
@@ -19838,10 +19654,9 @@ public final class Accelerate {
     public static native void vvremainderf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates, elementwise, the difference between k*x and y, where
+     * Calculates, elementwise, the difference between k*x and y, where
      *           k is the nearest integer to y/x.
      * 
-     * @discussion
      * Specifically, the function calculates z=y-k*x, for the integer k nearest the
      * exact value of y/x, with ties rounded to even.
      * The result z satisfies abs(z) <= abs(x)/2.
@@ -19851,7 +19666,7 @@ public final class Accelerate {
      * If y[i] is +/-inf, or x[i] is +/-0, z[i] is set to NaN.
      * If x[i] is +/-inf, and y is finite, z[i] is set to y[i].
      * 
-     * @seealso vvfmod
+     * @see vvfmod
      * 
      * @param z (output) Output vector of size *n. z[i] is set to y[i]-k[i]*x[i].
      * 
@@ -19866,7 +19681,7 @@ public final class Accelerate {
     public static native void vvremainder(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Copies, elementwise, the sign of x with the value of y, for two
+     * Copies, elementwise, the sign of x with the value of y, for two
      *           vectors x and y.
      * 
      * @param z (output) Output vector of size *n.
@@ -19883,7 +19698,7 @@ public final class Accelerate {
     public static native void vvcopysignf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Copies, elementwise, the sign of x with the value of y, for two
+     * Copies, elementwise, the sign of x with the value of y, for two
      *           vectors x and y.
      * 
      * @param z (output) Output vector of size *n.
@@ -19900,7 +19715,7 @@ public final class Accelerate {
     public static native void vvcopysign(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Determines, elementwise, the next machine representable number
+     * Determines, elementwise, the next machine representable number
      *           from y in the direction of x.
      * 
      * @param z (output) Output vector of size *n.
@@ -19917,7 +19732,7 @@ public final class Accelerate {
     public static native void vvnextafterf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Determines, elementwise, the next machine representable number
+     * Determines, elementwise, the next machine representable number
      *           from y in the direction of x.
      * 
      * @param z (output) Output vector of size *n.
@@ -19934,7 +19749,7 @@ public final class Accelerate {
     public static native void vvnextafter(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
 
     /**
-     * @abstract Calculates the base 2 logarithm for each element of a vector.
+     * Calculates the base 2 logarithm for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to log2(x[i]).
      * 
@@ -19947,7 +19762,7 @@ public final class Accelerate {
     public static native void vvlog2f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the base 2 logarithm for each element of a vector.
+     * Calculates the base 2 logarithm for each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to log2(x[i]).
      * 
@@ -19960,7 +19775,7 @@ public final class Accelerate {
     public static native void vvlog2(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the base 2 exponential function 2**x for each element
+     * Calculates the base 2 exponential function 2**x for each element
      *           of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to exp2(x[i]).
@@ -19974,7 +19789,7 @@ public final class Accelerate {
     public static native void vvexp2f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the base 2 exponential function 2**x for each element
+     * Calculates the base 2 exponential function 2**x for each element
      *           of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to exp2(x[i]).
@@ -19988,7 +19803,7 @@ public final class Accelerate {
     public static native void vvexp2(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the sine for pi times each element of a vector.
+     * Calculates the sine for pi times each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to sin(x[i]*PI).
      * 
@@ -20001,7 +19816,7 @@ public final class Accelerate {
     public static native void vvsinpif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the sine for pi times each element of a vector.
+     * Calculates the sine for pi times each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to sin(x[i]*PI).
      * 
@@ -20014,7 +19829,7 @@ public final class Accelerate {
     public static native void vvsinpi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the cosine for pi times each element of a vector.
+     * Calculates the cosine for pi times each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to cos(x[i]*PI).
      * 
@@ -20027,7 +19842,7 @@ public final class Accelerate {
     public static native void vvcospif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the cosine for pi times each element of a vector.
+     * Calculates the cosine for pi times each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to cos(x[i]*PI).
      * 
@@ -20040,7 +19855,7 @@ public final class Accelerate {
     public static native void vvcospi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the tangent for pi times each element of a vector.
+     * Calculates the tangent for pi times each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to tan(x[i]*PI).
      * 
@@ -20053,7 +19868,7 @@ public final class Accelerate {
     public static native void vvtanpif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
 
     /**
-     * @abstract Calculates the tangent for pi times each element of a vector.
+     * Calculates the tangent for pi times each element of a vector.
      * 
      * @param y (output) Output vector of size *n. y[i] is set to tan(x[i]*PI).
      * 
@@ -20066,9 +19881,10 @@ public final class Accelerate {
     public static native void vvtanpi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
 
     /**
-     * @function vImageAlphaBlend_Planar8
-     * @abstract Composite two non-premultiplied planar 8-bit images, to produce a non-premultiplied result.
-     * @discussion
+     * [@function] vImageAlphaBlend_Planar8
+     * 
+     * Composite two non-premultiplied planar 8-bit images, to produce a non-premultiplied result.
+     * 
      * 
      *      For each color channel:
      * <pre>@textblock
@@ -20097,7 +19913,7 @@ public final class Accelerate {
      * <pre>@textblock
      *          vImagePremultipliedAlphaBlend_Planar8( srcTopAlpha, srcTopAlpha, srcBottomAlpha, alpha, kvImageNoFlags );
      * @/textblock </pre>
-     * @oaram dest          The non-premultiplied result will be written here.
+     * @param dest          The non-premultiplied result will be written here.
      * 
      * @param flags         The following flags are allowed:
      *  <pre>@textblock
@@ -20105,7 +19921,7 @@ public final class Accelerate {
      * 
      *          kvImageDoNotTile        Disables internal multithreading. This may be useful if you are writing your own multithreaded tiling engine.
      *  @/textblock</pre>
-     * @result              The following result codes may be returned:
+     * @return              The following result codes may be returned:
      *  <pre>@textblock
      *          kvImageNoError                      Success!
      * 
@@ -20124,9 +19940,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageAlphaBlend_PlanarF
-     * @abstract Composite two non-premultiplied planar floating-point images, to produce a non-premultiplied result.
-     * @discussion
+     * [@function] vImageAlphaBlend_PlanarF
+     * 
+     * Composite two non-premultiplied planar floating-point images, to produce a non-premultiplied result.
+     * 
      * 
      *      For each color channel:
      * <pre>@textblock
@@ -20155,7 +19972,7 @@ public final class Accelerate {
      * <pre>@textblock
      *                          vImagePremultipliedAlphaBlend_PlanarF( srcTopAlpha, srcTopAlpha, srcBottomAlpha, alpha, kvImageNoFlags );
      * @/textblock </pre>
-     * @oaram dest          The non-premultiplied result will be written here.
+     * @param dest          The non-premultiplied result will be written here.
      * 
      * @param flags         The following flags are allowed:
      *  <pre>@textblock
@@ -20163,7 +19980,7 @@ public final class Accelerate {
      * 
      *          kvImageDoNotTile        Disables internal multithreading. This may be useful if you are writing your own multithreaded tiling engine.
      *  @/textblock</pre>
-     * @result              The following result codes may be returned:
+     * @return              The following result codes may be returned:
      *  <pre>@textblock
      *          kvImageNoError                      Success!
      * 
@@ -20182,9 +19999,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageAlphaBlend_ARGB8888
-     * @abstract Composite two non-premultiplied ARGB8888 images, to produce a non-premultiplied result.
-     * @discussion
+     * [@function] vImageAlphaBlend_ARGB8888
+     * 
+     * Composite two non-premultiplied ARGB8888 images, to produce a non-premultiplied result.
+     * 
      * 
      *      For each color channel:
      * <pre>@textblock
@@ -20203,7 +20021,7 @@ public final class Accelerate {
      * 
      * @param srcTop        The image that is composited on top of the bottom image. The alpha channel must appear first.
      * @param srcBottom     The image that is below the srcTop image, into which it is blended. The alpha channel must appear first.
-     * @oaram dest          The non-premultiplied result will be written here.
+     * @param dest          The non-premultiplied result will be written here.
      * 
      * @param flags         The following flags are allowed:
      *  <pre>@textblock
@@ -20211,7 +20029,7 @@ public final class Accelerate {
      * 
      *          kvImageDoNotTile        Disables internal multithreading. This may be useful if you are writing your own multithreaded tiling engine.
      *  @/textblock</pre>
-     * @result              The following result codes may be returned:
+     * @return              The following result codes may be returned:
      *  <pre>@textblock
      *          kvImageNoError                      Success!
      * 
@@ -20227,9 +20045,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageAlphaBlend_ARGBFFFF
-     * @abstract Composite two non-premultiplied ARGBFFFF images, to produce a non-premultiplied result.
-     * @discussion
+     * [@function] vImageAlphaBlend_ARGBFFFF
+     * 
+     * Composite two non-premultiplied ARGBFFFF images, to produce a non-premultiplied result.
+     * 
      * 
      *      For each color channel:
      * <pre>@textblock
@@ -20248,7 +20067,7 @@ public final class Accelerate {
      * 
      * @param srcTop        The image that is composited on top of the bottom image. The alpha channel must appear first.
      * @param srcBottom     The image that is below the srcTop image, into which it is blended. The alpha channel must appear first.
-     * @oaram dest          The non-premultiplied result will be written here.
+     * @param dest          The non-premultiplied result will be written here.
      * 
      * @param flags         The following flags are allowed:
      *  <pre>@textblock
@@ -20256,7 +20075,7 @@ public final class Accelerate {
      * 
      *          kvImageDoNotTile        Disables internal multithreading. This may be useful if you are writing your own multithreaded tiling engine.
      *  @/textblock</pre>
-     * @result              The following result codes may be returned:
+     * @return              The following result codes may be returned:
      *  <pre>@textblock
      *          kvImageNoError                      Success!
      * 
@@ -20272,9 +20091,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlend_Planar8
-     * @abstract blend two premultiplied Planar8 images to produce a premultiplied Planar8 result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlend_Planar8
+     * 
+     * blend two premultiplied Planar8 images to produce a premultiplied Planar8 result.
+     * 
      *      For each color channel:
      * <pre>@textblock
      *          uint8_t destColor = srcTopColor  + ((255 - srcTopAlpha) * srcBottomColor + 127)/255;
@@ -20300,7 +20120,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20317,9 +20137,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlend_PlanarF
-     * @abstract blend two premultiplied PlanarF images to produce a premultiplied PlanarF result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlend_PlanarF
+     * 
+     * blend two premultiplied PlanarF images to produce a premultiplied PlanarF result.
+     * 
      *      For each color channel:
      * <pre>@textblock
      *          float destColor = srcTopColor  + (1.0 - srcTopAlpha) * srcBottomColor;
@@ -20345,7 +20166,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20362,9 +20183,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlend_ARGB8888
-     * @abstract blend two premultiplied ARGB8888 images to produce a premultiplied ARGB8888 result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlend_ARGB8888
+     * 
+     * blend two premultiplied ARGB8888 images to produce a premultiplied ARGB8888 result.
+     * 
      *      For each color channel:
      * <pre>@textblock
      *          uint8_t destColor = srcTopColor  + ((255 - srcTopAlpha) * srcBottomColor + 127)/255;
@@ -20392,7 +20214,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20408,9 +20230,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlend_BGRA8888
-     * @abstract blend two premultiplied BGRA8888 images to produce a premultiplied BGRA8888 result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlend_BGRA8888
+     * 
+     * blend two premultiplied BGRA8888 images to produce a premultiplied BGRA8888 result.
+     * 
      *      For each color channel:
      * <pre>@textblock
      *          uint8_t destColor = srcTopColor  + ((255 - srcTopAlpha) * srcBottomColor + 127)/255;
@@ -20439,7 +20262,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20455,9 +20278,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlend_ARGBFFFF
-     * @abstract blend two premultiplied ARGBFFFF images to produce a premultiplied ARGBFFFF result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlend_ARGBFFFF
+     * 
+     * blend two premultiplied ARGBFFFF images to produce a premultiplied ARGBFFFF result.
+     * 
      * <pre>@textblock
      *          float destColor = srcTopColor  + (1.0 - srcTopAlpha) * srcBottomColor;
      * @/textblock</pre>
@@ -20484,7 +20308,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20500,9 +20324,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlend_BGRAFFFF
-     * @abstract blend two premultiplied ARGBFFFF images to produce a premultiplied BGRAFFFF result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlend_BGRAFFFF
+     * 
+     * blend two premultiplied ARGBFFFF images to produce a premultiplied BGRAFFFF result.
+     * 
      * <pre>@textblock
      *          float destColor = srcTopColor  + (1.0 - srcTopAlpha) * srcBottomColor;
      * @/textblock</pre>
@@ -20530,7 +20355,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20546,9 +20371,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlendMultiply_RGBA8888
-     * @abstract blend two premultiplied RGBA8888 images using the Multiply blend mode to produce a premultiplied RGBA8888 result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlendMultiply_RGBA8888
+     * 
+     * blend two premultiplied RGBA8888 images using the Multiply blend mode to produce a premultiplied RGBA8888 result.
+     * 
      *      For each color channel:
      * <pre>@textblock
      *          uint8_t destColor =((255 -    srcTopAlpha) * srcBottomColor +
@@ -20579,7 +20405,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20595,9 +20421,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlendScreen_RGBA8888
-     * @abstract blend two premultiplied RGBA8888 images using the Screen blend mode to produce a premultiplied RGBA8888 result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlendScreen_RGBA8888
+     * 
+     * blend two premultiplied RGBA8888 images using the Screen blend mode to produce a premultiplied RGBA8888 result.
+     * 
      *      For each color channel:
      * <pre>@textblock
      *          uint8_t destColor = CLAMP( srcTopColor + srcBottomcolor - (srcTopColor * srcBottomColor + 127)/255, 0, 255);
@@ -20626,7 +20453,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20642,9 +20469,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlendDarken_RGBA8888
-     * @abstract blend two premultiplied RGBA8888 images using the Darken blend mode to produce a premultiplied RGBA8888 result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlendDarken_RGBA8888
+     * 
+     * blend two premultiplied RGBA8888 images using the Darken blend mode to produce a premultiplied RGBA8888 result.
+     * 
      *      For each color channel:
      * <pre>@textblock
      *          uint8_t destColor = MIN( topColor +    ((255 - srcTopAlpha) *  srcBotomColor + 127) / 255,
@@ -20674,7 +20502,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20690,9 +20518,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedAlphaBlendLighten_RGBA8888
-     * @abstract blend two premultiplied RGBA8888 images using the Lighten blend mode to produce a premultiplied RGBA8888 result.
-     * @discussion
+     * [@function] vImagePremultipliedAlphaBlendLighten_RGBA8888
+     * 
+     * blend two premultiplied RGBA8888 images using the Lighten blend mode to produce a premultiplied RGBA8888 result.
+     * 
      *      For each color channel:
      * <pre>@textblock
      *          uint8_t destColor = MAX( topColor +    ((255 - srcTopAlpha) *  srcBotomColor + 127) / 255,
@@ -20722,7 +20551,7 @@ public final class Accelerate {
      *                          this in the context of your own multithreaded tiling engine.
      * @/textblock </pre>
      * 
-     * @result  The following error codes may occur:
+     * @return  The following error codes may occur:
      * <pre>@textblock
      *          kvImageNoError                      Success.
      * 
@@ -20738,9 +20567,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_Planar8
-     * @abstract Multiply a Planar8 color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_Planar8
+     * 
+     * Multiply a Planar8 color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      * <pre>@textblock
      *     For each color channel:
@@ -20762,7 +20592,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already  multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -20779,9 +20609,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_PlanarF
-     * @abstract Multiply a PlanarF color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_PlanarF
+     * 
+     * Multiply a PlanarF color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      * <pre>@textblock
      *     For each color channel:
@@ -20803,7 +20634,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already  multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -20820,9 +20651,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_ARGB8888
-     * @abstract Multiply a ARGB8888 color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_ARGB8888
+     * 
+     * Multiply a ARGB8888 color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      * <pre>@textblock
      *     For each color channel:
@@ -20848,7 +20680,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -20864,9 +20696,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_ARGBFFFF
-     * @abstract Multiply a ARGBFFFF color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_ARGBFFFF
+     * 
+     * Multiply a ARGBFFFF color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      * <pre>@textblock
      *     For each color channel:
@@ -20892,7 +20725,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -20908,9 +20741,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_RGBA8888
-     * @abstract Multiply a RGBA8888 color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_RGBA8888
+     * 
+     * Multiply a RGBA8888 color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      * <pre>@textblock
      *     For each color channel:
@@ -20936,7 +20770,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -20952,9 +20786,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_RGBAFFFF
-     * @abstract Multiply a RGBAFFFF color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_RGBAFFFF
+     * 
+     * Multiply a RGBAFFFF color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      * <pre>@textblock
      *     For each color channel:
@@ -20980,7 +20815,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -20996,9 +20831,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_ARGB16U
-     * @abstract Multiply a unsigned 16-bit ARGB color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_ARGB16U
+     * 
+     * Multiply a unsigned 16-bit ARGB color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      * <pre>@textblock
      *     For each color channel:
@@ -21024,7 +20860,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -21040,9 +20876,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_RGBA16U
-     * @abstract Multiply a unsigned 16-bit RGBA color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_RGBA16U
+     * 
+     * Multiply a unsigned 16-bit RGBA color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      * <pre>@textblock
      *     For each color channel:
@@ -21068,7 +20905,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -21084,9 +20921,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_ARGB16Q12
-     * @abstract Multiply a signed 16Q12 fixed-point ARGB color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_ARGB16Q12
+     * 
+     * Multiply a signed 16Q12 fixed-point ARGB color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      *     For each color in each pixel:
      * <pre>@textblock
@@ -21110,7 +20948,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -21126,9 +20964,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultiplyData_RGBA16Q12
-     * @abstract Multiply a signed 16Q12 RGBA color channel by its corresponding alpha
-     * @discussion
+     * [@function] vImagePremultiplyData_RGBA16Q12
+     * 
+     * Multiply a signed 16Q12 RGBA color channel by its corresponding alpha
+     * 
      * This function multiplies color channels by the alpha channel.
      *     For each color in each pixel:
      * <pre>@textblock
@@ -21152,7 +20991,7 @@ public final class Accelerate {
      *         kvImageDoNotTile                    Turn off internal multithreading. This might be useful if you are already multithreading
      *                                             the work in your own tiling engine.
      * @/textblock </pre>
-     * @result         The following result codes may occur:
+     * @return         The following result codes may occur:
      * <pre>@textblock
      *         kvImageNoError                      Success.
      * 
@@ -21168,10 +21007,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_Planar8
-     * @abstract Divide alpha from a premultiplied Planar8 images
+     * [@function] vImageUnpremultiplyData_Planar8
      * 
-     * @discussion This function divides color channels by the alpha channel.
+     * Divide alpha from a premultiplied Planar8 images
+     * 
+     * This function divides color channels by the alpha channel.
      *     For each color channel:
      * <pre>@textblock
      *         uint8_t destColor = ( MIN(src_color, alpha) * 255 + alpha/2) / alpha;
@@ -21193,7 +21033,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21209,10 +21049,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_PlanarF
-     * @abstract Divide alpha from a premultiplied PlanarF images
+     * [@function] vImageUnpremultiplyData_PlanarF
      * 
-     * @discussion This function divides color channels by the alpha channel.
+     * Divide alpha from a premultiplied PlanarF images
+     * 
+     * This function divides color channels by the alpha channel.
      *     For each color channel:
      * <pre>@textblock
      *         float destColor = destColor / alpha;   // according to current rounding mode
@@ -21231,7 +21072,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21247,9 +21088,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_ARGB8888
-     * @abstract Divide the alpha channel from the color channels in a ARGB8888 image
-     * @discussion
+     * [@function] vImageUnpremultiplyData_ARGB8888
+     * 
+     * Divide the alpha channel from the color channels in a ARGB8888 image
+     * 
      * This function divides color channels by the alpha channel.
      *     For each color channel:
      *     <pre>@textblock
@@ -21276,7 +21118,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21291,9 +21133,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_RGBA8888
-     * @abstract Divide the alpha channel from the color channels in a RGBA8888 image
-     * @discussion
+     * [@function] vImageUnpremultiplyData_RGBA8888
+     * 
+     * Divide the alpha channel from the color channels in a RGBA8888 image
+     * 
      * This function divides color channels by the alpha channel.
      *     For each color channel:
      *     <pre>@textblock
@@ -21320,7 +21163,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21335,9 +21178,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_ARGBFFFF
-     * @abstract Divide the alpha channel from the color channels in a ARGBFFFF image
-     * @discussion
+     * [@function] vImageUnpremultiplyData_ARGBFFFF
+     * 
+     * Divide the alpha channel from the color channels in a ARGBFFFF image
+     * 
      * This function divides color channels by the alpha channel.
      *     For each color channel:
      *     <pre>@textblock
@@ -21361,7 +21205,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21376,9 +21220,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_RGBAFFFF
-     * @abstract Divide the alpha channel from the color channels in a RGBAFFFF image
-     * @discussion
+     * [@function] vImageUnpremultiplyData_RGBAFFFF
+     * 
+     * Divide the alpha channel from the color channels in a RGBAFFFF image
+     * 
      * This function divides color channels by the alpha channel.
      *     For each color channel:
      *     <pre>@textblock
@@ -21402,7 +21247,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21417,9 +21262,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_ARGB16U
-     * @abstract Divide the alpha channel from the color channels in a ARGB16U image
-     * @discussion
+     * [@function] vImageUnpremultiplyData_ARGB16U
+     * 
+     * Divide the alpha channel from the color channels in a ARGB16U image
+     * 
      * This function divides color channels by the alpha channel.
      *     For each color channel:
      *     <pre>@textblock
@@ -21446,7 +21292,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21461,9 +21307,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_RGBA16U
-     * @abstract Divide the alpha channel from the color channels in a RGBA16U image
-     * @discussion
+     * [@function] vImageUnpremultiplyData_RGBA16U
+     * 
+     * Divide the alpha channel from the color channels in a RGBA16U image
+     * 
      * This function divides color channels by the alpha channel.
      *     For each color channel:
      *     <pre>@textblock
@@ -21490,7 +21337,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21505,9 +21352,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_ARGB16Q12
-     * @abstract Divide the alpha channel from the color channels in a ARGB16Q12 image
-     * @discussion
+     * [@function] vImageUnpremultiplyData_ARGB16Q12
+     * 
+     * Divide the alpha channel from the color channels in a ARGB16Q12 image
+     * 
      * This function divides color channels by the alpha channel.
      *     For each color channel:
      *     <pre>@textblock
@@ -21534,7 +21382,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21549,9 +21397,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageUnpremultiplyData_RGBA16Q12
-     * @abstract Divide the alpha channel from the color channels in a RGBA16Q12 image
-     * @discussion
+     * [@function] vImageUnpremultiplyData_RGBA16Q12
+     * 
+     * Divide the alpha channel from the color channels in a RGBA16Q12 image
+     * 
      * This function divides color channels by the alpha channel.
      *     For each color channel:
      *     <pre>@textblock
@@ -21578,7 +21427,7 @@ public final class Accelerate {
      *                     kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
      * 
-     * @result The following error codes may be returned:
+     * @return The following error codes may be returned:
      *     <pre>@textblock
      *                     kvImageNoError                      Success
      * 
@@ -21593,9 +21442,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedConstAlphaBlend_Planar8
-     * @abstract Blend two Planar8 premultiplied images with an extra image-wide alpha for the top image
-     * @discussion  This is a premultiplied alpha compositing function using a constant for alpha over the whole image.
+     * [@function] vImagePremultipliedConstAlphaBlend_Planar8
+     * 
+     * Blend two Planar8 premultiplied images with an extra image-wide alpha for the top image
+     * 
+     * This is a premultiplied alpha compositing function using a constant for alpha over the whole image.
      *  Color data from both images is presumed to be already premultiplied by its own per-pixel alpha.
      *      For calculations involving 8-bit integer data, the calculation is done with an additional rounding step
      *      followed by division by 255:
@@ -21606,6 +21457,7 @@ public final class Accelerate {
      *      This function can work in place provided the following are true:
      *          For each buffer "buf" that overlaps with dest, buf->data must be equal to dest->data
      *          If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
+     * 
      * @param srcTop        The top image
      * @param constAlpha    An extra alpha to apply to the entire top image
      * @param srcTopAlpha   The alpha channel for the top image
@@ -21635,9 +21487,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedConstAlphaBlend_PlanarF
-     * @abstract Blend two PlanarF premultiplied images with an extra image-wide alpha for the top image
-     * @discussion  This is a premultiplied alpha compositing function using a constant for alpha over the whole image.
+     * [@function] vImagePremultipliedConstAlphaBlend_PlanarF
+     * 
+     * Blend two PlanarF premultiplied images with an extra image-wide alpha for the top image
+     * 
+     * This is a premultiplied alpha compositing function using a constant for alpha over the whole image.
      *  Color data from both images is presumed to be already premultiplied by its own per-pixel alpha.
      * <pre>@textblock
      *          float destColor = srcTopColor * constAlpha  + (1.0 - srcTopAlpha  * constAlpha) * srcBottomColor;
@@ -21646,6 +21500,7 @@ public final class Accelerate {
      *      This function can work in place provided the following are true:
      *          For each buffer "buf" that overlaps with dest, buf->data must be equal to dest->data
      *          If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
+     * 
      * @param srcTop        The top image
      * @param constAlpha    An extra alpha to apply to the entire top image
      * @param srcTopAlpha   The alpha channel for the top image
@@ -21675,9 +21530,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedConstAlphaBlend_ARGB8888
-     * @abstract Blend two ARGB8888 premultiplied images with an extra image-wide alpha for the top image
-     * @discussion  This is a premultiplied alpha compositing function using a constant for alpha over the whole image.
+     * [@function] vImagePremultipliedConstAlphaBlend_ARGB8888
+     * 
+     * Blend two ARGB8888 premultiplied images with an extra image-wide alpha for the top image
+     * 
+     * This is a premultiplied alpha compositing function using a constant for alpha over the whole image.
      *  Color data from both images is presumed to be already premultiplied by its own per-pixel alpha.
      *      For calculations involving 8-bit integer data, the calculation is done with an additional rounding step
      *      followed by division by 255:
@@ -21690,6 +21547,7 @@ public final class Accelerate {
      *          If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
      * 
      *      The  function will work for all 4 channel 8-bit / channel image formats with alpha first in memory, not just ARGB.
+     * 
      * @param srcTop        The top image
      * @param constAlpha    An extra alpha to apply to the entire top image
      * @param srcBottom     The bottom image
@@ -21717,9 +21575,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImagePremultipliedConstAlphaBlend_ARGBFFFF
-     * @abstract Blend two ARGBFFFF premultiplied images with an extra image-wide alpha for the top image
-     * @discussion  This is a premultiplied alpha compositing function using a constant for alpha over the whole image.
+     * [@function] vImagePremultipliedConstAlphaBlend_ARGBFFFF
+     * 
+     * Blend two ARGBFFFF premultiplied images with an extra image-wide alpha for the top image
+     * 
+     * This is a premultiplied alpha compositing function using a constant for alpha over the whole image.
      *  Color data from both images is presumed to be already premultiplied by its own per-pixel alpha.
      *      For calculations involving 8-bit integer data, the calculation is done with an additional rounding step
      *      followed by division by 255:
@@ -21732,6 +21592,7 @@ public final class Accelerate {
      *          If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
      * 
      *      The function will work for all 4 channel float / channel image formats with alpha first in memory, not just ARGB.
+     * 
      * @param srcTop        The top image
      * @param constAlpha    An extra alpha to apply to the entire top image
      * @param srcBottom     The bottom image
@@ -21759,9 +21620,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageAlphaBlend_NonpremultipliedToPremultiplied_Planar8
-     * @abstract Blend a non-premultiplied top Planar8 image into a premultiplied Planar8 bottom image and return a premultiplied Planar8 result.
-     * @discussion Top buffer is non-premultiplied. Bottom buffer is premultiplied. Dest buffer is premultiplied. Works in place.
+     * [@function] vImageAlphaBlend_NonpremultipliedToPremultiplied_Planar8
+     * 
+     * Blend a non-premultiplied top Planar8 image into a premultiplied Planar8 bottom image and return a premultiplied Planar8 result.
+     * 
+     * Top buffer is non-premultiplied. Bottom buffer is premultiplied. Dest buffer is premultiplied. Works in place.
      * <pre>@textblock
      *      result = (srcTop * srctopAlpha + (255 - srcTopAlpha) * bottomAlpha + 127 ) / 255;
      * @/textblock </pre>
@@ -21786,7 +21649,7 @@ public final class Accelerate {
      * 
      *          kvImageDoNotTile        Disable internal multithreading.
      *      @/textblock </pre>
-     *  @result     The following error codes may occur:
+     *  @return     The following error codes may occur:
      *      <pre> @textblock
      *          kvImageNoError                      Success.
      * 
@@ -21804,9 +21667,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageAlphaBlend_NonpremultipliedToPremultiplied_PlanarF
-     * @abstract Blend a non-premultiplied top PlanarF image into a premultiplied PlanarF bottom image and return a premultiplied PlanarF result.
-     * @discussion Top buffer is non-premultiplied. Bottom buffer is premultiplied. Dest buffer is premultiplied. Works in place.
+     * [@function] vImageAlphaBlend_NonpremultipliedToPremultiplied_PlanarF
+     * 
+     * Blend a non-premultiplied top PlanarF image into a premultiplied PlanarF bottom image and return a premultiplied PlanarF result.
+     * 
+     * Top buffer is non-premultiplied. Bottom buffer is premultiplied. Dest buffer is premultiplied. Works in place.
      * <pre>@textblock
      *      result = srcTop * srcTopAlpha + (1 - srcTopAlpha) * srcBottom
      * @/textblock </pre>
@@ -21831,7 +21696,7 @@ public final class Accelerate {
      * 
      *          kvImageDoNotTile        Disable internal multithreading.
      *      @/textblock </pre>
-     *  @result     The following error codes may occur:
+     *  @return     The following error codes may occur:
      *      <pre> @textblock
      *          kvImageNoError                      Success.
      * 
@@ -21849,9 +21714,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageAlphaBlend_NonpremultipliedToPremultiplied_ARGB8888
-     * @abstract Blend a non-premultiplied top ARGB8888 image into a premultiplied ARGB8888 bottom image and return a premultiplied ARGB8888 result.
-     * @discussion Top buffer is non-premultiplied. Bottom buffer is premultiplied. Dest buffer is premultiplied. Works in place.
+     * [@function] vImageAlphaBlend_NonpremultipliedToPremultiplied_ARGB8888
+     * 
+     * Blend a non-premultiplied top ARGB8888 image into a premultiplied ARGB8888 bottom image and return a premultiplied ARGB8888 result.
+     * 
+     * Top buffer is non-premultiplied. Bottom buffer is premultiplied. Dest buffer is premultiplied. Works in place.
      * <pre>@textblock
      *      result = (srcTop * srctopAlpha + (255 - srcTopAlpha) * bottomAlpha + 127 ) / 255;
      * @/textblock </pre>
@@ -21873,7 +21740,7 @@ public final class Accelerate {
      * 
      *          kvImageDoNotTile        Disable internal multithreading.
      *      @/textblock </pre>
-     *  @result     The following error codes may occur:
+     *  @return     The following error codes may occur:
      *      <pre> @textblock
      *          kvImageNoError                      Success.
      * 
@@ -21890,9 +21757,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageAlphaBlend_NonpremultipliedToPremultiplied_ARGBFFFF
-     * @abstract Blend a non-premultiplied top ARGBFFFF image into a premultiplied ARGBFFFF bottom image and return a premultiplied ARGBFFFF result.
-     * @discussion Top buffer is non-premultiplied. Bottom buffer is premultiplied. Dest buffer is premultiplied. Works in place.
+     * [@function] vImageAlphaBlend_NonpremultipliedToPremultiplied_ARGBFFFF
+     * 
+     * Blend a non-premultiplied top ARGBFFFF image into a premultiplied ARGBFFFF bottom image and return a premultiplied ARGBFFFF result.
+     * 
+     * Top buffer is non-premultiplied. Bottom buffer is premultiplied. Dest buffer is premultiplied. Works in place.
      * <pre>@textblock
      *      result = srcTop * srcTopAlpha + (1 - srcTopAlpha) * srcBottom
      * @/textblock </pre>
@@ -21914,7 +21783,7 @@ public final class Accelerate {
      * 
      *          kvImageDoNotTile        Disable internal multithreading.
      *      @/textblock </pre>
-     *  @result     The following error codes may occur:
+     *  @return     The following error codes may occur:
      *      <pre> @textblock
      *          kvImageNoError                      Success.
      * 
@@ -21931,9 +21800,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageClipToAlpha_Planar8
-     * @abstract Clamp a Planar8 color buffer to be less than or equal to alpha
-     * @discussion
+     * [@function] vImageClipToAlpha_Planar8
+     * 
+     * Clamp a Planar8 color buffer to be less than or equal to alpha
+     * 
      * For each pixel, each color channel shall be set to the smaller of the color channel or alpha value for that pixel.
      * <pre>@textblock
      *         color_result = MIN( color, alpha )
@@ -21941,6 +21811,7 @@ public final class Accelerate {
      *     This function can work in place provided the following are true:
      *         For each buffer "buf" that overlaps with dest, buf->data must be equal to dest->data
      *         If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
+     * 
      * @param src      The color image to clip
      * @param alpha    The alpha channel
      * @param dest     A preallocated buffer to receive the results.
@@ -21950,7 +21821,7 @@ public final class Accelerate {
      * 
      *         kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
-     * @result     The following error codes may occur:
+     * @return     The following error codes may occur:
      *     <pre> @textblock
      *         kvImageNoError                      Success.
      * 
@@ -21967,9 +21838,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageClipToAlpha_PlanarF
-     * @abstract Clamp a PlanarF color buffer to be less than or equal to alpha
-     * @discussion
+     * [@function] vImageClipToAlpha_PlanarF
+     * 
+     * Clamp a PlanarF color buffer to be less than or equal to alpha
+     * 
      * For each pixel, each color channel shall be set to the smaller of the color channel or alpha value for that pixel.
      * <pre>@textblock
      *         color_result = MIN( color, alpha )
@@ -21977,6 +21849,7 @@ public final class Accelerate {
      *     This function can work in place provided the following are true:
      *         For each buffer "buf" that overlaps with dest, buf->data must be equal to dest->data
      *         If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
+     * 
      * @param src      The color image to clip
      * @param alpha    The alpha channel
      * @param dest     A preallocated buffer to receive the results.
@@ -21986,7 +21859,7 @@ public final class Accelerate {
      * 
      *         kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
-     * @result     The following error codes may occur:
+     * @return     The following error codes may occur:
      *     <pre> @textblock
      *         kvImageNoError                      Success.
      * 
@@ -22003,9 +21876,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageClipToAlpha_ARGB8888
-     * @abstract Clamp a ARGB8888 color buffer to be less than or equal to alpha
-     * @discussion
+     * [@function] vImageClipToAlpha_ARGB8888
+     * 
+     * Clamp a ARGB8888 color buffer to be less than or equal to alpha
+     * 
      * For each pixel, each color channel shall be set to the smaller of the color channel or alpha value for that pixel.
      * <pre>@textblock
      *         alpha_result = alpha
@@ -22025,7 +21899,7 @@ public final class Accelerate {
      * 
      *         kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
-     * @result     The following error codes may occur:
+     * @return     The following error codes may occur:
      *     <pre> @textblock
      *         kvImageNoError                      Success.
      * 
@@ -22041,9 +21915,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageClipToAlpha_ARGBFFFF
-     * @abstract Clamp a ARGBFFFF color buffer to be less than or equal to alpha
-     * @discussion
+     * [@function] vImageClipToAlpha_ARGBFFFF
+     * 
+     * Clamp a ARGBFFFF color buffer to be less than or equal to alpha
+     * 
      * For each pixel, each color channel shall be set to the smaller of the color channel or alpha value for that pixel.
      * <pre>@textblock
      *         alpha_result = alpha
@@ -22063,7 +21938,7 @@ public final class Accelerate {
      * 
      *         kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
-     * @result     The following error codes may occur:
+     * @return     The following error codes may occur:
      *     <pre> @textblock
      *         kvImageNoError                      Success.
      * 
@@ -22079,9 +21954,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageClipToAlpha_RGBA8888
-     * @abstract Clamp a RGBA8888 color buffer to be less than or equal to alpha
-     * @discussion
+     * [@function] vImageClipToAlpha_RGBA8888
+     * 
+     * Clamp a RGBA8888 color buffer to be less than or equal to alpha
+     * 
      * For each pixel, each color channel shall be set to the smaller of the color channel or alpha value for that pixel.
      * <pre>@textblock
      *         alpha_result = alpha
@@ -22101,7 +21977,7 @@ public final class Accelerate {
      * 
      *         kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
-     * @result     The following error codes may occur:
+     * @return     The following error codes may occur:
      *     <pre> @textblock
      *         kvImageNoError                      Success.
      * 
@@ -22117,9 +21993,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageClipToAlpha_RGBAFFFF
-     * @abstract Clamp a RGBAFFFF color buffer to be less than or equal to alpha
-     * @discussion
+     * [@function] vImageClipToAlpha_RGBAFFFF
+     * 
+     * Clamp a RGBAFFFF color buffer to be less than or equal to alpha
+     * 
      * For each pixel, each color channel shall be set to the smaller of the color channel or alpha value for that pixel.
      * <pre>@textblock
      *         alpha_result = alpha
@@ -22139,7 +22016,7 @@ public final class Accelerate {
      * 
      *         kvImageDoNotTile        Disable internal multithreading.
      *     @/textblock </pre>
-     * @result     The following error codes may occur:
+     * @return     The following error codes may occur:
      *     <pre> @textblock
      *         kvImageNoError                      Success.
      * 
@@ -22155,9 +22032,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvolve_Planar8
-     * @abstract General convolution on a Planar8 image.
-     * @discussion This filter applies a convolution filter of your choosing to a Planar8 image.
+     * [@function] vImageConvolve_Planar8
+     * 
+     * General convolution on a Planar8 image.
+     * 
+     * This filter applies a convolution filter of your choosing to a Planar8 image.
      *             For each pixel:
      *     <pre>@textblock
      *         for each pixel[y][x] in image{
@@ -22307,9 +22186,11 @@ public final class Accelerate {
             int kernel_width, int divisor, byte backgroundColor, int flags);
 
     /**
-     * @function vImageConvolve_PlanarF
-     * @abstract General convolution on a PlanarF image.
-     * @discussion This filter applies a convolution filter of your choosing to a PlanarF image.
+     * [@function] vImageConvolve_PlanarF
+     * 
+     * General convolution on a PlanarF image.
+     * 
+     * This filter applies a convolution filter of your choosing to a PlanarF image.
      *             For each pixel:
      *     <pre>@textblock
      *         for each pixel[y][x] in image{
@@ -22448,9 +22329,11 @@ public final class Accelerate {
             int kernel_width, float backgroundColor, int flags);
 
     /**
-     * @function vImageConvolveWithBias_Planar8
-     * @abstract General convolution on a Planar8 image with added bias.
-     * @discussion This filter applies a convolution filter of your choosing to a Planar8 image.
+     * [@function] vImageConvolveWithBias_Planar8
+     * 
+     * General convolution on a Planar8 image with added bias.
+     * 
+     * This filter applies a convolution filter of your choosing to a Planar8 image.
      *             For each pixel:
      *     <pre>@textblock
      *         for each pixel[y][x] in image{
@@ -22605,9 +22488,11 @@ public final class Accelerate {
             int kernel_width, int divisor, int bias, byte backgroundColor, int flags);
 
     /**
-     * @function vImageConvolveWithBias_PlanarF
-     * @abstract General convolution on a PlanarF image with added bias.
-     * @discussion This filter applies a convolution filter of your choosing to a PlanarF image.
+     * [@function] vImageConvolveWithBias_PlanarF
+     * 
+     * General convolution on a PlanarF image with added bias.
+     * 
+     * This filter applies a convolution filter of your choosing to a PlanarF image.
      *             For each pixel:
      *     <pre>@textblock
      *         for each pixel[y][x] in image{
@@ -22748,9 +22633,10 @@ public final class Accelerate {
             int kernel_width, float bias, float backgroundColor, int flags);
 
     /**
-     * @function vImageRichardsonLucyDeConvolve_Planar8
-     * @abstract Perform N iterations of a Lucy-Richardson deconvolution on Planar8 data
-     * @discussion
+     * [@function] vImageRichardsonLucyDeConvolve_Planar8
+     * 
+     * Perform N iterations of a Lucy-Richardson deconvolution on Planar8 data
+     * 
      *  This routine iteratively uses the following formula:
      *      <pre>@textblock
      *        e[i+1] = e[i] x (psf0 * ( e[0] / (psf1 * e[i]) ) )
@@ -22769,6 +22655,7 @@ public final class Accelerate {
      *  floating-point Richardson Lucy variant. Convert back, when you are done.
      * 
      *  Does not work in place.
+     * 
      * @param src           The input image
      * 
      * @param dest          A preallocated buffer to receive the result image.
@@ -22903,9 +22790,10 @@ public final class Accelerate {
             byte backgroundColor, int iterationCount, int flags);
 
     /**
-     * @function vImageRichardsonLucyDeConvolve_PlanarF
-     * @abstract Perform N iterations of a Lucy-Richardson deconvolution on PlanarF data
-     * @discussion
+     * [@function] vImageRichardsonLucyDeConvolve_PlanarF
+     * 
+     * Perform N iterations of a Lucy-Richardson deconvolution on PlanarF data
+     * 
      *  This routine iteratively uses the following formula:
      *      <pre>@textblock
      *        e[i+1] = e[i] x (psf0 * ( e[0] / (psf1 * e[i]) ) )
@@ -22919,6 +22807,7 @@ public final class Accelerate {
      *      @/textblock </pre>
      * 
      *  Does not work in place.
+     * 
      * @param src           The input image
      * 
      * @param dest          A preallocated buffer to receive the result image.
@@ -23049,9 +22938,11 @@ public final class Accelerate {
             int iterationCount, int flags);
 
     /**
-     * @function vImageBoxConvolve_Planar8
-     * @abstract Special purpose box convolution on a Planar8 image.
-     * @discussion This filter applies a box filter to a Planar8 image.  A box filter uses a much faster algorithm
+     * [@function] vImageBoxConvolve_Planar8
+     * 
+     * Special purpose box convolution on a Planar8 image.
+     * 
+     * This filter applies a box filter to a Planar8 image.  A box filter uses a much faster algorithm
      *             than a standard convolution, and may be a good solution for real time application of large blur
      *             radii against images.
      *             For each pixel:
@@ -23181,9 +23072,11 @@ public final class Accelerate {
             byte backgroundColor, int flags);
 
     /**
-     * @function vImageTentConvolve_Planar8
-     * @abstract Special purpose tent convolution on a Planar8 image.
-     * @discussion This filter applies a tent filter to a Planar8 image.  A tent filter uses a much faster algorithm
+     * [@function] vImageTentConvolve_Planar8
+     * 
+     * Special purpose tent convolution on a Planar8 image.
+     * 
+     * This filter applies a tent filter to a Planar8 image.  A tent filter uses a much faster algorithm
      *             than a standard convolution, and may be a good solution for real time application of large blur
      *             radii against images.
      *             For each pixel:
@@ -23318,21 +23211,24 @@ public final class Accelerate {
             byte backgroundColor, int flags);
 
     /**
-     * @function vImageClip_PlanarF
+     * [@function] vImageClip_PlanarF
      * 
-     * @abstract Clips the pixel values of an image in PlanarF format, using the provided minimum and maximum values.
+     * Clips the pixel values of an image in PlanarF format, using the provided minimum and maximum values.
      * 
-     * @discussion For each pixel, do the following:
-     * @code
+     * For each pixel, do the following:
+     * [@code]
      * if( pixel > maxFloat )
      * pixel = maxFloat;
      * if( pixel < minFloat )
      * pixel = minFloat;
-     * @endcode
+     * [@endcode]
      * 
      * This function can work in place provided the following are true:
      * If src overlaps with dest, src->data must be equal to dest->data and src->rowBytes >= dest->rowBytes
      * If an overlapping src has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
+     * 
+     * [@note] This function may be used for multichannel image formats, such as ARGBFFFF.
+     * Scale the vImage_Buffer.width to compensate for the extra channels.
      * 
      * @param src
      * A pointer to a vImage buffer structure that contains the source image whose data you want to clip.
@@ -23352,9 +23248,6 @@ public final class Accelerate {
      * 
      * @return kvImageNoError                      Success
      * @return kvImageRoiLargerThanInputBuffer     The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note This function may be used for multichannel image formats, such as ARGBFFFF.
-     * Scale the vImage_Buffer.width to compensate for the extra channels.
      */
     @Generated
     @CFunction
@@ -23365,16 +23258,18 @@ public final class Accelerate {
             float minFloat, int flags);
 
     /**
-     * @function vImageConvert_Planar8toPlanarF
+     * [@function] vImageConvert_Planar8toPlanarF
      * 
-     * @abstract Convert an array of 8 bit integer data to floating point data.
+     * Convert an array of 8 bit integer data to floating point data.
      * 
-     * @discussion For each pixel, do the following:
-     * @code
+     * For each pixel, do the following:
+     * [@code]
      * float result = (maxFloat - minFloat) * (float) srcPixel / 255.0  + minFloat
-     * @endcode
+     * [@endcode]
      * 
      * You can use this for ARGB8888 -> ARGBFFFF conversions by simply multiplying the width of the vImage_Buffer by 4 (for 4 channels)
+     * 
+     * [@note] Does not work in place.
      * 
      * @param src
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing the source pixels.
@@ -23396,8 +23291,6 @@ public final class Accelerate {
      * @return kvImageNoError                     Success
      * @return kvImageUnknownFlagsBit             Not all vImage flags are understood by this function. See description of flags parameter for supported flags.
      * @return kvImageRoiLargerThanInputBuffer    The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note Does not work in place.
      */
     @Generated
     @CFunction
@@ -23408,14 +23301,14 @@ public final class Accelerate {
             float minFloat, int flags);
 
     /**
-     * @function vImageConvert_PlanarFtoPlanar8
+     * [@function] vImageConvert_PlanarFtoPlanar8
      * 
-     * @abstract Convert an array of floating point data to 8 bit integer data.
+     * Convert an array of floating point data to 8 bit integer data.
      * 
-     * @discussion For each pixel, do the following:
-     * @code
+     * For each pixel, do the following:
+     * [@code]
      * uint8_t result = SATURATED_CLIP_0_to_255( 255.0f * ( srcPixel - minFloat ) / (maxFloat - minFloat) + 0.5f );
-     * @endcode
+     * [@endcode]
      * 
      * You can use this for ARGBFFFF -> ARGB8888 conversions by simply multiplying the width of the vImage_Buffer by 4 (for 4 channels)
      * 
@@ -23447,14 +23340,14 @@ public final class Accelerate {
             float minFloat, int flags);
 
     /**
-     * @function vImageConvert_PlanarFtoPlanar8_dithered
+     * [@function] vImageConvert_PlanarFtoPlanar8_dithered
      * 
-     * @abstract Convert an array of floating point data to 8 bit integer data with dithering.
+     * Convert an array of floating point data to 8 bit integer data with dithering.
      * 
-     * @discussion For each pixel, do the following:
-     * @code
+     * For each pixel, do the following:
+     * [@code]
      * uint8_t result = SATURATED_CLIP_0_to_255( 255.0f * ( srcPixel - minFloat ) / (maxFloat - minFloat) + random_float[0,1) );
-     * @endcode
+     * [@endcode]
      * 
      * The \p dither parameter must be one of the following flags:
      * \p kvImageConvert_DitherNone Same as vImageConvert_PlanarFtoPlanar8(). Rounds to nearest.
@@ -23482,16 +23375,16 @@ public final class Accelerate {
      * more evident-- and for very flat / synthetic content with little inherent noise. The enlargement problem may be avoided by enlarging
      * first at high bitdepth, then convert to lower bitdepth.
      * 
-     * @note "Blue" noise does not look blue, nor does it operate solely on the blue color channel. Blue noise is monochrome noise that is added to all color
+     * [@note] "Blue" noise does not look blue, nor does it operate solely on the blue color channel. Blue noise is monochrome noise that is added to all color
      * channels equally. The name arises from blue light, which has a higher frequency than other colors of visible light. Thus, blue noise is noise which is
      * weighted heavily towards high frequencies. Low frequency noise tends to have visible shapes in it that would become apparent in an image if it was added in,
      * so it is excluded from the dither pattern.
      * 
-     * @warning Unlike vImageConvert_PlanarFtoPlanar8, vImageConvert_PlanarFtoPlanar8_dithered usually should not be used for
+     * [@warning] Unlike vImageConvert_PlanarFtoPlanar8, vImageConvert_PlanarFtoPlanar8_dithered usually should not be used for
      * multichannel data. Otherwise the dithering will occur in the chrominance dimensions and the noise will cause
      * grain with varying hue.
      * 
-     * @note This function can work in place provided the following are true:
+     * [@note] This function can work in place provided the following are true:
      * If src overlaps with dest, src->data must be equal to dest->data and src->rowBytes >= dest->rowBytes.
      * If an overlapping src has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags.
      * 
@@ -23515,7 +23408,7 @@ public final class Accelerate {
      * @return \p kvImageUnknownFlagsBit              Not all vImage flags are understood by this function. See description of flags parameter for supported flags.
      * @return \p kvImageInvalidParameter             An unknown / unsupported dithering mode was requested.
      * 
-     * @seealso vImageConvert_PlanarFtoPlanar8
+     * @see vImageConvert_PlanarFtoPlanar8
      */
     @Generated
     @CFunction
@@ -23526,16 +23419,18 @@ public final class Accelerate {
             float minFloat, int dither, int flags);
 
     /**
-     * @function vImageConvert_Planar8toARGB8888
+     * [@function] vImageConvert_Planar8toARGB8888
      * 
-     * @abstract Interleave 4 planar 8 bit integer buffers to make an interleaved 4 channel ARGB8888 buffer.
+     * Interleave 4 planar 8 bit integer buffers to make an interleaved 4 channel ARGB8888 buffer.
      * 
-     * @discussion For each pixel in { srcA, srcR, srcG, srcB }, do the following:
-     * @code
+     * For each pixel in { srcA, srcR, srcG, srcB }, do the following:
+     * [@code]
      * Pixel_88888 result = { pixelFromSrcA, pixelFromSrcR, pixelFromSrcG, pixelFromSrcB };
-     * @endcode
+     * [@endcode]
      * 
      * This function may be used to create other channel orderings such as RGBA8888 by passing in the planar8 images in the alternate order.
+     * 
+     * [@note] Does not work in place.
      * 
      * @param srcA
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing A source pixels.
@@ -23558,8 +23453,6 @@ public final class Accelerate {
      * 
      * @return kvImageNoError                     Success
      * @return kvImageRoiLargerThanInputBuffer    The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note Does not work in place.
      */
     @Generated
     @CFunction
@@ -23572,16 +23465,18 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_PlanarFtoARGBFFFF
+     * [@function] vImageConvert_PlanarFtoARGBFFFF
      * 
-     * @abstract Interleave 4 planar floating point buffers to make an interleaved 4 channel ARGBFFFF buffer.
+     * Interleave 4 planar floating point buffers to make an interleaved 4 channel ARGBFFFF buffer.
      * 
-     * @discussion For each pixel in { srcA, srcR, srcG, srcB }, do the following:
-     * @code
+     * For each pixel in { srcA, srcR, srcG, srcB }, do the following:
+     * [@code]
      * Pixel_FFFF result = { pixelFromSrcA, pixelFromSrcR, pixelFromSrcG, pixelFromSrcB };
-     * @endcode
+     * [@endcode]
      * 
      * This function may be used to create other channel orderings such as RGBAFFFF by passing in the planar8 images in the alternate order.
+     * 
+     * [@note] Does not work in place.
      * 
      * @param srcA
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing A source pixels.
@@ -23604,8 +23499,6 @@ public final class Accelerate {
      * 
      * @return kvImageNoError                     Success
      * @return kvImageRoiLargerThanInputBuffer    The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note Does not work in place.
      */
     @Generated
     @CFunction
@@ -23618,19 +23511,21 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_ARGB8888toPlanar8
+     * [@function] vImageConvert_ARGB8888toPlanar8
      * 
-     * @abstract Deinterleave an ARGB8888 interleaved vImage_Buffer to form 4 planar 8-bit integer buffers.
+     * Deinterleave an ARGB8888 interleaved vImage_Buffer to form 4 planar 8-bit integer buffers.
      * 
-     * @discussion For each pixel in srcARGB, do the following:
-     * @code
+     * For each pixel in srcARGB, do the following:
+     * [@code]
      * Pixel_8 destAResult = srcARGBPixel[0];
      * Pixel_8 destRResult = srcARGBPixel[1];
      * Pixel_8 destGResult = srcARGBPixel[2];
      * Pixel_8 destBResult = srcARGBPixel[3];
-     * @endcode
+     * [@endcode]
      * 
      * This function may be used to deinterleave other channel orderings such as RGBA8888 by passing in the planar8 images in the alternate order.
+     * 
+     * [@note] Does not work in place.
      * 
      * @param srcARGB
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing ARGB source pixels.
@@ -23653,8 +23548,6 @@ public final class Accelerate {
      * 
      * @return kvImageNoError                     Success
      * @return kvImageRoiLargerThanInputBuffer    The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note Does not work in place.
      */
     @Generated
     @CFunction
@@ -23667,19 +23560,21 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destB, int flags);
 
     /**
-     * @function vImageConvert_ARGBFFFFtoPlanarF
+     * [@function] vImageConvert_ARGBFFFFtoPlanarF
      * 
-     * @abstract Deinterleave an ARGBFFFF interleaved vImage_Buffer to form 4 planar floating point buffers.
+     * Deinterleave an ARGBFFFF interleaved vImage_Buffer to form 4 planar floating point buffers.
      * 
-     * @discussion For each pixel in srcARGB, do the following:
-     * @code
+     * For each pixel in srcARGB, do the following:
+     * [@code]
      * Pixel_F destAResult = srcARGBPixel[0];
      * Pixel_F destRResult = srcARGBPixel[1];
      * Pixel_F destGResult = srcARGBPixel[2];
      * Pixel_F destBResult = srcARGBPixel[3];
-     * @endcode
+     * [@endcode]
      * 
      * This function may be used to deinterleave other channel orderings such as RGBAFFFF by passing in the planar8 images in the alternate order.
+     * 
+     * [@note] Does not work in place.
      * 
      * @param srcARGB
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing ARGB source pixels.
@@ -23702,8 +23597,6 @@ public final class Accelerate {
      * 
      * @return kvImageNoError                     Success
      * @return kvImageRoiLargerThanInputBuffer    The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note Does not work in place.
      */
     @Generated
     @CFunction
@@ -23765,16 +23658,18 @@ public final class Accelerate {
             @NUInt long destHeight, @NUInt long destRowBytes, int flags);
 
     /**
-     * @function vImageConvert_16SToF
+     * [@function] vImageConvert_16SToF
      * 
-     * @abstract Convert a planar vImage_Buffer of 16 bit signed integers to a buffer containing floating point values.
+     * Convert a planar vImage_Buffer of 16 bit signed integers to a buffer containing floating point values.
      * 
-     * @discussion For each 16 bit pixel in src, do the following:
-     * @code
+     * For each 16 bit pixel in src, do the following:
+     * [@code]
      * float result = (float) srcPixel * scale + offset;
-     * @endcode
+     * [@endcode]
      * 
      * To convert 4 channel interleaved signed 16 bit data to ARGBFFFF, simply multiply the vImage_Buffer.width by 4.
+     * 
+     * [@note] Does not work in place.
      * 
      * @param src
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing source pixels.
@@ -23794,8 +23689,6 @@ public final class Accelerate {
      * 
      * @return kvImageNoError                       Success
      * @return kvImageRoiLargerThanInputBuffer      The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note Does not work in place.
      */
     @Generated
     @CFunction
@@ -23806,16 +23699,18 @@ public final class Accelerate {
             float scale, int flags);
 
     /**
-     * @function vImageConvert_16UToF
+     * [@function] vImageConvert_16UToF
      * 
-     * @abstract Convert a planar vImage_Buffer of 16 bit unsigned integers to a buffer containing floating point values.
+     * Convert a planar vImage_Buffer of 16 bit unsigned integers to a buffer containing floating point values.
      * 
-     * @discussion For each 16 bit pixel in src, do the following:
-     * @code
+     * For each 16 bit pixel in src, do the following:
+     * [@code]
      * float result = (float) srcPixel * scale + offset;
-     * @endcode
+     * [@endcode]
      * 
      * To convert 4 channel interleaved signed 16 bit data to ARGBFFFF, simply multiply the vImage_Buffer.width by 4.
+     * 
+     * [@note] Does not work in place.
      * 
      * @param src
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing source pixels.
@@ -23835,8 +23730,6 @@ public final class Accelerate {
      * 
      * @return kvImageNoError                       Success
      * @return kvImageRoiLargerThanInputBuffer      The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note Does not work in place.
      */
     @Generated
     @CFunction
@@ -23847,14 +23740,14 @@ public final class Accelerate {
             float scale, int flags);
 
     /**
-     * @function vImageConvert_FTo16S
+     * [@function] vImageConvert_FTo16S
      * 
-     * @abstract Convert a planar vImage_Buffer of floating point values to a buffer of 16 bit signed integers.
+     * Convert a planar vImage_Buffer of floating point values to a buffer of 16 bit signed integers.
      * 
-     * @discussion For each floating point pixel in src, do the following:
-     * @code
+     * For each floating point pixel in src, do the following:
+     * [@code]
      * int16_t result = SATURATED_CLIP_SHRT_MIN_to_SHRT_MAX( (srcPixel - offset) / scale  + 0.5f);
-     * @endcode
+     * [@endcode]
      * 
      * Programmer's note:
      * The scale and offset here are designed to be the same offset and scale used for the vImageConvert_16SToF conversion.
@@ -23864,9 +23757,8 @@ public final class Accelerate {
      * vImageConvert_16SToF( int16_buffer, float_buffer, myOffset, myScale, kvImageNoFlags );   //Convert to float
      * vImageConvert_FTo16S( float_buffer, int16_buffer, myOffset, myScale, kvImageNoFlags );   //Convert back to int16_t
      * 
-     * @note Works in place, as long as src->data == dest->data and src->rowBytes == dest->rowBytes.
-     * @note To convert multichannel interleaved floating point formats (e.g. ARGBFFFF) to a multichannel 16-bit image format with the same channel ordering, simply multiply the vImage_Buffer.width by the number of channels.
-     * 
+     * [@note] Works in place, as long as src->data == dest->data and src->rowBytes == dest->rowBytes.
+     * [@note] To convert multichannel interleaved floating point formats (e.g. ARGBFFFF) to a multichannel 16-bit image format with the same channel ordering, simply multiply the vImage_Buffer.width by the number of channels.
      * 
      * @param src
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing source pixels.
@@ -23894,14 +23786,14 @@ public final class Accelerate {
             float scale, int flags);
 
     /**
-     * @function vImageConvert_FTo16U
+     * [@function] vImageConvert_FTo16U
      * 
-     * @abstract Convert a planar vImage_Buffer of floating point values to a buffer of 16 bit unsigned integers.
+     * Convert a planar vImage_Buffer of floating point values to a buffer of 16 bit unsigned integers.
      * 
-     * @discussion For each floating point pixel in src, do the following:
-     * @code
+     * For each floating point pixel in src, do the following:
+     * [@code]
      * uint16_t result = SATURATED_CLIP_0_to_USHRT_MAX( (srcPixel - offset) / scale  + 0.5f);
-     * @endcode
+     * [@endcode]
      * 
      * Programmer's note:
      * The scale and offset here are designed to be the same offset and scale used for the vImageConvert_16UToF conversion.
@@ -23910,6 +23802,10 @@ public final class Accelerate {
      * 
      * vImageConvert_16UToF( int16_buffer, float_buffer, myOffset, myScale, kvImageNoFlags );   //Convert to float
      * vImageConvert_FTo16U( float_buffer, int16_buffer, myOffset, myScale, kvImageNoFlags );   //Convert back to uint16_t
+     * 
+     * [@note] Works in place, as long as src->data == dest->data and src->rowBytes == dest->rowBytes.
+     * 
+     * [@note] To convert multichannel interleaved floating point formats (e.g. ARGBFFFF) to a multichannel 16-bit image format with the same channel ordering, simply multiply the vImage_Buffer.width by the number of channels.
      * 
      * @param src
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing source pixels.
@@ -23927,10 +23823,6 @@ public final class Accelerate {
      * 
      * @return kvImageNoError                     Success.
      * @return kvImageRoiLargerThanInputBuffer    The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
-     * 
-     * @note Works in place, as long as src->data == dest->data and src->rowBytes == dest->rowBytes.
-     * 
-     * @note To convert multichannel interleaved floating point formats (e.g. ARGBFFFF) to a multichannel 16-bit image format with the same channel ordering, simply multiply the vImage_Buffer.width by the number of channels.
      */
     @Generated
     @CFunction
@@ -23941,14 +23833,14 @@ public final class Accelerate {
             float scale, int flags);
 
     /**
-     * @function vImageConvert_16Uto16F
+     * [@function] vImageConvert_16Uto16F
      * 
-     * @abstract Convert from 16 bit unsigned integer to 16 bit float format.
+     * Convert from 16 bit unsigned integer to 16 bit float format.
      * 
-     * @discussion For each floating point pixel in src, do the following:
-     * @code
+     * For each floating point pixel in src, do the following:
+     * [@code]
      * destPixel[x] = ConvertToPlanar16F(srcPixel[x]);
-     * @endcode
+     * [@endcode]
      * 
      * The 16 bit floating point format is half-precision floating point
      * (a.k.a.  IEEE-754 binary16, OpenCL half, GL_ARB_half_float_pixel, OpenEXR half).
@@ -23962,6 +23854,12 @@ public final class Accelerate {
      * NaNs, Infinities and denormals are supported.
      * Per IEEE-754, all signaling NaNs are quieted during the conversion. (OpenEXR-1.2.1 converts SNaNs to SNaNs.)
      * To set/inspect the current IEEE-754 rounding mode, please see appropriate utilities in fenv.h.
+     * 
+     * [@note] This routine will work in place provided that src.data == dest.data
+     * and src.rowBytes >= dest.rowBytes. However, when src.rowBytes > dest.rowBytes
+     * in-place will only work if you pass kvImageDoNotTile.
+     * 
+     * [@note] To use this with interleaved data, multiply vImage_Buffer.width by 4.
      * 
      * @param src
      * A pointer to a vImage_Buffer that references the source pixels.
@@ -23977,12 +23875,6 @@ public final class Accelerate {
      * width at least as large as the destination buffer.
      * @return \p kvImageNullPointerArgument          src or dest pointer is NULL.
      * @return \p kvImageUnknownFlagsBit              Unknown flag was passed.
-     * 
-     * @note This routine will work in place provided that src.data == dest.data
-     * and src.rowBytes >= dest.rowBytes. However, when src.rowBytes > dest.rowBytes
-     * in-place will only work if you pass kvImageDoNotTile.
-     * 
-     * @note To use this with interleaved data, multiply vImage_Buffer.width by 4.
      */
     @Generated
     @CFunction
@@ -23992,14 +23884,14 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_16Fto16U
+     * [@function] vImageConvert_16Fto16U
      * 
-     * @abstract Convert from 16 bit float to 16 bit unsigned integer format.
+     * Convert from 16 bit float to 16 bit unsigned integer format.
      * 
-     * @discussion For each floating point pixel in src, do the following:
-     * @code
+     * For each floating point pixel in src, do the following:
+     * [@code]
      * destPixel[x] = ConvertToPlanar16U(srcPixel[x]);
-     * @endcode
+     * [@endcode]
      * 
      * The 16 bit floating point format is half-precision floating point
      * (a.k.a.  IEEE-754 binary16, OpenCL half, GL_ARB_half_float_pixel, OpenEXR half).
@@ -24013,6 +23905,12 @@ public final class Accelerate {
      * NaNs, Infinities and denormals are supported.
      * Per IEEE-754, all signaling NaNs are quieted during the conversion. (OpenEXR-1.2.1 converts SNaNs to SNaNs.)
      * To set/inspect the current IEEE-754 rounding mode, please see appropriate utilities in fenv.h
+     * 
+     * [@note] This routine will work in place provided that src.data == dest.data
+     * and src.rowBytes >= dest.rowBytes. However, when src.rowBytes > dest.rowBytes
+     * in-place will only work if you pass kvImageDoNotTile.
+     * 
+     * [@note] To use this with interleaved data, multiply vImage_Buffer.width by 4
      * 
      * @param src
      * A pointer to a vImage_Buffer that references the source pixels.
@@ -24028,12 +23926,6 @@ public final class Accelerate {
      * width at least as large as the destination buffer.
      * @return \p kvImageNullPointerArgument  src or dest pointer is NULL.
      * @return \p kvImageUnknownFlagsBit      Unknown flag was passed.
-     * 
-     * @note This routine will work in place provided that src.data == dest.data
-     * and src.rowBytes >= dest.rowBytes. However, when src.rowBytes > dest.rowBytes
-     * in-place will only work if you pass kvImageDoNotTile.
-     * 
-     * @note To use this with interleaved data, multiply vImage_Buffer.width by 4
      */
     @Generated
     @CFunction
@@ -24043,12 +23935,12 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_12UTo16U
+     * [@function] vImageConvert_12UTo16U
      * 
-     * @abstract Converts 12U to 16U
+     * Converts 12U to 16U
      * 
-     * @discussion For each floating point pixel in src, do the following:
-     * @code
+     * For each floating point pixel in src, do the following:
+     * [@code]
      * uint8_t *srcRow = srcData;
      * uint16_t *destRow = destData;
      * 
@@ -24064,7 +23956,9 @@ public final class Accelerate {
      * destRow[0] = (t0 * 65535U + (t0 << 4) + 2055U) >> 12;
      * destRow[1] = (t1 * 65535U + (t1 << 4) + 2055U) >> 12;
      * destRow += 2;
-     * @endcode
+     * [@endcode]
+     * 
+     * [@note] This routine will not work in place.
      * 
      * @param src
      * A pointer to a vImage_Buffer that references 12-bit source pixels
@@ -24079,8 +23973,6 @@ public final class Accelerate {
      * @return \p kvImageRoiLargerThanInputBuffer     The source buffer must have a height and
      * width at least as large as the destination buffer.
      * @return \p kvImageNullPointerArgument          src, dest or table pointer is NULL.
-     * 
-     * @note This routine will not work in place.
      */
     @Generated
     @CFunction
@@ -24090,12 +23982,12 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_16UTo12U
+     * [@function] vImageConvert_16UTo12U
      * 
-     * @abstract Converts 16U to 12U
+     * Converts 16U to 12U
      * 
-     * @discussion For each floating point pixel in src, do the following:
-     * @code
+     * For each floating point pixel in src, do the following:
+     * [@code]
      * uint16_t *srcRow = srcData;
      * uint8_t *destRow = destData;
      * 
@@ -24115,7 +24007,9 @@ public final class Accelerate {
      * destRow[1] = t0 >> 8;
      * destRow[2] = t0;
      * destRow += 3;
-     * @endcode
+     * [@endcode]
+     * 
+     * [@note] This routine will not work in place.
      * 
      * @param src
      * A pointer to a vImage_Buffer that references 12-bit source pixels
@@ -24130,8 +24024,6 @@ public final class Accelerate {
      * @return \p kvImageRoiLargerThanInputBuffer     The source buffer must have a height and
      * width at least as large as the destination buffer.
      * @return \p kvImageNullPointerArgument          src, dest or table pointer is NULL.
-     * 
-     * @note This routine will not work in place.
      */
     @Generated
     @CFunction
@@ -24141,12 +24033,12 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageOverwriteChannels_ARGB8888
+     * [@function] vImageOverwriteChannels_ARGB8888
      * 
-     * @abstract Overwrites one or more planes of an ARGB8888 image buffer with the provided planar buffer.
+     * Overwrites one or more planes of an ARGB8888 image buffer with the provided planar buffer.
      * 
-     * @discussion For each pixel in src, do the following:
-     * @code
+     * For each pixel in src, do the following:
+     * [@code]
      * // Set up a uint32_t mask - 0xFF where the pixels should be conserved
      * // Load and splat the src pixel
      * uint32_t srcPixel = newSrc->data[x];
@@ -24160,7 +24052,7 @@ public final class Accelerate {
      * 
      * // combine the two and store
      * dest->data[x] = srcPixel | result;
-     * @endcode
+     * [@endcode]
      * 
      * origSrc and dest may overlap, if they share the same origin.
      * origSrc should be at least as big as dest
@@ -24201,12 +24093,12 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageOverwriteChannels_ARGBFFFF
+     * [@function] vImageOverwriteChannels_ARGBFFFF
      * 
-     * @abstract Overwrites one or more planes of an ARGBFFFF image buffer with the provided planar buffer.
+     * Overwrites one or more planes of an ARGBFFFF image buffer with the provided planar buffer.
      * 
-     * @discussion For each pixel in src, do the following:
-     * @code
+     * For each pixel in src, do the following:
+     * [@code]
      * // Set up a uint32_t mask for which channels to use -1U where the pixels should not be conserved
      * uint32_t    a = origSrc->data[0] & maskA;
      * uint32_t    r = origSrc->data[1] & maskR;
@@ -24222,7 +24114,7 @@ public final class Accelerate {
      * dest->data[1] = colorR | r;
      * dest->data[2] = colorG | g;
      * dest->data[3] = colorB | b;
-     * @endcode
+     * [@endcode]
      * 
      * origSrc and dest may overlap, if they share the same origin.
      * origSrc should be at least as big as dest
@@ -24263,9 +24155,9 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageOverwriteChannelsWithScalar_Planar8
+     * [@function] vImageOverwriteChannelsWithScalar_Planar8
      * 
-     * @abstract Fill the dest buffer with the scalar value.
+     * Fill the dest buffer with the scalar value.
      * 
      * @param scalar
      * A scalar value to fill the destination buffer.
@@ -24287,9 +24179,9 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageOverwriteChannelsWithScalar_PlanarF
+     * [@function] vImageOverwriteChannelsWithScalar_PlanarF
      * 
-     * @abstract Fill the dest buffer with the scalar value.
+     * Fill the dest buffer with the scalar value.
      * 
      * @param scalar
      * A scalar value to fill the destination buffer.
@@ -24311,9 +24203,9 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageOverwriteChannelsWithScalar_Planar16S
+     * [@function] vImageOverwriteChannelsWithScalar_Planar16S
      * 
-     * @abstract Fill the dest buffer with the scalar value.
+     * Fill the dest buffer with the scalar value.
      * 
      * @param scalar
      * A scalar value to fill the destination buffer.
@@ -24335,9 +24227,9 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageOverwriteChannelsWithScalar_Planar16U
+     * [@function] vImageOverwriteChannelsWithScalar_Planar16U
      * 
-     * @abstract Fill the dest buffer with the scalar value.
+     * Fill the dest buffer with the scalar value.
      * 
      * @param scalar
      * A scalar value to fill the destination buffer.
@@ -24359,20 +24251,20 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageExtractChannel_ARGB8888
+     * [@function] vImageExtractChannel_ARGB8888
      * 
-     * @abstract Extract one channel from a 4-channel interleaved 8-bit per component buffer
+     * Extract one channel from a 4-channel interleaved 8-bit per component buffer
      * 
-     * @discussion  This is the opposite operation from vImageOverwriteChannels_ARGB8888. It reads one component
+     * This is the opposite operation from vImageOverwriteChannels_ARGB8888. It reads one component
      * from the four channel 8-bit per component buffer and writes it into a Planar8 buffer.
      * 
      * For each pixel i in src:
-     * @code
+     * [@code]
      * Pixel_8888 *src_pixel;
      * Pixel_8 *dest_pixel;
      * 
      * dest_pixel[i] = src_pixel[i][channelIndex];
-     * @endcode
+     * [@endcode]
      * 
      * @param src
      * A valid pointer to a vImage_Buffer struct which describes a 8-bit per component, four channel buffer.
@@ -24407,22 +24299,22 @@ public final class Accelerate {
             @NInt long channelIndex, int flags);
 
     /**
-     * @function vImageExtractChannel_ARGB16U
+     * [@function] vImageExtractChannel_ARGB16U
      * 
-     * @abstract Extract one channel from a 4-channel interleaved 16-bit per component buffer.
+     * Extract one channel from a 4-channel interleaved 16-bit per component buffer.
      * 
-     * @discussion  vImageExtractChannel_ARGB16U reads one component from the four channel 16-bit per component buffer
+     * vImageExtractChannel_ARGB16U reads one component from the four channel 16-bit per component buffer
      * and writes it into a Planar16U buffer.  Since this just copies data around, the data may be any
      * 16-bit per component data type, including signed 16 bit integers and half-precision floating point,
      * of any endianness. Likewise, the channel order does not need to be ARGB. RGBA, BGRA, CMYK, etc. all work.
      * 
      * For each pixel i in src:
-     * @code
+     * [@code]
      * Pixel_ARGB_16U *src_pixel;
      * Pixel_16U *dest_pixel;
      * 
      * dest_pixel[i] = src_pixel[i][channelIndex];
-     * @endcode
+     * [@endcode]
      * 
      * @param src
      * A valid pointer to a vImage_Buffer struct which describes a 16-bit per component, four channel buffer.
@@ -24443,11 +24335,11 @@ public final class Accelerate {
      * @param flags
      * The following flags are allowed:  kvImageDoNotTile, kvImageGetTempBufferSize, kvImageNoFlags, kvImagePrintDiagnosticsToConsole
      * 
-     * @result kvImageNoError                     Success. However, see also 0 below, if the kvImageGetTempBufferSize flag is passed.
-     * @result 0                                  If the kvImageGetTempBufferSize flag is passed, this function returns 0 and does no work.
-     * @result kvImageRoiLargerThanInputBuffer    The destination height or width is larger than the src height or width, respectively.
-     * @result kvImageUnknownFlagsBit             A flag was used which was not among the approved set of flags. See flags param description above.
-     * @result kvImageInvalidParameter            channelIndex must be in the range [0,3]
+     * @return kvImageNoError                     Success. However, see also 0 below, if the kvImageGetTempBufferSize flag is passed.
+     * @return 0                                  If the kvImageGetTempBufferSize flag is passed, this function returns 0 and does no work.
+     * @return kvImageRoiLargerThanInputBuffer    The destination height or width is larger than the src height or width, respectively.
+     * @return kvImageUnknownFlagsBit             A flag was used which was not among the approved set of flags. See flags param description above.
+     * @return kvImageInvalidParameter            channelIndex must be in the range [0,3]
      */
     @Generated
     @CFunction
@@ -24458,21 +24350,21 @@ public final class Accelerate {
             @NInt long channelIndex, int flags);
 
     /**
-     * @function vImageExtractChannel_ARGBFFFF
+     * [@function] vImageExtractChannel_ARGBFFFF
      * 
-     * @abstract Extract one channel from a 4-channel interleaved 32-bit per component buffer
+     * Extract one channel from a 4-channel interleaved 32-bit per component buffer
      * 
-     * @discussion  This is the opposite operation from vImageOverwriteChannels_ARGBFFFF. It reads one component
+     * This is the opposite operation from vImageOverwriteChannels_ARGBFFFF. It reads one component
      * from the four channel 32-bit per component buffer and writes it into a PlanarF buffer. NaNs and
      * and sNaNs are not modified. Sign of zero shall be preserved.
      * 
      * For each pixel i in src:
-     * @code
+     * [@code]
      * Pixel_FFFF *src_pixel;
      * Pixel_F *dest_pixel;
      * 
      * dest_pixel[i] = src_pixel[i][channelIndex];
-     * @endcode
+     * [@endcode]
      * 
      * @param src
      * A valid pointer to a vImage_Buffer struct which describes a 32-bit per component, four channel buffer.
@@ -24491,11 +24383,11 @@ public final class Accelerate {
      * @param flags
      * The following flags are allowed:  kvImageDoNotTile, kvImageGetTempBufferSize, kvImageNoFlags, kvImagePrintDiagnosticsToConsole
      * 
-     * @result kvImageNoError                     Success. However, see also 0 below, if the kvImageGetTempBufferSize flag is passed.
-     * @result 0                                  If the kvImageGetTempBufferSize flag is passed, this function returns 0 and does no work.
-     * @result kvImageRoiLargerThanInputBuffer    The destination height or width is larger than the src height or width, respectively.
-     * @result kvImageUnknownFlagsBit             A flag was used which was not among the approved set of flags. See flags param description above.
-     * @result kvImageInvalidParameter            channelIndex must be in the range [0,3]
+     * @return kvImageNoError                     Success. However, see also 0 below, if the kvImageGetTempBufferSize flag is passed.
+     * @return 0                                  If the kvImageGetTempBufferSize flag is passed, this function returns 0 and does no work.
+     * @return kvImageRoiLargerThanInputBuffer    The destination height or width is larger than the src height or width, respectively.
+     * @return kvImageUnknownFlagsBit             A flag was used which was not among the approved set of flags. See flags param description above.
+     * @return kvImageInvalidParameter            channelIndex must be in the range [0,3]
      */
     @Generated
     @CFunction
@@ -24506,14 +24398,14 @@ public final class Accelerate {
             @NInt long channelIndex, int flags);
 
     /**
-     * @function vImageOverwriteChannelsWithScalar_ARGB8888
+     * [@function] vImageOverwriteChannelsWithScalar_ARGB8888
      * 
-     * @abstract Overwrites the pixels of one or more planes of an ARGB8888 image buffer with the provided scalar value.
+     * Overwrites the pixels of one or more planes of an ARGB8888 image buffer with the provided scalar value.
      * 
-     * @discussion Fill the color channels (as indicated by copyMask) with the scalar value.
+     * Fill the color channels (as indicated by copyMask) with the scalar value.
      * 
      * For each pixel in src:
-     * @code
+     * [@code]
      * Pixel_8888 srcPixel, destPixel;
      * int mask;
      * int i;
@@ -24528,14 +24420,14 @@ public final class Accelerate {
      * 
      * mask = mask >> 1;
      * }
-     * @endcode
+     * [@endcode]
      * 
      * Bits 0-27 of copyMask must be 0.
      * This function can work in place provided the following are true:
      * src->data must be equal to dest->data and src->rowBytes >= dest->rowBytes
      * If overlapping src has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
      * 
-     * @note These functions may be used for images with other channel orderings such as RGBA8888 by adjusting the ordering of the bits in copyMask.
+     * [@note] These functions may be used for images with other channel orderings such as RGBA8888 by adjusting the ordering of the bits in copyMask.
      * 
      * @param scalar
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing scalar value that we will overwrite with.
@@ -24557,7 +24449,7 @@ public final class Accelerate {
      * @return kvImageInvalidParameter                When copyMask > 15 which is invalid.
      * @return kvImageRoiLargerThanInputBuffer        The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
      * 
-     * @seealso vImageOverwriteChannelsWithPixel_ARGB8888
+     * @see vImageOverwriteChannelsWithPixel_ARGB8888
      */
     @Generated
     @CFunction
@@ -24568,14 +24460,14 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageOverwriteChannelsWithScalar_ARGBFFFF
+     * [@function] vImageOverwriteChannelsWithScalar_ARGBFFFF
      * 
-     * @abstract Overwrites the pixels of one or more planes of an ARGBFFFF image buffer with the provided scalar value.
+     * Overwrites the pixels of one or more planes of an ARGBFFFF image buffer with the provided scalar value.
      * 
-     * @discussion Fill the color channels (as indicated by copyMask) with the scalar value.
+     * Fill the color channels (as indicated by copyMask) with the scalar value.
      * 
      * For each pixel in src:
-     * @code
+     * [@code]
      * Pixel_FFFF srcPixel, destPixel;
      * int mask;
      * int i;
@@ -24590,14 +24482,14 @@ public final class Accelerate {
      * 
      * mask = mask >> 1;
      * }
-     * @endcode
+     * [@endcode]
      * 
      * Bits 0-27 of copyMask must be 0.
      * This function can work in place provided the following are true:
      * src->data must be equal to dest->data and src->rowBytes >= dest->rowBytes
      * If overlapping src has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags
      * 
-     * @note These functions may be used for images with other channel orderings such as RGBAFFFF by adjusting the ordering of the bits in copyMask.
+     * [@note] These functions may be used for images with other channel orderings such as RGBAFFFF by adjusting the ordering of the bits in copyMask.
      * 
      * @param scalar
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing scalar value that we will overwrite with.
@@ -24619,7 +24511,7 @@ public final class Accelerate {
      * @return kvImageInvalidParameter                When copyMask > 15 which is invalid.
      * @return kvImageRoiLargerThanInputBuffer        The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
      * 
-     * @seealso vImageOverwriteChannelsWithPixel_ARGBFFFF
+     * @see vImageOverwriteChannelsWithPixel_ARGBFFFF
      */
     @Generated
     @CFunction
@@ -24630,10 +24522,10 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageConvert_ARGBFFFFtoRGBFFF
+     * [@function] vImageConvert_ARGBFFFFtoRGBFFF
      * 
-     * @abstract Convert 4-channel ARGB buffer to a 3-channel RGB one, by removing the alpha (1st) channel.
-     * @note This routine will work in place.
+     * Convert 4-channel ARGB buffer to a 3-channel RGB one, by removing the alpha (1st) channel.
+     * [@note] This routine will work in place.
      * 
      * @param src
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing source pixels.
@@ -24656,10 +24548,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_RGBAFFFFtoRGBFFF
+     * [@function] vImageConvert_RGBAFFFFtoRGBFFF
      * 
-     * @abstract Convert 4-channel RGBA buffer to a 3-channel RGB one, by removing the alpha (last) channel.
-     * @note This routine will work in place.
+     * Convert 4-channel RGBA buffer to a 3-channel RGB one, by removing the alpha (last) channel.
+     * [@note] This routine will work in place.
      * 
      * @param src
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing source pixels.
@@ -24682,10 +24574,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_BGRAFFFFtoRGBFFF
+     * [@function] vImageConvert_BGRAFFFFtoRGBFFF
      * 
-     * @abstract Convert 4-channel BGRA buffer to a 3-channel RGB one, by removing the alpha (last) channel and reordering the remaining..
-     * @note This routine will work in place.
+     * Convert 4-channel BGRA buffer to a 3-channel RGB one, by removing the alpha (last) channel and reordering the remaining..
+     * [@note] This routine will work in place.
      * 
      * @param src
      * A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing source pixels.
@@ -24708,17 +24600,18 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_RGBFFFtoARGBFFFF
+     * [@function] vImageConvert_RGBFFFtoARGBFFFF
      * 
-     * @abstract Convert/pack a float RGB buffer with a corresponding alpha channel buffer or an alpha factor into a ARGB buffer.
+     * Convert/pack a float RGB buffer with a corresponding alpha channel buffer or an alpha factor into a ARGB buffer.
      * 
-     * @discussion
      * a = a corresponding pixel from the alpha channel buffer, if it exists, or a fixed factor
      * For each pixel (r,g,b) in src with alpha a, do the following:
-     * @code
+     * [@code]
      * if (premultiply!=0) dest = (a,r*a,g*a,b*a);
      * else dest = (a,r,g,b);
-     * @endcode
+     * [@endcode]
+     * 
+     * [@note] This routine will not work in place.
      * 
      * @param rgbSrc
      * A pointer to a vImage_Buffer that references the source RGB pixels.  Unchanged on exit.
@@ -24741,8 +24634,6 @@ public final class Accelerate {
      * @return kvImageUnknownFlagsBit             Unknown flag was passed to the function.
      * @return kvImageRoiLargerThanInputBuffer    The source buffer must have a size (in both height and width)
      * no less than the destination buffers.
-     * 
-     * @note This routine will not work in place.
      */
     @Generated
     @CFunction
@@ -24754,17 +24645,18 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageConvert_RGBFFFtoRGBAFFFF
+     * [@function] vImageConvert_RGBFFFtoRGBAFFFF
      * 
-     * @abstract Convert/pack a float RGB buffer with a corresponding alpha channel buffer or an alpha factor into a RGBA buffer.
+     * Convert/pack a float RGB buffer with a corresponding alpha channel buffer or an alpha factor into a RGBA buffer.
      * 
-     * @discussion
      * a = a corresponding pixel from the alpha channel buffer, if it exists, or a fixed factor
      * For each pixel (r,g,b) in src with alpha a, do the following:
-     * @code
+     * [@code]
      * if (premultiply!=0) dest = (r*a,g*a,b*a,a);
      * else dest = (r,g,b,a);
-     * @endcode
+     * [@endcode]
+     * 
+     * [@note] This routine will not work in place.
      * 
      * @param rgbSrc
      * A pointer to a vImage_Buffer that references the source RGB pixels.  Unchanged on exit.
@@ -24787,8 +24679,6 @@ public final class Accelerate {
      * @return kvImageUnknownFlagsBit             Unknown flag was passed to the function.
      * @return kvImageRoiLargerThanInputBuffer    The source buffer must have a size (in both height and width)
      * no less than the destination buffers.
-     * 
-     * @note This routine will not work in place.
      */
     @Generated
     @CFunction
@@ -24800,17 +24690,18 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageConvert_RGBFFFtoBGRAFFFF
+     * [@function] vImageConvert_RGBFFFtoBGRAFFFF
      * 
-     * @abstract Convert/pack a float RGB buffer with a corresponding alpha channel buffer or an alpha factor into a BGRA buffer.
+     * Convert/pack a float RGB buffer with a corresponding alpha channel buffer or an alpha factor into a BGRA buffer.
      * 
-     * @discussion
      * a = a corresponding pixel from the alpha channel buffer, if it exists, or a fixed factor
      * For each pixel (r,g,b) in src with alpha a, do the following:
-     * @code
+     * [@code]
      * if (premultiply!=0) dest = (b*a,g*a,r*a,a);
      * else dest = (b,g,r,a);
-     * @endcode
+     * [@endcode]
+     * 
+     * [@note] This routine will not work in place.
      * 
      * @param rgbSrc
      * A pointer to a vImage_Buffer that references the source RGB pixels.  Unchanged on exit.
@@ -24833,8 +24724,6 @@ public final class Accelerate {
      * @return kvImageUnknownFlagsBit             Unknown flag was passed to the function.
      * @return kvImageRoiLargerThanInputBuffer    The source buffer must have a size (in both height and width)
      * no less than the destination buffers.
-     * 
-     * @note This routine will not work in place.
      */
     @Generated
     @CFunction
@@ -24846,20 +24735,19 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageConvert_ARGB1555toPlanar8
+     * [@function] vImageConvert_ARGB1555toPlanar8
      * 
-     * @abstract Convert from 16 bit/pixel ARGB1555 to 8-bit/channel Planar8 format.
+     * Convert from 16 bit/pixel ARGB1555 to 8-bit/channel Planar8 format.
      * 
-     * @discussion
      * For each pixel x in src->data:
-     * @code
+     * [@code]
      * destA->data[x] =  1bitAlphaChannel * 255;
      * destR->data[x] = (5bitRedChannel   * 255 + 15) / 31;
      * destG->data[x] = (5bitGreenChannel * 255 + 15) / 31;
      * destB->data[x] = (5bitBlueChannel  * 255 + 15) / 31;
-     * @endcode
+     * [@endcode]
      * 
-     * @note This function will not work in place.
+     * [@note] This function will not work in place.
      * 
      * @param src
      * A pointer to a vImage_Buffer that references the ARGB source channels.
@@ -24894,21 +24782,20 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer destB, int flags);
 
     /**
-     * @function vImageConvert_ARGB1555toARGB8888
+     * [@function] vImageConvert_ARGB1555toARGB8888
      * 
-     * @abstract Convert from 16 bit/pixel ARGB1555 to 32 bit/pixel ARGB8888 format.
+     * Convert from 16 bit/pixel ARGB1555 to 32 bit/pixel ARGB8888 format.
      * 
-     * @discussion
      * For each pixel x in src:
-     * @code
+     * [@code]
      * Pixel8 alpha =  1bitAlphaChannel * 255;
      * Pixel8 red   = (5bitRedChannel   * 255 + 15) / 31;
      * Pixel8 green = (5bitGreenChannel * 255 + 15) / 31;
      * Pixel8 blue  = (5bitBlueChannel  * 255 + 15) / 31;
      * dest->data[x] = {alpha, red, green, blue};
-     * @endcode
+     * [@endcode]
      * 
-     * @note This function will not work in place.
+     * [@note] This function will not work in place.
      * 
      * @param src
      * A pointer to a vImage_Buffer that references the ARGB source channels.
@@ -24930,21 +24817,20 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_Planar8toARGB1555
+     * [@function] vImageConvert_Planar8toARGB1555
      * 
-     * @abstract Convert from 8-bit/channel Planar8 to 16 bit/pixel ARGB1555 format.
+     * Convert from 8-bit/channel Planar8 to 16 bit/pixel ARGB1555 format.
      * 
-     * @discussion
      * For each pixel x:
-     * @code
+     * [@code]
      * uint32_t alpha = (srcA->data[x]      + 127) / 255;
      * uint32_t red   = (srcR->data[x] * 31 + 127) / 255;
      * uint32_t green = (srcG->data[x] * 31 + 127) / 255;
      * uint32_t blue  = (srcB->data[x] * 31 + 127) / 255;
      * dest->data[x] =  (alpha << 15) | (red << 10) | (green << 5) | blue;
-     * @endcode
+     * [@endcode]
      * 
-     * @note This function will not work in place.
+     * [@note] This function will not work in place.
      * 
      * @param srcA
      * A pointer to a vImage_Buffer that references the 8-bit alpha source channel.
@@ -24979,21 +24865,20 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_ARGB8888toARGB1555
+     * [@function] vImageConvert_ARGB8888toARGB1555
      * 
-     * @abstract Convert between 32 bit/pixel ARGB8888 to 16 bit/pixel ARGB1555 format.
+     * Convert between 32 bit/pixel ARGB8888 to 16 bit/pixel ARGB1555 format.
      * 
-     * @discussion
      * For each pixel x in src:
-     * @code
+     * [@code]
      * uint32_t alpha = (8bitAlphaChannel      + 127) / 255;
      * uint32_t red   = (8bitRedChannel   * 31 + 127) / 255;
      * uint32_t green = (8bitGreenChannel * 31 + 127) / 255;
      * uint32_t blue  = (8bitBlueChannel  * 31 + 127) / 255;
      * dest->data[x] =  (alpha << 15) | (red << 10) | (green << 5) | blue;
-     * @endcode
+     * [@endcode]
      * 
-     * @note This function can work in place provided the following are true:
+     * [@note] This function can work in place provided the following are true:
      * For each buffer "buf" that overlaps with dest, buf->data must be equal to dest->data and buf->rowBytes >= dest->rowBytes.
      * If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags.
      * 
@@ -25017,21 +24902,20 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_RGBA5551toRGBA8888
+     * [@function] vImageConvert_RGBA5551toRGBA8888
      * 
-     * @abstract Convert from 16 bit/pixel RGBA5551 to 32 bit/pixel RGBA8888 format.
+     * Convert from 16 bit/pixel RGBA5551 to 32 bit/pixel RGBA8888 format.
      * 
-     * @discussion
      * For each pixel x in src:
-     * @code
+     * [@code]
      * Pixel8 red   = (5bitRedChannel   * 255 + 15) / 31;
      * Pixel8 green = (5bitGreenChannel * 255 + 15) / 31;
      * Pixel8 blue  = (5bitBlueChannel  * 255 + 15) / 31;
      * Pixel8 alpha =  1bitAlphaChannel * 255;
      * dest->data[x] = {red, green, blue, alpha};
-     * @endcode
+     * [@endcode]
      * 
-     * @note This function will not work in place.
+     * [@note] This function will not work in place.
      * 
      * @param src
      * A pointer to a vImage_Buffer that references the RGBA source channels.
@@ -25053,21 +24937,20 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_RGBA8888toRGBA5551
+     * [@function] vImageConvert_RGBA8888toRGBA5551
      * 
-     * @abstract Convert between 32 bit/pixel RGBA8888 to 16 bit/pixel RGBA5551 format.
+     * Convert between 32 bit/pixel RGBA8888 to 16 bit/pixel RGBA5551 format.
      * 
-     * @discussion
      * For each pixel x in src:
-     * @code
+     * [@code]
      * uint32_t red   = (8bitRedChannel   * 31 + 127) / 255;
      * uint32_t green = (8bitGreenChannel * 31 + 127) / 255;
      * uint32_t blue  = (8bitBlueChannel  * 31 + 127) / 255;
      * uint32_t alpha = (8bitAlphaChannel      + 127) / 255;
      * dest->data[x] =  (red << 11) | (green << 6) | (blue << 1) | alpha;
-     * @endcode
+     * [@endcode]
      * 
-     * @note This function can work in place provided the following are true:
+     * [@note] This function can work in place provided the following are true:
      * For each buffer "buf" that overlaps with dest, buf->data must be equal to dest->data and buf->rowBytes >= dest->rowBytes.
      * If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags.
      * 
@@ -25091,14 +24974,14 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_ARGB8888toARGB1555_dithered
+     * [@function] vImageConvert_ARGB8888toARGB1555_dithered
      * 
-     * @abstract Convert between 32 bit/pixel ARGB8888 to 16 bit/pixel ARGB1555 format with dithering.
+     * Convert between 32 bit/pixel ARGB8888 to 16 bit/pixel ARGB1555 format with dithering.
      * 
-     * @discussion Similar to vImageConvert_ARGB8888toARGB1555, except the result is dithered instead of round to nearest.
+     * Similar to vImageConvert_ARGB8888toARGB1555, except the result is dithered instead of round to nearest.
      * This method should provide more accurate (overall) color reproduction and less banding in low-frequency regions of the image.
      * 
-     * @note This function can work in place provided the following are true:
+     * [@note] This function can work in place provided the following are true:
      * For each buffer "buf" that overlaps with dest, buf->data must be equal to dest->data and buf->rowBytes >= dest->rowBytes.
      * If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags.
      * 
@@ -25117,7 +25000,7 @@ public final class Accelerate {
      * @return kvImageNoError                         Success
      * @return kvImageRoiLargerThanInputBuffer        The height and width of the destination must be less than or equal to the height and width of the src buffer, respectively.
      * 
-     * @seealso vImageConvert_ARGB8888toARGB1555
+     * @see vImageConvert_ARGB8888toARGB1555
      */
     @Generated
     @CFunction
@@ -25128,14 +25011,14 @@ public final class Accelerate {
             int dither, int flags);
 
     /**
-     * @function vImageConvert_RGBA8888toRGBA5551_dithered
+     * [@function] vImageConvert_RGBA8888toRGBA5551_dithered
      * 
-     * @abstract Convert between 32 bit/pixel RGBA8888 to 16 bit/pixel RGBA5551 format with dithering.
+     * Convert between 32 bit/pixel RGBA8888 to 16 bit/pixel RGBA5551 format with dithering.
      * 
-     * @discussion Similar to vImageConvert_RGBA8888toRGBA5551, except the result is dithered instead of round to nearest.
+     * Similar to vImageConvert_RGBA8888toRGBA5551, except the result is dithered instead of round to nearest.
      * This method should provide more accurate (overall) color reproduction and less banding in low-frequency regions of the image.
      * 
-     * @note This function can work in place provided the following are true:
+     * [@note] This function can work in place provided the following are true:
      * For each buffer "buf" that overlaps with dest, buf->data must be equal to dest->data and buf->rowBytes >= dest->rowBytes.
      * If an overlapping buffer has a different rowBytes from dest, kvImageDoNotTile must be also passed in the flags.
      * 
@@ -25394,9 +25277,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_RGBA5551toRGB565
-     * @abstract Convert from RGBA5551 to RGB565 image format
-     * @discussion  Convert (with loss of alpha) from RGBA5551 to RGB565 format.
+     * [@function] vImageConvert_RGBA5551toRGB565
+     * 
+     * Convert from RGBA5551 to RGB565 image format
+     * 
+     * Convert (with loss of alpha) from RGBA5551 to RGB565 format.
      * If you need something fancier done with alpha first, such as unpremultiplication or flattening, convert to 8 bit per channel first.
      * Both RGB565 and RGBA5551 are defined by vImage to be host-endian formats. On Intel and ARM and other little endian systems, these are
      * little endian uint16_t's in memory. On a big endian system, these are big endian uint16_t's.
@@ -25436,9 +25321,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_ARGB1555toRGB565
-     * @abstract Convert from ARGB1555 to RGB565 image format
-     * @discussion  Convert (with loss of alpha) from ARGB1555 to RGB565 format.
+     * [@function] vImageConvert_ARGB1555toRGB565
+     * 
+     * Convert from ARGB1555 to RGB565 image format
+     * 
+     * Convert (with loss of alpha) from ARGB1555 to RGB565 format.
      * If you need something fancier done with alpha first, such as unpremultiplication or flattening, convert to 8 bit per channel first.
      * Both RGB565 and ARGB1555 are defined by vImage to be host-endian formats. On Intel and ARM and other little endian systems, these are
      * little endian uint16_t's in memory. On a big endian system, these are big endian uint16_t's.
@@ -25478,9 +25365,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_RGB565toRGBA5551
-     * @abstract Convert from RGB565 to RGBA5551 image format
-     * @discussion  Convert from RGB565 to RGBA5551 format.  The new alpha is set to 1.
+     * [@function] vImageConvert_RGB565toRGBA5551
+     * 
+     * Convert from RGB565 to RGBA5551 image format
+     * 
+     * Convert from RGB565 to RGBA5551 format.  The new alpha is set to 1.
      * Both RGB565 and RGBA5551 are defined by vImage to be host-endian formats. On Intel and ARM and other little endian systems, these are
      * little endian uint16_t's in memory. On a big endian system, these are big endian uint16_t's.
      * 
@@ -25573,9 +25462,11 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageConvert_RGB565toARGB1555
-     * @abstract Convert from RGB565 to ARGB1555 image format
-     * @discussion  Convert from RGB565 to ARGB1555 format.  The new alpha is set to 1.
+     * [@function] vImageConvert_RGB565toARGB1555
+     * 
+     * Convert from RGB565 to ARGB1555 image format
+     * 
+     * Convert from RGB565 to ARGB1555 format.  The new alpha is set to 1.
      * Both RGB565 and ARGB1555 are defined by vImage to be host-endian formats. On Intel and ARM and other little endian systems, these are
      * little endian uint16_t's in memory. On a big endian system, these are big endian uint16_t's.
      * 
@@ -25998,12 +25889,12 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer blueDest, int flags);
 
     /**
-     * @function vImageSelectChannels_ARGB8888
+     * [@function] vImageSelectChannels_ARGB8888
      * 
-     * @abstract Does the same thing as vImageOverwriteChannels_ARGB8888 except that the newSrc buffer is in ARGB8888.
+     * Does the same thing as vImageOverwriteChannels_ARGB8888 except that the newSrc buffer is in ARGB8888.
      * 
-     * @discussion For each pixel in src, do the following:
-     * @code
+     * For each pixel in src, do the following:
+     * [@code]
      * // Generate intMask to be 0xff for the channels that we want copy from newSrc to origSrc.
      * uint32_t    t = *(uint32_t*)newSrc;
      * uint32_t    b = *(uint32_t*)origSrc;
@@ -26011,7 +25902,7 @@ public final class Accelerate {
      * t  = (t & intMask ) | (b & ~intMask );
      * 
      * *(uint32_t*)dest = t;
-     * @endcode
+     * [@endcode]
      * 
      * If the appropriate copyMask bit is set, then the color channel from newSrc is used. Otherwise the color channel from origSrc is used.
      * We note that functions of this kind only exist for interleaved buffers. If you had been using planar data, this would just be a pointer swap.
@@ -26049,12 +25940,12 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageSelectChannels_ARGBFFFF
+     * [@function] vImageSelectChannels_ARGBFFFF
      * 
-     * @abstract Does the same thing as vImageOverwriteChannels_ARGBFFFF except that the newSrc buffer is in ARGBFFFF
+     * Does the same thing as vImageOverwriteChannels_ARGBFFFF except that the newSrc buffer is in ARGBFFFF
      * 
-     * @discussion For each pixel in src, do the following:
-     * @code
+     * For each pixel in src, do the following:
+     * [@code]
      * // Generate intMask to be 0xffffffff for the channels that we want copy from newSrc to origSrc.
      * float    t = *(float*)newSrc;
      * float    b = *(float*)origSrc;
@@ -26062,7 +25953,7 @@ public final class Accelerate {
      * t  = (t & intMask ) | (b & ~intMask );
      * 
      * *(float*)dest = t;
-     * @endcode
+     * [@endcode]
      * 
      * If the appropriate copyMask bit is set, then the color channel from newSrc is used. Otherwise the color channel from origSrc is used.
      * We note that functions of this kind only exist for interleaved buffers. If you had been using planar data, this would just be a pointer swap.
@@ -26874,12 +26765,13 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_16Q12to16F
-     * @abstract Convert 16Q12 (16-bit format with 12 fractional bits) to half-precision floating-point.
+     * [@function] vImageConvert_16Q12to16F
      * 
-     * @discussion Source pixel values of 0 are mapped to 0, and source pixel values of (Pixel_16Q12) 4096
+     * Convert 16Q12 (16-bit format with 12 fractional bits) to half-precision floating-point.
+     * 
+     * Source pixel values of 0 are mapped to 0, and source pixel values of (Pixel_16Q12) 4096
      * are mapped to (Pixel_16F) 1.0f.
-     * @note Works in place provided that src->data == dest->data && src->rowBytes == dest->rowBytes.
+     * [@note] Works in place provided that src->data == dest->data && src->rowBytes == dest->rowBytes.
      * 
      * @param src              The input image.
      * @param dest             A pointer to a preallocated vImage_Buffer to receive the resulting image.
@@ -26903,13 +26795,14 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_16Q12toRGB16F
-     * @abstract Convert 16Q12 and interleave (16-bit format with 12 fractional bits) to half-precision floating-point.
+     * [@function] vImageConvert_16Q12toRGB16F
      * 
-     * @discussion Interleaves data from three source buffers while performing the format conversion.
+     * Convert 16Q12 and interleave (16-bit format with 12 fractional bits) to half-precision floating-point.
+     * 
+     * Interleaves data from three source buffers while performing the format conversion.
      * Source pixel values of 0 are mapped to 0, and source pixel values of (Pixel_16Q12) 4096
      * are mapped to (Pixel_16F) 1.0f.
-     * @note Does not work in place.
+     * [@note] Does not work in place.
      * 
      * @param red              The red channel of the input image.
      * @param green            The green channel of the input image.
@@ -26937,13 +26830,14 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_Planar16Q12toARGB16F
-     * @abstract Convert and interleave 16Q12 (16-bit format with 12 fractional bits) to half-precision floating-point.
+     * [@function] vImageConvert_Planar16Q12toARGB16F
      * 
-     * @discussion Interleaves data from four source buffers while performing the format conversion.
+     * Convert and interleave 16Q12 (16-bit format with 12 fractional bits) to half-precision floating-point.
+     * 
+     * Interleaves data from four source buffers while performing the format conversion.
      * Source pixel values of 0 are mapped to 0, and source pixel values of (Pixel_16Q12) 4096
      * are mapped to (Pixel_16F) 1.0f.
-     * @note Does not work in place.
+     * [@note] Does not work in place.
      * 
      * @param alpha            The alpha channel of the input image.
      * @param red              The red channel of the input image.
@@ -26973,12 +26867,13 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_16Fto16Q12
-     * @abstract Convert half-precision floating-point to 16Q12 (16-bit format with 12 fractional bits).
+     * [@function] vImageConvert_16Fto16Q12
      * 
-     * @discussion Source pixel values of 0 are mapped to 0, and source pixel values of (Pixel_16F) 1.0f
+     * Convert half-precision floating-point to 16Q12 (16-bit format with 12 fractional bits).
+     * 
+     * Source pixel values of 0 are mapped to 0, and source pixel values of (Pixel_16F) 1.0f
      * are mapped to (Pixel_16Q12) 4096.
-     * @note Works in place provided that src->data == dest->data && src->rowBytes == dest->rowBytes.
+     * [@note] Works in place provided that src->data == dest->data && src->rowBytes == dest->rowBytes.
      * 
      * @param src              The input image.
      * @param dest             A pointer to a preallocated vImage_Buffer to receive the resulting image.
@@ -27098,32 +26993,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageConvert_YpCbCrToARGB_GenerateConversion
+     * [@function] vImageConvert_YpCbCrToARGB_GenerateConversion
      * 
-     * @abstract Generates the conversion from a YpCbCr to a ARGB pixel format.
+     * Generates the conversion from a YpCbCr to a ARGB pixel format.
      * 
-     * @param matrix
-     * A pointer to vImage_YpCbCrToARGBMatrix that contains the matrix coefficients for the conversion
-     * from a YpCbCr to a ARGB pixel format.
-     * 
-     * @param pixelRange
-     * A pointer to vImage_YpCbCrPixelRange that contains the pixel range information for the conversion
-     * from a YpCbCr to a ARGB pixel format.
-     * 
-     * @param outInfo
-     * A pointer to vImage_YpCbCrToRGB will be initialized with the information for the conversion function
-     * will use later.
-     * 
-     * @param inYpCbCrType
-     * A YpCbCrType to specify the input YpCbCr format.
-     * 
-     * @param outARGBType
-     * A ARGBType to specify the output ARGB format.
-     * 
-     * @param flags
-     * kvImagePrintDiagnosticsToConsole   Directs the function to print diagnostic information to the console in the event of failure.
-     * 
-     * @discussion This function is used to create the vImage_YpCbCrToARGB conversion information necessary for all
+     * This function is used to create the vImage_YpCbCrToARGB conversion information necessary for all
      * of YUV -> RGB conversion functions.
      * 
      * For example, if we want to prepare for the conversion from 'yuvs' with ITU 601 video range to ARGB8888, then we
@@ -27189,6 +27063,27 @@ public final class Accelerate {
      * @/textblock
      * </pre>
      * 
+     * @param matrix
+     * A pointer to vImage_YpCbCrToARGBMatrix that contains the matrix coefficients for the conversion
+     * from a YpCbCr to a ARGB pixel format.
+     * 
+     * @param pixelRange
+     * A pointer to vImage_YpCbCrPixelRange that contains the pixel range information for the conversion
+     * from a YpCbCr to a ARGB pixel format.
+     * 
+     * @param outInfo
+     * A pointer to vImage_YpCbCrToRGB will be initialized with the information for the conversion function
+     * will use later.
+     * 
+     * @param inYpCbCrType
+     * A YpCbCrType to specify the input YpCbCr format.
+     * 
+     * @param outARGBType
+     * A ARGBType to specify the output ARGB format.
+     * 
+     * @param flags
+     * kvImagePrintDiagnosticsToConsole   Directs the function to print diagnostic information to the console in the event of failure.
+     * 
      * @return  The following return codes may occur:
      * <pre> @textblock
      * kvImageNoError                  Is returned when there was no error.
@@ -27206,32 +27101,11 @@ public final class Accelerate {
             int inYpCbCrType, int outARGBType, int flags);
 
     /**
-     * @function vImageConvert_ARGBToYpCbCr_GenerateConversion
+     * [@function] vImageConvert_ARGBToYpCbCr_GenerateConversion
      * 
-     * @abstract Generates the conversion from a ARGB to a YpCbCr pixel format.
+     * Generates the conversion from a ARGB to a YpCbCr pixel format.
      * 
-     * @param matrix
-     * A pointer to vImage_ARGBToYpCbCrMatrix that contains the matrix coefficients for the conversion
-     * from a ARGB to a YpCbCr pixel format.
-     * 
-     * @param pixelRange
-     * A pointer to vImage_YpCbCrPixelRange that contains the pixel range information for the conversion
-     * from a ARGB to a YpCbCr pixel format.
-     * 
-     * @param outInfo
-     * A pointer to vImage_ARGBToYpCbCr will be initialized with the information for the conversion function
-     * will use later.
-     * 
-     * @param inARGBType
-     * A ARGBType to specify the output ARGB format.
-     * 
-     * @param outYpCbCrType
-     * A YpCbCrType to specify the input YpCbCr format.
-     * 
-     * @param flags
-     * kvImagePrintDiagnosticsToConsole   Directs the function to print diagnostic information to the console in the event of failure.
-     * 
-     * @discussion This function is used to create the vImage_ARGBToYpCbCr conversion information necessary for all
+     * This function is used to create the vImage_ARGBToYpCbCr conversion information necessary for all
      * of RGB -> YUV conversion functions.
      * 
      * For example, if we want to prepare for the conversion from ARGB8888 'yuvs' with ITU 601 video range, then we
@@ -27292,6 +27166,27 @@ public final class Accelerate {
      * YUV16    Y        N          Y
      * @/textblock </pre>
      * 
+     * @param matrix
+     * A pointer to vImage_ARGBToYpCbCrMatrix that contains the matrix coefficients for the conversion
+     * from a ARGB to a YpCbCr pixel format.
+     * 
+     * @param pixelRange
+     * A pointer to vImage_YpCbCrPixelRange that contains the pixel range information for the conversion
+     * from a ARGB to a YpCbCr pixel format.
+     * 
+     * @param outInfo
+     * A pointer to vImage_ARGBToYpCbCr will be initialized with the information for the conversion function
+     * will use later.
+     * 
+     * @param inARGBType
+     * A ARGBType to specify the output ARGB format.
+     * 
+     * @param outYpCbCrType
+     * A YpCbCrType to specify the input YpCbCr format.
+     * 
+     * @param flags
+     * kvImagePrintDiagnosticsToConsole   Directs the function to print diagnostic information to the console in the event of failure.
+     * 
      * @return
      * <pre> @textblock
      * kvImageNoError                  Is returned when there was no error.
@@ -27309,9 +27204,9 @@ public final class Accelerate {
             int inARGBType, int outYpCbCrType, int flags);
 
     /**
-     * @function vImageCopyBuffer
+     * [@function] vImageCopyBuffer
      * 
-     * @abstract Copy vImage buffer from src to dest.
+     * Copy vImage buffer from src to dest.
      * 
      * @param src
      * A pointer to source vImage_Buffer.
@@ -27329,7 +27224,7 @@ public final class Accelerate {
      * @return \p kvImageNoError                      Is returned when there was no error.
      * @return \p kvImageRoiLargerThanInputBuffer     Is returned when src.width < dest.width || src.height < dest.height
      * 
-     * @seealso vImage_Buffer
+     * @see vImage_Buffer
      */
     @Generated
     @CFunction
@@ -28003,11 +27898,11 @@ public final class Accelerate {
     public static native long vImageGetResamplingFilterExtent(VoidPtr filter, int flags);
 
     /**
-     * @function vImageHistogramCalculation_Planar8
+     * [@function] vImageHistogramCalculation_Planar8
      * 
-     * @abstract Calculates a histogram for a Planar8 image.
+     * Calculates a histogram for a Planar8 image.
      * 
-     * @discussion This function performs the following operation:
+     * This function performs the following operation:
      * <pre>@textblock
      *      For each pixel, do the following:
      *          histogram[src[x]]++;
@@ -28043,10 +27938,11 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageHistogramCalculation_PlanarF
+     * [@function] vImageHistogramCalculation_PlanarF
      * 
-     * @abstract Calculates a histogram for a PlanarF image.
-     * @discussion This function performs the following operation:
+     * Calculates a histogram for a PlanarF image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      For each pixel, do the following:
      *          val = histogram_entries * (src[x] - minVal) / (maxVal - minVal);
@@ -28096,10 +27992,11 @@ public final class Accelerate {
             int histogram_entries, float minVal, float maxVal, int flags);
 
     /**
-     * @function vImageEqualization_Planar8
+     * [@function] vImageEqualization_Planar8
      * 
-     * @abstract Equalizes the histogram of a Planar8 source image.
-     * @discussion This function performs the following operation:
+     * Equalizes the histogram of a Planar8 source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      Compute the histogram of the input image;
      *      Calculate normalized sum of histogram;
@@ -28138,10 +28035,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageEqualization_PlanarF
+     * [@function] vImageEqualization_PlanarF
      * 
-     * @abstract Equalizes the histogram of a PlanarF source image.
-     * @discussion This function performs the following operation:
+     * Equalizes the histogram of a PlanarF source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      Compute the histogram of the input image:
      *          For each pixel, do the following:
@@ -28217,10 +28115,11 @@ public final class Accelerate {
             int histogram_entries, float minVal, float maxVal, int flags);
 
     /**
-     * @function vImageEqualization_ARGB8888
+     * [@function] vImageEqualization_ARGB8888
      * 
-     * @abstract Equalizes the histogram of an ARGB8888 source image.
-     * @discussion This function performs the following operation:
+     * Equalizes the histogram of an ARGB8888 source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      Calculates histograms for each channel of the ARGB8888 source image;
      *      Calculate normalized sum of each histogram;
@@ -28267,10 +28166,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageEqualization_ARGBFFFF
+     * [@function] vImageEqualization_ARGBFFFF
      * 
-     * @abstract Equalizes the histogram of an ARGBFFFF source image.
-     * @discussion This function performs the following operation:
+     * Equalizes the histogram of an ARGBFFFF source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      Compute the histogram of the input image:
      *          For each pixel, do the following:
@@ -28357,10 +28257,11 @@ public final class Accelerate {
             int histogram_entries, float minVal, float maxVal, int flags);
 
     /**
-     * @function vImageHistogramSpecification_Planar8
+     * [@function] vImageHistogramSpecification_Planar8
      * 
-     * @abstract Performs a histogram specification operation on a Planar8 source image.
-     * @discussion This function performs the following operation:
+     * Performs a histogram specification operation on a Planar8 source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      Compute the histogram of the input image;
      *      Calculate normalized sum of the input histogram and the desired_histogram
@@ -28404,10 +28305,11 @@ public final class Accelerate {
             ConstNUIntPtr desired_histogram, int flags);
 
     /**
-     * @function vImageHistogramSpecification_PlanarF
+     * [@function] vImageHistogramSpecification_PlanarF
      * 
-     * @abstract Performs a histogram specification operation on a PlanarF source image.
-     * @discussion This function performs the following operation:
+     * Performs a histogram specification operation on a PlanarF source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      Compute the histogram of the input image:
      *          For each pixel, do the following:
@@ -28486,10 +28388,11 @@ public final class Accelerate {
             ConstNUIntPtr desired_histogram, int histogram_entries, float minVal, float maxVal, int flags);
 
     /**
-     * @function vImageContrastStretch_Planar8
+     * [@function] vImageContrastStretch_Planar8
      * 
-     * @abstract Stretches the contrast of a Planar8 source image.
-     * @discussion This function performs the following operation:
+     * Stretches the contrast of a Planar8 source image.
+     * 
+     * This function performs the following operation:
      *   <pre>@textblock
      *      Compute the histogram of the input image;
      *      Generate LookUp table based on the histogram
@@ -28531,10 +28434,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageContrastStretch_PlanarF
+     * [@function] vImageContrastStretch_PlanarF
      * 
-     * @abstract Stretches the contrast of a PlanarF source image.
-     * @discussion This function performs the following operation:
+     * Stretches the contrast of a PlanarF source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      Find minimum and maximum value of the input image: loVal, hiVal;
      *      scale_factor = ( maxVal - minVal ) / (float) ( hiVal - loVal );
@@ -28606,9 +28510,11 @@ public final class Accelerate {
             int histogram_entries, float minVal, float maxVal, int flags);
 
     /**
-     * @function vImageContrastStretch_ARGB8888
-     * @abstract Stretches the contrast of an ARGB8888 source image.
-     * @discussion This function performs the following operation:
+     * [@function] vImageContrastStretch_ARGB8888
+     * 
+     * Stretches the contrast of an ARGB8888 source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      For each channel:
      *          Compute the histogram of the input image;
@@ -28656,10 +28562,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dest, int flags);
 
     /**
-     * @function vImageContrastStretch_ARGBFFFF
+     * [@function] vImageContrastStretch_ARGBFFFF
      * 
-     * @abstract Stretches the contrast of  an ARGBFFFF source image.
-     * @discussion This function performs the following operation:
+     * Stretches the contrast of  an ARGBFFFF source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *        For each channel:
      *            Find minimum and maximum value of the input image: loVal, hiVal;
@@ -28733,10 +28640,11 @@ public final class Accelerate {
             int histogram_entries, float minVal, float maxVal, int flags);
 
     /**
-     * @function vImageEndsInContrastStretch_Planar8
+     * [@function] vImageEndsInContrastStretch_Planar8
      * 
-     * @abstract Performs an ends-in contrast stretch operation on a Planar8 source image.
-     * @discussion This function performs the following operation:
+     * Performs an ends-in contrast stretch operation on a Planar8 source image.
+     * 
+     * This function performs the following operation:
      * <pre>@textblock
      *      Compute the histogram of the input image;
      *      Generate LookUp table based on the histogram and percentage parameters
@@ -28785,10 +28693,10 @@ public final class Accelerate {
             int percent_high, int flags);
 
     /**
-     * @function vImageEndsInContrastStretch_PlanarF
+     * [@function] vImageEndsInContrastStretch_PlanarF
      * 
-     * @abstract Performs an ends-in contrast stretch operation on a PlanarF source image.
-     * @discussion
+     * Performs an ends-in contrast stretch operation on a PlanarF source image.
+     * 
      * <pre>@textblock
      *      Compute the histogram of the input image;
      *      Generate LookUp table based on the histogram and percentage parameters
@@ -28867,9 +28775,11 @@ public final class Accelerate {
             int percent_low, int percent_high, int histogram_entries, float minVal, float maxVal, int flags);
 
     /**
-     * @function vImageDilate_Planar8
-     * @abstract Apply a dilate filter to a Planar8 image
-     * @discussion  This is a general purpose dilate filter for Planar8 data. It is optimized to handle the special cases that occur
+     * [@function] vImageDilate_Planar8
+     * 
+     * Apply a dilate filter to a Planar8 image
+     * 
+     * This is a general purpose dilate filter for Planar8 data. It is optimized to handle the special cases that occur
      *              in image masks -- large contiguous regions of all 0xff or 0x0. If your filter is all 0's, you should use vImageMax_Planar8
      *              instead.
      * 
@@ -28937,9 +28847,11 @@ public final class Accelerate {
             @NUInt long kernel_height, @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageDilate_PlanarF
-     * @abstract Apply a dilate filter to a PlanarF image
-     * @discussion  This is a general purpose dilate filter for Planar8 data. If your filter is all 0's, you should use vImageMax_PlanarF
+     * [@function] vImageDilate_PlanarF
+     * 
+     * Apply a dilate filter to a PlanarF image
+     * 
+     * This is a general purpose dilate filter for Planar8 data. If your filter is all 0's, you should use vImageMax_PlanarF
      *              instead.
      * 
      *              <pre> @textblock
@@ -29005,9 +28917,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageDilate_ARGB8888
-     * @abstract Apply a dilate filter to a ARGB8888 image
-     * @discussion  This is a general purpose dilate filter for ARGB8888 data. If your filter is all 0's, you should use vImageMax_ARGB8888
+     * [@function] vImageDilate_ARGB8888
+     * 
+     * Apply a dilate filter to a ARGB8888 image
+     * 
+     * This is a general purpose dilate filter for ARGB8888 data. If your filter is all 0's, you should use vImageMax_ARGB8888
      *              instead.
      * 
      *              <pre> @textblock
@@ -29090,9 +29004,11 @@ public final class Accelerate {
             @NUInt long kernel_height, @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageDilate_ARGBFFFF
-     * @abstract Apply a dilate filter to a ARGBFFFF image
-     * @discussion  This is a general purpose dilate filter for ARGBFFFF data. If your filter is all 0's, you should use vImageMax_ARGBFFFF
+     * [@function] vImageDilate_ARGBFFFF
+     * 
+     * Apply a dilate filter to a ARGBFFFF image
+     * 
+     * This is a general purpose dilate filter for ARGBFFFF data. If your filter is all 0's, you should use vImageMax_ARGBFFFF
      *              instead.
      * 
      *              <pre> @textblock
@@ -29175,9 +29091,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageErode_Planar8
-     * @abstract Apply a erode filter to a Planar8 image
-     * @discussion  This is a general purpose erode filter for Planar8 data. If your filter is all 0's, you should use vImageMin_Planar8
+     * [@function] vImageErode_Planar8
+     * 
+     * Apply a erode filter to a Planar8 image
+     * 
+     * This is a general purpose erode filter for Planar8 data. If your filter is all 0's, you should use vImageMin_Planar8
      *              instead.
      * 
      *              <pre> @textblock
@@ -29244,9 +29162,11 @@ public final class Accelerate {
             @NUInt long kernel_height, @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageErode_PlanarF
-     * @abstract Apply a erode filter to a PlanarF image
-     * @discussion  This is a general purpose erode filter for Planar8 data. If your filter is all 0's, you should use vImageMin_PlanarF
+     * [@function] vImageErode_PlanarF
+     * 
+     * Apply a erode filter to a PlanarF image
+     * 
+     * This is a general purpose erode filter for Planar8 data. If your filter is all 0's, you should use vImageMin_PlanarF
      *              instead.
      * 
      *              <pre> @textblock
@@ -29312,9 +29232,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageErode_ARGB8888
-     * @abstract Apply a erode filter to a ARGB8888 image
-     * @discussion  This is a general purpose erode filter for ARGB8888 data. If your filter is all 0's, you should use vImageMin_ARGB8888
+     * [@function] vImageErode_ARGB8888
+     * 
+     * Apply a erode filter to a ARGB8888 image
+     * 
+     * This is a general purpose erode filter for ARGB8888 data. If your filter is all 0's, you should use vImageMin_ARGB8888
      *              instead.
      * 
      *              <pre> @textblock
@@ -29397,9 +29319,11 @@ public final class Accelerate {
             @NUInt long kernel_height, @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageErode_ARGBFFFF
-     * @abstract Apply a erode filter to a ARGBFFFF image
-     * @discussion  This is a general purpose erode filter for ARGBFFFF data. If your filter is all 0's, you should use vImageMin_ARGBFFFF
+     * [@function] vImageErode_ARGBFFFF
+     * 
+     * Apply a erode filter to a ARGBFFFF image
+     * 
+     * This is a general purpose erode filter for ARGBFFFF data. If your filter is all 0's, you should use vImageMin_ARGBFFFF
      *              instead.
      * 
      *              <pre> @textblock
@@ -29482,9 +29406,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function   vImageMax_Planar8
-     * @abstract   Apply a max filter to a Planar8 image.
-     * @discussion A max filter is a special case dilate filter, in which the filter elements are all 0. It is much faster than the normal dilate.
+     * [@function]   vImageMax_Planar8
+     * 
+     * Apply a max filter to a Planar8 image.
+     * 
+     * A max filter is a special case dilate filter, in which the filter elements are all 0. It is much faster than the normal dilate.
      *              <pre> @textblock
      *                 for each pixel result[i][j] in the image{
      *                     int r = 0;
@@ -29551,9 +29477,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function   vImageMax_PlanarF
-     * @abstract   Apply a max filter to a PlanarF image.
-     * @discussion A max filter is a special case dilate filter, in which the filter elements are all 0. It is much faster than the normal dilate.
+     * [@function]   vImageMax_PlanarF
+     * 
+     * Apply a max filter to a PlanarF image.
+     * 
+     * A max filter is a special case dilate filter, in which the filter elements are all 0. It is much faster than the normal dilate.
      *              <pre> @textblock
      *                 for each pixel result[i][j] in the image{
      *                     float r = -INFINITY;
@@ -29620,9 +29548,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageMax_ARGB8888
-     * @abstract Apply a max filter to a ARGB8888 image
-     * @discussion  This is a special purpose dilate filter for ARGB8888 data, for rectangular kernels with value 0. It is much faster than the normal dilate.
+     * [@function] vImageMax_ARGB8888
+     * 
+     * Apply a max filter to a ARGB8888 image
+     * 
+     * This is a special purpose dilate filter for ARGB8888 data, for rectangular kernels with value 0. It is much faster than the normal dilate.
      * 
      *              <pre> @textblock
      *                 for each pixel result[i][j] in the image{
@@ -29706,9 +29636,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageMax_ARGBFFFF
-     * @abstract Apply a max filter to a ARGBFFFF image
-     * @discussion  This is a special purpose dilate filter for ARGBFFFF data, for rectangular kernels with value 0. It is much faster than the normal dilate.
+     * [@function] vImageMax_ARGBFFFF
+     * 
+     * Apply a max filter to a ARGBFFFF image
+     * 
+     * This is a special purpose dilate filter for ARGBFFFF data, for rectangular kernels with value 0. It is much faster than the normal dilate.
      * 
      *              <pre> @textblock
      *                 for each pixel result[i][j] in the image{
@@ -29792,9 +29724,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function   vImageMin_Planar8
-     * @abstract   Apply a min filter to a Planar8 image.
-     * @discussion A min filter is a special case erode filter, in which the filter elements are all 0.  It is much faster than the normal erode.
+     * [@function]   vImageMin_Planar8
+     * 
+     * Apply a min filter to a Planar8 image.
+     * 
+     * A min filter is a special case erode filter, in which the filter elements are all 0.  It is much faster than the normal erode.
      *              <pre> @textblock
      *                 for each pixel result[i][j] in the image{
      *                     int r = MAX_CHANNEL_VALUE;
@@ -29861,9 +29795,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function   vImageMin_PlanarF
-     * @abstract   Apply a min filter to a PlanarF image.
-     * @discussion A min filter is a special case erode filter, in which the filter elements are all 0. It is much faster than the normal erode.
+     * [@function]   vImageMin_PlanarF
+     * 
+     * Apply a min filter to a PlanarF image.
+     * 
+     * A min filter is a special case erode filter, in which the filter elements are all 0. It is much faster than the normal erode.
      *              <pre> @textblock
      *                 for each pixel result[i][j] in the image{
      *                     float r = INFINITY;
@@ -29930,9 +29866,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageMin_ARGB8888
-     * @abstract Apply a min filter to a ARGB8888 image
-     * @discussion  This is a special purpose erode filter for ARGB8888 data, for rectangular kernels with value 0. It is much faster than the normal erode.
+     * [@function] vImageMin_ARGB8888
+     * 
+     * Apply a min filter to a ARGB8888 image
+     * 
+     * This is a special purpose erode filter for ARGB8888 data, for rectangular kernels with value 0. It is much faster than the normal erode.
      * 
      *              <pre> @textblock
      *                 for each pixel result[i][j] in the image{
@@ -30016,9 +29954,11 @@ public final class Accelerate {
             @NUInt long kernel_width, int flags);
 
     /**
-     * @function vImageMin_ARGBFFFF
-     * @abstract Apply a min filter to a ARGBFFFF image
-     * @discussion  This is a special purpose erode filter for ARGBFFFF data, for rectangular kernels with value 0. It is much faster than the normal erode.
+     * [@function] vImageMin_ARGBFFFF
+     * 
+     * Apply a min filter to a ARGBFFFF image
+     * 
+     * This is a special purpose erode filter for ARGBFFFF data, for rectangular kernels with value 0. It is much faster than the normal erode.
      * 
      *              <pre> @textblock
      *                 for each pixel result[i][j] in the image{
@@ -30852,9 +30792,11 @@ public final class Accelerate {
             vImage_MultidimensionalTable table, int method, int flags);
 
     /**
-     * @function vImageBuffer_Init
-     * @abstract Convenience function to allocate a vImage_Buffer of desired size
-     * @discussion This function is a convenience method to help initialize a vImage_Buffer struct with a buffer sized
+     * [@function] vImageBuffer_Init
+     * 
+     * Convenience function to allocate a vImage_Buffer of desired size
+     * 
+     * This function is a convenience method to help initialize a vImage_Buffer struct with a buffer sized
      * and aligned for best performance. It will initialize the height, width and rowBytes fields, and allocate
      * the pixel storage for you. You are responsible for releasing the memory pointed to by buf->data back to
      * the system when you are done with it using free(). If no such allocation is desired, pass
@@ -30932,9 +30874,11 @@ public final class Accelerate {
             @NUInt long width, int pixelBits, int flags);
 
     /**
-     * @function vImageBuffer_GetSize
-     * @abstract Returns size of a vImage_Buffer as a CGSize.
-     * @discussion The CGSize / NSSize is rounded down to the nearest representable
+     * [@function] vImageBuffer_GetSize
+     * 
+     * Returns size of a vImage_Buffer as a CGSize.
+     * 
+     * The CGSize / NSSize is rounded down to the nearest representable
      * CGFloat that is less than or equal to the actual size of the image. In practice
      * the conversion will always be exact, except for really, really big images. In
      * that case, some part of the bottom or right edge might be truncated.
@@ -30959,10 +30903,13 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer buf);
 
     /**
-     * @function vImageCGImageFormat_GetComponentCount
-     * @abstract Calculate the number of channels (color + alpha) for a given image format
-     * @discussion  The number of channels may not be safely calculated as bitsPerPixel / bitsPerComponent.
+     * [@function] vImageCGImageFormat_GetComponentCount
+     * 
+     * Calculate the number of channels (color + alpha) for a given image format
+     * 
+     * The number of channels may not be safely calculated as bitsPerPixel / bitsPerComponent.
      *              Use this routine instead.
+     * 
      * @param    format     A pointer to a valid vImage_CGImageFormat.  If format->colorspace is NULL,
      *                      the format is assumed to belong to the sRGB colorspace.
      * 
@@ -30974,9 +30921,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_CGImageFormat format);
 
     /**
-     * @function vImageCGImageFormat_IsEqual
-     * @abstract Test to see if two vImage_CGImageFormats are equivalent
-     * @discussion Returns nonzero if two vImage_CGImageFormats are the same
+     * [@function] vImageCGImageFormat_IsEqual
+     * 
+     * Test to see if two vImage_CGImageFormats are equivalent
+     * 
+     * Returns nonzero if two vImage_CGImageFormats are the same
      *              If either operand is NULL, the result is false.
      *              If vImage_CGImageFormat.colorSpace is NULL, sRGB is used.
      * 
@@ -30992,9 +30941,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_CGImageFormat f2);
 
     /**
-     * @function vImageBuffer_InitWithCGImage
-     * @abstract Initialize a vImage_Buffer struct with the contents of a CGImageRef
-     * @discussion This function will initialize a vImage_Buffer struct with an image from a CGImageRef.
+     * [@function] vImageBuffer_InitWithCGImage
+     * 
+     * Initialize a vImage_Buffer struct with the contents of a CGImageRef
+     * 
+     * This function will initialize a vImage_Buffer struct with an image from a CGImageRef.
      * By default, a new region of memory to hold the image data will be allocated by this function.  You may
      * optionally allocate the memory region yourself by passing in the kvImageNoAllocate flag.
      * 
@@ -31099,9 +31050,11 @@ public final class Accelerate {
             ConstNFloatPtr backgroundColor, CGImageRef image, int flags);
 
     /**
-     * @function vImageCreateCGImageFromBuffer
-     * @abstract Create a CGImageRef from a vImage_Buffer.
-     * @discussion This function creates a CGImageRef using the image data in a vImage_Buffer. The CGImageRef has a retain count of 1.
+     * [@function] vImageCreateCGImageFromBuffer
+     * 
+     * Create a CGImageRef from a vImage_Buffer.
+     * 
+     * This function creates a CGImageRef using the image data in a vImage_Buffer. The CGImageRef has a retain count of 1.
      * By default, a copy of the image data is made. This allows the function to convert to a CG-friendly format as necessary
      * and allows you to continue to use the vImage_Buffer without causing problems for the CGImageRef.
      * 
@@ -31206,9 +31159,11 @@ public final class Accelerate {
             VoidPtr userData, int flags, NIntPtr error);
 
     /**
-     * @function vImageConverter_Retain
-     * @abstract Retain a vImageConverterRef
-     * @discussion You should retain a vImageConverterRef when you receive it from elsewhere (that is, you did not
+     * [@function] vImageConverter_Retain
+     * 
+     * Retain a vImageConverterRef
+     * 
+     * You should retain a vImageConverterRef when you receive it from elsewhere (that is, you did not
      *             create or copy it) and you want it to persist. If you retain a vImageConverterRef you are responsible
      *             for releasing it (see Memory Management Programming Guide for Core Foundation).
      * 
@@ -31221,9 +31176,11 @@ public final class Accelerate {
     public static native void vImageConverter_Retain(vImageConverterRef converter);
 
     /**
-     * @function vImageConverter_Release
-     * @abstract Release a vImageConverterRef
-     * @discussion If the retain count of a vImageConverterRef becomes zero, the memory allocated to the
+     * [@function] vImageConverter_Release
+     * 
+     * Release a vImageConverterRef
+     * 
+     * If the retain count of a vImageConverterRef becomes zero, the memory allocated to the
      *             object is deallocated and the object is destroyed. If you create or explicitly
      *             retain (see the vImageConverter_Retain function) a vImageConverterRef, you are responsible for
      *             releasing it when you no longer need it (see Memory Management Programming Guide for Core Foundation).
@@ -31237,9 +31194,11 @@ public final class Accelerate {
     public static native void vImageConverter_Release(vImageConverterRef converter);
 
     /**
-     * @function vImageConverter_CreateWithCGImageFormat
-     * @abstract Create a vImageConverterRef to convert from one vImage_CGImageFormat to another
-     * @discussion vImageConverter_CreateWithCGImageFormat creates a vImageConverter to convert between
+     * [@function] vImageConverter_CreateWithCGImageFormat
+     * 
+     * Create a vImageConverterRef to convert from one vImage_CGImageFormat to another
+     * 
+     * vImageConverter_CreateWithCGImageFormat creates a vImageConverter to convert between
      *             image formats describable with a vImage_CGImageFormat.  The vImageConverter is intended
      *             to be used (and reused, possibly reentrantly) with vImageConvert_AnyToAny() to convert
      *             images from one format to another.
@@ -31363,9 +31322,11 @@ public final class Accelerate {
             ConstNFloatPtr backgroundColor, int flags, NIntPtr error);
 
     /**
-     * @function vImageConverter_CreateWithColorSyncCodeFragment
-     * @abstract Create a vImageConverterRef substituting in a custom ColorSync transform for the one vImage usually generates for the color conversion steps.
-     * @discussion vImageConverter_CreateWithColorSyncCodeFragment is like vImageConverter_CreateWithCGImageFormat, except that
+     * [@function] vImageConverter_CreateWithColorSyncCodeFragment
+     * 
+     * Create a vImageConverterRef substituting in a custom ColorSync transform for the one vImage usually generates for the color conversion steps.
+     * 
+     * vImageConverter_CreateWithColorSyncCodeFragment is like vImageConverter_CreateWithCGImageFormat, except that
      *  instead of creating its own colorspace transform for any colorspace conversions, it uses the one you pass in.
      *  This gives you greater control over the fine details of colorspace conversion, for exacting color fidelity.
      *  The colorspaces for source and destination images must refer to colorspaces that have the same number of channels
@@ -31478,9 +31439,11 @@ public final class Accelerate {
             ConstNFloatPtr backgroundColor, int flags, NIntPtr error);
 
     /**
-     * @function  vImageConverter_MustOperateOutOfPlace
-     * @abstract  Determine whether a converter is capable of operating in place.
-     * @discussion  Some conversions will work if the src and destination image buffer
+     * [@function]  vImageConverter_MustOperateOutOfPlace
+     * 
+     * Determine whether a converter is capable of operating in place.
+     * 
+     * Some conversions will work if the src and destination image buffer
      *              scanlines start at the same address. Others will not. In such cases,
      *              you need to allocate additional storage to hold the destination buffer.
      *              This function returns kvImageOutOfPlaceOperationRequired if the conversion
@@ -31544,9 +31507,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer dests, int flags);
 
     /**
-     * @function vImageConverter_GetNumberOfSourceBuffers
-     * @abstract Get the number of source buffers consumed by the converter.
-     * @discussion  All formats discribed by a vImage_CGImageFormat just consume one vImage_Buffer
+     * [@function] vImageConverter_GetNumberOfSourceBuffers
+     * 
+     * Get the number of source buffers consumed by the converter.
+     * 
+     * All formats discribed by a vImage_CGImageFormat just consume one vImage_Buffer
      *              and produce one vImage_Buffer. There are no multi-plane vImage_CGImageFormats.
      *              However, some video formats (see vImage/vImage_CVUtilities) have planar
      *              data formats with data in more than one plane. For such conversions, it may be
@@ -31565,9 +31530,11 @@ public final class Accelerate {
     public static native long vImageConverter_GetNumberOfSourceBuffers(vImageConverterRef converter);
 
     /**
-     * @function vImageConverter_GetNumberOfDestinationBuffers
-     * @abstract Get the number of destination buffers written to by the converter.
-     * @discussion  All formats discribed by a vImage_CGImageFormat just consume one vImage_Buffer
+     * [@function] vImageConverter_GetNumberOfDestinationBuffers
+     * 
+     * Get the number of destination buffers written to by the converter.
+     * 
+     * All formats discribed by a vImage_CGImageFormat just consume one vImage_Buffer
      *              and produce one vImage_Buffer. There are no multi-plane vImage_CGImageFormats.
      *              However, some video formats (see vImage/vImage_CVUtilities) have planar
      *              data formats with data in more than one plane. For such conversions, it may be
@@ -31586,11 +31553,11 @@ public final class Accelerate {
     public static native long vImageConverter_GetNumberOfDestinationBuffers(vImageConverterRef converter);
 
     /**
-     * @function vImageConverter_GetSourceBufferOrder
+     * [@function] vImageConverter_GetSourceBufferOrder
      * 
-     * @abstract Get a list of vImage_Buffer channel names specifying the order of planes
+     * Get a list of vImage_Buffer channel names specifying the order of planes
      * 
-     * @discussion These functions describe the identity of each buffer passed in the srcs parameters of vImageConvert_AnyToAny,
+     * These functions describe the identity of each buffer passed in the srcs parameters of vImageConvert_AnyToAny,
      * to allow you to order the buffers correctly. It is provided for informational purposes, to help wire up image
      * processing pipelines to vImage that are not supported through more direct means, CGImages, CVPixelBuffers, the alternative
      * handling of which is described at the end of this comment.
@@ -31637,11 +31604,11 @@ public final class Accelerate {
     public static native ConstIntPtr vImageConverter_GetSourceBufferOrder(vImageConverterRef converter);
 
     /**
-     * @function vImageConverter_GetDestinationBufferOrder
+     * [@function] vImageConverter_GetDestinationBufferOrder
      * 
-     * @abstract Get a list of vImage_Buffer channel names specifying the order of planes
+     * Get a list of vImage_Buffer channel names specifying the order of planes
      * 
-     * @discussion These functions describe the identity of each buffer passed in the dests parameters of vImageConvert_AnyToAny,
+     * These functions describe the identity of each buffer passed in the dests parameters of vImageConvert_AnyToAny,
      * to allow you to order the buffers correctly. It is provided for informational purposes, to help wire up image
      * processing pipelines to vImage that are not supported through more direct means, CGImages, CVPixelBuffers, the alternative
      * handling of which is described at the end of this comment.
@@ -31688,11 +31655,11 @@ public final class Accelerate {
     public static native ConstIntPtr vImageConverter_GetDestinationBufferOrder(vImageConverterRef converter);
 
     /**
-     * @function vImageConvert_AnyToAny
+     * [@function] vImageConvert_AnyToAny
      * 
-     * @abstract Use a vImageConverterRef to convert the pixels in a vImage_Buffer to another format
+     * Use a vImageConverterRef to convert the pixels in a vImage_Buffer to another format
      * 
-     * @discussion With an appropriately configured vImageConverter, convert the image channels found in srcs
+     * With an appropriately configured vImageConverter, convert the image channels found in srcs
      * to the image channels found in dests. Whenever possible, conversion passes are vectorized and multithreaded
      * to reduce the time and energy cost of the function.
      * 
@@ -31790,10 +31757,11 @@ public final class Accelerate {
             int flags);
 
     /**
-     * @function vImageBuffer_InitWithCVPixelBuffer
+     * [@function] vImageBuffer_InitWithCVPixelBuffer
      * 
-     * @abstract Initializes a vImage_Buffer to contain a representation of the CVPixelBufferRef provided.
-     * @discussion It does the following:
+     * Initializes a vImage_Buffer to contain a representation of the CVPixelBufferRef provided.
+     * 
+     * It does the following:
      * 
      *  <pre>
      *  @textblock
@@ -31898,9 +31866,11 @@ public final class Accelerate {
             CVBufferRef cvPixelBuffer, vImageCVImageFormatRef cvImageFormat, ConstNFloatPtr backgroundColor, int flags);
 
     /**
-     * @function vImageBuffer_CopyToCVPixelBuffer
-     * @abstract Copies the contents of the vImage_Buffer to a CVPixelBufferRef.
-     * @discussion If the format of the vImage_Buffer doesn't match the CVPixelBuffer format, the image will be converted to the CVPixelBuffer
+     * [@function] vImageBuffer_CopyToCVPixelBuffer
+     * 
+     * Copies the contents of the vImage_Buffer to a CVPixelBufferRef.
+     * 
+     * If the format of the vImage_Buffer doesn't match the CVPixelBuffer format, the image will be converted to the CVPixelBuffer
      *              format as part of the copy.
      * 
      *  The entire CVPixelBuffer is overwritten. If you want to copy less, you can do so using vImageConvert_AnyToAny and a converter prepared
@@ -31910,7 +31880,6 @@ public final class Accelerate {
      *  kCVImageBufferTransferFunction_SMPTE_240M_1995 instead of using the ITU-R BT.709-5 specified transfer function.  You may
      *  manually set the transfer function using vImageCreateRGBColorSpaceWithPrimariesAndTransferFunction() and vImageCVImageFormat_SetColorSpace().
      *  ImageCreateRGBColorSpaceWithPrimariesAndTransferFunction() does not make this substitution.
-     * 
      * 
      *      @param buffer          A pointer to a vImage_Buffer containing the pixels to be copied (converted) to the CVPixelBuffer. May not be NULL.
      * 
@@ -31998,10 +31967,11 @@ public final class Accelerate {
             CVBufferRef cvPixelBuffer, vImageCVImageFormatRef cvImageFormat, ConstNFloatPtr backgroundColor, int flags);
 
     /**
-     * @function vImageCVImageFormat_CreateWithCVPixelBuffer
-     * @abstract Used to create a vImageCVImageFormatRef to describe the pixel format of an existing CVPixelBufferRef.
+     * [@function] vImageCVImageFormat_CreateWithCVPixelBuffer
      * 
-     * @discussion If the CVPixelBufferRef has incomplete pixel format information, the vImageCVImageFormatRef will also be incomplete. Not all
+     * Used to create a vImageCVImageFormatRef to describe the pixel format of an existing CVPixelBufferRef.
+     * 
+     * If the CVPixelBufferRef has incomplete pixel format information, the vImageCVImageFormatRef will also be incomplete. Not all
      * missing fields ultimately will prove to be necessary, however.  If a function that consumes a vImageCVImageFormatRef returns a
      * vImageCVImageFormatError code, please add the missing information and try again. See "vImageCVImageFormatRef Accessors" below.
      * 
@@ -32016,14 +31986,15 @@ public final class Accelerate {
     public static native vImageCVImageFormatRef vImageCVImageFormat_CreateWithCVPixelBuffer(CVBufferRef buffer);
 
     /**
-     * @function vImageCVImageFormat_Create
-     * @abstract Create a vImageCVImageFormatRef (low level).
-     * @discussion This function creates a vImageCVImageFormatRef from first principles. In most cases, vImageCVImageFormat_CreateWithCVPixelBuffer
+     * [@function] vImageCVImageFormat_Create
+     * 
+     * Create a vImageCVImageFormatRef (low level).
+     * 
+     * This function creates a vImageCVImageFormatRef from first principles. In most cases, vImageCVImageFormat_CreateWithCVPixelBuffer
      *              is easier, but if your video pipeline doesn't use CoreVideo, or you need absolute control then this is your alternative.
      * 
      *              Other fields not given by function parameters like number of channels, channel names, and channel description are automatically
      *              configured using the imageFormatType. User data is set separately with vImageCVImageFormat_SetUserData.
-     * 
      * 
      * @param imageFormatType       A CVPixelFormatType such as '2vuy'. See CVPixelBuffer.h for the complete list.
      * 
@@ -32064,9 +32035,11 @@ public final class Accelerate {
             CFStringRef cvImageBufferChromaLocation, CGColorSpaceRef baseColorspace, int alphaIsOneHint);
 
     /**
-     * @function vImageCVImageFormat_Copy
-     * @abstract Makes a copy of a vImageCVImageFormatRef.
-     * @discussion The new vImageCVFormatRef is different from the old one in that:
+     * [@function] vImageCVImageFormat_Copy
+     * 
+     * Makes a copy of a vImageCVImageFormatRef.
+     * 
+     * The new vImageCVFormatRef is different from the old one in that:
      * 
      *     o       Its reference count is 1
      * 
@@ -32088,9 +32061,11 @@ public final class Accelerate {
     public static native vImageCVImageFormatRef vImageCVImageFormat_Copy(vImageConstCVImageFormatRef format);
 
     /**
-     * @function vImageCVImageFormat_Retain
-     * @abstract Retains a vImageCVImageFormatRef
-     * @discussion The vImageCVImageFormatRef follows standard retain/release semantics.
+     * [@function] vImageCVImageFormat_Retain
+     * 
+     * Retains a vImageCVImageFormatRef
+     * 
+     * The vImageCVImageFormatRef follows standard retain/release semantics.
      * 
      * vImageCVImageFormat_Retain causes the object's reference count to be incremented.
      * 
@@ -32109,9 +32084,11 @@ public final class Accelerate {
     public static native void vImageCVImageFormat_Retain(vImageCVImageFormatRef fmt);
 
     /**
-     * @function vImageCVImageFormat_Release
-     * @abstract Releases a vImageCVImageFormatRef
-     * @discussion The vImageCVImageFormatRef follows standard retain/release semantics.
+     * [@function] vImageCVImageFormat_Release
+     * 
+     * Releases a vImageCVImageFormatRef
+     * 
+     * The vImageCVImageFormatRef follows standard retain/release semantics.
      * 
      * vImageCVImageFormat_Retain causes the object's reference count to be incremented.
      * 
@@ -32130,26 +32107,32 @@ public final class Accelerate {
     public static native void vImageCVImageFormat_Release(vImageCVImageFormatRef fmt);
 
     /**
-     * @function vImageCVImageFormat_GetFormatCode
-     * @abstract Return the kCVPixelFormatType_ (4 character code) that encodes the pixel format.
-     * @discussion The kCVPixelFormatType_ of a CoreVideo pixel buffer is given by a four character code (4CC), such as '2vuy'. It describes the number of channels,
+     * [@function] vImageCVImageFormat_GetFormatCode
+     * 
+     * Return the kCVPixelFormatType_ (4 character code) that encodes the pixel format.
+     * 
+     * The kCVPixelFormatType_ of a CoreVideo pixel buffer is given by a four character code (4CC), such as '2vuy'. It describes the number of channels,
      *             channel packing order, bits per component (except in one case), and usually range information like whether it is full range or
      *             video range.
+     * 
      * @param format   The vImageCVImageFormatRef for which the 4 character code is desired.
      * @return  A 4CC in host-endian format.
-     * @seealso //apple_ref/doc/constant_group/Pixel_Format_Types CoreVideo/CVPixelBuffer.h
+     * @see //apple_ref/doc/constant_group/Pixel_Format_Types CoreVideo/CVPixelBuffer.h
      */
     @Generated
     @CFunction
     public static native int vImageCVImageFormat_GetFormatCode(vImageConstCVImageFormatRef format);
 
     /**
-     * @function vImageCVImageFormat_GetChannelCount
-     * @abstract Return the the number of color channels in the image, including alpha.
-     * @discussion The channels may be interleaved or planar. For RGBA, the result is 4. For 'yuvs' this is 3. This does not return
+     * [@function] vImageCVImageFormat_GetChannelCount
+     * 
+     * Return the the number of color channels in the image, including alpha.
+     * 
+     * The channels may be interleaved or planar. For RGBA, the result is 4. For 'yuvs' this is 3. This does not return
      *             the same results as vImageConverter_GetNumberOfSourceBuffers / vImageConverter_GetNumberOfSourceBuffers, which
      *             instead describe the number of vImage_Buffers to pass to vImageConvert_AnyToAny. Some vImage_Buffers contain
      *             multiple channels.
+     * 
      * @param format   The vImageCVImageFormatRef for which the number of channels is desired.
      * @return  A uint32_t containing the number of channels
      */
@@ -32158,24 +32141,30 @@ public final class Accelerate {
     public static native int vImageCVImageFormat_GetChannelCount(vImageConstCVImageFormatRef format);
 
     /**
-     * @function vImageCVImageFormat_GetChannelNames
-     * @abstract Get a const kvImageBufferTypeCode_EndOfList-terminated array indicating the names of the channels in the buffer.
-     * @discussion The array is owned by the vImageCvImageFormatRef and will cease to be valid when the object is destroyed.
+     * [@function] vImageCVImageFormat_GetChannelNames
+     * 
+     * Get a const kvImageBufferTypeCode_EndOfList-terminated array indicating the names of the channels in the buffer.
+     * 
+     * The array is owned by the vImageCvImageFormatRef and will cease to be valid when the object is destroyed.
      *             This function is not useful to discover the correct vImage_Buffer order for a call to vImageConvert_AnyToAny().
+     * 
      * @param format   The vImageCVImageFormatRef for which the channel names are desired.
      * @return  A const pointer to an array of vImageBufferTypeCodes indicating the names of the channels in the image.
-     * @seealso vImageConverter_GetSourceBufferOrder
-     * @seealso vImageConverter_GetDestinationBufferOrder
+     * @see vImageConverter_GetSourceBufferOrder
+     * @see vImageConverter_GetDestinationBufferOrder
      */
     @Generated
     @CFunction
     public static native ConstIntPtr vImageCVImageFormat_GetChannelNames(vImageConstCVImageFormatRef format);
 
     /**
-     * @function vImageCVImageFormat_GetColorSpace
-     * @abstract Get the colorspace associated with the image.
-     * @discussion If the image format is a Y'CbCr image format, this is the RGB colorspace of the image after the inverse
+     * [@function] vImageCVImageFormat_GetColorSpace
+     * 
+     * Get the colorspace associated with the image.
+     * 
+     * If the image format is a Y'CbCr image format, this is the RGB colorspace of the image after the inverse
      *             RGB->YpCbCr conversion matrix is applied. Otherwise, it is the colorspace of the pixels in the image.
+     * 
      * @param format   The vImageCVImageFormatRef for which the colorspace is desired.
      * @return  The colorspace (if any) that is returned is referenced by the vImageCVImageFormatRef and will be released
      *          when that object is destroyed. This function may return NULL, indicating an absence of colorspace information.
@@ -32185,11 +32174,14 @@ public final class Accelerate {
     public static native CGColorSpaceRef vImageCVImageFormat_GetColorSpace(vImageConstCVImageFormatRef format);
 
     /**
-     * @function vImageCVImageFormat_SetColorSpace
-     * @abstract Set the colorspace associated with the image.
-     * @discussion If the image format is a Y'CbCr image format, this sets the RGB colorspace of the image before the
+     * [@function] vImageCVImageFormat_SetColorSpace
+     * 
+     * Set the colorspace associated with the image.
+     * 
+     * If the image format is a Y'CbCr image format, this sets the RGB colorspace of the image before the
      *             RGB->YpCbCr conversion matrix was applied. Otherwise, it is the colorspace of the pixels in the image.
      *             A non-NULL colorspace must be present before a vImageCVImageFormatRef can be used to do a conversion.
+     * 
      * @param format       The vImageCVImageFormatRef for which the colorspace is to be set.
      * @param colorspace   The new colorspace.  May be NULL, indicating missing colorspace information.
      * @return  On Success, kvImageNoError. An error will be returned if the colorspace model doesn't match what is expected
@@ -32205,25 +32197,31 @@ public final class Accelerate {
             CGColorSpaceRef colorspace);
 
     /**
-     * @function vImageCVImageFormat_GetChromaSiting
-     * @abstract Get the chroma-siting for the image.
-     * @discussion When Y'CbCr images have subsampled chroma, the position of the chroma samples relative to the luminance samples needs to be
+     * [@function] vImageCVImageFormat_GetChromaSiting
+     * 
+     * Get the chroma-siting for the image.
+     * 
+     * When Y'CbCr images have subsampled chroma, the position of the chroma samples relative to the luminance samples needs to be
      *             specified. Chroma siting information is only needed for Y'CbCr images that are not 444.
+     * 
      * @param format       The vImageCVImageFormatRef for which the chroma siting information is desired.
      * @return  Returns a CFStringRef that describes the positioning of the chroma samples. Eligible string return values are listed
      *          in CoreVideo/CVImageBuffer.h.   The result is NULL if the chroma siting information is missing.
-     * @seealso //apple_ref/c/data/kCVImageBufferChromaLocationTopFieldKey kCVImageBufferChromaLocationTopFieldKey
+     * @see //apple_ref/c/data/kCVImageBufferChromaLocationTopFieldKey kCVImageBufferChromaLocationTopFieldKey
      */
     @Generated
     @CFunction
     public static native CFStringRef vImageCVImageFormat_GetChromaSiting(vImageConstCVImageFormatRef format);
 
     /**
-     * @function vImageCVImageFormat_SetChromaSiting
-     * @abstract Set the chroma-siting for the image.
-     * @discussion When Y'CbCr images have subsampled chroma, the position of the chroma samples relative to the luminance samples needs to be
+     * [@function] vImageCVImageFormat_SetChromaSiting
+     * 
+     * Set the chroma-siting for the image.
+     * 
+     * When Y'CbCr images have subsampled chroma, the position of the chroma samples relative to the luminance samples needs to be
      *             specified. Chroma siting information is only needed for Y'CbCr images that are not 444. The new siting name will be retained.
      *             The old siting will be released. This function has no effect for image format types that do not require siting information.
+     * 
      * @param format       The vImageCVImageFormatRef for which the chroma siting information is desired.
      * @param siting       The new siting information for the format. May be NULL.
      * @return
@@ -32236,7 +32234,7 @@ public final class Accelerate {
      *         kvImageInvalidParameter         siting is not a recognized CFStringRef from the set of values appearing in CoreVideo/CVImageBuffer.h.
      *     @/textblock
      *     </pre>
-     * @seealso //apple_ref/c/data/kCVImageBufferChromaLocationTopFieldKey kCVImageBufferChromaLocationTopFieldKey
+     * @see //apple_ref/c/data/kCVImageBufferChromaLocationTopFieldKey kCVImageBufferChromaLocationTopFieldKey
      */
     @Generated
     @CFunction
@@ -32244,9 +32242,11 @@ public final class Accelerate {
     public static native long vImageCVImageFormat_SetChromaSiting(vImageCVImageFormatRef format, CFStringRef siting);
 
     /**
-     * @function vImageCVImageFormat_GetConversionMatrix
-     * @abstract Get the RGB -> Y'CbCr conversion matrix for the image.
-     * @discussion  Y'CbCr images are defined in terms of a RGB image and a conversion matrix from that RGB format to Y'CbCr.
+     * [@function] vImageCVImageFormat_GetConversionMatrix
+     * 
+     * Get the RGB -> Y'CbCr conversion matrix for the image.
+     * 
+     * Y'CbCr images are defined in terms of a RGB image and a conversion matrix from that RGB format to Y'CbCr.
      *              The conversion frequently has the form:
      * 
      *         <pre>
@@ -32279,8 +32279,8 @@ public final class Accelerate {
      * 
      *         The matrix is owned by the vImageCvImageFormatRef and will cease to be valid when the vImageCvImageFormatRef is destroyed.
      * 
-     * @seealso vImage_ARGBToYpCbCrMatrix
-     * @seealso vImageMatrixType
+     * @see vImage_ARGBToYpCbCrMatrix
+     * @see vImageMatrixType
      */
     @Generated
     @CFunction
@@ -32288,9 +32288,11 @@ public final class Accelerate {
             IntPtr outType);
 
     /**
-     * @function vImageCVImageFormat_CopyConversionMatrix
-     * @abstract Set the RGB -> Y'CbCr conversion matrix for the image.
-     * @discussion  matrix is copied to the vImageCVImageFormatRef's internal matrix storage.
+     * [@function] vImageCVImageFormat_CopyConversionMatrix
+     * 
+     * Set the RGB -> Y'CbCr conversion matrix for the image.
+     * 
+     * matrix is copied to the vImageCVImageFormatRef's internal matrix storage.
      * 
      * Y'CbCr images are defined in terms of a RGB image and a conversion matrix from that RGB format to Y'CbCr.
      *              The conversion frequently has the form:
@@ -32335,8 +32337,8 @@ public final class Accelerate {
      *         @/textblock
      *         </pre>
      * 
-     * @seealso vImage_ARGBToYpCbCrMatrix
-     * @seealso vImageMatrixType
+     * @see vImage_ARGBToYpCbCrMatrix
+     * @see vImageMatrixType
      */
     @Generated
     @CFunction
@@ -32345,9 +32347,11 @@ public final class Accelerate {
             ConstVoidPtr matrix, int inType);
 
     /**
-     * @function vImageCVImageFormat_GetAlphaHint
-     * @abstract Get the alpha-is-one hint from a vImageCVImageFormatRef
-     * @discussion  Some image formats have an alpha channel. Sometimes, the alpha channel for the entire image is known to be 1.0 (fully opaque).
+     * [@function] vImageCVImageFormat_GetAlphaHint
+     * 
+     * Get the alpha-is-one hint from a vImageCVImageFormatRef
+     * 
+     * Some image formats have an alpha channel. Sometimes, the alpha channel for the entire image is known to be 1.0 (fully opaque).
      *              In some circumstances, that knowledge can be used to eliminate work from a conversion to make it faster, especially when converting
      *              to a format without an alpha channel.  If the alpha-is-one hint is non-zero, it indicates that the alpha channel is fully opaque.
      * 
@@ -32372,9 +32376,11 @@ public final class Accelerate {
     public static native int vImageCVImageFormat_GetAlphaHint(vImageConstCVImageFormatRef format);
 
     /**
-     * @function vImageCVImageFormat_SetAlphaHint
-     * @abstract Set the alpha-is-one hint for a vImageCVImageFormatRef
-     * @discussion  Some image formats have an alpha channel. Sometimes, the alpha channel for the entire image is known to be 1.0 (fully opaque).
+     * [@function] vImageCVImageFormat_SetAlphaHint
+     * 
+     * Set the alpha-is-one hint for a vImageCVImageFormatRef
+     * 
+     * Some image formats have an alpha channel. Sometimes, the alpha channel for the entire image is known to be 1.0 (fully opaque).
      *              In some circumstances, that knowledge can be used to eliminate work from a conversion to make it faster, especially when converting
      *              to a format without an alpha channel.  If the alpha-is-one hint is non-zero, it indicates that the alpha channel is fully opaque.
      * 
@@ -32389,8 +32395,9 @@ public final class Accelerate {
      *              If so, you can set the vImage_CGImageFormat.bitmap info to an appropriate CGImageAlphaInfo for the desired treatment for the alpha
      *              channel and convert using vImageConverter_CreateWithCGImageFormat() + vImageConvert_AnyToAny().
      * 
+     * [@parma] alphaIsOne   The new value for the alpha-is-one hint.
+     * 
      * @param format       The vImageCVImageFormatRef for which the colorspace is to be set.
-     * @parma alphaIsOne   The new value for the alpha-is-one hint.
      * @return  kvImageNoError             Success.
      * 
      *          kvImageInvalidParameter    format is NULL
@@ -32401,15 +32408,18 @@ public final class Accelerate {
     public static native long vImageCVImageFormat_SetAlphaHint(vImageCVImageFormatRef format, int alphaIsOne);
 
     /**
-     * @function vImageCVImageFormat_GetChannelDescription
-     * @abstract Get the channel description for a particular channel type
-     * @discussion  The channel description gives information about the range of values and clamping for a image color channel.
+     * [@function] vImageCVImageFormat_GetChannelDescription
+     * 
+     * Get the channel description for a particular channel type
+     * 
+     * The channel description gives information about the range of values and clamping for a image color channel.
+     * 
+     * [@parma] type         The type of the channel that you wish information about. Example: kvImageBufferTypeCode_Luminance
      * 
      * @param format       The vImageCVImageFormatRef that the channel description is for.
-     * @parma type         The type of the channel that you wish information about. Example: kvImageBufferTypeCode_Luminance
      * @return  A const pointer to a vImageChannelDescription struct. The data in the structure may not be modified and belongs to the vImageCVImageFormatRef.
      *          It is destroyed when the vImageCVImageFormatRef is destroyed.
-     * @seealso vImageChannelDescription
+     * @see vImageChannelDescription
      */
     @Generated
     @CFunction
@@ -32418,9 +32428,11 @@ public final class Accelerate {
             vImageConstCVImageFormatRef format, int type);
 
     /**
-     * @function vImageCVImageFormat_CopyChannelDescription
-     * @abstract Set the channel description for a particular channel type
-     * @discussion  The channel description gives information about the range of values and clamping for a image color channel.
+     * [@function] vImageCVImageFormat_CopyChannelDescription
+     * 
+     * Set the channel description for a particular channel type
+     * 
+     * The channel description gives information about the range of values and clamping for a image color channel.
      * 
      * @param format       The vImageCVImageFormatRef that the channel description is for.
      * @param desc         A pointer to a new vImageChannelDescription to use for the channel type.  The data is copied into the vImageCVImageFormatRef.
@@ -32428,7 +32440,7 @@ public final class Accelerate {
      * @return  kvImageNoError     Success
      * 
      *          kvImageInvalidParameter    An invalid vImageBufferTypeCode, either out of range, or the channel type does not appear in the image format
-     * @seealso vImageChannelDescription
+     * @see vImageChannelDescription
      */
     @Generated
     @CFunction
@@ -32438,9 +32450,11 @@ public final class Accelerate {
             int type);
 
     /**
-     * @function vImageCVImageFormat_GetUserData
-     * @abstract Get the user info pointer attached to the image format
-     * @discussion  There may be extra information that you wish to attach to a vImageCVImageFormatRef.  It might be a pthread_rwlock_t to help prevent
+     * [@function] vImageCVImageFormat_GetUserData
+     * 
+     * Get the user info pointer attached to the image format
+     * 
+     * There may be extra information that you wish to attach to a vImageCVImageFormatRef.  It might be a pthread_rwlock_t to help prevent
      *              concurrent access to the vImageCVImageFormatRef while it is being modified, or perhaps additional metadata about the image format
      *              that you may need later. It may even just a pointer to an object you wrote which wraps the vImageCVImageFormatRef.
      * 
@@ -32449,17 +32463,18 @@ public final class Accelerate {
      * 
      * @param format       The vImageCVImageFormatRef to get the userData from.
      * @return  The address of the userData. It will be NULL if no userData has been set.
-     * @seealso vImageCVImageFormat_SetUserData
+     * @see vImageCVImageFormat_SetUserData
      */
     @Generated
     @CFunction
     public static native VoidPtr vImageCVImageFormat_GetUserData(vImageConstCVImageFormatRef format);
 
     /**
-     * @function vImageCVImageFormat_SetUserData
-     * @abstract  Sets the userData pointer and a userDataReleaseCallback function
-     * @seealso vImageCVImageFormat_SetUserData
-     * @discussion  The userDataReleaseCallback is called when the vImageCVImageFormatRef is destroyed. You may access the vImageCVImageFormatRef
+     * [@function] vImageCVImageFormat_SetUserData
+     * 
+     * Sets the userData pointer and a userDataReleaseCallback function
+     * 
+     * The userDataReleaseCallback is called when the vImageCVImageFormatRef is destroyed. You may access the vImageCVImageFormatRef
      *              during the callback function. However vImageCVImageFormat_Retain() will not prevent the destruction of the object in that context.
      *              The userDataReleaseCallback will also be called on the previous user data in the event that vImageCVImageFormat_SetUserData
      *              is called to replace one set of user date with another.
@@ -32476,6 +32491,7 @@ public final class Accelerate {
      *             userData to a vImageCVImageFormatRef that you did not create, make a copy of it with vImageCVImageFormat_Copy.  The new
      *             copy will not have userData attached to it.
      * 
+     * @see vImageCVImageFormat_SetUserData
      * @param format       The vImageCVImageFormatRef to get the userData from.
      * @param userData     The new userData pointer.
      * @param userDataReleaseCallback  The callback that is called when the vImageCVImageFormatRef is destroyed, or
@@ -32492,11 +32508,11 @@ public final class Accelerate {
             @FunctionPtr(name = "call_vImageCVImageFormat_SetUserData") Function_vImageCVImageFormat_SetUserData userDataReleaseCallback);
 
     /**
-     * @function vImageCreateRGBColorSpaceWithPrimariesAndTransferFunction
+     * [@function] vImageCreateRGBColorSpaceWithPrimariesAndTransferFunction
      * 
-     * @abstract Create a RGB colorspace based on primitives typically found in Y'CbCr specifications
+     * Create a RGB colorspace based on primitives typically found in Y'CbCr specifications
      * 
-     * @discussion This function may be used to create a CGColorSpaceRef to correspond with a given set of color
+     * This function may be used to create a CGColorSpaceRef to correspond with a given set of color
      * primaries and transfer function. This defines a RGB colorspace. (A Y'CbCr colorspace is defined as a RGB
      * colorspace and a conversion matrix from RGB to Y'CbCr.) The color primaries give the extent of a colorspace
      * in x,y,z space and the transfer function gives the transformation from linear color to non-linear color that
@@ -32563,7 +32579,6 @@ public final class Accelerate {
      *    @/textblock
      *    </pre>
      * 
-     * 
      *  @param  primaries   A set of x, y tristimulus values to defined the color primaries for the RGB colorspace. Here:
      * 
      *          <pre>
@@ -32585,7 +32600,7 @@ public final class Accelerate {
      *                      indicate success or failure of the operation.
      * 
      * 
-     *  @result On success, a non-NULL RGB CGColorSpaceRef will be returned.  The color space has a reference count of 1.
+     *  @return On success, a non-NULL RGB CGColorSpaceRef will be returned.  The color space has a reference count of 1.
      *          You are responsible for releasing the colorspace when you are done with it to return the memory back
      *          to the system. If error is not NULL, kvImageNoError is written to *error.
      * 
@@ -32615,14 +32630,13 @@ public final class Accelerate {
             int flags, NIntPtr error);
 
     /**
-     * @function vImageConverter_CreateForCGToCVImageFormat
+     * [@function] vImageConverter_CreateForCGToCVImageFormat
      * 
-     * @abstract Create a vImageConverterRef that converts a CoreGraphics formatted image to CoreVideo formatted image
+     * Create a vImageConverterRef that converts a CoreGraphics formatted image to CoreVideo formatted image
      * 
-     * @discussion  This creates a vImageConverterRef which may be used with vImageConvert_AnyToAny to convert a
+     * This creates a vImageConverterRef which may be used with vImageConvert_AnyToAny to convert a
      *             CoreGraphics formatted image, as described by a vImage_CGImageFormat to CV image data, the format of
      *             which is given by a vImageCVImageFormatRef.
-     * 
      * 
      * @param  srcFormat       The vImage_CGImageFormat that describes the pixel format associated with the source image buffers.
      * 
@@ -32651,7 +32665,7 @@ public final class Accelerate {
      *                         Error be NULL, in which case no error value will be written.
      * 
      * 
-     * @result On success, a non-NULL vImageConverteRef will be returned, suitable for use with vImageConvert_AnyToAny(). If
+     * @return On success, a non-NULL vImageConverteRef will be returned, suitable for use with vImageConvert_AnyToAny(). If
      *         error is non-NULL, kvImageNoError will be written to *error, indicating success. You must release the
      *         vImageConverterRef when you are done with it, to return its resources to the system.  It has a reference count of 1.
      * 
@@ -32681,8 +32695,8 @@ public final class Accelerate {
      *         @/textblock
      *         </pre>
      * 
-     * @seealso    vImageBuffer_InitForCopyToCVPixelBuffer When converting from CVPixelBuffer types with vImageConvert_AnyToAny, the CV format sometimes contains multiple data planes which are in turn represented by multiple vImage_Buffers.
-     * @seealso    vImageConverter_GetDestinationBufferOrder for manual ordering information
+     * @see    vImageBuffer_InitForCopyToCVPixelBuffer When converting from CVPixelBuffer types with vImageConvert_AnyToAny, the CV format sometimes contains multiple data planes which are in turn represented by multiple vImage_Buffers.
+     * @see    vImageConverter_GetDestinationBufferOrder for manual ordering information
      */
     @Generated
     @CFunction
@@ -32691,14 +32705,13 @@ public final class Accelerate {
             vImageCVImageFormatRef destFormat, ConstNFloatPtr backgroundColor, int flags, NIntPtr error);
 
     /**
-     * @function vImageConverter_CreateForCVToCGImageFormat
+     * [@function] vImageConverter_CreateForCVToCGImageFormat
      * 
-     * @abstract Create a vImageConverterRef that converts a CoreVideo formatted image to a CoreGraphics formatted image
+     * Create a vImageConverterRef that converts a CoreVideo formatted image to a CoreGraphics formatted image
      * 
-     * @discussion  This creates a vImageConverterRef which may be used with vImageConvert_AnyToAny to do conversions of
+     * This creates a vImageConverterRef which may be used with vImageConvert_AnyToAny to do conversions of
      *             CV image data, as described by a vImageCVImageFormatRef to CoreGraphics formatted image data, as
      *             described by a vImage_CGImageFormat.
-     * 
      * 
      * @param  srcFormat       The vImageCVImageFormatRef that describes the pixel format associated with the source image buffers.
      * 
@@ -32727,7 +32740,7 @@ public final class Accelerate {
      *                         Error be NULL, in which case no error value will be written.
      * 
      * 
-     * @result On success, a non-NULL vImageConverteRef will be returned, suitable for use with vImageConvert_AnyToAny(). If
+     * @return On success, a non-NULL vImageConverteRef will be returned, suitable for use with vImageConvert_AnyToAny(). If
      *         error is non-NULL, kvImageNoError will be written to *error, indicating success. You must release the
      *         vImageConverterRef when you are done with it, to return its resources to the system.  It has a reference count of 1.
      * 
@@ -32757,8 +32770,8 @@ public final class Accelerate {
      *         @/textblock
      *         </pre>
      * 
-     * @seealso    vImageBuffer_InitForCopyFromCVPixelBuffer When converting from CVPixelBuffer types with vImageConvert_AnyToAny, the CV format sometimes contains multiple data planes which are in turn represented by multiple vImage_Buffers.
-     * @seealso    vImageConverter_GetSourceBufferOrder for manual ordering information
+     * @see    vImageBuffer_InitForCopyFromCVPixelBuffer When converting from CVPixelBuffer types with vImageConvert_AnyToAny, the CV format sometimes contains multiple data planes which are in turn represented by multiple vImage_Buffers.
+     * @see    vImageConverter_GetSourceBufferOrder for manual ordering information
      */
     @Generated
     @CFunction
@@ -32767,11 +32780,11 @@ public final class Accelerate {
             ConstNFloatPtr backgroundColor, int flags, NIntPtr error);
 
     /**
-     * @function vImageBuffer_InitForCopyToCVPixelBuffer
+     * [@function] vImageBuffer_InitForCopyToCVPixelBuffer
      * 
-     * @abstract Initialize an array of vImage_Buffers in the right order to convert a image to a CV formatted image
+     * Initialize an array of vImage_Buffers in the right order to convert a image to a CV formatted image
      * 
-     * @discussion When converting to CVPixelBuffer types with vImageConvert_AnyToAny, the CV format sometimes contains
+     * When converting to CVPixelBuffer types with vImageConvert_AnyToAny, the CV format sometimes contains
      * multiple data planes which are in turn represented by multiple vImage_Buffers. (These are passed in as an array
      * of vImage_Buffers to vImageConvert_AnyToAny().)  To make it easier to order the buffers correctly, we provide
      * vImageBuffer_InitForCopyToCVPixelBuffer, which initializes an array vImage_Buffer structs  in the order expected by
@@ -32825,7 +32838,7 @@ public final class Accelerate {
      *          @/textblock
      *          </pre>
      * 
-     * @seealso vImageConverter_GetDestinationBufferOrder for another method to initialize the vImage_Buffers in the right order for vImageConvert_AnyToAny.
+     * @see vImageConverter_GetDestinationBufferOrder for another method to initialize the vImage_Buffers in the right order for vImageConvert_AnyToAny.
      */
     @Generated
     @CFunction
@@ -32835,11 +32848,11 @@ public final class Accelerate {
             vImageConverterRef converter, CVBufferRef pixelBuffer, int flags);
 
     /**
-     * @function vImageBuffer_InitForCopyFromCVPixelBuffer
+     * [@function] vImageBuffer_InitForCopyFromCVPixelBuffer
      * 
-     * @abstract Initialize an array of vImage_Buffers in the right order to convert CV formatted image to another image format
+     * Initialize an array of vImage_Buffers in the right order to convert CV formatted image to another image format
      * 
-     * @discussion When converting from CVPixelBuffer types with vImageConvert_AnyToAny, the CV format sometimes contains
+     * When converting from CVPixelBuffer types with vImageConvert_AnyToAny, the CV format sometimes contains
      * multiple data planes which are in turn represented by multiple vImage_Buffers. (These are passed in as an array
      * of vImage_Buffers to vImageConvert_AnyToAny().)  To make it easier to order the buffers correctly, we provide
      * vImageBuffer_InitForCopyFromCVPixelBuffer, which initializes an array vImage_Buffer structs  in the order expected by
@@ -32891,7 +32904,7 @@ public final class Accelerate {
      *          @/textblock
      *          </pre>
      * 
-     * @seealso  vImageConverter_GetSourceBufferOrder vImageConverter_GetSourceBufferOrder for another method to initialize the vImage_Buffers in the right order for vImageConvert_AnyToAny.
+     * @see  vImageConverter_GetSourceBufferOrder vImageConverter_GetSourceBufferOrder for another method to initialize the vImage_Buffers in the right order for vImageConvert_AnyToAny.
      */
     @Generated
     @CFunction
@@ -32901,8 +32914,9 @@ public final class Accelerate {
             vImageConverterRef converter, CVBufferRef pixelBuffer, int flags);
 
     /**
-     * @const      kvImage_YpCbCrToARGBMatrix_ITU_R_601_4
-     * @abstract   Y'CbCr->RGB conversion matrix for ITU-Recommendation BT.601-4 
+     * [@const]      kvImage_YpCbCrToARGBMatrix_ITU_R_601_4
+     * 
+     * Y'CbCr->RGB conversion matrix for ITU-Recommendation BT.601-4
      */
     @Generated
     @CVariable()
@@ -32910,8 +32924,9 @@ public final class Accelerate {
     public static native vImage_YpCbCrToARGBMatrix kvImage_YpCbCrToARGBMatrix_ITU_R_601_4();
 
     /**
-     * @const      kvImage_YpCbCrToARGBMatrix_ITU_R_709_2
-     * @abstract   Y'CbCr->RGB conversion matrix for ITU-Recommendation BT.709-2 
+     * [@const]      kvImage_YpCbCrToARGBMatrix_ITU_R_709_2
+     * 
+     * Y'CbCr->RGB conversion matrix for ITU-Recommendation BT.709-2
      */
     @Generated
     @CVariable()
@@ -32919,8 +32934,9 @@ public final class Accelerate {
     public static native vImage_YpCbCrToARGBMatrix kvImage_YpCbCrToARGBMatrix_ITU_R_709_2();
 
     /**
-     * @const      kvImage_ARGBToYpCbCrMatrix_ITU_R_601_4
-     * @abstract   RGB->Y'CbCr conversion matrix for ITU-Recommendation BT.601-4 
+     * [@const]      kvImage_ARGBToYpCbCrMatrix_ITU_R_601_4
+     * 
+     * RGB->Y'CbCr conversion matrix for ITU-Recommendation BT.601-4
      */
     @Generated
     @CVariable()
@@ -32928,8 +32944,9 @@ public final class Accelerate {
     public static native vImage_ARGBToYpCbCrMatrix kvImage_ARGBToYpCbCrMatrix_ITU_R_601_4();
 
     /**
-     * @const      kvImage_ARGBToYpCbCrMatrix_ITU_R_709_2
-     * @abstract   RGB->Y'CbCr conversion matrix for ITU-Recommendation BT.709-2 
+     * [@const]      kvImage_ARGBToYpCbCrMatrix_ITU_R_709_2
+     * 
+     * RGB->Y'CbCr conversion matrix for ITU-Recommendation BT.709-2
      */
     @Generated
     @CVariable()
@@ -32937,9 +32954,11 @@ public final class Accelerate {
     public static native vImage_ARGBToYpCbCrMatrix kvImage_ARGBToYpCbCrMatrix_ITU_R_709_2();
 
     /**
-     * @const kvImageDecodeArray_16Q12Format
-     * @abstract Predefined decode array constant to use with 16Q12 formatted data
-     * @discussion 16Q12 data is a signed 16-bit fixed point integer. The format is implicitly divided by 2**12
+     * [@const] kvImageDecodeArray_16Q12Format
+     * 
+     * Predefined decode array constant to use with 16Q12 formatted data
+     * 
+     * 16Q12 data is a signed 16-bit fixed point integer. The format is implicitly divided by 2**12
      *             to give a range of [-8,8)  (SHRT_MIN/4096,SHRT_MAX/4096). The type is present to allow
      *             8-bit content to be converted into other colorspaces and operated on without undue
      *             loss of precision or loss of color gamut due to clamping. This constant is "magic" in the
@@ -33009,9 +33028,8 @@ public final class Accelerate {
     }
 
     /**
-     * @abstract Create a vector conversion/activation layer filter (DEPRECATED,  Use BNNSFilterCreateLayerActivation)
+     * Create a vector conversion/activation layer filter (DEPRECATED,  Use BNNSFilterCreateLayerActivation)
      * 
-     * @discussion
      * Creates a filter applying the given activation function and conversions to vectors. Input and output vectors must have the same size.
      * 
      * @param in_desc Input vector descriptor
@@ -33143,9 +33161,8 @@ public final class Accelerate {
     public static native void _SparseReleaseOpaquePreconditioner_Float(VoidPtr toFree);
 
     /**
-     * @abstract Create a convolution layer filter
+     * Create a convolution layer filter
      * 
-     * @discussion
      * Creates a filter applying the convolution described in <tt>layer_params</tt>.
      * Some combinations of the parameters may not be supported, in which case the call will fail.
      * 
@@ -33161,12 +33178,12 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a transposed convolution layer filter (also known as deconvolution)
+     * Create a transposed convolution layer filter (also known as deconvolution)
      * 
-     * @discussion
      * Creates a filter applying the transposed convolution described in <tt>layer_params</tt>.
      * Some combinations of the parameters may not be supported, in which case the call will fail.
      * Currently only BNNSDataTypeFloat32 data type is supported.
+     * 
      * @param layer_params Layer parameters and input, weights, output, bias and activation descriptors
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
      * 
@@ -33179,9 +33196,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a fully connected layer filter
+     * Create a fully connected layer filter
      * 
-     * @discussion
      * Creates a filter applying the fully connected layer described in <tt>layer_params</tt>.
      * Some combinations of the parameters may not be supported, in which case the call will fail.
      * 
@@ -33197,9 +33213,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a pooling layer filter
+     * Create a pooling layer filter
      * 
-     * @discussion
      * Creates a filter applying the pooling layer described in <tt>layer_params</tt>
      * Some combinations of the parameters may not be supported, in which case the call will fail.
      * 
@@ -33215,9 +33230,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a Activation/Conversion layer filter
+     * Create a Activation/Conversion layer filter
      * 
-     * @discussion
      * Creates a filter applying the given activation function or conversions.
      * Input and output must have the same number of elements.
      * 
@@ -33233,9 +33247,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a Loss layer filter
+     * Create a Loss layer filter
      * 
-     * @discussion
      * Creates a filter applying loss function and loss reduction.
      * 
      * @param layer_params  input, output and loss description
@@ -33249,9 +33262,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a Normalization layer filter
+     * Create a Normalization layer filter
      * 
-     * @discussion
      * Creates a normalization filter that normalize inputs based on mean, variance and trainable parameters beta and gamma.
      * 
      * @param normType type of normalization, currently supporting batch, instance, layer and group norm.
@@ -33267,9 +33279,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create an Arithmetic layer filter
+     * Create an Arithmetic layer filter
      * 
-     * @discussion
      * Creates an Arithmetic filter such as add, subtract, multiply.
      * 
      * @param layer_params  Arithmetic layer parameters pointer.
@@ -33284,9 +33295,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a Permute layer filter
+     * Create a Permute layer filter
      * 
-     * @discussion
      * Creates a permute layer filter that copies one tensor to another whilst permuting the order of the axes
      * 
      * @param layer_params  Permute layer parameters pointer.
@@ -33301,9 +33311,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a dropout filter
+     * Create a dropout filter
      * 
-     * @discussion
      * The function will:
      *     validate correctness of the parameters
      *     create a new dropout filter
@@ -33319,9 +33328,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     *  @abstract Create a padding filter
+     * Create a padding filter
      * 
-     * @discussion
      * The function will:
      *    validate correctness of the filter parameters
      *    create a new padding filter
@@ -33337,11 +33345,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a layer representing a broadcast matrix multiplication
+     * Create a layer representing a broadcast matrix multiplication
      * 
-     * @discussion See BNNSLayerParametersBroadcastMatMul for a full description of this layer.
+     * See BNNSLayerParametersBroadcastMatMul for a full description of this layer.
      * 
-     * @seealso BNNSLayerParametersBroadcastMatMul
+     * @see BNNSLayerParametersBroadcastMatMul
      * 
      * @param layer_params layer description
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
@@ -33354,12 +33362,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Creates a layer representing an arbitrary tensor contraction
+     * Creates a layer representing an arbitrary tensor contraction
      * 
-     * @discussion
      * For a full discussion of this layer, see BNNSLayerParametersTensorContraction.
      * 
-     * @seealso BNNSLayerParametersTensorContraction
+     * @see BNNSLayerParametersTensorContraction
      * 
      * @param layer_params layer description
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
@@ -33372,13 +33379,12 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a layer representing a Gram matrix calculation
+     * Create a layer representing a Gram matrix calculation
      * 
-     * @discussion
      * Performs the Gram matrix calculation:
      *   y[ f, c ] = alpha * sum_{i,j} x[ i, j, f ] * x[ i, j, c ]
      * 
-     * @seealso BNNSLayerParametersGram
+     * @see BNNSLayerParametersGram
      * 
      * @param layer_params layer description
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
@@ -33391,11 +33397,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a layer representing a resizing in one or more dimensions
+     * Create a layer representing a resizing in one or more dimensions
      * 
-     * @discussion See BNNSLayerParametersResize for a full description of this layer.
+     * See BNNSLayerParametersResize for a full description of this layer.
      * 
-     * @seealso BNNSLayerParametersResize
+     * @see BNNSLayerParametersResize
      * 
      * @param layer_params layer description
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
@@ -33408,11 +33414,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a multiheaded attention layer
+     * Create a multiheaded attention layer
      * 
-     * @discussion See BNNSLayerParametersMultiheadAttention for a full description of this layer.
+     * See BNNSLayerParametersMultiheadAttention for a full description of this layer.
      * 
-     * @seealso BNNSLayerParametersMultiheadAttention
+     * @see BNNSLayerParametersMultiheadAttention
      * 
      * @param layer_params layer description
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
@@ -33425,11 +33431,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a reduction layer
+     * Create a reduction layer
      * 
-     * @discussion See BNNSLayerParametersReduction for a full description of this layer.
+     * See BNNSLayerParametersReduction for a full description of this layer.
      * 
-     * @seealso BNNSLayerParametersReduction
+     * @see BNNSLayerParametersReduction
      * 
      * @param layer_params layer description
      * @param filter_params Filter runtime parameters, may be NULL for default parameters
@@ -33442,9 +33448,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Create a fused filter
+     * Create a fused filter
      * 
-     * @discussion
      * Create an N layer fused filter that process input in the following way: input -> filter0 -> filter1 -> ... -> filter N-1 -> output
      * first N-1 filters must have activation function BNNSActivationFunctionIdentity
      * last filter may have a different activation function. gradient computation restrictions on last activation function are the same as in BNNSFilterApplyBackwardBatch.
@@ -33486,9 +33491,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Applies a previously created pooling layer filter
+     * Applies a previously created pooling layer filter
      * 
-     * @discussion
      * Pooling layer filter is applied for each of the batch_size inputs, and produces batch_size outputs. indices is optional.
      * in (resp. out) is expected to point to batch_size times the input (resp. output) object size defined when the filter was created.
      * indices has the same size as output if not null.
@@ -33511,7 +33515,7 @@ public final class Accelerate {
             @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, NUIntPtr indices, @NUInt long idx_stride);
 
     /**
-     * @abstract Apply a filter
+     * Apply a filter
      * 
      * @param filter Filter to apply
      * @param inA Pointer to the first input tensor
@@ -33525,9 +33529,8 @@ public final class Accelerate {
     public static native int BNNSFilterApplyTwoInput(VoidPtr filter, ConstVoidPtr inA, ConstVoidPtr inB, VoidPtr out);
 
     /**
-     * @abstract Apply a filter to a several pairs of (input, output) data
+     * Apply a filter to a several pairs of (input, output) data
      * 
-     * @discussion
      * The filter is applied for each of the <tt>batch_size</tt> inputs, and produces <tt>batch_size</tt> outputs.
      * <tt>in</tt> (resp. <tt>out</tt>) is expected to point to <tt>batch_size</tt> times the input (resp. output) object size defined when the filter was created.
      * 
@@ -33548,9 +33551,8 @@ public final class Accelerate {
             @NUInt long inA_stride, ConstVoidPtr inB, @NUInt long inB_stride, VoidPtr out, @NUInt long out_stride);
 
     /**
-     * @abstract Apply a normalization filter to several pairs of (input, output) data
+     * Apply a normalization filter to several pairs of (input, output) data
      * 
-     * @discussion
      * The filter is applied for each of the <tt>batch_size</tt> inputs, and produces <tt>batch_size</tt> outputs.
      * <tt>in</tt> (resp. <tt>out</tt>) is expected to point to <tt>batch_size</tt> times the input (resp. output) object size defined when the filter was created.
      * 
@@ -33582,9 +33584,8 @@ public final class Accelerate {
             @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, boolean training);
 
     /**
-     * @abstract Apply a fused filter to several pairs of (input, output) data
+     * Apply a fused filter to several pairs of (input, output) data
      * 
-     * @discussion
      * The filter is applied for each of the <tt>batch_size</tt> inputs, and produces <tt>batch_size</tt> outputs.
      * <tt>in</tt> (resp. <tt>out</tt>) is expected to point to <tt>batch_size</tt> times the input (resp. output) object size defined when the filter was created.
      * 
@@ -33606,9 +33607,8 @@ public final class Accelerate {
             @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, boolean training);
 
     /**
-     * @abstract Apply an arithmetic filter to several pairs of (input set, output) data
+     * Apply an arithmetic filter to several pairs of (input set, output) data
      * 
-     * @discussion
      * an input set is composed of the inputs necessary to compute a given arithmetic operation.
      * 
      * The filter is applied for each of the <tt>batch_size</tt> inputs, and produces <tt>batch_size</tt> outputs.
@@ -33646,9 +33646,8 @@ public final class Accelerate {
             @NUInt long out_stride);
 
     /**
-     * @abstract Applies a previously created multihead attention layer
+     * Applies a previously created multihead attention layer
      * 
-     * @discussion
      * When training, the backward pass can be accelerated by caching intermediate values from the forward pass.
      * This is done by providing a memory buffer backprop_cache. The recommended size for this buffer may be obtained by calling
      * the function with the pointer backprop_cache_size set to non-NULL, and backprop_cache set to NULL. The recommended size
@@ -33697,9 +33696,8 @@ public final class Accelerate {
             NUIntPtr backprop_cache_size, VoidPtr backprop_cache, NUIntPtr workspace_size, VoidPtr workspace);
 
     /**
-     * @abstract Apply a single step of optimization to one or more parameters
+     * Apply a single step of optimization to one or more parameters
      * 
-     * @discussion
      * The optimizer will use the specified optimization algorithm to update a set of parameters such as weights and bias.
      * Data layout in memory of parameters, gradients and accumulators arrays must be contiguous, such that stride[0]=1 and for every N>0 stride[N]=stride[N-1]*size[N-1]. strides   in the descriptors may be provided as zeros.
      * accumulators must be allocated by caller and have the same size as a matching parameter. accumulator descriptor data must be set to zero the first time the filter is   applied.
@@ -33725,6 +33723,8 @@ public final class Accelerate {
      * Using the notation used in the description of BNNSOptimizerRMSPropFields, the first number_of_parameters pointers are used for n_i, the next
      * set are used for g_i (iff centering is used) and the next set are used for the momentum Δ_i (iff momentum γ != 0.0).
      * 
+     * [@returns] 0 on success, non-zero on failure
+     * 
      * @param function Optimization function (algorithm) to use
      * @param OptimizerAlgFields Parameters for optimization function, pointer to a struct whose type is determined by the value of function.
      * @param number_of_parameters number of parameters to update
@@ -33732,8 +33732,6 @@ public final class Accelerate {
      * @param gradients array of gradient descriptors. Each gradient descriptor data in the array must be the same size as its matching parameter descriptor in the  parameters array.
      * @param accumulators array of accumulator descriptors. Required number of accumulators varies depending on optimization algorithm and parameters - see function description. In all cases, accumulators must be allocated and initialized to zero by the user prior to the first call optimization step.
      * @param filter_params Filter runtime parameters, may be NULL for default parameters.
-     * 
-     * @returns 0 on success, non-zero on failure
      */
     @Generated
     @CFunction
@@ -33743,9 +33741,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Apply filter backward to generate input delta, weights delta and bias delta
+     * Apply filter backward to generate input delta, weights delta and bias delta
      * 
-     * @discussion
      * For a general filter f that computes output y by using weights w and bias b
      * The forward pass filter computation can be described as:
      * y = f(x,w,b)
@@ -33845,9 +33842,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta);
 
     /**
-     * @abstract Apply pooling filter backward to generate input delta and bias delta
+     * Apply pooling filter backward to generate input delta and bias delta
      * 
-     * @discussion
      * This is similar to BNNSFilterApplyBackwardBatch, but takes indices as an optional input.
      * It is mandatory to compute all active gradients in a single function call. computation of input delta is not required in case the filter is the first layer in the network
      * 
@@ -33885,9 +33881,8 @@ public final class Accelerate {
             ConstNUIntPtr indices, @NUInt long idx_stride);
 
     /**
-     * @abstract Apply filter backward to generate input deltas, weights delta and bias delta (two input version)
+     * Apply filter backward to generate input deltas, weights delta and bias delta (two input version)
      * 
-     * @discussion
      * For a general filter f that computes output y by using weights w and bias b
      * The forward pass filter computation can be described as:
      * y = f(x,w,b)
@@ -33987,9 +33982,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta);
 
     /**
-     * @abstract Apply a normalization filter backward to generate input delta, beta delta and gamma delta
+     * Apply a normalization filter backward to generate input delta, beta delta and gamma delta
      * 
-     * @discussion
      * similar to BNNSFilterApplyBackwardBatch, but computing input delta, beta delta and gamma delta
      * It is mandatory to compute all active gradients in a single function call. computation of input delta is not required in case the filter is the first layer in the network
      * 
@@ -34022,9 +34016,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor gamma_delta);
 
     /**
-     * @abstract Apply a fused filter backward to generate gradients.
+     * Apply a fused filter backward to generate gradients.
      * 
-     * @discussion
      * similar to BNNSFilterApplyBackwardBatch, but computing gradients of an N layer fused filter.
      * It is mandatory to compute all active parameter delta in a single function call. computation of input delta is not required in case the fused filter is the first layer in the network
      * 
@@ -34066,9 +34059,8 @@ public final class Accelerate {
             @NUInt long out_delta_stride, Ptr<Ptr<BNNSNDArrayDescriptor>> delta_parameters);
 
     /**
-     * @abstract Apply an arithmetic filter backward to generate input gradients
+     * Apply an arithmetic filter backward to generate input gradients
      * 
-     * @discussion
      * Compute gradients for all arithmetic operation inputs
      * It is mandatory to compute all input gradients in a single function call.
      * if inputs were pointing to a common address during forward computation (same input), gradients should also point to a common address (same gradient)
@@ -34101,9 +34093,8 @@ public final class Accelerate {
             @NUInt long out_delta_stride);
 
     /**
-     * @abstract Apply permute filter backward to generate input gradient
+     * Apply permute filter backward to generate input gradient
      * 
-     * @discussion
      * similar to BNNSFilterApplyBackwardBatch with only the necessary argument subset for permute.
      * 
      * @param filter Filter to apply
@@ -34122,9 +34113,8 @@ public final class Accelerate {
             @NUInt long out_delta_stride);
 
     /**
-     * @abstract Apply a loss filter to compute forward loss and loss gradient on a batch with several pairs of (input, labels)
+     * Apply a loss filter to compute forward loss and loss gradient on a batch with several pairs of (input, labels)
      * 
-     * @discussion
      * The filter is applied for each of the <tt>batch_size</tt> inputs,labels and computes reduced loss and an optional loss gradient.
      * <tt>in</tt> (resp. <tt>out</tt>) is expected to point to <tt>batch_size</tt> times the input (resp. output) object size defined when the filter was created.
      * The function supports forward loss computation, and also backward loss without back propagation from output delta.
@@ -34167,9 +34157,8 @@ public final class Accelerate {
             @NUInt long in_delta_stride);
 
     /**
-     * @abstract Apply a loss filter backward to generate gradients.
+     * Apply a loss filter backward to generate gradients.
      * 
-     * @discussion
      * The filter is applied for each of the <tt>batch_size</tt> inputs,labels and computes the backward loss gradient.
      * <tt>in</tt> (resp. <tt>out</tt>) is expected to point to <tt>batch_size</tt> times the input (resp. output) object size defined when the filter was created.
      * Note that if the loss layer is the last layer in the network, the BNNSLossFilterApplyBatch can be used to compute both forward and backward without back propagation from output delta.
@@ -34208,9 +34197,8 @@ public final class Accelerate {
             @NUInt long out_delta_stride);
 
     /**
-     * @abstract Applies a previously created multihead attention layer backwards to obtain gradients
+     * Applies a previously created multihead attention layer backwards to obtain gradients
      * 
-     * @discussion
      * Two common cases are that query=key=value or query=key. In these cases the backpropogated gradient for these parameters
      * the gradient calculation is then the sum of the individual deltas. If any the pointers query_param_delta.target_desc.data,
      * key_param_delta.target_desc.data or value_param_delta.target_desc.data are equal to each other, the returned tensor will
@@ -34271,7 +34259,8 @@ public final class Accelerate {
             @NUInt long backprop_cache_size, VoidPtr backprop_cache, NUIntPtr workspace_size, VoidPtr workspace);
 
     /**
-     * @abstract return the minimum bytes capacity of the training cache buffer (used to store intermediate results during the forward pass)
+     * return the minimum bytes capacity of the training cache buffer (used to store intermediate results during the forward pass)
+     * 
      * @return minimum bytes capacity of the training cache buffer
      */
     @Generated
@@ -34281,11 +34270,13 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params);
 
     /**
-     * @abstract Direct Apply LSTM with training caching
-     * @discussion compute LSTM forward and cache intermediate results to accelerate backward computation
+     * Direct Apply LSTM with training caching
+     * 
+     * compute LSTM forward and cache intermediate results to accelerate backward computation
      * - the user can query the minimum buffer size for training cache using BNNSComputeLSTMTrainingCacheCapacity
      * - training_cache_ptr == NULL means not to cache
      * - BNNS will return failure when training_cache_capacity is lower than the minimum bytes capacity of the training cache buffer that BNNSComputeLSTMTrainingCacheCapacity returned
+     * 
      * @param layer_params - layer parameters
      * @param filter_params - filter parameters
      * @param training_cache_ptr - buffer to store intermediate results to accelerate backward computation. if Null, intermediate results aren't cached
@@ -34300,9 +34291,8 @@ public final class Accelerate {
             VoidPtr training_cache_ptr, @NUInt long training_cache_capacity);
 
     /**
-     * @abstract Direct Apply an Activation/Conversion filter to several pairs of (input, output) data
+     * Direct Apply an Activation/Conversion filter to several pairs of (input, output) data
      * 
-     * @discussion
      * equal to calling BNNSCreateActivation & BNNSFilterApplyBatch & BNNSDestroy
      * 
      * @param layer_params Layer parameters and input, weights, output, bias and activation descriptors
@@ -34323,8 +34313,8 @@ public final class Accelerate {
             @NUInt long batch_size, @NUInt long in_stride, @NUInt long out_stride);
 
     /**
-     * @abstract Copies the contents of one BNNSNDArrayDescriptor to another of the same shape.
-     * @discussion
+     * Copies the contents of one BNNSNDArrayDescriptor to another of the same shape.
+     * 
      * Equivalent to using a contraction layer with opstring "src_* -> dest_*"
      * 
      * @param dest The destination tensor
@@ -34338,9 +34328,9 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Directly apply a broadcast matrix multiplication layer.
+     * Directly apply a broadcast matrix multiplication layer.
      * 
-     * @description
+     * [@description]
      * Performs the same action as a broadcast matrix multiplication layer without instantiating a BNNSFilter.
      * 
      * @param transA - if true, transposes the last two dimensions of A
@@ -34360,9 +34350,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Transposes a tensor by swapping two of its dimensions.
+     * Transposes a tensor by swapping two of its dimensions.
      * 
-     * @discussion
      * Users should consider whether a data transposition with memory copy (i.e. this operation) is required, or if the same effect can be
      * achieved by just switching layout in the descriptor of the same memory (e.g. for a 2D matrix can switching from row major to column
      * major storage satsify the requirements). Consideration will be needed for both whether individual layers support alternative data
@@ -34391,7 +34380,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     *  @abstract Apply Reduction on selected axis
+     * Apply Reduction on selected axis
+     * 
      * @param layer_params  Layer parameters: input descriptor, output descriptor, reduce function and epsilon
      *                      need to set the pointers:
      *                      layer_params.i_desc.data - pointer to input buffer
@@ -34407,9 +34397,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract create and return a new tensor of bool type by comparing two input tensors
+     * create and return a new tensor of bool type by comparing two input tensors
      * 
-     * @discussion
      *       compare two input tensors and generate a tensor of bool type containing the results of element-by-element comparison
      * 
      * @param  in0  pointer to the tensor descriptor of type BNNSNDArrayDescriptor for comparison/logical operations - left side of the operator
@@ -34427,10 +34416,11 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out);
 
     /**
-     * @abstract Returns top K values
-     * @discussion
+     * Returns top K values
+     * 
      *   Returns a sparse vector of the top K entries from the input.
      *   In the case of ties that span the top-K boundary, only the lexigraphically first entries will be returned.
+     * 
      * @param K Number of entries to find
      * @param axis Axis along which to find top K entries
      * @param batch_size Number of batches
@@ -34455,9 +34445,9 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Given a tensor index for each member of a batch, returns a boolean vector indicating whether each index
+     * Given a tensor index for each member of a batch, returns a boolean vector indicating whether each index
      *            corresponds to a top-k value of the input.
-     * @discussion
+     * 
      *  Consider the 4x4 tensor in a batch size of 3:
      *    X(:,:,0) = [ 1 3 5 7 ]         X(:,:,1) = [ 1 8 3 4 ]         X(:,:,2) = [ 4 8 7 7 ]
      *           [ 2 5 1 9 ]                       [ 8 1 3 5 ]                        [ 4 3 8 5 ]
@@ -34471,6 +34461,7 @@ public final class Accelerate {
      *     (F, F, F)      from comparing values (3, 3, 1) against the top K set (4, 8), (5, 8), (3,7) in the second batch
      *     (T, T, T)      from comparing values (7, 8, 7) against the top K set (7, 8), (5, 8), (5, 7) in the third batch
      *  Observe that in the case of ties, all possible entries are included in the top K.
+     * 
      * @param K Number of entries to find
      * @param axis Axis along which to find top K entries
      * @param batch_size Number of batches
@@ -34495,8 +34486,10 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
-     * @abstract Direct Apply LSTM with training caching
-     * @discussion compute LSTM backward
+     * Direct Apply LSTM with training caching
+     * 
+     * compute LSTM backward
+     * 
      * @param layer_params - layer parameters
      * @param layer_delta_params - layer delta parameters (include inputs & outputs for backward)
      * @param filter_params - filter parameters
@@ -34513,18 +34506,17 @@ public final class Accelerate {
             ConstVoidPtr training_cache_ptr, @NUInt long training_cache_capacity);
 
     /**
-     * @abstract Get NDArray descriptor containing reference to filter data member
+     * Get NDArray descriptor containing reference to filter data member
      * 
-     * @discussion
      * Some filters have potentially trainiable parameters embedded in the filter structure (for example activation layers often have an alpha or beta parameter).
      * To facilitate training or otherwise modifying these parameters after layer creation, we provide the following function.
      * Note that the pointer is only valid until the BNNSFilter is destroyed, and that care must be taken if the filter is used on multiple threads.
      * 
+     * [@returns] On success, a BNNSNDArrayDescriptor describing the requested parameter.
+     *          On failure, a BNNSNDArrayDescriptor with data member set to NULL.
+     * 
      * @param filter Filter to obtain pointer into
      * @param target enum specifying what a pointer is required to
-     * 
-     * @returns On success, a BNNSNDArrayDescriptor describing the requested parameter.
-     *          On failure, a BNNSNDArrayDescriptor with data member set to NULL.
      */
     @Generated
     @CFunction
@@ -34532,9 +34524,11 @@ public final class Accelerate {
     public static native BNNSNDArrayDescriptor BNNSGetPointer(VoidPtr filter, int target);
 
     /**
-     * @function vImageSepConvolve_Planar8
-     * @abstract Separable convolution on a Planar8 image.
-     * @discussion This filter applies two separate 1D filters along the rows and columns of
+     * [@function] vImageSepConvolve_Planar8
+     * 
+     * Separable convolution on a Planar8 image.
+     * 
+     * This filter applies two separate 1D filters along the rows and columns of
      *             a Planar8 image.
      * 
      *             For each pixel:
@@ -34678,9 +34672,11 @@ public final class Accelerate {
             ConstFloatPtr kernelY, int kernelY_width, float bias, char backgroundColor, int flags);
 
     /**
-     * @function vImageSepConvolve_PlanarF
-     * @abstract Separable convolution on a PlanarF image.
-     * @discussion This filter applies two separate 1D filters along the rows and columns of
+     * [@function] vImageSepConvolve_PlanarF
+     * 
+     * Separable convolution on a PlanarF image.
+     * 
+     * This filter applies two separate 1D filters along the rows and columns of
      *             a PlanarF image.
      * 
      *             For each pixel:
@@ -34818,9 +34814,11 @@ public final class Accelerate {
             ConstFloatPtr kernelY, int kernelY_width, float bias, float backgroundColor, int flags);
 
     /**
-     * @function vImageSepConvolve_Planar16U
-     * @abstract Separable convolution on a Planar16U image.
-     * @discussion This filter applies two separate 1D filters along the rows and columns of
+     * [@function] vImageSepConvolve_Planar16U
+     * 
+     * Separable convolution on a Planar16U image.
+     * 
+     * This filter applies two separate 1D filters along the rows and columns of
      *             a Planar16U image.
      * 
      *             For each pixel:
@@ -34962,9 +34960,11 @@ public final class Accelerate {
             ConstFloatPtr kernelY, int kernelY_width, float bias, char backgroundColor, int flags);
 
     /**
-     * @function vImageSepConvolve_Planar8to16U
-     * @abstract Separable convolution on a Planar8 image.
-     * @discussion This filter applies two separate 1D filters along the rows and columns of
+     * [@function] vImageSepConvolve_Planar8to16U
+     * 
+     * Separable convolution on a Planar8 image.
+     * 
+     * This filter applies two separate 1D filters along the rows and columns of
      *             a Planar8 source image and writing the result to a Planar16U destination image.
      *             Both a bias and scale factor can be specified to control the range of the result.
      * 
@@ -35110,9 +35110,11 @@ public final class Accelerate {
             ConstFloatPtr kernelY, int kernelY_width, float scale, float bias, byte backgroundColor, int flags);
 
     /**
-     * @function vImageConverter_CreateWithCGColorConversionInfo
-     * @abstract Create a vImageConverterRef substituting in CGColorConversionInfo for the one vImage usually generates for the color conversion steps.
-     * @discussion vImageConverter_CreateWithCGColorConversionInfo is like vImageConverter_CreateWithCGImageFormat, except that
+     * [@function] vImageConverter_CreateWithCGColorConversionInfo
+     * 
+     * Create a vImageConverterRef substituting in CGColorConversionInfo for the one vImage usually generates for the color conversion steps.
+     * 
+     * vImageConverter_CreateWithCGColorConversionInfo is like vImageConverter_CreateWithCGImageFormat, except that
      *  instead of creating its own colorspace transform for any colorspace conversions, it uses the one you pass in through CGColorConversionInfo.
      *  This gives you greater control over the fine details of colorspace conversion, for exacting color fidelity.
      *  The colorspaces for source and destination images must refer to colorspaces that have the same number of channels

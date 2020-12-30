@@ -29,16 +29,14 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol       NSURLConnectionDelegate
+ * [@protocol]       NSURLConnectionDelegate
  * 
- * @abstract        
  *                 Delegate methods that are common to all forms of
  *                 NSURLConnection.  These are all optional.  This
  *                 protocol should be considered a base class for the
  *                 NSURLConnectionDataDelegate and
  *                 NSURLConnectionDownloadDelegate protocols.
  * 
- * @discussion
  *                 connection:didFailWithError: will be called at
  *                 most once, if an error occurs during a resource
  *                 load.  No other callbacks will be made after.<p>

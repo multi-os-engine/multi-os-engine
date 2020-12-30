@@ -27,9 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MPSCNNNeuronSoftSign
- * @dependency This depends on Metal.framework
- * @discussion Specifies the softsign neuron filter.
+ * MPSCNNNeuronSoftSign
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Specifies the softsign neuron filter.
  *             For each pixel, applies the following function: f(x) = x / (1 + abs(x))
  */
 @Generated
@@ -109,7 +110,8 @@ public class MPSCNNNeuronSoftSign extends MPSCNNNeuron {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize a softsign neuron filter
+     * Initialize a softsign neuron filter
+     * 
      * @param      device          The device the filter will run on
      * @return     A valid MPSCNNNeuronSoftSign object or nil, if failure.
      */

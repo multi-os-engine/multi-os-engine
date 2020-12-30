@@ -31,9 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @brief Reduces aliasing in an image by accumulating samples over multiple frames
+ * Reduces aliasing in an image by accumulating samples over multiple frames
  * 
- * @discussion The color for the previous frame will be sampled using the provided motion vector
+ * The color for the previous frame will be sampled using the provided motion vector
  * texture and blended with the current frame according to the blendFactor property. The colors
  * from the previous frame will be clamped to the color-space bounding box formed by the center
  * pixel's neighbors to avoid reprojection artifacts, and the motion vector texture will be
@@ -79,7 +79,7 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @brief How much to blend the current frame with the previous frame during temporal antialiasing.
+     * How much to blend the current frame with the previous frame during temporal antialiasing.
      * The final value is given by
      * current * blendFactor + previous * (1 - blendFactor). Must be between zero
      * and one, inclusive. Defaults to 0.1.
@@ -127,9 +127,9 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     public static native String description_static();
 
     /**
-     * @brief Encode temporal antialiasing a command buffer
+     * Encode temporal antialiasing a command buffer
      * 
-     * @discussion The motion vector texture must be at least a two channel texture representing how
+     * The motion vector texture must be at least a two channel texture representing how
      * many texels each texel in the source image(s) have moved since the previous frame. The remaining
      * channels will be ignored if present. This texture may be nil, in which case the motion vector is
      * assumed to be zero, which is suitable for static images.
@@ -220,7 +220,7 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @brief How much to blend the current frame with the previous frame during temporal antialiasing.
+     * How much to blend the current frame with the previous frame during temporal antialiasing.
      * The final value is given by
      * current * blendFactor + previous * (1 - blendFactor). Must be between zero
      * and one, inclusive. Defaults to 0.1.

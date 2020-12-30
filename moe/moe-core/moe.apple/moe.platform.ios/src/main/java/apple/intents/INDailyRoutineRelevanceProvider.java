@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A relevance provider that specifies relevance during a specific situation.
- * @seealso INDailyRoutineSituation
+ * A relevance provider that specifies relevance during a specific situation.
+ * 
+ * @see INDailyRoutineSituation
  */
 @Generated
 @Library("Intents")
@@ -101,7 +102,7 @@ public class INDailyRoutineRelevanceProvider extends INRelevanceProvider {
     public native INDailyRoutineRelevanceProvider initWithCoder(NSCoder coder);
 
     /**
-     * @abstract Initializes a daily routine relevance provider with the specified situation.
+     * Initializes a daily routine relevance provider with the specified situation.
      */
     @Generated
     @Selector("initWithSituation:")
@@ -147,7 +148,7 @@ public class INDailyRoutineRelevanceProvider extends INRelevanceProvider {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract The relevant daily routine situation of the provider.
+     * The relevant daily routine situation of the provider.
      */
     @Generated
     @Selector("situation")

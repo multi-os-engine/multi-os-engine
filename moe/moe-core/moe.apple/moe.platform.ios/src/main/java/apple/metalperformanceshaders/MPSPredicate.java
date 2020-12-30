@@ -26,10 +26,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSPredicate
- * @dependency This depends on Metal.framework
- * @abstract   A MPSPredicate can be used to run MPS kernels subject to a predicate.
- * @discussion The MPSPredicate defines a way to refrain running a kernel on the GPU
+ * MPSPredicate
+ * [@dependency] This depends on Metal.framework
+ * 
+ * A MPSPredicate can be used to run MPS kernels subject to a predicate.
+ * 
+ * The MPSPredicate defines a way to refrain running a kernel on the GPU
  *             based on values computed on the GPU. That way one can build control flow operations
  *             that do the decisions on the GPU side mitigating the need to synchronize CPU and GPU
  *             execution. The predicate is used with the version of encode calls that take
@@ -107,10 +109,11 @@ public class MPSPredicate extends NSObject {
     public native MPSPredicate init();
 
     /**
-     * @abstract   Initializes a MPSPredicate object with a buffer and given offset.
+     * Initializes a MPSPredicate object with a buffer and given offset.
+     * 
      * @param      buffer      The buffer to use as a predicate.
      * @param      offset      Byteoffset to the predicate buffer where the predicate is stored.
-     * @result     A pointer to the newly initialized MPSPredicate object.
+     * @return     A pointer to the newly initialized MPSPredicate object.
      */
     @Generated
     @Selector("initWithBuffer:offset:")
@@ -118,14 +121,15 @@ public class MPSPredicate extends NSObject {
             @NUInt long offset);
 
     /**
-     * @abstract   Initializes a MPSPredicate object for a given device.
-     * @discussion NOTE: The metal buffer used by the resulting MPSPredicate object may be
+     * Initializes a MPSPredicate object for a given device.
+     * 
+     * NOTE: The metal buffer used by the resulting MPSPredicate object may be
      *             shared among many MPSPredicate objects and therefore care must be used when
      *             writing to this buffer: writing to any other location in this buffer than the
      *             four bytes at the offset @ref predicateOffset results in undefined behavior.
      * 
      * @param      device      The device the predicate is used with
-     * @result     A pointer to the newly initialized MPSPredicate object.
+     * @return     A pointer to the newly initialized MPSPredicate object.
      */
     @Generated
     @Selector("initWithDevice:")
@@ -159,8 +163,9 @@ public class MPSPredicate extends NSObject {
     public static native Object new_objc();
 
     /**
-     * @property predicateBuffer
-     * @abstract The buffer that is used as the predicate
+     * [@property] predicateBuffer
+     * 
+     * The buffer that is used as the predicate
      */
     @Generated
     @Selector("predicateBuffer")
@@ -168,9 +173,11 @@ public class MPSPredicate extends NSObject {
     public native MTLBuffer predicateBuffer();
 
     /**
-     * @property   predicateOffset
-     * @abstract   Location of the predicate in bytes, must be multiple of four.
-     * @discussion If the uint32_t value stored at this location in @ref predicateBuffer is other than zero,
+     * [@property]   predicateOffset
+     * 
+     * Location of the predicate in bytes, must be multiple of four.
+     * 
+     * If the uint32_t value stored at this location in @ref predicateBuffer is other than zero,
      *             then the predicate is considered to be true and the code is executed on the GPU.
      *             With this property a single MPSPredicate object can be used with multiple different predication
      *             operations.
@@ -182,10 +189,11 @@ public class MPSPredicate extends NSObject {
     public native long predicateOffset();
 
     /**
-     * @abstract   Initializes a MPSPredicate object with a buffer and given offset.
+     * Initializes a MPSPredicate object with a buffer and given offset.
+     * 
      * @param      buffer      The buffer to use as a predicate.
      * @param      offset      Byteoffset to the predicate buffer where the predicate is stored.
-     * @result     A pointer to the newly initialized MPSPredicate object.
+     * @return     A pointer to the newly initialized MPSPredicate object.
      */
     @Generated
     @Selector("predicateWithBuffer:offset:")

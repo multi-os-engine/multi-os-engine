@@ -60,7 +60,7 @@ public class VNGeometryUtils extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @discussion    Calculates a bounding circle that includes a collection of points or a VNContour object. Note that because this is based on a geometric shape the aspect ratio is important when using normalized points.
+     * Calculates a bounding circle that includes a collection of points or a VNContour object. Note that because this is based on a geometric shape the aspect ratio is important when using normalized points.
      *    This takes the aspect ratio of the contour into account when using a VNContour as an input. 
      *    boundingCircleForPoints and boundingCircleForSIMDPoints assume that the aspect ratio is correctly applied to the points.
      * 
@@ -87,7 +87,7 @@ public class VNGeometryUtils extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @discussion    Calculates a closed contour area using Green's theorem. The contour is represented by a set of points in VNContour object,
+     * Calculates a closed contour area using Green's theorem. The contour is represented by a set of points in VNContour object,
      *                It's important to note that a random set of points, or a contour with self-crossing edges will likely produce undefined results
      *    Note that because this is based on a geometric shape the aspect ratio is important when using normalized points.
      *    This takes the aspect ratio of the contour into account when using a VNContour as an input. 
@@ -109,7 +109,7 @@ public class VNGeometryUtils extends NSObject {
             boolean orientedArea, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * @discussion    Calculates perimeter, or a sum of all arc-lengths (edges), of a closed contour. The contour is represented by a set of points in VNContour object.
+     * Calculates perimeter, or a sum of all arc-lengths (edges), of a closed contour. The contour is represented by a set of points in VNContour object.
      *    Note that because this is based on a geometric shape the aspect ratio is important when using normalized points.
      *    This takes the aspect ratio of the contour into account when using a VNContour as an input.
      * 

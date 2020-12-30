@@ -137,7 +137,7 @@ public class UIPointerRegion extends NSObject implements NSCopying {
     public native CGRect rect();
 
     /**
-     * @abstract Creates a UIPointerRegion with the supplied rect and optional identifier.
+     * Creates a UIPointerRegion with the supplied rect and optional identifier.
      * 
      * @param rect        This region's rect. Must be in the pointer interaction's view's coordinate space.
      * @param identifier  Optional identifier that may be used to identify this region in subsequent pointer interaction delegate calls.

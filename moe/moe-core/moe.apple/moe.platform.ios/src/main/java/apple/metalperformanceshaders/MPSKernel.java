@@ -45,9 +45,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSKernel
- * @dependency This depends on Metal.framework
- * @discussion The MPSKernel class is the base class for all MPS objects.  It defines a standard interface for
+ * MPSKernel
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSKernel class is the base class for all MPS objects.  It defines a standard interface for
  *             MPS kernels.   You should not use the MPSKernel class directly. Instead, a  number of MPSKernel
  *             subclasses are available in MetalPerformanceShaders.framework that define specific high-performance
  *             image processing operations.
@@ -55,19 +56,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  *             The basic sequence for applying a MPSKernel to an image is as follows:
  * 
  *             1.  Create a MPSKernel corresponding to the operation you wish to perform:
- *                 @code
+ *                 [@code]
  *                 MPSImageSobel *sobel = [[MPSImageSobel alloc] initWithDevice: mtlDevice];
- *                 @endcode
+ *                 [@endcode]
  * 
  *             2.  Encode the filter into a command buffer:
- *                 @code
+ *                 [@code]
  *                 sobel.offset = ...;
  *                 sobel.clipRect = ...;
  *                 sobel.options = ...;
  *                 [sobel encodeToCommandBuffer: commandBuffer
  *                                sourceTexture: inputImage
  *                           destinationTexture: resultImage ];
- *                 @endcode
+ *                 [@endcode]
  *                 Encoding the kernel merely encodes the operation into a MTLCommandBuffer. It does not modify any pixels, yet.
  *                 All MPSKernel state has been copied to the command buffer. MPSKernels may be reused.  If the texture was previously
  *                 operated on by another command encoder (e.g. MTLRenderCommandEncoder), you should call -endEncoding on the other
@@ -93,9 +94,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 
  *             3.  After encoding any additional work to the command buffer using other encoders, submit the MTLCommandBuffer
  *                 to your MTLCommandQueue, using:
- *                 @code
+ *                 [@code]
  *                 [mtlCommandBuffer commit];
- *                 @endcode
+ *                 [@endcode]
  * 
  *             A MPSKernel can be saved to disk / network using NSCoders such as NSKeyedArchiver.
  *             When decoding, the system default MTLDevice will be chosen unless the NSCoder adopts
@@ -220,8 +221,9 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @abstract   Make a copy of this MPSKernel for a new device
-     * @discussion -copyWithZone: will call this API to make a copy of the
+     * Make a copy of this MPSKernel for a new device
+     * 
+     * -copyWithZone: will call this API to make a copy of the
      *             MPSKernel on the same device.  This interface may also be
      *             called directly to make a copy of the MPSKernel on a new
      *             device. Typically, the same MPSKernels should not be used
@@ -231,10 +233,11 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
      *             encode. If you need to use a MPSKernel from multiple threads
      *             make a copy of it for each additional thread using -copyWithZone:
      *             or -copyWithZone:device:
+     * 
      * @param      zone        The NSZone in which to allocate the object
      * @param      device      The device for the new MPSKernel. If nil, then use
      *                         self.device.
-     * @result     a pointer to a copy of this MPSKernel. This will fail, returning
+     * @return     a pointer to a copy of this MPSKernel. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -245,8 +248,9 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
     public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
-     * @property device
-     * @abstract  The device on which the kernel will be used
+     * [@property] device
+     * 
+     * The device on which the kernel will be used
      */
     @Generated
     @Selector("device")
@@ -258,9 +262,10 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
     public native MPSKernel init();
 
     /**
-     * @abstract   Standard init with default properties per filter type
+     * Standard init with default properties per filter type
+     * 
      * @param      device      The device that the filter will be used on. May not be NULL.
-     * @result     a pointer to the newly initialized object. This will fail, returning
+     * @return     a pointer to the newly initialized object. This will fail, returning
      *             nil if the device is not supported. Devices must be
      *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
@@ -269,17 +274,19 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
     public native MPSKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     public native String label();
 
     /**
-     * @property   options
-     * @abstract   The set of options used to run the kernel.
-     * @ref        subsubsection_options
+     * [@property]   options
+     * 
+     * The set of options used to run the kernel.
+     * [@ref]        subsubsection_options
      */
     @Generated
     @Selector("options")
@@ -287,17 +294,19 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
     public native long options();
 
     /**
-     * @property label
-     * @abstract A string to help identify this object.
+     * [@property] label
+     * 
+     * A string to help identify this object.
      */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
 
     /**
-     * @property   options
-     * @abstract   The set of options used to run the kernel.
-     * @ref        subsubsection_options
+     * [@property]   options
+     * 
+     * The set of options used to run the kernel.
+     * [@ref]        subsubsection_options
      */
     @Generated
     @Selector("setOptions:")
@@ -312,12 +321,14 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
     public native MPSKernel initWithCoder(NSCoder aDecoder);
 
     /**
-     * @abstract NSSecureCoding compatability
-     * @discussion While the standard NSSecureCoding/NSCoding method
+     * NSSecureCoding compatability
+     * 
+     * While the standard NSSecureCoding/NSCoding method
      *             -initWithCoder: should work, since the file can't
      *             know which device your data is allocated on, we
      *             have to guess and may guess incorrectly.  To avoid
      *             that problem, use initWithCoder:device instead.
+     * 
      * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
      * @param      device      The MTLDevice on which to make the MPSKernel
      * @return     A new MPSKernel object, or nil if failure.

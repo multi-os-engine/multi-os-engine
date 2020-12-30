@@ -40,9 +40,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioEnvironmentReverbParameters
- * @abstract Parameters used to control the reverb in AVAudioEnvironmentNode
- * @discussion
+ * AVAudioEnvironmentReverbParameters
+ * 
+ * Parameters used to control the reverb in AVAudioEnvironmentNode
+ * 
  *     Reverberation can be used to simulate the acoustic characteristics of an environment.
  *     AVAudioEnvironmentNode has a built in reverb that describes the space that the listener 
  *     is in.
@@ -167,9 +168,10 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     public static native long version_static();
 
     /**
-     * @property enable
-     * @abstract Turns on/off the reverb
-     * @discussion
+     * [@property] enable
+     * 
+     * Turns on/off the reverb
+     * 
      *     Default:    NO
      */
     @Generated
@@ -177,8 +179,9 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     public native boolean enable();
 
     /**
-     * @property filterParameters
-     * @abstract filter that applies to the output of the reverb
+     * [@property] filterParameters
+     * 
+     * filter that applies to the output of the reverb
      */
     @Generated
     @Selector("filterParameters")
@@ -189,9 +192,10 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     public native AVAudioEnvironmentReverbParameters init();
 
     /**
-     * @property level
-     * @abstract Controls the master level of the reverb
-     * @discussion
+     * [@property] level
+     * 
+     * Controls the master level of the reverb
+     * 
      *     Range:      -40 to 40 dB
      *     Default:    0.0
      */
@@ -200,22 +204,25 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     public native float level();
 
     /**
-     * @method loadFactoryReverbPreset:
-     * @abstract Load one of the reverb's factory presets
-     * @param preset
-     *     Reverb preset to be set.
-     * @discussion
+     * loadFactoryReverbPreset:
+     * 
+     * Load one of the reverb's factory presets
+     * 
      *     Loading a factory reverb preset changes the sound of the reverb. This works independently
      *     of the filter which follows the reverb in the signal chain.
+     * 
+     * @param preset
+     *     Reverb preset to be set.
      */
     @Generated
     @Selector("loadFactoryReverbPreset:")
     public native void loadFactoryReverbPreset(@NInt long preset);
 
     /**
-     * @property enable
-     * @abstract Turns on/off the reverb
-     * @discussion
+     * [@property] enable
+     * 
+     * Turns on/off the reverb
+     * 
      *     Default:    NO
      */
     @Generated
@@ -223,9 +230,10 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     public native void setEnable(boolean value);
 
     /**
-     * @property level
-     * @abstract Controls the master level of the reverb
-     * @discussion
+     * [@property] level
+     * 
+     * Controls the master level of the reverb
+     * 
      *     Range:      -40 to 40 dB
      *     Default:    0.0
      */

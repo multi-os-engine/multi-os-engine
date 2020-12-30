@@ -44,9 +44,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CBUUID
+ * CBUUID
  * 
- * @discussion
  *      A 16-bit, 32-bit, or 128-bit Bluetooth UUID.
  *      16-bit and 32-bit UUIDs are implicitly pre-filled with the Bluetooth Base UUID.
  */
@@ -65,9 +64,8 @@ public class CBUUID extends NSObject implements NSCopying {
     }
 
     /**
-     * @method UUIDWithCFUUID:
+     * UUIDWithCFUUID:
      * 
-     *  @discussion
      *      Creates a CBUUID with a CFUUIDRef.
      */
     @Generated
@@ -76,9 +74,8 @@ public class CBUUID extends NSObject implements NSCopying {
     public static native CBUUID UUIDWithCFUUID(CFUUIDRef theUUID);
 
     /**
-     * @method UUIDWithData:
+     * UUIDWithData:
      * 
-     *  @discussion
      *      Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID data container.
      */
     @Generated
@@ -86,9 +83,8 @@ public class CBUUID extends NSObject implements NSCopying {
     public static native CBUUID UUIDWithData(NSData theData);
 
     /**
-     * @method UUIDWithNSUUID:
+     * UUIDWithNSUUID:
      * 
-     *  @discussion
      *      Creates a CBUUID with an NSUUID.
      */
     @Generated
@@ -96,9 +92,8 @@ public class CBUUID extends NSObject implements NSCopying {
     public static native CBUUID UUIDWithNSUUID(NSUUID theUUID);
 
     /**
-     * @method UUIDWithString:
+     * UUIDWithString:
      * 
-     *  @discussion
      *      Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID string representation.
      *      The expected format for 128-bit UUIDs is a string punctuated by hyphens, for example 68753A44-4D6F-1226-9C60-0050E4C00067.
      */
@@ -204,9 +199,8 @@ public class CBUUID extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * @property UUIDString
+     * [@property] UUIDString
      * 
-     *  @discussion
      *      The UUID as NSString.
      */
     @Generated
@@ -220,9 +214,8 @@ public class CBUUID extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property data
+     * [@property] data
      * 
-     *  @discussion
      *      The UUID as NSData.
      */
     @Generated

@@ -26,9 +26,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSCNNArithmeticGradient
- * @dependency This depends on Metal.framework
- * @discussion The MPSCNNArithmeticGradient filter is the backward filter for the MPSCNNArithmetic
+ * MPSCNNArithmeticGradient
+ * [@dependency] This depends on Metal.framework
+ * 
+ * The MPSCNNArithmeticGradient filter is the backward filter for the MPSCNNArithmetic
  *             forward filter.
  * 
  *             The forward filter takes two inputs, primary and secondary source images, and produces
@@ -190,8 +191,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @property   isSecondarySourceFilter
-     * @abstract   The isSecondarySourceFilter property is used to indicate whether the arithmetic gradient
+     * [@property]   isSecondarySourceFilter
+     * 
+     * The isSecondarySourceFilter property is used to indicate whether the arithmetic gradient
      *             filter is operating on the primary or secondary source image from the forward pass.
      */
     @Generated
@@ -207,8 +209,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   maximumValue
-     * @abstract   maximumValue is used to clamp the result of an arithmetic operation:
+     * [@property]   maximumValue
+     * 
+     * maximumValue is used to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of maximumValue is FLT_MAX.
      */
@@ -217,8 +220,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     public native float maximumValue();
 
     /**
-     * @property   minimumValue
-     * @abstract   minimumValue is to clamp the result of an arithmetic operation:
+     * [@property]   minimumValue
+     * 
+     * minimumValue is to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of minimumValue is -FLT_MAX.
      */
@@ -249,8 +253,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     public native float secondaryScale();
 
     /**
-     * @property   secondaryStrideInPixels
-     * @abstract   The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
+     * [@property]   secondaryStrideInPixels
+     * 
+     * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated
@@ -266,8 +271,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     public native void setBias(float value);
 
     /**
-     * @property   maximumValue
-     * @abstract   maximumValue is used to clamp the result of an arithmetic operation:
+     * [@property]   maximumValue
+     * 
+     * maximumValue is used to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of maximumValue is FLT_MAX.
      */
@@ -276,8 +282,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     public native void setMaximumValue(float value);
 
     /**
-     * @property   minimumValue
-     * @abstract   minimumValue is to clamp the result of an arithmetic operation:
+     * [@property]   minimumValue
+     * 
+     * minimumValue is to clamp the result of an arithmetic operation:
      *             result = clamp(result, minimumValue, maximumValue).
      *             The default value of minimumValue is -FLT_MAX.
      */
@@ -294,8 +301,9 @@ public class MPSCNNArithmeticGradient extends MPSCNNGradientKernel {
     public native void setSecondaryScale(float value);
 
     /**
-     * @property   secondaryStrideInPixels
-     * @abstract   The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
+     * [@property]   secondaryStrideInPixels
+     * 
+     * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      *             The default value for each dimension is 1.
      */
     @Generated

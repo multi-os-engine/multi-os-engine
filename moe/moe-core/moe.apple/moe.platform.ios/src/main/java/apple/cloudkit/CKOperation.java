@@ -173,9 +173,9 @@ public class CKOperation extends NSOperation {
     public native void setLongLived(boolean value);
 
     /**
-     * @abstract This callback is called after a long lived operation has begun running and is persisted.
+     * This callback is called after a long lived operation has begun running and is persisted.
      * 
-     * @discussion Once this callback is called the operation will continue running even if the current process exits.
+     * Once this callback is called the operation will continue running even if the current process exits.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -184,9 +184,9 @@ public class CKOperation extends NSOperation {
     public native Block_longLivedOperationWasPersistedBlock_ret longLivedOperationWasPersistedBlock();
 
     /**
-     * @abstract This is an identifier unique to this CKOperation.
+     * This is an identifier unique to this CKOperation.
      * 
-     * @discussion This value is chosen by the system, and will be unique to this instance of a CKOperation.  This identifier will be sent to Apple's servers, and can be used to identify any server-side logging associated with this operation.
+     * This value is chosen by the system, and will be unique to this instance of a CKOperation.  This identifier will be sent to Apple's servers, and can be used to identify any server-side logging associated with this operation.
      */
     @Generated
     @Selector("operationID")
@@ -201,9 +201,9 @@ public class CKOperation extends NSOperation {
     public native void setContainer(CKContainer value);
 
     /**
-     * @abstract This callback is called after a long lived operation has begun running and is persisted.
+     * This callback is called after a long lived operation has begun running and is persisted.
      * 
-     * @discussion Once this callback is called the operation will continue running even if the current process exits.
+     * Once this callback is called the operation will continue running even if the current process exits.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -242,32 +242,32 @@ public class CKOperation extends NSOperation {
     }
 
     /**
-     * @abstract This defines per-operation configuration settings.
+     * This defines per-operation configuration settings.
      * 
-     * @discussion See the CKOperationConfiguration class description for info on how this configuration composes with CKOperationGroup.defaultConfiguration
+     * See the CKOperationConfiguration class description for info on how this configuration composes with CKOperationGroup.defaultConfiguration
      */
     @Generated
     @Selector("configuration")
     public native CKOperationConfiguration configuration();
 
     /**
-     * @abstract The group this operation is associated with
+     * The group this operation is associated with
      */
     @Generated
     @Selector("group")
     public native CKOperationGroup group();
 
     /**
-     * @abstract This defines per-operation configuration settings.
+     * This defines per-operation configuration settings.
      * 
-     * @discussion See the CKOperationConfiguration class description for info on how this configuration composes with CKOperationGroup.defaultConfiguration
+     * See the CKOperationConfiguration class description for info on how this configuration composes with CKOperationGroup.defaultConfiguration
      */
     @Generated
     @Selector("setConfiguration:")
     public native void setConfiguration(CKOperationConfiguration value);
 
     /**
-     * @abstract The group this operation is associated with
+     * The group this operation is associated with
      */
     @Generated
     @Selector("setGroup:")

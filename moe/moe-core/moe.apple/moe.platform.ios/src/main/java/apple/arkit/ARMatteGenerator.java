@@ -28,7 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object designed to generate either full resolution or half resolution matte given the ARFrame.
- * @discussion The caller initializes the object once and calls the alpha matte generation API for every ARFrame with the captured image and segmentation stencil.
+ * 
+ * The caller initializes the object once and calls the alpha matte generation API for every ARFrame with the captured image and segmentation stencil.
  */
 @Generated
 @Library("ARKit")
@@ -90,7 +91,9 @@ public class ARMatteGenerator extends NSObject {
 
     /**
      * Generates dilated depth at the resolution of the segmentation stencil.
-     * @discussion The caller can use depth information when compositing a virtual object with the captured scene. This API returns the dilated linear depth to the caller. The reprojection of this depth to the caller's scene space is carried out externally.
+     * 
+     * The caller can use depth information when compositing a virtual object with the captured scene. This API returns the dilated linear depth to the caller. The reprojection of this depth to the caller's scene space is carried out externally.
+     * 
      * @param frame Current ARFrame containing camera image and estimated depth buffer. The caller is to ensure that a valid depth buffer is present.
      * @param commandBuffer Metal command buffer for encoding depth dilation operations. The command buffer is committed by the caller externally.
      * @return Dilated depth MTLTexture for the given ARFrame at the segmentation stencil resolution. The texture consists of a single channel and is of type float16.
@@ -126,7 +129,8 @@ public class ARMatteGenerator extends NSObject {
     /**
      * Initializes an instance of ARMatteGenerator.
      * 
-     * @discussion For efficient creation of alpha mattes in real time it is recommended to instantiate this object only once and to generate an alpha matte for every incoming frame.
+     * For efficient creation of alpha mattes in real time it is recommended to instantiate this object only once and to generate an alpha matte for every incoming frame.
+     * 
      * @see ARFrame
      * @see -[ARMatteGenerator generateMatteFromFrame:commandBuffer:]
      * @param device The device the filter will run on.

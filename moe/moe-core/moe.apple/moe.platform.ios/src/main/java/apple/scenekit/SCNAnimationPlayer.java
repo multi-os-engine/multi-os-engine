@@ -91,6 +91,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * Initialize an animation player with an animation
+     * 
      * @param animation The animation to play
      */
     @Generated

@@ -26,8 +26,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface TKTokenKeychainCertificate
- * @brief Interface for propagation token's certificates into the keychain.
+ * [@interface] TKTokenKeychainCertificate
+ * 
+ * Interface for propagation token's certificates into the keychain.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -80,7 +81,7 @@ public class TKTokenKeychainCertificate extends TKTokenKeychainItem {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @discussion Contains DER-encoded representation of an X.509 certificate.
+     * Contains DER-encoded representation of an X.509 certificate.
      */
     @Generated
     @Selector("data")
@@ -104,7 +105,7 @@ public class TKTokenKeychainCertificate extends TKTokenKeychainItem {
     public native TKTokenKeychainCertificate init();
 
     /**
-     * @discussion initialize TKTokenKeychainCertificate with data from SecCertificateRef.  Use SecCertificateCreateWithData to obtain SecCertificateRef.  @c constraints property is initialized indicating that reading of certificate is always allowed, all other operations are disallowed.
+     * initialize TKTokenKeychainCertificate with data from SecCertificateRef.  Use SecCertificateCreateWithData to obtain SecCertificateRef.  @c constraints property is initialized indicating that reading of certificate is always allowed, all other operations are disallowed.
      */
     @Generated
     @Selector("initWithCertificate:objectID:")

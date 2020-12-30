@@ -29,10 +29,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class VNHorizonObservation
- * @superclass VNObservation
- * @brief VNHorizonObservation is the result of a VNDetectHorizonRequest
- * @discussion Use the transform or angle to upright the image and make the detected horizon level.
+ * VNHorizonObservation
+ * [@superclass] VNObservation
+ * 
+ * VNHorizonObservation is the result of a VNDetectHorizonRequest
+ * 
+ * Use the transform or angle to upright the image and make the detected horizon level.
  */
 @Generated
 @Library("Vision")

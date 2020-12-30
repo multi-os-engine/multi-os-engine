@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @enum MTLTextureType
- * @abstract MTLTextureType describes the dimensionality of each image, and if multiple images are arranged into an array or cube.
+ * [@enum] MTLTextureType
+ * 
+ * MTLTextureType describes the dimensionality of each image, and if multiple images are arranged into an array or cube.
  */
 @Generated
 public final class MTLTextureType {

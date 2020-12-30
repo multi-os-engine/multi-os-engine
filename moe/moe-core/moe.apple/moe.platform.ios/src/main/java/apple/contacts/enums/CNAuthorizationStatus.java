@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @abstract The authorization the user has given the application to access an entity type.
+ * The authorization the user has given the application to access an entity type.
  */
 @Generated
 public final class CNAuthorizationStatus {

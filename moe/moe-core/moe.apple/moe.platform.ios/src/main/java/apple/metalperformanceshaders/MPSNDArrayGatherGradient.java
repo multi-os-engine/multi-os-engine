@@ -27,11 +27,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSNDArrayGatherGradient
+ * MPSNDArrayGatherGradient
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   Applies the gradient operation corresponding to a forward gather operation.
+ * Applies the gradient operation corresponding to a forward gather operation.
  */
 @Generated
 @Library("MetalPerformanceShaders")

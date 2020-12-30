@@ -42,11 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract A mutable value object representing a postal address.
+ * A mutable value object representing a postal address.
  * 
- * @discussion CNMutablePostalAddress is not thread safe.
+ * CNMutablePostalAddress is not thread safe.
  * 
- * @note To remove properties when saving a mutable postal address, set string properties to empty values.
+ * [@note] To remove properties when saving a mutable postal address, set string properties to empty values.
  */
 @Generated
 @Library("Contacts")

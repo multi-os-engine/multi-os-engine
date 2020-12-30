@@ -151,16 +151,18 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     public static native long version_static();
 
     /**
-     * @property clearDepth
-     * @abstract The clear depth value to be used if the loadAction property is MTLLoadActionClear
+     * [@property] clearDepth
+     * 
+     * The clear depth value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
     @Selector("clearDepth")
     public native double clearDepth();
 
     /**
-     * @property resolveFilter
-     * @abstract The filter to be used for depth multisample resolve.  Defaults to MTLMultisampleDepthResolveFilterSample0.
+     * [@property] resolveFilter
+     * 
+     * The filter to be used for depth multisample resolve.  Defaults to MTLMultisampleDepthResolveFilterSample0.
      */
     @Generated
     @Selector("depthResolveFilter")
@@ -172,16 +174,18 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     public native MTLRenderPassDepthAttachmentDescriptor init();
 
     /**
-     * @property clearDepth
-     * @abstract The clear depth value to be used if the loadAction property is MTLLoadActionClear
+     * [@property] clearDepth
+     * 
+     * The clear depth value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
     @Selector("setClearDepth:")
     public native void setClearDepth(double value);
 
     /**
-     * @property resolveFilter
-     * @abstract The filter to be used for depth multisample resolve.  Defaults to MTLMultisampleDepthResolveFilterSample0.
+     * [@property] resolveFilter
+     * 
+     * The filter to be used for depth multisample resolve.  Defaults to MTLMultisampleDepthResolveFilterSample0.
      */
     @Generated
     @Selector("setDepthResolveFilter:")

@@ -42,9 +42,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class			AVPlayerItemErrorLogEvent
- * @abstract		An AVPlayerItemErrorLogEvent represents a single log entry.
- * @discussion	An AVPlayerItemErrorLogEvent provides named properties for accessing the data
+ * AVPlayerItemErrorLogEvent
+ * 
+ * An AVPlayerItemErrorLogEvent represents a single log entry.
+ * 
+ * An AVPlayerItemErrorLogEvent provides named properties for accessing the data
  * 			fields of each log event. None of the properties of this class are observable.
  */
 @Generated
@@ -159,9 +161,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * @property		URI
-     * @abstract		The URI of the playback item. Can be nil.
-     * @discussion	If nil is returned the URI is unknown. Corresponds to "uri".
+     * [@property]		URI
+     * 
+     * The URI of the playback item. Can be nil.
+     * 
+     * If nil is returned the URI is unknown. Corresponds to "uri".
      * 				This property is not observable.
      */
     @Generated
@@ -175,9 +179,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property		date
-     * @abstract		The date and time when the error occured. Can be nil.
-     * @discussion	If nil is returned the date is unknown. Corresponds to "date".
+     * [@property]		date
+     * 
+     * The date and time when the error occured. Can be nil.
+     * 
+     * If nil is returned the date is unknown. Corresponds to "date".
      * 				This property is not observable.
      */
     @Generated
@@ -185,9 +191,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native NSDate date();
 
     /**
-     * @property		errorComment
-     * @abstract		A description of the error encountered. Can be nil.
-     * @discussion	If nil is returned further information is not available. Corresponds to "comment".
+     * [@property]		errorComment
+     * 
+     * A description of the error encountered. Can be nil.
+     * 
+     * If nil is returned further information is not available. Corresponds to "comment".
      * 				This property is not observable.
      */
     @Generated
@@ -195,9 +203,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String errorComment();
 
     /**
-     * @property		errorDomain
-     * @abstract		The domain of the error.
-     * @discussion	Corresponds to "domain".
+     * [@property]		errorDomain
+     * 
+     * The domain of the error.
+     * 
+     * Corresponds to "domain".
      * 				This property is not observable.
      */
     @Generated
@@ -205,9 +215,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String errorDomain();
 
     /**
-     * @property		errorStatusCode
-     * @abstract		A unique error code identifier.
-     * @discussion	Corresponds to "status".
+     * [@property]		errorStatusCode
+     * 
+     * A unique error code identifier.
+     * 
+     * Corresponds to "status".
      * 				This property is not observable.
      */
     @Generated
@@ -220,9 +232,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native AVPlayerItemErrorLogEvent init();
 
     /**
-     * @property		playbackSessionID
-     * @abstract		A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
-     * @discussion	If nil is returned the GUID is unknown. Corresponds to "cs-guid".
+     * [@property]		playbackSessionID
+     * 
+     * A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
+     * 
+     * If nil is returned the GUID is unknown. Corresponds to "cs-guid".
      * 				This property is not observable.
      */
     @Generated
@@ -230,9 +244,11 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String playbackSessionID();
 
     /**
-     * @property		serverAddress
-     * @abstract		The IP address of the server that was the source of the error. Can be nil.
-     * @discussion	If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
+     * [@property]		serverAddress
+     * 
+     * The IP address of the server that was the source of the error. Can be nil.
+     * 
+     * If nil is returned the address is unknown. Can be either an IPv4 or IPv6 address. Corresponds to "s-ip".
      * 				This property is not observable.
      */
     @Generated

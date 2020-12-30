@@ -152,18 +152,22 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
     public static native long version_static();
 
     /**
-     * @property 		contentLength
-     * @abstract		Indicates the length of the requested resource, in bytes.
-     * @discussion	Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to the number of bytes contained by the requested resource.
+     * [@property] 		contentLength
+     * 
+     * Indicates the length of the requested resource, in bytes.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to the number of bytes contained by the requested resource.
      */
     @Generated
     @Selector("contentLength")
     public native long contentLength();
 
     /**
-     * @property 		contentType
-     * @abstract		A UTI that indicates the type of data contained by the requested resource.
-     * @discussion	Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to a UTI indicating the type of data contained by the requested resource.
+     * [@property] 		contentType
+     * 
+     * A UTI that indicates the type of data contained by the requested resource.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to a UTI indicating the type of data contained by the requested resource.
      */
     @Generated
     @Selector("contentType")
@@ -174,63 +178,77 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
     public native AVAssetResourceLoadingContentInformationRequest init();
 
     /**
-     * @property 		byteRangeAccessSupported
-     * @abstract		Indicates whether random access to arbitrary ranges of bytes of the resource is supported. Such support also allows portions of the resource to be requested more than once.
-     * @discussion	Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to YES if you support random access to arbitrary ranges of bytes of the resource. If you do not set this property to YES for resources that must be loaded incrementally, loading of the resource may fail. Such resources include anything that contains media data.
+     * [@property] 		byteRangeAccessSupported
+     * 
+     * Indicates whether random access to arbitrary ranges of bytes of the resource is supported. Such support also allows portions of the resource to be requested more than once.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to YES if you support random access to arbitrary ranges of bytes of the resource. If you do not set this property to YES for resources that must be loaded incrementally, loading of the resource may fail. Such resources include anything that contains media data.
      */
     @Generated
     @Selector("isByteRangeAccessSupported")
     public native boolean isByteRangeAccessSupported();
 
     /**
-     * @property 		byteRangeAccessSupported
-     * @abstract		Indicates whether random access to arbitrary ranges of bytes of the resource is supported. Such support also allows portions of the resource to be requested more than once.
-     * @discussion	Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to YES if you support random access to arbitrary ranges of bytes of the resource. If you do not set this property to YES for resources that must be loaded incrementally, loading of the resource may fail. Such resources include anything that contains media data.
+     * [@property] 		byteRangeAccessSupported
+     * 
+     * Indicates whether random access to arbitrary ranges of bytes of the resource is supported. Such support also allows portions of the resource to be requested more than once.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to YES if you support random access to arbitrary ranges of bytes of the resource. If you do not set this property to YES for resources that must be loaded incrementally, loading of the resource may fail. Such resources include anything that contains media data.
      */
     @Generated
     @Selector("setByteRangeAccessSupported:")
     public native void setByteRangeAccessSupported(boolean value);
 
     /**
-     * @property		renewalDate
-     * @abstract		For resources that expire, the date at which a new AVAssetResourceLoadingRequest will be issued for a renewal of this resource, if the media system still requires it.
-     * @discussion	Before you finish loading an AVAssetResourceLoadingRequest, if the resource is prone to expiry you should set the value of this property to the date at which a renewal should be triggered. This value should be set sufficiently early enough to allow an AVAssetResourceRenewalRequest, delivered to your delegate via -resourceLoader:shouldWaitForRenewalOfRequestedResource:, to finish before the actual expiry time. Otherwise media playback may fail.
+     * [@property]		renewalDate
+     * 
+     * For resources that expire, the date at which a new AVAssetResourceLoadingRequest will be issued for a renewal of this resource, if the media system still requires it.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if the resource is prone to expiry you should set the value of this property to the date at which a renewal should be triggered. This value should be set sufficiently early enough to allow an AVAssetResourceRenewalRequest, delivered to your delegate via -resourceLoader:shouldWaitForRenewalOfRequestedResource:, to finish before the actual expiry time. Otherwise media playback may fail.
      */
     @Generated
     @Selector("renewalDate")
     public native NSDate renewalDate();
 
     /**
-     * @property 		contentLength
-     * @abstract		Indicates the length of the requested resource, in bytes.
-     * @discussion	Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to the number of bytes contained by the requested resource.
+     * [@property] 		contentLength
+     * 
+     * Indicates the length of the requested resource, in bytes.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to the number of bytes contained by the requested resource.
      */
     @Generated
     @Selector("setContentLength:")
     public native void setContentLength(long value);
 
     /**
-     * @property 		contentType
-     * @abstract		A UTI that indicates the type of data contained by the requested resource.
-     * @discussion	Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to a UTI indicating the type of data contained by the requested resource.
+     * [@property] 		contentType
+     * 
+     * A UTI that indicates the type of data contained by the requested resource.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if its contentInformationRequest is not nil, you should set the value of this property to a UTI indicating the type of data contained by the requested resource.
      */
     @Generated
     @Selector("setContentType:")
     public native void setContentType(String value);
 
     /**
-     * @property		renewalDate
-     * @abstract		For resources that expire, the date at which a new AVAssetResourceLoadingRequest will be issued for a renewal of this resource, if the media system still requires it.
-     * @discussion	Before you finish loading an AVAssetResourceLoadingRequest, if the resource is prone to expiry you should set the value of this property to the date at which a renewal should be triggered. This value should be set sufficiently early enough to allow an AVAssetResourceRenewalRequest, delivered to your delegate via -resourceLoader:shouldWaitForRenewalOfRequestedResource:, to finish before the actual expiry time. Otherwise media playback may fail.
+     * [@property]		renewalDate
+     * 
+     * For resources that expire, the date at which a new AVAssetResourceLoadingRequest will be issued for a renewal of this resource, if the media system still requires it.
+     * 
+     * Before you finish loading an AVAssetResourceLoadingRequest, if the resource is prone to expiry you should set the value of this property to the date at which a renewal should be triggered. This value should be set sufficiently early enough to allow an AVAssetResourceRenewalRequest, delivered to your delegate via -resourceLoader:shouldWaitForRenewalOfRequestedResource:, to finish before the actual expiry time. Otherwise media playback may fail.
      */
     @Generated
     @Selector("setRenewalDate:")
     public native void setRenewalDate(NSDate value);
 
     /**
-     * @property		allowedContentTypes
-     * @abstract		An array showing the types of data which will be accepted as a valid response for the requested resource.
-     * @discussion	If allowedContentTypes is nonnil and the contentType property is not in allowedContentTypes, an exception will be raised.
+     * [@property]		allowedContentTypes
+     * 
+     * An array showing the types of data which will be accepted as a valid response for the requested resource.
+     * 
+     * If allowedContentTypes is nonnil and the contentType property is not in allowedContentTypes, an exception will be raised.
      */
     @Generated
     @Selector("allowedContentTypes")

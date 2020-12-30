@@ -28,8 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class         HKWorkoutBuilder
- * @discussion    An HKWorkoutBuilder is used to incrementally create new workouts in the HealthKit database. Samples,
+ * HKWorkoutBuilder
+ * 
+ * An HKWorkoutBuilder is used to incrementally create new workouts in the HealthKit database. Samples,
  *                events, and metadata may be added to a builder either during a live workout session or to create a
  *                workout that occurred in the past. Calling finishWorkoutWithCompletion: will create a new workout
  *                with samples, events, and metadata that have been provided.
@@ -53,8 +54,9 @@ public class HKWorkoutBuilder extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * @method        addMetadata:completion:
-     * @discussion    Adds new metadata to the builder instance. This method can be called more than once; each time the newly
+     * addMetadata:completion:
+     * 
+     * Adds new metadata to the builder instance. This method can be called more than once; each time the newly
      *                provided metadata will be merged with previously added metadata in the same manner as
      *                -[NSMutableDictionary addEntriesFromDictionary:]. This operation is performed asynchronously and the
      *                completion will be executed on an arbitrary background queue.
@@ -78,8 +80,9 @@ public class HKWorkoutBuilder extends NSObject {
     }
 
     /**
-     * @method        addSamples:completion:
-     * @discussion    Adds new samples to the builder instance. This method can be called multiple times to add samples
+     * addSamples:completion:
+     * 
+     * Adds new samples to the builder instance. This method can be called multiple times to add samples
      *                incrementally to the builder. The samples will be saved to the database if they have not already been
      *                saved. The constraints of -[HKHealthStore saveObject:withCompletion:] apply to this method as well.
      *                The start date of the samples must be later than the start date of the receiver. It is an error to call
@@ -104,8 +107,9 @@ public class HKWorkoutBuilder extends NSObject {
     }
 
     /**
-     * @method        addWorkoutEvents:completion:
-     * @discussion    Adds new workout events to the builder instance. This method can be called many times to add workout
+     * addWorkoutEvents:completion:
+     * 
+     * Adds new workout events to the builder instance. This method can be called many times to add workout
      *                events incrementally to the builder. It is an error to call this method after
      *                finishWorkoutWithCompletion: has been called. This operation is performed asynchronously and the
      *                completion will be executed on an arbitrary background queue.
@@ -142,9 +146,11 @@ public class HKWorkoutBuilder extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @method        beginCollectionWithStartDate:error:
-     * @abstract      Sets the workout start date and activates the workout builder.
-     * @discussion    Calling this method is required before any samples, events or metadata can be added to the builder.
+     * beginCollectionWithStartDate:error:
+     * 
+     * Sets the workout start date and activates the workout builder.
+     * 
+     * Calling this method is required before any samples, events or metadata can be added to the builder.
      * 
      * @param         startDate   The start date of the workout.
      * @param         completion  Called once data collection has started or has failed to start.
@@ -188,16 +194,18 @@ public class HKWorkoutBuilder extends NSObject {
     public static native String description_static();
 
     /**
-     * @property      device
-     * @abstract      The HKDevice to be associated with the workout.
+     * [@property]      device
+     * 
+     * The HKDevice to be associated with the workout.
      */
     @Generated
     @Selector("device")
     public native HKDevice device();
 
     /**
-     * @method        discardWorkout
-     * @discussion    Finishes building the workout and discards ther result instead of saving it. Samples that were added to
+     * discardWorkout
+     * 
+     * Finishes building the workout and discards ther result instead of saving it. Samples that were added to
      *                the workout will not be deleted. Adding samples, events, and metadata to the receiver after
      *                discardWorkout has been called is an error.
      */
@@ -206,8 +214,9 @@ public class HKWorkoutBuilder extends NSObject {
     public native void discardWorkout();
 
     /**
-     * @method        elapsedTimeAtDate:
-     * @abstract      The elapsed duration of the workout evaluated at the specified date. The duration does not include
+     * elapsedTimeAtDate:
+     * 
+     * The elapsed duration of the workout evaluated at the specified date. The duration does not include
      *                periods when the workout was paused, which are the intervals between pause and resume events.
      */
     @Generated
@@ -215,9 +224,11 @@ public class HKWorkoutBuilder extends NSObject {
     public native double elapsedTimeAtDate(NSDate date);
 
     /**
-     * @method        endCollectionWithEndDate:error:
-     * @abstract      Sets the workout end date and deactivates the workout builer.
-     * @discussion    Calling this method is required before you finish a workout builder.
+     * endCollectionWithEndDate:error:
+     * 
+     * Sets the workout end date and deactivates the workout builer.
+     * 
+     * Calling this method is required before you finish a workout builder.
      * 
      * @param         endDate     The end date of the workout.
      * @param         completion  Called once data collection has stopped or has failed to stop.
@@ -235,16 +246,18 @@ public class HKWorkoutBuilder extends NSObject {
     }
 
     /**
-     * @property      endDate
-     * @abstract      The end date for the workout, as provided by endCollectionWithEndDate:completion:
+     * [@property]      endDate
+     * 
+     * The end date for the workout, as provided by endCollectionWithEndDate:completion:
      */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
 
     /**
-     * @method        finishWorkoutWithCompletion:
-     * @discussion    Creates and saves an HKWorkout using samples and events that have been added to workout previously.
+     * finishWorkoutWithCompletion:
+     * 
+     * Creates and saves an HKWorkout using samples and events that have been added to workout previously.
      * 
      * @param         completion  Block to be called after the HKWorkout object has been created and saved. If success is NO,
      *                            then error will be the error encountered during the operation.
@@ -271,9 +284,11 @@ public class HKWorkoutBuilder extends NSObject {
     public native HKWorkoutBuilder init();
 
     /**
-     * @method        initWithHealthStore:configuration:device:
-     * @abstract      The designated initializer to create an HKWorkoutBuilder.
-     * @discussion    Creates a new HKWorkoutBuilder unconnected to any HKWorkoutSession or any sources of data.
+     * initWithHealthStore:configuration:device:
+     * 
+     * The designated initializer to create an HKWorkoutBuilder.
+     * 
+     * Creates a new HKWorkoutBuilder unconnected to any HKWorkoutSession or any sources of data.
      * 
      * @param         healthStore     Specifies the HKHealthStore object to use for building the workout. The store is retained
      *                                until the builder is finished and a workout has been saved or discarded.
@@ -307,8 +322,9 @@ public class HKWorkoutBuilder extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property      metadata
-     * @abstract      The metadata that will be used when the workout is finished.
+     * [@property]      metadata
+     * 
+     * The metadata that will be used when the workout is finished.
      */
     @Generated
     @Selector("metadata")
@@ -329,9 +345,11 @@ public class HKWorkoutBuilder extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @method        seriesBuilderForType:
-     * @abstract      Retrieves the associated series builder for the specified type.
-     * @discussion    Retrieves, and creates if it does not already exist, the series builder for the specified type. The
+     * seriesBuilderForType:
+     * 
+     * Retrieves the associated series builder for the specified type.
+     * 
+     * Retrieves, and creates if it does not already exist, the series builder for the specified type. The
      *                series constructed with the returned builder will be associated with the workout when it is finished.
      * 
      * @param         seriesType  The series type for which the builder should be retrieved.
@@ -345,16 +363,18 @@ public class HKWorkoutBuilder extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property      startDate
-     * @abstract      The start date for the workout, as provided by beginCollectionWithStartDate:completion:
+     * [@property]      startDate
+     * 
+     * The start date for the workout, as provided by beginCollectionWithStartDate:completion:
      */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
     /**
-     * @method        statisticsForType:
-     * @discussion    Returns an HKStatistics object containing the statistics for all the samples of the given type that
+     * statisticsForType:
+     * 
+     * Returns an HKStatistics object containing the statistics for all the samples of the given type that
      *                have been added to the receiver. If there are no samples of the given type then nil is returned.
      * 
      * @param         quantityType    The quantity type to gather statistics about.
@@ -373,17 +393,20 @@ public class HKWorkoutBuilder extends NSObject {
     public static native long version_static();
 
     /**
-     * @property      workoutConfiguration
-     * @abstract      The configuration for the workout being built.
+     * [@property]      workoutConfiguration
+     * 
+     * The configuration for the workout being built.
      */
     @Generated
     @Selector("workoutConfiguration")
     public native HKWorkoutConfiguration workoutConfiguration();
 
     /**
-     * @property      workoutEvents
-     * @abstract      Workout events that have been added to the builder.
-     * @discussion    New events that are added using addWorkoutEvents:completion: will be appended to this array once the
+     * [@property]      workoutEvents
+     * 
+     * Workout events that have been added to the builder.
+     * 
+     * New events that are added using addWorkoutEvents:completion: will be appended to this array once the
      *                completion is called.
      */
     @Generated

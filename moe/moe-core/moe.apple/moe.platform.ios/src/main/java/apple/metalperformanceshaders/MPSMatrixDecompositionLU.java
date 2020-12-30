@@ -29,14 +29,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixDecompositionLU
+ * MPSMatrixDecompositionLU
  * 
- * @dependency This depends on Metal.framework.
+ * [@dependency] This depends on Metal.framework.
  * 
- * @abstract   A kernel for computing the LU factorization of a matrix using
+ * A kernel for computing the LU factorization of a matrix using
  *             partial pivoting with row interchanges.
  * 
- * @discussion A MPSMatrixDecompositionLU object computes an LU factorization:
+ * A MPSMatrixDecompositionLU object computes an LU factorization:
  * 
  *                 P * A = L * U
  * 
@@ -103,24 +103,9 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
     public static native String description_static();
 
     /**
-     * @abstract   Encode a MPSMatrixDecompositionLU kernel into a command Buffer.
+     * Encode a MPSMatrixDecompositionLU kernel into a command Buffer.
      * 
-     * @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded filter
-     * 
-     * @param      sourceMatrix            A valid MPSMatrix containing the source data.  Must have
-     *                                     enough space to hold a rows x columns matrix.
-     * 
-     * @param      resultMatrix            A valid MPSMatrix to contain the result.  Must have enough
-     *                                     space to hold a rows x columns matrix.
-     * 
-     * @param      pivotIndices            A valid MPSMatrix to contain the pivot indices. Must have enough space
-     *                                     to hold an array of size 1xmin(rows, columns) values.
-     *                                     Element type must be MPSDataTypeUInt32.
-     * 
-     * @param      status                  A MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus
-     *                                     value.
-     * 
-     * @discussion This function encodes the MPSMatrixDecompositionLU object to a valid
+     * This function encodes the MPSMatrixDecompositionLU object to a valid
      *             command buffer.
      * 
      *             Upon completion the array pivotIndices contains, for each index i,
@@ -141,6 +126,21 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
      *             completely aliases the source matrix, or out-of-place.  If there
      *             is any partial overlap between input and output data the results
      *             are undefined.
+     * 
+     * @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded filter
+     * 
+     * @param      sourceMatrix            A valid MPSMatrix containing the source data.  Must have
+     *                                     enough space to hold a rows x columns matrix.
+     * 
+     * @param      resultMatrix            A valid MPSMatrix to contain the result.  Must have enough
+     *                                     space to hold a rows x columns matrix.
+     * 
+     * @param      pivotIndices            A valid MPSMatrix to contain the pivot indices. Must have enough space
+     *                                     to hold an array of size 1xmin(rows, columns) values.
+     *                                     Element type must be MPSDataTypeUInt32.
+     * 
+     * @param      status                  A MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus
+     *                                     value.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:resultMatrix:pivotIndices:status:")
@@ -171,7 +171,7 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
     public native MPSMatrixDecompositionLU initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * @abstract   Initialize an MPSMatrixDecompositionLU object on a device
+     * Initialize an MPSMatrixDecompositionLU object on a device
      * 
      * @param      device          The device on which the kernel will execute.
      * 

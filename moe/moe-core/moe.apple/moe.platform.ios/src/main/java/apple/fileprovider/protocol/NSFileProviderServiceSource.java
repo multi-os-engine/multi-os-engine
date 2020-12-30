@@ -21,7 +21,7 @@ public interface NSFileProviderServiceSource {
      * file provider.
      * The endpoint is retrieved from an anonymous @c NSXPCListener that the file
      * provider creates. The file provider is in charge of accepting incoming
-     * @c NSXPCConnection's via @c -[NSXPCListenerDelegate listener:shouldAcceptNewConnection:],
+     * [@c] NSXPCConnection's via @c -[NSXPCListenerDelegate listener:shouldAcceptNewConnection:],
      * and setting up properties on the new connection, like its exported object and
      * interfaces (that both the file provider and the client application have agreed
      * on).

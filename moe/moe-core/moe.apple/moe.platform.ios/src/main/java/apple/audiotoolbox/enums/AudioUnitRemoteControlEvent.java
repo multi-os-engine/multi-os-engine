@@ -19,8 +19,9 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum			AudioUnitRemoteControlEvent
- * @abstract		In inter-app audio, messages to control the host's transport state.
+ * [@enum]			AudioUnitRemoteControlEvent
+ * 
+ * In inter-app audio, messages to control the host's transport state.
  */
 @Generated
 public final class AudioUnitRemoteControlEvent {

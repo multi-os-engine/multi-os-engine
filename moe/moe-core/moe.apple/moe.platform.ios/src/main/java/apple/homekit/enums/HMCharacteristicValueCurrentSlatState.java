@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum      HMCharacteristicValueCurrentSlatState
+ * [@enum]      HMCharacteristicValueCurrentSlatState
  * 
- * @constant  HMCharacteristicValueCurrentSlatStateStationary         Slats are stationary.
- * @constant  HMCharacteristicValueCurrentSlatStateJammed             Slats are jammed.
- * @constant  HMCharacteristicValueCurrentSlatStateOscillating        Slats are oscillating.
+ * [@constant]  HMCharacteristicValueCurrentSlatStateStationary         Slats are stationary.
+ * [@constant]  HMCharacteristicValueCurrentSlatStateJammed             Slats are jammed.
+ * [@constant]  HMCharacteristicValueCurrentSlatStateOscillating        Slats are oscillating.
  */
 @Generated
 public final class HMCharacteristicValueCurrentSlatState {

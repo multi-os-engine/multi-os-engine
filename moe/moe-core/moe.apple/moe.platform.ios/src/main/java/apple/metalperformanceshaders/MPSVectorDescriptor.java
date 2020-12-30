@@ -24,11 +24,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSVectorDescriptor
+ * MPSVectorDescriptor
  * 
- * @dependency This depends on Metal.framework
+ * [@dependency] This depends on Metal.framework
  * 
- * @discussion A MPSVectorDescriptor describes the length and data type of a
+ * A MPSVectorDescriptor describes the length and data type of a
  *             an array of 1-dimensional vectors.  All vectors are stored as
  *             contiguous arrays of data.
  */
@@ -83,8 +83,9 @@ public class MPSVectorDescriptor extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property   dataType
-     * @discussion The type of the data which makes up the values of the vector.
+     * [@property]   dataType
+     * 
+     * The type of the data which makes up the values of the vector.
      */
     @Generated
     @Selector("dataType")
@@ -129,8 +130,9 @@ public class MPSVectorDescriptor extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   length
-     * @discussion The number of elements in the vector.
+     * [@property]   length
+     * 
+     * The number of elements in the vector.
      */
     @Generated
     @Selector("length")
@@ -152,16 +154,18 @@ public class MPSVectorDescriptor extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   dataType
-     * @discussion The type of the data which makes up the values of the vector.
+     * [@property]   dataType
+     * 
+     * The type of the data which makes up the values of the vector.
      */
     @Generated
     @Selector("setDataType:")
     public native void setDataType(int value);
 
     /**
-     * @property   length
-     * @discussion The number of elements in the vector.
+     * [@property]   length
+     * 
+     * The number of elements in the vector.
      */
     @Generated
     @Selector("setLength:")
@@ -176,8 +180,9 @@ public class MPSVectorDescriptor extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * @property   vectorBytes
-     * @discussion The stride, in bytes, between corresponding elements of
+     * [@property]   vectorBytes
+     * 
+     * The stride, in bytes, between corresponding elements of
      *             consecutive vectors.  Must be a multiple of the element size
      */
     @Generated
@@ -186,18 +191,18 @@ public class MPSVectorDescriptor extends NSObject {
     public native long vectorBytes();
 
     /**
-     * @abstract   Return the recommended stride, in bytes, to be used for an array
+     * Return the recommended stride, in bytes, to be used for an array
      *             of vectors of a given length.
      * 
-     * @param      length          The number of elements in a single vector.
-     * 
-     * @param      dataType        The type of vector data values.
-     * 
-     * @discussion To achieve best performance the optimal stride between vectors within an array of
+     * To achieve best performance the optimal stride between vectors within an array of
      *             vectors is not necessarily equivalent to the number of elements per vector.  This method
      *             returns the stride, in bytes, which gives best performance for a given vector length.
      *             Using this stride to construct your array is recommended, but not required (provided that
      *             the stride used is still large enough to allocate a full vector of data).
+     * 
+     * @param      length          The number of elements in a single vector.
+     * 
+     * @param      dataType        The type of vector data values.
      */
     @Generated
     @Selector("vectorBytesForLength:dataType:")
@@ -205,21 +210,25 @@ public class MPSVectorDescriptor extends NSObject {
     public static native long vectorBytesForLengthDataType(@NUInt long length, int dataType);
 
     /**
-     * @abstract   Create a MPSVectorDescriptor with the specified length and data type.
+     * Create a MPSVectorDescriptor with the specified length and data type.
+     * 
+     * Use this function for creating a descriptor of a MPSVector object
+     *             containing a single vector.
      * 
      * @param      length              The number of elements in a single vector.
      * 
      * @param      dataType            The type of the data to be stored in the vector.
-     * 
-     * @discussion Use this function for creating a descriptor of a MPSVector object
-     *             containing a single vector.
      */
     @Generated
     @Selector("vectorDescriptorWithLength:dataType:")
     public static native MPSVectorDescriptor vectorDescriptorWithLengthDataType(@NUInt long length, int dataType);
 
     /**
-     * @abstract   Create a MPSVectorDescriptor with the specified length and data type.
+     * Create a MPSVectorDescriptor with the specified length and data type.
+     * 
+     * For performance considerations the optimal stride between vectors may not necessarily be equal
+     *             to the vector length.  The MPSVectorDescriptor class provides a method which
+     *             may be used to determine this value, see the vectorBytesForLength API.
      * 
      * @param      length              The number of elements in a single vector.
      * 
@@ -229,10 +238,6 @@ public class MPSVectorDescriptor extends NSObject {
      *                                 vectors.
      * 
      * @param      dataType            The type of the data to be stored in the vector.
-     * 
-     * @discussion For performance considerations the optimal stride between vectors may not necessarily be equal
-     *             to the vector length.  The MPSVectorDescriptor class provides a method which
-     *             may be used to determine this value, see the vectorBytesForLength API.
      */
     @Generated
     @Selector("vectorDescriptorWithLength:vectors:vectorBytes:dataType:")
@@ -240,8 +245,9 @@ public class MPSVectorDescriptor extends NSObject {
             @NUInt long vectors, @NUInt long vectorBytes, int dataType);
 
     /**
-     * @property   vectors
-     * @discussion The number of vectors.
+     * [@property]   vectors
+     * 
+     * The number of vectors.
      */
     @Generated
     @Selector("vectors")

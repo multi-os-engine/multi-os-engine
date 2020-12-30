@@ -27,8 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CIDataMatrixCodeDescriptor
- * @abstract
+ * CIDataMatrixCodeDescriptor
+ * 
  *    CIDataMatrixCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a Data Matrix code symbol.
  */
 @Generated
@@ -82,11 +82,10 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property columnCount
-     * @abstract
+     * [@property] columnCount
+     * 
      *    The number of module columns.
      * 
-     * @discussion
      *    Refer to ISO/IEC 16022:2006(E) for valid module row and column count combinations.
      */
     @Generated
@@ -111,11 +110,10 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
             NSData errorCorrectedPayload, @NInt long rowCount, @NInt long columnCount, @NInt long eccVersion);
 
     /**
-     * @property eccVersion
-     * @abstract
+     * [@property] eccVersion
+     * 
      *    The Data Matrix code ECC version.
      * 
-     * @discussion
      *    Valid values are 000, 050, 080, 100, 140, and 200. Any symbol with an even number of rows and columns will be ECC 200.
      */
     @Generated
@@ -124,11 +122,10 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     public native long eccVersion();
 
     /**
-     * @property errorCorrectedPayload
-     * @abstract
+     * [@property] errorCorrectedPayload
+     * 
      * The error corrected payload that comprise the Data Matrix code symbol.
      * 
-     * @discussion
      * DataMatrix symbols are specified bn ISO/IEC 16022:2006(E). ECC 200-type symbols will always have an even number of rows and columns.
      * 
      * For ECC 200-type symbols, the phases of encoding data into a symbol are described in section 5.1 -- Encode procedure overview. The error corrected payload comprises the de-interleaved bits of the message described at the end of Step 1: Data encodation.
@@ -194,11 +191,10 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property rowCount
-     * @abstract
+     * [@property] rowCount
+     * 
      *    The number of module rows.
      * 
-     * @discussion
      *    Refer to ISO/IEC 16022:2006(E) for valid module row and column count combinations.
      */
     @Generated

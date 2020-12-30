@@ -46,7 +46,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class SFSafariViewController
+ * SFSafariViewController
  * A view controller for displaying web content in a Safari-like interface with some of Safari’s features.
  */
 @Generated
@@ -173,7 +173,7 @@ public class SFSafariViewController extends UIViewController {
     public static native long version_static();
 
     /**
-     * @abstract The view controller's delegate.
+     * The view controller's delegate.
      */
     @Generated
     @Selector("delegate")
@@ -193,7 +193,8 @@ public class SFSafariViewController extends UIViewController {
     public native SFSafariViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * @abstract Returns a view controller that loads a URL.
+     * Returns a view controller that loads a URL.
+     * 
      * @param URL the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      */
     @Generated
@@ -201,7 +202,8 @@ public class SFSafariViewController extends UIViewController {
     public native SFSafariViewController initWithURL(NSURL URL);
 
     /**
-     * @abstract Returns a view controller that loads a URL.
+     * Returns a view controller that loads a URL.
+     * 
      * @param URL the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      * @param entersReaderIfAvailable indicates if the Safari Reader version of content should be shown automatically
      * when Safari Reader is available on a web page.
@@ -211,7 +213,7 @@ public class SFSafariViewController extends UIViewController {
     public native SFSafariViewController initWithURLEntersReaderIfAvailable(NSURL URL, boolean entersReaderIfAvailable);
 
     /**
-     * @abstract The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in Private
+     * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in Private
      * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the view controller
      * has been presented will not be reflected.
      */
@@ -220,7 +222,7 @@ public class SFSafariViewController extends UIViewController {
     public native UIColor preferredBarTintColor();
 
     /**
-     * @abstract The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is in Private
+     * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is in Private
      * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the view controller
      * has been presented will not be reflected.
      */
@@ -229,14 +231,14 @@ public class SFSafariViewController extends UIViewController {
     public native UIColor preferredControlTintColor();
 
     /**
-     * @abstract The view controller's delegate.
+     * The view controller's delegate.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value);
 
     /**
-     * @abstract The view controller's delegate.
+     * The view controller's delegate.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value) {
@@ -251,7 +253,7 @@ public class SFSafariViewController extends UIViewController {
     }
 
     /**
-     * @abstract The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in Private
+     * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in Private
      * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the view controller
      * has been presented will not be reflected.
      */
@@ -260,7 +262,7 @@ public class SFSafariViewController extends UIViewController {
     public native void setPreferredBarTintColor(UIColor value);
 
     /**
-     * @abstract The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is in Private
+     * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is in Private
      * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the view controller
      * has been presented will not be reflected.
      */
@@ -269,7 +271,7 @@ public class SFSafariViewController extends UIViewController {
     public native void setPreferredControlTintColor(UIColor value);
 
     /**
-     * @abstract A copy of the configuration with which the view controller was
+     * A copy of the configuration with which the view controller was
      * initialized. 
      */
     @Generated
@@ -277,7 +279,7 @@ public class SFSafariViewController extends UIViewController {
     public native SFSafariViewControllerConfiguration configuration();
 
     /**
-     * @abstract The style of dismiss button to use in the navigation bar to close SFSafariViewController.
+     * The style of dismiss button to use in the navigation bar to close SFSafariViewController.
      * The default value is SFSafariViewControllerDismissButtonStyleDone, which makes the button title the localized
      * string "Done". You can use other values such as "Close" to provide consistency with your app. "Cancel" is
      * ideal when using SFSafariViewController to log in to an external service. All values will show a string localized
@@ -289,11 +291,13 @@ public class SFSafariViewController extends UIViewController {
     public native long dismissButtonStyle();
 
     /**
-     * @abstract Returns a view controller that loads a URL.
+     * Returns a view controller that loads a URL.
+     * 
+     * This is a designated initializer. You can use
+     * [@link] -initWithURL: @/link to initialize an instance with the default configuration. Mutating the configuration after invoking the initializer has no effect on the view controller.
+     * 
      * @param URL the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      * @param configuration the configuration for the new view controller.
-     * @discussion This is a designated initializer. You can use
-     * @link -initWithURL: @/link to initialize an instance with the default configuration. Mutating the configuration after invoking the initializer has no effect on the view controller.
      */
     @Generated
     @Selector("initWithURL:configuration:")
@@ -301,7 +305,7 @@ public class SFSafariViewController extends UIViewController {
             SFSafariViewControllerConfiguration configuration);
 
     /**
-     * @abstract The style of dismiss button to use in the navigation bar to close SFSafariViewController.
+     * The style of dismiss button to use in the navigation bar to close SFSafariViewController.
      * The default value is SFSafariViewControllerDismissButtonStyleDone, which makes the button title the localized
      * string "Done". You can use other values such as "Close" to provide consistency with your app. "Cancel" is
      * ideal when using SFSafariViewController to log in to an external service. All values will show a string localized

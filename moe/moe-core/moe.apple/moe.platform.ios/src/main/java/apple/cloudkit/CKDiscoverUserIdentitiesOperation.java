@@ -153,9 +153,9 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
     public static native long version_static();
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -173,9 +173,9 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
             NSArray<? extends CKUserIdentityLookupInfo> userIdentityLookupInfos);
 
     /**
-     * @abstract This block is called when the operation completes.
+     * This block is called when the operation completes.
      * 
-     * @discussion The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -184,9 +184,9 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
             @ObjCBlock(name = "call_setDiscoverUserIdentitiesCompletionBlock") Block_setDiscoverUserIdentitiesCompletionBlock value);
 
     /**
-     * @abstract Called once for each user identity lookup info that was successfully discovered on the server
+     * Called once for each user identity lookup info that was successfully discovered on the server
      * 
-     * @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("setUserIdentityDiscoveredBlock:")
@@ -198,9 +198,9 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
     public native void setUserIdentityLookupInfos(NSArray<? extends CKUserIdentityLookupInfo> value);
 
     /**
-     * @abstract Called once for each user identity lookup info that was successfully discovered on the server
+     * Called once for each user identity lookup info that was successfully discovered on the server
      * 
-     * @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
     @Selector("userIdentityDiscoveredBlock")

@@ -46,8 +46,9 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     }
 
     /**
-     * @property       URL
-     * @abstract       The URL with which the instance of AVMovie was initialized; may be nil.
+     * [@property]       URL
+     * 
+     * The URL with which the instance of AVMovie was initialized; may be nil.
      */
     @Generated
     @Selector("URL")
@@ -76,9 +77,11 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @property       canContainMovieFragments
-     * @abstract       Indicates whether the movie file is capable of being extended by fragments.
-     * @discussion     The value of this property is YES if an 'mvex' box is present in the 'moov' box. The 'mvex' box is necessary in order to signal the possible presence of later 'moof' boxes.
+     * [@property]       canContainMovieFragments
+     * 
+     * Indicates whether the movie file is capable of being extended by fragments.
+     * 
+     * The value of this property is YES if an 'mvex' box is present in the 'moov' box. The 'mvex' box is necessary in order to signal the possible presence of later 'moof' boxes.
      */
     @Generated
     @Selector("canContainMovieFragments")
@@ -103,9 +106,11 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property       containsMovieFragments
-     * @abstract       Indicates whether the movie file is extended by at least one movie fragment.
-     * @discussion     The value of this property is YES if canContainMovieFragments is YES and at least one 'moof' box is present after the 'moov' box.
+     * [@property]       containsMovieFragments
+     * 
+     * Indicates whether the movie file is extended by at least one movie fragment.
+     * 
+     * The value of this property is YES if canContainMovieFragments is YES and at least one 'moof' box is present after the 'moov' box.
      */
     @Generated
     @Selector("containsMovieFragments")
@@ -118,8 +123,9 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * @property       data
-     * @abstract       The data block with which the instance of AVMovie was initialized; may be nil.
+     * [@property]       data
+     * 
+     * The data block with which the instance of AVMovie was initialized; may be nil.
      */
     @Generated
     @Selector("data")
@@ -130,9 +136,11 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public static native String debugDescription_static();
 
     /**
-     * @property       defaultMediaDataStorage
-     * @abstract       The default storage container for media data added to a movie.
-     * @discussion     The value of this property is an AVMediaDataStorage object that indicates where sample data that is added to a movie should be written by default.
+     * [@property]       defaultMediaDataStorage
+     * 
+     * The default storage container for media data added to a movie.
+     * 
+     * The value of this property is an AVMediaDataStorage object that indicates where sample data that is added to a movie should be written by default.
      */
     @Generated
     @Selector("defaultMediaDataStorage")
@@ -152,32 +160,38 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public native AVMovie init();
 
     /**
-     * @method			initWithData:options:
-     * @abstract		Creates an AVMovie object from a movie header stored in an NSData object.
+     * initWithData:options:
+     * 
+     * Creates an AVMovie object from a movie header stored in an NSData object.
+     * 
+     * You can use this method to operate on movie headers that are not stored in files. In general you should avoid loading an entire movie file with its media data into an instance of NSData!
+     * 
+     *                    By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage property will be nil. If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its tracks, you must first set one of these properties to indicate where the sample data should be written.
+     * 
      * @param			data
      * 				An NSData object containing a movie header.
      * @param			options
      * 				An NSDictionary object that contains keys for specifying options for the initialization of the AVMovie object. Currently no keys are defined.
-     * @result			An AVMovie object
-     * @discussion     You can use this method to operate on movie headers that are not stored in files. In general you should avoid loading an entire movie file with its media data into an instance of NSData!
-     * 
-     *                    By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage property will be nil. If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its tracks, you must first set one of these properties to indicate where the sample data should be written.
+     * @return			An AVMovie object
      */
     @Generated
     @Selector("initWithData:options:")
     public native AVMovie initWithDataOptions(NSData data, NSDictionary<String, ?> options);
 
     /**
-     * @method			initWithURL:options:
-     * @abstract		Creates an AVMovie object from a movie header stored in a QuickTime movie file or ISO base media file.
+     * initWithURL:options:
+     * 
+     * Creates an AVMovie object from a movie header stored in a QuickTime movie file or ISO base media file.
+     * 
+     * By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage property will be nil.
+     *                    If you want to create an AVMutableMovie from a file and then append sample buffers to any of its tracks, you must first set one of these properties 
+     *                    to indicate where the sample data should be written.
+     * 
      * @param			URL
      * 				An NSURL object that specifies a file containing a movie header.
      * @param			options
      * 				An NSDictionary object that contains keys for specifying options for the initialization of the AVMovie object. Currently no keys are defined.
-     * @result			An AVMovie object
-     * @discussion     By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage property will be nil.
-     *                    If you want to create an AVMutableMovie from a file and then append sample buffers to any of its tracks, you must first set one of these properties 
-     *                    to indicate where the sample data should be written.
+     * @return			An AVMovie object
      */
     @Generated
     @Selector("initWithURL:options:")
@@ -197,11 +211,14 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @method			isCompatibleWithFileType:
-     * @abstract		Indicates whether a movie header for the AVMovie object can be created for the specified file type.
+     * isCompatibleWithFileType:
+     * 
+     * Indicates whether a movie header for the AVMovie object can be created for the specified file type.
+     * 
+     * This method returns a BOOL that indicates whether a movie header of the specified type can be created for the receiver. For example, this method returns NO if the movie contains tracks whose media types or media subtypes are not allowed by the specified file type.
+     * 
      * @param			fileType
      * 				A UTI indicating a movie file format (e.g. AVFileTypeQuickTimeMovie for a QuickTime movie).
-     * @discussion     This method returns a BOOL that indicates whether a movie header of the specified type can be created for the receiver. For example, this method returns NO if the movie contains tracks whose media types or media subtypes are not allowed by the specified file type.
      */
     @Generated
     @Selector("isCompatibleWithFileType:")
@@ -216,14 +233,17 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @method			movieHeaderWithFileType:error:
-     * @abstract		Creates an NSData object containing the movie header of the AVMovie object.
+     * movieHeaderWithFileType:error:
+     * 
+     * Creates an NSData object containing the movie header of the AVMovie object.
+     * 
+     * The movie header will be a pure reference movie, with no base URL, suitable for use on the pasteboard.
+     * 
      * @param			fileType
      * 				A UTI indicating the specific file format of the movie header (e.g. AVFileTypeQuickTimeMovie for a QuickTime movie).
      * @param			outError
      * 				If an error occurs reading the movie header, describes the nature of the failure.
-     * @result			An NSData object.
-     * @discussion     The movie header will be a pure reference movie, with no base URL, suitable for use on the pasteboard.
+     * @return			An NSData object.
      */
     @Generated
     @Selector("movieHeaderWithFileType:error:")
@@ -231,40 +251,48 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * @method			movieTypes
-     * @abstract		Provides the file types the AVMovie class understands.
-     * @result			An NSArray of UTIs identifying the file types the AVMovie class understands.
+     * movieTypes
+     * 
+     * Provides the file types the AVMovie class understands.
+     * 
+     * @return			An NSArray of UTIs identifying the file types the AVMovie class understands.
      */
     @Generated
     @Selector("movieTypes")
     public static native NSArray<String> movieTypes();
 
     /**
-     * @method			movieWithData:options:
-     * @abstract		Creates an AVMovie object from a movie header stored in an NSData object.
+     * movieWithData:options:
+     * 
+     * Creates an AVMovie object from a movie header stored in an NSData object.
+     * 
+     * You can use this method to operate on movie headers that are not stored in files; this might include movie headers on the pasteboard (which do not contain media data). In general you should avoid loading an entire movie file with its media data into an instance of NSData! By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage property will be nil.
+     *                    If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its tracks, you must first set one of these properties to indicate where the sample data should be written.
+     * 
      * @param			data
      * 				An NSData object containing a movie header.
      * @param			options
      * 				An NSDictionary object that contains keys for specifying options for the initialization of the AVMovie object. Currently no keys are defined.
-     * @result			An AVMovie object
-     * @discussion     You can use this method to operate on movie headers that are not stored in files; this might include movie headers on the pasteboard (which do not contain media data). In general you should avoid loading an entire movie file with its media data into an instance of NSData! By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage property will be nil.
-     *                    If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its tracks, you must first set one of these properties to indicate where the sample data should be written.
+     * @return			An AVMovie object
      */
     @Generated
     @Selector("movieWithData:options:")
     public static native AVMovie movieWithDataOptions(NSData data, NSDictionary<String, ?> options);
 
     /**
-     * @method			movieWithURL:options:
-     * @abstract		Creates an AVMovie object from a movie header stored in a QuickTime movie file or ISO base media file.
+     * movieWithURL:options:
+     * 
+     * Creates an AVMovie object from a movie header stored in a QuickTime movie file or ISO base media file.
+     * 
+     * By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage property will be nil.
+     *                    If you want to create an AVMutableMovie from a file and then append sample buffers to any of its tracks, you must first set one of these properties 
+     *                    to indicate where the sample data should be written.
+     * 
      * @param			URL
      * 				An NSURL object that specifies a file containing a movie header.
      * @param			options
      * 				An NSDictionary object that contains keys for specifying options for the initialization of the AVMovie object. Currently no keys are defined.
-     * @result			An AVMovie object
-     * @discussion     By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage property will be nil.
-     *                    If you want to create an AVMutableMovie from a file and then append sample buffers to any of its tracks, you must first set one of these properties 
-     *                    to indicate where the sample data should be written.
+     * @return			An AVMovie object
      */
     @Generated
     @Selector("movieWithURL:options:")
@@ -299,45 +327,56 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public static native Class superclass_static();
 
     /**
-     * @method		trackWithTrackID:
-     * @abstract		Provides an instance of AVMovieTrack that represents the track of the specified trackID.
+     * trackWithTrackID:
+     * 
+     * Provides an instance of AVMovieTrack that represents the track of the specified trackID.
+     * 
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
      * @param		trackID
      * 		The trackID of the requested AVMovieTrack.
-     * @result		An instance of AVMovieTrack; may be nil if no track of the specified trackID is available.
-     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     * @return		An instance of AVMovieTrack; may be nil if no track of the specified trackID is available.
      */
     @Generated
     @Selector("trackWithTrackID:")
     public native AVMovieTrack trackWithTrackID(int trackID);
 
     /**
-     * @property       tracks
-     * @abstract       The tracks in a movie.
-     * @discussion     The value of this property is an array of tracks the movie contains; the tracks are of type AVMovieTrack.
+     * [@property]       tracks
+     * 
+     * The tracks in a movie.
+     * 
+     * The value of this property is an array of tracks the movie contains; the tracks are of type AVMovieTrack.
      */
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVMovieTrack> tracks();
 
     /**
-     * @method		tracksWithMediaCharacteristic:
-     * @abstract		Provides an array of AVMovieTracks of the asset that present media with the specified characteristic.
+     * tracksWithMediaCharacteristic:
+     * 
+     * Provides an array of AVMovieTracks of the asset that present media with the specified characteristic.
+     * 
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
      * @param		mediaCharacteristic
      * 		The media characteristic according to which the receiver filters its AVMovieTracks. (Media characteristics are defined in AVMediaFormat.h)
-     * @result		An NSArray of AVMovieTracks; may be empty if no tracks with the specified characteristic are available.
-     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     * @return		An NSArray of AVMovieTracks; may be empty if no tracks with the specified characteristic are available.
      */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
     public native NSArray<? extends AVMovieTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
 
     /**
-     * @method		tracksWithMediaType:
-     * @abstract		Provides an array of AVMovieTracks of the asset that present media of the specified media type.
+     * tracksWithMediaType:
+     * 
+     * Provides an array of AVMovieTracks of the asset that present media of the specified media type.
+     * 
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     * 
      * @param		mediaType
      * 		The media type according to which the receiver filters its AVMovieTracks. (Media types are defined in AVMediaFormat.h)
-     * @result		An NSArray of AVMovieTracks; may be empty if no tracks of the specified media type are available.
-     * @discussion	Becomes callable without blocking when the key @"tracks" has been loaded
+     * @return		An NSArray of AVMovieTracks; may be empty if no tracks of the specified media type are available.
      */
     @Generated
     @Selector("tracksWithMediaType:")
@@ -349,8 +388,12 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     public static native long version_static();
 
     /**
-     * @method			writeMovieHeaderToURL:fileType:options:error:
-     * @abstract		Writes the movie header to a destination URL.
+     * writeMovieHeaderToURL:fileType:options:error:
+     * 
+     * Writes the movie header to a destination URL.
+     * 
+     * Note that modifications to instances of AVMutableMovie, to their constituent AVMutableMovieTracks, or to their collections of metadata are committed to storage when their movie headers are written.
+     * 
      * @param			URL
      * 				An NSURL object indicating where to write the movie header.
      * @param			fileType
@@ -359,7 +402,6 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
      *                    An NSUInteger whose bits specify options for the writing of the movie header. See AVMovieWritingOptions above.
      * @param			outError
      * 				If an error occurs writing the movie header, describes the nature of the failure.
-     * @discussion		Note that modifications to instances of AVMutableMovie, to their constituent AVMutableMovieTracks, or to their collections of metadata are committed to storage when their movie headers are written.
      */
     @Generated
     @Selector("writeMovieHeaderToURL:fileType:options:error:")

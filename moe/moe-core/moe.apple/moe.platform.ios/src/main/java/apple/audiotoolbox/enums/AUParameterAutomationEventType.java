@@ -19,19 +19,19 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * @enum		AUParameterAutomationEventType
- * @brief		Identifies the different types of parameter automation events.
+ * [@enum]		AUParameterAutomationEventType
  * 
- * @discussion
+ * Identifies the different types of parameter automation events.
+ * 
  * 	Audio Units may generate parameter changes from their user interfaces. Hosts may attach
  * 	significance to the beginning and end of a UI gesture (typically touching and releasing
  * 	a fader). These gestures are conveyed through these types of automation events.
  * 
- * @constant AUParameterAutomationEventTypeValue
+ * [@constant] AUParameterAutomationEventTypeValue
  * 	The event contains an updated value for the parameter.
- * @constant AUParameterAutomationEventTypeTouch
+ * [@constant] AUParameterAutomationEventTypeTouch
  * 	The event marks an initial "touch" gesture on a UI element.
- * @constant AUParameterAutomationEventTypeRelease
+ * [@constant] AUParameterAutomationEventTypeRelease
  * 	The event marks a final "release" gesture on a UI element.
  */
 @Generated

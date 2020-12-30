@@ -27,8 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @protocol MDLMeshBufferZone
- * @abstract A reference to a logical pool of memory from which mesh buffers would 
+ * [@protocol] MDLMeshBufferZone
+ * 
+ * A reference to a logical pool of memory from which mesh buffers would
  *           be allocated
  */
 @Generated
@@ -37,8 +38,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MDLMeshBufferZone")
 public interface MDLMeshBufferZone {
     /**
-     * @property allocator
-     * @abstract Allocator used to create the zone
+     * [@property] allocator
+     * 
+     * Allocator used to create the zone
      */
     @Generated
     @Selector("allocator")
@@ -46,8 +48,9 @@ public interface MDLMeshBufferZone {
     MDLMeshBufferAllocator allocator();
 
     /**
-     * @property capacity
-     * @abstract Total size of memory in the zone
+     * [@property] capacity
+     * 
+     * Total size of memory in the zone
      */
     @Generated
     @Selector("capacity")

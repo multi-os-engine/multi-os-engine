@@ -20,8 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAudioConverterOutputStatus
- * @abstract These values are returned from convertToBuffer:error:withInputFromBlock:
+ * [@enum] AVAudioConverterOutputStatus
+ * 
+ * These values are returned from convertToBuffer:error:withInputFromBlock:
  */
 @Generated
 public final class AVAudioConverterOutputStatus {

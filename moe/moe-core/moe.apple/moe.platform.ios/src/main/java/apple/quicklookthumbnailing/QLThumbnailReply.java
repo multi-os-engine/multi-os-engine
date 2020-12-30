@@ -31,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * To provide a thumbnail for a request, you have to return a QLThumbnailReply object.
  * 
- * @discussion To provide a thumbnail, you have two options:
+ * To provide a thumbnail, you have two options:
  * 1. Draw the thumbnail, by providing a QLThumbnailReply created with a drawing block.
  * 2. Pass the thumbnail file URL, by providing a QLThumbnailReply created with a file URL.
  */

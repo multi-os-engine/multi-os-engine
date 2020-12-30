@@ -222,6 +222,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     /**
      * The random source used by the decision tree when descending on a random branch
      * This must be set before creating any weighted branches
+     * 
      * @see GKDecisionNode
      */
     @Generated
@@ -238,6 +239,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     /**
      * The random source used by the decision tree when descending on a random branch
      * This must be set before creating any weighted branches
+     * 
      * @see GKDecisionNode
      */
     @Generated

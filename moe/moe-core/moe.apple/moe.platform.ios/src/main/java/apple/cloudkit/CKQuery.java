@@ -46,9 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CKQuery
+ * CKQuery
  * 
- *  @discussion Only AND compound predicates are allowed.
+ * Only AND compound predicates are allowed.
  * 
  *  Key names must begin with either an upper or lower case character ([a-zA-Z]) and may be followed by characters, numbers, or underscores ([0-9a-zA-Z_]). Keypaths may only resolve to the currently evaluated object, so the '.' character is not allowed in key names.
  * 

@@ -20,19 +20,19 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @enum AVAssetReaderStatus
- * @abstract
+ * [@enum] AVAssetReaderStatus
+ * 
  * These constants are returned by the AVAssetReader status property to indicate whether it can successfully read samples from its asset.
  * 
- * @constant	 AVAssetReaderStatusUnknown
+ * [@constant]	 AVAssetReaderStatusUnknown
  * Indicates that the status of the asset reader is not currently known.
- * @constant	 AVAssetReaderStatusReading
+ * [@constant]	 AVAssetReaderStatusReading
  * Indicates that the asset reader is successfully reading samples from its asset.
- * @constant	 AVAssetReaderStatusCompleted
+ * [@constant]	 AVAssetReaderStatusCompleted
  * Indicates that the asset reader has successfully read all of the samples in its time range.
- * @constant	 AVAssetReaderStatusFailed
+ * [@constant]	 AVAssetReaderStatusFailed
  * Indicates that the asset reader can no longer read samples from its asset because of an error. The error is described by the value of the asset reader's error property.
- * @constant	 AVAssetReaderStatusCancelled
+ * [@constant]	 AVAssetReaderStatusCancelled
  * Indicates that the asset reader can no longer read samples because reading was canceled with the cancelReading method.
  */
 @Generated

@@ -25,9 +25,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class      MPSMatrixRandomDistributionDescriptor
- * @dependency This depends on Metal.framework
- * @discussion Decribes properties of a distribution of random values.
+ * MPSMatrixRandomDistributionDescriptor
+ * [@dependency] This depends on Metal.framework
+ * 
+ * Decribes properties of a distribution of random values.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -90,7 +91,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native String debugDescription_static();
 
     /**
-     * @abstract  Make a descriptor for a default distribution.
+     * Make a descriptor for a default distribution.
+     * 
      * @return    A valid MPSMatrixRandomDistribution object or nil, if failure.
      */
     @Generated
@@ -102,8 +104,9 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native String description_static();
 
     /**
-     * @property   distributionType
-     * @abstract   The type of distribution.
+     * [@property]   distributionType
+     * 
+     * The type of distribution.
      */
     @Generated
     @Selector("distributionType")
@@ -141,24 +144,27 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property   maximum
-     * @abstract   For distributions of values bounded above, this value describes the maximum.
+     * [@property]   maximum
+     * 
+     * For distributions of values bounded above, this value describes the maximum.
      */
     @Generated
     @Selector("maximum")
     public native float maximum();
 
     /**
-     * @property   mean
-     * @abstract   The value to use for distributions described by their mean.
+     * [@property]   mean
+     * 
+     * The value to use for distributions described by their mean.
      */
     @Generated
     @Selector("mean")
     public native float mean();
 
     /**
-     * @property   minimum
-     * @abstract   For distributions of values bounded below, this value describes the minimum.
+     * [@property]   minimum
+     * 
+     * For distributions of values bounded below, this value describes the minimum.
      */
     @Generated
     @Selector("minimum")
@@ -179,40 +185,45 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property   distributionType
-     * @abstract   The type of distribution.
+     * [@property]   distributionType
+     * 
+     * The type of distribution.
      */
     @Generated
     @Selector("setDistributionType:")
     public native void setDistributionType(@NUInt long value);
 
     /**
-     * @property   maximum
-     * @abstract   For distributions of values bounded above, this value describes the maximum.
+     * [@property]   maximum
+     * 
+     * For distributions of values bounded above, this value describes the maximum.
      */
     @Generated
     @Selector("setMaximum:")
     public native void setMaximum(float value);
 
     /**
-     * @property   mean
-     * @abstract   The value to use for distributions described by their mean.
+     * [@property]   mean
+     * 
+     * The value to use for distributions described by their mean.
      */
     @Generated
     @Selector("setMean:")
     public native void setMean(float value);
 
     /**
-     * @property   minimum
-     * @abstract   For distributions of values bounded below, this value describes the minimum.
+     * [@property]   minimum
+     * 
+     * For distributions of values bounded below, this value describes the minimum.
      */
     @Generated
     @Selector("setMinimum:")
     public native void setMinimum(float value);
 
     /**
-     * @property   standardDeviation
-     * @abstract   The value to use for distributions described by their standardDeviation.
+     * [@property]   standardDeviation
+     * 
+     * The value to use for distributions described by their standardDeviation.
      */
     @Generated
     @Selector("setStandardDeviation:")
@@ -223,8 +234,9 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @property   standardDeviation
-     * @abstract   The value to use for distributions described by their standardDeviation.
+     * [@property]   standardDeviation
+     * 
+     * The value to use for distributions described by their standardDeviation.
      */
     @Generated
     @Selector("standardDeviation")
@@ -235,8 +247,9 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native Class superclass_static();
 
     /**
-     * @abstract  Make a descriptor for a uniform distribution of floating point values in
+     * Make a descriptor for a uniform distribution of floating point values in
      *             the range [minimum, maximum).
+     * 
      * @param     minimum  The lower bound of the range.
      * @param     maximum  The upper bound of the range.
      * @return    A valid MPSMatrixRandomDistribution object or nil, if failure.
@@ -252,7 +265,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native long version_static();
 
     /**
-     * @abstract Make a descriptor for a normal distribution of floating point values.
+     * Make a descriptor for a normal distribution of floating point values.
+     * 
      * @param    mean    The mean of the distribution
      * @param    standardDeviation   The standard deviation of the distribution.
      * 
@@ -264,7 +278,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
             float mean, float standardDeviation);
 
     /**
-     * @abstract Make a descriptor for a truncated normal distribution of floating point values.
+     * Make a descriptor for a truncated normal distribution of floating point values.
+     * 
      * @param    mean    The mean of the distribution
      * @param    standardDeviation   The standard deviation of the distribution.
      * @param    minimum The lower bound of the distribution

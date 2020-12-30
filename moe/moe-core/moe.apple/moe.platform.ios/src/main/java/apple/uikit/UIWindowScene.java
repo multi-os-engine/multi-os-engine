@@ -150,8 +150,9 @@ public class UIWindowScene extends UIScene {
     public native UIScreen screen();
 
     /**
-     * @abstract The screenshot object associated with the scene
-     * @discussion This is non-null if the screenshot service is available for this window scene
+     * The screenshot object associated with the scene
+     * 
+     * This is non-null if the screenshot service is available for this window scene
      */
     @Generated
     @Selector("screenshotService")

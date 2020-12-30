@@ -43,8 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class AVAudioUnitVarispeed
- * @abstract an AVAudioUnitTimeEffect that can be used to control the playback rate 
+ * AVAudioUnitVarispeed
+ * 
+ * an AVAudioUnitTimeEffect that can be used to control the playback rate
  */
 @Generated
 @Library("AVFoundation")
@@ -173,9 +174,10 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
             @ByValue AudioComponentDescription audioComponentDescription);
 
     /**
-     * @property rate
-     * @abstract controls the playback rate of the audio signal
-     * @discussion
+     * [@property] rate
+     * 
+     * controls the playback rate of the audio signal
+     * 
      * Since this unit resamples the input signal, changing the playback rate also changes the pitch.
      * 
      * i.e. changing the rate to 2.0 results in the output audio playing one octave higher.
@@ -197,9 +199,10 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
     public native float rate();
 
     /**
-     * @property rate
-     * @abstract controls the playback rate of the audio signal
-     * @discussion
+     * [@property] rate
+     * 
+     * controls the playback rate of the audio signal
+     * 
      * Since this unit resamples the input signal, changing the playback rate also changes the pitch.
      * 
      * i.e. changing the rate to 2.0 results in the output audio playing one octave higher.

@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 1: Querying for the coalescedKeyboard using [GCKeyboard coalescedKeyboard]
  * 2: Registering for Connection/Disconnection notifications from NSNotificationCenter
  * 
- * @note All connected keyboards are coalesced into one keyboard object, so notification about connection/disconnection will only be delivered once.
+ * [@note] All connected keyboards are coalesced into one keyboard object, so notification about connection/disconnection will only be delivered once.
  */
 @Generated
 @Library("GameController")

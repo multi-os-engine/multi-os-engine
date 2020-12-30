@@ -181,7 +181,7 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
     /**
      * Identifier of the session that owns the anchor.
      * 
-     * @discussion The session identifier will be assigned to anchor when added to the session.
+     * The session identifier will be assigned to anchor when added to the session.
      */
     @Generated
     @Selector("sessionIdentifier")

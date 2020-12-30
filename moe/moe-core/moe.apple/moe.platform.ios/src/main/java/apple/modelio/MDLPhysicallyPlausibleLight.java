@@ -44,17 +44,18 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class MDLPhysicallyPlausibleLight
- * @abstract A light with characteristics representing plausible real world lights
+ * MDLPhysicallyPlausibleLight
  * 
- * @property color The color of the light.
- * @property lumens The brightness of the light.
- * @property innerConeAngle Within this cone, light is at maximum brightness. Units are degrees.
- * @property outerConeAngle Between the inner cone angle and the outer, light 
+ * A light with characteristics representing plausible real world lights
+ * 
+ * [@property] color The color of the light.
+ * [@property] lumens The brightness of the light.
+ * [@property] innerConeAngle Within this cone, light is at maximum brightness. Units are degrees.
+ * [@property] outerConeAngle Between the inner cone angle and the outer, light 
  *           quadratically attenuates to zero.
- * @property attenuationStartDistance. Within the attenuation start distance, the
+ * [@property] attenuationStartDistance. Within the attenuation start distance, the
  *           light is maximally bright.
- * @property attenuationEndDistance. Beyond this distance, there is no light.
+ * [@property] attenuationEndDistance. Beyond this distance, there is no light.
  */
 @Generated
 @Library("ModelIO")
@@ -230,7 +231,8 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
 
     /**
      * Light color specified by color temperature, in degrees Kelvin
-     * @discussion default color is 6500K, cool daylight.
+     * 
+     * default color is 6500K, cool daylight.
      */
     @Generated
     @Selector("setColorByTemperature:")

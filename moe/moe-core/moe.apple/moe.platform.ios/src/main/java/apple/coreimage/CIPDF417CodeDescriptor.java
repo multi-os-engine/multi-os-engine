@@ -27,11 +27,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @class CIPDF417CodeDescriptor
- * @abstract
+ * CIPDF417CodeDescriptor
+ * 
  *    CIPDF417CodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a PDF417 code symbol.
  * 
- * @discussion
  *    Refer to the ISO/IEC 15438:2006(E) for the PDF417 symbol specification.
  */
 @Generated
@@ -85,11 +84,10 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * @property columnCount
-     * @abstract
+     * [@property] columnCount
+     * 
      *    Indicates the number of columns in the rectangular matrix, excluding the columns used to indicate the symbol structure.
      * 
-     * @discussion
      *    columnCount values range from 1 to 30.
      */
     @Generated
@@ -114,11 +112,10 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
             NSData errorCorrectedPayload, boolean isCompact, @NInt long rowCount, @NInt long columnCount);
 
     /**
-     * @property errorCorrectedPayload
-     * @abstract
+     * [@property] errorCorrectedPayload
+     * 
      * The error-corrected codewords which comprise the PDF417 symbol. The first codeword indicates the number of data codewords in the errorCorrectedPayload.
      * 
-     * @discussion
      * PDF417 codes are comprised of a start character on the left and a stop character on the right. Each row begins and ends with special characters indicating the current row as well as information about the dimensions of the PDF417 symbol. The errorCorrectedPayload represents the sequence of PDF417 codewords that make up the body of the message. The first codeword indicates the number of codewords in the message. This count includes the "count" codeword and any padding codewords, but does not include the error correction codewords. Each codeword is a 16-bit value in the range of 0...928. The sequence is to be interpreted as described in the PDF417 bar code symbology specification -- ISO/IEC 15438:2006(E).
      */
     @Generated
@@ -160,11 +157,10 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * @property isCompact
-     * @abstract
+     * [@property] isCompact
+     * 
      *    A BOOL indicating whether the symbol is compact.
      * 
-     * @discussion
      *    Compact PDF417 symbols have abbreviated right-side guard bars.
      */
     @Generated
@@ -194,11 +190,10 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property rowCount
-     * @abstract
+     * [@property] rowCount
+     * 
      *    Indicates the number of rows in the rectangular matrix.
      * 
-     * @discussion
      *    rowCount values range from 3 to 90.
      */
     @Generated

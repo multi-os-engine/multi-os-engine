@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * @abstract The formatting styles for contact names.
+ * The formatting styles for contact names.
  */
 @Generated
 public final class CNContactFormatterStyle {

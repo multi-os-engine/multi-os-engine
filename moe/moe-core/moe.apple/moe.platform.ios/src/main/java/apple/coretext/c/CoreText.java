@@ -88,8 +88,9 @@ public final class CoreText {
     }
 
     /**
-     * @function   CTParagraphStyleGetTypeID
-     * @abstract   Returns the CFType of the paragraph style object
+     * [@function]   CTParagraphStyleGetTypeID
+     * 
+     * Returns the CFType of the paragraph style object
      */
     @Generated
     @CFunction
@@ -97,10 +98,11 @@ public final class CoreText {
     public static native long CTParagraphStyleGetTypeID();
 
     /**
-     * @function   CTParagraphStyleCreate
-     * @abstract   Creates an immutable paragraph style.
+     * [@function]   CTParagraphStyleCreate
      * 
-     * @discussion Using this function is the easiest and most efficient way to
+     * Creates an immutable paragraph style.
+     * 
+     * Using this function is the easiest and most efficient way to
      *             create a paragraph style. Paragraph styles should be kept
      *             immutable for totally lock-free operation.
      * 
@@ -120,7 +122,7 @@ public final class CoreText {
      *             "settings" parameter. This must be greater than or equal
      *             to zero.
      * 
-     * @result     If the paragraph style creation was successful, this function
+     * @return     If the paragraph style creation was successful, this function
      *             will return a valid reference to an immutable CTParagraphStyle
      *             object. Otherwise, this function will return NULL.
      */
@@ -131,13 +133,14 @@ public final class CoreText {
             @NUInt long settingCount);
 
     /**
-     * @function   CTParagraphStyleCreateCopy
-     * @abstract   Creates an immutable copy of a paragraph style.
+     * [@function]   CTParagraphStyleCreateCopy
+     * 
+     * Creates an immutable copy of a paragraph style.
      * 
      * @param      paragraphStyle
      *             The style that you wish to copy.
      * 
-     * @result     If the "paragraphStyle" reference is valid, then this
+     * @return     If the "paragraphStyle" reference is valid, then this
      *             function will return valid reference to an immutable
      *             CTParagraphStyle object that is a copy of the one passed into
      *             "paragraphStyle".
@@ -147,10 +150,11 @@ public final class CoreText {
     public static native CTParagraphStyleRef CTParagraphStyleCreateCopy(CTParagraphStyleRef paragraphStyle);
 
     /**
-     * @function   CTParagraphStyleGetValueForSpecifier
-     * @abstract   Obtains the current value for a single setting specifier.
+     * [@function]   CTParagraphStyleGetValueForSpecifier
      * 
-     * @discussion This function will return the current value of the specifier
+     * Obtains the current value for a single setting specifier.
+     * 
+     * This function will return the current value of the specifier
      *             whether or not the user had actually set it. If the user has
      *             not set it, this function will return the default value.
      * 
@@ -176,7 +180,7 @@ public final class CoreText {
      *             upon successful completion. The buffer's size needs to be at least
      *             as large as the value passed into "valueBufferSize".
      * 
-     * @result     This function will return "true" if the valueBuffer had been
+     * @return     This function will return "true" if the valueBuffer had been
      *             successfully filled. Otherwise, this function will return false,
      *             indicating that one or more of the parameters is not valid.
      */
@@ -186,10 +190,12 @@ public final class CoreText {
             @NUInt long valueBufferSize, VoidPtr valueBuffer);
 
     /**
-     * @function   CTFontDescriptorGetTypeID
-     * @abstract   Returns the type identifier for Core Text font descriptor
+     * [@function]   CTFontDescriptorGetTypeID
+     * 
+     * Returns the type identifier for Core Text font descriptor
      *             references.
-     * @result     The identifier for the opaque type CTFontDescriptorRef.
+     * 
+     * @return     The identifier for the opaque type CTFontDescriptorRef.
      */
     @Generated
     @CFunction
@@ -197,8 +203,11 @@ public final class CoreText {
     public static native long CTFontDescriptorGetTypeID();
 
     /**
-     * @function   CTFontDescriptorCreateWithNameAndSize
-     * @abstract   Creates a new font descriptor with the provided PostScript name and size.
+     * [@function]   CTFontDescriptorCreateWithNameAndSize
+     * 
+     * Creates a new font descriptor with the provided PostScript name and size.
+     * 
+     * If you are trying to create a system UI font descriptor (with name beginning with a "."), you should create a font with CTFontCreateUIFontForLanguage() or appropriate AppKit/UIKit APIs instead, then use CTFontCopyFontDescriptor() to get its font descriptor.
      * 
      * @param      name
      *             The PostScript name to be used for the font descriptor as a CFStringRef. Any font name beginning with a "." is reserved for the system and should not be used here.
@@ -206,9 +215,7 @@ public final class CoreText {
      * @param      size
      *             The point size. If 0.0, the kCTFontSizeAttribute will be omitted from the font descriptor.
      * 
-     * @result     This function creates a new font descriptor reference with the given PostScript name and point size.
-     * 
-     * @discussion If you are trying to create a system UI font descriptor (with name beginning with a "."), you should create a font with CTFontCreateUIFontForLanguage() or appropriate AppKit/UIKit APIs instead, then use CTFontCopyFontDescriptor() to get its font descriptor.
+     * @return     This function creates a new font descriptor reference with the given PostScript name and point size.
      */
     @Generated
     @CFunction
@@ -216,21 +223,23 @@ public final class CoreText {
             @NFloat double size);
 
     /**
-     * @function   CTFontDescriptorCreateWithAttributes
-     * @abstract   Creates a new font descriptor reference from a dictionary of attributes.
+     * [@function]   CTFontDescriptorCreateWithAttributes
+     * 
+     * Creates a new font descriptor reference from a dictionary of attributes.
      * 
      * @param      attributes
      *             A CFDictionaryRef of arbitrary attributes.
      * 
-     * @result     This function creates a new font descriptor with the attributes specified. This dictionary can contain arbitrary attributes that will be preserved, however unrecognized attributes will be ignored on font creation and and may not be preserved over the round trip (descriptor -> font -> descriptor).
+     * @return     This function creates a new font descriptor with the attributes specified. This dictionary can contain arbitrary attributes that will be preserved, however unrecognized attributes will be ignored on font creation and and may not be preserved over the round trip (descriptor -> font -> descriptor).
      */
     @Generated
     @CFunction
     public static native CTFontDescriptorRef CTFontDescriptorCreateWithAttributes(CFDictionaryRef attributes);
 
     /**
-     * @function   CTFontDescriptorCreateCopyWithAttributes
-     * @abstract   Creates a copy of the original font descriptor with new attributes.
+     * [@function]   CTFontDescriptorCreateCopyWithAttributes
+     * 
+     * Creates a copy of the original font descriptor with new attributes.
      * 
      * @param      original
      *             The original font descriptor reference.
@@ -238,7 +247,7 @@ public final class CoreText {
      * @param      attributes
      *             A CFDictionaryRef of arbitrary attributes.
      * 
-     * @result     This function creates a new copy of the original font descriptor with attributes augmented by those specified. If there are conflicts between attributes, the new attributes will replace existing ones, except for kCTFontVariationAttribute and kCTFontFeatureSettingsAttribute which will be merged.
+     * @return     This function creates a new copy of the original font descriptor with attributes augmented by those specified. If there are conflicts between attributes, the new attributes will replace existing ones, except for kCTFontVariationAttribute and kCTFontFeatureSettingsAttribute which will be merged.
      * 
      *             Starting with macOS 10.12 and iOS 10.0, setting the value of kCTFontFeatureSettingsAttribute to kCFNull will clear the feature settings of the original font descriptor. Setting the value of any individual feature settings pair in the kCTFontFeatureSettingsAttribute value array to kCFNull will clear that feature setting alone. For example, an element like @{ (id)kCTFontFeatureTypeIdentifierKey: @(kLigaturesType), (id)kCTFontFeatureSelectorIdentifierKey: (id)kCFNull } means clear the kLigatureType feature set in the original font descriptor. An element like @[ @"liga", (id)kCFNull ] will have the same effect.
      */
@@ -248,8 +257,9 @@ public final class CoreText {
             CFDictionaryRef attributes);
 
     /**
-     * @function   CTFontCreateCopyWithFamily
-     * @abstract   Returns a new font descriptor in the specified family based on the traits of the original descriptor.
+     * [@function]   CTFontCreateCopyWithFamily
+     * 
+     * Returns a new font descriptor in the specified family based on the traits of the original descriptor.
      * 
      * @param      original
      *             The original font descriptor reference.
@@ -257,7 +267,7 @@ public final class CoreText {
      * @param      family
      *             The name of the desired family.
      * 
-     * @result     Returns a new font reference with the original traits in the given family, or NULL if none found in the system.
+     * @return     Returns a new font reference with the original traits in the given family, or NULL if none found in the system.
      */
     @Generated
     @CFunction
@@ -265,8 +275,9 @@ public final class CoreText {
             CFStringRef family);
 
     /**
-     * @function   CTFontDescriptorCreateCopyWithSymbolicTraits
-     * @abstract   Returns a new font descriptor based on the original descriptor having the specified symbolic traits.
+     * [@function]   CTFontDescriptorCreateCopyWithSymbolicTraits
+     * 
+     * Returns a new font descriptor based on the original descriptor having the specified symbolic traits.
      * 
      * @param      original
      *             The original font descriptor reference.
@@ -277,7 +288,7 @@ public final class CoreText {
      * @param      symTraitMask
      *             The mask bits of the symbolic traits. This bitfield is used to indicate the traits that should be changed.
      * 
-     * @result     Returns a new font descriptor reference in the same family with the given symbolic traits, or NULL if none found in the system.
+     * @return     Returns a new font descriptor reference in the same family with the given symbolic traits, or NULL if none found in the system.
      */
     @Generated
     @CFunction
@@ -285,8 +296,9 @@ public final class CoreText {
             int symTraitValue, int symTraitMask);
 
     /**
-     * @function   CTFontDescriptorCreateCopyWithVariation
-     * @abstract   Creates a copy of the original font descriptor with a new variation instance.
+     * [@function]   CTFontDescriptorCreateCopyWithVariation
+     * 
+     * Creates a copy of the original font descriptor with a new variation instance.
      * 
      * @param      original
      *             The original font descriptor reference.
@@ -297,7 +309,7 @@ public final class CoreText {
      * @param      variationValue
      *             The value corresponding with the variation instance.
      * 
-     * @result     This function returns a copy of the original font descriptor with a new variation instance. This is a convenience method for easily creating new variation font instances.
+     * @return     This function returns a copy of the original font descriptor with a new variation instance. This is a convenience method for easily creating new variation font instances.
      */
     @Generated
     @CFunction
@@ -305,10 +317,11 @@ public final class CoreText {
             CFNumberRef variationIdentifier, @NFloat double variationValue);
 
     /**
-     * @function   CTFontDescriptorCreateCopyWithFeature
-     * @abstract   Copies a font descriptor with new feature setting.
+     * [@function]   CTFontDescriptorCreateCopyWithFeature
      * 
-     * @discussion This is a convenience method to more easily toggle the state of individual features.
+     * Copies a font descriptor with new feature setting.
+     * 
+     * This is a convenience method to more easily toggle the state of individual features.
      * 
      * @param      original
      *             The original font descriptor reference.
@@ -319,7 +332,7 @@ public final class CoreText {
      * @param      featureSelectorIdentifier
      *             The feature selector identifier.
      * 
-     * @result     A copy of the original font descriptor modified with the given feature settings.
+     * @return     A copy of the original font descriptor modified with the given feature settings.
      */
     @Generated
     @CFunction
@@ -327,8 +340,9 @@ public final class CoreText {
             CFNumberRef featureTypeIdentifier, CFNumberRef featureSelectorIdentifier);
 
     /**
-     * @function   CTFontDescriptorCreateMatchingFontDescriptors
-     * @abstract   Returns an array of font normalized font descriptors matching the provided descriptor.
+     * [@function]   CTFontDescriptorCreateMatchingFontDescriptors
+     * 
+     * Returns an array of font normalized font descriptors matching the provided descriptor.
      * 
      * @param      descriptor
      *             The font descriptor reference.
@@ -336,7 +350,7 @@ public final class CoreText {
      * @param      mandatoryAttributes
      *             A set of attribute keys which are required to be identically matched in any returned font descriptors. Optional.
      * 
-     * @result     This function returns a retained array of normalized font descriptors matching the attributes present in descriptor. If descriptor itself is normalized then the array will contain only one item, the original descriptor.
+     * @return     This function returns a retained array of normalized font descriptors matching the attributes present in descriptor. If descriptor itself is normalized then the array will contain only one item, the original descriptor.
      */
     @Generated
     @CFunction
@@ -344,8 +358,9 @@ public final class CoreText {
             CFSetRef mandatoryAttributes);
 
     /**
-     * @function   CTFontDescriptorCreateMatchingFontDescriptor
-     * @abstract   Returns an the single preferred matching font descriptor based on the original descriptor and system precedence.
+     * [@function]   CTFontDescriptorCreateMatchingFontDescriptor
+     * 
+     * Returns an the single preferred matching font descriptor based on the original descriptor and system precedence.
      * 
      * @param      descriptor
      *             The font descriptor reference.
@@ -353,7 +368,7 @@ public final class CoreText {
      * @param      mandatoryAttributes
      *             A set of attribute keys which are required to be identically matched in any returned font descriptors. Optional.
      * 
-     * @result     This function returns a retained normalized font descriptor matching the attributes present in descriptor. The original descriptor may be returned in normalized form.
+     * @return     This function returns a retained normalized font descriptor matching the attributes present in descriptor. The original descriptor may be returned in normalized form.
      */
     @Generated
     @CFunction
@@ -361,7 +376,7 @@ public final class CoreText {
             CTFontDescriptorRef descriptor, CFSetRef mandatoryAttributes);
 
     /**
-     * @function   CTFontDescriptorMatchFontDescriptorsWithProgressHandler
+     * [@function]   CTFontDescriptorMatchFontDescriptorsWithProgressHandler
      *             This function returns immediately, but can potentially take long time to process.  The progress is notified via progressBlock.
      * 
      * @param      descriptors
@@ -374,7 +389,7 @@ public final class CoreText {
      *             Return true to continue, and return false to cancel the process.
      *             This block is called on a private serial queue on OS X 10.15, iOS 13, and later.
      * 
-     * @result     false if it couldn't start the work.
+     * @return     false if it couldn't start the work.
      */
     @Generated
     @CFunction
@@ -383,21 +398,23 @@ public final class CoreText {
             @ObjCBlock(name = "call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler") Block_CTFontDescriptorMatchFontDescriptorsWithProgressHandler progressBlock);
 
     /**
-     * @function   CTFontDescriptorCopyAttributes
-     * @abstract   Returns the attributes dictionary of the font descriptor.
+     * [@function]   CTFontDescriptorCopyAttributes
+     * 
+     * Returns the attributes dictionary of the font descriptor.
      * 
      * @param      descriptor
      *             The font descriptor reference.
      * 
-     * @result     A retained reference to the font descriptor attributes dictionary. This dictionary will contain the minimum number of attributes to fully specify this particular font descriptor.
+     * @return     A retained reference to the font descriptor attributes dictionary. This dictionary will contain the minimum number of attributes to fully specify this particular font descriptor.
      */
     @Generated
     @CFunction
     public static native CFDictionaryRef CTFontDescriptorCopyAttributes(CTFontDescriptorRef descriptor);
 
     /**
-     * @function   CTFontDescriptorCopyAttribute
-     * @abstract   Returns the value associated with an arbitrary attribute.
+     * [@function]   CTFontDescriptorCopyAttribute
+     * 
+     * Returns the value associated with an arbitrary attribute.
      * 
      * @param      descriptor
      *             The font descriptor.
@@ -405,7 +422,7 @@ public final class CoreText {
      * @param      attribute
      *             The requested attribute.
      * 
-     * @result     A retained reference to the requested attribute, or NULL if the requested attribute is not present. Refer to the attribute definitions for documentation as to how each attribute is packaged as a CFType.
+     * @return     A retained reference to the requested attribute, or NULL if the requested attribute is not present. Refer to the attribute definitions for documentation as to how each attribute is packaged as a CFType.
      */
     @Generated
     @CFunction
@@ -414,9 +431,10 @@ public final class CoreText {
 
     /**
      * function    CTFontDescriptorCopyLocalizedAttribute
-     * @abstract   Returns a localized value for the requested attribute if available.
      * 
-     * @discussion This function returns a localized attribute based on the global language list. If localization is not possible for the attribute the behavior matches CTFontDescriptorCopyAttribute(). Generally, localization of attributes is only applicable to name attributes of a normalized font descriptor.
+     * Returns a localized value for the requested attribute if available.
+     * 
+     * This function returns a localized attribute based on the global language list. If localization is not possible for the attribute the behavior matches CTFontDescriptorCopyAttribute(). Generally, localization of attributes is only applicable to name attributes of a normalized font descriptor.
      * 
      * @param      descriptor
      *             The font descriptor reference.
@@ -428,7 +446,7 @@ public final class CoreText {
      *             If non-NULL, this will be receive a retained reference to the matched language. The language identifier will conform to UTS #35.
      *             If CoreText can supply its own localized string where the font cannot, this value will be NULL.
      * 
-     * @result     A retained reference to the requested attribute, or NULL if the requested attribute is not present. Refer to the attribute definitions for documentation as to how each attribute is packaged as a CFType.
+     * @return     A retained reference to the requested attribute, or NULL if the requested attribute is not present. Refer to the attribute definitions for documentation as to how each attribute is packaged as a CFType.
      */
     @Generated
     @CFunction
@@ -436,9 +454,11 @@ public final class CoreText {
             CFStringRef attribute, Ptr<CFStringRef> language);
 
     /**
-     * @function   CTFontGetTypeID
-     * @abstract   Returns the type identifier for Core Text font references.
-     * @result     The identifier for the opaque type CTFontRef.
+     * [@function]   CTFontGetTypeID
+     * 
+     * Returns the type identifier for Core Text font references.
+     * 
+     * @return     The identifier for the opaque type CTFontRef.
      */
     @Generated
     @CFunction
@@ -446,10 +466,11 @@ public final class CoreText {
     public static native long CTFontGetTypeID();
 
     /**
-     * @function   CTFontCreateWithName
-     * @abstract   Returns a new font reference for the given name.
+     * [@function]   CTFontCreateWithName
      * 
-     * @discussion This function uses font descriptor matching so only registered fonts can be returned; see CTFontManager.h for more information. If you are trying to create a system UI font (with name beginning with a "."), you should use CTFontCreateUIFontForLanguage() or appropriate AppKit/UIKit APIs instead.
+     * Returns a new font reference for the given name.
+     * 
+     * This function uses font descriptor matching so only registered fonts can be returned; see CTFontManager.h for more information. If you are trying to create a system UI font (with name beginning with a "."), you should use CTFontCreateUIFontForLanguage() or appropriate AppKit/UIKit APIs instead.
      * 
      * @param      name
      *             The font name for which you wish to create a new font reference. A valid PostScript name is preferred, although other font name types will be matched in a fallback manner. Any font name beginning with a "." is reserved for the system and should not be used here.
@@ -460,7 +481,7 @@ public final class CoreText {
      * @param      matrix
      *             The transformation matrix for the font. If unspecified, the identity matrix will be used. Optional.
      * 
-     * @result     This function will return a CTFontRef that best matches the name provided with size and matrix attributes. The name parameter is the only required parameters, and default values will be used for unspecified parameters. A best match will be found if all parameters cannot be matched identically.
+     * @return     This function will return a CTFontRef that best matches the name provided with size and matrix attributes. The name parameter is the only required parameters, and default values will be used for unspecified parameters. A best match will be found if all parameters cannot be matched identically.
      */
     @Generated
     @CFunction
@@ -468,8 +489,9 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
 
     /**
-     * @function   CTFontCreateWithFontDescriptor
-     * @abstract   Returns a new font reference that best matches the font descriptor.
+     * [@function]   CTFontCreateWithFontDescriptor
+     * 
+     * Returns a new font reference that best matches the font descriptor.
      * 
      * @param      descriptor
      *             A font descriptor containing attributes that specify the requested font.
@@ -480,7 +502,7 @@ public final class CoreText {
      * @param      matrix
      *             The transformation matrix for the font. If unspecified, the identity matrix will be used. Optional.
      * 
-     * @result     This function will return a CTFontRef that best matches the attributes provided with the font descriptor. The size and matrix parameters will override any specified in the font descriptor, unless they are unspecified. A best match font will always be returned, and default values will be used for any unspecified.
+     * @return     This function will return a CTFontRef that best matches the attributes provided with the font descriptor. The size and matrix parameters will override any specified in the font descriptor, unless they are unspecified. A best match font will always be returned, and default values will be used for any unspecified.
      */
     @Generated
     @CFunction
@@ -488,10 +510,11 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
 
     /**
-     * @function   CTFontCreateWithNameAndOptions
-     * @abstract   Returns a new font reference for the given name.
+     * [@function]   CTFontCreateWithNameAndOptions
      * 
-     * @discussion This function uses font descriptor matching so only registered fonts can be returned; see CTFontManager.h for more information. If you are trying to create a system UI font (with name beginning with a "."), you should use CTFontCreateUIFontForLanguage() or appropriate AppKit/UIKit APIs instead.
+     * Returns a new font reference for the given name.
+     * 
+     * This function uses font descriptor matching so only registered fonts can be returned; see CTFontManager.h for more information. If you are trying to create a system UI font (with name beginning with a "."), you should use CTFontCreateUIFontForLanguage() or appropriate AppKit/UIKit APIs instead.
      * 
      * @param      name
      *             The font name for which you wish to create a new font reference. A valid PostScript name is preferred, although other font name types will be matched in a fallback manner. Any font name beginning with a "." is reserved for the system and should not be used here.
@@ -505,7 +528,7 @@ public final class CoreText {
      * @param      options
      *             Options flags.
      * 
-     * @result     This function will return a CTFontRef that best matches the name provided with size and matrix attributes. The name parameter is the only required parameters, and default values will be used for unspecified parameters. A best match will be found if all parameters cannot be matched identically.
+     * @return     This function will return a CTFontRef that best matches the name provided with size and matrix attributes. The name parameter is the only required parameters, and default values will be used for unspecified parameters. A best match will be found if all parameters cannot be matched identically.
      */
     @Generated
     @CFunction
@@ -514,8 +537,9 @@ public final class CoreText {
             @NUInt long options);
 
     /**
-     * @function   CTFontCreateWithFontDescriptorAndOptions
-     * @abstract   Returns a new font reference that best matches the font descriptor.
+     * [@function]   CTFontCreateWithFontDescriptorAndOptions
+     * 
+     * Returns a new font reference that best matches the font descriptor.
      * 
      * @param      descriptor
      *             A font descriptor containing attributes that specify the requested font.
@@ -529,7 +553,7 @@ public final class CoreText {
      * @param      options
      *             Options flags.
      * 
-     * @result     This function will return a CTFontRef that best matches the attributes provided with the font descriptor. The size and matrix parameters will override any specified in the font descriptor, unless they are unspecified. A best match font will always be returned, and default values will be used for any unspecified.
+     * @return     This function will return a CTFontRef that best matches the attributes provided with the font descriptor. The size and matrix parameters will override any specified in the font descriptor, unless they are unspecified. A best match font will always be returned, and default values will be used for any unspecified.
      */
     @Generated
     @CFunction
@@ -539,8 +563,9 @@ public final class CoreText {
             @NUInt long options);
 
     /**
-     * @function   CTFontCreateUIFontForLanguage
-     * @abstract   Returns the special UI font for the given language and UI type.
+     * [@function]   CTFontCreateUIFontForLanguage
+     * 
+     * Returns the special UI font for the given language and UI type.
      * 
      * @param      uiType
      *             A uiType constant specifying the intended UI use for the requested font reference.
@@ -551,17 +576,18 @@ public final class CoreText {
      * @param      language
      *             Language identifier to select a font for a particular localization. If unspecified, the current system language is used. The format of the language identifier should conform to UTS #35.
      * 
-     * @result     This function returns the correct font for various UI uses. The only required parameter is the uiType selector, unspecified optional parameters will use default values.
+     * @return     This function returns the correct font for various UI uses. The only required parameter is the uiType selector, unspecified optional parameters will use default values.
      */
     @Generated
     @CFunction
     public static native CTFontRef CTFontCreateUIFontForLanguage(int uiType, @NFloat double size, CFStringRef language);
 
     /**
-     * @function   CTFontCreateCopyWithAttributes
-     * @abstract   Returns a new font with additional attributes based on the original font.
+     * [@function]   CTFontCreateCopyWithAttributes
      * 
-     * @discussion This function provides a mechanism to quickly change attributes on a given font reference in response to user actions. For instance, the size can be changed in response to a user manipulating a size slider.
+     * Returns a new font with additional attributes based on the original font.
+     * 
+     * This function provides a mechanism to quickly change attributes on a given font reference in response to user actions. For instance, the size can be changed in response to a user manipulating a size slider.
      * 
      * @param      font
      *             Original font reference to base new font on.
@@ -575,7 +601,7 @@ public final class CoreText {
      * @param      attributes
      *             A font descriptor containing additional attributes that the new font should contain.
      * 
-     * @result     Returns a new font reference converted from the original with the specified attributes.
+     * @return     Returns a new font reference converted from the original with the specified attributes.
      */
     @Generated
     @CFunction
@@ -584,8 +610,9 @@ public final class CoreText {
             CTFontDescriptorRef attributes);
 
     /**
-     * @function   CTFontCreateCopyWithSymbolicTraits
-     * @abstract   Returns a new font based on the original font with the specified symbolic traits.
+     * [@function]   CTFontCreateCopyWithSymbolicTraits
+     * 
+     * Returns a new font based on the original font with the specified symbolic traits.
      * 
      * @param      font
      *             Original font reference on which to base the new font.
@@ -602,7 +629,7 @@ public final class CoreText {
      * @param      symTraitMask
      *             The mask bits of the symbolic traits. This bitfield is used to indicate the traits that should be changed.
      * 
-     * @result     Returns a new font reference in the same family with the given symbolic traits, or NULL if none found in the system.
+     * @return     Returns a new font reference in the same family with the given symbolic traits, or NULL if none found in the system.
      */
     @Generated
     @CFunction
@@ -611,8 +638,9 @@ public final class CoreText {
             int symTraitValue, int symTraitMask);
 
     /**
-     * @function   CTFontCreateCopyWithFamily
-     * @abstract   Returns a new font in the specified family based on the traits of the original font.
+     * [@function]   CTFontCreateCopyWithFamily
+     * 
+     * Returns a new font in the specified family based on the traits of the original font.
      * 
      * @param      font
      *             Original font reference to base new font on.
@@ -626,7 +654,7 @@ public final class CoreText {
      * @param      family
      *             The name of the desired family.
      * 
-     * @result     Returns a new font reference with the original traits in the given family. NULL if non found in the system.
+     * @return     Returns a new font reference with the original traits in the given family. NULL if non found in the system.
      */
     @Generated
     @CFunction
@@ -635,10 +663,11 @@ public final class CoreText {
             CFStringRef family);
 
     /**
-     * @function   CTFontCreateForString
-     * @abstract   Returns a new font reference that can best map the given string range based on the current font.
+     * [@function]   CTFontCreateForString
      * 
-     * @discussion This function is to be used when the current font does not cover the given range of the string. The current font itself will not be returned, but preference is given to fonts in its cascade list.
+     * Returns a new font reference that can best map the given string range based on the current font.
+     * 
+     * This function is to be used when the current font does not cover the given range of the string. The current font itself will not be returned, but preference is given to fonts in its cascade list.
      * 
      * @param      currentFont
      *             The current font that contains a valid cascade list.
@@ -649,11 +678,11 @@ public final class CoreText {
      * @param      range
      *             A CFRange specifying the range of the string that needs to be mapped.
      * 
-     * @result     This function returns the best substitute font that can encode the specified string range.
+     * @return     This function returns the best substitute font that can encode the specified string range.
      * 
-     * @seealso    CTFontCopyCharacterSet
-     * @seealso    CTFontGetGlyphsForCharacters
-     * @seealso    kCTFontCascadeListAttribute
+     * @see    CTFontCopyCharacterSet
+     * @see    CTFontGetGlyphsForCharacters
+     * @see    kCTFontCascadeListAttribute
      */
     @Generated
     @CFunction
@@ -661,21 +690,23 @@ public final class CoreText {
             @ByValue CFRange range);
 
     /**
-     * @function   CTFontCopyFontDescriptor
-     * @abstract   Returns the normalized font descriptors for the given font reference.
+     * [@function]   CTFontCopyFontDescriptor
+     * 
+     * Returns the normalized font descriptors for the given font reference.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a normalized font descriptor for a font. The font descriptor contains enough information to recreate this font at a later time.
+     * @return     This function returns a normalized font descriptor for a font. The font descriptor contains enough information to recreate this font at a later time.
      */
     @Generated
     @CFunction
     public static native CTFontDescriptorRef CTFontCopyFontDescriptor(CTFontRef font);
 
     /**
-     * @function   CTFontCopyAttribute
-     * @abstract   Returns the value associated with an arbitrary attribute.
+     * [@function]   CTFontCopyAttribute
+     * 
+     * Returns the value associated with an arbitrary attribute.
      * 
      * @param      font
      *             The font reference.
@@ -683,20 +714,21 @@ public final class CoreText {
      * @param      attribute
      *             The requested attribute.
      * 
-     * @result     This function returns a retained reference to an arbitrary attribute. If the requested attribute is not present, NULL is returned. Refer to the attribute definitions for documentation as to how each attribute is packaged as a CFType.
+     * @return     This function returns a retained reference to an arbitrary attribute. If the requested attribute is not present, NULL is returned. Refer to the attribute definitions for documentation as to how each attribute is packaged as a CFType.
      */
     @Generated
     @CFunction
     public static native ConstVoidPtr CTFontCopyAttribute(CTFontRef font, CFStringRef attribute);
 
     /**
-     * @function   CTFontGetSize
-     * @abstract   Returns the point size of the font reference.
+     * [@function]   CTFontGetSize
+     * 
+     * Returns the point size of the font reference.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the point size of the given font reference. This is the point size provided when the font was created.
+     * @return     This function returns the point size of the given font reference. This is the point size provided when the font was created.
      */
     @Generated
     @CFunction
@@ -704,13 +736,14 @@ public final class CoreText {
     public static native double CTFontGetSize(CTFontRef font);
 
     /**
-     * @function   CTFontGetMatrix
-     * @abstract   Returns the transformation matrix of the font.
+     * [@function]   CTFontGetMatrix
+     * 
+     * Returns the transformation matrix of the font.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the transformation matrix for this given font reference. This is the matrix that was provided when the font was created.
+     * @return     This function returns the transformation matrix for this given font reference. This is the matrix that was provided when the font was created.
      */
     @Generated
     @CFunction
@@ -718,86 +751,93 @@ public final class CoreText {
     public static native CGAffineTransform CTFontGetMatrix(CTFontRef font);
 
     /**
-     * @function   CTFontGetSymbolicTraits
-     * @abstract   Returns the symbolic font traits.
+     * [@function]   CTFontGetSymbolicTraits
+     * 
+     * Returns the symbolic font traits.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the symbolic traits of the font. This is equivalent to the kCTFontSymbolicTrait of traits dictionary. See CTFontTraits.h for a definition of the font traits.
+     * @return     This function returns the symbolic traits of the font. This is equivalent to the kCTFontSymbolicTrait of traits dictionary. See CTFontTraits.h for a definition of the font traits.
      */
     @Generated
     @CFunction
     public static native int CTFontGetSymbolicTraits(CTFontRef font);
 
     /**
-     * @function   CTFontCopyTraits
-     * @abstract   Returns the font traits dictionary.
+     * [@function]   CTFontCopyTraits
+     * 
+     * Returns the font traits dictionary.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a retained reference to the font traits dictionary. Individual traits can be accessed with the trait key constants. See CTFontTraits.h for a definition of the font traits.
+     * @return     This function returns a retained reference to the font traits dictionary. Individual traits can be accessed with the trait key constants. See CTFontTraits.h for a definition of the font traits.
      */
     @Generated
     @CFunction
     public static native CFDictionaryRef CTFontCopyTraits(CTFontRef font);
 
     /**
-     * @function   CTFontCopyPostScriptName
-     * @abstract   Returns the PostScript name.
+     * [@function]   CTFontCopyPostScriptName
+     * 
+     * Returns the PostScript name.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a retained reference to the PostScript name of the font.
+     * @return     This function returns a retained reference to the PostScript name of the font.
      */
     @Generated
     @CFunction
     public static native CFStringRef CTFontCopyPostScriptName(CTFontRef font);
 
     /**
-     * @function   CTFontCopyFamilyName
-     * @abstract   Returns the family name.
+     * [@function]   CTFontCopyFamilyName
+     * 
+     * Returns the family name.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a retained reference to the family name of the font.
+     * @return     This function returns a retained reference to the family name of the font.
      */
     @Generated
     @CFunction
     public static native CFStringRef CTFontCopyFamilyName(CTFontRef font);
 
     /**
-     * @function   CTFontCopyFullName
-     * @abstract   Returns the display name.
+     * [@function]   CTFontCopyFullName
+     * 
+     * Returns the display name.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a retained reference to the full name of the font.
+     * @return     This function returns a retained reference to the full name of the font.
      */
     @Generated
     @CFunction
     public static native CFStringRef CTFontCopyFullName(CTFontRef font);
 
     /**
-     * @function   CTFontCopyDisplayName
-     * @abstract   Returns the display name.
+     * [@function]   CTFontCopyDisplayName
+     * 
+     * Returns the display name.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a retained reference to the localized display name of the font.
+     * @return     This function returns a retained reference to the localized display name of the font.
      */
     @Generated
     @CFunction
     public static native CFStringRef CTFontCopyDisplayName(CTFontRef font);
 
     /**
-     * @function   CTFontCopyName
-     * @abstract   Returns a reference to the requested name.
+     * [@function]   CTFontCopyName
+     * 
+     * Returns a reference to the requested name.
      * 
      * @param      font
      *             The font reference.
@@ -805,15 +845,16 @@ public final class CoreText {
      * @param      nameKey
      *             The name specifier. See name specifier constants.
      * 
-     * @result     This function creates the requested name for the font, or NULL if the font does not have an entry for the requested name. The Unicode version of the name will be preferred, otherwise the first available will be used.
+     * @return     This function creates the requested name for the font, or NULL if the font does not have an entry for the requested name. The Unicode version of the name will be preferred, otherwise the first available will be used.
      */
     @Generated
     @CFunction
     public static native CFStringRef CTFontCopyName(CTFontRef font, CFStringRef nameKey);
 
     /**
-     * @function   CTFontCopyLocalizedName
-     * @abstract   Returns a reference to a localized font name.
+     * [@function]   CTFontCopyLocalizedName
+     * 
+     * Returns a reference to a localized font name.
      * 
      * @param      font
      *             The font reference.
@@ -825,7 +866,7 @@ public final class CoreText {
      *             Pointer to a CFStringRef to receive the language identifier of the returned name string. The format of the language identifier will conform to UTS #35.
      *             If CoreText can supply its own localized string where the font cannot, this value will be NULL.
      * 
-     * @result     This function returns a specific localized name from the font reference. The name is localized based on the user's global language precedence. If the font does not have an entry for the requested name, NULL will be returned. The matched language will be returned in the caller's buffer.
+     * @return     This function returns a specific localized name from the font reference. The name is localized based on the user's global language precedence. If the font does not have an entry for the requested name, NULL will be returned. The matched language will be returned in the caller's buffer.
      */
     @Generated
     @CFunction
@@ -833,49 +874,53 @@ public final class CoreText {
             Ptr<CFStringRef> actualLanguage);
 
     /**
-     * @function   CTFontCopyCharacterSet
-     * @abstract   Returns the Unicode character set of the font.
+     * [@function]   CTFontCopyCharacterSet
+     * 
+     * Returns the Unicode character set of the font.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a retained reference to the font's character set. This character set covers the nominal referenced by the font's Unicode cmap table (or equivalent).
+     * @return     This function returns a retained reference to the font's character set. This character set covers the nominal referenced by the font's Unicode cmap table (or equivalent).
      */
     @Generated
     @CFunction
     public static native CFCharacterSetRef CTFontCopyCharacterSet(CTFontRef font);
 
     /**
-     * @function   CTFontGetStringEncoding
-     * @abstract   Returns the best string encoding for legacy format support.
+     * [@function]   CTFontGetStringEncoding
+     * 
+     * Returns the best string encoding for legacy format support.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the best string encoding for the font.
+     * @return     This function returns the best string encoding for the font.
      */
     @Generated
     @CFunction
     public static native int CTFontGetStringEncoding(CTFontRef font);
 
     /**
-     * @function   CTFontCopySupportedLanguages
-     * @abstract   Returns an array of languages supported by the font.
+     * [@function]   CTFontCopySupportedLanguages
+     * 
+     * Returns an array of languages supported by the font.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a retained reference to an array of languages supported by the font. The array contains language identifier strings as CFStringRefs. The format of the language identifier will conform to UTS #35.
+     * @return     This function returns a retained reference to an array of languages supported by the font. The array contains language identifier strings as CFStringRefs. The format of the language identifier will conform to UTS #35.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontCopySupportedLanguages(CTFontRef font);
 
     /**
-     * @function   CTFontGetGlyphsForCharacters
-     * @abstract   Performs basic character-to-glyph mapping.
+     * [@function]   CTFontGetGlyphsForCharacters
      * 
-     * @discussion This function only provides the nominal mapping as specified by the font's Unicode cmap (or equivalent); such mapping does not constitute proper Unicode layout: it is the caller's responsibility to handle the Unicode properties of the characters.
+     * Performs basic character-to-glyph mapping.
+     * 
+     * This function only provides the nominal mapping as specified by the font's Unicode cmap (or equivalent); such mapping does not constitute proper Unicode layout: it is the caller's responsibility to handle the Unicode properties of the characters.
      * 
      * @param      font
      *             The font reference.
@@ -889,9 +934,9 @@ public final class CoreText {
      * @param      count
      *             The capacity of both the characters and glyphs arrays.
      * 
-     * @result     The return value indicates whether all provided characters were successfully mapped. A return value of true indicates that the font mapped all characters. A return value of false indicates that some or all of the characters were not mapped; glyphs for unmapped characters will be 0 (with the exception of those corresponding non-BMP characters as described above).
+     * @return     The return value indicates whether all provided characters were successfully mapped. A return value of true indicates that the font mapped all characters. A return value of false indicates that some or all of the characters were not mapped; glyphs for unmapped characters will be 0 (with the exception of those corresponding non-BMP characters as described above).
      * 
-     * @seealso    CTFontCopyCharacterSet
+     * @see    CTFontCopyCharacterSet
      */
     @Generated
     @CFunction
@@ -899,13 +944,14 @@ public final class CoreText {
             @NInt long count);
 
     /**
-     * @function   CTFontGetAscent
-     * @abstract   Returns the scaled font ascent metric.
+     * [@function]   CTFontGetAscent
+     * 
+     * Returns the scaled font ascent metric.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the font ascent metric scaled based on the point size and matrix of the font reference.
+     * @return     This function returns the font ascent metric scaled based on the point size and matrix of the font reference.
      */
     @Generated
     @CFunction
@@ -913,13 +959,14 @@ public final class CoreText {
     public static native double CTFontGetAscent(CTFontRef font);
 
     /**
-     * @function   CTFontGetDescent
-     * @abstract   Returns the scaled font descent metric.
+     * [@function]   CTFontGetDescent
+     * 
+     * Returns the scaled font descent metric.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the font descent metric scaled based on the point size and matrix of the font reference.
+     * @return     This function returns the font descent metric scaled based on the point size and matrix of the font reference.
      */
     @Generated
     @CFunction
@@ -927,13 +974,14 @@ public final class CoreText {
     public static native double CTFontGetDescent(CTFontRef font);
 
     /**
-     * @function   CTFontGetLeading
-     * @abstract   Returns the scaled font leading metric.
+     * [@function]   CTFontGetLeading
+     * 
+     * Returns the scaled font leading metric.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the font leading metric scaled based on the point size and matrix of the font reference.
+     * @return     This function returns the font leading metric scaled based on the point size and matrix of the font reference.
      */
     @Generated
     @CFunction
@@ -941,26 +989,28 @@ public final class CoreText {
     public static native double CTFontGetLeading(CTFontRef font);
 
     /**
-     * @function   CTFontGetUnitsPerEm
-     * @abstract   Returns the units per em metric.
+     * [@function]   CTFontGetUnitsPerEm
+     * 
+     * Returns the units per em metric.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the units per em of the font.
+     * @return     This function returns the units per em of the font.
      */
     @Generated
     @CFunction
     public static native int CTFontGetUnitsPerEm(CTFontRef font);
 
     /**
-     * @function   CTFontGetGlyphCount
-     * @abstract   Returns the number of glyphs.
+     * [@function]   CTFontGetGlyphCount
+     * 
+     * Returns the number of glyphs.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the number of glyphs in the font.
+     * @return     This function returns the number of glyphs in the font.
      */
     @Generated
     @CFunction
@@ -968,13 +1018,14 @@ public final class CoreText {
     public static native long CTFontGetGlyphCount(CTFontRef font);
 
     /**
-     * @function   CTFontGetBoundingBox
-     * @abstract   Returns the scaled bounding box.
+     * [@function]   CTFontGetBoundingBox
+     * 
+     * Returns the scaled bounding box.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This will return the design bounding box of the font, which is the rectangle defined by xMin, yMin, xMax, and yMax values for the font.
+     * @return     This will return the design bounding box of the font, which is the rectangle defined by xMin, yMin, xMax, and yMax values for the font.
      */
     @Generated
     @CFunction
@@ -982,13 +1033,14 @@ public final class CoreText {
     public static native CGRect CTFontGetBoundingBox(CTFontRef font);
 
     /**
-     * @function   CTFontGetUnderlinePosition
-     * @abstract   Returns the scaled underline position.
+     * [@function]   CTFontGetUnderlinePosition
+     * 
+     * Returns the scaled underline position.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the font underline position metric scaled based on the point size and matrix of the font reference.
+     * @return     This function returns the font underline position metric scaled based on the point size and matrix of the font reference.
      */
     @Generated
     @CFunction
@@ -996,13 +1048,14 @@ public final class CoreText {
     public static native double CTFontGetUnderlinePosition(CTFontRef font);
 
     /**
-     * @function   CTFontGetUnderlineThickness
-     * @abstract   Returns the scaled underline thickness metric.
+     * [@function]   CTFontGetUnderlineThickness
+     * 
+     * Returns the scaled underline thickness metric.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the font underline thickness metric scaled based on the point size and matrix of the font reference.
+     * @return     This function returns the font underline thickness metric scaled based on the point size and matrix of the font reference.
      */
     @Generated
     @CFunction
@@ -1010,13 +1063,14 @@ public final class CoreText {
     public static native double CTFontGetUnderlineThickness(CTFontRef font);
 
     /**
-     * @function   CTFontGetSlantAngle
-     * @abstract   Returns the slant angle of the font.
+     * [@function]   CTFontGetSlantAngle
+     * 
+     * Returns the slant angle of the font.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the transformed slant angle of the font. This is equivalent to the italic or caret angle with any skew from the transformation matrix applied.
+     * @return     This function returns the transformed slant angle of the font. This is equivalent to the italic or caret angle with any skew from the transformation matrix applied.
      */
     @Generated
     @CFunction
@@ -1024,13 +1078,14 @@ public final class CoreText {
     public static native double CTFontGetSlantAngle(CTFontRef font);
 
     /**
-     * @function   CTFontGetCapHeight
-     * @abstract   Returns the cap height metric.
+     * [@function]   CTFontGetCapHeight
+     * 
+     * Returns the cap height metric.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the font cap height metric scaled based on the point size and matrix of the font reference.
+     * @return     This function returns the font cap height metric scaled based on the point size and matrix of the font reference.
      */
     @Generated
     @CFunction
@@ -1038,13 +1093,14 @@ public final class CoreText {
     public static native double CTFontGetCapHeight(CTFontRef font);
 
     /**
-     * @function   CTFontGetXHeight
-     * @abstract   Returns the X height metric.
+     * [@function]   CTFontGetXHeight
+     * 
+     * Returns the X height metric.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns the font X height metric scaled based on the point size and matrix of the font reference.
+     * @return     This function returns the font X height metric scaled based on the point size and matrix of the font reference.
      */
     @Generated
     @CFunction
@@ -1052,8 +1108,9 @@ public final class CoreText {
     public static native double CTFontGetXHeight(CTFontRef font);
 
     /**
-     * @function   CTFontGetGlyphWithName
-     * @abstract   Returns the CGGlyph for the specified glyph name.
+     * [@function]   CTFontGetGlyphWithName
+     * 
+     * Returns the CGGlyph for the specified glyph name.
      * 
      * @param      font
      *             The font reference.
@@ -1061,15 +1118,16 @@ public final class CoreText {
      * @param      glyphName
      *             The glyph name as a CFString.
      * 
-     * @result     The glyph with the specified name or 0 if the name is not recognized; this glyph can be used with other Core Text glyph data accessors or with Quartz.
+     * @return     The glyph with the specified name or 0 if the name is not recognized; this glyph can be used with other Core Text glyph data accessors or with Quartz.
      */
     @Generated
     @CFunction
     public static native char CTFontGetGlyphWithName(CTFontRef font, CFStringRef glyphName);
 
     /**
-     * @function   CTFontGetBoundingRectsForGlyphs
-     * @abstract   Calculates the bounding rects for an array of glyphs and returns the overall bounding rect for the run.
+     * [@function]   CTFontGetBoundingRectsForGlyphs
+     * 
+     * Calculates the bounding rects for an array of glyphs and returns the overall bounding rect for the run.
      * 
      * @param      font
      *             The font reference.
@@ -1086,7 +1144,7 @@ public final class CoreText {
      * @param      count
      *             The capacity of the glyphs and boundingRects buffers.
      * 
-     * @result     This function returns the overall bounding rectangle for an array or run of glyphs. The bounding rects of the individual glyphs are returned through the boundingRects parameter. These are the design metrics from the font transformed in font space.
+     * @return     This function returns the overall bounding rectangle for an array or run of glyphs. The bounding rects of the individual glyphs are returned through the boundingRects parameter. These are the design metrics from the font transformed in font space.
      */
     @Generated
     @CFunction
@@ -1095,10 +1153,11 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGRect boundingRects, @NInt long count);
 
     /**
-     * @function   CTFontGetOpticalBoundsForGlyphs
-     * @abstract   Calculates the optical bounding rects for an array of glyphs and returns the overall optical bounding rect for the run.
+     * [@function]   CTFontGetOpticalBoundsForGlyphs
      * 
-     * @discussion Fonts may specify the optical edges of glyphs that can be used to make the edges of lines of text line up in a more visually pleasing way. This function returns bounding rects corresponding to this information if present in a font, otherwise it returns typographic bounding rects (composed of the font's ascent and descent and a glyph's advance width).
+     * Calculates the optical bounding rects for an array of glyphs and returns the overall optical bounding rect for the run.
+     * 
+     * Fonts may specify the optical edges of glyphs that can be used to make the edges of lines of text line up in a more visually pleasing way. This function returns bounding rects corresponding to this information if present in a font, otherwise it returns typographic bounding rects (composed of the font's ascent and descent and a glyph's advance width).
      * 
      * @param      font
      *             The font reference.
@@ -1115,7 +1174,7 @@ public final class CoreText {
      * @param      options
      *             Reserved, set to zero.
      * 
-     * @result     This function returns the overall bounding rectangle for an array or run of glyphs. The bounding rects of the individual glyphs are returned through the boundingRects parameter. These are the design metrics from the font transformed in font space.
+     * @return     This function returns the overall bounding rectangle for an array or run of glyphs. The bounding rects of the individual glyphs are returned through the boundingRects parameter. These are the design metrics from the font transformed in font space.
      */
     @Generated
     @CFunction
@@ -1125,8 +1184,9 @@ public final class CoreText {
             @NUInt long options);
 
     /**
-     * @function   CTFontGetAdvancesForGlyphs
-     * @abstract   Calculates the advances for an array of glyphs and returns the summed advance.
+     * [@function]   CTFontGetAdvancesForGlyphs
+     * 
+     * Calculates the advances for an array of glyphs and returns the summed advance.
      * 
      * @param      font
      *             The font reference.
@@ -1143,7 +1203,7 @@ public final class CoreText {
      * @param      count
      *             The capacity of the glyphs and advances buffers.
      * 
-     * @result     This function returns the summed glyph advance of an array of glyphs. Individual glyph advances are passed back via the advances parameter. These are the ideal metrics for each glyph scaled and transformed in font space.
+     * @return     This function returns the summed glyph advance of an array of glyphs. Individual glyph advances are passed back via the advances parameter. These are the ideal metrics for each glyph scaled and transformed in font space.
      */
     @Generated
     @CFunction
@@ -1151,8 +1211,9 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGSize advances, @NInt long count);
 
     /**
-     * @function   CTFontGetVerticalTranslationsForGlyphs
-     * @abstract   Calculates the offset from the default (horizontal) origin to the vertical origin for an array of glyphs.
+     * [@function]   CTFontGetVerticalTranslationsForGlyphs
+     * 
+     * Calculates the offset from the default (horizontal) origin to the vertical origin for an array of glyphs.
      * 
      * @param      font
      *             The font reference.
@@ -1172,10 +1233,11 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGSize translations, @NInt long count);
 
     /**
-     * @function   CTFontCreatePathForGlyph
-     * @abstract   Creates a path for the specified glyph.
+     * [@function]   CTFontCreatePathForGlyph
      * 
-     * @discussion Creates a path from the outlines of the glyph for the specified font. The path will reflect the font point size, matrix, and transform parameter, in that order. The transform parameter will most commonly be used to provide a translation to the desired glyph origin.
+     * Creates a path for the specified glyph.
+     * 
+     * Creates a path from the outlines of the glyph for the specified font. The path will reflect the font point size, matrix, and transform parameter, in that order. The transform parameter will most commonly be used to provide a translation to the desired glyph origin.
      * 
      * @param      font
      *             The font reference.
@@ -1186,7 +1248,7 @@ public final class CoreText {
      * @param      matrix
      *             An affine transform applied to the path. Can be NULL, in which case CGAffineTransformIdentity will be used.
      * 
-     * @result     A retained CGPath reference containing the glyph outlines or NULL if there is no such glyph or it has no outline.
+     * @return     A retained CGPath reference containing the glyph outlines or NULL if there is no such glyph or it has no outline.
      */
     @Generated
     @CFunction
@@ -1194,66 +1256,72 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
 
     /**
-     * @function   CTFontCopyVariationAxes
-     * @abstract   Returns an array of variation axis dictionaries.
+     * [@function]   CTFontCopyVariationAxes
+     * 
+     * Returns an array of variation axis dictionaries.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns an array of variation axis dictionaries or null if the font does not support variations. Each variation axis dictionary contains the five kCTFontVariationAxis* keys above.
+     * @return     This function returns an array of variation axis dictionaries or null if the font does not support variations. Each variation axis dictionary contains the five kCTFontVariationAxis* keys above.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontCopyVariationAxes(CTFontRef font);
 
     /**
-     * @function   CTFontCopyVariation
-     * @abstract   Returns a variation dictionary.
-     * @discussion This function describes the current configuration of a variation font: a dictionary of number values with variation identifier number keys. As of macOS 10.12 and iOS 10.0, only non-default values (as determined by the variation axis) are returned.
+     * [@function]   CTFontCopyVariation
+     * 
+     * Returns a variation dictionary.
+     * 
+     * This function describes the current configuration of a variation font: a dictionary of number values with variation identifier number keys. As of macOS 10.12 and iOS 10.0, only non-default values (as determined by the variation axis) are returned.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a variation dictionary or null if the font does not support variations.
+     * @return     This function returns a variation dictionary or null if the font does not support variations.
      * 
-     * @seealso    kCTFontVariationAxisIdentifierKey
-     * @seealso    kCTFontVariationAxisDefaultValueKey
+     * @see    kCTFontVariationAxisIdentifierKey
+     * @see    kCTFontVariationAxisDefaultValueKey
      */
     @Generated
     @CFunction
     public static native CFDictionaryRef CTFontCopyVariation(CTFontRef font);
 
     /**
-     * @function   CTFontCopyFeatures
-     * @abstract   Returns an array of font features
+     * [@function]   CTFontCopyFeatures
+     * 
+     * Returns an array of font features
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns an array of font feature dictionaries for the font reference.
+     * @return     This function returns an array of font feature dictionaries for the font reference.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontCopyFeatures(CTFontRef font);
 
     /**
-     * @function   CTFontCopyFeatureSettings
-     * @abstract   Returns an array of font feature setting tuples
+     * [@function]   CTFontCopyFeatureSettings
      * 
-     * @discussion A setting tuple is a dictionary of a kCTFontFeatureTypeIdentifierKey key-value pair and a kCTFontFeatureSelectorIdentifierKey key-value pair. Each tuple corresponds to an enabled non-default setting. It is the caller's responsibility to handle exclusive and non-exclusive settings as necessary.
+     * Returns an array of font feature setting tuples
+     * 
+     * A setting tuple is a dictionary of a kCTFontFeatureTypeIdentifierKey key-value pair and a kCTFontFeatureSelectorIdentifierKey key-value pair. Each tuple corresponds to an enabled non-default setting. It is the caller's responsibility to handle exclusive and non-exclusive settings as necessary.
      * 
      * @param      font
      *             The font reference.
      * 
-     * @result     This function returns a normalized array of font feature setting dictionaries. The array will only contain the non-default settings that should be applied to the font, or NULL if the default settings should be used.
+     * @return     This function returns a normalized array of font feature setting dictionaries. The array will only contain the non-default settings that should be applied to the font, or NULL if the default settings should be used.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontCopyFeatureSettings(CTFontRef font);
 
     /**
-     * @function   CTFontCopyGraphicsFont
-     * @abstract   Returns a CGFontRef and attributes.
+     * [@function]   CTFontCopyGraphicsFont
+     * 
+     * Returns a CGFontRef and attributes.
      * 
      * @param      font
      *             The font reference.
@@ -1261,15 +1329,16 @@ public final class CoreText {
      * @param      attributes
      *             A pointer to a CTFontDescriptorRef to receive a font descriptor containing additional attributes. Can be NULL. Must be released by caller.
      * 
-     * @result     This function returns a CGFontRef for the given font reference. Additional attributes from the font will be passed back as a font descriptor via the attributes parameter. The result must be released by the caller.
+     * @return     This function returns a CGFontRef for the given font reference. Additional attributes from the font will be passed back as a font descriptor via the attributes parameter. The result must be released by the caller.
      */
     @Generated
     @CFunction
     public static native CGFontRef CTFontCopyGraphicsFont(CTFontRef font, Ptr<CTFontDescriptorRef> attributes);
 
     /**
-     * @function   CTFontCreateWithGraphicsFont
-     * @abstract   Creates a new font reference from a CGFontRef.
+     * [@function]   CTFontCreateWithGraphicsFont
+     * 
+     * Creates a new font reference from a CGFontRef.
      * 
      * @param      graphicsFont
      *             A valid CGFontRef.
@@ -1283,7 +1352,7 @@ public final class CoreText {
      * @param      attributes
      *             A CTFontDescriptorRef containing additional attributes that should be matched. Optional.
      * 
-     * @result     This function returns a new font reference for an existing CGFontRef with the specified size, matrix, and additional attributes.
+     * @return     This function returns a new font reference for an existing CGFontRef with the specified size, matrix, and additional attributes.
      */
     @Generated
     @CFunction
@@ -1292,8 +1361,9 @@ public final class CoreText {
             CTFontDescriptorRef attributes);
 
     /**
-     * @function   CTFontCopyAvailableTables
-     * @abstract   Returns an array of font table tags.
+     * [@function]   CTFontCopyAvailableTables
+     * 
+     * Returns an array of font table tags.
      * 
      * @param      font
      *             The font reference.
@@ -1301,7 +1371,7 @@ public final class CoreText {
      * @param      options
      *             The options used when copying font tables.
      * 
-     * @result     This function returns an array of CTFontTableTag values for the given font and the supplied options. The returned set will contain unboxed values, which may be extracted like so:
+     * @return     This function returns an array of CTFontTableTag values for the given font and the supplied options. The returned set will contain unboxed values, which may be extracted like so:
      *             <code>CTFontTableTag tag = (CTFontTableTag)(uintptr_t)CFArrayGetValueAtIndex(tags, index);</code>
      */
     @Generated
@@ -1309,8 +1379,9 @@ public final class CoreText {
     public static native CFArrayRef CTFontCopyAvailableTables(CTFontRef font, int options);
 
     /**
-     * @function   CTFontCopyTable
-     * @abstract   Returns a reference to the font table data.
+     * [@function]   CTFontCopyTable
+     * 
+     * Returns a reference to the font table data.
      * 
      * @param      font
      *             The font reference.
@@ -1321,16 +1392,18 @@ public final class CoreText {
      * @param      options
      *             The options used when copying font table.
      * 
-     * @result     This function returns a retained reference to the font table data as CFDataRef or NULL if the table is not present.
+     * @return     This function returns a retained reference to the font table data as CFDataRef or NULL if the table is not present.
      */
     @Generated
     @CFunction
     public static native CFDataRef CTFontCopyTable(CTFontRef font, int table, int options);
 
     /**
-     * @function   CTFontDrawGlyphs
-     * @abstract   Renders the given glyphs from the CTFont at the given positions in the CGContext.
-     * @discussion This function will modify the CGContext's font, text size, and text matrix if specified in the CTFont. These attributes will not be restored.
+     * [@function]   CTFontDrawGlyphs
+     * 
+     * Renders the given glyphs from the CTFont at the given positions in the CGContext.
+     * 
+     * This function will modify the CGContext's font, text size, and text matrix if specified in the CTFont. These attributes will not be restored.
      *     The given glyphs should be the result of proper Unicode text layout operations (such as CTLine). Results from CTFontGetGlyphsForCharacters (or similar APIs) do not perform any Unicode text layout.
      * 
      * @param      font
@@ -1355,9 +1428,11 @@ public final class CoreText {
             CGContextRef context);
 
     /**
-     * @function   CTFontGetLigatureCaretPositions
-     * @abstract   Returns caret positions within a glyph.
-     * @discussion This function is used to obtain caret positions for a specific glyph.
+     * [@function]   CTFontGetLigatureCaretPositions
+     * 
+     * Returns caret positions within a glyph.
+     * 
+     * This function is used to obtain caret positions for a specific glyph.
      *             The return value is the max number of positions possible, and the function
      *             will populate the caller's positions buffer with available positions if possible.
      *             This function may not be able to produce positions if the font does not
@@ -1376,7 +1451,7 @@ public final class CoreText {
      * @param      maxPositions
      *             The maximum number of positions to return.
      * 
-     * @result     Returns the number of caret positions for the specified glyph.
+     * @return     Returns the number of caret positions for the specified glyph.
      */
     @Generated
     @CFunction
@@ -1385,8 +1460,9 @@ public final class CoreText {
             @NInt long maxPositions);
 
     /**
-     * @function   CTFontCopyDefaultCascadeListForLanguages
-     * @abstract   Return an ordered list of CTFontDescriptorRef's for font fallback derived from the system default fallback region according to the given language preferences. The style of the given is also matched as well as the weight and width of the font is not one of the system UI font, otherwise the UI font fallback is applied.
+     * [@function]   CTFontCopyDefaultCascadeListForLanguages
+     * 
+     * Return an ordered list of CTFontDescriptorRef's for font fallback derived from the system default fallback region according to the given language preferences. The style of the given is also matched as well as the weight and width of the font is not one of the system UI font, otherwise the UI font fallback is applied.
      * 
      * @param      font
      *             The font reference.
@@ -1394,7 +1470,7 @@ public final class CoreText {
      * @param      languagePrefList
      *             The language preference list - ordered array of CFStringRef's of ISO language codes.
      * 
-     * @result     The ordered list of fallback fonts - ordered array of CTFontDescriptors.
+     * @return     The ordered list of fallback fonts - ordered array of CTFontDescriptors.
      */
     @Generated
     @CFunction
@@ -1402,9 +1478,11 @@ public final class CoreText {
             CFArrayRef languagePrefList);
 
     /**
-     * @function   CTFontCollectionGetTypeID
-     * @abstract   Returns the type identifier for Core Text font collection references.
-     * @result     The identifier for the opaque types CTFontCollectionRef or CTMutableFontCollectionRef.
+     * [@function]   CTFontCollectionGetTypeID
+     * 
+     * Returns the type identifier for Core Text font collection references.
+     * 
+     * @return     The identifier for the opaque types CTFontCollectionRef or CTMutableFontCollectionRef.
      */
     @Generated
     @CFunction
@@ -1412,21 +1490,23 @@ public final class CoreText {
     public static native long CTFontCollectionGetTypeID();
 
     /**
-     * @function   CTFontCollectionCreateFromAvailableFonts
-     * @abstract   Returns a new font collection matching all available fonts.
+     * [@function]   CTFontCollectionCreateFromAvailableFonts
+     * 
+     * Returns a new font collection matching all available fonts.
      * 
      * @param      options
      *             The options dictionary. See constant option keys.
      * 
-     * @result     This function creates a new collection containing all fonts available to the current application.
+     * @return     This function creates a new collection containing all fonts available to the current application.
      */
     @Generated
     @CFunction
     public static native CTFontCollectionRef CTFontCollectionCreateFromAvailableFonts(CFDictionaryRef options);
 
     /**
-     * @function   CTFontCollectionCreateWithFontDescriptors
-     * @abstract   Returns a new collection based on the array of font descriptors.
+     * [@function]   CTFontCollectionCreateWithFontDescriptors
+     * 
+     * Returns a new collection based on the array of font descriptors.
      * 
      * @param      queryDescriptors
      *             An array of font descriptors to use for matching. May be NULL, in which case the matching descriptors will be NULL.
@@ -1434,7 +1514,7 @@ public final class CoreText {
      * @param      options
      *             The options dictionary. See constant option keys.
      * 
-     * @result     This function creates a new collection based on the provided font descriptors. The contents of this collection is defined by matching the provided descriptors against all available font descriptors.
+     * @return     This function creates a new collection based on the provided font descriptors. The contents of this collection is defined by matching the provided descriptors against all available font descriptors.
      */
     @Generated
     @CFunction
@@ -1442,8 +1522,9 @@ public final class CoreText {
             CFDictionaryRef options);
 
     /**
-     * @function   CTFontCollectionCreateCopyWithFontDescriptors
-     * @abstract   Returns a copy of the original collection augmented with the new font descriptors.
+     * [@function]   CTFontCollectionCreateCopyWithFontDescriptors
+     * 
+     * Returns a copy of the original collection augmented with the new font descriptors.
      * 
      * @param      original
      *             The original font collection reference.
@@ -1454,7 +1535,7 @@ public final class CoreText {
      * @param      options
      *             The options dictionary. See constant option keys.
      * 
-     * @result     This function creates a copy of the original font collection augmented by the new font descriptors and options. The new font descriptors are merged with the existing descriptors to create a single set.
+     * @return     This function creates a copy of the original font collection augmented by the new font descriptors and options. The new font descriptors are merged with the existing descriptors to create a single set.
      */
     @Generated
     @CFunction
@@ -1462,21 +1543,23 @@ public final class CoreText {
             CFArrayRef queryDescriptors, CFDictionaryRef options);
 
     /**
-     * @function   CTFontCollectionCreateMatchingFontDescriptors
-     * @abstract   Returns an array of font descriptors matching the collection.
+     * [@function]   CTFontCollectionCreateMatchingFontDescriptors
+     * 
+     * Returns an array of font descriptors matching the collection.
      * 
      * @param      collection
      *             The font collection reference.
      * 
-     * @result     An array of CTFontDescriptors matching the collection definition or NULL if there are none.
+     * @return     An array of CTFontDescriptors matching the collection definition or NULL if there are none.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontCollectionCreateMatchingFontDescriptors(CTFontCollectionRef collection);
 
     /**
-     * @function   CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback
-     * @abstract   Returns the array of matching font descriptors sorted with the callback function.
+     * [@function]   CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback
+     * 
+     * Returns the array of matching font descriptors sorted with the callback function.
      * 
      * @param      collection
      *             The collection reference.
@@ -1487,7 +1570,7 @@ public final class CoreText {
      * @param      refCon
      *             Pointer to client data define context for the callback.
      * 
-     * @result     An array of CTFontDescriptors matching the criteria of the collection, sorted by the results of the sorting callback function, or NULL if there are none.
+     * @return     An array of CTFontDescriptors matching the criteria of the collection, sorted by the results of the sorting callback function, or NULL if there are none.
      */
     @Generated
     @CFunction
@@ -1497,58 +1580,63 @@ public final class CoreText {
             VoidPtr refCon);
 
     /**
-     * @function   CTFontManagerCopyAvailablePostScriptNames
-     * @abstract   Returns an array of unique PostScript font names.
+     * [@function]   CTFontManagerCopyAvailablePostScriptNames
      * 
-     * @result     An array of CFStrings.
+     * Returns an array of unique PostScript font names.
+     * 
+     * @return     An array of CFStrings.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontManagerCopyAvailablePostScriptNames();
 
     /**
-     * @function   CTFontManagerCopyAvailableFontFamilyNames
-     * @abstract   Returns an array of visible font family names sorted for UI display.
+     * [@function]   CTFontManagerCopyAvailableFontFamilyNames
      * 
-     * @result     An array of CFStrings.
+     * Returns an array of visible font family names sorted for UI display.
+     * 
+     * @return     An array of CFStrings.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontManagerCopyAvailableFontFamilyNames();
 
     /**
-     * @function   CTFontManagerCreateFontDescriptorsFromURL
-     * @abstract   Returns an array of font descriptors representing each of the fonts in the specified URL.
+     * [@function]   CTFontManagerCreateFontDescriptorsFromURL
+     * 
+     * Returns an array of font descriptors representing each of the fonts in the specified URL.
      *             Note: these font descriptors are not available through font descriptor matching.
      * 
      * @param      fileURL
      *             A file system URL referencing a valid font file.
      * 
-     * @result     An array of CTFontDescriptors or NULL if there are no valid fonts.
+     * @return     An array of CTFontDescriptors or NULL if there are no valid fonts.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontManagerCreateFontDescriptorsFromURL(CFURLRef fileURL);
 
     /**
-     * @function   CTFontManagerCreateFontDescriptorFromData
-     * @abstract   Returns a font descriptor representing the font in the supplied data.
+     * [@function]   CTFontManagerCreateFontDescriptorFromData
+     * 
+     * Returns a font descriptor representing the font in the supplied data.
      *             Note: the font descriptor is not available through font descriptor matching.
      * 
-     * @discussion If the data contains a font collection (TTC or OTC), only the first font in the collection will be returned.
+     * If the data contains a font collection (TTC or OTC), only the first font in the collection will be returned.
      * 
      * @param      data
      *             A CFData containing font data.
      * 
-     * @result     A font descriptor created from the data or NULL if it is not a valid font.
+     * @return     A font descriptor created from the data or NULL if it is not a valid font.
      */
     @Generated
     @CFunction
     public static native CTFontDescriptorRef CTFontManagerCreateFontDescriptorFromData(CFDataRef data);
 
     /**
-     * @function   CTFontManagerRegisterFontsForURL
-     * @abstract   Registers fonts from the specified font URL with the font manager. Registered fonts participate in font descriptor matching.
+     * [@function]   CTFontManagerRegisterFontsForURL
+     * 
+     * Registers fonts from the specified font URL with the font manager. Registered fonts participate in font descriptor matching.
      * 
      * @param      fontURL
      *             A file URL for the font or collection (TTC or OTC) to be registered. Once fonts have been registered from a file, it shouldn't be moved or renamed.
@@ -1559,15 +1647,16 @@ public final class CoreText {
      * @param      error
      *             Pointer to receive CFError in the case of failed registration.
      * 
-     * @result     Returns true if registration of the fonts was successful.
+     * @return     Returns true if registration of the fonts was successful.
      */
     @Generated
     @CFunction
     public static native boolean CTFontManagerRegisterFontsForURL(CFURLRef fontURL, int scope, Ptr<CFErrorRef> error);
 
     /**
-     * @function   CTFontManagerUnregisterFontsForURL
-     * @abstract   Unregisters fonts from the specified font URL with the font manager. Unregistered fonts do not participate in font descriptor matching.
+     * [@function]   CTFontManagerUnregisterFontsForURL
+     * 
+     * Unregisters fonts from the specified font URL with the font manager. Unregistered fonts do not participate in font descriptor matching.
      *             iOS note: only fonts registered with CTFontManagerRegisterFontsForURL or CTFontManagerRegisterFontsForURLs can be unregistered with this API.
      * 
      * @param      fontURL
@@ -1579,15 +1668,16 @@ public final class CoreText {
      * @param      error
      *             Pointer to receive CFError in the case of failed unregistration.
      * 
-     * @result     Returns true if unregistration of the fonts was successful.
+     * @return     Returns true if unregistration of the fonts was successful.
      */
     @Generated
     @CFunction
     public static native boolean CTFontManagerUnregisterFontsForURL(CFURLRef fontURL, int scope, Ptr<CFErrorRef> error);
 
     /**
-     * @function   CTFontManagerRegisterGraphicsFont
-     * @abstract   Registers the specified graphics font with the font manager. Registered fonts participate in font descriptor matching.
+     * [@function]   CTFontManagerRegisterGraphicsFont
+     * 
+     * Registers the specified graphics font with the font manager. Registered fonts participate in font descriptor matching.
      *             Attempts to register a font that is either already registered or contains the same PostScript name of an already registered font will fail.
      *             This functionality is useful for fonts that may be embedded in documents or present/constructed in memory. A graphics font is obtained
      *             by calling CGFontCreateWithDataProvider. Fonts that are backed by files should be registered using CTFontManagerRegisterFontsForURL.
@@ -1598,15 +1688,16 @@ public final class CoreText {
      * @param      error
      *             Pointer to receive CFError in the case of failed registration.
      * 
-     * @result     Returns true if registration of the fonts was successful.
+     * @return     Returns true if registration of the fonts was successful.
      */
     @Generated
     @CFunction
     public static native boolean CTFontManagerRegisterGraphicsFont(CGFontRef font, Ptr<CFErrorRef> error);
 
     /**
-     * @function   CTFontManagerUnregisterGraphicsFont
-     * @abstract   Unregisters the specified graphics font with the font manager. Unregistered fonts do not participate in font descriptor matching.
+     * [@function]   CTFontManagerUnregisterGraphicsFont
+     * 
+     * Unregisters the specified graphics font with the font manager. Unregistered fonts do not participate in font descriptor matching.
      * 
      * @param      font
      *             Graphics font to be unregistered.
@@ -1614,15 +1705,16 @@ public final class CoreText {
      * @param      error
      *             Pointer to receive CFError in the case of failed unregistration.
      * 
-     * @result     Returns true if unregistration of the font was successful.
+     * @return     Returns true if unregistration of the font was successful.
      */
     @Generated
     @CFunction
     public static native boolean CTFontManagerUnregisterGraphicsFont(CGFontRef font, Ptr<CFErrorRef> error);
 
     /**
-     * @function   CTFontManagerRegisterFontsForURLs
-     * @abstract   Registers fonts from the specified font URLs with the font manager. Registered fonts are discoverable through font descriptor matching.
+     * [@function]   CTFontManagerRegisterFontsForURLs
+     * 
+     * Registers fonts from the specified font URLs with the font manager. Registered fonts are discoverable through font descriptor matching.
      * 
      * @param      fontURLs
      *             An array of file URLs for the fonts or collections (TTC or OTC) to be registered. Once fonts have been registered from a file, it shouldn't be moved or renamed.
@@ -1633,7 +1725,7 @@ public final class CoreText {
      * @param      errors
      *             Pointer to CFArrayRef to receive array of CFError references. Each error will contain a CFArray of font URLs corresponding to kCTFontManagerErrorFontURLsKey. These URLs represent the font files that caused the error, and were not successfully registered. Must be released by caller. Can be NULL.
      * 
-     * @result     Returns true if registration of all font URLs was successful. Otherwise false.
+     * @return     Returns true if registration of all font URLs was successful. Otherwise false.
      */
     @Generated
     @CFunction
@@ -1641,8 +1733,9 @@ public final class CoreText {
             Ptr<CFArrayRef> errors);
 
     /**
-     * @function   CTFontManagerUnregisterFontsForURLs
-     * @abstract   Unregisters fonts from the specified font URLs with the font manager. Unregistered fonts do not participate in font descriptor matching.
+     * [@function]   CTFontManagerUnregisterFontsForURLs
+     * 
+     * Unregisters fonts from the specified font URLs with the font manager. Unregistered fonts do not participate in font descriptor matching.
      *             iOS note: only fonts registered with CTFontManagerRegisterFontsForURL or CTFontManagerRegisterFontsForURLs can be unregistered with this API.
      * 
      * @param      fontURLs
@@ -1654,7 +1747,7 @@ public final class CoreText {
      * @param      errors
      *             Pointer to CFArrayRef to receive array of CFError references. Each error will contain a CFArray of font URLs corresponding to kCTFontManagerErrorFontURLsKey. These URLs represent the font files that caused the error, and were not successfully unregistered. Must be released by caller. Can be NULL.
      * 
-     * @result     Returns true if unregistration of all font URLs was successful. Otherwise false.
+     * @return     Returns true if unregistration of all font URLs was successful. Otherwise false.
      */
     @Generated
     @CFunction
@@ -1662,8 +1755,9 @@ public final class CoreText {
             Ptr<CFArrayRef> errors);
 
     /**
-     * @function   CTFrameGetTypeID
-     * @abstract   Returns the CFType of the frame object
+     * [@function]   CTFrameGetTypeID
+     * 
+     * Returns the CFType of the frame object
      */
     @Generated
     @CFunction
@@ -1671,14 +1765,15 @@ public final class CoreText {
     public static native long CTFrameGetTypeID();
 
     /**
-     * @function   CTFrameGetStringRange
-     * @abstract   Returns the range of characters that were originally requested
+     * [@function]   CTFrameGetStringRange
+     * 
+     * Returns the range of characters that were originally requested
      *             to fill the frame.
      * 
      * @param      frame
      *             The frame that you want to get the character range from.
      * 
-     * @result     This function will return a CFRange containing the backing
+     * @return     This function will return a CFRange containing the backing
      *             store range of characters that were originally requested
      *             to fill the frame. If the function call is not successful,
      *             then an empty range will be returned.
@@ -1689,11 +1784,12 @@ public final class CoreText {
     public static native CFRange CTFrameGetStringRange(CTFrameRef frame);
 
     /**
-     * @function   CTFrameGetVisibleStringRange
-     * @abstract   Returns the range of characters that actually fit in the
+     * [@function]   CTFrameGetVisibleStringRange
+     * 
+     * Returns the range of characters that actually fit in the
      *             frame.
      * 
-     * @discussion This can be used to chain frames, as it returns the range of
+     * This can be used to chain frames, as it returns the range of
      *             characters that can be seen in the frame. The next frame would
      *             start where this frame ends.
      * 
@@ -1701,7 +1797,7 @@ public final class CoreText {
      *             The frame that you want to get the visible character range
      *             from.
      * 
-     * @result     This function will return a CFRange containing the backing
+     * @return     This function will return a CFRange containing the backing
      *             store range of characters that fit into the frame. If the
      *             function call is not successful, or if no characters fit
      *             in the frame, then an empty range will be returned.
@@ -1712,8 +1808,9 @@ public final class CoreText {
     public static native CFRange CTFrameGetVisibleStringRange(CTFrameRef frame);
 
     /**
-     * @function   CTFrameGetPath
-     * @abstract   Returns the path used to create the frame.
+     * [@function]   CTFrameGetPath
+     * 
+     * Returns the path used to create the frame.
      * 
      * @param      frame
      *             The frame that you want to obtain the path from.
@@ -1723,10 +1820,11 @@ public final class CoreText {
     public static native CGPathRef CTFrameGetPath(CTFrameRef frame);
 
     /**
-     * @function   CTFrameGetFrameAttributes
-     * @abstract   Returns the frame attributes used to create the frame.
+     * [@function]   CTFrameGetFrameAttributes
      * 
-     * @discussion It is possible to create a frame with an attributes dictionary
+     * Returns the frame attributes used to create the frame.
+     * 
+     * It is possible to create a frame with an attributes dictionary
      *             in order to control various aspects of the framing process.
      *             These attributes are different from the ones that are used to
      *             create an attributed string.
@@ -1734,7 +1832,7 @@ public final class CoreText {
      * @param      frame
      *             The frame that you want to obtain the frame attributes from.
      * 
-     * @result     This function will return a CFDictionary containing the
+     * @return     This function will return a CFDictionary containing the
      *             frame attributes that were used to create the frame. If the
      *             frame was created without any frame attributes, this function
      *             will return NULL.
@@ -1744,10 +1842,11 @@ public final class CoreText {
     public static native CFDictionaryRef CTFrameGetFrameAttributes(CTFrameRef frame);
 
     /**
-     * @function   CTFrameGetLines
-     * @abstract   Returns an array of lines that make up the frame.
+     * [@function]   CTFrameGetLines
      * 
-     * @discussion This function will return an array of CTLine objects that are
+     * Returns an array of lines that make up the frame.
+     * 
+     * This function will return an array of CTLine objects that are
      *             stored in the frame. These line objects can be accessed and
      *             manipulated in any way that normal line objects can be. It is
      *             possible that an empty frame exists. That is, a frame in which
@@ -1757,7 +1856,7 @@ public final class CoreText {
      * @param      frame
      *             The frame that you want to obtain the line array from.
      * 
-     * @result     This function will return a CFArray object containing the
+     * @return     This function will return a CFArray object containing the
      *             CTLine objects that make up the frame.
      */
     @Generated
@@ -1765,10 +1864,11 @@ public final class CoreText {
     public static native CFArrayRef CTFrameGetLines(CTFrameRef frame);
 
     /**
-     * @function   CTFrameGetLineOrigins
-     * @abstract   Copies a range of line origins for a frame.
+     * [@function]   CTFrameGetLineOrigins
      * 
-     * @discussion This function will copy a range of CGPoint structures. Each
+     * Copies a range of line origins for a frame.
+     * 
+     * This function will copy a range of CGPoint structures. Each
      *             CGPoint is the origin of the corresponding line in the array of
      *             lines returned by CTFrameGetLines, relative to the origin of the
      *             frame's path. The maximum number of line origins returned by
@@ -1800,29 +1900,31 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGPoint origins);
 
     /**
-     * @function   CTFrameDraw
-     * @abstract   Draws an entire frame to a context.
+     * [@function]   CTFrameDraw
      * 
-     * @discussion This function will draw an entire frame to the context. Note
+     * Draws an entire frame to a context.
+     * 
+     * This function will draw an entire frame to the context. Note
      *             that this call may leave the context in any state and does not
      *             flush it after the draw operation.
+     * 
+     * If both the frame and the context are valid, the frame will be
+     *             drawn in the context.
      * 
      * @param      frame
      *             The frame that you want to draw.
      * 
      * @param      context
      *             The context to draw the frame to.
-     * 
-     * @discussion If both the frame and the context are valid, the frame will be
-     *             drawn in the context.
      */
     @Generated
     @CFunction
     public static native void CTFrameDraw(CTFrameRef frame, CGContextRef context);
 
     /**
-     * @function   CTLineGetTypeID
-     * @abstract   Returns the CFType of the line object
+     * [@function]   CTLineGetTypeID
+     * 
+     * Returns the CFType of the line object
      */
     @Generated
     @CFunction
@@ -1830,11 +1932,12 @@ public final class CoreText {
     public static native long CTLineGetTypeID();
 
     /**
-     * @function   CTLineCreateWithAttributedString
-     * @abstract   Creates a single immutable line object directly from an
+     * [@function]   CTLineCreateWithAttributedString
+     * 
+     * Creates a single immutable line object directly from an
      *             attributed string.
      * 
-     * @discussion This will allow clients who need very simple line generation to
+     * This will allow clients who need very simple line generation to
      *             create a line without needing to create a typesetter object. The
      *             typesetting will be done under the hood. Without a typesetter
      *             object, the line cannot be properly broken. However, for simple
@@ -1843,15 +1946,16 @@ public final class CoreText {
      * @param      attrString
      *             The attributed string which the line will be created for.
      * 
-     * @result     This function will return a reference to a CTLine object.
+     * @return     This function will return a reference to a CTLine object.
      */
     @Generated
     @CFunction
     public static native CTLineRef CTLineCreateWithAttributedString(CFAttributedStringRef attrString);
 
     /**
-     * @function   CTLineCreateTruncatedLine
-     * @abstract   Creates a truncated line from an existing line.
+     * [@function]   CTLineCreateTruncatedLine
+     * 
+     * Creates a truncated line from an existing line.
      * 
      * @param      line
      *             The line that you want to create a truncated line for.
@@ -1873,7 +1977,7 @@ public final class CoreText {
      *             the width of the line specified in truncationToken is greater,
      *             this function will return NULL if truncation is needed.
      * 
-     * @result     This function will return a reference to a truncated CTLine
+     * @return     This function will return a reference to a truncated CTLine
      *             object if the call was successful. Otherwise, it will return
      *             NULL.
      */
@@ -1883,8 +1987,9 @@ public final class CoreText {
             CTLineRef truncationToken);
 
     /**
-     * @function   CTLineCreateJustifiedLine
-     * @abstract   Creates a justified line from an existing line.
+     * [@function]   CTLineCreateJustifiedLine
+     * 
+     * Creates a justified line from an existing line.
      * 
      * @param      line
      *             The line that you want to create a justified line for.
@@ -1901,7 +2006,7 @@ public final class CoreText {
      *             justificationWidth is less than the actual width of the line,
      *             then negative justification will be performed ("text squishing").
      * 
-     * @result     This function will return a reference to a justified CTLine
+     * @return     This function will return a reference to a justified CTLine
      *             object if the call was successful. Otherwise, it will return
      *             NULL.
      */
@@ -1911,16 +2016,17 @@ public final class CoreText {
             double justificationWidth);
 
     /**
-     * @function   CTLineGetGlyphCount
-     * @abstract   Returns the total glyph count for the line object.
+     * [@function]   CTLineGetGlyphCount
      * 
-     * @discussion The total glyph count is equal to the sum of all of the glyphs in
+     * Returns the total glyph count for the line object.
+     * 
+     * The total glyph count is equal to the sum of all of the glyphs in
      *             the glyph runs forming the line.
      * 
      * @param      line
      *             The line that you want to obtain the glyph count for.
      * 
-     * @result     The total glyph count for the line passed in.
+     * @return     The total glyph count for the line passed in.
      */
     @Generated
     @CFunction
@@ -1928,27 +2034,29 @@ public final class CoreText {
     public static native long CTLineGetGlyphCount(CTLineRef line);
 
     /**
-     * @function   CTLineGetGlyphRuns
-     * @abstract   Returns the array of glyph runs that make up the line object.
+     * [@function]   CTLineGetGlyphRuns
+     * 
+     * Returns the array of glyph runs that make up the line object.
      * 
      * @param      line
      *             The line that you want to obtain the glyph run array for.
      * 
-     * @result     A CFArrayRef containing the CTRun objects that make up the line.
+     * @return     A CFArrayRef containing the CTRun objects that make up the line.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTLineGetGlyphRuns(CTLineRef line);
 
     /**
-     * @function   CTLineGetStringRange
-     * @abstract   Gets the range of characters that originally spawned the glyphs
+     * [@function]   CTLineGetStringRange
+     * 
+     * Gets the range of characters that originally spawned the glyphs
      *             in the line.
      * 
      * @param      line
      *             The line that you want to obtain the string range from.
      * 
-     * @result     A CFRange that contains the range over the backing store string
+     * @return     A CFRange that contains the range over the backing store string
      *             that spawned the glyphs. If the function fails for any reason, an
      *             empty range will be returned.
      */
@@ -1958,8 +2066,9 @@ public final class CoreText {
     public static native CFRange CTLineGetStringRange(CTLineRef line);
 
     /**
-     * @function   CTLineGetPenOffsetForFlush
-     * @abstract   Gets the pen offset required to draw flush text.
+     * [@function]   CTLineGetPenOffsetForFlush
+     * 
+     * Gets the pen offset required to draw flush text.
      * 
      * @param      line
      *             The line that you want to obtain a flush position from.
@@ -1974,7 +2083,7 @@ public final class CoreText {
      * @param      flushWidth
      *             Specifies the width that the flushness operation should apply to.
      * 
-     * @result     A value which can be used to offset the current pen position for
+     * @return     A value which can be used to offset the current pen position for
      *             the flush operation.
      */
     @Generated
@@ -1983,10 +2092,11 @@ public final class CoreText {
             double flushWidth);
 
     /**
-     * @function   CTLineDraw
-     * @abstract   Draws a line.
+     * [@function]   CTLineDraw
      * 
-     * @discussion This is a convenience call, since the line could be drawn
+     * Draws a line.
+     * 
+     * This is a convenience call, since the line could be drawn
      *             run-by-run by getting the glyph runs and accessing the glyphs out
      *             of them. This call may leave the graphics context in any state and
      *             does not flush the context after drawing. This call also expects
@@ -2004,10 +2114,11 @@ public final class CoreText {
     public static native void CTLineDraw(CTLineRef line, CGContextRef context);
 
     /**
-     * @function   CTLineGetTypographicBounds
-     * @abstract   Calculates the typographic bounds for a line.
+     * [@function]   CTLineGetTypographicBounds
      * 
-     * @discussion A line's typographic width is the distance to the rightmost
+     * Calculates the typographic bounds for a line.
+     * 
+     * A line's typographic width is the distance to the rightmost
      *             glyph advance width edge. Note that this distance includes
      *             trailing whitespace glyphs.
      * 
@@ -2026,10 +2137,10 @@ public final class CoreText {
      *             Upon return, this parameter will contain the leading of the line.
      *             This may be set to NULL if not needed.
      * 
-     * @result     The typographic width of the line. If line is invalid, this
+     * @return     The typographic width of the line. If line is invalid, this
      *             function will always return zero.
      * 
-     * @seealso    CTLineGetTrailingWhitespaceWidth
+     * @see    CTLineGetTrailingWhitespaceWidth
      */
     @Generated
     @CFunction
@@ -2037,8 +2148,9 @@ public final class CoreText {
             NFloatPtr leading);
 
     /**
-     * @function   CTLineGetBoundsWithOptions
-     * @abstract   Calculates the bounds for a line.
+     * [@function]   CTLineGetBoundsWithOptions
+     * 
+     * Calculates the bounds for a line.
      * 
      * @param      line
      *             The line that you want to calculate the bounds for.
@@ -2046,7 +2158,7 @@ public final class CoreText {
      * @param      options
      *             Desired options or 0 if none.
      * 
-     * @result     The bounds of the line as specified by the type and options,
+     * @return     The bounds of the line as specified by the type and options,
      *             such that the coordinate origin is coincident with the line
      *             origin and the rect origin is at the bottom left. If the line
      *             is invalid this function will return CGRectNull.
@@ -2057,8 +2169,9 @@ public final class CoreText {
     public static native CGRect CTLineGetBoundsWithOptions(CTLineRef line, @NUInt long options);
 
     /**
-     * @function   CTLineGetTrailingWhitespaceWidth
-     * @abstract   Calculates the trailing whitespace width for a line.
+     * [@function]   CTLineGetTrailingWhitespaceWidth
+     * 
+     * Calculates the trailing whitespace width for a line.
      * 
      * @param      line
      *             The line that you want to calculate the trailing whitespace width
@@ -2068,7 +2181,7 @@ public final class CoreText {
      *             invisible, but this function may be used to determine what amount
      *             of a line's width is due to trailing whitespace.
      * 
-     * @result     The width of the line's trailing whitespace. If line is invalid,
+     * @return     The width of the line's trailing whitespace. If line is invalid,
      *             this function will always return zero.
      */
     @Generated
@@ -2076,10 +2189,11 @@ public final class CoreText {
     public static native double CTLineGetTrailingWhitespaceWidth(CTLineRef line);
 
     /**
-     * @function   CTLineGetImageBounds
-     * @abstract   Calculates the image bounds for a line.
+     * [@function]   CTLineGetImageBounds
      * 
-     * @discussion The image bounds for a line is the union of all non-empty glyph
+     * Calculates the image bounds for a line.
+     * 
+     * The image bounds for a line is the union of all non-empty glyph
      *             bounding rects, each positioned as it would be if drawn using
      *             CTLineDraw using the current context. Note that the result is
      *             ideal and does not account for raster coverage due to rendering.
@@ -2093,13 +2207,13 @@ public final class CoreText {
      *             The context which the image bounds will be calculated for or NULL,
      *             in which case the bounds are relative to CGPointZero.
      * 
-     * @result     A rectangle that tightly encloses the paths of the line's glyphs,
+     * @return     A rectangle that tightly encloses the paths of the line's glyphs,
      *             which will be translated by the supplied context's text position.
      *             If the line is invalid, CGRectNull will be returned.
      * 
-     * @seealso    CTLineGetTypographicBounds
-     * @seealso    CTLineGetBoundsWithOptions
-     * @seealso    CTLineGetPenOffsetForFlush
+     * @see    CTLineGetTypographicBounds
+     * @see    CTLineGetBoundsWithOptions
+     * @see    CTLineGetPenOffsetForFlush
      */
     @Generated
     @CFunction
@@ -2107,10 +2221,11 @@ public final class CoreText {
     public static native CGRect CTLineGetImageBounds(CTLineRef line, CGContextRef context);
 
     /**
-     * @function   CTLineGetStringIndexForPosition
-     * @abstract   Performs hit testing.
+     * [@function]   CTLineGetStringIndexForPosition
      * 
-     * @discussion This function can be used to determine the string index for a
+     * Performs hit testing.
+     * 
+     * This function can be used to determine the string index for a
      *             mouse click or other event. This string index corresponds to the
      *             character before which the next character should be inserted.
      *             This determination is made by analyzing the string from which a
@@ -2123,7 +2238,7 @@ public final class CoreText {
      * @param      position
      *             The location of the mouse click relative to the line's origin.
      * 
-     * @result     The string index for the position. Relative to the line's string
+     * @return     The string index for the position. Relative to the line's string
      *             range, this value will be no less than the first string index and
      *             no greater than one plus the last string index. In the event of
      *             failure, this function will return kCFNotFound.
@@ -2134,10 +2249,11 @@ public final class CoreText {
     public static native long CTLineGetStringIndexForPosition(CTLineRef line, @ByValue CGPoint position);
 
     /**
-     * @function   CTLineGetOffsetForStringIndex
-     * @abstract   Determines the graphical offset(s) for a string index.
+     * [@function]   CTLineGetOffsetForStringIndex
      * 
-     * @discussion This function returns the graphical offset(s) corresponding to
+     * Determines the graphical offset(s) for a string index.
+     * 
+     * This function returns the graphical offset(s) corresponding to
      *             a string index, suitable for movement between adjacent lines or
      *             for drawing a custom caret. For the former, the primary offset
      *             may be adjusted for any relative indentation of the two lines;
@@ -2161,7 +2277,7 @@ public final class CoreText {
      *             the primary offset, which is the return value of this function.
      *             This parameter may be NULL.
      * 
-     * @result     The primary offset along the baseline for charIndex, or 0.0 in
+     * @return     The primary offset along the baseline for charIndex, or 0.0 in
      *             the event of failure.
      */
     @Generated
@@ -2171,10 +2287,11 @@ public final class CoreText {
             NFloatPtr secondaryOffset);
 
     /**
-     * @function   CTLineEnumerateCaretOffsets
-     * @abstract   Enumerates caret offsets for characters in a line.
+     * [@function]   CTLineEnumerateCaretOffsets
      * 
-     * @discussion The provided block is invoked once for each logical caret edge in the line, in left-to-right visual order.
+     * Enumerates caret offsets for characters in a line.
+     * 
+     * The provided block is invoked once for each logical caret edge in the line, in left-to-right visual order.
      * 
      * @param      block
      *             The offset parameter is relative to the line origin. The leadingEdge parameter of this block refers to logical order.
@@ -2185,8 +2302,9 @@ public final class CoreText {
             @ObjCBlock(name = "call_CTLineEnumerateCaretOffsets") Block_CTLineEnumerateCaretOffsets block);
 
     /**
-     * @function   CTTypesetterGetTypeID
-     * @abstract   Returns the CFType of the typesetter object
+     * [@function]   CTTypesetterGetTypeID
+     * 
+     * Returns the CFType of the typesetter object
      */
     @Generated
     @CFunction
@@ -2194,11 +2312,12 @@ public final class CoreText {
     public static native long CTTypesetterGetTypeID();
 
     /**
-     * @function   CTTypesetterCreateWithAttributedString
-     * @abstract   Creates an immutable typesetter object using an attributed
+     * [@function]   CTTypesetterCreateWithAttributedString
+     * 
+     * Creates an immutable typesetter object using an attributed
      *             string.
      * 
-     * @discussion The resultant typesetter can be used to create lines, perform
+     * The resultant typesetter can be used to create lines, perform
      *             line breaking, and do other contextual analysis based on the
      *             characters in the string.
      * 
@@ -2206,18 +2325,19 @@ public final class CoreText {
      *             The CFAttributedStringRef that you want to typeset. This
      *             parameter must be filled in with a valid CFAttributedString.
      * 
-     * @result     This function will return a reference to a CTTypesetter.
+     * @return     This function will return a reference to a CTTypesetter.
      */
     @Generated
     @CFunction
     public static native CTTypesetterRef CTTypesetterCreateWithAttributedString(CFAttributedStringRef string);
 
     /**
-     * @function   CTTypesetterCreateWithAttributedStringAndOptions
-     * @abstract   Creates an immutable typesetter object using an attributed
+     * [@function]   CTTypesetterCreateWithAttributedStringAndOptions
+     * 
+     * Creates an immutable typesetter object using an attributed
      *             string and a dictionary of options.
      * 
-     * @discussion The resultant typesetter can be used to create lines, perform
+     * The resultant typesetter can be used to create lines, perform
      *             line breaking, and do other contextual analysis based on the
      *             characters in the string.
      * 
@@ -2228,11 +2348,11 @@ public final class CoreText {
      * @param      options
      *             A CFDictionary of typesetter options, or NULL if there are none.
      * 
-     * @result     This function will return either a reference to a CTTypesetter
+     * @return     This function will return either a reference to a CTTypesetter
      *             or NULL if layout cannot be performed due to an attributed
      *             string that would require unreasonable effort.
      * 
-     * @seealso    kCTTypesetterOptionAllowUnboundedLayout
+     * @see    kCTTypesetterOptionAllowUnboundedLayout
      */
     @Generated
     @CFunction
@@ -2240,10 +2360,11 @@ public final class CoreText {
             CFDictionaryRef options);
 
     /**
-     * @function   CTTypesetterCreateLineWithOffset
-     * @abstract   Creates an immutable line from the typesetter.
+     * [@function]   CTTypesetterCreateLineWithOffset
      * 
-     * @discussion The resultant line will consist of glyphs in the correct visual
+     * Creates an immutable line from the typesetter.
+     * 
+     * The resultant line will consist of glyphs in the correct visual
      *             order, ready to draw.
      * 
      * @param      typesetter
@@ -2259,7 +2380,7 @@ public final class CoreText {
      * @param      offset
      *             The line position offset.
      * 
-     * @result     This function will return a reference to a CTLine.
+     * @return     This function will return a reference to a CTLine.
      */
     @Generated
     @CFunction
@@ -2267,19 +2388,21 @@ public final class CoreText {
             @ByValue CFRange stringRange, double offset);
 
     /**
-     * @function   CTTypesetterCreateLine
-     * @abstract   Equivalent to CTTypesetterCreateLineWithOffset with offset = 0.0.
+     * [@function]   CTTypesetterCreateLine
+     * 
+     * Equivalent to CTTypesetterCreateLineWithOffset with offset = 0.0.
      */
     @Generated
     @CFunction
     public static native CTLineRef CTTypesetterCreateLine(CTTypesetterRef typesetter, @ByValue CFRange stringRange);
 
     /**
-     * @function   CTTypesetterSuggestLineBreakWithOffset
-     * @abstract   Suggests a contextual line break point based on the width
+     * [@function]   CTTypesetterSuggestLineBreakWithOffset
+     * 
+     * Suggests a contextual line break point based on the width
      *             provided.
      * 
-     * @discussion The line break can be triggered either by a hard break character
+     * The line break can be triggered either by a hard break character
      *             in the stream or by filling the specified width with characters.
      * 
      * @param      typesetter
@@ -2295,7 +2418,7 @@ public final class CoreText {
      * @param      offset
      *             The line position offset.
      * 
-     * @result     The value returned is a count of the characters from startIndex
+     * @return     The value returned is a count of the characters from startIndex
      *             that would cause the line break. This value returned can be used
      *             to construct a character range for CTTypesetterCreateLine.
      */
@@ -2306,8 +2429,9 @@ public final class CoreText {
             double width, double offset);
 
     /**
-     * @function   CTTypesetterSuggestLineBreak
-     * @abstract   Equivalent to CTTypesetterSuggestLineBreakWithOffset with offset = 0.0.
+     * [@function]   CTTypesetterSuggestLineBreak
+     * 
+     * Equivalent to CTTypesetterSuggestLineBreakWithOffset with offset = 0.0.
      */
     @Generated
     @CFunction
@@ -2316,10 +2440,11 @@ public final class CoreText {
             double width);
 
     /**
-     * @function   CTTypesetterSuggestClusterBreakWithOffset
-     * @abstract   Suggests a cluster line break point based on the width provided.
+     * [@function]   CTTypesetterSuggestClusterBreakWithOffset
      * 
-     * @discussion Suggests a typographic cluster line break point based on the width
+     * Suggests a cluster line break point based on the width provided.
+     * 
+     * Suggests a typographic cluster line break point based on the width
      *             provided. This cluster break is similar to a character break,
      *             except that it will not break apart linguistic clusters. No other
      *             contextual analysis will be done. This can be used by the caller
@@ -2341,7 +2466,7 @@ public final class CoreText {
      * @param      offset
      *             The line position offset.
      * 
-     * @result     The value returned is a count of the characters from startIndex
+     * @return     The value returned is a count of the characters from startIndex
      *             that would cause the cluster break. This value returned can be
      *             used to construct a character range for CTTypesetterCreateLine.
      */
@@ -2352,8 +2477,9 @@ public final class CoreText {
             @NInt long startIndex, double width, double offset);
 
     /**
-     * @function   CTTypesetterSuggestClusterBreak
-     * @abstract   Equivalent to CTTypesetterSuggestClusterBreakWithOffset with offset = 0.0.
+     * [@function]   CTTypesetterSuggestClusterBreak
+     * 
+     * Equivalent to CTTypesetterSuggestClusterBreakWithOffset with offset = 0.0.
      */
     @Generated
     @CFunction
@@ -2362,8 +2488,9 @@ public final class CoreText {
             double width);
 
     /**
-     * @function   CTFramesetterGetTypeID
-     * @abstract   Returns the CFType of the framesetter object
+     * [@function]   CTFramesetterGetTypeID
+     * 
+     * Returns the CFType of the framesetter object
      */
     @Generated
     @CFunction
@@ -2371,27 +2498,29 @@ public final class CoreText {
     public static native long CTFramesetterGetTypeID();
 
     /**
-     * @function   CTFramesetterCreateWithAttributedString
-     * @abstract   Creates an immutable framesetter object from an attributed
+     * [@function]   CTFramesetterCreateWithAttributedString
+     * 
+     * Creates an immutable framesetter object from an attributed
      *             string.
      * 
-     * @discussion The resultant framesetter object can be used to create and
+     * The resultant framesetter object can be used to create and
      *             fill text frames with the CTFramesetterCreateFrame call.
      * 
      * @param      attrString
      *             The attributed string to construct the framesetter with.
      * 
-     * @result     This function will return a reference to a CTFramesetter object.
+     * @return     This function will return a reference to a CTFramesetter object.
      */
     @Generated
     @CFunction
     public static native CTFramesetterRef CTFramesetterCreateWithAttributedString(CFAttributedStringRef attrString);
 
     /**
-     * @function   CTFramesetterCreateFrame
-     * @abstract   Creates an immutable frame from a framesetter.
+     * [@function]   CTFramesetterCreateFrame
      * 
-     * @discussion This call will create a frame full of glyphs in the shape of
+     * Creates an immutable frame from a framesetter.
+     * 
+     * This call will create a frame full of glyphs in the shape of
      *             the path provided by the "path" parameter. The framesetter
      *             will continue to fill the frame until it either runs out of
      *             text or it finds that text no longer fits.
@@ -2415,7 +2544,7 @@ public final class CoreText {
      *             can be specified here, or NULL if there are no such attributes.
      *             See CTFrame.h for available attributes.
      * 
-     * @result     This function will return a reference to a new CTFrame object.
+     * @return     This function will return a reference to a new CTFrame object.
      */
     @Generated
     @CFunction
@@ -2423,10 +2552,11 @@ public final class CoreText {
             CGPathRef path, CFDictionaryRef frameAttributes);
 
     /**
-     * @function   CTFramesetterGetTypesetter
-     * @abstract   Returns the typesetter object being used by the framesetter.
+     * [@function]   CTFramesetterGetTypesetter
      * 
-     * @discussion Each framesetter uses a typesetter internally to perform
+     * Returns the typesetter object being used by the framesetter.
+     * 
+     * Each framesetter uses a typesetter internally to perform
      *             line breaking and other contextual analysis based on the
      *             characters in a string; this function returns the typesetter
      *             being used by a particular framesetter if the caller would
@@ -2435,7 +2565,7 @@ public final class CoreText {
      * @param      framesetter
      *             The framesetter from which a typesetter is being requested.
      * 
-     * @result     This function will return a reference to a CTTypesetter
+     * @return     This function will return a reference to a CTTypesetter
      *             object, which should not be released by the caller.
      */
     @Generated
@@ -2443,10 +2573,11 @@ public final class CoreText {
     public static native CTTypesetterRef CTFramesetterGetTypesetter(CTFramesetterRef framesetter);
 
     /**
-     * @function   CTFramesetterSuggestFrameSizeWithConstraints
-     * @abstract   Determines the frame size needed for a string range.
+     * [@function]   CTFramesetterSuggestFrameSizeWithConstraints
      * 
-     * @discussion This function may be used to determine how much space is needed
+     * Determines the frame size needed for a string range.
+     * 
+     * This function may be used to determine how much space is needed
      *             to display a string, optionally by constraining the space along
      *             either dimension.
      * 
@@ -2472,7 +2603,7 @@ public final class CoreText {
      * @param      fitRange
      *             The range of the string that actually fit in the constrained size.
      * 
-     * @result     The actual dimensions for the given string range and constraints.
+     * @return     The actual dimensions for the given string range and constraints.
      */
     @Generated
     @CFunction
@@ -2482,8 +2613,9 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CFRange fitRange);
 
     /**
-     * @function   CTGlyphInfoGetTypeID
-     * @abstract   Returns the CFType of the glyph info object
+     * [@function]   CTGlyphInfoGetTypeID
+     * 
+     * Returns the CFType of the glyph info object
      */
     @Generated
     @CFunction
@@ -2491,10 +2623,11 @@ public final class CoreText {
     public static native long CTGlyphInfoGetTypeID();
 
     /**
-     * @function   CTGlyphInfoCreateWithGlyphName
-     * @abstract   Creates an immutable glyph info object.
+     * [@function]   CTGlyphInfoCreateWithGlyphName
      * 
-     * @discussion This function creates an immutable glyph info object for a glyph
+     * Creates an immutable glyph info object.
+     * 
+     * This function creates an immutable glyph info object for a glyph
      *             name such as "copyright" and a specified font.
      * 
      * @param      glyphName
@@ -2507,7 +2640,7 @@ public final class CoreText {
      *             The part of the string the returned object is intended
      *             to override.
      * 
-     * @result     This function will return a reference to a CTGlyphInfo object.
+     * @return     This function will return a reference to a CTGlyphInfo object.
      */
     @Generated
     @CFunction
@@ -2515,10 +2648,11 @@ public final class CoreText {
             CFStringRef baseString);
 
     /**
-     * @function   CTGlyphInfoCreateWithGlyph
-     * @abstract   Creates an immutable glyph info object.
+     * [@function]   CTGlyphInfoCreateWithGlyph
      * 
-     * @discussion This function creates an immutable glyph info object for a glyph
+     * Creates an immutable glyph info object.
+     * 
+     * This function creates an immutable glyph info object for a glyph
      *             index and a specified font.
      * 
      * @param      glyph
@@ -2531,17 +2665,18 @@ public final class CoreText {
      *             The part of the string the returned object is intended
      *             to override.
      * 
-     * @result     This function will return a reference to a CTGlyphInfo object.
+     * @return     This function will return a reference to a CTGlyphInfo object.
      */
     @Generated
     @CFunction
     public static native CTGlyphInfoRef CTGlyphInfoCreateWithGlyph(char glyph, CTFontRef font, CFStringRef baseString);
 
     /**
-     * @function   CTGlyphInfoCreateWithCharacterIdentifier
-     * @abstract   Creates an immutable glyph info object.
+     * [@function]   CTGlyphInfoCreateWithCharacterIdentifier
      * 
-     * @discussion This function creates an immutable glyph info object for a
+     * Creates an immutable glyph info object.
+     * 
+     * This function creates an immutable glyph info object for a
      *             character identifier and a character collection.
      * 
      * @param      cid
@@ -2554,7 +2689,7 @@ public final class CoreText {
      *             The part of the string the returned object is intended
      *             to override.
      * 
-     * @result     This function will return a reference to a CTGlyphInfo object.
+     * @return     This function will return a reference to a CTGlyphInfo object.
      */
     @Generated
     @CFunction
@@ -2562,15 +2697,16 @@ public final class CoreText {
             CFStringRef baseString);
 
     /**
-     * @function   CTGlyphInfoGetGlyphName
-     * @abstract   Gets the glyph name for a glyph info, if applicable.
+     * [@function]   CTGlyphInfoGetGlyphName
      * 
-     * @discussion This function will return the glyph name.
+     * Gets the glyph name for a glyph info, if applicable.
+     * 
+     * This function will return the glyph name.
      * 
      * @param      glyphInfo
      *             The glyph info for which you would like the glyph name.
      * 
-     * @result     If the glyph info object was created with a glyph name, it will
+     * @return     If the glyph info object was created with a glyph name, it will
      *             be returned. Otherwise, this function will return NULL.
      */
     @Generated
@@ -2578,15 +2714,16 @@ public final class CoreText {
     public static native CFStringRef CTGlyphInfoGetGlyphName(CTGlyphInfoRef glyphInfo);
 
     /**
-     * @function   CTGlyphInfoGetCharacterIdentifier
-     * @abstract   Gets the character identifier for a glyph info.
+     * [@function]   CTGlyphInfoGetCharacterIdentifier
      * 
-     * @discussion This function will return the character identifier.
+     * Gets the character identifier for a glyph info.
+     * 
+     * This function will return the character identifier.
      * 
      * @param      glyphInfo
      *             The glyph info for which you would like the character identifier.
      * 
-     * @result     If the glyph info object was created with a character identifier,
+     * @return     If the glyph info object was created with a character identifier,
      *             it will be returned. Otherwise, this function will return 0.
      */
     @Generated
@@ -2594,10 +2731,11 @@ public final class CoreText {
     public static native char CTGlyphInfoGetCharacterIdentifier(CTGlyphInfoRef glyphInfo);
 
     /**
-     * @function   CTGlyphInfoGetCharacterCollection
-     * @abstract   Gets the character collection for a glyph info.
+     * [@function]   CTGlyphInfoGetCharacterCollection
      * 
-     * @discussion This function will return the character collection. If the glyph
+     * Gets the character collection for a glyph info.
+     * 
+     * This function will return the character collection. If the glyph
      *             info object was created with a glyph name or a glyph index, its
      *             character collection will be
      *             kCTIdentityMappingCharacterCollection.
@@ -2605,7 +2743,7 @@ public final class CoreText {
      * @param      glyphInfo
      *             The glyph info for which you would like the character collection.
      * 
-     * @result     This function will return the character collection of the given
+     * @return     This function will return the character collection of the given
      *             glyph info.
      */
     @Generated
@@ -2613,8 +2751,9 @@ public final class CoreText {
     public static native short CTGlyphInfoGetCharacterCollection(CTGlyphInfoRef glyphInfo);
 
     /**
-     * @function	CTRubyAnnotationGetTypeID
-     * @abstract	Returns the CFType of the ruby annotation object
+     * [@function]	CTRubyAnnotationGetTypeID
+     * 
+     * Returns the CFType of the ruby annotation object
      */
     @Generated
     @CFunction
@@ -2622,10 +2761,11 @@ public final class CoreText {
     public static native long CTRubyAnnotationGetTypeID();
 
     /**
-     * @function   CTRubyAnnotationCreateWithAttributes
-     * @abstract   Creates an immutable ruby annotation object.
+     * [@function]   CTRubyAnnotationCreateWithAttributes
      * 
-     * @discussion Using this function to create a ruby annotation object with more precise
+     * Creates an immutable ruby annotation object.
+     * 
+     * Using this function to create a ruby annotation object with more precise
      *             control of the annotation text.
      * 
      * @param      alignment
@@ -2646,7 +2786,7 @@ public final class CoreText {
      *             text, with a size factor specified by a CFNumberRef value keyed by
      *             kCTRubyAnnotationSizeFactorAttributeName.
      * 
-     * @result     This function will return a reference to a CTRubyAnnotation object.
+     * @return     This function will return a reference to a CTRubyAnnotation object.
      */
     @Generated
     @CFunction
@@ -2654,13 +2794,14 @@ public final class CoreText {
             byte position, CFStringRef string, CFDictionaryRef attributes);
 
     /**
-     * @function   CTRubyAnnotationCreateCopy
-     * @abstract   Creates an immutable copy of a ruby annotation object.
+     * [@function]   CTRubyAnnotationCreateCopy
+     * 
+     * Creates an immutable copy of a ruby annotation object.
      * 
      * @param      rubyAnnotation
      *             The ruby annotation that you wish to copy.
      * 
-     * @result     If the "rubyAnnotation" reference is valid, then this
+     * @return     If the "rubyAnnotation" reference is valid, then this
      *             function will return valid reference to an immutable
      *             CTRubyAnnotation object that is a copy of the one passed into
      *             "rubyAnnotation".
@@ -2670,13 +2811,14 @@ public final class CoreText {
     public static native CTRubyAnnotationRef CTRubyAnnotationCreateCopy(CTRubyAnnotationRef rubyAnnotation);
 
     /**
-     * @function   CTRubyAnnotationGetAlignment
-     * @abstract   Get the alignment value of a ruby annotation object.
+     * [@function]   CTRubyAnnotationGetAlignment
+     * 
+     * Get the alignment value of a ruby annotation object.
      * 
      * @param      rubyAnnotation
      *             The ruby annotation object.
      * 
-     * @result     If the "rubyAnnotation" reference is valid, then this
+     * @return     If the "rubyAnnotation" reference is valid, then this
      *             function will return its alignment. Otherwise it will return kCTRubyAlignmentInvalid.
      */
     @Generated
@@ -2684,13 +2826,14 @@ public final class CoreText {
     public static native byte CTRubyAnnotationGetAlignment(CTRubyAnnotationRef rubyAnnotation);
 
     /**
-     * @function   CTRubyAnnotationGetOverhang
-     * @abstract   Get the overhang value of a ruby annotation object.
+     * [@function]   CTRubyAnnotationGetOverhang
+     * 
+     * Get the overhang value of a ruby annotation object.
      * 
      * @param      rubyAnnotation
      *             The ruby annotation object.
      * 
-     * @result     If the "rubyAnnotation" reference is valid, then this
+     * @return     If the "rubyAnnotation" reference is valid, then this
      *             function will return its overhang value. Otherwise it will return kCTRubyOverhangInvalid.
      */
     @Generated
@@ -2698,13 +2841,14 @@ public final class CoreText {
     public static native byte CTRubyAnnotationGetOverhang(CTRubyAnnotationRef rubyAnnotation);
 
     /**
-     * @function   CTRubyAnnotationGetSizeFactor
-     * @abstract   Get the size factor of a ruby annotation object.
+     * [@function]   CTRubyAnnotationGetSizeFactor
+     * 
+     * Get the size factor of a ruby annotation object.
      * 
      * @param      rubyAnnotation
      *             The ruby annotation object.
      * 
-     * @result     If the "rubyAnnotation" reference is valid, then this
+     * @return     If the "rubyAnnotation" reference is valid, then this
      *             function will return its sizeFactor. Otherwise it will return 0.
      */
     @Generated
@@ -2713,8 +2857,9 @@ public final class CoreText {
     public static native double CTRubyAnnotationGetSizeFactor(CTRubyAnnotationRef rubyAnnotation);
 
     /**
-     * @function   CTRubyAnnotationGetTextForPosition
-     * @abstract   Get the ruby text for a particular position in a ruby annotation.
+     * [@function]   CTRubyAnnotationGetTextForPosition
+     * 
+     * Get the ruby text for a particular position in a ruby annotation.
      * 
      * @param      rubyAnnotation
      *             The ruby annotation object.
@@ -2722,7 +2867,7 @@ public final class CoreText {
      * @param      position
      *             The position for which you want to get the ruby text.
      * 
-     * @result     If the "rubyAnnotation" reference and the position are valid, then this
+     * @return     If the "rubyAnnotation" reference and the position are valid, then this
      *             function will return a CFStringRef for the text. Otherwise it will return NULL.
      */
     @Generated
@@ -2731,8 +2876,9 @@ public final class CoreText {
             byte position);
 
     /**
-     * @function   CTRunGetTypeID
-     * @abstract   Returns the CFType of the run object
+     * [@function]   CTRunGetTypeID
+     * 
+     * Returns the CFType of the run object
      */
     @Generated
     @CFunction
@@ -2740,13 +2886,14 @@ public final class CoreText {
     public static native long CTRunGetTypeID();
 
     /**
-     * @function   CTRunGetGlyphCount
-     * @abstract   Gets the glyph count for the run.
+     * [@function]   CTRunGetGlyphCount
+     * 
+     * Gets the glyph count for the run.
      * 
      * @param      run
      *             The run whose glyph count you wish to access.
      * 
-     * @result     The number of glyphs that the run contains. It is totally
+     * @return     The number of glyphs that the run contains. It is totally
      *             possible that this function could return a value of zero,
      *             indicating that there are no glyphs in this run.
      */
@@ -2756,11 +2903,12 @@ public final class CoreText {
     public static native long CTRunGetGlyphCount(CTRunRef run);
 
     /**
-     * @function   CTRunGetAttributes
-     * @abstract   Returns the attribute dictionary that was used to create the
+     * [@function]   CTRunGetAttributes
+     * 
+     * Returns the attribute dictionary that was used to create the
      *             glyph run.
      * 
-     * @discussion This dictionary returned is either the same exact one that was
+     * This dictionary returned is either the same exact one that was
      *             set as an attribute dictionary on the original attributed string
      *             or a dictionary that has been manufactured by the layout engine.
      *             Attribute dictionaries can be manufactured in the case of font
@@ -2769,17 +2917,18 @@ public final class CoreText {
      * @param      run
      *             The run whose attributes you wish to access.
      * 
-     * @result     The attribute dictionary.
+     * @return     The attribute dictionary.
      */
     @Generated
     @CFunction
     public static native CFDictionaryRef CTRunGetAttributes(CTRunRef run);
 
     /**
-     * @function   CTRunGetStatus
-     * @abstract   Returns the run's status.
+     * [@function]   CTRunGetStatus
      * 
-     * @discussion In addition to attributes, runs also have status that can be
+     * Returns the run's status.
+     * 
+     * In addition to attributes, runs also have status that can be
      *             used to expedite certain operations. Knowing the direction and
      *             ordering of a run's glyphs can aid in string index analysis,
      *             whereas knowing whether the positions reference the identity
@@ -2790,17 +2939,18 @@ public final class CoreText {
      * @param      run
      *             The run whose status you wish to access.
      * 
-     * @result     The run's status.
+     * @return     The run's status.
      */
     @Generated
     @CFunction
     public static native int CTRunGetStatus(CTRunRef run);
 
     /**
-     * @function   CTRunGetGlyphsPtr
-     * @abstract   Returns a direct pointer for the glyph array stored in the run.
+     * [@function]   CTRunGetGlyphsPtr
      * 
-     * @discussion The glyph array will have a length equal to the value returned by
+     * Returns a direct pointer for the glyph array stored in the run.
+     * 
+     * The glyph array will have a length equal to the value returned by
      *             CTRunGetGlyphCount. The caller should be prepared for this
      *             function to return NULL even if there are glyphs in the stream.
      *             Should this function return NULL, the caller will need to
@@ -2810,15 +2960,16 @@ public final class CoreText {
      * @param      run
      *             The run whose glyphs you wish to access.
      * 
-     * @result     A valid pointer to an array of CGGlyph structures or NULL.
+     * @return     A valid pointer to an array of CGGlyph structures or NULL.
      */
     @Generated
     @CFunction
     public static native ConstCharPtr CTRunGetGlyphsPtr(CTRunRef run);
 
     /**
-     * @function   CTRunGetGlyphs
-     * @abstract   Copies a range of glyphs into user-provided buffer.
+     * [@function]   CTRunGetGlyphs
+     * 
+     * Copies a range of glyphs into user-provided buffer.
      * 
      * @param      run
      *             The run whose glyphs you wish to copy.
@@ -2838,11 +2989,12 @@ public final class CoreText {
     public static native void CTRunGetGlyphs(CTRunRef run, @ByValue CFRange range, CharPtr buffer);
 
     /**
-     * @function   CTRunGetPositionsPtr
-     * @abstract   Returns a direct pointer for the glyph position array stored in
+     * [@function]   CTRunGetPositionsPtr
+     * 
+     * Returns a direct pointer for the glyph position array stored in
      *             the run.
      * 
-     * @discussion The glyph positions in a run are relative to the origin of the
+     * The glyph positions in a run are relative to the origin of the
      *             line containing the run. The position array will have a length
      *             equal to the value returned by CTRunGetGlyphCount. The caller
      *             should be prepared for this function to return NULL even if there
@@ -2853,7 +3005,7 @@ public final class CoreText {
      * @param      run
      *             The run whose positions you wish to access.
      * 
-     * @result     A valid pointer to an array of CGPoint structures or NULL.
+     * @return     A valid pointer to an array of CGPoint structures or NULL.
      */
     @Generated
     @CFunction
@@ -2861,10 +3013,11 @@ public final class CoreText {
     public static native CGPoint CTRunGetPositionsPtr(CTRunRef run);
 
     /**
-     * @function   CTRunGetPositions
-     * @abstract   Copies a range of glyph positions into a user-provided buffer.
+     * [@function]   CTRunGetPositions
      * 
-     * @discussion The glyph positions in a run are relative to the origin of the
+     * Copies a range of glyph positions into a user-provided buffer.
+     * 
+     * The glyph positions in a run are relative to the origin of the
      *             line containing the run.
      * 
      * @param      run
@@ -2887,11 +3040,12 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGPoint buffer);
 
     /**
-     * @function   CTRunGetAdvancesPtr
-     * @abstract   Returns a direct pointer for the glyph advance array stored in
+     * [@function]   CTRunGetAdvancesPtr
+     * 
+     * Returns a direct pointer for the glyph advance array stored in
      *             the run.
      * 
-     * @discussion The advance array will have a length equal to the value returned
+     * The advance array will have a length equal to the value returned
      *             by CTRunGetGlyphCount. The caller should be prepared for this
      *             function to return NULL even if there are glyphs in the stream.
      *             Should this function return NULL, the caller will need to
@@ -2904,7 +3058,7 @@ public final class CoreText {
      * @param      run
      *             The run whose advances you wish to access.
      * 
-     * @result     A valid pointer to an array of CGSize structures or NULL.
+     * @return     A valid pointer to an array of CGSize structures or NULL.
      */
     @Generated
     @CFunction
@@ -2912,8 +3066,9 @@ public final class CoreText {
     public static native CGSize CTRunGetAdvancesPtr(CTRunRef run);
 
     /**
-     * @function   CTRunGetAdvances
-     * @abstract   Copies a range of glyph advances into a user-provided buffer.
+     * [@function]   CTRunGetAdvances
+     * 
+     * Copies a range of glyph advances into a user-provided buffer.
      * 
      * @param      run
      *             The run whose advances you wish to copy.
@@ -2935,10 +3090,11 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGSize buffer);
 
     /**
-     * @function   CTRunGetStringIndicesPtr
-     * @abstract   Returns a direct pointer for the string indices stored in the run.
+     * [@function]   CTRunGetStringIndicesPtr
      * 
-     * @discussion The indices are the character indices that originally spawned the
+     * Returns a direct pointer for the string indices stored in the run.
+     * 
+     * The indices are the character indices that originally spawned the
      *             glyphs that make up the run. They can be used to map the glyphs in
      *             the run back to the characters in the backing store. The string
      *             indices array will have a length equal to the value returned by
@@ -2951,17 +3107,18 @@ public final class CoreText {
      * @param      run
      *             The run whose string indices you wish to access.
      * 
-     * @result     A valid pointer to an array of CFIndex structures or NULL.
+     * @return     A valid pointer to an array of CFIndex structures or NULL.
      */
     @Generated
     @CFunction
     public static native ConstNIntPtr CTRunGetStringIndicesPtr(CTRunRef run);
 
     /**
-     * @function   CTRunGetStringIndices
-     * @abstract   Copies a range of string indices into a user-provided buffer.
+     * [@function]   CTRunGetStringIndices
      * 
-     * @discussion The indices are the character indices that originally spawned the
+     * Copies a range of string indices into a user-provided buffer.
+     * 
+     * The indices are the character indices that originally spawned the
      *             glyphs that make up the run. They can be used to map the glyphs
      *             in the run back to the characters in the backing store.
      * 
@@ -2984,14 +3141,15 @@ public final class CoreText {
     public static native void CTRunGetStringIndices(CTRunRef run, @ByValue CFRange range, NIntPtr buffer);
 
     /**
-     * @function   CTRunGetStringRange
-     * @abstract   Gets the range of characters that originally spawned the glyphs
+     * [@function]   CTRunGetStringRange
+     * 
+     * Gets the range of characters that originally spawned the glyphs
      *             in the run.
      * 
      * @param      run
      *             The run whose string range you wish to access.
      * 
-     * @result     Returns the range of characters that originally spawned the
+     * @return     Returns the range of characters that originally spawned the
      *             glyphs. If run is invalid, this will return an empty range.
      */
     @Generated
@@ -3000,8 +3158,9 @@ public final class CoreText {
     public static native CFRange CTRunGetStringRange(CTRunRef run);
 
     /**
-     * @function   CTRunGetTypographicBounds
-     * @abstract   Gets the typographic bounds of the run.
+     * [@function]   CTRunGetTypographicBounds
+     * 
+     * Gets the typographic bounds of the run.
      * 
      * @param      run
      *             The run that you want to calculate the typographic bounds for.
@@ -3024,7 +3183,7 @@ public final class CoreText {
      *             Upon return, this parameter will contain the leading of the run.
      *             This may be set to NULL if not needed.
      * 
-     * @result     The typographic width of the run. If run or range is
+     * @return     The typographic width of the run. If run or range is
      *             invalid, then this function will always return zero.
      */
     @Generated
@@ -3033,10 +3192,11 @@ public final class CoreText {
             NFloatPtr descent, NFloatPtr leading);
 
     /**
-     * @function   CTRunGetImageBounds
-     * @abstract   Calculates the image bounds for a glyph range.
+     * [@function]   CTRunGetImageBounds
      * 
-     * @discussion The image bounds for a run is the union of all non-empty glyph
+     * Calculates the image bounds for a glyph range.
+     * 
+     * The image bounds for a run is the union of all non-empty glyph
      *             bounding rects, each positioned as it would be if drawn using
      *             CTRunDraw using the current context (for clients linked against
      *             macOS High Sierra or iOS 11 and later) or the text position of
@@ -3058,13 +3218,13 @@ public final class CoreText {
      *             of the range is set to 0, then the operation will continue from
      *             the range's start index to the end of the run.
      * 
-     * @result     A rect that tightly encloses the paths of the run's glyphs. The
+     * @return     A rect that tightly encloses the paths of the run's glyphs. The
      *             rect origin will match the drawn position of the requested range;
      *             that is, it will be translated by the supplied context's text
      *             position and the positions of the individual glyphs. If the run
      *             or range is invalid, CGRectNull will be returned.
      * 
-     * @seealso    CTRunGetTypographicBounds
+     * @see    CTRunGetTypographicBounds
      */
     @Generated
     @CFunction
@@ -3072,17 +3232,18 @@ public final class CoreText {
     public static native CGRect CTRunGetImageBounds(CTRunRef run, CGContextRef context, @ByValue CFRange range);
 
     /**
-     * @function   CTRunGetTextMatrix
-     * @abstract   Returns the text matrix needed to draw this run.
+     * [@function]   CTRunGetTextMatrix
      * 
-     * @discussion To properly draw the glyphs in a run, the fields 'tx' and 'ty' of
+     * Returns the text matrix needed to draw this run.
+     * 
+     * To properly draw the glyphs in a run, the fields 'tx' and 'ty' of
      *             the CGAffineTransform returned by this function should be set to
      *             the current text position.
      * 
      * @param      run
      *             The run object from which to get the text matrix.
      * 
-     * @result     A CGAffineTransform.
+     * @return     A CGAffineTransform.
      */
     @Generated
     @CFunction
@@ -3090,10 +3251,11 @@ public final class CoreText {
     public static native CGAffineTransform CTRunGetTextMatrix(CTRunRef run);
 
     /**
-     * @function   CTRunDraw
-     * @abstract   Draws a complete run or part of one.
+     * [@function]   CTRunDraw
      * 
-     * @discussion This is a convenience call, since the run could also be drawn by
+     * Draws a complete run or part of one.
+     * 
+     * This is a convenience call, since the run could also be drawn by
      *             accessing its glyphs, positions, and text matrix. Unlike when
      *             drawing the entire line containing the run with CTLineDraw, the
      *             run's underline (if any) will not be drawn, since the underline's
@@ -3120,8 +3282,9 @@ public final class CoreText {
     public static native void CTRunDraw(CTRunRef run, CGContextRef context, @ByValue CFRange range);
 
     /**
-     * @function   CTRunDelegateGetTypeID
-     * @abstract   Returns the CFType of CTRunDelegate objects.
+     * [@function]   CTRunDelegateGetTypeID
+     * 
+     * Returns the CFType of CTRunDelegate objects.
      */
     @Generated
     @CFunction
@@ -3129,17 +3292,18 @@ public final class CoreText {
     public static native long CTRunDelegateGetTypeID();
 
     /**
-     * @function   CTRunDelegateCreate
-     * @abstract   Creates an immutable instance of a run delegate.
+     * [@function]   CTRunDelegateCreate
      * 
-     * @discussion This function creates an immutable instance of a run delegate
+     * Creates an immutable instance of a run delegate.
+     * 
+     * This function creates an immutable instance of a run delegate
      *             that can be used for reserving space in a line or for eliding the
      *             glyphs for a range of text altogether. 
      * 
      * @param      callbacks
      *             The callbacks for this run delegate.
      * 
-     * @result     If run delegate creation was successful, this function will
+     * @return     If run delegate creation was successful, this function will
      *             return a valid reference to an immutable CTRunDelegate
      *             object. Otherwise, this function will return NULL.
      */
@@ -3150,24 +3314,26 @@ public final class CoreText {
             VoidPtr refCon);
 
     /**
-     * @function   CTRunDelegateGetRefCon
-     * @abstract   Returns a run delegate's refCon value.
+     * [@function]   CTRunDelegateGetRefCon
      * 
-     * @discussion This function returns the refCon value that a run delegate was
+     * Returns a run delegate's refCon value.
+     * 
+     * This function returns the refCon value that a run delegate was
      *             created with.
      * 
      * @param      runDelegate
      *             The run delegate to be queried.
      * 
-     * @result     The refCon value of the supplied run delegate.
+     * @return     The refCon value of the supplied run delegate.
      */
     @Generated
     @CFunction
     public static native VoidPtr CTRunDelegateGetRefCon(CTRunDelegateRef runDelegate);
 
     /**
-     * @function   CTTypesetterGetTypeID
-     * @abstract   Returns the CFType of the text tab object
+     * [@function]   CTTypesetterGetTypeID
+     * 
+     * Returns the CFType of the text tab object
      */
     @Generated
     @CFunction
@@ -3175,8 +3341,9 @@ public final class CoreText {
     public static native long CTTextTabGetTypeID();
 
     /**
-     * @function   CTTextTabCreate
-     * @abstract   Creates and initializes a new text tab.
+     * [@function]   CTTextTabCreate
+     * 
+     * Creates and initializes a new text tab.
      * 
      * @param      alignment
      *             The tab's alignment. This is used to determine the position of
@@ -3191,46 +3358,49 @@ public final class CoreText {
      *             option available is kCTTabColumnTerminatorsAttributeName. This
      *             parameter is optional and can be set to NULL if not needed.
      * 
-     * @result     The new CTTextTab.
+     * @return     The new CTTextTab.
      */
     @Generated
     @CFunction
     public static native CTTextTabRef CTTextTabCreate(byte alignment, double location, CFDictionaryRef options);
 
     /**
-     * @function   CTTextTabGetAlignment
-     * @abstract   Returns the text alignment of the tab.
+     * [@function]   CTTextTabGetAlignment
+     * 
+     * Returns the text alignment of the tab.
      * 
      * @param      tab
      *             The tab whose text alignment you wish to access.
      * 
-     * @result     The tab's text alignment value.
+     * @return     The tab's text alignment value.
      */
     @Generated
     @CFunction
     public static native byte CTTextTabGetAlignment(CTTextTabRef tab);
 
     /**
-     * @function   CTTextTabGetLocation
-     * @abstract   Returns the tab's ruler location.
+     * [@function]   CTTextTabGetLocation
+     * 
+     * Returns the tab's ruler location.
      * 
      * @param      tab
      *             The tab whose location you wish to access.
      * 
-     * @result     The tab's ruler location relative to the back margin.
+     * @return     The tab's ruler location relative to the back margin.
      */
     @Generated
     @CFunction
     public static native double CTTextTabGetLocation(CTTextTabRef tab);
 
     /**
-     * @function   CTTextTabGetOptions
-     * @abstract   Returns the dictionary of attributes associated with the tab. 
+     * [@function]   CTTextTabGetOptions
+     * 
+     * Returns the dictionary of attributes associated with the tab.
      * 
      * @param      tab
      *             The tab whose attributes you wish to access.
      * 
-     * @result     The dictionary of attributes associated with the tab or NULL if
+     * @return     The dictionary of attributes associated with the tab or NULL if
      *             no dictionary is present.
      */
     @Generated
@@ -3238,10 +3408,11 @@ public final class CoreText {
     public static native CFDictionaryRef CTTextTabGetOptions(CTTextTabRef tab);
 
     /**
-     * @function   CTGetCoreTextVersion
-     * @abstract   Returns the version of the CoreText framework.
+     * [@function]   CTGetCoreTextVersion
      * 
-     * @discussion This function returns a number indicating the version of the
+     * Returns the version of the CoreText framework.
+     * 
+     * This function returns a number indicating the version of the
      *             CoreText framework. Note that framework version is not always
      *             an accurate indicator of feature availability. The recommended
      *             way to use this function is first to check that the function
@@ -3252,7 +3423,7 @@ public final class CoreText {
      *                     // CoreText API is available
      *                 }
      * 
-     * @result     The version number. This value is for comparison with the
+     * @return     The version number. This value is for comparison with the
      *             constants beginning with kCTVersionNumber and will not exceed
      *             kCTVersionNumber11_0.
      */
@@ -3261,180 +3432,220 @@ public final class CoreText {
     public static native int CTGetCoreTextVersion();
 
     /**
-     * @defined    kCTFontSymbolicTrait
-     * @abstract   Dictionary key to access the symbolic traits value.
-     * @discussion Use this key to access the symbolic traits value from the font traits dictionary. The value is returned as a CFNumberRef.
+     * [@defined]    kCTFontSymbolicTrait
+     * 
+     * Dictionary key to access the symbolic traits value.
+     * 
+     * Use this key to access the symbolic traits value from the font traits dictionary. The value is returned as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSymbolicTrait();
 
     /**
-     * @defined    kCTFontWeightTrait
-     * @abstract   Dictionary key to access the weight trait value.
-     * @discussion Use this key to access the normalized weight trait from the font traits dictionary. The value returned is a CFNumberRef representing a float value between -1.0 and 1.0 for normalized weight. The value of 0.0 corresponds to the regular or medium font weight.
+     * [@defined]    kCTFontWeightTrait
+     * 
+     * Dictionary key to access the weight trait value.
+     * 
+     * Use this key to access the normalized weight trait from the font traits dictionary. The value returned is a CFNumberRef representing a float value between -1.0 and 1.0 for normalized weight. The value of 0.0 corresponds to the regular or medium font weight.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontWeightTrait();
 
     /**
-     * @defined    kCTFontWidthTrait
-     * @abstract   Dictionary key to access the width (condense/expand) trait value.
-     * @discussion Use this key to access the normalized proportion trait from the font traits dictionary. This value corresponds to the relative inter-glyph spacing for a given font. The value returned is a CFNumberRef representing a float between -1.0 and 1.0. The value of 0.0 corresponds to regular glyph spacing while negative values represent condensed glyph spacing.
+     * [@defined]    kCTFontWidthTrait
+     * 
+     * Dictionary key to access the width (condense/expand) trait value.
+     * 
+     * Use this key to access the normalized proportion trait from the font traits dictionary. This value corresponds to the relative inter-glyph spacing for a given font. The value returned is a CFNumberRef representing a float between -1.0 and 1.0. The value of 0.0 corresponds to regular glyph spacing while negative values represent condensed glyph spacing.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontWidthTrait();
 
     /**
-     * @defined    kCTFontSlantTrait
-     * @abstract   Dictionary key to access the slant trait value.
-     * @discussion Use this key to access the normalized slant angle from the font traits dictionary. The value returned is a CFNumberRef representing a float value between -1.0 and 1.0 for normalized slant angle. The value or 0.0 corresponds to 0 degree clockwise rotation from the vertical and 1.0 corresponds to 30 degrees clockwise rotation.
+     * [@defined]    kCTFontSlantTrait
+     * 
+     * Dictionary key to access the slant trait value.
+     * 
+     * Use this key to access the normalized slant angle from the font traits dictionary. The value returned is a CFNumberRef representing a float value between -1.0 and 1.0 for normalized slant angle. The value or 0.0 corresponds to 0 degree clockwise rotation from the vertical and 1.0 corresponds to 30 degrees clockwise rotation.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSlantTrait();
 
     /**
-     * @defined    kCTFontURLAttribute
-     * @abstract   The font URL.
-     * @discussion This is the key for accessing the font URL from the font descriptor. The value associated with this key is a CFURLRef.
+     * [@defined]    kCTFontURLAttribute
+     * 
+     * The font URL.
+     * 
+     * This is the key for accessing the font URL from the font descriptor. The value associated with this key is a CFURLRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontURLAttribute();
 
     /**
-     * @defined    kCTFontNameAttribute
-     * @abstract   The PostScript name.
-     * @discussion This is the key for retrieving the PostScript name from the font descriptor. When matching, this is treated more generically: the system first tries to find fonts with this PostScript name. If none is found, the system tries to find fonts with this family name, and, finally, if still nothing, tries to find fonts with this display name. The value associated with this key is a CFStringRef. If unspecified, defaults to "Helvetica", if unavailable falls back to global font cascade list.
+     * [@defined]    kCTFontNameAttribute
+     * 
+     * The PostScript name.
+     * 
+     * This is the key for retrieving the PostScript name from the font descriptor. When matching, this is treated more generically: the system first tries to find fonts with this PostScript name. If none is found, the system tries to find fonts with this family name, and, finally, if still nothing, tries to find fonts with this display name. The value associated with this key is a CFStringRef. If unspecified, defaults to "Helvetica", if unavailable falls back to global font cascade list.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontNameAttribute();
 
     /**
-     * @defined    kCTFontDisplayNameAttribute
-     * @abstract   The display name.
-     * @discussion This is the key for accessing the name used to display the font. Most commonly this is the full name. The value associated with this key is a CFStringRef.
+     * [@defined]    kCTFontDisplayNameAttribute
+     * 
+     * The display name.
+     * 
+     * This is the key for accessing the name used to display the font. Most commonly this is the full name. The value associated with this key is a CFStringRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDisplayNameAttribute();
 
     /**
-     * @defined    kCTFontFamilyNameAttribute
-     * @abstract   The family name.
-     * @discussion This is the key for accessing the family name from the font descriptor. The value associated with this key is a CFStringRef.
+     * [@defined]    kCTFontFamilyNameAttribute
+     * 
+     * The family name.
+     * 
+     * This is the key for accessing the family name from the font descriptor. The value associated with this key is a CFStringRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFamilyNameAttribute();
 
     /**
-     * @defined    kCTFontStyleNameAttribute
-     * @abstract   The style name.
-     * @discussion This is the key for accessing the style name of the font. This name represents the designer's description of the font's style. The value associated with this key is a CFStringRef.
+     * [@defined]    kCTFontStyleNameAttribute
+     * 
+     * The style name.
+     * 
+     * This is the key for accessing the style name of the font. This name represents the designer's description of the font's style. The value associated with this key is a CFStringRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontStyleNameAttribute();
 
     /**
-     * @defined    kCTFontTraitsAttribute
-     * @abstract   The font traits dictionary.
-     * @discussion This is the key for accessing the dictionary of font traits for stylistic information. See CTFontTraits.h for the list of font traits. The value associated with this key is a CFDictionaryRef.
+     * [@defined]    kCTFontTraitsAttribute
+     * 
+     * The font traits dictionary.
+     * 
+     * This is the key for accessing the dictionary of font traits for stylistic information. See CTFontTraits.h for the list of font traits. The value associated with this key is a CFDictionaryRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontTraitsAttribute();
 
     /**
-     * @defined    kCTFontVariationAttribute
-     * @abstract   The font variation dictionary.
-     * @discussion This key is used to obtain the font variation instance as a CFDictionaryRef. If specified in a font descriptor, fonts with the specified axes will be primary match candidates, if no such fonts exist, this attribute will be ignored.
+     * [@defined]    kCTFontVariationAttribute
+     * 
+     * The font variation dictionary.
+     * 
+     * This key is used to obtain the font variation instance as a CFDictionaryRef. If specified in a font descriptor, fonts with the specified axes will be primary match candidates, if no such fonts exist, this attribute will be ignored.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAttribute();
 
     /**
-     * @defined    kCTFontSizeAttribute
-     * @abstract   The font point size.
-     * @discussion This key is used to obtain or specify the font point size. Creating a font with this unspecified will default to a point size of 12.0. The value for this key is represented as a CFNumberRef.
+     * [@defined]    kCTFontSizeAttribute
+     * 
+     * The font point size.
+     * 
+     * This key is used to obtain or specify the font point size. Creating a font with this unspecified will default to a point size of 12.0. The value for this key is represented as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSizeAttribute();
 
     /**
-     * @defined    kCTFontMatrixAttribute
-     * @abstract   The font transformation matrix.
-     * @discussion This key is used to specify the font transformation matrix when creating a font. The default value is CGAffineTransformIdentity. The value for this key is a CFDataRef containing a CGAffineTransform, of which only the a, b, c, and d fields are used.
+     * [@defined]    kCTFontMatrixAttribute
+     * 
+     * The font transformation matrix.
+     * 
+     * This key is used to specify the font transformation matrix when creating a font. The default value is CGAffineTransformIdentity. The value for this key is a CFDataRef containing a CGAffineTransform, of which only the a, b, c, and d fields are used.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontMatrixAttribute();
 
     /**
-     * @defined    kCTFontCascadeListAttribute
-     * @abstract   The font cascade list.
-     * @discussion This key is used to specify or obtain the cascade list used for a font reference. The cascade list is a CFArrayRef containing CTFontDescriptorRefs. If unspecified, the global cascade list is used. This list is not consulted for private-use characters on OS X 10.10, iOS 8, or earlier.
+     * [@defined]    kCTFontCascadeListAttribute
+     * 
+     * The font cascade list.
+     * 
+     * This key is used to specify or obtain the cascade list used for a font reference. The cascade list is a CFArrayRef containing CTFontDescriptorRefs. If unspecified, the global cascade list is used. This list is not consulted for private-use characters on OS X 10.10, iOS 8, or earlier.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontCascadeListAttribute();
 
     /**
-     * @defined    kCTFontCharacterSetAttribute
-     * @abstract   The font Unicode character coverage set.
-     * @discussion The value for this key is a CFCharacterSetRef. Creating a font with this attribute will restrict the font to a subset of its actual character set.
+     * [@defined]    kCTFontCharacterSetAttribute
+     * 
+     * The font Unicode character coverage set.
+     * 
+     * The value for this key is a CFCharacterSetRef. Creating a font with this attribute will restrict the font to a subset of its actual character set.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontCharacterSetAttribute();
 
     /**
-     * @defined    kCTFontLanguagesAttribute
-     * @abstract   The list of supported languages.
-     * @discussion The value for this key is a CFArrayRef of CFStringRef language identifiers conforming to UTS #35. It can be requested from any font. If present in a descriptor used for matching, only fonts supporting the specified languages will be returned.
+     * [@defined]    kCTFontLanguagesAttribute
+     * 
+     * The list of supported languages.
+     * 
+     * The value for this key is a CFArrayRef of CFStringRef language identifiers conforming to UTS #35. It can be requested from any font. If present in a descriptor used for matching, only fonts supporting the specified languages will be returned.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontLanguagesAttribute();
 
     /**
-     * @defined    kCTFontBaselineAdjustAttribute
-     * @abstract   The baseline adjustment to apply to font metrics.
-     * @discussion The value for this key is a floating-point CFNumberRef. This is primarily used when defining font descriptors for a cascade list to keep the baseline of all fonts even.
+     * [@defined]    kCTFontBaselineAdjustAttribute
+     * 
+     * The baseline adjustment to apply to font metrics.
+     * 
+     * The value for this key is a floating-point CFNumberRef. This is primarily used when defining font descriptors for a cascade list to keep the baseline of all fonts even.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontBaselineAdjustAttribute();
 
     /**
-     * @defined    kCTFontMacintoshEncodingsAttribute
-     * @abstract   The Macintosh encodings (legacy script codes).
-     * @discussion The value associated with this key is a CFNumberRef containing a bitfield of the script codes in <CoreText/SFNTTypes.h>; bit 0 corresponds to kFontRomanScript, and so on. This attribute is provided for legacy compatibility.
+     * [@defined]    kCTFontMacintoshEncodingsAttribute
+     * 
+     * The Macintosh encodings (legacy script codes).
+     * 
+     * The value associated with this key is a CFNumberRef containing a bitfield of the script codes in <CoreText/SFNTTypes.h>; bit 0 corresponds to kFontRomanScript, and so on. This attribute is provided for legacy compatibility.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontMacintoshEncodingsAttribute();
 
     /**
-     * @defined    kCTFontFeaturesAttribute
-     * @abstract   The array of font features.
-     * @discussion This key is used to specify or obtain the font features for a font reference. The value associated with this key is a CFArrayRef of font feature dictionaries. This features list contains the feature information from the 'feat' table of the font. See the CTFontCopyFeatures() API in   CTFont.h.
+     * [@defined]    kCTFontFeaturesAttribute
+     * 
+     * The array of font features.
+     * 
+     * This key is used to specify or obtain the font features for a font reference. The value associated with this key is a CFArrayRef of font feature dictionaries. This features list contains the feature information from the 'feat' table of the font. See the CTFontCopyFeatures() API in   CTFont.h.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeaturesAttribute();
 
     /**
-     * @defined    kCTFontFeatureSettingsAttribute
-     * @abstract   The array of typographic feature settings.
-     * @discussion This key is used to specify an array of zero or more feature settings. Each setting dictionary indicates which setting should be applied. In the case of duplicate or conflicting settings the last setting in the list will take precedence. In the case of AAT settings, it is the caller's responsibility to handle exclusive and non-exclusive settings as necessary.
+     * [@defined]    kCTFontFeatureSettingsAttribute
+     * 
+     * The array of typographic feature settings.
+     * 
+     * This key is used to specify an array of zero or more feature settings. Each setting dictionary indicates which setting should be applied. In the case of duplicate or conflicting settings the last setting in the list will take precedence. In the case of AAT settings, it is the caller's responsibility to handle exclusive and non-exclusive settings as necessary.
      *             An AAT setting dictionary contains a tuple of a kCTFontFeatureTypeIdentifierKey key-value pair and a kCTFontFeatureSelectorIdentifierKey key-value pair.
      *             An OpenType setting dictionary contains a tuple of a kCTFontOpenTypeFeatureTag key-value pair and a kCTFontOpenTypeFeatureValue key-value pair.
      * 
@@ -3447,9 +3658,11 @@ public final class CoreText {
     public static native CFStringRef kCTFontFeatureSettingsAttribute();
 
     /**
-     * @defined    kCTFontFixedAdvanceAttribute
-     * @abstract   Specifies advance width.
-     * @discussion This key is used to specify a constant advance width, which affects the glyph metrics of any font instance created with this key; it overrides font values and the font transformation matrix, if any. The value associated with this key must be a CFNumberRef.
+     * [@defined]    kCTFontFixedAdvanceAttribute
+     * 
+     * Specifies advance width.
+     * 
+     * This key is used to specify a constant advance width, which affects the glyph metrics of any font instance created with this key; it overrides font values and the font transformation matrix, if any. The value associated with this key must be a CFNumberRef.
      * 
      *             Starting with macOS 10.14 and iOS 12.0, this only affects glyph advances that have non-zero width when this attribute is not present.
      */
@@ -3458,63 +3671,77 @@ public final class CoreText {
     public static native CFStringRef kCTFontFixedAdvanceAttribute();
 
     /**
-     * @defined    kCTFontOrientationAttribute
-     * @abstract   The orientation attribute.
-     * @discussion This key is used to specify a particular orientation for the glyphs of the font. The value associated with this key is a int as a CFNumberRef. If you want to receive vertical metrics from a font for vertical rendering, specify kCTFontVerticalOrientation. If unspecified, the font will use its native orientation.
+     * [@defined]    kCTFontOrientationAttribute
+     * 
+     * The orientation attribute.
+     * 
+     * This key is used to specify a particular orientation for the glyphs of the font. The value associated with this key is a int as a CFNumberRef. If you want to receive vertical metrics from a font for vertical rendering, specify kCTFontVerticalOrientation. If unspecified, the font will use its native orientation.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontOrientationAttribute();
 
     /**
-     * @defined    kCTFontFormatAttribute
-     * @abstract   Specifies the recognized format of the font.
-     * @discussion The attribute is used to specify or obtain the format of the font. The returned value is a CFNumber containing one of the constants defined below.
+     * [@defined]    kCTFontFormatAttribute
+     * 
+     * Specifies the recognized format of the font.
+     * 
+     * The attribute is used to specify or obtain the format of the font. The returned value is a CFNumber containing one of the constants defined below.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFormatAttribute();
 
     /**
-     * @defined    kCTFontRegistrationScopeAttribute
-     * @abstract   Specifies the font descriptor's registration scope.
-     * @discussion The attribute is used to specify or obtain the font registration scope. The value returned is a CFNumberRef containing one of the CTFontManagerScope enumerated values. A value of NULL can be returned for font descriptors that are not registered.
+     * [@defined]    kCTFontRegistrationScopeAttribute
+     * 
+     * Specifies the font descriptor's registration scope.
+     * 
+     * The attribute is used to specify or obtain the font registration scope. The value returned is a CFNumberRef containing one of the CTFontManagerScope enumerated values. A value of NULL can be returned for font descriptors that are not registered.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontRegistrationScopeAttribute();
 
     /**
-     * @defined    kCTFontPriorityAttribute
-     * @abstract   The font descriptors priority when resolving duplicates and sorting match results.
-     * @discussion This key is used to obtain or specify the font priority. The value returned is a CFNumberRef containing an integer value as defined below. The higher the value, the higher the priority of the font. Only registered fonts will have a priority. Unregistered font descriptors will return NULL.
+     * [@defined]    kCTFontPriorityAttribute
+     * 
+     * The font descriptors priority when resolving duplicates and sorting match results.
+     * 
+     * This key is used to obtain or specify the font priority. The value returned is a CFNumberRef containing an integer value as defined below. The higher the value, the higher the priority of the font. Only registered fonts will have a priority. Unregistered font descriptors will return NULL.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontPriorityAttribute();
 
     /**
-     * @defined    kCTFontEnabledAttribute
-     * @abstract   The font enabled state.
-     * @discussion The value associated with this key is a CFBoolean. Unregistered font descriptors will return NULL, which is equivalent to false.
+     * [@defined]    kCTFontEnabledAttribute
+     * 
+     * The font enabled state.
+     * 
+     * The value associated with this key is a CFBoolean. Unregistered font descriptors will return NULL, which is equivalent to false.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontEnabledAttribute();
 
     /**
-     * @defined    kCTFontDownloadableAttribute
-     * @abstract   The font downloadable state.
-     * @discussion The value associated with this key is a CFBoolean. If it is true, CoreText attempts to download a font if necessary when matching a descriptor.
+     * [@defined]    kCTFontDownloadableAttribute
+     * 
+     * The font downloadable state.
+     * 
+     * The value associated with this key is a CFBoolean. If it is true, CoreText attempts to download a font if necessary when matching a descriptor.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDownloadableAttribute();
 
     /**
-     * @defined    kCTFontDownloadedAttribute
-     * @abstract   The download state.
-     * @discussion The value associated with this key is a CFBoolean. If it is true, corresponding FontAsset has been downloaded. (but still it may be necessary to call appropriate API in order to use the font in the FontAsset.)
+     * [@defined]    kCTFontDownloadedAttribute
+     * 
+     * The download state.
+     * 
+     * The value associated with this key is a CFBoolean. If it is true, corresponding FontAsset has been downloaded. (but still it may be necessary to call appropriate API in order to use the font in the FontAsset.)
      */
     @Generated
     @CVariable()
@@ -3578,41 +3805,47 @@ public final class CoreText {
 
     /**
      *  Name specifier constants
-     * @defined    kCTFontCopyrightNameKey
-     * @abstract   The name specifier for the copyright name.
+     * [@defined]    kCTFontCopyrightNameKey
+     * 
+     * The name specifier for the copyright name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontCopyrightNameKey();
 
     /**
-     * @defined    kCTFontFamilyNameKey
-     * @abstract   The name specifier for the family name.
+     * [@defined]    kCTFontFamilyNameKey
+     * 
+     * The name specifier for the family name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFamilyNameKey();
 
     /**
-     * @defined    kCTFontSubFamilyNameKey
-     * @abstract   The name specifier for the subfamily name.
+     * [@defined]    kCTFontSubFamilyNameKey
+     * 
+     * The name specifier for the subfamily name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSubFamilyNameKey();
 
     /**
-     * @defined    kCTFontStyleNameKey
-     * @abstract   The name specifier for the style name.
+     * [@defined]    kCTFontStyleNameKey
+     * 
+     * The name specifier for the style name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontStyleNameKey();
 
     /**
-     * @defined    kCTFontUniqueNameKey
-     * @abstract   The name specifier for the unique name.
-     * @discussion Note that this name is often not unique and should not be
+     * [@defined]    kCTFontUniqueNameKey
+     * 
+     * The name specifier for the unique name.
+     * 
+     * Note that this name is often not unique and should not be
      *             assumed to be truly unique.
      */
     @Generated
@@ -3620,363 +3853,414 @@ public final class CoreText {
     public static native CFStringRef kCTFontUniqueNameKey();
 
     /**
-     * @defined    kCTFontFullNameKey
-     * @abstract   The name specifier for the full name.
+     * [@defined]    kCTFontFullNameKey
+     * 
+     * The name specifier for the full name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFullNameKey();
 
     /**
-     * @defined    kCTFontVersionNameKey
-     * @abstract   The name specifier for the version name.
+     * [@defined]    kCTFontVersionNameKey
+     * 
+     * The name specifier for the version name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVersionNameKey();
 
     /**
-     * @defined    kCTFontPostScriptNameKey
-     * @abstract   The name specifier for the PostScript name.
+     * [@defined]    kCTFontPostScriptNameKey
+     * 
+     * The name specifier for the PostScript name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontPostScriptNameKey();
 
     /**
-     * @defined    kCTFontTrademarkNameKey
-     * @abstract   The name specifier for the trademark name.
+     * [@defined]    kCTFontTrademarkNameKey
+     * 
+     * The name specifier for the trademark name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontTrademarkNameKey();
 
     /**
-     * @defined    kCTFontManufacturerNameKey
-     * @abstract   The name specifier for the manufacturer name.
+     * [@defined]    kCTFontManufacturerNameKey
+     * 
+     * The name specifier for the manufacturer name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManufacturerNameKey();
 
     /**
-     * @defined    kCTFontDesignerNameKey
-     * @abstract   The name specifier for the designer name.
+     * [@defined]    kCTFontDesignerNameKey
+     * 
+     * The name specifier for the designer name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDesignerNameKey();
 
     /**
-     * @defined    kCTFontDescriptionNameKey
-     * @abstract   The name specifier for the description name.
+     * [@defined]    kCTFontDescriptionNameKey
+     * 
+     * The name specifier for the description name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptionNameKey();
 
     /**
-     * @defined    kCTFontVendorURLNameKey
-     * @abstract   The name specifier for the vendor url name.
+     * [@defined]    kCTFontVendorURLNameKey
+     * 
+     * The name specifier for the vendor url name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVendorURLNameKey();
 
     /**
-     * @defined    kCTFontDesignerURLNameKey
-     * @abstract   The name specifier for the designer url name.
+     * [@defined]    kCTFontDesignerURLNameKey
+     * 
+     * The name specifier for the designer url name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDesignerURLNameKey();
 
     /**
-     * @defined    kCTFontLicenseNameKey
-     * @abstract   The name specifier for the license name.
+     * [@defined]    kCTFontLicenseNameKey
+     * 
+     * The name specifier for the license name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontLicenseNameKey();
 
     /**
-     * @defined    kCTFontLicenseURLNameKey
-     * @abstract   The name specifier for the license url name.
+     * [@defined]    kCTFontLicenseURLNameKey
+     * 
+     * The name specifier for the license url name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontLicenseURLNameKey();
 
     /**
-     * @defined    kCTFontSampleTextNameKey
-     * @abstract   The name specifier for the sample text name string.
+     * [@defined]    kCTFontSampleTextNameKey
+     * 
+     * The name specifier for the sample text name string.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSampleTextNameKey();
 
     /**
-     * @defined    kCTFontPostScriptCIDNameKey
-     * @abstract   The name specifier for the PostScript CID name.
+     * [@defined]    kCTFontPostScriptCIDNameKey
+     * 
+     * The name specifier for the PostScript CID name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontPostScriptCIDNameKey();
 
     /**
-     * @defined    kCTFontVariationAxisIdentifierKey
-     * @abstract   Key to get the variation axis identifier.
-     * @discussion This key is used with a variation axis dictionary to get the axis identifier value as a CFNumberRef.
+     * [@defined]    kCTFontVariationAxisIdentifierKey
+     * 
+     * Key to get the variation axis identifier.
+     * 
+     * This key is used with a variation axis dictionary to get the axis identifier value as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisIdentifierKey();
 
     /**
-     * @defined    kCTFontVariationAxisMinimumValueKey
-     * @abstract   Key to get the variation axis minimum value.
-     * @discussion This key is used with a variation axis dictionary to get the minimum axis value as a CFNumberRef.
+     * [@defined]    kCTFontVariationAxisMinimumValueKey
+     * 
+     * Key to get the variation axis minimum value.
+     * 
+     * This key is used with a variation axis dictionary to get the minimum axis value as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisMinimumValueKey();
 
     /**
-     * @defined    kCTFontVariationAxisMaximumValueKey
-     * @abstract   Key to get the variation axis maximum value.
-     * @discussion This key is used with a variation axis dictionary to get the maximum axis value as a CFNumberRef.
+     * [@defined]    kCTFontVariationAxisMaximumValueKey
+     * 
+     * Key to get the variation axis maximum value.
+     * 
+     * This key is used with a variation axis dictionary to get the maximum axis value as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisMaximumValueKey();
 
     /**
-     * @defined    kCTFontVariationAxisDefaultValueKey
-     * @abstract   Key to get the variation axis default value.
-     * @discussion This key is used with a variation axis dictionary to get the default axis value as a CFNumberRef.
+     * [@defined]    kCTFontVariationAxisDefaultValueKey
+     * 
+     * Key to get the variation axis default value.
+     * 
+     * This key is used with a variation axis dictionary to get the default axis value as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisDefaultValueKey();
 
     /**
-     * @defined    kCTFontVariationAxisNameKey
-     * @abstract   Key to get the variation axis name string.
-     * @discussion This key is used with a variation axis dictionary to get the localized variation axis name.
+     * [@defined]    kCTFontVariationAxisNameKey
+     * 
+     * Key to get the variation axis name string.
+     * 
+     * This key is used with a variation axis dictionary to get the localized variation axis name.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisNameKey();
 
     /**
-     * @defined    kCTFontOpenTypeFeatureTag
-     * @abstract   Key to get the OpenType feature tag.
-     * @discussion This key can be used with a font feature dictionary to get the tag as a CFStringRef.
+     * [@defined]    kCTFontOpenTypeFeatureTag
+     * 
+     * Key to get the OpenType feature tag.
+     * 
+     * This key can be used with a font feature dictionary to get the tag as a CFStringRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontOpenTypeFeatureTag();
 
     /**
-     * @defined    kCTFontOpenTypeFeatureValue
-     * @abstract   Key to get the OpenType feature value.
-     * @discussion This key can be used with a font feature dictionary to get the value as a CFNumberRef.
+     * [@defined]    kCTFontOpenTypeFeatureValue
+     * 
+     * Key to get the OpenType feature value.
+     * 
+     * This key can be used with a font feature dictionary to get the value as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontOpenTypeFeatureValue();
 
     /**
-     * @defined    kCTFontFeatureTypeIdentifierKey
-     * @abstract   Key to get the font feature type value.
-     * @discussion This key can be used with a font feature dictionary to get the type identifier as a CFNumberRef.
+     * [@defined]    kCTFontFeatureTypeIdentifierKey
+     * 
+     * Key to get the font feature type value.
+     * 
+     * This key can be used with a font feature dictionary to get the type identifier as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTypeIdentifierKey();
 
     /**
-     * @defined    kCTFontFeatureTypeNameKey
-     * @abstract   Key to get the font feature name.
-     * @discussion This key can be used with a font feature dictionary to get the localized type name string as a CFString.
+     * [@defined]    kCTFontFeatureTypeNameKey
+     * 
+     * Key to get the font feature name.
+     * 
+     * This key can be used with a font feature dictionary to get the localized type name string as a CFString.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTypeNameKey();
 
     /**
-     * @defined    kCTFontFeatureTypeExclusiveKey
-     * @abstract   Key to get the font feature exclusive setting.
-     * @discussion This key can be used with a font feature dictionary to get the the exclusive setting of the feature as a CFBoolean. The value associated with this key indicates whether the feature selectors associated with this type should be mutually exclusive.
+     * [@defined]    kCTFontFeatureTypeExclusiveKey
+     * 
+     * Key to get the font feature exclusive setting.
+     * 
+     * This key can be used with a font feature dictionary to get the the exclusive setting of the feature as a CFBoolean. The value associated with this key indicates whether the feature selectors associated with this type should be mutually exclusive.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTypeExclusiveKey();
 
     /**
-     * @defined    kCTFontFeatureTypeSelectorsKey
-     * @abstract   Key to get the font feature selectors.
-     * @discussion This key can be used with a font feature dictionary to get the array of font feature selectors as a CFArrayRef. This is an array of selector dictionaries that contain the values for the following selector keys.
+     * [@defined]    kCTFontFeatureTypeSelectorsKey
+     * 
+     * Key to get the font feature selectors.
+     * 
+     * This key can be used with a font feature dictionary to get the array of font feature selectors as a CFArrayRef. This is an array of selector dictionaries that contain the values for the following selector keys.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTypeSelectorsKey();
 
     /**
-     * @defined    kCTFontFeatureSelectorIdentifierKey
-     * @abstract   Key to get the font feature selector identifier.
-     * @discussion This key can be used with a selector dictionary corresponding to a feature type to obtain the selector identifier value as a CFNumberRef.
+     * [@defined]    kCTFontFeatureSelectorIdentifierKey
+     * 
+     * Key to get the font feature selector identifier.
+     * 
+     * This key can be used with a selector dictionary corresponding to a feature type to obtain the selector identifier value as a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSelectorIdentifierKey();
 
     /**
-     * @defined    kCTFontFeatureSelectorNameKey
-     * @abstract   Key to get the font feature selector name.
-     * @discussion This key is used with a selector dictionary to get the localized name string for the selector as a CFStringRef.
+     * [@defined]    kCTFontFeatureSelectorNameKey
+     * 
+     * Key to get the font feature selector name.
+     * 
+     * This key is used with a selector dictionary to get the localized name string for the selector as a CFStringRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSelectorNameKey();
 
     /**
-     * @defined    kCTFontFeatureSelectorDefaultKey
-     * @abstract   Key to get the font feature selector default setting value.
-     * @discussion This key is used with a selector dictionary to get the default indicator for the selector. This value is a CFBooleanRef which if present and true indicates that this selector is the default setting for the current feature type.
+     * [@defined]    kCTFontFeatureSelectorDefaultKey
+     * 
+     * Key to get the font feature selector default setting value.
+     * 
+     * This key is used with a selector dictionary to get the default indicator for the selector. This value is a CFBooleanRef which if present and true indicates that this selector is the default setting for the current feature type.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSelectorDefaultKey();
 
     /**
-     * @defined    kCTFontFeatureSelectorSettingKey
-     * @abstract   Key to get or specify the current feature setting.
-     * @discussion This key is used with a selector dictionary to get or specify the current setting for the selector. This value is a CFBooleanRef to indicate whether this selector is on or off. If this key is not present, the default setting is used.
+     * [@defined]    kCTFontFeatureSelectorSettingKey
+     * 
+     * Key to get or specify the current feature setting.
+     * 
+     * This key is used with a selector dictionary to get or specify the current setting for the selector. This value is a CFBooleanRef to indicate whether this selector is on or off. If this key is not present, the default setting is used.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSelectorSettingKey();
 
     /**
-     * @defined    kCTBaselineClassRoman
+     * [@defined]    kCTBaselineClassRoman
      * 
-     * @abstract   Key to reference the Roman baseline class.
+     * Key to reference the Roman baseline class.
      * 
-     * @discussion This key can be used with a baseline info dictionary to offset to the Roman baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
+     * This key can be used with a baseline info dictionary to offset to the Roman baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassRoman();
 
     /**
-     * @defined    kCTBaselineClassIdeographicCentered
+     * [@defined]    kCTBaselineClassIdeographicCentered
      * 
-     * @abstract   Key to reference the Ideographic Centered baseline class.
+     * Key to reference the Ideographic Centered baseline class.
      * 
-     * @discussion This key can be used with a baseline info dictionary to offset to the Ideographic Centered baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
+     * This key can be used with a baseline info dictionary to offset to the Ideographic Centered baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassIdeographicCentered();
 
     /**
-     * @defined    kCTBaselineClassIdeographicLow
+     * [@defined]    kCTBaselineClassIdeographicLow
      * 
-     * @abstract   Key to reference the Ideographic Low baseline class.
+     * Key to reference the Ideographic Low baseline class.
      * 
-     * @discussion This key can be used with a baseline info dictionary to offset to the Ideographic Low baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
+     * This key can be used with a baseline info dictionary to offset to the Ideographic Low baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassIdeographicLow();
 
     /**
-     * @defined    kCTBaselineClassIdeographicHigh
+     * [@defined]    kCTBaselineClassIdeographicHigh
      * 
-     * @abstract   Key to reference the Ideographic High baseline class.
+     * Key to reference the Ideographic High baseline class.
      * 
-     * @discussion This key can be used with a baseline info dictionary to offset to the Ideographic High baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
+     * This key can be used with a baseline info dictionary to offset to the Ideographic High baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassIdeographicHigh();
 
     /**
-     * @defined    kCTBaselineClassHanging
+     * [@defined]    kCTBaselineClassHanging
      * 
-     * @abstract   Key to reference the Hanging baseline class.
+     * Key to reference the Hanging baseline class.
      * 
-     * @discussion This key can be used with a baseline info dictionary to offset to the Hanging baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
+     * This key can be used with a baseline info dictionary to offset to the Hanging baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassHanging();
 
     /**
-     * @defined    kCTBaselineClassMathKey
+     * [@defined]    kCTBaselineClassMathKey
      * 
-     * @abstract   Key to reference the Math baseline class.
+     * Key to reference the Math baseline class.
      * 
-     * @discussion This key can be used with a baseline info dictionary to offset to the Math baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
+     * This key can be used with a baseline info dictionary to offset to the Math baseline as a CFNumberRef float. It can also be used as the value for kCTBaselineClassAttributeName.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassMath();
 
     /**
-     * @defined    kCTBaselineReferenceFont
+     * [@defined]    kCTBaselineReferenceFont
      * 
-     * @abstract   Key to reference a font for the reference baseline.
+     * Key to reference a font for the reference baseline.
      * 
-     * @discussion This key can be used to specify a font for the reference baseline. The value is a CTFontRef or the kCTBaselineOriginalFont constant.
+     * This key can be used to specify a font for the reference baseline. The value is a CTFontRef or the kCTBaselineOriginalFont constant.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineReferenceFont();
 
     /**
-     * @defined    kCTBaselineOriginalFont
+     * [@defined]    kCTBaselineOriginalFont
      * 
-     * @abstract   Use the original font for setting the reference baseline.
+     * Use the original font for setting the reference baseline.
      * 
-     * @discussion This constant can be used as the value for kCTBaselineReferenceFont to specify that the original font should be used for the reference baseline.
+     * This constant can be used as the value for kCTBaselineReferenceFont to specify that the original font should be used for the reference baseline.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineOriginalFont();
 
     /**
-     * @defined    kCTFontCollectionRemoveDuplicatesOption
-     * @abstract   Option key to specify filtering of duplicates.
-     * @discussion Specify this option key in the options dictionary with a non- zero value to enable automatic filtering of duplicate font descriptors.
+     * [@defined]    kCTFontCollectionRemoveDuplicatesOption
+     * 
+     * Option key to specify filtering of duplicates.
+     * 
+     * Specify this option key in the options dictionary with a non- zero value to enable automatic filtering of duplicate font descriptors.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontCollectionRemoveDuplicatesOption();
 
     /**
-     * @const      kCTFontManagerErrorDomain
-     * @abstract   CFError domain for CTFontManager errors
-     * @discussion CFErrors with this domain will have error codes corresponding to one of the CTFontManagerErrors above.
+     * [@const]      kCTFontManagerErrorDomain
+     * 
+     * CFError domain for CTFontManager errors
+     * 
+     * CFErrors with this domain will have error codes corresponding to one of the CTFontManagerErrors above.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerErrorDomain();
 
     /**
-     * @constant   kCTFontManagerErrorFontURLsKey
-     * @abstract   User info key to be used with CFError references returned from registration functions.
-     * @discussion The value associated with this key in the user info dictionary of a CFError is a CFArray of font URLs that failed with given error.
+     * [@constant]   kCTFontManagerErrorFontURLsKey
+     * 
+     * User info key to be used with CFError references returned from registration functions.
+     * 
+     * The value associated with this key in the user info dictionary of a CFError is a CFArray of font URLs that failed with given error.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerErrorFontURLsKey();
 
     /**
-     * @constant   kCTFontManagerRegisteredFontsChangedNotification
-     * @abstract   Notification name for font registry changes.
-     * @discussion This is the string to use as the notification name when subscribing
+     * [@constant]   kCTFontManagerRegisteredFontsChangedNotification
+     * 
+     * Notification name for font registry changes.
+     * 
+     * This is the string to use as the notification name when subscribing
      *             to CTFontManager notifications.  This notification will be posted when fonts are added or removed.
      *             OS X clients should register as an observer of the notification with the distributed notification center
      *             for changes in session or persistent scopes and with the local notification center for changes in process scope.
@@ -3987,79 +4271,86 @@ public final class CoreText {
     public static native CFStringRef kCTFontManagerRegisteredFontsChangedNotification();
 
     /**
-     * @const      kCTFrameProgressionAttributeName
-     * @abstract   Specifies progression for a frame.
+     * [@const]      kCTFrameProgressionAttributeName
      * 
-     * @discussion Value must be a CFNumberRef containing a CTFrameProgression.
+     * Specifies progression for a frame.
+     * 
+     * Value must be a CFNumberRef containing a CTFrameProgression.
      *             Default is kCTFrameProgressionTopToBottom. This value determines
      *             the line stacking behavior for a frame and does not affect the
      *             appearance of the glyphs within that frame.
      * 
-     * @seealso    CTFramesetterCreateFrame
+     * @see    CTFramesetterCreateFrame
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFrameProgressionAttributeName();
 
     /**
-     * @const      kCTFramePathFillRuleAttributeName
-     * @abstract   Specifies fill rule for a frame if this attribute is used at top level of frameAttributes dictionary, or specify
+     * [@const]      kCTFramePathFillRuleAttributeName
+     * 
+     * Specifies fill rule for a frame if this attribute is used at top level of frameAttributes dictionary, or specify
      *             fill rule for a clipping path if used in a dictionary contained in an array specified by kCTFrameClippingPathsAttributeName.
      * 
-     * @discussion Value must be a CFNumberRef containing kCTFramePathFillEvenOdd or kCTFramePathFillWindingNumber.
+     * Value must be a CFNumberRef containing kCTFramePathFillEvenOdd or kCTFramePathFillWindingNumber.
      *             Default is kCTFramePathFillEvenOdd.
      * 
-     * @seealso    CTFramesetterCreateFrame
+     * @see    CTFramesetterCreateFrame
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFramePathFillRuleAttributeName();
 
     /**
-     * @const      kCTFramePathWidthAttributeName
-     * @abstract   Specifies frame width if this attribute is used at top level of frameAttributes dictionary, or specify
+     * [@const]      kCTFramePathWidthAttributeName
+     * 
+     * Specifies frame width if this attribute is used at top level of frameAttributes dictionary, or specify
      *             clipping path width if used in a dictionary contained in an array specified by kCTFrameClippingPathsAttributeName.
      * 
-     * @discussion Value must be a CFNumberRef specifying frame width.
+     * Value must be a CFNumberRef specifying frame width.
      *             Default is zero.
      * 
-     * @seealso    CTFramesetterCreateFrame
+     * @see    CTFramesetterCreateFrame
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFramePathWidthAttributeName();
 
     /**
-     * @const      kCTFrameClippingPathsAttributeName
-     * @abstract   Specifies array of paths to clip frame.
+     * [@const]      kCTFrameClippingPathsAttributeName
      * 
-     * @discussion Value must be a CFArrayRef containing CFDictionaryRefs or CGPathRef.  (CGPathRef is allowed on 10.8 or later.)
+     * Specifies array of paths to clip frame.
+     * 
+     * Value must be a CFArrayRef containing CFDictionaryRefs or CGPathRef.  (CGPathRef is allowed on 10.8 or later.)
      *             Each dictionary should have a kCTFramePathClippingPathAttributeName key-value pair, and can have a kCTFramePathFillRuleAttributeName key-value pair 
      *             and kCTFramePathFillRuleAttributeName key-value pair as optional parameters.  In case of CGPathRef, default fill rule (kCTFramePathFillEvenOdd) and width (0.0) are used.
      * 
-     * @seealso    CTFramesetterCreateFrame
+     * @see    CTFramesetterCreateFrame
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFrameClippingPathsAttributeName();
 
     /**
-     * @const      kCTFramePathClippingPathAttributeName
-     * @abstract   Specifies clipping path.  This attribute is valid in a dictionary contained in an array specified by kCTFrameClippingPathsAttributeName.
+     * [@const]      kCTFramePathClippingPathAttributeName
+     * 
+     * Specifies clipping path.  This attribute is valid in a dictionary contained in an array specified by kCTFrameClippingPathsAttributeName.
      *             On 10.8 or later, This attribute is also valid in frameAttributes dictionary passed to CTFramesetterCreateFrame.
      * 
-     * @discussion Value must be a CGPathRef specifying a clipping path.
+     * Value must be a CGPathRef specifying a clipping path.
      * 
-     * @seealso    kCTFrameClippingPathsAttributeName
+     * @see    kCTFrameClippingPathsAttributeName
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFramePathClippingPathAttributeName();
 
     /**
-     * @const      kCTTypesetterOptionDisableBidiProcessing
-     * @abstract   Disables bidi processing.
-     * @discussion Value must be a CFBooleanRef. Default is false.
+     * [@const]      kCTTypesetterOptionDisableBidiProcessing
+     * 
+     * Disables bidi processing.
+     * 
+     * Value must be a CFBooleanRef. Default is false.
      *             Normally, typesetting applies the Unicode Bidirectional
      *             Algorithm as described in UAX #9. If a typesetter is created
      *             with this option set to true, no directional reordering is
@@ -4070,9 +4361,11 @@ public final class CoreText {
     public static native CFStringRef kCTTypesetterOptionDisableBidiProcessing();
 
     /**
-     * @const      kCTTypesetterOptionForcedEmbeddingLevel
-     * @abstract   Specifies the embedding level.
-     * @discussion Value must be a CFNumberRef. Default is unset. Normally,
+     * [@const]      kCTTypesetterOptionForcedEmbeddingLevel
+     * 
+     * Specifies the embedding level.
+     * 
+     * Value must be a CFNumberRef. Default is unset. Normally,
      *             typesetting applies the Unicode Bidirectional Algorithm as
      *             described in UAX #9. If present, this specifies the embedding
      *             level and any directional control characters are ignored.
@@ -4082,44 +4375,48 @@ public final class CoreText {
     public static native CFStringRef kCTTypesetterOptionForcedEmbeddingLevel();
 
     /**
-     * @const      kCTRubyAnnotationSizeFactorAttributeName
-     * @abstract   Specifies the size of the annotation text as a percent of the size of the base text.
+     * [@const]      kCTRubyAnnotationSizeFactorAttributeName
      * 
-     * @discussion Value must be a CFNumberRef.
+     * Specifies the size of the annotation text as a percent of the size of the base text.
+     * 
+     * Value must be a CFNumberRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTRubyAnnotationSizeFactorAttributeName();
 
     /**
-     * @const      kCTRubyAnnotationScaleToFitAttributeName
-     * @abstract   Treat the size specified in kCTRubyAnnotationSizeFactorAttributeName as the maximum
+     * [@const]      kCTRubyAnnotationScaleToFitAttributeName
+     * 
+     * Treat the size specified in kCTRubyAnnotationSizeFactorAttributeName as the maximum
      *             scale factor, when the base text size is smaller than annotation text size, we will
      *             try to scale the annotation font size down so that it will fit the base text without
      *             overhang or adding extra padding between base text.
      * 
-     * @discussion Value must be a CFBooleanRef. Default is false.
+     * Value must be a CFBooleanRef. Default is false.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTRubyAnnotationScaleToFitAttributeName();
 
     /**
-     * @const      kCTFontAttributeName
-     * @abstract   The font.
+     * [@const]      kCTFontAttributeName
      * 
-     * @discussion Value must be a CTFontRef. Default is Helvetica 12.
+     * The font.
+     * 
+     * Value must be a CTFontRef. Default is Helvetica 12.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontAttributeName();
 
     /**
-     * @const      kCTForegroundColorFromContextAttributeName
-     * @abstract   Never set a foreground color in the CGContext; use what is set as
+     * [@const]      kCTForegroundColorFromContextAttributeName
+     * 
+     * Never set a foreground color in the CGContext; use what is set as
      *             the context's fill color.
      * 
-     * @discussion Value must be a CFBooleanRef. Default is false. The reason
+     * Value must be a CFBooleanRef. Default is false. The reason
      *             why this exists is because an NSAttributedString defaults to a
      *             black color if no color attribute is set. This forces CoreText to
      *             set the color in the context. This will allow developers to
@@ -4133,10 +4430,11 @@ public final class CoreText {
     public static native CFStringRef kCTForegroundColorFromContextAttributeName();
 
     /**
-     * @const      kCTKernAttributeName
-     * @abstract   A kerning adjustment.
+     * [@const]      kCTKernAttributeName
      * 
-     * @discussion Value must be a CFNumberRef float. Default is standard kerning.
+     * A kerning adjustment.
+     * 
+     * Value must be a CFNumberRef float. Default is standard kerning.
      *             The kerning attribute indicate how many points the following
      *             character should be shifted from its default offset as defined
      *             by the current character's font in points; a positive kern
@@ -4150,10 +4448,11 @@ public final class CoreText {
     public static native CFStringRef kCTKernAttributeName();
 
     /**
-     * @const      kCTLigatureAttributeName
-     * @abstract   Controls ligature formation.
+     * [@const]      kCTLigatureAttributeName
      * 
-     * @discussion Value must be a CFNumberRef. Default is int value 1. The ligature
+     * Controls ligature formation.
+     * 
+     * Value must be a CFNumberRef. Default is int value 1. The ligature
      *             attribute determines what kinds of ligatures should be used when
      *             displaying the string. A value of 0 indicates that only ligatures
      *             essential for proper rendering of text should be used, 1
@@ -4176,46 +4475,50 @@ public final class CoreText {
     public static native CFStringRef kCTLigatureAttributeName();
 
     /**
-     * @const      kCTForegroundColorAttributeName
-     * @abstract   The foreground color.
+     * [@const]      kCTForegroundColorAttributeName
      * 
-     * @discussion Value must be a CGColorRef. Default value is black.
+     * The foreground color.
+     * 
+     * Value must be a CGColorRef. Default value is black.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTForegroundColorAttributeName();
 
     /**
-     * @const      kCTBackgroundColorAttributeName
-     * @abstract   The background color.
+     * [@const]      kCTBackgroundColorAttributeName
      * 
-     * @discussion Value must be a CGColorRef. Default is no background color.
+     * The background color.
+     * 
+     * Value must be a CGColorRef. Default is no background color.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBackgroundColorAttributeName();
 
     /**
-     * @const      kCTParagraphStyleAttributeName
-     * @abstract   A CTParagraphStyle object which is used to specify things like
+     * [@const]      kCTParagraphStyleAttributeName
+     * 
+     * A CTParagraphStyle object which is used to specify things like
      *             line alignment, tab rulers, writing direction, etc.
      * 
-     * @discussion Value must be a CTParagraphStyleRef. Default is an empty
+     * Value must be a CTParagraphStyleRef. Default is an empty
      *             CTParagraphStyle object: see CTParagraphStyle.h for more
      *             information. The value of this attribute must be uniform over
      *             the range of any paragraphs to which it is applied.
      * 
-     * @seealso    CFStringGetParagraphBounds
+     * @see    CFStringGetParagraphBounds
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTParagraphStyleAttributeName();
 
     /**
-     * @const      kCTStrokeWidthAttributeName
-     * @abstract   The stroke width.
+     * [@const]      kCTStrokeWidthAttributeName
      * 
-     * @discussion Value must be a CFNumberRef. Default value is 0.0, or no stroke.
+     * The stroke width.
+     * 
+     * Value must be a CFNumberRef. Default value is 0.0, or no stroke.
      *             This attribute, interpreted as a percentage of font point size,
      *             controls the text drawing mode: positive values effect drawing
      *             with stroke only; negative values are for stroke and fill. A
@@ -4226,21 +4529,23 @@ public final class CoreText {
     public static native CFStringRef kCTStrokeWidthAttributeName();
 
     /**
-     * @const      kCTStrokeColorAttributeName
-     * @abstract   The stroke color.
+     * [@const]      kCTStrokeColorAttributeName
      * 
-     * @discussion Value must be a CGColorRef. Default is the foreground color.
+     * The stroke color.
+     * 
+     * Value must be a CGColorRef. Default is the foreground color.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTStrokeColorAttributeName();
 
     /**
-     * @const      kCTUnderlineStyleAttributeName
-     * @abstract   Allows the setting of an underline to be applied at render
+     * [@const]      kCTUnderlineStyleAttributeName
+     * 
+     * Allows the setting of an underline to be applied at render
      *             time.
      * 
-     * @discussion Value must be a CFNumberRef. Default is kCTUnderlineStyleNone.
+     * Value must be a CFNumberRef. Default is kCTUnderlineStyleNone.
      *             Set a value of something other than kCTUnderlineStyleNone to draw
      *             an underline. In addition, the CTUnderlineStyleModifiers can be
      *             used to modify the look of the underline. The underline color
@@ -4252,10 +4557,11 @@ public final class CoreText {
     public static native CFStringRef kCTUnderlineStyleAttributeName();
 
     /**
-     * @const      kCTSuperscriptAttributeName
-     * @abstract   Controls vertical text positioning.
+     * [@const]      kCTSuperscriptAttributeName
      * 
-     * @discussion Value must be a CFNumberRef. Default is int value 0. If supported
+     * Controls vertical text positioning.
+     * 
+     * Value must be a CFNumberRef. Default is int value 0. If supported
      *             by the specified font, a value of 1 enables superscripting and a
      *             value of -1 enables subscripting.
      */
@@ -4264,20 +4570,22 @@ public final class CoreText {
     public static native CFStringRef kCTSuperscriptAttributeName();
 
     /**
-     * @const      kCTUnderlineColorAttributeName
-     * @abstract   The underline color.
+     * [@const]      kCTUnderlineColorAttributeName
      * 
-     * @discussion Value must be a CGColorRef. Default is the foreground color.
+     * The underline color.
+     * 
+     * Value must be a CGColorRef. Default is the foreground color.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTUnderlineColorAttributeName();
 
     /**
-     * @const      kCTVerticalFormsAttributeName
-     * @abstract   Controls glyph orientation.
+     * [@const]      kCTVerticalFormsAttributeName
      * 
-     * @discussion Value must be a CFBooleanRef. Default is false. A value of false
+     * Controls glyph orientation.
+     * 
+     * Value must be a CFBooleanRef. Default is false. A value of false
      *             indicates that horizontal glyph forms are to be used, true
      *             indicates that vertical glyph forms are to be used.
      */
@@ -4286,10 +4594,11 @@ public final class CoreText {
     public static native CFStringRef kCTVerticalFormsAttributeName();
 
     /**
-     * @const      kCTHorizontalInVerticalFormsAttributeName
-     * @abstract   Setting text in tate-chu-yoko form (horizontal numerals in vertical text).
+     * [@const]      kCTHorizontalInVerticalFormsAttributeName
      * 
-     * @discussion Value must be a CFNumberRef. Default is int value 0. A value of 1
+     * Setting text in tate-chu-yoko form (horizontal numerals in vertical text).
+     * 
+     * Value must be a CFNumberRef. Default is int value 0. A value of 1
      *             to 4 indicates the number of digits or letters to set in horizontal
      *             form. This is to apply the correct feature settings for the text.
      *             This attribute only works when kCTVerticalFormsAttributeName is set
@@ -4300,10 +4609,11 @@ public final class CoreText {
     public static native CFStringRef kCTHorizontalInVerticalFormsAttributeName();
 
     /**
-     * @const      kCTGlyphInfoAttributeName
-     * @abstract   Allows the use of unencoded glyphs.
+     * [@const]      kCTGlyphInfoAttributeName
      * 
-     * @discussion Value must be a CTGlyphInfoRef. The glyph specified by this
+     * Allows the use of unencoded glyphs.
+     * 
+     * Value must be a CTGlyphInfoRef. The glyph specified by this
      *             CTGlyphInfo object is assigned to the entire attribute range,
      *             provided that its contents match the specified base string and
      *             that the specified glyph is available in the font specified by
@@ -4314,10 +4624,11 @@ public final class CoreText {
     public static native CFStringRef kCTGlyphInfoAttributeName();
 
     /**
-     * @const      kCTCharacterShapeAttributeName
-     * @abstract   Controls glyph selection.
+     * [@const]      kCTCharacterShapeAttributeName
      * 
-     * @discussion Value must be a CFNumberRef. Default is value is 0 (disabled).
+     * Controls glyph selection.
+     * 
+     * Value must be a CFNumberRef. Default is value is 0 (disabled).
      *             A non-zero value is interpreted as an SFNT kCharacterShapeType
      *             selector + 1; see SFNTLayoutTypes.h for selectors. For example,
      *             an attribute value of 1 corresponds to kTraditionalCharactersSelector.
@@ -4327,10 +4638,11 @@ public final class CoreText {
     public static native CFStringRef kCTCharacterShapeAttributeName();
 
     /**
-     * @const      kCTLanguageAttributeName
-     * @abstract   Specifies text language.
+     * [@const]      kCTLanguageAttributeName
      * 
-     * @discussion Value must be a CFStringRef containing a locale identifier. Default
+     * Specifies text language.
+     * 
+     * Value must be a CFStringRef containing a locale identifier. Default
      *             is unset. When this attribute is set to a valid identifier, it will
      *             be used to select localized glyphs (if supported by the font) and
      *             locale-specific line breaking rules.
@@ -4340,11 +4652,12 @@ public final class CoreText {
     public static native CFStringRef kCTLanguageAttributeName();
 
     /**
-     * @const      kCTRunDelegateAttributeName
-     * @abstract   Allows customization of certain aspects of a range of text's
+     * [@const]      kCTRunDelegateAttributeName
+     * 
+     * Allows customization of certain aspects of a range of text's
      *             appearance.
      * 
-     * @discussion Value must be a CTRunDelegateRef. The values returned by the
+     * Value must be a CTRunDelegateRef. The values returned by the
      *             embedded object for an attribute range apply to each glyph
      *             resulting from the text in that range. Because an embedded object
      *             is only a display-time modification, care should be taken to
@@ -4359,52 +4672,55 @@ public final class CoreText {
     public static native CFStringRef kCTRunDelegateAttributeName();
 
     /**
-     * @const      kCTBaselineClassAttributeName
-     * @abstract   Key to reference a baseline class override.
+     * [@const]      kCTBaselineClassAttributeName
      * 
-     * @discussion Value must be one of the kCTBaselineClass constants. Normally,
+     * Key to reference a baseline class override.
+     * 
+     * Value must be one of the kCTBaselineClass constants. Normally,
      *             glyphs on the line will be assigned baseline classes according to
      *             the 'bsln' or 'BASE' table in the font. This attribute may be
      *             used to change this assignment.
      * 
-     * @seealso    kCTBaselineClassRoman
-     * @seealso    kCTBaselineClassIdeographicCentered
-     * @seealso    kCTBaselineClassIdeographicLow
-     * @seealso    kCTBaselineClassIdeographicHigh
-     * @seealso    kCTBaselineClassHanging
-     * @seealso    kCTBaselineClassMath
+     * @see    kCTBaselineClassRoman
+     * @see    kCTBaselineClassIdeographicCentered
+     * @see    kCTBaselineClassIdeographicLow
+     * @see    kCTBaselineClassIdeographicHigh
+     * @see    kCTBaselineClassHanging
+     * @see    kCTBaselineClassMath
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassAttributeName();
 
     /**
-     * @const      kCTBaselineInfoAttributeName
-     * @abstract   Key to reference a baseline info dictionary.
+     * [@const]      kCTBaselineInfoAttributeName
      * 
-     * @discussion Value must be a CFDictionaryRef. Normally, baseline offsets will
+     * Key to reference a baseline info dictionary.
+     * 
+     * Value must be a CFDictionaryRef. Normally, baseline offsets will
      *             be assigned based on the 'bsln' or 'BASE' table in the font. This
      *             attribute may be used to assign different offsets. Each key in
      *             the dictionary is one of the kCTBaselineClass constants and the
      *             value is a CFNumberRef of the baseline offset in points. You only
      *             need to specify the offsets you wish to change.
      * 
-     * @seealso    kCTBaselineClassRoman
-     * @seealso    kCTBaselineClassIdeographicCentered
-     * @seealso    kCTBaselineClassIdeographicLow
-     * @seealso    kCTBaselineClassIdeographicHigh
-     * @seealso    kCTBaselineClassHanging
-     * @seealso    kCTBaselineClassMath
+     * @see    kCTBaselineClassRoman
+     * @see    kCTBaselineClassIdeographicCentered
+     * @see    kCTBaselineClassIdeographicLow
+     * @see    kCTBaselineClassIdeographicHigh
+     * @see    kCTBaselineClassHanging
+     * @see    kCTBaselineClassMath
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineInfoAttributeName();
 
     /**
-     * @const      kCTBaselineReferenceInfoAttributeName
-     * @abstract   Key to reference a baseline info dictionary for the reference baseline.
+     * [@const]      kCTBaselineReferenceInfoAttributeName
      * 
-     * @discussion Value must be a CFDictionaryRef. All glyphs in a run are assigned
+     * Key to reference a baseline info dictionary for the reference baseline.
+     * 
+     * Value must be a CFDictionaryRef. All glyphs in a run are assigned
      *             a baseline class and then aligned to the offset for that class in
      *             the reference baseline baseline info. See the discussion of
      *             kCTBaselineInfoAttributeName for information about the contents
@@ -4412,23 +4728,24 @@ public final class CoreText {
      *             key to specify that the baseline offsets of a particular
      *             CTFontRef should be used as the reference offsets.
      * 
-     * @seealso    kCTBaselineClassRoman
-     * @seealso    kCTBaselineClassIdeographicCentered
-     * @seealso    kCTBaselineClassIdeographicLow
-     * @seealso    kCTBaselineClassIdeographicHigh
-     * @seealso    kCTBaselineClassHanging
-     * @seealso    kCTBaselineClassMath
-     * @seealso    kCTBaselineReferenceFont
+     * @see    kCTBaselineClassRoman
+     * @see    kCTBaselineClassIdeographicCentered
+     * @see    kCTBaselineClassIdeographicLow
+     * @see    kCTBaselineClassIdeographicHigh
+     * @see    kCTBaselineClassHanging
+     * @see    kCTBaselineClassMath
+     * @see    kCTBaselineReferenceFont
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineReferenceInfoAttributeName();
 
     /**
-     * @const      kCTWritingDirectionAttributeName
-     * @abstract   Specifies a bidirectional override or embedding.
+     * [@const]      kCTWritingDirectionAttributeName
      * 
-     * @discussion Value must be a CFArray of CFNumberRefs, each of which should
+     * Specifies a bidirectional override or embedding.
+     * 
+     * Value must be a CFArray of CFNumberRefs, each of which should
      *             have a value of either kCTWritingDirectionLeftToRight or
      *             kCTWritingDirectionRightToLeft, plus one of
      *             kCTWritingDirectionEmbedding or kCTWritingDirectionOverride.
@@ -4445,20 +4762,21 @@ public final class CoreText {
      *             | kCTWritingDirectionOverride) corresponding to a RLO/PDF
      *             pair in plain text or <bdo dir="rtl"></bdo> in HTML.
      * 
-     * @seealso    kCTWritingDirectionLeftToRight
-     * @seealso    kCTWritingDirectionRightToLeft
-     * @seealso    kCTWritingDirectionEmbedding
-     * @seealso    kCTWritingDirectionOverride
+     * @see    kCTWritingDirectionLeftToRight
+     * @see    kCTWritingDirectionRightToLeft
+     * @see    kCTWritingDirectionEmbedding
+     * @see    kCTWritingDirectionOverride
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTWritingDirectionAttributeName();
 
     /**
-     * @const      kCTRubyAnnotationAttributeName
-     * @abstract   Key to reference a CTRubyAnnotation.
+     * [@const]      kCTRubyAnnotationAttributeName
      * 
-     * @discussion Value must be a CTRubyAnnotationRef. See CTRubyAnnotation.h for
+     * Key to reference a CTRubyAnnotation.
+     * 
+     * Value must be a CTRubyAnnotationRef. See CTRubyAnnotation.h for
      *             more information.
      */
     @Generated
@@ -4466,10 +4784,11 @@ public final class CoreText {
     public static native CFStringRef kCTRubyAnnotationAttributeName();
 
     /**
-     * @const      kCTTabColumnTerminatorsAttributeName
-     * @abstract   Used to specify the terminating character for a tab column
+     * [@const]      kCTTabColumnTerminatorsAttributeName
      * 
-     * @discussion The value associated with this attribute is a CFCharacterSet. The
+     * Used to specify the terminating character for a tab column
+     * 
+     * The value associated with this attribute is a CFCharacterSet. The
      *             character set is used to determine the terminating character for
      *             a tab column. The tab and newline characters are implied even if
      *             they don't exist in the character set. This attribute can be used
@@ -4505,19 +4824,22 @@ public final class CoreText {
     }
 
     /**
-     * @defined    kCTFontVariationAxisHiddenKey
-     * @abstract   Key to get the hidden axis flag.
-     * @discussion This key contains a CFBoolean value that is true when the font designer recommends the axis not be exposed directly to end users in application interfaces.
+     * [@defined]    kCTFontVariationAxisHiddenKey
+     * 
+     * Key to get the hidden axis flag.
+     * 
+     * This key contains a CFBoolean value that is true when the font designer recommends the axis not be exposed directly to end users in application interfaces.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisHiddenKey();
 
     /**
-     * @const      kCTBaselineOffsetAttributeName
-     * @abstract   Controls vertical text positioning.
+     * [@const]      kCTBaselineOffsetAttributeName
      * 
-     * @discussion Value must be a CFNumberRef float. Default is standard positioning.
+     * Controls vertical text positioning.
+     * 
+     * Value must be a CFNumberRef float. Default is standard positioning.
      *             The baseline attribute indicates how many points the characters
      *             should be shifted perpendicular to their baseline. A positive
      *             baseline value indicates a shift above (or to the right for vertical
@@ -4525,17 +4847,18 @@ public final class CoreText {
      *             shift below (or to the left for vertical text) the text baseline.
      *             If this value is set to 0.0, no baseline shift will be performed.
      * 
-     * @seealso    NSBaselineOffsetAttributeName
+     * @see    NSBaselineOffsetAttributeName
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineOffsetAttributeName();
 
     /**
-     * @function   CTFontCreateForStringWithLanguage
-     * @abstract   Returns a new font reference that can best map the given string range based on the current font and language specified.
+     * [@function]   CTFontCreateForStringWithLanguage
      * 
-     * @discussion The current font itself can be returned if it covers the string provided.
+     * Returns a new font reference that can best map the given string range based on the current font and language specified.
+     * 
+     * The current font itself can be returned if it covers the string provided.
      * 
      * @param      currentFont
      *             The current font that contains a valid cascade list.
@@ -4549,11 +4872,11 @@ public final class CoreText {
      * @param      language
      *             Language identifier to select a font for a particular localization. If unspecified, the current system language is used. The format of the language identifier should conform to UTS #35.
      * 
-     * @result     This function returns the best substitute font that can encode the specified string range.
+     * @return     This function returns the best substitute font that can encode the specified string range.
      * 
-     * @seealso    CTFontCopyCharacterSet
-     * @seealso    CTFontGetGlyphsForCharacters
-     * @seealso    kCTFontCascadeListAttribute
+     * @see    CTFontCopyCharacterSet
+     * @see    CTFontGetGlyphsForCharacters
+     * @see    kCTFontCascadeListAttribute
      */
     @Generated
     @CFunction
@@ -4561,8 +4884,9 @@ public final class CoreText {
             @ByValue CFRange range, CFStringRef language);
 
     /**
-     * @function   CTFontCollectionCreateMatchingFontDescriptorsWithOptions
-     * @abstract   Returns an array of font descriptors matching the collection.
+     * [@function]   CTFontCollectionCreateMatchingFontDescriptorsWithOptions
+     * 
+     * Returns an array of font descriptors matching the collection.
      * 
      * @param      collection
      *             The font collection reference.
@@ -4570,7 +4894,7 @@ public final class CoreText {
      * @param      options
      *             The options dictionary. See constant option keys. May be NULL, in which case this call returns the same results as CTFontCollectionCreateMatchingFontDescriptors, using the options passed in when the collection was created.
      * 
-     * @result     An array of CTFontDescriptors matching the collection definition or NULL if there are none.
+     * @return     An array of CTFontDescriptors matching the collection definition or NULL if there are none.
      */
     @Generated
     @CFunction
@@ -4578,24 +4902,26 @@ public final class CoreText {
             CTFontCollectionRef collection, CFDictionaryRef options);
 
     /**
-     * @function   CTFontManagerCreateFontDescriptorsFromData
-     * @abstract   Returns an array of font descriptors for the fonts in the supplied data.
+     * [@function]   CTFontManagerCreateFontDescriptorsFromData
+     * 
+     * Returns an array of font descriptors for the fonts in the supplied data.
      *             Note: the font descriptors are not available through font descriptor matching.
      * 
      * @param      data
      *             A CFData containing font data.
      * 
-     * @result     An array of font descriptors. This can be an empty array in the event of invalid or unsupported font data.
+     * @return     An array of font descriptors. This can be an empty array in the event of invalid or unsupported font data.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontManagerCreateFontDescriptorsFromData(CFDataRef data);
 
     /**
-     * @function   CTFontManagerRegisterFontURLs
-     * @abstract   Registers fonts from the specified font URLs with the font manager. Registered fonts are discoverable through font descriptor matching in the calling process
+     * [@function]   CTFontManagerRegisterFontURLs
      * 
-     * @discussion In iOS, fonts registered with the persistent scope are not automatically available to other processes. Other process may call CTFontManagerRequestFonts to get access to these fonts.
+     * Registers fonts from the specified font URLs with the font manager. Registered fonts are discoverable through font descriptor matching in the calling process
+     * 
+     * In iOS, fonts registered with the persistent scope are not automatically available to other processes. Other process may call CTFontManagerRequestFonts to get access to these fonts.
      * 
      * @param      fontURLs
      * 			A file URL for the fonts or collections (TTC or OTC) to be registered. Once fonts have been registered from a file, it shouldn't be moved or renamed.
@@ -4622,8 +4948,9 @@ public final class CoreText {
     }
 
     /**
-     * @function   CTFontManagerUnregisterFontURLs
-     * @abstract   Unregisters fonts from the specified font URLs with the font manager. Unregistered fonts do not participate in font descriptor matching.
+     * [@function]   CTFontManagerUnregisterFontURLs
+     * 
+     * Unregisters fonts from the specified font URLs with the font manager. Unregistered fonts do not participate in font descriptor matching.
      * iOS note: only fonts registered with CTFontManagerRegisterFontsForURL or CTFontManagerRegisterFontsForURLs can be unregistered with this API.
      * 
      * @param      fontURLs
@@ -4648,10 +4975,11 @@ public final class CoreText {
     }
 
     /**
-     * @function   CTFontManagerRegisterFontDescriptors
-     * @abstract   Registers font descriptors with the font manager. Registered fonts are discoverable through font descriptor matching in the calling process.
+     * [@function]   CTFontManagerRegisterFontDescriptors
      * 
-     * @discussion Fonts descriptors registered in disabled state are not immediately available for descriptor matching but the font manager will know the descriptors could be made available if necessary. These decriptors can be enabled by making this called again with the enabled parameter set to true. This operation may fail if there is another font registered and enabled with the same Postscript name. In iOS, fonts registered with the persistent scope are not automatically available to other processes. Other process may call CTFontManagerRequestFonts to get access to these fonts.
+     * Registers font descriptors with the font manager. Registered fonts are discoverable through font descriptor matching in the calling process.
+     * 
+     * Fonts descriptors registered in disabled state are not immediately available for descriptor matching but the font manager will know the descriptors could be made available if necessary. These decriptors can be enabled by making this called again with the enabled parameter set to true. This operation may fail if there is another font registered and enabled with the same Postscript name. In iOS, fonts registered with the persistent scope are not automatically available to other processes. Other process may call CTFontManagerRequestFonts to get access to these fonts.
      * 
      * @param      fontDescriptors
      * 			Array of font descriptors to register. Font descriptor keys used for registration are: kCTFontURLAttribute, kCTFontNameAttribute, kCTFontFamilyNameAttribute, or kCTFontRegistrationUserInfoAttribute.
@@ -4679,8 +5007,9 @@ public final class CoreText {
     }
 
     /**
-     * @function   CTFontManagerUnregisterFontDescriptors
-     * @abstract   Unregisters font descriptors with the font manager. Unregistered fonts do not participate in font descriptor matching.
+     * [@function]   CTFontManagerUnregisterFontDescriptors
+     * 
+     * Unregisters font descriptors with the font manager. Unregistered fonts do not participate in font descriptor matching.
      * 
      * @param      fontDescriptors
      * 			Array of font descriptors to unregister.
@@ -4704,10 +5033,11 @@ public final class CoreText {
     }
 
     /**
-     * @function   CTFontManagerRegisterFontsWithAssetNames
-     * @abstract   Registers named font assets in the specified bundle with the font manager. Registered fonts are discoverable through font descriptor matching in the calling process.
+     * [@function]   CTFontManagerRegisterFontsWithAssetNames
      * 
-     * @discussion Font assets are extracted from the asset catalog and registered. This call must be made after the completion handler of either NSBundleResourceRequest beginAccessingResourcesWithCompletionHandler: or conditionallyBeginAccessingResourcesWithCompletionHandler: is called successfully.
+     * Registers named font assets in the specified bundle with the font manager. Registered fonts are discoverable through font descriptor matching in the calling process.
+     * 
+     * Font assets are extracted from the asset catalog and registered. This call must be made after the completion handler of either NSBundleResourceRequest beginAccessingResourcesWithCompletionHandler: or conditionallyBeginAccessingResourcesWithCompletionHandler: is called successfully.
      * Name the assets using Postscript names for individual faces, or family names for variable/collection fonts. The same names can be used to unregister the fonts with CTFontManagerUnregisterFontDescriptors. In iOS, fonts registered with the persistent scope are not automatically available to other processes. Other process may call CTFontManagerRequestFonts to get access to these fonts.
      * 
      * @param      fontAssetNames
@@ -4739,10 +5069,11 @@ public final class CoreText {
     }
 
     /**
-     * @function   CTFontManagerCopyRegisteredFontDescriptors
-     * @abstract   Returns the font descriptors that were registered with the font manager.
+     * [@function]   CTFontManagerCopyRegisteredFontDescriptors
      * 
-     * @discussion In the case the persistent scope is specified, only macOS can return fonts registered by any process. Other platforms can only return font descriptors registered by the application's process.
+     * Returns the font descriptors that were registered with the font manager.
+     * 
+     * In the case the persistent scope is specified, only macOS can return fonts registered by any process. Other platforms can only return font descriptors registered by the application's process.
      * 
      * @param      scope
      * 			Scope constant defining the availability and lifetime of the registration. See scope constants for more details.
@@ -4750,17 +5081,18 @@ public final class CoreText {
      * @param      enabled
      * 			Boolean value indicating if the caller is interested in registered font descriptors that are enabled or disabled.
      * 
-     * @result     Array of of font descriptors registered by the application. Array may be empty if nothing is registered.
+     * @return     Array of of font descriptors registered by the application. Array may be empty if nothing is registered.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CTFontManagerCopyRegisteredFontDescriptors(int scope, boolean enabled);
 
     /**
-     * @function   CTFontManagerRequestFonts
-     * @abstract   Resolves font descriptors specified on input. On iOS only, if the font descriptors cannot be found, the user is presented with a dialog indicating fonts that could not be resolved. The user may optionally be provided with a way to resolve the missing fonts if the font manager has a way to enable them.
+     * [@function]   CTFontManagerRequestFonts
      * 
-     * @discussion On iOS, fonts registered by font provider applications in the persistent scope are not automatically available to other applications. Client applications must call this function to make the requested fonts available for font descriptor matching.
+     * Resolves font descriptors specified on input. On iOS only, if the font descriptors cannot be found, the user is presented with a dialog indicating fonts that could not be resolved. The user may optionally be provided with a way to resolve the missing fonts if the font manager has a way to enable them.
+     * 
+     * On iOS, fonts registered by font provider applications in the persistent scope are not automatically available to other applications. Client applications must call this function to make the requested fonts available for font descriptor matching.
      * 
      * @param      fontDescriptors
      * 			Array of font descriptors to make available to the process.  Keys used to describe the fonts may be a combination of: kCTFontNameAttribute, kCTFontFamilyNameAttribute, or kCTFontRegistrationUserInfoAttribute.
@@ -4781,10 +5113,11 @@ public final class CoreText {
     }
 
     /**
-     * @function   CTFramesetterCreateWithTypesetter
-     * @abstract   Creates a framesetter directly from a typesetter.
+     * [@function]   CTFramesetterCreateWithTypesetter
      * 
-     * @discussion Each framesetter uses a typesetter internally to perform
+     * Creates a framesetter directly from a typesetter.
+     * 
+     * Each framesetter uses a typesetter internally to perform
      *             line breaking and other contextual analysis based on the
      *             characters in a string. This function allows use of a
      *             typesetter that was constructed using specific options.
@@ -4792,24 +5125,25 @@ public final class CoreText {
      * @param      typesetter
      *             The typesetter to be used by the newly-created framesetter.
      * 
-     * @result     This function will return a reference to a CTFramesetter object.
+     * @return     This function will return a reference to a CTFramesetter object.
      * 
-     * @seealso    CTTypesetterCreateWithAttributedStringAndOptions
+     * @see    CTTypesetterCreateWithAttributedStringAndOptions
      */
     @Generated
     @CFunction
     public static native CTFramesetterRef CTFramesetterCreateWithTypesetter(CTTypesetterRef typesetter);
 
     /**
-     * @function   CTGlyphInfoGetGlyph
-     * @abstract   Gets the glyph for a glyph info, if applicable.
+     * [@function]   CTGlyphInfoGetGlyph
      * 
-     * @discussion This function will return the glyph.
+     * Gets the glyph for a glyph info, if applicable.
+     * 
+     * This function will return the glyph.
      * 
      * @param      glyphInfo
      *             The glyph info from which you would like the glyph.
      * 
-     * @result     If the glyph info object was created with a font, it will be
+     * @return     If the glyph info object was created with a font, it will be
      *             returned. Otherwise, this function will return 0.
      */
     @Generated
@@ -4817,11 +5151,12 @@ public final class CoreText {
     public static native char CTGlyphInfoGetGlyph(CTGlyphInfoRef glyphInfo);
 
     /**
-     * @function   CTRunGetBaseAdvancesAndOrigins
-     * @abstract   Copies a range of base advances and/or origins into user-provided
+     * [@function]   CTRunGetBaseAdvancesAndOrigins
+     * 
+     * Copies a range of base advances and/or origins into user-provided
      *             buffers.
      * 
-     * @discussion A run's base advances and origins determine the positions of its
+     * A run's base advances and origins determine the positions of its
      *             glyphs but require additional processing before being used for
      *             drawing. Similar to the advances returned by CTRunGetAdvances,
      *             base advances are the displacement from the origin of a glyph
@@ -4858,54 +5193,66 @@ public final class CoreText {
             @UncertainArgument("Options: reference, array Fallback: reference") CGPoint originsBuffer);
 
     /**
-     * @defined    kCTFontFeatureSampleTextKey
-     * @abstract   Key to get the font feature sample text.
-     * @discussion This key can be used with a font feature dictionary to get the localized sample text as a CFStringRef.
+     * [@defined]    kCTFontFeatureSampleTextKey
+     * 
+     * Key to get the font feature sample text.
+     * 
+     * This key can be used with a font feature dictionary to get the localized sample text as a CFStringRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSampleTextKey();
 
     /**
-     * @defined    kCTFontFeatureTooltipTextKey
-     * @abstract   Key to get the font feature tooltip text.
-     * @discussion This key can be used with a font feature dictionary to get the localized tooltip text as a CFStringRef.
+     * [@defined]    kCTFontFeatureTooltipTextKey
+     * 
+     * Key to get the font feature tooltip text.
+     * 
+     * This key can be used with a font feature dictionary to get the localized tooltip text as a CFStringRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTooltipTextKey();
 
     /**
-     * @constant   kCTFontManagerErrorFontDescriptorsKey
-     * @abstract   User info key to be used with CFError references returned from registration functions.
-     * @discussion The value associated with this key in the user info dictionary of a CFError is a CFArray of font descriptors that failed with given error.
+     * [@constant]   kCTFontManagerErrorFontDescriptorsKey
+     * 
+     * User info key to be used with CFError references returned from registration functions.
+     * 
+     * The value associated with this key in the user info dictionary of a CFError is a CFArray of font descriptors that failed with given error.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerErrorFontDescriptorsKey();
 
     /**
-     * @constant   kCTFontManagerErrorFontAssetNameKey
-     * @abstract   User info key to be used with CFError references returned from registration functions.
-     * @discussion The value associated with this key in the user info dictionary of a CFError is a CFArray of font asset name strings that failed with given error.
+     * [@constant]   kCTFontManagerErrorFontAssetNameKey
+     * 
+     * User info key to be used with CFError references returned from registration functions.
+     * 
+     * The value associated with this key in the user info dictionary of a CFError is a CFArray of font asset name strings that failed with given error.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerErrorFontAssetNameKey();
 
     /**
-     * @defined    kCTFontRegistrationUserInfoAttribute
-     * @abstract   Optional user defined information that can be attached to an entry in the Font Manager registration catalog.
-     * @discussion This is the key for accessing font registration user information for the font descriptor. This information can be used in descriptor matching to disambiguate between two fonts with equivalent Postscript names. The value associated with this key is a CFStringRef.
+     * [@defined]    kCTFontRegistrationUserInfoAttribute
+     * 
+     * Optional user defined information that can be attached to an entry in the Font Manager registration catalog.
+     * 
+     * This is the key for accessing font registration user information for the font descriptor. This information can be used in descriptor matching to disambiguate between two fonts with equivalent Postscript names. The value associated with this key is a CFStringRef.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontRegistrationUserInfoAttribute();
 
     /**
-     * @const      kCTTypesetterOptionAllowUnboundedLayout
-     * @abstract   Allows layout requiring a potentially unbounded amount of work.
-     * @discussion Value must be a CFBooleanRef. Default is false for clients linked on or after macOS 10.14 or iOS 12.
+     * [@const]      kCTTypesetterOptionAllowUnboundedLayout
+     * 
+     * Allows layout requiring a potentially unbounded amount of work.
+     * 
+     * Value must be a CFBooleanRef. Default is false for clients linked on or after macOS 10.14 or iOS 12.
      *             Proper Unicode layout of some text requires unreasonable effort;
      *             unless this option is set to kCFBooleanTrue such inputs will
      *             result in CTTypesetterCreateWithAttributedStringAndOptions
@@ -4916,10 +5263,11 @@ public final class CoreText {
     public static native CFStringRef kCTTypesetterOptionAllowUnboundedLayout();
 
     /**
-     * @const      kCTTrackingAttributeName
-     * @abstract   Applies tracking (letterspacing).
+     * [@const]      kCTTrackingAttributeName
      * 
-     * @discussion Value must be a CFNumber. Default is zero (no tracking).
+     * Applies tracking (letterspacing).
+     * 
+     * Value must be a CFNumber. Default is zero (no tracking).
      *             The tracking attribute indicates how much additional space, in
      *             points, should be added to each character cluster after layout.
      *             The effect of this attribute is similar to kCTKernAttributeName
@@ -4930,16 +5278,17 @@ public final class CoreText {
      *             present kCTKernAttributeName will be ignored unless zero;
      *             kCTTrackingAttributeName will still be honored.
      * 
-     * @seealso    kCTKernAttributeName
-     * @seealso    kCTLigatureAttributeName
+     * @see    kCTKernAttributeName
+     * @see    kCTLigatureAttributeName
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTTrackingAttributeName();
 
     /**
-     * @function   CTFontCopyNameForGlyph
-     * @abstract   Returns the name for the specified glyph.
+     * [@function]   CTFontCopyNameForGlyph
+     * 
+     * Returns the name for the specified glyph.
      * 
      * @param      font
      *             The font reference.
@@ -4947,26 +5296,29 @@ public final class CoreText {
      * @param      glyph
      *             The glyph.
      * 
-     * @result     The glyph name as a CFString or NULL if the glyph is invalid.
+     * @return     The glyph name as a CFString or NULL if the glyph is invalid.
      * 
-     * @seealso    CTFontGetGlyphWithName
+     * @see    CTFontGetGlyphWithName
      */
     @Generated
     @CFunction
     public static native CFStringRef CTFontCopyNameForGlyph(CTFontRef font, char glyph);
 
     /**
-     * @defined    kCTFontVariationAxesAttribute
-     * @discussion An array of variation axis dictionaries or null if the font does not support variations. Each variation axis dictionary contains the five kCTFontVariationAxis* keys.
+     * [@defined]    kCTFontVariationAxesAttribute
+     * 
+     * An array of variation axis dictionaries or null if the font does not support variations. Each variation axis dictionary contains the five kCTFontVariationAxis* keys.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxesAttribute();
 
     /**
-     * @defined    kCTFontOpticalSizeAttribute
-     * @abstract   The point size at which this font is intended to be used.
-     * @discussion The value is a CFNumber used to activate size-specific (not linearly scaled) metrics. Starting with macOS 10.14 and iOS 12.0, the CFString "auto" can be used instead to request an optical size matching the point size. Starting with macOS 10.15 and iOS 13.0, the CFString "none" can be used instead to explicitly disable automatic optical sizing enabled by the font.
+     * [@defined]    kCTFontOpticalSizeAttribute
+     * 
+     * The point size at which this font is intended to be used.
+     * 
+     * The value is a CFNumber used to activate size-specific (not linearly scaled) metrics. Starting with macOS 10.14 and iOS 12.0, the CFString "auto" can be used instead to request an optical size matching the point size. Starting with macOS 10.15 and iOS 13.0, the CFString "none" can be used instead to explicitly disable automatic optical sizing enabled by the font.
      */
     @Generated
     @CVariable()

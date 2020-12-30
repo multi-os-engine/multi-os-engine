@@ -85,7 +85,7 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     public static native String description_static();
 
     /**
-     * @property frequency  Frequency where sensitivity was measured.  The unit of measurement
+     * [@property] frequency  Frequency where sensitivity was measured.  The unit of measurement
      * is [HKUnit hertzUnit] or "Hz".
      */
     @Generated
@@ -123,7 +123,7 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * @property sensitivity Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
+     * [@property] sensitivity Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
      * The unit of measurement is [HKUnit decibelHearingLevelUnit] or "dBHL".
      */
     @Generated
@@ -145,7 +145,7 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @property sensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
+     * [@property] sensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
      * The unit of measurement is [HKUnit decibelHearingLevelUnit] or "dBHL".
      */
     @Generated
@@ -153,8 +153,10 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     public native HKQuantity rightEarSensitivity();
 
     /**
-     * @method                    sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:
-     * @abstract                  Creates a point that can be included in a audiogram.
+     * sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:
+     * 
+     * Creates a point that can be included in a audiogram.
+     * 
      * @param frequency           Frequency where sensitivity was measured.
      * @param leftEarSensitivity  Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
      * @param rightEarSensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.

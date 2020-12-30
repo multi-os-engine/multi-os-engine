@@ -60,7 +60,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * @abstract Morphs the pointer to a beam with the given length and axis.
+     * Morphs the pointer to a beam with the given length and axis.
      * 
      * @param length  The beam's length. Limited to the region's width or height, depending on the beam's axis.
      * @param axis    The axis along which to draw the beam. Axis must be either UIAxisVertical or UIAxisHorizontal.
@@ -151,14 +151,14 @@ public class UIPointerShape extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * @abstract Morphs the pointer to the given path.
+     * Morphs the pointer to the given path.
      */
     @Generated
     @Selector("shapeWithPath:")
     public static native UIPointerShape shapeWithPath(UIBezierPath path);
 
     /**
-     * @abstract Morphs the pointer to a rounded rectangle with the provided rect and the standard system corner radius.
+     * Morphs the pointer to a rounded rectangle with the provided rect and the standard system corner radius.
      * 
      * @param rect  CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in the effect's
      *              preview's container view's coordinate space. Otherwise, it is centered about the pointer's current location
@@ -169,7 +169,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
     public static native UIPointerShape shapeWithRoundedRect(@ByValue CGRect rect);
 
     /**
-     * @abstract Morphs the pointer to a rounded rectangle with the provided rect and cornerRadius.
+     * Morphs the pointer to a rounded rectangle with the provided rect and cornerRadius.
      * 
      * @param rect          CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in
      *                      the effect's preview's container view's coordinate space. Otherwise, it is centered about the

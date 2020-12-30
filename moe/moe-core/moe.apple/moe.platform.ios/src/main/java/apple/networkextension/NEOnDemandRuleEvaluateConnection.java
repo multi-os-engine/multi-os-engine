@@ -42,8 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @interface NEOnDemandRuleEvaluateConnection
- * @discussion The NEOnDemandRuleEvaluateConnection class declares the programmatic interface for an object that defines an On Demand rule with the "Evaluate Connection" action.
+ * [@interface] NEOnDemandRuleEvaluateConnection
+ * 
+ * The NEOnDemandRuleEvaluateConnection class declares the programmatic interface for an object that defines an On Demand rule with the "Evaluate Connection" action.
  * 
  * When rules of this class match, the properties of the network connection being established are matched against a set of connection rules. The action of the matched rule (if any) is used to determine whether or not the VPN will be started.
  * 
@@ -165,8 +166,9 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     public static native long version_static();
 
     /**
-     * @property connectionRules
-     * @discussion An array of NEEvaluateConnectionRule objects. Each NEEvaluateConnectionRule object is evaluated in order against the properties of the network connection being established.
+     * [@property] connectionRules
+     * 
+     * An array of NEEvaluateConnectionRule objects. Each NEEvaluateConnectionRule object is evaluated in order against the properties of the network connection being established.
      */
     @Generated
     @Selector("connectionRules")
@@ -181,8 +183,9 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     public native NEOnDemandRuleEvaluateConnection initWithCoder(NSCoder coder);
 
     /**
-     * @property connectionRules
-     * @discussion An array of NEEvaluateConnectionRule objects. Each NEEvaluateConnectionRule object is evaluated in order against the properties of the network connection being established.
+     * [@property] connectionRules
+     * 
+     * An array of NEEvaluateConnectionRule objects. Each NEEvaluateConnectionRule object is evaluated in order against the properties of the network connection being established.
      */
     @Generated
     @Selector("setConnectionRules:")

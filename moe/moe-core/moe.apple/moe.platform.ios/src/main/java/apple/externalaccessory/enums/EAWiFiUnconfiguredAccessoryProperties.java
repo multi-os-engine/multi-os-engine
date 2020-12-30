@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * @options EAWiFiUnconfiguredAccessoryProperties
+ * [@options] EAWiFiUnconfiguredAccessoryProperties
  * 
- * @discussion Represents the properties of an EAWiFiUnconfiguredAccessory.
+ * Represents the properties of an EAWiFiUnconfiguredAccessory.
  * 
- * @constant EAWiFiUnconfiguredAccessoryPropertySupportsAirPlay  Option set if the accessory is advertising that it supports AirPlay.
- * @constant EAWiFiUnconfiguredAccessoryPropertySupportsAirPrint Option set if the accessory is advertising that it supports AirPrint.
- * @constant EAWiFiUnconfiguredAccessoryPropertySupportsHomeKit  Option set if the accessory is advertising that it supports HomeKit.
+ * [@constant] EAWiFiUnconfiguredAccessoryPropertySupportsAirPlay  Option set if the accessory is advertising that it supports AirPlay.
+ * [@constant] EAWiFiUnconfiguredAccessoryPropertySupportsAirPrint Option set if the accessory is advertising that it supports AirPrint.
+ * [@constant] EAWiFiUnconfiguredAccessoryPropertySupportsHomeKit  Option set if the accessory is advertising that it supports HomeKit.
  */
 @Generated
 public final class EAWiFiUnconfiguredAccessoryProperties {

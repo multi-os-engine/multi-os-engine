@@ -10,8 +10,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * @protocol	AVRoutePickerViewDelegate
- * @abstract	Defines an interface for delegates of AVRoutePickerView.
+ * [@protocol]	AVRoutePickerViewDelegate
+ * 
+ * Defines an interface for delegates of AVRoutePickerView.
  */
 @Generated
 @Library("AVKit")
@@ -19,8 +20,9 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVRoutePickerViewDelegate")
 public interface AVRoutePickerViewDelegate {
     /**
-     * @method		routePickerViewDidEndPresentingRoutes:
-     * @abstract	Informs the delegate that the route picker view finished presenting routes to the user.
+     * routePickerViewDidEndPresentingRoutes:
+     * 
+     * Informs the delegate that the route picker view finished presenting routes to the user.
      */
     @Generated
     @IsOptional
@@ -30,8 +32,9 @@ public interface AVRoutePickerViewDelegate {
     }
 
     /**
-     * @method		routePickerViewWillBeginPresentingRoutes:
-     * @abstract	Informs the delegate that the route picker view will start presenting routes to the user.
+     * routePickerViewWillBeginPresentingRoutes:
+     * 
+     * Informs the delegate that the route picker view will start presenting routes to the user.
      */
     @Generated
     @IsOptional

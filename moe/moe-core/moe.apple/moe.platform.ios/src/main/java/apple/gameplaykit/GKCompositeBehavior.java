@@ -224,6 +224,7 @@ public class GKCompositeBehavior extends GKBehavior {
 
     /**
      * Remove the indicated sub-behavior from this behavior.
+     * 
      * @param behavior the sub-behavior to be removed
      */
     @Generated
@@ -240,6 +241,7 @@ public class GKCompositeBehavior extends GKBehavior {
     /**
      * Adds a new sub-behavior or changes the weight of the existing sub-behavior in this behavior.
      * If the sub-behavior  does not exist in this behavior, it is added.
+     * 
      * @param weight the weight for this goal
      * @param behavior the sub-behavior who's weight to change
      */
@@ -249,6 +251,7 @@ public class GKCompositeBehavior extends GKBehavior {
 
     /**
      * Gets the current weight for a given sub-behavior.
+     * 
      * @return the weight of the sub-behavior, or 0 if there is no such sub-behavior on this behavior
      */
     @Generated

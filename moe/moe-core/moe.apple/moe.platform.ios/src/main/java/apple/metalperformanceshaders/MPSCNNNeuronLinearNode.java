@@ -24,11 +24,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * @abstract   A node representing a MPSCNNNeuronLinear kernel
- * @discussion For each pixel, applies the following function:
- * @code
+ * A node representing a MPSCNNNeuronLinear kernel
+ * 
+ * For each pixel, applies the following function:
+ * [@code]
  *     f(x) = a * x + b
- * @endcode
+ * [@endcode]
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -98,14 +99,15 @@ public class MPSCNNNeuronLinearNode extends MPSCNNNeuronNode {
     public native MPSCNNNeuronLinearNode init();
 
     /**
-     * @abstract Init a node with default values for parameters a & b
+     * Init a node with default values for parameters a & b
      */
     @Generated
     @Selector("initWithSource:")
     public native MPSCNNNeuronLinearNode initWithSource(MPSNNImageNode sourceNode);
 
     /**
-     * @abstract   Init a node representing a MPSCNNNeuronLinear kernel
+     * Init a node representing a MPSCNNNeuronLinear kernel
+     * 
      * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
      * @param      a                       See discussion above.
      * @param      b                       See discussion above.
@@ -143,7 +145,7 @@ public class MPSCNNNeuronLinearNode extends MPSCNNNeuronNode {
     public static native Object new_objc();
 
     /**
-     * @abstract Create an autoreleased node with default values for parameters a & b
+     * Create an autoreleased node with default values for parameters a & b
      */
     @Generated
     @Selector("nodeWithSource:")

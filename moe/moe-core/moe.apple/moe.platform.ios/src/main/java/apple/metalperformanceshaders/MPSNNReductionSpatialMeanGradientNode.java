@@ -91,7 +91,8 @@ public class MPSNNReductionSpatialMeanGradientNode extends MPSNNGradientFilterNo
     public native MPSNNReductionSpatialMeanGradientNode init();
 
     /**
-     * @abstract   A node to represent the gradient of a spatial mean reduction node.
+     * A node to represent the gradient of a spatial mean reduction node.
+     * 
      * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
      * @param sourceImage      The input image from the forward spatial mean reduction node.
      * @return  A MPSNNReductionSpatialMeanGradientNode
@@ -129,7 +130,8 @@ public class MPSNNReductionSpatialMeanGradientNode extends MPSNNGradientFilterNo
     public static native Object new_objc();
 
     /**
-     * @abstract   A node to represent the gradient of a spatial mean reduction node.
+     * A node to represent the gradient of a spatial mean reduction node.
+     * 
      * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
      * @param sourceImage      The input image from the forward spatial mean reduction node.
      * @return  A MPSNNReductionSpatialMeanGradientNode
