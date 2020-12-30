@@ -145,9 +145,6 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
                     // contains the end of the block, e.g. a single-line block comment.
                     inBlock = true;
                     lines.push(tmpLine);
-                } else if (tmpLine.startsWith("//")) {
-                    // This is a single-line comment, we remove all continues slashes at the beginning of the line
-                    cleanedLines.add(tmpLine.replaceFirst("^//+", ""));
                 } else if (tmpLine.contains("*/")) {
                     // We are not in a block comment, and also not a line comment (how?), but there is a
                     // end-of-block symbol in the text, we have to remove it so the final javadoc won't
@@ -155,6 +152,9 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
                     // Once the symbol is removed, then this line might be a valid comment, so we put the
                     // processed line back to the buffer.
                     lines.push(line.replace("*/", " "));
+                } else if (tmpLine.startsWith("//")) {
+                    // This is a single-line comment, we remove all continues slashes at the beginning of the line
+                    cleanedLines.add(tmpLine.replaceFirst("^//+", ""));
                 } else {
                     // Otherwise just a plain text, consume i
                     cleanedLines.add(line);
