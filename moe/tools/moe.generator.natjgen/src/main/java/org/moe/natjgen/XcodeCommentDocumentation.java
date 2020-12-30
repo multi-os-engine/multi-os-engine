@@ -23,6 +23,32 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
         this.editGroup = editGroup;
     }
 
+    /**
+     * Remove the maximum common indent.
+     * For the following two lines:
+     * >   3 leading spaces
+     * >
+     * >  2 leading spaces
+     * the maximum common indent is 2, and the empty line is kept (and trimmed) regardless.
+     */
+    private static void trimCommonIndent(List<String> source, List<String> dist) {
+        int maxCommonIndent = Integer.MAX_VALUE;
+        for (String l : source) {
+            if (!l.trim().isEmpty()) {
+                maxCommonIndent = Math.min(maxCommonIndent, StringUtil.getIndentCount(l));
+            }
+        }
+        for (String l : source) {
+            if (l.trim().isEmpty()) {
+                // Replace any blank line with empty line
+                dist.add("");
+            } else {
+                // TODO: trim tail
+                dist.add(l.substring(maxCommonIndent));
+            }
+        }
+    }
+
     @Override
     public Javadoc getJavaDoc(ASTRewrite rewrite, ArrayList<CalleeArgument> args) {
         if (comment == null) {
@@ -112,26 +138,7 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
                         blockBuffer.clear();
 
                         // We also remove the maximum common indent after the asterisk.
-                        // For the following two lines:
-                        // *   3 leading spaces
-                        // *
-                        // *  2 leading spaces
-                        // the maximum common indent is 2, and the empty line is kept (and trimmed) regardless.
-                        int maxCommonIndent = Integer.MAX_VALUE;
-                        for (String bl : blockBufferWithoutAsterisk) {
-                            if (!bl.trim().isEmpty()) {
-                                maxCommonIndent = Math.min(maxCommonIndent, StringUtil.getIndentCount(bl));
-                            }
-                        }
-                        for (String bl : blockBufferWithoutAsterisk) {
-                            if (bl.trim().isEmpty()) {
-                                // Replace any blank line with empty line
-                                cleanedLines.add("");
-                            } else {
-                                // TODO: trim tail
-                                cleanedLines.add(bl.substring(maxCommonIndent));
-                            }
-                        }
+                        trimCommonIndent(blockBufferWithoutAsterisk, cleanedLines);
                     }
                 } else {
                     // Block not terminate yet, keep buffering
@@ -170,8 +177,12 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
             cleanedLines.removeLast();
         }
 
+        // Remove the max common indent for the entire comment block
+        List<String> finalCommentBlock = new ArrayList<>(cleanedLines.size());
+        trimCommonIndent(cleanedLines, finalCommentBlock);
+
         Javadoc doc = rewrite.getAST().newJavadoc();
-        for (String l : cleanedLines) {
+        for (String l : finalCommentBlock) {
             addTag(doc, rewrite, null, l);
         }
 
