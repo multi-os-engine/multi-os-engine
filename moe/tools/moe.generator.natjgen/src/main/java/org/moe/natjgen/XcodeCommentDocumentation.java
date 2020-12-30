@@ -1,5 +1,6 @@
 package org.moe.natjgen;
 
+import org.apache.commons.lang3.StringUtils;
 import org.eclipse.jdt.core.dom.Javadoc;
 import org.eclipse.jdt.core.dom.TagElement;
 import org.eclipse.jdt.core.dom.TextElement;
@@ -8,10 +9,9 @@ import org.eclipse.jdt.core.dom.rewrite.ListRewrite;
 import org.eclipse.text.edits.TextEditGroup;
 import org.moe.natjgen.util.StringUtil;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocumenrationImpl {
 
@@ -31,22 +31,227 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
      * >  2 leading spaces
      * the maximum common indent is 2, and the empty line is kept (and trimmed) regardless.
      */
-    private static void trimCommonIndent(List<String> source, List<String> dist) {
+    private static List<String> trimCommonIndent(List<String> source) {
+        List<String> result = new ArrayList<>(source.size());
+
         int maxCommonIndent = Integer.MAX_VALUE;
         for (String l : source) {
             if (!l.trim().isEmpty()) {
                 maxCommonIndent = Math.min(maxCommonIndent, StringUtil.getIndentCount(l));
             }
         }
+
         for (String l : source) {
             if (l.trim().isEmpty()) {
                 // Replace any blank line with empty line
-                dist.add("");
+                result.add("");
             } else {
                 // TODO: trim tail
-                dist.add(l.substring(maxCommonIndent));
+                result.add(l.substring(maxCommonIndent));
             }
         }
+
+        return result;
+    }
+
+    private static final Pattern tagMatcher = Pattern.compile("^(?<leading>\\s*)@(?<tag>[a-zA-Z0-9]+?)(?<trailing>(:\\s?)|\\s|$)");
+
+    // Tags that should be ignored (e.g. treat as not-a-tag)
+    private static final Set<String> ignoredTags = new HashSet<>();
+    private static final Map<String, String> knownTagsReplacement = new HashMap<>();
+
+    static {
+        for (String t : new String[]{
+                "textblock"
+        }) {
+            ignoredTags.add(t);
+        }
+
+        // legitimate javadoc tags
+        // https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#CHDJGIJB
+        for (String t : new String[]{
+                "author",
+                "deprecated",
+                "exception",
+                "param",
+                "return",
+                "see",
+                "serial",
+                "serialData",
+                "serialField",
+                "since",
+                "throws",
+                "version",
+        }) {
+            // we replace the tag to itself so affectively it's kept
+            knownTagsReplacement.put(t.toLowerCase(), t);
+        }
+
+        // Tags that need to be moved to description section
+        for (String t : new String[]{
+                "class",
+                "method",
+
+                "brief",
+                "abstract",
+                "details",
+                "discussion",
+        }) {
+            knownTagsReplacement.put(t, "");
+        }
+
+        // Tags that need to be replaced
+        knownTagsReplacement.put("seealso", "see");
+        knownTagsReplacement.put("result", "return");
+        knownTagsReplacement.put("oaram", "param"); // stupid Apple typo
+    }
+
+    private enum TagReplaceStatus {
+        NOT_TAG, // Input and output are not tag
+        IS_TAG, // Input and output are both valid tag
+        TAG_REMOVED, // Input was a tag but output has tag removed
+        TAG_WRAPPED // Input was a tag and output has tag wrapped
+    }
+
+    private static class TagReplaceResult {
+        public String line;
+        public TagReplaceStatus status;
+    }
+
+    private static void replaceSingleTag(String line, TagReplaceResult result) {
+        boolean tagRemoved;
+        boolean tagEverRemoved = false;
+        boolean wasTag = false;
+        do {
+            tagRemoved = false;
+
+            StringBuffer sb = new StringBuffer();
+            Matcher matcher = tagMatcher.matcher(line);
+            if (matcher.find()) {
+                String tag = matcher.group("tag");
+                String lowerTag = tag.toLowerCase();
+                if (ignoredTags.contains(lowerTag)) {
+                    break;
+                }
+
+                wasTag = true;
+
+                // Replace input tags with known tags
+                String newTag;
+                if (knownTagsReplacement.containsKey(lowerTag)) {
+                    newTag = knownTagsReplacement.get(lowerTag);
+                    if (!newTag.isEmpty()) {
+                        newTag = "@" + newTag;
+                    }
+                } else {
+                    newTag = "[@" + tag + "]";
+                }
+
+                // Handle leading and trailing spaces
+                String leading = matcher.group("leading");
+                String trailing = matcher.group("trailing");
+                if (trailing.startsWith(":")) {
+                    trailing = trailing.substring(1);
+                    if (trailing.isEmpty()) {
+                        trailing = " ";
+                    }
+                }
+                if (newTag.isEmpty()) {
+                    leading = "";
+                    trailing = "";
+                    tagRemoved = true;
+                    tagEverRemoved = true;
+                }
+
+                // Replace the tag
+                matcher.appendReplacement(sb, leading + newTag + trailing);
+            }
+            matcher.appendTail(sb);
+            line = sb.toString();
+
+        } while (tagRemoved);
+
+        result.line = line;
+
+        if (!wasTag) {
+            result.status = TagReplaceStatus.NOT_TAG;
+        } else {
+            boolean isTag;
+            Matcher matcher = tagMatcher.matcher(line);
+            if (matcher.find()) {
+                String tag = matcher.group("tag");
+                String lowerTag = tag.toLowerCase();
+                isTag = !ignoredTags.contains(lowerTag);
+            } else {
+                isTag = false;
+            }
+
+            if (isTag) {
+                result.status = TagReplaceStatus.IS_TAG;
+            } else if (tagEverRemoved) {
+                // Remove the leading space if tag has been removed
+                result.line = result.line.trim();
+                result.status = TagReplaceStatus.TAG_REMOVED;
+            } else {
+                result.status = TagReplaceStatus.TAG_WRAPPED;
+            }
+        }
+    }
+
+    /**
+     * Fix all unknown tags, and make sure the tags are at the end of the javadoc.
+     * Unsupported tags will be wrapped by a square bracket.
+     */
+    private static List<String> fixTagsAndOrder(List<String> source) {
+
+        LinkedList<String> descriptionBuffer = new LinkedList<>();
+        LinkedList<String> tagSectionBuffer = new LinkedList<>();
+
+        boolean inTag = false;
+
+        TagReplaceResult lineResult = new TagReplaceResult();
+        for (String l : source) {
+            replaceSingleTag(l, lineResult);
+
+            switch (lineResult.status) {
+                case NOT_TAG:
+                    if (inTag) {
+                        tagSectionBuffer.add(lineResult.line);
+                    } else {
+                        descriptionBuffer.add(lineResult.line);
+                    }
+                    break;
+                case TAG_WRAPPED:
+                    inTag = false;
+                    descriptionBuffer.add(lineResult.line);
+                    break;
+                case IS_TAG:
+                    inTag = true;
+                    tagSectionBuffer.add(lineResult.line);
+                    break;
+                case TAG_REMOVED:
+                    inTag = false;
+                    if (!descriptionBuffer.isEmpty() && StringUtils.isNotBlank(descriptionBuffer.peekLast())) {
+                        descriptionBuffer.add("");
+                    }
+                    if (StringUtils.isNotBlank(lineResult.line)) {
+                        descriptionBuffer.add(lineResult.line);
+                    }
+                    break;
+            }
+        }
+
+        StringUtil.removeLeadingAndTrailingBlankLines(descriptionBuffer);
+        StringUtil.removeLeadingAndTrailingBlankLines(tagSectionBuffer);
+
+        if (!tagSectionBuffer.isEmpty()) {
+            descriptionBuffer.add("");
+            descriptionBuffer.addAll(tagSectionBuffer);
+        }
+
+        StringUtil.removeLeadingAndTrailingBlankLines(descriptionBuffer);
+
+        return descriptionBuffer;
     }
 
     @Override
@@ -138,7 +343,7 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
                         blockBuffer.clear();
 
                         // We also remove the maximum common indent after the asterisk.
-                        trimCommonIndent(blockBufferWithoutAsterisk, cleanedLines);
+                        cleanedLines.addAll(trimCommonIndent(blockBufferWithoutAsterisk));
                     }
                 } else {
                     // Block not terminate yet, keep buffering
@@ -170,16 +375,13 @@ public class XcodeCommentDocumentation implements XcodeDocumentation.IXcodeDocum
         }
 
         // Remove blank lines at the start and end of the comment
-        while (!cleanedLines.isEmpty() && cleanedLines.peekFirst().trim().isEmpty()) {
-            cleanedLines.removeFirst();
-        }
-        while (!cleanedLines.isEmpty() && cleanedLines.peekLast().trim().isEmpty()) {
-            cleanedLines.removeLast();
-        }
+        StringUtil.removeLeadingAndTrailingBlankLines(cleanedLines);
 
         // Remove the max common indent for the entire comment block
-        List<String> finalCommentBlock = new ArrayList<>(cleanedLines.size());
-        trimCommonIndent(cleanedLines, finalCommentBlock);
+        List<String> trimmedCommentBlock = trimCommonIndent(cleanedLines);
+
+        // Fix javadoc tags
+        List<String> finalCommentBlock = fixTagsAndOrder(trimmedCommentBlock);
 
         Javadoc doc = rewrite.getAST().newJavadoc();
         for (String l : finalCommentBlock) {
